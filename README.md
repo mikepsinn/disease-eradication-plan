@@ -117,8 +117,6 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 ---
 
-*12 publications indexed.*
-
 ## How to Help
 
 ### Spread the Word

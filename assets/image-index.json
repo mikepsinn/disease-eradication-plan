@@ -4268,7 +4268,7 @@
         "Figure number '2.' in title",
         "Garbled text 'Elfficatily inrepmaticert broadly' in the center-right funnel icon"
       ],
-      "imageProblemsRepairPrompt": "Remove '2. ' from the start of the title. Replace the garbled text 'Elfficatily inrepmaticert broadly' with 'Enroll patients broadly'. Remove the 'WarOnDisease.org' watermark from the bottom right as it will be in the caption.",
+      "imageProblemsRepairPrompt": "Remove '2. ' from the start of the title. Replace the garbled text 'Elfficatily inrepmaticert broadly' with 'Enroll patients broadly'.",
       "metadataEnrichedAt": "2026-01-30T04:49:58.083Z",
       "metadataCreatedAt": "2026-01-30T04:49:58.332Z"
     },
@@ -4899,10 +4899,9 @@
         "Illustrator credit and URL embedded in the margin"
       ],
       "imageProblems": [
-        "Illustrator credit 'A. Vance, Illustrator' in bottom right corner",
-        "URL 'WarOnDisease.org' in bottom right margin"
+        "Illustrator credit 'A. Vance, Illustrator' in bottom right corner"
       ],
-      "imageProblemsRepairPrompt": "Remove the illustrator credit 'A. Vance, Illustrator' from the bottom right and the URL 'WarOnDisease.org' from the external bottom margin."
+      "imageProblemsRepairPrompt": "Remove the illustrator credit 'A. Vance, Illustrator' from the bottom right."
     },
     {
       "path": "assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-effectiveness-dominance-bw-academic.jpg",
@@ -8934,10 +8933,9 @@
       "factCheckNotes": "The figures represent a theoretical economic model for a proposed international treaty; they are projections based on the IAB framework.",
       "imageProblemsDetected": true,
       "imageProblems": [
-        "partial text 'IMPORTANT: GENERATE IMAG' at bottom right",
-        "WarOnDisease.org URL embedded in image"
+        "partial text 'IMPORTANT: GENERATE IMAG' at bottom right"
       ],
-      "imageProblemsRepairPrompt": "Remove the text box containing 'IMPORTANT: GENERATE IMAG' and the 'WarOnDisease.org' URL box from the bottom right corner of the image.",
+      "imageProblemsRepairPrompt": "Remove the truncated text 'IMPORTANT: GENERATE IMAG' from the bottom right corner while keeping the WarOnDisease.org watermark.",
       "metadataEnrichedAt": "2026-01-30T04:56:45.462Z"
     },
     {
@@ -14143,7 +14141,7 @@
         "Nonsense word 'GROONGS' in labels",
         "Spelling error 'PETRI DISHY' in labels"
       ],
-      "imageProblemsRepairPrompt": "Remove the labels 'GROONGS' and 'PETRI DISHY' from the right side of the image. Change 'PETRI DISHY' to 'PETRI DISH' and replace 'GROONGS' with 'CELLS'.",
+      "imageProblemsRepairPrompt": "Fix typos: change 'PETRI DISHY' to 'PETRI DISH' and 'GROONGS' to 'CELLS'.",
       "metadataEnrichedAt": "2026-01-27T20:40:22.810Z"
     },
     {
@@ -25126,7 +25124,7 @@
         "Missing number 6 in the sequence",
         "URL watermark in bottom right corner"
       ],
-      "imageProblemsRepairPrompt": "Correct the spelling of 'DOSE-REPONSE' to 'DOSE-RESPONSE' on the Y-axis in panel 5. Add a panel for '6. PLAUSIBILITY' or renumber the panels 1 through 8 to be sequential. Remove the 'WarOnDisease.org' text from the bottom right corner.",
+      "imageProblemsRepairPrompt": "Correct the spelling of 'DOSE-REPONSE' to 'DOSE-RESPONSE' on the Y-axis in panel 5.",
       "metadataEnrichedAt": "2026-02-01T00:05:30.941Z"
     },
     {
@@ -27549,10 +27547,9 @@
       "factCheckNotes": "This is a speculative roadmap based on the War on Disease proposal; 'Wikipedia disease' refers to rare diseases that currently lack funding but have online communities.",
       "imageProblemsDetected": true,
       "imageProblems": [
-        "Redundant labels at bottom of image",
         "Typo: 'FIRST FIRST' in bottom right corner"
       ],
-      "imageProblemsRepairPrompt": "Remove the redundant labels at the bottom of the image ('FDA.gov BECOMES ACTUALLY USEFUL', 'MILLIONS JOIN TRIALS FROM HOME', and 'FIRST FIRST \"WIKIPEDIA DISEASE\" CURED').",
+      "imageProblemsRepairPrompt": "Fix the typo 'FIRST FIRST' to 'FIRST' in the bottom right corner.",
       "metadataEnrichedAt": "2026-01-31T23:46:56.828Z"
     },
     {
@@ -41845,7 +41842,7 @@
         "Gibberish/unreadable text in all four circular callout bubbles",
         "AI-generated nonsense text in the smart contract box"
       ],
-      "imageProblemsRepairPrompt": "Remove all small, unreadable text from the circular callout bubbles and the rectangular box containing the lock icon. Retain only the large, clear headers and the supply/demand graph.",
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T01:18:25.081Z"
     },
     {
@@ -49605,7 +49602,7 @@
       "imageProblems": [
         "CureDAO.org watermark visible in bottom right"
       ],
-      "imageProblemsRepairPrompt": "Remove the 'CureDAO.org' text from the bottom right corner of the image.",
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T01:57:13.178Z",
       "metadataCreatedAt": "2026-02-01T01:57:13.497Z"
     },
@@ -60715,7 +60712,7 @@
       "imageProblems": [
         "Meta-reference to 'Treaty Framework Chapter' is embedded in the image"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'FOR COMPLETE DETAILS SEE: TREATY FRAMEWORK CHAPTER' and the open book illustration at the bottom center of the image.",
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T02:54:10.061Z"
     },
     {
@@ -69036,7 +69033,7 @@
       "imageProblems": [
         "Figure number 'FIG. 4' is embedded at the bottom"
       ],
-      "imageProblemsRepairPrompt": "Remove the text 'FIG. 4: CLEAR ROADMAP' from the bottom center of the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIG. 4:' from the start of the caption at the bottom center.",
       "metadataEnrichedAt": "2026-02-01T20:20:30.044Z"
     },
     {
@@ -76819,7 +76816,7 @@
       "imageProblems": [
         "Figure 1 embedded in image"
       ],
-      "imageProblemsRepairPrompt": "Remove 'FIG. 1: ORGANIZATIONAL STRUCTURE & FLOW' from the bottom of the image.",
+      "imageProblemsRepairPrompt": "Remove 'FIG. 1:' from the start of the caption at the bottom.",
       "metadataEnrichedAt": "2026-02-01T20:56:06.513Z"
     },
     {
@@ -83634,7 +83631,7 @@
         "Spelling error 'pharmaceutial'",
         "Watermark 'thinkbynumbers.org' present"
       ],
-      "imageProblemsRepairPrompt": "Correct the spelling of 'pharmaceutial' to 'pharmaceutical' in the 1962 text block. Remove the 'thinkbynumbers.org' watermark from the bottom right corner.",
+      "imageProblemsRepairPrompt": "Correct the spelling of 'pharmaceutial' to 'pharmaceutical' in the 1962 text block.",
       "metadataEnrichedAt": "2026-02-01T21:27:20.354Z"
     },
     {
@@ -86069,7 +86066,7 @@
         "Sub-figure labels (a), (b), (c), and (d) are embedded in the image",
         "URL 'WarOnDisease.org' is embedded at the bottom"
       ],
-      "imageProblemsRepairPrompt": "Remove the sub-figure labels (a), (b), (c), and (d) from the bottom of each section and remove the URL watermark from the bottom right corner.",
+      "imageProblemsRepairPrompt": "Remove the sub-figure labels (a), (b), (c), and (d) from the bottom of each section.",
       "metadataEnrichedAt": "2026-02-01T21:39:11.628Z"
     },
     {
@@ -92232,7 +92229,7 @@
         "Figure number 'FIG. 1' embedded in image text",
         "Some text is very small and potentially unreadable at lower resolutions"
       ],
-      "imageProblemsRepairPrompt": "Remove the text '\"FIG. 1: THE POLITICAL INFLUENCE EQUATION\"' from the bottom right corner of the conclusion box.",
+      "imageProblemsRepairPrompt": "Remove 'FIG. 1:' from the start of the caption in the bottom right corner.",
       "metadataEnrichedAt": "2026-02-01T22:09:32.885Z"
     },
     {
@@ -95756,7 +95753,7 @@
         "Meta-commentary 'SHOCKING' and 'SHAREABLE' embedded",
         "Figure context 'LEVEL 1: THE HOOK' embedded at bottom"
       ],
-      "imageProblemsRepairPrompt": "Remove the arrows labeled 'SHOCKING' and 'SHAREABLE' from the top area. Remove the black bar at the bottom containing the text 'LEVEL 1: THE HOOK (3 seconds)'.",
+      "imageProblemsRepairPrompt": "Remove the meta-labels 'SHOCKING' and 'SHAREABLE' from the top area. Remove 'LEVEL 1:' from the start of the caption at the bottom.",
       "metadataEnrichedAt": "2026-02-01T22:27:08.577Z"
     },
     {
@@ -95819,7 +95816,7 @@
       "imageProblems": [
         "The header 'LEVEL 3: THE SOLUTION (3 minutes)' is an internal book structure element."
       ],
-      "imageProblemsRepairPrompt": "Remove the top header text 'LEVEL 3: THE SOLUTION (3 minutes)' from the image.",
+      "imageProblemsRepairPrompt": "Remove 'LEVEL 3:' from the start of the top header.",
       "metadataEnrichedAt": "2026-02-01T22:27:28.873Z"
     },
     {
@@ -97289,7 +97286,7 @@
         "'3.' at the start of the title indicates a figure or chapter number",
         "WarOnDisease.org watermark at the bottom right"
       ],
-      "imageProblemsRepairPrompt": "Remove the number '3.' from the beginning of the title 'GOVERNANCE AND OVERSIGHT STRUCTURE'. Remove the 'WarOnDisease.org' text from the bottom right corner.",
+      "imageProblemsRepairPrompt": "Remove the number '3.' from the beginning of the title 'GOVERNANCE AND OVERSIGHT STRUCTURE'.",
       "metadataEnrichedAt": "2026-02-01T22:35:44.736Z"
     },
     {
@@ -98408,7 +98405,7 @@
         "Redundant meta-text: 'A SCIENTIFIC ILLUSTRATION' in the main title",
         "Small text in the 'Reference Implementation' table may be hard to read on mobile"
       ],
-      "imageProblemsRepairPrompt": "Remove the phrase ': A SCIENTIFIC ILLUSTRATION' from the main header and the sub-header 'The impact of category presentation...' to reduce clutter and make the title more direct.",
+      "imageProblemsRepairPrompt": "Remove ': A SCIENTIFIC ILLUSTRATION' from the main header.",
       "metadataEnrichedAt": "2026-02-01T22:40:26.008Z"
     },
     {
@@ -100385,7 +100382,7 @@
         "Figure 1 label embedded in left margin",
         "Some decorative text is illegible"
       ],
-      "imageProblemsRepairPrompt": "Remove the 'FIG. 1:' text from the top left and the vertical 'FIG. 1: HUMAN CONDITION SPECTRUM' text from the left margin. Clarify or remove the illegible decorative cursive text 'conflict of natural instinct' and 'nest of progress'.",
+      "imageProblemsRepairPrompt": "Remove 'FIG. 1:' from the top left and from the vertical text on the left margin.",
       "metadataEnrichedAt": "2026-02-01T22:47:01.063Z"
     },
     {
@@ -100451,7 +100448,7 @@
         "PLATE LVII visible",
         "SOURCE: SYNTHESIZED SCIENTIFIC PROJECTIONS visible"
       ],
-      "imageProblemsRepairPrompt": "Remove the text '(FIGURE 1.)' from the main title area. Remove the source attribution box at the bottom containing 'SOURCE: SYNTHESIZED SCIENTIFIC PROJECTIONS. PLATE LVII.'",
+      "imageProblemsRepairPrompt": "Remove '(FIGURE 1.)' from the main title area. Remove 'PLATE LVII.' from the source attribution at the bottom.",
       "metadataEnrichedAt": "2026-02-01T22:47:14.786Z"
     },
     {
