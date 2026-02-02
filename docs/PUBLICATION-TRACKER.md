@@ -24,7 +24,7 @@ This document tracks all papers and publications from this project and their pub
 | 3 | Incentive Alignment Bonds | Paper | [iab.warondisease.org](https://iab.warondisease.org) | incentive-alignment-bonds-paper.pdf | Draft |
 | 4 | Wishocracy (RAPPA) | Paper | [paper.wishocracy.org](https://paper.wishocracy.org) | wishocracy-rappa-paper.pdf | Draft |
 | 5 | dFDA Spec (Methodology) | Paper | [spec.dfda.earth](https://spec.dfda.earth) | dfda-spec-paper.pdf | Draft |
-| 6 | dFDA Impact (ROI Analysis) | Paper | [impact.dfda.earth](https://impact.dfda.earth) | dfda-impact-paper.pdf | Draft |
+| 6 | dFDA Impact (ROI Analysis) | Paper | [dfda-impact.warondisease.org](https://dfda-impact.warondisease.org) | dfda-impact-paper.pdf | Draft |
 
 ---
 
@@ -186,7 +186,7 @@ We present the Predictor Impact Score (PIS), a novel composite metric operationa
 
 **Source:** `_quarto-dfda-impact.yml`
 **QMD:** `knowledge/appendix/dfda-impact-paper.qmd`
-**Website:** https://impact.dfda.earth
+**Website:** https://dfda-impact.warondisease.org
 **Formats:** HTML, PDF
 
 ### Abstract
@@ -196,7 +196,7 @@ Analysis and Return on Investment - How to slash per-patient trial costs by up t
 
 | Platform | Status | Category | Notes |
 |----------|--------|----------|-------|
-| **Own Website** | Deployed | Self-hosted | https://impact.dfda.earth |
+| **Own Website** | Deployed | Self-hosted | https://dfda-impact.warondisease.org |
 | **medRxiv** | TODO | Preprint | Health sciences |
 | **SSRN** | TODO | Preprint | Health Economics |
 | **arXiv** | TODO | Preprint | econ.GN |

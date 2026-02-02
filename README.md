@@ -73,11 +73,11 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 > Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes outcome-bound governance systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align both budget allocation and policy choices with citizen welfare.
 
 
-### [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://impact.dfda.earth)
+### [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://dfda-impact.warondisease.org)
 
-[![The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](assets/og/dfda-impact-og-1200x630.jpg)](https://impact.dfda.earth)
+[![The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
 
-> Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths and avert 565B DALYs at $0.841 per DALY, while generating $58.6B in annual R&D savings.
+> Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the system could save 10.7B deaths and avert 565B DALYs at $0.841 per DALY, while generating $58.6B in annual R&D savings.
 
 
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)

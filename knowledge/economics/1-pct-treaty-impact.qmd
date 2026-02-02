@@ -440,7 +440,7 @@ Monte Carlo analysis confirms the 95% confidence interval for total economic val
 
 ### Treatment Timeline Acceleration
 
-Under the status quo, {{< var diseases_without_effective_treatment >}} diseases lack treatment. At {{< var new_disease_first_treatments_per_year >}} new treatments/year, the average disease waits {{< var status_quo_avg_years_to_first_treatment >}} for a treatment. With the system's {{< var dfda_trial_capacity_multiplier >}} trial capacity increase, treatments arrive **{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier**.
+Under the status quo, {{< var diseases_without_effective_treatment >}} diseases lack treatment. At {{< var new_disease_first_treatments_per_year >}} new treatments/year, the average disease waits {{< var status_quo_avg_years_to_first_treatment >}} for a treatment. With the framework's {{< var dfda_trial_capacity_multiplier >}} trial capacity increase, treatments arrive **{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier**.
 
 ![A comparison showing the dramatic reduction in treatment wait times, contrasting the 222-year status quo timeline against the accelerated timeline achieved through increased trial capacity.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treatment-timeline-acceleration-bw-academic.jpg)
 
@@ -486,7 +486,7 @@ This differs from "currently preventable" deaths (20-30M annually via vaccines, 
 
 ![A comparison showing the 92.6 percent of daily deaths that are eventually avoidable through biotechnology versus those that are fundamentally unavoidable, paired with a timeline illustrating how increased trial capacity shifts treatment availability hundreds of years earlier.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-eventually-avoidable-matters-bw-academic.jpg)
 
-The lives saved calculation measures **timeline acceleration**, not current curability. With the system's {{< var dfda_trial_capacity_multiplier >}} trial capacity increase, the average disease receives first treatment ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier. Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. This logic applies on average across diseases: some first treatments arrive much sooner (early in the therapeutic search space), others somewhat later (later in exploration), with {{< var dfda_trial_capacity_treatment_acceleration_years >}} being the average acceleration.
+The lives saved calculation measures **timeline acceleration**, not current curability. With the framework's {{< var dfda_trial_capacity_multiplier >}} trial capacity increase, the average disease receives first treatment ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier. Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. This logic applies on average across diseases: some first treatments arrive much sooner (early in the therapeutic search space), others somewhat later (later in exploration), with {{< var dfda_trial_capacity_treatment_acceleration_years >}} being the average acceleration.
 
 ## The Leverage Mechanism: Why {{< var treaty_reduction_pct >}} Is Enough
 
@@ -848,7 +848,7 @@ This system's upfront cost: **{{< var treaty_cost_per_daly_trial_capacity_plus_e
 
 But here's the key: this intervention is **cost-saving**. The upfront implementation cost of {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY unlocks {{< var treaty_peace_plus_rd_annual_benefits >}}/year in recurring economic benefits.
 
-**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). For detailed analysis: [full NPV methodology here](https://impact.dfda.earth#calculation-framework---npv-methodology).
+**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). For detailed analysis: [full NPV methodology here](https://dfda-impact.warondisease.org#calculation-framework---npv-methodology).
 
 ### Expected Value Under Political Uncertainty
 
@@ -977,7 +977,7 @@ This yields the conservative estimate of {{< var dfda_roi_rd_only >}} ROI over {
 
 **Important distinction**: The NPV calculation above includes only annual recurring R&D savings. However, the QALY and ICER calculations below **do include** the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift (treatment acceleration + efficacy lag elimination), as this represents the primary health benefit. See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org).
 
-For the system's cost per health benefit averted (using the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
+For the framework's cost per health benefit averted (using the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
 
 **Cost per DALY averted: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}**
 
@@ -1295,7 +1295,7 @@ The {{< var dfda_trial_capacity_multiplier >}} research acceleration multiplier 
 
 **Faster Completion**: Pragmatic trials complete in 3-12 months instead of 3-5 years because patient subsidies flip economic incentives. Physicians gain revenue from trial participation rather than losing it, eliminating the perverse incentives that delay traditional trials.
 
-**Massive Parallelization**: With more trials running simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}} today), the system achieves substantially more concurrent research. Universal patient participation makes this possible, as every doctor's office becomes a trial site.
+**Massive Parallelization**: With more trials running simultaneously (vs. {{< var current_active_trials >}} {{< var current_active_trials_cite >}} today), the framework achieves substantially more concurrent research. Universal patient participation makes this possible, as every doctor's office becomes a trial site.
 
 **Higher Completion Rates**: More of pragmatic trials complete (vs. {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate today) because patients are subsidized and physicians profit from participation.
 
@@ -1379,7 +1379,7 @@ Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag m
 
 {{< var dfda_valley_of_death_rescue_multiplier_latex >}}
 
-This acceleration applies across *all* diseases, not just well-funded ones. The current system prioritizes diseases with commercial potential; the system's universal trial infrastructure removes economic barriers that leave rare and neglected diseases permanently unexplored.
+This acceleration applies across *all* diseases, not just well-funded ones. The current system prioritizes diseases with commercial potential; the framework's universal trial infrastructure removes economic barriers that leave rare and neglected diseases permanently unexplored.
 
 ### Addressing the Returns Question: Diminishing, Linear, or Compounding?
 
@@ -1422,7 +1422,7 @@ Platform technologies may actually produce *increasing* returns per trial over t
 
 **Learning effects that improve success rates:**
 
-- **Predictive analytics**: Each completed trial generates data that improves predictions for future trials. As the system accumulates outcomes across millions of patients, machine learning models will increasingly identify which drug-disease combinations merit testing
+- **Predictive analytics**: Each completed trial generates data that improves predictions for future trials. As the framework accumulates outcomes across millions of patients, machine learning models will increasingly identify which drug-disease combinations merit testing
 - **Network pharmacology**: Understanding how drugs affect biological networks (not just single targets) reveals unexpected therapeutic applications. More data = better network models = higher hit rates
 - **Biomarker discovery**: Large-scale trial data identifies patient subpopulations who respond to specific treatments, enabling precision targeting that increases trial success rates
 - **Failure analysis**: Systematically studying why trials fail (wrong dose, wrong population, wrong endpoint) improves future trial design
@@ -1608,7 +1608,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Adoption Rate Assumptions
 
-**Assumption:** The system achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
+**Assumption:** The framework achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
 
 **Conservative case:** 50% of trials adopt the pragmatic trial methodology
 **Optimistic case:** 80% adoption rate
@@ -1771,7 +1771,7 @@ Total return: {{< var dfda_npv_net_benefit_rd_only >}} over {{< var npv_time_hor
 
 That's ${{< var dfda_roi_rd_only >}} appearing for every $1 invested. It's like a money printer, except instead of causing inflation, it causes people to continue existing.
 
-**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). The NPV calculation includes **only annual recurring R&D savings** over {{< var npv_time_horizon_years >}}, not the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift in disease eradication (which is a separate benefit). For detailed analysis: [full NPV methodology here](https://impact.dfda.earth#calculation-framework---npv-methodology).
+**Technical note**: This uses "net present value," which is economist code for "future money is worth less than current money" ({{< var npv_discount_rate_standard >}} discount rate). The NPV calculation includes **only annual recurring R&D savings** over {{< var npv_time_horizon_years >}}, not the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift in disease eradication (which is a separate benefit). For detailed analysis: [full NPV methodology here](https://dfda-impact.warondisease.org#calculation-framework---npv-methodology).
 
 ### Where the Money Comes From
 
@@ -1844,22 +1844,22 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
 
 {{< var dfda_annual_opex_latex >}}
 
-**Why costs are low:** The system provides coordination protocols (like HTTP for the internet), not a competing platform.
+**Why costs are low:** The framework provides coordination protocols (like HTTP for the internet), not a competing platform.
 
-The infrastructure already exists. Major EHR systems and DCT platforms have built the components. The system creates the coordination layer that makes them work together for clinical trials.
+The infrastructure already exists. Major EHR systems and DCT platforms have built the components. The framework creates the coordination layer that makes them work together for clinical trials.
 
 Data stays federated (in EHR and consumer health app systems). No massive centralized database. No billion-dollar infrastructure. Just coordination protocols.
 
-For detailed cost breakdown: [Platform Costs](https://impact.dfda.earth#dfda-framework-costs-rom-estimates).
+For detailed cost breakdown: [Platform Costs](https://dfda-impact.warondisease.org#dfda-framework-costs-rom-estimates).
 
 **Where the money goes**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to pragmatic clinical trials (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
-This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}}). Full breakdown: [dFDA Cost-Benefit Analysis](https://impact.dfda.earth#dfda-framework-costs-rom-estimates).
+This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}}). Full breakdown: [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org#dfda-framework-costs-rom-estimates).
 
 ### Returns
 
 - **Money**: {{< var dfda_npv_net_benefit_rd_only >}} in R&D savings ({{< var npv_time_horizon_years >}})
-- **Returns**: {{< var dfda_npv_net_benefit_rd_only >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}** ([full analysis](https://impact.dfda.earth))
+- **Returns**: {{< var dfda_npv_net_benefit_rd_only >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}** ([full analysis](https://dfda-impact.warondisease.org))
 - **Not dying**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} quality-adjusted life years (total from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift)
 
 **Two money fountains from one budget shift**:
@@ -1895,7 +1895,7 @@ ICER measures the cost per year of healthy life gained (QALY):
 
 **ICER = (Intervention Cost) / (QALYs Gained)**
 
-For the system (using the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
+For the framework (using the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift):
 
 **Cost per DALY: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}** (cost-saving: net economic benefits exceed costs)
 
@@ -1903,7 +1903,7 @@ Normally, money is *spent* to save lives. Good interventions cost {{< var who_qa
 
 This intervention delivers {{< var treaty_peace_plus_rd_annual_benefits >}}/year in recurring economic benefits ({{< var peace_dividend_annual_societal_benefit >}}/year peace dividend + {{< var dfda_benefit_rd_only_annual >}}/year R&D savings) while unlocking a one-time {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
 
-**For comprehensive ICER analysis including sensitivity analysis across multiple scenarios, alternative funding perspectives, and detailed methodology**, see [dFDA ICER Analysis](https://impact.dfda.earth#dfda-icer-analysis---cost-utility-framework).
+**For comprehensive ICER analysis including sensitivity analysis across multiple scenarios, alternative funding perspectives, and detailed methodology**, see [dFDA ICER Analysis](https://dfda-impact.warondisease.org#dfda-icer-analysis---cost-utility-framework).
 
 #### Comparative Cost-Effectiveness vs. GiveWell Top Charities
 
@@ -1972,7 +1972,7 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
 - **Operating Costs**: {{< var treaty_total_annual_costs >}} annually (campaign operations and system infrastructure)
 - **Net Position**: {{< var treaty_peace_plus_rd_annual_benefits >}} annual surplus after all costs
 - **Lives Saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} (from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift)
-- **Cost per Life Saved**: Net societal benefit per life (the system generates economic value while saving lives, making it cost-saving rather than cost-incurring)
+- **Cost per Life Saved**: Net societal benefit per life (the framework generates economic value while saving lives, making it cost-saving rather than cost-incurring)
 
 This financing structure classifies the {{< var treaty_reduction_pct >}} Treaty as a **dominant health intervention** using standard health economics terminology, an intervention with both lower costs and better health outcomes than the status quo, requiring no trade-off between cost-effectiveness and impact.
 
@@ -2261,13 +2261,13 @@ The 1% Treaty targets a much larger budget reallocation ({{< var treaty_reductio
 
 This budget is designed for a 3-5 year campaign to achieve treaty ratification by major powers, representing less than 4% of the first year's conservative benefits ({{< var treaty_peace_plus_rd_annual_benefits >}}). The referendum component isn't a "magic wand"; it's a mechanism to generate the **political capital** required to force the treaty onto the agenda of sovereign nations.
 
-This economic analysis focuses on the return on investment once the system is operational, demonstrating that the intervention generates {{< var dfda_roi_rd_only >}} to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} returns regardless of the specific path to adoption.
+This economic analysis focuses on the return on investment once the framework is operational, demonstrating that the intervention generates {{< var dfda_roi_rd_only >}} to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} returns regardless of the specific path to adoption.
 
 ## Detailed Technical References
 
 For the rigorous analysis:
 
-- **[dFDA Cost-Benefit Analysis](https://impact.dfda.earth)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
+- **[dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
 - **[Economic Value of Accelerated Treatments](../appendix/economic-value-of-accelerated-treatments.qmd)** - The 7-year access acceleration math
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations available for independent verification
 - **{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness** - Why this is a dominant health intervention
@@ -2417,7 +2417,7 @@ A potential criticism is that cost estimates depend on a single trial (RECOVERY)
 
 **What our estimates assume:**
 
-The system projections use the **conservative ADAPTABLE estimate** ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient), not RECOVERY's exceptional results. Critically, **the base ROI estimate ({{< var dfda_roi_rd_only >}}) uses only cost reduction**, not acceleration effects. It assumes we run the same number of trials at lower cost, not 22× more trials. This provides substantial margin of safety.
+The framework projections use the **conservative ADAPTABLE estimate** ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient), not RECOVERY's exceptional results. Critically, **the base ROI estimate ({{< var dfda_roi_rd_only >}}) uses only cost reduction**, not acceleration effects. It assumes we run the same number of trials at lower cost, not 22× more trials. This provides substantial margin of safety.
 
 **Historical validation:** The physician-led pragmatic trial model has {{< var pre_1962_validation_years >}} of empirical validation (1883-1960). {{< var pre_1962_physician_count >}} physicians tested treatments on real patients in routine practice before the 1962 regulatory shift, achieving similar efficiencies across diverse therapeutic areas.
 
@@ -2586,7 +2586,7 @@ This analysis models economic returns conditional on treaty ratification. Politi
 
 Implementation requires substantial institutional development:
 
-- **Regulatory expertise:** The system requires experienced personnel (FDA, EMA, other regulators) to enable integration with existing regulatory frameworks
+- **Regulatory expertise:** The framework requires experienced personnel (FDA, EMA, other regulators) to enable integration with existing regulatory frameworks
 - **Technical infrastructure:** Data systems, AI/ML capabilities, cybersecurity at global scale
 - **Legal frameworks:** International treaties, data privacy compliance, intellectual property harmonization
 
@@ -2632,7 +2632,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 **Unmodeled general equilibrium effects include**:
 
-1. **Data infrastructure scaling costs**: Decentralized trial infrastructure uses automated software (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the system leverages existing EHR systems and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
+1. **Data infrastructure scaling costs**: Decentralized trial infrastructure uses automated software (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the framework leverages existing EHR systems and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
 
 2. **Clinical trial market price effects**: Increasing trial demand by {{< var dfda_trial_capacity_multiplier >}} could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var recovery_trial_cost_reduction_factor >}} cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient; decentralized trials target {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient by eliminating overhead, not by increasing demand for scarce inputs.
 

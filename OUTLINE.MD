@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 4 | **Words:** 67,066
+**Files:** 4 | **Words:** 67,074
 
 #### index.qmd
 **Title:** Wishocracy
@@ -745,7 +745,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,410 words | 2,818 lines
+**Stats:** 29,418 words | 2,818 lines
 
   - Abstract
   - Key Findings
@@ -988,12 +988,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,730
+**Files:** 1 | **Words:** 11,728
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
-**Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,730 words | 1,222 lines
+**Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the system could save {{< var dfda_...
+**Stats:** 11,728 words | 1,222 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -4194,6 +4194,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 82
-- Total words: 340,567
+- Total words: 340,573
 - Orphaned files: 27
 - Paper configs: 12

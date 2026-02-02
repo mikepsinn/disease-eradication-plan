@@ -24,11 +24,11 @@
 
 ---
 
-### dFDA Impact (impact.dfda.earth)
+### dFDA Impact (dfda-impact.warondisease.org)
 
 > The FDA is like a lifeguard who spends 7 years checking if the life preserver is safe while you drown. Clinical trials cost $40,000/patient. Pragmatic trials cost $929. Here's the math on letting sick people try treatments.
 >
-> https://impact.dfda.earth
+> https://dfda-impact.warondisease.org
 
 ---
 

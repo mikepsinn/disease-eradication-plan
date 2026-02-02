@@ -237,7 +237,7 @@ def create_netlify_site(token: str, config_name: str, title: str, custom_domain:
         token: Netlify auth token
         config_name: Config name (for logging)
         title: Site title from Quarto config
-        custom_domain: Full custom domain to use (e.g., impact.dfda.earth). If None, derives from config_name.
+        custom_domain: Full custom domain to use (e.g., dfda-impact.warondisease.org). If None, derives from config_name.
 
     Returns:
         Site data dict with 'id' and 'url', or None on failure
@@ -490,7 +490,7 @@ def extract_custom_domain_from_url(url: str) -> str | None:
 
     Examples:
         https://impact.warondisease.org -> impact.warondisease.org
-        https://impact.dfda.earth -> impact.dfda.earth
+        https://dfda-impact.warondisease.org -> dfda-impact.warondisease.org
     """
     if not url:
         return None
@@ -549,7 +549,7 @@ def discover_configs() -> dict:
         if not subdomain:
             subdomain = config_name.replace("_", "-")
 
-        # Extract full custom domain from site-url (e.g., impact.dfda.earth)
+        # Extract full custom domain from site-url (e.g., dfda-impact.warondisease.org)
         custom_domain = extract_custom_domain_from_url(site_url)
         if not custom_domain:
             custom_domain = f"{subdomain}.{BASE_DOMAIN}"
@@ -569,7 +569,7 @@ def discover_configs() -> dict:
             "has_site": bool(site_id),
             "site_url": site_url,
             "subdomain": subdomain,  # The subdomain part (for warondisease.org sites)
-            "custom_domain": custom_domain,  # The full domain from site-url (e.g., impact.dfda.earth)
+            "custom_domain": custom_domain,  # The full domain from site-url (e.g., dfda-impact.warondisease.org)
         }
 
     return configs

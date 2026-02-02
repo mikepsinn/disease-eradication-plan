@@ -75,7 +75,7 @@ Every day we don't implement this represents a massive societal cost: **{{< var 
 ![A visualization of the daily opportunity cost of inaction, highlighting the dual impact of 161 million in financial waste and over 54 million DALYs lost annually.](/assets/images/health-dividend/health-dividend-section-daily-opportunity-cost-bw-academic.jpg)
 
 
-**For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](https://impact.dfda.earth#daily-opportunity-cost-of-inaction).
+**For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#daily-opportunity-cost-of-inaction).
 
 ## The framework Cost Breakdown
 
@@ -84,7 +84,7 @@ Your decentralized framework for drug assessment costs approximately **{{< var d
 ![A cost breakdown chart visualizing the 40M annual operating budget across infrastructure, engineering, and compliance, highlighting the 95 percent confidence interval range from 27.3M to 55.6M.](/assets/images/health-dividend/health-dividend-section-the-framework-cost-breakdown-bw-academic.jpg)
 
 
-**For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Cost-Benefit Analysis](https://impact.dfda.earth).
+**For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org).
 
 ## ROI Scenarios
 
@@ -99,7 +99,7 @@ Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exc
 ![A comparison of ROI scenarios illustrating the exponential scale difference between conservative R and D savings and the primary estimate including societal benefits.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
 
 
-**For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Financial Analysis Summary](https://impact.dfda.earth#financial-analysis-summary).
+**For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary).
 
 ## Why This Isn't Happening Already
 
@@ -133,9 +133,9 @@ Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D inefficiency a
 
 ### Detailed Analysis
 
-- [dFDA Cost-Benefit Analysis](https://impact.dfda.earth) - Complete economic analysis with all components
-- [Financial Analysis Summary](https://impact.dfda.earth#financial-analysis-summary) - NPV/ROI analysis and computational models
-- [dFDA Cost-Benefit Analysis](https://impact.dfda.earth) - ROM estimates, costs, and ROI
+- [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) - Complete economic analysis with all components
+- [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary) - NPV/ROI analysis and computational models
+- [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) - ROM estimates, costs, and ROI
 - [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) - Primary methodology for disease eradication delay burden {{< var dfda_efficacy_lag_elimination_dalys >}} (post-safety efficacy lag elimination)
 
 ## Impact of Innovative Medicines on Life Expectancy
