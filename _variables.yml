@@ -2732,12 +2732,12 @@
   \ proportion-0.439 proportion)</a>"
 "global_yld_proportion_of_dalys_cite": "@ihme-gbd-2021"
 "healthcare_vs_military_multiplier_ratio": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-healthcare_vs_military_multiplier_ratio\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-healthcare_vs_military_multiplier_ratio\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Ratio of healthcare\
-  \ to military fiscal multipliers. Healthcare investment generates 7× more economic\
-  \ activity per dollar than military spending. | Calculated from 2 inputs | ✓ High\
-  \ confidence | Formula: ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING\
-  \ | Unit: x | Click to view details, calculation & sources\">7.17x (95% CI: 6.83x-7.57x)</a>"
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Ratio of healthcare to military fiscal multipliers.\
+  \ Healthcare investment generates 7× more economic activity per dollar than military\
+  \ spending. | Calculated from 2 inputs | ✓ High confidence | Formula: ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT\
+  \ / ECONOMIC_MULTIPLIER_MILITARY_SPENDING | Unit: x | Click to view details, calculation\
+  \ & sources\">7.17x (95% CI: 6.83x-7.57x)</a>"
 "healthcare_vs_military_multiplier_ratio_latex": "$$\n\\begin{gathered}\nr_{health/mil}\
   \ \\\\\n= \\frac{k_{health}}{k_{mil}} \\\\\n= \\frac{4.3}{0.6} \\\\\n= 7.17\n\\\
   end{gathered}\n$$"
@@ -4151,25 +4151,23 @@
   \ \\times Pct_{political} \\\\\n= \\$27.2B \\times 10\\% \\\\\n= \\$2.72B\n\\end{gathered}\n\
   $$"
 "treaty_lives_saved_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_lives_saved_annual_global\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual lives\
-  \ saved from 1% reduction in conflict deaths | Calculated from 2 inputs | ✓ High\
-  \ confidence | Formula: TOTAL_DEATHS × REDUCTION_PCT | Unit: lives/year | Click\
-  \ to view details, calculation & sources\">2.45k lives/year (95% CI: 1.94k lives/year-3.02k\
-  \ lives/year)</a>"
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual lives saved from 1% reduction in conflict\
+  \ deaths | Calculated from 2 inputs | ✓ High confidence | Formula: TOTAL_DEATHS\
+  \ × REDUCTION_PCT | Unit: lives/year | Click to view details, calculation & sources\"\
+  >2.45k lives/year (95% CI: 1.94k lives/year-3.02k lives/year)</a>"
 "treaty_lives_saved_annual_global_latex": "$$\n\\begin{gathered}\nLives_{treaty,ann}\
   \ \\\\\n= Deaths_{conflict} \\times Reduce_{treaty} \\\\\n= 245{,}000 \\times 1\\\
   % \\\\\n= 2{,}450 \\\\[0.5em]\n\\text{where } Deaths_{conflict} \\\\\n= Deaths_{combat}\
   \ + Deaths_{state} + Deaths_{terror} \\\\\n= 234{,}000 + 2{,}700 + 8{,}300 \\\\\n\
   = 245{,}000\n\\end{gathered}\n$$"
 "treaty_peace_plus_rd_annual_benefits": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_peace_plus_rd_annual_benefits\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Basic annual\
-  \ benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings\
-  \ only (2 of 8 benefit categories, excludes regulatory delay value) | Calculated\
-  \ from 2 inputs | ✓ High confidence | Formula: PEACE_DIVIDEND + DFDA_RD_SAVINGS\
-  \ | Unit: USD/year | Click to view details, calculation & sources\">$172B (95% CI:\
-  \ $140B-$213B)</a>"
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Basic annual benefits: peace dividend + Decentralized\
+  \ Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes\
+  \ regulatory delay value) | Calculated from 2 inputs | ✓ High confidence | Formula:\
+  \ PEACE_DIVIDEND + DFDA_RD_SAVINGS | Unit: USD/year | Click to view details, calculation\
+  \ & sources\">$172B (95% CI: $140B-$213B)</a>"
 "treaty_peace_plus_rd_annual_benefits_latex": "$$\n\\begin{gathered}\nBenefit_{peace+RD}\
   \ \\\\\n= Benefit_{peace,soc} + Benefit_{RD,ann} \\\\\n= \\$114B + \\$58.6B \\\\\
   \n= \\$172B \\\\[0.5em]\n\\text{where } Benefit_{peace,soc} \\\\\n= Cost_{war,total}\
@@ -4199,12 +4197,11 @@
   \n= 1 - \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= 1 - \\frac{\\$929}{\\\
   $41K} \\\\\n= 97.7\\%\n\\end{gathered}\n$$"
 "treaty_qalys_gained_annual_global": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_qalys_gained_annual_global\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_qalys_gained_annual_global\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Annual QALYs\
-  \ gained from peace dividend (lives saved × QALYs/life) | Calculated from 2 inputs\
-  \ | ✓ High confidence | Formula: LIVES_SAVED × QALYS_PER_LIFE | Unit: QALYs/year\
-  \ | Click to view details, calculation & sources\">85.6k QALYs/year (95% CI: 45.1k\
-  \ QALYs/year-141k QALYs/year)</a>"
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Annual QALYs gained from peace dividend (lives\
+  \ saved × QALYs/life) | Calculated from 2 inputs | ✓ High confidence | Formula:\
+  \ LIVES_SAVED × QALYS_PER_LIFE | Unit: QALYs/year | Click to view details, calculation\
+  \ & sources\">85.6k QALYs/year (95% CI: 45.1k QALYs/year-141k QALYs/year)</a>"
 "treaty_qalys_gained_annual_global_latex": "$$\n\\begin{gathered}\nQALY_{treaty,ann}\
   \ \\\\\n= QALY_{life} \\times Lives_{treaty,ann} \\\\\n= 35 \\times 2{,}450 \\\\\
   \n= 85{,}600 \\\\[0.5em]\n\\text{where } Lives_{treaty,ann} \\\\\n= Deaths_{conflict}\
@@ -4282,12 +4279,11 @@
   \ + Budget_{lobby,treaty} \\\\\n+ Budget_{reserve} \\\\\n= \\$250M + \\$650M + \\\
   $100M \\\\\n= \\$1B\n\\end{gathered}\n$$"
 "treaty_total_annual_costs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-treaty_total_annual_costs\"\
-  \ class=\"parameter-link\" data-source-ref=\"/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs\"\
-  \ data-source-type=\"calculated\" data-confidence=\"high\" title=\"Total annual\
-  \ system costs (campaign + Decentralized Framework for Drug Assessment operations)\
-  \ | Calculated from 2 inputs | ✓ High confidence | Formula: CAMPAIGN_ANNUAL + DFDA_OPEX\
-  \ | Unit: USD/year | Click to view details, calculation & sources\">$290M (95% CI:\
-  \ $185M-$434M)</a>"
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Total annual system costs (campaign + Decentralized\
+  \ Framework for Drug Assessment operations) | Calculated from 2 inputs | ✓ High\
+  \ confidence | Formula: CAMPAIGN_ANNUAL + DFDA_OPEX | Unit: USD/year | Click to\
+  \ view details, calculation & sources\">$290M (95% CI: $185M-$434M)</a>"
 "treaty_total_annual_costs_latex": "$$\n\\begin{gathered}\nCost_{treaty,ann} \\\\\n\
   = OPEX_{dFDA} + Cost_{camp,amort} \\\\\n= \\$40M + \\$250M \\\\\n= \\$290M \\\\\
   [0.5em]\n\\text{where } OPEX_{dFDA} \\\\\n= Cost_{platform} + Cost_{staff} + Cost_{infra}\

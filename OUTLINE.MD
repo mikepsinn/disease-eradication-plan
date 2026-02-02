@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 4 | **Words:** 67,159
+**Files:** 4 | **Words:** 67,153
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 30,909 words | 8,188 lines
+**Stats:** 30,903 words | 8,182 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
@@ -1461,7 +1461,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 74 | **Words:** 200,518
+**Files:** 74 | **Words:** 200,500
 
 #### index.qmd
 **Title:** Start Here
@@ -3905,7 +3905,7 @@
 #### knowledge/appendix/drug-development-cost-analysis.qmd
 **Title:** Drug Development Cost Increase Analysis
 **Description:** Rigorous analysis of the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments a...
-**Stats:** 3,470 words | 571 lines
+**Stats:** 3,452 words | 569 lines
 
   - Executive Summary
   - Historical Data Sources
@@ -5174,6 +5174,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 90
-- Total words: 380,530
+- Total words: 380,506
 - Orphaned files: 20
 - Paper configs: 12
