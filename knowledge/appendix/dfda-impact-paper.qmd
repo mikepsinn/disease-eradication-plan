@@ -178,24 +178,6 @@ The dFDA protocol enables existing systems (DCT platforms, EHRs, health apps) to
 
 ## Addressing Key Concerns
 
-### Why This Differs from Failed Megaprojects
-
-Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
-
-![A comparison between the risks of traditional megaprojects and the advantages of the proposed intervention, highlighting the integration of existing infrastructure and feedback loops.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
-
-This intervention differs in four critical ways:
-
-1. **Proven Technology**: Unlike speculative moonshots, pragmatic trials using existing EHR infrastructure have been validated. The RECOVERY trial enrolled 47,000+ patients at {{< var recovery_trial_cost_per_patient >}}/patient. ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US healthcare settings. This isn't "we hope this works" - it's "we've proven this works, now scale it."
-
-2. **Marginal Extension, Not Novel System**: The framework extends existing clinical trial infrastructure rather than replacing it. Hospitals already have EHRs. Patients already take medications. We're adding a coordination layer and outcome tracking, not building from scratch.
-
-3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, the protocol has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, we can adjust scope. The system generates its own performance metrics.
-
-4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}} ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, potentially even higher leverage.
-
-5. **Modern Infrastructure Makes This Possible Now**: The convergence of electronic health records (Epic/Cerner covering 57% of US hospitals), consumer wearables (billions of devices tracking health metrics), federated data networks (TriNetX queries 300M+ patient records without moving data), and AI-powered analysis enables systematic outcome tracking at scale that wasn't feasible even a decade ago. This isn't speculation about future technology - it's deployment of existing, proven infrastructure.
-
 ### Historical Validation: Pre-1962 Physician-Led Efficacy Testing
 
 The decentralized physician-led efficacy model is not theoretical. It operated successfully from 1883 to 1960, providing {{< var pre_1962_validation_years >}} of empirical validation.
@@ -1220,5 +1202,21 @@ To provide context for the estimated costs of a decentralized framework, it is u
 {{< include ../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
 
 **Key Takeaway:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the framework's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
+
+## Why This Differs from Failed Megaprojects
+
+Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
+
+This intervention differs in five critical ways:
+
+1. **Proven Technology**: Unlike speculative moonshots, pragmatic trials using existing EHR infrastructure have been validated. The RECOVERY trial enrolled 47,000+ patients at {{< var recovery_trial_cost_per_patient >}}/patient. ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US healthcare settings. This isn't "we hope this works" - it's "we've proven this works, now scale it."
+
+2. **Marginal Extension, Not Novel System**: The framework extends existing clinical trial infrastructure rather than replacing it. Hospitals already have EHRs. Patients already take medications. We're adding a coordination layer and outcome tracking, not building from scratch.
+
+3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, the protocol has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, we can adjust scope. The system generates its own performance metrics.
+
+4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}} ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, potentially even higher leverage.
+
+5. **Modern Infrastructure Makes This Possible Now**: The convergence of electronic health records (Epic/Cerner covering 57% of US hospitals), consumer wearables (billions of devices tracking health metrics), federated data networks (TriNetX queries 300M+ patient records without moving data), and AI-powered analysis enables systematic outcome tracking at scale that wasn't feasible even a decade ago. This isn't speculation about future technology - it's deployment of existing, proven infrastructure.
 
 ---

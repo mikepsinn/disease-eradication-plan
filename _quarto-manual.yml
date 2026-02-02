@@ -153,13 +153,16 @@ book:
         - knowledge/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
         - knowledge/economics/health-dividend.qmd # ✅ (good voice) ~3p
         - knowledge/appendix/humanity-budget-overview.qmd # ✅ (IMPROVED) ~2p
-        - knowledge/appendix/global-government-medical-research-spending.qmd # ✅ (EXCELLENT voice) ~8p
-        - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd # ✅ Comprehensive spending analysis ~17p
+        # REMOVED: Detailed R&D spending data better suited for online resource (~8p)
+        # - knowledge/appendix/global-government-medical-research-spending.qmd
+        # REMOVED: Too granular; key stats already in health-dividend.qmd (~17p)
+        # - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
         - knowledge/appendix/clinical-trial-participants.qmd # ✅ The 0.06% problem ~7p
 
     - part: "Detailed Calculations"
       chapters:
-        - knowledge/appendix/parameters-and-calculations-manual.qmd # ✅ AUTO-GENERATED filtered parameter reference (274 params used in manual)
+        # REMOVED: Auto-generated reference (~50p), link to online version instead
+        # - knowledge/appendix/parameters-and-calculations-manual.qmd
         # STANDALONE PAPER - see graveyard.warondisease.org
         # - knowledge/appendix/invisible-graveyard.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
         - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis with multiple data sources, CPI adjustments, sensitivity analysis ~10p
@@ -168,7 +171,8 @@ book:
         # - knowledge/appendix/dfda-impact-paper.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
         - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
         - knowledge/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
-        - knowledge/appendix/data-storage-costs.qmd # ✅ (pure data, appropriate) ~3p
+        # REMOVED: Technical minutiae irrelevant to persuasion (~3p)
+        # - knowledge/appendix/data-storage-costs.qmd
 
     - part: "Financial Planning"
       chapters:
@@ -180,9 +184,11 @@ book:
     # Organizational Resources
     - part: "Governance & Organization"
       chapters:
-        - knowledge/appendix/governance.qmd # ✅ (good voice) ~4p
+        # REMOVED: Just redirects to main DIH chapter - content already moved (~4p)
+        # - knowledge/appendix/governance.qmd
         - knowledge/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate) ~3p
-        - knowledge/operations/careers/hiring-plan.qmd # ✅ Hiring plan & team roadmap for DIH activation team ~8p
+        # REMOVED: Operational detail belongs in implementation docs, not book (~8p)
+        # - knowledge/operations/careers/hiring-plan.qmd
         - knowledge/appendix/dih-integration-model.qmd # ✅ (has personality) ~4p
         - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
         - knowledge/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice) ~8p
@@ -193,9 +199,11 @@ book:
 
     - part: "Additional References"
       chapters:
-        - knowledge/papers.qmd # ✅ AUTO-GENERATED index of all papers with OG images, PDFs, DOIs
+        # REMOVED: Better as online index; changes frequently (~10p)
+        # - knowledge/papers.qmd
         - knowledge/appendix/lives-saved-by-drug-accessibility.qmd # ✅ (reference tables, appropriate) ~6p
-        - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd # ✅ (IMPROVED) ~6p
+        # REMOVED: Tangential to core thesis; interesting but not necessary (~6p)
+        # - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
         - knowledge/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
         - knowledge/appendix/acknowledgments.qmd # ✅ (WISHONIA voice) ~3p
         # Bibliography: references.bib is the single source of truth

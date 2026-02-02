@@ -63,8 +63,6 @@ OPEX_{dFDA} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#opex-breakdown](../appendix/dfda-impact-paper#opex-breakdown)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -106,8 +104,6 @@ Benefit_{RD,ann} \\
 = 97.7\%
 \end{gathered}
 $$
-
-**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
 *✓ High confidence*
 
@@ -160,8 +156,6 @@ Savings_{RD,ann} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#net-savings](../appendix/dfda-impact-paper#net-savings)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -200,8 +194,6 @@ OPEX_{total} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#npv-costs](../appendix/dfda-impact-paper#npv-costs)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -238,8 +230,6 @@ NPV_{RD} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#npv-benefit](../appendix/dfda-impact-paper#npv-benefit)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -273,8 +263,6 @@ Present value of annual opex over 10 years (NPV formula)
 $$
 PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
 $$
-
-**Methodology**: [../appendix/dfda-impact-paper#npv-calculation](../appendix/dfda-impact-paper#npv-calculation)
 
 *✓ High confidence*
 
@@ -326,8 +314,6 @@ Cost_{dFDA,total} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#npv-total-cost](../appendix/dfda-impact-paper#npv-total-cost)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -365,8 +351,6 @@ Cost_{upfront,total} \\
 = \$270M
 \end{gathered}
 $$
-
-**Methodology**: [../appendix/dfda-impact-paper#npv-costs](../appendix/dfda-impact-paper#npv-costs)
 
 *✓ High confidence*
 
@@ -437,8 +421,6 @@ ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637 \\[0
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#roi-simple](../appendix/dfda-impact-paper#roi-simple)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -477,8 +459,6 @@ k_{reduce} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -516,8 +496,6 @@ Reduce_{pct} \\
 = 97.7\%
 \end{gathered}
 $$
-
-**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
 *✓ High confidence*
 

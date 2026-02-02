@@ -63,8 +63,6 @@ OPEX_{dFDA} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#opex-breakdown](../appendix/dfda-impact-paper#opex-breakdown)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -624,8 +622,6 @@ N_{fundable,ann} \\
 \end{gathered}
 $$
 
-**Methodology**: [../economics/1-pct-treaty-impact#funding-allocation](../economics/1-pct-treaty-impact#funding-allocation)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -738,8 +734,6 @@ Subsidies_{trial,ann} \\
 \end{gathered}
 $$
 
-**Methodology**: [../economics/1-pct-treaty-impact#funding-allocation](../economics/1-pct-treaty-impact#funding-allocation)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -823,8 +817,6 @@ Cost_{global,reform} \\
 = \$5.35B
 \end{gathered}
 $$
-
-**Methodology**: [../appendix/cost-of-change-analysis#global-estimates](../appendix/cost-of-change-analysis#global-estimates)
 
 *? Low confidence*
 
@@ -994,8 +986,6 @@ Cost_{campaign} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation](../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1085,8 +1075,6 @@ Cost_{treaty,DALY} = \frac{Cost_{campaign}}{DALYs_{max}} = \frac{\$1B}{565B} = \
 = \$27.2B
 \end{gathered}
 $$
-
-**Methodology**: [../appendix/dfda-impact-paper](../appendix/dfda-impact-paper)
 
 *✓ High confidence*
 
@@ -1182,8 +1170,6 @@ ROI_{max} = \frac{Value_{max}}{Cost_{campaign}} = \frac{\$84800T}{\$1B} = 84.8M 
 \end{gathered}
 $$
 
-**Methodology**: [../figures/dfda-investment-returns-bar-chart](../figures/dfda-investment-returns-bar-chart)
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -1222,8 +1208,6 @@ Cost_{US,congress} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/cost-of-change-analysis#us-political-reform-scenarios](../appendix/cost-of-change-analysis#us-political-reform-scenarios)
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -1252,8 +1236,6 @@ Cost_{US,total} \\
 + Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}
 \end{gathered}
 $$
-
-**Methodology**: [../appendix/cost-of-change-analysis#us-political-reform-scenarios](../appendix/cost-of-change-analysis#us-political-reform-scenarios)
 
 *? Low confidence*
 

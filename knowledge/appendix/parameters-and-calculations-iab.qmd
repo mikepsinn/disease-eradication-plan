@@ -63,8 +63,6 @@ Benefit_{RD,ann} \\
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -102,8 +100,6 @@ Reduce_{pct} \\
 = 97.7\%
 \end{gathered}
 $$
-
-**Methodology**: [../appendix/dfda-impact-paper#cost-reduction](../appendix/dfda-impact-paper#cost-reduction)
 
 *✓ High confidence*
 
@@ -182,8 +178,6 @@ Cost_{war,total} \\
 \end{gathered}
 $$
 
-**Methodology**: [../problem/cost-of-war#total-cost](../problem/cost-of-war#total-cost)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -221,8 +215,6 @@ Cost_{combat,human} \\
 = \$2.34T
 \end{gathered}
 $$
-
-**Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
 
 *✓ High confidence*
 
@@ -262,8 +254,6 @@ Cost_{state,human} \\
 \end{gathered}
 $$
 
-**Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -301,8 +291,6 @@ Cost_{terror,human} \\
 = \$83B
 \end{gathered}
 $$
-
-**Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
 
 *✓ High confidence*
 
@@ -356,8 +344,6 @@ Loss_{life,conflict} \\
 \end{gathered}
 $$
 
-**Methodology**: [../problem/cost-of-war#human-cost](../problem/cost-of-war#human-cost)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -401,8 +387,6 @@ Damage_{infra,total} \\
 \end{gathered}
 $$
 
-**Methodology**: [../problem/cost-of-war#infrastructure-damage](../problem/cost-of-war#infrastructure-damage)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -443,8 +427,6 @@ Disruption_{trade} \\
 = \$616B
 \end{gathered}
 $$
-
-**Methodology**: [../problem/cost-of-war#trade-disruption](../problem/cost-of-war#trade-disruption)
 
 *✓ High confidence*
 
@@ -515,8 +497,6 @@ Cost_{war,direct} \\
 \end{gathered}
 $$
 
-**Methodology**: [../problem/cost-of-war#direct-costs](../problem/cost-of-war#direct-costs)
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -559,8 +539,6 @@ Cost_{war,indirect} \\
 = \$3.7T
 \end{gathered}
 $$
-
-**Methodology**: [../problem/cost-of-war#indirect-costs](../problem/cost-of-war#indirect-costs)
 
 *✓ High confidence*
 
@@ -656,7 +634,7 @@ BCR_{IAB} = \frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} = \frac{\$172B}{\$750M} = 
 \end{gathered}
 $$
 
-**Methodology**: [../appendix/incentive-alignment-bonds-paper#welfare-analysis](../appendix/incentive-alignment-bonds-paper#welfare-analysis)
+**Methodology**: [https://iab.warondisease.org##welfare-analysis](https://iab.warondisease.org##welfare-analysis)
 
 *✓ High confidence*
 
@@ -830,8 +808,6 @@ Cost_{campaign} \\
 = \$1B
 \end{gathered}
 $$
-
-**Methodology**: [../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation](../appendix/fundraising-strategy#capital-structure-campaign-vs-implementation)
 
 *✓ High confidence*
 
