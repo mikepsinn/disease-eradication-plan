@@ -186,7 +186,11 @@ def main():
 
     # Get files to test
     if args.file:
-        qmd_files = [Path(args.file)]
+        file_path = Path(args.file)
+        # Make absolute if relative
+        if not file_path.is_absolute():
+            file_path = PROJECT_ROOT / file_path
+        qmd_files = [file_path]
     else:
         qmd_files = get_qmd_files()
 
