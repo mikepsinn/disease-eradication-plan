@@ -1461,7 +1461,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 74 | **Words:** 200,525
+**Files:** 74 | **Words:** 200,518
 
 #### index.qmd
 **Title:** Start Here
@@ -2134,11 +2134,11 @@
 
 #### knowledge/proof.qmd
 **Title:** The Proof: Overview
-**Description:** This Already Works - Oxford proved 82X efficiency. Switzerland proved peace pays. History proved {{< var global_population_activism_threshold_pct >}} consistently wins. War bonds proved capitalism bea...
-**Stats:** 1,658 words | 242 lines
+**Description:** This Already Works - Pragmatic trials prove {{< var dfda_trial_cost_reduction_factor >}} efficiency. Switzerland proved peace pays. History proved {{< var global_population_activism_threshold_pct >}} ...
+**Stats:** 1,677 words | 236 lines
 
-  - Oxford RECOVERY: The {{< var recovery_trial_cost_reduction_factor >}} Proof
-  - Switzerland: The 200-Year Peace Dividend
+  - Pragmatic Trials: {{< var dfda_trial_cost_reduction_factor >}} More Efficient
+  - Switzerland: 200 Years of Not Killing People
     - Result
   - War Bonds: How Capitalism Beat Fascism
   - The Landmine Treaty: Citizens Beat Armies
@@ -2751,7 +2751,7 @@
 #### knowledge/appendix/recovery-trial.qmd
 **Title:** The Oxford RECOVERY Trial
 **Description:** Proof that decentralized pragmatic trials reduce costs by 82X while saving millions of lives
-**Stats:** 1,651 words | 182 lines
+**Stats:** 1,625 words | 180 lines
 
   - Key RECOVERY Trial Statistics
     - They Used Regular Hospitals
@@ -5174,6 +5174,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 90
-- Total words: 380,556
+- Total words: 380,549
 - Orphaned files: 20
 - Paper configs: 12
