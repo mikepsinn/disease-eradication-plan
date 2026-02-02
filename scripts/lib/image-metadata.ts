@@ -27,8 +27,6 @@ export interface ImageFileInfo {
   format?: string
   /** Aspect ratio as string (e.g., "16:9") */
   aspectRatio?: string
-  /** Last modified date (ISO string) */
-  modified?: string
 }
 
 /**

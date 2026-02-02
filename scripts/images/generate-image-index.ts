@@ -115,7 +115,6 @@ export async function processImage(
     height,
     format,
     aspectRatio: width && height ? getAspectRatio(width, height) : undefined,
-    modified: stats.mtime.toISOString(),
     imageType: getImageType(relativePath),
     style: getStyle(filename),
     chapter: getChapterFromPath(relativePath),
@@ -301,11 +300,10 @@ export async function syncIndex(options?: {
   for (const filePath of imageFiles) {
     const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
     const stats = await fs.stat(filePath);
-    const fileModified = stats.mtime.toISOString();
 
-    // Check if we can skip this file (incremental mode)
+    // Check if we can skip this file (incremental mode) - use file size for change detection
     const existing = existingByPath.get(relativePath);
-    if (existing && existing.modified === fileModified) {
+    if (existing && existing.sizeBytes === stats.size) {
       // File hasn't changed - reuse existing metadata
       images.push(existing);
       totalSize += existing.sizeBytes;

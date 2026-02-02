@@ -557,8 +557,6 @@ See [References](../references.qmd) for full citations:
 
 ## Technical Parameters
 
-For reproducibility, all calculations use parameters from [`parameters.py`](../appendix/parameters-and-calculations.qmd):
-
 | Parameter | Value | Source |
 |-----------|-------|--------|
 | `PRE_1962_DRUG_DEVELOPMENT_COST` | {{< var pre_1962_drug_development_cost_2024_usd >}} | Congressional testimony (1962 dollars) |
@@ -566,5 +564,5 @@ For reproducibility, all calculations use parameters from [`parameters.py`](../a
 | `DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER` | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} | Calculated with inflation adjustment |
 | `TRIAL_COST_REDUCTION_FACTOR` | {{< var recovery_trial_cost_reduction_factor >}} | Per-patient cost increase |
 
-See [Parameters & Calculations](../appendix/parameters-and-calculations.qmd) for complete methodology and source links.
-
+
+

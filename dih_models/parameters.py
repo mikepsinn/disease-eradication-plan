@@ -3228,7 +3228,6 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
 # Peace dividend health benefits
 TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
     GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL * TREATY_REDUCTION_PCT,
-    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_lives_saved_annual_global",
     source_type="calculated",
     description="Annual lives saved from 1% reduction in conflict deaths",
     display_name="Annual Lives Saved from 1% Reduction in Conflict Deaths",
@@ -3241,7 +3240,6 @@ TREATY_LIVES_SAVED_ANNUAL_GLOBAL = Parameter(
 )  # 2,446 lives
 TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
     TREATY_LIVES_SAVED_ANNUAL_GLOBAL * STANDARD_QALYS_PER_LIFE_SAVED,
-    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_qalys_gained_annual_global",
     source_type="calculated",
     description="Annual QALYs gained from peace dividend (lives saved × QALYs/life)",
     display_name="Annual QALYs Gained from Peace Dividend",
@@ -3775,7 +3773,6 @@ FAMILY_OFFICE_INVESTMENT_MIN = Parameter(
 # Total system costs
 TREATY_TOTAL_ANNUAL_COSTS = Parameter(
     TREATY_CAMPAIGN_ANNUAL_COST_AMORTIZED + DFDA_ANNUAL_OPEX,
-    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_total_annual_costs",
     source_type="calculated",
     description="Total annual system costs (campaign + Decentralized Framework for Drug Assessment operations)",
     display_name="Total Annual Treaty System Costs",
@@ -3794,7 +3791,6 @@ TREATY_TOTAL_ANNUAL_COSTS = Parameter(
 # Basic annual benefits (peace dividend + R&D savings only, excludes regulatory delay & other benefits)
 TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS = Parameter(
     PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT + DFDA_BENEFIT_RD_ONLY_ANNUAL,
-    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-treaty_peace_plus_rd_annual_benefits",
     source_type="calculated",
     description="Basic annual benefits: peace dividend + Decentralized Framework for Drug Assessment R&D savings only (2 of 8 benefit categories, excludes regulatory delay value)",
     display_name="1% treaty Basic Annual Benefits (Peace + R&D Savings)",
@@ -6803,7 +6799,6 @@ ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT = Parameter(
 # Healthcare vs Military Spending Multiplier Ratio
 HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO = Parameter(
     float(ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT) / float(ECONOMIC_MULTIPLIER_MILITARY_SPENDING),
-    source_ref="/knowledge/appendix/parameters-and-calculations.qmd#sec-healthcare_vs_military_multiplier_ratio",
     source_type="calculated",
     description="Ratio of healthcare to military fiscal multipliers. Healthcare investment generates 7× more "
                 "economic activity per dollar than military spending.",
