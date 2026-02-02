@@ -831,6 +831,10 @@ def render_quarto(
 
     Returns:
         Exit code (0 for success, non-zero for failure)
+
+    Note:
+        If Quarto fails but HTML was generated, validation and deployment will
+        proceed. The job will still fail at the end with the original exit code.
     """
     project_root = Path(__file__).parent.parent.absolute()
     original_cwd = os.getcwd()
@@ -859,6 +863,8 @@ def render_quarto(
     exit_code = 0
     build_temp = None
     monitor = None
+    quarto_exit_code = 0  # Track original Quarto exit code
+    html_can_deploy = False  # Track if HTML deployment should proceed despite PDF failure
 
     try:
         # Start capturing ALL stdout/stderr to log file
@@ -952,7 +958,8 @@ def render_quarto(
 
             custom_parsers = [create_latex_parser()] if rendering_pdf else []
             build_type = f"{description} ({format_override or 'all formats'})"
-            exit_code = monitor.run_build(cmd, build_type=build_type, custom_parsers=custom_parsers)
+            quarto_exit_code = monitor.run_build(cmd, build_type=build_type, custom_parsers=custom_parsers)
+            exit_code = quarto_exit_code
 
             # Resume capture for post-build output
             logger.start_capture()
@@ -964,6 +971,15 @@ def render_quarto(
                     gh_group_start("LATEX ERROR DETAILS")
                     print_latex_errors(str(build_temp))
                     gh_group_end()
+
+                # Check if HTML exists despite Quarto failure - deploy HTML anyway
+                if build_temp:
+                    html_index = build_temp / metadata["output_dir"] / "index.html"
+                    if html_index.exists():
+                        print(f"[WARN] Quarto failed but HTML exists at {html_index}", file=sys.stderr)
+                        print(f"[WARN] Continuing with HTML validation and deployment...", file=sys.stderr)
+                        html_can_deploy = True
+                        exit_code = 0  # Temporarily allow validation/deployment to proceed
             else:
                 print(f"[OK] {description} render complete!")
             gh_group_end()
@@ -1137,6 +1153,12 @@ def render_quarto(
         # Stop capture and close logger (writes footer automatically)
         logger.stop_capture()
         logger.close(exit_code)
+
+    # Restore original exit code if PDF/EPUB failed but HTML was deployed
+    if html_can_deploy and quarto_exit_code != 0:
+        print(f"[ERROR] PDF/EPUB generation failed (exit code {quarto_exit_code}) - job will report failure", file=sys.stderr)
+        print(f"[INFO] HTML was successfully deployed to Netlify", file=sys.stderr)
+        exit_code = quarto_exit_code
 
     return exit_code
 
