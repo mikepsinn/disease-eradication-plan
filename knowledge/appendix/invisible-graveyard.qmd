@@ -183,7 +183,7 @@ Before calculating regulatory delay costs, we must establish what percentage of 
 ::: {.callout-important}
 ## Methodological Note: Distinguishing Current vs. Theoretical Preventability
 
-![A comparison bar chart showing the gap between current medical preventability and the theoretical maximum potential, highlighting the 30-50\% research opportunity margin.](/assets/images/invisible-graveyard/invisible-graveyard-section-methodological-note-distinguishing-current-vs-theoretical-preventability-bw-academic.jpg)
+![A comparison bar chart showing the gap between current medical preventability and the theoretical maximum potential, highlighting the 30-50\% research opportunity margin.](/assets/images/invisible-graveyard/invisible-graveyard-methodological-note-distinguishing-current-vs-theoretical-preventability-bw-academic.jpg)
 
 The "Max Potential" column represents **theoretical upper bounds** based on biological precedent and mechanistic understanding, not current medical capability. These estimates extrapolate from:
 
@@ -354,7 +354,7 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 The YLD calculation above captures suffering *before death* for those who ultimately died from delayed treatments. However, a much larger population - the **{{< var chronic_disease_treated_patients_annual >}} people annually who receive chronic disease treatment** - also suffered during the {{< var efficacy_lag_years >}} delay before their treatments became available.
 
-![A timeline visualizing the 8.2-year delay period experienced by 982 million people before receiving treatment, illustrating the accumulation of years lived with disability (YLD).](/assets/images/invisible-graveyard/invisible-graveyard-section-years-lived-with-disability-treatment-beneficiaries-treatment-morbidity-bw-academic.jpg)
+![A timeline visualizing the 8.2-year delay period experienced by 982 million people before receiving treatment, illustrating the accumulation of years lived with disability (YLD).](/assets/images/invisible-graveyard/invisible-graveyard-years-lived-with-disability-treatment-beneficiaries-treatment-morbidity-bw-academic.jpg)
 
 ::: {.callout-note}
 ## Distinction: Mortality vs. Morbidity Burden

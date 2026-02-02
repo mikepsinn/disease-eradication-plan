@@ -4503,12 +4503,12 @@
 ## _quarto-obg.yml
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Type:** website
-**Files:** 1 | **Words:** 8,515
+**Files:** 1 | **Words:** 8,496
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 8,515 words | 1,219 lines
+**Stats:** 8,496 words | 1,217 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -5174,6 +5174,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 90
-- Total words: 380,549
+- Total words: 380,530
 - Orphaned files: 20
 - Paper configs: 12
