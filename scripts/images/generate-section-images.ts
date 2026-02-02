@@ -408,13 +408,16 @@ async function generateAndInsertImage(
   recommendation: ImageRecommendation,
   resolvedContent: string,
   useAcademicStyle: boolean,
-  aspectRatio: '1:1' | '3:4' | '9:16' | '16:9'
+  aspectRatio: '1:1' | '3:4' | '9:16' | '16:9',
+  variables: Map<string, string>
 ): Promise<boolean> {
   const fileName = path.basename(filePath, '.qmd');
   const outputDir = path.join(process.cwd(), 'assets', 'images', fileName);
 
   const style = useAcademicStyle ? VisualStyles['bw-academic'] : VisualStyles['retro-futuristic'];
-  const sectionSlug = toKebabCase(section.title);
+  // Resolve Quarto variables in title before generating slug (prevents truncated filenames)
+  const resolvedTitle = replaceQuartoVariables(section.title, variables);
+  const sectionSlug = toKebabCase(resolvedTitle);
 
   // Clean content for image generation (strips markdown links, footnotes, code blocks, etc.)
   const contentForImage = cleanContentForImagePrompt(resolvedContent);
@@ -714,7 +717,8 @@ async function processFile(
       recommendation,
       resolvedContent,
       useAcademicStyle,
-      aspectRatio
+      aspectRatio,
+      variables
     );
 
     if (success) {
