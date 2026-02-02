@@ -287,7 +287,7 @@ C_{Rep} \approx \frac{\log_2(k)}{T \text{ years}} \approx 0
 $$
 This extreme lossy compression effectively destroys all information about preference intensity and specific trade-offs (The "Bundle Problem"). This theoretical result aligns with empirical findings by @gilens2014, who analyzed 1,779 policy outcomes and found that "average citizens have little or no independent influence" on policy.
 
-![The flatline of democracy: Public support (0\% to 100\%) has near-zero impact on the probability of policy adoption (flat at ~30\%), whereas elite support strongly correlates with adoption. Data from @gilens2014.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
+![The flatline of democracy: Public support (0 percent to 100 percent) has near-zero impact on the probability of policy adoption (flat at ~30 percent), whereas elite support strongly correlates with adoption. Data from @gilens2014.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png)
 
 **Wishocracy (High-Bandwidth Channel):**
 
@@ -410,7 +410,7 @@ BCR estimates are contested and often politically coded. The same program may ha
 
 A naive implementation of RAPPA requires $\frac{n(n-1)}{2}$ pairwise comparisons for $n$ categories. For 10 categories, this means 45 pairs per participant (cognitively burdensome and likely to produce survey fatigue).
 
-![A comparison showing the reduction in required pairwise comparisons from 45 to 21 when 3 out of 10 categories are filtered, representing a 53\% decrease in cognitive load.](/assets/images/wishocracy-paper/wishocracy-paper-section-zero-funding-filter-optimization-bw-academic.jpg)
+![A comparison showing the reduction in required pairwise comparisons from 45 to 21 when 3 out of 10 categories are filtered, representing a 53 percent decrease in cognitive load.](/assets/images/wishocracy-paper/wishocracy-paper-section-zero-funding-filter-optimization-bw-academic.jpg)
 
 The reference implementation adds a preliminary question: "Should the government fund [category] at all?" Participants can respond Yes, No, or Unsure. Categories marked "No" are excluded from that participant's pairwise comparisons.
 
@@ -557,7 +557,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 The most severe resource misallocations occur at the federal level: $886 billion annually on military spending versus $47 billion on the NIH, $20+ billion in fossil fuel subsidies, $50+ billion on drug war enforcement. Municipal discretionary budgets, while useful for proof-of-concept, represent rounding errors compared to the welfare losses from federal misallocation. We therefore propose a federal-first implementation strategy that begins with information provision and progresses toward incentive alignment with elected representatives.
 
-![A bar chart comparing federal spending allocations, illustrating the massive scale of the $886 billion military budget against the NIH, fossil fuel subsidies, and drug war enforcement.](/assets/images/wishocracy-paper/wishocracy-paper-section-implementation-pathway-from-information-to-incentive-alignment-bw-academic.jpg)
+![A bar chart comparing federal spending allocations, illustrating the massive scale of the 886 billion military budget against the NIH, fossil fuel subsidies, and drug war enforcement.](/assets/images/wishocracy-paper/wishocracy-paper-section-implementation-pathway-from-information-to-incentive-alignment-bw-academic.jpg)
 
 ## **Why Information Alone Fails: Politicians Respond to Incentives**
 
@@ -637,7 +637,7 @@ where votes are coded as +1 (increases funding for category), -1 (decreases fund
 
 **Objective:** Channel financial and electoral resources to politicians based on their alignment with citizen preferences, making welfare-improving votes incentive-compatible.
 
-![A visualization of the capital asymmetry between global household wealth ($454T) and concentrated interests (<$5T), illustrating how the three-layer incentive alignment mechanism redirects these resources toward aligned politicians.](/assets/images/wishocracy-paper/wishocracy-paper-phase-3-incentive-alignment-integration-with-incentive-alignment-bonds-bw-academic.jpg)
+![A visualization of the capital asymmetry between global household wealth (454T) and concentrated interests (<5T), illustrating how the three-layer incentive alignment mechanism redirects these resources toward aligned politicians.](/assets/images/wishocracy-paper/wishocracy-paper-phase-3-incentive-alignment-integration-with-incentive-alignment-bonds-bw-academic.jpg)
 
 **Mechanism:**
 
@@ -664,7 +664,7 @@ Politicians currently face incentives that reward serving concentrated interests
 
 **Timeline:** 2-4 years after Phase 2 establishes credible scoring system.
 
-![A comparison of the financial stakes between municipal and federal implementation, illustrating the massive scale difference from $10 million to $500 billion.](/assets/images/wishocracy-paper/wishocracy-paper-section-why-federal-first-beats-municipal-pilots-bw-academic.jpg)
+![A comparison of the financial stakes between municipal and federal implementation, illustrating the massive scale difference from 10 million to 500 billion.](/assets/images/wishocracy-paper/wishocracy-paper-section-why-federal-first-beats-municipal-pilots-bw-academic.jpg)
 
 ## **Why Federal-Scale Priorities**
 

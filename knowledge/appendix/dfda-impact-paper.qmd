@@ -74,7 +74,7 @@ The dFDA is **protocol infrastructure** - open standards that existing systems a
 - **Expanded Therapeutic Coverage:** Lower costs enable testing of rare diseases and treatments that lack commercial incentives. Treatments reach patients earlier in disease progression.
 - **Mortality Reduction:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} additional life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift ({{< var dfda_trial_capacity_multiplier >}} trial capacity plus efficacy lag elimination), enabling faster access, improved prevention data, and research for neglected diseases.
 
-![Before/after comparison showing 97.7\% cost reduction, 12.3x trial capacity increase, and 565B DALYs averted from traditional to decentralized framework.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
+![Before/after comparison showing 97.7 percent cost reduction, 12.3x trial capacity increase, and 565B DALYs averted from traditional to decentralized framework.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
 
 ### Key Findings
 
@@ -457,7 +457,7 @@ The core protocol infrastructure build costs tens of millions; the broader globa
 
 This section quantifies the potential societal benefits of an infrastructure for a decentralized framework for drug assessment, focusing primarily on R&D cost savings and health outcome improvements.
 
-![A conceptual model showing how a decentralized drug assessment framework leads to societal benefits such as R&D cost savings and improved health outcomes.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-benefit-analysis-quantifying-the-savings-bw-academic.jpg)
+![A conceptual model showing how a decentralized drug assessment framework leads to societal benefits such as R and D cost savings and improved health outcomes.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-benefit-analysis-quantifying-the-savings-bw-academic.jpg)
 
 ### Market Size and Impact
 
@@ -741,7 +741,7 @@ The framework includes pooled liability coverage for sponsors, reducing individu
 
 The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms our ability to explore the vast therapeutic space where undiscovered cures already exist.
 
-![A visual comparison showing the scale of research acceleration, contrasting standard discovery progress with the 12.3x multiplier and its 95\% confidence interval.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg)
+![A visual comparison showing the scale of research acceleration, contrasting standard discovery progress with the 12.3x multiplier and its 95 percent confidence interval.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg)
 
 ### The Unexplored Therapeutic Frontier
 
@@ -756,7 +756,7 @@ The fundamental problem isn't that cures are hard to discover. It's that we're b
 
 The cures likely already exist among tested-safe compounds. We just haven't looked. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for detailed analysis of this exploration gap, and [The Discovery Capacity Model](#the-discovery-capacity-model) for the quantitative framework showing how {{< var dfda_trial_capacity_multiplier >}} trial capacity produces the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
 
-![A visualization of the therapeutic exploration gap, contrasting the 9.5 million potential drug-disease combinations with the tiny 0.3\% sliver that has been clinically tested.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
+![A visualization of the therapeutic exploration gap, contrasting the 9.5 million potential drug-disease combinations with the tiny 0.3 percent sliver that has been clinically tested.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
 ### Addressing the Returns Question: Diminishing, Linear, or Compounding?
 
@@ -955,11 +955,11 @@ For economist verification, this section provides complete derivation chains for
 
 **Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness.
 
-![A visual comparison of cost-effectiveness showing the derivation of $0.84 per DALY alongside the $89 benchmark for malaria bed nets.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-4-cost-per-daly-derivation-var-dfda-direct-funding-cost-per-daly-bw-academic.jpg)
+![A visual comparison of cost-effectiveness showing the derivation of 0.84 per DALY alongside the 89 benchmark for malaria bed nets.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-4-cost-per-daly-derivation-var-dfda-direct-funding-cost-per-daly-bw-academic.jpg)
 
 ### 5. ROI Derivation ({{< var dfda_roi_rd_only >}})
 
-![A visual breakdown of the ROI calculation showing the massive scale difference between $389 billion in 10-year benefits and $611 million in costs, resulting in a 637:1 ratio.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-5-roi-derivation-var-dfda-roi-rd-only-bw-academic.jpg)
+![A visual breakdown of the ROI calculation showing the massive scale difference between 389 billion in 10-year benefits and 611 million in costs, resulting in a 637:1 ratio.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-5-roi-derivation-var-dfda-roi-rd-only-bw-academic.jpg)
 
 **Step 1: Calculate benefits**
 - Annual R&D savings: {{< var dfda_benefit_rd_only_annual >}}
@@ -1164,7 +1164,7 @@ For standard interventions, this value is calculated as `$1,000,000 / ICER`, whe
 
 All data used in the chart is derived from the table and sources below.
 
-![Cost-Effectiveness of Health Interventions (QALYs Gained per $1M)](../../assets/images/qaly-comparison-chart.png)
+![Cost-Effectiveness of Health Interventions (QALYs Gained per 1M)](../../assets/images/qaly-comparison-chart.png)
 
 The following table provides the data and sources that support the chart. The list is ordered to match the chart's presentation.
 

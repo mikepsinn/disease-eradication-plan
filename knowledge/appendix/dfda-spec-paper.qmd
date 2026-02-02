@@ -337,7 +337,7 @@ For each outcome measurement (t_o, o):
 
 #### Predictor-Based Pairing (No Filling Value)
 
-![A timeline diagram showing a predictor measurement at time t_p, followed by a time delay delta, leading to an outcome window of length tau where measurements are averaged.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-based-pairing-no-filling-value-bw-academic.jpg)
+![A timeline diagram showing a predictor measurement at time t-p, followed by a time delay delta, leading to an outcome window of length tau where measurements are averaged.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-based-pairing-no-filling-value-bw-academic.jpg)
 
 When the predictor has no filling value, we create one pair per predictor measurement:
 

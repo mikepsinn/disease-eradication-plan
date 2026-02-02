@@ -81,11 +81,11 @@ The result is a systematic distortion of democratic governance. The U.S. Constit
 
 Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades. Finding: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero. Whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
 
-![The relationship between public support and policy adoption. Whether a policy has 0\% or 100\% public support, its probability of adoption remains flat at around 30\%. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from @gilens2014 analysis of 1,779 policy decisions.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
+![The relationship between public support and policy adoption. Whether a policy has 0 percent or 100 percent public support, its probability of adoption remains flat at around 30 percent. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from @gilens2014 analysis of 1,779 policy decisions.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
 
 ### Key Results
 
-![A visual comparison of the $454T beneficiary capital versus $5T opposition capital, highlighting the 90:1 asymmetry and the 230:1 benefit-cost ratio of the IAB mechanism.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-key-results-bw-academic.jpg)
+![A visual comparison of the 454T beneficiary capital versus 5T opposition capital, highlighting the 90:1 asymmetry and the 230:1 benefit-cost ratio of the IAB mechanism.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-key-results-bw-academic.jpg)
 
 This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
@@ -201,7 +201,7 @@ Consider the global capital distribution:
 
 [^capital-estimate]: Conservative estimate: military contractors ~\$2T, fossil fuel companies ~\$2.5T, pharmaceutical companies ~\$4T (though pharma may align with IABs). Total concentrated opposition: \$2T-\$5T depending on domain.
 
-![Visualizing the 90:1 capital advantage: Global household wealth ($454T) vastly overshadows the combined market cap of concentrated opposition ($5T).](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-capital-asymmetry-bw-academic.jpg)
+![Visualizing the 90:1 capital advantage: Global household wealth (454T) vastly overshadows the combined market cap of concentrated opposition (5T).](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-capital-asymmetry-bw-academic.jpg)
 
 The 90:1 capital advantage cannot currently be deployed because diffuse beneficiaries face a collective action problem (hard for large groups to coordinate even when everyone would benefit): each individual's stake is small, and coordination costs are prohibitive. A retiree who would gain 5 additional healthy years from accelerated medical research has enormous stake (~\$500K in value of statistical life-years) but cannot coordinate with millions of other retirees to match pharmaceutical lobbying budgets.
 
@@ -744,7 +744,7 @@ This allocation structure creates aligned incentives across all participants. In
 
 **Scoring layer:** Politicians receive Health Research Scores based on their voting record on treaty ratification, annual funding appropriations, and related legislation. A legislator who votes YES on the treaty and subsequent funding bills sees their score rise; one who votes NO sees their score fall.
 
-![Flow of funds from a 1\% military redirect ($27.2B) into the three critical IAB buckets: Public Good, Investor Returns, and Political Incentives.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-iab-money-flow-bw-academic.jpg)
+![Flow of funds from a 1 percent military redirect (27.2B) into the three critical IAB buckets: Public Good, Investor Returns, and Political Incentives.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-iab-money-flow-bw-academic.jpg)
 
 **Electoral layer:** With {{< var iab_political_incentive_funding_annual >}} annually available, independent expenditure campaigns can credibly commit: "We will spend \$50 million supporting high-scorers in competitive races." At typical costs per competitive race, this funds meaningful independent campaigns in 20-30 races annually.
 

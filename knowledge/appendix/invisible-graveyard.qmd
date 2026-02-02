@@ -77,7 +77,7 @@ We paid {{< var efficacy_lag_cumulative_excess_cost >}} (lower bound - Phase 2/3
 
 {{< include ../figures/tornado-efficacy_lag_cumulative_excess_cost.qmd >}}
 
-![Bar chart with ghostly imagery comparing 9/11 deaths (2,977), Holocaust deaths (6 million), and FDA efficacy lag deaths (102 million, 95\% CI: 36.9M-214M) with error bars](/assets/images/invisible-graveyard/a-dramatic-bar-chart-comparing-the-scale-of-three-tragedies--chart.jpg)
+![Bar chart with ghostly imagery comparing 9/11 deaths (2,977), Holocaust deaths (6 million), and FDA efficacy lag deaths (102 million, 95 percent CI: 36.9M-214M) with error bars](/assets/images/invisible-graveyard/a-dramatic-bar-chart-comparing-the-scale-of-three-tragedies--chart.jpg)
 
 That's {{< var pharma_phase_2_3_cost_barrier >}} per drug for Phase 2/3 efficacy trials, paid by patients through higher drug prices. Before 1962, the AMA's {{< var pre_1962_physician_count >}} tracked patient outcomes and JAMA published the results. We replaced that with tiny trials on handpicked patients.
 
@@ -99,7 +99,7 @@ The modern pharmaceutical regulatory paradigm relies on a binary licensure model
 
 This study evaluates the **Bifurcated Regulatory Model (BRM)**, defined as "Safety-First / Efficacy-Later", to measure the "Invisible Graveyard": the population that dies during the regulatory latency period between safety verification and final approval.
 
-![Timeline diagram showing Phase I safety (2.3 years, necessary) vs Phase II/III efficacy lag (8.2 years, 95\% CI: 4.85-11.5 years) where patients die waiting](/assets/images/invisible-graveyard/a-diagram-showing-the-fda-drug-approval-timeline-and-the-eff-diagram.jpg)
+![Timeline diagram showing Phase I safety (2.3 years, necessary) vs Phase II/III efficacy lag (8.2 years, 95 percent CI: 4.85-11.5 years) where patients die waiting](/assets/images/invisible-graveyard/a-diagram-showing-the-fda-drug-approval-timeline-and-the-eff-diagram.jpg)
 
 ## Literature Review: The Drug Lag Debate
 
@@ -107,7 +107,7 @@ This study evaluates the **Bifurcated Regulatory Model (BRM)**, defined as "Safe
 
 The regulatory cost of FDA efficacy requirements was first rigorously quantified by Peltzman [@peltzman-1973], who estimated that the 1962 Kefauver-Harris Amendments reduced the flow of new drugs by 50-60%. His analysis concluded that the costs of reduced pharmaceutical innovation substantially exceeded any benefits from keeping ineffective drugs off the market, resulting in net welfare losses to society.
 
-![A comparison of regulatory impacts on pharmaceutical innovation, showcasing the estimated 50-60\% reduction in new drug flow alongside mortality estimates and specific international approval time lags.](/assets/images/invisible-graveyard/invisible-graveyard-section-foundational-economic-analysis-bw-academic.jpg)
+![A comparison of regulatory impacts on pharmaceutical innovation, showcasing the estimated 50-60 percent reduction in new drug flow alongside mortality estimates and specific international approval time lags.](/assets/images/invisible-graveyard/invisible-graveyard-section-foundational-economic-analysis-bw-academic.jpg)
 
 Wardell [@wardell-1974] documented the emerging "drug lag" between US and UK drug approvals, finding that the UK had access to significantly more new therapeutic agents. His estimate that beta-blockers alone could save 10,000 American lives annually if approved became a landmark finding in regulatory economics.
 
@@ -183,7 +183,7 @@ Before calculating regulatory delay costs, we must establish what percentage of 
 ::: {.callout-important}
 ## Methodological Note: Distinguishing Current vs. Theoretical Preventability
 
-![A comparison bar chart showing the gap between current medical preventability and the theoretical maximum potential, highlighting the 30-50\% research opportunity margin.](/assets/images/invisible-graveyard/invisible-graveyard-methodological-note-distinguishing-current-vs-theoretical-preventability-bw-academic.jpg)
+![A comparison bar chart showing the gap between current medical preventability and the theoretical maximum potential, highlighting the 30-50 percent research opportunity margin.](/assets/images/invisible-graveyard/invisible-graveyard-methodological-note-distinguishing-current-vs-theoretical-preventability-bw-academic.jpg)
 
 The "Max Potential" column represents **theoretical upper bounds** based on biological precedent and mechanistic understanding, not current medical capability. These estimates extrapolate from:
 
@@ -239,7 +239,7 @@ The remaining deaths are **fundamentally unavoidable** even with perfect biotech
 
 These represent the hard physical limits of medicine. Everything else, including "natural death from old age," is an engineering problem with engineering solutions.
 
-![A comparison of mortality categories showing the 7.37\% physical floor of unavoidable deaths versus the remaining addressable mortality through engineering.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-var-fundamentally-unavoidable-death-pct-floor-bw-academic.jpg)
+![A comparison of mortality categories showing the 7.37 percent physical floor of unavoidable deaths versus the remaining addressable mortality through engineering.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-var-fundamentally-unavoidable-death-pct-floor-bw-academic.jpg)
 
 ### Data Sources & Parameterization
 
@@ -398,7 +398,7 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 
 ### Contextualizing the Loss
 
-![A scale comparison showing the $1.19 quadrillion total loss relative to global economic output, including the wide range of the 95\% confidence interval.](/assets/images/invisible-graveyard/invisible-graveyard-section-contextualizing-the-loss-bw-academic.jpg)
+![A scale comparison showing the 1.19 quadrillion total loss relative to global economic output, including the wide range of the 95 percent confidence interval.](/assets/images/invisible-graveyard/invisible-graveyard-section-contextualizing-the-loss-bw-academic.jpg)
 
 - **Total Loss (1962-2024):** {{< var dfda_efficacy_lag_elimination_economic_value >}} over 62 years
 - **Annualized Loss:** Total loss ÷ 62 years represents a substantial fraction of global economic output in lost human capital and foregone productivity
@@ -505,7 +505,7 @@ Results remain robust across all reasonable parameter ranges, with lower bound e
 
 Despite these limitations, the **plausible mechanism** ({{< var post_1962_drug_approval_reduction_pct >}} drop in approvals, {{< var drug_cost_increase_1980s_to_current_multiplier >}} cost increase) provides strong inferential evidence that regulatory changes significantly impacted drug development.
 
-![A conceptual diagram showing the 1962 amendments leading to a 70\% drop in drug approvals and a 13.4:1 cost increase, while illustrating confounding variables like Medicare and NIH funding that complicate direct attribution.](/assets/images/invisible-graveyard/invisible-graveyard-section-limitations-bw-academic.jpg)
+![A conceptual diagram showing the 1962 amendments leading to a 70 percent drop in drug approvals and a 13.4:1 cost increase, while illustrating confounding variables like Medicare and NIH funding that complicate direct attribution.](/assets/images/invisible-graveyard/invisible-graveyard-section-limitations-bw-academic.jpg)
 
 ## Policy Implications
 
@@ -614,7 +614,7 @@ Even if you **adjust the primary estimate significantly**:
 
 **Critique:** The claim that {{< var eventually_avoidable_death_pct >}} of deaths are eventually preventable is based on theoretical biological potential, not demonstrated medical capability.
 
-![A conceptual breakdown of the 92.6\% theoretical limit for preventable deaths, illustrating the contributions of aging reversal, cardiovascular prevention, and cancer treatment versus unavoidable accidents.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-eventually-preventable-estimate-is-theoretical-bw-academic.jpg)
+![A conceptual breakdown of the 92.6 percent theoretical limit for preventable deaths, illustrating the contributions of aging reversal, cardiovascular prevention, and cancer treatment versus unavoidable accidents.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-eventually-preventable-estimate-is-theoretical-bw-academic.jpg)
 
 **Response:**
 
