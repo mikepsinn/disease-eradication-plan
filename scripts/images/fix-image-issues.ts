@@ -10,6 +10,7 @@
  *   npx tsx scripts/images/fix-image-issues.ts --dry-run    # Preview without fixing
  *   npx tsx scripts/images/fix-image-issues.ts --limit 5    # Fix only 5 images
  *   npx tsx scripts/images/fix-image-issues.ts --no-verify  # Skip post-fix verification
+ *   npx tsx scripts/images/fix-image-issues.ts --force      # Re-fix already-fixed images
  */
 
 import fs from 'fs/promises'
@@ -75,7 +76,8 @@ function isLeakageOrFigureProblem(problem: string): boolean {
  */
 async function findImagesWithIssues(
   targetDir: string,
-  limit?: number
+  limit?: number,
+  force?: boolean
 ): Promise<ImageIssue[]> {
   console.log('\nScanning for prompt leakage and figure numbers...')
 
@@ -91,6 +93,13 @@ async function findImagesWithIssues(
 
     const metadata = await readImageMetadata(imagePath)
     if (!metadata) continue
+
+    // Skip already-fixed images (they have [FIXED] or [REGENERATED] prefix)
+    // Unless --force flag is used
+    const prompt = metadata.generationPrompt || ''
+    if (!force && (prompt.startsWith('[FIXED]') || prompt.startsWith('[REGENERATED]'))) {
+      continue
+    }
 
     // Only fix images with detected problems (leakage, figure numbers)
     if (metadata.imageProblemsDetected && metadata.imageProblems?.length && metadata.imageProblemsRepairPrompt) {
@@ -383,16 +392,18 @@ async function main() {
   const args = process.argv.slice(2)
   const options = parseCommonArgs(args)
   const skipVerify = hasFlag(args, 'no-verify')
+  const force = hasFlag(args, 'force')
 
   printHeader('Fix Image Issues (Leakage & Figure Numbers)')
   console.log(`Mode: ${options.dryRun ? 'DRY RUN' : 'FIX'}`)
   console.log(`Verify fixes: ${!skipVerify}`)
+  console.log(`Force re-fix: ${force}`)
   if (options.limit) console.log(`Limit: ${options.limit}`)
 
   const targetDir = options.path ? path.resolve(options.path) : ASSETS_DIR
 
   // Find images with issues
-  const issues = await findImagesWithIssues(targetDir, options.limit)
+  const issues = await findImagesWithIssues(targetDir, options.limit, force)
 
   if (issues.length === 0) {
     console.log('\nNo images with prompt leakage or figure numbers found.')

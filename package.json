@@ -34,6 +34,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "images:fix": "tsx scripts/images/fix-image-issues.ts",
     "render:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to pdf",
     "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
     "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
@@ -47,7 +48,6 @@
     "images:sections": "tsx scripts/images/generate-section-images.ts",
     "images:enrich": "tsx scripts/images/enrich-image-metadata.ts",
     "images:enrich:all": "tsx scripts/images/enrich-image-metadata.ts --all",
-    "images:fix": "tsx scripts/images/fix-image-issues.ts",
     "images:fix:dry-run": "tsx scripts/images/fix-image-issues.ts --dry-run",
     "images:fix:no-verify": "tsx scripts/images/fix-image-issues.ts --no-verify",
     "images:index": "tsx scripts/images/generate-image-index.ts",

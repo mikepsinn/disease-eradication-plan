@@ -377,6 +377,8 @@ format:
   epub:
     # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
     output-file: "How-to-End-War-and-Disease.epub"
+    # Author attribution for EPUB (different from HTML)
+    author: "WISHONIA (translated by Mike P. Sinn)"
     # Cover image for EPUB (required for most e-book platforms)
     epub-cover-image: assets/cover/book-cover-3.jpg
     # Math rendering: Use mathml (fast) instead of webtex (slow)
@@ -474,6 +476,7 @@ format:
     colorlinks: true
     link-citations: true
     date: ""
+    author: "WISHONIA (translated by Mike P. Sinn)"
     include-in-header:
       - callout-bw.tex
       - text: |
@@ -489,3 +492,10 @@ format:
     variables:
       title: "How to End War and Disease"
       description: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
+    include-before-body:
+      - text: |
+          \thispagestyle{empty}
+          \newgeometry{margin=0pt}
+          \noindent\includegraphics[width=\paperwidth,height=\paperheight]{assets/cover/book-cover-3.jpg}
+          \restoregeometry
+          \newpage
