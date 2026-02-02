@@ -116,7 +116,7 @@ The 1% Treaty Fund uses an **80/10/10 automatic allocation** before any funds re
 
 #### The Fixed Costs ({{< var victory_bond_funding_pct >}} + {{< var iab_political_incentive_funding_pct >}} = 20%)
 
-![A visualization of the 20\% fixed cost allocation, showing the automated flow of treaty funding into two equal 10\% pillars for bond returns and political incentives via smart contracts.](/assets/images/financial-plan/financial-plan-section-the-fixed-costs-var-victory-bond-funding-pct-var-iab-political-incentive-funding-pct-20-bw-academic.jpg)
+![A visualization of the 20\% fixed cost allocation, showing the automated flow of treaty funding into two equal 10\% pillars for bond returns and political incentives via smart contracts.](/assets/images/financial-plan/financial-plan-section-the-fixed-costs-bw-academic.jpg)
 
 - **VICTORY Incentive Alignment Bond returns:** {{< var victory_bond_annual_payout >}} annually ({{< var victory_bond_funding_pct >}} of treaty inflows)
 - **IAB political incentives:** {{< var iab_political_incentive_funding_annual >}} annually ({{< var iab_political_incentive_funding_pct >}} of treaty inflows)

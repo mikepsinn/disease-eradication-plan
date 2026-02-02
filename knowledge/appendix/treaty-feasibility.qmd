@@ -106,7 +106,7 @@ We aren't trying to buy the treaty. We are buying the **machinery** that makes t
 
 For expected value calculations, we need to estimate the probability that a 1% treaty campaign actually succeeds. This section documents the rationale for our **{{< var political_success_probability >}} central estimate** with a **0.1%-25% confidence interval**.
 
-![A comparison of cost-effectiveness showing that the proposed intervention is 503 times more cost-effective than malaria bed nets, even with a low 1\% probability of success.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economic-analysis-sec-political-success-probability-bw-academic.jpg)
+![A comparison of cost-effectiveness showing that the proposed intervention is 503 times more cost-effective than malaria bed nets, even with a low 1\% probability of success.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
 
 
 Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY), the gold standard of global health interventions.

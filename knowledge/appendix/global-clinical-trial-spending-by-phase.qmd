@@ -29,7 +29,7 @@ Global clinical trial spending totals approximately **{{< var global_clinical_tr
 
 **Note**: Earlier market reports cited {{< var global_clinical_trials_spending_annual >}}, but this conflated market size projections with actual spending and included CRO revenue double-counting.
 
-![A breakdown of the $60 billion annual global clinical trial spending by sector, illustrating the proportional contributions of industry, government, and nonprofit funding.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-bottom-line-var-global-clinical-trials-spending-annual-annually-2024-bw-academic.jpg)
+![A breakdown of the $60 billion annual global clinical trial spending by sector, illustrating the proportional contributions of industry, government, and nonprofit funding.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-bottom-line-bw-academic.jpg)
 
 ### Growth trajectory
 
@@ -327,7 +327,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 ### Breakdown by phase (industry average)
 
-![Breakdown of pharmaceutical R&D costs by phase, illustrating the cumulative cost of successful drugs compared to the substantial financial burden of failed drug candidates.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-breakdown-by-phase-industry-average-bw-academic.jpg)
+![Breakdown of pharmaceutical R&D costs by phase, illustrating the cumulative cost of successful drugs compared to the substantial financial burden of failed drug candidates.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-breakdown-by-pha-bw-academic.jpg)
 
 - Phase 1: $28 million per approved drug [@industry-phase-1-per-approved-drug]
 - Phase 2: $65 million per approved drug [@industry-phase-2-per-approved-drug]
@@ -349,7 +349,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - Tufts Center 2021 estimate: {{< var pharma_drug_development_cost_current >}}
   - Nearly 3× increase from $802M in 2003 (inflation-adjusted)
 
-![The attrition funnel of drug development, showing the sharp decline in candidate survival alongside the accumulating costs per approved drug.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-drug-development-attrition-funnel-bw-academic.jpg)
+![The attrition funnel of drug development, showing the sharp decline in candidate survival alongside the accumulating costs per approved drug.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-drug-development-bw-academic.jpg)
 
 ## Regional Market Distribution
 
@@ -425,7 +425,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - Global pharmaceutical marketing: **$180 billion** [@pharma-marketing-spending-60b]
 - **Humans spend {{< var military_to_clinical_trials_spending_ratio >}} more on weapons and 2× more on drug ads than on testing new treatments**
 
-![Global spending scale comparison: Clinical trials vs. Pharmaceutical Marketing vs. Military Expenditure.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-global-spending-context-comparison-bw-academic.jpg)
+![Global spending scale comparison: Clinical trials vs. Pharmaceutical Marketing vs. Military Expenditure.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-global-spending-bw-academic.jpg)
 
 ## The Efficiency Paradox
 
@@ -451,7 +451,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} per patient (Systematic review median: {{< var pmc_pragmatic_trial_median_cost_per_patient >}} [@pmc-pragmatic-trial-cost])
 - **That's an 80-240× markup for bureaucracy**
 
-![Cost efficiency comparison between traditional Phase 3 trials and the decentralized RECOVERY trial model.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-efficiency-cost-markup-comparison-bw-academic.jpg)
+![Cost efficiency comparison between traditional Phase 3 trials and the decentralized RECOVERY trial model.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-efficiency-cost-bw-academic.jpg)
 
 ## Summary Table
 

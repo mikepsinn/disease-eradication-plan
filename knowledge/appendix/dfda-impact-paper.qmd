@@ -928,7 +928,7 @@ For economist verification, this section provides complete derivation chains for
 
 ### 3. Lives Saved Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}})
 
-![A flowchart illustrating the multi-step derivation of total lives saved by combining global daily mortality, the percentage of avoidable deaths, and the total timeline shift period.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-3-lives-saved-derivation-var-dfda-trial-capacity-plus-efficacy-lag-lives-saved-bw-academic.jpg)
+![A flowchart illustrating the multi-step derivation of total lives saved by combining global daily mortality, the percentage of avoidable deaths, and the total timeline shift period.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-3-lives-saved-derivation-bw-academic.jpg)
 
 **Step 1: Daily mortality from eventually avoidable causes**
 - Global disease deaths: {{< var global_disease_deaths_daily >}}/day

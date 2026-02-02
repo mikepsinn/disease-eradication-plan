@@ -124,7 +124,7 @@ The framework does not hide this tradeoff by claiming healthcare cost savings ar
 
 While OPG uses only two terminal metrics (income growth and healthy life years), evidence often measures **surrogate outcomes** (smoking rates, traffic deaths, crime rates). This section specifies how surrogate outcomes are translated to the terminal metrics.
 
-![A flowchart illustrating the transition from policy interventions to terminal metrics through proximate and intermediate outcomes, highlighting specific conversion factors and the compounding of uncertainty across the chain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-outcome-translation-methodology-sec-outcome-translation-bw-academic.jpg)
+![A flowchart illustrating the transition from policy interventions to terminal metrics through proximate and intermediate outcomes, highlighting specific conversion factors and the compounding of uncertainty across the chain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-outcome-translation-method-bw-academic.jpg)
 
 **The translation chain:**
 
@@ -170,7 +170,7 @@ Where CV is the coefficient of variation at each translation step. A three-step 
 
 **Core insight**: Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists, scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
 
-![A conceptual visualization showing how diverse policy data from thousands of jurisdictions over centuries flows into a central system for systematic harvesting and analysis.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-evidence-base-centuries-of-natural-policy-experiments-sec-evidence-base-bw-academic.jpg)
+![A conceptual visualization showing how diverse policy data from thousands of jurisdictions over centuries flows into a central system for systematic harvesting and analysis.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-evidence-base-centurie-bw-academic.jpg)
 
 ### Scale of Available Natural Experiments
 
@@ -615,7 +615,7 @@ The following weights reflect proposed defaults based on the methodological rigo
 
 Bradford Hill's criteria for causality [@bradford-hill-1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
 
-![A conceptual diagram showing the mapping process where individual Bradford Hill criteria are processed through saturation functions to yield normalized scores between 0 and 1.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-bradford-hill-criteria-scoring-functions-sec-bradford-hill-bw-academic.jpg)
+![A conceptual diagram showing the mapping process where individual Bradford Hill criteria are processed through saturation functions to yield normalized scores between 0 and 1.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-bradford-hill-criteria-sco-bw-academic.jpg)
 
 #### Strength of Association
 

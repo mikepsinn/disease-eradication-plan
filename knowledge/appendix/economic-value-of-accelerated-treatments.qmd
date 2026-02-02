@@ -34,20 +34,20 @@ The value of a new therapy can be assessed through market performance and societ
 - **Market Valuation:** Research estimates the average value of a successful new drug at **[$1.62 billion](https://arxiv.org/abs/2212.07384)**.
 - **Development Costs:** Drug development costs range from **[$314 million to $4.46 billion](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2820562)** depending on therapeutic area and clinical complexity.
 
-![A comparison of the average market valuation for a new drug versus the broad range of potential development costs.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-average-economic-value-of-a-new-therapy-bw-academic.jpg)
+![A comparison of the average market valuation for a new drug versus the broad range of potential development costs.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-average-economi-bw-academic.jpg)
 
 ## **Annual Value Based on Average Approvals**
 
 - **FDA Approvals:** The **[FDA](https://www.nature.com/articles/d41573-025-00001-5)** approves around **{{< var current_drug_approvals_per_year >}} new drugs annually**.
 - **Total Annual Value:** Multiplying **{{< var current_drug_approvals_per_year >}} approvals** by **$1.62 billion** yields an estimated **$81 billion** in economic value per year.
 
-![A visual breakdown of the annual economic value calculation, illustrating the relationship between 50 yearly drug approvals and the resulting $81 billion in total value.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-annual-value-based-on-average-approvals-bw-academic.jpg)
+![A visual breakdown of the annual economic value calculation, illustrating the relationship between 50 yearly drug approvals and the resulting $81 billion in total value.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-annual-value-ba-bw-academic.jpg)
 
 ## **Impact of {{< var dfda_trial_capacity_multiplier >}} More Trial Capacity**
 
 What would happen with {{< var dfda_trial_capacity_multiplier >}} more trial capacity to test treatments simultaneously?
 
-![A visual comparison showing the current baseline of 50 new drug approvals per year versus a massive projected increase resulting from 12.3 times more trial capacity.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-impact-of-var-dfda-trial-capacity-multiplier-more-trial-capacity-bw-academic.jpg)
+![A visual comparison showing the current baseline of 50 new drug approvals per year versus a massive projected increase resulting from 12.3 times more trial capacity.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-impact-of-bw-academic.jpg)
 
 
 - **Hypothetical Annual Approvals:** {{< var current_drug_approvals_per_year >}} new therapies × {{< var dfda_trial_capacity_multiplier >}} = **{{< var dfda_trial_capacity_multiplier >}} {{< var current_drug_approvals_per_year >}} new therapies annually**.

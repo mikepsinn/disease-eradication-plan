@@ -88,7 +88,7 @@ In this Act:
 (b) **Qualification pathway.** The regulations shall establish a transparent qualification pathway; once a NAM is qualified for a defined context of use, FDA reviewers shall accept data from that method without requiring parallel animal studies.
 (c) **Annual report.** The Commissioner shall publish an annual public report enumerating qualified NAMs, sponsor submissions using NAMs, and areas still requiring animal use with timelines to develop alternatives.
 
-![A flowchart showing the regulatory process for qualifying non-animal test methods, from initial rulemaking to the acceptance of data as primary safety evidence in place of animal studies.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-201-accelerated-adoption-of-alternative-preclinical-test-methods-bw-academic.jpg)
+![A flowchart showing the regulatory process for qualifying non-animal test methods, from initial rulemaking to the acceptance of data as primary safety evidence in place of animal studies.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-201-accelerated-adopt-bw-academic.jpg)
 
 
 ### SEC. 202. GUIDANCE ON DECENTRALISED, ADAPTIVE, AND REAL‑WORLD‑EVIDENCE TRIALS
@@ -98,7 +98,7 @@ In this Act:
 (c) **Real‑World Evidence.** Within 18 months the Secretary shall publish a framework specifying how real‑world data (EHRs, claims, device feeds) integrated via the FDA v2 Protocol may support new indications, post‑marketing commitments, or safety label changes.
 (d) **Training.** FDA shall establish continuing‑education modules to train reviewers in decentralized‑trial oversight, Bayesian statistics, and RWE analytics.
 
-![A conceptual diagram illustrating the four key pillars of clinical trial modernization: decentralized trials, adaptive designs, real-world evidence integration, and regulatory training.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-202-guidance-on-decentralised-adaptive-and-real-world-evidence-trials-bw-academic.jpg)
+![A conceptual diagram illustrating the four key pillars of clinical trial modernization: decentralized trials, adaptive designs, real-world evidence integration, and regulatory training.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-202-guidance-on-decen-bw-academic.jpg)
 
 
 ### SEC. 203. PATIENT‑FOCUSED DRUG DEVELOPMENT AND GLOBAL COLLABORATION
@@ -107,7 +107,7 @@ In this Act:
 (b) **Global Work‑sharing.** The Secretary may enter into work‑sharing arrangements with peer regulators (EMA, PMDA, Health Canada) for concurrent review of applications utilising FDA v2 Protocol data.
 (c) **Data Standards Convergence.** The Secretary shall align FDA data standards with HL7 FHIR Release 5, CDISC SDTM v4, and SNOMED‑CT 2025 edition to ensure cross‑border data utility.
 
-![A diagram illustrating the three pillars of modern drug development: integration of patient experience data, concurrent global regulatory review, and the alignment of international data standards.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-203-patient-focused-drug-development-and-global-collaboration-bw-academic.jpg)
+![A diagram illustrating the three pillars of modern drug development: integration of patient experience data, concurrent global regulatory review, and the alignment of international data standards.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-203-patient-focused-d-bw-academic.jpg)
 
 
 ### SEC. 204. FDA.gov v2 DECENTRALIZED HEALTH PROTOCOL AND REFERENCE IMPLEMENTATION
@@ -142,7 +142,7 @@ In this Act:
 (5) **Democratic Renewal.** The community-elected AI/ML security expert and patient-advocate seats are subject to annual election by contributors (defined as those with ≥5 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
 (h) **Rulemaking & PRA Fast‑Track.** Within 180 days the Secretary shall issue interim final rules specifying technical standards for each module, **standards for the content, format, and regular updating of Outcome Labels mandated under subsection (d)(1) of this section,** codifying the TSC charter, and **invoking 44 U.S.C. § 3507(h) such that any Information‑Collection Request[5] tied to the FDA v2 Protocol obtains OMB clearance within 60 days.** Sponsors or investigators that fail to comply with these rules may be suspended under 21 U.S.C. § 331(f).
 
-![Architectural diagram of the FDA.gov v2 Decentralized Health Protocol showing the flow between the open API, AI-governance pull-request triage, blockchain ledger components, and multi-stakeholder oversight.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-204-fda-gov-v2-decentralized-health-protocol-and-reference-implementation-bw-academic.jpg)
+![Architectural diagram of the FDA.gov v2 Decentralized Health Protocol showing the flow between the open API, AI-governance pull-request triage, blockchain ledger components, and multi-stakeholder oversight.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-204-fda-gov-v2-decent-bw-academic.jpg)
 
 
 (i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program, funded under § 402(a), to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. **The AI Governance and Security Reviewer shall be used to automatically verify vulnerability submissions, score their severity, and recommend payment amounts to expedite the bounty process.** Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level data aggregated and analyzed by the Protocol shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
@@ -171,7 +171,7 @@ In this Act:
 
 (a) **Right.** Beginning 24 months after enactment, any U.S. resident who requests an investigational intervention shall be guaranteed enrolment, remotely if necessary, in at least one pragmatic, decentralized trial arm evaluating that intervention, subject to the safety-based exclusions specified in subsection (c).
 
-![A flowchart illustrating the universal eligibility pathway, showing the decision logic between sponsor-led enrollment with PRV incentives and the 60-day NIH micro-study fallback mechanism.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-301-universal-eligibility-for-investigational-interventions-bw-academic.jpg)
+![A flowchart illustrating the universal eligibility pathway, showing the decision logic between sponsor-led enrollment with PRV incentives and the 60-day NIH micro-study fallback mechanism.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-301-universal-eligibi-bw-academic.jpg)
 
 
 (b) **Sponsor Incentive.** The Secretary shall award a **transferable Priority‑Review Voucher (PRV)** under section 524A of the Federal Food, Drug, and Cosmetic Act to any sponsor that, on or before the universal‑enrolment activation date, opens or amends a trial on the **FDA.gov Public Portal** to accept such patient‑directed enrolment and maintains adequate investigational‑product supply. A PRV is forfeited if the sponsor later restricts patient enrolment without a documented safety or manufacturing constraint.
@@ -210,7 +210,7 @@ In this Act:
 
 (a) **Determination and Disclosure of Participation Costs.** Prior to a patient consenting to a trial, the sponsoring entity shall determine and provide to the FDA v2 Decentralized Health Protocol a comprehensive, itemized estimate of all direct costs associated with that specific patient's anticipated participation in the trial. This shall include, but not be limited to, costs of investigational product, necessary medical procedures, diagnostic tests, monitoring, and data management directly attributable to the research participant. These estimated costs, alongside the NIH-funded discount applicable under SEC. 303, and the final net cost to the patient, shall be transparently displayed to the potential participant via the **FDA.gov Public Portal** (SEC. 204(c)(3)) and detailed in the e-consent form (SEC. 302(b)). This transparent disclosure of itemized costs on a decentralized framework is intended to encourage competitive and efficient pricing by sponsoring entities.
 
-![A process flow diagram showing the interaction between trial sponsors, the FDA v2 protocol, and patients regarding cost calculations, NIH discounts, and the conditional refund of data deposits.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-304-patient-cost-contribution-for-trial-participation-bw-academic.jpg)
+![A process flow diagram showing the interaction between trial sponsors, the FDA v2 protocol, and patients regarding cost calculations, NIH discounts, and the conditional refund of data deposits.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-304-patient-cost-cont-bw-academic.jpg)
 
 
 (b) **Patient Net Cost Contribution.** Each participant shall be responsible for contributing the net cost of their trial participation, calculated as the estimated total direct cost of participation (as determined in subsection (a) of this section) minus the NIH-funded discount (as determined and applied under SEC. 303). The **FDA.gov Public Portal** shall facilitate the management of this net cost contribution.
@@ -258,7 +258,7 @@ In this Act:
 (b) **Report to Congress.** Within 18 months of enactment, the Secretary shall submit a report to Congress outlining this strategy, including: (1) proposed frameworks for a new international governance body; (2) a timeline for transitioning technical and administrative oversight; and (3) a plan for ensuring the long-term sustainability and neutrality of the protocol, including research into and pathways toward cryptographically-secured, on-chain governance models that reduce reliance on a central administrative body.
 (c) **Continued Support.** The United States shall continue to provide technical and financial support for the Protocol during a transition period of no less than 5 years after an international governance body is established.
 
-![A roadmap illustrating the transition of protocol governance from United States government oversight to an international multi-stakeholder body and eventually to a decentralized, on-chain governance model.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-404-strategy-for-global-governance-and-decentralization-bw-academic.jpg)
+![A roadmap illustrating the transition of protocol governance from United States government oversight to an international multi-stakeholder body and eventually to a decentralized, on-chain governance model.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-404-strategy-for-glob-bw-academic.jpg)
 
 
 ### SEC. 405. SEVERABILITY
@@ -269,7 +269,7 @@ If any provision of this Act is held invalid, the remainder shall remain in effe
 
 (a) **Public Justification Reports Required.** For any regulatory action taken by the Secretary that denies, restricts, or withdraws patient access to any potential treatment, the Secretary shall, within 60 days of such action, publish a comprehensive report. This report shall be publicly available on the **FDA.gov Public Portal**.
 
-![Workflow diagram of the mandatory FDA impact analysis process, illustrating the path from regulatory proposal to publication, including AI-driven modeling, public comment phases, and independent oversight audits.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-406-transparency-in-regulatory-actions-limiting-treatment-access-bw-academic.jpg)
+![Workflow diagram of the mandatory FDA impact analysis process, illustrating the path from regulatory proposal to publication, including AI-driven modeling, public comment phases, and independent oversight audits.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-406-transparency-in-r-bw-academic.jpg)
 
 
 (b) **Content of Report.** Such report shall include, at a minimum: (1) a detailed summary of the scientific evidence regarding the treatment's benefits and risks considered by the Secretary, including available clinical endpoint data; (2) the specific rationale for the regulatory action, including any statutory obligations influencing the decision; (3) an analysis of the anticipated impact of the action on patient populations, including consideration of available alternatives, unmet medical needs, and a summary of available information on potential health economic consequences, including, where feasible and appropriate, a qualitative or quantitative assessment of costs and benefits; provided that, upon certification by the Secretary that the capabilities developed under subsection (d) are sufficiently mature, such assessment shall include a quantitative health and economic modeling simulation as detailed therein; (4) an explanation of why less restrictive regulatory measures, if applicable, were deemed insufficient; and (5) any dissenting opinions from within the review team or advisory committees, if applicable.
