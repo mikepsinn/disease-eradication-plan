@@ -1,6 +1,6 @@
 ---
 title: The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
-description: Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and avert {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} at {{< var dfda_direct_funding_cost_per_daly >}} per DALY, while generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings.
+description: Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the system could save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and avert {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} at {{< var dfda_direct_funding_cost_per_daly >}} per DALY, while generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings.
 abstract: |
   Clinical trials cost {{< var pharma_drug_development_cost_current >}} and take a decade per drug. Most
   humans die before the drugs that could save them finish paperwork. A decentralized framework for drug
@@ -9,7 +9,7 @@ abstract: |
   data aggregation into unified databases, (4) treatment rankings ("Consumer Reports for drugs") with
   every treatment ranked by real-world effectiveness, and (5) outcome labels showing exactly what happened
   to real patients. Pragmatic trials cost {{< var dfda_trial_cost_reduction_factor >}}
-  less than traditional trials per patient, enabling vastly more parallel research. The framework generates
+  less than traditional trials per patient, enabling vastly more parallel research. The system generates
   health benefits through timeline acceleration: exploring the therapeutic search space would take
   ~{{< var status_quo_queue_clearance_years >}} under the status quo, but treatments get discovered
   ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier with expanded capacity. Combined with eliminating the {{< var efficacy_lag_years >}} regulatory efficacy delay (via
@@ -58,10 +58,10 @@ The figures below represent **cumulative benefits over the entire acceleration p
 This framework is **protocol infrastructure**, open standards that existing systems adopt, not a competing service:
 
 - **What it IS**: Open standards for trial data exchange, outcome reporting, and treatment ranking - like HTTP for clinical trials, or FHIR for health data
-- **What it is NOT**: A SaaS product that competes with Medable, Science 37, or other clinical trial platforms
+- **What it is NOT**: A SaaS product that competes with existing clinical trial platforms
 - **How existing systems benefit**: DCT platforms, EHR systems, and health apps integrate the protocol to gain interoperability, access larger patient pools, and contribute to standardized treatment rankings
 
-**Who builds on it**: Medable, Science 37, Epic, Cerner, academic medical centers, Apple Health, Fitbit - any system collecting health outcomes.
+**Who builds on it**: DCT platforms, major EHR systems, academic medical centers, consumer health apps - any system collecting health outcomes.
 :::
 
 **How it works:** Companies register treatments through any protocol-compliant system. Patients search for their condition, see treatments ranked by effectiveness, and can join trials through their preferred app or platform. Patient-reported outcomes flow back into the aggregated rankings. The result is a self-improving ecosystem where every participant's experience helps the next patient make better decisions.
@@ -72,7 +72,7 @@ This framework is **protocol infrastructure**, open standards that existing syst
 
 - **Cost Reduction:** Clinical trial costs decrease by {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}}). Pragmatic trials like ADAPTABLE ({{< var adaptable_trial_cost_per_patient >}}/patient) and systematic reviews (median {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient) demonstrate feasibility. Applied to the {{< var global_clinical_trials_spending_annual >}} annual trial market, this yields [tens of billions in savings](#roi-analysis).
 - **Expanded Therapeutic Coverage:** Lower costs enable testing of rare diseases and treatments that lack commercial incentives. Treatments reach patients earlier in disease progression.
-- **Mortality Reduction:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} additional life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift ({{< var dfda_trial_capacity_multiplier >}} trial capacity plus efficacy lag elimination), enabling faster access, improved prevention data, and research for neglected diseases.
+- **Mortality Reduction:** The system generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} additional life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift ({{< var dfda_trial_capacity_multiplier >}} trial capacity plus efficacy lag elimination), enabling faster access, improved prevention data, and research for neglected diseases.
 
 ![Before/after comparison showing 97.7 percent cost reduction, 12.3x trial capacity increase, and 565B DALYs averted from traditional to decentralized framework.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
 
@@ -119,7 +119,7 @@ This framework is **protocol infrastructure**, open standards that existing syst
 
 **Why treatments arriving sooner saves lives:**
 
-A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the framework. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
+A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the system. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
 
 **The two components:**
 
@@ -159,13 +159,13 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 ### Key Capabilities
 
-![A federated data architecture diagram showing a central query engine interacting with distributed data sources like Epic, Cerner, and Apple Health, where data remains at the source while insights are aggregated.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-key-capabilities-bw-academic.jpg)
+![A federated data architecture diagram showing a central query engine interacting with distributed data sources like EHR systems and consumer health apps, where data remains at the source while insights are aggregated.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-key-capabilities-bw-academic.jpg)
 
 - **Treatment Rankings**: Every treatment for every condition ranked by real-world effectiveness, updated continuously as new data arrives
 - **Outcome Labels**: Standardized "nutrition facts for drugs" showing effectiveness rates, side effects, and outcomes from real patients
 - **Universal Trial Access**: Any patient can participate from anywhere via phone/computer
 - **Real-Time Surveillance**: Continuous data on efficacy, side effects, and drug interactions
-- **Federated Data Architecture**: Data stays in source systems (Epic, Cerner, Apple Health) while queries run across all sources
+- **Federated Data Architecture**: Data stays in source systems (EHR platforms, consumer health apps) while queries run across all sources
 
 ### Potential Impact on the Status Quo
 
@@ -216,7 +216,7 @@ A critical assumption in this analysis is that {{< var eventually_avoidable_deat
 
 **What if this assumption is wrong?**
 
-Even if only 25% of deaths are eventually avoidable (half our estimate), the framework still generates {{< var dfda_roi_rd_only >}} ROI from R&D savings alone, independent of health benefits. These deaths will eventually be preventable with sufficient research progress. The health impact figures scale linearly with avoidability assumptions, but the cost-saving case doesn't depend on them.
+Even if only 25% of deaths are eventually avoidable (half our estimate), the system still generates {{< var dfda_roi_rd_only >}} ROI from R&D savings alone, independent of health benefits. These deaths will eventually be preventable with sufficient research progress. The health impact figures scale linearly with avoidability assumptions, but the cost-saving case doesn't depend on them.
 
 ### Trial Funding Scenario
 
@@ -249,10 +249,10 @@ Approximately {{< var diseases_without_effective_treatment >}} lack effective tr
 >
 > - **Upfront protocol/API build:** \$15–25M
 > - **Annual protocol operations:** \$5–12M
-> - **Integration onboarding fund:** \$20-50M (one-time, to support Epic/Cerner/Medable adoption)
+> - **Integration onboarding fund:** \$20-50M (one-time, to support EHR and DCT platform adoption)
 > - **Total initiative:** ~\$40-75M upfront, \$5-12M annual
 >
-> **Ecosystem Integration**: The protocol leverages existing infrastructure - DCT platforms (Medable, Science 37), EHR systems (Epic, Cerner), academic medical centers, and health apps. These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
+> **Ecosystem Integration**: The protocol leverages existing infrastructure - DCT platforms, major EHR systems, academic medical centers, and consumer health apps. These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
 
 ![A visual representation of the protocol ecosystem showing how a central interoperability layer connects EHR systems, clinical trial platforms, and medical centers, paired with a breakdown of upfront versus recurring costs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estimates-bw-academic.jpg)
 
@@ -322,14 +322,14 @@ The protocol creates value by enabling interoperability among existing clinical 
 
 | Participant | Current Investment | How They Integrate | What They Gain |
 |-------------|-------------------|-------------------|----------------|
-| **DCT Platforms** (Medable, Science 37, Thread) | $500M+ collectively | Adopt outcome reporting standards | Interoperability, larger patient pools, regulatory credibility |
-| **EHR Systems** (Epic, Cerner) | Billions in infrastructure | Enable federated queries | New revenue from research queries, competitive differentiation |
+| **DCT Platforms** | $1B+ collectively in VC funding | Adopt outcome reporting standards | Interoperability, larger patient pools, regulatory credibility |
+| **Major EHR Systems** | Billions in infrastructure | Enable federated queries | New revenue from research queries, competitive differentiation |
 | **Pharma Sponsors** | {{< var global_clinical_trials_spending_annual >}}/year on trials | Submit trials via compliant systems | Lower costs, faster enrollment, real-world evidence |
 | **Academic Medical Centers** | Research infrastructure | Contribute federated data nodes | Research funding, publication opportunities |
-| **Health Apps** (Apple Health, Fitbit) | Consumer health data | Report patient outcomes to protocol | User engagement, clinical validation |
+| **Consumer Health Apps** | Consumer health data | Report patient outcomes to protocol | User engagement, clinical validation |
 
 ::: {.callout-note}
-**Why This Matters**: Companies like Medable ($521M raised), Science 37, Epic, and Cerner have already built the infrastructure for patient recruitment, data collection, and trial management. The protocol doesn't replicate this work - it makes their existing investments more valuable by enabling data to flow across systems.
+**Why This Matters**: DCT platforms (collectively raising over $1B in venture funding) and major EHR systems have already built the infrastructure for patient recruitment, data collection, and trial management. The protocol doesn't replicate this work - it makes their existing investments more valuable by enabling data to flow across systems.
 :::
 
 ### Annual Operational Costs (5M MAU Target Scale) {#annual-operational-costs}
@@ -388,7 +388,7 @@ Where:
 
 #### Marginal Cost Analysis per User
 
-The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the framework, which is to support hundreds of millions or billions of users. At this initial scale, you can analyze the cost on a per-user basis.
+The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the system, which is to support hundreds of millions or billions of users. At this initial scale, you can analyze the cost on a per-user basis.
 
 - **Average Cost Range Per User (at 5M MAU):**
   - Based on the total annual operational cost range of **[\$11M - \$26.5M](#annual-operational-costs)**, the average cost per user is:
@@ -397,7 +397,7 @@ The **5M MAU** target is an illustrative milestone used for these initial ROM es
     $$
 
 - **Marginal Cost Per Additional User:**
-  - As federated data infrastructure, the framework has high fixed costs (protocol development, core engineering) but very low variable costs. Therefore, the **marginal cost** of supporting one additional participant is expected to be a small fraction of the average cost, likely **pennies per year**. This cost will decrease further as the protocol achieves greater economies of scale, making it exceptionally efficient at supporting a global participant base.
+  - As federated data infrastructure, the system has high fixed costs (protocol development, core engineering) but very low variable costs. Therefore, the **marginal cost** of supporting one additional participant is expected to be a small fraction of the average cost, likely **pennies per year**. This cost will decrease further as the protocol achieves greater economies of scale, making it exceptionally efficient at supporting a global participant base.
 
 _(Note: The underlying cloud infrastructure cost ($5M-$15M/year) is a top-down ROM estimate. A more granular, bottom-up analysis based on projected per-user storage, data transfer, and compute would provide further support for these figures and is a key area for future refinement of this model.)_
 
@@ -701,7 +701,7 @@ The following table quantifies how automated EHR monitoring would have changed o
 
 #### Pooled Liability Insurance
 
-The framework includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
+The system includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
 
 ![A comparison of Type I and Type II errors in drug regulation, illustrating the 3,070:1 ratio of deaths from delayed treatment access versus deaths prevented from unsafe drugs.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-pooled-liability-insurance-bw-academic.jpg)
 
@@ -824,7 +824,7 @@ $$
 
 **Timeline to Crossover:**
 
-At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the framework. For combination therapies ({{< var combination_therapy_disease_space >}} combinations), reaching 53% exploration would take millions of years.
+At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the system. For combination therapies ({{< var combination_therapy_disease_space >}} combinations), reaching 53% exploration would take millions of years.
 
 **Conclusion**: For any plausible planning horizon, learning effects dominate. Diminishing returns is a theoretical concern for civilizations operating on multi-century timescales, not a practical constraint for the next 100+ years of medical research.
 
@@ -882,7 +882,7 @@ For economist verification, this section provides complete derivation chains for
 
 ### 1. Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
 
-![A comparison showing the massive scale-up from current clinical trial capacity (1.9M patients) to the projected capacity under the framework (23.4M patients), highlighting the 12.3x multiplier effect.](/assets/images/dfda-impact-paper/dfda-impact-paper-1-trial-capacity-multiplier-derivation-trial-capacity-multiplier-bw-academic.jpg)
+![A comparison showing the massive scale-up from current clinical trial capacity (1.9M patients) to the projected capacity under the system (23.4M patients), highlighting the 12.3x multiplier effect.](/assets/images/dfda-impact-paper/dfda-impact-paper-1-trial-capacity-multiplier-derivation-trial-capacity-multiplier-bw-academic.jpg)
 
 **Step 1: Current trial capacity**
 - Current trial participants: {{< var current_trial_slots_available >}}
@@ -1016,11 +1016,11 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 **Alternative counterfactual scenarios:**
 
-1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of the framework is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing the framework's attributable benefit to ~74% of projections.
+1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of the system is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing the system's attributable benefit to ~74% of projections.
 
 2. **Alternative government priorities**: Funds are allocated to other health investments (NIH grants, hospital infrastructure, insurance subsidies). Each alternative use would require separate cost-benefit analysis. However, none of these alternatives address the core trial cost problem; they operate within the existing high-cost paradigm.
 
-3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The framework ROI of {{< var dfda_roi_rd_only >}} substantially exceeds this threshold.
+3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The system ROI of {{< var dfda_roi_rd_only >}} substantially exceeds this threshold.
 
 **Methodological note:** The analysis uses the neutral status quo baseline to avoid biasing results in either direction. Sensitivity analysis (tornado diagrams) demonstrates robustness across baseline assumptions.
 
@@ -1140,7 +1140,7 @@ The following auto-generated sensitivity analyses show how cost-effectiveness va
 
 ### Comparative Cost-Effectiveness - A Decentralized Framework vs Other Interventions
 
-To provide context for the impact of a decentralized framework's infrastructure, the chart below visualizes its cost-effectiveness against other well-understood public health programs. The metric used is **Quality-Adjusted Life Years (QALYs) Gained per $1 Million of Spending**. A higher number signifies greater cost-effectiveness.
+To provide context for the impact of a global pragmatic trial system's infrastructure, the chart below visualizes its cost-effectiveness against other well-understood public health programs. The metric used is **Quality-Adjusted Life Years (QALYs) Gained per $1 Million of Spending**. A higher number signifies greater cost-effectiveness.
 
 For standard interventions, this value is calculated as `$1,000,000 / ICER`, where the ICER (Incremental Cost-Effectiveness Ratio) is the cost to gain one QALY. For **dominant** interventions that are both more effective and less expensive, the ICER is negative, and this metric isn't strictly applicable. For these cases, an illustrative range is used to represent their high value.
 
@@ -1171,8 +1171,8 @@ The following table provides the data and sources that support the chart. The li
 
 <a id="ref_dfda_icer"></a>² **Cost-Dominant Interpretation**:
 
-- All scenarios for the framework show extremely low cost per DALY while generating net economic benefits that exceed costs
-- The framework is "dominant" - more effective and less costly than the status quo
+- All scenarios for the system show extremely low cost per DALY while generating net economic benefits that exceed costs
+- The system is "dominant" - more effective and less costly than the status quo
 
 <a id="ref_dominant"></a>³ **Dominant Interventions**:
 
@@ -1189,7 +1189,7 @@ The following table provides the data and sources that support the chart. The li
 
 ## Comparison to Other Major Public Investments
 
-To provide context for the estimated costs of a decentralized framework, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for a decentralized framework for drug assessment of approximately **{{< var dfda_npv_annual_opex_total >}} per year** (covering Core framework operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
+To provide context for the estimated costs of a global pragmatic trial system, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for the system of approximately **{{< var dfda_npv_annual_opex_total >}} per year** (covering Core framework operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
 
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Framework's Annual Cost | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------- |
@@ -1201,7 +1201,7 @@ To provide context for the estimated costs of a decentralized framework, it is u
 
 {{< include ../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
 
-**Key Takeaway:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the framework's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
+**Key Takeaway:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the system's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
 
 ## Why This Differs from Failed Megaprojects
 
@@ -1211,12 +1211,12 @@ This intervention differs in five critical ways:
 
 1. **Proven Technology**: Unlike speculative moonshots, pragmatic trials using existing EHR infrastructure have been validated. The RECOVERY trial enrolled 47,000+ patients at {{< var recovery_trial_cost_per_patient >}}/patient. ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US healthcare settings. This isn't "we hope this works" - it's "we've proven this works, now scale it."
 
-2. **Marginal Extension, Not Novel System**: The framework extends existing clinical trial infrastructure rather than replacing it. Hospitals already have EHRs. Patients already take medications. We're adding a coordination layer and outcome tracking, not building from scratch.
+2. **Marginal Extension, Not Novel System**: The system extends existing clinical trial infrastructure rather than replacing it. Hospitals already have EHRs. Patients already take medications. We're adding a coordination layer and outcome tracking, not building from scratch.
 
 3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, the protocol has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, we can adjust scope. The system generates its own performance metrics.
 
 4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}} ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, potentially even higher leverage.
 
-5. **Modern Infrastructure Makes This Possible Now**: The convergence of electronic health records (Epic/Cerner covering 57% of US hospitals), consumer wearables (billions of devices tracking health metrics), federated data networks (TriNetX queries 300M+ patient records without moving data), and AI-powered analysis enables systematic outcome tracking at scale that wasn't feasible even a decade ago. This isn't speculation about future technology - it's deployment of existing, proven infrastructure.
+5. **Modern Infrastructure Makes This Possible Now**: The convergence of electronic health records (major EHR systems covering 57% of US hospitals), consumer wearables (billions of devices tracking health metrics), federated data networks (querying 300M+ patient records without moving data), and AI-powered analysis enables systematic outcome tracking at scale that wasn't feasible even a decade ago. This isn't speculation about future technology - it's deployment of existing, proven infrastructure.
 
 ---
