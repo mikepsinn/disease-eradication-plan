@@ -215,14 +215,34 @@ function findCodeBlockEnd(lines: string[], lineIndex: number, sectionStart: numb
   return -1; // Not inside a code block
 }
 
+// Max length for the section slug portion of filename
+const MAX_SECTION_SLUG_LENGTH = 60;
+
 /**
  * Convert section title to kebab-case for use in filenames
+ * Strips Quarto variable shortcodes and truncates to prevent overly long paths
  */
 function toKebabCase(text: string): string {
-  return text
+  let result = text
+    // Remove Quarto variable shortcodes: {{< var param_name >}} -> empty
+    .replace(/\{\{<\s*var\s+[^>]+>\}\}/g, '')
+    // Convert to lowercase
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')  // Replace non-alphanumeric with hyphens
-    .replace(/^-+|-+$/g, '');      // Remove leading/trailing hyphens
+    // Replace non-alphanumeric with hyphens
+    .replace(/[^a-z0-9]+/g, '-')
+    // Collapse multiple hyphens
+    .replace(/-{2,}/g, '-')
+    // Remove leading/trailing hyphens
+    .replace(/^-+|-+$/g, '');
+
+  // Truncate if too long
+  if (result.length > MAX_SECTION_SLUG_LENGTH) {
+    result = result.substring(0, MAX_SECTION_SLUG_LENGTH);
+    // Don't end on a hyphen
+    result = result.replace(/-+$/, '');
+  }
+
+  return result;
 }
 
 /**

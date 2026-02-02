@@ -34,6 +34,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "render:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to pdf",
     "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
     "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
     "render:test:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to pdf --verify",
@@ -147,7 +148,6 @@
     "render:iab:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py iab --to pdf",
     "render:invisible-graveyard": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py invisible-graveyard",
     "render:invisible-graveyard:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py invisible-graveyard --to pdf",
-    "render:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to pdf",
     "render:epub": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to epub",
     "clean": "npx rimraf .quarto _book _freeze",
     "validate:all": "npm run validate:frontmatter && npm run validate:latex && npm run validate:render && npm run lint:md && npm run lint:qmd",
