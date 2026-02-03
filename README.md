@@ -49,7 +49,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
 
-> By allocating $21.8B/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the 443 years treatment testing backlog in 36 years, delivering 637:1 ROI, saving 10.7B deaths, and generating $58.6B in annual R&D savings at $0.841/DALY (97.7% cost red...
+> By allocating $21.8B/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the 443 years treatment testing backlog in 36 years, delivering 637:1 ROI, saving 10.7B deaths, and generating $58.6B in annual R&D savings at $0.841/DALY (97.7% (95% CI...
 
 
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)

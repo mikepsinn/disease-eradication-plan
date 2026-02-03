@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 5 | **Words:** 68,086
+**Files:** 5 | **Words:** 68,057
 
 #### index.qmd
 **Title:** Wishocracy
@@ -766,7 +766,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,498 words | 2,805 lines
+**Stats:** 29,469 words | 2,805 lines
 
   - Abstract
   - Key Findings
@@ -1007,12 +1007,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Type:** website
-**Files:** 1 | **Words:** 11,675
+**Files:** 1 | **Words:** 11,664
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
-**Description:** By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var statu...
-**Stats:** 11,675 words | 1,222 lines
+**Description:** By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this c...
+**Stats:** 11,664 words | 1,222 lines
 
   - Executive Summary
   - Protocol, Not Platform
@@ -1038,7 +1038,7 @@
     - Decentralized Trial Costs Modeled on Pragmatic Trials
     - Overall Savings
     - Economic Value of Earlier Access to Treatments
-    - Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
+    - Gross R&D Savings from a Decentralized FDA {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
     - Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
       - The Efficacy Lag Problem
       - How a Decentralized Framework Eliminates the Efficacy Lag
@@ -1050,7 +1050,7 @@
       - Detection Timeline Comparison
       - Comparative Safety Surveillance
       - Pooled Liability Insurance
-  - ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
+  - ROI Analysis for a Decentralized FDA {#simplified-roi-scenario}
     - Monte Carlo Distributions
   - Research Acceleration Mechanism
     - The Unexplored Therapeutic Frontier
@@ -4230,6 +4230,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 343,830
+- Total words: 343,790
 - Orphaned files: 26
 - Paper configs: 12
