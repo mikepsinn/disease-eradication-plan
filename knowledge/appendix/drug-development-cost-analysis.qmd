@@ -221,6 +221,7 @@ The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase s
 # === Drug Price Comparisons for Sanity Checks ===
 
 # 1. Generic vs. Brand-Name (Lipitor example)
+
 lipitor_brand_monthly = 175
 lipitor_generic_monthly_low = 10
 lipitor_generic_monthly_high = 20
@@ -228,6 +229,7 @@ lipitor_drop_pct_low = (1 - lipitor_generic_monthly_high / lipitor_brand_monthly
 lipitor_drop_pct_high = (1 - lipitor_generic_monthly_low / lipitor_brand_monthly) * 100
 
 # 2. Supplements vs. Prescription Drugs
+
 vitamin_d_supplement_per_1000iu_low = 0.05
 vitamin_d_supplement_per_1000iu_high = 0.10
 vitamin_d_prescription_per_1000iu_low = 1.50
@@ -249,6 +251,7 @@ niacin_ratio_low = niacin_prescription_per_500mg_low / niacin_supplement_per_500
 niacin_ratio_high = niacin_prescription_per_500mg_high / niacin_supplement_per_500mg
 
 # 3. Compounding Pharmacies
+
 testosterone_compounded_low = 30
 testosterone_compounded_high = 80
 testosterone_fda_low = 400
@@ -264,6 +267,7 @@ thyroid_ratio_low = thyroid_fda_low / thyroid_compounded_high
 thyroid_ratio_high = thyroid_fda_high / thyroid_compounded_low
 
 # 4. Veterinary vs. Human
+
 amoxicillin_vet_low = 0.10
 amoxicillin_vet_high = 0.30
 amoxicillin_human_low = 0.50
@@ -272,6 +276,7 @@ amoxicillin_ratio_low = amoxicillin_human_low / amoxicillin_vet_high
 amoxicillin_ratio_high = amoxicillin_human_high / amoxicillin_vet_low
 
 # 5. Orphan Drugs
+
 zolgensma_price = 2_100_000  # One-time treatment
 zolgensma_supportive_care_low = 5_000  # Annual
 zolgensma_supportive_care_high = 10_000  # Annual
@@ -295,6 +300,7 @@ brineura_annual = 700_000
 luxturna_onetime = 850_000
 
 # 6. New Antibiotic Development Economics
+
 new_drug_dev_cost = 2_600_000_000
 rare_infection_patients_annual = 50_000
 amortization_years = 10
@@ -303,6 +309,7 @@ manufacturing_cost_per_dose = 0.50
 antibiotic_regulatory_markup = dev_cost_per_patient / manufacturing_cost_per_dose
 
 # Orphan drug amortization examples
+
 rare_disease_patients_10k = 10_000
 ultra_rare_patients_1k = 1_000
 dev_cost_amortized_10k = new_drug_dev_cost / (rare_disease_patients_10k * amortization_years)

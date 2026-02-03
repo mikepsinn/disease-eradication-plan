@@ -130,8 +130,6 @@ A disease that would receive its first effective treatment in year 200 under the
 
 **How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the framework enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
----
-
 ## Vision and Capabilities
 
 ### Core Model: An Open Coordination Protocol
@@ -885,10 +883,12 @@ For economist verification, this section provides complete derivation chains for
 ![A comparison showing the massive scale-up from current clinical trial capacity (1.9M patients) to the projected capacity under the framework (23.4M patients), highlighting the 12.3x multiplier effect.](/assets/images/dfda-impact-paper/dfda-impact-paper-1-trial-capacity-multiplier-derivation-trial-capacity-multiplier-bw-academic.jpg)
 
 **Step 1: Current trial capacity**
+
 - Current trial participants: {{< var current_trial_slots_available >}}
 - Current first treatments: {{< var new_disease_first_treatments_per_year >}}
 
 **Step 2: Funded capacity with framework**
+
 - Annual trial funding: {{< var dih_treasury_to_medical_research_annual >}}
 - Cost per patient: {{< var dfda_pragmatic_trial_cost_per_patient >}}
 - Fundable patients: {{< var dih_patients_fundable_annually >}}
@@ -900,6 +900,7 @@ For economist verification, this section provides complete derivation chains for
 ### 2. Timeline Shift Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_years >}})
 
 **Components:**
+
 | Component | Value | Source |
 |-----------|-------|--------|
 | Efficacy Lag Elimination | {{< var efficacy_lag_years >}} | FDA drug approval timeline data |
@@ -913,10 +914,12 @@ For economist verification, this section provides complete derivation chains for
 ![A flowchart illustrating the multi-step derivation of total lives saved by combining global daily mortality, the percentage of avoidable deaths, and the total timeline shift period.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-3-lives-saved-derivation-bw-academic.jpg)
 
 **Step 1: Daily mortality from eventually avoidable causes**
+
 - Global disease deaths: {{< var global_disease_deaths_daily >}}/day
 - Eventually avoidable percentage: {{< var eventually_avoidable_death_pct >}}
 
 **Step 2: Timeline shift period**
+
 - Total shift: {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}
 
 **Step 3: Calculate lives saved**
@@ -926,9 +929,11 @@ For economist verification, this section provides complete derivation chains for
 ### 4. Cost per DALY Derivation ({{< var dfda_direct_funding_cost_per_daly >}})
 
 **Step 1: Total protocol infrastructure cost (10-year NPV)**
+
 - NPV total cost: {{< var dfda_npv_total_cost >}}
 
 **Step 2: DALYs averted**
+
 - Total DALYs: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
 
 **Step 3: Calculate cost per DALY**
@@ -944,10 +949,12 @@ For economist verification, this section provides complete derivation chains for
 ![A visual breakdown of the ROI calculation showing the massive scale difference between 389 billion in 10-year benefits and 611 million in costs, resulting in a 637:1 ratio.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-5-roi-derivation-var-dfda-roi-rd-only-bw-academic.jpg)
 
 **Step 1: Calculate benefits**
+
 - Annual R&D savings: {{< var dfda_benefit_rd_only_annual >}}
 - 10-year NPV of savings: {{< var dfda_npv_benefit_rd_only >}}
 
 **Step 2: Calculate costs**
+
 - 10-year NPV total cost: {{< var dfda_npv_total_cost >}}
 
 **Step 3: Calculate ROI**

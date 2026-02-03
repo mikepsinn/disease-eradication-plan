@@ -1,15 +1,6 @@
 ---
-title: >-
-  The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag,
-  1962-2024
-description: >-
-  The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug
-  approval after safety is proven. This study quantifies two distinct mortality
-  costs: (1) {{< var existing_drugs_efficacy_lag_deaths_total >}} historical
-  deaths during actual drug approval delays (1962-2024), and (2) {{< var
-  dfda_efficacy_lag_elimination_deaths_averted >}} future deaths from pushing
-  the disease eradication timeline back. Type II errors exceed Type I benefits
-  by {{< var type_ii_error_cost_ratio >}}.
+title: 'The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024'
+description: 'The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_deaths_total >}} historical deaths during actual drug approval delays (1962-2024), and (2) {{< var dfda_efficacy_lag_elimination_deaths_averted >}} future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by {{< var type_ii_error_cost_ratio >}}.'
 published: true
 tags:
   - appendix
@@ -129,6 +120,7 @@ Critics argue that faster approval pathways (breakthrough therapy designation, a
 4. **Priority Review:** 6-month review vs. standard 10-month
 
 **Key observations:**
+
 - These pathways have NOT produced Thalidomide-scale disasters, validating that speed ≠ danger
 - They remain *exceptional* rather than default: ~30% of approvals use expedited pathways; 70% face full regulatory burden
 - Their existence is an implicit admission that the baseline system is too slow for serious diseases
@@ -157,6 +149,7 @@ Sovaldi (sofosbuvir) received FDA Breakthrough Therapy designation and was appro
 **Implications for Causal Inference:**
 
 These cases establish that:
+
 - Regulatory delays have measurable mortality costs (beta-blockers: if Wardell's 10,000/year estimate holds, the 3-year US delay implies ~30,000 excess deaths)
 - Fast approval is technically feasible when institutional will exists (AZT: 20 months; Sovaldi: Breakthrough pathway)
 - Fast approval does not inevitably produce catastrophe (Sovaldi: excellent safety profile)
@@ -362,6 +355,7 @@ The YLD calculation above captures suffering *before death* for those who ultima
 The "{{< var pharma_lives_saved_annual >}} lives saved annually" from Lichtenberg's analysis captures mortality - people who would have *died* without post-1962 drugs. But pharmaceutical treatments primarily improve quality of life for people with *non-terminal* chronic conditions: diabetes, hypertension, depression, COPD, arthritis, and cardiovascular disease.
 
 **Treatment beneficiaries vastly exceed mortality beneficiaries.**
+
 :::
 
 **Data source**: IQVIA reports that global pharmaceutical use reached 1.8 trillion days of therapy in 2019, with 71% for chronic conditions (diabetes, CVD, respiratory, cancer) [@iqvia-global-medicines-2024]. From this, we estimate approximately {{< var chronic_disease_treated_patients_annual >}} unique patients receive chronic disease treatment annually.

@@ -323,6 +323,7 @@ $$
 $$
 
 where:
+
 - $w_j^Q \in (0,1]$ = quality weight based on identification strategy (RCT = 1, cross-sectional = 0.25)
 - $w_j^P = 1/\text{SE}(\hat{\beta}_j)^2$ = precision weight (inverse variance)
 - $w_j^R = e^{-\delta(t_{now} - t_j)}$ = recency weight with decay rate $\delta$
@@ -614,6 +615,7 @@ $$
 $$
 
 Where:
+
 - $\text{Scale}_i$ = target population for intervention $i$
 - $\text{Cost}_i$ = per-person cost of intervention $i$
 - $\text{QALY}_i$ = QALYs gained per person from intervention $i$
@@ -649,6 +651,7 @@ Cost-effectiveness estimates from CEA Registry and CDC vaccination cost studies.
 All interventions fall well below the conventional $50,000-$150,000 per QALY cost-effectiveness threshold, indicating strong economic justification for full scale-up.
 
 **OBG calculation**:
+
 - Childhood routine: 4M × $500 = $2.0B
 - HPV: 4M × $300 = $1.2B
 - Flu (elderly): 50M × $40 = $2.0B
@@ -952,6 +955,7 @@ Rigorous validation is essential for any framework that claims to identify optim
 A preliminary retrospective analysis could examine whether states that moved toward education OSL (estimated from high-performing states like Massachusetts and Minnesota) subsequently showed improved test scores and graduation rates relative to states that diverged. This analysis is noted as a priority for future empirical work.
 
 **Challenges**:
+
 - Confounding from simultaneous policy changes
 - Limited variation in spending changes within countries
 - Outcome measurement lags (education effects take years to materialize)

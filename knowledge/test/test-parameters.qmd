@@ -21,16 +21,19 @@ Testing callout rendering in PDF:
 
 ::: {.callout-note}
 ## This is a Note Callout
+
 This tests whether callouts render correctly in both HTML and PDF output.
 :::
 
 ::: {.callout-warning}
 ## Warning Example
+
 This is a warning callout with important information about the 3.5\% threshold for social change.
 :::
 
 ::: {.callout-tip}
 ## Pro Tip
+
 The treaty redirects 1\% of military spending to medical research, potentially saving millions of lives.
 :::
 

@@ -60,6 +60,7 @@ This audit applies engineering systems analysis to federal resource allocation. 
 
 ::: {.callout-warning}
 ## Interpretation Note
+
 The "human cost" figures are **economic equivalents**, not epidemiological mortality counts. Dividing the efficiency gap by VSL ($13.7M) or QALY threshold ($100K) yields a measure of foregone welfare, not literal deaths prevented.
 :::
 
@@ -481,9 +482,11 @@ Range: 52-67% depending on gap estimate used.
 To contextualize the efficiency gap in human terms, we apply standard valuation thresholds. **These are economic equivalents, not epidemiological mortality counts.**
 
 **Using VSL ($13.7 million):**
+
 $$\text{VSL-Equivalents} = \frac{\$2.27 \text{ trillion}}{\$13.7 \text{ million}} \approx 165,700$$
 
 **Using QALY threshold ($100,000):**
+
 $$\text{QALY-Equivalents} = \frac{\$2.27 \text{ trillion}}{\$100,000} = 22.7 \text{ million}$$
 
 **Interpretation:** The efficiency gap represents foregone welfare equivalent to 22.7 million quality-adjusted life years annually. This does not mean 165,700 people die from inefficiency. Rather, the misallocated resources *could have* purchased health improvements of that magnitude if deployed at cost-effectiveness thresholds used in medical decision-making.

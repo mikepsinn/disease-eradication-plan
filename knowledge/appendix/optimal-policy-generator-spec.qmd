@@ -391,6 +391,7 @@ OPG flags potential interaction effects using the following heuristics:
 **Worked example (policy interaction):**
 
 Seat belt law + Speed limit reduction:
+
 - Seat belt alone: +0.15 years healthy life
 - Speed limit alone: +0.06 years healthy life
 - Additive prediction: +0.21 years
@@ -548,6 +549,7 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 **Method**: Construct a "synthetic" control as a weighted average of untreated jurisdictions that matches the treated jurisdiction's pre-treatment outcome trajectory. Post-treatment divergence estimates the causal effect.
 
 **Quality metrics**:
+
 - `pre_treatment_rmse`: How well does synthetic control match pre-treatment? (Lower is better)
 - `placebo_p_value`: Permutation test comparing treated effect to placebo effects (Lower is better)
 
@@ -562,6 +564,7 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 **Method**: Compare pre-post change in treated jurisdictions to pre-post change in control jurisdictions. Difference of differences estimates treatment effect. For settings with staggered adoption, modern estimators account for heterogeneous treatment effects across cohorts [@callaway2021].
 
 **Quality metrics**:
+
 - `parallel_trends_test_stat`: Test statistic for pre-treatment trend equality
 - `parallel_trends_p_value`: P-value for parallel trends test (Higher is better, want to fail to reject)
 
@@ -576,6 +579,7 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 **Method**: Compare outcomes just above vs. just below the threshold. If other characteristics are smooth across the threshold, the discontinuity in outcomes estimates the causal effect.
 
 **Quality metrics**:
+
 - Bandwidth selection diagnostics
 - McCrary density test for manipulation
 - Covariate balance at threshold
@@ -591,6 +595,7 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 **Method**: Estimate treatment effects at each time period relative to treatment, including leads (pre-treatment) and lags (post-treatment).
 
 **Quality metrics**:
+
 - Pre-treatment coefficients should be near zero (no anticipation)
 - Post-treatment coefficients show effect dynamics
 
@@ -867,6 +872,7 @@ $$
 $$
 
 Where:
+
 - $d_{jk}$ = Standardized distance between jurisdiction $j$ and the evidence-weighted mean on factor $k$
 - $\delta_k$ = Sensitivity coefficient for factor $k$ (estimated from heterogeneity analysis)
 
@@ -890,6 +896,7 @@ This reflects increased uncertainty when extrapolating beyond the observed evide
 **Worked example:**
 
 Texas tobacco tax recommendation:
+
 - Evidence base: Primarily northeast/west coast states (higher income, lower smoking rates)
 - Texas demographics: Lower median income, higher baseline smoking
 - Context adjustment: 0.85 (effect likely 15% smaller in Texas context)
@@ -1108,6 +1115,7 @@ Q = w_{\text{method}} \cdot (1 - \text{violations})
 $$
 
 Where:
+
 - $w_{\text{method}}$ = Method confidence weight (see table above)
 - $\text{violations}$ = Proportion of validity checks failed (parallel trends, pre-treatment fit, etc.)
 
@@ -1329,6 +1337,7 @@ $$
 $$
 
 Policies with high VOI have:
+
 - **High prior uncertainty**: Current evidence is inconclusive
 - **High potential impact**: If the policy works, benefits are large
 - **Low trial cost**: Policy can be randomized in small jurisdictions cheaply
@@ -1431,6 +1440,7 @@ Policy effects face more confounding than drug trials:
 ### Heterogeneous Effects
 
 Policy effects vary by:
+
 - Jurisdiction characteristics (income, institutions, culture)
 - Implementation fidelity
 - Complementary policies
@@ -1756,6 +1766,7 @@ This recommendation illustrates how the two-metric framework surfaces genuine tr
 ![A two-axis tradeoff visualization plotting income impact against health gains, illustrating the optimal policy point between the extremes of infinite and zero tobacco taxes.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-tradeoff-demonstration-bw-academic.jpg)
 
 This demonstrates why the two-metric framework prevents corner solutions:
+
 - An **infinite tobacco tax** would maximize health but devastate income → not optimal
 - A **zero tobacco tax** would preserve income but harm health → not optimal
 - The **evidence-supported level** balances both dimensions
