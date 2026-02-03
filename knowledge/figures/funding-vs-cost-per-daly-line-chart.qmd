@@ -12,79 +12,27 @@ from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines, add_png_metadata,
     get_figure_output_path, COLOR_BLACK, COLOR_WHITE
 )
+from dih_models.dfda_trial_economics import (
+    compute_at_funding_level, compute_across_funding_levels,
+    get_floor_cost_per_daly, get_floor_queue_cost, get_ceiling_dalys,
+)
 
 setup_chart_style()
 
-# ── Parameters ──────────────────────────────────────────────────────
-opex = float(DFDA_ANNUAL_OPEX)                          # ~$40M/yr platform costs
-cost_per_patient = float(DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)  # ~$929/patient
-current_slots = float(CURRENT_TRIAL_SLOTS_AVAILABLE)     # ~1.9M patients/yr
-baseline_wait = float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT)  # ~222 years
-sq_queue = float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)       # ~443 years
-efficacy_lag = float(EFFICACY_LAG_YEARS)                 # 8.2 years
-annual_daly_burden = float(GLOBAL_ANNUAL_DALY_BURDEN)    # 2.88B DALYs/yr
-avoidable_pct = float(EVENTUALLY_AVOIDABLE_DALY_PCT)     # ~92%
-bed_nets = float(BED_NETS_COST_PER_DALY)                 # $89/DALY
-proposed_funding = float(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)  # ~$21.7B/yr
-upfront_cost = float(DFDA_NPV_UPFRONT_COST_TOTAL)        # ~$270M platform build
+# ── Parameters (only those needed for display, not computation) ────────
+bed_nets = float(BED_NETS_COST_PER_DALY)
+upfront_cost = float(DFDA_NPV_UPFRONT_COST_TOTAL)
 
-# ── Computation across funding levels ───────────────────────────────
-# For each funding level, compute:
-# 1. Trial capacity multiplier from funding
-# 2. Queue clearance time (how long funding must continue)
-# 3. Total undiscounted cost (upfront + annual × clearance years)
-# 4. DALYs averted from the resulting timeline shift
-# 5. Cost per DALY = total cost / DALYs
-funding_levels = np.logspace(np.log10(1e8), np.log10(2e11), 200)  # $100M to $200B
+# ── Computation via shared library ─────────────────────────────────────
+sweep = compute_across_funding_levels()
+funding_levels = sweep["funding_levels"]
+cost_per_daly = sweep["cost_per_daly"]
 
-cost_per_daly = np.full_like(funding_levels, np.nan)
+proposed = compute_at_funding_level()  # defaults to proposed treaty funding
+floor_cpd = get_floor_cost_per_daly()
+floor_cost = get_floor_queue_cost()
 
-for i, funding in enumerate(funding_levels):
-    subsidy = funding - opex
-    if subsidy <= 0:
-        continue
-
-    patients = subsidy / cost_per_patient
-    multiplier = patients / current_slots
-    if multiplier <= 1:
-        continue  # no acceleration below current capacity
-
-    # Queue clearance time scales inversely with multiplier
-    clearance_years = sq_queue / multiplier
-
-    # Trial capacity acceleration (diminishing returns via 1/k)
-    accel_years = baseline_wait * (1 - 1 / multiplier)
-
-    # Add efficacy lag elimination (fixed bonus)
-    total_shift = accel_years + efficacy_lag
-
-    # DALYs averted
-    dalys = annual_daly_burden * avoidable_pct * total_shift
-
-    # Total undiscounted cost: upfront build + annual funding over clearance period
-    total_cost = upfront_cost + funding * clearance_years
-
-    cost_per_daly[i] = total_cost / dalys
-
-# Compute proposed funding point
-proposed_subsidy = proposed_funding - opex
-proposed_patients = proposed_subsidy / cost_per_patient
-proposed_multiplier = proposed_patients / current_slots
-proposed_clearance = sq_queue / proposed_multiplier
-proposed_accel = baseline_wait * (1 - 1 / proposed_multiplier)
-proposed_total_shift = proposed_accel + efficacy_lag
-proposed_dalys = annual_daly_burden * avoidable_pct * proposed_total_shift
-proposed_total_cost = upfront_cost + proposed_funding * proposed_clearance
-proposed_cpd = proposed_total_cost / proposed_dalys
-
-# Asymptotic floor: at infinite funding, cost/DALY approaches this limit
-# total_cost → upfront + sq_queue × cost_per_patient × current_slots (fixed queue cost)
-# dalys → annual_daly_burden × avoidable_pct × (baseline_wait + efficacy_lag) (ceiling)
-floor_cost = sq_queue * cost_per_patient * current_slots
-ceiling_dalys = annual_daly_burden * avoidable_pct * (baseline_wait + efficacy_lag)
-floor_cpd = (upfront_cost + floor_cost) / ceiling_dalys
-
-# ── Plot ────────────────────────────────────────────────────────────
+# ── Plot ────────────────────────────────────────────────────────────────
 valid = ~np.isnan(cost_per_daly)
 valid_cpd = cost_per_daly[valid]
 valid_funding = funding_levels[valid]
@@ -114,14 +62,22 @@ ax.text(0.97, 0.08,
                   edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
 
 # Mark proposed funding
-ax.plot(proposed_funding / 1e9, proposed_cpd,
+pf = proposed["funding"]
+proposed_cpd = proposed["cost_per_daly"]
+proposed_clearance = proposed["clearance_years"]
+proposed_multiplier = proposed["multiplier"]
+proposed_total_shift = proposed["total_shift"]
+proposed_dalys = proposed["dalys_averted"]
+proposed_total_cost = proposed["total_cost"]
+
+ax.plot(pf / 1e9, proposed_cpd,
         marker='o', markersize=14, color=COLOR_BLACK, zorder=5)
 ax.annotate(
     f'Proposed Treaty: ${proposed_cpd:.2f}/DALY\n'
-    f'${proposed_funding/1e9:.1f}B/yr x {proposed_clearance:.0f} yrs = ${proposed_total_cost/1e9:.0f}B total\n'
+    f'${pf/1e9:.1f}B/yr x {proposed_clearance:.0f} yrs = ${proposed_total_cost/1e9:.0f}B total\n'
     f'{proposed_multiplier:.1f}x capacity, {proposed_total_shift:.0f}-yr treatment shift\n'
     f'= ${proposed_total_cost/1e9:.0f}B / {proposed_dalys/1e9:.0f}B DALYs',
-    xy=(proposed_funding / 1e9, proposed_cpd),
+    xy=(pf / 1e9, proposed_cpd),
     xytext=(0.50, 0.72), textcoords='axes fraction',
     fontsize=18, fontweight='bold', color=COLOR_BLACK,
     bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
@@ -175,10 +131,10 @@ add_png_metadata(
 plt.show()
 
 # Print verification
-print(f"\nVerification at proposed funding (${proposed_funding/1e9:.1f}B/yr):")
+print(f"\nVerification at proposed funding (${pf/1e9:.1f}B/yr):")
 print(f"  Trial capacity multiplier: {proposed_multiplier:.1f}x")
 print(f"  Queue clearance: {proposed_clearance:.1f} years")
-print(f"  Treatment acceleration: {proposed_accel:.1f} years")
+print(f"  Treatment acceleration: {proposed['accel_years']:.1f} years")
 print(f"  Total timeline shift: {proposed_total_shift:.1f} years")
 print(f"  DALYs averted: {proposed_dalys/1e9:.1f}B")
 print(f"  Upfront cost: ${upfront_cost/1e6:.0f}M")

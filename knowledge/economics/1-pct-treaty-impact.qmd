@@ -216,7 +216,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 **NPV (Net Present Value)**: Economic metric that discounts future cash flows to present-day values, accounting for the time value of money. Used to compare costs and benefits occurring at different times.
 
-![A flowchart showing how the 1% Treaty redirects military spending into a Treaty Fund to power decentralized institutes (DIH) and automated regulatory frameworks (dFDA) for pragmatic clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-nomenclature-and-key-terms-bw-academic.jpg)
+![A flowchart showing how the 1% Treaty redirects military spending into a Treaty Fund to power a decentralized institutes of health and a decentralized FDA for pragmatic clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-nomenclature-and-key-terms-bw-academic.jpg)
 
 **QALY (Quality-Adjusted Life Year)**: Standard health economics measure combining quantity and quality of life. One QALY = one year of life in perfect health. Used to compare health interventions across different conditions.
 
@@ -224,9 +224,9 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 **ROI (Return on Investment)**: Ratio of net benefits to costs. Calculated as NPV(Benefits) / NPV(Costs) for time-adjusted analysis, or Annual Benefits / Annual Costs for simple analysis.
 
-**Decentralized Framework for Drug Assessment (dFDA)**: A regulatory wrapper that automates trial creation, IRB approval, liability insurance, and simultaneous multi-agency submissions (FDA, EMA, PMDA, etc.) across countries. Like TurboTax abstracts away tax code complexity, the system abstracts away regulatory complexity: researchers define hypotheses, and the system handles compliance. Uses real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
+**A Decentralized FDA**: A regulatory wrapper that automates trial creation, IRB approval, liability insurance, and simultaneous multi-agency submissions (FDA, EMA, PMDA, etc.) across countries. Like TurboTax abstracts away tax code complexity, the system abstracts away regulatory complexity: researchers define hypotheses, and the system handles compliance. Uses real-world data, electronic health records, and decentralized patient participation. Reduces per-patient costs by 50-95% compared to traditional trials.
 
-**A decentralized institutes of health (DIH)**: A pattern for decentralized, programmable, and democratic organizations that implement health initiatives. Your decentralized institutes of health (DIH) can be funded by a 1% Treaty Fund to subsidize patient participation in pragmatic clinical trials.
+**A decentralized institutes of health**: A pattern for decentralized, programmable, and democratic organizations that implement health initiatives. A decentralized institutes of health can be funded by a 1% Treaty Fund to subsidize patient participation in pragmatic clinical trials.
 
 **Peace Dividend**: Economic benefits from reduced military spending, including fiscal savings, reduced conflict-related economic damage, and favorable economic multiplier effects from reallocating resources to productive sectors.
 
@@ -300,7 +300,7 @@ The mechanism is financial, not bureaucratic:
 
 1. **Patient subsidies**: Most treaty funding ({{< var dih_treasury_trial_subsidies_annual >}}) goes directly to subsidizing patient participation in trials at ~{{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} per patient, similar to how insurance covers medical procedures
 2. **Providers get paid**: Treatment providers can charge for patient participation in trials, making trials profitable rather than costly
-3. **Easy enrollment**: A decentralized framework for drug assessment infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
+3. **Easy enrollment**: A decentralized FDA infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
 4. **Patient choice**: Patients choose which trials to join; their subsidy follows them. Trials that attract patients get funded. No grant committees deciding what's "worthy."
 
 ![System diagram of the decentralized financial mechanism showing treaty funds flowing to patients, who direct subsidies to providers through their choice of clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-how-it-works-bw-academic.jpg)
@@ -1315,7 +1315,7 @@ These improvements compound multiplicatively to produce the {{< var dfda_trial_c
 
 The bottleneck in clinical research isn't "scientific genius", we have plenty of underemployed PhDs. The bottleneck is **"Data Friction"**.
 
-Currently, researchers spend up to 50% of their time [@grant-writing-time-50pct] on grants and administrative tasks. A decentralized framework for drug assessment automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
+Currently, researchers spend up to 50% of their time [@grant-writing-time-50pct] on grants and administrative tasks. A decentralized FDA automates this overhead, liberating human judgment to focus on hypothesis generation and complex safety signal interpretation.
 
 **The TurboTax Analogy**: Just as TurboTax wraps the complexity of federal, state, and local tax codes into a simple interface (users answer questions, it generates compliant filings), a global pragmatic trial system wraps the complexity of global regulatory bodies (FDA, EMA, PMDA, Health Canada, TGA, etc.) into a unified system. Researchers define their hypothesis and patient population; the system automatically:
 
@@ -1627,7 +1627,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Cost Reduction Assumptions
 
-**Assumption:** The methodology of a decentralized framework for drug assessment reduces per-patient trial costs by {{< var dfda_trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
+**Assumption:** The methodology of a decentralized FDA reduces per-patient trial costs by {{< var dfda_trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
 
 ![Comparison of per-patient trial costs between traditional randomized controlled trials and a decentralized framework, highlighting a cost reduction of over 95 percent.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-reduction-assumptions-bw-academic.jpg)
 
@@ -1644,7 +1644,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Historical Precedent: Pre-1962 Physician-Led Efficacy Trials
 
-**Context:** The decentralized framework for drug assessment approach is not an untested innovation extrapolated from a single case study. The Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] demonstrates that cost reductions are reproducible across therapeutic areas, not unique to RECOVERY's COVID emergency conditions. Moreover, this approach represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
+**Context:** A decentralized FDA approach is not an untested innovation extrapolated from a single case study. The Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] demonstrates that cost reductions are reproducible across therapeutic areas, not unique to RECOVERY's COVID emergency conditions. Moreover, this approach represents a return to the physician-led, real-world evidence model that operated successfully from 1883 to 1960 before being replaced by the current centralized system.
 
 **Cost structure comparison demonstrates dramatic efficiency difference:**
 
@@ -1862,7 +1862,7 @@ For detailed cost breakdown: [Platform Costs](https://dfda-impact.warondisease.o
 
 **Where the money goes**: {{< var dih_treasury_medical_research_pct >}} of treaty funding goes directly to pragmatic clinical trials (patients and providers as trial participation subsidies). Framework overhead is minimal ({{< var dfda_annual_opex >}}) compared to patient subsidies ({{< var dih_treasury_trial_subsidies_annual >}}).
 
-This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}}). Full breakdown: [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org#dfda-framework-costs-rom-estimates).
+This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption_ramp_years >}}). Full breakdown: [Decentralized FDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org#dfda-framework-costs-rom-estimates).
 
 ### Returns
 
@@ -1926,7 +1926,7 @@ The standard metric for comparing health interventions is **cost per DALY** (Dis
 - **Deworming [@deworming-cost-per-daly]**: {{< var deworming_cost_per_daly >}}/DALY (Deworm the World Initiative)
 - **Vitamin A Supplementation [@vitamin-a-cost-per-daly]**: {{< var vitamin_a_cost_per_daly >}}/DALY (Helen Keller International)
 
-**A 1% Treaty/decentralized framework for drug assessment:**
+**A 1% Treaty/decentralized FDA:**
 
 - **Conditional on success**: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY
 
@@ -2068,14 +2068,14 @@ For detailed analysis of personal wealth calculations, see [Disease Eradication 
 
 ## Comparative Effectiveness
 
-This section compares a 1% treaty/decentralized framework for drug assessment system to best-in-class health interventions across multiple categories.
+This section compares a 1% treaty/decentralized FDA system to best-in-class health interventions across multiple categories.
 
 ### Comprehensive Comparison
 
 | Intervention Type | Metric | Performance | Annual Benefit |
 |:---|:---|---:|---:|
-| **1% Treaty/dFDA** | Cost per life saved | **Cost-saving** | {{< var treaty_peace_plus_rd_annual_benefits >}} |
-| **1% Treaty/dFDA** | Cost per QALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} (cost-saving) | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} QALYs (total) |
+| **1% Treaty/Decentralized FDA** | Cost per life saved | **Cost-saving** | {{< var treaty_peace_plus_rd_annual_benefits >}} |
+| **1% Treaty/Decentralized FDA** | Cost per QALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} (cost-saving) | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} QALYs (total) |
 | **Childhood Vaccinations** | Annual benefit | Self-funding | ~{{< var childhood_vaccination_annual_benefit >}} |
 | **GiveWell Top Charities** | Cost per life saved | {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} | Variable |
 | **GiveWell Top Charities** | Cost per QALY | {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} | Variable |
@@ -2261,7 +2261,7 @@ This economic analysis focuses on the return on investment once the framework is
 
 For the rigorous analysis:
 
-- **[dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
+- **[Decentralized FDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
 - **[Economic Value of Accelerated Treatments](../appendix/economic-value-of-accelerated-treatments.qmd)** - The 7-year access acceleration math
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations available for independent verification
 - **{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness** - Why this is a dominant health intervention
@@ -2343,7 +2343,7 @@ For detailed mortality analysis, see [Regulatory Mortality Analysis](https://inv
 
 ### Patient Agency and Autonomy
 
-A decentralized institutes of health put patients in control through trial participation, not committee votes.
+A decentralized institutes of health puts patients in control through trial participation, not committee votes.
 
 ![A comparison between the centralized NIH funding model where bureaucrats act as gatekeepers and a decentralized model where patient participation directly dictates the flow of trial funding.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-patient-agency-and-autonomy-bw-academic.jpg)
 
@@ -2369,7 +2369,7 @@ The system operates through distributed infrastructure:
 - Public reporting of all spending and outcomes
 - Milestone-based funding (money releases when targets hit)
 
-See [DIH Anti-Capture Design](../solution/dih.qmd#anti-capture-design) and [Legal Architecture](../legal/legal-framework.qmd) for accountability mechanisms designed to prevent administrative delays and ensure timely fund deployment.
+See [Anti-Capture Design](../solution/dih.qmd#anti-capture-design) and [Legal Architecture](../legal/legal-framework.qmd) for accountability mechanisms designed to prevent administrative delays and ensure timely fund deployment.
 
 ## Limitations and Uncertainties
 
@@ -2506,7 +2506,7 @@ Furthermore, RCTs' restrictive eligibility criteria (excluding patients with com
 
 **Historical precedent:** Pre-1962 physician-led system successfully identified effective treatments (antibiotics, vaccines, surgical techniques) despite lacking modern randomization, suggesting real-world evidence can establish causality when combined with peer review and replication.
 
-**Publication bias:** Traditional trials face severe publication bias: only 37% of negative results are published compared to 94% of positive results [@publication-bias-clinical-trials], leading to overestimation of treatment effectiveness and ~$100 billion annually wasted on repeating failed experiments [@wasted-spending-on-failed-experiments]. A decentralized framework for drug assessment system addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, a decentralized framework for drug assessment's mandatory publication of all registered trials eliminates publication bias as a concern.
+**Publication bias:** Traditional trials face severe publication bias: only 37% of negative results are published compared to 94% of positive results [@publication-bias-clinical-trials], leading to overestimation of treatment effectiveness and ~$100 billion annually wasted on repeating failed experiments [@wasted-spending-on-failed-experiments]. A decentralized FDA addresses this by design: all trials are registered in the public database, all results (positive and negative) are automatically published through the transparent data infrastructure, and the open data architecture ensures no selective reporting. Unlike traditional systems where researchers choose what to publish, mandatory publication of all registered trials eliminates publication bias as a concern.
 
 **Conclusion:** Internal validity concerns are acknowledged, but the combination of randomization, large samples, and replication capacity provides adequate causal inference even with broader eligibility criteria.
 

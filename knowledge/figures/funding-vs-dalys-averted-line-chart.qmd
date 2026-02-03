@@ -12,57 +12,30 @@ from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines, add_png_metadata,
     get_figure_output_path, COLOR_BLACK, COLOR_WHITE
 )
+from dih_models.dfda_trial_economics import (
+    compute_at_funding_level, compute_across_funding_levels,
+    get_ceiling_dalys, get_efficacy_lag_dalys,
+)
 
 setup_chart_style()
 
-# ── Parameters ──────────────────────────────────────────────────────
-opex = float(DFDA_ANNUAL_OPEX)
-cost_per_patient = float(DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)
-current_slots = float(CURRENT_TRIAL_SLOTS_AVAILABLE)
-baseline_wait = float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT)
-sq_queue = float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)
-efficacy_lag = float(EFFICACY_LAG_YEARS)
-annual_daly_burden = float(GLOBAL_ANNUAL_DALY_BURDEN)
-avoidable_pct = float(EVENTUALLY_AVOIDABLE_DALY_PCT)
-proposed_funding = float(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
+# ── Computation via shared library ─────────────────────────────────────
+sweep = compute_across_funding_levels()
+funding_levels = sweep["funding_levels"]
+dalys_averted = sweep["dalys_averted"]
 
-# Asymptotic ceiling: maximum possible DALYs averted
-# At infinite funding, accel_years → baseline_wait, total_shift → baseline_wait + efficacy_lag
-max_total_shift = baseline_wait + efficacy_lag
-ceiling_dalys = annual_daly_burden * avoidable_pct * max_total_shift
+proposed = compute_at_funding_level()  # defaults to proposed treaty funding
+ceiling_dalys = get_ceiling_dalys()
+efficacy_only_dalys = get_efficacy_lag_dalys()
 
-# Efficacy lag baseline (independent of funding)
-efficacy_only_dalys = annual_daly_burden * avoidable_pct * efficacy_lag
+# Unpack proposed values for annotations
+pf = proposed["funding"]
+proposed_multiplier = proposed["multiplier"]
+proposed_clearance = proposed["clearance_years"]
+proposed_total_shift = proposed["total_shift"]
+proposed_dalys = proposed["dalys_averted"]
 
-# ── Computation across funding levels ───────────────────────────────
-funding_levels = np.logspace(np.log10(1e8), np.log10(2e11), 200)
-
-dalys_averted = np.full_like(funding_levels, np.nan)
-
-for i, funding in enumerate(funding_levels):
-    subsidy = funding - opex
-    if subsidy <= 0:
-        continue
-
-    patients = subsidy / cost_per_patient
-    multiplier = patients / current_slots
-    if multiplier <= 1:
-        continue
-
-    accel_years = baseline_wait * (1 - 1 / multiplier)
-    total_shift = accel_years + efficacy_lag
-    dalys_averted[i] = annual_daly_burden * avoidable_pct * total_shift
-
-# Compute proposed funding point
-proposed_subsidy = proposed_funding - opex
-proposed_patients = proposed_subsidy / cost_per_patient
-proposed_multiplier = proposed_patients / current_slots
-proposed_clearance = sq_queue / proposed_multiplier
-proposed_accel = baseline_wait * (1 - 1 / proposed_multiplier)
-proposed_total_shift = proposed_accel + efficacy_lag
-proposed_dalys = annual_daly_burden * avoidable_pct * proposed_total_shift
-
-# ── Plot ────────────────────────────────────────────────────────────
+# ── Plot ────────────────────────────────────────────────────────────────
 fig, ax = plt.subplots(figsize=(16, 11))
 
 valid = ~np.isnan(dalys_averted)
@@ -87,16 +60,20 @@ ax.text(0.03, 0.12,
                   edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
 
 # Mark proposed funding
-ax.plot(proposed_funding / 1e9, proposed_dalys / 1e9,
+ax.plot(pf / 1e9, proposed_dalys / 1e9,
         marker='o', markersize=14, color=COLOR_BLACK, zorder=5)
+
+avoidable_pct = float(EVENTUALLY_AVOIDABLE_DALY_PCT)
+annual_daly_burden = float(GLOBAL_ANNUAL_DALY_BURDEN)
+
 ax.annotate(
     f'Proposed Treaty: {proposed_dalys/1e9:.0f}B DALYs\n'
-    f'${proposed_funding/1e9:.1f}B/yr, {proposed_multiplier:.1f}x capacity\n'
+    f'${pf/1e9:.1f}B/yr, {proposed_multiplier:.1f}x capacity\n'
     f'{proposed_total_shift:.0f}-yr avg. treatment shift\n'
     f'queue cleared in {proposed_clearance:.0f} yrs\n'
     f'{proposed_dalys/ceiling_dalys*100:.0f}% of theoretical ceiling\n'
     f'= {annual_daly_burden/1e9:.1f}B/yr x {avoidable_pct*100:.0f}% x {proposed_total_shift:.0f} yrs',
-    xy=(proposed_funding / 1e9, proposed_dalys / 1e9),
+    xy=(pf / 1e9, proposed_dalys / 1e9),
     xytext=(0.50, 0.40), textcoords='axes fraction',
     fontsize=18, fontweight='bold', color=COLOR_BLACK,
     bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
@@ -140,10 +117,10 @@ add_png_metadata(
 plt.show()
 
 # Print verification
-print(f"\nVerification at proposed funding (${proposed_funding/1e9:.1f}B/yr):")
+print(f"\nVerification at proposed funding (${pf/1e9:.1f}B/yr):")
 print(f"  Trial capacity multiplier: {proposed_multiplier:.1f}x")
 print(f"  Queue clearance: {proposed_clearance:.1f} years")
-print(f"  Treatment acceleration: {proposed_accel:.1f} years")
+print(f"  Treatment acceleration: {proposed['accel_years']:.1f} years")
 print(f"  Total timeline shift: {proposed_total_shift:.1f} years")
 print(f"  DALYs averted: {proposed_dalys/1e9:.0f}B")
 print(f"  Ceiling DALYs: {ceiling_dalys/1e9:.0f}B")

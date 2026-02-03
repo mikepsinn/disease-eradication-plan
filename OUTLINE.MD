@@ -1256,12 +1256,12 @@
 ## _quarto-federal-efficiency-audit.yml
 **Title:** Federal Resource Allocation Efficiency Audit
 **Type:** website
-**Files:** 1 | **Words:** 4,480
+**Files:** 1 | **Words:** 4,529
 
 #### knowledge/appendix/federal-efficiency-audit.qmd
 **Title:** Federal Resource Allocation Efficiency Audit
 **Description:** Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark compariso...
-**Stats:** 4,480 words | 585 lines
+**Stats:** 4,529 words | 591 lines
 
   - Executive Summary
   - Interpretation Note
@@ -1313,6 +1313,7 @@
     - Human Cost Quantification (Economic Equivalents)
   - Reallocation Potential
     - Context Comparisons
+    - Opportunity Cost in Healthy Life Years
   - Structural Factors
     - Severed Feedback Loops
     - Principal-Agent Misalignment
@@ -1478,7 +1479,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 161,705
+**Files:** 67 | **Words:** 161,723
 
 #### index.qmd
 **Title:** Start Here
@@ -2045,10 +2046,10 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 2,617 words | 380 lines
+**Stats:** 2,613 words | 380 lines
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
-    - Their Current Business Model (It's Actually Terrible)
+    - Their Structural Vulnerabilities
     - Here's Your Better Offer: VICTORY Incentive Alignment Bonds
     - Why They'll Take the Deal
       - The Portfolio Math
@@ -3133,7 +3134,7 @@
 #### knowledge/appendix/fundraising-strategy.qmd
 **Title:** Fundraising Strategy
 **Description:** The {{< var treaty_campaign_total_cost >}} Activation Energy - Comprehensive strategy for raising {{< var treaty_campaign_total_cost >}} through multi-phase approach targeting crypto whales, health bi...
-**Stats:** 5,789 words | 868 lines
+**Stats:** 5,811 words | 868 lines
 
   - Fundraising Strategy: The {{< var treaty_campaign_total_cost >}} Activation Energy
     - On How to Raise {{< var treaty_campaign_total_cost >}} to Unlock {{< var treaty_annual_funding >}}/Year Forever
@@ -3157,29 +3158,29 @@
       - Model A: Traditional Foundation Grants ($442M)
         - How it would work
         - Evidence
-        - Pros
-        - Cons
+        - Foundation Grant Advantages
+        - Foundation Grant Limitations
       - Model B: VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) (Traditional Securities) ($500M-$1B)
         - How it would work
         - Evidence
-        - Pros
-        - Cons
+        - Traditional Securities Advantages
+        - Traditional Securities Limitations
       - Model C: Security Token Offering / Crypto ($100M-$500M)
         - How it would work
         - Evidence
-        - Pros
-        - Cons
+        - Security Token Advantages
+        - Security Token Limitations
       - Model D: Litigation Finance / Contingency Model ($0 upfront)
         - How it would work
         - Evidence
-        - Pros
-        - Cons
+        - Contingency Model Advantages
+        - Contingency Model Limitations
       - Model E: Defense Contractor Conversion (Most Realistic?)
         - How it would work
         - Evidence
         - Calculation
-        - Pros
-        - Cons
+        - Defense Contractor Conversion Advantages
+        - Defense Contractor Conversion Limitations
       - Model F: Phased Hybrid Approach (Evidence-Based)
         - Based on what actually worked historically
           - Phase 1: Pilot ($10-20M, Years 1-2)
@@ -4229,6 +4230,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 343,763
+- Total words: 343,830
 - Orphaned files: 26
 - Paper configs: 12

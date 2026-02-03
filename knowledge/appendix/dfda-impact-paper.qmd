@@ -1,8 +1,8 @@
 ---
 title: How to Prevent a Year of Death and Suffering for 84 Cents
-description: By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var status_quo_queue_clearance_years >}} treatment testing backlog in {{< var dfda_queue_clearance_years >}}, delivering {{< var dfda_roi_rd_only >}} ROI, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, and generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings at {{< var dfda_direct_funding_cost_per_daly >}}/DALY ({{< var dfda_trial_cost_reduction_pct >}} cost reduction, {{< var dfda_trial_capacity_multiplier >}} capacity increase).
+description: By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var status_quo_queue_clearance_years >}} treatment testing backlog in {{< var dfda_queue_clearance_years >}}, delivering {{< var dfda_roi_rd_only >}} ROI, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, and generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings at {{< var dfda_direct_funding_cost_per_daly >}}/DALY ({{< var dfda_trial_cost_reduction_pct >}} cost reduction, {{< var dfda_trial_capacity_multiplier >}} capacity increase).
 abstract: |
-  Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only {{< var exploration_ratio >}} have been clinically tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. By integrating pragmatic clinical trials into standard healthcare at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional), trial capacity increases {{< var dfda_trial_capacity_multiplier >}}, reducing the backlog clearance time to {{< var dfda_queue_clearance_years >}}. Combined with eliminating the {{< var efficacy_lag_years >}} post-safety efficacy delay through opt-in trial participation after Phase I, treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier on average. This timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, averts {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}, and eliminates {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering at {{< var dfda_direct_funding_cost_per_daly >}}/DALY, competitive with bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. R&D savings alone yield {{< var dfda_roi_rd_only >}} ROI ({{< var dfda_benefit_rd_only_annual >}}/year).
+  Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only {{< var exploration_ratio >}} have been clinically tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. A decentralized FDA, an open protocol integrating pragmatic clinical trials into standard healthcare at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional), increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, reducing the backlog clearance time to {{< var dfda_queue_clearance_years >}}. Combined with eliminating the {{< var efficacy_lag_years >}} post-safety efficacy delay through opt-in trial participation after Phase I, treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier on average. This timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, averts {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}, and eliminates {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering at {{< var dfda_direct_funding_cost_per_daly >}}/DALY, competitive with bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. R&D savings alone yield {{< var dfda_roi_rd_only >}} ROI ({{< var dfda_benefit_rd_only_annual >}}/year).
 published: true
 tags:
   - dfda
@@ -18,9 +18,9 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 
 **The Problem:** {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
-![A comparison between the current centralized clinical trial model and the decentralized framework for drug assessment (dFDA), showing the flow of patient data from remote participation to real-world treatment rankings.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
+![A comparison between the current centralized clinical trial model and a decentralized FDA, showing the flow of patient data from remote participation to real-world treatment rankings.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
 
-**The Solution:** An open protocol that integrates pragmatic clinical trials into standard healthcare, enabling:
+**The Solution:** A decentralized FDA, an open protocol that integrates pragmatic clinical trials into standard healthcare, enabling:
 
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
 2. **Universal Trial Access**: Any patient can join trials from home via their phone or computer - no travel to research centers required
@@ -407,7 +407,7 @@ The core protocol infrastructure build costs tens of millions; the broader globa
 
 ## Benefit Analysis - Quantifying the Savings
 
-This section quantifies the potential societal benefits of an infrastructure for a decentralized framework for drug assessment, focusing primarily on R&D cost savings and health outcome improvements.
+This section quantifies the potential societal benefits of a decentralized FDA, focusing primarily on R&D cost savings and health outcome improvements.
 
 ![A conceptual model showing how a decentralized drug assessment framework leads to societal benefits such as R and D cost savings and improved health outcomes.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-benefit-analysis-quantifying-the-savings-bw-academic.jpg)
 
@@ -499,9 +499,9 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 ![A conceptual breakdown showing how accelerated treatment access creates economic value by combining the Value of a Statistical Life (VSL) for lives saved and Quality-Adjusted Life Year (QALY) metrics for improved health outcomes.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg)
 
-### Gross R&D Savings from Implementing a Decentralized Framework {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
+### Gross R&D Savings from a Decentralized FDA {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
 
-- **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized framework for drug assessment.
+- **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized FDA.
 - **Central Estimate**: {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}})
 - **Source/Rationale**:
   - Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions [@dct-cost-reductions-evidence] through reduced site management, travel, and streamlined data collection.
@@ -538,7 +538,7 @@ Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial 
 Efficacy lag elimination ({{< var efficacy_lag_years >}}) is the **smaller** of the two timeline shift components. Discovery acceleration from {{< var dfda_trial_capacity_multiplier >}} trial capacity contributes {{< var dfda_trial_capacity_treatment_acceleration_years >}}, over 10× more health impact. This section details the efficacy lag component; see [The Discovery Capacity Model](#the-discovery-capacity-model) for the dominant component.
 :::
 
-**One of two health benefits of a decentralized framework for drug assessment comes from eliminating the "efficacy lag"**, the {{< var efficacy_lag_years >}} Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing ({{< var phase_1_safety_duration_years >}}) is preserved.
+**One of two health benefits of a decentralized FDA comes from eliminating the "efficacy lag"**, the {{< var efficacy_lag_years >}} Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing ({{< var phase_1_safety_duration_years >}}) is preserved.
 
 ![A comparison of drug development timelines showing the preservation of the 2.3-year safety testing phase and the elimination of the 8.2-year efficacy lag in a decentralized framework.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-post-safety-efficacy-lag-elimination-regulatory-delay-avoida-bw-academic.jpg)
 
@@ -677,7 +677,7 @@ The framework includes pooled liability coverage for sponsors, reducing individu
 
 **Type II Error Dominance**: For every person protected from an unsafe drug (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current system prevents harm from unsafe drugs, but causes {{< var type_ii_error_cost_ratio >}} more deaths through delays. Phase I safety testing is preserved in this framework; the ratio quantifies the cost of the *efficacy lag*, not safety testing. (See [Historical Validation](#historical-validation-pre-1962-physician-led-efficacy-testing) for the thalidomide context.)
 
-## ROI Analysis for a Decentralized Framework {#simplified-roi-scenario}
+## ROI Analysis for a Decentralized FDA {#simplified-roi-scenario}
 
 ### Monte Carlo Distributions
 
@@ -848,7 +848,7 @@ The proposed treaty funding level ({{< var dih_treasury_to_medical_research_annu
 
 ## Conclusion
 
-Transforming the FDA's centralized regulatory approach into a global, decentralized model offers the potential to reduce clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, accelerate approval timelines, and expand therapeutic coverage to neglected diseases. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}** at scale.
+A decentralized FDA transforms the centralized regulatory approach into a global, decentralized model, reducing clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, accelerating approval timelines, and expanding therapeutic coverage to neglected diseases. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}** at scale.
 
 Beyond direct savings, the effects on medical progress are substantial: expanded therapeutic exploration, real-time treatment effectiveness rankings, and research on off-patent treatments that currently lack commercial incentives. With appropriate privacy protections and international coordination, this framework enables evidence-based personalized medicine at global scale.
 
@@ -1082,7 +1082,7 @@ We present a cost-utility analysis using the **quality-adjusted life years (QALY
 
   Where $Q_0$/$Q_1$ = quality of life (0-1) before/after, $T_0$/$T_1$ = years of life before/after.
 
-- **Cost-Effectiveness**: A decentralized framework for drug assessment achieves cost-effectiveness through dual pathways:
+- **Cost-Effectiveness**: A decentralized FDA achieves cost-effectiveness through dual pathways:
   1. **R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}+ annual savings from {{< var dfda_trial_cost_reduction_pct >}} trial cost reduction
   2. **Health Gains**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from {{< var dfda_trial_capacity_multiplier >}} trial capacity + efficacy lag elimination)
 
