@@ -987,12 +987,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,790
+**Files:** 1 | **Words:** 11,742
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
-**Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,790 words | 1,240 lines
+**Description:** By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var statu...
+**Stats:** 11,742 words | 1,224 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -4175,6 +4175,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 82
-- Total words: 341,169
+- Total words: 341,121
 - Orphaned files: 27
 - Paper configs: 12

@@ -2,23 +2,7 @@
 title: The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 description: By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var status_quo_queue_clearance_years >}} treatment testing backlog in {{< var dfda_queue_clearance_years >}}, delivering {{< var dfda_roi_rd_only >}} ROI, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, and generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings at {{< var dfda_direct_funding_cost_per_daly >}}/DALY ({{< var dfda_trial_cost_reduction_pct >}} cost reduction, {{< var dfda_trial_capacity_multiplier >}} capacity increase).
 abstract: |
-  Clinical trials cost {{< var pharma_drug_development_cost_current >}} and take a decade per drug. Most
-  humans die before the drugs that could save them finish paperwork. A decentralized framework for drug
-  assessment could transform this by enabling: (1) subsidized patient participation making trials
-  accessible and incentivized, (2) universal trial access from home via phone or computer, (3) real-world
-  data aggregation into unified databases, (4) treatment rankings ("Consumer Reports for drugs") with
-  every treatment ranked by real-world effectiveness, and (5) outcome labels showing exactly what happened
-  to real patients. Pragmatic trials cost {{< var dfda_trial_cost_reduction_factor >}}
-  less than traditional trials per patient, enabling vastly more parallel research. The framework generates
-  health benefits through timeline acceleration: exploring the therapeutic search space would take
-  ~{{< var status_quo_queue_clearance_years >}} under the status quo, but treatments get discovered
-  ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier with expanded capacity. Combined with eliminating the {{< var efficacy_lag_years >}} regulatory efficacy delay (via
-  opt-in access to ubiquitous trials after Phase I safety), the average treatment reaches patients
-  significantly sooner. This timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}},
-  eliminates {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering, and generates
-  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in economic value at
-  {{< var dfda_direct_funding_cost_per_daly >}}/DALY - competitive with the most effective global health
-  interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY) while operating at vastly greater scale.
+  Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only {{< var exploration_ratio >}} have been clinically tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. By integrating pragmatic clinical trials into standard healthcare at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional), trial capacity increases {{< var dfda_trial_capacity_multiplier >}}, reducing the backlog clearance time to {{< var dfda_queue_clearance_years >}}. Combined with eliminating the {{< var efficacy_lag_years >}} post-safety efficacy delay through opt-in trial participation after Phase I, treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier on average. This timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, averts {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}, and eliminates {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering at {{< var dfda_direct_funding_cost_per_daly >}}/DALY, competitive with bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. R&D savings alone yield {{< var dfda_roi_rd_only >}} ROI ({{< var dfda_benefit_rd_only_annual >}}/year).
 published: true
 tags:
   - dfda
@@ -30,21 +14,13 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-::: {.callout-note}
-## Understanding These Figures: The Untested Treatment Backlog
-
-**The bottleneck:** {{< var diseases_without_effective_treatment >}} currently lack effective treatments. We have {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of drug-disease combinations have ever been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, systematically testing all {{< var drug_disease_combinations_possible >}} plausible pairings would take ~{{< var status_quo_queue_clearance_years >}}. Most will never be tested.
-
-The figures below represent **cumulative benefits over the entire acceleration period** - the total lives saved by addressing this backlog faster. This is the same methodology used to value smallpox eradication (program cost → total future lives saved) and climate infrastructure investments. These are not annual figures; they are the one-time benefit of permanently accelerating medical progress.
-:::
-
 ## Executive Summary
 
-**The Problem:** Clinical trials cost billions and require a decade per drug. The majority of patients with treatable conditions die before potentially effective treatments complete regulatory approval. Of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
+**The Problem:** {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} people with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
 ![A comparison between the current centralized clinical trial model and the decentralized framework for drug assessment (dFDA), showing the flow of patient data from remote participation to real-world treatment rankings.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
 
-**The Solution:** A decentralized framework for drug assessment (dFDA) - an open protocol that enables:
+**The Solution:** An open protocol that integrates pragmatic clinical trials into standard healthcare, enabling:
 
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
 2. **Universal Trial Access**: Any patient can join trials from home via their phone or computer - no travel to research centers required
@@ -67,14 +43,6 @@ This framework is **protocol infrastructure**, open standards that existing syst
 **How it works:** Companies register treatments through any protocol-compliant system. Patients search for their condition, see treatments ranked by effectiveness, and can join trials through their preferred app or platform. Patient-reported outcomes flow back into the aggregated rankings. The result is a self-improving ecosystem where every participant's experience helps the next patient make better decisions.
 
 ![A conceptual diagram showing how diverse entities like EHR systems and health apps connect to a central protocol to share data, creating a self-improving cycle of treatment rankings and patient outcomes.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-protocol-not-platform-bw-academic.jpg)
-
-### What You Get
-
-- **Cost Reduction:** Clinical trial costs decrease by {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}}). Pragmatic trials like ADAPTABLE ({{< var adaptable_trial_cost_per_patient >}}/patient) and systematic reviews (median {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient) demonstrate feasibility. Applied to the {{< var global_clinical_trials_spending_annual >}} annual trial market, this yields [tens of billions in savings](#roi-analysis).
-- **Expanded Therapeutic Coverage:** Lower costs enable testing of rare diseases and treatments that lack commercial incentives. Treatments reach patients earlier in disease progression.
-- **Mortality Reduction:** The framework generates {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} additional life-years through the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift ({{< var dfda_trial_capacity_multiplier >}} trial capacity plus efficacy lag elimination), enabling faster access, improved prevention data, and research for neglected diseases.
-
-![Before/after comparison showing 97.7 percent cost reduction, 12.3x trial capacity increase, and 565B DALYs averted from traditional to decentralized framework.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-what-you-get-bw-academic.jpg)
 
 ### Key Findings
 
@@ -104,6 +72,10 @@ This framework is **protocol infrastructure**, open standards that existing syst
 
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
 
+:::
+
+::: {.callout-note collapse="true" title="Interpreting These Figures: Cumulative, Not Annual"}
+These are **cumulative benefits over the entire acceleration period**, not annual figures. This is the same methodology used to value smallpox eradication (program cost -> total future lives saved) and climate infrastructure investments: the one-time benefit of permanently accelerating medical progress.
 :::
 
 **Interpreting the Timeline Figure:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year figure represents a **discovery capacity model** of medical research. Think of the therapeutic search space as the set of all untested drug-disease combinations, with trial capacity determining how fast we can explore it.

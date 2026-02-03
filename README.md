@@ -77,7 +77,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
 
-> Economic analysis of a decentralized framework for drug assessment (dFDA). With $21.8B/year in pragmatic trial funding, the framework could save 10.7B deaths and avert 565B DALYs at $0.841 per DALY, while generating $58.6B in annual R&D savings.
+> By allocating $21.8B/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the 443 years treatment testing backlog in 36 years, delivering 637:1 ROI, saving 10.7B deaths, and generating $58.6B in annual R&D savings at $0.841/DALY (97.7% cost red...
 
 
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
