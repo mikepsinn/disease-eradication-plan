@@ -811,6 +811,16 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 
 ![A comparison of three models of trial discovery: diminishing, linear, and compounding returns, illustrating the linear assumption as the conservative middle ground.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-conservative-default-linear-assumption-bw-academic.jpg)
 
+#### Funding Level vs. Cost-Effectiveness
+
+While the analysis above addresses whether *trials* produce proportionally more *cures*, a separate question is how *funding level* affects *cost per DALY averted*. The acceleration formula $T_{accel} = T_{baseline} \times (1 - 1/k)$, where $k$ is the trial capacity multiplier, produces natural diminishing returns: each additional dollar buys less acceleration as $k$ grows. @fig-funding-vs-cost-per-daly shows cost per DALY rising with funding, while @fig-funding-vs-dalys-averted shows total DALYs approaching an asymptotic ceiling.
+
+{{< include ../figures/funding-vs-cost-per-daly-line-chart.qmd >}}
+
+{{< include ../figures/funding-vs-dalys-averted-line-chart.qmd >}}
+
+The proposed treaty funding level ({{< var dih_treasury_to_medical_research_annual >}}/year) sits in the steep part of the curve, where cost-effectiveness is strongest. Even at much higher funding levels, the cost per DALY remains far below the bed nets benchmark ({{< var bed_nets_cost_per_daly >}}/DALY).
+
 ## Data Sources and Methodological Notes
 
 1. **Cost of Current Drug Development**:

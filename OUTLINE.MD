@@ -2,14 +2,14 @@
 
 **Quarto Project Overview:**
 - Total configs: 14
-- Total QMD files: 82
+- Total QMD files: 83
 
 ---
 
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 4 | **Words:** 67,183
+**Files:** 5 | **Words:** 68,086
 
 #### index.qmd
 **Title:** Wishocracy
@@ -49,6 +49,26 @@
 - **Conclusion**
 - **Appendix A: The Service Provider Layer**
   - References {.unnumbered}
+
+#### knowledge/papers.qmd
+**Title:** Papers & Publications
+**Description:** Academic papers and working drafts from the Disease Eradication Plan project.
+**Stats:** 903 words | 104 lines
+
+  - Books
+    - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
+  - Working Papers
+    - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
+    - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+    - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
+    - [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
+    - [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
+    - [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
+    - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
+    - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
+    - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
+    - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
+    - [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
 
 #### knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd
 **Title:** Methodology, Parameters, and Calculations
@@ -987,12 +1007,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Type:** website
-**Files:** 1 | **Words:** 11,550
+**Files:** 1 | **Words:** 11,675
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Description:** By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var statu...
-**Stats:** 11,550 words | 1,212 lines
+**Stats:** 11,675 words | 1,222 lines
 
   - Executive Summary
   - Protocol, Not Platform
@@ -1038,6 +1058,7 @@
       - Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
       - Mathematical Framework: When Would Diminishing Returns Dominate?
       - The Conservative Default: Linear Assumption
+      - Funding Level vs. Cost-Effectiveness
   - Data Sources and Methodological Notes
   - Conclusion
     - Disclaimer
@@ -1457,7 +1478,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 66 | **Words:** 160,802
+**Files:** 67 | **Words:** 161,705
 
 #### index.qmd
 **Title:** Start Here
@@ -3359,6 +3380,26 @@
 
 ### Additional References
 
+#### knowledge/papers.qmd
+**Title:** Papers & Publications
+**Description:** Academic papers and working drafts from the Disease Eradication Plan project.
+**Stats:** 903 words | 104 lines
+
+  - Books
+    - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
+  - Working Papers
+    - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
+    - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+    - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
+    - [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
+    - [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
+    - [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
+    - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
+    - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
+    - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
+    - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
+    - [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
+
 #### knowledge/appendix/lives-saved-by-drug-accessibility.qmd
 **Title:** Estimated Lives Saved by Increased Drug Accessibility
 **Description:** Table estimating the number of lives that could be saved annually by increasing accessibility to certain drugs
@@ -3846,7 +3887,7 @@
 ## _quarto-test.yml
 **Title:** Test Economics Document
 **Type:** book
-**Files:** 5 | **Words:** 8,197
+**Files:** 6 | **Words:** 9,100
 
 #### index.qmd
 **Title:** Wishocracy
@@ -3886,6 +3927,26 @@
 - **Conclusion**
 - **Appendix A: The Service Provider Layer**
   - References {.unnumbered}
+
+#### knowledge/papers.qmd
+**Title:** Papers & Publications
+**Description:** Academic papers and working drafts from the Disease Eradication Plan project.
+**Stats:** 903 words | 104 lines
+
+  - Books
+    - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
+  - Working Papers
+    - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
+    - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+    - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
+    - [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
+    - [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
+    - [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
+    - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
+    - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
+    - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
+    - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
+    - [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
 
 #### knowledge/test/test-parameters.qmd
 **Title:** Test Parameters Document
@@ -4008,7 +4069,7 @@
 
 ## ORPHANED FILES (not in any config)
 
-*27 QMD files in knowledge/ not in any Quarto config:*
+*26 QMD files in knowledge/ not in any Quarto config:*
 
 #### knowledge/appendix/data-storage-costs.qmd
 - **Title:** Data Storage Costs for Decentralized Clinical Trials
@@ -4139,11 +4200,6 @@
 - **Description:** Outlines the initial steps, legal structure, pre-seed fundraising, and core team hiring required to ...
 - **Words:** 614
 
-#### knowledge/papers.qmd
-- **Title:** Papers & Publications
-- **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-- **Words:** 900
-
 ---
 
 ## PAPER CITATIONS (for Quarto cross-references)
@@ -4172,7 +4228,7 @@
 ## SUMMARY
 
 - Quarto configs: 14
-- Unique QMD files: 82
-- Total words: 340,929
-- Orphaned files: 27
+- Unique QMD files: 83
+- Total words: 343,763
+- Orphaned files: 26
 - Paper configs: 12

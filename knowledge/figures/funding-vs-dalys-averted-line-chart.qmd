@@ -1,0 +1,152 @@
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+```{python}
+#| echo: false
+#| warning: false
+#| label: fig-funding-vs-dalys-averted
+#| fig-cap: "Total DALYs averted as a function of annual funding level. The curve flattens as funding approaches the asymptotic ceiling where all avoidable diseases receive accelerated treatment. Efficacy lag elimination (8.2 years) provides a fixed baseline benefit independent of funding scale."
+import matplotlib.pyplot as plt
+import numpy as np
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines, add_png_metadata,
+    get_figure_output_path, COLOR_BLACK, COLOR_WHITE
+)
+
+setup_chart_style()
+
+# ── Parameters ──────────────────────────────────────────────────────
+opex = float(DFDA_ANNUAL_OPEX)
+cost_per_patient = float(DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)
+current_slots = float(CURRENT_TRIAL_SLOTS_AVAILABLE)
+baseline_wait = float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT)
+sq_queue = float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)
+efficacy_lag = float(EFFICACY_LAG_YEARS)
+annual_daly_burden = float(GLOBAL_ANNUAL_DALY_BURDEN)
+avoidable_pct = float(EVENTUALLY_AVOIDABLE_DALY_PCT)
+proposed_funding = float(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
+
+# Asymptotic ceiling: maximum possible DALYs averted
+# At infinite funding, accel_years → baseline_wait, total_shift → baseline_wait + efficacy_lag
+max_total_shift = baseline_wait + efficacy_lag
+ceiling_dalys = annual_daly_burden * avoidable_pct * max_total_shift
+
+# Efficacy lag baseline (independent of funding)
+efficacy_only_dalys = annual_daly_burden * avoidable_pct * efficacy_lag
+
+# ── Computation across funding levels ───────────────────────────────
+funding_levels = np.logspace(np.log10(1e8), np.log10(2e11), 200)
+
+dalys_averted = np.full_like(funding_levels, np.nan)
+
+for i, funding in enumerate(funding_levels):
+    subsidy = funding - opex
+    if subsidy <= 0:
+        continue
+
+    patients = subsidy / cost_per_patient
+    multiplier = patients / current_slots
+    if multiplier <= 1:
+        continue
+
+    accel_years = baseline_wait * (1 - 1 / multiplier)
+    total_shift = accel_years + efficacy_lag
+    dalys_averted[i] = annual_daly_burden * avoidable_pct * total_shift
+
+# Compute proposed funding point
+proposed_subsidy = proposed_funding - opex
+proposed_patients = proposed_subsidy / cost_per_patient
+proposed_multiplier = proposed_patients / current_slots
+proposed_clearance = sq_queue / proposed_multiplier
+proposed_accel = baseline_wait * (1 - 1 / proposed_multiplier)
+proposed_total_shift = proposed_accel + efficacy_lag
+proposed_dalys = annual_daly_burden * avoidable_pct * proposed_total_shift
+
+# ── Plot ────────────────────────────────────────────────────────────
+fig, ax = plt.subplots(figsize=(16, 11))
+
+valid = ~np.isnan(dalys_averted)
+ax.plot(funding_levels[valid] / 1e9, dalys_averted[valid] / 1e9,
+        linewidth=3.5, color=COLOR_BLACK, linestyle='-')
+
+# Asymptotic ceiling
+ax.axhline(y=ceiling_dalys / 1e9, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.5)
+ax.text(0.03, 0.97,
+        f'Ceiling: {ceiling_dalys/1e9:.0f}B DALYs\n(all avoidable diseases treated\nas fast as possible)',
+        transform=ax.transAxes, fontsize=20, color=COLOR_BLACK, va='top', ha='left',
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
+
+# Efficacy lag baseline
+ax.axhline(y=efficacy_only_dalys / 1e9, color=COLOR_BLACK, linestyle='--', linewidth=1.5, alpha=0.4)
+ax.text(0.03, 0.12,
+        f'Efficacy lag elimination only:\n{efficacy_only_dalys/1e9:.0f}B DALYs (fixed baseline,\nindependent of funding)',
+        transform=ax.transAxes, fontsize=20, color=COLOR_BLACK, va='bottom', ha='left',
+        style='italic',
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
+
+# Mark proposed funding
+ax.plot(proposed_funding / 1e9, proposed_dalys / 1e9,
+        marker='o', markersize=14, color=COLOR_BLACK, zorder=5)
+ax.annotate(
+    f'Proposed Treaty: {proposed_dalys/1e9:.0f}B DALYs\n'
+    f'${proposed_funding/1e9:.1f}B/yr, {proposed_multiplier:.1f}x capacity\n'
+    f'{proposed_total_shift:.0f}-yr avg. treatment shift\n'
+    f'queue cleared in {proposed_clearance:.0f} yrs\n'
+    f'{proposed_dalys/ceiling_dalys*100:.0f}% of theoretical ceiling\n'
+    f'= {annual_daly_burden/1e9:.1f}B/yr x {avoidable_pct*100:.0f}% x {proposed_total_shift:.0f} yrs',
+    xy=(proposed_funding / 1e9, proposed_dalys / 1e9),
+    xytext=(0.50, 0.40), textcoords='axes fraction',
+    fontsize=18, fontweight='bold', color=COLOR_BLACK,
+    bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+              edgecolor=COLOR_BLACK, linewidth=2.5),
+    arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, linewidth=2.5))
+
+# Causal explanation annotations
+ax.text(0.97, 0.20,
+        'High funding: acceleration\napproaches ceiling at\n1/k saturation',
+        transform=ax.transAxes, fontsize=20, color=COLOR_BLACK, va='top', ha='right',
+        style='italic',
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
+
+# Axes
+ax.set_xscale('log')
+ax.set_xlabel('Annual Funding Level ($B)', fontsize=22, fontweight='bold', color=COLOR_BLACK)
+ax.set_ylabel('Total DALYs Averted (Billions)', fontsize=22, fontweight='bold', color=COLOR_BLACK)
+ax.set_title('DALYs Averted vs. Funding Level',
+             fontsize=28, fontweight='bold', pad=30, color=COLOR_BLACK)
+ax.text(0.5, 1.01,
+        f'Acceleration formula: T = T_baseline x (1 - 1/k) where k = trial capacity multiplier',
+        transform=ax.transAxes, fontsize=18, color=COLOR_BLACK, ha='center', va='bottom')
+
+ax.tick_params(axis='both', labelsize=18)
+
+from matplotlib.ticker import FuncFormatter
+ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'${x:.0f}B' if x >= 1 else f'${x*1000:.0f}M'))
+ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f'{y:.0f}B'))
+
+clean_spines(ax)
+add_watermark(fig)
+
+output_path = get_figure_output_path('funding-vs-dalys-averted-line-chart.png')
+plt.savefig(output_path, dpi=200, bbox_inches='tight', pad_inches=0.3, facecolor=COLOR_WHITE)
+add_png_metadata(
+    output_path,
+    title="DALYs Averted vs. Funding Level",
+    description="Shows total DALYs averted as funding increases, with an asymptotic ceiling as the 1/k acceleration formula saturates."
+)
+plt.show()
+
+# Print verification
+print(f"\nVerification at proposed funding (${proposed_funding/1e9:.1f}B/yr):")
+print(f"  Trial capacity multiplier: {proposed_multiplier:.1f}x")
+print(f"  Queue clearance: {proposed_clearance:.1f} years")
+print(f"  Treatment acceleration: {proposed_accel:.1f} years")
+print(f"  Total timeline shift: {proposed_total_shift:.1f} years")
+print(f"  DALYs averted: {proposed_dalys/1e9:.0f}B")
+print(f"  Ceiling DALYs: {ceiling_dalys/1e9:.0f}B")
+print(f"  Utilization: {proposed_dalys/ceiling_dalys*100:.1f}% of ceiling")
+print(f"  Efficacy lag baseline: {efficacy_only_dalys/1e9:.0f}B DALYs")
+```

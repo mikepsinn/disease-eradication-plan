@@ -1,0 +1,188 @@
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+```{python}
+#| echo: false
+#| warning: false
+#| label: fig-funding-vs-cost-per-daly
+#| fig-cap: "Cost per DALY averted as a function of annual funding level. Uses undiscounted total cost (upfront platform build + annual funding over queue clearance period) because annual government appropriations are not a discountable capital allocation. The curve is monotonically decreasing: more funding always improves efficiency, but with strongly diminishing returns."
+import matplotlib.pyplot as plt
+import numpy as np
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines, add_png_metadata,
+    get_figure_output_path, COLOR_BLACK, COLOR_WHITE
+)
+
+setup_chart_style()
+
+# ── Parameters ──────────────────────────────────────────────────────
+opex = float(DFDA_ANNUAL_OPEX)                          # ~$40M/yr platform costs
+cost_per_patient = float(DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)  # ~$929/patient
+current_slots = float(CURRENT_TRIAL_SLOTS_AVAILABLE)     # ~1.9M patients/yr
+baseline_wait = float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT)  # ~222 years
+sq_queue = float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)       # ~443 years
+efficacy_lag = float(EFFICACY_LAG_YEARS)                 # 8.2 years
+annual_daly_burden = float(GLOBAL_ANNUAL_DALY_BURDEN)    # 2.88B DALYs/yr
+avoidable_pct = float(EVENTUALLY_AVOIDABLE_DALY_PCT)     # ~92%
+bed_nets = float(BED_NETS_COST_PER_DALY)                 # $89/DALY
+proposed_funding = float(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)  # ~$21.7B/yr
+upfront_cost = float(DFDA_NPV_UPFRONT_COST_TOTAL)        # ~$270M platform build
+
+# ── Computation across funding levels ───────────────────────────────
+# For each funding level, compute:
+# 1. Trial capacity multiplier from funding
+# 2. Queue clearance time (how long funding must continue)
+# 3. Total undiscounted cost (upfront + annual × clearance years)
+# 4. DALYs averted from the resulting timeline shift
+# 5. Cost per DALY = total cost / DALYs
+funding_levels = np.logspace(np.log10(1e8), np.log10(2e11), 200)  # $100M to $200B
+
+cost_per_daly = np.full_like(funding_levels, np.nan)
+
+for i, funding in enumerate(funding_levels):
+    subsidy = funding - opex
+    if subsidy <= 0:
+        continue
+
+    patients = subsidy / cost_per_patient
+    multiplier = patients / current_slots
+    if multiplier <= 1:
+        continue  # no acceleration below current capacity
+
+    # Queue clearance time scales inversely with multiplier
+    clearance_years = sq_queue / multiplier
+
+    # Trial capacity acceleration (diminishing returns via 1/k)
+    accel_years = baseline_wait * (1 - 1 / multiplier)
+
+    # Add efficacy lag elimination (fixed bonus)
+    total_shift = accel_years + efficacy_lag
+
+    # DALYs averted
+    dalys = annual_daly_burden * avoidable_pct * total_shift
+
+    # Total undiscounted cost: upfront build + annual funding over clearance period
+    total_cost = upfront_cost + funding * clearance_years
+
+    cost_per_daly[i] = total_cost / dalys
+
+# Compute proposed funding point
+proposed_subsidy = proposed_funding - opex
+proposed_patients = proposed_subsidy / cost_per_patient
+proposed_multiplier = proposed_patients / current_slots
+proposed_clearance = sq_queue / proposed_multiplier
+proposed_accel = baseline_wait * (1 - 1 / proposed_multiplier)
+proposed_total_shift = proposed_accel + efficacy_lag
+proposed_dalys = annual_daly_burden * avoidable_pct * proposed_total_shift
+proposed_total_cost = upfront_cost + proposed_funding * proposed_clearance
+proposed_cpd = proposed_total_cost / proposed_dalys
+
+# Asymptotic floor: at infinite funding, cost/DALY approaches this limit
+# total_cost → upfront + sq_queue × cost_per_patient × current_slots (fixed queue cost)
+# dalys → annual_daly_burden × avoidable_pct × (baseline_wait + efficacy_lag) (ceiling)
+floor_cost = sq_queue * cost_per_patient * current_slots
+ceiling_dalys = annual_daly_burden * avoidable_pct * (baseline_wait + efficacy_lag)
+floor_cpd = (upfront_cost + floor_cost) / ceiling_dalys
+
+# ── Plot ────────────────────────────────────────────────────────────
+valid = ~np.isnan(cost_per_daly)
+valid_cpd = cost_per_daly[valid]
+valid_funding = funding_levels[valid]
+
+fig, ax = plt.subplots(figsize=(16, 11))
+
+ax.plot(valid_funding / 1e9, valid_cpd,
+        linewidth=3.5, color=COLOR_BLACK, linestyle='-')
+
+# Reference line: bed nets ($89/DALY)
+ax.axhline(y=bed_nets, color=COLOR_BLACK, linestyle='--', linewidth=1.5, alpha=0.6)
+ax.text(valid_funding[-1] / 1e9 * 0.7, bed_nets,
+        f'Bed Nets (${bed_nets:.0f}/DALY)',
+        fontsize=20, color=COLOR_BLACK, ha='right', va='center',
+        bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1))
+
+# Asymptotic floor line
+ax.axhline(y=floor_cpd, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.5)
+ax.text(0.97, 0.08,
+        f'Asymptotic floor: ${floor_cpd:.2f}/DALY\n'
+        f'(total queue cost ~${floor_cost/1e9:.0f}B is roughly\n'
+        f'fixed regardless of funding level)',
+        transform=ax.transAxes, fontsize=18, color=COLOR_BLACK, va='bottom', ha='right',
+        style='italic',
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
+
+# Mark proposed funding
+ax.plot(proposed_funding / 1e9, proposed_cpd,
+        marker='o', markersize=14, color=COLOR_BLACK, zorder=5)
+ax.annotate(
+    f'Proposed Treaty: ${proposed_cpd:.2f}/DALY\n'
+    f'${proposed_funding/1e9:.1f}B/yr x {proposed_clearance:.0f} yrs = ${proposed_total_cost/1e9:.0f}B total\n'
+    f'{proposed_multiplier:.1f}x capacity, {proposed_total_shift:.0f}-yr treatment shift\n'
+    f'= ${proposed_total_cost/1e9:.0f}B / {proposed_dalys/1e9:.0f}B DALYs',
+    xy=(proposed_funding / 1e9, proposed_cpd),
+    xytext=(0.50, 0.72), textcoords='axes fraction',
+    fontsize=18, fontweight='bold', color=COLOR_BLACK,
+    bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+              edgecolor=COLOR_BLACK, linewidth=2.5),
+    arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, linewidth=2.5))
+
+# Causal explanation annotations
+ax.text(0.03, 0.92,
+        'Low funding: capacity barely\nexceeds status quo, so\nacceleration is near zero\n(but you still pay for the\nfull queue over centuries)',
+        transform=ax.transAxes, fontsize=18, color=COLOR_BLACK, va='top', ha='left',
+        style='italic',
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
+
+ax.text(0.97, 0.42,
+        'Curve flattens: total cost is\nroughly fixed (~$785B to clear\nthe queue). Only speed changes.\nMore funding = more DALYs\naverted = lower cost/DALY.',
+        transform=ax.transAxes, fontsize=18, color=COLOR_BLACK, va='top', ha='right',
+        style='italic',
+        bbox=dict(boxstyle='round,pad=0.4', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
+
+# Axes
+ax.set_xscale('log')
+ax.set_yscale('log')
+ax.set_xlabel('Annual Funding Level ($B)', fontsize=22, fontweight='bold', color=COLOR_BLACK)
+ax.set_ylabel('Cost per DALY Averted (USD)', fontsize=22, fontweight='bold',
+              color=COLOR_BLACK)
+ax.set_title('Cost per DALY vs. Funding Level',
+             fontsize=28, fontweight='bold', pad=30, color=COLOR_BLACK)
+ax.text(0.5, 1.01,
+        f'Undiscounted total cost (${upfront_cost/1e6:.0f}M upfront + annual funding x queue clearance years).',
+        transform=ax.transAxes, fontsize=18, color=COLOR_BLACK, ha='center', va='bottom')
+
+ax.tick_params(axis='both', labelsize=18)
+
+# Format x-axis ticks as dollar amounts
+from matplotlib.ticker import FuncFormatter
+ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'${x:.0f}B' if x >= 1 else f'${x*1000:.0f}M'))
+ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f'${y:,.0f}' if y >= 1 else f'${y:.2f}'))
+
+clean_spines(ax)
+add_watermark(fig)
+
+output_path = get_figure_output_path('funding-vs-cost-per-daly-line-chart.png')
+plt.savefig(output_path, dpi=200, bbox_inches='tight', pad_inches=0.3, facecolor=COLOR_WHITE)
+add_png_metadata(
+    output_path,
+    title="Cost per DALY vs. Funding Level",
+    description="Shows how cost per DALY averted varies with funding level. Uses undiscounted total cost because annual government appropriations are not a discountable capital allocation. Total queue clearance cost is roughly fixed (~$785B); more funding buys speed and more DALYs averted."
+)
+plt.show()
+
+# Print verification
+print(f"\nVerification at proposed funding (${proposed_funding/1e9:.1f}B/yr):")
+print(f"  Trial capacity multiplier: {proposed_multiplier:.1f}x")
+print(f"  Queue clearance: {proposed_clearance:.1f} years")
+print(f"  Treatment acceleration: {proposed_accel:.1f} years")
+print(f"  Total timeline shift: {proposed_total_shift:.1f} years")
+print(f"  DALYs averted: {proposed_dalys/1e9:.1f}B")
+print(f"  Upfront cost: ${upfront_cost/1e6:.0f}M")
+print(f"  Total undiscounted cost: ${proposed_total_cost/1e9:.1f}B")
+print(f"  Cost per DALY: ${proposed_cpd:.2f}")
+print(f"  Asymptotic floor: ${floor_cpd:.2f}/DALY (total queue cost: ${floor_cost/1e9:.0f}B)")
+```

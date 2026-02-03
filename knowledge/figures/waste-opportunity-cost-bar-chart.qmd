@@ -1,0 +1,134 @@
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+```{python}
+#| echo: false
+#| warning: false
+#| label: fig-waste-opportunity-cost
+#| fig-cap: "Opportunity cost of wasteful U.S. government spending measured in healthy life years lost. Each bar shows how many DALYs could be averted if that spending were redirected to ubiquitous pragmatic clinical trials. Undiscounted cost per DALY ($1.39) is used as the conversion factor, based on the proposed treaty funding level."
+import matplotlib.pyplot as plt
+import numpy as np
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines, add_png_metadata,
+    get_figure_output_path, COLOR_BLACK, COLOR_WHITE
+)
+
+setup_chart_style()
+
+# ── Cost per DALY at proposed treaty level ────────────────────────────
+# Undiscounted: total_cost / total_dalys at proposed funding
+opex = float(DFDA_ANNUAL_OPEX)
+cpp = float(DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)
+cs = float(CURRENT_TRIAL_SLOTS_AVAILABLE)
+bw = float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT)
+sq = float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)
+el = float(EFFICACY_LAG_YEARS)
+ab = float(GLOBAL_ANNUAL_DALY_BURDEN)
+ap = float(EVENTUALLY_AVOIDABLE_DALY_PCT)
+pf = float(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL)
+uc = float(DFDA_NPV_UPFRONT_COST_TOTAL)
+
+ps = pf - opex
+pm = ps / cpp / cs
+pc = sq / pm
+pts = bw * (1 - 1/pm) + el
+pd = ab * ap * pts
+ptc = uc + pf * pc
+cost_per_daly = ptc / pd  # ~$1.39
+
+# ── Waste categories (from parameters.py) ─────────────────────────────
+categories = [
+    ("Housing/Zoning\nRestrictions", float(BAD_POLICY_COST_US_HOUSING_ZONING)),
+    ("Healthcare\nInefficiency", float(BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY)),
+    ("Tax Compliance\nBurden", float(BAD_POLICY_COST_US_TAX_COMPLIANCE)),
+    ("Failed Wars\n(Amortized)", float(BAD_POLICY_COST_US_FAILED_WARS)),
+    ("Defense Above\nDeterrence", float(BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE)),
+    ("Tariffs\n(GDP Loss)", float(BAD_POLICY_COST_US_TARIFFS)),
+    ("Drug War", float(BAD_POLICY_COST_US_DRUG_WAR)),
+    ("Incarceration\nExcess", float(BAD_POLICY_COST_US_INCARCERATION_EXCESS)),
+    ("Agricultural\nSubsidies", float(BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES)),
+    ("Fossil Fuel\nSubsidies", float(BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT)),
+]
+
+# Sort by waste amount descending
+categories.sort(key=lambda x: x[1], reverse=True)
+
+names = [c[0] for c in categories]
+waste = np.array([c[1] for c in categories])
+dalys = waste / cost_per_daly
+
+# ── Plot ──────────────────────────────────────────────────────────────
+fig, ax = plt.subplots(figsize=(16, 12))
+
+y_pos = np.arange(len(names))
+bars = ax.barh(y_pos, dalys / 1e9, height=0.65, color=COLOR_WHITE,
+               edgecolor=COLOR_BLACK, linewidth=2)
+
+# Add value labels
+for i, (d, w) in enumerate(zip(dalys, waste)):
+    # DALY value at end of bar
+    ax.text(d / 1e9 + dalys.max() / 1e9 * 0.01, i,
+            f'{d/1e9:.0f}B DALYs',
+            fontsize=16, fontweight='bold', color=COLOR_BLACK, va='center')
+    # Waste amount inside bar
+    if w >= 2e11:  # only show inside for large bars
+        ax.text(d / 1e9 * 0.5, i,
+                f'${w/1e9:.0f}B/yr wasted',
+                fontsize=14, color=COLOR_BLACK, va='center', ha='center',
+                style='italic')
+
+ax.set_yticks(y_pos)
+ax.set_yticklabels(names, fontsize=16, fontweight='bold')
+ax.invert_yaxis()
+
+ax.set_xlabel('Healthy Life Years Lost (Billions of DALYs)', fontsize=20,
+              fontweight='bold', color=COLOR_BLACK)
+ax.set_title('Opportunity Cost of Wasteful Spending\nin Healthy Life Years',
+             fontsize=26, fontweight='bold', pad=25, color=COLOR_BLACK)
+ax.text(0.5, 1.01,
+        f'Each dollar wasted = {1/cost_per_daly:.2f} DALYs that could be averted '
+        f'via pragmatic trials (at ${cost_per_daly:.2f}/DALY)',
+        transform=ax.transAxes, fontsize=16, color=COLOR_BLACK,
+        ha='center', va='bottom')
+
+ax.tick_params(axis='x', labelsize=16)
+
+from matplotlib.ticker import FuncFormatter
+ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x:.0f}B'))
+
+# Add total annotation
+total_waste = waste.sum()
+total_dalys = dalys.sum()
+ax.text(0.97, 0.97,
+        f'Total: ${total_waste/1e12:.1f}T wasted/yr\n'
+        f'= {total_dalys/1e9:.0f}B DALYs lost\n'
+        f'({total_waste/pf:.0f}x the proposed\n'
+        f'treaty funding)',
+        transform=ax.transAxes, fontsize=18, fontweight='bold',
+        color=COLOR_BLACK, va='top', ha='right',
+        bbox=dict(boxstyle='round,pad=0.5', facecolor=COLOR_WHITE,
+                  edgecolor=COLOR_BLACK, linewidth=2.5))
+
+clean_spines(ax)
+add_watermark(fig)
+
+output_path = get_figure_output_path('waste-opportunity-cost-bar-chart.png')
+plt.savefig(output_path, dpi=200, bbox_inches='tight', pad_inches=0.3,
+            facecolor=COLOR_WHITE)
+add_png_metadata(
+    output_path,
+    title="Opportunity Cost of Wasteful Spending in Healthy Life Years",
+    description="Horizontal bar chart showing DALYs that could be averted if each category of wasteful U.S. government spending were redirected to ubiquitous pragmatic clinical trials."
+)
+plt.show()
+
+# Print verification
+print(f"\nCost per DALY (undiscounted, proposed level): ${cost_per_daly:.2f}")
+print(f"1 dollar wasted = {1/cost_per_daly:.2f} DALYs lost\n")
+for name, w in categories:
+    d = w / cost_per_daly
+    label = name.replace('\n', ' ')
+    print(f"  {label:30s} ${w/1e9:>7.0f}B/yr = {d/1e9:>6.0f}B DALYs")
+print(f"\n  {'TOTAL':30s} ${total_waste/1e12:.1f}T/yr = {total_dalys/1e9:.0f}B DALYs")
+print(f"  = {total_waste/pf:.0f}x the proposed treaty funding")
+```
