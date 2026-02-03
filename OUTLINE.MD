@@ -1311,12 +1311,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 16,750
+**Files:** 1 | **Words:** 16,752
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,750 words | 1,517 lines
+**Stats:** 16,752 words | 1,517 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -1459,7 +1459,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 66 | **Words:** 160,796
+**Files:** 66 | **Words:** 160,802
 
 #### index.qmd
 **Title:** Start Here
@@ -1505,7 +1505,7 @@
 #### knowledge/problem.qmd
 **Title:** Problem Overview
 **Description:** Humanity's spectacular failure at prioritizing not dying
-**Stats:** 2,605 words | 258 lines
+**Stats:** 2,607 words | 258 lines
 
   - Daily Numbers
   - Where the Money Goes
@@ -2280,7 +2280,7 @@
 #### knowledge/futures/wishonia.qmd
 **Title:** Wishonia
 **Description:** How My Planet Works and Why You Should Copy Our Homework
-**Stats:** 2,326 words | 320 lines
+**Stats:** 2,330 words | 320 lines
 
   - How My Planet Works
   - What the Optimized World Looks Like
@@ -4175,6 +4175,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 82
-- Total words: 341,161
+- Total words: 341,169
 - Orphaned files: 27
 - Paper configs: 12

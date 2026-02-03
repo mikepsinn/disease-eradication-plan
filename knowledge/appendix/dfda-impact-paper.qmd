@@ -1,6 +1,6 @@
 ---
 title: The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
-description: Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and avert {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} at {{< var dfda_direct_funding_cost_per_daly >}} per DALY, while generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings.
+description: By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var status_quo_queue_clearance_years >}} treatment testing backlog in {{< var dfda_queue_clearance_years >}}, delivering {{< var dfda_roi_rd_only >}} ROI, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, and generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings at {{< var dfda_direct_funding_cost_per_daly >}}/DALY ({{< var dfda_trial_cost_reduction_pct >}} cost reduction, {{< var dfda_trial_capacity_multiplier >}} capacity increase).
 abstract: |
   Clinical trials cost {{< var pharma_drug_development_cost_current >}} and take a decade per drug. Most
   humans die before the drugs that could save them finish paperwork. A decentralized framework for drug
