@@ -987,12 +987,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,551
+**Files:** 1 | **Words:** 11,550
 
 #### knowledge/appendix/dfda-impact-paper.qmd
-**Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
+**Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Description:** By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var statu...
-**Stats:** 11,551 words | 1,212 lines
+**Stats:** 11,550 words | 1,212 lines
 
   - Executive Summary
   - Protocol, Not Platform
@@ -4173,6 +4173,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 82
-- Total words: 340,930
+- Total words: 340,929
 - Orphaned files: 27
 - Paper configs: 12

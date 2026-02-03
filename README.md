@@ -45,6 +45,13 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 > Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
 
 
+### [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+
+[![How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
+
+> By allocating $21.8B/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the 443 years treatment testing backlog in 36 years, delivering 637:1 ROI, saving 10.7B deaths, and generating $58.6B in annual R&D savings at $0.841/DALY (97.7% cost red...
+
+
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
 
 [![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](assets/og/iab-og-1200x630.jpg)](https://iab.warondisease.org)
@@ -71,13 +78,6 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 [![Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
 
 > Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes outcome-bound governance systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align both budget allocation and policy choices with citizen welfare.
-
-
-### [The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](https://dfda-impact.warondisease.org)
-
-[![The Health and Economic Impact of a Global System for Pragmatic Clinical Trials](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
-
-> By allocating $21.8B/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the 443 years treatment testing backlog in 36 years, delivering 637:1 ROI, saving 10.7B deaths, and generating $58.6B in annual R&D savings at $0.841/DALY (97.7% cost red...
 
 
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)

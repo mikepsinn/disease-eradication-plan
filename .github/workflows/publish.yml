@@ -227,7 +227,7 @@ jobs:
 
 
   build-dfda-impact:
-    name: "Build The Health and Economic Impact of a Global System "
+    name: "Build How to Prevent a Year of Death and Suffering for 8"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -287,7 +287,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The Health and Economic Impact of a Global System "
+      - name: "Render Build How to Prevent a Year of Death and Suffering for 8"
         run: python scripts/render-quarto.py dfda-impact
         timeout-minutes: 30
 
@@ -308,7 +308,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build The Health and Economic Impact of a Global System  to Netlify (immediate)"
+      - name: "Deploy Build How to Prevent a Year of Death and Suffering for 8 to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
