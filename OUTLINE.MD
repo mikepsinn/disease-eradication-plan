@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 5 | **Words:** 68,057
+**Files:** 5 | **Words:** 69,170
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 903 words | 104 lines
+**Stats:** 906 words | 106 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -766,7 +766,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,469 words | 2,805 lines
+**Stats:** 30,579 words | 3,024 lines
 
   - Abstract
   - Key Findings
@@ -1007,12 +1007,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Type:** website
-**Files:** 1 | **Words:** 11,664
+**Files:** 1 | **Words:** 11,905
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Description:** By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this c...
-**Stats:** 11,664 words | 1,222 lines
+**Stats:** 11,905 words | 1,284 lines
 
   - Executive Summary
   - Protocol, Not Platform
@@ -1479,7 +1479,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 161,723
+**Files:** 67 | **Words:** 161,726
 
 #### index.qmd
 **Title:** Start Here
@@ -3384,7 +3384,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 903 words | 104 lines
+**Stats:** 906 words | 106 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -3888,7 +3888,7 @@
 ## _quarto-test.yml
 **Title:** Test Economics Document
 **Type:** book
-**Files:** 6 | **Words:** 9,100
+**Files:** 6 | **Words:** 9,103
 
 #### index.qmd
 **Title:** Wishocracy
@@ -3932,7 +3932,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 903 words | 104 lines
+**Stats:** 906 words | 106 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -4230,6 +4230,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 343,790
+- Total words: 345,150
 - Orphaned files: 26
 - Paper configs: 12

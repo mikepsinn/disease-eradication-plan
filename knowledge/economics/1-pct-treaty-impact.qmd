@@ -85,8 +85,6 @@ This document outlines a theoretical economic architecture. It is not an offer t
 
 **Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure:** This is a **discovery capacity model result**, not "time travel" or a prediction that we will achieve results centuries from now. If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} to explore this therapeutic search space. Scaling capacity {{< var dfda_trial_capacity_multiplier >}} reduces exploration time to ~{{< var dfda_queue_clearance_years >}}. The "{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}" represents the average time a treatment that *could* be discovered today would have waited under the old system versus the new system. Treatments discovered sooner save lives during the intervening period; this cumulative benefit over the acceleration period yields the headline mortality and economic figures.
 
-![Comparison of treatment discovery throughput: The status quo acts as a bottleneck taking centuries to explore the therapeutic search space, while the expanded capacity explores it in decades.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-timeline-shift-queue-model-bw-academic.jpg)
-
 **How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 **Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis], and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits. All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
@@ -118,8 +116,6 @@ This document outlines a theoretical economic architecture. It is not an offer t
 | **Therapeutic Space Explored** | {{< var dfda_queue_clearance_years >}} | Time to test first treatments for ALL diseases (vs. {{< var status_quo_queue_clearance_years >}}, effectively never) |
 | **Investment Required** | {{< var treaty_campaign_total_cost >}} | Annual benefits ({{< var treaty_peace_plus_rd_annual_benefits >}}) exceed costs |
 
-![Cost-effectiveness comparison showing 1 percent Treaty at 0.0018/DALY vs bed nets at 89/DALY - the treaty is 50,300 times more cost-effective](/assets/images/1-pct-treaty-impact/cost-effectiveness-comparison-of-global-health-interventions-chart.jpg)
-
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}} ROI).
 
 ::: {.callout-important}
@@ -127,13 +123,13 @@ This document outlines a theoretical economic architecture. It is not an offer t
 
 **Phase I safety testing remains mandatory.** This is the testing that prevented thalidomide in the United States. What changes is eliminating the {{< var efficacy_lag_years >}}-year *efficacy* delay (Phase II/III) after safety is verified.
 
+![A side-by-side comparison of the current clinical trial system versus pragmatic trials, illustrating the differences in patient scale, monitoring speed, and the disproportionate impact of treatment delays compared to safety risks.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-how-pragmatic-trials-increase-safety-bw-academic.jpg)
+
 **The current system is demonstrably unsafe:**
 
 - **Vioxx** killed 38,000-55,000 people over 5 years (1999-2004) under the "safe" current system because voluntary adverse event reporting captures only 1-10% of events
 - **Proposed system** uses automated EHR monitoring of all patients, detecting safety signals in months instead of years
 - Traditional trials test 100-300 patients; pragmatic trials test 10,000-100,000+ patients with continuous monitoring
-
-![Safety timeline comparison: Traditional voluntary reporting delays adverse event detection by years (e.g., Vioxx), whereas automated EHR surveillance identifies safety signals in months.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-safety-timeline-comparison-bw-academic.jpg)
 
 For every person protected from an unsafe drug (Type I error prevention), the current system kills {{< var type_ii_error_cost_ratio >}} people by delaying access to beneficial treatments (Type II errors). See [Safety Concerns](#safety-concerns) for full analysis.
 :::
@@ -149,8 +145,6 @@ Health economics literature identifies three historical cost-saving intervention
 3. **Water fluoridation**: {{< var water_fluoridation_roi >}} ROI in dental health improvements {{< var water_fluoridation_roi_cite >}}
 
 These successes share common features: systemic interventions that address root causes rather than symptoms, positive externalities that compound over time, and political consensus achieved through demonstrated value. They also share a critical limitation: they targeted specific diseases or conditions. No historical intervention has systematically accelerated the discovery process itself.
-
-![A comparison of the high return-on-investment and economic impact of historical health interventions against the identified limitation of disease-specific focus versus discovery acceleration.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-historical-context-when-grand-challenges-succeed-bw-academic.jpg)
 
 ### The Medical Research Bottleneck
 
@@ -199,7 +193,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 **Primary Hypothesis**: Reallocating {{< var treaty_reduction_pct >}} of global military spending ({{< var treaty_annual_funding >}} annually) to fund decentralized pragmatic clinical trials generates return on investment between {{< var dfda_roi_rd_only >}} (conservative estimate, R&D savings only) and {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} (complete estimate, including peace dividend and all direct benefits), representing a dominant health intervention that simultaneously reduces costs while improving health outcomes.
 
-![A conceptual model showing the reallocation of global military funds into clinical trials and the resulting exponential economic and health returns compared to historical benchmarks.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-research-hypothesis-bw-academic.jpg)
+![A conceptual visualization comparing the investment of 1% military spending to its projected economic returns, highlighting ROI benchmarks against historical public health successes like smallpox eradication.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-research-hypothesis-bw-academic.jpg)
 
 **Null Hypothesis (H₀)**: The intervention does not generate positive net economic value (ROI ≤ 1:1)
 
@@ -216,7 +210,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 **NPV (Net Present Value)**: Economic metric that discounts future cash flows to present-day values, accounting for the time value of money. Used to compare costs and benefits occurring at different times.
 
-![A flowchart showing how the 1% Treaty redirects military spending into a Treaty Fund to power a decentralized institutes of health and a decentralized FDA for pragmatic clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-nomenclature-and-key-terms-bw-academic.jpg)
+![System architecture of the 1% Treaty ecosystem, illustrating the flow of reallocated military funding into a central fund that powers decentralized regulatory frameworks and pragmatic clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-nomenclature-and-key-terms-bw-academic.jpg)
 
 **QALY (Quality-Adjusted Life Year)**: Standard health economics measure combining quantity and quality of life. One QALY = one year of life in perfect health. Used to compare health interventions across different conditions.
 
@@ -256,13 +250,15 @@ Humanity's budget priorities, explained simply:
 
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding ~7-fold.
 
+![Comparison of traditional versus pragmatic clinical trial costs and their impact on the speed of medical discovery, illustrating the 'bottleneck' created by high per-patient expenses.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-current-resource-allocation-bw-academic.jpg)
+
 The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}} per patient. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually helps people.
 
 {{< include ../figures/military-vs-medical-research-spending-column-chart.qmd >}}
 
 #### Disease treatment vs. curing disease
 
-![A scale comparison showing the massive annual global disease burden and symptomatic treatment spending contrasted against the tiny fraction spent on curative research.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-disease-treatment-vs-curing-disease-bw-academic.jpg)
+![A scale comparison showing the massive annual global disease burden and symptomatic treatment costs relative to the microscopic sliver of funding allocated to curative research.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-disease-treatment-vs-curing-disease-bw-academic.jpg)
 
 - **Symptomatic treatment**: {{< var global_symptomatic_disease_treatment_annual >}} {{< var global_symptomatic_disease_treatment_annual_cite >}}/year (managing symptoms, not fixing root causes)
 
@@ -303,7 +299,7 @@ The mechanism is financial, not bureaucratic:
 3. **Easy enrollment**: A decentralized FDA infrastructure (costing just {{< var dfda_annual_opex >}}) makes it easy for anyone to create or join Phase 2/3/4 trials globally
 4. **Patient choice**: Patients choose which trials to join; their subsidy follows them. Trials that attract patients get funded. No grant committees deciding what's "worthy."
 
-![System diagram of the decentralized financial mechanism showing treaty funds flowing to patients, who direct subsidies to providers through their choice of clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-how-it-works-bw-academic.jpg)
+![A diagram illustrating the flow of treaty funding from patient subsidies to treatment providers, highlighting how patient choice drives the decentralized clinical trial ecosystem.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-how-it-works-bw-academic.jpg)
 
 The mechanism makes trial participation financially attractive for both patients and providers while streamlining evidence collection through existing healthcare delivery infrastructure.
 
@@ -311,7 +307,7 @@ The mechanism makes trial participation financially attractive for both patients
 
 The economic model assumes integration of pragmatic trial infrastructure into standard healthcare delivery. Every prescription becomes a data point. Every patient visit generates evidence. Every treatment outcome feeds into a continuously-updating system that tells doctors and patients what actually works. Not what pharmaceutical companies claim works (published trials show 94% positive results while FDA data shows only 51% [@publication-bias-clinical-trials]), but what measurably happens to real humans taking real treatments.
 
-![Comparison of the traditional centralized regulatory gatekeeping model versus a decentralized, distributed real-world evidence framework where clinical encounters continuously feed evidence back into the healthcare system.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-a-decentralized-framework-for-drug-assessment-bw-academic.jpg)
+![A comparison between the traditional centralized clinical trial model and the proposed decentralized real-world evidence framework, illustrating the shift from linear regulatory gatekeeping to a continuous data-feedback loop within standard healthcare.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-a-decentralized-framework-for-drug-assessment-bw-academic.jpg)
 
 This architectural shift from centralized regulatory gatekeeping to distributed, real-world evidence generation achieves a **{{< var dfda_trial_cost_reduction_factor >}} cost reduction** while providing superior safety monitoring and treatment selection capabilities.
 
@@ -321,7 +317,7 @@ This architectural shift from centralized regulatory gatekeeping to distributed,
 
 Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient because they require dedicated infrastructure: specialized research sites, dedicated research coordinators, custom data collection systems, patient travel reimbursement, and extensive monitoring visits. This overhead exists independent of the actual treatment being tested.
 
-![A comparison of clinical trial architectures illustrating the shift from redundant, dedicated research infrastructure to integrated pragmatic trials that leverage existing hospital systems and electronic health records.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-trial-cost-reduction-bw-academic.jpg)
+![A side-by-side comparison of traditional clinical trials using redundant infrastructure versus pragmatic trials integrated into routine hospital care, illustrating the 82x cost reduction.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-trial-cost-reduction-bw-academic.jpg)
 
 The Oxford RECOVERY trial demonstrated an alternative: leverage existing hospital infrastructure, collect only incremental data beyond standard medical records, and integrate evidence generation into routine clinical care. Cost: {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient. (Note: RECOVERY benefited from NHS/COVID conditions; however, a systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost], confirming this efficiency is replicable. Our system projections use a conservative {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.) Same quality evidence. {{< var recovery_trial_cost_reduction_factor >}} lower cost.
 
@@ -357,9 +353,9 @@ This infrastructure is not hypothetical. The [@fda-sentinel-initiative] currentl
 
 **Current decision-making**: Doctor prescribes treatments based on pharmaceutical marketing, medical school training from years ago, and whatever clinical experiences they happen to remember. Patient has no access to comparative effectiveness data.
 
-**Evidence-based alternative**: Doctor searches "rheumatoid arthritis treatment" in the integrated evidence system, sees treatments ranked by measured effectiveness in real-world patients:
+![A side-by-side comparison showing the current method of subjective medical decision-making versus an evidence-based system that uses stratified data to rank treatments for specific patient profiles.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-comparative-effectiveness-rankings-bw-academic.jpg)
 
-![Treatment Rankings Example](/assets/images/dfda-comparative-effectiveness-ranking-search.png)
+**Evidence-based alternative**: Doctor searches "rheumatoid arthritis treatment" in the integrated evidence system, sees treatments ranked by measured effectiveness in real-world patients:
 
 Rankings show frequency and magnitude of outcome changes across actual patient populations. Filters allow stratification: "Show me effectiveness in women over 50 with my patient's genetic markers and comorbidities." This precision medicine approach shows what works for patients like yours, not what works on average across everyone.
 
@@ -371,7 +367,7 @@ Like Amazon rankings based on verified purchase reviews, except based on measure
 
 **Traditional RCT limitation**: Standard trials compare one treatment vs. placebo (or occasionally one active comparator). To rank 10 treatments for a condition, you would need ~45 separate head-to-head RCTs, each costing $50-100M and taking 3-5 years. This is economically impossible for most conditions.
 
-![A comparison between the limited, sequential nature of traditional RCTs and the parallel, inclusive nature of pragmatic trials for collecting comparative effectiveness data.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-how-comparative-effectiveness-data-is-collected-bw-academic.jpg)
+![A comparison between the limited, sequential nature of traditional RCTs and the parallel, inclusive structure of pragmatic trials that allow for real-time comparative data and population stratification.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-how-comparative-effectiveness-data-is-collected-bw-academic.jpg)
 
 **Pragmatic trial approach**: When a patient volunteers for treatment of their condition, physicians access a ranked list of all safe treatments with demonstrated or theoretical efficacy based on existing evidence. The patient is then randomly assigned to one of these treatment options. This randomization serves dual purposes:
 
@@ -387,8 +383,6 @@ Because thousands of patients are randomly assigned across dozens of treatments 
 **Current drug information**: 40-page package inserts written by lawyers, listing every possible side effect without quantifying frequencies. Patients have no idea whether "may cause headaches" means 0.1% or 50% of users.
 
 **Standardized outcome labels**: Quantified summaries of what actually happens to patients taking each treatment, displayed like nutrition labels:
-
-![Outcome Labels Example](/assets/images/dfda-outcome-labels.png)
 
 Based on systematic outcome collection across thousands of patients, labels show:
 
@@ -416,7 +410,7 @@ No extra paperwork. No dedicated research staff. Just making routine clinical da
 
 **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}** in total economic value (cumulative over ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift, conditional on implementation).
 
-![A conceptual flow showing how a 212-year timeline shift in medical treatment availability translates into billions of lives saved and a cumulative economic value of 84.8 quadrillion.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-total-economic-value-bw-academic.jpg)
+![A flow diagram illustrating how treatment acceleration and efficacy lag reduction combine to save billions of lives, resulting in an estimated $84.8 quadrillion in cumulative economic value.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-total-economic-value-bw-academic.jpg)
 
 This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} healthy life-years gained, using standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY). On average, first treatments become available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier - combining treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} from deploying treatments once discovered).
 
@@ -426,11 +420,11 @@ This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_liv
 
 The tornado diagram shows that timeline shift duration and QALY valuation dominate the uncertainty in total economic value. Even under conservative parameter assumptions, the intervention generates quadrillions in cumulative economic value over the timeline shift period (not annually).
 
+![Causal pathway showing how investment in trial capacity leads to accelerated treatment access and massive cumulative economic value.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-uncertainty-analysis-total-economic-value-bw-academic.jpg)
+
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
 
 Monte Carlo analysis confirms the 95% confidence interval for total economic value remains in the quadrillions across all plausible scenarios. These are cumulative values representing accelerated access to treatments over ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}, not annual benefits.
-
-![Tornado diagram illustrating which parameters most significantly impact the total economic value estimate.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-uncertainty-analysis-total-economic-value-bw-academic.jpg)
 
 **Investment required**: {{< var treaty_campaign_total_cost >}}
 
@@ -442,13 +436,13 @@ Monte Carlo analysis confirms the 95% confidence interval for total economic val
 
 Under the status quo, {{< var diseases_without_effective_treatment >}} diseases lack treatment. At {{< var new_disease_first_treatments_per_year >}} new treatments/year, the average disease waits {{< var status_quo_avg_years_to_first_treatment >}} for a treatment. With the framework's {{< var dfda_trial_capacity_multiplier >}} trial capacity increase, treatments arrive **{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier**.
 
-![A comparison showing the dramatic reduction in treatment wait times, contrasting the 222-year status quo with the accelerated framework that delivers treatments 212 years sooner.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treatment-timeline-acceleration-bw-academic.jpg)
+![A comparison between the current 222-year average wait time for disease treatments and the accelerated timeline achieved through trial capacity increases and efficacy lag elimination.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treatment-timeline-acceleration-bw-academic.jpg)
 
 **Total Timeline Shift**: Combining treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}}) with efficacy lag elimination ({{< var efficacy_lag_years >}}) yields a **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year total timeline shift** in when patients receive effective treatments.
 
 ### Suffering Reduction
 
-![A visualization of the scale of impact showing how a 212-year timeline shift results in 1931 trillion hours of human suffering eliminated, including confidence intervals.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-suffering-reduction-bw-academic.jpg)
+![A visualization illustrating the impact of a 212-year timeline shift on human suffering, showing the massive reduction of 1931 trillion hours with associated confidence intervals.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-suffering-reduction-bw-academic.jpg)
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} hours of human suffering eliminated (from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift)
 
@@ -463,6 +457,8 @@ This total combines two effects:
 
 For context: **{{< var global_disease_deaths_daily >}} people die every day** under the current system.
 
+![A conceptual diagram showing how increased trial capacity and the elimination of efficacy lags combine to shift treatment timelines forward, resulting in billions of lives saved.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-lives-saved-bw-academic.jpg)
+
 The Monte Carlo distribution below shows the range of lives saved estimates across 10,000 simulations, accounting for uncertainty in timeline shift, daily mortality rates, and avoidable death percentages:
 
 {{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
@@ -470,6 +466,8 @@ The Monte Carlo distribution below shows the range of lives saved estimates acro
 ### DALYs Averted
 
 **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}** (Disability-Adjusted Life Years) averted from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.
+
+![A visual breakdown of Disability-Adjusted Life Years (DALYs), illustrating how they combine Years of Life Lost (mortality) and Years Lived with Disability (morbidity) to measure the total burden of disease.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-dalys-averted-bw-academic.jpg)
 
 DALYs capture both mortality (years of life lost) AND morbidity (years lived with disability). This includes non-fatal chronic conditions like arthritis, depression, diabetes, and chronic pain that cause suffering but don't appear in mortality statistics. The WHO Global Burden of Disease estimates {{< var global_annual_daly_burden >}} annually, of which {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research.
 
@@ -484,7 +482,7 @@ Of {{< var global_disease_deaths_daily >}} daily deaths:
 
 This differs from "currently preventable" deaths (20-30M annually via vaccines, sanitation, behavior change). The {{< var eventually_avoidable_death_pct >}} figure represents maximum achievable with advanced biotechnology over decades, not current interventions.
 
-![A visualization comparing eventually avoidable vs. unavoidable deaths and a timeline illustrating how increased research capacity accelerates medical breakthroughs by 204 years.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-eventually-avoidable-matters-bw-academic.jpg)
+![A comparison of daily mortality categories and a timeline visualization showing how increased trial capacity accelerates the arrival of medical treatments by over 200 years.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-eventually-avoidable-matters-bw-academic.jpg)
 
 The lives saved calculation measures **timeline acceleration**, not current curability. With the framework's {{< var dfda_trial_capacity_multiplier >}} trial capacity increase, the average disease receives first treatment ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier. Additionally, eliminating the {{< var efficacy_lag_years >}}-year efficacy lag means proven treatments reach patients immediately. This logic applies on average across diseases: some first treatments arrive much sooner (early in the therapeutic search space), others somewhat later (later in exploration), with {{< var dfda_trial_capacity_treatment_acceleration_years >}} being the average acceleration.
 
@@ -500,7 +498,7 @@ The protocol exploits two structural inefficiencies in global capital allocation
 
 The peace dividend doesn't assume the treaty prevents wars. It's based on the **economic multiplier effect** of resource reallocation: military spending generates {{< var economic_multiplier_military_spending >}} in economic value per dollar spent, while healthcare research generates {{< var economic_multiplier_healthcare_investment >}} per dollar. Redirecting {{< var treaty_annual_funding >}} from military to medical research produces a net economic gain of {{< var peace_dividend_annual_societal_benefit >}}/year simply from the multiplier differential, independent of whether conflicts occur.
 
-![A comparison of the economic multiplier effects between military spending and medical research, illustrating how redirecting 27.2 billion results in a 114 billion net gain due to higher returns on investment.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-1-the-peace-dividend-bw-academic.jpg)
+![A comparison of the economic multiplier effect showing how redirecting $27.2 billion from military spending (0.6x multiplier) to healthcare research (4.3x multiplier) generates a $114 billion annual peace dividend.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-1-the-peace-dividend-multiplier-differential-bw-academic.jpg)
 
 This is standard economics: moving money from low-multiplier activities (weapons manufacturing, which creates jobs but doesn't compound) to high-multiplier activities (medical research, which saves healthcare costs and increases workforce productivity) generates measurable GDP gains.
 
@@ -522,7 +520,7 @@ Traditional trials require:
 Pragmatic trials eliminate these duplicative overhead costs by leveraging existing infrastructure. The Harvard meta-analysis of 108 embedded trials [@embedded-pragmatic-trials-meta-analysis] confirms this efficiency is reproducible: median cost {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient across diverse therapeutic areas.
 This structural difference explains why costs drop **{{< var dfda_trial_cost_reduction_factor >}}** instead of 2× or 5×.
 
-![A side-by-side comparison of traditional and pragmatic clinical trial structures, highlighting the shift from custom, high-overhead infrastructure to streamlined integration with routine medical systems.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-2-the-research-efficiency-dividend-bw-academic.jpg)
+![A side-by-side comparison illustrating the structural differences between traditional clinical trial overhead and the streamlined infrastructure leverage of pragmatic trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-research-efficiency-dividend-infrastructure-leverage-bw-academic.jpg)
 
 ### 3. 15–40 "NIH equivalents" of new research capacity
 
@@ -535,7 +533,7 @@ All signatories reduce by {{< var treaty_reduction_pct >}} simultaneously.
 
 ### What doesn't change
 
-![A comparison diagram showing two balanced scales of global military power, illustrating how a proportional 1 percent reduction maintains identical force ratios and strategic stability.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-what-doesn-t-change-bw-academic.jpg)
+![A comparison showing that the relative balance of power and strategic stability remain unchanged despite a 1% reduction in total military resources.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-what-doesn-t-change-bw-academic.jpg)
 
 * Power balances (everyone cuts equally)
 * Deterrence (still plenty of weapons)
@@ -545,7 +543,7 @@ All signatories reduce by {{< var treaty_reduction_pct >}} simultaneously.
 
 ### What improves
 
-![A visualization illustrating how reducing nuclear warhead inventory leads to decreased risks of accidental launch, malfunctions, and crisis instability.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-what-improves-bw-academic.jpg)
+![A conceptual diagram showing how a reduction in deployed warheads leads to improved safety outcomes, including lower accidental risk and increased crisis stability.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-what-improves-bw-academic.jpg)
 
 * Fewer deployed warheads (less probability someone launches by mistake)
 * Lower accidental-launch risk (fewer deployed warheads to malfunction)
@@ -556,7 +554,7 @@ All signatories reduce by {{< var treaty_reduction_pct >}} simultaneously.
 
 The {{< var treaty_reduction_pct >}} Treaty is the first step in a **gradual off-ramp from the arms race**.
 
-![A diagram illustrating the 'Ratchet Mechanism' where initial military spending reductions fund health breakthroughs, creating a positive feedback loop that incentivizes further de-escalation.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-de-escalation-trajectory-bw-academic.jpg)
+![A conceptual diagram illustrating the 'Ratchet Mechanism' where initial military reductions fund health benefits, creating a positive feedback loop that transitions from a negative-sum arms race to a positive-sum peace race.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-de-escalation-trajectory-bw-academic.jpg)
 
 By successfully executing a verified, mutual reduction in military spending to fund a shared global good (developing disease treatments), humanity establishes a proof-of-concept for cooperation.
 
@@ -570,7 +568,7 @@ This gradual approach steers nations toward a safer equilibrium, one percentage 
 
 The ratchet mechanism isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
 
-![A visualization of the 80/10/10 funding allocation showing how revenue flows into pragmatic trials, political incentives, and investor returns to create a self-reinforcing ratchet mechanism.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-the-ratchet-works-the-iab-scaling-engine-bw-academic.jpg)
+![A diagram of the IAB Scaling Engine showing the 80/10/10 split of treaty revenue between pragmatic trials, investor returns, and political incentives to create a self-reinforcing feedback loop.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-the-ratchet-works-the-iab-scaling-engine-bw-academic.jpg)
 
 The mechanism: {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives while {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic trials. The remaining {{< var victory_bond_funding_pct >}} funds Incentive Alignment Bond investor returns.
 
@@ -600,7 +598,7 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
 
 Ideas don't win on merit alone. They win by aligning incentives.
 
-![Stakeholder map and incentive flow between private investors, health providers, outcome payers, and evaluators in an Incentive Alignment Bond (IAB) structure.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-political-economy-and-financing-bw-academic.jpg)
+![A conceptual model showing how Incentive Alignment Bonds (IABs) synchronize the interests of donors, governments, and investors to prioritize global health outcomes.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-political-economy-and-financing-bw-academic.jpg)
 
 This section describes how [Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) restructure the political economy of global health funding.
 
@@ -608,7 +606,9 @@ This section describes how [Incentive Alignment Bonds (IABs)](../appendix/incent
 
 [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) address a fundamental problem: politicians face career penalties for supporting beneficial policies that threaten incumbent industries. IABs restructure these incentives so that supporting effective policy becomes professionally advantageous.
 
-![A diagram illustrating the shift from conflicting incentives to aligned interests where Incentive Alignment Bonds link political career success directly to positive social welfare outcomes.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-incentive-alignment-bonds-bw-academic.jpg)
+![A comparison diagram illustrating the shift in political incentives: from a career penalty for opposing incumbent industries to professional advancement through Incentive Alignment Bonds when achieving social welfare goals.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-incentive-alignment-bonds-bw-academic.jpg)
+
+![A comparison showing how Incentive Alignment Bonds shift the politician's outcome from a career penalty to professional advancement when supporting policies that benefit social welfare.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-incentive-alignment-bonds-bw-academic.jpg)
 
 The mechanism applies public choice theory systematically. Rather than requiring altruism, it makes self-interest align with social welfare. Politicians pursuing their own career advancement simultaneously advance global health outcomes.
 
@@ -652,7 +652,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 **Military Contractors**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning projected {{< var victory_bond_annual_return_pct >}} returns on Incentive Alignment Bonds. The treaty creates new revenue streams without threatening core business.
 
-![System map showing how the Incentive Alignment Bond mechanism distributes benefits to opposing stakeholders, converting zero-sum conflicts into positive-sum outcomes.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-stakeholder-alignment-bw-academic.jpg)
+![A comparison of current costs and returns versus the projected gains for stakeholders under the Incentive Alignment Bond mechanism, illustrating the shift from zero-sum to positive-sum outcomes.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-stakeholder-alignment-bw-academic.jpg)
 
 **Insurance Companies**: Healthier populations generate higher lifetime premium revenue. Patients living longer with better health outcomes produce better actuarial performance than the current mortality-driven model.
 
@@ -669,8 +669,6 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 **Patients**: Subsidized access to experimental treatments recommended by physicians. Patients choose which trials to join, with subsidies following their decisions. Additional benefits include lifetime wealth gains and longevity increases from the [economic multiplier effect](../appendix/personal-lifetime-wealth-calc.qmd).
 
 The mechanism redirects competitive incentives from zero-sum conflicts toward positive-sum health outcomes.
-
-![Stakeholder incentive ecosystem: The Incentive Alignment Bond structure ensures every key political and economic actor receives a direct benefit from treaty ratification, creating a self-reinforcing stability.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-incentive-alignment-ecosystem-bw-academic.jpg)
 
 See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
 
@@ -697,13 +695,13 @@ This mechanism differs from bribery in four key ways:
 
 The mechanism strengthens rather than corrupts the alignment between political success and social outcomes.
 
-![A side-by-side comparison between the IAB mechanism and bribery across four key dimensions: duty alignment, transparency, payment method, and source of verification.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-legal-and-ethical-framework-bw-academic.jpg)
+![A comparison diagram illustrating the four key legal and ethical distinctions between IABs and bribery across metrics of transparency, duty, payment type, and verifiability.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-legal-and-ethical-framework-bw-academic.jpg)
 
 #### Generalized Governance Application
 
 While designed for the 1% Treaty, the IAB architecture applies to any global coordination problem requiring sustained political commitment. Climate change mitigation, nuclear disarmament, and pandemic preparedness all face the same challenge: aligning short-term political incentives with long-term collective welfare. The IAB mechanism provides a systematic solution.
 
-![A conceptual diagram showing the IAB architecture as a bridge aligning short-term political incentives with long-term collective welfare across global issues like climate change, nuclear disarmament, and pandemic preparedness.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-generalized-governance-application-bw-academic.jpg)
+![A conceptual diagram illustrating how the IAB architecture bridges the gap between short-term political incentives and long-term collective welfare across various global challenges.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-generalized-governance-application-bw-academic.jpg)
 
 ## Dominance Analysis
 
@@ -719,7 +717,7 @@ For objectives including:
 
 Redirection of 1% of military spending to pragmatic trials delivers exceptional returns.
 
-![An infographic illustrating how redirecting a 1 percent slice of military funding into pragmatic trials yields broad benefits across health, economic, and security sectors.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-dominance-analysis-bw-academic.jpg)
+![A visual representation showing the redirection of 1% of military spending into pragmatic trials, yielding positive outcomes across health, economic growth, and national security.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-dominance-analysis-bw-academic.jpg)
 
 ### Quantitative Comparison
 
@@ -739,8 +737,6 @@ With {{< var treaty_campaign_total_cost >}} allocated toward saving lives, here'
 
 {{< include ../figures/health-programs-vs-1-percent-treaty-societal-benefits-bar-chart.qmd >}}
 
-![Comparative cost-effectiveness: The systemic nature of the treaty intervention results in a cost-per-DALY orders of magnitude lower than traditional linear interventions like bed nets or screenings.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-effectiveness-dominance-bw-academic.jpg)
-
 ### Comparative Efficacy Analysis
 
 Not bed nets (excellent).
@@ -750,7 +746,7 @@ Not economic reforms (worthwhile).
 Not AI safety (urgent).
 Not other treaties (good luck).
 
-![A comparison between depreciating consumable interventions like bed nets, which require linear reinvestment, and appreciating structural interventions like the 1 percent Treaty, which yield compounding long-term returns.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-this-dominates-bw-academic.jpg)
+![A comparison between the linear, depreciating costs of consumable interventions like bed nets and the compounding, appreciating value of structural investments like the 1% Treaty.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-comparative-efficacy-analysis-bw-academic.jpg)
 
 All valuable. All recommended.
 None offer **{{< var dfda_trial_capacity_multiplier >}} leverage**.
@@ -784,11 +780,13 @@ One spends {{< var treaty_campaign_total_cost >}} convincing humans that not dyi
 
 This is a one-time cost. Treaty passage is either achieved or it isn't.
 
-![A breakdown of the 1 billion budget showing the two-pronged strategy: a 250 million grassroots referendum campaign and 650 million for top-down professional lobbying and Super PACs.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-components-bw-academic.jpg)
+![A hierarchical breakdown of the $1 billion political strategy budget, split between a $250 million grassroots referendum campaign and a $650 million top-down lobbying effort.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-components-bw-academic.jpg)
 
 ### Benefit Components
 
 The treaty redirects {{< var treaty_annual_funding >}} annually from military spending to pragmatic clinical trials. 
+
+![A visual comparison of the economic multipliers and trial efficiency gains achieved by redirecting funds from military spending to pragmatic clinical research.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-benefit-components-bw-academic.jpg)
 
 This generates benefits through two mechanisms:
 
@@ -810,7 +808,7 @@ The distribution below shows the uncertainty range for the cost reduction factor
 
 In human language: "How much value is generated per dollar spent?"
 
-![A comparison of two ROI scenarios for campaign investment, illustrating the massive returns in R and D efficiency, accelerated medical timelines, and annual economic growth.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-roi-calculation-bw-academic.jpg)
+![A comparison of ROI scenarios, contrasting the 637:1 return on R&D efficiency with the massive 212-year timeline shift and $172B in annual economic benefits in the complete model.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-roi-calculation-bw-academic.jpg)
 
 **Conservative scenario** (only counting R&D efficiency, ignoring everything else):
 
@@ -848,7 +846,7 @@ But here's the key: this intervention is **cost-saving**. The upfront implementa
 
 ### Expected Value Under Political Uncertainty
 
-![Comparison of cost-effectiveness estimates showing the significant difference between outcomes conditional on success and risk-adjusted expected values, including 95 percent confidence intervals.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-expected-value-under-political-uncertainty-bw-academic.jpg)
+![Comparison of expected value per DALY between a conditional success scenario and a risk-adjusted scenario, showing the impact of political uncertainty and 95% confidence intervals.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-expected-value-under-political-uncertainty-bw-academic.jpg)
 
 **Conditional on success**: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY
 
@@ -882,13 +880,13 @@ For context: Ottawa Treaty [@icbl-ottawa-treaty] (landmine ban) was called a "bo
 
 A natural question: Why not skip the {{< var treaty_campaign_total_cost >}} treaty campaign and simply convince major philanthropists (Gates Foundation, Open Philanthropy) or expand NIH budgets to directly fund {{< var dih_treasury_to_medical_research_annual >}}/year for clinical trials?
 
-![A visual comparison showing the leverage of a 1B investment in a treaty campaign versus the higher cost of directly funding 21.8B in clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treaty-campaign-leverage-vs-direct-funding-bw-academic.jpg)
+![A comparison of two funding models: policy advocacy leverage ($1B campaign for a treaty) versus direct funding ($21.8B/year from existing budgets).](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-policy-advocacy-leverage-vs-direct-funding-bw-academic.jpg)
 
 #### Why Billionaires Buy Lottery Tickets Instead of the Casino
 
 The world's richest people (who will die of cancer, heart disease, or aging just like everyone else) are not exclusively focused on passing this treaty. This is arguably the single most puzzling fact about modern philanthropy.
 
-![A comparison between the current 'Lottery Ticket' approach of funding individual research labs versus the high-leverage 'Casino' strategy of lobbying for a 1% global treaty to redirect military spending.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-billionaires-buy-lottery-tickets-instead-of-the-casino-bw-academic.jpg)
+![A comparison between the 'Science Bet' (funding individual labs with low success probability) and the 'Lobbying Bet' (using capital to unlock global military budgets via a treaty).](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-billionaires-buy-lottery-tickets-instead-of-the-casino-bw-academic.jpg)
 
 Four structural barriers explain this coordination failure:
 
@@ -908,7 +906,7 @@ The answer reveals the treaty campaign's massive leverage advantage:
 
 #### Direct Funding Scenario
 
-![A comparative visualization of cost-effectiveness showing the $0.84 cost per DALY of direct funding versus the $89 benchmark for malaria bed nets.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-direct-funding-scenario-bw-academic.jpg)
+![A comparison showing the cost-effectiveness of direct funding for therapeutic exploration ($0.84) versus bed nets ($89) per disability-adjusted life year (DALY), alongside the 36-year funding timeline.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-direct-funding-scenario-bw-academic.jpg)
 
 **If philanthropists/NIH directly funded** {{< var dih_treasury_to_medical_research_annual >}}/year for {{< var dfda_queue_clearance_years >}} (therapeutic space exploration period):
 
@@ -930,7 +928,7 @@ Even without treaty leverage, direct funding achieves **{{< var dfda_direct_fund
 
 The {{< var treaty_campaign_total_cost >}} treaty campaign unlocks the same {{< var dfda_direct_funding_queue_clearance_npv >}} in government funding ({{< var dih_treasury_to_medical_research_annual >}}/year for {{< var dfda_queue_clearance_years >}}) that would otherwise require direct philanthropic commitment. Both approaches achieve the same {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} benefit by exploring the therapeutic space {{< var dfda_trial_capacity_multiplier >}} faster.
 
-![A comparison between the Treaty Campaign and Direct Funding models, illustrating how a 1B investment leverages 475B in government funding to achieve identical health outcomes at a fraction of the philanthropic cost.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treaty-campaign-advantage-bw-academic.jpg)
+![A comparison of the Treaty Campaign versus Direct Funding, illustrating how a $1B investment leverages $475B in government funding to achieve identical health benefits through a 475x leverage mechanism.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treaty-campaign-advantage-bw-academic.jpg)
 
 **Risk-adjusted leverage** (accounting for {{< var political_success_probability >}} political success probability):
 
@@ -983,7 +981,7 @@ This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}
 
 The conservative NPV above excludes the benefit from eliminating the regulatory delay. This section calculates the NPV of just the **efficacy lag component** ({{< var efficacy_lag_years >}}) - a subset of the full ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.
 
-![A timeline diagram showing the effect of eliminating an 8.2-year regulatory delay on treatments expected in 100 years, highlighting the impact of future discounting on Net Present Value.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-npv-of-regulatory-delay-avoidance-bw-academic.jpg)
+![A timeline comparison showing how eliminating an 8.2-year regulatory delay shifts future medical benefits earlier in a 100-year horizon, illustrating the impact of long-term discounting on Net Present Value.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-npv-of-regulatory-delay-avoidance-bw-academic.jpg)
 
 **Assumption**: We assume diseases receive first effective treatments 100 years in the future on average. If first effective treatments arrive at year 100, eliminating the regulatory delay brings them {{< var efficacy_lag_years >}} earlier. Far-future discounting dramatically reduces NPV compared to immediate benefits, but the delay avoidance still provides value.
 
@@ -1052,8 +1050,6 @@ This section provides step-by-step derivations for all headline claims, enabling
 
 ### 1. Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
 
-![A visual derivation of the Trial Capacity Multiplier, showing the process of converting 21.7B in redirected funding into a 12.3-fold increase over current global clinical trial capacity.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-1-trial-capacity-multiplier-derivati-bw-academic.jpg)
-
 **Current System Baseline**:
 
 - {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} clinical trials initiated per year
@@ -1085,7 +1081,7 @@ The trial capacity multiplier determines how many more trials can be run with re
 
 ### 2. Timeline Shift Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_years >}})
 
-![A comparison of the status quo medical research timeline versus the accelerated timeline, illustrating how increased trial capacity and the elimination of efficacy lag result in a 212-year shift.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-2-timeline-shift-derivation-bw-academic.jpg)
+![A comparative timeline visualization showing the status quo path to therapeutic discovery versus the accelerated path achieved through trial capacity expansion and efficacy lag elimination.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-2-timeline-shift-derivation-212-years-95-ci-135-years-355-ye-bw-academic.jpg)
 
 The timeline shift combines two independent effects:
 
@@ -1131,8 +1127,6 @@ Post-safety regulatory delay: {{< var efficacy_lag_years >}} (BIO 2021: 10.5 yea
 
 **Assumption justification ({{< var eventually_avoidable_daly_pct >}} avoidable)**: This represents the theoretical ceiling of what is biologically addressable, not what is currently preventable. It excludes only fundamentally unavoidable causes (primarily accidents, which cannot be addressed by medical research). Conservative estimates of current preventability (20-30%) are much lower because they measure what we can do today, not what is scientifically possible with sufficient research over decades.
 
-![A visual breakdown of the global DALY burden, illustrating the calculation path from total annual burden to the high percentage of avoidable DALYs via biomedical research.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-3-dalys-averted-derivation-bw-academic.jpg)
-
 **Step 3: Calculate DALYs averted**
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_latex >}}
@@ -1152,11 +1146,11 @@ Post-safety regulatory delay: {{< var efficacy_lag_years >}} (BIO 2021: 10.5 yea
 
 **Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY - this intervention is {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective.
 
-![A breakdown of the $1 billion implementation costs and a visual comparison of cost-effectiveness between this intervention and malaria bed nets.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-4-cost-per-daly-derivation-0-0018-95-ci-0-0007-0-0041-bw-academic.jpg)
+![A visual breakdown of the $1 billion implementation budget and a scale comparison showing the intervention's cost-effectiveness relative to malaria bed nets.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-4-cost-per-daly-derivation-0-0018-95-ci-0-0007-0-0041-bw-academic.jpg)
 
 ### 5. ROI Derivation (Conservative: {{< var dfda_roi_rd_only >}})
 
-![A visual breakdown of the ROI derivation process, illustrating the flow from global clinical trial spending and cost reductions to the final 637:1 return on investment calculation.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-5-roi-derivation-conservative-637-1-95-ci-569-1-790-1-bw-academic.jpg)
+![A visual breakdown of the four-step ROI derivation process, illustrating the conversion of global clinical trial spending into R&D savings and the final 637:1 return ratio.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-5-roi-derivation-conservative-637-1-95-ci-569-1-790-1-bw-academic.jpg)
 
 The conservative ROI uses only R&D cost savings, ignoring all health benefits:
 
@@ -1196,11 +1190,15 @@ The complete ROI includes the full timeline shift health benefits:
 
 **QALY Valuation Justification ({{< var standard_economic_qaly_value_usd >}})**: This uses standard US economic valuations. WHO recommends {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} per QALY for cost-effectiveness thresholds in high-income countries. The {{< var standard_economic_qaly_value_usd >}} value reflects revealed preferences from regulatory decisions (EPA, FDA), wage-risk tradeoffs, and health insurance willingness-to-pay studies. International analyses often use lower thresholds ($50-100K), which would reduce the ROI proportionally but not change the cost-saving classification.
 
+![A conceptual flow showing the transition from health benefits (timeline shift and QALYs) to economic value and the final ROI calculation.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-6-roi-derivation-complete-84-8m-1-95-ci-46-6m-1-144m-1-bw-academic.jpg)
+
 **Step 2: Calculate ROI**
 
 {{< var treaty_roi_trial_capacity_plus_efficacy_lag_latex >}}
 
 ### 7. Lives Saved Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}})
+
+![A flowchart illustrating the multi-step derivation of total lives saved, starting from daily global mortality and applying the avoidable fraction and timeline shift variables.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-7-lives-saved-derivation-10-7b-deaths-95-ci-7-39b-deaths-16-bw-academic.jpg)
 
 **Step 1: Identify daily mortality**
 
@@ -1250,6 +1248,8 @@ For complete parameter definitions, uncertainty ranges, and Monte Carlo distribu
 
 This cost-effectiveness analysis uses the **status quo** as the baseline counterfactual: military spending continues at current levels ({{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} annually) and is allocated to traditional military purposes. Under this baseline, the {{< var treaty_annual_funding >}} redirected to pragmatic clinical trials infrastructure would otherwise remain in military budgets.
 
+![A comparison of the proposed $27.2B reallocation toward clinical trial infrastructure versus alternative counterfactual scenarios, illustrating differences in economic multipliers and health impacts.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-counterfactual-baseline-specification-bw-academic.jpg)
+
 **Alternative counterfactual scenarios** include:
 
 1. **Military R&D continuation**: The {{< var treaty_annual_funding >}} continues funding military research and development, potentially yielding civilian technology spillovers (e.g., GPS, internet protocols, materials science advances). This scenario is partially addressed in the peace dividend calculations, which acknowledge that military spending generates economic multiplier effects of 0.5-1.0× compared to pragmatic clinical trial multipliers of 2.0-3.0×.
@@ -1275,7 +1275,7 @@ The peace dividend represents economic benefits from reduced military spending. 
 1. **Direct fiscal savings (Cash):** {{< var treaty_annual_funding >}} available for productive investment. This is the floor.
 2. **Diplomatic De-escalation (Upside):** Reduced conflict-related economic damage (trade disruption, infrastructure destruction, refugee costs).
 
-![A visual breakdown of the projected annual peace dividend, contrasting certain direct fiscal savings with the high-upside potential of reduced conflict costs.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-economic-benefits-of-reduced-military-spending-bw-academic.jpg)
+![A breakdown of the peace dividend components, showing the guaranteed 27.2 billion dollar fiscal floor compared to the 86.4 billion dollar upside scenario from conflict reduction.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-economic-benefits-of-reduced-military-spending-bw-academic.jpg)
 
 **Opportunity Cost & Signal Value**: The argument isn't just that 1% less budget stops 1% of bullets linearly. It's that 1% *redirected* to shared survival goals (curing disease) acts as a **confidence-building measure** (CBM) in arms control theory. It signals a shift from zero-sum competition to positive-sum cooperation.
 
@@ -1296,6 +1296,8 @@ The peace dividend represents economic benefits from reduced military spending. 
 The {{< var dfda_trial_capacity_multiplier >}} research acceleration multiplier comes from the combination of multiple proven accelerators:
 
 **Faster Recruitment**: The Oxford RECOVERY trial recruited 47,000+ patients across nearly 200 hospitals [@recovery-trial-summary-quote], while 80% of traditional trials fail to meet enrollment timelines [@clinical-trial-enrollment-timelines]. This speed comes from pragmatic eligibility (minimal exclusions [@fda-trial-patient-exclusion-criteria] vs. {{< var antidepressant_trial_exclusion_rate >}} excluded traditionally) and embedded recruitment in routine care.
+
+![A flowchart contrasting the manual, linear bottlenecks of traditional clinical trials with the automated, parallelized infrastructure of a decentralized pragmatic trial system.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-research-acceleration-mechanism-bw-academic.jpg)
 
 **Faster Completion**: Pragmatic trials complete in 3-12 months instead of 3-5 years because patient subsidies flip economic incentives. Physicians gain revenue from trial participation rather than losing it, eliminating the perverse incentives that delay traditional trials.
 
@@ -1332,7 +1334,7 @@ The system uses federated queries (data stays in EHR and consumer health app sys
 
 The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms our ability to explore the vast therapeutic space where undiscovered treatments already exist.
 
-![A comparison showing the limited reach of traditional discovery methods versus the vastly expanded exploration of the therapeutic space enabled by a 12.3-fold acceleration in research speed.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treatment-discovery-through-therapeutic-space-exploration-bw-academic.jpg)
+![A visual comparison showing the expansion of searchable therapeutic space, contrasting traditional research speed with the 12.3x acceleration in discovery capacity.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treatment-discovery-through-therapeutic-space-exploration-bw-academic.jpg)
 
 #### The Unexplored Therapeutic Frontier
 
@@ -1347,7 +1349,7 @@ The fundamental problem isn't that effective treatments are hard to discover. It
 
 Effective treatments likely already exist among tested-safe compounds. We just haven't looked.
 
-![Visualization of the 'dark matter' of medicine, showing the vast majority of plausible drug-disease combinations remain untested due to cost barriers.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treatment-discovery-through-therapeutic-space-exploration-bw-academic.jpg)
+![A visualization of the vast drug-disease search space, contrasting the 9.5 million possible therapeutic combinations against the tiny fraction currently explored.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
 #### Current Exploration Rate vs. Therapeutic Space
 
@@ -1362,7 +1364,7 @@ Under the status quo:
 
 This calculation is empirically grounded: only ~5% of the {{< var rare_diseases_count_global >}} rare diseases have FDA-approved treatments after 40+ years of the Orphan Drug Act. At the current rate of {{< var new_disease_first_treatments_per_year >}} diseases/year getting first treatments, most of the therapeutic space remains permanently unexplored.
 
-![A comparative visualization of the therapeutic exploration timeline, contrasting the status quo's 443-year trajectory with the framework's 36-year acceleration.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-current-exploration-rate-vs-therapeutic-space-bw-academic.jpg)
+![A side-by-side comparison of drug discovery efficiency showing the shift from a 443-year exploration timeline to a 36-year timeline under the proposed framework.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-current-exploration-rate-vs-therapeutic-space-bw-academic.jpg)
 
 **With framework implementation**:
 
@@ -1389,13 +1391,15 @@ This acceleration applies across *all* diseases, not just well-funded ones. The 
 
 A common objection is that "more trials won't produce proportionally more treatments," the diminishing returns hypothesis. This deserves serious consideration, but the evidence suggests the opposite may be true.
 
+![A comparison of three growth trajectories (diminishing, linear, and compounding) illustrating how the volume of treatments scales relative to the number of trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-addressing-the-returns-question-diminishing-linear-or-compou-bw-academic.jpg)
+
 #### Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
 
 The diminishing returns objection assumes we've exhausted low-hanging fruit. But we've barely begun:
 
 1. **Single compounds alone**: {{< var drug_disease_combinations_possible >}} possible combinations of known safe compounds × diseases. At current trial capacity, systematically testing these would take **{{< var current_known_safe_exploration_years >}}**. We won't finish until the year 5000.
 
-![A comparison of current medical knowledge versus the vast unexplored space of single and combination drug therapies, highlighting the massive timelines required to exhaust existing possibilities.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-diminishing-returns-is-unlikely-we-haven-t-started-looking-bw-academic.jpg)
+![A comparison of the small fraction of explored therapeutic space versus the massive, untapped potential of compound combinations and the human interactome.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-diminishing-returns-is-unlikely-we-haven-t-started-looki-bw-academic.jpg)
 
 {{< var current_known_safe_exploration_years_latex >}}
 
@@ -1432,7 +1436,7 @@ Platform technologies may actually produce *increasing* returns per trial over t
 - **Failure analysis**: Systematically studying why trials fail (wrong dose, wrong population, wrong endpoint) improves future trial design
 - **Biological model refinement**: Every trial (success or failure) teaches us how human biology responds to interventions. This cumulative knowledge improves our mechanistic understanding of disease pathways, enabling increasingly accurate prediction of which candidates will work. The ratio of effective treatments per trial should *increase* over time, not decrease.
 
-![A virtuous cycle diagram showing how trial data and technological platforms feed into a central learning engine to increase both the volume of drug candidates and their eventual success rates.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-case-for-compounding-returns-bw-academic.jpg)
+![A virtuous cycle diagram showing how platform technologies and trial data create a flywheel effect of expanding candidate pipelines and improved success rates through cumulative learning.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-case-for-compounding-returns-bw-academic.jpg)
 
 #### Mathematical Framework: When Would Diminishing Returns Dominate?
 
@@ -1524,7 +1528,7 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 
 **Bottom line**: Even under the conservative linear assumption, {{< var dfda_trial_capacity_multiplier >}} more trials produces {{< var dfda_trial_capacity_multiplier >}} more discoveries from a space that is 99%+ unexplored. The expected value calculation remains overwhelmingly positive.
 
-![A conceptual graph comparing diminishing, linear, and compounding returns, highlighting the linear model as the conservative baseline for predicting treatment discoveries relative to trial capacity.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-conservative-default-linear-assumption-bw-academic.jpg)
+![A comparison of three mathematical models (diminishing, linear, and compounding) showing how trial capacity translates to discoveries and why linearity is the conservative middle ground.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-conservative-default-linear-assumption-bw-academic.jpg)
 
 ## Data Sources and Primary Inputs
 
@@ -1598,7 +1602,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Assumption:** A coordinated {{< var treaty_reduction_pct >}} reduction in military spending across all nations maintains relative power balances and strategic deterrence capabilities.
 
-![A comparison showing how proportional spending cuts across different nations reduce absolute costs while maintaining the same relative balance of power and strategic deterrence.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-strategic-stability-assumption-bw-academic.jpg)
+![A diagram illustrating how proportional spending reductions across different nations maintain a constant balance of power and strategic deterrence.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-strategic-stability-assumption-bw-academic.jpg)
 
 **Justification:** The {{< var treaty_reduction_pct >}} Treaty explicitly requires proportional reductions from all signatories. Since relative military capabilities remain unchanged, strategic stability is preserved. Historical analysis shows that symmetric reductions in military tensions (e.g., START treaties, naval treaties between world wars) maintained deterrence while reducing absolute expenditure.
 
@@ -1608,13 +1612,15 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Assumption:** Economic benefits and costs scale approximately linearly with program scope and adoption rates.
 
-![A comparison graph showing linear scaling of costs and benefits against a superlinear curve, illustrating why the linear assumption is a conservative estimate.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-linear-scaling-assumption-bw-academic.jpg)
+![A line chart comparing a linear growth model for costs and benefits against a superlinear curve representing potential network effects and data abundance.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-linear-scaling-assumption-bw-academic.jpg)
 
 **Justification:** Conservative assumption that costs scale with system usage. Research acceleration benefits may exhibit superlinear returns (network effects, data abundance), making this assumption conservative.
 
 ### Adoption Rate Assumptions
 
 **Assumption:** The framework achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
+
+![A comparison of the conservative and optimistic adoption scenarios showing the 5-year linear ramp to 50% and 80% participation rates respectively.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-rate-assumptions-bw-academic.jpg)
 
 **Conservative case:** 50% of trials adopt the pragmatic trial methodology
 **Optimistic case:** 80% adoption rate
@@ -1629,7 +1635,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Assumption:** The methodology of a decentralized FDA reduces per-patient trial costs by {{< var dfda_trial_cost_reduction_pct >}} (conservative) to 95% (optimistic) compared to traditional randomized controlled trials.
 
-![Comparison of per-patient trial costs between traditional randomized controlled trials and a decentralized framework, highlighting a cost reduction of over 95 percent.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-reduction-assumptions-bw-academic.jpg)
+![A comparison bar chart illustrating the dramatic cost reduction per patient when moving from traditional randomized controlled trials to a decentralized FDA methodology.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-reduction-assumptions-bw-academic.jpg)
 
 #### Empirical basis
 
@@ -1640,7 +1646,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Sensitivity:** Conservative scenario ({{< var dfda_roi_rd_only >}} ROI) uses {{< var dfda_trial_cost_reduction_pct >}} reduction; optimistic case uses 95%.
 
-![A comparison of per-patient costs between traditional clinical trials and pragmatic trials like RECOVERY and ADAPTABLE, illustrating the dramatic 82x reduction in expenses.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-empirical-basis-bw-academic.jpg)
+![Comparison of per-patient costs between traditional clinical trials and pragmatic trial models like RECOVERY and ADAPTABLE, highlighting the 50-95% cost reduction.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-empirical-basis-bw-academic.jpg)
 
 ### Historical Precedent: Pre-1962 Physician-Led Efficacy Trials
 
@@ -1662,7 +1668,7 @@ The cost explosion began exactly when efficacy testing was centralized within ph
 
 From 1883 to 1960, {{< var pre_1962_physician_count >}} physicians across America tested drug efficacy on real patients in routine clinical practice. The Journal of the American Medical Association (JAMA) [@jama-founded-1893] compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement.
 
-![Comparison of the pre-1962 decentralized peer-review model involving 144,000 physicians versus the post-1962 centralized pharmaceutical efficacy testing framework.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-historical-operational-model-bw-academic.jpg)
+![Comparison of the decentralized pre-1962 medical testing model versus the centralized post-1962 regulatory framework, highlighting the shift in efficacy testing and cost impact.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-historical-operational-model-bw-academic.jpg)
 
 **Safety record, the thalidomide success story:** The pre-1962 safety testing framework successfully prevented the thalidomide disaster [@thalidomide-no-us-birth-defects] that devastated Europe with thousands of horrific birth defects [@thalidomide-birth-defects]. When thalidomide was marketed in Europe starting in 1957 for morning sickness, existing FDA safety regulations (1938 Food, Drug, and Cosmetic Act) blocked the drug from approval in the United States. **Zero American babies were harmed** - the safety testing framework worked exactly as intended.
 
@@ -1720,7 +1726,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the pragmatic clinical trials budget for short-term priorities.
 
-![A comparative political economy diagram showing how the 1 percent Treaty prevents the 're-militarization' trap by redirecting savings into a self-reinforcing health research constituency rather than letting funds revert to the general budget.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-time-inconsistency-and-commitment-credibility-bw-academic.jpg)
+![A conceptual diagram illustrating the political asymmetry between the concentrated defense 'Iron Triangle' and diffuse health beneficiaries, contrasted with the proposed treaty mechanism that binds savings to a new medical-research constituency.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-time-inconsistency-and-commitment-credibility-bw-academic.jpg)
 
 **The Iron Triangle problem**: Military contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually), creating tight coordination between defense industry, congressional committees, and Pentagon bureaucracy. Health benefits, while larger in aggregate ({{< var treaty_peace_plus_rd_annual_benefits >}} annually), are diffuse across millions of beneficiaries who lack equivalent lobbying infrastructure. This asymmetry (concentrated producer benefits vs. diffuse consumer benefits) creates political economy barriers to reallocation even when aggregate welfare gains are enormous.
 
@@ -1746,7 +1752,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **Assumption:** Analysis does not incorporate potential advances in AI, automation, or biotechnology that could further accelerate research.
 
-![A conceptual comparison between conservative baseline research estimates and the potential acceleration caused by emerging AI and biotechnological advances.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-technology-constancy-assumption-bw-academic.jpg)
+![A comparison between a conservative baseline estimate and an accelerated trajectory driven by AI and biotechnology advancements.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-technology-constancy-assumption-bw-academic.jpg)
 
 **Justification:** Conservative assumption. Emerging AI capabilities in drug discovery, automated synthesis, and computational biology could dramatically increase research productivity beyond modeled estimates.
 
@@ -1762,6 +1768,8 @@ All primary data sources are documented in [References](../references.qmd) with 
 
 For complete parameter documentation with confidence indicators and peer-review status, see [Parameters and Calculations Reference](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
 
+![A breakdown of data source confidence levels, illustrating the high percentage of reliable data supporting the analysis.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-data-quality-and-availability-bw-academic.jpg)
+
 ## Scenario Analysis: Conservative Case
 
 **{{< var dfda_roi_rd_only >}} ROI**
@@ -1775,7 +1783,7 @@ Simple ROI calculation:
 Total cost: {{< var dfda_npv_total_cost >}}.
 Total return: {{< var dfda_npv_net_benefit_rd_only >}} over {{< var npv_time_horizon_years >}}.
 
-![A comparison between the $611 million total cost and the $389 billion total return, highlighting the massive 637:1 return on investment ratio.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-roi-derivation-bw-academic.jpg)
+![A visualization of the ROI scale showing a $1 initial investment compared to a $637 return, illustrating the massive disparity between R&D costs and projected 10-year savings.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-roi-derivation-bw-academic.jpg)
 
 That's ${{< var dfda_roi_rd_only >}} appearing for every $1 invested. It's like a money printer, except instead of causing inflation, it causes people to continue existing.
 
@@ -1866,6 +1874,8 @@ This assumes gradual rollout (0% to 100% adoption over {{< var dfda_npv_adoption
 
 ### Returns
 
+![A visual breakdown of the 637:1 return on investment, contrasting the initial costs against massive R&D savings, annual recurring dividends, and long-term humanitarian impact in quality-adjusted life years.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-returns-bw-academic.jpg)
+
 - **Money**: {{< var dfda_npv_net_benefit_rd_only >}} in R&D savings ({{< var npv_time_horizon_years >}})
 - **Returns**: {{< var dfda_npv_net_benefit_rd_only >}} ÷ {{< var dfda_npv_total_cost >}} = **{{< var dfda_roi_rd_only >}}** ([full analysis](https://dfda-impact.warondisease.org))
 - **Not dying**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} quality-adjusted life years (total from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift)
@@ -1908,6 +1918,8 @@ This intervention delivers {{< var treaty_peace_plus_rd_annual_benefits >}}/year
 #### Comparative Cost-Effectiveness vs. GiveWell Top Charities
 
 The standard metric for comparing health interventions is **cost per DALY** (Disability-Adjusted Life Year) - the cost to save one year of healthy life.
+
+![Comparison of cost-effectiveness across health interventions, illustrating the logarithmic scale of efficiency gains between current NIH standards, GiveWell top charities, and the proposed treaty.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-comparative-cost-effectiveness-vs-givewell-top-charities-bw-academic.jpg)
 
 **NIH Standard Research (Current Status Quo):**
 
@@ -1987,6 +1999,8 @@ The conservative scenario counted only R&D efficiency gains. This section includ
 ### Timeline Shift Value
 
 The recurring benefits ({{< var treaty_peace_plus_rd_annual_benefits >}}/year) are trivial compared to the timeline shift: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} from treatments arriving ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier on average.
+
+![A visualization comparing the standard medical discovery timeline with an accelerated 212-year shift, highlighting the massive difference between $172B in annual recurring benefits and the $84.8 quadrillion total value of the timeline acceleration.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-timeline-shift-value-bw-academic.jpg)
 
 **Important Note:** The system provides an average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift (treatment discovery acceleration + efficacy lag elimination) in when diseases receive first effective treatments, not an annual recurring benefit. This timeline shift benefit is massive ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} total economic value) but represents an average acceleration in when treatments become available, not an annual stream. The recurring annual benefits above ({{< var treaty_peace_plus_rd_annual_benefits >}}/year) represent only the peace dividend and R&D savings, which continue perpetually. See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) for timeline shift methodology.
 
@@ -2093,7 +2107,7 @@ This section compares a 1% treaty/decentralized FDA system to best-in-class heal
 
 Standard interventions (Bed Nets, Vaccines) are **linear**: to save 2x more lives, 2x more money is needed. They compete for a fixed pool of philanthropic capital.
 
-![A comparison showing the linear scale of standard philanthropic interventions versus the exponential multiplier effect and self-funding nature of a systemic treaty.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-linear-vs-systemic-leverage-bw-academic.jpg)
+![A comparison chart illustrating the difference between linear impact from standard philanthropic spending and the exponential, self-funding growth generated by a systemic treaty.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-linear-vs-systemic-leverage-bw-academic.jpg)
 
 A 1% treaty is **systemic and exponential**:
 
@@ -2104,7 +2118,7 @@ A 1% treaty is **systemic and exponential**:
 
 GiveWell charities are the **best ways to spend money** saving lives. They work.
 
-![A diagram illustrating the redirection of military budgets toward high-impact interventions compared to traditional philanthropic funding.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-critical-difference-bw-academic.jpg)
+![A diagram comparing the traditional philanthropic model of competing for limited donations against a model that redirects existing government military budgets toward high-impact, life-saving interventions.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-critical-difference-bw-academic.jpg)
 
 This intervention redirects existing government spending (military budgets) to more productive use, rather than competing for philanthropic capital.
 
@@ -2113,7 +2127,7 @@ This intervention redirects existing government spending (military budgets) to m
 - Best charity: Costs {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} per life saved (excellent)
 - This intervention: Redirects {{< var treaty_annual_funding >}}/year from military spending to pragmatic clinical trials.
 
-![A visual comparison showing how redirecting 1 percent of military spending creates a peace dividend that funds clinical trial infrastructure, yielding 11.5 times the benefits of global childhood vaccination programs.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-translation-bw-academic.jpg)
+![A diagram illustrating the flow of funds from a 1% reduction in military spending into two primary benefits: the Peace Dividend and a pragmatic clinical trial infrastructure, highlighting its 11.5x greater impact compared to childhood vaccinations.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-translation-bw-academic.jpg)
 
 One requires ongoing fundraising from finite donors. The other redirects existing government expenditures to higher-ROI activities.
 
@@ -2140,7 +2154,7 @@ For detailed comparisons, see [Intervention Comparison Table](../appendix/interv
 
 The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives across all major groups, eliminating traditional opposition to healthcare system reform. This alignment makes it politically feasible and sustainable.
 
-![A stakeholder benefit map illustrating how the 1 percent Treaty aligns incentives across the military, pharmaceutical, insurance, and healthcare sectors to create a win-win scenario for patients and taxpayers.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-who-benefits-and-how-bw-academic.jpg)
+![A stakeholder benefit map illustrating how the 1% Treaty aligns incentives across the military, pharmaceutical industry, insurance companies, healthcare providers, patients, and taxpayers.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-who-benefits-and-how-bw-academic.jpg)
 
 **Who Gets What** (see [Aligning Incentives](../solution/aligning-incentives.qmd) for details):
 
@@ -2157,7 +2171,7 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for detailed anal
 
 Western economies are facing a solvency crisis driven by healthcare inflation and aging populations. Traditional approaches face severe constraints: austerity programs cutting benefits generate political backlash, while monetary expansion through Modern Monetary Theory risks inflation. Technological deflation through dramatically reduced clinical trial costs offers an alternative path.
 
-![A comparison showing the divergent paths between the current fiscal crisis driven by chronic disease management and the proposed solvency path enabled by clinical trial cost reduction and curative interventions.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-dynamics-game-theoretic-analysis-bw-academic.jpg)
+![A comparison of three fiscal pathways for G7 nations: Austerity and Monetary Expansion leading to failure, versus Technological Deflation through reduced clinical trial costs leading to national solvency.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-dynamics-game-theoretic-analysis-bw-academic.jpg)
 
 By collapsing the cost of clinical trials by {{< var dfda_trial_cost_reduction_factor >}}, we fundamentally alter the cost structure of healthcare. We replace expensive "chronic disease management" with cheap "curative interventions." This is the **only mathematically viable path** to long-term fiscal solvency for G7 nations. It is impossible *not* to fund this, because the alternative is national bankruptcy.
 
@@ -2171,7 +2185,7 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 **Goal**: Survey **3.5% of the global population** ({{< var treaty_campaign_voting_bloc_target >}} people).
 
-![A visualization illustrating the causal chain from philanthropic funding to a 3.5 percent global survey, resulting in a 'Shadow Mandate' that exerts political pressure for treaty ratification.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-1-global-mandate-the-philanthropic-catalyst-bw-academic.jpg)
+![A visual representation of the 3.5% threshold for social change, illustrating how reaching 280 million people creates a tipping point for global political pressure.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-1-global-mandate-the-philanthropic-catalyst-bw-academic.jpg)
 
 **Why 3.5%?**: Historical analysis (Chenoweth et al.) shows that no government has withstood nonviolent civil challenge from 3.5% of its population. This "Shadow Mandate" would increase political pressure for treaty ratification.
 
@@ -2181,7 +2195,7 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 A Special Purpose Vehicle (SPV) issues Incentive Alignment Bonds to capitalize the advocacy roadmap. By front-loading the cost of political change, investors capture the arbitrage gap between lobbying costs ({{< var treaty_campaign_total_cost >}}) and sovereign flows ({{< var treaty_annual_funding >}}/year). Financial modeling projects a risk-adjusted IRR of ~{{< var victory_bond_annual_return_pct >}}.
 
-![A visual representation of the Incentive Alignment Bond value proposition, showing a 100 initial investment yielding projected returns contingent on treaty ratification.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-2-sell-1b-in-victory-incentive-bw-academic.jpg)
+![A diagram showing the flow of capital from Incentive Alignment Bonds issued by an SPV to bridge the arbitrage gap between lobbying costs and sovereign revenue flows.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-2-capitalization-via-incentive-alignment-bonds-iabs-bw-academic.jpg)
 
 ### Step 3: Implement the Legislative Strategy
 
@@ -2193,7 +2207,7 @@ The 1% shift funds globally scaled pragmatic trial infrastructure modeled on REC
 Thousands of neglected treatments finally get tested.
 Effective ones scale instantly.
 
-![A flowchart showing the progression from funding shifts to the creation of trial infrastructure, incorporating EHR data and automated analysis to test and scale treatments.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-4-build-the-infrastructure-bw-academic.jpg)
+![A flow diagram showing how funding creates global trial infrastructure, leading to the testing of neglected treatments and the rapid scaling of effective results.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-4-build-the-infrastructure-bw-academic.jpg)
 
 **Technical requirements:** Building this requires EHR interoperability, data standards, automated analysis pipelines, and regulatory framework updates. RECOVERY demonstrated the core model works; scaling requires infrastructure investment but no fundamental technical breakthroughs. The challenge is deployment and adoption, not invention.
 
@@ -2201,7 +2215,7 @@ Effective ones scale instantly.
 
 The Treaty mandates that the Fund be managed by a private Central Counterparty to ensure operational efficiency and accountability.
 
-![A system diagram illustrating the flow of treaty funds through the Statutory Administration Utility, showing how the 10% fee sustains operations and creates a self-reinforcing political 'Iron Dome' via bondholder incentives.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-5-the-statutory-administration-utility-bw-academic.jpg)
+![A conceptual diagram showing the flow of the Statutory Administration Fee from treaty inflows to fund operations, dividends, and the 'Iron Dome' lobbying mechanism that protects the treaty's longevity.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-5-the-statutory-administration-utility-bw-academic.jpg)
 
 **The mechanism:**
 
@@ -2274,7 +2288,7 @@ This section addresses common objections and potential failure modes, along with
 
 **What could go wrong**: Politicians refuse to redirect {{< var treaty_reduction_pct >}} of military spending to pragmatic clinical trials because military contractors oppose the change.
 
-![A conceptual diagram showing how redirecting 1 percent of military spending into incentive alignment bonds creates a 'financial kill switch' that aligns lobbyists' profits with treaty compliance.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-but-politicians-won-t-do-it-problem-bw-academic.jpg)
+![A visualization comparing the proposed 1% military spending reduction against the scale of unaccounted Pentagon assets, alongside a logic flow showing how Incentive Alignment Bonds create a financial 'kill switch' for treaty compliance.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-but-politicians-won-t-do-it-problem-bw-academic.jpg)
 
 **Counterargument**:
 
@@ -2345,7 +2359,7 @@ For detailed mortality analysis, see [Regulatory Mortality Analysis](https://inv
 
 A decentralized institutes of health puts patients in control through trial participation, not committee votes.
 
-![A comparison between the centralized NIH funding model where bureaucrats act as gatekeepers and a decentralized model where patient participation directly dictates the flow of trial funding.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-patient-agency-and-autonomy-bw-academic.jpg)
+![A comparison between the current centralized NIH funding model, where bureaucrats act as a bottleneck, and a decentralized model where patient participation directly drives funding to clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-patient-agency-and-autonomy-bw-academic.jpg)
 
 **Current system**: 200 NIH bureaucrats [@nih-decision-makers-200-people] decide what {{< var global_population_2024 >}} humans can try when dying
 
@@ -2385,6 +2399,8 @@ The base case assumes gradual adoption over {{< var dfda_npv_adoption_ramp_years
 
 **Sensitivity analysis addresses this:** Worst-case scenario models extended timelines with ROI remaining positive (66:1) even under pessimistic assumptions.
 
+![A visual comparison of the 5-year base case adoption timeline versus an extended implementation scenario, highlighting how factors like regulatory coordination and technical readiness shift the speed of rollout.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-timeline-uncertainty-bw-academic.jpg)
+
 ### Cost Reduction Assumption Limitations
 
 The {{< var dfda_trial_cost_reduction_pct >}} baseline R&D cost reduction derives from the Oxford RECOVERY trial's demonstrated {{< var recovery_trial_cost_reduction_factor >}} efficiency gain. However:
@@ -2394,6 +2410,8 @@ The {{< var dfda_trial_cost_reduction_pct >}} baseline R&D cost reduction derive
 - **Geographic variation:** Cost reductions may be greater in high-cost jurisdictions (U.S., Europe) and lower in regions with already-efficient trial systems
 
 **Conservative approach:** Analysis uses {{< var dfda_trial_cost_reduction_pct >}} reduction (midpoint) rather than the demonstrated 95%+ efficiency gains, providing substantial margin of safety.
+
+![A conceptual breakdown showing how the Oxford RECOVERY trial's high efficiency gain is adjusted by complexity, regulatory, and geographic factors to establish a conservative baseline cost reduction.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-cost-reduction-assumption-limitations-bw-academic.jpg)
 
 ### Generalizability: Meta-Analysis of 108+ Trials, Not a Single Case Study
 
@@ -2432,7 +2450,7 @@ This intervention targets a different margin than traditional research scaling. 
 
 The argument that medical research faces diminishing returns rests on a false premise: that we have already picked the "low-hanging fruit." In reality, we haven't picked the fruit because we can't afford the ladder.
 
-![A visual representation of the medical exploration gap, illustrating the massive disparity between the 9.5 million possible drug-disease combinations and the tiny fraction (0.34 percent) currently tested.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-myth-of-diminishing-returns-bw-academic.jpg)
+![A visual representation of the 'Exploration Gap,' contrasting the tiny sliver of tested drug-disease relationships against the massive, 9.5-million-combination frontier of safe compounds.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-myth-of-diminishing-returns-bw-academic.jpg)
 
 High trial costs (median {{< var traditional_phase3_cost_per_patient >}} per patient) force researchers to bet only on "sure things," leaving the vast majority of the therapeutic map blank.
 
@@ -2477,7 +2495,7 @@ We haven't hit the limits of biology; we've hit a **cost wall**. Reducing trial 
 
 Decentralized trials with broad eligibility criteria face potential selection bias concerns. Traditional randomized controlled trials use restrictive eligibility *precisely* to control confounding and establish internal validity.
 
-![A conceptual diagram illustrating the inverse relationship and trade-off between internal validity and external validity in explanatory versus pragmatic clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-pragmatic-trial-internal-validity-and-selection-bias-bw-academic.jpg)
+![A conceptual diagram showing the inverse relationship between internal and external validity across explanatory and pragmatic clinical trials.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-pragmatic-trial-internal-validity-and-selection-bias-bw-academic.jpg)
 
 **Trade-off between internal and external validity:** Patsopoulos (2011) [@pragmatic-trials-patsopoulos-2011] documents that pragmatic trials often find 15-25% smaller effect sizes than explanatory trials but offer superior external validity (generalizability to real-world populations).
 
@@ -2489,6 +2507,8 @@ Decentralized trials with broad eligibility criteria face potential selection bi
 - **Replication at scale:** Lower costs enable rapid replication across diverse populations, testing robustness
 
 **Empirical evidence, observational studies produce valid results:** A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) compared effect sizes from high-quality observational studies to randomized controlled trials across multiple interventions. The findings demonstrate that well-designed observational studies produce results statistically indistinguishable from expensive RCTs.
+
+![Comparison of traditional RCTs versus pragmatic trials, illustrating the shift from binary 'Treatment vs. Placebo' tests in restricted populations to comparative rankings of all treatments in diverse, real-world patient groups.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-mitigation-strategies-bw-academic.jpg)
 
 ![Comparison of effect sizes from observational studies versus randomized trials for mortality outcomes, showing strong concordance between methodologies.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
@@ -2514,7 +2534,7 @@ Furthermore, RCTs' restrictive eligibility criteria (excluding patients with com
 
 The {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} estimate aggregates benefits from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift across three benefit streams with varying levels of empirical support.
 
-![Timeline compression model showing the acceleration of disease eradication from a 443-year baseline to a 36-year horizon, illustrating the resulting 212-year average life-saving shift across three benefit streams.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-qaly-calculation-uncertainties-bw-academic.jpg)
+![A visual comparison of medical discovery timelines showing the reduction in disease exploration time from 443 years to 36 years through increased trial capacity, resulting in a 212-year average acceleration.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-qaly-calculation-uncertainties-bw-academic.jpg)
 
 **Addressing the "Quadrillion Dollar" Assumption**: The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} derives from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift in disease eradication.
 
@@ -2588,7 +2608,7 @@ Implementation requires substantial institutional development:
 
 #### Healthcare System Integration
 
-![A conceptual diagram showing EHR interoperability, wearable adoption, and provider participation as the three foundational pillars supporting integrated healthcare systems.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-healthcare-system-integration-bw-academic.jpg)
+![A conceptual diagram showing the three pillars required for healthcare system integration: EHR interoperability, wearable adoption, and provider participation.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-healthcare-system-integration-bw-academic.jpg)
 
 Benefits assume integration with existing healthcare infrastructure:
 
@@ -2659,7 +2679,7 @@ Future research priorities include prospective data collection during pilot impl
 
 Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
 
-![Architecture of the Incentive Alignment Bond mechanism showing how funding flows from the 1 percent Treaty to align the incentives of investors, politicians, and patients.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-addressing-skepticism-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
+![A conceptual diagram contrasting centralized megaprojects with the decentralized, incentive-aligned structure of the 1% Treaty and its bond mechanism.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
 
 This intervention differs in four critical ways:
 
@@ -2679,7 +2699,7 @@ This analysis has direct implications for resource allocation decisions across m
 
 Traditional health budgets face impossible trade-offs: every dollar spent on cancer treatment is a dollar not spent on heart disease prevention. This intervention eliminates that constraint by redirecting funds from outside the health sector.
 
-![A visualization showing the redirection of 1% of military spending toward clinical research, illustrating how this small shift yields a 12.3x increase in research funding and saves hundreds of millions of lives.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-national-health-budgets-bw-academic.jpg)
+![Infographic showing how a 1% redirection of military funds eliminates traditional health budget trade-offs and achieves a 12.3x increase in clinical research capacity.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-national-health-budgets-bw-academic.jpg)
 
 **The opportunity**: Health ministries can achieve {{< var dfda_trial_capacity_multiplier >}} more clinical research without reducing current health spending or raising taxes. The funding comes from military budgets, not health budgets.
 
@@ -2689,7 +2709,7 @@ Traditional health budgets face impossible trade-offs: every dollar spent on can
 
 Development agencies face a fundamental problem: the most cost-effective interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY, vaccines) can only scale linearly. Doubling impact requires doubling spending.
 
-![A comparison showing the linear impact of direct interventions like bed nets versus the exponential leverage of systemic treaty adoption, highlighting the 50,000:1 difference in cost-effectiveness.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-international-development-priorities-bw-academic.jpg)
+![A comparison between linear scaling of direct interventions like bed nets and the exponential leverage of structural treaty adoption, illustrating the 'multiplier effect' on international development funding.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-international-development-priorities-bw-academic.jpg)
 
 **The difference**: This intervention scales exponentially through systemic change. It doesn't compete with existing development programs; it accelerates treatment discovery for all diseases affecting developing nations.
 
@@ -2705,7 +2725,7 @@ The Gates Foundation, USAID, and WHO should advocate for treaty adoption as thei
 
 Military planners optimize for national security. This analysis demonstrates that {{< var treaty_reduction_pct >}} of military spending provides near-zero marginal security value while generating enormous economic returns when redirected.
 
-![A comparison of economic multipliers between military and healthcare spending, illustrating the 7.17x difference in GDP generation and the impact of redirecting 1 percent of the global military budget.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-military-budget-allocation-bw-academic.jpg)
+![A comparison of economic fiscal multipliers and investment returns showing the impact of redirecting 1% of military spending toward healthcare and medical research.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-military-budget-allocation-bw-academic.jpg)
 
 **The economic case**: The fiscal multiplier (GDP generated per dollar spent) for military spending is {{< var economic_multiplier_military_spending >}} {{< var economic_multiplier_military_spending_cite >}}. Healthcare investment generates {{< var economic_multiplier_healthcare_investment >}} {{< var economic_multiplier_healthcare_investment_cite >}}, over {{< var healthcare_vs_military_multiplier_ratio >}} higher. Beyond fiscal multipliers, medical research generates extraordinary health returns: economists Murphy and Topel found that longevity gains from medical advances are worth **50-100× the research investment** [@murphy2006]. Pragmatic trials, which produce {{< var dfda_trial_cost_reduction_factor >}} more research output per dollar, multiply these already-massive returns.
 
@@ -2736,6 +2756,8 @@ This creates a self-sustaining funding mechanism where:
 
 ### Implementation Pathway
 
+![A dual-level implementation pathway showing national referendum and lobbying tracks coordinating with international UN treaty processes to redirect military spending.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-implementation-pathway-bw-academic.jpg)
+
 Policy adoption requires coordination across two levels:
 
 1. **National level**: Treaty advocacy through referendum campaigns ({{< var treaty_campaign_viral_referendum_base_case >}}) and lobbying ({{< var treaty_campaign_budget_lobbying >}})
@@ -2752,7 +2774,7 @@ This intervention is **cost-saving**, making it one of the rarest findings in he
 
 It requires only a 1% reallocation from the least cost-effective government spending (military) to the most cost-effective health intervention (pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient).
 
-![A visualization of the 1 percent budget reallocation from military spending to health trials, illustrating the massive return on investment and the role of Incentive Alignment Bonds in bridging political resistance.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-bottom-line-for-policymakers-bw-academic.jpg)
+![A visual comparison showing a 1% reallocation of military spending toward high-ROI pragmatic trials, contrasted with the political solution of Incentive Alignment Bonds to overcome entrenched interests.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-bottom-line-for-policymakers-bw-academic.jpg)
 
 The political challenge isn't economic: the ROI speaks for itself. The challenge is overcoming entrenched interests in military-industrial spending. The solution: [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) that make supporting the treaty more profitable for politicians than opposing it.
 
@@ -2760,7 +2782,7 @@ The political challenge isn't economic: the ROI speaks for itself. The challenge
 
 International treaty adoption is fundamentally a political and diplomatic process, not a technical implementation timeline. The 1% Treaty's viability depends on **simultaneous multilateral commitment**: no nation reduces military spending unilaterally, creating security vulnerabilities or free-rider problems. All signatories reduce together.
 
-![A conceptual diagram illustrating the 'Simultaneous Multilateral Commitment' model, showing multiple nations reducing military spending in synchronized steps to maintain collective security and prevent free-rider advantages.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treaty-adoption-political-will-and-diplomatic-strategy-bw-academic.jpg)
+![A conceptual diagram illustrating the multilateral commitment process where multiple nations reduce military spending simultaneously to maintain a balanced security environment.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treaty-adoption-political-will-and-diplomatic-strategy-bw-academic.jpg)
 
 ### Why Simultaneous Commitment Works: Escaping the Prisoner's Dilemma
 
@@ -2773,7 +2795,7 @@ Unilateral military reduction is politically infeasible. This is a classic **Pri
 
 **Simultaneous binding commitment solves the coordination problem**: All signatories reduce {{< var treaty_reduction_pct >}} together, maintaining relative military balance while collectively redirecting {{< var treaty_annual_funding >}}/year to health research that benefits all participants. The treaty converts a Prisoner's Dilemma (where rational self-interest produces suboptimal outcomes) into a coordination game with enforceable commitments.
 
-![A decision matrix illustrating the Prisoner's Dilemma in military spending, comparing outcomes for unilateral reduction, status quo arms races, and simultaneous commitment to health research funding.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-simultaneous-commitment-works-escaping-the-prisoner-s-di-bw-academic.jpg)
+![A conceptual diagram showing the transition from a Prisoner's Dilemma arms race to a coordination game where simultaneous military reductions maintain balance while funding global health.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-simultaneous-commitment-works-escaping-the-prisoner-s-di-bw-academic.jpg)
 
 ### Historical Treaty Precedents
 
@@ -2797,7 +2819,7 @@ Treaty adoption depends on:
 
 **Timeline**: Highly variable depending on political momentum. Successful precedents range from 18 months (rapid consensus) to 5+ years (extended negotiation). The self-funding nature and aligned incentives favor faster adoption than typical treaties requiring sacrifice.
 
-![A flowchart mapping the treaty adoption pathway from building political and economic coalitions to diplomatic negotiation and final implementation timeline.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-pathway-bw-academic.jpg)
+![A visualization of the four pillars of the treaty adoption pathway (political, economic, financial, and diplomatic) mapped against a variable implementation timeline.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-pathway-bw-academic.jpg)
 
 ## Conclusion
 
