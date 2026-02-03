@@ -215,14 +215,35 @@ function findCodeBlockEnd(lines: string[], lineIndex: number, sectionStart: numb
   return -1; // Not inside a code block
 }
 
-// Max length for the section slug portion of filename
-const MAX_SECTION_SLUG_LENGTH = 60;
+/**
+ * Calculate max safe slug length for section image filenames.
+ *
+ * Path structure: assets/images/{dir}/{dir}-section-{slug}{suffix}.jpg
+ * During build, files are copied to _build_temp/{config}/ adding ~39 chars.
+ * Windows MAX_PATH = 260, we use 250 for safety.
+ *
+ * Budget: 250 - basePathLen - buildTempOverhead - fixedParts - 2*dirLen
+ */
+const WINDOWS_SAFE_PATH_LIMIT = 250;
+const BUILD_TEMP_OVERHEAD = 39; // _build_temp/political-dysfunction-tax/
+const MIN_SLUG_LENGTH = 20; // never truncate below this
+
+function getMaxSlugLength(fileName: string, styleSuffix: string): number {
+  const baseLen = process.cwd().length + 1; // +1 for path separator
+  // Relative path: assets/images/{fileName}/{fileName}-section-{slug}{suffix}.jpg
+  // Fixed parts: "assets/images/" (14) + "/" (1) + "-section-" (9) + suffix + ".jpg" (4)
+  const fixedParts = 14 + 1 + 9 + styleSuffix.length + 4;
+  const dirOverhead = 2 * fileName.length; // dir name + file prefix
+
+  const budget = WINDOWS_SAFE_PATH_LIMIT - baseLen - BUILD_TEMP_OVERHEAD - fixedParts - dirOverhead;
+  return Math.max(MIN_SLUG_LENGTH, budget);
+}
 
 /**
  * Convert section title to kebab-case for use in filenames
  * Strips Quarto variable shortcodes and truncates to prevent overly long paths
  */
-function toKebabCase(text: string): string {
+function toKebabCase(text: string, maxLength: number = 60): string {
   let result = text
     // Remove Quarto variable shortcodes: {{< var param_name >}} -> empty
     .replace(/\{\{<\s*var\s+[^>]+>\}\}/g, '')
@@ -236,8 +257,8 @@ function toKebabCase(text: string): string {
     .replace(/^-+|-+$/g, '');
 
   // Truncate if too long
-  if (result.length > MAX_SECTION_SLUG_LENGTH) {
-    result = result.substring(0, MAX_SECTION_SLUG_LENGTH);
+  if (result.length > maxLength) {
+    result = result.substring(0, maxLength);
     // Don't end on a hyphen
     result = result.replace(/-+$/, '');
   }
@@ -417,7 +438,8 @@ async function generateAndInsertImage(
   const style = useAcademicStyle ? VisualStyles['bw-academic'] : VisualStyles['retro-futuristic'];
   // Resolve Quarto variables in title before generating slug (prevents truncated filenames)
   const resolvedTitle = replaceQuartoVariables(section.title, variables);
-  const sectionSlug = toKebabCase(resolvedTitle);
+  const maxSlug = getMaxSlugLength(fileName, style.suffix);
+  const sectionSlug = toKebabCase(resolvedTitle, maxSlug);
 
   // Clean content for image generation (strips markdown links, footnotes, code blocks, etc.)
   const contentForImage = cleanContentForImagePrompt(resolvedContent);
