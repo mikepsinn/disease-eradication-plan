@@ -66,6 +66,10 @@ book:
             text: "Optimal Budget Generator"
           - href: knowledge/references.qmd
             text: "References & Citations"
+  page-footer:
+    left: "© 2025 [Mike P. Sinn](https://mikesinn.com) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/How-to-End-War-and-Disease.pdf) | [EPUB](/How-to-End-War-and-Disease.epub) | [All Papers](knowledge/papers.qmd)"
+    right: "[WarOnDisease.org](https://WarOnDisease.org) | [Vote](https://WarOnDisease.org)"
   chapters:
     - text: "Start Here"
       href: index.qmd  # ~19p
@@ -363,10 +367,6 @@ format:
     css:
       - styles.css
       - book-overrides.css
-    page-footer:
-      left: "© 2025 [Mike P. Sinn](https://mikesinn.com) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-      center: "[PDF](/How-to-End-War-and-Disease.pdf) | [EPUB](/How-to-End-War-and-Disease.epub) | [All Papers](knowledge/papers.qmd)"
-      right: "[WarOnDisease.org](https://WarOnDisease.org) | [Vote](https://WarOnDisease.org)"
     include-after-body:
       - file: assets/html/site-enhancements-loader.html
     include-in-header:
