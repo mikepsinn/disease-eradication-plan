@@ -987,17 +987,15 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,742
+**Files:** 1 | **Words:** 11,551
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to automate efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var statu...
-**Stats:** 11,742 words | 1,224 lines
+**Stats:** 11,551 words | 1,212 lines
 
-  - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
   - Protocol, Not Platform
-    - What You Get
     - Key Findings
   - Capabilities
     - Core Model: An Open Coordination Protocol
@@ -4144,7 +4142,7 @@
 #### knowledge/papers.qmd
 - **Title:** Papers & Publications
 - **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-- **Words:** 884
+- **Words:** 902
 
 ---
 
@@ -4175,6 +4173,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 82
-- Total words: 341,121
+- Total words: 340,930
 - Orphaned files: 27
 - Paper configs: 12
