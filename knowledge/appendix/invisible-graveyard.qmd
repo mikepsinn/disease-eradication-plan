@@ -329,6 +329,8 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 ### Years Lived with Disability (YLD)
 
+![A diagram illustrating the calculation of Years Lived with Disability (YLD) as the product of disability weight and the duration of the suffering period.](/assets/images/invisible-graveyard/invisible-graveyard-section-years-lived-with-disability-yld-bw-academic.jpg)
+
 - **Disability Weight (DW):** {{< var chronic_disease_disability_weight >}} (Weighted average for untreated chronic conditions)
 - **Pre-Death Suffering Period:** {{< var regulatory_delay_suffering_period_years >}}
 - **YLD Total:**

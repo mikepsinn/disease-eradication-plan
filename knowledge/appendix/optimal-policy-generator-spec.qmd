@@ -1471,6 +1471,8 @@ The event study design explicitly models dynamic effects; we report both immedia
 
 ### Publication Bias
 
+![A diagram illustrating the 'file drawer problem' where null results are filtered out of the publication pipeline and how mitigation strategies like funnel plot corrections restore balance.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-publication-bias-bw-academic.jpg)
+
 The policy evaluation literature suffers from systematic publication bias:
 
 1. **Null effects underreported**: Studies finding "no significant effect" are less likely to be published

@@ -383,6 +383,8 @@ To validate the technical feasibility of the RAPPA mechanism, a reference implem
 2.  **Algorithm Verification:** Testing the convergence properties of the geometric mean aggregation and eigenvector centrality algorithms under real-world traffic.
 3.  **Sybil Resistance:** Implementing and stress-testing integration with decentralized identity providers to ensure one-person-one-vote integrity.
 
+![A conceptual diagram showing the relationship between theoretical RAPPA properties and their functional implementation at Wishocracy.org, including the testing modules for interface, algorithms, and identity.](/assets/images/wishocracy-paper/wishocracy-paper-section-reference-implementation-wishocracy-org-bw-academic.jpg)
+
 The repository is available for public audit, allowing researchers to verify that the theoretical properties described in Section 3 transform correctly into executable code.
 
 ### **Category Selection and Validation Methodology**

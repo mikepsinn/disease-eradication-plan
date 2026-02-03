@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 217 parameters used in the analysis, organized by type:
+This appendix documents all 218 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 88
+- External sources (peer-reviewed): 89
 - Calculated values: 99
 - Core definitions: 30
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (88 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
+[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (89 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5661,6 +5661,18 @@ PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total co
 {{< include ../figures/distribution-adaptable_trial_total_cost.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### Antidepressant Trial Exclusion Rate: 86.1% {#sec-antidepressant_trial_exclusion_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)
+
+**Source**: [@antidepressant-trial-exclusion-rates]
+
+*✓ High confidence*
 
 :::
 

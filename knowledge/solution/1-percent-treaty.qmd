@@ -164,15 +164,13 @@ Every signatory nation contributes exactly 1% of their military budget to **the 
 
 Politicians who support the treaty receive [Incentive Alignment Bond](incentive-alignment-bonds.qmd) benefits: campaign funding from the political incentive pool ({{< var iab_political_incentive_funding_annual >}}/year) and lucrative post-office career opportunities. Supporting the treaty becomes the career-maximizing choice.
 
-#### Article 4: The Escape Clause
-
-Any nation can leave with 1 year notice. All other nations reduce their contributions proportionally, maintaining the balance of power. Nations that remain receive proportionally larger IAB benefits.
-
 ## Why This Is Actually About National Security (No, Really)
 
 Here's what actually threatens nations today:
 
 ### Real Threats (That Actually Kill People)
+
+![A comparison of global annual death tolls from major health threats and pandemics relative to historical war casualties.](/assets/images/1-percent-treaty/1-percent-treaty-section-real-threats-that-actually-kill-people-bw-academic.jpg)
 
 1. **Pandemics**: COVID killed more Americans than World War II, Korea, and Vietnam combined [@covid-deaths-vs-us-war-deaths]
 2. **Cancer**: Kills 10 million globally per year [@cancer-deaths-10m-annually]
@@ -275,7 +273,7 @@ Right now, only {{< var current_trial_slots_available >}} participate in drug tr
 - Pivotal trials: {{< var traditional_phase3_cost_per_patient >}} per patient
 - Only {{< var current_trial_slots_available >}} participants per year globally
 - {{< var willing_trial_participants_global >}} willing to participate, but turned away
-- {{< var drug_discovery_to_approval_years >}} to approve one drug
+- {{< var drug_discovery_to_approval_years >}} from discovery to patient
 
 #### With a 1% treaty + a decentralized framework for drug assessment
 
@@ -365,11 +363,13 @@ Sign with fanfare, then let it die in committee forever.
 
 Reclassify "military" spending as "peacekeeping" or "homeland security" to dodge obligations.
 
-**Solution:** Total budget percentage based on internationally recognized definitions. AI monitors for classification games. Can't hide spending when satellites can count your tanks.
+**Solution:** [IABs](incentive-alignment-bonds.qmd) make creative accounting self-defeating. Politicians who benefit from treaty compliance have personal financial incentive to ensure their nation's full 1% contribution flows through. Reclassifying military spending to dodge obligations reduces IAB returns for that nation's own legislators, the same people who control budget classifications.
 
 ### Parliamentary Obstacles
 
 Executive signs, legislature refuses to implement.
+
+![A flowchart comparing the paths of standard treaties versus self-executing treaties, showing how the latter bypasses the legislative implementation step to reach domestic effect.](/assets/images/1-percent-treaty/1-percent-treaty-section-parliamentary-obstacles-bw-academic.jpg)
 
 **Solution:** Self-executing treaty. No implementing legislation needed. Direct effect in domestic law (per the Supremacy Clause in the US, similar provisions elsewhere).
 

@@ -25,7 +25,7 @@ Here's the plan:
 
 This is how WordPress, Linux, and every successful platform works. You build the rails, not every train.
 
-## The Core Strategy (How WordPress Beat Expensive Software)
+## The Core Strategy (Build the Rails, Not Every Train)
 
 The most successful software platforms don't build every feature. That would be slow and expensive.
 
@@ -40,13 +40,6 @@ Instead, they build the foundation and let others build on top.
 
 ### Why This Works (Evidence Not Theory)
 
-#### WordPress
-
-- Core software: Free and open-source
-- Community-built on top: Multi-billion dollar economy [@wordpress-multi-billion-dollar-economy] of themes and plugins
-- Result: Powers 43% of all websites
-- They didn't build 43% of the internet. They built the foundation. Others built on it.
-
 #### Linux
 
 - The kernel: Small core team
@@ -55,25 +48,6 @@ Instead, they build the foundation and let others build on top.
 - Core team is tiny. Network of contributors is massive.
 
 ![A visualization of the Linux ecosystem showing a small core team at the center surrounded by a vast network of global contributors powering the world's digital infrastructure.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-linux-bw-academic.jpg)
-
-#### Browser Extensions
-
-- Chrome/Firefox: Provide APIs
-- Community: Creates extensions
-- Result: 188,000+ Chrome extensions
-- Google didn't build them. Developers did. Because the framework made it profitable or useful.
-
-![Comparison of successful platform models where a small core team enables a massive ecosystem of contributors.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-platform-success-models-bw-academic.jpg)
-
-### Why Humans Do This For Free
-
-Incentives align:
-
-- Commercial developers: Build businesses selling plugins
-- Academics: Build research tools, get papers published
-- Individual contributors: Build reputation, solve their own problems, impress other nerds
-
-Everyone wins. Platform scales without the core team building everything.
 
 ## Bounties and Prizes (Paying for Results Not Promises)
 
@@ -111,7 +85,7 @@ One wastes less money. You can guess which.
 
 ## Why This Actually Works (Not Wishful Thinking)
 
-This model is proven and cheap for three reasons:
+This model is proven and cheap for two reasons:
 
 ### 1. It's Already a Multi-Trillion-Dollar Reality
 
@@ -123,19 +97,7 @@ WordPress, Linux, Android, Chrome all built this way. Combined value: trillions.
 
 The math works.
 
-### 2. AI Makes Building Software Radically Cheaper
-
-AI coding assistants (GitHub Copilot, GPT-4, Claude Code) dramatically reduce time and cost to develop software.
-
-![A comparison showing the dramatic reduction in staff and time required for software development projects when moving from traditional methods to AI-assisted workflows.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-2-ai-makes-building-software-radically-cheaper-bw-academic.jpg)
-
-What used to take 10 developers six months: 2 developers can do in six weeks.
-
-This supercharges community-driven development. Lower barrier to entry. Faster building. Cheaper plugins.
-
-AI doesn't replace developers. It makes them 10x more productive.
-
-### 3. Governments Already Do This (And It Works)
+### 2. Governments Already Do This (And It Works)
 
 Public bodies have a strong track record with bounties and prizes [@us-government-prize-and-bounty-programs] to solve complex problems more efficiently than traditional procurement:
 
@@ -149,59 +111,9 @@ All succeeded. All cost less than traditional procurement. All delivered better 
 
 Bounties work. Not experimental.
 
-## What Has to Go Right (Success Factors)
-
-For this strategy to succeed, four things must happen:
-
-### 1. Critical Mass
-
-Your framework needs enough users (patients, researchers, clinicians) and developers to create network effects.
-
-No users = no developers. No developers = no plugins. No plugins = no users. Death spiral.
-
-**Solution:** Referral rewards drive initial growth. Users attract developers. Developers build tools. Tools attract more users. Flywheel spins.
-
-![The self-reinforcing growth loop required to sustain the platform.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-ecosystem-flywheel-bw-academic.jpg)
-
-### 2. API Quality and Documentation
-
-Your framework APIs must be:
-
-- **Robust:** They work reliably
-- **Well-documented:** Developers can figure them out
-- **Developer-friendly:** Pleasant to use, not torture
-
-Bad APIs kill platforms. Good APIs create billion-dollar economies.
-
-![A comparison showing the divergent paths of platform success driven by high-quality APIs versus platform failure caused by poor API design.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-2-api-quality-and-documentation-bw-academic.jpg)
-
-Non-negotiable.
-
-### 3. Transparent Governance
-
-The bounty process must be:
-
-- **Transparent:** Anyone can see what's funded
-- **Fair:** Best solution wins, not best connection
-- **Responsive:** Decisions happen quickly, not after everyone dies
-
-Corruption kills trust. Trust is the foundation of open-source communities.
-
-![A conceptual diagram showing Transparency, Fairness, and Responsiveness as the three pillars supporting Community Trust in an open-source ecosystem.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-3-transparent-governance-bw-academic.jpg)
-
-### 4. Clear Roadmap
-
-Your core team must maintain and communicate a clear vision (detailed in [Canonical Roadmap](../strategy/roadmap.qmd)).
-
-![A diagram illustrating the flow of a clear vision from the core team through a roadmap to developers, showing how it acts as 'rails' to maintain development momentum.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-4-clear-roadmap-bw-academic.jpg)
-
-Developers need to know where the rails are going so they can build accordingly.
-
-Ambiguity kills momentum.
-
 ## The Result
 
-If these four conditions are met, your decentralized framework for drug assessment can foster a thriving global network of tools that delivers medical innovation at a fraction of the cost of centralized, top-down development.
+Your decentralized framework for drug assessment can foster a thriving global network of tools that delivers medical innovation at a fraction of the cost of centralized, top-down development.
 
 ![A comparison of traditional centralized drug development versus a decentralized framework, highlighting the shift toward a collaborative global network for medical innovation.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-result-bw-academic.jpg)
 

@@ -33,6 +33,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
     "images:fix": "tsx scripts/images/fix-image-issues.ts",
     "render:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to pdf",
     "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
@@ -44,7 +45,6 @@
     "validate:latex:parallel": ".venv\\Scripts\\python.exe -u scripts/validate-latex-per-file.py --parallel 4",
     "images:chapter": "tsx scripts/images/generate-chapter-images.ts",
     "images:branding": "tsx scripts/images/generate-project-branding-images.ts",
-    "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
     "images:fix-missing": "tsx scripts/images/fix-missing-images.ts --fix",
     "images:coverage": "tsx scripts/images/analyze-image-coverage.ts",
     "images:sections": "tsx scripts/images/generate-section-images.ts",

@@ -277,7 +277,7 @@ Think of it like the internet. We didn't build one website that everyone has to 
 
 ### The Players Already in the Game
 
-Companies like Medable [@dct-platform-funding-medable] ({{< var dct_platform_funding_medium >}} raised), Science 37 [@dct-platform-funding-others] (~$100M raised), and others have already built decentralized clinical trial platforms. They're good at it. They have users. They have infrastructure.
+Multiple companies have already built decentralized clinical trial platforms, collectively raising hundreds of millions in venture funding [@dct-platform-funding-medable; @dct-platform-funding-others]. They're good at it. They have users. They have infrastructure.
 
 Why compete with them? Partner instead.
 
@@ -303,9 +303,8 @@ Before writing code, form partnerships with:
 
 **EHR Vendors** (they have the patient data):
 
-- Epic Systems (31% of US hospital market)
-- Cerner/Oracle Health (26% of US market)
-- Allscripts/Veradigm (ambulatory care)
+- Major EHR vendors covering 80%+ of US hospitals
+- Ambulatory care platforms
 
 **Tech Giants** (they have distribution):
 
@@ -314,8 +313,7 @@ Before writing code, form partnerships with:
 
 **Existing DCT Platforms** (they have expertise):
 
-- Medable, Science 37, Thread
-- Let them be "Founding Partners" with governance seats
+- Existing decentralized trial platforms become "Founding Partners" with governance seats
 
 **International Partners** (already proven it works):
 
@@ -356,7 +354,7 @@ Data doesn't move to a central database. It stays where it is:
 - Apple Health keeps its data
 - Cerner keeps its data
 
-Your framework's protocol just lets you run queries ACROSS systems without moving data. Like TriNetX does with 300M+ patient records.
+Your framework's protocol just lets you run queries ACROSS systems without moving data. Federated data networks already do this with 300M+ patient records.
 
 ![Architecture diagram contrasting centralized data storage with a federated model where queries are sent to independent data silos (Epic, Apple Health, Cerner) and aggregated without raw data transfer.](/assets/images/dfda/dfda-section-federated-not-centralized-bw-academic.jpg)
 

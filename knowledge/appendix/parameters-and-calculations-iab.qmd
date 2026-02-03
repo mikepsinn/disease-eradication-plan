@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 54 parameters used in the analysis, organized by type:
+This appendix documents all 56 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 27
+- External sources (peer-reviewed): 29
 - Calculated values: 19
 - Core definitions: 8
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (19 parameters) • [External Data Sources](#sec-external) (27 parameters) • [Core Definitions](#sec-definitions) (8 parameters)
+[Calculated Values](#sec-calculated) (19 parameters) • [External Data Sources](#sec-external) (29 parameters) • [Core Definitions](#sec-definitions) (8 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1036,6 +1036,30 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 :::
 
+### Economic Multiplier for Military Spending: 0.6x {#sec-economic_multiplier_military_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.
+
+**Source**: [@military-spending-economic-multiplier]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4x, 0.9x] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.4x and 0.9x (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-economic_multiplier_military_spending.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Annual Deaths from Active Combat Worldwide: 234k deaths/year {#sec-global_annual_conflict_deaths_active_combat}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1125,6 +1149,26 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 {{< include ../figures/distribution-global_annual_daly_burden.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from all diseases and aging globally
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5.00M deaths/year)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
+
+*✓ High confidence*
 
 :::
 

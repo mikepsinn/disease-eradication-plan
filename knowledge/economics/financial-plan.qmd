@@ -68,14 +68,14 @@ The one-time "activation energy" to pass a 1% treaty, made affordable through AI
 
 #### Key Innovations
 
-- **AI does most of the work**: 60-80% cost reduction vs traditional campaigns
+![A comparative visualization showing the significant reduction in costs and timeframes between traditional diplomatic campaigns and the proposed AI-accelerated model.](/assets/images/financial-plan/financial-plan-section-key-innovations-bw-academic.jpg)
+
 - **Viral mechanics**: $0.20/vote vs $5-15 traditional cost per voter
 - **Strategic focus**: 20 high-impact countries, not all 195
-- **Result**: {{< var treaty_campaign_total_cost >}} achieves what would cost $2-5B traditionally
 
 **Timeline:** 36-60 months (optimistic) to 120+ months (realistic)
 
-For context: the Paris Climate Agreement took 23 years from Rio (1992) to signing (2015). The landmine ban took 6 years from campaign launch to treaty. Our timeline assumes AI-accelerated campaign operations, viral referendum mechanics, and pre-existing disarmament treaty frameworks. If timeline extends, investor returns simply delay (same perpetual structure, later start)
+For context: the Paris Climate Agreement took 23 years from Rio (1992) to signing (2015). The landmine ban took 6 years from campaign launch to treaty. Our timeline assumes viral referendum mechanics and pre-existing disarmament treaty frameworks. If timeline extends, investor returns simply delay (same perpetual structure, later start)
 
 ### Treasury Management: How To Manage {{< var treaty_annual_funding >}}+ Annually
 
@@ -84,6 +84,8 @@ Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from mi
 ![A diagram illustrating the annual transfer of 27.2 billion from global military budgets into the dedicated 1 percent Treaty Fund.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
 
 #### Revenue Sources
+
+![A flow diagram illustrating the self-enforcing revenue cycle, where national contributions tracked by SIPRI influence Public Good Scores and align political career incentives with treaty compliance.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
 
 **Primary:** 1% treaty ({{< var treaty_annual_funding >}} annually)
 
@@ -124,34 +126,9 @@ The 1% Treaty Fund uses an **80/10/10 automatic allocation** before any funds re
 - Automatically distributed via smart contracts
 - {{< var victory_bond_annual_return_pct >}} annual returns to bondholders
 
-##### Everything Else ({{< var dih_treasury_medical_research_pct >}}): Decided by Wishocracy
+##### Everything Else ({{< var dih_treasury_medical_research_pct >}}): Medical Research Allocation
 
-Instead of committees, 8 billion humans vote via pairwise comparisons:
-
-> "Patient subsidies for cancer trials" vs "Infrastructure for rural access"
-> *Swipe to allocate: 70% / 30%*
-
-Billions of micro-decisions aggregate into humanity's true priorities.
-
-**Probable Emergent Allocation (based on human nature):**
-
-- **Patient Subsidies (65-75%):** People vote to subsidize their own treatments
-- **Infrastructure (10-20%):** Only as much as necessary to keep platform running
-- **Research Incentives (10-15%):** Prizes for first-to-cure, breakthrough bonuses
-- **Expansion Campaigns (variable):** Growing treasury through bigger treaties
-
-#### Anti-Corruption Architecture
-
-Traditional corruption vectors and how they're addressed:
-
-| Vector | Traditional Risk | Mitigation |
-|--------|-----------------|------------|
-| **Committee capture** | Small groups bribed | 8B pairwise voters (coordination cost exceeds capture value) |
-| **Information manipulation** | Propaganda | Multiple competing data sources (Copenhagen Consensus, GiveWell, academic literature) |
-| **Platform gaming** | Vote bots | Sybil resistance via existing identity systems |
-| **Treasury diversion** | Embezzlement | Smart contract automation with multi-sig + time-locks |
-
-Not incorruptible. Just more expensive to corrupt than the value of corruption
+The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic clinical trials and research infrastructure. Allocation is governed through transparent democratic mechanisms described in the [Wishocracy](../solution/wishocracy.qmd) chapter. Treasury security uses smart contract automation with multi-sig wallets and time-locked withdrawals.
 
 #### Dynamic Patient Subsidies
 
@@ -218,7 +195,7 @@ Key protections:
 |-----------|--------|-----------|
 | **Raise** | {{< var treaty_campaign_total_cost >}} | VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) |
 | **Spend** | Campaign budget | Referendum + lobbying + platform |
-| **Manage** | {{< var treaty_annual_funding >}}+/year | 80/10/10 automatic allocation via Wishocracy |
+| **Manage** | {{< var treaty_annual_funding >}}+/year | 80/10/10 automatic allocation |
 | **Return** | {{< var victory_bond_annual_return_pct >}} annually | Perpetual {{< var victory_bond_funding_pct >}} of treaty inflows |
 
 **The math:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever.

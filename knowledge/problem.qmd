@@ -97,13 +97,13 @@ The FDA is America's way of making sure drugs are safe. They do this by making t
 
 ![A comparison showing the massive disparity between the Oxford RECOVERY trial cost per patient (500) and the standard FDA process cost per patient (41,000), illustrating an 82x cost difference.](/assets/images/problem/problem-section-on-the-fda-bw-academic.jpg)
 
-It takes {{< var drug_discovery_to_approval_years >}} and {{< var pharma_drug_development_cost_current >}} to get a drug through FDA approval. {{< var drug_discovery_to_approval_years >}}. That's longer than it took to build the pyramids, and those involved moving rocks the size of houses without machinery (also the pharaohs didn't have to file quarterly progress reports in triplicate).
+It takes {{< var drug_discovery_to_approval_years >}} and {{< var pharma_drug_development_cost_current >}} to get a drug from discovery to patient. {{< var drug_discovery_to_approval_years >}}. That's longer than it took to build the pyramids, and those involved moving rocks the size of houses without machinery (also the pharaohs didn't have to file quarterly progress reports in triplicate).
 
-During the Oxford RECOVERY trial, they tested treatments on 40,000 patients for {{< var recovery_trial_cost_per_patient >}} per person. The FDA's process costs {{< var traditional_phase3_cost_per_patient >}} per patient. That's {{< var recovery_trial_cost_reduction_factor >}} times more expensive for the same result, except slower. It's like if you could get a haircut for $10 or $820, but the $820 haircut takes {{< var drug_discovery_to_approval_years >}} and you might be bald by then anyway.
+During the Oxford RECOVERY trial, they tested treatments on 40,000 patients for {{< var recovery_trial_cost_per_patient >}} per person. The FDA's process costs {{< var traditional_phase3_cost_per_patient >}} per patient. That's {{< var recovery_trial_cost_reduction_factor >}} times more expensive for the same result, except slower. It's like if you could get a haircut for $10 or $820, but the $820 haircut takes {{< var drug_discovery_to_approval_years >}} from discovery to patient and you might be bald by then anyway.
 
 Ninety-five percent of diseases have zero approved treatments. This is because the FDA is very good at preventing bad drugs from reaching people, and also pretty good at preventing good drugs from reaching people, and absolutely excellent at preventing any drugs from reaching people.
 
-They say the road to hell is paved with good intentions. The FDA's road is paved with good intentions and also {{< var drug_discovery_to_approval_years >}} of bureaucracy.
+They say the road to hell is paved with good intentions. The FDA's road is paved with good intentions and also {{< var drug_discovery_to_approval_years >}} from discovery to patient.
 
 ## On What War Costs
 
@@ -240,6 +240,9 @@ They say every problem is an opportunity in disguise. In this case, the opportun
 ## What's Next
 
 Now that you understand the problem, which is to say, now that you're appropriately horrified, here's how to fix it.
+
+![A conceptual map linking institutional failures (such as NIH spending, FDA cost inflation, and regulatory capture) to their ultimate impact on individual health and societal waste.](/assets/images/problem/problem-section-what-s-next-bw-academic.jpg)
+
 
 The following chapters will explain:
 
