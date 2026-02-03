@@ -988,12 +988,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,728
+**Files:** 1 | **Words:** 11,727
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,728 words | 1,222 lines
+**Stats:** 11,727 words | 1,229 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1244,7 +1244,7 @@
 #### knowledge/appendix/federal-efficiency-audit.qmd
 **Title:** Federal Resource Allocation Efficiency Audit
 **Description:** Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark compariso...
-**Stats:** 4,480 words | 582 lines
+**Stats:** 4,480 words | 585 lines
 
   - Executive Summary
   - Interpretation Note
@@ -1394,12 +1394,12 @@
 ## _quarto-invisible-graveyard.yml
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Type:** website
-**Files:** 1 | **Words:** 7,172
+**Files:** 1 | **Words:** 7,170
 
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Description:** The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_d...
-**Stats:** 7,172 words | 770 lines
+**Stats:** 7,170 words | 764 lines
 
   - The Short Version
   - Abstract
@@ -2981,7 +2981,7 @@
 #### knowledge/appendix/drug-development-cost-analysis.qmd
 **Title:** Drug Development Cost Increase Analysis
 **Description:** Rigorous analysis of the {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments a...
-**Stats:** 3,454 words | 569 lines
+**Stats:** 3,454 words | 576 lines
 
   - Executive Summary
   - Historical Data Sources
@@ -3493,7 +3493,7 @@
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
 **Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 8,496 words | 1,217 lines
+**Stats:** 8,496 words | 1,221 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -3598,7 +3598,7 @@
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,722 words | 1,998 lines
+**Stats:** 13,722 words | 2,009 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -3749,7 +3749,7 @@
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,776 words | 941 lines
+**Stats:** 8,776 words | 942 lines
 
   - The Mechanism
     - Why This Works
@@ -3911,7 +3911,7 @@
 #### knowledge/test/test-parameters.qmd
 **Title:** Test Parameters Document
 **Description:** Minimal parameters document for testing
-**Stats:** 333 words | 75 lines
+**Stats:** 333 words | 78 lines
 
 - Introduction {#sec-test-parameters-intro}
   - Test Parameters
@@ -4194,6 +4194,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 82
-- Total words: 340,570
+- Total words: 340,567
 - Orphaned files: 27
 - Paper configs: 12
