@@ -988,12 +988,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Type:** website
-**Files:** 1 | **Words:** 11,722
+**Files:** 1 | **Words:** 11,727
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
 **Description:** Economic analysis of a decentralized framework for drug assessment (dFDA). With {{< var dih_treasury_to_medical_research_annual >}}/year in pragmatic trial funding, the framework could save {{< var df...
-**Stats:** 11,722 words | 1,229 lines
+**Stats:** 11,727 words | 1,239 lines
 
   - Understanding These Figures: The Untested Treatment Backlog
   - Executive Summary
@@ -1046,11 +1046,11 @@
   - Conclusion
     - Disclaimer
   - Verification: Complete Derivation Chains
-    - Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
-    - Timeline Shift Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_years >}})
-    - Lives Saved Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}})
-    - Cost per DALY Derivation ({{< var dfda_direct_funding_cost_per_daly >}})
-    - ROI Derivation ({{< var dfda_roi_rd_only >}})
+    - Trial Capacity Multiplier Derivation
+    - Timeline Shift Derivation
+    - Lives Saved Derivation
+    - Cost per DALY Derivation
+    - ROI Derivation
     - Verification Summary
   - Key Analytical Assumptions
     - Linear Scaling Assumption
@@ -4194,6 +4194,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 82
-- Total words: 340,562
+- Total words: 340,567
 - Orphaned files: 27
 - Paper configs: 12

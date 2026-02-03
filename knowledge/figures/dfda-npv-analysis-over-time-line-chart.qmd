@@ -18,7 +18,7 @@ from dih_models.plotting.chart_style import (
 
 setup_chart_style()
 
-# Import parameters from dih_models/parameters.py
+# Import parameters
 
 from dih_models.parameters import *
 
@@ -26,7 +26,7 @@ from dih_models.parameters import *
 
 BILLION = 1_000_000_000
 
-# NPV Model Parameters (from dih_models/parameters.py)
+# NPV Model Parameters
 
 C0 = float(DFDA_NPV_UPFRONT_COST_TOTAL) / BILLION  # $0.26975B upfront
 Cop = float(DFDA_NPV_ANNUAL_OPEX_TOTAL) / BILLION  # $0.04005B annual ops

@@ -130,7 +130,7 @@ A disease that would receive its first effective treatment in year 200 under the
 
 **How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dih_treasury_to_medical_research_annual >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the framework enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
-## Vision and Capabilities
+## Capabilities
 
 ### Core Model: An Open Coordination Protocol
 
@@ -223,14 +223,14 @@ This analysis models a scenario with {{< var dih_treasury_to_medical_research_an
 ![A comparison showing the impact of increased trial funding on the disease treatment backlog, contrasting a 443-year timeline under current capacity with a 36-year timeline under the proposed model.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg)
 
 ::: {.callout-tip}
-**On the Funding Assumption**: This analysis demonstrates what becomes possible when the funding constraint is removed. The {{< var dih_treasury_to_medical_research_annual >}}/year figure comes from a proposed [1% Treaty](../solution/1-percent-treaty.qmd) redirecting military spending - but this is one mechanism among many:
+**On the Funding Assumption**: This analysis demonstrates what becomes possible when the funding constraint is removed. The {{< var dih_treasury_to_medical_research_annual >}}/year figure is achievable through multiple mechanisms:
 
 - **Philanthropic mega-donors**: A single Gates Foundation-scale commitment could fund the protocol infrastructure and initial years
 - **Sovereign wealth funds**: Norway's $1.4T fund or similar could view this as humanity-scale infrastructure
 - **WHO/multilateral coordination**: Comparable to GAVI or the Global Fund
 - **Industry consortium**: Pharma collectively spends {{< var global_clinical_trials_spending_annual >}}/year on trials; even 10% redirection exceeds this threshold
 
-The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}} ROI, any rational capital allocator would fund this if they believed the analysis. The question is not "where does the money come from?" but "why hasn't this happened yet?" (Answer: coordination problems that mechanisms like the [Incentive Alignment Bonds](https://iab.warondisease.org) are designed to solve.)
+The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}} ROI, any rational capital allocator would fund this if they believed the analysis.
 :::
 
 **Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. framework trial capacity metrics.
@@ -889,9 +889,8 @@ For economist verification, this section provides complete derivation chains for
 - Current trial participants: {{< var current_trial_slots_available >}}
 - Current first treatments: {{< var new_disease_first_treatments_per_year >}}
 
-**Step 2: Funded capacity with framework**
+**Step 2: Capacity with {{< var dih_treasury_to_medical_research_annual >}}/year**
 
-- Annual trial funding: {{< var dih_treasury_to_medical_research_annual >}}
 - Cost per patient: {{< var dfda_pragmatic_trial_cost_per_patient >}}
 - Fundable patients: {{< var dih_patients_fundable_annually >}}
 
@@ -1147,7 +1146,7 @@ Transformative potential to create viable research pathways for conditions ignor
 
 #### DALY Sensitivity Analysis
 
-The following auto-generated sensitivity analyses show how cost-effectiveness varies based on uncertainty in input parameters. These use Monte Carlo simulation with uncertainty propagation from parameter distributions in `dih_models/parameters.py`.
+The following auto-generated sensitivity analyses show how cost-effectiveness varies based on uncertainty in input parameters. These use Monte Carlo simulation with uncertainty propagation from parameter distributions.
 
 **Key DALY Outcomes:**
 
