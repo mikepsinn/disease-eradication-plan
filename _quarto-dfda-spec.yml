@@ -47,10 +47,9 @@ website:
     center: "[PDF](/dfda-spec-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
-    left:
+    right:
       - text: "Prototype"
         href: https://dfda.earth
-    right:
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations-dfda-spec.qmd
       - text: "VOTE"

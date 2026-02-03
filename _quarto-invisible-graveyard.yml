@@ -47,10 +47,9 @@ website:
     center: "[PDF](/invisible-graveyard.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
-    left:
+    right:
       - text: "dFDA Framework"
         href: https://dfda-spec.warondisease.org
-    right:
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd
       - text: "VOTE"

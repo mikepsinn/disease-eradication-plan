@@ -46,10 +46,9 @@ website:
     center: "[PDF](/wishocracy-rappa-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
-    left:
+    right:
       - text: "Prototype"
         href: https://wishocracy.org
-    right:
       - text: "VOTE"
         href: https://WarOnDisease.org
 

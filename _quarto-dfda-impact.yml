@@ -47,12 +47,11 @@ website:
     center: "[PDF](/dfda-impact-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
-    left:
+    right:
       - text: "dFDA Spec"
         href: https://dfda-spec.warondisease.org
       - text: "Prototype"
         href: https://dfda.earth
-    right:
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations-dfda-impact.qmd
       - text: "VOTE"
