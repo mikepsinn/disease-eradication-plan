@@ -176,6 +176,8 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
         "toc: true",
         "toc-depth: 2",
         "image: /assets/og-images/knowledge/papers-og-bw-academic.jpg",
+        "aliases:",
+        "  - /papers",
         "---",
         "",
         "This page provides an index of all academic papers, working drafts, and publications",

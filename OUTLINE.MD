@@ -985,7 +985,7 @@
 ---
 
 ## _quarto-dfda-impact.yml
-**Title:** The Health and Economic Impact of a Global System for Pragmatic Clinical Trials
+**Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Type:** website
 **Files:** 1 | **Words:** 11,550
 
@@ -4142,7 +4142,7 @@
 #### knowledge/papers.qmd
 - **Title:** Papers & Publications
 - **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-- **Words:** 902
+- **Words:** 900
 
 ---
 
@@ -4154,7 +4154,7 @@
 |--------|-------|--------------|-----|
 | _quarto-1-pct-treaty-impact.yml | The 1% Treaty: Harnessing Greed to Eradicate Disea... | `@1-pct-treaty-impact-paper-2025` | 10.5281/zenodo.18161561 |
 | _quarto-cost-of-change.yml | The Price of Political Change: A Cost-Benefit Fram... | `@cost-of-change-paper-2025` | 10.5281/zenodo.18356216 |
-| _quarto-dfda-impact.yml | The Health and Economic Impact of a Global System ... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18243915 |
+| _quarto-dfda-impact.yml | How to Prevent a Year of Death and Suffering for 8... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18243915 |
 | _quarto-dfda-spec.yml | dFDA: A Decentralized Framework for Drug Assessmen... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18203376 |
 | _quarto-federal-efficiency-audit.yml | Federal Resource Allocation Efficiency Audit | `@federal-efficiency-audit-paper-2025` | 10.5281/zenodo.18447477 |
 | _quarto-iab.yml | Incentive Alignment Bonds: Making Public Goods Fin... | `@iab-paper-2025` | 10.5281/zenodo.18203222 |

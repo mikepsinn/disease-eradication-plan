@@ -203,8 +203,7 @@ book:
 
     - part: "Additional References"
       chapters:
-        # REMOVED: Better as online index; changes frequently (~10p)
-        # - knowledge/papers.qmd
+        - knowledge/papers.qmd
         - knowledge/appendix/lives-saved-by-drug-accessibility.qmd # ✅ (reference tables, appropriate) ~6p
         # REMOVED: Tangential to core thesis; interesting but not necessary (~6p)
         # - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
