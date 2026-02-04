@@ -236,7 +236,10 @@ def needs_update(existing: Dict[str, Any], new_metadata: Dict[str, Any]) -> bool
     return False
 
 
-def update_references_from_quarto(project_root: Path) -> List[Tuple[str, str]]:
+def update_references_from_quarto(
+    project_root: Path,
+    existing_citation_data: Optional[Dict[str, Dict[str, Any]]] = None,
+) -> List[Tuple[str, str]]:
     """
     Scan Quarto YAML configs and add/update papers in references.bib.
 
@@ -251,6 +254,8 @@ def update_references_from_quarto(project_root: Path) -> List[Tuple[str, str]]:
 
     Args:
         project_root: Root directory of the project
+        existing_citation_data: Pre-parsed citation data from parse_references_bib().
+                                If provided, skips re-parsing references.bib (saves ~2s).
 
     Returns:
         List of (citation_key, title) tuples for papers that were added or updated
@@ -262,7 +267,8 @@ def update_references_from_quarto(project_root: Path) -> List[Tuple[str, str]]:
     entries_by_key = {e["key"]: e for e in existing_entries}
 
     # Get existing citation data (full metadata) for needs_update checks
-    existing_refs = parse_references_bib(bib_path)
+    # Reuse pre-parsed data if available (avoids expensive bibtexparser re-parse)
+    existing_refs = existing_citation_data if existing_citation_data is not None else parse_references_bib(bib_path)
     existing_keys = set(existing_refs.keys())
 
     # Also build a map of DOIs to keys (to detect duplicates by DOI)

@@ -36,6 +36,11 @@ try:
 except ImportError:
     HAS_BIBTEXPARSER = False
 
+# Pre-compiled patterns for URL extraction and key sanitization
+_URL_PATTERN = re.compile(r'https?://[^\s<>\"\'\)]+[^\s<>\"\'\)\.,]')
+_BIBTEX_KEY_NONALNUM = re.compile(r'[^a-zA-Z0-9\-_]')
+_BIBTEX_KEY_MULTI_HYPHEN = re.compile(r'-+')
+
 
 def parse_references_bib(bib_path: Path) -> Dict[str, Dict[str, Any]]:
     """
@@ -90,9 +95,8 @@ def parse_references_bib(bib_path: Path) -> Dict[str, Dict[str, Any]]:
         note = entry.get('note', '')
 
         # Extract additional URLs from abstract/note
-        url_pattern = r'https?://[^\s<>\"\'\)]+[^\s<>\"\'\)\.,]'
         for text in [abstract, note]:
-            for url_match in re.finditer(url_pattern, text):
+            for url_match in _URL_PATTERN.finditer(text):
                 url = url_match.group(0)
                 if url not in urls:
                     urls.append(url)
@@ -192,9 +196,9 @@ def sanitize_bibtex_key(key: str) -> str:
     sanitized = sanitized.replace('#', '-')
     sanitized = sanitized.replace('.qmd', '')
     sanitized = sanitized.replace('.', '-')
-    sanitized = re.sub(r'[^a-zA-Z0-9\-_]', '-', sanitized)
+    sanitized = _BIBTEX_KEY_NONALNUM.sub('-', sanitized)
     # Remove multiple consecutive hyphens
-    sanitized = re.sub(r'-+', '-', sanitized)
+    sanitized = _BIBTEX_KEY_MULTI_HYPHEN.sub('-', sanitized)
     # Remove leading/trailing hyphens
     sanitized = sanitized.strip('-')
     return sanitized

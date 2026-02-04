@@ -235,13 +235,20 @@ def extract_pages_for_site(search_generator: SearchIndexGenerator, config_name: 
     return pages
 
 
-def generate_sites_metadata(project_root: Path, output_filename: str = "sites-metadata.json") -> Path:
+def generate_sites_metadata(
+    project_root: Path,
+    output_filename: str = "sites-metadata.json",
+    search_generator: Optional[SearchIndexGenerator] = None,
+) -> Path:
     """
     Generate a JSON file containing metadata for all Quarto sites.
 
     Args:
         project_root: Root directory of the project
         output_filename: Name of the output JSON file
+        search_generator: Optional pre-initialized SearchIndexGenerator instance.
+                          If provided, reuses it instead of creating a new one
+                          (avoids re-parsing all YAML configs and _variables.yml).
 
     Returns:
         Path to the generated JSON file
@@ -262,8 +269,9 @@ def generate_sites_metadata(project_root: Path, output_filename: str = "sites-me
     else:
         print("[WARN] _variables.yml not found - Quarto variables will not be substituted")
 
-    # Initialize search index generator for page-level metadata
-    search_generator = SearchIndexGenerator(project_root)
+    # Reuse existing search generator if provided, otherwise create new one
+    if search_generator is None:
+        search_generator = SearchIndexGenerator(project_root)
 
     sites = []
 

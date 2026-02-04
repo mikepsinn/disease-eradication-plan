@@ -129,6 +129,10 @@ def resolve_link_path(link_path: str, file_dir: str) -> str:
 
 def check_math_delimiters(content: str, filename: str):
     """Check for unmatched dollar signs in math mode"""
+    # Early return if no display math in file
+    if "$$" not in content:
+        return
+
     lines = content.split("\n")
     in_math_block = False
 
@@ -264,6 +268,10 @@ def check_em_dashes(content: str, filepath: str):
     Check for em-dashes (—) which should be replaced with comma and space or other punctuation.
     Detects ALL em-dashes except those in safe contexts (code blocks, inline code, URLs).
     """
+    # Early return if no em-dashes in file
+    if "\u2014" not in content:
+        return
+
     lines = content.split("\n")
     in_code_block = False
 
@@ -430,13 +438,35 @@ def check_parameter_imports(content: str, filepath: str, defined_parameters: Set
     This catches errors like using GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL without importing it.
     """
     if not defined_parameters:
-        # Skip if no parameters loaded
         return
+
+    # Early return if no Python blocks
+    if "```{python}" not in content:
+        return
+
+    # Check if file includes setup-parameters.qmd (which contains the import).
+    # Quarto resolves includes before execution, so parameters are available.
+    if "include" in content and "setup-parameters" in content:
+        return
+
+    # Skip figure files (knowledge/figures/) - they are always {{< include >}}'d
+    # from parent files that already have parameter imports in an earlier block.
+    if "knowledge/figures/" in filepath.replace("\\", "/"):
+        return
+
+    # Extract all uppercase identifiers from the file at once using a single regex,
+    # then intersect with defined_parameters. This avoids running 442 individual
+    # regex searches per code block (the previous approach took ~12s).
+    identifier_pattern = re.compile(r"\b([A-Z][A-Z0-9_]{2,})\b")
 
     lines = content.split("\n")
     in_python_block = False
     current_block = []
     block_start_line = 0
+    # Track whether ANY previous block imported parameters.
+    # Quarto Python blocks share the same kernel session, so an import in
+    # block 1 makes parameters available in all subsequent blocks.
+    file_has_param_import = False
 
     for i, line in enumerate(lines):
         if re.match(r"^```\{python\}", line):
@@ -447,41 +477,35 @@ def check_parameter_imports(content: str, filepath: str, defined_parameters: Set
             # End of Python block - check for parameter usage
             block_content = "\n".join(current_block)
 
-            # Check if block imports from dih_models.parameters
-            has_param_import = bool(
-                re.search(
-                    r"from\s+dih_models\.parameters\s+import",
-                    block_content,
-                    re.DOTALL,
-                )
-            )
+            # Check if this block imports from dih_models.parameters
+            if "dih_models.parameters" in block_content and "import" in block_content:
+                file_has_param_import = True
+                in_python_block = False
+                continue
 
-            # If no import, check if any parameters are used
-            if not has_param_import:
-                used_params = set()
-                for param_name in defined_parameters:
-                    # Check if parameter is used as a standalone identifier
-                    # Use word boundaries to avoid matching substrings
-                    if re.search(rf"\b{param_name}\b", block_content):
-                        used_params.add(param_name)
+            # Skip check if a previous block already imported parameters
+            if file_has_param_import:
+                in_python_block = False
+                continue
 
-                # Report error for first used parameter
-                if used_params:
-                    for line_num, block_line in enumerate(current_block, block_start_line):
-                        for param_name in used_params:
-                            if re.search(rf"\b{param_name}\b", block_line):
-                                errors.append(
-                                    ValidationError(
-                                        file=filepath,
-                                        line=line_num,
-                                        message=f"Parameter '{param_name}' used but not imported from dih_models.parameters",
-                                        context=block_line.strip()[:80],
-                                    )
-                                )
-                                # Only report once per block
-                                break
-                        if used_params:
-                            break
+            # Extract all uppercase identifiers and check against parameter set
+            found_identifiers = set(identifier_pattern.findall(block_content))
+            used_params = found_identifiers & defined_parameters
+
+            # Report error for first used parameter
+            if used_params:
+                first_param = next(iter(used_params))
+                for line_num, block_line in enumerate(current_block, block_start_line):
+                    if first_param in block_line:
+                        errors.append(
+                            ValidationError(
+                                file=filepath,
+                                line=line_num,
+                                message=f"Parameter '{first_param}' used but not imported from dih_models.parameters",
+                                context=block_line.strip()[:80],
+                            )
+                        )
+                        break
 
             in_python_block = False
         elif in_python_block:
@@ -493,6 +517,10 @@ def check_python_imports(content: str, filepath: str):
     Check for missing imports in Python code blocks.
     Detects cases where a module is used but not imported in that specific block.
     """
+    # Early return if no Python blocks
+    if "```{python}" not in content:
+        return
+
     # Common module patterns to check
     # Format: (usage_pattern, import_patterns, module_name)
     # NOTE: We only check for imports that MUST be in each block that uses them.
@@ -550,6 +578,12 @@ def check_graphviz_variables(content: str, filepath: str):
     Check for Quarto variables ({{< var ... >}}) inside Python code blocks that generate Graphviz diagrams.
     Quarto variables don't work inside Python code blocks - use Python variables instead.
     """
+    # Early return if no Graphviz or no Quarto variables in file
+    if "graphviz" not in content.lower() and "Digraph" not in content and "Graph(" not in content:
+        return
+    if "{{<" not in content:
+        return
+
     lines = content.split("\n")
     in_python_block = False
     current_block = []
@@ -782,6 +816,10 @@ def check_figure_caption_latex_safety(content: str, filepath: str):
             check_caption(alt_text, line_index, line)
 
 
+_markdown_gif_pattern = re.compile(r"!\[([^\]]*)\]\(([^)]*\.gif[^)]*)\)", re.IGNORECASE)
+_html_gif_pattern = re.compile(r'<img[^>]+src=["\']([^"\']*\.gif[^"\']*)["\']', re.IGNORECASE)
+
+
 def check_gif_references(content: str, filepath: str):
     """
     Check for GIF files that aren't wrapped in HTML-only blocks
@@ -790,6 +828,10 @@ def check_gif_references(content: str, filepath: str):
     <img src="path/to/file.gif" />
     :::
     """
+    # Early return if no GIF references in file
+    if ".gif" not in content.lower():
+        return
+
     lines = content.split("\n")
     in_html_only_block = False
     block_depth = 0
@@ -808,11 +850,8 @@ def check_gif_references(content: str, filepath: str):
             block_depth += 1
 
         # Check for GIF references (markdown or HTML)
-        markdown_gif_pattern = re.compile(r"!\[([^\]]*)\]\(([^)]*\.gif[^)]*)\)", re.IGNORECASE)
-        html_gif_pattern = re.compile(r'<img[^>]+src=["\']([^"\']*\.gif[^"\']*)["\']', re.IGNORECASE)
-
-        markdown_matches = markdown_gif_pattern.finditer(line)
-        html_matches = html_gif_pattern.finditer(line)
+        markdown_matches = _markdown_gif_pattern.finditer(line)
+        html_matches = _html_gif_pattern.finditer(line)
 
         # Check markdown GIF references
         for match in markdown_matches:
@@ -854,6 +893,10 @@ def check_include_directives(content: str, filepath: str):
     Check for broken Quarto include directives: {{< include path.qmd >}}
     Ensures that all included files exist relative to the current file.
     """
+    # Early return if no include directives in file
+    if "{{< include" not in content:
+        return
+
     lines = content.split("\n")
     file_dir = os.path.dirname(filepath)
 
@@ -956,6 +999,10 @@ def check_duplicate_latex_variables(content: str, filepath: str):
     Having the same _latex variable appear multiple times in a file indicates
     redundant LaTeX equations that should be consolidated.
     """
+    # Early return if no _latex variables in file
+    if "_latex" not in content:
+        return
+
     lines = content.split("\n")
 
     # Pattern to match _latex variable references: {{< var something_latex >}}
@@ -1033,6 +1080,10 @@ def check_quarto_variables_in_links(content: str, filepath: str):
     Quarto variables don't work inside link text: [{{< var ... >}}](url)
     They should be moved outside the link or replaced with plain text.
     """
+    # Early return if no Quarto variables in file
+    if "{{< var" not in content:
+        return
+
     lines = content.split("\n")
 
     # Pattern to match markdown links with Quarto variables in link text
@@ -1352,7 +1403,10 @@ def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str])
     Pattern: {{< var variable_name >}}
     """
     if not defined_vars:
-        # Skip if no variables loaded (PyYAML not installed or file not found)
+        return
+
+    # Early return if no Quarto variables in file
+    if "{{< var" not in content:
         return
 
     lines = content.split("\n")
@@ -1434,7 +1488,10 @@ def check_citations(content: str, filepath: str, defined_citations: Set[str]):
     Pattern: [@citation-id] or @citation-id (bare citations in text/tables)
     """
     if not defined_citations:
-        # Skip if no citations loaded
+        return
+
+    # Early return if no @ signs in file (no possible citations)
+    if "@" not in content:
         return
 
     lines = content.split("\n")

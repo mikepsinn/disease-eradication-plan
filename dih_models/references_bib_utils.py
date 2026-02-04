@@ -28,6 +28,9 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+# Pre-compiled patterns
+_BIB_ENTRY_PATTERN = re.compile(r"@(\w+)\{([^,]+),")
+
 
 class BibFileValidationError(Exception):
     """Raised when validation errors are found in references.bib."""
@@ -88,11 +91,8 @@ def parse_bib_entries(bib_path: Path) -> List[Dict[str, Any]]:
 
     entries = []
 
-    # Pattern to match BibTeX entry starts: @type{key,
-    pattern = r"@(\w+)\{([^,]+),"
-
     # Find all entry starts
-    for match in re.finditer(pattern, content):
+    for match in _BIB_ENTRY_PATTERN.finditer(content):
         entry_type = match.group(1)
         citation_key = match.group(2).strip()
         start_pos = match.start()

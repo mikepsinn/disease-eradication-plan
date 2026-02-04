@@ -21,6 +21,14 @@ from dih_models.variable_replacement import load_variables
 if sys.platform == 'win32':
     getattr(sys.stdout, 'reconfigure', lambda **kwargs: None)(encoding='utf-8')
 
+# Pre-compiled regex patterns (avoid recompiling per-file or per-line)
+_FRONTMATTER_PATTERN = re.compile(r'^---\s*\n(.*?\n)---\s*\n', re.DOTALL)
+_HEADING_PATTERN = re.compile(r'^#{2,3}\s+(.+)')
+_QUARTO_ATTR_PATTERN = re.compile(r'\{(?![{<])[^}]+\}')
+_MARKDOWN_LINK_PATTERN = re.compile(r'\[([^\]]+)\]\([^\)]+\)')
+_MARKDOWN_FORMAT_PATTERN = re.compile(r'[*_`]')
+_QUARTO_VAR_PATTERN = re.compile(r'\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}')
+
 
 class SearchIndexEntry:
     """Represents a single entry in the search index."""
@@ -68,8 +76,7 @@ class QMDParser:
     @staticmethod
     def extract_frontmatter(content: str) -> Optional[Dict[str, Any]]:
         """Extract YAML frontmatter from QMD content."""
-        # Match YAML frontmatter between --- delimiters
-        match = re.match(r'^---\s*\n(.*?\n)---\s*\n', content, re.DOTALL)
+        match = _FRONTMATTER_PATTERN.match(content)
         if not match:
             return None
 
@@ -82,21 +89,20 @@ class QMDParser:
     def extract_sections(content: str) -> List[str]:
         """Extract section headings (h2, h3)."""
         # Remove frontmatter
-        content = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, flags=re.DOTALL)
+        content = _FRONTMATTER_PATTERN.sub('', content, count=1)
 
         sections = []
         for line in content.split('\n'):
-            # Match h2 (##) and h3 (###) headings
-            match = re.match(r'^#{2,3}\s+(.+)', line)
+            match = _HEADING_PATTERN.match(line)
             if match:
                 heading = match.group(1).strip()
                 # Remove markdown formatting and anchors/attributes
                 # BUT preserve Quarto variables {{< var ... >}} for later replacement
-                heading = re.sub(r'\{(?![{<])[^}]+\}', '', heading)  # {#anchor}, {.unnumbered}, {.class}
-                heading = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', heading)  # Links
-                heading = re.sub(r'[*_`]', '', heading)  # Bold, italic, code
+                heading = _QUARTO_ATTR_PATTERN.sub('', heading)
+                heading = _MARKDOWN_LINK_PATTERN.sub(r'\1', heading)
+                heading = _MARKDOWN_FORMAT_PATTERN.sub('', heading)
                 heading = heading.strip()
-                if heading:  # Only add non-empty headings
+                if heading:
                     sections.append(heading)
 
         return sections
@@ -118,6 +124,8 @@ class SearchIndexGenerator:
         else:
             self.variables = variables
         self.quarto_configs = self._discover_quarto_configs()
+        # Cache for generated index entries (avoids re-parsing QMD files)
+        self._index_cache: Dict[str, List[SearchIndexEntry]] = {}
 
     def _discover_quarto_configs(self) -> Dict[str, Dict[str, Any]]:
         """Dynamically discover and load all Quarto config files.
@@ -278,8 +286,6 @@ class SearchIndexGenerator:
         Raises:
             ValueError: If a variable is referenced but not defined
         """
-        pattern = re.compile(r'\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}')
-
         def replacer(match):
             var_name = match.group(1)
             if var_name not in self.variables:
@@ -288,7 +294,7 @@ class SearchIndexGenerator:
                 )
             return self.variables[var_name]
 
-        return pattern.sub(replacer, text)
+        return _QUARTO_VAR_PATTERN.sub(replacer, text)
 
     def _replace_variables_in_headings(self, content: str, source_path: Path) -> str:
         """Replace Quarto variables only in heading lines.
@@ -308,7 +314,7 @@ class SearchIndexGenerator:
 
         for line in lines:
             # Only process heading lines (h2, h3)
-            if re.match(r'^#{2,3}\s+', line):
+            if _HEADING_PATTERN.match(line):
                 line = self._replace_variables_strict(line, source_path)
             result.append(line)
 
@@ -394,7 +400,15 @@ class SearchIndexGenerator:
             return None
 
     def generate_index_for_config(self, config_name: str) -> List[SearchIndexEntry]:
-        """Generate search index for a specific Quarto config."""
+        """Generate search index for a specific Quarto config.
+
+        Results are cached so repeated calls (e.g., from generate_sites_metadata
+        after generate_search_indexes) don't re-parse QMD files.
+        """
+        # Return cached result if available
+        if config_name in self._index_cache:
+            return self._index_cache[config_name]
+
         print(f"[*] Generating search index for {config_name}...")
 
         qmd_files = self.get_qmd_files_for_config(config_name)
@@ -409,6 +423,7 @@ class SearchIndexGenerator:
                 entries.append(entry)
 
         print(f"[OK] Generated {len(entries)} search index entries for {config_name}")
+        self._index_cache[config_name] = entries
         return entries
 
     def write_index_json(self, config_name: str, entries: List[SearchIndexEntry]) -> Path:

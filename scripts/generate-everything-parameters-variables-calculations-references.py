@@ -447,7 +447,7 @@ def main():
 
     # Add any Quarto papers with DOIs that aren't in references.bib yet
     print("[*] Checking Quarto configs for new paper references...")
-    added_papers = update_references_from_quarto(project_root)
+    added_papers = update_references_from_quarto(project_root, existing_citation_data=citation_data)
     if added_papers:
         # Re-parse references.bib to include newly added entries
         print("[*] Re-parsing references.bib with new entries...")
@@ -1184,7 +1184,10 @@ def main():
         print()
 
     # Generate search indexes for all Quarto configs
-    generate_search_indexes(project_root)
+    # Keep generator instance to reuse in generate_sites_metadata (avoids re-parsing configs)
+    from dih_models.search_index_generator import SearchIndexGenerator
+    _search_generator = SearchIndexGenerator(project_root)
+    _search_generator.generate_all_indexes()
 
     # Generate outline from updated headings (optional - OK to fail)
     print("[*] Regenerating outline from chapter headings...")
@@ -1238,8 +1241,9 @@ def main():
     print()
 
     # Generate site metadata JSON for external use (displaying papers on other sites)
+    # Reuse search generator to avoid re-parsing all YAML configs and regenerating indexes
     print("[*] Generating site metadata JSON...")
-    sites_metadata_path = generate_sites_metadata(project_root)
+    sites_metadata_path = generate_sites_metadata(project_root, search_generator=_search_generator)
     print()
 
     # Generate llms.txt and robots.txt for AI crawler access
