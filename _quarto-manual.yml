@@ -496,9 +496,6 @@ format:
       - bottom=1in
       - left=1in
       - right=1in
-    variables:
-      title: "How to End War and Disease"
-      description: "A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
     include-before-body:
       - text: |
           \thispagestyle{empty}

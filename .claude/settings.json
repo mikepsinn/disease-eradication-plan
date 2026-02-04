@@ -22,21 +22,6 @@
         "hooks": []
       }
     ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python .claude/hooks/check-pending-work.py",
-            "timeout": 5000
-          },
-          {
-            "type": "command",
-            "command": "python .claude/hooks/check-pdf-validation-errors.py",
-            "timeout": 5000
-          }
-        ]
-      }
-    ]
+    "SessionStart": []
   }
 }
