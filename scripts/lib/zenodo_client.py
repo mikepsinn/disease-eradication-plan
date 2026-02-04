@@ -186,19 +186,45 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
     else:
         description = short_description
 
-    # Authors/Creators
-    author_name = metadata.get("human-author", metadata.get("creator", "Mike P. Sinn"))
-    creators = [{"name": author_name}]
+    # Authors/Creators — read from Quarto's structured author field
+    # Quarto puts authors under book.author, website.author, root-level author, or metadata.author
+    author_list = (
+        book.get("author")
+        or website.get("author")
+        or quarto_config.get("author")
+        or metadata.get("author")
+        or []
+    )
+    if isinstance(author_list, str):
+        author_list = [{"name": author_list}]
+    elif isinstance(author_list, dict):
+        author_list = [author_list]
 
-    # Add ORCID if available in metadata, otherwise use default for Mike P. Sinn
-    orcid = metadata.get("orcid")
-    if orcid:
-        creators[0]["orcid"] = orcid
-    elif "Mike" in author_name and "Sinn" in author_name:
-        creators[0]["orcid"] = DEFAULT_ORCID
+    creators = []
+    for author in author_list:
+        if isinstance(author, str):
+            creator = {"name": author}
+        elif isinstance(author, dict):
+            creator = {"name": author.get("name", "Unknown")}
+            # ORCID
+            if author.get("orcid"):
+                creator["orcid"] = author["orcid"]
+            # Affiliation — read from author.affiliations list
+            affiliations = author.get("affiliations", [])
+            if affiliations and isinstance(affiliations, list):
+                first_aff = affiliations[0]
+                if isinstance(first_aff, str):
+                    creator["affiliation"] = first_aff
+                elif isinstance(first_aff, dict):
+                    creator["affiliation"] = first_aff.get("name", "")
+        else:
+            continue
+        creators.append(creator)
 
-    # Add affiliation
-    creators[0]["affiliation"] = metadata.get("publisher", "Decentralized Institutes of Health")
+    # Fallback if no authors found
+    if not creators:
+        fallback_name = metadata.get("human-author", metadata.get("creator", "Mike P. Sinn"))
+        creators = [{"name": fallback_name, "orcid": DEFAULT_ORCID}]
 
     # Keywords
     keywords = metadata.get("keywords", [])
@@ -464,11 +490,40 @@ def upload_paper(
 
             if existing_draft:
                 deposit_id = existing_draft["id"]
-                log(f"[OK] Found existing draft by title: {deposit_id}")
-                log("  -> Updating existing draft...")
-                full_deposit = client.get_deposit(deposit_id)
-                bucket_url = full_deposit["links"]["bucket"]
-                client.delete_all_files(deposit_id)
+                state = existing_draft.get("state", "unknown")
+                log(f"[OK] Found existing deposit by title: {deposit_id} (state: {state})")
+
+                if state == "done":
+                    # Published record — must create new version
+                    log("[OK] Creating new version of published record...")
+                    deposit = client.create_new_version(deposit_id)
+                    deposit_id = deposit["id"]
+                    bucket_url = deposit["links"]["bucket"]
+                    client.delete_all_files(deposit_id)
+                    log(f"[OK] New version draft ID: {deposit_id}")
+                elif state == "inprogress":
+                    # inprogress = submitted but not yet published; try to get editable draft
+                    log("[OK] Deposit is 'inprogress' (submitted). Attempting to edit...")
+                    try:
+                        full_deposit = client.get_deposit(deposit_id)
+                        bucket_url = full_deposit["links"]["bucket"]
+                        client.delete_all_files(deposit_id)
+                    except requests.HTTPError as e:
+                        log(f"WARNING: Cannot modify inprogress deposit {deposit_id}: {e}")
+                        log("  -> Creating new deposit instead...")
+                        deposit = client.create_deposit()
+                        deposit_id = deposit["id"]
+                        bucket_url = deposit["links"]["bucket"]
+                elif state == "unsubmitted":
+                    log("  -> Updating existing draft...")
+                    full_deposit = client.get_deposit(deposit_id)
+                    bucket_url = full_deposit["links"]["bucket"]
+                    client.delete_all_files(deposit_id)
+                else:
+                    log(f"WARNING: Unknown state '{state}', creating new deposit...")
+                    deposit = client.create_deposit()
+                    deposit_id = deposit["id"]
+                    bucket_url = deposit["links"]["bucket"]
             else:
                 log("[OK] No existing deposit found, creating new...")
                 deposit = client.create_deposit()

@@ -1,6 +1,23 @@
 ---
 title: 'The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024'
 description: 'The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_deaths_total >}} historical deaths during actual drug approval delays (1962-2024), and (2) {{< var dfda_efficacy_lag_elimination_deaths_averted >}} future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by {{< var type_ii_error_cost_ratio >}}.'
+abstract: |
+  This study quantifies the cumulative mortality and morbidity costs associated with the Unitary
+  Pre-Market Approval (UPMA) model mandated by the 1962 Kefauver-Harris Amendments. By enforcing
+  efficacy testing prior to market entry, the current regulatory framework imposes an average
+  "Efficacy Lag" of {{< var efficacy_lag_years >}} post-safety verification. Using data from the
+  Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD)
+  database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024):
+  approximately {{< var existing_drugs_efficacy_lag_deaths_total >}} died waiting for approved drugs
+  during their approval delays, representing a lower bound excluding drugs never developed due to
+  cost barriers; (2) Future timeline shift: an additional {{< var dfda_efficacy_lag_elimination_deaths_averted >}}
+  will eventually die because the disease eradication timeline has been pushed back by
+  {{< var efficacy_lag_years >}}. Combined, these represent {{< var dfda_efficacy_lag_elimination_dalys >}}
+  Disability-Adjusted Life Years when adjusted for morbidity, with a cumulative economic deadweight
+  loss of approximately {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 USD). The societal
+  cost of Type II Regulatory Errors (delayed access to effective therapies) exceeds the averted cost
+  of Type I Regulatory Errors (market access for ineffective therapies) by a factor of
+  {{< var type_ii_error_cost_ratio >}}.
 published: true
 tags:
   - appendix

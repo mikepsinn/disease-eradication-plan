@@ -1412,12 +1412,12 @@
 ## _quarto-invisible-graveyard.yml
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Type:** website
-**Files:** 1 | **Words:** 7,194
+**Files:** 1 | **Words:** 7,391
 
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Description:** The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_d...
-**Stats:** 7,194 words | 766 lines
+**Stats:** 7,391 words | 783 lines
 
   - The Short Version
   - Abstract
@@ -4230,6 +4230,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 344,092
+- Total words: 344,289
 - Orphaned files: 26
 - Paper configs: 12
