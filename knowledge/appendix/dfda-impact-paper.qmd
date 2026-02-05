@@ -1,8 +1,24 @@
 ---
 title: How to Prevent a Year of Death and Suffering for 84 Cents
-description: By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the {{< var status_quo_queue_clearance_years >}} treatment testing backlog in {{< var dfda_queue_clearance_years >}}, delivering {{< var dfda_roi_rd_only >}} ROI, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, and generating {{< var dfda_benefit_rd_only_annual >}} in annual R&D savings at {{< var dfda_direct_funding_cost_per_daly >}}/DALY ({{< var dfda_trial_cost_reduction_pct >}} cost reduction, {{< var dfda_trial_capacity_multiplier >}} capacity increase).
+description: Allocating {{< var dih_treasury_to_medical_research_annual >}}/year to pragmatic clinical trials integrated into standard healthcare would increase trial capacity {{< var dfda_trial_capacity_multiplier >}} allowing humanity to clear the {{< var status_quo_queue_clearance_years >}} treatment testing backlog in {{< var dfda_queue_clearance_years >}}, potentially saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} at {{< var dfda_direct_funding_cost_per_daly >}}/DALY.
 abstract: |
-  Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only {{< var exploration_ratio >}} have been clinically tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. A decentralized FDA, an open protocol integrating pragmatic clinical trials into standard healthcare at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional), increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, reducing the backlog clearance time to {{< var dfda_queue_clearance_years >}}. Combined with eliminating the {{< var efficacy_lag_years >}} post-safety efficacy delay through opt-in trial participation after Phase I, treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier on average. This timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, averts {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}, and eliminates {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering at {{< var dfda_direct_funding_cost_per_daly >}}/DALY, competitive with bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. R&D savings alone yield {{< var dfda_roi_rd_only >}} ROI ({{< var dfda_benefit_rd_only_annual >}}/year).
+  Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only
+  {{< var exploration_ratio >}} have been clinically tested. At the current discovery rate of
+  {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take
+  ~{{< var status_quo_queue_clearance_years >}}. A decentralized FDA integrating pragmatic clinical
+  trials into standard healthcare at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs.
+  {{< var traditional_phase3_cost_per_patient >}} traditional) increases trial capacity
+  {{< var dfda_trial_capacity_multiplier >}}, reducing backlog clearance to
+  {{< var dfda_queue_clearance_years >}}. Combined with eliminating the {{< var efficacy_lag_years >}}
+  post-safety efficacy delay through opt-in trial participation after Phase I, treatments arrive
+  {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier on average. This timeline shift saves
+  {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, averts
+  {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}, and eliminates
+  {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering at
+  {{< var dfda_direct_funding_cost_per_daly >}}/DALY, competitive with bed nets
+  ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. Full impact yields
+  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in value
+  ({{< var dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag >}} ROI).
 published: true
 tags:
   - dfda

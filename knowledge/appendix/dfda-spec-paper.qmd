@@ -1,28 +1,29 @@
 ---
 title: 'dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation'
-description: We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at ~44x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
+description: We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at {{< var dfda_trial_cost_reduction_factor >}} lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
 abstract: |
   Only 1-10% of adverse drug events get reported to the FDA. Billions of people generate continuous
   health data through wearables (heart rate, sleep, activity, symptoms daily) while starting and stopping
   treatments. This data could detect treatment effects but remains unharvested.
 
-  A two-stage system solves the observational data problem. Stage 1 ({{< var dfda_observational_cost_per_patient >}}/patient):
-  aggregate millions of natural experiments, score causal confidence using Bradford Hill criteria via
-  the Predictor Impact Score. Observational data finds signals cheaply but can't prove causation.
-  Stage 2 ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient): confirm top signals through pragmatic
-  trials embedded in routine care. These are {{< var dfda_trial_cost_reduction_factor >}} cheaper than traditional
-  Phase III because they use existing clinical infrastructure, not specialized trial sites. This cost estimate
-  is based on a meta-analysis of 108 pragmatic trials plus large-scale implementations like RECOVERY and ADAPTABLE.
+  A two-stage system solves the observational data problem. Stage 1
+  ({{< var dfda_observational_cost_per_patient >}}/patient): aggregate millions of natural experiments,
+  score causal confidence using Bradford Hill criteria via the Predictor Impact Score. Observational data
+  finds signals cheaply but cannot prove causation. Stage 2
+  ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient): confirm top signals through pragmatic trials
+  embedded in routine care. These are {{< var dfda_trial_cost_reduction_factor >}} cheaper than traditional
+  Phase III because they use existing clinical infrastructure, not specialized trial sites. This cost
+  estimate is based on a meta-analysis of 108 pragmatic trials plus large-scale implementations like
+  RECOVERY and ADAPTABLE.
 
   Output: treatment rankings by effectiveness with validated effect sizes. Companies register treatments
-  in minutes at zero cost. Patients generate outcome data worth {{< var traditional_phase3_cost_per_patient >}}/patient.
-  The Predictor Impact Score operationalizes six Bradford Hill criteria using saturation functions,
-  enabling automated causal signal detection from observational data at population scale.
-
-  **Important limitation:** The Predictor Impact Score is a prioritization metric, not proof of causation.
-  High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework
-  complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
-  Until PIS thresholds are validated against RCT outcomes, treat them as theoretically-motivated heuristics.
+  in minutes at zero cost. Patients generate outcome data worth
+  {{< var traditional_phase3_cost_per_patient >}}/patient. The Predictor Impact Score operationalizes six
+  Bradford Hill criteria using saturation functions, enabling automated causal signal detection from
+  observational data at population scale.
+  High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This
+  framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated
+  causal claims.
 author:
   - name: Mike P. Sinn
     affiliations:
