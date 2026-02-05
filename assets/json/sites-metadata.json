@@ -6,8 +6,8 @@
       "id": "1-pct-treaty-impact",
       "type": "book",
       "title": "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-      "description": "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) new first treatments/year), exploring the therapeutic search space takes ~443 years (95% CI: 324 years-712 years). Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x (95% CI: 4.19x-61.3x). Search space explored in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. Average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. Timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.7kx-111.7kx) better than bed nets. Even at 1% (95% CI: 0.1%-10%) probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard.",
-      "abstract": "6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) new first treatments/year), exploring the therapeutic search space takes ~443 years (95% CI: 324 years-712 years). Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x (95% CI: 4.19x-61.3x). Search space explored in ~36 years (95% CI: 11.6 years-77.2 years) instead of centuries. Average treatment reaches patients 212 years (95% CI: 135 years-355 years) sooner. Timeline shift saves 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), valued at $84.8 quadrillion (95% CI: $62.4 quadrillion-$97.3 quadrillion). Cost-effectiveness: $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.7kx-111.7kx) better than bed nets. Even at 1% (95% CI: 0.1%-10%) probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard.",
+      "description": "The 1% Treaty: A policy framework using Incentive Alignment Bonds to scale research 12.3x via pragmatic trials. Prevent 10.7B deaths and achieve a record $0.0018 cost per year of healthy life (DALY).",
+      "abstract": "6.65k diseases have 0 FDA-approved treatments. At current trial\ncapacity (15 diseases/year), exploring the therapeutic search\nspace takes ~443 years. Redirect 1% of military spending ($27.2B/year)\nto pragmatic clinical trials. Trial capacity jumps 12.3x. Search\nspace explored in ~36 years instead of centuries. Average treatment reaches\npatients 212 years sooner. Timeline shift saves\n10.7B deaths, valued at\n$84.8 quadrillion. Cost-effectiveness: $0.0018/DALY,\n50.3kx better than bed nets. Even at 1%\nprobability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing\nglobal health interventions. Incentive Alignment Bonds address political feasibility by tying\nlegislators' career incentives to a public voting scorecard.",
       "siteUrl": "https://impact.warondisease.org",
       "favicon": "https://impact.warondisease.org/assets/icons/economics-favicon.png",
       "ogImage": "https://impact.warondisease.org/assets/og/economics-og-1200x630.jpg",
@@ -110,7 +110,7 @@
           "path": "index.qmd",
           "url": "https://impact.warondisease.org/",
           "title": "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-          "description": "At current trial capacity, finding first treatments for all 6.65k diseases (95% CI: 5.70k diseases-8.24k diseases) untreated diseases would take ~443 years (95% CI: 324 years-712 years). Redirecting 1% of military spending to pragmatic trials increases capacity 12.3x (95% CI: 4.19x-61.3x), reducing this to ~36 years (95% CI: 11.6 years-77.2 years) and delivering treatments decades earlier. Cost-effectiveness $0.0018 (95% CI: $0.0007-$0.0041)/DALY (treaty) or $0.841 (95% CI: $0.242-$1.75)/DALY (direct funding) both more cost-effective than bed nets.",
+          "description": "The 1% Treaty: A policy framework using Incentive Alignment Bonds to scale research 12.3x via pragmatic trials. Prevent 10.7B deaths and achieve a record $0.0018 cost per year of healthy life (DALY).",
           "image": "https://impact.warondisease.org/assets/og-images/knowledge/economics/economics-og-retro-academic.jpg",
           "tags": [
             "economics",
@@ -176,13 +176,13 @@
             "Quality-Adjusted Life Year (QALY) Valuation",
             "QALY Calculation Model",
             "Economist Verification: Complete Derivation Chains",
-            "1. Trial Capacity Multiplier Derivation (12.3x (95% CI: 4.19x-61.3x))",
-            "2. Timeline Shift Derivation (212 years (95% CI: 135 years-355 years))",
-            "3. DALYs Averted Derivation (565B DALYs (95% CI: 361B DALYs-877B DALYs))",
-            "4. Cost per DALY Derivation ($0.0018 (95% CI: $0.0007-$0.0041))",
-            "5. ROI Derivation (Conservative: 637:1 (95% CI: 569:1-790:1))",
-            "6. ROI Derivation (Complete: 84.8M:1 (95% CI: 46.6M:1-144M:1))",
-            "7. Lives Saved Derivation (10.7B deaths (95% CI: 7.39B deaths-16.2B deaths))",
+            "1. Trial Capacity Multiplier Derivation (12.3x)",
+            "2. Timeline Shift Derivation (212 years)",
+            "3. DALYs Averted Derivation (565B DALYs)",
+            "4. Cost per DALY Derivation ($0.0018)",
+            "5. ROI Derivation (Conservative: 637:1)",
+            "6. ROI Derivation (Complete: 84.8M:1)",
+            "7. Lives Saved Derivation (10.7B deaths)",
             "8. Regulatory Delay Elimination Derivation",
             "9. Annual Recurring Benefits Derivation",
             "Verification Summary",
@@ -290,7 +290,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd",
@@ -523,7 +523,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/references.qmd",
@@ -694,7 +694,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-cost-of-change.qmd",
@@ -760,7 +760,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3
@@ -769,7 +769,7 @@
       "id": "dfda-impact",
       "type": "website",
       "title": "How to Prevent a Year of Death and Suffering for 84 Cents",
-      "description": "By allocating $21.8B/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the 443 years (95% CI: 324 years-712 years) treatment testing backlog in 36 years (95% CI: 11.6 years-77.2 years), delivering 637:1 (95% CI: 569:1-790:1) ROI, saving 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), and generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings at $0.841 (95% CI: $0.242-$1.75)/DALY (97.7% (95% CI: 97.5%-98.9%) cost reduction, 12.3x (95% CI: 4.19x-61.3x) capacity increase).",
+      "description": "At current testing rates, finding treatments for all 6.65k diseases would take 443 years. Pragmatic trials integrated into healthcare increase testing 12.3x, saving 10.7B deaths and eliminating 1931T hours of suffering at $0.841 per year of healthy life saved.",
       "siteUrl": "https://dfda-impact.warondisease.org",
       "favicon": "https://dfda-impact.warondisease.org/assets/icons/dfda-favicon.png",
       "ogImage": "https://dfda-impact.warondisease.org/assets/og/dfda-impact-og-1200x630.jpg",
@@ -864,7 +864,7 @@
           "path": "index.qmd",
           "url": "https://dfda-impact.warondisease.org/",
           "title": "How to Prevent a Year of Death and Suffering for 84 Cents",
-          "description": "By allocating $21.8B/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the 443 years (95% CI: 324 years-712 years) treatment testing backlog in 36 years (95% CI: 11.6 years-77.2 years), delivering 637:1 (95% CI: 569:1-790:1) ROI, saving 10.7B deaths (95% CI: 7.39B deaths-16.2B deaths), and generating $58.6B (95% CI: $49.2B-$73.1B) in annual R&D savings at $0.841 (95% CI: $0.242-$1.75)/DALY (97.7% (95% CI: 97.5%-98.9%) cost reduction, 12.3x (95% CI: 4.19x-61.3x) capacity increase).",
+          "description": "At current testing rates, finding treatments for all 6.65k diseases would take 443 years. Pragmatic trials integrated into healthcare increase testing 12.3x, saving 10.7B deaths and eliminating 1931T hours of suffering at $0.841 per year of healthy life saved.",
           "image": "https://dfda-impact.warondisease.org/assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.jpg",
           "tags": [
             "dfda",
@@ -955,7 +955,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-impact.qmd",
@@ -974,6 +974,7 @@
             "Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6B",
             "dFDA Direct Funding Cost per DALY: $0.841",
             "dFDA Direct Funding NPV (Exploration Period): $475B",
+            "Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 178k:1",
             "Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs",
             "Total Deaths from Disease Eradication Delay: 416M deaths",
             "Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion",
@@ -1091,7 +1092,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3
@@ -1100,7 +1101,7 @@
       "id": "dfda-spec",
       "type": "website",
       "title": "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation",
-      "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at ~44x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
+      "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
       "siteUrl": "https://dfda-spec.warondisease.org",
       "favicon": "https://dfda-spec.warondisease.org/assets/icons/dfda-favicon.png",
       "ogImage": "https://dfda-spec.warondisease.org/assets/og/dfda-spec-og-1200x630.jpg",
@@ -1196,7 +1197,7 @@
           "path": "index.qmd",
           "url": "https://dfda-spec.warondisease.org/",
           "title": "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation",
-          "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at ~44x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
+          "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
           "image": "https://dfda-spec.warondisease.org/assets/og-images/knowledge/appendix/dfda-spec-paper-og-bw-academic.jpg",
           "tags": [
             "appendix",
@@ -1352,7 +1353,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-spec.qmd",
@@ -1381,7 +1382,7 @@
             "Stage 1 Observational Analysis Cost per Patient: $0.100"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3
@@ -1568,7 +1569,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-federal-efficiency-audit.qmd",
@@ -1606,7 +1607,7 @@
             "1% Reduction in Military Spending/War Costs from Treaty: 1%"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3
@@ -1803,7 +1804,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-iab.qmd",
@@ -1874,7 +1875,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3
@@ -1883,7 +1884,7 @@
       "id": "invisible-graveyard",
       "type": "website",
       "title": "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-      "description": "The 1962 efficacy requirement adds 8.2 years (95% CI: 4.85 years-11.5 years) to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths (95% CI: 36.9M deaths-214M deaths) historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths (95% CI: 225M deaths-630M deaths) future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1 (95% CI: 2.88k:1-3.12k:1).",
+      "description": "After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102M deaths among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.",
       "siteUrl": "https://invisible-graveyard.warondisease.org",
       "favicon": "https://invisible-graveyard.warondisease.org/assets/icons/invisible-graveyard-favicon.png",
       "ogImage": "https://invisible-graveyard.warondisease.org/assets/og/invisible-graveyard-og-1200x630.jpg",
@@ -1978,7 +1979,7 @@
           "path": "index.qmd",
           "url": "https://invisible-graveyard.warondisease.org/",
           "title": "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-          "description": "The 1962 efficacy requirement adds 8.2 years (95% CI: 4.85 years-11.5 years) to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths (95% CI: 36.9M deaths-214M deaths) historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths (95% CI: 225M deaths-630M deaths) future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1 (95% CI: 2.88k:1-3.12k:1).",
+          "description": "After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102M deaths among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.",
           "image": "https://invisible-graveyard.warondisease.org/assets/og-images/knowledge/appendix/invisible-graveyard-og-retro-academic.jpg",
           "tags": [
             "appendix",
@@ -2063,7 +2064,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd",
@@ -2133,7 +2134,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3
@@ -2477,8 +2478,8 @@
           "sections": [
             "A Note on Blame",
             "Confidence Levels: What We Know vs. What We Model",
-            "The 44.1x (95% CI: 39.4x-89.1x) Inefficiency Tax",
-            "The 8.2 years (95% CI: 4.85 years-11.5 years)-Year Efficacy Lag",
+            "The 44.1x Inefficiency Tax",
+            "The 8.2 years-Year Efficacy Lag",
             "What the 1962 Efficacy Requirements Changed",
             "Detailed Historical Analysis",
             "The 1962 Policy Break: Measured Impact",
@@ -2829,7 +2830,7 @@
           "path": "knowledge/solution/dfda.qmd",
           "url": "https://manual.WarOnDisease.org/solution/dfda.html",
           "title": "A Decentralized Framework for Drug Assessment",
-          "description": "Increasing trial capacity 12.3x (95% CI: 4.19x-61.3x) by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost",
+          "description": "Increasing trial capacity 12.3x by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg",
           "tags": [
             "overview",
@@ -2973,7 +2974,7 @@
           "path": "knowledge/proof.qmd",
           "url": "https://manual.WarOnDisease.org/proof.html",
           "title": "The Proof: Overview",
-          "description": "This Already Works - Pragmatic trials prove 44.1x (95% CI: 39.4x-89.1x) efficiency. Switzerland proved peace pays. History proved 3.5% consistently wins. War bonds proved capitalism beats fascism. Death and suffering are optional.",
+          "description": "This Already Works - Pragmatic trials prove 44.1x efficiency. Switzerland proved peace pays. History proved 3.5% consistently wins. War bonds proved capitalism beats fascism. Death and suffering are optional.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/proof-og-bw-academic.jpg",
           "tags": [
             "evidence",
@@ -2986,7 +2987,7 @@
             "war-bonds"
           ],
           "sections": [
-            "Pragmatic Trials: 44.1x (95% CI: 39.4x-89.1x) More Efficient",
+            "Pragmatic Trials: 44.1x More Efficient",
             "Switzerland: 200 Years of Not Killing People",
             "Result",
             "War Bonds: How Capitalism Beat Fascism",
@@ -3684,7 +3685,7 @@
             "Key RECOVERY Trial Statistics",
             "They Used Regular Hospitals",
             "Proof This Isn't Insane",
-            "Oxford Already Achieved 82x (95% CI: 50x-94.1x) Cost Reduction",
+            "Oxford Already Achieved 82x Cost Reduction",
             "The Oxford RECOVERY Trial",
             "The Math"
           ],
@@ -3868,8 +3869,8 @@
           "sections": [
             "How 1% Less Violence Pays For Everything",
             "The Captured Money: $27.2B/Year",
-            "The Bonus Savings: $114B (95% CI: $90.1B-$141B)/Year",
-            "Where the $114B (95% CI: $90.1B-$141B) Comes From",
+            "The Bonus Savings: $114B/Year",
+            "Where the $114B Comes From",
             "The Formulas",
             "Military vs Disease Research: The Opportunity",
             "Peace Dividend Breakdown by Category",
@@ -3895,7 +3896,7 @@
           "path": "knowledge/economics/health-dividend.qmd",
           "url": "https://manual.WarOnDisease.org/economics/health-dividend.html",
           "title": "Health Dividend",
-          "description": "How a $40M (95% CI: $27.3M-$55.6M) framework generates $58.6B (95% CI: $49.2B-$73.1B) in annual savings through 80x cost reduction",
+          "description": "How a $40M framework generates $58.6B in annual savings through 80x cost reduction",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/economics/health-dividend-og-retro-academic.jpg",
           "tags": [
             "dfda",
@@ -3905,9 +3906,9 @@
             "economics"
           ],
           "sections": [
-            "The Math: From $41K (95% CI: $20K-$120K) to $500 (95% CI: $400-$2.50K) Per Patient",
-            "Where the $58.6B (95% CI: $49.2B-$73.1B) Comes From",
-            "What $58.6B (95% CI: $49.2B-$73.1B) Buys You",
+            "The Math: From $41K to $500 Per Patient",
+            "Where the $58.6B Comes From",
+            "What $58.6B Buys You",
             "Daily Opportunity Cost",
             "The framework Cost Breakdown",
             "ROI Scenarios",
@@ -3941,7 +3942,7 @@
           "path": "knowledge/appendix/clinical-trial-participants.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/clinical-trial-participants.html",
           "title": "The 0.06% Problem - Who Actually Gets to Try New Treatments",
-          "description": "Humans spend $60B (95% CI: $50B-$75B) a year on clinical trials. About 5 million people participate globally. That's 0.06% of humanity.",
+          "description": "Humans spend $60B a year on clinical trials. About 5 million people participate globally. That's 0.06% of humanity.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/clinical-trial-participants-og-retro-academic.jpg",
           "tags": [
             "clinical-trials",
@@ -3973,7 +3974,7 @@
           "path": "knowledge/appendix/drug-development-cost-analysis.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/drug-development-cost-analysis.html",
           "title": "Drug Development Cost Increase Analysis",
-          "description": "Rigorous analysis of the 105x (95% CI: 90.6x-119x) increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis",
+          "description": "Rigorous analysis of the 105x increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/drug-development-cost-analysis-og-retro-academic.jpg",
           "sections": [
             "Executive Summary",
@@ -4000,7 +4001,7 @@
             "4. Veterinary Drugs vs. Human Drugs (Same Molecule, Different Species)",
             "5. Orphan Drugs (Full Development Cost Exposure)",
             "6. Historical Price Trajectory (Penicillin: 1942 vs. 2024)",
-            "Cross-Validation: All Six Checks Confirm 105x (95% CI: 90.6x-119x) Development Cost Increase",
+            "Cross-Validation: All Six Checks Confirm 105x Development Cost Increase",
             "Addressing Common Objections",
             "\"That can't be right. It's too high!\"",
             "\"Doesn't that include marketing costs?\"",
@@ -4046,7 +4047,7 @@
           "path": "knowledge/appendix/economic-value-of-accelerated-treatments.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/economic-value-of-accelerated-treatments.html",
           "title": "Economic Value: Medical Progress",
-          "description": "Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by 12.3x (95% CI: 4.19x-61.3x).",
+          "description": "Estimates the economic value of new therapies, including their market valuation and potential impact when increasing trial capacity by 12.3x.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/economic-value-of-accelerated-treatments-og-retro-academic.jpg",
           "tags": [
             "medical-progress",
@@ -4058,7 +4059,7 @@
             "Introduction",
             "Average Economic Value of a New Therapy",
             "Annual Value Based on Average Approvals",
-            "Impact of 12.3x (95% CI: 4.19x-61.3x) More Trial Capacity",
+            "Impact of 12.3x More Trial Capacity",
             "Considerations and Context",
             "Conclusion",
             "Sources"
@@ -4107,7 +4108,7 @@
         {
           "path": "knowledge/economics/campaign-budget.qmd",
           "url": "https://manual.WarOnDisease.org/economics/campaign-budget.html",
-          "title": "Campaign Budget: The $1B (95% CI: $700M-$1.30B) Legal Bribery Machine",
+          "title": "Campaign Budget: The $1B Legal Bribery Machine",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/economics/campaign-budget-og-retro-academic.jpg",
           "sections": [
             "Why $1B Instead of $5B",
@@ -4379,7 +4380,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/lives-saved-by-drug-accessibility.qmd",
@@ -4664,7 +4665,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-obg.qmd",
@@ -4709,7 +4710,7 @@
             "Standard Time Horizon for NPV Analysis: 10 years"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3
@@ -4957,7 +4958,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 2
@@ -4966,7 +4967,7 @@
       "id": "optimocracy",
       "type": "website",
       "title": "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-      "description": "Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes outcome-bound governance systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align both budget allocation and policy choices with citizen welfare.",
+      "description": "Political dysfunction and cronyism cost society an estimated 20% of potential GDP annually. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
       "siteUrl": "https://optimocracy.warondisease.org",
       "favicon": "https://optimocracy.warondisease.org/assets/icons/optimocracy-favicon.png",
       "ogImage": "https://optimocracy.warondisease.org/assets/og/optimocracy-og-1200x630.jpg",
@@ -5060,7 +5061,7 @@
           "path": "index.qmd",
           "url": "https://optimocracy.warondisease.org/",
           "title": "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-          "description": "Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the \"Political Dysfunction Tax\"). Optimocracy proposes outcome-bound governance systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align both budget allocation and policy choices with citizen welfare.",
+          "description": "Political dysfunction and cronyism cost society an estimated 20% of potential GDP annually. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
           "image": "https://optimocracy.warondisease.org/assets/og-images/knowledge/appendix/optimocracy-paper-og-retro-academic.jpg",
           "sections": [
             "The Mechanism",
@@ -5143,7 +5144,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-optimocracy.qmd",
@@ -5209,7 +5210,7 @@
             "US-Switzerland Spending Gap: 300%"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3
@@ -5354,7 +5355,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 2
@@ -5527,7 +5528,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-wishocracy.qmd",
@@ -5543,7 +5544,7 @@
             "Concentrated Interest Sector Market Cap: $5T"
           ],
           "published": true,
-          "lastmod": "2026-02-04"
+          "lastmod": "2026-02-05"
         }
       ],
       "pageCount": 3

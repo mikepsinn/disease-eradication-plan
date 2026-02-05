@@ -24,7 +24,7 @@ from typing import Any, Dict, List, Optional
 import yaml
 
 from dih_models.search_index_generator import SearchIndexGenerator, SearchIndexEntry
-from scripts.lib.yaml_sync_utils import substitute_quarto_variables
+from scripts.lib.yaml_sync_utils import substitute_quarto_variables, strip_confidence_intervals
 
 
 def extract_site_metadata(config_path: Path, config_name: str, variables: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
@@ -90,8 +90,10 @@ def extract_site_metadata(config_path: Path, config_name: str, variables: Option
         title = substitute_quarto_variables(title, variables)
     if description:
         description = substitute_quarto_variables(description, variables)
+        description = strip_confidence_intervals(description)
     if abstract:
         abstract = substitute_quarto_variables(abstract, variables)
+        abstract = strip_confidence_intervals(abstract)
 
     # Get metadata section
     metadata = config.get("metadata", {})
@@ -216,14 +218,22 @@ def extract_pages_for_site(search_generator: SearchIndexGenerator, config_name: 
         if image_url and not image_url.startswith("http"):
             image_url = f"{base_url}/{image_url.lstrip('/')}" if base_url else image_url
 
+        # Strip CIs from page titles, descriptions, and section titles for cleaner metadata
+        page_title = strip_confidence_intervals(entry.title) if entry.title else None
+        page_description = strip_confidence_intervals(entry.description) if entry.description else None
+        page_sections = (
+            [strip_confidence_intervals(s) for s in entry.sections]
+            if entry.sections else None
+        )
+
         page_meta = {
             "path": entry.path,
             "url": page_url,
-            "title": entry.title,
-            "description": entry.description,
+            "title": page_title,
+            "description": page_description,
             "image": image_url,
             "tags": entry.tags if entry.tags else None,
-            "sections": entry.sections if entry.sections else None,
+            "sections": page_sections,
             "published": entry.published,
             "lastmod": entry.lastmod,
         }

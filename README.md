@@ -33,7 +33,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)
 
-> 6.65k diseases diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year new first treatments/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years inste...
+> 6.65k diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7B deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.0018/DALY, 50.3kx better than bed nets. Even ...
 
 
 ## Working Papers
@@ -49,7 +49,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
 
-> By allocating $21.8B/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this clears the 443 years treatment testing backlog in 36 years, delivering 637:1 ROI, saving 10.7B deaths, and generating $58.6B in annual R&D savings at $0.841/DALY (97.7% (95% CI...
+> At current testing rates, finding treatments for all 6.65k diseases would take 443 years. Pragmatic trials integrated into healthcare increase testing 12.3x, saving 10.7B deaths and eliminating 1931T hours of suffering at $0.841 per year of healthy life saved.
 
 
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
@@ -77,14 +77,14 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
 
-> Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes outcome-bound governance systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align both budget allocation and policy choices with citizen welfare.
+> Political incentives diverge from citizen welfare, costing an estimated 20% of potential GDP. Optimocracy fixes this by tracking which policies improve health and wealth, publishing recommendations for every vote, and funding politicians who follow evidence. No government permission required.
 
 
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
 
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
 
-> The 1962 efficacy requirement adds 8.2 years to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1.
+> After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. This delay caused 102M deaths among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.
 
 
 ### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
@@ -112,7 +112,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
 
-> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at ~44x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
+> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
 
 
 ---

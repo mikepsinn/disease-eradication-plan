@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 5 | **Words:** 68,379
+**Files:** 5 | **Words:** 68,268
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 907 words | 107 lines
+**Stats:** 828 words | 107 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -765,8 +765,8 @@
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
-**Description:** At current trial capacity, finding first treatments for all {{< var diseases_without_effective_treatment >}} untreated diseases would take ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{...
-**Stats:** 29,787 words | 2,827 lines
+**Description:** The 1% Treaty: A policy framework using Incentive Alignment Bonds to scale research {{< var dfda_trial_capacity_multiplier >}} via pragmatic trials. Save {{< var dfda_trial_capacity_plus_efficacy_lag_...
+**Stats:** 29,755 words | 2,826 lines
 
   - Abstract
   - Key Findings
@@ -1007,12 +1007,12 @@
 ## _quarto-dfda-impact.yml
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Type:** website
-**Files:** 1 | **Words:** 11,636
+**Files:** 1 | **Words:** 11,611
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
-**Description:** By allocating {{< var dih_treasury_to_medical_research_annual >}}/year to a decentralized FDA, automating efficacy testing through pragmatic clinical trials integrated into standard healthcare, this c...
-**Stats:** 11,636 words | 1,220 lines
+**Description:** At current testing rates, finding treatments for all {{< var diseases_without_effective_treatment >}} would take {{< var status_quo_queue_clearance_years >}}. Pragmatic trials integrated into healthca...
+**Stats:** 11,611 words | 1,236 lines
 
   - Executive Summary
   - Protocol, Not Platform
@@ -1095,12 +1095,12 @@
 ## _quarto-dfda-spec.yml
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Type:** website
-**Files:** 1 | **Words:** 14,260
+**Files:** 1 | **Words:** 14,236
 
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 14,260 words | 1,963 lines
+**Stats:** 14,236 words | 1,964 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -1331,12 +1331,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 16,752
+**Files:** 1 | **Words:** 16,751
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,752 words | 1,517 lines
+**Stats:** 16,751 words | 1,517 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -1412,12 +1412,12 @@
 ## _quarto-invisible-graveyard.yml
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Type:** website
-**Files:** 1 | **Words:** 7,391
+**Files:** 1 | **Words:** 7,383
 
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
-**Description:** The 1962 efficacy requirement adds {{< var efficacy_lag_years >}} to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) {{< var existing_drugs_efficacy_lag_d...
-**Stats:** 7,391 words | 783 lines
+**Description:** After proving a drug is safe, the FDA requires {{< var efficacy_lag_years >}} to prove it works before patients can access it. This delay caused {{< var existing_drugs_efficacy_lag_deaths_total >}} am...
+**Stats:** 7,383 words | 784 lines
 
   - The Short Version
   - Abstract
@@ -1479,7 +1479,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 161,727
+**Files:** 67 | **Words:** 161,648
 
 #### index.qmd
 **Title:** Start Here
@@ -3384,7 +3384,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 907 words | 107 lines
+**Stats:** 828 words | 107 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -3765,12 +3765,11 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 8,823
+**Files:** 1 | **Words:** 8,819
 
 #### knowledge/appendix/optimocracy-paper.qmd
-**Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
-**Description:** Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). O...
-**Stats:** 8,823 words | 942 lines
+**Title:** optimocracy-paper
+**Stats:** 8,819 words | 949 lines
 
   - The Mechanism
     - Why This Works
@@ -3888,7 +3887,7 @@
 ## _quarto-test.yml
 **Title:** Test Economics Document
 **Type:** book
-**Files:** 6 | **Words:** 9,104
+**Files:** 6 | **Words:** 9,025
 
 #### index.qmd
 **Title:** Wishocracy
@@ -3932,7 +3931,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 907 words | 107 lines
+**Stats:** 828 words | 107 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -4230,6 +4229,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 344,289
+- Total words: 343,958
 - Orphaned files: 26
 - Paper configs: 12

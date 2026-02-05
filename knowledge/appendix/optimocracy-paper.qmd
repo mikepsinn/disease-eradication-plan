@@ -1,12 +1,19 @@
 ---
 title: 'Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization'
-description: Political dysfunction (cronyism, short-termism, and misalignment between political incentives and citizen outcomes) costs society an estimated 20% of potential GDP (the "Political Dysfunction Tax"). Optimocracy proposes outcome-bound governance systems that optimize for Health & Wealth (median healthy life years + real after-tax median income growth), using evidence-based recommendations and independent verification to align both budget allocation and policy choices with citizen welfare.
+description: "Political dysfunction and cronyism cost society an estimated {{< var political_dysfunction_tax_total_pct >}} of potential GDP annually. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive."
 abstract: |
-  Politicians allocate trillions annually. What gets you reelected is often not what benefits voters. This misalignment costs an estimated {{< var political_dysfunction_tax_total_pct >}} of potential welfare.
+  Politicians allocate trillions annually. What gets you reelected is often not what benefits voters.
+  This misalignment costs an estimated {{< var political_dysfunction_tax_total_pct >}} of potential welfare.
 
-  Optimocracy: (1) Analyze historical data on policies across jurisdictions, (2) Calculate which predict above-average median income and healthy life years, (3) Publish recommendations for every vote, (4) Track politician alignment, (5) Fund accordingly via SuperPAC. Politicians vote however they want. Following evidence gets funded; ignoring it doesn't.
+  Optimocracy: (1) Analyze historical data on policies across jurisdictions, (2) Calculate which predict
+  above-average median income and healthy life years, (3) Publish recommendations for every vote, (4) Track
+  politician alignment, (5) Fund accordingly via SuperPAC. Politicians vote however they want. Following
+  evidence gets funded; ignoring it doesn't.
 
-  The structural advantage: current governance has thousands of capture points (committees, agencies, regulations). Optimocracy consolidates these to a single, harder target: the verification layer. Corrupting five independent data sources requires coordination that corrupting individual committee decisions does not.
+  The structural advantage: current governance has thousands of capture points (committees, agencies,
+  regulations). Optimocracy consolidates these to a single, harder target: the verification layer.
+  Corrupting five independent data sources requires coordination that corrupting individual committee
+  decisions does not.
 aliases:
   - /optimocracy.html
 author:

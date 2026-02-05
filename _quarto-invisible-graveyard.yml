@@ -39,7 +39,7 @@ author:
 
 website:
   title: "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024"
-  description: "The 1962 efficacy requirement adds 8.2 years (95% CI: 4.85 years-11.5 years) to drug approval after safety is proven. This study quantifies two distinct mortality costs: (1) 102M deaths (95% CI: 36.9M deaths-214M deaths) historical deaths during actual drug approval delays (1962-2024), and (2) 416M deaths (95% CI: 225M deaths-630M deaths) future deaths from pushing the disease eradication timeline back. Type II errors exceed Type I benefits by 3.07k:1 (95% CI: 2.88k:1-3.12k:1)."
+  description: "After proving a drug is safe, the FDA requires {{< var efficacy_lag_years >}} to prove it works before patients can access it. We estimate this delay cost {{< var existing_drugs_efficacy_lag_deaths_total >}} among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is {{< var type_ii_error_cost_ratio >}} higher than the cost of approving bad ones."
   site-url: https://invisible-graveyard.warondisease.org
   favicon: assets/icons/invisible-graveyard-favicon.png
   page-navigation: true

@@ -154,6 +154,30 @@ def normalize_abstract(abstract_text: str) -> str:
     return normalized
 
 
+def strip_confidence_intervals(text: str) -> str:
+    """
+    Remove inline confidence intervals from text for cleaner abstracts.
+
+    Academically appropriate since abstracts typically omit inline CIs for readability.
+    The full CIs remain in the body text where variables are rendered with tooltips.
+
+    Args:
+        text: Text potentially containing confidence interval patterns
+
+    Returns:
+        Text with CI patterns like "(95% CI: value-value)" removed
+    """
+    if not text:
+        return ""
+    # Pattern: (95% CI: value-value) or (90% CI: value-value)
+    # Handles various value formats: $1.2B, 5.7k diseases, 10%, etc.
+    ci_pattern = r'\s*\(\d+%\s*CI:\s*[^)]+\)'
+    cleaned = re.sub(ci_pattern, '', text)
+    # Clean up any double spaces left behind
+    cleaned = re.sub(r'\s{2,}', ' ', cleaned)
+    return cleaned.strip()
+
+
 def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
     """
     Sync descriptions, titles, and abstracts from QMD frontmatter to Quarto YAML configs.
@@ -224,10 +248,12 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                 title = substitute_quarto_variables(title, variables)
             if description:
                 description = substitute_quarto_variables(description, variables)
+                description = strip_confidence_intervals(description)
             if abstract:
                 # Normalize multi-line abstract to single line and substitute variables
                 abstract = normalize_abstract(abstract)
                 abstract = substitute_quarto_variables(abstract, variables)
+                abstract = strip_confidence_intervals(abstract)
 
             # Check if updates are needed
             # Note: title/description can be in 'website' or 'book' section

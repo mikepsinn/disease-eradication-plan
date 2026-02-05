@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 121 parameters used in the analysis, organized by type:
+This appendix documents all 122 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 41
-- Calculated values: 56
+- Calculated values: 57
 - Core definitions: 24
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (56 parameters) • [External Data Sources](#sec-external) (41 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
+[Calculated Values](#sec-calculated) (57 parameters) • [External Data Sources](#sec-external) (41 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -440,6 +440,164 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+:::
+
+### Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 178k:1 {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+ROI from direct philanthropic/government funding of medical research (vs treaty campaign). Same benefits as treaty but costs $541.9B NPV instead of $1B campaign. Still excellent ROI, but treaty campaign achieves 542× better leverage.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $475B
+
+$$
+\begin{gathered}
+ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 178{,}000 \\[0.5em]
+\text{where } Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T \\[0.5em]
+\text{where } DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B \\[0.5em]
+\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
+\text{where } T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204 \\[0.5em]
+\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } NPV_{direct} \\
+= \frac{T_{queue,dFDA}}{Treasury_{RD,ann} \times r_{discount}} \\
+= \frac{36}{\$21.8B \times 3\%} \\
+= \$475B \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } T_{queue,dFDA} = \frac{T_{queue,SQ}}{k_{capacity}} = \frac{443}{12.3} = 36 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 :::
 
