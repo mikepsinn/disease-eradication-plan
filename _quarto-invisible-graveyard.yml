@@ -124,7 +124,7 @@ metadata:
   og-site-name: "The Invisible Graveyard"
 
   # Identifiers (update when paper is published)
-  doi: "10.5281/zenodo.18356232"
+  doi: "10.5281/zenodo.18356231"
 
   # Open Graph metadata
   open-graph: true
@@ -138,8 +138,8 @@ metadata:
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: "https://zenodo.org/record/18356232"
-        doi: "10.5281/zenodo.18356232"
+        url: "https://zenodo.org/record/18356231"
+        doi: "10.5281/zenodo.18356231"
       - platform: ssrn
         status: pending
         url: ""

@@ -125,7 +125,7 @@ metadata:
   og-site-name: "Incentive Alignment Bonds"
 
   # Identifiers
-  doi: "10.5281/zenodo.18203222"
+  doi: "10.5281/zenodo.18203221"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -139,8 +139,8 @@ metadata:
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: "https://zenodo.org/record/18203222"
-        doi: "10.5281/zenodo.18203222"
+        url: "https://zenodo.org/record/18203221"
+        doi: "10.5281/zenodo.18203221"
       - platform: ssrn
         status: pending
         url: ""

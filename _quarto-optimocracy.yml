@@ -120,7 +120,7 @@ metadata:
   og-site-name: "Optimocracy"
 
   # Identifiers
-  doi: "10.5281/zenodo.18356214"
+  doi: "10.5281/zenodo.18356213"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -134,8 +134,8 @@ metadata:
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: "https://zenodo.org/record/18356214"
-        doi: "10.5281/zenodo.18356214"
+        url: "https://zenodo.org/record/18356213"
+        doi: "10.5281/zenodo.18356213"
       - platform: ssrn
         status: pending
         url: ""

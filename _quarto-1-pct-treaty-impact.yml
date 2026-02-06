@@ -158,7 +158,7 @@ metadata:
   medium: "Digital"
 
   # Identifiers
-  doi: "10.5281/zenodo.18161561"
+  doi: "10.5281/zenodo.18161560"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -173,7 +173,7 @@ metadata:
       - platform: zenodo
         status: auto-uploaded
         url: ""
-        doi: "10.5281/zenodo.18161561"
+        doi: "10.5281/zenodo.18161560"
       - platform: ssrn
         status: pending
         url: ""

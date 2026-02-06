@@ -126,7 +126,7 @@ metadata:
   og-site-name: "The Health and Economic Impact of a Global System for Pragmatic Clinical Trials"
 
   # Identifiers
-  doi: "10.5281/zenodo.18243915"
+  doi: "10.5281/zenodo.18243914"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -140,8 +140,8 @@ metadata:
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: "https://zenodo.org/record/18243915"
-        doi: "10.5281/zenodo.18243915"
+        url: "https://zenodo.org/record/18243914"
+        doi: "10.5281/zenodo.18243914"
       - platform: medrxiv
         status: pending
         url: ""

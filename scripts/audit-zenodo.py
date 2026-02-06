@@ -260,8 +260,13 @@ def fetch_all_user_deposits(token, status=None):
     return all_deposits
 
 
-def check_duplicates(deposits, id_to_key):
+def check_duplicates(deposits, id_to_key, resolved_ids=None):
     """Check for duplicate deposits.
+
+    Args:
+        deposits: List of deposit dicts from Zenodo API
+        id_to_key: Dict mapping concept record_id -> paper_key
+        resolved_ids: Set of actual deposit IDs that concept IDs resolved to
 
     Returns list of finding dicts with type, message, and details.
     """
@@ -293,7 +298,8 @@ def check_duplicates(deposits, id_to_key):
             })
 
     # Check for orphaned deposits (on Zenodo but no local config)
-    known_ids = set(id_to_key.keys())
+    # Include both concept IDs and resolved version IDs as "known"
+    known_ids = set(id_to_key.keys()) | set(resolved_ids) if resolved_ids else set(id_to_key.keys())
     for deposit in deposits:
         dep_id = deposit["id"]
         if dep_id not in known_ids:
@@ -467,6 +473,7 @@ def run_audit(token, verbose=False, output_json=False, deposit_ids=None, write_t
     total_issues = 0
     total_warnings = 0
     drift_warnings = []
+    resolved_ids = set()  # Actual deposit IDs that concept IDs resolved to
 
     for deposit_id in ids_to_check:
         if not output_json:
@@ -479,6 +486,11 @@ def run_audit(token, verbose=False, output_json=False, deposit_ids=None, write_t
                 print(f"  FAILED to fetch record")
             results.append({"id": deposit_id, "error": "fetch failed"})
             continue
+
+        # Track resolved ID (concept ID may resolve to a different actual deposit ID)
+        actual_id = record.get("id", deposit_id)
+        resolved_ids.add(actual_id)
+        resolved_ids.add(deposit_id)
 
         meta = record.get("metadata", {})
         title = meta.get("title", "Unknown")
@@ -541,7 +553,7 @@ def run_audit(token, verbose=False, output_json=False, deposit_ids=None, write_t
 
         all_deposits = fetch_all_user_deposits(token)
         if all_deposits:
-            duplicate_findings = check_duplicates(all_deposits, id_to_key)
+            duplicate_findings = check_duplicates(all_deposits, id_to_key, resolved_ids=resolved_ids)
 
             if not output_json:
                 if duplicate_findings:

@@ -577,37 +577,51 @@ def upload_paper(
 
         log(f"[OK] Verified: {uploaded_file['filename']} ({remote_size / 1024:.1f} KB, size matches)")
 
-        # Get DOI and URL
-        doi = verified_deposit.get("doi") or verified_deposit.get("metadata", {}).get("prereserve_doi", {}).get("doi")
+        # Get DOI and URL -- prefer concept DOI (stable across versions)
+        version_doi = verified_deposit.get("doi") or verified_deposit.get("metadata", {}).get("prereserve_doi", {}).get("doi")
+        concept_doi = verified_deposit.get("conceptdoi")
+        concept_recid = verified_deposit.get("conceptrecid")
         zenodo_url = f"{client.base_url.replace('/api', '')}/record/{deposit_id}"
 
         if draft:
             log("[OK] Draft saved (not published)")
             log(f"  -> Review at: {client.base_url.replace('/api', '')}/deposit/{deposit_id}")
-            if doi:
-                log(f"  -> Pre-reserved DOI: {doi}")
+            if version_doi:
+                log(f"  -> Pre-reserved DOI: {version_doi}")
+            if concept_doi:
+                log(f"  -> Concept DOI: {concept_doi}")
         else:
             log("[OK] Publishing...")
             result = client.publish(deposit_id)
-            doi = result.get("doi")
+            version_doi = result.get("doi")
+            concept_doi = result.get("conceptdoi") or concept_doi
+            concept_recid = result.get("conceptrecid") or concept_recid
             zenodo_url = result['links']['html']
             log(f"\n[SUCCESS] Published!")
-            log(f"  DOI: {doi}")
+            log(f"  DOI: {version_doi}")
+            if concept_doi:
+                log(f"  Concept DOI: {concept_doi}")
             log(f"  URL: {zenodo_url}")
 
+        # Use concept DOI/URL for config (stable across versions)
+        doi_for_config = concept_doi or version_doi
+        url_for_config = f"{client.base_url.replace('/api', '')}/record/{concept_recid}" if concept_recid else zenodo_url
+
         # Save DOI to config if requested
-        if save_doi and config_path and doi:
-            log(f"[OK] Saving DOI to {config_path.name}...")
-            if save_doi_to_config(config_path, doi, zenodo_url):
-                log(f"[OK] Updated config with DOI: {doi}")
+        if save_doi and config_path and doi_for_config:
+            log(f"[OK] Saving concept DOI to {config_path.name}...")
+            if save_doi_to_config(config_path, doi_for_config, url_for_config):
+                log(f"[OK] Updated config with DOI: {doi_for_config}")
             else:
                 log("WARNING: Could not update config file")
 
         return {
             "id": deposit_id,
             "bucket": bucket_url,
-            "doi": doi,
-            "url": zenodo_url,
+            "doi": doi_for_config,
+            "version_doi": version_doi,
+            "concept_doi": concept_doi,
+            "url": url_for_config,
             "verified": True
         }
 
