@@ -45,8 +45,6 @@ from zenodo_client import (
     extract_zenodo_metadata,
     upload_paper,
     get_zenodo_token,
-    load_quarto_config,
-    get_record_id_from_doi,
 )
 from quarto_config_utils import discover_paper_configs
 
@@ -54,31 +52,6 @@ from quarto_config_utils import discover_paper_configs
 PROJECT_ROOT = Path(__file__).parent.parent
 
 
-def discover_papers() -> dict:
-    """
-    Auto-discover Quarto paper configs using shared discovery utility.
-
-    Returns dict mapping paper key to config info.
-    """
-    raw_papers = discover_paper_configs(PROJECT_ROOT)
-
-    papers = {}
-    for key, info in raw_papers.items():
-        # Look for bibliography file
-        bib_file = f"references-{key}.bib"
-        if not (PROJECT_ROOT / bib_file).exists():
-            bib_file = f"{key}-references.bib"
-            if not (PROJECT_ROOT / bib_file).exists():
-                bib_file = None
-
-        papers[key] = {
-            "quarto_config": info["config_path"].name,
-            "pdf_path": info["pdf_path"],
-            "bib_file": bib_file,
-            "resource_type": "publication-workingpaper",
-        }
-
-    return papers
 
 
 def publish_paper_with_config(
@@ -93,42 +66,27 @@ def publish_paper_with_config(
 
     Args:
         paper_key: Short identifier for the paper
-        paper_config: Config dict with quarto_config, pdf_path, etc.
+        paper_config: Config dict from discover_paper_configs()
         client: ZenodoClient instance (None for dry-run)
         dry_run: If True, show what would be uploaded without uploading
         skip_publish: If True, create draft without publishing
 
     Returns the deposit info if successful, None otherwise.
     """
-    print(f"\n{'='*60}")
-    print(f"Uploading: {paper_key}")
-    print(f"{'='*60}")
-
-    # Check if PDF exists
     pdf_path = PROJECT_ROOT / paper_config["pdf_path"]
-    if not pdf_path.exists():
-        print(f"WARNING: PDF not found at {pdf_path}")
-        print("  -> Skipping (build the paper first)")
-        return None
-
-    print(f"[OK] PDF found: {pdf_path.name} ({pdf_path.stat().st_size / 1024:.1f} KB)")
-
-    # Load Quarto config
-    config_file = PROJECT_ROOT / paper_config["quarto_config"]
-    quarto_config = load_quarto_config(config_file)
-    metadata = extract_zenodo_metadata(quarto_config, paper_key)
-
-    print(f"[OK] Title: {metadata['title']}")
-    print(f"[OK] Authors: {', '.join(c['name'] for c in metadata['creators'])}")
-    print(f"[OK] License: {metadata['license']}")
-    print(f"[OK] Version: {metadata.get('version', 'N/A')}")
+    config_file = paper_config["config_path"]
+    quarto_config = paper_config["config"]
 
     if dry_run:
-        print("\n[DRY RUN] Would upload with metadata:")
+        metadata = extract_zenodo_metadata(quarto_config, paper_key)
+        print(f"\n{'='*60}")
+        print(f"[DRY RUN] {paper_key}")
+        print(f"{'='*60}")
+        print(f"PDF: {pdf_path} ({'exists' if pdf_path.exists() else 'MISSING'})")
         print(json.dumps(metadata, indent=2))
         return None
 
-    # Use shared upload function (with verification but no DOI saving)
+    # upload_paper() handles PDF check, logging, metadata, and upload
     return upload_paper(
         client=client,
         paper_key=paper_key,
@@ -136,14 +94,14 @@ def publish_paper_with_config(
         pdf_path=pdf_path,
         draft=skip_publish,
         verbose=True,
-        save_doi=False,  # Don't save DOI in CI - use local script instead
+        save_doi=False,
         config_path=None
     )
 
 
 def main():
-    # Discover papers first
-    papers = discover_papers()
+    # Discover papers using shared utility
+    papers = discover_paper_configs(PROJECT_ROOT)
 
     if not papers:
         print("ERROR: No Quarto paper configs found (_quarto-*.yml)")
@@ -180,9 +138,8 @@ def main():
 
     if args.list_papers:
         print(f"Discovered {len(papers)} paper(s):")
-        for key, config in sorted(papers.items()):
-            bib_status = "[bib]" if config.get("bib_file") else ""
-            print(f"  {key}: {config['quarto_config']} {bib_status}")
+        for key, info in sorted(papers.items()):
+            print(f"  {key}: {info['config_path'].name} - {info['title'][:50]}")
         return 0
 
     # Load .env file if present

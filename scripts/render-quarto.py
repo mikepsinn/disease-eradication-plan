@@ -564,6 +564,10 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     # Ignore patterns for subdirectories (e.g., __pycache__ inside dih_models)
     subdir_ignore = {"__pycache__", ".git", "node_modules", ".venv"}
 
+    # LaTeX build artifacts that should never be copied into the build temp directory.
+    # Root-level .tex files (LaTeX templates) are still copied via the required_extensions path.
+    build_artifact_extensions = {".tex", ".log", ".aux", ".out", ".toc", ".fls", ".fdb_latexmk", ".synctex.gz"}
+
     # On Windows, skip files with paths that would exceed MAX_PATH (260 chars)
     extra_path_len = len(str(build_temp)) - len(str(project_root))
     max_path_len = (250 - extra_path_len) if sys.platform == 'win32' else 4096
@@ -572,6 +576,8 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         ignored = set()
         for f in files:
             if f in subdir_ignore or f.startswith('.'):
+                ignored.add(f)
+            elif os.path.splitext(f)[1] in build_artifact_extensions:
                 ignored.add(f)
             elif len(os.path.join(directory, f)) > max_path_len:
                 ignored.add(f)
@@ -1270,11 +1276,6 @@ def main():
         action="store_true",
         help="Upload and publish to Zenodo (assigns DOI immediately)"
     )
-    parser.add_argument(
-        "--sandbox",
-        action="store_true",
-        help="Use Zenodo sandbox for testing (with --publish)"
-    )
 
     args = parser.parse_args()
 
@@ -1298,14 +1299,13 @@ def main():
     if (args.publish or args.publish_live) and exit_code == 0 and not args.preview:
         exit_code = _publish_to_zenodo(
             config_name=args.config,
-            sandbox=args.sandbox,
             draft=not args.publish_live
         )
 
     sys.exit(exit_code)
 
 
-def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = True) -> int:
+def _publish_to_zenodo(config_name: str, draft: bool = True) -> int:
     """
     Upload rendered PDF to Zenodo.
 
@@ -1332,11 +1332,10 @@ def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = Tr
     load_dotenv(project_root / ".env")
 
     # Get token
-    token = get_zenodo_token(sandbox=sandbox)
+    token = get_zenodo_token()
     if not token:
-        env_var = "ZENODO_SANDBOX_TOKEN" if sandbox else "ZENODO_TOKEN"
-        print(f"ERROR: {env_var} environment variable not set", file=sys.stderr)
-        print(f"  Get token at: https://{'sandbox.' if sandbox else ''}zenodo.org/account/settings/applications/")
+        print("ERROR: ZENODO_TOKEN environment variable not set", file=sys.stderr)
+        print("  Get token at: https://zenodo.org/account/settings/applications/")
         gh_group_end()
         return 1
 
@@ -1370,10 +1369,9 @@ def _publish_to_zenodo(config_name: str, sandbox: bool = False, draft: bool = Tr
         return 1
 
     # Create client and upload
-    env_name = "SANDBOX" if sandbox else "PRODUCTION"
-    print(f"[*] Zenodo Environment: {env_name}")
+    print("[*] Zenodo Environment: PRODUCTION")
 
-    client = ZenodoClient(token, sandbox=sandbox)
+    client = ZenodoClient(token)
     result = upload_paper(
         client=client,
         paper_key=config_name,

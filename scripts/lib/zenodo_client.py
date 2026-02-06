@@ -375,6 +375,7 @@ def save_doi_to_config(config_path: Path, doi: str, zenodo_url: str) -> bool:
             )
 
         # Update publishing.preprints[zenodo] section if it exists
+        # Match the zenodo preprint block and update status + url
         zenodo_section_pattern = r'(- platform: zenodo\s+status: )[^\n]+(.*?url: ")[^"]*(")'
         if re.search(zenodo_section_pattern, content, re.DOTALL):
             content = re.sub(
@@ -383,6 +384,15 @@ def save_doi_to_config(config_path: Path, doi: str, zenodo_url: str) -> bool:
                 content,
                 flags=re.DOTALL
             )
+            # Also update the doi: field within the zenodo preprint section
+            zenodo_doi_pattern = r'(- platform: zenodo\b.*?doi:\s*)["\']?[^"\'\n]*["\']?'
+            if re.search(zenodo_doi_pattern, content, re.DOTALL):
+                content = re.sub(
+                    zenodo_doi_pattern,
+                    rf'\g<1>"{doi}"',
+                    content,
+                    flags=re.DOTALL
+                )
 
         config_path.write_text(content, encoding='utf-8')
         return True
@@ -609,8 +619,8 @@ def upload_paper(
 
 
 def get_zenodo_token() -> Optional[str]:
-    """Get Zenodo API token from environment."""
-    return os.environ.get("ZENODO_TOKEN")
+    """Get Zenodo API token from environment (checks ZENODO_TOKEN then ZENODO_ACCESS_TOKEN)."""
+    return os.environ.get("ZENODO_TOKEN") or os.environ.get("ZENODO_ACCESS_TOKEN")
 
 
 def load_quarto_config(config_path: Path) -> dict:

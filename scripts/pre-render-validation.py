@@ -252,6 +252,21 @@ def _check_single_image_path(image_path: str, filepath: str, file_dir: str, line
     # Resolve the image path (handles both relative and absolute /paths)
     resolved_path = resolve_link_path(image_path, file_dir)
 
+    # Check if the path would exceed Windows MAX_PATH in the build temp directory
+    if sys.platform == 'win32':
+        WINDOWS_PATH_LIMIT = 250
+        BUILD_TEMP_OVERHEAD = 45  # _build_temp/{longest-config-name}/
+        estimated_len = len(resolved_path) + BUILD_TEMP_OVERHEAD
+        if estimated_len > WINDOWS_PATH_LIMIT:
+            errors.append(
+                ValidationError(
+                    file=filepath,
+                    line=line_number,
+                    message=f"Image path too long for PDF builds ({estimated_len} chars, limit {WINDOWS_PATH_LIMIT}): {os.path.basename(image_path)}",
+                    context=line.strip()[:80],
+                )
+            )
+
     if not os.path.exists(resolved_path):
         errors.append(
             ValidationError(
