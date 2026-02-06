@@ -540,6 +540,9 @@ def upload_paper(
                 deposit_id = deposit["id"]
                 bucket_url = deposit["links"]["bucket"]
 
+        assert deposit_id is not None, "No deposit ID resolved"
+        assert bucket_url is not None, "No bucket URL resolved"
+
         log(f"[OK] Deposit ID: {deposit_id}")
 
         # Update metadata
