@@ -20,6 +20,8 @@ import sys
 import subprocess
 import io
 import shutil
+import time
+from datetime import datetime
 from pathlib import Path
 
 if sys.platform == 'win32':
@@ -40,6 +42,84 @@ from lib.quarto_config_utils import discover_paper_configs, count_qmd_files
 PROJECT_ROOT = Path(__file__).parent.parent
 
 
+def generate_report(report_data: dict) -> str:
+    """Generate markdown report from upload run data."""
+    lines = [
+        "# Zenodo Upload Report",
+        "",
+        f"**Date:** {report_data['timestamp']}",
+        f"**Duration:** {report_data['total_duration']:.1f} seconds",
+        f"**Papers Processed:** {report_data['papers_count']}",
+        "",
+        "## Summary",
+        "",
+        f"- **Successful:** {report_data['success_count']}",
+        f"- **Failed:** {report_data['failed_count']}",
+        "",
+    ]
+
+    if report_data['build_results']:
+        lines.extend([
+            "## Build Results",
+            "",
+            "| Paper | Status | Duration | QMD Files | PDF Size |",
+            "|-------|--------|----------|-----------|----------|",
+        ])
+        for paper_key, result in report_data['build_results'].items():
+            status = "OK" if result['success'] else "FAILED"
+            duration = f"{result['duration_seconds']:.1f}s"
+            qmd_count = result.get('qmd_count', 'N/A')
+            pdf_size = result.get('pdf_size', 'N/A')
+            lines.append(f"| {paper_key} | {status} | {duration} | {qmd_count} | {pdf_size} |")
+        lines.append("")
+
+    if report_data['upload_results']:
+        lines.extend([
+            "## Upload Results",
+            "",
+            "| Paper | Status | DOI | Deposit ID | URL |",
+            "|-------|--------|-----|------------|-----|",
+        ])
+        for paper_key, result in report_data['upload_results'].items():
+            if result and result.get('verified'):
+                status = "OK"
+                doi = result.get('doi', 'N/A')
+                deposit_id = result.get('deposit_id', 'N/A')
+                url = result.get('bucket_url', 'N/A')
+            else:
+                status = "FAILED"
+                doi = "N/A"
+                deposit_id = "N/A"
+                url = "N/A"
+            lines.append(f"| {paper_key} | {status} | {doi} | {deposit_id} | {url} |")
+        lines.append("")
+
+    if report_data['errors']:
+        lines.extend([
+            "## Errors and Warnings",
+            "",
+        ])
+        for paper_key, errors in report_data['errors'].items():
+            if errors:
+                lines.append(f"### {paper_key}")
+                lines.append("")
+                for error in errors:
+                    lines.append(f"- {error}")
+                lines.append("")
+
+    lines.extend([
+        "## Next Steps",
+        "",
+        "1. Review the results above",
+        "2. Check drafts on Zenodo: https://zenodo.org/me/uploads",
+        "3. Review config changes: `git diff _quarto-*.yml`",
+        "4. Commit updates: `git add _quarto-*.yml && git commit -m 'update: Zenodo DOIs'`",
+        "",
+    ])
+
+    return "\n".join(lines)
+
+
 def discover_papers() -> dict:
     """Find all Quarto paper configs using shared discovery utility."""
     raw_papers = discover_paper_configs(PROJECT_ROOT)
@@ -56,10 +136,16 @@ def discover_papers() -> dict:
     return papers
 
 
-def rebuild_paper(paper_key: str, verbose: bool = False) -> bool:
-    """Rebuild a paper using render-quarto.py."""
+def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
+    """Rebuild a paper using render-quarto.py.
+
+    Returns:
+        dict with keys: success (bool), duration_seconds (float), errors (list)
+    """
     print(f"\n[*] Building {paper_key}...", flush=True)
     render_script = PROJECT_ROOT / "scripts" / "render-quarto.py"
+    start_time = time.time()
+    errors = []
 
     # Patterns to filter out (noisy output for batch mode)
     noise_patterns = (
@@ -136,6 +222,10 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> bool:
             if not line:
                 continue
 
+            # Capture errors for report
+            if any(p in line for p in ("ERROR", "FATAL", "FAILED", "Exception")):
+                errors.append(line)
+
             # In verbose mode, show everything
             if verbose:
                 print(f"  {line}", flush=True)
@@ -154,22 +244,43 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> bool:
             print(f"  {line}", flush=True)
 
         process.wait(timeout=600)
+        duration = time.time() - start_time
 
         if process.returncode == 0:
             print(f"[OK] Built {paper_key}", flush=True)
-            return True
+            return {"success": True, "duration_seconds": duration, "errors": errors}
         print(f"ERROR: Build failed for {paper_key}", flush=True)
-        return False
+        errors.append(f"Build failed with return code {process.returncode}")
+        return {"success": False, "duration_seconds": duration, "errors": errors}
     except subprocess.TimeoutExpired:
         process.kill()
+        duration = time.time() - start_time
         print(f"ERROR: Build timeout for {paper_key}", flush=True)
-        return False
+        errors.append("Build timeout after 600 seconds")
+        return {"success": False, "duration_seconds": duration, "errors": errors}
     except Exception as e:
+        duration = time.time() - start_time
         print(f"ERROR: {e}", flush=True)
-        return False
+        errors.append(str(e))
+        return {"success": False, "duration_seconds": duration, "errors": errors}
 
 
 def main():
+    start_time = time.time()
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Initialize report data
+    report_data = {
+        'timestamp': timestamp,
+        'papers_count': 0,
+        'success_count': 0,
+        'failed_count': 0,
+        'build_results': {},
+        'upload_results': {},
+        'errors': {},
+        'total_duration': 0,
+    }
+
     load_dotenv(PROJECT_ROOT / ".env")
 
     token = get_zenodo_token()
@@ -204,6 +315,8 @@ def main():
     # Sort papers by QMD file count (smallest first for faster feedback)
     sorted_keys = sorted(papers.keys(), key=lambda k: papers[k]["qmd_count"])
 
+    report_data['papers_count'] = len(sorted_keys)
+
     print("Papers to upload (sorted by size, smallest first):")
     for key in sorted_keys:
         print(f"  {key}: {papers[key]['qmd_count']} QMD files")
@@ -216,13 +329,44 @@ def main():
 
     for paper_key in sorted_keys:
         info = papers[paper_key]
-        if not rebuild_paper(paper_key, verbose=verbose):
+        build_result = rebuild_paper(paper_key, verbose=verbose)
+
+        # Store build result with additional metadata
+        pdf_path = PROJECT_ROOT / info["pdf_path"]
+        build_result['qmd_count'] = info['qmd_count']
+
+        if pdf_path.exists():
+            pdf_size_mb = pdf_path.stat().st_size / (1024 * 1024)
+            build_result['pdf_size'] = f"{pdf_size_mb:.2f} MB"
+        else:
+            build_result['pdf_size'] = "N/A"
+
+        report_data['build_results'][paper_key] = build_result
+
+        if not build_result['success']:
             print(f"\nFATAL: Build failed for {paper_key}")
+            report_data['errors'][paper_key] = build_result['errors']
+            report_data['failed_count'] += 1
+
+            # Generate report even on failure
+            report_data['total_duration'] = time.time() - start_time
+            report_path = PROJECT_ROOT / f"zenodo-upload-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
+            report_path.write_text(generate_report(report_data), encoding='utf-8')
+            print(f"\nReport saved to: {report_path}")
+
             return 1
 
-        pdf_path = PROJECT_ROOT / info["pdf_path"]
         if not pdf_path.exists():
             print(f"\nFATAL: PDF not found after build: {pdf_path}")
+            report_data['errors'][paper_key] = ["PDF not found after build"]
+            report_data['failed_count'] += 1
+
+            # Generate report even on failure
+            report_data['total_duration'] = time.time() - start_time
+            report_path = PROJECT_ROOT / f"zenodo-upload-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
+            report_path.write_text(generate_report(report_data), encoding='utf-8')
+            print(f"\nReport saved to: {report_path}")
+
             return 1
 
         # Copy PDF to assets/pdfs/
@@ -231,7 +375,6 @@ def main():
         print(f"  -> Copied to: assets/pdfs/{pdf_path.name}")
 
     # Upload each paper (same order as build, fail-fast on errors)
-    results = {}
     for paper_key in sorted_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
@@ -246,13 +389,25 @@ def main():
             config_path=info["config_path"],
         )
 
+        report_data['upload_results'][paper_key] = result
+
         if not result or not result.get("verified"):
             print(f"\nFATAL: Upload failed for {paper_key}")
             print("  -> Stopping to prevent partial uploads")
             print("  -> Fix the issue and re-run the script")
-            return 1
 
-        results[paper_key] = result
+            if paper_key not in report_data['errors']:
+                report_data['errors'][paper_key] = []
+            report_data['errors'][paper_key].append("Upload verification failed")
+            report_data['failed_count'] += 1
+
+            # Generate report even on failure
+            report_data['total_duration'] = time.time() - start_time
+            report_path = PROJECT_ROOT / f"zenodo-upload-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
+            report_path.write_text(generate_report(report_data), encoding='utf-8')
+            print(f"\nReport saved to: {report_path}")
+
+            return 1
 
     # Summary
     print(f"\n{'=' * 60}")
@@ -260,19 +415,27 @@ def main():
     print("=" * 60)
 
     success, failed = [], []
-    for key, result in results.items():
+    for key, result in report_data['upload_results'].items():
         if result and result.get("verified"):
             success.append(key)
             print(f"  {key}: OK - DOI: {result.get('doi', 'N/A')}")
+            report_data['success_count'] += 1
         else:
             failed.append(key)
             print(f"  {key}: FAILED")
+            report_data['failed_count'] += 1
 
     if success:
         print(f"\nUpdated {len(success)} config(s). Next steps:")
         print("  1. git diff _quarto-*.yml")
         print("  2. Review drafts on Zenodo")
         print("  3. git add _quarto-*.yml && git commit -m 'update: Zenodo DOIs'")
+
+    # Generate final report
+    report_data['total_duration'] = time.time() - start_time
+    report_path = PROJECT_ROOT / f"zenodo-upload-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
+    report_path.write_text(generate_report(report_data), encoding='utf-8')
+    print(f"\nReport saved to: {report_path}")
 
     return 1 if failed else 0
 

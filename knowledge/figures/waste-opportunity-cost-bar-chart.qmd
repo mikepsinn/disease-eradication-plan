@@ -22,16 +22,16 @@ ceiling_dalys = get_ceiling_dalys()
 
 # ── Waste categories (from parameters.py) ────────────────────────────────
 categories = [
-    ("Housing & Zoning Restrictions", float(BAD_POLICY_COST_US_HOUSING_ZONING)),
-    ("Healthcare Inefficiency", float(BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY)),
-    ("Tax Compliance Burden", float(BAD_POLICY_COST_US_TAX_COMPLIANCE)),
-    ("Failed Wars (Amortized)", float(BAD_POLICY_COST_US_FAILED_WARS)),
-    ("Defense Above Deterrence", float(BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE)),
-    ("Tariffs (GDP Loss)", float(BAD_POLICY_COST_US_TARIFFS)),
-    ("Drug War", float(BAD_POLICY_COST_US_DRUG_WAR)),
-    ("Incarceration Excess", float(BAD_POLICY_COST_US_INCARCERATION_EXCESS)),
-    ("Agricultural Subsidies", float(BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES)),
-    ("Fossil Fuel Subsidies", float(BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT)),
+    ("Housing & Zoning Restrictions", float(US_GOV_WASTE_HOUSING_ZONING)),
+    ("Healthcare Inefficiency", float(US_GOV_WASTE_HEALTHCARE_INEFFICIENCY)),
+    ("Tax Compliance Burden", float(US_GOV_WASTE_TAX_COMPLIANCE)),
+    ("Military Overspend", float(US_GOV_WASTE_MILITARY_OVERSPEND)),
+    ("Tariffs (GDP Loss)", float(US_GOV_WASTE_TARIFFS)),
+    ("Drug War", float(US_GOV_WASTE_DRUG_WAR)),
+    ("Fossil Fuel Subsidies", float(US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES)),
+    ("Agricultural Subsidies", float(US_GOV_WASTE_AGRICULTURAL_SUBSIDIES)),
+    ("Corporate Welfare", float(US_GOV_WASTE_CORPORATE_WELFARE)),
+    ("Regulatory Red Tape", float(US_GOV_WASTE_REGULATORY_RED_TAPE)),
 ]
 
 categories.sort(key=lambda x: x[1], reverse=True)
