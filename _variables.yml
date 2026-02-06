@@ -3125,7 +3125,7 @@
   \ 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). This means civilization\
   \ operates at roughly half its technological potential. | Calculated from 4 inputs\
   \ | ? Low confidence | Formula: (GDP - WASTE) / (GDP - WASTE + OPPORTUNITY) | Unit:\
-  \ percent | Click to view details, calculation & sources\">52% (95% CI: 36.1%-57.1%)</a>"
+  \ percent | Click to view details, calculation & sources\">51.9% (95% CI: 35.9%-56.9%)</a>"
 "political_dysfunction_global_efficiency_score_latex": "$$\n\\begin{gathered}\nE \\\
   \\\n= \\frac{W_{real}}{W_{max}} \\\\\n= \\frac{GDP - W_{waste}}{GDP - W_{waste}\
   \ + O_{total}}\n\\end{gathered}\n$$"
@@ -4348,10 +4348,10 @@
   \ of waste percentage. Measures what fraction of fiscal input converts to useful\
   \ output. Compare to OECD benchmark of 75-85%. | Calculated from 2 inputs | ~ Medium\
   \ confidence | Formula: 1 - (US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING) | Unit: percent\
-  \ | Click to view details, calculation & sources\">38.8% (95% CI: 18.7%-54.3%)</a>"
+  \ | Click to view details, calculation & sources\">28% (95% CI: 4.39%-46.2%)</a>"
 "us_gov_efficiency_rating_latex": "$$\n\\begin{gathered}\nE_{US} = 1 - \\frac{W_{total,US}}{Spending_{federal}}\
-  \ = 1 - \\frac{\\$4.16T}{\\$6.8T} = 38.8\\% \\\\[0.5em]\n\\text{where } W_{total,US}\
-  \ = W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where\
+  \ = 1 - \\frac{\\$4.9T}{\\$6.8T} = 28\\% \\\\[0.5em]\n\\text{where } W_{total,US}\
+  \ = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T \\\\[0.5em]\n\\text{where\
   \ } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory}\
   \ + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n\
   + W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n\
@@ -4363,35 +4363,82 @@
   \ subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction,\
   \ environmental damage, benefits concentrated in large farms (top 10% receive 78%\
   \ of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high\
-  \ economist consensus. | ✓ High confidence | 95% CI: [$50B, $120B] | Dist: Lognormal\
-  \ (SE: $25B) | Unit: USD | Click to view details, calculation & sources\">$75B (95%\
-  \ CI: $50B-$120B)</a>"
+  \ economist consensus. [CATEGORY 1: Direct Spending] | ✓ High confidence | 95% CI:\
+  \ [$50B, $120B] | Dist: Lognormal (SE: $25B) | Unit: USD | Click to view details,\
+  \ calculation & sources\">$75B (95% CI: $50B-$120B)</a>"
 "us_gov_waste_agricultural_subsidies_cite": "@ewg-farm-subsidies"
+"us_gov_waste_category_1_direct_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_category_1_direct_spending\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Category 1: Direct Federal Spending Waste.\
+  \ Actual federal budget allocations that could be redirected. Includes military\
+  \ overspend ($615B), corporate welfare ($181B), drug war ($90B), fossil fuel subsidies\
+  \ ($50B), and agricultural subsidies ($75B). Total: ~$1.01T annually. Solution:\
+  \ Budget reallocation. | Calculated from 5 inputs | ~ Medium confidence | Formula:\
+  \ Military + Corporate + Drug War + Fossil + Agriculture | Unit: USD | Click to\
+  \ view details, calculation & sources\">$1.01T (95% CI: $790B-$1.30T)</a>"
+"us_gov_waste_category_1_direct_spending_latex": "$$\n\\begin{gathered}\nW_{cat1}\
+  \ \\\\\n= W_{military} + W_{corporate} + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture}\
+  \ \\\\\n= \\$615B + \\$181B + \\$90B + \\$50B + \\$75B \\\\\n= \\$1.01T\n\\end{gathered}\n\
+  $$"
+"us_gov_waste_category_2_compliance": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_category_2_compliance\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Category 2: Compliance Burden on Private Sector.\
+  \ Private sector resources consumed by government-imposed compliance requirements.\
+  \ Includes tax compliance ($546B) and regulatory red tape ($580B). Total: ~$1.13T\
+  \ annually. Solution: Simplification (tax code reform, regulatory streamlining).\
+  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: Tax Compliance + Regulatory\
+  \ Red Tape | Unit: USD | Click to view details, calculation & sources\">$1.13T (95%\
+  \ CI: $775B-$1.58T)</a>"
+"us_gov_waste_category_2_compliance_latex": "$$\n\\begin{gathered}\nW_{cat2} \\\\\n\
+  = W_{tax} + W_{regulatory} \\\\\n= \\$546B + \\$580B \\\\\n= \\$1.13T\n\\end{gathered}\n\
+  $$"
+"us_gov_waste_category_3_gdp_loss": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_category_3_gdp_loss\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Category 3: Policy-Induced GDP Loss. Economic\
+  \ output foregone due to policy constraints on markets. Includes housing/zoning\
+  \ restrictions ($1.4T) and tariffs ($160B). Total: ~$1.56T annually. Solution: Policy\
+  \ reform (zoning liberalization, trade policy). | Calculated from 2 inputs | ~ Medium\
+  \ confidence | Formula: Housing/Zoning + Tariffs | Unit: USD | Click to view details,\
+  \ calculation & sources\">$1.56T (95% CI: $1.09T-$2.18T)</a>"
+"us_gov_waste_category_3_gdp_loss_latex": "$$\n\\begin{gathered}\nW_{cat3} \\\\\n\
+  = W_{housing} + W_{tariffs} \\\\\n= \\$1.4T + \\$160B \\\\\n= \\$1.56T\n\\end{gathered}\n\
+  $$"
+"us_gov_waste_category_4_system": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_category_4_system\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"high\" title=\"Category 4: Total System Inefficiency. Fundamental\
+  \ system design failures requiring structural redesign. Currently only healthcare\
+  \ system inefficiency ($1.2T). Solution: System redesign using competitive market\
+  \ models (Singapore's catastrophic coverage + HSAs, Switzerland's regulated competition).\
+  \ | Calculated from 1 input | ✓ High confidence | Formula: Healthcare Inefficiency\
+  \ | Unit: USD | Click to view details, calculation & sources\">$1.20T (95% CI: $1T-$1.45T)</a>"
+"us_gov_waste_category_4_system_latex": "$$\nW_{cat4} = W_{health} = \\$1.2T = \\\
+  $1.2T\n$$"
 "us_gov_waste_corporate_welfare": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_corporate_welfare\"\
   \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Direct US federal\
   \ corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits,\
   \ semiconductor aid, aviation support. Agricultural subsidies are highly regressive\
-  \ (top 10% receive 63%). Cato Institute forensic tally. | ✓ High confidence | 95%\
-  \ CI: [$150B, $220B] | Dist: Normal (SE: $20B) | Unit: USD | Click to view details,\
-  \ calculation & sources\">$181B (95% CI: $150B-$220B)</a>"
+  \ (top 10% receive 63%). Cato Institute forensic tally. [CATEGORY 1: Direct Spending]\
+  \ | ✓ High confidence | 95% CI: [$150B, $220B] | Dist: Normal (SE: $20B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$181B (95% CI: $150B-$220B)</a>"
 "us_gov_waste_corporate_welfare_cite": "@political-dysfunction-tax-paper-2025"
 "us_gov_waste_drug_war": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_drug_war\"\
   \ class=\"parameter-link\" data-source-ref=\"drugpolicyalliance2021\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Annual cost of drug war: ~$41B federal\
   \ drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost\
-  \ productivity. After 50+ years and $1T+ spent, drug use is higher than ever. |\
-  \ ~ Medium confidence | 95% CI: [$60B, $150B] | Dist: Lognormal (SE: $30B) | Unit:\
-  \ USD | Click to view details, calculation & sources\">$90B (95% CI: $60B-$150B)</a>"
+  \ productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY\
+  \ 1: Direct Spending] | ~ Medium confidence | 95% CI: [$60B, $150B] | Dist: Lognormal\
+  \ (SE: $30B) | Unit: USD | Click to view details, calculation & sources\">$90B (95%\
+  \ CI: $60B-$150B)</a>"
 "us_gov_waste_drug_war_cite": "@drugpolicyalliance2021"
 "us_gov_waste_fossil_fuel_subsidies": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_fossil_fuel_subsidies\"\
   \ class=\"parameter-link\" data-source-ref=\"imf-fossilfuel2023\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"US explicit fossil fuel subsidies\
   \ (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92%\
   \ is implicit (externalities). This figure includes only explicit subsidies (~$50B)\
-  \ for defensibility. | ~ Medium confidence | 95% CI: [$30B, $80B] | Dist: Lognormal\
-  \ (SE: $15B) | Unit: USD | Click to view details, calculation & sources\">$50B (95%\
-  \ CI: $30B-$80B)</a>"
+  \ for defensibility. [CATEGORY 1: Direct Spending] | ~ Medium confidence | 95% CI:\
+  \ [$30B, $80B] | Dist: Lognormal (SE: $15B) | Unit: USD | Click to view details,\
+  \ calculation & sources\">$50B (95% CI: $30B-$80B)</a>"
 "us_gov_waste_fossil_fuel_subsidies_cite": "@imf-fossilfuel2023"
 "us_gov_waste_healthcare_inefficiency": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_healthcare_inefficiency\"\
   \ class=\"parameter-link\" data-source-ref=\"papanicolas2018\" data-source-type=\"\
@@ -4399,9 +4446,9 @@
   \ US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better\
   \ outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T\
   \ in excess spending from administrative complexity, high prices, and poor care\
-  \ coordination. Very high economist consensus. | ✓ High confidence | 95% CI: [$1T,\
-  \ $1.50T] | Dist: Normal (SE: $150B) | Unit: USD | Click to view details, calculation\
-  \ & sources\">$1.20T (95% CI: $1T-$1.50T)</a>"
+  \ coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]\
+  \ | ✓ High confidence | 95% CI: [$1T, $1.50T] | Dist: Normal (SE: $150B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$1.20T (95% CI: $1T-$1.50T)</a>"
 "us_gov_waste_healthcare_inefficiency_cite": "@papanicolas2018"
 "us_gov_waste_housing_zoning": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_housing_zoning\"\
   \ class=\"parameter-link\" data-source-ref=\"hsieh-moretti2019\" data-source-type=\"\
@@ -4409,9 +4456,9 @@
   \ Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity\
   \ cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing\
   \ workers from moving to productive locations. Annual cost ~$1.4T. Very high economist\
-  \ consensus across political spectrum. | ✓ High confidence | 95% CI: [$1T, $2T]\
-  \ | Dist: Lognormal (SE: $300B) | Unit: USD | Click to view details, calculation\
-  \ & sources\">$1.40T (95% CI: $1T-$2T)</a>"
+  \ consensus across political spectrum. [CATEGORY 3: GDP Loss] | ✓ High confidence\
+  \ | 95% CI: [$1T, $2T] | Dist: Lognormal (SE: $300B) | Unit: USD | Click to view\
+  \ details, calculation & sources\">$1.40T (95% CI: $1T-$2T)</a>"
 "us_gov_waste_housing_zoning_cite": "@hsieh-moretti2019"
 "us_gov_waste_military_overspend": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_military_overspend\"\
   \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
@@ -4419,40 +4466,40 @@
   \ above 'Strict Deterrence' baseline. Current budget ~$900B supports global power\
   \ projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B,\
   \ National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force\
-  \ $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. | ~ Medium confidence\
-  \ | 95% CI: [$500B, $750B] | Dist: Normal (SE: $75B) | Unit: USD | Click to view\
-  \ details, calculation & sources\">$615B (95% CI: $500B-$750B)</a>"
+  \ $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct\
+  \ Spending] | ~ Medium confidence | 95% CI: [$500B, $750B] | Dist: Normal (SE: $75B)\
+  \ | Unit: USD | Click to view details, calculation & sources\">$615B (95% CI: $500B-$750B)</a>"
 "us_gov_waste_military_overspend_cite": "@political-dysfunction-tax-paper-2025"
-"us_gov_waste_overlap_discount": "<span class=\"parameter-definition\" title=\"Discount\
-  \ factor to account for overlap between US government waste categories. Healthcare\
-  \ inefficiency partially overlaps with regulatory burden. Housing costs affect healthcare\
-  \ spending. Conservative 15% overlap assumed. | Unit: ratio | Core definition\"\
-  >0.85:1</span>"
+"us_gov_waste_overlap_discount": "<span class=\"parameter-definition\" title=\"Overlap\
+  \ discount factor between US government waste categories. Set to 1.0 (no discount).\
+  \ Categories are treated as additive, recognizing that any overlap is offset by\
+  \ excluded categories (state/local inefficiency, implicit subsidies, behavioral\
+  \ effects). | Unit: ratio | Core definition\">1:1</span>"
 "us_gov_waste_pct_fed_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_pct_fed_spending\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"US government waste as percentage of federal\
-  \ spending. ~$4.15T waste / $6.75T federal spending = ~61%. Note: some waste categories\
+  \ spending. ~$4.9T waste / $6.75T federal spending = ~72%. Note: some waste categories\
   \ (housing, healthcare) are not purely federal costs. | Calculated from 2 inputs\
   \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING | Unit:\
-  \ percent | Click to view details, calculation & sources\">61.2% (95% CI: 45.7%-81.3%)</a>"
+  \ percent | Click to view details, calculation & sources\">72% (95% CI: 53.8%-95.6%)</a>"
 "us_gov_waste_pct_fed_spending_latex": "$$\n\\begin{gathered}\nW_{US,\\%fed} = \\\
-  frac{W_{total,US}}{Spending_{federal}} = \\frac{\\$4.16T}{\\$6.8T} = 61.2\\% \\\\\
-  [0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 0.85\
-  \ = \\$4.16T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing}\
-  \ + W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs}\
-  \ + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\\
-  $615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\
-  \\\n= \\$4.9T\n\\end{gathered}\n$$"
+  frac{W_{total,US}}{Spending_{federal}} = \\frac{\\$4.9T}{\\$6.8T} = 72\\% \\\\[0.5em]\n\
+  \\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T\
+  \ \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military}\
+  \ \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs}\
+  \ + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\\
+  $580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\\
+  $4.9T\n\\end{gathered}\n$$"
 "us_gov_waste_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_pct_gdp\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"US government waste as percentage of GDP. ~$4.15T\
   \ waste / $28.78T GDP = ~14%. This represents the 'dysfunction tax' that American\
   \ citizens effectively pay through inefficient governance. | Calculated from 2 inputs\
   \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / US_GDP | Unit: percent |\
-  \ Click to view details, calculation & sources\">14.5% (95% CI: 10.8%-19.2%)</a>"
+  \ Click to view details, calculation & sources\">17% (95% CI: 12.7%-22.6%)</a>"
 "us_gov_waste_pct_gdp_latex": "$$\n\\begin{gathered}\nW_{US,\\%GDP} = \\frac{W_{total,US}}{USGDP}\
-  \ = \\frac{\\$4.16T}{\\$28.8T} = 14.5\\% \\\\[0.5em]\n\\text{where } W_{total,US}\
-  \ = W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where\
+  \ = \\frac{\\$4.9T}{\\$28.8T} = 17\\% \\\\[0.5em]\n\\text{where } W_{total,US} =\
+  \ W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T \\\\[0.5em]\n\\text{where\
   \ } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory}\
   \ + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n\
   + W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n\
@@ -4464,16 +4511,15 @@
   \ This is an economic equivalent, NOT epidemiological health outcomes. Dividing\
   \ by QALY threshold yields a measure of foregone welfare. | Calculated from 2 inputs\
   \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / QALY_THRESHOLD | Unit: QALYs\
-  \ | Click to view details, calculation & sources\">41.6M QALYs (95% CI: 31.1M QALYs-55.3M\
+  \ | Click to view details, calculation & sources\">49.0M QALYs (95% CI: 36.6M QALYs-65.0M\
   \ QALYs)</a>"
 "us_gov_waste_qaly_equivalents_latex": "$$\n\\begin{gathered}\nW_{US,QALY} = \\frac{W_{total,US}}{QALY_{threshold}}\
-  \ = \\frac{\\$4.16T}{\\$100K} = 41.6M \\\\[0.5em]\n\\text{where } W_{total,US} =\
-  \ W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where\
-  \ } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory}\
-  \ + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n\
-  + W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n\
-  + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n\
-  $$"
+  \ = \\frac{\\$4.9T}{\\$100K} = 49M \\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US}\
+  \ \\times US = \\$4.9T \\times 1 = \\$4.9T \\\\[0.5em]\n\\text{where } W_{raw,US}\
+  \ \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory} + W_{tax}\
+  \ + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture}\
+  \ \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B\
+  \ + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n$$"
 "us_gov_waste_raw_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_raw_total\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"Raw sum of US government waste components before\
@@ -4493,66 +4539,69 @@
   \ efficiency. Current US efficiency ~38-48%; OECD median ~75-85%. Closing to ~80%\
   \ would recover approximately half the gap. | Calculated from 1 input | ? Low confidence\
   \ | Formula: US_GOV_WASTE_TOTAL x 0.50 | Unit: USD | Click to view details, calculation\
-  \ & sources\">$2.08T (95% CI: $1.55T-$2.76T)</a>"
+  \ & sources\">$2.45T (95% CI: $1.83T-$3.25T)</a>"
 "us_gov_waste_recoverable_latex": "$$\n\\begin{gathered}\nW_{US,recoverable} \\\\\n\
-  = W_{total,US} \\times 0.5 \\\\\n= \\$4.16T \\times 0.5 \\\\\n= \\$2.08T \\\\[0.5em]\n\
-  \\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\\
-  $4.16T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing} +\
-  \ W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs}\
-  \ + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\\
-  $615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\
-  \\\n= \\$4.9T\n\\end{gathered}\n$$"
+  = W_{total,US} \\times 0.5 \\\\\n= \\$4.9T \\times 0.5 \\\\\n= \\$2.45T \\\\[0.5em]\n\
+  \\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T\
+  \ \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military}\
+  \ \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs}\
+  \ + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\\
+  $580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\\
+  $4.9T\n\\end{gathered}\n$$"
 "us_gov_waste_regulatory_red_tape": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_regulatory_red_tape\"\
   \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
   \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Deadweight loss\
   \ from US regulatory red tape (procedural friction without safety benefits). Competitive\
   \ Enterprise Institute estimates total regulatory burden at $2.15T; European studies\
   \ find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B.\
-  \ | ~ Medium confidence | 95% CI: [$290B, $1T] | Dist: Lognormal (SE: $200B) | Unit:\
-  \ USD | Click to view details, calculation & sources\">$580B (95% CI: $290B-$1T)</a>"
+  \ [CATEGORY 2: Compliance Burden] | ~ Medium confidence | 95% CI: [$290B, $1T] |\
+  \ Dist: Lognormal (SE: $200B) | Unit: USD | Click to view details, calculation &\
+  \ sources\">$580B (95% CI: $290B-$1T)</a>"
 "us_gov_waste_regulatory_red_tape_cite": "@political-dysfunction-tax-paper-2025"
 "us_gov_waste_tariffs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_tariffs\"\
   \ class=\"parameter-link\" data-source-ref=\"yalebudgetlab2025\" data-source-type=\"\
   external\" data-confidence=\"medium\" title=\"Annual GDP reduction from US tariffs\
   \ and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent\
   \ to $160B annually. Trade barriers reduce efficiency and raise consumer prices.\
-  \ | ~ Medium confidence | 95% CI: [$90B, $250B] | Dist: Normal (SE: $50B) | Unit:\
-  \ USD | Click to view details, calculation & sources\">$160B (95% CI: $90B-$250B)</a>"
+  \ [CATEGORY 3: GDP Loss] | ~ Medium confidence | 95% CI: [$90B, $250B] | Dist: Normal\
+  \ (SE: $50B) | Unit: USD | Click to view details, calculation & sources\">$160B\
+  \ (95% CI: $90B-$250B)</a>"
 "us_gov_waste_tariffs_cite": "@yalebudgetlab2025"
 "us_gov_waste_tax_compliance": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_tax_compliance\"\
   \ class=\"parameter-link\" data-source-ref=\"taxfoundation2024-compliance\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"Annual cost of US tax code compliance:\
   \ 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs.\
   \ Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code\
-  \ or return-free filing. | ✓ High confidence | 95% CI: [$450B, $650B] | Dist: Normal\
-  \ (SE: $50B) | Unit: USD | Click to view details, calculation & sources\">$546B\
-  \ (95% CI: $450B-$650B)</a>"
+  \ or return-free filing. [CATEGORY 2: Compliance Burden] | ✓ High confidence | 95%\
+  \ CI: [$450B, $650B] | Dist: Normal (SE: $50B) | Unit: USD | Click to view details,\
+  \ calculation & sources\">$546B (95% CI: $450B-$650B)</a>"
 "us_gov_waste_tax_compliance_cite": "@taxfoundation2024-compliance"
 "us_gov_waste_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_total\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"medium\" title=\"Total annual US government waste with 15% overlap\
-  \ discount. Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B),\
-  \ regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war\
-  \ ($90B), fossil fuel ($50B), agriculture ($75B). Excludes speculative items (migration\
-  \ restrictions, fossil fuel externalities) for defensibility. ~$4.15T annually.\
-  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: RAW_TOTAL x 0.85 |\
-  \ Unit: USD | Click to view details, calculation & sources\">$4.16T (95% CI: $3.11T-$5.53T)</a>"
+  \ data-confidence=\"medium\" title=\"Total annual US government waste (additive\
+  \ sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military\
+  \ ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B),\
+  \ drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as\
+  \ additive; any overlap offset by excluded categories (state/local inefficiency,\
+  \ implicit subsidies, behavioral effects). ~$4.9T annually. | Calculated from 2\
+  \ inputs | ~ Medium confidence | Formula: SUM(all components) | Unit: USD | Click\
+  \ to view details, calculation & sources\">$4.90T (95% CI: $3.66T-$6.50T)</a>"
 "us_gov_waste_total_latex": "$$\n\\begin{gathered}\nW_{total,US} = W_{raw,US} \\times\
-  \ US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\
-  \\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory} + W_{tax} +\
-  \ W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture}\
-  \ \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B\
-  \ + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n$$"
+  \ US = \\$4.9T \\times 1 = \\$4.9T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n\
+  = W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate}\
+  \ \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\\
+  $1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B\
+  \ + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n$$"
 "us_gov_waste_vsl_equivalents": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_vsl_equivalents\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"US government waste expressed as VSL equivalents.\
   \ This is an economic equivalent, NOT literal deaths. Dividing the efficiency gap\
   \ by VSL yields a measure of foregone welfare. | Calculated from 2 inputs | ~ Medium\
   \ confidence | Formula: US_GOV_WASTE_TOTAL / DOT_VSL | Unit: people | Click to view\
-  \ details, calculation & sources\">304k people (95% CI: 227k people-403k people)</a>"
+  \ details, calculation & sources\">357k people (95% CI: 267k people-475k people)</a>"
 "us_gov_waste_vsl_equivalents_latex": "$$\n\\begin{gathered}\nW_{US,VSL} = \\frac{W_{total,US}}{VSL_{DOT}}\
-  \ = \\frac{\\$4.16T}{\\$13.7M} = 304{,}000 \\\\[0.5em]\n\\text{where } W_{total,US}\
-  \ = W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where\
+  \ = \\frac{\\$4.9T}{\\$13.7M} = 357{,}000 \\\\[0.5em]\n\\text{where } W_{total,US}\
+  \ = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T \\\\[0.5em]\n\\text{where\
   \ } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory}\
   \ + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n\
   + W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n\
@@ -4564,11 +4613,11 @@
   \ gap could fund the 1% Treaty. The efficiency gap represents capital that could\
   \ fund transformative health research many times over. | Calculated from 2 inputs\
   \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / TREATY_ANNUAL_FUNDING |\
-  \ Unit: ratio | Click to view details, calculation & sources\">153:1 (95% CI: 114:1-203:1)</a>"
+  \ Unit: ratio | Click to view details, calculation & sources\">180:1 (95% CI: 134:1-239:1)</a>"
 "us_gov_waste_vs_treaty_multiplier_latex": "$$\n\\begin{gathered}\nk_{waste:treaty}\
-  \ = \\frac{W_{total,US}}{Funding_{treaty}} = \\frac{\\$4.16T}{\\$27.2B} = 153 \\\
-  \\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times\
-  \ 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing}\
+  \ = \\frac{W_{total,US}}{Funding_{treaty}} = \\frac{\\$4.9T}{\\$27.2B} = 180 \\\\\
+  [0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1\
+  \ = \\$4.9T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing}\
   \ + W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs}\
   \ + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\\
   $615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\
@@ -4800,6 +4849,6 @@
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
 "_us_base_political_spending": "<span class=\"parameter-link\" title=\"Parameter:\
   \ _US_BASE_POLITICAL_SPENDING\">28.8B</span>"
-"total_parameter_count": "458"
-"total_latex_equation_count": "176"
+"total_parameter_count": "462"
+"total_latex_equation_count": "180"
 "total_citation_count": "184"

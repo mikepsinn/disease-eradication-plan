@@ -16,17 +16,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "US Waste (QALY Equivalents)"
+display_name = "Category 3: GDP Loss"
 
 # Baseline and units
 
-baseline = 48970000.0
+baseline = 1560000000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['US_GOV_WASTE_HOUSING_ZONING', 'US_GOV_WASTE_REGULATORY_RED_TAPE', 'US_GOV_WASTE_HEALTHCARE_INEFFICIENCY', 'US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_TAX_COMPLIANCE', 'US_GOV_WASTE_TARIFFS', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
-impacts_low = [-4000000.0, -2900000.0, -2000000.0, -1150000.0, -960000.0, -700000.0, -300000.0, -250000.0, -310000.0, -200000.0]
-impacts_high = [6000000.0, 4200000.0, 3000000.0, 1350000.0, 1040000.0, 900000.0, 600000.0, 450000.0, 390000.0, 300000.0]
+drivers = ['US_GOV_WASTE_HOUSING_ZONING', 'US_GOV_WASTE_TARIFFS']
+impacts_low = [-400000000000.0, -70000000000.0]
+impacts_high = [600000000000.0, 90000000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -70,7 +70,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "QALYs"
+units_label = "USD"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -95,7 +95,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-us_gov_waste_qaly_equivalents.png')
+output_path = get_figure_output_path('tornado-us_gov_waste_category_3_gdp_loss.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

@@ -290,7 +290,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd",
@@ -523,7 +523,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/references.qmd",
@@ -694,7 +694,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-cost-of-change.qmd",
@@ -760,7 +760,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3
@@ -955,7 +955,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-impact.qmd",
@@ -1092,7 +1092,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3
@@ -1353,7 +1353,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-spec.qmd",
@@ -1382,7 +1382,7 @@
             "Stage 1 Observational Analysis Cost per Patient: $0.100"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3
@@ -1391,7 +1391,7 @@
       "id": "federal-efficiency-audit",
       "type": "website",
       "title": "Federal Resource Allocation Efficiency Audit",
-      "description": "Engineering-style efficiency analysis quantifying approximately $4.2 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.",
+      "description": "Engineering-style efficiency analysis quantifying approximately $4.9 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.",
       "siteUrl": "https://federal-efficiency-audit.warondisease.org",
       "favicon": "https://federal-efficiency-audit.warondisease.org/assets/icons/federal-efficiency-audit-favicon.png",
       "ogImage": "https://federal-efficiency-audit.warondisease.org/assets/og/federal-efficiency-audit-og-1200x630.jpg",
@@ -1478,20 +1478,32 @@
           "path": "index.qmd",
           "url": "https://federal-efficiency-audit.warondisease.org/",
           "title": "Federal Resource Allocation Efficiency Audit",
-          "description": "Engineering-style efficiency analysis quantifying approximately $4.2 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.",
+          "description": "Engineering-style efficiency analysis quantifying approximately $4.9 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.",
           "image": "https://federal-efficiency-audit.warondisease.org/assets/og-images/knowledge/appendix/federal-efficiency-audit-og.jpg",
           "sections": [
             "Executive Summary",
+            "Dysfunction Category Breakdown",
+            "Aggregate Metrics",
             "Interpretation Note",
             "System Specifications",
             "Designed Function",
             "Why Two Metrics Are Sufficient",
             "Input-Output Measurement",
             "Methodology",
+            "Category Framework: Why Distinctions Matter",
             "Engineering Loss Categories",
             "Aggregate Efficiency Gap Calculation",
-            "Methodological Caveat: Overlap and Double-Counting",
+            "Methodological Note: Additive Categories",
             "Valuation Standards",
+            "Category 1: Direct Federal Spending Waste",
+            "Components",
+            "Category 2: Compliance Burden on Private Sector",
+            "Components",
+            "Category 3: Policy-Induced GDP Loss",
+            "Components",
+            "Category 4: System Inefficiency",
+            "Components",
+            "Subsystem Cross-Reference",
             "Subsystem Audit: Defense",
             "Loss Category: Leakage (Audit Failure)",
             "Loss Category: Conversion Inefficiency (F-35 Program)",
@@ -1569,7 +1581,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-federal-efficiency-audit.qmd",
@@ -1581,14 +1593,18 @@
             "Quick Navigation",
             "Calculated Values",
             "Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B",
-            "US Efficiency Rating: 38.8%",
-            "US Waste (% GDP): 14.5%",
-            "US Waste (QALY Equivalents): 41.6M QALYs",
+            "US Efficiency Rating: 28%",
+            "Category 1: Direct Spending Waste: $1.01T",
+            "Category 2: Compliance Burden: $1.13T",
+            "Category 3: GDP Loss: $1.56T",
+            "Category 4: System Inefficiency: $1.20T",
+            "US Waste (% GDP): 17%",
+            "US Waste (QALY Equivalents): 49.0M QALYs",
             "US Gov Waste (Raw Total): $4.90T",
-            "Recoverable Capital: $2.08T",
-            "US Government Waste (Total): $4.16T",
-            "US Waste (VSL Equivalents): 304k people",
-            "Efficiency Gap / Treaty Funding: 153:1",
+            "Recoverable Capital: $2.45T",
+            "US Government Waste (Total): $4.90T",
+            "US Waste (VSL Equivalents): 357k people",
+            "Efficiency Gap / Treaty Funding: 180:1",
             "External Data Sources",
             "DOT VSL: $13.7M",
             "Global Military Spending in 2024: $2.72T",
@@ -1607,10 +1623,10 @@
             "Tax Compliance Waste: $546B",
             "Core Definitions",
             "1% Reduction in Military Spending/War Costs from Treaty: 1%",
-            "Overlap Discount Factor: 0.85:1"
+            "Overlap Discount Factor: 1:1"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3
@@ -1807,7 +1823,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-iab.qmd",
@@ -1878,7 +1894,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3
@@ -2067,7 +2083,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd",
@@ -2137,7 +2153,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3
@@ -4383,7 +4399,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/lives-saved-by-drug-accessibility.qmd",
@@ -4668,7 +4684,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-obg.qmd",
@@ -4713,7 +4729,7 @@
             "Standard Time Horizon for NPV Analysis: 10 years"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3
@@ -4961,7 +4977,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 2
@@ -4970,7 +4986,7 @@
       "id": "optimocracy",
       "type": "website",
       "title": "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-      "description": "Political dysfunction costs society trillions annually: $4.16T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
+      "description": "Political dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
       "siteUrl": "https://optimocracy.warondisease.org",
       "favicon": "https://optimocracy.warondisease.org/assets/icons/optimocracy-favicon.png",
       "ogImage": "https://optimocracy.warondisease.org/assets/og/optimocracy-og-1200x630.jpg",
@@ -5064,7 +5080,7 @@
           "path": "index.qmd",
           "url": "https://optimocracy.warondisease.org/",
           "title": "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-          "description": "Political dysfunction costs society trillions annually: $4.16T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
+          "description": "Political dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
           "image": "https://optimocracy.warondisease.org/assets/og-images/knowledge/appendix/optimocracy-paper-og-retro-academic.jpg",
           "sections": [
             "The Mechanism",
@@ -5147,7 +5163,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-optimocracy.qmd",
@@ -5168,12 +5184,12 @@
             "Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M",
             "ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1",
             "dFDA Trial Cost Reduction Percentage: 97.7%",
-            "Global Governance Efficiency Score: 52%",
+            "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
-            "US Waste (% GDP): 14.5%",
+            "US Waste (% GDP): 17%",
             "US Gov Waste (Raw Total): $4.90T",
-            "US Government Waste (Total): $4.16T",
+            "US Government Waste (Total): $4.90T",
             "External Data Sources",
             "dFDA Pragmatic Trial Cost per Patient: $929",
             "Annual Global Spending on Clinical Trials: $60B",
@@ -5207,12 +5223,12 @@
             "DIH Broader Initiatives Upfront Cost: $230M",
             "Standard Discount Rate for NPV Analysis: 3%",
             "Standard Time Horizon for NPV Analysis: 10 years",
-            "Overlap Discount Factor: 0.85:1",
+            "Overlap Discount Factor: 1:1",
             "Switzerland-US Life Expectancy Gap: 6.5 years",
             "US-Switzerland Spending Gap: 300%"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3
@@ -5357,7 +5373,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 2
@@ -5530,7 +5546,7 @@
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-wishocracy.qmd",
@@ -5546,7 +5562,7 @@
             "Concentrated Interest Sector Market Cap: $5T"
           ],
           "published": true,
-          "lastmod": "2026-02-05"
+          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 3

@@ -42,7 +42,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![Federal Resource Allocation Efficiency Audit](assets/og/federal-efficiency-audit-og-1200x630.jpg)](https://federal-efficiency-audit.warondisease.org)
 
-> Engineering-style efficiency analysis quantifying approximately $4.2 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
+> Engineering-style efficiency analysis quantifying approximately $4.9 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
 
 
 ### [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
@@ -77,7 +77,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
 
-> Political dysfunction costs society trillions annually: $4.16T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.
+> Political dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.
 
 
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)

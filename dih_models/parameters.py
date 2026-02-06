@@ -4239,45 +4239,13 @@ US_FEDERAL_SPENDING_2024 = Parameter(
     keywords=["federal", "spending", "budget", "US", "FY2024"],
 )
 
-# Component 1: Healthcare system inefficiency ($1.2T)
-US_GOV_WASTE_HEALTHCARE_INEFFICIENCY = Parameter(
-    1_200_000_000_000,  # $1.2T annually
-    source_ref="papanicolas2018",
-    source_type="external",
-    confidence="high",
-    description="US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable "
-                "OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple "
-                "studies document $1-1.5T in excess spending from administrative complexity, high prices, "
-                "and poor care coordination. Very high economist consensus.",
-    display_name="Healthcare System Inefficiency",
-    unit="USD",
-    distribution=DistributionType.NORMAL,
-    confidence_interval=(1_000_000_000_000, 1_500_000_000_000),
-    std_error=150_000_000_000,
-    keywords=["healthcare", "inefficiency", "administrative", "waste", "OECD"],
-    latex_symbol=r"W_{health}",
-)
+# ==============================================================================
+# CATEGORY 1: DIRECT FEDERAL SPENDING WASTE (~$1.01T)
+# Components representing actual federal budget allocations that could be
+# redirected. Solution: Budget reallocation.
+# ==============================================================================
 
-# Component 2: Housing/zoning restrictions ($1.4T)
-US_GOV_WASTE_HOUSING_ZONING = Parameter(
-    1_400_000_000_000,  # $1.4T annually
-    source_ref="hsieh-moretti2019",
-    source_type="external",
-    confidence="high",
-    description="GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate "
-                "restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP "
-                "by 36% from 1964-2009 by preventing workers from moving to productive locations. "
-                "Annual cost ~$1.4T. Very high economist consensus across political spectrum.",
-    display_name="Housing/Zoning Restrictions Cost",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(1_000_000_000_000, 2_000_000_000_000),
-    std_error=300_000_000_000,
-    keywords=["housing", "zoning", "NIMBY", "land use", "productivity", "misallocation"],
-    latex_symbol=r"W_{housing}",
-)
-
-# Component 3: Military overspend ($615B)
+# Component 1.1: Military overspend ($615B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_MILITARY_OVERSPEND = Parameter(
     615_000_000_000,  # $615B annually
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
@@ -4287,54 +4255,17 @@ US_GOV_WASTE_MILITARY_OVERSPEND = Parameter(
                 "~$900B supports global power projection (750+ bases). Strict Deterrence "
                 "(nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense "
                 "$28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. "
-                "Delta: $900B - $285B = $615B 'Hegemony Tax'.",
+                "Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]",
     display_name="Military Overspend",
     unit="USD",
     distribution=DistributionType.NORMAL,
     confidence_interval=(500_000_000_000, 750_000_000_000),
     std_error=75_000_000_000,
-    keywords=["military", "defense", "overspend", "hegemony", "pentagon"],
+    keywords=["military", "defense", "overspend", "hegemony", "pentagon", "category_1_direct_spending"],
     latex_symbol=r"W_{military}",
 )
 
-# Component 4: Regulatory red tape ($580B)
-US_GOV_WASTE_REGULATORY_RED_TAPE = Parameter(
-    580_000_000_000,  # $580B annually
-    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
-    source_type="external",
-    confidence="medium",
-    description="Deadweight loss from US regulatory red tape (procedural friction without "
-                "safety benefits). Competitive Enterprise Institute estimates total regulatory "
-                "burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. "
-                "Conservative estimate: ~2% of US GDP = $580B.",
-    display_name="Regulatory Red Tape Waste",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(290_000_000_000, 1_000_000_000_000),
-    std_error=200_000_000_000,
-    keywords=["regulatory", "red tape", "bureaucracy", "waste", "compliance"],
-    latex_symbol=r"W_{regulatory}",
-)
-
-# Component 5: Tax compliance ($546B)
-US_GOV_WASTE_TAX_COMPLIANCE = Parameter(
-    546_000_000_000,  # $546B annually
-    source_ref="taxfoundation2024-compliance",
-    source_type="external",
-    confidence="high",
-    description="Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) "
-                "plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. "
-                "Could be largely eliminated with simplified tax code or return-free filing.",
-    display_name="Tax Compliance Waste",
-    unit="USD",
-    distribution=DistributionType.NORMAL,
-    confidence_interval=(450_000_000_000, 650_000_000_000),
-    std_error=50_000_000_000,
-    keywords=["tax", "compliance", "IRS", "bureaucracy", "waste"],
-    latex_symbol=r"W_{tax}",
-)
-
-# Component 6: Corporate welfare ($181B)
+# Component 1.2: Corporate welfare ($181B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_CORPORATE_WELFARE = Parameter(
     181_000_000_000,  # $181B annually
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
@@ -4343,35 +4274,17 @@ US_GOV_WASTE_CORPORATE_WELFARE = Parameter(
     description="Direct US federal corporate welfare: subsidies to agriculture ($16.4B), "
                 "green energy tax credits, semiconductor aid, aviation support. "
                 "Agricultural subsidies are highly regressive (top 10% receive 63%). "
-                "Cato Institute forensic tally.",
+                "Cato Institute forensic tally. [CATEGORY 1: Direct Spending]",
     display_name="Corporate Welfare Waste",
     unit="USD",
     distribution=DistributionType.NORMAL,
     confidence_interval=(150_000_000_000, 220_000_000_000),
     std_error=20_000_000_000,
-    keywords=["corporate welfare", "subsidy", "waste", "agriculture", "capture"],
+    keywords=["corporate welfare", "subsidy", "waste", "agriculture", "capture", "category_1_direct_spending"],
     latex_symbol=r"W_{corporate}",
 )
 
-# Component 7: Tariffs ($160B)
-US_GOV_WASTE_TARIFFS = Parameter(
-    160_000_000_000,  # $160B annually
-    source_ref="yalebudgetlab2025",
-    source_type="external",
-    confidence="medium",
-    description="Annual GDP reduction from US tariffs and retaliation. "
-                "Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. "
-                "Trade barriers reduce efficiency and raise consumer prices.",
-    display_name="Tariff Cost (GDP Loss)",
-    unit="USD",
-    distribution=DistributionType.NORMAL,
-    confidence_interval=(90_000_000_000, 250_000_000_000),
-    std_error=50_000_000_000,
-    keywords=["tariffs", "trade", "protectionism", "GDP loss"],
-    latex_symbol=r"W_{tariffs}",
-)
-
-# Component 8: Drug war ($90B)
+# Component 1.3: Drug war ($90B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_DRUG_WAR = Parameter(
     90_000_000_000,  # $90B annually
     source_ref="drugpolicyalliance2021",
@@ -4379,17 +4292,18 @@ US_GOV_WASTE_DRUG_WAR = Parameter(
     confidence="medium",
     description="Annual cost of drug war: ~$41B federal drug control budget, "
                 "~$10B state/local enforcement, ~$40B incarceration and lost productivity. "
-                "After 50+ years and $1T+ spent, drug use is higher than ever.",
+                "After 50+ years and $1T+ spent, drug use is higher than ever. "
+                "[CATEGORY 1: Direct Spending]",
     display_name="Drug War Cost",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
     confidence_interval=(60_000_000_000, 150_000_000_000),
     std_error=30_000_000_000,
-    keywords=["drug war", "incarceration", "enforcement", "prohibition", "failed"],
+    keywords=["drug war", "incarceration", "enforcement", "prohibition", "failed", "category_1_direct_spending"],
     latex_symbol=r"W_{drugs}",
 )
 
-# Component 9: Fossil fuel subsidies - explicit only ($50B)
+# Component 1.4: Fossil fuel subsidies - explicit only ($50B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES = Parameter(
     50_000_000_000,  # $50B annually (explicit only, not externalities)
     source_ref="imf-fossilfuel2023",
@@ -4397,17 +4311,18 @@ US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES = Parameter(
     confidence="medium",
     description="US explicit fossil fuel subsidies (direct payments, tax breaks). "
                 "IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). "
-                "This figure includes only explicit subsidies (~$50B) for defensibility.",
+                "This figure includes only explicit subsidies (~$50B) for defensibility. "
+                "[CATEGORY 1: Direct Spending]",
     display_name="Fossil Fuel Subsidies (Explicit)",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
     confidence_interval=(30_000_000_000, 80_000_000_000),
     std_error=15_000_000_000,
-    keywords=["fossil fuel", "subsidy", "oil", "gas", "coal"],
+    keywords=["fossil fuel", "subsidy", "oil", "gas", "coal", "category_1_direct_spending"],
     latex_symbol=r"W_{fossil}",
 )
 
-# Component 10: Agricultural subsidies deadweight loss ($75B)
+# Component 1.5: Agricultural subsidies deadweight loss ($75B) [CATEGORY 1: Direct Spending]
 US_GOV_WASTE_AGRICULTURAL_SUBSIDIES = Parameter(
     75_000_000_000,  # $75B annually
     source_ref="ewg-farm-subsidies",
@@ -4416,25 +4331,244 @@ US_GOV_WASTE_AGRICULTURAL_SUBSIDIES = Parameter(
     description="Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create "
                 "larger distortions: overproduction, environmental damage, benefits concentrated in large "
                 "farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. "
-                "Textbook example of capture; very high economist consensus.",
+                "Textbook example of capture; very high economist consensus. [CATEGORY 1: Direct Spending]",
     display_name="Agricultural Subsidies Deadweight Loss",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
     confidence_interval=(50_000_000_000, 120_000_000_000),
     std_error=25_000_000_000,
-    keywords=["agriculture", "farm", "subsidy", "deadweight", "capture"],
+    keywords=["agriculture", "farm", "subsidy", "deadweight", "capture", "category_1_direct_spending"],
     latex_symbol=r"W_{agriculture}",
 )
 
-# Overlap discount factor
-US_GOV_WASTE_OVERLAP_DISCOUNT = Parameter(
-    0.85,  # 15% overlap assumed
-    source_type="definition",
+# ==============================================================================
+# CATEGORY 2: COMPLIANCE BURDEN ON PRIVATE SECTOR (~$1.13T)
+# Private sector resources consumed by government-imposed compliance requirements.
+# Solution: Simplification (tax code reform, regulatory streamlining).
+# ==============================================================================
+
+# Component 2.1: Tax compliance ($546B) [CATEGORY 2: Compliance Burden]
+US_GOV_WASTE_TAX_COMPLIANCE = Parameter(
+    546_000_000_000,  # $546B annually
+    source_ref="taxfoundation2024-compliance",
+    source_type="external",
+    confidence="high",
+    description="Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) "
+                "plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. "
+                "Could be largely eliminated with simplified tax code or return-free filing. "
+                "[CATEGORY 2: Compliance Burden]",
+    display_name="Tax Compliance Waste",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(450_000_000_000, 650_000_000_000),
+    std_error=50_000_000_000,
+    keywords=["tax", "compliance", "IRS", "bureaucracy", "waste", "category_2_compliance"],
+    latex_symbol=r"W_{tax}",
+)
+
+# Component 2.2: Regulatory red tape ($580B) [CATEGORY 2: Compliance Burden]
+US_GOV_WASTE_REGULATORY_RED_TAPE = Parameter(
+    580_000_000_000,  # $580B annually
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="external",
     confidence="medium",
+    description="Deadweight loss from US regulatory red tape (procedural friction without "
+                "safety benefits). Competitive Enterprise Institute estimates total regulatory "
+                "burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. "
+                "Conservative estimate: ~2% of US GDP = $580B. [CATEGORY 2: Compliance Burden]",
+    display_name="Regulatory Red Tape Waste",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(290_000_000_000, 1_000_000_000_000),
+    std_error=200_000_000_000,
+    keywords=["regulatory", "red tape", "bureaucracy", "waste", "compliance", "category_2_compliance"],
+    latex_symbol=r"W_{regulatory}",
+)
+
+# ==============================================================================
+# CATEGORY 3: POLICY-INDUCED GDP LOSS (~$1.56T)
+# Economic output foregone due to policy constraints on markets.
+# Solution: Policy reform (zoning liberalization, trade policy).
+# ==============================================================================
+
+# Component 3.1: Housing/zoning restrictions ($1.4T) [CATEGORY 3: GDP Loss]
+US_GOV_WASTE_HOUSING_ZONING = Parameter(
+    1_400_000_000_000,  # $1.4T annually
+    source_ref="hsieh-moretti2019",
+    source_type="external",
+    confidence="high",
+    description="GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate "
+                "restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP "
+                "by 36% from 1964-2009 by preventing workers from moving to productive locations. "
+                "Annual cost ~$1.4T. Very high economist consensus across political spectrum. "
+                "[CATEGORY 3: GDP Loss]",
+    display_name="Housing/Zoning Restrictions Cost",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(1_000_000_000_000, 2_000_000_000_000),
+    std_error=300_000_000_000,
+    keywords=["housing", "zoning", "NIMBY", "land use", "productivity", "misallocation", "category_3_gdp_loss"],
+    latex_symbol=r"W_{housing}",
+)
+
+# Component 3.2: Tariffs ($160B) [CATEGORY 3: GDP Loss]
+US_GOV_WASTE_TARIFFS = Parameter(
+    160_000_000_000,  # $160B annually
+    source_ref="yalebudgetlab2025",
+    source_type="external",
+    confidence="medium",
+    description="Annual GDP reduction from US tariffs and retaliation. "
+                "Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. "
+                "Trade barriers reduce efficiency and raise consumer prices. [CATEGORY 3: GDP Loss]",
+    display_name="Tariff Cost (GDP Loss)",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(90_000_000_000, 250_000_000_000),
+    std_error=50_000_000_000,
+    keywords=["tariffs", "trade", "protectionism", "GDP loss", "category_3_gdp_loss"],
+    latex_symbol=r"W_{tariffs}",
+)
+
+# ==============================================================================
+# CATEGORY 4: TOTAL SYSTEM INEFFICIENCY (~$1.20T)
+# Fundamental system design failures requiring structural redesign.
+# Solution: System redesign (competitive market models like Singapore/Switzerland).
+# ==============================================================================
+
+# Component 4.1: Healthcare system inefficiency ($1.2T) [CATEGORY 4: System Inefficiency]
+US_GOV_WASTE_HEALTHCARE_INEFFICIENCY = Parameter(
+    1_200_000_000_000,  # $1.2T annually
+    source_ref="papanicolas2018",
+    source_type="external",
+    confidence="high",
+    description="US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable "
+                "OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple "
+                "studies document $1-1.5T in excess spending from administrative complexity, high prices, "
+                "and poor care coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]",
+    display_name="Healthcare System Inefficiency",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(1_000_000_000_000, 1_500_000_000_000),
+    std_error=150_000_000_000,
+    keywords=["healthcare", "inefficiency", "administrative", "waste", "OECD", "category_4_system"],
+    latex_symbol=r"W_{health}",
+)
+
+# ==============================================================================
+# CATEGORY SUBTOTALS
+# Aggregated totals for each dysfunction category
+# ==============================================================================
+
+# Category 1 Subtotal: Direct Federal Spending Waste (~$1.01T)
+US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING = Parameter(
+    (US_GOV_WASTE_MILITARY_OVERSPEND +
+     US_GOV_WASTE_CORPORATE_WELFARE +
+     US_GOV_WASTE_DRUG_WAR +
+     US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES +
+     US_GOV_WASTE_AGRICULTURAL_SUBSIDIES),
+    source_type="calculated",
+    confidence="medium",
+    description="Category 1: Direct Federal Spending Waste. Actual federal budget allocations "
+                "that could be redirected. Includes military overspend ($615B), corporate welfare "
+                "($181B), drug war ($90B), fossil fuel subsidies ($50B), and agricultural subsidies "
+                "($75B). Total: ~$1.01T annually. Solution: Budget reallocation.",
+    display_name="Category 1: Direct Spending Waste",
+    unit="USD",
+    formula="Military + Corporate + Drug War + Fossil + Agriculture",
+    inputs=[
+        "US_GOV_WASTE_MILITARY_OVERSPEND",
+        "US_GOV_WASTE_CORPORATE_WELFARE",
+        "US_GOV_WASTE_DRUG_WAR",
+        "US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES",
+        "US_GOV_WASTE_AGRICULTURAL_SUBSIDIES",
+    ],
+    compute=lambda ctx: (
+        ctx["US_GOV_WASTE_MILITARY_OVERSPEND"] +
+        ctx["US_GOV_WASTE_CORPORATE_WELFARE"] +
+        ctx["US_GOV_WASTE_DRUG_WAR"] +
+        ctx["US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES"] +
+        ctx["US_GOV_WASTE_AGRICULTURAL_SUBSIDIES"]
+    ),
+    keywords=["category_1", "direct_spending", "budget", "waste", "reallocation"],
+    latex_symbol=r"W_{cat1}",
+)
+
+# Category 2 Subtotal: Compliance Burden (~$1.13T)
+US_GOV_WASTE_CATEGORY_2_COMPLIANCE = Parameter(
+    US_GOV_WASTE_TAX_COMPLIANCE + US_GOV_WASTE_REGULATORY_RED_TAPE,
+    source_type="calculated",
+    confidence="medium",
+    description="Category 2: Compliance Burden on Private Sector. Private sector resources consumed "
+                "by government-imposed compliance requirements. Includes tax compliance ($546B) and "
+                "regulatory red tape ($580B). Total: ~$1.13T annually. Solution: Simplification "
+                "(tax code reform, regulatory streamlining).",
+    display_name="Category 2: Compliance Burden",
+    unit="USD",
+    formula="Tax Compliance + Regulatory Red Tape",
+    inputs=[
+        "US_GOV_WASTE_TAX_COMPLIANCE",
+        "US_GOV_WASTE_REGULATORY_RED_TAPE",
+    ],
+    compute=lambda ctx: (
+        ctx["US_GOV_WASTE_TAX_COMPLIANCE"] +
+        ctx["US_GOV_WASTE_REGULATORY_RED_TAPE"]
+    ),
+    keywords=["category_2", "compliance", "red_tape", "waste", "simplification"],
+    latex_symbol=r"W_{cat2}",
+)
+
+# Category 3 Subtotal: Policy-Induced GDP Loss (~$1.56T)
+US_GOV_WASTE_CATEGORY_3_GDP_LOSS = Parameter(
+    US_GOV_WASTE_HOUSING_ZONING + US_GOV_WASTE_TARIFFS,
+    source_type="calculated",
+    confidence="medium",
+    description="Category 3: Policy-Induced GDP Loss. Economic output foregone due to policy "
+                "constraints on markets. Includes housing/zoning restrictions ($1.4T) and tariffs "
+                "($160B). Total: ~$1.56T annually. Solution: Policy reform (zoning liberalization, "
+                "trade policy).",
+    display_name="Category 3: GDP Loss",
+    unit="USD",
+    formula="Housing/Zoning + Tariffs",
+    inputs=[
+        "US_GOV_WASTE_HOUSING_ZONING",
+        "US_GOV_WASTE_TARIFFS",
+    ],
+    compute=lambda ctx: (
+        ctx["US_GOV_WASTE_HOUSING_ZONING"] +
+        ctx["US_GOV_WASTE_TARIFFS"]
+    ),
+    keywords=["category_3", "gdp_loss", "policy", "waste", "reform"],
+    latex_symbol=r"W_{cat3}",
+)
+
+# Category 4 Subtotal: System Inefficiency (~$1.20T)
+US_GOV_WASTE_CATEGORY_4_SYSTEM = Parameter(
+    US_GOV_WASTE_HEALTHCARE_INEFFICIENCY,
+    source_type="calculated",
+    confidence="high",
+    description="Category 4: Total System Inefficiency. Fundamental system design failures requiring "
+                "structural redesign. Currently only healthcare system inefficiency ($1.2T). "
+                "Solution: System redesign using competitive market models (Singapore's catastrophic "
+                "coverage + HSAs, Switzerland's regulated competition).",
+    display_name="Category 4: System Inefficiency",
+    unit="USD",
+    formula="Healthcare Inefficiency",
+    inputs=["US_GOV_WASTE_HEALTHCARE_INEFFICIENCY"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_HEALTHCARE_INEFFICIENCY"],
+    keywords=["category_4", "system", "healthcare", "waste", "redesign"],
+    latex_symbol=r"W_{cat4}",
+)
+
+# Overlap discount factor (removed - categories treated as additive)
+US_GOV_WASTE_OVERLAP_DISCOUNT = Parameter(
+    1.0,  # No overlap discount applied
+    source_type="definition",
+    confidence="high",
     distribution="fixed",
-    description="Discount factor to account for overlap between US government waste categories. "
-                "Healthcare inefficiency partially overlaps with regulatory burden. "
-                "Housing costs affect healthcare spending. Conservative 15% overlap assumed.",
+    description="Overlap discount factor between US government waste categories. "
+                "Set to 1.0 (no discount). Categories are treated as additive, "
+                "recognizing that any overlap is offset by excluded categories "
+                "(state/local inefficiency, implicit subsidies, behavioral effects).",
     display_name="Overlap Discount Factor",
     unit="ratio",
     keywords=["overlap", "discount", "double counting"],
@@ -4489,20 +4623,20 @@ US_GOV_WASTE_RAW_TOTAL = Parameter(
     latex_symbol=r"W_{raw,US}",
 )
 
-# Total US government waste (with overlap discount)
+# Total US government waste (no overlap discount)
 US_GOV_WASTE_TOTAL = Parameter(
     US_GOV_WASTE_RAW_TOTAL * US_GOV_WASTE_OVERLAP_DISCOUNT,
     source_type="calculated",
     confidence="medium",
-    description="Total annual US government waste with 15% overlap discount. "
+    description="Total annual US government waste (additive sum of components). "
                 "Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), "
                 "regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), "
                 "drug war ($90B), fossil fuel ($50B), agriculture ($75B). "
-                "Excludes speculative items (migration restrictions, fossil fuel externalities) "
-                "for defensibility. ~$4.15T annually.",
+                "Categories treated as additive; any overlap offset by excluded categories "
+                "(state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.",
     display_name="US Government Waste (Total)",
     unit="USD",
-    formula="RAW_TOTAL x 0.85",
+    formula="SUM(all components)",
     inputs=["US_GOV_WASTE_RAW_TOTAL", "US_GOV_WASTE_OVERLAP_DISCOUNT"],
     compute=lambda ctx: ctx["US_GOV_WASTE_RAW_TOTAL"] * ctx["US_GOV_WASTE_OVERLAP_DISCOUNT"],
     keywords=["waste", "US", "total", "government", "dysfunction"],
@@ -4515,7 +4649,7 @@ US_GOV_WASTE_PCT_FED_SPENDING = Parameter(
     source_type="calculated",
     confidence="medium",
     description="US government waste as percentage of federal spending. "
-                "~$4.15T waste / $6.75T federal spending = ~61%. Note: some waste "
+                "~$4.90T waste / $6.8T federal spending = ~72%. Note: some waste "
                 "categories (housing, healthcare) are not purely federal costs.",
     display_name="US Waste (% Federal Spending)",
     unit="percent",
@@ -4549,7 +4683,7 @@ US_GOV_WASTE_PCT_GDP = Parameter(
     source_type="calculated",
     confidence="medium",
     description="US government waste as percentage of GDP. "
-                "~$4.15T waste / $28.78T GDP = ~14%. This represents the 'dysfunction tax' "
+                "~$4.90T waste / $28.78T GDP = ~17%. This represents the 'dysfunction tax' "
                 "that American citizens effectively pay through inefficient governance.",
     display_name="US Waste (% GDP)",
     unit="percent",

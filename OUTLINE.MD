@@ -1256,24 +1256,36 @@
 ## _quarto-federal-efficiency-audit.yml
 **Title:** Federal Resource Allocation Efficiency Audit
 **Type:** website
-**Files:** 1 | **Words:** 4,583
+**Files:** 1 | **Words:** 6,931
 
 #### knowledge/appendix/federal-efficiency-audit.qmd
 **Title:** Federal Resource Allocation Efficiency Audit
-**Description:** Engineering-style efficiency analysis quantifying approximately $4.2 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark c...
-**Stats:** 4,583 words | 587 lines
+**Description:** Engineering-style efficiency analysis quantifying approximately $4.9 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark c...
+**Stats:** 6,931 words | 783 lines
 
   - Executive Summary
+    - Dysfunction Category Breakdown
+    - Aggregate Metrics
   - Interpretation Note
   - System Specifications
     - Designed Function
     - Why Two Metrics Are Sufficient
     - Input-Output Measurement
   - Methodology
+    - Category Framework: Why Distinctions Matter
     - Engineering Loss Categories
     - Aggregate Efficiency Gap Calculation
-  - Methodological Caveat: Overlap and Double-Counting
+  - Methodological Note: Additive Categories
     - Valuation Standards
+  - Category 1: Direct Federal Spending Waste
+    - Components
+  - Category 2: Compliance Burden on Private Sector
+    - Components
+  - Category 3: Policy-Induced GDP Loss
+    - Components
+  - Category 4: System Inefficiency
+    - Components
+  - Subsystem Cross-Reference
   - Subsystem Audit: Defense
     - Loss Category: Leakage (Audit Failure)
     - Loss Category: Conversion Inefficiency (F-35 Program)
@@ -4230,6 +4242,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 344,085
+- Total words: 346,433
 - Orphaned files: 26
 - Paper configs: 12

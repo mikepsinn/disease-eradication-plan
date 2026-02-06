@@ -1,11 +1,10 @@
-**Sensitivity Indices for Global Governance Efficiency Score**
+**Sensitivity Indices for Category 2: Compliance Burden**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| US Gov Waste Total | -0.9827 | Strong driver |
-| Political Dysfunction Global Opportunity Cost Total | -0.5209 | Strong driver |
-| Political Dysfunction Global Fossil Fuel Subsidies | 0.4964 | Moderate driver |
+| US Gov Waste Regulatory Red Tape | 0.7928 | Strong driver |
+| US Gov Waste Tax Compliance | 0.2095 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
