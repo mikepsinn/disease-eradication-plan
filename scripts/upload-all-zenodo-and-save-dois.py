@@ -9,6 +9,7 @@ Usage:
     python scripts/upload-all-zenodo-and-save-dois.py
     python scripts/upload-all-zenodo-and-save-dois.py economics iab  # specific papers only
     python scripts/upload-all-zenodo-and-save-dois.py --verbose      # show full build output
+    python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild   # validate and upload existing PDFs
 
 Environment:
     ZENODO_TOKEN: API token from https://zenodo.org/account/settings/applications/
@@ -16,6 +17,7 @@ Environment:
 
 from __future__ import annotations
 
+import argparse
 import sys
 import subprocess
 import io
@@ -62,15 +64,16 @@ def generate_report(report_data: dict) -> str:
         lines.extend([
             "## Build Results",
             "",
-            "| Paper | Status | Duration | QMD Files | PDF Size |",
-            "|-------|--------|----------|-----------|----------|",
+            "| Paper | Status | Duration | QMD Files | Pages | PDF Size |",
+            "|-------|--------|----------|-----------|-------|----------|",
         ])
         for paper_key, result in report_data['build_results'].items():
             status = "OK" if result['success'] else "FAILED"
             duration = f"{result['duration_seconds']:.1f}s"
             qmd_count = result.get('qmd_count', 'N/A')
+            pages = result.get('pages') or 'N/A'
             pdf_size = result.get('pdf_size', 'N/A')
-            lines.append(f"| {paper_key} | {status} | {duration} | {qmd_count} | {pdf_size} |")
+            lines.append(f"| {paper_key} | {status} | {duration} | {qmd_count} | {pages} | {pdf_size} |")
         lines.append("")
 
     if report_data['upload_results']:
@@ -134,6 +137,44 @@ def discover_papers() -> dict:
             "qmd_count": count_qmd_files(info["config"]),
         }
     return papers
+
+
+def get_pdf_page_count(pdf_path: Path) -> int | None:
+    """Get page count from a PDF using PyMuPDF."""
+    try:
+        import fitz
+        doc = fitz.open(str(pdf_path))
+        count = len(doc)
+        doc.close()
+        return count
+    except Exception:
+        return None
+
+
+def validate_existing_pdf(pdf_path: Path, verbose: bool = False) -> bool:
+    """Run pdf-validation.py on an existing PDF as a gate before upload.
+
+    Returns True if validation passes (no critical errors).
+    """
+    validation_script = PROJECT_ROOT / "scripts" / "pdf-validation.py"
+    cmd = [
+        sys.executable, str(validation_script),
+        "--pdf", str(pdf_path),
+        "--skip-llm",
+        "--skip-url-check",
+    ]
+    if verbose:
+        print(f"  Running: {' '.join(cmd)}", flush=True)
+
+    result = subprocess.run(
+        cmd,
+        cwd=str(PROJECT_ROOT),
+        capture_output=not verbose,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    return result.returncode == 0
 
 
 def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
@@ -265,7 +306,46 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
         return {"success": False, "duration_seconds": duration, "errors": errors}
 
 
+def save_report(report_data: dict) -> Path:
+    """Generate and save report to _analysis/zenodo-upload-report.md.
+
+    Returns the path to the saved report.
+    """
+    report_dir = PROJECT_ROOT / "_analysis"
+    report_dir.mkdir(parents=True, exist_ok=True)
+    report_path = report_dir / "zenodo-upload-report.md"
+    report_path.write_text(generate_report(report_data), encoding='utf-8')
+    return report_path
+
+
+def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Batch upload papers to Zenodo with validation",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""Examples:
+  python scripts/upload-all-zenodo-and-save-dois.py
+  python scripts/upload-all-zenodo-and-save-dois.py economics iab
+  python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --verbose
+  python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild economics""",
+    )
+    parser.add_argument(
+        "papers", nargs="*",
+        help="Specific paper keys to upload (default: all papers)",
+    )
+    parser.add_argument(
+        "--no-rebuild", action="store_true",
+        help="Skip rebuild; validate and upload existing PDFs",
+    )
+    parser.add_argument(
+        "--verbose", "-v", action="store_true",
+        help="Show full build/validation output",
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
     start_time = time.time()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -300,13 +380,9 @@ def main():
         print("ERROR: No paper configs found")
         return 1
 
-    # Parse args
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    verbose = "--verbose" in sys.argv or "-v" in sys.argv
-
     # Filter to specific papers if args provided
-    if args:
-        requested = set(args)
+    if args.papers:
+        requested = set(args.papers)
         papers = {k: v for k, v in papers.items() if k in requested}
         if not papers:
             print(f"ERROR: No matching papers: {', '.join(requested)}")
@@ -317,62 +393,104 @@ def main():
 
     report_data['papers_count'] = len(sorted_keys)
 
+    mode_label = "validate-only" if args.no_rebuild else "rebuild"
+    print(f"Mode: {mode_label}")
     print("Papers to upload (sorted by size, smallest first):")
     for key in sorted_keys:
         print(f"  {key}: {papers[key]['qmd_count']} QMD files")
     print()
 
-    # Build all PDFs first (fail fast if any build fails)
-    print("Building PDFs (smallest first)...")
     assets_pdf_dir = PROJECT_ROOT / "assets" / "pdfs"
     assets_pdf_dir.mkdir(parents=True, exist_ok=True)
 
-    for paper_key in sorted_keys:
-        info = papers[paper_key]
-        build_result = rebuild_paper(paper_key, verbose=verbose)
+    if args.no_rebuild:
+        # --no-rebuild: validate existing PDFs without rebuilding
+        print("Validating existing PDFs (--no-rebuild)...")
+        for paper_key in sorted_keys:
+            info = papers[paper_key]
+            pdf_path = PROJECT_ROOT / info["pdf_path"]
 
-        # Store build result with additional metadata
-        pdf_path = PROJECT_ROOT / info["pdf_path"]
-        build_result['qmd_count'] = info['qmd_count']
+            if not pdf_path.exists():
+                print(f"\nFATAL: PDF not found: {pdf_path}")
+                report_data['errors'][paper_key] = [f"PDF not found: {pdf_path}"]
+                report_data['failed_count'] += 1
+                report_data['total_duration'] = time.time() - start_time
+                report_path = save_report(report_data)
+                print(f"\nReport saved to: {report_path}")
+                return 1
 
-        if pdf_path.exists():
             pdf_size_mb = pdf_path.stat().st_size / (1024 * 1024)
-            build_result['pdf_size'] = f"{pdf_size_mb:.2f} MB"
-        else:
-            build_result['pdf_size'] = "N/A"
+            page_count = get_pdf_page_count(pdf_path)
 
-        report_data['build_results'][paper_key] = build_result
+            print(f"\n[*] Validating {paper_key} ({pdf_size_mb:.1f} MB, {page_count or '?'} pages)...", flush=True)
 
-        if not build_result['success']:
-            print(f"\nFATAL: Build failed for {paper_key}")
-            report_data['errors'][paper_key] = build_result['errors']
-            report_data['failed_count'] += 1
+            if not validate_existing_pdf(pdf_path, verbose=args.verbose):
+                print(f"FATAL: PDF validation failed for {paper_key}")
+                report_data['errors'][paper_key] = ["PDF validation failed (critical errors)"]
+                report_data['failed_count'] += 1
+                report_data['total_duration'] = time.time() - start_time
+                report_path = save_report(report_data)
+                print(f"\nReport saved to: {report_path}")
+                return 1
 
-            # Generate report even on failure
-            report_data['total_duration'] = time.time() - start_time
-            report_path = PROJECT_ROOT / f"zenodo-upload-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
-            report_path.write_text(generate_report(report_data), encoding='utf-8')
-            print(f"\nReport saved to: {report_path}")
+            print(f"[OK] Validated {paper_key}", flush=True)
 
-            return 1
+            report_data['build_results'][paper_key] = {
+                'success': True,
+                'duration_seconds': 0,
+                'errors': [],
+                'qmd_count': info['qmd_count'],
+                'pdf_size': f"{pdf_size_mb:.2f} MB",
+                'pages': page_count,
+            }
 
-        if not pdf_path.exists():
-            print(f"\nFATAL: PDF not found after build: {pdf_path}")
-            report_data['errors'][paper_key] = ["PDF not found after build"]
-            report_data['failed_count'] += 1
+            # Copy PDF to assets/pdfs/
+            dest_path = assets_pdf_dir / pdf_path.name
+            shutil.copy2(pdf_path, dest_path)
+            print(f"  -> Copied to: assets/pdfs/{pdf_path.name}")
+    else:
+        # Default: rebuild all PDFs (fail fast if any build fails)
+        print("Building PDFs (smallest first)...")
+        for paper_key in sorted_keys:
+            info = papers[paper_key]
+            build_result = rebuild_paper(paper_key, verbose=args.verbose)
 
-            # Generate report even on failure
-            report_data['total_duration'] = time.time() - start_time
-            report_path = PROJECT_ROOT / f"zenodo-upload-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
-            report_path.write_text(generate_report(report_data), encoding='utf-8')
-            print(f"\nReport saved to: {report_path}")
+            # Store build result with additional metadata
+            pdf_path = PROJECT_ROOT / info["pdf_path"]
+            build_result['qmd_count'] = info['qmd_count']
 
-            return 1
+            if pdf_path.exists():
+                pdf_size_mb = pdf_path.stat().st_size / (1024 * 1024)
+                build_result['pdf_size'] = f"{pdf_size_mb:.2f} MB"
+                build_result['pages'] = get_pdf_page_count(pdf_path)
+            else:
+                build_result['pdf_size'] = "N/A"
+                build_result['pages'] = None
 
-        # Copy PDF to assets/pdfs/
-        dest_path = assets_pdf_dir / pdf_path.name
-        shutil.copy2(pdf_path, dest_path)
-        print(f"  -> Copied to: assets/pdfs/{pdf_path.name}")
+            report_data['build_results'][paper_key] = build_result
+
+            if not build_result['success']:
+                print(f"\nFATAL: Build failed for {paper_key}")
+                report_data['errors'][paper_key] = build_result['errors']
+                report_data['failed_count'] += 1
+                report_data['total_duration'] = time.time() - start_time
+                report_path = save_report(report_data)
+                print(f"\nReport saved to: {report_path}")
+                return 1
+
+            if not pdf_path.exists():
+                print(f"\nFATAL: PDF not found after build: {pdf_path}")
+                report_data['errors'][paper_key] = ["PDF not found after build"]
+                report_data['failed_count'] += 1
+                report_data['total_duration'] = time.time() - start_time
+                report_path = save_report(report_data)
+                print(f"\nReport saved to: {report_path}")
+                return 1
+
+            # Copy PDF to assets/pdfs/
+            dest_path = assets_pdf_dir / pdf_path.name
+            shutil.copy2(pdf_path, dest_path)
+            print(f"  -> Copied to: assets/pdfs/{pdf_path.name}")
 
     # Upload each paper (same order as build, fail-fast on errors)
     for paper_key in sorted_keys:
@@ -401,12 +519,9 @@ def main():
             report_data['errors'][paper_key].append("Upload verification failed")
             report_data['failed_count'] += 1
 
-            # Generate report even on failure
             report_data['total_duration'] = time.time() - start_time
-            report_path = PROJECT_ROOT / f"zenodo-upload-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
-            report_path.write_text(generate_report(report_data), encoding='utf-8')
+            report_path = save_report(report_data)
             print(f"\nReport saved to: {report_path}")
-
             return 1
 
     # Summary
@@ -433,8 +548,7 @@ def main():
 
     # Generate final report
     report_data['total_duration'] = time.time() - start_time
-    report_path = PROJECT_ROOT / f"zenodo-upload-report-{datetime.now().strftime('%Y%m%d-%H%M%S')}.md"
-    report_path.write_text(generate_report(report_data), encoding='utf-8')
+    report_path = save_report(report_data)
     print(f"\nReport saved to: {report_path}")
 
     return 1 if failed else 0
