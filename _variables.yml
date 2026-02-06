@@ -4478,7 +4478,7 @@
 "us_gov_waste_pct_fed_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_pct_fed_spending\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"medium\" title=\"US government waste as percentage of federal\
-  \ spending. ~$4.9T waste / $6.75T federal spending = ~72%. Note: some waste categories\
+  \ spending. ~$4.90T waste / $6.8T federal spending = ~72%. Note: some waste categories\
   \ (housing, healthcare) are not purely federal costs. | Calculated from 2 inputs\
   \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING | Unit:\
   \ percent | Click to view details, calculation & sources\">72% (95% CI: 53.8%-95.6%)</a>"
@@ -4492,8 +4492,8 @@
   $4.9T\n\\end{gathered}\n$$"
 "us_gov_waste_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_pct_gdp\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"medium\" title=\"US government waste as percentage of GDP. ~$4.15T\
-  \ waste / $28.78T GDP = ~14%. This represents the 'dysfunction tax' that American\
+  \ data-confidence=\"medium\" title=\"US government waste as percentage of GDP. ~$4.90T\
+  \ waste / $28.78T GDP = ~17%. This represents the 'dysfunction tax' that American\
   \ citizens effectively pay through inefficient governance. | Calculated from 2 inputs\
   \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / US_GDP | Unit: percent |\
   \ Click to view details, calculation & sources\">17% (95% CI: 12.7%-22.6%)</a>"

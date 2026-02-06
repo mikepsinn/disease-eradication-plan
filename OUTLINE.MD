@@ -1256,12 +1256,12 @@
 ## _quarto-federal-efficiency-audit.yml
 **Title:** Federal Resource Allocation Efficiency Audit
 **Type:** website
-**Files:** 1 | **Words:** 6,931
+**Files:** 1 | **Words:** 6,938
 
 #### knowledge/appendix/federal-efficiency-audit.qmd
 **Title:** Federal Resource Allocation Efficiency Audit
 **Description:** Engineering-style efficiency analysis quantifying approximately $4.9 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark c...
-**Stats:** 6,931 words | 783 lines
+**Stats:** 6,938 words | 787 lines
 
   - Executive Summary
     - Dysfunction Category Breakdown
@@ -4242,6 +4242,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 346,433
+- Total words: 346,440
 - Orphaned files: 26
 - Paper configs: 12
