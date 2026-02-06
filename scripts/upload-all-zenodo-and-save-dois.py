@@ -151,17 +151,16 @@ def get_pdf_page_count(pdf_path: Path) -> int | None:
         return None
 
 
-def validate_existing_pdf(pdf_path: Path, verbose: bool = False) -> bool:
+def validate_existing_pdf(pdf_path: Path, verbose: bool = False) -> tuple[bool, list[str]]:
     """Run pdf-validation.py on an existing PDF as a gate before upload.
 
-    Returns True if validation passes (no critical errors).
+    Returns (passed, errors) where errors is a list of error strings.
+    Always captures output for the report, and prints it in verbose mode.
     """
     validation_script = PROJECT_ROOT / "scripts" / "pdf-validation.py"
     cmd = [
         sys.executable, str(validation_script),
         "--pdf", str(pdf_path),
-        "--skip-llm",
-        "--skip-url-check",
     ]
     if verbose:
         print(f"  Running: {' '.join(cmd)}", flush=True)
@@ -169,12 +168,26 @@ def validate_existing_pdf(pdf_path: Path, verbose: bool = False) -> bool:
     result = subprocess.run(
         cmd,
         cwd=str(PROJECT_ROOT),
-        capture_output=not verbose,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
         text=True,
         encoding="utf-8",
         errors="replace",
     )
-    return result.returncode == 0
+
+    if verbose and result.stdout:
+        print(result.stdout, flush=True)
+
+    errors = []
+    if result.stdout:
+        for line in result.stdout.splitlines():
+            stripped = line.strip()
+            if "CRITICAL" in stripped or "BROKEN" in stripped:
+                errors.append(stripped)
+    if result.returncode != 0 and not errors:
+        errors.append(f"Validation failed with exit code {result.returncode}")
+
+    return result.returncode == 0, errors
 
 
 def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
@@ -306,15 +319,15 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
         return {"success": False, "duration_seconds": duration, "errors": errors}
 
 
-def save_report(report_data: dict) -> Path:
-    """Generate and save report to _analysis/zenodo-upload-report.md.
+def save_report(report_data: dict, start_time: float) -> Path:
+    """Generate and save report to project root.
 
     Returns the path to the saved report.
     """
-    report_dir = PROJECT_ROOT / "_analysis"
-    report_dir.mkdir(parents=True, exist_ok=True)
-    report_path = report_dir / "zenodo-upload-report.md"
+    report_data['total_duration'] = time.time() - start_time
+    report_path = PROJECT_ROOT / "zenodo-upload-report.md"
     report_path.write_text(generate_report(report_data), encoding='utf-8')
+    print(f"\nReport saved to: {report_path}")
     return report_path
 
 
@@ -414,9 +427,7 @@ def main():
                 print(f"\nFATAL: PDF not found: {pdf_path}")
                 report_data['errors'][paper_key] = [f"PDF not found: {pdf_path}"]
                 report_data['failed_count'] += 1
-                report_data['total_duration'] = time.time() - start_time
-                report_path = save_report(report_data)
-                print(f"\nReport saved to: {report_path}")
+                save_report(report_data, start_time)
                 return 1
 
             pdf_size_mb = pdf_path.stat().st_size / (1024 * 1024)
@@ -424,13 +435,14 @@ def main():
 
             print(f"\n[*] Validating {paper_key} ({pdf_size_mb:.1f} MB, {page_count or '?'} pages)...", flush=True)
 
-            if not validate_existing_pdf(pdf_path, verbose=args.verbose):
+            passed, validation_errors = validate_existing_pdf(pdf_path, verbose=args.verbose)
+            if not passed:
                 print(f"FATAL: PDF validation failed for {paper_key}")
-                report_data['errors'][paper_key] = ["PDF validation failed (critical errors)"]
+                for err in validation_errors:
+                    print(f"  {err}", flush=True)
+                report_data['errors'][paper_key] = validation_errors
                 report_data['failed_count'] += 1
-                report_data['total_duration'] = time.time() - start_time
-                report_path = save_report(report_data)
-                print(f"\nReport saved to: {report_path}")
+                save_report(report_data, start_time)
                 return 1
 
             print(f"[OK] Validated {paper_key}", flush=True)
@@ -473,18 +485,14 @@ def main():
                 print(f"\nFATAL: Build failed for {paper_key}")
                 report_data['errors'][paper_key] = build_result['errors']
                 report_data['failed_count'] += 1
-                report_data['total_duration'] = time.time() - start_time
-                report_path = save_report(report_data)
-                print(f"\nReport saved to: {report_path}")
+                save_report(report_data, start_time)
                 return 1
 
             if not pdf_path.exists():
                 print(f"\nFATAL: PDF not found after build: {pdf_path}")
                 report_data['errors'][paper_key] = ["PDF not found after build"]
                 report_data['failed_count'] += 1
-                report_data['total_duration'] = time.time() - start_time
-                report_path = save_report(report_data)
-                print(f"\nReport saved to: {report_path}")
+                save_report(report_data, start_time)
                 return 1
 
             # Copy PDF to assets/pdfs/
@@ -519,9 +527,7 @@ def main():
             report_data['errors'][paper_key].append("Upload verification failed")
             report_data['failed_count'] += 1
 
-            report_data['total_duration'] = time.time() - start_time
-            report_path = save_report(report_data)
-            print(f"\nReport saved to: {report_path}")
+            save_report(report_data, start_time)
             return 1
 
     # Summary
@@ -547,9 +553,7 @@ def main():
         print("  3. git add _quarto-*.yml && git commit -m 'update: Zenodo DOIs'")
 
     # Generate final report
-    report_data['total_duration'] = time.time() - start_time
-    report_path = save_report(report_data)
-    print(f"\nReport saved to: {report_path}")
+    save_report(report_data, start_time)
 
     return 1 if failed else 0
 

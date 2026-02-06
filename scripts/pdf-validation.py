@@ -633,16 +633,25 @@ class PDFValidator:
                 for result in results:
                     if not result.is_valid:
                         cache_note = " (cached)" if result.from_cache else ""
-                        # HTTP errors (404, 500, etc.) are CRITICAL
-                        # Timeouts and network errors are just warnings
                         if result.is_http_error:
-                            self._add_error(
-                                None,
-                                "BROKEN_EXTERNAL_LINK",
-                                PDFValidationError.SEVERITY_CRITICAL,
-                                f"{result.error_message}: {result.url}{cache_note}",
-                            )
+                            # 403 is usually bot-blocking, not a broken link
+                            if result.status_code == 403:
+                                self._add_error(
+                                    None,
+                                    "URL_ACCESS_DENIED",
+                                    PDFValidationError.SEVERITY_WARNING,
+                                    f"{result.error_message}: {result.url}{cache_note}",
+                                )
+                            else:
+                                # 404, 500, etc. are genuinely broken
+                                self._add_error(
+                                    None,
+                                    "BROKEN_EXTERNAL_LINK",
+                                    PDFValidationError.SEVERITY_CRITICAL,
+                                    f"{result.error_message}: {result.url}{cache_note}",
+                                )
                         else:
+                            # Timeouts and network errors are warnings
                             self._add_error(
                                 None,
                                 "URL_UNREACHABLE",
