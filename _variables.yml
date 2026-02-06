@@ -70,198 +70,6 @@
   \ | ? Low confidence | 95% CI: [8 years, 18 years] | Dist: Triangular | Unit: years\
   \ | Click to view details, calculation & sources\">12 years (95% CI: 8 years-18\
   \ years)</a>"
-"bad_policy_cost_total_us": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_total_us\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"low\" title=\"Total annual US bad policy costs (Tier 1 + Tier\
-  \ 2 with overlap discount). Bottom-up empirical estimate based on specific, measurable\
-  \ policy failures. More defensible than theoretical decomposition because each component\
-  \ is verifiable. | Calculated from 3 inputs | ? Low confidence | Formula: (TIER1\
-  \ + TIER2) × OVERLAP_DISCOUNT | Unit: USD | Click to view details, calculation &\
-  \ sources\">$5.03T (95% CI: $3.44T-$7.69T)</a>"
-"bad_policy_cost_total_us_latex": "$$\n\\begin{gathered}\nC_{bad,total} \\\\\n= BadUS\
-  \ \\times (C_{tier1} + C_{tier2}) \\\\\n= 0.85 \\times (\\$3.92T + \\$2T) \\\\\n\
-  = \\$5.03T \\\\[0.5em]\n\\text{where } C_{tier1} \\\\\n= C_{tax} + C_{wars} + C_{drugs}\
-  \ + C_{tariffs} \\\\\n+ C_{ff,explicit} + C_{healthcare} + C_{housing} \\\\\n+ C_{ag}\
-  \ \\\\\n= \\$546B + \\$400B + \\$90B + \\$160B + \\$50B + \\$1.2T \\\\\n+ \\$1.4T\
-  \ + \\$75B \\\\\n= \\$3.92T \\\\[0.5em]\n\\text{where } C_{tier2} \\\\\n= C_{ff,external}\
-  \ + C_{licensing} + C_{migration} \\\\\n+ C_{defense} + C_{prison} + C_{infra} \\\
-  \\\n= \\$600B + \\$200B + \\$500B + \\$400B + \\$150B + \\$150B \\\\\n= \\$2T\n\\\
-  end{gathered}\n$$"
-"bad_policy_cost_total_us_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_total_us_pct_gdp\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"low\" title=\"Total US bad policy costs as percentage of GDP.\
-  \ Bottom-up empirical estimate for comparison with theoretical Political Dysfunction\
-  \ Tax. | Calculated from 2 inputs | ? Low confidence | Formula: BAD_POLICY_COST_TOTAL\
-  \ / US_GDP | Unit: percent | Click to view details, calculation & sources\">17.5%\
-  \ (95% CI: 11.9%-26.7%)</a>"
-"bad_policy_cost_total_us_pct_gdp_latex": "$$\n\\begin{gathered}\n\\tau_{bad,empirical}\
-  \ = \\frac{C_{bad,total}}{USGDP} = \\frac{\\$5.03T}{\\$28.8T} = 17.5\\% \\\\[0.5em]\n\
-  \\text{where } C_{bad,total} \\\\\n= BadUS \\times (C_{tier1} + C_{tier2}) \\\\\n\
-  = 0.85 \\times (\\$3.92T + \\$2T) \\\\\n= \\$5.03T \\\\[0.5em]\n\\text{where } C_{tier1}\
-  \ \\\\\n= C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\\\\n+ C_{ff,explicit} +\
-  \ C_{healthcare} + C_{housing} \\\\\n+ C_{ag} \\\\\n= \\$546B + \\$400B + \\$90B\
-  \ + \\$160B + \\$50B + \\$1.2T \\\\\n+ \\$1.4T + \\$75B \\\\\n= \\$3.92T \\\\[0.5em]\n\
-  \\text{where } C_{tier2} \\\\\n= C_{ff,external} + C_{licensing} + C_{migration}\
-  \ \\\\\n+ C_{defense} + C_{prison} + C_{infra} \\\\\n= \\$600B + \\$200B + \\$500B\
-  \ + \\$400B + \\$150B + \\$150B \\\\\n= \\$2T\n\\end{gathered}\n$$"
-"bad_policy_cost_us_agricultural_subsidies": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_agricultural_subsidies\"\
-  \ class=\"parameter-link\" data-source-ref=\"ewg-farm-subsidies\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Deadweight loss from US agricultural\
-  \ subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction,\
-  \ environmental damage, benefits concentrated in large farms (top 10% receive 78%\
-  \ of subsidies). Total welfare loss ~$75B. Textbook example of capture - very high\
-  \ economist consensus. | ✓ High confidence | 95% CI: [$50B, $120B] | Dist: Lognormal\
-  \ (SE: $25B) | Unit: USD | Click to view details, calculation & sources\">$75B (95%\
-  \ CI: $50B-$120B)</a>"
-"bad_policy_cost_us_agricultural_subsidies_cite": "@ewg-farm-subsidies"
-"bad_policy_cost_us_defense_above_deterrence": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_defense_above_deterrence\"\
-  \ class=\"parameter-link\" data-source-ref=\"posen2014\" data-source-type=\"external\"\
-  \ data-confidence=\"medium\" title=\"US defense spending above deterrence requirements.\
-  \ US spends ~$900B/yr on defense; many defense economists (Posen, Preble, etc.)\
-  \ argue $400-500B achieves equivalent deterrence given geography, nuclear arsenal,\
-  \ and alliance structure. Excess ~$400B/yr funds force projection, not homeland\
-  \ defense. | ~ Medium confidence | 95% CI: [$250B, $600B] | Dist: Lognormal (SE:\
-  \ $120B) | Unit: USD | Click to view details, calculation & sources\">$400B (95%\
-  \ CI: $250B-$600B)</a>"
-"bad_policy_cost_us_defense_above_deterrence_cite": "@posen2014"
-"bad_policy_cost_us_drug_war": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_drug_war\"\
-  \ class=\"parameter-link\" data-source-ref=\"drugpolicyalliance2021\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Annual cost of drug war: ~$41B federal\
-  \ drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost\
-  \ productivity. After 50+ years and $1T+ spent, drug use is higher than ever. |\
-  \ ~ Medium confidence | 95% CI: [$60B, $150B] | Dist: Lognormal (SE: $30B) | Unit:\
-  \ USD | Click to view details, calculation & sources\">$90B (95% CI: $60B-$150B)</a>"
-"bad_policy_cost_us_drug_war_cite": "@drugpolicyalliance2021"
-"bad_policy_cost_us_failed_wars": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_failed_wars\"\
-  \ class=\"parameter-link\" data-source-ref=\"costsofwar2023\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Amortized annual cost of post-9/11\
-  \ wars (Iraq, Afghanistan, Syria). Total cost $8 trillion including $2.9T direct\
-  \ spending, $2T+ veterans care through 2050, $6.5T interest on war debt. These wars\
-  \ failed to achieve stated objectives. | ~ Medium confidence | 95% CI: [$300B, $600B]\
-  \ | Dist: Lognormal (SE: $100B) | Unit: USD | Click to view details, calculation\
-  \ & sources\">$400B (95% CI: $300B-$600B)</a>"
-"bad_policy_cost_us_failed_wars_cite": "@costsofwar2023"
-"bad_policy_cost_us_fossil_fuel_explicit": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_fossil_fuel_explicit\"\
-  \ class=\"parameter-link\" data-source-ref=\"imf-fossilfuel2023\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"US explicit fossil fuel subsidies\
-  \ (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92%\
-  \ is implicit (externalities). Explicit subsidies are roughly $50B annually. | ~\
-  \ Medium confidence | 95% CI: [$30B, $80B] | Dist: Lognormal (SE: $15B) | Unit:\
-  \ USD | Click to view details, calculation & sources\">$50B (95% CI: $30B-$80B)</a>"
-"bad_policy_cost_us_fossil_fuel_explicit_cite": "@imf-fossilfuel2023"
-"bad_policy_cost_us_fossil_fuel_externalities": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_fossil_fuel_externalities\"\
-  \ class=\"parameter-link\" data-source-ref=\"imf-fossilfuel2023\" data-source-type=\"\
-  external\" data-confidence=\"low\" title=\"US fossil fuel implicit subsidies (unpriced\
-  \ externalities): air pollution deaths, climate damages, congestion, accidents.\
-  \ IMF estimates ~$600B for US. Highly contested - depends on social cost of carbon\
-  \ assumptions. | ? Low confidence | 95% CI: [$300B, $1T] | Dist: Lognormal (SE:\
-  \ $250B) | Unit: USD | Click to view details, calculation & sources\">$600B (95%\
-  \ CI: $300B-$1T)</a>"
-"bad_policy_cost_us_fossil_fuel_externalities_cite": "@imf-fossilfuel2023"
-"bad_policy_cost_us_healthcare_inefficiency": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_healthcare_inefficiency\"\
-  \ class=\"parameter-link\" data-source-ref=\"papanicolas2018\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"US healthcare spending inefficiency.\
-  \ US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better\
-  \ outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T\
-  \ in excess spending from administrative complexity, high prices, and poor care\
-  \ coordination. Very high economist consensus. | ✓ High confidence | 95% CI: [$1T,\
-  \ $1.50T] | Dist: Normal (SE: $150B) | Unit: USD | Click to view details, calculation\
-  \ & sources\">$1.20T (95% CI: $1T-$1.50T)</a>"
-"bad_policy_cost_us_healthcare_inefficiency_cite": "@papanicolas2018"
-"bad_policy_cost_us_housing_zoning": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_housing_zoning\"\
-  \ class=\"parameter-link\" data-source-ref=\"hsieh-moretti2019\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"GDP loss from housing/zoning restrictions.\
-  \ Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity\
-  \ cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing\
-  \ workers from moving to productive locations. Annual cost ~$1.4T. Very high economist\
-  \ consensus across political spectrum. | ✓ High confidence | 95% CI: [$1T, $2T]\
-  \ | Dist: Lognormal (SE: $300B) | Unit: USD | Click to view details, calculation\
-  \ & sources\">$1.40T (95% CI: $1T-$2T)</a>"
-"bad_policy_cost_us_housing_zoning_cite": "@hsieh-moretti2019"
-"bad_policy_cost_us_incarceration_excess": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_incarceration_excess\"\
-  \ class=\"parameter-link\" data-source-ref=\"vera-incarceration2024\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Excess costs from US over-incarceration.\
-  \ US incarceration rate is 5x OECD average. Direct costs ~$80B/yr, but alternative\
-  \ approaches (drug courts, rehabilitation, community supervision) cost less and\
-  \ reduce recidivism. Total excess ~$150B including lost productivity and family\
-  \ impacts. Growing economist consensus. | ~ Medium confidence | 95% CI: [$100B,\
-  \ $250B] | Dist: Lognormal (SE: $50B) | Unit: USD | Click to view details, calculation\
-  \ & sources\">$150B (95% CI: $100B-$250B)</a>"
-"bad_policy_cost_us_incarceration_excess_cite": "@vera-incarceration2024"
-"bad_policy_cost_us_infrastructure_disease": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_infrastructure_disease\"\
-  \ class=\"parameter-link\" data-source-ref=\"transit-costs-project\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"US infrastructure cost disease. US\
-  \ builds infrastructure at 2-5x the cost of comparable countries (subway costs,\
-  \ highway construction, transit projects). NYU Transit Costs Project and Brookings\
-  \ document systematic overruns. If US spends ~$300B/yr on infrastructure, ~50% is\
-  \ wasted vs best practices. | ~ Medium confidence | 95% CI: [$100B, $250B] | Dist:\
-  \ Lognormal (SE: $50B) | Unit: USD | Click to view details, calculation & sources\"\
-  >$150B (95% CI: $100B-$250B)</a>"
-"bad_policy_cost_us_infrastructure_disease_cite": "@transit-costs-project"
-"bad_policy_cost_us_migration_restrictions": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_migration_restrictions\"\
-  \ class=\"parameter-link\" data-source-ref=\"clemens2011\" data-source-type=\"external\"\
-  \ data-confidence=\"low\" title=\"US share of global welfare loss from migration\
-  \ restrictions. Clemens (2011) estimates 67-147% of GLOBAL GDP from full liberalization.\
-  \ US-attributable share is highly speculative - using conservative $500B estimate.\
-  \ | ? Low confidence | 95% CI: [$200B, $2T] | Dist: Lognormal (SE: $500B) | Unit:\
-  \ USD | Click to view details, calculation & sources\">$500B (95% CI: $200B-$2T)</a>"
-"bad_policy_cost_us_migration_restrictions_cite": "@clemens2011"
-"bad_policy_cost_us_occupational_licensing": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_occupational_licensing\"\
-  \ class=\"parameter-link\" data-source-ref=\"kleiner2013\" data-source-type=\"external\"\
-  \ data-confidence=\"medium\" title=\"Cost of occupational licensing restrictions.\
-  \ Kleiner estimates 2-3% of GDP in welfare loss. 29% of US workers now require licenses\
-  \ vs 5% in 1950s. Raises prices, restricts entry, with minimal quality improvement.\
-  \ | ~ Medium confidence | 95% CI: [$100B, $400B] | Dist: Lognormal (SE: $100B) |\
-  \ Unit: USD | Click to view details, calculation & sources\">$200B (95% CI: $100B-$400B)</a>"
-"bad_policy_cost_us_occupational_licensing_cite": "@kleiner2013"
-"bad_policy_cost_us_tariffs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_tariffs\"\
-  \ class=\"parameter-link\" data-source-ref=\"yalebudgetlab2025\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Annual GDP reduction from US tariffs\
-  \ and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent\
-  \ to $160B annually. Trade barriers reduce efficiency and raise consumer prices.\
-  \ | ~ Medium confidence | 95% CI: [$90B, $250B] | Dist: Normal (SE: $50B) | Unit:\
-  \ USD | Click to view details, calculation & sources\">$160B (95% CI: $90B-$250B)</a>"
-"bad_policy_cost_us_tariffs_cite": "@yalebudgetlab2025"
-"bad_policy_cost_us_tax_compliance": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_tax_compliance\"\
-  \ class=\"parameter-link\" data-source-ref=\"taxfoundation2024-compliance\" data-source-type=\"\
-  external\" data-confidence=\"high\" title=\"Annual cost of US tax code compliance:\
-  \ 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs.\
-  \ Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code\
-  \ or return-free filing. | ✓ High confidence | 95% CI: [$450B, $650B] | Dist: Normal\
-  \ (SE: $50B) | Unit: USD | Click to view details, calculation & sources\">$546B\
-  \ (95% CI: $450B-$650B)</a>"
-"bad_policy_cost_us_tax_compliance_cite": "@taxfoundation2024-compliance"
-"bad_policy_cost_us_tier1_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_tier1_total\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"medium\" title=\"Sum of Tier 1 (well-documented) bad policy\
-  \ costs: tax compliance + failed wars + drug war + tariffs + fossil fuel explicit\
-  \ + healthcare inefficiency + housing/zoning + agricultural subsidies. These have\
-  \ strong empirical backing and high economist consensus. | Calculated from 8 inputs\
-  \ | ~ Medium confidence | Formula: TAX + WARS + DRUGS + TARIFFS + FF_EXPLICIT +\
-  \ HEALTHCARE + HOUSING + AG | Unit: USD | Click to view details, calculation & sources\"\
-  >$3.92T (95% CI: $2.99T-$5.18T)</a>"
-"bad_policy_cost_us_tier1_total_latex": "$$\n\\begin{gathered}\nC_{tier1} \\\\\n=\
-  \ C_{tax} + C_{wars} + C_{drugs} + C_{tariffs} \\\\\n+ C_{ff,explicit} + C_{healthcare}\
-  \ + C_{housing} + C_{ag} \\\\\n= \\$546B + \\$400B + \\$90B + \\$160B + \\$50B +\
-  \ \\$1.2T + \\$1.4T \\\\\n+ \\$75B \\\\\n= \\$3.92T\n\\end{gathered}\n$$"
-"bad_policy_cost_us_tier2_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-bad_policy_cost_us_tier2_total\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"low\" title=\"Sum of Tier 2 (contested but defensible) bad policy\
-  \ costs: fossil fuel externalities + occupational licensing + migration restrictions\
-  \ + defense above deterrence + incarceration excess + infrastructure cost disease.\
-  \ Wider uncertainty due to counterfactual assumptions. | Calculated from 6 inputs\
-  \ | ? Low confidence | Formula: FF_EXT + LICENSING + MIGRATION + DEFENSE + PRISON\
-  \ + INFRA | Unit: USD | Click to view details, calculation & sources\">$2T (95%\
-  \ CI: $1.05T-$3.86T)</a>"
-"bad_policy_cost_us_tier2_total_latex": "$$\n\\begin{gathered}\nC_{tier2} \\\\\n=\
-  \ C_{ff,external} + C_{licensing} + C_{migration} \\\\\n+ C_{defense} + C_{prison}\
-  \ + C_{infra} \\\\\n= \\$600B + \\$200B + \\$500B + \\$400B + \\$150B + \\$150B\
-  \ \\\\\n= \\$2T\n\\end{gathered}\n$$"
-"bad_policy_us_overlap_discount": "<span class=\"parameter-definition\" title=\"Discount\
-  \ factor to account for overlap between bad policy cost categories. Fossil fuel\
-  \ externalities partially overlap with climate/health costs counted elsewhere. Migration\
-  \ restrictions partially captured in labor market inefficiencies. | Unit: ratio\
-  \ | Core definition\">0.85:1</span>"
 "baseline_lives_saved_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-baseline_lives_saved_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"who-global-health-estimates-2024\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"medium\"\
@@ -467,15 +275,6 @@
   \ | Dist: Normal | Unit: ratio | Click to view details, calculation & sources\"\
   >3.8:1 (95% CI: 3.75:1-3.85:1)</a>"
 "cpi_multiplier_1980_to_2024_cite": "@bls-cpi-inflation-calculator"
-"crony_tax_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-crony_tax_pct\"\
-  \ class=\"parameter-link\" data-source-ref=\"delrosal2011\" data-source-type=\"\
-  external\" data-confidence=\"medium\" title=\"Welfare loss from regulatory capture\
-  \ and crony rent-seeking as percentage of potential GDP. Based on Del Rosal (2011)\
-  \ survey of empirical estimates ranging 0.2% to 23.7% of GDP. Central estimate 10%\
-  \ is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%. | ~\
-  \ Medium confidence | 95% CI: [5%, 20%] | Dist: Lognormal (SE: 5%) | Unit: percent\
-  \ | Click to view details, calculation & sources\">10% (95% CI: 5%-20%)</a>"
-"crony_tax_pct_cite": "@delrosal2011"
 "current_active_trials": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-current_active_trials\"\
   \ class=\"parameter-link\" data-source-ref=\"clinicaltrials-gov-enrollment-data-2025\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Current active\
@@ -1856,6 +1655,13 @@
   \ \\\\\n= \\$15M + \\$10M + \\$8M + \\$5M + \\$2M \\\\\n= \\$40M \\\\[0.5em]\n\\\
   text{where } Funding_{treaty} \\\\\n= Spending_{mil} \\times Reduce_{treaty} \\\\\
   \n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n$$"
+"dot_value_of_statistical_life": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-dot_value_of_statistical_life\"\
+  \ class=\"parameter-link\" data-source-ref=\"dot-vsl-2024\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"DOT Value of Statistical Life (2024).\
+  \ Used by federal agencies to evaluate safety regulations and quantify the economic\
+  \ value of mortality risk reductions. | ✓ High confidence | Dist: Fixed | Unit:\
+  \ USD | Click to view details, calculation & sources\">$13.7M</a>"
+"dot_value_of_statistical_life_cite": "@dot-vsl-2024"
 "drugs_approved_since_1962": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-drugs_approved_since_1962\"\
   \ class=\"parameter-link\" data-source-ref=\"global-new-drug-approvals-50-annually\"\
   \ data-source-type=\"calculated\" data-confidence=\"medium\" title=\"Estimated total\
@@ -2491,6 +2297,14 @@
   \ $7T] | Dist: Lognormal | Unit: USD/year | Click to view details, calculation &\
   \ sources\">$5T (95% CI: $3.50T-$7T)</a>"
 "global_disease_productivity_loss_annual_cite": "@disease-economic-burden-109t"
+"global_gdp_2025": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_gdp_2025\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global nominal\
+  \ GDP (2025 estimate). From Political Dysfunction Tax paper citing StatisticsTimes/IMF\
+  \ World Economic Outlook. Used for calculating global opportunity costs as percentage\
+  \ of world economic output. Note: Latest IMF data shows $117T. | ✓ High confidence\
+  \ | Dist: Fixed | Unit: USD | Click to view details, calculation & sources\">$115T</a>"
+"global_gdp_2025_cite": "@political-dysfunction-tax-paper-2025"
 "global_government_clinical_trials_spending_annual": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-global_government_clinical_trials_spending_annual\"\
   \ class=\"parameter-link\" data-source-ref=\"global-government-clinical-trial-spending-estimate\"\
   \ data-source-type=\"external\" data-confidence=\"high\" title=\"Annual global government\
@@ -2795,6 +2609,14 @@
   \ vaccination programs | ✓ High confidence | Unit: ratio | Click to view details,\
   \ calculation & sources\">14:1</a>"
 "measles_vaccination_roi_cite": "@measles-vaccination-roi"
+"medical_qaly_threshold": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-medical_qaly_threshold\"\
+  \ class=\"parameter-link\" data-source-ref=\"qaly-threshold-history\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Medical cost-effectiveness QALY threshold.\
+  \ Standard threshold for evaluating whether health interventions are cost-effective.\
+  \ Interventions below $100K/QALY are generally considered cost-effective. | ✓ High\
+  \ confidence | Dist: Fixed | Unit: USD/QALY | Click to view details, calculation\
+  \ & sources\">$100K</a>"
+"medical_qaly_threshold_cite": "@qaly-threshold-history"
 "medical_research_pct_of_disease_burden": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-medical_research_pct_of_disease_burden\"\
   \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
   \ data-confidence=\"high\" title=\"Medical research spending as percentage of total\
@@ -3295,45 +3117,94 @@
   \ ✓ High confidence | Unit: ratio | Click to view details, calculation & sources\"\
   >39:1</a>"
 "polio_vaccination_roi_cite": "@polio-vaccination-roi"
-"political_dysfunction_tax_coordination_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_tax_coordination_pct\"\
-  \ class=\"parameter-link\" data-source-ref=\"olson1996\" data-source-type=\"external\"\
-  \ data-confidence=\"low\" title=\"Welfare loss from collective action failures.\
-  \ Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated\
-  \ interests. Olson's logic of collective action: rational ignorance + free-rider\
-  \ problem prevents reform. | ? Low confidence | 95% CI: [2%, 10%] | Dist: Lognormal\
-  \ (SE: 3%) | Unit: percent | Click to view details, calculation & sources\">5% (95%\
-  \ CI: 2%-10%)</a>"
-"political_dysfunction_tax_coordination_pct_cite": "@olson1996"
-"political_dysfunction_tax_info_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_tax_info_pct\"\
-  \ class=\"parameter-link\" data-source-ref=\"hayek1945\" data-source-type=\"external\"\
-  \ data-confidence=\"low\" title=\"Welfare loss from information aggregation failures\
-  \ - the Hayek knowledge problem. Central authorities lack the dispersed local knowledge\
-  \ that markets aggregate. Hayek (1945) argued this is a fundamental limit on central\
-  \ planning effectiveness. | ? Low confidence | 95% CI: [1%, 4%] | Dist: Lognormal\
-  \ (SE: 1%) | Unit: percent | Click to view details, calculation & sources\">2% (95%\
-  \ CI: 1%-4%)</a>"
-"political_dysfunction_tax_info_pct_cite": "@hayek1945"
-"political_dysfunction_tax_time_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_tax_time_pct\"\
-  \ class=\"parameter-link\" data-source-ref=\"kydland1977\" data-source-type=\"external\"\
-  \ data-confidence=\"low\" title=\"Welfare loss from political time-inconsistency\
-  \ (electoral short-termism). Politicians facing re-election underinvest in long-term\
-  \ public goods and infrastructure. Kydland-Prescott (1977) established the theoretical\
-  \ foundation for commitment vs discretion costs. | ? Low confidence | 95% CI: [1%,\
-  \ 6%] | Dist: Lognormal (SE: 2%) | Unit: percent | Click to view details, calculation\
-  \ & sources\">3% (95% CI: 1%-6%)</a>"
-"political_dysfunction_tax_time_pct_cite": "@kydland1977"
-"political_dysfunction_tax_total_pct": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_tax_total_pct\"\
-  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
-  \ data-confidence=\"low\" title=\"Total Political Dysfunction Tax: the welfare loss\
-  \ from governance failures as percentage of potential GDP. Sum of Crony Tax (capture),\
-  \ time-inconsistency, information costs, and coordination failures. Represents the\
-  \ 'tax' citizens implicitly pay for dysfunctional political systems. | Calculated\
-  \ from 4 inputs | ? Low confidence | Formula: CRONY_TAX + TIME + INFO + COORDINATION\
-  \ | Unit: percent | Click to view details, calculation & sources\">20% (95% CI:\
-  \ 9%-39.3%)</a>"
-"political_dysfunction_tax_total_pct_latex": "$$\n\\begin{gathered}\n\\tau_{dysfunction}\
-  \ \\\\\n= \\tau_{crony} + \\tau_{time} + \\tau_{info} + \\tau_{coord} \\\\\n= 10\\\
-  % + 3\\% + 2\\% + 5\\% \\\\\n= 20\\%\n\\end{gathered}\n$$"
+"political_dysfunction_global_efficiency_score": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_global_efficiency_score\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Global Governance\
+  \ Efficiency Score from Political Dysfunction Tax paper. E = Adjusted W_real / W_max,\
+  \ where W_real = GDP - waste, W_max = W_real + opportunity cost. Paper calculates\
+  \ 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). This means civilization\
+  \ operates at roughly half its technological potential. | Calculated from 4 inputs\
+  \ | ? Low confidence | Formula: (GDP - WASTE) / (GDP - WASTE + OPPORTUNITY) | Unit:\
+  \ percent | Click to view details, calculation & sources\">52% (95% CI: 36.1%-57.1%)</a>"
+"political_dysfunction_global_efficiency_score_latex": "$$\n\\begin{gathered}\nE \\\
+  \\\n= \\frac{W_{real}}{W_{max}} \\\\\n= \\frac{GDP - W_{waste}}{GDP - W_{waste}\
+  \ + O_{total}}\n\\end{gathered}\n$$"
+"political_dysfunction_global_fossil_fuel_subsidies": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_global_fossil_fuel_subsidies\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global explicit\
+  \ fossil fuel subsidies (governments undercharging for energy supply costs). IMF\
+  \ 2022 estimate. These subsidies actively encourage consumption of negative-externality\
+  \ goods, working against climate goals. Note: IMF implicit subsidies (externalities)\
+  \ are much larger (~$7T). | ✓ High confidence | 95% CI: [$1.10T, $1.50T] | Dist:\
+  \ Normal (SE: $100B) | Unit: USD | Click to view details, calculation & sources\"\
+  >$1.30T (95% CI: $1.10T-$1.50T)</a>"
+"political_dysfunction_global_fossil_fuel_subsidies_cite": "@political-dysfunction-tax-paper-2025"
+"political_dysfunction_global_health_opportunity_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_global_health_opportunity_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"low\" title=\"Annual opportunity\
+  \ cost of slow-motion regulatory environment for health innovation. Murphy-Topel\
+  \ (2006) valued cancer cure at $50T (inflation-adjusted ~$100T in 2025). Longevity\
+  \ dividend of 1 extra year = $38T globally. PCTs could accelerate cures by 10+ years;\
+  \ NPV of 10-year delay at 3% discount = ~$25T. Conservative estimate: $34T annually\
+  \ in lives lost and healthspan denied. | ? Low confidence | 95% CI: [$20T, $80T]\
+  \ | Dist: Lognormal (SE: $15T) | Unit: USD | Click to view details, calculation\
+  \ & sources\">$34T (95% CI: $20T-$80T)</a>"
+"political_dysfunction_global_health_opportunity_cost_cite": "@political-dysfunction-tax-paper-2025"
+"political_dysfunction_global_lead_opportunity_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_global_lead_opportunity_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Global cost of\
+  \ lead exposure: World Bank/Lancet estimate. 765 million IQ points lost annually,\
+  \ 5.5 million premature CVD deaths. Cost to eliminate lead from paint, spices, batteries\
+  \ is trivial compared to damage. This is an arbitrage opportunity of immense scale\
+  \ that governance has failed to execute. | ✓ High confidence | 95% CI: [$4T, $8T]\
+  \ | Dist: Normal (SE: $1T) | Unit: USD | Click to view details, calculation & sources\"\
+  >$6T (95% CI: $4T-$8T)</a>"
+"political_dysfunction_global_lead_opportunity_cost_cite": "@political-dysfunction-tax-paper-2025"
+"political_dysfunction_global_migration_opportunity_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_global_migration_opportunity_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"low\" title=\"Unrealized output\
+  \ from migration restrictions. Clemens (2011) calculated eliminating labor mobility\
+  \ barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound\
+  \ = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions,\
+  \ exceeding all foreign aid ever given. This is the largest single distortion in\
+  \ the global economy. | ? Low confidence | 95% CI: [$57T, $170T] | Dist: Lognormal\
+  \ (SE: $30T) | Unit: USD | Click to view details, calculation & sources\">$57T (95%\
+  \ CI: $57T-$170T)</a>"
+"political_dysfunction_global_migration_opportunity_cost_cite": "@political-dysfunction-tax-paper-2025"
+"political_dysfunction_global_opportunity_cost_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_global_opportunity_cost_pct_gdp\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Global opportunity\
+  \ cost as percentage of global GDP. $101T / $115T = ~88% of current GDP in unrealized\
+  \ potential. This represents the 'buried multipliers' of the global economy. | Calculated\
+  \ from 2 inputs | ? Low confidence | Formula: POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL\
+  \ / GLOBAL_GDP_2025 | Unit: percent | Click to view details, calculation & sources\"\
+  >87.8% (95% CI: 72.5%-166%)</a>"
+"political_dysfunction_global_opportunity_cost_pct_gdp_latex": "$$\n\\begin{gathered}\n\
+  O_{\\%GDP} = \\frac{O_{total}}{GDP_{global}} = \\frac{\\$101T}{\\$115T} = 87.8\\\
+  % \\\\[0.5em]\n\\text{where } O_{total} \\\\\n= O_{health} + O_{science} + O_{lead}\
+  \ + O_{migration} \\\\\n= \\$34T + \\$4T + \\$6T + \\$57T \\\\\n= \\$101T\n\\end{gathered}\n\
+  $$"
+"political_dysfunction_global_opportunity_cost_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_global_opportunity_cost_total\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"calculated\" data-confidence=\"low\" title=\"Total global opportunity\
+  \ cost from governance failures: health innovation delays ($34T), underfunded science\
+  \ ($4T), lead poisoning ($6T), migration restrictions ($57T). Sum: $101T annually\
+  \ in unrealized potential. | Calculated from 4 inputs | ? Low confidence | Formula:\
+  \ HEALTH + SCIENCE + LEAD + MIGRATION | Unit: USD | Click to view details, calculation\
+  \ & sources\">$101T (95% CI: $83.3T-$191T)</a>"
+"political_dysfunction_global_opportunity_cost_total_latex": "$$\n\\begin{gathered}\n\
+  O_{total} \\\\\n= O_{health} + O_{science} + O_{lead} + O_{migration} \\\\\n= \\\
+  $34T + \\$4T + \\$6T + \\$57T \\\\\n= \\$101T\n\\end{gathered}\n$$"
+"political_dysfunction_global_science_opportunity_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_dysfunction_global_science_opportunity_cost\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"low\" title=\"Annual opportunity\
+  \ cost from underfunding high-ROI science (fusion, AI safety). Human Genome Project:\
+  \ $3.8B cost, $796B-1T impact (141:1 ROI). Fusion DEMO plant: $5-10B could solve\
+  \ energy/climate permanently. AI safety: <5% of capabilities spending despite existential\
+  \ stakes. Reallocating $200B from military waste at 20x multiplier = $4T foregone\
+  \ growth. | ? Low confidence | 95% CI: [$2T, $10T] | Dist: Lognormal (SE: $2T) |\
+  \ Unit: USD | Click to view details, calculation & sources\">$4T (95% CI: $2T-$10T)</a>"
+"political_dysfunction_global_science_opportunity_cost_cite": "@political-dysfunction-tax-paper-2025"
 "political_success_probability": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-political_success_probability\"\
   \ class=\"parameter-link\" data-source-ref=\"icbl-ottawa-treaty\" data-source-type=\"\
   external\" data-confidence=\"low\" title=\"Estimated probability of treaty ratification\
@@ -4451,6 +4322,13 @@
   \ (US) - 35% (CH). | ✓ High confidence | Dist: Fixed | Formula: US_GOVT_SPENDING_PCT_GDP\
   \ - SWITZERLAND_GOVT_SPENDING_PCT_GDP | Unit: percent | Click to view details, calculation\
   \ & sources\">300%</a>"
+"us_federal_spending_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_federal_spending_2024\"\
+  \ class=\"parameter-link\" data-source-ref=\"cbo-long-term-budget-2024\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US federal government spending in FY2024.\
+  \ CBO reports outlays of $6.8T (23.9% of GDP). Includes mandatory spending, discretionary\
+  \ spending, and net interest ($888B). | ✓ High confidence | Dist: Fixed | Unit:\
+  \ USD | Click to view details, calculation & sources\">$6.80T</a>"
+"us_federal_spending_2024_cite": "@cbo-long-term-budget-2024"
 "us_gdp_2024": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gdp_2024\"\
   \ class=\"parameter-link\" data-source-ref=\"worldbank-gdp\" data-source-type=\"\
   external\" data-confidence=\"high\" title=\"US GDP in 2024 dollars for calculating\
@@ -4464,6 +4342,239 @@
   \ for similar spending. | ✓ High confidence | Dist: Fixed | Unit: percent | Click\
   \ to view details, calculation & sources\">3800%</a>"
 "us_govt_spending_pct_gdp_cite": "@oecd-govt-spending"
+"us_gov_efficiency_rating": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_efficiency_rating\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"US federal spending efficiency rating. Complement\
+  \ of waste percentage. Measures what fraction of fiscal input converts to useful\
+  \ output. Compare to OECD benchmark of 75-85%. | Calculated from 2 inputs | ~ Medium\
+  \ confidence | Formula: 1 - (US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING) | Unit: percent\
+  \ | Click to view details, calculation & sources\">38.8% (95% CI: 18.7%-54.3%)</a>"
+"us_gov_efficiency_rating_latex": "$$\n\\begin{gathered}\nE_{US} = 1 - \\frac{W_{total,US}}{Spending_{federal}}\
+  \ = 1 - \\frac{\\$4.16T}{\\$6.8T} = 38.8\\% \\\\[0.5em]\n\\text{where } W_{total,US}\
+  \ = W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where\
+  \ } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory}\
+  \ + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n\
+  + W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n\
+  + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n\
+  $$"
+"us_gov_waste_agricultural_subsidies": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_agricultural_subsidies\"\
+  \ class=\"parameter-link\" data-source-ref=\"ewg-farm-subsidies\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Deadweight loss from US agricultural\
+  \ subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction,\
+  \ environmental damage, benefits concentrated in large farms (top 10% receive 78%\
+  \ of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high\
+  \ economist consensus. | ✓ High confidence | 95% CI: [$50B, $120B] | Dist: Lognormal\
+  \ (SE: $25B) | Unit: USD | Click to view details, calculation & sources\">$75B (95%\
+  \ CI: $50B-$120B)</a>"
+"us_gov_waste_agricultural_subsidies_cite": "@ewg-farm-subsidies"
+"us_gov_waste_corporate_welfare": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_corporate_welfare\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"high\" title=\"Direct US federal\
+  \ corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits,\
+  \ semiconductor aid, aviation support. Agricultural subsidies are highly regressive\
+  \ (top 10% receive 63%). Cato Institute forensic tally. | ✓ High confidence | 95%\
+  \ CI: [$150B, $220B] | Dist: Normal (SE: $20B) | Unit: USD | Click to view details,\
+  \ calculation & sources\">$181B (95% CI: $150B-$220B)</a>"
+"us_gov_waste_corporate_welfare_cite": "@political-dysfunction-tax-paper-2025"
+"us_gov_waste_drug_war": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_drug_war\"\
+  \ class=\"parameter-link\" data-source-ref=\"drugpolicyalliance2021\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Annual cost of drug war: ~$41B federal\
+  \ drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost\
+  \ productivity. After 50+ years and $1T+ spent, drug use is higher than ever. |\
+  \ ~ Medium confidence | 95% CI: [$60B, $150B] | Dist: Lognormal (SE: $30B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$90B (95% CI: $60B-$150B)</a>"
+"us_gov_waste_drug_war_cite": "@drugpolicyalliance2021"
+"us_gov_waste_fossil_fuel_subsidies": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_fossil_fuel_subsidies\"\
+  \ class=\"parameter-link\" data-source-ref=\"imf-fossilfuel2023\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"US explicit fossil fuel subsidies\
+  \ (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92%\
+  \ is implicit (externalities). This figure includes only explicit subsidies (~$50B)\
+  \ for defensibility. | ~ Medium confidence | 95% CI: [$30B, $80B] | Dist: Lognormal\
+  \ (SE: $15B) | Unit: USD | Click to view details, calculation & sources\">$50B (95%\
+  \ CI: $30B-$80B)</a>"
+"us_gov_waste_fossil_fuel_subsidies_cite": "@imf-fossilfuel2023"
+"us_gov_waste_healthcare_inefficiency": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_healthcare_inefficiency\"\
+  \ class=\"parameter-link\" data-source-ref=\"papanicolas2018\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"US healthcare spending inefficiency.\
+  \ US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better\
+  \ outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T\
+  \ in excess spending from administrative complexity, high prices, and poor care\
+  \ coordination. Very high economist consensus. | ✓ High confidence | 95% CI: [$1T,\
+  \ $1.50T] | Dist: Normal (SE: $150B) | Unit: USD | Click to view details, calculation\
+  \ & sources\">$1.20T (95% CI: $1T-$1.50T)</a>"
+"us_gov_waste_healthcare_inefficiency_cite": "@papanicolas2018"
+"us_gov_waste_housing_zoning": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_housing_zoning\"\
+  \ class=\"parameter-link\" data-source-ref=\"hsieh-moretti2019\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"GDP loss from housing/zoning restrictions.\
+  \ Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity\
+  \ cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing\
+  \ workers from moving to productive locations. Annual cost ~$1.4T. Very high economist\
+  \ consensus across political spectrum. | ✓ High confidence | 95% CI: [$1T, $2T]\
+  \ | Dist: Lognormal (SE: $300B) | Unit: USD | Click to view details, calculation\
+  \ & sources\">$1.40T (95% CI: $1T-$2T)</a>"
+"us_gov_waste_housing_zoning_cite": "@hsieh-moretti2019"
+"us_gov_waste_military_overspend": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_military_overspend\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"medium\" title=\"US military spending\
+  \ above 'Strict Deterrence' baseline. Current budget ~$900B supports global power\
+  \ projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B,\
+  \ National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force\
+  \ $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. | ~ Medium confidence\
+  \ | 95% CI: [$500B, $750B] | Dist: Normal (SE: $75B) | Unit: USD | Click to view\
+  \ details, calculation & sources\">$615B (95% CI: $500B-$750B)</a>"
+"us_gov_waste_military_overspend_cite": "@political-dysfunction-tax-paper-2025"
+"us_gov_waste_overlap_discount": "<span class=\"parameter-definition\" title=\"Discount\
+  \ factor to account for overlap between US government waste categories. Healthcare\
+  \ inefficiency partially overlaps with regulatory burden. Housing costs affect healthcare\
+  \ spending. Conservative 15% overlap assumed. | Unit: ratio | Core definition\"\
+  >0.85:1</span>"
+"us_gov_waste_pct_fed_spending": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_pct_fed_spending\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"US government waste as percentage of federal\
+  \ spending. ~$4.15T waste / $6.75T federal spending = ~61%. Note: some waste categories\
+  \ (housing, healthcare) are not purely federal costs. | Calculated from 2 inputs\
+  \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING | Unit:\
+  \ percent | Click to view details, calculation & sources\">61.2% (95% CI: 45.7%-81.3%)</a>"
+"us_gov_waste_pct_fed_spending_latex": "$$\n\\begin{gathered}\nW_{US,\\%fed} = \\\
+  frac{W_{total,US}}{Spending_{federal}} = \\frac{\\$4.16T}{\\$6.8T} = 61.2\\% \\\\\
+  [0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 0.85\
+  \ = \\$4.16T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing}\
+  \ + W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs}\
+  \ + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\\
+  $615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\
+  \\\n= \\$4.9T\n\\end{gathered}\n$$"
+"us_gov_waste_pct_gdp": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_pct_gdp\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"US government waste as percentage of GDP. ~$4.15T\
+  \ waste / $28.78T GDP = ~14%. This represents the 'dysfunction tax' that American\
+  \ citizens effectively pay through inefficient governance. | Calculated from 2 inputs\
+  \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / US_GDP | Unit: percent |\
+  \ Click to view details, calculation & sources\">14.5% (95% CI: 10.8%-19.2%)</a>"
+"us_gov_waste_pct_gdp_latex": "$$\n\\begin{gathered}\nW_{US,\\%GDP} = \\frac{W_{total,US}}{USGDP}\
+  \ = \\frac{\\$4.16T}{\\$28.8T} = 14.5\\% \\\\[0.5em]\n\\text{where } W_{total,US}\
+  \ = W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where\
+  \ } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory}\
+  \ + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n\
+  + W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n\
+  + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n\
+  $$"
+"us_gov_waste_qaly_equivalents": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_qaly_equivalents\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"US government waste expressed as QALY equivalents.\
+  \ This is an economic equivalent, NOT epidemiological health outcomes. Dividing\
+  \ by QALY threshold yields a measure of foregone welfare. | Calculated from 2 inputs\
+  \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / QALY_THRESHOLD | Unit: QALYs\
+  \ | Click to view details, calculation & sources\">41.6M QALYs (95% CI: 31.1M QALYs-55.3M\
+  \ QALYs)</a>"
+"us_gov_waste_qaly_equivalents_latex": "$$\n\\begin{gathered}\nW_{US,QALY} = \\frac{W_{total,US}}{QALY_{threshold}}\
+  \ = \\frac{\\$4.16T}{\\$100K} = 41.6M \\\\[0.5em]\n\\text{where } W_{total,US} =\
+  \ W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where\
+  \ } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory}\
+  \ + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n\
+  + W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n\
+  + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n\
+  $$"
+"us_gov_waste_raw_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_raw_total\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Raw sum of US government waste components before\
+  \ overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory\
+  \ ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B)\
+  \ + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw. | Calculated from 10 inputs\
+  \ | ~ Medium confidence | Formula: SUM(all 10 components) | Unit: USD | Click to\
+  \ view details, calculation & sources\">$4.90T (95% CI: $3.66T-$6.50T)</a>"
+"us_gov_waste_raw_total_latex": "$$\n\\begin{gathered}\nW_{raw,US} \\\\\n= W_{health}\
+  \ + W_{housing} + W_{military} + W_{regulatory} \\\\\n+ W_{tax} + W_{corporate}\
+  \ + W_{tariffs} + W_{drugs} \\\\\n+ W_{fossil} + W_{agriculture} \\\\\n= \\$1.2T\
+  \ + \\$1.4T + \\$615B + \\$580B + \\$546B + \\$181B + \\$160B \\\\\n+ \\$90B + \\\
+  $50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n$$"
+"us_gov_waste_recoverable": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_recoverable\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"low\" title=\"Recoverable capital if US improved to OECD median\
+  \ efficiency. Current US efficiency ~38-48%; OECD median ~75-85%. Closing to ~80%\
+  \ would recover approximately half the gap. | Calculated from 1 input | ? Low confidence\
+  \ | Formula: US_GOV_WASTE_TOTAL x 0.50 | Unit: USD | Click to view details, calculation\
+  \ & sources\">$2.08T (95% CI: $1.55T-$2.76T)</a>"
+"us_gov_waste_recoverable_latex": "$$\n\\begin{gathered}\nW_{US,recoverable} \\\\\n\
+  = W_{total,US} \\times 0.5 \\\\\n= \\$4.16T \\times 0.5 \\\\\n= \\$2.08T \\\\[0.5em]\n\
+  \\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\\
+  $4.16T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing} +\
+  \ W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs}\
+  \ + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\\
+  $615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\
+  \\\n= \\$4.9T\n\\end{gathered}\n$$"
+"us_gov_waste_regulatory_red_tape": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_regulatory_red_tape\"\
+  \ class=\"parameter-link\" data-source-ref=\"political-dysfunction-tax-paper-2025\"\
+  \ data-source-type=\"external\" data-confidence=\"medium\" title=\"Deadweight loss\
+  \ from US regulatory red tape (procedural friction without safety benefits). Competitive\
+  \ Enterprise Institute estimates total regulatory burden at $2.15T; European studies\
+  \ find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B.\
+  \ | ~ Medium confidence | 95% CI: [$290B, $1T] | Dist: Lognormal (SE: $200B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$580B (95% CI: $290B-$1T)</a>"
+"us_gov_waste_regulatory_red_tape_cite": "@political-dysfunction-tax-paper-2025"
+"us_gov_waste_tariffs": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_tariffs\"\
+  \ class=\"parameter-link\" data-source-ref=\"yalebudgetlab2025\" data-source-type=\"\
+  external\" data-confidence=\"medium\" title=\"Annual GDP reduction from US tariffs\
+  \ and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent\
+  \ to $160B annually. Trade barriers reduce efficiency and raise consumer prices.\
+  \ | ~ Medium confidence | 95% CI: [$90B, $250B] | Dist: Normal (SE: $50B) | Unit:\
+  \ USD | Click to view details, calculation & sources\">$160B (95% CI: $90B-$250B)</a>"
+"us_gov_waste_tariffs_cite": "@yalebudgetlab2025"
+"us_gov_waste_tax_compliance": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_tax_compliance\"\
+  \ class=\"parameter-link\" data-source-ref=\"taxfoundation2024-compliance\" data-source-type=\"\
+  external\" data-confidence=\"high\" title=\"Annual cost of US tax code compliance:\
+  \ 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs.\
+  \ Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code\
+  \ or return-free filing. | ✓ High confidence | 95% CI: [$450B, $650B] | Dist: Normal\
+  \ (SE: $50B) | Unit: USD | Click to view details, calculation & sources\">$546B\
+  \ (95% CI: $450B-$650B)</a>"
+"us_gov_waste_tax_compliance_cite": "@taxfoundation2024-compliance"
+"us_gov_waste_total": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_total\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"Total annual US government waste with 15% overlap\
+  \ discount. Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B),\
+  \ regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war\
+  \ ($90B), fossil fuel ($50B), agriculture ($75B). Excludes speculative items (migration\
+  \ restrictions, fossil fuel externalities) for defensibility. ~$4.15T annually.\
+  \ | Calculated from 2 inputs | ~ Medium confidence | Formula: RAW_TOTAL x 0.85 |\
+  \ Unit: USD | Click to view details, calculation & sources\">$4.16T (95% CI: $3.11T-$5.53T)</a>"
+"us_gov_waste_total_latex": "$$\n\\begin{gathered}\nW_{total,US} = W_{raw,US} \\times\
+  \ US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\
+  \\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory} + W_{tax} +\
+  \ W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture}\
+  \ \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B\
+  \ + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n$$"
+"us_gov_waste_vsl_equivalents": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_vsl_equivalents\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"US government waste expressed as VSL equivalents.\
+  \ This is an economic equivalent, NOT literal deaths. Dividing the efficiency gap\
+  \ by VSL yields a measure of foregone welfare. | Calculated from 2 inputs | ~ Medium\
+  \ confidence | Formula: US_GOV_WASTE_TOTAL / DOT_VSL | Unit: people | Click to view\
+  \ details, calculation & sources\">304k people (95% CI: 227k people-403k people)</a>"
+"us_gov_waste_vsl_equivalents_latex": "$$\n\\begin{gathered}\nW_{US,VSL} = \\frac{W_{total,US}}{VSL_{DOT}}\
+  \ = \\frac{\\$4.16T}{\\$13.7M} = 304{,}000 \\\\[0.5em]\n\\text{where } W_{total,US}\
+  \ = W_{raw,US} \\times US = \\$4.9T \\times 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where\
+  \ } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory}\
+  \ + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n\
+  + W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n\
+  + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}\n\
+  $$"
+"us_gov_waste_vs_treaty_multiplier": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_gov_waste_vs_treaty_multiplier\"\
+  \ class=\"parameter-link\" data-source-ref=\"\" data-source-type=\"calculated\"\
+  \ data-confidence=\"medium\" title=\"How many times the US government efficiency\
+  \ gap could fund the 1% Treaty. The efficiency gap represents capital that could\
+  \ fund transformative health research many times over. | Calculated from 2 inputs\
+  \ | ~ Medium confidence | Formula: US_GOV_WASTE_TOTAL / TREATY_ANNUAL_FUNDING |\
+  \ Unit: ratio | Click to view details, calculation & sources\">153:1 (95% CI: 114:1-203:1)</a>"
+"us_gov_waste_vs_treaty_multiplier_latex": "$$\n\\begin{gathered}\nk_{waste:treaty}\
+  \ = \\frac{W_{total,US}}{Funding_{treaty}} = \\frac{\\$4.16T}{\\$27.2B} = 153 \\\
+  \\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times\
+  \ 0.85 = \\$4.16T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing}\
+  \ + W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs}\
+  \ + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\\
+  $615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\
+  \\\n= \\$4.9T \\\\[0.5em]\n\\text{where } Funding_{treaty} \\\\\n= Spending_{mil}\
+  \ \\times Reduce_{treaty} \\\\\n= \\$2.72T \\times 1\\% \\\\\n= \\$27.2B\n\\end{gathered}\n\
+  $$"
 "us_heart_disease_annual_cost": "<a href=\"/knowledge/appendix/parameters-and-calculations#sec-us_heart_disease_annual_cost\"\
   \ class=\"parameter-link\" data-source-ref=\"disease-cost-heart-disease-2100b\"\
   \ data-source-type=\"external\" data-peer-reviewed=\"true\" data-confidence=\"high\"\
@@ -4689,6 +4800,6 @@
 "workforce_with_productivity_loss_cite": "@chronic-illness-workforce-productivity-loss"
 "_us_base_political_spending": "<span class=\"parameter-link\" title=\"Parameter:\
   \ _US_BASE_POLITICAL_SPENDING\">28.8B</span>"
-"total_parameter_count": "450"
-"total_latex_equation_count": "169"
-"total_citation_count": "183"
+"total_parameter_count": "458"
+"total_latex_equation_count": "176"
+"total_citation_count": "184"

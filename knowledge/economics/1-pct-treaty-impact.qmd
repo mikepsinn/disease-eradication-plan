@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: Harnessing Greed to Eradicate Disease'
-description: "The 1% Treaty: A policy framework using Incentive Alignment Bonds to scale research {{< var dfda_trial_capacity_multiplier >}} via pragmatic trials. Prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and achieve a record {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} cost per year of healthy life (DALY)."
+description: "{{< var diseases_without_effective_treatment >}} diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending scales capacity {{< var dfda_trial_capacity_multiplier >}}, cutting the timeline to ~{{< var dfda_queue_clearance_years >}} and preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} deaths. At {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable."
 abstract: |
   {{< var diseases_without_effective_treatment >}} have 0 FDA-approved treatments. At current trial
   capacity ({{< var new_disease_first_treatments_per_year >}}), exploring the therapeutic search

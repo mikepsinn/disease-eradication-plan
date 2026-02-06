@@ -4011,134 +4011,38 @@ POLITICAL_SUCCESS_PROBABILITY = Parameter(
 # because it depends on that parameter which is calculated from other treaty parameters.
 
 # ---
-# POLITICAL DYSFUNCTION TAX
+# POLITICAL DYSFUNCTION TAX: EMPIRICAL FIGURES FROM PAPER
 # ---
-# Source: knowledge/appendix/optimocracy-paper.qmd
-# The "Political Dysfunction Tax" measures total welfare loss from governance failures.
-# The "Crony Tax" (regulatory capture) is the largest component.
+# Source: knowledge/appendix/political-dysfunction-tax.qmd
+# These are empirically-sourced figures from "The Political Dysfunction Tax: A Forensic Audit
+# of Global Governance Efficiency" paper. Unlike the theoretical decomposition above,
+# these are specific, citable waste and opportunity cost figures.
 #
-# Components:
-#   τ_political_dysfunction = τ_crony + τ_time + τ_information + τ_coordination
-#
-# Key academic sources:
-# - Del Rosal (2011): Survey finds rent-seeking costs range 0.2% to 23.7% of GDP
-# - Laband & Sophocleus (1988): First empirical estimate - 45% of US income (high estimate)
-# - Krueger (1974): 7-15% of GDP in India/Turkey from trade restrictions
-# - Tullock (1967): Foundational rent-seeking theory
-
-# Component 1: CRONY TAX (Regulatory Capture / Rent-Seeking)
-# The welfare loss from special interests capturing policy for their benefit.
-# Central estimate 10% based on midpoint of Del Rosal (2011) survey range (0.2%-23.7%)
-CRONY_TAX_PCT = Parameter(
-    0.10,  # 10% of GDP - midpoint of empirical estimates
-    source_ref="delrosal2011",
-    source_type="external",
-    confidence="medium",
-    description="Welfare loss from regulatory capture and crony rent-seeking as percentage of potential GDP. "
-                "Based on Del Rosal (2011) survey of empirical estimates ranging 0.2% to 23.7% of GDP. "
-                "Central estimate 10% is conservative midpoint; Laband & Sophocleus (1988) estimated up to 45%.",
-    display_name="Crony Tax (Capture)",
-    unit="percent",
-    distribution=DistributionType.LOGNORMAL,  # Right-skewed - some estimates much higher
-    confidence_interval=(0.05, 0.20),  # 5% to 20% - within Del Rosal survey range
-    std_error=0.05,  # Wide uncertainty given range of estimates
-    keywords=["crony", "capture", "rent-seeking", "dysfunction", "welfare loss", "GDP", "corruption"],
-    latex_symbol=r"\tau_{crony}",
-)
-
-# Component 2: TIME-INCONSISTENCY TAX (Electoral Short-Termism)
-# Welfare loss from politicians' short time horizons due to electoral cycles.
-# Politicians underinvest in long-term goods and overweight immediate benefits.
-# Kydland-Prescott (1977) established the theoretical foundation.
-POLITICAL_DYSFUNCTION_TAX_TIME_PCT = Parameter(
-    0.03,  # 3% of GDP - estimated from time-inconsistency literature
-    source_ref="kydland1977",
-    source_type="external",
-    confidence="low",
-    description="Welfare loss from political time-inconsistency (electoral short-termism). "
-                "Politicians facing re-election underinvest in long-term public goods and infrastructure. "
-                "Kydland-Prescott (1977) established the theoretical foundation for commitment vs discretion costs.",
-    display_name="Time-Inconsistency Tax",
-    unit="percent",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(0.01, 0.06),  # 1% to 6%
-    std_error=0.02,
-    keywords=["time-inconsistency", "electoral", "short-term", "commitment", "kydland", "prescott"],
-    latex_symbol=r"\tau_{time}",
-)
-
-# Component 3: INFORMATION TAX (Hayek Knowledge Problem)
-# Welfare loss from central planners lacking dispersed local knowledge.
-# Hayek (1945) argued markets aggregate information that no central authority can possess.
-POLITICAL_DYSFUNCTION_TAX_INFO_PCT = Parameter(
-    0.02,  # 2% of GDP - knowledge aggregation inefficiency
-    source_ref="hayek1945",
-    source_type="external",
-    confidence="low",
-    description="Welfare loss from information aggregation failures - the Hayek knowledge problem. "
-                "Central authorities lack the dispersed local knowledge that markets aggregate. "
-                "Hayek (1945) argued this is a fundamental limit on central planning effectiveness.",
-    display_name="Information Tax (Hayek)",
-    unit="percent",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(0.01, 0.04),  # 1% to 4%
-    std_error=0.01,
-    keywords=["information", "knowledge", "hayek", "aggregation", "local knowledge", "planning"],
-    latex_symbol=r"\tau_{info}",
-)
-
-# Component 4: COORDINATION TAX (Collective Action Failures)
-# Welfare loss from diffuse beneficiaries being unable to organize against concentrated interests.
-# Olson (1965) logic of collective action - rational ignorance + free-rider problem.
-POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT = Parameter(
-    0.05,  # 5% of GDP - collective action failures
-    source_ref="olson1996",  # Using existing Olson reference
-    source_type="external",
-    confidence="low",
-    description="Welfare loss from collective action failures. "
-                "Diffuse beneficiaries (consumers, taxpayers) cannot organize against concentrated interests. "
-                "Olson's logic of collective action: rational ignorance + free-rider problem prevents reform.",
-    display_name="Coordination Tax (Olson)",
-    unit="percent",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(0.02, 0.10),  # 2% to 10%
-    std_error=0.03,
-    keywords=["coordination", "collective action", "olson", "free rider", "rational ignorance", "diffuse"],
-    latex_symbol=r"\tau_{coord}",
-)
-
-# TOTAL: POLITICAL DYSFUNCTION TAX
-# Sum of all components - this is the headline figure
-POLITICAL_DYSFUNCTION_TAX_TOTAL_PCT = Parameter(
-    CRONY_TAX_PCT + POLITICAL_DYSFUNCTION_TAX_TIME_PCT + POLITICAL_DYSFUNCTION_TAX_INFO_PCT + POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT,
-    source_type="calculated",
-    confidence="low",
-    description="Total Political Dysfunction Tax: the welfare loss from governance failures as percentage of potential GDP. "
-                "Sum of Crony Tax (capture), time-inconsistency, information costs, and coordination failures. "
-                "Represents the 'tax' citizens implicitly pay for dysfunctional political systems.",
-    display_name="Political Dysfunction Tax (Total)",
-    unit="percent",
-    formula="CRONY_TAX + TIME + INFO + COORDINATION",
-    inputs=["CRONY_TAX_PCT", "POLITICAL_DYSFUNCTION_TAX_TIME_PCT", "POLITICAL_DYSFUNCTION_TAX_INFO_PCT", "POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT"],
-    compute=lambda ctx: ctx["CRONY_TAX_PCT"] + ctx["POLITICAL_DYSFUNCTION_TAX_TIME_PCT"] + ctx["POLITICAL_DYSFUNCTION_TAX_INFO_PCT"] + ctx["POLITICAL_DYSFUNCTION_TAX_COORDINATION_PCT"],
-    keywords=["dysfunction", "total", "welfare loss", "GDP", "governance", "political", "crony", "capture"],
-    latex_symbol=r"\tau_{dysfunction}",
-)
-
-# ---
-# BAD POLICY COSTS: BOTTOM-UP EMPIRICAL ESTIMATES
-# ---
-# Source: knowledge/appendix/optimocracy-paper.qmd
-# Rather than theoretical decomposition, this section calculates dysfunction costs
-# bottom-up from specific, measurable policy failures with peer-reviewed estimates.
-# This is more defensible to economists because each line item can be verified.
+# IMPORTANT: Figures are scoped by geography (US_ or GLOBAL_) to enable proper
+# percentage calculations. US waste should be divided by US GDP, not global GDP.
 #
 # Structure:
-#   Tier 1: Well-documented direct costs (strong empirical backing)
-#   Tier 2: Externalities and opportunity costs (defensible but contested)
-#   Total: Sum with overlap discount (avoid double-counting)
+#   Part 1: Waste Ledger (burned capital) - mostly US-specific
+#   Part 2: Opportunity Ledger (unrealized potential) - global
+#   Derived: Percentages and totals with correct GDP bases
 
-# US GDP for percentage calculations
+# Global GDP (2025) - needed for global opportunity cost calculations
+GLOBAL_GDP_2025 = Parameter(
+    115_000_000_000_000,  # $115 trillion (2025 estimate from Political Dysfunction Tax paper)
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="external",
+    confidence="high",
+    distribution="fixed",  # Official aggregate estimate
+    description="Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing "
+                "StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs "
+                "as percentage of world economic output. Note: Latest IMF data shows $117T.",
+    display_name="Global GDP (2025)",
+    unit="USD",
+    keywords=["GDP", "global", "world", "economy", "2025"],
+    latex_symbol=r"GDP_{global}",
+)
+
+# US GDP (2024) - needed for US waste percentage calculations
 US_GDP_2024 = Parameter(
     28_780_000_000_000,  # $28.78 trillion (2024 estimate)
     source_ref="worldbank-gdp",
@@ -4151,96 +4055,193 @@ US_GDP_2024 = Parameter(
     keywords=["GDP", "US", "economy", "2024"],
 )
 
-# TIER 1: WELL-DOCUMENTED DIRECT COSTS
-# These have strong empirical backing from peer-reviewed or official sources
 
-BAD_POLICY_COST_US_TAX_COMPLIANCE = Parameter(
-    546_000_000_000,  # $546B annually
-    source_ref="taxfoundation2024-compliance",
+# =============================================================================
+# PART 1: WASTE LEDGER (GLOBAL)
+# =============================================================================
+# Global-scope waste figures
+
+POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES = Parameter(
+    1_300_000_000_000,  # $1.3T annually
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="high",
-    description="Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) "
-                "plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. "
-                "Could be largely eliminated with simplified tax code or return-free filing.",
-    display_name="Tax Compliance Cost",
+    description="Global explicit fossil fuel subsidies (governments undercharging for energy "
+                "supply costs). IMF 2022 estimate. These subsidies actively encourage consumption "
+                "of negative-externality goods, working against climate goals. "
+                "Note: IMF implicit subsidies (externalities) are much larger (~$7T).",
+    display_name="Global Fossil Fuel Subsidies",
     unit="USD",
     distribution=DistributionType.NORMAL,
-    confidence_interval=(450_000_000_000, 650_000_000_000),  # $450-650B
-    std_error=50_000_000_000,
-    keywords=["tax", "compliance", "IRS", "bureaucracy", "waste"],
-    latex_symbol=r"C_{tax}",
-)
-
-BAD_POLICY_COST_US_FAILED_WARS = Parameter(
-    400_000_000_000,  # ~$400B/yr amortized ($8T over 20 years)
-    source_ref="costsofwar2023",
-    source_type="external",
-    confidence="medium",
-    description="Amortized annual cost of post-9/11 wars (Iraq, Afghanistan, Syria). "
-                "Total cost $8 trillion including $2.9T direct spending, $2T+ veterans care through 2050, "
-                "$6.5T interest on war debt. These wars failed to achieve stated objectives.",
-    display_name="Failed Wars (Amortized)",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(300_000_000_000, 600_000_000_000),  # $300-600B/yr
+    confidence_interval=(1_100_000_000_000, 1_500_000_000_000),
     std_error=100_000_000_000,
-    keywords=["war", "Iraq", "Afghanistan", "military", "waste", "failed"],
-    latex_symbol=r"C_{wars}",
+    keywords=["fossil fuel", "subsidy", "global", "IMF", "climate", "waste"],
+    latex_symbol=r"W_{ff,global}",
 )
 
-BAD_POLICY_COST_US_DRUG_WAR = Parameter(
-    90_000_000_000,  # ~$90B/yr (enforcement + incarceration + lost productivity)
-    source_ref="drugpolicyalliance2021",
+# =============================================================================
+# PART 2: OPPORTUNITY LEDGER (GLOBAL)
+# =============================================================================
+# These represent unrealized potential from governance failures - global scope.
+# Source: Political Dysfunction Tax paper, Part 2
+
+POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST = Parameter(
+    34_000_000_000_000,  # $34T annually
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
-    confidence="medium",
-    description="Annual cost of drug war: ~$41B federal drug control budget, "
-                "~$10B state/local enforcement, ~$40B incarceration and lost productivity. "
-                "After 50+ years and $1T+ spent, drug use is higher than ever.",
-    display_name="Drug War Cost",
+    confidence="low",
+    description="Annual opportunity cost of slow-motion regulatory environment for health innovation. "
+                "Murphy-Topel (2006) valued cancer cure at $50T (inflation-adjusted ~$100T in 2025). "
+                "Longevity dividend of 1 extra year = $38T globally. "
+                "PCTs could accelerate cures by 10+ years; NPV of 10-year delay at 3% discount = ~$25T. "
+                "Conservative estimate: $34T annually in lives lost and healthspan denied.",
+    display_name="Global Health Opportunity Cost",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(60_000_000_000, 150_000_000_000),  # $60-150B
-    std_error=30_000_000_000,
-    keywords=["drug war", "incarceration", "enforcement", "prohibition", "failed"],
-    latex_symbol=r"C_{drugs}",
+    confidence_interval=(20_000_000_000_000, 80_000_000_000_000),  # Very wide - speculative
+    std_error=15_000_000_000_000,
+    keywords=["health", "opportunity cost", "global", "longevity", "FDA", "regulatory"],
+    latex_symbol=r"O_{health}",
 )
 
-BAD_POLICY_COST_US_TARIFFS = Parameter(
-    160_000_000_000,  # ~$160B/yr GDP reduction
-    source_ref="yalebudgetlab2025",
+POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST = Parameter(
+    4_000_000_000_000,  # $4T annually
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
-    confidence="medium",
-    description="Annual GDP reduction from US tariffs and retaliation. "
-                "Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. "
-                "Trade barriers reduce efficiency and raise consumer prices.",
-    display_name="Tariff Cost (GDP Loss)",
+    confidence="low",
+    description="Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). "
+                "Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). "
+                "Fusion DEMO plant: $5-10B could solve energy/climate permanently. "
+                "AI safety: <5% of capabilities spending despite existential stakes. "
+                "Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.",
+    display_name="Global Science Opportunity Cost",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(2_000_000_000_000, 10_000_000_000_000),
+    std_error=2_000_000_000_000,
+    keywords=["science", "R&D", "opportunity cost", "global", "fusion", "AI safety"],
+    latex_symbol=r"O_{science}",
+)
+
+POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST = Parameter(
+    6_000_000_000_000,  # $6T annually
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="external",
+    confidence="high",
+    description="Global cost of lead exposure: World Bank/Lancet estimate. "
+                "765 million IQ points lost annually, 5.5 million premature CVD deaths. "
+                "Cost to eliminate lead from paint, spices, batteries is trivial compared to damage. "
+                "This is an arbitrage opportunity of immense scale that governance has failed to execute.",
+    display_name="Global Lead Poisoning Cost",
     unit="USD",
     distribution=DistributionType.NORMAL,
-    confidence_interval=(90_000_000_000, 250_000_000_000),  # $90-250B
-    std_error=50_000_000_000,
-    keywords=["tariffs", "trade", "protectionism", "GDP loss"],
-    latex_symbol=r"C_{tariffs}",
+    confidence_interval=(4_000_000_000_000, 8_000_000_000_000),
+    std_error=1_000_000_000_000,
+    keywords=["lead", "poisoning", "IQ", "opportunity cost", "global", "World Bank"],
+    latex_symbol=r"O_{lead}",
 )
 
-BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT = Parameter(
-    50_000_000_000,  # ~$50B/yr explicit subsidies (US share)
-    source_ref="imf-fossilfuel2023",
+POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST = Parameter(
+    57_000_000_000_000,  # $57T annually (conservative lower bound)
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
-    confidence="medium",
-    description="US explicit fossil fuel subsidies (direct payments, tax breaks). "
-                "IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). "
-                "Explicit subsidies are roughly $50B annually.",
-    display_name="Fossil Fuel Explicit Subsidies",
+    confidence="low",
+    description="Unrealized output from migration restrictions. Clemens (2011) calculated "
+                "eliminating labor mobility barriers could increase global GDP by 50-150%. "
+                "At $115T global GDP, lower bound = $57T; upper bound = $170T. "
+                "Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. "
+                "This is the largest single distortion in the global economy.",
+    display_name="Global Migration Opportunity Cost",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(30_000_000_000, 80_000_000_000),  # $30-80B
-    std_error=15_000_000_000,
-    keywords=["fossil fuel", "subsidy", "oil", "gas", "coal"],
-    latex_symbol=r"C_{ff,explicit}",
+    confidence_interval=(57_000_000_000_000, 170_000_000_000_000),
+    std_error=30_000_000_000_000,
+    keywords=["migration", "labor mobility", "opportunity cost", "global", "Clemens"],
+    latex_symbol=r"O_{migration}",
 )
 
-BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY = Parameter(
-    1_200_000_000_000,  # ~$1.2T/yr excess spending
+# Total global opportunity cost
+POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL = Parameter(
+    (POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST +
+     POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST +
+     POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST +
+     POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST),
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="calculated",
+    confidence="low",
+    description="Total global opportunity cost from governance failures: "
+                "health innovation delays ($34T), underfunded science ($4T), "
+                "lead poisoning ($6T), migration restrictions ($57T). "
+                "Sum: $101T annually in unrealized potential.",
+    display_name="Global Opportunity Cost Total",
+    unit="USD",
+    formula="HEALTH + SCIENCE + LEAD + MIGRATION",
+    inputs=[
+        "POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST",
+        "POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST",
+        "POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST",
+        "POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST",
+    ],
+    compute=lambda ctx: (
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST"] +
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST"] +
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST"] +
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST"]
+    ),
+    keywords=["opportunity cost", "global", "total", "dysfunction"],
+    latex_symbol=r"O_{total}",
+)
+
+# Global opportunity cost as percentage of global GDP
+POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP = Parameter(
+    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / GLOBAL_GDP_2025,
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="calculated",
+    confidence="low",
+    unit="percent",
+    description="Global opportunity cost as percentage of global GDP. "
+                "$101T / $115T = ~88% of current GDP in unrealized potential. "
+                "This represents the 'buried multipliers' of the global economy.",
+    display_name="Global Opportunity Cost as % of GDP",
+    formula="POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / GLOBAL_GDP_2025",
+    inputs=["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"] / ctx["GLOBAL_GDP_2025"],
+    keywords=["opportunity cost", "global", "GDP", "percentage"],
+    latex_symbol=r"O_{\%GDP}",
+)
+
+# =============================================================================
+# US GOVERNMENT WASTE: MERGED AUTHORITATIVE SET
+# =============================================================================
+# Consolidates prior deprecated parameter sets (POLITICAL_DYSFUNCTION_US_*,
+# BAD_POLICY_COST_US_*) into
+# a single authoritative tally. Excludes speculative Tier 2 items (migration
+# restrictions, fossil fuel externalities, occupational licensing) for defensibility.
+#
+# SOURCES: Papanicolas 2018 JAMA (healthcare), Hsieh & Moretti 2019 (housing),
+# Competitive Enterprise Institute (regulatory), Tax Foundation (tax compliance),
+# Cato Institute (corporate welfare), Yale Budget Lab (tariffs),
+# Drug Policy Alliance (drug war), IMF (fossil fuel), USDA/EWG (agriculture)
+# =============================================================================
+
+# US Federal Budget baseline for percentage calculations
+US_FEDERAL_SPENDING_2024 = Parameter(
+    6_800_000_000_000,  # $6.8 trillion federal spending FY2024
+    source_ref="cbo-long-term-budget-2024",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="US federal government spending in FY2024. CBO reports outlays of $6.8T "
+                "(23.9% of GDP). Includes mandatory spending, discretionary spending, "
+                "and net interest ($888B).",
+    display_name="US Federal Spending (FY2024)",
+    unit="USD",
+    keywords=["federal", "spending", "budget", "US", "FY2024"],
+)
+
+# Component 1: Healthcare system inefficiency ($1.2T)
+US_GOV_WASTE_HEALTHCARE_INEFFICIENCY = Parameter(
+    1_200_000_000_000,  # $1.2T annually
     source_ref="papanicolas2018",
     source_type="external",
     confidence="high",
@@ -4251,14 +4252,15 @@ BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY = Parameter(
     display_name="Healthcare System Inefficiency",
     unit="USD",
     distribution=DistributionType.NORMAL,
-    confidence_interval=(1_000_000_000_000, 1_500_000_000_000),  # $1.0-1.5T
+    confidence_interval=(1_000_000_000_000, 1_500_000_000_000),
     std_error=150_000_000_000,
     keywords=["healthcare", "inefficiency", "administrative", "waste", "OECD"],
-    latex_symbol=r"C_{healthcare}",
+    latex_symbol=r"W_{health}",
 )
 
-BAD_POLICY_COST_US_HOUSING_ZONING = Parameter(
-    1_400_000_000_000,  # ~$1.4T/yr (36% GDP reduction from Hsieh & Moretti)
+# Component 2: Housing/zoning restrictions ($1.4T)
+US_GOV_WASTE_HOUSING_ZONING = Parameter(
+    1_400_000_000_000,  # $1.4T annually
     source_ref="hsieh-moretti2019",
     source_type="external",
     confidence="high",
@@ -4269,230 +4271,434 @@ BAD_POLICY_COST_US_HOUSING_ZONING = Parameter(
     display_name="Housing/Zoning Restrictions Cost",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(1_000_000_000_000, 2_000_000_000_000),  # $1.0-2.0T
+    confidence_interval=(1_000_000_000_000, 2_000_000_000_000),
     std_error=300_000_000_000,
     keywords=["housing", "zoning", "NIMBY", "land use", "productivity", "misallocation"],
-    latex_symbol=r"C_{housing}",
+    latex_symbol=r"W_{housing}",
 )
 
-BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES = Parameter(
-    75_000_000_000,  # ~$75B/yr deadweight loss
+# Component 3: Military overspend ($615B)
+US_GOV_WASTE_MILITARY_OVERSPEND = Parameter(
+    615_000_000_000,  # $615B annually
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="external",
+    confidence="medium",
+    description="US military spending above 'Strict Deterrence' baseline. Current budget "
+                "~$900B supports global power projection (750+ bases). Strict Deterrence "
+                "(nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense "
+                "$28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. "
+                "Delta: $900B - $285B = $615B 'Hegemony Tax'.",
+    display_name="Military Overspend",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(500_000_000_000, 750_000_000_000),
+    std_error=75_000_000_000,
+    keywords=["military", "defense", "overspend", "hegemony", "pentagon"],
+    latex_symbol=r"W_{military}",
+)
+
+# Component 4: Regulatory red tape ($580B)
+US_GOV_WASTE_REGULATORY_RED_TAPE = Parameter(
+    580_000_000_000,  # $580B annually
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="external",
+    confidence="medium",
+    description="Deadweight loss from US regulatory red tape (procedural friction without "
+                "safety benefits). Competitive Enterprise Institute estimates total regulatory "
+                "burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. "
+                "Conservative estimate: ~2% of US GDP = $580B.",
+    display_name="Regulatory Red Tape Waste",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(290_000_000_000, 1_000_000_000_000),
+    std_error=200_000_000_000,
+    keywords=["regulatory", "red tape", "bureaucracy", "waste", "compliance"],
+    latex_symbol=r"W_{regulatory}",
+)
+
+# Component 5: Tax compliance ($546B)
+US_GOV_WASTE_TAX_COMPLIANCE = Parameter(
+    546_000_000_000,  # $546B annually
+    source_ref="taxfoundation2024-compliance",
+    source_type="external",
+    confidence="high",
+    description="Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) "
+                "plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. "
+                "Could be largely eliminated with simplified tax code or return-free filing.",
+    display_name="Tax Compliance Waste",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(450_000_000_000, 650_000_000_000),
+    std_error=50_000_000_000,
+    keywords=["tax", "compliance", "IRS", "bureaucracy", "waste"],
+    latex_symbol=r"W_{tax}",
+)
+
+# Component 6: Corporate welfare ($181B)
+US_GOV_WASTE_CORPORATE_WELFARE = Parameter(
+    181_000_000_000,  # $181B annually
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="external",
+    confidence="high",
+    description="Direct US federal corporate welfare: subsidies to agriculture ($16.4B), "
+                "green energy tax credits, semiconductor aid, aviation support. "
+                "Agricultural subsidies are highly regressive (top 10% receive 63%). "
+                "Cato Institute forensic tally.",
+    display_name="Corporate Welfare Waste",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(150_000_000_000, 220_000_000_000),
+    std_error=20_000_000_000,
+    keywords=["corporate welfare", "subsidy", "waste", "agriculture", "capture"],
+    latex_symbol=r"W_{corporate}",
+)
+
+# Component 7: Tariffs ($160B)
+US_GOV_WASTE_TARIFFS = Parameter(
+    160_000_000_000,  # $160B annually
+    source_ref="yalebudgetlab2025",
+    source_type="external",
+    confidence="medium",
+    description="Annual GDP reduction from US tariffs and retaliation. "
+                "Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. "
+                "Trade barriers reduce efficiency and raise consumer prices.",
+    display_name="Tariff Cost (GDP Loss)",
+    unit="USD",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(90_000_000_000, 250_000_000_000),
+    std_error=50_000_000_000,
+    keywords=["tariffs", "trade", "protectionism", "GDP loss"],
+    latex_symbol=r"W_{tariffs}",
+)
+
+# Component 8: Drug war ($90B)
+US_GOV_WASTE_DRUG_WAR = Parameter(
+    90_000_000_000,  # $90B annually
+    source_ref="drugpolicyalliance2021",
+    source_type="external",
+    confidence="medium",
+    description="Annual cost of drug war: ~$41B federal drug control budget, "
+                "~$10B state/local enforcement, ~$40B incarceration and lost productivity. "
+                "After 50+ years and $1T+ spent, drug use is higher than ever.",
+    display_name="Drug War Cost",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(60_000_000_000, 150_000_000_000),
+    std_error=30_000_000_000,
+    keywords=["drug war", "incarceration", "enforcement", "prohibition", "failed"],
+    latex_symbol=r"W_{drugs}",
+)
+
+# Component 9: Fossil fuel subsidies - explicit only ($50B)
+US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES = Parameter(
+    50_000_000_000,  # $50B annually (explicit only, not externalities)
+    source_ref="imf-fossilfuel2023",
+    source_type="external",
+    confidence="medium",
+    description="US explicit fossil fuel subsidies (direct payments, tax breaks). "
+                "IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). "
+                "This figure includes only explicit subsidies (~$50B) for defensibility.",
+    display_name="Fossil Fuel Subsidies (Explicit)",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(30_000_000_000, 80_000_000_000),
+    std_error=15_000_000_000,
+    keywords=["fossil fuel", "subsidy", "oil", "gas", "coal"],
+    latex_symbol=r"W_{fossil}",
+)
+
+# Component 10: Agricultural subsidies deadweight loss ($75B)
+US_GOV_WASTE_AGRICULTURAL_SUBSIDIES = Parameter(
+    75_000_000_000,  # $75B annually
     source_ref="ewg-farm-subsidies",
     source_type="external",
     confidence="high",
     description="Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create "
                 "larger distortions: overproduction, environmental damage, benefits concentrated in large "
                 "farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. "
-                "Textbook example of capture - very high economist consensus.",
+                "Textbook example of capture; very high economist consensus.",
     display_name="Agricultural Subsidies Deadweight Loss",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(50_000_000_000, 120_000_000_000),  # $50-120B
+    confidence_interval=(50_000_000_000, 120_000_000_000),
     std_error=25_000_000_000,
     keywords=["agriculture", "farm", "subsidy", "deadweight", "capture"],
-    latex_symbol=r"C_{ag}",
+    latex_symbol=r"W_{agriculture}",
 )
 
-# TIER 2: EXTERNALITIES AND OPPORTUNITY COSTS
-# Defensible but more contested - relies on externality valuations
-
-BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES = Parameter(
-    600_000_000_000,  # ~$600B/yr (US share of externalities)
-    source_ref="imf-fossilfuel2023",
-    source_type="external",
-    confidence="low",
-    description="US fossil fuel implicit subsidies (unpriced externalities): air pollution deaths, "
-                "climate damages, congestion, accidents. IMF estimates ~$600B for US. "
-                "Highly contested - depends on social cost of carbon assumptions.",
-    display_name="Fossil Fuel Externalities",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(300_000_000_000, 1_000_000_000_000),  # $300B-1T wide range
-    std_error=250_000_000_000,
-    keywords=["externality", "pollution", "climate", "fossil fuel", "implicit subsidy"],
-    latex_symbol=r"C_{ff,external}",
-)
-
-BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING = Parameter(
-    200_000_000_000,  # ~$200B/yr (2-3% of GDP)
-    source_ref="kleiner2013",
-    source_type="external",
-    confidence="medium",
-    description="Cost of occupational licensing restrictions. Kleiner estimates 2-3% of GDP in welfare loss. "
-                "29% of US workers now require licenses vs 5% in 1950s. "
-                "Raises prices, restricts entry, with minimal quality improvement.",
-    display_name="Occupational Licensing Cost",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(100_000_000_000, 400_000_000_000),  # $100-400B
-    std_error=100_000_000_000,
-    keywords=["licensing", "regulation", "labor market", "barriers to entry"],
-    latex_symbol=r"C_{licensing}",
-)
-
-BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS = Parameter(
-    500_000_000_000,  # Very rough US-attributable estimate
-    source_ref="clemens2011",
-    source_type="external",
-    confidence="low",
-    description="US share of global welfare loss from migration restrictions. "
-                "Clemens (2011) estimates 67-147% of GLOBAL GDP from full liberalization. "
-                "US-attributable share is highly speculative - using conservative $500B estimate.",
-    display_name="Migration Restrictions Cost (US Share)",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(200_000_000_000, 2_000_000_000_000),  # Very wide: $200B-2T
-    std_error=500_000_000_000,
-    keywords=["migration", "immigration", "labor mobility", "border"],
-    latex_symbol=r"C_{migration}",
-)
-
-BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE = Parameter(
-    400_000_000_000,  # ~$400B/yr above deterrence level
-    source_ref="posen2014",
-    source_type="external",
-    confidence="medium",
-    description="US defense spending above deterrence requirements. US spends ~$900B/yr on defense; "
-                "many defense economists (Posen, Preble, etc.) argue $400-500B achieves equivalent "
-                "deterrence given geography, nuclear arsenal, and alliance structure. "
-                "Excess ~$400B/yr funds force projection, not homeland defense.",
-    display_name="Defense Above Deterrence",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(250_000_000_000, 600_000_000_000),  # $250-600B
-    std_error=120_000_000_000,
-    keywords=["defense", "military", "deterrence", "spending", "pentagon"],
-    latex_symbol=r"C_{defense}",
-)
-
-BAD_POLICY_COST_US_INCARCERATION_EXCESS = Parameter(
-    150_000_000_000,  # ~$150B/yr excess costs
-    source_ref="vera-incarceration2024",
-    source_type="external",
-    confidence="medium",
-    description="Excess costs from US over-incarceration. US incarceration rate is 5x OECD average. "
-                "Direct costs ~$80B/yr, but alternative approaches (drug courts, rehabilitation, "
-                "community supervision) cost less and reduce recidivism. Total excess ~$150B "
-                "including lost productivity and family impacts. Growing economist consensus.",
-    display_name="Incarceration Excess Costs",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(100_000_000_000, 250_000_000_000),  # $100-250B
-    std_error=50_000_000_000,
-    keywords=["incarceration", "prison", "criminal justice", "recidivism"],
-    latex_symbol=r"C_{prison}",
-)
-
-BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE = Parameter(
-    150_000_000_000,  # ~$150B/yr in cost overruns
-    source_ref="transit-costs-project",
-    source_type="external",
-    confidence="medium",
-    description="US infrastructure cost disease. US builds infrastructure at 2-5x the cost of "
-                "comparable countries (subway costs, highway construction, transit projects). "
-                "NYU Transit Costs Project and Brookings document systematic overruns. "
-                "If US spends ~$300B/yr on infrastructure, ~50% is wasted vs best practices.",
-    display_name="Infrastructure Cost Disease",
-    unit="USD",
-    distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(100_000_000_000, 250_000_000_000),  # $100-250B
-    std_error=50_000_000_000,
-    keywords=["infrastructure", "construction", "cost overrun", "transit"],
-    latex_symbol=r"C_{infra}",
-)
-
-# TOTAL: BAD POLICY COSTS (BOTTOM-UP)
-# Use multiplicative model to avoid double-counting: 1 - Π(1 - cost_i/GDP)
-# For small percentages, this approximates sum but handles overlap correctly
-
-BAD_POLICY_COST_US_TIER1_TOTAL = Parameter(
-    (BAD_POLICY_COST_US_TAX_COMPLIANCE + BAD_POLICY_COST_US_FAILED_WARS + BAD_POLICY_COST_US_DRUG_WAR +
-     BAD_POLICY_COST_US_TARIFFS + BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT + BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY +
-     BAD_POLICY_COST_US_HOUSING_ZONING + BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES),
-    source_type="calculated",
-    confidence="medium",
-    description="Sum of Tier 1 (well-documented) bad policy costs: "
-                "tax compliance + failed wars + drug war + tariffs + fossil fuel explicit + "
-                "healthcare inefficiency + housing/zoning + agricultural subsidies. "
-                "These have strong empirical backing and high economist consensus.",
-    display_name="Bad Policy Costs (Tier 1)",
-    unit="USD",
-    formula="TAX + WARS + DRUGS + TARIFFS + FF_EXPLICIT + HEALTHCARE + HOUSING + AG",
-    inputs=["BAD_POLICY_COST_US_TAX_COMPLIANCE", "BAD_POLICY_COST_US_FAILED_WARS", "BAD_POLICY_COST_US_DRUG_WAR",
-            "BAD_POLICY_COST_US_TARIFFS", "BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT", "BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY",
-            "BAD_POLICY_COST_US_HOUSING_ZONING", "BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES"],
-    compute=lambda ctx: (ctx["BAD_POLICY_COST_US_TAX_COMPLIANCE"] + ctx["BAD_POLICY_COST_US_FAILED_WARS"] +
-                         ctx["BAD_POLICY_COST_US_DRUG_WAR"] + ctx["BAD_POLICY_COST_US_TARIFFS"] +
-                         ctx["BAD_POLICY_COST_US_FOSSIL_FUEL_EXPLICIT"] + ctx["BAD_POLICY_COST_US_HEALTHCARE_INEFFICIENCY"] +
-                         ctx["BAD_POLICY_COST_US_HOUSING_ZONING"] + ctx["BAD_POLICY_COST_US_AGRICULTURAL_SUBSIDIES"]),
-    keywords=["bad policy", "tier 1", "documented", "waste"],
-    latex_symbol=r"C_{tier1}",
-)
-
-BAD_POLICY_COST_US_TIER2_TOTAL = Parameter(
-    (BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES + BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING + BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS +
-     BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE + BAD_POLICY_COST_US_INCARCERATION_EXCESS + BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE),
-    source_type="calculated",
-    confidence="low",
-    description="Sum of Tier 2 (contested but defensible) bad policy costs: "
-                "fossil fuel externalities + occupational licensing + migration restrictions + "
-                "defense above deterrence + incarceration excess + infrastructure cost disease. "
-                "Wider uncertainty due to counterfactual assumptions.",
-    display_name="Bad Policy Costs (Tier 2)",
-    unit="USD",
-    formula="FF_EXT + LICENSING + MIGRATION + DEFENSE + PRISON + INFRA",
-    inputs=["BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES", "BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING", "BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS",
-            "BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE", "BAD_POLICY_COST_US_INCARCERATION_EXCESS", "BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE"],
-    compute=lambda ctx: (ctx["BAD_POLICY_COST_US_FOSSIL_FUEL_EXTERNALITIES"] + ctx["BAD_POLICY_COST_US_OCCUPATIONAL_LICENSING"] +
-                         ctx["BAD_POLICY_COST_US_MIGRATION_RESTRICTIONS"] + ctx["BAD_POLICY_COST_US_DEFENSE_ABOVE_DETERRENCE"] +
-                         ctx["BAD_POLICY_COST_US_INCARCERATION_EXCESS"] + ctx["BAD_POLICY_COST_US_INFRASTRUCTURE_DISEASE"]),
-    keywords=["bad policy", "tier 2", "externalities", "contested"],
-    latex_symbol=r"C_{tier2}",
-)
-
-# Apply 15% overlap discount to combined total (categories are not fully independent)
-BAD_POLICY_US_OVERLAP_DISCOUNT = Parameter(
+# Overlap discount factor
+US_GOV_WASTE_OVERLAP_DISCOUNT = Parameter(
     0.85,  # 15% overlap assumed
     source_type="definition",
-    confidence="low",
+    confidence="medium",
     distribution="fixed",
-    description="Discount factor to account for overlap between bad policy cost categories. "
-                "Fossil fuel externalities partially overlap with climate/health costs counted elsewhere. "
-                "Migration restrictions partially captured in labor market inefficiencies.",
+    description="Discount factor to account for overlap between US government waste categories. "
+                "Healthcare inefficiency partially overlaps with regulatory burden. "
+                "Housing costs affect healthcare spending. Conservative 15% overlap assumed.",
     display_name="Overlap Discount Factor",
     unit="ratio",
     keywords=["overlap", "discount", "double counting"],
 )
 
-BAD_POLICY_COST_TOTAL_US = Parameter(
-    (BAD_POLICY_COST_US_TIER1_TOTAL + BAD_POLICY_COST_US_TIER2_TOTAL) * BAD_POLICY_US_OVERLAP_DISCOUNT,
+# Raw total (before overlap discount)
+US_GOV_WASTE_RAW_TOTAL = Parameter(
+    (US_GOV_WASTE_HEALTHCARE_INEFFICIENCY +
+     US_GOV_WASTE_HOUSING_ZONING +
+     US_GOV_WASTE_MILITARY_OVERSPEND +
+     US_GOV_WASTE_REGULATORY_RED_TAPE +
+     US_GOV_WASTE_TAX_COMPLIANCE +
+     US_GOV_WASTE_CORPORATE_WELFARE +
+     US_GOV_WASTE_TARIFFS +
+     US_GOV_WASTE_DRUG_WAR +
+     US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES +
+     US_GOV_WASTE_AGRICULTURAL_SUBSIDIES),
     source_type="calculated",
-    confidence="low",
-    description="Total annual US bad policy costs (Tier 1 + Tier 2 with overlap discount). "
-                "Bottom-up empirical estimate based on specific, measurable policy failures. "
-                "More defensible than theoretical decomposition because each component is verifiable.",
-    display_name="Bad Policy Costs Total (US)",
+    confidence="medium",
+    description="Raw sum of US government waste components before overlap discount: "
+                "healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + "
+                "tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + "
+                "fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.",
+    display_name="US Gov Waste (Raw Total)",
     unit="USD",
-    formula="(TIER1 + TIER2) × OVERLAP_DISCOUNT",
-    inputs=["BAD_POLICY_COST_US_TIER1_TOTAL", "BAD_POLICY_COST_US_TIER2_TOTAL", "BAD_POLICY_US_OVERLAP_DISCOUNT"],
-    compute=lambda ctx: (ctx["BAD_POLICY_COST_US_TIER1_TOTAL"] + ctx["BAD_POLICY_COST_US_TIER2_TOTAL"]) * ctx["BAD_POLICY_US_OVERLAP_DISCOUNT"],
-    keywords=["bad policy", "total", "US", "dysfunction", "waste"],
-    latex_symbol=r"C_{bad,total}",
+    formula="SUM(all 10 components)",
+    inputs=[
+        "US_GOV_WASTE_HEALTHCARE_INEFFICIENCY",
+        "US_GOV_WASTE_HOUSING_ZONING",
+        "US_GOV_WASTE_MILITARY_OVERSPEND",
+        "US_GOV_WASTE_REGULATORY_RED_TAPE",
+        "US_GOV_WASTE_TAX_COMPLIANCE",
+        "US_GOV_WASTE_CORPORATE_WELFARE",
+        "US_GOV_WASTE_TARIFFS",
+        "US_GOV_WASTE_DRUG_WAR",
+        "US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES",
+        "US_GOV_WASTE_AGRICULTURAL_SUBSIDIES",
+    ],
+    compute=lambda ctx: (
+        ctx["US_GOV_WASTE_HEALTHCARE_INEFFICIENCY"] +
+        ctx["US_GOV_WASTE_HOUSING_ZONING"] +
+        ctx["US_GOV_WASTE_MILITARY_OVERSPEND"] +
+        ctx["US_GOV_WASTE_REGULATORY_RED_TAPE"] +
+        ctx["US_GOV_WASTE_TAX_COMPLIANCE"] +
+        ctx["US_GOV_WASTE_CORPORATE_WELFARE"] +
+        ctx["US_GOV_WASTE_TARIFFS"] +
+        ctx["US_GOV_WASTE_DRUG_WAR"] +
+        ctx["US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES"] +
+        ctx["US_GOV_WASTE_AGRICULTURAL_SUBSIDIES"]
+    ),
+    keywords=["waste", "US", "raw total", "government"],
+    latex_symbol=r"W_{raw,US}",
 )
 
-BAD_POLICY_COST_TOTAL_US_PCT_GDP = Parameter(
-    BAD_POLICY_COST_TOTAL_US / US_GDP_2024,
+# Total US government waste (with overlap discount)
+US_GOV_WASTE_TOTAL = Parameter(
+    US_GOV_WASTE_RAW_TOTAL * US_GOV_WASTE_OVERLAP_DISCOUNT,
+    source_type="calculated",
+    confidence="medium",
+    description="Total annual US government waste with 15% overlap discount. "
+                "Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), "
+                "regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), "
+                "drug war ($90B), fossil fuel ($50B), agriculture ($75B). "
+                "Excludes speculative items (migration restrictions, fossil fuel externalities) "
+                "for defensibility. ~$4.15T annually.",
+    display_name="US Government Waste (Total)",
+    unit="USD",
+    formula="RAW_TOTAL x 0.85",
+    inputs=["US_GOV_WASTE_RAW_TOTAL", "US_GOV_WASTE_OVERLAP_DISCOUNT"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_RAW_TOTAL"] * ctx["US_GOV_WASTE_OVERLAP_DISCOUNT"],
+    keywords=["waste", "US", "total", "government", "dysfunction"],
+    latex_symbol=r"W_{total,US}",
+)
+
+# US waste as percentage of federal spending
+US_GOV_WASTE_PCT_FED_SPENDING = Parameter(
+    US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING_2024,
+    source_type="calculated",
+    confidence="medium",
+    description="US government waste as percentage of federal spending. "
+                "~$4.15T waste / $6.75T federal spending = ~61%. Note: some waste "
+                "categories (housing, healthcare) are not purely federal costs.",
+    display_name="US Waste (% Federal Spending)",
+    unit="percent",
+    formula="US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING",
+    inputs=["US_GOV_WASTE_TOTAL", "US_FEDERAL_SPENDING_2024"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] / ctx["US_FEDERAL_SPENDING_2024"],
+    keywords=["waste", "US", "federal", "spending", "percentage"],
+    latex_symbol=r"W_{US,\%fed}",
+)
+
+# US federal spending efficiency rating (complement of waste percentage)
+US_GOV_EFFICIENCY_RATING = Parameter(
+    1 - (US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING_2024),
+    source_type="calculated",
+    confidence="medium",
+    unit="percent",
+    description="US federal spending efficiency rating. Complement of waste percentage. "
+                "Measures what fraction of fiscal input converts to useful output. "
+                "Compare to OECD benchmark of 75-85%.",
+    display_name="US Efficiency Rating",
+    formula="1 - (US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING)",
+    inputs=["US_GOV_WASTE_TOTAL", "US_FEDERAL_SPENDING_2024"],
+    compute=lambda ctx: 1 - (ctx["US_GOV_WASTE_TOTAL"] / ctx["US_FEDERAL_SPENDING_2024"]),
+    keywords=["efficiency", "rating", "US", "federal", "spending"],
+    latex_symbol=r"E_{US}",
+)
+
+# US waste as percentage of GDP
+US_GOV_WASTE_PCT_GDP = Parameter(
+    US_GOV_WASTE_TOTAL / US_GDP_2024,
+    source_type="calculated",
+    confidence="medium",
+    description="US government waste as percentage of GDP. "
+                "~$4.15T waste / $28.78T GDP = ~14%. This represents the 'dysfunction tax' "
+                "that American citizens effectively pay through inefficient governance.",
+    display_name="US Waste (% GDP)",
+    unit="percent",
+    formula="US_GOV_WASTE_TOTAL / US_GDP",
+    inputs=["US_GOV_WASTE_TOTAL", "US_GDP_2024"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] / ctx["US_GDP_2024"],
+    keywords=["waste", "US", "GDP", "percentage", "dysfunction"],
+    latex_symbol=r"W_{US,\%GDP}",
+)
+
+# ---
+# VALUATION STANDARDS FOR HUMAN COST QUANTIFICATION
+# ---
+
+# DOT Value of Statistical Life ($13.7M) - used in federal efficiency audit
+DOT_VALUE_OF_STATISTICAL_LIFE = Parameter(
+    13_700_000,
+    source_ref="dot-vsl-2024",
+    source_type="external",
+    description="DOT Value of Statistical Life (2024). Used by federal agencies to "
+                "evaluate safety regulations and quantify the economic value of mortality risk reductions.",
+    display_name="DOT VSL",
+    unit="USD",
+    distribution="fixed",
+    confidence="high",
+    latex_symbol=r"VSL_{DOT}",
+    keywords=["VSL", "value of statistical life", "safety", "DOT", "mortality"],
+)
+
+# Medical cost-effectiveness QALY threshold ($100K)
+MEDICAL_QALY_THRESHOLD = Parameter(
+    100_000,
+    source_ref="qaly-threshold-history",
+    source_type="external",
+    description="Medical cost-effectiveness QALY threshold. Standard threshold for "
+                "evaluating whether health interventions are cost-effective. "
+                "Interventions below $100K/QALY are generally considered cost-effective.",
+    display_name="Medical QALY Threshold",
+    unit="USD/QALY",
+    distribution="fixed",
+    confidence="high",
+    latex_symbol=r"QALY_{threshold}",
+    keywords=["QALY", "cost-effectiveness", "health economics", "threshold"],
+)
+
+# US waste expressed as VSL equivalents
+US_GOV_WASTE_VSL_EQUIVALENTS = Parameter(
+    US_GOV_WASTE_TOTAL / DOT_VALUE_OF_STATISTICAL_LIFE,
+    source_type="calculated",
+    confidence="medium",
+    description="US government waste expressed as VSL equivalents. "
+                "This is an economic equivalent, NOT literal deaths. "
+                "Dividing the efficiency gap by VSL yields a measure of foregone welfare.",
+    display_name="US Waste (VSL Equivalents)",
+    unit="people",
+    formula="US_GOV_WASTE_TOTAL / DOT_VSL",
+    inputs=["US_GOV_WASTE_TOTAL", "DOT_VALUE_OF_STATISTICAL_LIFE"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] / ctx["DOT_VALUE_OF_STATISTICAL_LIFE"],
+    latex_symbol=r"W_{US,VSL}",
+    keywords=["VSL", "equivalents", "waste", "human cost"],
+)
+
+# US waste expressed as QALY equivalents
+US_GOV_WASTE_QALY_EQUIVALENTS = Parameter(
+    US_GOV_WASTE_TOTAL / MEDICAL_QALY_THRESHOLD,
+    source_type="calculated",
+    confidence="medium",
+    description="US government waste expressed as QALY equivalents. "
+                "This is an economic equivalent, NOT epidemiological health outcomes. "
+                "Dividing by QALY threshold yields a measure of foregone welfare.",
+    display_name="US Waste (QALY Equivalents)",
+    unit="QALYs",
+    formula="US_GOV_WASTE_TOTAL / QALY_THRESHOLD",
+    inputs=["US_GOV_WASTE_TOTAL", "MEDICAL_QALY_THRESHOLD"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] / ctx["MEDICAL_QALY_THRESHOLD"],
+    latex_symbol=r"W_{US,QALY}",
+    keywords=["QALY", "equivalents", "waste", "human cost"],
+)
+
+# US waste vs treaty funding multiplier
+US_GOV_WASTE_VS_TREATY_MULTIPLIER = Parameter(
+    US_GOV_WASTE_TOTAL / TREATY_ANNUAL_FUNDING,
+    source_type="calculated",
+    confidence="medium",
+    description="How many times the US government efficiency gap could fund the 1% Treaty. "
+                "The efficiency gap represents capital that could fund transformative "
+                "health research many times over.",
+    display_name="Efficiency Gap / Treaty Funding",
+    unit="ratio",
+    formula="US_GOV_WASTE_TOTAL / TREATY_ANNUAL_FUNDING",
+    inputs=["US_GOV_WASTE_TOTAL", "TREATY_ANNUAL_FUNDING"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] / ctx["TREATY_ANNUAL_FUNDING"],
+    latex_symbol=r"k_{waste:treaty}",
+    keywords=["multiplier", "treaty", "waste", "funding"],
+)
+
+# Recoverable capital (if US improved to OECD median 80% efficiency)
+US_GOV_WASTE_RECOVERABLE = Parameter(
+    US_GOV_WASTE_TOTAL * 0.50,  # ~50% of gap is recoverable (38% -> 80%)
     source_type="calculated",
     confidence="low",
-    description="Total US bad policy costs as percentage of GDP. "
-                "Bottom-up empirical estimate for comparison with theoretical Political Dysfunction Tax.",
-    display_name="Bad Policy Costs (% GDP)",
+    description="Recoverable capital if US improved to OECD median efficiency. "
+                "Current US efficiency ~38-48%; OECD median ~75-85%. "
+                "Closing to ~80% would recover approximately half the gap.",
+    display_name="Recoverable Capital",
+    unit="USD",
+    formula="US_GOV_WASTE_TOTAL x 0.50",
+    inputs=["US_GOV_WASTE_TOTAL"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] * 0.50,
+    latex_symbol=r"W_{US,recoverable}",
+    keywords=["recoverable", "OECD", "efficiency", "waste"],
+)
+
+# =============================================================================
+# EFFICIENCY CALCULATION
+# =============================================================================
+# From paper Part 3: E = Adjusted W_real / W_max
+# NOTE: Moved here after US_GOV_WASTE_TOTAL is defined to avoid forward reference error
+
+POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE = Parameter(
+    (GLOBAL_GDP_2025 - US_GOV_WASTE_TOTAL - POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES) /
+    (GLOBAL_GDP_2025 - US_GOV_WASTE_TOTAL - POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES +
+     POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL),
+    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
+    source_type="calculated",
+    confidence="low",
     unit="percent",
-    formula="BAD_POLICY_COST_TOTAL / US_GDP",
-    inputs=["BAD_POLICY_COST_TOTAL_US", "US_GDP_2024"],
-    compute=lambda ctx: ctx["BAD_POLICY_COST_TOTAL_US"] / ctx["US_GDP_2024"],
-    keywords=["bad policy", "GDP", "percentage", "dysfunction"],
-    latex_symbol=r"\tau_{bad,empirical}",
+    description="Global Governance Efficiency Score from Political Dysfunction Tax paper. "
+                "E = Adjusted W_real / W_max, where W_real = GDP - waste, W_max = W_real + opportunity cost. "
+                "Paper calculates 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). "
+                "This means civilization operates at roughly half its technological potential.",
+    display_name="Global Governance Efficiency Score",
+    formula="(GDP - WASTE) / (GDP - WASTE + OPPORTUNITY)",
+    latex=r"E = \frac{W_{real}}{W_{max}} = \frac{GDP - W_{waste}}{GDP - W_{waste} + O_{total}}",
+    inputs=[
+        "GLOBAL_GDP_2025",
+        "US_GOV_WASTE_TOTAL",
+        "POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES",
+        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+    ],
+    compute=lambda ctx: (
+        (ctx["GLOBAL_GDP_2025"] - ctx["US_GOV_WASTE_TOTAL"] -
+         ctx["POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES"]) /
+        (ctx["GLOBAL_GDP_2025"] - ctx["US_GOV_WASTE_TOTAL"] -
+         ctx["POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES"] +
+         ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"])
+    ),
+    keywords=["efficiency", "governance", "global", "score"],
+    latex_symbol=r"E_{gov}",
 )
 
 # ---

@@ -33,7 +33,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)
 
-> 6.65k diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7B deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.0018/DALY, 50.3kx better than bed nets. Even ...
+> 6.65k diseases diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7B deaths deaths. At $0.0018/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
 
 
 ## Working Papers
@@ -42,7 +42,7 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![Federal Resource Allocation Efficiency Audit](assets/og/federal-efficiency-audit-og-1200x630.jpg)](https://federal-efficiency-audit.warondisease.org)
 
-> Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
+> Engineering-style efficiency analysis quantifying approximately $4.2 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
 
 
 ### [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
@@ -77,14 +77,14 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 [![Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
 
-> Political incentives diverge from citizen welfare, costing an estimated 20% of potential GDP. Optimocracy fixes this by tracking which policies improve health and wealth, publishing recommendations for every vote, and funding politicians who follow evidence. No government permission required.
+> Political dysfunction costs society trillions annually: $4.16T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.
 
 
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
 
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
 
-> After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. This delay caused 102M deaths among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.
+> After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102M deaths among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.
 
 
 ### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)

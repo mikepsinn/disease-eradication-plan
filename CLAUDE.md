@@ -50,6 +50,14 @@ Avoid Unicode characters in print statements. Use ASCII: `->`, `WARNING:`, `[OK]
 
 **NEVER add try/catch blocks** unless absolutely necessary. Let errors propagate and crash loudly.
 
+### Decision Quality
+
+Before recommending an approach, evaluate trade-offs and state your confidence level.
+When the user challenges your recommendation, distinguish between:
+- Valid new information (update your position)
+- Restating the same concern (hold your position and explain why)
+Do not mirror whatever was said last. Proportional confidence: strong evidence = strong position.
+
 ### Citation Rules (references.bib)
 
 **NEVER add citations without verification:**
@@ -114,6 +122,18 @@ Bad: `PROBABILISTIC_ROI_EXPECTED_UPPER_BOUND` (ROI of what?), `TOTAL_COST` (of w
 | No manual formatting | `{{< var param >}}` | `${{< var param >}}M` |
 | Include scope prefix | `TREATY_ROI_CONSERVATIVE` | `CONSERVATIVE_ROI` |
 
+### When to Parameterize vs. Hardcode
+
+| Parameterize | Leave Hardcoded |
+|-------------|-----------------|
+| Values used in calculations (feeds other formulas) | One-off cited statistics with inline citations |
+| Values referenced in 2+ files | Historical facts (F-35 cost rose from $1.1T to $1.58T) |
+| Aggregate metrics in abstracts/summaries | Context comparisons used once (750 bases in 80 countries) |
+| Values that need Monte Carlo uncertainty | Subsystem breakdown details with their own citations |
+
+**Before creating a new parameter:** `grep "keyword" _variables.yml` to check for existing ones.
+Never create duplicates. Merge overlapping parameters into one canonical version.
+
 The formatter auto-scales: `unit="USD"` -> $519M, $1.02B; large numbers -> M/B/K; percentages -> "51%".
 
 ### Unit Guidelines
@@ -162,6 +182,17 @@ PEACE_DIVIDEND_ANNUAL = Parameter(113_550_000_000, source_type="calculated", ...
 ```
 
 **source_type values:** `"external"` (WHO, SIPRI), `"calculated"` (formulas), `"definition"` (fixed assumptions)
+
+### Auto-Generated Fields (Do NOT Hardcode)
+
+| Field | Generator | Notes |
+|-------|-----------|-------|
+| `latex=` (formula) | `variables_yml_generator.py` | Never add to calculated Parameters |
+| Confidence intervals (P5-P95) | `variables_yml_generator.py` | Auto-embedded in variable value |
+| `_latex` variables | `variables_yml_generator.py` | Use instead of hardcoded `$$` blocks |
+
+**DO add:** `latex_symbol=r"W_{total}"` to Parameters (symbol for the variable)
+**Do NOT add:** `latex=r"W = A \times B"` to calculated Parameters (formula is auto-generated)
 
 ### LaTeX Math Block Variables
 

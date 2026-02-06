@@ -296,12 +296,25 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
                     updated = True
 
             if abstract and abstract != current_abstract and is_book_project:
-                # Find and replace abstract line (only valid in book section, not website)
-                abstract_pattern = r'(^  abstract:\s*)["\']?.*?["\']?\s*$'
+                # Find and replace abstract (handles both single-line and multi-line YAML blocks)
+                # Pattern 1: Multi-line literal block (abstract: | or abstract: >)
+                # Matches from "abstract:" through all indented continuation lines
+                multiline_pattern = r'^  abstract:\s*[|>][-+]?\s*\n(?:    .+\n)*'
+                multiline_match = re.search(multiline_pattern, content, flags=re.MULTILINE)
+
+                # Pattern 2: Single-line quoted or unquoted abstract
+                singleline_pattern = r'^  abstract:\s*["\']?[^|\n>][^\n]*["\']?\s*$'
+                singleline_match = re.search(singleline_pattern, content, flags=re.MULTILINE)
+
                 abstract_replacement = f'  abstract: {escape_yaml_string(abstract)}'
-                new_content = re.sub(abstract_pattern, abstract_replacement, content, count=1, flags=re.MULTILINE)
-                if new_content != content:
-                    content = new_content
+
+                if multiline_match:
+                    # Replace entire multi-line block with single-line
+                    content = content[:multiline_match.start()] + abstract_replacement + '\n' + content[multiline_match.end():]
+                    updated = True
+                elif singleline_match:
+                    # Replace single-line abstract
+                    content = content[:singleline_match.start()] + abstract_replacement + content[singleline_match.end():]
                     updated = True
                 else:
                     # Abstract line doesn't exist yet - add it after description in book section

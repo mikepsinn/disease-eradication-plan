@@ -1,0 +1,11 @@
+**Sensitivity Indices for Global Governance Efficiency Score**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| US Gov Waste Total | -0.9792 | Strong driver |
+| Political Dysfunction Global Opportunity Cost Total | -0.5247 | Strong driver |
+| Political Dysfunction Global Fossil Fuel Subsidies | 0.4969 | Moderate driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

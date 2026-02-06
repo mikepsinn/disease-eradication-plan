@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 5 | **Words:** 68,268
+**Files:** 5 | **Words:** 68,289
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 828 words | 107 lines
+**Stats:** 818 words | 107 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -765,8 +765,8 @@
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
-**Description:** The 1% Treaty: A policy framework using Incentive Alignment Bonds to scale research {{< var dfda_trial_capacity_multiplier >}} via pragmatic trials. Save {{< var dfda_trial_capacity_plus_efficacy_lag_...
-**Stats:** 29,755 words | 2,826 lines
+**Description:** {{< var diseases_without_effective_treatment >}} diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting ...
+**Stats:** 29,786 words | 2,826 lines
 
   - Abstract
   - Key Findings
@@ -1256,12 +1256,12 @@
 ## _quarto-federal-efficiency-audit.yml
 **Title:** Federal Resource Allocation Efficiency Audit
 **Type:** website
-**Files:** 1 | **Words:** 4,529
+**Files:** 1 | **Words:** 4,583
 
 #### knowledge/appendix/federal-efficiency-audit.qmd
 **Title:** Federal Resource Allocation Efficiency Audit
-**Description:** Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark compariso...
-**Stats:** 4,529 words | 591 lines
+**Description:** Engineering-style efficiency analysis quantifying approximately $4.2 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark c...
+**Stats:** 4,583 words | 587 lines
 
   - Executive Summary
   - Interpretation Note
@@ -1412,12 +1412,12 @@
 ## _quarto-invisible-graveyard.yml
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
 **Type:** website
-**Files:** 1 | **Words:** 7,383
+**Files:** 1 | **Words:** 7,385
 
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
-**Description:** After proving a drug is safe, the FDA requires {{< var efficacy_lag_years >}} to prove it works before patients can access it. This delay caused {{< var existing_drugs_efficacy_lag_deaths_total >}} am...
-**Stats:** 7,383 words | 784 lines
+**Description:** After proving a drug is safe, the FDA requires {{< var efficacy_lag_years >}} to prove it works before patients can access it. We estimate this delay cost {{< var existing_drugs_efficacy_lag_deaths_to...
+**Stats:** 7,385 words | 784 lines
 
   - The Short Version
   - Abstract
@@ -1479,7 +1479,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 161,648
+**Files:** 67 | **Words:** 161,638
 
 #### index.qmd
 **Title:** Start Here
@@ -3384,7 +3384,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 828 words | 107 lines
+**Stats:** 818 words | 107 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -3765,20 +3765,21 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 8,819
+**Files:** 1 | **Words:** 8,829
 
 #### knowledge/appendix/optimocracy-paper.qmd
-**Title:** optimocracy-paper
-**Stats:** 8,819 words | 949 lines
+**Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
+**Description:** Political dysfunction costs society trillions annually: {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity ...
+**Stats:** 8,829 words | 945 lines
 
   - The Mechanism
     - Why This Works
   - The Problem: Political Dysfunction Tax
   - Why Information Alone Fails
   - The Scale of Welfare Loss: Empirical Foundations
-    - A Formal Model of the Political Dysfunction Tax
+    - Quantifying the Political Dysfunction Tax
     - Documented Welfare Losses by Policy Domain
-    - Alternative Estimation: Bottom-Up Policy Cost Accounting
+    - Bottom-Up Policy Cost Accounting
     - Why Information Doesn't Solve the Problem
     - Implications for Mechanism Design
     - When Does Optimocracy Beat the Status Quo?
@@ -3887,7 +3888,7 @@
 ## _quarto-test.yml
 **Title:** Test Economics Document
 **Type:** book
-**Files:** 6 | **Words:** 9,025
+**Files:** 6 | **Words:** 9,015
 
 #### index.qmd
 **Title:** Wishocracy
@@ -3931,7 +3932,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 828 words | 107 lines
+**Stats:** 818 words | 107 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -4229,6 +4230,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 343,958
+- Total words: 344,025
 - Orphaned files: 26
 - Paper configs: 12

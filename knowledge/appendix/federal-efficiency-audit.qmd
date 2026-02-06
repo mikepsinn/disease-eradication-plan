@@ -1,9 +1,9 @@
 ---
 title: Federal Resource Allocation Efficiency Audit
 subtitle: A Systems Analysis of Recoverable Misallocation in U.S. Federal Spending
-description: Engineering-style efficiency analysis quantifying $2.27-3.47 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
+description: Engineering-style efficiency analysis quantifying approximately $4.2 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
 abstract: |
-  This report applies systems engineering methodology to quantify allocative inefficiency in U.S. federal spending. We define government efficiency as the rate of converting fiscal inputs into two terminal outcomes: after-tax real median income growth and median healthy life years. Analysis reveals the U.S. system operates at 52-67% efficiency versus 75-85% for OECD benchmark nations. Using Monte Carlo simulation across five subsystems (defense, healthcare, justice, regulatory/tax, and subsidies), we estimate an Aggregate Efficiency Gap of $1.85-3.47 trillion annually (P5-P95 range, mean $2.27T). Closing this gap to OECD median levels would recover approximately $1.5 trillion per year. The economic equivalent of current inefficiency equals 22.7 million QALYs or 165,700 VSL-equivalents annually.
+  This report applies systems engineering methodology to quantify allocative inefficiency in U.S. federal spending. We define government efficiency as the rate of converting fiscal inputs into two terminal outcomes: after-tax real median income growth and median healthy life years. Analysis reveals the U.S. system operates at 38-48% efficiency versus 75-85% for OECD benchmark nations. Using Monte Carlo simulation across ten subsystems (healthcare, housing, defense, regulatory, tax compliance, corporate welfare, tariffs, drug war, fossil fuel subsidies, and agriculture), we estimate an Aggregate Efficiency Gap of $3.53-5.10 trillion annually (P5-P95 range, mean ~$4.2T). Closing this gap to OECD median levels would recover approximately $2.1 trillion per year. The economic equivalent of current inefficiency equals 41.9 million QALYs or 304,000 VSL-equivalents annually.
 aliases:
   - /us-government-waste.html
   - /federal-efficiency-audit.html
@@ -47,24 +47,24 @@ image: /assets/og-images/knowledge/appendix/federal-efficiency-audit-og.jpg
 
 This audit applies engineering systems analysis to federal resource allocation. The core finding:
 
-![A comparative bar chart showing the efficiency rating gap between the U.S. and OECD benchmarks, highlighting the 2.27 trillion annual efficiency gap and the equivalent human cost in quality-adjusted life years.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-executive-summary-bw-academic.jpg)
+![A comparative bar chart showing the efficiency rating gap between the U.S. and OECD benchmarks, highlighting the 4.2 trillion annual efficiency gap and the equivalent human cost in quality-adjusted life years.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-executive-summary-bw-academic.jpg)
 
 | Metric | U.S. System | OECD Benchmark | Gap |
 |--------|-------------|----------------|-----|
-| **Efficiency Rating** | 52-67% | 75-85%^a^ | 18-33 pp |
-| **Annual Efficiency Gap** | $1.85-3.47T (P5-P95) | N/A | Mean: $2.27T |
-| **Recoverable Capital** | ~$1.5T/year | N/A | if closed to OECD median |
-| **Human Cost (economic equivalent)** | 22.7M QALYs | N/A | 165,700 VSL-equivalents |
+| **Efficiency Rating** | {{< var us_gov_efficiency_rating >}} | 75-85%^a^ | 27-47 pp |
+| **Annual Efficiency Gap** | {{< var us_gov_waste_total >}} | N/A | P5-P95 in tooltip |
+| **Recoverable Capital** | {{< var us_gov_waste_recoverable >}}/year | N/A | if closed to OECD median |
+| **Human Cost (economic equivalent)** | {{< var us_gov_waste_qaly_equivalents >}} | N/A | {{< var us_gov_waste_vsl_equivalents >}} |
 
 ^a^ *OECD benchmark derived from comparative per-capita spending analysis: peer nations (Germany, France, UK, Canada, Australia) achieve comparable median income growth and HALE outcomes at 10-15 percentage points lower government spending as share of GDP.*
 
 ::: {.callout-warning}
 ## Interpretation Note
 
-The "human cost" figures are **economic equivalents**, not epidemiological mortality counts. Dividing the efficiency gap by VSL ($13.7M) or QALY threshold ($100K) yields a measure of foregone welfare, not literal deaths prevented.
+The "human cost" figures are **economic equivalents**, not epidemiological mortality counts. Dividing the efficiency gap by VSL ({{< var dot_value_of_statistical_life >}}) or QALY threshold ({{< var medical_qaly_threshold >}}) yields a measure of foregone welfare, not literal deaths prevented.
 :::
 
-The efficiency gap represents capital that could fund the 1% Treaty ({{< var treaty_annual_funding >}}/year) 55 times over, or 10x current global disease R&D spending.
+The efficiency gap represents capital that could fund the 1% Treaty ({{< var treaty_annual_funding >}}/year) {{< var us_gov_waste_vs_treaty_multiplier >}} times over, or 10x current global disease R&D spending.
 
 ![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the 27B 1 percent Treaty annual funding and current global disease R and D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
 
@@ -98,7 +98,7 @@ These are not omissions. They are *upstream variables* that manifest in terminal
 
 ### Input-Output Measurement
 
-**Total System Input:** ~$6.75 trillion annually
+**Total System Input:** {{< var us_federal_spending_2024 >}} annually
 
 - Federal revenue: $4.9T [@cbo-budget-outlook-2025]
 - State/local revenue attributable to federal mandates: ~$1.3T [@census-state-local-finances]
@@ -146,8 +146,8 @@ While subsystem losses are estimated independently, some interdependence exists.
 
 ![A comparison showing the massive scale difference between the 13.7 million Value of Statistical Life (VSL) and the 50,000–100,000 Quality-Adjusted Life Year (QALY) standards.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-valuation-standards-bw-academic.jpg)
 
-- **Value of Statistical Life (VSL):** $13.7 million (US Department of Transportation) [@dot-vsl-2024]
-- **Quality-Adjusted Life Year (QALY):** $50,000-$100,000 (medical cost-effectiveness standard) [@qaly-threshold-history]
+- **Value of Statistical Life (VSL):** {{< var dot_value_of_statistical_life >}} (US Department of Transportation) [@dot-vsl-2024]
+- **Quality-Adjusted Life Year (QALY):** {{< var medical_qaly_threshold >}} (medical cost-effectiveness standard) [@qaly-threshold-history]
 
 ## Subsystem Audit: Defense
 
@@ -321,7 +321,7 @@ Americans spend 7.1-7.9 billion hours annually complying with the tax code [@ntu
 
 ![A comparison showing that U.S. tax compliance costs (546 billion) exceed total corporate income tax revenue, representing 1.9 percent of national GDP.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-tax-compliance-bw-academic.jpg)
 
-**Total compliance cost:** {{< var bad_policy_cost_us_tax_compliance >}} annually (Tax Foundation estimate) [@ntu-tax-compliance-2025; @taxfoundation2024-compliance]
+**Total compliance cost:** {{< var us_gov_waste_tax_compliance >}} annually (Tax Foundation estimate) [@ntu-tax-compliance-2025; @taxfoundation2024-compliance]
 
 This is approximately 1.9% of GDP, exceeding total corporate income tax revenue. The labor produces nothing but compliance documentation.
 
@@ -333,7 +333,7 @@ Local zoning regulations artificially restrict housing supply in high-productivi
 
 ![A visualization of the annual GDP loss attributed to housing misallocation, showing a central estimate of 1.40 trillion within a 1 trillion to 2 trillion confidence interval range.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-housing-zoning-misallocation-bw-academic.jpg)
 
-**Spatial misallocation cost:** Even conservative estimates point to 2% GDP loss = {{< var bad_policy_cost_us_housing_zoning >}} annually [@housing-misallocation-comment; @hsieh-moretti-correction].
+**Spatial misallocation cost:** Even conservative estimates point to 2% GDP loss = {{< var us_gov_waste_housing_zoning >}} annually [@housing-misallocation-comment; @hsieh-moretti-correction].
 
 *Note: The original Hsieh-Moretti (2019) estimate of 36% GDP loss was subsequently revised downward by the authors. The 2% figure used here represents a conservative lower bound; even critics of the original methodology acknowledge significant misallocation costs from zoning restrictions.*
 
@@ -396,7 +396,7 @@ The subsidy structure incentivizes overproduction of corn and soy, which form th
 
 ![A comparison of the annual economic costs of corporate welfare and tariff deadweight loss, highlighting the similar scale of impact between 181 billion in subsidies and the 160 billion loss in output.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-tariffs-and-corporate-welfare-bw-academic.jpg)
 
-**Tariff deadweight loss:** Trump/Biden tariff regimes estimated to reduce long-run GDP by 0.4-0.7% [@taxfoundation-tariffs-2025]. On a $28 trillion economy, 0.4% reduction = {{< var bad_policy_cost_us_tariffs >}} in lost output.
+**Tariff deadweight loss:** Trump/Biden tariff regimes estimated to reduce long-run GDP by 0.4-0.7% [@taxfoundation-tariffs-2025]. On a $28 trillion economy, 0.4% reduction = {{< var us_gov_waste_tariffs >}} in lost output.
 
 ### Subsidies Subsystem Summary
 
@@ -435,11 +435,11 @@ We model Total Efficiency Gap as the sum of subsystem losses, using Monte Carlo 
 
 | Percentile | Estimate |
 |------------|----------|
-| **P5 (Conservative)** | $1.85 trillion |
-| **Mean (Central)** | {{< var bad_policy_cost_total_us >}} |
-| **P95 (Upper Bound)** | $3.47 trillion |
+| **Mean (Central)** | {{< var us_gov_waste_total >}} |
 
-**As percentage of GDP:** {{< var bad_policy_cost_total_us_pct_gdp >}}
+*Note: The P5-P95 confidence interval is embedded in the variable tooltip. Subsystem means do not sum exactly to the aggregate because the Monte Carlo simulation applies a 15% overlap discount and models correlated uncertainties across categories.*
+
+**As percentage of GDP:** {{< var us_gov_waste_pct_gdp >}}
 
 #### Subsystem Uncertainty Distributions
 
@@ -449,29 +449,25 @@ The following figures show Monte Carlo distributions for key subsystem loss esti
 
 ## Tax Compliance
 
-{{< include ../figures/distribution-bad_policy_cost_us_tax_compliance.qmd >}}
+{{< include ../figures/distribution-us_gov_waste_tax_compliance.qmd >}}
 
 ## Housing/Zoning
 
-{{< include ../figures/distribution-bad_policy_cost_us_housing_zoning.qmd >}}
+{{< include ../figures/distribution-us_gov_waste_housing_zoning.qmd >}}
 
 ## Healthcare
 
-{{< include ../figures/distribution-bad_policy_cost_us_healthcare_inefficiency.qmd >}}
+{{< include ../figures/distribution-us_gov_waste_healthcare_inefficiency.qmd >}}
 
 ## Drug War
 
-{{< include ../figures/distribution-bad_policy_cost_us_drug_war.qmd >}}
+{{< include ../figures/distribution-us_gov_waste_drug_war.qmd >}}
 
 :::
 
 ### Efficiency Rating Calculation
 
-With system input of ~$6.75 trillion and efficiency gap of $2.27-3.47 trillion:
-
-$$\text{Efficiency} = \frac{\text{Input} - \text{Gap}}{\text{Input}} = \frac{6.75 - 2.27}{6.75} = 66\% \text{ (mean)}$$
-
-Range: 52-67% depending on gap estimate used.
+{{< var us_gov_efficiency_rating_latex >}}
 
 ![A comparison chart showing the current efficiency range and mean value relative to the significantly higher OECD benchmark range.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-efficiency-rating-calculation-bw-academic.jpg)
 
@@ -481,27 +477,27 @@ Range: 52-67% depending on gap estimate used.
 
 To contextualize the efficiency gap in human terms, we apply standard valuation thresholds. **These are economic equivalents, not epidemiological mortality counts.**
 
-**Using VSL ($13.7 million):**
+**Using VSL ({{< var dot_value_of_statistical_life >}}):**
 
-$$\text{VSL-Equivalents} = \frac{\$2.27 \text{ trillion}}{\$13.7 \text{ million}} \approx 165,700$$
+VSL-Equivalents = {{< var us_gov_waste_total >}} / {{< var dot_value_of_statistical_life >}} = {{< var us_gov_waste_vsl_equivalents >}}
 
-**Using QALY threshold ($100,000):**
+**Using QALY threshold ({{< var medical_qaly_threshold >}}):**
 
-$$\text{QALY-Equivalents} = \frac{\$2.27 \text{ trillion}}{\$100,000} = 22.7 \text{ million}$$
+QALY-Equivalents = {{< var us_gov_waste_total >}} / {{< var medical_qaly_threshold >}} = {{< var us_gov_waste_qaly_equivalents >}}
 
-**Interpretation:** The efficiency gap represents foregone welfare equivalent to 22.7 million quality-adjusted life years annually. This does not mean 165,700 people die from inefficiency. Rather, the misallocated resources *could have* purchased health improvements of that magnitude if deployed at cost-effectiveness thresholds used in medical decision-making.
+**Interpretation:** The efficiency gap represents foregone welfare equivalent to {{< var us_gov_waste_qaly_equivalents >}} annually. This does not mean {{< var us_gov_waste_vsl_equivalents >}} people die from inefficiency. Rather, the misallocated resources *could have* purchased health improvements of that magnitude if deployed at cost-effectiveness thresholds used in medical decision-making.
 
-![A comparison showing the 2.27 trillion efficiency gap converted into human cost equivalents: 165,700 value-of-statistical-life (VSL) units and 22.7 million quality-adjusted life years (QALYs).](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-human-cost-quantification-economic-equivalents-bw-academic.jpg)
+![A comparison showing the 4.2 trillion efficiency gap converted into human cost equivalents: VSL-equivalents and quality-adjusted life years (QALYs).](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-human-cost-quantification-economic-equivalents-bw-academic.jpg)
 
 ## Reallocation Potential
 
-If U.S. efficiency improved to OECD median (80%), approximately **$1.5 trillion annually** becomes available for reallocation.
+If U.S. efficiency improved to OECD median (80%), approximately **{{< var us_gov_waste_recoverable >}} annually** becomes available for reallocation.
 
 ### Context Comparisons
 
 | Initiative | Annual Cost | Efficiency Gap Coverage |
 |------------|-------------|-------------------------|
-| 1% Treaty funding | {{< var treaty_annual_funding >}} | 55x covered |
+| 1% Treaty funding | {{< var treaty_annual_funding >}} | {{< var us_gov_waste_vs_treaty_multiplier >}} covered |
 | Global disease R&D (current) | $150B [@gfinder-2024] | Would 10x |
 | U.S. infrastructure backlog | $2.6T total [@asce-infrastructure-2025] | Covered in <2 years |
 | Global poverty elimination | ~$175B [@worldbank-poverty-2024] | 8x covered |

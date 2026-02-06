@@ -37,24 +37,8 @@ book:
       affiliations:
         - name: "Institute for Accelerated Medicine"
           url: https://acceleratedmedicine.org
-  description: "The 1% Treaty: A policy framework using Incentive Alignment Bonds to scale research {{< var dfda_trial_capacity_multiplier >}} via pragmatic trials. Prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and achieve a record {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} cost per year of healthy life (DALY)."
-  abstract: |
-    {{< var diseases_without_effective_treatment >}} have 0 FDA-approved treatments. At current trial
-    capacity ({{< var new_disease_first_treatments_per_year >}}), exploring the therapeutic search
-    space takes ~{{< var status_quo_queue_clearance_years >}}.
-
-    Redirect {{< var treaty_reduction_pct >}} of military spending ({{< var treaty_annual_funding >}}/year)
-    to pragmatic clinical trials. Trial capacity jumps {{< var dfda_trial_capacity_multiplier >}}. Search
-    space explored in ~{{< var dfda_queue_clearance_years >}} instead of centuries. Average treatment reaches
-    patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. Timeline shift saves
-    {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, valued at
-    {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
-
-    Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY,
-    {{< var treaty_vs_bed_nets_multiplier >}} better than bed nets. Even at {{< var political_success_probability >}}
-    probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing
-    global health interventions. Incentive Alignment Bonds address political feasibility by tying
-    legislators' career incentives to a public voting scorecard.
+  description: '6.65k diseases diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7B deaths deaths. At $0.0018/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.'
+  abstract: "6.65k diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7B deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.0018/DALY, 50.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard."
   site-url: https://impact.warondisease.org
   favicon: assets/icons/economics-favicon.png
   page-navigation: true

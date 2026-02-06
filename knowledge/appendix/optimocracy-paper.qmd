@@ -1,9 +1,9 @@
 ---
 title: 'Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization'
-description: "Political dysfunction and cronyism cost society an estimated {{< var political_dysfunction_tax_total_pct >}} of potential GDP annually. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive."
+description: "Political dysfunction costs society trillions annually: {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive."
 abstract: |
   Politicians allocate trillions annually. What gets you reelected is often not what benefits voters.
-  This misalignment costs an estimated {{< var political_dysfunction_tax_total_pct >}} of potential welfare.
+  This misalignment costs {{< var us_gov_waste_total >}} in documented US waste alone.
 
   Optimocracy: (1) Analyze historical data on policies across jurisdictions, (2) Calculate which predict
   above-average median income and healthy life years, (3) Publish recommendations for every vote, (4) Track
@@ -83,7 +83,7 @@ Optimocracy is simple:
 
 ## The Problem: Political Dysfunction Tax
 
-Political actors optimize for what gets them reelected: campaign contributions, constituent services, ideological positioning. These differ systematically from what improves measured outcomes. The result: systematic resource misallocation costing an estimated {{< var political_dysfunction_tax_total_pct >}} of potential welfare. For full derivation, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd).
+Political actors optimize for what gets them reelected: campaign contributions, constituent services, ideological positioning. These differ systematically from what improves measured outcomes. The result: systematic resource misallocation costing {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs. For full derivation, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd).
 
 ## Why Information Alone Fails
 
@@ -101,7 +101,7 @@ Before proposing solutions, we must establish the magnitude of the problem. This
 
 ![A conceptual diagram illustrating how institutional and policy quality, rather than raw factors of production, serve as the primary drivers for the disparity in economic welfare between nations.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
 
-### A Formal Model of the Political Dysfunction Tax
+### Quantifying the Political Dysfunction Tax
 
 Let $W^*$ represent maximum achievable welfare under optimal policy, and $W$ represent actual welfare under current policy. We define the **Political Dysfunction Tax** as:
 
@@ -109,24 +109,20 @@ $$
 \tau_{dysfunction} = \frac{W^* - W}{W^*} = 1 - \frac{W}{W^*}
 $$
 
-This can be decomposed into sources:
+We estimate this tax through forensic accounting of documented policy failures. The methodology and sources are detailed in [The Political Dysfunction Tax](political-dysfunction-tax.qmd). Key findings:
 
-$$
-\tau_{dysfunction} = \tau_{crony} + \tau_{time} + \tau_{information} + \tau_{coordination}
-$$
+| Scope | Amount | As % of GDP |
+|-------|--------|-------------|
+| **US Waste Ledger** (burned capital) | {{< var us_gov_waste_total >}} | {{< var us_gov_waste_pct_gdp >}} |
+| **Global Opportunity Ledger** (unrealized potential) | {{< var political_dysfunction_global_opportunity_cost_total >}} | {{< var political_dysfunction_global_opportunity_cost_pct_gdp >}} |
+| **Global Efficiency Score** | (dimensionless) | {{< var political_dysfunction_global_efficiency_score >}} |
 
-Substituting empirical estimates:
+The welfare loss can be conceptually decomposed into sources:
 
-{{< var political_dysfunction_tax_total_pct_latex >}}
-
-Where:
-
-- $\tau_{crony}$: **Crony Tax**, welfare loss from resources flowing to concentrated interests rather than outcome-maximizing alternatives ({{< var crony_tax_pct >}})
-- $\tau_{time}$: **Short-Termism Cost**, welfare loss from short electoral horizons causing underinvestment in long-term goods ({{< var political_dysfunction_tax_time_pct >}}). Politicians facing re-election in 4 years systematically underinvest in goods that pay off over 10-30 years: basic research, infrastructure maintenance, pandemic preparedness, climate mitigation.
-- $\tau_{information}$: **Ignorance Cost**, welfare loss from decision-makers lacking relevant knowledge ({{< var political_dysfunction_tax_info_pct >}})
-- $\tau_{coordination}$: **Ideological Gridlock Cost**, welfare loss from inability to commit to welfare-improving policies ({{< var political_dysfunction_tax_coordination_pct >}})
-
-**Total Political Dysfunction Tax:** {{< var political_dysfunction_tax_total_pct >}}
+- **Crony Tax** ($\tau_{crony}$): Resources flowing to concentrated interests rather than outcome-maximizing alternatives. Del Rosal [-@delrosal2011] surveys empirical estimates ranging 0.2% to 23.7% of GDP.
+- **Short-Termism Cost** ($\tau_{time}$): Politicians facing re-election in 4 years systematically underinvest in goods that pay off over 10-30 years: basic research, infrastructure maintenance, pandemic preparedness, climate mitigation.
+- **Ignorance Cost** ($\tau_{information}$): Decision-makers lacking dispersed local knowledge that markets aggregate [@hayek1945].
+- **Gridlock Cost** ($\tau_{coordination}$): Diffuse beneficiaries cannot organize against concentrated interests [@olson1996].
 
 Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by making evidence-based recommendations public and rewarding politicians (via campaign support and career opportunities) in proportion to their alignment with those recommendations.
 
@@ -145,7 +141,7 @@ The following table synthesizes estimates from peer-reviewed research:
 
 ^†^Think tank source with weak causal identification; achievable gains likely smaller.
 
-**Note on interpretation:** These estimates are not additive; many inefficiencies interact and overlap. However, even conservative aggregation suggests the Political Dysfunction Tax exceeds {{< var political_dysfunction_tax_total_pct >}} of potential welfare.
+**Note on interpretation:** These estimates are not additive; many inefficiencies interact and overlap. However, even conservative aggregation suggests the Political Dysfunction Tax amounts to {{< var us_gov_waste_pct_gdp >}} of US GDP in documented waste.
 
 This pattern (massive welfare losses persisting due to political economy constraints) recurs across policy domains. The question is not whether trillion-dollar bills exist, but why they remain on the sidewalk.
 
@@ -155,15 +151,15 @@ This pattern (massive welfare losses persisting due to political economy constra
 - Corruption reduction: 3-5% of GDP
 - Other allocative improvements: 5-10% of GDP
 
-**Conservative aggregate: {{< var political_dysfunction_tax_total_pct >}} of global GDP in achievable welfare improvements** from better policy. This is still enormous ($20-40 trillion annually) and sufficient to motivate Optimocracy, without relying on heroic assumptions.
+**Conservative aggregate: {{< var us_gov_waste_pct_gdp >}} of US GDP in documented waste** ({{< var us_gov_waste_total >}}), with global opportunity costs reaching {{< var political_dysfunction_global_opportunity_cost_total >}}. This is sufficient to motivate Optimocracy, without relying on heroic assumptions.
 
-### Alternative Estimation: Bottom-Up Policy Cost Accounting
+### Bottom-Up Policy Cost Accounting
 
-The theoretical estimate of {{< var political_dysfunction_tax_total_pct >}} can be triangulated with bottom-up accounting of documented US policy costs. Our [Federal Resource Allocation Efficiency Audit](federal-efficiency-audit.qmd) enumerates specific, measurable policy failures across defense, healthcare, justice, regulatory, and subsidy subsystems, totaling {{< var bad_policy_cost_total_us >}} ({{< var bad_policy_cost_total_us_pct_gdp >}} of GDP, 95% CI: 11.9%-26.7%).
+The US government waste estimate of {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP) is derived from the [Federal Resource Allocation Efficiency Audit](federal-efficiency-audit.qmd), which enumerates specific, measurable policy failures across defense, healthcare, justice, regulatory, and subsidy subsystems.
 
-![A comparison showing the convergence between theoretical and bottom-up estimates of the Political Dysfunction Tax, illustrating the overlap in their confidence intervals and the disparity between US and Switzerland spending vs. health outcomes.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
+![A breakdown of documented US government waste by subsystem, showing healthcare, housing, military, regulatory, tax compliance, and other categories.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
 
-**Key finding:** The bottom-up estimate converges with the theoretical estimate of {{< var political_dysfunction_tax_total_pct >}}, suggesting the Political Dysfunction Tax is not merely theoretical but measurable through specific policy costs. International comparisons reinforce this: the US spends {{< var us_vs_switzerland_spending_gap >}} percentage points MORE of GDP than Switzerland yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
+International comparisons reinforce this estimate: the US spends {{< var us_vs_switzerland_spending_gap >}} percentage points MORE of GDP than Switzerland yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
 
 ### Why Information Doesn't Solve the Problem
 
@@ -183,7 +179,7 @@ Information about optimal policy is freely available. The Copenhagen Consensus, 
 
 The empirical evidence suggests:
 
-1. **The welfare loss is massive**: Conservative estimates suggest {{< var political_dysfunction_tax_total_pct >}} of potential welfare is foregone due to the Political Dysfunction Tax.
+1. **The welfare loss is massive**: Documented US waste alone totals {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP).
 2. **Information alone is insufficient**: Better data does not change political incentives.
 3. **The inefficiency is systematic**: It recurs across domains and countries, suggesting structural rather than contingent causes.
 4. **Capture is the primary mechanism**: Policies systematically favor concentrated interests over diffuse citizen welfare.
@@ -579,7 +575,7 @@ A close race with a large alignment gap gets priority over a safe seat, even if 
 
 ## Political Economy: Making Reform Happen
 
-The empirical case for Optimocracy is strong (Section 2 documented the Political Dysfunction Tax at {{< var political_dysfunction_tax_total_pct >}} of potential welfare). But optimal policy has been documented for decades. The question is not "what should we do?" but "how do we overcome political opposition to doing it?"
+The empirical case for Optimocracy is strong (Section 2 documented {{< var us_gov_waste_total >}} in US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs). But optimal policy has been documented for decades. The question is not "what should we do?" but "how do we overcome political opposition to doing it?"
 
 ![A conceptual framework showing the transformation of political opposition into support for reform by identifying and compensating stakeholders impacted by the shift to optimal policy.](/assets/images/optimocracy-paper/optimocracy-paper-section-political-economy-making-reform-happen-bw-academic.jpg)
 
@@ -809,7 +805,7 @@ Both frameworks generate recommendations that politicians can follow or ignore:
          +---------------------------+
 ```
 
-The Political Dysfunction Tax (estimated at {{< var political_dysfunction_tax_total_pct >}} of potential welfare) arises from both **misallocation** (wrong spending levels) and **bad policy** (welfare-reducing regulations). Addressing both requires both frameworks working together.
+The Political Dysfunction Tax ({{< var us_gov_waste_total >}} in US waste, {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs) arises from both **misallocation** (wrong spending levels) and **bad policy** (welfare-reducing regulations). Addressing both requires both frameworks working together.
 
 ### Algorithmic Governance Threat Model
 
