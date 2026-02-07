@@ -109,7 +109,12 @@ interface Options {
   dryRun: boolean;
   limit?: number;
   force: boolean;
+  write: boolean;
+  allowLlm: boolean;
 }
+
+const LLM_CHECK_KEYS = new Set(['fact', 'structure', 'param', 'latex', 'format', 'nonprofit']);
+const MUTATING_CHECK_KEYS = new Set(Object.keys(CHECKS));
 
 function parseArgs(): Options {
   const args = process.argv.slice(2);
@@ -118,6 +123,8 @@ function parseArgs(): Options {
     checks: [],
     dryRun: false,
     force: false,
+    write: false,
+    allowLlm: false,
   };
 
   let i = 0;
@@ -132,12 +139,31 @@ function parseArgs(): Options {
 
     if (arg === '--checks' || arg === '-c') {
       const checksArg = args[i + 1];
+      if (!checksArg) {
+        console.error('Error: --checks requires a value');
+        process.exit(1);
+      }
       if (checksArg === 'all') {
         options.checks = Object.keys(CHECKS);
       } else {
         options.checks = checksArg.split(',').map(c => c.trim().toLowerCase());
       }
       i += 2;
+      continue;
+    }
+
+    if (arg.startsWith('--checks=')) {
+      const checksArg = arg.slice('--checks='.length);
+      if (!checksArg) {
+        console.error('Error: --checks requires a value');
+        process.exit(1);
+      }
+      if (checksArg === 'all') {
+        options.checks = Object.keys(CHECKS);
+      } else {
+        options.checks = checksArg.split(',').map(c => c.trim().toLowerCase());
+      }
+      i++;
       continue;
     }
 
@@ -154,8 +180,42 @@ function parseArgs(): Options {
     }
 
     if (arg === '--limit' || arg === '-l') {
-      options.limit = parseInt(args[i + 1], 10);
+      const limitArg = args[i + 1];
+      if (!limitArg) {
+        console.error('Error: --limit requires a numeric value');
+        process.exit(1);
+      }
+      const parsedLimit = parseInt(limitArg, 10);
+      if (!Number.isInteger(parsedLimit) || parsedLimit <= 0) {
+        console.error(`Error: --limit must be a positive integer (got: ${limitArg})`);
+        process.exit(1);
+      }
+      options.limit = parsedLimit;
       i += 2;
+      continue;
+    }
+
+    if (arg.startsWith('--limit=')) {
+      const limitArg = arg.slice('--limit='.length);
+      const parsedLimit = parseInt(limitArg, 10);
+      if (!Number.isInteger(parsedLimit) || parsedLimit <= 0) {
+        console.error(`Error: --limit must be a positive integer (got: ${limitArg})`);
+        process.exit(1);
+      }
+      options.limit = parsedLimit;
+      i++;
+      continue;
+    }
+
+    if (arg === '--write' || arg === '-w') {
+      options.write = true;
+      i++;
+      continue;
+    }
+
+    if (arg === '--allow-llm') {
+      options.allowLlm = true;
+      i++;
       continue;
     }
 
@@ -164,7 +224,17 @@ function parseArgs(): Options {
       process.exit(0);
     }
 
+    if (arg.startsWith('-')) {
+      console.error(`Error: Unknown option: ${arg}`);
+      printHelp();
+      process.exit(1);
+    }
+
     // Non-option argument is the file path
+    if (options.filePath) {
+      console.error(`Error: Multiple file paths provided: ${options.filePath}, ${arg}`);
+      process.exit(1);
+    }
     if (!arg.startsWith('--') && !arg.startsWith('-')) {
       options.filePath = arg;
     }
@@ -194,6 +264,8 @@ Options:
   --checks, -c        Comma-separated list of checks to run (or 'all')
   --force, -f         Skip staleness check, process all files
   --limit, -l <n>     Limit number of files to process (with --all)
+  --write, -w         Required to allow checks that modify files
+  --allow-llm         Required to run LLM-backed checks (Gemini/Claude)
   --dry-run           Show what would be processed without running checks
   --help, -h          Show this help message
 
@@ -205,19 +277,19 @@ ${Object.entries(CHECKS).map(([key, def]) =>
 
 Examples:
   # Run fact and link checks on a single file
-  npx tsx scripts/review/run-checks.ts knowledge/problem/regulatory-delay.qmd --checks fact,link
+  npx tsx scripts/review/run-checks.ts knowledge/problem/regulatory-delay.qmd --checks fact,link --write --allow-llm
 
-  # Run all checks on all stale files
-  npx tsx scripts/review/run-checks.ts --all --checks all
+  # Run link and figure checks on all stale files (mutating mode)
+  npx tsx scripts/review/run-checks.ts --all --checks link,figure --write
 
-  # Run structure check on first 5 stale files
-  npx tsx scripts/review/run-checks.ts --all --checks structure --limit 5
+  # Run structure check on first 5 stale files (LLM-backed)
+  npx tsx scripts/review/run-checks.ts --all --checks structure --limit 5 --write --allow-llm
 
   # See what would be processed without running
   npx tsx scripts/review/run-checks.ts --all --checks fact --dry-run
 
   # Force recheck all files (ignore hash tracking)
-  npx tsx scripts/review/run-checks.ts --all --checks link --force
+  npx tsx scripts/review/run-checks.ts --all --checks link --force --write
 `);
 }
 
@@ -321,6 +393,24 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
+  const requestedMutatingChecks = options.checks.filter(c => MUTATING_CHECK_KEYS.has(c));
+  if (requestedMutatingChecks.length > 0 && !options.write && !options.dryRun) {
+    console.error(
+      `Error: The requested checks modify files (${requestedMutatingChecks.join(', ')}). ` +
+      'Re-run with --write to allow file changes.'
+    );
+    process.exit(1);
+  }
+
+  const requestedLlmChecks = options.checks.filter(c => LLM_CHECK_KEYS.has(c));
+  if (requestedLlmChecks.length > 0 && !options.allowLlm && !options.dryRun) {
+    console.error(
+      `Error: The requested checks are LLM-backed (${requestedLlmChecks.join(', ')}). ` +
+      'Re-run with --allow-llm to authorize LLM calls.'
+    );
+    process.exit(1);
+  }
+
   console.log('='.repeat(80));
   console.log('UNIFIED REVIEW RUNNER');
   console.log('='.repeat(80));
@@ -329,6 +419,8 @@ async function main(): Promise<void> {
   console.log(`Mode: ${options.all ? 'All files' : 'Single file'}`);
   if (options.force) console.log('Force: Skipping staleness check');
   if (options.limit) console.log(`Limit: ${options.limit} files`);
+  console.log(`Write mode: ${options.write ? 'enabled' : 'disabled'}`);
+  console.log(`LLM checks: ${options.allowLlm ? 'enabled' : 'disabled'}`);
   console.log();
 
   const filesToProcess = await getFilesToProcess(options, options.checks);

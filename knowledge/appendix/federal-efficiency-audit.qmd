@@ -1,9 +1,9 @@
 ---
 title: Federal Resource Allocation Efficiency Audit
 subtitle: A Systems Analysis of Recoverable Misallocation in U.S. Federal Spending
-description: Engineering-style efficiency analysis quantifying approximately $4.9 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark comparisons.
+description: Systems audit estimating an annual U.S. efficiency gap of {{< var us_gov_waste_total >}}, with {{< var us_gov_waste_recoverable >}} recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.
 abstract: |
-  This report applies systems engineering methodology to quantify allocative inefficiency in U.S. federal operations across four distinct dysfunction categories: (1) Direct Federal Spending Waste (~$1.01T annually), representing budget misallocations that could be redirected; (2) Compliance Burden on Private Sector (~$1.13T), measuring resources consumed by regulatory friction; (3) Policy-Induced GDP Loss (~$1.56T), quantifying economic output foregone due to market constraints; and (4) System Inefficiency (~$1.20T), identifying structural design failures requiring systemic redesign. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an Aggregate Efficiency Gap of $3.66-6.50 trillion annually (P5-P95 range, mean ~$4.9T). This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. Closing this gap to OECD median levels would recover approximately $2.45 trillion per year. The economic equivalent of current inefficiency equals 49.0 million QALYs or 357,000 VSL-equivalents annually.
+  This report applies systems engineering methodology to quantify allocative inefficiency in U.S. federal operations across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of {{< var us_gov_waste_total >}} annually and recoverable capital of {{< var us_gov_waste_recoverable >}} if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
 aliases:
   - /us-government-waste.html
   - /federal-efficiency-audit.html
@@ -53,13 +53,13 @@ This audit applies engineering systems analysis to federal resource allocation. 
 
 | Category | Annual Cost | Mechanism | Solution Type |
 |----------|-------------|-----------|---------------|
-| **1. Direct Spending Waste** | {{< var us_gov_waste_category_1_direct_spending >}} | Federal budget misallocation | Budget reallocation |
-| **2. Compliance Burden** | {{< var us_gov_waste_category_2_compliance >}} | Private sector regulatory friction | Simplification |
-| **3. Policy-Induced GDP Loss** | {{< var us_gov_waste_category_3_gdp_loss >}} | Market constraint policies | Policy reform |
-| **4. System Inefficiency** | {{< var us_gov_waste_category_4_system >}} | Structural design failure | System redesign |
-| **Total Efficiency Gap** | **{{< var us_gov_waste_total >}}** | (P5-P95: $3.66-6.50T) | Multiple pathways |
+| **Direct Spending Waste** | {{< var us_gov_waste_category_1_direct_spending >}} | Federal budget misallocation | Budget reallocation |
+| **Compliance Burden** | {{< var us_gov_waste_category_2_compliance >}} | Private sector regulatory friction | Simplification |
+| **Policy-Induced GDP Loss** | {{< var us_gov_waste_category_3_gdp_loss >}} | Market constraint policies | Policy reform |
+| **System Inefficiency** | {{< var us_gov_waste_category_4_system >}} | Structural design failure | System redesign |
+| **Total Efficiency Gap** | **{{< var us_gov_waste_total >}}** | (P5-P95 in variable output) | Multiple pathways |
 
-This categorization matters: claiming "$4.9T in federal spending waste" invites justified criticism when only $1.01T represents direct budget allocations. The remaining $3.9T represents compliance burdens on the private sector, GDP losses from policy constraints, and systemic inefficiency requiring structural reform.
+This categorization matters: calling the entire efficiency gap "federal spending waste" invites justified criticism because only direct spending waste is budget allocations. The remainder reflects compliance burdens, policy-induced GDP losses, and system inefficiency that require different remedies.
 
 ### Aggregate Metrics
 
@@ -67,7 +67,8 @@ This categorization matters: claiming "$4.9T in federal spending waste" invites 
 |--------|-------------|----------------|-----|
 | **Efficiency Rating** | {{< var us_gov_efficiency_rating >}} | 75-85%^a^ | 47-57 pp |
 | **Recoverable Capital** | {{< var us_gov_waste_recoverable >}}/year | N/A | if closed to OECD median |
-| **Human Cost (economic equivalent)** | {{< var us_gov_waste_qaly_equivalents >}} | N/A | {{< var us_gov_waste_vsl_equivalents >}} |
+| **Human Cost (QALY equivalents)** | {{< var us_gov_waste_qaly_equivalents >}} | N/A | N/A |
+| **Human Cost (VSL equivalents)** | {{< var us_gov_waste_vsl_equivalents >}} | N/A | N/A |
 
 ^a^ *OECD benchmark derived from comparative per-capita spending analysis: peer nations (Germany, France, UK, Canada, Australia) achieve comparable median income growth and HALE outcomes at 10-15 percentage points lower government spending as share of GDP [@oecd-govt-spending].*
 
@@ -79,7 +80,7 @@ The "human cost" figures are **economic equivalents**, not epidemiological morta
 **Methodological Note:** Subsystem losses are estimated independently and treated as additive. While some overlap may exist (e.g., housing costs affect health via stress, incarceration overlaps with drug enforcement), excluded categories (state/local inefficiency, implicit subsidies, behavioral effects) likely offset any potential overstatement.
 :::
 
-The efficiency gap represents capital that could fund the 1% Treaty ({{< var treaty_annual_funding >}}/year) {{< var us_gov_waste_vs_treaty_multiplier >}} times over, or about 33x current global disease R&D spending.
+The efficiency gap represents capital that could fund the 1% Treaty ({{< var treaty_annual_funding >}}/year) {{< var us_gov_waste_vs_treaty_multiplier >}} times over.
 
 ![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the 27B 1 percent Treaty annual funding and current global disease R and D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
 
@@ -125,6 +126,8 @@ Context (not additive):
 
 For cross-country comparability, the efficiency rating uses federal outlays as the input baseline. Compliance burdens are treated as losses rather than additional inputs.
 
+These contextual figures imply a combined fiscal and compliance footprint in the several-trillion-dollar range, but the efficiency rating uses federal outlays to keep the denominator comparable across OECD systems.
+
 ![A breakdown of the total system input, showing the proportional distribution of federal revenue, state and local mandates, and regulatory compliance burdens.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-input-output-measurement-bw-academic.jpg)
 
 ## Methodology
@@ -133,25 +136,25 @@ For cross-country comparability, the efficiency rating uses federal outlays as t
 
 Not all inefficiency is created equal. A dollar misspent in the federal budget requires a different remedy than a dollar consumed by tax compliance or a dollar of GDP lost to zoning restrictions. We organize dysfunction into four categories by **mechanism** and **solution pathway**:
 
-**Category 1: Direct Federal Spending Waste ({{< var us_gov_waste_category_1_direct_spending >}})**
+**Direct Federal Spending Waste ({{< var us_gov_waste_category_1_direct_spending >}})**
 
 Actual budget allocations flowing to low-value uses. This is traditional "government waste": military overspend, corporate welfare, drug war enforcement, fossil fuel subsidies, agricultural subsidies. The solution is **budget reallocation**-redirect these dollars to higher-return uses without increasing total spending.
 
 Think of military spending: the {{< var us_gov_waste_military_overspend >}} "overspend" above strict deterrence baseline represents federal dollars that could fund disease eradication treaties instead of maintaining 750 overseas bases [@npp-military-bases-2025].
 
-**Category 2: Compliance Burden ({{< var us_gov_waste_category_2_compliance >}})**
+**Compliance Burden ({{< var us_gov_waste_category_2_compliance >}})**
 
 Private sector resources consumed by government-imposed compliance requirements. Tax compliance costs {{< var us_gov_waste_tax_compliance >}} annually. This is not federal spending. The total includes 7.9 billion hours of lost productivity plus out-of-pocket filing costs. Regulatory red tape adds {{< var us_gov_waste_regulatory_red_tape >}} in procedural friction without corresponding safety benefits.
 
 The solution is **simplification**. Compare current U.S. tax system to the FairTax proposal: a national consumption tax would eliminate filing for most citizens, instantly recovering most of that compliance waste. Similarly, streamlining redundant regulations (keeping safety standards but removing paperwork friction) would recapture much of the regulatory burden.
 
-**Category 3: Policy-Induced GDP Loss ({{< var us_gov_waste_category_3_gdp_loss >}})**
+**Policy-Induced GDP Loss ({{< var us_gov_waste_category_3_gdp_loss >}})**
 
 Economic output that *would exist* but for policy constraints on markets. Housing/zoning restrictions prevent workers from moving to high-productivity cities, costing {{< var us_gov_waste_housing_zoning >}} annually in foregone GDP [@hsieh-moretti2019]. Tariffs cost another {{< var us_gov_waste_tariffs >}} through deadweight loss.
 
 The solution is **policy reform**. Japan's zoning system allows by-right development with minimal restrictions-the optimal comparison point showing what's possible when government stops blocking private construction. Removing trade barriers would immediately expand economic output.
 
-**Category 4: System Inefficiency ({{< var us_gov_waste_category_4_system >}})**
+**System Inefficiency ({{< var us_gov_waste_category_4_system >}})**
 
 Fundamental design failures where the system architecture itself prevents efficiency. Healthcare exemplifies this: {{< var us_gov_waste_healthcare_inefficiency >}} in administrative waste not from bad management but from fragmented payment systems, lack of price transparency, and perverse incentives built into third-party payment structures.
 
@@ -207,7 +210,7 @@ Subsystem losses are estimated independently and treated as additive. While some
 - **Value of Statistical Life (VSL):** {{< var dot_value_of_statistical_life >}} (US Department of Transportation) [@dot-vsl-2024]
 - **Quality-Adjusted Life Year (QALY):** {{< var medical_qaly_threshold >}} (medical cost-effectiveness standard) [@qaly-threshold-history]
 
-## Category 1: Direct Federal Spending Waste
+## Direct Federal Spending Waste {#category-1-direct-federal-spending-waste}
 
 **Total: {{< var us_gov_waste_category_1_direct_spending >}} annually**
 
@@ -229,7 +232,7 @@ Every dollar here comes from taxpayers and goes somewhere. The question is not w
 
 **Detailed subsystem analysis follows in:** [Subsystem Audit: Defense](#subsystem-audit-defense), [Subsystem Audit: Justice](#subsystem-audit-justice-prohibition), [Subsystem Audit: Subsidies](#subsystem-audit-subsidies-transfers)
 
-## Category 2: Compliance Burden on Private Sector
+## Compliance Burden on Private Sector {#category-2-compliance-burden-on-private-sector}
 
 **Total: {{< var us_gov_waste_category_2_compliance >}} annually**
 
@@ -254,7 +257,7 @@ The regulatory red tape figure ({{< var us_gov_waste_regulatory_red_tape >}}) re
 
 **Detailed subsystem analysis follows in:** [Subsystem Audit: Regulatory and Tax Compliance](#subsystem-audit-regulatory-tax-compliance)
 
-## Category 3: Policy-Induced GDP Loss
+## Policy-Induced GDP Loss {#category-3-policy-induced-gdp-loss}
 
 **Total: {{< var us_gov_waste_category_3_gdp_loss >}} annually**
 
@@ -277,7 +280,7 @@ Japan allows by-right development with minimal restrictions. National zoning law
 
 **Detailed subsystem analysis follows in:** [Subsystem Audit: Regulatory and Tax Compliance](#subsystem-audit-regulatory-tax-compliance), [Subsystem Audit: Subsidies](#subsystem-audit-subsidies-transfers)
 
-## Category 4: System Inefficiency
+## System Inefficiency {#category-4-system-inefficiency}
 
 **Total: {{< var us_gov_waste_category_4_system >}} annually**
 
@@ -291,7 +294,7 @@ This category represents fundamental design failures where the system architectu
 
 **The Healthcare Labyrinth:** The U.S. spends 18% of GDP on healthcare-$5.3 trillion-and gets worse outcomes than nations spending 10-11% [@pgpf-healthcare-comparison]. The delta isn't care quality. It's administrative friction: billing complexity, fragmented systems, no price transparency.
 
-**Why This is Category 4, Not Category 1:** Healthcare's {{< var us_gov_waste_healthcare_inefficiency >}} waste isn't federal spending that could be reallocated. It's private spending (55% of total healthcare) flowing through a systemically broken structure. You can't "budget reallocate" your way out of third-party payment incentive problems.
+**Why This is System Inefficiency, Not Direct Spending Waste:** Healthcare's {{< var us_gov_waste_healthcare_inefficiency >}} waste isn't federal spending that could be reallocated. It's private spending (55% of total healthcare) flowing through a systemically broken structure. You can't "budget reallocate" your way out of third-party payment incentive problems.
 
 **Platonic Ideals: Singapore and Switzerland**
 
@@ -315,19 +318,19 @@ The following subsystem audits provide detailed component breakdowns. Each subsy
 
 | Subsystem | Primary Category | Components |
 |-----------|-----------------|------------|
-| **Defense** | Category 1 (Direct Spending) | Military overspend ({{< var us_gov_waste_military_overspend >}}) |
-| **Healthcare Administration** | Category 4 (System Inefficiency) | Healthcare system waste ({{< var us_gov_waste_healthcare_inefficiency >}}) |
-| **Justice and Prohibition** | Category 1 (Direct Spending) | Drug war ({{< var us_gov_waste_drug_war >}}) |
-| **Regulatory and Tax Compliance** | Category 2 (Compliance) + Category 3 (GDP Loss) | Tax compliance ({{< var us_gov_waste_tax_compliance >}}), Regulatory red tape ({{< var us_gov_waste_regulatory_red_tape >}}), Housing/zoning ({{< var us_gov_waste_housing_zoning >}}) |
-| **Subsidies and Transfers** | Category 1 (Direct Spending) + Category 3 (GDP Loss) | Corporate welfare ({{< var us_gov_waste_corporate_welfare >}}), Fossil fuel subsidies ({{< var us_gov_waste_fossil_fuel_subsidies >}}), Agricultural subsidies ({{< var us_gov_waste_agricultural_subsidies >}}), Tariffs ({{< var us_gov_waste_tariffs >}}) |
+| **Defense** | Direct Spending Waste | Military overspend ({{< var us_gov_waste_military_overspend >}}) |
+| **Healthcare Administration** | System Inefficiency | Healthcare system waste ({{< var us_gov_waste_healthcare_inefficiency >}}) |
+| **Justice and Prohibition** | Direct Spending Waste | Drug war ({{< var us_gov_waste_drug_war >}}) |
+| **Regulatory and Tax Compliance** | Compliance Burden + Policy-Induced GDP Loss | Tax compliance ({{< var us_gov_waste_tax_compliance >}}), Regulatory red tape ({{< var us_gov_waste_regulatory_red_tape >}}), Housing/zoning ({{< var us_gov_waste_housing_zoning >}}) |
+| **Subsidies and Transfers** | Direct Spending Waste + Policy-Induced GDP Loss | Corporate welfare ({{< var us_gov_waste_corporate_welfare >}}), Fossil fuel subsidies ({{< var us_gov_waste_fossil_fuel_subsidies >}}), Agricultural subsidies ({{< var us_gov_waste_agricultural_subsidies >}}), Tariffs ({{< var us_gov_waste_tariffs >}}) |
 
 ---
 
 ## Subsystem Audit: Defense
 
-**[Category 1: Direct Federal Spending Waste]**
+**[Direct Federal Spending Waste]**
 
-As part of the aggregate $3.66-6.50T efficiency gap, the defense subsystem contributes an estimated $100-300B annually. The Department of Defense operates as the largest discretionary expenditure node, with annual spending of approximately $900 billion [@pgpf-defense-budget-2024]. Current spending exceeds the next nine nations combined [@sipri-milex-2024].
+In the core model, defense contributes {{< var us_gov_waste_military_overspend >}} annually through military overspend above the strict deterrence baseline. The Department of Defense operates as the largest discretionary expenditure node, with annual spending of approximately $900 billion [@pgpf-defense-budget-2024]. Current spending exceeds the next nine nations combined [@sipri-milex-2024].
 
 ![A comparison of the 900 billion U.S. defense budget against the combined military expenditures of the next nine highest-spending nations.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-defense-bw-academic.jpg)
 
@@ -378,19 +381,17 @@ Cutting the redundant ICBM leg and reducing bomber procurement would save $15-20
 
 ### Defense Subsystem Summary
 
-| Loss Category | Low Estimate | Mean | High Estimate |
-|---------------|--------------|------|---------------|
-| Leakage (audit) | $50B | $75B | $100B |
-| Conversion (F-35) | $15B | $17B | $20B |
-| Idle (bases) | $40B | $55B | $75B |
-| Parasitic (strategy) | $50B | $63B | $105B |
-| **Total** | **$100B** | **$210B** | **$300B** |
+| Measure | Value |
+|---------|-------|
+| Core modeled defense contribution | {{< var us_gov_waste_military_overspend >}} |
+
+The mechanism-specific estimates above (audit leakage, F-35 conversion losses, overseas basing, strategic misalignment) explain drivers of this overspend and should not be added as separate totals.
 
 ## Subsystem Audit: Healthcare Administration
 
-**[Category 4: System Inefficiency]**
+**[System Inefficiency]**
 
-Contributing $300-600B to the aggregate efficiency gap, healthcare administrative overhead represents the largest single subsystem loss. U.S. healthcare consumes ~18% of GDP ($5.3 trillion) [@us-federal-healthcare-spending] yet delivers health outcomes inferior to peer nations spending 10-11% of GDP [@pgpf-healthcare-comparison]. The delta is not care quality. It is administrative friction.
+In the core model, healthcare system inefficiency contributes {{< var us_gov_waste_healthcare_inefficiency >}} annually. U.S. healthcare consumes ~18% of GDP ($5.3 trillion) [@us-federal-healthcare-spending] yet delivers health outcomes inferior to peer nations spending 10-11% of GDP [@pgpf-healthcare-comparison]. The delta is not care quality. It is administrative friction.
 
 ![A comparison of healthcare spending as a percentage of GDP between the U.S. (18 percent) and peer nations (10-11 percent), highlighting the financial discrepancy linked to administrative overhead.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-healthcare-administration-bw-academic.jpg)
 
@@ -427,18 +428,17 @@ Private financial networks operate with fraud rates orders of magnitude lower.
 
 ### Healthcare Subsystem Summary
 
-| Loss Category | Low Estimate | Mean | High Estimate |
-|---------------|--------------|------|---------------|
-| Friction (admin) | $250B | $335B | $400B |
-| Leakage (MA upcoding) | $60B | $83B | $100B |
-| Leakage (improper payments) | $80B | $120B | $150B |
-| **Total** | **$300B** | **$450B** | **$600B** |
+| Measure | Value |
+|---------|-------|
+| Core modeled healthcare inefficiency | {{< var us_gov_waste_healthcare_inefficiency >}} |
+
+The administrative and payment-fraud estimates above are key mechanisms within this broader system-level inefficiency.
 
 ## Subsystem Audit: Justice and Prohibition
 
-**[Category 1: Direct Federal Spending Waste]**
+**[Direct Federal Spending Waste]**
 
-Contributing $100-500B to the aggregate efficiency gap (wide range reflects uncertainty in incarceration opportunity costs), the justice subsystem represents sustained policy failure: intervention that fails to achieve stated objectives while generating substantial negative externalities.
+In the core model, justice and prohibition contribute {{< var us_gov_waste_drug_war >}} annually through direct drug war spending and associated direct losses. Broader incarceration externalities remain substantial but are treated as contextual estimates here to avoid overlap with other modeled categories.
 
 ![A conceptual diagram illustrating the failure of the drug prohibition system, showing the gap between intended policy objectives and the actual outcomes of incarceration and negative externalities.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-justice-and-prohibition-bw-academic.jpg)
 
@@ -480,22 +480,17 @@ This mechanism incentivizes revenue-generating enforcement over public safety, i
 
 ### Justice Subsystem Summary
 
-| Loss Category | Low Estimate | Mean | High Estimate |
-|---------------|--------------|------|---------------|
-| Conversion (drug enforcement) | $40B | $48B | $55B |
-| Negative work (incarceration) | $80B | $280B | $500B |
-| Leakage (forfeiture) | $2B | $2B | $3B |
-| **Total** | **$100B** | **$280B** | **$500B** |
+| Measure | Value |
+|---------|-------|
+| Core modeled justice/prohibition contribution | {{< var us_gov_waste_drug_war >}} |
 
-*Note: The 6x range ($80B-$500B) for incarceration reflects genuine uncertainty. The low bound captures only direct corrections spending; the high bound includes comprehensive economic burden estimates (lost wages, family disruption, intergenerational effects). Different methodologies yield dramatically different figures.*
+*Note: The incarceration burden estimates above reflect broader societal externalities and are presented as contextual evidence rather than additive components in the core aggregate model.*
 
 ## Subsystem Audit: Regulatory and Tax Compliance
 
-**[Category 2: Compliance Burden + Category 3: GDP Loss]**
+**[Compliance Burden + Policy-Induced GDP Loss]**
 
-Contributing $600B-1.2T to the aggregate efficiency gap (largest single category), the regulatory subsystem imposes compliance burdens (time and resources consumed meeting federal requirements) that represent a substantial unrecorded subtraction from national output.
-
-![A comparison of the escalating economic impacts of mass incarceration, contrasting the 80.7 billion direct public cost against the 1 trillion comprehensive social and economic burden.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-mass-incarceration-bw-academic.jpg)
+In the core model, this subsystem maps to three major components: tax compliance ({{< var us_gov_waste_tax_compliance >}}), regulatory red tape ({{< var us_gov_waste_regulatory_red_tape >}}), and housing/zoning misallocation ({{< var us_gov_waste_housing_zoning >}}). Together they represent a substantial unrecorded subtraction from national output.
 
 ### Loss Category: Friction (Tax Compliance)
 
@@ -543,19 +538,19 @@ The Jones Act requires domestic shipping on U.S.-built, U.S.-crewed vessels. Res
 
 ### Regulatory Subsystem Summary
 
-| Loss Category | Low Estimate | Mean | High Estimate |
-|---------------|--------------|------|---------------|
-| Friction (tax compliance) | $464B | $505B | $546B |
-| Friction (housing) | $300B | $560B | $700B |
-| Idle (NEPA) | $100B | $120B | $140B |
-| Parasitic (Jones Act) | $1B | $10B | $19B |
-| **Total** | **$600B** | **$900B** | **$1.2T** |
+| Core Modeled Component | Value |
+|------------------------|-------|
+| Tax compliance | {{< var us_gov_waste_tax_compliance >}} |
+| Regulatory red tape | {{< var us_gov_waste_regulatory_red_tape >}} |
+| Housing/zoning misallocation | {{< var us_gov_waste_housing_zoning >}} |
+
+NEPA and Jones Act estimates above are additional policy frictions discussed for context and are not separately added to the core model total here.
 
 ## Subsystem Audit: Subsidies and Transfers
 
-**[Category 1: Direct Federal Spending + Category 3: GDP Loss]**
+**[Direct Spending Waste + Policy-Induced GDP Loss]**
 
-Contributing $200-350B to the aggregate efficiency gap, direct transfers to profitable industries distort market signals and insulate incumbents from innovation pressure.
+In the core model, this subsystem includes corporate welfare ({{< var us_gov_waste_corporate_welfare >}}), fossil fuel subsidies ({{< var us_gov_waste_fossil_fuel_subsidies >}}), agricultural subsidies ({{< var us_gov_waste_agricultural_subsidies >}}), and tariff-related GDP loss ({{< var us_gov_waste_tariffs >}}).
 
 ### Loss Category: Parasitic (Fossil Fuel Subsidies)
 
@@ -584,32 +579,28 @@ The subsidy structure incentivizes overproduction of corn and soy, which form th
 
 ### Subsidies Subsystem Summary
 
-| Loss Category | Low Estimate | Mean | High Estimate |
-|---------------|--------------|------|---------------|
-| Parasitic (fossil fuel) | $10B | $30B | $52B |
-| Parasitic (agriculture) | $9B | $20B | $30B |
-| Parasitic (corporate) | $150B | $181B | $200B |
-| Negative work (tariffs) | $80B | $112B | $150B |
-| **Total** | **$200B** | **$280B** | **$350B** |
+| Core Modeled Component | Value |
+|------------------------|-------|
+| Corporate welfare | {{< var us_gov_waste_corporate_welfare >}} |
+| Fossil fuel subsidies | {{< var us_gov_waste_fossil_fuel_subsidies >}} |
+| Agricultural subsidies | {{< var us_gov_waste_agricultural_subsidies >}} |
+| Tariff-related GDP loss | {{< var us_gov_waste_tariffs >}} |
 
 ## Aggregate Efficiency Calculation
 
 ### Monte Carlo Simulation Parameters
 
-We model Total Efficiency Gap as the sum of subsystem losses, using Monte Carlo simulation to account for correlated uncertainties.
+We model Total Efficiency Gap as the sum of ten core components, grouped into four categories, with Monte Carlo simulation accounting for correlated uncertainties.
 
-![A range chart comparing the mean annual efficiency gap across six subsystems, with error bars representing the P10 to P90 uncertainty intervals.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-monte-carlo-simulation-parameters-bw-academic.jpg)
+![A range chart comparing modeled efficiency-gap components and uncertainty intervals.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-monte-carlo-simulation-parameters-bw-academic.jpg)
 
-| Subsystem | Distribution | P10 | Mean | P90 | Rationale |
-|-----------|-------------|-----|------|-----|-----------|
-| Defense | Log-Normal | $100B | $210B | $350B | Audit opacity creates high upper-bound risk |
-| Healthcare | Normal | $300B | $450B | $600B | OECD comparisons provide stable variance |
-| Justice/Prohibition | Normal | $150B | $280B | $400B | Incarceration costs relatively predictable |
-| Regulatory/Tax | Log-Normal | $600B | $900B | $1.5T | Housing/tax opportunity costs have fat tails |
-| Subsidies | Normal | $200B | $280B | $350B | Direct line items easier to bound |
-| Debt Interest | Constant | $150B | $150B | $150B | Interest on accumulated inefficiency |
-
-*Note: Debt interest calculated as portion of net interest ($888B in 2024) [@cbo-long-term-budget-2024] attributable to cumulative efficiency gap.*
+| Category | Mean (Model Output) | Notes |
+|----------|---------------------|-------|
+| Direct Spending Waste | {{< var us_gov_waste_category_1_direct_spending >}} | Budget allocations that can be reallocated |
+| Compliance Burden | {{< var us_gov_waste_category_2_compliance >}} | Private-sector compliance friction |
+| Policy-Induced GDP Loss | {{< var us_gov_waste_category_3_gdp_loss >}} | Foregone output from policy constraints |
+| System Inefficiency | {{< var us_gov_waste_category_4_system >}} | Structural design failures |
+| **Total Efficiency Gap** | **{{< var us_gov_waste_total >}}** | Aggregate modeled loss |
 
 ### Simulation Results
 
@@ -621,21 +612,21 @@ We model Total Efficiency Gap as the sum of subsystem losses, using Monte Carlo 
 |------------|----------|
 | **Mean (Central)** | {{< var us_gov_waste_total >}} |
 
-*Note: The P5-P95 confidence interval is embedded in the variable tooltip. Subsystem means sum to the aggregate total, with Monte Carlo simulation modeling correlated uncertainties across categories.*
+*Note: The P5-P95 confidence interval is embedded in the variable output. Category means sum to the aggregate total, with Monte Carlo simulation modeling correlated uncertainties across components.*
 
 **As percentage of GDP:** {{< var us_gov_waste_pct_gdp >}}
 
 **Category Breakdown:**
 
-| Category | Annual Cost | % of Total | Solution Type |
-|----------|-------------|------------|---------------|
-| **Category 1:** Direct Spending | {{< var us_gov_waste_category_1_direct_spending >}} | 21% | Budget reallocation |
-| **Category 2:** Compliance Burden | {{< var us_gov_waste_category_2_compliance >}} | 23% | Simplification |
-| **Category 3:** GDP Loss | {{< var us_gov_waste_category_3_gdp_loss >}} | 32% | Policy reform |
-| **Category 4:** System Inefficiency | {{< var us_gov_waste_category_4_system >}} | 24% | System redesign |
-| **Total** | **{{< var us_gov_waste_total >}}** | **100%** | Multiple pathways |
+| Category | Annual Cost | Solution Type |
+|----------|-------------|---------------|
+| **Direct Spending Waste** | {{< var us_gov_waste_category_1_direct_spending >}} | Budget reallocation |
+| **Compliance Burden** | {{< var us_gov_waste_category_2_compliance >}} | Simplification |
+| **Policy-Induced GDP Loss** | {{< var us_gov_waste_category_3_gdp_loss >}} | Policy reform |
+| **System Inefficiency** | {{< var us_gov_waste_category_4_system >}} | System redesign |
+| **Total** | **{{< var us_gov_waste_total >}}** | Multiple pathways |
 
-This breakdown clarifies that only $1.01T (21%) represents traditional "federal budget waste" subject to reallocation. The majority-$3.9T (79%)-reflects broader economic dysfunction requiring simplification (Category 2), policy reform (Category 3), or structural redesign (Category 4).
+This breakdown clarifies that only direct spending waste represents traditional "federal budget waste" subject to reallocation. The majority reflects broader economic dysfunction requiring simplification (compliance burden), policy reform (policy-induced GDP loss), or structural redesign (system inefficiency).
 
 #### Subsystem Uncertainty Distributions
 
@@ -695,19 +686,19 @@ For scale, the total efficiency gap ({{< var us_gov_waste_total >}}/year) implie
 
 ### Context Comparisons
 
-| Initiative | Annual Cost | Total Gap Coverage |
-|------------|-------------|-------------------------|
+| Initiative | Cost Benchmark | Comparison to Annual Gap |
+|------------|----------------|--------------------------|
 | 1% Treaty funding | {{< var treaty_annual_funding >}} | {{< var us_gov_waste_vs_treaty_multiplier >}} covered |
-| Global disease R&D (current) | $150B [@gfinder-2024] | About 33x |
-| U.S. infrastructure backlog | $2.6T total [@asce-infrastructure-2025] | Covered in <1 year |
-| Global poverty elimination | ~$175B [@worldbank-poverty-2024] | About 28x |
-| Complete grid decarbonization | $100B/year [@doe-liftoff-2024] | About 49x |
+| Global disease R&D (current) | $150B [@gfinder-2024] | Annual gap remains multiple times larger |
+| U.S. infrastructure backlog | $2.6T total [@asce-infrastructure-2025] | Comparable in scale to one year of the gap |
+| Global poverty elimination | ~$175B [@worldbank-poverty-2024] | Annual gap remains multiple times larger |
+| Complete grid decarbonization | $100B/year [@doe-liftoff-2024] | Annual gap remains multiple times larger |
 
 The efficiency gap is not abstract accounting. It represents real capacity currently unavailable for health, infrastructure, and security improvements.
 
 ### Opportunity Cost in Healthy Life Years
 
-Each dollar of wasteful spending has a concrete human cost: it could have funded pragmatic clinical trials that accelerate treatment discovery. @fig-waste-opportunity-cost converts each waste category into DALYs that could be averted if redirected to ubiquitous pragmatic trials.
+Each dollar of wasteful spending has a concrete human cost: it could have funded pragmatic clinical trials that accelerate treatment discovery. @tbl-waste-opportunity-cost converts each waste category into DALYs that could be averted if redirected to ubiquitous pragmatic trials.
 
 {{< include ../figures/waste-opportunity-cost-bar-chart.qmd >}}
 

@@ -26,6 +26,8 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import urlparse, unquote
 
+from lib.yaml_sync_utils import strip_confidence_intervals
+
 # Set UTF-8 encoding for stdout
 if sys.platform == "win32":
     import codecs
@@ -466,6 +468,28 @@ def check_bibliography_annotations(content, file_path):
     return errors
 
 
+def normalize_description_for_comparison(text: str) -> str:
+    """
+    Normalize description text for comparison.
+
+    Strips confidence intervals and normalizes whitespace so that:
+    - "6.65k diseases (95% CI: 5.70k-8.24k) diseases..."
+    - "6.65k diseases diseases..."
+    Both normalize to the same string.
+
+    This allows intentional CI differences between:
+    - Page descriptions (Quarto-rendered with CIs)
+    - Book/website descriptions (clean for SEO)
+    """
+    if not text:
+        return ""
+    # Strip confidence intervals using shared function
+    normalized = strip_confidence_intervals(text)
+    # Normalize whitespace
+    normalized = re.sub(r'\s{2,}', ' ', normalized)
+    return normalized.strip()
+
+
 def check_meta_description_match(content, file_path):
     """Check that og:description and name="description" meta tags have matching values"""
     errors = []
@@ -494,14 +518,24 @@ def check_meta_description_match(content, file_path):
         errors.append(ValidationError(file_path, 0, "MISSING_META_DESCRIPTION", context))
         return errors
     
-    # Both exist - check if they match
+    # Both exist - normalize and check if they match
     name_desc_value = name_desc_match.group(1)
     og_desc_value = og_desc_match.group(1)
-    
-    if name_desc_value != og_desc_value:
-        context = f"Description mismatch: name=\"description\" = \"{name_desc_value[:80]}...\" vs og:description = \"{og_desc_value[:80]}...\""
+
+    # Normalize both descriptions (strip CIs, normalize whitespace)
+    # This allows intentional CI differences between page and book descriptions
+    name_normalized = normalize_description_for_comparison(name_desc_value)
+    og_normalized = normalize_description_for_comparison(og_desc_value)
+
+    if name_normalized != og_normalized:
+        context = (
+            f"Description mismatch after normalization:\n"
+            f"  name=\"description\" = \"{name_desc_value[:80]}...\"\n"
+            f"  og:description = \"{og_desc_value[:80]}...\"\n"
+            f"  (normalized: \"{name_normalized[:60]}...\" vs \"{og_normalized[:60]}...\")"
+        )
         errors.append(ValidationError(file_path, 0, "DESCRIPTION_MISMATCH", context))
-    
+
     return errors
 
 
@@ -756,9 +790,9 @@ def main():
         print("     Check that the href path in config matches the actual file location")
     if "DESCRIPTION_MISMATCH" in errors_by_type:
         print("   - Description mismatch: <meta name=\"description\"> and <meta property=\"og:description\">")
-        print("     have different values. They should match - page-level descriptions should be used")
-        print("     for both. Check that description is removed from project-level metadata section")
-        print("     in _quarto.yml to allow page-level descriptions to override.")
+        print("     have different values even after normalizing (stripping CIs, whitespace).")
+        print("     This indicates the descriptions have fundamentally different content.")
+        print("     Note: Confidence interval differences are allowed and normalized during comparison.")
     if "MISSING_OG_DESCRIPTION" in errors_by_type:
         print("   - Missing og:description: Page has <meta name=\"description\"> but no <meta property=\"og:description\">")
         print("     Ensure open-graph: true is set in metadata section of _quarto.yml")

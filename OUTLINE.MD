@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 5 | **Words:** 68,309
+**Files:** 5 | **Words:** 68,261
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,7 +53,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 838 words | 107 lines
+**Stats:** 790 words | 105 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -1256,12 +1256,12 @@
 ## _quarto-federal-efficiency-audit.yml
 **Title:** Federal Resource Allocation Efficiency Audit
 **Type:** website
-**Files:** 1 | **Words:** 6,938
+**Files:** 1 | **Words:** 6,736
 
 #### knowledge/appendix/federal-efficiency-audit.qmd
 **Title:** Federal Resource Allocation Efficiency Audit
-**Description:** Engineering-style efficiency analysis quantifying approximately $4.9 trillion in annual allocation losses across defense, healthcare, justice, regulatory, and subsidy subsystems, with OECD benchmark c...
-**Stats:** 6,938 words | 787 lines
+**Description:** Systems audit estimating an annual U.S. efficiency gap of {{< var us_gov_waste_total >}}, with {{< var us_gov_waste_recoverable >}} recoverable at OECD-median performance across direct spending waste,...
+**Stats:** 6,736 words | 778 lines
 
   - Executive Summary
     - Dysfunction Category Breakdown
@@ -1277,13 +1277,13 @@
     - Aggregate Efficiency Gap Calculation
   - Methodological Note: Additive Categories
     - Valuation Standards
-  - Category 1: Direct Federal Spending Waste
+  - Direct Federal Spending Waste {#category-1-direct-federal-spending-waste}
     - Components
-  - Category 2: Compliance Burden on Private Sector
+  - Compliance Burden on Private Sector {#category-2-compliance-burden-on-private-sector}
     - Components
-  - Category 3: Policy-Induced GDP Loss
+  - Policy-Induced GDP Loss {#category-3-policy-induced-gdp-loss}
     - Components
-  - Category 4: System Inefficiency
+  - System Inefficiency {#category-4-system-inefficiency}
     - Components
   - Subsystem Cross-Reference
   - Subsystem Audit: Defense
@@ -1491,7 +1491,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 161,658
+**Files:** 67 | **Words:** 161,610
 
 #### index.qmd
 **Title:** Start Here
@@ -3396,7 +3396,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 838 words | 107 lines
+**Stats:** 790 words | 105 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -3900,7 +3900,7 @@
 ## _quarto-test.yml
 **Title:** Test Economics Document
 **Type:** book
-**Files:** 6 | **Words:** 9,035
+**Files:** 6 | **Words:** 8,987
 
 #### index.qmd
 **Title:** Wishocracy
@@ -3944,7 +3944,7 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 838 words | 107 lines
+**Stats:** 790 words | 105 lines
 
   - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
@@ -4242,6 +4242,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 346,440
+- Total words: 346,094
 - Orphaned files: 26
 - Paper configs: 12
