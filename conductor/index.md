@@ -7,6 +7,7 @@
 
 ## Workflow
 - [Workflow](./workflow.md)
+- [Build System & Scripts](./build-system.md)
 - [Code Style Guides](./code_styleguides/)
 
 ## Management
