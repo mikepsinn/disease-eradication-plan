@@ -4,6 +4,7 @@
 Shared utilities for Quarto render scripts
 """
 
+import importlib
 import io
 import json
 import os
@@ -18,7 +19,9 @@ from typing import Callable, List, Optional, Tuple
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == "win32" and isinstance(sys.stdout, io.TextIOWrapper):
-    sys.stdout.reconfigure(encoding="utf-8")
+    stdout_reconfigure = getattr(sys.stdout, "reconfigure", None)
+    if callable(stdout_reconfigure):
+        stdout_reconfigure(encoding="utf-8")
 
 # Try to import psutil for LaTeX process detection (optional)
 try:
@@ -720,8 +723,9 @@ class BuildMonitor:
             self.timeout_thread = threading.Thread(target=self.timeout_watchdog, daemon=True)
             self.timeout_thread.start()
 
-            if self.process.stdout is not None:
-                for line in self.process.stdout:
+            stdout_stream = self.process.stdout
+            if stdout_stream is not None:
+                for line in stdout_stream:
                     # Update last output time (ANY output resets the timeout)
                     self.last_output_time = time.time()
 
@@ -1095,7 +1099,7 @@ def validate_pdf_for_python_code(pdf_path: str, search_string: str = "print(f") 
         except ImportError:
             # Fallback: try pdfplumber
             try:
-                import pdfplumber  # type: ignore[import-not-found]
+                pdfplumber = importlib.import_module("pdfplumber")
 
                 text_content = ""
                 with pdfplumber.open(pdf_path) as pdf:

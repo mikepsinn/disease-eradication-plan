@@ -25,7 +25,7 @@ import sys
 import time
 from collections import defaultdict
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 # Add lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
@@ -518,7 +518,9 @@ class PDFValidator:
         page_count = len(self.doc)
         for page_num in range(page_count):
             page = self.doc[page_num]
-            text = page.get_text()
+            text = page.get_text() or ""
+            if not isinstance(text, str):
+                text = str(text)
 
             for pattern_config in CONTENT_PATTERNS:
                 matches = pattern_config["regex"].finditer(text)
@@ -614,9 +616,12 @@ class PDFValidator:
 
         if external_urls:
             try:
-                from url_checker import URLChecker
+                import importlib
 
-                checker = URLChecker(cache_ttl_hours=24, timeout_seconds=10)
+                url_checker_module = importlib.import_module("url_checker")
+                url_checker_class = getattr(url_checker_module, "URLChecker")
+
+                checker = url_checker_class(cache_ttl_hours=24, timeout_seconds=10)
                 urls_to_check = list(external_urls)[:100]  # Limit to 100 URLs
 
                 print(f"      Checking {len(urls_to_check)} external URLs...")
@@ -663,7 +668,10 @@ class PDFValidator:
 
         full_text = ""
         for page_num in range(len(self.doc)):
-            full_text += self.doc[page_num].get_text() + "\n"
+            page_text = self.doc[page_num].get_text() or ""
+            if not isinstance(page_text, str):
+                page_text = str(page_text)
+            full_text += page_text + "\n"
 
         # Check figure references
         figure_refs = re.findall(r"Figure\s+(\d+)", full_text, re.IGNORECASE)
@@ -719,7 +727,15 @@ class PDFValidator:
                 sys.stderr = sys.__stderr__
 
             try:
-                from llm import generate_gemini_pro_content, extract_json_from_response
+                import importlib
+
+                llm_module = importlib.import_module("llm")
+                generate_gemini_pro_content = getattr(
+                    llm_module, "generate_gemini_pro_content"
+                )
+                extract_json_from_response = getattr(
+                    llm_module, "extract_json_from_response"
+                )
             finally:
                 sys.stdout = original_stdout
                 sys.stderr = original_stderr
@@ -745,7 +761,9 @@ class PDFValidator:
 
         for page_idx in sample_indices:
             page = self.doc[page_idx]
-            text = page.get_text()
+            text = page.get_text() or ""
+            if not isinstance(text, str):
+                text = str(text)
 
             # Skip very short pages
             if len(text.strip()) < 100:
@@ -785,13 +803,18 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
 
             If no clear issues, return {{"issues": [], "page_quality": "good"}}"""
 
-            result = None
+            result: Optional[dict[str, Any]] = None
             last_error = None
             try:
                 for attempt in range(1, max_llm_retries + 1):
                     try:
                         response = generate_gemini_pro_content(prompt)
-                        result = extract_json_from_response(response, f"LLM page {page_idx + 1}")
+                        parsed = extract_json_from_response(
+                            response, f"LLM page {page_idx + 1}"
+                        )
+                        if not isinstance(parsed, dict):
+                            raise ValueError("LLM response is not a JSON object")
+                        result = parsed
                         last_error = None
                         break
                     except Exception as e:
@@ -808,7 +831,13 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
                 if last_error is not None:
                     raise last_error
 
-                for issue in result.get("issues", []):
+                if result is None:
+                    raise ValueError("LLM response is empty")
+                issues = result.get("issues", [])
+                if not isinstance(issues, list):
+                    raise ValueError("LLM response issues is not a list")
+
+                for issue in issues:
                     severity_map = {
                         "CRITICAL": PDFValidationError.SEVERITY_CRITICAL,
                         "WARNING": PDFValidationError.SEVERITY_WARNING,
