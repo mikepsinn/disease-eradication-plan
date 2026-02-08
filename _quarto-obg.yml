@@ -121,7 +121,7 @@ metadata:
   og-site-name: "Optimal Budget Generator"
 
   # Identifiers
-  doi: "10.5281/zenodo.18356209"
+  doi: "10.5281/zenodo.18522045"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -135,8 +135,8 @@ metadata:
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: "https://zenodo.org/record/18356209"
-        doi: "10.5281/zenodo.18356209"
+        url: "https://zenodo.org/record/18522044"
+        doi: "10.5281/zenodo.18522045"
       - platform: ssrn
         status: pending
         url: ""

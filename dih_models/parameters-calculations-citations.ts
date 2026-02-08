@@ -6367,7 +6367,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        URL: "/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
+        URL: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
         note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy | Primary sources: Human Mortality Database (historical), CDC NCHS National Vital Statistics (modern)",
   },
   "lobbying-spend-defense": {
@@ -6705,7 +6705,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        URL: "/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
+        URL: "https://manual.warondisease.org/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
         note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy | Primary sources: Human Mortality Database (historical), CDC NCHS National Vital Statistics (modern)",
   },
   "pragmatic-trials-cost-advantage": {
