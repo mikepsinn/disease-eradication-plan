@@ -147,12 +147,19 @@ def rmtree_with_retry(path: Path, max_retries: int = 5, delay: float = 1.0, verb
                     if verbose:
                         print("[*] Attempting to kill locking processes...", flush=True)
                     try:
-                        # Kill any stale Python processes (except ourselves)
+                        # Kill any stale Python/Quarto processes, but never kill
+                        # the current process or its direct parent (e.g. batch uploader).
                         our_pid = os.getpid()
+                        parent_pid = os.getppid()
+                        protected_pids = {our_pid}
+                        if parent_pid:
+                            protected_pids.add(parent_pid)
+                        protected_expr = ",".join(str(pid) for pid in sorted(protected_pids))
                         result = subprocess.run(
                             ['powershell', '-Command',
+                             f'$protected=@({protected_expr}); '
                              f'Get-Process python*, quarto* -ErrorAction SilentlyContinue | '
-                             f'Where-Object {{ $_.Id -ne {our_pid} }} | '
+                             f'Where-Object {{ $protected -notcontains $_.Id }} | '
                              f'Stop-Process -Force -ErrorAction SilentlyContinue'],
                             capture_output=True,
                             timeout=10

@@ -55,6 +55,7 @@ The generated files enable academic rigor with zero manual maintenance.
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 from typing import Any, Dict, Union
 
@@ -69,6 +70,29 @@ if str(_scripts_dir) not in sys.path:
 _project_root = _scripts_dir.parent
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
+
+
+def _unlink_with_retry(path: Path, retries: int = 8, initial_delay_seconds: float = 0.25) -> None:
+    """Delete a file with retries to tolerate transient Windows file locks."""
+    delay = initial_delay_seconds
+    for attempt in range(1, retries + 1):
+        try:
+            path.unlink()
+            return
+        except FileNotFoundError:
+            return
+        except PermissionError:
+            if attempt >= retries:
+                raise
+            time.sleep(delay)
+            delay = min(delay * 1.5, 3.0)
+        except OSError as e:
+            winerror = getattr(e, "winerror", None)
+            if winerror in (32, 33, 1224) and attempt < retries:
+                time.sleep(delay)
+                delay = min(delay * 1.5, 3.0)
+                continue
+            raise
 
 from lib.yaml_sync_utils import sync_descriptions_to_yaml_configs  # noqa: E402
 from lib.workflow_generator import regenerate_workflow  # noqa: E402
@@ -759,7 +783,7 @@ def main():
         if stale_dist_qmd:
             print(f"[*] Cleaning {len(stale_dist_qmd)} existing distribution QMD files...")
             for f in stale_dist_qmd:
-                f.unlink()
+                _unlink_with_retry(f)
 
         input_dist_count = 0
         input_dist_errors = []
@@ -787,7 +811,7 @@ def main():
         if orphaned_dist_pngs:
             print(f"[*] Cleaning {len(orphaned_dist_pngs)} orphaned distribution PNG files...")
             for f in orphaned_dist_pngs:
-                f.unlink()
+                _unlink_with_retry(f)
 
         print(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
         for err in input_dist_errors:
@@ -818,7 +842,7 @@ def main():
             if stale_qmd_files:
                 print(f"[*] Cleaning {len(stale_qmd_files)} existing QMD files...")
                 for f in stale_qmd_files:
-                    f.unlink()
+                    _unlink_with_retry(f)
 
             # Track generated QMD files for orphan PNG cleanup later
             generated_outcome_qmds = set()
@@ -1123,7 +1147,7 @@ def main():
             if orphaned_pngs:
                 print(f"[*] Cleaning {len(orphaned_pngs)} orphaned PNG files...")
                 for f in orphaned_pngs:
-                    f.unlink()
+                    _unlink_with_retry(f)
 
             # Print summary of generated files
             print(f"[OK] Generated {tornado_count} tornado charts in knowledge/figures/")

@@ -6281,13 +6281,16 @@ export const citations: Record<string, Citation> = {
   "industry-clinical-trial-spending-estimate": {
         id: "industry-clinical-trial-spending-estimate",
         type: "webpage",
-        title: "Private industry clinical trial spending",
+        title: "Private Industry Clinical Trial Spending Estimate",
         author: [
           {
-            literal: "Derived estimate from market size and funding ratios"
+            family: "Sinn",
+            given: "Mike P."
           },
         ],
-        note: "Derived from global market size and public/private funding ratios",
+        issued: { 'date-parts': [[2025]] },
+        URL: "https://cost-of-change.warondisease.org",
+        note: "Derived estimate using published market-sizing and funding-distribution sources. Supporting sources: https://www.appliedclinicaltrialsonline.com/view/sizing-clinical-research-market | https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10349341/ | https://www.cbo.gov/publication/57126",
   },
   "industry-vs-government-trial-spending-split": {
         id: "industry-vs-government-trial-spending-split",

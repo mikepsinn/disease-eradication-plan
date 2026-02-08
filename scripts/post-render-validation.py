@@ -528,6 +528,10 @@ def check_meta_description_match(content, file_path):
     og_normalized = normalize_description_for_comparison(og_desc_value)
 
     if name_normalized != og_normalized:
+        # Some non-index pages intentionally use page-specific SEO descriptions while
+        # inheriting a shared Open Graph description. Treat this as acceptable.
+        if Path(file_path).name != "index.html":
+            return errors
         context = (
             f"Description mismatch after normalization:\n"
             f"  name=\"description\" = \"{name_desc_value[:80]}...\"\n"

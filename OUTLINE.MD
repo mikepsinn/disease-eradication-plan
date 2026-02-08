@@ -3859,7 +3859,7 @@
 #### knowledge/appendix/political-dysfunction-tax.qmd
 **Title:** The Political Dysfunction Tax
 **Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.
-**Stats:** 5,715 words | 446 lines
+**Stats:** 5,715 words | 447 lines
 
   - Introduction: The Mechanism Design of Civilizational Stagnation
   - Part 1: The Waste Ledger (The "Burned Capital")
@@ -4221,7 +4221,7 @@
 
 | Config | Title | Citation Key | DOI |
 |--------|-------|--------------|-----|
-| _quarto-1-pct-treaty-impact.yml | The 1% Treaty: Harnessing Greed to Eradicate Disea... | `@1-pct-treaty-impact-paper-2025` | 10.5281/zenodo.18161560 |
+| _quarto-1-pct-treaty-impact.yml | The 1% Treaty: Harnessing Greed to Eradicate Disea... | `@1-pct-treaty-impact-paper-2025` | 10.5281/zenodo.18522797 |
 | _quarto-cost-of-change.yml | The Price of Political Change: A Cost-Benefit Fram... | `@cost-of-change-paper-2025` | 10.5281/zenodo.18522031 |
 | _quarto-dfda-impact.yml | How to Prevent a Year of Death and Suffering for 8... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18522033 |
 | _quarto-dfda-spec.yml | dFDA: A Decentralized Framework for Drug Assessmen... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18522035 |
@@ -4230,7 +4230,7 @@
 | _quarto-invisible-graveyard.yml | The Invisible Graveyard: Quantifying the Mortality... | `@invisible-graveyard-paper-2025` | 10.5281/zenodo.18356231 |
 | _quarto-obg.yml | Optimal Budget Generator: Evidence-Based Budget Al... | `@obg-paper-2025` | 10.5281/zenodo.18522045 |
 | _quarto-opg.yml | Optimal Policy Generator: Evidence-Based Policy Re... | `@opg-paper-2025` | 10.5281/zenodo.18521983 |
-| _quarto-optimocracy.yml | Optimocracy: Evidence-Based Governance Through Out... | `@optimocracy-paper-2025` | 10.5281/zenodo.18356213 |
+| _quarto-optimocracy.yml | Optimocracy: Evidence-Based Governance Through Out... | `@optimocracy-paper-2025` | 10.5281/zenodo.18523076 |
 | _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | 10.5281/zenodo.18522028 |
 | _quarto-wishocracy.yml | Wishocracy: Solving the Democratic Principal-Agent... | `@wishocracy-paper-2025` | 10.5281/zenodo.18205881 |
 

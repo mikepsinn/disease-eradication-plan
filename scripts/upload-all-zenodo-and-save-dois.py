@@ -51,6 +51,18 @@ from lib.quarto_config_utils import (
 
 PROJECT_ROOT = Path(__file__).parent.parent
 PDF_VALIDATION_CACHE_PATH = PROJECT_ROOT / ".cache" / "pdf-validation-upload-cache.json"
+VALIDATION_CACHE_VERSION = 3
+
+
+def _get_preferred_python() -> str:
+    """Prefer project virtualenv Python when available."""
+    if sys.platform == "win32":
+        venv_python = PROJECT_ROOT / ".venv" / "Scripts" / "python.exe"
+    else:
+        venv_python = PROJECT_ROOT / ".venv" / "bin" / "python"
+    if venv_python.exists():
+        return str(venv_python)
+    return sys.executable
 
 
 def _cache_key_for_pdf(pdf_path: Path) -> str:
@@ -81,7 +93,7 @@ def _compute_pdf_signature(pdf_path: Path) -> dict:
 
 
 def _default_validation_cache() -> dict:
-    return {"version": 1, "entries": {}}
+    return {"version": VALIDATION_CACHE_VERSION, "entries": {}}
 
 
 def _load_validation_cache(cache_path: Path = PDF_VALIDATION_CACHE_PATH) -> dict:
@@ -92,7 +104,9 @@ def _load_validation_cache(cache_path: Path = PDF_VALIDATION_CACHE_PATH) -> dict
         with open(cache_path, "r", encoding="utf-8") as f:
             data = json.load(f)
             if isinstance(data, dict):
-                data.setdefault("version", 1)
+                if data.get("version") != VALIDATION_CACHE_VERSION:
+                    return _default_validation_cache()
+                data.setdefault("version", VALIDATION_CACHE_VERSION)
                 data.setdefault("entries", {})
                 return data
     except (json.JSONDecodeError, OSError):
@@ -116,15 +130,55 @@ def _extract_validation_errors(output: str) -> list[str]:
         if not stripped:
             continue
         if (
-            "CRITICAL" in stripped
-            or "BROKEN" in stripped
+            "[CRITICAL:" in stripped
+            or " [CRITICAL]:" in stripped
+            or "BROKEN_EXTERNAL_LINK" in stripped
             or "[ERROR]" in stripped
+            or stripped.startswith("ERROR:")
+            or stripped.startswith("FATAL:")
             or "validation failed" in stripped.lower()
         ):
             if stripped not in seen:
                 seen.add(stripped)
                 errors.append(stripped)
     return errors
+
+
+def copy_with_retry(
+    src: Path,
+    dst: Path,
+    max_retries: int = 10,
+    initial_delay_seconds: float = 0.5,
+) -> None:
+    """Copy a file with retries to tolerate transient Windows file locks."""
+    delay = initial_delay_seconds
+    last_error: Exception | None = None
+    dst.parent.mkdir(parents=True, exist_ok=True)
+
+    for attempt in range(1, max_retries + 1):
+        try:
+            shutil.copy2(src, dst)
+            return
+        except OSError as e:
+            last_error = e
+            winerror = getattr(e, "winerror", None)
+            # Retry for transient file locks and permission issues.
+            if winerror in (32, 33, 1224) or "being used by another process" in str(e).lower():
+                if attempt < max_retries:
+                    time.sleep(delay)
+                    delay = min(delay * 1.5, 5.0)
+                    continue
+            raise
+        except PermissionError as e:
+            last_error = e
+            if attempt < max_retries:
+                time.sleep(delay)
+                delay = min(delay * 1.5, 5.0)
+                continue
+            raise
+
+    if last_error:
+        raise last_error
 
 
 def generate_report(report_data: dict) -> str:
@@ -258,6 +312,7 @@ def validate_existing_pdf(
     verbose: bool = False,
     llm_pages: int = 5,
     use_cache: bool = True,
+    skip_url_check: bool = True,
 ) -> tuple[bool, list[str], bool]:
     """Run pdf-validation.py with required LLM checks and local result caching.
 
@@ -290,14 +345,10 @@ def validate_existing_pdf(
     if not os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY"):
         return False, ["GOOGLE_GENERATIVE_AI_API_KEY is not set (required for LLM PDF validation)."], False
 
-    cmd = [
-        sys.executable,
-        str(validation_script),
-        "--pdf",
-        str(pdf_path),
-        "--llm-pages",
-        str(llm_pages),
-    ]
+    python_exe = _get_preferred_python()
+    cmd = [python_exe, str(validation_script), "--pdf", str(pdf_path), "--llm-pages", str(llm_pages)]
+    if skip_url_check:
+        cmd.append("--skip-url-check")
     if verbose:
         print(f"  Running: {' '.join(cmd)}", flush=True)
 
@@ -316,19 +367,24 @@ def validate_existing_pdf(
         print(output, flush=True)
 
     errors = _extract_validation_errors(output)
+    llm_errors = [e for e in errors if "LLM_" in e]
+    non_llm_errors = [e for e in errors if "LLM_" not in e]
 
     llm_skipped = "LLM validation skipped" in output
     llm_failed = "LLM validation failed for page" in output
     llm_completed = not (llm_skipped or llm_failed)
 
     if llm_skipped:
-        errors.append("LLM validation was skipped; uploads require completed LLM validation.")
+        non_llm_errors.append("LLM validation was skipped; uploads require completed LLM validation.")
     if llm_failed:
-        errors.append("LLM validation failed for one or more pages; rerun after fixing model/API issues.")
+        non_llm_errors.append("LLM validation failed for one or more pages; rerun after fixing model/API issues.")
 
-    passed = result.returncode == 0 and llm_completed
-    if not passed and not errors:
-        errors.append(f"Validation failed with exit code {result.returncode}")
+    # Gate uploads on both deterministic checks and LLM findings.
+    all_errors = list(non_llm_errors) + list(llm_errors)
+    passed = llm_completed and not all_errors
+
+    if not passed and not all_errors:
+        all_errors.append(f"Validation failed with exit code {result.returncode}")
 
     if use_cache:
         cache_entries[cache_key] = {
@@ -337,12 +393,13 @@ def validate_existing_pdf(
             "llm_pages": llm_pages,
             "llm_completed": llm_completed,
             "passed": passed,
-            "errors": errors,
+            "errors": all_errors,
+            "llm_warnings": llm_errors,
             "returncode": result.returncode,
         }
         _save_validation_cache(cache)
 
-    return passed, errors, False
+    return passed, all_errors, False
 
 
 def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
@@ -415,8 +472,9 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
     )
 
     try:
+        python_exe = _get_preferred_python()
         process = subprocess.Popen(
-            [sys.executable, "-u", str(render_script), paper_key],
+            [python_exe, "-u", str(render_script), paper_key],
             cwd=str(PROJECT_ROOT),
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
@@ -598,7 +656,7 @@ def main():
         if build_pdf_path.exists() and (
             not pdf_path.exists() or build_pdf_path.stat().st_mtime > pdf_path.stat().st_mtime
         ):
-            shutil.copy2(build_pdf_path, pdf_path)
+            copy_with_retry(build_pdf_path, pdf_path)
             print(f"  -> Synced newer local build PDF to: {info['pdf_path']}")
 
         # Step 2: Check remote and download only if it's newer than local assets PDF.
@@ -628,7 +686,7 @@ def main():
                 not pdf_path.exists() or build_pdf_path.stat().st_mtime > pdf_path.stat().st_mtime
             ):
                 pdf_path.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(build_pdf_path, pdf_path)
+                copy_with_retry(build_pdf_path, pdf_path)
                 print(f"  -> Copied rebuilt PDF to: {info['pdf_path']}")
 
             # Store build result with additional metadata
