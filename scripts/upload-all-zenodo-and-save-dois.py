@@ -183,6 +183,11 @@ def copy_with_retry(
 
 def generate_report(report_data: dict) -> str:
     """Generate markdown report from upload run data."""
+    def _normalize_list(value) -> list[str]:
+        if isinstance(value, list):
+            return [str(item) for item in value if str(item).strip()]
+        return []
+
     lines = [
         "# Zenodo Upload Report",
         "",
@@ -217,15 +222,35 @@ def generate_report(report_data: dict) -> str:
         lines.extend([
             "## Validation Results",
             "",
-            "| Paper | Status | Source | Notes |",
-            "|-------|--------|--------|-------|",
+            "| Paper | Status | Source | Notes | Error Count |",
+            "|-------|--------|--------|-------|-------------|",
         ])
+        validation_error_details = []
         for paper_key, result in report_data['validation_results'].items():
             status = "OK" if result.get('success') else "FAILED"
             source = "cache" if result.get('from_cache') else "fresh"
-            notes = str(result.get('notes', '')).replace("|", "\\|")
-            lines.append(f"| {paper_key} | {status} | {source} | {notes} |")
+            error_list = _normalize_list(result.get('errors'))
+            note_text = str(result.get('notes', '')).strip()
+            if not note_text and not result.get('success'):
+                note_text = "Validation failed"
+            notes = note_text.replace("|", "\\|")
+            lines.append(f"| {paper_key} | {status} | {source} | {notes} | {len(error_list)} |")
+            if error_list:
+                validation_error_details.append((paper_key, error_list))
         lines.append("")
+
+        if validation_error_details:
+            lines.extend([
+                "### Validation Error Details",
+                "",
+            ])
+            for paper_key, error_list in validation_error_details:
+                lines.append(f"#### {paper_key}")
+                lines.append("")
+                for error in error_list:
+                    message = str(error).replace("\n", " ").strip()
+                    lines.append(f"- {message}")
+                lines.append("")
 
     if report_data['upload_results']:
         lines.extend([
@@ -723,6 +748,8 @@ def main():
     else:
         print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
 
+    validation_failed_keys = []
+
     for paper_key in sorted_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
@@ -735,15 +762,17 @@ def main():
 
         if not pdf_path.exists():
             print(f"\nFATAL: PDF not found for validation: {pdf_path}")
+            validation_errors = ["PDF not found for validation"]
             report_data['validation_results'][paper_key] = {
                 'success': False,
                 'from_cache': False,
                 'notes': 'PDF not found',
+                'errors': validation_errors,
             }
-            report_data['errors'][paper_key] = ["PDF not found for validation"]
+            report_data['errors'][paper_key] = validation_errors
+            validation_failed_keys.append(paper_key)
             report_data['failed_count'] += 1
-            save_report(report_data, start_time)
-            return 1
+            continue
 
         print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
         passed, validation_errors, from_cache = validate_existing_pdf(
@@ -754,11 +783,19 @@ def main():
         )
 
         source_note = "cache hit" if from_cache else "fresh run"
-        note = source_note if passed else (validation_errors[0] if validation_errors else "Validation failed")
+        if passed:
+            note = source_note
+        elif validation_errors:
+            extra_count = len(validation_errors) - 1
+            suffix = f" (+{extra_count} more)" if extra_count > 0 else ""
+            note = f"{validation_errors[0]}{suffix}"
+        else:
+            note = "Validation failed"
         report_data['validation_results'][paper_key] = {
             'success': passed,
             'from_cache': from_cache,
             'notes': note,
+            'errors': validation_errors,
         }
 
         if passed:
@@ -772,7 +809,12 @@ def main():
             print(f"  - ...and {len(validation_errors) - 10} more")
 
         report_data['errors'][paper_key] = validation_errors or ["PDF validation failed"]
+        validation_failed_keys.append(paper_key)
         report_data['failed_count'] += 1
+
+    if validation_failed_keys:
+        failed_list = ", ".join(validation_failed_keys)
+        print(f"\nFATAL: Validation failed for {len(validation_failed_keys)} paper(s): {failed_list}")
         save_report(report_data, start_time)
         return 1
 
