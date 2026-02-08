@@ -4242,6 +4242,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 345,636
+- Total words: 345,635
 - Orphaned files: 26
 - Paper configs: 12
