@@ -5809,7 +5809,7 @@ export const citations: Record<string, Citation> = {
         ],
         issued: { 'date-parts': [[2050]] },
         'container-title': "Int'l Journal of Cardiology: Global Heart Failure Burden02238-9/abstract)",
-        URL: "https://www.internationaljournalofcardiology.com/article/S0167-5273(13",
+        URL: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001258",
         note: "Int'l Journal of Cardiology: Global Heart Failure Burden02238-9/abstract) | AHA: US CVD Costs to 2050",
   },
   "disease-economic-burden-109t": {
@@ -6068,11 +6068,11 @@ export const citations: Record<string, Citation> = {
         title: "Global government medical research spending (\\$67.5B, 2023–2024)",
         author: [
           {
-            literal: "See component country budgets:"
+            literal: "Component country budgets"
           },
         ],
         'container-title': "See component country budgets: NIH Budget",
-        URL: "#nih-budget-fy2025",
+        URL: "https://www.nih.gov/about-nih/what-we-do/budget",
         note: "See component country budgets: NIH Budget, China R&D, EU Horizon Health",
   },
   "global-government-clinical-trial-spending-estimate": {
@@ -6284,7 +6284,7 @@ export const citations: Record<string, Citation> = {
         title: "Private industry clinical trial spending",
         author: [
           {
-            literal: "Derived from global market size and public/private funding ratios"
+            literal: "Derived estimate from market size and funding ratios"
           },
         ],
         note: "Derived from global market size and public/private funding ratios",
@@ -6367,7 +6367,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        URL: "knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
+        URL: "/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
         note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy | Primary sources: Human Mortality Database (historical), CDC NCHS National Vital Statistics (modern)",
   },
   "lobbying-spend-defense": {
@@ -6504,7 +6504,7 @@ export const citations: Record<string, Citation> = {
         ],
         issued: { 'date-parts': [[2023]] },
         'container-title': "Bentley et al.",
-        URL: "https://www.fiercebiotech.com/biotech/nih-spending-clinical-trials-reached-81b-over-decade",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10349341/",
         note: "Bentley et al., 2023 | Fierce Biotech: NIH Spending",
   },
   "nonprofit-clinical-trial-spending-estimate": {
@@ -6608,7 +6608,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         'container-title': "Value in Health: Sales Revenues for New Therapeutic Agents02754-2/fulltext)",
-        URL: "https://www.valueinhealthjournal.com/article/S1098-3015(24",
+        URL: "https://www.sciencedirect.com/science/article/pii/S1098301524027542",
         note: "Value in Health: Sales Revenues for New Therapeutic Agents02754-2/fulltext) | ScienceDirect: Sales Revenues FDA Drugs",
   },
   "pharma-roi-current": {
@@ -6705,7 +6705,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        URL: "knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
+        URL: "/knowledge/data/us-life-expectancy-fda-budget-1543-2019.csv",
         note: "Source: US Life Expectancy FDA Budget 1543-2019 CSV | Our World in Data: Life Expectancy | Primary sources: Human Mortality Database (historical), CDC NCHS National Vital Statistics (modern)",
   },
   "pragmatic-trials-cost-advantage": {

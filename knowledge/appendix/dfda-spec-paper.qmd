@@ -323,8 +323,8 @@ When the predictor has a filling value (e.g., zero for "not taken"), we create o
 
 ```
 For each outcome measurement (t_o, o):
-    window_end = t_o - δ
-    window_start = window_end - τ + 1
+    window_end = t_o - delta
+    window_start = window_end - tau + 1
 
     predictor_values = measurements in [window_start, window_end]
 
@@ -344,8 +344,8 @@ When the predictor has no filling value, we create one pair per predictor measur
 
 ```
 For each predictor measurement (t_p, p):
-    window_start = t_p + δ
-    window_end = window_start + τ - 1
+    window_start = t_p + delta
+    window_end = window_start + tau - 1
 
     outcome_values = measurements in [window_start, window_end]
 
@@ -1460,12 +1460,12 @@ Multiple large-scale pragmatic trials have demonstrated this model's effectivene
 
 Not all observational signals warrant pragmatic trial confirmation. We propose a **Trial Priority Score (TPS)** combining:
 
-$$TPS = PIS \times \sqrt{DALYs_{addressable}} \times \text{Novelty} \times \text{Feasibility}$$
+$$TPS = PIS \times \sqrt{\mathrm{DALYs}_{\text{addressable}}} \times \text{Novelty} \times \text{Feasibility}$$
 
 Where:
 
 - **PIS**: Predictor Impact Score from Stage 1 (higher = stronger signal)
-- **DALYs_{addressable}**: Disease burden addressable by the treatment
+- **$\mathrm{DALYs}_{\text{addressable}}$**: Disease burden addressable by the treatment
 - **Novelty**: Inverse of existing evidence (new signals prioritized)
 - **Feasibility**: Practical considerations (drug availability, safety profile, cost)
 
