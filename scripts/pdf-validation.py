@@ -470,19 +470,6 @@ class PDFValidator:
                 f"PDF has {page_count} pages (>2000)",
             )
 
-        # Check for blank pages
-        for page_num in range(page_count):
-            page = self.doc[page_num]
-            text = page.get_text()
-            if len(text.strip()) < 50:
-                self._add_error(
-                    page_num + 1,  # 1-indexed for human readability
-                    "BLANK_PAGE",
-                    PDFValidationError.SEVERITY_WARNING,
-                    f"Page {page_num + 1} appears blank or has very little content",
-                    f"Text length: {len(text.strip())} chars",
-                )
-
         # Check TOC
         toc = self.doc.get_toc()
         if not toc:

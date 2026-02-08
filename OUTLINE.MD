@@ -4232,7 +4232,7 @@
 | _quarto-opg.yml | Optimal Policy Generator: Evidence-Based Policy Re... | `@opg-paper-2025` | 10.5281/zenodo.18521983 |
 | _quarto-optimocracy.yml | Optimocracy: Evidence-Based Governance Through Out... | `@optimocracy-paper-2025` | 10.5281/zenodo.18523076 |
 | _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | 10.5281/zenodo.18522028 |
-| _quarto-wishocracy.yml | Wishocracy: Solving the Democratic Principal-Agent... | `@wishocracy-paper-2025` | 10.5281/zenodo.18205881 |
+| _quarto-wishocracy.yml | Wishocracy: Solving the Democratic Principal-Agent... | `@wishocracy-paper-2025` | 10.5281/zenodo.18523096 |
 
 **Usage:** `[@dfda-impact-paper-2025]` or `@dfda-impact-paper-2025`
 
