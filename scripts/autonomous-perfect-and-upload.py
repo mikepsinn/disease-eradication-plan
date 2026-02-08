@@ -18,6 +18,7 @@ import argparse
 import io
 import os
 import re
+import shutil
 import shlex
 import subprocess
 import sys
@@ -28,8 +29,9 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 UPLOAD_SCRIPT = PROJECT_ROOT / "scripts" / "upload-all-zenodo-and-save-dois.py"
 REPORT_PATH = PROJECT_ROOT / "zenodo-upload-report.md"
-AUTONOMY_CACHE_DIR = PROJECT_ROOT / ".cache" / "autonomous-perfect-upload"
-AUTONOMY_LOG_DIR = AUTONOMY_CACHE_DIR / "logs"
+AUTONOMY_LOG_DIR = PROJECT_ROOT / "AUTONOMOUS-PIPELINE-LOGS"
+STATUS_PATH = PROJECT_ROOT / "AUTONOMOUS-PIPELINE-STATUS.md"
+PROGRESS_LOG_PATH = PROJECT_ROOT / "AUTONOMOUS-PIPELINE-PROGRESS.log"
 
 
 if sys.platform == "win32":
@@ -46,33 +48,100 @@ def get_preferred_python() -> str:
     return sys.executable
 
 
-def run_and_tee(cmd: list[str], log_path: Path, cwd: Path = PROJECT_ROOT) -> int:
+def run_and_tee(
+    cmd: list[str],
+    log_path: Path,
+    cwd: Path = PROJECT_ROOT,
+    progress_log_path: Path | None = None,
+) -> int:
     """Run command, stream output to console, and write full log."""
     log_path.parent.mkdir(parents=True, exist_ok=True)
-    print(f"\n[RUN] {' '.join(shlex.quote(c) for c in cmd)}", flush=True)
+    command_display = " ".join(shlex.quote(c) for c in cmd)
+    print(f"\n[RUN] {command_display}", flush=True)
     print(f"[LOG] {log_path}", flush=True)
 
+    progress_file = None
+    if progress_log_path:
+        progress_file = progress_log_path.open("a", encoding="utf-8", errors="replace")
+        start_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        progress_file.write(f"\n[{start_stamp}] [RUN] {command_display}\n")
+        progress_file.write(f"[{start_stamp}] [LOG] {log_path}\n")
+        progress_file.flush()
+
     with log_path.open("w", encoding="utf-8", errors="replace") as log_file:
-        process = subprocess.Popen(
-            cmd,
-            cwd=str(cwd),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
-        )
-        for line in (process.stdout or []):
-            print(line, end="")
-            log_file.write(line)
-        process.wait()
-        return int(process.returncode)
+        try:
+            process = subprocess.Popen(
+                cmd,
+                cwd=str(cwd),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+            )
+            for line in (process.stdout or []):
+                print(line, end="", flush=True)
+                log_file.write(line)
+                if progress_file:
+                    progress_file.write(line)
+            process.wait()
+            end_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            if progress_file:
+                progress_file.write(f"\n[{end_stamp}] [EXIT] rc={int(process.returncode)}\n")
+                progress_file.flush()
+            return int(process.returncode)
+        finally:
+            if progress_file:
+                progress_file.close()
 
 
 def read_report() -> str:
     if not REPORT_PATH.exists():
         return ""
     return REPORT_PATH.read_text(encoding="utf-8", errors="replace")
+
+
+def ensure_status_file() -> None:
+    """Create append-only status file when it does not yet exist."""
+    if STATUS_PATH.exists():
+        return
+    STATUS_PATH.write_text(
+        "\n".join(
+            [
+                "# Autonomous Pipeline Status",
+                "",
+                "Append-only run log for autonomous build/validate/fix/rebuild/upload cycles.",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+
+def ensure_progress_file() -> None:
+    """Create append-only root progress log when it does not yet exist."""
+    if PROGRESS_LOG_PATH.exists():
+        return
+    created_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    PROGRESS_LOG_PATH.write_text(
+        "\n".join(
+            [
+                "AUTONOMOUS PIPELINE PROGRESS LOG",
+                f"Created: {created_at}",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+
+def append_status(lines: list[str]) -> None:
+    """Append markdown lines to the root status file."""
+    ensure_status_file()
+    with STATUS_PATH.open("a", encoding="utf-8", errors="replace") as f:
+        for line in lines:
+            f.write(f"{line}\n")
+        f.write("\n")
 
 
 def parse_failed_checklist(report_text: str) -> dict[str, list[str]]:
@@ -211,14 +280,47 @@ def build_codex_prompt(
     return "\n".join(lines)
 
 
-def codex_available() -> bool:
-    return subprocess.run(
-        ["codex", "--version"],
-        cwd=str(PROJECT_ROOT),
-        capture_output=True,
-        text=True,
-        check=False,
-    ).returncode == 0
+def resolve_codex_executable() -> str | None:
+    """Resolve codex CLI executable across PATH and local venv."""
+    local_candidates: list[Path] = []
+    if sys.platform == "win32":
+        local_candidates.extend(
+            [
+                PROJECT_ROOT / ".venv" / "Scripts" / "codex.exe",
+                PROJECT_ROOT / ".venv" / "Scripts" / "codex.cmd",
+                PROJECT_ROOT / ".venv" / "Scripts" / "codex.bat",
+            ]
+        )
+    else:
+        local_candidates.append(PROJECT_ROOT / ".venv" / "bin" / "codex")
+
+    for candidate in local_candidates:
+        if candidate.exists():
+            return str(candidate)
+
+    path_candidates = ["codex"]
+    if sys.platform == "win32":
+        path_candidates.extend(["codex.cmd", "codex.exe", "codex.bat"])
+
+    for name in path_candidates:
+        resolved = shutil.which(name)
+        if resolved:
+            return resolved
+
+    return None
+
+
+def codex_available(codex_exe: str) -> bool:
+    try:
+        return subprocess.run(
+            [codex_exe, "--version"],
+            cwd=str(PROJECT_ROOT),
+            capture_output=True,
+            text=True,
+            check=False,
+        ).returncode == 0
+    except OSError:
+        return False
 
 
 def parse_args() -> argparse.Namespace:
@@ -244,9 +346,15 @@ def parse_args() -> argparse.Namespace:
         help="Optional codex model override for codex exec.",
     )
     parser.add_argument(
+        "--ignore-perfected-cache-first-pass",
         "--force-reprocess-first",
+        "--force-first",
+        dest="force_reprocess_first",
         action="store_true",
-        help="Force first uploader pass to process selected papers even if perfected cache exists.",
+        help=(
+            "Ignore perfected-cache only on cycle 1 (descriptive name). "
+            "Aliases: --force-reprocess-first, --force-first."
+        ),
     )
     return parser.parse_args()
 
@@ -257,14 +365,14 @@ def main() -> int:
     if not UPLOAD_SCRIPT.exists():
         print(f"ERROR: Missing upload script: {UPLOAD_SCRIPT}")
         return 1
-    if not codex_available():
-        print("ERROR: `codex` CLI not found in PATH.")
-        print("Install/authenticate Codex CLI first, then rerun this script.")
-        return 1
+    codex_exe = resolve_codex_executable()
 
     AUTONOMY_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    ensure_progress_file()
     python_exe = get_preferred_python()
     selected_papers = list(args.papers)
+    run_id = datetime.now().strftime("%Y%m%d-%H%M%S")
+    run_started_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     print("=" * 72)
     print("Autonomous Perfect + Upload Runner")
@@ -277,6 +385,26 @@ def main() -> int:
         print(f"Paper scope: {', '.join(selected_papers)}")
     else:
         print("Paper scope: all papers")
+    with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+        progress_file.write(f"\n=== RUN {run_id} STARTED {run_started_at} ===\n")
+        progress_file.write(f"Project root: {PROJECT_ROOT}\n")
+        progress_file.write(f"Paper scope: {', '.join(selected_papers) if selected_papers else 'all papers'}\n")
+        progress_file.write(f"LLM pages: {args.llm_pages}\n")
+        progress_file.write(f"Max cycles: {args.max_cycles}\n")
+        progress_file.flush()
+    append_status(
+        [
+            f"## Run {run_id} Started ({run_started_at})",
+            "- Status: running",
+            f"- Project root: `{PROJECT_ROOT}`",
+            f"- Paper scope: `{', '.join(selected_papers) if selected_papers else 'all papers'}`",
+            f"- LLM pages: `{args.llm_pages}`",
+            f"- Max cycles: `{args.max_cycles}`",
+            f"- No-commit policy: `{True}`",
+            f"- Codex executable: `{codex_exe or 'not found at start'}`",
+            f"- Live progress log: `{PROGRESS_LOG_PATH}`",
+        ]
+    )
 
     base_upload_cmd = [python_exe, str(UPLOAD_SCRIPT), "--llm-pages", str(args.llm_pages)]
     if selected_papers:
@@ -284,6 +412,7 @@ def main() -> int:
 
     for cycle in range(1, args.max_cycles + 1):
         cycle_tag = datetime.now().strftime("%Y%m%d-%H%M%S")
+        cycle_started_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         print(f"\n{'=' * 72}")
         print(f"CYCLE {cycle}/{args.max_cycles}")
         print("=" * 72)
@@ -293,10 +422,32 @@ def main() -> int:
             upload_cmd.insert(2, "--force-reprocess")
 
         upload_log = AUTONOMY_LOG_DIR / f"{cycle_tag}-cycle{cycle}-upload.log"
-        upload_rc = run_and_tee(upload_cmd, upload_log)
+        append_status(
+            [
+                f"### Cycle {cycle} Started ({cycle_started_at})",
+                "- Doing: run uploader and parse validation/upload report",
+                f"- Command: `{' '.join(shlex.quote(c) for c in upload_cmd)}`",
+                f"- Upload log: `{upload_log}`",
+            ]
+        )
+        upload_rc = run_and_tee(upload_cmd, upload_log, progress_log_path=PROGRESS_LOG_PATH)
         if upload_rc == 0:
             print("\nSUCCESS: uploader completed with no failures.")
             print(f"Final report: {REPORT_PATH}")
+            with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+                progress_file.write(
+                    f"\n=== RUN {run_id} COMPLETED {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} STATUS=SUCCESS ===\n"
+                )
+            append_status(
+                [
+                    f"### Cycle {cycle} Result",
+                    "- Result: success",
+                    "- Next: none (converged)",
+                    f"- Final report: `{REPORT_PATH}`",
+                    f"## Run {run_id} Completed ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})",
+                    "- Status: success",
+                ]
+            )
             return 0
 
         report_text = read_report()
@@ -305,6 +456,21 @@ def main() -> int:
             print("\nERROR: uploader failed but no actionable failures were parsed from report.")
             print(f"Check logs: {upload_log}")
             print(f"Report path: {REPORT_PATH}")
+            append_status(
+                [
+                    f"### Cycle {cycle} Result",
+                    "- Result: failed",
+                    "- Reason: uploader failed but checklist could not be parsed",
+                    f"- Upload log: `{upload_log}`",
+                    f"- Report path: `{REPORT_PATH}`",
+                    f"## Run {run_id} Completed ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})",
+                    "- Status: failed",
+                ]
+            )
+            with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+                progress_file.write(
+                    f"\n=== RUN {run_id} COMPLETED {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} STATUS=FAILED ===\n"
+                )
             return 1
 
         print("\nParsed failing papers:")
@@ -313,6 +479,60 @@ def main() -> int:
 
         if cycle >= args.max_cycles:
             print("\nERROR: reached max cycles before convergence.")
+            append_status(
+                [
+                    f"### Cycle {cycle} Result",
+                    "- Result: failed",
+                    f"- Reason: reached max cycles (`{args.max_cycles}`)",
+                    f"- Report path: `{REPORT_PATH}`",
+                    f"## Run {run_id} Completed ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})",
+                    "- Status: failed",
+                ]
+            )
+            with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+                progress_file.write(
+                    f"\n=== RUN {run_id} COMPLETED {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} STATUS=FAILED ===\n"
+                )
+            return 1
+
+        if not codex_exe:
+            codex_exe = resolve_codex_executable()
+        if not codex_exe:
+            print("\nERROR: Codex CLI is required for autonomous fixing but was not found.")
+            print("Install/authenticate Codex CLI (`codex`) and rerun.")
+            append_status(
+                [
+                    f"### Cycle {cycle} Result",
+                    "- Result: failed",
+                    "- Reason: codex executable not found when fix step was required",
+                    f"## Run {run_id} Completed ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})",
+                    "- Status: failed",
+                ]
+            )
+            with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+                progress_file.write(
+                    f"\n=== RUN {run_id} COMPLETED {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} STATUS=FAILED ===\n"
+                )
+            return 1
+
+        if not codex_available(codex_exe):
+            print("\nERROR: Codex CLI is present but not runnable.")
+            print(f"Resolved path: {codex_exe}")
+            print("Verify installation/authentication, then rerun.")
+            append_status(
+                [
+                    f"### Cycle {cycle} Result",
+                    "- Result: failed",
+                    "- Reason: codex executable resolved but --version failed",
+                    f"- Codex executable: `{codex_exe}`",
+                    f"## Run {run_id} Completed ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})",
+                    "- Status: failed",
+                ]
+            )
+            with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+                progress_file.write(
+                    f"\n=== RUN {run_id} COMPLETED {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} STATUS=FAILED ===\n"
+                )
             return 1
 
         prompt_text = build_codex_prompt(
@@ -326,7 +546,7 @@ def main() -> int:
         codex_last_message = AUTONOMY_LOG_DIR / f"{cycle_tag}-cycle{cycle}-codex-last-message.txt"
 
         codex_cmd = [
-            "codex",
+            codex_exe,
             "exec",
             "--dangerously-bypass-approvals-and-sandbox",
             "--cd",
@@ -337,26 +557,82 @@ def main() -> int:
         if args.codex_model:
             codex_cmd.extend(["--model", args.codex_model])
         codex_cmd.append(prompt_text)
+        append_status(
+            [
+                f"### Cycle {cycle} Plan",
+                "- Doing next: run codex autonomous fixer for failing papers",
+                f"- Failing papers: `{', '.join(sorted(failures.keys()))}`",
+                f"- Codex log path (next): `{codex_log}`",
+            ]
+        )
 
-        codex_rc = run_and_tee(codex_cmd, codex_log)
+        codex_rc = run_and_tee(codex_cmd, codex_log, progress_log_path=PROGRESS_LOG_PATH)
         if codex_rc != 0:
             print("\nERROR: codex exec failed in fix cycle.")
             print(f"Check codex log: {codex_log}")
+            append_status(
+                [
+                    f"### Cycle {cycle} Result",
+                    "- Result: failed",
+                    "- Reason: codex fixer returned non-zero exit code",
+                    f"- Codex log: `{codex_log}`",
+                    f"## Run {run_id} Completed ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})",
+                    "- Status: failed",
+                ]
+            )
+            with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+                progress_file.write(
+                    f"\n=== RUN {run_id} COMPLETED {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} STATUS=FAILED ===\n"
+                )
             return 1
 
         head_after = get_git_head()
         if head_before and head_after and head_before != head_after:
             print("\nERROR: commit detected during autonomous run, which is disallowed.")
             print("Revert/inspect commits manually before continuing.")
+            append_status(
+                [
+                    f"### Cycle {cycle} Result",
+                    "- Result: failed",
+                    "- Reason: commit detected during autonomous run (no-commit policy)",
+                    f"- HEAD before: `{head_before}`",
+                    f"- HEAD after: `{head_after}`",
+                    f"## Run {run_id} Completed ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})",
+                    "- Status: failed",
+                ]
+            )
+            with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+                progress_file.write(
+                    f"\n=== RUN {run_id} COMPLETED {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} STATUS=FAILED ===\n"
+                )
             return 1
+
+        append_status(
+            [
+                f"### Cycle {cycle} Result",
+                "- Result: fixer completed, rerun uploader next cycle",
+                f"- Codex log: `{codex_log}`",
+                f"- Codex last message: `{codex_last_message}`",
+            ]
+        )
 
         # Small pause to avoid immediate API thrash loops on transient failures.
         time.sleep(1.0)
 
     print("\nERROR: unexpected loop termination.")
+    append_status(
+        [
+            f"## Run {run_id} Completed ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})",
+            "- Status: failed",
+            "- Reason: unexpected loop termination",
+        ]
+    )
+    with PROGRESS_LOG_PATH.open("a", encoding="utf-8", errors="replace") as progress_file:
+        progress_file.write(
+            f"\n=== RUN {run_id} COMPLETED {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} STATUS=FAILED ===\n"
+        )
     return 1
 
 
 if __name__ == "__main__":
     sys.exit(main())
-

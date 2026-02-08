@@ -156,6 +156,43 @@ CONTENT_PATTERNS = [
     },
 ]
 
+# Restrict LLM issue labels to a stable taxonomy so downstream gating/reporting
+# remains deterministic even as prompts evolve.
+LLM_ALLOWED_ISSUE_TYPES = {
+    "UNRENDERED_CODE_OR_VARIABLE",
+    "PLACEHOLDER_TEXT",
+    "LEAKED_SOURCE_CODE",
+    "CORRUPTED_OR_GARBLED_TEXT",
+    "TRUNCATED_SENTENCE",
+    "BROKEN_REFERENCE_ENTRY",
+    "BROKEN_REFERENCE_LINK",
+    "OTHER_HIGH_CONFIDENCE",
+}
+
+LLM_ISSUE_TYPE_ALIASES = {
+    "UNRENDERED_VARIABLE": "UNRENDERED_CODE_OR_VARIABLE",
+    "UNRENDERED_CODE": "UNRENDERED_CODE_OR_VARIABLE",
+    "CODE_LEAKED": "LEAKED_SOURCE_CODE",
+    "GARBLED_TEXT": "CORRUPTED_OR_GARBLED_TEXT",
+    "CORRUPTED_TEXT": "CORRUPTED_OR_GARBLED_TEXT",
+    "BROKEN_LINK": "BROKEN_REFERENCE_LINK",
+    "BROKEN_URL": "BROKEN_REFERENCE_LINK",
+    "BROKEN_DOI": "BROKEN_REFERENCE_LINK",
+}
+
+
+def normalize_llm_issue_type(raw_type: Any) -> str:
+    """Normalize arbitrary LLM issue labels to canonical issue types."""
+    normalized = str(raw_type or "").strip().upper().replace("-", "_").replace(" ", "_")
+    normalized = re.sub(r"[^A-Z0-9_]", "_", normalized)
+    normalized = re.sub(r"_+", "_", normalized).strip("_")
+    if not normalized:
+        return "OTHER_HIGH_CONFIDENCE"
+    canonical = LLM_ISSUE_TYPE_ALIASES.get(normalized, normalized)
+    if canonical in LLM_ALLOWED_ISSUE_TYPES:
+        return canonical
+    return "OTHER_HIGH_CONFIDENCE"
+
 # AI fix instructions for each error type
 ERROR_FIX_INSTRUCTIONS = {
     "PDF_CORRUPTED": """
@@ -757,9 +794,17 @@ class PDFValidator:
             step = page_count / self.llm_sample_pages
             sample_indices = [int(i * step) for i in range(self.llm_sample_pages)]
 
+        sample_total = len(sample_indices)
+        if sample_total > 0:
+            print(
+                f"[LLM] Validating {sample_total} page(s) with LLM (PDF has {page_count} pages)",
+                flush=True,
+            )
+
         max_llm_retries = max(1, int(os.environ.get("PDF_VALIDATION_LLM_RETRIES", "3")))
 
-        for page_idx in sample_indices:
+        for sample_idx, page_idx in enumerate(sample_indices, start=1):
+            print(f"[LLM] Page {sample_idx}/{sample_total} (PDF page {page_idx + 1})", flush=True)
             page = self.doc[page_idx]
             text = page.get_text() or ""
             if not isinstance(text, str):
@@ -767,28 +812,44 @@ class PDFValidator:
 
             # Skip very short pages
             if len(text.strip()) < 100:
+                print(f"[LLM] Page {sample_idx}/{sample_total} skipped (low text content)", flush=True)
                 continue
 
             # Truncate long pages
             if len(text) > 8000:
                 text = text[:8000] + "\n[...truncated...]"
 
-            prompt = f"""Analyze this PDF page text for REAL quality issues that would embarrass the author in a published book.
+            prompt = f"""Analyze this PDF page text for publication-blocking quality defects.
 
-ONLY flag issues that are clearly broken - be conservative. Do NOT flag:
-- Page number mismatches (these are PDF extraction artifacts)
-- Minor formatting inconsistencies
-- Content you're uncertain about
-- Things that MIGHT be problems but you can't be sure
-- Citation/bibliography extraction artifacts (wrapped/truncated URLs, URL-encoded characters like %3C/%3E, missing spaces in reference entries)
-- Reference-list metadata oddities that can come from PDF text extraction
+Bibliography/reference pages ARE IN SCOPE. Evaluate them with the same rigor.
 
-DO flag with HIGH CONFIDENCE only:
-1. Unrendered code/variables: literal "{{{{python}}}}", "$undefined", "NaN", "[object Object]", Python tracebacks
-2. Placeholder text: "TODO", "FIXME", "Lorem ipsum", "TBD", "[INSERT X HERE]"
-3. Clearly garbled/corrupted text (not just unusual formatting)
-4. Obvious sentence fragments cut off mid-word at page boundaries
-5. Python/JavaScript code that shouldn't be in a book (print statements, function definitions)
+Conservatism rule: only flag issues you are 90%+ confident are real defects.
+Do NOT flag:
+- Page number mismatches (common extraction artifacts)
+- Minor formatting or style differences
+- Normal line wrapping, hyphenation, or spacing differences
+- URL encoding in references (for example %3C/%3E) unless the link itself is truly broken
+- Anything uncertain or speculative
+
+Allowed issue types (use exactly one):
+- UNRENDERED_CODE_OR_VARIABLE
+- PLACEHOLDER_TEXT
+- LEAKED_SOURCE_CODE
+- CORRUPTED_OR_GARBLED_TEXT
+- TRUNCATED_SENTENCE
+- BROKEN_REFERENCE_ENTRY
+- BROKEN_REFERENCE_LINK
+- OTHER_HIGH_CONFIDENCE
+
+Issue type guidance:
+1. UNRENDERED_CODE_OR_VARIABLE: literal "{{{{python}}}}", "$undefined", "NaN", "[object Object]", Python traceback text.
+2. PLACEHOLDER_TEXT: TODO/FIXME/TBD/Lorem ipsum/[INSERT ...].
+3. LEAKED_SOURCE_CODE: visible Python/JavaScript code that should not be in reader-facing content.
+4. CORRUPTED_OR_GARBLED_TEXT: clearly unreadable/corrupted strings, not just odd punctuation.
+5. TRUNCATED_SENTENCE: obvious broken sentence cut off mid-word with no continuation context.
+6. BROKEN_REFERENCE_ENTRY: reference entry missing core bibliographic parts in a clearly broken way (not just wrapped lines).
+7. BROKEN_REFERENCE_LINK: malformed DOI/URL or clearly invalid reference link.
+8. OTHER_HIGH_CONFIDENCE: only for severe defects that do not fit above.
 
 Page content:
 ---
@@ -798,7 +859,11 @@ Page content:
 Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ confident are real problems:
 {{
     "issues": [
-        {{"type": "string", "description": "string", "severity": "CRITICAL|WARNING"}}
+        {{
+            "type": "UNRENDERED_CODE_OR_VARIABLE|PLACEHOLDER_TEXT|LEAKED_SOURCE_CODE|CORRUPTED_OR_GARBLED_TEXT|TRUNCATED_SENTENCE|BROKEN_REFERENCE_ENTRY|BROKEN_REFERENCE_LINK|OTHER_HIGH_CONFIDENCE",
+            "description": "specific, factual defect description",
+            "severity": "CRITICAL|WARNING"
+        }}
     ],
     "page_quality": "good|acceptable|poor"
 }}
@@ -850,12 +915,17 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
                         PDFValidationError.SEVERITY_WARNING,
                     )
 
+                    issue_type = normalize_llm_issue_type(issue.get("type"))
                     self._add_error(
                         page_idx + 1,
-                        f"LLM_{issue.get('type', 'UNKNOWN').upper().replace(' ', '_')}",
+                        f"LLM_{issue_type}",
                         severity,
                         issue.get("description", "LLM-detected issue"),
                     )
+                print(
+                    f"[LLM] Page {sample_idx}/{sample_total} complete ({len(issues)} issue(s))",
+                    flush=True,
+                )
 
             except Exception as e:
                 print(

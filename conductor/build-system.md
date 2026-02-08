@@ -85,3 +85,44 @@ To solve this, `variables_yml_generator.py` automatically exports a correspondin
 - **Variable:** `{{< var peace_dividend >}}` -> Renders as "$114B" with tooltip.
 - **LaTeX Variable:** `{{< var peace_dividend_latex >}}` -> Renders a full `$$` block with the equation and derivation.
 - **Derivation Tracking:** The generator uses recursive "expanded" LaTeX to show the full derivation chain for any calculated value, ensuring maximum transparency for peer review.
+
+## Autonomous Perfection + Upload
+
+### Primary Scripts
+- `scripts/upload-all-zenodo-and-save-dois.py`
+- `scripts/autonomous-perfect-and-upload.py`
+- `scripts/autonomous-perfect-and-upload.ps1`
+
+### Behavior
+- Uses source and PDF signatures to skip papers already perfected and uploaded.
+- Runs required PDF validation with LLM checks before upload.
+- Uses local validation cache at `.cache/pdf-validation-upload-cache.json`.
+- Uses perfected-state cache at `.cache/zenodo-perfect-upload-state.json`.
+- Fails fast on the first paper with blocking validation/upload errors.
+- Does not continue to later papers until the first failure is fixed.
+
+### LLM Validation Gating
+- Upload gating is controlled by explicit issue types, not mode presets.
+- Default blocking set:
+  - `LLM_UNRENDERED_CODE_OR_VARIABLE`
+  - `LLM_PLACEHOLDER_TEXT`
+  - `LLM_LEAKED_SOURCE_CODE`
+  - `LLM_CORRUPTED_OR_GARBLED_TEXT`
+  - `LLM_TRUNCATED_SENTENCE`
+  - `LLM_BROKEN_REFERENCE_ENTRY`
+  - `LLM_BROKEN_REFERENCE_LINK`
+  - `LLM_OTHER_HIGH_CONFIDENCE`
+- Override with:
+  - `--llm-blocking-types "TYPE_A,TYPE_B,..."`
+  - `--llm-warning-types "TYPE_X,TYPE_Y,..."`
+
+### Visibility and Logs
+- Upload report: `zenodo-upload-report.md` (summary, errors, warnings, action log, checklist).
+- Autonomous run logs: `AUTONOMOUS-PIPELINE-LOGS/`.
+- Persistent root status log: `AUTONOMOUS-PIPELINE-STATUS.md` (append-only run history).
+- Persistent root live output log: `AUTONOMOUS-PIPELINE-PROGRESS.log` (streamed command output).
+
+### No-Commit Safety
+- Autonomous runner enforces no-commit behavior through:
+  - explicit Codex prompt constraints (`DO NOT commit/push/branch`)
+  - git HEAD guard before/after each fixer cycle.

@@ -49,6 +49,20 @@ The project employs a multi-stage validation pipeline:
 - **Apply Global Fixes:** `npx tsx scripts/review/apply-instruction-all-files.ts "Instruction"`
 - **Validate All:** `npm run validate:all` (Frontmatter, LaTeX, Render, Lint)
 
+### Autonomous PDF Perfection + Upload
+- **Single pass uploader:** `python scripts/upload-all-zenodo-and-save-dois.py --llm-pages 0`
+- **Autonomous fix loop:** `python scripts/autonomous-perfect-and-upload.py --llm-pages 0 --max-cycles 20`
+- **Paper-scoped run:** `python scripts/upload-all-zenodo-and-save-dois.py <paper-key> --force-reprocess --force-revalidate --llm-pages 0`
+
+Operational notes:
+- LLM validation is required before upload.
+- The uploader is fail-fast: first blocking paper stops the run.
+- Report output is written to `zenodo-upload-report.md` with a fix checklist.
+- Autonomous progress is appended to `AUTONOMOUS-PIPELINE-STATUS.md`.
+- Live command output is appended to `AUTONOMOUS-PIPELINE-PROGRESS.log`.
+- Per-command cycle logs are written to `AUTONOMOUS-PIPELINE-LOGS/`.
+- Do not commit inside autonomous loops.
+
 ### Data Pipeline
 To regenerate all derived artifacts (variables, citations, charts):
 - **Command:** `npm run generate:everything`

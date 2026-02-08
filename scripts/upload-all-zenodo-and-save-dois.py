@@ -22,6 +22,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 import subprocess
 import io
@@ -52,9 +53,20 @@ from lib.quarto_config_utils import (
 
 PROJECT_ROOT = Path(__file__).parent.parent
 PDF_VALIDATION_CACHE_PATH = PROJECT_ROOT / ".cache" / "pdf-validation-upload-cache.json"
-VALIDATION_CACHE_VERSION = 3
+VALIDATION_CACHE_VERSION = 5
 PERFECTED_STATE_PATH = PROJECT_ROOT / ".cache" / "zenodo-perfect-upload-state.json"
 PERFECTED_STATE_VERSION = 2
+DEFAULT_LLM_BLOCKING_TYPES = (
+    "LLM_UNRENDERED_CODE_OR_VARIABLE",
+    "LLM_PLACEHOLDER_TEXT",
+    "LLM_LEAKED_SOURCE_CODE",
+    "LLM_CORRUPTED_OR_GARBLED_TEXT",
+    "LLM_TRUNCATED_SENTENCE",
+    "LLM_BROKEN_REFERENCE_ENTRY",
+    "LLM_BROKEN_REFERENCE_LINK",
+    "LLM_OTHER_HIGH_CONFIDENCE",
+)
+DEFAULT_LLM_WARNING_TYPES: tuple[str, ...] = ()
 
 
 def _get_preferred_python() -> str:
@@ -290,6 +302,72 @@ def _extract_ai_fix_log_path(output: str) -> str | None:
     return None
 
 
+def _extract_llm_error_type(error_line: str) -> str | None:
+    """Extract LLM error type token from a validator output line."""
+    # Detailed line format: [CRITICAL:LLM_SOMETHING]
+    detailed_match = re.search(r"\[(?:CRITICAL|WARNING|INFO):(LLM_[A-Z0-9_/\-]+)\]", error_line)
+    if detailed_match:
+        return detailed_match.group(1).replace("/", "_")
+
+    # Summary line format: LLM_SOMETHING [CRITICAL]:
+    summary_match = re.match(r"^(LLM_[A-Z0-9_/\-]+)\s+\[", error_line.strip())
+    if summary_match:
+        return summary_match.group(1).replace("/", "_")
+
+    return None
+
+
+def _normalize_llm_type_token(token: str) -> str:
+    """Normalize CLI/config tokens to canonical LLM_* form."""
+    normalized = token.strip().upper().replace("-", "_").replace(" ", "_")
+    normalized = re.sub(r"[^A-Z0-9_]", "_", normalized)
+    normalized = re.sub(r"_+", "_", normalized).strip("_")
+    if not normalized:
+        return ""
+    if not normalized.startswith("LLM_"):
+        normalized = f"LLM_{normalized}"
+    return normalized
+
+
+def _parse_llm_type_csv(raw_value: str | None, default_types: tuple[str, ...]) -> set[str]:
+    """Parse comma-separated LLM issue types into a normalized set."""
+    if raw_value is None:
+        return {t for t in default_types}
+
+    raw_value = raw_value.strip()
+    if not raw_value:
+        return set()
+
+    parsed: set[str] = set()
+    for token in raw_value.split(","):
+        normalized = _normalize_llm_type_token(token)
+        if normalized:
+            parsed.add(normalized)
+    return parsed
+
+
+def _classify_llm_error(
+    error_line: str,
+    blocking_types: set[str],
+    warning_types: set[str],
+) -> tuple[bool, str | None]:
+    """Classify one LLM validator line as blocking or warning."""
+    error_type = _extract_llm_error_type(error_line)
+    if not error_type:
+        # Unknown LLM line: conservative default is blocking.
+        return True, None
+
+    normalized_type = _normalize_llm_type_token(error_type)
+    if normalized_type in warning_types and normalized_type not in blocking_types:
+        return False, normalized_type
+
+    if normalized_type in blocking_types:
+        return True, normalized_type
+
+    # Any unclassified LLM finding remains blocking by default.
+    return True, normalized_type
+
+
 def copy_with_retry(
     src: Path,
     dst: Path,
@@ -346,6 +424,8 @@ def generate_report(report_data: dict) -> str:
         f"- **Successful:** {report_data['success_count']}",
         f"- **Failed:** {report_data['failed_count']}",
         f"- **Skipped (already perfected/uploaded):** {skipped_count}",
+        f"- **LLM Blocking Types:** `{', '.join(report_data.get('llm_blocking_types', list(DEFAULT_LLM_BLOCKING_TYPES))) or '(none)'}`",
+        f"- **LLM Warning Types:** `{', '.join(report_data.get('llm_warning_types', list(DEFAULT_LLM_WARNING_TYPES))) or '(none)'}`",
         "",
     ]
 
@@ -382,10 +462,11 @@ def generate_report(report_data: dict) -> str:
         lines.extend([
             "## Validation Results",
             "",
-            "| Paper | Status | Source | LLM Pages | Notes | Error Count | AI Fix Log |",
-            "|-------|--------|--------|-----------|-------|-------------|------------|",
+            "| Paper | Status | Source | LLM Pages | Notes | Error Count | Warning Count | AI Fix Log |",
+            "|-------|--------|--------|-----------|-------|-------------|---------------|------------|",
         ])
         validation_error_details = []
+        validation_warning_details = []
         for paper_key, result in report_data['validation_results'].items():
             if result.get("skipped"):
                 status = "SKIPPED"
@@ -394,6 +475,7 @@ def generate_report(report_data: dict) -> str:
                 status = "OK" if result.get('success') else "FAILED"
                 source = "cache" if result.get('from_cache') else "fresh"
             error_list = _normalize_list(result.get('errors'))
+            warning_list = _normalize_list(result.get('warnings'))
             note_text = str(result.get('notes', '')).strip()
             if not note_text and not result.get('success'):
                 note_text = "Validation failed"
@@ -402,10 +484,12 @@ def generate_report(report_data: dict) -> str:
             ai_fix_log = str(result.get("ai_fix_log_path", "") or "").strip()
             ai_fix_log_display = f"`{ai_fix_log}`" if ai_fix_log else "-"
             lines.append(
-                f"| {paper_key} | {status} | {source} | {llm_pages} | {notes} | {len(error_list)} | {ai_fix_log_display} |"
+                f"| {paper_key} | {status} | {source} | {llm_pages} | {notes} | {len(error_list)} | {len(warning_list)} | {ai_fix_log_display} |"
             )
             if error_list:
                 validation_error_details.append((paper_key, error_list))
+            if warning_list:
+                validation_warning_details.append((paper_key, warning_list))
         lines.append("")
 
         if validation_error_details:
@@ -418,6 +502,19 @@ def generate_report(report_data: dict) -> str:
                 lines.append("")
                 for error in error_list:
                     message = str(error).replace("\n", " ").strip()
+                    lines.append(f"- {message}")
+                lines.append("")
+
+        if validation_warning_details:
+            lines.extend([
+                "### Validation Warning Details",
+                "",
+            ])
+            for paper_key, warning_list in validation_warning_details:
+                lines.append(f"#### {paper_key}")
+                lines.append("")
+                for warning in warning_list:
+                    message = str(warning).replace("\n", " ").strip()
                     lines.append(f"- {message}")
                 lines.append("")
 
@@ -460,6 +557,19 @@ def generate_report(report_data: dict) -> str:
                     lines.append(f"- {error}")
                 lines.append("")
 
+    if report_data.get('warnings'):
+        lines.extend([
+            "## Non-Blocking Warnings",
+            "",
+        ])
+        for paper_key, warnings in report_data['warnings'].items():
+            if warnings:
+                lines.append(f"### {paper_key}")
+                lines.append("")
+                for warning in warnings:
+                    lines.append(f"- {warning}")
+                lines.append("")
+
     if report_data['errors']:
         lines.extend([
             "## Autonomous Fix Checklist",
@@ -492,6 +602,15 @@ def generate_report(report_data: dict) -> str:
             "Continue until this report shows zero failed papers and no checklist items.",
             "",
         ])
+
+    if report_data.get("actions"):
+        lines.extend([
+            "## Action Log",
+            "",
+        ])
+        for action in report_data.get("actions", []):
+            lines.append(f"- {action}")
+        lines.append("")
 
     lines.extend([
         "## Next Steps",
@@ -545,12 +664,23 @@ def validate_existing_pdf(
     llm_pages: int = 5,
     use_cache: bool = True,
     skip_url_check: bool = True,
-) -> tuple[bool, list[str], bool, str | None]:
+    llm_blocking_types: set[str] | None = None,
+    llm_warning_types: set[str] | None = None,
+) -> tuple[bool, list[str], list[str], bool, str | None]:
     """Run pdf-validation.py with required LLM checks and local result caching.
 
-    Returns (passed, errors, from_cache, ai_fix_log_path).
+    Returns (passed, blocking_errors, warnings, from_cache, ai_fix_log_path).
     """
     validation_script = PROJECT_ROOT / "scripts" / "pdf-validation.py"
+    if llm_blocking_types is None:
+        blocking_types = set(DEFAULT_LLM_BLOCKING_TYPES)
+    else:
+        blocking_types = set(llm_blocking_types)
+    if llm_warning_types is None:
+        warning_types = set(DEFAULT_LLM_WARNING_TYPES)
+    else:
+        warning_types = set(llm_warning_types)
+    warning_types -= blocking_types
 
     signature = _compute_pdf_signature(pdf_path)
     cache_key = _cache_key_for_pdf(pdf_path)
@@ -559,28 +689,40 @@ def validate_existing_pdf(
 
     if use_cache:
         cached = cache_entries.get(cache_key)
+        cached_blocking_types = cached.get("llm_blocking_types", []) if isinstance(cached, dict) else []
+        if not isinstance(cached_blocking_types, list):
+            cached_blocking_types = []
+        cached_warning_types = cached.get("llm_warning_types", []) if isinstance(cached, dict) else []
+        if not isinstance(cached_warning_types, list):
+            cached_warning_types = []
         if (
             isinstance(cached, dict)
             and cached.get("signature") == signature
             and int(cached.get("llm_pages", -1)) == llm_pages
+            and set(cached_blocking_types) == blocking_types
+            and set(cached_warning_types) == warning_types
             and bool(cached.get("llm_completed", False))
         ):
             cached_passed = bool(cached.get("passed", False))
             cached_errors = cached.get("errors", [])
             if not isinstance(cached_errors, list):
                 cached_errors = []
+            cached_warnings = cached.get("warnings", [])
+            if not isinstance(cached_warnings, list):
+                cached_warnings = []
             cached_fix_log = cached.get("ai_fix_log_path")
             if cached_fix_log and not isinstance(cached_fix_log, str):
                 cached_fix_log = None
             if verbose:
                 cache_status = "PASSED" if cached_passed else "FAILED"
                 print(f"  Using cached validation result ({cache_status}) for {pdf_path.name}", flush=True)
-            return cached_passed, cached_errors, True, cached_fix_log
+            return cached_passed, cached_errors, cached_warnings, True, cached_fix_log
 
     if not os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY"):
         return (
             False,
             ["GOOGLE_GENERATIVE_AI_API_KEY is not set (required for LLM PDF validation)."],
+            [],
             False,
             None,
         )
@@ -589,10 +731,17 @@ def validate_existing_pdf(
     cmd = [python_exe, str(validation_script), "--pdf", str(pdf_path), "--llm-pages", str(llm_pages)]
     if skip_url_check:
         cmd.append("--skip-url-check")
+    print(
+        f"  Starting PDF validation for {pdf_path.name} (llm_pages={llm_pages}). "
+        "This can take a while for full-document validation...",
+        flush=True,
+    )
     if verbose:
         print(f"  Running: {' '.join(cmd)}", flush=True)
 
-    result = subprocess.run(
+    validation_started_at = time.time()
+    output_lines: list[str] = []
+    process = subprocess.Popen(
         cmd,
         cwd=str(PROJECT_ROOT),
         stdout=subprocess.PIPE,
@@ -601,47 +750,92 @@ def validate_existing_pdf(
         encoding="utf-8",
         errors="replace",
     )
+    for line in (process.stdout or []):
+        output_lines.append(line)
+        display_line = line.rstrip("\r\n")
+        if not display_line:
+            continue
+        if verbose:
+            print(display_line, flush=True)
+            continue
+        lowered = display_line.lower()
+        should_show = (
+            display_line.startswith("[VALIDATION]")
+            or display_line.startswith("   Validating:")
+            or display_line.startswith("[LLM]")
+            or display_line.startswith("[INFO] LLM")
+            or display_line.startswith("[WARNING]")
+            or display_line.startswith("[ERROR]")
+            or display_line.startswith("ERROR:")
+            or display_line.startswith("FATAL:")
+            or display_line.startswith("[OK]")
+            or "validation failed" in lowered
+        )
+        if should_show:
+            print(f"  {display_line}", flush=True)
+    process.wait()
+    output = "".join(output_lines)
+    validation_duration = time.time() - validation_started_at
+    print(
+        f"  PDF validation finished for {pdf_path.name} in {validation_duration:.1f}s (rc={process.returncode})",
+        flush=True,
+    )
 
-    output = result.stdout or ""
-    if verbose and output:
-        print(output, flush=True)
-
-    errors = _extract_validation_errors(output)
+    extracted_errors = _extract_validation_errors(output)
     ai_fix_log_path = _extract_ai_fix_log_path(output)
-    llm_errors = [e for e in errors if "LLM_" in e]
-    non_llm_errors = [e for e in errors if "LLM_" not in e]
+    llm_errors = [e for e in extracted_errors if "LLM_" in e]
+    non_llm_errors = [e for e in extracted_errors if "LLM_" not in e]
 
     llm_skipped = "LLM validation skipped" in output
     llm_failed = "LLM validation failed for page" in output
     llm_completed = not (llm_skipped or llm_failed)
+
+    llm_blocking_errors = []
+    llm_warnings = []
+    for llm_error in llm_errors:
+        is_blocking, normalized_type = _classify_llm_error(
+            llm_error,
+            blocking_types=blocking_types,
+            warning_types=warning_types,
+        )
+        if is_blocking:
+            llm_blocking_errors.append(llm_error)
+        else:
+            if normalized_type:
+                llm_warnings.append(f"{llm_error} [type={normalized_type}]")
+            else:
+                llm_warnings.append(llm_error)
 
     if llm_skipped:
         non_llm_errors.append("LLM validation was skipped; uploads require completed LLM validation.")
     if llm_failed:
         non_llm_errors.append("LLM validation failed for one or more pages; rerun after fixing model/API issues.")
 
-    # Gate uploads on both deterministic checks and LLM findings.
-    all_errors = list(non_llm_errors) + list(llm_errors)
-    passed = llm_completed and not all_errors
+    # Gate uploads on deterministic checks + configured blocking LLM findings.
+    blocking_errors = list(non_llm_errors) + list(llm_blocking_errors)
+    passed = llm_completed and not blocking_errors
 
-    if not passed and not all_errors:
-        all_errors.append(f"Validation failed with exit code {result.returncode}")
+    if not passed and not blocking_errors:
+        blocking_errors.append(f"Validation failed with exit code {process.returncode}")
 
     if use_cache:
         cache_entries[cache_key] = {
             "signature": signature,
             "validated_at": datetime.now().isoformat(),
             "llm_pages": llm_pages,
+            "llm_blocking_types": sorted(blocking_types),
+            "llm_warning_types": sorted(warning_types),
             "llm_completed": llm_completed,
             "passed": passed,
-            "errors": all_errors,
-            "llm_warnings": llm_errors,
+            "errors": blocking_errors,
+            "warnings": llm_warnings,
+            "llm_warnings": llm_warnings,
             "ai_fix_log_path": ai_fix_log_path,
-            "returncode": result.returncode,
+            "returncode": process.returncode,
         }
         _save_validation_cache(cache)
 
-    return passed, all_errors, False, ai_fix_log_path
+    return passed, blocking_errors, llm_warnings, False, ai_fix_log_path
 
 
 def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
@@ -822,6 +1016,22 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Ignore perfected/uploaded state cache and process all selected papers again",
     )
+    parser.add_argument(
+        "--llm-blocking-types",
+        default=",".join(DEFAULT_LLM_BLOCKING_TYPES),
+        help=(
+            "Comma-separated LLM issue types that block upload. "
+            "Defaults to all core high-confidence issue types."
+        ),
+    )
+    parser.add_argument(
+        "--llm-warning-types",
+        default=",".join(DEFAULT_LLM_WARNING_TYPES),
+        help=(
+            "Comma-separated LLM issue types treated as non-blocking warnings. "
+            "Empty by default."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -829,6 +1039,15 @@ def main():
     args = parse_args()
     start_time = time.time()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    llm_blocking_types = _parse_llm_type_csv(
+        args.llm_blocking_types,
+        DEFAULT_LLM_BLOCKING_TYPES,
+    )
+    llm_warning_types = _parse_llm_type_csv(
+        args.llm_warning_types,
+        DEFAULT_LLM_WARNING_TYPES,
+    )
+    llm_warning_types -= llm_blocking_types
 
     # Initialize report data
     report_data = {
@@ -836,13 +1055,21 @@ def main():
         'papers_count': 0,
         'success_count': 0,
         'failed_count': 0,
+        'llm_blocking_types': sorted(llm_blocking_types),
+        'llm_warning_types': sorted(llm_warning_types),
         'skipped_results': {},
         'build_results': {},
         'validation_results': {},
         'upload_results': {},
         'errors': {},
+        'warnings': {},
+        'actions': [],
         'total_duration': 0,
     }
+
+    def log_action(message: str) -> None:
+        stamp = datetime.now().strftime("%H:%M:%S")
+        report_data["actions"].append(f"[{stamp}] {message}")
 
     load_dotenv(PROJECT_ROOT / ".env")
 
@@ -880,6 +1107,7 @@ def main():
     for key in sorted_keys:
         print(f"  {key}: {papers[key]['qmd_count']} QMD files")
     print()
+    log_action(f"Selected {len(sorted_keys)} paper(s): {', '.join(sorted_keys)}")
 
     perfected_state = _load_perfected_state()
     perfected_entries = perfected_state.setdefault("entries", {})
@@ -894,6 +1122,22 @@ def main():
         print("LLM validation mode: full document (all pages)")
     else:
         print(f"LLM validation mode: sampled pages ({args.llm_pages})")
+    print(
+        "LLM blocking types: "
+        + (", ".join(sorted(llm_blocking_types)) if llm_blocking_types else "(none)")
+    )
+    print(
+        "LLM warning types: "
+        + (", ".join(sorted(llm_warning_types)) if llm_warning_types else "(none)")
+    )
+    print("Validation behavior: fail-fast on first failed PDF")
+    log_action(
+        "Validation configured with "
+        f"llm_pages={args.llm_pages}, "
+        f"llm_blocking_types={','.join(sorted(llm_blocking_types)) or '(none)'}, "
+        f"llm_warning_types={','.join(sorted(llm_warning_types)) or '(none)'}, "
+        "fail_fast=true"
+    )
 
     if args.force_reprocess:
         print("Perfected state cache: ignored (--force-reprocess)")
@@ -922,6 +1166,7 @@ def main():
         ):
             doi = state_entry.get("doi", "N/A")
             print(f"[SKIP] {paper_key}: already perfected/uploaded and unchanged")
+            log_action(f"Skipped {paper_key} (perfected cache hit)")
             report_data["skipped_results"][paper_key] = {
                 "reason": "Already perfected/uploaded; source+PDF signatures unchanged",
                 "doi": doi,
@@ -933,6 +1178,7 @@ def main():
                 "llm_pages": required_llm_pages,
                 "notes": "Skipped (perfected cache hit)",
                 "errors": [],
+                "warnings": [],
                 "ai_fix_log_path": None,
             }
             report_data["upload_results"][paper_key] = {
@@ -948,6 +1194,7 @@ def main():
 
     if not process_keys:
         print("\nAll selected papers are already perfected and uploaded. Nothing to do.")
+        log_action("No processing required: all selected papers were already perfected/uploaded")
         report_data["success_count"] = len(report_data["upload_results"])
         save_report(report_data, start_time)
         return 0
@@ -956,7 +1203,14 @@ def main():
     # 1. Local PDF newer than sources → use it (skip everything)
     # 2. Remote published PDF available → download it (skip rebuild)
     # 3. Neither fresh → rebuild locally
+    # 4. Validate the paper immediately and fail-fast on first validation failure
     print("Getting freshest PDFs...")
+    print("\nRunning required PDF validation (LLM enabled, cached by file signature)...")
+    if args.force_revalidate:
+        print("  Validation cache: disabled (--force-revalidate)")
+    else:
+        print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+
     for paper_key in process_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
@@ -1029,74 +1283,60 @@ def main():
                 print(f"\nFATAL: PDF not found after build: {pdf_path}")
                 report_data['errors'][paper_key] = ["PDF not found after build"]
                 report_data['failed_count'] += 1
+                log_action(f"Build failed for {paper_key}: PDF not found after build")
                 save_report(report_data, start_time)
                 return 1
 
-    # Validate all PDFs before starting uploads (prevents partial uploads).
-    print("\nRunning required PDF validation (LLM enabled, cached by file signature)...")
-    if args.force_revalidate:
-        print("  Validation cache: disabled (--force-revalidate)")
-    else:
-        print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
-
-    validation_failed_keys = []
-
-    for paper_key in process_keys:
-        info = papers[paper_key]
-        pdf_path = PROJECT_ROOT / info["pdf_path"]
-
-        if not pdf_path.exists():
-            fallback_pdf = PROJECT_ROOT / info["build_pdf_path"]
-            if fallback_pdf.exists():
-                print(f"[WARN] Using fallback build PDF for validation: {fallback_pdf}")
-                pdf_path = fallback_pdf
-
-        if not pdf_path.exists():
-            print(f"\nFATAL: PDF not found for validation: {pdf_path}")
-            validation_errors = ["PDF not found for validation"]
-            report_data['validation_results'][paper_key] = {
-                'success': False,
-                'from_cache': False,
-                'llm_pages': validation_pages_used.get(paper_key, "N/A"),
-                'notes': 'PDF not found',
-                'errors': validation_errors,
-                'ai_fix_log_path': None,
-            }
-            report_data['errors'][paper_key] = validation_errors
-            validation_failed_keys.append(paper_key)
-            report_data['failed_count'] += 1
-            continue
-
-        print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
+        # Validate each paper immediately after selecting/building its PDF.
         effective_llm_pages = _resolve_llm_pages_for_pdf(pdf_path, args.llm_pages)
         validation_pages_used[paper_key] = effective_llm_pages
-        passed, validation_errors, from_cache, ai_fix_log_path = validate_existing_pdf(
+        print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
+        passed, validation_errors, validation_warnings, from_cache, ai_fix_log_path = validate_existing_pdf(
             pdf_path=pdf_path,
             verbose=args.verbose,
             llm_pages=effective_llm_pages,
             use_cache=not args.force_revalidate,
+            llm_blocking_types=llm_blocking_types,
+            llm_warning_types=llm_warning_types,
         )
 
         source_note = "cache hit" if from_cache else "fresh run"
         if passed:
-            note = source_note
+            if validation_warnings:
+                note = f"{source_note}; {len(validation_warnings)} warning(s)"
+            else:
+                note = source_note
         elif validation_errors:
             extra_count = len(validation_errors) - 1
             suffix = f" (+{extra_count} more)" if extra_count > 0 else ""
             note = f"{validation_errors[0]}{suffix}"
         else:
             note = "Validation failed"
+
         report_data['validation_results'][paper_key] = {
             'success': passed,
             'from_cache': from_cache,
             'llm_pages': effective_llm_pages,
             'notes': note,
             'errors': validation_errors,
+            'warnings': validation_warnings,
             'ai_fix_log_path': ai_fix_log_path,
         }
+        if validation_warnings:
+            report_data['warnings'][paper_key] = validation_warnings
 
         if passed:
             print(f"[OK] Validation passed for {paper_key} ({source_note})")
+            if validation_warnings:
+                print(f"[WARN] Non-blocking LLM warnings for {paper_key}: {len(validation_warnings)}")
+                for warning in validation_warnings[:10]:
+                    print(f"  - {warning}")
+                if len(validation_warnings) > 10:
+                    print(f"  - ...and {len(validation_warnings) - 10} more")
+            log_action(
+                f"Validated {paper_key}: passed ({source_note})"
+                + (f" with {len(validation_warnings)} warning(s)" if validation_warnings else "")
+            )
             continue
 
         print(f"\nFATAL: Validation failed for {paper_key}")
@@ -1104,14 +1344,14 @@ def main():
             print(f"  - {error}")
         if len(validation_errors) > 10:
             print(f"  - ...and {len(validation_errors) - 10} more")
+        if validation_warnings:
+            print(f"  Non-blocking warnings also found: {len(validation_warnings)}")
 
         report_data['errors'][paper_key] = validation_errors or ["PDF validation failed"]
-        validation_failed_keys.append(paper_key)
         report_data['failed_count'] += 1
-
-    if validation_failed_keys:
-        failed_list = ", ".join(validation_failed_keys)
-        print(f"\nFATAL: Validation failed for {len(validation_failed_keys)} paper(s): {failed_list}")
+        log_action(
+            f"Validation failed for {paper_key}; blocking errors={len(validation_errors)} warnings={len(validation_warnings)}"
+        )
         save_report(report_data, start_time)
         return 1
 
@@ -1119,6 +1359,7 @@ def main():
     for paper_key in process_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
+        log_action(f"Uploading {paper_key}")
         if not pdf_path.exists():
             fallback_pdf = PROJECT_ROOT / info["build_pdf_path"]
             if fallback_pdf.exists():
@@ -1148,10 +1389,12 @@ def main():
             report_data['failed_count'] += 1
             perfected_entries.pop(paper_key, None)
             _save_perfected_state(perfected_state)
+            log_action(f"Upload failed for {paper_key}")
 
             save_report(report_data, start_time)
             return 1
 
+        log_action(f"Upload verified for {paper_key}: DOI {result.get('doi', 'N/A')}")
         perfected_entries[paper_key] = {
             "updated_at": datetime.now().isoformat(),
             "source_signature": source_signatures.get(paper_key, {}),
