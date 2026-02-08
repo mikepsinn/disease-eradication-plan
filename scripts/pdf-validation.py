@@ -780,6 +780,8 @@ ONLY flag issues that are clearly broken - be conservative. Do NOT flag:
 - Minor formatting inconsistencies
 - Content you're uncertain about
 - Things that MIGHT be problems but you can't be sure
+- Citation/bibliography extraction artifacts (wrapped/truncated URLs, URL-encoded characters like %3C/%3E, missing spaces in reference entries)
+- Reference-list metadata oddities that can come from PDF text extraction
 
 DO flag with HIGH CONFIDENCE only:
 1. Unrendered code/variables: literal "{{{{python}}}}", "$undefined", "NaN", "[object Object]", Python tracebacks

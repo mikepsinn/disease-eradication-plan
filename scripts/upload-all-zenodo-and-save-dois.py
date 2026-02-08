@@ -46,12 +46,15 @@ from lib.quarto_config_utils import (
     discover_paper_configs,
     count_qmd_files,
     get_newest_paper_source_mtime,
+    get_paper_source_files,
     check_and_download_remote_pdf,
 )
 
 PROJECT_ROOT = Path(__file__).parent.parent
 PDF_VALIDATION_CACHE_PATH = PROJECT_ROOT / ".cache" / "pdf-validation-upload-cache.json"
 VALIDATION_CACHE_VERSION = 3
+PERFECTED_STATE_PATH = PROJECT_ROOT / ".cache" / "zenodo-perfect-upload-state.json"
+PERFECTED_STATE_VERSION = 2
 
 
 def _get_preferred_python() -> str:
@@ -121,6 +124,122 @@ def _save_validation_cache(cache: dict, cache_path: Path = PDF_VALIDATION_CACHE_
         json.dump(cache, f, indent=2)
 
 
+def _default_perfected_state() -> dict:
+    return {"version": PERFECTED_STATE_VERSION, "entries": {}}
+
+
+def _load_perfected_state(state_path: Path = PERFECTED_STATE_PATH) -> dict:
+    """Load uploaded/perfected paper state from disk."""
+    if not state_path.exists():
+        return _default_perfected_state()
+    try:
+        with open(state_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, dict):
+                if data.get("version") != PERFECTED_STATE_VERSION:
+                    return _default_perfected_state()
+                data.setdefault("version", PERFECTED_STATE_VERSION)
+                data.setdefault("entries", {})
+                return data
+    except (json.JSONDecodeError, OSError):
+        pass
+    return _default_perfected_state()
+
+
+def _save_perfected_state(state: dict, state_path: Path = PERFECTED_STATE_PATH) -> None:
+    """Save uploaded/perfected paper state to disk."""
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(state_path, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2)
+
+
+def _compute_source_signature(paper_key: str, paper_config: dict) -> dict:
+    """Compute a stable signature for all source files that influence one paper."""
+    source_files = get_paper_source_files(
+        paper_key=paper_key,
+        paper_config=paper_config,
+        project_root=PROJECT_ROOT,
+    )
+    digest = hashlib.sha256()
+    tracked = []
+    project_root_resolved = PROJECT_ROOT.resolve()
+
+    for source_path in sorted(source_files, key=lambda p: str(p).lower()):
+        if not source_path.exists():
+            continue
+        try:
+            rel_path = source_path.resolve().relative_to(project_root_resolved)
+            rel_str = str(rel_path).replace("\\", "/")
+        except Exception:
+            rel_str = str(source_path.resolve()).replace("\\", "/")
+
+        file_sha = _compute_sha256(source_path)
+        digest.update(f"{rel_str}|{file_sha}\n".encode("utf-8", errors="replace"))
+        tracked.append(
+            {
+                "path": rel_str,
+                "sha256": file_sha,
+            }
+        )
+    return {
+        "file_count": len(tracked),
+        "fingerprint": digest.hexdigest(),
+    }
+
+
+def _pdf_signature_matches(pdf_path: Path, expected_signature: dict | None) -> bool:
+    """Compare on-disk PDF with a cached signature."""
+    if not expected_signature or not isinstance(expected_signature, dict):
+        return False
+    if not pdf_path.exists():
+        return False
+    try:
+        stats = pdf_path.stat()
+    except OSError:
+        return False
+
+    if int(expected_signature.get("size_bytes", -1)) != stats.st_size:
+        return False
+    if int(expected_signature.get("mtime_ns", -1)) != stats.st_mtime_ns:
+        return False
+
+    expected_sha = str(expected_signature.get("sha256", "")).strip()
+    if not expected_sha:
+        return True
+    return _compute_sha256(pdf_path) == expected_sha
+
+
+def _resolve_llm_pages_for_pdf(pdf_path: Path, requested_llm_pages: int) -> int:
+    """Resolve effective LLM pages: 0 means validate all pages in this PDF."""
+    if requested_llm_pages > 0:
+        return requested_llm_pages
+
+    page_count = get_pdf_page_count(pdf_path)
+    if isinstance(page_count, int) and page_count > 0:
+        return page_count
+    return 1
+
+
+def _is_perfected_entry_valid(
+    entry: dict | None,
+    source_signature: dict,
+    pdf_path: Path,
+    required_llm_pages: int,
+) -> bool:
+    """Check whether a paper can be skipped as already perfected/uploaded."""
+    if not entry or not isinstance(entry, dict):
+        return False
+    if not bool(entry.get("upload_verified", False)):
+        return False
+    if not bool(entry.get("validation_passed", False)):
+        return False
+    if entry.get("source_signature") != source_signature:
+        return False
+    if int(entry.get("llm_pages_validated", 0)) < int(required_llm_pages):
+        return False
+    return _pdf_signature_matches(pdf_path, entry.get("pdf_signature"))
+
+
 def _extract_validation_errors(output: str) -> list[str]:
     """Extract key validation errors from validator output."""
     errors = []
@@ -142,6 +261,33 @@ def _extract_validation_errors(output: str) -> list[str]:
                 seen.add(stripped)
                 errors.append(stripped)
     return errors
+
+
+def _extract_ai_fix_log_path(output: str) -> str | None:
+    """Extract AI fix log file path emitted by pdf-validation.py output."""
+    lines = [line.rstrip() for line in output.splitlines()]
+    for idx, line in enumerate(lines):
+        lower_line = line.lower()
+        if "detailed fix instructions written to" not in lower_line:
+            continue
+
+        # Handle "written to: <path>" on same line.
+        if ":" in line:
+            candidate = line.split(":", 1)[1].strip()
+            if candidate and not candidate.lower().startswith("to fix these issues"):
+                return str(Path(candidate))
+
+        # Handle path on following line.
+        for next_idx in range(idx + 1, min(len(lines), idx + 5)):
+            candidate = lines[next_idx].strip()
+            if not candidate:
+                continue
+            if candidate.lower().startswith("to fix these issues"):
+                break
+            if candidate.lower().startswith("claude/ai:"):
+                break
+            return str(Path(candidate))
+    return None
 
 
 def copy_with_retry(
@@ -185,6 +331,9 @@ def generate_report(report_data: dict) -> str:
             return [str(item) for item in value if str(item).strip()]
         return []
 
+    skipped_results = report_data.get("skipped_results", {})
+    skipped_count = len(skipped_results)
+
     lines = [
         "# Zenodo Upload Report",
         "",
@@ -196,8 +345,22 @@ def generate_report(report_data: dict) -> str:
         "",
         f"- **Successful:** {report_data['success_count']}",
         f"- **Failed:** {report_data['failed_count']}",
+        f"- **Skipped (already perfected/uploaded):** {skipped_count}",
         "",
     ]
+
+    if skipped_results:
+        lines.extend([
+            "## Already Perfected (Skipped)",
+            "",
+            "| Paper | Reason | DOI |",
+            "|-------|--------|-----|",
+        ])
+        for paper_key, result in skipped_results.items():
+            reason = str(result.get("reason", "Already perfected")).replace("|", "\\|")
+            doi = str(result.get("doi", "N/A")).replace("|", "\\|")
+            lines.append(f"| {paper_key} | {reason} | {doi} |")
+        lines.append("")
 
     if report_data['build_results']:
         lines.extend([
@@ -219,19 +382,28 @@ def generate_report(report_data: dict) -> str:
         lines.extend([
             "## Validation Results",
             "",
-            "| Paper | Status | Source | Notes | Error Count |",
-            "|-------|--------|--------|-------|-------------|",
+            "| Paper | Status | Source | LLM Pages | Notes | Error Count | AI Fix Log |",
+            "|-------|--------|--------|-----------|-------|-------------|------------|",
         ])
         validation_error_details = []
         for paper_key, result in report_data['validation_results'].items():
-            status = "OK" if result.get('success') else "FAILED"
-            source = "cache" if result.get('from_cache') else "fresh"
+            if result.get("skipped"):
+                status = "SKIPPED"
+                source = "perfected-cache"
+            else:
+                status = "OK" if result.get('success') else "FAILED"
+                source = "cache" if result.get('from_cache') else "fresh"
             error_list = _normalize_list(result.get('errors'))
             note_text = str(result.get('notes', '')).strip()
             if not note_text and not result.get('success'):
                 note_text = "Validation failed"
             notes = note_text.replace("|", "\\|")
-            lines.append(f"| {paper_key} | {status} | {source} | {notes} | {len(error_list)} |")
+            llm_pages = str(result.get("llm_pages", "N/A"))
+            ai_fix_log = str(result.get("ai_fix_log_path", "") or "").strip()
+            ai_fix_log_display = f"`{ai_fix_log}`" if ai_fix_log else "-"
+            lines.append(
+                f"| {paper_key} | {status} | {source} | {llm_pages} | {notes} | {len(error_list)} | {ai_fix_log_display} |"
+            )
             if error_list:
                 validation_error_details.append((paper_key, error_list))
         lines.append("")
@@ -257,7 +429,12 @@ def generate_report(report_data: dict) -> str:
             "|-------|--------|-----|------------|-----|",
         ])
         for paper_key, result in report_data['upload_results'].items():
-            if result and result.get('verified'):
+            if result and result.get('skipped'):
+                status = "SKIPPED"
+                doi = result.get('doi', 'N/A')
+                deposit_id = result.get('id', 'N/A')
+                url = result.get('url', 'N/A')
+            elif result and result.get('verified'):
                 status = "OK"
                 doi = result.get('doi', 'N/A')
                 deposit_id = result.get('id', 'N/A')
@@ -282,6 +459,39 @@ def generate_report(report_data: dict) -> str:
                 for error in errors:
                     lines.append(f"- {error}")
                 lines.append("")
+
+    if report_data['errors']:
+        lines.extend([
+            "## Autonomous Fix Checklist",
+            "",
+        ])
+        for paper_key, errors in report_data['errors'].items():
+            if not errors:
+                continue
+            lines.append(f"### {paper_key}")
+            lines.append("")
+            lines.append("- [ ] Resolve all issues listed below for this paper.")
+            for error in errors:
+                lines.append(f"- [ ] {error}")
+
+            validation_result = report_data.get("validation_results", {}).get(paper_key, {})
+            ai_fix_log = str(validation_result.get("ai_fix_log_path", "") or "").strip()
+            if ai_fix_log:
+                lines.append(f"- [ ] Read AI fix guide: `{ai_fix_log}`")
+
+            lines.append(
+                f"- [ ] Re-run this paper: `python scripts/upload-all-zenodo-and-save-dois.py {paper_key} --force-revalidate`"
+            )
+            lines.append("")
+
+        lines.extend([
+            "### Agent Prompt",
+            "",
+            "Use the checklist above as the source of truth.",
+            "After each fix, rerun only the failing paper command.",
+            "Continue until this report shows zero failed papers and no checklist items.",
+            "",
+        ])
 
     lines.extend([
         "## Next Steps",
@@ -335,10 +545,10 @@ def validate_existing_pdf(
     llm_pages: int = 5,
     use_cache: bool = True,
     skip_url_check: bool = True,
-) -> tuple[bool, list[str], bool]:
+) -> tuple[bool, list[str], bool, str | None]:
     """Run pdf-validation.py with required LLM checks and local result caching.
 
-    Returns (passed, errors, from_cache).
+    Returns (passed, errors, from_cache, ai_fix_log_path).
     """
     validation_script = PROJECT_ROOT / "scripts" / "pdf-validation.py"
 
@@ -359,13 +569,21 @@ def validate_existing_pdf(
             cached_errors = cached.get("errors", [])
             if not isinstance(cached_errors, list):
                 cached_errors = []
+            cached_fix_log = cached.get("ai_fix_log_path")
+            if cached_fix_log and not isinstance(cached_fix_log, str):
+                cached_fix_log = None
             if verbose:
                 cache_status = "PASSED" if cached_passed else "FAILED"
                 print(f"  Using cached validation result ({cache_status}) for {pdf_path.name}", flush=True)
-            return cached_passed, cached_errors, True
+            return cached_passed, cached_errors, True, cached_fix_log
 
     if not os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY"):
-        return False, ["GOOGLE_GENERATIVE_AI_API_KEY is not set (required for LLM PDF validation)."], False
+        return (
+            False,
+            ["GOOGLE_GENERATIVE_AI_API_KEY is not set (required for LLM PDF validation)."],
+            False,
+            None,
+        )
 
     python_exe = _get_preferred_python()
     cmd = [python_exe, str(validation_script), "--pdf", str(pdf_path), "--llm-pages", str(llm_pages)]
@@ -389,6 +607,7 @@ def validate_existing_pdf(
         print(output, flush=True)
 
     errors = _extract_validation_errors(output)
+    ai_fix_log_path = _extract_ai_fix_log_path(output)
     llm_errors = [e for e in errors if "LLM_" in e]
     non_llm_errors = [e for e in errors if "LLM_" not in e]
 
@@ -417,11 +636,12 @@ def validate_existing_pdf(
             "passed": passed,
             "errors": all_errors,
             "llm_warnings": llm_errors,
+            "ai_fix_log_path": ai_fix_log_path,
             "returncode": result.returncode,
         }
         _save_validation_cache(cache)
 
-    return passed, all_errors, False
+    return passed, all_errors, False, ai_fix_log_path
 
 
 def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
@@ -589,13 +809,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--llm-pages",
         type=int,
-        default=5,
-        help="Number of pages to sample in LLM PDF validation (default: 5)",
+        default=0,
+        help="Number of pages to sample in LLM PDF validation (0 = validate all pages; default: 0)",
     )
     parser.add_argument(
         "--force-revalidate",
         action="store_true",
         help="Ignore cached PDF validation results and run validation again",
+    )
+    parser.add_argument(
+        "--force-reprocess",
+        action="store_true",
+        help="Ignore perfected/uploaded state cache and process all selected papers again",
     )
     return parser.parse_args()
 
@@ -611,6 +836,7 @@ def main():
         'papers_count': 0,
         'success_count': 0,
         'failed_count': 0,
+        'skipped_results': {},
         'build_results': {},
         'validation_results': {},
         'upload_results': {},
@@ -650,20 +876,88 @@ def main():
 
     report_data['papers_count'] = len(sorted_keys)
 
-    print("Papers to process (sorted by size, smallest first):")
+    print("Papers selected (sorted by size, smallest first):")
     for key in sorted_keys:
         print(f"  {key}: {papers[key]['qmd_count']} QMD files")
     print()
 
+    perfected_state = _load_perfected_state()
+    perfected_entries = perfected_state.setdefault("entries", {})
+    source_signatures: dict[str, dict] = {}
+    validation_pages_used: dict[str, int] = {}
+    process_keys: list[str] = []
+
     assets_pdf_dir = PROJECT_ROOT / "assets" / "pdfs"
     assets_pdf_dir.mkdir(parents=True, exist_ok=True)
+
+    if args.llm_pages <= 0:
+        print("LLM validation mode: full document (all pages)")
+    else:
+        print(f"LLM validation mode: sampled pages ({args.llm_pages})")
+
+    if args.force_reprocess:
+        print("Perfected state cache: ignored (--force-reprocess)")
+    else:
+        print(f"Perfected state cache: {PERFECTED_STATE_PATH.relative_to(PROJECT_ROOT)}")
+
+    for paper_key in sorted_keys:
+        info = papers[paper_key]
+        source_signature = _compute_source_signature(paper_key, info)
+        source_signatures[paper_key] = source_signature
+
+        pdf_path = PROJECT_ROOT / info["pdf_path"]
+        required_llm_pages = _resolve_llm_pages_for_pdf(pdf_path, args.llm_pages)
+        validation_pages_used[paper_key] = required_llm_pages
+
+        if args.force_reprocess:
+            process_keys.append(paper_key)
+            continue
+
+        state_entry = perfected_entries.get(paper_key)
+        if _is_perfected_entry_valid(
+            entry=state_entry,
+            source_signature=source_signature,
+            pdf_path=pdf_path,
+            required_llm_pages=required_llm_pages,
+        ):
+            doi = state_entry.get("doi", "N/A")
+            print(f"[SKIP] {paper_key}: already perfected/uploaded and unchanged")
+            report_data["skipped_results"][paper_key] = {
+                "reason": "Already perfected/uploaded; source+PDF signatures unchanged",
+                "doi": doi,
+            }
+            report_data["validation_results"][paper_key] = {
+                "success": True,
+                "from_cache": True,
+                "skipped": True,
+                "llm_pages": required_llm_pages,
+                "notes": "Skipped (perfected cache hit)",
+                "errors": [],
+                "ai_fix_log_path": None,
+            }
+            report_data["upload_results"][paper_key] = {
+                "verified": True,
+                "skipped": True,
+                "doi": doi,
+                "id": state_entry.get("deposit_id", "N/A"),
+                "url": state_entry.get("url", "N/A"),
+            }
+            continue
+
+        process_keys.append(paper_key)
+
+    if not process_keys:
+        print("\nAll selected papers are already perfected and uploaded. Nothing to do.")
+        report_data["success_count"] = len(report_data["upload_results"])
+        save_report(report_data, start_time)
+        return 0
 
     # Unified flow: for each paper, get the freshest PDF available
     # 1. Local PDF newer than sources → use it (skip everything)
     # 2. Remote published PDF available → download it (skip rebuild)
     # 3. Neither fresh → rebuild locally
     print("Getting freshest PDFs...")
-    for paper_key in sorted_keys:
+    for paper_key in process_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
         build_pdf_path = PROJECT_ROOT / info["build_pdf_path"]
@@ -747,7 +1041,7 @@ def main():
 
     validation_failed_keys = []
 
-    for paper_key in sorted_keys:
+    for paper_key in process_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
 
@@ -763,8 +1057,10 @@ def main():
             report_data['validation_results'][paper_key] = {
                 'success': False,
                 'from_cache': False,
+                'llm_pages': validation_pages_used.get(paper_key, "N/A"),
                 'notes': 'PDF not found',
                 'errors': validation_errors,
+                'ai_fix_log_path': None,
             }
             report_data['errors'][paper_key] = validation_errors
             validation_failed_keys.append(paper_key)
@@ -772,10 +1068,12 @@ def main():
             continue
 
         print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
-        passed, validation_errors, from_cache = validate_existing_pdf(
+        effective_llm_pages = _resolve_llm_pages_for_pdf(pdf_path, args.llm_pages)
+        validation_pages_used[paper_key] = effective_llm_pages
+        passed, validation_errors, from_cache, ai_fix_log_path = validate_existing_pdf(
             pdf_path=pdf_path,
             verbose=args.verbose,
-            llm_pages=args.llm_pages,
+            llm_pages=effective_llm_pages,
             use_cache=not args.force_revalidate,
         )
 
@@ -791,8 +1089,10 @@ def main():
         report_data['validation_results'][paper_key] = {
             'success': passed,
             'from_cache': from_cache,
+            'llm_pages': effective_llm_pages,
             'notes': note,
             'errors': validation_errors,
+            'ai_fix_log_path': ai_fix_log_path,
         }
 
         if passed:
@@ -816,7 +1116,7 @@ def main():
         return 1
 
     # Upload each paper (same order as build, fail-fast on errors)
-    for paper_key in sorted_keys:
+    for paper_key in process_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
         if not pdf_path.exists():
@@ -846,31 +1146,54 @@ def main():
                 report_data['errors'][paper_key] = []
             report_data['errors'][paper_key].append("Upload verification failed")
             report_data['failed_count'] += 1
+            perfected_entries.pop(paper_key, None)
+            _save_perfected_state(perfected_state)
 
             save_report(report_data, start_time)
             return 1
+
+        perfected_entries[paper_key] = {
+            "updated_at": datetime.now().isoformat(),
+            "source_signature": source_signatures.get(paper_key, {}),
+            "pdf_signature": _compute_pdf_signature(pdf_path),
+            "llm_pages_validated": int(validation_pages_used.get(paper_key, 0) or 0),
+            "validation_passed": True,
+            "upload_verified": True,
+            "doi": result.get("doi"),
+            "deposit_id": result.get("id"),
+            "url": result.get("url"),
+        }
+        _save_perfected_state(perfected_state)
 
     # Summary
     print(f"\n{'=' * 60}")
     print("Summary")
     print("=" * 60)
 
-    success, failed = [], []
-    for key, result in report_data['upload_results'].items():
-        if result and result.get("verified"):
+    success, failed, skipped = [], [], []
+    for key in sorted_keys:
+        result = report_data['upload_results'].get(key)
+        if result and result.get("skipped"):
+            skipped.append(key)
+            print(f"  {key}: SKIPPED - already perfected/uploaded")
+        elif result and result.get("verified"):
             success.append(key)
             print(f"  {key}: OK - DOI: {result.get('doi', 'N/A')}")
-            report_data['success_count'] += 1
         else:
             failed.append(key)
             print(f"  {key}: FAILED")
-            report_data['failed_count'] += 1
+
+    report_data['success_count'] = len(success) + len(skipped)
+    report_data['failed_count'] = len(failed)
 
     if success:
         print(f"\nUpdated {len(success)} config(s). Next steps:")
         print("  1. git diff _quarto-*.yml")
         print("  2. Review drafts on Zenodo")
         print("  3. git add _quarto-*.yml && git commit -m 'update: Zenodo DOIs'")
+
+    if skipped:
+        print(f"\nSkipped {len(skipped)} already-perfected paper(s).")
 
     # Generate final report
     save_report(report_data, start_time)
