@@ -1,4 +1,3 @@
-# Setup script for Decentralized Institutes of Health project
 # This script creates a virtual environment and installs all dependencies
 
 Write-Host "Setting up DIH project environment..." -ForegroundColor Green

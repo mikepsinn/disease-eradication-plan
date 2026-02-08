@@ -1,6 +1,6 @@
 ---
 title: Mission and Core Principles
-description: "The mission, philosophy, and core principles of the Decentralized Institutes of Health (DIH) project."
+description: "The mission, philosophy, and core principles of the Institute for Accelerated Medicine."
 tags: [mission, principles, contributing, philosophy]
 ---
 
@@ -13,10 +13,6 @@ tags: [mission, principles, contributing, philosophy]
 ---
 
 This repository documents "How to End War and Disease," a book about getting every nation to sign the **1% treaty** to redirect 1% of military spending to cure diseases instead of cause them. 
-
-The plan involves creating a **Wishocratically governed** (using randomized pairwise preference allocations where everyone divides budget allocations between random pairs of priorities) global **Decentralized Institutes of Health (DIH)** that subsidizes patient participation in **decentralized pragmatic clinical trials with 80X lower cost per patient** (RECOVERY trial: $500/patient vs $41K traditional). 
-
-All data flows through the **decentralized framework for drug assessment (dFDA)** which provides **Outcome Labels** for every food and drug, plus personalized treatment effectiveness rankings for all diseases.
 
 ## Core Principles
 

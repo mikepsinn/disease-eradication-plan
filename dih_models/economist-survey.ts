@@ -78,7 +78,7 @@ export const economistSurvey: EconomistSurvey = {
     versionDate: "2025-12-12",
     parameterCount: 30,
     estimatedTimeMinutes: 90,
-    conductedBy: "Decentralized Institutes of Health Initiative",
+    conductedBy: "Institute for Accelerated Medicine Initiative",
     contact: "feedback@warondisease.org",
     dataUsage: "Responses will be used to refine economic model parameters. Individual responses are confidential.",
   },

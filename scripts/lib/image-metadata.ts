@@ -218,7 +218,7 @@ export const DEFAULT_IMAGE_METADATA: Partial<ImageGenerationMetadata> = {
   license: 'CC BY-NC 4.0',
   licenseUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
   website: 'https://WarOnDisease.org',
-  credit: 'WarOnDisease.org / Decentralized Institutes of Health',
+  credit: 'WarOnDisease.org',
 }
 
 /**

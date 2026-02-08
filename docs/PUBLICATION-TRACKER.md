@@ -330,7 +330,7 @@ python scripts/publish-zenodo.py --list
 ## Notes
 
 - All publications licensed CC BY-NC 4.0
-- Author: Mike P. Sinn, Decentralized Institutes of Health
+- Author: Mike P. Sinn, Institute for Accelerated Medicine
 - ORCID: [0009-0006-0212-1094](https://orcid.org/0009-0006-0212-1094)
 - Contact: mike@warondisease.org
 - GitHub: https://github.com/mikepsinn/disease-eradication-plan

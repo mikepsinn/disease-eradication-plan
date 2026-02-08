@@ -412,6 +412,7 @@ def get_paper_source_files(
     Includes:
     - _quarto-<key>.yml
     - _quarto-shared-defaults.yml
+    - references.bib (global citation source of truth)
     - dih-render.index-source (authoritative editable source for paper configs)
     - all .qmd files from project.render/book sections
     """
@@ -424,6 +425,7 @@ def get_paper_source_files(
     files: List[Path] = [
         Path(config_path),
         project_root / "_quarto-shared-defaults.yml",
+        project_root / "references.bib",
     ]
 
     # Most paper configs render index.qmd but author edits occur in dih-render.index-source.

@@ -1,6 +1,6 @@
 # GitHub Copilot Instructions - Disease Eradication Plan
 
-This is a Quarto-based book project: "How to End War and Disease" - a guide to getting nations to sign a 1% treaty, redirecting military spending to the Decentralized Institutes of Health.
+This is a Quarto-based book project: "How to End War and Disease"
 
 ## Tech Stack
 

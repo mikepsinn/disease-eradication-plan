@@ -691,7 +691,7 @@ def generate_survey(
             "version": "1.0",
             "parameter_count": len(selected_params),
             "estimated_time_minutes": len(selected_params) * 3,  # ~3 min per parameter
-            "conducted_by": "Decentralized Institutes of Health Initiative",
+            "conducted_by": "Institute for Accelerated Medicine",
             "contact": "feedback@warondisease.org",
             "data_usage": "Responses will be used to refine economic model parameters. Individual responses are confidential.",
             "version_date": "2025-12-12"
