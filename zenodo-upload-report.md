@@ -1,31 +1,32 @@
 # Zenodo Upload Report
 
-**Date:** 2026-02-08 01:32:39
-**Duration:** 213.7 seconds
+**Date:** 2026-02-08 15:00:47
+**Duration:** 0.2 seconds
 **Papers Processed:** 1
 
 ## Summary
 
 - **Successful:** 1
 - **Failed:** 0
+- **Skipped (already perfected/uploaded):** 1
 
-## Build Results
+## Already Perfected (Skipped)
 
-| Paper | Status | Duration | QMD Files | Pages | PDF Size |
-|-------|--------|----------|-----------|-------|----------|
-| wishocracy | OK | 106.6s | 3 | 96 | 13.59 MB |
+| Paper | Reason | DOI |
+|-------|--------|-----|
+| opg | Already perfected/uploaded; source+PDF signatures unchanged | 10.5281/zenodo.18521983 |
 
 ## Validation Results
 
-| Paper | Status | Source | Notes |
-|-------|--------|--------|-------|
-| wishocracy | OK | fresh | fresh run |
+| Paper | Status | Source | LLM Pages | Notes | Error Count | AI Fix Log |
+|-------|--------|--------|-----------|-------|-------------|------------|
+| opg | SKIPPED | perfected-cache | 1 | Skipped (perfected cache hit) | 0 | - |
 
 ## Upload Results
 
 | Paper | Status | DOI | Deposit ID | URL |
 |-------|--------|-----|------------|-----|
-| wishocracy | OK | 10.5281/zenodo.18523096 | 18523096 | https://zenodo.org/record/18523095 |
+| opg | SKIPPED | 10.5281/zenodo.18521983 | 18521983 | https://zenodo.org/record/18521982 |
 
 ## Next Steps
 
