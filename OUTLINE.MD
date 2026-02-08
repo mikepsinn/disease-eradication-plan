@@ -3626,12 +3626,12 @@
 ## _quarto-opg.yml
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Type:** website
-**Files:** 1 | **Words:** 13,749
+**Files:** 1 | **Words:** 13,755
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,749 words | 2,011 lines
+**Stats:** 13,755 words | 2,011 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -4242,6 +4242,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 345,635
+- Total words: 345,641
 - Orphaned files: 26
 - Paper configs: 12
