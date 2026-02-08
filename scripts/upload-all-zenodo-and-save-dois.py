@@ -10,6 +10,7 @@ Usage:
     python scripts/upload-all-zenodo-and-save-dois.py economics iab  # specific papers only
     python scripts/upload-all-zenodo-and-save-dois.py --verbose      # show full build output
     python scripts/upload-all-zenodo-and-save-dois.py               # smart: skips rebuild if PDF is fresh
+    python scripts/upload-all-zenodo-and-save-dois.py --force-revalidate
 
 Environment:
     ZENODO_TOKEN: API token from https://zenodo.org/account/settings/applications/
@@ -18,6 +19,9 @@ Environment:
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+import os
 import sys
 import subprocess
 import io
@@ -46,6 +50,81 @@ from lib.quarto_config_utils import (
 )
 
 PROJECT_ROOT = Path(__file__).parent.parent
+PDF_VALIDATION_CACHE_PATH = PROJECT_ROOT / ".cache" / "pdf-validation-upload-cache.json"
+
+
+def _cache_key_for_pdf(pdf_path: Path) -> str:
+    """Build a stable cache key for a PDF path."""
+    return str(pdf_path.resolve()).replace("\\", "/").lower()
+
+
+def _compute_sha256(file_path: Path, chunk_size: int = 1024 * 1024) -> str:
+    """Compute SHA256 hash for a file."""
+    digest = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        while True:
+            chunk = f.read(chunk_size)
+            if not chunk:
+                break
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _compute_pdf_signature(pdf_path: Path) -> dict:
+    """Compute signature fields used for validation cache matching."""
+    stats = pdf_path.stat()
+    return {
+        "size_bytes": stats.st_size,
+        "mtime_ns": stats.st_mtime_ns,
+        "sha256": _compute_sha256(pdf_path),
+    }
+
+
+def _default_validation_cache() -> dict:
+    return {"version": 1, "entries": {}}
+
+
+def _load_validation_cache(cache_path: Path = PDF_VALIDATION_CACHE_PATH) -> dict:
+    """Load PDF validation cache from disk."""
+    if not cache_path.exists():
+        return _default_validation_cache()
+    try:
+        with open(cache_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, dict):
+                data.setdefault("version", 1)
+                data.setdefault("entries", {})
+                return data
+    except (json.JSONDecodeError, OSError):
+        pass
+    return _default_validation_cache()
+
+
+def _save_validation_cache(cache: dict, cache_path: Path = PDF_VALIDATION_CACHE_PATH) -> None:
+    """Save PDF validation cache to disk."""
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(cache_path, "w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=2)
+
+
+def _extract_validation_errors(output: str) -> list[str]:
+    """Extract key validation errors from validator output."""
+    errors = []
+    seen = set()
+    for line in output.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if (
+            "CRITICAL" in stripped
+            or "BROKEN" in stripped
+            or "[ERROR]" in stripped
+            or "validation failed" in stripped.lower()
+        ):
+            if stripped not in seen:
+                seen.add(stripped)
+                errors.append(stripped)
+    return errors
 
 
 def generate_report(report_data: dict) -> str:
@@ -78,6 +157,20 @@ def generate_report(report_data: dict) -> str:
             pages = result.get('pages') or 'N/A'
             pdf_size = result.get('pdf_size', 'N/A')
             lines.append(f"| {paper_key} | {status} | {duration} | {qmd_count} | {pages} | {pdf_size} |")
+        lines.append("")
+
+    if report_data.get('validation_results'):
+        lines.extend([
+            "## Validation Results",
+            "",
+            "| Paper | Status | Source | Notes |",
+            "|-------|--------|--------|-------|",
+        ])
+        for paper_key, result in report_data['validation_results'].items():
+            status = "OK" if result.get('success') else "FAILED"
+            source = "cache" if result.get('from_cache') else "fresh"
+            notes = str(result.get('notes', '')).replace("|", "\\|")
+            lines.append(f"| {paper_key} | {status} | {source} | {notes} |")
         lines.append("")
 
     if report_data['upload_results']:
@@ -160,16 +253,50 @@ def get_pdf_page_count(pdf_path: Path) -> int | None:
         return None
 
 
-def validate_existing_pdf(pdf_path: Path, verbose: bool = False) -> tuple[bool, list[str]]:
-    """Run pdf-validation.py on an existing PDF as a gate before upload.
+def validate_existing_pdf(
+    pdf_path: Path,
+    verbose: bool = False,
+    llm_pages: int = 5,
+    use_cache: bool = True,
+) -> tuple[bool, list[str], bool]:
+    """Run pdf-validation.py with required LLM checks and local result caching.
 
-    Returns (passed, errors) where errors is a list of error strings.
-    Always captures output for the report, and prints it in verbose mode.
+    Returns (passed, errors, from_cache).
     """
     validation_script = PROJECT_ROOT / "scripts" / "pdf-validation.py"
+
+    signature = _compute_pdf_signature(pdf_path)
+    cache_key = _cache_key_for_pdf(pdf_path)
+    cache = _load_validation_cache() if use_cache else _default_validation_cache()
+    cache_entries = cache.setdefault("entries", {})
+
+    if use_cache:
+        cached = cache_entries.get(cache_key)
+        if (
+            isinstance(cached, dict)
+            and cached.get("signature") == signature
+            and int(cached.get("llm_pages", -1)) == llm_pages
+            and bool(cached.get("llm_completed", False))
+        ):
+            cached_passed = bool(cached.get("passed", False))
+            cached_errors = cached.get("errors", [])
+            if not isinstance(cached_errors, list):
+                cached_errors = []
+            if verbose:
+                cache_status = "PASSED" if cached_passed else "FAILED"
+                print(f"  Using cached validation result ({cache_status}) for {pdf_path.name}", flush=True)
+            return cached_passed, cached_errors, True
+
+    if not os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY"):
+        return False, ["GOOGLE_GENERATIVE_AI_API_KEY is not set (required for LLM PDF validation)."], False
+
     cmd = [
-        sys.executable, str(validation_script),
-        "--pdf", str(pdf_path),
+        sys.executable,
+        str(validation_script),
+        "--pdf",
+        str(pdf_path),
+        "--llm-pages",
+        str(llm_pages),
     ]
     if verbose:
         print(f"  Running: {' '.join(cmd)}", flush=True)
@@ -184,19 +311,38 @@ def validate_existing_pdf(pdf_path: Path, verbose: bool = False) -> tuple[bool, 
         errors="replace",
     )
 
-    if verbose and result.stdout:
-        print(result.stdout, flush=True)
+    output = result.stdout or ""
+    if verbose and output:
+        print(output, flush=True)
 
-    errors = []
-    if result.stdout:
-        for line in result.stdout.splitlines():
-            stripped = line.strip()
-            if "CRITICAL" in stripped or "BROKEN" in stripped:
-                errors.append(stripped)
-    if result.returncode != 0 and not errors:
+    errors = _extract_validation_errors(output)
+
+    llm_skipped = "LLM validation skipped" in output
+    llm_failed = "LLM validation failed for page" in output
+    llm_completed = not (llm_skipped or llm_failed)
+
+    if llm_skipped:
+        errors.append("LLM validation was skipped; uploads require completed LLM validation.")
+    if llm_failed:
+        errors.append("LLM validation failed for one or more pages; rerun after fixing model/API issues.")
+
+    passed = result.returncode == 0 and llm_completed
+    if not passed and not errors:
         errors.append(f"Validation failed with exit code {result.returncode}")
 
-    return result.returncode == 0, errors
+    if use_cache:
+        cache_entries[cache_key] = {
+            "signature": signature,
+            "validated_at": datetime.now().isoformat(),
+            "llm_pages": llm_pages,
+            "llm_completed": llm_completed,
+            "passed": passed,
+            "errors": errors,
+            "returncode": result.returncode,
+        }
+        _save_validation_cache(cache)
+
+    return passed, errors, False
 
 
 def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
@@ -349,7 +495,8 @@ def parse_args() -> argparse.Namespace:
   python scripts/upload-all-zenodo-and-save-dois.py
   python scripts/upload-all-zenodo-and-save-dois.py economics iab
   python scripts/upload-all-zenodo-and-save-dois.py --verbose
-  python scripts/upload-all-zenodo-and-save-dois.py economics""",
+  python scripts/upload-all-zenodo-and-save-dois.py economics
+  python scripts/upload-all-zenodo-and-save-dois.py --force-revalidate""",
     )
     parser.add_argument(
         "papers", nargs="*",
@@ -358,6 +505,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--verbose", "-v", action="store_true",
         help="Show full build/validation output",
+    )
+    parser.add_argument(
+        "--llm-pages",
+        type=int,
+        default=5,
+        help="Number of pages to sample in LLM PDF validation (default: 5)",
+    )
+    parser.add_argument(
+        "--force-revalidate",
+        action="store_true",
+        help="Ignore cached PDF validation results and run validation again",
     )
     return parser.parse_args()
 
@@ -374,6 +532,7 @@ def main():
         'success_count': 0,
         'failed_count': 0,
         'build_results': {},
+        'validation_results': {},
         'upload_results': {},
         'errors': {},
         'total_duration': 0,
@@ -498,6 +657,66 @@ def main():
                 report_data['failed_count'] += 1
                 save_report(report_data, start_time)
                 return 1
+
+    # Validate all PDFs before starting uploads (prevents partial uploads).
+    print("\nRunning required PDF validation (LLM enabled, cached by file signature)...")
+    if args.force_revalidate:
+        print("  Validation cache: disabled (--force-revalidate)")
+    else:
+        print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+
+    for paper_key in sorted_keys:
+        info = papers[paper_key]
+        pdf_path = PROJECT_ROOT / info["pdf_path"]
+
+        if not pdf_path.exists():
+            fallback_pdf = PROJECT_ROOT / info["build_pdf_path"]
+            if fallback_pdf.exists():
+                print(f"[WARN] Using fallback build PDF for validation: {fallback_pdf}")
+                pdf_path = fallback_pdf
+
+        if not pdf_path.exists():
+            print(f"\nFATAL: PDF not found for validation: {pdf_path}")
+            report_data['validation_results'][paper_key] = {
+                'success': False,
+                'from_cache': False,
+                'notes': 'PDF not found',
+            }
+            report_data['errors'][paper_key] = ["PDF not found for validation"]
+            report_data['failed_count'] += 1
+            save_report(report_data, start_time)
+            return 1
+
+        print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
+        passed, validation_errors, from_cache = validate_existing_pdf(
+            pdf_path=pdf_path,
+            verbose=args.verbose,
+            llm_pages=args.llm_pages,
+            use_cache=not args.force_revalidate,
+        )
+
+        source_note = "cache hit" if from_cache else "fresh run"
+        note = source_note if passed else (validation_errors[0] if validation_errors else "Validation failed")
+        report_data['validation_results'][paper_key] = {
+            'success': passed,
+            'from_cache': from_cache,
+            'notes': note,
+        }
+
+        if passed:
+            print(f"[OK] Validation passed for {paper_key} ({source_note})")
+            continue
+
+        print(f"\nFATAL: Validation failed for {paper_key}")
+        for error in validation_errors[:10]:
+            print(f"  - {error}")
+        if len(validation_errors) > 10:
+            print(f"  - ...and {len(validation_errors) - 10} more")
+
+        report_data['errors'][paper_key] = validation_errors or ["PDF validation failed"]
+        report_data['failed_count'] += 1
+        save_report(report_data, start_time)
+        return 1
 
     # Upload each paper (same order as build, fail-fast on errors)
     for paper_key in sorted_keys:
