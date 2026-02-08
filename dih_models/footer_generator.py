@@ -158,7 +158,8 @@ def generate_footer_html(project_root: Path) -> Path:
 <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
   <p style="margin: 0.5rem 0;">
     &copy; 2025 <a href="https://acceleratedmedicine.org" style="color: #8b7355;">The Institute for Accelerated Medicine</a> |
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0</a> 
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0</a> |
+    <a href="https://github.com/mikepsinn/disease-eradication-plan" style="color: #8b7355;">📂 Source Code &amp; Data</a>
   </p>
   <p style="margin: 0.5rem 0; font-size: 0.85rem;">
     <a href="https://WarOnDisease.org" style="color: #8b7355;">Join the War on Disease</a>
