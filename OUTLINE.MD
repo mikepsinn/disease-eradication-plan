@@ -1256,12 +1256,12 @@
 ## _quarto-federal-efficiency-audit.yml
 **Title:** Federal Resource Allocation Efficiency Audit
 **Type:** website
-**Files:** 1 | **Words:** 6,736
+**Files:** 1 | **Words:** 6,118
 
 #### knowledge/appendix/federal-efficiency-audit.qmd
 **Title:** Federal Resource Allocation Efficiency Audit
 **Description:** Systems audit estimating an annual U.S. efficiency gap of {{< var us_gov_waste_total >}}, with {{< var us_gov_waste_recoverable >}} recoverable at OECD-median performance across direct spending waste,...
-**Stats:** 6,736 words | 778 lines
+**Stats:** 6,118 words | 866 lines
 
   - Executive Summary
     - Dysfunction Category Breakdown
@@ -4222,16 +4222,16 @@
 | Config | Title | Citation Key | DOI |
 |--------|-------|--------------|-----|
 | _quarto-1-pct-treaty-impact.yml | The 1% Treaty: Harnessing Greed to Eradicate Disea... | `@1-pct-treaty-impact-paper-2025` | 10.5281/zenodo.18161560 |
-| _quarto-cost-of-change.yml | The Price of Political Change: A Cost-Benefit Fram... | `@cost-of-change-paper-2025` | 10.5281/zenodo.18356215 |
-| _quarto-dfda-impact.yml | How to Prevent a Year of Death and Suffering for 8... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18243914 |
-| _quarto-dfda-spec.yml | dFDA: A Decentralized Framework for Drug Assessmen... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18203375 |
-| _quarto-federal-efficiency-audit.yml | Federal Resource Allocation Efficiency Audit | `@federal-efficiency-audit-paper-2025` | 10.5281/zenodo.18447476 |
-| _quarto-iab.yml | Incentive Alignment Bonds: Making Public Goods Fin... | `@iab-paper-2025` | 10.5281/zenodo.18203221 |
+| _quarto-cost-of-change.yml | The Price of Political Change: A Cost-Benefit Fram... | `@cost-of-change-paper-2025` | 10.5281/zenodo.18522031 |
+| _quarto-dfda-impact.yml | How to Prevent a Year of Death and Suffering for 8... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18522033 |
+| _quarto-dfda-spec.yml | dFDA: A Decentralized Framework for Drug Assessmen... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18522035 |
+| _quarto-federal-efficiency-audit.yml | Federal Resource Allocation Efficiency Audit | `@federal-efficiency-audit-paper-2025` | 10.5281/zenodo.18522037 |
+| _quarto-iab.yml | Incentive Alignment Bonds: Making Public Goods Fin... | `@iab-paper-2025` | 10.5281/zenodo.18522041 |
 | _quarto-invisible-graveyard.yml | The Invisible Graveyard: Quantifying the Mortality... | `@invisible-graveyard-paper-2025` | 10.5281/zenodo.18356231 |
-| _quarto-obg.yml | Optimal Budget Generator: Evidence-Based Budget Al... | `@obg-paper-2025` | 10.5281/zenodo.18356209 |
-| _quarto-opg.yml | Optimal Policy Generator: Evidence-Based Policy Re... | `@opg-paper-2025` | 10.5281/zenodo.18356211 |
+| _quarto-obg.yml | Optimal Budget Generator: Evidence-Based Budget Al... | `@obg-paper-2025` | 10.5281/zenodo.18522045 |
+| _quarto-opg.yml | Optimal Policy Generator: Evidence-Based Policy Re... | `@opg-paper-2025` | 10.5281/zenodo.18521983 |
 | _quarto-optimocracy.yml | Optimocracy: Evidence-Based Governance Through Out... | `@optimocracy-paper-2025` | 10.5281/zenodo.18356213 |
-| _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | 10.5281/zenodo.18447493 |
+| _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | 10.5281/zenodo.18522028 |
 | _quarto-wishocracy.yml | Wishocracy: Solving the Democratic Principal-Agent... | `@wishocracy-paper-2025` | 10.5281/zenodo.18205881 |
 
 **Usage:** `[@dfda-impact-paper-2025]` or `@dfda-impact-paper-2025`
@@ -4242,6 +4242,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 346,253
+- Total words: 345,636
 - Orphaned files: 26
 - Paper configs: 12

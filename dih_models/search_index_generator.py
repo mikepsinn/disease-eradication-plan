@@ -11,9 +11,10 @@ import sys
 import yaml
 import json
 import re
+import subprocess
 from pathlib import Path
 from typing import Dict, List, Optional, Any
-from datetime import datetime
+from datetime import datetime, timezone
 
 from dih_models.variable_replacement import load_variables
 
@@ -126,6 +127,73 @@ class SearchIndexGenerator:
         self.quarto_configs = self._discover_quarto_configs()
         # Cache for generated index entries (avoids re-parsing QMD files)
         self._index_cache: Dict[str, List[SearchIndexEntry]] = {}
+        # Cache git-derived lastmod values (same files can appear in multiple configs)
+        self._git_lastmod_cache: Dict[str, Optional[str]] = {}
+        self._git_available: Optional[bool] = None
+
+    def _ensure_git_available(self) -> bool:
+        """Check whether git metadata can be queried for this project."""
+        if self._git_available is not None:
+            return self._git_available
+
+        try:
+            result = subprocess.run(
+                ["git", "-C", str(self.project_root), "rev-parse", "--is-inside-work-tree"],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            self._git_available = result.returncode == 0
+        except Exception:
+            self._git_available = False
+
+        return self._git_available
+
+    def _get_git_lastmod(self, source_path: Path) -> Optional[str]:
+        """Return YYYY-MM-DD from last git commit touching the file."""
+        if not self._ensure_git_available():
+            return None
+
+        try:
+            rel_path = source_path.relative_to(self.project_root)
+        except ValueError:
+            rel_path = source_path
+
+        rel_key = str(rel_path).replace('\\', '/')
+        if rel_key in self._git_lastmod_cache:
+            return self._git_lastmod_cache[rel_key]
+
+        try:
+            result = subprocess.run(
+                ["git", "-C", str(self.project_root), "log", "-1", "--format=%ct", "--", rel_key],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if result.returncode == 0:
+                ts_text = result.stdout.strip()
+                if ts_text:
+                    ts = int(ts_text)
+                    git_lastmod = datetime.fromtimestamp(ts, tz=timezone.utc).strftime('%Y-%m-%d')
+                    self._git_lastmod_cache[rel_key] = git_lastmod
+                    return git_lastmod
+        except Exception:
+            pass
+
+        self._git_lastmod_cache[rel_key] = None
+        return None
+
+    def _get_lastmod_date(self, source_path: Path) -> Optional[str]:
+        """Prefer git commit date; fall back to filesystem modified date."""
+        git_lastmod = self._get_git_lastmod(source_path)
+        if git_lastmod:
+            return git_lastmod
+
+        if source_path.exists():
+            mtime = source_path.stat().st_mtime
+            return datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+
+        return None
 
     def _discover_quarto_configs(self) -> Dict[str, Dict[str, Any]]:
         """Dynamically discover and load all Quarto config files.
@@ -368,11 +436,9 @@ class SearchIndexGenerator:
             # Get published status
             published = frontmatter.get('published', True)
 
-            # Get last modified date
-            lastmod = None
-            if qmd_path.exists():
-                mtime = qmd_path.stat().st_mtime
-                lastmod = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+            # Get last modified date from the actual content source file.
+            # Prefer git commit date for stable lastmod values across rebuilds/checkouts.
+            lastmod = self._get_lastmod_date(actual_source_path)
 
             # Generate URL
             url = self.qmd_to_url(qmd_path, config_name)
