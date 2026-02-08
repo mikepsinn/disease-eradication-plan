@@ -16,9 +16,12 @@ Usage:
     )
 """
 
+import os
 import sys
 import subprocess
 from pathlib import Path
+from email.utils import parsedate_to_datetime
+from datetime import timezone
 from typing import Any, Dict, List, Optional, Set
 from urllib.parse import urljoin
 
@@ -409,6 +412,7 @@ def get_paper_source_files(
     Includes:
     - _quarto-<key>.yml
     - _quarto-shared-defaults.yml
+    - dih-render.index-source (authoritative editable source for paper configs)
     - all .qmd files from project.render/book sections
     """
     if project_root is None:
@@ -421,6 +425,14 @@ def get_paper_source_files(
         Path(config_path),
         project_root / "_quarto-shared-defaults.yml",
     ]
+
+    # Most paper configs render index.qmd but author edits occur in dih-render.index-source.
+    # Include both so staleness checks catch direct edits to source files.
+    dih_render = config.get("dih-render", {})
+    if isinstance(dih_render, dict):
+        index_source = dih_render.get("index-source")
+        if isinstance(index_source, str) and index_source.strip():
+            files.append(project_root / index_source)
 
     for qmd_file in get_qmd_files_from_config(config):
         files.append(project_root / qmd_file)
@@ -569,6 +581,26 @@ def check_and_download_remote_pdf(
         if head_response.status_code != 200:
             return None
 
+        # Parse remote modified time when available so we can make a real freshness decision.
+        remote_mtime: Optional[float] = None
+        last_modified = head_response.headers.get("Last-Modified")
+        if last_modified:
+            try:
+                dt = parsedate_to_datetime(last_modified)
+                if dt.tzinfo is None:
+                    dt = dt.replace(tzinfo=timezone.utc)
+                remote_mtime = dt.timestamp()
+            except Exception:
+                remote_mtime = None
+
+        if destination.exists():
+            local_mtime = destination.stat().st_mtime
+            if remote_mtime is not None and local_mtime >= remote_mtime:
+                return destination
+            if remote_mtime is None:
+                # If remote timestamp is unknown, keep local file to avoid downgrading.
+                return destination
+
         get_response = requests.get(remote_url, stream=True, timeout=timeout)
         if get_response.status_code != 200:
             return None
@@ -578,6 +610,10 @@ def check_and_download_remote_pdf(
             for chunk in get_response.iter_content(chunk_size=8192):
                 if chunk:
                     f.write(chunk)
+
+        # Preserve remote modified time when available.
+        if remote_mtime is not None:
+            os.utime(destination, (remote_mtime, remote_mtime))
     except Exception:
         return None
 

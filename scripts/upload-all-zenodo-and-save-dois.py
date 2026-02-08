@@ -134,11 +134,15 @@ def discover_papers() -> dict:
     # Add qmd_count for sorting by size
     papers = {}
     for key, info in raw_papers.items():
+        pdf_filename = info.get("pdf_filename") or Path(info["pdf_path"]).name
         papers[key] = {
             "config_path": info["config_path"],
             "config": info["config"],
-            "pdf_path": info["pdf_path"],
-            "pdf_filename": info.get("pdf_filename"),
+            # Canonical freshness/upload target for this workflow.
+            "pdf_path": f"assets/pdfs/{pdf_filename}",
+            # Keep build output path as fallback only.
+            "build_pdf_path": info["pdf_path"],
+            "pdf_filename": pdf_filename,
             "qmd_count": count_qmd_files(info["config"]),
         }
     return papers
@@ -423,30 +427,50 @@ def main():
     for paper_key in sorted_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
+        build_pdf_path = PROJECT_ROOT / info["build_pdf_path"]
+        pdf_path.parent.mkdir(parents=True, exist_ok=True)
         newest_source_mtime = get_newest_paper_source_mtime(
             paper_key=paper_key,
             paper_config=info,
             project_root=PROJECT_ROOT,
         )
 
-        # Step 1: Always check remote — download if newer than local
+        # Step 1: Sync freshest local PDF into assets/pdfs.
+        if build_pdf_path.exists() and (
+            not pdf_path.exists() or build_pdf_path.stat().st_mtime > pdf_path.stat().st_mtime
+        ):
+            shutil.copy2(build_pdf_path, pdf_path)
+            print(f"  -> Synced newer local build PDF to: {info['pdf_path']}")
+
+        # Step 2: Check remote and download only if it's newer than local assets PDF.
+        # Force remote download destination to assets/pdfs for freshness + upload.
+        download_target = dict(info)
+        download_target["pdf_path"] = info["pdf_path"]
         downloaded_pdf = check_and_download_remote_pdf(
             paper_key=paper_key,
-            paper_config=info,
+            paper_config=download_target,
             project_root=PROJECT_ROOT,
             timeout=30,
         )
         if downloaded_pdf:
             pdf_path = downloaded_pdf
 
-        # Step 2: Is the PDF (local or just-downloaded) newer than sources?
+        # Step 3: Is the canonical assets PDF newer than sources?
         if pdf_path.exists() and pdf_path.stat().st_mtime >= newest_source_mtime:
             print(f"\n[OK] PDF is fresh for {paper_key}", flush=True)
             build_result = {"success": True, "duration_seconds": 0.0, "errors": []}
         else:
-            # Step 3: PDF is stale or missing — rebuild
+            # Step 4: PDF is stale or missing — rebuild
             print(f"\n[BUILD] Rebuilding {paper_key} (PDF older than sources)", flush=True)
             build_result = rebuild_paper(paper_key, verbose=args.verbose)
+
+            # Keep assets/pdfs as source of truth, sync from build output when newer/missing.
+            if build_pdf_path.exists() and (
+                not pdf_path.exists() or build_pdf_path.stat().st_mtime > pdf_path.stat().st_mtime
+            ):
+                pdf_path.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(build_pdf_path, pdf_path)
+                print(f"  -> Copied rebuilt PDF to: {info['pdf_path']}")
 
             # Store build result with additional metadata
             build_result['qmd_count'] = info['qmd_count']
@@ -475,15 +499,15 @@ def main():
                 save_report(report_data, start_time)
                 return 1
 
-            # Copy PDF to assets/pdfs/
-            dest_path = assets_pdf_dir / pdf_path.name
-            shutil.copy2(pdf_path, dest_path)
-            print(f"  -> Copied to: assets/pdfs/{pdf_path.name}")
-
     # Upload each paper (same order as build, fail-fast on errors)
     for paper_key in sorted_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
+        if not pdf_path.exists():
+            fallback_pdf = PROJECT_ROOT / info["build_pdf_path"]
+            if fallback_pdf.exists():
+                print(f"[WARN] Using fallback build PDF for upload: {fallback_pdf}")
+                pdf_path = fallback_pdf
         result = upload_paper(
             client=client,
             paper_key=paper_key,

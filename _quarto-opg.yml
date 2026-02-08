@@ -118,7 +118,7 @@ metadata:
   og-site-name: "Optimal Policy Generator"
 
   # Identifiers
-  doi: "10.5281/zenodo.18356211"
+  doi: "10.5281/zenodo.18521983"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -132,8 +132,8 @@ metadata:
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: "https://zenodo.org/record/18356211"
-        doi: "10.5281/zenodo.18356211"
+        url: "https://zenodo.org/record/18521982"
+        doi: "10.5281/zenodo.18521983"
       - platform: ssrn
         status: pending
         url: ""

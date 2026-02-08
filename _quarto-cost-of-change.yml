@@ -118,7 +118,7 @@ metadata:
   og-site-name: "The Cost of Change"
 
   # Identifiers (update when paper is published)
-  doi: "10.5281/zenodo.18356215"
+  doi: "10.5281/zenodo.18522031"
 
   # Open Graph metadata
   open-graph: true
@@ -132,8 +132,8 @@ metadata:
     preprints:
       - platform: zenodo
         status: auto-uploaded
-        url: "https://zenodo.org/record/18356215"
-        doi: "10.5281/zenodo.18356215"
+        url: "https://zenodo.org/record/18522030"
+        doi: "10.5281/zenodo.18522031"
       - platform: ssrn
         status: pending
         url: ""
