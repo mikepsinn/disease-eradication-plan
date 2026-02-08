@@ -925,12 +925,12 @@ Recommendations flag constraints that may impede adoption:
 
 | Blocking Factor | Severity | Description | Example |
 |-----------------|----------|-------------|---------|
-| `constitutional` | **Hard** | Requires constitutional amendment | Takings Clause limits on land use regulations |
-| `federal_preemption` | **Hard** | Federal law prevents state/local action | Federal minimum wage floor |
-| `treaty_obligation` | **Hard** | International agreement constrains policy | WTO rules on tariffs |
-| `autonomy_concern` | **Soft** | Restricts individual freedom/choice | Mandatory helmet laws |
-| `political_feasibility` | **Soft** | Strong organized opposition | Industry lobbying |
-| `implementation_cost` | **Soft** | High fixed costs to implement | New regulatory agency needed |
+| Constitutional Constraint | **Hard** | Requires constitutional amendment | Takings Clause limits on land use regulations |
+| Federal Preemption | **Hard** | Federal law prevents state/local action | Federal minimum wage floor |
+| Treaty Obligation | **Hard** | International agreement constrains policy | WTO rules on tariffs |
+| Autonomy Concern | **Soft** | Restricts individual freedom/choice | Mandatory helmet laws |
+| Political Feasibility | **Soft** | Strong organized opposition | Industry lobbying |
+| Implementation Cost | **Soft** | High fixed costs to implement | New regulatory agency needed |
 
 **Design rationale: Why blocking factors are metadata only**
 

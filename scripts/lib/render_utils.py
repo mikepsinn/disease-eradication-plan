@@ -4,6 +4,7 @@
 Shared utilities for Quarto render scripts
 """
 
+import io
 import json
 import os
 import platform
@@ -16,8 +17,8 @@ from datetime import datetime
 from typing import Callable, List, Optional, Tuple
 
 # Set UTF-8 encoding for stdout on Windows
-if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+if sys.platform == "win32" and isinstance(sys.stdout, io.TextIOWrapper):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 # Try to import psutil for LaTeX process detection (optional)
 try:
@@ -719,34 +720,35 @@ class BuildMonitor:
             self.timeout_thread = threading.Thread(target=self.timeout_watchdog, daemon=True)
             self.timeout_thread.start()
 
-            for line in self.process.stdout:
-                # Update last output time (ANY output resets the timeout)
-                self.last_output_time = time.time()
+            if self.process.stdout is not None:
+                for line in self.process.stdout:
+                    # Update last output time (ANY output resets the timeout)
+                    self.last_output_time = time.time()
 
-                # Get timestamp for this line
-                timestamp = self.get_timestamp()
+                    # Get timestamp for this line
+                    timestamp = self.get_timestamp()
 
-                # Write timestamped line to log file (always log everything)
-                timestamped_line = f"[{timestamp}] {line}"
-                self.log_handle.write(timestamped_line)
-                self.log_handle.flush()
+                    # Write timestamped line to log file (always log everything)
+                    timestamped_line = f"[{timestamp}] {line}"
+                    self.log_handle.write(timestamped_line)
+                    self.log_handle.flush()
 
-                # Print to console only if not noisy (kernel messages, empty lines, etc.)
-                if not self.is_noisy_line(line):
-                    print(timestamped_line, end="")
+                    # Print to console only if not noisy (kernel messages, empty lines, etc.)
+                    if not self.is_noisy_line(line):
+                        print(timestamped_line, end="")
 
-                # Parse and extract relevant information for summary
-                parsed_result = self.parse_line(line, custom_parsers)
+                    # Parse and extract relevant information for summary
+                    parsed_result = self.parse_line(line, custom_parsers)
 
-                # Emit GitHub Actions error annotation for visibility
-                if IN_GITHUB_ACTIONS and parsed_result and parsed_result.startswith("ERROR"):
-                    # Extract clean error message
-                    error_msg = line.strip().replace('\n', ' ')
-                    print(f"::error::{error_msg}", flush=True)
+                    # Emit GitHub Actions error annotation for visibility
+                    if IN_GITHUB_ACTIONS and parsed_result and parsed_result.startswith("ERROR"):
+                        # Extract clean error message
+                        error_msg = line.strip().replace('\n', ' ')
+                        print(f"::error::{error_msg}", flush=True)
 
-                # Check if watchdog killed the process
-                if self.timed_out:
-                    return 124  # Timeout exit code
+                    # Check if watchdog killed the process
+                    if self.timed_out:
+                        return 124  # Timeout exit code
 
             # Wait for process to complete
             try:
@@ -1093,7 +1095,7 @@ def validate_pdf_for_python_code(pdf_path: str, search_string: str = "print(f") 
         except ImportError:
             # Fallback: try pdfplumber
             try:
-                import pdfplumber
+                import pdfplumber  # type: ignore[import-not-found]
 
                 text_content = ""
                 with pdfplumber.open(pdf_path) as pdf:

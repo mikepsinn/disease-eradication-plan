@@ -22,6 +22,7 @@ import argparse
 import os
 import re
 import sys
+import time
 from collections import defaultdict
 from pathlib import Path
 from typing import Optional
@@ -740,6 +741,8 @@ class PDFValidator:
             step = page_count / self.llm_sample_pages
             sample_indices = [int(i * step) for i in range(self.llm_sample_pages)]
 
+        max_llm_retries = max(1, int(os.environ.get("PDF_VALIDATION_LLM_RETRIES", "3")))
+
         for page_idx in sample_indices:
             page = self.doc[page_idx]
             text = page.get_text()
@@ -780,11 +783,30 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
     "page_quality": "good|acceptable|poor"
 }}
 
-If no clear issues, return {{"issues": [], "page_quality": "good"}}"""
+            If no clear issues, return {{"issues": [], "page_quality": "good"}}"""
 
+            result = None
+            last_error = None
             try:
-                response = generate_gemini_pro_content(prompt)
-                result = extract_json_from_response(response, f"LLM page {page_idx + 1}")
+                for attempt in range(1, max_llm_retries + 1):
+                    try:
+                        response = generate_gemini_pro_content(prompt)
+                        result = extract_json_from_response(response, f"LLM page {page_idx + 1}")
+                        last_error = None
+                        break
+                    except Exception as e:
+                        last_error = e
+                        if attempt < max_llm_retries:
+                            backoff_seconds = min(8.0, 1.5 * (2 ** (attempt - 1)))
+                            print(
+                                f"[INFO] LLM validation retry for page {page_idx + 1} after error "
+                                f"(attempt {attempt}/{max_llm_retries}): {e}",
+                                file=sys.stderr,
+                            )
+                            time.sleep(backoff_seconds)
+
+                if last_error is not None:
+                    raise last_error
 
                 for issue in result.get("issues", []):
                     severity_map = {

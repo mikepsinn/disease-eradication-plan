@@ -162,16 +162,13 @@ def copy_with_retry(
         except OSError as e:
             last_error = e
             winerror = getattr(e, "winerror", None)
-            # Retry for transient file locks and permission issues.
-            if winerror in (32, 33, 1224) or "being used by another process" in str(e).lower():
-                if attempt < max_retries:
-                    time.sleep(delay)
-                    delay = min(delay * 1.5, 5.0)
-                    continue
-            raise
-        except PermissionError as e:
-            last_error = e
-            if attempt < max_retries:
+            # Retry for transient file locks, permission issues, and PermissionError (subclass of OSError).
+            is_retryable = (
+                winerror in (32, 33, 1224)
+                or "being used by another process" in str(e).lower()
+                or isinstance(e, PermissionError)
+            )
+            if is_retryable and attempt < max_retries:
                 time.sleep(delay)
                 delay = min(delay * 1.5, 5.0)
                 continue
@@ -509,7 +506,7 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
         )
 
         # Stream output, filtering noise
-        for line in process.stdout:
+        for line in (process.stdout or []):
             line = line.rstrip()
             if not line:
                 continue
