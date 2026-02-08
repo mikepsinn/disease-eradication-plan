@@ -50,15 +50,23 @@ Units must read naturally in prose.
 - **People:** `unit="people"`, `unit="members"`, `unit="senators"`
 
 ### 4.3 Calculated Parameters
-Parameters derived from others **must** use formulas in Python, not hardcoded results.
+Parameters derived from others **must** use the `compute` attribute (lambda function) and list their `inputs` explicitly. This enables automated Monte Carlo uncertainty propagation.
 ```python
 PEACE_DIVIDEND_ANNUAL = Parameter(
     GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_REDUCTION_PCT,
-    source_type="calculated", unit="USD", formula="GLOBAL_WAR_COST x 1%"
+    source_type="calculated", 
+    unit="USD",
+    inputs=["GLOBAL_ANNUAL_WAR_TOTAL_COST", "TREATY_REDUCTION_PCT"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_WAR_TOTAL_COST"] * ctx["TREATY_REDUCTION_PCT"]
 )
 ```
 
-## 5. Content Standards
+## 5. LaTeX & Math
+- **No Variables in `$$` blocks:** Quarto variables `{{< var ... >}}` do NOT render inside display math blocks.
+- **Use `_latex` Variables:** For any equation, use the auto-generated LaTeX variable: `{{< var param_name_latex >}}`.
+- **Symbols:** Define `latex_symbol` in the `Parameter` class to ensure consistent symbols across auto-generated derivations.
+
+## 6. Content Standards
 - **Cross-Format Linking:** Always use `.qmd` extensions for internal links (e.g., `[Link](../path/to/file.qmd)`). Quarto handles the conversion to HTML/PDF.
 - **Em-Dashes:** Do not use em-dashes (—). Replace with parenthesis, comma and space (", "), period, or semicolon.
 - **Citations:** Never add citations without verification. `references.bib` is the single source of truth.

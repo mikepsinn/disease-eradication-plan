@@ -63,18 +63,25 @@ Scans the generated HTML output to catch issues that Quarto missed.
   - **Metadata Mismatches:** Ensures `description` and `og:description` tags match.
   - **Bibliography:** Verifies that citations include abstracts/notes (if using annotated CSL).
 
-### 5. CI/CD Workflow Generator
-**Script:** `scripts/lib/workflow_generator.py`
+## Data Model: The Parameter Class
 
-Automates GitHub Actions configuration.
+Located in `dih_models/parameters.py`, the `Parameter` class (inheriting from `float`) is the atomic unit of the project.
 
-- **Function:** Scans all `_quarto-*.yml` files and auto-generates `.github/workflows/publish.yml`.
-- **Benefit:** Adding a new paper/site only requires creating a `_quarto-new-paper.yml` file; the CI pipeline is updated automatically.
+### Attributes
+- `source_type`: `EXTERNAL`, `CALCULATED`, or `DEFINITION`.
+- `distribution`: Probability distribution for Monte Carlo (e.g., `NORMAL`, `LOGNORMAL`, `BETA`, `GAMMA`).
+- `inputs`: List of other parameter names used as inputs (for calculated params).
+- `compute`: A lambda function `lambda ctx: ...` for calculating values and propagating uncertainty.
+- `latex_symbol`: The LaTeX representation for use in auto-generated equations.
 
-## Validation Strategy
+### Monte Carlo Propagation
+The build system doesn't just calculate baseline values. It uses the `inputs` and `compute` metadata to run 10,000 simulations, propagating the uncertainty (defined by `distribution` and `std_error`) from raw inputs to final results. These results are then embedded back into the book as 95% confidence intervals.
 
-The project uses a "defense in depth" validation strategy:
+## LaTeX Variable Generation
 
-1.  **Static Analysis (`pre-render`):** Fast checks on source files.
-2.  **Build Monitor (`render-quarto`):** Real-time monitoring of the Quarto process (timeout detection, log parsing).
-3.  **Output Verification (`post-render`):** Inspection of final artifacts.
+Quarto variables (e.g., `{{< var ... >}}`) **do not work inside LaTeX `$$` blocks**. 
+
+To solve this, `variables_yml_generator.py` automatically exports a corresponding `_latex` variable for every parameter.
+- **Variable:** `{{< var peace_dividend >}}` -> Renders as "$114B" with tooltip.
+- **LaTeX Variable:** `{{< var peace_dividend_latex >}}` -> Renders a full `$$` block with the equation and derivation.
+- **Derivation Tracking:** The generator uses recursive "expanded" LaTeX to show the full derivation chain for any calculated value, ensuring maximum transparency for peer review.
