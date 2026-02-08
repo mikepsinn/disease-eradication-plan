@@ -8,7 +8,7 @@ quality analysis.
 Usage:
     python scripts/pdf-validation.py
     python scripts/pdf-validation.py --pdf assets/pdfs/my-paper.pdf
-    python scripts/pdf-validation.py --skip-llm --skip-url-check
+    python scripts/pdf-validation.py --skip-llm
     python scripts/pdf-validation.py --llm-pages 10
     python scripts/pdf-validation.py --fail-on-warning
 
@@ -409,12 +409,10 @@ class PDFValidator:
         self,
         pdf_path: str,
         skip_llm: bool = False,
-        skip_url_check: bool = False,
         llm_sample_pages: int = 5,
     ):
         self.pdf_path = pdf_path
         self.skip_llm = skip_llm
-        self.skip_url_check = skip_url_check
         self.llm_sample_pages = llm_sample_pages
         self.doc = None
         self.errors: list[PDFValidationError] = []
@@ -620,7 +618,7 @@ class PDFValidator:
                     external_urls.add(uri)
 
         # Validate external URLs (if not skipped)
-        if not self.skip_url_check and external_urls:
+        if external_urls:
             try:
                 from url_checker import URLChecker
 
@@ -905,9 +903,6 @@ def main():
         "--skip-llm", action="store_true", help="Skip LLM-powered validation"
     )
     parser.add_argument(
-        "--skip-url-check", action="store_true", help="Skip external URL validation"
-    )
-    parser.add_argument(
         "--llm-pages",
         type=int,
         default=5,
@@ -937,7 +932,6 @@ def main():
     print(f"[VALIDATION] Validating {len(pdf_files)} PDF file(s)...")
     if args.skip_llm:
         print("   (LLM validation skipped)")
-    if args.skip_url_check:
         print("   (URL validation skipped)")
 
     all_errors = []
@@ -949,7 +943,6 @@ def main():
         validator = PDFValidator(
             str(pdf_file),
             skip_llm=args.skip_llm,
-            skip_url_check=args.skip_url_check,
             llm_sample_pages=args.llm_pages,
         )
         errors = validator.validate()

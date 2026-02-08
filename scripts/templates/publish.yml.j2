@@ -124,7 +124,7 @@ jobs:
         env:
           ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}
 
-        run: python scripts/publish-zenodo.py --draft --paper {{ job.config_name }}
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild {{ job.config_name }}
 {% endif %}
 
 {% endfor %}

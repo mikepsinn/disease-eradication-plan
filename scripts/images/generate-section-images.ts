@@ -66,6 +66,7 @@ interface ImageRecommendation {
   caption: string;          // Natural caption for alt text
   reasoning: string;        // Why this image is/isn't needed
   rejectionRule?: string;   // Which automatic rejection applied, if any
+  evidenceAnchors?: string[]; // Concrete snippets from section that justify visual value
 }
 
 /**
@@ -354,45 +355,49 @@ async function evaluateSection(section: Section, variables: Map<string, string>)
   // Resolve Quarto variables in the section content so LLM sees actual values
   const resolvedContent = replaceQuartoVariables(section.rawContent, variables);
 
-  const prompt = `Analyze if this section would benefit from a generated image that helps readers understand the content.
+  const prompt = `Decide whether this section should get a generated image.
+Default to NO. Images should be generated only when they add clear reader value beyond prose.
 
 SECTION:
 ---
 ${resolvedContent}
 ---
 
-AUTOMATIC REJECTIONS (answer NO if ANY apply):
-1. Section already contains a TABLE - tables are visualizations
-2. Section already has ASCII DIAGRAMS or box-drawing characters
-3. Section is purely definitional (just defines a term without explaining relationships)
-4. Content is a simple list with no relationships between items
+AUTOMATIC NO (must return shouldGenerate=false):
+1. Definitional or thesis-only prose
+2. Generic conceptual framework / mental model / high-level architecture with no concrete data
+3. Methodology/process description that is already understandable as prose
+4. Simple bullet list without non-trivial relationships
+5. Restating arguments without visualizable structure
 
-GOOD CANDIDATES for images (answer YES):
-- Process flows or workflows (even 3-4 steps benefit from visualization)
-- Relationships between entities (stakeholders, systems, concepts)
-- Comparisons between approaches, scenarios, or options
-- Hierarchies or organizational structures
-- Timelines or sequences of events
-- Cause-and-effect chains
-- System architectures or data flows
-- Conceptual frameworks or mental models
-- Geographic or spatial relationships
-- Before/after contrasts
+YES ONLY IF at least one condition is true:
+1. Quantitative comparison: explicit numbers/ranges/percentages where a chart improves speed of understanding
+2. Timeline or sequence: concrete ordered events/stages with clear transitions
+3. Non-trivial process/system: named actors/components plus concrete flows/transformations that are hard to parse in text
+4. Multi-entity relationship map: specific entities and relationships where layout materially helps comprehension
 
-MATH SECTIONS: If section has equations, consider whether a DIAGRAM showing what the equation represents would help (e.g., a cost-benefit diagram even if the formula exists). Answer YES if the visual would clarify the concept.
+TYPE SELECTION RULES:
+- Use "chart" for numeric comparisons/trends/distributions.
+- Use "flowchart" for ordered multi-step process logic.
+- Use "diagram" for concrete entity-relationship/system structure.
+- Use "infographic" only if none of the above fit but value is still high.
 
-KEY PRINCIPLE: Images COMPLEMENT text - they provide a different way to understand the same content. A reader should be able to grasp the concept quickly from the image, then read the text for details.
+STRICTNESS:
+- If uncertain, answer NO.
+- Never recommend an image that would be mostly decorative.
+- For YES, cite concrete evidence snippets from the section (numbers, named entities, explicit steps).
 
 Respond with JSON only:
 {
   "shouldGenerate": true/false,
   "imageType": "diagram" | "chart" | "infographic" | "flowchart" | null,
   "caption": "<1-2 sentence description for alt text, NO 'Figure X:' prefix>",
-  "reasoning": "<brief explanation>",
-  "rejectionRule": "<which automatic rejection rule applied, or 'none' if recommending>"
+  "reasoning": "<brief explanation of why image is/isn't necessary>",
+  "rejectionRule": "<which automatic rejection rule applied, or 'none' if recommending>",
+  "evidenceAnchors": ["<2-3 exact short snippets from section proving visual value>"]
 }
 
-If shouldGenerate is false, set imageType to null.`;
+If shouldGenerate is false, set imageType to null and evidenceAnchors to [].`;
 
   try {
     const response = await generateGeminiFlashContent(prompt);
@@ -418,6 +423,59 @@ If shouldGenerate is false, set imageType to null.`;
       reasoning: 'Evaluation error',
     };
   }
+}
+
+function isLikelyGenericCaption(caption: string): boolean {
+  const normalized = caption.trim().toLowerCase();
+  if (!normalized) return true;
+
+  // Generic conceptual phrasing is a common low-value failure mode.
+  const genericPatterns = [
+    /conceptual (framework|diagram|model)/,
+    /mental model/,
+    /high-?level (overview|architecture)/,
+    /illustrating (the )?(concept|idea|approach)/,
+    /visualization of (the )?(concept|framework)/,
+  ];
+
+  return genericPatterns.some(pattern => pattern.test(normalized));
+}
+
+function hasSufficientEvidenceAnchors(
+  recommendation: ImageRecommendation,
+  resolvedContent: string
+): { ok: boolean; reason?: string } {
+  if (!recommendation.shouldGenerate) {
+    return { ok: true };
+  }
+
+  const anchors = (recommendation.evidenceAnchors || [])
+    .map(a => a.trim())
+    .filter(Boolean);
+
+  if (anchors.length < 2) {
+    return { ok: false, reason: 'insufficient evidence anchors from evaluator' };
+  }
+
+  const contentLower = resolvedContent.toLowerCase();
+  const matchedAnchors = anchors.filter(anchor => {
+    const cleanAnchor = anchor.replace(/^["'\-•\s]+|["'\-•\s]+$/g, '').toLowerCase();
+    return cleanAnchor.length >= 4 && contentLower.includes(cleanAnchor);
+  });
+
+  if (matchedAnchors.length < 2) {
+    return { ok: false, reason: 'evidence anchors do not match section text' };
+  }
+
+  const hasNumericEvidence = matchedAnchors.some(a => /\d/.test(a));
+  const captionIsGeneric = isLikelyGenericCaption(recommendation.caption);
+
+  // Generic conceptual captions without numeric anchors are usually decorative.
+  if (captionIsGeneric && !hasNumericEvidence) {
+    return { ok: false, reason: 'generic conceptual caption without concrete evidence' };
+  }
+
+  return { ok: true };
 }
 
 /**
@@ -658,8 +716,9 @@ async function processFile(
   for (const section of sections) {
     if (limitReached) break;
 
-    // Resolve variables in title for cleaner logging (do this early for all log messages)
+    // Resolve variables ONCE for all checks (so LaTeX variables get detected properly)
     const resolvedTitle = replaceQuartoVariables(section.title, variables);
+    const resolvedContent = replaceQuartoVariables(section.rawContent, variables);
 
     // Skip if section already has visual content (unless force mode)
     if (section.hasVisualContent && !force) {
@@ -675,29 +734,31 @@ async function processFile(
       continue;
     }
 
-    // Skip very short sections (under 200 chars / ~30 words)
-    if (section.content.length < 200) {
-      console.log(`  [SKIP] "${resolvedTitle}" - too short (${section.content.length} chars)`);
+    // Skip very short sections (under 300 chars to match stricter prompt)
+    if (resolvedContent.length < 300) {
+      console.log(`  [SKIP] "${resolvedTitle}" - too short (${resolvedContent.length} chars)`);
       skipped++;
       continue;
     }
 
     // Skip sections with tables (tables ARE visualizations)
-    if (hasTable(section.rawContent)) {
+    // Use resolved content so variable-based tables get detected
+    if (hasTable(resolvedContent)) {
       console.log(`  [SKIP] "${resolvedTitle}" - contains table (tables are visualizations)`);
       skipped++;
       continue;
     }
 
     // Skip sections with significant math equations (formulas are self-explanatory)
-    if (hasMathEquations(section.rawContent)) {
+    // Use resolved content so {{< var param_latex >}} variables get detected
+    if (hasMathEquations(resolvedContent)) {
       console.log(`  [SKIP] "${resolvedTitle}" - contains math equations`);
       skipped++;
       continue;
     }
 
     // Skip sections with ASCII diagrams (already visual)
-    if (hasAsciiDiagram(section.rawContent)) {
+    if (hasAsciiDiagram(resolvedContent)) {
       console.log(`  [SKIP] "${resolvedTitle}" - contains ASCII diagram`);
       skipped++;
       continue;
@@ -710,9 +771,9 @@ async function processFile(
       break;
     }
 
-    console.log(`\n  [${evaluated + 1}] Evaluating: "${resolvedTitle}" (${section.rawContent.length} chars)`);
+    console.log(`\n  [${evaluated + 1}] Evaluating: "${resolvedTitle}" (${resolvedContent.length} chars)`);
 
-    // Ask Gemini if this section needs an image (pass variables for resolution)
+    // Ask Gemini if this section needs an image (pass already-resolved content)
     const recommendation = await evaluateSection(section, variables);
     evaluated++;
 
@@ -721,10 +782,13 @@ async function processFile(
       continue;
     }
 
-    console.log(`  [YES] ${recommendation.imageType}: ${recommendation.reasoning}`);
+    const evidenceCheck = hasSufficientEvidenceAnchors(recommendation, resolvedContent);
+    if (!evidenceCheck.ok) {
+      console.log(`  [NO] Rejected low-evidence recommendation: ${evidenceCheck.reason}`);
+      continue;
+    }
 
-    // Resolve variables for image generation
-    const resolvedContent = replaceQuartoVariables(section.rawContent, variables);
+    console.log(`  [YES] ${recommendation.imageType}: ${recommendation.reasoning}`);
 
     if (dryRun) {
       console.log(`  [DRY RUN] Would generate: ${recommendation.caption}`);

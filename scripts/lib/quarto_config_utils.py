@@ -17,8 +17,10 @@ Usage:
 """
 
 import sys
+import subprocess
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
+from urllib.parse import urljoin
 
 if sys.platform == 'win32':
     import io
@@ -394,6 +396,195 @@ def get_all_book_qmd_files(project_root: Optional[Path] = None) -> Set[str]:
             all_files.add(normalized)
 
     return all_files
+
+
+def get_paper_source_files(
+    paper_key: str,
+    paper_config: Dict[str, Any],
+    project_root: Optional[Path] = None,
+) -> List[Path]:
+    """
+    Get source files that determine whether a paper PDF is stale.
+
+    Includes:
+    - _quarto-<key>.yml
+    - _quarto-shared-defaults.yml
+    - all .qmd files from project.render/book sections
+    """
+    if project_root is None:
+        project_root = _find_project_root()
+
+    config_path = paper_config.get("config_path") or (project_root / f"_quarto-{paper_key}.yml")
+    config = paper_config.get("config", {}) or {}
+
+    files: List[Path] = [
+        Path(config_path),
+        project_root / "_quarto-shared-defaults.yml",
+    ]
+
+    for qmd_file in get_qmd_files_from_config(config):
+        files.append(project_root / qmd_file)
+
+    # De-duplicate while preserving order
+    seen: Set[Path] = set()
+    deduped: List[Path] = []
+    for path in files:
+        resolved = Path(path)
+        if resolved in seen:
+            continue
+        seen.add(resolved)
+        deduped.append(resolved)
+
+    return deduped
+
+
+def get_newest_paper_source_mtime(
+    paper_key: str,
+    paper_config: Dict[str, Any],
+    project_root: Optional[Path] = None,
+) -> float:
+    """Get newest source mtime for a paper. Returns 0.0 when no source files exist."""
+    source_files = get_paper_source_files(paper_key, paper_config, project_root)
+    mtimes = [p.stat().st_mtime for p in source_files if p.exists()]
+    return max(mtimes) if mtimes else 0.0
+
+
+def paper_sources_have_uncommitted_changes(
+    paper_key: str,
+    paper_config: Dict[str, Any],
+    project_root: Optional[Path] = None,
+) -> bool:
+    """
+    Check whether any paper source files have uncommitted changes.
+
+    If git status cannot be checked, returns True (conservative: force rebuild).
+    """
+    if project_root is None:
+        project_root = _find_project_root()
+
+    source_files = get_paper_source_files(paper_key, paper_config, project_root)
+    relative_paths: List[str] = []
+    root_resolved = project_root.resolve()
+    for path in source_files:
+        try:
+            relative_paths.append(str(path.resolve().relative_to(root_resolved)))
+        except Exception:
+            relative_paths.append(str(path))
+
+    if not relative_paths:
+        return True
+
+    try:
+        result = subprocess.run(
+            ["git", "status", "--porcelain", "--", *relative_paths],
+            cwd=str(project_root),
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except Exception:
+        return True
+
+    if result.returncode != 0:
+        return True
+
+    return bool(result.stdout.strip())
+
+
+def _get_site_url_for_paper(config: Dict[str, Any]) -> Optional[str]:
+    """Get site-url from project, website, or book section."""
+    project_site = config.get("project", {}).get("site-url")
+    if project_site:
+        return str(project_site)
+
+    website_site = config.get("website", {}).get("site-url")
+    if website_site:
+        return str(website_site)
+
+    book_site = config.get("book", {}).get("site-url")
+    if book_site:
+        return str(book_site)
+
+    return None
+
+
+def _get_pdf_output_filename_for_paper(paper_key: str, config: Dict[str, Any]) -> str:
+    """Get PDF output filename from format.pdf.output-file with safe fallbacks."""
+    pdf_config = config.get("format", {}).get("pdf", {})
+    if isinstance(pdf_config, dict):
+        output_file = pdf_config.get("output-file")
+        if output_file:
+            return str(output_file)
+
+    dih_render = config.get("dih-render", {})
+    if isinstance(dih_render, dict):
+        output_file = dih_render.get("pdf-output-file")
+        if output_file:
+            return str(output_file)
+
+    return f"{paper_key}-paper.pdf"
+
+
+def check_and_download_remote_pdf(
+    paper_key: str,
+    paper_config: Dict[str, Any],
+    project_root: Optional[Path] = None,
+    timeout: int = 30,
+) -> Optional[Path]:
+    """
+    Download a remote published PDF when sources are clean (no uncommitted changes).
+
+    Returns:
+        Path to downloaded PDF when successful, otherwise None.
+    """
+    if project_root is None:
+        project_root = _find_project_root()
+
+    config = paper_config.get("config", {}) or {}
+
+    if paper_sources_have_uncommitted_changes(paper_key, paper_config, project_root):
+        return None
+
+    site_url = _get_site_url_for_paper(config)
+    if not site_url:
+        return None
+
+    output_filename = _get_pdf_output_filename_for_paper(paper_key, config)
+    remote_url = urljoin(site_url.rstrip("/") + "/", output_filename)
+
+    pdf_rel_path = paper_config.get("pdf_path")
+    if pdf_rel_path:
+        destination = project_root / str(pdf_rel_path)
+    else:
+        destination = project_root / "_build_temp" / paper_key / "_site" / paper_key / output_filename
+
+    try:
+        import requests
+    except ImportError:
+        print("WARN: requests not available; skipping remote PDF download")
+        return None
+
+    try:
+        head_response = requests.head(remote_url, allow_redirects=True, timeout=timeout)
+        if head_response.status_code != 200:
+            return None
+
+        get_response = requests.get(remote_url, stream=True, timeout=timeout)
+        if get_response.status_code != 200:
+            return None
+
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        with open(destination, "wb") as f:
+            for chunk in get_response.iter_content(chunk_size=8192):
+                if chunk:
+                    f.write(chunk)
+    except Exception:
+        return None
+
+    if destination.exists() and destination.stat().st_size > 0:
+        return destination
+
+    return None
 
 
 if __name__ == "__main__":

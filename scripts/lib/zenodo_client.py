@@ -15,6 +15,7 @@ Example:
 from __future__ import annotations
 
 import os
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
@@ -25,6 +26,8 @@ import yaml
 ZENODO_API = "https://zenodo.org/api"
 ZENODO_COMMUNITY = "dih"
 DEFAULT_ORCID = "0009-0006-0212-1094"
+# No default publisher — must be specified in quarto config
+REQUEST_TIMEOUT_SECONDS = 30
 
 
 def get_record_id_from_doi(doi: str) -> Optional[int]:
@@ -55,6 +58,13 @@ class ZenodoClient:
         self.token = token
         self.base_url = ZENODO_API
         self.headers = {"Authorization": f"Bearer {token}"}
+        self.timeout = REQUEST_TIMEOUT_SECONDS
+
+    def _records_api_headers(self) -> dict:
+        return {
+            **self.headers,
+            "Content-Type": "application/json",
+        }
 
     def create_deposit(self) -> dict:
         """Create a new empty deposit."""
@@ -62,25 +72,46 @@ class ZenodoClient:
             f"{self.base_url}/deposit/depositions",
             headers=self.headers,
             json={},
+            timeout=self.timeout,
         )
         response.raise_for_status()
         return response.json()
 
-    def create_new_version(self, deposit_id: int) -> dict:
-        """Create a new version of an existing deposit."""
+    def create_version_draft(self, record_id: int) -> dict:
+        """Create a new draft version from a published record using records API."""
         response = requests.post(
-            f"{self.base_url}/deposit/depositions/{deposit_id}/actions/newversion",
-            headers=self.headers,
+            f"{self.base_url}/records/{record_id}/versions",
+            headers=self._records_api_headers(),
+            json={},
+            timeout=self.timeout,
         )
         response.raise_for_status()
-
-        # Get the new version draft
         data = response.json()
-        new_version_url = data["links"]["latest_draft"]
 
-        response = requests.get(new_version_url, headers=self.headers)
-        response.raise_for_status()
-        return response.json()
+        new_id = data.get("id")
+        latest_draft_url = data.get("links", {}).get("latest_draft")
+        if not new_id and latest_draft_url:
+            new_id = _extract_numeric_id(latest_draft_url)
+        if not new_id:
+            raise RuntimeError(f"Could not resolve new draft ID for record {record_id}")
+
+        draft_url = latest_draft_url or f"{self.base_url}/records/{new_id}/draft"
+        draft_response = requests.get(
+            draft_url,
+            headers=self.headers,
+            timeout=self.timeout,
+        )
+        draft_response.raise_for_status()
+        draft = draft_response.json()
+
+        bucket_url = draft.get("links", {}).get("bucket") or data.get("links", {}).get("bucket")
+        if not bucket_url:
+            deposit = self.get_deposit(int(new_id))
+            bucket_url = deposit.get("links", {}).get("bucket")
+        if not bucket_url:
+            raise RuntimeError(f"Could not resolve bucket URL for draft {new_id}")
+
+        return {"id": int(new_id), "draft": draft, "bucket": bucket_url}
 
     def update_metadata(self, deposit_id: int, metadata: dict) -> dict:
         """Update deposit metadata."""
@@ -88,6 +119,7 @@ class ZenodoClient:
             f"{self.base_url}/deposit/depositions/{deposit_id}",
             headers=self.headers,
             json={"metadata": metadata},
+            timeout=self.timeout,
         )
         response.raise_for_status()
         return response.json()
@@ -97,15 +129,18 @@ class ZenodoClient:
         response = requests.get(
             f"{self.base_url}/deposit/depositions/{deposit_id}/files",
             headers=self.headers,
+            timeout=self.timeout,
         )
         response.raise_for_status()
 
         for file_info in response.json():
             file_id = file_info["id"]
-            requests.delete(
+            delete_response = requests.delete(
                 f"{self.base_url}/deposit/depositions/{deposit_id}/files/{file_id}",
                 headers=self.headers,
+                timeout=self.timeout,
             )
+            delete_response.raise_for_status()
 
     def upload_file(self, deposit_id: int, file_path: Path, bucket_url: str) -> dict:
         """Upload a file to a deposit."""
@@ -114,6 +149,7 @@ class ZenodoClient:
                 f"{bucket_url}/{file_path.name}",
                 headers=self.headers,
                 data=f,
+                timeout=self.timeout,
             )
         response.raise_for_status()
         return response.json()
@@ -123,6 +159,18 @@ class ZenodoClient:
         response = requests.post(
             f"{self.base_url}/deposit/depositions/{deposit_id}/actions/publish",
             headers=self.headers,
+            timeout=self.timeout,
+        )
+        response.raise_for_status()
+        return response.json()
+
+    def publish_record_draft(self, draft_id: int) -> dict:
+        """Publish a records API draft created from /records/{id}/versions."""
+        response = requests.post(
+            f"{self.base_url}/records/{draft_id}/draft/actions/publish",
+            headers=self._records_api_headers(),
+            json={},
+            timeout=self.timeout,
         )
         response.raise_for_status()
         return response.json()
@@ -132,24 +180,50 @@ class ZenodoClient:
         response = requests.get(
             f"{self.base_url}/deposit/depositions/{deposit_id}",
             headers=self.headers,
+            timeout=self.timeout,
         )
         response.raise_for_status()
         return response.json()
 
-    def find_draft_by_title(self, title: str) -> Optional[dict]:
-        """Find an existing draft deposit by title."""
+    def verify_bucket_access(self, bucket_url: str) -> bool:
+        """Check that draft bucket is reachable."""
         response = requests.get(
-            f"{self.base_url}/deposit/depositions",
+            bucket_url,
             headers=self.headers,
-            params={"status": "draft"},
+            timeout=self.timeout,
         )
-        response.raise_for_status()
+        return response.status_code == 200
 
-        for deposit in response.json():
-            deposit_title = deposit.get("metadata", {}).get("title", "")
-            if deposit_title == title:
-                return deposit
+    def find_draft_by_title(self, title: str) -> Optional[dict]:
+        """Find an existing draft deposit by title (paginated)."""
+        page = 1
+        while True:
+            response = requests.get(
+                f"{self.base_url}/deposit/depositions",
+                headers=self.headers,
+                params={"status": "draft", "page": page, "size": 100},
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+            deposits = response.json()
+            if not deposits:
+                break
+            for deposit in deposits:
+                deposit_title = deposit.get("metadata", {}).get("title", "")
+                if deposit_title == title:
+                    return deposit
+            page += 1
         return None
+
+
+def _extract_numeric_id(value: str | None) -> Optional[int]:
+    """Extract trailing numeric ID from Zenodo URL/identifier."""
+    if not value:
+        return None
+    match = re.search(r"(\d+)(?:/?$)", value)
+    if not match:
+        return None
+    return int(match.group(1))
 
 
 def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
@@ -294,6 +368,16 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
     # Get existing DOI from config (for updating existing deposits)
     existing_doi = metadata.get("doi")
 
+    zenodo_section = metadata.get("zenodo", {})
+    if not isinstance(zenodo_section, dict):
+        zenodo_section = {}
+    publisher = zenodo_section.get("publisher") or metadata.get("publisher")
+    if not publisher:
+        raise ValueError(
+            f"No publisher found in quarto config metadata. "
+            f"Add 'publisher' to the zenodo section of your _quarto-*.yml config."
+        )
+
     # Build Zenodo metadata
     zenodo_metadata = {
         "title": title,
@@ -305,7 +389,7 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
         "publication_date": datetime.now().strftime("%Y-%m-%d"),
         "upload_type": "publication",
         "publication_type": "workingpaper",
-        "publisher": metadata.get("publisher", "Decentralized Institutes of Health"),
+        "publisher": publisher,
         "language": zenodo_language,
         "version": version,
     }
@@ -351,50 +435,54 @@ def save_doi_to_config(config_path: Path, doi: str, zenodo_url: str) -> bool:
     Returns:
         True if successful, False otherwise
     """
-    import re
-
     try:
-        content = config_path.read_text(encoding='utf-8')
+        lines = config_path.read_text(encoding='utf-8').splitlines(keepends=True)
 
-        # Update metadata.doi field
-        if re.search(r'^\s+doi:\s*["\']?.*["\']?\s*$', content, re.MULTILINE):
-            # DOI field exists, update it
-            content = re.sub(
-                r'(^\s+doi:\s*["\']?).*?(["\']?\s*$)',
-                rf'\g<1>{doi}\g<2>',
-                content,
-                flags=re.MULTILINE
-            )
-        else:
-            # Add DOI field after metadata section starts
-            content = re.sub(
-                r'(^metadata:\s*$)',
-                rf'\g<1>\n  doi: "{doi}"',
-                content,
-                flags=re.MULTILINE
-            )
+        metadata_idx = next((i for i, line in enumerate(lines) if re.match(r"^metadata:\s*$", line.rstrip("\r\n"))), None)
+        if metadata_idx is not None:
+            metadata_end = len(lines)
+            for i in range(metadata_idx + 1, len(lines)):
+                stripped = lines[i].strip()
+                if stripped and not lines[i].startswith((" ", "\t", "#")):
+                    metadata_end = i
+                    break
+            doi_idx = None
+            for i in range(metadata_idx + 1, metadata_end):
+                if re.match(r"^  doi:\s*", lines[i]):
+                    doi_idx = i
+                    break
+            if doi_idx is not None:
+                lines[doi_idx] = f'  doi: "{doi}"\n'
+            else:
+                lines.insert(metadata_idx + 1, f'  doi: "{doi}"\n')
 
-        # Update publishing.preprints[zenodo] section if it exists
-        # Match the zenodo preprint block and update status + url
-        zenodo_section_pattern = r'(- platform: zenodo\s+status: )[^\n]+(.*?url: ")[^"]*(")'
-        if re.search(zenodo_section_pattern, content, re.DOTALL):
-            content = re.sub(
-                zenodo_section_pattern,
-                rf'\g<1>auto-uploaded\g<2>{zenodo_url}\g<3>',
-                content,
-                flags=re.DOTALL
-            )
-            # Also update the doi: field within the zenodo preprint section
-            zenodo_doi_pattern = r'(- platform: zenodo\b.*?doi:\s*)["\']?[^"\'\n]*["\']?'
-            if re.search(zenodo_doi_pattern, content, re.DOTALL):
-                content = re.sub(
-                    zenodo_doi_pattern,
-                    rf'\g<1>"{doi}"',
-                    content,
-                    flags=re.DOTALL
-                )
+        for i, line in enumerate(lines):
+            if not re.match(r"^\s*-\s*platform:\s*zenodo\s*$", line):
+                continue
+            item_indent = len(line) - len(line.lstrip(" "))
+            child_prefix = " " * (item_indent + 2)
+            block_end = len(lines)
+            for j in range(i + 1, len(lines)):
+                candidate = lines[j]
+                stripped = candidate.strip()
+                candidate_indent = len(candidate) - len(candidate.lstrip(" "))
+                if stripped.startswith("- ") and candidate_indent == item_indent:
+                    block_end = j
+                    break
+                if stripped and candidate_indent < item_indent:
+                    block_end = j
+                    break
 
-        config_path.write_text(content, encoding='utf-8')
+            for j in range(i + 1, block_end):
+                if lines[j].startswith(f"{child_prefix}status:"):
+                    lines[j] = f"{child_prefix}status: auto-uploaded\n"
+                elif lines[j].startswith(f"{child_prefix}url:"):
+                    lines[j] = f'{child_prefix}url: "{zenodo_url}"\n'
+                elif lines[j].startswith(f"{child_prefix}doi:"):
+                    lines[j] = f'{child_prefix}doi: "{doi}"\n'
+            break
+
+        config_path.write_text("".join(lines), encoding='utf-8')
         return True
     except Exception as e:
         print(f"WARNING: Could not save DOI to {config_path}: {e}")
@@ -459,42 +547,29 @@ def upload_paper(
         deposit = None
         deposit_id = None
         bucket_url = None
+        publish_via_records_api = False
 
         if record_id:
             log(f"[OK] Found DOI in config: {existing_doi}")
-            log(f"[OK] Looking up Zenodo record ID: {record_id}")
+            log(f"[OK] Creating new version draft from existing record: {record_id}")
             try:
-                deposit = client.get_deposit(record_id)
-                deposit_id = deposit["id"]
-                state = deposit.get("state", "unknown")
-                log(f"[OK] Found existing deposit (state: {state})")
-
-                if state == "done":
-                    # Published record - create new version
-                    log("[OK] Creating new version of published record...")
-                    deposit = client.create_new_version(record_id)
-                    deposit_id = deposit["id"]
-                    bucket_url = deposit["links"]["bucket"]
-                    # Clear old files from new version
-                    client.delete_all_files(deposit_id)
-                    log(f"[OK] New version draft ID: {deposit_id}")
-                elif state == "unsubmitted":
-                    # Existing draft - update it
-                    log("[OK] Updating existing draft...")
-                    bucket_url = deposit["links"]["bucket"]
-                    client.delete_all_files(deposit_id)
-                else:
-                    log(f"WARNING: Unexpected deposit state '{state}', creating new deposit...")
-                    deposit = None
+                version_info = client.create_version_draft(record_id)
+                deposit_id = version_info["id"]
+                bucket_url = version_info["bucket"]
+                publish_via_records_api = True
+                if not client.verify_bucket_access(bucket_url):
+                    log(f"ERROR: Draft bucket not reachable: {bucket_url}")
+                    return None
+                client.delete_all_files(deposit_id)
+                log(f"[OK] New version draft ID: {deposit_id}")
             except requests.HTTPError as e:
-                if e.response.status_code == 404:
-                    log(f"WARNING: Record {record_id} not found (may be on different Zenodo instance)")
-                    log("  -> Will check for draft by title or create new deposit...")
+                if e.response is not None and e.response.status_code == 404:
+                    log(f"WARNING: Existing DOI record not found on Zenodo ({record_id}); falling back to draft/new deposit flow")
                 else:
                     raise
 
         # Fall back to title-based search if no DOI or DOI lookup failed
-        if deposit is None:
+        if deposit_id is None:
             log("[OK] Checking for existing draft by title...")
             existing_draft = client.find_draft_by_title(metadata["title"])
 
@@ -503,15 +578,7 @@ def upload_paper(
                 state = existing_draft.get("state", "unknown")
                 log(f"[OK] Found existing deposit by title: {deposit_id} (state: {state})")
 
-                if state == "done":
-                    # Published record — must create new version
-                    log("[OK] Creating new version of published record...")
-                    deposit = client.create_new_version(deposit_id)
-                    deposit_id = deposit["id"]
-                    bucket_url = deposit["links"]["bucket"]
-                    client.delete_all_files(deposit_id)
-                    log(f"[OK] New version draft ID: {deposit_id}")
-                elif state == "inprogress":
+                if state == "inprogress":
                     # inprogress = submitted but not yet published; try to get editable draft
                     log("[OK] Deposit is 'inprogress' (submitted). Attempting to edit...")
                     try:
@@ -530,7 +597,7 @@ def upload_paper(
                     bucket_url = full_deposit["links"]["bucket"]
                     client.delete_all_files(deposit_id)
                 else:
-                    log(f"WARNING: Unknown state '{state}', creating new deposit...")
+                    log(f"WARNING: Draft state '{state}' is not editable, creating new deposit...")
                     deposit = client.create_deposit()
                     deposit_id = deposit["id"]
                     bucket_url = deposit["links"]["bucket"]
@@ -595,11 +662,14 @@ def upload_paper(
                 log(f"  -> Concept DOI: {concept_doi}")
         else:
             log("[OK] Publishing...")
-            result = client.publish(deposit_id)
+            if publish_via_records_api:
+                result = client.publish_record_draft(deposit_id)
+            else:
+                result = client.publish(deposit_id)
             version_doi = result.get("doi")
             concept_doi = result.get("conceptdoi") or concept_doi
             concept_recid = result.get("conceptrecid") or concept_recid
-            zenodo_url = result['links']['html']
+            zenodo_url = result.get("links", {}).get("self_html") or result.get("links", {}).get("html") or zenodo_url
             log(f"\n[SUCCESS] Published!")
             log(f"  DOI: {version_doi}")
             if concept_doi:
@@ -632,6 +702,9 @@ def upload_paper(
         print(f"ERROR: Zenodo API error: {e}", file=sys.stderr)
         if hasattr(e, 'response'):
             print(f"  Response: {e.response.text}", file=sys.stderr)
+        return None
+    except requests.RequestException as e:
+        print(f"ERROR: Zenodo request failed: {e}", file=sys.stderr)
         return None
 
 

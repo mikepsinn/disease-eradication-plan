@@ -45,9 +45,10 @@ image: /assets/og-images/knowledge/appendix/federal-efficiency-audit-og.jpg
 
 ## Executive Summary
 
+
+
 This audit applies engineering systems analysis to federal resource allocation. Rather than treating all "waste" as equivalent, we identify four distinct categories of dysfunction, each requiring different solutions:
 
-![A comparative bar chart showing the efficiency rating gap between the U.S. and OECD benchmarks, highlighting the multi-trillion annual efficiency gap and the equivalent human cost in quality-adjusted life years.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-executive-summary-bw-academic.jpg)
 
 ### Dysfunction Category Breakdown
 
@@ -77,18 +78,21 @@ This categorization matters: calling the entire efficiency gap "federal spending
 
 The "human cost" figures are **economic equivalents**, not epidemiological mortality counts. Dividing the efficiency gap by VSL ({{< var dot_value_of_statistical_life >}}) or QALY threshold ({{< var medical_qaly_threshold >}}) yields a measure of foregone welfare, not literal deaths prevented.
 
+![A scale comparison illustrating the 180:1 ratio between the total annual efficiency gap and the funding required for the 1% Treaty.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
+
+
 **Methodological Note:** Subsystem losses are estimated independently and treated as additive. While some overlap may exist (e.g., housing costs affect health via stress, incarceration overlaps with drug enforcement), excluded categories (state/local inefficiency, implicit subsidies, behavioral effects) likely offset any potential overstatement.
 :::
 
 The efficiency gap represents capital that could fund the 1% Treaty ({{< var treaty_annual_funding >}}/year) {{< var us_gov_waste_vs_treaty_multiplier >}} times over.
 
-![A proportional comparison chart illustrating the magnitude of the efficiency gap relative to the 27B 1 percent Treaty annual funding and current global disease R and D spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-interpretation-note-bw-academic.jpg)
 
 ## System Specifications
 
 ### Designed Function
 
-![A flowchart illustrating the conversion process where fiscal inputs like tax revenue and compliance burdens are transformed by the federal government into terminal outcomes of median income growth and healthy life years.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-designed-function-bw-academic.jpg)
+
+
 
 The federal government's designed function is to convert fiscal inputs (federal outlays and imposed compliance burdens) into citizen welfare. We measure this conversion efficiency using two terminal outcomes:
 
@@ -110,7 +114,6 @@ These two outputs capture all upstream factors that matter:
 
 These are not omissions. They are *upstream variables* that manifest in terminal outcomes. Measuring income + health implicitly captures everything that affects citizen welfare.
 
-![A conceptual diagram showing how multiple upstream factors like security, environment, and education funnel into two terminal outcomes: Income and Healthy Life.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-why-two-metrics-are-sufficient-bw-academic.jpg)
 
 ### Input-Output Measurement
 
@@ -124,11 +127,12 @@ Context (not additive):
 
 **Efficiency Metric:** Output per dollar of input, benchmarked against OECD peer nations with comparable development levels.
 
+
+
 For cross-country comparability, the efficiency rating uses federal outlays as the input baseline. Compliance burdens are treated as losses rather than additional inputs.
 
 These contextual figures imply a combined fiscal and compliance footprint in the several-trillion-dollar range, but the efficiency rating uses federal outlays to keep the denominator comparable across OECD systems.
 
-![A breakdown of the total system input, showing the proportional distribution of federal revenue, state and local mandates, and regulatory compliance burdens.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-input-output-measurement-bw-academic.jpg)
 
 ## Methodology
 
@@ -139,6 +143,8 @@ Not all inefficiency is created equal. A dollar misspent in the federal budget r
 **Direct Federal Spending Waste ({{< var us_gov_waste_category_1_direct_spending >}})**
 
 Actual budget allocations flowing to low-value uses. This is traditional "government waste": military overspend, corporate welfare, drug war enforcement, fossil fuel subsidies, agricultural subsidies. The solution is **budget reallocation**-redirect these dollars to higher-return uses without increasing total spending.
+
+
 
 Think of military spending: the {{< var us_gov_waste_military_overspend >}} "overspend" above strict deterrence baseline represents federal dollars that could fund disease eradication treaties instead of maintaining 750 overseas bases [@npp-military-bases-2025].
 
@@ -193,19 +199,18 @@ $$\text{AEG} = \sum_{i} \text{Friction}_i + \sum_{j} \text{Leakage}_j + \sum_{k}
 
 We employ Monte Carlo simulation to generate confidence intervals, recognizing uncertainty in loss estimates (particularly where data opacity exists, such as the DoD's inability to audit 61% of assets).
 
-![A structural diagram showing the seven categories of efficiency loss aggregating into the AEG, with visual indicators for the high uncertainty (61 percent) addressed by Monte Carlo simulation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-aggregate-efficiency-gap-calculation-bw-academic.jpg)
 
 ::: {.callout-note}
 ## Methodological Note: Additive Categories
 
-![A conceptual diagram illustrating the overlaps between subsystem costs like housing and health, contrasted with excluded factors that offset the resulting bias.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-methodological-caveat-overlap-and-double-counting-bw-academic.jpg)
+
+
 
 Subsystem losses are estimated independently and treated as additive. While some overlap may exist (housing costs affect health via stress, incarceration overlaps with drug enforcement), excluded categories (state/local inefficiency, implicit subsidies, behavioral effects) likely offset any potential overstatement.
 :::
 
 ### Valuation Standards
 
-![A comparison showing the massive scale difference between the Value of Statistical Life (VSL) and Quality-Adjusted Life Year (QALY) standards used in federal cost-benefit analysis.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-valuation-standards-bw-academic.jpg)
 
 - **Value of Statistical Life (VSL):** {{< var dot_value_of_statistical_life >}} (US Department of Transportation) [@dot-vsl-2024]
 - **Quality-Adjusted Life Year (QALY):** {{< var medical_qaly_threshold >}} (medical cost-effectiveness standard) [@qaly-threshold-history]
@@ -215,6 +220,8 @@ Subsystem losses are estimated independently and treated as additive. While some
 **Total: {{< var us_gov_waste_category_1_direct_spending >}} annually**
 
 This category represents actual federal budget allocations flowing to demonstrably low-value uses. Unlike compliance burdens or GDP losses, these are dollars the federal government directly controls and could reallocate tomorrow with congressional action. The solution pathway is straightforward: **budget reallocation** from current uses to higher-return alternatives.
+
+
 
 ### Components
 
@@ -237,6 +244,8 @@ Every dollar here comes from taxpayers and goes somewhere. The question is not w
 **Total: {{< var us_gov_waste_category_2_compliance >}} annually**
 
 These costs don't appear in the federal budget. They represent private sector resources consumed by government-imposed requirements: calculating taxes, filing paperwork, navigating regulatory red tape. The solution pathway is **simplification**-streamlining processes to reduce friction while preserving necessary functions.
+
+
 
 ### Components
 
@@ -263,6 +272,9 @@ The regulatory red tape figure ({{< var us_gov_waste_regulatory_red_tape >}}) re
 
 These losses represent economic output that *would exist* but for government policy constraining markets. Not spending, not compliance-forgone GDP. Workers who can't move to high-productivity cities because housing is illegal to build. Trade gains evaporated by tariffs. The solution pathway is **policy reform**: remove the constraints.
 
+![A visualization showing the gap between current economic output and potential GDP, illustrating how policy barriers like housing restrictions and tariffs result in a $1.56 trillion annual loss.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-policy-induced-gdp-loss-category-3-policy-induced-gdp-loss-bw-academic.jpg)
+
+
 ### Components
 
 | Component | Annual Cost | Optimal Comparison |
@@ -285,6 +297,8 @@ Japan allows by-right development with minimal restrictions. National zoning law
 **Total: {{< var us_gov_waste_category_4_system >}} annually**
 
 This category represents fundamental design failures where the system architecture itself prevents efficiency. Not bad management-bad *structure*. Healthcare exemplifies this: fragmented payment systems, zero price transparency, third-party payment everywhere, perverse incentives baked into the model. The solution pathway is **system redesign**: change the architecture.
+
+
 
 ### Components
 
@@ -332,13 +346,16 @@ The following subsystem audits provide detailed component breakdowns. Each subsy
 
 In the core model, defense contributes {{< var us_gov_waste_military_overspend >}} annually through military overspend above the strict deterrence baseline. The Department of Defense operates as the largest discretionary expenditure node, with annual spending of approximately $900 billion [@pgpf-defense-budget-2024]. Current spending exceeds the next nine nations combined [@sipri-milex-2024].
 
-![A comparison of the 900 billion U.S. defense budget against the combined military expenditures of the next nine highest-spending nations.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-defense-bw-academic.jpg)
+![A comparison showing the $900 billion US defense budget, identifying the $615 billion waste component relative to the strict deterrence baseline and other nations' spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-defense-bw-academic.jpg)
+
+
 
 ### Loss Category: Leakage (Audit Failure)
 
 In November 2024, the Pentagon failed its seventh consecutive audit [@pentagon-audit-2024]. The DoD was unable to account for 61-63% of its $3.8 trillion in assets (dollar-weighted) [@audit-pentagon-act-2023], approximately $2.5 trillion in property, equipment, and inventory with unknown location, condition, or existence status.
 
-![A breakdown of the Department of Defense's 3.8 trillion asset pool showing the 61-63 percent (2.5 trillion) portion that is currently unaccounted for, leading to an estimated 125 billion in inventory shrinkage.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-audit-failure-bw-academic.jpg)
+
+
 
 The mechanism: fragmented logistics systems where contractors record inventory data, creating principal-agent misalignment [@pentagon-assets-unaccounted]. Without verified asset ledgers, the DoD regularly purchases parts it already owns but cannot locate.
 
@@ -354,13 +371,17 @@ The F-35 program exemplifies "concurrency": producing aircraft before design com
 
 **Estimated conversion inefficiency:** $15-20 billion annually in defect remediation and unflown flight hours.
 
-![A comparison of rising F-35 lifetime sustainment costs against declining availability rates, highlighting the 15-20 billion annual loss from conversion inefficiency.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-conversion-inefficiency-f-35-program-bw-academic.jpg)
+![A visualization of the F-35 concurrency model illustrating how simultaneous design and production lead to a cycle of rising lifetime costs, declining aircraft availability, and significant delivery delays.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-conversion-inefficiency-f-35-program-bw-academic.jpg)
+
+
 
 ### Loss Category: Idle/Standby (Overseas Basing)
 
 The U.S. maintains approximately 750 military bases in over 80 countries [@npp-military-bases-2025], architecture designed for 1945 geopolitics.
 
-![A bar chart comparing the current 55-80 billion annual cost of overseas base maintenance against the projected 75 billion in potential annual savings from transitioning to an Active Denial strategy.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-idle-standby-overseas-basing-bw-academic.jpg)
+![A comparison between the current high-cost overseas basing model and the proposed 'Active Denial' strategy, illustrating the potential for $75 billion in annual savings.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-idle-standby-overseas-basing-bw-academic.jpg)
+
+
 
 - Direct base maintenance: $55-80 billion annually [@npp-military-bases-2025]
 - Personnel premium: $10,000-$40,000 per person above domestic stationing [@overseas-bases-facts]
@@ -377,7 +398,8 @@ The "Overmatch" doctrine requires dominance in every theater simultaneously, cre
 
 Cutting the redundant ICBM leg and reducing bomber procurement would save $15-20 billion annually [@quincy-defense-efficiency-2024].
 
-![A comparison of the projected 965 billion defense budget against the potential 15-20 billion in annual savings from strategic nuclear cuts.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-strategic-misalignment-bw-academic.jpg)
+
+
 
 ### Defense Subsystem Summary
 
@@ -393,7 +415,9 @@ The mechanism-specific estimates above (audit leakage, F-35 conversion losses, o
 
 In the core model, healthcare system inefficiency contributes {{< var us_gov_waste_healthcare_inefficiency >}} annually. U.S. healthcare consumes ~18% of GDP ($5.3 trillion) [@us-federal-healthcare-spending] yet delivers health outcomes inferior to peer nations spending 10-11% of GDP [@pgpf-healthcare-comparison]. The delta is not care quality. It is administrative friction.
 
-![A comparison of healthcare spending as a percentage of GDP between the U.S. (18 percent) and peer nations (10-11 percent), highlighting the financial discrepancy linked to administrative overhead.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-healthcare-administration-bw-academic.jpg)
+![A comparison of healthcare spending as a percentage of GDP between the U.S. and peer nations, illustrating the $1.2 trillion efficiency gap driven by administrative friction.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-healthcare-administration-bw-academic.jpg)
+
+
 
 ### Loss Category: Friction (Administrative Overhead)
 
@@ -403,13 +427,17 @@ The U.S. spends approximately $1,000 more per person on administrative costs tha
 
 A 2020 study found U.S. administrative spending at 34.2% of health expenditures versus 17% in Canada [@healthcare-admin-costs-2020]. This overhead does not improve outcomes. It diverts resources from care to paperwork.
 
-![Comparison of healthcare administrative costs showing the U.S. spending 34.2 percent of expenditures on overhead versus 17 percent in Canada, alongside the resulting 335 billion in annual excess spending.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-administrative-overhead-bw-academic.jpg)
+![A comparison of healthcare administrative costs showing the U.S. spending 34.2% of its budget on overhead compared to 17% in Canada, resulting in a $335 billion annual excess.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-administrative-overhead-bw-academic.jpg)
+
+
 
 ### Loss Category: Leakage (Medicare Advantage Upcoding)
 
 Medicare Advantage functions as a subsidy mechanism via "upcoding": making patients appear sicker than they are to increase capitated payments.
 
-![A comparison of estimated Medicare Advantage overpayments, highlighting the 83 billion annual cost for 2024 against a 1.2 trillion ten-year projection and 7.5 billion in specific fraud categories.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-medicare-advantage-upcoding-bw-academic.jpg)
+![A visualization of the Medicare Advantage upcoding cycle, showing how exaggerated patient diagnoses lead to inflated government payments and multi-billion dollar fiscal leakages.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-medicare-advantage-upcoding-bw-academic.jpg)
+
+
 
 - MedPAC estimate: $83 billion overpayment in 2024 [@usc-medpac-ma-2024]
 - 10-year projection: $1.2 trillion cumulative overpayment [@crfb-ma-overpayment]
@@ -419,7 +447,9 @@ Medicare Advantage functions as a subsidy mechanism via "upcoding": making patie
 
 GAO estimates $162 billion in improper payments government-wide in 2024, with 75% concentrated in Medicare and Medicaid [@gao-improper-payments-2024].
 
-![A comparison of government improper payment rates, specifically highlighting the 75 percent concentration in Medicare and Medicaid against significantly lower private sector fraud benchmarks.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-improper-payments-bw-academic.jpg)
+![A visualization showing the $162 billion total in government improper payments, highlighting the 75% concentration in Medicare and Medicaid compared to the significantly lower fraud rates in private financial networks.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-improper-payments-bw-academic.jpg)
+
+
 
 - Medicare Fee-for-Service: ~7.4% improper payment rate
 - Medicaid: often higher
@@ -440,14 +470,17 @@ The administrative and payment-fraud estimates above are key mechanisms within t
 
 In the core model, justice and prohibition contribute {{< var us_gov_waste_drug_war >}} annually through direct drug war spending and associated direct losses. Broader incarceration externalities remain substantial but are treated as contextual estimates here to avoid overlap with other modeled categories.
 
-![A conceptual diagram illustrating the failure of the drug prohibition system, showing the gap between intended policy objectives and the actual outcomes of incarceration and negative externalities.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-justice-and-prohibition-bw-academic.jpg)
+![A visualization of the Justice and Prohibition subsystem audit, showing the $90 billion core waste estimate with its confidence interval range and its relationship to broader incarceration externalities.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-justice-and-prohibition-bw-academic.jpg)
+
+
 
 
 ### Loss Category: Conversion Inefficiency (Drug Prohibition)
 
 The federal drug control budget for 2024: nearly $45 billion [@ncdas-drug-statistics-2025]. Total expenditure since 1971: over $1 trillion [@cap-drug-war-numbers].
 
-![A comparison of massive federal drug control spending (1 trillion cumulative, 45 billion annual) against stagnant usage rates and the shift toward higher-potency drugs like fentanyl under the Iron Law of Prohibition.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-conversion-inefficiency-drug-prohibition-bw-academic.jpg)
+
+
 
 **Outcome:** Drug use rates unchanged or increased [@nida-drug-trends]. The market has innovated toward more potent compounds (fentanyl). This is a direct consequence of the "Iron Law of Prohibition," where interdiction shifts production to higher-value-per-weight products.
 
@@ -457,7 +490,9 @@ Despite state legalization, federal marijuana enforcement continues at approxima
 
 The U.S. incarcerates at rates unmatched in the developed world, removing prime-age workers from the labor force and degrading human capital.
 
-![A comparison of the tiered economic impacts of mass incarceration, contrasting direct public corrections costs against broader societal burdens and lost lifetime earnings.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-mass-incarceration-bw-academic.jpg)
+![A comparison of the escalating economic impacts of mass incarceration, ranging from direct public expenditure to broad societal burdens and individual lifetime earnings loss.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-mass-incarceration-bw-academic.jpg)
+
+
 
 
 **Direct system costs:** $80.7 billion in public corrections expenditure [@prison-policy-economics]
@@ -473,7 +508,8 @@ Lost lifetime earnings per incarcerated person: approximately $500,000 [@prison-
 
 Civil asset forfeiture allows property seizure without criminal conviction. FY 2024 Treasury Forfeiture Fund: $2.26 billion processed [@treasury-forfeiture-2024].
 
-![A conceptual flow diagram illustrating how civil asset forfeiture redirects property from productive economic activity into a bureaucratic fund, shifting enforcement incentives toward revenue generation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-leakage-civil-asset-forfeiture-bw-academic.jpg)
+
+
 
 
 This mechanism incentivizes revenue-generating enforcement over public safety, introduces property rights uncertainty, and constitutes wealth transfer from productive activity to bureaucracy.
@@ -492,11 +528,16 @@ This mechanism incentivizes revenue-generating enforcement over public safety, i
 
 In the core model, this subsystem maps to three major components: tax compliance ({{< var us_gov_waste_tax_compliance >}}), regulatory red tape ({{< var us_gov_waste_regulatory_red_tape >}}), and housing/zoning misallocation ({{< var us_gov_waste_housing_zoning >}}). Together they represent a substantial unrecorded subtraction from national output.
 
+![A visualization of the three primary components of policy-induced GDP loss, tax compliance, regulatory red tape, and housing misallocation, showing their relative scale and confidence intervals.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-regulatory-and-tax-compliance-bw-academic.jpg)
+
+
 ### Loss Category: Friction (Tax Compliance)
 
 Americans spend 7.1-7.9 billion hours annually complying with the tax code [@ntu-tax-compliance-2025].
 
-![A comparison showing that U.S. tax compliance costs (546 billion) exceed total corporate income tax revenue, representing 1.9 percent of national GDP.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-tax-compliance-bw-academic.jpg)
+![Comparison between the high-friction U.S. tax compliance model driven by industry lobbying and the streamlined Return-Free Filing model used in 36 other countries.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-tax-compliance-bw-academic.jpg)
+
+
 
 **Total compliance cost:** {{< var us_gov_waste_tax_compliance >}} annually (Tax Foundation estimate) [@ntu-tax-compliance-2025; @taxfoundation2024-compliance]
 
@@ -508,7 +549,8 @@ This is approximately 1.9% of GDP, exceeding total corporate income tax revenue.
 
 Local zoning regulations artificially restrict housing supply in high-productivity cities, preventing labor mobility to productive clusters.
 
-![A visualization of the annual GDP loss attributed to housing misallocation, showing a central estimate of 1.40 trillion within a 1 trillion to 2 trillion confidence interval range.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-friction-housing-zoning-misallocation-bw-academic.jpg)
+
+
 
 **Spatial misallocation cost:** Conservative estimates still imply losses on the order of {{< var us_gov_waste_housing_zoning >}} annually [@housing-misallocation-comment; @hsieh-moretti-correction].
 
@@ -520,7 +562,9 @@ Federal policy subsidizes this dysfunction via mortgage interest deductions and 
 
 The National Environmental Policy Act forces infrastructure projects into multi-year review. Average Environmental Impact Statement: 4.5 years.
 
-![A visualization illustrating the 4.5-year average NEPA review timeline and the resulting 100-140 billion in annual economic losses, highlighting the disproportionate impact on clean energy projects.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-idle-nepa-permitting-delays-bw-academic.jpg)
+![A visual representation of the NEPA 'Green Paradox' showing the 4.5-year average review timeline and how delays disproportionately impact clean energy projects compared to fossil fuels, resulting in $100-140 billion in annual losses.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-idle-nepa-permitting-delays-bw-academic.jpg)
+
+
 
 **Delay costs:** $100-140 billion annually in lost returns and capital efficiency [@clearpath-nepa-2024].
 
@@ -528,7 +572,9 @@ NEPA creates a "Green Paradox": delaying clean energy projects (transmission, wi
 
 ### Loss Category: Parasitic (Jones Act)
 
-![A comparison chart showing the 1.2 billion annual cost to Hawaii relative to the estimated national economic impact of the Jones Act, which ranges from 656 million to 19 billion.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-jones-act-bw-academic.jpg)
+![A visualization of the Jones Act's economic impact, showing the regulatory requirements leading to higher costs for Hawaii and the inefficient substitution of foreign oil imports for domestic shipping.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-jones-act-bw-academic.jpg)
+
+
 
 The Jones Act requires domestic shipping on U.S.-built, U.S.-crewed vessels. Results:
 
@@ -552,11 +598,15 @@ NEPA and Jones Act estimates above are additional policy frictions discussed for
 
 In the core model, this subsystem includes corporate welfare ({{< var us_gov_waste_corporate_welfare >}}), fossil fuel subsidies ({{< var us_gov_waste_fossil_fuel_subsidies >}}), agricultural subsidies ({{< var us_gov_waste_agricultural_subsidies >}}), and tariff-related GDP loss ({{< var us_gov_waste_tariffs >}}).
 
+![A breakdown of the economic impact of various subsidies and transfers, illustrating the relative scale and uncertainty ranges of corporate welfare, fossil fuel and agricultural subsidies, and tariff-related GDP loss.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-subsystem-audit-subsidies-and-transfers-bw-academic.jpg)
+
+
 ### Loss Category: Parasitic (Fossil Fuel Subsidies)
 
 Direct annual subsidies to fossil fuel companies: $10-52 billion [@fractracker-fossil-subsidies-2025].
 
-![A diagram illustrating the flow of fossil fuel subsidies and their resulting impact on market prices and the pace of the energy transition.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-fossil-fuel-subsidies-bw-academic.jpg)
+
+
 
 
 This represents capital transfer to a mature, profitable industry, artificially lowering carbon-intensive energy costs relative to alternatives and slowing energy transition.
@@ -565,7 +615,8 @@ This represents capital transfer to a mature, profitable industry, artificially 
 
 Agricultural subsidies in 2024: $9.3-30 billion [@usafacts-farm-subsidies-2024]. Distribution is regressive. Top 10% of recipients received 65% of payments in 2024 [@ewg-triple-dipping-2024].
 
-![A flowchart depicting the 'Waste Feedback Loop' where regressive agricultural subsidies drive the overproduction of corn and soy, leading to a cycle of processed food consumption, obesity, and increased healthcare expenditures.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-parasitic-agricultural-subsidies-bw-academic.jpg)
+
+
 
 The subsidy structure incentivizes overproduction of corn and soy, which form the backbone of the processed food diet driving the obesity epidemic. This creates a **Waste Feedback Loop**: taxpayer funds subsidize production of cheap calories that make the population sick, requiring additional taxpayer funds to treat the resulting chronic disease (see Healthcare subsystem). Agricultural policy thus amplifies healthcare inefficiency.
 
@@ -573,7 +624,9 @@ The subsidy structure incentivizes overproduction of corn and soy, which form th
 
 **Corporate welfare:** Cato Institute tallies $181 billion annually in grants, loans, and credits to specific businesses [@cato-corporate-welfare].
 
-![A comparison of the annual economic costs of corporate welfare and tariff deadweight loss, highlighting the similar scale of impact between 181 billion in subsidies and the 160 billion loss in output.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-tariffs-and-corporate-welfare-bw-academic.jpg)
+![A comparison of the annual economic impact of corporate welfare ($181 billion) and tariff deadweight loss ($160 billion) contributing to total negative work.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-loss-category-negative-work-tariffs-and-corporate-welfare-bw-academic.jpg)
+
+
 
 **Tariff deadweight loss:** Yale Budget Lab estimates U.S. tariffs reduce long-run GDP by about 0.6%, equivalent to {{< var us_gov_waste_tariffs >}} annually [@yalebudgetlab2025].
 
@@ -592,7 +645,6 @@ The subsidy structure incentivizes overproduction of corn and soy, which form th
 
 We model Total Efficiency Gap as the sum of ten core components, grouped into four categories, with Monte Carlo simulation accounting for correlated uncertainties.
 
-![A range chart comparing modeled efficiency-gap components and uncertainty intervals.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-monte-carlo-simulation-parameters-bw-academic.jpg)
 
 | Category | Mean (Model Output) | Notes |
 |----------|---------------------|-------|
@@ -604,7 +656,6 @@ We model Total Efficiency Gap as the sum of ten core components, grouped into fo
 
 ### Simulation Results
 
-![A comparison chart of the FY 2024-2025 Aggregate Efficiency Gap estimates, illustrating the mean value and its 95 percent confidence interval and percentile distributions.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-simulation-results-bw-academic.jpg)
 
 **Aggregate Efficiency Gap (FY 2024-2025):**
 
@@ -658,9 +709,11 @@ The efficiency rating represents the complement of waste as a percentage of tota
 
 {{< var us_gov_efficiency_rating_latex >}}
 
-![A comparison chart showing the current efficiency range and mean value relative to the significantly higher OECD benchmark range.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-efficiency-rating-calculation-bw-academic.jpg)
 
 **OECD benchmark:** 75-85% efficiency (peer nations achieving comparable outcomes with lower per-capita spending).
+
+![A visual scale representing the efficiency rating from 0 to 100%, highlighting the 75-85% OECD benchmark range as the target for government spending performance.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-efficiency-rating-calculation-bw-academic.jpg)
+
 
 ### Human Cost Quantification (Economic Equivalents)
 
@@ -676,11 +729,15 @@ QALY-Equivalents = {{< var us_gov_waste_total >}} / {{< var medical_qaly_thresho
 
 **Interpretation:** The efficiency gap represents foregone welfare equivalent to {{< var us_gov_waste_qaly_equivalents >}} annually. This does not mean {{< var us_gov_waste_vsl_equivalents >}} people die from inefficiency. Rather, the misallocated resources *could have* purchased health improvements of that magnitude if deployed at cost-effectiveness thresholds used in medical decision-making.
 
-![A comparison showing the efficiency gap converted into human cost equivalents: VSL-equivalents and quality-adjusted life years (QALYs).](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-human-cost-quantification-economic-equivalents-bw-academic.jpg)
+
+
 
 ## Reallocation Potential
 
 If U.S. efficiency improved to OECD median (80%), approximately **{{< var us_gov_waste_recoverable >}} annually** becomes available for reallocation.
+
+![A comparison showing the total U.S. efficiency gap of $4.90 trillion and the $2.45 trillion portion available for reallocation if U.S. efficiency reached the OECD median.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-reallocation-potential-bw-academic.jpg)
+
 
 For scale, the total efficiency gap ({{< var us_gov_waste_total >}}/year) implies the following coverage estimates.
 
@@ -710,21 +767,24 @@ Why do these losses persist despite apparent obviousness? Several structural fac
 
 Government programs lack market feedback mechanisms. A private firm losing $210 billion annually on inefficient logistics would face bankruptcy. Federal agencies face no equivalent selection pressure.
 
-![A comparison showing the closed feedback loop of a private firm where losses lead to bankruptcy versus the severed feedback loop of a federal agency lacking market selection pressure.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-severed-feedback-loops-bw-academic.jpg)
+
+
 
 
 ### Principal-Agent Misalignment
 
 Those administering programs (bureaucrats, contractors) have incentives misaligned with program objectives. Contractors profit from complexity; administrators expand headcount regardless of output.
 
-![A conceptual diagram illustrating the divergence between program objectives and the individual incentives of bureaucrats and contractors.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-principal-agent-misalignment-bw-academic.jpg)
+
+
 
 
 ### Measurement Failure
 
 Current accounting measures expenditure, not utility. A dollar spent equals a dollar of "activity" regardless of outcome. Without output measurement, optimization is impossible.
 
-![A comparison between the current accounting model, which equates expenditure directly with activity, and an optimized model that focuses on measuring utility and outcomes.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-measurement-failure-bw-academic.jpg)
+
+
 
 
 ### Monopoly Dynamics
@@ -758,7 +818,9 @@ Political cycles (2-4 years) misalign with infrastructure and policy cycles (10-
 
 Including these factors would increase the efficiency gap estimate substantially.
 
-![A visualization showing the current efficiency gap estimate compared to the significantly larger gap that would exist if excluded factors like implicit subsidies and intergenerational costs were included.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-what-this-analysis-excludes-bw-academic.jpg)
+![A comparison showing the current efficiency gap estimate versus the significantly larger impact of including excluded variables like implicit subsidies and intergenerational costs.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-what-this-analysis-excludes-bw-academic.jpg)
+
+
 
 
 ### Methodological Limitations
@@ -771,7 +833,9 @@ Including these factors would increase the efficiency gap estimate substantially
 ::: {.callout-note}
 ## See Also
 
-![A visualization showing the 30-52 percent Global Governance Efficiency range and the 101 trillion in annual unrealized potential across sectors like health, migration, and environmental remediation.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-see-also-bw-academic.jpg)
+![A visualization of the $101 trillion annual unrealized potential lost to political dysfunction, highlighting the gap between current governance efficiency and optimal outcomes across health, migration, and environmental sectors.](/assets/images/federal-efficiency-audit/federal-efficiency-audit-section-see-also-bw-academic.jpg)
+
+
 
 For global perspective on governance efficiency and broader opportunity costs of political dysfunction, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd), which extends this analysis to estimate a Global Governance Efficiency Score of 30-52% and identifies $101 trillion in annual unrealized potential from suppressed health innovation, migration restrictions, and lead poisoning remediation delays.
 :::

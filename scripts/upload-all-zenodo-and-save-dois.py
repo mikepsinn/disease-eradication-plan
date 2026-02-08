@@ -9,7 +9,7 @@ Usage:
     python scripts/upload-all-zenodo-and-save-dois.py
     python scripts/upload-all-zenodo-and-save-dois.py economics iab  # specific papers only
     python scripts/upload-all-zenodo-and-save-dois.py --verbose      # show full build output
-    python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild   # validate and upload existing PDFs
+    python scripts/upload-all-zenodo-and-save-dois.py               # smart: skips rebuild if PDF is fresh
 
 Environment:
     ZENODO_TOKEN: API token from https://zenodo.org/account/settings/applications/
@@ -32,14 +32,18 @@ if sys.platform == 'win32':
 sys.path.insert(0, str(Path(__file__).parent))
 
 try:
-    import yaml
     from dotenv import load_dotenv
 except ImportError:
-    print("ERROR: Missing dependency. Run: pip install pyyaml python-dotenv")
+    print("ERROR: Missing dependency. Run: pip install python-dotenv")
     sys.exit(1)
 
 from lib.zenodo_client import ZenodoClient, upload_paper, get_zenodo_token
-from lib.quarto_config_utils import discover_paper_configs, count_qmd_files
+from lib.quarto_config_utils import (
+    discover_paper_configs,
+    count_qmd_files,
+    get_newest_paper_source_mtime,
+    check_and_download_remote_pdf,
+)
 
 PROJECT_ROOT = Path(__file__).parent.parent
 
@@ -87,8 +91,8 @@ def generate_report(report_data: dict) -> str:
             if result and result.get('verified'):
                 status = "OK"
                 doi = result.get('doi', 'N/A')
-                deposit_id = result.get('deposit_id', 'N/A')
-                url = result.get('bucket_url', 'N/A')
+                deposit_id = result.get('id', 'N/A')
+                url = result.get('url', 'N/A')
             else:
                 status = "FAILED"
                 doi = "N/A"
@@ -134,6 +138,7 @@ def discover_papers() -> dict:
             "config_path": info["config_path"],
             "config": info["config"],
             "pdf_path": info["pdf_path"],
+            "pdf_filename": info.get("pdf_filename"),
             "qmd_count": count_qmd_files(info["config"]),
         }
     return papers
@@ -339,16 +344,12 @@ def parse_args() -> argparse.Namespace:
         epilog="""Examples:
   python scripts/upload-all-zenodo-and-save-dois.py
   python scripts/upload-all-zenodo-and-save-dois.py economics iab
-  python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --verbose
-  python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild economics""",
+  python scripts/upload-all-zenodo-and-save-dois.py --verbose
+  python scripts/upload-all-zenodo-and-save-dois.py economics""",
     )
     parser.add_argument(
         "papers", nargs="*",
         help="Specific paper keys to upload (default: all papers)",
-    )
-    parser.add_argument(
-        "--no-rebuild", action="store_true",
-        help="Skip rebuild; validate and upload existing PDFs",
     )
     parser.add_argument(
         "--verbose", "-v", action="store_true",
@@ -406,9 +407,7 @@ def main():
 
     report_data['papers_count'] = len(sorted_keys)
 
-    mode_label = "validate-only" if args.no_rebuild else "rebuild"
-    print(f"Mode: {mode_label}")
-    print("Papers to upload (sorted by size, smallest first):")
+    print("Papers to process (sorted by size, smallest first):")
     for key in sorted_keys:
         print(f"  {key}: {papers[key]['qmd_count']} QMD files")
     print()
@@ -416,59 +415,40 @@ def main():
     assets_pdf_dir = PROJECT_ROOT / "assets" / "pdfs"
     assets_pdf_dir.mkdir(parents=True, exist_ok=True)
 
-    if args.no_rebuild:
-        # --no-rebuild: validate existing PDFs without rebuilding
-        print("Validating existing PDFs (--no-rebuild)...")
-        for paper_key in sorted_keys:
-            info = papers[paper_key]
-            pdf_path = PROJECT_ROOT / info["pdf_path"]
+    # Unified flow: for each paper, get the freshest PDF available
+    # 1. Local PDF newer than sources → use it (skip everything)
+    # 2. Remote published PDF available → download it (skip rebuild)
+    # 3. Neither fresh → rebuild locally
+    print("Getting freshest PDFs...")
+    for paper_key in sorted_keys:
+        info = papers[paper_key]
+        pdf_path = PROJECT_ROOT / info["pdf_path"]
+        newest_source_mtime = get_newest_paper_source_mtime(
+            paper_key=paper_key,
+            paper_config=info,
+            project_root=PROJECT_ROOT,
+        )
 
-            if not pdf_path.exists():
-                print(f"\nFATAL: PDF not found: {pdf_path}")
-                report_data['errors'][paper_key] = [f"PDF not found: {pdf_path}"]
-                report_data['failed_count'] += 1
-                save_report(report_data, start_time)
-                return 1
+        # Step 1: Always check remote — download if newer than local
+        downloaded_pdf = check_and_download_remote_pdf(
+            paper_key=paper_key,
+            paper_config=info,
+            project_root=PROJECT_ROOT,
+            timeout=30,
+        )
+        if downloaded_pdf:
+            pdf_path = downloaded_pdf
 
-            pdf_size_mb = pdf_path.stat().st_size / (1024 * 1024)
-            page_count = get_pdf_page_count(pdf_path)
-
-            print(f"\n[*] Validating {paper_key} ({pdf_size_mb:.1f} MB, {page_count or '?'} pages)...", flush=True)
-
-            passed, validation_errors = validate_existing_pdf(pdf_path, verbose=args.verbose)
-            if not passed:
-                print(f"FATAL: PDF validation failed for {paper_key}")
-                for err in validation_errors:
-                    print(f"  {err}", flush=True)
-                report_data['errors'][paper_key] = validation_errors
-                report_data['failed_count'] += 1
-                save_report(report_data, start_time)
-                return 1
-
-            print(f"[OK] Validated {paper_key}", flush=True)
-
-            report_data['build_results'][paper_key] = {
-                'success': True,
-                'duration_seconds': 0,
-                'errors': [],
-                'qmd_count': info['qmd_count'],
-                'pdf_size': f"{pdf_size_mb:.2f} MB",
-                'pages': page_count,
-            }
-
-            # Copy PDF to assets/pdfs/
-            dest_path = assets_pdf_dir / pdf_path.name
-            shutil.copy2(pdf_path, dest_path)
-            print(f"  -> Copied to: assets/pdfs/{pdf_path.name}")
-    else:
-        # Default: rebuild all PDFs (fail fast if any build fails)
-        print("Building PDFs (smallest first)...")
-        for paper_key in sorted_keys:
-            info = papers[paper_key]
+        # Step 2: Is the PDF (local or just-downloaded) newer than sources?
+        if pdf_path.exists() and pdf_path.stat().st_mtime >= newest_source_mtime:
+            print(f"\n[OK] PDF is fresh for {paper_key}", flush=True)
+            build_result = {"success": True, "duration_seconds": 0.0, "errors": []}
+        else:
+            # Step 3: PDF is stale or missing — rebuild
+            print(f"\n[BUILD] Rebuilding {paper_key} (PDF older than sources)", flush=True)
             build_result = rebuild_paper(paper_key, verbose=args.verbose)
 
             # Store build result with additional metadata
-            pdf_path = PROJECT_ROOT / info["pdf_path"]
             build_result['qmd_count'] = info['qmd_count']
 
             if pdf_path.exists():
