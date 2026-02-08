@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import json
 import os
 import re
 import shutil
@@ -32,6 +33,7 @@ REPORT_PATH = PROJECT_ROOT / "zenodo-upload-report.md"
 AUTONOMY_LOG_DIR = PROJECT_ROOT / "AUTONOMOUS-PIPELINE-LOGS"
 STATUS_PATH = PROJECT_ROOT / "AUTONOMOUS-PIPELINE-STATUS.md"
 PROGRESS_LOG_PATH = PROJECT_ROOT / "AUTONOMOUS-PIPELINE-PROGRESS.log"
+LOCK_PATH = PROJECT_ROOT / "AUTONOMOUS-PIPELINE.lock"
 
 
 if sys.platform == "win32":
@@ -346,6 +348,16 @@ def parse_args() -> argparse.Namespace:
         help="Optional codex model override for codex exec.",
     )
     parser.add_argument(
+        "--continue-on-validation-error",
+        "--collect-all-validation-errors",
+        dest="continue_on_validation_error",
+        action="store_true",
+        help=(
+            "Pass through to uploader: continue validating remaining papers even when one fails validation; "
+            "failed-validation papers are not uploaded."
+        ),
+    )
+    parser.add_argument(
         "--ignore-perfected-cache-first-pass",
         "--force-reprocess-first",
         "--force-first",
@@ -380,6 +392,7 @@ def main() -> int:
     print(f"Project root: {PROJECT_ROOT}")
     print(f"LLM pages: {args.llm_pages} ({'full PDF' if args.llm_pages == 0 else 'sampled'})")
     print(f"Max cycles: {args.max_cycles}")
+    print(f"Continue on validation error: {bool(args.continue_on_validation_error)}")
     print("No-commit policy: enforced in codex prompt + HEAD guard")
     if selected_papers:
         print(f"Paper scope: {', '.join(selected_papers)}")
@@ -391,6 +404,7 @@ def main() -> int:
         progress_file.write(f"Paper scope: {', '.join(selected_papers) if selected_papers else 'all papers'}\n")
         progress_file.write(f"LLM pages: {args.llm_pages}\n")
         progress_file.write(f"Max cycles: {args.max_cycles}\n")
+        progress_file.write(f"Continue on validation error: {bool(args.continue_on_validation_error)}\n")
         progress_file.flush()
     append_status(
         [
@@ -400,6 +414,7 @@ def main() -> int:
             f"- Paper scope: `{', '.join(selected_papers) if selected_papers else 'all papers'}`",
             f"- LLM pages: `{args.llm_pages}`",
             f"- Max cycles: `{args.max_cycles}`",
+            f"- Continue on validation error: `{bool(args.continue_on_validation_error)}`",
             f"- No-commit policy: `{True}`",
             f"- Codex executable: `{codex_exe or 'not found at start'}`",
             f"- Live progress log: `{PROGRESS_LOG_PATH}`",
@@ -407,6 +422,8 @@ def main() -> int:
     )
 
     base_upload_cmd = [python_exe, str(UPLOAD_SCRIPT), "--llm-pages", str(args.llm_pages)]
+    if args.continue_on_validation_error:
+        base_upload_cmd.append("--continue-on-validation-error")
     if selected_papers:
         base_upload_cmd.extend(selected_papers)
 

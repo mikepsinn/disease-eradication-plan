@@ -56,6 +56,8 @@ PDF_VALIDATION_CACHE_PATH = PROJECT_ROOT / ".cache" / "pdf-validation-upload-cac
 VALIDATION_CACHE_VERSION = 5
 PERFECTED_STATE_PATH = PROJECT_ROOT / ".cache" / "zenodo-perfect-upload-state.json"
 PERFECTED_STATE_VERSION = 2
+REPORT_ARCHIVE_DIR = PROJECT_ROOT / "ZENODO-UPLOAD-REPORTS"
+VALIDATION_ERROR_REPORT_DIR = PROJECT_ROOT / "ZENODO-VALIDATION-ERRORS"
 DEFAULT_LLM_BLOCKING_TYPES = (
     "LLM_UNRENDERED_CODE_OR_VARIABLE",
     "LLM_PLACEHOLDER_TEXT",
@@ -426,6 +428,7 @@ def generate_report(report_data: dict) -> str:
         f"- **Skipped (already perfected/uploaded):** {skipped_count}",
         f"- **LLM Blocking Types:** `{', '.join(report_data.get('llm_blocking_types', list(DEFAULT_LLM_BLOCKING_TYPES))) or '(none)'}`",
         f"- **LLM Warning Types:** `{', '.join(report_data.get('llm_warning_types', list(DEFAULT_LLM_WARNING_TYPES))) or '(none)'}`",
+        f"- **Continue On Validation Error:** `{bool(report_data.get('continue_on_validation_error', False))}`",
         "",
     ]
 
@@ -522,8 +525,8 @@ def generate_report(report_data: dict) -> str:
         lines.extend([
             "## Upload Results",
             "",
-            "| Paper | Status | DOI | Deposit ID | URL |",
-            "|-------|--------|-----|------------|-----|",
+            "| Paper | Status | DOI | Deposit ID | URL | Notes |",
+            "|-------|--------|-----|------------|-----|-------|",
         ])
         for paper_key, result in report_data['upload_results'].items():
             if result and result.get('skipped'):
@@ -531,17 +534,20 @@ def generate_report(report_data: dict) -> str:
                 doi = result.get('doi', 'N/A')
                 deposit_id = result.get('id', 'N/A')
                 url = result.get('url', 'N/A')
+                notes = str(result.get("reason", "Skipped")).replace("|", "\\|")
             elif result and result.get('verified'):
                 status = "OK"
                 doi = result.get('doi', 'N/A')
                 deposit_id = result.get('id', 'N/A')
                 url = result.get('url', 'N/A')
+                notes = str(result.get("reason", "") or "-").replace("|", "\\|")
             else:
                 status = "FAILED"
                 doi = "N/A"
                 deposit_id = "N/A"
                 url = "N/A"
-            lines.append(f"| {paper_key} | {status} | {doi} | {deposit_id} | {url} |")
+                notes = str((result or {}).get("reason", "Upload not completed")).replace("|", "\\|")
+            lines.append(f"| {paper_key} | {status} | {doi} | {deposit_id} | {url} | {notes} |")
         lines.append("")
 
     if report_data['errors']:
@@ -968,15 +974,88 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
         return {"success": False, "duration_seconds": duration, "errors": errors}
 
 
+def _resolve_run_id(report_data: dict) -> str:
+    """Resolve a stable run id used for report archive filenames."""
+    run_id = str(report_data.get("run_id", "") or "").strip()
+    if run_id:
+        return run_id
+    return datetime.now().strftime("%Y%m%d-%H%M%S-%f")
+
+
+def _generate_validation_error_report(report_data: dict) -> str | None:
+    """Build a dedicated validation error report containing all blocking validation errors."""
+    validation_results = report_data.get("validation_results", {})
+    if not isinstance(validation_results, dict):
+        return None
+
+    failed_entries: list[tuple[str, list[str], str]] = []
+    for paper_key, result in validation_results.items():
+        if not isinstance(result, dict):
+            continue
+        errors = result.get("errors", [])
+        if not isinstance(errors, list):
+            continue
+        normalized_errors = [str(e).strip() for e in errors if str(e).strip()]
+        if not normalized_errors:
+            continue
+        note = str(result.get("notes", "") or "").strip()
+        failed_entries.append((str(paper_key), normalized_errors, note))
+
+    if not failed_entries:
+        return None
+
+    lines = [
+        "# Zenodo Validation Errors",
+        "",
+        f"**Date:** {report_data.get('timestamp', datetime.now().strftime('%Y-%m-%d %H:%M:%S'))}",
+        f"**Run ID:** {report_data.get('run_id', 'N/A')}",
+        f"**Failed Papers:** {len(failed_entries)}",
+        "",
+        "## Errors",
+        "",
+    ]
+
+    for paper_key, errors, note in failed_entries:
+        lines.append(f"### {paper_key}")
+        lines.append("")
+        if note:
+            lines.append(f"- **Summary:** {note}")
+        lines.append(f"- **Blocking Errors:** {len(errors)}")
+        lines.append("")
+        for error in errors:
+            lines.append(f"- {error}")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
 def save_report(report_data: dict, start_time: float) -> Path:
     """Generate and save report to project root.
 
     Returns the path to the saved report.
     """
     report_data['total_duration'] = time.time() - start_time
+    run_id = _resolve_run_id(report_data)
+    report_data["run_id"] = run_id
+    report_text = generate_report(report_data)
+
     report_path = PROJECT_ROOT / "zenodo-upload-report.md"
-    report_path.write_text(generate_report(report_data), encoding='utf-8')
+    report_path.write_text(report_text, encoding='utf-8')
+    REPORT_ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    archived_report_path = REPORT_ARCHIVE_DIR / f"zenodo-upload-report-{run_id}.md"
+    archived_report_path.write_text(report_text, encoding="utf-8")
+
+    validation_error_path: Path | None = None
+    validation_error_text = _generate_validation_error_report(report_data)
+    if validation_error_text:
+        VALIDATION_ERROR_REPORT_DIR.mkdir(parents=True, exist_ok=True)
+        validation_error_path = VALIDATION_ERROR_REPORT_DIR / f"zenodo-validation-errors-{run_id}.md"
+        validation_error_path.write_text(validation_error_text, encoding="utf-8")
+
     print(f"\nReport saved to: {report_path}")
+    print(f"Archived report saved to: {archived_report_path}")
+    if validation_error_path:
+        print(f"Validation error report saved to: {validation_error_path}")
     return report_path
 
 
@@ -1017,6 +1096,14 @@ def parse_args() -> argparse.Namespace:
         help="Ignore perfected/uploaded state cache and process all selected papers again",
     )
     parser.add_argument(
+        "--continue-on-validation-error",
+        action="store_true",
+        help=(
+            "Continue processing remaining non-perfect papers when a paper fails validation. "
+            "Failed-validation papers are not uploaded."
+        ),
+    )
+    parser.add_argument(
         "--llm-blocking-types",
         default=",".join(DEFAULT_LLM_BLOCKING_TYPES),
         help=(
@@ -1039,6 +1126,7 @@ def main():
     args = parse_args()
     start_time = time.time()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    run_id = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
     llm_blocking_types = _parse_llm_type_csv(
         args.llm_blocking_types,
         DEFAULT_LLM_BLOCKING_TYPES,
@@ -1051,12 +1139,14 @@ def main():
 
     # Initialize report data
     report_data = {
+        'run_id': run_id,
         'timestamp': timestamp,
         'papers_count': 0,
         'success_count': 0,
         'failed_count': 0,
         'llm_blocking_types': sorted(llm_blocking_types),
         'llm_warning_types': sorted(llm_warning_types),
+        'continue_on_validation_error': bool(args.continue_on_validation_error),
         'skipped_results': {},
         'build_results': {},
         'validation_results': {},
@@ -1130,13 +1220,16 @@ def main():
         "LLM warning types: "
         + (", ".join(sorted(llm_warning_types)) if llm_warning_types else "(none)")
     )
-    print("Validation behavior: fail-fast on first failed PDF")
+    if args.continue_on_validation_error:
+        print("Validation behavior: continue past validation failures (skip upload for failed papers)")
+    else:
+        print("Validation behavior: fail-fast on first failed PDF")
     log_action(
         "Validation configured with "
         f"llm_pages={args.llm_pages}, "
         f"llm_blocking_types={','.join(sorted(llm_blocking_types)) or '(none)'}, "
         f"llm_warning_types={','.join(sorted(llm_warning_types)) or '(none)'}, "
-        "fail_fast=true"
+        f"continue_on_validation_error={bool(args.continue_on_validation_error)}"
     )
 
     if args.force_reprocess:
@@ -1203,13 +1296,15 @@ def main():
     # 1. Local PDF newer than sources → use it (skip everything)
     # 2. Remote published PDF available → download it (skip rebuild)
     # 3. Neither fresh → rebuild locally
-    # 4. Validate the paper immediately and fail-fast on first validation failure
+    # 4. Validate the paper immediately (either fail-fast or continue mode)
     print("Getting freshest PDFs...")
     print("\nRunning required PDF validation (LLM enabled, cached by file signature)...")
     if args.force_revalidate:
         print("  Validation cache: disabled (--force-revalidate)")
     else:
         print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+
+    upload_candidates: list[str] = []
 
     for paper_key in process_keys:
         info = papers[paper_key]
@@ -1337,9 +1432,13 @@ def main():
                 f"Validated {paper_key}: passed ({source_note})"
                 + (f" with {len(validation_warnings)} warning(s)" if validation_warnings else "")
             )
+            upload_candidates.append(paper_key)
             continue
 
-        print(f"\nFATAL: Validation failed for {paper_key}")
+        if args.continue_on_validation_error:
+            print(f"\n[VALIDATION FAILED] {paper_key}")
+        else:
+            print(f"\nFATAL: Validation failed for {paper_key}")
         for error in validation_errors[:10]:
             print(f"  - {error}")
         if len(validation_errors) > 10:
@@ -1349,14 +1448,29 @@ def main():
 
         report_data['errors'][paper_key] = validation_errors or ["PDF validation failed"]
         report_data['failed_count'] += 1
+        report_data['upload_results'][paper_key] = {
+            "verified": False,
+            "reason": "Skipped upload because validation failed",
+            "validation_blocked": True,
+        }
         log_action(
             f"Validation failed for {paper_key}; blocking errors={len(validation_errors)} warnings={len(validation_warnings)}"
         )
+        if args.continue_on_validation_error:
+            log_action(f"Continuing after validation failure for {paper_key}")
+            print("  -> Upload skipped for this paper")
+            print("  -> Continuing to next paper")
+            continue
+
         save_report(report_data, start_time)
         return 1
 
-    # Upload each paper (same order as build, fail-fast on errors)
-    for paper_key in process_keys:
+    if not upload_candidates:
+        print("\nNo papers eligible for upload after validation.")
+        log_action("No papers eligible for upload after validation")
+
+    # Upload each validated paper (same order as build, fail-fast on upload errors)
+    for paper_key in upload_candidates:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
         log_action(f"Uploading {paper_key}")
