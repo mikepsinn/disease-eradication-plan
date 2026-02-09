@@ -5635,7 +5635,7 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[1994]] },
         'container-title': "CDC MMWR",
         URL: "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm",
-        note: "CDC MMWR, Childhood Immunizations 1994-2023 | The Lancet, 50 Years of Expanded Programme on Immunization00850-X/fulltext)",
+        note: "CDC MMWR, Childhood Immunizations 1994-2023 | The Lancet, 50 Years of Expanded Programme on Immunization | https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)00850-X/fulltext",
   },
   "childhood-vaccination-roi": {
         id: "childhood-vaccination-roi",
@@ -5804,11 +5804,12 @@ export const citations: Record<string, Citation> = {
         title: "Annual global economic burden of heart disease",
         author: [
           {
-            literal: "Int'l Journal of Cardiology"
+            family: "Cook",
+            given: "Christopher and Cole, Graham and Asaria, Perviz and Jabbour, Richard and Francis, Darrel P."
           },
         ],
-        issued: { 'date-parts': [[2050]] },
-        'container-title': "International Journal of Cardiology: The annual global economic burden of heart failure",
+        issued: { 'date-parts': [[2014]] },
+        'container-title': "International Journal of Cardiology",
         URL: "https://www.internationaljournalofcardiology.com/article/S0167-5273(13)02238-9/abstract",
         note: "International Journal of Cardiology: The annual global economic burden of heart failure | AHA: US CVD Costs to 2050",
   },
@@ -6086,7 +6087,7 @@ export const citations: Record<string, Citation> = {
         ],
         'container-title': "Applied Clinical Trials",
         URL: "https://www.appliedclinicaltrialsonline.com/view/sizing-clinical-research-market",
-        note: "Applied Clinical Trials | Lancet Global Health30357-0/fulltext)",
+        note: "Applied Clinical Trials | Lancet Global Health | https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30357-0/fulltext",
   },
   "global-military-spending": {
         id: "global-military-spending",
@@ -6251,7 +6252,7 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2024]] },
         'container-title': "Institute for Health Metrics and Evaluation (IHME)",
         URL: "https://vizhub.healthdata.org/gbd-results/",
-        note: "Institute for Health Metrics and Evaluation (IHME), GBD Results Tool | The Lancet, 2024, Global burden of 371 diseases and injuries, and 87 risk factors, in 204 countries, 2000-202100757-8/fulltext) | IHME, Global Burden of Disease Study 2021",
+        note: "Institute for Health Metrics and Evaluation (IHME), GBD Results Tool | The Lancet, 2024, Global burden of 371 diseases and injuries, and 87 risk factors, in 204 countries, 2000-2021 | https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)00757-8/fulltext | IHME, Global Burden of Disease Study 2021",
   },
   "imf-fossilfuel2023": {
         id: "imf-fossilfuel2023",
@@ -6358,7 +6359,7 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2012]] },
         'container-title': "PMC: Benefits Smoking Cessation Longevity",
         URL: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1447499/",
-        note: "PMC: Benefits Smoking Cessation Longevity | CDC: Estimating Benefits Smoking Reductions | AJPM: Benefits Quitting Different Ages00217-4/fulltext) | NEJM: 21st-Century Hazards & Benefits",
+        note: "PMC: Benefits Smoking Cessation Longevity | CDC: Estimating Benefits Smoking Reductions | AJPM: Benefits Quitting Different Ages | https://www.ajpmonline.org/article/S0749-3797(24)00217-4/fulltext | NEJM: 21st-Century Hazards & Benefits",
   },
   "life-expectancy-increase-pre-1962": {
         id: "life-expectancy-increase-pre-1962",
@@ -6610,9 +6611,9 @@ export const citations: Record<string, Citation> = {
             literal: "Value in Health"
           },
         ],
-        'container-title': "Value in Health: Sales Revenues for New Therapeutic Agents02754-2/fulltext)",
+        'container-title': "Value in Health: Sales Revenues for New Therapeutic Agents",
         URL: "https://www.sciencedirect.com/science/article/pii/S1098301524027542",
-        note: "Value in Health: Sales Revenues for New Therapeutic Agents02754-2/fulltext) | ScienceDirect: Sales Revenues FDA Drugs",
+        note: "Value in Health: Sales Revenues for New Therapeutic Agents | ScienceDirect: Sales Revenues FDA Drugs",
   },
   "pharma-roi-current": {
         id: "pharma-roi-current",
@@ -7146,7 +7147,7 @@ export const citations: Record<string, Citation> = {
         title: "Valley of Death in Drug Development",
         author: [
           {
-            literal: "Hutchinson & Kirk (2011)"
+            literal: "Hutchinson and Kirk"
           },
         ],
         issued: { 'date-parts': [[2011]] },
