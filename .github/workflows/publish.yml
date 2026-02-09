@@ -92,6 +92,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-1-pct-treaty-impact
@@ -221,6 +222,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-cost-of-change
@@ -350,6 +352,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-dfda-impact
@@ -479,6 +482,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-dfda-spec
@@ -608,6 +612,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-federal-efficiency-audit
@@ -737,6 +742,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-iab
@@ -866,6 +872,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-invisible-graveyard
@@ -995,6 +1002,7 @@ jobs:
         timeout-minutes: 75
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-manual
@@ -1124,6 +1132,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-obg
@@ -1253,6 +1262,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-opg
@@ -1382,6 +1392,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-optimocracy
@@ -1511,6 +1522,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-political-dysfunction-tax
@@ -1640,6 +1652,7 @@ jobs:
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-wishocracy
