@@ -24,7 +24,7 @@ import yaml
 # Add scripts directory to path for latex_utils import
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
-from lib.latex_utils import sanitize_for_latex
+from lib.latex_utils import sanitize_for_latex  # type: ignore[import-not-found]
 
 
 def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:

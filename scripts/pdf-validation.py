@@ -48,6 +48,8 @@ if sys.platform == "win32":
 IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
 GITHUB_STEP_SUMMARY = os.environ.get("GITHUB_STEP_SUMMARY")
 DEFAULT_PDF_DIR = Path(__file__).parent.parent / "assets" / "pdfs"
+LLM_PAGE_CACHE_VERSION = 1
+LLM_VALIDATION_PROMPT_VERSION = "2026-02-09-v1"
 
 
 class PDFValidationError:
@@ -456,6 +458,8 @@ class PDFValidator:
         self.errors: list[PDFValidationError] = []
         self.cache_dir = Path(__file__).parent.parent / ".cache"
         self.cache_file = self.cache_dir / "pdf-validation-cache.json"
+        self.llm_page_cache_file = self.cache_dir / "pdf-validation-llm-pages.json"
+        self.current_pdf_hash: str | None = None
 
     def _get_pdf_hash(self) -> str:
         """Compute SHA256 hash of the PDF file."""
@@ -483,6 +487,74 @@ class PDFValidator:
                 json.dump(cache_data, f, indent=2)
         except Exception as e:
             print(f"[WARNING] Failed to save cache: {e}")
+
+    def _load_llm_page_cache(self) -> dict:
+        """Load LLM per-page validation cache."""
+        if not self.llm_page_cache_file.exists():
+            return {"version": LLM_PAGE_CACHE_VERSION, "entries": {}}
+        try:
+            with open(self.llm_page_cache_file, "r", encoding="utf-8") as f:
+                cache = json.load(f)
+        except Exception:
+            return {"version": LLM_PAGE_CACHE_VERSION, "entries": {}}
+
+        if not isinstance(cache, dict) or cache.get("version") != LLM_PAGE_CACHE_VERSION:
+            return {"version": LLM_PAGE_CACHE_VERSION, "entries": {}}
+        entries = cache.get("entries")
+        if not isinstance(entries, dict):
+            return {"version": LLM_PAGE_CACHE_VERSION, "entries": {}}
+        return cache
+
+    def _save_llm_page_cache(self, cache_data: dict):
+        """Save LLM per-page validation cache."""
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            with open(self.llm_page_cache_file, "w", encoding="utf-8") as f:
+                json.dump(cache_data, f, indent=2)
+        except Exception as e:
+            print(f"[WARNING] Failed to save LLM page cache: {e}")
+
+    def _normalize_text_for_hash(self, text: str) -> str:
+        """Normalize extracted text before hashing for cache keying."""
+        return re.sub(r"\s+", " ", text).strip()
+
+    def _get_llm_model_id(self) -> str:
+        """Resolve active model id used for LLM page validation."""
+        model_id = getattr(llm, "GEMINI_FLASH_MODEL_ID", None) if llm else None
+        return model_id if isinstance(model_id, str) and model_id.strip() else "gemini-flash"
+
+    def _build_llm_page_cache_key(self, page_idx: int, text: str) -> str:
+        """Build a stable cache key for a page-level LLM validation result."""
+        normalized_text = self._normalize_text_for_hash(text)
+        text_hash = hashlib.sha256(normalized_text.encode("utf-8", errors="replace")).hexdigest()
+        pdf_hash = self.current_pdf_hash or self._get_pdf_hash()
+        raw_key = (
+            f"{pdf_hash}|{page_idx}|{text_hash}|{self._get_llm_model_id()}|"
+            f"{LLM_VALIDATION_PROMPT_VERSION}"
+        )
+        return hashlib.sha256(raw_key.encode("utf-8", errors="replace")).hexdigest()
+
+    def _record_llm_issues(self, page_idx: int, issues: list[dict[str, Any]]) -> int:
+        """Convert parsed LLM issues into validation errors and return issue count."""
+        for issue in issues:
+            severity_map = {
+                "CRITICAL": PDFValidationError.SEVERITY_CRITICAL,
+                "WARNING": PDFValidationError.SEVERITY_WARNING,
+                "INFO": PDFValidationError.SEVERITY_INFO,
+            }
+            severity = severity_map.get(
+                issue.get("severity", "WARNING"),
+                PDFValidationError.SEVERITY_WARNING,
+            )
+
+            issue_type = issue.get("type", "OTHER").upper().replace(" ", "_")
+            self._add_error(
+                page_idx + 1,
+                f"LLM_{issue_type}",
+                severity,
+                issue.get("description", "LLM-detected issue"),
+            )
+        return len(issues)
 
     def _add_error(
         self,
@@ -750,6 +822,8 @@ class PDFValidator:
             return self.errors
 
         page_count = len(self.doc)
+        llm_page_cache = self._load_llm_page_cache() if self.use_cache else {"version": LLM_PAGE_CACHE_VERSION, "entries": {}}
+        llm_page_cache_entries = llm_page_cache.setdefault("entries", {})
 
         # Sample pages evenly distributed.
         # llm_sample_pages <= 0 means "validate all pages".
@@ -785,6 +859,19 @@ class PDFValidator:
             # Truncate long pages
             if len(text) > 8000:
                 text = text[:8000] + "\n[...truncated...]"
+
+            cache_key = self._build_llm_page_cache_key(page_idx, text)
+            if self.use_cache:
+                cached = llm_page_cache_entries.get(cache_key)
+                if isinstance(cached, dict):
+                    cached_issues = cached.get("issues", [])
+                    if isinstance(cached_issues, list):
+                        issue_count = self._record_llm_issues(page_idx, cached_issues)
+                        print(
+                            f"[LLM] Page {sample_idx}/{sample_total} cache hit ({issue_count} issue(s))",
+                            flush=True,
+                        )
+                        continue
 
             prompt = f"""Analyze this PDF page text for publication-blocking quality defects.
 
@@ -876,26 +963,16 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
                 if not isinstance(issues, list):
                     raise ValueError("LLM response issues is not a list")
 
-                for issue in issues:
-                    severity_map = {
-                        "CRITICAL": PDFValidationError.SEVERITY_CRITICAL,
-                        "WARNING": PDFValidationError.SEVERITY_WARNING,
-                        "INFO": PDFValidationError.SEVERITY_INFO,
+                issue_count = self._record_llm_issues(page_idx, issues)
+                if self.use_cache:
+                    llm_page_cache_entries[cache_key] = {
+                        "cached_at": datetime.now().isoformat(),
+                        "model_id": self._get_llm_model_id(),
+                        "prompt_version": LLM_VALIDATION_PROMPT_VERSION,
+                        "issues": issues,
                     }
-                    severity = severity_map.get(
-                        issue.get("severity", "WARNING"),
-                        PDFValidationError.SEVERITY_WARNING,
-                    )
-
-                    issue_type = issue.get("type", "OTHER").upper().replace(" ", "_")
-                    self._add_error(
-                        page_idx + 1,
-                        f"LLM_{issue_type}",
-                        severity,
-                        issue.get("description", "LLM-detected issue"),
-                    )
                 print(
-                    f"[LLM] Page {sample_idx}/{sample_total} complete ({len(issues)} issue(s))",
+                    f"[LLM] Page {sample_idx}/{sample_total} complete ({issue_count} issue(s))",
                     flush=True,
                 )
 
@@ -905,11 +982,15 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
                     file=sys.stderr,
                 )
 
+        if self.use_cache:
+            self._save_llm_page_cache(llm_page_cache)
+
         return self.errors
 
     def validate(self) -> list[PDFValidationError]:
         """Run all validation checks."""
         pdf_hash = self._get_pdf_hash()
+        self.current_pdf_hash = pdf_hash
         cache = self._load_cache()
         
         # Check cache if enabled

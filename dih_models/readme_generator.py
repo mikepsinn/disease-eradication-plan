@@ -132,13 +132,6 @@ def generate_readme(
     variables = load_variables(variables_path)
     print(f"[*] Loaded {len(variables)} variables for README generation")
 
-    # Helper to resolve variables in text
-    def v(text: str) -> str:
-        return replace_variables(text, variables, highlight_missing=False)
-
-    # Build README content
-    readme_parts = []
-
     # Helper to resolve variables and clean for README prose
     def v(text: str, clean_units: bool = True) -> str:
         result = replace_variables(text, variables, highlight_missing=False)
@@ -146,6 +139,9 @@ def generate_readme(
         if clean_units:
             result = clean_value_for_prose(result)
         return result
+
+    # Build README content
+    readme_parts = []
 
 
     papers_qmd = project_root / "knowledge" / "papers.qmd"

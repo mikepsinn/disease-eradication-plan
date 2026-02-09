@@ -464,6 +464,7 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
     # Calculate path depth for transformation
     source_parts = Path(index_source).parts
     depth = len(source_parts) - 1  # Exclude filename
+    source_dir = ""
 
     if depth > 0:
         source_dir = "/".join(source_parts[:-1])
