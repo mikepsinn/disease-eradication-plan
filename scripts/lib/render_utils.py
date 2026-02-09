@@ -19,12 +19,11 @@ from pathlib import Path
 from typing import Callable, List, Optional, Tuple
 
 try:
-    from dotenv import load_dotenv
+    from .pdf_validation_runner import run_pdf_validation as run_pdf_validation_subprocess
+    from .python_utils import get_preferred_python, load_project_dotenv
 except ImportError:
-    load_dotenv = None
-
-from .pdf_validation_runner import run_pdf_validation as run_pdf_validation_subprocess
-from .python_utils import get_preferred_python
+    from pdf_validation_runner import run_pdf_validation as run_pdf_validation_subprocess
+    from python_utils import get_preferred_python, load_project_dotenv
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == "win32" and isinstance(sys.stdout, io.TextIOWrapper):
@@ -1231,8 +1230,7 @@ def run_pdf_validation(
     log_with_timestamp("=" * 80)
 
     # Ensure .env values are loaded for subprocesses that rely on process env.
-    if callable(load_dotenv):
-        load_dotenv(override=True)
+    load_project_dotenv(Path(__file__).resolve().parent.parent.parent)
 
     # Check if LLM validation should be enabled
     gemini_key = os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY")

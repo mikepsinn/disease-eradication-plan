@@ -40,7 +40,6 @@ from pathlib import Path
 from typing import Optional, List, Set, Dict, Any
 
 import yaml
-from dotenv import load_dotenv
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
@@ -54,6 +53,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 # Add scripts/lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from build_logger import BuildLogger  # type: ignore[import-not-found]
+from python_utils import load_project_dotenv  # type: ignore[import-not-found]
 from render_utils import (  # type: ignore[import-not-found]
     BuildMonitor,
     create_latex_parser,
@@ -1354,7 +1354,7 @@ def _publish_to_zenodo(config_name: str, draft: bool = True) -> int:
 
     # Load .env file if present
     project_root = _find_project_root()
-    load_dotenv(project_root / ".env")
+    load_project_dotenv(project_root)
 
     # Get token
     token = get_zenodo_token()

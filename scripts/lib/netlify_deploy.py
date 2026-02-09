@@ -10,12 +10,12 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Try to load dotenv if available
 try:
-    from dotenv import load_dotenv
-    load_dotenv()
+    from .python_utils import load_project_dotenv
 except ImportError:
-    pass  # dotenv not available, continue without it
+    from python_utils import load_project_dotenv
+
+load_project_dotenv(Path(__file__).parent.parent.parent)
 
 
 def check_netlify_cli():

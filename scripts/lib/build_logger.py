@@ -36,11 +36,13 @@ import os
 from datetime import datetime
 from io import TextIOWrapper
 from pathlib import Path
-from typing import Optional, TextIO, Callable, Iterable, Sequence
+from typing import Optional, TextIO, Callable, Iterable, Sequence, cast
 
 # Set UTF-8 encoding for stdout on Windows
-if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
-    sys.stdout.reconfigure(encoding='utf-8')
+if sys.platform == 'win32':
+    stdout_reconfigure = getattr(sys.stdout, "reconfigure", None)
+    if callable(stdout_reconfigure):
+        stdout_reconfigure(encoding='utf-8')
 
 
 class TeeWriter(TextIOWrapper):
@@ -285,6 +287,41 @@ def run_command_stream(
         sink.flush()
     process.wait()
     return int(process.returncode), "".join(output_lines)
+
+
+def run_logged_command_stream(
+    cmd: list[str],
+    cwd: Path,
+    log_path: Path,
+    *,
+    log_mode: str = "w",
+    suppress_filters: Optional[Sequence[Callable[[str], bool]]] = None,
+    extra_sinks: Optional[Sequence[TextIO]] = None,
+    print_banner: bool = True,
+) -> tuple[int, str]:
+    """
+    Run command with streamed console output and persistent file logging.
+
+    This wraps `run_command_stream` and centralizes common boilerplate used
+    by workflow scripts that need [RUN]/[LOG] banners plus full output logs.
+    """
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    command_text = " ".join(cmd)
+    if print_banner:
+        print(f"[RUN] {command_text}", flush=True)
+        print(f"[LOG] {log_path}", flush=True)
+    with open(log_path, log_mode, encoding="utf-8") as log_file_raw:
+        log_file = cast(TextIO, log_file_raw)
+        if print_banner:
+            log_file.write(f"\n[RUN] {command_text}\n")
+            log_file.flush()
+        return run_command_stream(
+            cmd=cmd,
+            cwd=cwd,
+            log_file=log_file,
+            suppress_filters=suppress_filters,
+            extra_sinks=extra_sinks,
+        )
 
 
 # Singleton instance for simple usage

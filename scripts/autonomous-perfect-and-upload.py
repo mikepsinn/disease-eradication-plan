@@ -27,7 +27,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 
-from lib.build_logger import run_command_stream
+from lib.build_logger import run_logged_command_stream
 from lib.python_utils import get_preferred_python
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -50,36 +50,32 @@ def run_and_tee(
     progress_log_path: Path | None = None,
 ) -> int:
     """Run command, stream output to console, and write full log."""
-    log_path.parent.mkdir(parents=True, exist_ok=True)
     command_display = " ".join(shlex.quote(c) for c in cmd)
-    print(f"\n[RUN] {command_display}", flush=True)
-    print(f"[LOG] {log_path}", flush=True)
-
     progress_file = None
-    if progress_log_path:
-        progress_file = progress_log_path.open("a", encoding="utf-8", errors="replace")
-        start_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        progress_file.write(f"\n[{start_stamp}] [RUN] {command_display}\n")
-        progress_file.write(f"[{start_stamp}] [LOG] {log_path}\n")
-        progress_file.flush()
+    try:
+        if progress_log_path:
+            progress_file = progress_log_path.open("a", encoding="utf-8", errors="replace")
+            start_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            progress_file.write(f"\n[{start_stamp}] [RUN] {command_display}\n")
+            progress_file.write(f"[{start_stamp}] [LOG] {log_path}\n")
+            progress_file.flush()
 
-    with log_path.open("w", encoding="utf-8", errors="replace") as log_file:
-        try:
-            extra_sinks = [progress_file] if progress_file else []
-            return_code, _ = run_command_stream(
-                cmd=cmd,
-                cwd=cwd,
-                log_file=log_file,
-                extra_sinks=extra_sinks,
-            )
+        return_code, _ = run_logged_command_stream(
+            cmd=cmd,
+            cwd=cwd,
+            log_path=log_path,
+            log_mode="w",
+            extra_sinks=[progress_file] if progress_file else None,
+            print_banner=True,
+        )
+        if progress_file:
             end_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            if progress_file:
-                progress_file.write(f"\n[{end_stamp}] [EXIT] rc={return_code}\n")
-                progress_file.flush()
-            return return_code
-        finally:
-            if progress_file:
-                progress_file.close()
+            progress_file.write(f"\n[{end_stamp}] [EXIT] rc={return_code}\n")
+            progress_file.flush()
+        return return_code
+    finally:
+        if progress_file:
+            progress_file.close()
 
 
 def read_report() -> str:

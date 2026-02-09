@@ -11,7 +11,10 @@ import subprocess
 import sys
 import time
 
-from .validation_output_utils import extract_validation_errors, extract_ai_fix_log_path
+try:
+    from .validation_output_utils import extract_validation_errors, extract_ai_fix_log_path
+except ImportError:
+    from validation_output_utils import extract_validation_errors, extract_ai_fix_log_path
 
 
 @dataclass

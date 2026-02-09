@@ -34,23 +34,19 @@ if sys.platform == 'win32':
 
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    pass
-
 import requests
 
-from zenodo_client import (
+from python_utils import load_project_dotenv  # type: ignore[import-not-found]
+from zenodo_client import (  # type: ignore[import-not-found]
     extract_zenodo_metadata,
     get_zenodo_token,
     get_record_id_from_doi,
 )
-from quarto_config_utils import discover_paper_configs
+from quarto_config_utils import discover_paper_configs  # type: ignore[import-not-found]
 
 ZENODO_API = "https://zenodo.org/api"
 PROJECT_ROOT = Path(__file__).parent.parent
+load_project_dotenv(PROJECT_ROOT)
 
 DUPLICATE_SIMILARITY_THRESHOLD = 0.9
 

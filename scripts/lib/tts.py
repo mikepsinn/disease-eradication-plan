@@ -16,9 +16,12 @@ if sys.platform == 'win32':
 
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv
+try:
+    from .python_utils import load_project_dotenv
+except ImportError:
+    from python_utils import load_project_dotenv
 
-load_dotenv()
+load_project_dotenv(Path(__file__).parent.parent.parent)
 
 # --- Configuration ---
 TTS_MODEL_ID = "gemini-2.5-pro-preview-tts"

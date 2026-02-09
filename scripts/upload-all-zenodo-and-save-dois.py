@@ -19,6 +19,7 @@ Environment:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -29,17 +30,12 @@ import shutil
 import time
 from datetime import datetime
 from pathlib import Path
+from typing import Final
 
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 sys.path.insert(0, str(Path(__file__).parent))
-
-try:
-    from dotenv import load_dotenv
-except ImportError:
-    print("ERROR: Missing dependency. Run: pip install python-dotenv")
-    sys.exit(1)
 
 from lib.zenodo_client import ZenodoClient, upload_paper, get_zenodo_token
 from lib.zenodo_client import get_record_id_from_doi
@@ -51,7 +47,7 @@ from lib.quarto_config_utils import (
 )
 from lib.hash_utils import compute_sha256, compute_md5
 from lib.pdf_validation_runner import run_pdf_validation
-from lib.python_utils import get_preferred_python
+from lib.python_utils import get_preferred_python, load_project_dotenv
 
 PROJECT_ROOT = Path(__file__).parent.parent
 PDF_VALIDATION_CACHE_PATH = PROJECT_ROOT / ".cache" / "pdf-validation-upload-cache.json"
@@ -60,7 +56,7 @@ PERFECTED_STATE_PATH = PROJECT_ROOT / ".cache" / "zenodo-perfect-upload-state.js
 PERFECTED_STATE_VERSION = 2
 REPORT_ARCHIVE_DIR = PROJECT_ROOT / "ZENODO-UPLOAD-REPORTS"
 VALIDATION_ERROR_REPORT_DIR = PROJECT_ROOT / "ZENODO-VALIDATION-ERRORS"
-DEFAULT_LLM_BLOCKING_TYPES = (
+DEFAULT_LLM_BLOCKING_TYPES: Final[tuple[str, ...]] = (
     "LLM_UNRENDERED_CODE_OR_VARIABLE",
     "LLM_PLACEHOLDER_TEXT",
     "LLM_LEAKED_SOURCE_CODE",
@@ -70,7 +66,7 @@ DEFAULT_LLM_BLOCKING_TYPES = (
     "LLM_BROKEN_REFERENCE_LINK",
     "LLM_OTHER_HIGH_CONFIDENCE",
 )
-DEFAULT_LLM_WARNING_TYPES: tuple[str, ...] = ()
+DEFAULT_LLM_WARNING_TYPES: Final[tuple[str, ...]] = ()
 
 def _cache_key_for_pdf(pdf_path: Path) -> str:
     """Build a stable cache key for a PDF path."""
@@ -631,6 +627,8 @@ def validate_existing_pdf(
 
     Returns (passed, blocking_errors, warnings, from_cache, ai_fix_log_path).
     """
+    blocking_types: set[str]
+    warning_types: set[str]
     if llm_blocking_types is None:
         blocking_types = set(DEFAULT_LLM_BLOCKING_TYPES)
     else:
@@ -1121,7 +1119,7 @@ def main():
         stamp = datetime.now().strftime("%H:%M:%S")
         report_data["actions"].append(f"[{stamp}] {message}")
 
-    load_dotenv(PROJECT_ROOT / ".env")
+    load_project_dotenv(PROJECT_ROOT)
 
     token = get_zenodo_token()
     if not token:

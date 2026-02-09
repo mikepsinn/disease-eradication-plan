@@ -39,9 +39,8 @@ if sys.platform == 'win32':
 try:
     import yaml
     import requests
-    from dotenv import load_dotenv
 except ImportError:
-    print("ERROR: Missing dependencies. Run: pip install pyyaml requests python-dotenv")
+    print("ERROR: Missing dependencies. Run: pip install pyyaml requests")
     sys.exit(1)
 
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -49,7 +48,8 @@ BASE_DOMAIN = "warondisease.org"
 
 # Import shared config discovery utilities
 sys.path.insert(0, str(PROJECT_ROOT / "scripts" / "lib"))
-from quarto_config_utils import NON_DEPLOYABLE_CONFIGS
+from quarto_config_utils import NON_DEPLOYABLE_CONFIGS  # type: ignore[import-not-found]
+from python_utils import load_project_dotenv  # type: ignore[import-not-found]
 
 # Netlify API
 NETLIFY_API = "https://api.netlify.com/api/v1"
@@ -61,13 +61,13 @@ CLOUDFLARE_ZONE_ID = "ee19b9351a3502167898f08136b11c09"  # warondisease.org zone
 
 def get_netlify_token() -> str | None:
     """Get Netlify auth token from environment."""
-    load_dotenv(PROJECT_ROOT / ".env")
+    load_project_dotenv(PROJECT_ROOT)
     return os.environ.get("NETLIFY_AUTH_TOKEN")
 
 
 def get_cloudflare_token() -> str | None:
     """Get Cloudflare API token from environment."""
-    load_dotenv(PROJECT_ROOT / ".env")
+    load_project_dotenv(PROJECT_ROOT)
     return os.environ.get("CLOUDFLARE_TOKEN")
 
 
@@ -199,7 +199,7 @@ def setup_dns_records(cf_token: str, configs: dict) -> tuple[int, int]:
 def get_netlify_team_slug(token: str) -> str | None:
     """Get the user's Netlify team slug."""
     # First check environment variable override
-    load_dotenv(PROJECT_ROOT / ".env")
+    load_project_dotenv(PROJECT_ROOT)
     env_slug = os.environ.get("NETLIFY_TEAM_SLUG")
     if env_slug:
         return env_slug
