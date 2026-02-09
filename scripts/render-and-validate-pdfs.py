@@ -20,11 +20,23 @@ LOG_PATH = PROJECT_ROOT / "render-validate-pdfs.log"
 REPORT_PATH = PROJECT_ROOT / "render-validate-pdfs-report.md"
 
 
+def should_suppress_render_noise(line: str) -> bool:
+    """Suppress high-volume dependency noise from render output."""
+    stripped = line.strip()
+    if not stripped:
+        return False
+    noisy_prefixes = (
+        "Requirement already satisfied",
+    )
+    return stripped.startswith(noisy_prefixes)
+
+
 def run_and_tee(cmd: list[str], log_file) -> tuple[int, str]:
     command_text = " ".join(cmd)
     print(f"[RUN] {command_text}", flush=True)
     log_file.write(f"\n[RUN] {command_text}\n")
     log_file.flush()
+    suppress_render_noise = "scripts/render-quarto.py" in command_text
 
     process = subprocess.Popen(
         cmd,
@@ -38,6 +50,8 @@ def run_and_tee(cmd: list[str], log_file) -> tuple[int, str]:
 
     output_lines: list[str] = []
     for line in process.stdout or []:
+        if suppress_render_noise and should_suppress_render_noise(line):
+            continue
         print(line, end="", flush=True)
         log_file.write(line)
         output_lines.append(line)
