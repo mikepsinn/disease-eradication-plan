@@ -1286,6 +1286,16 @@ def main():
 
     args = parser.parse_args()
 
+    # Force-selecting PDF output is disabled because several multi-file website
+    # configs can fail with Quarto output-file path validation in this mode.
+    if args.to == "pdf":
+        print(
+            "[ERROR] '--to pdf' is disabled for render-quarto.py. "
+            "Render with config defaults (omit --to) instead.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     # Run the render
     exit_code = render_quarto(
         config_name=args.config,

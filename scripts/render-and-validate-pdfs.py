@@ -232,7 +232,7 @@ def main() -> int:
             }
             print(f"\n[*] Rendering {config_name}...", flush=True)
             render_rc, render_output = run_and_tee(
-                [sys.executable, "-u", "scripts/render-quarto.py", config_name, "--to", "pdf"],
+                [sys.executable, "-u", "scripts/render-quarto.py", config_name],
                 log_file,
             )
             result["render_rc"] = render_rc
@@ -246,7 +246,7 @@ def main() -> int:
 
             print(f"[*] Validating {pdf_path.name}...", flush=True)
             validate_rc, validate_output = run_and_tee(
-                [sys.executable, "-u", "scripts/pdf-validation.py", "--pdf", str(pdf_path), "--llm-pages", "0", "--skip-url-check"],
+                [sys.executable, "-u", "scripts/pdf-validation.py", "--pdf", str(pdf_path), "--llm-pages", "0"],
                 log_file,
             )
             result["validation_rc"] = validate_rc

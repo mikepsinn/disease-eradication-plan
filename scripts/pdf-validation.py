@@ -34,7 +34,7 @@ from typing import Any, Optional
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 
 try:
-    import llm
+    import llm  # type: ignore[import-not-found]
 except ImportError:
     llm = None
 
@@ -495,7 +495,7 @@ class PDFValidator:
         """Add a validation error."""
         self.errors.append(
             PDFValidationError(
-                self.pdf_path, page_num, error_type, severity, message, context
+                str(self.pdf_path), page_num, error_type, severity, message, context
             )
         )
 
@@ -751,8 +751,11 @@ class PDFValidator:
 
         page_count = len(self.doc)
 
-        # Sample pages evenly distributed
-        if page_count <= self.llm_sample_pages:
+        # Sample pages evenly distributed.
+        # llm_sample_pages <= 0 means "validate all pages".
+        if self.llm_sample_pages <= 0:
+            sample_indices = list(range(page_count))
+        elif page_count <= self.llm_sample_pages:
             sample_indices = list(range(page_count))
         else:
             step = page_count / self.llm_sample_pages
