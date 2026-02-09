@@ -460,6 +460,10 @@ class PDFValidator:
         self.cache_file = self.cache_dir / "pdf-validation-cache.json"
         self.llm_page_cache_file = self.cache_dir / "pdf-validation-llm-pages.json"
         self.current_pdf_hash: str | None = None
+        self.llm_requests_made = 0
+        self.llm_input_tokens_est = 0.0
+        self.llm_output_tokens_est = 0.0
+        self.llm_cost_est_usd = 0.0
 
     def _get_pdf_hash(self) -> str:
         """Compute SHA256 hash of the PDF file."""
@@ -527,12 +531,30 @@ class PDFValidator:
         """Build a stable cache key for a page-level LLM validation result."""
         normalized_text = self._normalize_text_for_hash(text)
         text_hash = hashlib.sha256(normalized_text.encode("utf-8", errors="replace")).hexdigest()
-        pdf_hash = self.current_pdf_hash or self._get_pdf_hash()
         raw_key = (
-            f"{pdf_hash}|{page_idx}|{text_hash}|{self._get_llm_model_id()}|"
+            f"{page_idx}|{text_hash}|{self._get_llm_model_id()}|"
             f"{LLM_VALIDATION_PROMPT_VERSION}"
         )
         return hashlib.sha256(raw_key.encode("utf-8", errors="replace")).hexdigest()
+
+    def _estimate_tokens(self, text: str) -> float:
+        """
+        Rough token estimate from characters.
+        4 chars/token is a common approximation for English text.
+        """
+        return max(1.0, len(text) / 4.0)
+
+    def _cost_rates_per_1m(self) -> tuple[float, float]:
+        """Return input/output cost rates in USD per 1M tokens from env vars."""
+        try:
+            input_rate = float(os.environ.get("PDF_VALIDATION_LLM_INPUT_COST_PER_1M", "0"))
+        except ValueError:
+            input_rate = 0.0
+        try:
+            output_rate = float(os.environ.get("PDF_VALIDATION_LLM_OUTPUT_COST_PER_1M", "0"))
+        except ValueError:
+            output_rate = 0.0
+        return max(0.0, input_rate), max(0.0, output_rate)
 
     def _record_llm_issues(self, page_idx: int, issues: list[dict[str, Any]]) -> int:
         """Convert parsed LLM issues into validation errors and return issue count."""
@@ -868,6 +890,13 @@ class PDFValidator:
                 f"[LLM] Validating {sample_total} page(s) with LLM (PDF has {page_count} pages)",
                 flush=True,
             )
+            model_id = self._get_llm_model_id()
+            input_rate, output_rate = self._cost_rates_per_1m()
+            print(
+                f"[LLM] Model: {model_id}; estimated pricing USD/1M tokens "
+                f"(input={input_rate}, output={output_rate})",
+                flush=True,
+            )
 
         max_llm_retries = max(1, int(os.environ.get("PDF_VALIDATION_LLM_RETRIES", "3")))
 
@@ -954,7 +983,24 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
                 for attempt in range(1, max_llm_retries + 1):
                     try:
                         # Use Gemini Flash for faster/cheaper validation
+                        input_tokens_est = self._estimate_tokens(prompt)
                         response = llm.generate_gemini_flash_content(prompt)
+                        output_tokens_est = self._estimate_tokens(response or "")
+                        input_rate, output_rate = self._cost_rates_per_1m()
+                        request_cost_est = (
+                            (input_tokens_est / 1_000_000.0) * input_rate
+                            + (output_tokens_est / 1_000_000.0) * output_rate
+                        )
+                        self.llm_requests_made += 1
+                        self.llm_input_tokens_est += input_tokens_est
+                        self.llm_output_tokens_est += output_tokens_est
+                        self.llm_cost_est_usd += request_cost_est
+                        print(
+                            f"[LLM] API request page {page_idx + 1}: model={self._get_llm_model_id()}, "
+                            f"input_tokens_est={input_tokens_est:.0f}, output_tokens_est={output_tokens_est:.0f}, "
+                            f"request_cost_est_usd=${request_cost_est:.6f}",
+                            flush=True,
+                        )
                         
                         # Log LLM details for debugging
                         print(f"\n[LLM-DEBUG] Page {page_idx + 1} Prompt ({len(prompt)} chars):")
@@ -1011,6 +1057,14 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
 
         if self.use_cache:
             self._save_llm_page_cache(llm_page_cache)
+        if sample_total > 0:
+            print(
+                f"[LLM] Summary: requests={self.llm_requests_made}, "
+                f"input_tokens_est={self.llm_input_tokens_est:.0f}, "
+                f"output_tokens_est={self.llm_output_tokens_est:.0f}, "
+                f"cost_est_usd=${self.llm_cost_est_usd:.6f}",
+                flush=True,
+            )
 
         return self.errors
 
