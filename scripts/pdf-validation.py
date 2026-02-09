@@ -10,7 +10,6 @@ Usage:
     python scripts/pdf-validation.py --pdf assets/pdfs/my-paper.pdf
     python scripts/pdf-validation.py --skip-llm
     python scripts/pdf-validation.py --skip-url-check
-    python scripts/pdf-validation.py --llm-pages 10
     python scripts/pdf-validation.py --fail-on-warning
 
 Exit codes:
@@ -99,72 +98,6 @@ class PDFValidationError:
         annotation = f"::{level} file={self.pdf_path},line={line},title={self.error_type}::{message}"
         print(annotation, flush=True)
 
-
-# Content patterns to check (reused from post-render-validation.py)
-CONTENT_PATTERNS = [
-    {
-        "regex": re.compile(r"NameError:|TypeError:|AttributeError:|ImportError:|ModuleNotFoundError:|KeyError:|ValueError:|IndexError:"),
-        "error_type": "PYTHON_ERROR",
-        "severity": PDFValidationError.SEVERITY_CRITICAL,
-        "message": "Python exception found in PDF output",
-    },
-    {
-        "regex": re.compile(r"\{\{<\s*var\s+[^>]+>\}\}"),
-        "error_type": "UNRENDERED_VARIABLE",
-        "severity": PDFValidationError.SEVERITY_CRITICAL,
-        "message": "Unrendered Quarto variable shortcode",
-    },
-    {
-        "regex": re.compile(r"\{python\}\s*\S"),
-        "error_type": "UNRENDERED_PYTHON",
-        "severity": PDFValidationError.SEVERITY_CRITICAL,
-        "message": "Unrendered inline Python expression",
-    },
-    {
-        "regex": re.compile(r"PosixPath\(|WindowsPath\("),
-        "error_type": "POSIXPATH_LEAKED",
-        "severity": PDFValidationError.SEVERITY_CRITICAL,
-        "message": "Path object leaked into output",
-    },
-    {
-        "regex": re.compile(r"\\frac\{|\\sum_|\\alpha|\\beta|\\gamma|\\int_|\\mathbf\{|\\text\{"),
-        "error_type": "LATEX_SOURCE",
-        "severity": PDFValidationError.SEVERITY_CRITICAL,
-        "message": "Raw LaTeX source not rendered",
-    },
-    {
-        "regex": re.compile(r'print\(f["\']'),
-        "error_type": "PYTHON_CODE_LEAKED",
-        "severity": PDFValidationError.SEVERITY_CRITICAL,
-        "message": "Python print statement leaked into output",
-    },
-    {
-        "regex": re.compile(r"\$undefined|\$NaN|undefined%|NaN%"),
-        "error_type": "UNDEFINED_VALUE",
-        "severity": PDFValidationError.SEVERITY_CRITICAL,
-        "message": "Undefined or NaN value in output",
-    },
-    {
-        "regex": re.compile(r"echo:\s*false|#\|\s+echo:", re.IGNORECASE),
-        "error_type": "CELL_OPTIONS_LEAKED",
-        "severity": PDFValidationError.SEVERITY_WARNING,
-        "message": "Cell options leaked into output",
-    },
-    {
-        "regex": re.compile(r"findfont:", re.IGNORECASE),
-        "error_type": "MATPLOTLIB_WARNING",
-        "severity": PDFValidationError.SEVERITY_WARNING,
-        "message": "Matplotlib font warning in output",
-    },
-    {
-        "regex": re.compile(
-            r"lastToneElevationWithHumorHash|lastInstructionalVoiceHash|lastFormattedHash|lastFactCheckHash"
-        ),
-        "error_type": "FRONTMATTER_LEAKED",
-        "severity": PDFValidationError.SEVERITY_WARNING,
-        "message": "Frontmatter metadata leaked into output",
-    },
-]
 
 # AI fix instructions for each error type
 ERROR_FIX_INSTRUCTIONS = {
@@ -621,36 +554,6 @@ class PDFValidator:
 
         return self.errors
 
-    def validate_content(self) -> list[PDFValidationError]:
-        """Validate content patterns for rendering issues."""
-        if not self.doc:
-            return self.errors
-
-        page_count = len(self.doc)
-        for page_num in range(page_count):
-            page = self.doc[page_num]
-            text = page.get_text() or ""
-            if not isinstance(text, str):
-                text = str(text)
-
-            for pattern_config in CONTENT_PATTERNS:
-                matches = pattern_config["regex"].finditer(text)
-                for match in matches:
-                    # Get context around match
-                    start = max(0, match.start() - 50)
-                    end = min(len(text), match.end() + 50)
-                    context = text[start:end].replace("\n", " ").strip()
-
-                    self._add_error(
-                        page_num + 1,
-                        pattern_config["error_type"],
-                        pattern_config["severity"],
-                        pattern_config["message"],
-                        f"...{context}...",
-                    )
-
-        return self.errors
-
     def validate_images(self) -> list[PDFValidationError]:
         """Validate images in the PDF."""
         if not self.doc:
@@ -1010,15 +913,13 @@ Important constraints:
         self.current_pdf_hash = pdf_hash
         cache = self._load_cache()
         if self.use_cache:
-            self._ensure_llm_page_cache_file()
             self._log_cache_paths()
             self._log_cache_inventory(pdf_cache=cache)
         else:
             print("[CACHE] Validation cache disabled (--no-cache)", flush=True)
         if self.use_cache:
             print(
-                f"[*] PDF cache lookup: hash={pdf_hash[:8]}, llm_pages={self.llm_sample_pages}, "
-                f"cache_file={self.cache_file}",
+                f"[*] PDF cache lookup: hash={pdf_hash[:8]}, cache_file={self.cache_file}",
                 flush=True,
             )
 
@@ -1030,12 +931,6 @@ Important constraints:
             elif "errors" not in cached_result:
                 print(
                     f"[*] PDF cache miss for {self.pdf_path.name}: malformed entry (missing errors)",
-                    flush=True,
-                )
-            elif cached_result.get("llm_pages") != self.llm_sample_pages:
-                print(
-                    f"[*] PDF cache miss for {self.pdf_path.name}: llm_pages mismatch "
-                    f"(cached={cached_result.get('llm_pages')}, requested={self.llm_sample_pages})",
                     flush=True,
                 )
             elif cached_result.get("llm_mode") != "full_pdf":
@@ -1073,7 +968,6 @@ Important constraints:
             cache[pdf_hash] = {
                 "pdf_name": self.pdf_path.name,
                 "timestamp": datetime.now().isoformat(),
-                "llm_pages": self.llm_sample_pages,
                 "llm_mode": "full_pdf",
                 "errors": [
                     {
@@ -1154,12 +1048,6 @@ def main():
         "--skip-url-check", action="store_true", help="Skip external URL validation"
     )
     parser.add_argument(
-        "--llm-pages",
-        type=int,
-        default=0,
-        help="Deprecated: page-level sampling no longer used (full-PDF LLM review is default)",
-    )
-    parser.add_argument(
         "--fail-on-warning", action="store_true", help="Treat warnings as errors"
     )
     parser.add_argument(
@@ -1202,7 +1090,6 @@ def main():
             str(pdf_file),
             skip_llm=args.skip_llm,
             skip_url_check=args.skip_url_check,
-            llm_sample_pages=args.llm_pages,
             use_cache=not args.no_cache,
         )
         errors = validator.validate()

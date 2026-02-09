@@ -104,11 +104,8 @@ def _compute_sha256(file_path: Path, chunk_size: int = 1024 * 1024) -> str:
 
 
 def _compute_pdf_signature(pdf_path: Path) -> dict:
-    """Compute signature fields used for validation cache matching."""
-    stats = pdf_path.stat()
+    """Compute content-hash signature used for validation cache matching."""
     return {
-        "size_bytes": stats.st_size,
-        "mtime_ns": stats.st_mtime_ns,
         "sha256": _compute_sha256(pdf_path),
     }
 
@@ -206,43 +203,22 @@ def _compute_source_signature(paper_key: str, paper_config: dict) -> dict:
 
 
 def _pdf_signature_matches(pdf_path: Path, expected_signature: dict | None) -> bool:
-    """Compare on-disk PDF with a cached signature."""
+    """Compare on-disk PDF with cached content hash (mtime ignored)."""
     if not expected_signature or not isinstance(expected_signature, dict):
         return False
     if not pdf_path.exists():
         return False
-    try:
-        stats = pdf_path.stat()
-    except OSError:
-        return False
-
-    if int(expected_signature.get("size_bytes", -1)) != stats.st_size:
-        return False
-    if int(expected_signature.get("mtime_ns", -1)) != stats.st_mtime_ns:
-        return False
 
     expected_sha = str(expected_signature.get("sha256", "")).strip()
     if not expected_sha:
-        return True
+        return False
     return _compute_sha256(pdf_path) == expected_sha
-
-
-def _resolve_llm_pages_for_pdf(pdf_path: Path, requested_llm_pages: int) -> int:
-    """Resolve effective LLM pages: 0 means validate all pages in this PDF."""
-    if requested_llm_pages > 0:
-        return requested_llm_pages
-
-    page_count = get_pdf_page_count(pdf_path)
-    if isinstance(page_count, int) and page_count > 0:
-        return page_count
-    return 1
 
 
 def _is_perfected_entry_valid(
     entry: dict | None,
     source_signature: dict,
     pdf_path: Path,
-    required_llm_pages: int,
 ) -> bool:
     """Check whether a paper can be skipped as already perfected/uploaded."""
     if not entry or not isinstance(entry, dict):
@@ -252,8 +228,6 @@ def _is_perfected_entry_valid(
     if not bool(entry.get("validation_passed", False)):
         return False
     if entry.get("source_signature") != source_signature:
-        return False
-    if int(entry.get("llm_pages_validated", 0)) < int(required_llm_pages):
         return False
     return _pdf_signature_matches(pdf_path, entry.get("pdf_signature"))
 
@@ -429,8 +403,8 @@ def generate_report(report_data: dict) -> str:
         lines.extend([
             "## Validation Results",
             "",
-            "| Paper | Status | Source | LLM Pages | Notes | Error Count | Warning Count | AI Fix Log |",
-            "|-------|--------|--------|-----------|-------|-------------|---------------|------------|",
+            "| Paper | Status | Source | Notes | Error Count | Warning Count | AI Fix Log |",
+            "|-------|--------|--------|-------|-------------|---------------|------------|",
         ])
         validation_error_details = []
         validation_warning_details = []
@@ -447,11 +421,10 @@ def generate_report(report_data: dict) -> str:
             if not note_text and not result.get('success'):
                 note_text = "Validation failed"
             notes = note_text.replace("|", "\\|")
-            llm_pages = str(result.get("llm_pages", "N/A"))
             ai_fix_log = str(result.get("ai_fix_log_path", "") or "").strip()
             ai_fix_log_display = f"`{ai_fix_log}`" if ai_fix_log else "-"
             lines.append(
-                f"| {paper_key} | {status} | {source} | {llm_pages} | {notes} | {len(error_list)} | {len(warning_list)} | {ai_fix_log_display} |"
+                f"| {paper_key} | {status} | {source} | {notes} | {len(error_list)} | {len(warning_list)} | {ai_fix_log_display} |"
             )
             if error_list:
                 validation_error_details.append((paper_key, error_list))
@@ -631,7 +604,6 @@ def get_pdf_page_count(pdf_path: Path) -> int | None:
 def validate_existing_pdf(
     pdf_path: Path,
     verbose: bool = False,
-    llm_pages: int = 5,
     use_cache: bool = True,
     skip_url_check: bool = True,
     llm_blocking_types: set[str] | None = None,
@@ -668,7 +640,6 @@ def validate_existing_pdf(
         if (
             isinstance(cached, dict)
             and cached.get("signature") == signature
-            and int(cached.get("llm_pages", -1)) == llm_pages
             and set(cached_blocking_types) == blocking_types
             and set(cached_warning_types) == warning_types
             and bool(cached.get("llm_completed", False))
@@ -698,11 +669,11 @@ def validate_existing_pdf(
         )
 
     python_exe = _get_preferred_python()
-    cmd = [python_exe, str(validation_script), "--pdf", str(pdf_path), "--llm-pages", str(llm_pages)]
+    cmd = [python_exe, str(validation_script), "--pdf", str(pdf_path)]
     if skip_url_check:
         cmd.append("--skip-url-check")
     print(
-        f"  Starting PDF validation for {pdf_path.name} (llm_pages={llm_pages}). "
+        f"  Starting PDF validation for {pdf_path.name} (full-PDF LLM review). "
         "This can take a while for full-document validation...",
         flush=True,
     )
@@ -793,7 +764,6 @@ def validate_existing_pdf(
         cache_entries[cache_key] = {
             "signature": signature,
             "validated_at": datetime.now().isoformat(),
-            "llm_pages": llm_pages,
             "llm_blocking_types": sorted(blocking_types),
             "llm_warning_types": sorted(warning_types),
             "llm_completed": llm_completed,
@@ -1047,12 +1017,6 @@ def parse_args() -> argparse.Namespace:
         help="Show full build/validation output",
     )
     parser.add_argument(
-        "--llm-pages",
-        type=int,
-        default=0,
-        help="Number of pages to sample in LLM PDF validation (0 = validate all pages; default: 0)",
-    )
-    parser.add_argument(
         "--force-revalidate",
         action="store_true",
         help="Ignore cached PDF validation results and run validation again",
@@ -1201,16 +1165,12 @@ def main():
     perfected_state = _load_perfected_state()
     perfected_entries = perfected_state.setdefault("entries", {})
     source_signatures: dict[str, dict] = {}
-    validation_pages_used: dict[str, int] = {}
     process_keys: list[str] = []
 
     assets_pdf_dir = PROJECT_ROOT / "assets" / "pdfs"
     assets_pdf_dir.mkdir(parents=True, exist_ok=True)
 
-    if args.llm_pages <= 0:
-        print("LLM validation mode: full document (all pages)")
-    else:
-        print(f"LLM validation mode: sampled pages ({args.llm_pages})")
+    print("LLM validation mode: full document (all pages)")
     print(
         "LLM blocking types: "
         + (", ".join(sorted(llm_blocking_types)) if llm_blocking_types else "(none)")
@@ -1225,7 +1185,6 @@ def main():
         print("Validation behavior: fail-fast on first failed PDF")
     log_action(
         "Validation configured with "
-        f"llm_pages={args.llm_pages}, "
         f"llm_blocking_types={','.join(sorted(llm_blocking_types)) or '(none)'}, "
         f"llm_warning_types={','.join(sorted(llm_warning_types)) or '(none)'}, "
         f"continue_on_validation_error={bool(args.continue_on_validation_error)}"
@@ -1242,8 +1201,6 @@ def main():
         source_signatures[paper_key] = source_signature
 
         pdf_path = PROJECT_ROOT / info["pdf_path"]
-        required_llm_pages = _resolve_llm_pages_for_pdf(pdf_path, args.llm_pages)
-        validation_pages_used[paper_key] = required_llm_pages
 
         if args.force_reprocess:
             process_keys.append(paper_key)
@@ -1254,7 +1211,6 @@ def main():
             entry=state_entry,
             source_signature=source_signature,
             pdf_path=pdf_path,
-            required_llm_pages=required_llm_pages,
         ):
             doi = state_entry.get("doi", "N/A")
             print(f"[SKIP] {paper_key}: already perfected/uploaded and unchanged")
@@ -1267,7 +1223,6 @@ def main():
                 "success": True,
                 "from_cache": True,
                 "skipped": True,
-                "llm_pages": required_llm_pages,
                 "notes": "Skipped (perfected cache hit)",
                 "errors": [],
                 "warnings": [],
@@ -1382,13 +1337,10 @@ def main():
                 return 1
 
         # Validate each paper immediately after selecting/building its PDF.
-        effective_llm_pages = _resolve_llm_pages_for_pdf(pdf_path, args.llm_pages)
-        validation_pages_used[paper_key] = effective_llm_pages
         print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
         passed, validation_errors, validation_warnings, from_cache, ai_fix_log_path = validate_existing_pdf(
             pdf_path=pdf_path,
             verbose=args.verbose,
-            llm_pages=effective_llm_pages,
             use_cache=not args.force_revalidate,
             llm_blocking_types=llm_blocking_types,
             llm_warning_types=llm_warning_types,
@@ -1410,7 +1362,6 @@ def main():
         report_data['validation_results'][paper_key] = {
             'success': passed,
             'from_cache': from_cache,
-            'llm_pages': effective_llm_pages,
             'notes': note,
             'errors': validation_errors,
             'warnings': validation_warnings,
@@ -1512,7 +1463,6 @@ def main():
             "updated_at": datetime.now().isoformat(),
             "source_signature": source_signatures.get(paper_key, {}),
             "pdf_signature": _compute_pdf_signature(pdf_path),
-            "llm_pages_validated": int(validation_pages_used.get(paper_key, 0) or 0),
             "validation_passed": True,
             "upload_verified": True,
             "doi": result.get("doi"),

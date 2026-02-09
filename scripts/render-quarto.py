@@ -1114,7 +1114,6 @@ def render_quarto(
                     pdf_validation_exit = run_pdf_validation(
                         str(dest_pdf_path),
                         skip_url_check=True,  # URLs already checked in post-validation
-                        llm_pages=3,
                     )
                     if pdf_validation_exit != 0:
                         print("[ERROR] Comprehensive PDF validation failed", file=sys.stderr)

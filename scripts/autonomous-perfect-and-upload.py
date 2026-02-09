@@ -226,7 +226,6 @@ def get_git_head(cwd: Path = PROJECT_ROOT) -> str | None:
 
 def build_codex_prompt(
     failures: dict[str, list[str]],
-    llm_pages: int,
     selected_papers: list[str],
 ) -> str:
     papers = sorted(failures.keys())
@@ -246,7 +245,7 @@ def build_codex_prompt(
         "- Stop only when each currently failing paper passes validation + upload.",
         "",
         f"Selected paper scope for this run: {selected_text}",
-        f"LLM pages setting for uploader: {llm_pages} (0 means full PDF).",
+        "LLM validation mode for uploader: full-PDF review.",
         "",
         "Current failing papers and checklist items:",
     ]
@@ -263,10 +262,7 @@ def build_codex_prompt(
             "1) Read zenodo-upload-report.md.",
             "2) Fix root causes in source/QMD/scripts.",
             "3) Re-run failing papers with force flags:",
-            "   python scripts/upload-all-zenodo-and-save-dois.py --force-reprocess --force-revalidate "
-            + "--llm-pages "
-            + str(llm_pages)
-            + " <paper-key>",
+            "   python scripts/upload-all-zenodo-and-save-dois.py --force-reprocess --force-revalidate <paper-key>",
             "4) Repeat fix+rerun until those papers pass.",
             "5) Finally run the uploader for selected scope to verify green state.",
             "",
@@ -325,12 +321,6 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("papers", nargs="*", help="Optional paper keys to limit scope.")
     parser.add_argument(
-        "--llm-pages",
-        type=int,
-        default=0,
-        help="LLM pages for uploader (0 = full PDF, default: 0).",
-    )
-    parser.add_argument(
         "--max-cycles",
         type=int,
         default=12,
@@ -384,7 +374,7 @@ def main() -> int:
     print("Autonomous Perfect + Upload Runner")
     print("=" * 72)
     print(f"Project root: {PROJECT_ROOT}")
-    print(f"LLM pages: {args.llm_pages} ({'full PDF' if args.llm_pages == 0 else 'sampled'})")
+    print("LLM validation mode: full-PDF review")
     print(f"Max cycles: {args.max_cycles}")
     print(f"Continue on validation error: {bool(args.continue_on_validation_error)}")
     print("No-commit policy: enforced in codex prompt + HEAD guard")
@@ -396,7 +386,7 @@ def main() -> int:
         progress_file.write(f"\n=== RUN {run_id} STARTED {run_started_at} ===\n")
         progress_file.write(f"Project root: {PROJECT_ROOT}\n")
         progress_file.write(f"Paper scope: {', '.join(selected_papers) if selected_papers else 'all papers'}\n")
-        progress_file.write(f"LLM pages: {args.llm_pages}\n")
+        progress_file.write("LLM validation mode: full-PDF review\n")
         progress_file.write(f"Max cycles: {args.max_cycles}\n")
         progress_file.write(f"Continue on validation error: {bool(args.continue_on_validation_error)}\n")
         progress_file.flush()
@@ -406,7 +396,7 @@ def main() -> int:
             "- Status: running",
             f"- Project root: `{PROJECT_ROOT}`",
             f"- Paper scope: `{', '.join(selected_papers) if selected_papers else 'all papers'}`",
-            f"- LLM pages: `{args.llm_pages}`",
+            "- LLM validation mode: `full-PDF review`",
             f"- Max cycles: `{args.max_cycles}`",
             f"- Continue on validation error: `{bool(args.continue_on_validation_error)}`",
             f"- No-commit policy: `{True}`",
@@ -415,7 +405,7 @@ def main() -> int:
         ]
     )
 
-    base_upload_cmd = [python_exe, str(UPLOAD_SCRIPT), "--llm-pages", str(args.llm_pages)]
+    base_upload_cmd = [python_exe, str(UPLOAD_SCRIPT)]
     if args.continue_on_validation_error:
         base_upload_cmd.append("--continue-on-validation-error")
     if selected_papers:
@@ -548,7 +538,6 @@ def main() -> int:
 
         prompt_text = build_codex_prompt(
             failures=failures,
-            llm_pages=args.llm_pages,
             selected_papers=selected_papers,
         )
 
