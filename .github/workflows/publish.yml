@@ -1,9 +1,9 @@
 on:
   workflow_dispatch:
   push:
-    branches: [main, master]
+    branches: [develop, master]
   pull_request:
-    branches: [main, master]
+    branches: [develop, master]
 
 name: Build and Deploy to Netlify
 
@@ -91,6 +91,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-1-pct-treaty-impact
+          path: _build_temp/1-pct-treaty-impact/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -128,6 +135,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build The 1% Treaty: Harnessing Greed to Eradicate Disea PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-pct-treaty-impact
 
 
 
@@ -206,6 +220,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-cost-of-change
+          path: _build_temp/cost-of-change/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -243,6 +264,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build The Price of Political Change: A Cost-Benefit Fram PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild cost-of-change
 
 
 
@@ -321,6 +349,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-dfda-impact
+          path: _build_temp/dfda-impact/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -358,6 +393,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build How to Prevent a Year of Death and Suffering for 8 PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-impact
 
 
 
@@ -436,6 +478,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-dfda-spec
+          path: _build_temp/dfda-spec/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -473,6 +522,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build dFDA: A Decentralized Framework for Drug Assessmen PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-spec
 
 
 
@@ -551,6 +607,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-federal-efficiency-audit
+          path: _build_temp/federal-efficiency-audit/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -588,6 +651,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build Federal Resource Allocation Efficiency Audit PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild federal-efficiency-audit
 
 
 
@@ -666,6 +736,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-iab
+          path: _build_temp/iab/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -703,6 +780,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build Incentive Alignment Bonds: Making Public Goods Fin PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild iab
 
 
 
@@ -781,6 +865,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-invisible-graveyard
+          path: _build_temp/invisible-graveyard/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -818,6 +909,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build The Invisible Graveyard: Quantifying the Mortality PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
 
 
 
@@ -896,6 +994,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 75
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-manual
+          path: _build_temp/manual/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -933,6 +1038,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build How to End War and Disease PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild manual
 
 
 
@@ -1011,6 +1123,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-obg
+          path: _build_temp/obg/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1048,6 +1167,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build Optimal Budget Generator: Evidence-Based Budget Al PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild obg
 
 
 
@@ -1126,6 +1252,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-opg
+          path: _build_temp/opg/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1163,6 +1296,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build Optimal Policy Generator: Evidence-Based Policy Re PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild opg
 
 
 
@@ -1241,6 +1381,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-optimocracy
+          path: _build_temp/optimocracy/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1278,6 +1425,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build Optimocracy: Evidence-Based Governance Through Out PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild optimocracy
 
 
 
@@ -1356,6 +1510,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-political-dysfunction-tax
+          path: _build_temp/political-dysfunction-tax/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1393,6 +1554,13 @@ jobs:
         timeout-minutes: 1
 
 
+
+      - name: "Upload Build The Political Dysfunction Tax PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild political-dysfunction-tax
 
 
 
@@ -1471,6 +1639,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-wishocracy
+          path: _build_temp/wishocracy/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1509,4 +1684,59 @@ jobs:
 
 
 
+      - name: "Upload Build Wishocracy: Solving the Democratic Principal-Agent PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
 
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishocracy
+
+
+
+
+  release-pdfs:
+    name: "Release PDFs (master only)"
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs:
+
+      - build-1-pct-treaty-impact
+
+      - build-cost-of-change
+
+      - build-dfda-impact
+
+      - build-dfda-spec
+
+      - build-federal-efficiency-audit
+
+      - build-iab
+
+      - build-invisible-graveyard
+
+      - build-manual
+
+      - build-obg
+
+      - build-opg
+
+      - build-optimocracy
+
+      - build-political-dysfunction-tax
+
+      - build-wishocracy
+
+    permissions:
+      contents: write
+    steps:
+      - name: Download PDF artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-pdfs
+
+      - name: Create GitHub release with PDFs
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: pdfs-${{ github.run_number }}
+          name: PDFs ${{ github.run_number }}
+          files: release-pdfs/**/*.pdf

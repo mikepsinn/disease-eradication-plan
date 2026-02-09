@@ -1,9 +1,9 @@
 on:
   workflow_dispatch:
   push:
-    branches: [main, master]
+    branches: [develop, master]
   pull_request:
-    branches: [main, master]
+    branches: [develop, master]
 
 name: Build and Deploy to Netlify
 
@@ -91,6 +91,13 @@ jobs:
           GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}{% endraw %}
         timeout-minutes: {{ job.timeout_minutes }}
 
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-{{ job.config_name }}
+          path: _build_temp/{{ job.config_name }}/**/*.pdf
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -130,7 +137,7 @@ jobs:
 
 {% if job.upload_to_zenodo %}
       - name: "Upload {{ job.display_name }} PDF to Zenodo (draft)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}
 
@@ -138,3 +145,26 @@ jobs:
 {% endif %}
 
 {% endfor %}
+
+  release-pdfs:
+    name: "Release PDFs (master only)"
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs:
+{% for job in jobs %}
+      - build-{{ job.config_name }}
+{% endfor %}
+    permissions:
+      contents: write
+    steps:
+      - name: Download PDF artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-pdfs
+
+      - name: Create GitHub release with PDFs
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: pdfs-{% raw %}${{ github.run_number }}{% endraw %}
+          name: PDFs {% raw %}${{ github.run_number }}{% endraw %}
+          files: release-pdfs/**/*.pdf
