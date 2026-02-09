@@ -193,13 +193,13 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
     working_papers = [p for p in papers if p["paper_type"] != "Book"]
 
     if books:
-        lines.append("## Books")
+
         lines.append("")
         for paper in books:
             lines.extend(_format_paper_entry(paper))
 
     if working_papers:
-        lines.append("## Working Papers")
+
         lines.append("")
         for paper in working_papers:
             lines.extend(_format_paper_entry(paper))

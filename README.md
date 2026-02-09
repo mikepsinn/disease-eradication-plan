@@ -1,11 +1,10 @@
+
 ### [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
 
 [![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)
 
 > 6.65k diseases diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7B deaths deaths. At $0.0018/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
 
-
-## Working Papers
 
 ### [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
 
@@ -85,7 +84,6 @@
 
 
 ---
-
 ## Development
 
 This is a [Quarto](https://quarto.org/) book project with Python-based parameter calculations.
@@ -114,5 +112,4 @@ quarto render
 - `CONTRIBUTING.md` - Writing standards and style guide
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
-
 
