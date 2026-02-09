@@ -36,8 +36,22 @@ if not GOOGLE_API_KEY:
 if not ANTHROPIC_API_KEY:
     raise ValueError("ANTHROPIC_API_KEY is not set in the .env file.")
 
+# Request timeout for Gemini client (milliseconds).
+# google-genai HttpOptions.timeout is ms.
+DEFAULT_LLM_REQUEST_TIMEOUT_MS = 180_000
+try:
+    LLM_REQUEST_TIMEOUT_MS = max(
+        1_000,
+        int(os.getenv("LLM_REQUEST_TIMEOUT_MS", str(DEFAULT_LLM_REQUEST_TIMEOUT_MS))),
+    )
+except ValueError:
+    LLM_REQUEST_TIMEOUT_MS = DEFAULT_LLM_REQUEST_TIMEOUT_MS
+
 # Initialize clients
-google_client = genai.Client(api_key=GOOGLE_API_KEY)
+google_client = genai.Client(
+    api_key=GOOGLE_API_KEY,
+    http_options=genai.types.HttpOptions(timeout=LLM_REQUEST_TIMEOUT_MS),
+)
 anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
