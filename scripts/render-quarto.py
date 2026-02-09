@@ -396,6 +396,14 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         config = yaml.safe_load(f)
 
     dih_render = config.get("dih-render", {})
+    pdf_output_file = dih_render.get("pdf-output-file")
+    epub_output_file = dih_render.get("epub-output-file")
+
+    # Fallback to format output-file when dih-render doesn't provide names.
+    if not pdf_output_file:
+        pdf_output_file = config.get("format", {}).get("pdf", {}).get("output-file")
+    if not epub_output_file:
+        epub_output_file = config.get("format", {}).get("epub", {}).get("output-file")
 
     return {
         "config_file": config_file,
@@ -407,9 +415,9 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
             config_name.title()
         ),
         "output_dir": config.get("project", {}).get("output-dir", f"_site/{config_name}"),
-        # Read desired output filenames from dih-render section (renamed after build)
-        "pdf_output_file": dih_render.get("pdf-output-file"),
-        "epub_output_file": dih_render.get("epub-output-file"),
+        # Read desired output filenames from dih-render, then format.* fallback.
+        "pdf_output_file": pdf_output_file,
+        "epub_output_file": epub_output_file,
     }
 
 

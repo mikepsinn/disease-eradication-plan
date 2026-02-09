@@ -50,6 +50,10 @@ from lib.quarto_config_utils import (
     get_paper_source_files,
     check_and_download_remote_pdf,
 )
+from lib.validation_output_utils import (
+    extract_validation_errors as shared_extract_validation_errors,
+    extract_ai_fix_log_path as shared_extract_ai_fix_log_path,
+)
 
 PROJECT_ROOT = Path(__file__).parent.parent
 PDF_VALIDATION_CACHE_PATH = PROJECT_ROOT / ".cache" / "pdf-validation-upload-cache.json"
@@ -256,52 +260,12 @@ def _is_perfected_entry_valid(
 
 def _extract_validation_errors(output: str) -> list[str]:
     """Extract key validation errors from validator output."""
-    errors = []
-    seen = set()
-    for line in output.splitlines():
-        stripped = line.strip()
-        if not stripped:
-            continue
-        if (
-            "[CRITICAL:" in stripped
-            or " [CRITICAL]:" in stripped
-            or "BROKEN_EXTERNAL_LINK" in stripped
-            or "[ERROR]" in stripped
-            or stripped.startswith("ERROR:")
-            or stripped.startswith("FATAL:")
-            or "validation failed" in stripped.lower()
-        ):
-            if stripped not in seen:
-                seen.add(stripped)
-                errors.append(stripped)
-    return errors
+    return shared_extract_validation_errors(output, include_broken_external=True)
 
 
 def _extract_ai_fix_log_path(output: str) -> str | None:
     """Extract AI fix log file path emitted by pdf-validation.py output."""
-    lines = [line.rstrip() for line in output.splitlines()]
-    for idx, line in enumerate(lines):
-        lower_line = line.lower()
-        if "detailed fix instructions written to" not in lower_line:
-            continue
-
-        # Handle "written to: <path>" on same line.
-        if ":" in line:
-            candidate = line.split(":", 1)[1].strip()
-            if candidate and not candidate.lower().startswith("to fix these issues"):
-                return str(Path(candidate))
-
-        # Handle path on following line.
-        for next_idx in range(idx + 1, min(len(lines), idx + 5)):
-            candidate = lines[next_idx].strip()
-            if not candidate:
-                continue
-            if candidate.lower().startswith("to fix these issues"):
-                break
-            if candidate.lower().startswith("claude/ai:"):
-                break
-            return str(Path(candidate))
-    return None
+    return shared_extract_ai_fix_log_path(output)
 
 
 def _extract_llm_error_type(error_line: str) -> str | None:

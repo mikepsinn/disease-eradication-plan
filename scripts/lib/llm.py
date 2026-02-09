@@ -26,6 +26,12 @@ GEMINI_FLASH_MODEL_ID = "gemini-3-flash-preview"
 CLAUDE_OPUS_4_1_MODEL_ID = "claude-opus-4-1-20250805"
 CLAUDE_SONNET_4_5_MODEL_ID = "claude-sonnet-4-5-20250929"
 
+# --- Pricing metadata (USD per 1M tokens) ---
+MODEL_PRICING_PER_1M_USD: dict[str, tuple[float, float]] = {
+    # Source: https://ai.google.dev/gemini-api/docs/pricing (Gemini 3 Flash Preview, paid tier)
+    GEMINI_FLASH_MODEL_ID: (0.50, 3.00),  # (input, output)
+}
+
 # --- API Setup ---
 GOOGLE_GENERATIVE_AI_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
@@ -112,6 +118,78 @@ def generate_claude_sonnet_content(prompt: str) -> str:
 
 
 # --- Utility Functions ---
+
+def estimate_tokens(text: str) -> float:
+    """
+    Rough token estimate from characters.
+    Uses ~4 chars/token approximation for English text.
+    """
+    return max(1.0, len(text) / 4.0)
+
+
+def get_cost_rates_per_1m(
+    model_id: str,
+    input_env_key: str = "PDF_VALIDATION_LLM_INPUT_COST_PER_1M",
+    output_env_key: str = "PDF_VALIDATION_LLM_OUTPUT_COST_PER_1M",
+) -> tuple[float, float, str]:
+    """
+    Resolve input/output cost rates for a model in USD per 1M tokens.
+
+    Resolution order:
+    1) Explicit env vars (both must be set and parseable)
+    2) Built-in model defaults
+    3) Zero fallback
+    """
+    try:
+        env_input = os.environ.get(input_env_key)
+        input_rate = float(env_input) if env_input is not None else None
+    except ValueError:
+        input_rate = None
+    try:
+        env_output = os.environ.get(output_env_key)
+        output_rate = float(env_output) if env_output is not None else None
+    except ValueError:
+        output_rate = None
+
+    if input_rate is not None and output_rate is not None:
+        return max(0.0, input_rate), max(0.0, output_rate), "env"
+
+    model_rates = MODEL_PRICING_PER_1M_USD.get(model_id)
+    if model_rates is not None:
+        return model_rates[0], model_rates[1], "model-default"
+
+    return 0.0, 0.0, "unset"
+
+
+def estimate_request_cost_usd(
+    model_id: str,
+    prompt_text: str,
+    response_text: str,
+    input_env_key: str = "PDF_VALIDATION_LLM_INPUT_COST_PER_1M",
+    output_env_key: str = "PDF_VALIDATION_LLM_OUTPUT_COST_PER_1M",
+) -> dict[str, float | str]:
+    """
+    Estimate per-request token usage and USD cost.
+    """
+    input_tokens_est = estimate_tokens(prompt_text)
+    output_tokens_est = estimate_tokens(response_text)
+    input_rate, output_rate, source = get_cost_rates_per_1m(
+        model_id=model_id,
+        input_env_key=input_env_key,
+        output_env_key=output_env_key,
+    )
+    request_cost_est = (
+        (input_tokens_est / 1_000_000.0) * input_rate
+        + (output_tokens_est / 1_000_000.0) * output_rate
+    )
+    return {
+        "input_tokens_est": input_tokens_est,
+        "output_tokens_est": output_tokens_est,
+        "input_rate_per_1m": input_rate,
+        "output_rate_per_1m": output_rate,
+        "pricing_source": source,
+        "request_cost_est_usd": request_cost_est,
+    }
 
 def extract_json_from_response(response_text: str, context: str = "LLM response") -> dict:
     """

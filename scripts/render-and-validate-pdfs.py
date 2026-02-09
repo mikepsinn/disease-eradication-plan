@@ -12,6 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from lib.quarto_config_utils import discover_paper_configs, count_qmd_files
+from lib.validation_output_utils import extract_validation_errors, extract_ai_fix_log_path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -66,27 +67,6 @@ def discover_papers_sorted_by_qmd_count() -> list[dict]:
     return papers
 
 
-def extract_validation_errors(output: str) -> list[str]:
-    errors: list[str] = []
-    seen = set()
-    for line in output.splitlines():
-        stripped = line.strip()
-        if not stripped:
-            continue
-        if (
-            "[CRITICAL:" in stripped
-            or " [CRITICAL]:" in stripped
-            or "[ERROR]" in stripped
-            or stripped.startswith("ERROR:")
-            or stripped.startswith("FATAL:")
-            or "validation failed" in stripped.lower()
-        ):
-            if stripped not in seen:
-                seen.add(stripped)
-                errors.append(stripped)
-    return errors
-
-
 def extract_render_errors(output: str) -> list[str]:
     errors: list[str] = []
     seen = set()
@@ -105,27 +85,6 @@ def extract_render_errors(output: str) -> list[str]:
                 seen.add(stripped)
                 errors.append(stripped)
     return errors
-
-
-def extract_ai_fix_log_path(output: str) -> str | None:
-    lines = [line.rstrip() for line in output.splitlines()]
-    for idx, line in enumerate(lines):
-        if "detailed fix instructions written to" not in line.lower():
-            continue
-        if ":" in line:
-            candidate = line.split(":", 1)[1].strip()
-            if candidate:
-                return str(Path(candidate))
-        for next_idx in range(idx + 1, min(len(lines), idx + 5)):
-            candidate = lines[next_idx].strip()
-            if not candidate:
-                continue
-            if candidate.lower().startswith("to fix these issues"):
-                break
-            if candidate.lower().startswith("claude/ai:"):
-                break
-            return str(Path(candidate))
-    return None
 
 
 def write_report(results: list[dict]) -> None:
