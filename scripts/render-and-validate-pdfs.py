@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import argparse
 import sys
 if sys.platform == 'win32':
     import io
@@ -8,6 +9,7 @@ if sys.platform == 'win32':
 from datetime import datetime
 from pathlib import Path
 import os
+import yaml
 
 sys.path.insert(0, str(Path(__file__).parent))
 from lib.build_logger import run_command_stream, suppress_pip_requirement_noise
@@ -50,6 +52,45 @@ def discover_papers_sorted_by_qmd_count() -> list[dict]:
 
     papers.sort(key=lambda paper: paper["qmd_count"])
     return papers
+
+
+def discover_configs_sorted_by_qmd_count(selected_configs: list[str] | None = None) -> list[dict]:
+    """Discover configs for render/validate, optionally filtered by config names."""
+    if not selected_configs:
+        return discover_papers_sorted_by_qmd_count()
+
+    selected_set = {name.strip() for name in selected_configs if name.strip()}
+    configs: list[dict] = []
+    missing: list[str] = []
+
+    for config_name in sorted(selected_set):
+        config_path = PROJECT_ROOT / f"_quarto-{config_name}.yml"
+        if not config_path.exists():
+            missing.append(config_name)
+            continue
+        with open(config_path, "r", encoding="utf-8") as f:
+            config = yaml.safe_load(f) or {}
+        dih_render = config.get("dih-render", {})
+        pdf_filename = (
+            dih_render.get("pdf-output-file")
+            or config.get("format", {}).get("pdf", {}).get("output-file")
+            or f"{config_name}-paper.pdf"
+        )
+        configs.append(
+            {
+                "config_name": config_name,
+                "pdf_path": PROJECT_ROOT / "assets" / "pdfs" / pdf_filename,
+                "qmd_count": count_qmd_files(config),
+            }
+        )
+
+    if missing:
+        print(f"[ERROR] Unknown config(s): {', '.join(missing)}", flush=True)
+        print("[ERROR] Expected files like _quarto-<config>.yml in project root", flush=True)
+        return []
+
+    configs.sort(key=lambda cfg: cfg["qmd_count"])
+    return configs
 
 
 def extract_render_errors(output: str) -> list[str]:
@@ -143,6 +184,14 @@ def write_report(results: list[dict]) -> None:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="Render and validate PDFs for Quarto configs")
+    parser.add_argument(
+        "--config",
+        action="append",
+        help="Specific config name to process (e.g., --config test). Can be provided multiple times.",
+    )
+    args = parser.parse_args()
+
     print(f"[LOG] Writing all logs to: {LOG_PATH}", flush=True)
     print(f"[REPORT] Checklist report will be saved to: {REPORT_PATH}", flush=True)
 
@@ -153,10 +202,10 @@ def main() -> int:
         log_file.write("=" * 80 + "\n")
         log_file.flush()
 
-        papers = discover_papers_sorted_by_qmd_count()
+        papers = discover_configs_sorted_by_qmd_count(args.config)
         if not papers:
-            print("[ERROR] No paper configs found to render", flush=True)
-            log_file.write("\n[ERROR] No paper configs found to render\n")
+            print("[ERROR] No configs found to render", flush=True)
+            log_file.write("\n[ERROR] No configs found to render\n")
             write_report([])
             return 1
 
