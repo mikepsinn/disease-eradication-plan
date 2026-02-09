@@ -114,12 +114,10 @@ def extract_render_errors(output: str) -> list[str]:
 
 
 def build_pdf_validation_command(pdf_path: Path) -> list[str]:
-    """Build pdf-validation command with optional vision flags from env."""
-    cmd = [sys.executable, "-u", "scripts/pdf-validation.py", "--pdf", str(pdf_path), "--llm-pages", "0"]
-    if os.environ.get("PDF_VALIDATION_ENABLE_LLM_VISION", "").lower() in {"1", "true", "yes", "on"}:
-        cmd.append("--llm-vision")
-        vision_pages = os.environ.get("PDF_VALIDATION_LLM_VISION_PAGES", "3")
-        cmd.extend(["--llm-vision-pages", vision_pages])
+    """Build pdf-validation command."""
+    cmd = [sys.executable, "-u", "scripts/pdf-validation.py", "--pdf", str(pdf_path)]
+    if os.environ.get("PDF_VALIDATION_DISABLE_CACHE", "").lower() in {"1", "true", "yes", "on"}:
+        cmd.append("--no-cache")
     return cmd
 
 
@@ -194,6 +192,7 @@ def main() -> int:
 
     print(f"[LOG] Writing all logs to: {LOG_PATH}", flush=True)
     print(f"[REPORT] Checklist report will be saved to: {REPORT_PATH}", flush=True)
+    print("[VALIDATION] Using scripts/pdf-validation.py", flush=True)
 
     with open(LOG_PATH, "w", encoding="utf-8") as log_file:
         log_file.write("=" * 80 + "\n")

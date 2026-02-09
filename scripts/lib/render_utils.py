@@ -1210,7 +1210,7 @@ def run_pdf_validation(
     pdf_path: str,
     skip_llm: bool = False,
     skip_url_check: bool = True,
-    llm_pages: int = 3,
+    llm_pages: int = 0,
     fail_on_warning: bool = False
 ) -> int:
     """
@@ -1222,7 +1222,7 @@ def run_pdf_validation(
         pdf_path: Path to PDF file to validate
         skip_llm: Force skip LLM validation even if API key available
         skip_url_check: Skip external URL validation (default True for speed)
-        llm_pages: Number of pages to sample for LLM validation
+        llm_pages: Number of pages to sample for LLM validation (<=0 means all)
         fail_on_warning: Treat warnings as errors
 
     Returns:

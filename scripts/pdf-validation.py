@@ -48,9 +48,7 @@ if sys.platform == "win32":
 IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
 GITHUB_STEP_SUMMARY = os.environ.get("GITHUB_STEP_SUMMARY")
 DEFAULT_PDF_DIR = Path(__file__).parent.parent / "assets" / "pdfs"
-LLM_PAGE_CACHE_VERSION = 2
-LLM_VALIDATION_PROMPT_VERSION = "2026-02-09-v1"
-LLM_VISION_PROMPT_VERSION = "2026-02-09-v1"
+LLM_FULL_PDF_PROMPT_VERSION = "2026-02-09-v2"
 
 
 class PDFValidationError:
@@ -447,29 +445,22 @@ class PDFValidator:
         pdf_path: str,
         skip_llm: bool = False,
         skip_url_check: bool = False,
-        llm_sample_pages: int = 0,
-        llm_vision: bool = False,
-        llm_vision_pages: int = 0,
         use_cache: bool = True,
     ):
         self.pdf_path = Path(pdf_path)
         self.skip_llm = skip_llm
         self.skip_url_check = skip_url_check
-        self.llm_sample_pages = llm_sample_pages
-        self.llm_vision = llm_vision
-        self.llm_vision_pages = llm_vision_pages
         self.use_cache = use_cache
         self.doc = None
         self.errors: list[PDFValidationError] = []
         self.cache_dir = Path(__file__).parent.parent / ".cache"
         self.cache_file = self.cache_dir / "pdf-validation-cache.json"
-        self.llm_page_cache_file = self.cache_dir / "pdf-validation-llm-pages.json"
+        self.full_pdf_llm_cache_file = self.cache_dir / "pdf-full-review-cache.json"
         self.current_pdf_hash: str | None = None
         self.llm_requests_made = 0
         self.llm_input_tokens_est = 0.0
         self.llm_output_tokens_est = 0.0
         self.llm_cost_est_usd = 0.0
-        self.llm_cache_save_path_logged = False
 
     def _get_pdf_hash(self) -> str:
         """Compute SHA256 hash of the PDF file."""
@@ -498,69 +489,11 @@ class PDFValidator:
         except Exception as e:
             print(f"[WARNING] Failed to save cache: {e}")
 
-    def _load_llm_page_cache(self) -> dict:
-        """Load LLM per-page validation cache."""
-        if not self.llm_page_cache_file.exists():
-            return {"version": LLM_PAGE_CACHE_VERSION, "text_entries": {}, "vision_entries": {}}
-        try:
-            with open(self.llm_page_cache_file, "r", encoding="utf-8") as f:
-                cache = json.load(f)
-        except Exception:
-            return {"version": LLM_PAGE_CACHE_VERSION, "text_entries": {}, "vision_entries": {}}
-
-        if not isinstance(cache, dict):
-            return {"version": LLM_PAGE_CACHE_VERSION, "text_entries": {}, "vision_entries": {}}
-
-        # Migrate v1 schema {"version": 1, "entries": {...}} to v2.
-        if cache.get("version") == 1:
-            legacy_entries = cache.get("entries")
-            if not isinstance(legacy_entries, dict):
-                legacy_entries = {}
-            return {
-                "version": LLM_PAGE_CACHE_VERSION,
-                "text_entries": legacy_entries,
-                "vision_entries": {},
-            }
-
-        if cache.get("version") != LLM_PAGE_CACHE_VERSION:
-            return {"version": LLM_PAGE_CACHE_VERSION, "text_entries": {}, "vision_entries": {}}
-        text_entries = cache.get("text_entries")
-        vision_entries = cache.get("vision_entries")
-        if not isinstance(text_entries, dict) or not isinstance(vision_entries, dict):
-            return {"version": LLM_PAGE_CACHE_VERSION, "text_entries": {}, "vision_entries": {}}
-        return cache
-
-    def _save_llm_page_cache(self, cache_data: dict):
-        """Save LLM per-page validation cache."""
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
-        try:
-            with open(self.llm_page_cache_file, "w", encoding="utf-8") as f:
-                json.dump(cache_data, f, indent=2)
-            if not self.llm_cache_save_path_logged:
-                print(
-                    f"[CACHE] Saving LLM page cache to: {self.llm_page_cache_file.resolve()}",
-                    flush=True,
-                )
-                self.llm_cache_save_path_logged = True
-        except Exception as e:
-            print(f"[WARNING] Failed to save LLM page cache: {e}")
-
-    def _ensure_llm_page_cache_file(self) -> None:
-        """Ensure LLM page cache file exists so cache location is always visible."""
-        if self.llm_page_cache_file.exists():
-            return
-        self._save_llm_page_cache({"version": LLM_PAGE_CACHE_VERSION, "text_entries": {}, "vision_entries": {}})
-        if self.llm_page_cache_file.exists():
-            print(
-                f"[CACHE] Created LLM page cache file: {self.llm_page_cache_file.resolve()}",
-                flush=True,
-            )
-
     def _log_cache_paths(self) -> None:
         """Log cache locations and whether files currently exist."""
         cache_dir_display = str(self.cache_dir.resolve())
         pdf_cache_display = str(self.cache_file.resolve())
-        llm_cache_display = str(self.llm_page_cache_file.resolve())
+        full_pdf_llm_cache_display = str(self.full_pdf_llm_cache_file.resolve())
         print(f"[CACHE] Base cache directory: {cache_dir_display}", flush=True)
         print(
             "[CACHE] Cache directory is outside _build_temp, so it is not deleted by rebuilds.",
@@ -572,15 +505,14 @@ class PDFValidator:
             flush=True,
         )
         print(
-            f"[CACHE] LLM page cache file: {llm_cache_display} "
-            f"(exists={'yes' if self.llm_page_cache_file.exists() else 'no'})",
+            f"[CACHE] Full-PDF LLM cache file: {full_pdf_llm_cache_display} "
+            f"(exists={'yes' if self.full_pdf_llm_cache_file.exists() else 'no'})",
             flush=True,
         )
 
     def _log_cache_inventory(
         self,
         pdf_cache: dict | None = None,
-        llm_page_cache: dict | None = None,
     ) -> None:
         """Log cache entry counts and file sizes for quick diagnostics."""
         if pdf_cache is not None:
@@ -596,84 +528,24 @@ class PDFValidator:
             except Exception:
                 print("[CACHE] PDF cache file size: unknown", flush=True)
 
-        if llm_page_cache is not None:
-            text_entries = llm_page_cache.get("text_entries", {}) if isinstance(llm_page_cache, dict) else {}
-            vision_entries = llm_page_cache.get("vision_entries", {}) if isinstance(llm_page_cache, dict) else {}
-            text_cache_entries = len(text_entries) if isinstance(text_entries, dict) else 0
-            vision_cache_entries = len(vision_entries) if isinstance(vision_entries, dict) else 0
-            print(
-                f"[CACHE] LLM page cache entries: text={text_cache_entries}, vision={vision_cache_entries} "
-                f"(version={llm_page_cache.get('version') if isinstance(llm_page_cache, dict) else 'unknown'})",
-                flush=True,
-            )
-
-        if self.llm_page_cache_file.exists():
+        if self.full_pdf_llm_cache_file.exists():
             try:
+                full_pdf_cache = json.loads(self.full_pdf_llm_cache_file.read_text(encoding="utf-8"))
+                entries = full_pdf_cache.get("entries", {}) if isinstance(full_pdf_cache, dict) else {}
+                entry_count = len(entries) if isinstance(entries, dict) else 0
+                print(f"[CACHE] Full-PDF LLM cache entries: {entry_count}", flush=True)
                 print(
-                    f"[CACHE] LLM page cache file size: {self.llm_page_cache_file.stat().st_size} bytes",
+                    f"[CACHE] Full-PDF LLM cache file size: {self.full_pdf_llm_cache_file.stat().st_size} bytes",
                     flush=True,
                 )
             except Exception:
-                print("[CACHE] LLM page cache file size: unknown", flush=True)
-
-    def _normalize_text_for_hash(self, text: str) -> str:
-        """Normalize extracted text before hashing for cache keying."""
-        return re.sub(r"\s+", " ", text).strip()
+                print("[CACHE] Full-PDF LLM cache inventory: unknown", flush=True)
 
     def _get_llm_model_id(self) -> str:
         """Resolve active model id used for LLM page validation."""
         model_id = getattr(llm, "GEMINI_FLASH_MODEL_ID", None) if llm else None
         return model_id if isinstance(model_id, str) and model_id.strip() else "gemini-flash"
 
-    def _build_llm_page_cache_key(self, page_idx: int, text: str) -> str:
-        """Build a stable cache key for a page-level LLM validation result."""
-        normalized_text = self._normalize_text_for_hash(text)
-        text_hash = hashlib.sha256(normalized_text.encode("utf-8", errors="replace")).hexdigest()
-        raw_key = (
-            f"{page_idx}|{text_hash}|{self._get_llm_model_id()}|"
-            f"{LLM_VALIDATION_PROMPT_VERSION}"
-        )
-        return hashlib.sha256(raw_key.encode("utf-8", errors="replace")).hexdigest()
-
-    def _build_llm_vision_page_cache_key(self, page_idx: int, image_bytes: bytes) -> str:
-        """Build a stable cache key for a vision-based page validation result."""
-        image_hash = hashlib.sha256(image_bytes).hexdigest()
-        raw_key = (
-            f"{page_idx}|{image_hash}|{self._get_llm_model_id()}|"
-            f"{LLM_VISION_PROMPT_VERSION}"
-        )
-        return hashlib.sha256(raw_key.encode("utf-8", errors="replace")).hexdigest()
-
-    def _compute_sample_indices(self, page_count: int, requested_pages: int) -> list[int]:
-        """Compute evenly-distributed sample page indices."""
-        if requested_pages <= 0:
-            return list(range(page_count))
-        if page_count <= requested_pages:
-            return list(range(page_count))
-        step = page_count / requested_pages
-        return [int(i * step) for i in range(requested_pages)]
-
-    def _record_llm_issues(self, page_idx: int, issues: list[dict[str, Any]]) -> int:
-        """Convert parsed LLM issues into validation errors and return issue count."""
-        for issue in issues:
-            severity_map = {
-                "CRITICAL": PDFValidationError.SEVERITY_CRITICAL,
-                "WARNING": PDFValidationError.SEVERITY_WARNING,
-                "INFO": PDFValidationError.SEVERITY_INFO,
-            }
-            severity = severity_map.get(
-                issue.get("severity", "WARNING"),
-                PDFValidationError.SEVERITY_WARNING,
-            )
-
-            issue_type = issue.get("type", "OTHER").upper().replace(" ", "_")
-            self._add_error(
-                page_idx + 1,
-                f"LLM_{issue_type}",
-                severity,
-                issue.get("description", "LLM-detected issue"),
-            )
-        return len(issues)
 
     def _add_error(
         self,
@@ -958,360 +830,178 @@ class PDFValidator:
 
         return self.errors
 
+    def _parse_page_value(self, page_value: Any) -> Optional[int]:
+        """Parse first integer from page label/range."""
+        if page_value is None:
+            return None
+        matches = re.findall(r"\d+", str(page_value))
+        if not matches:
+            return None
+        try:
+            return int(matches[0])
+        except ValueError:
+            return None
+
+    def _record_full_pdf_issues(self, issues: list[dict[str, Any]]) -> int:
+        """Convert full-PDF LLM issues to validation errors."""
+        for issue in issues:
+            severity = str(issue.get("severity", "WARNING")).upper()
+            if severity not in {
+                PDFValidationError.SEVERITY_CRITICAL,
+                PDFValidationError.SEVERITY_WARNING,
+                PDFValidationError.SEVERITY_INFO,
+            }:
+                severity = PDFValidationError.SEVERITY_WARNING
+
+            issue_type = str(issue.get("type", "OTHER")).upper().replace(" ", "_")
+            page_num = self._parse_page_value(issue.get("page"))
+            message = str(issue.get("description", "LLM full-PDF issue detected")).strip()
+            suggested_fix = str(issue.get("suggested_fix", "")).strip()
+            evidence_snippet = str(issue.get("evidence_snippet", "")).strip()
+            locator_hint = str(issue.get("locator_hint", "")).strip()
+            context_parts: list[str] = []
+            if suggested_fix:
+                context_parts.append(f"suggested_fix={suggested_fix}")
+            if evidence_snippet:
+                context_parts.append(f"evidence_snippet={evidence_snippet}")
+            if locator_hint:
+                context_parts.append(f"locator_hint={locator_hint}")
+            context = " | ".join(context_parts)
+            self._add_error(page_num, f"LLM_{issue_type}", severity, message, context)
+        return len(issues)
+
     def validate_with_llm(self) -> list[PDFValidationError]:
-        """Use LLM to detect quality issues."""
+        """Use full-PDF upload + Gemini review with cache-first behavior."""
         if self.skip_llm or not self.doc:
             return self.errors
-            
         if not llm:
             print("[WARNING] LLM library not available, skipping LLM validation", file=sys.stderr)
             return self.errors
 
-        page_count = len(self.doc)
-        llm_page_cache = self._load_llm_page_cache() if self.use_cache else {"version": LLM_PAGE_CACHE_VERSION, "text_entries": {}, "vision_entries": {}}
-        llm_page_cache_entries = llm_page_cache.setdefault("text_entries", {})
-        if self.use_cache:
-            self._log_cache_inventory(llm_page_cache=llm_page_cache)
-        page_cache_hits = 0
-        page_cache_misses = 0
+        model_id = self._get_llm_model_id()
+        pricing = llm.get_cost_rates_per_1m(model_id=model_id)
+        input_rate, output_rate, pricing_source = pricing
+        print(
+            f"[LLM] Full-PDF review model: {model_id}; estimated pricing USD/1M tokens "
+            f"(input={input_rate}, output={output_rate}, source={pricing_source})",
+            flush=True,
+        )
 
-        sample_indices = self._compute_sample_indices(page_count, self.llm_sample_pages)
-
-        sample_total = len(sample_indices)
-        if sample_total > 0:
-            print(
-                f"[LLM] Validating {sample_total} page(s) with LLM (PDF has {page_count} pages)",
-                flush=True,
-            )
-            model_id = self._get_llm_model_id()
-            pricing = llm.get_cost_rates_per_1m(model_id=model_id)
-            input_rate, output_rate, pricing_source = pricing
-            print(
-                f"[LLM] Model: {model_id}; estimated pricing USD/1M tokens "
-                f"(input={input_rate}, output={output_rate}, source={pricing_source})",
-                flush=True,
-            )
-
-        max_llm_retries = max(1, int(os.environ.get("PDF_VALIDATION_LLM_RETRIES", "3")))
-
-        for sample_idx, page_idx in enumerate(sample_indices, start=1):
-            print(f"[LLM] Page {sample_idx}/{sample_total} (PDF page {page_idx + 1})", flush=True)
-            page = self.doc[page_idx]
-            text = page.get_text() or ""
-            if not isinstance(text, str):
-                text = str(text)
-
-            # Skip very short pages
-            if len(text.strip()) < 100:
-                print(f"[LLM] Page {sample_idx}/{sample_total} skipped (low text content)", flush=True)
-                continue
-
-            # Truncate long pages
-            if len(text) > 8000:
-                text = text[:8000] + "\n[...truncated...]"
-
-            cache_key = self._build_llm_page_cache_key(page_idx, text)
-            if self.use_cache:
-                cached = llm_page_cache_entries.get(cache_key)
-                if isinstance(cached, dict):
-                    cached_issues = cached.get("issues", [])
-                    if isinstance(cached_issues, list):
-                        page_cache_hits += 1
-                        issue_count = self._record_llm_issues(page_idx, cached_issues)
-                        print(
-                            f"[LLM] Page {sample_idx}/{sample_total} cache hit ({issue_count} issue(s))",
-                            flush=True,
-                        )
-                        continue
-            page_cache_misses += 1
-
-            prompt = f"""Analyze this PDF page text for publication-blocking quality defects.
-
-Bibliography/reference pages ARE IN SCOPE. Evaluate them with the same rigor.
-
-Conservatism rule: only flag issues you are 90%+ confident are real defects.
-Do NOT flag:
-- Page number mismatches (common extraction artifacts)
-- Minor formatting or style differences
-- Normal line wrapping, hyphenation, or spacing differences
-- URL encoding in references (for example %3C/%3E) unless the link itself is truly broken
-- Anything uncertain or speculative
-
-3. Allowed issue types:
-- UNRENDERED_CODE_OR_VARIABLE
-- PLACEHOLDER_TEXT
-- LEAKED_SOURCE_CODE
-- CORRUPTED_OR_GARBLED_TEXT
-- BROKEN_REFERENCE
-- OTHER
-
-Issue type guidance:
-1. UNRENDERED_CODE_OR_VARIABLE: literal "{{{{python}}}}", "$undefined", "NaN", "[object Object]", Python traceback text.
-2. PLACEHOLDER_TEXT: TODO/FIXME/TBD/Lorem ipsum/[INSERT ...].
-3. LEAKED_SOURCE_CODE: visible Python/JavaScript code that should not be in reader-facing content.
-4. CORRUPTED_OR_GARBLED_TEXT: clearly unreadable/corrupted strings, not just odd punctuation.
-5. BROKEN_REFERENCE: reference entry missing core bibliographic parts or malformed links.
-6. OTHER: only for severe defects that do not fit above.
-
-Page content:
----
-{text}
----
-
-Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ confident are real problems:
-{{
-    "issues": [
-        {{
-        {{
-            "type": "ISSUE_TYPE",
-            "description": "specific, factual defect description",
-            "severity": "CRITICAL|WARNING"
-        }}
-    ],
-    "page_quality": "good|acceptable|poor"
-}}
-
-            If no clear issues, return {{"issues": [], "page_quality": "good"}}"""
-
-            result: Optional[dict[str, Any]] = None
-            last_error = None
+        pdf_hash = self.current_pdf_hash or self._get_pdf_hash()
+        cache_key = hashlib.sha256(
+            f"{pdf_hash}|{model_id}|{LLM_FULL_PDF_PROMPT_VERSION}".encode("utf-8", errors="replace")
+        ).hexdigest()
+        full_pdf_cache: dict[str, Any] = {"version": 1, "entries": {}}
+        if self.use_cache and self.full_pdf_llm_cache_file.exists():
             try:
-                for attempt in range(1, max_llm_retries + 1):
-                    try:
-                        # Use Gemini Flash for faster/cheaper validation
-                        response = llm.generate_gemini_flash_content(prompt)
-                        cost = llm.estimate_request_cost_usd(
-                            model_id=self._get_llm_model_id(),
-                            prompt_text=prompt,
-                            response_text=response or "",
-                        )
-                        input_tokens_est = float(cost["input_tokens_est"])
-                        output_tokens_est = float(cost["output_tokens_est"])
-                        request_cost_est = float(cost["request_cost_est_usd"])
-                        self.llm_requests_made += 1
-                        self.llm_input_tokens_est += input_tokens_est
-                        self.llm_output_tokens_est += output_tokens_est
-                        self.llm_cost_est_usd += request_cost_est
-                        print(
-                            f"[LLM] API request page {page_idx + 1}: model={self._get_llm_model_id()}, "
-                            f"input_tokens_est={input_tokens_est:.0f}, output_tokens_est={output_tokens_est:.0f}, "
-                            f"request_cost_est_usd=${request_cost_est:.6f}",
-                            flush=True,
-                        )
-                        
-                        # Log LLM details for debugging
-                        print(f"\n[LLM-DEBUG] Page {page_idx + 1} Prompt ({len(prompt)} chars):")
-                        print(f"{prompt[:200]}...[truncated]...")
-                        print(f"[LLM-DEBUG] Page {page_idx + 1} Response:")
-                        print(f"{response}\n")
+                loaded = json.loads(self.full_pdf_llm_cache_file.read_text(encoding="utf-8"))
+                if isinstance(loaded, dict) and isinstance(loaded.get("entries"), dict):
+                    full_pdf_cache = loaded
+            except Exception:
+                pass
+        entries = full_pdf_cache.setdefault("entries", {})
 
-                        parsed = llm.extract_json_from_response(
-                            response, f"LLM page {page_idx + 1}"
-                        )
-                        if not isinstance(parsed, dict):
-                            raise ValueError("LLM response is not a JSON object")
-                        result = parsed
-                        last_error = None
-                        break
-                    except Exception as e:
-                        last_error = e
-                        if attempt < max_llm_retries:
-                            backoff_seconds = min(8.0, 1.5 * (2 ** (attempt - 1)))
-                            print(
-                                f"[INFO] LLM validation retry for page {page_idx + 1} after error "
-                                f"(attempt {attempt}/{max_llm_retries}): {e}",
-                                file=sys.stderr,
-                            )
-                            time.sleep(backoff_seconds)
-
-                if last_error is not None:
-                    raise last_error
-
-                if result is None:
-                    raise ValueError("LLM response is empty")
-                issues = result.get("issues", [])
+        cached = entries.get(cache_key) if self.use_cache else None
+        if isinstance(cached, dict):
+            cached_response = cached.get("response", {})
+            issues: Any = []
+            if isinstance(cached_response, dict):
+                issues = cached_response.get("errors", [])
                 if not isinstance(issues, list):
-                    raise ValueError("LLM response issues is not a list")
-
-                issue_count = self._record_llm_issues(page_idx, issues)
-                if self.use_cache:
-                    llm_page_cache_entries[cache_key] = {
-                        "cached_at": datetime.now().isoformat(),
-                        "model_id": self._get_llm_model_id(),
-                        "prompt_version": LLM_VALIDATION_PROMPT_VERSION,
-                        "issues": issues,
-                    }
-                    # Persist immediately so partial progress survives interruptions.
-                    self._save_llm_page_cache(llm_page_cache)
+                    issues = cached_response.get("top_issues", [])
+            if isinstance(issues, list):
+                issue_count = self._record_full_pdf_issues(issues)
                 print(
-                    f"[LLM] Page {sample_idx}/{sample_total} complete ({issue_count} issue(s))",
+                    f"[LLM] Full-PDF cache hit key={cache_key[:12]} ({issue_count} issue(s))",
                     flush=True,
                 )
+                return self.errors
 
-            except Exception as e:
-                print(
-                    f"[WARNING] LLM validation failed for page {page_idx + 1}: {e}",
-                    file=sys.stderr,
-                )
+        prompt = """Review this full PDF for publication-blocking defects.
 
-        if self.use_cache:
-            self._save_llm_page_cache(llm_page_cache)
-            print(
-                f"[LLM] Page-cache summary: hits={page_cache_hits}, misses={page_cache_misses}, "
-                f"cache_file={self.llm_page_cache_file}",
-                flush=True,
-            )
-        if sample_total > 0:
-            print(
-                f"[LLM] Summary: requests={self.llm_requests_made}, "
-                f"input_tokens_est={self.llm_input_tokens_est:.0f}, "
-                f"output_tokens_est={self.llm_output_tokens_est:.0f}, "
-                f"cost_est_usd=${self.llm_cost_est_usd:.6f}",
-                flush=True,
-            )
+Focus on:
+- equation rendering defects
+- unreadable figures/tables
+- broken references/citations
+- leaked source/code
+- malformed bibliography entries
 
-        return self.errors
-
-    def validate_with_llm_vision(self) -> list[PDFValidationError]:
-        """Use vision LLM to detect visual rendering defects on page images."""
-        if not self.llm_vision or self.skip_llm or not self.doc:
-            return self.errors
-        if not llm:
-            print("[WARNING] LLM library not available, skipping LLM vision validation", file=sys.stderr)
-            return self.errors
-
-        page_count = len(self.doc)
-        llm_page_cache = self._load_llm_page_cache() if self.use_cache else {"version": LLM_PAGE_CACHE_VERSION, "text_entries": {}, "vision_entries": {}}
-        vision_cache_entries = llm_page_cache.setdefault("vision_entries", {})
-        vision_hits = 0
-        vision_misses = 0
-        sample_indices = self._compute_sample_indices(page_count, self.llm_vision_pages)
-        sample_total = len(sample_indices)
-        if sample_total > 0:
-            print(
-                f"[LLM-VISION] Validating {sample_total} page image(s) (PDF has {page_count} pages)",
-                flush=True,
-            )
-            print(f"[LLM-VISION] Model: {self._get_llm_model_id()}", flush=True)
-
-        max_llm_retries = max(1, int(os.environ.get("PDF_VALIDATION_LLM_RETRIES", "3")))
-        for sample_idx, page_idx in enumerate(sample_indices, start=1):
-            page = self.doc[page_idx]
-            pix = page.get_pixmap(matrix=(2, 2), alpha=False)
-            image_bytes = pix.tobytes("png")
-            cache_key = self._build_llm_vision_page_cache_key(page_idx, image_bytes)
-            if self.use_cache:
-                cached = vision_cache_entries.get(cache_key)
-                if isinstance(cached, dict):
-                    cached_issues = cached.get("issues", [])
-                    if isinstance(cached_issues, list):
-                        vision_hits += 1
-                        issue_count = self._record_llm_issues(page_idx, cached_issues)
-                        print(
-                            f"[LLM-VISION] Page {sample_idx}/{sample_total} cache hit ({issue_count} issue(s))",
-                            flush=True,
-                        )
-                        continue
-            vision_misses += 1
-            prompt = """Analyze this rendered PDF page image and report publication-blocking visual defects.
-
-Focus especially on equation and figure rendering quality:
-- garbled equation glyphs/symbols
-- clipped/truncated equations or labels
-- overlapping text/equations/figures
-- unreadable chart/table labels
-- broken/missing figure content
-
-Be conservative: only flag defects you are 90%+ confident are real.
-Return JSON only:
+Be conservative: only include issues you are highly confident are true defects.
+Return JSON only with this schema:
 {
-  "issues": [
-    {"type": "EQUATION_RENDERING_DEFECT|FIGURE_RENDERING_DEFECT|LAYOUT_OVERLAP|UNREADABLE_CONTENT|OTHER",
-     "description": "specific visual defect",
-     "severity": "CRITICAL|WARNING"}
+  "summary": "one paragraph",
+  "errors": [
+    {
+      "severity": "CRITICAL|WARNING",
+      "type": "string",
+      "page": "page number or range",
+      "description": "specific defect",
+      "suggested_fix": "actionable fix",
+      "evidence_snippet": "short exact text snippet copied from the PDF near the defect",
+      "locator_hint": "how to find this in source docs using only document-visible clues (section heading, figure/table label, citation text, unique phrase)"
+    }
   ],
-  "page_quality": "good|acceptable|poor"
+  "high_value_improvements": ["string"]
 }
-If no clear visual issues, return {"issues": [], "page_quality": "good"}."""
-            result: Optional[dict[str, Any]] = None
-            last_error = None
-            for attempt in range(1, max_llm_retries + 1):
-                try:
-                    response = llm.generate_gemini_flash_content_with_image(prompt, image_bytes, "image/png")
-                    cost = llm.estimate_request_cost_usd(
-                        model_id=self._get_llm_model_id(),
-                        prompt_text=prompt,
-                        response_text=response or "",
-                    )
-                    input_tokens_est = float(cost["input_tokens_est"])
-                    output_tokens_est = float(cost["output_tokens_est"])
-                    request_cost_est = float(cost["request_cost_est_usd"])
-                    self.llm_requests_made += 1
-                    self.llm_input_tokens_est += input_tokens_est
-                    self.llm_output_tokens_est += output_tokens_est
-                    self.llm_cost_est_usd += request_cost_est
-                    print(
-                        f"[LLM-VISION] API request page {page_idx + 1}: model={self._get_llm_model_id()}, "
-                        f"input_tokens_est={input_tokens_est:.0f}, output_tokens_est={output_tokens_est:.0f}, "
-                        f"request_cost_est_usd=${request_cost_est:.6f} (text-only estimate)",
-                        flush=True,
-                    )
-                    parsed = llm.extract_json_from_response(response, f"LLM vision page {page_idx + 1}")
-                    if not isinstance(parsed, dict):
-                        raise ValueError("LLM vision response is not a JSON object")
-                    result = parsed
-                    last_error = None
-                    break
-                except Exception as e:
-                    last_error = e
-                    if attempt < max_llm_retries:
-                        backoff_seconds = min(8.0, 1.5 * (2 ** (attempt - 1)))
-                        print(
-                            f"[INFO] LLM vision retry for page {page_idx + 1} "
-                            f"(attempt {attempt}/{max_llm_retries}): {e}",
-                            file=sys.stderr,
-                        )
-                        time.sleep(backoff_seconds)
-            if last_error is not None:
-                print(
-                    f"[WARNING] LLM vision validation failed for page {page_idx + 1}: {last_error}",
-                    file=sys.stderr,
-                )
-                continue
-            if result is None:
-                continue
-            issues = result.get("issues", [])
-            if not isinstance(issues, list):
-                continue
-            # Prefix errors so source of issue is explicit.
-            normalized_issues: list[dict[str, Any]] = []
-            for issue in issues:
-                if isinstance(issue, dict):
-                    typed_issue = issue.copy()
-                    issue_type = str(typed_issue.get("type", "OTHER"))
-                    typed_issue["type"] = f"VISION_{issue_type}"
-                    normalized_issues.append(typed_issue)
-            issue_count = self._record_llm_issues(page_idx, normalized_issues)
-            if self.use_cache:
-                vision_cache_entries[cache_key] = {
-                    "cached_at": datetime.now().isoformat(),
-                    "model_id": self._get_llm_model_id(),
-                    "prompt_version": LLM_VISION_PROMPT_VERSION,
-                    "issues": normalized_issues,
-                }
-                self._save_llm_page_cache(llm_page_cache)
+
+Important constraints:
+- You do NOT have access to source qmd/bib files. Do not invent filenames or keys.
+- "locator_hint" must rely only on clues visible in the PDF.
+- Keep snippets short and exact.
+- The "errors" list MUST be sorted by page in ascending order."""
+
+        response = llm.generate_gemini_flash_content_with_pdf(prompt=prompt, pdf_path=str(self.pdf_path))
+        cost = llm.estimate_request_cost_usd(
+            model_id=model_id,
+            prompt_text=prompt,
+            response_text=response or "",
+        )
+        input_tokens_est = float(cost["input_tokens_est"])
+        output_tokens_est = float(cost["output_tokens_est"])
+        request_cost_est = float(cost["request_cost_est_usd"])
+        self.llm_requests_made += 1
+        self.llm_input_tokens_est += input_tokens_est
+        self.llm_output_tokens_est += output_tokens_est
+        self.llm_cost_est_usd += request_cost_est
+        print(
+            f"[LLM] Full-PDF API request: model={model_id}, input_tokens_est={input_tokens_est:.0f}, "
+            f"output_tokens_est={output_tokens_est:.0f}, request_cost_est_usd=${request_cost_est:.6f}",
+            flush=True,
+        )
+
+        parsed = llm.extract_json_from_response(response, f"full-pdf-review {self.pdf_path.name}")
+        if not isinstance(parsed, dict):
+            raise RuntimeError("Full-PDF LLM response is not a JSON object")
+        issues: Any = parsed.get("errors", [])
+        if not isinstance(issues, list):
+            issues = parsed.get("top_issues", [])
+        if not isinstance(issues, list):
+            issues = []
+        issue_count = self._record_full_pdf_issues(issues)
+        print(f"[LLM] Full-PDF review complete ({issue_count} issue(s))", flush=True)
+
+        if self.use_cache:
+            self.cache_dir.mkdir(parents=True, exist_ok=True)
+            response_to_cache = dict(parsed)
+            if "errors" not in response_to_cache and isinstance(response_to_cache.get("top_issues"), list):
+                response_to_cache["errors"] = response_to_cache["top_issues"]
+            entries[cache_key] = {
+                "cached_at": datetime.now().isoformat(),
+                "pdf_path": str(self.pdf_path),
+                "pdf_hash": pdf_hash,
+                "model_id": model_id,
+                "prompt_version": LLM_FULL_PDF_PROMPT_VERSION,
+                "response": response_to_cache,
+            }
+            self.full_pdf_llm_cache_file.write_text(
+                json.dumps(full_pdf_cache, indent=2),
+                encoding="utf-8",
+            )
             print(
-                f"[LLM-VISION] Page {sample_idx}/{sample_total} complete ({issue_count} issue(s))",
+                f"[LLM] Full-PDF cache saved key={cache_key[:12]} file={self.full_pdf_llm_cache_file}",
                 flush=True,
             )
 
-        if self.use_cache:
-            self._save_llm_page_cache(llm_page_cache)
-            print(
-                f"[LLM-VISION] Page-cache summary: hits={vision_hits}, misses={vision_misses}, "
-                f"cache_file={self.llm_page_cache_file}",
-                flush=True,
-            )
         return self.errors
 
     def validate(self) -> list[PDFValidationError]:
@@ -1348,16 +1038,10 @@ If no clear visual issues, return {"issues": [], "page_quality": "good"}."""
                     f"(cached={cached_result.get('llm_pages')}, requested={self.llm_sample_pages})",
                     flush=True,
                 )
-            elif bool(cached_result.get("llm_vision", False)) != self.llm_vision:
+            elif cached_result.get("llm_mode") != "full_pdf":
                 print(
-                    f"[*] PDF cache miss for {self.pdf_path.name}: llm_vision mismatch "
-                    f"(cached={cached_result.get('llm_vision', False)}, requested={self.llm_vision})",
-                    flush=True,
-                )
-            elif int(cached_result.get("llm_vision_pages", 0)) != int(self.llm_vision_pages):
-                print(
-                    f"[*] PDF cache miss for {self.pdf_path.name}: llm_vision_pages mismatch "
-                    f"(cached={cached_result.get('llm_vision_pages', 0)}, requested={self.llm_vision_pages})",
+                    f"[*] PDF cache miss for {self.pdf_path.name}: llm_mode mismatch "
+                    f"(cached={cached_result.get('llm_mode')}, requested=full_pdf)",
                     flush=True,
                 )
             else:
@@ -1376,12 +1060,10 @@ If no clear visual issues, return {"issues": [], "page_quality": "good"}."""
 
         # Only continue if PDF opened successfully
         if self.doc:
-            self.validate_content()
             self.validate_images()
             self.validate_links()
             self.validate_cross_references()
             self.validate_with_llm()
-            self.validate_with_llm_vision()
 
             # Close the document
             self.doc.close()
@@ -1392,8 +1074,7 @@ If no clear visual issues, return {"issues": [], "page_quality": "good"}."""
                 "pdf_name": self.pdf_path.name,
                 "timestamp": datetime.now().isoformat(),
                 "llm_pages": self.llm_sample_pages,
-                "llm_vision": self.llm_vision,
-                "llm_vision_pages": self.llm_vision_pages,
+                "llm_mode": "full_pdf",
                 "errors": [
                     {
                         "page_num": e.page_num,
@@ -1476,18 +1157,7 @@ def main():
         "--llm-pages",
         type=int,
         default=0,
-        help="Number of pages to sample for LLM validation (<=0 means all pages)",
-    )
-    parser.add_argument(
-        "--llm-vision",
-        action="store_true",
-        help="Enable vision-based LLM validation on rendered page images",
-    )
-    parser.add_argument(
-        "--llm-vision-pages",
-        type=int,
-        default=0,
-        help="Number of pages to sample for vision-based LLM validation (<=0 means all pages)",
+        help="Deprecated: page-level sampling no longer used (full-PDF LLM review is default)",
     )
     parser.add_argument(
         "--fail-on-warning", action="store_true", help="Treat warnings as errors"
@@ -1521,8 +1191,6 @@ def main():
         print("   (LLM validation skipped)")
     if args.skip_url_check:
         print("   (URL validation skipped)")
-    if args.llm_vision and not args.skip_llm:
-        print(f"   (LLM vision validation enabled, pages={args.llm_vision_pages})")
 
     all_errors = []
     has_critical = False
@@ -1535,8 +1203,6 @@ def main():
             skip_llm=args.skip_llm,
             skip_url_check=args.skip_url_check,
             llm_sample_pages=args.llm_pages,
-            llm_vision=args.llm_vision,
-            llm_vision_pages=args.llm_vision_pages,
             use_cache=not args.no_cache,
         )
         errors = validator.validate()

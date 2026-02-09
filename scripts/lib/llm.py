@@ -17,7 +17,7 @@ from google import genai
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 
 # --- Model IDs ---
 # Updated January 2026 - Gemini 3 models (preview)
@@ -60,6 +60,35 @@ anthropic_client = None
 if ANTHROPIC_API_KEY:
     anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
+_gemini_key_fingerprint_logged = False
+_claude_key_fingerprint_logged = False
+
+
+def _log_key_fingerprint_once(provider: str, key: str | None) -> None:
+    """Log masked API key fingerprint once for runtime diagnostics."""
+    global _gemini_key_fingerprint_logged, _claude_key_fingerprint_logged
+    if provider == "gemini":
+        if _gemini_key_fingerprint_logged:
+            return
+        _gemini_key_fingerprint_logged = True
+    elif provider == "claude":
+        if _claude_key_fingerprint_logged:
+            return
+        _claude_key_fingerprint_logged = True
+    else:
+        return
+
+    if not key:
+        print(f"[LLM] {provider} key fingerprint: <missing>")
+        return
+
+    tail_len = 6 if len(key) >= 6 else len(key)
+    tail = key[-tail_len:]
+    print(
+        f"[LLM] {provider} key fingerprint: len={len(key)}, tail={tail}",
+        flush=True,
+    )
+
 
 # --- Content Generation Functions ---
 
@@ -67,6 +96,7 @@ def generate_gemini_pro_content(prompt: str) -> str:
     """Generate content using Gemini Pro model."""
     if google_client is None:
         raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is required for Gemini requests.")
+    _log_key_fingerprint_once("gemini", GOOGLE_GENERATIVE_AI_API_KEY)
     response = google_client.models.generate_content(
         model=GEMINI_PRO_MODEL_ID,
         contents=prompt
@@ -78,6 +108,7 @@ def generate_gemini_flash_content(prompt: str) -> str:
     """Generate content using Gemini Flash model."""
     if google_client is None:
         raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is required for Gemini requests.")
+    _log_key_fingerprint_once("gemini", GOOGLE_GENERATIVE_AI_API_KEY)
     response = google_client.models.generate_content(
         model=GEMINI_FLASH_MODEL_ID,
         contents=prompt
@@ -93,6 +124,7 @@ def generate_gemini_flash_content_with_image(
     """Generate content using Gemini Flash model with image input."""
     if google_client is None:
         raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is required for Gemini requests.")
+    _log_key_fingerprint_once("gemini", GOOGLE_GENERATIVE_AI_API_KEY)
     response = google_client.models.generate_content(
         model=GEMINI_FLASH_MODEL_ID,
         contents=[
@@ -103,10 +135,34 @@ def generate_gemini_flash_content_with_image(
     return response.text or ""
 
 
+def generate_gemini_flash_content_with_pdf(
+    prompt: str,
+    pdf_path: str,
+) -> str:
+    """Generate content using Gemini Flash model with a full PDF input via Files API."""
+    if google_client is None:
+        raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is required for Gemini requests.")
+    _log_key_fingerprint_once("gemini", GOOGLE_GENERATIVE_AI_API_KEY)
+    uploaded_file = google_client.files.upload(file=pdf_path)
+    file_uri = getattr(uploaded_file, "uri", None)
+    mime_type = getattr(uploaded_file, "mime_type", None) or "application/pdf"
+    if not file_uri:
+        raise ValueError("Gemini file upload succeeded but did not return a URI.")
+    response = google_client.models.generate_content(
+        model=GEMINI_FLASH_MODEL_ID,
+        contents=[
+            genai.types.Part.from_uri(file_uri=file_uri, mime_type=mime_type),
+            prompt,
+        ],
+    )
+    return response.text or ""
+
+
 def generate_claude_opus_content(prompt: str) -> str:
     """Generate content using Claude Opus 4.1 model."""
     if anthropic_client is None:
         raise ValueError("ANTHROPIC_API_KEY is required for Claude requests.")
+    _log_key_fingerprint_once("claude", ANTHROPIC_API_KEY)
     message = anthropic_client.messages.create(
         model=CLAUDE_OPUS_4_1_MODEL_ID,
         max_tokens=8192,
@@ -123,6 +179,7 @@ def generate_claude_sonnet_content(prompt: str) -> str:
     """Generate content using Claude Sonnet 4.5 model."""
     if anthropic_client is None:
         raise ValueError("ANTHROPIC_API_KEY is required for Claude requests.")
+    _log_key_fingerprint_once("claude", ANTHROPIC_API_KEY)
     message = anthropic_client.messages.create(
         model=CLAUDE_SONNET_4_5_MODEL_ID,
         max_tokens=8192,
