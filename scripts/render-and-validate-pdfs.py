@@ -8,13 +8,12 @@ if sys.platform == 'win32':
 
 from datetime import datetime
 from pathlib import Path
-import os
-import yaml
 
 sys.path.insert(0, str(Path(__file__).parent))
 from lib.build_logger import run_command_stream, suppress_pip_requirement_noise
-from lib.quarto_config_utils import discover_paper_configs, count_qmd_files
-from lib.validation_output_utils import extract_validation_errors, extract_ai_fix_log_path
+from lib.quarto_config_utils import discover_pdf_work_items_sorted
+from lib.pdf_validation_runner import run_pdf_validation
+from lib.python_utils import get_preferred_python
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -36,61 +35,28 @@ def run_and_tee(cmd: list[str], log_file) -> tuple[int, str]:
     )
 
 
-def discover_papers_sorted_by_qmd_count() -> list[dict]:
-    raw_papers = discover_paper_configs(PROJECT_ROOT)
-    papers: list[dict] = []
-
-    for config_name, info in raw_papers.items():
-        pdf_filename = info.get("pdf_filename") or Path(info["pdf_path"]).name
-        papers.append(
-            {
-                "config_name": config_name,
-                "pdf_path": PROJECT_ROOT / "assets" / "pdfs" / pdf_filename,
-                "qmd_count": count_qmd_files(info["config"]),
-            }
-        )
-
-    papers.sort(key=lambda paper: paper["qmd_count"])
-    return papers
-
-
 def discover_configs_sorted_by_qmd_count(selected_configs: list[str] | None = None) -> list[dict]:
     """Discover configs for render/validate, optionally filtered by config names."""
-    if not selected_configs:
-        return discover_papers_sorted_by_qmd_count()
-
-    selected_set = {name.strip() for name in selected_configs if name.strip()}
-    configs: list[dict] = []
-    missing: list[str] = []
-
-    for config_name in sorted(selected_set):
-        config_path = PROJECT_ROOT / f"_quarto-{config_name}.yml"
-        if not config_path.exists():
-            missing.append(config_name)
-            continue
-        with open(config_path, "r", encoding="utf-8") as f:
-            config = yaml.safe_load(f) or {}
-        dih_render = config.get("dih-render", {})
-        pdf_filename = (
-            dih_render.get("pdf-output-file")
-            or config.get("format", {}).get("pdf", {}).get("output-file")
-            or f"{config_name}-paper.pdf"
-        )
-        configs.append(
-            {
-                "config_name": config_name,
-                "pdf_path": PROJECT_ROOT / "assets" / "pdfs" / pdf_filename,
-                "qmd_count": count_qmd_files(config),
-            }
-        )
-
-    if missing:
-        print(f"[ERROR] Unknown config(s): {', '.join(missing)}", flush=True)
-        print("[ERROR] Expected files like _quarto-<config>.yml in project root", flush=True)
-        return []
-
-    configs.sort(key=lambda cfg: cfg["qmd_count"])
-    return configs
+    items = discover_pdf_work_items_sorted(
+        project_root=PROJECT_ROOT,
+        selected_configs=selected_configs,
+    )
+    if selected_configs:
+        selected_set = {name.strip() for name in selected_configs if name.strip()}
+        found_set = {item["config_name"] for item in items}
+        missing = sorted(selected_set - found_set)
+        if missing:
+            print(f"[ERROR] Unknown config(s): {', '.join(missing)}", flush=True)
+            print("[ERROR] Expected files like _quarto-<config>.yml in project root", flush=True)
+            return []
+    return [
+        {
+            "config_name": item["config_name"],
+            "pdf_path": item["assets_pdf_path"],
+            "qmd_count": item["qmd_count"],
+        }
+        for item in items
+    ]
 
 
 def extract_render_errors(output: str) -> list[str]:
@@ -111,14 +77,6 @@ def extract_render_errors(output: str) -> list[str]:
                 seen.add(stripped)
                 errors.append(stripped)
     return errors
-
-
-def build_pdf_validation_command(pdf_path: Path) -> list[str]:
-    """Build pdf-validation command."""
-    cmd = [sys.executable, "-u", "scripts/pdf-validation.py", "--pdf", str(pdf_path)]
-    if os.environ.get("PDF_VALIDATION_DISABLE_CACHE", "").lower() in {"1", "true", "yes", "on"}:
-        cmd.append("--no-cache")
-    return cmd
 
 
 def write_report(results: list[dict]) -> None:
@@ -194,6 +152,8 @@ def main() -> int:
     print(f"[REPORT] Checklist report will be saved to: {REPORT_PATH}", flush=True)
     print("[VALIDATION] Using scripts/pdf-validation.py", flush=True)
 
+    python_exe = get_preferred_python(PROJECT_ROOT)
+
     with open(LOG_PATH, "w", encoding="utf-8") as log_file:
         log_file.write("=" * 80 + "\n")
         log_file.write("RENDER + VALIDATE PDF RUN\n")
@@ -232,7 +192,7 @@ def main() -> int:
             }
             print(f"\n[*] Rendering {config_name}...", flush=True)
             render_rc, render_output = run_and_tee(
-                [sys.executable, "-u", "scripts/render-quarto.py", config_name],
+                [python_exe, "-u", "scripts/render-quarto.py", config_name],
                 log_file,
             )
             result["render_rc"] = render_rc
@@ -245,16 +205,58 @@ def main() -> int:
                 continue
 
             print(f"[*] Validating {pdf_path.name}...", flush=True)
-            validate_rc, validate_output = run_and_tee(
-                build_pdf_validation_command(pdf_path),
-                log_file,
+            validation_result = run_pdf_validation(
+                pdf_path=pdf_path,
+                cwd=PROJECT_ROOT,
+                python_executable=python_exe,
+                skip_url_check=True,
+                use_cache=True,
+                verbose=False,
+                line_filter=lambda display_line: (
+                    display_line.startswith("[VALIDATION]")
+                    or display_line.startswith("   Validating:")
+                    or display_line.startswith("[LLM]")
+                    or display_line.startswith("[WARNING]")
+                    or display_line.startswith("[ERROR]")
+                    or display_line.startswith("ERROR:")
+                    or display_line.startswith("FATAL:")
+                    or display_line.startswith("[OK]")
+                    or "validation failed" in display_line.lower()
+                ),
             )
-            result["validation_rc"] = validate_rc
-            result["validation_errors"] = extract_validation_errors(validate_output)
-            result["ai_fix_log_path"] = extract_ai_fix_log_path(validate_output)
-            if validate_rc != 0:
-                print(f"[ERROR] Validation failed for {pdf_path.name} with exit code {validate_rc}", flush=True)
-                log_file.write(f"\n[ERROR] Validation failed for {pdf_path.name} with exit code {validate_rc}\n")
+            log_file.write(validation_result.output)
+            log_file.flush()
+            result["validation_rc"] = validation_result.returncode
+            result["validation_errors"] = validation_result.errors
+            result["ai_fix_log_path"] = validation_result.ai_fix_log_path
+            llm_skipped = (
+                "LLM validation skipped" in validation_result.output
+                or "LLM library not available, skipping LLM validation" in validation_result.output
+            )
+            if llm_skipped and validation_result.returncode == 0:
+                result["validation_errors"].append(
+                    "LLM validation was skipped; treating as failure for render-and-validate flow."
+                )
+                result["validation_rc"] = 1
+            if validation_result.returncode != 0:
+                print(
+                    f"[ERROR] Validation failed for {pdf_path.name} with exit code {validation_result.returncode}",
+                    flush=True,
+                )
+                log_file.write(
+                    f"\n[ERROR] Validation failed for {pdf_path.name} with exit code {validation_result.returncode}\n"
+                )
+                result["status"] = "validation_failed"
+                results.append(result)
+                continue
+            if result["validation_rc"] != 0:
+                print(
+                    f"[ERROR] Validation failed for {pdf_path.name} (LLM validation skipped)",
+                    flush=True,
+                )
+                log_file.write(
+                    f"\n[ERROR] Validation failed for {pdf_path.name} (LLM validation skipped)\n"
+                )
                 result["status"] = "validation_failed"
                 results.append(result)
                 continue

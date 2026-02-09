@@ -19,7 +19,6 @@ Environment:
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import os
 import re
@@ -43,17 +42,16 @@ except ImportError:
     sys.exit(1)
 
 from lib.zenodo_client import ZenodoClient, upload_paper, get_zenodo_token
+from lib.zenodo_client import get_record_id_from_doi
 from lib.quarto_config_utils import (
-    discover_paper_configs,
-    count_qmd_files,
+    discover_pdf_work_items_sorted,
     get_newest_paper_source_mtime,
     get_paper_source_files,
     check_and_download_remote_pdf,
 )
-from lib.validation_output_utils import (
-    extract_validation_errors as shared_extract_validation_errors,
-    extract_ai_fix_log_path as shared_extract_ai_fix_log_path,
-)
+from lib.hash_utils import compute_sha256, compute_md5
+from lib.pdf_validation_runner import run_pdf_validation
+from lib.python_utils import get_preferred_python
 
 PROJECT_ROOT = Path(__file__).parent.parent
 PDF_VALIDATION_CACHE_PATH = PROJECT_ROOT / ".cache" / "pdf-validation-upload-cache.json"
@@ -74,40 +72,74 @@ DEFAULT_LLM_BLOCKING_TYPES = (
 )
 DEFAULT_LLM_WARNING_TYPES: tuple[str, ...] = ()
 
-
-def _get_preferred_python() -> str:
-    """Prefer project virtualenv Python when available."""
-    if sys.platform == "win32":
-        venv_python = PROJECT_ROOT / ".venv" / "Scripts" / "python.exe"
-    else:
-        venv_python = PROJECT_ROOT / ".venv" / "bin" / "python"
-    if venv_python.exists():
-        return str(venv_python)
-    return sys.executable
-
-
 def _cache_key_for_pdf(pdf_path: Path) -> str:
     """Build a stable cache key for a PDF path."""
     return str(pdf_path.resolve()).replace("\\", "/").lower()
 
 
-def _compute_sha256(file_path: Path, chunk_size: int = 1024 * 1024) -> str:
-    """Compute SHA256 hash for a file."""
-    digest = hashlib.sha256()
-    with open(file_path, "rb") as f:
-        while True:
-            chunk = f.read(chunk_size)
-            if not chunk:
-                break
-            digest.update(chunk)
-    return digest.hexdigest()
-
-
 def _compute_pdf_signature(pdf_path: Path) -> dict:
     """Compute content-hash signature used for validation cache matching."""
     return {
-        "sha256": _compute_sha256(pdf_path),
+        "sha256": compute_sha256(pdf_path),
     }
+
+
+def _extract_record_file_checksum_md5(record: dict, target_filename: str) -> str | None:
+    """Extract md5 checksum for a file from Zenodo records API response."""
+    files = record.get("files", [])
+    if not isinstance(files, list):
+        return None
+
+    for file_info in files:
+        if not isinstance(file_info, dict):
+            continue
+        filename = (
+            file_info.get("filename")
+            or file_info.get("key")
+            or file_info.get("name")
+            or ""
+        )
+        if filename != target_filename:
+            continue
+        checksum = str(file_info.get("checksum", "")).strip()
+        if checksum.startswith("md5:"):
+            return checksum.removeprefix("md5:").strip().lower()
+        return None
+
+    return None
+
+
+def _should_skip_upload_by_remote_checksum(
+    client: ZenodoClient,
+    quarto_config: dict,
+    pdf_path: Path,
+) -> tuple[bool, str]:
+    """Return (skip, reason) if remote latest version has same PDF content."""
+    metadata = quarto_config.get("metadata", {})
+    if not isinstance(metadata, dict):
+        return False, "No metadata section"
+
+    existing_doi = str(metadata.get("doi", "")).strip()
+    if not existing_doi:
+        return False, "No existing DOI in config"
+
+    record_id = get_record_id_from_doi(existing_doi)
+    if not record_id:
+        return False, f"Could not parse record id from DOI: {existing_doi}"
+
+    try:
+        record = client.get_record(record_id)
+    except Exception as e:
+        return False, f"Could not fetch record {record_id}: {e}"
+
+    remote_md5 = _extract_record_file_checksum_md5(record, pdf_path.name)
+    if not remote_md5:
+        return False, f"No remote checksum found for {pdf_path.name}"
+
+    local_md5 = compute_md5(pdf_path)
+    if local_md5.lower() == remote_md5.lower():
+        return True, f"Remote checksum matches local ({pdf_path.name})"
+    return False, f"Remote checksum differs for {pdf_path.name}"
 
 
 def _default_validation_cache() -> dict:
@@ -188,7 +220,7 @@ def _compute_source_signature(paper_key: str, paper_config: dict) -> dict:
         except Exception:
             rel_str = str(source_path.resolve()).replace("\\", "/")
 
-        file_sha = _compute_sha256(source_path)
+        file_sha = compute_sha256(source_path)
         digest.update(f"{rel_str}|{file_sha}\n".encode("utf-8", errors="replace"))
         tracked.append(
             {
@@ -212,7 +244,7 @@ def _pdf_signature_matches(pdf_path: Path, expected_signature: dict | None) -> b
     expected_sha = str(expected_signature.get("sha256", "")).strip()
     if not expected_sha:
         return False
-    return _compute_sha256(pdf_path) == expected_sha
+    return compute_sha256(pdf_path) == expected_sha
 
 
 def _is_perfected_entry_valid(
@@ -230,16 +262,6 @@ def _is_perfected_entry_valid(
     if entry.get("source_signature") != source_signature:
         return False
     return _pdf_signature_matches(pdf_path, entry.get("pdf_signature"))
-
-
-def _extract_validation_errors(output: str) -> list[str]:
-    """Extract key validation errors from validator output."""
-    return shared_extract_validation_errors(output, include_broken_external=True)
-
-
-def _extract_ai_fix_log_path(output: str) -> str | None:
-    """Extract AI fix log file path emitted by pdf-validation.py output."""
-    return shared_extract_ai_fix_log_path(output)
 
 
 def _extract_llm_error_type(error_line: str) -> str | None:
@@ -570,21 +592,17 @@ def generate_report(report_data: dict) -> str:
 
 def discover_papers() -> dict:
     """Find all Quarto paper configs using shared discovery utility."""
-    raw_papers = discover_paper_configs(PROJECT_ROOT)
-
-    # Add qmd_count for sorting by size
+    items = discover_pdf_work_items_sorted(project_root=PROJECT_ROOT)
     papers = {}
-    for key, info in raw_papers.items():
-        pdf_filename = info.get("pdf_filename") or Path(info["pdf_path"]).name
+    for item in items:
+        key = item["config_name"]
         papers[key] = {
-            "config_path": info["config_path"],
-            "config": info["config"],
-            # Canonical freshness/upload target for this workflow.
-            "pdf_path": f"assets/pdfs/{pdf_filename}",
-            # Keep build output path as fallback only.
-            "build_pdf_path": info["pdf_path"],
-            "pdf_filename": pdf_filename,
-            "qmd_count": count_qmd_files(info["config"]),
+            "config_path": item["config_path"],
+            "config": item["config"],
+            "pdf_path": item["assets_pdf_rel_path"],
+            "build_pdf_path": str(item["build_pdf_path"].relative_to(PROJECT_ROOT)).replace("\\", "/"),
+            "pdf_filename": item["pdf_filename"],
+            "qmd_count": item["qmd_count"],
         }
     return papers
 
@@ -613,7 +631,6 @@ def validate_existing_pdf(
 
     Returns (passed, blocking_errors, warnings, from_cache, ai_fix_log_path).
     """
-    validation_script = PROJECT_ROOT / "scripts" / "pdf-validation.py"
     if llm_blocking_types is None:
         blocking_types = set(DEFAULT_LLM_BLOCKING_TYPES)
     else:
@@ -668,39 +685,21 @@ def validate_existing_pdf(
             None,
         )
 
-    python_exe = _get_preferred_python()
-    cmd = [python_exe, str(validation_script), "--pdf", str(pdf_path)]
-    if skip_url_check:
-        cmd.append("--skip-url-check")
+    python_exe = get_preferred_python(PROJECT_ROOT)
     print(
         f"  Starting PDF validation for {pdf_path.name} (full-PDF LLM review). "
         "This can take a while for full-document validation...",
         flush=True,
     )
-    if verbose:
-        print(f"  Running: {' '.join(cmd)}", flush=True)
-
-    validation_started_at = time.time()
-    output_lines: list[str] = []
-    process = subprocess.Popen(
-        cmd,
-        cwd=str(PROJECT_ROOT),
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-    )
-    for line in (process.stdout or []):
-        output_lines.append(line)
-        display_line = line.rstrip("\r\n")
-        if not display_line:
-            continue
-        if verbose:
-            print(display_line, flush=True)
-            continue
-        lowered = display_line.lower()
-        should_show = (
+    validation_result = run_pdf_validation(
+        pdf_path=pdf_path,
+        cwd=PROJECT_ROOT,
+        python_executable=python_exe,
+        verbose=verbose,
+        skip_url_check=skip_url_check,
+        use_cache=use_cache,
+        include_broken_external_errors=True,
+        line_filter=lambda display_line: (
             display_line.startswith("[VALIDATION]")
             or display_line.startswith("   Validating:")
             or display_line.startswith("[LLM]")
@@ -711,20 +710,18 @@ def validate_existing_pdf(
             or display_line.startswith("ERROR:")
             or display_line.startswith("FATAL:")
             or display_line.startswith("[OK]")
-            or "validation failed" in lowered
-        )
-        if should_show:
-            print(f"  {display_line}", flush=True)
-    process.wait()
-    output = "".join(output_lines)
-    validation_duration = time.time() - validation_started_at
+            or "validation failed" in display_line.lower()
+        ),
+    )
+    output = validation_result.output
+    validation_duration = validation_result.duration_seconds
     print(
-        f"  PDF validation finished for {pdf_path.name} in {validation_duration:.1f}s (rc={process.returncode})",
+        f"  PDF validation finished for {pdf_path.name} in {validation_duration:.1f}s (rc={validation_result.returncode})",
         flush=True,
     )
 
-    extracted_errors = _extract_validation_errors(output)
-    ai_fix_log_path = _extract_ai_fix_log_path(output)
+    extracted_errors = validation_result.errors
+    ai_fix_log_path = validation_result.ai_fix_log_path
     llm_errors = [e for e in extracted_errors if "LLM_" in e]
     non_llm_errors = [e for e in extracted_errors if "LLM_" not in e]
 
@@ -758,7 +755,7 @@ def validate_existing_pdf(
     passed = llm_completed and not blocking_errors
 
     if not passed and not blocking_errors:
-        blocking_errors.append(f"Validation failed with exit code {process.returncode}")
+        blocking_errors.append(f"Validation failed with exit code {validation_result.returncode}")
 
     if use_cache:
         cache_entries[cache_key] = {
@@ -772,11 +769,11 @@ def validate_existing_pdf(
             "warnings": llm_warnings,
             "llm_warnings": llm_warnings,
             "ai_fix_log_path": ai_fix_log_path,
-            "returncode": process.returncode,
+            "returncode": validation_result.returncode,
         }
         _save_validation_cache(cache)
 
-    return passed, blocking_errors, llm_warnings, False, ai_fix_log_path
+    return passed, blocking_errors, llm_warnings, validation_result.from_cache, ai_fix_log_path
 
 
 def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
@@ -849,7 +846,7 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
     )
 
     try:
-        python_exe = _get_preferred_python()
+        python_exe = get_preferred_python(PROJECT_ROOT)
         process = subprocess.Popen(
             [python_exe, "-u", str(render_script), paper_key],
             cwd=str(PROJECT_ROOT),
@@ -1429,6 +1426,39 @@ def main():
             if fallback_pdf.exists():
                 print(f"[WARN] Using fallback build PDF for upload: {fallback_pdf}")
                 pdf_path = fallback_pdf
+
+        skip_remote_upload, skip_reason = _should_skip_upload_by_remote_checksum(
+            client=client,
+            quarto_config=info["config"],
+            pdf_path=pdf_path,
+        )
+        if skip_remote_upload:
+            metadata = info["config"].get("metadata", {}) if isinstance(info["config"], dict) else {}
+            doi = str(metadata.get("doi", "N/A")) if isinstance(metadata, dict) else "N/A"
+            print(f"[SKIP] {paper_key}: {skip_reason}")
+            report_data["upload_results"][paper_key] = {
+                "verified": True,
+                "skipped": True,
+                "doi": doi,
+                "id": "N/A",
+                "url": f"https://zenodo.org/record/{get_record_id_from_doi(doi)}" if get_record_id_from_doi(doi) else "N/A",
+                "reason": f"Skipped upload; {skip_reason}",
+            }
+            perfected_entries[paper_key] = {
+                "updated_at": datetime.now().isoformat(),
+                "source_signature": source_signatures.get(paper_key, {}),
+                "pdf_signature": _compute_pdf_signature(pdf_path),
+                "validation_passed": True,
+                "upload_verified": True,
+                "doi": doi,
+                "deposit_id": "N/A",
+                "url": report_data["upload_results"][paper_key]["url"],
+            }
+            _save_perfected_state(perfected_state)
+            log_action(f"Skipped upload for {paper_key}: remote checksum matched local PDF")
+            continue
+        print(f"[*] {paper_key}: remote checksum check unavailable/different, proceeding with upload ({skip_reason})")
+
         result = upload_paper(
             client=client,
             paper_key=paper_key,

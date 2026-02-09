@@ -28,6 +28,7 @@ from datetime import datetime
 from pathlib import Path
 
 from lib.build_logger import run_command_stream
+from lib.python_utils import get_preferred_python
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 UPLOAD_SCRIPT = PROJECT_ROOT / "scripts" / "upload-all-zenodo-and-save-dois.py"
@@ -40,16 +41,6 @@ LOCK_PATH = PROJECT_ROOT / "AUTONOMOUS-PIPELINE.lock"
 
 if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-
-
-def get_preferred_python() -> str:
-    if sys.platform == "win32":
-        venv_python = PROJECT_ROOT / ".venv" / "Scripts" / "python.exe"
-    else:
-        venv_python = PROJECT_ROOT / ".venv" / "bin" / "python"
-    if venv_python.exists():
-        return str(venv_python)
-    return sys.executable
 
 
 def run_and_tee(
@@ -365,7 +356,7 @@ def main() -> int:
 
     AUTONOMY_LOG_DIR.mkdir(parents=True, exist_ok=True)
     ensure_progress_file()
-    python_exe = get_preferred_python()
+    python_exe = get_preferred_python(PROJECT_ROOT)
     selected_papers = list(args.papers)
     run_id = datetime.now().strftime("%Y%m%d-%H%M%S")
     run_started_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

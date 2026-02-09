@@ -15,7 +15,16 @@ import sys
 import threading
 import time
 from datetime import datetime
+from pathlib import Path
 from typing import Callable, List, Optional, Tuple
+
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    load_dotenv = None
+
+from .pdf_validation_runner import run_pdf_validation as run_pdf_validation_subprocess
+from .python_utils import get_preferred_python
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == "win32" and isinstance(sys.stdout, io.TextIOWrapper):
@@ -306,18 +315,9 @@ def setup_quarto_python_env():
     # Detect project root (render_utils.py is in scripts/lib/)
     project_root = Path(__file__).parent.parent.parent.absolute()
 
-    # Detect venv Python path (cross-platform)
-    if sys.platform == 'win32':
-        venv_python = project_root / '.venv' / 'Scripts' / 'python.exe'
-    else:
-        venv_python = project_root / '.venv' / 'bin' / 'python'
-
-    if venv_python.exists():
-        os.environ['QUARTO_PYTHON'] = str(venv_python)
-        print(f"[*] Using venv Python: {venv_python}")
-    else:
-        print(f"[WARN] Virtual environment not found at {venv_python}")
-        print(f"[WARN] Quarto will use system Python (may cause kernel errors)")
+    preferred_python = get_preferred_python(project_root)
+    os.environ['QUARTO_PYTHON'] = preferred_python
+    print(f"[*] Using Quarto Python: {preferred_python}")
 
 
 # Auto-configure Quarto Python when this module is imported
@@ -1215,11 +1215,9 @@ def run_pdf_validation(
     """
     Run comprehensive PDF validation using pdf-validation.py.
 
-    Automatically skips LLM validation if GOOGLE_GENERATIVE_AI_API_KEY is not set.
-
     Args:
         pdf_path: Path to PDF file to validate
-        skip_llm: Force skip LLM validation even if API key available
+        skip_llm: Force skip LLM validation
         skip_url_check: Skip external URL validation (default True for speed)
         fail_on_warning: Treat warnings as errors
 
@@ -1232,52 +1230,37 @@ def run_pdf_validation(
     log_with_timestamp("RUNNING PDF VALIDATION")
     log_with_timestamp("=" * 80)
 
-    script_path = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        "pdf-validation.py"
-    )
-
-    if not os.path.exists(script_path):
-        log_with_timestamp(f"[WARNING] PDF validation script not found: {script_path}")
-        return 0  # Don't fail build if script missing
+    # Ensure .env values are loaded for subprocesses that rely on process env.
+    if callable(load_dotenv):
+        load_dotenv(override=True)
 
     # Check if LLM validation should be enabled
     gemini_key = os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY")
-    if not gemini_key:
-        skip_llm = True
-        log_with_timestamp("[*] LLM validation disabled (GOOGLE_GENERATIVE_AI_API_KEY not set)")
-
-    # Build command
-    cmd = [sys.executable, script_path, "--pdf", pdf_path]
-    if skip_llm:
-        cmd.append("--skip-llm")
-    if skip_url_check:
-        cmd.append("--skip-url-check")
-    if fail_on_warning:
-        cmd.append("--fail-on-warning")
-
-    log_with_timestamp(f"[*] Command: {' '.join(cmd)}")
+    if not skip_llm and not gemini_key:
+        log_with_timestamp(
+            "[ERROR] GOOGLE_GENERATIVE_AI_API_KEY is not set; cannot run required LLM PDF validation",
+            to_stderr=True,
+        )
+        return 1
 
     try:
-        result = subprocess.run(
-            cmd,
-            check=False,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
+        result = run_pdf_validation_subprocess(
+            pdf_path=Path(pdf_path),
+            cwd=Path(__file__).resolve().parent.parent.parent,
+            python_executable=get_preferred_python(Path(__file__).resolve().parent.parent.parent),
+            verbose=False,
+            skip_url_check=skip_url_check,
+            skip_llm=skip_llm,
+            fail_on_warning=fail_on_warning,
+            use_cache=True,
         )
+        log_with_timestamp(f"[*] Command runner: scripts/lib/pdf_validation_runner.py")
 
         # Log captured output with timestamps
-        if result.stdout:
-            for line in result.stdout.strip().split("\n"):
+        if result.output:
+            for line in result.output.strip().split("\n"):
                 if line.strip():
                     log_with_timestamp(line)
-
-        if result.stderr:
-            for line in result.stderr.strip().split("\n"):
-                if line.strip():
-                    log_with_timestamp(line, to_stderr=True)
 
         elapsed = time.time() - start_time
         elapsed_str = f"{elapsed:.1f}s" if elapsed < 60 else f"{int(elapsed/60)}m {elapsed%60:.0f}s"

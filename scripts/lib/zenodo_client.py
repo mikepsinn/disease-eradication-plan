@@ -185,6 +185,16 @@ class ZenodoClient:
         response.raise_for_status()
         return response.json()
 
+    def get_record(self, record_id: int) -> dict:
+        """Get published record details from records API."""
+        response = requests.get(
+            f"{self.base_url}/records/{record_id}",
+            headers=self.headers,
+            timeout=self.timeout,
+        )
+        response.raise_for_status()
+        return response.json()
+
     def verify_bucket_access(self, bucket_url: str) -> bool:
         """Check that draft bucket is reachable."""
         response = requests.get(

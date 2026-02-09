@@ -208,6 +208,78 @@ def discover_paper_configs(
     return papers
 
 
+def discover_pdf_work_items_sorted(
+    project_root: Optional[Path] = None,
+    selected_configs: Optional[List[str]] = None,
+    include_disabled: bool = False,
+) -> List[Dict[str, Any]]:
+    """
+    Discover config items for PDF workflows, sorted by QMD count (smallest first).
+
+    When `selected_configs` is provided, includes exactly those config names (if present),
+    even if they are non-paper configs such as test/manual.
+    When omitted, defaults to standalone paper configs from discover_paper_configs().
+
+    Returns items with these keys:
+    - config_name
+    - config_path
+    - config
+    - qmd_count
+    - pdf_filename
+    - assets_pdf_rel_path
+    - assets_pdf_path
+    - build_pdf_path
+    """
+    if project_root is None:
+        project_root = _find_project_root()
+
+    items: List[Dict[str, Any]] = []
+
+    if selected_configs:
+        selected_set = {name.strip() for name in selected_configs if name and name.strip()}
+        for config_name in sorted(selected_set):
+            config_path = project_root / f"_quarto-{config_name}.yml"
+            if not config_path.exists():
+                continue
+            config = _load_config(config_path)
+            if config is None:
+                continue
+            pdf_filename = _get_pdf_output_filename_for_paper(config_name, config)
+            assets_pdf_rel_path = f"assets/pdfs/{pdf_filename}"
+            items.append(
+                {
+                    "config_name": config_name,
+                    "config_path": config_path,
+                    "config": config,
+                    "qmd_count": count_qmd_files(config),
+                    "pdf_filename": pdf_filename,
+                    "assets_pdf_rel_path": assets_pdf_rel_path,
+                    "assets_pdf_path": project_root / assets_pdf_rel_path,
+                    "build_pdf_path": project_root / "_build_temp" / config_name / "_site" / config_name / pdf_filename,
+                }
+            )
+    else:
+        papers = discover_paper_configs(project_root=project_root, include_disabled=include_disabled)
+        for config_name, info in papers.items():
+            pdf_filename = info.get("pdf_filename") or Path(info["pdf_path"]).name
+            assets_pdf_rel_path = f"assets/pdfs/{pdf_filename}"
+            items.append(
+                {
+                    "config_name": config_name,
+                    "config_path": info["config_path"],
+                    "config": info["config"],
+                    "qmd_count": count_qmd_files(info["config"]),
+                    "pdf_filename": pdf_filename,
+                    "assets_pdf_rel_path": assets_pdf_rel_path,
+                    "assets_pdf_path": project_root / assets_pdf_rel_path,
+                    "build_pdf_path": project_root / info["pdf_path"],
+                }
+            )
+
+    items.sort(key=lambda item: item["qmd_count"])
+    return items
+
+
 def discover_deployable_configs(
     project_root: Optional[Path] = None,
 ) -> Dict[str, Dict[str, Any]]:
