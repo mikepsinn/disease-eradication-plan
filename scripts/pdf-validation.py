@@ -37,6 +37,11 @@ try:
 except ImportError:
     llm = None
 
+try:
+    from quarto_config_utils import discover_paper_configs  # type: ignore[import-not-found]
+except ImportError:
+    discover_paper_configs = None
+
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == "win32":
     import codecs
@@ -256,6 +261,53 @@ If the error persists, check Quarto documentation or run with `--verbose` flag.
 """
 
 
+def find_quarto_config_for_pdf(pdf_path: str) -> Optional[str]:
+    """
+    Find the _quarto-*.yml config that renders the given PDF.
+
+    Matches by `format.pdf.output-file` and fallback `dih-render.pdf-output-file`.
+    Returns absolute config path string, or None when no unique match is found.
+    """
+    project_root = Path(__file__).parent.parent
+    pdf_name = Path(pdf_path).name
+    # Prefer shared config discovery logic so filename parsing stays centralized.
+    if discover_paper_configs is not None:
+        try:
+            papers = discover_paper_configs(project_root=project_root, include_disabled=True)
+            matches = []
+            for _, info in papers.items():
+                config_path = info.get("config_path")
+                pdf_filename = info.get("pdf_filename")
+                if config_path and pdf_filename and Path(str(pdf_filename)).name == pdf_name:
+                    matches.append(Path(config_path))
+            if len(matches) == 1:
+                return str(matches[0].resolve())
+        except Exception:
+            pass
+
+    # Fallback: direct scan for environments where shared lib import fails.
+    candidate_configs = sorted(project_root.glob("_quarto-*.yml"))
+    matches: list[Path] = []
+    for config_path in candidate_configs:
+        try:
+            text = config_path.read_text(encoding="utf-8")
+        except Exception:
+            continue
+
+        output_file_match = re.search(r'output-file:\s*"?([^"\n]+\.pdf)"?', text, flags=re.IGNORECASE)
+        if output_file_match and Path(output_file_match.group(1).strip()).name == pdf_name:
+            matches.append(config_path)
+            continue
+
+        fallback_match = re.search(r'pdf-output-file:\s*"?([^"\n]+\.pdf)"?', text, flags=re.IGNORECASE)
+        if fallback_match and Path(fallback_match.group(1).strip()).name == pdf_name:
+            matches.append(config_path)
+
+    if len(matches) == 1:
+        return str(matches[0].resolve())
+    return None
+
+
 def write_ai_fix_log(
     errors_by_type: dict,
     pdf_path: str,
@@ -273,19 +325,21 @@ def write_ai_fix_log(
     if output_dir:
         log_dir = Path(output_dir)
     else:
-        # Default to _build_temp in project root
-        log_dir = Path(__file__).parent.parent / "_build_temp"
+        # Default to project root so checklists are easy to find
+        log_dir = Path(__file__).parent.parent
 
     log_dir.mkdir(parents=True, exist_ok=True)
 
     # Use PDF name in log filename
     pdf_name = Path(pdf_path).stem
     log_path = log_dir / f"pdf-validation-checklist-{pdf_name}.md"
+    config_path = find_quarto_config_for_pdf(pdf_path)
 
     lines = [
         "# PDF Validation Errors - Checklist",
         "",
         f"**PDF:** `{pdf_path}`",
+        f"**Quarto config:** `{config_path}`" if config_path else "**Quarto config:** `(not auto-detected)`",
         f"**Generated:** {__import__('datetime').datetime.now().isoformat()}",
         "",
         "## Summary",
@@ -807,13 +861,13 @@ class PDFValidator:
         cached = entries.get(cache_key) if self.use_cache else None
         if isinstance(cached, dict):
             cached_response = cached.get("response", {})
-            issues: Any = []
+            cached_issues: Any = []
             if isinstance(cached_response, dict):
-                issues = cached_response.get("errors", [])
-                if not isinstance(issues, list):
-                    issues = cached_response.get("top_issues", [])
-            if isinstance(issues, list):
-                issue_count = self._record_full_pdf_issues(issues)
+                cached_issues = cached_response.get("errors", [])
+                if not isinstance(cached_issues, list):
+                    cached_issues = cached_response.get("top_issues", [])
+            if isinstance(cached_issues, list):
+                issue_count = self._record_full_pdf_issues(cached_issues)
                 print(
                     f"[LLM] Full-PDF cache hit key={cache_key[:12]} ({issue_count} issue(s))",
                     flush=True,
@@ -830,6 +884,7 @@ Focus on:
 - malformed bibliography entries
 
 Be conservative: only include issues you are highly confident are true defects.
+Treat PDF text extraction artifacts as non-issues unless you have strong visual evidence of an actual rendering defect.
 Return JSON only with this schema:
 {
   "summary": "one paragraph",
@@ -851,7 +906,37 @@ Important constraints:
 - You do NOT have access to source qmd/bib files. Do not invent filenames or keys.
 - "locator_hint" must rely only on clues visible in the PDF.
 - Keep snippets short and exact.
+- Do NOT flag extraction-layer artifacts as defects:
+  - spaces/newlines inserted inside URLs (for example "https: //")
+  - missing Greek/math symbols in copied text when layout appears intact
+  - line-wrap hyphenation artifacts in bibliography entries
+  - markdown tokens visible only in extracted text layer
+  - orphan punctuation that may be extraction noise
+- Only flag equation defects when mathematical meaning is actually broken in rendered layout.
+- Only flag broken references/citations when a link/reference is clearly malformed in the rendered document itself.
 - The "errors" list MUST be sorted by page in ascending order."""
+
+        # Pre-call token/cost logging so operators can see expected spend
+        # before any external API request is sent.
+        prompt_tokens_est = llm.estimate_tokens(prompt)
+        input_only_cost_est = (prompt_tokens_est / 1_000_000.0) * input_rate
+        try:
+            projected_output_tokens = max(
+                0.0,
+                float(os.getenv("PDF_VALIDATION_LLM_PROJECTED_OUTPUT_TOKENS", "1500")),
+            )
+        except ValueError:
+            projected_output_tokens = 1500.0
+        projected_total_cost_est = (
+            input_only_cost_est + (projected_output_tokens / 1_000_000.0) * output_rate
+        )
+        print(
+            f"[LLM] Preflight estimate: model={model_id}, input_tokens_est={prompt_tokens_est:.0f}, "
+            f"input_cost_est_usd=${input_only_cost_est:.6f}, "
+            f"projected_output_tokens={projected_output_tokens:.0f}, "
+            f"projected_total_cost_est_usd=${projected_total_cost_est:.6f}",
+            flush=True,
+        )
 
         response = llm.generate_gemini_flash_content_with_pdf(prompt=prompt, pdf_path=str(self.pdf_path))
         cost = llm.estimate_request_cost_usd(
