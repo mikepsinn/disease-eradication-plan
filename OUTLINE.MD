@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 5 | **Words:** 68,314
+**Files:** 5 | **Words:** 68,309
 
 #### index.qmd
 **Title:** Wishocracy
@@ -53,11 +53,9 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 843 words | 107 lines
+**Stats:** 838 words | 105 lines
 
-  - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
-  - Working Papers
     - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
     - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
@@ -1491,7 +1489,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 161,663
+**Files:** 67 | **Words:** 161,658
 
 #### index.qmd
 **Title:** Start Here
@@ -3396,11 +3394,9 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 843 words | 107 lines
+**Stats:** 838 words | 105 lines
 
-  - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
-  - Working Papers
     - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
     - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
@@ -3900,7 +3896,7 @@
 ## _quarto-test.yml
 **Title:** Test Economics Document
 **Type:** book
-**Files:** 6 | **Words:** 9,040
+**Files:** 6 | **Words:** 9,035
 
 #### index.qmd
 **Title:** Wishocracy
@@ -3944,11 +3940,9 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 843 words | 107 lines
+**Stats:** 838 words | 105 lines
 
-  - Books
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
-  - Working Papers
     - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
     - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
@@ -4242,6 +4236,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 345,644
+- Total words: 345,629
 - Orphaned files: 26
 - Paper configs: 12

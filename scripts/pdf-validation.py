@@ -47,6 +47,7 @@ if sys.platform == "win32":
 # Detect GitHub Actions environment
 IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
 GITHUB_STEP_SUMMARY = os.environ.get("GITHUB_STEP_SUMMARY")
+DEFAULT_PDF_DIR = Path(__file__).parent.parent / "assets" / "pdfs"
 
 
 class PDFValidationError:
@@ -1014,11 +1015,6 @@ def main():
     parser = argparse.ArgumentParser(
         description="Validate PDF files for publication readiness"
     )
-    parser.add_argument(
-        "--output-dir",
-        default="_manual/warondisease",
-        help="Directory to search for PDF files",
-    )
     parser.add_argument("--pdf", help="Specific PDF file to validate")
     parser.add_argument(
         "--skip-llm", action="store_true", help="Skip LLM-powered validation"
@@ -1047,9 +1043,9 @@ def main():
             print(f"[ERROR] PDF file not found: {args.pdf}")
             return 1
     else:
-        output_dir = Path(args.output_dir)
+        output_dir = DEFAULT_PDF_DIR
         if not output_dir.exists():
-            print(f"[ERROR] Output directory not found: {output_dir}")
+            print(f"[ERROR] PDF directory not found: {output_dir}")
             return 1
         pdf_files = find_pdf_files(output_dir)
         if not pdf_files:
