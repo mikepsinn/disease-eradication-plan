@@ -36,6 +36,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -79,6 +87,8 @@ jobs:
 
       - name: "Render Build The 1% Treaty: Harnessing Greed to Eradicate Disea"
         run: python scripts/render-quarto.py 1-pct-treaty-impact
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -141,6 +151,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -184,6 +202,8 @@ jobs:
 
       - name: "Render Build The Price of Political Change: A Cost-Benefit Fram"
         run: python scripts/render-quarto.py cost-of-change
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -246,6 +266,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -289,6 +317,8 @@ jobs:
 
       - name: "Render Build How to Prevent a Year of Death and Suffering for 8"
         run: python scripts/render-quarto.py dfda-impact
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -351,6 +381,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -394,6 +432,8 @@ jobs:
 
       - name: "Render Build dFDA: A Decentralized Framework for Drug Assessmen"
         run: python scripts/render-quarto.py dfda-spec
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -456,6 +496,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -499,6 +547,8 @@ jobs:
 
       - name: "Render Build Federal Resource Allocation Efficiency Audit"
         run: python scripts/render-quarto.py federal-efficiency-audit
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -561,6 +611,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -604,6 +662,8 @@ jobs:
 
       - name: "Render Build Incentive Alignment Bonds: Making Public Goods Fin"
         run: python scripts/render-quarto.py iab
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -666,6 +726,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -709,6 +777,8 @@ jobs:
 
       - name: "Render Build The Invisible Graveyard: Quantifying the Mortality"
         run: python scripts/render-quarto.py invisible-graveyard
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -771,6 +841,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -814,6 +892,8 @@ jobs:
 
       - name: "Render Build How to End War and Disease"
         run: python scripts/render-quarto.py manual
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 75
 
       - name: Upload LaTeX logs on failure
@@ -876,6 +956,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -919,6 +1007,8 @@ jobs:
 
       - name: "Render Build Optimal Budget Generator: Evidence-Based Budget Al"
         run: python scripts/render-quarto.py obg
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -981,6 +1071,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -1024,6 +1122,8 @@ jobs:
 
       - name: "Render Build Optimal Policy Generator: Evidence-Based Policy Re"
         run: python scripts/render-quarto.py opg
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -1086,6 +1186,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -1129,6 +1237,8 @@ jobs:
 
       - name: "Render Build Optimocracy: Evidence-Based Governance Through Out"
         run: python scripts/render-quarto.py optimocracy
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -1191,6 +1301,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -1234,6 +1352,8 @@ jobs:
 
       - name: "Render Build The Political Dysfunction Tax"
         run: python scripts/render-quarto.py political-dysfunction-tax
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure
@@ -1296,6 +1416,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -1339,6 +1467,8 @@ jobs:
 
       - name: "Render Build Wishocracy: Solving the Democratic Principal-Agent"
         run: python scripts/render-quarto.py wishocracy
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
         timeout-minutes: 30
 
       - name: Upload LaTeX logs on failure

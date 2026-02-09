@@ -36,6 +36,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-{% raw %}${{ runner.os }}{% endraw %}-{% raw %}${{ hashFiles('.cache/pdf-validation-cache.json') }}{% endraw %}
+          restore-keys: |
+            validation-cache-{% raw %}${{ runner.os }}{% endraw %}-
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -79,6 +87,8 @@ jobs:
 
       - name: "Render {{ job.display_name }}"
         run: python scripts/render-quarto.py {{ job.config_name }}
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}{% endraw %}
         timeout-minutes: {{ job.timeout_minutes }}
 
       - name: Upload LaTeX logs on failure

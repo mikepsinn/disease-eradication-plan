@@ -19,11 +19,14 @@ Exit codes:
 """
 
 import argparse
+import hashlib
+import json
 import os
 import re
 import sys
 import time
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional
 
@@ -441,13 +444,44 @@ class PDFValidator:
         skip_llm: bool = False,
         skip_url_check: bool = False,
         llm_sample_pages: int = 5,
+        use_cache: bool = True,
     ):
-        self.pdf_path = pdf_path
+        self.pdf_path = Path(pdf_path)
         self.skip_llm = skip_llm
         self.skip_url_check = skip_url_check
         self.llm_sample_pages = llm_sample_pages
+        self.use_cache = use_cache
         self.doc = None
         self.errors: list[PDFValidationError] = []
+        self.cache_dir = Path(__file__).parent.parent / ".cache"
+        self.cache_file = self.cache_dir / "pdf-validation-cache.json"
+
+    def _get_pdf_hash(self) -> str:
+        """Compute SHA256 hash of the PDF file."""
+        sha256_hash = hashlib.sha256()
+        with open(self.pdf_path, "rb") as f:
+            for byte_block in iter(lambda: f.read(4096), b""):
+                sha256_hash.update(byte_block)
+        return sha256_hash.hexdigest()
+
+    def _load_cache(self) -> dict:
+        """Load validation cache from file."""
+        if not self.cache_file.exists():
+            return {}
+        try:
+            with open(self.cache_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+
+    def _save_cache(self, cache_data: dict):
+        """Save validation cache to file."""
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        try:
+            with open(self.cache_file, "w", encoding="utf-8") as f:
+                json.dump(cache_data, f, indent=2)
+        except Exception as e:
+            print(f"[WARNING] Failed to save cache: {e}")
 
     def _add_error(
         self,
@@ -801,7 +835,15 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
             try:
                 for attempt in range(1, max_llm_retries + 1):
                     try:
-                        response = llm.generate_gemini_pro_content(prompt)
+                        # Use Gemini Flash for faster/cheaper validation
+                        response = llm.generate_gemini_flash_content(prompt)
+                        
+                        # Log LLM details for debugging
+                        print(f"\n[LLM-DEBUG] Page {page_idx + 1} Prompt ({len(prompt)} chars):")
+                        print(f"{prompt[:200]}...[truncated]...")
+                        print(f"[LLM-DEBUG] Page {page_idx + 1} Response:")
+                        print(f"{response}\n")
+
                         parsed = llm.extract_json_from_response(
                             response, f"LLM page {page_idx + 1}"
                         )
@@ -863,6 +905,25 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
 
     def validate(self) -> list[PDFValidationError]:
         """Run all validation checks."""
+        pdf_hash = self._get_pdf_hash()
+        cache = self._load_cache()
+        
+        # Check cache if enabled
+        if self.use_cache and pdf_hash in cache:
+            cached_result = cache[pdf_hash]
+            # Ensure the cache entry has the required fields
+            if "errors" in cached_result and cached_result.get("llm_pages") == self.llm_sample_pages:
+                print(f"[*] Using cached validation results for {self.pdf_path.name} (hash: {pdf_hash[:8]})")
+                for err_data in cached_result["errors"]:
+                    self._add_error(
+                        err_data.get("page_num"),
+                        err_data.get("error_type"),
+                        err_data.get("severity"),
+                        err_data.get("message"),
+                        err_data.get("context", "")
+                    )
+                return self.errors
+
         self.validate_structure()
 
         # Only continue if PDF opened successfully
@@ -875,6 +936,24 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
 
             # Close the document
             self.doc.close()
+
+        # Save to cache
+        if self.use_cache:
+            cache[pdf_hash] = {
+                "pdf_name": self.pdf_path.name,
+                "timestamp": datetime.now().isoformat(),
+                "llm_pages": self.llm_sample_pages,
+                "errors": [
+                    {
+                        "page_num": e.page_num,
+                        "error_type": e.error_type,
+                        "severity": e.severity,
+                        "message": e.message,
+                        "context": e.context
+                    } for e in self.errors
+                ]
+            }
+            self._save_cache(cache)
 
         return self.errors
 
@@ -956,6 +1035,9 @@ def main():
     parser.add_argument(
         "--fail-on-warning", action="store_true", help="Treat warnings as errors"
     )
+    parser.add_argument(
+        "--no-cache", action="store_true", help="Disable validation caching"
+    )
     args = parser.parse_args()
 
     # Determine PDF files to validate
@@ -974,19 +1056,8 @@ def main():
             print(f"[WARNING] No PDF files found in {output_dir}")
             return 0
 
-    # Setup file logging
-    try:
-        log_dir = Path(__file__).parent.parent / "_build_temp"
-        log_dir.mkdir(parents=True, exist_ok=True)
-        
-        pdf_stem = pdf_files[0].stem if pdf_files else "pdf-validation"
-        log_file = log_dir / f"pdf-validation-log-{pdf_stem}.txt"
-        
-        # Start teeing output
-        tee = Tee(str(log_file), "w", encoding="utf-8")
-        print(f"[LOG] Writing full execution log to: {log_file}")
-    except Exception as e:
-        print(f"[WARNING] Failed to setup file logging: {e}")
+    # Logging is handled by the calling script (zenodo-upload.log) via stdout capture
+    # No separate log file created here to avoid clutter
 
     print(f"[VALIDATION] Validating {len(pdf_files)} PDF file(s)...")
     if args.skip_llm:
@@ -1005,6 +1076,7 @@ def main():
             skip_llm=args.skip_llm,
             skip_url_check=args.skip_url_check,
             llm_sample_pages=args.llm_pages,
+            use_cache=not args.no_cache,
         )
         errors = validator.validate()
 

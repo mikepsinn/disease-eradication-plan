@@ -769,6 +769,7 @@ def validate_existing_pdf(
             display_line.startswith("[VALIDATION]")
             or display_line.startswith("   Validating:")
             or display_line.startswith("[LLM]")
+            or display_line.startswith("[LLM-DEBUG]")
             or display_line.startswith("[INFO] LLM")
             or display_line.startswith("[WARNING]")
             or display_line.startswith("[ERROR]")
@@ -1039,23 +1040,25 @@ def save_report(report_data: dict, start_time: float) -> Path:
     report_data["run_id"] = run_id
     report_text = generate_report(report_data)
 
+    # Save latest report to root (overwrite)
     report_path = PROJECT_ROOT / "zenodo-upload-report.md"
     report_path.write_text(report_text, encoding='utf-8')
-    REPORT_ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
-    archived_report_path = REPORT_ARCHIVE_DIR / f"zenodo-upload-report-{run_id}.md"
-    archived_report_path.write_text(report_text, encoding="utf-8")
-
-    validation_error_path: Path | None = None
-    validation_error_text = _generate_validation_error_report(report_data)
-    if validation_error_text:
-        VALIDATION_ERROR_REPORT_DIR.mkdir(parents=True, exist_ok=True)
-        validation_error_path = VALIDATION_ERROR_REPORT_DIR / f"zenodo-validation-errors-{run_id}.md"
-        validation_error_path.write_text(validation_error_text, encoding="utf-8")
+    
+    # Append report to the single log file
+    try:
+        log_file = PROJECT_ROOT / "zenodo-upload.log"
+        with open(log_file, "a", encoding="utf-8") as f:
+            f.write("\n" + "="*80 + "\n")
+            f.write("FINAL REPORT\n")
+            f.write("="*80 + "\n")
+            f.write(report_text)
+            f.write("\n" + "="*80 + "\n")
+    except Exception as e:
+        print(f"[WARNING] Failed to append report to log: {e}")
 
     print(f"\nReport saved to: {report_path}")
-    print(f"Archived report saved to: {archived_report_path}")
-    if validation_error_path:
-        print(f"Validation error report saved to: {validation_error_path}")
+    # Archives and separate validation error files are disabled to reduce clutter
+    
     return report_path
 
 
@@ -1122,7 +1125,39 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+class Tee:
+    """Duplicate output to a file and the original stream."""
+    def __init__(self, name, mode, encoding='utf-8'):
+        self.file = open(name, mode, encoding=encoding)
+        self.stdout = sys.stdout
+        self.stderr = sys.stderr
+        sys.stdout = self
+        sys.stderr = self
+
+    def __del__(self):
+        sys.stdout = self.stdout
+        sys.stderr = self.stderr
+        self.file.close()
+
+    def write(self, data):
+        self.file.write(data)
+        self.stdout.write(data)
+        self.file.flush()
+        self.stdout.flush()
+
+    def flush(self):
+        self.file.flush()
+        self.stdout.flush()
+
 def main():
+    # Setup root logging
+    try:
+        log_file = PROJECT_ROOT / "zenodo-upload.log"
+        tee = Tee(str(log_file), "a", encoding="utf-8")
+        print(f"[LOG] Writing full execution log to: {log_file}")
+    except Exception as e:
+        print(f"[WARNING] Failed to setup file logging: {e}")
+
     args = parse_args()
     start_time = time.time()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
