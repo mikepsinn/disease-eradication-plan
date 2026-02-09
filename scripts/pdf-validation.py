@@ -854,6 +854,8 @@ class PDFValidator:
         page_count = len(self.doc)
         llm_page_cache = self._load_llm_page_cache() if self.use_cache else {"version": LLM_PAGE_CACHE_VERSION, "entries": {}}
         llm_page_cache_entries = llm_page_cache.setdefault("entries", {})
+        page_cache_hits = 0
+        page_cache_misses = 0
 
         # Sample pages evenly distributed.
         # llm_sample_pages <= 0 means "validate all pages".
@@ -904,12 +906,14 @@ class PDFValidator:
                 if isinstance(cached, dict):
                     cached_issues = cached.get("issues", [])
                     if isinstance(cached_issues, list):
+                        page_cache_hits += 1
                         issue_count = self._record_llm_issues(page_idx, cached_issues)
                         print(
                             f"[LLM] Page {sample_idx}/{sample_total} cache hit ({issue_count} issue(s))",
                             flush=True,
                         )
                         continue
+            page_cache_misses += 1
 
             prompt = f"""Analyze this PDF page text for publication-blocking quality defects.
 
@@ -1040,6 +1044,11 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
 
         if self.use_cache:
             self._save_llm_page_cache(llm_page_cache)
+            print(
+                f"[LLM] Page-cache summary: hits={page_cache_hits}, misses={page_cache_misses}, "
+                f"cache_file={self.llm_page_cache_file}",
+                flush=True,
+            )
         if sample_total > 0:
             print(
                 f"[LLM] Summary: requests={self.llm_requests_made}, "
@@ -1056,12 +1065,30 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
         pdf_hash = self._get_pdf_hash()
         self.current_pdf_hash = pdf_hash
         cache = self._load_cache()
-        
+        if self.use_cache:
+            print(
+                f"[*] PDF cache lookup: hash={pdf_hash[:8]}, llm_pages={self.llm_sample_pages}, "
+                f"cache_file={self.cache_file}",
+                flush=True,
+            )
+
         # Check cache if enabled
-        if self.use_cache and pdf_hash in cache:
-            cached_result = cache[pdf_hash]
-            # Ensure the cache entry has the required fields
-            if "errors" in cached_result and cached_result.get("llm_pages") == self.llm_sample_pages:
+        if self.use_cache:
+            cached_result = cache.get(pdf_hash)
+            if cached_result is None:
+                print(f"[*] PDF cache miss for {self.pdf_path.name}: no matching hash entry", flush=True)
+            elif "errors" not in cached_result:
+                print(
+                    f"[*] PDF cache miss for {self.pdf_path.name}: malformed entry (missing errors)",
+                    flush=True,
+                )
+            elif cached_result.get("llm_pages") != self.llm_sample_pages:
+                print(
+                    f"[*] PDF cache miss for {self.pdf_path.name}: llm_pages mismatch "
+                    f"(cached={cached_result.get('llm_pages')}, requested={self.llm_sample_pages})",
+                    flush=True,
+                )
+            else:
                 print(f"[*] Using cached validation results for {self.pdf_path.name} (hash: {pdf_hash[:8]})")
                 for err_data in cached_result["errors"]:
                     self._add_error(
