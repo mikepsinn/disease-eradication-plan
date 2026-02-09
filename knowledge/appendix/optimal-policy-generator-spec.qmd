@@ -63,7 +63,7 @@ This specification describes the **Optimal Policy Generator (OPG)**, a proposed 
 
 **Epistemic status:** OPG is an unvalidated methodological proposal. The framework represents a theoretically-motivated approach to evidence aggregation, not a validated predictive tool. Quantitative claims (e.g., "5-15% of GDP welfare gains") are projections under framework assumptions that require empirical calibration. Terminology like "evidence-supported" indicates consistency with quasi-experimental evidence, not causal proof.
 
-![A conceptual diagram of the Optimal Policy Generator (OPG) framework illustrating the flow from evidence and welfare metrics to the four primary policy outputs: Enact, Replace, Repeal, and Maintain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-abstract-unnumbered-bw-academic.jpg)
+> **OPG output classes:** ENACT (add policy), REPLACE (adjust policy level), REPEAL (remove harmful policy), MAINTAIN (retain evidence-aligned policy).
 
 **Important limitation**: Until retrospective validation is performed (see @sec-opg-validation-framework), OPG should be treated as a theoretically-motivated heuristic for policy prioritization, not a validated predictive tool. The quasi-experimental methods provide evidence *consistent with* causation under assumptions that are often untestable.
 
@@ -1212,7 +1212,7 @@ These thresholds are proposed defaults requiring retrospective calibration. The 
 
 The $I^2 < 50\%$ threshold for Grades A and B follows Cochrane Collaboration guidance that heterogeneity above 50% indicates "substantial" variability across studies [@higgins2011]. Grade C allows heterogeneity up to 75% (the "high" threshold) with explicit acknowledgment that effects are context-dependent. Above 75%, pooled estimates provide limited guidance for any specific jurisdiction.
 
-![A decision tree illustrating the evidence grading logic based on PIS, heterogeneity, and jurisdiction count, including adjustment modifiers.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-evidence-grading-sec-evidence-grading-bw-academic.jpg)
+> **Evidence grading decision rule (text summary):** start with PIS threshold, then apply heterogeneity threshold ($I^2$), then jurisdiction count ($N_j$). The canonical Grade A/B threshold in this spec is $I^2 < 50\%$.
 
 **Additional grade modifiers:**
 
@@ -1252,7 +1252,7 @@ For difference-in-differences analyses, we test whether treated and control juri
 3. If p < 0.10, flag as potential parallel trends violation
 4. Report sensitivity: how different would trends need to be to explain away the effect?
 
-![A four-step workflow illustrating the parallel trends testing procedure, including the statistical significance check and subsequent sensitivity reporting.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-parallel-trends-testing-did-bw-academic.jpg)
+> **Parallel trends test workflow:** estimate event-study leads, run a joint significance test on pre-treatment leads, flag when $p < 0.10$, then report sensitivity to plausible alternative trends.
 
 ### Pre-Treatment Fit (Synthetic Control)
 

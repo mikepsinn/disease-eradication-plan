@@ -8,6 +8,7 @@ import sys
 import os
 import json
 import re
+from typing import Any
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32':
@@ -158,6 +159,59 @@ def generate_gemini_flash_content_with_pdf(
     return response.text or ""
 
 
+def _extract_gemini_usage_metadata(response: Any) -> dict[str, float]:
+    """Extract token usage metadata from a Gemini response."""
+    usage = getattr(response, "usage_metadata", None)
+    if usage is None:
+        return {}
+
+    def _as_float(value: Any) -> float | None:
+        if value is None:
+            return None
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return None
+
+    token_fields = (
+        "prompt_token_count",
+        "candidates_token_count",
+        "total_token_count",
+        "cached_content_token_count",
+        "thoughts_token_count",
+        "tool_use_prompt_token_count",
+    )
+    extracted: dict[str, float] = {}
+    for field in token_fields:
+        value = _as_float(getattr(usage, field, None))
+        if value is not None:
+            extracted[field] = value
+    return extracted
+
+
+def generate_gemini_flash_content_with_pdf_and_usage(
+    prompt: str,
+    pdf_path: str,
+) -> tuple[str, dict[str, float]]:
+    """Generate content with PDF input and return text plus usage metadata."""
+    if google_client is None:
+        raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is required for Gemini requests.")
+    _log_key_fingerprint_once("gemini", GOOGLE_GENERATIVE_AI_API_KEY)
+    uploaded_file = google_client.files.upload(file=pdf_path)
+    file_uri = getattr(uploaded_file, "uri", None)
+    mime_type = getattr(uploaded_file, "mime_type", None) or "application/pdf"
+    if not file_uri:
+        raise ValueError("Gemini file upload succeeded but did not return a URI.")
+    response = google_client.models.generate_content(
+        model=GEMINI_FLASH_MODEL_ID,
+        contents=[
+            genai.types.Part.from_uri(file_uri=file_uri, mime_type=mime_type),
+            prompt,
+        ],
+    )
+    return response.text or "", _extract_gemini_usage_metadata(response)
+
+
 def generate_claude_opus_content(prompt: str) -> str:
     """Generate content using Claude Opus 4.1 model."""
     if anthropic_client is None:
@@ -248,21 +302,45 @@ def estimate_request_cost_usd(
     """
     input_tokens_est = estimate_tokens(prompt_text)
     output_tokens_est = estimate_tokens(response_text)
+    return estimate_request_cost_usd_from_tokens(
+        model_id=model_id,
+        input_tokens=input_tokens_est,
+        output_tokens=output_tokens_est,
+        input_env_key=input_env_key,
+        output_env_key=output_env_key,
+        token_source="estimated",
+    )
+
+
+def estimate_request_cost_usd_from_tokens(
+    model_id: str,
+    input_tokens: float,
+    output_tokens: float,
+    input_env_key: str = "PDF_VALIDATION_LLM_INPUT_COST_PER_1M",
+    output_env_key: str = "PDF_VALIDATION_LLM_OUTPUT_COST_PER_1M",
+    token_source: str = "actual",
+) -> dict[str, float | str]:
+    """
+    Estimate per-request USD cost from token counts.
+    """
+    input_tokens_clean = max(0.0, float(input_tokens))
+    output_tokens_clean = max(0.0, float(output_tokens))
     input_rate, output_rate, source = get_cost_rates_per_1m(
         model_id=model_id,
         input_env_key=input_env_key,
         output_env_key=output_env_key,
     )
     request_cost_est = (
-        (input_tokens_est / 1_000_000.0) * input_rate
-        + (output_tokens_est / 1_000_000.0) * output_rate
+        (input_tokens_clean / 1_000_000.0) * input_rate
+        + (output_tokens_clean / 1_000_000.0) * output_rate
     )
     return {
-        "input_tokens_est": input_tokens_est,
-        "output_tokens_est": output_tokens_est,
+        "input_tokens_est": input_tokens_clean,
+        "output_tokens_est": output_tokens_clean,
         "input_rate_per_1m": input_rate,
         "output_rate_per_1m": output_rate,
         "pricing_source": source,
+        "token_source": token_source,
         "request_cost_est_usd": request_cost_est,
     }
 

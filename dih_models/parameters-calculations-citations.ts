@@ -5723,7 +5723,7 @@ export const citations: Record<string, Citation> = {
         title: "ClinicalTrials.gov cumulative enrollment data (2025)",
         author: [
           {
-            literal: "Direct analysis via"
+            literal: "ClinicalTrials.gov API v2 direct analysis"
           },
         ],
         'container-title': "Direct analysis via ClinicalTrials.gov API v2",
@@ -6425,7 +6425,7 @@ export const citations: Record<string, Citation> = {
         ],
         issued: { 'date-parts': [[2021]] },
         'container-title': "Think by Numbers: War Costs \\$74",
-        URL: "<https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/>",
+        URL: "https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/",
         note: "Think by Numbers: War Costs \\$74,259/Lifetime | WEF: War Violence Costs \\$5/Day | PubMed: Economic Value DALYs Violence",
   },
   "measles-vaccination-roi": {

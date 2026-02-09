@@ -885,6 +885,7 @@ Focus on:
 
 Be conservative: only include issues you are highly confident are true defects.
 Treat PDF text extraction artifacts as non-issues unless you have strong visual evidence of an actual rendering defect.
+If the PDF appears fine, return an empty errors list instead of speculative findings.
 Return JSON only with this schema:
 {
   "summary": "one paragraph",
@@ -906,6 +907,7 @@ Important constraints:
 - You do NOT have access to source qmd/bib files. Do not invent filenames or keys.
 - "locator_hint" must rely only on clues visible in the PDF.
 - Keep snippets short and exact.
+- `errors` may be an empty list when no clear defects are present.
 - Do NOT flag extraction-layer artifacts as defects:
   - spaces/newlines inserted inside URLs (for example "https: //")
   - missing Greek/math symbols in copied text when layout appears intact
@@ -914,6 +916,7 @@ Important constraints:
   - orphan punctuation that may be extraction noise
 - Only flag equation defects when mathematical meaning is actually broken in rendered layout.
 - Only flag broken references/citations when a link/reference is clearly malformed in the rendered document itself.
+- Do not invent issues to satisfy category coverage. If uncertain, omit the issue.
 - The "errors" list MUST be sorted by page in ascending order."""
 
         # Pre-call token/cost logging so operators can see expected spend
@@ -934,26 +937,42 @@ Important constraints:
             f"[LLM] Preflight estimate: model={model_id}, input_tokens_est={prompt_tokens_est:.0f}, "
             f"input_cost_est_usd=${input_only_cost_est:.6f}, "
             f"projected_output_tokens={projected_output_tokens:.0f}, "
-            f"projected_total_cost_est_usd=${projected_total_cost_est:.6f}",
+            f"projected_total_cost_est_usd=${projected_total_cost_est:.6f} "
+            "(prompt-only estimate; excludes PDF document tokens)",
             flush=True,
         )
 
-        response = llm.generate_gemini_flash_content_with_pdf(prompt=prompt, pdf_path=str(self.pdf_path))
-        cost = llm.estimate_request_cost_usd(
-            model_id=model_id,
-            prompt_text=prompt,
-            response_text=response or "",
+        response, usage = llm.generate_gemini_flash_content_with_pdf_and_usage(
+            prompt=prompt,
+            pdf_path=str(self.pdf_path),
         )
+        actual_input_tokens = usage.get("prompt_token_count")
+        actual_output_tokens = usage.get("candidates_token_count")
+        if actual_input_tokens is not None and actual_output_tokens is not None:
+            cost = llm.estimate_request_cost_usd_from_tokens(
+                model_id=model_id,
+                input_tokens=float(actual_input_tokens),
+                output_tokens=float(actual_output_tokens),
+                token_source="actual",
+            )
+        else:
+            cost = llm.estimate_request_cost_usd(
+                model_id=model_id,
+                prompt_text=prompt,
+                response_text=response or "",
+            )
         input_tokens_est = float(cost["input_tokens_est"])
         output_tokens_est = float(cost["output_tokens_est"])
         request_cost_est = float(cost["request_cost_est_usd"])
+        token_source = str(cost.get("token_source", "estimated"))
         self.llm_requests_made += 1
         self.llm_input_tokens_est += input_tokens_est
         self.llm_output_tokens_est += output_tokens_est
         self.llm_cost_est_usd += request_cost_est
         print(
             f"[LLM] Full-PDF API request: model={model_id}, input_tokens_est={input_tokens_est:.0f}, "
-            f"output_tokens_est={output_tokens_est:.0f}, request_cost_est_usd=${request_cost_est:.6f}",
+            f"output_tokens_est={output_tokens_est:.0f}, token_source={token_source}, "
+            f"request_cost_est_usd=${request_cost_est:.6f}",
             flush=True,
         )
 
