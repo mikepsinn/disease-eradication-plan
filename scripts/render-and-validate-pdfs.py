@@ -7,6 +7,7 @@ if sys.platform == 'win32':
 
 from datetime import datetime
 from pathlib import Path
+import os
 
 sys.path.insert(0, str(Path(__file__).parent))
 from lib.build_logger import run_command_stream, suppress_pip_requirement_noise
@@ -69,6 +70,16 @@ def extract_render_errors(output: str) -> list[str]:
                 seen.add(stripped)
                 errors.append(stripped)
     return errors
+
+
+def build_pdf_validation_command(pdf_path: Path) -> list[str]:
+    """Build pdf-validation command with optional vision flags from env."""
+    cmd = [sys.executable, "-u", "scripts/pdf-validation.py", "--pdf", str(pdf_path), "--llm-pages", "0"]
+    if os.environ.get("PDF_VALIDATION_ENABLE_LLM_VISION", "").lower() in {"1", "true", "yes", "on"}:
+        cmd.append("--llm-vision")
+        vision_pages = os.environ.get("PDF_VALIDATION_LLM_VISION_PAGES", "3")
+        cmd.extend(["--llm-vision-pages", vision_pages])
+    return cmd
 
 
 def write_report(results: list[dict]) -> None:
@@ -187,7 +198,7 @@ def main() -> int:
 
             print(f"[*] Validating {pdf_path.name}...", flush=True)
             validate_rc, validate_output = run_and_tee(
-                [sys.executable, "-u", "scripts/pdf-validation.py", "--pdf", str(pdf_path), "--llm-pages", "0"],
+                build_pdf_validation_command(pdf_path),
                 log_file,
             )
             result["validation_rc"] = validate_rc

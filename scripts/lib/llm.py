@@ -85,6 +85,24 @@ def generate_gemini_flash_content(prompt: str) -> str:
     return response.text or ""
 
 
+def generate_gemini_flash_content_with_image(
+    prompt: str,
+    image_bytes: bytes,
+    mime_type: str = "image/png",
+) -> str:
+    """Generate content using Gemini Flash model with image input."""
+    if google_client is None:
+        raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is required for Gemini requests.")
+    response = google_client.models.generate_content(
+        model=GEMINI_FLASH_MODEL_ID,
+        contents=[
+            prompt,
+            genai.types.Part.from_bytes(data=image_bytes, mime_type=mime_type),
+        ],
+    )
+    return response.text or ""
+
+
 def generate_claude_opus_content(prompt: str) -> str:
     """Generate content using Claude Opus 4.1 model."""
     if anthropic_client is None:
