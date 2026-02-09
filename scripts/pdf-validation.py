@@ -741,50 +741,11 @@ class PDFValidator:
         return self.errors
 
     def validate_cross_references(self) -> list[PDFValidationError]:
-        """Validate cross-references (figures, tables)."""
-        if not self.doc:
-            return self.errors
+        """Validate cross-references (figures, tables).
 
-        full_text = ""
-        for page_num in range(len(self.doc)):
-            page_text = self.doc[page_num].get_text() or ""
-            if not isinstance(page_text, str):
-                page_text = str(page_text)
-            full_text += page_text + "\n"
-
-        # Check figure references
-        figure_refs = re.findall(r"Figure\s+(\d+)", full_text, re.IGNORECASE)
-        figure_captions = re.findall(r"Figure\s+(\d+)\s*[:\.]", full_text, re.IGNORECASE)
-
-        # Check for figure refs without captions
-        ref_numbers = set(int(n) for n in figure_refs)
-        caption_numbers = set(int(n) for n in figure_captions)
-
-        for ref_num in ref_numbers:
-            if ref_num not in caption_numbers:
-                self._add_error(
-                    None,
-                    "MISSING_FIGURE_CAPTION",
-                    PDFValidationError.SEVERITY_WARNING,
-                    f"Figure {ref_num} referenced but no caption found",
-                )
-
-        # Check table references
-        table_refs = re.findall(r"Table\s+(\d+)", full_text, re.IGNORECASE)
-        table_captions = re.findall(r"Table\s+(\d+)\s*[:\.]", full_text, re.IGNORECASE)
-
-        ref_numbers = set(int(n) for n in table_refs)
-        caption_numbers = set(int(n) for n in table_captions)
-
-        for ref_num in ref_numbers:
-            if ref_num not in caption_numbers:
-                self._add_error(
-                    None,
-                    "MISSING_TABLE_CAPTION",
-                    PDFValidationError.SEVERITY_WARNING,
-                    f"Table {ref_num} referenced but no caption found",
-                )
-
+        Missing figure/table caption heuristics are intentionally disabled because
+        they produce frequent false positives with Quarto-generated layouts.
+        """
         return self.errors
 
     def _parse_page_value(self, page_value: Any) -> Optional[int]:

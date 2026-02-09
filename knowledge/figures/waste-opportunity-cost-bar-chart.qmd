@@ -9,16 +9,12 @@ from IPython.display import Markdown
 import numpy as np
 
 from dih_models.dfda_trial_economics import (
-    compute_at_funding_level, get_ceiling_dalys,
+    compute_at_funding_level,
 )
 
 # ── Compute eradication program cost via shared library ─────────────────
 proposed = compute_at_funding_level()  # at proposed treaty funding
-total_program_cost = proposed["total_cost"]
 proposed_funding = proposed["funding"]
-proposed_clearance = proposed["clearance_years"]
-proposed_dalys = proposed["dalys_averted"]
-ceiling_dalys = get_ceiling_dalys()
 
 # ── Waste categories (from parameters.py) ────────────────────────────────
 categories = [
@@ -48,13 +44,6 @@ for name, w in categories:
     t = w / proposed_funding
     rows.append(f"| {name} | ${w/1e9:.0f}B | {t:.1f}x |")
 rows.append(f"| **Total** | **${total_waste/1e12:.1f}T** | **{total_times:.0f}x** |")
-rows.append("")
-rows.append(
-    f": The eradication program needs ${proposed_funding/1e9:.1f}B/yr for {proposed_clearance:.0f} years "
-    f"(${total_program_cost/1e9:.0f}B total) to avert {proposed_dalys/1e9:.0f}B DALYs "
-    f"({proposed_dalys/ceiling_dalys*100:.0f}% of the {ceiling_dalys/1e9:.0f}B ceiling). "
-    f"Collectively, these waste categories exceed the needed funding by {total_times:.0f}x."
-)
 
 Markdown("\n".join(rows))
 ```

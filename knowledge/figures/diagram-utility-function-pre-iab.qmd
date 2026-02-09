@@ -94,7 +94,6 @@ with dot.subgraph() as s:
 # Render the diagram
 
 png_path = render_graphviz_with_watermark(dot, 'utility-function-pre-iab')
-print(f"Generated: {png_path}")
 ```
 
 **Before IABs:** Politicians maximize utility based on lobbying intensity. The NSV ranking exists but doesn't affect their utility function, so they have no incentive to support high-NSV programs.
