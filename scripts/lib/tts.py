@@ -102,13 +102,13 @@ DEFAULT_VOICE = "Aoede"
 DEFAULT_SPEAKING_INSTRUCTIONS = "British accent. Innocent, childlike delivery. Read like a curious child presenting a school report. No judgment, matter-of-fact. Warm and friendly tone."
 
 # --- API Setup ---
-GOOGLE_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")
+GOOGLE_GENERATIVE_AI_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")
 
-if not GOOGLE_API_KEY:
+if not GOOGLE_GENERATIVE_AI_API_KEY:
     raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.")
 
 # Initialize client
-google_client = genai.Client(api_key=GOOGLE_API_KEY)
+google_client = genai.Client(api_key=GOOGLE_GENERATIVE_AI_API_KEY)
 
 
 def parse_audio_mime_type(mime_type: str) -> dict[str, int]:

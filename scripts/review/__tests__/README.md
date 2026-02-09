@@ -224,7 +224,7 @@ jobs:
       - run: npm install
       - run: npm run test:prompts
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
 ```
 
 ## Files

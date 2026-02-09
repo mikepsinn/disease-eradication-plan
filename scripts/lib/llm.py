@@ -27,14 +27,8 @@ CLAUDE_OPUS_4_1_MODEL_ID = "claude-opus-4-1-20250805"
 CLAUDE_SONNET_4_5_MODEL_ID = "claude-sonnet-4-5-20250929"
 
 # --- API Setup ---
-GOOGLE_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")
+GOOGLE_GENERATIVE_AI_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-
-if not GOOGLE_API_KEY:
-    raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.")
-
-if not ANTHROPIC_API_KEY:
-    raise ValueError("ANTHROPIC_API_KEY is not set in the .env file.")
 
 # Request timeout for Gemini client (milliseconds).
 # google-genai HttpOptions.timeout is ms.
@@ -47,18 +41,26 @@ try:
 except ValueError:
     LLM_REQUEST_TIMEOUT_MS = DEFAULT_LLM_REQUEST_TIMEOUT_MS
 
-# Initialize clients
-google_client = genai.Client(
-    api_key=GOOGLE_API_KEY,
-    http_options=genai.types.HttpOptions(timeout=LLM_REQUEST_TIMEOUT_MS),
-)
-anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
+# Initialize clients lazily based on available credentials.
+# This avoids import-time failures when only one provider is needed.
+google_client = None
+if GOOGLE_GENERATIVE_AI_API_KEY:
+    google_client = genai.Client(
+        api_key=GOOGLE_GENERATIVE_AI_API_KEY,
+        http_options=genai.types.HttpOptions(timeout=LLM_REQUEST_TIMEOUT_MS),
+    )
+
+anthropic_client = None
+if ANTHROPIC_API_KEY:
+    anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
 # --- Content Generation Functions ---
 
 def generate_gemini_pro_content(prompt: str) -> str:
     """Generate content using Gemini Pro model."""
+    if google_client is None:
+        raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is required for Gemini requests.")
     response = google_client.models.generate_content(
         model=GEMINI_PRO_MODEL_ID,
         contents=prompt
@@ -68,6 +70,8 @@ def generate_gemini_pro_content(prompt: str) -> str:
 
 def generate_gemini_flash_content(prompt: str) -> str:
     """Generate content using Gemini Flash model."""
+    if google_client is None:
+        raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is required for Gemini requests.")
     response = google_client.models.generate_content(
         model=GEMINI_FLASH_MODEL_ID,
         contents=prompt
@@ -77,6 +81,8 @@ def generate_gemini_flash_content(prompt: str) -> str:
 
 def generate_claude_opus_content(prompt: str) -> str:
     """Generate content using Claude Opus 4.1 model."""
+    if anthropic_client is None:
+        raise ValueError("ANTHROPIC_API_KEY is required for Claude requests.")
     message = anthropic_client.messages.create(
         model=CLAUDE_OPUS_4_1_MODEL_ID,
         max_tokens=8192,
@@ -91,6 +97,8 @@ def generate_claude_opus_content(prompt: str) -> str:
 
 def generate_claude_sonnet_content(prompt: str) -> str:
     """Generate content using Claude Sonnet 4.5 model."""
+    if anthropic_client is None:
+        raise ValueError("ANTHROPIC_API_KEY is required for Claude requests.")
     message = anthropic_client.messages.create(
         model=CLAUDE_SONNET_4_5_MODEL_ID,
         max_tokens=8192,
