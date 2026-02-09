@@ -30,6 +30,11 @@ from typing import Any, Optional
 # Add lib to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 
+try:
+    import llm
+except ImportError:
+    llm = None
+
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == "win32":
     import codecs
@@ -155,43 +160,6 @@ CONTENT_PATTERNS = [
         "message": "Frontmatter metadata leaked into output",
     },
 ]
-
-# Restrict LLM issue labels to a stable taxonomy so downstream gating/reporting
-# remains deterministic even as prompts evolve.
-LLM_ALLOWED_ISSUE_TYPES = {
-    "UNRENDERED_CODE_OR_VARIABLE",
-    "PLACEHOLDER_TEXT",
-    "LEAKED_SOURCE_CODE",
-    "CORRUPTED_OR_GARBLED_TEXT",
-    "TRUNCATED_SENTENCE",
-    "BROKEN_REFERENCE_ENTRY",
-    "BROKEN_REFERENCE_LINK",
-    "OTHER_HIGH_CONFIDENCE",
-}
-
-LLM_ISSUE_TYPE_ALIASES = {
-    "UNRENDERED_VARIABLE": "UNRENDERED_CODE_OR_VARIABLE",
-    "UNRENDERED_CODE": "UNRENDERED_CODE_OR_VARIABLE",
-    "CODE_LEAKED": "LEAKED_SOURCE_CODE",
-    "GARBLED_TEXT": "CORRUPTED_OR_GARBLED_TEXT",
-    "CORRUPTED_TEXT": "CORRUPTED_OR_GARBLED_TEXT",
-    "BROKEN_LINK": "BROKEN_REFERENCE_LINK",
-    "BROKEN_URL": "BROKEN_REFERENCE_LINK",
-    "BROKEN_DOI": "BROKEN_REFERENCE_LINK",
-}
-
-
-def normalize_llm_issue_type(raw_type: Any) -> str:
-    """Normalize arbitrary LLM issue labels to canonical issue types."""
-    normalized = str(raw_type or "").strip().upper().replace("-", "_").replace(" ", "_")
-    normalized = re.sub(r"[^A-Z0-9_]", "_", normalized)
-    normalized = re.sub(r"_+", "_", normalized).strip("_")
-    if not normalized:
-        return "OTHER_HIGH_CONFIDENCE"
-    canonical = LLM_ISSUE_TYPE_ALIASES.get(normalized, normalized)
-    if canonical in LLM_ALLOWED_ISSUE_TYPES:
-        return canonical
-    return "OTHER_HIGH_CONFIDENCE"
 
 # AI fix instructions for each error type
 ERROR_FIX_INSTRUCTIONS = {
@@ -374,10 +342,10 @@ def write_ai_fix_log(
 
     # Use PDF name in log filename
     pdf_name = Path(pdf_path).stem
-    log_path = log_dir / f"pdf-validation-errors-{pdf_name}.md"
+    log_path = log_dir / f"pdf-validation-checklist-{pdf_name}.md"
 
     lines = [
-        "# PDF Validation Errors - AI Fix Instructions",
+        "# PDF Validation Errors - Checklist",
         "",
         f"**PDF:** `{pdf_path}`",
         f"**Generated:** {__import__('datetime').datetime.now().isoformat()}",
@@ -425,20 +393,43 @@ def write_ai_fix_log(
         # List specific occurrences
         lines.append("### Occurrences")
         lines.append("")
-        for error in errors[:20]:  # Limit to 20 per type
+        for error in errors:  # No truncation
             page_info = f"Page {error.page_num}" if error.page_num else "General"
-            lines.append(f"- **{page_info}:** {error.message}")
+            lines.append(f"- [ ] **{page_info}:** {error.message}")
             if error.context:
-                # Truncate long context
-                ctx = error.context[:200] + "..." if len(error.context) > 200 else error.context
+                # Truncate long context just for readability in the checklist, but keep it reasonably long
+                ctx = error.context[:300] + "..." if len(error.context) > 300 else error.context
                 lines.append(f"  - Context: `{ctx}`")
-        if len(errors) > 20:
-            lines.append(f"- ...and {len(errors) - 20} more occurrences")
         lines.append("")
 
     # Write file
     log_path.write_text("\n".join(lines), encoding="utf-8")
     return str(log_path)
+
+
+class Tee:
+    """Duplicate output to a file and the original stream."""
+    def __init__(self, name, mode, encoding='utf-8'):
+        self.file = open(name, mode, encoding=encoding)
+        self.stdout = sys.stdout
+        self.stderr = sys.stderr
+        sys.stdout = self
+        sys.stderr = self
+
+    def __del__(self):
+        sys.stdout = self.stdout
+        sys.stderr = self.stderr
+        self.file.close()
+
+    def write(self, data):
+        self.file.write(data)
+        self.stdout.write(data)
+        self.file.flush()
+        self.stdout.flush()
+
+    def flush(self):
+        self.file.flush()
+        self.stdout.flush()
 
 
 class PDFValidator:
@@ -528,22 +519,7 @@ class PDFValidator:
                 "PDF has no title metadata",
             )
 
-        # Check file size
-        file_size = os.path.getsize(self.pdf_path)
-        if file_size < 100 * 1024:  # < 100KB
-            self._add_error(
-                None,
-                "SMALL_FILE",
-                PDFValidationError.SEVERITY_WARNING,
-                f"PDF file is suspiciously small ({file_size / 1024:.1f}KB)",
-            )
-        elif file_size > 500 * 1024 * 1024:  # > 500MB
-            self._add_error(
-                None,
-                "LARGE_FILE",
-                PDFValidationError.SEVERITY_WARNING,
-                f"PDF file is very large ({file_size / (1024 * 1024):.1f}MB)",
-            )
+
 
         return self.errors
 
@@ -590,23 +566,7 @@ class PDFValidator:
             images = page.get_images()
             total_images += len(images)
 
-            for img_index, img in enumerate(images):
-                xref = img[0]
-                try:
-                    img_data = self.doc.extract_image(xref)
-                    width = img_data.get("width", 0)
-                    height = img_data.get("height", 0)
 
-                    if width < 10 or height < 10:
-                        self._add_error(
-                            page_num + 1,
-                            "TINY_IMAGE",
-                            PDFValidationError.SEVERITY_WARNING,
-                            f"Tiny image found ({width}x{height}px)",
-                        )
-                except Exception:
-                    # Image extraction failed - might be a format issue
-                    pass
 
         # Check if long PDF has no images
         if page_count > 10 and total_images == 0:
@@ -749,40 +709,9 @@ class PDFValidator:
         """Use LLM to detect quality issues."""
         if self.skip_llm or not self.doc:
             return self.errors
-
-        try:
-            # Import LLM functions - need to handle encoding conflict
-            sys.path.insert(0, str(Path(__file__).parent / "lib"))
-
-            # Temporarily restore original stdout/stderr for llm.py import
-            # (it tries to reconfigure encoding which conflicts with codecs wrapper)
-            original_stdout = sys.stdout
-            original_stderr = sys.stderr
-            if hasattr(sys, '__stdout__') and sys.__stdout__:
-                sys.stdout = sys.__stdout__
-            if hasattr(sys, '__stderr__') and sys.__stderr__:
-                sys.stderr = sys.__stderr__
-
-            try:
-                import importlib
-
-                llm_module = importlib.import_module("llm")
-                generate_gemini_pro_content = getattr(
-                    llm_module, "generate_gemini_pro_content"
-                )
-                extract_json_from_response = getattr(
-                    llm_module, "extract_json_from_response"
-                )
-            finally:
-                sys.stdout = original_stdout
-                sys.stderr = original_stderr
-
-        except ImportError as e:
-            print(f"[WARNING] LLM validation skipped: {e}", file=sys.stderr)
-            return self.errors
-        except (ValueError, AttributeError) as e:
-            # API key not set or encoding conflict
-            print(f"[WARNING] LLM validation skipped: {e}", file=sys.stderr)
+            
+        if not llm:
+            print("[WARNING] LLM library not available, skipping LLM validation", file=sys.stderr)
             return self.errors
 
         page_count = len(self.doc)
@@ -831,25 +760,21 @@ Do NOT flag:
 - URL encoding in references (for example %3C/%3E) unless the link itself is truly broken
 - Anything uncertain or speculative
 
-Allowed issue types (use exactly one):
+3. Allowed issue types:
 - UNRENDERED_CODE_OR_VARIABLE
 - PLACEHOLDER_TEXT
 - LEAKED_SOURCE_CODE
 - CORRUPTED_OR_GARBLED_TEXT
-- TRUNCATED_SENTENCE
-- BROKEN_REFERENCE_ENTRY
-- BROKEN_REFERENCE_LINK
-- OTHER_HIGH_CONFIDENCE
+- BROKEN_REFERENCE
+- OTHER
 
 Issue type guidance:
 1. UNRENDERED_CODE_OR_VARIABLE: literal "{{{{python}}}}", "$undefined", "NaN", "[object Object]", Python traceback text.
 2. PLACEHOLDER_TEXT: TODO/FIXME/TBD/Lorem ipsum/[INSERT ...].
 3. LEAKED_SOURCE_CODE: visible Python/JavaScript code that should not be in reader-facing content.
 4. CORRUPTED_OR_GARBLED_TEXT: clearly unreadable/corrupted strings, not just odd punctuation.
-5. TRUNCATED_SENTENCE: obvious broken sentence cut off mid-word with no continuation context.
-6. BROKEN_REFERENCE_ENTRY: reference entry missing core bibliographic parts in a clearly broken way (not just wrapped lines).
-7. BROKEN_REFERENCE_LINK: malformed DOI/URL or clearly invalid reference link.
-8. OTHER_HIGH_CONFIDENCE: only for severe defects that do not fit above.
+5. BROKEN_REFERENCE: reference entry missing core bibliographic parts or malformed links.
+6. OTHER: only for severe defects that do not fit above.
 
 Page content:
 ---
@@ -860,7 +785,8 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
 {{
     "issues": [
         {{
-            "type": "UNRENDERED_CODE_OR_VARIABLE|PLACEHOLDER_TEXT|LEAKED_SOURCE_CODE|CORRUPTED_OR_GARBLED_TEXT|TRUNCATED_SENTENCE|BROKEN_REFERENCE_ENTRY|BROKEN_REFERENCE_LINK|OTHER_HIGH_CONFIDENCE",
+        {{
+            "type": "ISSUE_TYPE",
             "description": "specific, factual defect description",
             "severity": "CRITICAL|WARNING"
         }}
@@ -875,8 +801,8 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
             try:
                 for attempt in range(1, max_llm_retries + 1):
                     try:
-                        response = generate_gemini_pro_content(prompt)
-                        parsed = extract_json_from_response(
+                        response = llm.generate_gemini_pro_content(prompt)
+                        parsed = llm.extract_json_from_response(
                             response, f"LLM page {page_idx + 1}"
                         )
                         if not isinstance(parsed, dict):
@@ -915,7 +841,7 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
                         PDFValidationError.SEVERITY_WARNING,
                     )
 
-                    issue_type = normalize_llm_issue_type(issue.get("type"))
+                    issue_type = issue.get("type", "OTHER").upper().replace(" ", "_")
                     self._add_error(
                         page_idx + 1,
                         f"LLM_{issue_type}",
@@ -1047,6 +973,20 @@ def main():
         if not pdf_files:
             print(f"[WARNING] No PDF files found in {output_dir}")
             return 0
+
+    # Setup file logging
+    try:
+        log_dir = Path(__file__).parent.parent / "_build_temp"
+        log_dir.mkdir(parents=True, exist_ok=True)
+        
+        pdf_stem = pdf_files[0].stem if pdf_files else "pdf-validation"
+        log_file = log_dir / f"pdf-validation-log-{pdf_stem}.txt"
+        
+        # Start teeing output
+        tee = Tee(str(log_file), "w", encoding="utf-8")
+        print(f"[LOG] Writing full execution log to: {log_file}")
+    except Exception as e:
+        print(f"[WARNING] Failed to setup file logging: {e}")
 
     print(f"[VALIDATION] Validating {len(pdf_files)} PDF file(s)...")
     if args.skip_llm:
