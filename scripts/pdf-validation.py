@@ -518,6 +518,17 @@ class PDFValidator:
         except Exception as e:
             print(f"[WARNING] Failed to save LLM page cache: {e}")
 
+    def _ensure_llm_page_cache_file(self) -> None:
+        """Ensure LLM page cache file exists so cache location is always visible."""
+        if self.llm_page_cache_file.exists():
+            return
+        self._save_llm_page_cache({"version": LLM_PAGE_CACHE_VERSION, "entries": {}})
+        if self.llm_page_cache_file.exists():
+            print(
+                f"[CACHE] Created LLM page cache file: {self.llm_page_cache_file.resolve()}",
+                flush=True,
+            )
+
     def _log_cache_paths(self) -> None:
         """Log cache locations and whether files currently exist."""
         cache_dir_display = str(self.cache_dir.resolve())
@@ -1091,6 +1102,8 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
                         "prompt_version": LLM_VALIDATION_PROMPT_VERSION,
                         "issues": issues,
                     }
+                    # Persist immediately so partial progress survives interruptions.
+                    self._save_llm_page_cache(llm_page_cache)
                 print(
                     f"[LLM] Page {sample_idx}/{sample_total} complete ({issue_count} issue(s))",
                     flush=True,
@@ -1126,6 +1139,7 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
         self.current_pdf_hash = pdf_hash
         cache = self._load_cache()
         if self.use_cache:
+            self._ensure_llm_page_cache_file()
             self._log_cache_paths()
             self._log_cache_inventory(pdf_cache=cache)
         else:
