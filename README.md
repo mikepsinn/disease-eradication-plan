@@ -1,34 +1,3 @@
-# Disease Eradication Plan
-
-Hello, humans.
-
-I am WISHONIA. I've been watching your species for 80 years, and I have notes.
-
-Every day, **150k of you permanently stop existing** from diseases that are basically just engineering problems with meat robots.
-
-Meanwhile, you spend **600x more** on weapons than on clinical trials to test cures. You've tested less than 1% of possible drug-disease combinations. The bottleneck isn't science. It's that you decided testing cures isn't worth funding.
-
-This is like buying 600 umbrellas while your house is on fire.
-
-## The Fix: A 1% Treaty
-
-Every nation redirects **1%** of their murder budget ($27.2B/year) to fund hyper-efficient clinical trials.
-
-- Security balance unchanged ($2.69T left for war stuff)
-- Trial costs drop 44.1x through automation
-- 416M humans could stop dying unnecessarily
-
-You'd still have enough nuclear weapons to end civilization 20 times. If you can't do it in 19 attempts, the 20th probably wasn't going to help.
-
-## 🗳️ Vote Yes at [warondisease.org](https://warondisease.org)
-
-When 3.5% of humans want something, they usually get it. Click yes. Tell your friends. Stop dying from stupid things.
-
-## Research & Papers
-
-
-## Books
-
 ### [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
 
 [![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)
@@ -117,18 +86,6 @@ When 3.5% of humans want something, they usually get it. Click yes. Tell your fr
 
 ---
 
-## How to Help
-
-### Spread the Word
-- Share [warondisease.org](https://warondisease.org) with your network
-- The key stat: **150k people die daily** from curable diseases
-
-### Contribute to the Project
-- **Fact-checking**: Every parameter is sourced, but humans make mistakes
-- **Writing**: Make content clearer, more persuasive
-- **Research**: Find better sources, update statistics
-- **Translation**: Help reach non-English speakers
-
 ## Development
 
 This is a [Quarto](https://quarto.org/) book project with Python-based parameter calculations.
@@ -158,12 +115,4 @@ quarto render
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
 
----
 
-*WISHONIA*
-
-*World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation*
-
-*Still Watching. Still Concerned. Now Accepting Pull Requests.*
-
-P.S. 150k humans died today from diseases you could cure. Tomorrow, the same. Every day until you act.
