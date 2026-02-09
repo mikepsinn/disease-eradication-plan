@@ -5,12 +5,11 @@ if sys.platform == 'win32':
     if isinstance(sys.stdout, io.TextIOWrapper):
         sys.stdout.reconfigure(encoding='utf-8')
 
-import subprocess
-import os
 from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from lib.build_logger import run_command_stream, suppress_pip_requirement_noise
 from lib.quarto_config_utils import discover_paper_configs, count_qmd_files
 from lib.validation_output_utils import extract_validation_errors, extract_ai_fix_log_path
 
@@ -20,47 +19,18 @@ LOG_PATH = PROJECT_ROOT / "render-validate-pdfs.log"
 REPORT_PATH = PROJECT_ROOT / "render-validate-pdfs-report.md"
 
 
-def should_suppress_render_noise(line: str) -> bool:
-    """Suppress high-volume dependency noise from render output."""
-    stripped = line.strip()
-    if not stripped:
-        return False
-    noisy_prefixes = (
-        "Requirement already satisfied",
-    )
-    return stripped.startswith(noisy_prefixes)
-
-
 def run_and_tee(cmd: list[str], log_file) -> tuple[int, str]:
     command_text = " ".join(cmd)
     print(f"[RUN] {command_text}", flush=True)
     log_file.write(f"\n[RUN] {command_text}\n")
     log_file.flush()
-    suppress_render_noise = "scripts/render-quarto.py" in command_text
-
-    process = subprocess.Popen(
-        cmd,
-        cwd=str(PROJECT_ROOT),
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
+    filters = [suppress_pip_requirement_noise] if "scripts/render-quarto.py" in command_text else []
+    return run_command_stream(
+        cmd=cmd,
+        cwd=PROJECT_ROOT,
+        log_file=log_file,
+        suppress_filters=filters,
     )
-
-    output_lines: list[str] = []
-    for line in process.stdout or []:
-        if suppress_render_noise and should_suppress_render_noise(line):
-            continue
-        print(line, end="", flush=True)
-        log_file.write(line)
-        output_lines.append(line)
-        log_file.flush()
-        os.fsync(log_file.fileno())
-    log_file.flush()
-    os.fsync(log_file.fileno())
-    process.wait()
-    return int(process.returncode), "".join(output_lines)
 
 
 def discover_papers_sorted_by_qmd_count() -> list[dict]:
@@ -171,7 +141,6 @@ def main() -> int:
         log_file.write(f"Started: {datetime.now().isoformat()}\n")
         log_file.write("=" * 80 + "\n")
         log_file.flush()
-        os.fsync(log_file.fileno())
 
         papers = discover_papers_sorted_by_qmd_count()
         if not papers:
@@ -186,7 +155,6 @@ def main() -> int:
             print(order_line, flush=True)
             log_file.write(order_line + "\n")
         log_file.flush()
-        os.fsync(log_file.fileno())
 
         results: list[dict] = []
         for paper in papers:

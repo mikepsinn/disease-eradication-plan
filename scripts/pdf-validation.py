@@ -518,6 +518,64 @@ class PDFValidator:
         except Exception as e:
             print(f"[WARNING] Failed to save LLM page cache: {e}")
 
+    def _log_cache_paths(self) -> None:
+        """Log cache locations and whether files currently exist."""
+        cache_dir_display = str(self.cache_dir.resolve())
+        pdf_cache_display = str(self.cache_file.resolve())
+        llm_cache_display = str(self.llm_page_cache_file.resolve())
+        print(f"[CACHE] Base cache directory: {cache_dir_display}", flush=True)
+        print(
+            "[CACHE] Cache directory is outside _build_temp, so it is not deleted by rebuilds.",
+            flush=True,
+        )
+        print(
+            f"[CACHE] PDF cache file: {pdf_cache_display} "
+            f"(exists={'yes' if self.cache_file.exists() else 'no'})",
+            flush=True,
+        )
+        print(
+            f"[CACHE] LLM page cache file: {llm_cache_display} "
+            f"(exists={'yes' if self.llm_page_cache_file.exists() else 'no'})",
+            flush=True,
+        )
+
+    def _log_cache_inventory(
+        self,
+        pdf_cache: dict | None = None,
+        llm_page_cache: dict | None = None,
+    ) -> None:
+        """Log cache entry counts and file sizes for quick diagnostics."""
+        if pdf_cache is not None:
+            try:
+                pdf_cache_entries = len(pdf_cache) if isinstance(pdf_cache, dict) else 0
+                print(f"[CACHE] PDF cache entries: {pdf_cache_entries}", flush=True)
+            except Exception:
+                print("[CACHE] PDF cache entries: unknown (failed to count)", flush=True)
+
+        if pdf_cache is not None and self.cache_file.exists():
+            try:
+                print(f"[CACHE] PDF cache file size: {self.cache_file.stat().st_size} bytes", flush=True)
+            except Exception:
+                print("[CACHE] PDF cache file size: unknown", flush=True)
+
+        if llm_page_cache is not None:
+            entries = llm_page_cache.get("entries", {}) if isinstance(llm_page_cache, dict) else {}
+            llm_cache_entries = len(entries) if isinstance(entries, dict) else 0
+            print(
+                f"[CACHE] LLM page cache entries: {llm_cache_entries} "
+                f"(version={llm_page_cache.get('version') if isinstance(llm_page_cache, dict) else 'unknown'})",
+                flush=True,
+            )
+
+        if self.llm_page_cache_file.exists():
+            try:
+                print(
+                    f"[CACHE] LLM page cache file size: {self.llm_page_cache_file.stat().st_size} bytes",
+                    flush=True,
+                )
+            except Exception:
+                print("[CACHE] LLM page cache file size: unknown", flush=True)
+
     def _normalize_text_for_hash(self, text: str) -> str:
         """Normalize extracted text before hashing for cache keying."""
         return re.sub(r"\s+", " ", text).strip()
@@ -854,6 +912,8 @@ class PDFValidator:
         page_count = len(self.doc)
         llm_page_cache = self._load_llm_page_cache() if self.use_cache else {"version": LLM_PAGE_CACHE_VERSION, "entries": {}}
         llm_page_cache_entries = llm_page_cache.setdefault("entries", {})
+        if self.use_cache:
+            self._log_cache_inventory(llm_page_cache=llm_page_cache)
         page_cache_hits = 0
         page_cache_misses = 0
 
@@ -1065,6 +1125,11 @@ Respond with JSON only. Be VERY conservative - only flag issues you're 90%+ conf
         pdf_hash = self._get_pdf_hash()
         self.current_pdf_hash = pdf_hash
         cache = self._load_cache()
+        if self.use_cache:
+            self._log_cache_paths()
+            self._log_cache_inventory(pdf_cache=cache)
+        else:
+            print("[CACHE] Validation cache disabled (--no-cache)", flush=True)
         if self.use_cache:
             print(
                 f"[*] PDF cache lookup: hash={pdf_hash[:8]}, llm_pages={self.llm_sample_pages}, "

@@ -27,6 +27,8 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+from lib.build_logger import run_command_stream
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 UPLOAD_SCRIPT = PROJECT_ROOT / "scripts" / "upload-all-zenodo-and-save-dois.py"
 REPORT_PATH = PROJECT_ROOT / "zenodo-upload-report.md"
@@ -72,26 +74,18 @@ def run_and_tee(
 
     with log_path.open("w", encoding="utf-8", errors="replace") as log_file:
         try:
-            process = subprocess.Popen(
-                cmd,
-                cwd=str(cwd),
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                encoding="utf-8",
-                errors="replace",
+            extra_sinks = [progress_file] if progress_file else []
+            return_code, _ = run_command_stream(
+                cmd=cmd,
+                cwd=cwd,
+                log_file=log_file,
+                extra_sinks=extra_sinks,
             )
-            for line in (process.stdout or []):
-                print(line, end="", flush=True)
-                log_file.write(line)
-                if progress_file:
-                    progress_file.write(line)
-            process.wait()
             end_stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             if progress_file:
-                progress_file.write(f"\n[{end_stamp}] [EXIT] rc={int(process.returncode)}\n")
+                progress_file.write(f"\n[{end_stamp}] [EXIT] rc={return_code}\n")
                 progress_file.flush()
-            return int(process.returncode)
+            return return_code
         finally:
             if progress_file:
                 progress_file.close()

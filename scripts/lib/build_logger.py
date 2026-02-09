@@ -31,10 +31,12 @@ Usage:
 
 import sys
 import threading
+import subprocess
+import os
 from datetime import datetime
 from io import TextIOWrapper
 from pathlib import Path
-from typing import Optional, TextIO
+from typing import Optional, TextIO, Callable, Iterable, Sequence
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
@@ -207,6 +209,82 @@ class BuildLogger:
         """Context manager exit."""
         exit_code = 1 if exc_type else 0
         self.close(exit_code)
+
+
+def suppress_pip_requirement_noise(line: str) -> bool:
+    """Filter noisy pip dependency output lines."""
+    stripped = line.strip()
+    if not stripped:
+        return False
+    noisy_prefixes = (
+        "Requirement already satisfied",
+        "Collecting ",
+        "Using cached ",
+        "Downloading ",
+        "Installing collected packages",
+        "Successfully installed ",
+    )
+    return stripped.startswith(noisy_prefixes)
+
+
+def any_suppress_filter(line: str, filters: Iterable[Callable[[str], bool]]) -> bool:
+    """Return True if any suppress filter matches the line."""
+    for filter_fn in filters:
+        try:
+            if filter_fn(line):
+                return True
+        except Exception:
+            # Never let a filter crash command logging.
+            continue
+    return False
+
+
+def run_command_stream(
+    cmd: list[str],
+    cwd: Path,
+    log_file: TextIO,
+    suppress_filters: Optional[Sequence[Callable[[str], bool]]] = None,
+    extra_sinks: Optional[Sequence[TextIO]] = None,
+) -> tuple[int, str]:
+    """
+    Run command, stream output to console and log, and optionally extra sinks.
+
+    Returns:
+        (return_code, captured_output)
+    """
+    suppress_filters = suppress_filters or ()
+    extra_sinks = extra_sinks or ()
+
+    process = subprocess.Popen(
+        cmd,
+        cwd=str(cwd),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+
+    output_lines: list[str] = []
+    for line in (process.stdout or []):
+        if suppress_filters and any_suppress_filter(line, suppress_filters):
+            continue
+        print(line, end="", flush=True)
+        log_file.write(line)
+        output_lines.append(line)
+        for sink in extra_sinks:
+            sink.write(line)
+        log_file.flush()
+        os.fsync(log_file.fileno())
+        for sink in extra_sinks:
+            sink.flush()
+
+    log_file.flush()
+    os.fsync(log_file.fileno())
+    for sink in extra_sinks:
+        sink.flush()
+    process.wait()
+    return int(process.returncode), "".join(output_lines)
 
 
 # Singleton instance for simple usage
