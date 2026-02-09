@@ -147,45 +147,6 @@ def generate_readme(
             result = clean_value_for_prose(result)
         return result
 
-    # ===================
-    # 1. HOOK / HEADER
-    # ===================
-    readme_parts.append("# Disease Eradication Plan\n\n")
-
-    readme_parts.append("Hello, humans.\n\n")
-
-    readme_parts.append("I am WISHONIA. I've been watching your species for 80 years, and I have notes.\n\n")
-
-    readme_parts.append("Every day, **" + v("{{< var global_disease_deaths_daily >}}") + " of you permanently stop existing** from diseases that are basically just engineering problems with meat robots.\n\n")
-
-    readme_parts.append("Meanwhile, you spend **" + v("{{< var military_to_government_clinical_trials_spending_ratio >}}") + " more** on weapons than on clinical trials to test cures. You've tested less than 1% of possible drug-disease combinations. The bottleneck isn't science. It's that you decided testing cures isn't worth funding.\n\n")
-
-    readme_parts.append("This is like buying 600 umbrellas while your house is on fire.\n\n")
-
-    # ===================
-    # 2. THE SOLUTION
-    # ===================
-    readme_parts.append("## The Fix: A 1% Treaty\n\n")
-
-    readme_parts.append("Every nation redirects **1%** of their murder budget (" + v("{{< var treaty_annual_funding >}}", clean_units=False) + "/year) to fund hyper-efficient clinical trials.\n\n")
-
-    readme_parts.append("- Security balance unchanged (" + v("{{< var global_military_spending_post_treaty_annual_2024 >}}", clean_units=False) + " left for war stuff)\n")
-    readme_parts.append("- Trial costs drop " + v("{{< var dfda_trial_cost_reduction_factor >}}") + " through automation\n")
-    readme_parts.append("- " + v("{{< var dfda_efficacy_lag_elimination_deaths_averted >}}") + " humans could stop dying unnecessarily\n\n")
-
-    readme_parts.append("You'd still have enough nuclear weapons to end civilization 20 times. If you can't do it in 19 attempts, the 20th probably wasn't going to help.\n\n")
-
-    # ===================
-    # 3. CALL TO ACTION
-    # ===================
-    readme_parts.append("## 🗳️ Vote Yes at [warondisease.org](https://warondisease.org)\n\n")
-
-    readme_parts.append("When " + v("{{< var global_population_activism_threshold_pct >}}", clean_units=False) + " of humans want something, they usually get it. Click yes. Tell your friends. Stop dying from stupid things.\n\n")
-
-    # ===================
-    # 4. THE EVIDENCE (Papers)
-    # ===================
-    readme_parts.append("## Research & Papers\n\n")
 
     papers_qmd = project_root / "knowledge" / "papers.qmd"
     if papers_qmd.exists():
@@ -216,20 +177,6 @@ def generate_readme(
         print(f"[WARN] {papers_qmd} not found")
         readme_parts.append("See [warondisease.org](https://warondisease.org) for full documentation.\n\n")
 
-    # ===================
-    # 5. HOW TO HELP
-    # ===================
-    readme_parts.append("\n## How to Help\n\n")
-
-    readme_parts.append("### Spread the Word\n")
-    readme_parts.append("- Share [warondisease.org](https://warondisease.org) with your network\n")
-    readme_parts.append("- The key stat: **" + v("{{< var global_disease_deaths_daily >}}") + " people die daily** from curable diseases\n\n")
-
-    readme_parts.append("### Contribute to the Project\n")
-    readme_parts.append("- **Fact-checking**: Every parameter is sourced, but humans make mistakes\n")
-    readme_parts.append("- **Writing**: Make content clearer, more persuasive\n")
-    readme_parts.append("- **Research**: Find better sources, update statistics\n")
-    readme_parts.append("- **Translation**: Help reach non-English speakers\n\n")
 
     # ===================
     # 6. DEVELOPER SETUP
@@ -259,15 +206,6 @@ def generate_readme(
     readme_parts.append("- `CONTRIBUTING.md` - Writing standards and style guide\n\n")
 
     readme_parts.append("See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.\n\n")
-
-    # ===================
-    # 7. FOOTER
-    # ===================
-    readme_parts.append("---\n\n")
-    readme_parts.append("*WISHONIA*\n\n")
-    readme_parts.append("*World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation*\n\n")
-    readme_parts.append("*Still Watching. Still Concerned. Now Accepting Pull Requests.*\n\n")
-    readme_parts.append("P.S. " + v("{{< var global_disease_deaths_daily >}}") + " humans died today from diseases you could cure. Tomorrow, the same. Every day until you act.\n")
 
     # Combine and write
     readme_content = ''.join(readme_parts)
