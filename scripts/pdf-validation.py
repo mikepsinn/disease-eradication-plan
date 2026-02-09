@@ -726,17 +726,28 @@ class PDFValidator:
                 url_checker_class = getattr(url_checker_module, "URLChecker")
 
                 checker = url_checker_class(cache_ttl_hours=24, timeout_seconds=10)
-                urls_to_check = list(external_urls)[:100]  # Limit to 100 URLs
-
-                print(f"      Checking {len(urls_to_check)} external URLs...")
+                total_external_urls = len(external_urls)
+                urls_to_check = list(external_urls)
+                print(f"      Found {total_external_urls} external URLs; validating all.")
                 results = checker.check_urls(urls_to_check)
 
+                valid_count = 0
+                invalid_count = 0
+                cached_count = 0
+                broken_count = 0
+                access_denied_count = 0
+                unreachable_count = 0
+
                 for result in results:
+                    if result.from_cache:
+                        cached_count += 1
                     if not result.is_valid:
+                        invalid_count += 1
                         cache_note = " (cached)" if result.from_cache else ""
                         if result.is_http_error:
                             # 403 is usually bot-blocking, not a broken link
                             if result.status_code == 403:
+                                access_denied_count += 1
                                 self._add_error(
                                     None,
                                     "URL_ACCESS_DENIED",
@@ -745,6 +756,7 @@ class PDFValidator:
                                 )
                             else:
                                 # 404, 500, etc. are genuinely broken
+                                broken_count += 1
                                 self._add_error(
                                     None,
                                     "BROKEN_EXTERNAL_LINK",
@@ -753,12 +765,27 @@ class PDFValidator:
                                 )
                         else:
                             # Timeouts and network errors are warnings
+                            unreachable_count += 1
                             self._add_error(
                                 None,
                                 "URL_UNREACHABLE",
                                 PDFValidationError.SEVERITY_WARNING,
                                 f"{result.error_message}: {result.url}{cache_note}",
                             )
+                    else:
+                        valid_count += 1
+
+                checked_count = len(results)
+                fresh_count = checked_count - cached_count
+                print(
+                    f"      URL check summary: checked={checked_count}, valid={valid_count}, invalid={invalid_count}, "
+                    f"cached={cached_count}, fresh={fresh_count}"
+                )
+                if invalid_count > 0:
+                    print(
+                        f"      Invalid breakdown: broken={broken_count}, access_denied={access_denied_count}, "
+                        f"unreachable={unreachable_count}"
+                    )
 
             except ImportError as e:
                 print(f"[WARNING] URL checker not available: {e}", file=sys.stderr)
