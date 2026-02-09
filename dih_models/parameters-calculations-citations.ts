@@ -5796,7 +5796,7 @@ export const citations: Record<string, Citation> = {
         ],
         'container-title': "Diabetes Care: Global Economic Burden",
         URL: "https://diabetesjournals.org/care/article/41/5/963/36522/Global-Economic-Burden-of-Diabetes-in-Adults",
-        note: "Diabetes Care: Global Economic Burden | Lancet: Diabetes Economic Burden30100-6/abstract)",
+        note: "Diabetes Care: Global Economic Burden | Lancet Diabetes Endocrinol: Global economic burden of diabetes in adults aged 20-79 years",
   },
   "disease-cost-heart-disease-2100b": {
         id: "disease-cost-heart-disease-2100b",
@@ -5808,9 +5808,9 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2050]] },
-        'container-title': "Int'l Journal of Cardiology: Global Heart Failure Burden02238-9/abstract)",
-        URL: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001258",
-        note: "Int'l Journal of Cardiology: Global Heart Failure Burden02238-9/abstract) | AHA: US CVD Costs to 2050",
+        'container-title': "International Journal of Cardiology: The annual global economic burden of heart failure",
+        URL: "https://www.internationaljournalofcardiology.com/article/S0167-5273(13)02238-9/abstract",
+        note: "International Journal of Cardiology: The annual global economic burden of heart failure | AHA: US CVD Costs to 2050",
   },
   "disease-economic-burden-109t": {
         id: "disease-economic-burden-109t",

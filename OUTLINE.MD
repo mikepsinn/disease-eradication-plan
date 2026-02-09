@@ -3777,12 +3777,12 @@
 ## _quarto-optimocracy.yml
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Type:** website
-**Files:** 1 | **Words:** 8,829
+**Files:** 1 | **Words:** 8,832
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
 **Description:** Political dysfunction costs society trillions annually: {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity ...
-**Stats:** 8,829 words | 945 lines
+**Stats:** 8,832 words | 945 lines
 
   - The Mechanism
     - Why This Works
@@ -4242,6 +4242,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 345,641
+- Total words: 345,644
 - Orphaned files: 26
 - Paper configs: 12
