@@ -231,7 +231,7 @@ The analysis that follows uses standard cost-benefit methodology (NPV, QALY mode
 
 **A 1% Treaty Fund**: The treasury that receives and allocates the 1% of military spending reallocated by the 1% Treaty. It funds pragmatic clinical trials, which can be implemented through networks of decentralized institutes of health.
 
-**Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions, improving generalizability and dramatically reducing costs. Examples: Oxford RECOVERY (COVID, 47,000 patients), PCORnet ADAPTABLE (cardiovascular, {{< var adaptable_trial_patients >}} patients), and 108+ trials documented in Harvard meta-analysis [@embedded-pragmatic-trials-meta-analysis].
+**Pragmatic Clinical Trial**: Trial design using real-world settings and broad eligibility criteria rather than highly controlled laboratory conditions, improving generalizability and dramatically reducing costs. Examples: Oxford RECOVERY (COVID, 47,000 patients), PCORnet ADAPTABLE (cardiovascular, {{< var adaptable_trial_patients >}}), and 108+ trials documented in Harvard meta-analysis [@embedded-pragmatic-trials-meta-analysis].
 
 ## Problem Statement
 
@@ -251,7 +251,7 @@ Humanity's budget priorities, explained simply:
 
 ![Comparison of traditional versus pragmatic clinical trial costs and their impact on the speed of medical discovery, illustrating the 'bottleneck' created by high per-patient expenses.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-current-resource-allocation-bw-academic.jpg)
 
-The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}} per patient. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually helps people.
+The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}}. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually helps people.
 
 {{< include ../figures/military-vs-medical-research-spending-column-chart.qmd >}}
 
@@ -474,7 +474,7 @@ DALYs capture both mortality (years of life lost) AND morbidity (years lived wit
 
 ### Why "Eventually Avoidable" Matters
 
-Of {{< var global_disease_deaths_daily >}} daily deaths:
+Of {{< var global_disease_deaths_daily >}}:
 
 - **{{< var eventually_avoidable_death_pct >}} eventually avoidable** with sufficient biomedical research (gene therapy, AI drug discovery, cellular reprogramming, etc.)
 - **{{< var fundamentally_unavoidable_death_pct >}} fundamentally unavoidable** (primarily accidents, even with advanced prevention)
@@ -571,7 +571,7 @@ The ratchet mechanism isn't just economic gravity. It's engineered through [Ince
 
 The mechanism: {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives while {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic trials. The remaining {{< var victory_bond_funding_pct >}} funds Incentive Alignment Bond investor returns.
 
-Incentive Alignment Bond investors receive projected {{< var victory_bond_annual_return_pct >}} annual returns on their investment. The {{< var iab_political_incentive_funding_pct >}} allocation to political incentives creates sustained pressure to maintain and expand the treaty, while the {{< var dih_treasury_medical_research_pct >}} allocation ensures the primary purpose (funding pragmatic trials) remains the largest share.
+Incentive Alignment Bond investors receive projected {{< var victory_bond_annual_return_pct >}} on their investment. The {{< var iab_political_incentive_funding_pct >}} allocation to political incentives creates sustained pressure to maintain and expand the treaty, while the {{< var dih_treasury_medical_research_pct >}} allocation ensures the primary purpose (funding pragmatic trials) remains the largest share.
 
 This allocation structure ({{< var dih_treasury_medical_research_pct >}} medical research, {{< var victory_bond_funding_pct >}} investor returns, {{< var iab_political_incentive_funding_pct >}} political incentives) functions as a political transformation engine, making the transition from military spending to health investment economically self-reinforcing.
 
@@ -661,7 +661,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< var treaty_campaign_voting_bloc_target_latex >}}
 
-**Investors**: Incentive Alignment Bonds offer projected {{< var victory_bond_annual_return_pct >}} annual returns, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
+**Investors**: Incentive Alignment Bonds offer projected {{< var victory_bond_annual_return_pct >}}, substantially exceeding typical market returns of {{< var average_market_return_pct >}}.
 
 {{< var victory_bond_annual_return_pct_latex >}}
 
@@ -677,7 +677,7 @@ See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete anal
 
 | Stakeholder | Return Mechanism | Funding Source |
 |:------------|:-----------------|:---------------|
-| **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of treaty revenue |
+| **Investors** | {{< var victory_bond_annual_return_pct >}} | {{< var victory_bond_funding_pct >}} of treaty revenue |
 | **Politicians** | Reputation, electoral support, career advancement | {{< var iab_political_incentive_funding_pct >}} of treaty revenue |
 | **Patients** | Subsidized trial access, accelerated treatments | {{< var dih_treasury_medical_research_pct >}} of treaty revenue |
 
@@ -1638,7 +1638,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 #### Empirical basis
 
-- Oxford RECOVERY trial: {{< var recovery_trial_cost_reduction_factor >}} cost reduction ({{< var recovery_trial_cost_per_patient >}} per patient vs. {{< var traditional_phase3_cost_per_patient >}} traditional). Note: RECOVERY benefited from NHS infrastructure and COVID emergency conditions.
+- Oxford RECOVERY trial: {{< var recovery_trial_cost_reduction_factor >}} cost reduction ({{< var recovery_trial_cost_per_patient >}} vs. {{< var traditional_phase3_cost_per_patient >}} traditional). Note: RECOVERY benefited from NHS infrastructure and COVID emergency conditions.
 - ADAPTABLE trial: {{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} = {{< var adaptable_trial_cost_per_patient >}}/patient using PCORnet pragmatic design, more representative of typical pragmatic trial costs.
 - Our system projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 - Literature on pragmatic trials consistently shows 50-95% cost reductions
@@ -2050,7 +2050,7 @@ The {{< var dfda_trial_capacity_multiplier >}} research acceleration multiplier 
 
 - {{< var dfda_trials_per_year_capacity >}} trials/year capacity
 - Minimal exclusion criteria (vs. {{< var antidepressant_trial_exclusion_rate >}} excluded in traditional trials)
-- Demonstrated recruitment rates: RECOVERY enrolled 47,000 patients across 200 sites in 3 months [@recovery-trial-summary-quote]; ADAPTABLE enrolled {{< var adaptable_trial_patients >}} patients across 40 sites [@pragmatic-trials-cost-advantage]
+- Demonstrated recruitment rates: RECOVERY enrolled 47,000 patients across 200 sites in 3 months [@recovery-trial-summary-quote]; ADAPTABLE enrolled {{< var adaptable_trial_patients >}} across 40 sites [@pragmatic-trials-cost-advantage]
 
 **How the {{< var dfda_trial_capacity_multiplier >}} Multiplier Works**:
 
@@ -2291,7 +2291,7 @@ This section addresses common objections and potential failure modes, along with
 
 **Counterargument**:
 
-Military lobbyists currently get $1,813 back for every $1 spent [@lobbying-roi-calc] on political influence. The proposed model offers Incentive Alignment Bond holders **~{{< var victory_bond_annual_return_pct >}} annual returns** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
+Military lobbyists currently get $1,813 back for every $1 spent [@lobbying-roi-calc] on political influence. The proposed model offers Incentive Alignment Bond holders **~{{< var victory_bond_annual_return_pct >}}** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
 
 This creates a financial "kill switch": if the treaty is not respected, this massive income stream stops. This aligns the most powerful interests on earth with treaty compliance.
 
@@ -2421,7 +2421,7 @@ A potential criticism is that cost estimates depend on a single trial (RECOVERY)
 **Multiple large-scale validations:**
 
 - Oxford RECOVERY: {{< var recovery_trial_cost_per_patient >}}/patient (NHS/COVID conditions, 47,000 patients)
-- PCORnet ADAPTABLE: {{< var adaptable_trial_cost_per_patient >}}/patient (routine conditions, {{< var adaptable_trial_patients >}} patients)
+- PCORnet ADAPTABLE: {{< var adaptable_trial_cost_per_patient >}}/patient (routine conditions, {{< var adaptable_trial_patients >}})
 - Meta-analysis median: {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient (108 trials across therapeutic areas)
 
 **What our estimates assume:**
@@ -2451,7 +2451,7 @@ The argument that medical research faces diminishing returns rests on a false pr
 
 ![A visual representation of the 'Exploration Gap,' contrasting the tiny sliver of tested drug-disease relationships against the massive, 9.5-million-combination frontier of safe compounds.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-myth-of-diminishing-returns-bw-academic.jpg)
 
-High trial costs (median {{< var traditional_phase3_cost_per_patient >}} per patient) force researchers to bet only on "sure things," leaving the vast majority of the therapeutic map blank.
+High trial costs (median {{< var traditional_phase3_cost_per_patient >}}) force researchers to bet only on "sure things," leaving the vast majority of the therapeutic map blank.
 
 **1. The Immediate Opportunity (Existing Safe Drugs)**
 
@@ -2647,7 +2647,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 1. **Data infrastructure scaling costs**: Decentralized trial infrastructure uses automated software (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the framework leverages existing EHR systems and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
 
-2. **Clinical trial market price effects**: Increasing trial demand by {{< var dfda_trial_capacity_multiplier >}} could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var recovery_trial_cost_reduction_factor >}} cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient >}} per patient; decentralized trials target {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient by eliminating overhead, not by increasing demand for scarce inputs.
+2. **Clinical trial market price effects**: Increasing trial demand by {{< var dfda_trial_capacity_multiplier >}} could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var recovery_trial_cost_reduction_factor >}} cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient >}}; decentralized trials target {{< var dfda_pragmatic_trial_cost_per_patient >}} by eliminating overhead, not by increasing demand for scarce inputs.
 
 3. **Crowding out effects**: Do billions in new pragmatic clinical trials displace existing research funding, or does it add incrementally? Conservative assumption: fully additive. If partially substitutive (e.g., governments reduce NIH funding in response), net research increase would be lower than modeled.
 
@@ -2736,7 +2736,7 @@ Military planners optimize for national security. This analysis demonstrates tha
 
 Current global health funding relies on unpredictable philanthropic donations and limited government aid budgets. Total official development assistance for health: ~$40B/year. This intervention creates a {{< var treaty_annual_funding >}}/year permanent funding stream.
 
-**Why this works**: This is not charity; it's profitable. Investors can purchase Incentive Alignment Bonds offering projected {{< var victory_bond_annual_return_pct >}} annual returns backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
+**Why this works**: This is not charity; it's profitable. Investors can purchase Incentive Alignment Bonds offering projected {{< var victory_bond_annual_return_pct >}} backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
 
 **Mechanism design**: The 1% Treaty Fund allocates:
 

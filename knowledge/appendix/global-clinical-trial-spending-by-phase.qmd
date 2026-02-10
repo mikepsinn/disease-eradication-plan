@@ -95,7 +95,7 @@ Why Phase 3 dominates:
 
 #### Cost per patient
 
-- Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}} per patient
+- Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}}
 - Average: $113,000 per patient [@phase-3-cost-per-patient-113k]
 
 #### As percentage of total drug development
@@ -447,8 +447,8 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 #### The waste
 
-- Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}} per patient
-- RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} per patient (Systematic review median: {{< var pmc_pragmatic_trial_median_cost_per_patient >}} [@pmc-pragmatic-trial-cost])
+- Traditional Phase 3: {{< var traditional_phase3_cost_per_patient >}}
+- RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} (Systematic review median: {{< var pmc_pragmatic_trial_median_cost_per_patient >}} [@pmc-pragmatic-trial-cost])
 - **That's an 80-240× markup for bureaucracy**
 
 ![Cost efficiency comparison between traditional Phase 3 trials and the decentralized RECOVERY trial model.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-efficiency-cost-bw-academic.jpg)

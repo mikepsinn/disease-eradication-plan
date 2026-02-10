@@ -538,14 +538,14 @@ Evidence from cross-state variation suggests:
 
 Pragmatic clinical trials represent perhaps the single highest-return category of public investment identified in the literature. While vaccinations return {{< var childhood_vaccination_roi >}} and early childhood education returns 4:1, pragmatic trials demonstrate benefit-cost ratios of **{{< var dfda_roi_rd_only >}}** [@dfda-impact-paper-2025].
 
-The UK's RECOVERY trial demonstrated this dramatically during COVID-19: it cost approximately {{< var recovery_trial_cost_per_patient >}} per patient versus {{< var traditional_phase3_cost_per_patient >}} for traditional Phase 3 trials, a {{< var recovery_trial_cost_reduction_factor >}} cost reduction [@recovery-trial-summary-quote]. This single trial identified dexamethasone as a life-saving treatment, preventing an estimated 1 million deaths globally.
+The UK's RECOVERY trial demonstrated this dramatically during COVID-19: it cost approximately {{< var recovery_trial_cost_per_patient >}} versus {{< var traditional_phase3_cost_per_patient >}} for traditional Phase 3 trials, a {{< var recovery_trial_cost_reduction_factor >}} cost reduction [@recovery-trial-summary-quote]. This single trial identified dexamethasone as a life-saving treatment, preventing an estimated 1 million deaths globally.
 
 ### OSL Estimation
 
 Pragmatic trials represent an *innovation frontier* where no country has achieved optimal investment. We estimate OSL from cost-effectiveness analysis:
 
 1. **Unmet medical need**: Approximately {{< var global_annual_daly_burden >}} DALYs annually from conditions lacking adequate treatment
-2. **Cost per DALY averted**: Pragmatic trials cost {{< var adaptable_trial_cost_per_patient >}} per patient (ADAPTABLE trial) vs. {{< var traditional_phase3_cost_per_patient >}} traditional
+2. **Cost per DALY averted**: Pragmatic trials cost {{< var adaptable_trial_cost_per_patient >}} (ADAPTABLE trial) vs. {{< var traditional_phase3_cost_per_patient >}} traditional
 3. **Scale-up potential**: Current global clinical trial spending is approximately {{< var global_clinical_trials_spending_annual >}}/year, but only ~$500M goes to pragmatic/embedded designs
 
 | Data Point | Value | Source |

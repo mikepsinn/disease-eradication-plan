@@ -53,7 +53,7 @@ Testing if calculated variables link to their calculations in the parameters app
 
 Testing if citations link to references section:
 
-- The ADAPTABLE trial achieved a cost of {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage].
+- The ADAPTABLE trial achieved a cost of {{< var adaptable_trial_cost_per_patient >}} [@pragmatic-trials-cost-advantage].
 - This represents a 30x cost advantage over traditional RCTs.
 
 ## Cross-Chapter Anchor Links Test

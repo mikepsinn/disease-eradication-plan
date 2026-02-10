@@ -435,11 +435,11 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
   - Phase II: \$10 - \$50 million/trial (depending on disease area).
   - Phase III: \$100M - \$500M/trial (large patient populations).
 
-- **Per-Patient Phase III Costs**: Often {{< var traditional_phase3_cost_per_patient >}} per patient (site fees, overhead, staff, monitoring, data management).
+- **Per-Patient Phase III Costs**: Often {{< var traditional_phase3_cost_per_patient >}} (site fees, overhead, staff, monitoring, data management).
 
 ### Decentralized Trial Costs Modeled on Pragmatic Trials
 
-- **Oxford RECOVERY**: Achieved **~{{< var recovery_trial_cost_per_patient >}} per patient**. Key strategies included:
+- **Oxford RECOVERY**: Achieved **~{{< var recovery_trial_cost_per_patient >}}**. Key strategies included:
   1. Embedding trial protocols within routine hospital care.
   2. Minimizing overhead by leveraging existing staff/resources and electronic data capture.
   3. Focused, pragmatic trial designs.
@@ -455,7 +455,7 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 {{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
 
 - **Extrapolation to New System**:
-  - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient in many cases, especially for pragmatic or observational designs.
+  - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} in many cases, especially for pragmatic or observational designs.
   - Up to **~{{< var dfda_trial_cost_reduction_factor >}} cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of {{< var traditional_phase3_cost_per_patient >}}.
 
   The cost reduction factor:
@@ -532,7 +532,7 @@ $$
 Where:
 
 - $\alpha \in [0,1]$ is the cost reduction percentage (as decimal)
-- $R_d$ = {{< var global_clinical_trials_spending_annual >}} annual global clinical trial spending
+- $R_d$ = {{< var global_clinical_trials_spending_annual >}} global clinical trial spending
 
 **Base Case Calculation:**
 

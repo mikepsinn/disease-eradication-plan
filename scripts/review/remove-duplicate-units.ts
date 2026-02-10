@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { getBookFilesForProcessing } from './utils';
+import { glob } from 'glob';
 
 interface VariableUnitMapping {
   [variableName: string]: string;
@@ -145,12 +145,25 @@ async function main() {
 
   console.log(`Loaded ${Object.keys(unitMappings).length} variable → unit mappings\n`);
 
-  // Get all book files
-  const files = await getBookFilesForProcessing();
-  console.log(`Scanning ${files.length} QMD files...\n`);
+  // Get ALL QMD files (not just those in Quarto configs)
+  const files = await glob('knowledge/**/*.qmd', {
+    cwd: process.cwd(),
+    absolute: true,
+    windowsPathsNoEscape: true
+  });
+
+  // Also include root QMD files
+  const rootFiles = await glob('*.qmd', {
+    cwd: process.cwd(),
+    absolute: true,
+    windowsPathsNoEscape: true
+  });
+
+  const allFiles = [...files, ...rootFiles];
+  console.log(`Scanning ${allFiles.length} QMD files...\n`);
 
   // Find all replacements
-  const replacements = await findReplacements(files, unitMappings);
+  const replacements = await findReplacements(allFiles, unitMappings);
 
   if (replacements.length === 0) {
     console.log('✓ No duplicate units found!');
