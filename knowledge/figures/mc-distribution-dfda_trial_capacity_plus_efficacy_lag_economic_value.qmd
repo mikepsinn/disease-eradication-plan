@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $87.8 quadrillion |
 | Median (50th percentile) | $92.8 quadrillion |
 | Standard Deviation | $11.5 quadrillion |
-| 90% Confidence Interval | [$62.4 quadrillion, $97.3 quadrillion] |
+| 90% Range (5th-95th percentile) | [$62.4 quadrillion, $97.3 quadrillion] |
 
 *The histogram shows the distribution of Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

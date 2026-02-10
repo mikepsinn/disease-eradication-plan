@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 3.88 |
 | Median (50th percentile) | 3.88 |
 | Standard Deviation | 0.0156 |
-| 90% Confidence Interval | [3.85, 3.91] |
+| 90% Range (5th-95th percentile) | [3.85, 3.91] |
 
 *The histogram shows the distribution of Life Expectancy Gain Rate (1883-1962) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

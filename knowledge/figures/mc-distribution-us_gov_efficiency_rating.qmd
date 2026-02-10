@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 28.1% |
 | Median (50th percentile) | 29.2% |
 | Standard Deviation | 12.2% |
-| 90% Confidence Interval | [4.39%, 46.2%] |
+| 90% Range (5th-95th percentile) | [4.39%, 46.2%] |
 
 *The histogram shows the distribution of US Efficiency Rating across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

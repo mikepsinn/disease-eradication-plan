@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 653:1 |
 | Median (50th percentile) | 645:1 |
 | Standard Deviation | 58.4:1 |
-| 90% Confidence Interval | [569:1, 790:1] |
+| 90% Range (5th-95th percentile) | [569:1, 790:1] |
 
 *The histogram shows the distribution of ROI from Decentralized Framework for Drug Assessment R&D Savings Only across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

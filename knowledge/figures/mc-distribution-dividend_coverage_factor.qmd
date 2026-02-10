@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 711:1 |
 | Median (50th percentile) | 698:1 |
 | Standard Deviation | 145:1 |
-| 90% Confidence Interval | [489:1, 995:1] |
+| 90% Range (5th-95th percentile) | [489:1, 995:1] |
 
 *The histogram shows the distribution of Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

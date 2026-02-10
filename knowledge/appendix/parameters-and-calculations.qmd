@@ -276,7 +276,7 @@ Years to test all pairwise drug combinations at current trial capacity. Combinat
 
 **Inputs**:
 
-- [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1B combinations
+- [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1B combinations (45.1M pairwise × 1k diseases)
 - [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
 
 $$

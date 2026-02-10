@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 610B |
 | Median (50th percentile) | 614B |
 | Standard Deviation | 148B |
-| 90% Confidence Interval | [361B, 877B] |
+| 90% Range (5th-95th percentile) | [361B, 877B] |
 
 *The histogram shows the distribution of Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $27.1B |
 | Median (50th percentile) | $26.7B |
 | Standard Deviation | $4.61B |
-| 90% Confidence Interval | [$19.9B, $35.8B] |
+| 90% Range (5th-95th percentile) | [$19.9B, $35.8B] |
 
 *The histogram shows the distribution of Annual Savings from 1% Reduction in Lost Economic Growth across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

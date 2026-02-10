@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $1.12T |
 | Median (50th percentile) | $1.09T |
 | Standard Deviation | $230B |
-| 90% Confidence Interval | [$775B, $1.58T] |
+| 90% Range (5th-95th percentile) | [$775B, $1.58T] |
 
 *The histogram shows the distribution of Category 2: Compliance Burden across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

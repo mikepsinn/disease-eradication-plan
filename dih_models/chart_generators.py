@@ -675,7 +675,7 @@ plt.show()
 | Mean (expected value) | {format_parameter_value(mean, units, include_unit=False)} |
 | Median (50th percentile) | {format_parameter_value(p50, units, include_unit=False)} |
 | Standard Deviation | {format_parameter_value(std, units, include_unit=False)} |
-| 90% Confidence Interval | [{format_parameter_value(p5, units, include_unit=False)}, {format_parameter_value(p95, units, include_unit=False)}] |
+| 90% Range (5th-95th percentile) | [{format_parameter_value(p5, units, include_unit=False)}, {format_parameter_value(p95, units, include_unit=False)}] |
 
 *The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
 '''

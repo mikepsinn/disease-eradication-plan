@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 11.3B |
 | Median (50th percentile) | 11.3B |
 | Standard Deviation | 2.57B |
-| 90% Confidence Interval | [6.76B, 16.0B] |
+| 90% Range (5th-95th percentile) | [6.76B, 16.0B] |
 
 *The histogram shows the distribution of Lives Saved from Trial Capacity Increase across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $133B |
 | Median (50th percentile) | $119B |
 | Standard Deviation | $62.7B |
-| 90% Confidence Interval | [$55.2B, $266B] |
+| 90% Range (5th-95th percentile) | [$55.2B, $266B] |
 
 *The histogram shows the distribution of Global Political Reform Investment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

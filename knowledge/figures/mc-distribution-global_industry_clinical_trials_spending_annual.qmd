@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $55.6B |
 | Median (50th percentile) | $54.7B |
 | Standard Deviation | $7.18B |
-| 90% Confidence Interval | [$46.6B, $69B] |
+| 90% Range (5th-95th percentile) | [$46.6B, $69B] |
 
 *The histogram shows the distribution of Annual Global Industry Spending on Clinical Trials across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

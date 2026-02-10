@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 34.6 |
 | Median (50th percentile) | 29.7 |
 | Standard Deviation | 19.9 |
-| 90% Confidence Interval | [11.6, 77.2] |
+| 90% Range (5th-95th percentile) | [11.6, 77.2] |
 
 *The histogram shows the distribution of dFDA Therapeutic Space Exploration Time across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

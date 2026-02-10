@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 95.1M:1 |
 | Median (50th percentile) | 96.0M:1 |
 | Standard Deviation | 28.2M:1 |
-| 90% Confidence Interval | [46.6M:1, 144M:1] |
+| 90% Range (5th-95th percentile) | [46.6M:1, 144M:1] |
 
 *The histogram shows the distribution of Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

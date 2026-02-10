@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 36.0k |
 | Median (50th percentile) | 32.7k |
 | Standard Deviation | 17.8k |
-| 90% Confidence Interval | [12.4k, 71.8k] |
+| 90% Range (5th-95th percentile) | [12.4k, 71.8k] |
 
 *The histogram shows the distribution of Efficacy Lag Deaths (9/11 Equivalents) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

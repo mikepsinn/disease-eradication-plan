@@ -1599,7 +1599,7 @@ With pragmatic trial integration, the complete framework can:
 
 ### System Architecture
 
-The processing protocol defines five sequential layers:
+The processing protocol defines six sequential steps:
 
 1. **Data Ingestion Protocol**: Collects measurements from wearables, health apps, EHR/FHIR systems, manual entry, and environmental sensors
 2. **Measurement Normalization**: Standardizes units, timestamps, deduplicates records, and attributes data provenance

@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $128T |
 | Median (50th percentile) | $126T |
 | Standard Deviation | $20.8T |
-| 90% Confidence Interval | [$95.8T, $168T] |
+| 90% Range (5th-95th percentile) | [$95.8T, $168T] |
 
 *The histogram shows the distribution of Total Annual Cost of War and Disease with All Externalities across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 7.21x |
 | Median (50th percentile) | 7.22x |
 | Standard Deviation | 0.227x |
-| 90% Confidence Interval | [6.83x, 7.57x] |
+| 90% Range (5th-95th percentile) | [6.83x, 7.57x] |
 
 *The histogram shows the distribution of Healthcare vs Military Multiplier Ratio across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

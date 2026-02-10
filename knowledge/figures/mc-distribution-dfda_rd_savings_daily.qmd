@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $161M |
 | Median (50th percentile) | $158M |
 | Standard Deviation | $21M |
-| 90% Confidence Interval | [$135M, $200M] |
+| 90% Range (5th-95th percentile) | [$135M, $200M] |
 
 *The histogram shows the distribution of Daily R&D Savings from Trial Cost Reduction across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

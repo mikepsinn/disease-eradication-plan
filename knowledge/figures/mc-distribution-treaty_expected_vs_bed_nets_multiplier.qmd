@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 605x |
 | Median (50th percentile) | 109x |
 | Standard Deviation | 1.2kx |
-| 90% Confidence Interval | [29.9x, 3.0kx] |
+| 90% Range (5th-95th percentile) | [29.9x, 3.0kx] |
 
 *The histogram shows the distribution of Expected Cost-Effectiveness vs Bed Nets Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

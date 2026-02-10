@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 1.08B |
 | Median (50th percentile) | 1.07B |
 | Standard Deviation | 145M |
-| 90% Confidence Interval | [843M, 1.34B] |
+| 90% Range (5th-95th percentile) | [843M, 1.34B] |
 
 *The histogram shows the distribution of Global Patients Willing to Participate in Clinical Trials across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

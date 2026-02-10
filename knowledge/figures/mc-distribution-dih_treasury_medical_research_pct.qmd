@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 80% |
 | Median (50th percentile) | 80% |
 | Standard Deviation | 1.11e-14% |
-| 90% Confidence Interval | [80%, 80%] |
+| 90% Range (5th-95th percentile) | [80%, 80%] |
 
 *The histogram shows the distribution of Medical Research Percentage of Treaty Funding across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

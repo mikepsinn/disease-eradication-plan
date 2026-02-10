@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 2.9kx |
 | Median (50th percentile) | 2.8kx |
 | Standard Deviation | 255x |
-| 90% Confidence Interval | [2.5kx, 3.3kx] |
+| 90% Range (5th-95th percentile) | [2.5kx, 3.3kx] |
 
 *The histogram shows the distribution of Misallocation Factor: Cost to Kill vs Cost to Save across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

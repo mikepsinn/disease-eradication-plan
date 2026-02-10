@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 48.9M |
 | Median (50th percentile) | 48.1M |
 | Standard Deviation | 8.27M |
-| 90% Confidence Interval | [36.6M, 65.0M] |
+| 90% Range (5th-95th percentile) | [36.6M, 65.0M] |
 
 *The histogram shows the distribution of US Waste (QALY Equivalents) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

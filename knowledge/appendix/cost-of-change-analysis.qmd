@@ -105,7 +105,7 @@ Beyond direct spending, legislators respond to career incentives. @blanes2012 do
 
 ### The Political Cost Function
 
-We model the cost of achieving policy change $p$ as a function of three components:
+We model the cost of achieving policy change $p$ as a function of four components:
 
 $$
 C(p) = C_{campaign}(p) + C_{lobby}(p) + C_{career}(p) + C_{coord}(p)
@@ -344,12 +344,13 @@ For detailed analysis of the political economy and implementation mechanisms, se
 
 **Policy**: Redirect 1% of global military spending (~{{< var treaty_annual_funding >}}/year) to medical research through pragmatic clinical trials.
 
-**Estimated Benefits** (over implementation horizon):
+**Counterfactual**: At current discovery rates (~15 new disease treatments annually), exploring treatments for all ~6,650 diseases lacking FDA-approved therapies would take 443 years. The treaty accelerates this timeline by 212 years on average, bringing treatments forward by that duration. Benefits below represent cumulative lives saved and suffering eliminated over this acceleration period, compared to the status quo timeline.
+
+**Estimated Benefits** (cumulative over 212-year acceleration):
 
 | Category | Value |
 |----------|-------|
 | Lives saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} |
-| Economic value | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} |
 | DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} |
 
 **Political Reform Investment**: {{< var us_political_reform_investment_total >}} (US) to {{< var global_political_reform_investment >}} (global)

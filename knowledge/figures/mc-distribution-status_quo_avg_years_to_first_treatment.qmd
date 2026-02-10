@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 242 |
 | Median (50th percentile) | 237 |
 | Standard Deviation | 53.2 |
-| 90% Confidence Interval | [162, 356] |
+| 90% Range (5th-95th percentile) | [162, 356] |
 
 *The histogram shows the distribution of Status Quo Average Years to First Treatment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $16.3K |
 | Median (50th percentile) | $16.3K |
 | Standard Deviation | $1.21K |
-| 90% Confidence Interval | [$14.3K, $18.3K] |
+| 90% Range (5th-95th percentile) | [$14.3K, $18.3K] |
 
 *The histogram shows the distribution of Cost per Life Saved by Medical Research across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

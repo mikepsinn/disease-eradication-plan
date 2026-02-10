@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $1.19B |
 | Median (50th percentile) | $1.19B |
 | Standard Deviation | $76.5M |
-| 90% Confidence Interval | [$1.09B, $1.33B] |
+| 90% Range (5th-95th percentile) | [$1.09B, $1.33B] |
 
 *The histogram shows the distribution of Clinical Trial Cost Per Approved Drug across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

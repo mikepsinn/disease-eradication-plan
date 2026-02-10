@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 293% |
 | Median (50th percentile) | 287% |
 | Standard Deviation | 76.3% |
-| 90% Confidence Interval | [180%, 430%] |
+| 90% Range (5th-95th percentile) | [180%, 430%] |
 
 *The histogram shows the distribution of Annual Return Percentage for VICTORY Incentive Alignment Bondholders across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

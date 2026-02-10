@@ -504,7 +504,7 @@ This is standard economics: moving money from low-multiplier activities (weapons
 A {{< var treaty_reduction_pct >}} reduction in weapons procurement redirects {{< var peace_dividend_annual_societal_benefit >}} annually from activities with 0.5-1.0× multipliers to activities with 2-3× multipliers.
 This represents approximately the GDP of Austria, reallocated from military spending to medical research infrastructure.
 
-### Research Efficiency Dividend (Infrastructure Leverage)
+### 2. Research Efficiency Dividend (Infrastructure Leverage)
 
 {{< var dfda_benefit_rd_only_annual >}}–{{< var global_clinical_trials_spending_annual >}} {{< var global_clinical_trials_spending_annual_cite >}}
 
@@ -2449,7 +2449,6 @@ This intervention targets a different margin than traditional research scaling. 
 
 The argument that medical research faces diminishing returns rests on a false premise: that we have already picked the "low-hanging fruit." In reality, we haven't picked the fruit because we can't afford the ladder.
 
-![A visual representation of the 'Exploration Gap,' contrasting the tiny sliver of tested drug-disease relationships against the massive, 9.5-million-combination frontier of safe compounds.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-myth-of-diminishing-returns-bw-academic.jpg)
 
 High trial costs (median {{< var traditional_phase3_cost_per_patient >}}) force researchers to bet only on "sure things," leaving the vast majority of the therapeutic map blank.
 

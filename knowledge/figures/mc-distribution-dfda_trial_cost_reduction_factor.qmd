@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 52.8x |
 | Median (50th percentile) | 48x |
 | Standard Deviation | 19.5x |
-| 90% Confidence Interval | [39.4x, 89.1x] |
+| 90% Range (5th-95th percentile) | [39.4x, 89.1x] |
 
 *The histogram shows the distribution of dFDA Trial Cost Reduction Factor across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

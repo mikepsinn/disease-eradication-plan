@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $1.04K |
 | Median (50th percentile) | $1.03K |
 | Standard Deviation | $130 |
-| 90% Confidence Interval | [$832, $1.28K] |
+| 90% Range (5th-95th percentile) | [$832, $1.28K] |
 
 *The histogram shows the distribution of US Per Capita Mental Health Cost across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

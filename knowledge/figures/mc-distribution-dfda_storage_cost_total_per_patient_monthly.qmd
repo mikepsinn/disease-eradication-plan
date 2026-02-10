@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $0.717 |
 | Median (50th percentile) | $0.659 |
 | Standard Deviation | $0.280 |
-| 90% Confidence Interval | [$0.361, $1.29] |
+| 90% Range (5th-95th percentile) | [$0.361, $1.29] |
 
 *The histogram shows the distribution of Total Infrastructure Cost per Patient (Monthly) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

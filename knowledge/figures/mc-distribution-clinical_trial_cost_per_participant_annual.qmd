@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $31.6K |
 | Median (50th percentile) | $31.5K |
 | Standard Deviation | $1.22K |
-| 90% Confidence Interval | [$29.8K, $33.6K] |
+| 90% Range (5th-95th percentile) | [$29.8K, $33.6K] |
 
 *The histogram shows the distribution of Annual Cost Per Clinical Trial Participant across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

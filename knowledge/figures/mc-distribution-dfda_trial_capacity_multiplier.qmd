@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 22.1x |
 | Median (50th percentile) | 16x |
 | Standard Deviation | 20.2x |
-| 90% Confidence Interval | [4.19x, 61.3x] |
+| 90% Range (5th-95th percentile) | [4.19x, 61.3x] |
 
 *The histogram shows the distribution of Trial Capacity Multiplier across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

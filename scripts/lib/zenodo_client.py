@@ -348,6 +348,135 @@ def _extract_numeric_id(value: str | None) -> Optional[int]:
     return int(match.group(1))
 
 
+def parse_bibtex_file(bib_path: Path) -> dict:
+    """Parse a BibTeX file and return a dict of {cite_key: entry_dict}.
+
+    Args:
+        bib_path: Path to references.bib file
+
+    Returns:
+        Dict mapping citation keys to parsed BibTeX entries
+    """
+    if not bib_path.exists():
+        return {}
+
+    try:
+        import bibtexparser
+        from bibtexparser.bparser import BibTexParser
+
+        with open(bib_path, 'r', encoding='utf-8') as f:
+            parser = BibTexParser(common_strings=True)
+            bib_database = bibtexparser.load(f, parser=parser)
+
+        # Convert to dict keyed by ID
+        return {entry['ID']: entry for entry in bib_database.entries}
+    except ImportError:
+        # bibtexparser not installed
+        return {}
+    except Exception:
+        # Parsing failed
+        return {}
+
+
+def extract_cited_references(paper_key: str, quarto_config: dict, project_root: Path) -> list[dict]:
+    """Extract references that are actually cited in the paper.
+
+    Args:
+        paper_key: Paper identifier
+        quarto_config: Quarto config dict
+        project_root: Project root path
+
+    Returns:
+        List of Zenodo reference dicts with raw_reference, identifier, etc.
+    """
+    import re
+
+    # Find the main QMD file and any included files
+    dih_render = quarto_config.get("dih-render", {})
+    index_source = dih_render.get("index-source")
+    if not index_source:
+        return []
+
+    # Parse references.bib
+    bib_path = project_root / "references.bib"
+    bib_entries = parse_bibtex_file(bib_path)
+    if not bib_entries:
+        return []
+
+    # Scan QMD files for citations
+    cited_keys = set()
+    qmd_files = []
+
+    # Add main file
+    main_qmd = project_root / index_source
+    if main_qmd.exists():
+        qmd_files.append(main_qmd)
+
+    # Add any included chapters (for books)
+    book_config = quarto_config.get("book", {})
+    if isinstance(book_config, dict):
+        chapters = book_config.get("chapters", [])
+        for chapter in chapters:
+            if isinstance(chapter, str):
+                chapter_path = project_root / chapter
+                if chapter_path.exists():
+                    qmd_files.append(chapter_path)
+
+    # Scan all QMD files for citation keys
+    citation_pattern = re.compile(r'@([a-zA-Z0-9_-]+)')
+    for qmd_file in qmd_files:
+        try:
+            content = qmd_file.read_text(encoding='utf-8')
+            for match in citation_pattern.finditer(content):
+                cite_key = match.group(1)
+                if cite_key in bib_entries:
+                    cited_keys.add(cite_key)
+        except Exception:
+            continue
+
+    # Build Zenodo reference list
+    references = []
+    for cite_key in sorted(cited_keys):
+        entry = bib_entries[cite_key]
+
+        # Format raw reference string
+        authors = entry.get('author', 'Unknown')
+        year = entry.get('year', 'n.d.')
+        title = entry.get('title', 'Untitled')
+
+        # Build citation string
+        raw_ref = f"{authors} ({year}). {title}."
+
+        # Add journal/publisher info if available
+        if entry.get('journal'):
+            raw_ref += f" {entry['journal']}"
+            if entry.get('volume'):
+                raw_ref += f", {entry['volume']}"
+            if entry.get('pages'):
+                raw_ref += f", {entry['pages']}"
+            raw_ref += "."
+        elif entry.get('publisher'):
+            raw_ref += f" {entry['publisher']}."
+
+        ref_dict = {"raw_reference": raw_ref}
+
+        # Add DOI if available
+        if entry.get('doi'):
+            ref_dict["identifier"] = entry['doi']
+            ref_dict["scheme"] = "doi"
+            ref_dict["relation"] = "cites"
+
+        # Add URL if available and no DOI
+        elif entry.get('url'):
+            ref_dict["identifier"] = entry['url']
+            ref_dict["scheme"] = "url"
+            ref_dict["relation"] = "cites"
+
+        references.append(ref_dict)
+
+    return references
+
+
 def extract_abstract_from_qmd(paper_key: str, quarto_config: dict, project_root: Path) -> str:
     """Extract abstract from the main QMD file and resolve Quarto variables.
 
@@ -607,6 +736,11 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: P
             f"Add 'publisher' to the zenodo section of your _quarto-*.yml config."
         )
 
+    # Build copyright/rights statement
+    primary_author = creators[0]['name'] if creators else "Unknown"
+    current_year = datetime.now().year
+    rights_statement = f"© {current_year} {primary_author}. Licensed under {quarto_license}."
+
     # Build Zenodo metadata
     zenodo_metadata = {
         "title": title,
@@ -614,6 +748,7 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: P
         "creators": creators,
         "keywords": keywords,
         "license": zenodo_license,
+        "rights": rights_statement,
         "access_right": "open",
         "publication_date": datetime.now().strftime("%Y-%m-%d"),
         "upload_type": "publication",
@@ -626,6 +761,43 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: P
     # Store existing DOI for lookup (not sent to Zenodo API, used internally)
     if existing_doi:
         zenodo_metadata["_existing_doi"] = existing_doi
+
+    # Add references from .bib file (only cited references)
+    if project_root:
+        references = extract_cited_references(paper_key, quarto_config, project_root)
+        if references:
+            zenodo_metadata["references"] = references
+
+    # Add grants/funding if specified in config
+    grants = metadata.get("grants") or zenodo_section.get("grants")
+    if grants and isinstance(grants, list):
+        zenodo_grants = []
+        for grant in grants:
+            if isinstance(grant, dict):
+                grant_dict = {}
+                if grant.get("title"):
+                    grant_dict["title"] = grant["title"]
+                if grant.get("code"):
+                    grant_dict["code"] = grant["code"]
+                if grant.get("funder"):
+                    grant_dict["funder"] = {"name": grant["funder"]}
+                if grant_dict:
+                    zenodo_grants.append(grant_dict)
+        if zenodo_grants:
+            zenodo_metadata["grants"] = zenodo_grants
+
+    # Add alternate identifiers (arXiv, SSRN, etc.)
+    alternate_ids = metadata.get("alternate_ids") or zenodo_section.get("alternate_ids")
+    if alternate_ids and isinstance(alternate_ids, list):
+        zenodo_alt_ids = []
+        for alt_id in alternate_ids:
+            if isinstance(alt_id, dict) and alt_id.get("identifier") and alt_id.get("scheme"):
+                zenodo_alt_ids.append({
+                    "identifier": alt_id["identifier"],
+                    "scheme": alt_id["scheme"]
+                })
+        if zenodo_alt_ids:
+            zenodo_metadata["alternate_identifiers"] = zenodo_alt_ids
 
     if related:
         zenodo_metadata["related_identifiers"] = related

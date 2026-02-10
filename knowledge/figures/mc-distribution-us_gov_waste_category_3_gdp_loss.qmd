@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $1.56T |
 | Median (50th percentile) | $1.52T |
 | Standard Deviation | $317B |
-| 90% Confidence Interval | [$1.09T, $2.18T] |
+| 90% Range (5th-95th percentile) | [$1.09T, $2.18T] |
 
 *The histogram shows the distribution of Category 3: GDP Loss across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

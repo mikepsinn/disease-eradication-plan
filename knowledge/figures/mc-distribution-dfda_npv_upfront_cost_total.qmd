@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $269M |
 | Median (50th percentile) | $262M |
 | Standard Deviation | $58.1M |
-| 90% Confidence Interval | [$181M, $380M] |
+| 90% Range (5th-95th percentile) | [$181M, $380M] |
 
 *The histogram shows the distribution of Decentralized Framework for Drug Assessment Total NPV Upfront Costs across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

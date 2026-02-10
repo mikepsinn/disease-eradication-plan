@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 962k:1 |
 | Median (50th percentile) | 154k:1 |
 | Standard Deviation | 1.80M:1 |
-| 90% Confidence Interval | [58.0k:1, 4.76M:1] |
+| 90% Range (5th-95th percentile) | [58.0k:1, 4.76M:1] |
 
 *The histogram shows the distribution of Expected Treaty ROI (Risk-Adjusted) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

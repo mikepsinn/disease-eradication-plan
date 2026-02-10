@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 228 |
 | Median (50th percentile) | 181 |
 | Standard Deviation | 162 |
-| 90% Confidence Interval | [56, 584] |
+| 90% Range (5th-95th percentile) | [56, 584] |
 
 *The histogram shows the distribution of Known Safe Exploration Time (dFDA) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

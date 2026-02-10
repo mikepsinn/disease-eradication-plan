@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $286T |
 | Median (50th percentile) | $248T |
 | Standard Deviation | $171T |
-| 90% Confidence Interval | [$68.9T, $655T] |
+| 90% Range (5th-95th percentile) | [$68.9T, $655T] |
 
 *The histogram shows the distribution of Total Economic Loss from Historical Progress Delays across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

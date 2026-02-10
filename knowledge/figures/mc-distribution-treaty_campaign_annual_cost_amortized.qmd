@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $249M |
 | Median (50th percentile) | $237M |
 | Standard Deviation | $69.1M |
-| 90% Confidence Interval | [$158M, $379M] |
+| 90% Range (5th-95th percentile) | [$158M, $379M] |
 
 *The histogram shows the distribution of Amortized Annual Treaty Campaign Cost across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

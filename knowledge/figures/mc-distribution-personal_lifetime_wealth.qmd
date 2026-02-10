@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $3.41M |
 | Median (50th percentile) | $1.88M |
 | Standard Deviation | $4.41M |
-| 90% Confidence Interval | [$259K, $12.1M] |
+| 90% Range (5th-95th percentile) | [$259K, $12.1M] |
 
 *The histogram shows the distribution of Personal Lifetime Wealth (QALY-Based) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

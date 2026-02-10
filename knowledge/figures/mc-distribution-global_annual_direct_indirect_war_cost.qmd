@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $11.3T |
 | Median (50th percentile) | $11.2T |
 | Standard Deviation | $1.51T |
-| 90% Confidence Interval | [$9.01T, $14.1T] |
+| 90% Range (5th-95th percentile) | [$9.01T, $14.1T] |
 
 *The histogram shows the distribution of Total Annual Cost of War Worldwide across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

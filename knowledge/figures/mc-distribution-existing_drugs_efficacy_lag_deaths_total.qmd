@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 107M |
 | Median (50th percentile) | 97.3M |
 | Standard Deviation | 53.0M |
-| 90% Confidence Interval | [36.9M, 214M] |
+| 90% Range (5th-95th percentile) | [36.9M, 214M] |
 
 *The histogram shows the distribution of Total Deaths from Historical Progress Delays across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

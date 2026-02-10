@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 5.57M |
 | Median (50th percentile) | 4.36M |
 | Standard Deviation | 4.03M |
-| 90% Confidence Interval | [1.51M, 14.3M] |
+| 90% Range (5th-95th percentile) | [1.51M, 14.3M] |
 
 *The histogram shows the distribution of RECOVERY Trial Total QALYs Generated across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

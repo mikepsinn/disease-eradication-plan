@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $1.20T |
 | Median (50th percentile) | $1.20T |
 | Standard Deviation | $135B |
-| 90% Confidence Interval | [$1T, $1.45T] |
+| 90% Range (5th-95th percentile) | [$1T, $1.45T] |
 
 *The histogram shows the distribution of Category 4: System Inefficiency across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

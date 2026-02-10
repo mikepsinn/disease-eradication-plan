@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 50.3% |
 | Median (50th percentile) | 52.8% |
 | Standard Deviation | 6.75% |
-| 90% Confidence Interval | [35.9%, 56.9%] |
+| 90% Range (5th-95th percentile) | [35.9%, 56.9%] |
 
 *The histogram shows the distribution of Global Governance Efficiency Score across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
