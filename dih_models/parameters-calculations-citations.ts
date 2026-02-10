@@ -5681,14 +5681,18 @@ export const citations: Record<string, Citation> = {
   },
   "clinical-trial-abandonment-rate": {
         id: "clinical-trial-abandonment-rate",
-        type: "webpage",
-        title: "Clinical trial abandonment",
+        type: "article-journal",
+        title: "Terminated Trials in the ClinicalTrials.gov Results Database: Evaluation of Availability of Primary Outcome Data and Reasons for Termination",
         author: [
           {
-            literal: "Industry estimates"
+            family: "Williams",
+            given: "Rebecca J and Tse, Tony and DiPiazza, Katelyn and Zarin, Deborah A"
           },
         ],
-        note: "Industry estimates",
+        issued: { 'date-parts': [[2015]] },
+        'container-title': "PLOS One",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4444136/",
+        note: "Analysis of 7,646 trials in ClinicalTrials.gov results database as of February 2013",
   },
   "clinical-trial-patient-participation-rate": {
         id: "clinical-trial-patient-participation-rate",

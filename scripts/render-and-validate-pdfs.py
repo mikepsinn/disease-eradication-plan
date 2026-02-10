@@ -211,7 +211,7 @@ def main() -> int:
                 python_executable=python_exe,
                 skip_url_check=True,
                 use_cache=True,
-                verbose=False,
+                verbose=True,
                 line_filter=lambda display_line: (
                     display_line.startswith("[VALIDATION]")
                     or display_line.startswith("   Validating:")

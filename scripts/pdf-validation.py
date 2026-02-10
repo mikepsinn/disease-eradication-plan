@@ -302,7 +302,8 @@ QMD for the image reference and verify the original file dimensions.
 # Default instruction for unknown error types
 DEFAULT_FIX_INSTRUCTION = """
 **Fix:** Review the error context and check the corresponding QMD source file.
-If the error persists, check Quarto documentation or run with `--verbose` flag.
+Check as complete in this file or indicate why it can't or shouldn't be fixed.
+Note some of these may be false positives due to PDF text extraction artifacts, so use judgment on whether a fix is needed.
 """
 
 
