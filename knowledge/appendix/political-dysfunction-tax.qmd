@@ -73,7 +73,7 @@ The most glaring allocative distortion in the global public sector is the confus
 
 #### The Strategic Delta: Dominance vs. Denial
 
-As of Fiscal Year 2025/2026, the United States Department of Defense (DoD) has submitted budget requests ranging between **$850 billion and $1.01 trillion**.1 This expenditure accounts for nearly 40% of global military spending and supports a "Dominance" strategy characterized by simultaneous capabilities to wage major theater wars while maintaining a constellation of approximately 750 overseas bases.3
+As of Fiscal Year 2025/2026, the United States Department of Defense (DoD) has submitted budget requests ranging between **$850 billion and $1.01 trillion**.1 This expenditure accounts for nearly 40% of global military spending and supports a "Dominance" strategy characterized by simultaneous capabilities to wage major theater wars while maintaining a constellation of approximately 750 overseas bases [@overseas-bases-facts].
 
 From a mechanism design perspective, this posture is highly inefficient. The "Strict Deterrence" model, an alternative strategy focused on "Denial," posits that the security of the United States and its core allies can be guaranteed through a robust nuclear triad and impregnable coastal/aerospace defenses, without the massive overhead of expeditionary forces.
 
@@ -90,7 +90,7 @@ The remainder of the defense budget (over $750 billion annually) is largely dedi
 * **Procurement of Projection Platforms:** The FY2026 request includes billions for platforms specifically designed for foreign intervention, such as amphibious assault ships and next-generation air dominance fighters, rather than purely defensive systems.2
 
 The Delta Calculation:  
-A "Strict Deterrence" budget would retain the Nuclear Triad ($95B), the Coast Guard (~$13.8B) 8, the National Guard for domestic security (~$33B) 9, Missile Defense Agency (~$28B) 10, and a robust Cyber Command (~$15B).2 Allowing for a generous $100 billion supplement for a defensive Navy and Air Force (attack submarines and interceptors rather than carrier strike groups), the total annual cost of a Strict Deterrence posture is approximately $285 billion.
+A "Strict Deterrence" budget would retain the Nuclear Triad ($95B), the Coast Guard (~$13.8B) 8, the National Guard for domestic security (~$33B) [@us-per-capita-military-spending-3000], Missile Defense Agency (~$28B) 10, and a robust Cyber Command (~$15B).2 Allowing for a generous $100 billion supplement for a defensive Navy and Air Force (attack submarines and interceptors rather than carrier strike groups), the total annual cost of a Strict Deterrence posture is approximately $285 billion.
 
 $$\text{Waste Delta} = \text{Current Budget} - \text{Strict Deterrence}$$
 
@@ -141,10 +141,10 @@ The mechanism of taxation itself has become a primary source of economic drag. T
 
 
 Quantifying the Burden:  
-The Tax Foundation and the White House Office of Information and Regulatory Affairs (OIRA) estimate that U.S. taxpayers spend approximately 7.9 billion hours annually complying with tax filing and reporting requirements.17
+The Tax Foundation and the White House Office of Information and Regulatory Affairs (OIRA) estimate that U.S. taxpayers spend approximately 7.9 billion hours annually complying with tax filing and reporting requirements [@taxfoundation2024-compliance].
 
-* **Monetized Cost:** When valuing this time alongside out-of-pocket expenses for software and accountants, the total cost of tax compliance reaches **$546 billion annually**.17  
-* **Context:** This deadweight loss is equivalent to **1.9% of U.S. GDP** and exceeds the total revenue collected by the corporate income tax itself.17
+* **Monetized Cost:** When valuing this time alongside out-of-pocket expenses for software and accountants, the total cost of tax compliance reaches **$546 billion annually** [@taxfoundation2024-compliance].  
+* **Context:** This deadweight loss is equivalent to **1.9% of U.S. GDP** and exceeds the total revenue collected by the corporate income tax itself [@taxfoundation2024-compliance].
 
 Furthermore, the broader regulatory burden (the cumulative cost of complying with all federal regulations) is estimated by the Competitive Enterprise Institute to be at least **$2.15 trillion annually**.11 Other estimates place the cost of federal regulations at **12% of U.S. GDP**.18 While some regulation provides essential safety utility, a significant portion acts as "Red Tape," procedural friction that delays investment without improving outcomes. In developed European economies, this "Red Tape Tax" is estimated to cost between 0.1% and 4% of GDP depending on the country 19, suggesting that even a modest optimization could release hundreds of billions in value.
 
@@ -156,7 +156,7 @@ The final component of administrative waste is the direct subsidization of favor
 
 
 * **Fossil Fuel Subsidies:** The International Monetary Fund (IMF) estimates that explicit fossil fuel subsidies (where governments undercharge for the supply costs of energy) totaled **$1.3 trillion** globally in 2022.20 These subsidies actively encourage the consumption of negative-externality goods, working in direct opposition to climate goals.  
-* **U.S. Corporate Welfare:** A forensic tally of the U.S. federal budget identifies **$181 billion annually** in corporate welfare.21 This includes subsidies for agriculture ($16.4 billion in 2024\) 22, green energy tax credits, and aid to profitable sectors like semiconductors and aviation. Agricultural subsidies, in particular, are highly regressive, with the top 10% of recipients collecting 63% of the payments.22
+* **U.S. Corporate Welfare:** A forensic tally of the U.S. federal budget identifies **$181 billion annually** in corporate welfare [@cato-corporate-welfare]. This includes subsidies for agriculture ($16.4 billion in 2024\) [@ewg-farm-subsidies], green energy tax credits, and aid to profitable sectors like semiconductors and aviation. Agricultural subsidies, in particular, are highly regressive, with the top 10% of recipients collecting 63% of the payments [@ewg-farm-subsidies].
 
 **Table 1: The Annual Friction & Subsidy Waste Ledger (Global/US Mix)**
 
@@ -178,7 +178,7 @@ The "War on Drugs" represents a catastrophic failure of mechanism design. By cri
 
 #### The Direct Fiscal Cost
 
-The United States, with one of the highest incarceration rates in the world, spends approximately **$89 billion** annually on corrections and prisons.23 Beyond the taxpayer, families of the incarcerated pay a "Shadow Tax" of roughly **$2.9 billion** annually for phone calls, commissary, and visitation costs 24, extracting wealth from the demographics least able to afford it.
+The United States, with one of the highest incarceration rates in the world, spends approximately **$89 billion** annually on corrections and prisons.23 Beyond the taxpayer, families of the incarcerated pay a "Shadow Tax" of roughly **$2.9 billion** annually for phone calls, commissary, and visitation costs [@prison-policy-economics], extracting wealth from the demographics least able to afford it.
 
 ![A comparison between the 89 billion in annual government spending on corrections and the 2.9 billion 'Shadow Tax' paid by families for communication and commissary costs.](/assets/images/political-dysfunction-tax/political-dysfunction-tax-section-the-direct-fiscal-cost-bw-academic.jpg)
 
@@ -194,7 +194,7 @@ The true cost of incarceration is not the cost of the cage, but the cost of the 
 * **Intergenerational Damage:** The children of incarcerated parents face instability that translates into long-term economic underperformance. Estimates suggest these children lose **$215 billion** in future annual earnings over their lifetimes.23
 
 Global Context:  
-The global cost of containing violence (including military, internal security, and incarceration) was estimated at $14.4 trillion to $19.97 trillion (PPP) in recent years, or roughly 10-12% of Global GDP.25 While some security is necessary, the "excess" spending driven by prohibition policies and punitive justice models represents trillions in potential savings. An Optimocracy that utilized harm reduction (the Portugal model) and rehabilitation could likely reclaim at least $450 billion annually in the US alone from direct costs and lost productivity.
+The global cost of containing violence (including military, internal security, and incarceration) was estimated at $14.4 trillion to $19.97 trillion (PPP) in recent years, or roughly 10-12% of Global GDP [@global-violence-costs]. While some security is necessary, the "excess" spending driven by prohibition policies and punitive justice models represents trillions in potential savings. An Optimocracy that utilized harm reduction (the Portugal model) and rehabilitation could likely reclaim at least $450 billion annually in the US alone from direct costs and lost productivity.
 
 ## Part 2: The Opportunity Ledger (The "Buried Multipliers")
 
@@ -220,7 +220,7 @@ Pragmatic Clinical Trials (PCTs), which are embedded in routine clinical care an
 ![A bar chart comparing the 50,000 average per-patient cost of traditional clinical trials to the 500 per-patient cost of the RECOVERY Trial, illustrating a 100x efficiency gain.](/assets/images/political-dysfunction-tax/political-dysfunction-tax-section-the-efficiency-shift-from-rcts-to-pcts-bw-academic.jpg)
 
 
-* **The Proof Point:** The **RECOVERY Trial** in the UK, launched during the COVID-19 pandemic, successfully identified Dexamethasone as a life-saving treatment. The cost was approximately **$500 per patient**.31  
+* **The Proof Point:** The **RECOVERY Trial** in the UK, launched during the COVID-19 pandemic, successfully identified Dexamethasone as a life-saving treatment. The cost was approximately **$500 per patient** [@recovery-cost-500].  
 * **The Multiplier:** Comparing the $500 RECOVERY cost to the $50,000 industry standard reveals a potential **100x efficiency gain** in clinical evidence generation.
 
 By shifting the default regulatory standard from gold-plated RCTs to high-volume, low-friction PCTs (augmented by AI and *in silico* modeling 32), the cost of testing repurposable generics and new therapies could collapse, leading to a Cambrian explosion of medical innovation.
@@ -233,8 +233,8 @@ What is the economic value of accelerating cures for cancer, heart disease, and 
 
 
 * **Value of Statistical Life (VSL):** U.S. regulatory agencies value a statistical life at approximately **$13.1 million**.33 Academic estimates for the economic value of health improvements are staggering.  
-* **The Murphy-Topel Estimate:** In 2006, economists Kevin Murphy and Robert Topel estimated that a cure for cancer would be worth **$50 trillion** to the U.S. population alone.34 Adjusted for inflation and global GDP growth in 2025, this figure approaches **$100 trillion**.  
-* **The Longevity Dividend:** Extending healthy human life by just one year is worth **$38 trillion** to the global economy.34
+* **The Murphy-Topel Estimate:** In 2006, economists Kevin Murphy and Robert Topel estimated that a cure for cancer would be worth **$50 trillion** to the U.S. population alone [@murphy2006]. Adjusted for inflation and global GDP growth in 2025, this figure approaches **$100 trillion**.  
+* **The Longevity Dividend:** Extending healthy human life by just one year is worth **$38 trillion** to the global economy [@murphy2006].
 
 The Calculation:  
 If "Optimal Governance" (via PCTs and AI) could accelerate the arrival of these cures by just 10 years, the value captured is the Net Present Value (NPV) of that decade of healthspan.  
@@ -294,7 +294,7 @@ Lead poisoning is a pervasive neurotoxin that permanently lowers IQ and increase
 
 The single largest distortion in the global economy is the restriction of labor mobility. Productivity is geographically determined; a worker in the U.S. is vastly more productive than the same worker in Haiti due to institutional capital.
 
-* **The Estimate:** Economist Michael Clemens has famously calculated that eliminating barriers to labor mobility could increase Global GDP by **50% to 150%**.46  
+* **The Estimate:** Economist Michael Clemens has famously calculated that eliminating barriers to labor mobility could increase Global GDP by **50% to 150%** [@clemens2011].  
 * **The Value:** With current Global GDP at ~$115 Trillion, the "sidewalk" is littered with **$57 trillion to $170 trillion** in unrealized annual output. Even a modest liberalization (e.g., allowing 5% of the workforce to move to high-productivity zones) would generate trillions in value, far exceeding the total volume of all foreign aid ever given.
 
 **Total Human Capital Opportunity Loss:**
@@ -334,7 +334,7 @@ $$E = \frac{110.9}{211.9} \approx \mathbf{52.3\%}$$
 The Sensitivity Analysis:  
 The 52.3% score assumes the conservative lower bounds of the opportunity costs. However, if we utilize the higher-end estimates supported by the literature:
 
-* **Migration:** 150% GDP boost = **$170 Trillion**.47  
+* **Migration:** 150% GDP boost = **$170 Trillion** [@clemens2011].  
 * **Health:** Full VSL valuation of longevity could approach **$50-80 Trillion** annualized.  
 * **High-End $W_{max}$:** $110.9T + 170T + 80T \approx \mathbf{360 \text{ Trillion}}$.
 
@@ -398,49 +398,28 @@ For a detailed breakdown of U.S. federal inefficiency, including Monte Carlo sim
 
 1. What's in Biden's $850-billion defense budget proposal? | Brookings, accessed January 21, 2026, [https://www.brookings.edu/articles/whats-in-bidens-850-billion-defense-budget-proposal/](https://www.brookings.edu/articles/whats-in-bidens-850-billion-defense-budget-proposal/)  
 2. Senior Officials Outline President's Proposed FY26 Defense Budget, accessed January 21, 2026, [https://www.war.gov/News/News-Stories/Article/article/4227847/senior-officials-outline-presidents-proposed-fy26-defense-budget/](https://www.war.gov/News/News-Stories/Article/article/4227847/senior-officials-outline-presidents-proposed-fy26-defense-budget/)  
-3. The Facts about US Military Bases Overseas, accessed January 21, 2026, [https://www.overseasbases.net/facts.html](https://www.overseasbases.net/facts.html)  
 4. Projected Costs of U.S. Nuclear Forces, 2025 to 2034, accessed January 21, 2026, [https://www.cbo.gov/publication/61362](https://www.cbo.gov/publication/61362)  
 5. Defense Primer: Strategic Nuclear Forces | Congress.gov, accessed January 21, 2026, [https://www.congress.gov/crs-product/IF10519](https://www.congress.gov/crs-product/IF10519)  
 6. Improving U.S. and Global Security Through Military Base Closures ..., accessed January 21, 2026, [https://quincyinst.org/research/drawdown-improving-u-s-and-global-security-through-military-base-closures-abroad/](https://quincyinst.org/research/drawdown-improving-u-s-and-global-security-through-military-base-closures-abroad/)  
-7. Chapter One: Overseas bases and US strategic posture, accessed January 21, 2026, [https://www.iiss.org/online-analysis/online-analysis/2022/09/overseas-bases-and-us-strategic-posture/](https://www.iiss.org/online-analysis/online-analysis/2022/09/overseas-bases-and-us-strategic-posture/)  
 8. How Much Does the US Spend on its Military? -USAMM, accessed January 21, 2026, [https://www.usamm.com/blogs/news/how-much-does-the-us-spend-on-military](https://www.usamm.com/blogs/news/how-much-does-the-us-spend-on-military)  
-9. How much does the US spend on the military? -USAFacts, accessed January 21, 2026, [https://usafacts.org/articles/how-much-does-the-us-spend-on-the-military/](https://usafacts.org/articles/how-much-does-the-us-spend-on-the-military/)  
 10. Department of Defense Releases the President's Fiscal Year 2025 ..., accessed January 21, 2026, [https://www.war.gov/News/Releases/Release/Article/3703410/department-of-defense-releases-the-presidents-fiscal-year-2025-defense-budget/](https://www.war.gov/News/Releases/Release/Article/3703410/department-of-defense-releases-the-presidents-fiscal-year-2025-defense-budget/)  
 11. Burdensome Federal Regulations Cost Economy $2 Trillion Annually, accessed January 21, 2026, [https://budget.house.gov/press-release/competitive-enterprise-institute-burdensome-federal-regulations-cost-economy-2-trillion-annually](https://budget.house.gov/press-release/competitive-enterprise-institute-burdensome-federal-regulations-cost-economy-2-trillion-annually)  
 12. High U.S. Health Care Spending: Where Is It All Going?, accessed January 21, 2026, [https://www.commonwealthfund.org/publications/issue-briefs/2023/oct/high-us-health-care-spending-where-is-it-all-going](https://www.commonwealthfund.org/publications/issue-briefs/2023/oct/high-us-health-care-spending-where-is-it-all-going)  
-13. The Role Of Administrative Waste In Excess US Health Spending, accessed January 21, 2026, [https://www.healthaffairs.org/content/briefs/role-administrative-waste-excess-us-health-spending](https://www.healthaffairs.org/content/briefs/role-administrative-waste-excess-us-health-spending)  
 14. What drives health spending in the U.S. compared to other countries?, accessed January 21, 2026, [https://www.healthsystemtracker.org/brief/what-drives-health-spending-in-the-u-s-compared-to-other-countries/](https://www.healthsystemtracker.org/brief/what-drives-health-spending-in-the-u-s-compared-to-other-countries/)  
 15. Wasteful administrative costs tied to high US health spending, accessed January 21, 2026, [https://www.healthcaredive.com/news/Health-Affairs-administrative-spending-wasteful/633774/](https://www.healthcaredive.com/news/Health-Affairs-administrative-spending-wasteful/633774/)  
 16. Excess Administrative Costs Burden the U.S. Health Care System, accessed January 21, 2026, [https://www.americanprogress.org/article/excess-administrative-costs-burden-u-s-health-care-system/](https://www.americanprogress.org/article/excess-administrative-costs-burden-u-s-health-care-system/)  
-17. IRS Tax Compliance Costs the US Economy $546B Annually, accessed January 21, 2026, [https://taxfoundation.org/data/all/federal/irs-tax-compliance-costs/](https://taxfoundation.org/data/all/federal/irs-tax-compliance-costs/)  
 18. The Cost of Federal Regulation to the U.S. Economy, Manufacturing ..., accessed January 21, 2026, [https://www.nam.org/wp-content/uploads/2023/11/NAM-3731-Crains-Study-R3-V2-FIN.pdf](https://www.nam.org/wp-content/uploads/2023/11/NAM-3731-Crains-Study-R3-V2-FIN.pdf)  
 19. The Cost of Red Tape: How Regulation Impacts GDP in European ..., accessed January 21, 2026, [https://business.columbia.edu/research-brief/research-brief/red-tape-regulation-gdp](https://business.columbia.edu/research-brief/research-brief/red-tape-regulation-gdp)  
 20. Fossil Fuel Subsidy Reform, accessed January 21, 2026, [https://www.financeministersforclimate.org/sites/cape/files/inline-files/CFMCA%20Policy%20Note\_Fossil%20Fuel%20Subsidy%20Reform\_Sept%202024.pdf](https://www.financeministersforclimate.org/sites/cape/files/inline-files/CFMCA%20Policy%20Note_Fossil%20Fuel%20Subsidy%20Reform_Sept%202024.pdf)  
-21. Corporate Welfare in the Federal Budget | Cato Institute, accessed January 21, 2026, [https://www.cato.org/policy-analysis/corporate-welfare-federal-budget-0](https://www.cato.org/policy-analysis/corporate-welfare-federal-budget-0)  
-22. The United States -Farm Subsidy Database -EWG, accessed January 21, 2026, [https://farm.ewg.org/progdetail.php?fips=00000&progcode=total&page=conc&yr=2024&amp;regionname=theUnitedStates](https://farm.ewg.org/progdetail.php?fips=00000&progcode=total&page=conc&yr=2024&regionname=theUnitedStates)  
 23. We Can't Afford It: Mass Incarceration and the Family Tax, accessed January 21, 2026, [https://www.wecantaffordit.us/](https://www.wecantaffordit.us/)  
-24. Economics of incarceration -Prison Policy Initiative, accessed January 21, 2026, [https://www.prisonpolicy.org/research/economics\_of\_incarceration/](https://www.prisonpolicy.org/research/economics_of_incarceration/)  
-25. MEASURING THE GLOBAL ECONOMIC IMPACT OF VIOLENCE ..., accessed January 21, 2026, [https://www.visionofhumanity.org/wp-content/uploads/2021/01/EVP-2021-web.pdf](https://www.visionofhumanity.org/wp-content/uploads/2021/01/EVP-2021-web.pdf)  
-26. The Economic impact of Violence in 2025 -Vision of Humanity, accessed January 21, 2026, [https://www.visionofhumanity.org/economic-impact-of-violence/](https://www.visionofhumanity.org/economic-impact-of-violence/)  
 27. Clinical Trial Costing: Phase-By-Phase Budget Guide | Abacum, accessed January 21, 2026, [https://www.abacum.ai/blog/clinical-trial-costing](https://www.abacum.ai/blog/clinical-trial-costing)  
-28. Phase-by-Phase Clinical Trial Costs Guide for Sponsors., accessed January 21, 2026, [https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-guide/](https://prorelixresearch.com/phase-by-phase-clinical-trial-costs-guide/)  
 29. The costs of clinical trials -From Science to Pharma, accessed January 21, 2026, [https://www.fromsciencetopharma.com/blog/the-costs-of-clinical-trials](https://www.fromsciencetopharma.com/blog/the-costs-of-clinical-trials)  
-30. Slow, Costly Clinical Trials Drag Down Biomedical Breakthroughs, accessed January 21, 2026, [https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)  
-31. Meeting Summary -RECOVERY Trial -HITAP, accessed January 21, 2026, [https://www.hitap.net/wp-content/uploads/2022/08/Meeting-Summary-RECOVERY-Trial.pdf](https://www.hitap.net/wp-content/uploads/2022/08/Meeting-Summary-RECOVERY-Trial.pdf)  
-32. Future of AI & Longevity -Peter Diamandis, accessed January 21, 2026, [https://www.diamandis.com/blog/future-of-ai-and-longevity](https://www.diamandis.com/blog/future-of-ai-and-longevity)  
 33. HHS Standard Values for Regulatory Analysis, 2024, accessed January 21, 2026, [https://aspe.hhs.gov/sites/default/files/documents/cd2a1348ea0777b1aa918089e4965b8c/standard-ria-values.pdf](https://aspe.hhs.gov/sites/default/files/documents/cd2a1348ea0777b1aa918089e4965b8c/standard-ria-values.pdf)  
-34. Cure for cancer worth $50 trillion -EurekAlert\!, accessed January 21, 2026, [https://www.eurekalert.org/news-releases/592710](https://www.eurekalert.org/news-releases/592710)  
 35. $3.8B Investment in Human Genome Project Drove $796B in ..., accessed January 21, 2026, [https://ec.europa.eu/futurium/en/content/38b-investment-human-genome-project-drove-796b-economic-impact-creating-310000-jobs-and.html](https://ec.europa.eu/futurium/en/content/38b-investment-human-genome-project-drove-796b-economic-impact-creating-310000-jobs-and.html)  
-36. Billion dollar babies of the human genome | The Scientist, accessed January 21, 2026, [https://www.the-scientist.com/billion-dollar-babies-of-the-human-genome-1-42498](https://www.the-scientist.com/billion-dollar-babies-of-the-human-genome-1-42498)  
 37. Comparative Study of Cost Models for Tokamak DEMO Fusion ..., accessed January 21, 2026, [https://www.jspf.or.jp/PFR/PDF/pfr2012\_07-2405115.pdf](https://www.jspf.or.jp/PFR/PDF/pfr2012_07-2405115.pdf)  
-38. Nuclear Fusion / Consortium Wins €10m Contract For 'Demo ..., accessed January 21, 2026, [https://www.nucnet.org/news/consortium-wins-eur10m-contract-for-demo-reactor-pre-conceptual-design-6-1-2020](https://www.nucnet.org/news/consortium-wins-eur10m-contract-for-demo-reactor-pre-conceptual-design-6-1-2020)  
 39. ITER fusion reactor hit by massive decade-long delay and €5bn ..., accessed January 21, 2026, [https://physicsworld.com/a/iter-fusion-reactor-hit-by-massive-decade-long-delay-and-e5bn-price-hike/](https://physicsworld.com/a/iter-fusion-reactor-hit-by-massive-decade-long-delay-and-e5bn-price-hike/)  
 40. Nuclear fusion seems hot right now, but how close is fusion power?, accessed January 21, 2026, [https://www.cbc.ca/news/science/fusion-startups-9.7045784](https://www.cbc.ca/news/science/fusion-startups-9.7045784)  
 41. Artificial Intelligence Index Report 2025 -AWS, accessed January 21, 2026, [https://hai-production.s3.amazonaws.com/files/hai\_ai\_index\_report\_2025.pdf](https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf)  
-42. Q2 2025 AI Funding Report: Trends, Top Deals, and Market Shifts, accessed January 21, 2026, [https://aifundingtracker.com/q2-2025-ai-funding-report/](https://aifundingtracker.com/q2-2025-ai-funding-report/)  
 43. An Overview of the AI Safety Funding Situation -LessWrong, accessed January 21, 2026, [https://www.lesswrong.com/posts/WGpFFJo2uFe5ssgEb/an-overview-of-the-ai-safety-funding-situation](https://www.lesswrong.com/posts/WGpFFJo2uFe5ssgEb/an-overview-of-the-ai-safety-funding-situation)  
 44. Lead Exposure Costs $6 Trillion Annually Due to Premature Death ..., accessed January 21, 2026, [https://www.downtoearth.org.in/pollution/lead-exposure-causes-6-trillion-in-economic-losses-from-premature-death-due-to-cardiovascular-disease-and-cognitive-dysfunction-says-analysis](https://www.downtoearth.org.in/pollution/lead-exposure-causes-6-trillion-in-economic-losses-from-premature-death-due-to-cardiovascular-disease-and-cognitive-dysfunction-says-analysis)  
-45. (PDF) Removing lead from the global economy -ResearchGate, accessed January 21, 2026, [https://www.researchgate.net/publication/385576467\_Removing\_lead\_from\_the\_global\_economy](https://www.researchgate.net/publication/385576467_Removing_lead_from_the_global_economy)  
-46. Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?, accessed January 21, 2026, [https://www.researchgate.net/publication/227363194\_Economics\_and\_Emigration\_Trillion-Dollar\_Bills\_on\_the\_Sidewalk](https://www.researchgate.net/publication/227363194_Economics_and_Emigration_Trillion-Dollar_Bills_on_the_Sidewalk)  
-47. Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?, accessed January 21, 2026, [https://www.cgdev.org/sites/default/files/1425376\_file\_Clemens\_Economics\_and\_Emigration\_FINAL.pdf](https://www.cgdev.org/sites/default/files/1425376_file_Clemens_Economics_and_Emigration_FINAL.pdf)  
 48. World GDP 2025 -StatisticsTimes.com, accessed January 21, 2026, [https://statisticstimes.com/economy/world-gdp.php](https://statisticstimes.com/economy/world-gdp.php)
