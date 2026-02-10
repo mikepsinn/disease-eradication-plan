@@ -3,6 +3,7 @@ project:
   output-dir: _site/1-pct-treaty-impact
   execute-dir: project
   resources:
+    - knowledge/data/
     - assets/
     - _redirects
     - robots.txt

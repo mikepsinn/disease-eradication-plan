@@ -52,7 +52,7 @@ if sys.platform == "win32":
 IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
 GITHUB_STEP_SUMMARY = os.environ.get("GITHUB_STEP_SUMMARY")
 DEFAULT_PDF_DIR = Path(__file__).parent.parent / "assets" / "pdfs"
-LLM_FULL_PDF_PROMPT_VERSION = "2026-02-09-v2"
+LLM_FULL_PDF_PROMPT_VERSION = "2026-02-09-v3"
 
 LLM_FULL_PDF_PROMPT_TEXT = """Review this full PDF for publication-blocking defects.
 
@@ -77,7 +77,7 @@ Return JSON only with this schema:
       "description": "specific defect",
       "suggested_fix": "actionable fix",
       "evidence_snippet": "short exact text snippet copied from the PDF near the defect",
-      "locator_hint": "how to find this in source docs using only document-visible clues (section heading, figure/table label, citation text, unique phrase)"
+      "locator_hint": "how to find this in source docs using only document-visible clues (section TITLE not number, figure/table label, citation text, unique phrase)"
     }
   ],
   "high_value_improvements": ["string"]
@@ -86,6 +86,7 @@ Return JSON only with this schema:
 Important constraints:
 - You do NOT have access to source qmd/bib files. Do not invent filenames or keys.
 - "locator_hint" must rely only on clues visible in the PDF.
+- Section numbers (1.1, 2.3, etc.) are auto-generated and will NOT be in QMD source files. Always reference section TITLES, not numbers, when providing fix instructions.
 - Keep snippets short and exact.
 - `errors` may be an empty list when no clear defects are present.
 - Do NOT flag extraction-layer artifacts as defects:

@@ -3,6 +3,7 @@ project:
   output-dir: _site/federal-efficiency-audit
   execute-dir: project
   resources:
+    - knowledge/data/
     - assets/
     - _redirects
     - robots.txt

@@ -314,8 +314,6 @@ This specification describes a *proposed* framework. The methodology requires em
 
 **Regulatory Impact Analysis (RIA)**: Required by executive order for US federal regulations since 1981 [@hahn2000]. RIA estimates costs and benefits of proposed rules but: (1) applies only to new regulations, not the existing policy stock; (2) lacks systematic cross-jurisdiction evidence aggregation; (3) does not produce jurisdiction-specific recommendations for subnational governments.
 
-![A comparison of major policy evaluation frameworks across key functional dimensions, highlighting the systematic gaps in jurisdiction-specific recommendations and evaluation of existing policy stocks.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-existing-policy-evaluation-frameworks-bw-academic.jpg)
-
 **What Works Clearinghouse (WWC)**: The Institute of Education Sciences operates WWC to review education interventions against methodological standards [@greenwald2017]. WWC demonstrates that systematic evidence synthesis is feasible, but: (1) covers only education; (2) provides generic intervention ratings, not jurisdiction-specific recommendations; (3) does not quantify expected welfare gains.
 
 **Cochrane and Campbell Collaborations**: These systematic review organizations cover healthcare [@higgins2011] and social policy [@petticrew2001] respectively. They represent the gold standard for evidence synthesis but: (1) produce narrative reviews rather than quantitative recommendations; (2) provide no jurisdiction-specific output; (3) operate on slow update cycles (years between reviews).
@@ -544,8 +542,6 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 **Use case**: Single treated jurisdiction, good donor pool of similar untreated jurisdictions.
 
-![A time-series line chart illustrating the synthetic control method, showing the treated jurisdiction and synthetic control units tracking together pre-treatment and diverging after the intervention.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-synthetic-control-method-bw-academic.jpg)
-
 **Method**: Construct a "synthetic" control as a weighted average of untreated jurisdictions that matches the treated jurisdiction's pre-treatment outcome trajectory. Post-treatment divergence estimates the causal effect.
 
 **Quality metrics**:
@@ -741,8 +737,6 @@ $$
 $$
 
 $S_{\text{temporality}}$ acts as a binary gate: if temporality fails (policy doesn't precede outcome), the entire CCS is zero regardless of other criteria scores.
-
-![A horizontal bar chart illustrating the nine criteria weights for the Causal Confidence Score, ranking them from highest impact to lowest impact.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-causal-confidence-score-ccs-calculation-bw-academic.jpg)
 
 **Proposed default criterion weights:**
 
