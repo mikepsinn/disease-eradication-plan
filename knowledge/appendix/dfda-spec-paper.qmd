@@ -1234,7 +1234,7 @@ The following shows a complete outcome label for depression, demonstrating how t
 
 **No Significant Effect** ($|\Delta| < 5\%$ or $p > 0.05$): Multivitamin, Probiotics, B-complex, Magnesium (for depression specifically), Ashwagandha, 5-HTP, SAMe, St. John's Wort^[St. John's Wort shows high heterogeneity (some responders, some non-responders)]
 
-*Legend*: PIS = Predictor Impact Score (0-1 scale, higher = stronger evidence); Optimal Dose = $V_{high}$ (predictor value associated with best outcomes)
+*Legend*: PIS = Predictor Impact Score (0-1 scale, higher = stronger evidence); Optimal Dose = $V_{high}$ for positive valence outcomes and $V_{low}$ for negative valence outcomes
 
 **Interpretation**: This outcome label shows that for depression, exercise and sleep optimization rival or exceed pharmaceutical interventions in effect size, with stronger evidence bases (higher N). Bupropion and Sertraline lead among medications. The safety signals section highlights modifiable risk factors that worsen depression.
 
@@ -1349,8 +1349,6 @@ The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framew
 | **Experiment** | N-of-1 natural experiments | Study design | No |
 | **Analogy** | Similar variable comparison | Narrative | No |
 
-![A conceptual diagram illustrating how the proposed framework maps to and addresses each of the nine Bradford Hill criteria for causal inference.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-addressing-the-bradford-hill-criteria-addressing-bradford-hill-bw-academic.jpg)
-
 ### Quantitative Criteria Details
 
 **Strength**:
@@ -1433,6 +1431,8 @@ Our complete methodology operates as a two-stage pipeline:
 | **Stage 1: Signal Detection** | Aggregated N-of-1 observational analysis | ~{{< var dfda_observational_cost_per_patient >}}/patient | Hypothesis generation | Ranked PIS signals |
 | **Stage 2: Causal Confirmation** | Pragmatic randomized trials | ~{{< var dfda_pragmatic_trial_cost_per_patient >}}/patient | Causation proof | Validated effect sizes |
 
+: Two-stage pipeline summary. {#tbl-two-stage-pipeline}
+
 This design leverages the complementary strengths of each approach:
 
 - **Stage 1** scales to millions of treatment-outcome pairs at minimal cost, identifying the most promising candidates
@@ -1453,6 +1453,8 @@ Pragmatic trials differ fundamentally from traditional Phase III trials. A Harva
 | **Data collection** | Extensive case report forms | Minimal essential outcomes |
 | **Randomization** | Complex stratification | Simple 1:1 or 1:1:1 |
 | **Sample size** | Hundreds to thousands | Thousands to tens of thousands |
+
+: Pragmatic vs. traditional Phase III trials. {#tbl-pragmatic-vs-phase3}
 
 Multiple large-scale pragmatic trials have demonstrated this model's effectiveness. The Oxford RECOVERY trial enrolled 49,000 patients across 186 hospitals, evaluating 12 treatments and finding a life-saving result (dexamethasone) in 100 days, saving {{< var recovery_trial_global_lives_saved >}} globally [@recovery-trial-1m-lives-saved]. The PCORnet ADAPTABLE trial enrolled 15,076 patients across 40 clinical sites at {{< var adaptable_trial_cost_per_patient >}}/patient [@pragmatic-trials-cost-advantage]. These are not isolated successes. The Harvard meta-analysis shows this efficiency is reproducible across therapeutic areas [@embedded-pragmatic-trials-meta-analysis].
 
@@ -1549,6 +1551,8 @@ These limitations apply to Stage 1 (observational analysis) but are addressed by
 | **Cannot handle strong confounding** | Confounding by indication | Randomization eliminates confounding |
 | **Cannot generalize beyond population** | Self-selected trackers | Pragmatic trials use real-world populations |
 
+: Fundamental observational limitations and trial resolution. {#tbl-observational-limitations}
+
 ### Methodological Weaknesses: Addressed by Two-Stage Design
 
 | Weakness | Stage 1 Impact | Two-Stage Resolution |
@@ -1561,6 +1565,8 @@ These limitations apply to Stage 1 (observational analysis) but are addressed by
 | Multiple testing | Millions of comparisons | Only top signals proceed to trial (TPS filter) |
 | Temporal confounding | Seasonal/life event effects | Randomization eliminates systematic bias |
 | Confounding by indication | Sicker patients take more treatment | Randomization balances severity |
+
+: Methodological weaknesses addressed by the two-stage design. {#tbl-two-stage-resolutions}
 
 ### Residual Limitations
 
@@ -1751,7 +1757,7 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 
 **Expected Outcomes**:
 
-- If PIS ≥ 0.5 pairs have RCT validation rate of 60%+ and PIS < 0.1 pairs have rate < 20%, the metric has practical utility
+- If PIS $\geq 0.5$ pairs have RCT validation rate of 60%+ and PIS $< 0.1$ pairs have rate < 20%, the metric has practical utility
 - If no discrimination, saturation constants need recalibration or the approach needs fundamental revision
 
 ### Known Limitations Requiring Validation

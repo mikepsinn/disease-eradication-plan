@@ -630,10 +630,7 @@ Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~4
 $$
 \begin{gathered}
 Cost_{direct,DALY} = \frac{NPV_{direct}}{DALYs_{max}} = \frac{\$475B}{565B} = \$0.841 \\[0.5em]
-\text{where } NPV_{direct} \\
-= \frac{T_{queue,dFDA}}{Treasury_{RD,ann} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$475B \\[0.5em]
+\text{where } NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
@@ -872,10 +869,7 @@ ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B \\[0.5em]
-\text{where } NPV_{direct} \\
-= \frac{T_{queue,dFDA}}{Treasury_{RD,ann} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$475B \\[0.5em]
+\text{where } NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
@@ -977,10 +971,7 @@ $$
 \begin{gathered}
 k_{direct,nets} = \frac{Cost_{nets}}{Cost_{direct,DALY}} = \frac{\$89}{\$0.841} = 106 \\[0.5em]
 \text{where } Cost_{direct,DALY} = \frac{NPV_{direct}}{DALYs_{max}} = \frac{\$475B}{565B} = \$0.841 \\[0.5em]
-\text{where } NPV_{direct} \\
-= \frac{T_{queue,dFDA}}{Treasury_{RD,ann} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$475B \\[0.5em]
+\text{where } NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
@@ -1668,10 +1659,7 @@ NPV_{net,RD} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M \\[0.5em]
-\text{where } PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
-= \$342M \\[0.5em]
+\text{where } PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
@@ -1752,10 +1740,7 @@ Cost_{dFDA,total} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M \\[0.5em]
-\text{where } PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
-= \$342M \\[0.5em]
+\text{where } PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
@@ -2023,10 +2008,7 @@ ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637 \\[0
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M \\[0.5em]
-\text{where } PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
-= \$342M \\[0.5em]
+\text{where } PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
@@ -8254,10 +8236,7 @@ Leverage_{treaty} \\
 = \frac{\$0.841}{\$0.00177} \\
 = 475 \\[0.5em]
 \text{where } Cost_{direct,DALY} = \frac{NPV_{direct}}{DALYs_{max}} = \frac{\$475B}{565B} = \$0.841 \\[0.5em]
-\text{where } NPV_{direct} \\
-= \frac{T_{queue,dFDA}}{Treasury_{RD,ann} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$475B \\[0.5em]
+\text{where } NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\

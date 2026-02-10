@@ -354,7 +354,16 @@ def generate_variables_yml(
         f.write("#\n\n")
 
         # Write variables with proper quoting for HTML
-        yaml.dump(variables, f, default_flow_style=False, allow_unicode=True, sort_keys=False, default_style='"')
+        # Use a very large width to avoid line-wrapping that can split LaTeX commands (e.g., "\times")
+        yaml.dump(
+            variables,
+            f,
+            default_flow_style=False,
+            allow_unicode=True,
+            sort_keys=False,
+            default_style='"',
+            width=1000000
+        )
 
     print(f"[OK] Generated {output_path}")
     print(f"     {param_count} parameters exported")

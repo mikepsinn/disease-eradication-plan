@@ -858,10 +858,7 @@ Cost_{dFDA,total} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M \\[0.5em]
-\text{where } PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
-= \$342M \\[0.5em]
+\text{where } PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
@@ -1085,10 +1082,7 @@ ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637 \\[0
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
 = \$611M \\[0.5em]
-\text{where } PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
-= \$342M \\[0.5em]
+\text{where } PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
 \text{where } OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\

@@ -1147,6 +1147,11 @@ def generate_auto_latex(
     Returns:
         LaTeX string or None if cannot generate
     """
+    # Prefer hardcoded LaTeX when provided
+    hardcoded_latex = getattr(param_value, 'latex', None)
+    if hardcoded_latex:
+        return hardcoded_latex
+
     # Check if this is a calculated parameter with inputs and compute
     if not hasattr(param_value, 'inputs') or not param_value.inputs:
         return None
