@@ -6652,12 +6652,14 @@ export const citations: Record<string, Citation> = {
         title: "Pragmatic Trial Cost per Patient (Median \\$97)",
         author: [
           {
-            literal: "PMC"
+            family: "Ramsberg J",
+            given: "Platt R"
           },
         ],
-        'container-title': "PMC: Costs of Pragmatic Clinical Trials",
+        issued: { 'date-parts': [[2018]] },
+        'container-title': "Learning Health Systems",
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6508852/",
-        note: "PMC: Costs of Pragmatic Clinical Trials",
+        note: "Harvard Medical School/Harvard Pilgrim Health Care Institute, Learning Health Systems 2018",
   },
   "polio-vaccination-roi": {
         id: "polio-vaccination-roi",

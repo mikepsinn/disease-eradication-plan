@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 5 | **Words:** 68,231
+**Files:** 5 | **Words:** 68,209
 
 #### index.qmd
 **Title:** Wishocracy
@@ -764,7 +764,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var t...
-**Stats:** 29,745 words | 2,826 lines
+**Stats:** 29,723 words | 2,825 lines
 
   - Abstract
   - Key Findings
@@ -797,7 +797,7 @@
     - Why "Eventually Avoidable" Matters
   - The Leverage Mechanism: Why {{< var treaty_reduction_pct >}} Is Enough
     - 1. The Peace Dividend (Multiplier Differential)
-    - Research Efficiency Dividend (Infrastructure Leverage)
+    - 2. Research Efficiency Dividend (Infrastructure Leverage)
     - 3. 15–40 "NIH equivalents" of new research capacity
   - How It Increases National Security
     - What doesn't change
@@ -961,12 +961,12 @@
 ## _quarto-cost-of-change.yml
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Type:** website
-**Files:** 1 | **Words:** 3,128
+**Files:** 1 | **Words:** 3,178
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 3,128 words | 415 lines
+**Stats:** 3,178 words | 416 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -4236,6 +4236,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 344,652
+- Total words: 344,680
 - Orphaned files: 26
 - Paper configs: 12
