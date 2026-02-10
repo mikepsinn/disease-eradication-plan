@@ -1506,10 +1506,10 @@ $$
 
 At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require:
 
-- **Current pace** ({{< var current_trials_per_year >}} trials/year): ~1,500 years for single compounds
-- **With framework** ({{< var dfda_trials_per_year_capacity >}} trials/year): ~125 years
+- **Current pace** ({{< var current_trials_per_year >}}): ~1,500 years for single compounds
+- **With framework** ({{< var dfda_trials_per_year_capacity >}}): ~125 years
 
-For combination therapies ({{< var combination_therapy_disease_space >}} combinations), reaching 53% exploration would take:
+For combination therapies ({{< var combination_therapy_disease_space >}}), reaching 53% exploration would take:
 
 - **Current pace**: ~7 million years
 - **With framework**: ~600,000 years
@@ -1617,7 +1617,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Adoption Rate Assumptions
 
-**Assumption:** The framework achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}}-year linear ramp to 50%-80% participation rate among eligible trials.
+**Assumption:** The framework achieves gradual adoption following a {{< var dfda_npv_adoption_ramp_years >}} linear ramp to 50%-80% participation rate among eligible trials.
 
 ![A comparison of the conservative and optimistic adoption scenarios showing the 5-year linear ramp to 50% and 80% participation rates respectively.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-rate-assumptions-bw-academic.jpg)
 
@@ -1665,7 +1665,7 @@ The cost explosion began exactly when efficacy testing was centralized within ph
 
 #### Historical operational model
 
-From 1883 to 1960, {{< var pre_1962_physician_count >}} physicians across America tested drug efficacy on real patients in routine clinical practice. The Journal of the American Medical Association (JAMA) [@jama-founded-1893] compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement.
+From 1883 to 1960, {{< var pre_1962_physician_count >}} across America tested drug efficacy on real patients in routine clinical practice. The Journal of the American Medical Association (JAMA) [@jama-founded-1893] compiled these observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement.
 
 ![Comparison of the decentralized pre-1962 medical testing model versus the centralized post-1962 regulatory framework, highlighting the shift in efficacy testing and cost impact.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-historical-operational-model-bw-academic.jpg)
 
@@ -1723,7 +1723,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 ### Time Inconsistency and Commitment Credibility
 
-**Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}}-year analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the pragmatic clinical trials budget for short-term priorities.
+**Political economy challenge**: Even if the treaty achieves initial ratification, sustained commitment over the {{< var npv_time_horizon_years >}} analytical horizon faces time inconsistency problems. Political business cycles (2-6 year terms) create incentives to raid the pragmatic clinical trials budget for short-term priorities.
 
 ![A conceptual diagram illustrating the political asymmetry between the concentrated defense 'Iron Triangle' and diffuse health beneficiaries, contrasted with the proposed treaty mechanism that binds savings to a new medical-research constituency.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-time-inconsistency-and-commitment-credibility-bw-academic.jpg)
 
@@ -2428,7 +2428,7 @@ A potential criticism is that cost estimates depend on a single trial (RECOVERY)
 
 The framework projections use the **conservative ADAPTABLE estimate** ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient), not RECOVERY's exceptional results. Critically, **the base ROI estimate ({{< var dfda_roi_rd_only >}}) uses only cost reduction**, not acceleration effects. It assumes we run the same number of trials at lower cost, not 22× more trials. This provides substantial margin of safety.
 
-**Historical validation:** The physician-led pragmatic trial model has {{< var pre_1962_validation_years >}} of empirical validation (1883-1960). {{< var pre_1962_physician_count >}} physicians tested treatments on real patients in routine practice before the 1962 regulatory shift, achieving similar efficiencies across diverse therapeutic areas.
+**Historical validation:** The physician-led pragmatic trial model has {{< var pre_1962_validation_years >}} of empirical validation (1883-1960). {{< var pre_1962_physician_count >}} tested treatments on real patients in routine practice before the 1962 regulatory shift, achieving similar efficiencies across diverse therapeutic areas.
 
 **Conclusion:** The evidence base is not a single case study. It includes (1) a meta-analysis of 108 trials across therapeutic areas, (2) multiple large-scale implementations (RECOVERY, ADAPTABLE), and (3) {{< var pre_1962_validation_years >}} of historical precedent. Our conservative estimates use ADAPTABLE's routine-conditions cost, not RECOVERY's exceptional efficiency.
 
