@@ -1,19 +1,13 @@
 ---
-title: 'Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization'
-description: "Political dysfunction costs society trillions annually: {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive."
+title: 'Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare'
+description: "Suboptimal public policy costs society trillions annually: {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while incentivizing politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making suboptimal policy politically expensive."
 abstract: |
   Politicians allocate trillions annually. What gets you reelected is often not what benefits voters.
   This misalignment costs {{< var us_gov_waste_total >}} in documented US waste alone.
 
   Optimocracy: (1) Analyze historical data on policies across jurisdictions, (2) Calculate which predict
   above-average median income and healthy life years, (3) Publish recommendations for every vote, (4) Track
-  politician alignment, (5) Fund accordingly via SuperPAC. Politicians vote however they want. Following
-  evidence gets funded; ignoring it doesn't.
-
-  The structural advantage: current governance has thousands of capture points (committees, agencies,
-  regulations). Optimocracy consolidates these to a single, harder target: the verification layer.
-  Corrupting five independent data sources requires coordination that corrupting individual committee
-  decisions does not.
+  politician alignment, (5) Fund accordingly via SuperPAC algorithmically funding the campaigns of the most humanity aligned policymakers.
 aliases:
   - /optimocracy.html
 author:
