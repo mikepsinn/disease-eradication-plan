@@ -45,7 +45,6 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - knowledge/papers.qmd
     - knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd
     - knowledge/references.qmd
   navbar:

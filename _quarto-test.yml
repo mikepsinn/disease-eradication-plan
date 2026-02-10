@@ -29,7 +29,6 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - knowledge/papers.qmd
     - knowledge/test/test-parameters.qmd
     - knowledge/appendix/parameters-and-calculations-test.qmd
     - knowledge/references.qmd
