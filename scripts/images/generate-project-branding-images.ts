@@ -62,7 +62,8 @@ async function discoverQuartoConfigs(): Promise<string[]> {
   const files = await fs.readdir(projectRoot);
 
   return files
-    .filter(f => f.startsWith('_quarto-') && f.endsWith('.yml') && !f.includes('test'))
+    .filter(f => f.startsWith('_quarto-') && f.endsWith('.yml')
+      && !f.includes('test') && !f.includes('shared-defaults'))
     .map(f => path.join(projectRoot, f))
     .sort();
 }

@@ -41,11 +41,11 @@
 > The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.
 
 
-### [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
+### [Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare](https://optimocracy.warondisease.org)
 
-[![Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
+[![Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
 
-> Political dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.
+> Suboptimal public policy costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while incentivizing politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making suboptimal policy politically expensive.
 
 
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
