@@ -126,7 +126,8 @@ metadata:
   og-site-name: "Decentralized FDA"
 
   # Identifiers
-  doi: "10.5281/zenodo.18522035"
+  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
+  doi: "10.5281/zenodo.18203375"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -141,7 +142,7 @@ metadata:
       - platform: zenodo
         status: auto-uploaded
         url: "https://zenodo.org/record/18522034"
-        doi: "10.5281/zenodo.18522035"
+        doi: "10.5281/zenodo.18203375"
       - platform: medrxiv
         status: pending
         url: ""

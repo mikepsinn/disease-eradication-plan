@@ -120,7 +120,8 @@ metadata:
   og-site-name: "Federal Efficiency Audit"
 
   # Identifiers (to be added after Zenodo upload)
-  doi: "10.5281/zenodo.18522037"
+  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
+  doi: "10.5281/zenodo.18447476"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -135,7 +136,7 @@ metadata:
       - platform: zenodo
         status: auto-uploaded
         url: "https://zenodo.org/record/18522036"
-        doi: "10.5281/zenodo.18522037"
+        doi: "10.5281/zenodo.18447476"
       - platform: ssrn
         status: pending
         url: ""

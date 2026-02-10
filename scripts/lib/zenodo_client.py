@@ -432,15 +432,21 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
     return zenodo_metadata
 
 
-def save_doi_to_config(config_path: Path, doi: str, zenodo_url: str) -> bool:
+def save_doi_to_config(
+    config_path: Path,
+    doi: str,
+    zenodo_url: str,
+    version_doi: str = None
+) -> bool:
     """
     Save DOI and Zenodo URL back to Quarto config file.
     Uses text-based replacement to preserve YAML formatting.
 
     Args:
         config_path: Path to _quarto-*.yml file
-        doi: DOI string (e.g., "10.5281/zenodo.12345678")
+        doi: Concept DOI string (stable across versions)
         zenodo_url: Zenodo record URL
+        version_doi: Optional version-specific DOI
 
     Returns:
         True if successful, False otherwise
@@ -457,14 +463,45 @@ def save_doi_to_config(config_path: Path, doi: str, zenodo_url: str) -> bool:
                     metadata_end = i
                     break
             doi_idx = None
+            version_doi_idx = None
+            doi_comment_idx = None
+
             for i in range(metadata_idx + 1, metadata_end):
+                if re.match(r"^  # Zenodo Concept DOI", lines[i]):
+                    doi_comment_idx = i
                 if re.match(r"^  doi:\s*", lines[i]):
                     doi_idx = i
-                    break
+                if re.match(r"^  zenodo_version_doi:\s*", lines[i]):
+                    version_doi_idx = i
+
+            # Add/update concept DOI with block comment
+            if doi_comment_idx is None:
+                # Add comment block
+                comment_block = [
+                    '  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)\n',
+                ]
+                insert_pos = doi_idx if doi_idx is not None else metadata_idx + 1
+                for line in reversed(comment_block):
+                    lines.insert(insert_pos, line)
+                if doi_idx is not None:
+                    doi_idx += len(comment_block)
+                if version_doi_idx is not None:
+                    version_doi_idx += len(comment_block)
+
+            # Update/add concept DOI
             if doi_idx is not None:
                 lines[doi_idx] = f'  doi: "{doi}"\n'
             else:
-                lines.insert(metadata_idx + 1, f'  doi: "{doi}"\n')
+                insert_pos = doi_comment_idx + 1 if doi_comment_idx is not None else metadata_idx + 1
+                lines.insert(insert_pos, f'  doi: "{doi}"\n')
+                doi_idx = insert_pos
+
+            # Add version DOI if provided
+            if version_doi:
+                if version_doi_idx is not None:
+                    lines[version_doi_idx] = f'  zenodo_version_doi: "{version_doi}"  # Latest published version\n'
+                else:
+                    lines.insert(doi_idx + 1, f'  zenodo_version_doi: "{version_doi}"  # Latest published version\n')
 
         for i, line in enumerate(lines):
             if not re.match(r"^\s*-\s*platform:\s*zenodo\s*$", line):
@@ -687,24 +724,26 @@ def upload_paper(
             log(f"  URL: {zenodo_url}")
 
         # Use concept DOI/URL for config (stable across versions)
-        doi_for_config = concept_doi or version_doi
-        url_for_config = f"{client.base_url.replace('/api', '')}/record/{concept_recid}" if concept_recid else zenodo_url
+        concept_doi_for_config = concept_doi or version_doi
+        concept_url_for_config = f"{client.base_url.replace('/api', '')}/record/{concept_recid}" if concept_recid else zenodo_url
 
-        # Save DOI to config if requested
-        if save_doi and config_path and doi_for_config:
+        # Save concept DOI to config if requested
+        if save_doi and config_path and concept_doi_for_config:
             log(f"[OK] Saving concept DOI to {config_path.name}...")
-            if save_doi_to_config(config_path, doi_for_config, url_for_config):
-                log(f"[OK] Updated config with DOI: {doi_for_config}")
+            if save_doi_to_config(config_path, concept_doi_for_config, concept_url_for_config, version_doi=version_doi):
+                log(f"[OK] Updated config with concept DOI: {concept_doi_for_config}")
+                if version_doi:
+                    log(f"[OK] Updated config with version DOI: {version_doi}")
             else:
                 log("WARNING: Could not update config file")
 
         return {
             "id": deposit_id,
             "bucket": bucket_url,
-            "doi": doi_for_config,
-            "version_doi": version_doi,
-            "concept_doi": concept_doi,
-            "url": url_for_config,
+            "doi": concept_doi_for_config,  # Primary DOI (concept, stable across versions)
+            "version_doi": version_doi,      # Version-specific DOI
+            "concept_doi": concept_doi,      # Concept DOI (same as 'doi' field)
+            "url": concept_url_for_config,
             "verified": True
         }
 

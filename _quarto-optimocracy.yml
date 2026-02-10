@@ -121,7 +121,8 @@ metadata:
   og-site-name: "Optimocracy"
 
   # Identifiers
-  doi: "10.5281/zenodo.18523076"
+  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
+  doi: "10.5281/zenodo.18356213"
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
@@ -136,7 +137,7 @@ metadata:
       - platform: zenodo
         status: auto-uploaded
         url: "https://zenodo.org/record/18523075"
-        doi: "10.5281/zenodo.18523076"
+        doi: "10.5281/zenodo.18356213"
       - platform: ssrn
         status: pending
         url: ""
