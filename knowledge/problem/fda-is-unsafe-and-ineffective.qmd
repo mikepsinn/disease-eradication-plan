@@ -71,8 +71,8 @@ Even if you reject all model-dependent estimates, the empirical facts alone demo
 
 Compare two real-world systems for testing drugs:
 
-1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}} per patient**. Found a life-saving treatment in 3 months.
-2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}} per patient** for clinical trials. Takes **9.1 years [@drug-development-timeline-17-years]** to approve a new drug.
+1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}}**. Found a life-saving treatment in 3 months.
+2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}}** for clinical trials. Takes **9.1 years [@drug-development-timeline-17-years]** to approve a new drug.
 
 ![A side-by-side comparison of the Oxford RECOVERY Trial versus the standard post-1962 drug approval system, highlighting the massive disparities in cost per patient and time to completion.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bw-academic.jpg)
 

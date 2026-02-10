@@ -22,7 +22,7 @@ Out of {{< var current_disease_patients_global >}} people with chronic disease, 
 
 Half of humanity would volunteer [@patient-willingness-clinical-trials] if they could. We have **240 times more willing participants** than we're using.
 
-This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}} per patient, require traveling to major medical centers, and have exclusion criteria that reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates].
+This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and have exclusion criteria that reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates].
 
 **We're not facing a recruitment problem. We're facing a capacity problem.**
 

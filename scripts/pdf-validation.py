@@ -741,12 +741,8 @@ class PDFValidator:
                             # 403 is usually bot-blocking, not a broken link
                             if result.status_code == 403:
                                 access_denied_count += 1
-                                self._add_error(
-                                    None,
-                                    "URL_ACCESS_DENIED",
-                                    PDFValidationError.SEVERITY_WARNING,
-                                    f"{result.error_message}: {result.url}{cache_note}",
-                                )
+                                # User requested to ignore 403 errors (often bot protection)
+                                print(f"      [INFO] Ignoring 403 Access Denied: {result.url}{cache_note}")
                             else:
                                 # 404, 500, etc. are genuinely broken
                                 broken_count += 1

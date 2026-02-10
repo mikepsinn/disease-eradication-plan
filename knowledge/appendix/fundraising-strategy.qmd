@@ -142,7 +142,7 @@ All major costs are structured so people only get paid if they succeed:
 **For VICTORY investors**:
 
 - Outspend the opposition by 2x ({{< var treaty_campaign_total_cost >}} vs $450M/year × 2 years = $900M)
-- {{< var victory_bond_annual_return_pct >}} annual returns FOREVER if treaty passes
+- {{< var victory_bond_annual_return_pct >}} FOREVER if treaty passes
 - Legal freedom to lobby and run Super PACs
 - All-or-nothing bet with massive upside
 
@@ -276,7 +276,7 @@ To understand realistic funding strategies, we examined historical evidence from
 ![A flow diagram illustrating the conversion of treaty revenue into investor returns through a 10 percent allocation mechanism and SEC-compliant bond issuance.](/assets/images/fundraising-strategy/fundraising-strategy-section-how-it-would-work-bw-academic.jpg)
 
 
-- Issue registered securities offering {{< var victory_bond_annual_return_pct >}} annual returns from treaty revenue
+- Issue registered securities offering {{< var victory_bond_annual_return_pct >}} from treaty revenue
 - Target accredited investors, family offices, hedge funds
 - SEC-compliant offering (Reg D, Reg A+, or public offering)
 - Returns paid from treaty appropriations ({{< var treaty_annual_funding >}}/year × {{< var victory_bond_funding_pct >}} = {{< var victory_bond_annual_payout >}}/year)

@@ -270,7 +270,7 @@ Right now, only {{< var current_trial_slots_available >}} participate in drug tr
 
 #### Current System
 
-- Pivotal trials: {{< var traditional_phase3_cost_per_patient >}} per patient
+- Pivotal trials: {{< var traditional_phase3_cost_per_patient >}}
 - Only {{< var current_trial_slots_available >}} participants per year globally
 - {{< var willing_trial_participants_global >}} willing to participate, but turned away
 - {{< var drug_discovery_to_approval_years >}} from discovery to patient
@@ -278,7 +278,7 @@ Right now, only {{< var current_trial_slots_available >}} participate in drug tr
 #### With a 1% treaty + a decentralized framework for drug assessment
 
 - {{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty
-- Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient ({{< var dfda_trial_cost_reduction_factor >}} cheaper)
+- Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} ({{< var dfda_trial_cost_reduction_factor >}} cheaper)
 - {{< var dih_patients_fundable_annually >}} participants per year ({{< var dfda_trial_capacity_multiplier >}} capacity increase)
 
 ![Side-by-side comparison of costs, participation rates, and speed between the current model and the proposed framework.](/assets/images/1-percent-treaty/1-percent-treaty-section-efficiency-comparison-bw-academic.jpg)
@@ -296,7 +296,7 @@ Why? Because they get to:
 1.  **Keep {{< var defense_sector_retention_pct >}} of their budget** (still plenty for bombs)
 2.  **Pivot 1% to biotech** (higher profit margins)
 3.  **Look like heroes** (rare for arms dealers)
-4.  **Invest in the fund** ({{< var victory_bond_annual_return_pct >}} annual returns, remember?)
+4.  **Invest in the fund** ({{< var victory_bond_annual_return_pct >}}, remember?)
 5.  **Not die of cancer** (even arms dealers get cancer)
 
 Lockheed Martin Presents: The F-35 Cancer Killer™

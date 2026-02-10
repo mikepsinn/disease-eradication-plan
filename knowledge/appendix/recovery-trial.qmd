@@ -15,7 +15,7 @@ image: /assets/og-images/knowledge/appendix/recovery-trial-og-retro-academic.jpg
 
 ![](/assets/infographics/knowledge/appendix/recovery-trial-infographic-retro-academic.jpg)
 
-The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while traditional trials [@trial-cost-41k] cost {{< var traditional_phase3_cost_per_patient >}} per patient, Oxford spent {{< var recovery_trial_cost_per_patient >}} per patient and saved over 1 million lives globally [@recovery-trial-1m-lives-saved]. This {{< var recovery_trial_cost_reduction_factor >}} efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to traditional U.S. regulatory approaches.
+The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while traditional trials [@trial-cost-41k] cost {{< var traditional_phase3_cost_per_patient >}}, Oxford spent {{< var recovery_trial_cost_per_patient >}} and saved over 1 million lives globally [@recovery-trial-1m-lives-saved]. This {{< var recovery_trial_cost_reduction_factor >}} efficiency gain demonstrates that decentralized, pragmatic trials aren't just possible, they're already superior to traditional U.S. regulatory approaches.
 
 **Speed to Launch:** 9 days from conception to first patient enrolled [@landray-recovery-trial-quote]. U.S. average: 6-12 months [@fda-trial-launch-timeline].
 **Speed to Results:** First life-saving treatment (dexamethasone) identified in 100 days [@recovery-trial-100-days-to-cure]. U.S. average: 6-10 years [@fda-approval-timeline-10-years].
@@ -90,7 +90,7 @@ The FDA prioritizes paperwork over questions, bureaucracy over speed, and proces
 
 #### The Result
 
-{{< var recovery_trial_cost_per_patient >}} per patient vs the U.S. average of {{< var traditional_phase3_cost_per_patient >}} per patient ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)).
+{{< var recovery_trial_cost_per_patient >}} vs the U.S. average of {{< var traditional_phase3_cost_per_patient >}} ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)).
 
 ![A comparison bar chart illustrating the 82x cost efficiency gap between the $500 per-patient trial cost and the $41,000 U.S. average.](/assets/images/recovery-trial/recovery-trial-section-the-result-bw-academic.jpg)
 
@@ -146,7 +146,7 @@ The lesson is clear: We already know how to run trials {{< var recovery_trial_co
    > "Between 23 April 2020 and 25 January 2021, 4,116 adults were included in the assessment of tocilizumab alone" - [Rxivist](https://rxivist.org/papers/129041)
 
 4. **Cost Efficiency**
-   The actual cost of £2.1M (~$2.7M) for the entire trial represents an even more dramatic efficiency than previously estimated. While a simple division yields approximately £43 (~$55) per patient, authoritative sources cite ~{{< var recovery_trial_cost_per_patient >}} per patient as a more realistic figure ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)). This aligns with broader evidence from a systematic review of 64 pragmatic trials, which found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost]. This is nearly 80 times more cost-efficient than traditional clinical trials ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/): {{< var traditional_phase3_cost_per_patient >}} per patient). This extraordinary cost-effectiveness, combined with the rapid delivery of results (three major findings within 100 days) and estimated global impact of over 1 million lives saved, demonstrates the revolutionary nature of the RECOVERY trial model.
+   The actual cost of £2.1M (~$2.7M) for the entire trial represents an even more dramatic efficiency than previously estimated. While a simple division yields approximately £43 (~$55) per patient, authoritative sources cite ~{{< var recovery_trial_cost_per_patient >}} as a more realistic figure ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)). This aligns with broader evidence from a systematic review of 64 pragmatic trials, which found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost]. This is nearly 80 times more cost-efficient than traditional clinical trials ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/): {{< var traditional_phase3_cost_per_patient >}}). This extraordinary cost-effectiveness, combined with the rapid delivery of results (three major findings within 100 days) and estimated global impact of over 1 million lives saved, demonstrates the revolutionary nature of the RECOVERY trial model.
 
 ![An infographic comparing the RECOVERY trial's extreme cost-efficiency of 500 per patient against the 41,000 traditional trial average, while highlighting its scale of 40,000 participants and global impact of one million lives saved.](/assets/images/recovery-trial/recovery-trial-section-sources-and-key-quotes-bw-academic.jpg)
 
@@ -163,14 +163,14 @@ Excellent question. Let me show you the proof.
 
 ### The Oxford RECOVERY Trial
 
-**{{< var recovery_trial_cost_per_patient >}} vs the U.S. Average of {{< var traditional_phase3_cost_per_patient >}} Per Patient**
+**{{< var recovery_trial_cost_per_patient >}} vs the U.S. Average of {{< var traditional_phase3_cost_per_patient >}}**
 
-The UK spent {{< var recovery_trial_cost_per_patient >}} per patient testing COVID treatments. Saved a million lives.
+The UK spent {{< var recovery_trial_cost_per_patient >}} testing COVID treatments. Saved a million lives.
 
 ![A comparison bar chart showing the massive disparity in per-patient clinical trial costs, with the UK's Oxford RECOVERY Trial at 500 versus the U.S. average of 41,000.](/assets/images/recovery-trial/recovery-trial-section-the-oxford-recovery-trial-bw-academic.jpg)
 
 
-The U.S. equivalent often costs {{< var traditional_phase3_cost_per_patient >}} per patient, with a significant portion dedicated to extensive regulatory paperwork.
+The U.S. equivalent often costs {{< var traditional_phase3_cost_per_patient >}}, with a significant portion dedicated to extensive regulatory paperwork.
 
 ### The Math
 

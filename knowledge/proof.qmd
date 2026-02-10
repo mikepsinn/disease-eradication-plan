@@ -20,15 +20,15 @@ This isn't a theoretical plan. It's a greatest hits album of things that already
 
 ## Pragmatic Trials: {{< var dfda_trial_cost_reduction_factor >}} More Efficient
 
-Traditional Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} per patient [@trial-costs-fda-study].
-Pragmatic trials embedded in routine care cost {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage], a **{{< var dfda_trial_cost_reduction_factor >}} cost reduction**.
+Traditional Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} [@trial-costs-fda-study].
+Pragmatic trials embedded in routine care cost {{< var dfda_pragmatic_trial_cost_per_patient >}} [@pragmatic-trials-cost-advantage], a **{{< var dfda_trial_cost_reduction_factor >}} cost reduction**.
 
 ![A comparison of the cost per patient between traditional Phase 3 clinical trials ($41,000) and pragmatic trials ($929), illustrating a 44.1-fold increase in cost efficiency.](/assets/images/proof/proof-section-pragmatic-trials-44-1x-95-ci-39-4x-89-1x-more-efficient-bw-academic.jpg)
 
 
 A Harvard meta-analysis of 108 embedded pragmatic trials found median costs of just $97 per patient [@embedded-pragmatic-trials-meta-analysis]. The ALLHAT trial demonstrated that pragmatic designs can identify superior treatments while reducing healthcare costs by billions annually [@ford2016].
 
-Oxford's RECOVERY trial achieved {{< var recovery_trial_cost_per_patient >}} per patient, finding life-saving COVID treatments in under 100 days and saving over a million lives [@recovery-trial-1m-lives-saved].
+Oxford's RECOVERY trial achieved {{< var recovery_trial_cost_per_patient >}}, finding life-saving COVID treatments in under 100 days and saving over a million lives [@recovery-trial-1m-lives-saved].
 
 ## Switzerland: 200 Years of Not Killing People
 

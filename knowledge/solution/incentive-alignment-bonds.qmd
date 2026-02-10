@@ -546,7 +546,7 @@ The flywheel spins. Each expansion increases the stakes, which increases the sco
 The investors who funded the {{< var treaty_campaign_total_cost >}} campaign see:
 
 - Treaty passes → {{< var treaty_annual_funding >}}/year flows to the 1% Treaty Fund
-- {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}/year) flows to bondholders → {{< var victory_bond_annual_return_pct >}} annual returns
+- {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}/year) flows to bondholders → {{< var victory_bond_annual_return_pct >}}
 - {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentive mechanisms → keeps politicians aligned
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds actual cures → diseases start declining → public demands expansion → returns grow
 
@@ -644,7 +644,7 @@ However, the instrument has two distinct "engines" inside it. One pays investors
 | | Engine 1: The Investor Component<br>(VICTORY Incentive Alignment Bonds) | Engine 2: The Political Component<br>(The IAB Mechanism) |
 |:--|:------------------------------------|:-----------------------------------|
 | **Who's incentivized** | Investors | Politicians |
-| **What they get** | {{< var victory_bond_annual_return_pct >}} annual returns (money) | Reputation, electoral support, post-office careers |
+| **What they get** | {{< var victory_bond_annual_return_pct >}} (money) | Reputation, electoral support, post-office careers |
 | **Funding source** | {{< var victory_bond_funding_pct >}} of treaty revenue ({{< var victory_bond_annual_payout >}}/year) | {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) |
 | **Role** | **Solves the Capital Problem**<br>Raises {{< var treaty_campaign_total_cost >}} to fund the campaign | **Solves the Political Problem**<br>Makes politicians *want* to support the treaty |
 

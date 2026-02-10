@@ -49,7 +49,7 @@ The math is simple: If everyone has 1% fewer weapons, the balance stays exactly 
 
 - 54,000 pragmatic clinical trials at $500,000 each (the cheap way)
 - Or 27 million patients in trials at {{< var dfda_target_cost_per_patient_usd >}} each
-- Or 540 new drug approvals (current rate: {{< var current_drug_approvals_per_year >}} per year)
+- Or 540 new drug approvals (current rate: {{< var current_drug_approvals_per_year >}})
 - Or curing 10-20 rare diseases completely in Year 1
 - Or preventing 180,000 deaths annually
 
@@ -131,7 +131,7 @@ Your decentralized framework for drug assessment (dFDA) does three things:
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting {{< var drug_discovery_to_approval_years >}} from discovery to patient while you die, you join a trial. The trial costs {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}} because it turns out you don't need {{< var fda_phase_1_to_approval_years >}} of regulatory process to figure out if aspirin works.
+Instead of waiting {{< var drug_discovery_to_approval_years >}} from discovery to patient while you die, you join a trial. The trial costs {{< var dfda_pragmatic_trial_cost_per_patient >}} instead of {{< var traditional_phase3_cost_per_patient >}} because it turns out you don't need {{< var fda_phase_1_to_approval_years >}} of regulatory process to figure out if aspirin works.
 
 You report outcomes through your phone. The AI analyzes millions of data points. The framework publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 

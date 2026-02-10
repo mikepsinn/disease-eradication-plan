@@ -12,7 +12,7 @@ image: /assets/og-images/knowledge/appendix/faq-og-retro-academic.jpg
 
 **Objection**: "Nice idea, but it likely won't happen."
 
-**Response**: The Oxford RECOVERY trial tested 7 treatments in 6 months, saved 1 million lives, and cost {{< var recovery_trial_cost_per_patient >}} per patient. The FDA's equivalent costs {{< var traditional_phase3_cost_per_patient >}} per patient, which is approximately the price of a luxury car per question about whether aspirin works.
+**Response**: The Oxford RECOVERY trial tested 7 treatments in 6 months, saved 1 million lives, and cost {{< var recovery_trial_cost_per_patient >}}. The FDA's equivalent costs {{< var traditional_phase3_cost_per_patient >}}, which is approximately the price of a luxury car per question about whether aspirin works.
 
 The trial used existing hospital systems. Hospitals, it turns out, already contain sick people.
 
@@ -531,7 +531,7 @@ These technologies already verify hundreds of millions globally for banking and 
 ![A comparison showing the massive disparity in cost-efficiency between traditional clinical trials and the decentralized framework, highlighting how the same budget can fund thousands of trials instead of zero.](/assets/images/faq/faq-section-how-do-you-prevent-waste-bw-academic.jpg)
 
 
-**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model achieves 80× lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials cost {{< var recovery_trial_cost_per_patient >}} per patient [@recovery-cost-500] versus {{< var traditional_phase3_cost_per_patient >}} in traditional trials [@trial-cost-41k].
+**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model achieves 80× lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials cost {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500] versus {{< var traditional_phase3_cost_per_patient >}} in traditional trials [@trial-cost-41k].
 
 The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that budget, this model could run 2,800 trials for 2.8 million patients. Evidence is strong.
 

@@ -657,7 +657,7 @@ Result: Vote yes. Smith didn't become a better person. The math just changed. Th
 
 | Stakeholder | What They Want | What They Get | Why They'll Play Along |
 |:--|:--|:--|:--|
-| **Investors** | More papers | {{< var victory_bond_annual_return_pct >}} annual returns | Greed |
+| **Investors** | More papers | {{< var victory_bond_annual_return_pct >}} | Greed |
 | **Politicians** | Power and status | Career advancement | Vanity |
 | **Patients** | To not die | Cures | Survival instinct |
 
@@ -831,7 +831,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 
 *Novel Concept for Humanity*
 
-- {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} humans who continue existing because first effective treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} years sooner (that's more people than currently exist, which sounds fake but is just math)
+- {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} humans who continue existing because first effective treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner (that's more people than currently exist, which sounds fake but is just math)
 - {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets (the gold standard for "keeping humans alive")
 - Some major diseases could plausibly become dramatically more treatable sooner than expected if we multiply trial capacity and slash time-to-answer
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading), and politicians discover that voting for cures is better for their careers than voting for bombs

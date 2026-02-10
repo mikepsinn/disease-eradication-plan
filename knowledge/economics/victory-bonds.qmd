@@ -33,7 +33,7 @@ You're doing the same thing, except instead of buying bonds to kill Nazis, you'r
 
 | Component | Who It Incentivizes | What They Get | Funding Source |
 |-----------|---------------------|---------------|---------------|
-| **Engine 1** | **Investors** | {{< var victory_bond_annual_return_pct >}} annual returns | {{< var victory_bond_funding_pct >}} of treaty revenue |
+| **Engine 1** | **Investors** | {{< var victory_bond_annual_return_pct >}} | {{< var victory_bond_funding_pct >}} of treaty revenue |
 | **Engine 2** | **Politicians** | Reputation, electoral support, better careers | {{< var iab_political_incentive_funding_pct >}} of treaty revenue |
 | **The Mission** | **Patients** | Subsidized trial participation, cures | {{< var dih_treasury_medical_research_pct >}} of treaty revenue |
 
@@ -51,7 +51,7 @@ A financial instrument that generates massive returns while accidentally curing 
 - Reserve {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) for [political incentive mechanisms](../appendix/incentive-alignment-bonds-paper.qmd) that keep politicians aligned
 - Use the remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) to cure the diseases actually killing people
 
-**What you're offering investors:** {{< var victory_bond_annual_return_pct >}} annual returns, which beats everything except insider trading and certain federal crimes
+**What you're offering investors:** {{< var victory_bond_annual_return_pct >}}, which beats everything except insider trading and certain federal crimes
 
 **The money never stops.** No maturity date means bondholders get paid until the sun explodes or humanity achieves immortality, whichever happens first (probably the immortality thing)
 

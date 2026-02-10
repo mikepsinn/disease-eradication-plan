@@ -63,6 +63,7 @@
     "param:unused": "tsx scripts/parameter-audit.ts --unused",
     "param:list": "tsx scripts/parameter-audit.ts --all",
     "preview:1-pct-treaty-impact": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py 1-pct-treaty-impact --preview",
+    "validate:1-pct-treaty-impact": ".venv\\Scripts\\python.exe -u scripts/pdf-validation.py --pdf assets/pdfs/1-percent-treaty-impact.pdf",
     "preview:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --preview",
     "render:website": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to html",
     "render:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test",

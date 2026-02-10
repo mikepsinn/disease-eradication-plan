@@ -27,13 +27,13 @@ That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} returns (recommen
 
 Here's the breakdown.
 
-## The Math: From {{< var traditional_phase3_cost_per_patient >}} to {{< var recovery_trial_cost_per_patient >}} Per Patient
+## The Math: From {{< var traditional_phase3_cost_per_patient >}} to {{< var recovery_trial_cost_per_patient >}}
 
-Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}} per patient**. That's more than a Tesla per person to find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
+Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}}**. That's more than a Tesla per person to find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
 
 ![A comparison showing the dramatic cost reduction from traditional Phase III clinical trials at 41,000 per patient to the Oxford RECOVERY trial model at 500 per patient.](/assets/images/health-dividend/health-dividend-section-the-math-from-bw-academic.jpg)
 
-The Oxford RECOVERY trial proved humans can do the same thing for **{{< var recovery_trial_cost_per_patient >}} per patient**. They tested COVID treatments on 40,000+ patients by:
+The Oxford RECOVERY trial proved humans can do the same thing for **{{< var recovery_trial_cost_per_patient >}}**. They tested COVID treatments on 40,000+ patients by:
 
 - Using existing hospital staff (revolutionary concept: doctors treating patients)
 - Collecting data electronically (instead of sacrificing forests to the paperwork gods)

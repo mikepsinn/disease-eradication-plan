@@ -124,7 +124,7 @@ The 1% Treaty Fund uses an **80/10/10 automatic allocation** before any funds re
 - **IAB political incentives:** {{< var iab_political_incentive_funding_annual >}} annually ({{< var iab_political_incentive_funding_pct >}} of treaty inflows)
 - Both are sacred and untouchable (or the system fails)
 - Automatically distributed via smart contracts
-- {{< var victory_bond_annual_return_pct >}} annual returns to bondholders
+- {{< var victory_bond_annual_return_pct >}} to bondholders
 
 ##### Everything Else ({{< var dih_treasury_medical_research_pct >}}): Medical Research Allocation
 
