@@ -633,6 +633,31 @@ def main():
         print("[FATAL] Validation errors found. Fix the issues above before continuing.", file=sys.stderr)
         sys.exit(1)
 
+    # Remove duplicate units from QMD files before generating outputs
+    # This ensures clean descriptions when syncing to YAML configs
+    print("[*] Removing duplicate units from QMD files...")
+    try:
+        from scripts.review.remove_duplicate_units_from_qmd import (
+            extract_units_from_parameters,
+            get_all_qmd_files,
+            find_and_replace_duplicates
+        )
+
+        unit_mappings = extract_units_from_parameters()
+        qmd_files = get_all_qmd_files(project_root)
+        files_modified, total_replacements = find_and_replace_duplicates(
+            qmd_files, unit_mappings, preview=False
+        )
+
+        if total_replacements > 0:
+            print(f"[OK] Removed {total_replacements} duplicate unit(s) from {files_modified} file(s)")
+        else:
+            print("[OK] No duplicate units found")
+        print()
+    except Exception as e:
+        print(f"[WARN] Duplicate unit removal skipped: {e}")
+        print()
+
     # NOTE: _variables.yml generation moved to AFTER Monte Carlo simulation
     # so we can embed confidence intervals from samples.json
 
