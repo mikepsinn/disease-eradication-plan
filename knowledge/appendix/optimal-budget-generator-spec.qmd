@@ -1049,8 +1049,6 @@ Phase 1: DATA COLLECTION
 1. Budget data ingestion
    +-- Pull current spending by category (OMB, USASpending)
 
-![The five-phase Optimal Budget Generator (OBG) analysis pipeline, detailing the process from data ingestion to gap analysis reporting.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-appendix-b-analysis-workflow-bw-academic.jpg)
-
    +-- Normalize categories to standard taxonomy
    +-- Identify subcategories for detailed analysis
    +-- Flag data quality issues

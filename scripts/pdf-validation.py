@@ -54,6 +54,51 @@ GITHUB_STEP_SUMMARY = os.environ.get("GITHUB_STEP_SUMMARY")
 DEFAULT_PDF_DIR = Path(__file__).parent.parent / "assets" / "pdfs"
 LLM_FULL_PDF_PROMPT_VERSION = "2026-02-09-v2"
 
+LLM_FULL_PDF_PROMPT_TEXT = """Review this full PDF for publication-blocking defects.
+
+Focus on:
+- equation rendering defects
+- unreadable figures/tables
+- broken references/citations
+- leaked source/code
+- malformed bibliography entries
+
+Be conservative: only include issues you are highly confident are true defects.
+Treat PDF text extraction artifacts as non-issues unless you have strong visual evidence of an actual rendering defect.
+If the PDF appears fine, return an empty errors list instead of speculative findings.
+Return JSON only with this schema:
+{
+  "summary": "one paragraph",
+  "errors": [
+    {
+      "severity": "CRITICAL|WARNING",
+      "type": "string",
+      "page": "page number or range",
+      "description": "specific defect",
+      "suggested_fix": "actionable fix",
+      "evidence_snippet": "short exact text snippet copied from the PDF near the defect",
+      "locator_hint": "how to find this in source docs using only document-visible clues (section heading, figure/table label, citation text, unique phrase)"
+    }
+  ],
+  "high_value_improvements": ["string"]
+}
+
+Important constraints:
+- You do NOT have access to source qmd/bib files. Do not invent filenames or keys.
+- "locator_hint" must rely only on clues visible in the PDF.
+- Keep snippets short and exact.
+- `errors` may be an empty list when no clear defects are present.
+- Do NOT flag extraction-layer artifacts as defects:
+  - spaces/newlines inserted inside URLs (for example "https: //")
+  - missing Greek/math symbols in copied text when layout appears intact
+  - line-wrap hyphenation artifacts in bibliography entries
+  - markdown tokens visible only in extracted text layer
+  - orphan punctuation that may be extraction noise
+- Only flag equation defects when mathematical meaning is actually broken in rendered layout.
+- Only flag broken references/citations when a link/reference is clearly malformed in the rendered document itself.
+- Do not invent issues to satisfy category coverage. If uncertain, omit the issue.
+- The "errors" list MUST be sorted by page in ascending order."""
+
 
 class PDFValidationError:
     """Represents a single validation error in a PDF."""
@@ -760,6 +805,114 @@ class PDFValidator:
         except ValueError:
             return None
 
+    def _validate_chunked_pdf(
+        self,
+        model_id: str,
+        prompt: str,
+        input_rate: float,
+        output_rate: float,
+    ) -> tuple[list[Any], dict[str, float]]:
+        """
+        Split large PDF into chunks and validate each with LLM.
+        Returns (all_issues, combined_usage_stats).
+        """
+        import fitz
+        import tempfile
+
+        chunk_size_limit = 12 * 1024 * 1024  # 12MB target (safe under 17MB limit)
+        all_issues = []
+        combined_usage = {
+            "prompt_token_count": 0.0,
+            "candidates_token_count": 0.0,
+            "total_token_count": 0.0,
+        }
+
+        doc_len = len(self.doc)
+        print(f"[LLM] PDF is large (>15MB). Splitting {doc_len} pages into chunks...", flush=True)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_path = Path(temp_dir)
+            chunk_files: list[tuple[Path, int]] = []
+
+            # Split PDF into size-limited chunks
+            current_chunk = fitz.open()
+            current_start_page = 0
+            
+            # Helper to finalize current chunk
+            def save_chunk(doc_chunk, start_p):
+                if doc_chunk.page_count > 0:
+                    c_path = temp_path / f"chunk_{len(chunk_files)}.pdf"
+                    doc_chunk.save(c_path)
+                    chunk_files.append((c_path, start_p))
+
+            for i in range(doc_len):
+                current_chunk.insert_pdf(self.doc, from_page=i, to_page=i)
+                
+                # Check size periodically (every 10 pages) or on last page
+                if (i - current_start_page + 1) % 10 == 0 or i == doc_len - 1:
+                    data = current_chunk.tobytes()
+                    if len(data) > chunk_size_limit:
+                        # If more than 1 page, backtrack one to be safe
+                        if current_chunk.page_count > 1:
+                            current_chunk.delete_page(-1)
+                            save_chunk(current_chunk, current_start_page)
+                            
+                            # Start new chunk with the page we just removed
+                            current_chunk = fitz.open()
+                            current_chunk.insert_pdf(self.doc, from_page=i, to_page=i)
+                            current_start_page = i
+                        else:
+                            # Single huge page, just save it
+                            save_chunk(current_chunk, current_start_page)
+                            current_chunk = fitz.open()
+                            current_start_page = i + 1
+            
+            # Save any remaining pages
+            save_chunk(current_chunk, current_start_page)
+            
+            print(f"[LLM] Split into {len(chunk_files)} chunks.", flush=True)
+
+            # Validate each chunk
+            for i, (chunk_path, start_page) in enumerate(chunk_files):
+                chunk_prompt = f"Context: This is part {i+1}/{len(chunk_files)} of the document, starting at page {start_page+1}.\n\n" + prompt
+
+                print(f"[LLM] Validating chunk {i+1}/{len(chunk_files)} (pages {start_page+1}+)...", flush=True)
+                
+                try:
+                    response, usage = llm.generate_gemini_flash_content_with_pdf_and_usage(
+                        prompt=chunk_prompt,
+                        pdf_path=str(chunk_path),
+                    )
+                    
+                    # Accumulate usage
+                    for k, v in usage.items():
+                        combined_usage[k] = combined_usage.get(k, 0.0) + float(v)
+
+                    parsed = llm.extract_json_from_response(response, f"chunk {i+1}")
+                    issues = parsed.get("errors", [])
+                    if not isinstance(issues, list):
+                        issues = parsed.get("top_issues", [])
+                    if not isinstance(issues, list):
+                        issues = []
+
+                    # Adjust page numbers
+                    for issue in issues:
+                        page_val = issue.get("page")
+                        # Try to parse integer
+                        page_int = self._parse_page_value(page_val)
+                        if page_int is not None:
+                            # The LLM sees the chunk as starting at page 1.
+                            # We need to add start_page offset.
+                            issue["page"] = page_int + start_page
+                        
+                    all_issues.extend(issues)
+
+                except Exception as e:
+                    print(f"[LLM] Error validating chunk {i+1}: {e}", file=sys.stderr)
+                    # Continue with other chunks
+
+        return all_issues, combined_usage
+
     def _record_full_pdf_issues(self, issues: list[dict[str, Any]]) -> int:
         """Convert full-PDF LLM issues to validation errors."""
         for issue in issues:
@@ -835,78 +988,58 @@ class PDFValidator:
                 )
                 return self.errors
 
-        prompt = """Review this full PDF for publication-blocking defects.
+        prompt = LLM_FULL_PDF_PROMPT_TEXT
 
-Focus on:
-- equation rendering defects
-- unreadable figures/tables
-- broken references/citations
-- leaked source/code
-- malformed bibliography entries
-
-Be conservative: only include issues you are highly confident are true defects.
-Treat PDF text extraction artifacts as non-issues unless you have strong visual evidence of an actual rendering defect.
-If the PDF appears fine, return an empty errors list instead of speculative findings.
-Return JSON only with this schema:
-{
-  "summary": "one paragraph",
-  "errors": [
-    {
-      "severity": "CRITICAL|WARNING",
-      "type": "string",
-      "page": "page number or range",
-      "description": "specific defect",
-      "suggested_fix": "actionable fix",
-      "evidence_snippet": "short exact text snippet copied from the PDF near the defect",
-      "locator_hint": "how to find this in source docs using only document-visible clues (section heading, figure/table label, citation text, unique phrase)"
-    }
-  ],
-  "high_value_improvements": ["string"]
-}
-
-Important constraints:
-- You do NOT have access to source qmd/bib files. Do not invent filenames or keys.
-- "locator_hint" must rely only on clues visible in the PDF.
-- Keep snippets short and exact.
-- `errors` may be an empty list when no clear defects are present.
-- Do NOT flag extraction-layer artifacts as defects:
-  - spaces/newlines inserted inside URLs (for example "https: //")
-  - missing Greek/math symbols in copied text when layout appears intact
-  - line-wrap hyphenation artifacts in bibliography entries
-  - markdown tokens visible only in extracted text layer
-  - orphan punctuation that may be extraction noise
-- Only flag equation defects when mathematical meaning is actually broken in rendered layout.
-- Only flag broken references/citations when a link/reference is clearly malformed in the rendered document itself.
-- Do not invent issues to satisfy category coverage. If uncertain, omit the issue.
-- The "errors" list MUST be sorted by page in ascending order."""
-
-        # Pre-call token/cost logging so operators can see expected spend
-        # before any external API request is sent.
+        # Pre-call token/cost logging
         prompt_tokens_est = llm.estimate_tokens(prompt)
         input_only_cost_est = (prompt_tokens_est / 1_000_000.0) * input_rate
-        try:
-            projected_output_tokens = max(
-                0.0,
-                float(os.getenv("PDF_VALIDATION_LLM_PROJECTED_OUTPUT_TOKENS", "1500")),
+        
+        # Check if PDF is large enough to require splitting (e.g. >15MB)
+        file_size = self.pdf_path.stat().st_size
+        use_chunking = file_size > 15 * 1024 * 1024  # 15MB
+        
+        if not use_chunking:
+            # Standard single-call path
+            try:
+                projected_output_tokens = max(
+                    0.0,
+                    float(os.getenv("PDF_VALIDATION_LLM_PROJECTED_OUTPUT_TOKENS", "1500")),
+                )
+            except ValueError:
+                projected_output_tokens = 1500.0
+            projected_total_cost_est = (
+                input_only_cost_est + (projected_output_tokens / 1_000_000.0) * output_rate
             )
-        except ValueError:
-            projected_output_tokens = 1500.0
-        projected_total_cost_est = (
-            input_only_cost_est + (projected_output_tokens / 1_000_000.0) * output_rate
-        )
-        print(
-            f"[LLM] Preflight estimate: model={model_id}, input_tokens_est={prompt_tokens_est:.0f}, "
-            f"input_cost_est_usd=${input_only_cost_est:.6f}, "
-            f"projected_output_tokens={projected_output_tokens:.0f}, "
-            f"projected_total_cost_est_usd=${projected_total_cost_est:.6f} "
-            "(prompt-only estimate; excludes PDF document tokens)",
-            flush=True,
-        )
+            print(
+                f"[LLM] Preflight estimate: model={model_id}, input_tokens_est={prompt_tokens_est:.0f}, "
+                f"input_cost_est_usd=${input_only_cost_est:.6f}, "
+                f"projected_output_tokens={projected_output_tokens:.0f}, "
+                f"projected_total_cost_est_usd=${projected_total_cost_est:.6f} "
+                "(prompt-only estimate; excludes PDF document tokens)",
+                flush=True,
+            )
 
-        response, usage = llm.generate_gemini_flash_content_with_pdf_and_usage(
-            prompt=prompt,
-            pdf_path=str(self.pdf_path),
-        )
+            response, usage = llm.generate_gemini_flash_content_with_pdf_and_usage(
+                prompt=prompt,
+                pdf_path=str(self.pdf_path),
+            )
+            parsed = llm.extract_json_from_response(response, f"full-pdf-review {self.pdf_path.name}")
+            if not isinstance(parsed, dict):
+                raise RuntimeError("Full-PDF LLM response is not a JSON object")
+            issues: Any = parsed.get("errors", [])
+            if not isinstance(issues, list):
+                issues = parsed.get("top_issues", [])
+            if not isinstance(issues, list):
+                issues = []
+                
+        else:
+            # Chunked path
+            issues, usage = self._validate_chunked_pdf(model_id, prompt, input_rate, output_rate)
+            # Create synthetic response for caching/cost
+            parsed = {"summary": "Aggregated from chunks", "errors": issues}
+            response = json.dumps(parsed)
+
+        # Common cost accounting
         actual_input_tokens = usage.get("prompt_token_count")
         actual_output_tokens = usage.get("candidates_token_count")
         if actual_input_tokens is not None and actual_output_tokens is not None:
@@ -931,20 +1064,11 @@ Important constraints:
         self.llm_output_tokens_est += output_tokens_est
         self.llm_cost_est_usd += request_cost_est
         print(
-            f"[LLM] Full-PDF API request: model={model_id}, input_tokens_est={input_tokens_est:.0f}, "
+            f"[LLM] Full-PDF API request (total): model={model_id}, input_tokens_est={input_tokens_est:.0f}, "
             f"output_tokens_est={output_tokens_est:.0f}, token_source={token_source}, "
             f"request_cost_est_usd=${request_cost_est:.6f}",
             flush=True,
         )
-
-        parsed = llm.extract_json_from_response(response, f"full-pdf-review {self.pdf_path.name}")
-        if not isinstance(parsed, dict):
-            raise RuntimeError("Full-PDF LLM response is not a JSON object")
-        issues: Any = parsed.get("errors", [])
-        if not isinstance(issues, list):
-            issues = parsed.get("top_issues", [])
-        if not isinstance(issues, list):
-            issues = []
         issue_count = self._record_full_pdf_issues(issues)
         print(f"[LLM] Full-PDF review complete ({issue_count} issue(s))", flush=True)
 
