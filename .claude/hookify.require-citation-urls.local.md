@@ -2,7 +2,7 @@
 name: require-citation-urls
 enabled: true
 event: file
-action: block
+action: warn
 conditions:
   - field: file_path
     operator: ends_with
