@@ -73328,8 +73328,8 @@
       "path": "assets/images/nonprofit-partnership-incentives/nonprofit-partnership-incentives-section-contribute-to-earn-cycle-bw-academic.jpg",
       "filename": "nonprofit-partnership-incentives-section-contribute-to-earn-cycle-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 176643,
-      "size": "172.5 KB",
+      "sizeBytes": 286741,
+      "size": "280.0 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
@@ -73337,59 +73337,51 @@
       "modified": "2026-02-02T17:52:50.357Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Partner Contribution Flow and Share Allocation Framework",
-      "description": "A process diagram showing how three input streams—direct fundraising, referendum mobilization, and in-kind contributions—are funneled through an aggregation and valuation process. The system converts these inputs into a partner's proportional governance stake and a sub-institute's budget share for resource control.",
+      "title": "Contribution Valuation And Proportional Governance Process",
+      "description": "A process diagram showing how direct fundraising, referendum mobilization, and in-kind contributions are aggregated through a central valuation system. The resulting output determines a partner's proportional share of influence, specifically their governance stake and the budget share allocated to their sub-institute.",
       "keywords": [
-        "medical research funding",
-        "governance model",
-        "referendum mobilization",
+        "governance",
         "resource allocation",
-        "1% treaty",
-        "institutional framework",
-        "health policy"
+        "fundraising",
+        "referendum",
+        "valuation process",
+        "in-kind contributions",
+        "budget share",
+        "decision-making power"
       ],
-      "transcript": "FIGURE 1. DIAGRAM OF PARTNER CONTRIBUTION FLOW & RESULTING SHARE ALLOCATION\n1. DIRECT FUNDRAISING\nThe total amount of funding a partner raises\n2. REFERENDUM MOBILIZATION\nThe number of verified referendum votes\n3. IN-KIND CONTRIBUTIONS\nThe value of non-monetary contributions\nPARTNER'S AGGREGATED CONTRIBUTION & VALUATION PROCESS\nPARTNER'S PROPORTIONAL SHARE & INFLUENCE\nGOVERNANCE STAKE %\nProportional representation & decision-making power\nSUB-INSTITUTE'S BUDGET SHARE\nProportional financial allocation & resource control\nProportional representaton & decesion power\nIllustrates the conversion of diverse contributions into partner's stake and budget share within the Institute framework.\nWarOnDisease.org",
-      "qualityScore": 3,
-      "qualityIssues": [
-        "Typos: 'representaton' instead of 'representation'",
-        "Typos: 'decesion' instead of 'decision'",
-        "Figure number 'FIGURE 1' is embedded in the image"
-      ],
+      "transcript": "1. DIRECT FUNDRAISING. The total amount of funding a partner raises. 2. REFERENDUM MOBILIZATION. The number of verified referendum votes. 3. IN-KIND CONTRIBUTIONS. The value of non-monetary contributions. PARTNER'S AGGREGATED CONTRIBUTION & VALUATION PROCESS. PARTNER'S PROPORTIONAL SHARE & INFLUENCE. Proportional representation & decision-making power. GOVERNANCE STAKE %. SUB-INSTITUTE'S BUDGET SHARE. Proportional financial allocation & resource control. WarOnDisease.org",
+      "qualityScore": 5,
+      "qualityIssues": [],
       "standaloneScore": 4,
       "canShareStandalone": true,
-      "socialCaption": "We've created a system where saving lives requires a complex valuation of gears, scales, and at least three types of paperwork. It’s almost as efficient as the diseases themselves. https://WarOnDisease.org",
-      "twitterText": "Apparently, you can't just fix things; you have to aggregate your referendum mobilization first. If we put this much effort into the actual curing part, we might run out of things to be sad about. https://WarOnDisease.org",
-      "linkedInText": "Our new governance model ensures that every contribution is weighted, measured, and filed away so that the decision-making process is as complicated as the biology we’re fighting. It’s a bureaucracy for life itself. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "We've finally solved the problem of human worth by turning effort into a pie chart. It turns out that if you raise money or win votes, you get a larger gavel to hit things with. https://WarOnDisease.org",
+      "twitterText": "We have successfully converted human effort into a spreadsheet. Raise money, get votes, or donate things to receive a proportional amount of power. It’s democracy, but with gears and slightly more math. https://WarOnDisease.org",
+      "linkedInText": "Our governance model ensures that influence is directly proportional to contribution. By quantifying fundraising, mobilization, and in-kind assets, we create a transparent path from effort to resource control. It's like a meritocracy, but with much better icons. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "presentation"
       ],
-      "speakerNotes": "This diagram outlines the mechanical heart of the initiative: how we turn money, public votes, and resources into actual institutional power. By quantifying fundraising and public mobilization into a single valuation process, we ensure that governance and budget allocation remain transparent and proportional to a partner's real-world impact.",
+      "speakerNotes": "This slide illustrates the core mechanism for translating partner contributions into organizational influence. By tracking three distinct streams—cash, votes, and assets—we can mathematically determine a partner's stake in both governance and budget allocation.",
       "talkingPoints": [
-        "Three distinct input streams: capital, public mandate, and physical assets",
-        "Centralized valuation process to normalize diverse contribution types",
-        "Direct linkage between effort (inputs) and influence (governance stake)",
-        "Ensures sub-institutes are funded based on a transparent, meritocratic framework"
+        "Aggregation of monetary and non-monetary contributions",
+        "A standardized valuation process ensures equitable influence",
+        "Influence is split between governance decision-making and direct budget control"
       ],
       "audienceLevel": "policymaker",
-      "altText": "A flowchart mapping how fundraising, referendum votes, and in-kind contributions are processed to determine a partner's governance stake and budget allocation within a medical research framework.",
+      "altText": "A flow diagram showing how fundraising, referendum votes, and in-kind contributions feed into an aggregated valuation process. This central process outputs a partner's proportional influence, divided into governance stake and sub-institute budget share.",
       "emotionalTone": "neutral",
-      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "callToAction": "4 shares = ~153 lives saved",
       "dataFreshness": "timeless",
       "dataSources": [
         "WarOnDisease.org"
       ],
-      "factCheckNotes": "The diagram contains spelling errors ('representaton', 'decesion') that should be corrected for professional use.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Figure 1 label embedded in image",
-        "Spelling error: 'representaton'",
-        "Spelling error: 'decesion'"
-      ],
-      "imageProblemsRepairPrompt": "Remove 'FIGURE 1. DIAGRAM OF PARTNER CONTRIBUTION FLOW & RESULTING SHARE ALLOCATION' from the top. Correct the spelling of 'representaton' to 'representation' and 'decesion' to 'decision' in the lower-right text blocks.",
+      "factCheckNotes": "This represents a conceptual framework for organizational governance rather than a specific set of historical data.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T20:12:21.946Z",
-      "metadataCreatedAt": "2026-02-01T20:12:22.293Z",
+      "metadataCreatedAt": "2026-02-10T20:46:40.864Z",
       "generationPrompt": "[FIXED] Remove 'FIGURE 1. DIAGRAM OF PARTNER CONTRIBUTION FLOW & RESULTING SHARE ALLOCATION' from the top. Correct the spelling of 'representaton' to 'representation' and 'decesion' to 'decision' in the lower-right text blocks.",
       "imageIssues": [
         "multiple spelling errors: 'representaton' and 'decesion'",
@@ -75928,8 +75920,8 @@
       "path": "assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-appendix-b-analysis-workflow-bw-academic.jpg",
       "filename": "optimal-budget-generator-spec-section-appendix-b-analysis-workflow-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 177414,
-      "size": "173.3 KB",
+      "sizeBytes": 301510,
+      "size": "294.4 KB",
       "width": 1024,
       "height": 1024,
       "format": "jpeg",
@@ -75937,53 +75929,53 @@
       "modified": "2026-02-02T17:52:39.703Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Methodology for the 1% Treaty Medical Research Initiative",
-      "description": "A comprehensive five-phase flowchart detailing the scientific process for redirecting military budgets to medical research. It tracks progress from initial data collection and budget ingestion through OBG estimation, evidence quality grading, gap analysis, and final output generation.",
+      "title": "The 1% Treaty Analytical Framework Workflow",
+      "description": "A detailed flowchart illustrating the five phases of the 1% Treaty analytical process: data collection, OBG estimation, evidence quality assessment, gap analysis, and output generation, leading to a final report.",
       "keywords": [
-        "medical research funding",
-        "military budget redirection",
-        "scientific methodology",
-        "cost-effectiveness analysis",
-        "global health policy",
-        "impact modeling",
-        "evidence-based medicine"
+        "1% Treaty",
+        "Analytical Framework",
+        "Data Collection",
+        "Cost-effectiveness Analysis",
+        "Evidence Quality",
+        "Gap Analysis",
+        "Global Health Policy",
+        "Research Methodology",
+        "Report Generation"
       ],
-      "transcript": "SCIENTIFIC FLOWCHART: PROCESS VISUALIZATION. PHASE 1: DATA COLLECTION. Budget data ingestion. Reference country data. Effect estimate data. PHASE 2: OBG ESTIMATION. Reference benchmarking. Diminishing returns modeling. Cost-effectiveness analysis. Method reconciliation. PHASE 3: EVIDENCE QUALITY. BIS calculation. Evidence grading. PHASE 4: GAP ANALYSIS. Compute gaps. Priority ranking. PHASE 5: OUTPUT GENERATION. Multi-unit reporting. Sensitivity analysis. Documentation. FINAL REPORT. WarOnDisease.org",
+      "transcript": "1% TREATY ANALYTICAL FRAMEWORK\nPHASE 1: DATA COLLECTION\nBudget data ingestion\nReference country data\nEffect estimate data\nPHASE 2: OBG ESTIMATION\nReference benchmarking\nDiminishing returns modeling\nCost-effectiveness analysis\nMethod reconciliation\nPHASE 3: EVIDENCE QUALITY\nBIS calculation\nEvidence grading\nPHASE 4: GAP ANALYSIS\nCompute gaps\nPriority ranking\nPHASE 5: OUTPUT GENERATION\nMulti-unit reporting\nSensitivity analysis\nDocumentation\nFINAL REPORT\nWarOnDisease.org",
       "qualityScore": 5,
       "qualityIssues": [],
       "standaloneScore": 4,
       "canShareStandalone": true,
-      "socialCaption": "Humanity has spent thousands of years perfecting the science of ending lives, but it turns out saving them requires a five-phase flowchart. It’s a lot of work to not die, but we’ve mapped out the paperwork for you. https://WarOnDisease.org",
-      "twitterText": "We have very efficient ways of ending lives, but saving them requires a five-phase flowchart and several types of data ingestion. It's a lot of work to not die, but we've mapped out the paperwork for you. https://WarOnDisease.org",
-      "linkedInText": "To move 1% of the world's 'exploding things' budget into 'not dying' budget, we first have to endure a rigorous five-phase estimation process. It’s comforting to know that saving millions of lives is at least as complicated as a tax return. #WarOnDisease https://WarOnDisease.org",
+      "socialCaption": "We've spent years developing a 5-phase framework to measure human suffering. It turns out suffering is surprisingly easy to put into a spreadsheet once you have the right icons. https://WarOnDisease.org",
+      "twitterText": "The 1% Treaty Analytical Framework is here. It uses diminishing returns modeling and multi-unit reporting to confirm that people don't like dying. We’ve managed to turn an existential crisis into a very tidy flowchart. Progress! https://WarOnDisease.org",
+      "linkedInText": "I’m pleased to share our 5-phase analytical framework for the 1% Treaty. We’ve meticulously mapped out every step from data ingestion to gap analysis, ensuring that our failure to act is at least backed by high-quality evidence grading. #WarOnDisease https://WarOnDisease.org",
       "targetPlatforms": [
         "twitter",
         "linkedin",
         "presentation"
       ],
-      "speakerNotes": "This flowchart outlines the rigorous five-phase methodology used to calculate the impact of the 1% Treaty. We start with raw budget data and apply diminishing returns modeling and evidence grading to ensure that our final report on lives saved is scientifically defensible and transparent.",
+      "speakerNotes": "This slide outlines the rigorous 1% Treaty Analytical Framework. It's a five-phase process that moves from raw data ingestion to a final report, ensuring that our priority rankings and cost-effectiveness models are based on the highest quality evidence available.",
       "talkingPoints": [
-        "Multi-phase analytical approach to ensure data integrity",
-        "Incorporates diminishing returns modeling to stay realistic about research outcomes",
-        "Standardized evidence grading (BIS calculation) ensures conservative estimates"
+        "Phase 1 and 2 establish the economic baseline using reference benchmarking and diminishing returns modeling.",
+        "Phase 3 and 4 verify evidence quality and identify specific compute and funding gaps.",
+        "Phase 5 synthesizes the data into a final report featuring multi-unit reporting and sensitivity analysis."
       ],
       "audienceLevel": "researcher",
-      "altText": "A detailed scientific flowchart showing the five phases of the War on Disease research process: Data Collection, OBG Estimation, Evidence Quality, Gap Analysis, and Output Generation, concluding in a Final Report.",
+      "altText": "A flowchart detailing the five phases of the 1% Treaty Analytical Framework. Phase 1: Data Collection (Budget, Reference, Effect data). Phase 2: OBG Estimation (Benchmarking, Returns modeling, Cost-effectiveness, Method reconciliation). Phase 3: Evidence Quality (BIS calculation, Grading). Phase 4: Gap Analysis (Compute gaps, Priority ranking). Phase 5: Output Generation (Reporting, Sensitivity analysis, Documentation).",
       "emotionalTone": "informative",
-      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
+      "callToAction": "4 shares = ~153 lives saved",
       "dataFreshness": "timeless",
       "dataSources": [
-        "WarOnDisease.org methodology"
+        "1% Treaty Secretariat"
       ],
-      "factCheckNotes": "The acronyms OBG and BIS are specific to the internal modeling framework of the 1% Treaty initiative.",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Title contains 'PROCESS VISUALIZATION' which is meta-descriptive",
-        "Title contains 'SCIENTIFIC FLOWCHART' which is meta-descriptive"
-      ],
-      "imageProblemsRepairPrompt": "Remove 'SCIENTIFIC FLOWCHART: PROCESS VISUALIZATION' from the top of the image and replace it with '1% TREATY ANALYTICAL FRAMEWORK'.",
+      "factCheckNotes": "This image describes a procedural framework for analysis rather than displaying empirical data results.",
+      "imageProblemsDetected": false,
+      "imageProblems": [],
+      "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T20:23:32.246Z",
-      "metadataCreatedAt": "2026-02-01T20:23:32.657Z"
+      "metadataCreatedAt": "2026-02-10T20:47:25.691Z",
+      "generationPrompt": "[FIXED] Remove 'SCIENTIFIC FLOWCHART: PROCESS VISUALIZATION' from the top of the image and replace it with '1% TREATY ANALYTICAL FRAMEWORK'."
     },
     {
       "path": "assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-analysis-frameworks-bw-academic.jpg",
@@ -83670,7 +83662,7 @@
         "data visualization",
         "well-being study"
       ],
-      "transcript": "Overall Mood Mega Study. Symptom Severity: Sleep, Social, Exercise, Diet, Treatments, Environment. Predictors of Overall Mood. Lack of Motivation, Pain Severity, Tiredness/Fatigue, Caffeine, Sleep Quality, Daily Step Count, Heart Rate, Food Activities, Acne Severity, Precipitation, Brain Fog, Fat Burn Heart Rate Zone, Barometric Pressure, Panic Attack, Sleep Duration, Water (serving), Meditation, Exercise, Resting Heart Rate, Cloud Cover, Multivitamin. [EXTENSIVE LIST OF SUPPLEMENTS AND ACTIVITIES FOLLOWS]",
+      "transcript": "WarOnDisease.org [The image contains three columns of horizontal bars. Each bar includes a percentage (e.g., 70%, 75%, 22%) and a numeric value. The text labels are AI-generated and illegible.]",
       "qualityScore": 3,
       "qualityIssues": [
         "excessive vertical length makes readability difficult",
@@ -83706,19 +83698,17 @@
       "factCheckNotes": "The data shows correlations, not necessarily direct causation, and relies on participant self-reporting which may vary in accuracy.",
       "imageProblemsDetected": true,
       "imageProblems": [
-        "Left-side navigation sidebar from a web interface is visible",
-        "Extreme vertical aspect ratio is impractical for most displays",
-        "Tiny text in the bottom 80% of the image"
+        "AI-hallucinated text",
+        "garbled labels"
       ],
-      "imageProblemsRepairPrompt": "Remove the left-side 'Contents' sidebar and the top icon header. Break the long list into three separate side-by-side columns to make the image more horizontal and readable.",
+      "imageProblemsRepairPrompt": "Replace all illegible AI-generated text labels with clear, readable healthcare and policy metrics.",
       "metadataEnrichedAt": "2026-02-01T20:57:47.942Z",
-      "metadataCreatedAt": "2026-02-01T20:57:48.209Z",
+      "metadataCreatedAt": "2026-02-10T20:48:20.875Z",
       "generationPrompt": "[FIXED] Remove the left-side 'Contents' sidebar and the top icon header. Break the long list into three separate side-by-side columns to make the image more horizontal and readable.",
       "imageIssues": [
-        "text labels are heavily garbled/AI-distorted",
-        "illegible fine print in flow diagram",
-        "repetitive nonsensical entries in the list",
-        "cluttered multi-panel layout"
+        "text is illegible/AI-hallucinated",
+        "garbled labels",
+        "cluttered layout"
       ]
     },
     {
@@ -121315,7 +121305,32 @@
       "format": "jpeg",
       "aspectRatio": "16:9",
       "modified": "2026-01-20T11:38:59.128Z",
-      "imageType": "og"
+      "imageType": "og",
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "title": "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
+      "description": "Political dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
+      "keywords": [
+        "mechanism-design",
+        "algorithmic-governance",
+        "smart-contracts",
+        "metric-optimization",
+        "capture-resistance",
+        "central-bank-independence",
+        "goodharts-law",
+        "decentralized-oracles",
+        "political-dysfunction",
+        "rent-seeking",
+        "public-choice"
+      ],
+      "sourceUrl": "https://optimocracy.warondisease.org",
+      "generationPrompt": "Use a black and white scientific illustration style.\n\nOptimocracy: Evidence-Based Governance Through Outcome-Bound Optimization\n\nPolitical dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
+      "transcript": "OPTIMOCRACY: EVIDENCE-BASED GOVERNANCE THROUGH OUTCOME-BOUND OPTIMIZATION. POLITICAL DYSFUNCTION. TRICKLE-DOWN COSTS: $4.90T US WASTE, $101T GLOBAL OPP. COSTS. HISTORICAL DATA REPOSITORY. ALGORITHMIC GOVERNANCE. HEALTH MAXIMIZATION. WEALTH MAXIMIZATION. SUPERPAC. DATA-DRIVEN POLICY. LOBBYISTS. POLITICIAN. DEMOCRATIC STRUCTURES. [Mathematical formulas in corner: d/dt, C, alpha, theta]",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/og/political-dysfunction-tax-og-1200x630.jpg",

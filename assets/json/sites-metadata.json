@@ -1,6 +1,6 @@
 {
   "totalSites": 13,
-  "totalPages": 101,
+  "totalPages": 89,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -268,29 +268,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://impact.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://impact.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd",
           "url": "https://impact.warondisease.org/appendix/parameters-and-calculations-1-pct-treaty-impact.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -537,7 +514,7 @@
           "lastmod": "2026-01-27"
         }
       ],
-      "pageCount": 4
+      "pageCount": 3
     },
     {
       "id": "cost-of-change",
@@ -670,29 +647,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://cost-of-change.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://cost-of-change.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-cost-of-change.qmd",
           "url": "https://cost-of-change.warondisease.org/appendix/parameters-and-calculations-cost-of-change.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -759,7 +713,7 @@
           "lastmod": "2026-02-02"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     },
     {
       "id": "dfda-impact",
@@ -930,29 +884,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://dfda-impact.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://dfda-impact.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-impact.qmd",
           "url": "https://dfda-impact.warondisease.org/appendix/parameters-and-calculations-dfda-impact.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -1090,7 +1021,7 @@
           "lastmod": "2026-02-10"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     },
     {
       "id": "dfda-spec",
@@ -1326,29 +1257,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://dfda-spec.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://dfda-spec.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-spec.qmd",
           "url": "https://dfda-spec.warondisease.org/appendix/parameters-and-calculations-dfda-spec.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -1378,7 +1286,7 @@
           "lastmod": "2026-02-02"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     },
     {
       "id": "federal-efficiency-audit",
@@ -1552,29 +1460,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://federal-efficiency-audit.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://federal-efficiency-audit.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-federal-efficiency-audit.qmd",
           "url": "https://federal-efficiency-audit.warondisease.org/appendix/parameters-and-calculations-federal-efficiency-audit.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -1620,7 +1505,7 @@
           "lastmod": "2026-02-06"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     },
     {
       "id": "iab",
@@ -1792,29 +1677,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://iab.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://iab.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-iab.qmd",
           "url": "https://iab.warondisease.org/appendix/parameters-and-calculations-iab.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -1886,7 +1748,7 @@
           "lastmod": "2026-02-03"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     },
     {
       "id": "invisible-graveyard",
@@ -2050,29 +1912,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://invisible-graveyard.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://invisible-graveyard.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd",
           "url": "https://invisible-graveyard.warondisease.org/appendix/parameters-and-calculations-invisible-graveyard.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -2143,7 +1982,7 @@
           "lastmod": "2026-02-10"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     },
     {
       "id": "manual",
@@ -4376,7 +4215,7 @@
             "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
             "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
             "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
+            "Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare",
             "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
             "The Political Dysfunction Tax",
             "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
@@ -4647,29 +4486,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://obg.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://obg.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-obg.qmd",
           "url": "https://obg.warondisease.org/appendix/parameters-and-calculations-obg.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -4715,7 +4531,7 @@
           "lastmod": "2026-02-10"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     },
     {
       "id": "opg",
@@ -4933,38 +4749,15 @@
           ],
           "published": true,
           "lastmod": "2026-02-10"
-        },
-        {
-          "path": "knowledge/papers.qmd",
-          "url": "https://opg.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://opg.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
         }
       ],
-      "pageCount": 2
+      "pageCount": 1
     },
     {
       "id": "optimocracy",
       "type": "website",
-      "title": "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-      "description": "Political dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
+      "title": "Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare",
+      "description": "Suboptimal public policy costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while incentivizing politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making suboptimal policy politically expensive.",
       "siteUrl": "https://optimocracy.warondisease.org",
       "favicon": "https://optimocracy.warondisease.org/assets/icons/optimocracy-favicon.png",
       "ogImage": "https://optimocracy.warondisease.org/assets/og/optimocracy-og-1200x630.jpg",
@@ -5057,8 +4850,8 @@
         {
           "path": "index.qmd",
           "url": "https://optimocracy.warondisease.org/",
-          "title": "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-          "description": "Political dysfunction costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while using a SuperPAC to incentivize politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making the ignorance of data politically expensive.",
+          "title": "Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare",
+          "description": "Suboptimal public policy costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while incentivizing politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making suboptimal policy politically expensive.",
           "image": "https://optimocracy.warondisease.org/assets/og-images/knowledge/appendix/optimocracy-paper-og-retro-academic.jpg",
           "sections": [
             "The Mechanism",
@@ -5114,29 +4907,6 @@
             "Boundary Conditions for Algorithmic Governance",
             "Acknowledgments",
             "References"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
-          "path": "knowledge/papers.qmd",
-          "url": "https://optimocracy.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://optimocracy.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
           "published": true,
           "lastmod": "2026-02-10"
@@ -5207,7 +4977,7 @@
           "lastmod": "2026-02-10"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     },
     {
       "id": "political-dysfunction-tax",
@@ -5323,32 +5093,9 @@
           ],
           "published": true,
           "lastmod": "2026-02-10"
-        },
-        {
-          "path": "knowledge/papers.qmd",
-          "url": "https://political-dysfunction-tax.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://political-dysfunction-tax.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
         }
       ],
-      "pageCount": 2
+      "pageCount": 1
     },
     {
       "id": "wishocracy",
@@ -5496,29 +5243,6 @@
           "lastmod": "2026-02-10"
         },
         {
-          "path": "knowledge/papers.qmd",
-          "url": "https://wishocracy.warondisease.org/papers.html",
-          "title": "Papers & Publications",
-          "description": "Academic papers and working drafts from the Disease Eradication Plan project.",
-          "image": "https://wishocracy.warondisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
-          "sections": [
-            "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
-            "How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
-            "The Political Dysfunction Tax",
-            "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
           "path": "knowledge/appendix/parameters-and-calculations-wishocracy.qmd",
           "url": "https://wishocracy.warondisease.org/appendix/parameters-and-calculations-wishocracy.html",
           "title": "Methodology, Parameters, and Calculations",
@@ -5535,7 +5259,7 @@
           "lastmod": "2026-01-27"
         }
       ],
-      "pageCount": 3
+      "pageCount": 2
     }
   ]
 }

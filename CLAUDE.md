@@ -2,276 +2,67 @@
 
 ## Project Overview
 
-This is a Quarto-based book project: "How to End War and Disease" - a guide to getting nations to sign a 1% treaty, redirecting military spending to pragmatic clinical trials.
+Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty redirecting military spending to clinical trials.
 
-**Key Navigation:**
+**Navigation:** `todo.md` (priorities), `OUTLINE.md` (structure), `index.qmd` (intro), `_book.yml` (config), `package.json` (scripts)
 
-- **`todo.md`**: Master task list and current priorities for book completion
-- **`OUTLINE.md`**: Complete book outline (comprehensive writing checklist)
-- **`index.qmd`**: Book introduction and overview (landing page)
-- **`_book.yml`**: Book configuration, chapter order, and output formats
-- **`package.json`**: Node.js dependencies and npm scripts
+**Run TypeScript with `tsx`**, not ts-node. Batch changes: `npx tsx scripts/review/apply-instruction-all-files.ts "instruction"`
 
-**Important:** Use `tsx` (not ts-node) to run TypeScript files. Example: `npx tsx scripts/review/review.ts`
+**Python on Windows:** All scripts need UTF-8 header: `sys.stdout.reconfigure(encoding='utf-8')`. Use ASCII only in print statements.
 
-### Applying Global Changes to All QMD Files
+## Code Standards
 
-For batch changes across all chapters (style fixes, term replacements, formatting updates):
+- **Never commit** unless explicitly requested, all changes reviewed, param names match `_variables.yml`
+- **No try/catch** unless absolutely necessary. Let errors crash loudly.
+- **No em-dashes.** Use parentheses, commas, periods, or semicolons.
+- **Links:** Always `.qmd` extensions (not `.html`). Target must be in `_quarto-manual.yml`.
+- **Decision quality:** Evaluate trade-offs, state confidence. Don't mirror; hold position when evidence supports it.
 
-```bash
-npx tsx scripts/review/apply-instruction-all-files.ts "Replace all instances of 'utilise' with 'use'"
-```
+## Citations (references.bib)
 
-Loops through all book QMD files, sends each to Gemini Pro, shows preview before processing.
+**Never add without verification:** WebSearch -> WebFetch -> extract quote -> add BibTeX with verified URL + `urldate`.
 
-### Python Scripts on Windows
+## Parameter System
 
-**CRITICAL:** Add UTF-8 encoding header to all Python scripts:
-```python
-#!/usr/bin/env python3
-import sys
-if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
-```
+**All numeric values use `dih_models/parameters.py` -> `_variables.yml` -> `{{< var name >}}`**
 
-Avoid Unicode characters in print statements. Use ASCII: `->`, `WARNING:`, `[OK]`.
+Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm run generate:everything`
 
-## Code Quality and Verification Standards
+**Naming:** `[SCOPE]_[METRIC]_[MODIFIERS]` - e.g., `TREATY_ROI_CONSERVATIVE`, not `CONSERVATIVE_ROI`
 
-### Commit Rules
+| Rule | Do | Don't |
+|------|----|-------|
+| Raw values | `Parameter(519_000_000, unit="USD")` | `Parameter(519, unit="millions USD")` |
+| Formatting | `{{< var param >}}` | `${{< var param >}}M` |
+| Calculated | Use formulas: `A * B` | Hardcode result: `Parameter(113_550_000_000)` |
+| Units | `"USD"`, `"percent"`, `"senators"`, `""` | `"count"`, `"millions USD"` |
+| Constants | `distribution="fixed"` | Monte Carlo on constitutional values |
+| LaTeX | `{{< var name_latex >}}` | Variables inside `$$` blocks |
 
-**NEVER commit unless:**
-1. User has **explicitly requested** a commit
-2. You have **reviewed EVERY CHANGE** for errors
-3. All parameter names match `_variables.yml` (lowercase format)
-4. Validation checks pass with no regressions
+**Auto-generated (don't hardcode):** `latex=` formulas, confidence intervals, `_latex` variables. **Do add:** `latex_symbol=r"W_{total}"`
 
-### Error Handling
-
-**NEVER add try/catch blocks** unless absolutely necessary. Let errors propagate and crash loudly.
-
-### Decision Quality
-
-Before recommending an approach, evaluate trade-offs and state your confidence level.
-When the user challenges your recommendation, distinguish between:
-- Valid new information (update your position)
-- Restating the same concern (hold your position and explain why)
-Do not mirror whatever was said last. Proportional confidence: strong evidence = strong position.
-
-### Citation Rules (references.bib)
-
-**NEVER add citations without verification:**
-
-1. **WebSearch first** - Find the actual source URL
-2. **WebFetch second** - Verify the URL contains the claimed information
-3. **Extract exact quote** - Copy relevant text into `abstract` field
-4. **Include URL** - Every entry needs `url = {...}` with verified link
-5. **Add urldate** - Record when you accessed it: `urldate = {2026-01-27}`
-
-| Step | Tool | Purpose |
-|------|------|---------|
-| 1 | WebSearch | Find authoritative source |
-| 2 | WebFetch | Verify content matches claim |
-| 3 | Edit | Add BibTeX with verified URL and quote |
-
-**Hookify blocks references.bib edits** until you confirm URL verification. Do NOT fabricate URLs or abstracts.
-
-## Parameter and Variable System
-
-**CRITICAL: Use the automated parameter/variable system for all numeric values.**
-
-Before hardcoding ANY value, check `_variables.yml` first: `grep "keyword" _variables.yml`
-
-### Workflow
-
-1. **Define** in `dih_models/parameters.py`:
-   ```python
-   FOUNDATION_FUNDING_REALISTIC = Parameter(
-       519_000_000, unit="USD",
-       source_ref="/knowledge/appendix/fundraising-strategy.qmd#...",
-       description="Nonprofit foundation funding in realistic scenario"
-   )
-   ```
-
-2. **Generate**: `.venv/Scripts/python.exe scripts/generate-everything-parameters-variables-calculations-references.py`
-
-3. **Use**: `{{< var foundation_funding_realistic >}}` -> renders as "$519M" with tooltip
-
-**Lookup**: `grep "PARAM_NAME" _analysis/parameter-summary.md`
-
-### Parameter Naming Rules
-
-**Names must be SELF-DOCUMENTING: `[SCOPE]_[METRIC]_[MODIFIERS]_[UNIT_TYPE]`**
-
-| Component | Examples |
-|-----------|----------|
-| SCOPE | DFDA, TREATY, GLOBAL, PERSONAL, VICTORY_BOND |
-| METRIC | ROI, COST, BENEFIT, DEATHS, DALYS |
-| MODIFIERS | scenario, timeframe, calculation method |
-| UNIT_TYPE | ANNUAL, PCT, RATIO (optional) |
-
-Good: `TREATY_COMPLETE_ROI_EXPECTED_95TH_PERCENTILE`, `DFDA_ROI_RD_ONLY`
-Bad: `PROBABILISTIC_ROI_EXPECTED_UPPER_BOUND` (ROI of what?), `TOTAL_COST` (of what?)
-
-**Rules:**
-
-| Rule | Correct | Wrong |
-|------|---------|-------|
-| Store raw values | `Parameter(519_000_000, unit="USD")` | `Parameter(519, unit="millions USD")` |
-| No scale in name | `REGULATORY_DELAY_DEATHS` | `REGULATORY_DELAY_DEATHS_MILLIONS` |
-| No manual formatting | `{{< var param >}}` | `${{< var param >}}M` |
-| Include scope prefix | `TREATY_ROI_CONSERVATIVE` | `CONSERVATIVE_ROI` |
-
-### When to Parameterize vs. Hardcode
+**source_type:** `"external"` (WHO, SIPRI), `"calculated"` (formulas), `"definition"` (assumptions)
 
 | Parameterize | Leave Hardcoded |
 |-------------|-----------------|
-| Values used in calculations (feeds other formulas) | One-off cited statistics with inline citations |
-| Values referenced in 2+ files | Historical facts (F-35 cost rose from $1.1T to $1.58T) |
-| Aggregate metrics in abstracts/summaries | Context comparisons used once (750 bases in 80 countries) |
-| Values that need Monte Carlo uncertainty | Subsystem breakdown details with their own citations |
+| Used in calculations or 2+ files | One-off cited statistics with inline citations |
+| Aggregate metrics, Monte Carlo values | Historical facts, one-time context comparisons |
 
-**Before creating a new parameter:** `grep "keyword" _variables.yml` to check for existing ones.
-Never create duplicates. Merge overlapping parameters into one canonical version.
-
-The formatter auto-scales: `unit="USD"` -> $519M, $1.02B; large numbers -> M/B/K; percentages -> "51%".
-
-### Unit Guidelines
-
-**Units must read naturally in prose.** The unit is appended as a suffix to the formatted value.
-
-| Type | Unit | Renders as | Notes |
-|------|------|------------|-------|
-| Currency | `unit="USD"` | "$519M" | Auto-scales with $ prefix |
-| Percentages | `unit="percent"` | "51%" | Auto-adds % suffix |
-| Ratios | `unit="ratio"` | "1.5x" | Dimensionless multipliers |
-| Time | `unit="years"` | "10 years" | Use plural form |
-| People (general) | `unit="people"` | "335M people" | For populations |
-| People (specific) | `unit="members"`, `unit="senators"` | "535 members", "67 senators" | Use descriptive nouns |
-| Dimensionless | `unit=""` | "42" | Empty string = no suffix |
-
-**Never use `unit="count"`** - it renders awkwardly ("535 count"). Instead:
-- Use a descriptive noun: `unit="members"`, `unit="senators"`, `unit="trials"`, `unit="drugs"`
-- Or use empty string if context is clear: `unit=""`
-
-### Constitutional Constants
-
-For values with zero uncertainty (constitutional requirements, mathematical constants):
-```python
-US_SENATORS_FOR_TREATY = Parameter(
-    67,
-    unit="senators",  # Reads naturally: "67 senators"
-    distribution="fixed",  # No Monte Carlo sampling - this is a constitutional constant
-    confidence="high",
-)
-```
-
-### Calculated Parameters
-
-**Parameters with `source_type="calculated"` MUST use formulas, not hardcoded values:**
-
-```python
-# Correct: formula-based
-PEACE_DIVIDEND_ANNUAL = Parameter(
-    GLOBAL_ANNUAL_WAR_TOTAL_COST * TREATY_REDUCTION_PCT,
-    source_type="calculated", unit="USD", formula="GLOBAL_WAR_COST x 1%"
-)
-
-# Wrong: hardcoded result breaks traceability
-PEACE_DIVIDEND_ANNUAL = Parameter(113_550_000_000, source_type="calculated", ...)
-```
-
-**source_type values:** `"external"` (WHO, SIPRI), `"calculated"` (formulas), `"definition"` (fixed assumptions)
-
-### Auto-Generated Fields (Do NOT Hardcode)
-
-| Field | Generator | Notes |
-|-------|-----------|-------|
-| `latex=` (formula) | `variables_yml_generator.py` | Never add to calculated Parameters |
-| Confidence intervals (P5-P95) | `variables_yml_generator.py` | Auto-embedded in variable value |
-| `_latex` variables | `variables_yml_generator.py` | Use instead of hardcoded `$$` blocks |
-
-**DO add:** `latex_symbol=r"W_{total}"` to Parameters (symbol for the variable)
-**Do NOT add:** `latex=r"W = A \times B"` to calculated Parameters (formula is auto-generated)
-
-### LaTeX Math Block Variables
-
-**CRITICAL: Quarto variables do NOT work inside `$$` blocks.**
-
-Use pre-built LaTeX variables instead: `{{< var peace_dividend_annual_societal_benefit_latex >}}`
-
-**Hardcoded value audits:**
-- Never replace values inside `$$` blocks - check for `_latex` suffixed variables instead
-- Replace entire LaTeX blocks with latex variables when available
-- Remove hyperlinks around variables - they have built-in source links
-
-Use `/latex-equation-audit` for systematic LaTeX equation additions.
-
-### Why This Matters
-
-- **Single source of truth**: Change once in parameters.py, updates everywhere
-- **Automatic tooltips**: Hover shows source, confidence, formula
-- **Academic rigor**: Auto-generates parameters-and-calculations.qmd appendix
-
-## Cross-Format Linking (HTML, PDF, EPUB)
-
-**CRITICAL: Always use `.qmd` extensions for internal links.**
-
-Quarto converts `.qmd` -> `.html` (web) or internal references (PDF/EPUB).
-
-Correct: `[Link](../path/to/file.qmd#section-id)`
-Wrong: `[Link](../path/to/file.html)` (breaks PDF/EPUB)
-
-Links only work if target is in `_quarto-manual.yml`. External URLs use full paths.
-
-## Content Standards
-
-**See `CONTRIBUTING.md` for complete writing guidelines.**
-
-**Do not use em-dashes (—).** Replace with parenthesis, comma and space (", "), period, or semicolon as appropriate. Prefer periods and shortened sentences where appropriate.
-
-Render and critically review output images whenever you modify figure-generating files.
-
-## Automation Architecture
-
-See `scripts/README.md` for complete documentation.
-
-### Quick Commands
+## Quick Commands
 
 | Task | Command |
 |------|---------|
-| View project structure | `python scripts/generate-outline.py` (regenerates `OUTLINE.md`) |
-| Find param usages | `npx tsx scripts/parameter-audit.ts PARAM_NAME` |
-| Find unused params | `npm run param:unused` |
-| Run review checks | `npm run review:run -- file.qmd --checks fact,link` |
-| Validate before render | `npm run validate:pre-render` |
 | Regenerate everything | `npm run generate:everything` |
-
-### AI Agent Startup
-
-1. **Read `todo.md`** for current priorities
-2. **Read `OUTLINE.md`** for complete project structure (all configs, chapters, orphans, paper citations)
-3. **Check `_analysis/parameter-summary.md`** for parameter reference
-
-### Hash Tracking System
-
-Files are tracked using content hashes to avoid reprocessing unchanged files. Hash fields are defined in `scripts/lib/constants.ts`.
-
-**Python integration:** Use `scripts/lib/hash_store.py` for Python scripts to read/write the same hash store.
-
-### Review Framework
-
-Single entry point for all checks:
-```bash
-npx tsx scripts/review/run-checks.ts knowledge/file.qmd --checks fact,link,structure
-npx tsx scripts/review/run-checks.ts --all --checks fact --limit 5
-```
+| Validate before render | `npm run validate:pre-render` |
+| Review checks | `npx tsx scripts/review/run-checks.ts file.qmd --checks fact,link,structure` |
+| Find param usages | `npx tsx scripts/parameter-audit.ts PARAM_NAME` |
+| Unused params | `npm run param:unused` |
+| Outline | `python scripts/generate-outline.py` |
 
 Available checks: `fact`, `link`, `figure`, `structure`, `param`, `latex`, `format`, `nonprofit`
 
-### Hooks
+## AI Agent Startup
 
-| Hook | Trigger | Purpose |
-|------|---------|---------|
-| `quick-validate.py` | PostToolUse | Validates QMD edits for broken variables/links |
-| `check-pending-work.py` | SessionStart | Shows pending tasks |
+1. Read `todo.md` for priorities
+2. Read `OUTLINE.md` for structure
+3. Check `_analysis/parameter-summary.md` for param reference

@@ -1,27 +1,7 @@
 {
   "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python .claude/hooks/quick-validate.py $TOOL_INPUT_file_path",
-            "timeout": 5000
-          },
-          {
-            "type": "command",
-            "command": "python .claude/hooks/auto-regen-variables.py $TOOL_INPUT_file_path",
-            "timeout": 65000
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": []
-      }
-    ],
+    "PostToolUse": [],
+    "UserPromptSubmit": [],
     "SessionStart": []
   }
 }
