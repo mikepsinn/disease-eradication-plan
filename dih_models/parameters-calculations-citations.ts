@@ -3822,7 +3822,7 @@ export const TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR: Parameter = {
 export const TYPE_II_ERROR_COST_RATIO: Parameter = {
   value: 3067.7541293180693,
   unit: "ratio",
-  displayName: "Ratio of Type Ii Error Cost to Type I Error Benefit",
+  displayName: "Ratio of Type II Error Cost to Type I Error Benefit",
   description: "Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
   sourceType: "calculated",
   confidence: "medium",

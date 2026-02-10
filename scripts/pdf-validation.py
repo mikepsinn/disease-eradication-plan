@@ -407,6 +407,23 @@ def write_ai_fix_log(
     lines.append(f"- **Critical:** {critical}")
     lines.append(f"- **Warnings:** {warnings}")
     lines.append("")
+    lines.append("## IMPORTANT: Before You Start")
+    lines.append("")
+    lines.append("**DO NOT edit `index.qmd` directly - it is auto-generated!**")
+    lines.append("")
+    if config_path:
+        lines.append(f"1. **First, review the Quarto config:** `{config_path}`")
+        lines.append("   - This config specifies the main QMD file used to generate this PDF")
+        lines.append("   - The main QMD file is copied to `index.qmd` during the build process")
+        lines.append("   - Any edits to `index.qmd` will be overwritten on the next build")
+        lines.append("")
+        lines.append("2. **Edit the source QMD file specified in the config, NOT `index.qmd`**")
+        lines.append("")
+    else:
+        lines.append("1. Find the `_quarto-*.yml` config file for this PDF")
+        lines.append("2. The config specifies the main QMD file that generates this PDF")
+        lines.append("3. Edit that source QMD file, NOT `index.qmd` (which is auto-generated)")
+        lines.append("")
     lines.append("---")
     lines.append("")
 

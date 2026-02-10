@@ -3151,7 +3151,7 @@ TYPE_II_ERROR_COST_RATIO = Parameter(
     DFDA_EFFICACY_LAG_ELIMINATION_DALYS / TYPE_I_ERROR_BENEFIT_DALYS,
     source_type="calculated",
     description="Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)",
-    display_name="Ratio of Type Ii Error Cost to Type I Error Benefit",
+    display_name="Ratio of Type II Error Cost to Type I Error Benefit",
     unit="ratio",
     formula="TYPE_II_COST ÷ TYPE_I_BENEFIT",
     confidence="medium",
