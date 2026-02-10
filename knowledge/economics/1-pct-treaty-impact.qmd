@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: Harnessing Greed to Eradicate Disease'
-description: "{{< var diseases_without_effective_treatment >}} diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending scales capacity {{< var dfda_trial_capacity_multiplier >}}, cutting the timeline to ~{{< var dfda_queue_clearance_years >}} and preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} deaths. At {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable."
+description: "{{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending scales capacity {{< var dfda_trial_capacity_multiplier >}}, cutting the timeline to ~{{< var dfda_queue_clearance_years >}} and preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. At {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable."
 abstract: |
   {{< var diseases_without_effective_treatment >}} have 0 FDA-approved treatments. At current trial
   capacity ({{< var new_disease_first_treatments_per_year >}}), exploring the therapeutic search
@@ -62,7 +62,7 @@ This document outlines a theoretical economic architecture. It is not an offer t
 
 ## Abstract
 
-**The bottleneck:** Approximately {{< var diseases_without_effective_treatment >}} diseases lack effective treatments. At current trial capacity (~{{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Effectively never.
+**The bottleneck:** Approximately {{< var diseases_without_effective_treatment >}} lack effective treatments. At current trial capacity (~{{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Effectively never.
 
 {{< var diseases_without_effective_treatment_latex >}}
 
@@ -433,7 +433,7 @@ Monte Carlo analysis confirms the 95% confidence interval for total economic val
 
 ### Treatment Timeline Acceleration
 
-Under the status quo, {{< var diseases_without_effective_treatment >}} diseases lack treatment. At {{< var new_disease_first_treatments_per_year >}} new treatments/year, the average disease waits {{< var status_quo_avg_years_to_first_treatment >}} for a treatment. With the framework's {{< var dfda_trial_capacity_multiplier >}} trial capacity increase, treatments arrive **{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier**.
+Under the status quo, {{< var diseases_without_effective_treatment >}} lack treatment. At {{< var new_disease_first_treatments_per_year >}} new treatments/year, the average disease waits {{< var status_quo_avg_years_to_first_treatment >}} for a treatment. With the framework's {{< var dfda_trial_capacity_multiplier >}} trial capacity increase, treatments arrive **{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier**.
 
 ![A comparison between the current 222-year average wait time for disease treatments and the accelerated timeline achieved through trial capacity increases and efficacy lag elimination.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-treatment-timeline-acceleration-bw-academic.jpg)
 
@@ -1053,7 +1053,7 @@ This section provides step-by-step derivations for all headline claims, enabling
 
 - {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} clinical trials initiated per year
 - {{< var current_active_trials >}} {{< var current_active_trials_cite >}} active trials at any time (3-5 year duration)
-- {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} people with chronic disease [@disease-prevalence-2-billion])
+- {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} with chronic disease [@disease-prevalence-2-billion])
 - {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate (studies never complete)
 
 The trial capacity multiplier determines how many more trials can be run with reallocated funding:
@@ -1339,7 +1339,7 @@ The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms 
 
 The fundamental problem isn't that effective treatments are hard to discover. It's that we're barely looking. [As documented in The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd):
 
-- **{{< var drug_disease_combinations_possible >}}** plausible drug-disease combinations exist ({{< var safe_compounds_count >}} safe compounds × {{< var trial_relevant_diseases_count >}} diseases)
+- **{{< var drug_disease_combinations_possible >}}** plausible drug-disease combinations exist ({{< var safe_compounds_count >}} safe compounds × {{< var trial_relevant_diseases_count >}})
 - **<1%** of these combinations have been tested
 - **Only {{< var human_interactome_targeted_pct >}}** of the human interactome has ever been targeted by drugs
 - **{{< var drug_repurposing_success_rate >}}** of approved drugs gain new indications, proving undiscovered uses exist
@@ -1354,7 +1354,7 @@ Effective treatments likely already exist among tested-safe compounds. We just h
 
 Under the status quo:
 
-- **{{< var diseases_without_effective_treatment >}} diseases** currently lack effective treatment
+- **{{< var diseases_without_effective_treatment >}}** currently lack effective treatment
 - **{{< var new_disease_first_treatments_per_year >}} diseases/year** receive their first effective treatment
 - At this exploration rate, systematically searching the remaining 99%+ of therapeutic space would take **~{{< var status_quo_queue_clearance_years >}}**
 - **{{< var status_quo_avg_years_to_first_treatment >}}** average wait for a randomly selected disease to receive its first treatment
@@ -2043,7 +2043,7 @@ The {{< var dfda_trial_capacity_multiplier >}} research acceleration multiplier 
 
 - {{< var current_trials_per_year >}} {{< var current_trials_per_year_cite >}} clinical trials initiated per year
 - {{< var current_active_trials >}} {{< var current_active_trials_cite >}} active trials at any time (3-5 year duration)
-- {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} people with chronic disease [@disease-prevalence-2-billion])
+- {{< var current_patient_participation_rate >}} patient participation ({{< var current_trial_slots_available >}} trial slots for {{< var current_disease_patients_global >}} with chronic disease [@disease-prevalence-2-billion])
 - {{< var current_trial_abandonment_rate >}} {{< var current_trial_abandonment_rate_cite >}} abandonment rate (studies never complete)
 
 **Pragmatic Trial System Performance** (based on 108+ embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis]):
@@ -2539,7 +2539,7 @@ The {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} estimate aggregates 
 
 **How the timeline shift is calculated:**
 
-1. **Discovery acceleration (~{{< var dfda_trial_capacity_treatment_acceleration_years >}} on average)**: With {{< var dfda_trial_capacity_multiplier >}} trial capacity, treatments are discovered ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier on average. This is based on therapeutic space exploration: {{< var diseases_without_effective_treatment >}} diseases lack treatment, with ~{{< var drug_disease_combinations_possible >}} drug-disease combinations untested. At current exploration rate (~15 diseases/year getting first treatments), systematically testing this space would take {{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, exploration completes in ~{{< var dfda_queue_clearance_years >}}. Average disease receives treatment halfway through exploration period, yielding ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} acceleration.
+1. **Discovery acceleration (~{{< var dfda_trial_capacity_treatment_acceleration_years >}} on average)**: With {{< var dfda_trial_capacity_multiplier >}} trial capacity, treatments are discovered ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier on average. This is based on therapeutic space exploration: {{< var diseases_without_effective_treatment >}} lack treatment, with ~{{< var drug_disease_combinations_possible >}} drug-disease combinations untested. At current exploration rate (~15 diseases/year getting first treatments), systematically testing this space would take {{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, exploration completes in ~{{< var dfda_queue_clearance_years >}}. Average disease receives treatment halfway through exploration period, yielding ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} acceleration.
 
 2. **Efficacy lag elimination (~{{< var efficacy_lag_years >}})**: Once a treatment is discovered, it reaches patients immediately instead of waiting ~{{< var efficacy_lag_years >}} for post-safety regulatory approval.
 

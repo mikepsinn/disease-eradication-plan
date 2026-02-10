@@ -215,7 +215,7 @@ These scenarios represent upper-bound costs to achieve democratic parity with in
 | Match defense industry 2:1 | Defense lobby + contributions × 2 | $360M/year |
 | Match ALL lobbying | Total lobbying × 1.5 | $6.6B/year |
 | Match all campaign spending | Federal elections × 1 | $10B/cycle |
-| Match {{< var us_senators_for_treaty >}} senators' career incentives | {{< var us_senators_for_treaty >}} {{< var politician_post_office_career_value >}} NPV | $670M one-time |
+| Match {{< var us_senators_for_treaty >}}' career incentives | {{< var us_senators_for_treaty >}} {{< var politician_post_office_career_value >}} NPV | $670M one-time |
 | Match full Congress career incentives | {{< var us_congress_member_count >}} {{< var politician_post_office_career_value >}} NPV | {{< var us_congress_full_advocacy_cost >}} one-time |
 | **Total US reform investment** | All components | **{{< var us_political_reform_investment_total >}}** |
 

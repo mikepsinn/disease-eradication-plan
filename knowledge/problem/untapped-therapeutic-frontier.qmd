@@ -53,12 +53,12 @@ That's it. That's your entire medicine cabinet after five millennia.
 
 ## The Math You're Ignoring
 
-Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}} diseases. This gives you the "Combinatorial Space," which is fancy talk for "stuff you could test tomorrow if you weren't busy filling out forms."
+Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}}. This gives you the "Combinatorial Space," which is fancy talk for "stuff you could test tomorrow if you weren't busy filling out forms."
 
 ![A visualization illustrating the scale of the combinatorial space, showing how the intersection of thousands of compounds and diseases results in millions of potential testing combinations.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-math-you-re-ignoring-bw-academic.jpg)
 
 
-**{{< var safe_compounds_count >}} compounds × {{< var trial_relevant_diseases_count >}} diseases = {{< var drug_disease_combinations_possible >}} plausible drug-condition combinations.**
+**{{< var safe_compounds_count >}} compounds × {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} plausible drug-condition combinations.**
 
 ### What You've Actually Tested
 

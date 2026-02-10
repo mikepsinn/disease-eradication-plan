@@ -765,7 +765,7 @@ It's like discovering your umbrella also cures malaria, cancer, and aging, costs
 
 **The Timeline Shift:**
 
-{{< var diseases_without_effective_treatment >}} diseases have zero treatments. At current pace ({{< var new_disease_first_treatments_per_year >}} first treatments/year), testing everything takes {{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then.
+{{< var diseases_without_effective_treatment >}} have zero treatments. At current pace ({{< var new_disease_first_treatments_per_year >}} first treatments/year), testing everything takes {{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then.
 
 Redirect {{< var treaty_reduction_pct >}} of military spending → trial capacity jumps {{< var dfda_trial_capacity_multiplier >}} → search space explored in {{< var dfda_queue_clearance_years >}} instead of centuries.
 

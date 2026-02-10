@@ -106,7 +106,7 @@ Meanwhile, {{< var global_disease_deaths_daily >}} people die every day from dis
 
 ## The Access Lottery
 
-{{< var current_disease_patients_global >}} people are living with chronic diseases [@global-burden-disease-chronic-conditions-2013] right now. That's cardiovascular disease, cancer, diabetes, COPD, mental illness, chronic pain.
+{{< var current_disease_patients_global >}} are living with chronic diseases [@global-burden-disease-chronic-conditions-2013] right now. That's cardiovascular disease, cancer, diabetes, COPD, mental illness, chronic pain.
 
 ![A scale comparison showing the massive population of 2.4 billion people living with chronic diseases versus the tiny sliver of 1.9 million people who gain access to drug trials.](/assets/images/clinical-trial-participants/clinical-trial-participants-section-the-access-lottery-bw-academic.jpg)
 
@@ -178,7 +178,7 @@ If you get cancer, your odds of getting into a clinical trial are about 5%. If y
 
 The system isn't designed to help sick people try treatments. It's designed to generate data clean enough to satisfy regulators. The fact that some people get treatment is a side effect.
 
-**Humans spend {{< var global_clinical_trials_spending_annual >}} a year to help {{< var current_patient_participation_rate >}} of the {{< var current_disease_patients_global >}} people suffering from chronic disease** (using IQVIA's {{< var current_trial_slots_available >}} drug trial participants).
+**Humans spend {{< var global_clinical_trials_spending_annual >}} a year to help {{< var current_patient_participation_rate >}} of the {{< var current_disease_patients_global >}} suffering from chronic disease** (using IQVIA's {{< var current_trial_slots_available >}} drug trial participants).
 
 Even counting all clinical research, it's just 0.2% (5M participants).
 
@@ -250,7 +250,7 @@ Or **~5 million** if you count all clinical research (observational, device, beh
 ![A scale comparison infographic showing the narrow funnel of clinical research participation, contrasting the 2.4 billion people with chronic diseases against the 5 million in clinical research and 1.9 million in drug trials.](/assets/images/clinical-trial-participants/clinical-trial-participants-section-the-bottom-line-bw-academic.jpg)
 
 
-**{{< var current_disease_patients_global >}} people are living with chronic disease.**
+**{{< var current_disease_patients_global >}} are living with chronic disease.**
 
 ### The ratio: 1 in 1,263 (drug trials) or 1 in 480 (all clinical research) among disease patients.
 

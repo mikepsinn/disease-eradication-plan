@@ -754,7 +754,7 @@ VSL-Equivalents = {{< var us_gov_waste_total >}} / {{< var dot_value_of_statisti
 
 QALY-Equivalents = {{< var us_gov_waste_total >}} / {{< var medical_qaly_threshold >}} = {{< var us_gov_waste_qaly_equivalents >}}
 
-**Interpretation:** The efficiency gap represents foregone welfare equivalent to {{< var us_gov_waste_qaly_equivalents >}} annually. This does not mean {{< var us_gov_waste_vsl_equivalents >}} people die from inefficiency. Rather, the misallocated resources *could have* purchased health improvements of that magnitude if deployed at cost-effectiveness thresholds used in medical decision-making.
+**Interpretation:** The efficiency gap represents foregone welfare equivalent to {{< var us_gov_waste_qaly_equivalents >}} annually. This does not mean {{< var us_gov_waste_vsl_equivalents >}} die from inefficiency. Rather, the misallocated resources *could have* purchased health improvements of that magnitude if deployed at cost-effectiveness thresholds used in medical decision-making.
 
 
 

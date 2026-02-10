@@ -365,7 +365,7 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 ### Years Lived with Disability - Treatment Beneficiaries {#treatment-morbidity}
 
-The YLD calculation above captures suffering *before death* for those who ultimately died from delayed treatments. However, a much larger population - the **{{< var chronic_disease_treated_patients_annual >}} people annually who receive chronic disease treatment** - also suffered during the {{< var efficacy_lag_years >}} delay before their treatments became available.
+The YLD calculation above captures suffering *before death* for those who ultimately died from delayed treatments. However, a much larger population - the **{{< var chronic_disease_treated_patients_annual >}} annually who receive chronic disease treatment** - also suffered during the {{< var efficacy_lag_years >}} delay before their treatments became available.
 
 ![A timeline visualizing the 8.2-year delay period experienced by 982 million people before receiving treatment, illustrating the accumulation of years lived with disability (YLD).](/assets/images/invisible-graveyard/invisible-graveyard-years-lived-with-disability-treatment-beneficiaries-treatment-morbidity-bw-academic.jpg)
 
@@ -556,7 +556,7 @@ If implemented today, the bifurcated model would:
 
 - **Eliminate the {{< var efficacy_lag_years >}}-year efficacy lag** for drugs with demonstrated safety
 - **Reduce trial costs by {{< var dfda_trial_cost_reduction_pct >}}** (from {{< var pharma_drug_development_cost_current >}} per drug)
-- **Accelerate treatments for {{< var diseases_without_effective_treatment >}} diseases** currently without effective therapy
+- **Accelerate treatments for {{< var diseases_without_effective_treatment >}}** currently without effective therapy
 
 See [1% treaty impact analysis](https://impact.warondisease.org) for full quantified cost-benefit analysis.
 
