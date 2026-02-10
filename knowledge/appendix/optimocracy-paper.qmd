@@ -1,13 +1,13 @@
 ---
-title: 'Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare'
-description: "Suboptimal public policy costs society trillions annually: {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while incentivizing politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making suboptimal policy politically expensive."
+title: 'Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth'
+description: "Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving democratic structures."
 abstract: |
-  Politicians allocate trillions annually. What gets you reelected is often not what benefits voters.
-  This misalignment costs {{< var us_gov_waste_total >}} in documented US waste alone.
-
-  Optimocracy: (1) Analyze historical data on policies across jurisdictions, (2) Calculate which predict
-  above-average median income and healthy life years, (3) Publish recommendations for every vote, (4) Track
-  politician alignment, (5) Fund accordingly via SuperPAC algorithmically funding the campaigns of the most humanity aligned policymakers.
+  Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different
+  policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply
+  causal inference to this historical policy data, (2) Identify which policies predict above-average median
+  income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician
+  alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via
+  SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive.
 aliases:
   - /optimocracy.html
 author:
@@ -53,11 +53,11 @@ image: /assets/og-images/knowledge/appendix/optimocracy-paper-og-retro-academic.
 
 Optimocracy is simple:
 
-1. **Analyze historical data**: Examine every policy and budget allocation across thousands of jurisdictions (municipal, state, federal, international) going back decades. For each, measure what happened to median real after-tax income and healthy life years.
+1. **Exploit cross-jurisdictional variation as natural experiments**: Thousands of jurisdictions have made different policy and budget choices over decades. When Kansas cuts education funding and Minnesota increases it, that's a natural experiment. Apply causal inference methods (synthetic control, difference-in-differences, regression discontinuity) to estimate what happened to median real after-tax income and healthy life years.
 
 ![A flowchart illustrating the Optimocracy cycle: from historical data analysis and outcome calculation to evidence-based recommendations, alignment tracking, and incentive-based funding.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg)
 
-2. **Calculate what works**: Which policies and spending levels actually predicted above-average outcomes? Not ideology. Data.
+2. **Identify which policies predict above-average outcomes**: Not ideology. Not theory. Which specific policy choices, across hundreds of jurisdictions and decades of data, causally predicted higher median income and more healthy life years?
 
 3. **Publish recommendations**: For every major vote, publish what the evidence suggests. "Based on historical data, funding early childhood education at $X correlates with Y% better outcomes."
 
@@ -67,11 +67,15 @@ Optimocracy is simple:
 
 **That's it.** Politicians still vote however they want. The algorithm just recommends and tracks. The SuperPAC makes ignoring good advice expensive.
 
+Optimocracy has two distinct components: an **analytical engine** (causal inference on cross-jurisdictional data to identify what works) and an **incentive mechanism** (SuperPAC funding to make politicians act on it). The analytical engine is useless without incentives to follow its recommendations. The incentive mechanism is useless without rigorous evidence to base recommendations on. Together, they close the loop between knowing what works and doing what works.
+
 ### Why This Works
 
 **Capture resistance:** Currently, lobbyists have thousands of capture points: committee earmarks, agency decisions, regulatory rulings. Each is relatively cheap to influence. Optimocracy consolidates these to a single target: the verification layer measuring health and wealth. Corrupting five independent data sources (Census Bureau, Federal Reserve, BLS, academic institutions, citizen surveys) requires coordination across institutions with different governance structures, funding sources, and methodologies. Corruption doesn't disappear; it just becomes prohibitively expensive.
 
 ![A comparison between the current fragmented system of thousands of lobbyist capture points and Optimocracy’s consolidated verification layer protected by multiple independent data sources.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-this-works-bw-academic.jpg)
+
+**Analytical validity:** Cross-jurisdictional variation provides the statistical power that single-jurisdiction studies lack. When 50 states adopt different minimum wages over 30 years, we don't need a randomized trial; we have thousands of natural experiments. Modern causal inference methods (synthetic control, difference-in-differences) can extract signal from this variation. The approach has already produced actionable findings in economics and public health; Optimocracy systematizes it across all policy domains simultaneously.
 
 **No government permission required:** Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough IABs to make ignoring recommendations unprofitable?" (tractable).
 
@@ -220,6 +224,8 @@ Previous attempts at technocratic governance (Soviet central planning, credit ra
 
 ![A comparison diagram illustrating how Optimocracy addresses historical technocratic failures through multi-source verification and median aggregation to generate policy recommendations.](/assets/images/optimocracy-paper/optimocracy-paper-section-theoretical-foundations-bw-academic.jpg)
 
+Critically, Optimocracy also avoids the Soviet knowledge problem because it does not plan from first principles. It learns from decentralized experiments that already happened. Thousands of jurisdictions have already tried different policies; Optimocracy uses causal inference to identify which choices led to better outcomes. This is empirical pattern recognition across natural experiments, not central planning.
+
 Health and wealth aren't contested values requiring democratic selection. They're what everyone already wants. The hard problem isn't "what should we optimize?" but "who measures it honestly?" That's an oracle design problem, addressed through multi-source verification.
 
 ### Precedents That Work
@@ -311,11 +317,13 @@ $$
 
 Where $M(\cdot)$ is the chosen metric, $\mathbf{x}$ is the allocation vector, and $B$ is the total budget.
 
-For simple metrics with known production functions, this optimization is straightforward. For complex metrics requiring causal inference, the execution layer may incorporate:
+The primary analytical engine uses **causal inference on cross-jurisdictional time-series data**: synthetic control methods, difference-in-differences, and regression discontinuity designs applied to decades of policy variation across thousands of jurisdictions. This is the core of Optimocracy: not theoretical modeling, but empirical identification of which real-world policy choices actually predicted better outcomes.
 
-1. **Randomized controlled trials**: Allocate experimental budgets to estimate causal effects
-2. **Prediction markets**: Aggregate distributed information about allocation effectiveness
-3. **Machine learning**: Learn allocation-outcome mappings from historical data
+Supplementary methods include:
+
+1. **Randomized controlled trials**: Allocate experimental budgets to estimate causal effects of novel interventions with no historical variation to learn from
+2. **Prediction markets**: Aggregate distributed information about allocation effectiveness for forward-looking decisions
+3. **Machine learning**: Identify complex nonlinear patterns in the cross-jurisdictional dataset that traditional econometric methods may miss
 
 The execution system publishes recommendations and tracks politician alignment for IAB rewards. Outcome measurement validates the system over time.
 
