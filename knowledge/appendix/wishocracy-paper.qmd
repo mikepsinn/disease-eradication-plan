@@ -99,8 +99,6 @@ To our knowledge, no widely deployed mechanism combines all four properties. Tra
 
 Wishocracy's methodological core derives from the Analytic Hierarchy Process (AHP), developed by Thomas Saaty at the Wharton School in the 1970s. AHP has been extensively validated across thousands of applications in business, engineering, healthcare, and government [@saaty-2008]. The method works because humans can reliably make pairwise comparisons even when direct multi-attribute rating fails.
 
-![A hierarchical diagram of the Analytic Hierarchy Process showing the decomposition from a primary goal to criteria and alternatives, paired with a workflow of the pairwise comparison and consistency check process.](/assets/images/wishocracy-paper/wishocracy-paper-section-the-analytic-hierarchy-process-bw-academic.jpg)
-
 AHP works by decomposing complex decisions into hierarchies of criteria and sub-criteria, then eliciting pairwise comparisons at each level. For n alternatives, this requires only n(n-1)/2 comparisons rather than the cognitively impossible simultaneous comparison of all n options. The pairwise comparison matrices are then synthesized using eigenvector methods to produce consistent priority rankings.
 
 Crucially, AHP includes consistency checks through the calculation of a Consistency Ratio (CR). When individual judgments violate transitivity (e.g., A \> B, B \> C, but C \> A), the method flags these inconsistencies for review. In Wishocracy's collective aggregation, individual inconsistencies cancel out through the law of large numbers, while systematic collective preferences emerge from the aggregate.
@@ -117,7 +115,7 @@ RAPPA's pairwise slider allocation captures preference intensity naturally. When
 
 ## **Collective Intelligence and the Wisdom of Crowds**
 
-Wishocracy's aggregation mechanism relies on the well-documented phenomenon of collective intelligence. @surowiecki-2004 synthesized research showing that diverse, independent groups consistently outperform individual experts under four conditions: diversity of opinion, independence of judgment, decentralization of information, and effective aggregation mechanisms.
+Wishocracy's aggregation mechanism relies on the well-documented phenomenon of collective intelligence. Surowiecki [-@surowiecki-2004] synthesized research showing that diverse, independent groups consistently outperform individual experts under four conditions: diversity of opinion, independence of judgment, decentralization of information, and effective aggregation mechanisms.
 
 ![A conceptual diagram illustrating Surowiecki’s four conditions for collective intelligence and a visualization of Page’s diversity prediction theorem showing how diversity reduces collective error.](/assets/images/wishocracy-paper/wishocracy-paper-section-collective-intelligence-and-the-wisdom-of-crowds-bw-academic.jpg)
 
@@ -162,8 +160,6 @@ The Wishocracy mechanism operates through the following process, which we term R
 ### Scenario: Federal Budget Preferences
 
 Imagine Citizen Alice opening the Wishocracy app to express her preferences on federal spending.
-
-![A diagram illustrating the multi-step process of pairwise budget comparisons, showing specific allocation ratios and the resulting transitive hierarchy used to calculate citizen alignment scores.](/assets/images/wishocracy-paper/wishocracy-paper-section-scenario-federal-budget-preferences-bw-academic.jpg)
 
 1.  **Comparison 1:** She is presented with a pair: **"Medical Research (NIH)" vs. "Military Weapons Systems"**.
 2.  **Decision:** Alice lost her mother to Alzheimer's and believes medical research is severely underfunded. She slides the allocator to give **85%** to Medical Research and **15%** to Military. This expresses strong intensity.
