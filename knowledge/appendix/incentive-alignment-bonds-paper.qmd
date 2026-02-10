@@ -503,7 +503,7 @@ where $S_0$ is baseline status and $\lambda > 0$ captures the marginal status ga
 
 {{< include ../figures/diagram-utility-function-post-iab.qmd >}}
 
-**The transformation does not change what politicians optimize; it changes what optimizing points at.** Same selfish utility maximization, radically different equilibrium outcome. This is the core mechanism design contribution: we align private incentives with public welfare not by appealing to altruism, but by redirecting self-interest. The diagrams above illustrate this transformation (compare @fig-utility-pre-iab with @fig-utility-post-iab).
+**The transformation does not change what politicians optimize; it changes what optimizing points at.** Same selfish utility maximization, radically different equilibrium outcome. This is the core mechanism design contribution: we align private incentives with public welfare not by appealing to altruism, but by redirecting self-interest. The diagrams above illustrate this transformation.
 
 ### Numerical Calibration and Parameter Ranges
 
@@ -779,7 +779,7 @@ The IAB mechanism transforms the incentive landscape. The concentrated costs (mi
 
 ### Calibration: Parameter Ranges for Incentive Compatibility
 
-To assess whether IABs can achieve incentive compatibility, we calibrate the model using empirical estimates from campaign finance and lobbying research. Table @tbl-calibration reports parameter ranges.
+To assess whether IABs can achieve incentive compatibility, we calibrate the model using empirical estimates from campaign finance and lobbying research. @tbl-calibration reports parameter ranges.
 
 | Parameter | Symbol | Empirical Range | Source |
 |:----------|:-------|:----------------|:-------|

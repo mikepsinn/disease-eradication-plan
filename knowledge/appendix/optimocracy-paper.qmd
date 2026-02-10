@@ -91,7 +91,7 @@ Rankings of government programs by cost-effectiveness already exist. The Copenha
 
 ![A conceptual diagram showing the disconnect between high-return evidence and government action, where political incentives such as reelection and campaign contributions act as a barrier to implementing cost-effective programs.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
 
-Yet government spending patterns remain largely unresponsive. @gilens2014 analyzed 1,779 policy decisions: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
+Yet government spending patterns remain largely unresponsive. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
 
 The problem is not information but incentives. Politicians know which programs produce value. They don't act because acting doesn't maximize reelection probability, campaign contributions, or post-office career prospects.
 
@@ -325,7 +325,7 @@ For simple metrics with known production functions, this optimization is straigh
 
 The execution system publishes recommendations and tracks politician alignment for IAB rewards. Outcome measurement validates the system over time.
 
-For a concrete worked example of how the optimization algorithm calculates allocations, see Appendix A: Optimization Algorithm.
+For a concrete worked example of how the optimization algorithm calculates allocations, see Appendix A: Technical Specification Sketch.
 
 ## Welfare Metrics
 

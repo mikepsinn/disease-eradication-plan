@@ -95,8 +95,6 @@ A dashboard showing spending gaps by category, with clear recommendations:
 
 ### What Budget Analysts See
 
-![A mockup of a budget analyst dashboard integrating OSL estimates, diminishing returns curves, peer spending comparisons, and evidence quality scores.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-what-budget-analysts-see-bw-academic.jpg)
-
 - **OSL estimates** with confidence intervals and methodology notes
 - **Cross-country spending data** showing spending-outcome relationships
 - **Diminishing returns curves** identifying optimal spending levels
@@ -365,6 +363,8 @@ $$
 
 *This ranks categories by expected welfare gain adjusted for estimation confidence.*
 
+**Note:** In the simplified implementation (Section 10.2), we normalize by setting $|W_i'(s_i^{current})| = 1$ for all categories, reducing the priority formula to $\text{Priority}_i = |\text{Gap}_i| \times \text{BIS}_i$. This assumes equal marginal welfare weights across categories as a first approximation. Future iterations could incorporate category-specific marginal welfare estimates.
+
 ### Welfare Bounds Under Model Uncertainty
 
 When the functional form of $W_i(\cdot)$ is uncertain, we can establish bounds on welfare gains.
@@ -600,7 +600,7 @@ $$
 \text{Priority} = |\text{Gap}| \times \text{BIS} = \$49.5B \times 0.90 = 44.6
 $$
 
-This exceeds vaccinations (25.7), basic research (31.5), and even military reallocation (222.5 in absolute terms, but negative direction).
+This exceeds vaccinations (25.7), basic research (31.5), and even military reallocation (195.5 in absolute terms, but negative direction).
 
 ## Cost-Effectiveness Threshold Analysis
 
