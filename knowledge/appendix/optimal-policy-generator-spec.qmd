@@ -124,7 +124,6 @@ The framework does not hide this tradeoff by claiming healthcare cost savings ar
 
 While OPG uses only two terminal metrics (income growth and healthy life years), evidence often measures **surrogate outcomes** (smoking rates, traffic deaths, crime rates). This section specifies how surrogate outcomes are translated to the terminal metrics.
 
-![A flowchart illustrating the transition from policy interventions to terminal metrics through proximate and intermediate outcomes, highlighting specific conversion factors and the compounding of uncertainty across the chain.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-outcome-translation-method-bw-academic.jpg)
 
 **The translation chain:**
 
@@ -168,9 +167,8 @@ Where CV is the coefficient of variation at each translation step. A three-step 
 
 ## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
 
-**Core insight**: Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists, scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
+Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists, scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
 
-![A conceptual visualization showing how diverse policy data from thousands of jurisdictions over centuries flows into a central system for systematic harvesting and analysis.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-evidence-base-centurie-bw-academic.jpg)
 
 ### Scale of Available Natural Experiments
 
@@ -242,37 +240,9 @@ A jurisdiction-specific dashboard showing which policies to enact, replace, repe
 - **Analysis method** used (synthetic control, DiD, RDD) with quality diagnostics
 - **Confounders controlled** and potential threats to validity
 - **Natural experiments identified** for validation opportunities
-- **Similar policies** via embedding-based similarity for evidence transfer
 - **Jurisdiction-specific adjustments** based on demographics, existing policies, and context
 
 ## Introduction
-
-### Why Generic Policy Scores Are Not Enough
-
-Previous approaches to evidence-based policy produce generic rankings:
-
-> "Tobacco taxes reduce smoking by 8.2 percentage points on average across 23 states..."
-
-![A comparative visualization showing the shift from a single generic national average to a localized dashboard of specific tax rates, health outcomes, and economic impacts for a specific jurisdiction.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-why-generic-policy-scores-are-not-enough-bw-academic.jpg)
-
-This is useful background but doesn't answer the policymaker's question: **"What should MY jurisdiction do?"**
-
-The Optimal Policy Generator transforms generic evidence into jurisdiction-specific recommendations:
-
-> **Recommendations for Texas**
->
-> Texas currently has a tobacco tax of $1.41/pack (below median of $1.91).
->
-> **Recommended action**: Increase tobacco tax by $1.00/pack
->
-> **Expected effect**:
->
-> - **Income**: +0.12 pp/year (reduced healthcare costs, fewer sick days)
-> - **Health**: +0.25 years (lower smoking rates → longer healthy life)
->
-> **Evidence grade**: A (based on 8 similar states, synthetic control)
->
-> **Blocking factors**: Political (anti-tax sentiment)
 
 ### Why Policy Ranking Fails Today
 
@@ -385,17 +355,6 @@ OPG flags potential interaction effects using the following heuristics:
 | Income tax cut | Sales tax increase | Substitutable | Offsetting fiscal effects |
 
 3. **Sensitivity analysis recommendation:** For high-priority recommendations, report: "How would this recommendation change if policies X and Y interact?" with bounds on combined effect.
-
-**Worked example (policy interaction):**
-
-Seat belt law + Speed limit reduction:
-
-- Seat belt alone: +0.15 years healthy life
-- Speed limit alone: +0.06 years healthy life
-- Additive prediction: +0.21 years
-- Observed when both present: +0.18 years (interaction term: -0.03 years)
-
-The interaction term is negative because both policies target the same outcome (crash fatalities), creating partial overlap in benefits. OPG reports both the additive prediction and interaction-adjusted estimate when interaction data is available.
 
 **Proposition 1 (Policy Gap Characterization)**: Under Assumption 1, the welfare-optimal policy set satisfies:
 $$
@@ -708,16 +667,6 @@ $$
 
 Where $N_{\text{studies}}$ is the count of supporting studies in the literature and $N_{\text{sig}} = 5$. Three supporting studies yield $S_{\text{coherence}} \approx 0.45$; ten yield $\approx 0.86$.
 
-#### Analogy to Similar Policies
-
-Evidence transfer from similar policies via embedding similarity:
-
-$$
-S_{\text{analogy}} = \max_{p' \neq p} \left[ \text{sim}(\mathbf{e}_p, \mathbf{e}_{p'}) \times \text{PIS}_{p'} \right]
-$$
-
-Where $\mathbf{e}_p$ is the policy embedding vector, $\text{sim}(\cdot)$ is cosine similarity, and $\text{PIS}_{p'}$ is the Policy Impact Score of similar policy $p'$. Strong evidence for a similar policy provides partial evidence for the focal policy.
-
 #### Specificity
 
 Whether the policy affects specific outcomes rather than everything:
@@ -815,7 +764,7 @@ Where:
 |----------|------------|---------|
 | **Missing policy** | Jurisdiction lacks a policy with strong positive evidence | Texas lacks primary seat belt enforcement |
 | **Harmful policy** | Jurisdiction has a policy with strong negative evidence | Jurisdiction has policy X shown to increase mortality |
-| **Suboptimal strength** | Continuous policy set below evidence-supported level | Tobacco tax at $1.41 vs. optimal ~$2.50 |
+| **Suboptimal strength** | Continuous policy set below evidence-supported level | Minimum wage below optimal level |
 | **Excessive strength** | Continuous policy set above evidence-supported level | Speed limit at 85 mph vs. optimal ~70 mph |
 
 ### Priority Scoring
@@ -872,8 +821,8 @@ Where:
 
 | Factor | $\delta_k$ Default | Quantification Method |
 |--------|-------------------|----------------------|
-| Demographics ($D$) | 0.15 | Mahalanobis distance on age/income/education |
-| Existing policies ($P$) | 0.10 | Policy bundle cosine distance |
+| Demographics ($D$) | 0.15 | Distance on age/income/education distributions |
+| Existing policies ($P$) | 0.10 | Policy overlap comparison |
 | Institutional ($I$) | 0.20 | World Bank Governance Indicators |
 | Cultural ($C$) | 0.10 | Hofstede dimensions + compliance indices |
 
@@ -886,19 +835,6 @@ $$
 $$
 
 This reflects increased uncertainty when extrapolating beyond the observed evidence distribution.
-
-**Worked example:**
-
-Texas tobacco tax recommendation:
-
-- Evidence base: Primarily northeast/west coast states (higher income, lower smoking rates)
-- Texas demographics: Lower median income, higher baseline smoking
-- Context adjustment: 0.85 (effect likely 15% smaller in Texas context)
-- CI widening: 1.075× (modest extrapolation)
-
-$$
-\text{Expected Effect}_{\text{Texas}} = 0.30 \times 0.85 = 0.25 \text{ healthy years}
-$$
 
 ## Recommendation Generation {#sec-recommendation-generation}
 
@@ -981,8 +917,6 @@ $$
 $$
 
 Where $z$ values are z-scores and the denominator normalizes to [0,1] (4 SD maximum difference).
-
-**Policy Similarity** ($\text{sim}_P$): Cosine similarity of policy embedding vectors, where each jurisdiction's policy bundle is embedded via weighted sum of individual policy embeddings.
 
 **Institutional Similarity** ($\text{sim}_I$):
 
@@ -1084,10 +1018,10 @@ While combined PIS is useful for ranking, recommendations should always display 
 
 | Policy | Income Effect | Health Effect | CCS | Grade |
 |--------|---------------|---------------|-----|-------|
-| Tobacco tax +$1 | **-0.02 pp/yr** | +0.25 years | 0.85 | A |
 | Primary seat belt | +0.02 pp/yr | +0.15 years | 0.81 | A |
+| Speed limit reduction | +0.01 pp/yr | +0.06 years | 0.73 | B |
 
-This prevents hiding tradeoffs. For example, the tobacco tax has a negative income effect (direct tax burden) but positive health effect (reduced smoking). The two-metric format makes this tradeoff explicit.
+The two-metric format makes tradeoffs explicit when they exist, preventing policies from hiding negative effects behind aggregated scores.
 :::
 
 ### Effect Estimate Standardization
@@ -1587,17 +1521,6 @@ This transforms OPG from a static evidence aggregator into a self-improving syst
 
 ## Future Directions
 
-### Methodological Improvements
-
-![A conceptual framework illustrating how advanced methodological components like causal discovery, text-as-data, and machine learning integrate into a comprehensive policy evaluation pipeline.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-methodological-improvements-bw-academic.jpg)
-
-1. **Causal discovery algorithms**: Implement PC algorithm, FCI, or GES for policy interaction structure learning
-2. **Propensity score integration**: Covariate adjustment for measured jurisdiction characteristics
-3. **Bayesian hierarchical models**: More principled cross-jurisdiction pooling with uncertainty quantification
-4. **Machine learning for heterogeneity**: Use BART, causal forests to identify which jurisdiction characteristics moderate effects [@athey2017]
-5. **Text-as-data**: Extract policy features from legislative text for similarity-based evidence transfer
-6. **Dynamic treatment regimes**: Model optimal policy sequences, not just single policies
-
 ### Validation Priorities
 
 ![A strategic framework illustrating the four validation priorities for OPG predictions, highlighting the hierarchy of methods from retrospective studies to expert reviews.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-validation-priorities-bw-academic.jpg)
@@ -1658,7 +1581,6 @@ This worked example demonstrates the complete OPG output for a specific jurisdic
 |--------|--------|---------------|---------------|----------------|-------|
 | Primary seat belt | Missing | +0.02 pp/yr | +0.15 years | **ENACT** | A |
 | Motorcycle helmet (all ages) | Partial | +0.01 pp/yr | +0.08 years | **ENACT** | A |
-| Tobacco tax ($1.41→$2.50) | Suboptimal | **-0.02 pp/yr** | +0.25 years | **REPLACE** | A |
 | Speed limit (85→70 mph) | Excessive | +0.01 pp/yr | +0.06 years | **REPLACE** | B |
 | DUI threshold (0.08 BAC) | Optimal | N/A | N/A | **MAINTAIN** | A |
 | Graduated licensing | Optimal | N/A | N/A | **MAINTAIN** | A |
@@ -1737,40 +1659,7 @@ From meta-analysis of 47 US states (2000-2020):
 ::: {.callout-warning}
 ## REPLACE (Policies to Modify)
 
-**3. Tobacco Tax: $1.41 → $2.50/pack**
-
-| Metric | Expected Effect | 95% CI |
-|--------|-----------------|--------|
-| **Income** | **-0.02 pp/year** | [-0.04, +0.01] |
-| **Health** | **+0.25 years** | [+0.18, +0.32] |
-
-- **Current level**: $1.41/pack (illustrative; below median $1.91)
-- **Recommended level**: $2.50/pack (illustrative target)
-- **Evidence grade**: A
-- **Priority**: High
-- **Blocking factors**: Political (anti-tax sentiment)
-
-::: {.callout-note}
-### Tradeoff Demonstration
-
-This recommendation illustrates how the two-metric framework surfaces genuine tradeoffs:
-
-- **Income effect is negative**: The tax directly reduces disposable income for smokers. Productivity gains (fewer sick days) partially offset this, but the net income effect is small and negative.
-- **Health effect is strongly positive**: Reduced smoking leads to longer healthy life expectancy.
-- **Combined welfare is positive**: At equal weighting (α=0.5), the health gain outweighs the income cost.
-
-![A two-axis tradeoff visualization plotting income impact against health gains, illustrating the optimal policy point between the extremes of infinite and zero tobacco taxes.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-tradeoff-demonstration-bw-academic.jpg)
-
-This demonstrates why the two-metric framework prevents corner solutions:
-
-- An **infinite tobacco tax** would maximize health but devastate income → not optimal
-- A **zero tobacco tax** would preserve income but harm health → not optimal
-- The **evidence-supported level** balances both dimensions
-
-The recommendation shows where evidence places the optimum, while making the tradeoff explicit for democratic deliberation. Jurisdictions that weight income more heavily may choose a lower tax; those prioritizing health may choose higher.
-:::
-
-**4. Maximum Speed Limit: 85 mph → 70 mph**
+**3. Maximum Speed Limit: 85 mph → 70 mph**
 
 | Metric | Expected Effect | 95% CI |
 |--------|-----------------|--------|
@@ -1819,12 +1708,11 @@ The recommendation shows where evidence places the optimum, while making the tra
 |------|----------------|---------------|---------------|-------|
 | **ENACT** | Primary seat belt | +0.02 pp/yr | +0.15 years | A |
 | **ENACT** | Universal helmet | +0.01 pp/yr | +0.08 years | A |
-| **REPLACE** | Tobacco tax: $1.41→$2.50 | **-0.02 pp/yr** | +0.25 years | A |
 | **REPLACE** | Speed limit: 85→70 mph | +0.01 pp/yr | +0.06 years | B |
 | **MAINTAIN** | DUI threshold, GDL | N/A | N/A | A |
-| | **Total from changes** | **+0.02 pp/yr** | **+0.54 years** | |
+| | **Total from changes** | **+0.04 pp/yr** | **+0.29 years** | |
 
-**Note**: The tobacco tax shows a negative income effect but positive health effect, demonstrating the two-metric framework's ability to surface genuine tradeoffs. MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas; no harmful policies identified with strong evidence.
+**Note**: MAINTAIN items confirm evidence alignment and require no action. REPEAL section empty for Texas; no harmful policies identified with strong evidence.
 
 ### Interpretation
 
@@ -1832,14 +1720,12 @@ This example demonstrates how OPG transforms generic evidence into actionable, j
 
 If Texas adopted all recommendations, expected effects are:
 
-- **+0.02 pp/year** net change to median income growth (modest positive after tradeoffs)
-- **+0.54 years** added to median healthy life expectancy
+- **+0.04 pp/year** increase to median income growth
+- **+0.29 years** added to median healthy life expectancy
 
-**Critical observation**: The total income effect (+0.02 pp/yr) is much smaller than the total health effect (+0.54 years in relative terms) because the tobacco tax creates a genuine tradeoff. This is a feature, not a bug: it surfaces real policy tensions rather than hiding them behind combined scores.
+![A comparison chart showing the impacts of policy recommendations on income growth versus healthy life expectancy.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-interpretation-bw-academic.jpg)
 
-![A comparison chart showing the disparate impacts of policy recommendations on income growth versus healthy life expectancy, highlighting the tradeoff between economic and health outcomes.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-interpretation-bw-academic.jpg)
-
-The two-metric format makes tradeoffs explicit and enables direct interpretation without complex conversion factors. Policymakers can see that the tobacco tax recommendation prioritizes health over income, and adjust their weighting (α) accordingly if they disagree with equal weighting.
+The two-metric format enables direct interpretation without complex conversion factors. When genuine tradeoffs exist (health gains with income costs, or vice versa), both effects are reported explicitly rather than hidden behind aggregated scores.
 
 ## Appendix B: OPG Analysis Workflow {.appendix}
 
@@ -1853,10 +1739,9 @@ The two-metric format makes tradeoffs explicit and enables direct interpretation
 Phase 1: DATA COLLECTION
 ─────────────────────────
 1. Policy database ingestion
-   ├── Parse legislative text (LLM extraction)
+   ├── Parse legislative text
    ├── Record implementation dates by jurisdiction
-   ├── Classify policy type and category
-   └── Compute policy embeddings for similarity
+   └── Classify policy type and category
 
 2. Jurisdiction policy inventory
    ├── Pull current policy status for each jurisdiction

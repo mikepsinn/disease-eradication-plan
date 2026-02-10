@@ -59,7 +59,7 @@
 
 [![The Political Dysfunction Tax](assets/og/political-dysfunction-tax-og-1200x630.jpg)](https://political-dysfunction-tax.warondisease.org)
 
-> Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.
+> Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 31-53% efficiency score and $97 trillion in annual opportunity costs.
 
 
 ### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
