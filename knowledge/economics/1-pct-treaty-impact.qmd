@@ -249,7 +249,6 @@ Humanity's budget priorities, explained simply:
 
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding ~7-fold.
 
-![Comparison of traditional versus pragmatic clinical trial costs and their impact on the speed of medical discovery, illustrating the 'bottleneck' created by high per-patient expenses.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-current-resource-allocation-bw-academic.jpg)
 
 The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}}. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually helps people.
 
@@ -1189,7 +1188,7 @@ The complete ROI includes the full timeline shift health benefits:
 
 **QALY Valuation Justification ({{< var standard_economic_qaly_value_usd >}})**: This uses standard US economic valuations. WHO recommends {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} per QALY for cost-effectiveness thresholds in high-income countries. The {{< var standard_economic_qaly_value_usd >}} value reflects revealed preferences from regulatory decisions (EPA, FDA), wage-risk tradeoffs, and health insurance willingness-to-pay studies. International analyses often use lower thresholds ($50-100K), which would reduce the ROI proportionally but not change the cost-saving classification.
 
-![A conceptual flow showing the transition from health benefits (timeline shift and QALYs) to economic value and the final ROI calculation.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-6-roi-derivation-complete-84-8m-1-95-ci-46-6m-1-144m-1-bw-academic.jpg)
+
 
 **Step 2: Calculate ROI**
 
@@ -2117,7 +2116,7 @@ A 1% treaty is **systemic and exponential**:
 
 GiveWell charities are the **best ways to spend money** saving lives. They work.
 
-![A diagram comparing the traditional philanthropic model of competing for limited donations against a model that redirects existing government military budgets toward high-impact, life-saving interventions.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-critical-difference-bw-academic.jpg)
+
 
 This intervention redirects existing government spending (military budgets) to more productive use, rather than competing for philanthropic capital.
 
@@ -2126,7 +2125,6 @@ This intervention redirects existing government spending (military budgets) to m
 - Best charity: Costs {{< var givewell_cost_per_life_min >}}-{{< var givewell_cost_per_life_max >}} per life saved (excellent)
 - This intervention: Redirects {{< var treaty_annual_funding >}}/year from military spending to pragmatic clinical trials.
 
-![A diagram illustrating the flow of funds from a 1% reduction in military spending into two primary benefits: the Peace Dividend and a pragmatic clinical trial infrastructure, highlighting its 11.5x greater impact compared to childhood vaccinations.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-translation-bw-academic.jpg)
 
 One requires ongoing fundraising from finite donors. The other redirects existing government expenditures to higher-ROI activities.
 
