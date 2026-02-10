@@ -961,12 +961,12 @@
 ## _quarto-cost-of-change.yml
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Type:** website
-**Files:** 1 | **Words:** 3,128
+**Files:** 1 | **Words:** 3,129
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 3,128 words | 415 lines
+**Stats:** 3,129 words | 415 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -1005,16 +1005,17 @@
 ## _quarto-dfda-impact.yml
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Type:** website
-**Files:** 1 | **Words:** 11,611
+**Files:** 1 | **Words:** 11,612
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** How to Prevent a Year of Death and Suffering for 84 Cents
 **Description:** At current testing rates, finding treatments for all {{< var diseases_without_effective_treatment >}} would take {{< var status_quo_queue_clearance_years >}}. Pragmatic trials integrated into healthca...
-**Stats:** 11,611 words | 1,236 lines
+**Stats:** 11,612 words | 1,236 lines
 
   - Executive Summary
   - Protocol, Not Platform
     - Key Findings
+    - The Discovery Capacity Model {#the-discovery-capacity-model}
   - Capabilities
     - Core Model: An Open Coordination Protocol
     - Key Capabilities
@@ -1341,12 +1342,12 @@
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
-**Files:** 1 | **Words:** 16,751
+**Files:** 1 | **Words:** 16,749
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Inc...
-**Stats:** 16,751 words | 1,517 lines
+**Stats:** 16,749 words | 1,517 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -3622,12 +3623,12 @@
 ## _quarto-opg.yml
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Type:** website
-**Files:** 1 | **Words:** 13,755
+**Files:** 1 | **Words:** 13,769
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,755 words | 2,011 lines
+**Stats:** 13,769 words | 2,011 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -3850,12 +3851,12 @@
 ## _quarto-political-dysfunction-tax.yml
 **Title:** The Political Dysfunction Tax
 **Type:** website
-**Files:** 1 | **Words:** 5,715
+**Files:** 1 | **Words:** 5,428
 
 #### knowledge/appendix/political-dysfunction-tax.qmd
 **Title:** The Political Dysfunction Tax
 **Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.
-**Stats:** 5,715 words | 447 lines
+**Stats:** 5,428 words | 426 lines
 
   - Introduction: The Mechanism Design of Civilizational Stagnation
   - Part 1: The Waste Ledger (The "Burned Capital")
@@ -4236,6 +4237,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 345,629
+- Total words: 345,356
 - Orphaned files: 26
 - Paper configs: 12
