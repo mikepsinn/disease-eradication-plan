@@ -697,19 +697,7 @@ def validate_existing_pdf(
         skip_url_check=skip_url_check,
         use_cache=use_cache,
         include_broken_external_errors=True,
-        line_filter=lambda display_line: (
-            display_line.startswith("[VALIDATION]")
-            or display_line.startswith("   Validating:")
-            or display_line.startswith("[LLM]")
-            or display_line.startswith("[LLM-DEBUG]")
-            or display_line.startswith("[INFO] LLM")
-            or display_line.startswith("[WARNING]")
-            or display_line.startswith("[ERROR]")
-            or display_line.startswith("ERROR:")
-            or display_line.startswith("FATAL:")
-            or display_line.startswith("[OK]")
-            or "validation failed" in display_line.lower()
-        ),
+        line_filter=None,  # Show all output (no filtering)
     )
     output = validation_result.output
     validation_duration = validation_result.duration_seconds

@@ -3623,12 +3623,12 @@
 ## _quarto-opg.yml
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Type:** website
-**Files:** 1 | **Words:** 13,745
+**Files:** 1 | **Words:** 13,698
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,745 words | 2,009 lines
+**Stats:** 13,698 words | 2,005 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -3851,12 +3851,12 @@
 ## _quarto-political-dysfunction-tax.yml
 **Title:** The Political Dysfunction Tax
 **Type:** website
-**Files:** 1 | **Words:** 5,046
+**Files:** 1 | **Words:** 5,031
 
 #### knowledge/appendix/political-dysfunction-tax.qmd
 **Title:** The Political Dysfunction Tax
 **Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.
-**Stats:** 5,046 words | 397 lines
+**Stats:** 5,031 words | 388 lines
 
   - Introduction: The Mechanism Design of Civilizational Stagnation
   - Part 1: The Waste Ledger (The "Burned Capital")
@@ -4236,6 +4236,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 344,714
+- Total words: 344,652
 - Orphaned files: 26
 - Paper configs: 12
