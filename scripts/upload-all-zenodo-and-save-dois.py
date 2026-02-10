@@ -4,12 +4,13 @@
 Batch Upload All Papers to Zenodo
 
 Rebuilds all PDFs and uploads them to Zenodo, saving DOIs to config files.
+By default, automatically publishes papers that pass validation.
 
 Usage:
-    python scripts/upload-all-zenodo-and-save-dois.py
+    python scripts/upload-all-zenodo-and-save-dois.py                # auto-publish after validation
+    python scripts/upload-all-zenodo-and-save-dois.py --draft        # create drafts only (manual publish)
     python scripts/upload-all-zenodo-and-save-dois.py economics iab  # specific papers only
     python scripts/upload-all-zenodo-and-save-dois.py --verbose      # show full build output
-    python scripts/upload-all-zenodo-and-save-dois.py               # smart: skips rebuild if PDF is fresh
     python scripts/upload-all-zenodo-and-save-dois.py --force-revalidate
 
 Environment:
@@ -1033,6 +1034,11 @@ def parse_args() -> argparse.Namespace:
             "Empty by default."
         ),
     )
+    parser.add_argument(
+        "--draft",
+        action="store_true",
+        help="Create drafts without publishing (default: auto-publish after validation)"
+    )
     return parser.parse_args()
 
 
@@ -1162,6 +1168,7 @@ def main():
         "LLM warning types: "
         + (", ".join(sorted(llm_warning_types)) if llm_warning_types else "(none)")
     )
+    print(f"Publication mode: {'create drafts only' if args.draft else 'auto-publish after validation'}")
     if args.continue_on_validation_error:
         print("Validation behavior: continue past validation failures (skip upload for failed papers)")
     else:
@@ -1455,10 +1462,11 @@ def main():
                 paper_key=paper_key,
                 quarto_config=info["config"],
                 pdf_path=pdf_path,
-                draft=True,
+                draft=args.draft,
                 verbose=True,
                 save_doi=True,
                 config_path=info["config_path"],
+                project_root=PROJECT_ROOT,
             )
 
             report_data['upload_results'][paper_key] = result

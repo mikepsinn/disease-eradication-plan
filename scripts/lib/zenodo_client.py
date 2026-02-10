@@ -78,36 +78,44 @@ class ZenodoClient:
         return response.json()
 
     def create_version_draft(self, record_id: int) -> dict:
-        """Create a new draft version from a published record using records API."""
+        """Create a new draft version from a published record using deposit API.
+
+        Args:
+            record_id: Latest published version ID (NOT concept ID)
+
+        Returns:
+            Dict with 'id', 'draft', and 'bucket' keys
+        """
+        # Use deposit API endpoint for creating new versions
         response = requests.post(
-            f"{self.base_url}/records/{record_id}/versions",
-            headers=self._records_api_headers(),
-            json={},
+            f"{self.base_url}/deposit/depositions/{record_id}/actions/newversion",
+            headers=self.headers,
             timeout=self.timeout,
         )
         response.raise_for_status()
         data = response.json()
 
-        new_id = data.get("id")
+        # Get latest_draft link from response
         latest_draft_url = data.get("links", {}).get("latest_draft")
-        if not new_id and latest_draft_url:
-            new_id = _extract_numeric_id(latest_draft_url)
-        if not new_id:
-            raise RuntimeError(f"Could not resolve new draft ID for record {record_id}")
+        if not latest_draft_url:
+            raise RuntimeError(f"No latest_draft link in response for record {record_id}")
 
-        draft_url = latest_draft_url or f"{self.base_url}/records/{new_id}/draft"
+        # Extract draft ID from URL
+        new_id = _extract_numeric_id(latest_draft_url)
+        if not new_id:
+            raise RuntimeError(f"Could not extract draft ID from URL: {latest_draft_url}")
+
+        # Fetch the draft details
         draft_response = requests.get(
-            draft_url,
+            latest_draft_url,
             headers=self.headers,
             timeout=self.timeout,
         )
         draft_response.raise_for_status()
         draft = draft_response.json()
 
-        bucket_url = draft.get("links", {}).get("bucket") or data.get("links", {}).get("bucket")
-        if not bucket_url:
-            deposit = self.get_deposit(int(new_id))
-            bucket_url = deposit.get("links", {}).get("bucket")
+        # Get bucket URL for file uploads
+        bucket_url = draft.get("links", {}).get("bucket")
         if not bucket_url:
             raise RuntimeError(f"Could not resolve bucket URL for draft {new_id}")
 
@@ -123,6 +131,23 @@ class ZenodoClient:
         )
         response.raise_for_status()
         return response.json()
+
+    def delete_deposit(self, deposit_id: int) -> bool:
+        """Delete an entire deposit (draft only, cannot delete published records).
+
+        Args:
+            deposit_id: ID of the deposit to delete
+
+        Returns:
+            True if deleted successfully, False otherwise
+        """
+        response = requests.delete(
+            f"{self.base_url}/deposit/depositions/{deposit_id}",
+            headers=self.headers,
+            timeout=self.timeout,
+        )
+        # 204 = successfully deleted, 404 = already gone (also acceptable)
+        return response.status_code in (204, 404)
 
     def delete_all_files(self, deposit_id: int) -> None:
         """Delete all files from a deposit (for updating versions)."""
@@ -195,6 +220,93 @@ class ZenodoClient:
         response.raise_for_status()
         return response.json()
 
+    def get_existing_draft_id(self, record_id: int) -> Optional[int]:
+        """Check if a draft version exists for a published record.
+
+        Args:
+            record_id: Published version record ID
+
+        Returns:
+            Draft deposit ID if exists, None otherwise
+        """
+        try:
+            record = self.get_record(record_id)
+            draft_url = record.get('links', {}).get('draft')
+            if not draft_url:
+                return None
+
+            # Try to fetch the draft
+            draft_response = requests.get(
+                draft_url,
+                headers=self.headers,
+                timeout=self.timeout,
+            )
+
+            # If draft exists, extract its ID from response
+            if draft_response.status_code == 200:
+                draft_data = draft_response.json()
+                # The draft ID is in the 'id' field
+                return draft_data.get('id')
+
+            return None
+        except Exception:
+            return None
+
+    def find_drafts_by_concept(self, concept_id: int) -> list[int]:
+        """Find all draft deposits for a given concept record ID.
+
+        Args:
+            concept_id: The concept record ID
+
+        Returns:
+            List of draft deposit IDs for this concept
+        """
+        draft_ids = []
+        page = 1
+
+        try:
+            while True:
+                response = requests.get(
+                    f"{self.base_url}/deposit/depositions",
+                    headers=self.headers,
+                    params={"page": page, "size": 100},
+                    timeout=self.timeout,
+                )
+
+                if response.status_code == 403:
+                    # Try without pagination params
+                    response = requests.get(
+                        f"{self.base_url}/deposit/depositions",
+                        headers=self.headers,
+                        timeout=self.timeout,
+                    )
+
+                response.raise_for_status()
+                deposits = response.json()
+
+                if not deposits:
+                    break
+
+                # Filter for drafts with matching concept ID
+                for deposit in deposits:
+                    is_draft = not deposit.get('submitted', False)
+                    deposit_concept_id = deposit.get('conceptrecid')
+
+                    # Convert both to int for comparison (API may return string or int)
+                    if is_draft and deposit_concept_id and int(deposit_concept_id) == int(concept_id):
+                        draft_ids.append(deposit.get('id'))
+
+                # If we got fewer than page size, we're done
+                if len(deposits) < 100:
+                    break
+
+                page += 1
+
+        except Exception:
+            pass
+
+        return draft_ids
+
     def verify_bucket_access(self, bucket_url: str) -> bool:
         """Check that draft bucket is reachable."""
         response = requests.get(
@@ -236,9 +348,100 @@ def _extract_numeric_id(value: str | None) -> Optional[int]:
     return int(match.group(1))
 
 
-def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
+def extract_abstract_from_qmd(paper_key: str, quarto_config: dict, project_root: Path) -> str:
+    """Extract abstract from the main QMD file and resolve Quarto variables.
+
+    Args:
+        paper_key: Paper identifier (e.g., 'wishocracy')
+        quarto_config: Quarto config dict
+        project_root: Project root path
+
+    Returns:
+        Resolved abstract text, or empty string if not found
+    """
+    # Get the main QMD file path from dih-render.index-source
+    dih_render = quarto_config.get("dih-render", {})
+    index_source = dih_render.get("index-source")
+
+    if not index_source:
+        return ""
+
+    qmd_path = project_root / index_source
+    if not qmd_path.exists():
+        return ""
+
+    try:
+        # Read the QMD file
+        with open(qmd_path, encoding="utf-8") as f:
+            content = f.read()
+
+        # Try to extract abstract from frontmatter first
+        import re
+        frontmatter_match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+        if frontmatter_match:
+            import yaml
+            try:
+                frontmatter = yaml.safe_load(frontmatter_match.group(1))
+                if isinstance(frontmatter, dict) and "abstract" in frontmatter:
+                    abstract = frontmatter["abstract"]
+                    if abstract:
+                        # Resolve variables and return
+                        return resolve_quarto_variables(str(abstract), project_root)
+            except:
+                pass
+
+        # Try to extract from content (look for ## Abstract or # Abstract heading)
+        abstract_match = re.search(r'^##?\s+Abstract\s*\n\n(.*?)(?=\n##?\s+|\Z)', content, re.MULTILINE | re.DOTALL)
+        if abstract_match:
+            abstract = abstract_match.group(1).strip()
+            # Clean up markdown formatting
+            abstract = re.sub(r'\{.*?\}', '', abstract)  # Remove attributes
+            abstract = re.sub(r'\n+', ' ', abstract)  # Collapse newlines
+            abstract = re.sub(r'\s+', ' ', abstract)  # Collapse whitespace
+            # Resolve variables and return
+            return resolve_quarto_variables(abstract, project_root)
+
+        return ""
+    except Exception:
+        return ""
+
+
+def resolve_quarto_variables(text: str, project_root: Path) -> str:
+    """Resolve Quarto variables like {{< var param_name >}} to actual values.
+
+    Args:
+        text: Text containing Quarto variables
+        project_root: Project root path
+
+    Returns:
+        Text with variables resolved
+    """
+    import yaml
+    from yaml_sync_utils import substitute_quarto_variables
+
+    # Load _variables.yml
+    variables_path = project_root / "_variables.yml"
+    if not variables_path.exists():
+        return text
+
+    try:
+        with open(variables_path, encoding="utf-8") as f:
+            variables = yaml.safe_load(f)
+    except:
+        return text
+
+    # Use existing substitute_quarto_variables function
+    return substitute_quarto_variables(text, variables)
+
+
+def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: Path = None) -> dict:
     """
     Convert Quarto metadata to Zenodo metadata format.
+
+    Args:
+        quarto_config: Quarto configuration dict
+        paper_key: Paper identifier
+        project_root: Project root path (optional, for extracting abstract from QMD)
 
     See: https://developers.zenodo.org/#representation
     """
@@ -252,6 +455,11 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
 
     # Description: prefer abstract (longer, more detailed) over description
     abstract = book.get("abstract") or website.get("abstract") or metadata.get("abstract", "")
+
+    # Fallback: extract abstract from main QMD file if not in config
+    if not abstract and project_root:
+        abstract = extract_abstract_from_qmd(paper_key, quarto_config, project_root)
+
     short_description = (
         book.get("description") or
         website.get("description") or
@@ -261,6 +469,17 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str) -> dict:
     # Clean up abstract (remove extra whitespace from YAML multiline)
     if abstract:
         abstract = " ".join(abstract.split())
+
+    # Resolve Quarto variables in short_description if project_root available
+    if short_description and project_root:
+        short_description = resolve_quarto_variables(short_description, project_root)
+
+    # Escape dollar signs to prevent LaTeX/markdown interpretation issues
+    # Do this AFTER resolving variables
+    if abstract:
+        abstract = abstract.replace("$", "\\$")
+    if short_description:
+        short_description = short_description.replace("$", "\\$")
 
     # Use abstract as description if available, otherwise use short description
     if abstract:
@@ -545,6 +764,7 @@ def upload_paper(
     verbose: bool = True,
     save_doi: bool = False,
     config_path: Optional[Path] = None,
+    project_root: Optional[Path] = None,
 ) -> Optional[dict]:
     """
     Upload a paper to Zenodo.
@@ -580,8 +800,16 @@ def upload_paper(
 
     log(f"[OK] PDF found: {pdf_path.name} ({pdf_path.stat().st_size / 1024:.1f} KB)")
 
-    # Extract metadata
-    metadata = extract_zenodo_metadata(quarto_config, paper_key)
+    # Extract metadata (with project_root for extracting abstracts from QMD)
+    if project_root is None:
+        # Try to infer from config_path if available
+        if config_path:
+            project_root = config_path.parent
+        else:
+            # Fallback: infer from pdf_path
+            project_root = pdf_path.parent.parent
+
+    metadata = extract_zenodo_metadata(quarto_config, paper_key, project_root=project_root)
 
     log(f"[OK] Title: {metadata['title']}")
     log(f"[OK] Authors: {', '.join(c['name'] for c in metadata['creators'])}")

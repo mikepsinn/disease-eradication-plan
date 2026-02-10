@@ -501,7 +501,7 @@ def run_audit(token, verbose=False, output_json=False, deposit_ids=None, write_t
         # Get local metadata for drift comparison
         local_metadata = None
         if paper_key and paper_key in papers:
-            local_metadata = extract_zenodo_metadata(papers[paper_key]["config"], paper_key)
+            local_metadata = extract_zenodo_metadata(papers[paper_key]["config"], paper_key, project_root=PROJECT_ROOT)
 
         audit = audit_record(record, local_metadata=local_metadata)
 

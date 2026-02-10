@@ -20,6 +20,7 @@ import io
 from pathlib import Path
 from datetime import datetime
 from difflib import unified_diff
+import requests
 
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -111,14 +112,23 @@ def sync_paper_metadata(
     paper_info: dict,
     dry_run: bool = True,
     verbose: bool = False,
+    keep_drafts: bool = False,
 ):
     """Sync metadata for a single paper.
+
+    Args:
+        client: Zenodo API client
+        paper_key: Paper identifier
+        paper_info: Paper config info
+        dry_run: Preview changes only
+        verbose: Show detailed output
+        keep_drafts: Skip papers with existing drafts instead of replacing them
 
     Returns:
         Dict with status and details
     """
     config = paper_info["config"]
-    local_metadata = extract_zenodo_metadata(config, paper_key)
+    local_metadata = extract_zenodo_metadata(config, paper_key, project_root=PROJECT_ROOT)
 
     # Get existing DOI
     existing_doi = local_metadata.pop("_existing_doi", None)
@@ -151,6 +161,19 @@ def sync_paper_metadata(
             'reason': f'Failed to fetch record: {e}',
         }
 
+    # Get the latest version ID (needed for creating new version)
+    # When querying a concept ID, Zenodo returns the latest published version
+    version_doi = zenodo_meta.get('doi', '')
+    latest_version_id = get_record_id_from_doi(version_doi)
+    if not latest_version_id:
+        return {
+            'status': 'error',
+            'reason': f'Could not extract latest version ID from DOI: {version_doi}',
+        }
+
+    if verbose:
+        print(f"[INFO] Latest version ID: {latest_version_id} (from DOI: {version_doi})")
+
     # Compare metadata
     differences = compare_metadata(local_metadata, zenodo_meta)
 
@@ -173,16 +196,48 @@ def sync_paper_metadata(
             'differences': differences,
         }
 
-    # Create new version draft
+    # Check for existing drafts for this concept and handle them
+    existing_draft_ids = client.find_drafts_by_concept(record_id)
+    if existing_draft_ids:
+        if keep_drafts:
+            print(f"[SKIP] {len(existing_draft_ids)} draft(s) already exist: {existing_draft_ids}")
+            print("       Remove --keep-drafts flag to replace existing drafts")
+            return {
+                'status': 'skip',
+                'reason': 'Draft already exists (remove --keep-drafts to replace)',
+            }
+        else:
+            # Default: automatically replace existing drafts
+            print(f"[INFO] Found {len(existing_draft_ids)} existing draft(s), deleting...")
+            for draft_id in existing_draft_ids:
+                if client.delete_deposit(draft_id):
+                    print(f"[OK] Deleted existing draft {draft_id}")
+                else:
+                    print(f"[WARN] Could not delete draft {draft_id}")
+                    return {
+                        'status': 'error',
+                        'reason': f'Failed to delete existing draft {draft_id}',
+                    }
+
+    # Create new version draft using latest version ID
     print("\n[UPDATE] Creating new version draft...")
     try:
-        version_info = client.create_version_draft(record_id)
+        version_info = client.create_version_draft(latest_version_id)
         draft_id = version_info["id"]
         print(f"[OK] Created draft: {draft_id}")
-    except Exception as e:
+    except requests.HTTPError as e:
+        error_msg = f'Failed to create version draft: {e} (status: {e.response.status_code if e.response else "unknown"})'
+        print(f"[ERROR] {error_msg}")
         return {
             'status': 'error',
-            'reason': f'Failed to create version draft: {e}',
+            'reason': error_msg,
+        }
+    except Exception as e:
+        error_msg = f'Failed to create version draft: {e}'
+        print(f"[ERROR] {error_msg}")
+        return {
+            'status': 'error',
+            'reason': error_msg,
         }
 
     # Update metadata
@@ -228,6 +283,11 @@ def main():
         action="store_true",
         help="Show detailed output"
     )
+    parser.add_argument(
+        "--keep-drafts",
+        action="store_true",
+        help="Skip papers with existing drafts instead of replacing them"
+    )
     args = parser.parse_args()
 
     token = get_zenodo_token()
@@ -264,6 +324,7 @@ def main():
             paper_info=paper_info,
             dry_run=args.dry_run,
             verbose=args.verbose,
+            keep_drafts=args.keep_drafts,
         )
         results[paper_key] = result
 

@@ -62,15 +62,26 @@ python scripts/audit-zenodo.py --write-todos
 **Concept DOI Handling:**
 - ✅ Reads concept DOI from `metadata.doi`
 - ✅ Fetches existing record by concept ID
+- ✅ Automatically detects and deletes existing drafts (default behavior)
 - ✅ Creates new version draft with updated metadata
 - ✅ Preserves concept DOI relationship
 
+**Abstract Extraction:**
+- ✅ Extracts abstract from QMD file frontmatter if not in config
+- ✅ Resolves Quarto variables (`{{< var name >}}`) in abstracts and descriptions
+- ✅ Escapes dollar signs (`$` → `\$`) to prevent LaTeX interpretation
+- ✅ Formats description as: `<p><strong>Abstract:</strong> ...</p><p><strong>Summary:</strong> ...</p>`
+
 **Usage:**
 ```bash
-python scripts/sync-zenodo-metadata.py --dry-run
-python scripts/sync-zenodo-metadata.py
-python scripts/sync-zenodo-metadata.py --paper economics
+python scripts/sync-zenodo-metadata.py --dry-run              # Preview changes
+python scripts/sync-zenodo-metadata.py                        # Sync all papers (auto-replaces drafts)
+python scripts/sync-zenodo-metadata.py --paper wishocracy     # Sync specific paper
+python scripts/sync-zenodo-metadata.py --keep-drafts          # Skip papers with existing drafts
+python scripts/sync-zenodo-metadata.py --paper wishocracy --verbose
 ```
+
+**Note:** Draft replacement is now the default. Existing drafts are automatically deleted and recreated with updated metadata. Use `--keep-drafts` to preserve existing drafts (will skip those papers instead).
 
 ### Utility Scripts
 
