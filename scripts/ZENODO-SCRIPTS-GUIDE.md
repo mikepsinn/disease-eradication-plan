@@ -20,25 +20,118 @@ metadata:
 - `zenodo_version_doi` tracks the latest published version (auto-updated by upload script)
 - Block comments are preserved by YAML tools (unlike inline comments)
 
+## Metadata Fields
+
+### Automatically Populated Fields
+
+All Zenodo uploads now include comprehensive metadata automatically extracted from your configs and source files:
+
+| Field | Source | Description |
+|-------|--------|-------------|
+| **title** | `metadata.title` | Paper title |
+| **description** | Abstract from QMD frontmatter or config | Full abstract with resolved variables, dollar sign escaping |
+| **creators** | `author` field | Authors with affiliations and ORCIDs |
+| **keywords** | `metadata.keywords` | Subject keywords (max 10) |
+| **license** | `metadata.license` | License identifier (e.g., `cc-by-nc-4.0`) |
+| **rights** | Auto-generated from license + author | Copyright statement: "© 2026 Author Name. Licensed under License" |
+| **references** | `references.bib` | Only citations actually used in paper (with DOIs when available) |
+| **publisher** | `metadata.zenodo.publisher` or `metadata.publisher` | Publishing organization |
+| **publication_date** | Auto-generated | Current date |
+| **version** | `metadata.version` | Version string |
+| **related_identifiers** | `book.site-url` or `website.site-url` | Link to live website |
+| **communities** | Auto-added | `decentralized-fda` community |
+
+### Optional Fields (Add to Config)
+
+**Grants/Funding Information:**
+```yaml
+metadata:
+  grants:
+    - title: "Open Science Grant"
+      code: "OSG-2024-12345"
+      funder: "National Science Foundation"
+    - title: "Research Fellowship"
+      code: "RF-2025-67890"
+      funder: "Research Foundation"
+```
+
+**Alternate Identifiers (arXiv, SSRN, etc.):**
+```yaml
+metadata:
+  alternate_ids:
+    - scheme: "arxiv"
+      identifier: "2401.12345"
+    - scheme: "ssrn"
+      identifier: "4567890"
+    - scheme: "handle"
+      identifier: "1234/5678"
+```
+
+### Reference Extraction Details
+
+The system automatically:
+1. **Scans all QMD files** for citation patterns (`@cite-key`)
+2. **Parses `references.bib`** to extract full citation information
+3. **Includes only cited references** (not entire bibliography)
+4. **Formats with DOIs/URLs** when available in .bib entries
+5. **Creates Zenodo reference objects** with proper relation metadata
+
+Example extracted reference:
+```json
+{
+  "raw_reference": "Smith, J. (2020). Paper Title. Journal Name, 10(2), 123-145.",
+  "identifier": "10.1234/journal.2020.12345",
+  "scheme": "doi",
+  "relation": "cites"
+}
+```
+
 ## Script Reference
 
 ### Core Upload/Management Scripts
 
 #### `upload-all-zenodo-and-save-dois.py`
-**Purpose:** Upload PDFs to Zenodo with metadata
+**Purpose:** Upload PDFs to Zenodo with complete metadata and auto-publish
 
-**Concept DOI Handling:**
+**What It Does:**
+- ✅ Full PDF validation with LLM checks (blocks on errors)
+- ✅ Extracts complete metadata (title, authors, abstract, references, copyright, grants)
 - ✅ Reads concept DOI from `metadata.doi`
 - ✅ Uses concept DOI to find existing record
 - ✅ Creates new VERSION draft (not duplicate record)
-- ✅ Saves concept DOI back to config with `save_doi_to_config()`
-- ✅ Also saves version DOI to `zenodo_version_doi` field
+- ✅ **Automatically publishes** after validation passes (default behavior)
+- ✅ Saves concept DOI and version DOI back to config
+
+**Metadata Extraction:**
+- Resolves Quarto variables in abstracts and descriptions
+- Escapes dollar signs to prevent LaTeX issues
+- Extracts 15+ references from `references.bib` (only cited ones)
+- Auto-generates copyright statement from license + author
+- Includes grants and alternate IDs if present in config
 
 **Usage:**
 ```bash
+# Auto-publish after validation (default)
 python scripts/upload-all-zenodo-and-save-dois.py
-python scripts/upload-all-zenodo-and-save-dois.py --paper wishocracy
+
+# Create drafts only (manual review required)
+python scripts/upload-all-zenodo-and-save-dois.py --draft
+
+# Specific papers
+python scripts/upload-all-zenodo-and-save-dois.py wishocracy economics
+
+# Force revalidation (ignore cached results)
+python scripts/upload-all-zenodo-and-save-dois.py --force-revalidate
+
+# Show full build/validation output
+python scripts/upload-all-zenodo-and-save-dois.py --verbose
 ```
+
+**Publication Modes:**
+- **Default (no flag)**: Auto-publish after validation ✅ Recommended
+- **`--draft` flag**: Create drafts only, manual publish required on Zenodo
+
+Since validation is rigorous (LLM checks entire PDF, blocks on errors), auto-publish is safe and convenient.
 
 #### `audit-zenodo.py`
 **Purpose:** Check for metadata drift and issues
@@ -126,6 +219,57 @@ python scripts/sync-zenodo-metadata.py --paper wishocracy --verbose
 5. **New draft linked**: Same concept DOI, new version DOI
 6. **Saves back**: Updates config with concept DOI + latest version DOI
 
+## Metadata Best Practices
+
+### Ensuring Complete Metadata
+
+**Before uploading to Zenodo:**
+
+1. ✅ **Check `references.bib`** - All citations have DOIs when available
+2. ✅ **Verify abstracts** - QMD frontmatter has complete abstract (fallback to config)
+3. ✅ **Add funding info** - Include grants if your work was funded
+4. ✅ **Add alternate IDs** - Include arXiv/SSRN IDs if paper is published elsewhere
+5. ✅ **Review authors** - Ensure all authors have ORCIDs and affiliations
+
+**Checking extracted metadata:**
+```bash
+# Test metadata extraction before upload
+python -c "
+import sys; sys.path.insert(0, 'scripts/lib')
+from pathlib import Path
+from zenodo_client import extract_zenodo_metadata
+import yaml
+
+config = yaml.safe_load(open('_quarto-yourpaper.yml'))
+meta = extract_zenodo_metadata(config, 'yourpaper', Path('.'))
+
+print(f'References: {len(meta.get(\"references\", []))}')
+print(f'Rights: {meta.get(\"rights\")}')
+print(f'Grants: {len(meta.get(\"grants\", []))}')
+"
+```
+
+### Updating Existing Records
+
+When you update metadata in configs (add grants, fix author info, etc.), use sync script to update Zenodo:
+
+```bash
+# Preview changes
+python scripts/sync-zenodo-metadata.py --dry-run --verbose
+
+# Apply updates (auto-deletes existing drafts)
+python scripts/sync-zenodo-metadata.py
+
+# Update specific paper
+python scripts/sync-zenodo-metadata.py --paper wishocracy
+```
+
+The sync script will:
+- Extract updated metadata (including new references, grants, copyright)
+- Delete any existing drafts automatically
+- Create new draft with complete metadata
+- Show you the diff of what changed
+
 ## Workflow
 
 ### Publishing a New Version
@@ -151,6 +295,68 @@ python scripts/sync-zenodo-metadata.py --paper wishocracy --verbose
    python scripts/sync-zenodo-metadata.py
    ```
 3. Review and publish drafts on Zenodo
+
+## Common Issues
+
+### Reference Extraction
+
+**Problem:** No references extracted (count = 0)
+
+**Causes & Fixes:**
+- ✅ Check `references.bib` exists and is valid BibTeX format
+- ✅ Ensure citations use correct format: `@cite-key` in QMD files
+- ✅ Verify cite keys match exactly (case-sensitive)
+- ✅ Install `bibtexparser`: `pip install bibtexparser`
+
+**Debug:**
+```bash
+# Check what's being extracted
+python -c "
+import sys; sys.path.insert(0, 'scripts/lib')
+from pathlib import Path
+from zenodo_client import extract_cited_references
+import yaml
+
+config = yaml.safe_load(open('_quarto-yourpaper.yml'))
+refs = extract_cited_references('yourpaper', config, Path('.'))
+print(f'Found {len(refs)} references')
+for ref in refs[:3]:
+    print(f'  - {ref[\"raw_reference\"][:60]}...')
+"
+```
+
+### Copyright Statement
+
+**Problem:** Want to customize copyright statement
+
+**Solution:** The copyright is auto-generated from:
+- Author name (first creator)
+- Current year
+- License from config
+
+To customize, you can add a custom rights statement to your config:
+```yaml
+metadata:
+  zenodo:
+    rights: "Custom copyright statement here"
+```
+
+If `zenodo.rights` is present, it will override the auto-generated one.
+
+### Missing DOIs in References
+
+**Problem:** References extracted but DOIs missing
+
+**Solution:** Add DOIs to your `references.bib` entries:
+```bibtex
+@article{smith2020,
+  author = {Smith, John},
+  title = {Paper Title},
+  journal = {Journal Name},
+  year = {2020},
+  doi = {10.1234/journal.2020.12345}  # <-- Add this
+}
+```
 
 ## Troubleshooting
 

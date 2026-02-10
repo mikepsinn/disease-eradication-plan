@@ -56,9 +56,6 @@ image: /assets/og-images/knowledge/appendix/cost-of-change-analysis-og-retro-aca
 
 Policy analysts frequently encounter a distinctive form of objection: proposals that would generate large net benefits are dismissed as "politically impossible" due to opposition from concentrated interests. This objection is applied to carbon pricing [@nordhaus2013], agricultural subsidy reform [@orden2011], occupational licensing reform [@kleiner2006], military spending reallocation, and numerous other high-value policy changes.
 
-![A conceptual diagram contrasting the binary view of political feasibility as a fixed state with a variable model where feasibility is a cost determined by the strength of opposition and resources deployed.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-the-political-impossibility-objection-bw-academic.jpg)
-
-
 The objection typically takes an implicit form: "Politicians will never vote against [industry X]" or "The [Y] lobby is too powerful." These statements treat political feasibility as binary (either possible or impossible) rather than as a cost that varies with the resources devoted to achieving change.
 
 ### Political Change as an Investment
@@ -78,9 +75,6 @@ Where $C(p)$ is the cost of achieving policy $p$, $B(p)$ is the benefit if succe
 This paper makes three contributions:
 
 1. **Framework**: We develop a general model for estimating political reform investment costs, decomposing them into campaign finance, lobbying, and career value components.
-
-![A visual overview of the paper's three core contributions (framework, empirical estimates, and case studies) alongside a sequential flow of the document's roadmap.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-contribution-and-roadmap-bw-academic.jpg)
-
 
 2. **Empirical estimates**: We provide upper-bound estimates for US and global political systems, establishing that even maximum democratic engagement scenarios have quantifiable costs.
 
@@ -329,9 +323,6 @@ The expected value calculation favors political reform investment even under pes
 
 1. **Asymmetric payoffs**: Success unlocks trillions in better resource allocation; failure costs billions. The ratio justifies risk-taking.
 
-![A visualization comparing direct service funding with political reform investment, illustrating the concept of leverage and the asymmetric ratio between cost and potential payoff.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-why-this-is-rational-for-funders-bw-academic.jpg)
-
-
 2. **Neglectedness**: Political reform receives a tiny fraction of philanthropic spending relative to its expected value. The marginal dollar is extraordinarily high-impact.
 
 3. **Leverage**: Unlike direct intervention (where $1 buys $1 of service), political reform uses $1 to redirect $1,000+ of government spending.
@@ -381,9 +372,6 @@ These estimates use the same methodology: match opposition spending 2-3:1, accou
 ## Limitations
 
 **Legal constraints**: Our framework assumes legal channels only (campaign contributions, lobbying, independent expenditures, career opportunities). Direct payments constitute bribery. The multi-billion-dollar lobbying industry demonstrates legal channels produce real effects.
-
-![A conceptual overview of the four primary constraints (legal, financial, political, and organizational) that limit the scope and effectiveness of political influence strategies.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-limitations-bw-academic.jpg)
-
 
 **Counter-spending dynamics**: Affected interests may escalate spending in response. However, industries already spend near optimal levels and cannot exceed their total rents. See [Uncertainty Analysis](#cost-of-change-uncertainty-analysis) for quantified ranges.
 

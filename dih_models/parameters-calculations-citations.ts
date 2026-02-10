@@ -5740,7 +5740,7 @@ export const citations: Record<string, Citation> = {
         title: "Credit Suisse Global Wealth Report 2023",
         author: [
           {
-            literal: "Credit Suisse/UBS"
+            literal: "UBS"
           },
         ],
         issued: { 'date-parts': [[2023]] },
@@ -5967,7 +5967,8 @@ export const citations: Record<string, Citation> = {
         title: "Environmental cost of war (\\$100B annually)",
         author: [
           {
-            literal: "Brown Watson Costs of War"
+            family: "Costs of War Project",
+            given: "Brown University Watson Institute"
           },
         ],
         'container-title': "Brown Watson Costs of War: Environmental Cost",
@@ -6532,7 +6533,7 @@ export const citations: Record<string, Citation> = {
         title: "OECD Government Spending as Percentage of GDP",
         author: [
           {
-            literal: "Organisation for Economic Co-operation and Development"
+            literal: "OECD"
           },
         ],
         issued: { 'date-parts': [[2024]] },
@@ -6545,7 +6546,7 @@ export const citations: Record<string, Citation> = {
         title: "OECD Median Household Income Comparison",
         author: [
           {
-            literal: "Organisation for Economic Co-operation and Development"
+            literal: "OECD"
           },
         ],
         issued: { 'date-parts': [[2024]] },
