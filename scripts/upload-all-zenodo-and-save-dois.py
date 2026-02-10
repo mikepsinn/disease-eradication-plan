@@ -986,10 +986,10 @@ def parse_args() -> argparse.Namespace:
         description="Batch upload papers to Zenodo with validation",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
-  python scripts/upload-all-zenodo-and-save-dois.py
-  python scripts/upload-all-zenodo-and-save-dois.py economics iab
-  python scripts/upload-all-zenodo-and-save-dois.py --verbose
-  python scripts/upload-all-zenodo-and-save-dois.py economics
+  python scripts/upload-all-zenodo-and-save-dois.py                # auto-publish
+  python scripts/upload-all-zenodo-and-save-dois.py --draft        # create drafts only
+  python scripts/upload-all-zenodo-and-save-dois.py economics iab  # specific papers
+  python scripts/upload-all-zenodo-and-save-dois.py --verbose      # show full output
   python scripts/upload-all-zenodo-and-save-dois.py --force-revalidate""",
     )
     parser.add_argument(
