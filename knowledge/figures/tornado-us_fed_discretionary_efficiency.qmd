@@ -16,17 +16,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "US Waste (% Federal Spending)"
+display_name = "US Discretionary Efficiency"
 
 # Baseline and units
 
-baseline = 0.7201470588235294
+baseline = 0.4052941176470588
 
 # Tornado data from sensitivity analysis
 
-drivers = ['US_GOV_WASTE_HOUSING_ZONING', 'US_GOV_WASTE_REGULATORY_RED_TAPE', 'US_GOV_WASTE_HEALTHCARE_INEFFICIENCY', 'US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_TAX_COMPLIANCE', 'US_GOV_WASTE_TARIFFS', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
-impacts_low = [-0.05882352941176461, -0.04264705882352937, -0.02941176470588225, -0.016911764705882293, -0.014117647058823457, -0.010294117647058787, -0.004411764705882337, -0.003676470588235281, -0.004558823529411726, -0.002941176470588225]
-impacts_high = [0.08823529411764708, 0.061764705882352944, 0.044117647058823595, 0.01985294117647063, 0.015294117647058902, 0.013235294117647123, 0.008823529411764786, 0.006617647058823617, 0.005735294117647061, 0.004411764705882448]
+drivers = ['US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
+impacts_low = [0.0676470588235294, 0.01764705882352946, 0.014705882352941235, 0.018235294117647127, 0.01176470588235301]
+impacts_high = [-0.07941176470588229, -0.03529411764705881, -0.026470588235294135, -0.022941176470588243, -0.01764705882352935]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -95,7 +95,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-us_gov_waste_pct_fed_spending.png')
+output_path = get_figure_output_path('tornado-us_fed_discretionary_efficiency.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

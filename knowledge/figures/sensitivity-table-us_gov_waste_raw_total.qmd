@@ -4,15 +4,15 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| US Gov Waste Housing Zoning | 0.3288 | Moderate driver |
-| US Gov Waste Regulatory Red Tape | 0.2199 | Weak driver |
-| US Gov Waste Healthcare Inefficiency | 0.1634 | Weak driver |
-| US Gov Waste Military Overspend | 0.0829 | Minimal effect |
-| US Gov Waste Tax Compliance | 0.0581 | Minimal effect |
-| US Gov Waste Tariffs | 0.0543 | Minimal effect |
-| US Gov Waste Drug War | 0.0310 | Minimal effect |
-| US Gov Waste Agricultural Subsidies | 0.0252 | Minimal effect |
-| US Gov Waste Corporate Welfare | 0.0224 | Minimal effect |
-| US Gov Waste Fossil Fuel Subsidies | 0.0163 | Minimal effect |
+| US Gov Waste Housing Zoning | 0.3376 | Moderate driver |
+| US Gov Waste Regulatory Red Tape | 0.2172 | Weak driver |
+| US Gov Waste Healthcare Inefficiency | 0.1614 | Weak driver |
+| US Gov Waste Military Overspend | 0.0819 | Minimal effect |
+| US Gov Waste Tax Compliance | 0.0574 | Minimal effect |
+| US Gov Waste Tariffs | 0.0536 | Minimal effect |
+| US Gov Waste Drug War | 0.0306 | Minimal effect |
+| US Gov Waste Agricultural Subsidies | 0.0249 | Minimal effect |
+| US Gov Waste Corporate Welfare | 0.0221 | Minimal effect |
+| US Gov Waste Fossil Fuel Subsidies | 0.0161 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

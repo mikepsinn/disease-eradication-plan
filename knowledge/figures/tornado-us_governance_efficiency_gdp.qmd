@@ -16,17 +16,17 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "US Gov Waste (Raw Total)"
+display_name = "US Governance Efficiency (GDP)"
 
 # Baseline and units
 
-baseline = 4897000000000.0
+baseline = 0.8298471160528145
 
 # Tornado data from sensitivity analysis
 
 drivers = ['US_GOV_WASTE_HOUSING_ZONING', 'US_GOV_WASTE_REGULATORY_RED_TAPE', 'US_GOV_WASTE_HEALTHCARE_INEFFICIENCY', 'US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_TAX_COMPLIANCE', 'US_GOV_WASTE_TARIFFS', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
-impacts_low = [-900000000000.0, -290000000000.0, -200000000000.0, -115000000000.0, -96000000000.0, -70000000000.0, -30000000000.0, -25000000000.0, -31000000000.0, -20000000000.0]
-impacts_high = [600000000000.0, 420000000000.0, 300000000000.0, 135000000000.0, 104000000000.0, 90000000000.0, 60000000000.0, 45000000000.0, 39000000000.0, 30000000000.0]
+impacts_low = [0.03127171646977067, 0.010076441973592809, 0.006949270326615631, 0.003995830437804049, 0.0033356497567755827, 0.0024322446143154597, 0.0010423905489923557, 0.0008686587908269816, 0.0010771369006253861, 0.0006949270326614965]
+impacts_high = [-0.020847810979847115, -0.01459346768589298, -0.010423905489923557, -0.004690757470465656, -0.003613620569840159, -0.003127171646977067, -0.0020847810979847115, -0.001563585823488589, -0.0013551077136900735, -0.0010423905489923557]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -70,7 +70,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "USD"
+units_label = "percent"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -95,7 +95,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-us_gov_waste_raw_total.png')
+output_path = get_figure_output_path('tornado-us_governance_efficiency_gdp.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
