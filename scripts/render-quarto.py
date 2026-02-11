@@ -856,7 +856,8 @@ def render_quarto(
     preview: bool = False,
     port: Optional[int] = None,
     host: Optional[str] = None,
-    no_browser: bool = False
+    no_browser: bool = False,
+    skip_validation: bool = False
 ) -> int:
     """
     Render or preview Quarto configuration.
@@ -874,6 +875,7 @@ def render_quarto(
         port: Port for preview server (preview mode only)
         host: Host for preview server (preview mode only)
         no_browser: Do not open browser automatically (preview mode only)
+        skip_validation: Skip PDF validation steps (Python code check and LLM validation)
 
     Returns:
         Exit code (0 for success, non-zero for failure)
@@ -1073,19 +1075,22 @@ def render_quarto(
                 size_mb = pdf_file.stat().st_size / (1024 * 1024)
                 print(f"[*] PDF: {pdf_file} ({size_mb:.2f} MB)")
 
-                gh_group_start("VALIDATION: PDF PYTHON CODE CHECK")
-                found_issues, issues = validate_pdf_for_python_code(str(pdf_file))
-                if found_issues:
-                    print("[ERROR] PDF validation failed: Python code detected!", file=sys.stderr)
-                    for issue in issues[:5]:
-                        safe = issue.encode("ascii", errors="replace").decode("ascii")
-                        print(f"  {safe}", file=sys.stderr)
-                    if len(issues) > 5:
-                        print(f"  ... and {len(issues) - 5} more", file=sys.stderr)
-                    exit_code = 1
+                if skip_validation:
+                    print("[SKIP] PDF Python code check (--skip-validation)")
                 else:
-                    print("[OK] PDF validation passed")
-                gh_group_end()
+                    gh_group_start("VALIDATION: PDF PYTHON CODE CHECK")
+                    found_issues, issues = validate_pdf_for_python_code(str(pdf_file))
+                    if found_issues:
+                        print("[ERROR] PDF validation failed: Python code detected!", file=sys.stderr)
+                        for issue in issues[:5]:
+                            safe = issue.encode("ascii", errors="replace").decode("ascii")
+                            print(f"  {safe}", file=sys.stderr)
+                        if len(issues) > 5:
+                            print(f"  ... and {len(issues) - 5} more", file=sys.stderr)
+                        exit_code = 1
+                    else:
+                        print("[OK] PDF validation passed")
+                    gh_group_end()
 
             # Log EPUB files
             for epub_file in temp_output_dir.glob("*.epub"):
@@ -1110,15 +1115,18 @@ def render_quarto(
                     print(f"[OK] Copied PDF to: {dest_pdf_path.relative_to(project_root)}")
 
                     # Run comprehensive PDF validation (LLM if GEMINI key available)
-                    gh_group_start("VALIDATION: COMPREHENSIVE PDF CHECK")
-                    pdf_validation_exit = run_pdf_validation(
-                        str(dest_pdf_path),
-                        skip_url_check=True,  # URLs already checked in post-validation
-                    )
-                    if pdf_validation_exit != 0:
-                        print("[ERROR] Comprehensive PDF validation failed", file=sys.stderr)
-                        exit_code = pdf_validation_exit
-                    gh_group_end()
+                    if skip_validation:
+                        print("[SKIP] Comprehensive PDF validation (--skip-validation)")
+                    else:
+                        gh_group_start("VALIDATION: COMPREHENSIVE PDF CHECK")
+                        pdf_validation_exit = run_pdf_validation(
+                            str(dest_pdf_path),
+                            skip_url_check=True,  # URLs already checked in post-validation
+                        )
+                        if pdf_validation_exit != 0:
+                            print("[ERROR] Comprehensive PDF validation failed", file=sys.stderr)
+                            exit_code = pdf_validation_exit
+                        gh_group_end()
                 else:
                     print(f"[ERROR] Expected PDF not found: {expected_pdf}", file=sys.stderr)
                     print(f"        Expected at: {pdf_path}", file=sys.stderr)
@@ -1280,6 +1288,12 @@ def main():
         help="Additional arguments to pass to quarto render/preview"
     )
 
+    parser.add_argument(
+        "--skip-validation",
+        action="store_true",
+        help="Skip PDF validation steps (Python code check and comprehensive LLM validation)"
+    )
+
     # Zenodo publishing options
     parser.add_argument(
         "--publish",
@@ -1317,7 +1331,8 @@ def main():
         preview=args.preview,
         port=args.port,
         host=args.host,
-        no_browser=args.no_browser
+        no_browser=args.no_browser,
+        skip_validation=args.skip_validation
     )
 
     # Publish to Zenodo if requested and render succeeded

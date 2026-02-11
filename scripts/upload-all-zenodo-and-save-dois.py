@@ -11,7 +11,6 @@ Usage:
     python scripts/upload-all-zenodo-and-save-dois.py --draft            # create drafts only (manual publish)
     python scripts/upload-all-zenodo-and-save-dois.py economics iab      # specific papers only
     python scripts/upload-all-zenodo-and-save-dois.py --skip-validation  # skip LLM validation
-    python scripts/upload-all-zenodo-and-save-dois.py --force            # ignore all caches
     python scripts/upload-all-zenodo-and-save-dois.py --verbose          # show full build output
 
 Environment:
@@ -551,7 +550,7 @@ def generate_report(report_data: dict) -> str:
                 lines.append(f"- [ ] Read AI fix guide: `{ai_fix_log}`")
 
             lines.append(
-                f"- [ ] Re-run this paper: `python scripts/upload-all-zenodo-and-save-dois.py {paper_key} --force`"
+                f"- [ ] Re-run this paper: `python scripts/upload-all-zenodo-and-save-dois.py {paper_key}`"
             )
             lines.append("")
 
@@ -762,7 +761,7 @@ def validate_existing_pdf(
     return passed, blocking_errors, llm_warnings, validation_result.from_cache, ai_fix_log_path
 
 
-def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
+def rebuild_paper(paper_key: str, verbose: bool = False, skip_validation: bool = False) -> dict:
     """Rebuild a paper using render-quarto.py.
 
     Returns:
@@ -833,8 +832,11 @@ def rebuild_paper(paper_key: str, verbose: bool = False) -> dict:
 
     try:
         python_exe = get_preferred_python(PROJECT_ROOT)
+        cmd = [python_exe, "-u", str(render_script), paper_key]
+        if skip_validation:
+            cmd.append("--skip-validation")
         process = subprocess.Popen(
-            [python_exe, "-u", str(render_script), paper_key],
+            cmd,
             cwd=str(PROJECT_ROOT),
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
@@ -989,7 +991,6 @@ def parse_args() -> argparse.Namespace:
   python scripts/upload-all-zenodo-and-save-dois.py --draft            # create drafts only
   python scripts/upload-all-zenodo-and-save-dois.py economics iab      # specific papers
   python scripts/upload-all-zenodo-and-save-dois.py --skip-validation  # skip LLM validation
-  python scripts/upload-all-zenodo-and-save-dois.py --force            # ignore all caches
   python scripts/upload-all-zenodo-and-save-dois.py --verbose          # show full output""",
     )
     parser.add_argument(
@@ -1004,11 +1005,6 @@ def parse_args() -> argparse.Namespace:
         "--skip-validation",
         action="store_true",
         help="Skip LLM PDF validation entirely; go straight to upload",
-    )
-    parser.add_argument(
-        "--force",
-        action="store_true",
-        help="Ignore all caches (validation cache and perfected-state cache)",
     )
     parser.add_argument(
         "--draft",
@@ -1133,13 +1129,9 @@ def main():
         print("LLM validation mode: full document (all pages)")
     print(f"Publication mode: {'create drafts only' if args.draft else 'auto-publish after validation'}")
     log_action(
-        f"Configured with skip_validation={args.skip_validation}, force={args.force}, draft={args.draft}"
+        f"Configured with skip_validation={args.skip_validation}, draft={args.draft}"
     )
-
-    if args.force:
-        print("Caches: ignored (--force)")
-    else:
-        print(f"Perfected state cache: {PERFECTED_STATE_PATH.relative_to(PROJECT_ROOT)}")
+    print(f"Perfected state cache: {PERFECTED_STATE_PATH.relative_to(PROJECT_ROOT)}")
 
     for paper_key in sorted_keys:
         info = papers[paper_key]
@@ -1147,10 +1139,6 @@ def main():
         source_signatures[paper_key] = source_signature
 
         pdf_path = PROJECT_ROOT / info["pdf_path"]
-
-        if args.force:
-            process_keys.append(paper_key)
-            continue
 
         state_entry = perfected_entries.get(paper_key)
         if _is_perfected_entry_valid(
@@ -1197,16 +1185,11 @@ def main():
     # 2. Remote published PDF available → download it (skip rebuild)
     # 3. Neither fresh → rebuild locally
     # 4. Validate the paper immediately (either fail-fast or continue mode)
-    print("Getting freshest PDFs...")
     if not args.skip_validation:
-        print("\nRunning required PDF validation (LLM enabled, cached by file signature)...")
-        if args.force:
-            print("  Validation cache: disabled (--force)")
-        else:
-            print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+        print("PDF validation: LLM enabled, cached by file signature")
+        print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
 
-    upload_candidates: list[str] = []
-
+    # Process each paper fully: build -> validate -> upload
     for paper_key in process_keys:
         info = papers[paper_key]
         pdf_path = PROJECT_ROOT / info["pdf_path"]
@@ -1218,6 +1201,8 @@ def main():
             project_root=PROJECT_ROOT,
         )
 
+        # --- BUILD PHASE ---
+
         # Step 1: Sync freshest local PDF into assets/pdfs.
         if build_pdf_path.exists() and (
             not pdf_path.exists() or build_pdf_path.stat().st_mtime > pdf_path.stat().st_mtime
@@ -1226,7 +1211,6 @@ def main():
             print(f"  -> Synced newer local build PDF to: {info['pdf_path']}")
 
         # Step 2: Check remote and download only if it's newer than local assets PDF.
-        # Force remote download destination to assets/pdfs for freshness + upload.
         download_target = dict(info)
         download_target["pdf_path"] = info["pdf_path"]
         downloaded_pdf = check_and_download_remote_pdf(
@@ -1243,9 +1227,9 @@ def main():
             print(f"\n[OK] PDF is fresh for {paper_key}", flush=True)
             build_result = {"success": True, "duration_seconds": 0.0, "errors": []}
         else:
-            # Step 4: PDF is stale or missing — rebuild
+            # Step 4: PDF is stale or missing -- rebuild
             print(f"\n[BUILD] Rebuilding {paper_key} (PDF older than sources)", flush=True)
-            build_result = rebuild_paper(paper_key, verbose=args.verbose)
+            build_result = rebuild_paper(paper_key, verbose=args.verbose, skip_validation=args.skip_validation)
 
             # Keep assets/pdfs as source of truth, sync from build output when newer/missing.
             if build_pdf_path.exists() and (
@@ -1284,9 +1268,10 @@ def main():
                 save_report(report_data, start_time)
                 raise RuntimeError(f"PDF not found after build for {paper_key}: {pdf_path}")
 
-        # Validate each paper immediately after selecting/building its PDF.
+        # --- VALIDATION PHASE ---
+
         if args.skip_validation:
-            print(f"\n[SKIP-VALIDATION] {paper_key}: skipped (--skip-validation)")
+            print(f"[SKIP-VALIDATION] {paper_key}: skipped (--skip-validation)")
             report_data['validation_results'][paper_key] = {
                 'success': True,
                 'from_cache': False,
@@ -1296,86 +1281,76 @@ def main():
                 'ai_fix_log_path': None,
             }
             log_action(f"Validation skipped for {paper_key} (--skip-validation)")
-            upload_candidates.append(paper_key)
-            continue
-
-        print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
-        passed, validation_errors, validation_warnings, from_cache, ai_fix_log_path = validate_existing_pdf(
-            pdf_path=pdf_path,
-            verbose=args.verbose,
-            use_cache=not args.force,
-            llm_blocking_types=llm_blocking_types,
-            llm_warning_types=llm_warning_types,
-        )
-
-        source_note = "cache hit" if from_cache else "fresh run"
-        if passed:
-            if validation_warnings:
-                note = f"{source_note}; {len(validation_warnings)} warning(s)"
-            else:
-                note = source_note
-        elif validation_errors:
-            extra_count = len(validation_errors) - 1
-            suffix = f" (+{extra_count} more)" if extra_count > 0 else ""
-            note = f"{validation_errors[0]}{suffix}"
         else:
-            note = "Validation failed"
-
-        report_data['validation_results'][paper_key] = {
-            'success': passed,
-            'from_cache': from_cache,
-            'notes': note,
-            'errors': validation_errors,
-            'warnings': validation_warnings,
-            'ai_fix_log_path': ai_fix_log_path,
-        }
-        if validation_warnings:
-            report_data['warnings'][paper_key] = validation_warnings
-
-        if passed:
-            print(f"[OK] Validation passed for {paper_key} ({source_note})")
-            if validation_warnings:
-                print(f"[WARN] Non-blocking LLM warnings for {paper_key}: {len(validation_warnings)}")
-                for warning in validation_warnings[:10]:
-                    print(f"  - {warning}")
-                if len(validation_warnings) > 10:
-                    print(f"  - ...and {len(validation_warnings) - 10} more")
-            log_action(
-                f"Validated {paper_key}: passed ({source_note})"
-                + (f" with {len(validation_warnings)} warning(s)" if validation_warnings else "")
+            print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
+            passed, validation_errors, validation_warnings, from_cache, ai_fix_log_path = validate_existing_pdf(
+                pdf_path=pdf_path,
+                verbose=args.verbose,
+                use_cache=True,
+                llm_blocking_types=llm_blocking_types,
+                llm_warning_types=llm_warning_types,
             )
-            upload_candidates.append(paper_key)
-            continue
 
-        print(f"\n[ERROR] Validation failed for {paper_key}")
-        for error in validation_errors[:10]:
-            print(f"  - {error}")
-        if len(validation_errors) > 10:
-            print(f"  - ...and {len(validation_errors) - 10} more")
-        if validation_warnings:
-            print(f"  Non-blocking warnings also found: {len(validation_warnings)}")
+            source_note = "cache hit" if from_cache else "fresh run"
+            if passed:
+                if validation_warnings:
+                    note = f"{source_note}; {len(validation_warnings)} warning(s)"
+                else:
+                    note = source_note
+            elif validation_errors:
+                extra_count = len(validation_errors) - 1
+                suffix = f" (+{extra_count} more)" if extra_count > 0 else ""
+                note = f"{validation_errors[0]}{suffix}"
+            else:
+                note = "Validation failed"
 
-        report_data['errors'][paper_key] = validation_errors or ["PDF validation failed"]
-        report_data['failed_count'] += 1
-        report_data['upload_results'][paper_key] = {
-            "verified": False,
-            "reason": "Skipped upload because validation failed",
-            "validation_blocked": True,
-        }
-        log_action(
-            f"Validation failed for {paper_key}; blocking errors={len(validation_errors)} warnings={len(validation_warnings)}"
-        )
-        save_report(report_data, start_time)
-        raise RuntimeError(f"Validation failed for {paper_key}: {validation_errors[0] if validation_errors else 'unknown'}")
+            report_data['validation_results'][paper_key] = {
+                'success': passed,
+                'from_cache': from_cache,
+                'notes': note,
+                'errors': validation_errors,
+                'warnings': validation_warnings,
+                'ai_fix_log_path': ai_fix_log_path,
+            }
+            if validation_warnings:
+                report_data['warnings'][paper_key] = validation_warnings
 
-    if not upload_candidates:
-        print("\nNo papers eligible for upload after validation.")
-        log_action("No papers eligible for upload after validation")
+            if passed:
+                print(f"[OK] Validation passed for {paper_key} ({source_note})")
+                if validation_warnings:
+                    print(f"[WARN] Non-blocking LLM warnings for {paper_key}: {len(validation_warnings)}")
+                    for warning in validation_warnings[:10]:
+                        print(f"  - {warning}")
+                    if len(validation_warnings) > 10:
+                        print(f"  - ...and {len(validation_warnings) - 10} more")
+                log_action(
+                    f"Validated {paper_key}: passed ({source_note})"
+                    + (f" with {len(validation_warnings)} warning(s)" if validation_warnings else "")
+                )
+            else:
+                print(f"\n[ERROR] Validation failed for {paper_key}")
+                for error in validation_errors[:10]:
+                    print(f"  - {error}")
+                if len(validation_errors) > 10:
+                    print(f"  - ...and {len(validation_errors) - 10} more")
+                if validation_warnings:
+                    print(f"  Non-blocking warnings also found: {len(validation_warnings)}")
 
-    # Upload each validated paper (crash on errors)
-    for paper_key in upload_candidates:
-        info = papers[paper_key]
-        pdf_path = PROJECT_ROOT / info["pdf_path"]
+                report_data['errors'][paper_key] = validation_errors or ["PDF validation failed"]
+                report_data['failed_count'] += 1
+                report_data['upload_results'][paper_key] = {
+                    "verified": False,
+                    "reason": "Skipped upload because validation failed",
+                    "validation_blocked": True,
+                }
+                log_action(
+                    f"Validation failed for {paper_key}; blocking errors={len(validation_errors)} warnings={len(validation_warnings)}"
+                )
+                save_report(report_data, start_time)
+                raise RuntimeError(f"Validation failed for {paper_key}: {validation_errors[0] if validation_errors else 'unknown'}")
+
+        # --- UPLOAD PHASE ---
+
         log_action(f"Uploading {paper_key}")
         if not pdf_path.exists():
             fallback_pdf = PROJECT_ROOT / info["build_pdf_path"]
@@ -1394,7 +1369,7 @@ def main():
             log_action(f"PDF unchanged for {paper_key}; metadata-only update")
             metadata_only = True
         else:
-            print(f"[*] {paper_key}: remote checksum check unavailable/different, proceeding with full upload ({skip_reason})")
+            print(f"[*] {paper_key}: proceeding with full upload ({skip_reason})")
 
         result = upload_paper(
             client=client,

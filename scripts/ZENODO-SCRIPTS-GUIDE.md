@@ -11,13 +11,12 @@ metadata:
   # Identifiers
   # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
   doi: "10.5281/zenodo.18205881"
-  zenodo_version_doi: "10.5281/zenodo.18480097"  # Latest published version (optional)
 ```
 
 **Key Points:**
 - `doi` field ALWAYS contains the **concept DOI**
-- Concept DOI is stable forever - use for citations and creating new versions
-- `zenodo_version_doi` tracks the latest published version (auto-updated by upload script)
+- Concept DOI is stable forever, assigned once on first publish, never changes
+- The upload script resolves the latest version ID via the API; no version DOI needed in config
 - Block comments are preserved by YAML tools (unlike inline comments)
 
 ## Metadata Fields
@@ -199,9 +198,9 @@ python scripts/sync-zenodo-metadata.py --paper wishocracy --verbose
 - Works with both concept and version DOIs
 - Returns concept record ID when given concept DOI
 
-##### `save_doi_to_config(config_path, doi, url, version_doi=None)`
+##### `save_doi_to_config(config_path, doi, url)`
 - Saves concept DOI to `metadata.doi`
-- Optionally saves version DOI to `metadata.zenodo_version_doi`
+- Skips writing if concept DOI already matches (avoids unnecessary config changes)
 - Adds explanatory block comments
 - Preserves YAML formatting
 

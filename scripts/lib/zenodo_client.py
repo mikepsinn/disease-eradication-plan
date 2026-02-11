@@ -220,8 +220,30 @@ class ZenodoClient:
         response.raise_for_status()
         return response.json()
 
+    def resolve_latest_version_id(self, record_id: int) -> Optional[int]:
+        """Resolve a concept or version record ID to the latest published version ID.
+
+        GET /api/records/{id} auto-resolves concept IDs to the latest version,
+        so this works regardless of whether record_id is a concept ID or version ID.
+
+        Args:
+            record_id: Concept record ID or version record ID
+
+        Returns:
+            Latest published version's record ID, or None on failure
+        """
+        try:
+            record = self.get_record(record_id)
+            return record.get("id")
+        except requests.HTTPError:
+            return None
+
     def get_existing_draft_id(self, record_id: int) -> Optional[int]:
         """Check if a draft version exists for a published record.
+
+        Tries multiple approaches:
+        1. Records API 'draft' link
+        2. Deposit API 'latest_draft' link
 
         Args:
             record_id: Published version record ID
@@ -229,28 +251,43 @@ class ZenodoClient:
         Returns:
             Draft deposit ID if exists, None otherwise
         """
+        # Try records API first
         try:
             record = self.get_record(record_id)
             draft_url = record.get('links', {}).get('draft')
-            if not draft_url:
-                return None
-
-            # Try to fetch the draft
-            draft_response = requests.get(
-                draft_url,
-                headers=self.headers,
-                timeout=self.timeout,
-            )
-
-            # If draft exists, extract its ID from response
-            if draft_response.status_code == 200:
-                draft_data = draft_response.json()
-                # The draft ID is in the 'id' field
-                return draft_data.get('id')
-
-            return None
+            if draft_url:
+                draft_response = requests.get(
+                    draft_url,
+                    headers=self.headers,
+                    timeout=self.timeout,
+                )
+                if draft_response.status_code == 200:
+                    draft_data = draft_response.json()
+                    draft_id = draft_data.get('id')
+                    if draft_id:
+                        return draft_id
         except Exception:
-            return None
+            pass
+
+        # Try deposit API -- 'latest_draft' link on the deposit
+        try:
+            deposit = self.get_deposit(record_id)
+            latest_draft_url = deposit.get('links', {}).get('latest_draft')
+            if latest_draft_url:
+                draft_id = _extract_numeric_id(latest_draft_url)
+                if draft_id and draft_id != record_id:
+                    # Verify the draft is accessible
+                    draft_response = requests.get(
+                        latest_draft_url,
+                        headers=self.headers,
+                        timeout=self.timeout,
+                    )
+                    if draft_response.status_code == 200:
+                        return draft_id
+        except Exception:
+            pass
+
+        return None
 
     def find_drafts_by_concept(self, concept_id: int) -> list[int]:
         """Find all draft deposits for a given concept record ID.
@@ -316,14 +353,19 @@ class ZenodoClient:
         )
         return response.status_code == 200
 
-    def find_draft_by_title(self, title: str) -> Optional[dict]:
-        """Find an existing draft deposit by title (paginated)."""
+    def find_deposit_by_title(self, title: str) -> Optional[dict]:
+        """Find an existing deposit (draft or published) by title.
+
+        Returns the first matching deposit, preferring drafts over published.
+        """
+        draft_match = None
+        published_match = None
         page = 1
         while True:
             response = requests.get(
                 f"{self.base_url}/deposit/depositions",
                 headers=self.headers,
-                params={"status": "draft", "page": page, "size": 100},
+                params={"page": page, "size": 100},
                 timeout=self.timeout,
             )
             response.raise_for_status()
@@ -332,10 +374,19 @@ class ZenodoClient:
                 break
             for deposit in deposits:
                 deposit_title = deposit.get("metadata", {}).get("title", "")
-                if deposit_title == title:
-                    return deposit
+                if deposit_title != title:
+                    continue
+                state = deposit.get("state", "")
+                if state in ("unsubmitted", "inprogress") and draft_match is None:
+                    draft_match = deposit
+                elif state == "done" and published_match is None:
+                    published_match = deposit
+                if draft_match:
+                    return draft_match  # Prefer drafts
+            if len(deposits) < 100:
+                break
             page += 1
-        return None
+        return draft_match or published_match
 
 
 def _extract_numeric_id(value: str | None) -> Optional[int]:
@@ -827,73 +878,99 @@ def save_doi_to_config(
     config_path: Path,
     doi: str,
     zenodo_url: str,
-    version_doi: str = None
 ) -> bool:
     """
-    Save DOI and Zenodo URL back to Quarto config file.
+    Save concept DOI and Zenodo URL back to Quarto config file.
+    Skips writing if the concept DOI already matches (avoids unnecessary rebuilds).
     Uses text-based replacement to preserve YAML formatting.
 
     Args:
         config_path: Path to _quarto-*.yml file
         doi: Concept DOI string (stable across versions)
         zenodo_url: Zenodo record URL
-        version_doi: Optional version-specific DOI
 
     Returns:
-        True if successful, False otherwise
+        True if saved (or already correct), False on error
     """
     try:
         lines = config_path.read_text(encoding='utf-8').splitlines(keepends=True)
 
         metadata_idx = next((i for i, line in enumerate(lines) if re.match(r"^metadata:\s*$", line.rstrip("\r\n"))), None)
-        if metadata_idx is not None:
-            metadata_end = len(lines)
-            for i in range(metadata_idx + 1, len(lines)):
-                stripped = lines[i].strip()
-                if stripped and not lines[i].startswith((" ", "\t", "#")):
-                    metadata_end = i
-                    break
-            doi_idx = None
-            version_doi_idx = None
-            doi_comment_idx = None
+        if metadata_idx is None:
+            return False
 
-            for i in range(metadata_idx + 1, metadata_end):
-                if re.match(r"^  # Zenodo Concept DOI", lines[i]):
-                    doi_comment_idx = i
-                if re.match(r"^  doi:\s*", lines[i]):
-                    doi_idx = i
-                if re.match(r"^  zenodo_version_doi:\s*", lines[i]):
-                    version_doi_idx = i
+        metadata_end = len(lines)
+        for i in range(metadata_idx + 1, len(lines)):
+            stripped = lines[i].strip()
+            if stripped and not lines[i].startswith((" ", "\t", "#")):
+                metadata_end = i
+                break
 
-            # Add/update concept DOI with block comment
-            if doi_comment_idx is None:
-                # Add comment block
-                comment_block = [
-                    '  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)\n',
-                ]
-                insert_pos = doi_idx if doi_idx is not None else metadata_idx + 1
-                for line in reversed(comment_block):
-                    lines.insert(insert_pos, line)
-                if doi_idx is not None:
-                    doi_idx += len(comment_block)
-                if version_doi_idx is not None:
-                    version_doi_idx += len(comment_block)
+        doi_idx = None
+        doi_comment_idx = None
+        changed = False
 
-            # Update/add concept DOI
+        for i in range(metadata_idx + 1, metadata_end):
+            if re.match(r"^  # Zenodo Concept DOI", lines[i]):
+                doi_comment_idx = i
+            if re.match(r"^  doi:\s*", lines[i]):
+                doi_idx = i
+
+        # Check if DOI already matches -- skip writing to avoid unnecessary rebuilds
+        if doi_idx is not None:
+            existing_line = lines[doi_idx].strip()
+            expected = f'doi: "{doi}"'
+            if existing_line == expected:
+                # DOI already correct; check zenodo platform block too
+                zenodo_block_ok = True
+                for i, line in enumerate(lines):
+                    if re.match(r"^\s*-\s*platform:\s*zenodo\s*$", line):
+                        item_indent = len(line) - len(line.lstrip(" "))
+                        child_prefix = " " * (item_indent + 2)
+                        block_end = len(lines)
+                        for j in range(i + 1, len(lines)):
+                            candidate = lines[j]
+                            stripped_c = candidate.strip()
+                            candidate_indent = len(candidate) - len(candidate.lstrip(" "))
+                            if stripped_c.startswith("- ") and candidate_indent == item_indent:
+                                block_end = j
+                                break
+                            if stripped_c and candidate_indent < item_indent:
+                                block_end = j
+                                break
+                        for j in range(i + 1, block_end):
+                            if lines[j].startswith(f"{child_prefix}status:") and "auto-uploaded" not in lines[j]:
+                                zenodo_block_ok = False
+                            elif lines[j].startswith(f"{child_prefix}doi:") and doi not in lines[j]:
+                                zenodo_block_ok = False
+                        break
+                if zenodo_block_ok:
+                    return True  # Nothing to change
+
+        # Add comment block if missing
+        if doi_comment_idx is None:
+            comment_block = [
+                '  # Zenodo Concept DOI (stable across all versions - use for citations and new versions)\n',
+            ]
+            insert_pos = doi_idx if doi_idx is not None else metadata_idx + 1
+            for line in reversed(comment_block):
+                lines.insert(insert_pos, line)
             if doi_idx is not None:
-                lines[doi_idx] = f'  doi: "{doi}"\n'
-            else:
-                insert_pos = doi_comment_idx + 1 if doi_comment_idx is not None else metadata_idx + 1
-                lines.insert(insert_pos, f'  doi: "{doi}"\n')
-                doi_idx = insert_pos
+                doi_idx += len(comment_block)
+            changed = True
 
-            # Add version DOI if provided
-            if version_doi:
-                if version_doi_idx is not None:
-                    lines[version_doi_idx] = f'  zenodo_version_doi: "{version_doi}"  # Latest published version\n'
-                else:
-                    lines.insert(doi_idx + 1, f'  zenodo_version_doi: "{version_doi}"  # Latest published version\n')
+        # Update/add concept DOI
+        if doi_idx is not None:
+            new_line = f'  doi: "{doi}"\n'
+            if lines[doi_idx] != new_line:
+                lines[doi_idx] = new_line
+                changed = True
+        else:
+            insert_pos = doi_comment_idx + 1 if doi_comment_idx is not None else metadata_idx + 1
+            lines.insert(insert_pos, f'  doi: "{doi}"\n')
+            changed = True
 
+        # Update zenodo platform block
         for i, line in enumerate(lines):
             if not re.match(r"^\s*-\s*platform:\s*zenodo\s*$", line):
                 continue
@@ -913,14 +990,24 @@ def save_doi_to_config(
 
             for j in range(i + 1, block_end):
                 if lines[j].startswith(f"{child_prefix}status:"):
-                    lines[j] = f"{child_prefix}status: auto-uploaded\n"
+                    new_line = f"{child_prefix}status: auto-uploaded\n"
+                    if lines[j] != new_line:
+                        lines[j] = new_line
+                        changed = True
                 elif lines[j].startswith(f"{child_prefix}url:"):
-                    lines[j] = f'{child_prefix}url: "{zenodo_url}"\n'
+                    new_line = f'{child_prefix}url: "{zenodo_url}"\n'
+                    if lines[j] != new_line:
+                        lines[j] = new_line
+                        changed = True
                 elif lines[j].startswith(f"{child_prefix}doi:"):
-                    lines[j] = f'{child_prefix}doi: "{doi}"\n'
+                    new_line = f'{child_prefix}doi: "{doi}"\n'
+                    if lines[j] != new_line:
+                        lines[j] = new_line
+                        changed = True
             break
 
-        config_path.write_text("".join(lines), encoding='utf-8')
+        if changed:
+            config_path.write_text("".join(lines), encoding='utf-8')
         return True
     except Exception as e:
         print(f"WARNING: Could not save DOI to {config_path}: {e}")
@@ -994,6 +1081,11 @@ def upload_paper(
         # Check for existing deposit by DOI first (most reliable)
         existing_doi = metadata.pop("_existing_doi", None)
         record_id = get_record_id_from_doi(existing_doi) if existing_doi else None
+        if record_id:
+            resolved_id = client.resolve_latest_version_id(record_id)
+            if resolved_id and resolved_id != record_id:
+                log(f"[OK] Resolved concept record {record_id} -> latest version {resolved_id}")
+                record_id = resolved_id
         deposit = None
         deposit_id = None
         bucket_url = None
@@ -1008,49 +1100,81 @@ def upload_paper(
                 bucket_url = version_info["bucket"]
                 publish_via_records_api = True
                 if not metadata_only:
-                    if not client.verify_bucket_access(bucket_url):
-                        log(f"ERROR: Draft bucket not reachable: {bucket_url}")
-                        return None
                     client.delete_all_files(deposit_id)
                 log(f"[OK] New version draft ID: {deposit_id}")
             except requests.HTTPError as e:
                 if e.response is not None and e.response.status_code == 404:
                     log(f"WARNING: Existing DOI record not found on Zenodo ({record_id}); falling back to draft/new deposit flow")
+                elif e.response is not None and e.response.status_code == 400 and "remove all files" in e.response.text.lower():
+                    # A draft already exists with files; find it, clean files, and reuse
+                    log(f"WARNING: Existing draft has files; looking for draft to reuse...")
+                    draft_id = client.get_existing_draft_id(record_id)
+                    if draft_id:
+                        log(f"[OK] Found existing draft: {draft_id}; clearing files and reusing")
+                        client.delete_all_files(draft_id)
+                        draft_deposit = client.get_deposit(draft_id)
+                        deposit_id = draft_id
+                        bucket_url = draft_deposit.get("links", {}).get("bucket")
+                        publish_via_records_api = False
+                        log(f"[OK] Reusing draft ID: {deposit_id}")
+                    else:
+                        log(f"WARNING: Could not find existing draft; falling back to new deposit")
                 else:
                     raise
 
         # Fall back to title-based search if no DOI or DOI lookup failed
         if deposit_id is None:
-            log("[OK] Checking for existing draft by title...")
-            existing_draft = client.find_draft_by_title(metadata["title"])
+            log("[OK] Checking for existing deposit by title...")
+            existing = client.find_deposit_by_title(metadata["title"])
 
-            if existing_draft:
-                deposit_id = existing_draft["id"]
-                state = existing_draft.get("state", "unknown")
-                log(f"[OK] Found existing deposit by title: {deposit_id} (state: {state})")
+            if existing:
+                found_id = existing["id"]
+                state = existing.get("state", "unknown")
+                log(f"[OK] Found existing deposit by title: {found_id} (state: {state})")
 
-                if state == "inprogress":
+                if state == "done":
+                    # Published deposit -- create new version from it
+                    log(f"[OK] Published deposit found; creating new version from {found_id}...")
+                    resolved_id = client.resolve_latest_version_id(found_id)
+                    version_record_id = resolved_id or found_id
+                    try:
+                        version_info = client.create_version_draft(version_record_id)
+                        deposit_id = version_info["id"]
+                        bucket_url = version_info["bucket"]
+                        publish_via_records_api = True
+                        if not metadata_only:
+                            client.delete_all_files(deposit_id)
+                        log(f"[OK] New version draft ID: {deposit_id}")
+                    except requests.HTTPError as e:
+                        log(f"WARNING: Could not create new version from {version_record_id}: {e}")
+                        log("  -> Creating new deposit instead...")
+                        deposit = client.create_deposit()
+                        deposit_id = deposit["id"]
+                        bucket_url = deposit["links"]["bucket"]
+                elif state == "inprogress":
                     # inprogress = submitted but not yet published; try to get editable draft
                     log("[OK] Deposit is 'inprogress' (submitted). Attempting to edit...")
                     try:
-                        full_deposit = client.get_deposit(deposit_id)
+                        full_deposit = client.get_deposit(found_id)
+                        deposit_id = found_id
                         bucket_url = full_deposit["links"]["bucket"]
                         if not metadata_only:
                             client.delete_all_files(deposit_id)
                     except requests.HTTPError as e:
-                        log(f"WARNING: Cannot modify inprogress deposit {deposit_id}: {e}")
+                        log(f"WARNING: Cannot modify inprogress deposit {found_id}: {e}")
                         log("  -> Creating new deposit instead...")
                         deposit = client.create_deposit()
                         deposit_id = deposit["id"]
                         bucket_url = deposit["links"]["bucket"]
                 elif state == "unsubmitted":
+                    deposit_id = found_id
                     log("  -> Updating existing draft...")
                     full_deposit = client.get_deposit(deposit_id)
                     bucket_url = full_deposit["links"]["bucket"]
                     if not metadata_only:
                         client.delete_all_files(deposit_id)
                 else:
-                    log(f"WARNING: Draft state '{state}' is not editable, creating new deposit...")
+                    log(f"WARNING: Deposit state '{state}' is not editable, creating new deposit...")
                     deposit = client.create_deposit()
                     deposit_id = deposit["id"]
                     bucket_url = deposit["links"]["bucket"]
@@ -1140,10 +1264,8 @@ def upload_paper(
         # Save concept DOI to config if requested
         if save_doi and config_path and concept_doi_for_config:
             log(f"[OK] Saving concept DOI to {config_path.name}...")
-            if save_doi_to_config(config_path, concept_doi_for_config, concept_url_for_config, version_doi=version_doi):
-                log(f"[OK] Updated config with concept DOI: {concept_doi_for_config}")
-                if version_doi:
-                    log(f"[OK] Updated config with version DOI: {version_doi}")
+            if save_doi_to_config(config_path, concept_doi_for_config, concept_url_for_config):
+                log(f"[OK] Config DOI: {concept_doi_for_config}")
             else:
                 log("WARNING: Could not update config file")
 
@@ -1151,7 +1273,6 @@ def upload_paper(
             "id": deposit_id,
             "bucket": bucket_url,
             "doi": concept_doi_for_config,  # Primary DOI (concept, stable across versions)
-            "version_doi": version_doi,      # Version-specific DOI
             "concept_doi": concept_doi,      # Concept DOI (same as 'doi' field)
             "url": concept_url_for_config,
             "verified": True
