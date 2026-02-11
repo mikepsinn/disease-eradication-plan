@@ -937,6 +937,7 @@ def upload_paper(
     save_doi: bool = False,
     config_path: Optional[Path] = None,
     project_root: Optional[Path] = None,
+    metadata_only: bool = False,
 ) -> Optional[dict]:
     """
     Upload a paper to Zenodo.
@@ -950,6 +951,8 @@ def upload_paper(
         verbose: Print progress messages
         save_doi: If True, save DOI back to config file after upload
         config_path: Path to config file (required if save_doi=True)
+        project_root: Project root path (optional, for extracting abstracts from QMD)
+        metadata_only: If True, only update metadata (skip file delete/upload)
 
     Returns:
         Dict with deposit info, DOI, and URL if successful, None otherwise
@@ -1004,10 +1007,11 @@ def upload_paper(
                 deposit_id = version_info["id"]
                 bucket_url = version_info["bucket"]
                 publish_via_records_api = True
-                if not client.verify_bucket_access(bucket_url):
-                    log(f"ERROR: Draft bucket not reachable: {bucket_url}")
-                    return None
-                client.delete_all_files(deposit_id)
+                if not metadata_only:
+                    if not client.verify_bucket_access(bucket_url):
+                        log(f"ERROR: Draft bucket not reachable: {bucket_url}")
+                        return None
+                    client.delete_all_files(deposit_id)
                 log(f"[OK] New version draft ID: {deposit_id}")
             except requests.HTTPError as e:
                 if e.response is not None and e.response.status_code == 404:
@@ -1031,7 +1035,8 @@ def upload_paper(
                     try:
                         full_deposit = client.get_deposit(deposit_id)
                         bucket_url = full_deposit["links"]["bucket"]
-                        client.delete_all_files(deposit_id)
+                        if not metadata_only:
+                            client.delete_all_files(deposit_id)
                     except requests.HTTPError as e:
                         log(f"WARNING: Cannot modify inprogress deposit {deposit_id}: {e}")
                         log("  -> Creating new deposit instead...")
@@ -1042,7 +1047,8 @@ def upload_paper(
                     log("  -> Updating existing draft...")
                     full_deposit = client.get_deposit(deposit_id)
                     bucket_url = full_deposit["links"]["bucket"]
-                    client.delete_all_files(deposit_id)
+                    if not metadata_only:
+                        client.delete_all_files(deposit_id)
                 else:
                     log(f"WARNING: Draft state '{state}' is not editable, creating new deposit...")
                     deposit = client.create_deposit()
@@ -1063,36 +1069,40 @@ def upload_paper(
         log("[OK] Updating metadata...")
         client.update_metadata(deposit_id, metadata)
 
-        # Upload PDF
-        log(f"[OK] Uploading {pdf_path.name}...")
-        client.upload_file(deposit_id, pdf_path, bucket_url)
+        if metadata_only:
+            log(f"[OK] Metadata-only update (skipping file upload for {pdf_path.name})")
+            verified_deposit = client.get_deposit(deposit_id)
+        else:
+            # Upload PDF
+            log(f"[OK] Uploading {pdf_path.name}...")
+            client.upload_file(deposit_id, pdf_path, bucket_url)
 
-        # Verify upload with GET request
-        log("[OK] Verifying upload...")
-        verified_deposit = client.get_deposit(deposit_id)
-        files = verified_deposit.get("files", [])
-        if not files:
-            log("ERROR: Upload verification failed - no files found in deposit")
-            log("  -> This usually means the upload silently failed")
-            return None
+            # Verify upload with GET request
+            log("[OK] Verifying upload...")
+            verified_deposit = client.get_deposit(deposit_id)
+            files = verified_deposit.get("files", [])
+            if not files:
+                log("ERROR: Upload verification failed - no files found in deposit")
+                log("  -> This usually means the upload silently failed")
+                return None
 
-        uploaded_file = next((f for f in files if f["filename"] == pdf_path.name), None)
-        if not uploaded_file:
-            log(f"ERROR: Upload verification failed - {pdf_path.name} not found in deposit")
-            log(f"  -> Files in deposit: {[f['filename'] for f in files]}")
-            return None
+            uploaded_file = next((f for f in files if f["filename"] == pdf_path.name), None)
+            if not uploaded_file:
+                log(f"ERROR: Upload verification failed - {pdf_path.name} not found in deposit")
+                log(f"  -> Files in deposit: {[f['filename'] for f in files]}")
+                return None
 
-        # Verify file size matches (catch truncated uploads)
-        local_size = pdf_path.stat().st_size
-        remote_size = uploaded_file.get("filesize", 0)
-        if remote_size != local_size:
-            log(f"ERROR: File size mismatch!")
-            log(f"  -> Local:  {local_size:,} bytes")
-            log(f"  -> Remote: {remote_size:,} bytes")
-            log("  -> Upload may have been corrupted or truncated")
-            return None
+            # Verify file size matches (catch truncated uploads)
+            local_size = pdf_path.stat().st_size
+            remote_size = uploaded_file.get("filesize", 0)
+            if remote_size != local_size:
+                log(f"ERROR: File size mismatch!")
+                log(f"  -> Local:  {local_size:,} bytes")
+                log(f"  -> Remote: {remote_size:,} bytes")
+                log("  -> Upload may have been corrupted or truncated")
+                return None
 
-        log(f"[OK] Verified: {uploaded_file['filename']} ({remote_size / 1024:.1f} KB, size matches)")
+            log(f"[OK] Verified: {uploaded_file['filename']} ({remote_size / 1024:.1f} KB, size matches)")
 
         # Get DOI and URL -- prefer concept DOI (stable across versions)
         version_doi = verified_deposit.get("doi") or verified_deposit.get("metadata", {}).get("prereserve_doi", {}).get("doi")

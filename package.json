@@ -38,13 +38,13 @@
     "render:validate:pdfs": ".venv\\Scripts\\python.exe -u scripts/render-and-validate-pdfs.py",
     "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
     "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",
-    "zenodo:upload:force-publish": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py --force-revalidate --force-reprocess",
+    "zenodo:upload:force-publish": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py --force",
     "zenodo:sync": ".venv\\Scripts\\python.exe -u scripts/sync-zenodo-metadata.py",
     "zenodo:sync:dry-run": ".venv\\Scripts\\python.exe -u scripts/sync-zenodo-metadata.py --dry-run --verbose",
     "zenodo:drafts:list": ".venv\\Scripts\\python.exe -u scripts/delete-zenodo-drafts.py --list",
     "zenodo:drafts:delete-all": ".venv\\Scripts\\python.exe -u scripts/delete-zenodo-drafts.py --delete-all",
     "zenodo:audit": ".venv\\Scripts\\python.exe -u scripts/audit-zenodo.py --verbose",
-    "zenodo:upload:collect-validation-errors": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py --continue-on-validation-error",
+    "zenodo:upload:skip-validation": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py --skip-validation",
     "render:test:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to pdf --verify",
     "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
     "validate:latex": ".venv\\Scripts\\python.exe -u scripts/validate-latex-per-file.py",
@@ -80,9 +80,6 @@
     "preview:manual": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --preview",
     "preview:wishocracy": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py wishocracy --preview",
     "preview:iab": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py iab --preview",
-
-
-
     "lint:md": "markdownlint --config .markdownlint.json \"**/*.md\"",
     "lint:md:fix": "markdownlint --config .markdownlint.json --fix \"**/*.md\"",
     "lint:qmd": "markdownlint --config .markdownlint.json \"**/*.qmd\"",
@@ -117,15 +114,12 @@
     "generate:references-json": "tsx scripts/generate-references-json.ts",
     "delete-empty-folders": "tsx scripts/delete-empty-folders.ts",
     "validate:post-render": ".venv\\Scripts\\python.exe -u scripts/post-render-validation.py",
-
-
     "images:edit": "tsx scripts/images/edit-image.ts",
     "find-duplicates": "tsx scripts/find-duplicates.ts",
     "review-hardcoded": "tsx scripts/review-hardcoded-values.ts",
     "find-replace": "tsx scripts/find-and-replace.ts",
     "search": "rg -i -n --glob '*.qmd'",
     "prepare": "husky",
-
     "download:notebooklm": "tsx scripts/download-notebooklm-files.ts",
     "analyze:sizes": "tsx scripts/analyze-file-sizes.ts",
     "netlify:setup": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py",

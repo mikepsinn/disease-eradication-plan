@@ -7,11 +7,12 @@ Rebuilds all PDFs and uploads them to Zenodo, saving DOIs to config files.
 By default, automatically publishes papers that pass validation.
 
 Usage:
-    python scripts/upload-all-zenodo-and-save-dois.py                # auto-publish after validation
-    python scripts/upload-all-zenodo-and-save-dois.py --draft        # create drafts only (manual publish)
-    python scripts/upload-all-zenodo-and-save-dois.py economics iab  # specific papers only
-    python scripts/upload-all-zenodo-and-save-dois.py --verbose      # show full build output
-    python scripts/upload-all-zenodo-and-save-dois.py --force-revalidate
+    python scripts/upload-all-zenodo-and-save-dois.py                    # auto-publish after validation
+    python scripts/upload-all-zenodo-and-save-dois.py --draft            # create drafts only (manual publish)
+    python scripts/upload-all-zenodo-and-save-dois.py economics iab      # specific papers only
+    python scripts/upload-all-zenodo-and-save-dois.py --skip-validation  # skip LLM validation
+    python scripts/upload-all-zenodo-and-save-dois.py --force            # ignore all caches
+    python scripts/upload-all-zenodo-and-save-dois.py --verbose          # show full build output
 
 Environment:
     ZENODO_TOKEN: API token from https://zenodo.org/account/settings/applications/
@@ -383,9 +384,7 @@ def generate_report(report_data: dict) -> str:
         f"- **Successful:** {report_data['success_count']}",
         f"- **Failed:** {report_data['failed_count']}",
         f"- **Skipped (already perfected/uploaded):** {skipped_count}",
-        f"- **LLM Blocking Types:** `{', '.join(report_data.get('llm_blocking_types', list(DEFAULT_LLM_BLOCKING_TYPES))) or '(none)'}`",
-        f"- **LLM Warning Types:** `{', '.join(report_data.get('llm_warning_types', list(DEFAULT_LLM_WARNING_TYPES))) or '(none)'}`",
-        f"- **Continue On Validation Error:** `{bool(report_data.get('continue_on_validation_error', False))}`",
+        f"- **Validation Skipped:** `{bool(report_data.get('skip_validation', False))}`",
         "",
     ]
 
@@ -552,7 +551,7 @@ def generate_report(report_data: dict) -> str:
                 lines.append(f"- [ ] Read AI fix guide: `{ai_fix_log}`")
 
             lines.append(
-                f"- [ ] Re-run this paper: `python scripts/upload-all-zenodo-and-save-dois.py {paper_key} --force-revalidate`"
+                f"- [ ] Re-run this paper: `python scripts/upload-all-zenodo-and-save-dois.py {paper_key} --force`"
             )
             lines.append("")
 
@@ -986,11 +985,12 @@ def parse_args() -> argparse.Namespace:
         description="Batch upload papers to Zenodo with validation",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
-  python scripts/upload-all-zenodo-and-save-dois.py                # auto-publish
-  python scripts/upload-all-zenodo-and-save-dois.py --draft        # create drafts only
-  python scripts/upload-all-zenodo-and-save-dois.py economics iab  # specific papers
-  python scripts/upload-all-zenodo-and-save-dois.py --verbose      # show full output
-  python scripts/upload-all-zenodo-and-save-dois.py --force-revalidate""",
+  python scripts/upload-all-zenodo-and-save-dois.py                    # auto-publish
+  python scripts/upload-all-zenodo-and-save-dois.py --draft            # create drafts only
+  python scripts/upload-all-zenodo-and-save-dois.py economics iab      # specific papers
+  python scripts/upload-all-zenodo-and-save-dois.py --skip-validation  # skip LLM validation
+  python scripts/upload-all-zenodo-and-save-dois.py --force            # ignore all caches
+  python scripts/upload-all-zenodo-and-save-dois.py --verbose          # show full output""",
     )
     parser.add_argument(
         "papers", nargs="*",
@@ -1001,38 +1001,14 @@ def parse_args() -> argparse.Namespace:
         help="Show full build/validation output",
     )
     parser.add_argument(
-        "--force-revalidate",
+        "--skip-validation",
         action="store_true",
-        help="Ignore cached PDF validation results and run validation again",
+        help="Skip LLM PDF validation entirely; go straight to upload",
     )
     parser.add_argument(
-        "--force-reprocess",
+        "--force",
         action="store_true",
-        help="Ignore perfected/uploaded state cache and process all selected papers again",
-    )
-    parser.add_argument(
-        "--continue-on-validation-error",
-        action="store_true",
-        help=(
-            "Continue processing remaining non-perfect papers when a paper fails validation. "
-            "Failed-validation papers are not uploaded."
-        ),
-    )
-    parser.add_argument(
-        "--llm-blocking-types",
-        default=",".join(DEFAULT_LLM_BLOCKING_TYPES),
-        help=(
-            "Comma-separated LLM issue types that block upload. "
-            "Defaults to all core high-confidence issue types."
-        ),
-    )
-    parser.add_argument(
-        "--llm-warning-types",
-        default=",".join(DEFAULT_LLM_WARNING_TYPES),
-        help=(
-            "Comma-separated LLM issue types treated as non-blocking warnings. "
-            "Empty by default."
-        ),
+        help="Ignore all caches (validation cache and perfected-state cache)",
     )
     parser.add_argument(
         "--draft",
@@ -1079,14 +1055,8 @@ def main():
     start_time = time.time()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     run_id = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-    llm_blocking_types = _parse_llm_type_csv(
-        args.llm_blocking_types,
-        DEFAULT_LLM_BLOCKING_TYPES,
-    )
-    llm_warning_types = _parse_llm_type_csv(
-        args.llm_warning_types,
-        DEFAULT_LLM_WARNING_TYPES,
-    )
+    llm_blocking_types: set[str] = set(DEFAULT_LLM_BLOCKING_TYPES)
+    llm_warning_types: set[str] = set(DEFAULT_LLM_WARNING_TYPES)
     llm_warning_types -= llm_blocking_types
 
     # Initialize report data
@@ -1096,9 +1066,7 @@ def main():
         'papers_count': 0,
         'success_count': 0,
         'failed_count': 0,
-        'llm_blocking_types': sorted(llm_blocking_types),
-        'llm_warning_types': sorted(llm_warning_types),
-        'continue_on_validation_error': bool(args.continue_on_validation_error),
+        'skip_validation': bool(args.skip_validation),
         'skipped_results': {},
         'build_results': {},
         'validation_results': {},
@@ -1159,29 +1127,17 @@ def main():
     assets_pdf_dir = PROJECT_ROOT / "assets" / "pdfs"
     assets_pdf_dir.mkdir(parents=True, exist_ok=True)
 
-    print("LLM validation mode: full document (all pages)")
-    print(
-        "LLM blocking types: "
-        + (", ".join(sorted(llm_blocking_types)) if llm_blocking_types else "(none)")
-    )
-    print(
-        "LLM warning types: "
-        + (", ".join(sorted(llm_warning_types)) if llm_warning_types else "(none)")
-    )
-    print(f"Publication mode: {'create drafts only' if args.draft else 'auto-publish after validation'}")
-    if args.continue_on_validation_error:
-        print("Validation behavior: continue past validation failures (skip upload for failed papers)")
+    if args.skip_validation:
+        print("LLM validation: SKIPPED (--skip-validation)")
     else:
-        print("Validation behavior: fail-fast on first failed PDF")
+        print("LLM validation mode: full document (all pages)")
+    print(f"Publication mode: {'create drafts only' if args.draft else 'auto-publish after validation'}")
     log_action(
-        "Validation configured with "
-        f"llm_blocking_types={','.join(sorted(llm_blocking_types)) or '(none)'}, "
-        f"llm_warning_types={','.join(sorted(llm_warning_types)) or '(none)'}, "
-        f"continue_on_validation_error={bool(args.continue_on_validation_error)}"
+        f"Configured with skip_validation={args.skip_validation}, force={args.force}, draft={args.draft}"
     )
 
-    if args.force_reprocess:
-        print("Perfected state cache: ignored (--force-reprocess)")
+    if args.force:
+        print("Caches: ignored (--force)")
     else:
         print(f"Perfected state cache: {PERFECTED_STATE_PATH.relative_to(PROJECT_ROOT)}")
 
@@ -1192,7 +1148,7 @@ def main():
 
         pdf_path = PROJECT_ROOT / info["pdf_path"]
 
-        if args.force_reprocess:
+        if args.force:
             process_keys.append(paper_key)
             continue
 
@@ -1242,11 +1198,12 @@ def main():
     # 3. Neither fresh → rebuild locally
     # 4. Validate the paper immediately (either fail-fast or continue mode)
     print("Getting freshest PDFs...")
-    print("\nRunning required PDF validation (LLM enabled, cached by file signature)...")
-    if args.force_revalidate:
-        print("  Validation cache: disabled (--force-revalidate)")
-    else:
-        print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+    if not args.skip_validation:
+        print("\nRunning required PDF validation (LLM enabled, cached by file signature)...")
+        if args.force:
+            print("  Validation cache: disabled (--force)")
+        else:
+            print(f"  Validation cache: {PDF_VALIDATION_CACHE_PATH.relative_to(PROJECT_ROOT)}")
 
     upload_candidates: list[str] = []
 
@@ -1328,11 +1285,25 @@ def main():
                 raise RuntimeError(f"PDF not found after build for {paper_key}: {pdf_path}")
 
         # Validate each paper immediately after selecting/building its PDF.
+        if args.skip_validation:
+            print(f"\n[SKIP-VALIDATION] {paper_key}: skipped (--skip-validation)")
+            report_data['validation_results'][paper_key] = {
+                'success': True,
+                'from_cache': False,
+                'notes': 'skipped (--skip-validation)',
+                'errors': [],
+                'warnings': [],
+                'ai_fix_log_path': None,
+            }
+            log_action(f"Validation skipped for {paper_key} (--skip-validation)")
+            upload_candidates.append(paper_key)
+            continue
+
         print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
         passed, validation_errors, validation_warnings, from_cache, ai_fix_log_path = validate_existing_pdf(
             pdf_path=pdf_path,
             verbose=args.verbose,
-            use_cache=not args.force_revalidate,
+            use_cache=not args.force,
             llm_blocking_types=llm_blocking_types,
             llm_warning_types=llm_warning_types,
         )
@@ -1417,32 +1388,13 @@ def main():
             quarto_config=info["config"],
             pdf_path=pdf_path,
         )
+        metadata_only = False
         if skip_remote_upload:
-            metadata = info["config"].get("metadata", {}) if isinstance(info["config"], dict) else {}
-            doi = str(metadata.get("doi", "N/A")) if isinstance(metadata, dict) else "N/A"
-            print(f"[SKIP] {paper_key}: {skip_reason}")
-            report_data["upload_results"][paper_key] = {
-                "verified": True,
-                "skipped": True,
-                "doi": doi,
-                "id": "N/A",
-                "url": f"https://zenodo.org/record/{get_record_id_from_doi(doi)}" if get_record_id_from_doi(doi) else "N/A",
-                "reason": f"Skipped upload; {skip_reason}",
-            }
-            perfected_entries[paper_key] = {
-                "updated_at": datetime.now().isoformat(),
-                "source_signature": source_signatures.get(paper_key, {}),
-                "pdf_signature": _compute_pdf_signature(pdf_path),
-                "validation_passed": True,
-                "upload_verified": True,
-                "doi": doi,
-                "deposit_id": "N/A",
-                "url": report_data["upload_results"][paper_key]["url"],
-            }
-            _save_perfected_state(perfected_state)
-            log_action(f"Skipped upload for {paper_key}: remote checksum matched local PDF")
-            continue
-        print(f"[*] {paper_key}: remote checksum check unavailable/different, proceeding with upload ({skip_reason})")
+            print(f"[*] {paper_key}: PDF unchanged on remote ({skip_reason}); updating metadata only")
+            log_action(f"PDF unchanged for {paper_key}; metadata-only update")
+            metadata_only = True
+        else:
+            print(f"[*] {paper_key}: remote checksum check unavailable/different, proceeding with full upload ({skip_reason})")
 
         result = upload_paper(
             client=client,
@@ -1454,6 +1406,7 @@ def main():
             save_doi=True,
             config_path=info["config_path"],
             project_root=PROJECT_ROOT,
+            metadata_only=metadata_only,
         )
 
         report_data['upload_results'][paper_key] = result
