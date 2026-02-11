@@ -1720,6 +1720,16 @@ export const US_FEDERAL_SPENDING_2024: Parameter = {
   confidence: "high",
 };
 
+export const US_FED_DISCRETIONARY_SPENDING_2024: Parameter = {
+  value: 1700000000000.0,
+  unit: "USD",
+  displayName: "US Federal Discretionary Spending (FY2024)",
+  description: "US federal discretionary spending in FY2024. Approximately $886B defense + ~$814B non-defense discretionary = ~$1.7T. Used as denominator for discretionary efficiency rating (Cat 1 waste items are discretionary/fungible).",
+  sourceType: "external",
+  sourceRef: "cbo-long-term-budget-2024",
+  confidence: "high",
+};
+
 export const US_GDP_2024: Parameter = {
   value: 28780000000000.0,
   unit: "USD",
@@ -1804,11 +1814,11 @@ export const US_GOV_WASTE_HOUSING_ZONING: Parameter = {
   value: 1400000000000.0,
   unit: "USD",
   displayName: "Housing/Zoning Restrictions Cost",
-  description: "GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing workers from moving to productive locations. Annual cost ~$1.4T. Very high economist consensus across political spectrum. [CATEGORY 3: GDP Loss]",
+  description: "GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]",
   sourceType: "external",
   sourceRef: "hsieh-moretti2019",
-  confidence: "high",
-  confidenceInterval: [1000000000000.0, 2000000000000.0],
+  confidence: "medium",
+  confidenceInterval: [500000000000.0, 2000000000000.0],
   stdError: 300000000000.0,
 };
 
@@ -3863,15 +3873,37 @@ export const US_CONGRESS_FULL_ADVOCACY_COST: Parameter = {
   latex: "\\begin{gathered}\nCost_{US,congress} \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n= \\$5.35B\n\\end{gathered}",
 };
 
-export const US_GOV_EFFICIENCY_RATING: Parameter = {
-  value: 0.27985294117647064,
+export const US_FED_DISCRETIONARY_EFFICIENCY: Parameter = {
+  value: 0.4052941176470588,
   unit: "percent",
-  displayName: "US Efficiency Rating",
-  description: "US federal spending efficiency rating. Complement of waste percentage. Measures what fraction of fiscal input converts to useful output. Compare to OECD benchmark of 75-85%.",
+  displayName: "US Discretionary Efficiency",
+  description: "US federal discretionary spending efficiency. What fraction of discretionary spending avoids direct waste (Cat 1 only: military overspend, corporate welfare, drug war, fossil/ag subsidies). ~41%. Some Cat 1 items (farm subsidies, tax expenditures) are technically mandatory/off-budget but are fungible policy choices.",
   sourceType: "calculated",
   confidence: "medium",
-  formula: "1 - (US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING)",
-  latex: "\\begin{gathered}\nE_{US} = 1 - \\frac{W_{total,US}}{Spending_{federal}} = 1 - \\frac{\\$4.9T}{\\$6.8T} = 28\\% \\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}",
+  formula: "1 - (CAT1 / DISCRETIONARY)",
+  latex: "\\begin{gathered}\nE_{US,disc} \\\\\n= 1 - \\frac{W_{cat1}}{Spending_{fed}} \\\\\n= 1 - \\frac{\\$1.01T}{\\$1.7T} \\\\\n= 40.5\\% \\\\[0.5em]\n\\text{where } W_{cat1} \\\\\n= W_{military} + W_{corporate} + W_{drugs} \\\\\n+ W_{fossil} + W_{agriculture} \\\\\n= \\$615B + \\$181B + \\$90B + \\$50B + \\$75B \\\\\n= \\$1.01T\n\\end{gathered}",
+};
+
+export const US_FED_DISCRETIONARY_WASTE_PCT: Parameter = {
+  value: 0.5947058823529412,
+  unit: "percent",
+  displayName: "Discretionary Waste (%)",
+  description: "Category 1 direct spending waste as percentage of federal discretionary spending. ~$1.01T Cat 1 waste / $1.7T discretionary = ~59%. Uses discretionary spending as denominator because Cat 1 items (military overspend, corporate welfare, drug war, fossil/ag subsidies) are fungible policy choices within discretionary budget.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING / US_FED_DISCRETIONARY_SPENDING_2024",
+  latex: "\\begin{gathered}\nW_{US,\\%disc} = \\frac{W_{cat1}}{Spending_{fed}} = \\frac{\\$1.01T}{\\$1.7T} = 59.5\\% \\\\[0.5em]\n\\text{where } W_{cat1} \\\\\n= W_{military} + W_{corporate} + W_{drugs} \\\\\n+ W_{fossil} + W_{agriculture} \\\\\n= \\$615B + \\$181B + \\$90B + \\$50B + \\$75B \\\\\n= \\$1.01T\n\\end{gathered}",
+};
+
+export const US_GOVERNANCE_EFFICIENCY_GDP: Parameter = {
+  value: 0.8298471160528145,
+  unit: "percent",
+  displayName: "US Governance Efficiency (GDP)",
+  description: "Total US governance efficiency: all 4 waste categories as share of GDP. 1 - ($4.9T / $28.78T) = ~83%. This broader metric captures direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency relative to total economic output.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "1 - (US_GOV_WASTE_TOTAL / US_GDP)",
+  latex: "\\begin{gathered}\nE_{US,GDP} = 1 - \\frac{W_{total,US}}{USGDP} = 1 - \\frac{\\$4.9T}{\\$28.8T} = 83\\% \\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}",
 };
 
 export const US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING: Parameter = {
@@ -3916,17 +3948,6 @@ export const US_GOV_WASTE_CATEGORY_4_SYSTEM: Parameter = {
   confidence: "high",
   formula: "Healthcare Inefficiency",
   latex: "W_{cat4} = W_{health} = \\$1.2T = \\$1.2T",
-};
-
-export const US_GOV_WASTE_PCT_FED_SPENDING: Parameter = {
-  value: 0.7201470588235294,
-  unit: "percent",
-  displayName: "US Waste (% Federal Spending)",
-  description: "US government waste as percentage of federal spending. ~$4.90T waste / $6.8T federal spending = ~72%. Note: some waste categories (housing, healthcare) are not purely federal costs.",
-  sourceType: "calculated",
-  confidence: "medium",
-  formula: "US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING",
-  latex: "\\begin{gathered}\nW_{US,\\%fed} = \\frac{W_{total,US}}{Spending_{federal}} = \\frac{\\$4.9T}{\\$6.8T} = 72\\% \\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T \\\\[0.5em]\n\\text{where } W_{raw,US} \\\\\n= W_{health} + W_{housing} + W_{military} \\\\\n+ W_{regulatory} + W_{tax} + W_{corporate} \\\\\n+ W_{tariffs} + W_{drugs} + W_{fossil} \\\\\n+ W_{agriculture} \\\\\n= \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B \\\\\n+ \\$181B + \\$160B + \\$90B + \\$50B + \\$75B \\\\\n= \\$4.9T\n\\end{gathered}",
 };
 
 export const US_GOV_WASTE_PCT_GDP: Parameter = {
@@ -5163,6 +5184,7 @@ export const parameters = {
   US_CHRONIC_DISEASE_SPENDING_ANNUAL,
   US_DIABETES_ANNUAL_COST,
   US_FEDERAL_SPENDING_2024,
+  US_FED_DISCRETIONARY_SPENDING_2024,
   US_GDP_2024,
   US_GOVT_SPENDING_PCT_GDP,
   US_GOV_WASTE_AGRICULTURAL_SUBSIDIES,
@@ -5355,12 +5377,13 @@ export const parameters = {
   TYPE_I_ERROR_BENEFIT_DALYS,
   UNEXPLORED_RATIO,
   US_CONGRESS_FULL_ADVOCACY_COST,
-  US_GOV_EFFICIENCY_RATING,
+  US_FED_DISCRETIONARY_EFFICIENCY,
+  US_FED_DISCRETIONARY_WASTE_PCT,
+  US_GOVERNANCE_EFFICIENCY_GDP,
   US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING,
   US_GOV_WASTE_CATEGORY_2_COMPLIANCE,
   US_GOV_WASTE_CATEGORY_3_GDP_LOSS,
   US_GOV_WASTE_CATEGORY_4_SYSTEM,
-  US_GOV_WASTE_PCT_FED_SPENDING,
   US_GOV_WASTE_PCT_GDP,
   US_GOV_WASTE_QALY_EQUIVALENTS,
   US_GOV_WASTE_RAW_TOTAL,
@@ -6199,7 +6222,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2019]] },
-        'container-title': "Hsieh & Moretti",
+        'container-title': "American Economic Journal: Macroeconomics",
         URL: "https://www.aeaweb.org/articles?id=10.1257/mac.20170388",
         note: "Hsieh & Moretti, 2019, AEJ:Macro | Highly cited - one of most influential papers in urban economics",
   },
@@ -7301,9 +7324,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 462,
-  external: 184,
-  calculated: 180,
+  total: 464,
+  external: 185,
+  calculated: 181,
   definitions: 98,
   citations: 134,
 } as const;

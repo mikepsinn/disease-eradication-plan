@@ -4396,16 +4396,15 @@ US_GOV_WASTE_HOUSING_ZONING = Parameter(
     1_400_000_000_000,  # $1.4T annually
     source_ref="hsieh-moretti2019",
     source_type="external",
-    confidence="high",
-    description="GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate "
-                "restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP "
-                "by 36% from 1964-2009 by preventing workers from moving to productive locations. "
-                "Annual cost ~$1.4T. Very high economist consensus across political spectrum. "
+    confidence="medium",
+    description="GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate "
+                "of 36% GDP growth reduction was substantially revised by Greaney (2023). "
+                "Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. "
                 "[CATEGORY 3: GDP Loss]",
     display_name="Housing/Zoning Restrictions Cost",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(1_000_000_000_000, 2_000_000_000_000),
+    confidence_interval=(500_000_000_000, 2_000_000_000_000),
     std_error=300_000_000_000,
     keywords=["housing", "zoning", "NIMBY", "land use", "productivity", "misallocation", "category_3_gdp_loss"],
     latex_symbol=r"W_{housing}",
@@ -4643,38 +4642,73 @@ US_GOV_WASTE_TOTAL = Parameter(
     latex_symbol=r"W_{total,US}",
 )
 
-# US waste as percentage of federal spending
-US_GOV_WASTE_PCT_FED_SPENDING = Parameter(
-    US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING_2024,
-    source_type="calculated",
-    confidence="medium",
-    description="US government waste as percentage of federal spending. "
-                "~$4.90T waste / $6.8T federal spending = ~72%. Note: some waste "
-                "categories (housing, healthcare) are not purely federal costs.",
-    display_name="US Waste (% Federal Spending)",
-    unit="percent",
-    formula="US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING",
-    inputs=["US_GOV_WASTE_TOTAL", "US_FEDERAL_SPENDING_2024"],
-    compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] / ctx["US_FEDERAL_SPENDING_2024"],
-    keywords=["waste", "US", "federal", "spending", "percentage"],
-    latex_symbol=r"W_{US,\%fed}",
+# US Federal Discretionary Spending (FY2024) - denominator for discretionary efficiency
+US_FED_DISCRETIONARY_SPENDING_2024 = Parameter(
+    1_700_000_000_000,  # $886B defense + ~$814B non-defense
+    source_ref="cbo-long-term-budget-2024",
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="US federal discretionary spending in FY2024. Approximately $886B defense + "
+                "~$814B non-defense discretionary = ~$1.7T. Used as denominator for "
+                "discretionary efficiency rating (Cat 1 waste items are discretionary/fungible).",
+    display_name="US Federal Discretionary Spending (FY2024)",
+    unit="USD",
+    keywords=["federal", "discretionary", "spending", "budget", "US", "FY2024"],
 )
 
-# US federal spending efficiency rating (complement of waste percentage)
-US_GOV_EFFICIENCY_RATING = Parameter(
-    1 - (US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING_2024),
+# Cat 1 direct waste as percentage of discretionary spending
+US_FED_DISCRETIONARY_WASTE_PCT = Parameter(
+    US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING / US_FED_DISCRETIONARY_SPENDING_2024,
+    source_type="calculated",
+    confidence="medium",
+    description="Category 1 direct spending waste as percentage of federal discretionary spending. "
+                "~$1.01T Cat 1 waste / $1.7T discretionary = ~59%. Uses discretionary spending as "
+                "denominator because Cat 1 items (military overspend, corporate welfare, drug war, "
+                "fossil/ag subsidies) are fungible policy choices within discretionary budget.",
+    display_name="Discretionary Waste (%)",
+    unit="percent",
+    formula="US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING / US_FED_DISCRETIONARY_SPENDING_2024",
+    inputs=["US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING", "US_FED_DISCRETIONARY_SPENDING_2024"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING"] / ctx["US_FED_DISCRETIONARY_SPENDING_2024"],
+    keywords=["waste", "US", "discretionary", "spending", "percentage"],
+    latex_symbol=r"W_{US,\%disc}",
+)
+
+# US federal discretionary efficiency (complement of Cat 1 waste / discretionary)
+US_FED_DISCRETIONARY_EFFICIENCY = Parameter(
+    1 - (US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING / US_FED_DISCRETIONARY_SPENDING_2024),
     source_type="calculated",
     confidence="medium",
     unit="percent",
-    description="US federal spending efficiency rating. Complement of waste percentage. "
-                "Measures what fraction of fiscal input converts to useful output. "
-                "Compare to OECD benchmark of 75-85%.",
-    display_name="US Efficiency Rating",
-    formula="1 - (US_GOV_WASTE_TOTAL / US_FEDERAL_SPENDING)",
-    inputs=["US_GOV_WASTE_TOTAL", "US_FEDERAL_SPENDING_2024"],
-    compute=lambda ctx: 1 - (ctx["US_GOV_WASTE_TOTAL"] / ctx["US_FEDERAL_SPENDING_2024"]),
-    keywords=["efficiency", "rating", "US", "federal", "spending"],
-    latex_symbol=r"E_{US}",
+    description="US federal discretionary spending efficiency. What fraction of discretionary "
+                "spending avoids direct waste (Cat 1 only: military overspend, corporate welfare, "
+                "drug war, fossil/ag subsidies). ~41%. Some Cat 1 items (farm subsidies, tax "
+                "expenditures) are technically mandatory/off-budget but are fungible policy choices.",
+    display_name="US Discretionary Efficiency",
+    formula="1 - (CAT1 / DISCRETIONARY)",
+    inputs=["US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING", "US_FED_DISCRETIONARY_SPENDING_2024"],
+    compute=lambda ctx: 1 - (ctx["US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING"] / ctx["US_FED_DISCRETIONARY_SPENDING_2024"]),
+    keywords=["efficiency", "rating", "US", "federal", "discretionary"],
+    latex_symbol=r"E_{US,disc}",
+)
+
+# US governance efficiency (total waste as share of GDP)
+US_GOVERNANCE_EFFICIENCY_GDP = Parameter(
+    1 - (US_GOV_WASTE_TOTAL / US_GDP_2024),
+    source_type="calculated",
+    confidence="medium",
+    unit="percent",
+    description="Total US governance efficiency: all 4 waste categories as share of GDP. "
+                "1 - ($4.9T / $28.78T) = ~83%. This broader metric captures direct spending waste, "
+                "compliance burden, policy-induced GDP loss, and system inefficiency relative to "
+                "total economic output.",
+    display_name="US Governance Efficiency (GDP)",
+    formula="1 - (US_GOV_WASTE_TOTAL / US_GDP)",
+    inputs=["US_GOV_WASTE_TOTAL", "US_GDP_2024"],
+    compute=lambda ctx: 1 - (ctx["US_GOV_WASTE_TOTAL"] / ctx["US_GDP_2024"]),
+    keywords=["efficiency", "rating", "US", "governance", "GDP"],
+    latex_symbol=r"E_{US,GDP}",
 )
 
 # US waste as percentage of GDP

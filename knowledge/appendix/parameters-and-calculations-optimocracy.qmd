@@ -648,7 +648,7 @@ Raw sum of US government waste components before overlap discount: healthcare ($
 **Inputs**:
 
 - [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.20T (95% CI: $1T - $1.50T)
-- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $1T - $2T)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $500B - $2T)
 - [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
 - [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
 - [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
@@ -1083,15 +1083,15 @@ US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in c
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing workers from moving to productive locations. Annual cost ~$1.4T. Very high economist consensus across political spectrum. [CATEGORY 3: GDP Loss]
+GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]
 
 **Source**: [@hsieh-moretti2019]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1T, $2T] • Distribution: Lognormal (SE: $300B)
+**Technical**: 95% CI: [$500B, $2T] • Distribution: Lognormal (SE: $300B)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1T and $2T (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $500B and $2T (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1099,7 +1099,7 @@ GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) esti
 
 {{< include ../figures/distribution-us_gov_waste_housing_zoning.qmd >}}
 
-*✓ High confidence*
+*~ Medium confidence*
 
 :::
 

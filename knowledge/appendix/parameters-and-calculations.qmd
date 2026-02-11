@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 462 parameters used in the analysis, organized by type:
+This appendix documents all 464 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 184
-- Calculated values: 180
+- External sources (peer-reviewed): 185
+- Calculated values: 181
 - Core definitions: 98
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (180 parameters) • [External Data Sources](#sec-external) (184 parameters) • [Core Definitions](#sec-definitions) (98 parameters)
+[Calculated Values](#sec-calculated) (181 parameters) • [External Data Sources](#sec-external) (185 parameters) • [Core Definitions](#sec-definitions) (98 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -8708,20 +8708,103 @@ $$
 
 :::
 
-### US Efficiency Rating: 28% {#sec-us_gov_efficiency_rating}
+### US Discretionary Efficiency: 40.5% {#sec-us_fed_discretionary_efficiency}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-US federal spending efficiency rating. Complement of waste percentage. Measures what fraction of fiscal input converts to useful output. Compare to OECD benchmark of 75-85%.
+US federal discretionary spending efficiency. What fraction of discretionary spending avoids direct waste (Cat 1 only: military overspend, corporate welfare, drug war, fossil/ag subsidies). ~41%. Some Cat 1 items (farm subsidies, tax expenditures) are technically mandatory/off-budget but are fungible policy choices.
+
+**Inputs**:
+
+- [Category 1: Direct Spending Waste](#sec-us_gov_waste_category_1_direct_spending) 🔢: $1.01T
+- [US Federal Discretionary Spending (FY2024)](#sec-us_fed_discretionary_spending_2024) 📊: $1.70T
+
+$$
+\begin{gathered}
+E_{US,disc} \\
+= 1 - \frac{W_{cat1}}{Spending_{fed}} \\
+= 1 - \frac{\$1.01T}{\$1.7T} \\
+= 40.5\% \\[0.5em]
+\text{where } W_{cat1} \\
+= W_{military} + W_{corporate} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$615B + \$181B + \$90B + \$50B + \$75B \\
+= \$1.01T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_fed_discretionary_efficiency.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_fed_discretionary_efficiency.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_fed_discretionary_efficiency.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_fed_discretionary_efficiency.qmd >}}
+
+:::
+
+### Discretionary Waste (%): 59.5% {#sec-us_fed_discretionary_waste_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Category 1 direct spending waste as percentage of federal discretionary spending. ~$1.01T Cat 1 waste / $1.7T discretionary = ~59%. Uses discretionary spending as denominator because Cat 1 items (military overspend, corporate welfare, drug war, fossil/ag subsidies) are fungible policy choices within discretionary budget.
+
+**Inputs**:
+
+- [Category 1: Direct Spending Waste](#sec-us_gov_waste_category_1_direct_spending) 🔢: $1.01T
+- [US Federal Discretionary Spending (FY2024)](#sec-us_fed_discretionary_spending_2024) 📊: $1.70T
+
+$$
+\begin{gathered}
+W_{US,\%disc} = \frac{W_{cat1}}{Spending_{fed}} = \frac{\$1.01T}{\$1.7T} = 59.5\% \\[0.5em]
+\text{where } W_{cat1} \\
+= W_{military} + W_{corporate} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$615B + \$181B + \$90B + \$50B + \$75B \\
+= \$1.01T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_fed_discretionary_waste_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_fed_discretionary_waste_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_fed_discretionary_waste_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_fed_discretionary_waste_pct.qmd >}}
+
+:::
+
+### US Governance Efficiency (GDP): 83% {#sec-us_governance_efficiency_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total US governance efficiency: all 4 waste categories as share of GDP. 1 - ($4.9T / $28.78T) = ~83%. This broader metric captures direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency relative to total economic output.
 
 **Inputs**:
 
 - [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
-- [US Federal Spending (FY2024)](#sec-us_federal_spending_2024) 📊: $6.80T
+- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8T
 
 $$
 \begin{gathered}
-E_{US} = 1 - \frac{W_{total,US}}{Spending_{federal}} = 1 - \frac{\$4.9T}{\$6.8T} = 28\% \\[0.5em]
+E_{US,GDP} = 1 - \frac{W_{total,US}}{USGDP} = 1 - \frac{\$4.9T}{\$28.8T} = 83\% \\[0.5em]
 \text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
 \text{where } W_{raw,US} \\
 = W_{health} + W_{housing} + W_{military} \\
@@ -8738,17 +8821,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-us_gov_efficiency_rating.qmd >}}
+{{< include ../figures/tornado-us_governance_efficiency_gdp.qmd >}}
 
-{{< include ../figures/sensitivity-table-us_gov_efficiency_rating.qmd >}}
+{{< include ../figures/sensitivity-table-us_governance_efficiency_gdp.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-us_gov_efficiency_rating.qmd >}}
+{{< include ../figures/mc-distribution-us_governance_efficiency_gdp.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-us_gov_efficiency_rating.qmd >}}
+{{< include ../figures/exceedance-us_governance_efficiency_gdp.qmd >}}
 
 :::
 
@@ -8840,7 +8923,7 @@ Category 3: Policy-Induced GDP Loss. Economic output foregone due to policy cons
 
 **Inputs**:
 
-- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $1T - $2T)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $500B - $2T)
 - [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
 
 $$
@@ -8899,50 +8982,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_gov_waste_category_4_system.qmd >}}
-
-:::
-
-### US Waste (% Federal Spending): 72% {#sec-us_gov_waste_pct_fed_spending}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US government waste as percentage of federal spending. ~$4.90T waste / $6.8T federal spending = ~72%. Note: some waste categories (housing, healthcare) are not purely federal costs.
-
-**Inputs**:
-
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
-- [US Federal Spending (FY2024)](#sec-us_federal_spending_2024) 📊: $6.80T
-
-$$
-\begin{gathered}
-W_{US,\%fed} = \frac{W_{total,US}}{Spending_{federal}} = \frac{\$4.9T}{\$6.8T} = 72\% \\[0.5em]
-\text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
-\text{where } W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} \\
-+ W_{regulatory} + W_{tax} + W_{corporate} \\
-+ W_{tariffs} + W_{drugs} + W_{fossil} \\
-+ W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
-+ \$181B + \$160B + \$90B + \$50B + \$75B \\
-= \$4.9T
-\end{gathered}
-$$
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-us_gov_waste_pct_fed_spending.qmd >}}
-
-{{< include ../figures/sensitivity-table-us_gov_waste_pct_fed_spending.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-us_gov_waste_pct_fed_spending.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-us_gov_waste_pct_fed_spending.qmd >}}
 
 :::
 
@@ -9043,7 +9082,7 @@ Raw sum of US government waste components before overlap discount: healthcare ($
 **Inputs**:
 
 - [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.20T (95% CI: $1T - $1.50T)
-- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $1T - $2T)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $500B - $2T)
 - [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
 - [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
 - [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
@@ -12454,6 +12493,22 @@ US federal government spending in FY2024. CBO reports outlays of $6.8T (23.9% of
 
 :::
 
+### US Federal Discretionary Spending (FY2024): $1.70T {#sec-us_fed_discretionary_spending_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US federal discretionary spending in FY2024. Approximately $886B defense + ~$814B non-defense discretionary = ~$1.7T. Used as denominator for discretionary efficiency rating (Cat 1 waste items are discretionary/fungible).
+
+**Source**: [@cbo-long-term-budget-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### US GDP (2024): $28.8T {#sec-us_gdp_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12610,15 +12665,15 @@ US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in c
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) estimate restrictive zoning in high-productivity cities (NYC, SF, Boston) lowered aggregate US GDP by 36% from 1964-2009 by preventing workers from moving to productive locations. Annual cost ~$1.4T. Very high economist consensus across political spectrum. [CATEGORY 3: GDP Loss]
+GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]
 
 **Source**: [@hsieh-moretti2019]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1T, $2T] • Distribution: Lognormal (SE: $300B)
+**Technical**: 95% CI: [$500B, $2T] • Distribution: Lognormal (SE: $300B)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1T and $2T (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $500B and $2T (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -12626,7 +12681,7 @@ GDP loss from housing/zoning restrictions. Hsieh & Moretti (2019 AEJ:Macro) esti
 
 {{< include ../figures/distribution-us_gov_waste_housing_zoning.qmd >}}
 
-*✓ High confidence*
+*~ Medium confidence*
 
 :::
 
