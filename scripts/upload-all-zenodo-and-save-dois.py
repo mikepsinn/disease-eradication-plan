@@ -1251,91 +1251,81 @@ def main():
     upload_candidates: list[str] = []
 
     for paper_key in process_keys:
-        try:
-            info = papers[paper_key]
-            pdf_path = PROJECT_ROOT / info["pdf_path"]
-            build_pdf_path = PROJECT_ROOT / info["build_pdf_path"]
-            pdf_path.parent.mkdir(parents=True, exist_ok=True)
-            newest_source_mtime = get_newest_paper_source_mtime(
-                paper_key=paper_key,
-                paper_config=info,
-                project_root=PROJECT_ROOT,
-            )
+        info = papers[paper_key]
+        pdf_path = PROJECT_ROOT / info["pdf_path"]
+        build_pdf_path = PROJECT_ROOT / info["build_pdf_path"]
+        pdf_path.parent.mkdir(parents=True, exist_ok=True)
+        newest_source_mtime = get_newest_paper_source_mtime(
+            paper_key=paper_key,
+            paper_config=info,
+            project_root=PROJECT_ROOT,
+        )
 
-            # Step 1: Sync freshest local PDF into assets/pdfs.
+        # Step 1: Sync freshest local PDF into assets/pdfs.
+        if build_pdf_path.exists() and (
+            not pdf_path.exists() or build_pdf_path.stat().st_mtime > pdf_path.stat().st_mtime
+        ):
+            copy_with_retry(build_pdf_path, pdf_path)
+            print(f"  -> Synced newer local build PDF to: {info['pdf_path']}")
+
+        # Step 2: Check remote and download only if it's newer than local assets PDF.
+        # Force remote download destination to assets/pdfs for freshness + upload.
+        download_target = dict(info)
+        download_target["pdf_path"] = info["pdf_path"]
+        downloaded_pdf = check_and_download_remote_pdf(
+            paper_key=paper_key,
+            paper_config=download_target,
+            project_root=PROJECT_ROOT,
+            timeout=30,
+        )
+        if downloaded_pdf:
+            pdf_path = downloaded_pdf
+
+        # Step 3: Is the canonical assets PDF newer than sources?
+        if pdf_path.exists() and pdf_path.stat().st_mtime >= newest_source_mtime:
+            print(f"\n[OK] PDF is fresh for {paper_key}", flush=True)
+            build_result = {"success": True, "duration_seconds": 0.0, "errors": []}
+        else:
+            # Step 4: PDF is stale or missing — rebuild
+            print(f"\n[BUILD] Rebuilding {paper_key} (PDF older than sources)", flush=True)
+            build_result = rebuild_paper(paper_key, verbose=args.verbose)
+
+            # Keep assets/pdfs as source of truth, sync from build output when newer/missing.
             if build_pdf_path.exists() and (
                 not pdf_path.exists() or build_pdf_path.stat().st_mtime > pdf_path.stat().st_mtime
             ):
+                pdf_path.parent.mkdir(parents=True, exist_ok=True)
                 copy_with_retry(build_pdf_path, pdf_path)
-                print(f"  -> Synced newer local build PDF to: {info['pdf_path']}")
+                print(f"  -> Copied rebuilt PDF to: {info['pdf_path']}")
 
-            # Step 2: Check remote and download only if it's newer than local assets PDF.
-            # Force remote download destination to assets/pdfs for freshness + upload.
-            download_target = dict(info)
-            download_target["pdf_path"] = info["pdf_path"]
-            downloaded_pdf = check_and_download_remote_pdf(
-                paper_key=paper_key,
-                paper_config=download_target,
-                project_root=PROJECT_ROOT,
-                timeout=30,
-            )
-            if downloaded_pdf:
-                pdf_path = downloaded_pdf
+            # Store build result with additional metadata
+            build_result['qmd_count'] = info['qmd_count']
 
-            # Step 3: Is the canonical assets PDF newer than sources?
-            if pdf_path.exists() and pdf_path.stat().st_mtime >= newest_source_mtime:
-                print(f"\n[OK] PDF is fresh for {paper_key}", flush=True)
-                build_result = {"success": True, "duration_seconds": 0.0, "errors": []}
+            if pdf_path.exists():
+                pdf_size_mb = pdf_path.stat().st_size / (1024 * 1024)
+                build_result['pdf_size'] = f"{pdf_size_mb:.2f} MB"
+                build_result['pages'] = get_pdf_page_count(pdf_path)
             else:
-                # Step 4: PDF is stale or missing — rebuild
-                print(f"\n[BUILD] Rebuilding {paper_key} (PDF older than sources)", flush=True)
-                build_result = rebuild_paper(paper_key, verbose=args.verbose)
+                build_result['pdf_size'] = "N/A"
+                build_result['pages'] = None
 
-                # Keep assets/pdfs as source of truth, sync from build output when newer/missing.
-                if build_pdf_path.exists() and (
-                    not pdf_path.exists() or build_pdf_path.stat().st_mtime > pdf_path.stat().st_mtime
-                ):
-                    pdf_path.parent.mkdir(parents=True, exist_ok=True)
-                    copy_with_retry(build_pdf_path, pdf_path)
-                    print(f"  -> Copied rebuilt PDF to: {info['pdf_path']}")
+            report_data['build_results'][paper_key] = build_result
 
-                # Store build result with additional metadata
-                build_result['qmd_count'] = info['qmd_count']
+            if not build_result['success']:
+                print(f"\n[FATAL] Build failed for {paper_key}")
+                report_data['errors'][paper_key] = build_result['errors']
+                report_data['failed_count'] += 1
+                log_action(f"Build failed for {paper_key}")
+                save_report(report_data, start_time)
+                raise RuntimeError(f"Build failed for {paper_key}")
 
-                if pdf_path.exists():
-                    pdf_size_mb = pdf_path.stat().st_size / (1024 * 1024)
-                    build_result['pdf_size'] = f"{pdf_size_mb:.2f} MB"
-                    build_result['pages'] = get_pdf_page_count(pdf_path)
-                else:
-                    build_result['pdf_size'] = "N/A"
-                    build_result['pages'] = None
-
-                report_data['build_results'][paper_key] = build_result
-
-                if not build_result['success']:
-                    print(f"\n[ERROR] Build failed for {paper_key}")
-                    report_data['errors'][paper_key] = build_result['errors']
-                    report_data['failed_count'] += 1
-                    log_action(f"Build failed for {paper_key}")
-                    print("  -> Skipping this paper and continuing to next")
-                    continue
-
-                if not pdf_path.exists():
-                    print(f"\n[ERROR] PDF not found after build: {pdf_path}")
-                    report_data['errors'][paper_key] = ["PDF not found after build"]
-                    report_data['failed_count'] += 1
-                    log_action(f"Build failed for {paper_key}: PDF not found after build")
-                    print("  -> Skipping this paper and continuing to next")
-                    continue
-        except Exception as e:
-            print(f"\n[ERROR] Exception while processing {paper_key}: {e}")
-            import traceback
-            traceback.print_exc()
-            report_data['errors'][paper_key] = [f"Exception during build/preparation: {str(e)}"]
-            report_data['failed_count'] += 1
-            log_action(f"Exception during build for {paper_key}: {str(e)}")
-            print("  -> Skipping this paper and continuing to next")
-            continue
+            if not pdf_path.exists():
+                print(f"\n[FATAL] PDF not found after build: {pdf_path}")
+                report_data['errors'][paper_key] = ["PDF not found after build"]
+                report_data['failed_count'] += 1
+                log_action(f"Build failed for {paper_key}: PDF not found after build")
+                save_report(report_data, start_time)
+                raise RuntimeError(f"PDF not found after build for {paper_key}: {pdf_path}")
 
         # Validate each paper immediately after selecting/building its PDF.
         print(f"\n[VALIDATE] {paper_key}: {pdf_path.name}")
@@ -1404,109 +1394,94 @@ def main():
         log_action(
             f"Validation failed for {paper_key}; blocking errors={len(validation_errors)} warnings={len(validation_warnings)}"
         )
-        log_action(f"Continuing after validation failure for {paper_key}")
-        print("  -> Upload skipped for this paper")
-        print("  -> Continuing to next paper")
-        continue
+        save_report(report_data, start_time)
+        raise RuntimeError(f"Validation failed for {paper_key}: {validation_errors[0] if validation_errors else 'unknown'}")
 
     if not upload_candidates:
         print("\nNo papers eligible for upload after validation.")
         log_action("No papers eligible for upload after validation")
 
-    # Upload each validated paper (continue on upload errors)
+    # Upload each validated paper (crash on errors)
     for paper_key in upload_candidates:
-        try:
-            info = papers[paper_key]
-            pdf_path = PROJECT_ROOT / info["pdf_path"]
-            log_action(f"Uploading {paper_key}")
-            if not pdf_path.exists():
-                fallback_pdf = PROJECT_ROOT / info["build_pdf_path"]
-                if fallback_pdf.exists():
-                    print(f"[WARN] Using fallback build PDF for upload: {fallback_pdf}")
-                    pdf_path = fallback_pdf
+        info = papers[paper_key]
+        pdf_path = PROJECT_ROOT / info["pdf_path"]
+        log_action(f"Uploading {paper_key}")
+        if not pdf_path.exists():
+            fallback_pdf = PROJECT_ROOT / info["build_pdf_path"]
+            if fallback_pdf.exists():
+                print(f"[WARN] Using fallback build PDF for upload: {fallback_pdf}")
+                pdf_path = fallback_pdf
 
-            skip_remote_upload, skip_reason = _should_skip_upload_by_remote_checksum(
-                client=client,
-                quarto_config=info["config"],
-                pdf_path=pdf_path,
-            )
-            if skip_remote_upload:
-                metadata = info["config"].get("metadata", {}) if isinstance(info["config"], dict) else {}
-                doi = str(metadata.get("doi", "N/A")) if isinstance(metadata, dict) else "N/A"
-                print(f"[SKIP] {paper_key}: {skip_reason}")
-                report_data["upload_results"][paper_key] = {
-                    "verified": True,
-                    "skipped": True,
-                    "doi": doi,
-                    "id": "N/A",
-                    "url": f"https://zenodo.org/record/{get_record_id_from_doi(doi)}" if get_record_id_from_doi(doi) else "N/A",
-                    "reason": f"Skipped upload; {skip_reason}",
-                }
-                perfected_entries[paper_key] = {
-                    "updated_at": datetime.now().isoformat(),
-                    "source_signature": source_signatures.get(paper_key, {}),
-                    "pdf_signature": _compute_pdf_signature(pdf_path),
-                    "validation_passed": True,
-                    "upload_verified": True,
-                    "doi": doi,
-                    "deposit_id": "N/A",
-                    "url": report_data["upload_results"][paper_key]["url"],
-                }
-                _save_perfected_state(perfected_state)
-                log_action(f"Skipped upload for {paper_key}: remote checksum matched local PDF")
-                continue
-            print(f"[*] {paper_key}: remote checksum check unavailable/different, proceeding with upload ({skip_reason})")
-
-            result = upload_paper(
-                client=client,
-                paper_key=paper_key,
-                quarto_config=info["config"],
-                pdf_path=pdf_path,
-                draft=args.draft,
-                verbose=True,
-                save_doi=True,
-                config_path=info["config_path"],
-                project_root=PROJECT_ROOT,
-            )
-
-            report_data['upload_results'][paper_key] = result
-
-            if not result or not result.get("verified"):
-                print(f"\n[ERROR] Upload failed for {paper_key}")
-                print("  -> Skipping this paper and continuing to next")
-
-                if paper_key not in report_data['errors']:
-                    report_data['errors'][paper_key] = []
-                report_data['errors'][paper_key].append("Upload verification failed")
-                report_data['failed_count'] += 1
-                perfected_entries.pop(paper_key, None)
-                _save_perfected_state(perfected_state)
-                log_action(f"Upload failed for {paper_key}")
-                continue
-
-            log_action(f"Upload verified for {paper_key}: DOI {result.get('doi', 'N/A')}")
+        skip_remote_upload, skip_reason = _should_skip_upload_by_remote_checksum(
+            client=client,
+            quarto_config=info["config"],
+            pdf_path=pdf_path,
+        )
+        if skip_remote_upload:
+            metadata = info["config"].get("metadata", {}) if isinstance(info["config"], dict) else {}
+            doi = str(metadata.get("doi", "N/A")) if isinstance(metadata, dict) else "N/A"
+            print(f"[SKIP] {paper_key}: {skip_reason}")
+            report_data["upload_results"][paper_key] = {
+                "verified": True,
+                "skipped": True,
+                "doi": doi,
+                "id": "N/A",
+                "url": f"https://zenodo.org/record/{get_record_id_from_doi(doi)}" if get_record_id_from_doi(doi) else "N/A",
+                "reason": f"Skipped upload; {skip_reason}",
+            }
             perfected_entries[paper_key] = {
                 "updated_at": datetime.now().isoformat(),
                 "source_signature": source_signatures.get(paper_key, {}),
                 "pdf_signature": _compute_pdf_signature(pdf_path),
                 "validation_passed": True,
                 "upload_verified": True,
-                "doi": result.get("doi"),
-                "deposit_id": result.get("id"),
-                "url": result.get("url"),
+                "doi": doi,
+                "deposit_id": "N/A",
+                "url": report_data["upload_results"][paper_key]["url"],
             }
             _save_perfected_state(perfected_state)
-        except Exception as e:
-            print(f"\n[ERROR] Exception while uploading {paper_key}: {e}")
-            import traceback
-            traceback.print_exc()
+            log_action(f"Skipped upload for {paper_key}: remote checksum matched local PDF")
+            continue
+        print(f"[*] {paper_key}: remote checksum check unavailable/different, proceeding with upload ({skip_reason})")
+
+        result = upload_paper(
+            client=client,
+            paper_key=paper_key,
+            quarto_config=info["config"],
+            pdf_path=pdf_path,
+            draft=args.draft,
+            verbose=True,
+            save_doi=True,
+            config_path=info["config_path"],
+            project_root=PROJECT_ROOT,
+        )
+
+        report_data['upload_results'][paper_key] = result
+
+        if not result or not result.get("verified"):
+            print(f"\n[FATAL] Upload failed for {paper_key}")
             if paper_key not in report_data['errors']:
                 report_data['errors'][paper_key] = []
-            report_data['errors'][paper_key].append(f"Exception during upload: {str(e)}")
+            report_data['errors'][paper_key].append("Upload verification failed")
             report_data['failed_count'] += 1
-            log_action(f"Exception during upload for {paper_key}: {str(e)}")
-            print("  -> Skipping this paper and continuing to next")
-            continue
+            perfected_entries.pop(paper_key, None)
+            _save_perfected_state(perfected_state)
+            log_action(f"Upload failed for {paper_key}")
+            save_report(report_data, start_time)
+            raise RuntimeError(f"Upload failed for {paper_key}")
+
+        log_action(f"Upload verified for {paper_key}: DOI {result.get('doi', 'N/A')}")
+        perfected_entries[paper_key] = {
+            "updated_at": datetime.now().isoformat(),
+            "source_signature": source_signatures.get(paper_key, {}),
+            "pdf_signature": _compute_pdf_signature(pdf_path),
+            "validation_passed": True,
+            "upload_verified": True,
+            "doi": result.get("doi"),
+            "deposit_id": result.get("id"),
+            "url": result.get("url"),
+        }
+        _save_perfected_state(perfected_state)
 
     # Summary
     print(f"\n{'=' * 60}")

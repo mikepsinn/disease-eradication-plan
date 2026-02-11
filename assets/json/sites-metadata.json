@@ -3623,7 +3623,7 @@
             "Conclusion: From Partners to Owners"
           ],
           "published": true,
-          "lastmod": "2026-02-03"
+          "lastmod": "2026-02-10"
         },
         {
           "path": "knowledge/appendix/right-to-trial-fda-upgrade-act.qmd",
@@ -4215,7 +4215,7 @@
             "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
             "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
             "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-            "Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare",
+            "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
             "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
             "The Political Dysfunction Tax",
             "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
@@ -4756,8 +4756,8 @@
     {
       "id": "optimocracy",
       "type": "website",
-      "title": "Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare",
-      "description": "Suboptimal public policy costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while incentivizing politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making suboptimal policy politically expensive.",
+      "title": "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
+      "description": "Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving democratic structures.",
       "siteUrl": "https://optimocracy.warondisease.org",
       "favicon": "https://optimocracy.warondisease.org/assets/icons/optimocracy-favicon.png",
       "ogImage": "https://optimocracy.warondisease.org/assets/og/optimocracy-og-1200x630.jpg",
@@ -4850,8 +4850,8 @@
         {
           "path": "index.qmd",
           "url": "https://optimocracy.warondisease.org/",
-          "title": "Optimocracy: Apply Causal Inference to Historical Policy Data to Maximize Human Welfare",
-          "description": "Suboptimal public policy costs society trillions annually: $4.90T in documented US waste and $101T in global opportunity costs. Optimocracy proposes algorithmic governance: a system that analyzes historical data to recommend policies that maximize health and wealth, while incentivizing politicians to follow the evidence rather than lobbyists. This approach maintains democratic structures while making suboptimal policy politically expensive.",
+          "title": "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
+          "description": "Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving democratic structures.",
           "image": "https://optimocracy.warondisease.org/assets/og-images/knowledge/appendix/optimocracy-paper-og-retro-academic.jpg",
           "sections": [
             "The Mechanism",
