@@ -19,6 +19,12 @@ abstract: |
   ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. Full impact yields
   {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in value
   ({{< var dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag >}} ROI).
+jel:
+  - I18
+  - I11
+  - D61
+  - H51
+  - O38
 published: true
 tags:
   - dfda

@@ -19,6 +19,12 @@ abstract: |
   Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I
   Regulatory Errors (market access for ineffective therapies) by a factor of
   {{< var type_ii_error_cost_ratio >}}.
+jel:
+  - I18
+  - L51
+  - K23
+  - D61
+  - I11
 published: true
 tags:
   - appendix

@@ -27,6 +27,28 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 from lib.latex_utils import sanitize_for_latex  # type: ignore[import-not-found]
 
 
+def _extract_jel_from_qmd(qmd_path: Path) -> List[str]:
+    """Extract JEL codes from a QMD file's YAML frontmatter.
+
+    Handles both 'jel:' and 'jel-codes:' field names.
+    """
+    if not qmd_path.exists():
+        return []
+    with open(qmd_path, encoding="utf-8") as f:
+        content = f.read()
+    # Extract YAML frontmatter between --- markers
+    match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+    if not match:
+        return []
+    frontmatter = yaml.safe_load(match.group(1))
+    if not frontmatter:
+        return []
+    jel = frontmatter.get("jel") or frontmatter.get("jel-codes") or []
+    if isinstance(jel, str):
+        jel = [j.strip() for j in jel.split(",")]
+    return jel
+
+
 def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
     """
     Extract paper information from a Quarto config file.
@@ -124,6 +146,13 @@ def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str
     elif "website" in config:
         abstract = config["website"].get("description")
 
+    # Extract JEL codes from QMD source file
+    jel_codes: List[str] = []
+    index_source = dih_render.get("index-source", "")
+    if index_source:
+        qmd_path = config_path.parent / index_source
+        jel_codes = _extract_jel_from_qmd(qmd_path)
+
     # Extract author info from book.author or root author
     author_info: Dict[str, Any] = {}
     authors_list = None
@@ -169,6 +198,7 @@ def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str
         "funding": metadata.get("funding", ""),
         "ethics_statement": metadata.get("ethics-statement", ""),
         "data_availability": metadata.get("data-availability", ""),
+        "jel_codes": jel_codes,
     }
 
 
@@ -347,6 +377,12 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
     if all_keywords:
         display_keywords = [_unslugify_keyword(k) for k in all_keywords]
         lines.append(f"KEYWORDS: {', '.join(display_keywords)}")
+        lines.append("")
+
+    # JEL codes
+    jel_codes = paper.get("jel_codes", [])
+    if jel_codes:
+        lines.append(f"JEL CODES: {', '.join(jel_codes)}")
         lines.append("")
 
     # Subject areas and category
