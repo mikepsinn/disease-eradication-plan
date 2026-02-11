@@ -546,7 +546,7 @@ def resolve_quarto_variables(text: str, project_root: Path) -> str:
         Text with variables resolved
     """
     import yaml
-    from yaml_sync_utils import substitute_quarto_variables
+    from lib.yaml_sync_utils import substitute_quarto_variables
 
     # Load _variables.yml
     variables_path = project_root / "_variables.yml"

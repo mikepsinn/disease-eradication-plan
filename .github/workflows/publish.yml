@@ -1317,7 +1317,7 @@ jobs:
 
 
   build-optimocracy:
-    name: "Build Optimocracy: Apply Causal Inference to Historical "
+    name: "Build Optimocracy: Causal Inference on Cross-Jurisdictio"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1385,7 +1385,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build Optimocracy: Apply Causal Inference to Historical "
+      - name: "Render Build Optimocracy: Causal Inference on Cross-Jurisdictio"
         run: python scripts/render-quarto.py optimocracy
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
@@ -1416,7 +1416,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build Optimocracy: Apply Causal Inference to Historical  to Netlify (immediate)"
+      - name: "Deploy Build Optimocracy: Causal Inference on Cross-Jurisdictio to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -1437,7 +1437,7 @@ jobs:
 
 
 
-      - name: "Upload Build Optimocracy: Apply Causal Inference to Historical  PDF to Zenodo (draft)"
+      - name: "Upload Build Optimocracy: Causal Inference on Cross-Jurisdictio PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
