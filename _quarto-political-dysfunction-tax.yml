@@ -209,6 +209,7 @@ format:
   pdf:
     output-file: "political-dysfunction-tax.pdf"
     documentclass: article
+    institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3

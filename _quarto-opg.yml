@@ -214,6 +214,7 @@ format:
   pdf:
     output-file: "opg-framework-paper.pdf"
     documentclass: article
+    institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3

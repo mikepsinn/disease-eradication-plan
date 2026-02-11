@@ -223,6 +223,7 @@ format:
   pdf:
     output-file: "wishocracy-rappa-paper.pdf"
     documentclass: article
+    institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3

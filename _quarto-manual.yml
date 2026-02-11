@@ -477,6 +477,7 @@ format:
     # Alternative: scrreprt with 'classoption: draft' also works but reduces PDF quality
     output-file: "How-to-End-War-and-Disease.pdf"
     documentclass: report
+    institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3
