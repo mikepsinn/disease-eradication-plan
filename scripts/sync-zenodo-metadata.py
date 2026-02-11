@@ -49,6 +49,8 @@ def compare_metadata(local_meta, zenodo_meta):
     differences = {}
 
     # Compare key fields
+    # Excludes: publication_date (changes daily), access_right (always "open"),
+    # upload_type/publication_type (fixed), communities (fixed), _existing_doi (internal)
     fields_to_compare = [
         'title',
         'description',
@@ -56,6 +58,16 @@ def compare_metadata(local_meta, zenodo_meta):
         'license',
         'keywords',
         'creators',
+        'references',
+        'related_identifiers',
+        'subjects',
+        'contributors',
+        'grants',
+        'alternate_identifiers',
+        'language',
+        'version',
+        'notes',
+        'rights',
     ]
 
     for field in fields_to_compare:

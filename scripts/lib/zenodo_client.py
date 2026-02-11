@@ -429,7 +429,7 @@ def parse_bibtex_file(bib_path: Path) -> dict:
         return {}
 
 
-def extract_cited_references(paper_key: str, quarto_config: dict, project_root: Path) -> list[dict]:
+def extract_cited_references(paper_key: str, quarto_config: dict, project_root: Path) -> tuple[list[str], list[dict]]:
     """Extract references that are actually cited in the paper.
 
     Args:
@@ -438,7 +438,9 @@ def extract_cited_references(paper_key: str, quarto_config: dict, project_root: 
         project_root: Project root path
 
     Returns:
-        List of Zenodo reference dicts with raw_reference, identifier, etc.
+        Tuple of (references, related_identifiers):
+        - references: list of plain strings for Zenodo references field
+        - related_identifiers: list of dicts with identifier/relation/scheme for DOI cross-links
     """
     import re
 
@@ -446,13 +448,13 @@ def extract_cited_references(paper_key: str, quarto_config: dict, project_root: 
     dih_render = quarto_config.get("dih-render", {})
     index_source = dih_render.get("index-source")
     if not index_source:
-        return []
+        return [], []
 
     # Parse references.bib
     bib_path = project_root / "references.bib"
     bib_entries = parse_bibtex_file(bib_path)
     if not bib_entries:
-        return []
+        return [], []
 
     # Scan QMD files for citations
     cited_keys = set()
@@ -473,6 +475,17 @@ def extract_cited_references(paper_key: str, quarto_config: dict, project_root: 
                 if chapter_path.exists():
                     qmd_files.append(chapter_path)
 
+    # Add files from project.render (e.g., appendix QMD files)
+    project_config = quarto_config.get("project", {})
+    if isinstance(project_config, dict):
+        render_list = project_config.get("render", [])
+        if isinstance(render_list, list):
+            for render_entry in render_list:
+                if isinstance(render_entry, str) and render_entry.endswith(".qmd"):
+                    render_path = project_root / render_entry
+                    if render_path.exists() and render_path not in qmd_files:
+                        qmd_files.append(render_path)
+
     # Scan all QMD files for citation keys
     citation_pattern = re.compile(r'@([a-zA-Z0-9_-]+)')
     for qmd_file in qmd_files:
@@ -485,8 +498,9 @@ def extract_cited_references(paper_key: str, quarto_config: dict, project_root: 
         except Exception:
             continue
 
-    # Build Zenodo reference list
+    # Build Zenodo reference list (plain strings) and related_identifiers (for DOI cross-links)
     references = []
+    related_identifiers = []
     for cite_key in sorted(cited_keys):
         entry = bib_entries[cite_key]
 
@@ -509,23 +523,20 @@ def extract_cited_references(paper_key: str, quarto_config: dict, project_root: 
         elif entry.get('publisher'):
             raw_ref += f" {entry['publisher']}."
 
-        ref_dict = {"raw_reference": raw_ref}
-
-        # Add DOI if available
+        # Append DOI or URL to the string representation
         if entry.get('doi'):
-            ref_dict["identifier"] = entry['doi']
-            ref_dict["scheme"] = "doi"
-            ref_dict["relation"] = "cites"
-
-        # Add URL if available and no DOI
+            raw_ref += f" doi:{entry['doi']}"
+            related_identifiers.append({
+                "identifier": entry['doi'],
+                "relation": "cites",
+                "scheme": "doi",
+            })
         elif entry.get('url'):
-            ref_dict["identifier"] = entry['url']
-            ref_dict["scheme"] = "url"
-            ref_dict["relation"] = "cites"
+            raw_ref += f" {entry['url']}"
 
-        references.append(ref_dict)
+        references.append(raw_ref)
 
-    return references
+    return references, related_identifiers
 
 
 def extract_abstract_from_qmd(paper_key: str, quarto_config: dict, project_root: Path) -> str:
@@ -815,9 +826,11 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: P
 
     # Add references from .bib file (only cited references)
     if project_root:
-        references = extract_cited_references(paper_key, quarto_config, project_root)
-        if references:
-            zenodo_metadata["references"] = references
+        ref_strings, ref_related = extract_cited_references(paper_key, quarto_config, project_root)
+        if ref_strings:
+            zenodo_metadata["references"] = ref_strings
+        if ref_related:
+            related.extend(ref_related)
 
     # Add grants/funding if specified in config
     grants = metadata.get("grants") or zenodo_section.get("grants")
