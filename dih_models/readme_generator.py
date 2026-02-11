@@ -168,6 +168,12 @@ def generate_readme(
         # Fix relative paths for README at project root
         content = fix_relative_paths(content, "knowledge")
 
+        # Strip HTML comments (e.g., submission info blocks)
+        content = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+
+        # Clean up excess blank lines left by removed comments
+        content = re.sub(r'\n{3,}', '\n\n', content)
+
         readme_parts.append(content)
     else:
         print(f"[WARN] {papers_qmd} not found")
