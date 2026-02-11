@@ -98,6 +98,7 @@ format:
     link-citations: true
     include-in-header:
       - callout-bw.tex
+      - institute-header.tex
     geometry:
       - top=1in
       - bottom=1in

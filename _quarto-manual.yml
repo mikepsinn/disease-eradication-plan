@@ -488,6 +488,9 @@ format:
     author: "WISHONIA (translated by Mike P. Sinn)"
     include-in-header:
       - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://manual.WarOnDisease.org}
       - text: |
           % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
           % Override the \appendix command to prevent switching to alphabetic numbering

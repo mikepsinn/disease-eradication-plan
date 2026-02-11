@@ -227,6 +227,9 @@ format:
     link-citations: true
     include-in-header:
       - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://optimocracy.warondisease.org}
     geometry:
       - top=1in
       - bottom=1in

@@ -228,6 +228,9 @@ format:
     date: ""
     include-in-header:
       - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://dfda-impact.warondisease.org}
     geometry:
       - top=1in
       - bottom=1in

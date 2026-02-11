@@ -1,13 +1,15 @@
 % Black and white callout styling for Quarto PDFs
-% Completely overrides Quarto's colored tcolorbox callout styles with grayscale
-% Uses \AtBeginDocument to ensure styles are applied AFTER Quarto's defaults
-% Only applies if tcolorbox is loaded (documents without callouts skip this)
+% Overrides Quarto's colored callout styles with grayscale
+% Uses \AtBeginDocument to ensure colors are applied AFTER Quarto's
+% filter-injected \definecolor commands in the preamble.
+% Must redefine BOTH base colors (used for colbacktitle) AND
+% -frame colors (used for colframe) since Quarto 1.8+ uses inline
+% tcolorbox options rather than named styles.
 
 \makeatletter
 \AtBeginDocument{
-  % Only apply styles if tcolorbox is loaded (i.e., document has callouts)
   \@ifpackageloaded{tcolorbox}{%
-    % Override callout color definitions
+    % Override base callout colors (used for colbacktitle with !10!white)
     \definecolor{quarto-callout-color}{HTML}{707070}
     \definecolor{quarto-callout-note-color}{HTML}{5a5a5a}
     \definecolor{quarto-callout-important-color}{HTML}{4a4a4a}
@@ -15,14 +17,13 @@
     \definecolor{quarto-callout-tip-color}{HTML}{6a6a6a}
     \definecolor{quarto-callout-caution-color}{HTML}{4a4a4a}
 
-    % Redefine the tcolorbox styles for each callout type with grayscale backgrounds
-    \tcbset{
-      quarto-callout-note-color-frame/.style={colframe=gray!60, colback=gray!5},
-      quarto-callout-important-color-frame/.style={colframe=gray!70, colback=gray!5},
-      quarto-callout-warning-color-frame/.style={colframe=gray!60, colback=gray!5},
-      quarto-callout-tip-color-frame/.style={colframe=gray!50, colback=gray!5},
-      quarto-callout-caution-color-frame/.style={colframe=gray!65, colback=gray!5}
-    }
-  }{}% Empty else clause - do nothing if tcolorbox not loaded
+    % Override frame colors (used for colframe - the border)
+    \definecolor{quarto-callout-color-frame}{HTML}{707070}
+    \definecolor{quarto-callout-note-color-frame}{HTML}{5a5a5a}
+    \definecolor{quarto-callout-important-color-frame}{HTML}{4a4a4a}
+    \definecolor{quarto-callout-warning-color-frame}{HTML}{5a5a5a}
+    \definecolor{quarto-callout-tip-color-frame}{HTML}{6a6a6a}
+    \definecolor{quarto-callout-caution-color-frame}{HTML}{4a4a4a}
+  }{}% Do nothing if tcolorbox not loaded
 }
 \makeatother
