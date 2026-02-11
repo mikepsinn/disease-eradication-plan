@@ -31,7 +31,7 @@ This is the **engine** of the project. It ensures academic rigor by generating a
 
 A wrapper around Quarto that handles the complex multi-site architecture.
 
-- **Configs:** `manual`, `1-pct-treaty-impact`, `federal-efficiency-audit`, `wishocracy`, `iab`, `book`, `test`.
+- **Configs:** `manual`, `1-pct-treaty-impact`, `us-efficiency-audit`, `wishocracy`, `iab`, `book`, `test`.
 - **Key Features:**
   - **Cross-Site Link Rewriting:** Automatically converts relative links (e.g., `[Link](other-paper.qmd)`) into absolute HTTPS URLs when pointing to a different site/subdomain.
   - **Temp Build Directory:** Copies project to `_build_temp/{config}/` to isolate builds and prevent cache pollution.

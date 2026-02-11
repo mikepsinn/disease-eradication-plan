@@ -6,13 +6,6 @@
 > 6.65k diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7B deaths. At $0.0018/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
 
 
-### [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
-
-[![Federal Resource Allocation Efficiency Audit](assets/og/federal-efficiency-audit-og-1200x630.jpg)](https://federal-efficiency-audit.warondisease.org)
-
-> Systems audit estimating an annual U.S. efficiency gap of $4.90T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.
-
-
 ### [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
 
 [![How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
@@ -67,6 +60,13 @@
 [![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
 
 > What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI exceeding 400,000:1.
+
+
+### [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
+
+[![United States Efficiency Audit](assets/og/us-efficiency-audit-og-1200x630.jpg)](https://us-efficiency-audit.warondisease.org)
+
+> Systems audit estimating an annual U.S. efficiency gap of $4.90T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.
 
 
 ### [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)

@@ -9,7 +9,7 @@
 ## Phase 2: Verification of Primary Renders
 - [ ] Task: Verify Manual render (`npm run render:manual`) and check PDF/HTML output.
 - [ ] Task: Verify Treaty Impact render (`npm run render:1-pct-treaty-impact`) and check output.
-- [ ] Task: Verify Audit render (`npm run render:federal-efficiency-audit`) and check output.
+- [ ] Task: Verify Audit render (`npm run render:us-efficiency-audit`) and check output.
 - [ ] Task: Conductor - User Manual Verification 'Verification of Primary Renders' (Protocol in workflow.md)
 
 ## Phase 3: Validation Consolidation

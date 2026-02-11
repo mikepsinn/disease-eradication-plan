@@ -536,136 +536,6 @@ jobs:
 
 
 
-  build-federal-efficiency-audit:
-    name: "Build Federal Resource Allocation Efficiency Audit"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-federal-efficiency-audit-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-
-          restore-keys: |
-            quarto-freeze-federal-efficiency-audit-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Cache validation results
-        uses: actions/cache@v4
-        with:
-          path: .cache
-          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
-          restore-keys: |
-            validation-cache-${{ runner.os }}-
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: uv pip install --system -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --system -e .
-
-      - name: Install Jupyter kernel
-        run: |
-          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Cache TinyTeX
-        uses: actions/cache@v4
-        with:
-          path: ~/.TinyTeX
-          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
-          restore-keys: |
-            tinytex-${{ runner.os }}-
-
-      - name: Install LaTeX
-        run: |
-          if [ ! -d ~/.TinyTeX ]; then
-            quarto install tinytex
-          fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
-
-      - name: "Render Build Federal Resource Allocation Efficiency Audit"
-        run: python scripts/render-quarto.py federal-efficiency-audit
-        env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
-        timeout-minutes: 30
-
-      - name: Upload PDFs artifact
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v4
-        with:
-          name: pdfs-federal-efficiency-audit
-          path: _build_temp/federal-efficiency-audit/**/*.pdf
-          if-no-files-found: ignore
-
-      - name: Upload LaTeX logs on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: latex-logs-federal-efficiency-audit
-          path: |
-            _build_temp/federal-efficiency-audit/*.log
-            _build_temp/federal-efficiency-audit/**/*.log
-            _build_temp/federal-efficiency-audit/*.aux
-            _build_temp/federal-efficiency-audit/**/*.aux
-            _build_temp/federal-efficiency-audit/*.toc
-            _build_temp/federal-efficiency-audit/**/*.toc
-            _build_temp/federal-efficiency-audit/*.out
-            _build_temp/federal-efficiency-audit/**/*.out
-          retention-days: 7
-
-
-      - name: "Deploy Build Federal Resource Allocation Efficiency Audit to Netlify (immediate)"
-        if: github.event_name == 'push'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: '_build_temp/federal-efficiency-audit/_site/federal-efficiency-audit'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-          deploy-message: "Deploy federal-efficiency-audit site from GitHub Actions"
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-
-          NETLIFY_SITE_ID: 9a8ec013-54cd-4b7a-9364-fa13dc46bd92
-
-        timeout-minutes: 1
-
-
-
-      - name: "Upload Build Federal Resource Allocation Efficiency Audit PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        env:
-          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild federal-efficiency-audit
-
-
-
   build-iab:
     name: "Build Incentive Alignment Bonds: Making Public Goods Fin"
     runs-on: ubuntu-latest
@@ -1576,6 +1446,136 @@ jobs:
 
 
 
+  build-us-efficiency-audit:
+    name: "Build United States Efficiency Audit"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-us-efficiency-audit-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+
+          restore-keys: |
+            quarto-freeze-us-efficiency-audit-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          ~/.TinyTeX/bin/*/tlmgr update --self || true
+          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build United States Efficiency Audit"
+        run: python scripts/render-quarto.py us-efficiency-audit
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+        timeout-minutes: 30
+
+      - name: Upload PDFs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-us-efficiency-audit
+          path: _build_temp/us-efficiency-audit/**/*.pdf
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-us-efficiency-audit
+          path: |
+            _build_temp/us-efficiency-audit/*.log
+            _build_temp/us-efficiency-audit/**/*.log
+            _build_temp/us-efficiency-audit/*.aux
+            _build_temp/us-efficiency-audit/**/*.aux
+            _build_temp/us-efficiency-audit/*.toc
+            _build_temp/us-efficiency-audit/**/*.toc
+            _build_temp/us-efficiency-audit/*.out
+            _build_temp/us-efficiency-audit/**/*.out
+          retention-days: 7
+
+
+      - name: "Deploy Build United States Efficiency Audit to Netlify (immediate)"
+        if: github.event_name == 'push'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/us-efficiency-audit/_site/us-efficiency-audit'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy us-efficiency-audit site from GitHub Actions"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: 9a8ec013-54cd-4b7a-9364-fa13dc46bd92
+
+        timeout-minutes: 1
+
+
+
+      - name: "Upload Build United States Efficiency Audit PDF to Zenodo (draft)"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild us-efficiency-audit
+
+
+
   build-wishocracy:
     name: "Build Wishocracy: Solving the Democratic Principal-Agent"
     runs-on: ubuntu-latest
@@ -1721,8 +1721,6 @@ jobs:
 
       - build-dfda-spec
 
-      - build-federal-efficiency-audit
-
       - build-iab
 
       - build-invisible-graveyard
@@ -1736,6 +1734,8 @@ jobs:
       - build-optimocracy
 
       - build-political-dysfunction-tax
+
+      - build-us-efficiency-audit
 
       - build-wishocracy
 

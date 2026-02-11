@@ -60,7 +60,7 @@ CLEANUP_MAP = {
         'published_id': 18520942,
         'concept_doi': None,
     },
-    'federal-efficiency-audit': {
+    'us-efficiency-audit': {
         'draft_id': 18522037,
         'published_id': 18480151,
         'concept_doi': None,

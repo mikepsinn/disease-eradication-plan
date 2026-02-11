@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site/federal-efficiency-audit
+  output-dir: _site/us-efficiency-audit
   execute-dir: project
   resources:
     - knowledge/data/
@@ -11,15 +11,15 @@ project:
   render:
     # Paper is copied to index.qmd by render script
     - index.qmd
-    - knowledge/appendix/parameters-and-calculations-federal-efficiency-audit.qmd
+    - knowledge/appendix/parameters-and-calculations-us-efficiency-audit.qmd
 
 # Custom fields for render-quarto.py
 dih-render:
   emoji: "📊"
-  index-source: knowledge/appendix/federal-efficiency-audit.qmd
+  index-source: knowledge/appendix/us-efficiency-audit.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "9a8ec013-54cd-4b7a-9364-fa13dc46bd92"
-  netlify-cname: "federal-efficiency-audit-warondisease-org.netlify.app"
+  netlify-cname: "us-efficiency-audit-warondisease-org.netlify.app"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Bar chart with efficiency arrow trending upward, minimalist government building silhouette."
 
@@ -37,19 +37,19 @@ author:
         url: https://acceleratedmedicine.org
 
 website:
-  title: "Federal Resource Allocation Efficiency Audit"
+  title: "United States Efficiency Audit"
   description: 'Systems audit estimating an annual U.S. efficiency gap of $4.90T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.'
-  site-url: https://federal-efficiency-audit.warondisease.org
-  favicon: assets/icons/federal-efficiency-audit-favicon.png
+  site-url: https://us-efficiency-audit.warondisease.org
+  favicon: assets/icons/us-efficiency-audit-favicon.png
   page-navigation: true
   page-footer:
     left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](/federal-efficiency-audit.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    center: "[PDF](/us-efficiency-audit.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
       - text: "Calculations"
-        href: knowledge/appendix/parameters-and-calculations-federal-efficiency-audit.qmd
+        href: knowledge/appendix/parameters-and-calculations-us-efficiency-audit.qmd
       - text: "VOTE"
         href: https://WarOnDisease.org
 
@@ -124,12 +124,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://federal-efficiency-audit.warondisease.org/assets/og/federal-efficiency-audit-og-1200x630.jpg"
+  image: "https://us-efficiency-audit.warondisease.org/assets/og/us-efficiency-audit-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://federal-efficiency-audit.warondisease.org"
+      url: "https://us-efficiency-audit.warondisease.org"
       status: pending
     preprints:
       - platform: zenodo
@@ -192,16 +192,16 @@ format:
       - text: |
           <p style="text-align: center; margin: 0.5rem 0; font-size: 0.85rem; color: #8b7355;">
             <strong>Download:</strong>
-            <a href="/federal-efficiency-audit.pdf" style="color: #8b7355;">PDF</a>
+            <a href="/us-efficiency-audit.pdf" style="color: #8b7355;">PDF</a>
           </p>
     include-in-header:
       - text: |
           <!-- Icons (project-specific) -->
-          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/federal-efficiency-audit-favicon-32x32.png">
-          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/federal-efficiency-audit-favicon-16x16.png">
-          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/federal-efficiency-audit-apple-touch-icon.png">
-          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/federal-efficiency-audit-android-chrome-192x192.png">
-          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/federal-efficiency-audit-android-chrome-512x512.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/us-efficiency-audit-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/us-efficiency-audit-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/us-efficiency-audit-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/us-efficiency-audit-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/us-efficiency-audit-android-chrome-512x512.png">
       - file: assets/html/google-analytics.html
       - file: assets/html/hypothesis.html
       - file: assets/html/fonts-preload.html
@@ -211,7 +211,7 @@ format:
     smooth-scroll: true
     code-tools: false
   pdf:
-    output-file: "federal-efficiency-audit.pdf"
+    output-file: "us-efficiency-audit.pdf"
     documentclass: article
     echo: false
     toc: true
