@@ -63,8 +63,6 @@ This framework is **protocol infrastructure**, open standards that existing syst
 
 **How it works:** Companies register treatments through any protocol-compliant system. Patients search for their condition, see treatments ranked by effectiveness, and can join trials through their preferred app or platform. Patient-reported outcomes flow back into the aggregated rankings. The result is a self-improving ecosystem where every participant's experience helps the next patient make better decisions.
 
-![A system architecture diagram showing diverse platforms (EHRs, DCTs, and health apps) connecting to a central protocol layer to facilitate a feedback loop between treatment registration, patient outcomes, and global rankings.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-protocol-not-platform-bw-academic.jpg)
-
 ### Key Findings
 
 | Metric | Value | Context |
@@ -163,8 +161,6 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 - **Cost of Trials**: Using existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on pragmatic trials like Oxford RECOVERY and the US-based ADAPTABLE trial).
 - **Scale & Scope**: Enables testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
 - **Innovation Incentives**: Lower R&D costs increase profitability and encourage more entrants/innovation in the life sciences.
-
-![A comparison of traditional clinical trial metrics versus the proposed model, highlighting improvements in speed, cost-efficiency, and the resulting increase in innovation and trial scale.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-potential-impact-on-the-status-quo-bw-academic.jpg)
 
 ## Addressing Key Concerns
 
@@ -584,8 +580,6 @@ Such a framework provides **provisional access post-Phase I** via trial particip
 
 This eliminates the post-safety efficacy lag (the Phase II/III portion, while preserving Phase I safety testing) by enabling real-world evidence collection during trials.
 
-![A comparison of drug development timelines showing the traditional efficacy lag versus a decentralized framework where patient access and continuous monitoring begin immediately after Phase I safety testing.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-how-a-decentralized-framework-eliminates-the-efficacy-lag-bw-academic.jpg)
-
 #### Quantified Benefits (Efficacy Lag Component Only)
 
 ![A visual summary of the humanitarian and economic impact of an 8.2-year acceleration in drug efficacy, showing the scale of DALYs averted, economic value gained, and lives saved.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-quantified-benefits-efficacy-lag-component-only-bw-academic.jpg)
@@ -692,8 +686,6 @@ The following table quantifies how automated EHR monitoring would have changed o
 #### Pooled Liability Insurance
 
 The framework includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
-
-![A comparison of the mortality impact between Type I errors (harm from unsafe drugs) and Type II errors (deaths from delayed access), illustrating the 3,070-to-1 ratio.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-pooled-liability-insurance-bw-academic.jpg)
 
 **Type II Error Dominance**: For every person protected from an unsafe drug (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current system prevents harm from unsafe drugs, but causes {{< var type_ii_error_cost_ratio >}} more deaths through delays. Phase I safety testing is preserved in this framework; the ratio quantifies the cost of the *efficacy lag*, not safety testing. (See [Historical Validation](#historical-validation-pre-1962-physician-led-efficacy-testing) for the thalidomide context.)
 
@@ -847,8 +839,6 @@ The proposed treaty funding level ({{< var dih_treasury_to_medical_research_annu
    - Journal articles and industry reports (IQVIA, Deloitte) also highlight \$2+ billion figures.
    - Oxford RECOVERY trial: {{< var recovery_trial_cost_per_patient >}}/patient (exceptional NHS/COVID conditions). ADAPTABLE trial: {{< var adaptable_trial_cost_per_patient >}}/patient (typical US pragmatic trial). Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE; confidence interval captures uncertainty.
 
-![Comparison of traditional drug development costs versus pragmatic trial expenditures and the conceptual framework for calculating ROI and societal benefits.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-data-sources-and-methodological-notes-bw-academic.jpg)
-
 2. **ROI Calculation Method**:
 
    - Simplified approach comparing aggregated R&D spending to potential savings.
@@ -987,8 +977,6 @@ This analysis rests on several core assumptions that should be made explicit for
 ### Linear Scaling Assumption
 
 **Assumption:** Each additional dollar of trial funding produces proportional additional discoveries.
-
-![A comparison graph showing three potential scaling models for research funding: diminishing returns (sublinear), the conservative linear assumption used in the analysis, and compounding returns (exponential).](/assets/images/dfda-impact-paper/dfda-impact-paper-section-linear-scaling-assumption-bw-academic.jpg)
 
 **Justification:** This is actually conservative - network effects in data aggregation and platform economics often produce increasing returns. We assume linear to avoid overstating benefits.
 
