@@ -35,6 +35,7 @@
   "scripts": {
     "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
     "images:fix": "tsx scripts/images/fix-image-issues.ts",
+    "render:pdfs": ".venv\\Scripts\\python.exe -u scripts/render-and-validate-pdfs.py --skip-validation",
     "render:validate:pdfs": ".venv\\Scripts\\python.exe -u scripts/render-and-validate-pdfs.py",
     "generate:everything": ".venv\\Scripts\\python.exe -u scripts/generate-everything-parameters-variables-calculations-references.py",
     "zenodo:upload": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py",

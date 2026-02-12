@@ -162,7 +162,6 @@
             "Incentive Alignment Bonds",
             "Dominance Analysis",
             "Quantitative Comparison",
-            "Comparative Efficacy Analysis",
             "Methodology",
             "Cost-Benefit Framework",
             "Cost Components",
@@ -206,21 +205,9 @@
             "Time Inconsistency and Commitment Credibility",
             "Technology Constancy Assumption",
             "Data Quality and Availability",
-            "Scenario Analysis: Conservative Case",
-            "ROI Derivation",
-            "Where the Money Comes From",
-            "How Treaty Funding Is Allocated",
-            "Returns",
-            "Cost-Effectiveness: Cost-Saving Health Intervention",
-            "Self-Funding Mechanism Through Military Budget Redirection",
             "Scenario Analysis: Complete Case",
             "Timeline Shift Value",
-            "Trial Capacity Scaling",
             "Individual-Level Economic Impact",
-            "Comparative Effectiveness",
-            "Comprehensive Comparison",
-            "Linear vs. Systemic Leverage",
-            "The Critical Difference",
             "Who Benefits and How",
             "Adoption Dynamics: Game-Theoretic Analysis",
             "Implementation Strategy",
@@ -238,9 +225,6 @@
             "Accountability measures",
             "Limitations and Uncertainties",
             "Adoption Timeline Uncertainty",
-            "Cost Reduction Assumption Limitations",
-            "Generalizability: Meta-Analysis of 108+ Trials, Not a Single Case Study",
-            "Diminishing Returns in Research Productivity",
             "Pragmatic Trial Internal Validity and Selection Bias",
             "QALY Calculation Uncertainties",
             "Data Limitations",
@@ -265,7 +249,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd",
@@ -357,7 +341,6 @@
             "Thalidomide YLL Per Event: 28.8k years",
             "Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B",
             "Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5x",
-            "Amortized Annual Treaty Campaign Cost: $250M",
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280M of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
@@ -366,7 +349,6 @@
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
-            "Total Annual Treaty System Costs: $290M",
             "Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx",
             "Treaty Campaign Leverage vs Direct Funding: 475x",
             "Cumulative Trial Capacity Years Over 20 Years: 246 years",
@@ -394,7 +376,6 @@
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
             "Drug Development Cost (1980s): $194M",
-            "Drug Discovery to Approval Timeline: 14 years",
             "Drug Repurposing Success Rate: 30%",
             "Economic Multiplier for Healthcare Investment: 4.3x",
             "Economic Multiplier for Military Spending: 0.6x",
@@ -491,14 +472,13 @@
             "Tested Drug-Disease Relationships: 32.5k relationships",
             "Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M",
             "Reserve Fund / Contingency Buffer: $100M",
-            "Treaty Campaign Duration: 4 years",
             "Viral Referendum Budget: $250M",
             "1% Reduction in Military Spending/War Costs from Treaty: 1%",
             "Trial-Relevant Diseases: 1.00k diseases",
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         },
         {
           "path": "knowledge/references.qmd",
@@ -881,7 +861,7 @@
             "Why This Differs from Failed Megaprojects"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-impact.qmd",
@@ -1254,7 +1234,7 @@
             "Appendix E: Analysis Workflow"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-spec.qmd",
@@ -1284,225 +1264,6 @@
           ],
           "published": true,
           "lastmod": "2026-02-02"
-        }
-      ],
-      "pageCount": 2
-    },
-    {
-      "id": "federal-efficiency-audit",
-      "type": "website",
-      "title": "Federal Resource Allocation Efficiency Audit",
-      "description": "Systems audit estimating an annual U.S. efficiency gap of $4.90T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.",
-      "siteUrl": "https://federal-efficiency-audit.warondisease.org",
-      "favicon": "https://federal-efficiency-audit.warondisease.org/assets/icons/federal-efficiency-audit-favicon.png",
-      "ogImage": "https://federal-efficiency-audit.warondisease.org/assets/og/federal-efficiency-audit-og-1200x630.jpg",
-      "pdfUrl": "https://federal-efficiency-audit.warondisease.org/federal-efficiency-audit.pdf",
-      "author": "Mike P. Sinn",
-      "authorEmail": "mike@warondisease.org",
-      "authorUrl": "https://mikesinn.com",
-      "orcid": "0009-0006-0212-1094",
-      "doi": "10.5281/zenodo.18447476",
-      "version": "1.0",
-      "edition": "Working Draft",
-      "copyright": "© 2025 The Institute for Accelerated Medicine",
-      "copyrightYear": "2025",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "publisher": "Institute for Accelerated Medicine",
-      "publisherUrl": "https://acceleratedmedicine.org",
-      "subject": "Public Finance, Government Efficiency, Systems Analysis, Resource Allocation, Policy Analysis",
-      "category": "Academic Paper, Public Policy, Economics, Systems Engineering",
-      "keywords": [
-        "government-efficiency",
-        "public-finance",
-        "resource-allocation",
-        "systems-analysis",
-        "federal-spending",
-        "policy-analysis",
-        "monte-carlo-simulation",
-        "efficiency-metrics",
-        "OECD-benchmarks",
-        "allocation-inefficiency"
-      ],
-      "audience": "Researchers, Policy Makers, Economists, Public Finance Analysts",
-      "format": "Working Paper",
-      "genre": "Public Finance, Systems Analysis, Policy Analysis, Economics",
-      "language": "en-US",
-      "twitterSite": "https://x.com/warondisease",
-      "twitterCreator": "https://x.com/warondisease",
-      "netlify": {
-        "siteId": "9a8ec013-54cd-4b7a-9364-fa13dc46bd92",
-        "cname": "federal-efficiency-audit-warondisease-org.netlify.app"
-      },
-      "indexSource": "knowledge/appendix/federal-efficiency-audit.qmd",
-      "outputDir": "_site/federal-efficiency-audit",
-      "publishing": {
-        "ownSite": {
-          "url": "https://federal-efficiency-audit.warondisease.org",
-          "status": "pending"
-        },
-        "preprints": [
-          {
-            "platform": "zenodo",
-            "status": "auto-uploaded",
-            "url": "https://zenodo.org/record/18522036",
-            "doi": "10.5281/zenodo.18447476"
-          },
-          {
-            "platform": "ssrn",
-            "status": "pending",
-            "url": ""
-          },
-          {
-            "platform": "arxiv",
-            "status": "pending",
-            "category": "econ.GN"
-          }
-        ],
-        "journals": [
-          {
-            "name": "Journal of Public Economics",
-            "tier": 1,
-            "status": "target",
-            "url": ""
-          },
-          {
-            "name": "Public Choice",
-            "tier": 2,
-            "status": "target",
-            "url": ""
-          }
-        ]
-      },
-      "pages": [
-        {
-          "path": "index.qmd",
-          "url": "https://federal-efficiency-audit.warondisease.org/",
-          "title": "Federal Resource Allocation Efficiency Audit",
-          "description": "Systems audit estimating an annual U.S. efficiency gap of $4.90T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.",
-          "image": "https://federal-efficiency-audit.warondisease.org/assets/og-images/knowledge/appendix/federal-efficiency-audit-og.jpg",
-          "sections": [
-            "Executive Summary",
-            "Dysfunction Category Breakdown",
-            "Aggregate Metrics",
-            "Interpretation Note",
-            "System Specifications",
-            "Designed Function",
-            "Why Two Metrics Are Sufficient",
-            "Input-Output Measurement",
-            "Methodology",
-            "Category Framework: Why Distinctions Matter",
-            "Engineering Loss Categories",
-            "Aggregate Efficiency Gap Calculation",
-            "Methodological Note: Additive Categories",
-            "Valuation Standards",
-            "Direct Federal Spending Waste",
-            "Components",
-            "Compliance Burden on Private Sector",
-            "Components",
-            "Policy-Induced GDP Loss",
-            "Components",
-            "System Inefficiency",
-            "Components",
-            "Subsystem Cross-Reference",
-            "Subsystem Audit: Defense",
-            "Loss Category: Leakage (Audit Failure)",
-            "Loss Category: Conversion Inefficiency (F-35 Program)",
-            "Loss Category: Idle/Standby (Overseas Basing)",
-            "Loss Category: Parasitic (Strategic Misalignment)",
-            "Defense Subsystem Summary",
-            "Subsystem Audit: Healthcare Administration",
-            "Loss Category: Friction (Administrative Overhead)",
-            "Loss Category: Leakage (Medicare Advantage Upcoding)",
-            "Loss Category: Leakage (Improper Payments)",
-            "Healthcare Subsystem Summary",
-            "Subsystem Audit: Justice and Prohibition",
-            "Loss Category: Conversion Inefficiency (Drug Prohibition)",
-            "Loss Category: Negative Work (Mass Incarceration)",
-            "Loss Category: Leakage (Civil Asset Forfeiture)",
-            "Justice Subsystem Summary",
-            "Subsystem Audit: Regulatory and Tax Compliance",
-            "Loss Category: Friction (Tax Compliance)",
-            "Loss Category: Friction (Housing/Zoning Misallocation)",
-            "Loss Category: Idle (NEPA Permitting Delays)",
-            "Loss Category: Parasitic (Jones Act)",
-            "Regulatory Subsystem Summary",
-            "Subsystem Audit: Subsidies and Transfers",
-            "Loss Category: Parasitic (Fossil Fuel Subsidies)",
-            "Loss Category: Parasitic (Agricultural Subsidies)",
-            "Loss Category: Negative Work (Tariffs and Corporate Welfare)",
-            "Subsidies Subsystem Summary",
-            "Aggregate Efficiency Calculation",
-            "Monte Carlo Simulation Parameters",
-            "Simulation Results",
-            "Tax Compliance",
-            "Housing/Zoning",
-            "Healthcare",
-            "Drug War",
-            "Efficiency Rating Calculation",
-            "Human Cost Quantification (Economic Equivalents)",
-            "Reallocation Potential",
-            "Context Comparisons",
-            "Opportunity Cost in Healthy Life Years",
-            "Structural Factors",
-            "Severed Feedback Loops",
-            "Principal-Agent Misalignment",
-            "Measurement Failure",
-            "Monopoly Dynamics",
-            "Time Horizon Mismatch",
-            "Confidence Intervals and Limitations",
-            "Estimate Confidence by Subsystem",
-            "What This Analysis Excludes",
-            "Methodological Limitations",
-            "See Also"
-          ],
-          "published": true,
-          "lastmod": "2026-02-10"
-        },
-        {
-          "path": "knowledge/appendix/parameters-and-calculations-federal-efficiency-audit.qmd",
-          "url": "https://federal-efficiency-audit.warondisease.org/appendix/parameters-and-calculations-federal-efficiency-audit.html",
-          "title": "Methodology, Parameters, and Calculations",
-          "description": "Parameter definitions, formulas, uncertainty ranges, and data sources.",
-          "sections": [
-            "Overview",
-            "Quick Navigation",
-            "Calculated Values",
-            "Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B",
-            "US Efficiency Rating: 28%",
-            "Category 1: Direct Spending Waste: $1.01T",
-            "Category 2: Compliance Burden: $1.13T",
-            "Category 3: GDP Loss: $1.56T",
-            "Category 4: System Inefficiency: $1.20T",
-            "US Waste (% GDP): 17%",
-            "US Waste (QALY Equivalents): 49.0M QALYs",
-            "US Gov Waste (Raw Total): $4.90T",
-            "Recoverable Capital: $2.45T",
-            "US Government Waste (Total): $4.90T",
-            "US Waste (VSL Equivalents): 357k people",
-            "Efficiency Gap / Treaty Funding: 180:1",
-            "External Data Sources",
-            "DOT VSL: $13.7M",
-            "Global Military Spending in 2024: $2.72T",
-            "Medical QALY Threshold: $100K",
-            "US Federal Spending (FY2024): $6.80T",
-            "US GDP (2024): $28.8T",
-            "Agricultural Subsidies Deadweight Loss: $75B",
-            "Corporate Welfare Waste: $181B",
-            "Drug War Cost: $90B",
-            "Fossil Fuel Subsidies (Explicit): $50B",
-            "Healthcare System Inefficiency: $1.20T",
-            "Housing/Zoning Restrictions Cost: $1.40T",
-            "Military Overspend: $615B",
-            "Regulatory Red Tape Waste: $580B",
-            "Tariff Cost (GDP Loss): $160B",
-            "Tax Compliance Waste: $546B",
-            "Core Definitions",
-            "1% Reduction in Military Spending/War Costs from Treaty: 1%",
-            "Overlap Discount Factor: 1:1"
-          ],
-          "published": true,
-          "lastmod": "2026-02-06"
         }
       ],
       "pageCount": 2
@@ -1753,7 +1514,7 @@
     {
       "id": "invisible-graveyard",
       "type": "website",
-      "title": "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
+      "title": "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag",
       "description": "After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102M deaths among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.",
       "siteUrl": "https://invisible-graveyard.warondisease.org",
       "favicon": "https://invisible-graveyard.warondisease.org/assets/icons/invisible-graveyard-favicon.png",
@@ -1848,7 +1609,7 @@
         {
           "path": "index.qmd",
           "url": "https://invisible-graveyard.warondisease.org/",
-          "title": "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
+          "title": "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag",
           "description": "After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102M deaths among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.",
           "image": "https://invisible-graveyard.warondisease.org/assets/og-images/knowledge/appendix/invisible-graveyard-og-retro-academic.jpg",
           "tags": [
@@ -1909,7 +1670,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd",
@@ -4210,15 +3971,15 @@
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
           "sections": [
             "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "Federal Resource Allocation Efficiency Audit",
             "How to Prevent a Year of Death and Suffering for 84 Cents",
             "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
             "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
             "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
             "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
-            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024",
+            "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag",
             "The Political Dysfunction Tax",
             "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
+            "United States Efficiency Audit",
             "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
             "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
           ],
@@ -4483,7 +4244,7 @@
             "Current US Discretionary Budget vs. OSL Targets"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-obg.qmd",
@@ -4546,7 +4307,7 @@
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
       "orcid": "0009-0006-0212-1094",
-      "doi": "10.5281/zenodo.18356211",
+      "doi": "10.5281/zenodo.18603834",
       "version": "0.9",
       "edition": "Working Draft",
       "copyright": "© 2025 Mike P. Sinn",
@@ -4590,8 +4351,8 @@
           {
             "platform": "zenodo",
             "status": "auto-uploaded",
-            "url": "https://zenodo.org/record/18521982",
-            "doi": "10.5281/zenodo.18356211"
+            "url": "https://zenodo.org/record/18603834",
+            "doi": "10.5281/zenodo.18603834"
           },
           {
             "platform": "ssrn",
@@ -4748,7 +4509,7 @@
             "Appendix C: Glossary"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         }
       ],
       "pageCount": 1
@@ -4909,7 +4670,7 @@
             "References"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-optimocracy.qmd",
@@ -4974,7 +4735,7 @@
             "US-Switzerland Spending Gap: 300%"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         }
       ],
       "pageCount": 2
@@ -4992,7 +4753,7 @@
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
       "orcid": "0009-0006-0212-1094",
-      "doi": "10.5281/zenodo.18447493",
+      "doi": "10.5281/zenodo.18603840",
       "version": "1.0",
       "edition": "Working Draft",
       "copyright": "© 2025 Mike P. Sinn",
@@ -5035,8 +4796,8 @@
           {
             "platform": "zenodo",
             "status": "auto-uploaded",
-            "url": "https://zenodo.org/record/18522027",
-            "doi": "10.5281/zenodo.18447493"
+            "url": "https://zenodo.org/record/18603840",
+            "doi": "10.5281/zenodo.18603840"
           },
           {
             "platform": "ssrn",
@@ -5092,10 +4853,231 @@
             "See Also"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-11"
         }
       ],
       "pageCount": 1
+    },
+    {
+      "id": "us-efficiency-audit",
+      "type": "website",
+      "title": "United States Efficiency Audit",
+      "description": "Systems audit estimating an annual U.S. efficiency gap of $4.90T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.",
+      "siteUrl": "https://us-efficiency-audit.warondisease.org",
+      "favicon": "https://us-efficiency-audit.warondisease.org/assets/icons/us-efficiency-audit-favicon.png",
+      "ogImage": "https://us-efficiency-audit.warondisease.org/assets/og/us-efficiency-audit-og-1200x630.jpg",
+      "pdfUrl": "https://us-efficiency-audit.warondisease.org/us-efficiency-audit.pdf",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "doi": "10.5281/zenodo.18447476",
+      "version": "1.0",
+      "edition": "Working Draft",
+      "copyright": "© 2025 The Institute for Accelerated Medicine",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Institute for Accelerated Medicine",
+      "publisherUrl": "https://acceleratedmedicine.org",
+      "subject": "Public Finance, Government Efficiency, Systems Analysis, Resource Allocation, Policy Analysis",
+      "category": "Academic Paper, Public Policy, Economics, Systems Engineering",
+      "keywords": [
+        "government-efficiency",
+        "public-finance",
+        "resource-allocation",
+        "systems-analysis",
+        "federal-spending",
+        "policy-analysis",
+        "monte-carlo-simulation",
+        "efficiency-metrics",
+        "OECD-benchmarks",
+        "allocation-inefficiency"
+      ],
+      "audience": "Researchers, Policy Makers, Economists, Public Finance Analysts",
+      "format": "Working Paper",
+      "genre": "Public Finance, Systems Analysis, Policy Analysis, Economics",
+      "language": "en-US",
+      "twitterSite": "https://x.com/warondisease",
+      "twitterCreator": "https://x.com/warondisease",
+      "netlify": {
+        "siteId": "9a8ec013-54cd-4b7a-9364-fa13dc46bd92",
+        "cname": "us-efficiency-audit-warondisease-org.netlify.app"
+      },
+      "indexSource": "knowledge/appendix/us-efficiency-audit.qmd",
+      "outputDir": "_site/us-efficiency-audit",
+      "publishing": {
+        "ownSite": {
+          "url": "https://us-efficiency-audit.warondisease.org",
+          "status": "pending"
+        },
+        "preprints": [
+          {
+            "platform": "zenodo",
+            "status": "auto-uploaded",
+            "url": "https://zenodo.org/record/18522036",
+            "doi": "10.5281/zenodo.18447476"
+          },
+          {
+            "platform": "ssrn",
+            "status": "pending",
+            "url": ""
+          },
+          {
+            "platform": "arxiv",
+            "status": "pending",
+            "category": "econ.GN"
+          }
+        ],
+        "journals": [
+          {
+            "name": "Journal of Public Economics",
+            "tier": 1,
+            "status": "target",
+            "url": ""
+          },
+          {
+            "name": "Public Choice",
+            "tier": 2,
+            "status": "target",
+            "url": ""
+          }
+        ]
+      },
+      "pages": [
+        {
+          "path": "index.qmd",
+          "url": "https://us-efficiency-audit.warondisease.org/",
+          "title": "United States Efficiency Audit",
+          "description": "Systems audit estimating an annual U.S. efficiency gap of $4.90T, with $2.45T recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.",
+          "image": "https://us-efficiency-audit.warondisease.org/assets/og-images/knowledge/appendix/us-efficiency-audit-og.jpg",
+          "sections": [
+            "Executive Summary",
+            "Dysfunction Category Breakdown",
+            "Aggregate Metrics",
+            "Interpretation Note",
+            "System Specifications",
+            "Designed Function",
+            "Why Two Metrics Are Sufficient",
+            "Input-Output Measurement",
+            "Methodology",
+            "Category Framework: Why Distinctions Matter",
+            "Engineering Loss Categories",
+            "Aggregate Efficiency Gap Calculation",
+            "Methodological Note: Additive Categories",
+            "Valuation Standards",
+            "Direct Federal Spending Waste",
+            "Components",
+            "Compliance Burden on Private Sector",
+            "Components",
+            "Policy-Induced GDP Loss",
+            "Components",
+            "System Inefficiency",
+            "Components",
+            "Subsystem Cross-Reference",
+            "Subsystem Audit: Defense",
+            "Loss Category: Leakage (Audit Failure)",
+            "Loss Category: Conversion Inefficiency (F-35 Program)",
+            "Loss Category: Idle/Standby (Overseas Basing)",
+            "Loss Category: Parasitic (Strategic Misalignment)",
+            "Defense Subsystem Summary",
+            "Subsystem Audit: Healthcare Administration",
+            "Loss Category: Friction (Administrative Overhead)",
+            "Loss Category: Leakage (Medicare Advantage Upcoding)",
+            "Loss Category: Leakage (Improper Payments)",
+            "Healthcare Subsystem Summary",
+            "Subsystem Audit: Justice and Prohibition",
+            "Loss Category: Conversion Inefficiency (Drug Prohibition)",
+            "Loss Category: Negative Work (Mass Incarceration)",
+            "Loss Category: Leakage (Civil Asset Forfeiture)",
+            "Justice Subsystem Summary",
+            "Subsystem Audit: Regulatory and Tax Compliance",
+            "Loss Category: Friction (Tax Compliance)",
+            "Loss Category: Friction (Housing/Zoning Misallocation)",
+            "Loss Category: Idle (NEPA Permitting Delays)",
+            "Loss Category: Parasitic (Jones Act)",
+            "Regulatory Subsystem Summary",
+            "Subsystem Audit: Subsidies and Transfers",
+            "Loss Category: Parasitic (Fossil Fuel Subsidies)",
+            "Loss Category: Parasitic (Agricultural Subsidies)",
+            "Loss Category: Negative Work (Tariffs and Corporate Welfare)",
+            "Subsidies Subsystem Summary",
+            "Aggregate Efficiency Calculation",
+            "Monte Carlo Simulation Parameters",
+            "Simulation Results",
+            "Tax Compliance",
+            "Housing/Zoning",
+            "Healthcare",
+            "Drug War",
+            "Efficiency Rating Calculation",
+            "Human Cost Quantification (Economic Equivalents)",
+            "Reallocation Potential",
+            "Context Comparisons",
+            "Opportunity Cost in Healthy Life Years",
+            "Structural Factors",
+            "Severed Feedback Loops",
+            "Principal-Agent Misalignment",
+            "Measurement Failure",
+            "Monopoly Dynamics",
+            "Time Horizon Mismatch",
+            "Confidence Intervals and Limitations",
+            "Estimate Confidence by Subsystem",
+            "What This Analysis Excludes",
+            "Methodological Limitations",
+            "See Also"
+          ],
+          "published": true,
+          "lastmod": "2026-02-11"
+        },
+        {
+          "path": "knowledge/appendix/parameters-and-calculations-us-efficiency-audit.qmd",
+          "url": "https://us-efficiency-audit.warondisease.org/appendix/parameters-and-calculations-us-efficiency-audit.html",
+          "title": "Methodology, Parameters, and Calculations",
+          "description": "Parameter definitions, formulas, uncertainty ranges, and data sources.",
+          "sections": [
+            "Overview",
+            "Quick Navigation",
+            "Calculated Values",
+            "Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B",
+            "US Discretionary Efficiency: 40.5%",
+            "US Governance Efficiency (GDP): 83%",
+            "Category 1: Direct Spending Waste: $1.01T",
+            "Category 2: Compliance Burden: $1.13T",
+            "Category 3: GDP Loss: $1.56T",
+            "Category 4: System Inefficiency: $1.20T",
+            "US Waste (% GDP): 17%",
+            "US Waste (QALY Equivalents): 49.0M QALYs",
+            "US Gov Waste (Raw Total): $4.90T",
+            "Recoverable Capital: $2.45T",
+            "US Government Waste (Total): $4.90T",
+            "US Waste (VSL Equivalents): 357k people",
+            "Efficiency Gap / Treaty Funding: 180:1",
+            "External Data Sources",
+            "DOT VSL: $13.7M",
+            "Global Military Spending in 2024: $2.72T",
+            "Medical QALY Threshold: $100K",
+            "US Federal Spending (FY2024): $6.80T",
+            "US Federal Discretionary Spending (FY2024): $1.70T",
+            "US GDP (2024): $28.8T",
+            "Agricultural Subsidies Deadweight Loss: $75B",
+            "Corporate Welfare Waste: $181B",
+            "Drug War Cost: $90B",
+            "Fossil Fuel Subsidies (Explicit): $50B",
+            "Healthcare System Inefficiency: $1.20T",
+            "Housing/Zoning Restrictions Cost: $1.40T",
+            "Military Overspend: $615B",
+            "Regulatory Red Tape Waste: $580B",
+            "Tariff Cost (GDP Loss): $160B",
+            "Tax Compliance Waste: $546B",
+            "Core Definitions",
+            "1% Reduction in Military Spending/War Costs from Treaty: 1%",
+            "Overlap Discount Factor: 1:1"
+          ],
+          "published": true,
+          "lastmod": "2026-02-11"
+        }
+      ],
+      "pageCount": 2
     },
     {
       "id": "wishocracy",

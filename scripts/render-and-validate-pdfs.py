@@ -146,11 +146,19 @@ def main() -> int:
         action="append",
         help="Specific config name to process (e.g., --config test). Can be provided multiple times.",
     )
+    parser.add_argument(
+        "--skip-validation",
+        action="store_true",
+        help="Skip PDF validation after rendering.",
+    )
     args = parser.parse_args()
 
     print(f"[LOG] Writing all logs to: {LOG_PATH}", flush=True)
     print(f"[REPORT] Checklist report will be saved to: {REPORT_PATH}", flush=True)
-    print("[VALIDATION] Using scripts/pdf-validation.py", flush=True)
+    if args.skip_validation:
+        print("[VALIDATION] Skipped (--skip-validation)", flush=True)
+    else:
+        print("[VALIDATION] Using scripts/pdf-validation.py", flush=True)
 
     python_exe = get_preferred_python(PROJECT_ROOT)
 
@@ -201,6 +209,12 @@ def main() -> int:
                 print(f"[ERROR] Render failed for {config_name} with exit code {render_rc}", flush=True)
                 log_file.write(f"\n[ERROR] Render failed for {config_name} with exit code {render_rc}\n")
                 result["status"] = "render_failed"
+                results.append(result)
+                continue
+
+            if args.skip_validation:
+                result["status"] = "passed"
+                result["validation_rc"] = "skipped"
                 results.append(result)
                 continue
 
