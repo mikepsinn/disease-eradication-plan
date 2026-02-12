@@ -3,13 +3,7 @@
 
 [![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)
 
-> 6.65k diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7B deaths. At $0.0018/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
-
-### [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
-
-[![How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
-
-> At current testing rates, finding treatments for all 6.65k diseases would take 443 years. Pragmatic trials integrated into healthcare increase testing 12.3x, saving 10.7B deaths and eliminating 1931T hours of suffering at $0.841 per year of healthy life saved.
+> 6.65 thousand diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7 billion deaths. At $0.0018/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
 
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
 
@@ -39,7 +33,7 @@
 
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
 
-> After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102M deaths among people waiting for approved drugs (1962-2024). The cost of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.
+> After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102 million deaths among people waiting for approved drugs (1962-2024). The human cost in death and disability of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.
 
 ### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
 

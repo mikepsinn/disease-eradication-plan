@@ -141,8 +141,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-pct-treaty-impact
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-pct-treaty-impact
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation 1-pct-treaty-impact
+          fi
 
 
 
@@ -271,8 +277,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild cost-of-change
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild cost-of-change
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation cost-of-change
+          fi
 
 
 
@@ -401,8 +413,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-impact
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-impact
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation dfda-impact
+          fi
 
 
 
@@ -531,8 +549,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-spec
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-spec
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation dfda-spec
+          fi
 
 
 
@@ -661,8 +685,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild iab
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild iab
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation iab
+          fi
 
 
 
@@ -791,8 +821,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation invisible-graveyard
+          fi
 
 
 
@@ -921,8 +957,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild manual
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild manual
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation manual
+          fi
 
 
 
@@ -1051,8 +1093,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild obg
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild obg
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation obg
+          fi
 
 
 
@@ -1181,8 +1229,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild opg
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild opg
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation opg
+          fi
 
 
 
@@ -1311,8 +1365,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild optimocracy
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild optimocracy
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation optimocracy
+          fi
 
 
 
@@ -1441,8 +1501,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild political-dysfunction-tax
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild political-dysfunction-tax
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation political-dysfunction-tax
+          fi
 
 
 
@@ -1571,8 +1637,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild us-efficiency-audit
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild us-efficiency-audit
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation us-efficiency-audit
+          fi
 
 
 
@@ -1701,8 +1773,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishocracy
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishocracy
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation wishocracy
+          fi
 
 
 

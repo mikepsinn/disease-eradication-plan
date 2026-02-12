@@ -141,8 +141,14 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}
+          LLM_VALIDATION: {% raw %}${{ secrets.LLM_VALIDATION }}{% endraw %}
 
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild {{ job.config_name }}
+        run: |
+          if [ "$LLM_VALIDATION" = "true" ] || [ "{% raw %}${{ github.ref }}{% endraw %}" = "refs/heads/master" ]; then
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild {{ job.config_name }}
+          else
+            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation {{ job.config_name }}
+          fi
 {% endif %}
 
 {% endfor %}
