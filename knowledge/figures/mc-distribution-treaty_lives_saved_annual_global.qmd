@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 2.45k |
-| Mean (expected value) | 2.44k |
-| Median (50th percentile) | 2.42k |
+| Baseline (deterministic) | 2.45 thousand |
+| Mean (expected value) | 2.44 thousand |
+| Median (50th percentile) | 2.42 thousand |
 | Standard Deviation | 315 |
-| 90% Range (5th-95th percentile) | [1.94k, 3.02k] |
+| 90% Range (5th-95th percentile) | [1.94 thousand, 3.02 thousand] |
 
 *The histogram shows the distribution of Annual Lives Saved from 1% Reduction in Conflict Deaths across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

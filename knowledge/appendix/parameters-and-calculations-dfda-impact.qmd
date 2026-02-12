@@ -39,7 +39,7 @@ This appendix documents all 122 parameters used in the analysis, organized by ty
 
 Parameters derived from mathematical formulas and economic models.
 
-### Combination Therapy Space: 45.1B combinations {#sec-combination_therapy_disease_space}
+### Combination Therapy Space: 45.1 billion combinations {#sec-combination_therapy_disease_space}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -47,8 +47,8 @@ Total combination therapy space (pairwise drug combinations × diseases). Standa
 
 **Inputs**:
 
-- [Pairwise Drug Combinations](#sec-combination_therapy_pairs) 🔢: 45.1M combinations
-- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
+- [Pairwise Drug Combinations](#sec-combination_therapy_pairs) 🔢: 45.1 million combinations
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00 thousand diseases (95% CI: 800 diseases - 1.20 thousand diseases)
 
 $$
 \begin{gathered}
@@ -67,7 +67,7 @@ $$
 
 :::
 
-### Pairwise Drug Combinations: 45.1M combinations {#sec-combination_therapy_pairs}
+### Pairwise Drug Combinations: 45.1 million combinations {#sec-combination_therapy_pairs}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -75,7 +75,7 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 **Inputs**:
 
-- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.50k compounds (95% CI: 7.00k compounds - 12.0k compounds)
+- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.50 thousand compounds (95% CI: 7.00 thousand compounds - 12.0 thousand compounds)
 
 *Formula*: `SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2`
 
@@ -87,7 +87,7 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 :::
 
-### Combination Therapy Exploration Time (Current): 13.7M years {#sec-current_combination_exploration_years}
+### Combination Therapy Exploration Time (Current): 13.7 million years {#sec-current_combination_exploration_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -95,8 +95,8 @@ Years to test all pairwise drug combinations at current trial capacity. Combinat
 
 **Inputs**:
 
-- [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1B combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
+- [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1 billion combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
 
 $$
 \begin{gathered}
@@ -129,7 +129,7 @@ $$
 
 :::
 
-### Known Safe Exploration Time (Current): 2.88k years {#sec-current_known_safe_exploration_years}
+### Known Safe Exploration Time (Current): 2.88 thousand years {#sec-current_known_safe_exploration_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -137,8 +137,8 @@ Years to test all known safe drug-disease combinations at current global trial c
 
 **Inputs**:
 
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30k trials/year (95% CI: 2.64k trials/year - 3.96k trials/year)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
 
 $$
 \begin{gathered}
@@ -264,7 +264,7 @@ Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~4
 **Inputs**:
 
 - [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $475B
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565B DALYs
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 
 $$
 \begin{gathered}
@@ -595,7 +595,7 @@ $$
 
 :::
 
-### Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
+### Total DALYs Lost from Disease Eradication Delay: 7.94 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -603,8 +603,8 @@ Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMAR
 
 **Inputs**:
 
-- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07B years
-- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873M years
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07 billion years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873 million years
 
 $$
 \begin{gathered}
@@ -646,7 +646,7 @@ $$
 
 :::
 
-### Total Deaths from Disease Eradication Delay: 416M deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
+### Total Deaths from Disease Eradication Delay: 416 million deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -655,7 +655,7 @@ Total eventually avoidable deaths from delaying disease eradication by 8.2 years
 **Inputs**:
 
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
 
 $$
 \begin{gathered}
@@ -692,7 +692,7 @@ Total economic loss from delaying disease eradication by 8.2 years (PRIMARY esti
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
@@ -739,7 +739,7 @@ $$
 
 :::
 
-### Years Lived with Disability During Disease Eradication Delay: 873M years {#sec-dfda_efficacy_lag_elimination_yld}
+### Years Lived with Disability During Disease Eradication Delay: 873 million years {#sec-dfda_efficacy_lag_elimination_yld}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -747,7 +747,7 @@ Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
 - [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
 - [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
 
@@ -782,7 +782,7 @@ $$
 
 :::
 
-### Years of Life Lost from Disease Eradication Delay: 7.07B years {#sec-dfda_efficacy_lag_elimination_yll}
+### Years of Life Lost from Disease Eradication Delay: 7.07 billion years {#sec-dfda_efficacy_lag_elimination_yll}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -790,7 +790,7 @@ Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
 - [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
 
@@ -1363,8 +1363,8 @@ Trial capacity multiplier from DIH funding capacity vs. current global trial par
 
 **Inputs**:
 
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
-- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 23.4M patients/year
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
+- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
 \begin{gathered}
@@ -1427,7 +1427,7 @@ $$
 
 :::
 
-### Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565B DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
+### Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1435,7 +1435,7 @@ Total DALYs averted from the combined dFDA timeline shift. Calculated as annual 
 
 **Inputs**:
 
-- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88B DALYs/year (SE: ±150M DALYs/year)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
@@ -1520,7 +1520,7 @@ Total economic value from the combined dFDA timeline shift. DALYs valued at stan
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565B DALYs
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
@@ -1600,7 +1600,7 @@ $$
 
 :::
 
-### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
+### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7 billion deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1608,7 +1608,7 @@ Total eventually avoidable deaths from the combined dFDA timeline shift. Represe
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
@@ -1684,7 +1684,7 @@ $$
 
 :::
 
-### Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 1931T hours {#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours}
+### Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 1.93 quadrillion hours {#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1692,7 +1692,7 @@ Hours of suffering eliminated from the combined dFDA timeline shift. Calculated 
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565B DALYs
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 - [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys) 📊: 0.39 proportion (SE: ±0.03 proportion)
 
 $$
@@ -2007,7 +2007,7 @@ $$
 
 :::
 
-### Patients Fundable Annually: 23.4M patients/year {#sec-dih_patients_fundable_annually}
+### Patients Fundable Annually: 23.4 million patients/year {#sec-dih_patients_fundable_annually}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2190,7 +2190,7 @@ $$
 
 :::
 
-### Diseases Without Effective Treatment: 6.65k diseases {#sec-diseases_without_effective_treatment}
+### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2198,7 +2198,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00k diseases (95% CI: 6.00k diseases - 10.0k diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
 
 $$
 \begin{gathered}
@@ -2269,7 +2269,7 @@ $$
 
 :::
 
-### Possible Drug-Disease Combinations: 9.50M combinations {#sec-drug_disease_combinations_possible}
+### Possible Drug-Disease Combinations: 9.50 million combinations {#sec-drug_disease_combinations_possible}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2277,8 +2277,8 @@ Total possible drug-disease combinations using existing safe compounds
 
 **Inputs**:
 
-- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.50k compounds (95% CI: 7.00k compounds - 12.0k compounds)
-- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00k diseases (95% CI: 800 diseases - 1.20k diseases)
+- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.50 thousand compounds (95% CI: 7.00 thousand compounds - 12.0 thousand compounds)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00 thousand diseases (95% CI: 800 diseases - 1.20 thousand diseases)
 
 $$
 \begin{gathered}
@@ -2305,8 +2305,8 @@ Fraction of possible drug-disease space actually tested (<1%)
 
 **Inputs**:
 
-- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5k relationships (95% CI: 15.0k relationships - 50.0k relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
+- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15.0 thousand relationships - 50.0 thousand relationships)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
 
 $$
 \begin{gathered}
@@ -2373,7 +2373,7 @@ Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data
 **Inputs**:
 
 - [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost) 📊: $20M (95% CI: $15M - $25M)
-- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated) 🔢: 5.00M QALYs
+- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated) 🔢: 5.00 million QALYs
 
 $$
 \begin{gathered}
@@ -2448,7 +2448,7 @@ $$
 
 :::
 
-### RECOVERY Trial Total QALYs Generated: 5.00M QALYs {#sec-recovery_trial_total_qalys_generated}
+### RECOVERY Trial Total QALYs Generated: 5.00 million QALYs {#sec-recovery_trial_total_qalys_generated}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2456,7 +2456,7 @@ Total QALYs generated by RECOVERY trial's discoveries (lives saved × QALYs per 
 
 **Inputs**:
 
-- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved) 📊: 1.00M lives (95% CI: 500k lives - 2.00M lives)
+- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved) 📊: 1.00 million lives (95% CI: 500 thousand lives - 2.00 million lives)
 - [QALYs per COVID Death Averted](#sec-qalys_per_covid_death_averted): 5 QALYs/death (95% CI: 3 QALYs/death - 10 QALYs/death)
 
 $$
@@ -2532,7 +2532,7 @@ Years to explore the entire therapeutic search space under current system. At cu
 
 **Inputs**:
 
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65k diseases
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 
 $$
@@ -2562,7 +2562,7 @@ $$
 
 :::
 
-### Thalidomide DALYs Per Event: 41.8k DALYs {#sec-thalidomide_dalys_per_event}
+### Thalidomide DALYs Per Event: 41.8 thousand DALYs {#sec-thalidomide_dalys_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2570,8 +2570,8 @@ Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0k years
-- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8k years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0 thousand years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8 thousand years
 
 $$
 \begin{gathered}
@@ -2713,7 +2713,7 @@ Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0k cases (95% CI: 10.0k cases - 20.0k cases)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0 thousand cases (95% CI: 10.0 thousand cases - 20.0 thousand cases)
 - [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
@@ -2743,7 +2743,7 @@ $$
 
 :::
 
-### Thalidomide YLD Per Event: 13.0k years {#sec-thalidomide_yld_per_event}
+### Thalidomide YLD Per Event: 13.0 thousand years {#sec-thalidomide_yld_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2790,7 +2790,7 @@ $$
 
 :::
 
-### Thalidomide YLL Per Event: 28.8k years {#sec-thalidomide_yll_per_event}
+### Thalidomide YLL Per Event: 28.8 thousand years {#sec-thalidomide_yll_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2864,8 +2864,8 @@ Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm pr
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
-- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59M DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
+- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59 million DALYs
 
 $$
 \begin{gathered}
@@ -2934,7 +2934,7 @@ $$
 
 :::
 
-### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59M DALYs {#sec-type_i_error_benefit_dalys}
+### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59 million DALYs {#sec-type_i_error_benefit_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2942,7 +2942,7 @@ Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024
 
 **Inputs**:
 
-- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8k DALYs
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8 thousand DALYs
 
 $$
 \begin{gathered}
@@ -3001,8 +3001,8 @@ Fraction of possible drug-disease space that remains unexplored (>99%)
 
 **Inputs**:
 
-- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5k relationships (95% CI: 15.0k relationships - 50.0k relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50M combinations
+- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15.0 thousand relationships - 50.0 thousand relationships)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
 
 $$
 \begin{gathered}
@@ -3183,7 +3183,7 @@ Current clinical trial participation rate (0.06% of population)
 
 :::
 
-### Global Population with Chronic Diseases: 2.40B people {#sec-current_disease_patients_global}
+### Global Population with Chronic Diseases: 2.40 billion people {#sec-current_disease_patients_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3193,9 +3193,9 @@ Global population with chronic diseases
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2.00B people, 2.80B people] • Distribution: Lognormal
+**Technical**: 95% CI: [2.00 billion people, 2.80 billion people] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.00B people and 2.80B people (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.00 billion people and 2.80 billion people (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3207,7 +3207,7 @@ Global population with chronic diseases
 
 :::
 
-### Current Global Clinical Trials per Year: 3.30k trials/year {#sec-current_trials_per_year}
+### Current Global Clinical Trials per Year: 3.30 thousand trials/year {#sec-current_trials_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3217,9 +3217,9 @@ Current global clinical trials per year
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2.64k trials/year, 3.96k trials/year] • Distribution: Lognormal
+**Technical**: 95% CI: [2.64 thousand trials/year, 3.96 thousand trials/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.64k trials/year and 3.96k trials/year (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.64 thousand trials/year and 3.96 thousand trials/year (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3231,7 +3231,7 @@ Current global clinical trials per year
 
 :::
 
-### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
+### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3241,9 +3241,9 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50M patients/year, 2.30M patients/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.50 million patients/year, 2.30 million patients/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M patients/year and 2.30M patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50 million patients/year and 2.30 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3311,7 +3311,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 :::
 
-### Global Annual DALY Burden: 2.88B DALYs/year {#sec-global_annual_daly_burden}
+### Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3321,7 +3321,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 150M DALYs/year)
+**Technical**: Distribution: Normal (SE: 150 million DALYs/year)
 
 #### Input Distribution
 
@@ -3355,7 +3355,7 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 :::
 
-### Global Daily Deaths from Disease and Aging: 150k deaths/day {#sec-global_disease_deaths_daily}
+### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3365,7 +3365,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.50k deaths/day)
+**Technical**: Distribution: Normal (SE: 7.50 thousand deaths/day)
 
 #### Input Distribution
 
@@ -3575,7 +3575,7 @@ Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M,
 
 :::
 
-### Pre-1962 Physician Count (Unverified): 144k physicians {#sec-pre_1962_physician_count}
+### Pre-1962 Physician Count (Unverified): 144 thousand physicians {#sec-pre_1962_physician_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3587,7 +3587,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 :::
 
-### Total Number of Rare Diseases Globally: 7.00k diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3597,9 +3597,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6.00k diseases, 10.0k diseases] • Distribution: Normal
+**Technical**: 95% CI: [6.00 thousand diseases, 10.0 thousand diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6.00k diseases and 10.0k diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6.00 thousand diseases and 10.0 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -3635,7 +3635,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 :::
 
-### RECOVERY Trial Global Lives Saved: 1.00M lives {#sec-recovery_trial_global_lives_saved}
+### RECOVERY Trial Global Lives Saved: 1.00 million lives {#sec-recovery_trial_global_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3645,9 +3645,9 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [500k lives, 2.00M lives] • Distribution: Lognormal
+**Technical**: 95% CI: [500 thousand lives, 2.00 million lives] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 500k lives and 2.00M lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 500 thousand lives and 2.00 million lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3759,7 +3759,7 @@ Standard economic value per QALY
 
 :::
 
-### Thalidomide Cases Worldwide: 15.0k cases {#sec-thalidomide_cases_worldwide}
+### Thalidomide Cases Worldwide: 15.0 thousand cases {#sec-thalidomide_cases_worldwide}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3769,9 +3769,9 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10.0k cases, 20.0k cases] • Distribution: Lognormal
+**Technical**: 95% CI: [10.0 thousand cases, 20.0 thousand cases] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10.0k cases and 20.0k cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 10.0 thousand cases and 20.0 thousand cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3931,7 +3931,7 @@ Value of Statistical Life (conservative estimate)
 
 Fundamental parameters and constants used throughout the analysis.
 
-### ADAPTABLE Trial Patients Enrolled: 15.1k patients {#sec-adaptable_trial_patients}
+### ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients {#sec-adaptable_trial_patients}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4277,7 +4277,7 @@ Average QALYs gained per COVID death averted. Conservative estimate reflecting o
 
 :::
 
-### Safe Compounds Available for Testing: 9.50k compounds {#sec-safe_compounds_count}
+### Safe Compounds Available for Testing: 9.50 thousand compounds {#sec-safe_compounds_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4285,9 +4285,9 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [7.00k compounds, 12.0k compounds] • Distribution: Uniform
+**Technical**: 95% CI: [7.00 thousand compounds, 12.0 thousand compounds] • Distribution: Uniform
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 7.00k compounds and 12.0k compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 7.00 thousand compounds and 12.0 thousand compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
 
@@ -4299,7 +4299,7 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 
 :::
 
-### Tested Drug-Disease Relationships: 32.5k relationships {#sec-tested_relationships_estimate}
+### Tested Drug-Disease Relationships: 32.5 thousand relationships {#sec-tested_relationships_estimate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4307,9 +4307,9 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [15.0k relationships, 50.0k relationships] • Distribution: Lognormal
+**Technical**: 95% CI: [15.0 thousand relationships, 50.0 thousand relationships] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 15.0k relationships and 50.0k relationships (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 15.0 thousand relationships and 50.0 thousand relationships (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4335,7 +4335,7 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 :::
 
-### Trial-Relevant Diseases: 1.00k diseases {#sec-trial_relevant_diseases_count}
+### Trial-Relevant Diseases: 1.00 thousand diseases {#sec-trial_relevant_diseases_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4343,9 +4343,9 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [800 diseases, 1.20k diseases] • Distribution: Uniform
+**Technical**: 95% CI: [800 diseases, 1.20 thousand diseases] • Distribution: Uniform
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1.20k diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1.20 thousand diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
 

@@ -89,8 +89,8 @@ Trial capacity multiplier from DIH funding capacity vs. current global trial par
 
 **Inputs**:
 
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90M patients/year (95% CI: 1.50M patients/year - 2.30M patients/year)
-- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 23.4M patients/year
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
+- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
 \begin{gathered}
@@ -153,7 +153,7 @@ $$
 
 :::
 
-### Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565B DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
+### Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -161,7 +161,7 @@ Total DALYs averted from the combined dFDA timeline shift. Calculated as annual 
 
 **Inputs**:
 
-- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88B DALYs/year (SE: ±150M DALYs/year)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
@@ -246,7 +246,7 @@ Total economic value from the combined dFDA timeline shift. DALYs valued at stan
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565B DALYs
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
@@ -326,7 +326,7 @@ $$
 
 :::
 
-### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
+### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7 billion deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -334,7 +334,7 @@ Total eventually avoidable deaths from the combined dFDA timeline shift. Represe
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
@@ -569,7 +569,7 @@ $$
 
 :::
 
-### Patients Fundable Annually: 23.4M patients/year {#sec-dih_patients_fundable_annually}
+### Patients Fundable Annually: 23.4 million patients/year {#sec-dih_patients_fundable_annually}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -752,7 +752,7 @@ $$
 
 :::
 
-### Diseases Without Effective Treatment: 6.65k diseases {#sec-diseases_without_effective_treatment}
+### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -760,7 +760,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00k diseases (95% CI: 6.00k diseases - 10.0k diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
 
 $$
 \begin{gathered}
@@ -910,7 +910,7 @@ Years to explore the entire therapeutic search space under current system. At cu
 
 **Inputs**:
 
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65k diseases
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
 - [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 
 $$
@@ -1013,7 +1013,7 @@ Cost per DALY averted from elimination of efficacy lag plus earlier treatment di
 **Inputs**:
 
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565B DALYs
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 
 $$
 \begin{gathered}
@@ -1311,7 +1311,7 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 :::
 
-### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
+### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1321,9 +1321,9 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50M patients/year, 2.30M patients/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.50 million patients/year, 2.30 million patients/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M patients/year and 2.30M patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50 million patients/year and 2.30 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1379,7 +1379,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 :::
 
-### Global Annual DALY Burden: 2.88B DALYs/year {#sec-global_annual_daly_burden}
+### Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1389,7 +1389,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 150M DALYs/year)
+**Technical**: Distribution: Normal (SE: 150 million DALYs/year)
 
 #### Input Distribution
 
@@ -1399,7 +1399,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 :::
 
-### Global Daily Deaths from Disease and Aging: 150k deaths/day {#sec-global_disease_deaths_daily}
+### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1409,7 +1409,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.50k deaths/day)
+**Technical**: Distribution: Normal (SE: 7.50 thousand deaths/day)
 
 #### Input Distribution
 
@@ -1481,7 +1481,7 @@ Net present value of post-office career premium for average congressperson (10 y
 
 :::
 
-### Total Number of Rare Diseases Globally: 7.00k diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1491,9 +1491,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6.00k diseases, 10.0k diseases] • Distribution: Normal
+**Technical**: 95% CI: [6.00 thousand diseases, 10.0 thousand diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6.00k diseases and 10.0k diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6.00 thousand diseases and 10.0 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 

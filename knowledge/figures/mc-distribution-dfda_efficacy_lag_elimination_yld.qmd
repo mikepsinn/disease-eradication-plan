@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 873M |
-| Mean (expected value) | 1.02B |
-| Median (50th percentile) | 846M |
-| Standard Deviation | 716M |
-| 90% Range (5th-95th percentile) | [217M, 2.43B] |
+| Baseline (deterministic) | 873 million |
+| Mean (expected value) | 1.02 billion |
+| Median (50th percentile) | 846 million |
+| Standard Deviation | 716 million |
+| 90% Range (5th-95th percentile) | [217 million, 2.43 billion] |
 
 *The histogram shows the distribution of Years Lived with Disability During Disease Eradication Delay across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

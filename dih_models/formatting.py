@@ -214,38 +214,44 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
 
         abs_raw = abs(raw_val)
 
-        if abs_raw >= 1e12:
+        # Use full word forms for academic style
+        if abs_raw >= 1e15:
+            scaled = raw_val / 1e15
+            suffix = " quadrillion"
+        elif abs_raw >= 1e12:
             scaled = raw_val / 1e12
-            suffix = "T"
+            suffix = " trillion"
         elif abs_raw >= 1e9:
             scaled = raw_val / 1e9
-            suffix = "B"
+            suffix = " billion"
         elif abs_raw >= 1e6:
             scaled = raw_val / 1e6
-            suffix = "M"
+            suffix = " million"
         elif abs_raw >= 1e3:
             scaled = raw_val / 1e3
-            suffix = "k"
+            suffix = " thousand"
         else:
             scaled = raw_val
             suffix = ""
 
-        if abs(scaled) >= 100:
-            formatted_num = f"{scaled:.0f}{suffix}"
-        elif abs(scaled) >= 10:
-            formatted_num = f"{scaled:.1f}{suffix}"
-        elif abs(scaled) >= 1 and suffix:
-            formatted_num = f"{scaled:.2f}{suffix}"
-        elif suffix:  # Small number but with suffix (unlikely but possible)
-            formatted_num = f"{scaled:.2f}{suffix}"
+        # Use 3 significant figures consistently
+        if suffix:
+            if abs(scaled) >= 100:
+                formatted_num = f"{scaled:.0f}{suffix}"      # 565 billion (3 sig figs)
+            elif abs(scaled) >= 10:
+                formatted_num = f"{scaled:.1f}{suffix}"      # 10.7 billion (3 sig figs)
+            else:
+                formatted_num = f"{scaled:.2f}{suffix}"      # 1.93 quadrillion (3 sig figs)
         else:
-            # No suffix, small number
+            # No suffix, small number — also use 3 sig figs
             if abs_raw >= 100:
-                formatted_num = f"{raw_val:.0f}"
+                formatted_num = f"{raw_val:.0f}"             # 565 (3+ sig figs)
+            elif abs_raw >= 10:
+                formatted_num = f"{raw_val:.1f}"             # 10.7 (3 sig figs)
             elif abs_raw >= 1:
-                formatted_num = f"{raw_val:.2f}"
+                formatted_num = f"{raw_val:.2f}"             # 1.93 (3 sig figs)
             elif abs_raw > 0:
-                formatted_num = f"{raw_val:.3g}"
+                formatted_num = f"{raw_val:.3g}"             # 0.00193 (3 sig figs)
             else:
                 formatted_num = "0"
 

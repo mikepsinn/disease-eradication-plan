@@ -77,7 +77,7 @@ $$
 
 :::
 
-### Total Deaths from Historical Progress Delays: 102M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -85,7 +85,7 @@ Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time i
 
 **Inputs**:
 
-- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4M deaths
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
@@ -116,7 +116,7 @@ $$
 
 :::
 
-### Annual Lives Saved by Pharmaceuticals: 12.4M deaths {#sec-pharma_lives_saved_annual}
+### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -124,7 +124,7 @@ Annual lives saved by pharmaceutical interventions globally. Derived from Lichte
 
 **Inputs**:
 
-- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149M life-years (95% CI: 79.4M life-years - 240M life-years)
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
 - [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
 
 $$
@@ -184,7 +184,7 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 :::
 
-### Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
+### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -194,9 +194,9 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50M patients/year, 2.30M patients/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.50 million patients/year, 2.30 million patients/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50M patients/year and 2.30M patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50 million patients/year and 2.30 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -252,7 +252,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 :::
 
-### Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
+### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -262,7 +262,7 @@ Annual deaths from all diseases and aging globally
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 5.00M deaths/year)
+**Technical**: Distribution: Normal (SE: 5.00 million deaths/year)
 
 #### Input Distribution
 
@@ -272,7 +272,7 @@ Annual deaths from all diseases and aging globally
 
 :::
 
-### Annual Life-Years Saved by Pharmaceuticals: 149M life-years {#sec-pharma_life_years_saved_annual}
+### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -282,9 +282,9 @@ Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (201
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [79.4M life-years, 240M life-years] • Distribution: Lognormal
+**Technical**: 95% CI: [79.4 million life-years, 240 million life-years] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4M life-years and 240M life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4 million life-years and 240 million life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -308,7 +308,7 @@ Phase 3 trial total cost (minimum)
 
 :::
 
-### RECOVERY Trial Global Lives Saved: 1.00M lives {#sec-recovery_trial_global_lives_saved}
+### RECOVERY Trial Global Lives Saved: 1.00 million lives {#sec-recovery_trial_global_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -318,9 +318,9 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [500k lives, 2.00M lives] • Distribution: Lognormal
+**Technical**: 95% CI: [500 thousand lives, 2.00 million lives] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 500k lives and 2.00M lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 500 thousand lives and 2.00 million lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

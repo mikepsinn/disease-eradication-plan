@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 1931T |
-| Mean (expected value) | 2049T |
-| Median (50th percentile) | 2107T |
-| Standard Deviation | 374T |
-| 90% Range (5th-95th percentile) | [1362T, 2616T] |
+| Baseline (deterministic) | 1.93 quadrillion |
+| Mean (expected value) | 2.05 quadrillion |
+| Median (50th percentile) | 2.11 quadrillion |
+| Standard Deviation | 374 trillion |
+| 90% Range (5th-95th percentile) | [1.36 quadrillion, 2.62 quadrillion] |
 
 *The histogram shows the distribution of Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -39,7 +39,7 @@ This appendix documents all 55 parameters used in the analysis, organized by typ
 
 Parameters derived from mathematical formulas and economic models.
 
-### Annual Chronic Disease Patients Treated: 982M people {#sec-chronic_disease_treated_patients_annual}
+### Annual Chronic Disease Patients Treated: 982 million people {#sec-chronic_disease_treated_patients_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -47,7 +47,7 @@ Estimated unique patients receiving chronic disease treatment annually. Derived 
 
 **Inputs**:
 
-- [Annual Days of Chronic Disease Therapy](#sec-global_chronic_therapy_days_annual) 📊: 1.28T days (95% CI: 1.00T days - 1.50T days)
+- [Annual Days of Chronic Disease Therapy](#sec-global_chronic_therapy_days_annual) 📊: 1.28 trillion days (95% CI: 1.00 trillion days - 1.50 trillion days)
 
 $$
 \begin{gathered}
@@ -78,7 +78,7 @@ $$
 
 :::
 
-### Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
+### Total DALYs Lost from Disease Eradication Delay: 7.94 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -86,8 +86,8 @@ Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMAR
 
 **Inputs**:
 
-- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07B years
-- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873M years
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07 billion years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873 million years
 
 $$
 \begin{gathered}
@@ -129,7 +129,7 @@ $$
 
 :::
 
-### Total Deaths from Disease Eradication Delay: 416M deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
+### Total Deaths from Disease Eradication Delay: 416 million deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -138,7 +138,7 @@ Total eventually avoidable deaths from delaying disease eradication by 8.2 years
 **Inputs**:
 
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150k deaths/day (SE: ±7.50k deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
 
 $$
 \begin{gathered}
@@ -175,7 +175,7 @@ Total economic loss from delaying disease eradication by 8.2 years (PRIMARY esti
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
 - [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
@@ -222,7 +222,7 @@ $$
 
 :::
 
-### Years Lived with Disability During Disease Eradication Delay: 873M years {#sec-dfda_efficacy_lag_elimination_yld}
+### Years Lived with Disability During Disease Eradication Delay: 873 million years {#sec-dfda_efficacy_lag_elimination_yld}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -230,7 +230,7 @@ Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
 - [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
 - [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
 
@@ -265,7 +265,7 @@ $$
 
 :::
 
-### Years of Life Lost from Disease Eradication Delay: 7.07B years {#sec-dfda_efficacy_lag_elimination_yll}
+### Years of Life Lost from Disease Eradication Delay: 7.07 billion years {#sec-dfda_efficacy_lag_elimination_yll}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -273,7 +273,7 @@ Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416M deaths
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
 - [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
 
@@ -346,7 +346,7 @@ $$
 
 :::
 
-### Diseases Without Effective Treatment: 6.65k diseases {#sec-diseases_without_effective_treatment}
+### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -354,7 +354,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00k diseases (95% CI: 6.00k diseases - 10.0k diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
 
 $$
 \begin{gathered}
@@ -385,7 +385,7 @@ $$
 
 :::
 
-### Total Drugs Approved Since 1962: 3.10k drugs {#sec-drugs_approved_since_1962}
+### Total Drugs Approved Since 1962: 3.10 thousand drugs {#sec-drugs_approved_since_1962}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -473,7 +473,7 @@ Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cos
 **Inputs**:
 
 - [Pharma Phase 2/3 Cost Barrier Per Drug](#sec-pharma_phase_2_3_cost_barrier): $1.56B (SE: ±$200M)
-- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962) 🔢: 3.10k drugs
+- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962) 🔢: 3.10 thousand drugs
 
 $$
 \begin{gathered}
@@ -503,7 +503,7 @@ $$
 
 :::
 
-### Efficacy Lag Deaths (9/11 Equivalents): 34.1k 9/11s {#sec-efficacy_lag_deaths_911_equivalents}
+### Efficacy Lag Deaths (9/11 Equivalents): 34.1 thousand 9/11s {#sec-efficacy_lag_deaths_911_equivalents}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -511,8 +511,8 @@ Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortalit
 
 **Inputs**:
 
-- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102M deaths
-- [September 11 Deaths](#sec-sept_11_deaths) 📊: 2.98k people
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
+- [September 11 Deaths](#sec-sept_11_deaths) 📊: 2.98 thousand people
 
 $$
 \begin{gathered}
@@ -543,7 +543,7 @@ $$
 
 :::
 
-### Treatment Delay YLD - Annual: 2.01B DALYs {#sec-efficacy_lag_treatment_delay_yld_annual}
+### Treatment Delay YLD - Annual: 2.01 billion DALYs {#sec-efficacy_lag_treatment_delay_yld_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -551,7 +551,7 @@ Annual YLD from treatment delay: patients receiving chronic disease treatment wo
 
 **Inputs**:
 
-- [Annual Chronic Disease Patients Treated](#sec-chronic_disease_treated_patients_annual) 🔢: 982M people
+- [Annual Chronic Disease Patients Treated](#sec-chronic_disease_treated_patients_annual) 🔢: 982 million people
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 - [Treatment Disability Reduction](#sec-treatment_disability_reduction) 📊: 0.25 weight (95% CI: 0.15 weight - 0.35 weight)
 
@@ -586,7 +586,7 @@ $$
 
 :::
 
-### Total Deaths from Historical Progress Delays: 102M deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -594,7 +594,7 @@ Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time i
 
 **Inputs**:
 
-- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4M deaths
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
@@ -625,7 +625,7 @@ $$
 
 :::
 
-### Annual Lives Saved by Pharmaceuticals: 12.4M deaths {#sec-pharma_lives_saved_annual}
+### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -633,7 +633,7 @@ Annual lives saved by pharmaceutical interventions globally. Derived from Lichte
 
 **Inputs**:
 
-- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149M life-years (95% CI: 79.4M life-years - 240M life-years)
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
 - [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
 
 $$
@@ -665,7 +665,7 @@ $$
 
 :::
 
-### Thalidomide DALYs Per Event: 41.8k DALYs {#sec-thalidomide_dalys_per_event}
+### Thalidomide DALYs Per Event: 41.8 thousand DALYs {#sec-thalidomide_dalys_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -673,8 +673,8 @@ Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0k years
-- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8k years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0 thousand years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8 thousand years
 
 $$
 \begin{gathered}
@@ -816,7 +816,7 @@ Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0k cases (95% CI: 10.0k cases - 20.0k cases)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0 thousand cases (95% CI: 10.0 thousand cases - 20.0 thousand cases)
 - [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
@@ -846,7 +846,7 @@ $$
 
 :::
 
-### Thalidomide YLD Per Event: 13.0k years {#sec-thalidomide_yld_per_event}
+### Thalidomide YLD Per Event: 13.0 thousand years {#sec-thalidomide_yld_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -893,7 +893,7 @@ $$
 
 :::
 
-### Thalidomide YLL Per Event: 28.8k years {#sec-thalidomide_yll_per_event}
+### Thalidomide YLL Per Event: 28.8 thousand years {#sec-thalidomide_yll_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -943,8 +943,8 @@ Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm pr
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94B DALYs
-- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59M DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
+- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59 million DALYs
 
 $$
 \begin{gathered}
@@ -1013,7 +1013,7 @@ $$
 
 :::
 
-### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59M DALYs {#sec-type_i_error_benefit_dalys}
+### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59 million DALYs {#sec-type_i_error_benefit_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1021,7 +1021,7 @@ Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024
 
 **Inputs**:
 
-- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8k DALYs
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8 thousand DALYs
 
 $$
 \begin{gathered}
@@ -1212,7 +1212,7 @@ FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry surv
 
 :::
 
-### Annual Days of Chronic Disease Therapy: 1.28T days {#sec-global_chronic_therapy_days_annual}
+### Annual Days of Chronic Disease Therapy: 1.28 trillion days {#sec-global_chronic_therapy_days_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1222,9 +1222,9 @@ Annual days of therapy for chronic conditions globally (diabetes, CVD, respirato
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.00T days, 1.50T days] • Distribution: Lognormal
+**Technical**: 95% CI: [1.00 trillion days, 1.50 trillion days] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.00T days and 1.50T days (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.00 trillion days and 1.50 trillion days (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1236,7 +1236,7 @@ Annual days of therapy for chronic conditions globally (diabetes, CVD, respirato
 
 :::
 
-### Global Daily Deaths from Disease and Aging: 150k deaths/day {#sec-global_disease_deaths_daily}
+### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1246,7 +1246,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.50k deaths/day)
+**Technical**: Distribution: Normal (SE: 7.50 thousand deaths/day)
 
 #### Input Distribution
 
@@ -1300,7 +1300,7 @@ Average cost to develop one drug in current system
 
 :::
 
-### Annual Life-Years Saved by Pharmaceuticals: 149M life-years {#sec-pharma_life_years_saved_annual}
+### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1310,9 +1310,9 @@ Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (201
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [79.4M life-years, 240M life-years] • Distribution: Lognormal
+**Technical**: 95% CI: [79.4 million life-years, 240 million life-years] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4M life-years and 240M life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4 million life-years and 240 million life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1360,7 +1360,7 @@ Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop f
 
 :::
 
-### Pre-1962 Physician Count (Unverified): 144k physicians {#sec-pre_1962_physician_count}
+### Pre-1962 Physician Count (Unverified): 144 thousand physicians {#sec-pre_1962_physician_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1372,7 +1372,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 :::
 
-### Total Number of Rare Diseases Globally: 7.00k diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1382,9 +1382,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6.00k diseases, 10.0k diseases] • Distribution: Normal
+**Technical**: 95% CI: [6.00 thousand diseases, 10.0 thousand diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6.00k diseases and 10.0k diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6.00 thousand diseases and 10.0 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -1440,7 +1440,7 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 :::
 
-### September 11 Deaths: 2.98k people {#sec-sept_11_deaths}
+### September 11 Deaths: 2.98 thousand people {#sec-sept_11_deaths}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1476,7 +1476,7 @@ Standard economic value per QALY
 
 :::
 
-### Thalidomide Cases Worldwide: 15.0k cases {#sec-thalidomide_cases_worldwide}
+### Thalidomide Cases Worldwide: 15.0 thousand cases {#sec-thalidomide_cases_worldwide}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1486,9 +1486,9 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10.0k cases, 20.0k cases] • Distribution: Lognormal
+**Technical**: 95% CI: [10.0 thousand cases, 20.0 thousand cases] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10.0k cases and 20.0k cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 10.0 thousand cases and 20.0 thousand cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

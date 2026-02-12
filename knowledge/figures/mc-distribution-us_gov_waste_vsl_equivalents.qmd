@@ -117,10 +117,10 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | 357k |
-| Mean (expected value) | 357k |
-| Median (50th percentile) | 351k |
-| Standard Deviation | 61.1k |
-| 90% Range (5th-95th percentile) | [264k, 475k] |
+| Baseline (deterministic) | 357 thousand |
+| Mean (expected value) | 357 thousand |
+| Median (50th percentile) | 351 thousand |
+| Standard Deviation | 61.1 thousand |
+| 90% Range (5th-95th percentile) | [264 thousand, 475 thousand] |
 
 *The histogram shows the distribution of US Waste (VSL Equivalents) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

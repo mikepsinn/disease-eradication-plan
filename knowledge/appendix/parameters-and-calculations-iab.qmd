@@ -204,7 +204,7 @@ Annual cost of combat deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234k deaths/year (95% CI: 180k deaths/year - 300k deaths/year)
+- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
 - [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
 
 $$
@@ -242,7 +242,7 @@ Annual cost of state violence deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.70k deaths/year (95% CI: 1.50k deaths/year - 5.00k deaths/year)
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.70 thousand deaths/year (95% CI: 1.50 thousand deaths/year - 5.00 thousand deaths/year)
 - [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
 
 $$
@@ -280,7 +280,7 @@ Annual cost of terror deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.30k deaths/year (95% CI: 6.00k deaths/year - 12.0k deaths/year)
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.30 thousand deaths/year (95% CI: 6.00 thousand deaths/year - 12.0 thousand deaths/year)
 - [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
 
 $$
@@ -1060,7 +1060,7 @@ Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×
 
 :::
 
-### Annual Deaths from Active Combat Worldwide: 234k deaths/year {#sec-global_annual_conflict_deaths_active_combat}
+### Annual Deaths from Active Combat Worldwide: 234 thousand deaths/year {#sec-global_annual_conflict_deaths_active_combat}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1070,9 +1070,9 @@ Annual deaths from active combat worldwide
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [180k deaths/year, 300k deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [180 thousand deaths/year, 300 thousand deaths/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 180k deaths/year and 300k deaths/year (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 180 thousand deaths/year and 300 thousand deaths/year (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1084,7 +1084,7 @@ Annual deaths from active combat worldwide
 
 :::
 
-### Annual Deaths from State Violence: 2.70k deaths/year {#sec-global_annual_conflict_deaths_state_violence}
+### Annual Deaths from State Violence: 2.70 thousand deaths/year {#sec-global_annual_conflict_deaths_state_violence}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1094,9 +1094,9 @@ Annual deaths from state violence
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50k deaths/year, 5.00k deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.50 thousand deaths/year, 5.00 thousand deaths/year] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1.50k deaths/year and 5.00k deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1.50 thousand deaths/year and 5.00 thousand deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1108,7 +1108,7 @@ Annual deaths from state violence
 
 :::
 
-### Annual Deaths from Terror Attacks Globally: 8.30k deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
+### Annual Deaths from Terror Attacks Globally: 8.30 thousand deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1118,9 +1118,9 @@ Annual deaths from terror attacks globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6.00k deaths/year, 12.0k deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [6.00 thousand deaths/year, 12.0 thousand deaths/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6.00k deaths/year and 12.0k deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6.00 thousand deaths/year and 12.0 thousand deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1132,7 +1132,7 @@ Annual deaths from terror attacks globally
 
 :::
 
-### Global Annual DALY Burden: 2.88B DALYs/year {#sec-global_annual_daly_burden}
+### Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1142,7 +1142,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 150M DALYs/year)
+**Technical**: Distribution: Normal (SE: 150 million DALYs/year)
 
 #### Input Distribution
 
@@ -1152,7 +1152,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 :::
 
-### Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
+### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1162,7 +1162,7 @@ Annual deaths from all diseases and aging globally
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 5.00M deaths/year)
+**Technical**: Distribution: Normal (SE: 5.00 million deaths/year)
 
 #### Input Distribution
 

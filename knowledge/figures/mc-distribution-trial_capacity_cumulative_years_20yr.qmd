@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 441 |
 | Median (50th percentile) | 320 |
 | Standard Deviation | 404 |
-| 90% Range (5th-95th percentile) | [83.8, 1.23k] |
+| 90% Range (5th-95th percentile) | [83.8, 1.23 thousand] |
 
 *The histogram shows the distribution of Cumulative Trial Capacity Years Over 20 Years across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
