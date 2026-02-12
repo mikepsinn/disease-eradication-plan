@@ -1,6 +1,6 @@
 ---
 title: A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents
-description: At current testing rates, finding treatments for all {{< var diseases_without_effective_treatment >}} would take {{< var status_quo_queue_clearance_years >}}. Pragmatic trials integrated into healthcare increase testing {{< var dfda_trial_capacity_multiplier >}}, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and eliminating {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering at {{< var dfda_direct_funding_cost_per_daly >}} per year of healthy life saved.
+description: Only {{< var new_disease_first_treatments_per_year >}} get their first treatment each year. With {{< var diseases_without_effective_treatment >}} lacking effective treatments, the backlog would take {{< var status_quo_queue_clearance_years >}} to clear. Integrating pragmatic trials into standard healthcare increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, cutting that timeline from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average untreated disease gets a treatment {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} at {{< var dfda_direct_funding_cost_per_daly >}} per year of healthy life saved.
 abstract: |
   Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only
   {{< var exploration_ratio >}} have been clinically tested. At the current discovery rate of
@@ -40,7 +40,6 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 
 **The Problem:** {{< var diseases_without_effective_treatment >}} lack effective treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
-![A visual comparison between the current medical research bottleneck, which faces a 443-year backlog, and the proposed decentralized protocol that scales clinical trials through universal access and automated data aggregation.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-executive-summary-bw-academic.jpg)
 
 **The Solution:** A decentralized FDA, an open protocol that integrates pragmatic clinical trials into standard healthcare, enabling:
 
@@ -151,7 +150,6 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 ### Key Capabilities
 
-![A system architecture diagram showing data flowing from federated sources like EHRs and health apps into a central processing engine that outputs treatment rankings and standardized outcome labels.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-key-capabilities-bw-academic.jpg)
 
 - **Treatment Rankings**: Every treatment for every condition ranked by real-world effectiveness, updated continuously as new data arrives
 - **Outcome Labels**: Standardized "nutrition facts for drugs" showing effectiveness rates, side effects, and outcomes from real patients
@@ -195,8 +193,6 @@ The cost explosion began exactly when efficacy testing was centralized within ph
 ### Why "Eventually Avoidable" Matters
 
 A critical assumption in this analysis is that {{< var eventually_avoidable_death_pct >}} of disease deaths are "eventually avoidable" - meaning they could be prevented with sufficient biomedical research over time.
-
-![A visualization showing the historical expansion of avoidable deaths from 1900 to the present, contrasted with the projected 92.6% avoidability rate and the 25% sensitivity scenario.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-eventually-avoidable-matters-bw-academic.jpg)
 
 **Why this assumption is conservative:**
 
