@@ -1,0 +1,33 @@
+% Render institute, contact info, and web URL on the PDF title page
+% Quarto 1.8+ does not pass the institute YAML field to LaTeX, so we
+% hardcode the universal metadata.
+%
+% Strategy: Patch \author to append institute info below the author name.
+% Uses \\ for line breaks (not \par) because report class renders
+% \@author inside a tabular environment where \par is forbidden.
+\makeatletter
+
+% --- Paper URL (set per-config via: \paperurl{https://...}) ---
+\newif\if@haspaperurl
+\newcommand{\@thepaperurl}{}
+\newcommand{\paperurl}[1]{%
+  \renewcommand{\@thepaperurl}{#1}%
+  \@haspaperurltrue
+}
+
+% --- Patch \author to append institute block ---
+\let\@origauthor\author
+\renewcommand{\author}[1]{%
+  \@origauthor{%
+    #1 \\[0.8em]%
+    {\normalsize\textit{Institute for Accelerated Medicine}} \\[0.3em]%
+    {\small \href{mailto:m@warondisease.org}{m@warondisease.org}%
+      \enspace$\vert$\enspace%
+      ORCID: \href{https://orcid.org/0009-0006-0212-1094}{0009-0006-0212-1094}}%
+    \if@haspaperurl
+      \\[0.3em]%
+      {\small Online version: \url{\@thepaperurl}}%
+    \fi
+  }%
+}
+\makeatother
