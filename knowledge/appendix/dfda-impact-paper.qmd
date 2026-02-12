@@ -1,5 +1,5 @@
 ---
-title: A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents
+title: "A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents"
 description: Only {{< var new_disease_first_treatments_per_year >}} get their first treatment each year. With {{< var diseases_without_effective_treatment >}} lacking effective treatments, the backlog would take {{< var status_quo_queue_clearance_years >}} to clear. Integrating pragmatic trials into standard healthcare increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, cutting that timeline from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average untreated disease gets a treatment {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} at {{< var dfda_direct_funding_cost_per_daly >}} per year of healthy life saved.
 abstract: |
   Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only
