@@ -109,6 +109,14 @@ jobs:
           if-no-files-found: ignore
 {% endif %}
 
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-{{ job.config_name }}
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4

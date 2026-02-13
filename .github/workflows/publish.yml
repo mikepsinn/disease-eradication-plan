@@ -109,6 +109,14 @@ jobs:
           if-no-files-found: ignore
 
 
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-1-pct-treaty-impact
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -239,6 +247,14 @@ jobs:
           if-no-files-found: ignore
 
 
+
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-cost-of-change
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -371,6 +387,14 @@ jobs:
 
 
 
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-dfda-impact
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -501,6 +525,14 @@ jobs:
           if-no-files-found: ignore
 
 
+
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-dfda-spec
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -633,6 +665,14 @@ jobs:
 
 
 
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-iab
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -763,6 +803,14 @@ jobs:
           if-no-files-found: ignore
 
 
+
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-invisible-graveyard
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -903,6 +951,14 @@ jobs:
           if-no-files-found: ignore
 
 
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-manual
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1033,6 +1089,14 @@ jobs:
           if-no-files-found: ignore
 
 
+
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-obg
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -1165,6 +1229,14 @@ jobs:
 
 
 
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-opg
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1295,6 +1367,14 @@ jobs:
           if-no-files-found: ignore
 
 
+
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-optimocracy
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -1427,6 +1507,14 @@ jobs:
 
 
 
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-political-dysfunction-tax
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1558,6 +1646,14 @@ jobs:
 
 
 
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-us-efficiency-audit
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1688,6 +1784,14 @@ jobs:
           if-no-files-found: ignore
 
 
+
+      - name: Upload validation checklists
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-wishocracy
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
 
       - name: Upload LaTeX logs on failure
         if: failure()
