@@ -1235,11 +1235,8 @@ def run_pdf_validation(
     # Check if LLM validation should be enabled
     gemini_key = os.environ.get("GOOGLE_GENERATIVE_AI_API_KEY")
     if not skip_llm and not gemini_key:
-        log_with_timestamp(
-            "[ERROR] GOOGLE_GENERATIVE_AI_API_KEY is not set; cannot run required LLM PDF validation",
-            to_stderr=True,
-        )
-        return 1
+        log_with_timestamp("[SKIP] LLM validation (no GOOGLE_GENERATIVE_AI_API_KEY env key provided)")
+        skip_llm = True
 
     try:
         result = run_pdf_validation_subprocess(
