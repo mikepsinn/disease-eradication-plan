@@ -135,14 +135,14 @@ jobs:
 
 
       - name: "Deploy Build The 1% Treaty: Harnessing Greed to Eradicate Disea to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/1-pct-treaty-impact/_site/1-pct-treaty-impact'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy 1-pct-treaty-impact site from GitHub Actions"
+          deploy-message: "Deploy 1-pct-treaty-impact from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -274,14 +274,14 @@ jobs:
 
 
       - name: "Deploy Build The Price of Political Change: A Cost-Benefit Fram to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/cost-of-change/_site/cost-of-change'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy cost-of-change site from GitHub Actions"
+          deploy-message: "Deploy cost-of-change from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -413,14 +413,14 @@ jobs:
 
 
       - name: "Deploy Build A Decentralized FDA: How to Prevent a Year of Deat to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/dfda-impact/_site/dfda-impact'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy dfda-impact site from GitHub Actions"
+          deploy-message: "Deploy dfda-impact from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -552,14 +552,14 @@ jobs:
 
 
       - name: "Deploy Build The Decentralized FDA (dFDA) Protocol: Two-Stage V to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/dfda-spec/_site/dfda-spec'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy dfda-spec site from GitHub Actions"
+          deploy-message: "Deploy dfda-spec from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -691,14 +691,14 @@ jobs:
 
 
       - name: "Deploy Build Incentive Alignment Bonds: Making Public Goods Fin to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/iab/_site/iab'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy iab site from GitHub Actions"
+          deploy-message: "Deploy iab from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -830,14 +830,14 @@ jobs:
 
 
       - name: "Deploy Build The Invisible Graveyard: Quantifying the Mortality to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/invisible-graveyard/_site/invisible-graveyard'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy invisible-graveyard site from GitHub Actions"
+          deploy-message: "Deploy invisible-graveyard from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -977,14 +977,14 @@ jobs:
 
 
       - name: "Deploy Build How to End War and Disease to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/manual/_manual/warondisease'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy manual site from GitHub Actions"
+          deploy-message: "Deploy manual from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -1116,14 +1116,14 @@ jobs:
 
 
       - name: "Deploy Build Optimal Budget Generator: Evidence-Based Budget Al to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/obg/_site/obg'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy obg site from GitHub Actions"
+          deploy-message: "Deploy obg from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -1255,14 +1255,14 @@ jobs:
 
 
       - name: "Deploy Build Optimal Policy Generator: Evidence-Based Policy Re to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/opg/_site/opg'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy opg site from GitHub Actions"
+          deploy-message: "Deploy opg from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -1394,14 +1394,14 @@ jobs:
 
 
       - name: "Deploy Build Optimocracy: Causal Inference on Cross-Jurisdictio to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/optimocracy/_site/optimocracy'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy optimocracy site from GitHub Actions"
+          deploy-message: "Deploy optimocracy from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -1533,14 +1533,14 @@ jobs:
 
 
       - name: "Deploy Build The Political Dysfunction Tax to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/political-dysfunction-tax/_site/political-dysfunction-tax'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy political-dysfunction-tax site from GitHub Actions"
+          deploy-message: "Deploy political-dysfunction-tax from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -1672,14 +1672,14 @@ jobs:
 
 
       - name: "Deploy Build United States Efficiency Audit to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/us-efficiency-audit/_site/us-efficiency-audit'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy us-efficiency-audit site from GitHub Actions"
+          deploy-message: "Deploy us-efficiency-audit from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -1811,14 +1811,14 @@ jobs:
 
 
       - name: "Deploy Build Wishocracy: Solving the Democratic Principal-Agent to Netlify (immediate)"
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: '_build_temp/wishocracy/_site/wishocracy'
-          production-branch: master
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-          deploy-message: "Deploy wishocracy site from GitHub Actions"
+          deploy-message: "Deploy wishocracy from ${{ github.ref_name }}"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
