@@ -478,7 +478,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-11"
+          "lastmod": "2026-02-12"
         },
         {
           "path": "knowledge/references.qmd",
@@ -690,7 +690,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-02"
+          "lastmod": "2026-02-12"
         }
       ],
       "pageCount": 2
@@ -699,7 +699,7 @@
       "id": "dfda-impact",
       "type": "website",
       "title": "A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents",
-      "description": "At current testing rates, finding treatments for all 6.65k diseases would take 443 years. Pragmatic trials integrated into healthcare increase testing 12.3x, saving 10.7B deaths and eliminating 1931T hours of suffering at $0.841 per year of healthy life saved.",
+      "description": "Only 15 diseases/year get their first treatment each year. With 6.65 thousand diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $0.841 per year of healthy life saved.",
       "siteUrl": "https://dfda-impact.warondisease.org",
       "favicon": "https://dfda-impact.warondisease.org/assets/icons/dfda-favicon.png",
       "ogImage": "https://dfda-impact.warondisease.org/assets/og/dfda-impact-og-1200x630.jpg",
@@ -793,7 +793,15 @@
         {
           "path": "index.qmd",
           "url": "https://dfda-impact.warondisease.org/",
-          "title": "Index",
+          "title": "A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents",
+          "description": "Only 15 diseases/year get their first treatment each year. With 6.65 thousand diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $0.841 per year of healthy life saved.",
+          "image": "https://dfda-impact.warondisease.org/assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.jpg",
+          "tags": [
+            "dfda",
+            "roi",
+            "economics",
+            "cost-effectiveness"
+          ],
           "sections": [
             "Executive Summary",
             "Protocol, Not Platform",
@@ -853,7 +861,7 @@
             "Why This Differs from Failed Megaprojects"
           ],
           "published": true,
-          "lastmod": "2026-02-11"
+          "lastmod": "2026-02-12"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-impact.qmd",
@@ -990,7 +998,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-12"
         }
       ],
       "pageCount": 2
@@ -998,8 +1006,8 @@
     {
       "id": "dfda-spec",
       "type": "website",
-      "title": "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation",
-      "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
+      "title": "The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
+      "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
       "siteUrl": "https://dfda-spec.warondisease.org",
       "favicon": "https://dfda-spec.warondisease.org/assets/icons/dfda-favicon.png",
       "ogImage": "https://dfda-spec.warondisease.org/assets/og/dfda-spec-og-1200x630.jpg",
@@ -1094,8 +1102,8 @@
         {
           "path": "index.qmd",
           "url": "https://dfda-spec.warondisease.org/",
-          "title": "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation",
-          "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
+          "title": "The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
+          "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
           "image": "https://dfda-spec.warondisease.org/assets/og-images/knowledge/appendix/dfda-spec-paper-og-bw-academic.jpg",
           "tags": [
             "appendix",
@@ -1255,7 +1263,7 @@
             "Stage 1 Observational Analysis Cost per Patient: $0.100"
           ],
           "published": true,
-          "lastmod": "2026-02-02"
+          "lastmod": "2026-02-12"
         }
       ],
       "pageCount": 2
@@ -1498,7 +1506,7 @@
             "Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10%"
           ],
           "published": true,
-          "lastmod": "2026-02-03"
+          "lastmod": "2026-02-12"
         }
       ],
       "pageCount": 2
@@ -1662,7 +1670,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-02-11"
+          "lastmod": "2026-02-12"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-invisible-graveyard.qmd",
@@ -1732,7 +1740,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-12"
         }
       ],
       "pageCount": 2
@@ -1869,7 +1877,7 @@
             "The Final Math"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-12"
         },
         {
           "path": "knowledge/problem.qmd",
@@ -3963,19 +3971,20 @@
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
           "sections": [
             "The 1% Treaty: Harnessing Greed to Eradicate Disease",
+            "A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents",
             "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
             "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
             "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
             "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
+            "The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
             "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag",
             "The Political Dysfunction Tax",
             "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
             "United States Efficiency Audit",
-            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation",
-            "dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation"
+            "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
           ],
           "published": true,
-          "lastmod": "2026-02-11"
+          "lastmod": "2026-02-12"
         },
         {
           "path": "knowledge/appendix/lives-saved-by-drug-accessibility.qmd",
@@ -4280,7 +4289,7 @@
             "Standard Time Horizon for NPV Analysis: 10 years"
           ],
           "published": true,
-          "lastmod": "2026-02-10"
+          "lastmod": "2026-02-12"
         }
       ],
       "pageCount": 2
@@ -5065,7 +5074,7 @@
             "Overlap Discount Factor: 1:1"
           ],
           "published": true,
-          "lastmod": "2026-02-11"
+          "lastmod": "2026-02-12"
         }
       ],
       "pageCount": 2

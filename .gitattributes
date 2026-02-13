@@ -21,8 +21,8 @@
 *.DOCX     diff=astextplain
 *.dot      diff=astextplain
 *.DOT      diff=astextplain
-*.pdf      diff=astextplain
-*.PDF      diff=astextplain
+*.pdf      binary -delta
+*.PDF      binary -delta
 *.rtf      diff=astextplain
 *.RTF      diff=astextplain
 *.md       text eol=lf diff=markdown

@@ -325,6 +325,58 @@ DATA: All data and code used in this analysis are publicly available at https://
 
 -->
 
+### [The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
+
+[![The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
+
+> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommend...
+
+
+<!--
+=== SUBMISSION INFO: The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials) ===
+
+TITLE: The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
+
+ABSTRACT:
+We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: dFDA, Predictor Impact Score, Pharmacovigilance, Real World Evidence, N of 1 Trials, Causal Inference, Bradford Hill Criteria, Treatment Effects, Adverse Events, Outcome Labels, Statistical Methods, dFDA, Decentralized Fda
+
+JEL CODES: I18, C10, L65, C93, I11
+
+SUBJECT AREAS: Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods
+CATEGORY: Academic Paper, Medical Research, Methodology
+GENRE: Biostatistics, Pharmacoepidemiology, Methodology
+
+PDF: https://dfda-spec.warondisease.org/dfda-spec-paper.pdf
+DOI: 10.5281/zenodo.18203375
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+--- PLATFORM STATUS ---
+WEBSITE: deployed | https://dfda-spec.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522034
+MEDRXIV: pending
+ARXIV: pending | category: stat.ME
+
+--- JOURNAL TARGETS ---
+Clinical Pharmacology & Therapeutics (Tier 2): target
+Pharmacoepidemiology and Drug Safety (Tier 2): target
+Drug Safety (Tier 2): target
+
+--- STATEMENTS (for journal submissions) ---
+COI: The author declares no competing interests.
+FUNDING: This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
+ETHICS: This research did not involve human subjects or animal experimentation.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+-->
+
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
 
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
@@ -574,58 +626,6 @@ ARXIV: pending | category: cs.GT
 Social Choice and Welfare (Tier 2): target
 Public Choice (Tier 2): target
 American Political Science Review (Tier 1): target
-
---- STATEMENTS (for journal submissions) ---
-COI: The author declares no competing interests.
-FUNDING: This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
-ETHICS: This research did not involve human subjects or animal experimentation.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
--->
-
-### [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
-
-[![dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](../assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
-
-> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
-
-
-<!--
-=== SUBMISSION INFO: dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation ===
-
-TITLE: dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
-
-ABSTRACT:
-We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: dFDA, Predictor Impact Score, Pharmacovigilance, Real World Evidence, N of 1 Trials, Causal Inference, Bradford Hill Criteria, Treatment Effects, Adverse Events, Outcome Labels, Statistical Methods, dFDA, Decentralized Fda
-
-JEL CODES: I18, C10, L65, C93, I11
-
-SUBJECT AREAS: Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods
-CATEGORY: Academic Paper, Medical Research, Methodology
-GENRE: Biostatistics, Pharmacoepidemiology, Methodology
-
-PDF: https://dfda-spec.warondisease.org/dfda-spec-paper.pdf
-DOI: 10.5281/zenodo.18203375
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
---- PLATFORM STATUS ---
-WEBSITE: deployed | https://dfda-spec.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522034
-MEDRXIV: pending
-ARXIV: pending | category: stat.ME
-
---- JOURNAL TARGETS ---
-Clinical Pharmacology & Therapeutics (Tier 2): target
-Pharmacoepidemiology and Drug Safety (Tier 2): target
-Drug Safety (Tier 2): target
 
 --- STATEMENTS (for journal submissions) ---
 COI: The author declares no competing interests.

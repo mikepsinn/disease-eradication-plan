@@ -40,10 +40,10 @@ node_modules
 _book
 _manual
 
-# eBook build output
+# eBook build output (generated from Quarto source)
 *.epub
 *.mobi
-#*.pdf
+assets/pdfs/*.pdf
 /.idea
 /venv/
 __pycache__

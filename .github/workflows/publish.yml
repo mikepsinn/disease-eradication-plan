@@ -404,7 +404,7 @@ jobs:
 
 
   build-dfda-spec:
-    name: "Build dFDA: A Decentralized Framework for Drug Assessmen"
+    name: "Build The Decentralized FDA (dFDA) Protocol: Two-Stage V"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -472,7 +472,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build dFDA: A Decentralized Framework for Drug Assessmen"
+      - name: "Render Build The Decentralized FDA (dFDA) Protocol: Two-Stage V"
         run: python scripts/render-quarto.py dfda-spec
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -503,7 +503,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build dFDA: A Decentralized Framework for Drug Assessmen to Netlify (immediate)"
+      - name: "Deploy Build The Decentralized FDA (dFDA) Protocol: Two-Stage V to Netlify (immediate)"
         if: github.event_name == 'push'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -524,7 +524,7 @@ jobs:
 
 
 
-      - name: "Upload Build dFDA: A Decentralized Framework for Drug Assessmen PDF to Zenodo (draft)"
+      - name: "Upload Build The Decentralized FDA (dFDA) Protocol: Two-Stage V PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
