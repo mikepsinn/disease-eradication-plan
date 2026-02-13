@@ -9,7 +9,7 @@
 ## _quarto-1-pct-treaty-impact.yml
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Type:** book
-**Files:** 5 | **Words:** 68,209
+**Files:** 4 | **Words:** 63,245
 
 #### index.qmd
 **Title:** Wishocracy
@@ -50,41 +50,23 @@
 - **Appendix A: The Service Provider Layer**
   - References {.unnumbered}
 
-#### knowledge/papers.qmd
-**Title:** Papers & Publications
-**Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 836 words | 105 lines
-
-    - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
-    - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
-    - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
-    - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
-    - [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
-    - [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
-    - [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
-    - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
-    - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
-    - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
-    - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
-    - [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
-
 #### knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd
 **Title:** Methodology, Parameters, and Calculations
 **Description:** Parameter definitions, formulas, uncertainty ranges, and data sources.
-**Stats:** 30,791 words | 8,073 lines
+**Stats:** 30,512 words | 7,940 lines
 
   - Overview {#sec-parameters-and-calculations}
     - Quick Navigation
   - Calculated Values {#sec-calculated}
-    - Combination Therapy Space: 45.1B combinations {#sec-combination_therapy_disease_space}
+    - Combination Therapy Space: 45.1 billion combinations {#sec-combination_therapy_disease_space}
       - Sensitivity Analysis
-    - Pairwise Drug Combinations: 45.1M combinations {#sec-combination_therapy_pairs}
+    - Pairwise Drug Combinations: 45.1 million combinations {#sec-combination_therapy_pairs}
       - Sensitivity Analysis
-    - Combination Therapy Exploration Time (Current): 13.7M years {#sec-current_combination_exploration_years}
+    - Combination Therapy Exploration Time (Current): 13.7 million years {#sec-current_combination_exploration_years}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Known Safe Exploration Time (Current): 2.88k years {#sec-current_known_safe_exploration_years}
+    - Known Safe Exploration Time (Current): 2.88 thousand years {#sec-current_known_safe_exploration_years}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -108,11 +90,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Total DALYs Lost from Disease Eradication Delay: 7.94B DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
+    - Total DALYs Lost from Disease Eradication Delay: 7.94 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Total Deaths from Disease Eradication Delay: 416M deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
+    - Total Deaths from Disease Eradication Delay: 416 million deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -120,11 +102,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Years Lived with Disability During Disease Eradication Delay: 873M years {#sec-dfda_efficacy_lag_elimination_yld}
+    - Years Lived with Disability During Disease Eradication Delay: 873 million years {#sec-dfda_efficacy_lag_elimination_yld}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Years of Life Lost from Disease Eradication Delay: 7.07B years {#sec-dfda_efficacy_lag_elimination_yll}
+    - Years of Life Lost from Disease Eradication Delay: 7.07 billion years {#sec-dfda_efficacy_lag_elimination_yll}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -172,7 +154,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Decentralized Framework for Drug Assessment Maximum Trials per Year: 40.6k trials/year {#sec-dfda_trials_per_year_capacity}
+    - Decentralized Framework for Drug Assessment Maximum Trials per Year: 40.6 thousand trials/year {#sec-dfda_trials_per_year_capacity}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -180,7 +162,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565B DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
+    - Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -188,11 +170,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7B deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
+    - Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7 billion deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 1931T hours {#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours}
+    - Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 1.93 quadrillion hours {#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -216,7 +198,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Patients Fundable Annually: 23.4M patients/year {#sec-dih_patients_fundable_annually}
+    - Patients Fundable Annually: 23.4 million patients/year {#sec-dih_patients_fundable_annually}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -232,7 +214,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Diseases Without Effective Treatment: 6.65k diseases {#sec-diseases_without_effective_treatment}
+    - Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -252,13 +234,13 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Possible Drug-Disease Combinations: 9.50M combinations {#sec-drug_disease_combinations_possible}
+    - Possible Drug-Disease Combinations: 9.50 million combinations {#sec-drug_disease_combinations_possible}
       - Sensitivity Analysis
     - Therapeutic Frontier Exploration Ratio: 0.342% {#sec-exploration_ratio}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Total Annual Conflict Deaths Globally: 245k deaths/year {#sec-global_annual_conflict_deaths_total}
+    - Total Annual Conflict Deaths Globally: 245 thousand deaths/year {#sec-global_annual_conflict_deaths_total}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -343,7 +325,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - RECOVERY Trial Total QALYs Generated: 5.00M QALYs {#sec-recovery_trial_total_qalys_generated}
+    - RECOVERY Trial Total QALYs Generated: 5.00 million QALYs {#sec-recovery_trial_total_qalys_generated}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -355,7 +337,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Thalidomide DALYs Per Event: 41.8k DALYs {#sec-thalidomide_dalys_per_event}
+    - Thalidomide DALYs Per Event: 41.8 thousand DALYs {#sec-thalidomide_dalys_per_event}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -371,11 +353,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Thalidomide YLD Per Event: 13.0k years {#sec-thalidomide_yld_per_event}
+    - Thalidomide YLD Per Event: 13.0 thousand years {#sec-thalidomide_yld_per_event}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Thalidomide YLL Per Event: 28.8k years {#sec-thalidomide_yll_per_event}
+    - Thalidomide YLL Per Event: 28.8 thousand years {#sec-thalidomide_yll_per_event}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -384,15 +366,11 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Amortized Annual Treaty Campaign Cost: $250M {#sec-treaty_campaign_annual_cost_amortized}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
     - Total 1% Treaty Campaign Cost: $1B {#sec-treaty_campaign_total_cost}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Target Voting Bloc Size for Campaign: 280M of people {#sec-treaty_campaign_voting_bloc_target}
+    - Target Voting Bloc Size for Campaign: 280 million of people {#sec-treaty_campaign_voting_bloc_target}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -420,10 +398,6 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Total Annual Treaty System Costs: $290M {#sec-treaty_total_annual_costs}
-      - Sensitivity Analysis
-      - Monte Carlo Distribution
-      - Exceedance Probability
     - Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
       - Sensitivity Analysis
       - Monte Carlo Distribution
@@ -440,7 +414,7 @@
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
-    - Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59M DALYs {#sec-type_i_error_benefit_dalys}
+    - Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59 million DALYs {#sec-type_i_error_benefit_dalys}
       - Sensitivity Analysis
       - Monte Carlo Distribution
       - Exceedance Probability
@@ -472,16 +446,16 @@
     - Disability Weight for Untreated Chronic Conditions: 0.35 weight {#sec-chronic_disease_disability_weight}
       - Uncertainty Range
       - Input Distribution
-    - Current Active Trials at Any Given Time: 10.0k trials {#sec-current_active_trials}
+    - Current Active Trials at Any Given Time: 10.0 thousand trials {#sec-current_active_trials}
     - Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
-    - Global Population with Chronic Diseases: 2.40B people {#sec-current_disease_patients_global}
+    - Global Population with Chronic Diseases: 2.40 billion people {#sec-current_disease_patients_global}
       - Uncertainty Range
       - Input Distribution
-    - Current Global Clinical Trials per Year: 3.30k trials/year {#sec-current_trials_per_year}
+    - Current Global Clinical Trials per Year: 3.30 thousand trials/year {#sec-current_trials_per_year}
       - Uncertainty Range
       - Input Distribution
     - Current Trial Abandonment Rate: 40% {#sec-current_trial_abandonment_rate}
-    - Annual Global Clinical Trial Participants: 1.90M patients/year {#sec-current_trial_slots_available}
+    - Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
       - Uncertainty Range
       - Input Distribution
     - Annual Defense Industry Lobbying Spending: $127M {#sec-defense_lobbying_annual}
@@ -490,9 +464,6 @@
       - Uncertainty Range
       - Input Distribution
     - Drug Development Cost (1980s): $194M {#sec-drug_development_cost_1980s}
-      - Uncertainty Range
-      - Input Distribution
-    - Drug Discovery to Approval Timeline: 14 years {#sec-drug_discovery_to_approval_years}
       - Uncertainty Range
       - Input Distribution
     - Drug Repurposing Success Rate: 30% {#sec-drug_repurposing_success_rate}
@@ -507,19 +478,19 @@
       - Input Distribution
     - Givewell Cost per Life Saved (Maximum): $5.50K {#sec-givewell_cost_per_life_max}
     - Givewell Cost per Life Saved (Minimum): $3.50K {#sec-givewell_cost_per_life_min}
-    - Annual Deaths from Active Combat Worldwide: 234k deaths/year {#sec-global_annual_conflict_deaths_active_combat}
+    - Annual Deaths from Active Combat Worldwide: 234 thousand deaths/year {#sec-global_annual_conflict_deaths_active_combat}
       - Uncertainty Range
       - Input Distribution
-    - Annual Deaths from State Violence: 2.70k deaths/year {#sec-global_annual_conflict_deaths_state_violence}
+    - Annual Deaths from State Violence: 2.70 thousand deaths/year {#sec-global_annual_conflict_deaths_state_violence}
       - Uncertainty Range
       - Input Distribution
-    - Annual Deaths from Terror Attacks Globally: 8.30k deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
+    - Annual Deaths from Terror Attacks Globally: 8.30 thousand deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
       - Uncertainty Range
       - Input Distribution
-    - Global Annual DALY Burden: 2.88B DALYs/year {#sec-global_annual_daly_burden}
+    - Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
       - Uncertainty Range
       - Input Distribution
-    - Annual Deaths from All Diseases and Aging Globally: 55.0M deaths/year {#sec-global_annual_deaths_curable_diseases}
+    - Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
       - Uncertainty Range
       - Input Distribution
     - Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
@@ -573,7 +544,7 @@
     - Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
       - Uncertainty Range
       - Input Distribution
-    - Global Daily Deaths from Disease and Aging: 150k deaths/day {#sec-global_disease_deaths_daily}
+    - Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
       - Uncertainty Range
       - Input Distribution
     - Global Annual Direct Medical Costs of Disease: $9.90T {#sec-global_disease_direct_medical_cost_annual}
@@ -596,7 +567,7 @@
       - Input Distribution
     - Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
       - Uncertainty Range
-    - Global Population in 2024: 8.00B of people {#sec-global_population_2024}
+    - Global Population in 2024: 8.00 billion of people {#sec-global_population_2024}
       - Uncertainty Range
       - Input Distribution
     - Critical Mass Threshold for Social Change: 3.5% {#sec-global_population_activism_threshold_pct}
@@ -629,14 +600,14 @@
     - Pre-1962 Drug Development Cost (2024 Dollars): $24.7M {#sec-pre_1962_drug_development_cost_2024_usd}
       - Uncertainty Range
       - Input Distribution
-    - Pre-1962 Physician Count (Unverified): 144k physicians {#sec-pre_1962_physician_count}
-    - Total Number of Rare Diseases Globally: 7.00k diseases {#sec-rare_diseases_count_global}
+    - Pre-1962 Physician Count (Unverified): 144 thousand physicians {#sec-pre_1962_physician_count}
+    - Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
       - Uncertainty Range
       - Input Distribution
     - Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
       - Uncertainty Range
       - Input Distribution
-    - RECOVERY Trial Global Lives Saved: 1.00M lives {#sec-recovery_trial_global_lives_saved}
+    - RECOVERY Trial Global Lives Saved: 1.00 million lives {#sec-recovery_trial_global_lives_saved}
       - Uncertainty Range
       - Input Distribution
     - RECOVERY Trial Total Cost: $20M {#sec-recovery_trial_total_cost}
@@ -652,9 +623,9 @@
     - Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
       - Uncertainty Range
       - Input Distribution
-    - Deaths from 9/11 Terrorist Attacks: 3.00k deaths {#sec-terrorism_deaths_911}
+    - Deaths from 9/11 Terrorist Attacks: 3.00 thousand deaths {#sec-terrorism_deaths_911}
       - Uncertainty Range
-    - Thalidomide Cases Worldwide: 15.0k cases {#sec-thalidomide_cases_worldwide}
+    - Thalidomide Cases Worldwide: 15.0 thousand cases {#sec-thalidomide_cases_worldwide}
       - Uncertainty Range
       - Input Distribution
     - Thalidomide Disability Weight: 0.4:1 {#sec-thalidomide_disability_weight}
@@ -682,7 +653,7 @@
     - Return on Investment from Water Fluoridation Programs: 23:1 {#sec-water_fluoridation_roi}
     - Cost-Effectiveness Threshold ($50,000/QALY): $50K {#sec-who_qaly_threshold_cost_effective}
   - Core Definitions {#sec-definitions}
-    - ADAPTABLE Trial Patients Enrolled: 15.1k patients {#sec-adaptable_trial_patients}
+    - ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients {#sec-adaptable_trial_patients}
     - Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
     - Years to Reach Full Decentralized Framework for Drug Assessment Adoption: 5 years {#sec-dfda_npv_adoption_ramp_years}
     - Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
@@ -730,10 +701,10 @@
     - QALYs per COVID Death Averted: 5 QALYs/death {#sec-qalys_per_covid_death_averted}
       - Uncertainty Range
       - Input Distribution
-    - Safe Compounds Available for Testing: 9.50k compounds {#sec-safe_compounds_count}
+    - Safe Compounds Available for Testing: 9.50 thousand compounds {#sec-safe_compounds_count}
       - Uncertainty Range
       - Input Distribution
-    - Tested Drug-Disease Relationships: 32.5k relationships {#sec-tested_relationships_estimate}
+    - Tested Drug-Disease Relationships: 32.5 thousand relationships {#sec-tested_relationships_estimate}
       - Uncertainty Range
       - Input Distribution
     - Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M {#sec-treaty_campaign_budget_lobbying}
@@ -742,15 +713,12 @@
     - Reserve Fund / Contingency Buffer: $100M {#sec-treaty_campaign_budget_reserve}
       - Uncertainty Range
       - Input Distribution
-    - Treaty Campaign Duration: 4 years {#sec-treaty_campaign_duration_years}
-      - Uncertainty Range
-      - Input Distribution
     - Viral Referendum Budget: $250M {#sec-treaty_campaign_viral_referendum_base_case}
       - Uncertainty Range
       - Input Distribution
     - 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
       - Uncertainty Range
-    - Trial-Relevant Diseases: 1.00k diseases {#sec-trial_relevant_diseases_count}
+    - Trial-Relevant Diseases: 1.00 thousand diseases {#sec-trial_relevant_diseases_count}
       - Uncertainty Range
       - Input Distribution
     - Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
@@ -764,7 +732,7 @@
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var t...
-**Stats:** 29,723 words | 2,825 lines
+**Stats:** 25,874 words | 2,414 lines
 
   - Abstract
   - Key Findings
@@ -810,12 +778,9 @@
       - Mechanism Architecture
       - Comparative Static Analysis: Senator Smith
       - Stakeholder Alignment
-      - Incentive Alignment Bonds
       - Legal and Ethical Framework
-      - Generalized Governance Application
   - Dominance Analysis
     - Quantitative Comparison
-    - Comparative Efficacy Analysis
   - Methodology
   - Cost-Benefit Framework
     - Cost Components
@@ -823,6 +788,7 @@
   - ROI Calculation
     - Combined Annual Benefits Uncertainty
   - Cost-Effectiveness Analysis
+      - Pragmatic Trials vs. NIH Standard Research
     - Expected Value Under Political Uncertainty
       - Uncertainty in Risk-Adjusted Cost-Effectiveness
       - Uncertainty in Cost-Effectiveness (Conditional on Success)
@@ -852,6 +818,7 @@
   - Counterfactual Baseline Specification
   - Peace Dividend Calculation Methodology
     - Economic benefits of reduced military spending
+      - War Costs Breakdown
   - Research Acceleration Mechanism
     - Treatment Discovery Through Therapeutic Space Exploration
       - The Unexplored Therapeutic Frontier
@@ -881,26 +848,10 @@
     - Time Inconsistency and Commitment Credibility
     - Technology Constancy Assumption
     - Data Quality and Availability
-  - Scenario Analysis: Conservative Case
-    - ROI Derivation
-    - Where the Money Comes From
-    - How Treaty Funding Is Allocated
-    - Returns
-        - Uncertainty Analysis: Combined Annual Benefits
-    - Cost-Effectiveness: Cost-Saving Health Intervention
-      - Cost per DALY
-      - Comparative Cost-Effectiveness vs. GiveWell Top Charities
-    - Self-Funding Mechanism Through Military Budget Redirection
   - Scenario Analysis: Complete Case
     - Timeline Shift Value
       - Complete Case ROI
-    - Trial Capacity Scaling
   - Individual-Level Economic Impact
-  - Comparative Effectiveness
-    - Comprehensive Comparison
-    - Linear vs. Systemic Leverage
-    - The Critical Difference
-      - Translation
   - Who Benefits and How
   - Adoption Dynamics: Game-Theoretic Analysis
   - Implementation Strategy
@@ -918,13 +869,6 @@
     - Accountability measures
   - Limitations and Uncertainties
     - Adoption Timeline Uncertainty
-    - Cost Reduction Assumption Limitations
-    - Generalizability: Meta-Analysis of 108+ Trials, Not a Single Case Study
-    - Diminishing Returns in Research Productivity
-      - Why this critique may not apply
-      - Distinction
-      - The Myth of Diminishing Returns
-        - Uncertainty Analysis {#treaty-unexplored-uncertainty-analysis}
     - Pragmatic Trial Internal Validity and Selection Bias
       - Mitigation strategies
     - QALY Calculation Uncertainties
@@ -961,12 +905,12 @@
 ## _quarto-cost-of-change.yml
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Type:** website
-**Files:** 1 | **Words:** 3,178
+**Files:** 1 | **Words:** 3,076
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI ex...
-**Stats:** 3,178 words | 416 lines
+**Stats:** 3,076 words | 404 lines
 
   - Introduction
     - The Political Impossibility Objection
@@ -1003,14 +947,14 @@
 ---
 
 ## _quarto-dfda-impact.yml
-**Title:** How to Prevent a Year of Death and Suffering for 84 Cents
+**Title:** A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents
 **Type:** website
-**Files:** 1 | **Words:** 11,603
+**Files:** 1 | **Words:** 11,407
 
 #### knowledge/appendix/dfda-impact-paper.qmd
-**Title:** How to Prevent a Year of Death and Suffering for 84 Cents
-**Description:** At current testing rates, finding treatments for all {{< var diseases_without_effective_treatment >}} would take {{< var status_quo_queue_clearance_years >}}. Pragmatic trials integrated into healthca...
-**Stats:** 11,603 words | 1,236 lines
+**Title:** A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents
+**Description:** Only {{< var new_disease_first_treatments_per_year >}} get their first treatment each year. With {{< var diseases_without_effective_treatment >}} lacking effective treatments, the backlog would take {...
+**Stats:** 11,407 words | 1,226 lines
 
   - Executive Summary
   - Protocol, Not Platform
@@ -1092,14 +1036,14 @@
 ---
 
 ## _quarto-dfda-spec.yml
-**Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
+**Title:** The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
 **Type:** website
-**Files:** 1 | **Words:** 14,244
+**Files:** 1 | **Words:** 14,255
 
 #### knowledge/appendix/dfda-spec-paper.qmd
-**Title:** dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation
+**Title:** The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 14,244 words | 1,970 lines
+**Stats:** 14,255 words | 1,976 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -1252,93 +1196,6 @@
 
 ---
 
-## _quarto-federal-efficiency-audit.yml
-**Title:** Federal Resource Allocation Efficiency Audit
-**Type:** website
-**Files:** 1 | **Words:** 6,117
-
-#### knowledge/appendix/federal-efficiency-audit.qmd
-**Title:** Federal Resource Allocation Efficiency Audit
-**Description:** Systems audit estimating an annual U.S. efficiency gap of {{< var us_gov_waste_total >}}, with {{< var us_gov_waste_recoverable >}} recoverable at OECD-median performance across direct spending waste,...
-**Stats:** 6,117 words | 866 lines
-
-  - Executive Summary
-    - Dysfunction Category Breakdown
-    - Aggregate Metrics
-  - Interpretation Note
-  - System Specifications
-    - Designed Function
-    - Why Two Metrics Are Sufficient
-    - Input-Output Measurement
-  - Methodology
-    - Category Framework: Why Distinctions Matter
-    - Engineering Loss Categories
-    - Aggregate Efficiency Gap Calculation
-  - Methodological Note: Additive Categories
-    - Valuation Standards
-  - Direct Federal Spending Waste {#category-1-direct-federal-spending-waste}
-    - Components
-  - Compliance Burden on Private Sector {#category-2-compliance-burden-on-private-sector}
-    - Components
-  - Policy-Induced GDP Loss {#category-3-policy-induced-gdp-loss}
-    - Components
-  - System Inefficiency {#category-4-system-inefficiency}
-    - Components
-  - Subsystem Cross-Reference
-  - Subsystem Audit: Defense
-    - Loss Category: Leakage (Audit Failure)
-    - Loss Category: Conversion Inefficiency (F-35 Program)
-    - Loss Category: Idle/Standby (Overseas Basing)
-    - Loss Category: Parasitic (Strategic Misalignment)
-    - Defense Subsystem Summary
-  - Subsystem Audit: Healthcare Administration
-    - Loss Category: Friction (Administrative Overhead)
-    - Loss Category: Leakage (Medicare Advantage Upcoding)
-    - Loss Category: Leakage (Improper Payments)
-    - Healthcare Subsystem Summary
-  - Subsystem Audit: Justice and Prohibition
-    - Loss Category: Conversion Inefficiency (Drug Prohibition)
-    - Loss Category: Negative Work (Mass Incarceration)
-    - Loss Category: Leakage (Civil Asset Forfeiture)
-    - Justice Subsystem Summary
-  - Subsystem Audit: Regulatory and Tax Compliance
-    - Loss Category: Friction (Tax Compliance)
-    - Loss Category: Friction (Housing/Zoning Misallocation)
-    - Loss Category: Idle (NEPA Permitting Delays)
-    - Loss Category: Parasitic (Jones Act)
-    - Regulatory Subsystem Summary
-  - Subsystem Audit: Subsidies and Transfers
-    - Loss Category: Parasitic (Fossil Fuel Subsidies)
-    - Loss Category: Parasitic (Agricultural Subsidies)
-    - Loss Category: Negative Work (Tariffs and Corporate Welfare)
-    - Subsidies Subsystem Summary
-  - Aggregate Efficiency Calculation
-    - Monte Carlo Simulation Parameters
-    - Simulation Results
-      - Subsystem Uncertainty Distributions
-  - Tax Compliance
-  - Housing/Zoning
-  - Healthcare
-  - Drug War
-    - Efficiency Rating Calculation
-    - Human Cost Quantification (Economic Equivalents)
-  - Reallocation Potential
-    - Context Comparisons
-    - Opportunity Cost in Healthy Life Years
-  - Structural Factors
-    - Severed Feedback Loops
-    - Principal-Agent Misalignment
-    - Measurement Failure
-    - Monopoly Dynamics
-    - Time Horizon Mismatch
-  - Confidence Intervals and Limitations
-    - Estimate Confidence by Subsystem
-    - What This Analysis Excludes
-    - Methodological Limitations
-  - See Also
-
----
-
 ## _quarto-iab.yml
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Type:** website
@@ -1421,14 +1278,14 @@
 ---
 
 ## _quarto-invisible-graveyard.yml
-**Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
+**Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag
 **Type:** website
-**Files:** 1 | **Words:** 7,383
+**Files:** 1 | **Words:** 7,398
 
 #### knowledge/appendix/invisible-graveyard.qmd
-**Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024
+**Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag
 **Description:** After proving a drug is safe, the FDA requires {{< var efficacy_lag_years >}} to prove it works before patients can access it. We estimate this delay cost {{< var existing_drugs_efficacy_lag_deaths_to...
-**Stats:** 7,383 words | 784 lines
+**Stats:** 7,398 words | 790 lines
 
   - The Short Version
   - Abstract
@@ -1490,7 +1347,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 161,560
+**Files:** 67 | **Words:** 164,056
 
 #### index.qmd
 **Title:** Start Here
@@ -2105,7 +1962,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** Incentive Alignment Bonds
 **Description:** A new financial instrument for aligning political incentives with public goods
-**Stats:** 8,374 words | 955 lines
+**Stats:** 8,373 words | 955 lines
 
   - A Novel Approach to Political Economy
     - The Core Problem: Good Ideas Die in Committee
@@ -2844,7 +2701,7 @@
 #### knowledge/appendix/nonprofit-partnership-incentives.qmd
 **Title:** How to Turn Grant Applicants Into Billionaires
 **Description:** On making nonprofits rich by aligning their incentives with not dying
-**Stats:** 1,101 words | 178 lines
+**Stats:** 1,087 words | 165 lines
 
   - The Solution
   - On The Two-Part (Legal) Bribe
@@ -3395,20 +3252,20 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 836 words | 105 lines
+**Stats:** 3,966 words | 640 lines
 
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
-    - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
-    - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+    - [A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
     - [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
     - [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
-    - [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
-    - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
+    - [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://optimocracy.warondisease.org)
+    - [The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
+    - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
     - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
     - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
+    - [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
     - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
-    - [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
 
 #### knowledge/appendix/lives-saved-by-drug-accessibility.qmd
 **Title:** Estimated Lives Saved by Increased Drug Accessibility
@@ -3449,7 +3306,7 @@
 
 #### index-manual.qmd
 **Title:** How to End War and Disease
-**Stats:** 8,481 words | 898 lines
+**Stats:** 7,862 words | 896 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -3623,12 +3480,12 @@
 ## _quarto-opg.yml
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Type:** website
-**Files:** 1 | **Words:** 13,698
+**Files:** 1 | **Words:** 12,788
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
 **Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 13,698 words | 2,005 lines
+**Stats:** 12,788 words | 1,896 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -3643,7 +3500,6 @@
     - What Policymakers See
     - What Policy Analysts See
   - Introduction
-    - Why Generic Policy Scores Are Not Enough
     - Why Policy Ranking Fails Today
     - Scale of Available Evidence
     - Contributions
@@ -3673,7 +3529,6 @@
       - Experiment Quality
       - Plausibility (Mechanistic)
       - Coherence with Literature
-      - Analogy to Similar Policies
       - Specificity
     - Causal Confidence Score (CCS) Calculation
   - Jurisdiction Policy Inventory
@@ -3743,7 +3598,6 @@
     - Known Limitations Requiring Validation
     - Continuous Improvement via Adoption Feedback
   - Future Directions
-    - Methodological Improvements
     - Validation Priorities
     - Data Infrastructure
     - Integration with Decision-Making
@@ -3759,7 +3613,6 @@
     - Step 3: Generate Recommendations
   - ENACT (New Policies to Adopt)
   - REPLACE (Policies to Modify)
-    - Tradeoff Demonstration
   - REPEAL (Policies to Remove)
   - MAINTAIN (No Change Needed)
     - Step 4: Summary Dashboard
@@ -3772,14 +3625,14 @@
 ---
 
 ## _quarto-optimocracy.yml
-**Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
+**Title:** Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth
 **Type:** website
-**Files:** 1 | **Words:** 8,836
+**Files:** 1 | **Words:** 9,081
 
 #### knowledge/appendix/optimocracy-paper.qmd
-**Title:** Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization
-**Description:** Political dysfunction costs society trillions annually: {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity ...
-**Stats:** 8,836 words | 945 lines
+**Title:** Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth
+**Description:** Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data...
+**Stats:** 9,081 words | 947 lines
 
   - The Mechanism
     - Why This Works
@@ -3851,12 +3704,12 @@
 ## _quarto-political-dysfunction-tax.yml
 **Title:** The Political Dysfunction Tax
 **Type:** website
-**Files:** 1 | **Words:** 5,031
+**Files:** 1 | **Words:** 4,519
 
 #### knowledge/appendix/political-dysfunction-tax.qmd
 **Title:** The Political Dysfunction Tax
-**Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 30-52% efficiency score and $101 trillion in annual opportunity costs.
-**Stats:** 5,031 words | 388 lines
+**Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 31-53% efficiency score and $97 trillion in annual opportunity costs.
+**Stats:** 4,519 words | 353 lines
 
   - Introduction: The Mechanism Design of Civilizational Stagnation
   - Part 1: The Waste Ledger (The "Burned Capital")
@@ -3874,9 +3727,6 @@
     - The Health Multiplier: The Trillion-Dollar Graveyard
       - The Efficiency Shift: From RCTs to PCTs
       - Valuing the "Lost Years"
-    - The Science Multiplier: The ROI of the Future
-      - The Fusion Gap
-      - The AI Alignment Gap
     - The Human Capital Multiplier: Unleashing Cognitive Stock
       - The Lead Anchor
       - The Migration Arbitrage ("Trillion Dollar Bills")
@@ -3896,7 +3746,7 @@
 ## _quarto-test.yml
 **Title:** Test Economics Document
 **Type:** book
-**Files:** 6 | **Words:** 9,031
+**Files:** 5 | **Words:** 8,195
 
 #### index.qmd
 **Title:** Wishocracy
@@ -3936,24 +3786,6 @@
 - **Conclusion**
 - **Appendix A: The Service Provider Layer**
   - References {.unnumbered}
-
-#### knowledge/papers.qmd
-**Title:** Papers & Publications
-**Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 836 words | 105 lines
-
-    - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
-    - [Federal Resource Allocation Efficiency Audit](https://federal-efficiency-audit.warondisease.org)
-    - [How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
-    - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
-    - [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
-    - [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
-    - [Optimocracy: Evidence-Based Governance Through Outcome-Bound Optimization](https://optimocracy.warondisease.org)
-    - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag, 1962-2024](https://invisible-graveyard.warondisease.org)
-    - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
-    - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
-    - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
-    - [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
 
 #### knowledge/test/test-parameters.qmd
 **Title:** Test Parameters Document
@@ -4009,6 +3841,93 @@
     - Anchor Links (Should Remain Unchanged)
     - Cross-Reference Format Comparison
   - Conclusion
+
+---
+
+## _quarto-us-efficiency-audit.yml
+**Title:** United States Efficiency Audit
+**Type:** website
+**Files:** 1 | **Words:** 6,267
+
+#### knowledge/appendix/us-efficiency-audit.qmd
+**Title:** United States Efficiency Audit
+**Description:** Systems audit estimating an annual U.S. efficiency gap of {{< var us_gov_waste_total >}}, with {{< var us_gov_waste_recoverable >}} recoverable at OECD-median performance across direct spending waste,...
+**Stats:** 6,267 words | 788 lines
+
+  - Executive Summary
+    - Dysfunction Category Breakdown
+    - Aggregate Metrics
+  - Interpretation Note
+  - System Specifications
+    - Designed Function
+    - Why Two Metrics Are Sufficient
+    - Input-Output Measurement
+  - Methodology
+    - Category Framework: Why Distinctions Matter
+    - Engineering Loss Categories
+    - Aggregate Efficiency Gap Calculation
+  - Methodological Note: Additive Categories
+    - Valuation Standards
+  - Direct Federal Spending Waste {#category-1-direct-federal-spending-waste}
+    - Components
+  - Compliance Burden on Private Sector {#category-2-compliance-burden-on-private-sector}
+    - Components
+  - Policy-Induced GDP Loss {#category-3-policy-induced-gdp-loss}
+    - Components
+  - System Inefficiency {#category-4-system-inefficiency}
+    - Components
+  - Subsystem Cross-Reference
+  - Subsystem Audit: Defense
+    - Loss Category: Leakage (Audit Failure)
+    - Loss Category: Conversion Inefficiency (F-35 Program)
+    - Loss Category: Idle/Standby (Overseas Basing)
+    - Loss Category: Parasitic (Strategic Misalignment)
+    - Defense Subsystem Summary
+  - Subsystem Audit: Healthcare Administration
+    - Loss Category: Friction (Administrative Overhead)
+    - Loss Category: Leakage (Medicare Advantage Upcoding)
+    - Loss Category: Leakage (Improper Payments)
+    - Healthcare Subsystem Summary
+  - Subsystem Audit: Justice and Prohibition
+    - Loss Category: Conversion Inefficiency (Drug Prohibition)
+    - Loss Category: Negative Work (Mass Incarceration)
+    - Loss Category: Leakage (Civil Asset Forfeiture)
+    - Justice Subsystem Summary
+  - Subsystem Audit: Regulatory and Tax Compliance
+    - Loss Category: Friction (Tax Compliance)
+    - Loss Category: Friction (Housing/Zoning Misallocation)
+    - Loss Category: Idle (NEPA Permitting Delays)
+    - Loss Category: Parasitic (Jones Act)
+    - Regulatory Subsystem Summary
+  - Subsystem Audit: Subsidies and Transfers
+    - Loss Category: Parasitic (Fossil Fuel Subsidies)
+    - Loss Category: Parasitic (Agricultural Subsidies)
+    - Loss Category: Negative Work (Tariffs and Corporate Welfare)
+    - Subsidies Subsystem Summary
+  - Aggregate Efficiency Calculation
+    - Monte Carlo Simulation Parameters
+    - Simulation Results
+      - Subsystem Uncertainty Distributions
+  - Tax Compliance
+  - Housing/Zoning
+  - Healthcare
+  - Drug War
+    - Efficiency Rating Calculation
+    - Human Cost Quantification (Economic Equivalents)
+  - Reallocation Potential
+    - Context Comparisons
+    - Opportunity Cost in Healthy Life Years
+  - Structural Factors
+    - Severed Feedback Loops
+    - Principal-Agent Misalignment
+    - Measurement Failure
+    - Monopoly Dynamics
+    - Time Horizon Mismatch
+  - Confidence Intervals and Limitations
+    - Estimate Confidence by Subsystem
+    - What This Analysis Excludes
+    - Methodological Limitations
+  - See Also
 
 ---
 
@@ -4217,15 +4136,15 @@
 |--------|-------|--------------|-----|
 | _quarto-1-pct-treaty-impact.yml | The 1% Treaty: Harnessing Greed to Eradicate Disea... | `@1-pct-treaty-impact-paper-2025` | 10.5281/zenodo.18161560 |
 | _quarto-cost-of-change.yml | The Price of Political Change: A Cost-Benefit Fram... | `@cost-of-change-paper-2025` | 10.5281/zenodo.18356215 |
-| _quarto-dfda-impact.yml | How to Prevent a Year of Death and Suffering for 8... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18243914 |
-| _quarto-dfda-spec.yml | dFDA: A Decentralized Framework for Drug Assessmen... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18203375 |
-| _quarto-federal-efficiency-audit.yml | Federal Resource Allocation Efficiency Audit | `@federal-efficiency-audit-paper-2025` | 10.5281/zenodo.18447476 |
+| _quarto-dfda-impact.yml | A Decentralized FDA: How to Prevent a Year of Deat... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18243914 |
+| _quarto-dfda-spec.yml | The Decentralized FDA (dFDA) Protocol: Two-Stage V... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18203375 |
 | _quarto-iab.yml | Incentive Alignment Bonds: Making Public Goods Fin... | `@iab-paper-2025` | 10.5281/zenodo.18203221 |
 | _quarto-invisible-graveyard.yml | The Invisible Graveyard: Quantifying the Mortality... | `@invisible-graveyard-paper-2025` | 10.5281/zenodo.18356231 |
 | _quarto-obg.yml | Optimal Budget Generator: Evidence-Based Budget Al... | `@obg-paper-2025` | 10.5281/zenodo.18356209 |
-| _quarto-opg.yml | Optimal Policy Generator: Evidence-Based Policy Re... | `@opg-paper-2025` | 10.5281/zenodo.18356211 |
-| _quarto-optimocracy.yml | Optimocracy: Evidence-Based Governance Through Out... | `@optimocracy-paper-2025` | 10.5281/zenodo.18356213 |
-| _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | 10.5281/zenodo.18447493 |
+| _quarto-opg.yml | Optimal Policy Generator: Evidence-Based Policy Re... | `@opg-paper-2025` | 10.5281/zenodo.18603834 |
+| _quarto-optimocracy.yml | Optimocracy: Causal Inference on Cross-Jurisdictio... | `@optimocracy-paper-2025` | 10.5281/zenodo.18356213 |
+| _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | 10.5281/zenodo.18603840 |
+| _quarto-us-efficiency-audit.yml | United States Efficiency Audit | `@us-efficiency-audit-paper-2025` | 10.5281/zenodo.18447476 |
 | _quarto-wishocracy.yml | Wishocracy: Solving the Democratic Principal-Agent... | `@wishocracy-paper-2025` | 10.5281/zenodo.18205881 |
 
 **Usage:** `[@dfda-impact-paper-2025]` or `@dfda-impact-paper-2025`
@@ -4236,6 +4155,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 344,679
+- Total words: 340,076
 - Orphaned files: 26
 - Paper configs: 12

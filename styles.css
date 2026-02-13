@@ -654,7 +654,7 @@ figcaption {
     }
 
     main {
-        padding: 0 0.75rem;
+        padding: 0 0.25rem;
         max-width: 100%;
         width: 100%;
         box-sizing: border-box;
