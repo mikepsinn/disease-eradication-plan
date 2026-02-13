@@ -88,7 +88,7 @@ jobs:
       - name: "Render Build The 1% Treaty: Harnessing Greed to Eradicate Disea"
         run: python scripts/render-quarto.py 1-pct-treaty-impact
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -141,14 +141,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-pct-treaty-impact
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation 1-pct-treaty-impact
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-pct-treaty-impact
 
 
 
@@ -224,7 +217,7 @@ jobs:
       - name: "Render Build The Price of Political Change: A Cost-Benefit Fram"
         run: python scripts/render-quarto.py cost-of-change
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -277,14 +270,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild cost-of-change
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation cost-of-change
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild cost-of-change
 
 
 
@@ -360,7 +346,7 @@ jobs:
       - name: "Render Build A Decentralized FDA: How to Prevent a Year of Deat"
         run: python scripts/render-quarto.py dfda-impact
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -413,14 +399,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-impact
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation dfda-impact
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-impact
 
 
 
@@ -496,7 +475,7 @@ jobs:
       - name: "Render Build dFDA: A Decentralized Framework for Drug Assessmen"
         run: python scripts/render-quarto.py dfda-spec
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -549,14 +528,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-spec
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation dfda-spec
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-spec
 
 
 
@@ -632,7 +604,7 @@ jobs:
       - name: "Render Build Incentive Alignment Bonds: Making Public Goods Fin"
         run: python scripts/render-quarto.py iab
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -685,14 +657,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild iab
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation iab
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild iab
 
 
 
@@ -768,7 +733,7 @@ jobs:
       - name: "Render Build The Invisible Graveyard: Quantifying the Mortality"
         run: python scripts/render-quarto.py invisible-graveyard
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -821,14 +786,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation invisible-graveyard
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
 
 
 
@@ -904,7 +862,7 @@ jobs:
       - name: "Render Build How to End War and Disease"
         run: python scripts/render-quarto.py manual
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 75
 
       - name: Upload PDFs artifact
@@ -957,14 +915,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild manual
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation manual
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild manual
 
 
 
@@ -1040,7 +991,7 @@ jobs:
       - name: "Render Build Optimal Budget Generator: Evidence-Based Budget Al"
         run: python scripts/render-quarto.py obg
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -1093,14 +1044,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild obg
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation obg
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild obg
 
 
 
@@ -1176,7 +1120,7 @@ jobs:
       - name: "Render Build Optimal Policy Generator: Evidence-Based Policy Re"
         run: python scripts/render-quarto.py opg
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -1229,14 +1173,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild opg
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation opg
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild opg
 
 
 
@@ -1312,7 +1249,7 @@ jobs:
       - name: "Render Build Optimocracy: Causal Inference on Cross-Jurisdictio"
         run: python scripts/render-quarto.py optimocracy
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -1365,14 +1302,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild optimocracy
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation optimocracy
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild optimocracy
 
 
 
@@ -1448,7 +1378,7 @@ jobs:
       - name: "Render Build The Political Dysfunction Tax"
         run: python scripts/render-quarto.py political-dysfunction-tax
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -1501,14 +1431,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild political-dysfunction-tax
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation political-dysfunction-tax
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild political-dysfunction-tax
 
 
 
@@ -1584,7 +1507,7 @@ jobs:
       - name: "Render Build United States Efficiency Audit"
         run: python scripts/render-quarto.py us-efficiency-audit
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -1637,14 +1560,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild us-efficiency-audit
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation us-efficiency-audit
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild us-efficiency-audit
 
 
 
@@ -1720,7 +1636,7 @@ jobs:
       - name: "Render Build Wishocracy: Solving the Democratic Principal-Agent"
         run: python scripts/render-quarto.py wishocracy
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload PDFs artifact
@@ -1773,14 +1689,7 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          LLM_VALIDATION: ${{ secrets.LLM_VALIDATION }}
-
-        run: |
-          if [ "$LLM_VALIDATION" = "true" ] || [ "${{ github.ref }}" = "refs/heads/master" ]; then
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishocracy
-          else
-            python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild --skip-validation wishocracy
-          fi
+        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishocracy
 
 
 
