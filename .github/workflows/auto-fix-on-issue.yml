@@ -84,24 +84,19 @@ jobs:
             const fs = require('fs');
             const result = JSON.parse(fs.readFileSync('auto-fix-result.json', 'utf-8'));
 
-            const body = `## ✅ Auto-Fix Completed
-
-**Pull Request:** ${result.pr_url}
-
-**Summary:**
-- Errors processed: ${result.errors_processed || 0}
-- Files modified: ${result.files_modified?.length || 0}
-- Duration: ${result.duration_seconds?.toFixed(1) || '?'}s
-- Cost: $${result.cost?.total?.toFixed(4) || '0.0000'}
-
-**Next Steps:**
-1. Review the PR for correctness
-2. Run validation checks locally if needed
-3. Merge the PR if fixes are satisfactory
-
----
-*Auto-fixed by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*
-`;
+            const body = `## Auto-Fix Completed\n\n`
+              + `**Pull Request:** ${result.pr_url}\n\n`
+              + `**Summary:**\n`
+              + `- Errors processed: ${result.errors_processed || 0}\n`
+              + `- Files modified: ${result.files_modified?.length || 0}\n`
+              + `- Duration: ${result.duration_seconds?.toFixed(1) || '?'}s\n`
+              + `- Cost: $${result.cost?.total?.toFixed(4) || '0.0000'}\n\n`
+              + `**Next Steps:**\n`
+              + `1. Review the PR for correctness\n`
+              + `2. Run validation checks locally if needed\n`
+              + `3. Merge the PR if fixes are satisfactory\n\n`
+              + `---\n`
+              + `*Auto-fixed by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*`;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
@@ -126,29 +121,23 @@ jobs:
             const errorMsg = result.error || 'Unknown error';
             const logDir = result.log_dir || 'N/A';
 
-            const body = `## ❌ Auto-Fix Failed
-
-**Error:** ${errorMsg}
-
-**Troubleshooting:**
-- Check the [workflow run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-- Review error details in \`${logDir}\`
-- This error may require manual intervention
-
-**Common Issues:**
-- Budget exceeded (increase \`--budget\` parameter)
-- Complex errors requiring manual review
-- Missing API credentials
-- Validation failures after fix attempt
-
-You can:
-1. Remove the \`auto-fixable\` label and fix manually
-2. Add the \`validation:ignore\` label to skip this error
-3. Re-add the \`auto-fixable\` label to retry after adjustments
-
----
-*Auto-fix attempted by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*
-`;
+            const body = `## Auto-Fix Failed\n\n`
+              + `**Error:** ${errorMsg}\n\n`
+              + `**Troubleshooting:**\n`
+              + `- Check the [workflow run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})\n`
+              + `- Review error details in \`${logDir}\`\n`
+              + `- This error may require manual intervention\n\n`
+              + `**Common Issues:**\n`
+              + `- Budget exceeded (increase \`--budget\` parameter)\n`
+              + `- Complex errors requiring manual review\n`
+              + `- Missing API credentials\n`
+              + `- Validation failures after fix attempt\n\n`
+              + `You can:\n`
+              + `1. Remove the \`auto-fixable\` label and fix manually\n`
+              + `2. Add the \`validation:ignore\` label to skip this error\n`
+              + `3. Re-add the \`auto-fixable\` label to retry after adjustments\n\n`
+              + `---\n`
+              + `*Auto-fix attempted by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*`;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
@@ -170,17 +159,13 @@ You can:
         uses: actions/github-script@v7
         with:
           script: |
-            const body = `## ⚠️ Auto-Fix Error
-
-The auto-fix workflow ran but did not produce a result file. This indicates a critical error during execution.
-
-**Troubleshooting:**
-- Check the [workflow run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-- The orchestrator may have failed before completing
-
----
-*Auto-fix attempted by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*
-`;
+            const body = `## Auto-Fix Error\n\n`
+              + `The auto-fix workflow ran but did not produce a result file. This indicates a critical error during execution.\n\n`
+              + `**Troubleshooting:**\n`
+              + `- Check the [workflow run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})\n`
+              + `- The orchestrator may have failed before completing\n\n`
+              + `---\n`
+              + `*Auto-fix attempted by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*`;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
