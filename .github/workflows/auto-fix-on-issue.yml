@@ -1,0 +1,201 @@
+name: Auto-Fix Validation Errors
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  auto-fix:
+    name: "Auto-Fix Issue #${{ github.event.issue.number }}"
+    if: github.event.label.name == 'auto-fixable'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for git operations
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run auto-fix orchestrator
+        id: auto-fix
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.GOOGLE_GENERATIVE_AI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/autonomous-fix-and-pr.py \
+            --issue ${{ github.event.issue.number }} \
+            --budget 5.0 \
+            --budget-per-fix 0.25 \
+            --budget-per-paper 0.50
+        continue-on-error: true
+
+      - name: Read auto-fix result
+        id: result
+        run: |
+          if [ -f auto-fix-result.json ]; then
+            echo "result_exists=true" >> $GITHUB_OUTPUT
+
+            # Extract key fields from result JSON
+            SUCCESS=$(jq -r '.success // false' auto-fix-result.json)
+            PR_URL=$(jq -r '.pr_url // ""' auto-fix-result.json)
+            ERROR=$(jq -r '.error // ""' auto-fix-result.json)
+
+            echo "success=$SUCCESS" >> $GITHUB_OUTPUT
+            echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+            echo "error=$ERROR" >> $GITHUB_OUTPUT
+          else
+            echo "result_exists=false" >> $GITHUB_OUTPUT
+            echo "success=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment on issue (success)
+        if: steps.result.outputs.result_exists == 'true' && steps.result.outputs.success == 'true' && steps.result.outputs.pr_url != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('auto-fix-result.json', 'utf-8'));
+
+            const body = `## ✅ Auto-Fix Completed
+
+**Pull Request:** ${result.pr_url}
+
+**Summary:**
+- Errors processed: ${result.errors_processed || 0}
+- Files modified: ${result.files_modified?.length || 0}
+- Duration: ${result.duration_seconds?.toFixed(1) || '?'}s
+- Cost: $${result.cost?.total?.toFixed(4) || '0.0000'}
+
+**Next Steps:**
+1. Review the PR for correctness
+2. Run validation checks locally if needed
+3. Merge the PR if fixes are satisfactory
+
+---
+*Auto-fixed by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*
+`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.issue.number }},
+              body: body
+            });
+
+      - name: Comment on issue (failure)
+        if: steps.result.outputs.result_exists == 'true' && steps.result.outputs.success != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let result = {};
+            try {
+              result = JSON.parse(fs.readFileSync('auto-fix-result.json', 'utf-8'));
+            } catch (e) {
+              result = { error: 'Failed to read result file' };
+            }
+
+            const errorMsg = result.error || 'Unknown error';
+            const logDir = result.log_dir || 'N/A';
+
+            const body = `## ❌ Auto-Fix Failed
+
+**Error:** ${errorMsg}
+
+**Troubleshooting:**
+- Check the [workflow run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+- Review error details in \`${logDir}\`
+- This error may require manual intervention
+
+**Common Issues:**
+- Budget exceeded (increase \`--budget\` parameter)
+- Complex errors requiring manual review
+- Missing API credentials
+- Validation failures after fix attempt
+
+You can:
+1. Remove the \`auto-fixable\` label and fix manually
+2. Add the \`validation:ignore\` label to skip this error
+3. Re-add the \`auto-fixable\` label to retry after adjustments
+
+---
+*Auto-fix attempted by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*
+`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.issue.number }},
+              body: body
+            });
+
+            // Add auto-fix-failed label
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.issue.number }},
+              labels: ['auto-fix-failed']
+            });
+
+      - name: Comment on issue (no result file)
+        if: steps.result.outputs.result_exists != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `## ⚠️ Auto-Fix Error
+
+The auto-fix workflow ran but did not produce a result file. This indicates a critical error during execution.
+
+**Troubleshooting:**
+- Check the [workflow run logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+- The orchestrator may have failed before completing
+
+---
+*Auto-fix attempted by [autonomous-fix-and-pr workflow](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})*
+`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.issue.number }},
+              body: body
+            });
+
+      - name: Upload auto-fix logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auto-fix-logs-issue-${{ github.event.issue.number }}
+          path: |
+            auto-fix-result.json
+            AUTONOMOUS-FIX-LOGS/
+          if-no-files-found: ignore
+          retention-days: 30

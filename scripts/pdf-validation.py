@@ -1257,6 +1257,9 @@ def main():
     parser.add_argument(
         "--no-cache", action="store_true", help="Disable validation caching"
     )
+    parser.add_argument(
+        "--output-json", help="Write errors to JSON file (for issue automation)"
+    )
     args = parser.parse_args()
 
     # Determine PDF files to validate
@@ -1368,12 +1371,49 @@ def main():
             print("  To fix these issues, read this file and follow the instructions.")
             print("  Claude/AI: Use `Read` tool on this file for actionable fix guidance.")
 
+    # Write JSON output if requested
+    if args.output_json:
+        write_json_output(all_errors, args.output_json)
+
     # Determine exit code
     if has_critical:
         return 1
     if args.fail_on_warning and warning_count > 0:
         return 1
     return 0
+
+
+def write_json_output(errors: list[PDFValidationError], output_path: str) -> None:
+    """Write validation errors to JSON file for GitHub Actions automation."""
+    json_errors = []
+
+    for error in errors:
+        json_errors.append({
+            "source": "pdf-validation",
+            "paper": Path(error.pdf_path).stem,  # Extract paper name from PDF path
+            "severity": error.severity,
+            "type": error.error_type,
+            "page": error.page_num,
+            "message": error.message,
+            "context": error.context,
+            "file_path": error.pdf_path,
+            "suggested_fix": "",  # Filled from checklist parsing
+            "evidence_snippet": "",  # Filled from checklist parsing
+            "locator_hint": ""  # Filled from checklist parsing
+        })
+
+    output = {
+        "timestamp": datetime.now().isoformat(),
+        "totalErrors": len(errors),
+        "errors": json_errors
+    }
+
+    try:
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(output, f, indent=2, ensure_ascii=False)
+        print(f"\n[JSON OUTPUT] Written to: {output_path}")
+    except Exception as e:
+        print(f"[WARNING] Failed to write JSON output: {e}", file=sys.stderr)
 
 
 if __name__ == "__main__":

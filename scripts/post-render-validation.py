@@ -18,11 +18,13 @@ Exit codes:
 """
 
 import argparse
+import json
 import os
 import re
 import sys
 import yaml
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse, unquote
 
@@ -678,10 +680,47 @@ def write_job_summary(errors_by_type: dict, output_dir: Path):
         print(f"[WARNING] Failed to write job summary: {e}", file=sys.stderr)
 
 
+def write_json_output(errors: list, output_path: str) -> None:
+    """Write validation errors to JSON file for GitHub Actions automation."""
+    json_errors = []
+
+    for error in errors:
+        json_errors.append({
+            "source": "post-render",
+            "paper": "",  # Post-render validates all files, not specific papers
+            "severity": "WARNING",  # All post-render errors are warnings
+            "type": error.error_type,
+            "page": None,
+            "line": error.line_num,
+            "message": error.error_type,
+            "context": error.context,
+            "file_path": error.file_path,
+            "suggested_fix": "",
+            "evidence_snippet": error.context,
+            "locator_hint": f"Line {error.line_num}"
+        })
+
+    output = {
+        "timestamp": datetime.now().isoformat(),
+        "totalErrors": len(errors),
+        "errors": json_errors
+    }
+
+    try:
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(output, f, indent=2, ensure_ascii=False)
+        print(f"\n[JSON OUTPUT] Written to: {output_path}")
+    except Exception as e:
+        print(f"[WARNING] Failed to write JSON output: {e}", file=sys.stderr)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Validate Quarto render output for common issues")
     parser.add_argument("--output-dir", default="_manual/warondisease", help="Directory containing rendered HTML files")
     parser.add_argument("--fail-on-warnings", action="store_true", help="Treat warnings as errors")
+    parser.add_argument(
+        "--output-json", help="Write errors to JSON file (for issue automation)"
+    )
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
@@ -808,6 +847,10 @@ def main():
         print("     Ensure nature-annotated.csl (or similar annotated CSL) is specified in _quarto*.yml")
         print("     Verify .bib files have 'abstract' and 'note' fields populated")
         print("     Check that bibliography: and csl: are correctly configured")
+
+    # Write JSON output if requested
+    if args.output_json and all_errors:
+        write_json_output(all_errors, args.output_json)
 
     return 1
 

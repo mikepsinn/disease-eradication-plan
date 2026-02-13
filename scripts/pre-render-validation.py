@@ -26,10 +26,13 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 Runs automatically via _quarto.yml pre-render hook
 """
 
+import argparse
+import json
 import os
 import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 from typing import Dict, List, Optional, Set, Tuple
 
 # Set UTF-8 encoding for stdout and stderr on Windows
@@ -1764,8 +1767,50 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
     check_duplicate_latex_variables(content, filepath)
 
 
+def write_json_output(errors: List[ValidationError], output_path: str) -> None:
+    """Write validation errors to JSON file for GitHub Actions automation."""
+    json_errors = []
+
+    for error in errors:
+        json_errors.append({
+            "source": "pre-render",
+            "paper": "",  # Pre-render validates all files, not specific papers
+            "severity": "WARNING",  # All pre-render errors are warnings
+            "type": "PRE_RENDER_ERROR",
+            "page": None,
+            "line": error.line,
+            "column": error.column,
+            "message": error.message,
+            "context": error.context,
+            "file_path": error.file,
+            "suggested_fix": "",
+            "evidence_snippet": error.context,
+            "locator_hint": f"Line {error.line}"
+        })
+
+    output = {
+        "timestamp": datetime.now().isoformat(),
+        "totalErrors": len(errors),
+        "errors": json_errors
+    }
+
+    try:
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(output, f, indent=2, ensure_ascii=False)
+        print(f"\n[JSON OUTPUT] Written to: {output_path}")
+    except Exception as e:
+        print(f"[WARNING] Failed to write JSON output: {e}", file=sys.stderr)
+
+
 def main():
     """Main validation function"""
+    # Parse arguments
+    parser = argparse.ArgumentParser(description="Pre-render validation for .qmd files")
+    parser.add_argument(
+        "--output-json", help="Write errors to JSON file (for issue automation)"
+    )
+    args = parser.parse_args()
+
     # First, regenerate _variables.yml to ensure it's current with parameters.py
     print("Regenerating _variables.yml from parameters.py...\n")
     try:
@@ -1846,6 +1891,10 @@ def main():
     # Validate each file
     for file in all_files:
         validate_file(file, defined_vars, defined_parameters, anchor_map, defined_citations)
+
+    # Write JSON output if requested
+    if args.output_json and len(errors) > 0:
+        write_json_output(errors, args.output_json)
 
     # Report results
     if len(errors) == 0:

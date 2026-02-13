@@ -199,10 +199,10 @@ def main() -> int:
                 "ai_fix_log_path": None,
             }
             print(f"\n[*] Rendering {config_name}...", flush=True)
-            render_rc, render_output = run_and_tee(
-                [python_exe, "-u", "scripts/render-quarto.py", config_name],
-                log_file,
-            )
+            cmd = [python_exe, "-u", "scripts/render-quarto.py", config_name]
+            if args.skip_validation:
+                cmd.append("--skip-validation")
+            render_rc, render_output = run_and_tee(cmd, log_file)
             result["render_rc"] = render_rc
             result["render_errors"] = extract_render_errors(render_output)
             if render_rc != 0:

@@ -1,0 +1,365 @@
+/**
+ * GitHub Issue Management for Validation Errors
+ *
+ * Implements deduplication, creation, updating, and closing of validation error issues.
+ * Pattern based on domain-status-check.yml workflow.
+ *
+ * Usage (via GitHub Actions):
+ *   const script = require('./.github/scripts/manage-validation-issues.cjs');
+ *   await script({ github, context, errors });
+ *
+ * @param {object} params
+ * @param {object} params.github - Octokit GitHub API client
+ * @param {object} params.context - GitHub Actions context
+ * @param {array} params.errors - Array of error objects from parse-validation-checklist.cjs
+ */
+
+const crypto = require('crypto');
+
+/**
+ * Compute unique issue ID for deduplication
+ * Format: validation:{source}:{paper}:{type}:{page_hash}
+ *
+ * Examples:
+ *   validation:pdf:dfda-spec:LLM_EQUATION_RENDERING:abc123
+ *   validation:pre-render:manual:BROKEN_LINK:def456
+ */
+function computeIssueId(error) {
+  const source = error.source || 'unknown';
+  const paper = error.paper || 'unknown';
+  const type = error.type || 'UNKNOWN_ERROR';
+
+  // Create hash of page numbers to group similar errors
+  // Use null string if no page to avoid grouping all pageless errors
+  const pageKey = error.page ? String(error.page) : 'general';
+  const pageHash = crypto.createHash('sha256')
+    .update(pageKey)
+    .digest('hex')
+    .substring(0, 8);
+
+  return `validation:${source}:${paper}:${type}:${pageHash}`;
+}
+
+/**
+ * Compute labels for an error
+ */
+function computeLabels(error) {
+  const labels = ['validation'];
+
+  // Source label
+  if (error.source) {
+    labels.push(`validation:${error.source}`);
+  }
+
+  // Severity label
+  if (error.severity) {
+    labels.push(`validation:${error.severity.toLowerCase()}`);
+  }
+
+  // Error type category (e.g., latex, equation, link, bibliography)
+  if (error.type) {
+    const typeCategory = inferCategoryFromType(error.type);
+    if (typeCategory) {
+      labels.push(`validation:${typeCategory}`);
+    }
+  }
+
+  // Paper label
+  if (error.paper) {
+    labels.push(`paper:${error.paper}`);
+  }
+
+  return labels;
+}
+
+/**
+ * Infer category from error type for labeling
+ * LLM_EQUATION_RENDERING -> equation
+ * LLM_BROKEN_REFERENCES/CITATIONS -> citation
+ */
+function inferCategoryFromType(type) {
+  const typeLower = type.toLowerCase();
+
+  if (typeLower.includes('equation') || typeLower.includes('latex')) return 'equation';
+  if (typeLower.includes('reference') || typeLower.includes('citation') || typeLower.includes('bibliography')) return 'citation';
+  if (typeLower.includes('link')) return 'link';
+  if (typeLower.includes('figure') || typeLower.includes('table')) return 'figure';
+  if (typeLower.includes('syntax')) return 'syntax';
+
+  return null;
+}
+
+/**
+ * Generate issue title
+ */
+function generateIssueTitle(errors) {
+  if (errors.length === 0) return '[Validation] Unknown Error';
+
+  const firstError = errors[0];
+  const paper = firstError.paper || 'unknown';
+  const type = firstError.type || 'UNKNOWN_ERROR';
+  const count = errors.length;
+
+  if (count === 1) {
+    const pageInfo = firstError.page ? ` (page ${firstError.page})` : '';
+    return `[Validation] ${paper}: ${type}${pageInfo}`;
+  }
+
+  return `[Validation] ${paper}: ${type} (${count} occurrences)`;
+}
+
+/**
+ * Generate issue body markdown
+ */
+function generateIssueBody(errors) {
+  if (errors.length === 0) return 'No error details available.';
+
+  const firstError = errors[0];
+
+  let body = `## Validation Error Report\n\n`;
+  body += `**Source:** ${firstError.source || 'unknown'}\n`;
+  body += `**Paper:** ${firstError.paper || 'unknown'}\n`;
+  body += `**Error Type:** ${firstError.type || 'UNKNOWN_ERROR'}\n`;
+  body += `**Severity:** ${firstError.severity || 'WARNING'}\n`;
+  body += `**Occurrences:** ${errors.length}\n\n`;
+
+  body += `---\n\n`;
+
+  // List all occurrences
+  for (let i = 0; i < errors.length; i++) {
+    const error = errors[i];
+    const num = i + 1;
+
+    body += `### Occurrence ${num}${error.page ? ` (Page ${error.page})` : ''}\n\n`;
+    body += `**Message:** ${error.message}\n\n`;
+
+    if (error.suggested_fix) {
+      body += `**Suggested Fix:** ${error.suggested_fix}\n\n`;
+    }
+
+    if (error.evidence_snippet) {
+      body += `**Evidence:**\n\`\`\`\n${error.evidence_snippet}\n\`\`\`\n\n`;
+    }
+
+    if (error.locator_hint) {
+      body += `**Location:** ${error.locator_hint}\n\n`;
+    }
+
+    if (error.file_path) {
+      body += `**Source File:** \`${error.file_path}\`\n\n`;
+    }
+
+    body += `---\n\n`;
+  }
+
+  body += `## How to Fix\n\n`;
+  body += `1. Review the error details above\n`;
+  body += `2. Locate the issue using the locator hints\n`;
+  body += `3. Apply the suggested fix\n`;
+  body += `4. Re-run validation to verify the fix\n\n`;
+
+  body += `## Auto-Fix\n\n`;
+  body += `To trigger automated fix attempts, add the \`auto-fixable\` label to this issue.\n\n`;
+
+  body += `---\n`;
+  body += `*Auto-generated by validation workflow. Do not edit manually.*\n`;
+
+  return body;
+}
+
+/**
+ * Find existing issue by composite ID label
+ * Returns issue number if found, null otherwise
+ */
+async function findExistingIssue(github, context, issueId) {
+  try {
+    const { data: issues } = await github.rest.issues.listForRepo({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      state: 'all',  // Search both open and closed
+      labels: issueId,
+      per_page: 1
+    });
+
+    return issues.length > 0 ? issues[0] : null;
+  } catch (error) {
+    console.error(`Error searching for issue with label ${issueId}:`, error.message);
+    return null;
+  }
+}
+
+/**
+ * Check if issue should be skipped
+ * Skip if closed as 'wontfix' or has 'validation:ignore' label
+ */
+function shouldSkipIssue(issue) {
+  if (!issue) return false;
+
+  // Check if labeled as validation:ignore
+  const hasIgnoreLabel = issue.labels.some(label =>
+    typeof label === 'string' ? label === 'validation:ignore' : label.name === 'validation:ignore'
+  );
+
+  if (hasIgnoreLabel) {
+    console.log(`Skipping issue #${issue.number}: labeled validation:ignore`);
+    return true;
+  }
+
+  // Check if closed as wontfix (state reason or label)
+  if (issue.state === 'closed') {
+    const hasWontfixLabel = issue.labels.some(label =>
+      typeof label === 'string' ? label === 'wontfix' : label.name === 'wontfix'
+    );
+
+    if (hasWontfixLabel || issue.state_reason === 'not_planned') {
+      console.log(`Skipping issue #${issue.number}: closed as wontfix/not_planned`);
+      return true;
+    }
+  }
+
+  return false;
+}
+
+/**
+ * Create or update validation issue
+ */
+async function createOrUpdateIssue(github, context, issueId, errors) {
+  const existingIssue = await findExistingIssue(github, context, issueId);
+
+  if (shouldSkipIssue(existingIssue)) {
+    return { action: 'skipped', issue: existingIssue };
+  }
+
+  const title = generateIssueTitle(errors);
+  const body = generateIssueBody(errors);
+  const labels = [...new Set([issueId, ...computeLabels(errors[0])])];
+
+  if (existingIssue && existingIssue.state === 'open') {
+    // Update existing open issue
+    console.log(`Updating existing issue #${existingIssue.number}`);
+
+    try {
+      const { data: updatedIssue } = await github.rest.issues.update({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: existingIssue.number,
+        title,
+        body,
+        labels,
+        state: 'open'
+      });
+
+      return { action: 'updated', issue: updatedIssue };
+    } catch (error) {
+      console.error(`Error updating issue #${existingIssue.number}:`, error.message);
+      return { action: 'error', error: error.message };
+    }
+  } else if (existingIssue && existingIssue.state === 'closed') {
+    // Reopen closed issue
+    console.log(`Reopening closed issue #${existingIssue.number}`);
+
+    try {
+      await github.rest.issues.createComment({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: existingIssue.number,
+        body: `Validation error still present. Reopening issue.\n\n${body}`
+      });
+
+      const { data: reopenedIssue } = await github.rest.issues.update({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: existingIssue.number,
+        state: 'open',
+        labels
+      });
+
+      return { action: 'reopened', issue: reopenedIssue };
+    } catch (error) {
+      console.error(`Error reopening issue #${existingIssue.number}:`, error.message);
+      return { action: 'error', error: error.message };
+    }
+  } else {
+    // Create new issue
+    console.log(`Creating new issue: ${title}`);
+
+    try {
+      const { data: newIssue } = await github.rest.issues.create({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        title,
+        body,
+        labels
+      });
+
+      return { action: 'created', issue: newIssue };
+    } catch (error) {
+      console.error(`Error creating issue:`, error.message);
+      return { action: 'error', error: error.message };
+    }
+  }
+}
+
+/**
+ * Main entry point
+ * Groups errors by issue ID and creates/updates issues
+ */
+async function main({ github, context, errors }) {
+  if (!errors || errors.length === 0) {
+    console.log('No validation errors found.');
+    return { processed: 0, created: 0, updated: 0, skipped: 0, errors: 0 };
+  }
+
+  console.log(`Processing ${errors.length} validation errors...`);
+
+  // Group errors by composite ID
+  const errorGroups = {};
+  for (const error of errors) {
+    const issueId = computeIssueId(error);
+    if (!errorGroups[issueId]) {
+      errorGroups[issueId] = [];
+    }
+    errorGroups[issueId].push(error);
+  }
+
+  const stats = {
+    processed: 0,
+    created: 0,
+    updated: 0,
+    reopened: 0,
+    skipped: 0,
+    errors: 0
+  };
+
+  // Process each group
+  for (const [issueId, groupErrors] of Object.entries(errorGroups)) {
+    console.log(`Processing group: ${issueId} (${groupErrors.length} errors)`);
+
+    const result = await createOrUpdateIssue(github, context, issueId, groupErrors);
+
+    stats.processed++;
+    if (result.action === 'created') stats.created++;
+    else if (result.action === 'updated') stats.updated++;
+    else if (result.action === 'reopened') stats.reopened++;
+    else if (result.action === 'skipped') stats.skipped++;
+    else if (result.action === 'error') stats.errors++;
+  }
+
+  console.log('\nValidation issue processing complete:');
+  console.log(`  Created: ${stats.created}`);
+  console.log(`  Updated: ${stats.updated}`);
+  console.log(`  Reopened: ${stats.reopened}`);
+  console.log(`  Skipped: ${stats.skipped}`);
+  console.log(`  Errors: ${stats.errors}`);
+
+  return stats;
+}
+
+module.exports = main;
+module.exports.computeIssueId = computeIssueId;
+module.exports.computeLabels = computeLabels;
+module.exports.generateIssueTitle = generateIssueTitle;
+module.exports.generateIssueBody = generateIssueBody;
+module.exports.findExistingIssue = findExistingIssue;
+module.exports.shouldSkipIssue = shouldSkipIssue;
+module.exports.createOrUpdateIssue = createOrUpdateIssue;
