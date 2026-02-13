@@ -35,6 +35,12 @@
 
 > Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving de...
 
+### [The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
+
+[![The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
+
+> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommend...
+
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
 
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
@@ -64,12 +70,6 @@
 [![Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](assets/og/wishocracy-og-1200x630.jpg)](https://wishocracy.warondisease.org)
 
 > Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.
-
-### [dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](https://dfda-spec.warondisease.org)
-
-[![dFDA: A Decentralized Framework for Drug Assessment Using Two-Stage Real-World Evidence Validation](assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
-
-> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework generates validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
 
 ---
 ## Development

@@ -99,6 +99,16 @@ jobs:
           path: _build_temp/1-pct-treaty-impact/**/*.pdf
           if-no-files-found: ignore
 
+
+      - name: Upload EPUBs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: epubs-1-pct-treaty-impact
+          path: _build_temp/1-pct-treaty-impact/**/*.epub
+          if-no-files-found: ignore
+
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -227,6 +237,8 @@ jobs:
           name: pdfs-cost-of-change
           path: _build_temp/cost-of-change/**/*.pdf
           if-no-files-found: ignore
+
+
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -357,6 +369,8 @@ jobs:
           path: _build_temp/dfda-impact/**/*.pdf
           if-no-files-found: ignore
 
+
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -485,6 +499,8 @@ jobs:
           name: pdfs-dfda-spec
           path: _build_temp/dfda-spec/**/*.pdf
           if-no-files-found: ignore
+
+
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -615,6 +631,8 @@ jobs:
           path: _build_temp/iab/**/*.pdf
           if-no-files-found: ignore
 
+
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -743,6 +761,8 @@ jobs:
           name: pdfs-invisible-graveyard
           path: _build_temp/invisible-graveyard/**/*.pdf
           if-no-files-found: ignore
+
+
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -873,6 +893,16 @@ jobs:
           path: _build_temp/manual/**/*.pdf
           if-no-files-found: ignore
 
+
+      - name: Upload EPUBs artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v4
+        with:
+          name: epubs-manual
+          path: _build_temp/manual/**/*.epub
+          if-no-files-found: ignore
+
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1001,6 +1031,8 @@ jobs:
           name: pdfs-obg
           path: _build_temp/obg/**/*.pdf
           if-no-files-found: ignore
+
+
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -1131,6 +1163,8 @@ jobs:
           path: _build_temp/opg/**/*.pdf
           if-no-files-found: ignore
 
+
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1259,6 +1293,8 @@ jobs:
           name: pdfs-optimocracy
           path: _build_temp/optimocracy/**/*.pdf
           if-no-files-found: ignore
+
+
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -1389,6 +1425,8 @@ jobs:
           path: _build_temp/political-dysfunction-tax/**/*.pdf
           if-no-files-found: ignore
 
+
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1517,6 +1555,8 @@ jobs:
           name: pdfs-us-efficiency-audit
           path: _build_temp/us-efficiency-audit/**/*.pdf
           if-no-files-found: ignore
+
+
 
       - name: Upload LaTeX logs on failure
         if: failure()
@@ -1647,6 +1687,8 @@ jobs:
           path: _build_temp/wishocracy/**/*.pdf
           if-no-files-found: ignore
 
+
+
       - name: Upload LaTeX logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
@@ -1694,8 +1736,8 @@ jobs:
 
 
 
-  release-pdfs:
-    name: "Release PDFs (master only)"
+  release-builds:
+    name: "Release PDFs & EPUBs (master only)"
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     needs:
@@ -1729,14 +1771,27 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Download PDF artifacts
+      - name: Download all build artifacts
         uses: actions/download-artifact@v4
         with:
-          path: release-pdfs
+          path: release-files
 
-      - name: Create GitHub release with PDFs
+      - name: Create GitHub release with PDFs and EPUBs
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: pdfs-${{ github.run_number }}
-          name: PDFs ${{ github.run_number }}
-          files: release-pdfs/**/*.pdf
+          tag_name: latest-builds
+          name: Latest Builds
+          body: |
+            Auto-generated PDFs and EPUBs from the latest master build.
+
+            **Built:** ${{ github.event.head_commit.timestamp }}
+            **Commit:** ${{ github.sha }}
+
+            ## Available Formats
+            - **PDFs**: Individual papers and full book
+            - **EPUBs**: E-reader formats (Kindle, Apple Books, etc.)
+          files: |
+            release-files/**/*.pdf
+            release-files/**/*.epub
+          prerelease: false
+          make_latest: true
