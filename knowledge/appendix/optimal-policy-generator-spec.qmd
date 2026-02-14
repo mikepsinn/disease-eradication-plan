@@ -3,24 +3,24 @@ title: 'The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximiz
 subtitle: Systematic Generation of Enact/Replace/Repeal/Maintain Recommendations Using Quasi-Experimental Methods and Bradford Hill Criteria
 description: The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.
 abstract: |
-  Fifty US states with different laws. Two hundred countries with different policies. Centuries of
-  variation in tax rates, regulations, programs. The data to know what works exists but isn't
+  Centuries of public policy variation across thousands of jurisdictions (countries, states, cities) constitute
+  a massive natural experiment. The data to identify which policies maximize welfare exists but has not been
   systematically harvested.
 
-  The Optimal Policy Generator measures policy impact on two fundamental welfare dimensions:
-  **real after-tax median income growth** (economic welfare) and **median healthy life years**
-  (health welfare). These two metrics are hypothesized to capture the primary welfare effects of most policies while remaining directly
-  interpretable. No complex conversion factors required.
+  The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control,
+  difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional
+  data, measuring policy impact on two welfare metrics: real after-tax median income growth and median
+  healthy life years.
 
-  For any jurisdiction, four outputs: ENACT (evidence-supported policies you lack). REPLACE
-  (policies at the wrong level). REPEAL (policies with net harm). MAINTAIN (policies aligned with
-  evidence). Each recommendation includes expected effects on both metrics, confidence grades,
-  and blocking factors (including freedom/autonomy constraints).
+  For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT
+  (evidence-supported policies the jurisdiction lacks), REPLACE (policies set at suboptimal levels),
+  REPEAL (policies with net welfare harm), and MAINTAIN (policies aligned with evidence). Each
+  recommendation includes expected effects on both metrics, confidence grades, and blocking factors
+  including freedom and autonomy constraints.
 
-  Bradford Hill criteria operationalized into nine quantitative scoring functions. Synthetic control
-  and difference-in-differences isolate policy effects from confounders. Agnostic to which party
-  enacted each policy, only whether it worked. Projected welfare gains under framework assumptions:
-  5-15% of GDP for typical US states (90% CI: 2-25%), pending retrospective validation.
+  The framework is agnostic to which party enacted each policy, evaluating only whether it improved
+  outcomes. Projected welfare gains under framework assumptions: 5-15% of GDP for typical US states
+  (90% CI: 2-25%), pending retrospective validation.
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
