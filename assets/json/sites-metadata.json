@@ -1877,7 +1877,7 @@
             "The Final Math"
           ],
           "published": true,
-          "lastmod": "2026-02-12"
+          "lastmod": "2026-02-14"
         },
         {
           "path": "knowledge/problem.qmd",
@@ -3973,18 +3973,18 @@
             "The 1% Treaty: Harnessing Greed to Eradicate Disease",
             "A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents",
             "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
-            "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-            "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
             "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
             "The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
             "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag",
+            "The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding",
+            "The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies",
             "The Political Dysfunction Tax",
             "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
             "United States Efficiency Audit",
             "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
           ],
           "published": true,
-          "lastmod": "2026-02-13"
+          "lastmod": "2026-02-14"
         },
         {
           "path": "knowledge/appendix/lives-saved-by-drug-accessibility.qmd",
@@ -4064,8 +4064,8 @@
     {
       "id": "obg",
       "type": "website",
-      "title": "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-      "description": "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.",
+      "title": "The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding",
+      "description": "The Optimal Budget Generator (OBG) answers: 'How should governments allocate public spending to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated public budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's optimal spending level.",
       "siteUrl": "https://obg.warondisease.org",
       "favicon": "https://obg.warondisease.org/assets/icons/dih-favicon.png",
       "ogImage": "https://obg.warondisease.org/assets/og/obg-og-1200x630.jpg",
@@ -4146,14 +4146,14 @@
         {
           "path": "index.qmd",
           "url": "https://obg.warondisease.org/",
-          "title": "Optimal Budget Generator: Evidence-Based Budget Allocation Framework",
-          "description": "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target.",
+          "title": "The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding",
+          "description": "The Optimal Budget Generator (OBG) answers: 'How should governments allocate public spending to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated public budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's optimal spending level.",
           "image": "https://obg.warondisease.org/assets/og-images/knowledge/appendix/optimal-budget-generator-spec-og-bw-academic.jpg",
           "sections": [
             "Abstract",
             "System Overview",
             "What Policymakers See",
-            "Example: US Federal Budget Gap Analysis",
+            "Illustrative Example: US Federal Budget Gap Analysis",
             "What Budget Analysts See",
             "Where This Fits",
             "Implementation Mechanism",
@@ -4199,7 +4199,7 @@
             "Gap Analysis and Priority Ranking",
             "Computing Gaps",
             "Priority Score",
-            "Worked Example: Priority Ranking",
+            "Illustrative Example: Priority Ranking",
             "Multi-Unit Reporting",
             "The Problem with Abstract Scores",
             "Reporting at Multiple Levels",
@@ -4240,11 +4240,11 @@
             "Estimation Methods",
             "Evidence Quality",
             "Output Concepts",
-            "Appendix C: Comparison to Actual US Budget",
-            "Current US Discretionary Budget vs. OSL Targets"
+            "Appendix C: Illustrative Comparison to US Budget",
+            "Illustrative US Discretionary Budget vs. OSL Targets"
           ],
           "published": true,
-          "lastmod": "2026-02-11"
+          "lastmod": "2026-02-14"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-obg.qmd",
@@ -4297,8 +4297,8 @@
     {
       "id": "opg",
       "type": "website",
-      "title": "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-      "description": "The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.",
+      "title": "The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies",
+      "description": "The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.",
       "siteUrl": "https://opg.warondisease.org",
       "favicon": "https://opg.warondisease.org/assets/icons/dih-favicon.png",
       "ogImage": "https://opg.warondisease.org/assets/og/opg-og-1200x630.jpg",
@@ -4385,8 +4385,8 @@
         {
           "path": "index.qmd",
           "url": "https://opg.warondisease.org/",
-          "title": "Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions",
-          "description": "The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.",
+          "title": "The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies",
+          "description": "The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.",
           "image": "https://opg.warondisease.org/assets/og-images/knowledge/appendix/optimal-policy-generator-spec-og-bw-academic.jpg",
           "sections": [
             "Abstract",

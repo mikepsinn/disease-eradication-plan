@@ -17,12 +17,6 @@
 
 > Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for funding high-NSV programs over low-NSV alternatives. The result: public good becomes private profit for both investors and elected officials.
 
-### [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
-
-[![Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](assets/og/opg-og-1200x630.jpg)](https://opg.warondisease.org)
-
-> The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations based on quasi-experimental evidence from centuries of policy variation data.
-
 ### [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://optimocracy.warondisease.org)
 
 [![Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
@@ -41,11 +35,17 @@
 
 > After proving a drug is safe, the FDA requires 8.2 years to prove it works before patients can access it. We estimate this delay cost 102 million deaths among people waiting for approved drugs (1962-2024). The human cost in death and disability of blocking good drugs is 3.07k:1 higher than the cost of approving bad ones.
 
-### [The Optimal Budget Generator: A Protocol for Optimizing Public Goods Funding to Maximize Median Health and Wealth](https://obg.warondisease.org)
+### [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](https://obg.warondisease.org)
 
-[![The Optimal Budget Generator: A Protocol for Optimizing Public Goods Funding to Maximize Median Health and Wealth](assets/og/obg-og-1200x630.jpg)](https://obg.warondisease.org)
+[![The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](assets/og/obg-og-1200x630.jpg)](https://obg.warondisease.org)
 
 > The Optimal Budget Generator (OBG) answers: 'How should governments allocate public spending to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated public budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's optimal spending level.
+
+### [The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies](https://opg.warondisease.org)
+
+[![The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies](assets/og/opg-og-1200x630.jpg)](https://opg.warondisease.org)
+
+> The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.
 
 ### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
 

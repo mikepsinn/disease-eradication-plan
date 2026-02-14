@@ -1347,7 +1347,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 164,056
+**Files:** 67 | **Words:** 164,770
 
 #### index.qmd
 **Title:** Start Here
@@ -3252,16 +3252,16 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 3,966 words | 640 lines
+**Stats:** 4,691 words | 760 lines
 
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
     - [A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
-    - [Optimal Budget Generator: Evidence-Based Budget Allocation Framework](https://obg.warondisease.org)
-    - [Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions](https://opg.warondisease.org)
     - [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://optimocracy.warondisease.org)
     - [The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
     - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
+    - [The Optimal Budget Generator: A Protocol for Optimizing Public Goods Funding to Maximize Median Health and Wealth](https://obg.warondisease.org)
+    - [The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies](https://opg.warondisease.org)
     - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
     - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
     - [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
@@ -3306,7 +3306,7 @@
 
 #### index-manual.qmd
 **Title:** How to End War and Disease
-**Stats:** 7,862 words | 896 lines
+**Stats:** 7,851 words | 896 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -3373,19 +3373,19 @@
 ---
 
 ## _quarto-obg.yml
-**Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
+**Title:** The Optimal Budget Generator: A Protocol for Optimizing Public Goods Funding to Maximize Median Health and Wealth
 **Type:** website
-**Files:** 1 | **Words:** 8,501
+**Files:** 1 | **Words:** 8,688
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
-**Title:** Optimal Budget Generator: Evidence-Based Budget Allocation Framework
-**Description:** The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolat...
-**Stats:** 8,501 words | 1,219 lines
+**Title:** The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding
+**Description:** The Optimal Budget Generator (OBG) answers: 'How should governments allocate public spending to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years....
+**Stats:** 8,688 words | 1,223 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
     - What Policymakers See
-  - Example: US Federal Budget Gap Analysis
+  - Illustrative Example: US Federal Budget Gap Analysis
     - What Budget Analysts See
     - Where This Fits
     - Implementation Mechanism
@@ -3431,7 +3431,7 @@
   - Gap Analysis and Priority Ranking
     - Computing Gaps
     - Priority Score
-    - Worked Example: Priority Ranking
+    - Illustrative Example: Priority Ranking
   - Multi-Unit Reporting
     - The Problem with Abstract Scores
     - Reporting at Multiple Levels
@@ -3472,20 +3472,20 @@
     - Estimation Methods
     - Evidence Quality
     - Output Concepts
-  - Appendix C: Comparison to Actual US Budget {.appendix}
-    - Current US Discretionary Budget vs. OSL Targets
+  - Appendix C: Illustrative Comparison to US Budget {.appendix}
+    - Illustrative US Discretionary Budget vs. OSL Targets
 
 ---
 
 ## _quarto-opg.yml
-**Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
+**Title:** The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies
 **Type:** website
-**Files:** 1 | **Words:** 12,788
+**Files:** 1 | **Words:** 12,804
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
-**Title:** Optimal Policy Generator: Evidence-Based Policy Recommendations for Jurisdictions
-**Description:** The Optimal Policy Generator (OPG) produces systematic policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendation...
-**Stats:** 12,788 words | 1,896 lines
+**Title:** The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies
+**Description:** The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recomme...
+**Stats:** 12,804 words | 1,896 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -4140,8 +4140,8 @@
 | _quarto-dfda-spec.yml | The Decentralized FDA (dFDA) Protocol: Two-Stage V... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18203375 |
 | _quarto-iab.yml | Incentive Alignment Bonds: Making Public Goods Fin... | `@iab-paper-2025` | 10.5281/zenodo.18203221 |
 | _quarto-invisible-graveyard.yml | The Invisible Graveyard: Quantifying the Mortality... | `@invisible-graveyard-paper-2025` | 10.5281/zenodo.18356231 |
-| _quarto-obg.yml | Optimal Budget Generator: Evidence-Based Budget Al... | `@obg-paper-2025` | 10.5281/zenodo.18356209 |
-| _quarto-opg.yml | Optimal Policy Generator: Evidence-Based Policy Re... | `@opg-paper-2025` | 10.5281/zenodo.18603834 |
+| _quarto-obg.yml | The Optimal Budget Generator: A Protocol for Optim... | `@obg-paper-2025` | 10.5281/zenodo.18356209 |
+| _quarto-opg.yml | The Optimal Policy Generator: A Protocol for Ident... | `@opg-paper-2025` | 10.5281/zenodo.18603834 |
 | _quarto-optimocracy.yml | Optimocracy: Causal Inference on Cross-Jurisdictio... | `@optimocracy-paper-2025` | 10.5281/zenodo.18356213 |
 | _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | 10.5281/zenodo.18603840 |
 | _quarto-us-efficiency-audit.yml | United States Efficiency Audit | `@us-efficiency-audit-paper-2025` | 10.5281/zenodo.18447476 |
@@ -4155,6 +4155,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 340,076
+- Total words: 340,993
 - Orphaned files: 26
 - Paper configs: 12
