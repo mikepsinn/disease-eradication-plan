@@ -5,11 +5,17 @@
 
 > 6.65 thousand diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7 billion deaths. At $0.0018/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
 
-### [A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+### [Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
 
-[![A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
+[![Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
 
 > Only 15 diseases/year get their first treatment each year. With 6.65 thousand diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $0.841 per year of healthy life saved.
+
+### [Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
+
+[![Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
+
+> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommend...
 
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
 
@@ -23,12 +29,6 @@
 
 > Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving de...
 
-### [The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
-
-[![The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
-
-> We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommend...
-
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
 
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
@@ -41,9 +41,9 @@
 
 > The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact S...
 
-### [The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies](https://opg.warondisease.org)
+### [The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](https://opg.warondisease.org)
 
-[![The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies](assets/og/opg-og-1200x630.jpg)](https://opg.warondisease.org)
+[![The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](assets/og/opg-og-1200x630.jpg)](https://opg.warondisease.org)
 
 > The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.
 

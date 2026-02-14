@@ -25,37 +25,34 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 from lib.latex_utils import sanitize_for_latex  # type: ignore[import-not-found]
+from lib.yaml_sync_utils import parse_qmd_frontmatter, strip_confidence_intervals  # type: ignore[import-not-found]
+
+from dih_models.variable_replacement import load_variables, replace_variables
 
 
-def _extract_jel_from_qmd(qmd_path: Path) -> List[str]:
-    """Extract JEL codes from a QMD file's YAML frontmatter.
+def _extract_jel_from_frontmatter(frontmatter: Dict[str, Any]) -> List[str]:
+    """Extract JEL codes from parsed frontmatter.
 
     Handles both 'jel:' and 'jel-codes:' field names.
     """
-    if not qmd_path.exists():
-        return []
-    with open(qmd_path, encoding="utf-8") as f:
-        content = f.read()
-    # Extract YAML frontmatter between --- markers
-    match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-    if not match:
-        return []
-    frontmatter = yaml.safe_load(match.group(1))
-    if not frontmatter:
-        return []
     jel = frontmatter.get("jel") or frontmatter.get("jel-codes") or []
     if isinstance(jel, str):
         jel = [j.strip() for j in jel.split(",")]
     return jel
 
 
-def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
+def extract_paper_info(
+    config_path: Path,
+    config_name: str,
+    variables: Optional[Dict[str, str]] = None,
+) -> Optional[Dict[str, Any]]:
     """
     Extract paper information from a Quarto config file.
 
     Args:
         config_path: Path to the _quarto-*.yml file
         config_name: Name of the config (e.g., "iab", "dfda-impact")
+        variables: Loaded Quarto variables for resolving {{< var >}} references
 
     Returns:
         Dict with paper info, or None if not a publishable paper
@@ -139,19 +136,29 @@ def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str
     elif metadata.get("format"):
         paper_type = metadata.get("format")
 
-    # Extract abstract (full text for submissions)
-    abstract = None
-    if "book" in config:
-        abstract = config["book"].get("abstract") or config["book"].get("description")
-    elif "website" in config:
-        abstract = config["website"].get("description")
-
-    # Extract JEL codes from QMD source file
-    jel_codes: List[str] = []
+    # Extract abstract and JEL codes from QMD source file frontmatter
+    # The QMD files have richer abstracts than the config descriptions
+    qmd_frontmatter: Dict[str, Any] = {}
     index_source = dih_render.get("index-source", "")
     if index_source:
         qmd_path = config_path.parent / index_source
-        jel_codes = _extract_jel_from_qmd(qmd_path)
+        qmd_frontmatter = parse_qmd_frontmatter(qmd_path)
+
+    jel_codes = _extract_jel_from_frontmatter(qmd_frontmatter)
+
+    # Prefer QMD abstract over config description (QMD has full multi-paragraph abstracts)
+    raw_abstract = (
+        qmd_frontmatter.get("abstract")
+        or qmd_frontmatter.get("description")
+        or (config["book"].get("abstract") if "book" in config else None)
+        or description
+    )
+    # Resolve {{< var name >}} references and strip CIs for clean abstracts
+    abstract = raw_abstract
+    if abstract and variables:
+        abstract = replace_variables(abstract, variables, highlight_missing=False)
+    if abstract:
+        abstract = strip_confidence_intervals(abstract)
 
     # Extract author info from book.author or root author
     author_info: Dict[str, Any] = {}
@@ -215,6 +222,9 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
     Returns:
         Path to the generated QMD file
     """
+    # Load Quarto variables for resolving {{< var >}} in abstracts
+    variables = load_variables(project_root / "_variables.yml")
+
     # Find all _quarto-*.yml files in root
     quarto_configs = list(project_root.glob("_quarto-*.yml"))
     quarto_configs.sort(key=lambda p: p.name)
@@ -228,7 +238,7 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
         config_name = match.group(1)
 
         try:
-            paper_info = extract_paper_info(config_path, config_name)
+            paper_info = extract_paper_info(config_path, config_name, variables)
             if paper_info:
                 papers.append(paper_info)
         except Exception as e:
@@ -312,13 +322,10 @@ def _format_paper_entry(paper: Dict[str, Any]) -> List[str]:
         lines.append(f"[![{safe_title}]({paper['og_image']})]({site_url})")
         lines.append("")
 
-    # Description
-    if paper["description"]:
-        # Truncate long descriptions
-        desc = paper["description"]
-        if len(desc) > 500:
-            desc = desc[:497] + "..."
-        lines.append(f"> {desc}")
+    # Abstract (preferred) or description
+    display_text = paper.get("abstract") or paper.get("description")
+    if display_text:
+        lines.append(f"> {display_text}")
         lines.append("")
 
     lines.append("")  # Extra spacing between entries

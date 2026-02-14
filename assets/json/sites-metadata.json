@@ -698,7 +698,7 @@
     {
       "id": "dfda-impact",
       "type": "website",
-      "title": "A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents",
+      "title": "Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
       "description": "Only 15 diseases/year get their first treatment each year. With 6.65 thousand diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $0.841 per year of healthy life saved.",
       "siteUrl": "https://dfda-impact.warondisease.org",
       "favicon": "https://dfda-impact.warondisease.org/assets/icons/dfda-favicon.png",
@@ -793,7 +793,7 @@
         {
           "path": "index.qmd",
           "url": "https://dfda-impact.warondisease.org/",
-          "title": "A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents",
+          "title": "Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
           "description": "Only 15 diseases/year get their first treatment each year. With 6.65 thousand diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $0.841 per year of healthy life saved.",
           "image": "https://dfda-impact.warondisease.org/assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.jpg",
           "tags": [
@@ -1006,7 +1006,7 @@
     {
       "id": "dfda-spec",
       "type": "website",
-      "title": "The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
+      "title": "Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
       "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
       "siteUrl": "https://dfda-spec.warondisease.org",
       "favicon": "https://dfda-spec.warondisease.org/assets/icons/dfda-favicon.png",
@@ -1102,7 +1102,7 @@
         {
           "path": "index.qmd",
           "url": "https://dfda-spec.warondisease.org/",
-          "title": "The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
+          "title": "Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
           "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
           "image": "https://dfda-spec.warondisease.org/assets/og-images/knowledge/appendix/dfda-spec-paper-og-bw-academic.jpg",
           "tags": [
@@ -3971,13 +3971,13 @@
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/papers-og-bw-academic.jpg",
           "sections": [
             "The 1% Treaty: Harnessing Greed to Eradicate Disease",
-            "A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents",
+            "Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+            "Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
             "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
             "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
-            "The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
             "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag",
             "The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding",
-            "The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies",
+            "The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy",
             "The Political Dysfunction Tax",
             "The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization",
             "United States Efficiency Audit",
@@ -4297,7 +4297,7 @@
     {
       "id": "opg",
       "type": "website",
-      "title": "The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies",
+      "title": "The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy",
       "description": "The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.",
       "siteUrl": "https://opg.warondisease.org",
       "favicon": "https://opg.warondisease.org/assets/icons/dih-favicon.png",
@@ -4385,7 +4385,7 @@
         {
           "path": "index.qmd",
           "url": "https://opg.warondisease.org/",
-          "title": "The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies",
+          "title": "The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy",
           "description": "The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.",
           "image": "https://opg.warondisease.org/assets/og-images/knowledge/appendix/optimal-policy-generator-spec-og-bw-academic.jpg",
           "sections": [

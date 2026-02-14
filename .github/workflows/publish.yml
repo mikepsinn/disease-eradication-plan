@@ -303,7 +303,7 @@ jobs:
 
 
   build-dfda-impact:
-    name: "Build A Decentralized FDA: How to Prevent a Year of Deat"
+    name: "Build Decentralized FDA Impact Analysis: How to Prevent "
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -371,7 +371,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build A Decentralized FDA: How to Prevent a Year of Deat"
+      - name: "Render Build Decentralized FDA Impact Analysis: How to Prevent "
         run: python scripts/render-quarto.py dfda-impact
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -412,7 +412,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build A Decentralized FDA: How to Prevent a Year of Deat to Netlify (immediate)"
+      - name: "Deploy Build Decentralized FDA Impact Analysis: How to Prevent  to Netlify (immediate)"
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -433,7 +433,7 @@ jobs:
 
 
 
-      - name: "Upload Build A Decentralized FDA: How to Prevent a Year of Deat PDF to Zenodo (draft)"
+      - name: "Upload Build Decentralized FDA Impact Analysis: How to Prevent  PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -442,7 +442,7 @@ jobs:
 
 
   build-dfda-spec:
-    name: "Build The Decentralized FDA (dFDA) Protocol: Two-Stage V"
+    name: "Build Decentralized FDA Protocol: Two-Stage Validation ("
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -510,7 +510,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The Decentralized FDA (dFDA) Protocol: Two-Stage V"
+      - name: "Render Build Decentralized FDA Protocol: Two-Stage Validation ("
         run: python scripts/render-quarto.py dfda-spec
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -551,7 +551,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build The Decentralized FDA (dFDA) Protocol: Two-Stage V to Netlify (immediate)"
+      - name: "Deploy Build Decentralized FDA Protocol: Two-Stage Validation ( to Netlify (immediate)"
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -572,7 +572,7 @@ jobs:
 
 
 
-      - name: "Upload Build The Decentralized FDA (dFDA) Protocol: Two-Stage V PDF to Zenodo (draft)"
+      - name: "Upload Build Decentralized FDA Protocol: Two-Stage Validation ( PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -1145,7 +1145,7 @@ jobs:
 
 
   build-opg:
-    name: "Build The Optimal Policy Generator: A Protocol for Ident"
+    name: "Build The Optimal Policy Generator: A Causal Inference P"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1213,7 +1213,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The Optimal Policy Generator: A Protocol for Ident"
+      - name: "Render Build The Optimal Policy Generator: A Causal Inference P"
         run: python scripts/render-quarto.py opg
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -1254,7 +1254,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build The Optimal Policy Generator: A Protocol for Ident to Netlify (immediate)"
+      - name: "Deploy Build The Optimal Policy Generator: A Causal Inference P to Netlify (immediate)"
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -1275,7 +1275,7 @@ jobs:
 
 
 
-      - name: "Upload Build The Optimal Policy Generator: A Protocol for Ident PDF to Zenodo (draft)"
+      - name: "Upload Build The Optimal Policy Generator: A Causal Inference P PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}

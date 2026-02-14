@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 261 parameters used in the analysis, organized by type:
+This appendix documents all 285 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 106
-- Calculated values: 99
-- Core definitions: 56
+- External sources (peer-reviewed): 118
+- Calculated values: 108
+- Core definitions: 59
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (106 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (108 parameters) • [External Data Sources](#sec-external) (118 parameters) • [Core Definitions](#sec-definitions) (59 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -292,6 +292,346 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
+
+:::
+
+### dFDA Direct Funding Cost per DALY: $0.841 {#sec-dfda_direct_funding_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (therapeutic space exploration period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY).
+
+**Inputs**:
+
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $475B
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+
+$$
+\begin{gathered}
+Cost_{direct,DALY} = \frac{NPV_{direct}}{DALYs_{max}} = \frac{\$475B}{565B} = \$0.841 \\[0.5em]
+\text{where } NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } T_{queue,dFDA} = \frac{T_{queue,SQ}}{k_{capacity}} = \frac{443}{12.3} = 36 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B \\[0.5em]
+\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
+\text{where } T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204 \\[0.5em]
+\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_cost_per_daly.qmd >}}
+
+:::
+
+### dFDA Direct Funding NPV (Exploration Period): $475B {#sec-dfda_direct_funding_queue_clearance_npv}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year therapeutic space exploration period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until the therapeutic space is fully explored. Funding period is exploration time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After exploration completes, the timeline shift benefit (200B DALYs) is fully realized.
+
+**Inputs**:
+
+- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.8B
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [dFDA Therapeutic Space Exploration Time](#sec-dfda_queue_clearance_years) 🔢: 36 years
+
+$$
+NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+:::
+
+### Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 178k:1 {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+ROI from direct philanthropic/government funding of medical research (vs treaty campaign). Same benefits as treaty but costs $541.9B NPV instead of $1B campaign. Still excellent ROI, but treaty campaign achieves 542× better leverage.
+
+**Inputs**:
+
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $475B
+
+$$
+\begin{gathered}
+ROI_{direct,max} = \frac{Value_{max}}{NPV_{direct}} = \frac{\$84800T}{\$475B} = 178{,}000 \\[0.5em]
+\text{where } Value_{max} \\
+= DALYs_{max} \times Value_{QALY} \\
+= 565B \times \$150K \\
+= \$84800T \\[0.5em]
+\text{where } DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B \\[0.5em]
+\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
+\text{where } T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204 \\[0.5em]
+\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } T_{queue,dFDA} = \frac{T_{queue,SQ}}{k_{capacity}} = \frac{443}{12.3} = 36 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag.qmd >}}
 
 :::
 
@@ -1517,6 +1857,94 @@ $$
 
 :::
 
+### Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 1.93 quadrillion hours {#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of suffering eliminated from the combined dFDA timeline shift. Calculated from YLD component of DALYs (39% of total DALYs × hours per year). One-time benefit, not annual recurring.
+
+**Inputs**:
+
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys) 📊: 0.39 proportion (SE: ±0.03 proportion)
+
+$$
+\begin{gathered}
+Hours_{suffer,max} \\
+= DALYs_{max} \times Pct_{YLD} \times 8760 \\
+= 565B \times 0.39 \times 8760 \\
+= 1930T \\[0.5em]
+\text{where } DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B \\[0.5em]
+\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
+\text{where } T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204 \\[0.5em]
+\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
+\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
+\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
+\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
+\text{where } N_{fundable,ann} \\
+= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.7B}{\$929} \\
+= 23.4M \\[0.5em]
+\text{where } Subsidies_{trial,ann} \\
+= Treasury_{RD,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.7B \\[0.5em]
+\text{where } OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M \\[0.5em]
+\text{where } Treasury_{RD,ann} \\
+= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
+= \$27.2B - \$2.72B - \$2.72B \\
+= \$21.8B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B \\[0.5em]
+\text{where } Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B \\[0.5em]
+\text{where } Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.qmd >}}
+
+:::
+
 ### dFDA Average Total Timeline Shift: 212 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2096,6 +2524,45 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-drug_disease_combinations_possible.qmd >}}
+
+:::
+
+### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
+
+**Inputs**:
+
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M \\[0.5em]
+\text{where } Lives_{saved,annual} = \frac{LY_{saved,annual}}{T_{ext}} = \frac{149M}{12} = 12.4M
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-existing_drugs_efficacy_lag_deaths_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-existing_drugs_efficacy_lag_deaths_total.qmd >}}
 
 :::
 
@@ -3548,6 +4015,46 @@ $$
 
 :::
 
+### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
+
+**Inputs**:
+
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
+- [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
+
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
+
+**Methodology**: [@lichtenberg-life-years-saved-2019]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pharma_lives_saved_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-pharma_lives_saved_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pharma_lives_saved_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pharma_lives_saved_annual.qmd >}}
+
+:::
+
 ### Pragmatic Trial Cost per QALY (RECOVERY): $4.00 {#sec-pragmatic_trial_cost_per_qaly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4954,6 +5461,144 @@ $$
 
 :::
 
+### US Gov Waste (Raw Total): $4.90T {#sec-us_gov_waste_raw_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Raw sum of US government waste components before overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.
+
+**Inputs**:
+
+- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.20T (95% CI: $1T - $1.50T)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $500B - $2T)
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
+- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181B (95% CI: $150B - $220B)
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
+- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90B (95% CI: $60B - $150B)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50B (95% CI: $30B - $80B)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
+
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_raw_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_raw_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_raw_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_raw_total.qmd >}}
+
+:::
+
+### Recoverable Capital: $2.45T {#sec-us_gov_waste_recoverable}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Recoverable capital if US improved to OECD median efficiency. Current US efficiency ~38-48%; OECD median ~75-85%. Closing to ~80% would recover approximately half the gap.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
+
+$$
+\begin{gathered}
+W_{US,recoverable} \\
+= W_{total,US} \times 0.5 \\
+= \$4.9T \times 0.5 \\
+= \$2.45T \\[0.5em]
+\text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
+\text{where } W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} \\
++ W_{regulatory} + W_{tax} + W_{corporate} \\
++ W_{tariffs} + W_{drugs} + W_{fossil} \\
++ W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
++ \$181B + \$160B + \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_recoverable.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_recoverable.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_recoverable.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_recoverable.qmd >}}
+
+:::
+
+### US Government Waste (Total): $4.90T {#sec-us_gov_waste_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual US government waste (additive sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as additive; any overlap offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.
+
+**Inputs**:
+
+- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total) 🔢: $4.90T
+- [Overlap Discount Factor](#sec-us_gov_waste_overlap_discount): 1:1
+
+$$
+\begin{gathered}
+W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
+\text{where } W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} \\
++ W_{regulatory} + W_{tax} + W_{corporate} \\
++ W_{tariffs} + W_{drugs} + W_{fossil} \\
++ W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
++ \$181B + \$160B + \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_total.qmd >}}
+
+:::
+
 ### Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6334,6 +6979,26 @@ Annual global spending on symptomatic disease treatment
 
 :::
 
+### YLD Proportion of Total DALYs: 0.39 proportion {#sec-global_yld_proportion_of_dalys}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Proportion of global DALYs that are YLD (years lived with disability) vs YLL (years of life lost). From GBD 2021: 1.13B YLD out of 2.88B total DALYs = 39%.
+
+**Source**: [@ihme-gbd-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 0.03 proportion)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_yld_proportion_of_dalys.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
 ### Human Interactome Targeted by Drugs: 12% {#sec-human_interactome_targeted_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6573,6 +7238,30 @@ Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 199
 **Source**: [@pharma-drug-revenue-average]
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
+
+**Source**: [@lichtenberg-life-years-saved-2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [79.4 million life-years, 240 million life-years] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 79.4 million life-years and 240 million life-years (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_life_years_saved_annual.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -7192,6 +7881,246 @@ Annual US cost of diabetes (direct and indirect)
 
 :::
 
+### Agricultural Subsidies Deadweight Loss: $75B {#sec-us_gov_waste_agricultural_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high economist consensus. [CATEGORY 1: Direct Spending]
+
+**Source**: [@ewg-farm-subsidies]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$50B, $120B] • Distribution: Lognormal (SE: $25B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $50B and $120B (±47%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_agricultural_subsidies.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Corporate Welfare Waste: $181B {#sec-us_gov_waste_corporate_welfare}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits, semiconductor aid, aviation support. Agricultural subsidies are highly regressive (top 10% receive 63%). Cato Institute forensic tally. [CATEGORY 1: Direct Spending]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150B, $220B] • Distribution: Normal (SE: $20B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $150B and $220B (±19%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_corporate_welfare.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Drug War Cost: $90B {#sec-us_gov_waste_drug_war}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY 1: Direct Spending]
+
+**Source**: [@drugpolicyalliance2021]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$60B, $150B] • Distribution: Lognormal (SE: $30B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $60B and $150B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_drug_war.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Fossil Fuel Subsidies (Explicit): $50B {#sec-us_gov_waste_fossil_fuel_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). This figure includes only explicit subsidies (~$50B) for defensibility. [CATEGORY 1: Direct Spending]
+
+**Source**: [@imf-fossilfuel2023]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$30B, $80B] • Distribution: Lognormal (SE: $15B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $30B and $80B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_fossil_fuel_subsidies.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Healthcare System Inefficiency: $1.20T {#sec-us_gov_waste_healthcare_inefficiency}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]
+
+**Source**: [@papanicolas2018]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1T, $1.50T] • Distribution: Normal (SE: $150B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $1T and $1.50T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_healthcare_inefficiency.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Housing/Zoning Restrictions Cost: $1.40T {#sec-us_gov_waste_housing_zoning}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]
+
+**Source**: [@hsieh-moretti2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$500B, $2T] • Distribution: Lognormal (SE: $300B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $500B and $2T (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_housing_zoning.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Military Overspend: $615B {#sec-us_gov_waste_military_overspend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending above 'Strict Deterrence' baseline. Current budget ~$900B supports global power projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$500B, $750B] • Distribution: Normal (SE: $75B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $500B and $750B (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_military_overspend.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Regulatory Red Tape Waste: $580B {#sec-us_gov_waste_regulatory_red_tape}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deadweight loss from US regulatory red tape (procedural friction without safety benefits). Competitive Enterprise Institute estimates total regulatory burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B. [CATEGORY 2: Compliance Burden]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$290B, $1T] • Distribution: Lognormal (SE: $200B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $290B and $1T (±61%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_regulatory_red_tape.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Tariff Cost (GDP Loss): $160B {#sec-us_gov_waste_tariffs}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices. [CATEGORY 3: GDP Loss]
+
+**Source**: [@yalebudgetlab2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$90B, $250B] • Distribution: Normal (SE: $50B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $90B and $250B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_tariffs.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Tax Compliance Waste: $546B {#sec-us_gov_waste_tax_compliance}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing. [CATEGORY 2: Compliance Burden]
+
+**Source**: [@taxfoundation2024-compliance]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$450B, $650B] • Distribution: Normal (SE: $50B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $450B and $650B (±18%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_tax_compliance.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### US Heart Disease Annual Cost: $363B {#sec-us_heart_disease_annual_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7273,6 +8202,28 @@ Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,00
 #### Input Distribution
 
 {{< include ../figures/distribution-approved_drug_disease_pairings.qmd >}}
+
+*Core definition*
+
+:::
+
+### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 years, 18 years] • Distribution: Triangular
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 8 years and 18 years (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-avg_life_extension_per_beneficiary.qmd >}}
 
 *Core definition*
 
@@ -7882,6 +8833,28 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 :::
 
+### Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.030, $1.00] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.030 and $1.00 (±485%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_observational_cost_per_patient.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8313,6 +9286,20 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 #### Input Distribution
 
 {{< include ../figures/distribution-trial_relevant_diseases_count.qmd >}}
+
+*Core definition*
+
+:::
+
+### Overlap Discount Factor: 1:1 {#sec-us_gov_waste_overlap_discount}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Overlap discount factor between US government waste categories. Set to 1.0 (no discount). Categories are treated as additive, recognizing that any overlap is offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

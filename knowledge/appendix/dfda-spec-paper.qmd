@@ -1,26 +1,31 @@
 ---
-title: 'The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)'
+title: 'The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)'
 description: We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at {{< var dfda_trial_cost_reduction_factor >}} lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
 abstract: |
-  Only 1-10% of adverse drug events get reported to the FDA. Billions of people generate continuous
-  health data through wearables (heart rate, sleep, activity, symptoms daily) while starting and stopping
-  treatments. This data could detect treatment effects but remains unharvested.
+  Treatments that could save lives take an average of {{< var efficacy_lag_years >}} to complete clinical
+  trials after discovery. Since 1962, these delays have contributed to an estimated
+  {{< var existing_drugs_efficacy_lag_deaths_total >}} preventable deaths. Meanwhile, only 1-10% of adverse
+  drug events get reported to the FDA, and billions of people generate continuous health data through
+  wearables and apps that remains unharvested.
 
-  A two-stage system solves the observational data problem. Stage 1
-  ({{< var dfda_observational_cost_per_patient >}}/patient): aggregate millions of natural experiments,
-  score causal confidence using Bradford Hill criteria via the Predictor Impact Score. Observational data
-  finds signals cheaply but cannot prove causation. Stage 2
+  We present a two-stage framework that transforms this data into validated treatment recommendations.
+  Stage 1 ({{< var dfda_observational_cost_per_patient >}}/patient): aggregate millions of natural
+  experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric
+  operationalizing six Bradford Hill causality criteria. Stage 2
   ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient): confirm top signals through pragmatic trials
-  embedded in routine care. These are {{< var dfda_trial_cost_reduction_factor >}} cheaper than traditional
-  Phase III because they use existing clinical infrastructure, not specialized trial sites. This cost
-  estimate is based on a meta-analysis of 108 pragmatic trials plus large-scale implementations like
-  RECOVERY and ADAPTABLE.
+  embedded in routine care, {{< var dfda_trial_cost_reduction_factor >}} cheaper than traditional Phase III
+  trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like
+  RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score
+  (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation.
 
-  Output: treatment rankings by effectiveness with validated effect sizes. Companies register treatments
-  in minutes at zero cost. Patients generate outcome data worth
-  {{< var traditional_phase3_cost_per_patient >}}/patient. The Predictor Impact Score operationalizes six
-  Bradford Hill criteria using saturation functions, enabling automated causal signal detection from
-  observational data at population scale.
+  The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels,"
+  per-condition documents ranking all treatments by quantitative effect size (inverting the traditional
+  per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values
+  (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading
+  system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial
+  results feed back to calibrate observational models, creating a learning health system where accuracy
+  improves continuously.
+
   High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This
   framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated
   causal claims.
