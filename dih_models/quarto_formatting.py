@@ -100,7 +100,7 @@ def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", i
                 source_ref_value = str(source_ref_val)
 
         # Link to parameters-and-calculations.qmd section for this parameter
-        href = f"/knowledge/appendix/parameters-and-calculations#sec-{param_name.lower()}"
+        href = f"/knowledge/appendix/parameters-and-calculations.html#sec-{param_name.lower()}"
         link_text = "View details, calculation & sources"
 
         # Build tooltip from Parameter metadata with credibility indicators
@@ -193,7 +193,7 @@ def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", i
         # Calculated parameter without source_ref: link to parameters-and-calculations.qmd
         # Auto-link to the generated section in parameters-and-calculations.qmd
         # Use absolute path for consistency with other calculated parameters
-        href = f"/knowledge/appendix/parameters-and-calculations#sec-{param_name.lower()}"
+        href = f"/knowledge/appendix/parameters-and-calculations.html#sec-{param_name.lower()}"
 
         # Build tooltip from available metadata
         tooltip_parts = []

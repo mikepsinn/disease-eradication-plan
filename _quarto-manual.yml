@@ -20,6 +20,9 @@ dih-render:
   netlify-cname: "manual-warondisease-org.netlify.app"
   # Strip "(95% CI: ...)" from variable display values for general-audience reading
   show-confidence-intervals: false
+  # Strip <a> wrappers from parameter values (relative HTML links break in PDF/EPUB)
+  # Trade-off: HTML output also loses clickable params, but sidebar still links to calculations page
+  show-parameter-links: false
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
 
@@ -55,7 +58,7 @@ book:
             text: "All Papers & Publications"
           - href: https://impact.warondisease.org
             text: "Economic Analysis"
-          - href: knowledge/appendix/parameters-and-calculations-manual.qmd
+          - href: knowledge/appendix/parameters-and-calculations.qmd
             text: "Parameters & Calculations"
           - href: https://iab.warondisease.org
             text: "Incentive Alignment Bonds"
@@ -169,7 +172,7 @@ book:
     - part: "Detailed Calculations"
       chapters:
         # REMOVED: Auto-generated reference (~50p), link to online version instead
-        # - knowledge/appendix/parameters-and-calculations-manual.qmd
+        # - knowledge/appendix/parameters-and-calculations.qmd
         # STANDALONE PAPER - see graveyard.warondisease.org
         # - knowledge/appendix/invisible-graveyard.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
         - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis with multiple data sources, CPI adjustments, sensitivity analysis ~10p

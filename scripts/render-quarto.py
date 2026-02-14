@@ -420,6 +420,9 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         "epub_output_file": epub_output_file,
         # Whether to show "(95% CI: ...)" in variable display values (default: True)
         "show_confidence_intervals": dih_render.get("show-confidence-intervals", True),
+        # Whether to keep <a> links on parameter values (default: True)
+        # Set to false for builds where HTML links don't work (PDF-only, EPUB/Kindle)
+        "show_parameter_links": dih_render.get("show-parameter-links", True),
     }
 
 
@@ -572,6 +575,69 @@ def _strip_confidence_intervals(variables_path: Path, verbose: bool = True) -> i
     return stripped
 
 
+def _strip_parameter_links(variables_path: Path, verbose: bool = True) -> int:
+    """
+    Strip <a> wrappers from parameter values in _variables.yml, keeping display text.
+
+    Converts clickable parameter links to plain text for formats where HTML links
+    don't work well (PDF, EPUB/Kindle). The display value and tooltip span are
+    preserved; only the <a> wrapper is removed.
+
+    Example:
+        <a href="..." class="parameter-link" ...>$89</a>  →  $89
+
+    Args:
+        variables_path: Path to _variables.yml in the build temp directory.
+        verbose: Whether to print status messages.
+
+    Returns:
+        Number of links stripped.
+    """
+    if not variables_path.exists():
+        return 0
+
+    with open(variables_path, encoding="utf-8") as f:
+        content = f.read()
+
+    original = content
+
+    # Strip <a class="parameter-link" ...>text</a> → text
+    # YAML double-quoted strings escape internal quotes as \" (backslash-quote in raw file)
+    content, n = re.subn(
+        r'<a\s[^>]*class=\\\\"parameter-link\\\\"[^>]*>(.*?)</a>',
+        r'\1',
+        content
+    )
+
+    # Strip <span class="parameter-definition" ...>text</span> → text
+    content, n2 = re.subn(
+        r'<span\s[^>]*class=\\\\"parameter-definition\\\\"[^>]*>(.*?)</span>',
+        r'\1',
+        content
+    )
+    n += n2
+
+    # Strip <span class="parameter-link" ...>text</span> → text (constants like DAYS_PER_YEAR)
+    content, n3 = re.subn(
+        r'<span\s[^>]*class=\\\\"parameter-link\\\\"[^>]*>(.*?)</span>',
+        r'\1',
+        content
+    )
+    n += n3
+
+    if content != original:
+        with open(variables_path, "w", encoding="utf-8", newline='\n') as f:
+            f.write(content)
+
+    if verbose:
+        if n > 0:
+            print(f"[OK] Stripped {n} parameter links from _variables.yml", flush=True)
+        else:
+            print("[*] No parameter links found to strip", flush=True)
+
+    return n
+
+
 def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]:
     """
     Create temp build directory with cross-site link rewriting.
@@ -707,6 +773,11 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     if not metadata.get("show_confidence_intervals", True):
         target_vars = build_temp / "_variables.yml"
         _strip_confidence_intervals(target_vars, verbose=verbose)
+
+    # Strip <a> wrappers from parameter values if config says so
+    if not metadata.get("show_parameter_links", True):
+        target_vars = build_temp / "_variables.yml"
+        _strip_parameter_links(target_vars, verbose=verbose)
 
     # Use per-paper filtered parameters-and-calculations.qmd if available
     # This ensures the appendix only includes parameters used by this paper.
