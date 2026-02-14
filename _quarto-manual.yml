@@ -18,6 +18,8 @@ dih-render:
   # No target-url - this IS the main book site
   netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
   netlify-cname: "manual-warondisease-org.netlify.app"
+  # Strip "(95% CI: ...)" from variable display values for general-audience reading
+  show-confidence-intervals: false
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
 

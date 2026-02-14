@@ -418,6 +418,8 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         # Read desired output filenames from dih-render, then format.* fallback.
         "pdf_output_file": pdf_output_file,
         "epub_output_file": epub_output_file,
+        # Whether to show "(95% CI: ...)" in variable display values (default: True)
+        "show_confidence_intervals": dih_render.get("show-confidence-intervals", True),
     }
 
 
@@ -521,6 +523,53 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
         f.write(content)
 
     return True
+
+
+def _strip_confidence_intervals(variables_path: Path, verbose: bool = True) -> int:
+    """
+    Strip "(95% CI: ...)" text from variable display values in _variables.yml.
+
+    Removes CI ranges from both display text and title/tooltip attributes so
+    general-audience builds (book, EPUB) show clean numbers without uncertainty
+    ranges. Academic paper builds keep CIs by not calling this function.
+
+    Args:
+        variables_path: Path to _variables.yml in the build temp directory.
+        verbose: Whether to print status messages.
+
+    Returns:
+        Number of CI occurrences stripped.
+    """
+    if not variables_path.exists():
+        return 0
+
+    with open(variables_path, encoding="utf-8") as f:
+        content = f.read()
+
+    original = content
+    stripped = 0
+
+    # Strip CI from display text: " (95% CI: $10.5M-$19.5M)" or " (95% CI: 8 years-18 years)"
+    # Pattern: space, open paren, "95% CI: ", content up to closing paren
+    content, n = re.subn(r' \(95% CI: [^)]+\)', '', content)
+    stripped += n
+
+    # Strip CI from title attributes: "| 95% CI: [$78, $100] |" or "| 95% CI: [8 years, 18 years] |"
+    # Keep the surrounding pipes clean (remove leading pipe + CI + trailing pipe, leave one pipe)
+    content, n = re.subn(r' \| 95% CI: \[[^\]]*\]', '', content)
+    stripped += n
+
+    if content != original:
+        with open(variables_path, "w", encoding="utf-8", newline='\n') as f:
+            f.write(content)
+
+    if verbose:
+        if stripped > 0:
+            print(f"[OK] Stripped {stripped} confidence intervals from _variables.yml", flush=True)
+        else:
+            print("[*] No confidence intervals found to strip", flush=True)
+
+    return stripped
 
 
 def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]:
@@ -653,6 +702,11 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
                 raise FileNotFoundError(
                     f"No _variables.yml found. Run: python scripts/generate-everything-parameters-variables-calculations-references.py"
                 )
+
+    # Strip confidence intervals from _variables.yml if config says so
+    if not metadata.get("show_confidence_intervals", True):
+        target_vars = build_temp / "_variables.yml"
+        _strip_confidence_intervals(target_vars, verbose=verbose)
 
     # Use per-paper filtered parameters-and-calculations.qmd if available
     # This ensures the appendix only includes parameters used by this paper.

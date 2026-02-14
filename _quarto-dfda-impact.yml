@@ -21,6 +21,7 @@ dih-render:
   pdf-output-file: dfda-impact-paper.pdf
   netlify-site-id: "a314a33e-3155-4067-8624-706266899419"
   netlify-cname: "impact-dfda-earth.netlify.app"
+  show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A pill or capsule with an upward impact arrow."
 

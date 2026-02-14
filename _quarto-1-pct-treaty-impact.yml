@@ -17,6 +17,7 @@ dih-render:
   pdf-output-file: 1-percent-treaty-impact.pdf
   netlify-site-id: "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094"
   netlify-cname: "impact-warondisease-org.netlify.app"
+  show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "'1%' text on a scroll or treaty document shape."
 

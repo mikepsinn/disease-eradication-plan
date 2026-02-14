@@ -21,6 +21,7 @@ dih-render:
   pdf-output-file: invisible-graveyard.pdf
   netlify-site-id: "ef37ca63-13e5-4403-bf47-173763af79ab"
   netlify-cname: "invisible-graveyard-warondisease-org.netlify.app"
+  show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A gravestone with a pill on it."
 

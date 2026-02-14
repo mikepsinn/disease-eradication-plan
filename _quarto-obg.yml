@@ -20,6 +20,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "123f44a0-d5b6-4ff3-9375-1f7e47fca053"
   netlify-cname: "obg-warondisease-org.netlify.app"
+  show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A pie chart with optimization arrows pointing upward."
 

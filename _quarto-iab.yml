@@ -20,6 +20,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "8f7611db-1075-48a2-abd8-7f77f55538f9"
   netlify-cname: "iab-warondisease-org.netlify.app"
+  show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Letters 'IAB' inside a certificate/ribbon badge shape."
 

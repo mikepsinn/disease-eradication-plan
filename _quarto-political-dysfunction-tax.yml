@@ -19,6 +19,7 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   netlify-site-id: "1c74b376-7837-436e-b57b-8579b7a1939e"
   netlify-cname: "political-dysfunction-tax-warondisease-org.netlify.app"
+  show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Political dysfunction tax"
 
