@@ -1,20 +1,21 @@
 ---
 title: 'The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding'
 subtitle: Generating Integrated Public Budget Recommendations Using Diminishing Returns Modeling and Cost-Effectiveness Analysis
-description: 'The Optimal Budget Generator (OBG) answers: ''How should governments allocate public spending to maximize welfare?'' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated public budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category''s optimal spending level.'
+description: 'The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact Score (BIS) measures confidence in each recommendation based on the quality of causal evidence.'
 abstract: |
-  20-40% of public spending is misallocated relative to outcome-maximizing benchmarks. This represents $8-16 trillion
-  annually in potential welfare gains. Budget processes respond to lobbying intensity and historical
-  precedent rather than comparative effectiveness evidence.
+  20-40% of public goods funding is misallocated relative to outcome-maximizing benchmarks, representing
+  trillions annually in foregone welfare gains. Budget processes respond to lobbying intensity and historical
+  precedent rather than causal evidence of effectiveness.
 
-  The Optimal Budget Generator combines two evidence sources for each spending category.
-  Diminishing returns modeling: where does spending hit saturation? Cost-effectiveness analysis:
-  what's the marginal impact per dollar? Where methods agree, confidence is high. Where they
-  diverge, uncertainty is quantified.
+  The Optimal Budget Generator (OBG) applies causal inference, diminishing returns modeling, and
+  cost-effectiveness analysis to determine optimal public goods funding levels that maximize two welfare
+  metrics: real after-tax median income growth and median healthy life years. For each spending category,
+  OBG estimates an Optimal Spending Level (OSL) identifying where marginal returns equal opportunity cost.
 
-  Each category gets an optimal spending level with a Budget Impact Score (study quality × statistical
-  precision × temporal recency) measuring confidence. Output: gap analysis showing which categories
-  are over- or underfunded relative to evidence-based benchmarks.
+  The Budget Impact Score (BIS) measures confidence in each OSL estimate based on study quality, statistical
+  precision, and temporal recency of the underlying causal evidence. The result is a gap analysis showing
+  which categories are over- or underfunded relative to evidence-based benchmarks, enabling systematic
+  reallocation from low-return to high-return public investments.
 aliases:
   - /budget-optimization.html
   - /optimal-budget-generator.html
