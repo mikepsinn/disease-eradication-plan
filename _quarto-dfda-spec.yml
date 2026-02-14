@@ -78,10 +78,10 @@ metadata:
   language: "en-US"
   subject: "Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods"
   category: "Academic Paper, Medical Research, Methodology"
-  coi-statement: The author declares no competing interests.
+  coi-statement: "The author declares no competing interests. The author does maintain a bias toward the Bradford Hill criteria producing correct answers, which some regulatory agencies may find disruptive."
   data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
-  ethics-statement: This research did not involve human subjects or animal experimentation.
-  funding: "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors."
+  ethics-statement: "This research did not involve human subjects. It proposes a framework that would involve considerably more of them, but with their informed consent and at 44x lower cost."
+  funding: "This research received no funding. The statistical framework described herein costs less to develop than a single traditional Phase III trial costs to delay."
   github-profile: "https://github.com/mikepsinn"
   linkedin: "https://www.linkedin.com/in/mikesinn"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"

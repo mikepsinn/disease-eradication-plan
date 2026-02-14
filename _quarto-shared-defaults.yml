@@ -112,10 +112,10 @@ metadata:
   open-graph: true
 
   # Academic statements (for journal submissions)
-  funding: "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors."
+  funding: "No funding was received. The author notes the irony of writing extensively about optimal resource allocation while being, himself, sub-optimally resourced."
   data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
-  coi-statement: "The author declares no competing interests."
-  ethics-statement: "This research did not involve human subjects or animal experimentation."
+  coi-statement: "The author declares no competing interests, beyond a preference for being alive and for arithmetic, which may bias conclusions toward 'fewer people should die' and 'money should be spent on things that work.'"
+  ethics-statement: "This research did not involve human experimentation. The policies it examines, however, arguably do."
 
 # HTML format defaults (for papers/websites)
 format:
