@@ -861,7 +861,7 @@
             "Why This Differs from Failed Megaprojects"
           ],
           "published": true,
-          "lastmod": "2026-02-12"
+          "lastmod": "2026-02-14"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-impact.qmd",
@@ -1006,7 +1006,7 @@
     {
       "id": "dfda-spec",
       "type": "website",
-      "title": "Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
+      "title": "The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
       "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
       "siteUrl": "https://dfda-spec.warondisease.org",
       "favicon": "https://dfda-spec.warondisease.org/assets/icons/dfda-favicon.png",
@@ -1102,7 +1102,7 @@
         {
           "path": "index.qmd",
           "url": "https://dfda-spec.warondisease.org/",
-          "title": "Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
+          "title": "The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
           "description": "We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.",
           "image": "https://dfda-spec.warondisease.org/assets/og-images/knowledge/appendix/dfda-spec-paper-og-bw-academic.jpg",
           "tags": [
@@ -1234,7 +1234,7 @@
             "Appendix E: Analysis Workflow"
           ],
           "published": true,
-          "lastmod": "2026-02-13"
+          "lastmod": "2026-02-14"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations-dfda-spec.qmd",
@@ -3972,9 +3972,9 @@
           "sections": [
             "The 1% Treaty: Harnessing Greed to Eradicate Disease",
             "Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
-            "Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
             "Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable",
             "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
+            "The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)",
             "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag",
             "The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding",
             "The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy",

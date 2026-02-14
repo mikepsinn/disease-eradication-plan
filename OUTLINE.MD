@@ -947,14 +947,14 @@
 ---
 
 ## _quarto-dfda-impact.yml
-**Title:** A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents
+**Title:** Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents
 **Type:** website
-**Files:** 1 | **Words:** 11,407
+**Files:** 1 | **Words:** 11,408
 
 #### knowledge/appendix/dfda-impact-paper.qmd
-**Title:** A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents
+**Title:** Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents
 **Description:** Only {{< var new_disease_first_treatments_per_year >}} get their first treatment each year. With {{< var diseases_without_effective_treatment >}} lacking effective treatments, the backlog would take {...
-**Stats:** 11,407 words | 1,226 lines
+**Stats:** 11,408 words | 1,226 lines
 
   - Executive Summary
   - Protocol, Not Platform
@@ -1036,14 +1036,14 @@
 ---
 
 ## _quarto-dfda-spec.yml
-**Title:** The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
+**Title:** The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
 **Type:** website
-**Files:** 1 | **Words:** 14,255
+**Files:** 1 | **Words:** 14,319
 
 #### knowledge/appendix/dfda-spec-paper.qmd
-**Title:** The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
+**Title:** The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Com...
-**Stats:** 14,255 words | 1,976 lines
+**Stats:** 14,319 words | 1,981 lines
 
   - Abstract
   - System Overview: From Methodology to Implementation {#system-overview}
@@ -1347,7 +1347,7 @@
 ## _quarto-manual.yml
 **Title:** How to End War and Disease
 **Type:** book
-**Files:** 67 | **Words:** 164,770
+**Files:** 67 | **Words:** 167,310
 
 #### index.qmd
 **Title:** Start Here
@@ -3252,16 +3252,16 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 4,691 words | 760 lines
+**Stats:** 7,231 words | 990 lines
 
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
-    - [A Decentralized FDA: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+    - [Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
     - [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://optimocracy.warondisease.org)
-    - [The Decentralized FDA (dFDA) Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
+    - [The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
     - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
-    - [The Optimal Budget Generator: A Protocol for Optimizing Public Goods Funding to Maximize Median Health and Wealth](https://obg.warondisease.org)
-    - [The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies](https://opg.warondisease.org)
+    - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](https://obg.warondisease.org)
+    - [The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](https://opg.warondisease.org)
     - [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
     - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
     - [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
@@ -3373,14 +3373,14 @@
 ---
 
 ## _quarto-obg.yml
-**Title:** The Optimal Budget Generator: A Protocol for Optimizing Public Goods Funding to Maximize Median Health and Wealth
+**Title:** The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding
 **Type:** website
-**Files:** 1 | **Words:** 8,688
+**Files:** 1 | **Words:** 8,742
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding
-**Description:** The Optimal Budget Generator (OBG) answers: 'How should governments allocate public spending to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years....
-**Stats:** 8,688 words | 1,223 lines
+**Description:** The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two welfare metri...
+**Stats:** 8,742 words | 1,224 lines
 
   - Abstract {.unnumbered}
   - System Overview {#obg-system-overview}
@@ -3478,14 +3478,14 @@
 ---
 
 ## _quarto-opg.yml
-**Title:** The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies
+**Title:** The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy
 **Type:** website
-**Files:** 1 | **Words:** 12,804
+**Files:** 1 | **Words:** 12,799
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
-**Title:** The Optimal Policy Generator: A Protocol for Identifying Welfare-Maximizing Public Policies
+**Title:** The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy
 **Description:** The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recomme...
-**Stats:** 12,804 words | 1,896 lines
+**Stats:** 12,799 words | 1,896 lines
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}
@@ -4136,12 +4136,12 @@
 |--------|-------|--------------|-----|
 | _quarto-1-pct-treaty-impact.yml | The 1% Treaty: Harnessing Greed to Eradicate Disea... | `@1-pct-treaty-impact-paper-2025` | 10.5281/zenodo.18161560 |
 | _quarto-cost-of-change.yml | The Price of Political Change: A Cost-Benefit Fram... | `@cost-of-change-paper-2025` | 10.5281/zenodo.18356215 |
-| _quarto-dfda-impact.yml | A Decentralized FDA: How to Prevent a Year of Deat... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18243914 |
-| _quarto-dfda-spec.yml | The Decentralized FDA (dFDA) Protocol: Two-Stage V... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18203375 |
+| _quarto-dfda-impact.yml | Decentralized FDA Impact Analysis: How to Prevent ... | `@dfda-impact-paper-2025` | 10.5281/zenodo.18243914 |
+| _quarto-dfda-spec.yml | The Decentralized FDA Protocol: Two-Stage Validati... | `@dfda-spec-paper-2025` | 10.5281/zenodo.18203375 |
 | _quarto-iab.yml | Incentive Alignment Bonds: Making Public Goods Fin... | `@iab-paper-2025` | 10.5281/zenodo.18203221 |
 | _quarto-invisible-graveyard.yml | The Invisible Graveyard: Quantifying the Mortality... | `@invisible-graveyard-paper-2025` | 10.5281/zenodo.18356231 |
-| _quarto-obg.yml | The Optimal Budget Generator: A Protocol for Optim... | `@obg-paper-2025` | 10.5281/zenodo.18356209 |
-| _quarto-opg.yml | The Optimal Policy Generator: A Protocol for Ident... | `@opg-paper-2025` | 10.5281/zenodo.18603834 |
+| _quarto-obg.yml | The Optimal Budget Generator: A Causal Inference P... | `@obg-paper-2025` | 10.5281/zenodo.18356209 |
+| _quarto-opg.yml | The Optimal Policy Generator: A Causal Inference P... | `@opg-paper-2025` | 10.5281/zenodo.18603834 |
 | _quarto-optimocracy.yml | Optimocracy: Causal Inference on Cross-Jurisdictio... | `@optimocracy-paper-2025` | 10.5281/zenodo.18356213 |
 | _quarto-political-dysfunction-tax.yml | The Political Dysfunction Tax | `@political-dysfunction-tax-paper-2025` | 10.5281/zenodo.18603840 |
 | _quarto-us-efficiency-audit.yml | United States Efficiency Audit | `@us-efficiency-audit-paper-2025` | 10.5281/zenodo.18447476 |
@@ -4155,6 +4155,6 @@
 
 - Quarto configs: 14
 - Unique QMD files: 83
-- Total words: 340,993
+- Total words: 343,647
 - Orphaned files: 26
 - Paper configs: 12
