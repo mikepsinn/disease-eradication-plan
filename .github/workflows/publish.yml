@@ -1006,7 +1006,7 @@ jobs:
 
 
   build-obg:
-    name: "Build Optimal Budget Generator: Evidence-Based Budget Al"
+    name: "Build The Optimal Budget Generator: A Protocol for Optim"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1074,7 +1074,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build Optimal Budget Generator: Evidence-Based Budget Al"
+      - name: "Render Build The Optimal Budget Generator: A Protocol for Optim"
         run: python scripts/render-quarto.py obg
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -1115,7 +1115,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build Optimal Budget Generator: Evidence-Based Budget Al to Netlify (immediate)"
+      - name: "Deploy Build The Optimal Budget Generator: A Protocol for Optim to Netlify (immediate)"
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -1136,7 +1136,7 @@ jobs:
 
 
 
-      - name: "Upload Build Optimal Budget Generator: Evidence-Based Budget Al PDF to Zenodo (draft)"
+      - name: "Upload Build The Optimal Budget Generator: A Protocol for Optim PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}

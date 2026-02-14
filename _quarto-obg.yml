@@ -37,8 +37,8 @@ author:
         url: https://acceleratedmedicine.org
 
 website:
-  title: "Optimal Budget Generator: Evidence-Based Budget Allocation Framework"
-  description: "The Optimal Budget Generator (OBG) answers: 'How should we allocate the budget to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's target."
+  title: "The Optimal Budget Generator: A Protocol for Optimizing Public Goods Funding to Maximize Median Health and Wealth"
+  description: "The Optimal Budget Generator (OBG) answers: 'How should governments allocate public spending to maximize welfare?' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated public budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category's optimal spending level."
   site-url: https://obg.warondisease.org
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
