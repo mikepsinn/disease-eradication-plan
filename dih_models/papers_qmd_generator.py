@@ -159,6 +159,10 @@ def extract_paper_info(
         abstract = replace_variables(abstract, variables, highlight_missing=False)
     if abstract:
         abstract = strip_confidence_intervals(abstract)
+        # Normalize YAML block scalar newlines: collapse single newlines into spaces,
+        # preserve paragraph breaks (double newlines)
+        abstract = re.sub(r'\n{2,}', '\n\n', abstract.strip())
+        abstract = re.sub(r'(?<!\n)\n(?!\n)', ' ', abstract)
 
     # Extract author info from book.author or root author
     author_info: Dict[str, Any] = {}
@@ -325,8 +329,13 @@ def _format_paper_entry(paper: Dict[str, Any]) -> List[str]:
     # Abstract (preferred) or description
     display_text = paper.get("abstract") or paper.get("description")
     if display_text:
-        lines.append(f"> {display_text}")
-        lines.append("")
+        # Prefix every line with > for proper blockquote rendering
+        for para in display_text.split("\n\n"):
+            lines.append("> " + para)
+            lines.append(">")
+        # Replace trailing empty blockquote with blank line
+        if lines[-1] == ">":
+            lines[-1] = ""
 
     lines.append("")  # Extra spacing between entries
 
