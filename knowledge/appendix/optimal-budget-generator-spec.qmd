@@ -1,7 +1,7 @@
 ---
-title: 'Optimal Budget Generator: Evidence-Based Budget Allocation Framework'
-subtitle: Generating Integrated Budget Recommendations Using Diminishing Returns Modeling and Cost-Effectiveness Analysis
-description: 'The Optimal Budget Generator (OBG) answers: ''How should we allocate the budget to maximize welfare?'' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category''s target.'
+title: 'The Optimal Budget Generator: A Protocol for Optimizing Public Goods Funding to Maximize Median Health and Wealth'
+subtitle: Generating Integrated Public Budget Recommendations Using Diminishing Returns Modeling and Cost-Effectiveness Analysis
+description: 'The Optimal Budget Generator (OBG) answers: ''How should governments allocate public spending to maximize welfare?'' using two metrics: real after-tax median income growth and median healthy life years. Unlike isolated spending targets, OBG generates integrated public budget recommendations that account for tradeoffs between categories. The Budget Impact Score (BIS) measures confidence in each category''s optimal spending level.'
 abstract: |
   20-40% of public spending is misallocated relative to outcome-maximizing benchmarks. This represents $8-16 trillion
   annually in potential welfare gains. Budget processes respond to lobbying intensity and historical
@@ -79,7 +79,9 @@ The result is a gap analysis showing which categories are underfunded relative t
 A dashboard showing spending gaps by category, with clear recommendations:
 
 ::: {.callout-note}
-## Example: US Federal Budget Gap Analysis
+## Illustrative Example: US Federal Budget Gap Analysis
+
+The following table demonstrates how OBG output would appear. OSL estimates for fully derived categories (pragmatic trials, vaccinations) come from the worked examples in Sections 6-7. Remaining OSL estimates are preliminary and based on cross-country benchmarking; full derivations are future work.
 
 | Category | Current | OSL | Gap | Evidence | Income Effect | Health Effect | Action |
 |----------|---------|-----|-----|----------|---------------|---------------|--------|
@@ -147,7 +149,7 @@ Budget allocation is fundamentally a problem of social choice under uncertainty 
 
 Current budget allocation follows a process dominated by:
 
-1. **Lobbying intensity**: Categories with organized beneficiaries (defense contractors, agricultural lobbies) receive disproportionate funding regardless of evidence
+1. **Lobbying intensity**: Categories with organized beneficiaries (military contractors, agricultural lobbies) receive disproportionate funding regardless of evidence
 2. **Historical inertia**: This year's budget is last year's budget plus a percentage, not a fresh optimization
 3. **Visible vs. invisible beneficiaries**: Programs with identifiable beneficiaries (veterans) outcompete programs with diffuse beneficiaries (basic research)
 4. **Political salience**: Crises drive spending regardless of cost-effectiveness (terrorism vs. air pollution)
@@ -600,7 +602,7 @@ $$
 \text{Priority} = |\text{Gap}| \times \text{BIS} = \$49.5B \times 0.90 = 44.6
 $$
 
-This exceeds vaccinations (25.7), basic research (31.5), and even military reallocation (195.5 in absolute terms, but negative direction).
+Among categories requiring increased investment, this is the highest priority score, exceeding basic research (31.5), vaccinations (25.7), and early childhood (17.0). Military spending has a larger absolute priority score (195.5) due to its massive gap, but represents overinvestment requiring reduction.
 
 ## Cost-Effectiveness Threshold Analysis
 
@@ -741,7 +743,9 @@ $$
 
 Categories with large gaps AND high confidence should be addressed first.
 
-### Worked Example: Priority Ranking
+### Illustrative Example: Priority Ranking
+
+The following uses the same illustrative data from the dashboard example above. OSL estimates for pragmatic trials, vaccinations, and K-12 education are derived in Sections 5-7. Other OSL values are preliminary estimates based on cross-country benchmarking and should be treated as order-of-magnitude approximations. BIS scores reflect the author's assessment of available causal evidence quality rather than formal calculation from the BIS formula.
 
 | Category | Current | OSL | Gap | BIS | Inc | Hlth | Priority | Action |
 |----------|---------|-----|-----|-----|-----|------|----------|--------|
@@ -1174,14 +1178,16 @@ Phase 5: OUTPUT GENERATION
 
 - **Multi-Unit Reporting**: Presenting results in natural units, monetized equivalents, health units, and composite scores for interpretability.
 
-## Appendix C: Comparison to Actual US Budget {.appendix}
+## Appendix C: Illustrative Comparison to US Budget {.appendix}
 
-### Current US Discretionary Budget vs. OSL Targets
+This appendix applies the OBG methodology to the US discretionary budget as an illustrative exercise. "Current" figures reflect approximate FY2024 budget authority. OSL estimates for pragmatic trials, vaccinations, and K-12 education are derived from the worked examples in Sections 5-7. Other OSL values are preliminary estimates based on cross-country benchmarking and published cost-effectiveness evidence; they have not undergone the full OBG estimation pipeline and should be treated as order-of-magnitude approximations pending rigorous analysis. BIS scores reflect the author's qualitative assessment of causal evidence quality.
+
+### Illustrative US Discretionary Budget vs. OSL Targets
 
 | Category | Current ($B) | OSL ($B) | Gap ($B) | Gap % | BIS | Inc | Hlth | Priority |
 |----------|-------------|----------|----------|-------|-----|-----|------|----------|
-| Defense (discretionary) | 850 | 459 | -391 | -46% | 0.50 | − | − | 195 |
-| Non-defense discretionary | 915 | 1,350 | +435 | +48% | 0.65 | ++ | ++ | 283 |
+| Military (discretionary) | 850 | 459 | -391 | -46% | 0.50 | − | − | 195 |
+| Non-military discretionary | 915 | 1,350 | +435 | +48% | 0.65 | ++ | ++ | 283 |
 | ***- Pragmatic clinical trials*** | 0.5 | 50 | **+49.5** | **+9,900%** | 0.90 | ++ | +++ | **44.6** |
 | *- Education* | 80 | 120 | +40 | +50% | 0.75 | +++ | + | 30 |
 | *- Health (research)* | 50 | 100 | +50 | +100% | 0.80 | + | +++ | 40 |
@@ -1193,15 +1199,13 @@ Phase 5: OUTPUT GENERATION
 
 *Inc = effect on real after-tax median income growth. Hlth = effect on median healthy life years. Scale: +++ strong positive, ++ moderate, + weak, − negative.*
 
-**Key findings**:
+**Illustrative findings** (subject to the caveats above):
 
-1. **Extreme underinvestment in pragmatic trials**: At 9,900% below OSL with {{< var dfda_roi_rd_only >}} BCR, this represents the single largest misallocation in the federal budget
-2. **Severe overinvestment**: Military spending is ~85% above evidence-optimal levels
-3. **Severe underinvestment**: Vaccinations, basic research, health research far below evidence-optimal levels
-4. **Negative-return spending**: Agricultural subsidies should be eliminated entirely
-5. **Reallocation potential**: ~$400B could be reallocated from low/negative return to high-return categories, with pragmatic trials as the primary target
-
-**Estimated welfare gain from OSL alignment**: Moving from current allocation to OSL targets would increase the combined welfare metric (real after-tax median income growth + median healthy life years) by an estimated 3-5% of GDP equivalent ($750B-$1.25T annually), based on the differential returns between over- and under-invested categories. Pragmatic clinical trials alone account for approximately $30-50B of this potential gain due to their extreme BCR and impact on both metrics.
+1. **Extreme underinvestment in pragmatic trials**: At 9,900% below OSL with {{< var dfda_roi_rd_only >}} BCR, this appears to be the single largest misallocation in the federal budget (see Section 6 for full derivation)
+2. **Apparent overinvestment**: Military spending is ~$391B (46%) above preliminary OSL estimates based on cross-country benchmarking
+3. **Apparent underinvestment**: Vaccinations, basic research, and health research appear far below evidence-optimal levels
+4. **Negative-return spending**: Agricultural subsidies produce negative welfare effects per the cost-effectiveness literature
+5. **Reallocation potential**: The direction of reallocation (from military and subsidies toward research, health, and education) is robust even if precise OSL magnitudes shift with better data
 
 ---
 

@@ -199,6 +199,8 @@ def extract_paper_info(config_path: Path, config_name: str) -> Optional[Dict[str
         "ethics_statement": metadata.get("ethics-statement", ""),
         "data_availability": metadata.get("data-availability", ""),
         "jel_codes": jel_codes,
+        "language": metadata.get("language", "en-US"),
+        "publisher": metadata.get("publisher", ""),
     }
 
 
@@ -447,6 +449,24 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
                 lines.append(f"{name}{tier_str}: {status}{type_str}")
             lines.append("")
 
+    # Suggested citation
+    author = paper.get("author_info", {})
+    author_name = author.get("name", "")
+    copyright_year = paper.get("copyright_year", "")
+    if author_name:
+        cite = f"{author_name}"
+        if copyright_year:
+            cite += f" ({copyright_year})"
+        cite += f". {title}."
+        if paper.get("edition"):
+            cite += f" {paper['edition']}."
+        if paper.get("doi"):
+            cite += f" https://doi.org/{paper['doi']}"
+        elif paper.get("site_url"):
+            cite += f" Available at {paper['site_url']}"
+        lines.append(f"SUGGESTED CITATION: {cite}")
+        lines.append("")
+
     # Statements
     coi = paper.get("coi_statement", "")
     funding = paper.get("funding", "")
@@ -463,6 +483,22 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
         if data_avail:
             lines.append(f"DATA: {data_avail}")
         lines.append("")
+
+    # SSRN "Publication Details for Manuscript Identification" box
+    # SSRN won't resolve Zenodo DOIs automatically, so use "Enter the details myself"
+    lines.append('--- SSRN "Publication Details" BOX ---')
+    lines.append('Select "Enter the details myself", then fill:')
+    publisher = paper.get("publisher", "")
+    if publisher:
+        lines.append(f"  Publisher: {publisher}")
+    if copyright_year:
+        lines.append(f"  Publication Date: {copyright_year}")
+    if paper.get("doi"):
+        lines.append(f"  DOI: {paper['doi']}")
+    if paper.get("site_url"):
+        lines.append(f"  URL: {paper['site_url']}")
+    lines.append("  (Leave Journal, Volume, Issue, Pages blank for working papers)")
+    lines.append("")
 
     lines.append("-->")
     lines.append("")
