@@ -315,11 +315,19 @@ def check_broken_internal_links(content, file_path, output_dir):
     # Get the directory containing the current HTML file
     file_dir = file_path.parent
 
+    in_script = False
     for i, line in enumerate(lines, 1):
-        # Skip HTML comments and script tags
-        if "<!--" in line:
-            continue
+        # Track multi-line script blocks
         if "<script" in line.lower():
+            in_script = True
+            continue
+        if "</script>" in line.lower():
+            in_script = False
+            continue
+        if in_script:
+            continue
+        # Skip HTML comments
+        if "<!--" in line:
             continue
 
         # Check both href and img src attributes

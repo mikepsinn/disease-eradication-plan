@@ -87,6 +87,20 @@ format:
               document.body.appendChild(script);
             })();
           </script>
+  epub:
+    filters:
+      - scripts/filters/strip-parameter-links.lua
+    output-file: "test-book.epub"
+    html-math-method:
+      method: webtex
+      url: "https://latex.codecogs.com/svg.latex?"
+    css: epub-math.css
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    epub-chapter-level: 2
+    echo: false
+    number-sections: false
   pdf:
     documentclass: report
     institute: "Institute for Accelerated Medicine"

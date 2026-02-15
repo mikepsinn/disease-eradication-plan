@@ -1303,6 +1303,17 @@ def render_quarto(
                     size_mb = epub_path.stat().st_size / (1024 * 1024)
                     print(f"[OK] EPUB exists: {epub_path} ({size_mb:.2f} MB)")
 
+                    # Post-process EPUB for e-reader compatibility
+                    validate_epub_script = project_root / "scripts" / "validate-epub.py"
+                    if validate_epub_script.exists():
+                        print(f"[*] Post-processing EPUB for e-reader compatibility...")
+                        fix_result = subprocess.run(
+                            [sys.executable, "-u", str(validate_epub_script), "--fix", str(epub_path)],
+                            cwd=str(project_root),
+                        )
+                        if fix_result.returncode != 0:
+                            print(f"[WARN] EPUB validation found issues (exit code {fix_result.returncode})", file=sys.stderr)
+
                     # Copy EPUB to assets/epubs for distribution
                     assets_epubs_dir = project_root / "assets" / "epubs"
                     assets_epubs_dir.mkdir(parents=True, exist_ok=True)

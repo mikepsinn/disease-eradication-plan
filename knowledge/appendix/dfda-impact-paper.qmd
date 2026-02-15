@@ -968,7 +968,7 @@ For economist verification, this section provides complete derivation chains for
 | Cost/DALY | {{< var dfda_direct_funding_cost_per_daly >}} | NPV costs, DALYs | ROM estimates, DALY calculations |
 | ROI | {{< var dfda_roi_rd_only >}} | Costs, savings | NPV analysis with 5-year ramp |
 
-All parameters, confidence intervals, and Monte Carlo distributions are documented in [Parameters and Calculations](/knowledge/appendix/parameters-and-calculations-dfda-impact.qmd).
+All parameters, confidence intervals, and Monte Carlo distributions are documented in [Parameters and Calculations](/knowledge/appendix/parameters-and-calculations.qmd).
 
 ## Key Analytical Assumptions
 
