@@ -20,9 +20,9 @@ dih-render:
   netlify-cname: "manual-warondisease-org.netlify.app"
   # Strip "(95% CI: ...)" from variable display values for general-audience reading
   show-confidence-intervals: false
-  # Strip <a> wrappers from parameter values (relative HTML links break in PDF/EPUB)
-  # Trade-off: HTML output also loses clickable params, but sidebar still links to calculations page
-  show-parameter-links: false
+  # Convert <a> parameter links to markdown [text](path.qmd) so Quarto resolves per-format
+  # Options: html (keep raw <a> tags), markdown (convert to links), none (strip to plain text)
+  parameter-link-format: markdown
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
 
@@ -394,10 +394,13 @@ format:
     author: "WISHONIA (translated by Mike P. Sinn)"
     # Cover image for EPUB (required for most e-book platforms)
     epub-cover-image: assets/cover/book-cover-3.jpg
-    # Math rendering: Use mathml (fast) instead of webtex (slow)
-    # MathML works in most modern e-readers (Apple Books, Kobo, Nook)
-    # Kindle users should use the PDF version for equations
-    html-math-method: mathml
+    # Math rendering: webtex converts LaTeX to embedded SVG images via CodeCogs
+    # Works on ALL e-readers (Kindle, Apple Books, Kobo) since images are universal
+    # MathML fails on \begin{gathered} (176/181 _latex vars) and Kindle strips it entirely
+    html-math-method:
+      method: webtex
+      url: "https://latex.codecogs.com/svg.latex?"
+    css: epub-math.css
     # Table of contents
     toc: true
     toc-depth: 3

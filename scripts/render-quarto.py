@@ -420,9 +420,10 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         "epub_output_file": epub_output_file,
         # Whether to show "(95% CI: ...)" in variable display values (default: True)
         "show_confidence_intervals": dih_render.get("show-confidence-intervals", True),
-        # Whether to keep <a> links on parameter values (default: True)
-        # Set to false for builds where HTML links don't work (PDF-only, EPUB/Kindle)
-        "show_parameter_links": dih_render.get("show-parameter-links", True),
+        # How to handle <a> links on parameter values (default: "html" = keep raw tags)
+        # Options: "html" (keep raw <a> tags), "markdown" (convert to [text](path.qmd)),
+        #          "none" (strip to plain text)
+        "parameter_link_format": dih_render.get("parameter-link-format", "html"),
     }
 
 
@@ -575,23 +576,29 @@ def _strip_confidence_intervals(variables_path: Path, verbose: bool = True) -> i
     return stripped
 
 
-def _strip_parameter_links(variables_path: Path, verbose: bool = True) -> int:
+def _convert_parameter_links(variables_path: Path, mode: str = "markdown", verbose: bool = True) -> int:
     """
-    Strip <a> wrappers from parameter values in _variables.yml, keeping display text.
+    Convert or strip parameter link HTML in _variables.yml.
 
-    Converts clickable parameter links to plain text for formats where HTML links
-    don't work well (PDF, EPUB/Kindle). The display value and tooltip span are
-    preserved; only the <a> wrapper is removed.
+    Modes:
+        "markdown": Convert <a class="parameter-link"> tags to markdown links
+                    with .qmd extensions so Quarto resolves them per-format.
+                    Strips <span> wrappers to plain text (no link to convert).
+        "none":     Strip all HTML wrappers to plain display text.
 
-    Example:
-        <a href="..." class="parameter-link" ...>$89</a>  →  $89
+    Examples (markdown mode):
+        <a href="/path.html#sec-x" class="parameter-link" ...>$89</a>
+            → [$89](/path.qmd#sec-x)
+        <span class="parameter-definition" ...>1,750</span>
+            → 1,750
 
     Args:
         variables_path: Path to _variables.yml in the build temp directory.
+        mode: "markdown" to convert links, "none" to strip entirely.
         verbose: Whether to print status messages.
 
     Returns:
-        Number of links stripped.
+        Number of tags converted/stripped.
     """
     if not variables_path.exists():
         return 0
@@ -600,18 +607,38 @@ def _strip_parameter_links(variables_path: Path, verbose: bool = True) -> int:
         content = f.read()
 
     original = content
+    n = 0
 
-    # Strip <a class="parameter-link" ...>text</a> → text
-    # YAML double-quoted strings escape internal quotes as \" (backslash-quote in raw file)
-    content, n = re.subn(
-        r'<a\s[^>]*class=\\\\"parameter-link\\\\"[^>]*>(.*?)</a>',
-        r'\1',
-        content
-    )
+    if mode == "markdown":
+        # Convert <a class="parameter-link" href="...">text</a> → [text](path.qmd#sec-...)
+        # In raw YAML, double-quoted strings escape internal quotes as \" (backslash + quote)
+        def _a_to_markdown(match: re.Match[str]) -> str:
+            tag = match.group(0)
+            text = match.group(1)
+            href_match = re.search(r'href=\\"([^"\\]+)\\"', tag)
+            if href_match:
+                href = href_match.group(1).replace('.html', '.qmd')
+                return f'[{text}]({href})'
+            return text
 
-    # Strip <span class="parameter-definition" ...>text</span> → text
+        content, n1 = re.subn(
+            r'<a\s[^>]*class=\\"parameter-link\\"[^>]*>(.*?)</a>',
+            _a_to_markdown,
+            content
+        )
+        n += n1
+    else:
+        # mode == "none": strip <a> tags to plain text
+        content, n1 = re.subn(
+            r'<a\s[^>]*class=\\"parameter-link\\"[^>]*>(.*?)</a>',
+            r'\1',
+            content
+        )
+        n += n1
+
+    # Strip <span class="parameter-definition" ...>text</span> → text (no link to convert)
     content, n2 = re.subn(
-        r'<span\s[^>]*class=\\\\"parameter-definition\\\\"[^>]*>(.*?)</span>',
+        r'<span\s[^>]*class=\\"parameter-definition\\"[^>]*>(.*?)</span>',
         r'\1',
         content
     )
@@ -619,7 +646,7 @@ def _strip_parameter_links(variables_path: Path, verbose: bool = True) -> int:
 
     # Strip <span class="parameter-link" ...>text</span> → text (constants like DAYS_PER_YEAR)
     content, n3 = re.subn(
-        r'<span\s[^>]*class=\\\\"parameter-link\\\\"[^>]*>(.*?)</span>',
+        r'<span\s[^>]*class=\\"parameter-link\\"[^>]*>(.*?)</span>',
         r'\1',
         content
     )
@@ -630,10 +657,11 @@ def _strip_parameter_links(variables_path: Path, verbose: bool = True) -> int:
             f.write(content)
 
     if verbose:
+        action = "Converted" if mode == "markdown" else "Stripped"
         if n > 0:
-            print(f"[OK] Stripped {n} parameter links from _variables.yml", flush=True)
+            print(f"[OK] {action} {n} parameter links in _variables.yml", flush=True)
         else:
-            print("[*] No parameter links found to strip", flush=True)
+            print("[*] No parameter links found to process", flush=True)
 
     return n
 
@@ -774,10 +802,11 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         target_vars = build_temp / "_variables.yml"
         _strip_confidence_intervals(target_vars, verbose=verbose)
 
-    # Strip <a> wrappers from parameter values if config says so
-    if not metadata.get("show_parameter_links", True):
+    # Convert or strip <a> wrappers from parameter values based on config
+    link_format = metadata.get("parameter_link_format", "html")
+    if link_format != "html":
         target_vars = build_temp / "_variables.yml"
-        _strip_parameter_links(target_vars, verbose=verbose)
+        _convert_parameter_links(target_vars, mode=link_format, verbose=verbose)
 
     # Use per-paper filtered parameters-and-calculations.qmd if available
     # This ensures the appendix only includes parameters used by this paper.
@@ -1263,6 +1292,13 @@ def render_quarto(
                 if epub_path.exists():
                     size_mb = epub_path.stat().st_size / (1024 * 1024)
                     print(f"[OK] EPUB exists: {epub_path} ({size_mb:.2f} MB)")
+
+                    # Copy EPUB to assets/epubs for distribution
+                    assets_epubs_dir = project_root / "assets" / "epubs"
+                    assets_epubs_dir.mkdir(parents=True, exist_ok=True)
+                    dest_epub_path = assets_epubs_dir / expected_epub
+                    shutil.copy2(epub_path, dest_epub_path)
+                    print(f"[OK] Copied EPUB to: {dest_epub_path.relative_to(project_root)}")
                 else:
                     print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
                     print(f"        Expected at: {epub_path}", file=sys.stderr)

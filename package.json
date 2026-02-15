@@ -73,6 +73,7 @@
     "validate:1-pct-treaty-impact": ".venv\\Scripts\\python.exe -u scripts/pdf-validation.py --pdf assets/pdfs/1-percent-treaty-impact.pdf",
     "preview:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --preview",
     "render:website": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to html",
+    "render:epub": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to epub",
     "render:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test",
     "images:branding:force": "tsx scripts/images/generate-project-branding-images.ts --force",
     "images:sections:all:force": "tsx scripts/images/generate-section-images.ts --all --force",
@@ -126,7 +127,11 @@
     "netlify:setup": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py",
     "netlify:list": ".venv\\Scripts\\python.exe -u scripts/setup-netlify-sites.py --list",
     "domain:check": "tsx scripts/check-domain-status.ts",
-    "domain:check:json": "tsx scripts/check-domain-status.ts --json"
+    "domain:check:json": "tsx scripts/check-domain-status.ts --json",
+    "captions:extract": "tsx scripts/captions/extract-captions.ts",
+    "captions:extract:batches": "tsx scripts/captions/extract-captions.ts --batch-size=50",
+    "captions:apply": "tsx scripts/captions/apply-captions.ts",
+    "captions:apply:dry-run": "tsx scripts/captions/apply-captions.ts --dry-run"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",

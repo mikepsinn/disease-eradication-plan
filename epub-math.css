@@ -1,0 +1,14 @@
+/* Inline math images (webtex) - align with surrounding text */
+img.math {
+  vertical-align: middle;
+  height: 1.1em;
+}
+
+/* Display math images - center on page */
+img.display-math,
+p > img.math:only-child {
+  display: block;
+  margin: 1em auto;
+  height: auto;
+  max-width: 90%;
+}
