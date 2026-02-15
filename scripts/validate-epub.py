@@ -27,10 +27,16 @@ import sys
 import tempfile
 import zipfile
 from pathlib import Path
+from typing import cast
+
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 if sys.platform == "win32":
-    sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    cast(io.TextIOWrapper, sys.stdout).reconfigure(encoding="utf-8")
+    cast(io.TextIOWrapper, sys.stderr).reconfigure(encoding="utf-8")
 
 # Emoji that render as empty boxes on e-readers (no emoji font)
 PROBLEMATIC_EMOJI = re.compile(
@@ -271,6 +277,12 @@ def validate_internal_links(epub):
             href = match.group(1)
             if href.startswith("http") or href.startswith("mailto:") or href.startswith("data:"):
                 continue
+            # Skip media files (videos can't be embedded in EPUB)
+            if any(href.endswith(ext) for ext in (".mp4", ".webm", ".ogg", ".avi")):
+                continue
+            # Skip HTML-encoded URLs (malformed angle-bracket URLs from references)
+            if href.startswith("&lt;"):
+                continue
 
             if "#" in href:
                 file_part, fragment = href.split("#", 1)
@@ -407,24 +419,264 @@ def _strip_emoji(html):
         "\U0001f3c6": "",
         "\u2728": "",
         "\U0001f525": "",
+        "\U0001f3e5": "",
+        "\U0001f3e6": "",
     }
     for emoji, replacement in emoji_replacements.items():
         html = html.replace(emoji, replacement)
     return html
 
 
-def fix_epub(epub_path):
+def _find_project_root(epub_path):
+    """Find the project root by looking for _quarto-manual.yml in parent directories."""
+    p = Path(epub_path).resolve().parent
+    while p != p.parent:
+        if (p / "_quarto-manual.yml").exists():
+            return p
+        p = p.parent
+    return None
+
+
+def _pandoc_slugify(text):
+    """Approximate Pandoc's auto_identifiers algorithm.
+
+    1. Strip formatting/HTML
+    2. Remove non-alphanumeric except hyphens, underscores, spaces, periods
+    3. Spaces/newlines to hyphens
+    4. Lowercase
+    5. Remove leading non-letters
+    6. Collapse hyphens
+    """
+    text = re.sub(r"<[^>]+>", "", text)  # strip HTML
+    text = re.sub(r"[^\w\s\-.]", "", text)
+    text = re.sub(r"[\s]+", "-", text)
+    text = text.lower()
+    text = re.sub(r"^[^a-z]+", "", text)  # must start with letter
+    text = re.sub(r"-+", "-", text)
+    text = text.strip("-")
+    return text
+
+
+def _extract_config_files(config):
+    """Extract list of QMD files from a Quarto config dictionary."""
+    files = []
+
+    def extract_chapters(items):
+        if not isinstance(items, list):
+            return
+        for item in items:
+            if isinstance(item, str):
+                files.append(item)
+            elif isinstance(item, dict):
+                if "href" in item:
+                    files.append(item["href"])
+                if "chapters" in item:
+                    extract_chapters(item["chapters"])
+                if "contents" in item:
+                    extract_chapters(item["contents"])
+
+    if "chapters" in config.get("book", {}):
+        extract_chapters(config["book"]["chapters"])
+    return files
+
+
+def _build_qmd_to_chapter_map(epub, project_root):
+    """Build mapping from QMD file paths to EPUB chapter files.
+
+    Strategy:
+    1. Read _quarto-manual.yml to get QMD files
+    2. For each QMD, extract title -> slugify -> get expected section ID
+    3. Also check for custom IDs: # Title {#custom-id}
+    4. Scan EPUB chapter files for matching section IDs
+    5. Build mapping with multiple path variants for lookup
+    """
+    if not yaml:
+        print("  [WARN] PyYAML not available, skipping QMD link fixing", file=sys.stderr)
+        return {}
+
+    config_path = project_root / "_quarto-manual.yml"
+    if not config_path.exists():
+        return {}
+
+    with open(config_path, encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+
+    qmd_files = _extract_config_files(config)
+    if not qmd_files:
+        return {}
+
+    # Extract section ID for each QMD file
+    qmd_to_slug = {}
+    for qmd_path in qmd_files:
+        full_path = project_root / qmd_path
+        if not full_path.exists():
+            continue
+
+        with open(full_path, encoding="utf-8") as f:
+            content = f.read()
+
+        # Check for custom ID on first heading: # Title {#custom-id}
+        heading_match = re.search(
+            r"^#{1,2}\s+.+?\{#([^}]+)\}", content, re.MULTILINE
+        )
+        if heading_match:
+            qmd_to_slug[qmd_path] = heading_match.group(1)
+            continue
+
+        # Extract title from YAML front matter
+        fm_match = re.search(r"^---\s*\n(.*?)\n---", content, re.DOTALL)
+        if fm_match:
+            title_match = re.search(
+                r"""^title:\s*["']?(.+?)["']?\s*$""",
+                fm_match.group(1),
+                re.MULTILINE,
+            )
+            if title_match:
+                slug = _pandoc_slugify(title_match.group(1))
+                if slug:
+                    qmd_to_slug[qmd_path] = slug
+
+    # Build section_id -> chapter_file mapping from EPUB
+    slug_to_chapter = {}
+    for name in sorted(epub.namelist()):
+        if not name.endswith(".xhtml") or "nav" in name or "title_page" in name:
+            continue
+        content = epub.read(name).decode("utf-8")
+        for m in re.finditer(r'<section[^>]+id="([^"]+)"', content):
+            sid = m.group(1)
+            if sid not in slug_to_chapter:
+                slug_to_chapter[sid] = name
+
+    # Combine: qmd_path -> chapter_file (with multiple lookup keys)
+    mapping = {}
+    for qmd_path, slug in qmd_to_slug.items():
+        if slug not in slug_to_chapter:
+            continue
+        chapter = slug_to_chapter[slug]
+        # Relative path from EPUB/text/ for href rewriting
+        chapter_rel = chapter.replace("EPUB/text/", "")
+
+        # Store with multiple key variants for matching different link formats
+        mapping[qmd_path] = (chapter_rel, slug)
+
+        # Basename (e.g., "dfda.qmd")
+        basename = os.path.basename(qmd_path)
+        if basename not in mapping:
+            mapping[basename] = (chapter_rel, slug)
+
+        # Path suffixes (e.g., "solution/dfda.qmd")
+        parts = qmd_path.split("/")
+        for i in range(1, len(parts)):
+            suffix = "/".join(parts[i:])
+            if suffix not in mapping:
+                mapping[suffix] = (chapter_rel, slug)
+
+    return mapping
+
+
+def _fix_qmd_links(html, qmd_map, all_section_ids):
+    """Rewrite .qmd href links to point to correct EPUB chapter files.
+
+    Args:
+        html: XHTML content string
+        qmd_map: mapping from QMD path variants to (chapter_file, section_id)
+        all_section_ids: mapping from section_id to chapter_file (for anchor resolution)
+    """
+    def replace_link(match):
+        full_tag = match.group(0)
+        href = match.group(1)
+
+        # Only fix .qmd links
+        if ".qmd" not in href:
+            return full_tag
+
+        # Skip already-absolute URLs
+        if href.startswith(("http://", "https://", "mailto:")):
+            return full_tag
+
+        # Split path and anchor
+        if "#" in href:
+            path_part, anchor = href.split("#", 1)
+        else:
+            path_part, anchor = href, None
+
+        # Clean up Windows-style paths
+        path_clean = path_part.replace("\\", "/").lstrip("./")
+
+        # Try to find in mapping
+        chapter_info = None
+
+        # Try exact path
+        if path_clean in qmd_map:
+            chapter_info = qmd_map[path_clean]
+
+        # Try without leading knowledge/ etc
+        if not chapter_info:
+            for suffix_len in range(1, path_clean.count("/") + 2):
+                parts = path_clean.split("/")
+                suffix = "/".join(parts[-suffix_len:])
+                if suffix in qmd_map:
+                    chapter_info = qmd_map[suffix]
+                    break
+
+        if not chapter_info:
+            return full_tag
+
+        chapter_file, default_slug = chapter_info
+
+        # Build new href
+        if anchor and anchor in all_section_ids:
+            # Anchor points to a specific section - find its chapter file
+            anchor_chapter = all_section_ids[anchor]
+            new_href = f"{anchor_chapter}#{anchor}"
+        elif anchor:
+            # Anchor exists but we don't know which file - use target chapter + anchor
+            new_href = f"{chapter_file}#{anchor}"
+        else:
+            # No anchor - link to the chapter's main section
+            new_href = f"{chapter_file}#{default_slug}"
+
+        return full_tag.replace(f'href="{href}"', f'href="{new_href}"')
+
+    return re.sub(r'<a[^>]+href="([^"]+)"[^>]*>', replace_link, html)
+
+
+def fix_epub(epub_path, project_root=None):
     """Post-process EPUB to fix e-reader compatibility issues.
 
     Fixes:
     - Simplify Quarto figure wrappers (fixes caption-above-image on e-readers)
     - Strip emoji characters that render as empty boxes on e-readers
+    - Rewrite broken .qmd links to correct EPUB chapter references
     """
     epub_path = Path(epub_path)
     print(f"[*] Fixing EPUB: {epub_path}")
 
-    # Read original EPUB
+    # Find project root for QMD link mapping
+    if not project_root:
+        project_root = _find_project_root(epub_path)
+
+    # Read original EPUB and build QMD link mapping
     original = zipfile.ZipFile(epub_path, "r")
+
+    qmd_map = {}
+    all_section_ids = {}
+    links_fixed = 0
+    if project_root:
+        qmd_map = _build_qmd_to_chapter_map(original, project_root)
+        if qmd_map:
+            # Build section_id -> chapter_file mapping for anchor resolution
+            for name in original.namelist():
+                if not name.endswith(".xhtml") or "nav" in name:
+                    continue
+                content = original.read(name).decode("utf-8")
+                chapter_rel = name.replace("EPUB/text/", "")
+                for m in re.finditer(r'id="([^"]+)"', content):
+                    sid = m.group(1)
+                    if sid not in all_section_ids:
+                        all_section_ids[sid] = chapter_rel
+            print(f"  [*] Built QMD mapping: {len(qmd_map)} path variants")
+
     files_fixed = 0
 
     # Write to temp file, then replace
@@ -442,6 +694,12 @@ def fix_epub(epub_path):
                 content = data.decode("utf-8")
                 new_content = _simplify_quarto_figures(content)
                 new_content = _strip_emoji(new_content)
+                if qmd_map:
+                    before_links = new_content
+                    new_content = _fix_qmd_links(new_content, qmd_map, all_section_ids)
+                    if new_content != before_links:
+                        # Count how many links were fixed
+                        links_fixed += len(re.findall(r'\.qmd', before_links)) - len(re.findall(r'\.qmd', new_content))
                 if new_content != content:
                     files_fixed += 1
                     data = new_content.encode("utf-8")
@@ -452,14 +710,18 @@ def fix_epub(epub_path):
 
     # Replace original
     shutil.move(str(tmp_path), str(epub_path))
-    print(f"[OK] Fixed {files_fixed} file(s)")
+    msg = f"[OK] Fixed {files_fixed} file(s)"
+    if links_fixed > 0:
+        msg += f", rewrote {links_fixed} .qmd links"
+    print(msg)
     return files_fixed
 
 
 def main():
     parser = argparse.ArgumentParser(description="Validate and fix EPUB structure and content")
     parser.add_argument("epub_path", nargs="?", help="Path to EPUB file")
-    parser.add_argument("--fix", action="store_true", help="Fix issues in-place (simplify figures)")
+    parser.add_argument("--fix", action="store_true", help="Fix issues in-place (simplify figures, rewrite links)")
+    parser.add_argument("--project-root", type=str, help="Project root for QMD link resolution")
     args = parser.parse_args()
 
     if args.epub_path:
@@ -484,7 +746,8 @@ def main():
 
     # Fix mode: post-process the EPUB first
     if args.fix:
-        fix_epub(epub_path)
+        project_root = Path(args.project_root) if args.project_root else None
+        fix_epub(epub_path, project_root=project_root)
 
     print(f"[*] Validating EPUB: {epub_path}")
 
