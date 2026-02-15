@@ -1,0 +1,213 @@
+project:
+  type: website
+  output-dir: _site/right-to-trial
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+    - _redirects
+    - robots.txt
+    - llms.txt
+  render:
+    # Paper is copied to index.qmd by render script
+    - index.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  emoji: "⚖️"
+  index-source: knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
+  pdf-output-file: right-to-trial-fda-upgrade-act.pdf
+  netlify-site-id: ""
+  netlify-cname: "right-to-trial-warondisease-org.netlify.app"
+  show-confidence-intervals: false  # Legislative text, not academic paper
+  # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
+  favicon-prompt: "A gavel with a medical cross/caduceus symbol."
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: m@warondisease.org
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
+
+website:
+  title: "Right to Trial & FDA Upgrade Act"
+  description: 'Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.'
+  site-url: https://right-to-trial.warondisease.org
+  favicon: assets/icons/dih-favicon.png
+  page-navigation: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/right-to-trial-fda-upgrade-act.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
+  navbar:
+    right:
+      - text: "dFDA Protocol"
+        href: https://dfda-spec.warondisease.org
+      - text: "VOTE"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto  # Only re-run cells when content changes
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Clinical Trials, Drug Development, Healthcare Reform, Regulatory Policy, Patient Rights"
+  category: "Legislative Text, Public Policy, Healthcare Reform"
+  coi-statement: "The author declares no competing interests."
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
+  ethics-statement: "This document is proposed legislation. No human subjects were involved in its drafting, though quite a few would benefit from its passage."
+  funding: "This research received no funding."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  keywords:
+    - right-to-trial
+    - fda-upgrade
+    - clinical-trials
+    - drug-development
+    - healthcare-reform
+    - regulatory
+    - patient-rights
+    - open-data
+    - decentralized-trials
+    - fda-v2
+  version: "1.0"
+  edition: "First Edition"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "United States, Global"
+  audience: "Policy Makers, Healthcare Professionals, Patient Advocates, Researchers, General Public"
+  format: "Legislative Text"
+  type: "Policy"
+  genre: "Healthcare Policy, Regulatory Reform"
+  medium: "Digital"
+  twitter-site: "https://x.com/warondisease"
+  twitter-creator: "https://x.com/warondisease"
+  og-site-name: "Right to Trial Act"
+
+  # Identifiers
+  # doi: ""
+
+  # Open Graph metadata (enables per-page custom OG images)
+  open-graph: true
+  image: "https://right-to-trial.warondisease.org/assets/og-images/knowledge/appendix/right-to-trial-fda-upgrade-act-og-retro-academic.jpg"
+
+  # Publication tracking
+  publishing:
+    own-site:
+      url: "https://right-to-trial.warondisease.org"
+      status: pending
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+        doi: ""
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
+csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    include-in-footer:
+      - file: assets/html/generated-footer.html
+      - text: |
+          <p style="text-align: center; margin: 0.5rem 0; font-size: 0.85rem; color: #8b7355;">
+            <strong>Download:</strong>
+            <a href="/right-to-trial-fda-upgrade-act.pdf" style="color: #8b7355;">PDF</a>
+          </p>
+    include-in-header:
+      - text: |
+          <!-- Icons (project-specific) -->
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/dih-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/dih-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/dih-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/dih-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/dih-android-chrome-512x512.png">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+  pdf:
+    output-file: "right-to-trial-fda-upgrade-act.pdf"
+    documentclass: article
+    institute: "Institute for Accelerated Medicine"
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    colorlinks: true
+    link-citations: true
+    date: ""
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://right-to-trial.warondisease.org}
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt

@@ -138,7 +138,6 @@ book:
   # appendices: Commented to get rid of the Appendix prefix in the titles
     - part: "Policy & Regulatory"
       chapters:
-        - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
         - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
 
     - part: "Economics & Finance"
