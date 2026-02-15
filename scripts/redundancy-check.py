@@ -33,7 +33,11 @@ from collections import Counter, defaultdict
 
 # Handle Windows console encoding
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
+
+# Allow imports from scripts/lib/
+sys.path.insert(0, str(Path(__file__).parent))
+from lib.text_utils import normalize_text, jaccard_similarity
 
 
 @dataclass
@@ -102,26 +106,9 @@ class RepeatedPhrase:
     word_count: int
 
 
-def normalize_text(text: str) -> str:
-    """Normalize text for comparison (lowercase, collapse whitespace)."""
-    text = text.lower()
-    text = re.sub(r'\s+', ' ', text)
-    text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
-    return text.strip()
-
-
 def get_words(text: str) -> List[str]:
     """Extract words from text."""
     return normalize_text(text).split()
-
-
-def jaccard_similarity(set1: Set[str], set2: Set[str]) -> float:
-    """Calculate Jaccard similarity between two sets."""
-    if not set1 or not set2:
-        return 0.0
-    intersection = len(set1 & set2)
-    union = len(set1 | set2)
-    return intersection / union if union > 0 else 0.0
 
 
 def extract_sentences(content: str) -> List[Tuple[str, int]]:

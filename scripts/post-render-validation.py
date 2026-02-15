@@ -723,7 +723,7 @@ def main():
     )
     args = parser.parse_args()
 
-    output_dir = Path(args.output_dir)
+    output_dir = Path(args.output_dir).resolve()
     if not output_dir.exists():
         print(f"[ERROR] Output directory not found: {output_dir}")
         return 1

@@ -48,6 +48,7 @@ except ImportError:
 
 # Import centralized file utilities
 from lib.quarto_file_utils import find_files_by_extension
+from lib.quarto_config_utils import get_all_book_qmd_files
 
 # Filler phrases that should be removed - just state the point directly
 FILLER_PHRASES = [
@@ -1415,6 +1416,83 @@ def load_defined_variables() -> Set[str]:
         return defined_vars
 
 
+def check_variable_link_targets():
+    """
+    Check that href targets in _variables.yml values point to existing .qmd files.
+    Generated parameter links use .html extensions; this converts them back to .qmd
+    and verifies the source file exists on disk.
+    """
+    variables_file = "_variables.yml"
+    if not os.path.exists(variables_file):
+        return
+
+    try:
+        import yaml
+    except ImportError:
+        return
+
+    try:
+        with open(variables_file, encoding="utf-8") as f:
+            variables = yaml.safe_load(f)
+    except Exception:
+        return
+
+    if not isinstance(variables, dict):
+        return
+
+    # Get the union of all configs' chapter lists for rendered-file checking
+    all_config_qmd_files = get_all_book_qmd_files()
+
+    href_pattern = re.compile(r'href=\\"([^"\\]+)\\"|href="([^"]+)"')
+    broken_count = 0
+    not_in_config_count = 0
+
+    for var_name, value in variables.items():
+        if not isinstance(value, str) or "href" not in value:
+            continue
+
+        for match in href_pattern.finditer(value):
+            href = match.group(1) or match.group(2)
+
+            # Skip external URLs and anchors-only
+            if href.startswith(("http://", "https://", "mailto:", "#")):
+                continue
+
+            # Strip fragment
+            path = href.split("#")[0]
+            if not path:
+                continue
+
+            # Strip leading slash for absolute paths
+            path = path.lstrip("/")
+
+            # Convert .html to .qmd
+            if path.endswith(".html"):
+                path = path[:-5] + ".qmd"
+
+            if not os.path.exists(path):
+                broken_count += 1
+                errors.append(ValidationError(
+                    variables_file, 0,
+                    f"Variable '{var_name}' links to missing file",
+                    f"href target '{href}' -> '{path}' does not exist"
+                ))
+            elif path.endswith(".qmd"):
+                # File exists on disk; check if it's in any config's chapter list.
+                # A file not in any config won't be rendered, so links to it will be broken.
+                normalized_path = path.replace("\\", "/")
+                if normalized_path not in all_config_qmd_files:
+                    not_in_config_count += 1
+                    print(f"  WARNING: Variable '{var_name}' links to '{normalized_path}' which exists on disk but is not in any config's chapter list")
+
+    if broken_count > 0:
+        print(f"  Found {broken_count} broken link target(s) in _variables.yml\n")
+    elif not_in_config_count > 0:
+        print(f"  All variable link targets exist on disk, but {not_in_config_count} target(s) not in any config chapter list (may be broken in rendered output)\n")
+    else:
+        print("  All variable link targets OK\n")
+
+
 def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str]):
     """
     Check for Quarto variables that are referenced but not defined in _variables.yml
@@ -1847,6 +1925,10 @@ def main():
         print(f"Loaded {len(defined_vars)} defined variables\n")
     else:
         print("No variables loaded (PyYAML may not be installed or _variables.yml not found)\n")
+
+    # Check variable link targets in _variables.yml
+    print("Checking variable link targets in _variables.yml...")
+    check_variable_link_targets()
 
     # Load defined parameters from dih_models/parameters.py
     print("Loading defined parameters from dih_models/parameters.py...")
