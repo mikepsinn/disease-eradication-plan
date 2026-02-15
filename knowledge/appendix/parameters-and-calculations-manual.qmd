@@ -30,15 +30,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 258 parameters used in the analysis, organized by type:
+This appendix documents all 256 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 105
+- External sources (peer-reviewed): 103
 - Calculated values: 97
 - Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (105 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5045,30 +5045,6 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 :::
 
-### CPI Multiplier: 1980 to 2024: 3.8:1 {#sec-cpi_multiplier_1980_to_2024}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)
-
-**Source**: [@bls-cpi-inflation-calculator]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [3.75:1, 3.85:1] • Distribution: Normal
-
-**What this means**: We're quite confident in this estimate. The true value likely falls between 3.75:1 and 3.85:1 (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-cpi_multiplier_1980_to_2024.qmd >}}
-
-*✓ High confidence*
-
-:::
-
 ### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6586,30 +6562,6 @@ Percentage military spending cut after WW2 (historical precedent)
 **Source**: [@us-post-wwii-military-spending-cut]
 
 *✓ High confidence*
-
-:::
-
-### Pre-1962 Drug Development Cost (1980 Dollars): $6.50M {#sec-pre_1962_drug_development_cost_1980_usd}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average drug development cost before 1962 FDA efficacy regulations, adjusted to 1980 dollars (Baily 1972)
-
-**Source**: [@pre-1962-drug-costs-baily-1972]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$5.20M, $7.80M] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $5.20M and $7.80M (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-pre_1962_drug_development_cost_1980_usd.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 

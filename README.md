@@ -1,4 +1,8 @@
 
+### [Drug Development Cost Increase Analysis](https://drug-cost.warondisease.org)
+
+> Rigorous analysis of the 105x increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis
+
 ### [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
 
 [![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)

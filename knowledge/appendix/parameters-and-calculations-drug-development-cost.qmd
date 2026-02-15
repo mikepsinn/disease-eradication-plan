@@ -1,0 +1,395 @@
+---
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
+  - /knowledge/appendix/parameters-and-calculations
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+---
+
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://drug-cost.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://drug-cost.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible unless-format="epub"}
+
+## Overview {#sec-parameters-and-calculations}
+
+This appendix documents all 10 parameters used in the analysis, organized by type:
+
+- External sources (peer-reviewed): 8
+- Calculated values: 2
+- Core definitions: 0
+
+### Quick Navigation
+
+[Calculated Values](#sec-calculated) (2 parameters) • [External Data Sources](#sec-external) (8 parameters)
+
+
+## Calculated Values {#sec-calculated}
+
+Parameters derived from mathematical formulas and economic models.
+
+### Drug Cost Increase: Pre-1962 to Current: 105x {#sec-drug_cost_increase_pre1962_to_current_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Drug development cost increase from pre-1962 to current ($24.7M → $2.6B = 105×)
+
+**Inputs**:
+
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
+- [Pre-1962 Drug Development Cost (2024 Dollars)](#sec-pre_1962_drug_development_cost_2024_usd) 📊: $24.7M (95% CI: $19.5M - $30M)
+
+$$
+\begin{gathered}
+k_{cost,pre62} \\
+= \frac{Cost_{dev,curr}}{Cost_{pre62,24}} \\
+= \frac{\$2.6B}{\$24.7M} \\
+= 105
+\end{gathered}
+$$
+
+**Methodology**: [@pre-1962-drug-costs-baily-1972]
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-drug_cost_increase_pre1962_to_current_multiplier.qmd >}}
+
+:::
+
+### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
+
+**Inputs**:
+
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.50K)
+
+$$
+\begin{gathered}
+k_{RECOVERY} \\
+= \frac{Cost_{P3,pt}}{Cost_{RECOVERY,pt}} \\
+= \frac{\$41K}{\$500} \\
+= 82
+\end{gathered}
+$$
+
+**Methodology**: [@recovery-trial-82x-cost-reduction]
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-recovery_trial_cost_reduction_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-recovery_trial_cost_reduction_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-recovery_trial_cost_reduction_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-recovery_trial_cost_reduction_factor.qmd >}}
+
+:::
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### CPI Multiplier: 1980 to 2024: 3.8:1 {#sec-cpi_multiplier_1980_to_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)
+
+**Source**: [@bls-cpi-inflation-calculator]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3.75:1, 3.85:1] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 3.75:1 and 3.85:1 (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-cpi_multiplier_1980_to_2024.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Average Annual New Drug Approvals Globally: 50 drugs/year {#sec-current_drug_approvals_per_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average annual new drug approvals globally
+
+**Source**: [@global-new-drug-approvals-50-annually]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [45 drugs/year, 60 drugs/year] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 45 drugs/year and 60 drugs/year (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_drug_approvals_per_year.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average cost to develop one drug in current system
+
+**Source**: [@drug-development-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.50B, $4B] • Distribution: Lognormal (SE: $500M)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.50B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Pragmatic Trial Median Cost per Patient (PMC Review): $97 {#sec-pmc_pragmatic_trial_median_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).
+
+**Source**: [@pmc-pragmatic-trial-cost]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$19, $478] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $19 and $478 (±237%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pmc_pragmatic_trial_median_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Pre-1962 Drug Development Cost (1980 Dollars): $6.50M {#sec-pre_1962_drug_development_cost_1980_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average drug development cost before 1962 FDA efficacy regulations, adjusted to 1980 dollars (Baily 1972)
+
+**Source**: [@pre-1962-drug-costs-baily-1972]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5.20M, $7.80M] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $5.20M and $7.80M (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pre_1962_drug_development_cost_1980_usd.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Pre-1962 Drug Development Cost (2024 Dollars): $24.7M {#sec-pre_1962_drug_development_cost_2024_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M, CPI-adjusted from Baily 1972)
+
+**Source**: [@pre-1962-drug-costs-baily-1972]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$19.5M, $30M] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $19.5M and $30M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pre_1962_drug_development_cost_2024_usd.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
+
+**Source**: [@recovery-cost-500]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$400, $2.50K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.50K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Phase 3 cost per patient (median from FDA study)
+
+**Source**: [@trial-costs-fda-study]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20K, $120K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $120K (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+
+```{=html}
+<script>
+// Conservative lazy loading: only load images actually in viewport
+(function() {
+  'use strict';
+  
+  let imageObserver = null;
+  let loadTimeout = null;
+  
+  function enableLazyLoading() {
+    const images = document.querySelectorAll('img');
+    
+    // Use Intersection Observer with conservative threshold
+    // rootMargin: '50px' means only load images within 50px of viewport
+    // This prevents loading images passed through during hash navigation
+    imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          const img = entry.target;
+          // Only load if image is actually visible (not just passed through)
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          } else if (!img.hasAttribute('loading')) {
+            // For images without data-src, use native lazy loading
+            img.setAttribute('loading', 'lazy');
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px',  // Only load images within 50px of viewport
+      threshold: 0.01      // Trigger when at least 1% visible
+    });
+    
+    images.forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Handle hash navigation (clicking links to sections)
+  // Delay loading to avoid loading images passed through during jump
+  function handleHashNavigation() {
+    if (loadTimeout) clearTimeout(loadTimeout);
+    // Wait 300ms after navigation to let scroll settle
+    // Images will load naturally via Intersection Observer when visible
+    loadTimeout = setTimeout(() => {
+      // Scroll has settled, Intersection Observer will handle visible images
+      // No action needed - observer is already watching
+    }, 300);
+  }
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enableLazyLoading);
+  } else {
+    enableLazyLoading();
+  }
+  
+  // Handle hash changes (clicking anchor links)
+  window.addEventListener('hashchange', handleHashNavigation);
+  
+  // Also handle initial hash if page loads with one
+  if (window.location.hash) {
+    setTimeout(handleHashNavigation, 100);
+  }
+})();
+</script>
+```
+
+:::

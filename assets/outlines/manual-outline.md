@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 48 | **Words:** 129,631
+**Files:** 47 | **Words:** 126,605
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -1403,51 +1403,6 @@
     - D. First-Loss Capital (Financial Risk)
   - Conclusion: Is This Less Risky Than VC?
 
-### Detailed Calculations
-
-#### knowledge/appendix/drug-development-cost-analysis.qmd
-**Title:** Drug Development Cost Increase Analysis
-**Description:** Rigorous analysis of the 105x (95% CI: 90.6x-119x) increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis
-**Stats:** 3,289 words | 558 lines
-
-  - The Short Version
-  - Historical Data Sources
-    - Pre-1962 Drug Development Costs
-    - Current Drug Development Costs
-  - Inflation-Adjusted Calculations
-    - Primary Method: Baily (1972) Academic Study
-    - Alternative Method: Congressional Testimony (1977)
-  - Why Inflation Doesn't Explain This
-    - 1. Development Timeline Expansion
-    - 2. Higher Failure Rates
-    - 3. Trial Complexity
-    - 4. Preclinical Requirements
-  - How Solid Is This Number?
-    - Which Inputs Matter Most
-    - Full Range of Outcomes
-    - Input Distributions
-    - Alternative Scenarios
-    - Independent Validation
-  - Sanity Checks: Real-World Price Comparisons
-    - 1. Generic vs. Brand-Name Drugs (Patent Cliff Evidence)
-    - 2. Nutritional Supplements vs. Prescription Drugs (Same Molecule, Different Regulation)
-    - 3. Compounding Pharmacies (Custom Manufacturing Without FDA Approval)
-    - 4. Veterinary Drugs vs. Human Drugs (Same Molecule, Different Species)
-    - 5. Orphan Drugs (Full Development Cost Exposure)
-    - 6. Historical Price Trajectory (Penicillin: 1942 vs. 2024)
-    - Cross-Validation: All Six Checks Confirm 105x (95% CI: 90.6x-119x) Development Cost Increase
-  - Addressing Common Objections
-    - "That can't be right. It's too high!"
-    - "Doesn't that include marketing costs?"
-    - "What about technological improvements reducing costs?"
-  - What This Means
-    - 1. Fixing This Has Massive ROI
-    - 2. Pre-1962 System Wasn't Broken
-    - 3. Real-World Evidence Can Reverse This
-  - Conclusion
-  - References
-  - Technical Parameters
-
 ### References
 
 #### knowledge/appendix/recovery-trial.qmd
@@ -1495,12 +1450,13 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 7,231 words | 760 lines
+**Stats:** 7,494 words | 811 lines
 
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
     - [Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
     - [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://optimocracy.warondisease.org)
+    - [Right to Trial & FDA Upgrade Act](https://right-to-trial.warondisease.org)
     - [The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
     - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
     - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](https://obg.warondisease.org)
