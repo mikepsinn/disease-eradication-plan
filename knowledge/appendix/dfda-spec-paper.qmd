@@ -1448,7 +1448,6 @@ This design leverages the complementary strengths of each approach:
 - **Stage 1** scales to millions of treatment-outcome pairs at minimal cost, identifying the most promising candidates
 - **Stage 2** applies experimental rigor to confirm causation for high-priority signals
 
-![Old way: $2.6 billion and 10 years per drug. New way: computers do most of it for free. You were really committed to the expensive way.](../../assets/infographics/FDA vs dFDA Infographic.png){#fig-fda-vs-dfda}
 
 ### Pragmatic Trial Methodology
 

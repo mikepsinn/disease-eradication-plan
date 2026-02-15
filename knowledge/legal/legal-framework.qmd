@@ -13,7 +13,6 @@ image: /assets/og-images/knowledge/legal/legal-framework-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![](/assets/infographics/knowledge/legal/legal-framework-infographic-retro-academic.jpg)
 
 ```{python}
 #| echo: false
@@ -30,7 +29,6 @@ if str(project_root) not in sys.path:
 
 from dih_models.parameters import *
 ```
-
 
 
 ```{python}

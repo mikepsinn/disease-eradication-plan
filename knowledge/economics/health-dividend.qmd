@@ -13,7 +13,6 @@ image: /assets/og-images/knowledge/economics/health-dividend-og-retro-academic.j
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![](/assets/infographics/knowledge/economics/health-dividend-infographic-retro-academic.jpg)
 
 Your dFDA costs {{< var dfda_annual_opex >}}/year to run.
 It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
