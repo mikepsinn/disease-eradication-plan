@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 47 | **Words:** 126,605
+**Files:** 47 | **Words:** 125,733
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -1146,41 +1146,14 @@
 #### knowledge/strategy/global-referendum.qmd
 **Title:** Global Referendum Strategy
 **Description:** Comprehensive strategy for implementing a secure, globally verifiable referendum to demonstrate public support for a 1% treaty, including implementation, verification, and viral marketing approaches.
-**Stats:** 2,898 words | 425 lines
+**Stats:** 1,728 words | 217 lines
 
   - On What You're Actually Trying to Do (The Boring But Necessary Part)
     - The Goal
   - System Architecture (Or: Math That Politicians Can't Argue With)
   - On Stopping People from Cheating (The Hard Part)
-    - On Why You Need Multiple Layers of "Prove You're Human"
-    - AI-Powered Fraud Detection
-    - On Privacy (Or: How Not to Build a Surveillance State)
-  - Viral Marketing & Growth Strategy
-    - Wearable Marketing (Your Body as a Billboard)
-      - QR Code T-Shirts
-      - Other Wearable Items
-    - Digital Marketing
-      - Social Media Challenges
-      - Meme Campaigns
-      - Influencer Partnerships
-    - Community Building
-      - Local Meetups
-      - University Campus Programs
-      - Disease-Specific Forums
-    - Cost Analysis & Optimization
-      - Per-Tactic Cost Breakdown
-      - ROI Optimization
-  - Integration & Auditing Framework
-    - Integrity and Auditing (Proving You Didn't Cheat)
-      - Cryptographic Receipts
-      - Public Audit System
-      - Observer Program
-    - Incentives and Referrals
-      - Reward Structure
-      - Education-First Approach
-    - Legal Positioning
-      - Consultation Framing
-      - Data Protection Compliance
+  - Growth Strategy
+  - Integrity (Proving You Didn't Cheat)
   - Implementation Roadmap
     - Phase 1: Foundation (Months 1-2)
     - Phase 2: Scaling (Months 3-6)
@@ -1450,8 +1423,9 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 7,494 words | 811 lines
+**Stats:** 7,792 words | 856 lines
 
+    - [Drug Development Cost Increase Analysis](https://drug-cost.warondisease.org)
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
     - [Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)

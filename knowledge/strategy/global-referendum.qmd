@@ -58,260 +58,52 @@ The trick is doing all of these simultaneously, which is harder than it sounds.
 
 The voting system uses an **end-to-end verifiable scheme** (like Helios [@helios-voting]). Translation: cryptographic receipts that prove you voted, without proving how you voted. Politicians can claim polls are fake. They cannot claim math is fake. (Some have tried. It doesn't go well.)
 
+![Your vote gets encrypted, mixed with everyone else's votes like a cryptographic smoothie, then posted publicly. You can verify yours; nobody knows it's yours.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
+
+Four properties that make this unkillable:
+
 - **Individual Verification**: Each voter gets a cryptographic receipt proving their vote was counted
 - **Public Audit**: All ballots published (anonymized) so anyone can verify the total
 - **Zero-Knowledge Proofs**: Mathematical guarantees the count is legitimate without revealing how anyone voted
 - **Privacy by Design**: Biometric processing happens on your device; the system never sees raw data
 
-![Your vote gets encrypted, mixed with everyone else's votes like a cryptographic smoothie, then posted publicly. You can verify yours; nobody knows it's yours.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
-
-The infrastructure handles 280M+ participants across 40+ languages with WCAG accessibility compliance. Technical details are open-source for independent audit.
+The infrastructure handles 280M+ participants across 40+ languages. All code is open-source for independent audit.
 
 ## On Stopping People from Cheating (The Hard Part)
 
-### On Why You Need Multiple Layers of "Prove You're Human"
+The internet is full of bots, fraudsters, and people who think it's funny to vote 1,000 times. You need to verify that each vote comes from a real, unique human without requiring government ID (excludes billions), violating privacy (creepy and illegal), or making it impossible for normal people to participate (defeats the purpose).
 
-The internet is full of bots, fraudsters, and people who think it's funny to vote 1,000 times. This is a problem.
+The system uses three escalating verification layers:
 
-You need to verify that each vote comes from a real, unique human without:
-
-- Requiring government ID (excludes billions of people)
-- Violating privacy (creepy and illegal in many places)
-- Making it impossible for normal people to participate (defeats the purpose)
-
-This is harder than it sounds. Here's how you do it:
-
-**Layer 1: Basic "Are You Even Trying?" Checks**
-
-The easy stuff that stops the lazy fraudsters:
-
-- **Email/Phone OTP**: Send a code, make them type it back. Costs money, slows bots.
-- **Device Fingerprinting**: Your browser/phone has a unique signature. You track it.
-- **IP Geolocation**: If 10,000 votes come from one basement in Belarus, you notice.
-- **Velocity Limits**: Try to vote 500 times in one minute, get blocked.
-
-This stops maybe 90% of fraud. The other 10% requires getting creative.
-
-**Layer 2: Enhanced "Now You're Getting Serious" Verification**
-
-For people who want higher verification (and higher rewards):
-
-- **Government ID Integration**: Connect with existing national e-ID systems:
-  - Estonia e-Residency [@estonia-eresidency-stats] (they have digital citizenship, it's actually cool)
-  - [@indian-aadhaar-system] (1.3 billion people already enrolled)
-  - [@eu-eidas-network] (European digital ID)
-  - US State ID verification via ID.me [@id-me-verification] (same system military uses)
-
-- **Biometric Liveness Detection**: Wave at your camera. Blink. Prove you're not a video. Deepfakes hate this one weird trick.
-
-- **Proof-of-Uniqueness Partners**: Work with existing identity services:
-  - Worldcoin iris scanning [@worldcoin-scale] (yes, the eyeball scanner)
-  - BrightID social verification [@brightid-social-verification-network] (your friends vouch for you)
-  - [@gitcoin-passport] (reputation scoring for crypto people)
-
-**Layer 3: Social "Your Community Says You're Real" Verification**
-
-Sometimes the best verification is humans verifying humans:
-
-- **Social Media Cross-Reference**: Link your Twitter/Facebook (opt-in, not required)
-- **Reputation Systems**: Web3 reputation platforms (for people who have that)
-- **Community Attestation**: Local leaders vouch for people without digital IDs
-
-The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted.
+1. **Basic checks** (stops ~90% of fraud): email/phone OTP, device fingerprinting, IP geolocation, velocity limits
+2. **Enhanced verification** (for higher trust and higher rewards): government e-ID integration (Estonia [@estonia-eresidency-stats], India Aadhaar [@indian-aadhaar-system], EU eIDAS [@eu-eidas-network], US via ID.me [@id-me-verification]), biometric liveness detection, proof-of-uniqueness partners (Worldcoin [@worldcoin-scale], BrightID [@brightid-social-verification-network], Gitcoin Passport [@gitcoin-passport])
+3. **Social verification**: community attestation for people without digital IDs, social media cross-reference (opt-in)
 
 ![Layer 1: Are you human? Layer 2: Are you a real human? Layer 3: Are you a real human who hasn't voted already?](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
 
-### AI-Powered Fraud Detection
+The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted. AI-powered fraud detection (pattern analysis, network mapping, real-time monitoring) catches the remaining edge cases at >99% detection with <1% false positives.
 
-Some people pass Layers 1 and 2. They have fake IDs, VPNs, and a concerning amount of free time. These are the people who would vote 10,000 times to prove a point about election integrity. Machine learning catches them:
+All biometric data is processed on your device, encrypted with keys you control, and never stored centrally. The system complies with GDPR [@gdpr-biometric-data], CCPA/CPRA [@ccpa-cpra-compliance], BIPA [@illinois-bipa], and COPPA [@coppa-compliance]. Privacy is the default, not a setting.
 
-- **Pattern Analysis**: Detects suspicious registration timing, geographic clustering, and bot-like behavior
-- **Network Mapping**: Real accounts have genuine social connections; bot farms are suspiciously interconnected
-- **Real-Time Monitoring**: Duplicate detection, behavioral analysis, and device fingerprinting flag anomalies instantly
+## Growth Strategy
 
-The system catches >99% of fraud attempts while maintaining <1% false positive rate for legitimate users.
+Getting 280 million people to do anything is hard. Getting 280 million people to click a button to maybe not die? Easier than you'd think, if you pay them.
 
-![AI watches for patterns. Bots make patterns. AI catches bots. It's like a bouncer, but it never gets tired or accepts bribes.](/assets/images/global-referendum/global-referendum-section-ai-powered-fraud-detection-bw-academic.jpg)
+The growth engine is a viral referral system funded by [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd). Target: <$0.75 per verified participant. For comparison, acquiring a coffee customer costs $5-15. The product here is "not dying from preventable diseases," which sells itself if you give it a nudge.
 
-### On Privacy (Or: How Not to Build a Surveillance State)
+For the full marketing strategy (memes, influencers, referral economics, tiered incentives), see [Campaign Budget](../economics/campaign-budget.qmd). For the self-aware propaganda playbook, see [Recruitment Plan](../appendix/recruitment-and-propaganda-plan.qmd).
 
-**Data Protection (The "You're Not Creepy" Rules):**
-
-- **Selective Disclosure**: You only ask for what you absolutely need. Your shoe size is irrelevant.
-- **Data Minimization**: Collect the minimum. No "tell us your life story" forms.
-- **Local Processing**: Biometric data (face scans, etc.) processed on YOUR device. You never see it. Ever.
-- **Encryption at Rest**: Everything encrypted with keys you control. You can't read it even if you wanted to.
-
-![Your data stays on your phone until absolutely necessary. Then it gets encrypted. Then it gets deleted. Privacy, but we actually mean it.](/assets/images/global-referendum/global-referendum-section-on-privacy-or-how-not-to-build-a-surveillance-state-bw-academic.jpg)
-
-**Regional Compliance (Or: Not Getting Sued by Europeans):**
-
-Different regions have different privacy laws, all of which carry massive fines if you screw up. You don't screw up.
-
-- **GDPR Compliance [@gdpr-biometric-data]**: Full EU data protection compliance (the strictest privacy law on Earth)
-- **CCPA/CPRA Compliance [@ccpa-cpra-compliance]**: California privacy rights (because California regulates everything)
-- **Biometric Privacy Laws**: [@illinois-bipa] compliance (they take biometric privacy seriously)
-- **Children's Privacy**: [@coppa-compliance] for under-13s (don't collect kids' data, this should be obvious)
-
-## Viral Marketing & Growth Strategy
-
-Getting 280 million people to do anything is hard. Getting 280 million people to click a button to maybe not die? Easier than you'd think.
-
-### Wearable Marketing (Your Body as a Billboard)
-
-#### QR Code T-Shirts
-
-![Wear a QR code shirt in Times Square. People scan it. You track who signed up. Your body is now a billboard with analytics.](/assets/images/global-referendum/global-referendum-section-qr-code-t-shirts-bw-academic.jpg)
-
-
-- Custom printing with unique QR codes for each referrer
-- Bulk orders to reduce per-unit costs ($15-25 per shirt)
-- Referral tracking through QR code analytics
-- Slogans: "Scan This Before You Die" / "I Voted to Not Die (The Bar Was Low)" / "Ask Me Why You're Still Dying of Curable Diseases"
-- **ROI**: 10-50+ referrals per shirt in high-traffic areas
-
-#### Other Wearable Items
-
-- **Stickers**: Laptops, water bottles, foreheads (we don't judge)
-- **Hats/Caps**: For people who want to advertise healthcare while blocking the sun
-- **Temporary Tattoos**: For the commitment-phobic revolutionaries
-
-### Digital Marketing
-
-#### Social Media Challenges
-
-![Three ways to make supporting treaty abolition go viral: challenges, competitions, and chain reactions. Humanity will do anything for prizes and social validation.](/assets/images/global-referendum/global-referendum-section-social-media-challenges-bw-academic.jpg)
-
-- "Cure Challenge": Share your health story + referral link
-- "Referral Race": Compete for weekly leaderboard positions
-- "Impact Chain": Show how your referrals create a chain reaction
-- **Implementation**: Hashtag campaigns, influencer participation, prize incentives
-
-#### Meme Campaigns
-
-Memes are how ideas spread now. This is either depressing or convenient, depending on your perspective. We're choosing convenient.
-
-![Make meme. Add referral link. Post everywhere. Track results. You're using humanity's short attention span for good.](/assets/images/global-referendum/global-referendum-section-meme-campaigns-bw-academic.jpg)
-
-- **Approach**: Dark humor about dying + referral incentives
-- **Distribution**: Reddit, Twitter, TikTok, Instagram
-- **Tracking**: Meme spread analytics, referral attribution
-
-#### Influencer Partnerships
-
-![Pay influencers to explain why dying is bad. They have followers; you have information. Economics, but make it educational.](/assets/images/global-referendum/global-referendum-section-influencer-partnerships-bw-academic.jpg)
-
-- **Micro-influencers**: Health advocates, patient influencers, medical professionals
-- **Compensation**: Revenue sharing from their referral earnings
-- **Content**: Educational posts, personal stories, referral tutorials
-
-### Community Building
-
-#### Local Meetups
-
-- In-person gatherings to build community (and prove you're not a bot farm)
-- **Format**: Health talks, networking, referral training
-- **Incentives**: Free food. Humans will do almost anything for free food. This is known.
-
-#### University Campus Programs
-
-![College students: young, idealistic, and will sign anything if there's free pizza. The demographics work themselves out.](/assets/images/global-referendum/global-referendum-section-university-campus-programs-bw-academic.jpg)
-
-- **Target**: Students, faculty, health science departments
-- **Approach**: Educational presentations, research partnerships, referral competitions
-- **Implementation**: Student ambassadors, campus events, academic partnerships
-
-#### Disease-Specific Forums
-
-![Step 1: Find where people gather online. Step 2: Give them something valuable. Step 3: Ask them to tell their friends. Marketing, discovered.](/assets/images/global-referendum/global-referendum-section-disease-specific-forums-bw-academic.jpg)
-
-- Engage existing communities where people discuss health
-- **Platforms**: Reddit, Facebook groups, specialized health forums
-- **Approach**: Provide value first, then introduce referral opportunities
-
-### Cost Analysis & Optimization
-
-How much does it cost to convince someone not to die? Less than you'd think.
-
-#### Per-Tactic Cost Breakdown
-
-| Tactic                  | Initial Cost    | Per-Referral Cost | Viral Coefficient | Notes                                   |
-| ----------------------- | --------------- | ----------------- | ----------------- | --------------------------------------- |
-| QR Code T-Shirts        | $15-25/shirt    | $0.30-0.75        | 0.8-1.2           | Walking billboard, triggers conversations |
-| Social Media Challenges | $500-2000       | $0.10-0.30        | 1.5-3.0           | Cheap, spreads like disease (ironic)    |
-| Local Meetups           | $200-1000/event | $0.50-1.00        | 0.5-1.0           | Slower but builds real community        |
-| Influencer Partnerships | $100-1000       | $0.20-0.60        | 1.0-2.0           | Borrow someone else's audience          |
-
-#### ROI Optimization
-
-1. **A/B Testing**: Test different messaging, designs, and incentives
-2. **Geographic Targeting**: Focus on areas with high engagement potential
-3. **Seasonal Campaigns**: Align with health awareness months, flu season
-4. **Cross-Promotion**: Combine multiple tactics so they reinforce each other
-
-## Integration & Auditing Framework
-
-### Integrity and Auditing (Proving You Didn't Cheat)
+## Integrity (Proving You Didn't Cheat)
 
 People will claim you cheated. This is inevitable. The only defense is making cheating mathematically impossible, then publishing the math.
 
-#### Cryptographic Receipts
+- **Cryptographic receipts**: Each voter gets a tracking code to verify inclusion. Zero-knowledge proofs guarantee the count is legitimate without revealing how anyone voted.
+- **Public audit**: Anonymized ballots, ZK proofs, and open-source code with commit hashes. Anyone can verify the total.
+- **Observer program**: NGO and academic observers with read-only monitors, real-time fraud detection alerts, and public dashboards.
 
-![You get a receipt proving you voted. Math proves the vote is real. Math doesn't reveal who you are. Cryptography: magic, but real.](/assets/images/global-referendum/global-referendum-section-cryptographic-receipts-bw-academic.jpg)
+You can't just pay people to click buttons. Well, you can, but then you get garbage data and angry economists. Instead: reward structured learning paths before voting. Progressive unlocking of higher reward tiers (learn more = earn more). Result: informed participants, not confused button-clickers.
 
-- Each voter receives a tracking code to verify inclusion
-- Public audit capabilities for all submitted ballots
-- Zero-knowledge proofs for privacy-preserving verification
-
-#### Public Audit System
-
-![Everyone can see the votes. Everyone can check the code. Humans watch to make sure the machines aren't lying. Trust, but verify everything.](/assets/images/global-referendum/global-referendum-section-public-audit-system-bw-academic.jpg)
-
-- Publish anonymized ballots, ZK proofs or mixnet transcripts
-- Open-source code with commit hashes for transparency
-- Independent observer program with NGO and academic participation
-
-#### Observer Program
-
-- NGO and academic observers with read-only monitors
-- Real-time fraud detection alerts and reporting
-- Public dashboard showing verification statistics
-
-### Incentives and Referrals
-
-#### Reward Structure
-
-![Bonds get distributed. Fraud gets filtered. Real people get paid. Ledger stays public. Incentives meet accountability; accountability wins.](/assets/images/global-referendum/global-referendum-section-reward-structure-bw-academic.jpg)
-
-- Funded via [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) with strict anti-fraud caps
-- Per-capita limits to prevent gaming
-- Public ledger of reward disbursements for transparency
-
-#### Education-First Approach
-
-![Learn about the treaty. Pass a quiz. Earn more rewards. You gamified informed consent.](/assets/images/global-referendum/global-referendum-section-education-first-approach-bw-academic.jpg)
-
-You can't just pay people to click buttons. Well, you can, but then you get garbage data and angry economists. Instead:
-
-- Reward structured learning paths before voting
-- Progressive unlocking of higher reward tiers (learn more = earn more)
-- Result: Informed participants, not confused button-clickers
-
-### Legal Positioning
-
-#### Consultation Framing
-
-![Talk to everyone. Work with governments. Get lawyers to approve it. Legitimacy is just bureaucracy, but successful.](/assets/images/global-referendum/global-referendum-section-consultation-framing-bw-academic.jpg)
-
-- Non-binding global consultation to demonstrate consent
-- Country-specific bridges to official mechanisms where feasible
-- Constitutional law scholar review for legitimacy
-
-#### Data Protection Compliance
-
-- GDPR/CCPA alignment with minimal data retention
-- Published Data Protection Impact Assessments (DPIAs)
-- Cross-border transfer compliance with international standards
+**Legal positioning**: Non-binding global consultation to demonstrate consent. Country-specific bridges to official mechanisms where feasible. Constitutional law scholar review for legitimacy. GDPR/CCPA alignment with minimal data retention.
 
 ## Implementation Roadmap
 
