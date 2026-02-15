@@ -76,14 +76,13 @@ This categorization matters: calling the entire efficiency gap "federal spending
 
 ^b^ *OECD governance efficiency benchmark: peer nations achieve comparable median income growth and HALE outcomes with total governance-related losses of 5-10% of GDP rather than 17%.*
 
-::: {.callout-warning}
+
 ## Interpretation Note
 
 The "human cost" figures are **economic equivalents**, not epidemiological mortality counts. Dividing the efficiency gap by VSL ({{< var dot_value_of_statistical_life >}}) or QALY threshold ({{< var medical_qaly_threshold >}}) yields a measure of foregone welfare, not literal deaths prevented.
 
 
 **Methodological Note:** Subsystem losses are estimated independently and treated as additive. While some overlap may exist (e.g., housing costs affect health via stress, incarceration overlaps with drug enforcement), excluded categories (state/local inefficiency, implicit subsidies, behavioral effects) likely offset any potential overstatement.
-:::
 
 The efficiency gap represents capital that could fund the 1% Treaty ({{< var treaty_annual_funding >}}/year) {{< var us_gov_waste_vs_treaty_multiplier >}} times over.
 
@@ -197,12 +196,10 @@ $$\text{AEG} = \sum_{i} \text{Friction}_i + \sum_{j} \text{Leakage}_j + \sum_{k}
 We employ Monte Carlo simulation to generate confidence intervals, recognizing uncertainty in loss estimates (particularly where data opacity exists, such as the DoD's inability to audit 61% of assets).
 
 
-::: {.callout-note}
 ## Methodological Note: Additive Categories
 
 
 Subsystem losses are estimated independently and treated as additive. While some overlap may exist (housing costs affect health via stress, incarceration overlaps with drug enforcement), excluded categories (state/local inefficiency, implicit subsidies, behavioral effects) likely offset any potential overstatement.
-:::
 
 ### Valuation Standards
 
@@ -779,9 +776,8 @@ Including these factors would increase the efficiency gap estimate substantially
 3. **Valuation debates:** VSL and QALY thresholds vary by methodology
 4. **Data opacity:** DoD audit failures mean some estimates are necessarily imprecise
 
-::: {.callout-note}
+
 ## See Also
 
 
 For global perspective on governance efficiency and broader opportunity costs of political dysfunction, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd), which extends this analysis to estimate a Global Governance Efficiency Score of 30-52% and identifies $101 trillion in annual unrealized potential from suppressed health innovation, migration restrictions, and lead poisoning remediation delays.
-:::

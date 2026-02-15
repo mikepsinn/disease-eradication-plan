@@ -12,7 +12,7 @@ image: /assets/og-images/knowledge/appendix/governance-og-retro-academic.jpg
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-::: {.callout-note}
+
 ## Content Moved
 
 This chapter's content has been consolidated into the main [Decentralized Institutes of Health](../solution/dih.qmd) chapter. See:
@@ -25,4 +25,3 @@ This chapter's content has been consolidated into the main [Decentralized Instit
 For the detailed Wishocracy voting mechanism, see [Wishocracy](../solution/wishocracy.qmd).
 
 For the Optimocracy algorithmic governance paper, see [Optimocracy Working Paper](optimocracy-paper.qmd).
-:::

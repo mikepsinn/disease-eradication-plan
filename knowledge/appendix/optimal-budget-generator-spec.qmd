@@ -79,7 +79,7 @@ The result is a gap analysis showing which categories are underfunded relative t
 
 A dashboard showing spending gaps by category, with clear recommendations:
 
-::: {.callout-note}
+
 ## Illustrative Example: US Federal Budget Gap Analysis
 
 The following table demonstrates how OBG output would appear. OSL estimates for fully derived categories (pragmatic trials, vaccinations) come from the worked examples in Sections 6-7. Remaining OSL estimates are preliminary and based on cross-country benchmarking; full derivations are future work.
@@ -94,7 +94,6 @@ The following table demonstrates how OBG output would appear. OSL estimates for 
 | Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) | − | − | Eliminate |
 
 *Positive gaps indicate underinvestment; negative gaps indicate overinvestment. Income Effect: impact on real after-tax median income growth. Health Effect: impact on median healthy life years. Scale: +++ strong positive, ++ moderate positive, + weak positive, − negative.*
-:::
 
 ### What Budget Analysts See
 

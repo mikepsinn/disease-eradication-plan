@@ -29,15 +29,14 @@ The result: drugs approved as "safe" based on testing 3,000 cherry-picked patien
 
 Meanwhile, the regulatory delays prevent millions from accessing treatments that could save their lives. The system doesn't just fail to ensure safety. It actively undermines it while simultaneously killing people through delay.
 
-::: {.callout-note}
+
 ## A Note on Blame
 
 The FDA employees executing this system didn't design it. Congress did, in 1962, via the Kefauver-Harris Amendments. The FDA is implementing what Congress mandated. The problem isn't bad people at the FDA. The problem is a bad law that makes good outcomes structurally impossible.
 
 When this chapter says "the FDA does X," read it as "the 1962 law requires the FDA to do X." The humans at the agency are following the rules they were given. The rules are the problem.
-:::
 
-::: {.callout-note}
+
 ## Confidence Levels: What We Know vs. What We Model
 
 ![Bottom tier: facts you can't argue with. Middle tier: facts you can sort of argue with. Top tier: educated guesses. This book uses all three because reality is complicated.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-confidence-levels-what-we-know-vs-what-we-model-bw-academic.jpg)
@@ -65,7 +64,6 @@ This chapter relies on three tiers of evidence:
 - {{< var type_ii_error_cost_ratio >}} Type II/Type I error ratio
 
 Even if you reject all model-dependent estimates, the empirical facts alone demonstrate the system is broken.
-:::
 
 ## The {{< var dfda_trial_cost_reduction_factor >}} Inefficiency Tax
 
@@ -112,14 +110,13 @@ The temporal break is exact. Life expectancy growth cut in half the moment regul
 
 ![Average Life Expectancy Over Time](../../assets/images/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
-::: {.callout-note}
+
 ## Detailed Historical Analysis
 
 ![Medicine before 1962: pretty good, one horrible mistake. Medicine after 1962: very safe, very slow, millions die waiting. You traded one type of death for another.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-detailed-historical-analysis-bw-academic.jpg)
 
 For the complete analysis including the 1883-1962 timeline, thalidomide case study, diminishing returns rebuttal, and correlation vs. causation analysis, see:
 [Real-World Evidence Historical Success (Pre-1962)](../appendix/real-world-evidence-historical-success.qmd)
-:::
 
 ### The 1962 Policy Break: Measured Impact
 
@@ -134,7 +131,7 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 
 The temporal break is exact. Every negative metric changed immediately in 1962.
 
-::: {.callout-note}
+
 ## Detailed Cost Analysis
 
 The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase is rigorously documented with multiple data sources, CPI adjustments, and sensitivity analysis. See [Drug Development Cost Analysis](../appendix/drug-development-cost-analysis.qmd) for:
@@ -144,7 +141,6 @@ The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase i
 - Why it's not just inflation (timeline expansion, failure rates, trial complexity)
 - Sensitivity analysis and independent validation
 - Transparent methodology addressing common objections
-:::
 
 ### The Modern Consequences
 
@@ -517,12 +513,11 @@ Many pieces already exist. The bottleneck is scale, incentives, and time-to-answ
 
 What's missing is the political will to admit that the 1962 "reforms" were a catastrophic mistake.
 
-::: {.callout-note}
+
 ## Technical Analysis
 
 For the full quantitative analysis including methodology, sensitivity analysis, and source data, see:
 [The Human Cost of Regulatory Latency](https://invisible-graveyard.warondisease.org)
-:::
 
 ---
 

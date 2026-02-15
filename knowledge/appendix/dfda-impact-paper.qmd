@@ -49,7 +49,7 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 4. **Treatment Rankings**: Standardized effectiveness rankings for every treatment-condition pair, updated continuously with real-world evidence
 5. **Outcome Labels**: "Nutrition facts for drugs" showing exactly what happened to real patients who tried each treatment
 
-::: {.callout-note}
+
 ## Protocol, Not Platform
 
 This framework is **protocol infrastructure**, open standards that existing systems adopt, not a competing service:
@@ -59,7 +59,6 @@ This framework is **protocol infrastructure**, open standards that existing syst
 - **How existing systems benefit**: DCT platforms, EHR systems, and health apps integrate the protocol to gain interoperability, access larger patient pools, and contribute to standardized treatment rankings
 
 **Who builds on it**: DCT platforms, major EHR systems, academic medical centers, consumer health apps - any system collecting health outcomes.
-:::
 
 **How it works:** Companies register treatments through any protocol-compliant system. Patients search for their condition, see treatments ranked by effectiveness, and can join trials through their preferred app or platform. Patient-reported outcomes flow back into the aggregated rankings. The result is a self-improving ecosystem where every participant's experience helps the next patient make better decisions.
 
@@ -77,7 +76,8 @@ This framework is **protocol infrastructure**, open standards that existing syst
 | **Annual R&D Savings** | {{< var dfda_benefit_rd_only_annual >}} | From {{< var dfda_trial_cost_reduction_pct >}} cost reduction |
 | **Trial Capacity Increase** | {{< var dfda_trial_capacity_multiplier >}} | Enabling parallel therapeutic space exploration |
 
-::: {.callout-note collapse="true" title="Key Metric Derivations"}
+
+### Key Metric Derivations
 
 **Lives Saved:**
 
@@ -91,11 +91,10 @@ This framework is **protocol infrastructure**, open standards that existing syst
 
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
 
-:::
 
-::: {.callout-note collapse="true" title="Interpreting These Figures: Cumulative, Not Annual"}
+### Interpreting These Figures: Cumulative, Not Annual
+
 These are **cumulative benefits over the entire acceleration period**, not annual figures. This is the same methodology used to value smallpox eradication (program cost -> total future lives saved) and climate infrastructure investments: the one-time benefit of permanently accelerating medical progress.
-:::
 
 **Interpreting the Timeline Figure:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year figure represents a **discovery capacity model** of medical research. Think of the therapeutic search space as the set of all untested drug-disease combinations, with trial capacity determining how fast we can explore it.
 
@@ -208,8 +207,10 @@ This analysis models a scenario with {{< var dih_treasury_to_medical_research_an
 
 ![With proper funding, we could solve the backlog in 36 years instead of 443. Your great-great-great-great-great-great-great-grandchildren will be so pleased.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg)
 
-::: {.callout-tip}
-**On the Funding Assumption**: This analysis demonstrates what becomes possible when the funding constraint is removed. The {{< var dih_treasury_to_medical_research_annual >}}/year figure is achievable through multiple mechanisms:
+
+### On the Funding Assumption
+
+This analysis demonstrates what becomes possible when the funding constraint is removed. The {{< var dih_treasury_to_medical_research_annual >}}/year figure is achievable through multiple mechanisms:
 
 - **Philanthropic mega-donors**: A single Gates Foundation-scale commitment could fund the protocol infrastructure and initial years
 - **Sovereign wealth funds**: Norway's $1.4T fund or similar could view this as humanity-scale infrastructure
@@ -217,7 +218,6 @@ This analysis models a scenario with {{< var dih_treasury_to_medical_research_an
 - **Industry consortium**: Pharma collectively spends {{< var global_clinical_trials_spending_annual >}}/year on trials; even 10% redirection exceeds this threshold
 
 The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}} ROI, any rational capital allocator would fund this if they believed the analysis.
-:::
 
 **Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. framework trial capacity metrics.
 
@@ -312,9 +312,10 @@ The protocol creates value by enabling interoperability among existing clinical 
 | **Academic Medical Centers** | Research infrastructure | Contribute federated data nodes | Research funding, publication opportunities |
 | **Consumer Health Apps** | Consumer health data | Report patient outcomes to protocol | User engagement, clinical validation |
 
-::: {.callout-note}
-**Why This Matters**: DCT platforms (collectively raising over $1B in venture funding) and major EHR systems have already built the infrastructure for patient recruitment, data collection, and trial management. The protocol doesn't replicate this work - it makes their existing investments more valuable by enabling data to flow across systems.
-:::
+
+### Why This Matters
+
+DCT platforms (collectively raising over $1B in venture funding) and major EHR systems have already built the infrastructure for patient recruitment, data collection, and trial management. The protocol doesn't replicate this work - it makes their existing investments more valuable by enabling data to flow across systems.
 
 ### Annual Operational Costs (5M MAU Target Scale) {#annual-operational-costs}
 
@@ -464,9 +465,10 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
   {{< var dfda_trial_cost_reduction_pct_latex >}}
 
-::: {.callout-note}
-**Scope of Cost Reduction**: This reduction applies to trials amenable to pragmatic design - approximately 70% of Phase III trial volume by patient count (chronic disease management, comparative effectiveness, dose optimization). First-in-human studies, novel mechanism trials, and high-risk interventions retain traditional controlled protocols. The confidence interval ($500-$3,000/patient) captures this heterogeneity: simple comparative studies approach RECOVERY-level efficiency while complex trials remain closer to traditional costs. The headline {{< var dfda_trial_cost_reduction_pct >}} figure represents the **weighted average** across the addressable trial market, not a claim that every trial achieves this reduction.
-:::
+
+### Scope of Cost Reduction
+
+This reduction applies to trials amenable to pragmatic design - approximately 70% of Phase III trial volume by patient count (chronic disease management, comparative effectiveness, dose optimization). First-in-human studies, novel mechanism trials, and high-risk interventions retain traditional controlled protocols. The confidence interval ($500-$3,000/patient) captures this heterogeneity: simple comparative studies approach RECOVERY-level efficiency while complex trials remain closer to traditional costs. The headline {{< var dfda_trial_cost_reduction_pct >}} figure represents the **weighted average** across the addressable trial market, not a claim that every trial achieves this reduction.
 
 ### Overall Savings
 
@@ -546,9 +548,10 @@ Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial 
 
 ### Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
 
-::: {.callout-note title="Relative Magnitude"}
+
+### Relative Magnitude
+
 Efficacy lag elimination ({{< var efficacy_lag_years >}}) is the **smaller** of the two timeline shift components. Discovery acceleration from {{< var dfda_trial_capacity_multiplier >}} trial capacity contributes {{< var dfda_trial_capacity_treatment_acceleration_years >}}, over 10× more health impact. This section details the efficacy lag component; see [The Discovery Capacity Model](#the-discovery-capacity-model) for the dominant component.
-:::
 
 **One of two health benefits of a decentralized FDA comes from eliminating the "efficacy lag"**, the {{< var efficacy_lag_years >}} Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing ({{< var phase_1_safety_duration_years >}}) is preserved.
 
@@ -623,7 +626,9 @@ For detailed methodology and assumptions on efficacy lag, see [The Human Cost of
 
 ![Current drug safety: please voluntarily report if you die. Proposed drug safety: computers notice when you die.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-h-bw-academic.jpg)
 
-::: {.callout-caution}
+
+### Caution
+
 **The current system is not safe - it just appears safe because harms go undetected.**
 
 The FDA's voluntary adverse event reporting system (MedWatch) captures only **1-10% of actual adverse events**. Long-term harms that develop gradually over years - the most insidious and deadly kind - are virtually invisible:
@@ -635,7 +640,6 @@ The FDA's voluntary adverse event reporting system (MedWatch) captures only **1-
 - **Thalidomide** (1950s): The disaster that prompted regulatory reform - yet the current system would **still miss** a thalidomide-like harm if it manifested gradually rather than as obvious birth defects
 
 The current "safety" system doesn't prevent harm - it **delays detection** until bodies accumulate. A global automated pharmacovigilance system with continuous EHR monitoring would detect these signals in months, not years or decades.
-:::
 
 **Specific limitations of the current system:**
 

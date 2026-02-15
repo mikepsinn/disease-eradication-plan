@@ -1017,7 +1017,7 @@ $$
 \text{PIS}_{jp} = 0.5 \times \text{PIS}^{\text{inc}}_{jp} + 0.5 \times \text{PIS}^{\text{hlth}}_{jp}
 $$
 
-::: {.callout-important}
+
 ### Always Report Both Metrics Separately
 
 While combined PIS is useful for ranking, recommendations should always display effects on both metrics:
@@ -1028,7 +1028,6 @@ While combined PIS is useful for ranking, recommendations should always display 
 | Speed limit reduction | +0.01 pp/yr | +0.06 years | 0.73 | B |
 
 The two-metric format makes tradeoffs explicit when they exist, preventing policies from hiding negative effects behind aggregated scores.
-:::
 
 ### Effect Estimate Standardization
 
@@ -1569,13 +1568,12 @@ The Optimal Policy Generator provides a systematic framework for translating pol
 
 ## Appendix A: Worked Example - Texas Policy Recommendations {.appendix}
 
-::: {.callout-warning}
+
 ### ⚠️ SYNTHETIC DATA - NOT EMPIRICAL FINDINGS
 
 **All numbers in this appendix are fabricated for illustration.** The effect sizes (+0.15 years, +0.02 pp/year, etc.), confidence intervals, and Bradford Hill scores are synthetic placeholders demonstrating the OPG framework's output format. They were not derived from actual data analysis.
 
 **Do not cite these numbers as empirical findings.** Actual policy effects would require jurisdiction-specific evidence analysis using real data from the sources described in this specification.
-:::
 
 ### Overview
 
@@ -1633,7 +1631,7 @@ From meta-analysis of 47 US states (2000-2020):
 
 **OPG Recommendations for Texas**
 
-::: {.callout-tip}
+
 ## ENACT (New Policies to Adopt)
 
 **1. Primary Seat Belt Enforcement Law** (Current: secondary enforcement only)
@@ -1660,9 +1658,7 @@ From meta-analysis of 47 US states (2000-2020):
 - **Blocking factors**: Political (autonomy concerns from rider groups)
 - **Similar jurisdictions**: California (all ages since 1992)
 
-:::
 
-::: {.callout-warning}
 ## REPLACE (Policies to Modify)
 
 **3. Maximum Speed Limit: 85 mph → 70 mph**
@@ -1678,18 +1674,14 @@ From meta-analysis of 47 US states (2000-2020):
 - **Priority**: Low
 - **Blocking factors**: Political (driver opposition), autonomy
 
-:::
 
-::: {.callout-caution}
 ## REPEAL (Policies to Remove)
 
 *No high-priority repeal recommendations for Texas at this time.*
 
 *(Example format: If Texas had a policy shown to cause net harm, it would appear here with expected welfare gain from removal.)*
 
-:::
 
-::: {.callout-note}
 ## MAINTAIN (No Change Needed)
 
 **5. DUI Threshold at 0.08 BAC** ✓
@@ -1703,8 +1695,6 @@ From meta-analysis of 47 US states (2000-2020):
 - **Current level**: Three-stage system with night/passenger restrictions
 - **Evidence**: Consistent with best practices
 - **Status**: Continue current policy
-
-:::
 
 ### Step 4: Summary Dashboard
 

@@ -108,7 +108,7 @@ aliases:
 
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}} ROI).
 
-::: {.callout-important}
+
 ## How Pragmatic Trials Increase Safety
 
 **Phase I safety testing remains mandatory.** This is the testing that prevented thalidomide in the United States. What changes is eliminating the {{< var efficacy_lag_years >}}-year *efficacy* delay (Phase II/III) after safety is verified.
@@ -122,7 +122,6 @@ aliases:
 - Traditional trials test 100-300 patients; pragmatic trials test 10,000-100,000+ patients with continuous monitoring
 
 For every person protected from an unsafe drug (Type I error prevention), the current system kills {{< var type_ii_error_cost_ratio >}} people by delaying access to beneficial treatments (Type II errors). See [Safety Concerns](#safety-concerns) for full analysis.
-:::
 
 ## Introduction
 
@@ -890,9 +889,10 @@ The answer reveals the treaty campaign's massive leverage advantage:
 
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
 
-::: {.callout-note title="Direct Funding Still Excellent"}
+
+### Direct Funding Still Excellent
+
 Even without treaty leverage, direct funding achieves **{{< var dfda_direct_funding_cost_per_daly >}}/DALY** - competitive with GiveWell's top interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). This validates the pragmatic trial model independent of political feasibility.
-:::
 
 #### Treaty Campaign Advantage
 
@@ -1163,7 +1163,6 @@ The complete ROI includes the full timeline shift health benefits:
 **QALY Valuation Justification ({{< var standard_economic_qaly_value_usd >}})**: This uses standard US economic valuations. WHO recommends {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} per QALY for cost-effectiveness thresholds in high-income countries. The {{< var standard_economic_qaly_value_usd >}} value reflects revealed preferences from regulatory decisions (EPA, FDA), wage-risk tradeoffs, and health insurance willingness-to-pay studies. International analyses often use lower thresholds ($50-100K), which would reduce the ROI proportionally but not change the cost-saving classification.
 
 
-
 **Step 2: Calculate ROI**
 
 {{< var treaty_roi_trial_capacity_plus_efficacy_lag_latex >}}
@@ -1236,9 +1235,10 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 ## Peace Dividend Calculation Methodology
 
-::: {.callout-note title="Relative Importance"}
+
+### Relative Importance
+
 The peace dividend ({{< var peace_dividend_annual_societal_benefit >}}/year) represents <0.01% of the timeline shift value ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}). We include the full methodology for transparency and funder due diligence, not because it materially affects the case.
-:::
 
 The peace dividend represents economic benefits from reduced military spending. The {{< var treaty_reduction_pct >}} Treaty redirects {{< var treaty_reduction_pct >}} of global military spending ({{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} in 2024) = {{< var treaty_annual_funding >}} annually.
 

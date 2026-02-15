@@ -40,7 +40,7 @@ aliases:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-::: {.callout-note}
+
 ## The Short Version
 
 The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} efficacy delay after drugs are proven safe. This creates two distinct mortality costs:
@@ -51,8 +51,6 @@ The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} eff
 **The ratio:** Type II errors (blocking effective drugs) cost {{< var type_ii_error_cost_ratio >}} more lives than Type I errors (approving dangerous drugs) prevent.
 
 ![Approving a bad drug killed this many people historically. Delaying good drugs will kill 3,070 times more people in the future. We're very worried about the smaller number.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-short-version-bw-academic.jpg)
-
-:::
 
 ## Abstract
 
@@ -197,7 +195,7 @@ $$
 
 Before calculating regulatory delay costs, we must establish what percentage of deaths are *theoretically* preventable with sufficient biomedical advancement. This sets the upper bound for any intervention.
 
-::: {.callout-important}
+
 ## Methodological Note: Distinguishing Current vs. Theoretical Preventability
 
 ![We could prevent 30 to 50 percent more deaths but we're saving that for later, like dessert.](/assets/images/invisible-graveyard/invisible-graveyard-methodological-note-distinguishing-current-vs-theoretical-preventability-bw-academic.jpg)
@@ -209,7 +207,6 @@ The "Max Potential" column represents **theoretical upper bounds** based on biol
 3. **Emerging technologies** (gene therapy, regenerative medicine, AI drug discovery)
 
 Current preventability is typically 30-50% lower than theoretical maximum. The gap represents the research opportunity.
-:::
 
 #### Disease Burden by Category
 
@@ -269,10 +266,11 @@ These represent the hard physical limits of medicine. Everything else, including
    - **Methodology:** 3-way fixed-effects regression (disease-country-year) controlling for confounders
    - **Derived lives saved:** {{< var pharma_lives_saved_annual >}} (assuming {{< var avg_life_extension_per_beneficiary >}} average life extension per beneficiary)
 
-   ::: {.callout-note}
+
+   ### Note
+   
    ## Life-Years vs. Lives
-   Lichtenberg measured **life-years saved**, not lives. Converting to "lives" requires assuming average life extension per beneficiary ({{< var avg_life_extension_per_beneficiary >}}). Life-years is the more rigorous metric; lives is used for intuitive communication. The uncertainty in the conversion is reflected in the confidence intervals.
-   :::
+      Lichtenberg measured **life-years saved**, not lives. Converting to "lives" requires assuming average life extension per beneficiary ({{< var avg_life_extension_per_beneficiary >}}). Life-years is the more rigorous metric; lives is used for intuitive communication. The uncertainty in the conversion is reflected in the confidence intervals.
 
    **Supporting evidence (approximate, for context):**
    - **Vaccines:** ~4.5M lives/year (WHO estimates 154M lives saved over 50 years) [@vaccine-roi-44-to-1]
@@ -313,13 +311,12 @@ See [Parameters & Calculations Appendix](/knowledge/appendix/parameters-and-calc
 
 **Important Clarification:** Throughout this analysis, "regulatory delay" refers specifically to the **post-safety efficacy testing delay** - the period AFTER safety has been established but BEFORE efficacy approval is granted under current FDA/EMA requirements. This is distinct from safety testing (Phase I), which we consider necessary and effective (as demonstrated by the thalidomide case where safety testing prevented thousands of U.S. deaths).
 
-::: {.callout-warning}
+
 ## Methodological Caveat: Cascade Assumption
 
 The primary estimate assumes that the {{< var efficacy_lag_years >}} regulatory delay cascades fully through the biomedical research timeline - i.e., that delaying Drug A by {{< var efficacy_lag_years >}} also delays all downstream research that builds on Drug A's findings by approximately the same amount. This "full cascade" assumption represents a **theoretical upper bound**. In practice, parallel research tracks, international approvals, and adaptive innovation may partially mitigate cascade effects.
 
 The assumption is not empirically validated at the aggregate level, though individual case studies (beta-blockers, HIV/AIDS, Hepatitis C) demonstrate the mechanism operates in specific instances. The Type II/Type I ratio remains robust even under substantially reduced cascade assumptions (see [sensitivity analysis](#confounding-factors---other-changes-in-1962) showing the conclusion holds at 10% regulatory attribution).
-:::
 
 | Metric | Estimate | Methodology |
 |:-------|:---------|:------------|
@@ -375,14 +372,12 @@ The YLD calculation above captures suffering *before death* for those who ultima
 
 ![982 million people waiting 8.2 years for treatment they already invented. It's like knowing where you left your keys but deciding to look for them very, very slowly.](/assets/images/invisible-graveyard/invisible-graveyard-years-lived-with-disability-treatment-beneficiaries-treatment-morbidity-bw-academic.jpg)
 
-::: {.callout-note}
+
 ## Distinction: Mortality vs. Morbidity Burden
 
 The "{{< var pharma_lives_saved_annual >}} lives saved annually" from Lichtenberg's analysis captures mortality - people who would have *died* without post-1962 drugs. But pharmaceutical treatments primarily improve quality of life for people with *non-terminal* chronic conditions: diabetes, hypertension, depression, COPD, arthritis, and cardiovascular disease.
 
 **Treatment beneficiaries vastly exceed mortality beneficiaries.**
-
-:::
 
 **Data source**: IQVIA reports that global pharmaceutical use reached 1.8 trillion days of therapy in 2019, with 71% for chronic conditions (diabetes, CVD, respiratory, cancer) [@iqvia-global-medicines-2024]. From this, we estimate approximately {{< var chronic_disease_treated_patients_annual >}} unique patients receive chronic disease treatment annually.
 
@@ -427,7 +422,7 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 
 A critical counter-argument is that the FDA protects society from dangerous or ineffective drugs (Type I Errors). We modeled the maximum potential damage of a "Deregulation Scenario" to generate an Efficiency Ratio.
 
-::: {.callout-note}
+
 ## Methodological Note: Steelmanning the FDA's Position
 
 To ensure this analysis is maximally fair to proponents of current FDA regulation, we deliberately assume the **worst possible case** for Type I errors (harm from approving bad drugs). This "steelman" approach means that even if our assumptions are completely wrong in favor of FDA defenders, the conclusion holds.
@@ -441,7 +436,6 @@ Specifically, we assume a **Thalidomide-scale catastrophe every single year** in
 3. **Thalidomide was caught by 1938 safety requirements, NOT 1962 efficacy requirements** - FDA's Dr. Frances Kelsey blocked thalidomide approval based on safety concerns about nerve damage, using authority from the 1938 Food, Drug, and Cosmetic Act. The 1962 efficacy amendments hadn't yet passed. Under our proposal, thalidomide would STILL have been blocked.
 
 **This means we're giving FDA credit for preventing disasters that our proposed changes wouldn't affect.** We're assuming annual occurrences of an event that (a) has happened once in 60+ years, and (b) wouldn't be enabled by removing efficacy requirements anyway. This is the maximum possible benefit of the doubt.
-:::
 
 - **The Cost of Protection (Type II):** {{< var dfda_efficacy_lag_elimination_dalys >}} lost.
 - **The Benefit of Protection (Type I):** Even assuming a "Thalidomide Event" occurs *every single year* under a deregulated model (a deliberate extreme overestimate to steelman the FDA's position), the total DALYs saved by the FDA is ~{{< var type_i_error_benefit_dalys >}}.
@@ -580,11 +574,10 @@ Several countries have implemented alternative regulatory models that provide na
 | **Canada** | Priority Review pathway | ~12 months (priority) | Limited data on outcomes |
 | **Australia (TGA)** | Provisional approval pathway | Variable | Similar conditional pathways |
 
-::: {.callout-important}
+
 ## Critical Distinction: Efficacy Assessment Reordered, Not Eliminated
 
 Japan's conditional approval does NOT eliminate efficacy assessment. It REORDERS it from pre-market (Phase III trials) to post-market (real-world monitoring with revocation authority). This is a different regulatory architecture, not deregulation. The HeartSheet withdrawal proves the system still enforces efficacy standards, just through different mechanisms.
-:::
 
 **Key finding:** Japan's conditional approval system has an 89% success rate (8/9 products) and demonstrated that post-market monitoring CAN catch ineffective treatments:
 
