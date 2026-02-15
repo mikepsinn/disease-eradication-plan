@@ -47,7 +47,7 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
 
@@ -89,14 +89,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6B {#sec-dfda_benefit_rd_only_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual): $60B (95% CI: $50B - $75B)
-- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct): 97.7%
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
@@ -131,14 +131,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6B {#sec-dfda_net_savings_rd_only_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual): $58.6B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex): $40M
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
 \begin{gathered}
@@ -182,7 +182,7 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40M {#sec-dfda_npv_annual_opex_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
@@ -220,13 +220,13 @@ $$
 
 ### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389B {#sec-dfda_npv_benefit_rd_only}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual): $58.6B
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6B
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -256,13 +256,13 @@ $$
 
 ### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342M {#sec-dfda_npv_pv_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Present value of annual opex over 10 years (NPV formula)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total): $40M
+- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
@@ -290,14 +290,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Cost: $611M {#sec-dfda_npv_total_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV cost (upfront + PV of annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex): $342M
-- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total): $270M
+- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
+- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
 \begin{gathered}
@@ -337,7 +337,7 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M {#sec-dfda_npv_upfront_cost_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
@@ -375,14 +375,14 @@ $$
 
 ### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only): $389B
-- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost): $611M
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
 
 $$
 \begin{gathered}
@@ -441,14 +441,14 @@ $$
 
 ### dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
 
 $$
 \begin{gathered}
@@ -479,16 +479,16 @@ $$
 
 ### Global Governance Efficiency Score: 51.9% {#sec-political_dysfunction_global_efficiency_score}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global Governance Efficiency Score from Political Dysfunction Tax paper. E = Adjusted W_real / W_max, where W_real = GDP - waste, W_max = W_real + opportunity cost. Paper calculates 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). This means civilization operates at roughly half its technological potential.
 
 **Inputs**:
 
-- [Global GDP (2025)](#sec-global_gdp_2025): $115T
-- [US Government Waste (Total)](#sec-us_gov_waste_total): $4.90T
-- [Global Fossil Fuel Subsidies](#sec-political_dysfunction_global_fossil_fuel_subsidies): $1.30T (95% CI: $1.10T - $1.50T)
-- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total): $101T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
+- [Global Fossil Fuel Subsidies](#sec-political_dysfunction_global_fossil_fuel_subsidies) 📊: $1.30T (95% CI: $1.10T - $1.50T)
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
 
 $$
 \begin{gathered}
@@ -520,14 +520,14 @@ $$
 
 ### Global Opportunity Cost as % of GDP: 87.8% {#sec-political_dysfunction_global_opportunity_cost_pct_gdp}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global opportunity cost as percentage of global GDP. $101T / $115T = ~88% of current GDP in unrealized potential. This represents the 'buried multipliers' of the global economy.
 
 **Inputs**:
 
-- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total): $101T
-- [Global GDP (2025)](#sec-global_gdp_2025): $115T
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
 
 $$
 \begin{gathered}
@@ -561,16 +561,16 @@ $$
 
 ### Global Opportunity Cost Total: $101T {#sec-political_dysfunction_global_opportunity_cost_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total global opportunity cost from governance failures: health innovation delays ($34T), underfunded science ($4T), lead poisoning ($6T), migration restrictions ($57T). Sum: $101T annually in unrealized potential.
 
 **Inputs**:
 
-- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost): $34T (95% CI: $20T - $80T)
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost): $4T (95% CI: $2T - $10T)
-- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost): $6T (95% CI: $4T - $8T)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost): $57T (95% CI: $57T - $170T)
+- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34T (95% CI: $20T - $80T)
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
 
 $$
 \begin{gathered}
@@ -603,14 +603,14 @@ $$
 
 ### US Waste (% GDP): 17% {#sec-us_gov_waste_pct_gdp}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US government waste as percentage of GDP. ~$4.90T waste / $28.78T GDP = ~17%. This represents the 'dysfunction tax' that American citizens effectively pay through inefficient governance.
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total): $4.90T
-- [US GDP (2024)](#sec-us_gdp_2024): $28.8T
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
+- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8T
 
 $$
 \begin{gathered}
@@ -647,22 +647,22 @@ $$
 
 ### US Gov Waste (Raw Total): $4.90T {#sec-us_gov_waste_raw_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Raw sum of US government waste components before overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.
 
 **Inputs**:
 
-- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency): $1.20T (95% CI: $1T - $1.50T)
-- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning): $1.40T (95% CI: $500B - $2T)
-- [Military Overspend](#sec-us_gov_waste_military_overspend): $615B (95% CI: $500B - $750B)
-- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape): $580B (95% CI: $290B - $1T)
-- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance): $546B (95% CI: $450B - $650B)
-- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare): $181B (95% CI: $150B - $220B)
-- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs): $160B (95% CI: $90B - $250B)
-- [Drug War Cost](#sec-us_gov_waste_drug_war): $90B (95% CI: $60B - $150B)
-- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies): $50B (95% CI: $30B - $80B)
-- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies): $75B (95% CI: $50B - $120B)
+- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.20T (95% CI: $1T - $1.50T)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $500B - $2T)
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
+- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181B (95% CI: $150B - $220B)
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
+- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90B (95% CI: $60B - $150B)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50B (95% CI: $30B - $80B)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
 
 $$
 \begin{gathered}
@@ -696,13 +696,13 @@ $$
 
 ### US Government Waste (Total): $4.90T {#sec-us_gov_waste_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual US government waste (additive sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as additive; any overlap offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.
 
 **Inputs**:
 
-- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total): $4.90T
+- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total) 🔢: $4.90T
 - [Overlap Discount Factor](#sec-us_gov_waste_overlap_discount): 1:1
 
 $$
@@ -743,7 +743,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
@@ -767,7 +767,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 ### Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
 
@@ -791,7 +791,7 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 ### Global GDP (2025): $115T {#sec-global_gdp_2025}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs as percentage of world economic output. Note: Latest IMF data shows $117T.
 
@@ -807,7 +807,7 @@ Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing 
 
 ### Global Fossil Fuel Subsidies: $1.30T {#sec-political_dysfunction_global_fossil_fuel_subsidies}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global explicit fossil fuel subsidies (governments undercharging for energy supply costs). IMF 2022 estimate. These subsidies actively encourage consumption of negative-externality goods, working against climate goals. Note: IMF implicit subsidies (externalities) are much larger (~$7T).
 
@@ -831,7 +831,7 @@ Global explicit fossil fuel subsidies (governments undercharging for energy supp
 
 ### Global Health Opportunity Cost: $34T {#sec-political_dysfunction_global_health_opportunity_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual opportunity cost of slow-motion regulatory environment for health innovation. Murphy-Topel (2006) valued cancer cure at $50T (inflation-adjusted ~$100T in 2025). Longevity dividend of 1 extra year = $38T globally. PCTs could accelerate cures by 10+ years; NPV of 10-year delay at 3% discount = ~$25T. Conservative estimate: $34T annually in lives lost and healthspan denied.
 
@@ -855,7 +855,7 @@ Annual opportunity cost of slow-motion regulatory environment for health innovat
 
 ### Global Lead Poisoning Cost: $6T {#sec-political_dysfunction_global_lead_opportunity_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points lost annually, 5.5 million premature CVD deaths. Cost to eliminate lead from paint, spices, batteries is trivial compared to damage. This is an arbitrage opportunity of immense scale that governance has failed to execute.
 
@@ -879,7 +879,7 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 ### Global Migration Opportunity Cost: $57T {#sec-political_dysfunction_global_migration_opportunity_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.
 
@@ -903,7 +903,7 @@ Unrealized output from migration restrictions. Clemens (2011) calculated elimina
 
 ### Global Science Opportunity Cost: $4T {#sec-political_dysfunction_global_science_opportunity_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). Fusion DEMO plant: $5-10B could solve energy/climate permanently. AI safety: <5% of capabilities spending despite existential stakes. Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.
 
@@ -927,7 +927,7 @@ Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). 
 
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 3 cost per patient (median from FDA study)
 
@@ -951,7 +951,7 @@ Phase 3 cost per patient (median from FDA study)
 
 ### US GDP (2024): $28.8T {#sec-us_gdp_2024}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
@@ -967,7 +967,7 @@ US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
 ### Agricultural Subsidies Deadweight Loss: $75B {#sec-us_gov_waste_agricultural_subsidies}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high economist consensus. [CATEGORY 1: Direct Spending]
 
@@ -991,7 +991,7 @@ Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but cr
 
 ### Corporate Welfare Waste: $181B {#sec-us_gov_waste_corporate_welfare}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits, semiconductor aid, aviation support. Agricultural subsidies are highly regressive (top 10% receive 63%). Cato Institute forensic tally. [CATEGORY 1: Direct Spending]
 
@@ -1015,7 +1015,7 @@ Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green en
 
 ### Drug War Cost: $90B {#sec-us_gov_waste_drug_war}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY 1: Direct Spending]
 
@@ -1039,7 +1039,7 @@ Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local en
 
 ### Fossil Fuel Subsidies (Explicit): $50B {#sec-us_gov_waste_fossil_fuel_subsidies}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). This figure includes only explicit subsidies (~$50B) for defensibility. [CATEGORY 1: Direct Spending]
 
@@ -1063,7 +1063,7 @@ US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates U
 
 ### Healthcare System Inefficiency: $1.20T {#sec-us_gov_waste_healthcare_inefficiency}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]
 
@@ -1087,7 +1087,7 @@ US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in c
 
 ### Housing/Zoning Restrictions Cost: $1.40T {#sec-us_gov_waste_housing_zoning}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]
 
@@ -1111,7 +1111,7 @@ GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macr
 
 ### Military Overspend: $615B {#sec-us_gov_waste_military_overspend}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US military spending above 'Strict Deterrence' baseline. Current budget ~$900B supports global power projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]
 
@@ -1135,7 +1135,7 @@ US military spending above 'Strict Deterrence' baseline. Current budget ~$900B s
 
 ### Regulatory Red Tape Waste: $580B {#sec-us_gov_waste_regulatory_red_tape}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Deadweight loss from US regulatory red tape (procedural friction without safety benefits). Competitive Enterprise Institute estimates total regulatory burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B. [CATEGORY 2: Compliance Burden]
 
@@ -1159,7 +1159,7 @@ Deadweight loss from US regulatory red tape (procedural friction without safety 
 
 ### Tariff Cost (GDP Loss): $160B {#sec-us_gov_waste_tariffs}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices. [CATEGORY 3: GDP Loss]
 
@@ -1183,7 +1183,7 @@ Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 
 
 ### Tax Compliance Waste: $546B {#sec-us_gov_waste_tax_compliance}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing. [CATEGORY 2: Compliance Burden]
 
@@ -1211,7 +1211,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)
 
@@ -1233,7 +1233,7 @@ Decentralized Framework for Drug Assessment Core framework annual opex (midpoint
 
 ### Decentralized Framework for Drug Assessment Core framework Build Cost: $40M {#sec-dfda_npv_upfront_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment Core framework build cost
 
@@ -1255,7 +1255,7 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 ### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment community support costs
 
@@ -1277,7 +1277,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 ### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
 
@@ -1299,7 +1299,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 ### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment maintenance costs
 
@@ -1321,7 +1321,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 ### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment regulatory coordination costs
 
@@ -1343,7 +1343,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 ### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
@@ -1365,7 +1365,7 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 ### DIH Broader Initiatives Annual OPEX: $21.1M {#sec-dih_npv_annual_opex_initiatives}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 DIH broader initiatives annual opex (medium case)
 
@@ -1387,7 +1387,7 @@ DIH broader initiatives annual opex (medium case)
 
 ### DIH Broader Initiatives Upfront Cost: $230M {#sec-dih_npv_upfront_cost_initiatives}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 DIH broader initiatives upfront cost (medium case)
 
@@ -1409,7 +1409,7 @@ DIH broader initiatives upfront cost (medium case)
 
 ### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard discount rate for NPV analysis (3% annual, social discount rate)
 
@@ -1423,7 +1423,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 ### Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard time horizon for NPV analysis
 
@@ -1437,7 +1437,7 @@ Standard time horizon for NPV analysis
 
 ### Overlap Discount Factor: 1:1 {#sec-us_gov_waste_overlap_discount}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Overlap discount factor between US government waste categories. Set to 1.0 (no discount). Categories are treated as additive, recognizing that any overlap is offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects).
 
@@ -1451,7 +1451,7 @@ Overlap discount factor between US government waste categories. Set to 1.0 (no d
 
 ### Switzerland-US Life Expectancy Gap: 6.5 years {#sec-us_vs_switzerland_life_expectancy_gap}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of life while spending 3% LESS of GDP on government.
 
@@ -1465,7 +1465,7 @@ Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of 
 
 ### US-Switzerland Spending Gap: 300% {#sec-us_vs_switzerland_spending_gap}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Government spending gap: US spends 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.
 

@@ -47,13 +47,13 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Combination Therapy Space: 45.1 billion combinations {#sec-combination_therapy_disease_space}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total combination therapy space (pairwise drug combinations × diseases). Standard in oncology, HIV, cardiology.
 
 **Inputs**:
 
-- [Pairwise Drug Combinations](#sec-combination_therapy_pairs): 45.1 million combinations
+- [Pairwise Drug Combinations](#sec-combination_therapy_pairs) 🔢: 45.1 million combinations
 - [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00 thousand diseases (95% CI: 800 diseases - 1.20 thousand diseases)
 
 $$
@@ -75,7 +75,7 @@ $$
 
 ### Pairwise Drug Combinations: 45.1 million combinations {#sec-combination_therapy_pairs}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Unique pairwise drug combinations from known safe compounds (n choose 2)
 
@@ -95,14 +95,14 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 ### Combination Therapy Exploration Time (Current): 13.7 million years {#sec-current_combination_exploration_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years to test all pairwise drug combinations at current trial capacity. Combination therapy is standard in oncology, HIV, cardiology.
 
 **Inputs**:
 
-- [Combination Therapy Space](#sec-combination_therapy_disease_space): 45.1 billion combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year): 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
+- [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1 billion combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
 
 $$
 \begin{gathered}
@@ -137,14 +137,14 @@ $$
 
 ### Known Safe Exploration Time (Current): 2.88 thousand years {#sec-current_known_safe_exploration_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years to test all known safe drug-disease combinations at current global trial capacity
 
 **Inputs**:
 
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible): 9.50 million combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year): 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
 
 $$
 \begin{gathered}
@@ -179,14 +179,14 @@ $$
 
 ### Current Patient Participation Rate in Clinical Trials: 0.0792% {#sec-current_patient_participation_rate}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)
 
 **Inputs**:
 
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available): 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
-- [Global Population with Chronic Diseases](#sec-current_disease_patients_global): 2.40 billion people (95% CI: 2.00 billion people - 2.80 billion people)
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
+- [Global Population with Chronic Diseases](#sec-current_disease_patients_global) 📊: 2.40 billion people (95% CI: 2.00 billion people - 2.80 billion people)
 
 $$
 \begin{gathered}
@@ -219,7 +219,7 @@ $$
 
 ### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
 
@@ -261,14 +261,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6B {#sec-dfda_benefit_rd_only_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual): $60B (95% CI: $50B - $75B)
-- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct): 97.7%
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
@@ -303,14 +303,14 @@ $$
 
 ### Total DALYs Lost from Disease Eradication Delay: 7.94 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll): 7.07 billion years
-- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld): 873 million years
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07 billion years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873 million years
 
 $$
 \begin{gathered}
@@ -354,14 +354,14 @@ $$
 
 ### Total Deaths from Disease Eradication Delay: 416 million deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
 
 **Inputs**:
 
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: ±2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily): 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
 
 $$
 \begin{gathered}
@@ -392,14 +392,14 @@ $$
 
 ### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys): 7.94 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd): $150K (SE: ±$30K)
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
@@ -447,15 +447,15 @@ $$
 
 ### Years Lived with Disability During Disease Eradication Delay: 873 million years {#sec-dfda_efficacy_lag_elimination_yld}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted): 416 million deaths
-- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years): 6 years (95% CI: 4 years - 9 years)
-- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight): 0.35 weight (SE: ±0.07 weight)
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
+- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
+- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
 
 $$
 \begin{gathered}
@@ -490,15 +490,15 @@ $$
 
 ### Years of Life Lost from Disease Eradication Delay: 7.07 billion years {#sec-dfda_efficacy_lag_elimination_yll}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted): 416 million deaths
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024): 79 years (SE: ±2 years)
-- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death): 62 years (SE: ±3 years)
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
 
 $$
 \begin{gathered}
@@ -533,14 +533,14 @@ $$
 
 ### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
 
 **Inputs**:
 
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year): 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3x
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -609,14 +609,14 @@ $$
 
 ### Known Safe Exploration Time (dFDA): 234 years {#sec-dfda_known_safe_exploration_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years to test all known safe drug-disease combinations with dFDA trial capacity
 
 **Inputs**:
 
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible): 9.50 million combinations
-- [Decentralized Framework for Drug Assessment Maximum Trials per Year](#sec-dfda_trials_per_year_capacity): 40.6 thousand trials/year
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
+- [Decentralized Framework for Drug Assessment Maximum Trials per Year](#sec-dfda_trials_per_year_capacity) 🔢: 40.6 thousand trials/year
 
 $$
 \begin{gathered}
@@ -690,14 +690,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6B {#sec-dfda_net_savings_rd_only_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual): $58.6B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex): $40M
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
 \begin{gathered}
@@ -741,7 +741,7 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40M {#sec-dfda_npv_annual_opex_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
@@ -779,13 +779,13 @@ $$
 
 ### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389B {#sec-dfda_npv_benefit_rd_only}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual): $58.6B
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6B
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -815,13 +815,13 @@ $$
 
 ### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342M {#sec-dfda_npv_pv_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Present value of annual opex over 10 years (NPV formula)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total): $40M
+- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
@@ -849,14 +849,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Cost: $611M {#sec-dfda_npv_total_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV cost (upfront + PV of annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex): $342M
-- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total): $270M
+- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
+- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
 \begin{gathered}
@@ -896,7 +896,7 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M {#sec-dfda_npv_upfront_cost_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
@@ -934,14 +934,14 @@ $$
 
 ### dFDA Therapeutic Space Exploration Time: 36 years {#sec-dfda_queue_clearance_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years to explore the entire therapeutic search space with dFDA implementation. At increased discovery rate, finding first treatments for all currently untreatable diseases takes ~36 years instead of ~443.
 
 **Inputs**:
 
-- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years): 443 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3x
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -1009,13 +1009,13 @@ $$
 
 ### Daily R&D Savings from Trial Cost Reduction: $161M {#sec-dfda_rd_savings_daily}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual): $58.6B
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
 
 $$
 \begin{gathered}
@@ -1054,14 +1054,14 @@ $$
 
 ### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only): $389B
-- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost): $611M
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
 
 $$
 \begin{gathered}
@@ -1120,14 +1120,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Maximum Trials per Year: 40.6 thousand trials/year {#sec-dfda_trials_per_year_capacity}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Maximum trials per year possible with trial capacity multiplier
 
 **Inputs**:
 
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year): 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3x
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -1196,14 +1196,14 @@ $$
 
 ### Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Trial capacity multiplier from DIH funding capacity vs. current global trial participation
 
 **Inputs**:
 
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available): 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
-- [Patients Fundable Annually](#sec-dih_patients_fundable_annually): 23.4 million patients/year
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
+- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
 \begin{gathered}
@@ -1268,15 +1268,15 @@ $$
 
 ### Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).
 
 **Inputs**:
 
-- [Global Annual DALY Burden](#sec-global_annual_daly_burden): 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
-- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years): 212 years
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
 \begin{gathered}
@@ -1353,14 +1353,14 @@ $$
 
 ### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys): 565 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd): $150K (SE: ±$30K)
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
@@ -1441,14 +1441,14 @@ $$
 
 ### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7 billion deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily): 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
-- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years): 212 years
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
 \begin{gathered}
@@ -1525,14 +1525,14 @@ $$
 
 ### dFDA Average Total Timeline Shift: 212 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average years earlier patients receive treatments due to dFDA. Combines treatment timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.
 
 **Inputs**:
 
-- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years): 204 years
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: ±2 years)
+- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years) 🔢: 204 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
 \begin{gathered}
@@ -1605,14 +1605,14 @@ $$
 
 ### dFDA Treatment Timeline Acceleration: 204 years {#sec-dfda_trial_capacity_treatment_acceleration_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed therapeutic space exploration.
 
 **Inputs**:
 
-- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment): 222 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3x
+- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -1684,14 +1684,14 @@ $$
 
 ### dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
 
 **Inputs**:
 
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{gathered}
@@ -1722,14 +1722,14 @@ $$
 
 ### dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
 
 $$
 \begin{gathered}
@@ -1760,14 +1760,14 @@ $$
 
 ### Patients Fundable Annually: 23.4 million patients/year {#sec-dih_patients_fundable_annually}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
 
 **Inputs**:
 
-- [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual): $21.7B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
+- [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual) 🔢: $21.7B
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{gathered}
@@ -1831,14 +1831,14 @@ $$
 
 ### Medical Research Percentage of Treaty Funding: 80% {#sec-dih_treasury_medical_research_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of treaty funding allocated to medical research (after bond payouts and IAB incentives)
 
 **Inputs**:
 
-- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual): $21.8B
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.8B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 
 $$
 \begin{gathered}
@@ -1888,15 +1888,15 @@ $$
 
 ### Annual Funding for Pragmatic Clinical Trials: $21.8B {#sec-dih_treasury_to_medical_research_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)
 
 **Inputs**:
 
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
-- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout): $2.72B
-- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual): $2.72B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout) 🔢: $2.72B
+- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72B
 
 $$
 \begin{gathered}
@@ -1933,14 +1933,14 @@ $$
 
 ### Annual Clinical Trial Patient Subsidies: $21.7B {#sec-dih_treasury_trial_subsidies_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)
 
 **Inputs**:
 
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex): $40M
-- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual): $21.8B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.8B
 
 $$
 \begin{gathered}
@@ -2000,13 +2000,13 @@ $$
 
 ### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global): 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
 
 $$
 \begin{gathered}
@@ -2039,14 +2039,14 @@ $$
 
 ### Drug Cost Increase: Pre-1962 to Current: 105x {#sec-drug_cost_increase_pre1962_to_current_multiplier}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Drug development cost increase from pre-1962 to current ($24.7M → $2.6B = 105×)
 
 **Inputs**:
 
-- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current): $2.60B (95% CI: $1.50B - $4B)
-- [Pre-1962 Drug Development Cost (2024 Dollars)](#sec-pre_1962_drug_development_cost_2024_usd): $24.7M (95% CI: $19.5M - $30M)
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
+- [Pre-1962 Drug Development Cost (2024 Dollars)](#sec-pre_1962_drug_development_cost_2024_usd) 📊: $24.7M (95% CI: $19.5M - $30M)
 
 $$
 \begin{gathered}
@@ -2079,7 +2079,7 @@ $$
 
 ### Possible Drug-Disease Combinations: 9.50 million combinations {#sec-drug_disease_combinations_possible}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total possible drug-disease combinations using existing safe compounds
 
@@ -2107,14 +2107,14 @@ $$
 
 ### Therapeutic Frontier Exploration Ratio: 0.342% {#sec-exploration_ratio}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Fraction of possible drug-disease space actually tested (<1%)
 
 **Inputs**:
 
 - [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15.0 thousand relationships - 50.0 thousand relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible): 9.50 million combinations
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
 
 $$
 \begin{gathered}
@@ -2146,14 +2146,14 @@ $$
 
 ### FDA to Oxford RECOVERY Trial Time Multiplier: 42:1 {#sec-fda_to_oxford_recovery_trial_time_multiplier}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 FDA approval timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower)
 
 **Inputs**:
 
-- [FDA Phase 1 to Approval Timeline](#sec-fda_phase_1_to_approval_years): 10.5 years (95% CI: 6 years - 12 years)
-- [Oxford RECOVERY Trial Duration](#sec-oxford_recovery_trial_duration_months): 3 months
+- [FDA Phase 1 to Approval Timeline](#sec-fda_phase_1_to_approval_years) 📊: 10.5 years (95% CI: 6 years - 12 years)
+- [Oxford RECOVERY Trial Duration](#sec-oxford_recovery_trial_duration_months) 📊: 3 months
 
 $$
 \begin{gathered}
@@ -2184,15 +2184,15 @@ $$
 
 ### Total Annual Conflict Deaths Globally: 245 thousand deaths/year {#sec-global_annual_conflict_deaths_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual conflict deaths globally (sum of combat, terror, state violence)
 
 **Inputs**:
 
-- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat): 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
-- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence): 2.70 thousand deaths/year (95% CI: 1.50 thousand deaths/year - 5.00 thousand deaths/year)
-- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks): 8.30 thousand deaths/year (95% CI: 6.00 thousand deaths/year - 12.0 thousand deaths/year)
+- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.70 thousand deaths/year (95% CI: 1.50 thousand deaths/year - 5.00 thousand deaths/year)
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.30 thousand deaths/year (95% CI: 6.00 thousand deaths/year - 12.0 thousand deaths/year)
 
 $$
 \begin{gathered}
@@ -2223,14 +2223,14 @@ $$
 
 ### Total Annual Cost of War Worldwide: $11.4T {#sec-global_annual_direct_indirect_war_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual cost of war worldwide (direct + indirect costs)
 
 **Inputs**:
 
-- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total): $7.66T
-- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total): $3.70T
+- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.70T
 
 $$
 \begin{gathered}
@@ -2300,14 +2300,14 @@ $$
 
 ### Annual Cost of Combat Deaths: $2.34T {#sec-global_annual_human_cost_active_combat}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual cost of combat deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat): 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
-- [Value of Statistical Life](#sec-value_of_statistical_life): $10M (95% CI: $5M - $15M)
+- [Annual Deaths from Active Combat Worldwide](#sec-global_annual_conflict_deaths_active_combat) 📊: 234 thousand deaths/year (95% CI: 180 thousand deaths/year - 300 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
 
 $$
 \begin{gathered}
@@ -2338,14 +2338,14 @@ $$
 
 ### Annual Cost of State Violence Deaths: $27B {#sec-global_annual_human_cost_state_violence}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual cost of state violence deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence): 2.70 thousand deaths/year (95% CI: 1.50 thousand deaths/year - 5.00 thousand deaths/year)
-- [Value of Statistical Life](#sec-value_of_statistical_life): $10M (95% CI: $5M - $15M)
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.70 thousand deaths/year (95% CI: 1.50 thousand deaths/year - 5.00 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
 
 $$
 \begin{gathered}
@@ -2376,14 +2376,14 @@ $$
 
 ### Annual Cost of Terror Deaths: $83B {#sec-global_annual_human_cost_terror_attacks}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual cost of terror deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks): 8.30 thousand deaths/year (95% CI: 6.00 thousand deaths/year - 12.0 thousand deaths/year)
-- [Value of Statistical Life](#sec-value_of_statistical_life): $10M (95% CI: $5M - $15M)
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.30 thousand deaths/year (95% CI: 6.00 thousand deaths/year - 12.0 thousand deaths/year)
+- [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
 
 $$
 \begin{gathered}
@@ -2414,15 +2414,15 @@ $$
 
 ### Total Annual Human Life Losses from Conflict: $2.45T {#sec-global_annual_human_life_losses_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual human life losses from conflict (sum of combat, terror, state violence)
 
 **Inputs**:
 
-- [Annual Cost of Combat Deaths](#sec-global_annual_human_cost_active_combat): $2.34T
-- [Annual Cost of State Violence Deaths](#sec-global_annual_human_cost_state_violence): $27B
-- [Annual Cost of Terror Deaths](#sec-global_annual_human_cost_terror_attacks): $83B
+- [Annual Cost of Combat Deaths](#sec-global_annual_human_cost_active_combat) 🔢: $2.34T
+- [Annual Cost of State Violence Deaths](#sec-global_annual_human_cost_state_violence) 🔢: $27B
+- [Annual Cost of Terror Deaths](#sec-global_annual_human_cost_terror_attacks) 🔢: $83B
 
 $$
 \begin{gathered}
@@ -2466,18 +2466,18 @@ $$
 
 ### Total Annual Infrastructure Destruction: $1.88T {#sec-global_annual_infrastructure_destruction_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual infrastructure destruction (sum of transportation, energy, communications, water, education, healthcare)
 
 **Inputs**:
 
-- [Annual Infrastructure Damage to Communications from Conflict](#sec-global_annual_infrastructure_damage_communications_conflict): $298B (95% CI: $209B - $418B)
-- [Annual Infrastructure Damage to Education Facilities from Conflict](#sec-global_annual_infrastructure_damage_education_conflict): $234B (95% CI: $164B - $328B)
-- [Annual Infrastructure Damage to Energy Systems from Conflict](#sec-global_annual_infrastructure_damage_energy_conflict): $422B (95% CI: $295B - $590B)
-- [Annual Infrastructure Damage to Healthcare Facilities from Conflict](#sec-global_annual_infrastructure_damage_healthcare_conflict): $166B (95% CI: $116B - $232B)
-- [Annual Infrastructure Damage to Transportation from Conflict](#sec-global_annual_infrastructure_damage_transportation_conflict): $487B (95% CI: $340B - $680B)
-- [Annual Infrastructure Damage to Water Systems from Conflict](#sec-global_annual_infrastructure_damage_water_conflict): $268B (95% CI: $187B - $375B)
+- [Annual Infrastructure Damage to Communications from Conflict](#sec-global_annual_infrastructure_damage_communications_conflict) 📊: $298B (95% CI: $209B - $418B)
+- [Annual Infrastructure Damage to Education Facilities from Conflict](#sec-global_annual_infrastructure_damage_education_conflict) 📊: $234B (95% CI: $164B - $328B)
+- [Annual Infrastructure Damage to Energy Systems from Conflict](#sec-global_annual_infrastructure_damage_energy_conflict) 📊: $422B (95% CI: $295B - $590B)
+- [Annual Infrastructure Damage to Healthcare Facilities from Conflict](#sec-global_annual_infrastructure_damage_healthcare_conflict) 📊: $166B (95% CI: $116B - $232B)
+- [Annual Infrastructure Damage to Transportation from Conflict](#sec-global_annual_infrastructure_damage_transportation_conflict) 📊: $487B (95% CI: $340B - $680B)
+- [Annual Infrastructure Damage to Water Systems from Conflict](#sec-global_annual_infrastructure_damage_water_conflict) 📊: $268B (95% CI: $187B - $375B)
 
 $$
 \begin{gathered}
@@ -2509,16 +2509,16 @@ $$
 
 ### Total Annual Trade Disruption: $616B {#sec-global_annual_trade_disruption_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual trade disruption (sum of shipping, supply chain, energy prices, currency instability)
 
 **Inputs**:
 
-- [Annual Trade Disruption Costs from Currency Instability](#sec-global_annual_trade_disruption_currency_conflict): $57.4B (95% CI: $40B - $80B)
-- [Annual Trade Disruption Costs from Energy Price Volatility](#sec-global_annual_trade_disruption_energy_price_conflict): $125B (95% CI: $87B - $175B)
-- [Annual Trade Disruption Costs from Shipping Disruptions](#sec-global_annual_trade_disruption_shipping_conflict): $247B (95% CI: $173B - $346B)
-- [Annual Trade Disruption Costs from Supply Chain Disruptions](#sec-global_annual_trade_disruption_supply_chain_conflict): $187B (95% CI: $131B - $262B)
+- [Annual Trade Disruption Costs from Currency Instability](#sec-global_annual_trade_disruption_currency_conflict) 📊: $57.4B (95% CI: $40B - $80B)
+- [Annual Trade Disruption Costs from Energy Price Volatility](#sec-global_annual_trade_disruption_energy_price_conflict) 📊: $125B (95% CI: $87B - $175B)
+- [Annual Trade Disruption Costs from Shipping Disruptions](#sec-global_annual_trade_disruption_shipping_conflict) 📊: $247B (95% CI: $173B - $346B)
+- [Annual Trade Disruption Costs from Supply Chain Disruptions](#sec-global_annual_trade_disruption_supply_chain_conflict) 📊: $187B (95% CI: $131B - $262B)
 
 $$
 \begin{gathered}
@@ -2550,16 +2550,16 @@ $$
 
 ### Total Annual Direct War Costs: $7.66T {#sec-global_annual_war_direct_costs_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual direct war costs (military spending + infrastructure + human life + trade disruption)
 
 **Inputs**:
 
-- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict): $2.45T
-- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict): $1.88T
-- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict): $616B
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024): $2.72T
+- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45T
+- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88T
+- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616B
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 
 $$
 \begin{gathered}
@@ -2619,18 +2619,18 @@ $$
 
 ### Total Annual Indirect War Costs: $3.70T {#sec-global_annual_war_indirect_costs_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual indirect war costs (opportunity cost + veterans + refugees + environment + mental health + lost productivity)
 
 **Inputs**:
 
-- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict): $100B (95% CI: $70B - $140B)
-- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending): $2.72T (95% CI: $1.90T - $3.80T)
-- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict): $300B (95% CI: $210B - $420B)
-- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict): $232B (95% CI: $162B - $325B)
-- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs): $150B (95% CI: $105B - $210B)
-- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs): $200B (95% CI: $140B - $280B)
+- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100B (95% CI: $70B - $140B)
+- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.90T - $3.80T)
+- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300B (95% CI: $210B - $420B)
+- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232B (95% CI: $162B - $325B)
+- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150B (95% CI: $105B - $210B)
+- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200B (95% CI: $140B - $280B)
 
 $$
 \begin{gathered}
@@ -2662,15 +2662,15 @@ $$
 
 ### Total Economic Burden of Disease Globally: $109T {#sec-global_disease_economic_burden_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total economic burden of disease globally (medical + productivity + mortality)
 
 **Inputs**:
 
-- [Global Annual Direct Medical Costs of Disease](#sec-global_disease_direct_medical_cost_annual): $9.90T (95% CI: $7T - $14T)
-- [Global Annual Economic Value of Human Life Lost to Disease](#sec-global_disease_human_life_value_loss_annual): $94.2T (95% CI: $66T - $132T)
-- [Global Annual Productivity Loss from Disease](#sec-global_disease_productivity_loss_annual): $5T (95% CI: $3.50T - $7T)
+- [Global Annual Direct Medical Costs of Disease](#sec-global_disease_direct_medical_cost_annual) 📊: $9.90T (95% CI: $7T - $14T)
+- [Global Annual Economic Value of Human Life Lost to Disease](#sec-global_disease_human_life_value_loss_annual) 📊: $94.2T (95% CI: $66T - $132T)
+- [Global Annual Productivity Loss from Disease](#sec-global_disease_productivity_loss_annual) 📊: $5T (95% CI: $3.50T - $7T)
 
 $$
 \begin{gathered}
@@ -2704,14 +2704,14 @@ $$
 
 ### Per Capita Military Spending Globally: $340 {#sec-global_military_spending_per_capita_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Per capita military spending globally
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024): $2.72T
-- [Global Population in 2024](#sec-global_population_2024): 8.00 billion of people (95% CI: 7.80 billion of people - 8.20 billion of people)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8.00 billion of people (95% CI: 7.80 billion of people - 8.20 billion of people)
 
 $$
 \begin{gathered}
@@ -2742,13 +2742,13 @@ $$
 
 ### Global Military Spending After 1% Treaty Reduction: $2.69T {#sec-global_military_spending_post_treaty_annual_2024}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global military spending after 1% treaty reduction
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024): $2.72T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -2766,13 +2766,13 @@ $$
 
 ### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
 
 **Inputs**:
 
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 - [IAB Political Incentive Funding Percentage](#sec-iab_political_incentive_funding_pct): 10%
 
 $$
@@ -2794,14 +2794,14 @@ $$
 
 ### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Ratio of global military spending to government clinical trials spending
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024): $2.72T
-- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual): $4.50B (95% CI: $3B - $6B)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.50B (95% CI: $3B - $6B)
 
 $$
 \begin{gathered}
@@ -2832,13 +2832,13 @@ $$
 
 ### Annual Peace Dividend from 1% Reduction in Total War Costs: $114B {#sec-peace_dividend_annual_societal_benefit}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual peace dividend from 1% reduction in total war costs (theoretical maximum at ε=1.0)
 
 **Inputs**:
 
-- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost): $11.4T
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -2913,13 +2913,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Direct War Costs: $76.6B {#sec-peace_dividend_direct_costs}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in direct war costs
 
 **Inputs**:
 
-- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total): $7.66T
+- [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -2984,13 +2984,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Environmental Damage: $1B {#sec-peace_dividend_environmental}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in environmental damage
 
 **Inputs**:
 
-- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict): $100B (95% CI: $70B - $140B)
+- [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100B (95% CI: $70B - $140B)
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3022,13 +3022,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Human Casualties: $24.5B {#sec-peace_dividend_human_casualties}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in human casualties
 
 **Inputs**:
 
-- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict): $2.45T
+- [Total Annual Human Life Losses from Conflict](#sec-global_annual_human_life_losses_conflict) 🔢: $2.45T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3077,13 +3077,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Indirect War Costs: $37B {#sec-peace_dividend_indirect_costs}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in indirect war costs
 
 **Inputs**:
 
-- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total): $3.70T
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.70T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3121,13 +3121,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Infrastructure Destruction: $18.8B {#sec-peace_dividend_infrastructure}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in infrastructure destruction
 
 **Inputs**:
 
-- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict): $1.88T
+- [Total Annual Infrastructure Destruction](#sec-global_annual_infrastructure_destruction_conflict) 🔢: $1.88T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3165,13 +3165,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Lost Economic Growth: $27.2B {#sec-peace_dividend_lost_economic_growth}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in lost economic growth
 
 **Inputs**:
 
-- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending): $2.72T (95% CI: $1.90T - $3.80T)
+- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.90T - $3.80T)
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3203,13 +3203,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Lost Human Capital: $3B {#sec-peace_dividend_lost_human_capital}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in lost human capital
 
 **Inputs**:
 
-- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict): $300B (95% CI: $210B - $420B)
+- [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300B (95% CI: $210B - $420B)
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3241,13 +3241,13 @@ $$
 
 ### Annual Savings from 1% Reduction in PTSD and Mental Health Costs: $2.32B {#sec-peace_dividend_ptsd}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in PTSD and mental health costs
 
 **Inputs**:
 
-- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict): $232B (95% CI: $162B - $325B)
+- [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232B (95% CI: $162B - $325B)
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3279,13 +3279,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Refugee Support Costs: $1.50B {#sec-peace_dividend_refugee_support}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in refugee support costs
 
 **Inputs**:
 
-- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs): $150B (95% CI: $105B - $210B)
+- [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150B (95% CI: $105B - $210B)
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3317,13 +3317,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Trade Disruption: $6.16B {#sec-peace_dividend_trade_disruption}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in trade disruption
 
 **Inputs**:
 
-- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict): $616B
+- [Total Annual Trade Disruption](#sec-global_annual_trade_disruption_conflict) 🔢: $616B
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3360,13 +3360,13 @@ $$
 
 ### Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B {#sec-peace_dividend_veteran_healthcare}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual savings from 1% reduction in veteran healthcare costs
 
 **Inputs**:
 
-- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs): $200B (95% CI: $140B - $280B)
+- [Annual Veteran Healthcare Costs](#sec-global_annual_veteran_healthcare_costs) 📊: $200B (95% CI: $140B - $280B)
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3398,14 +3398,14 @@ $$
 
 ### Personal Lifetime Wealth (QALY-Based): $3M {#sec-personal_lifetime_wealth}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Personal lifetime wealth from life extension valued at standard QALY rate. Simple formula: years of life gained × economic value per healthy year. Uncertainty in LIFE_EXTENSION_YEARS (5-100 year range, median 20) propagates through Monte Carlo.
 
 **Inputs**:
 
-- [Life Extension from Treaty Research Acceleration](#sec-life_extension_years): 20 years (95% CI: 5 years - 100 years)
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd): $150K (SE: ±$30K)
+- [Life Extension from Treaty Research Acceleration](#sec-life_extension_years) 📊: 20 years (95% CI: 5 years - 100 years)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 Wealth_{lifetime} = T_{extend} \times Value_{QALY}
@@ -3431,14 +3431,14 @@ $$
 
 ### Pragmatic Trial Cost per QALY (RECOVERY): $4.00 {#sec-pragmatic_trial_cost_per_qaly}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data. Uses global impact methodology: trial cost divided by total QALYs from downstream adoption. This measures research efficiency (discovery value), not clinical intervention ICER.
 
 **Inputs**:
 
-- [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost): $20M (95% CI: $15M - $25M)
-- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated): 5.00 million QALYs
+- [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost) 📊: $20M (95% CI: $15M - $25M)
+- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated) 🔢: 5.00 million QALYs
 
 $$
 \begin{gathered}
@@ -3472,14 +3472,14 @@ $$
 
 ### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 How many times more cost-effective pragmatic trials are vs standard NIH research. Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.
 
 **Inputs**:
 
-- [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly): $50K (95% CI: $20K - $100K)
-- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly): $4.00
+- [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly) 📊: $50K (95% CI: $20K - $100K)
+- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly) 🔢: $4.00
 
 $$
 \begin{gathered}
@@ -3515,14 +3515,14 @@ $$
 
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
 
 **Inputs**:
 
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
-- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient): $500 (95% CI: $400 - $2.50K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.50K)
 
 $$
 \begin{gathered}
@@ -3555,13 +3555,13 @@ $$
 
 ### RECOVERY Trial Total QALYs Generated: 5.00 million QALYs {#sec-recovery_trial_total_qalys_generated}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total QALYs generated by RECOVERY trial's discoveries (lives saved × QALYs per life). Uses global impact methodology: counts all downstream health gains from the discovery.
 
 **Inputs**:
 
-- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved): 1.00 million lives (95% CI: 500 thousand lives - 2.00 million lives)
+- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved) 📊: 1.00 million lives (95% CI: 500 thousand lives - 2.00 million lives)
 - [QALYs per COVID Death Averted](#sec-qalys_per_covid_death_averted): 5 QALYs/death (95% CI: 3 QALYs/death - 10 QALYs/death)
 
 $$
@@ -3593,13 +3593,13 @@ $$
 
 ### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average years until first treatment discovered for a typical disease under current system. At current discovery rates, the average disease waits half the total exploration time (~443/2 = ~222 years).
 
 **Inputs**:
 
-- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years): 443 years
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
 
 $$
 \begin{gathered}
@@ -3631,14 +3631,14 @@ $$
 
 ### Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years to explore the entire therapeutic search space under current system. At current discovery rate of ~15 diseases/year getting first treatments, finding treatments for all ~6,650 untreated diseases would take ~443 years.
 
 **Inputs**:
 
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment): 6.65 thousand diseases
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year): 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 
 $$
 \begin{gathered}
@@ -3669,14 +3669,14 @@ $$
 
 ### Thalidomide DALYs Per Event: 41.8 thousand DALYs {#sec-thalidomide_dalys_per_event}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event): 13.0 thousand years
-- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event): 28.8 thousand years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0 thousand years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8 thousand years
 
 $$
 \begin{gathered}
@@ -3728,14 +3728,14 @@ $$
 
 ### Thalidomide Deaths Per Event: 360 deaths {#sec-thalidomide_deaths_per_event}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Deaths per US-scale thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate): 40% (95% CI: 35% - 45%)
-- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented): 900 cases
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
 
 $$
 \begin{gathered}
@@ -3770,14 +3770,14 @@ $$
 
 ### Thalidomide Survivors Per Event: 540 cases {#sec-thalidomide_survivors_per_event}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Survivors per US-scale thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate): 40% (95% CI: 35% - 45%)
-- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented): 900 cases
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
 
 $$
 \begin{gathered}
@@ -3812,14 +3812,14 @@ $$
 
 ### Thalidomide US Cases Prevented: 900 cases {#sec-thalidomide_us_cases_prevented}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide): 15.0 thousand cases (95% CI: 10.0 thousand cases - 20.0 thousand cases)
-- [US Population Share 1960](#sec-thalidomide_us_population_share_1960): 6% (95% CI: 5.5% - 6.5%)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0 thousand cases (95% CI: 10.0 thousand cases - 20.0 thousand cases)
+- [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
 \begin{gathered}
@@ -3850,15 +3850,15 @@ $$
 
 ### Thalidomide YLD Per Event: 13.0 thousand years {#sec-thalidomide_yld_per_event}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years Lived with Disability per thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight): 0.4:1 (95% CI: 0.32:1 - 0.48:1)
-- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event): 540 cases
-- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan): 60 years (95% CI: 50 years - 70 years)
+- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight) 📊: 0.4:1 (95% CI: 0.32:1 - 0.48:1)
+- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event) 🔢: 540 cases
+- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan) 📊: 60 years (95% CI: 50 years - 70 years)
 
 $$
 \begin{gathered}
@@ -3897,13 +3897,13 @@ $$
 
 ### Thalidomide YLL Per Event: 28.8 thousand years {#sec-thalidomide_yll_per_event}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years of Life Lost per thalidomide event (infant deaths)
 
 **Inputs**:
 
-- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event): 360 deaths
+- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event) 🔢: 360 deaths
 
 $$
 \begin{gathered}
@@ -3939,13 +3939,13 @@ $$
 
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual funding from 1% of global military spending redirected to DIH
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024): $2.72T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -3963,7 +3963,7 @@ $$
 
 ### Total 1% Treaty Campaign Cost: $1B {#sec-treaty_campaign_total_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
 
@@ -4003,14 +4003,14 @@ $$
 
 ### Target Voting Bloc Size for Campaign: 280 million of people {#sec-treaty_campaign_voting_bloc_target}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Target voting bloc size for campaign (3.5% of global population - critical mass for social change)
 
 **Inputs**:
 
-- [Global Population in 2024](#sec-global_population_2024): 8.00 billion of people (95% CI: 7.80 billion of people - 8.20 billion of people)
-- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct): 3.5% (95% CI: 2.5% - 4.5%)
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8.00 billion of people (95% CI: 7.80 billion of people - 8.20 billion of people)
+- [Critical Mass Threshold for Social Change](#sec-global_population_activism_threshold_pct) 📊: 3.5% (95% CI: 2.5% - 4.5%)
 
 $$
 \begin{gathered}
@@ -4041,14 +4041,14 @@ $$
 
 ### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.
 
 **Inputs**:
 
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost): $1B
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys): 565 billion DALYs
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 
 $$
 \begin{gathered}
@@ -4131,14 +4131,14 @@ $$
 
 ### Expected Cost per DALY (Risk-Adjusted): $0.177 {#sec-treaty_expected_cost_per_daly}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).
 
 **Inputs**:
 
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag): $0.0018
-- [Political Success Probability](#sec-political_success_probability): 1% (95% CI: 0.1% - 10%)
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0018
+- [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
 \begin{gathered}
@@ -4222,14 +4222,14 @@ $$
 
 ### Expected Treaty ROI (Risk-Adjusted): 848k:1 {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Expected ROI for 1% treaty accounting for political success probability uncertainty. Monte Carlo samples POLITICAL_SUCCESS_PROBABILITY from beta(0.1%, 10%) distribution to generate full expected value distribution. Central value uses 1% probability.
 
 **Inputs**:
 
-- [Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput](#sec-treaty_roi_trial_capacity_plus_efficacy_lag): 84.8M:1
-- [Political Success Probability](#sec-political_success_probability): 1% (95% CI: 0.1% - 10%)
+- [Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 84.8M:1
+- [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
 \begin{gathered}
@@ -4314,14 +4314,14 @@ $$
 
 ### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Expected value multiplier vs bed nets (accounts for political uncertainty at 1% success rate)
 
 **Inputs**:
 
-- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly): $89 (95% CI: $78 - $100)
-- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly): $0.177
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
+- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $0.177
 
 $$
 \begin{gathered}
@@ -4398,14 +4398,14 @@ $$
 
 ### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Treaty ROI from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value): $84.8 quadrillion
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost): $1B
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
 
 $$
 \begin{gathered}
@@ -4492,14 +4492,14 @@ $$
 
 ### Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)
 
 **Inputs**:
 
-- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly): $89 (95% CI: $78 - $100)
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag): $0.0018
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0018
 
 $$
 \begin{gathered}
@@ -4586,13 +4586,13 @@ $$
 
 ### Cumulative Trial Capacity Years Over 20 Years: 246 years {#sec-trial_capacity_cumulative_years_20yr}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cumulative trial-capacity-equivalent years over 20-year period
 
 **Inputs**:
 
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3x
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -4658,14 +4658,14 @@ $$
 
 ### Ratio of Type II Error Cost to Type I Error Benefit: 3.07k:1 {#sec-type_ii_error_cost_ratio}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys): 7.94 billion DALYs
-- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys): 2.59 million DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
+- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59 million DALYs
 
 $$
 \begin{gathered}
@@ -4736,13 +4736,13 @@ $$
 
 ### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59 million DALYs {#sec-type_i_error_benefit_dalys}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
 
 **Inputs**:
 
-- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event): 41.8 thousand DALYs
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8 thousand DALYs
 
 $$
 \begin{gathered}
@@ -4795,14 +4795,14 @@ $$
 
 ### Unexplored Therapeutic Frontier: 99.7% {#sec-unexplored_ratio}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Fraction of possible drug-disease space that remains unexplored (>99%)
 
 **Inputs**:
 
 - [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15.0 thousand relationships - 50.0 thousand relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible): 9.50 million combinations
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
 
 $$
 \begin{gathered}
@@ -4837,13 +4837,13 @@ $$
 
 ### Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)
 
 **Inputs**:
 
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 - [Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds](#sec-victory_bond_funding_pct): 10%
 
 $$
@@ -4865,14 +4865,14 @@ $$
 
 ### Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272% {#sec-victory_bond_annual_return_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual return percentage for VICTORY Incentive Alignment Bondholders
 
 **Inputs**:
 
-- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout): $2.72B
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost): $1B
+- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout) 🔢: $2.72B
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
 
 $$
 \begin{gathered}
@@ -4913,14 +4913,14 @@ $$
 
 ### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global chronic disease patients willing to participate in trials (2.4B × 44.8%)
 
 **Inputs**:
 
-- [Global Population with Chronic Diseases](#sec-current_disease_patients_global): 2.40 billion people (95% CI: 2.00 billion people - 2.80 billion people)
-- [Patient Willingness to Participate in Clinical Trials](#sec-patient_willingness_trial_participation_pct): 44.8% (95% CI: 40% - 50%)
+- [Global Population with Chronic Diseases](#sec-current_disease_patients_global) 📊: 2.40 billion people (95% CI: 2.00 billion people - 2.80 billion people)
+- [Patient Willingness to Participate in Clinical Trials](#sec-patient_willingness_trial_participation_pct) 📊: 44.8% (95% CI: 40% - 50%)
 
 $$
 \begin{gathered}
@@ -4955,7 +4955,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### ADAPTABLE Trial Total Cost: $14M {#sec-adaptable_trial_total_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total costs including site overhead and in-kind contributions from health systems may be higher.
 
@@ -4979,7 +4979,7 @@ PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total co
 
 ### Antidepressant Trial Exclusion Rate: 86.1% {#sec-antidepressant_trial_exclusion_rate}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Mean exclusion rate in antidepressant trials (86.1% of real-world patients excluded)
 
@@ -4991,7 +4991,7 @@ Mean exclusion rate in antidepressant trials (86.1% of real-world patients exclu
 
 ### Average Annual Stock Market Return: 10% {#sec-average_market_return_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average annual stock market return (10%)
 
@@ -5003,7 +5003,7 @@ Average annual stock market return (10%)
 
 ### Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
 
@@ -5021,13 +5021,13 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 {{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Disability Weight for Untreated Chronic Conditions: 0.35 weight {#sec-chronic_disease_disability_weight}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
 
@@ -5041,13 +5041,13 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 {{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
 
-*~ Medium confidence • Peer-reviewed*
+*~ Medium confidence • 📊 Peer-reviewed*
 
 :::
 
 ### CPI Multiplier: 1980 to 2024: 3.8:1 {#sec-cpi_multiplier_1980_to_2024}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)
 
@@ -5071,7 +5071,7 @@ CPI inflation multiplier from 1980 to 2024 (280.48% cumulative inflation)
 
 ### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Current clinical trial participation rate (0.06% of population)
 
@@ -5083,7 +5083,7 @@ Current clinical trial participation rate (0.06% of population)
 
 ### Global Population with Chronic Diseases: 2.40 billion people {#sec-current_disease_patients_global}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global population with chronic diseases
 
@@ -5107,7 +5107,7 @@ Global population with chronic diseases
 
 ### Average Annual New Drug Approvals Globally: 50 drugs/year {#sec-current_drug_approvals_per_year}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average annual new drug approvals globally
 
@@ -5131,7 +5131,7 @@ Average annual new drug approvals globally
 
 ### Current Global Clinical Trials per Year: 3.30 thousand trials/year {#sec-current_trials_per_year}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Current global clinical trials per year
 
@@ -5155,7 +5155,7 @@ Current global clinical trials per year
 
 ### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
@@ -5179,19 +5179,19 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 ### Annual Defense Industry Lobbying Spending: $127M {#sec-defense_lobbying_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual defense industry lobbying spending
 
 **Source**: [@lobbying-spend-defense]
 
-*✓ High confidence • Peer-reviewed • Updated 2024*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
 :::
 
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
@@ -5215,7 +5215,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 ### Drug Discovery to Approval Timeline: 14 years {#sec-drug_discovery_to_approval_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Full drug development timeline from discovery to FDA approval. Typical range is 12-15 years based on BIO 2021 and PMC meta-analyses. Breakdown: preclinical 4-6 years + clinical 10.5 years. Using 14 years as central estimate.
 
@@ -5237,7 +5237,7 @@ Full drug development timeline from discovery to FDA approval. Typical range is 
 
 ### Drug Repurposing Success Rate: 30% {#sec-drug_repurposing_success_rate}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of drugs that gain at least one new indication after initial approval
 
@@ -5249,7 +5249,7 @@ Percentage of drugs that gain at least one new indication after initial approval
 
 ### Economic Multiplier for Education Investment: 2.1x {#sec-economic_multiplier_education_investment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Economic multiplier for education investment (2.1x ROI)
 
@@ -5261,7 +5261,7 @@ Economic multiplier for education investment (2.1x ROI)
 
 ### Economic Multiplier for Healthcare Investment: 4.3x {#sec-economic_multiplier_healthcare_investment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.
 
@@ -5285,7 +5285,7 @@ Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6
 
 ### Economic Multiplier for Infrastructure Investment: 1.6x {#sec-economic_multiplier_infrastructure_investment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Economic multiplier for infrastructure investment (1.6x ROI)
 
@@ -5297,7 +5297,7 @@ Economic multiplier for infrastructure investment (1.6x ROI)
 
 ### Economic Multiplier for Military Spending: 0.6x {#sec-economic_multiplier_military_spending}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.
 
@@ -5321,7 +5321,7 @@ Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×
 
 ### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
@@ -5335,13 +5335,13 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
-*~ Medium confidence • Peer-reviewed • Updated 2021*
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
 
 ### FDA-Approved Drug Products: 20.0 thousand products {#sec-fda_approved_products_count}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total FDA-approved drug products in the U.S.
 
@@ -5353,7 +5353,7 @@ Total FDA-approved drug products in the U.S.
 
 ### FDA-Approved Unique Active Ingredients: 1.65 thousand compounds {#sec-fda_approved_unique_active_ingredients}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Unique active pharmaceutical ingredients in FDA-approved products (midpoint of 1,300-2,000 range)
 
@@ -5377,7 +5377,7 @@ Unique active pharmaceutical ingredients in FDA-approved products (midpoint of 1
 
 ### FDA GRAS Substances: 635 substances {#sec-fda_gras_substances_count}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700 range)
 
@@ -5401,7 +5401,7 @@ FDA Generally Recognized as Safe (GRAS) substances (midpoint of 570-700 range)
 
 ### FDA Phase 1 to Approval Timeline: 10.5 years {#sec-fda_phase_1_to_approval_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry survey: Phase 1 (2.3 years) + efficacy lag (8.2 years) = 10.5 years. Consistent with PMC meta-analysis finding 9.1 years median (95% CI: 8.2-10.0).
 
@@ -5425,7 +5425,7 @@ FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry surv
 
 ### Annual Deaths from Active Combat Worldwide: 234 thousand deaths/year {#sec-global_annual_conflict_deaths_active_combat}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual deaths from active combat worldwide
 
@@ -5449,7 +5449,7 @@ Annual deaths from active combat worldwide
 
 ### Annual Deaths from State Violence: 2.70 thousand deaths/year {#sec-global_annual_conflict_deaths_state_violence}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual deaths from state violence
 
@@ -5473,7 +5473,7 @@ Annual deaths from state violence
 
 ### Annual Deaths from Terror Attacks Globally: 8.30 thousand deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual deaths from terror attacks globally
 
@@ -5497,7 +5497,7 @@ Annual deaths from terror attacks globally
 
 ### Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.
 
@@ -5511,13 +5511,13 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 {{< include ../figures/distribution-global_annual_daly_burden.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual deaths from all diseases and aging globally
 
@@ -5537,7 +5537,7 @@ Annual deaths from all diseases and aging globally
 
 ### Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual environmental damage and restoration costs from conflict
 
@@ -5561,7 +5561,7 @@ Annual environmental damage and restoration costs from conflict
 
 ### Annual Infrastructure Damage to Communications from Conflict: $298B {#sec-global_annual_infrastructure_damage_communications_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual infrastructure damage to communications from conflict
 
@@ -5585,7 +5585,7 @@ Annual infrastructure damage to communications from conflict
 
 ### Annual Infrastructure Damage to Education Facilities from Conflict: $234B {#sec-global_annual_infrastructure_damage_education_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual infrastructure damage to education facilities from conflict
 
@@ -5609,7 +5609,7 @@ Annual infrastructure damage to education facilities from conflict
 
 ### Annual Infrastructure Damage to Energy Systems from Conflict: $422B {#sec-global_annual_infrastructure_damage_energy_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual infrastructure damage to energy systems from conflict
 
@@ -5633,7 +5633,7 @@ Annual infrastructure damage to energy systems from conflict
 
 ### Annual Infrastructure Damage to Healthcare Facilities from Conflict: $166B {#sec-global_annual_infrastructure_damage_healthcare_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual infrastructure damage to healthcare facilities from conflict
 
@@ -5657,7 +5657,7 @@ Annual infrastructure damage to healthcare facilities from conflict
 
 ### Annual Infrastructure Damage to Transportation from Conflict: $487B {#sec-global_annual_infrastructure_damage_transportation_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual infrastructure damage to transportation from conflict
 
@@ -5681,7 +5681,7 @@ Annual infrastructure damage to transportation from conflict
 
 ### Annual Infrastructure Damage to Water Systems from Conflict: $268B {#sec-global_annual_infrastructure_damage_water_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual infrastructure damage to water systems from conflict
 
@@ -5705,7 +5705,7 @@ Annual infrastructure damage to water systems from conflict
 
 ### Annual Lost Economic Growth from Military Spending Opportunity Cost: $2.72T {#sec-global_annual_lost_economic_growth_military_spending}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual foregone economic output from military spending vs productive alternatives. This estimate implicitly captures fiscal multiplier differences (military ~0.6x vs healthcare ~4.3x GDP multiplier). Do not add separate GDP multiplier adjustment to avoid double-counting.
 
@@ -5729,7 +5729,7 @@ Annual foregone economic output from military spending vs productive alternative
 
 ### Annual Lost Productivity from Conflict Casualties: $300B {#sec-global_annual_lost_human_capital_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual lost productivity from conflict casualties
 
@@ -5753,7 +5753,7 @@ Annual lost productivity from conflict casualties
 
 ### Annual PTSD and Mental Health Costs from Conflict: $232B {#sec-global_annual_psychological_impact_costs_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual PTSD and mental health costs from conflict
 
@@ -5777,7 +5777,7 @@ Annual PTSD and mental health costs from conflict
 
 ### Annual Refugee Support Costs: $150B {#sec-global_annual_refugee_support_costs}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual refugee support costs (108.4M refugees × $1,384/year)
 
@@ -5801,7 +5801,7 @@ Annual refugee support costs (108.4M refugees × $1,384/year)
 
 ### Annual Trade Disruption Costs from Currency Instability: $57.4B {#sec-global_annual_trade_disruption_currency_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual trade disruption costs from currency instability
 
@@ -5825,7 +5825,7 @@ Annual trade disruption costs from currency instability
 
 ### Annual Trade Disruption Costs from Energy Price Volatility: $125B {#sec-global_annual_trade_disruption_energy_price_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual trade disruption costs from energy price volatility
 
@@ -5849,7 +5849,7 @@ Annual trade disruption costs from energy price volatility
 
 ### Annual Trade Disruption Costs from Shipping Disruptions: $247B {#sec-global_annual_trade_disruption_shipping_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual trade disruption costs from shipping disruptions
 
@@ -5873,7 +5873,7 @@ Annual trade disruption costs from shipping disruptions
 
 ### Annual Trade Disruption Costs from Supply Chain Disruptions: $187B {#sec-global_annual_trade_disruption_supply_chain_conflict}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual trade disruption costs from supply chain disruptions
 
@@ -5897,7 +5897,7 @@ Annual trade disruption costs from supply chain disruptions
 
 ### Annual Veteran Healthcare Costs: $200B {#sec-global_annual_veteran_healthcare_costs}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual veteran healthcare costs (20-year projected)
 
@@ -5921,7 +5921,7 @@ Annual veteran healthcare costs (20-year projected)
 
 ### Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
 
@@ -5945,7 +5945,7 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 ### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
 
@@ -5959,13 +5959,13 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 {{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Global Annual Direct Medical Costs of Disease: $9.90T {#sec-global_disease_direct_medical_cost_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Direct medical costs of disease globally (treatment, hospitalization, medication)
 
@@ -5989,7 +5989,7 @@ Direct medical costs of disease globally (treatment, hospitalization, medication
 
 ### Global Annual Economic Value of Human Life Lost to Disease: $94.2T {#sec-global_disease_human_life_value_loss_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Economic value of human life lost to disease annually (mortality valuation)
 
@@ -6013,7 +6013,7 @@ Economic value of human life lost to disease annually (mortality valuation)
 
 ### Global Annual Productivity Loss from Disease: $5T {#sec-global_disease_productivity_loss_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual productivity loss from disease globally (absenteeism, reduced output)
 
@@ -6037,7 +6037,7 @@ Annual productivity loss from disease globally (absenteeism, reduced output)
 
 ### Annual Global Government Spending on Clinical Trials: $4.50B {#sec-global_government_clinical_trials_spending_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global government spending on interventional clinical trials (~5-10% of total)
 
@@ -6061,7 +6061,7 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 
 ### Global Household Wealth: $454T {#sec-global_household_wealth_usd}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total global household wealth (2022/2023 estimate)
 
@@ -6073,7 +6073,7 @@ Total global household wealth (2022/2023 estimate)
 
 ### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global life expectancy (2024)
 
@@ -6087,13 +6087,13 @@ Global life expectancy (2024)
 
 {{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
 
-*✓ High confidence • Peer-reviewed • Updated 2024*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
 :::
 
 ### Global Government Medical Research Spending: $67.5B {#sec-global_med_research_spending}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global government medical research spending
 
@@ -6117,7 +6117,7 @@ Global government medical research spending
 
 ### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global military spending in 2024
 
@@ -6133,7 +6133,7 @@ Global military spending in 2024
 
 ### Annual Global Pharmaceutical R&D Spending: $300B {#sec-global_pharma_rd_spending_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)
 
@@ -6145,7 +6145,7 @@ Total global pharmaceutical R&D spending ($300B annually, clinical trials repres
 
 ### Global Population in 2024: 8.00 billion of people {#sec-global_population_2024}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global population in 2024
 
@@ -6169,7 +6169,7 @@ Global population in 2024
 
 ### Critical Mass Threshold for Social Change: 3.5% {#sec-global_population_activism_threshold_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Critical mass threshold for social change (3.5% rule)
 
@@ -6193,7 +6193,7 @@ Critical mass threshold for social change (3.5% rule)
 
 ### Annual Global Spending on Symptomatic Disease Treatment: $8.20T {#sec-global_symptomatic_disease_treatment_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global spending on symptomatic disease treatment
 
@@ -6217,7 +6217,7 @@ Annual global spending on symptomatic disease treatment
 
 ### Human Interactome Targeted by Drugs: 12% {#sec-human_interactome_targeted_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of human interactome (protein-protein interactions) targeted by drugs
 
@@ -6229,7 +6229,7 @@ Percentage of human interactome (protein-protein interactions) targeted by drugs
 
 ### ICD-10 Total Codes: 14.0 thousand codes {#sec-icd_10_total_codes}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total ICD-10 diagnostic codes for human diseases and conditions
 
@@ -6241,7 +6241,7 @@ Total ICD-10 diagnostic codes for human diseases and conditions
 
 ### Life Extension from Treaty Research Acceleration: 20 years {#sec-life_extension_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Expected years of life extension from 1% treaty research acceleration (25x trial capacity). Bounds: 0 (complete failure) to ~150 (accident-limited lifespan minus current). Lognormal distribution allows for breakthrough scenarios.
 
@@ -6265,7 +6265,7 @@ Expected years of life extension from 1% treaty research acceleration (25x trial
 
 ### Maximum Annual Lobbyist Salary Range: $2M {#sec-lobbyist_salary_max}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Maximum annual lobbyist salary range
 
@@ -6277,7 +6277,7 @@ Maximum annual lobbyist salary range
 
 ### Minimum Annual Lobbyist Salary Range: $500K {#sec-lobbyist_salary_min_k}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Minimum annual lobbyist salary range
 
@@ -6289,7 +6289,7 @@ Minimum annual lobbyist salary range
 
 ### Diseases Getting First Treatment Per Year: 15 diseases/year {#sec-new_disease_first_treatments_per_year}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.
 
@@ -6313,7 +6313,7 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 ### NIH Annual Budget: $47B {#sec-nih_annual_budget}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 NIH annual budget (FY2024/2025)
 
@@ -6335,7 +6335,7 @@ NIH annual budget (FY2024/2025)
 
 ### NIH Clinical Trials Spending Percentage: 3.3% {#sec-nih_clinical_trials_spending_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of NIH budget spent on clinical trials (3.3%)
 
@@ -6359,7 +6359,7 @@ Percentage of NIH budget spent on clinical trials (3.3%)
 
 ### NIH Standard Research Cost per QALY: $50K {#sec-nih_standard_research_cost_per_qaly}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Typical cost per QALY for standard NIH-funded medical research portfolio. Reflects the inefficiency of traditional RCTs and basic research-heavy allocation. See confidence_interval for range; ICER uses higher thresholds for value-based pricing.
 
@@ -6383,7 +6383,7 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 ### Oxford RECOVERY Trial Duration: 3 months {#sec-oxford_recovery_trial_duration_months}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
 
@@ -6399,7 +6399,7 @@ Oxford RECOVERY trial duration (found life-saving treatment in 3 months)
 
 ### Patient Willingness to Participate in Clinical Trials: 44.8% {#sec-patient_willingness_trial_participation_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)
 
@@ -6423,7 +6423,7 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 
 ### Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average cost to develop one drug in current system
 
@@ -6441,49 +6441,49 @@ Average cost to develop one drug in current system
 
 {{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Pharma Average Drug Revenue (Current System): $6.70B {#sec-pharma_drug_revenue_average_current}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 1995-2014, median follow-up 13.2 years)
 
 **Source**: [@pharma-drug-revenue-average]
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Pharma ROI (Current System): 1.2% {#sec-pharma_roi_current_system_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 ROI for pharma R&D (2022 historic low from Deloitte study of top 20 pharma companies, down from 6.8% in 2021, recovered to 5.9% in 2024)
 
 **Source**: [@pharma-roi-current]
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Pharma Drug Success Rate (Current System): 10% {#sec-pharma_success_rate_current_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of drugs that reach market in current system
 
 **Source**: [@drug-trial-success-rate-12-pct]
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Phase I-Passed Compounds Globally: 7.50 thousand compounds {#sec-phase_1_passed_compounds_global}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Investigational compounds that have passed Phase I globally (midpoint of 5,000-10,000 range)
 
@@ -6507,19 +6507,19 @@ Investigational compounds that have passed Phase I globally (midpoint of 5,000-1
 
 ### Phase I Safety Trial Duration: 2.3 years {#sec-phase_1_safety_duration_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase I safety trial duration
 
 **Source**: [@bio-clinical-development-2021]
 
-*✓ High confidence • Peer-reviewed • Updated 2021*
+*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
 
 ### Pragmatic Trial Median Cost per Patient (PMC Review): $97 {#sec-pmc_pragmatic_trial_median_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).
 
@@ -6543,7 +6543,7 @@ Median cost per patient in embedded pragmatic clinical trials (systematic review
 
 ### Political Success Probability: 1% {#sec-political_success_probability}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated probability of treaty ratification and sustained implementation. Central estimate 1% is conservative. This assumes 99% chance of failure. 
 
@@ -6567,7 +6567,7 @@ Estimated probability of treaty ratification and sustained implementation. Centr
 
 ### Post-1962 Drug Approval Reduction: 70% {#sec-post_1962_drug_approval_reduction_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)
 
@@ -6579,7 +6579,7 @@ Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop f
 
 ### Percentage Military Spending Cut After WW2: 30% {#sec-post_ww2_military_cut_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage military spending cut after WW2 (historical precedent)
 
@@ -6591,7 +6591,7 @@ Percentage military spending cut after WW2 (historical precedent)
 
 ### Pre-1962 Drug Development Cost (1980 Dollars): $6.50M {#sec-pre_1962_drug_development_cost_1980_usd}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average drug development cost before 1962 FDA efficacy regulations, adjusted to 1980 dollars (Baily 1972)
 
@@ -6609,13 +6609,13 @@ Average drug development cost before 1962 FDA efficacy regulations, adjusted to 
 
 {{< include ../figures/distribution-pre_1962_drug_development_cost_1980_usd.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Pre-1962 Drug Development Cost (2024 Dollars): $24.7M {#sec-pre_1962_drug_development_cost_2024_usd}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M, CPI-adjusted from Baily 1972)
 
@@ -6633,13 +6633,13 @@ Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M,
 
 {{< include ../figures/distribution-pre_1962_drug_development_cost_2024_usd.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Pre-1962 Physician Count (Unverified): 144 thousand physicians {#sec-pre_1962_physician_count}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
 
@@ -6651,7 +6651,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 ### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total number of rare diseases globally
 
@@ -6675,7 +6675,7 @@ Total number of rare diseases globally
 
 ### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
 
@@ -6699,7 +6699,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 ### RECOVERY Trial Global Lives Saved: 1.00 million lives {#sec-recovery_trial_global_lives_saved}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
 
@@ -6723,7 +6723,7 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 ### RECOVERY Trial Total Cost: $20M {#sec-recovery_trial_total_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across multiple treatment arms. Discovered dexamethasone reduces COVID mortality by ~1/3 in severe cases.
 
@@ -6747,7 +6747,7 @@ Total cost of UK RECOVERY trial. Enrolled tens of thousands of patients across m
 
 ### Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years {#sec-regulatory_delay_mean_age_of_death}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
 
@@ -6761,13 +6761,13 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 
 {{< include ../figures/distribution-regulatory_delay_mean_age_of_death.qmd >}}
 
-*~ Medium confidence • Peer-reviewed*
+*~ Medium confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years {#sec-regulatory_delay_suffering_period_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
 
@@ -6785,13 +6785,13 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 {{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
 
-*~ Medium confidence • Peer-reviewed*
+*~ Medium confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard economic value per QALY
 
@@ -6811,7 +6811,7 @@ Standard economic value per QALY
 
 ### Annual Cost of Sugar Subsidies per Person: $10 {#sec-sugar_subsidy_cost_per_person_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual cost of sugar subsidies per person
 
@@ -6823,7 +6823,7 @@ Annual cost of sugar subsidies per person
 
 ### Switzerland's Defense Spending as Percentage of GDP: 0.7% {#sec-switzerland_defense_spending_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Switzerland's defense spending as percentage of GDP (0.7%)
 
@@ -6835,7 +6835,7 @@ Switzerland's defense spending as percentage of GDP (0.7%)
 
 ### Switzerland GDP per Capita: $93K {#sec-switzerland_gdp_per_capita_k}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Switzerland GDP per capita
 
@@ -6847,7 +6847,7 @@ Switzerland GDP per capita
 
 ### Thalidomide Cases Worldwide: 15.0 thousand cases {#sec-thalidomide_cases_worldwide}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total thalidomide birth defect cases worldwide (1957-1962)
 
@@ -6871,7 +6871,7 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 ### Thalidomide Disability Weight: 0.4:1 {#sec-thalidomide_disability_weight}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Disability weight for thalidomide survivors (limb deformities, organ damage)
 
@@ -6895,7 +6895,7 @@ Disability weight for thalidomide survivors (limb deformities, organ damage)
 
 ### Thalidomide Mortality Rate: 40% {#sec-thalidomide_mortality_rate}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Mortality rate for thalidomide-affected infants (died within first year)
 
@@ -6919,7 +6919,7 @@ Mortality rate for thalidomide-affected infants (died within first year)
 
 ### Thalidomide Survivor Lifespan: 60 years {#sec-thalidomide_survivor_lifespan}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average lifespan for thalidomide survivors
 
@@ -6943,7 +6943,7 @@ Average lifespan for thalidomide survivors
 
 ### US Population Share 1960: 6% {#sec-thalidomide_us_population_share_1960}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US share of world population in 1960
 
@@ -6967,7 +6967,7 @@ US share of world population in 1960
 
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 3 cost per patient (median from FDA study)
 
@@ -6991,7 +6991,7 @@ Phase 3 cost per patient (median from FDA study)
 
 ### US Alzheimer's Annual Cost: $355B {#sec-us_alzheimers_annual_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual US cost of Alzheimer's disease (direct and indirect)
 
@@ -7009,13 +7009,13 @@ Annual US cost of Alzheimer's disease (direct and indirect)
 
 {{< include ../figures/distribution-us_alzheimers_annual_cost.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### US Cancer Annual Cost: $208B {#sec-us_cancer_annual_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual US cost of cancer (direct and indirect)
 
@@ -7033,13 +7033,13 @@ Annual US cost of cancer (direct and indirect)
 
 {{< include ../figures/distribution-us_cancer_annual_cost.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### US Diabetes Annual Cost: $327B {#sec-us_diabetes_annual_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual US cost of diabetes (direct and indirect)
 
@@ -7057,13 +7057,13 @@ Annual US cost of diabetes (direct and indirect)
 
 {{< include ../figures/distribution-us_diabetes_annual_cost.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### US Heart Disease Annual Cost: $363B {#sec-us_heart_disease_annual_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual US cost of heart disease and stroke (direct and indirect)
 
@@ -7081,13 +7081,13 @@ Annual US cost of heart disease and stroke (direct and indirect)
 
 {{< include ../figures/distribution-us_heart_disease_annual_cost.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### US Military Spending as Percentage of GDP: 3.5% {#sec-us_military_spending_pct_gdp}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US military spending as percentage of GDP (2024)
 
@@ -7099,7 +7099,7 @@ US military spending as percentage of GDP (2024)
 
 ### Value of Statistical Life: $10M {#sec-value_of_statistical_life}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Value of Statistical Life (conservative estimate)
 
@@ -7127,7 +7127,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Approved Drug-Disease Pairings: 1.75 thousand pairings {#sec-approved_drug_disease_pairings}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,000 range)
 
@@ -7149,7 +7149,7 @@ Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,00
 
 ### Celebrity and Influencer Endorsements: $15M {#sec-campaign_celebrity_endorsement}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Celebrity and influencer endorsements
 
@@ -7169,7 +7169,7 @@ Celebrity and influencer endorsements
 
 ### Community Organizing and Ambassador Program Budget: $30M {#sec-campaign_community_organizing}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Community organizing and ambassador program budget
 
@@ -7189,7 +7189,7 @@ Community organizing and ambassador program budget
 
 ### Contingency Fund for Unexpected Costs: $50M {#sec-campaign_contingency}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Contingency fund for unexpected costs
 
@@ -7211,7 +7211,7 @@ Contingency fund for unexpected costs
 
 ### Defense Industry Conversion Program: $50M {#sec-campaign_defense_conversion}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Defense industry conversion program
 
@@ -7233,7 +7233,7 @@ Defense industry conversion program
 
 ### Budget for Co-Opting Defense Industry Lobbyists: $50M {#sec-campaign_defense_lobbyist_budget}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Budget for co-opting defense industry lobbyists
 
@@ -7253,7 +7253,7 @@ Budget for co-opting defense industry lobbyists
 
 ### Healthcare Industry Alignment and Partnerships: $35M {#sec-campaign_healthcare_alignment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Healthcare industry alignment and partnerships
 
@@ -7273,7 +7273,7 @@ Healthcare industry alignment and partnerships
 
 ### Campaign Operational Infrastructure: $20M {#sec-campaign_infrastructure}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Campaign operational infrastructure
 
@@ -7293,7 +7293,7 @@ Campaign operational infrastructure
 
 ### AI-Assisted Legal Work Budget: $50M {#sec-campaign_legal_ai_budget}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 AI-assisted legal work budget
 
@@ -7313,7 +7313,7 @@ AI-assisted legal work budget
 
 ### Legal Defense Fund: $20M {#sec-campaign_legal_defense}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Legal defense fund
 
@@ -7333,7 +7333,7 @@ Legal defense fund
 
 ### Legal Drafting and Compliance Work: $60M {#sec-campaign_legal_work}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Legal drafting and compliance work
 
@@ -7355,7 +7355,7 @@ Legal drafting and compliance work
 
 ### EU Lobbying Campaign Budget: $40M {#sec-campaign_lobbying_eu}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 EU lobbying campaign budget
 
@@ -7375,7 +7375,7 @@ EU lobbying campaign budget
 
 ### G20 Countries Lobbying Budget: $35M {#sec-campaign_lobbying_g20_millions}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 G20 countries lobbying budget
 
@@ -7385,7 +7385,7 @@ G20 countries lobbying budget
 
 ### US Lobbying Campaign Budget: $50M {#sec-campaign_lobbying_us}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 US lobbying campaign budget
 
@@ -7405,7 +7405,7 @@ US lobbying campaign budget
 
 ### Maximum Mass Media Campaign Budget: $1B {#sec-campaign_media_budget_max}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Maximum mass media campaign budget
 
@@ -7425,7 +7425,7 @@ Maximum mass media campaign budget
 
 ### Minimum Mass Media Campaign Budget: $500M {#sec-campaign_media_budget_min}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Minimum mass media campaign budget
 
@@ -7445,7 +7445,7 @@ Minimum mass media campaign budget
 
 ### Opposition Research and Rapid Response: $25M {#sec-campaign_opposition_research}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Opposition research and rapid response
 
@@ -7465,7 +7465,7 @@ Opposition research and rapid response
 
 ### Phase 1 Campaign Budget: $200M {#sec-campaign_phase1_budget}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 1 campaign budget (Foundation, Year 1)
 
@@ -7485,7 +7485,7 @@ Phase 1 campaign budget (Foundation, Year 1)
 
 ### Phase 2 Campaign Budget: $500M {#sec-campaign_phase2_budget}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 2 campaign budget (Scale & Momentum, Years 2-3)
 
@@ -7505,7 +7505,7 @@ Phase 2 campaign budget (Scale & Momentum, Years 2-3)
 
 ### Pilot Program Testing in Small Countries: $30M {#sec-campaign_pilot_programs}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Pilot program testing in small countries
 
@@ -7525,7 +7525,7 @@ Pilot program testing in small countries
 
 ### Voting Platform and Technology Development: $35M {#sec-campaign_platform_development}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Voting platform and technology development
 
@@ -7547,7 +7547,7 @@ Voting platform and technology development
 
 ### Regulatory Compliance and Navigation: $20M {#sec-campaign_regulatory_navigation}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Regulatory compliance and navigation
 
@@ -7567,7 +7567,7 @@ Regulatory compliance and navigation
 
 ### Scaling Preparation and Blueprints: $30M {#sec-campaign_scaling_prep}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Scaling preparation and blueprints
 
@@ -7587,7 +7587,7 @@ Scaling preparation and blueprints
 
 ### Campaign Core Team Staff Budget: $40M {#sec-campaign_staff_budget}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Campaign core team staff budget
 
@@ -7607,7 +7607,7 @@ Campaign core team staff budget
 
 ### Super PAC Campaign Expenditures: $30M {#sec-campaign_super_pac_budget}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Super PAC campaign expenditures
 
@@ -7627,7 +7627,7 @@ Super PAC campaign expenditures
 
 ### Tech Industry Partnerships and Infrastructure: $25M {#sec-campaign_tech_partnerships}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Tech industry partnerships and infrastructure
 
@@ -7647,7 +7647,7 @@ Tech industry partnerships and infrastructure
 
 ### Post-Victory Treaty Implementation Support: $40M {#sec-campaign_treaty_implementation}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Post-victory treaty implementation support
 
@@ -7669,7 +7669,7 @@ Post-victory treaty implementation support
 
 ### Viral Marketing Content Creation Budget: $40M {#sec-campaign_viral_content_budget}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Viral marketing content creation budget
 
@@ -7689,7 +7689,7 @@ Viral marketing content creation budget
 
 ### Concentrated Interest Sector Market Cap: $5T {#sec-concentrated_interest_sector_market_cap_usd}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated combined market capitalization of concentrated interest opposition (defense, fossil fuel, etc.)
 
@@ -7699,7 +7699,7 @@ Estimated combined market capitalization of concentrated interest opposition (de
 
 ### Percentage of Budget Defense Sector Keeps Under 1% treaty: 99% {#sec-defense_sector_retention_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of budget defense sector keeps under 1% treaty
 
@@ -7709,7 +7709,7 @@ Percentage of budget defense sector keeps under 1% treaty
 
 ### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)
 
@@ -7731,7 +7731,7 @@ Decentralized Framework for Drug Assessment Core framework annual opex (midpoint
 
 ### Decentralized Framework for Drug Assessment Core framework Build Cost: $40M {#sec-dfda_npv_upfront_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment Core framework build cost
 
@@ -7753,7 +7753,7 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 ### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment community support costs
 
@@ -7775,7 +7775,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 ### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
 
@@ -7797,7 +7797,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 ### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment maintenance costs
 
@@ -7819,7 +7819,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 ### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment regulatory coordination costs
 
@@ -7841,7 +7841,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 ### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
@@ -7863,7 +7863,7 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 ### Decentralized Framework for Drug Assessment Target Cost per Patient in USD: $1K {#sec-dfda_target_cost_per_patient_usd}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)
 
@@ -7873,7 +7873,7 @@ Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in doll
 
 ### DIH Broader Initiatives Annual OPEX: $21.1M {#sec-dih_npv_annual_opex_initiatives}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 DIH broader initiatives annual opex (medium case)
 
@@ -7895,7 +7895,7 @@ DIH broader initiatives annual opex (medium case)
 
 ### DIH Broader Initiatives Upfront Cost: $230M {#sec-dih_npv_upfront_cost_initiatives}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 DIH broader initiatives upfront cost (medium case)
 
@@ -7917,7 +7917,7 @@ DIH broader initiatives upfront cost (medium case)
 
 ### Eventually Avoidable DALY Percentage: 92.6% {#sec-eventually_avoidable_daly_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of DALYs that are eventually avoidable with sufficient biomedical research. Uses same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions (arthritis, depression, chronic pain) are also addressable through research, so the percentage is similar to deaths.
 
@@ -7939,7 +7939,7 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 
 ### Minimum Investment for Family Offices: $5M {#sec-family_office_investment_min}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Minimum investment for family offices
 
@@ -7949,7 +7949,7 @@ Minimum investment for family offices
 
 ### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)
 
@@ -7963,7 +7963,7 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 
 ### Minimum Investment for Institutional Investors: $10M {#sec-institutional_investor_min}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Minimum investment for institutional investors
 
@@ -7973,7 +7973,7 @@ Minimum investment for institutional investors
 
 ### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard discount rate for NPV analysis (3% annual, social discount rate)
 
@@ -7987,7 +7987,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 ### Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard time horizon for NPV analysis
 
@@ -8001,7 +8001,7 @@ Standard time horizon for NPV analysis
 
 ### Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).
 
@@ -8023,7 +8023,7 @@ Conflict reduction elasticity: how much conflict costs decrease per 1% military 
 
 ### QALYs per COVID Death Averted: 5 QALYs/death {#sec-qalys_per_covid_death_averted}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average QALYs gained per COVID death averted. Conservative estimate reflecting older age distribution of COVID mortality. See confidence_interval for range.
 
@@ -8045,7 +8045,7 @@ Average QALYs gained per COVID death averted. Conservative estimate reflecting o
 
 ### Safe Compounds Available for Testing: 9.50 thousand compounds {#sec-safe_compounds_count}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)
 
@@ -8067,7 +8067,7 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 
 ### Tested Drug-Disease Relationships: 32.5 thousand relationships {#sec-tested_relationships_estimate}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated drug-disease relationships actually tested (approved uses + repurposed + failed trials, midpoint of 15,000-50,000 range)
 
@@ -8089,7 +8089,7 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 ### Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M {#sec-treaty_campaign_budget_lobbying}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.
 
@@ -8111,7 +8111,7 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 ### Reserve Fund / Contingency Buffer: $100M {#sec-treaty_campaign_budget_reserve}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.
 
@@ -8133,7 +8133,7 @@ Reserve fund / contingency buffer (10% of total campaign cost). Using industry s
 
 ### Viral Referendum Budget: $250M {#sec-treaty_campaign_viral_referendum_base_case}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).
 
@@ -8153,7 +8153,7 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 
 ### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 1% reduction in military spending/war costs from treaty
 
@@ -8167,7 +8167,7 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 
 ### Trial-Relevant Diseases: 1.00 thousand diseases {#sec-trial_relevant_diseases_count}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Consolidated count of trial-relevant diseases worth targeting (after grouping ICD-10 codes)
 
@@ -8189,7 +8189,7 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 
 ### Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 

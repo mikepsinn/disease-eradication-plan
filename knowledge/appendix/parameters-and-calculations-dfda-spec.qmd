@@ -47,14 +47,14 @@ Parameters derived from mathematical formulas and economic models.
 
 ### dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
 
 **Inputs**:
 
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{gathered}
@@ -85,14 +85,14 @@ $$
 
 ### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
 
 **Inputs**:
 
-- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual): 12.4 million deaths
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: ±2 years)
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
 \begin{gathered}
@@ -124,13 +124,13 @@ $$
 
 ### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
 
 **Inputs**:
 
-- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual): 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
 - [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
 
 $$
@@ -168,7 +168,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### ADAPTABLE Trial Cost per Patient: $929 {#sec-adaptable_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.
 
@@ -192,7 +192,7 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 ### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
@@ -216,7 +216,7 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
@@ -240,7 +240,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 ### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
@@ -254,13 +254,13 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
-*~ Medium confidence • Peer-reviewed • Updated 2021*
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
 
 ### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual deaths from all diseases and aging globally
 
@@ -280,7 +280,7 @@ Annual deaths from all diseases and aging globally
 
 ### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
 
@@ -304,7 +304,7 @@ Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (201
 
 ### Phase 3 Trial Total Cost (Minimum): $20M {#sec-phase_3_trial_cost_min}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 3 trial total cost (minimum)
 
@@ -316,7 +316,7 @@ Phase 3 trial total cost (minimum)
 
 ### RECOVERY Trial Global Lives Saved: 1.00 million lives {#sec-recovery_trial_global_lives_saved}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS England estimate (March 2021). Based on Águas et al. Nature Communications 2021 methodology applying RECOVERY trial mortality reductions (36% ventilated, 18% oxygen) to global COVID hospitalizations. Wide uncertainty range reflects extrapolation assumptions.
 
@@ -340,7 +340,7 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 3 cost per patient (median from FDA study)
 
@@ -368,7 +368,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
 
@@ -390,7 +390,7 @@ Average years of life extension per person saved by pharmaceutical interventions
 
 ### Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).
 

@@ -47,7 +47,7 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
 
@@ -89,14 +89,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings: $58.6B {#sec-dfda_benefit_rd_only_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual Decentralized Framework for Drug Assessment benefit from R&D savings (trial cost reduction, secondary component)
 
 **Inputs**:
 
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual): $60B (95% CI: $50B - $75B)
-- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct): 97.7%
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
+- [dFDA Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
@@ -131,14 +131,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only): $58.6B {#sec-dfda_net_savings_rd_only_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual): $58.6B
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex): $40M
+- [Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
 
 $$
 \begin{gathered}
@@ -182,7 +182,7 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Annual OPEX: $40M {#sec-dfda_npv_annual_opex_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV annual opex (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
@@ -220,13 +220,13 @@ $$
 
 ### NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted): $389B {#sec-dfda_npv_benefit_rd_only}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 NPV of Decentralized Framework for Drug Assessment R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual): $58.6B
+- [Decentralized Framework for Drug Assessment Annual Net Savings (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6B
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -256,13 +256,13 @@ $$
 
 ### Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years: $342M {#sec-dfda_npv_pv_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Present value of annual opex over 10 years (NPV formula)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total): $40M
+- [Decentralized Framework for Drug Assessment Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40M
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
 
@@ -290,14 +290,14 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Cost: $611M {#sec-dfda_npv_total_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV cost (upfront + PV of annual opex)
 
 **Inputs**:
 
-- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex): $342M
-- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total): $270M
+- [Decentralized Framework for Drug Assessment Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342M
+- [Decentralized Framework for Drug Assessment Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270M
 
 $$
 \begin{gathered}
@@ -337,7 +337,7 @@ $$
 
 ### Decentralized Framework for Drug Assessment Total NPV Upfront Costs: $270M {#sec-dfda_npv_upfront_cost_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total NPV upfront costs (Decentralized Framework for Drug Assessment core + DIH initiatives)
 
@@ -375,14 +375,14 @@ $$
 
 ### ROI from Decentralized Framework for Drug Assessment R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year NPV, most conservative estimate)
 
 **Inputs**:
 
-- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only): $389B
-- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost): $611M
+- [NPV of Decentralized Framework for Drug Assessment Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389B
+- [Decentralized Framework for Drug Assessment Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611M
 
 $$
 \begin{gathered}
@@ -441,14 +441,14 @@ $$
 
 ### dFDA Trial Cost Reduction Factor: 44.1x {#sec-dfda_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
 
 **Inputs**:
 
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{gathered}
@@ -479,14 +479,14 @@ $$
 
 ### dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
 
 $$
 \begin{gathered}
@@ -517,14 +517,14 @@ $$
 
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
 
 **Inputs**:
 
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
-- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient): $500 (95% CI: $400 - $2.50K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.50K)
 
 $$
 \begin{gathered}
@@ -561,7 +561,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### ADAPTABLE Trial Cost per Patient: $929 {#sec-adaptable_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.
 
@@ -585,7 +585,7 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 ### Return on Investment from Childhood Vaccination Programs: 13:1 {#sec-childhood_vaccination_roi}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Return on investment from childhood vaccination programs
 
@@ -597,7 +597,7 @@ Return on investment from childhood vaccination programs
 
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
@@ -621,7 +621,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 ### Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.
 
@@ -635,13 +635,13 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 {{< include ../figures/distribution-global_annual_daly_burden.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Annual Global Spending on Clinical Trials: $60B {#sec-global_clinical_trials_spending_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
 
@@ -665,7 +665,7 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 ### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based during COVID emergency, minimal extra procedures, existing NHS infrastructure, streamlined consent. Replicating this globally will be harder.
 
@@ -689,7 +689,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Phase 3 cost per patient (median from FDA study)
 
@@ -717,7 +717,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment Core framework annual opex (midpoint of $11-26.5M)
 
@@ -739,7 +739,7 @@ Decentralized Framework for Drug Assessment Core framework annual opex (midpoint
 
 ### Decentralized Framework for Drug Assessment Core framework Build Cost: $40M {#sec-dfda_npv_upfront_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment Core framework build cost
 
@@ -761,7 +761,7 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 ### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment community support costs
 
@@ -783,7 +783,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 ### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
 
@@ -805,7 +805,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 ### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment maintenance costs
 
@@ -827,7 +827,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 ### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment regulatory coordination costs
 
@@ -849,7 +849,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 ### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
@@ -871,7 +871,7 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 ### DIH Broader Initiatives Annual OPEX: $21.1M {#sec-dih_npv_annual_opex_initiatives}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 DIH broader initiatives annual opex (medium case)
 
@@ -893,7 +893,7 @@ DIH broader initiatives annual opex (medium case)
 
 ### DIH Broader Initiatives Upfront Cost: $230M {#sec-dih_npv_upfront_cost_initiatives}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 DIH broader initiatives upfront cost (medium case)
 
@@ -915,7 +915,7 @@ DIH broader initiatives upfront cost (medium case)
 
 ### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard discount rate for NPV analysis (3% annual, social discount rate)
 
@@ -929,7 +929,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 ### Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard time horizon for NPV analysis
 

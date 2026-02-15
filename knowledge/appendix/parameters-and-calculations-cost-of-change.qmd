@@ -47,7 +47,7 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
 
@@ -89,14 +89,14 @@ $$
 
 ### Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Trial capacity multiplier from DIH funding capacity vs. current global trial participation
 
 **Inputs**:
 
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available): 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
-- [Patients Fundable Annually](#sec-dih_patients_fundable_annually): 23.4 million patients/year
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
+- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
 \begin{gathered}
@@ -161,15 +161,15 @@ $$
 
 ### Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 565 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total DALYs averted from the combined dFDA timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).
 
 **Inputs**:
 
-- [Global Annual DALY Burden](#sec-global_annual_daly_burden): 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
-- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years): 212 years
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
 \begin{gathered}
@@ -246,14 +246,14 @@ $$
 
 ### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total economic value from the combined dFDA timeline shift. DALYs valued at standard economic rate.
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys): 565 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd): $150K (SE: ±$30K)
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
@@ -334,14 +334,14 @@ $$
 
 ### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7 billion deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily): 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
-- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years): 212 years
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
 \begin{gathered}
@@ -418,14 +418,14 @@ $$
 
 ### dFDA Average Total Timeline Shift: 212 years {#sec-dfda_trial_capacity_plus_efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average years earlier patients receive treatments due to dFDA. Combines treatment timeline acceleration from increased trial capacity with efficacy lag elimination for treatments already discovered.
 
 **Inputs**:
 
-- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years): 204 years
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: ±2 years)
+- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years) 🔢: 204 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
 \begin{gathered}
@@ -498,14 +498,14 @@ $$
 
 ### dFDA Treatment Timeline Acceleration: 204 years {#sec-dfda_trial_capacity_treatment_acceleration_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years earlier the average first treatment arrives due to dFDA's trial capacity increase. Calculated as the status quo timeline reduced by the inverse of the capacity multiplier. Uses only trial capacity multiplier (not combined with valley of death rescue) because additional candidates don't directly speed therapeutic space exploration.
 
 **Inputs**:
 
-- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment): 222 years
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier): 12.3x
+- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
 
 $$
 \begin{gathered}
@@ -577,14 +577,14 @@ $$
 
 ### Patients Fundable Annually: 23.4 million patients/year {#sec-dih_patients_fundable_annually}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
 
 **Inputs**:
 
-- [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual): $21.7B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
+- [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual) 🔢: $21.7B
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
 
 $$
 \begin{gathered}
@@ -648,15 +648,15 @@ $$
 
 ### Annual Funding for Pragmatic Clinical Trials: $21.8B {#sec-dih_treasury_to_medical_research_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)
 
 **Inputs**:
 
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
-- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout): $2.72B
-- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual): $2.72B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout) 🔢: $2.72B
+- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72B
 
 $$
 \begin{gathered}
@@ -693,14 +693,14 @@ $$
 
 ### Annual Clinical Trial Patient Subsidies: $21.7B {#sec-dih_treasury_trial_subsidies_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)
 
 **Inputs**:
 
-- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex): $40M
-- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual): $21.8B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.8B
 
 $$
 \begin{gathered}
@@ -760,13 +760,13 @@ $$
 
 ### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global): 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
 
 $$
 \begin{gathered}
@@ -799,13 +799,13 @@ $$
 
 ### Global Political Reform Investment: $128B {#sec-global_political_reform_investment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.
 
 **Inputs**:
 
-- [US Political Reform Investment (Total)](#sec-us_political_reform_investment_total): $25.5B
+- [US Political Reform Investment (Total)](#sec-us_political_reform_investment_total) 🔢: $25.5B
 - [Global-to-US Political Cost Ratio](#sec-global_to_us_political_cost_ratio): 5:1 (95% CI: 3:1 - 8:1)
 
 $$
@@ -844,13 +844,13 @@ $$
 
 ### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
 
 **Inputs**:
 
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 - [IAB Political Incentive Funding Percentage](#sec-iab_political_incentive_funding_pct): 10%
 
 $$
@@ -872,13 +872,13 @@ $$
 
 ### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Average years until first treatment discovered for a typical disease under current system. At current discovery rates, the average disease waits half the total exploration time (~443/2 = ~222 years).
 
 **Inputs**:
 
-- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years): 443 years
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
 
 $$
 \begin{gathered}
@@ -910,14 +910,14 @@ $$
 
 ### Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Years to explore the entire therapeutic search space under current system. At current discovery rate of ~15 diseases/year getting first treatments, finding treatments for all ~6,650 untreated diseases would take ~443 years.
 
 **Inputs**:
 
-- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment): 6.65 thousand diseases
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year): 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
 
 $$
 \begin{gathered}
@@ -948,13 +948,13 @@ $$
 
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual funding from 1% of global military spending redirected to DIH
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024): $2.72T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -972,7 +972,7 @@ $$
 
 ### Total 1% Treaty Campaign Cost: $1B {#sec-treaty_campaign_total_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
 
@@ -1012,14 +1012,14 @@ $$
 
 ### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.
 
 **Inputs**:
 
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost): $1B
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys): 565 billion DALYs
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 
 $$
 \begin{gathered}
@@ -1102,14 +1102,14 @@ $$
 
 ### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Treaty ROI from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Total one-time benefit divided by campaign cost. This is the primary ROI estimate for total health benefits.
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value): $84.8 quadrillion
-- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost): $1B
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
 
 $$
 \begin{gathered}
@@ -1196,14 +1196,14 @@ $$
 
 ### US Congress Full Advocacy Cost: $5.35B {#sec-us_congress_full_advocacy_cost}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Upper-bound advocacy cost to match career incentives for all 535 members of Congress
 
 **Inputs**:
 
 - [US Congress Members](#sec-us_congress_member_count): 535 members
-- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value): $10M (95% CI: $5M - $20M)
+- [Post-Office Career Value (per politician)](#sec-politician_post_office_career_value) 📊: $10M (95% CI: $5M - $20M)
 
 $$
 \begin{gathered}
@@ -1224,16 +1224,16 @@ $$
 
 ### US Political Reform Investment (Total): $25.5B {#sec-us_political_reform_investment_total}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total upper-bound investment for US political reform: (campaign spending + 2 years lobbying) × effort multiplier + Congress career advocacy. Represents cost to achieve democratic parity with incumbent interests.
 
 **Inputs**:
 
-- [US Federal Campaign Spending (2024)](#sec-us_total_federal_campaign_spending_2024): $20B (95% CI: $18B - $22B)
-- [US Total Lobbying (2024)](#sec-us_total_lobbying_annual): $4.40B (95% CI: $3.74B - $5.06B)
+- [US Federal Campaign Spending (2024)](#sec-us_total_federal_campaign_spending_2024) 📊: $20B (95% CI: $18B - $22B)
+- [US Total Lobbying (2024)](#sec-us_total_lobbying_annual) 📊: $4.40B (95% CI: $3.74B - $5.06B)
 - [Political Effort Multiplier (US)](#sec-us_political_effort_multiplier): 0.7x (95% CI: 0.4x - 1.2x)
-- [US Congress Full Advocacy Cost](#sec-us_congress_full_advocacy_cost): $5.35B
+- [US Congress Full Advocacy Cost](#sec-us_congress_full_advocacy_cost) 🔢: $5.35B
 
 $$
 \begin{gathered}
@@ -1263,13 +1263,13 @@ $$
 
 ### Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)
 
 **Inputs**:
 
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
 - [Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds](#sec-victory_bond_funding_pct): 10%
 
 $$
@@ -1295,7 +1295,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
 
@@ -1313,13 +1313,13 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 {{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
 
@@ -1343,7 +1343,7 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
@@ -1367,7 +1367,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 ### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
@@ -1381,13 +1381,13 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
-*~ Medium confidence • Peer-reviewed • Updated 2021*
+*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
 
 :::
 
 ### Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden of Disease 2021). Includes both YLL (years of life lost) and YLD (years lived with disability) from all causes.
 
@@ -1401,13 +1401,13 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 {{< include ../figures/distribution-global_annual_daly_burden.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
 
@@ -1421,13 +1421,13 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 {{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
 
-*✓ High confidence • Peer-reviewed*
+*✓ High confidence • 📊 Peer-reviewed*
 
 :::
 
 ### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Global military spending in 2024
 
@@ -1443,7 +1443,7 @@ Global military spending in 2024
 
 ### Diseases Getting First Treatment Per Year: 15 diseases/year {#sec-new_disease_first_treatments_per_year}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.
 
@@ -1467,7 +1467,7 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 ### Post-Office Career Value (per politician): $10M {#sec-politician_post_office_career_value}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Net present value of post-office career premium for average congressperson (10 years x $1M/year premium). Based on documented cases: Gephardt $7M/year, Daschle $2M+/year.
 
@@ -1489,7 +1489,7 @@ Net present value of post-office career premium for average congressperson (10 y
 
 ### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total number of rare diseases globally
 
@@ -1513,7 +1513,7 @@ Total number of rare diseases globally
 
 ### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Standard economic value per QALY
 
@@ -1533,7 +1533,7 @@ Standard economic value per QALY
 
 ### Senators for Treaty Ratification: 67 senators {#sec-us_senators_for_treaty}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Senators needed for treaty ratification (2/3 majority per Article II, Section 2)
 
@@ -1549,7 +1549,7 @@ Senators needed for treaty ratification (2/3 majority per Article II, Section 2)
 
 ### US Federal Campaign Spending (2024): $20B {#sec-us_total_federal_campaign_spending_2024}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total US federal election spending in 2024 cycle including presidential, congressional, party committees, and PACs. Source: FEC Statistical Summary 2024.
 
@@ -1571,7 +1571,7 @@ Total US federal election spending in 2024 cycle including presidential, congres
 
 ### US Total Lobbying (2024): $4.40B {#sec-us_total_lobbying_annual}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.
 
@@ -1597,7 +1597,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment community support costs
 
@@ -1619,7 +1619,7 @@ Decentralized Framework for Drug Assessment community support costs
 
 ### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
 
@@ -1641,7 +1641,7 @@ Decentralized Framework for Drug Assessment infrastructure costs (cloud, securit
 
 ### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment maintenance costs
 
@@ -1663,7 +1663,7 @@ Decentralized Framework for Drug Assessment maintenance costs
 
 ### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment regulatory coordination costs
 
@@ -1685,7 +1685,7 @@ Decentralized Framework for Drug Assessment regulatory coordination costs
 
 ### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
@@ -1707,7 +1707,7 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 
 ### Eventually Avoidable DALY Percentage: 92.6% {#sec-eventually_avoidable_daly_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of DALYs that are eventually avoidable with sufficient biomedical research. Uses same methodology as EVENTUALLY_AVOIDABLE_DEATH_PCT. Most non-fatal chronic conditions (arthritis, depression, chronic pain) are also addressable through research, so the percentage is similar to deaths.
 
@@ -1729,7 +1729,7 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 
 ### Global-to-US Political Cost Ratio: 5:1 {#sec-global_to_us_political_cost_ratio}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Ratio of global to US political reform costs. Based on discretionary spending ratio (~9x) discounted by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects uncertainty about non-US political dynamics and hidden influence channels.
 
@@ -1751,7 +1751,7 @@ Ratio of global to US political reform costs. Based on discretionary spending ra
 
 ### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)
 
@@ -1765,7 +1765,7 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 
 ### Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650M {#sec-treaty_campaign_budget_lobbying}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition research, staff, legal/compliance. Budget exceeds combined pharma ($300M/year) and military-industrial complex ($150M/year) lobbying to ensure competitive positioning. Referendum relies on grassroots mobilization and earned media, while lobbying requires matching or exceeding opposition spending for political viability.
 
@@ -1787,7 +1787,7 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 ### Reserve Fund / Contingency Buffer: $100M {#sec-treaty_campaign_budget_reserve}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Reserve fund / contingency buffer (10% of total campaign cost). Using industry standard 10% for complex campaigns with potential for unforeseen legal challenges, opposition response, or regulatory delays. Conservative lower bound of $20M (2%) reflects transparent budget allocation and predictable referendum/lobbying costs.
 
@@ -1809,7 +1809,7 @@ Reserve fund / contingency buffer (10% of total campaign cost). Using industry s
 
 ### Viral Referendum Budget: $250M {#sec-treaty_campaign_viral_referendum_base_case}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Viral referendum budget for 280M verified votes (base: $250M realistic with $0.50/vote avg, range: $150M optimistic $0.20/vote to $410M worst-case $1.05/vote). Components: platform ($35M), verification infrastructure (280M × friction × $0.18-0.20), tiered referral payments (varies by virality and marginal cost curve per diffusion theory), marketing seed ($5-15M). Based on PayPal referral economics ($18-36 inflation-adjusted) and biometric verification pricing ($0.15-0.25 at 300M+ scale).
 
@@ -1829,7 +1829,7 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 
 ### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 1% reduction in military spending/war costs from treaty
 
@@ -1843,7 +1843,7 @@ Viral referendum budget for 280M verified votes (base: $250M realistic with $0.5
 
 ### US Congress Members: 535 members {#sec-us_congress_member_count}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Total members of US Congress (100 senators + 435 representatives)
 
@@ -1857,7 +1857,7 @@ Total members of US Congress (100 senators + 435 representatives)
 
 ### Political Effort Multiplier (US): 0.7x {#sec-us_political_effort_multiplier}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Fraction of campaign + lobbying spending needed to achieve policy reform. Accounts for efficiency gains from coordination, message clarity, and public interest alignment. Range 0.4-1.2 reflects uncertainty about political dynamics.
 
@@ -1879,7 +1879,7 @@ Fraction of campaign + lobbying spending needed to achieve policy reform. Accoun
 
 ### Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
 
-::: {.callout-note collapse="true" title="Details"}
+::: {.callout-note collapse="true" title="📊 Details"}
 
 Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 
