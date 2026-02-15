@@ -221,7 +221,7 @@ def generate_parameters_and_calculations_qmd(
 
             # Start collapsible section for all details
             # Title is neutral (not "Show...") because PDF renders expanded
-            content.append("::: {.callout-note collapse=\"true\" title=\"Details\"}")
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Details\"}")
             content.append("")
 
             # Description
@@ -268,9 +268,9 @@ def generate_parameters_and_calculations_qmd(
                     if hasattr(inp_value, "source_type"):
                         source_type_str = str(inp_value.source_type.value) if hasattr(inp_value.source_type, 'value') else str(inp_value.source_type)
                         if source_type_str == "external":
-                            source_type_indicator = ""  # External data
+                            source_type_indicator = " 📊"  # External data
                         elif source_type_str == "calculated":
-                            source_type_indicator = ""  # Calculated value
+                            source_type_indicator = " 🔢"  # Calculated value
 
                     # Link to parameter section
                     content.append(f"- [{inp_display}](#sec-{inp_name.lower()}){source_type_indicator}: {inp_formatted}{uncertainty_str}")
@@ -370,7 +370,7 @@ def generate_parameters_and_calculations_qmd(
                 metadata.append(confidence_labels.get(value.confidence, value.confidence))
 
             if hasattr(value, "conservative") and value.conservative:
-                metadata.append("Conservative estimate")
+                metadata.append("⚖️ Conservative estimate")
 
             if metadata:
                 content.append("*" + " • ".join(metadata) + "*")
@@ -440,7 +440,7 @@ def generate_parameters_and_calculations_qmd(
 
             # Start collapsible section for all details
             # Title is neutral (not "Show...") because PDF renders expanded
-            content.append("::: {.callout-note collapse=\"true\" title=\"Details\"}")
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Details\"}")
             content.append("")
 
             # Description
@@ -501,7 +501,7 @@ def generate_parameters_and_calculations_qmd(
                 metadata.append(confidence_labels.get(value.confidence, value.confidence))
 
             if hasattr(value, "peer_reviewed") and value.peer_reviewed:
-                metadata.append("Peer-reviewed")
+                metadata.append("📊 Peer-reviewed")
 
             # Only show last_updated if it's not None/empty
             if hasattr(value, "last_updated") and value.last_updated:
@@ -541,7 +541,7 @@ def generate_parameters_and_calculations_qmd(
 
             # Start collapsible section for all details
             # Title is neutral (not "Show...") because PDF renders expanded
-            content.append("::: {.callout-note collapse=\"true\" title=\"Details\"}")
+            content.append("::: {.callout-note collapse=\"true\" title=\"📊 Details\"}")
             content.append("")
 
             # Description
