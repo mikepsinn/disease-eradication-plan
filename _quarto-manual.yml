@@ -112,7 +112,8 @@ book:
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         # STANDALONE PAPER - see impact.warondisease.org
         # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
-        - knowledge/call-to-action/your-personal-benefits.qmd # ✅ Your ROI ~2p
+        # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in victory-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
+        # - knowledge/call-to-action/your-personal-benefits.qmd
         - knowledge/futures.qmd # ✅ Intro to Paths ~1p
         - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
         - knowledge/futures/wishonia.qmd # ✅ Path B: Wishonia ~13p
@@ -130,7 +131,8 @@ book:
         # REMOVED: Merged messaging strategy, content ladder, and meme arsenal into campaign-budget.qmd
         # - knowledge/strategy/viral-marketing.qmd
         - knowledge/strategy/co-opting-defense-contractors.qmd # ✅ PROMOTED ~4p
-        - knowledge/call-to-action/three-actions.qmd # ✅ Getting Started ~2p
+        # REMOVED: Placeholder links and references to bonds that don't exist yet
+        # - knowledge/call-to-action/three-actions.qmd
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
         - knowledge/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
   # appendices: Commented to get rid of the Appendix prefix in the titles
