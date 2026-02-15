@@ -1483,7 +1483,11 @@ def check_variable_link_targets():
                 normalized_path = path.replace("\\", "/")
                 if normalized_path not in all_config_qmd_files:
                     not_in_config_count += 1
-                    print(f"  WARNING: Variable '{var_name}' links to '{normalized_path}' which exists on disk but is not in any config's chapter list")
+                    errors.append(ValidationError(
+                        variables_file, 0,
+                        f"Variable '{var_name}' links to file not in any config's chapter list",
+                        f"href target '{href}' -> '{normalized_path}' exists on disk but won't be rendered"
+                    ))
 
     if broken_count > 0:
         print(f"  Found {broken_count} broken link target(s) in _variables.yml\n")
