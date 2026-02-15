@@ -99,6 +99,30 @@ When you're paying people real money ($0.25-0.30) for verified referrals, they b
 
 Alternative: Skip this, increase referral payment to $0.35-0.40, let economics drive virality. PayPal and Dropbox proved you don't need marketing when you're paying real money.
 
+#### The Message That Spreads
+
+Your species responds to four things: anger, fear, hope, and greed. Your messaging exploits all four simultaneously.
+
+**The Content Ladder:**
+
+- **3 seconds (The Hook):** "Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}}X more on weapons than testing which medicines work"
+- **30 seconds (The Emotion):** "While you read this, 50 people died of preventable disease. Your species has the money to cure them. It spends it on weapons instead."
+- **3 minutes (The Solution):** "A 1% treaty: Redirect 1% of military spending to pragmatic clinical trials {{< var dfda_trial_cost_reduction_factor >}} cheaper. Cure major diseases in 19 years."
+- **Immediate (The Action):** "Vote YES. Buy bonds. Share this."
+
+**Platform strategies:** Death counter bots on Twitter ("147 died while you scrolled"). 15-second TikToks ("Guess what your taxes buy"). Long-form YouTube explainers. Reddit AMAs with researchers. Each platform gets the format its audience can't scroll past.
+
+**The Meme Arsenal:**
+
+- "Cost of one F-35 [@f35-cost-vs-rare-disease-research] = ~160 Oxford-style trials"
+- "Days to approve weapons: 1. Days to approve cancer cure: 6,205 [@research-to-practice-gap]"
+- "{{< var global_military_spending_per_capita_annual >}}/year on killing people, $8/year on curing them"
+- "13,000 nukes [@world-warheads] but no cure for your kid's cancer"
+
+**Influencer targets:** Health/wellness creators (100M+ combined followers, already care). Finance/investment creators ({{< var victory_bond_annual_return_pct >}} returns makes compelling content). Gaming/tech audiences (young, internet-native, hate bureaucracy). Political voices (bipartisan message, career-making position). The pitch: "Make one video. Go viral. Save millions of lives. Plus, here are some bonds."
+
+**Expected pushback:** "You're oversimplifying!" (And you're overcomplicating. People are dying.) "This will never work!" (Oxford RECOVERY trial already proved it works.) "The military needs its budget!" (The treaty takes 1%. Nations keep {{< var defense_sector_retention_pct >}}. Relax.)
+
 ![Budget for technology, marketing, and community organizing. Plus you pay people $0.10 to $0.50 to recruit voters. You already pay people to vote for candidates who kill them. Now you're paying people to vote for candidates who cure them. Seems rude to charge.](/assets/images/campaign-budget/campaign-budget-section-payment-structure-bw-academic.jpg)
 
 **Community Organizing** (optional acceleration): {{< var campaign_community_organizing >}}

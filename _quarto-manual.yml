@@ -99,7 +99,8 @@ book:
         - knowledge/solution/wishocracy.qmd # ✅ Wishocracy ~4p
         - knowledge/solution/ai-coordination-army.qmd # ✅ (EXCELLENT voice - "goldfish organizing a space program") ~12p
         - knowledge/solution/dfda.qmd # ✅ The decentralized framework for drug assessment ~20p
-        - knowledge/solution/war-on-disease.qmd # ✅ The War on Disease ~5p
+        # REMOVED: Merged unique content (biology fixes society) into solution.qmd
+        # - knowledge/solution/war-on-disease.qmd
         - knowledge/solution/aligning-incentives.qmd # ✅ Aligning Incentives ~7p
         - knowledge/solution/incentive-alignment-bonds.qmd # ✅ Incentive Alignment Bonds ~12p
 
@@ -125,7 +126,8 @@ book:
         - knowledge/economics/victory-bonds.qmd # ✅ The Investment Vehicle (formal by design) ~14p
         - knowledge/strategy/legislation-package.qmd # ✅ Legislation Package ~7p
         - knowledge/strategy/global-referendum.qmd # ✅ Global Referendum (IMPROVED) ~10p
-        - knowledge/strategy/viral-marketing.qmd # ✅ PROMOTED ~5p
+        # REMOVED: Merged messaging strategy, content ladder, and meme arsenal into campaign-budget.qmd
+        # - knowledge/strategy/viral-marketing.qmd
         - knowledge/strategy/co-opting-defense-contractors.qmd # ✅ PROMOTED ~4p
         - knowledge/call-to-action/three-actions.qmd # ✅ Getting Started ~2p
   # appendices: Commented to get rid of the Appendix prefix in the titles
@@ -140,7 +142,8 @@ book:
     - part: "Implementation Strategy"
       chapters:
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
-        - knowledge/appendix/nonprofit-partnership-incentives.qmd # ✅ (IMPROVED) ~4p
+        # REMOVED: Merged incentive mechanisms into nonprofit-coalition-strategy.qmd
+        # - knowledge/appendix/nonprofit-partnership-incentives.qmd
 
     - part: "Policy & Regulatory"
       chapters:
@@ -160,12 +163,14 @@ book:
       chapters:
         - knowledge/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
         - knowledge/economics/health-dividend.qmd # ✅ (good voice) ~3p
-        - knowledge/appendix/humanity-budget-overview.qmd # ✅ (IMPROVED) ~2p
+        # REMOVED: Redundant with cost-of-war, cost-of-disease, and peace-dividend chapters.
+        # - knowledge/appendix/humanity-budget-overview.qmd
         # REMOVED: Detailed R&D spending data better suited for online resource (~8p)
         # - knowledge/appendix/global-government-medical-research-spending.qmd
         # REMOVED: Too granular; key stats already in health-dividend.qmd (~17p)
         # - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
-        - knowledge/appendix/clinical-trial-participants.qmd # ✅ The 0.06% problem ~7p
+        # REMOVED: Overlaps with trial capacity discussions. Key stats parameterized.
+        # - knowledge/appendix/clinical-trial-participants.qmd
 
     - part: "Detailed Calculations"
       chapters:
@@ -173,11 +178,14 @@ book:
         # STANDALONE PAPER - see graveyard.warondisease.org
         # - knowledge/appendix/invisible-graveyard.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
         - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis with multiple data sources, CPI adjustments, sensitivity analysis ~10p
-        - knowledge/appendix/personal-lifetime-wealth-calc.qmd # ✅ Personal lifetime wealth model (recommended) ~14p
+        # REMOVED: Redundant with your-personal-benefits.qmd (same formula, stats, Monte Carlo).
+        # - knowledge/appendix/personal-lifetime-wealth-calc.qmd
         # STANDALONE PAPER - see dfda-impact.warondisease.org
         # - knowledge/appendix/dfda-impact-paper.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
-        - knowledge/appendix/economic-value-of-accelerated-treatments.qmd # ✅ (calculations, appropriate) ~2p
-        - knowledge/appendix/intervention-comparison-table.qmd # ✅ (reference table, appropriate) ~5p
+        # MERGED: Key drug valuation stat ($1.62B/drug) moved to health-dividend.qmd.
+        # - knowledge/appendix/economic-value-of-accelerated-treatments.qmd
+        # MERGED: Comparison table moved to proof.qmd.
+        # - knowledge/appendix/intervention-comparison-table.qmd
         # REMOVED: Technical minutiae irrelevant to persuasion (~3p)
         # - knowledge/appendix/data-storage-costs.qmd
 
@@ -186,19 +194,23 @@ book:
         - knowledge/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
         - knowledge/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
         - knowledge/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
-        - knowledge/appendix/fundraising-strategy.qmd # ✅ (IMPROVED - "$2.5B vending machine" analogy) ~13p
+        # MERGED: Key strategy insights moved to financial-plan.qmd. Operational detail removed.
+        # - knowledge/appendix/fundraising-strategy.qmd
 
     # Organizational Resources
     - part: "Governance & Organization"
       chapters:
         # REMOVED: Just redirects to main DIH chapter - content already moved (~4p)
         # - knowledge/appendix/governance.qmd
-        - knowledge/appendix/organizational-precedents.qmd # ✅ (technical analysis, appropriate) ~3p
+        # REMOVED: Internal hiring/staffing doc, not book content.
+        # - knowledge/appendix/organizational-precedents.qmd
         # REMOVED: Operational detail belongs in implementation docs, not book (~8p)
         # - knowledge/operations/careers/hiring-plan.qmd
-        - knowledge/appendix/dih-integration-model.qmd # ✅ (has personality) ~4p
+        # REMOVED: Merged insurance-layer concept and patient walkthrough into dih.qmd
+        # - knowledge/appendix/dih-integration-model.qmd
         - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
-        - knowledge/appendix/command-and-control-systems.qmd # ✅ (EXCELLENT voice) ~8p
+        # REMOVED: Internal ops doc (published: false). Not book content.
+        # - knowledge/appendix/command-and-control-systems.qmd
 
     - part: "Operations & Legal"
       chapters:
@@ -207,11 +219,14 @@ book:
     - part: "Additional References"
       chapters:
         - knowledge/papers.qmd
-        - knowledge/appendix/lives-saved-by-drug-accessibility.qmd # ✅ (reference tables, appropriate) ~6p
+        # REMOVED: Drug accessibility (wrong problem - book is about R&D, not access). Dilutes focus.
+        # - knowledge/appendix/lives-saved-by-drug-accessibility.qmd
         # REMOVED: Tangential to core thesis; interesting but not necessary (~6p)
         # - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
-        - knowledge/appendix/pragmatic-vs-explanatory-trials.qmd # ✅ (comparison tables, appropriate) ~4p
-        - knowledge/appendix/acknowledgments.qmd # ✅ (WISHONIA voice) ~3p
+        # MERGED into recovery-trial.qmd (comparison table preserved).
+        # - knowledge/appendix/pragmatic-vs-explanatory-trials.qmd
+        # REMOVED: Meta-content (acknowledgments). GitHub contributors link preserved in page footer.
+        # - knowledge/appendix/acknowledgments.qmd
         # Bibliography: references.bib is the single source of truth
         # This page renders all cited references using Quarto's ::: {#refs} ::: shortcode
         - knowledge/references.qmd # CSL-rendered bibliography

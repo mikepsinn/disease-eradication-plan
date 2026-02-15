@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 260 parameters used in the analysis, organized by type:
+This appendix documents all 259 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 105
-- Calculated values: 99
+- Calculated values: 98
 - Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (105 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (98 parameters) • [External Data Sources](#sec-external) (105 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2755,93 +2755,6 @@ Spending_{mil,post} \\
 $$
 
 *✓ High confidence*
-
-:::
-
-### Total Annual Cost of War and Disease with All Externalities: $129T {#sec-global_total_health_and_war_cost_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total annual cost of war and disease with all externalities (direct + indirect costs for both)
-
-**Inputs**:
-
-- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
-- [Total Economic Burden of Disease Globally](#sec-global_disease_economic_burden_annual) 🔢: $109T
-- [Annual Global Spending on Symptomatic Disease Treatment](#sec-global_symptomatic_disease_treatment_annual) 📊: $8.20T (95% CI: $6.50T - $10T)
-
-$$
-\begin{gathered}
-Cost_{health+war} \\
-= Cost_{war,total} + Burden_{disease} + Spending_{symptom} \\
-= \$11.4T + \$109T + \$8.2T \\
-= \$129T \\[0.5em]
-\text{where } Cost_{war,total} \\
-= Cost_{war,direct} + Cost_{war,indirect} \\
-= \$7.66T + \$3.7T \\
-= \$11.4T \\[0.5em]
-\text{where } Cost_{war,direct} \\
-= Loss_{life,conflict} + Damage_{infra,total} \\
-+ Disruption_{trade} + Spending_{mil} \\
-= \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T \\[0.5em]
-\text{where } Loss_{life,conflict} \\
-= Cost_{combat,human} + Cost_{state,human} \\
-+ Cost_{terror,human} \\
-= \$2.34T + \$27B + \$83B \\
-= \$2.45T \\[0.5em]
-\text{where } Cost_{combat,human} \\
-= Deaths_{combat} \times VSL \\
-= 234{,}000 \times \$10M \\
-= \$2.34T \\[0.5em]
-\text{where } Cost_{state,human} \\
-= Deaths_{state} \times VSL \\
-= 2{,}700 \times \$10M \\
-= \$27B \\[0.5em]
-\text{where } Cost_{terror,human} \\
-= Deaths_{terror} \times VSL \\
-= 8{,}300 \times \$10M \\
-= \$83B \\[0.5em]
-\text{where } Damage_{infra,total} \\
-= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} \\
-+ Damage_{water} \\
-= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T \\[0.5em]
-\text{where } Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B \\[0.5em]
-\text{where } Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} \\
-+ Loss_{capital,conflict} + Cost_{psych} \\
-+ Cost_{refugee} + Cost_{vet} \\
-= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T \\[0.5em]
-\text{where } Burden_{disease} \\
-= Cost_{medical,direct} + Loss_{life,disease} \\
-+ Loss_{productivity} \\
-= \$9.9T + \$94.2T + \$5T \\
-= \$109T
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_total_health_and_war_cost_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_total_health_and_war_cost_annual.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_total_health_and_war_cost_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_total_health_and_war_cost_annual.qmd >}}
 
 :::
 
