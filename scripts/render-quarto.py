@@ -820,6 +820,14 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         if verbose:
             print(f"[*] Using filtered parameters: parameters-and-calculations-{config_name}.qmd", flush=True)
 
+    # Copy Lua filters referenced in configs (scripts/ dir is not in required_dirs whitelist)
+    filters_src = project_root / "scripts" / "filters"
+    if filters_src.is_dir():
+        filters_dst = build_temp / "scripts" / "filters"
+        filters_dst.mkdir(parents=True, exist_ok=True)
+        for lua_file in filters_src.glob("*.lua"):
+            shutil.copy2(lua_file, filters_dst / lua_file.name)
+
     # Prepare config and index in temp directory
     original_cwd = os.getcwd()
     os.chdir(build_temp)

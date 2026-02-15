@@ -4,6 +4,19 @@ img.math {
   height: 1.1em;
 }
 
+/* Figure captions below images (EPUB default puts them above) */
+figure {
+  display: flex;
+  flex-direction: column;
+}
+figure img,
+figure picture {
+  order: 0;
+}
+figcaption {
+  order: 1;
+}
+
 /* Display math images - center on page */
 img.display-math,
 p > img.math:only-child {
