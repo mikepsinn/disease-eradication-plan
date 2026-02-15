@@ -837,48 +837,6 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     finally:
         os.chdir(original_cwd)
 
-    # For manual config: rewrite paper-specific parameter links to main parameters file
-    # This fixes validation errors where paper-specific param files aren't in manual's chapter list
-    # Must run before cross-site link rewriting early return check
-    if config_name == "manual":
-        # Get list of all QMD files in the manual config
-        with open(project_root / metadata["config_file"], encoding="utf-8") as f:
-            manual_cfg = yaml.safe_load(f)
-        manual_files = _extract_files_from_config(manual_cfg)
-        files_for_param_rewrite = list(manual_files)
-        if (build_temp / "index.qmd").exists():
-            files_for_param_rewrite.append("index.qmd")
-
-        param_links_rewritten = 0
-        param_pattern = re.compile(
-            r'\[([^\]]+)\]\(/knowledge/appendix/parameters-and-calculations-[^)]+\.qmd\)'
-        )
-
-        for file_path_str in files_for_param_rewrite:
-            qmd_file = build_temp / file_path_str
-            if not qmd_file.exists():
-                continue
-
-            with open(qmd_file, encoding="utf-8") as f:
-                content = f.read()
-
-            original = content
-
-            def rewrite_param_link(match: re.Match[str]) -> str:
-                nonlocal param_links_rewritten
-                text = match.group(1)
-                param_links_rewritten += 1
-                return f'[{text}](/knowledge/appendix/parameters-and-calculations.qmd)'
-
-            content = param_pattern.sub(rewrite_param_link, content)
-
-            if content != original:
-                with open(qmd_file, "w", encoding="utf-8", newline='\n') as f:
-                    f.write(content)
-
-        if param_links_rewritten > 0 and verbose:
-            print(f"[OK] Rewrote {param_links_rewritten} paper-specific parameter links for manual build", flush=True)
-
     # Rewrite links to standalone papers with their deployed HTTPS URLs
     # This runs for all configs (not just manual) to fix "Unable to resolve link target" warnings
     with open(project_root / metadata["config_file"], encoding="utf-8") as f:

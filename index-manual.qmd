@@ -743,9 +743,10 @@ You start paying them to actually solve problems. Problems get solved. Money app
   - This is the [comprehensive post-safety efficacy lag elimination approach](knowledge/appendix/invisible-graveyard.qmd) - **keeping rigorous Phase I safety testing** (2.3 years) but eliminating the 7.2-year Phase II/III efficacy delay by letting real-world evidence verify effectiveness
   - For context: {{< var global_disease_deaths_daily >}} people die daily from disease and aging. Slower testing and rollout means some fraction of those deaths are avoidable by earlier access to effective treatments ([see regulatory mortality analysis](knowledge/appendix/invisible-graveyard.qmd))
 
-::: {.callout-warning}
-**The Math of Overcaution**: For every 1 person the FDA protects from a bad drug, it kills {{< var type_ii_error_cost_ratio >}} people by making them wait for good drugs. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown.
-:::
+
+### The Math of Overcaution
+
+For every 1 person the FDA protects from a bad drug, it kills {{< var type_ii_error_cost_ratio >}} people by making them wait for good drugs. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown.
 
 {{< include knowledge/figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
