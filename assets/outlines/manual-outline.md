@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 49 | **Words:** 136,572
+**Files:** 48 | **Words:** 129,631
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -1281,37 +1281,6 @@
   - Your Marching Orders
 
 ### Policy & Regulatory
-
-#### knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
-**Title:** Right to Trial & FDA Upgrade Act
-**Description:** Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
-**Stats:** 6,941 words | 292 lines
-
-  - TITLE I: SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
-    - SEC. 101. SHORT TITLE
-    - SEC. 102. PURPOSE
-    - SEC. 103. FINDINGS
-    - SEC. 104. DEFINITIONS
-  - TITLE II: FDA Upgrade AND CLINICAL‑TRIAL INNOVATION
-    - SEC. 201. ACCELERATED ADOPTION OF ALTERNATIVE PRECLINICAL TEST METHODS
-    - SEC. 202. GUIDANCE ON DECENTRALISED, ADAPTIVE, AND REAL‑WORLD‑EVIDENCE TRIALS
-    - SEC. 203. PATIENT‑FOCUSED DRUG DEVELOPMENT AND GLOBAL COLLABORATION
-    - SEC. 204. FDA.gov v2 DECENTRALIZED HEALTH PROTOCOL AND REFERENCE IMPLEMENTATION
-    - SEC. 205. FDA-X PRIZE
-  - TITLE III: UNIVERSAL TRIAL ACCESS (RIGHT‑TO‑TRIAL PROGRAM)
-    - SEC. 301. UNIVERSAL ELIGIBILITY FOR INVESTIGATIONAL INTERVENTIONS
-    - SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY
-    - SEC. 303. FAIR ACCESS AND DISCOUNT ALGORITHMS
-    - SEC. 304. PATIENT COST CONTRIBUTION FOR TRIAL PARTICIPATION
-  - TITLE IV: GENERAL PROVISIONS
-    - SEC. 401. COORDINATION WITH EXISTING LAW
-    - SEC. 402. AUTHORIZATION OF APPROPRIATIONS AND STAGE‑GATED FUNDING
-    - SEC. 403. IMPLEMENTATION TIMELINE
-    - SEC. 404. STRATEGY FOR GLOBAL GOVERNANCE AND DECENTRALIZATION
-    - SEC. 405. SEVERABILITY
-    - SEC. 406. TRANSPARENCY IN REGULATORY ACTIONS LIMITING TREATMENT ACCESS
-    - REFERENCES
-      - End of Act.
 
 #### knowledge/appendix/impact-securities-reform.qmd
 **Title:** Impact Securities Reform Act

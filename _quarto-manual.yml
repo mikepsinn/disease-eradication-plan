@@ -151,7 +151,7 @@ book:
     - part: "Detailed Calculations"
       chapters:
         - knowledge/appendix/parameters-and-calculations.qmd
-        - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis ~10p
+        # EXTRACTED: drug-development-cost-analysis.qmd -> standalone paper at drug-cost.warondisease.org
 
     - part: "References"
       chapters:

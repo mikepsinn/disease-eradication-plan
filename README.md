@@ -23,6 +23,12 @@
 
 > Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply causal inference to this historical policy data, (2) Identify which policies predict above-average median income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive.
 
+### [Right to Trial & FDA Upgrade Act](https://right-to-trial.warondisease.org)
+
+[![Right to Trial and FDA Upgrade Act](assets/og-images/knowledge/appendix/right-to-trial-fda-upgrade-act-og-retro-academic.jpg)](https://right-to-trial.warondisease.org)
+
+> Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
+
 ### [The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
 
 [![The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)

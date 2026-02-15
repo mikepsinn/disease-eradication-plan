@@ -1,0 +1,207 @@
+project:
+  type: book
+  output-dir: _site/drug-development-cost
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+    - _redirects
+    - robots.txt
+    - llms.txt
+
+# Custom fields for render-quarto.py
+dih-render:
+  emoji: "💊"
+  index-source: knowledge/appendix/drug-development-cost-analysis.qmd
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org
+  pdf-output-file: drug-development-cost-analysis.pdf
+  show-confidence-intervals: true
+  favicon-prompt: "A pill capsule split open showing dollar signs spilling out"
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+book:
+  title: "Drug Development Cost Increase Analysis"
+  author:
+    - name: Mike P. Sinn
+      email: m@warondisease.org
+      orcid: 0009-0006-0212-1094
+      affiliations:
+        - name: "Institute for Accelerated Medicine"
+          url: https://acceleratedmedicine.org
+  description: "Rigorous analysis of the 105x increase in drug development costs from pre-1962 to 2024, using the Baily (1972) academic study with CPI adjustments, sensitivity analysis, and six independent real-world sanity checks."
+  abstract: "Drug development costs have increased approximately 105x in real terms since the 1962 Kefauver-Harris Amendment. This analysis uses the Baily (1972) academic study as the primary source, adjusts for inflation via Bureau of Labor Statistics CPI data, and validates the finding against six independent real-world price comparisons: generic vs. brand-name drugs, supplements vs. prescriptions, compounding pharmacies vs. FDA-approved products, veterinary vs. human drugs, orphan drug pricing, and historical antibiotic economics. Monte Carlo sensitivity analysis confirms the estimate is robust across plausible input ranges. The magnitude is consistent with independent estimates of 100-400x from multiple research groups."
+  site-url: https://drug-cost.warondisease.org
+  favicon: assets/icons/economics-favicon.png
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+    - knowledge/references.qmd
+  navbar:
+    right:
+      - text: "Calculations"
+        href: knowledge/appendix/parameters-and-calculations.qmd
+      - text: "Full Book"
+        href: https://manual.WarOnDisease.org
+  sidebar:
+    collapse-level: 1
+    style: "floating"
+    search: true
+    contents:
+      - section: "Analysis"
+        contents:
+          - href: index.html
+            text: "Drug Development Cost Analysis"
+          - href: knowledge/references.qmd
+            text: "References & Citations"
+
+      - section: "Appendices"
+        contents:
+          - href: knowledge/appendix/parameters-and-calculations.qmd
+            text: "Parameters & Calculations"
+
+      - section: "Related Materials"
+        contents:
+          - href: https://manual.warondisease.org
+            text: "Full Book →"
+          - href: https://impact.warondisease.org
+            text: "1% Treaty Economic Analysis →"
+          - href: https://invisible-graveyard.warondisease.org
+            text: "Invisible Graveyard Paper →"
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Drug Development, Health Economics, Regulatory Analysis, FDA Policy"
+  category: "Non-fiction, Health Economics, Regulatory Analysis"
+  coi-statement: "The author declares no competing interests, beyond a strong personal preference for being alive, which may bias conclusions toward 'we should spend less money on things that explode and more on things that cure.'"
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
+  ethics-statement: "This research did not involve human experimentation. Spending 105x more on regulatory paperwork than actual drug manufacturing while diseases remain untreated is, however, arguably an uncontrolled experiment in bureaucratic homicide."
+  funding: "This research received no funding. The annual cost of producing it was less than the FDA charges for a single pre-submission meeting."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  twitter-creator: "https://x.com/warondisease"
+  twitter-site: "https://x.com/warondisease"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  keywords:
+    - drug-development-cost
+    - fda-regulation
+    - kefauver-harris-amendment
+    - clinical-trials
+    - pharmaceutical-economics
+    - regulatory-burden
+    - health-economics
+    - baily-1972
+    - tufts-csdd
+    - orphan-drugs
+  version: "1.0.0"
+  edition: "First Edition"
+  copyright: "© 2025 The Institute for Accelerated Medicine"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "Global"
+  audience: "Policy Makers, Health Economists, Pharmaceutical Researchers, Regulatory Reform Advocates"
+  format: "Working Paper"
+  type: "Economic Analysis"
+  genre: "Health Economics, Regulatory Analysis"
+  medium: "Digital"
+  open-graph: true
+
+# Remove "Appendix" prefix from appendix chapters
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
+csl: nature-annotated.csl
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: false
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-in-footer:
+      - file: assets/html/generated-footer.html
+      - text: |
+          <p style="text-align: center; margin: 0.5rem 0; font-size: 0.85rem; color: #8b7355;">
+            <strong>Download:</strong>
+            <a href="/drug-development-cost-analysis.pdf" style="color: #8b7355;">PDF</a>
+          </p>
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    include-in-header:
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+    include-before-body:
+      - file: assets/html/page-loader.html
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+  pdf:
+    output-file: "drug-development-cost-analysis.pdf"
+    documentclass: article
+    institute: "Institute for Accelerated Medicine"
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+    link-citations: true
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://drug-cost.warondisease.org}
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    date: ""
