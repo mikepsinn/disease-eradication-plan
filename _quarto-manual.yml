@@ -103,6 +103,7 @@ book:
         # - knowledge/solution/war-on-disease.qmd
         - knowledge/solution/aligning-incentives.qmd # ✅ Aligning Incentives ~7p
         - knowledge/solution/incentive-alignment-bonds.qmd # ✅ Incentive Alignment Bonds ~12p
+        - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
 
     - part: "The Evidence"
       chapters:
@@ -130,105 +131,32 @@ book:
         # - knowledge/strategy/viral-marketing.qmd
         - knowledge/strategy/co-opting-defense-contractors.qmd # ✅ PROMOTED ~4p
         - knowledge/call-to-action/three-actions.qmd # ✅ Getting Started ~2p
-  # appendices: Commented to get rid of the Appendix prefix in the titles
-    # Essential Reading
-    - part: "Essential References"
-      chapters:
-        - knowledge/appendix/recovery-trial.qmd # ✅ (IMPROVED) ~9p
-        - knowledge/appendix/real-world-evidence-historical-success.qmd # ✅ Pre-1962 system analysis (1883-1962 timeline, thalidomide, diminishing returns rebuttal) ~12p
-        # historical-evidence-supporting-decentralized-efficacy-trials.qmd content merged into fda-is-unsafe-and-ineffective.qmd
-
-    # Strategic Implementation
-    - part: "Implementation Strategy"
-      chapters:
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
-        # REMOVED: Merged incentive mechanisms into nonprofit-coalition-strategy.qmd
-        # - knowledge/appendix/nonprofit-partnership-incentives.qmd
-
+        - knowledge/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
+  # appendices: Commented to get rid of the Appendix prefix in the titles
     - part: "Policy & Regulatory"
       chapters:
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # ✅ (legislative text, appropriate) ~25p
         - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
-        # STANDALONE PAPERS - have their own sites, see knowledge/papers.qmd for links
-        # - knowledge/appendix/incentive-alignment-bonds-paper.qmd # ✅ Working paper: formal mechanism design analysis
-        # - knowledge/appendix/cost-of-change-analysis.qmd # ✅ Working paper: political economy analysis of maximum plausible incentivization costs
-        # - knowledge/appendix/wishocracy-paper.qmd # ✅ Working paper: RAPPA mechanism design for democratic resource governance
-        # - knowledge/appendix/optimocracy-paper.qmd # ✅ Working paper: algorithmic governance through metric-bound resource allocation
-        # - knowledge/appendix/optimal-policy-generator-spec.qmd # ✅ Working paper: jurisdiction-specific policy recommendations using quasi-experimental methods
-        # - knowledge/appendix/optimal-budget-generator-spec.qmd # ✅ Working paper: OBG/BIS framework for evidence-based budget allocation
-        # - knowledge/appendix/dfda-spec-paper.qmd # ✅ Working paper: dFDA framework for drug assessment and precision medicine
 
-    # Economic Analysis
-    - part: "Economic Analysis"
+    - part: "Economics & Finance"
       chapters:
         - knowledge/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
         - knowledge/economics/health-dividend.qmd # ✅ (good voice) ~3p
-        # REMOVED: Redundant with cost-of-war, cost-of-disease, and peace-dividend chapters.
-        # - knowledge/appendix/humanity-budget-overview.qmd
-        # REMOVED: Detailed R&D spending data better suited for online resource (~8p)
-        # - knowledge/appendix/global-government-medical-research-spending.qmd
-        # REMOVED: Too granular; key stats already in health-dividend.qmd (~17p)
-        # - knowledge/appendix/global-clinical-trial-spending-by-phase.qmd
-        # REMOVED: Overlaps with trial capacity discussions. Key stats parameterized.
-        # - knowledge/appendix/clinical-trial-participants.qmd
+        - knowledge/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
+        - knowledge/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
+        - knowledge/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
 
     - part: "Detailed Calculations"
       chapters:
         - knowledge/appendix/parameters-and-calculations.qmd
-        # STANDALONE PAPER - see graveyard.warondisease.org
-        # - knowledge/appendix/invisible-graveyard.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
-        - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis with multiple data sources, CPI adjustments, sensitivity analysis ~10p
-        # REMOVED: Redundant with your-personal-benefits.qmd (same formula, stats, Monte Carlo).
-        # - knowledge/appendix/personal-lifetime-wealth-calc.qmd
-        # STANDALONE PAPER - see dfda-impact.warondisease.org
-        # - knowledge/appendix/dfda-impact-paper.qmd # ✅ (comprehensive ROI analysis - merged from 5 files) ~100p
-        # MERGED: Key drug valuation stat ($1.62B/drug) moved to health-dividend.qmd.
-        # - knowledge/appendix/economic-value-of-accelerated-treatments.qmd
-        # MERGED: Comparison table moved to proof.qmd.
-        # - knowledge/appendix/intervention-comparison-table.qmd
-        # REMOVED: Technical minutiae irrelevant to persuasion (~3p)
-        # - knowledge/appendix/data-storage-costs.qmd
+        - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis ~10p
 
-    - part: "Financial Planning"
+    - part: "References"
       chapters:
-        - knowledge/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
-        - knowledge/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
-        - knowledge/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
-        # MERGED: Key strategy insights moved to financial-plan.qmd. Operational detail removed.
-        # - knowledge/appendix/fundraising-strategy.qmd
-
-    # Organizational Resources
-    - part: "Governance & Organization"
-      chapters:
-        # REMOVED: Just redirects to main DIH chapter - content already moved (~4p)
-        # - knowledge/appendix/governance.qmd
-        # REMOVED: Internal hiring/staffing doc, not book content.
-        # - knowledge/appendix/organizational-precedents.qmd
-        # REMOVED: Operational detail belongs in implementation docs, not book (~8p)
-        # - knowledge/operations/careers/hiring-plan.qmd
-        # REMOVED: Merged insurance-layer concept and patient walkthrough into dih.qmd
-        # - knowledge/appendix/dih-integration-model.qmd
-        - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
-        # REMOVED: Internal ops doc (published: false). Not book content.
-        # - knowledge/appendix/command-and-control-systems.qmd
-
-    - part: "Operations & Legal"
-      chapters:
-        - knowledge/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
-
-    - part: "Additional References"
-      chapters:
+        - knowledge/appendix/recovery-trial.qmd # ✅ (IMPROVED) ~9p
+        - knowledge/appendix/real-world-evidence-historical-success.qmd # ✅ Pre-1962 system analysis ~12p
         - knowledge/papers.qmd
-        # REMOVED: Drug accessibility (wrong problem - book is about R&D, not access). Dilutes focus.
-        # - knowledge/appendix/lives-saved-by-drug-accessibility.qmd
-        # REMOVED: Tangential to core thesis; interesting but not necessary (~6p)
-        # - knowledge/appendix/nuclear-weapon-cost-and-casualties.qmd
-        # MERGED into recovery-trial.qmd (comparison table preserved).
-        # - knowledge/appendix/pragmatic-vs-explanatory-trials.qmd
-        # REMOVED: Meta-content (acknowledgments). GitHub contributors link preserved in page footer.
-        # - knowledge/appendix/acknowledgments.qmd
-        # Bibliography: references.bib is the single source of truth
-        # This page renders all cited references using Quarto's ::: {#refs} ::: shortcode
         - knowledge/references.qmd # CSL-rendered bibliography
 
 # Project-level metadata (applies to all documents)

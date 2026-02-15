@@ -131,7 +131,9 @@
     "captions:extract": "tsx scripts/captions/extract-captions.ts",
     "captions:extract:batches": "tsx scripts/captions/extract-captions.ts --batch-size=50",
     "captions:apply": "tsx scripts/captions/apply-captions.ts",
-    "captions:apply:dry-run": "tsx scripts/captions/apply-captions.ts --dry-run"
+    "captions:apply:dry-run": "tsx scripts/captions/apply-captions.ts --dry-run",
+    "curation:metrics": ".venv\\Scripts\\python.exe -u scripts/curation/collect-chapter-metrics.py",
+    "curation:report": ".venv\\Scripts\\python.exe -u scripts/curation/generate-curation-report.py"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
