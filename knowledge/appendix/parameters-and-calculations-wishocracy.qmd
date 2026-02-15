@@ -22,6 +22,12 @@ format:
     code-fold: true
 ---
 
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://wishocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://wishocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible unless-format="epub"}
+
 ## Overview {#sec-parameters-and-calculations}
 
 This appendix documents all 2 parameters used in the analysis, organized by type:
@@ -135,3 +141,5 @@ Estimated combined market capitalization of concentrated interest opposition (de
 })();
 </script>
 ```
+
+:::

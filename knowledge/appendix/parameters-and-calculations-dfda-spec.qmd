@@ -22,6 +22,12 @@ format:
     code-fold: true
 ---
 
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://dfda-spec.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://dfda-spec.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible unless-format="epub"}
+
 ## Overview {#sec-parameters-and-calculations}
 
 This appendix documents all 14 parameters used in the analysis, organized by type:
@@ -474,3 +480,5 @@ Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calc
 })();
 </script>
 ```
+
+:::

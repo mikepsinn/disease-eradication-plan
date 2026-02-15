@@ -22,6 +22,12 @@ format:
     code-fold: true
 ---
 
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://obg.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://obg.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible unless-format="epub"}
+
 ## Overview {#sec-parameters-and-calculations}
 
 This appendix documents all 30 parameters used in the analysis, organized by type:
@@ -1005,3 +1011,5 @@ Standard time horizon for NPV analysis
 })();
 </script>
 ```
+
+:::

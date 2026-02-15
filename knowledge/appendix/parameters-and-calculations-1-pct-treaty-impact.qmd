@@ -22,6 +22,12 @@ format:
     code-fold: true
 ---
 
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://impact.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://impact.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible unless-format="epub"}
+
 ## Overview {#sec-parameters-and-calculations}
 
 This appendix documents all 214 parameters used in the analysis, organized by type:
@@ -7938,3 +7944,5 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 })();
 </script>
 ```
+
+:::

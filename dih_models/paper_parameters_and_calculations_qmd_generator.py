@@ -185,6 +185,9 @@ def generate_all_paper_parameters_qmd(
         if not filtered_parameters:
             continue
 
+        # Extract site URL for PDF/EPUB cross-reference (some configs use "website:", others use "book:")
+        site_url = config.get("website", {}).get("site-url") or config.get("book", {}).get("site-url")
+
         # Generate the filtered QMD using the main generator
         output_path = project_root / "knowledge" / "appendix" / f"parameters-and-calculations-{config_name}.qmd"
         count = generate_parameters_and_calculations_qmd(
@@ -192,7 +195,8 @@ def generate_all_paper_parameters_qmd(
             output_path=output_path,
             available_refs=available_refs,
             params_file=params_file,
-            citation_data=citation_data
+            citation_data=citation_data,
+            site_url=site_url
         )
 
         if count > 0:

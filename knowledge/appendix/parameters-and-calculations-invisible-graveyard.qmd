@@ -22,6 +22,12 @@ format:
     code-fold: true
 ---
 
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://invisible-graveyard.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://invisible-graveyard.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible unless-format="epub"}
+
 ## Overview {#sec-parameters-and-calculations}
 
 This appendix documents all 55 parameters used in the analysis, organized by type:
@@ -1804,3 +1810,5 @@ Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of 
 })();
 </script>
 ```
+
+:::
