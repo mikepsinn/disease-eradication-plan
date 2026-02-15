@@ -6,7 +6,7 @@ image: /assets/og-images/knowledge/solution/ai-coordination-army-og-retro-academ
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.](/assets/infographics/knowledge/solution/ai-coordination-army-infographic-retro-academic.jpg)
+![How to build robot assistants that fight disease instead of humans. We gave the AI the easy war.](/assets/infographics/knowledge/solution/ai-coordination-army-infographic-retro-academic.jpg)
 
 ```{python}
 #| echo: false
@@ -19,7 +19,7 @@ print("Economic parameters loaded.", flush=True)
 
 You've got mission control, a network of decentralized institutes of health ([DIH](dih.qmd)), and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents to do the work while humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
 
-![A conceptual diagram showing the relationship between Wishocracy (goal setting), Decentralized Institutes of Health (research focus), and AI agents (resource coordination) within a unified infrastructure.](/assets/images/ai-coordination-army/ai-coordination-army-section-import-economic-parameters-produces-output-to-prevent-timeout-bw-academic.jpg)
+![People pick goals, researchers pick targets, robots coordinate everything. Like mission control but the mission is not dying.](/assets/images/ai-coordination-army/ai-coordination-army-section-import-economic-parameters-produces-output-to-prevent-timeout-bw-academic.jpg)
 
 Here's the division of labor:
 
@@ -40,13 +40,13 @@ Wishocracy creates the list. For example, "Cure Alzheimer's" (vague, terrifying,
 
 Your agents work from this same list. Whether you're deploying agents from a patient advocacy nonprofit in Boston (running on donated servers), a university in Beijing (behind the Great Firewall), or a biotech in Switzerland (with an actual IT budget), all agents see the same prioritized tasks. This is how you coordinate millions of people without someone having to organize a conference call.
 
-![Breakdown of the Wishocracy Task Tree, showing how high-level goals translate into executable agent instructions.](/assets/images/ai-coordination-army/ai-coordination-army-section-wishocracy-task-tree-bw-academic.jpg)
+![The Wishocracy Task Tree. Big goal at top, tiny tasks at bottom. It's how you turn 'cure cancer' into 'send email to lab 47.'](/assets/images/ai-coordination-army/ai-coordination-army-section-wishocracy-task-tree-bw-academic.jpg)
 
 ## The Secret to Success: Cross-Sector Coordination (Forces for Good)
 
 *Forces for Good* studied the difference between successful and unsuccessful nonprofits. The finding: Successful nonprofits coordinate across sectors, they work with other nonprofits, businesses, governments, and the public. Unsuccessful ones operate in silos, jealously guarding their email lists and acting like collaboration is a zero-sum game where helping someone else means losing.
 
-![A conceptual diagram showing the transition from fragmented, siloed cross-sector communication to a unified architecture where agents from diverse sectors (biotech, government, academia) synchronize through a global Task Tree.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-secret-to-success-cross-sector-coordination-forces-for-good-bw-academic.jpg)
+![Before: biotech doesn't talk to government doesn't talk to universities. After: robots talk to each other, work gets done. We replaced the humans with the chattier species.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-secret-to-success-cross-sector-coordination-forces-for-good-bw-academic.jpg)
 
 The problem: Cross-sector coordination is nearly impossible to do manually. How do you coordinate a cancer nonprofit in Boston (operating 9-5 EST) with a biotech in Switzerland (different timezone, language, and concept of urgency), a university in Beijing (behind a firewall), and individual researchers across 50 countries (half of whom don't check email)?
 
@@ -62,7 +62,7 @@ This ensures your agents enable the proven success pattern, cross-sector coordin
 
 The NIH has 27,000 employees. They can't coordinate lunch orders, let alone millions of researchers. Seriously, they spent [$1 trillion and eradicated zero diseases](../problem/nih-fails-2-institute-health.qmd) because their coordination strategy is "form a committee to discuss forming a committee."
 
-![A comparison between human coordination bottlenecks, limited by Dunbar's number and manual communication, and AI-driven infrastructure capable of managing global scale, time zones, and data synthesis simultaneously.](/assets/images/ai-coordination-army/ai-coordination-army-section-why-you-need-this-humans-are-hilariously-bad-at-coordination-bw-academic.jpg)
+![Humans can coordinate 150 people before everything breaks. AI can coordinate millions and doesn't need sleep. We're being outcompeted at cooperation by math.](/assets/images/ai-coordination-army/ai-coordination-army-section-why-you-need-this-humans-are-hilariously-bad-at-coordination-bw-academic.jpg)
 
 The FDA thinks humans can manually coordinate global trials. These are the same humans who took [17 years and $2.6 billion](../problem/fda-is-unsafe-and-ineffective.qmd) to approve one drug. Asking them to coordinate is like asking goldfish to organize a space program.
 
@@ -83,7 +83,7 @@ AI doesn't have this limitation. It never sleeps, speaks every language, operate
 
 ## The Architecture You're Building (It's Simpler Than It Looks)
 
-![A hierarchical agent coordination architecture showing the flow from Global Level network architects down to Mission Level and Node Level task agents.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-architecture-you-re-building-it-s-simpler-than-it-looks-bw-academic.jpg)
+![The robot org chart. Big boss robots tell medium robots tell little robots. We taught AI bureaucracy, which feels like a waste of AI.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-architecture-you-re-building-it-s-simpler-than-it-looks-bw-academic.jpg)
 
 Here's the coordination architecture you need. Don't let the diagram scare you, it's just showing that agents talk to other agents, which talk to more agents. Like a corporate org chart, except things actually happen:
 
@@ -113,7 +113,7 @@ with dot.subgraph(name='cluster_global') as global_level:
 
 # Mission Level
 
-![A structural diagram of the Mission Level architecture showing the hierarchical containment of the Mission Network Layer and the Coordinating Agent within the network.](/assets/images/ai-coordination-army/ai-coordination-army-section-mission-level-bw-academic.jpg)
+![Mission Level architecture. There's a coordinating robot inside a network layer inside a mission. It's robots all the way down.](/assets/images/ai-coordination-army/ai-coordination-army-section-mission-level-bw-academic.jpg)
 
 with dot.subgraph(name='cluster_mission') as mission_level:
     mission_level.attr(label='Mission Level', style='dashed')
@@ -124,7 +124,7 @@ with dot.subgraph(name='cluster_mission') as mission_level:
 
 # Node Level
 
-![A system architecture diagram showing the coordination between a Cluster Agent and individual nodes, including internal components like Task Agents and Performance Monitors.](/assets/images/ai-coordination-army/ai-coordination-army-section-node-level-bw-academic.jpg)
+![One robot boss watches worker robots while monitor robots watch everybody. We invented middle management for computers.](/assets/images/ai-coordination-army/ai-coordination-army-section-node-level-bw-academic.jpg)
 
 with dot.subgraph(name='cluster_node') as node_level:
     node_level.attr(label='Node Level', style='dashed')
@@ -147,7 +147,7 @@ display(IPImage(str(png_path)))
 
 The way you join the network is by deploying a "node", your organization's AI coordination hub that never sleeps, never complains, never asks for a raise, and doesn't require health insurance.
 
-![A visualization of the AI Coordination Hub acting as a central node that automates donor research, grant drafting, and cross-organization coordination to streamline global health funding.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-1-deploy-your-coordination-hub-bw-academic.jpg)
+![The AI Coordination Hub. Finds donors, writes grants, coordinates everybody. It does the boring parts so humans can do the fun parts, like science.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-1-deploy-your-coordination-hub-bw-academic.jpg)
 
 Think of it as your digital headquarters where AI agents work 24/7 to coordinate your piece of the War on Disease, while your human staff can focus on things humans are actually good at (like empathy, creativity, and knowing when someone's email is passive-aggressive).
 
@@ -169,7 +169,7 @@ Once the treaty passes? Your agents shift to allocating the {{< var treaty_annua
 
 You launch advocacy agents that track health legislation (all 10,000 pages that get released at 2 AM), coordinate treaty signature campaigns across timezones, organize awareness events, and recruit volunteers without the usual process of begging people on Facebook and hoping they show up.
 
-![A comparison diagram showing the shift in workload where AI agents handle data-intensive logistics and tracking, while the human coordinator transitions from scheduling tasks to high-value relationship building.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-mobilize-support-bw-academic.jpg)
+![Before: humans schedule meetings. After: robots schedule meetings, humans have ideas. We finally found a good use for robots.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-mobilize-support-bw-academic.jpg)
 
 Instead of one burned-out coordinator trying to schedule volunteers across 12 timezones while also answering emails, planning events, and maintaining their sanity, your agents handle all the logistics. The coordinator can focus on actual human relationships instead of being a human scheduling algorithm who's slowly dying inside.
 
@@ -177,7 +177,7 @@ Instead of one burned-out coordinator trying to schedule volunteers across 12 ti
 
 You automate the soul-crushing coordination work that turns enthusiastic researchers into bitter husks. Matching researchers with funding opportunities (before treaty: foundation grants; after treaty: Wishocracy allocations). Recruiting trial participants who actually meet the criteria (not just people who saw a Facebook ad and think they qualify). Tracking outcomes when half the participants ghost you. Synthesizing literature when there are 50,000 new papers published monthly and you're supposed to read them all.
 
-![A workflow diagram illustrating the transition from manual research coordination to an automated two-phase system involving grant matching and task execution.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-accelerate-research-bw-academic.jpg)
+![Phase 1: robot finds money. Phase 2: robot does work. Humans just point at problems and robots solve them. This is what we wanted from the Jetsons.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-accelerate-research-bw-academic.jpg)
 
 What used to take 6 months of emails like "Just following up on my previous 12 emails..." now happens continuously without making you want to throw your laptop out a window. Phase 1: coordinate who applies for which grants. Phase 2: coordinate who executes which tasks from Wishocracy's list using patient subsidies from the treaty.
 
@@ -185,7 +185,7 @@ What used to take 6 months of emails like "Just following up on my previous 12 e
 
 You deploy content agents that create educational materials people might actually read, track what the public currently thinks about health issues, coordinate social media campaigns, and figure out which messages actually change minds versus which ones just get ratio'd.
 
-![A comparison showing the manual A/B testing process versus AI agents simultaneously testing hundreds of content variations to optimize engagement.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-build-awareness-bw-academic.jpg)
+![Humans test 2 versions. AI tests 200 versions. AI wins. This is why robots will take all the marketing jobs first.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-build-awareness-bw-academic.jpg)
 
 Instead of a marketing team manually A/B testing campaigns one painful experiment at a time, your agents test hundreds of variations simultaneously. They learn that posting about preventing Alzheimer's at 2 PM on Tuesday gets 10x more engagement than posting at 9 AM on Monday, for reasons no human will ever understand.
 
@@ -193,7 +193,7 @@ Instead of a marketing team manually A/B testing campaigns one painful experimen
 
 You use "Agent Evaluators" to measure which strategies actually save lives instead of which ones win awards at nonprofit conferences or make board members feel good.
 
-![Architectural overview of an AI node, illustrating how specialized Task Agents utilize shared memory and context to coordinate activities while connecting to external research, government systems, and other nodes via APIs.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-optimize-impact-bw-academic.jpg)
+![An AI node. Little task robots share a brain, talk to research labs, talk to government, talk to other nodes. It's like LinkedIn but the networking actually accomplishes something.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-optimize-impact-bw-academic.jpg)
 
 You get real-time data showing which fundraising approaches work (not just which ones the development director learned at their last nonprofit job), which advocacy tactics actually change minds (versus which ones just make activists feel productive), which research collaborations accelerate progress (versus which ones just produce papers no one reads).
 
@@ -209,7 +209,7 @@ Your agents pull their missions from Wishocracy's Task Tree, not from brainstorm
 
 Wishocracy's Task Tree breaks "Cure Alzheimer's" (impossible, vague, makes you want to give up) down into executable tasks like "Find researchers studying protein misfolding" or "Recruit trial participants age 65+ with early symptoms."
 
-![An architecture diagram showing a hierarchical Task Tree where distributed agents in different global locations map to specific nodes, each operating on a lead/lag measure feedback loop.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-2-define-each-agent-s-mission-bw-academic.jpg)
+![The Task Tree with robots in every time zone. Each robot tracks what it's supposed to do and what it actually did. Performance reviews for software.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-2-define-each-agent-s-mission-bw-academic.jpg)
 
 You pick one task. Your agent does *only* that task. It doesn't also try to do social media, write the newsletter, organize events, and somehow also fix the printer. This prevents digital ADHD and the slow death of competence through task overload.
 
@@ -229,7 +229,7 @@ The key: Every agent across the entire network works from the same Task Tree. Yo
 
 Here's how you make the system evolve instead of calcifying into bureaucracy: You let anyone design and launch new agents to compete with existing ones.
 
-![A flowchart depicting the Darwinian competition between two agents, showing a side-by-side comparison of performance metrics leading to resource allocation for the winner and retirement for the loser.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-3-enable-competition-between-agents-may-the-best-robot-win-bw-academic.jpg)
+![Two robots compete. Winner gets resources. Loser gets deleted. We taught AI capitalism and called it evolution.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-3-enable-competition-between-agents-may-the-best-robot-win-bw-academic.jpg)
 
 If someone thinks they have a better way to find cancer researchers, they build an agent for it. You run both agents side-by-side and measure which one delivers better results for less cost. The winner gets more resources. The loser gets improved or retired (but gently, because it's code, not a person you're firing via Zoom).
 
@@ -239,7 +239,7 @@ The network evolves through ruthless, Darwinian competition. The best strategies
 
 Current AI can't run a global health movement alone, which is honestly for the best. You want humans making strategic decisions, not algorithms optimizing for metrics that accidentally prioritize the wrong things (like every social media platform ever).
 
-![A conceptual diagram showing the hierarchy of human strategic decision-making providing oversight to AI algorithmic execution to ensure alignment with movement goals.](/assets/images/ai-coordination-army/ai-coordination-army-section-how-you-keep-control-preventing-the-robot-uprising-bw-academic.jpg)
+![Humans decide strategy. Robots execute tactics. This is called 'alignment' because 'keeping the robots from going rogue' sounded alarming.](/assets/images/ai-coordination-army/ai-coordination-army-section-how-you-keep-control-preventing-the-robot-uprising-bw-academic.jpg)
 
 Here's the cooperation model you use:
 
@@ -247,31 +247,31 @@ Here's the cooperation model you use:
 
 Your agents analyze what's working across the network and propose new strategies (via GitHub issues, because developers already live there). Example: "Trial recruitment is 3x higher when you contact researchers on weekends" or "Funding requests sent on Tuesday get 40% more responses than those sent on Friday."
 
-![A flowchart showing AI agents analyzing network data to generate actionable insights delivered as GitHub issues to human developers.](/assets/images/ai-coordination-army/ai-coordination-army-section-ai-proposes-bw-academic.jpg)
+![Robots analyze data, write up problems, file tickets for humans to fix. The robots are middle managers now. We've come full circle.](/assets/images/ai-coordination-army/ai-coordination-army-section-ai-proposes-bw-academic.jpg)
 
 ### You Decide
 
 Actual humans review and approve strategic changes. You set direction based on values and context the AI doesn't understand (like "we don't spam people" or "that approach is technically effective but ethically questionable"). AI suggests. Humans decide. This is the opposite of most organizations where humans suggest and bureaucracy decides nothing will change.
 
-![A comparison between the AI-human collaborative decision process and the traditional bureaucratic model.](/assets/images/ai-coordination-army/ai-coordination-army-section-you-decide-bw-academic.jpg)
+![Humans used to make decisions slowly. Now computers help them make decisions slowly, but with more charts.](/assets/images/ai-coordination-army/ai-coordination-army-section-you-decide-bw-academic.jpg)
 
 ### AI Implements
 
 Once approved, "Builder Agents" update the coordination infrastructure, writing code, updating agent instructions, submitting improvements as pull requests. They do the grunt work of implementation so humans don't have to spend their weekends debugging Python.
 
-![A workflow diagram showing Builder Agents receiving approval and executing technical tasks like writing code, updating instructions, and submitting pull requests to automate implementation.](/assets/images/ai-coordination-army/ai-coordination-army-section-ai-implements-bw-academic.jpg)
+![Robots doing paperwork so humans can spend more time approving robots to do paperwork.](/assets/images/ai-coordination-army/ai-coordination-army-section-ai-implements-bw-academic.jpg)
 
 ### You Verify
 
 You do final review to ensure changes align with the mission before they go live across the network. Think of it as peer review, except the peer is a robot and it actually happens instead of sitting in someone's inbox for 6 months.
 
-![A conceptual diagram showing a human reviewer acting as a strategic checkpoint, filtering AI-driven coordination tasks before they are deployed to a global network.](/assets/images/ai-coordination-army/ai-coordination-army-section-you-verify-bw-academic.jpg)
+![One person checking the robot's homework before it gets sent to every robot on Earth. Nothing could go wrong.](/assets/images/ai-coordination-army/ai-coordination-army-section-you-verify-bw-academic.jpg)
 
 This keeps you in strategic control while letting AI handle the coordination work humans can't scale. You're building infrastructure to coordinate millions of people fighting disease, not building Skynet (though the "kill all humans" approach would technically solve the disease problem by eliminating the hosts, so you specifically program against that).
 
 ## How You Prevent Data Silos (The Tragedy of the Nonprofit Commons)
 
-![A conceptual diagram contrasting isolated data silos where information is hoarded with a shared coordination network where data flows freely between organizations.](/assets/images/ai-coordination-army/ai-coordination-army-section-how-you-prevent-data-silos-the-tragedy-of-the-nonprofit-commons-bw-academic.jpg)
+![Organizations used to keep secrets from each other. This is a drawing of them still keeping secrets, but feeling bad about it.](/assets/images/ai-coordination-army/ai-coordination-army-section-how-you-prevent-data-silos-the-tragedy-of-the-nonprofit-commons-bw-academic.jpg)
 
 A coordination network is only as smart as the information flowing through it. Here's how you prevent organizations from hoarding data like dragons sitting on gold they'll never use:
 
@@ -279,7 +279,7 @@ A coordination network is only as smart as the information flowing through it. H
 
 To use the powerful shared coordination agents (funded by the collective), you agree to share your anonymized performance data back to the network. No sharing, no access to the network effects. It's the opposite of most nonprofit collaborations where everyone wants the benefits but no one wants to contribute anything.
 
-![A conceptual diagram showing the feedback loop between individual nodes and the collective network, where data contributions are exchanged for AI agent access and financial compensation.](/assets/images/ai-coordination-army/ai-coordination-army-section-rule-1-share-to-play-bw-academic.jpg)
+![You give them your data. They give you money and a robot. It's like selling your diary, if your diary could cure cancer.](/assets/images/ai-coordination-army/ai-coordination-army-section-rule-1-share-to-play-bw-academic.jpg)
 
 **Rule 2 - Get Paid to Share:**
 

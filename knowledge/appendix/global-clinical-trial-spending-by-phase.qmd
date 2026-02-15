@@ -29,7 +29,7 @@ Global clinical trial spending totals approximately **{{< var global_clinical_tr
 
 **Note**: Earlier market reports cited {{< var global_clinical_trials_spending_annual >}}, but this conflated market size projections with actual spending and included CRO revenue double-counting.
 
-![A breakdown of the 60 billion annual global clinical trial spending by sector, illustrating the proportional contributions of industry, government, and nonprofit funding.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-bottom-line-bw-academic.jpg)
+![Who pays for clinical trials: industry, government, and nonprofits. Like a potluck, but for curing cancer, and some people brought more than others.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-bottom-line-bw-academic.jpg)
 
 ### Growth trajectory
 
@@ -42,7 +42,7 @@ Global clinical trial spending totals approximately **{{< var global_clinical_tr
 
 ### What we know
 
-![A visual breakdown of clinical trial enrollment statistics comparing US annual figures to global estimates based on market share proportions.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-what-we-know-bw-academic.jpg)
+![How many people are in clinical trials in the US versus the world. We extrapolated the world number from US market share, which is how you know we're serious researchers.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-what-we-know-bw-academic.jpg)
 
 - **US cumulative enrollment** ([direct API analysis](clinical-trial-participants.qmd)): 12.2 million participants across 100,000 active/recruiting/completed trials
 - **Estimated annual US enrollment**: 4-5 million participants/year (based on average trial durations)
@@ -64,7 +64,7 @@ Global clinical trial spending totals approximately **{{< var global_clinical_tr
 
 **The tragedy:** Only [0.06% of humanity participates in clinical trials](clinical-trial-participants.qmd) each year while 150,000 die daily from disease.
 
-![A visualization showing the scaling of median participants across clinical trial phases 1-4 and the stark contrast between the 0.06 percent global participation rate and daily mortality figures.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-regional-snapshots-bw-academic.jpg)
+![Clinical trial participants by phase, plus the fact that 0.06 percent of humans are in trials while significantly more than that die every day. We're losing the race, but slowly, which is on-brand.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-regional-snapshots-bw-academic.jpg)
 
 See [The 0.06% Problem](clinical-trial-participants.qmd) for the full analysis.
 
@@ -74,7 +74,7 @@ See [The 0.06% Problem](clinical-trial-participants.qmd) for the full analysis.
 
 ### Phase 3: The Money Pit
 
-![A summary of Phase 3 clinical trial characteristics highlighting its dominant 53.3 percent market share, high participant requirements, and lengthy 38-month average duration.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-phase-3-the-money-pit-bw-academic.jpg)
+![Phase 3 trials: 53.3 percent of the market, lots of participants, takes 38 months. This is the 'we're pretty sure it works but we need to be really sure' phase. Certainty is expensive and slow.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-phase-3-the-money-pit-bw-academic.jpg)
 
 **Global Spending: $29-45 billion annually [@phase-3-market-share-2024]** (~53-55% of total market)
 
@@ -87,7 +87,7 @@ Why Phase 3 dominates:
 
 #### Cost per trial
 
-![A comparison of clinical trial costs showing the variation between median and average figures, as well as the significant cost differences between therapeutic areas like dermatology and pain management.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-cost-per-trial-bw-academic.jpg)
+![Clinical trial costs by disease type. Dermatology trials are cheap. Pain management trials cost more. Apparently it's easier to cure a rash than to cure pain, which explains a lot about existence.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-cost-per-trial-bw-academic.jpg)
 
 - Average: $20-282 million [@phase-3-cost-per-trial-range] per trial
 - Median: Over $19 million [@phase-3-median-cost] per trial
@@ -165,7 +165,7 @@ Why Phase 3 dominates:
 - Detects rare adverse events not seen in smaller trials
 - Evaluates effectiveness beyond controlled trial conditions
 
-![Comparative overview of spending, market share, and per-patient costs across the four clinical trial phases.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-clinical-trial-phases-comparison-bw-academic.jpg)
+![Spending, market share, and per-patient costs for all four trial phases. Phase 3 dominates everything like a middle child who became a CEO out of spite.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-clinical-trial-phases-comparison-bw-academic.jpg)
 
 ## Who's Paying: Funding Source Breakdown
 
@@ -183,7 +183,7 @@ Why Phase 3 dominates:
 
 #### Top spenders (2024 R&D budgets)
 
-![A visualization of the 2024 R and D funding landscape, comparing the dominant scale of pharmaceutical companies, the growing influence of biotech firms, and the 146 billion contribution from venture capital.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-top-spenders-2024-r-d-budgets-bw-academic.jpg)
+![Who funds drug research in 2024: big pharma (enormous), biotech (growing), and venture capital (146 billion, which is a lot until you compare it to big pharma). Money finds cures the way water finds cracks.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-top-spenders-2024-r-d-budgets-bw-academic.jpg)
 
 - Pharmaceutical companies dominate funding
 - Biotech firms increasingly important (especially in early phases)
@@ -191,7 +191,7 @@ Why Phase 3 dominates:
 
 #### Regional breakdown
 
-![Comparison of global clinical trial market shares and growth trends, highlighting the dominance of the United States and the rapid rise of China's trial volume.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-regional-breakdown-bw-academic.jpg)
+![Clinical trial market share by country. America dominates, China is rising fast. We're competing to see who can cure diseases faster, which is the only kind of arms race that actually helps people.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-regional-breakdown-bw-academic.jpg)
 
 - **United States**: Largest market for clinical trials
   - US clinical trials market: $45 billion in 2024 [@us-clinical-trials-market-2024]
@@ -249,11 +249,11 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - NIH covers only ~4% of Phase 3 costs [@nih-phase-3-coverage]
 - Industry takes over once commercial potential is clearer
 
-![The decline in government funding share as drug development moves from early-stage safety trials (Phase 1) to late-stage commercialization (Phase 3).](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-nih-vs-industry-funding-share-bw-academic.jpg)
+![Government pays for early trials when the drug might kill you. Industry pays for late trials when the drug might make money. Taxpayers fund the risk, shareholders collect the reward. This is called capitalism.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-nih-vs-industry-funding-share-bw-academic.jpg)
 
 #### European Union
 
-![Breakdown of EU health funding for 2021-2027, illustrating the health research allocation within the broader Horizon Europe budget compared to the EU4Health Programme.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-european-union-bw-academic.jpg)
+![EU health funding for 2021-2027, broken down by program. The EU has named their programs Horizon Europe and EU4Health, which sound like rejected Eurovision song titles.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-european-union-bw-academic.jpg)
 
 - Horizon Europe total: €95.5 billion (2021-2027) [@horizon-europe-budget]
   - Health research portion: Billions allocated
@@ -282,7 +282,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 #### Major players (2024)
 
-![A visual breakdown of the 2024 funding commitments from the Gates Foundation, Wellcome Trust, and Novo Nordisk, highlighting the distribution of 850 million across global health and TB vaccine initiatives.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-major-players-2024-bw-academic.jpg)
+![Where the Gates Foundation, Wellcome Trust, and Novo Nordisk put their 850 million in 2024: global health and TB vaccines. Rich people and a diabetes company are doing the government's job. This is fine.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-major-players-2024-bw-academic.jpg)
 
 **Gates Foundation + Wellcome Trust + Novo Nordisk:**
 
@@ -311,7 +311,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 #### Special initiatives
 
-![A diagram illustrating the partnership between the Bill and Melinda Gates Foundation, Wellcome, and Mastercard in establishing the COVID-19 Therapeutics Accelerator and its initial funding output.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-special-initiatives-bw-academic.jpg)
+![When a credit card company teams up with charities to fight disease. Turns out Mastercard isn't just for buying things you don't need.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-special-initiatives-bw-academic.jpg)
 
 - COVID-19 Therapeutics Accelerator [@covid-therapeutics-accelerator]: Gates + Wellcome + Mastercard
   - $20 million in initial grants (2020) [@covid-therapeutics-initial-grants]
@@ -327,7 +327,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 ### Breakdown by phase (industry average)
 
-![Breakdown of pharmaceutical R and D costs by phase, illustrating the cumulative cost of successful drugs compared to the substantial financial burden of failed drug candidates.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-breakdown-by-pha-bw-academic.jpg)
+![Making medicine costs a lot because most of the experiments don't work. Like paying for 9,999 broken light bulbs to get one that turns on.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-breakdown-by-pha-bw-academic.jpg)
 
 - Phase 1: $28 million per approved drug [@industry-phase-1-per-approved-drug]
 - Phase 2: $65 million per approved drug [@industry-phase-2-per-approved-drug]
@@ -349,7 +349,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - Tufts Center 2021 estimate: {{< var pharma_drug_development_cost_current >}}
   - Nearly 3× increase from $802M in 2003 (inflation-adjusted)
 
-![The attrition funnel of drug development, showing the sharp decline in candidate survival alongside the accumulating costs per approved drug.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-drug-development-bw-academic.jpg)
+![The drug development funnel. Wide at the top like hope, narrow at the bottom like reality, expensive all the way through.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-drug-development-bw-academic.jpg)
 
 ## Regional Market Distribution
 
@@ -361,7 +361,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 #### United States
 
-![A breakdown of the 45 billion U.S. clinical trials market showing the proportion of NIH funding compared to industry investment.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-united-states-bw-academic.jpg)
+![How America spends 45 billion dollars testing whether pills work. The government pays some of it. Companies pay more because they get to charge whatever they want later.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-united-states-bw-academic.jpg)
 
 - Clinical trials market size: $45 billion (2024) [@us-clinical-trials-market-2024]
 - NIH: $18.9 billion in clinical research (2023) [@nih-clinical-research-funding-2023]
@@ -378,7 +378,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 #### Why China is winning
 
-![An infographic illustrating the four key pillars of China's competitive advantage in biopharma: clinical trial efficiency, patient population scale, government innovation support, and regulatory framework improvements.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-why-china-is-winning-bw-academic.jpg)
+![Why China is good at testing medicine: lots of people, fast approvals, government help, and efficiency. Sometimes having 1.4 billion citizens is useful.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-why-china-is-winning-bw-academic.jpg)
 
 - Faster and more affordable clinical trials [@china-trial-advantages]
 - Larger patient populations
@@ -402,7 +402,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 ### The Good News
 
-![Key indicators of clinical trial industry growth and efficiency, highlighting increased spending, higher trial volume, and technology-driven cost savings.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-good-news-bw-academic.jpg)
+![The clinical trials industry is spending more money, running more trials, and saving money with computers. Humans invented computers to help us test whether other things work.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-good-news-bw-academic.jpg)
 
 - Industry spending grew 44% (2012-2022) [@industry-rd-growth-2012-2022]
 - More trials running globally than ever
@@ -410,7 +410,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 #### The Bad News
 
-![A visualization of the drug development funnel illustrating the high financial investment and long timelines contrasted against the low success rate and high percentage of untreated diseases.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-bad-news-bw-academic.jpg)
+![We spend a fortune, wait forever, fail most of the time, and still can't cure most diseases. It's like a very expensive lottery where nobody wins.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-bad-news-bw-academic.jpg)
 
 - {{< var global_clinical_trials_spending_annual >}} annually, yet most diseases still have no treatment [@95-pct-diseases-no-treatment]
 - 95% of spending goes to Phase 2-3 trials [@phase-2-3-spending-percentage] for molecules that can be patented
@@ -425,13 +425,13 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - Global pharmaceutical marketing: **$180 billion** [@pharma-marketing-spending-60b]
 - **Humans spend {{< var military_to_clinical_trials_spending_ratio >}} more on weapons and 2× more on drug ads than on testing new treatments**
 
-![Global spending scale comparison: Clinical trials vs. Pharmaceutical Marketing vs. Military Expenditure.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-global-spending-bw-academic.jpg)
+![What humanity spends money on: a little bit on testing medicine, some on advertising medicine, and absolutely massive amounts on weapons.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-global-spending-bw-academic.jpg)
 
 ## The Efficiency Paradox
 
 ### Current system
 
-![A side-by-side comparison of the current drug development system versus a decentralized framework, showing the massive disparity in trial volume and patient participation achievable with the same 60B annual spend.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-current-system-bw-academic.jpg)
+![If we organized differently, we could test 100 times more treatments with the same money. But that would require changing things, which is hard.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-current-system-bw-academic.jpg)
 
 - {{< var global_clinical_trials_spending_annual >}} spent annually
 - ~50 new drugs approved per year globally [@global-new-drug-approvals-50-annually]
@@ -451,7 +451,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 - RECOVERY achieved: {{< var recovery_trial_cost_per_patient >}} (Systematic review median: {{< var pmc_pragmatic_trial_median_cost_per_patient >}} [@pmc-pragmatic-trial-cost])
 - **That's an 80-240× markup for bureaucracy**
 
-![Cost efficiency comparison between traditional Phase 3 trials and the decentralized RECOVERY trial model.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-efficiency-cost-bw-academic.jpg)
+![Traditional trials cost 48 million dollars per drug. The British figured out how to do it for 15,000 dollars. They used hospitals that already existed.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-efficiency-cost-bw-academic.jpg)
 
 ## Summary Table
 
@@ -480,7 +480,7 @@ NIH pays for the risky stuff, then hands it to industry once profit becomes like
 
 Humans spend {{< var global_clinical_trials_spending_annual >}} annually to develop ~50 drugs over 10+ years each.
 
-![A comparative visualization of the current drug development model versus the proposed decentralized framework, highlighting differences in cost, speed, and treatment volume.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-path-forward-bw-academic.jpg)
+![How we test drugs now versus how we could test drugs. One is slow, expensive, and small. The other is fast, cheap, and big. We prefer the first one.](/assets/images/global-clinical-trial-spending-by-phase/global-clinical-trial-spending-by-phase-section-the-path-forward-bw-academic.jpg)
 
 [A decentralized framework for drug assessment (dFDA) model](../solution/dfda.qmd) could achieve [50-95% cost reduction](https://dfda-impact.warondisease.org#gross-r-and-d-savings-from-implementing-a-decentralized-framework), enabling:
 

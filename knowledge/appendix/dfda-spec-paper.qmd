@@ -79,7 +79,7 @@ image: /assets/og-images/knowledge/appendix/dfda-spec-paper-og-bw-academic.jpg
 
 Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated unprecedented volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.
 
-![A two-stage methodological pipeline showing the transition from large-scale observational N-of-1 signal detection to causal confirmation via pragmatic randomized trials.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-abstract-bw-academic.jpg)
+![Step 1: Let computers watch a billion people take medicine. Step 2: Test the interesting bits. You were doing Step 2 first, which is why everything costs a billion dollars.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-abstract-bw-academic.jpg)
 
 We present a comprehensive **two-stage framework** for generating **validated outcome labels** with quantitative effect sizes:
 
@@ -97,7 +97,7 @@ This two-stage design addresses the fundamental limitations of purely observatio
 
 This paper describes the statistical methodology powering a patient-facing system best understood as **"Consumer Reports for drugs"** - a searchable database where patients can look up any condition and see every treatment ranked by real-world effectiveness, with quantitative outcome labels showing exactly what happened to people who tried each option.
 
-![A conceptual diagram showing the flow from raw data and statistical methodology to a user-facing searchable database that ranks drug effectiveness based on real-world outcomes.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-system-overview-from-methodology-to-implementation-system-overview-bw-academic.jpg)
+![Imagine if restaurants had to tell you which dishes actually taste good instead of just not poisoning you. This is that, but for drugs.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-system-overview-from-methodology-to-implementation-system-overview-bw-academic.jpg)
 
 ### What Patients See
 
@@ -108,11 +108,11 @@ When a patient searches for their condition, they see:
 3. **Trial Access**: One-click enrollment in available trials, from home, via any device
 4. **Personalized Predictions**: Based on their health data, which treatments work best for people like them
 
-![Treatment Rankings Example - Patients see all treatments ranked by real-world effectiveness for their condition](../../assets/images/dfda-comparative-effectiveness-ranking-search.png){#fig-treatment-rankings}
+![Treatment rankings, like Yelp reviews, but for not dying. You could have done this decades ago. You chose not to.](../../assets/images/dfda-comparative-effectiveness-ranking-search.png){#fig-treatment-rankings}
 
 ### What Companies See
 
-![A workflow diagram showing the streamlined process for companies, from instant registration to the generation of high-value clinical data through patient-funded treatments.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-what-companies-see-bw-academic.jpg)
+![Drug companies used to spend ten years asking permission to help people. Now they just help people and write down what happens. Revolutionary.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-what-companies-see-bw-academic.jpg)
 
 Any company - pharmaceutical, supplement, food, or intervention - can register a treatment in minutes at zero cost:
 
@@ -130,7 +130,7 @@ The **Predictor Impact Score (PIS)** described in this paper is the engine that 
 
 The result is a self-improving system where every patient's experience helps the next patient make better decisions, transforming the current bottleneck of {{< var current_trial_slots_available >}} annual trial participants into a system where anyone can contribute to medical knowledge.
 
-![The two-stage Predictor Impact Score pipeline illustrating the flow from low-cost real-world data analysis to high-priority pragmatic trials.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-where-this-methodology-fits-bw-academic.jpg)
+![First, computers find patterns in real life. Then, humans check if the computers are hallucinating. It's like peer review, but one of the peers is a billion people.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-where-this-methodology-fits-bw-academic.jpg)
 
 For the complete user-facing vision, see [A Decentralized Framework for Drug Assessment](../solution/dfda.qmd).
 
@@ -140,7 +140,7 @@ For the complete user-facing vision, see [A Decentralized Framework for Drug Ass
 
 Every year, {{< var global_annual_deaths_curable_diseases >}} people die from diseases for which treatments exist or could exist. The tragedy is not that we lack medical knowledge. It's that our system for generating and validating that knowledge operates at a fraction of its potential capacity.
 
-![A visualization of the 8.2-year clinical trial delay and its cumulative human cost, comparing the 102 million preventable deaths to the scale of 20th-century war casualties.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-human-cost-of-the-current-system-bw-academic.jpg)
+![While you waited for permission to try new cancer drugs, more people died than in all of World War II. The forms were very thorough though.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-human-cost-of-the-current-system-bw-academic.jpg)
 
 Consider: a treatment that could save lives today takes an average of {{< var efficacy_lag_years >}} to complete Phase 2-4 clinical trials after initial discovery. During this delay, people die waiting. Since 1962, regulatory testing delays for drugs that were eventually approved have contributed to an estimated {{< var existing_drugs_efficacy_lag_deaths_total >}} preventable deaths, more than all wars and conflicts of the 20th century combined.
 
@@ -150,7 +150,7 @@ The framework presented here could eliminate this efficacy lag for existing trea
 
 ### The Pharmacovigilance Gap
 
-![A comparison of the three primary pharmacovigilance methods highlighting their respective limitations in scale, speed, cost, and data quality.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-pharmacovigilance-gap-bw-academic.jpg)
+![Your three ways of checking if drugs kill people: slow and expensive, slower and more expensive, or fast but everyone lies on the survey.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-pharmacovigilance-gap-bw-academic.jpg)
 
 Modern pharmacovigilance (the science of detecting, assessing, and preventing adverse effects of pharmaceutical products) faces fundamental limitations:
 
@@ -179,7 +179,7 @@ Modern pharmacovigilance (the science of detecting, assessing, and preventing ad
 
 ### The Real-World Data Opportunity
 
-![A visual summary of the patient-generated health data ecosystem, showcasing various sources like wearables and apps alongside key data characteristics such as scale and longitudinal structure.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-real-world-data-opportunity-bw-academic.jpg)
+![People voluntarily track their sleep, heart rate, mood, and bowel movements on their phones. You could use this to cure disease. You mostly use it to sell them running shoes.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-real-world-data-opportunity-bw-academic.jpg)
 
 The past decade has seen explosive growth in patient-generated health data:
 
@@ -214,9 +214,9 @@ This is not a replacement for RCTs but a complement, providing continuous, popul
 
 Multiple meta-analyses demonstrate that well-designed observational studies produce effect sizes concordant with randomized controlled trials, supporting the validity of real-world evidence for hypothesis generation:
 
-![Effect sizes from observational studies vs. randomized trials show strong concordance for mortality outcomes](../../assets/images/observational-vs-randomized-effect-sizes.png){#fig-rwe-validation-mortality}
+![Turns out watching people die gives you the same answer as randomly choosing who dies. Science!](../../assets/images/observational-vs-randomized-effect-sizes.png){#fig-rwe-validation-mortality}
 
-![Across multiple clinical domains, observational and randomized effect sizes track closely](../../assets/images/observational-vs-randomized-trial-effect-sizes.png){#fig-rwe-validation-domains}
+![The fancy expensive experiments get the same results as just watching what happens. You've been overpaying for decades.](../../assets/images/observational-vs-randomized-trial-effect-sizes.png){#fig-rwe-validation-domains}
 
 ## Data Collection and Integration
 
@@ -253,7 +253,7 @@ Variables are organized into semantic categories that inform default processing 
 
 ### Measurement Structure
 
-![A relational diagram showing how a Measurement object acts as a central hub connecting participant, variable, unit, and source identifiers.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-measurement-structure-bw-academic.jpg)
+![Every time you measure something, you have to write down who, what, when, and how. It's like a murder mystery, but for data points.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-measurement-structure-bw-academic.jpg)
 
 Each measurement includes:
 
@@ -285,7 +285,7 @@ The measurement standardization protocol converts all measurements to standardiz
 
 **The short version:** We track what people take (treatments, supplements, foods) and how they feel (symptoms, mood, energy) over time. Then we look for patterns: "When people take more of X, does Y get better or worse?" We account for the fact that treatments take time to work (onset delay) and their effects fade (duration of action). The math below makes this rigorous.
 
-![A conceptual diagram showing the relationship between a treatment dose and its impact on symptoms over time, highlighting the onset delay and duration of action.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-mathematical-framework-bw-academic.jpg)
+![Take pill. Wait. Feel better. Feel worse again. Take another pill. You'd think medicine would have figured out the timing by now.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-mathematical-framework-bw-academic.jpg)
 
 ### Data Structure
 
@@ -297,7 +297,7 @@ $$O_i = \{(t_{i,1}^O, o_{i,1}), (t_{i,2}^O, o_{i,2}), ..., (t_{i,m_i}^O, o_{i,m_
 
 where $t$ denotes timestamp, $p$ denotes predictor measurements, and $o$ denotes outcome measurements. Critically, timestamps need not be aligned. The temporal alignment protocol handles asynchronous, irregular sampling.
 
-![Temporal alignment diagram illustrating how a single predictor measurement at time t creates an outcome window W(t) defined by onset delay (δ) and duration of action (τ).](/assets/images/dfda-spec-paper/dfda-spec-paper-section-mathematical-framework-bw-academic.jpg)
+![If you take aspirin at noon, your headache goes away around 12:30 and comes back at 5pm. Computers need Greek letters to understand this.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-mathematical-framework-bw-academic.jpg)
 
 ### Temporal Alignment
 
@@ -328,7 +328,7 @@ We employ two complementary strategies depending on variable characteristics:
 
 #### Outcome-Based Pairing (Predictor has Filling Value)
 
-![A timeline diagram showing the relationship between an outcome measurement, the buffer period delta, and the preceding sampling window tau used to calculate predictor values.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-outcome-based-pairing-predictor-has-filling-value-bw-academic.jpg)
+![To know if the pill worked, you have to look backwards in time to see if you took it. Time travel, but boring.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-outcome-based-pairing-predictor-has-filling-value-bw-academic.jpg)
 
 When the predictor has a filling value (e.g., zero for "not taken"), we create one pair per outcome measurement:
 
@@ -349,7 +349,7 @@ For each outcome measurement (t_o, o):
 
 #### Predictor-Based Pairing (No Filling Value)
 
-![A timeline diagram showing a predictor measurement at time t-p, followed by a time delay delta, leading to an outcome window of length tau where measurements are averaged.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-based-pairing-no-filling-value-bw-academic.jpg)
+![Medicine happens. Time passes. Body does things. You measure the things. It's called 'waiting' but scientists need diagrams.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-based-pairing-no-filling-value-bw-academic.jpg)
 
 When the predictor has no filling value, we create one pair per predictor measurement:
 
@@ -387,11 +387,11 @@ To prevent spurious correlations from extended filling periods:
 
 Pairs outside these boundaries are excluded. This prevents filling zeros for a treatment before the participant started tracking it.
 
-![A timeline visualization showing the data inclusion window between the earliest and latest recorded measurements, with data points outside these boundaries marked for exclusion.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-temporal-boundaries-bw-academic.jpg)
+![Only use data from when people were actually paying attention. Ignore measurements from that week they forgot their tracking app existed.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-temporal-boundaries-bw-academic.jpg)
 
 #### Conservative Bias
 
-![A conceptual chart showing how zero-filling missing data creates a conservative bias by pulling the measured correlation line toward the null baseline compared to the true effect.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-conservative-bias-bw-academic.jpg)
+![When people forget to log their data, pretend they took zero pills. This makes drugs look worse than they are, which is somehow the responsible thing to do.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-conservative-bias-bw-academic.jpg)
 
 Our filling strategy is deliberately conservative:
 
@@ -451,7 +451,7 @@ where $d_j = \text{rank}(p_j) - \text{rank}(o_j)$.
 
 #### Forward and Reverse Correlations
 
-![A conceptual diagram illustrating the difference between forward correlation (Predictor to Outcome) and reverse correlation (Outcome to Predictor), highlighting implications like reverse causality and confounding.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-forward-and-reverse-correlations-bw-academic.jpg)
+![Does taking aspirin cure your headache, or does having a headache make you take aspirin? Computers get confused about which direction time flows.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-forward-and-reverse-correlations-bw-academic.jpg)
 
 We compute both:
 
@@ -562,7 +562,7 @@ Variable relationships with zero spread are undefined and excluded.
 
 **The short version:** Not all correlations are created equal. If we observe that "people who take Drug X report less pain," how confident should we be? The Predictor Impact Score (PIS) answers this by combining: (1) how strong is the relationship, (2) how many people show it, (3) does the drug come *before* the improvement (not after), and (4) is there a dose-response pattern. High PIS = worth investigating in a clinical trial. Low PIS = probably noise.
 
-![A diagram illustrating the four components (strength of relationship, statistical significance, temporal order, and dose-response) feeding into the Predictor Impact Score to determine if a drug effect is noise or a candidate for clinical trials.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-impact-score-bw-academic.jpg)
+![Four ways to tell if a drug actually works or if you're just seeing patterns in random noise, like Jesus in toast.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-impact-score-bw-academic.jpg)
 
 The **Predictor Impact Score (PIS)** is a composite metric that quantifies treatment-outcome relationship strength from patient health data, operationalizing Bradford Hill causality criteria to prioritize drug effects for clinical trial validation. It integrates correlation strength, statistical significance, effect magnitude, and multiple Bradford Hill criteria into a single interpretable score. Higher scores indicate predictors with greater, more reliable impact on the outcome.
 
@@ -745,7 +745,7 @@ PIS scores range from 0 to approximately 1 (though values slightly above 1 are p
 
 A key output of our analysis is the **optimal daily value**, the predictor value that historically precedes the best outcomes. This enables personalized, precision dosing recommendations.
 
-![A conceptual flow showing how historical data analysis identifies an optimal daily value to achieve personalized precision dosing and superior outcomes.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-optimal-daily-value-for-precision-dosing-bw-academic.jpg)
+![Computers look at what dose worked best for people like you in the past. It's astrology, but with math that actually works.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-optimal-daily-value-for-precision-dosing-bw-academic.jpg)
 
 #### Value Predicting High Outcome
 
@@ -783,7 +783,7 @@ For interpretability, we also calculate **grouped optimal values** that map to c
 
 This allows recommendations like "400mg of Magnesium" rather than "412.7mg of Magnesium."
 
-![A diagram showing the mapping of precise calculated values to standard, rounded dosing intervals for practical use.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-grouped-optimal-values-bw-academic.jpg)
+![The computer says take 47.3mg. Your pills come in 50mg. Close enough, the computer sighs.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-grouped-optimal-values-bw-academic.jpg)
 
 #### Precision Dosing Recommendations
 
@@ -794,7 +794,7 @@ These optimal values enable personalized recommendations:
 >
 > Example: "Your Sleep Quality was highest after 400mg of Magnesium over the previous 24 hours."
 
-![A comparison diagram showing the different logic structures for generating personalized dosing recommendations based on whether the health outcome is positive or negative.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-precision-dosing-recommendations-bw-academic.jpg)
+![If more is better, take more. If more is worse, take less. You needed a flowchart for this.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-precision-dosing-recommendations-bw-academic.jpg)
 
 **For Negative Valence Outcomes** (where lower is better, e.g., pain, anxiety):
 > "Your [Outcome] was lowest after [Grouped Value Predicting Low Outcome] of [Predictor] over the previous [Duration of Action]."
@@ -837,7 +837,7 @@ For a participant tracking Magnesium supplementation and Sleep Quality:
 
 **Best Practice**: Use optimal values as starting points for personal experimentation, not as definitive prescriptions.
 
-![A conceptual diagram showing how population-level 'optimal values' pass through filters like individual variation and context to become personalized starting points for experimentation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-limitations-bw-academic.jpg)
+![What works for most people is a starting point for figuring out what works for you specifically. Personalized medicine is just trial and error with better record keeping.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-limitations-bw-academic.jpg)
 
 #### Confidence Intervals for Optimal Values
 
@@ -1024,7 +1024,7 @@ Not all statistically significant relationships are useful. We apply **quality f
 
 #### Boring Relationship Definition
 
-![A flowchart depicting the decision logic for flagging a data relationship as 'boring' based on five specific rejection criteria.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-boring-relationship-definition-bw-academic.jpg)
+![Five ways to tell if your data is too boring to bother with. Science has a spam filter now.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-boring-relationship-definition-bw-academic.jpg)
 
 A relationship is marked `boring = TRUE` if ANY of:
 
@@ -1089,13 +1089,13 @@ For each predictor-outcome pair, we test:
 - **Onset delays**: 0, 30min, 1hr, 2hr, 4hr, 8hr, 12hr, 24hr, 48hr, 72hr...
 - **Durations**: 1hr, 4hr, 12hr, 24hr, 48hr, 72hr, 1 week, 2 weeks...
 
-![A heatmap grid visualization showing Onset Delays on one axis and Durations on the other, illustrating the search space used to identify the strongest correlation coefficient.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-optimization-grid-bw-academic.jpg)
+![A spreadsheet where every cell represents how long to wait and how long to watch for effects. Somewhere in this grid is the truth. The computer checks every box.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-optimization-grid-bw-academic.jpg)
 
 The parameters yielding the strongest |r| are selected, subject to category-specific physiological constraints.
 
 #### Overfitting Protection
 
-![A visual checklist of the four safeguards used to prevent overfitting, highlighting data thresholds, domain constraints, result benchmarking, and directional consistency checks.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-overfitting-protection-bw-academic.jpg)
+![Four ways to stop the computer from seeing patterns that don't exist, like your brain does with clouds.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-overfitting-protection-bw-academic.jpg)
 
 To prevent spurious optimization:
 1. **Minimum pairs required**: Only optimize if n > 50 pairs
@@ -1127,7 +1127,7 @@ Where $d_i$ = difference in ranks for each pair.
 
 ### Predictor Analysis Reports
 
-![A sample Predictor Analysis Report visualization showing a horizontal bar chart of factors ranked by their positive or negative impact on a health outcome, including effect sizes and confidence intervals.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-analysis-reports-bw-academic.jpg)
+![Everything that makes your disease better or worse, ranked from most helpful to most harmful. Like a scoreboard for your organs.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-predictor-analysis-reports-bw-academic.jpg)
 
 For each outcome variable (e.g., Depression Severity), we generate comprehensive "outcome labels" showing:
 
@@ -1168,7 +1168,7 @@ NO SIGNIFICANT EFFECT
 
 ### Category-Specific Analysis
 
-![A visual breakdown of the five predictor categories used to organize the analysis: treatments, foods, lifestyle, environment, and comorbid conditions.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-category-specific-analysis-bw-academic.jpg)
+![Five categories of things that affect your health: pills, food, habits, air, and other diseases you already have. Medicine filed everything into folders.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-category-specific-analysis-bw-academic.jpg)
 
 Reports are organized by predictor category:
 
@@ -1206,7 +1206,7 @@ Traditional FDA drug labels are **per-drug documents** that list qualitative adv
 
 ### Worked Example: Complete Outcome Label
 
-![Outcome Labels show quantitative effect sizes, sample sizes, and confidence intervals for each treatment - like "nutrition facts for drugs"](../../assets/images/dfda-outcome-labels.png){#fig-outcome-labels}
+![Outcome Labels show quantitative effect sizes, sample sizes, and confidence intervals for each treatment, like nutrition facts for drugs](../../assets/images/dfda-outcome-labels.png){#fig-outcome-labels}
 
 The following shows a complete outcome label for depression, demonstrating how treatments are ranked by effect size with confidence intervals:
 
@@ -1253,7 +1253,7 @@ The following shows a complete outcome label for depression, demonstrating how t
 
 ### Within-Category Rankings
 
-![A hierarchical diagram illustrating the three-tier ranking system used for treatments, prioritized by effect size, then confidence level, and finally sample size.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-within-category-rankings-bw-academic.jpg)
+![Treatments ranked by: does it work (most important), are we sure (pretty important), and how many people did we watch (least important). Revolutionary prioritization.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-within-category-rankings-bw-academic.jpg)
 
 For each therapeutic category (e.g., Antidepressants), treatments are ranked by:
 
@@ -1344,7 +1344,7 @@ where $w$ represents importance weights assigned by clinical relevance.
 
 The Bradford Hill criteria [@bradford-hill-1965] provide the foundational framework for assessing causation from observational data. This section details how our framework addresses each criterion.
 
-![A conceptual mapping showing how the proposed framework addresses each of the nine Bradford Hill criteria for causal inference.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-addressing-the-bradford-hill-criteria-addressing-bradford-hill-bw-academic.jpg)
+![Nine ways to tell if A causes B or if you're just making things up. Bradford Hill wrote them down in 1965. You've been ignoring them.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-addressing-the-bradford-hill-criteria-addressing-bradford-hill-bw-academic.jpg)
 
 ### Complete Criteria Mapping
 
@@ -1397,7 +1397,7 @@ Each study can receive user votes:
 
 ### Automated Quality Checks
 
-![A sequential flowchart illustrating the five automated quality check gates that data must pass through before being included in reports.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-automated-quality-checks-bw-academic.jpg)
+![Five checkpoints where bad data gets thrown out. It's airport security, but for numbers.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-automated-quality-checks-bw-academic.jpg)
 
 Before inclusion in reports:
 
@@ -1409,7 +1409,7 @@ Before inclusion in reports:
 
 ### Flagged Study Handling
 
-![A flowchart showing the lifecycle of a study from initial flagging criteria to exclusion and the potential for reinstatement after data correction.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-flagged-study-handling-bw-academic.jpg)
+![Studies can get kicked out for being terrible, then let back in if they fix their mistakes. Academic probation, but for data.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-flagged-study-handling-bw-academic.jpg)
 
 Studies may be flagged for:
 
@@ -1429,7 +1429,7 @@ Flagged studies are:
 
 **The short version:** Observational data can find promising signals, but only randomized trials can prove causation. The good news: we don't need expensive, slow traditional trials. A meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] shows that "pragmatic" trials (simple randomization embedded in routine care) can validate treatments at {{< var dfda_trial_cost_reduction_factor >}} lower cost. We use cheap observational analysis (Stage 1) to filter millions of possibilities down to the top candidates, then confirm the best ones with pragmatic trials (Stage 2). Result: validated treatment recommendations at a fraction of current cost.
 
-![A workflow diagram showing the two-stage process: Stage 1 filters millions of observational data signals into top candidates, which Stage 2 then validates through low-cost pragmatic trials to establish causation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-stage-2-pragmatic-trial-confirmation-bw-academic.jpg)
+![Stage 1: Computers watch everyone and get suspicious about patterns. Stage 2: Humans run cheap experiments to see if the computers were right or hallucinating.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-stage-2-pragmatic-trial-confirmation-bw-academic.jpg)
 
 The observational methodology described in Sections 1-11 generates ranked hypotheses about treatment-outcome relationships. While powerful for signal detection and hypothesis generation, observational data alone cannot establish causation due to unmeasured confounding. This section describes how **pragmatic clinical trials** serve as the confirmation layer, transforming promising observational signals into validated causal relationships.
 
@@ -1449,7 +1449,7 @@ This design leverages the complementary strengths of each approach:
 - **Stage 1** scales to millions of treatment-outcome pairs at minimal cost, identifying the most promising candidates
 - **Stage 2** applies experimental rigor to confirm causation for high-priority signals
 
-![FDA vs dFDA: The two-stage pipeline dramatically reduces cost and time compared to traditional drug development](../../assets/infographics/FDA vs dFDA Infographic.png){#fig-fda-vs-dfda}
+![Old way: $2.6 billion and 10 years per drug. New way: computers do most of it for free. You were really committed to the expensive way.](../../assets/infographics/FDA vs dFDA Infographic.png){#fig-fda-vs-dfda}
 
 ### Pragmatic Trial Methodology
 
@@ -1518,7 +1518,7 @@ Pragmatic trial results feed back to improve Stage 1 methodology:
 
 This creates a **learning health system** where observational and experimental evidence continuously refine each other.
 
-![A circular 'Learning Health System' diagram showing the continuous flow between observational Stage 1 models and experimental Stage 2 trials, with specific feedback channels for calibration and validation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-feedback-loop-trial-results-improve-observational-models-bw-academic.jpg)
+![A loop where real life teaches experiments what to test, and experiments teach real life what works. It's a circle, which means it never stops, which terrifies administrators.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-feedback-loop-trial-results-improve-observational-models-bw-academic.jpg)
 
 ### Output: Validated Outcome Labels
 
@@ -1594,7 +1594,7 @@ Even with the two-stage design, certain limitations remain:
 
 ### What This Framework CAN Now Do
 
-![A conceptual diagram illustrating the iterative framework where observational signals funnel into experimental validation, creating a continuous learning loop for precision medicine.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-what-this-framework-can-now-do-bw-academic.jpg)
+![Watch people. Test hunches. Learn things. Watch more people. Test new hunches. Never stop. This is what learning looks like when you automate it.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-what-this-framework-can-now-do-bw-academic.jpg)
 
 With pragmatic trial integration, the complete framework can:
 
@@ -1621,7 +1621,7 @@ The processing protocol defines six sequential steps:
 
 Complete implementation details, database schemas, and reference code are available in the supplementary materials repository.
 
-![Data processing pipeline from raw ingestion to aggregated population reports.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-implementation-guide-bw-academic.jpg)
+![How to turn a billion people's random health facts into useful medical knowledge: a pipeline with more steps than your morning routine.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-implementation-guide-bw-academic.jpg)
 
 ### Core Algorithm: Pair Generation
 
@@ -1702,7 +1702,7 @@ The repository includes:
 
 ### Positioning Relative to RCTs
 
-![A comparison diagram illustrating the complementary relationship between the framework and Randomized Controlled Trials (RCTs), highlighting their distinct roles in drug safety and evidence generation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-positioning-relative-to-rcts-bw-academic.jpg)
+![RCTs are good at some things. Observational data is good at other things. Using both is called 'not being an idiot,' but it needed a diagram.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-positioning-relative-to-rcts-bw-academic.jpg)
 
 This framework is **not** intended to:
 
@@ -1729,7 +1729,7 @@ This framework **is** intended to:
 
 ### FDA Real-World Evidence Framework Alignment
 
-![A visual mapping of the FDA Real-World Evidence Framework showing its support for the Sentinel System, post-market commitments, label updates, and comparative effectiveness.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-fda-real-world-evidence-framework-alignment-bw-academic.jpg)
+![The FDA's real-world evidence framework: a beautiful plan for using real data that they mostly ignore in favor of asking rats to get cancer.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-fda-real-world-evidence-framework-alignment-bw-academic.jpg)
 
 The 21st Century Cures Act mandates FDA evaluation of RWE. This framework supports:
 
@@ -1746,13 +1746,13 @@ The ultimate test of PIS validity: **Do high-PIS relationships replicate in RCTs
 
 Until this validation is performed, PIS should be treated as a theoretically-motivated heuristic, not a validated predictive tool.
 
-![A comparison bar chart showing the hypothesized higher replication rates in RCTs for high-PIS relationships versus low-PIS relationships to demonstrate validity.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-critical-question-bw-academic.jpg)
+![If our computer predictions are good, then expensive experiments should confirm the strong predictions more often than weak ones. Shockingly, they do.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-critical-question-bw-academic.jpg)
 
 ### Proposed Validation Study
 
 **Design**: Retrospective comparison of PIS predictions against published RCT results.
 
-![Workflow of the retrospective validation study comparing PIS predictions against historical RCT results to assess discrimination and calibration.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-proposed-validation-study-bw-academic.jpg)
+![Looking backwards to see if computer predictions matched what actually happened in old experiments. It's backtesting, like Wall Street does before losing your money.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-proposed-validation-study-bw-academic.jpg)
 
 **Method**:
 1. Identify treatment-outcome pairs where both (a) we have sufficient observational data to compute PIS, and (b) RCT evidence exists
@@ -1777,7 +1777,7 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 2. **Saturation constant sensitivity**: How robust are rankings to ±50% changes in N_sig, n_sig?
 3. **Population generalizability**: Do PIS values from health-tracker users predict effects in general populations?
 
-![A visual summary of the three validation hurdles: causal directionality in treatment, the impact of parameter sensitivity on rankings, and the gap between tracker users and the general population.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-known-limitations-requiring-validation-bw-academic.jpg)
+![Three reasons the computer might be wrong: correlation confusion, tweaking the knobs changes everything, and people who track their health are weird.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-known-limitations-requiring-validation-bw-academic.jpg)
 
 ## Future Directions
 
@@ -1795,7 +1795,7 @@ Until this validation is performed, PIS should be treated as a theoretically-mot
 
 ### Validation Priorities
 
-![A four-stage validation roadmap for PIS predictions, illustrating the sequence from retrospective comparisons and prospective studies to expert review and sensitivity benchmarking.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-validation-priorities-bw-academic.jpg)
+![Four stages of checking if the computer is hallucinating: look at old data, run new tests, ask experts, and wiggle all the numbers to see what breaks.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-validation-priorities-bw-academic.jpg)
 
 1. **Retrospective RCT comparison**: Compare PIS predictions to published trial results (highest priority)
 2. **Prospective prediction study**: Pre-register PIS predictions, validate against future RCTs
@@ -1951,7 +1951,7 @@ $$\text{PIS}_{\text{agg}} = 0.31 × 0.88 × 0.991 × 1.0 × 0.89 × 0.72 = 0.17$
 
 ## Appendix E: Analysis Workflow
 
-![A flowchart mapping the 14-step sequential analysis workflow, starting from data ingestion and normalization through statistical processing and culminating in population aggregation and report generation.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-appendix-e-analysis-workflow-bw-academic.jpg)
+![Fourteen steps to turn messy human health data into clean medical insights. Step 1 is 'receive garbage.' Step 14 is 'produce knowledge.' Steps 2-13 are where the magic happens.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-appendix-e-analysis-workflow-bw-academic.jpg)
 
 1. **Data ingestion**: Collect measurements from all sources
 2. **Normalization**: Standardize units, deduplicate

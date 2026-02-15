@@ -63,13 +63,13 @@ image: /assets/og-images/knowledge/appendix/wishocracy-paper-og-retro-academic.j
 
 Representative democracy suffers from a fundamental principal-agent problem: elected officials systematically diverge from citizen preferences due to information asymmetry, special interest capture, and misaligned incentives. Meanwhile, direct democracy mechanisms reduce complex trade-offs to binary choices, losing crucial information about preference intensity. This paper introduces Wishocracy, a governance mechanism that addresses the democratic principal-agent problem by aggregating citizen preferences and creating accountability for elected representatives. The mechanism employs Randomized Aggregated Pairwise Preference Allocation (RAPPA), which presents participants with simple pairwise comparisons ('allocate $100 between cancer research and infrastructure') and aggregates millions of such judgments into preference weights that approximate utilitarian social welfare. Building on the Analytic Hierarchy Process [@saaty-1980] for cognitive tractability and collective intelligence research [@surowiecki-2004] for aggregation, RAPPA decomposes n-dimensional preference spaces into tractable binary choices while preserving preference intensity information. We present formal mechanism properties, computational complexity analysis, and empirical precedents from Porto Alegre's participatory budgeting, Taiwan's vTaiwan platform, and Stanford's voting research. Rather than replacing representative democracy at the municipal level, we propose a federal-first implementation: (1) documenting the gap between citizen preferences and actual federal allocations, (2) creating public "Citizen Alignment Scores" for elected officials, and (3) integrating with Incentive Alignment Bonds to channel electoral and financial resources toward politicians whose voting records align with aggregated citizen preferences. This approach treats Wishocracy as an accountability mechanism that makes representative democracy work better, requiring no authority transfer, only information provision and incentive alignment.
 
-![A flowchart depicting the Wishocracy feedback loop, starting from individual pairwise comparisons to the generation of preference weights, Citizen Alignment Scores, and the resulting incentive alignment for elected officials via bonds.](/assets/images/wishocracy-paper/wishocracy-paper-section-abstract-bw-academic.jpg)
+![You compare things in pairs, math adds it up, politicians get scored on whether they do what you wanted, and bonds reward the ones who listen.](/assets/images/wishocracy-paper/wishocracy-paper-section-abstract-bw-academic.jpg)
 
 # **Introduction: The Preference Aggregation Problem**
 
 Modern democracies face an increasingly acute challenge: how to translate the diverse, often conflicting preferences of millions of citizens into coherent public policy. Traditional electoral mechanisms were designed for an era of limited communication, discrete choices, and relatively homogeneous electorates. Today's policy landscape (spanning healthcare allocation, infrastructure investment, climate adaptation, research funding, and social services) demands more sophisticated preference elicitation than periodic elections can provide.
 
-![A comparison of governance models: representative, direct, technocratic, and RAPPA, illustrating how they trade off between democratic legitimacy, cognitive load, and preference intensity.](/assets/images/wishocracy-paper/wishocracy-paper-section-introduction-the-preference-aggregation-problem-bw-academic.jpg)
+![Four ways to run a country: elect someone to decide (traditional), decide everything yourself (exhausting), let experts decide (undemocratic), or compare pairs and let math decide (new).](/assets/images/wishocracy-paper/wishocracy-paper-section-introduction-the-preference-aggregation-problem-bw-academic.jpg)
 
 The fundamental problem is computational and cognitive. When citizens are asked to rank or rate dozens of competing priorities simultaneously, they face impossible cognitive demands. Research in behavioral economics has consistently demonstrated that humans cannot reliably compare more than 7±2 options simultaneously [@cognitive-limit-seven-items]. Humans struggle to make consistent judgments over large sets of options. Pairwise comparisons keep each decision local and cognitively manageable even when the full budget has thousands of items.
 
@@ -107,7 +107,7 @@ Crucially, AHP includes consistency checks through the calculation of a Consiste
 
 A fundamental limitation of traditional voting is the failure to account for preference intensity. Under one-person-one-vote, a citizen who mildly prefers policy A has equal influence to one for whom policy A is existentially important. This leads to systematic welfare losses: intense minorities can be steamrolled by indifferent majorities, and the resulting allocations fail to maximize aggregate welfare.
 
-![A comparison of preference intensity signals, contrasting a high-intensity 90/10 allocation with a low-intensity 55/45 split to demonstrate how trade-off judgments capture welfare priorities.](/assets/images/wishocracy-paper/wishocracy-paper-section-the-preference-intensity-problem-bw-academic.jpg)
+![90/10 means you really care. 55/45 means you barely care. Democracy currently can't tell the difference, like a thermostat that only has two settings: off and inferno.](/assets/images/wishocracy-paper/wishocracy-paper-section-the-preference-intensity-problem-bw-academic.jpg)
 
 Several mechanisms have attempted to address this problem. Quadratic voting [@lalley-weyl-2018] allows voters to purchase additional votes at quadratic cost, approaching efficiency as the number of voters grows. The Colorado House Democratic Caucus used QV in 2019 to prioritize legislative priorities. QV excels when voters face a manageable number of well-defined proposals. RAPPA addresses a complementary challenge: eliciting preferences across large, complex priority spaces where presenting all options simultaneously is infeasible. The two mechanisms can work in combination: RAPPA to identify and weight broad priorities through tractable pairwise comparisons, QV to allocate resources among specific proposals within those priorities.
 
@@ -129,7 +129,7 @@ RAPPA exists within a broader landscape of democratic innovation and participato
 
 **Liquid Democracy:** Liquid democracy allows voters to either vote directly on issues or delegate their voting power to trusted representatives, with the ability to revoke delegation at any time. Examples include DelegativeVoting and Google's internal Liquid Feedback experiments. While liquid democracy addresses representation flexibility, it does not solve the cognitive load problem: delegates still face the impossible task of ranking dozens of policy priorities simultaneously. RAPPA complements liquid democracy by providing a tractable preference elicitation method that delegates (or direct voters) can use.
 
-![A comparative matrix positioning RAPPA against Liquid Democracy, Futarchy, Conviction Voting, and Participatory Budgeting across dimensions of cognitive load, preference elicitation, and scalability.](/assets/images/wishocracy-paper/wishocracy-paper-section-related-work-and-positioning-in-the-literature-bw-academic.jpg)
+![Five ways to let people decide things, rated by how hard they are to use, how well they capture what you want, and whether they work at scale. RAPPA wins at not melting your brain.](/assets/images/wishocracy-paper/wishocracy-paper-section-related-work-and-positioning-in-the-literature-bw-academic.jpg)
 
 **Futarchy:** Proposed by economist Robin Hanson, futarchy uses prediction markets to aggregate information about which policies will best achieve agreed-upon goals. Under futarchy, "vote on values, bet on beliefs": citizens determine welfare metrics democratically, then prediction markets determine which policies maximize those metrics. Futarchy excels at aggregating distributed information about causal mechanisms but assumes consensus on welfare metrics. RAPPA addresses the complementary problem: eliciting and aggregating preferences over competing welfare priorities when citizens disagree about relative importance (e.g., cancer research vs. education funding).
 
@@ -153,7 +153,7 @@ The Wishocracy mechanism operates through the following process, which we term R
 4. **Matrix Completion:** Using the aggregated pairwise ratios, a complete preference matrix is constructed. Standard eigenvector methods (as in AHP) or iterative Bayesian updating produce global priority weights for all n items.  
 5. **Budget Allocation:** The final priority weights translate directly into budget allocation percentages. If cancer research receives a normalized weight of 8.3% and the total discretionary budget is $10 billion, cancer research receives $830 million.
 
-![A flowchart detailing the five-step RAPPA mechanism, illustrating the progression from problem cataloging and pairwise preference collection to mathematical aggregation and final budget allocation.](/assets/images/wishocracy-paper/wishocracy-paper-section-core-mechanism-bw-academic.jpg)
+![List problems, compare them in pairs, convert to ratios, aggregate everyone's ratios, allocate budget. It's like democracy but with less screaming and more math.](/assets/images/wishocracy-paper/wishocracy-paper-section-core-mechanism-bw-academic.jpg)
 
 {{< include ../figures/rappa-mechanism-flow-diagram.qmd >}}
 
@@ -173,7 +173,7 @@ RAPPA satisfies several desirable mechanism design properties:
 
 **Pareto-Respecting (Discussion):** The mechanism aims to produce allocations where no reallocation could make some participants better off without making others worse off, though formal proof depends on specific utility assumptions.
 
-![A comparison of scaling complexity across voting mechanisms, illustrating the growth of participant effort relative to the number of items for Plurality, RCV, QV, and RAPPA.](/assets/images/wishocracy-paper/wishocracy-paper-section-formal-properties-bw-academic.jpg)
+![More options means more work for voters. Some systems scale gently. Others require a PhD in combinatorics. RAPPA stays manageable, like a reasonable person.](/assets/images/wishocracy-paper/wishocracy-paper-section-formal-properties-bw-academic.jpg)
 
 **Manipulation Resistance:** Random pair assignment makes strategic manipulation difficult. A participant cannot know which pairs they will receive, making truthful reporting a robust heuristic. With sufficiently large participant pools, individual strategic behavior has negligible impact on outcomes.
 
@@ -198,7 +198,7 @@ These mechanisms form a complementary toolkit. A governance system might use RAP
 
 We now formally define the RAPPA mechanism as a mapping from individual preferences to collective allocations.
 
-![Process flow of the RAPPA mechanism showing the transformation of individual pairwise preferences into a global priority vector through ratio conversion, matrix aggregation, and synthesis.](/assets/images/wishocracy-paper/wishocracy-paper-section-formal-model-bw-academic.jpg)
+![Your preferences become ratios, ratios become matrices, matrices get aggregated, aggregation becomes budget. It's democracy digestion, where math is the stomach.](/assets/images/wishocracy-paper/wishocracy-paper-section-formal-model-bw-academic.jpg)
 
 **Inputs:** Let $N = \{1, ..., n\}$ be the set of citizens and $O = \{o_1, ..., o_m\}$ be the set of policy priorities. Each citizen $i$ provides pairwise allocation ratios $\rho_{i,A,B} \in [0,1]$ for a subset of pairs $(A,B) \in O \times O$.
 
@@ -232,7 +232,7 @@ Wishocracy implies a separation of concerns: RAPPA determines *what* society val
 
 We now analyze the computational requirements of RAPPA and establish scalability bounds for real-world deployment.
 
-![Scalability benchmarks for RAPPA across municipal, city, and national scales, illustrating the relationship between participant volume, policy priorities, and computational overhead.](/assets/images/wishocracy-paper/wishocracy-paper-section-computational-complexity-and-scalability-bw-academic.jpg)
+![RAPPA works for small towns, big cities, and entire nations. The computer does more work, but you don't. It's like having a calculator that scales to government size.](/assets/images/wishocracy-paper/wishocracy-paper-section-computational-complexity-and-scalability-bw-academic.jpg)
 
 **Comparison Collection Complexity:** For $m$ policy priorities, the complete pairwise comparison space contains $\binom{m}{2} = \frac{m(m-1)}{2} = O(m^2)$ unique pairs. However, RAPPA employs *random sampling* rather than exhaustive coverage. Each of $n$ participants completes $k$ comparisons, yielding total comparison count $T = n \cdot k = O(nk)$.  $k$ can be held constant (e.g., $k=20$ comparisons per participant) regardless of $m$, making per-participant complexity $O(1)$ rather than $O(m^2)$.
 
@@ -269,7 +269,7 @@ This analysis demonstrates that RAPPA scales efficiently to city and even nation
 
 We now formally demonstrate the superiority of RAPPA over Representative Democracy (RepDem) using Information Theory and Social Choice Theory. We model governance as an optimization process where the objective is to minimize the divergence between the distribution of societal needs (preferences) and the distribution of resource allocation.
 
-![A visualization of governance as an optimization process, comparing how RAPPA and Representative Democracy minimize the divergence between societal preferences and resource allocation.](/assets/images/wishocracy-paper/wishocracy-paper-section-comparative-information-welfare-analysis-bw-academic.jpg)
+![Governance is trying to match what people want with what government does. Representative democracy fails at this. RAPPA optimizes it, like Google Maps but for democracy.](/assets/images/wishocracy-paper/wishocracy-paper-section-comparative-information-welfare-analysis-bw-academic.jpg)
 
 ### **Information-Theoretic Superiority**
 
@@ -322,7 +322,7 @@ $$
 
 Total Governance Loss $L_{Gov}$ can be decomposed into Aggregation Loss (failure to aggregate preferences) and Agency Loss (corruption/misalignment).
 
-![A comparative diagram showing the divergent utility pathways in representative democracy versus the direct alignment and technical implementation layer in Wishocracy.](/assets/images/wishocracy-paper/wishocracy-paper-section-principal-agent-cost-elimination-bw-academic.jpg)
+![Representative democracy: your preferences go to a politician who ignores them. Wishocracy: your preferences go into an algorithm that implements them. One has a middleman, the other has middleware.](/assets/images/wishocracy-paper/wishocracy-paper-section-principal-agent-cost-elimination-bw-academic.jpg)
 
 $$
 L_{Gov} = L_{Agg} + L_{Agency}
@@ -347,7 +347,7 @@ where $\beta, \gamma \gg 0$. Since donor interests ($U_{donors}$) often conflict
 
 The closest large-scale precedent for Wishocracy is participatory budgeting (PB), pioneered in Porto Alegre, Brazil in 1989\. Under the Workers' Party administration, citizens were invited to deliberative assemblies to determine municipal investment priorities. By 1997, PB produced remarkable results: sewer and water connections increased from 75% to 98% of households; health and education budgets grew from 13% to 40% of total spending; the number of schools quadrupled; and road construction in poor neighborhoods increased five-fold.
 
-![A comparative bar chart showing the growth of municipal services and citizen participation in Porto Alegre between 1989 and 1999.](/assets/images/wishocracy-paper/wishocracy-paper-section-porto-alegre-participatory-budgeting-bw-academic.jpg)
+![When Porto Alegre let citizens decide the budget, participation increased 20x and services multiplied. Turns out people care more when they get to choose where money goes.](/assets/images/wishocracy-paper/wishocracy-paper-section-porto-alegre-participatory-budgeting-bw-academic.jpg)
 
 Participation grew from fewer than 1,000 citizens annually in 1990 to over 40,000 by 1999\. The World Bank documented PB's success in improving service delivery to the poor and has since recommended its adoption worldwide. Over 2,700 governments have implemented some form of participatory budgeting.
 
@@ -357,7 +357,7 @@ However, Porto Alegre also illustrates the fragility of participatory mechanisms
 
 Taiwan's vTaiwan platform, launched in 2014 by civic hacker Audrey Tang (later Taiwan's Digital Minister), demonstrates the potential of technology-mediated preference aggregation. The platform used Pol.is, a tool that maps opinions and identifies consensus clusters, to deliberate on contentious policy issues including ridesharing regulation and online alcohol sales.
 
-![A flowchart showing the vTaiwan process of moving from pairwise citizen comparisons to consensus clusters and final policy resolution.](/assets/images/wishocracy-paper/wishocracy-paper-section-taiwan-s-digital-democracy-experiments-bw-academic.jpg)
+![Taiwan used pairwise comparisons to find consensus on Uber regulation. It worked. Democracy upgraded from shouting match to intelligent conversation.](/assets/images/wishocracy-paper/wishocracy-paper-section-taiwan-s-digital-democracy-experiments-bw-academic.jpg)
 
 In the alcohol sales deliberation, approximately 450 citizens participated in pairwise opinion comparisons over several weeks, producing consensus recommendations that resolved a four-year regulatory deadlock. The MIT Technology Review noted that 'opposing sides had never had a chance to actually interact with each other's ideas. When they did, it became apparent that both sides were basically willing to give the opposing side what it wanted.'
 
@@ -379,7 +379,7 @@ To validate the technical feasibility of the RAPPA mechanism, a reference implem
 2.  **Algorithm Verification:** Testing the convergence properties of the geometric mean aggregation and eigenvector centrality algorithms under real-world traffic.
 3.  **Sybil Resistance:** Implementing and stress-testing integration with decentralized identity providers to ensure one-person-one-vote integrity.
 
-![A conceptual diagram showing the relationship between theoretical RAPPA properties and their functional implementation at Wishocracy.org, including the testing modules for interface, algorithms, and identity.](/assets/images/wishocracy-paper/wishocracy-paper-section-reference-implementation-wishocracy-org-bw-academic.jpg)
+![Theory says RAPPA works. Wishocracy.org tests whether theory is lying. Interface, algorithms, identity verification: all the boring parts that make democracy not collapse.](/assets/images/wishocracy-paper/wishocracy-paper-section-reference-implementation-wishocracy-org-bw-academic.jpg)
 
 The repository is available for public audit, allowing researchers to verify that the theoretical properties described in Section 3 transform correctly into executable code.
 
@@ -387,7 +387,7 @@ The repository is available for public audit, allowing researchers to verify tha
 
 The reference implementation uses official federal budget categories drawn from OMB and CBO classifications. Participants see neutral descriptions based on government terminology, not researcher-created labels or value judgments about which programs are "good" or "bad."
 
-![A bar chart comparing external Benefit-Cost Ratio (BCR) estimates for various federal budget categories, illustrating the significant variance in expert-calculated social returns on investment.](/assets/images/wishocracy-paper/wishocracy-paper-section-category-selection-and-validation-methodology-bw-academic.jpg)
+![Some spending returns $125 per dollar. Other spending loses money. We fund both equally because democracy doesn't check receipts.](/assets/images/wishocracy-paper/wishocracy-paper-section-category-selection-and-validation-methodology-bw-academic.jpg)
 
 **For research validation purposes only** (not shown to participants), we track existing benefit-cost ratio estimates from established sources:
 
@@ -408,7 +408,7 @@ BCR estimates are contested and often politically coded. The same program may ha
 
 A naive implementation of RAPPA requires $\frac{n(n-1)}{2}$ pairwise comparisons for $n$ categories. For 10 categories, this means 45 pairs per participant (cognitively burdensome and likely to produce survey fatigue).
 
-![A comparison showing the reduction in required pairwise comparisons from 45 to 21 when 3 out of 10 categories are filtered, representing a 53 percent decrease in cognitive load.](/assets/images/wishocracy-paper/wishocracy-paper-section-zero-funding-filter-optimization-bw-academic.jpg)
+![Remove things you don't care about, cut your work in half. It's like a multiple choice test where you can delete the stupid questions.](/assets/images/wishocracy-paper/wishocracy-paper-section-zero-funding-filter-optimization-bw-academic.jpg)
 
 The reference implementation adds a preliminary question: "Should the government fund [category] at all?" Participants can respond Yes, No, or Unsure. Categories marked "No" are excluded from that participant's pairwise comparisons.
 
@@ -426,7 +426,7 @@ $$
 
 A fundamental design question is granularity: should RAPPA operate on a flat list of thousands of budget line items, or on a hierarchical structure that mirrors how budgets are actually organized?
 
-![A hierarchical diagram illustrating the hybrid budget structure, showing the flow from mandatory high-level category allocations to optional sub-category drill-downs and the final aggregation logic.](/assets/images/wishocracy-paper/wishocracy-paper-section-hierarchical-category-structure-bw-academic.jpg)
+![Decide big categories first, drill into details if you care, let math combine everything. Like a restaurant menu where you must choose protein but sides are optional.](/assets/images/wishocracy-paper/wishocracy-paper-section-hierarchical-category-structure-bw-academic.jpg)
 
 **Flat structure** (thousands of items, sparse sampling): Each participant sees a random subset of pairs from the full item space. With enough participants, the law of large numbers ensures convergence. However, voters cannot have informed opinions on obscure line items ("Naval Air Systems Command Procurement Account 1319"). Aggregating uninformed noise produces meaningless allocations.
 
@@ -451,7 +451,7 @@ The tradeoff is that participants who don't drill down delegate sub-allocation t
 
 How categories are named, described, and presented can systematically bias outcomes. This is not a hypothetical concern. Decades of survey research demonstrate that framing effects routinely shift responses by 10-30 percentage points.
 
-![A procedural flowchart illustrating the framing mitigation cycle, from identifying bias sources to adversarial review, parallel survey validation, and public documentation.](/assets/images/wishocracy-paper/wishocracy-paper-section-framing-bias-and-mitigation-bw-academic.jpg)
+![How to avoid biasing the questions: find the bias, have enemies review it, test it in parallel, document everything. Democracy with peer review.](/assets/images/wishocracy-paper/wishocracy-paper-section-framing-bias-and-mitigation-bw-academic.jpg)
 
 **Sources of framing bias:**
 
@@ -493,7 +493,7 @@ No framing is perfectly neutral. The choice to include or exclude a category is 
 
 **Criticism:** Bad actors could create multiple accounts or coordinate voting blocs to manipulate outcomes.
 
-![A visualization of the Sybil dilution effect showing how fake identities are distributed across a large number of random comparison pairs, reducing their aggregate impact on any single outcome.](/assets/images/wishocracy-paper/wishocracy-paper-section-manipulation-and-sybil-attacks-bw-academic.jpg)
+![Fake voters get random comparisons, so their fraud gets diluted across thousands of pairs. It's like trying to poison a lake with a eyedropper.](/assets/images/wishocracy-paper/wishocracy-paper-section-manipulation-and-sybil-attacks-bw-academic.jpg)
 
 **Response:** Identity verification through existing government ID systems (driver's licenses, national ID cards) provides one-person-one-account guarantees. We address manipulation at three levels: individual strategic behavior, coordinated attacks, and formal incentive compatibility.
 
@@ -521,7 +521,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 **Criticism:** Real policy decisions involve complex interdependencies, implementation constraints, and unintended consequences that citizens cannot evaluate.
 
-![A flowchart illustrating the Wishocracy division of labor, showing citizens setting outcome preferences while experts and service providers manage technical implementation and causal analysis.](/assets/images/wishocracy-paper/wishocracy-paper-section-complexity-of-real-policy-trade-offs-bw-academic.jpg)
+![Citizens say what they want. Experts figure out how to do it. Division of labor, like how you tell the chef you want pasta but don't invade the kitchen.](/assets/images/wishocracy-paper/wishocracy-paper-section-complexity-of-real-policy-trade-offs-bw-academic.jpg)
 
 **Response:** Wishocracy explicitly separates values (what we want) from implementation (how to achieve it). Citizens express preferences over outcomes (reduced cancer mortality, better schools, cleaner air) while experts design and evaluate implementation strategies. The service provider layer allows technical assessment of proposed solutions while keeping priority-setting in democratic hands. This division of labor matches citizens' comparative advantage in welfare evaluation with experts' advantage in causal analysis.
 
@@ -529,7 +529,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 **Criticism:** Algorithmic aggregation lacks the transparency and accountability of representative institutions.
 
-![A diagram illustrating the flow of citizen preferences through an auditable algorithm to recommendations, highlighting the oversight role of elected officials and the resulting bidirectional accountability.](/assets/images/wishocracy-paper/wishocracy-paper-section-legitimacy-and-accountability-bw-academic.jpg)
+![Preferences go into algorithm, algorithm makes recommendations, elected officials oversee it. Everyone watches everyone else, like a Mexican standoff but with spreadsheets.](/assets/images/wishocracy-paper/wishocracy-paper-section-legitimacy-and-accountability-bw-academic.jpg)
 
 **Response:** The aggregation algorithm can be made fully transparent and auditable: open-source code, publicly verifiable inputs and outputs, and independent audits. This provides greater transparency than legislative logrolling and committee negotiations. Elected officials retain authority to override Wishocracy recommendations, but must publicly justify departures from expressed citizen preferences. This creates accountability in both directions: citizens to outcomes, and representatives to citizens.
 
@@ -537,7 +537,7 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 **Low Participation (<1%):** When participation falls below critical thresholds, RAPPA faces two degradation modes. First, *sampling bias* emerges: if only 0.1% of citizens participate and they are systematically unrepresentative (e.g., only highly educated, politically engaged citizens), the aggregated preferences will not reflect population welfare. Second, *comparison sparsity* increases: with fewer participants, the pairwise comparison matrix becomes increasingly sparse, reducing the reliability of eigenvector estimates.
 
-![A technical mapping of RAPPA's failure modes: low participation, comparison sparsity, and coordinated attacks, alongside their multi-layered mitigation strategies and statistical thresholds.](/assets/images/wishocracy-paper/wishocracy-paper-section-failure-modes-and-robustness-bw-academic.jpg)
+![Three ways RAPPA breaks: nobody participates, comparisons are too sparse, or attackers coordinate. Three layers of defense against each. Belt, suspenders, and duct tape.](/assets/images/wishocracy-paper/wishocracy-paper-section-failure-modes-and-robustness-bw-academic.jpg)
 
 **Mitigation:** Statistical reweighting can correct for demographic bias, similar to survey research methods. Minimum participation thresholds can be enforced before outcomes become binding: if participation is below (e.g.) 2%, results are treated as advisory rather than binding. Adaptive incentives (entry into lotteries, public recognition) can boost participation. Empirical research suggests that pairwise comparison mechanisms achieve higher engagement than traditional surveys due to reduced cognitive load and increased perceived impact.
 
@@ -555,13 +555,13 @@ where $|S_{AB}|$ is the sample size for pair $(A,B)$. With large $n$, this influ
 
 The most severe resource misallocations occur at the federal level: $886 billion annually on military spending versus $47 billion on the NIH, $20+ billion in fossil fuel subsidies, $50+ billion on drug war enforcement. Municipal discretionary budgets, while useful for proof-of-concept, represent rounding errors compared to the welfare losses from federal misallocation. We therefore propose a federal-first implementation strategy that begins with information provision and progresses toward incentive alignment with elected representatives.
 
-![A bar chart comparing federal spending allocations, illustrating the massive scale of the 886 billion military budget against the NIH, fossil fuel subsidies, and drug war enforcement.](/assets/images/wishocracy-paper/wishocracy-paper-section-implementation-pathway-from-information-to-incentive-alignment-bw-academic.jpg)
+![The military gets $886 billion. Medical research gets crumbs. Fossil fuels get subsidies. The drug war gets enforcement. We fund what we love: fighting.](/assets/images/wishocracy-paper/wishocracy-paper-section-implementation-pathway-from-information-to-incentive-alignment-bw-academic.jpg)
 
 ## **Why Information Alone Fails: Politicians Respond to Incentives**
 
 Rankings of government programs by net societal value already exist and are systematically ignored. Rigorous benefit-cost analyses show: pragmatic clinical trials (637:1+ BCR based on RECOVERY trial outcomes [@dfda-impact-paper-2025]), childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). These dramatically outperform military spending beyond deterrence requirements (~0.7:1 BCR) and fossil fuel subsidies (negative net societal value). GiveWell, Open Philanthropy, the Copenhagen Consensus, the IMF, and numerous academic institutions produce similar analyses.
 
-![A bar chart comparing the benefit-cost ratios (BCR) of high-impact interventions like e-government procurement (125:1) and vaccinations (101:1) against low-value spending such as military expansion (0.7:1).](/assets/images/wishocracy-paper/wishocracy-paper-section-why-information-alone-fails-politicians-respond-to-incentives-bw-academic.jpg)
+![E-government returns $125 per dollar. Vaccines return $101. Military expansion loses 30 cents per dollar. We prefer the 30 cent loss.](/assets/images/wishocracy-paper/wishocracy-paper-section-why-information-alone-fails-politicians-respond-to-incentives-bw-academic.jpg)
 
 Yet government spending patterns have not shifted. @gilens2014 analyzed 1,779 policy decisions and found that "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero.
 
@@ -573,7 +573,7 @@ Yet government spending patterns have not shifted. @gilens2014 analyzed 1,779 po
 
 **Objective:** Establish RAPPA as a credible measure of citizen preferences and document the gap between public preferences and actual federal allocations.
 
-![A comparison chart illustrating the 'Preference Gap' between current federal budget allocations and citizen preferences, highlighting specific disparities in medical research and military spending.](/assets/images/wishocracy-paper/wishocracy-paper-section-phase-1-informational-preference-gap-documentation-bw-academic.jpg)
+![What citizens want versus what government funds. The gap is enormous, like the difference between ordering salad and receiving a flamethrower.](/assets/images/wishocracy-paper/wishocracy-paper-section-phase-1-informational-preference-gap-documentation-bw-academic.jpg)
 
 **Mechanism:**
 
@@ -599,7 +599,7 @@ Yet government spending patterns have not shifted. @gilens2014 analyzed 1,779 po
 
 **Objective:** Create a public scoring system that rates elected officials based on how their voting records correlate with RAPPA-expressed citizen preferences.
 
-![A flow diagram illustrating the data pipeline from congressional voting records and RAPPA preferences through the mapping process to the final calculation of Citizen Alignment Scores.](/assets/images/wishocracy-paper/wishocracy-paper-section-phase-2-accountability-scoring-politician-alignment-ratings-bw-academic.jpg)
+![Track how Congress votes, compare to what citizens want, calculate alignment score. It's a report card for democracy, currently showing lots of Fs.](/assets/images/wishocracy-paper/wishocracy-paper-section-phase-2-accountability-scoring-politician-alignment-ratings-bw-academic.jpg)
 
 **Mechanism:**
 
@@ -635,7 +635,7 @@ where votes are coded as +1 (increases funding for category), -1 (decreases fund
 
 **Objective:** Channel financial and electoral resources to politicians based on their alignment with citizen preferences, making welfare-improving votes incentive-compatible.
 
-![A visualization of the capital asymmetry between global household wealth (454T) and concentrated interests (<5T), illustrating how the three-layer incentive alignment mechanism redirects these resources toward aligned politicians.](/assets/images/wishocracy-paper/wishocracy-paper-phase-3-incentive-alignment-integration-with-incentive-alignment-bonds-bw-academic.jpg)
+![Households have $454 trillion. Special interests have $5 trillion. We're letting the 5 outspend the 454. Incentive Alignment Bonds fix this by mobilizing the 454.](/assets/images/wishocracy-paper/wishocracy-paper-phase-3-incentive-alignment-integration-with-incentive-alignment-bonds-bw-academic.jpg)
 
 **Mechanism:**
 
@@ -662,13 +662,13 @@ Politicians currently face incentives that reward serving concentrated interests
 
 **Timeline:** 2-4 years after Phase 2 establishes credible scoring system.
 
-![A comparison of the financial stakes between municipal and federal implementation, illustrating the massive scale difference from 10 million to 500 billion.](/assets/images/wishocracy-paper/wishocracy-paper-section-why-federal-first-beats-municipal-pilots-bw-academic.jpg)
+![City budgets: $10 million. Federal budget: $500 billion. The difference is 50,000x, like comparing a lemonade stand to Amazon.](/assets/images/wishocracy-paper/wishocracy-paper-section-why-federal-first-beats-municipal-pilots-bw-academic.jpg)
 
 ## **Why Federal-Scale Priorities**
 
 Municipal participatory budgeting has achieved real successes. Porto Alegre's experience demonstrates that citizen participation can improve service delivery. However, RAPPA addresses a different challenge than traditional participatory budgeting.
 
-![A system diagram showing the interaction between citizen preferences, federal budget data, and the resulting RAPPA outputs like Gap Reports and Incentive Alignment Bonds.](/assets/images/wishocracy-paper/wishocracy-paper-section-why-federal-scale-priorities-bw-academic.jpg)
+![Citizens want things, government spends money, RAPPA measures the gap and creates financial instruments to close it. Democracy with accounting.](/assets/images/wishocracy-paper/wishocracy-paper-section-why-federal-scale-priorities-bw-academic.jpg)
 
 Local budget decisions often require granular knowledge: which intersection needs a traffic light, which park needs renovation, which neighborhood lacks adequate drainage. These decisions benefit from local expertise and community-specific information that outsiders lack.
 
@@ -720,7 +720,7 @@ Together, they form a complete system: RAPPA provides the objective function (wh
 
 For detailed treatment of the IAB mechanism, including formal models, legal analysis, and bootstrap strategy, see the companion paper: [Incentive Alignment Bonds: A Mechanism Design Approach to Political Economy](https://iab.warondisease.org).
 
-![A conceptual diagram illustrating how Wishocracy and Incentive Alignment Bonds function as a complete system, mapping RAPPA to 'what to optimize' and IABs to 'incentive to optimize'.](/assets/images/wishocracy-paper/wishocracy-paper-section-connection-to-incentive-alignment-bonds-bw-academic.jpg)
+![You ask people what they want, then pay politicians to do it. Like parenting, but with money instead of guilt.](/assets/images/wishocracy-paper/wishocracy-paper-section-connection-to-incentive-alignment-bonds-bw-academic.jpg)
 
 ## **Connection to Optimocracy**
 
@@ -728,7 +728,7 @@ Wishocracy and Optimocracy represent two distinct approaches to governance refor
 
 - **Wishocracy** is *democratic*: citizens express preferences, and the mechanism aggregates them. The output is a preference signal that politicians can choose to follow or ignore (absent incentive mechanisms).
 
-![A conceptual diagram of the hybrid governance architecture showing the flow from citizen preference aggregation via Wishocracy into algorithmic metric optimization via Optimocracy.](/assets/images/wishocracy-paper/wishocracy-paper-section-connection-to-optimocracy-bw-academic.jpg)
+![Democracy asks what you want. Optimocracy does the math. It's like finally hiring an accountant after years of guessing.](/assets/images/wishocracy-paper/wishocracy-paper-section-connection-to-optimocracy-bw-academic.jpg)
 
 - **Optimocracy** is *algorithmic*: a pre-agreed metric is optimized automatically, with minimal political discretion. The output is an allocation that executes regardless of political preferences.
 
@@ -750,7 +750,7 @@ For detailed treatment of algorithmic governance, including smart contract speci
 
 Representative democracy's principal-agent problem is not a bug but a structural feature: elected officials inevitably face incentives that diverge from citizen welfare. No amount of campaign finance reform, term limits, or transparency requirements can eliminate the fundamental misalignment between representatives who must satisfy donors and constituents simultaneously. Meanwhile, direct democracy mechanisms remain cognitively infeasible for the complex, multidimensional trade-offs that characterize modern governance.
 
-![A structural diagram of the Wishocracy mechanism showing the flow of citizen pairwise preferences through aggregation into alignment scores and incentive bonds to influence representative behavior.](/assets/images/wishocracy-paper/wishocracy-paper-section-conclusion-bw-academic.jpg)
+![How to make representatives represent people: give them a score, then attach money to it. Like training a very expensive dog.](/assets/images/wishocracy-paper/wishocracy-paper-section-conclusion-bw-academic.jpg)
 
 Wishocracy offers a different approach: rather than replacing representatives, align their incentives with citizen preferences. Through Randomized Aggregated Pairwise Preference Allocation, the mechanism aggregates citizen preferences into a clear signal of what voters actually want. Combined with Citizen Alignment Scores and Incentive Alignment Bonds, this creates accountability pressure that makes welfare-improving votes politically and financially rewarding. The theoretical foundations combine the Analytic Hierarchy Process (for cognitive tractability) with collective intelligence research (for aggregation), decomposing n-dimensional preference spaces into simple pairwise comparisons that any citizen can complete.
 
@@ -768,7 +768,7 @@ The mechanism is implementable with current technology, grounded in validated th
 
 **Important:** Service providers represent a *distinct, separate layer* from the core RAPPA mechanism. While RAPPA handles democratic preference aggregation to determine *what* society should prioritize, service providers address the orthogonal question of *how* to achieve those priorities.
 
-![A conceptual diagram illustrating the two-layer Wishocracy architecture, showing the separation between democratic outcome prioritization (Layer 1) and technocratic implementation strategy (Layer 2).](/assets/images/wishocracy-paper/wishocracy-paper-section-appendix-a-the-service-provider-layer-bw-academic.jpg)
+![Layer 1: people say what they want. Layer 2: nerds figure out how. You invented management consulting but made it work.](/assets/images/wishocracy-paper/wishocracy-paper-section-appendix-a-the-service-provider-layer-bw-academic.jpg)
 
 Once priorities are established through RAPPA, Wishocracy introduces this second layer for solution generation and evaluation. Service providers (which may include government agencies, private contractors, NGOs, or other qualified entities) form around specific priorities to propose implementation strategies. These proposals are subject to pairwise comparison using different evaluation criteria: cost-effectiveness, feasibility, and probability of success.
 

@@ -21,7 +21,7 @@ image: /assets/og-images/knowledge/appendix/real-world-evidence-historical-succe
 
 Large-scale efficacy trials based on real-world evidence produce better health outcomes than current pharmaceutical industry-driven randomized controlled trials.
 
-![A comparison showing how real-world evidence trials lead to improved health outcomes compared to traditional pharmaceutical industry-driven randomized controlled trials.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-historical-eviden-bw-academic.jpg)
+![Trials run in the real world with real patients produce better health outcomes than trials run by pharmaceutical companies with carefully selected patients. Reality is more helpful than theater.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-historical-eviden-bw-academic.jpg)
 
 ### 10,000 Years of Dying at 30
 
@@ -35,13 +35,13 @@ Kings, peasants, philosophers, farmers - everyone died embarrassingly young.
 
 10,000 years. Zero progress.
 
-![historical life expectancy](../../assets/images/life-expectancy-historical.jpg)
+![Life expectancy over time. It goes up. Then in 1962 it stops going up as fast. Something happened in 1962.](../../assets/images/life-expectancy-historical.jpg)
 
 ### 1883 – The Year You Figured It Out
 
 Then something changed.
 
-![A flowchart showing the collaborative research process introduced in 1883, from individual physician observations to JAMA peer review and final certification.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-1883-the-year-you-figured-it-out-bw-academic.jpg)
+![In 1883, doctors started sharing notes. Doctor sees something, writes it down, other doctors check the notes, JAMA says 'Yes, this is real.' Collaboration was invented.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-1883-the-year-you-figured-it-out-bw-academic.jpg)
 
 In 1883, doctors founded the Journal of the American Medical Association (JAMA) [@jama-founded-1893] and did something novel: they shared information. After 10,000 years someone thought "what if we told each other what works?"
 
@@ -69,7 +69,7 @@ These requirements evolved into the [Phase 1 Safety Trial](https://en.wikipedia.
 
 The consistent 3.82 years per decade increase [@life-expectancy-increase-pre-1962] in life expectancy remained unchanged before and after the new safety regulations. Safety testing worked without slowing medical progress.
 
-![Fda safety trials life expectancy](../../assets/images/fda-safety-trials-life-expectancy.png)
+![Life expectancy before and after the FDA required safety trials. The line goes up both times but at different speeds. Safety has a speed limit.](../../assets/images/fda-safety-trials-life-expectancy.png)
 
 The regulations had no measurable positive or negative impact on developing life-saving interventions.
 
@@ -81,13 +81,13 @@ Existing FDA safety regulations prevented any birth defects in the US [@thalidom
 
 Despite this success story for safety regulations, newspaper stories like the one below created public outcry for *more* regulation - targeting efficacy testing instead.
 
-![Thalidomide](../../assets/images/thalidomide.jpg)
+![Thalidomide babies. This is what happens when you don't test drugs on pregnant women. So now we test nothing on pregnant women and they take untested drugs.](../../assets/images/thalidomide.jpg)
 
 ### 1962 – The Year You Decided to Make Everything Worse
 
 Effective **safety** regulations were already in place. They worked. America had zero Thalidomide deaths while Europe had thousands. Safety testing succeeded.
 
-![Comparison of drug regulation impact before and after the 1962 Kefauver Harris Amendment, highlighting the shift in efficacy testing from doctors to drug companies and the resulting increases in cost and time.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-1962-the-year-you-bw-academic.jpg)
+![Before 1962: doctors tested if drugs worked. After 1962: drug companies tested if drugs worked. Costs went up. Time went up. Asking the seller if the product works costs more than asking the buyer.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-1962-the-year-you-bw-academic.jpg)
 
 So naturally, the government responded to this success by adding massive **efficacy** regulations via the 1962 Kefauver Harris Amendment [@kefauver-harris-amendment-1962].
 
@@ -113,11 +113,11 @@ The irony: Regulations meant to ensure drugs work did this by:
 2. Requiring small artificial trials
 3. Letting drug companies run their own tests
 
-![Comparison of the decentralized physician-led model (pre-1962) versus the centralized industry-led model (post-1962), highlighting the explosion in costs and procedural changes.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-pre-vs-post-1962-regulations-bw-academic.jpg)
+![Before 1962: doctors in charge, cheap, simple. After 1962: drug companies in charge, expensive, complicated. We replaced the people who use the product with the people who sell it.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-pre-vs-post-1962-regulations-bw-academic.jpg)
 
 #### What Happened to Efficacy Data
 
-![A comparative visualization showing how 1962 regulations shifted clinical trials toward smaller sample sizes, less representative patient groups, and increased internal conflicts of interest.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-what-happened-to-efficacy-data-bw-academic.jpg)
+![After 1962, trials got smaller, patients got less representative, and conflicts of interest got bigger. Making trials more rigorous made them worse at everything except paperwork.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-what-happened-to-efficacy-data-bw-academic.jpg)
 
 The 1962 regulations, explicitly about ensuring efficacy, massively reduced the quantity and quality of efficacy data:
 
@@ -131,7 +131,7 @@ The new regulations immediately **reduced new drug approvals by {{< var post_196
 
 Not gradually. Immediately.
 
-![Graph showing new treatments per year decline after 1962](../../assets/images/new-treatments-per-year-2.png)
+![New treatments per year. The line goes up until 1962. Then it goes down. Regulating medicine made less medicine.](../../assets/images/new-treatments-per-year-2.png)
 
 #### What Happened to Costs
 
@@ -145,7 +145,7 @@ A {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase. For wor
 
 The new regulations created such massive delay that the pharmaceutical industry complained about a "drug lag."
 
-![A cause-and-effect diagram showing how the 1984 patent extensions led to unintended consequences: higher drug prices, reduced availability, and increased safety risks.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-what-happened-to-drug-patents-bw-academic.jpg)
+![In 1984, patents got extended to encourage innovation. Prices went up. Availability went down. Safety went down. The incentive to innovate became an incentive to charge more for less.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-what-happened-to-drug-patents-bw-academic.jpg)
 
 Congress "fixed" this by extending drug patent monopolies [@drug-price-competition-act-1984] in 1984.
 
@@ -159,7 +159,7 @@ Kefauver's amendments, meant to make drugs safer and cheaper, instead made them:
 
 The placebo-controlled, randomized controlled trial helped gauge individual drug efficacy. However, it makes determining comparative effectiveness much more difficult.
 
-![A conceptual diagram showing two separate clinical trials comparing different drugs to placebos, with a highlighted gap or question mark indicating the missing direct comparison between the two active drugs.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-decreased-ability-bw-academic.jpg)
+![Drug A beats placebo. Drug B beats placebo. No one compares Drug A to Drug B. You know they both work better than nothing. You don't know which one works better than the other.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-decreased-ability-bw-academic.jpg)
 
 ### What Happened to Life Expectancy (The Part That Matters)
 
@@ -177,7 +177,7 @@ From 1962 onward: 1.54 years per decade [@post-1962-life-expectancy-slowdown].
 
 The break is so clean you can see exactly when Congress decided to "help."
 
-![Life expectancy trends showing a distinct change in slope from 3.82 years/decade gained to 1.54 years/decade gained precisely at the 1962 regulatory intervention.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-life-expectancy-slope-change-1962-bw-academic.jpg)
+![Before 1962: gaining 3.82 years per decade. After 1962: gaining 1.54 years per decade. The line breaks exactly at 1962. Coincidences are supposed to be less precise than this.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-life-expectancy-slope-change-1962-bw-academic.jpg)
 
 ### The "Diminishing Returns" Excuse
 
@@ -185,7 +185,7 @@ Some claim "diminishing returns explain the slowdown."
 
 Diminishing returns produce exponential decay. A smooth curve that gradually flattens over time.
 
-![What diminishing returns would look like](../../assets/images/diminishing-returns.png)
+![This is what diminishing returns look like when you smooth out all the noise and variables. A gentle curve. Reality is not a gentle curve. Reality is a sharp break in 1962.](../../assets/images/diminishing-returns.png)
 
 This isn't what happened.
 
@@ -197,7 +197,7 @@ Diminishing returns don't produce sudden linear breaks. Regulatory changes do.
 
 True. Correlation alone proves nothing.
 
-![A logic diagram illustrating the three pillars of scientific inference, temporal correlation, mechanism, and temporal precision, used to establish causation between 1962 regulations and life expectancy trends.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-the-correlation-i-bw-academic.jpg)
+![How to prove something caused something else: it happened at the same time, there's a reason it would happen, and the timing is suspiciously exact. 1962 has all three.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-the-correlation-i-bw-academic.jpg)
 
 But correlation + mechanism + temporal precision is how science works.
 
@@ -217,7 +217,7 @@ A [three-way fixed-effects analysis](https://pubmed.ncbi.nlm.nih.gov/30912800) o
 
 More people survive as more treatments are developed. There's a [strong correlation](http://valueofinnovation.org/power-of-innovation) between developing new cancer treatments and cancer survival over 30 years.
 
-![Graph showing the correlation of developing new cancer treatments and cancer survival over 30 years.](../../assets/images/more-surviving-more-therapies.png)
+![More cancer treatments invented, more people survive cancer. Turns out medical research works. Who knew.](../../assets/images/more-surviving-more-therapies.png)
 
 ## The Summary
 
@@ -228,5 +228,5 @@ More people survive as more treatments are developed. There's a [strong correlat
 
 Humanity solved medical progress in 1883. Congress broke it in 1962.
 
-![A timeline comparison showing the rate of medical progress, highlighting the sharp decline from 3.82 years of life expectancy gained per decade to 1.54 years following the 1962 Kefauver-Harris Amendment.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-the-summary-bw-academic.jpg)
+![Medical progress: 3.82 years gained per decade. Then 1962 happens. Medical progress: 1.54 years gained per decade. We cut medical progress in half with good intentions and paperwork.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-the-summary-bw-academic.jpg)
 

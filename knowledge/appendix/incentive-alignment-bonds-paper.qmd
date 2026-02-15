@@ -53,7 +53,7 @@ image: /assets/og-images/knowledge/appendix/incentive-alignment-bonds-paper-og-r
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![The Incentive Alignment Bonds Mechanism](../../assets/infographics/Incentive Alignment Bonds Infographic.png){#fig-iab-infographic}
+![Pay politicians to do the right thing. Then call it a bond so it sounds like finance instead of bribery.](../../assets/infographics/Incentive Alignment Bonds Infographic.png){#fig-iab-infographic}
 
 **The Problem in One Sentence:** Politicians are rewarded for funding low-NSV programs (military beyond deterrence: 0.7:1 BCR) and punished for funding high-NSV programs (medical research: 100:1+ BCR) because concentrated interests outlobby diffuse beneficiaries, so government spending is optimized for lobbying intensity rather than marginal societal value.
 
@@ -81,11 +81,11 @@ The result is a systematic distortion of democratic governance. The U.S. Constit
 
 Empirical evidence confirms this pattern. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions over two decades. Finding: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence." The correlation between average citizen preferences and policy outcomes was effectively zero. Whether 0% or 100% of citizens supported a policy, its probability of adoption remained unchanged at approximately 30%. By contrast, policies favored by economic elites were adopted at significantly higher rates. @fig-policy-influence illustrates this disconnect.
 
-![The relationship between public support and policy adoption. Whether a policy has 0 percent or 100 percent public support, its probability of adoption remains flat at around 30 percent. By contrast, policies favored by economic elites show a strong positive correlation with adoption. Data from @gilens2014 analysis of 1,779 policy decisions.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
+![What the public wants has zero effect on what policies pass. What rich people want has total effect on what policies pass. You call this democracy.](../../assets/images/bill-public-support-vs-chance-of-adoption-what-actually-happens.png){#fig-policy-influence}
 
 ### Key Results
 
-![A visual comparison of the 454T beneficiary capital versus 5T opposition capital, highlighting the 90:1 asymmetry and the 230:1 benefit-cost ratio of the IAB mechanism.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-key-results-bw-academic.jpg)
+![The people who would benefit from good policy have 90 times more money than the people who benefit from bad policy. This is why bad policy keeps winning.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-key-results-bw-academic.jpg)
 
 This paper demonstrates that the adoption problem (getting welfare-improving policies passed despite concentrated opposition) is solvable through mechanism design (designing rules so people's selfish choices create good outcomes):
 
@@ -100,7 +100,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 
 **Non-technical readers** can skip Section 3 (formal model); the intuition is provided in Section 2. **Economists** should focus on Section 3 (explicit functional forms) and Section 7 (welfare accounting). **Investors** should focus on Section 2.2-2.3 (ROI and capital asymmetry) and Section 8 (bootstrap solution).
 
-![A roadmap mapping reader personas (Non-technical, Economists, and Investors) to the specific sections of the paper most relevant to their interests and expertise.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-reader-s-guide-bw-academic.jpg)
+![A map for three types of readers: people who want to understand, people who want to argue, and people who want to know where their money goes.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-reader-s-guide-bw-academic.jpg)
 
 This paper introduces **Incentive Alignment Bonds (IABs)**, a mechanism design approach to reversing this dynamic. Rather than attempting to change politicians' preferences or relying on benevolent decision-makers, IABs restructure the incentive environment so that rational self-interest points toward welfare-improving policies.
 
@@ -110,7 +110,7 @@ An Incentive Alignment Bond is a financial instrument with three primitive prope
 
 1. **Investor alignment with public good production:** Investors receive returns proportional to verified public-good funding flows achieved (e.g., treaty ratification, appropriations enacted). Returns are keyed to observable funding events, not downstream outcomes, avoiding complex attribution problems. If the policy succeeds, investors profit; if it fails, they do not. This creates a class of actors with concentrated financial interest in policy success.
 
-![Systemic architecture of an Incentive Alignment Bond showing the feedback loop between redirected funding, investor returns, political incentives, and public good production.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-definition-bw-academic.jpg)
+![Money goes to politicians. Politicians do good things. Good things make money. Money goes back to investors. It's a circle, like a carousel, but for buying democracy.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-definition-bw-academic.jpg)
 
 2. **Politician alignment with public good production:** Politicians receive electoral support and career benefits based on their voting record for the target policy class. Supporting the public good becomes the utility-maximizing choice, increasing reelection probability, post-office income, and status.
 
@@ -128,7 +128,7 @@ Unlike Social Impact Bonds (which align service providers with program outcomes)
 
 A natural question: why insist on *redirecting* resources from harmful programs rather than simply *adding* new spending on public goods? The answer: real resources (people, factories, scientists) are finite.
 
-![A comparison of budget expansion versus resource reallocation, illustrating how nominal spending increases lead to resource dilution while specified reallocation forces a shift in the distribution of finite real-world resources.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-why-reallocation-not-addition-bw-academic.jpg)
+![Spending more money doesn't work because there aren't more doctors. Moving money from bombs to medicine does work because doctors already exist.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-why-reallocation-not-addition-bw-academic.jpg)
 
 When advocates successfully lobby for increased spending on a beneficial program, the political response is rarely a corresponding reduction in harmful programs. Instead, governments usually:
 
@@ -201,7 +201,7 @@ Consider the global capital distribution:
 
 [^capital-estimate]: Conservative estimate: military contractors ~\$2T, fossil fuel companies ~\$2.5T, pharmaceutical companies ~\$4T (though pharma may align with IABs). Total concentrated opposition: \$2T-\$5T depending on domain.
 
-![Visualizing the 90:1 capital advantage: Global household wealth (454T) vastly overshadows the combined market cap of concentrated opposition (5T).](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-capital-asymmetry-bw-academic.jpg)
+![Everyone together has 90 times more money than weapons companies. The weapons companies are still winning. This is called leverage.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-capital-asymmetry-bw-academic.jpg)
 
 The 90:1 capital advantage cannot currently be deployed because diffuse beneficiaries face a collective action problem (hard for large groups to coordinate even when everyone would benefit): each individual's stake is small, and coordination costs are prohibitive. A retiree who would gain 5 additional healthy years from accelerated medical research has enormous stake (~\$500K in value of statistical life-years) but cannot coordinate with millions of other retirees to match pharmaceutical lobbying budgets.
 
@@ -298,7 +298,7 @@ The empirical criterion is straightforward: if a program's beneficiaries are con
 
 This paper combines three literatures. First, **mechanism design theory** [@hurwicz1972; @myerson1979; @maskin1999] provides tools for designing institutions when agents have private information and act strategically. While mechanism design has transformed market institutions, from spectrum auctions [@milgrom2004] to kidney exchanges [@roth2002], its application to political institutions is limited. We extend this framework to political incentives, treating politicians as strategic agents whose actions (votes) are observable but whose preferences may diverge from social welfare.
 
-![A conceptual framework illustrating the synthesis of mechanism design, public choice theory, and campaign finance research into the proposed IAB model, alongside a comparison to existing policy tools.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-relation-to-existing-literature-bw-academic.jpg)
+![Three fields of economics had a baby and that baby is a bond that bribes politicians legally.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-relation-to-existing-literature-bw-academic.jpg)
 
 Second, **public choice theory** [@buchanan1962; @olson1965] models politicians as utility maximizers rather than benevolent planners. Olson's analysis of concentrated versus diffuse interests explains persistent policy failures but offers limited remedies. We turn Olson's insight into a mechanism: if concentrated benefits cause politicians to favor narrow interests, then *concentrating benefits on the welfare-improving side* can reverse the dynamic.
 
@@ -312,7 +312,7 @@ This paper makes four contributions:
 
 1. **Mechanism Design for Governance**: We apply the formal tools of mechanism design theory, developed for auctions, matching markets, and resource allocation, to the problem of political incentives. While mechanism design has transformed economic institutions from spectrum auctions to kidney exchanges, its application to democratic governance is underdeveloped.
 
-![A conceptual framework illustrating the four contributions: the application of mechanism design to governance, the distinct properties of Incentive Alignment Bonds, the three-layer legal architecture, and the welfare-improvement reallocation logic.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-contribution-bw-academic.jpg)
+![Four big ideas: use game theory on politics, invent a new financial instrument, build it in three legal layers like a cake, prove it makes everyone richer. Simple.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-contribution-bw-academic.jpg)
 
 2. **A New Financial Instrument**: We define IABs as a distinct class of financial instrument with three primitive properties: investor alignment, politician alignment, and funding from lower-value sources. This distinguishes IABs from Social Impact Bonds (which reward service providers, not politicians), lobbying (which serves narrow interests), and campaign contributions (which lack systematic, ex-ante, universal rules tied to measurable outcomes).
 
@@ -324,17 +324,17 @@ This paper makes four contributions:
 
 Section 2 reviews why previous approaches failed. Section 3 presents the formal model. Section 4 details the three-layer architecture and its legal basis. Section 5 analyzes failure modes. Section 6 discusses the broader governance stack. Section 7 extends the mechanism to climate, nuclear risk, and pandemic preparedness. The Conclusion summarizes contributions and open questions.
 
-![A logical flowchart illustrating the document's structure, progressing from the analysis of previous failures and formal modeling to the three-layer architecture and its global applications.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-roadmap-bw-academic.jpg)
+![How this paper works: here's why everything failed, here's the math for why it failed, here's how to fix it, here's how to fix it everywhere.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-roadmap-bw-academic.jpg)
 
 ## Why Previous Approaches Failed {#sec-literature}
 
-![A comparison showing how traditional approaches fail through misaligned incentives versus how IABs align self-interest with public interest.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-why-previous-approaches-failed-sec-literature-bw-academic.jpg)
+![Old way: politicians get paid to do bad things, so they do bad things. New way: politicians get paid to do good things. Shockingly, this required a 50-page paper to explain.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-why-previous-approaches-failed-sec-literature-bw-academic.jpg)
 
 ### Mechanism Design Theory
 
 The Sveriges Riksbank Prize in Economic Sciences 2007 was awarded to Leonid Hurwicz, Eric Maskin, and Roger Myerson "for having laid the foundations of mechanism design theory" [@nobelprize2007]. Mechanism design addresses a fundamental problem: how do you get selfish people to do the right thing without forcing them?
 
-![A conceptual diagram showing how mechanism design aligns individual self-interest with socially optimal outcomes through incentive-compatible rules.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-mechanism-design-theory-bw-academic.jpg)
+![Mechanism design is the art of making people do good things by accident while they're trying to be selfish.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-mechanism-design-theory-bw-academic.jpg)
 
 
 Hurwicz [-@hurwicz1972] introduced the concept of **incentive compatibility**: a mechanism is incentive-compatible if the socially optimal action is in each agent's self-interest. The rules make doing the right thing also the profitable thing.
@@ -351,7 +351,7 @@ Public choice theory applies economic methods to political behavior. Buchanan an
 
 The result is that "concentrated minor interests will be overrepresented and diffuse majority interests trumped" [@olson1965]. Empirical support includes Lohmann's observation that U.S. sugar import quotas generated 2,261 jobs while reducing overall welfare by $1.162 billion, an implicit cost per job exceeding $500,000 [@lohmann1998]. The government could have paid each sugar worker half a million dollars to not grow sugar. This would have saved money. Nobody did this. Sugar growers have lobbyists. Consumers don't.
 
-![A conceptual comparison showing the power imbalance between concentrated minor interests with high per-capita stakes and diffuse majority interests with low individual stakes.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-public-choice-theory-bw-academic.jpg)
+![100 people who each lose a million dollars will fight harder than 100 million people who each lose a dollar. This is why your government works for 100 people.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-public-choice-theory-bw-academic.jpg)
 
 IABs address this directly: by concentrating benefits on politicians who support diffuse-benefit policies, the asymmetry is reversed. Supporting the public good becomes the concentrated-benefit option.
 
@@ -377,7 +377,7 @@ More important, SIBs target the wrong level. They incentivize **service provider
 
 Empirical research on campaign finance provides the evidentiary foundation for the electoral layer of IABs.
 
-![A conceptual model illustrating three primary channels of political influence: the impact of independent expenditures on voters, the role of interest group scorecards in shaping politician behavior, and the 'revolving door' incentives affecting legislative decisions.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-campaign-finance-and-political-behavior-bw-academic.jpg)
+![Three ways to buy a politician: tell voters they're bad, give them a report card like they're in school, or promise them a nice job later. Democracy runs on deferred compensation.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-campaign-finance-and-political-behavior-bw-academic.jpg)
 
 **Independent expenditures affect elections.** Following *Citizens United v. FEC* (2010), independent expenditures increased dramatically. In the decade prior to the decision, outside groups spent $296 million total on independent expenditures; in the decade after, they spent $4.26 billion, a 14-fold increase [@opensecrets2020]. Research using transaction-level disbursement data finds that "spending on messages to voters has a statistically significant effect on voter support for candidates" and is "especially effective in changing the composition of voters" [@spenkuch2018].
 
@@ -389,7 +389,7 @@ Empirical research on campaign finance provides the evidentiary foundation for t
 
 Credit rating agencies (CRAs) provide a precedent for private organizations influencing sovereign policy through reputational mechanisms. Moody's, S&P, and Fitch assign sovereign credit ratings that directly affect borrowing costs. Barta [-@barta2024] describes CRAs as "unelected, unappointed, unaccountable profit-seeking institutions" whose power rivals the IMF or World Bank. Downgrades can trigger crises: Greece, Ireland, and Portugal all experienced accelerated debt crises following CRA downgrades to "junk" status [@desa2023].
 
-![A comparison diagram showing the structural analogy between the Credit Rating Agency (CRA) model and the proposed IAB scoring system, mapping how independent evaluations influence market actors.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-credit-rating-agencies-as-governance-mechanisms-bw-academic.jpg)
+![Credit rating agencies tell you which loans are terrible. We're doing the same thing, but for senators.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-credit-rating-agencies-as-governance-mechanisms-bw-academic.jpg)
 
 The IAB scoring system is structurally analogous to credit ratings: an independent body publishes scores based on objective criteria, and market actors (voters, donors, employers) respond to those scores. The difference is the metric: instead of fiscal sustainability, IABs measure support for measurable public goods.
 
@@ -397,7 +397,7 @@ The IAB scoring system is structurally analogous to credit ratings: an independe
 
 **For Non-Technical Readers:** You can skip this section. In plain English: We create a "Public Good Score" for each politician based on their voting record. Politicians with higher scores get (1) campaign support from independent political groups, (2) better post-office job opportunities, and (3) higher public status. When these benefits exceed the costs (losing military contractor donations), supporting public goods becomes the rational choice. Skip to Section 4 for practical implementation or Section 6 for governance architecture.
 
-![A conceptual cost-benefit diagram showing how the accumulated benefits of a high Public Good Score (campaign support, career opportunities, and status) must outweigh the cost of lost donations to incentivize pro-social political choices.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-math-proving-it-works-sec-formal-model-bw-academic.jpg)
+![A politician weighing bribes on one hand against not being a terrible person on the other. We're trying to make goodness pay more than badness.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-math-proving-it-works-sec-formal-model-bw-academic.jpg)
 
 
 This section presents a formal model of political incentives under IABs. We state explicit assumptions, derive conditions for incentive compatibility (when doing the right thing is also the profitable thing), and characterize equilibria (stable outcomes). Appendix A provides detailed proofs.
@@ -750,7 +750,7 @@ This allocation structure creates aligned incentives across all participants. In
 
 **Scoring layer:** Politicians receive Health Research Scores based on their voting record on treaty ratification, annual funding appropriations, and related legislation. A legislator who votes YES on the treaty and subsequent funding bills sees their score rise; one who votes NO sees their score fall.
 
-![Flow of funds from a 1 percent military redirect (27.2B) into the three critical IAB buckets: Public Good, Investor Returns, and Political Incentives.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-iab-money-flow-bw-academic.jpg)
+![Where the money goes when you take one penny from every dollar we spend on bombs: some helps people, some goes to investors, and some bribes politicians to keep helping people. It's bribes all the way down, but upward.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-iab-money-flow-bw-academic.jpg)
 
 **Electoral layer:** With {{< var iab_political_incentive_funding_annual >}} annually available, independent expenditure campaigns can credibly commit: "We will spend \$50 million supporting high-scorers in competitive races." At typical costs per competitive race, this funds meaningful independent campaigns in 20-30 races annually.
 
@@ -798,7 +798,7 @@ Section 3.2 demonstrates that IAB funding levels in the billions can overcome co
 
 To implement score-dependent payoffs, we need mechanisms. This section specifies a three-layer architecture and analyzes its legality under U.S. law.
 
-![The Three-Layer Architecture: A cyclical system where Voting Records drive Scores, which automatically trigger Electoral Support and Post-Office Career Opportunities.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-architecture-bw-academic.jpg)
+![Vote good, get good score, get campaign help, get cushy job after politics. Like a loyalty card at a coffee shop, but for not destroying democracy.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-architecture-bw-academic.jpg)
 
 {{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
 
@@ -806,7 +806,7 @@ To implement score-dependent payoffs, we need mechanisms. This section specifies
 
 An independent entity, structured as a 501(c)(3) research organization, maintains the Public Good Score system.
 
-![A data flow diagram illustrating how the scoring organization transforms public government records and bill classifications into politician scores and rankings within a 501(c)(3) legal framework.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-layer-a-scoring-data-provision-bw-academic.jpg)
+![How we turn boring government records into politician report cards without the IRS getting angry. It's like fantasy football, but for democracy, and tax-deductible.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-layer-a-scoring-data-provision-bw-academic.jpg)
 
 **Inputs:**
 
@@ -831,7 +831,7 @@ The scoring layer does not violate this constraint because it:
 
 Independent actors, structured as 501(c)(4) organizations, PACs, or Super PACs, commit to electoral support rules tied to scores.
 
-![A logic flow showing how independent organizations apply public scores to candidate performance to trigger automatic electoral support without direct coordination.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-layer-b-electoral-support-bw-academic.jpg)
+![How to help good politicians without technically coordinating, which would be illegal. Everyone just happens to read the same scoreboard and coincidentally makes the same decisions.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-layer-b-electoral-support-bw-academic.jpg)
 
 **Mechanism:**
 
@@ -846,7 +846,7 @@ Justice Kennedy wrote that independent spending "does not give rise to corruptio
 
 Private foundations, think tanks, and advisory boards establish eligibility criteria tied to scores.
 
-![A conceptual diagram showing how the Public Good Score acts as a filter or gateway between a public official's career and post-office opportunities like fellowships and advisory boards.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-layer-c-post-office-benefits-bw-academic.jpg)
+![The gate between being a senator and getting paid to give speeches. If your score is bad, the gate stays closed, and you have to get a real job.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-layer-c-post-office-benefits-bw-academic.jpg)
 
 **Mechanism:**
 
@@ -875,7 +875,7 @@ The IAB mechanism fails each element:
 - *Electoral support* goes to campaigns, not officials personally. Independent expenditures benefit candidates electorally but are not personal enrichment.
 - *Post-office opportunities* are future employment contingent on (a) leaving office and (b) meeting publicly-announced, universally-applied criteria. Future employment prospects are not "things of value" under bribery law. Otherwise, any industry that hires former regulators would be guilty of bribery.
 
-![A conceptual mapping of the three legal elements of bribery (thing of value, intent, and quid pro quo) contrasted with the operational characteristics of the IAB mechanism to show where they diverge legally.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-statutory-analysis-18-u-s-c-201-bw-academic.jpg)
+![The difference between a bribe and our system. A bribe is 'do this, get money.' Our system is 'do good things consistently for years, and maybe you'll get opportunities later.' Turns out delayed gratification is legal.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-statutory-analysis-18-u-s-c-201-bw-academic.jpg)
 
 **Element 2: No specific intent to influence.**
 
@@ -895,7 +895,7 @@ The IAB architecture is protected by the First Amendment at multiple levels:
 
 1. **Scoring layer:** Publishing voting records and scores based on those records is core political speech. The government cannot prohibit citizens from evaluating and publicizing legislators' voting records.
 
-![A diagram mapping the three layers of the IAB architecture (Scoring, Electoral, and Post-office) to their corresponding First Amendment legal protections.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-constitutional-protections-bw-academic.jpg)
+![How everything we're doing is protected by free speech. Scoring politicians is speech. Campaign ads are speech. Hiring someone for a board position is apparently also speech. America is very particular about this.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-constitutional-protections-bw-academic.jpg)
 
 2. **Electoral layer:** *Citizens United* held that independent expenditures are protected speech. The government cannot limit spending by independent actors to support or oppose candidates based on their policy positions.
 
@@ -925,13 +925,13 @@ The most powerful evidence that IABs are legal is that their core components hav
 
 None of these activities have been prosecuted as bribery. The IAB architecture merely *systematizes* what already happens ad hoc, making the rules transparent, universal, and tied to measurable public goods rather than narrow interests.
 
-![A conceptual map showing how existing ad-hoc practices like scoring systems, electoral support, and post-office career paths form the legal and operational precedent for the systematized IAB architecture.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-established-precedent-de-bw-academic.jpg)
+![All the things people already do to influence politics, which are legal. We're just doing them on purpose and at the same time, which is still legal, but more efficient.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-established-precedent-de-bw-academic.jpg)
 
 #### The Key Legal Distinction
 
 Bribery corrupts official judgment by introducing private benefit that conflicts with public duty. IABs align private benefit with public duty, rewarding officials for *doing their job well* as measured by policy outcomes. This is the opposite of corruption.
 
-![A comparison diagram illustrating the divergence between bribery, where private benefit conflicts with public duty, and IABs, where private benefit and public duty are aligned through a transparent legal framework.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-key-legal-distinction-bw-academic.jpg)
+![Bribery: do bad thing, get money. Our system: do good thing, maybe get money later. The difference is we put the carrot and the cart on the same side of the horse.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-key-legal-distinction-bw-academic.jpg)
 
 The legal architecture ensures this alignment holds:
 
@@ -974,7 +974,7 @@ This constraint is less significant than it appears. In a unified bond offering,
 
 ### Gaming and Metric Corruption
 
-![A conceptual diagram showing how political gaming strategies like cheap talk and bill stuffing lead to metric corruption, and how multidimensional scoring acts as a countermeasure to restore metric integrity.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-gaming-and-metric-corruption-bw-academic.jpg)
+![How politicians cheat on their report cards by naming bills the opposite of what they do, and how we catch them by grading on multiple subjects. You can fake your math score, but math plus history plus science is harder.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-gaming-and-metric-corruption-bw-academic.jpg)
 
 Any metric can be gamed. Goodhart's Law states: "When a measure becomes a target, it ceases to be a good measure" [@goodhart1984]. Potential gaming strategies:
 
@@ -1032,7 +1032,7 @@ IABs address one specific failure mode: **how to get welfare-improving policies 
 - **Layer 2 (Within-Domain Allocation):** Once resources are redirected, mechanisms like aggregated pairwise preference allocation [@wishocracy2024] prevent capture by new concentrated interests.
 - **Layer 3 (Project Selection):** Domain-specific marketplaces (prediction markets, prize markets, retroactive public goods funding) allocate to specific projects.
 
-![A visualization of the Four-Layer Governance Stack highlighting Layer 1 (IABs) as the critical bottleneck for implementing advanced governance mechanisms.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-four-layer-governance-stack-bw-academic.jpg)
+![The four layers of fixing government. IABs are layer one because you can't build fancy democracy upgrades if the politicians are still bought by weapons companies.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-four-layer-governance-stack-bw-academic.jpg)
 
 Layer 0 rankings exist but are ignored because they don't appear in politician utility functions. Layers 2-3 cannot function until Layer 1 creates the political conditions for their adoption.
 
@@ -1079,7 +1079,7 @@ Optimocracy and IABs can develop in parallel. Private Optimocracy doesn't requir
 
 IABs solve the *adoption* problem (the binding constraint) but not the complete resource allocation problem. The four-layer stack (Section 6.1) addresses domain ranking, within-domain allocation, and project selection through complementary mechanisms.
 
-![A conceptual diagram showing the four-layer governance stack with Incentive-Aligned Bonds (IABs) addressing the foundational 'adoption' layer, while external constraints like legal barriers and transition risks remain outside its scope.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-what-iabs-do-not-solve-bw-academic.jpg)
+![The four-layer governance stack. IABs fix the 'politicians don't want to' problem. They don't fix the 'laws won't let us' problem. One thing at a time.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-what-iabs-do-not-solve-bw-academic.jpg)
 
 
 **Problems that remain genuinely unsolved:**
@@ -1101,7 +1101,7 @@ The IAB architecture is not specific to health policy. It applies to any global 
 
 These conditions identify domains where the mechanism design approach is applicable. The formal requirements (A1–A5) must be satisfied, with domain-specific adaptations to the scoring function $f$ and payoff calibration.
 
-![A conceptual diagram showing the three necessary conditions (measurable outcomes, political control, and diffuse benefits/concentrated costs) that define the applicable domain for the IAB architecture.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-beyond-health-climate-nu-bw-academic.jpg)
+![The three things you need for IABs to work: you can measure if it worked, politicians can actually do it, and the benefits are spread out while the costs are concentrated. Like climate change, but we're trying to fix it instead of cause it.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-beyond-health-climate-nu-bw-academic.jpg)
 
 ### The General Template
 
@@ -1120,7 +1120,7 @@ Any global public good satisfying the above conditions can be "IAB-ified" using 
 
 We briefly survey three domains where IABs are applicable; Appendix B provides detailed specifications.
 
-![A conceptual diagram showing the common structural framework of concentrated opposition costs versus diffuse global benefits across climate change, nuclear disarmament, and pandemic preparedness.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-candidate-domains-bw-academic.jpg)
+![Why climate, nukes, and pandemics all have the same problem: fixing them hurts a few people a lot (weapons makers, oil companies) but helps everyone a tiny bit. Humanity is very bad at this type of math.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-candidate-domains-bw-academic.jpg)
 
 **Climate change.** Verified emissions reductions (UNFCCC reporting) provide a measurable metric. Politicians can be scored on climate legislation votes, treaty ratification, and budget allocations. The concentrated-diffuse asymmetry is stark: fossil fuel producers face concentrated losses while climate benefits are globally diffuse.
 

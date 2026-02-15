@@ -16,7 +16,7 @@ image: /assets/og-images/knowledge/strategy/global-referendum-og-retro-academic.
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![Comprehensive strategy for implementing a secure, globally verifiable referendum to demonstrate public support for a 1 percent treaty, including implementation, verification, and viral marketing approaches.](/assets/infographics/knowledge/strategy/global-referendum-infographic-retro-academic.jpg)
+![How to prove everyone wants this: blockchain voting, viral marketing, and enough math to make cheating harder than just doing it honestly.](/assets/infographics/knowledge/strategy/global-referendum-infographic-retro-academic.jpg)
 
 A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy" or a "metaphor" or a "nice idea."
 
@@ -34,7 +34,7 @@ Here's how to build that list.
 
 Build a privacy-preserving, globally verifiable referendum that shows public support for a [1% treaty](../solution/1-percent-treaty.qmd) and [decentralized institutes of health (DIH)](../solution/dih.qmd).
 
-![A conceptual framework showing how the five principles of Verifiability, Privacy, Equity, Transparency, and Viral Growth intersect to reach the 3.5% global participation threshold for an unstoppable referendum.](/assets/images/global-referendum/global-referendum-section-the-goal-bw-academic.jpg)
+![The five things you need for a global referendum that politicians can't ignore: real votes, secret votes, fair votes, visible votes, and viral growth.](/assets/images/global-referendum/global-referendum-section-the-goal-bw-academic.jpg)
 
 
 Requirements:
@@ -64,7 +64,7 @@ The voting system uses an **end-to-end verifiable scheme** (like Helios [@helios
 - **Zero-Knowledge Proofs**: Mathematical guarantees the count is legitimate without revealing how anyone voted
 - **Privacy by Design**: Biometric processing happens on your device; the system never sees raw data
 
-![Architecture of an end-to-end verifiable voting system showing the data flow from voter encryption and receipt generation to the public bulletin board and anonymizing mixnet.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
+![Your vote gets encrypted, mixed with everyone else's votes like a cryptographic smoothie, then posted publicly. You can verify yours; nobody knows it's yours.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
 
 The infrastructure handles 280M+ participants across 40+ languages with WCAG accessibility compliance. Technical details are open-source for independent audit.
 
@@ -120,7 +120,7 @@ Sometimes the best verification is humans verifying humans:
 
 The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted.
 
-![A tiered security model showing the cumulative verification layers, ranging from basic technical checks to biometric and social validation.](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
+![Layer 1: Are you human? Layer 2: Are you a real human? Layer 3: Are you a real human who hasn't voted already?](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
 
 ### AI-Powered Fraud Detection
 
@@ -132,7 +132,7 @@ Some people pass Layers 1 and 2. They have fake IDs, VPNs, and a concerning amou
 
 The system catches >99% of fraud attempts while maintaining <1% false positive rate for legitimate users.
 
-![A diagram illustrating how pattern analysis, network mapping, and real-time monitoring act as a multi-pronged AI filter to identify and block sophisticated fraud attempts.](/assets/images/global-referendum/global-referendum-section-ai-powered-fraud-detection-bw-academic.jpg)
+![AI watches for patterns. Bots make patterns. AI catches bots. It's like a bouncer, but it never gets tired or accepts bribes.](/assets/images/global-referendum/global-referendum-section-ai-powered-fraud-detection-bw-academic.jpg)
 
 ### On Privacy (Or: How Not to Build a Surveillance State)
 
@@ -143,7 +143,7 @@ The system catches >99% of fraud attempts while maintaining <1% false positive r
 - **Local Processing**: Biometric data (face scans, etc.) processed on YOUR device. You never see it. Ever.
 - **Encryption at Rest**: Everything encrypted with keys you control. You can't read it even if you wanted to.
 
-![An infographic illustrating the privacy-by-design data lifecycle, showing how information is filtered through minimization and local processing before reaching encrypted storage.](/assets/images/global-referendum/global-referendum-section-on-privacy-or-how-not-to-build-a-surveillance-state-bw-academic.jpg)
+![Your data stays on your phone until absolutely necessary. Then it gets encrypted. Then it gets deleted. Privacy, but we actually mean it.](/assets/images/global-referendum/global-referendum-section-on-privacy-or-how-not-to-build-a-surveillance-state-bw-academic.jpg)
 
 **Regional Compliance (Or: Not Getting Sued by Europeans):**
 
@@ -162,7 +162,7 @@ Getting 280 million people to do anything is hard. Getting 280 million people to
 
 #### QR Code T-Shirts
 
-![A conceptual flow showing how a person wearing a QR code t-shirt in a high-traffic area leads to scans, digital tracking, and measurable referral ROI.](/assets/images/global-referendum/global-referendum-section-qr-code-t-shirts-bw-academic.jpg)
+![Wear a QR code shirt in Times Square. People scan it. You track who signed up. Your body is now a billboard with analytics.](/assets/images/global-referendum/global-referendum-section-qr-code-t-shirts-bw-academic.jpg)
 
 
 - Custom printing with unique QR codes for each referrer
@@ -181,7 +181,7 @@ Getting 280 million people to do anything is hard. Getting 280 million people to
 
 #### Social Media Challenges
 
-![An infographic highlighting three social media engagement strategies (Cure Challenge, Referral Race, and Impact Chain) and their shared implementation drivers like influencers and prize incentives.](/assets/images/global-referendum/global-referendum-section-social-media-challenges-bw-academic.jpg)
+![Three ways to make supporting treaty abolition go viral: challenges, competitions, and chain reactions. Humanity will do anything for prizes and social validation.](/assets/images/global-referendum/global-referendum-section-social-media-challenges-bw-academic.jpg)
 
 - "Cure Challenge": Share your health story + referral link
 - "Referral Race": Compete for weekly leaderboard positions
@@ -192,7 +192,7 @@ Getting 280 million people to do anything is hard. Getting 280 million people to
 
 Memes are how ideas spread now. This is either depressing or convenient, depending on your perspective. We're choosing convenient.
 
-![A flowchart showing the progression of a meme campaign from creative approach and referral incentives to platform distribution and final analytics tracking.](/assets/images/global-referendum/global-referendum-section-meme-campaigns-bw-academic.jpg)
+![Make meme. Add referral link. Post everywhere. Track results. You're using humanity's short attention span for good.](/assets/images/global-referendum/global-referendum-section-meme-campaigns-bw-academic.jpg)
 
 - **Approach**: Dark humor about dying + referral incentives
 - **Distribution**: Reddit, Twitter, TikTok, Instagram
@@ -200,7 +200,7 @@ Memes are how ideas spread now. This is either depressing or convenient, dependi
 
 #### Influencer Partnerships
 
-![A conceptual model of the influencer partnership ecosystem illustrating the link between micro-influencer types, the educational content they produce, and the revenue-sharing compensation model.](/assets/images/global-referendum/global-referendum-section-influencer-partnerships-bw-academic.jpg)
+![Pay influencers to explain why dying is bad. They have followers; you have information. Economics, but make it educational.](/assets/images/global-referendum/global-referendum-section-influencer-partnerships-bw-academic.jpg)
 
 - **Micro-influencers**: Health advocates, patient influencers, medical professionals
 - **Compensation**: Revenue sharing from their referral earnings
@@ -216,7 +216,7 @@ Memes are how ideas spread now. This is either depressing or convenient, dependi
 
 #### University Campus Programs
 
-![A strategic overview of university campus programs showing the relationship between target audiences, specific engagement approaches, and implementation tactics.](/assets/images/global-referendum/global-referendum-section-university-campus-programs-bw-academic.jpg)
+![College students: young, idealistic, and will sign anything if there's free pizza. The demographics work themselves out.](/assets/images/global-referendum/global-referendum-section-university-campus-programs-bw-academic.jpg)
 
 - **Target**: Students, faculty, health science departments
 - **Approach**: Educational presentations, research partnerships, referral competitions
@@ -224,7 +224,7 @@ Memes are how ideas spread now. This is either depressing or convenient, dependi
 
 #### Disease-Specific Forums
 
-![A workflow diagram illustrating the sequential strategy for community engagement: starting with platform selection, moving to value-driven participation, and concluding with referral introduction.](/assets/images/global-referendum/global-referendum-section-disease-specific-forums-bw-academic.jpg)
+![Step 1: Find where people gather online. Step 2: Give them something valuable. Step 3: Ask them to tell their friends. Marketing, discovered.](/assets/images/global-referendum/global-referendum-section-disease-specific-forums-bw-academic.jpg)
 
 - Engage existing communities where people discuss health
 - **Platforms**: Reddit, Facebook groups, specialized health forums
@@ -258,7 +258,7 @@ People will claim you cheated. This is inevitable. The only defense is making ch
 
 #### Cryptographic Receipts
 
-![A diagram illustrating the flow of cryptographic receipts from voter tracking to public auditing and privacy-preserving verification using zero-knowledge proofs.](/assets/images/global-referendum/global-referendum-section-cryptographic-receipts-bw-academic.jpg)
+![You get a receipt proving you voted. Math proves the vote is real. Math doesn't reveal who you are. Cryptography: magic, but real.](/assets/images/global-referendum/global-referendum-section-cryptographic-receipts-bw-academic.jpg)
 
 - Each voter receives a tracking code to verify inclusion
 - Public audit capabilities for all submitted ballots
@@ -266,7 +266,7 @@ People will claim you cheated. This is inevitable. The only defense is making ch
 
 #### Public Audit System
 
-![A conceptual diagram showing the three pillars of a Public Audit System: data transparency (ballots and ZK proofs), code transparency (open-source verification), and human oversight (independent observers).](/assets/images/global-referendum/global-referendum-section-public-audit-system-bw-academic.jpg)
+![Everyone can see the votes. Everyone can check the code. Humans watch to make sure the machines aren't lying. Trust, but verify everything.](/assets/images/global-referendum/global-referendum-section-public-audit-system-bw-academic.jpg)
 
 - Publish anonymized ballots, ZK proofs or mixnet transcripts
 - Open-source code with commit hashes for transparency
@@ -282,7 +282,7 @@ People will claim you cheated. This is inevitable. The only defense is making ch
 
 #### Reward Structure
 
-![A diagram illustrating the reward flow from VICTORY Bonds through anti-fraud and per-capita filters to a public ledger.](/assets/images/global-referendum/global-referendum-section-reward-structure-bw-academic.jpg)
+![Bonds get distributed. Fraud gets filtered. Real people get paid. Ledger stays public. Incentives meet accountability; accountability wins.](/assets/images/global-referendum/global-referendum-section-reward-structure-bw-academic.jpg)
 
 - Funded via [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) with strict anti-fraud caps
 - Per-capita limits to prevent gaming
@@ -290,7 +290,7 @@ People will claim you cheated. This is inevitable. The only defense is making ch
 
 #### Education-First Approach
 
-![A progression flowchart showing the journey from structured learning paths to unlocking higher reward tiers and achieving informed participation.](/assets/images/global-referendum/global-referendum-section-education-first-approach-bw-academic.jpg)
+![Learn about the treaty. Pass a quiz. Earn more rewards. You gamified informed consent.](/assets/images/global-referendum/global-referendum-section-education-first-approach-bw-academic.jpg)
 
 You can't just pay people to click buttons. Well, you can, but then you get garbage data and angry economists. Instead:
 
@@ -302,7 +302,7 @@ You can't just pay people to click buttons. Well, you can, but then you get garb
 
 #### Consultation Framing
 
-![A conceptual framework showing how global consultation, national bridges, and legal review work together to establish legitimacy.](/assets/images/global-referendum/global-referendum-section-consultation-framing-bw-academic.jpg)
+![Talk to everyone. Work with governments. Get lawyers to approve it. Legitimacy is just bureaucracy, but successful.](/assets/images/global-referendum/global-referendum-section-consultation-framing-bw-academic.jpg)
 
 - Non-binding global consultation to demonstrate consent
 - Country-specific bridges to official mechanisms where feasible
@@ -320,7 +320,7 @@ Building a global referendum in 12 months sounds insane. It is insane. But so is
 
 ### Phase 1: Foundation (Months 1-2)
 
-![A visual roadmap of Phase 1 showing the parallel development of product design, social strategy, and technical infrastructure during the first two months.](/assets/images/global-referendum/global-referendum-section-phase-1-foundation-months-1-2-bw-academic.jpg)
+![Month 1-2: Build the website, plan the marketing, and make the blockchain work. Multitasking, but organized.](/assets/images/global-referendum/global-referendum-section-phase-1-foundation-months-1-2-bw-academic.jpg)
 
 
 - Design and test QR code t-shirt concept
@@ -337,7 +337,7 @@ Building a global referendum in 12 months sounds insane. It is insane. But so is
 
 ### Phase 3: Global Launch (Months 7-12)
 
-![A strategic infographic representing the Phase 3 global launch, illustrating the synchronization of marketing, system deployment, and community coordination to achieve the 3.5 percent participation target.](/assets/images/global-referendum/global-referendum-section-phase-3-global-launch-months-7-12-bw-academic.jpg)
+![Launch day: Turn on the system, flood social media, and coordinate volunteers worldwide. The hardest part is getting everyone to press 'go' simultaneously.](/assets/images/global-referendum/global-referendum-section-phase-3-global-launch-months-7-12-bw-academic.jpg)
 
 - Full-scale viral marketing campaign
 - International verification system deployment
@@ -361,7 +361,7 @@ Building a global referendum in 12 months sounds insane. It is insane. But so is
 
 Secondary metrics track geographic distribution, brand awareness, and whether politicians have started sweating yet.
 
-![A KPI dashboard visualizing the four pillars of success: scale (280M participants), cost-efficiency (<0.75/user), viral growth (>1.0 coefficient), and system integrity (>99 percent fraud detection).](/assets/images/global-referendum/global-referendum-section-success-metrics-bw-academic.jpg)
+![Success metrics: get 280 million people for under $210 million, grow exponentially, and catch 99% of cheaters. Ambitious, but measurable.](/assets/images/global-referendum/global-referendum-section-success-metrics-bw-academic.jpg)
 
 ## On Putting It All Together
 
@@ -369,7 +369,7 @@ Secondary metrics track geographic distribution, brand awareness, and whether po
 
 A global referendum that combines cutting-edge verification technology with viral marketing to achieve the {{< var global_population_activism_threshold_pct >}} tipping point.
 
-![A process diagram illustrating how viral marketing and cryptographic verification scale to 280 million supporters to exert decisive political pressure.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
+![280 million people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
 
 Translation: You're getting 280 million humans to cryptographically prove they support the treaty, which creates political pressure so intense that ignoring it becomes career suicide for politicians.
 
@@ -377,7 +377,7 @@ Translation: You're getting 280 million humans to cryptographically prove they s
 
 This isn't just a referendum. It's creating a new standard for global digital democracy that proves you can secure mass participation without building a surveillance state or trusting any central authority.
 
-![A comparison between a traditional centralized democracy model dependent on trust and surveillance versus a decentralized model secured by mathematical verification.](/assets/images/global-referendum/global-referendum-section-the-innovation-part-bw-academic.jpg)
+![Old way: Trust the government to count votes honestly. New way: Math counts votes; government can't cheat even if it wants to.](/assets/images/global-referendum/global-referendum-section-the-innovation-part-bw-academic.jpg)
 
 It's democracy, but with math instead of hope.
 
@@ -385,7 +385,7 @@ It's democracy, but with math instead of hope.
 
 $200M for the campaign, as allocated in the VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org).
 
-![A comparison illustrating the 0.75 target acquisition cost for disease prevention against significantly higher typical consumer product acquisition costs.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
+![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
 
 Target cost: <$0.75 per verified participant to hit the 280M+ goal.
 
@@ -414,7 +414,7 @@ The pattern repeats because once you hit {{< var global_population_activism_thre
 
 The strategy leverages this precedent with a twist: offer people healthcare they actually want, and watch them voluntarily join the largest political movement in history. No marches required. Just clicking.
 
-![A visualization of the 3.5% Rule tipping point, showing how a small percentage of active population participation creates the momentum necessary for unstoppable social and political change.](/assets/images/global-referendum/global-referendum-section-on-why-3-5-is-the-magic-number-bw-academic.jpg)
+![3.5% of people actively pushing for change is enough to topple governments. It's a historical pattern, like gravity but for revolutions.](/assets/images/global-referendum/global-referendum-section-on-why-3-5-is-the-magic-number-bw-academic.jpg)
 
 
 People show up for the healthcare. Politicians see 280 million verified supporters. The treaty becomes inevitable.

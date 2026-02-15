@@ -55,7 +55,7 @@ Optimocracy is simple:
 
 1. **Exploit cross-jurisdictional variation as natural experiments**: Thousands of jurisdictions have made different policy and budget choices over decades. When Kansas cuts education funding and Minnesota increases it, that's a natural experiment. Apply causal inference methods (synthetic control, difference-in-differences, regression discontinuity) to estimate what happened to median real after-tax income and healthy life years.
 
-![A flowchart illustrating the Optimocracy cycle: from historical data analysis and outcome calculation to evidence-based recommendations, alignment tracking, and incentive-based funding.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg)
+![Optimocracy: measure what works, recommend what works, check if anyone listened, pay people who listened. It's the revolutionary idea of doing the thing that works.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg)
 
 2. **Identify which policies predict above-average outcomes**: Not ideology. Not theory. Which specific policy choices, across hundreds of jurisdictions and decades of data, causally predicted higher median income and more healthy life years?
 
@@ -87,7 +87,7 @@ Political actors optimize for what gets them reelected: campaign contributions, 
 
 Rankings of government programs by cost-effectiveness already exist. The Copenhagen Consensus publishes rigorous benefit-cost analyses: childhood vaccinations (101:1 BCR), e-government procurement (125:1), maternal health interventions (87:1). GiveWell, Open Philanthropy, and academic institutions produce similar analyses.
 
-![A conceptual diagram showing the disconnect between high-return evidence and government action, where political incentives such as reelection and campaign contributions act as a barrier to implementing cost-effective programs.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
+![Evidence says do this thing. Politicians say no because it won't get them reelected. You built a system where saving lives loses votes.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
 
 Yet government spending patterns remain largely unresponsive. Gilens and Page [-@gilens2014] analyzed 1,779 policy decisions: "economic elites and organized groups representing business interests have substantial independent impacts on U.S. government policy, while mass-based interest groups and average citizens have little or no independent influence."
 
@@ -97,7 +97,7 @@ The problem is not information but incentives. Politicians know which programs p
 
 Before proposing solutions, we must establish the magnitude of the problem. This section synthesizes peer-reviewed research documenting welfare losses from suboptimal policy. The metaphor "trillion dollar bills on the sidewalk" comes from @olson1996, who showed that differences between rich and poor countries are primarily due to institutions and policies, not factors of production.
 
-![A conceptual diagram illustrating how institutional and policy quality, rather than raw factors of production, serve as the primary drivers for the disparity in economic welfare between nations.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
+![Rich countries aren't rich because of resources. They're rich because their rules aren't stupid. Poor countries have bad governments. It's the institutions, not the dirt.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
 
 ### Quantifying the Political Dysfunction Tax
 
@@ -155,7 +155,7 @@ This pattern (massive welfare losses persisting due to political economy constra
 
 The US government waste estimate of {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP) is derived from the [United States Efficiency Audit](us-efficiency-audit.qmd), which enumerates specific, measurable policy failures across defense, healthcare, justice, regulatory, and subsidy subsystems.
 
-![A breakdown of documented US government waste by subsystem, showing healthcare, housing, military, regulatory, tax compliance, and other categories.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
+![How America wastes money, by category. Healthcare, military, regulations, taxes, housing. It's like a pie chart of inefficiency, and every slice is surprisingly large.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
 
 International comparisons reinforce this estimate: the US spends {{< var us_vs_switzerland_spending_gap >}} percentage points MORE of GDP than Switzerland yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
 
@@ -182,7 +182,7 @@ The empirical evidence suggests:
 3. **The inefficiency is systematic**: It recurs across domains and countries, suggesting structural rather than contingent causes.
 4. **Capture is the primary mechanism**: Policies systematically favor concentrated interests over diffuse citizen welfare.
 
-![A conceptual diagram showing how political dysfunction and interest capture lead to systemic welfare loss, highlighting the shift toward outcome-optimizing mechanism design.](/assets/images/optimocracy-paper/optimocracy-paper-section-implications-for-mechanism-design-bw-academic.jpg)
+![Politicians get captured by special interests, which makes everyone poorer, so we're trying to design systems where being terrible is harder. Childproofing democracy.](/assets/images/optimocracy-paper/optimocracy-paper-section-implications-for-mechanism-design-bw-academic.jpg)
 
 This motivates the Optimocracy thesis: if current systems systematically fail to optimize for welfare, outcome-optimizing systems may improve outcomes. The following sections examine precedents, mechanisms, and limitations.
 
@@ -190,7 +190,7 @@ This motivates the Optimocracy thesis: if current systems systematically fail to
 
 Optimocracy's structural advantage comes from consolidating capture opportunities. The only attack surface is the verification layer itself: coordinating multiple independent institutions to misreport the same metrics, without detection.
 
-![A conceptual comparison between the status quo's single-point-of-failure (lobbying a committee chair) and Optimocracy's multi-institutional verification layer requiring coordination across independent bodies.](/assets/images/optimocracy-paper/optimocracy-paper-section-when-does-optimocracy-beat-the-status-quo-bw-academic.jpg)
+![Now: bribe one committee chair, get your way. Optimocracy: you'd have to bribe multiple independent organizations simultaneously. Corruption, but make it difficult.](/assets/images/optimocracy-paper/optimocracy-paper-section-when-does-optimocracy-beat-the-status-quo-bw-academic.jpg)
 
 Health and wealth are not arbitrary metrics. They are what humans universally value. The challenge for would-be corruptors: coordinate the Census Bureau, Federal Reserve, BLS, academic researchers, and citizen surveys to all report the same biased figure, without any whistleblowers. These institutions have different governance structures, funding sources, and methodologies. Collusion among strangers who lose credibility if caught is fundamentally harder than lobbying a single committee chair.
 
@@ -222,7 +222,7 @@ In plain English: the left side is the cost of corrupting Optimocracy (coordinat
 
 Previous attempts at technocratic governance (Soviet central planning, credit rating agencies) failed due to knowledge problems, incentive misalignment, and scope creep. Optimocracy learns from these failures by using median aggregation across independent data sources, limiting scope to budget/policy recommendations (not comprehensive planning), and preserving market mechanisms for production decisions. For detailed historical analysis and engagement with Arrow's impossibility theorem, mechanism design theory, and democratic legitimacy concerns, see [Appendix B](#appendix-b-theoretical-background).
 
-![A comparison diagram illustrating how Optimocracy addresses historical technocratic failures through multi-source verification and median aggregation to generate policy recommendations.](/assets/images/optimocracy-paper/optimocracy-paper-section-theoretical-foundations-bw-academic.jpg)
+![Past technocrats failed because one source could be wrong or corrupt. Optimocracy uses multiple sources and takes the median. Wisdom of crowds, but for governments.](/assets/images/optimocracy-paper/optimocracy-paper-section-theoretical-foundations-bw-academic.jpg)
 
 Critically, Optimocracy also avoids the Soviet knowledge problem because it does not plan from first principles. It learns from decentralized experiments that already happened. Thousands of jurisdictions have already tried different policies; Optimocracy uses causal inference to identify which choices led to better outcomes. This is empirical pattern recognition across natural experiments, not central planning.
 
@@ -232,7 +232,7 @@ Health and wealth aren't contested values requiring democratic selection. They'r
 
 **Rule-based allocation:** Systematic approaches consistently outperform discretionary judgment across domains. Over 15-year periods, 90%+ of active fund managers underperform benchmark indices after fees [@spiva2023]. Formula-based programs like Social Security COLA remove annual political battles over adjustments.
 
-![A comparative visualization of rule-based versus discretionary systems, illustrating the performance gap and the feedback loop where public reporting increases the political cost of ignoring evidence.](/assets/images/optimocracy-paper/optimocracy-paper-section-precedents-that-work-bw-academic.jpg)
+![Rules-based systems work better. When you publish the results, politicians look bad for ignoring them. Shame, but quantified and public.](/assets/images/optimocracy-paper/optimocracy-paper-section-precedents-that-work-bw-academic.jpg)
 
 **Credible commitment:** Published rules make deviation visible. Multiple institutions report outcomes. Politicians vote freely, but alignment with recommendations is tracked publicly. This raises the political cost of ignoring evidence.
 
@@ -419,7 +419,7 @@ This two-metric system is used by both the [Optimal Policy Generator](optimal-po
 
 Under current governance, 12,000+ federal lobbyists spend $4+ billion annually with estimated 100:1 returns [@drutman2015]. Every budget line item is a lobbying opportunity.
 
-![A comparison showing the shift from a fragmented lobbying landscape with thousands of targets to a consolidated Optimocracy model protected by multi-institutional verification layers.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
+![Lobbyists currently have thousands of people to corrupt. Optimocracy gives them one target protected by multiple watchdogs. You're trying to make corruption impractical instead of illegal.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
 
 Optimocracy collapses this attack surface to one target: **measurement methodology capture**. To corrupt the system, you need to simultaneously corrupt the Census Bureau, Federal Reserve, BLS, academic institutions, AND decentralized citizen surveys, all without detection. Coordination costs increase by 1-2 orders of magnitude.
 
@@ -427,7 +427,7 @@ Optimocracy collapses this attack surface to one target: **measurement methodolo
 
 Politicians face 2-6 year horizons; welfare-improving investments often take 15-30 years to pay off. The algorithm weights long-term outcomes appropriately because it doesn't face reelection.
 
-![A comparison of decision-making timelines showing the 2-6 year political reelection cycle versus the 15-30 year payoff period for societal investments.](/assets/images/optimocracy-paper/optimocracy-paper-section-time-consistency-bw-academic.jpg)
+![Politicians think in 2 to 6 year terms. Good policies pay off in 15 to 30 years. You gave people with the attention span of toddlers control of civilization's long-term planning.](/assets/images/optimocracy-paper/optimocracy-paper-section-time-consistency-bw-academic.jpg)
 
 ### Transparency
 
@@ -443,7 +443,7 @@ Politicians face 2-6 year horizons; welfare-improving investments often take 15-
 
 Current politics rewards tribal opposition. Optimocracy shifts the debate from "whose policy?" to "what works?" The algorithm doesn't know which party proposed the budget. You can't spin the Census Bureau as a Democratic or Republican institution. The number either went up or it didn't.
 
-![A comparison between tribal politics, which focuses on party identity, and Optimocracy, which focuses on objective data outcomes.](/assets/images/optimocracy-paper/optimocracy-paper-section-depolarization-bw-academic.jpg)
+![Tribal politics: my team good, your team bad. Optimocracy: did anyone get healthier or richer. One is sports, the other is governance.](/assets/images/optimocracy-paper/optimocracy-paper-section-depolarization-bw-academic.jpg)
 
 ## Challenges and Failure Modes
 
@@ -451,7 +451,7 @@ Current politics rewards tribal opposition. Optimocracy shifts the debate from "
 
 "When a measure becomes a target, it ceases to be a good measure" [@goodhart1984]. Traditional Goodhart examples (teaching to test, hospital readmissions) involve gaming metrics *without improving underlying reality*.
 
-![A comparison between traditional metrics vulnerable to behavioral gaming and resilient metrics like median income and healthy life years, highlighting why certain data structures resist Goodhart's Law.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
+![Some numbers are easy to fake. GDP per capita looks great if three billionaires move in. Median income and healthy life years are harder to game. You can't fake everyone being less dead.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
 
 **Median income and healthy life years are different:** You can't fake purchasing power at scale; administrative records cross-validate surveys. Mortality is binary and hard to fake. "Median" resists outlier gaming. Long time horizons resist timing games.
 
@@ -480,7 +480,7 @@ If adversaries control the data feed, they control the allocation. This is the m
 
 **The concern:** "The algorithm decided" lacks the felt legitimacy of "we the people decided."
 
-![A conceptual diagram of the Optimocracy wrapper architecture, showing citizens at the top setting goals, politicians providing the decision-making 'wrapper' around algorithmic recommendations, and the resulting alignment with public health and wealth.](/assets/images/optimocracy-paper/optimocracy-paper-section-democratic-legitimacy-bw-academic.jpg)
+![Citizens pick the goals. Algorithms suggest the methods. Politicians officially approve them. Democracy, but with training wheels made of evidence.](/assets/images/optimocracy-paper/optimocracy-paper-section-democratic-legitimacy-bw-academic.jpg)
 
 **The response:** Optimocracy is *more* democratic, not less. The current system offers ritual (voting) but delivers oligarchy (@gilens2014). Optimocracy delivers what citizens actually voted for: health and wealth.
 
@@ -490,7 +490,7 @@ For deeper engagement with democratic theory objections, see [Appendix B](#appen
 
 ## Testable Predictions
 
-![A comparative visualization showing the predicted performance gains of Optimocracy over traditional allocation methods across philanthropic metrics, government welfare per dollar, and resilience to institutional capture.](/assets/images/optimocracy-paper/optimocracy-paper-section-testable-predictions-bw-academic.jpg)
+![Optimocracy beats normal government at charitable giving, money efficiency, and not getting corrupted. Being better than government is a low bar, but here we are.](/assets/images/optimocracy-paper/optimocracy-paper-section-testable-predictions-bw-academic.jpg)
 
 A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (Note: Existing evidence already supports the general case for algorithmic over discretionary allocation; formula programs like Social Security show lower lobbying intensity than discretionary programs [@drutman2015]. The predictions below are specific to Optimocracy.)
 
@@ -523,7 +523,7 @@ The Optimocracy thesis would be falsified by:
 
 We commit to updating or abandoning the proposal if evidence accumulates against these predictions.
 
-![A conceptual map of the four falsification criteria for the Optimocracy thesis, illustrating potential failure modes across performance, systemic integrity, universal values, and social legitimacy.](/assets/images/optimocracy-paper/optimocracy-paper-section-rejection-criteria-bw-academic.jpg)
+![Four ways Optimocracy could fail: it doesn't work, it gets corrupted, it optimizes for terrible things, or people hate it anyway. Science, but pessimistic.](/assets/images/optimocracy-paper/optimocracy-paper-section-rejection-criteria-bw-academic.jpg)
 
 ## The Wrapper Architecture: How Funding Works
 
@@ -579,7 +579,7 @@ A close race with a large alignment gap gets priority over a safe seat, even if 
 
 The empirical case for Optimocracy is strong (Section 2 documented {{< var us_gov_waste_total >}} in US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs). But optimal policy has been documented for decades. The question is not "what should we do?" but "how do we overcome political opposition to doing it?"
 
-![A conceptual framework showing the transformation of political opposition into support for reform by identifying and compensating stakeholders impacted by the shift to optimal policy.](/assets/images/optimocracy-paper/optimocracy-paper-section-political-economy-making-reform-happen-bw-academic.jpg)
+![Pay the people who lose from good policy. Bribe them into not blocking progress. It's corruption in reverse, morally.](/assets/images/optimocracy-paper/optimocracy-paper-section-political-economy-making-reform-happen-bw-academic.jpg)
 
 This section develops the political economy of reform, distinguishing actors who benefit from optimal policy from those who lose, and proposing mechanisms to convert opponents into supporters.
 
@@ -595,7 +595,7 @@ Optimal policy creates massive value ($20-50T annually). Those currently benefit
 
 The Optimocracy SuperPAC creates a market for political support. It allocates campaign support proportional to politician alignment with evidence-based recommendations. Alignment is tracked via Optimocracy's recommendation/voting comparison. Politicians can follow donor preferences or follow evidence and receive SuperPAC support. The scoring rules are transparent and published.
 
-![A comparison of political incentive structures showing how SuperPAC support for evidence-based policy shifts a politician's career calculus from traditional lobbying toward optimal policy outcomes.](/assets/images/optimocracy-paper/optimocracy-paper-section-how-the-superpac-makes-this-concrete-bw-academic.jpg)
+![Give politicians money for doing the right thing instead of money for doing the profitable thing. Fight bribery with counter-bribery. It's elegant, in a depressing way.](/assets/images/optimocracy-paper/optimocracy-paper-section-how-the-superpac-makes-this-concrete-bw-academic.jpg)
 
 A senator currently receives ~$174K salary plus ~$5-20M in career post-office value from lobbying relationships. SuperPAC campaign support for aligned politicians shifts this calculus: supporting optimal policy becomes the career-maximizing choice.
 
@@ -667,7 +667,7 @@ Reform advocates provide initial capital and legitimacy; major funders provide a
 
 Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund the SuperPAC enough to make ignoring recommendations unprofitable?" (tractable). This reframing converts the implementation problem from a political revolution to a fundraising challenge.
 
-![A comparison showing the shift from a direct power struggle to an indirect incentive model where Optimocracy influences politicians through financial levers.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-government-adoption-isn-t-required-bw-academic.jpg)
+![Instead of forcing politicians to be good, pay them to accidentally do good things while pursuing money. You can't fix human nature, but you can redirect it.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-government-adoption-isn-t-required-bw-academic.jpg)
 
 ### Implementation Strategy
 
@@ -684,7 +684,7 @@ The bottleneck is not technology. The bottleneck is coordination: assembling cap
 
 We propose a specific first deployment to make Optimocracy actionable rather than theoretical.
 
-![A structural diagram illustrating the GiveWell Outcome Fund's workflow, from initial capital and stakeholder methodology through algorithmic allocation to outcome verification and scaling.](/assets/images/optimocracy-paper/optimocracy-paper-section-concrete-first-deployment-the-givewell-outcome-fund-bw-academic.jpg)
+![The GiveWell Outcome Fund's workflow. Money goes in, algorithm does maths, outcomes come out. Like a vending machine, but for saving lives instead of dispensing crisps.](/assets/images/optimocracy-paper/optimocracy-paper-section-concrete-first-deployment-the-givewell-outcome-fund-bw-academic.jpg)
 
 **Target domain:** Effective altruism / global health philanthropy. Why: GiveWell already produces rigorous QALY/$ estimates, the EA community is philosophically committed to outcome optimization, mortality data is increasingly reliable, and the community allocates $1B+ annually.
 
@@ -708,7 +708,7 @@ The question is not whether Optimocracy is perfect; no governance system is. The
 
 Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is no. Optimocracy *is* the safe architecture for AI governance. "Aligned AI" requires specifying aligned *to what*. Health and wealth are the answer: universal human values, not arbitrary choices. Even a superintelligent AI should operate within an Optimocracy-like structure: optimize for what humans universally value, independent systems verify outcomes, and humans retain final approval authority. The algorithm (whether simple optimization or AGI) proposes; humans decide. Optimocracy isn't replaced by better AI; it's what makes AI governance safe. The framework scales from spreadsheet calculations to superintelligence while preserving human oversight.
 
-![A diagram illustrating the Optimocracy AI governance framework where AI systems propose optimizations based on universal values, which are then verified by independent systems before final human approval.](/assets/images/optimocracy-paper/optimocracy-paper-section-what-about-ai-bw-academic.jpg)
+![AI suggests good ideas based on universal values, other AIs check the first AI's work, then humans decide. It's like having three people to change a lightbulb, but one of them knows how many people die in the dark.](/assets/images/optimocracy-paper/optimocracy-paper-section-what-about-ai-bw-academic.jpg)
 
 We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
 
@@ -720,7 +720,7 @@ The urgency grows with each passing year. Deepfakes are eroding the shared factu
 
 Optimocracy optimizes governance through two complementary mechanisms, each addressing a different aspect of the welfare-maximization problem.
 
-![A conceptual diagram showing how Budget and Policy Optimization serve as the two pillars of the Optimocracy framework to achieve welfare maximization.](/assets/images/optimocracy-paper/optimocracy-paper-section-budget-and-policy-optimization-two-complementary-frameworks-bw-academic.jpg)
+![The two pillars of Optimocracy: one tells you what to do, the other tells you how much to spend doing it. You'd think humans would have invented this before inventing NFTs.](/assets/images/optimocracy-paper/optimocracy-paper-section-budget-and-policy-optimization-two-complementary-frameworks-bw-academic.jpg)
 
 #### Budget Optimization: The Optimal Budget Generator (OBG) Framework
 
@@ -833,11 +833,11 @@ Optimocracy does not claim to eliminate all governance risk. It claims to:
 
 **The honest comparison** isn't "algorithmic governance vs. perfect security." It's "algorithmic governance vs. Congress." Algorithmic systems create clearer feedback loops between failure and correction: failures are visible, embarrassing, and spawn better security practices. Congressional capture is often invisible and legal. The Farm Bill has been getting worse since 1933. Neither system is perfect, and the process of updating algorithms in response to failures remains subject to political pressures, but algorithmic systems at least make failures visible.
 
-![A comparison between algorithmic governance and traditional political systems, highlighting differences in attack costs, transparency of failure, and the feedback loops for system correction.](/assets/images/optimocracy-paper/optimocracy-paper-section-realistic-security-properties-bw-academic.jpg)
+![Traditional politics: easy to corrupt, hides mistakes, learns nothing. Algorithmic governance: expensive to corrupt, shows all mistakes, learns from them. You can see why politicians prefer the first one.](/assets/images/optimocracy-paper/optimocracy-paper-section-realistic-security-properties-bw-academic.jpg)
 
 #### Defense-in-Depth Architecture
 
-![A layered defense-in-depth architecture diagram illustrating the six security measures protecting the core system logic.](/assets/images/optimocracy-paper/optimocracy-paper-section-defense-in-depth-architecture-bw-academic.jpg)
+![Six layers of security protecting the core system. Like an onion, but instead of making you cry, it makes lobbyists cry.](/assets/images/optimocracy-paper/optimocracy-paper-section-defense-in-depth-architecture-bw-academic.jpg)
 
 Production Optimocracy systems should implement:
 
@@ -852,7 +852,7 @@ Production Optimocracy systems should implement:
 
 This appendix provides deeper theoretical context for readers interested in the academic foundations and historical precedents. The main text presents the mechanism; this appendix addresses why alternative approaches have failed and engages with theoretical objections.
 
-![A conceptual framework comparing the proposed mechanism with alternative historical approaches and theoretical foundations.](/assets/images/optimocracy-paper/optimocracy-paper-section-appendix-b-theoretical-background-appendix-bw-academic.jpg)
+![How this system compares to other things humans have tried. Spoiler: the other things didn't work, which is why you're still here reading about new systems.](/assets/images/optimocracy-paper/optimocracy-paper-section-appendix-b-theoretical-background-appendix-bw-academic.jpg)
 
 ### Historical Precedents: Technocratic Governance Failures
 
@@ -864,7 +864,7 @@ The Soviet system attempted comprehensive optimization: central planners would c
 2. **Incentive problem**: Planners had no personal stake in outcomes and faced perverse incentives.
 3. **Scope problem**: Central planning attempted to optimize *everything*, including decisions where local knowledge is essential.
 
-![A comparison between Soviet Central Planning, which manages all market production, and Optimocracy, which provides algorithmic recommendations for budgets and policy while leaving production to the market.](/assets/images/optimocracy-paper/optimocracy-paper-section-soviet-central-planning-bw-academic.jpg)
+![Soviet Central Planning told everyone what to make. Optimocracy tells governments how to spend, then lets the market do market things. It's the difference between controlling everything badly and controlling one thing well.](/assets/images/optimocracy-paper/optimocracy-paper-section-soviet-central-planning-bw-academic.jpg)
 
 **Why Optimocracy differs:** Optimocracy doesn't replace markets or local decision-making. It optimizes *budget allocation* and *policy recommendations* where centralized data is sufficient, while preserving market mechanisms for production decisions. The algorithm recommends; politicians and markets decide.
 
@@ -878,7 +878,7 @@ Credit ratings were supposed to be objective, algorithmic assessments of default
 
 **What Optimocracy learns:** Use median aggregation across multiple independent sources with different governance structures. No single entity controls measurement.
 
-![A conceptual diagram contrasting the centralized conflict of interest in traditional credit rating models with the decentralized median aggregation approach.](/assets/images/optimocracy-paper/optimocracy-paper-section-credit-rating-agencies-1990s-2008-bw-academic.jpg)
+![Old system: one company rates things, gets paid by the things it rates. New system: many raters, take the middle answer. It's like asking multiple people if you look good instead of asking your mum.](/assets/images/optimocracy-paper/optimocracy-paper-section-credit-rating-agencies-1990s-2008-bw-academic.jpg)
 
 ### Engaging with Impossibility Theorems
 
@@ -886,7 +886,7 @@ Credit ratings were supposed to be objective, algorithmic assessments of default
 
 @arrow1951 proved no voting rule perfectly aggregates conflicting preferences. @gibbard1973 showed any voting rule can be strategically gamed.
 
-![A comparison showing the shift from a Social Choice Problem where goals are contested to an Implementation Problem where goals are shared but measurement is the primary challenge.](/assets/images/optimocracy-paper/optimocracy-paper-section-arrow-and-gibbard-satterthwaite-bw-academic.jpg)
+![Old problem: arguing about what we want. New problem: agreeing we want good things but arguing about how to measure them. Progress, technically.](/assets/images/optimocracy-paper/optimocracy-paper-section-arrow-and-gibbard-satterthwaite-bw-academic.jpg)
 
 **Why these don't apply:** Health and wealth are not contested values in the Arrow sense. They are near-universal instrumental goods. Nobody campaigns on "Vote for me, I'll make you sicker and poorer." The debate is always about *how* to achieve health and wealth, never *whether* they're good.
 
@@ -896,7 +896,7 @@ The challenge shifts from "what should we optimize?" (self-evident) to "how do w
 
 The Revelation Principle [@myerson1981; @maskin1999] states that data reporters only tell the truth when lying costs more than it's worth.
 
-![A conceptual diagram illustrating the trade-off between the cost of manipulation and the incentives for truth-telling within the Optimocracy framework.](/assets/images/optimocracy-paper/optimocracy-paper-section-mechanism-design-the-revelation-principle-bw-academic.jpg)
+![The more expensive lying becomes, the more attractive truth-telling looks. Economics discovered honesty. Only took a few thousand years.](/assets/images/optimocracy-paper/optimocracy-paper-section-mechanism-design-the-revelation-principle-bw-academic.jpg)
 
 **What this means for Optimocracy:**
 

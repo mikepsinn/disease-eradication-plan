@@ -144,7 +144,7 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 **The Result:** A self-sustaining research ecosystem where participating platforms collect outcome data using standardized schemas, and the protocol aggregates this into continuously-updated treatment rankings available to all participants.
 
-![A system architecture diagram illustrating the Open Coordination Protocol as a central hub connecting treatment providers and patients through a network of compliant health platforms and apps.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-core-model-an-open-coordination-protocol-bw-academic.jpg)
+![A map of how sick people might meet doctors, if everyone agreed to use the same computer system. They won't.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-core-model-an-open-coordination-protocol-bw-academic.jpg)
 
 ### Key Capabilities
 
@@ -206,7 +206,7 @@ Even if only 25% of deaths are eventually avoidable (half our estimate), the fra
 
 This analysis models a scenario with {{< var dih_treasury_to_medical_research_annual >}}/year allocated to pragmatic clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, this funds approximately {{< var dih_patients_fundable_annually >}} patient-years annually.
 
-![A comparison showing how $21.8B in annual funding accelerates the clearing of the disease treatment backlog, reducing the timeline from 443 years to just 36 years.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg)
+![With proper funding, we could solve the backlog in 36 years instead of 443. Your great-great-great-great-great-great-great-grandchildren will be so pleased.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg)
 
 ::: {.callout-tip}
 **On the Funding Assumption**: This analysis demonstrates what becomes possible when the funding constraint is removed. The {{< var dih_treasury_to_medical_research_annual >}}/year figure is achievable through multiple mechanisms:
@@ -238,7 +238,7 @@ Approximately {{< var diseases_without_effective_treatment >}} lack effective tr
 >
 > **Ecosystem Integration**: The protocol leverages existing infrastructure - DCT platforms, major EHR systems, academic medical centers, and consumer health apps. These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
 
-![A visual breakdown of the ROM cost estimates for protocol infrastructure and the ecosystem of stakeholders it connects, including EHR systems, DCT platforms, and research centers.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estim-bw-academic.jpg)
+![How much it costs to make all the medical computer systems talk to each other, assuming they want to. They don't want to.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estim-bw-academic.jpg)
 
 This section provides a **Rough Order of Magnitude (ROM)** cost estimate for the protocol infrastructure that enables decentralized clinical trials.
 
@@ -509,7 +509,7 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 - **QALY Framework:** Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**.
 - These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
 
-![A conceptual infographic illustrating how earlier treatment access translates into economic value through two additive pillars: the Value of a Statistical Life (VSL) for lives saved and Quality-Adjusted Life Years (QALY) for health improvements.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg)
+![When people don't die, economists can count them twice: once for being alive and again for feeling good. Death is very expensive.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg)
 
 ### Gross R&D Savings from a Decentralized FDA {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
 
@@ -552,7 +552,7 @@ Efficacy lag elimination ({{< var efficacy_lag_years >}}) is the **smaller** of 
 
 **One of two health benefits of a decentralized FDA comes from eliminating the "efficacy lag"**, the {{< var efficacy_lag_years >}} Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing ({{< var phase_1_safety_duration_years >}}) is preserved.
 
-![A comparative timeline illustrating the drug approval process before and after efficacy lag elimination, highlighting that Phase I safety testing remains while the subsequent 8.2-year efficacy delay is removed.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-post-safety-efficacy-lag-elimination-regulatory-delay-avoida-bw-academic.jpg)
+![We keep the part where we check if drugs kill you immediately. We skip the part where we wait 8 years to see if they work.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-post-safety-efficacy-lag-elimination-regulatory-delay-avoida-bw-academic.jpg)
 
 #### The Efficacy Lag Problem
 
@@ -564,7 +564,7 @@ A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease
 
 The analysis shows that for every 1 unit of harm the FDA prevents through safety testing, it generates **{{< var type_ii_error_cost_ratio >}} units** of harm through efficacy delay (Type II vs. Type I error ratio).
 
-![A scale comparison illustrating the 3,070:1 ratio between harm caused by efficacy delays (Type II errors) and harm prevented by safety testing (Type I errors).](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-efficacy-lag-problem-bw-academic.jpg)
+![For every person saved by making you wait for treatment, 3,070 people die from waiting. It's called being careful.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-efficacy-lag-problem-bw-academic.jpg)
 
 **Input: Efficacy Lag Duration Distribution**
 
@@ -582,7 +582,7 @@ This eliminates the post-safety efficacy lag (the Phase II/III portion, while pr
 
 #### Quantified Benefits (Efficacy Lag Component Only)
 
-![A visual summary of the humanitarian and economic impact of an 8.2-year acceleration in drug efficacy, showing the scale of DALYs averted, economic value gained, and lives saved.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-quantified-benefits-efficacy-lag-component-only-bw-academic.jpg)
+![What happens when you give people medicine 8 years earlier: they live longer and economists get to make bigger numbers.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-quantified-benefits-efficacy-lag-component-only-bw-academic.jpg)
 
 The elimination of the post-safety efficacy lag by such a framework achieves a one-time {{< var efficacy_lag_years >}} timeline acceleration (the smaller component of the total {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} shift):
 
@@ -615,13 +615,13 @@ For detailed methodology and assumptions on efficacy lag, see [The Human Cost of
 
 **Common concern**: Won't faster trials with lower costs compromise safety?
 
-![A side-by-side comparison showing how the proposed system improves safety monitoring across multiple dimensions compared to traditional clinical trials.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-safety-and-risk-management-bw-academic.jpg)
+![Traditional safety monitoring versus actually paying attention. One watches 2,000 people for a few months. The other watches everyone forever.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-safety-and-risk-management-bw-academic.jpg)
 
 **The evidence indicates the opposite.** The proposed system provides superior safety monitoring compared to traditional trials across multiple dimensions.
 
 #### Current System Limitations: Dangerously Blind to Real-World Harms
 
-![A comparison between the current 'blind' pharmacovigilance system (characterized by voluntary reporting and limited trial data) and an automated monitoring system that detects safety signals in months rather than years.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-h-bw-academic.jpg)
+![Current drug safety: please voluntarily report if you die. Proposed drug safety: computers notice when you die.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-h-bw-academic.jpg)
 
 ::: {.callout-caution}
 **The current system is not safe - it just appears safe because harms go undetected.**
@@ -650,7 +650,7 @@ The current "safety" system doesn't prevent harm - it **delays detection** until
 
 1. **Preserved Phase I Safety Testing**: Rigorous Phase I safety testing (~{{< var phase_1_safety_duration_years >}}) is maintained. What changes is eliminating the {{< var efficacy_lag_years >}} efficacy delay *after* safety is verified.
 
-![A comparison between the traditional drug approval timeline and the proposed system, highlighting the elimination of efficacy delays and the continuous feedback loop between monitoring and patient notification.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-proposed-system-safety-advantages-bw-academic.jpg)
+![The old way makes you wait 8 years to find out if your medicine works. The new way tells you immediately and keeps checking. Revolutionary.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-proposed-system-safety-advantages-bw-academic.jpg)
 
 2. **Continuous Population-Scale Monitoring**: Pragmatic trials with 10,000-100,000+ participants monitored continuously through EHR integration detect safety problems faster than small, time-limited traditional trials. The RECOVERY trial identified both effective treatments (dexamethasone) and harmful ones (hydroxychloroquine) in under 100 days with 47,000 patients.
 
@@ -705,7 +705,7 @@ The framework includes pooled liability coverage for sponsors, reducing individu
 
 The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms our ability to explore the vast therapeutic space where undiscovered cures already exist.
 
-![A visualization comparing traditional research speed to the 12.3x accelerated mechanism, highlighting the vastly expanded coverage of the therapeutic space within the same timeframe.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg)
+![If you test 12 drugs at once instead of one drug at a time, you learn about 12 drugs. Mathematics.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg)
 
 ### The Unexplored Therapeutic Frontier
 
@@ -720,7 +720,7 @@ The fundamental problem isn't that cures are hard to discover. It's that we're b
 
 The cures likely already exist among tested-safe compounds. We just haven't looked. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for detailed analysis of this exploration gap, and [The Discovery Capacity Model](#the-discovery-capacity-model) for the quantitative framework showing how {{< var dfda_trial_capacity_multiplier >}} trial capacity produces the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
 
-![A visualization of the therapeutic exploration gap, contrasting the 9.5 million potential drug-disease combinations against the tiny 0.342% that have actually been tested.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
+![We've tested 0.342% of possible treatments. The remaining 99.658% might cure everything or nothing, but we'll never know at this rate.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
 ### Addressing the Returns Question: Diminishing, Linear, or Compounding?
 
@@ -732,7 +732,7 @@ The diminishing returns objection assumes we've exhausted low-hanging fruit. But
 
 1. **Single compounds alone**: {{< var drug_disease_combinations_possible >}} possible combinations of known safe compounds × diseases. At current trial capacity, systematically testing these would take **{{< var current_known_safe_exploration_years >}}**. We won't finish until the year 5000+.
 
-![A comparison showing the tiny fraction of explored medical combinations and human biology against the vast, untapped scale of potential treatments.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-diminishing-returns-is-unlikely-we-haven-t-started-looki-bw-academic.jpg)
+![All the medicine we've discovered so far, next to all the medicine we haven't bothered looking for yet. It's mostly the second one.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-diminishing-returns-is-unlikely-we-haven-t-started-looki-bw-academic.jpg)
 
 {{< var current_known_safe_exploration_years_latex >}}
 
@@ -819,7 +819,7 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 
 **Bottom line**: Even under the conservative linear assumption, {{< var dfda_trial_capacity_multiplier >}} more trials produces {{< var dfda_trial_capacity_multiplier >}} more discoveries from a space that is 99%+ unexplored. The expected value calculation remains overwhelmingly positive.
 
-![A comparison of three potential models for treatment discovery: diminishing returns, compounding returns, and the linear model used as the conservative baseline.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-conservative-default-linear-assumption-bw-academic.jpg)
+![Three guesses about whether cures get harder to find over time, easier to find, or stay the same. We picked the boring one.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-conservative-default-linear-assumption-bw-academic.jpg)
 
 #### Funding Level vs. Cost-Effectiveness
 
@@ -870,7 +870,7 @@ For economist verification, this section provides complete derivation chains for
 
 ### Trial Capacity Multiplier Derivation
 
-![A visual breakdown of the trial capacity multiplier derivation, illustrating the transition from current patient capacity to a scaled-up capacity based on budget and cost-per-patient variables.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-capacity-multiplier-derivation-bw-academic.jpg)
+![If you spend more money on trials, you can run more trials. This required a diagram.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-capacity-multiplier-derivation-bw-academic.jpg)
 
 **Result:** {{< var dfda_trial_capacity_multiplier >}}
 
@@ -904,7 +904,7 @@ For economist verification, this section provides complete derivation chains for
 
 ### Lives Saved Derivation
 
-![A conceptual diagram showing the calculation of 10.7 billion lives saved by multiplying daily avoidable mortality rates by a 212-year timeline shift.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-lives-saved-derivation-bw-academic.jpg)
+![When you cure diseases 212 years early, you save everyone who would have died in those 212 years. It adds up.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-lives-saved-derivation-bw-academic.jpg)
 
 **Result:** {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}
 
@@ -939,7 +939,7 @@ For economist verification, this section provides complete derivation chains for
 
 **Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness.
 
-![A comparison of cost-effectiveness showing the massive difference between the protocol's cost per DALY ($0.84) and traditional malaria bed nets ($89).](/assets/images/dfda-impact-paper/dfda-impact-paper-section-cost-per-daly-derivation-bw-academic.jpg)
+![This costs 84 cents per year of healthy life saved. Mosquito nets cost $89. We give medals to the mosquito net people.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-cost-per-daly-derivation-bw-academic.jpg)
 
 ### ROI Derivation
 
@@ -1128,7 +1128,7 @@ Transformative potential to create viable research pathways for conditions ignor
 
 **Conservative Approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even when using R&D savings alone ({{< var dfda_roi_rd_only >}} ROI independent of health benefits).
 
-![A breakdown of the three primary benefit streams (accelerated development, preventative care, and rare disease research) that contribute to the total 565B DALY impact.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-qaly-benefit-streams-breakdown-bw-academic.jpg)
+![Three different ways this saves 565 billion years of human suffering. We made them into a pie chart.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-qaly-benefit-streams-breakdown-bw-academic.jpg)
 
 #### DALY Sensitivity Analysis
 
@@ -1148,7 +1148,7 @@ For standard interventions, this value is calculated as `$1,000,000 / ICER`, whe
 
 All data used in the chart is derived from the table and sources below.
 
-![Cost-Effectiveness of Health Interventions (QALYs Gained per 1M)](../../assets/images/qaly-comparison-chart.png)
+![How much healthy life you buy per million dollars spent on various health things. Some are better than others. We fund the others.](../../assets/images/qaly-comparison-chart.png)
 
 The following table provides the data and sources that support the chart. The list is ordered to match the chart's presentation.
 
@@ -1209,7 +1209,7 @@ To provide context for the estimated costs of a global pragmatic trial system, i
 
 Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
 
-![A side-by-side comparison of traditional failed megaprojects versus a modern, modular clinical trial framework utilizing existing infrastructure and feedback loops.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
+![Why giant health IT projects fail (they're giant) versus why small connected systems work (they're small).](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
 
 This intervention differs in five critical ways:
 

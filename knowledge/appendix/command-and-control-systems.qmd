@@ -29,7 +29,7 @@ You steal the military's organizational structure, the G-Staff model, because th
 
 The entire system revolves around people, not processes. The `Personnel Roster` is your hub, every other table connects back to actual humans doing actual things. No abstract "stakeholders" or "human resources." Just people trying not to die.
 
-![Conceptual diagram of the G-Staff database architecture, illustrating the 'Personnel Roster' as the central hub connecting all functional areas (G-1 through Mission Command).](/assets/images/command-and-control-systems/command-and-control-systems-section-the-architecture-hub-spoke-model-bw-academic.jpg)
+![A database where the people table connects to everything else, because organizations are made of people. Military-grade insight.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-architecture-hub-spoke-model-bw-academic.jpg)
 
 ## SECTION 1: G-1 (Personnel Command)
 
@@ -58,7 +58,7 @@ This is your central hub. Every living human who touches the system gets an entr
 - `Notes` (Long Text) - Where you write "difficult but brilliant" or "useless"
 - `Opt-in for Updates` (Checkbox) - Can you spam them with hope?
 
-![A conceptual entity-relationship diagram showing the central Personnel record and its connections to Divisions, Organizations, Engagements, Projects, and VICTORY Bonds.](/assets/images/command-and-control-systems/command-and-control-systems-section-fields-that-matter-bw-academic.jpg)
+![The person table has lines to the division table, the project table, and the bond table. This is called a database.](/assets/images/command-and-control-systems/command-and-control-systems-section-fields-that-matter-bw-academic.jpg)
 
 
 ### Table 2: `Engagements` (The Stalker's Dream Log)
@@ -67,7 +67,7 @@ Every interaction, every touchpoint, every time someone did anything. Like your 
 
 #### What you track
 
-![A relational data diagram showing the Engagement record and its links to the Personnel Roster and Campaigns.](/assets/images/command-and-control-systems/command-and-control-systems-section-what-you-track-bw-academic.jpg)
+![When someone does something in a campaign, you write down who and what. Revolutionary data architecture.](/assets/images/command-and-control-systems/command-and-control-systems-section-what-you-track-bw-academic.jpg)
 
 - `Engagement ID` (Autonumber) - Because even conversations need ID numbers now
 - `Personnel` (Link to `Personnel Roster`) - Who did the thing
@@ -92,7 +92,7 @@ Managing the humans who run the machine that saves the humans.
 
 #### The hiring pipeline
 
-![A diagram illustrating the hiring pipeline database schema, showing the relationships between positions, divisions, and applicants, as well as the progression of hiring statuses.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-hiring-pipeline-bw-academic.jpg)
+![A job has applicants. Applicants become employees or don't. This required entity-relationship modeling.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-hiring-pipeline-bw-academic.jpg)
 
 - `Position ID` (Autonumber) - Job number whatever
 - `Position Title` (Text) - Fancy name for "does stuff"
@@ -141,7 +141,7 @@ The organizational structure that makes this chaos manageable.
 
 #### Your command structure
 
-![A conceptual diagram showing the data relationships between a Division and its associated Mandates, Leads, Personnel, and Projects.](/assets/images/command-and-control-systems/command-and-control-systems-section-your-command-structure-bw-academic.jpg)
+![Divisions have people, leaders, goals, and work. We connected these with lines.](/assets/images/command-and-control-systems/command-and-control-systems-section-your-command-structure-bw-academic.jpg)
 
 
 - `Division Name` (Text) - G-1 Personnel, G-4 Treasury, etc.
@@ -156,7 +156,7 @@ Where you track who's doing what and why they're behind schedule.
 
 #### Project management for revolutionaries
 
-![A relational schema diagram showing the links between the Task table and related entities like Personnel, Divisions, and Campaigns.](/assets/images/command-and-control-systems/command-and-control-systems-section-project-management-for-revolutionaries-bw-academic.jpg)
+![Tasks have people who do them and campaigns they belong to. The database knows which is which.](/assets/images/command-and-control-systems/command-and-control-systems-section-project-management-for-revolutionaries-bw-academic.jpg)
 
 - `Task ID` (Autonumber) - Task #4,847,293
 - `Task Name` (Text) - What needs doing
@@ -190,7 +190,7 @@ Every penny tracked, because transparency is the only antidote to corruption.
 
 #### The money trail
 
-![A conceptual diagram of a transaction record showing how money flows between entities, classified by category and linked to specific engagements.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-money-trail-bw-academic.jpg)
+![Someone pays someone for something. We write down who, how much, and why. Accountants call this double-entry bookkeeping.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-money-trail-bw-academic.jpg)
 
 - `Transaction ID` (Autonumber) - Receipt #999,999
 - `Date` (Date) - When money moved
@@ -217,7 +217,7 @@ Your major initiatives, the big battles in the war.
 
 #### Strategic initiative tracking
 
-![A relational diagram illustrating how Strategic Initiatives link to the Personnel Roster and Projects and Tasks to track resources and execution.](/assets/images/command-and-control-systems/command-and-control-systems-section-strategic-initiative-tracking-bw-academic.jpg)
+![Big goals connect to people who do small tasks. The database remembers which people do which tasks for which goals.](/assets/images/command-and-control-systems/command-and-control-systems-section-strategic-initiative-tracking-bw-academic.jpg)
 
 - `Campaign Name` (Text) - Like "Global Referendum - Phase 1" or "Operation: Make Pharma Cry"
 - `Status` (Single Select) - How it's going:
@@ -242,7 +242,7 @@ Every message you blast at the world.
 
 #### Message management
 
-![A workflow diagram illustrating the message lifecycle from draft creation through scheduling to final deployment, including connections to audience and media data.](/assets/images/command-and-control-systems/command-and-control-systems-section-message-management-bw-academic.jpg)
+![You write a message, schedule it, and send it to people. This process needed a flowchart.](/assets/images/command-and-control-systems/command-and-control-systems-section-message-management-bw-academic.jpg)
 
 - `Message ID` (Autonumber) - Propaganda piece #420,069
 - `Title` (Text) - Clickbait headline
@@ -280,7 +280,7 @@ Your collection of images, videos, and documents that make people feel things.
 - `Related Campaign` (Link to `Campaigns`) - Which battle needs this
 - `Usage Notes` (Long Text) - "Makes people cry, use sparingly"
 
-![A data schema diagram illustrating the attributes of a creative asset and its relational link to campaigns within a database structure.](/assets/images/command-and-control-systems/command-and-control-systems-section-creative-arsenal-bw-academic.jpg)
+![Images and videos belong to campaigns. The database tracks which image belongs to which campaign. Database architecture at its finest.](/assets/images/command-and-control-systems/command-and-control-systems-section-creative-arsenal-bw-academic.jpg)
 
 
 ## SECTION 5: MISSION COMMAND (The Money Makers)
@@ -306,7 +306,7 @@ Tracking every bond sold to fund this whole operation.
 - `Related Engagement` (Link) - How you convinced them
 - `Notes` (Long Text) - "Bought while drunk at charity gala"
 
-![A data model diagram illustrating the relationships between Bond records, Investors, and Engagements, including the investment status lifecycle.](/assets/images/command-and-control-systems/command-and-control-systems-section-investment-tracking-bw-academic.jpg)
+![People invest in bonds. Bonds fund engagements. The database tracks who invested in what. This is called a foreign key.](/assets/images/command-and-control-systems/command-and-control-systems-section-investment-tracking-bw-academic.jpg)
 
 ### Table 12: `Global Referendum` (The Democratic Facade)
 
@@ -314,7 +314,7 @@ Managing the global petition to hit that magic {{< var global_population_activis
 
 #### Democracy theater
 
-![A simplified data schema diagram showing the fields of the Democracy Theater record and its relational links to Personnel Roster and Related Campaigns.](/assets/images/command-and-control-systems/command-and-control-systems-section-democracy-theater-bw-academic.jpg)
+![The democracy theater table connects to people and campaigns. Every political gesture requires proper database normalization.](/assets/images/command-and-control-systems/command-and-control-systems-section-democracy-theater-bw-academic.jpg)
 
 - `Vote ID` (Autonumber) - Vote #8,000,000,001
 - `Voter` (Link to `Personnel Roster`) - The optimist
@@ -335,7 +335,7 @@ Tracking which countries have signed on to stop being idiots.
 
 #### Diplomatic scorecard
 
-![A flowchart illustrating the stages of the diplomatic lobbying process, from initial contact through active lobbying to the final outcomes of ratification or rejection.](/assets/images/command-and-control-systems/command-and-control-systems-section-diplomatic-scorecard-bw-academic.jpg)
+![Step 1: Contact diplomat. Step 2: Lobby diplomat. Step 3: They say yes or no. This workflow required boxes and arrows.](/assets/images/command-and-control-systems/command-and-control-systems-section-diplomatic-scorecard-bw-academic.jpg)
 
 - `Country` (Text) - Nation-state name
 - `Status` (Single Select) - Where they're at:
@@ -370,11 +370,11 @@ Tracking which countries have signed on to stop being idiots.
 6. **Train your team** (good luck with that)
 7. **Launch and pray** (the universal project management methodology)
 
-![Step-by-step implementation flowchart emphasizing the critical dependency of building the 'Personnel Roster' before other tables.](/assets/images/command-and-control-systems/command-and-control-systems-section-database-construction-roadmap-bw-academic.jpg)
+![Build the people table first, then build the tables that reference people. We made a flowchart about doing things in order.](/assets/images/command-and-control-systems/command-and-control-systems-section-database-construction-roadmap-bw-academic.jpg)
 
 ## The Privacy Paradox
 
-![A conceptual comparison of how different data domains (medical, financial, personal, and voting) balance the need for data tracking with privacy constraints.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-privacy-paradox-bw-academic.jpg)
+![Some data needs privacy (votes, health). Some needs transparency (money, politics). We put them on a chart to show they're different.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-privacy-paradox-bw-academic.jpg)
 
 *How to Track Everything While Respecting Privacy (Supposedly)*
 
@@ -388,7 +388,7 @@ Tracking which countries have signed on to stop being idiots.
 
 You've built a command center that would make the Pentagon jealous, except instead of coordinating death, you're coordinating life. Every person, every dollar, every decision, all transparent, all tracked, all aimed at the singular goal of making death optional.
 
-![A conceptual diagram showing how people, capital, and decision-making are channeled through a transparent cloud-based database to achieve the singular goal of life extension.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-result-bw-academic.jpg)
+![Everyone uses the same database to coordinate not dying. Transparency, accountability, and cloud storage defeat mortality.](/assets/images/command-and-control-systems/command-and-control-systems-section-the-result-bw-academic.jpg)
 
 This is how you run a revolution in the age of spreadsheets. Not with generals and bunkers, but with a cloud database and radical transparency. The military-industrial complex has one major weakness: they never expected their own organizational tools to be used against them.
 

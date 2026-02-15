@@ -23,7 +23,7 @@ from pathlib import Path
 
 # Find project root dynamically (works regardless of where Quarto executes from)
 
-![Diagram of a four-entity legal architecture illustrating the relationships between a Swiss Foundation, 501(c)(3) and 501(c)(4) entities, and a for-profit corporation.](/assets/images/legal-framework/legal-framework-section-find-project-root-dynamically-works-regardless-of-where-quar-bw-academic.jpg)
+![A Swiss foundation owns a nonprofit owns another nonprofit owns a company. It's like Russian nesting dolls, but for tax optimization and legal liability. Very respectable.](/assets/images/legal-framework/legal-framework-section-find-project-root-dynamically-works-regardless-of-where-quar-bw-academic.jpg)
 
 from dih_models.plotting.chart_style import get_project_root
 
@@ -84,7 +84,7 @@ display(IPImage(str(png_path)))
 
 **What It CANNOT Do:** Lobby politicians. Can educate, can demonstrate public will, cannot tell politicians what to do.
 
-![A summary of the organization's core activities including research and software development, contrasted against the legal boundary that prevents political lobbying.](/assets/images/legal-framework/legal-framework-section-what-it-does-bw-academic.jpg)
+![This organization does research and builds software. By law, it cannot lobby politicians. That's what the other organization in the diagram does. They're legally distinct but spiritually the same.](/assets/images/legal-framework/legal-framework-section-what-it-does-bw-academic.jpg)
 
 **Why US 501(c)(3):** Unlocks foundation grants. Running non-binding public opinion survey is clearly educational.
 
@@ -92,7 +92,7 @@ display(IPImage(str(png_path)))
 
 **What It Is:** Political advocacy arm. Donations NOT tax-deductible.
 
-![A diagram illustrating how referendum data from a 501(c)(3) is utilized by a 501(c)(4) to drive lobbying, voter mobilization, and political action.](/assets/images/legal-framework/legal-framework-section-entity-2-the-501-c-4-social-welfare-org-the-sword-bw-academic.jpg)
+![The 501(c)(3) collects data about what people want. The 501(c)(4) uses that data to lobby politicians. They can't technically coordinate. They coordinate anyway. It's legal if you use the right words.](/assets/images/legal-framework/legal-framework-section-entity-2-the-501-c-4-social-welfare-org-the-sword-bw-academic.jpg)
 
 **What It Does:** Takes referendum results from (c)(3) and weaponizes them:
 
@@ -118,7 +118,7 @@ display(IPImage(str(png_path)))
 
 **What It Is:** Parent organization holding everything together. Based in neutral Switzerland.
 
-![A conceptual diagram showing the DIH Foundation at the center of an ecosystem, representing its role as the neutral, Swiss-based 'soul' that anchors and holds all other components together.](/assets/images/legal-framework/legal-framework-section-entity-4-the-dih-foundation-the-soul-bw-academic.jpg)
+![The Swiss foundation is the soul of the organization. Souls live in Switzerland because Switzerland has excellent tax treaties and doesn't ask uncomfortable questions.](/assets/images/legal-framework/legal-framework-section-entity-4-the-dih-foundation-the-soul-bw-academic.jpg)
 
 **Why Switzerland:** They've avoided war for 200 years [@switzerland-last-war-death-1847] by holding everyone's money. Even Hitler couldn't make them pick a side.
 
@@ -135,7 +135,7 @@ display(IPImage(str(png_path)))
 
 ### Legal Specialization
 
-![A conceptual diagram showing a central organization supported by four specialized legal entities, 501(c)(3), 501(c)(4), C-Corp, and Swiss Foundation, each mapped to its unique strategic purpose.](/assets/images/legal-framework/legal-framework-section-legal-specialization-bw-academic.jpg)
+![One charity pretending to be four charities so the lawyers have something to do.](/assets/images/legal-framework/legal-framework-section-legal-specialization-bw-academic.jpg)
 
 - Need foundation grants? The 501(c)(3) handles it
 - Need unlimited lobbying? The 501(c)(4) delivers it
@@ -145,7 +145,7 @@ display(IPImage(str(png_path)))
 
 ### Firewall Protection
 
-![A conceptual diagram showing four distinct fund categories, Charitable, Political, Bond Proceeds, and International, separated by physical barriers to represent legal and financial firewalls.](/assets/images/legal-framework/legal-framework-section-firewall-protection-bw-academic.jpg)
+![Money walls. Like regular walls, but made of receipts and the tears of accountants.](/assets/images/legal-framework/legal-framework-section-firewall-protection-bw-academic.jpg)
 
 - Charitable funds never touch political operations (IRS requirement met)
 - Political funds never touch bond proceeds (SEC requirement met)
@@ -161,7 +161,7 @@ display(IPImage(str(png_path)))
 
 Same structure used by most sophisticated social movements (ACLU, NRA, Planned Parenthood). Each entity only does what's perfectly legal in its jurisdiction. Combined, they do what's impossible with single structure.
 
-![A conceptual diagram illustrating how multiple distinct entities, each compliant within their specific jurisdictions, combine to create a resilient organizational structure that is resistant to external pressures.](/assets/images/legal-framework/legal-framework-section-risk-distribution-bw-academic.jpg)
+![How to be technically legal in seventeen countries at once. It's like being technically alive, but with more paperwork.](/assets/images/legal-framework/legal-framework-section-risk-distribution-bw-academic.jpg)
 
 ## Multi-Jurisdiction Strategy (How to Not Put All Eggs in One Regulatory Basket)
 
@@ -179,13 +179,13 @@ Split operations across multiple jurisdictions based on what each country does b
 
 When one regulator attacks, others provide safe harbor. When one government restricts, others enable. It's regulatory arbitrage for good instead of evil. Don't marry specific jurisdictions - regulatory environments change. Marry the strategy of geographic diversification.
 
-![Global regulatory arbitrage map showing the separation of functions across favorable jurisdictions to maximize protection and efficiency.](/assets/images/legal-framework/legal-framework-section-multi-jurisdiction-map-bw-academic.jpg)
+![Countries where it's still okay to save lives without filling out Form 27B-6.](/assets/images/legal-framework/legal-framework-section-multi-jurisdiction-map-bw-academic.jpg)
 
 ## Organizational Structure: The For-Profit Management Company
 
 The Victory Corporation (for-profit) is the operational engine. Employs core team, raises capital, executes strategy.
 
-![Organizational chart of the Victory Corporation showing the hierarchy from the Board of Directors and Managing Director down to specialized leads in Capital Markets, Elections, and Growth, including projected future hires.](/assets/images/legal-framework/legal-framework-section-organizational-structure-the-for-profit-management-company-bw-academic.jpg)
+![The people who will buy your democracy. Org chart included for transparency, as if that helps.](/assets/images/legal-framework/legal-framework-section-organizational-structure-the-for-profit-management-company-bw-academic.jpg)
 
 ```{python}
 #| fig-alt: "Organizational chart showing Board of Directors at top, Managing Director below, with three leads reporting: Capital Markets, Elections & IE Compliance, and Growth & Referrals. Future hires shown with dashed line."
@@ -231,13 +231,13 @@ Day-to-day operations managed by General Staff, modeled after military command s
 
 See [Command & Control Systems](../appendix/command-and-control-systems.qmd) for technical implementation.
 
-![Organizational structure of the General Staff (G-Staff), illustrating the six functional branches and their respective operational responsibilities within the command hierarchy.](/assets/images/legal-framework/legal-framework-section-the-general-staff-g-staff-bw-academic.jpg)
+![You called your charity staff 'General Staff' like it's an army. To be fair, you're fighting death. Death doesn't have an org chart.](/assets/images/legal-framework/legal-framework-section-the-general-staff-g-staff-bw-academic.jpg)
 
 ## Nonprofit Foundation Governance
 
 The DIH Foundation (Swiss parent) is guardian of the mission. Provides legal and ethical oversight.
 
-![Governance structure illustrating the oversight relationship between the DIH Foundation and the Victory Corporation SPV.](/assets/images/legal-framework/legal-framework-section-nonprofit-foundation-governance-bw-academic.jpg)
+![Who watches the watchmen? This chart. The chart watches the watchmen.](/assets/images/legal-framework/legal-framework-section-nonprofit-foundation-governance-bw-academic.jpg)
 
 ```{python}
 #| fig-alt: "Two boxes: Non-Profit Foundation with Board of Trustees overseeing Executive Director, and For-Profit SPV with Founder & Managing Director. Connection shows mission oversight relationship."
@@ -271,13 +271,13 @@ display(IPImage(str(png_path)))
 
 VICTORY Incentive Alignment Bonds are securities under the Howey Test. The compliance strategy uses Regulation D for accredited investors, then Regulation CF/A+ for public offerings, with full KYC/AML compliance.
 
-![A flowchart illustrating the regulatory roadmap from Regulation D for accredited investors to public offerings via Regulation CF/A+, showing the integration of KYC/AML and the points-to-conversion phases.](/assets/images/legal-framework/legal-framework-section-securities-law-bw-academic.jpg)
+![How to take money from rich people legally, then regular people legally, then convert the regular people into rich people. It's called capitalism, apparently.](/assets/images/legal-framework/legal-framework-section-securities-law-bw-academic.jpg)
 
 ## Election Law
 
 Bribing politicians is illegal. Unless you call it "lobbying" or "campaign contributions." Then it's protected speech.
 
-![A conceptual diagram illustrating the regulatory firewall separating international funds from US political operations and election spending.](/assets/images/legal-framework/legal-framework-section-election-law-bw-academic.jpg)
+![Foreign money stays over there. American money stays over here. If they touch, the FEC explodes.](/assets/images/legal-framework/legal-framework-section-election-law-bw-academic.jpg)
 
 The key compliance challenge: foreign nationals can't spend money on US elections. The solution is complete segregation with a firewall between US political operations and international funds.
 
@@ -287,7 +287,7 @@ For complete details on Super PACs, 501(c)(4) structures, the foreign national f
 
 The 1% Treaty is structured as a formal international agreement. For complete details on structure, articles, ratification, enforcement, and avoiding common treaty pitfalls, see the [1% Treaty](../solution/1-percent-treaty.qmd) chapter.
 
-![A diagram illustrating the structural lifecycle of the 1 percent Treaty, showing the progression from initial structure and components to formal ratification and enforcement.](/assets/images/legal-framework/legal-framework-section-treaty-framework-bw-academic.jpg)
+![How a piece of paper becomes law. Takes longer than making a person from scratch.](/assets/images/legal-framework/legal-framework-section-treaty-framework-bw-academic.jpg)
 
 ## Risk Mitigation (When They Come For You)
 
@@ -331,7 +331,7 @@ You need lawyers. Lots of them. Good ones.
 
 #### The Strategy
 
-![A conceptual diagram showing how the tactics of compliance, paperwork, and technical adherence converge to create a 'friction barrier' that deters prosecution.](/assets/images/legal-framework/legal-framework-section-the-strategy-bw-academic.jpg)
+![Bore the prosecutors to death with paperwork. They can't arrest you if they're asleep.](/assets/images/legal-framework/legal-framework-section-the-strategy-bw-academic.jpg)
 
 Make prosecuting you more annoying than allowing you:
 
@@ -342,7 +342,7 @@ Make prosecuting you more annoying than allowing you:
 
 ## The Escape Routes (If Everything Goes Wrong)
 
-![A tiered hierarchy of contingency strategies labeled Plans A through E, showing the escalation from standard legal defense to systemic public influence.](/assets/images/legal-framework/legal-framework-section-the-escape-routes-if-everything-goes-wrong-bw-academic.jpg)
+![Five backup plans for when they try to stop you from curing disease. You made contingencies for your contingencies. This is called 'paranoia' in individuals and 'strategic planning' in organizations.](/assets/images/legal-framework/legal-framework-section-the-escape-routes-if-everything-goes-wrong-bw-academic.jpg)
 
 **Plan A:** Win in court (you followed every law)
 
@@ -360,11 +360,11 @@ Make prosecuting you more annoying than allowing you:
 
 To maximize the effectiveness of the [decentralized framework for drug assessment infrastructure](../solution/dfda.qmd), we recommend HHS sponsor an **FDA-X Prize** ($500 million) to incentivize creation of an open-source decentralized framework for drug assessment protocol enabling perpetual, patient-driven clinical trials.
 
-![A flowchart showing the progression from HHS funding of an FDA-X Prize to the development of an open-source protocol, resulting in perpetual, patient-driven clinical trials.](/assets/images/legal-framework/legal-framework-section-hhs-policy-recommendations-bw-academic.jpg)
+![Government pays prize money for curing disease. Winners give cure away for free. Capitalism somehow survives the shock.](/assets/images/legal-framework/legal-framework-section-hhs-policy-recommendations-bw-academic.jpg)
 
 #### Key Policy Objectives
 
-![A conceptual diagram showing how the five policy objectives, funding, regulation, and technology, converge to enable a perpetual clinical trial framework.](/assets/images/legal-framework/legal-framework-section-key-policy-objectives-bw-academic.jpg)
+![Five things coming together to let sick people try medicine. Currently takes more planning than the moon landing.](/assets/images/legal-framework/legal-framework-section-key-policy-objectives-bw-academic.jpg)
 
 1.  **Enable Perpetual Trials:** Real-time global patient participation with automated matching and dynamic protocol adjustments
 2.  **Clarify Pricing Mechanisms:** Allow drug companies to set per-participant prices under FDA regulations (21 CFR 312.8) [@cfr-21-312-8-charging-for-investigational-drugs]
@@ -374,7 +374,7 @@ To maximize the effectiveness of the [decentralized framework for drug assessmen
 
 #### Projected Impact
 
-![A visual summary of projected impacts showing the scale of participant reach, economic savings, and the compression of deployment timelines from years to months.](/assets/images/legal-framework/legal-framework-section-projected-impact-bw-academic.jpg)
+![Big numbers that mean fewer dead people and more alive people, faster. Revolutionary concept.](/assets/images/legal-framework/legal-framework-section-projected-impact-bw-academic.jpg)
 
 - Support 61+ million participants annually ($30.6B ÷ {{< var recovery_trial_cost_per_patient >}} per participant)
 - Potential for 160+ million participants with Medicare/Medicaid integration
@@ -385,7 +385,7 @@ To maximize the effectiveness of the [decentralized framework for drug assessmen
 
 #### High-Priority Streamlining Targets
 
-![A conceptual map of regulatory streamlining targets showing how updates to IND applications, IRB oversight, and safety reporting create an integrated framework for modern clinical trials.](/assets/images/legal-framework/legal-framework-section-high-priority-streamlining-targets-bw-academic.jpg)
+![Forms you need to fill out to save lives. Now with fewer forms. Still too many forms.](/assets/images/legal-framework/legal-framework-section-high-priority-streamlining-targets-bw-academic.jpg)
 
 1.  **21 CFR Part 312 (IND Applications):** Streamlined CMC requirements, flexible preclinical data, accelerated reviews for certified platforms
 
@@ -408,7 +408,7 @@ To maximize the effectiveness of the [decentralized framework for drug assessmen
 
 The strategy uses the exact same legal structures that enable tax avoidance, dark money, regulatory capture, and corporate welfare. You take the system designed to protect the powerful and use it to empower the powerless.
 
-![A comparison showing the transition from traditional, siloed regulatory hurdles to a streamlined, platform-integrated exemption model.](/assets/images/legal-framework/legal-framework-section-revolutionary-exemptions-for-certified-platforms-bw-academic.jpg)
+![Before: jumping through seventeen hoops. After: jumping through three hoops. Progress is relative.](/assets/images/legal-framework/legal-framework-section-revolutionary-exemptions-for-certified-platforms-bw-academic.jpg)
 
 The laws written by lobbyists will be turned against their authors.
 

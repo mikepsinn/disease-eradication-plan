@@ -15,7 +15,7 @@ image: /assets/og-images/knowledge/solution-og-retro-academic.jpg
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![How to Build Systems That Don't Suck](/assets/infographics/knowledge/solution-infographic-retro-academic.jpg)
+![How to build systems that don't suck](/assets/infographics/knowledge/solution-infographic-retro-academic.jpg)
 
 Now that you understand the problem, which is that everyone is dying while you build missiles, it's time to learn how to fix it.
 
@@ -94,7 +94,7 @@ The governance protocol (sometimes called a "decentralized institute of health" 
 
 The difference is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach knows things bureaucrats don't.
 
-![A conceptual flow of the decentralized health ecosystem, showing the 1 percent Treaty Fund moving from global voting to patient-selected trials and resulting in a feedback loop of successful cures.](/assets/images/solution/solution-section-what-your-decentralized-institutes-of-health-do-bw-academic.jpg)
+![Money goes in, cures come out, repeat](/assets/images/solution/solution-section-what-your-decentralized-institutes-of-health-do-bw-academic.jpg)
 
 ##### On Wishocracy
 
@@ -107,9 +107,9 @@ Here's how it works:
 3. You swipe left or right to allocate between them
 4. "Sarah's cancer trial" versus "MIT's immortality pill"
 
-![Wishocracy slider interface showing pairwise comparison between proposals](../assets/images/wishocracy-slider.png)
+![Tinder, but for democracy](../assets/images/wishocracy-slider.png)
 
-![The 'Wishocracy' workflow: transforming individual swipes into automated funding allocation via Aggregated Pairwise Preference Allocation (APPA).](/assets/images/solution/solution-section-on-wishocracy-bw-academic.jpg)
+![Swipe right for immortality](/assets/images/solution/solution-section-on-wishocracy-bw-academic.jpg)
 
 5. Everyone's swipes get aggregated using math
 6. The math reveals what humanity actually wants
@@ -123,7 +123,7 @@ The important part is there's no committee. No gatekeepers. No humans with the p
 
 The FDA currently makes drugs {{< var dfda_trial_cost_reduction_factor >}} times more expensive than necessary. You're going to build a better one.
 
-![A comparison between the traditional FDA drug approval process and the decentralized dFDA framework, contrasting cost, time, and data sources while illustrating the three-step decentralized workflow.](/assets/images/solution/solution-section-your-decentralized-framework-for-drug-assessment-bw-academic.jpg)
+![FDA: slow and expensive. dFDA: fast and cheap](/assets/images/solution/solution-section-your-decentralized-framework-for-drug-assessment-bw-academic.jpg)
 
 Your decentralized framework for drug assessment (dFDA) does three things:
 
@@ -141,7 +141,7 @@ It's like Amazon reviews except for not dying, and Consumer Reports except the r
 
 Right now, nutrition labels tell you what's in food. Warning labels tell you cigarettes kill you. Drug labels tell you to "ask your doctor," which is code for "we have no idea and neither do they."
 
-![A comparison between a traditional drug warning label and a proposed Outcome Label displaying clear success rates, side effect percentages, and cost based on patient data.](/assets/images/solution/solution-section-on-outcome-labels-bw-academic.jpg)
+![Warning labels vs. labels that actually help](/assets/images/solution/solution-section-on-outcome-labels-bw-academic.jpg)
 
 Outcome labels tell you what actually happens:
 
@@ -168,7 +168,7 @@ New system: Patients pay researchers, subsidized by the **1% Treaty Fund**
 
 The subsidy works like this: Available treaty funds divided by number of participating patients equals subsidy per person. More patients means lower subsidy per person, which prevents frivolous treatment seeking.
 
-![A comparison between the current pharmaceutical-funded trial model and a new decentralized system where patient choice and treaty subsidies drive research funding.](/assets/images/solution/solution-section-on-how-patients-pay-researchers-bw-academic.jpg)
+![Pharma chooses trials vs. patients choose trials](/assets/images/solution/solution-section-on-how-patients-pay-researchers-bw-academic.jpg)
 
 Researchers set their own price. Patients choose which trials to join. Money flows automatically. Successful trials attract more patients and more funding. Unsuccessful trials fade away.
 
@@ -184,7 +184,7 @@ You'd think military contractors would hate this. But here's what you tell them:
 
 "You can keep {{< var defense_sector_retention_pct >}} of your murder budget. But also, here are some bonds that pay {{< var victory_bond_annual_return_pct >}} returns. Your pension fund would like those returns. Your shareholders would like those returns. You would personally like those returns because you also have a body that's falling apart.
 
-![A comparison of a defense contractor's traditional budget versus a diversified portfolio where 1 percent is allocated to longevity bonds, highlighting the resulting gains in profit, PR, and ESG scores.](/assets/images/solution/solution-section-on-why-defense-contractors-should-care-bw-academic.jpg)
+![Defense contractors discover curing people pays better](/assets/images/solution/solution-section-on-why-defense-contractors-should-care-bw-academic.jpg)
 
 Plus, killing people is getting bad PR. Curing cancer is excellent PR. Your ESG score goes up. Your stock price goes up. You still make weapons with the other {{< var defense_sector_retention_pct >}}, you just also cure diseases with 1%.
 
@@ -215,7 +215,7 @@ The political pressure for expansion *accelerates* with each success:
 
 This is why the [80/10/10 split](appendix/incentive-alignment-bonds-paper.qmd) exists. The {{< var dih_treasury_medical_research_pct >}} cures diseases. The {{< var victory_bond_funding_pct >}} to investors pays back the people who funded the initial campaign. The {{< var iab_political_incentive_funding_pct >}} to political incentives ensures the campaign never stops.
 
-![The Scaling Engine: How increasing treaty levels exponentially fuels political lobbying power.](/assets/images/solution/solution-section-on-why-1-is-just-the-beginning-bw-academic.jpg)
+![When you give people money to cure diseases, they get more money to cure more diseases. It's almost like the opposite of how war works, where you spend money to create the need to spend more money.](/assets/images/solution/solution-section-on-why-1-is-just-the-beginning-bw-academic.jpg)
 
 [VICTORY Incentive Alignment Bonds](economics/victory-bonds.qmd) are a specific [Incentive Alignment Bond](appendix/incentive-alignment-bonds-paper.qmd) - a single instrument that aligns investors ({{< var victory_bond_funding_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} career incentives), and patients ({{< var dih_treasury_medical_research_pct >}} cures) with the same outcome: expand treaty funding.
 
@@ -227,7 +227,7 @@ That's the meta-strategy: Use 1% to prove the model works, then use the built-in
 
 Insurance companies have a simple preference: They want you either dead or immortal. Anything but expensively lingering.
 
-![A diagram illustrating the transition from high-cost chronic illness to low-cost outcomes (cure or mortality) and how VICTORY Bonds create a virtuous cycle of insurance profitability.](/assets/images/solution/solution-section-on-insurance-companies-bw-academic.jpg)
+![Insurance companies discovered they make more money when patients either get cured or die quickly. The middle option, where you're sick for 30 years, is apparently bad for business. Took them a while to work that one out.](/assets/images/solution/solution-section-on-insurance-companies-bw-academic.jpg)
 
 Dead people file zero claims. Immortal healthy people file zero claims. Currently sick people cost billions.
 
@@ -245,13 +245,13 @@ It's a virtuous cycle, which is Latin for "everyone wins by not dying."
 
 You're declaring war on disease. But unlike previous wars on abstract concepts (drugs, terror, poverty, Christmas), this one will actually work.
 
-![A comparison chart contrasting the failed bureaucratic approach to abstract 'wars' with the proposed market-driven success model for the war on disease.](/assets/images/solution/solution-section-on-the-war-on-disease-bw-academic.jpg)
+![Your Wars on Drugs and Terror kept making more drugs and terror. Turns out, when you pay people to solve problems instead of manage them, the problems sometimes go away. Revolutionary stuff.](/assets/images/solution/solution-section-on-the-war-on-disease-bw-academic.jpg)
 
 Why? Because you're using markets instead of bureaucracy.
 
 #### Previous Wars on Things
 
-![A flowchart illustrating the self-perpetuating cycle of bureaucracy in 'Wars on Things,' where institutional survival leads to the persistence and growth of the problem.](/assets/images/solution/solution-section-previous-wars-on-things-bw-academic.jpg)
+![You built agencies to fight problems, then paid them more when the problems got worse. It's like hiring a plumber who gets a raise every time your pipes leak. What could go wrong?](/assets/images/solution/solution-section-previous-wars-on-things-bw-academic.jpg)
 
 - Declare war
 - Build bureaucracy to fight war
@@ -270,7 +270,7 @@ Why? Because you're using markets instead of bureaucracy.
 
 The difference is like asking a firefighter to prevent fires versus asking a fire extinguisher company to prevent fires. The firefighter needs fires to keep his job. The company needs fire prevention to sell extinguishers. Incentives matter.
 
-![A comparative visualization of incentive structures, contrasting a reactive service model with a proactive market-based model that scales through problem-solving.](/assets/images/solution/solution-section-this-war-bw-academic.jpg)
+![On the left, you pay doctors when people are sick. On the right, you pay them when people get better. One of these systems wants you healthy. The other wants you just sick enough to keep coming back.](/assets/images/solution/solution-section-this-war-bw-academic.jpg)
 
 ##### On Aligning Everyone's Greed
 
@@ -285,7 +285,7 @@ The solution only works if everyone wins by winning. Here's who gets what:
 
 Notice that everyone's selfish reason for participating happens to save humanity. Trick people into doing good by making good profitable.
 
-![Ecosystem of incentives showing how the model satisfies the specific greed of six distinct stakeholder groups.](/assets/images/solution/solution-section-on-aligning-everyone-s-greed-bw-academic.jpg)
+![Everyone gets what they want. Politicians get votes, billionaires get richer, insurance companies save money, patients stop dying, and scientists cure things. It's almost as if letting greed work for you instead of against you was the secret all along.](/assets/images/solution/solution-section-on-aligning-everyone-s-greed-bw-academic.jpg)
 
 The system doesn't require anyone to stop being selfish. It just redirects selfishness toward curing diseases instead of building bombs. It's like installing a fire alarm that also makes coffee, you're going to use it even if you don't care about fire safety.
 
@@ -299,13 +299,13 @@ History shows this works:
 
 You're only asking for 1%.
 
-![A comparison chart showing historical military budget reductions and their correlation with periods of economic prosperity in various nations and eras.](/assets/images/solution/solution-section-on-why-this-isn-t-clinically-insane-bw-academic.jpg)
+![Every time a country spent less on blowing things up, their economy mysteriously got better. Historians are baffled.](/assets/images/solution/solution-section-on-why-this-isn-t-clinically-insane-bw-academic.jpg)
 
 ##### On the Meta-Solution
 
 This solution isn't just about ending disease. It proves markets work better than bureaucracy for literally everything.
 
-![A conceptual diagram showing a single market-based 'Meta-Solution' template being applied as a universal engine to solve diverse public goods problems including health, education, housing, and climate change.](/assets/images/solution/solution-section-on-the-meta-solution-bw-academic.jpg)
+![One simple trick solves health, education, housing, and climate change. Governments hate it. (The trick is paying people to solve problems instead of paying them to have meetings about problems.)](/assets/images/solution/solution-section-on-the-meta-solution-bw-academic.jpg)
 
 If you can cure diseases by redirecting 1% of military spending through market mechanisms, you can solve:
 
@@ -333,7 +333,7 @@ The rest of Part II explains each component in detail:
 
 That's it. That's the plan.
 
-![A conceptual diagram showing the redirection of 1 percent of defense spending into a decentralized health ecosystem comprised of treaties, institutes, and clinical trials.](/assets/images/solution/solution-section-on-what-comes-next-bw-academic.jpg)
+![Take 1 percent of your war money and spend it on not dying. The other 99 percent can still blow things up. Everyone's happy, except perhaps the diseases.](/assets/images/solution/solution-section-on-what-comes-next-bw-academic.jpg)
 
 If that seems anticlimactic, remember: Every revolution starts with someone doing something slightly less stupid than what everyone else is doing.
 

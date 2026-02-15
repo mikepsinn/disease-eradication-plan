@@ -99,7 +99,7 @@ display(IPImage(str(png_path)))
 9. Data helps next patient
 
 
-![Step-by-step workflow of the patient journey within the DIH integration, demonstrating the streamlined enrollment and treatment process compared to traditional friction points.](/assets/images/dih-integration-model/dih-integration-model-section-real-world-example-workflow-bw-academic.jpg)
+![Getting experimental cancer treatment used to take six months and a lawyer. Now it takes six clicks. The lawyers are very upset.](/assets/images/dih-integration-model/dih-integration-model-section-real-world-example-workflow-bw-academic.jpg)
 
 ## Implementation Requirements
 
@@ -121,7 +121,7 @@ display(IPImage(str(png_path)))
 
 ### Who Gets What
 
-![A stakeholder map illustrating how doctors, pharmacies, hospitals, and insurers each benefit from clinical trial participation and outcomes.](/assets/images/dih-integration-model/dih-integration-model-section-who-gets-what-bw-academic.jpg)
+![Everyone makes money when patients get better faster. You had to draw a diagram to explain why this might be worth doing.](/assets/images/dih-integration-model/dih-integration-model-section-who-gets-what-bw-academic.jpg)
 
 
 - **Doctors:** CME credits for trial participation
@@ -185,7 +185,7 @@ display(IPImage(str(png_path)))
 
 ## Integration Strategy
 
-![A diagram showing the DIH 'experimental treatment insurance layer' as a complementary addition that wraps around existing healthcare infrastructure to enable clinical trial participation.](/assets/images/dih-integration-model/dih-integration-model-section-integration-strategy-bw-academic.jpg)
+![Your healthcare system is like a sandwich. This adds a new layer so the sandwich can learn which ingredients make people less dead.](/assets/images/dih-integration-model/dih-integration-model-section-integration-strategy-bw-academic.jpg)
 
 
 Your decentralized institutes of health (DIH) network isn't trying to replace the healthcare system. It's adding an "experimental treatment insurance layer" that:

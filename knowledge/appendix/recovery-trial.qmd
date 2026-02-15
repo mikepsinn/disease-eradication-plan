@@ -39,7 +39,7 @@ The Oxford RECOVERY trial isn't theory, it's proof. In 2020, while traditional t
 
 The RECOVERY trial enrolled 49,000 patients across 186 hospitals, tested 12 treatments, saved a million lives, and cost less than a single F-35 fighter jet.
 
-![A comparison showing the RECOVERY trial's cost efficiency of 500 per patient versus the 41,000 traditional trial average, alongside its impact of over one million lives saved.](/assets/images/recovery-trial/recovery-trial-section-key-recovery-trial-statistics-bw-academic.jpg)
+![The UK spent $500 per patient and saved one million lives. America spends $41,000 per patient. This is an 82-times-worse deal that kills people by costing too much.](/assets/images/recovery-trial/recovery-trial-section-key-recovery-trial-statistics-bw-academic.jpg)
 
 How did they do it? By adopting a streamlined, pragmatic approach:
 
@@ -47,14 +47,14 @@ How did they do it? By adopting a streamlined, pragmatic approach:
 
 Instead of requiring specialized research centers with dedicated staff and gold-plated equipment, RECOVERY just... used regular hospitals. The ones that already exist. With regular doctors. Treating regular patients.
 
-![A side-by-side comparison between the traditional research center model and the RECOVERY trial's approach of using existing hospital infrastructure, doctors, and patients.](/assets/images/recovery-trial/recovery-trial-section-they-used-regular-hospitals-bw-academic.jpg)
+![Traditional trials build special buildings with special doctors for special patients. RECOVERY used the hospital that was already there with the doctors and patients already inside it.](/assets/images/recovery-trial/recovery-trial-section-they-used-regular-hospitals-bw-academic.jpg)
 
 
 #### They Collected Only Useful Data
 
 The trial focused on core outcomes: "Did the patient live or die? Did they get better or worse?"
 
-![A comparison between traditional clinical trial complexity, featuring piles of paperwork and vials, versus the streamlined approach using a single form and existing data.](/assets/images/recovery-trial/recovery-trial-section-they-collected-only-useful-data-bw-academic.jpg)
+![Old way: mountains of paper and vials. New way: one form. The difference is someone asked if the paper was necessary.](/assets/images/recovery-trial/recovery-trial-section-they-collected-only-useful-data-bw-academic.jpg)
 
 
 No seventeen-page questionnaires about quality of life. No daily blood draws for biomarkers nobody understands. Just: "Did it work?"
@@ -65,7 +65,7 @@ They used existing hospital data. One standardized form. Done.
 
 Patients got the experimental treatment as part of their regular care. No separate research facility. No white-coated researchers hovering with clipboards. Just normal doctors providing normal care, except some patients got the experimental drug.
 
-![A side-by-side comparison of a traditional research model with separate facilities versus an integrated model where experimental treatment occurs during regular doctor visits.](/assets/images/recovery-trial/recovery-trial-section-they-integrated-with-normal-care-bw-academic.jpg)
+![In the old model, sick people travel to a special building to get experimental medicine. In the new model, they get it from their regular doctor during their regular visit at their regular hospital.](/assets/images/recovery-trial/recovery-trial-section-they-integrated-with-normal-care-bw-academic.jpg)
 
 
 Turns out this works fine. Who knew.
@@ -74,7 +74,7 @@ Turns out this works fine. Who knew.
 
 When a treatment didn't work, they stopped testing it. When a new promising treatment emerged, they added it.
 
-![A comparison showing the flexible, iterative workflow of the RECOVERY trial versus the rigid, sequential requirements of standard FDA trials.](/assets/images/recovery-trial/recovery-trial-section-they-were-flexible-bw-academic.jpg)
+![FDA trials work like a factory assembly line. RECOVERY worked like a kitchen where you can taste the soup while it's cooking and add more salt.](/assets/images/recovery-trial/recovery-trial-section-they-were-flexible-bw-academic.jpg)
 
 
 The FDA would require a completely new trial for each change. RECOVERY just... changed. Like adults making decisions.
@@ -83,7 +83,7 @@ The FDA would require a completely new trial for each change. RECOVERY just... c
 
 RECOVERY answered important clinical questions quickly using existing infrastructure.
 
-![A comparative visualization showing the differing priorities of the RECOVERY trial and the FDA, contrasting speed and clinical results against bureaucracy and process-heavy requirements.](/assets/images/recovery-trial/recovery-trial-section-they-prioritized-speed-over-bureaucracy-bw-academic.jpg)
+![RECOVERY wanted to know if the drug worked and wanted to know fast. The FDA wanted to know if you filled out the forms correctly.](/assets/images/recovery-trial/recovery-trial-section-they-prioritized-speed-over-bureaucracy-bw-academic.jpg)
 
 
 The FDA prioritizes paperwork over questions, bureaucracy over speed, and process over results.
@@ -92,7 +92,7 @@ The FDA prioritizes paperwork over questions, bureaucracy over speed, and proces
 
 {{< var recovery_trial_cost_per_patient >}} vs the U.S. average of {{< var traditional_phase3_cost_per_patient >}} ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/)).
 
-![A comparison bar chart illustrating the 82x cost efficiency gap between the $500 per-patient trial cost and the $41,000 U.S. average.](/assets/images/recovery-trial/recovery-trial-section-the-result-bw-academic.jpg)
+![$500 versus $41,000 to ask the same question. One country used hospitals. The other country used bureaucracy. Bureaucracy costs 82 times more.](/assets/images/recovery-trial/recovery-trial-section-the-result-bw-academic.jpg)
 
 
 
@@ -113,7 +113,7 @@ The RECOVERY trial didn't just save lives, it proved several critical points abo
 5. **Scale Is Achievable:** 49,000 patients enrolled faster than most traditional U.S. trials enroll 1,000 [@clinical-trial-enrollment-timelines]
 6. **Simplicity Wins:** Three 1-page forms (consent, case report, follow-up) vs FDA's complex multi-form protocols [@fda-vs-oxford-paperwork]. Less paperwork, more cures.
 
-![A side-by-side comparison of the RECOVERY trial versus traditional U.S. clinical trials across key metrics including cost, enrollment scale, and timeline.](/assets/images/recovery-trial/recovery-trial-section-the-implications-what-recovery-proved-bw-academic.jpg)
+![RECOVERY: cheap, fast, huge. Traditional U.S. trials: expensive, slow, small. These are opposites. One saved a million lives.](/assets/images/recovery-trial/recovery-trial-section-the-implications-what-recovery-proved-bw-academic.jpg)
 
 #### The Bottom Line Math
 
@@ -123,7 +123,7 @@ The RECOVERY trial didn't just save lives, it proved several critical points abo
 
 The lesson is clear: We already know how to run trials {{< var recovery_trial_cost_reduction_factor >}} more efficiently. The Oxford RECOVERY trial proved it works. The only question is whether we'll choose to implement this model globally or continue wasting $41,000 per patient while people die waiting for cures.
 
-![A scale comparison showing the massive disparity between the 41,000 cost of traditional U.S. clinical trials and the 50 cost per answer of the RECOVERY trial model.](/assets/images/recovery-trial/recovery-trial-section-the-bottom-line-math-bw-academic.jpg)
+![$41,000 to answer a question the traditional way. $50 to answer it the RECOVERY way. You could answer 820 questions for the price of one. You answer one.](/assets/images/recovery-trial/recovery-trial-section-the-bottom-line-math-bw-academic.jpg)
 
 
 #### Sources and Key Quotes
@@ -148,13 +148,13 @@ The lesson is clear: We already know how to run trials {{< var recovery_trial_co
 4. **Cost Efficiency**
    The actual cost of £2.1M (~$2.7M) for the entire trial represents an even more dramatic efficiency than previously estimated. While a simple division yields approximately £43 (~$55) per patient, authoritative sources cite ~{{< var recovery_trial_cost_per_patient >}} as a more realistic figure ([Manhattan Institute](https://manhattan.institute/article/slow-costly-clinical-trials-drag-down-biomedical-breakthroughs)). This aligns with broader evidence from a systematic review of 64 pragmatic trials, which found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost]. This is nearly 80 times more cost-efficient than traditional clinical trials ([NCBI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7295430/): {{< var traditional_phase3_cost_per_patient >}}). This extraordinary cost-effectiveness, combined with the rapid delivery of results (three major findings within 100 days) and estimated global impact of over 1 million lives saved, demonstrates the revolutionary nature of the RECOVERY trial model.
 
-![An infographic comparing the RECOVERY trial's extreme cost-efficiency of 500 per patient against the 41,000 traditional trial average, while highlighting its scale of 40,000 participants and global impact of one million lives saved.](/assets/images/recovery-trial/recovery-trial-section-sources-and-key-quotes-bw-academic.jpg)
+![500 per patient, 40,000 patients, one million lives saved. Traditional trials spend $41,000 per patient and save far fewer lives. The British discovered that waste is expensive.](/assets/images/recovery-trial/recovery-trial-section-sources-and-key-quotes-bw-academic.jpg)
 
 ## Proof This Isn't Insane
 
 "But wait," you might say, "this sounds too good to be true. Has anyone actually proven that decentralized trials can be more effective than the standard centralized model?"
 
-![A side-by-side comparison of the traditional centralized trial model versus the decentralized model, showing the flow of data and patient participation.](/assets/images/recovery-trial/recovery-trial-section-proof-this-isn-t-insane-bw-academic.jpg)
+![Centralized: patients come to the data. Decentralized: data comes to the patients. One requires patients to travel. The other requires the internet.](/assets/images/recovery-trial/recovery-trial-section-proof-this-isn-t-insane-bw-academic.jpg)
 
 
 Excellent question. Let me show you the proof.
@@ -167,14 +167,14 @@ Excellent question. Let me show you the proof.
 
 The UK spent {{< var recovery_trial_cost_per_patient >}} testing COVID treatments. Saved a million lives.
 
-![A comparison bar chart showing the massive disparity in per-patient clinical trial costs, with the UK's Oxford RECOVERY Trial at 500 versus the U.S. average of 41,000.](/assets/images/recovery-trial/recovery-trial-section-the-oxford-recovery-trial-bw-academic.jpg)
+![The UK spent $500 per patient. The U.S. spent $41,000. Same question. Same species. Different answers to 'How much should this cost?'](/assets/images/recovery-trial/recovery-trial-section-the-oxford-recovery-trial-bw-academic.jpg)
 
 
 The U.S. equivalent often costs {{< var traditional_phase3_cost_per_patient >}}, with a significant portion dedicated to extensive regulatory paperwork.
 
 ### The Math
 
-![A bar chart comparing the 2.2 billion traditional drug development cost against the 27 million cost of decentralized trials, highlighting an 82x efficiency gain.](/assets/images/recovery-trial/recovery-trial-section-the-math-bw-academic.jpg)
+![$2.2 billion to develop a drug the traditional way. $27 million to do it the RECOVERY way. That's an 82-times discount for using common sense.](/assets/images/recovery-trial/recovery-trial-section-the-math-bw-academic.jpg)
 
 - Current cost to develop a drug: $2.2 billion [@post-1962-drug-costs-explode]
 - New cost with decentralized pragmatic trials: ~$27 million

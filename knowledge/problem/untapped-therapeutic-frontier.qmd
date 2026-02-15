@@ -36,7 +36,7 @@ Here is everything humanity considers "medicine" after 5,000 years of civilizati
 * **Investigational Drugs:** Pipeline analyses suggest {{< var phase_1_passed_compounds_global >}} compounds have passed Phase I globally.
 * **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}} substances.
 
-![A visualization showing the scale difference between the 20,000 commercial drug products and the much smaller pool of ~9,500 unique safe-ish compounds that comprise humanity's entire medicinal knowledge.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-your-tiny-sandbox-bw-academic.jpg)
+![Twenty thousand drug products, but only 9,500 unique ingredients. It's like having 20,000 sandwiches but only 9,500 types of bread. You keep repackaging the same bread.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-your-tiny-sandbox-bw-academic.jpg)
 
 
 **Total unique compounds humanity knows are safe-ish: {{< var safe_compounds_count >}}.**
@@ -48,14 +48,14 @@ That's it. That's your entire medicine cabinet after five millennia.
 * **Codes:** The ICD-10 has {{< var icd_10_total_codes >}} codes for ways your meat can malfunction.
 * **Real Targets:** Consolidation gives {{< var trial_relevant_diseases_count >}} trial-relevant diseases worth fixing.
 
-![A funnel diagram illustrating the consolidation of 14,000 ICD-10 medical codes down to approximately 1,000 trial-relevant disease targets.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-target-list-ways-your-body-breaks-bw-academic.jpg)
+![Fourteen thousand ways to be sick, but only 1,000 worth testing drugs against. The other 13,000 are just spelling variations.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-target-list-ways-your-body-breaks-bw-academic.jpg)
 
 
 ## The Math You're Ignoring
 
 Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}}. This gives you the "Combinatorial Space," which is fancy talk for "stuff you could test tomorrow if you weren't busy filling out forms."
 
-![A visualization illustrating the scale of the combinatorial space, showing how the intersection of thousands of compounds and diseases results in millions of potential testing combinations.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-math-you-re-ignoring-bw-academic.jpg)
+![Nine thousand drugs times one thousand diseases equals nine million possible cures. You've tested 30,000. See you in the year 5000.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-math-you-re-ignoring-bw-academic.jpg)
 
 
 **{{< var safe_compounds_count >}} compounds × {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} plausible drug-condition combinations.**
@@ -66,7 +66,7 @@ Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var t
 * **Repurposed uses:** {{< var drug_repurposing_success_rate >}} of drugs gain at least one new indication after initial approval.
 * **Failed trials:** Let's be generous and say you tested 10 times as many things that failed.
 
-![A visual breakdown of drug testing outcomes showing the disproportionate scale of failed trials compared to approved and repurposed drug-disease pairings.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-what-you-ve-actually-tested-bw-academic.jpg)
+![Most drug trials fail. A few succeed. Humanity's entire medical knowledge is a tiny pile of successes next to a mountain of expensive failures we learned nothing from.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-what-you-ve-actually-tested-bw-academic.jpg)
 
 
 **Total tested: {{< var tested_relationships_estimate >}} relationships.**
@@ -81,7 +81,7 @@ Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var t
 
 You are missing {{< var unexplored_ratio >}} of the picture.
 
-![A visualization of the drug-disease exploration space, showing a tiny sliver representing the 0.3 percent currently known versus the massive 99.7 percent area that remains unexplored.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-scorecard-bw-academic.jpg)
+![The dot is everything you know about medicine. The rest is everything you don't. The dot is very small. You seem comfortable with this.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-scorecard-bw-academic.jpg)
 
 
 It's like reading the first page of *War and Peace* and writing a book report called "It's About a Party." Technically accurate. Cosmically insufficient.
@@ -90,7 +90,7 @@ It's like reading the first page of *War and Peace* and writing a book report ca
 
 You might argue, "Maybe the other 99% is useless!"
 
-![A visualization showing the 12 percent vs 88 percent split of targeted human biology alongside a network diagram illustrating how drugs interact with multiple overlapping disease pathways.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-is-the-untested-stuff-useful-bw-academic.jpg)
+![You've figured out 12 percent of how the body works. The other 88 percent is a mystery. Drugs affect multiple pathways at once. You test them on one pathway at a time.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-is-the-untested-stuff-useful-bw-academic.jpg)
 
 
 Biology disagrees.
@@ -103,7 +103,7 @@ Biology disagrees.
 
 So far we only counted molecules humanity *already has*. If you look at what's chemically possible, it gets embarrassing.
 
-![A scale comparison showing the massive disparity between the billions of known molecules and the vast, unexplored chemical space, visualized as a single grain of sand against the backdrop of the entire planet Earth.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-universe-is-big-you-are-small-bw-academic.jpg)
+![All the molecules you've discovered are a grain of sand. All the molecules that could exist are the planet Earth. You're very proud of your grain of sand.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-universe-is-big-you-are-small-bw-academic.jpg)
 
 
 * **Chemical Space:** Estimated 10^23 to 10^60 [@chemical-space-size] drug-like molecules.
@@ -122,7 +122,7 @@ It's not because science is hard. It's because:
 
 1. **Trials Cost Too Much:** A typical Phase II-III RCT costs **$30-$100M** (Median cost per patient {{< var traditional_phase3_cost_per_patient >}}). At that price, you only test "sure things." You test the equivalent of betting your house that the sun will rise. Safe bets. Boring bets. Bets that don't cure cancer.
 
-![A conceptual map of the systemic barriers preventing medical breakthroughs, highlighting how high costs, risk aversion, and patent requirements create a bottleneck between scientific potential and patient care.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-why-you-are-still-sick-bw-academic.jpg)
+![High costs, patent rules, and fear of lawsuits form a bottleneck between cures and people. The bottleneck is shaped like a dollar sign.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-why-you-are-still-sick-bw-academic.jpg)
 
 
 2. **Herd Mentality:** Trials overwhelmingly test the same few biological targets due to preferential attachment dynamics [@preferential-target-attachment]. Everyone studies what everyone else is studying because that's how you get grants. It's like if every explorer only went to France because France already had good reviews on TripAdvisor.
@@ -143,7 +143,7 @@ Testing every known safe compound against every major disease:
 
 That's almost 3,000 years to explore compounds we *already know are safe*. By that math, we won't finish until the year 5000.
 
-![A visualization of the massive backlog of 9.5 million compound-disease combinations funneling through a narrow annual trial capacity, illustrating why the process will take until the year 5000 to complete.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-1-single-compounds-most-conservative-bw-academic.jpg)
+![Nine million drug tests to run. Current speed: 3,000 per year. Finish date: year 5000. You'll be dead by then. So will your children. And their children. And their children.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-1-single-compounds-most-conservative-bw-academic.jpg)
 
 
 ### Tier 2: Combination Therapies (Still Defensible)
@@ -154,14 +154,14 @@ Modern medicine increasingly relies on multi-drug regimens. Oncology, HIV treatm
 
 That's longer than *Homo sapiens* has existed as a species. Using only compounds with established safety data. Testing only pairs, not triplets or higher-order combinations.
 
-![A comparison illustrating the vast gap between current clinical trial capacity and the millions of years required to test all possible dual-drug combinations.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-2-combination-therapies-still-defensible-bw-academic.jpg)
+![Testing every two-drug combination would take millions of years. You have about 70 years if you're lucky. The math is not in your favor.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-2-combination-therapies-still-defensible-bw-academic.jpg)
 
 
 ### Tier 3: The Full Chemical Universe (Illustrative)
 
 Beyond known compounds lies the vast chemical space of 10^23 to 10^60 drug-like molecules. At current trial capacity, exploring even the *synthesizable* fraction would take longer than the universe has existed.
 
-![A scale comparison showing the tiny dot of known compounds against the massive, expansive sphere of the theoretical chemical universe (10^60 molecules).](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-3-the-full-chemical-universe-illustrative-bw-academic.jpg)
+![The dot is every drug you've ever discovered. The sphere is every drug that could exist. There are more possible molecules than atoms in the galaxy. You've tried about 9,000.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-3-the-full-chemical-universe-illustrative-bw-academic.jpg)
 
 
 We haven't even started.
@@ -170,7 +170,7 @@ We haven't even started.
 
 Some will argue "diminishing returns": the more we search, the harder each new discovery becomes. This assumes we've already picked the low-hanging fruit.
 
-![A visualization of the vast gap between current therapeutic exploration (less than 1 percent) and the theoretical 37 percent threshold where diminishing returns begin to outweigh the benefits of compound learning.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-but-won-t-we-run-out-of-easy-discoveries-bw-academic.jpg)
+![You've explored 1 percent of possible treatments. Benefits peak around 37 percent. You're 36 percentage points away from maximum medicine. This seems like a solvable problem.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-but-won-t-we-run-out-of-easy-discoveries-bw-academic.jpg)
 
 
 We haven't picked *any* fruit. We're still in the parking lot.
@@ -195,7 +195,7 @@ Still a long time, but within the planning horizon of institutions. The first fe
 
 More importantly, dFDA builds *permanent infrastructure* for systematic therapeutic exploration. The goal isn't to "finish", it's to stop leaving cures on the table while we form subcommittees.
 
-![Side-by-side comparison of costs and efficiency gains using decentralized pragmatic trials versus traditional methods.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-fix-pragmatic-vs-traditional-bw-academic.jpg)
+![Traditional trials: expensive, slow, picky about participants. Decentralized trials: cheaper, faster, will accept literally anyone. Both test the same drugs.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-fix-pragmatic-vs-traditional-bw-academic.jpg)
 
 
 ## The Bottom Line
@@ -210,7 +210,7 @@ More importantly, dFDA builds *permanent infrastructure* for systematic therapeu
 
 You're not in the parking lot because there's nothing inside Disney World. You're in the parking lot because the entrance fee is $100 million and requires 17 years..
 
-![A visualization contrasting the tiny fraction of explored medical relationships against the vast, untapped chemical universe, separated by the barriers of cost and time.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-bottom-line-bw-academic.jpg)
+![Everything you know about medicine is a dot. Everything you could know is the universe. Between them: money and time. You have neither.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-bottom-line-bw-academic.jpg)
 
 
 The rides are inside. The cures are inside. You just need to open the gate.

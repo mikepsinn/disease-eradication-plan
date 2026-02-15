@@ -14,15 +14,15 @@ image: /assets/og-images/knowledge/solution/dih-og-retro-academic.jpg
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![A framework for medical research funding that automates allocation and prioritizes patient choice.](/assets/infographics/knowledge/solution/dih-infographic-retro-academic.jpg)
+![A system where sick people decide which diseases to cure instead of committees deciding in meetings.](/assets/infographics/knowledge/solution/dih-infographic-retro-academic.jpg)
 
-![A decentralized institute of health: A new model for medical research](../../assets/icons/dih-icon-6-wide.png)
+![What if the National Institutes of Health, but without the institute part or the national part.](../../assets/icons/dih-icon-6-wide.png)
 
 ## The Objective: Total Disease Eradication
 
 The goal is simple: **eliminate all disease**.
 
-![A comparison between the current system's focus on administrative overhead and an optimized system focused on direct research and disease eradication.](/assets/images/dih/dih-section-the-objective-total-disease-eradication-bw-academic.jpg)
+![Money spent on paperwork versus money spent on not dying. Currently we prefer the paperwork.](/assets/images/dih/dih-section-the-objective-total-disease-eradication-bw-academic.jpg)
 
 The constraint is also simple: **resources are scarce**.
 
@@ -51,7 +51,7 @@ A decentralized institute of health (DIH) is an alternative design that optimize
 
 Economist Mancur Olson identified why public goods are systematically underproduced: **diffuse benefits and concentrated costs**.
 
-![A comparison between the 'Diffuse Model' of disease research where benefits are spread thin and the 'Concentrated Model' of the military-industrial complex, illustrating how DIH aligns stakeholders to replicate defense-style success in health.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
+![Why we're so good at making weapons and so bad at curing diseases. The weapons people are organized, the disease people are scattered.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
 
 Curing cancer benefits 8 billion people a little. Blocking cancer cures benefits a few thousand pharmaceutical executives a lot. The executives show up to lobby. The 8 billion don't. This is why we've spent 50 years "fighting cancer" while the defense industry got stealth bombers, aircraft carriers, and GPS.
 
@@ -89,7 +89,7 @@ Similarly, DIH doesn't replace existing institutions. Pharma companies remain ph
 
 The war on disease has been losing for 50 years because it's not actually a war. It's a collection of uncoordinated skirmishes.
 
-![A conceptual comparison showing the current fragmented landscape of medical research with siloed stakeholders versus a unified ecosystem coordinated by a central infrastructure layer.](/assets/images/dih/dih-section-why-this-framing-matters-bw-academic.jpg)
+![Medical researchers currently work in separate rooms and don't talk to each other. This is a picture of them in the same room, talking.](/assets/images/dih/dih-section-why-this-framing-matters-bw-academic.jpg)
 
 - Researchers compete for grants instead of collaborating on cures
 - Pharma companies duplicate efforts and hide failures
@@ -103,7 +103,7 @@ That's the current war on disease. DIH is the coordination layer that turns scat
 
 ## DIH: The ROI Maximization Protocol
 
-![A conceptual diagram showing the DIH protocol as a central coordination hub that aligns funding, researchers, patients, and resources toward the unified goal of disease eradication.](/assets/images/dih/dih-section-dih-the-roi-maximization-protocol-bw-academic.jpg)
+![Everyone involved in medicine pointing in the same direction instead of wandering around like confused sheep.](/assets/images/dih/dih-section-dih-the-roi-maximization-protocol-bw-academic.jpg)
 
 A DIH is not a platform. It's not an organization. It's a **coordination protocol** with one function:
 
@@ -126,14 +126,14 @@ A DIH does exactly three things:
 
 Everything operational is outsourced. Trial infrastructure? That's [dFDA's](dfda.qmd) job. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
 
-![A conceptual architecture showing the DIH as a thin protocol core that receives and allocates funds while outsourcing operational tasks like trial infrastructure and talent matching to external services.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
+![A tiny middle bit that handles money, surrounded by other people who do the actual work. Like a very small manager with many employees.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
 
 Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to influence. Just code that moves money toward measured outcomes.
 
 ::: {.callout-note icon=false}
 ## The Core Innovation: Pay for Results
 
-![A visual comparison showing how funding flows toward tangible outcomes like patient enrollment and successful results, while being restricted for administrative tasks like grant writing.](/assets/images/dih/dih-section-the-core-innovation-pay-for-results-bw-academic.jpg)
+![Pay people for curing diseases, not for writing essays about why they should be allowed to try curing diseases.](/assets/images/dih/dih-section-the-core-innovation-pay-for-results-bw-academic.jpg)
 
 Every dollar flows based on results, not promises:
 
@@ -151,7 +151,7 @@ This is how most other industries work. You pay contractors when they build the 
 
 The current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Scientists waste billions repeating mistakes someone else already made.
 
-![A conceptual diagram contrasting the current siloed research environment with the DIH Data Commons model, showing how disparate results flow into a central open repository for AI-driven analysis.](/assets/images/dih/dih-section-the-data-commons-publish-everything-bw-academic.jpg)
+![Currently, research results hide in separate filing cabinets. This shows them all dumped in one big pile where a computer can look at them.](/assets/images/dih/dih-section-the-data-commons-publish-everything-bw-academic.jpg)
 
 DIH requires **100% open publication** of all data, positive and negative, as a condition of funding:
 
@@ -167,7 +167,7 @@ DIH uses two allocation mechanisms:
 
 - **Patient subsidies (market mechanism):** Research funding follows patient choice. Patients enroll in trials they believe in; funding flows accordingly. Variable subsidy rates ensure rare diseases remain viable. No committees decide "cancer vs Alzheimer's."
 
-![A comparison of the dual governance model in DIH, showing patient-driven market mechanisms for research funding and preference-aggregated 'Wishocracy' for infrastructure development.](/assets/images/dih/dih-section-governance-market-mechanism-wishocracy-bw-academic.jpg)
+![Sick people decide what to study; everyone votes on which buildings to build. Democracy, but only for the bits that make sense.](/assets/images/dih/dih-section-governance-market-mechanism-wishocracy-bw-academic.jpg)
 
 - **[Wishocracy](wishocracy.qmd):** For infrastructure and public goods only. Aggregates preferences through pairwise comparisons ("EHR integration or security audits?"). See the [dedicated page](wishocracy.qmd) for details.
 
@@ -190,7 +190,7 @@ Every incentive is ROI-weighted. Not just "do good" but "do the MOST good per do
 
 Traditional system: Write a grant proposal. Hope a committee likes it. Get paid to try.
 
-![A side-by-side comparison of research funding models showing the shift from traditional grant proposals to the DIH system of patient subsidies and results-based payments.](/assets/images/dih/dih-section-how-researchers-get-paid-bw-academic.jpg)
+![Old way: write a letter begging for money. New way: cure someone and get paid. One of these seems more efficient.](/assets/images/dih/dih-section-how-researchers-get-paid-bw-academic.jpg)
 
 DIH system:
 
@@ -204,7 +204,7 @@ DIH system:
 
 Politicians optimize for reelection, status, and post-office careers. Not "humans continuing to exist."
 
-![A conceptual diagram showing how voting records translate into Public Good Scores, which then trigger electoral support and post-office career opportunities.](/assets/images/dih/dih-section-how-politicians-get-aligned-bw-academic.jpg)
+![Politicians who vote for good things get good scores, which get them good jobs later. Like a report card that follows you into adulthood.](/assets/images/dih/dih-section-how-politicians-get-aligned-bw-academic.jpg)
 
 [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve this by making "support pragmatic clinical trial funding" the career-optimal move:
 
@@ -220,7 +220,7 @@ No bribes. No corruption. Just a standing rule: if you support policies that mea
 
 ### The Architecture
 
-![A structural diagram showing the relationships between the 1% Treaty Fund, the Decentralized Institute of Health (DIH), and the dFDA, illustrating funding flows and organizational boundaries.](/assets/images/dih/dih-section-the-architecture-bw-academic.jpg)
+![Three boxes with arrows between them. Money goes in one box, splits into two other boxes, and hopefully cures diseases.](/assets/images/dih/dih-section-the-architecture-bw-academic.jpg)
 
 
 **The [1% Treaty Fund](1-percent-treaty.qmd):**
@@ -291,7 +291,7 @@ dFDA is the primary example of a funded campaign. It's not part of DIH; it's a s
 
 ### Campaign Lifecycle
 
-![A circular process diagram showing the six stages of the Campaign Lifecycle, from initial proposal and community voting to funding, execution, and verification.](/assets/images/dih/dih-section-campaign-lifecycle-bw-academic.jpg)
+![The six steps from 'someone has an idea' to 'did they actually do it.' Arranged in a circle to show it happens over and over.](/assets/images/dih/dih-section-campaign-lifecycle-bw-academic.jpg)
 
 1. **Proposal:** Submit campaign description, budget, milestones
 2. **Wishocracy vote:** Humanity decides priority relative to alternatives
@@ -323,7 +323,7 @@ DIH is designed to make capture economically irrational.
 
 **Risk:** "What if dFDA becomes the new FDA, capturing regulatory power?"
 
-![A diagram showing the flow of capital from the 1 percent Treaty Fund to competing regulatory campaigns, illustrating how a captured framework can be bypassed by diverting funds to an alternative.](/assets/images/dih/dih-section-the-new-fda-risk-bw-academic.jpg)
+![When the FDA gets corrupted, you just build a second FDA with the same money. Like switching to the other queue at the grocery store.](/assets/images/dih/dih-section-the-new-fda-risk-bw-academic.jpg)
 
 **Mitigation:** dFDA has no budget authority. It's just a campaign competing for funding from the 1% Treaty Fund. If it gets captured, fund a competing framework instead.
 
@@ -363,7 +363,7 @@ A {{< var treaty_annual_funding >}} treasury is a massive target. DIH uses defen
 - Progressive unpause policies tied to remediation completion
 - Guardian modules for pausing non-critical functions under defined conditions
 
-![Defense in depth: decentralized control, AI monitoring, transparency, and recovery mechanisms interact to prevent theft.](/assets/images/governance/governance-section-security-architecture-bw-academic.jpg)
+![Four different ways to stop people from stealing the money. Because one way would be insufficient, apparently.](/assets/images/governance/governance-section-security-architecture-bw-academic.jpg)
 
 ### Beyond Medical Research
 
@@ -376,7 +376,7 @@ Once you prove you can run a {{< var treaty_annual_funding >}} treasury without 
 
 This isn't just about protecting health funding. It's an experiment in demonstrating a new model for uncorruptible, transparent governance of public goods. The 1% Treaty Fund becomes the prototype for a new era of public governance, one that eliminates human corruption points entirely while delivering measurable results.
 
-![Uncorruptible DAO governance: token-holder voting flows through smart contracts to funding execution with no human intermediaries.](/assets/images/governance/governance-section-beyond-medical-research-a-template-for-uncorruptible-governance-bw-academic.jpg)
+![Money distributed by robots instead of people, because people kept stealing it.](/assets/images/governance/governance-section-beyond-medical-research-a-template-for-uncorruptible-governance-bw-academic.jpg)
 
 ## Summary: The Coordination Layer
 

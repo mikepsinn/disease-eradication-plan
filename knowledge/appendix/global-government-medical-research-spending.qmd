@@ -12,7 +12,7 @@ image: /assets/og-images/knowledge/appendix/global-government-medical-research-s
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-![A comprehensive breakdown of how little humanity invests in not dying, distinguishing broad "research" from actual cures.](/assets/infographics/knowledge/appendix/global-government-medical-research-spending-infographic-retro-academic.jpg)
+![How little money we spend on not dying, with the important distinction between 'research' (paying people to think about diseases) and 'cures' (actually fixing them). One of these is much smaller than you'd hope.](/assets/infographics/knowledge/appendix/global-government-medical-research-spending-infographic-retro-academic.jpg)
 
 
 Here is the complete accounting of humanity's commitment to curing disease. Spoiler: It's largely an accounting trick.
@@ -21,7 +21,7 @@ Here is the complete accounting of humanity's commitment to curing disease. Spoi
 
 Governments claim they spend billions on "medical research." In 2024, the official global total for government medical R&D was approximately **{{< var global_med_research_spending >}}**.
 
-![A comparison between the 'Broad Number' of 67.5 billion in official government medical R and D spending versus the 'Real Number' suggested by the text.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-broad-nu-bw-academic.jpg)
+![The 'official' number for medical research versus the real number after you subtract all the parts that aren't actually curing diseases. Like restaurant portions, governments describe things generously.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-broad-nu-bw-academic.jpg)
 
 
 It sounds like a lot. It is a lie.
@@ -34,14 +34,14 @@ That $68 billion figure includes:
 3.  **Bureaucracy:** Salaries for the people who decide where the money goes.
 4.  **Epidemiology:** Counting how many people have died (instead of saving them).
 
-![A visual breakdown of the 68 billion funding pool, illustrating the distribution between basic science, administrative overhead, bureaucracy, and epidemiology.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-accounting-trick-bw-academic.jpg)
+![Where the 68 billion goes: basic science, overhead, bureaucracy, and epidemiology. Notice how 'curing diseases' is not on this list.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-accounting-trick-bw-academic.jpg)
 
 
 ### The Real Number: {{< var global_government_clinical_trials_spending_annual >}}
 
 When you strip away the overhead and basic science to ask **"How much do governments spend on actually testing cures in humans?"** the number collapses.
 
-![A visualization contrasting the 4.5 billion annual global government investment in clinical trials against the 8 billion people it serves, highlighting the scale of public funding.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-real-num-bw-academic.jpg)
+![4.5 billion for clinical trials, divided by 8 billion people. That's about 56 cents per human per year. You spend more on a pack of gum.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-real-num-bw-academic.jpg)
 
 
 **Global government spending on interventional clinical trials is only ~{{< var global_government_clinical_trials_spending_annual >}} per year.**
@@ -54,7 +54,7 @@ That is the entire public contribution to testing new medicines for 8 billion pe
 In 2024, global military spending reached **{{< var global_military_spending_annual_2024 >}}**.
 In contrast, global government spending on interventional clinical trials is estimated at **{{< var global_government_clinical_trials_spending_annual >}}**.
 
-![A scale comparison showing the massive disparity between global military spending and funding for interventional clinical trials, highlighting the 604:1 ratio.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-604x-disparity-bw-academic.jpg)
+![For every dollar we spend on clinical trials, we spend 604 dollars on the military. We're very good at killing people and very bad at not killing people. Consistency is important.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-604x-disparity-bw-academic.jpg)
 
 
 This represents a funding ratio of **{{< var military_to_government_clinical_trials_spending_ratio >}}**.
@@ -77,7 +77,7 @@ This creates a fatal incentive structure:
 **We have outsourced our survival to a business model that requires us to stay sick enough to buy pills, but alive enough to pay for them.**
 
 
-![Flowchart depicting the circular incentive structure of the pharmaceutical industry, showing how profit motives filter out cures for orphan diseases and generics.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-industry-incentive-cycle-bw-academic.jpg)
+![The drug industry flowchart: will it make money? No? Don't cure it. Yes? Cure it. This is why we have seventeen acne medications and zero malaria vaccines. The market has spoken, and it has terrible skin.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-industry-incentive-cycle-bw-academic.jpg)
 
 ## Broad R&D Breakdown: The Hall of Shame
 
@@ -91,7 +91,7 @@ This creates a fatal incentive structure:
 - **Administrative Costs:** 31% [@nih-administrative-costs-31pct] of the budget.
 - **Indirect Costs:** Universities take 40-60% [@university-indirect-costs-40-60pct] for overhead.
 
-![A visual breakdown of the 47.1 billion NIH budget showing the disparity between total funding and actual clinical trial spending after accounting for administrative and university indirect costs.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-united-state-bw-academic.jpg)
+![Where the NIH's 47.1 billion goes after universities and administrators take their cut. Like watching a cake get sliced, if most of the slices went to people who weren't hungry.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-united-state-bw-academic.jpg)
 
 
 ### China: The Rising Power
@@ -101,7 +101,7 @@ This creates a fatal incentive structure:
 - Prioritizes surveillance technology over medical breakthroughs.
 - Spends 97x more [@china-surveillance-vs-medicine-spending] on domestic security than clinical research.
 
-![A comparison showing the disparity between China's domestic security spending and its clinical research budget, emphasizing the 97-to-1 spending ratio.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-china-the-rising-power-bw-academic.jpg)
+![China spends 97 dollars on domestic security for every dollar on clinical research. They're very committed to making sure people stay alive long enough to be monitored.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-china-the-rising-power-bw-academic.jpg)
 
 
 ### European Union
@@ -111,7 +111,7 @@ This creates a fatal incentive structure:
 - Per citizen: Less than the cost of a cup of coffee ($2.89/year).
 - Individual countries like Germany ($6B) and France ($4B) add to this, but the total remains a fraction of their military budgets.
 
-![A comparison showing the EU health budget per citizen alongside national health budgets and a representative cup of coffee to illustrate relative spending scales.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-european-union-bw-academic.jpg)
+![The EU health budget per citizen, compared to a cup of coffee. The coffee costs more. At least the coffee keeps you awake while you slowly die of preventable diseases.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-european-union-bw-academic.jpg)
 
 
 ### The Rest of the World
@@ -120,7 +120,7 @@ This creates a fatal incentive structure:
 - **India:** $3 billion [@india-medical-research-spending-1-2b] ($2.14 per person).
 - **Russia:** $800 million [@russia-medical-research-spending-800m] (Spend huge on nukes, pennies on health).
 
-![A comparison of medical research spending in Japan, India, and Russia, illustrating the significant scale differences in national investment.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-rest-of-the-world-bw-academic.jpg)
+![Medical research spending in Japan, India, and Russia. The differences are significant, like comparing a swimming pool, a bathtub, and a shot glass. All full of water, very different outcomes.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-rest-of-the-world-bw-academic.jpg)
 
 
 ## Conclusion: A Species-Wide Failure
@@ -136,4 +136,4 @@ We are the only species that pays for its own extinction while claiming it canno
 
 The solution is the **1% Treaty**: shifting just 1% of military spending ({{< var treaty_annual_funding >}}) would increase global government clinical trial funding by **600%**. We could run tens of thousands of pragmatic trials annually, breaking the industry monopoly on what gets tested and cured.
 
-![Comparison of global spending priorities, contrasting the trillions spent on military and billions on entertainment/pets against the fraction spent on clinical trials.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-spending-com-bw-academic.jpg)
+![What humanity spends money on: trillions on military, billions on entertainment and pets, and whatever's left over for not dying. We have our priorities, and they are terrible.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-spending-com-bw-academic.jpg)

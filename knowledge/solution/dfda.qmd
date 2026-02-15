@@ -14,7 +14,7 @@ image: /assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg
 
 ![](/assets/infographics/knowledge/solution/dfda-infographic-retro-academic.jpg)
 
-![Decentralized Trials Save Millions](../../assets/infographics/Decentralized Trials Save Millions Infographic.png)
+![Doing medical trials everywhere at once costs less than doing them one at a time. This seemed to surprise researchers.](../../assets/infographics/Decentralized Trials Save Millions Infographic.png)
 
 {{< include ../figures/trial-access-disparity-chart.qmd >}}
 
@@ -30,7 +30,7 @@ This isn't because people don't want to help find cures. It's because the curren
 
 Your decentralized framework for drug assessment (dFDA) is an **open coordination protocol** that enables existing platforms to connect companies with treatments to patients who need them. It's HTTP for clinical trials - a standard that lets all the existing systems talk to each other and share outcomes.
 
-![Architecture of the dFDA as a central coordination protocol connecting drug companies, patient platforms, treatments, and clinical outcomes.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
+![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
 
 ### How Companies Register Treatments (5 Minutes, Zero Approval Needed)
 
@@ -44,7 +44,7 @@ Your decentralized framework for drug assessment (dFDA) is an **open coordinatio
 
 #### Net cost to company: $0
 
-![A breakdown of the zero-cost model showing how patient-funded treatment and data contributions offset traditional R and D, data collection, and liability expenses.](/assets/images/dfda/dfda-section-net-cost-to-company-0-bw-academic.jpg)
+![Patients pay for their own medicine, then you give them their money back, and somehow everyone profits. Economics is confusing.](/assets/images/dfda/dfda-section-net-cost-to-company-0-bw-academic.jpg)
 
 **Why?**
 
@@ -55,7 +55,7 @@ Your decentralized framework for drug assessment (dFDA) is an **open coordinatio
 
 ### The Payment Flow (Or: How Everyone Profits Except Disease)
 
-![A flowchart illustrating the circular flow of payments, subsidies, and refunds between the patient and the Treaty Fund.](/assets/images/dfda/dfda-section-the-payment-flow-or-how-everyone-profits-except-disease-bw-academic.jpg)
+![Money goes from patient to fund to patient to company to fund to patient. It's a circle, like water cycle but for dollars.](/assets/images/dfda/dfda-section-the-payment-flow-or-how-everyone-profits-except-disease-bw-academic.jpg)
 
 **Patient pays:** Treatment cost + Refundable deposit
 **Patient receives:** Subsidy (from a 1% Treaty Fund)
@@ -73,11 +73,11 @@ Your decentralized framework for drug assessment (dFDA) is an **open coordinatio
 - Gets back: $50 deposit
 - **Net: +$25 profit + potentially cures migraines**
 
-![Flowchart illustrating the economic loop where patient subsidies and deposits incentivize participation while ensuring zero net cost to the patient and profit for the manufacturer.](/assets/images/dfda/dfda-section-economic-flow-diagram-bw-academic.jpg)
+![Everyone gets paid, patient pays nothing. If this sounds impossible, you're thinking like an economist instead of a magician.](/assets/images/dfda/dfda-section-economic-flow-diagram-bw-academic.jpg)
 
 #### Company receives
 
-![A visual breakdown of company gains per patient, illustrating the monthly cash profit alongside the significantly larger valuation of clinical trial data.](/assets/images/dfda/dfda-section-company-receives-bw-academic.jpg)
+![Companies make a little money from selling pills and a lot of money from knowing which pills work. Information is expensive, apparently.](/assets/images/dfda/dfda-section-company-receives-bw-academic.jpg)
 
 - $100/month from patient
 - Manufacturing cost: $20/month
@@ -108,7 +108,7 @@ Research ideas → Register instantly → Patients decide by joining → $0 per 
 
 A 1% Treaty Fund doesn't fund pragmatic clinical trials directly. **It subsidizes participation, which unlocks a self-sustaining ecosystem that funds ALL research.**
 
-![Comparison of the linear, bottlenecked traditional research model versus the parallel, unlimited capacity of the decentralized protocol.](/assets/images/dfda/dfda-section-bottleneck-vs-protocol-process-bw-academic.jpg)
+![One research lab doing one thing at a time versus a million people doing a million things at once. Speed difference is noticeable.](/assets/images/dfda/dfda-section-bottleneck-vs-protocol-process-bw-academic.jpg)
 
 ## How It Works: Just Let People Try Stuff (Carefully)
 
@@ -126,7 +126,7 @@ This is because trials are designed to test drugs on people who don't actually e
 
 On top of excluding everyone with a pulse, these "definitive" studies are run on comically small groups. They'll test a new heart drug on [275 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), a cancer drug on just [20 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), and a diabetes drug on [100 people](https://www.ncbi.nlm.nih.gov/books/NBK50886/), then prescribe the winner to millions.
 
-![A chart showing a study for Wellbutrin where only 36 patients were in the final analysis, yet the drug is prescribed to millions.](../../assets/images/wellbutrin-effectiveness-small-sample-size.png)
+![We tested this drug on thirty-six people and then gave it to millions. Like taste-testing a pie with one person and serving it to a stadium.](../../assets/images/wellbutrin-effectiveness-small-sample-size.png)
 
 We're basing the survival of our species on a sample size smaller than a kindergarten class. So, instead of studying these mythical, perfectly sick unicorns, what if we just collected data from everyone who's *actually* sick?
 
@@ -142,9 +142,9 @@ But here's what's changed: we now have so much data and such powerful computers 
 
 Modern statistical methods are so good that a [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) found that the results from high-quality observational studies are generally the same as those from expensive, slow randomized controlled trials.
 
-![A chart comparing effect sizes from observational studies and randomized trials for mortality.](../../assets/images/observational-vs-randomized-effect-sizes.png)
+![Watching what happens versus making it happen, and which one is better at predicting who dies.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
-![A chart comparing effect sizes from observational studies and randomized trials for various outcomes.](../../assets/images/observational-vs-randomized-trial-effect-sizes.png)
+![Watching versus doing, and which one tells you the truth more often. Spoiler: they're surprisingly similar.](../../assets/images/observational-vs-randomized-trial-effect-sizes.png)
 
 We have the tools to get reliable answers from real-world data. We just have to actually use them.
 
@@ -152,7 +152,7 @@ We have the tools to get reliable answers from real-world data. We just have to 
 
 The protocol upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
 
-![A conceptual comparison between the legacy FDA.gov 'digital cemetery' and the 2.0 upgrade, illustrating the 80 percent reduction in mortality and the cost-benefit analysis against a fighter jet.](/assets/images/dfda/dfda-section-introducing-fda-gov-2-0-now-with-80-less-death-bw-academic.jpg)
+![Upgrading the FDA website would save more lives than a fighter jet, cost less than a fighter jet, but we bought the fighter jet.](/assets/images/dfda/dfda-section-introducing-fda-gov-2-0-now-with-80-less-death-bw-academic.jpg)
 
 Here's the revolutionary process:
 
@@ -181,7 +181,7 @@ It's like Consumer Reports, but for not dying.
 
 **Treatment Rankings: Every Option, Ranked by Reality**
 
-![Treatment Rankings Example](../../assets/images/dfda-comparative-effectiveness-ranking-search.png)
+![Which pills work better than other pills, in list form. Like a leaderboard for medicine.](../../assets/images/dfda-comparative-effectiveness-ranking-search.png)
 
 Search any condition and see every treatment ranked by real-world effectiveness:
 
@@ -196,7 +196,7 @@ No more guessing which treatment your doctor half-remembers from a conference. J
 
 To complement the real-world data from past patients, the system will integrate a powerful forecasting tool: **live prediction markets**.
 
-![A dashboard visualization showing how diverse market participants contribute to real-time probability percentages for clinical trial outcomes.](/assets/images/dfda/dfda-section-step-2-5-see-the-future-with-financially-backed-predictions-bw-academic.jpg)
+![Lots of people guessing whether drugs will work, and the average of their guesses is usually right. The wisdom of crowds, betting edition.](/assets/images/dfda/dfda-section-step-2-5-see-the-future-with-financially-backed-predictions-bw-academic.jpg)
 
 This isn't just polling experts; it's a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
 
@@ -211,7 +211,7 @@ For any given trial, you'll see real-time odds on questions like:
 1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
 2.  **The Ultimate Fact-Checker**: Your decentralized institutes of health (DIH) network automatically resolves these bets using the actual, aggregated, and anonymized patient data collected through the dFDA protocol. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
 
-![A feedback loop showing how market predictions are validated against real-world dFDA patient data to resolve bets and improve the accuracy of health insights.](/assets/images/dfda/dfda-section-why-trust-this-bw-academic.jpg)
+![People bet on drugs, patients take drugs, we check who won the bet. Like fantasy football but with your liver.](/assets/images/dfda/dfda-section-why-trust-this-bw-academic.jpg)
 
 This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
 
@@ -267,7 +267,7 @@ It's what we should have been doing since we invented writing.
 
 Here's what we're NOT doing: building a government platform that competes with existing medical technology companies.
 
-![A conceptual diagram contrasting a centralized 'train' platform with an open 'rail' protocol that connects multiple existing medical technologies and allows for competing implementations.](/assets/images/dfda/dfda-section-the-partnership-approach-building-rails-not-trains-bw-academic.jpg)
+![One company owning the entire railway versus everyone sharing the tracks. We prefer sharing, as it's cheaper and less monopolistic.](/assets/images/dfda/dfda-section-the-partnership-approach-building-rails-not-trains-bw-academic.jpg)
 
 Here's what we ARE doing: establishing an open protocol that lets all the existing platforms talk to each other.
 
@@ -297,7 +297,7 @@ Why compete with them? Partner instead.
 
 ### The Integration Consortium
 
-![A stakeholder map illustrating the key categories of partners, EHR vendors, tech giants, DCT platforms, and international health organizations, that form the Integration Consortium.](/assets/images/dfda/dfda-section-the-integration-consortium-bw-academic.jpg)
+![All the companies and organizations that have to cooperate for this to work. It's a lot of logos.](/assets/images/dfda/dfda-section-the-integration-consortium-bw-academic.jpg)
 
 Before writing code, form partnerships with:
 
@@ -344,7 +344,7 @@ Before writing code, form partnerships with:
 - Faster enrollment
 - Better, more diverse data
 
-![Ecosystem map showing how the decentralized framework acts as a protocol layer connecting existing EHRs, tech giants, and DCT platforms without creating a competing walled garden.](/assets/images/dfda/dfda-section-federated-network-architecture-bw-academic.jpg)
+![The new system plugs into all the old systems without replacing them. Like adding a power strip instead of rewiring your entire house.](/assets/images/dfda/dfda-section-federated-network-architecture-bw-academic.jpg)
 
 ### Federated, Not Centralized
 
@@ -356,7 +356,7 @@ Data doesn't move to a central database. It stays where it is:
 
 Your framework's protocol just lets you run queries ACROSS systems without moving data. Federated data networks already do this with 300M+ patient records.
 
-![Architecture diagram contrasting centralized data storage with a federated model where queries are sent to independent data silos (Epic, Apple Health, Cerner) and aggregated without raw data transfer.](/assets/images/dfda/dfda-section-federated-not-centralized-bw-academic.jpg)
+![Instead of copying everyone's medical data to one place, we ask questions to many places and combine the answers. Your data stays where it is, we just visit.](/assets/images/dfda/dfda-section-federated-not-centralized-bw-academic.jpg)
 
 This solves:
 
@@ -376,7 +376,7 @@ Look at these incredible savings! It's like Black Friday, but for survival!
 | Who can participate | **13.9% of patients [@antidepressant-trial-exclusion-rates]** | **100% of patients** | {{< var antidepressant_trial_exclusion_rate >}} inclusion rate | Everyone |
 | Rare diseases with treatments | **5% [@95-pct-diseases-no-treatment]** | **Eventually 100%** | Priceless | Millions |
 
-![Side-by-side comparison of current clinical trial inefficiencies versus the projected outcomes of the decentralized framework.](/assets/images/dfda/dfda-section-impact-comparison-matrix-bw-academic.jpg)
+![How we do clinical trials now: slow, expensive, broken. How we could do them: fast, cheap, working. The difference is stark.](/assets/images/dfda/dfda-section-impact-comparison-matrix-bw-academic.jpg)
 
 ### The Itemized Receipt of Eliminated Stupidity
 
@@ -403,7 +403,7 @@ committee_capacity = committee_members * hours_per_day * decisions_per_hour
 
 # Information that actually needs processing
 
-![A visual breakdown showing how the combination of thousands of diseases, hundreds of treatments, and millions of patient variations multiplies into 800 trillion required medical decisions.](/assets/images/dfda/dfda-section-information-that-actually-needs-processing-bw-academic.jpg)
+![Multiply diseases by treatments by patients and you get 800 trillion possible medical decisions. That's more decisions than humans can make, which is problematic.](/assets/images/dfda/dfda-section-information-that-actually-needs-processing-bw-academic.jpg)
 
 diseases = 10_000
 treatments_per_disease = 100  # Potential treatments to evaluate
@@ -420,7 +420,7 @@ print(f"Years for FDA to evaluate everything: {years_to_process:,.0f}")
 
 # Market processing (parallel, decentralized)
 
-![A diagram illustrating the massive parallel processing power of a decentralized market where 8 billion individual nodes contribute simultaneous decisions to a global system.](/assets/images/dfda/dfda-section-market-processing-parallel-decentralized-bw-academic.jpg)
+![Eight billion people all thinking at the same time about medicine. Like a very large brain made of smaller brains, which sounds horrifying but is apparently efficient.](/assets/images/dfda/dfda-section-market-processing-parallel-decentralized-bw-academic.jpg)
 
 market_participants = 8_000_000_000
 market_decisions_per_day = market_participants * 1  # One health decision per person
@@ -444,7 +444,7 @@ The FDA doesn't know:
 
 But they decide for you anyway.
 
-![An infographic illustrating the disconnect between a centralized regulatory body and the unique, individualized variables of 8 billion people, such as genetics and risk tolerance.](/assets/images/dfda/dfda-section-why-200-people-can-t-replace-8-billion-bw-academic.jpg)
+![One committee in Maryland trying to decide what medicine works for 8 billion different people. It's like having one person choose shoes for the entire planet.](/assets/images/dfda/dfda-section-why-200-people-can-t-replace-8-billion-bw-academic.jpg)
 
 ### The Solution: Let 8 Billion Experts Make 8 Billion Decisions
 
@@ -482,7 +482,7 @@ The only solution is to let patients and doctors make their own decisions, then 
 
 During COVID, while America was filling out forms, Oxford University did something crazy: they just tested drugs on dying people to see if they stopped dying.
 
-![A comparative infographic showing the massive disparity in cost, time, and lives saved between traditional clinical trials and the Oxford Recovery Trial approach.](/assets/images/dfda/dfda-section-the-oxford-recovery-trial-how-the-british-accidentally-saved-medicine-bw-academic.jpg)
+![Traditional clinical trials versus the Oxford approach. One costs 30 million dollars and takes years. The other costs less than a coffee shop franchise and actually saves people.](/assets/images/dfda/dfda-section-the-oxford-recovery-trial-how-the-british-accidentally-saved-medicine-bw-academic.jpg)
 
 Cost per patient:
 
@@ -504,7 +504,7 @@ The FDA's response: "But did they file the correct paperwork?"
 
 The system includes **Clinipedia**: Wikipedia but instead of arguing about whether tomatoes are fruits, we argue about whether they cure cancer.
 
-![A conceptual diagram showing the Clinipedia data loop where patient contributions and treatment outcomes feed into a centralized collaborative encyclopedia.](/assets/images/dfda/dfda-section-wikipedia-for-whether-you-ll-die-bw-academic.jpg)
+![Wikipedia for not dying. People add what worked, what didn't, and whether they're still alive to tell about it.](/assets/images/dfda/dfda-section-wikipedia-for-whether-you-ll-die-bw-academic.jpg)
 
 Every treatment gets a page. Every outcome gets recorded. Every patient contributes data.
 
@@ -516,7 +516,7 @@ Imagine looking up your disease and seeing:
 
 #### Current Treatments Ranked by Not-Dying Score
 
-![A comparison chart showing the effectiveness percentages and side effects of five different medical treatments based on their 'Not-Dying Score'.](/assets/images/dfda/dfda-section-current-treatments-ranked-by-not-dying-score-bw-academic.jpg)
+![Five treatments ranked by how well they prevent dying. We named it the Not-Dying Score because 'efficacy' made people's eyes glaze over.](/assets/images/dfda/dfda-section-current-treatments-ranked-by-not-dying-score-bw-academic.jpg)
 
 1. Prayer (3% effective, 0% side effects)
 2. Experimental Drug XJ-47 (67% effective, 30% chance of jazz hands)
@@ -530,13 +530,13 @@ Imagine looking up your disease and seeing:
 
 The system also lets you create your own studies. Got a theory that wearing socks inside-out cures baldness? Create a study. Get a link. Invite your balding friends to join. The system handles the rest. Your data gets published. Who knows, maybe you'll win a Nobel Prize. Or maybe you'll just prove that socks are socks. Either way, humanity learns something without spending two billion dollars.
 
-![A workflow diagram illustrating the step-by-step process of creating a study, from formulating a theory to publishing the results.](/assets/images/dfda/dfda-section-become-a-scientist-from-your-couch-bw-academic.jpg)
+![How to do science: have idea, test idea, share results. Humanity invented this method in the 1600s and then made it take 17 years.](/assets/images/dfda/dfda-section-become-a-scientist-from-your-couch-bw-academic.jpg)
 
 ## Your Personal Death-Prevention Assistant: The FDAi
 
 Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
 
-![A visual representation of the FDAi ecosystem showing data flowing from wearables and medical records into an AI core, resulting in a ranked list of medical treatments by success probability.](/assets/images/dfda/dfda-section-your-personal-death-prevention-assistant-the-fdai-bw-academic.jpg)
+![Your watch tells the computer what's killing you. The computer tells you what might unkill you. We've had the watches for 15 years but kept the parts separate.](/assets/images/dfda/dfda-section-your-personal-death-prevention-assistant-the-fdai-bw-academic.jpg)
 
 The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead of telling you the weather, it tells you how not to die.
 
@@ -576,7 +576,7 @@ Food has nutrition labels. Cigarettes have warning labels. Drugs have... incompr
 
 **Outcome Labels** fix that - clear, data-driven summaries showing exactly what happens when real people try a treatment:
 
-![Outcome Labels Example](../../assets/images/dfda-outcome-labels.png)
+![What medicine labels would say if they were honest.](../../assets/images/dfda-outcome-labels.png)
 
 Based on thousands of real patients with real outcomes:
 
@@ -595,7 +595,7 @@ Based on thousands of real patients with real outcomes:
 
 No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
 
-![A clean, clinical-style infographic label for the 'Depression Crusher 3000' showing the statistical trade-offs between mood improvement and various side effects.](/assets/images/dfda/dfda-section-side-effects-bw-academic.jpg)
+![The Depression Crusher 3000. Improves your mood 60 percent, ruins your sex life 40 percent. Every medicine is a negotiation with your body.](/assets/images/dfda/dfda-section-side-effects-bw-academic.jpg)
 
 **Example: DEPRESSION CRUSHER 3000™**
 
@@ -635,7 +635,7 @@ Congress will debate this for 17 years, the same time it takes to approve one dr
 
 FDA.gov becomes actually useful. Millions join trials from home. The first "Wikipedia disease" gets cured entirely through crowdsourced trials. The FDA claims credit.
 
-![A flowchart showing the progression from home-based clinical trial participation to crowdsourced medical research and final regulatory validation.](/assets/images/dfda/dfda-section-2027-the-beginning-of-the-end-of-dying-slowly-bw-academic.jpg)
+![Medical research you can do in your pajamas. Take pill, report results, help science. Like jury duty but you might live longer.](/assets/images/dfda/dfda-section-2027-the-beginning-of-the-end-of-dying-slowly-bw-academic.jpg)
 
 ### 2030: Big Pharma Pivots or Dies
 
@@ -645,7 +645,7 @@ Pharmaceutical companies realize they can't charge $10,000 for pills that cost $
 
 We realize we could have done this all along. We had the internet since 1990. We had computers since 1950. We had writing since 3000 BC.
 
-![A timeline contrasting major human milestones like writing and computers against the persistent 'Paperwork Age,' illustrating the gap between technological potential and bureaucratic reality.](/assets/images/dfda/dfda-section-2035-the-great-revelation-bw-academic.jpg)
+![Humans invented writing, then printing, then computers. Then used all three to make filling out forms take longer.](/assets/images/dfda/dfda-section-2035-the-great-revelation-bw-academic.jpg)
 
 We spent 5,000 years letting people die while we filled out forms.
 
@@ -655,7 +655,7 @@ History books will call us "The Paperwork Age" and children will laugh at our st
 
 Diseases are mostly solved. Death becomes a choice, like smoking or voting Republican. The FDA's job becomes preventing people from becoming immortal too quickly (traffic is bad enough).
 
-![A before-and-after comparison showing the transition from mandatory mortality to an 'opt-in' death model, highlighting the FDA's shift from curing disease to managing population density.](/assets/images/dfda/dfda-section-2050-death-becomes-opt-in-bw-academic.jpg)
+![Before the FDA: death was optional if you could afford medicine. After the FDA: death is mandatory unless you fill out the right paperwork.](/assets/images/dfda/dfda-section-2050-death-becomes-opt-in-bw-academic.jpg)
 
 The last FDA form is filled out. It's immediately lost. Nobody notices.
 

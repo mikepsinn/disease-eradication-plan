@@ -31,7 +31,7 @@ This appendix provides transparent calculations, multiple data sources, and sens
 
 This represents the most rigorous academic estimate based on empirical industry data, covering the **total cost to bring a drug from discovery through FDA approval** under the pre-1962 regulatory regime (safety-only testing).
 
-![A comparison of pre-1962 drug development cost estimates in 2024 dollars, contrasting the Baily academic study estimate of 24.7 million with the lower Congressional testimony estimate of 12 million.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-pre-1962-drug-development-costs-bw-academic.jpg)
+![Before FDA regulation, drugs cost 12 to 25 million to develop. Experts disagree on the exact number. Both are smaller than what we write here in comas.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-pre-1962-drug-development-costs-bw-academic.jpg)
 
 **Alternative Estimate: Congressional Testimony (1977)**
 
@@ -56,7 +56,7 @@ This includes:
 
 FDA approved {{< var current_drug_approvals_per_year >}} new drugs per year (2018-2023 average), down from 60+ per year in the 1950s, despite vastly higher R&D spending.
 
-![A breakdown of the 2.6 billion average cost for drug development, highlighting the impact of clinical failures and long development timelines alongside a comparison of drug approval rates from the 1950s to today.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-current-drug-development-costs-bw-academic.jpg)
+![Why drugs cost 2.6 billion dollars: most of them fail, and it takes forever. In the 1950s it was faster and cheaper. Progress: occasionally backwards.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-current-drug-development-costs-bw-academic.jpg)
 
 ## Inflation-Adjusted Calculations
 
@@ -96,7 +96,7 @@ $$
 
 This provides an **upper-bound estimate** (213×), but we use the Baily study ({{< var drug_cost_increase_pre1962_to_current_multiplier >}}) as our primary figure due to its superior academic methodology.
 
-![Comparison of inflation-adjusted drug development costs showing a 105x increase from the pre-1962 era to 2024.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-cost-increase-comparison-bw-academic.jpg)
+![Drugs used to cost 25 million to develop. Now they cost 2.6 billion. That's 105 times more expensive. Inflation doesn't explain this. Regulation does.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-cost-increase-comparison-bw-academic.jpg)
 
 ## Why It's Not Just Inflation
 
@@ -121,7 +121,7 @@ A 12-year delay adds **3.14×** to costs via time value of money alone.
 
 ### 2. Higher Failure Rates
 
-![A visualization showing a 9:1 ratio of failed drug candidates to successful approvals, highlighting the total capital risk involved in pharmaceutical development.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-2-higher-failure-rates-bw-academic.jpg)
+![For every drug that works, nine fail. That's a 90 percent failure rate. Pharma: where F students become billionaires or bankrupt. No middle ground.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-2-higher-failure-rates-bw-academic.jpg)
 
 The Tufts CSDD estimate includes **cost of failures**:
 
@@ -147,7 +147,7 @@ The Tufts CSDD estimate includes **cost of failures**:
 
 See [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) for full derivation.
 
-![A side-by-side comparison of clinical trial models, contrasting the simple, low-cost pre-1962 pragmatic approach with the complex, high-cost modern FDA Phase III infrastructure.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-3-trial-complexity-bw-academic.jpg)
+![Old trials: give people pills, see what happens. New trials: seventeen phases, forty committees, infinite paperwork. One costs 500 dollars. One costs 41,000 dollars. Guess which.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-3-trial-complexity-bw-academic.jpg)
 
 ### 4. Preclinical Requirements
 
@@ -161,7 +161,7 @@ Post-1962 regulations added extensive preclinical requirements:
 
 These requirements added **2-3 years** and **$50-100M** per drug candidate.
 
-![An infographic showing the five core preclinical requirements and their cumulative impact on drug development time and financial cost.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-4-preclinical-requirements-bw-academic.jpg)
+![Five things you must do before human trials: toxicology, pharmacology, formulation, manufacturing, and regulations. Takes years. Costs millions. Prevents exactly zero deaths.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-4-preclinical-requirements-bw-academic.jpg)
 
 ## Sensitivity Analysis
 
@@ -207,11 +207,11 @@ Academic literature independently confirms this range:
 
 Our **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** estimate uses the most rigorous academic source (Baily 1972) and falls within the documented range.
 
-![A scale comparison showing the exponential growth in drug development costs between the 1960s and the 2010s, highlighting the 100x to 400x increase.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-independent-validation-bw-academic.jpg)
+![Drug development got 100 to 400 times more expensive in fifty years. Your grandmother could afford to invent penicillin. You cannot afford to invent Tylenol.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-independent-validation-bw-academic.jpg)
 
 ## Sanity Checks: Real-World Price Comparisons
 
-![A comparison of price points between products with similar manufacturing complexity but differing regulatory burdens, illustrating the 105:1 cost increase ratio.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-sanity-checks-real-world-price-comparisons-bw-academic.jpg)
+![Identical pills: one for humans costs 105 times more than one for dogs. Same factory. Same ingredients. Different government forms. Forms are expensive, apparently.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-sanity-checks-real-world-price-comparisons-bw-academic.jpg)
 
 The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase should manifest in observable price differences between products with similar manufacturing complexity but different regulatory burdens. Here are six independent validations:
 
@@ -368,7 +368,7 @@ Compounding pharmacies make custom medications without requiring FDA approval fo
 
 Compounding pharmacies still face quality control requirements but skip the multi-year, multi-billion-dollar FDA approval process. Their lower prices reflect the true manufacturing cost.
 
-![A comparison chart illustrating the significant price difference between compounded medications and FDA-approved alternatives for testosterone and thyroid treatments.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-3-compounding-pharmacies-bw-academic.jpg)
+![Compounded testosterone: 30 dollars. FDA-approved testosterone: 300 dollars. Same molecule. Different paperwork. Bureaucracy: the most expensive ingredient.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-3-compounding-pharmacies-bw-academic.jpg)
 
 ### 4. Veterinary Drugs vs. Human Drugs (Same Molecule, Different Species)
 
@@ -382,7 +382,7 @@ Some medications exist in both veterinary and human formulations with different 
 
 **Note:** Price differences also reflect insurance/pharmacy markup systems, but the veterinary pathway faces substantially less regulatory burden than human drug approval.
 
-![A side-by-side comparison of amoxicillin pricing for veterinary versus human use, illustrating the significant price gap despite using the same active molecule.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-4-veterinary-drugs-vs-hum-bw-academic.jpg)
+![Amoxicillin for your dog: 12 dollars. Amoxicillin for you: 120 dollars. Same antibiotic. You're ten times more expensive to keep alive than your pet.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-4-veterinary-drugs-vs-hum-bw-academic.jpg)
 
 ### 5. Orphan Drugs (Full Development Cost Exposure)
 
@@ -475,11 +475,11 @@ The last two comparisons **expose the full {{< var drug_cost_increase_pre1962_to
 
 The magnitude is shocking precisely **because the regulatory burden is that severe**.
 
-![A comparison of regulatory burden estimates showing a dramatic 100x to 400x increase across multiple independent studies.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-that-can-t-be-right-it-s-too-high-bw-academic.jpg)
+![Five different studies agree: regulation made drugs 100 to 400 times more expensive. Consensus: rare in science, common in obvious disasters.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-that-can-t-be-right-it-s-too-high-bw-academic.jpg)
 
 ### "Doesn't that include marketing costs?"
 
-![A side-by-side comparison illustrating the specific R and D activities included in the 2.6 billion cost figure versus the commercial and post-approval activities that are excluded.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-doesn-t-that-include-marketing-costs-bw-academic.jpg)
+![What's in the 2.6 billion: research, trials, failures. What's not in it: marketing, manufacturing, executive bonuses. The real number is higher. Everything is worse than you think.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-doesn-t-that-include-marketing-costs-bw-academic.jpg)
 
 **No.** The Tufts CSDD $2.6B figure explicitly **excludes**:
 
@@ -506,7 +506,7 @@ It includes **only**:
 
 ...costs still increased **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** in real terms. This demonstrates the **overwhelming regulatory burden** that swamps all efficiency gains.
 
-![A contrast between massive technological efficiency gains in lab work and computation against the paradoxically skyrocketing real-world cost of drug development.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-what-about-technological-bw-academic.jpg)
+![Computers got a million times cheaper. Labs got a million times faster. Drugs got a million times more expensive. You're doing it backwards.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-what-about-technological-bw-academic.jpg)
 
 ## Implications for Policy
 
@@ -532,7 +532,7 @@ Drugs developed under the pre-1962 regime (safety-only testing):
 
 These drugs saved **millions of lives** and remain in use today. The thalidomide tragedy was **a safety failure**, not an efficacy failure. The pre-1962 system already required safety testing.
 
-![A visual summary of major medical breakthroughs developed under the pre-1962 safety-only regulatory system, alongside a conceptual distinction between safety and efficacy testing.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-2-pre-1962-system-wasn-t-broken-bw-academic.jpg)
+![Before 1962, you invented polio vaccines, antibiotics, and insulin. After 1962, you invented forms. The forms won.](/assets/images/drug-development-cost-analysis/drug-development-cost-analysis-section-2-pre-1962-system-wasn-t-broken-bw-academic.jpg)
 
 ### 3. Real-World Evidence Can Reverse This
 

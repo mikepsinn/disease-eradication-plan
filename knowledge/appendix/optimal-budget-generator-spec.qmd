@@ -63,7 +63,7 @@ image: /assets/og-images/knowledge/appendix/optimal-budget-generator-spec-og-bw-
 
 This specification describes the **Optimal Budget Generator (OBG)** framework, a systematic approach to generating integrated budget recommendations that maximize welfare as measured by two metrics: **real after-tax median income growth** and **median healthy life years**.
 
-![A conceptual diagram of the Optimal Budget Generator (OBG) framework showing how three evidence sources (benchmarking, returns modeling, and threshold analysis) integrate to create a gap analysis between current and evidence-based optimal funding levels.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-abstract-unnumbered-bw-academic.jpg)
+![Three ways to figure out optimal spending combine to show the gap between what you spend and what you should spend. The gap is filled with lobbyists.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-abstract-unnumbered-bw-academic.jpg)
 
 **JEL Classification**: H50, H61, D61, I18, C18
 
@@ -132,7 +132,7 @@ The following table demonstrates how OBG output would appear. OSL estimates for 
 
 The OBG/BIS framework answers: "Given what we know about returns to spending, what are the optimal allocation levels?"
 
-![Architecture of the Optimocracy Framework showing the parallel inputs of budget (OBG) and policy (OPG) generators feeding into the Constitutional Layer.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-system-overview-bw-academic.jpg)
+![Budget generator and policy generator both feed into constitutional rules. It's checks and balances, but the checks can do maths.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-system-overview-bw-academic.jpg)
 
 The OPG framework (see [Optimal Policy Generator Specification](https://opg.warondisease.org)) answers: "Which policy reforms beyond budget allocation would most improve welfare?"
 
@@ -146,7 +146,7 @@ This specification focuses on generating evidence-based budget recommendations. 
 
 Budget allocation is fundamentally a problem of social choice under uncertainty [@arrow1951]. The challenge is not simply technical but institutional: current budget processes systematically diverge from welfare-optimal allocations due to political economy dynamics [@myerson1981; @kydland1977].
 
-![A comparison between the political drivers of current budget allocation (such as lobbying and historical inertia) and the resulting gap between low-return and high-return public investments.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-why-budget-allocation-fails-today-bw-academic.jpg)
+![Current budgets: lobbying and 'we've always done it this way.' Result: money goes to things that don't work instead of things that do. Tradition is expensive.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-why-budget-allocation-fails-today-bw-academic.jpg)
 
 Current budget allocation follows a process dominated by:
 
@@ -174,11 +174,11 @@ Budget allocation should work the same way. For each spending category:
 
 **infinite spending on any category doesn't make sense**, even one with high returns. Early childhood education has excellent returns - but spending $10 trillion on it wouldn't produce 10x the benefits of spending $1 trillion. There's an optimal level.
 
-![Conceptual comparison between Recommended Daily Allowances (RDA) in nutrition and Optimal Spending Levels (OSL) in public finance.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-introduction-bw-academic.jpg)
+![Nutritionists tell you how much vitamin C you need. OSL tells governments how much education funding they need. One prevents scurvy, the other prevents stupid.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-introduction-bw-academic.jpg)
 
 ### What This Framework Provides
 
-![A conceptual diagram showing the five core components of the budget framework, illustrating how evidence-based targets and gap analysis inform priority ranking and uncertainty assessment.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-what-this-framework-provides-bw-academic.jpg)
+![Five pieces: evidence-based targets, gap analysis, priority ranking, uncertainty assessment, and wishful thinking. Wait, scratch that last one.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-what-this-framework-provides-bw-academic.jpg)
 
 1. **Target spending levels** for each budget category based on evidence
 2. **Gap analysis** showing where current spending diverges from optimal
@@ -212,7 +212,7 @@ The OBG framework builds on and extends several established traditions in public
 
 **Congressional Budget Office (CBO) Scoring.** The CBO provides cost estimates for proposed legislation, projecting fiscal impacts over 10-year windows [@cbo2015]. However, CBO scoring focuses on *cost* rather than *welfare optimization* - it answers "what will this cost?" not "what should we spend?" OBG complements CBO analysis by providing evidence-based spending targets against which proposals can be evaluated.
 
-![A comparison matrix of budget analysis frameworks showing the focus of CBO Scoring, Performance-Based Budgeting, and Zero-Based Budgeting relative to the evidence-based targets of the OBG framework.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-analysis-frameworks-bw-academic.jpg)
+![CBO scores costs. Performance budgeting measures results. Zero-based budgeting questions everything. OBG does all three and shows you the receipts.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-analysis-frameworks-bw-academic.jpg)
 
 **Performance-Based Budgeting.** Since the Planning-Programming-Budgeting System (PPBS) of the 1960s, governments have attempted to link spending to outcomes. Modern variants include Results-Based Management and Performance-Informed Budgeting. These approaches improve transparency but typically lack the economic framework for determining *optimal* levels - they measure performance at current spending without estimating what spending *should* be.
 
@@ -222,7 +222,7 @@ The OBG framework builds on and extends several established traditions in public
 
 **What Works Clearinghouses.** Organizations like the What Works Clearinghouse (education), Cochrane Collaboration (health), and Campbell Collaboration (social policy) synthesize intervention evidence through systematic reviews. OBG draws on these evidence bases but extends beyond intervention evaluation to budget-level optimization. While clearinghouses answer "does this work?", OBG answers "how much should we spend?"
 
-![A comparison showing how Outcome-Based Governance (OBG) builds upon traditional evidence synthesis and cost-effectiveness analysis by shifting from intervention evaluation to budget-level optimization.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-evidence-based-policy-movement-bw-academic.jpg)
+![Old way: evaluate programs one at a time. New way: optimize entire budgets at once. It's like organizing your whole kitchen instead of just the spoon drawer.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-evidence-based-policy-movement-bw-academic.jpg)
 
 **Cost-Effectiveness Analysis.** Health economics has developed methods for comparing interventions using metrics like QALYs (Quality-Adjusted Life Years) and DALYs (Disability-Adjusted Life Years) [@icer-qaly-methodology]. OBG incorporates cost-effectiveness as one of two estimation methods but applies it within an integrated budget optimization framework rather than intervention-by-intervention.
 
@@ -240,7 +240,7 @@ The OBG framework advances existing approaches in three key ways:
 
 1. **Integrated multi-method estimation.** Rather than relying on a single approach, OBG combines OSL estimates from diminishing returns modeling and cost-effectiveness analysis. This provides robustness and identifies where methods agree or conflict.
 
-![A conceptual overview of the OBG framework illustrating the triangulation of estimation methods, the identification of optimal spending targets, and the categorization of recommendations based on evidence strength via the Budget Impact Score.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-how-obg-differs-bw-academic.jpg)
+![Three different ways to count money, then deciding where to put it, then measuring how confident you are that you counted correctly. Like checking your restaurant bill three times because you still don't trust yourself.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-how-obg-differs-bw-academic.jpg)
 
 2. **Explicit optimal levels.** Unlike frameworks that analyze spending at current levels or propose marginal changes, OBG estimates target spending levels for each category - acknowledging that both underspending and overspending are suboptimal.
 
@@ -250,7 +250,7 @@ The OBG framework advances existing approaches in three key ways:
 
 This section formalizes the OBG framework as a social planner's optimization problem, establishing the theoretical foundations for optimal spending levels and evidence-weighted allocation.
 
-![A conceptual diagram illustrating the social planner's optimization process, showing how evidence-weighted inputs lead to optimal spending levels and resource allocation within the OBG framework.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-theoretical-framework-bw-academic.jpg)
+![A social planner is someone who plans society. They take evidence, weigh it (not literally), and decide how much money to spend on things. It's like meal planning but for countries.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-theoretical-framework-bw-academic.jpg)
 
 ### The Social Planner's Problem
 
@@ -338,7 +338,7 @@ $$
 
 *where $\hat{\beta}_i^{pooled}$ is the quality-weighted pooled estimate of spending effects.*
 
-![Breakdown of the Budget Impact Score (BIS) components, showing how quality, precision, and recency weights combine to quantify confidence.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-theoretical-framework-bw-academic.jpg)
+![Three ingredients that tell you how much to trust a number: how good it is, how exact it is, and how old it is. Like checking the expiration date on milk, but for statistics.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-theoretical-framework-bw-academic.jpg)
 
 ### Gap Analysis and Welfare Gains
 
@@ -395,7 +395,7 @@ $$
 
 ### Spending Category Data Structure
 
-![An entity-relationship diagram illustrating the data structure of the OBG framework, connecting spending categories to reference data, optimal estimates, and gap analysis.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-spending-category-data-structure-bw-academic.jpg)
+![Boxes connected by lines. The boxes represent different kinds of information. The lines mean they're related. It's a family tree for spreadsheets.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-spending-category-data-structure-bw-academic.jpg)
 
 The OBG framework uses a structured representation of budget categories:
 
@@ -450,7 +450,7 @@ Each method is detailed below.
 
 The fiscal multiplier literature establishes that spending effects vary systematically with scale [@batini2021; @barro2011]. At low spending levels, each additional dollar produces substantial welfare gains. At high spending levels, marginal returns diminish. The OSL is where marginal return equals opportunity cost.
 
-![A graph showing a downward-sloping marginal return curve intersecting with a horizontal line representing the opportunity cost (r) to identify the Optimal Spending Level (OSL).](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-core-concept-bw-academic.jpg)
+![The first dollar you spend helps a lot. The millionth dollar helps less. The graph tells you when to stop spending money on one thing and start spending it on another thing.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-core-concept-bw-academic.jpg)
 
 $$
 \text{OSL}: \frac{\partial \text{Outcome}}{\partial \text{Spending}} = r
@@ -537,7 +537,7 @@ Evidence from cross-state variation suggests:
 
 **Metrics affected**: Both real after-tax median income growth (via reduced healthcare costs and improved productivity) and median healthy life years (via better treatments). This dual impact contributes to the exceptionally high returns.
 
-![A comparison of return on investment across different public sectors and a cost-efficiency breakdown between pragmatic and traditional clinical trials.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-highest-return-public-investment-bw-academic.jpg)
+![Some ways of spending government money work better than others. Also, cheap trials work as well as expensive trials, but cost less. This required two charts to explain.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-highest-return-public-investment-bw-academic.jpg)
 
 Pragmatic clinical trials represent perhaps the single highest-return category of public investment identified in the literature. While vaccinations return {{< var childhood_vaccination_roi >}} and early childhood education returns 4:1, pragmatic trials demonstrate benefit-cost ratios of **{{< var dfda_roi_rd_only >}}** [@dfda-impact-paper-2025].
 
@@ -569,7 +569,7 @@ Unlike most spending categories, pragmatic trials show **increasing returns at c
 
 The "knee" of the diminishing returns curve is estimated at **$50-100B annually** (vs. current ~$500M), suggesting we are operating far below optimal.
 
-![A conceptual line graph showing returns versus spending for pragmatic trials, highlighting the 'knee' of the curve at 50-100B and the current position at 500M within the increasing returns phase.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-analysis-bw-academic.jpg)
+![We spend 500 million on pragmatic trials. The graph says we should spend 50 to 100 billion. We are so far to the left of where we should be that we're practically off the chart.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-analysis-bw-academic.jpg)
 
 ### Cost-Effectiveness Calculation
 
@@ -626,7 +626,7 @@ Where:
 
 ### Building Up from Intervention-Level Data
 
-![A sequential flowchart illustrating the four-step process of aggregating intervention-level data into a category-level Optimal Service Level (OSL).](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-building-up-from-intervention-level-data-bw-academic.jpg)
+![Four boxes with arrows between them. The boxes show how you take lots of small numbers and turn them into one big number. Addition with extra steps.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-building-up-from-intervention-level-data-bw-academic.jpg)
 
 For each health intervention with cost-effectiveness data:
 
@@ -670,7 +670,7 @@ All interventions fall well below the conventional $50,000-$150,000 per QALY cos
 
 The Budget Impact Score measures **confidence** in each category's OSL estimate based on the quality and quantity of causal evidence. The scoring methodology draws on the established evidence hierarchy from the econometrics literature [@angrist2010; @bloom2013].
 
-![A diagram illustrating the hierarchy of causal evidence, showing how different levels of evidence quality determine the Budget Impact Score and overall confidence levels.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-impact-score-bis-bw-academic.jpg)
+![A pyramid of trustworthiness. Randomized trials sit at the top wearing a crown. Someone's opinion sits at the bottom, wondering what it did wrong.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-impact-score-bis-bw-academic.jpg)
 
 ### BIS Calculation
 
@@ -823,7 +823,7 @@ For each OSL estimate, report:
 3. **Time stability**: Has OSL changed substantially over past 5 years?
 4. **Sensitivity to assumptions**: How does OSL change with ±20% parameter variation?
 
-![A conceptual framework illustrating the four essential robustness checks for OSL estimates: outlier analysis, methodological consistency, temporal stability, and parameter sensitivity.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-robustness-checks-bw-academic.jpg)
+![Four ways to check if your answer is wrong. Look for weird numbers. Make sure you did the same thing every time. Check if it changes when time passes. Wiggle the inputs and see if it explodes.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-robustness-checks-bw-academic.jpg)
 
 ## Interpreting Results
 
@@ -866,7 +866,7 @@ High-VOI categories should receive pilot funding to generate better evidence.
 
 ### Recommended Pilot Designs
 
-![A conceptual comparison of four pilot design strategies: randomized scale-up, stepped-wedge rollout, natural experiment exploitation, and administrative data linkage.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-recommended-pilot-designs-bw-academic.jpg)
+![Four ways to test if your idea works before spending billions. Option 1: flip a coin. Option 2: do it slowly. Option 3: wait for something to happen and watch. Option 4: check if someone already wrote it down.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-recommended-pilot-designs-bw-academic.jpg)
 
 For categories where OSL is uncertain:
 
@@ -877,7 +877,7 @@ For categories where OSL is uncertain:
 
 ### Learning Feedback Loop
 
-![A circular diagram illustrating the continuous four-step learning feedback loop used to refine budget priorities based on statistical outcomes and updated data.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-learning-feedback-loop-bw-academic.jpg)
+![A circle with four boxes in it. The boxes say: spend money, see what happened, learn from it, spend money differently. Then you go around the circle again. It's like learning from your mistakes, but on purpose.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-learning-feedback-loop-bw-academic.jpg)
 
 After each budget cycle:
 
@@ -930,13 +930,13 @@ These databases enable systematic ranking of interventions by cost-effectiveness
 
 **Mitigation**: Report confidence intervals, use multiple functional forms, acknowledge extrapolation limits.
 
-![A line graph illustrating diminishing returns with a curve flattening out, featuring shaded confidence intervals and a dashed line representing the risks of extrapolation beyond historical data points.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-uncertainty-bw-academic.jpg)
+![The line goes up fast, then slower, then basically flat. The shaded bit means we're guessing. The dashed bit means we're really guessing and probably shouldn't be.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-uncertainty-bw-academic.jpg)
 
 ### Implementation Capacity
 
 Higher spending may not translate to outcomes if implementation capacity is lacking.
 
-![A flow diagram illustrating how spending is successfully converted to outcomes by passing through the filters of implementation assessment and gradual phasing.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-implementation-capacity-bw-academic.jpg)
+![Money goes through two filters before it becomes results. The filters are called 'make sure you can actually do this' and 'do it slowly so you don't mess up.' Filters for money that don't involve coffee.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-implementation-capacity-bw-academic.jpg)
 
 **Mitigation**: Pair spending increases with implementation assessment; phase in gradually.
 
@@ -948,7 +948,7 @@ Rigorous validation is essential for any framework that claims to identify optim
 
 **Question**: Did jurisdictions that moved toward OSL achieve better outcomes than those that diverged?
 
-![A flowchart outlining the three-step methodology for retrospective validation, showing the sequence from historical OSL calculation to the comparative analysis of jurisdiction outcomes.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-retrospective-validation-bw-academic.jpg)
+![Three steps to check if you were right. Step 1: go back in time (mathematically). Step 2: pretend you did what you should have done. Step 3: compare it to what actually happened. Like replaying a football match in your head where you win.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-retrospective-validation-bw-academic.jpg)
 
 **Method**:
 1. Compute OSL for past periods using only data available at that time (to avoid lookahead bias)
@@ -969,7 +969,7 @@ A preliminary retrospective analysis could examine whether states that moved tow
 
 **Question**: Do OBG-guided reallocations improve outcomes going forward?
 
-![A flowchart illustrating the prospective validation process, from public pre-registration of predictions to the comparative analysis of outcome trajectories between jurisdictions.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-prospective-validation-bw-academic.jpg)
+![How to prove you're not making things up. Write down your prediction before it happens. Tell everyone. Wait. Check if you were right. It's the scientific method for not lying to yourself.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-prospective-validation-bw-academic.jpg)
 
 **Method**:
 1. Pre-register OBG predictions publicly before budget decisions
@@ -1017,7 +1017,7 @@ The framework's current evidence base consists of the underlying studies cited t
 
 Report OSL range across scenarios for policy guidance.
 
-![A comparison chart showing the projected OSL range across pessimistic, base case, and optimistic scenarios based on varying return estimates.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-scenario-analysis-bw-academic.jpg)
+![Three answers to the same question. The pessimistic one assumes everything will go wrong. The optimistic one assumes everything will go right. The base case assumes you'll be disappointed but not surprised.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-scenario-analysis-bw-academic.jpg)
 
 ## Conclusion
 
@@ -1145,7 +1145,7 @@ Phase 5: OUTPUT GENERATION
 
 - **Optimal Budget Generator (OBG)**: The framework/methodology for generating integrated budget recommendations based on evidence of spending-outcome relationships. OBG accounts for the zero-sum nature of budget allocation and produces Optimal Spending Level (OSL) estimates for each category.
 
-![A conceptual framework illustrating the Optimal Budget Generator process, showing how evidence and benchmarking result in OSL and BIS outputs to identify spending gaps.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-core-concepts-bw-academic.jpg)
+![You put evidence and comparison data into the machine. The machine tells you two things: how much you should spend, and how sure you should be. Then you notice you're spending the wrong amount.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-core-concepts-bw-academic.jpg)
 
 - **Optimal Spending Level (OSL)**: The evidence-based target spending level for each category, produced by the OBG framework. $\text{OSL}_i$ represents the optimal spending level for category $i$. Below OSL indicates underinvestment; above OSL indicates diminishing returns.
 

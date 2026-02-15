@@ -40,7 +40,7 @@ When this chapter says "the FDA does X," read it as "the 1962 law requires the F
 ::: {.callout-note}
 ## Confidence Levels: What We Know vs. What We Model
 
-![A hierarchical diagram illustrating the three tiers of evidence used in the analysis, ranging from irrefutable empirical facts at the base to model-dependent quantitative estimates at the top.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-confidence-levels-what-we-know-vs-what-we-model-bw-academic.jpg)
+![Bottom tier: facts you can't argue with. Middle tier: facts you can sort of argue with. Top tier: educated guesses. This book uses all three because reality is complicated.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-confidence-levels-what-we-know-vs-what-we-model-bw-academic.jpg)
 
 This chapter relies on three tiers of evidence:
 
@@ -74,7 +74,7 @@ Compare two real-world systems for testing drugs:
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}}**. Found a life-saving treatment in 3 months.
 2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}}** for clinical trials. Takes **9.1 years [@drug-development-timeline-17-years]** to approve a new drug.
 
-![A side-by-side comparison of the Oxford RECOVERY Trial versus the standard post-1962 drug approval system, highlighting the massive disparities in cost per patient and time to completion.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bw-academic.jpg)
+![Oxford trial: 100 dollars per patient, done in 9 days. Standard trial: 50,000 dollars per patient, done in 7 years. You chose standard.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bw-academic.jpg)
 
 The current system costs **{{< var dfda_trial_cost_reduction_factor >}} more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer**. Not a small difference - the difference between functional and designed-to-fail.
 
@@ -87,7 +87,7 @@ Here's the breakdown of where the time goes:
 
 The math is simple: If you die in year 5 and the drug gets approved in year 10, the regulatory process murdered you.
 
-![A timeline comparing the 2.3-year safety testing phase to the 8.2-year efficacy testing period, highlighting the significant time gap referred to as 'regulatory purgatory.'](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-var-efficacy-lag-years-year-efficacy-lag-bw-academic.jpg)
+![Proving a drug is safe takes 2 years. Proving it works takes 8 years. The extra 6 years are called regulatory purgatory. People die during purgatory.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-var-efficacy-lag-years-year-efficacy-lag-bw-academic.jpg)
 
 That's {{< var efficacy_lag_years >}} sitting in regulatory purgatory *after* we already know the drug won't kill you.
 
@@ -115,7 +115,7 @@ The temporal break is exact. Life expectancy growth cut in half the moment regul
 ::: {.callout-note}
 ## Detailed Historical Analysis
 
-![A historical timeline of real-world evidence milestones from 1883 to 1962, highlighting the thalidomide case study and the evolution of regulatory standards.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-detailed-historical-analysis-bw-academic.jpg)
+![Medicine before 1962: pretty good, one horrible mistake. Medicine after 1962: very safe, very slow, millions die waiting. You traded one type of death for another.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-detailed-historical-analysis-bw-academic.jpg)
 
 For the complete analysis including the 1883-1962 timeline, thalidomide case study, diminishing returns rebuttal, and correlation vs. causation analysis, see:
 [Real-World Evidence Historical Success (Pre-1962)](../appendix/real-world-evidence-historical-success.qmd)
@@ -158,7 +158,7 @@ Even if you're skeptical of historical analysis, the current system's failures a
 
 Beautiful system if you're a mortician or bankruptcy lawyer.
 
-![A timeline illustrating the tragic gap between medical discovery and patient access, showing the 17-year delay that leads to patient mortality and financial burden.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-modern-consequences-bw-academic.jpg)
+![Scientists discover cure. 17 years pass. Patients die. Drug finally available. This is called 'safety.'](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-modern-consequences-bw-academic.jpg)
 
 You're at the very beginning of thousands or millions of years of systematic discovery. So this decline in lifespan growth is unlikely to result from diminishing returns - you haven't run out of things to discover.
 
@@ -168,7 +168,7 @@ However, validating that large-scale real-world evidence produces better health 
 
 In the past: Genius scientist invents cure, raises a few million, tests safety. Simple.
 
-![A visual comparison of two corporate paths: the high-risk, high-cost attempt to innovate versus the low-risk, high-profit strategy of shelving a patent to protect an existing product.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-high-costs-kill-innovation-reward-monopoly-bw-academic.jpg)
+![Option 1: Spend billions developing new cure, might fail. Option 2: Shelve the cure, keep selling expensive old drug. You picked option 2, obviously.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-high-costs-kill-innovation-reward-monopoly-bw-academic.jpg)
 
 Now: Genius scientist must convince one of three mega-corporations to spend {{< var pharma_drug_development_cost_current >}} on a {{< var pharma_success_rate_current_pct >}} chance of success. Those corporations already sell inferior drugs for the same condition.
 
@@ -198,7 +198,7 @@ The 1962 law creates a death spiral for unprofitable treatments:
 
 When something costs more, you get less of it. For 95% of diseases [@95-pct-diseases-no-treatment] with zero treatments, this isn't philosophy. It's math.
 
-![An economic breakdown showing the 'Rare Disease Death Spiral' where high fixed development costs divided by small patient populations create an impossible funding gap for off-patent drugs.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-off-patent-drugs-and-rare-bw-academic.jpg)
+![Rare disease patients need cheap old drugs. Development costs 2 billion dollars. Math says they should die. Math wins.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-off-patent-drugs-and-rare-bw-academic.jpg)
 
 ## The Actual Death Toll of "Drug Lag"
 
@@ -212,7 +212,7 @@ A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease
 
 **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths** from the efficacy lag alone.
 
-![A comparison of the estimated 416 million deaths caused by pharmaceutical access delays against the death tolls of major historical conflicts.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-global-body-count-bw-academic.jpg)
+![416 million people died waiting for permission to try medicine. That's more than every war ever fought, combined. We invented a way to kill more people than war, and we call it safety.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-global-body-count-bw-academic.jpg)
 
 This represents a humanitarian catastrophe larger than any war in modern history. See the [full sensitivity analysis](https://invisible-graveyard.warondisease.org) for confidence intervals and parameter uncertainty. 
 
@@ -257,11 +257,11 @@ Each name on that list represents eventually avoidable deaths.
 
 Following the 1962 increase in US regulations, you can see a divergence from Switzerland's growth in life expectancy, which did not introduce the same delays to availability.
 
-![A chart showing the divergence in life expectancy between the US and Switzerland after 1962.](../../assets/images/us-swiss-life-expectancy-5.png)
+![In 1962, Americans and Swiss people died at the same age. Then America made medicine safer. Now Americans die younger. This is what winning looks like.](../../assets/images/us-swiss-life-expectancy-5.png)
 
 Perhaps it's coincidence, but you can see an increase in drug approvals in the '80s. At the same time, the gap between Switzerland and the US gets smaller. Then US approvals go back down in the '90s, and the gap expands again.
 
-![A chart showing the correlation between drug approvals and the life expectancy gap between the US and Switzerland.](../../assets/images/us-swiss-life-expectancy-drug-approvals.png)
+![The more drugs America blocked, the earlier Americans died. It's like correlation, but stupider.](../../assets/images/us-swiss-life-expectancy-drug-approvals.png)
 
 ## How the Incentives Work
 
@@ -283,7 +283,7 @@ Perhaps it's coincidence, but you can see an increase in drug approvals in the '
 
 This isn't conspiracy. It's economics. The system literally cannot punish mistakes of commission (approving bad drugs) but imposes zero consequences for mistakes of omission (delaying good drugs).
 
-![Decision tree illustrating the asymmetric incentives for regulators, where approving a harmful drug carries personal risk while delaying a beneficial drug carries no penalty.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-incentive-structure-flowchart-bw-academic.jpg)
+![If a regulator approves a bad drug, CNN says their name. If they delay a good drug, nobody dies on television. So nobody dies on television.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-incentive-structure-flowchart-bw-academic.jpg)
 
 ### The Math: Why Current Regulations Increase Total Harm
 
@@ -310,13 +310,13 @@ Let's quantify both types of harm:
 
 This isn't a trade-off. The system doesn't reduce total harm. It massively increases it while appearing to prioritize safety.
 
-![Comparison of harm prevented (Type I) versus harm caused by delay (Type II), demonstrating the 3,070:1 imbalance.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-harm-ratio-balance-bw-academic.jpg)
+![For every person saved by blocking a bad drug, 3,070 died waiting for good ones. It's like hiring a lifeguard who's very good at preventing sharks but keeps everyone on the beach until they die of old age.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-harm-ratio-balance-bw-academic.jpg)
 
 ### Why Bureaucrats Are Rewarded for Letting You Die
 
 Humans weight acts of commission (doing something bad) as worse than acts of omission (letting something bad happen) - even when omission causes more harm. Push a person in front of a trolley to save five people? Unthinkable. Let five people die by doing nothing? That's just Monday.
 
-![A comparison of the asymmetric risks for regulators: approving a drug leads to high visibility and personal accountability for side effects, while delaying a drug leads to invisible deaths with no personal risk.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-bureaucrats-are-rewarded-for-letting-you-die-bw-academic.jpg)
+![Regulators who approve drugs that hurt people get fired. Regulators who delay drugs that could save people get promoted. You built a machine that runs on cowardice.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-bureaucrats-are-rewarded-for-letting-you-die-bw-academic.jpg)
 
 The current regulatory framework operates on this principle.
 
@@ -328,7 +328,7 @@ The personal risk of approving a drug vastly exceeds the risk of rejecting it. D
 
 The FDA requires rigorous trials to ensure safety. Then it systematically excludes the populations most at risk of adverse events.
 
-![A visualization contrasting the narrow, healthy slice of the population included in clinical trials against the large, high-risk majority that is excluded yet ultimately prescribed the medication.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-clinical-trial-theater-excluding-86-1-of-reality-makes-drugs-bw-academic.jpg)
+![They test drugs on healthy people, then give them to sick people. It's like testing a ladder on Olympic gymnasts, then selling it to your grandmother.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-clinical-trial-theater-excluding-86-1-of-reality-makes-drugs-bw-academic.jpg)
 
 Trials under the current system exclude [@antidepressant-trial-exclusion-rates]:
 
@@ -352,7 +352,7 @@ When trials exclude most real patients ({{< var antidepressant_trial_exclusion_r
 
 **This isn't theoretical.** Multiple drugs later withdrawn for safety issues (Vioxx, Fen-Phen, Bextra) were tested on cherry-picked populations. The cardiovascular risks, liver damage, and other serious adverse events only became apparent after millions of real-world patients (elderly, sick, on other medications) were exposed.
 
-![A visual comparison between the narrow, controlled demographics of clinical trials and the diverse, complex reality of the general population, highlighting the safety risks that go undetected.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-this-makes-drugs-more-dangerous-bw-academic.jpg)
+![Clinical trials use healthy 25-year-olds with no other conditions. Then you give the drug to 80-year-olds taking twelve other medications. What could go wrong, you asked. Everything, it turns out.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-this-makes-drugs-more-dangerous-bw-academic.jpg)
 
 Testing drugs only on healthy volunteers to ensure safety is like testing parachutes only on the ground.
 
@@ -360,13 +360,13 @@ Testing drugs only on healthy volunteers to ensure safety is like testing parach
 
 Even if there's financial incentive to research a new drug, there's no data on long-term outcomes. Data collection for participants can be as short as several months. Under the current system, it's not financially feasible to collect data on a participant for years or decades. So you have no idea if long-term effects of a drug are worse than initial benefits.
 
-![A timeline comparison showing the brief window of clinical data collection versus the decades of potential long-term drug effects that remain unmonitored.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-no-long-term-outcome-data-bw-academic.jpg)
+![They test drugs for two years, then you take them for forty years. It's like test-driving a car to the end of the driveway, then driving it to the moon.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-no-long-term-outcome-data-bw-academic.jpg)
 
 ### Pre-Specification Requirements Kill Innovation
 
 When running an efficacy trial, the regulations require drug developers to predict exactly what a treatment will cure before collecting any human trial data.
 
-![A timeline of the Dendreon case showing how successful clinical results were rejected due to pre-specification requirements, leading to a second trial and eventual bankruptcy.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-pre-specification-requirements-kill-innovation-bw-academic.jpg)
+![Dendreon's cancer drug worked. The FDA said it didn't count because they forgot to specify they were checking if it worked. Thousands died. The FDA was very proud of following procedure.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-pre-specification-requirements-kill-innovation-bw-academic.jpg)
 
 In 2007, Dendreon submitted evidence that its immunotherapy drug Provenge significantly reduced deaths from prostate cancer. The FDA advisory committee was persuaded. But the application was rejected anyway, not because the drug didn't work, but because Dendreon didn't properly specify beforehand what the study would measure.
 
@@ -384,7 +384,7 @@ Here's a fun fact that should be criminal:
 
 Companies are literally allowed to hide when drugs don't work.
 
-![A visual comparison showing the discrepancy between published positive and negative clinical trial results, alongside the resulting cycle of wasted research spending.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-negative-results-black-hole-bw-academic.jpg)
+![Drug companies publish successful trials and hide failed ones. So researchers keep testing things that already failed, like a scientist trying to invent fire without knowing fire already exists. Except the fire is death.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-negative-results-black-hole-bw-academic.jpg)
 
 Company: "We tested this drug!"
 
@@ -402,7 +402,7 @@ It's like casinos only having to report when people win.
 
 ## Countries That Don't Have Our "Safety"
 
-![A comparison of regulatory approaches to experimental medicine in Japan, the EU, and the US, showing differences in approval speed and patient access.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-countries-that-don-t-have-our-safety-bw-academic.jpg)
+![Japan approves experimental drugs fast. Europe approves them medium fast. America approves them after you die. Different cultures, different priorities.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-countries-that-don-t-have-our-safety-bw-academic.jpg)
 
 **Japan's Regenerative Medicine Act [@japans-regenerative-medicine-act]:**
 
@@ -438,7 +438,7 @@ The 1962 framework requires the FDA to approve all diagnostic tests before use. 
 
 The defense: "We were ensuring quality control."
 
-![A timeline of the 2020 COVID-19 testing failure showing the gap between international test availability and the eventual FDA approval of private domestic tests.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-covid-test-fiasco-bw-academic.jpg)
+![While COVID spread, America banned COVID tests. Not because the tests didn't work. Because they weren't American enough. Patriotism killed thousands. Nobody got a medal.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-covid-test-fiasco-bw-academic.jpg)
 
 The only approved tests didn't work.
 
@@ -448,7 +448,7 @@ Ensuring quality control of broken tests is like TSA confiscating water bottles 
 
 The FDA's post-1962 system (requiring small, artificial efficacy trials before allowing patient access) was supposed to prove drugs work. But paradoxically, by forcing small artificial trials and excluding real-world populations, it created a system that is demonstrably more dangerous than the real-world evidence approach it replaced.
 
-![A comparison of the post-1962 artificial trial system versus the real-world evidence approach, showing how the exclusion of diverse populations leads to higher safety risks.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-small-trials-are-dangerous-bw-academic.jpg)
+![Before 1962, they tested drugs on everyone who took them. After 1962, they tested drugs on 2,000 people, then gave them to 2 billion. They called this improvement.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-small-trials-are-dangerous-bw-academic.jpg)
 
 ### Why Small Trials Miss Safety Signals
 
@@ -461,7 +461,7 @@ The FDA's post-1962 system (requiring small, artificial efficacy trials before a
 
 The result: Drugs are approved as "safe" based on tiny, artificial samples, then given to millions of real patients where the actual safety problems emerge.
 
-![A visual contrast between the narrow, controlled parameters of Phase III clinical trials and the complex, diverse reality of broad population use.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-small-trials-miss-safety-signals-bw-academic.jpg)
+![Phase III trials are quiet libraries. Real life is a tornado in a fireworks factory. You're using library data to predict tornados.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-small-trials-miss-safety-signals-bw-academic.jpg)
 
 ### The Adverse Event Reporting Failure
 
@@ -479,7 +479,7 @@ Post-approval, the FDA relies on the **FDA Adverse Event Reporting System (FAERS
 - **Vioxx:** Killed an estimated 38,000-55,000 Americans [@vioxx-deaths] before voluntary reporting caught the cardiovascular risks
 - **Thalidomide in Europe:** Thousands of birth defects before passive reporting identified the pattern
 
-![Visualization of the "Iceberg Effect" in adverse event reporting, where less than 10 percent of safety issues are captured by the current passive system.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
+![Doctors report 10% of drug side effects. The other 90% just happen to people who assume that's what dying feels like.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
 
 ### What Real-World Evidence Would Catch
 
@@ -493,7 +493,7 @@ A decentralized system with universal participation would:
 
 **The safety ratio is backwards.** Testing 3,000 cherry-picked patients and hoping voluntary reporting catches problems is more dangerous than testing active monitoring of adverse events with real patients.
 
-![A side-by-side comparison of the traditional clinical trial model versus a decentralized real-world evidence system across metrics of scale, population diversity, and detection speed.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-what-real-world-evidence-would-catch-bw-academic.jpg)
+![Old way: test 2,000 people for 2 years, miss everything. New way: monitor 2 billion people forever, catch everything. You're still using the old way.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-what-real-world-evidence-would-catch-bw-academic.jpg)
 
 The current system doesn't prevent safety failures. It delays discovering them until after millions have been exposed.
 
@@ -509,7 +509,7 @@ Phase I safety testing works. It screens out immediately toxic compounds. But bl
 
 Phase I safety testing works. Keep it.
 
-![An infographic illustrating the 8.2-year efficacy lag and its consequences, highlighting the 3,000:1 ratio between lives lost to delay versus lives saved by current regulatory barriers.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bottom-line-bw-academic.jpg)
+![It takes 8.2 years to prove a drug works. During those 8.2 years, 3,000 people die for every one person the delay might save. You're very bad at math.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bottom-line-bw-academic.jpg)
 
 Blocking patient access during the 8.2-year post-safety efficacy delay kills people. Replace it with real-world evidence collection.
 
