@@ -27,6 +27,8 @@ local emoji_map = {
   ["\u{1F3C6}"] = "",        -- 🏆
   ["\u{2728}"]  = "",        -- ✨
   ["\u{1F525}"] = "",        -- 🔥
+  ["\u{1F3E5}"] = "",        -- 🏥
+  ["\u{1F3E6}"] = "",        -- 🏦
 }
 
 -- Replace emoji in Str elements with text equivalents.

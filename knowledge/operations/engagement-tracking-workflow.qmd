@@ -235,10 +235,10 @@ IF(
   {Referendum Votes} > 0,
   IF(
     COUNTALL({Global Referendum 2}) > 0,
-    "✅ Recruiter",
-    "⏳ Passive Voter"
+    "✓ Recruiter",
+    " Passive Voter"
   ),
-  "❌ No Vote"
+  "✗ No Vote"
 )
 ```
 
@@ -370,7 +370,7 @@ Actions:
   1. Send Slack message
      Channel: #high-value-leads
      Message:
-       🚨 HIGH-VALUE LEAD ALERT
+        HIGH-VALUE LEAD ALERT
 
        Investor: {Investor}
        Amount Interest: ${Amount Invested}
@@ -382,7 +382,7 @@ Actions:
 
   2. Send email
      To: founder@warondisease.com
-     Subject: 🚨 URGENT: $100K+ VICTORY Incentive Alignment Bond Interest
+     Subject:  URGENT: $100K+ VICTORY Incentive Alignment Bond Interest
      Body: [Same as Slack message]
 
   3. Create calendar event

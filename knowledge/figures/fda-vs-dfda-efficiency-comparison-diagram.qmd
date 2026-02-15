@@ -2,7 +2,7 @@
 
 | Metric | Current FDA System | A Decentralized Framework for Drug Assessment | Improvement |
 |--------|-------------------|-------------------|-------------|
-| **Approach** | 📋 Central Planning | 🛒 Open Platform | Market-based |
+| **Approach** |  Central Planning |  Open Platform | Market-based |
 | **Cost per Patient** | {{< var traditional_phase3_cost_per_patient >}} | {{< var recovery_trial_cost_per_patient >}} | **{{< var dfda_trial_cost_reduction_factor >}} cheaper** |
 | **Time to Results** | {{< var drug_discovery_to_approval_years >}} | {{< var phase_1_safety_duration_years >}} | **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} faster** |
 | **Patient Access** | {{< var current_patient_participation_rate >}} | 100% | **{{< var dfda_trial_capacity_multiplier >}} more access** |

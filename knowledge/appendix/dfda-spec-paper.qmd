@@ -1390,8 +1390,8 @@ Each study can receive user votes:
 
 | Vote | Meaning | Effect |
 |------|---------|--------|
-| **Up-vote** (👍) | Data appears valid, relationship plausible | Included in verified results |
-| **Down-vote** (👎) | Data issues or implausible relationship | Flagged for review |
+| **Up-vote** (+1) | Data appears valid, relationship plausible | Included in verified results |
+| **Down-vote** (-1) | Data issues or implausible relationship | Flagged for review |
 | **No vote** | Not yet reviewed | Included in unverified results |
 
 ### Automated Quality Checks

@@ -46,9 +46,9 @@ These are already absolute URLs and should not be touched:
 
 | Syntax | Works in HTML | Works in PDF |
 |--------|---------------|--------------|
-| `@sec-label` cross-reference | ✅ Yes | ✅ Yes |
-| Standard markdown link | ✅ Yes | ❌ No (becomes file://) |
-| `[text](https://...)` absolute URL | ✅ Yes | ✅ Yes (opens browser) |
+| `@sec-label` cross-reference | ✓ Yes | ✓ Yes |
+| Standard markdown link | ✓ Yes | ✗ No (becomes file://) |
+| `[text](https://...)` absolute URL | ✓ Yes | ✓ Yes (opens browser) |
 
 ## Conclusion
 
