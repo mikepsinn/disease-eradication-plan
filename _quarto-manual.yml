@@ -20,9 +20,7 @@ dih-render:
   netlify-cname: "manual-warondisease-org.netlify.app"
   # Strip "(95% CI: ...)" from variable display values for general-audience reading
   show-confidence-intervals: false
-  # Convert <a> parameter links to markdown [text](path.qmd) so Quarto resolves per-format
-  # Options: html (keep raw <a> tags), markdown (convert to links), none (strip to plain text)
-  parameter-link-format: markdown
+  # parameter-link-format defaults to html (links work in HTML, stripped by Lua filter for EPUB/PDF)
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
 
@@ -171,8 +169,7 @@ book:
 
     - part: "Detailed Calculations"
       chapters:
-        # REMOVED: Auto-generated reference (~50p), link to online version instead
-        # - knowledge/appendix/parameters-and-calculations.qmd
+        - knowledge/appendix/parameters-and-calculations.qmd
         # STANDALONE PAPER - see graveyard.warondisease.org
         # - knowledge/appendix/invisible-graveyard.qmd # ✅ PRIMARY METHODOLOGY - Regulatory mortality quantitative analysis (184.6M deaths, 3.53B DALYs, $529T economic loss) ~50p
         - knowledge/appendix/drug-development-cost-analysis.qmd # ✅ Rigorous 217× cost increase analysis with multiple data sources, CPI adjustments, sensitivity analysis ~10p
@@ -389,6 +386,8 @@ format:
       - file: assets/html/page-loader.html
   epub:
     # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
+    filters:
+      - scripts/filters/strip-parameter-links.lua
     output-file: "How-to-End-War-and-Disease.epub"
     # Author attribution for EPUB (different from HTML)
     author: "WISHONIA (translated by Mike P. Sinn)"
