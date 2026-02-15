@@ -41,13 +41,13 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Annual Chronic Disease Patients Treated: 982 million people {#sec-chronic_disease_treated_patients_annual}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Estimated unique patients receiving chronic disease treatment annually. Derived from IQVIA days of therapy (1.28T) divided by 365 days divided by 2.5 average medications per patient times 70% post-1962 drugs.
 
 **Inputs**:
 
-- [Annual Days of Chronic Disease Therapy](#sec-global_chronic_therapy_days_annual) 📊: 1.28 trillion days (95% CI: 1.00 trillion days - 1.50 trillion days)
+- [Annual Days of Chronic Disease Therapy](#sec-global_chronic_therapy_days_annual): 1.28 trillion days (95% CI: 1.00 trillion days - 1.50 trillion days)
 
 $$
 \begin{gathered}
@@ -80,14 +80,14 @@ $$
 
 ### Total DALYs Lost from Disease Eradication Delay: 7.94 billion DALYs {#sec-dfda_efficacy_lag_elimination_dalys}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll) 🔢: 7.07 billion years
-- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873 million years
+- [Years of Life Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yll): 7.07 billion years
+- [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld): 873 million years
 
 $$
 \begin{gathered}
@@ -131,14 +131,14 @@ $$
 
 ### Total Deaths from Disease Eradication Delay: 416 million deaths {#sec-dfda_efficacy_lag_elimination_deaths_averted}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total eventually avoidable deaths from delaying disease eradication by 8.2 years (PRIMARY estimate, conservative). Excludes fundamentally unavoidable deaths (primarily accidents ~7.9%).
 
 **Inputs**:
 
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: ±2 years)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily): 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
 
 $$
 \begin{gathered}
@@ -169,14 +169,14 @@ $$
 
 ### Total Economic Loss from Disease Eradication Delay: $1.19 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys): 7.94 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd): $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
@@ -224,15 +224,15 @@ $$
 
 ### Years Lived with Disability During Disease Eradication Delay: 873 million years {#sec-dfda_efficacy_lag_elimination_yld}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Years Lived with Disability during disease eradication delay (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
-- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years) 📊: 6 years (95% CI: 4 years - 9 years)
-- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight) 📊: 0.35 weight (SE: ±0.07 weight)
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted): 416 million deaths
+- [Pre-Death Suffering Period During Post-Safety Efficacy Delay](#sec-regulatory_delay_suffering_period_years): 6 years (95% CI: 4 years - 9 years)
+- [Disability Weight for Untreated Chronic Conditions](#sec-chronic_disease_disability_weight): 0.35 weight (SE: ±0.07 weight)
 
 $$
 \begin{gathered}
@@ -267,15 +267,15 @@ $$
 
 ### Years of Life Lost from Disease Eradication Delay: 7.07 billion years {#sec-dfda_efficacy_lag_elimination_yll}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Years of Life Lost from disease eradication delay deaths (PRIMARY estimate)
 
 **Inputs**:
 
-- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted) 🔢: 416 million deaths
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
-- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death) 📊: 62 years (SE: ±3 years)
+- [Total Deaths from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_deaths_averted): 416 million deaths
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024): 79 years (SE: ±2 years)
+- [Mean Age of Preventable Death from Post-Safety Efficacy Delay](#sec-regulatory_delay_mean_age_of_death): 62 years (SE: ±3 years)
 
 $$
 \begin{gathered}
@@ -310,14 +310,14 @@ $$
 
 ### dFDA Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
 
 **Inputs**:
 
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
-- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient): $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient): $41K (95% CI: $20K - $120K)
 
 $$
 \begin{gathered}
@@ -348,13 +348,13 @@ $$
 
 ### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global): 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
 
 $$
 \begin{gathered}
@@ -387,13 +387,13 @@ $$
 
 ### Total Drugs Approved Since 1962: 3.10 thousand drugs {#sec-drugs_approved_since_1962}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Estimated total drugs approved globally since 1962 (62 years × average approval rate). Conservative: uses current rate, actual historical rate was lower in 1960s-80s.
 
 **Inputs**:
 
-- [Average Annual New Drug Approvals Globally](#sec-current_drug_approvals_per_year) 📊: 50 drugs/year (95% CI: 45 drugs/year - 60 drugs/year)
+- [Average Annual New Drug Approvals Globally](#sec-current_drug_approvals_per_year): 50 drugs/year (95% CI: 45 drugs/year - 60 drugs/year)
 
 $$
 \begin{gathered}
@@ -426,14 +426,14 @@ $$
 
 ### Drug Cost Increase: 1980s to Current: 13.4x {#sec-drug_cost_increase_1980s_to_current_multiplier}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
 
 **Inputs**:
 
-- [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s) 📊: $194M (95% CI: $146M - $242M)
-- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
+- [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s): $194M (95% CI: $146M - $242M)
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current): $2.60B (95% CI: $1.50B - $4B)
 
 $$
 \begin{gathered}
@@ -466,14 +466,14 @@ $$
 
 ### Cumulative Efficacy Testing Cost (1962-2024): $4.84T {#sec-efficacy_lag_cumulative_excess_cost}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost ($1.56B per drug) - this is a LOWER BOUND because it excludes opportunity cost of 8.2-year delays, compounds abandoned due to cost barrier, and regulatory overhead. Comparable to the $8 trillion spent on post-9/11 wars.
 
 **Inputs**:
 
 - [Pharma Phase 2/3 Cost Barrier Per Drug](#sec-pharma_phase_2_3_cost_barrier): $1.56B (SE: ±$200M)
-- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962) 🔢: 3.10 thousand drugs
+- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962): 3.10 thousand drugs
 
 $$
 \begin{gathered}
@@ -505,14 +505,14 @@ $$
 
 ### Efficacy Lag Deaths (9/11 Equivalents): 34.1 thousand 9/11s {#sec-efficacy_lag_deaths_911_equivalents}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortality cost viscerally understandable: how many September 11ths worth of deaths did the 1962 efficacy requirements cause?
 
 **Inputs**:
 
-- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total) 🔢: 102 million deaths
-- [September 11 Deaths](#sec-sept_11_deaths) 📊: 2.98 thousand people
+- [Total Deaths from Historical Progress Delays](#sec-existing_drugs_efficacy_lag_deaths_total): 102 million deaths
+- [September 11 Deaths](#sec-sept_11_deaths): 2.98 thousand people
 
 $$
 \begin{gathered}
@@ -545,15 +545,15 @@ $$
 
 ### Treatment Delay YLD - Annual: 2.01 billion DALYs {#sec-efficacy_lag_treatment_delay_yld_annual}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Annual YLD from treatment delay: patients receiving chronic disease treatment would have collectively avoided this disability if treatments were available 8.2 years earlier. Represents morbidity burden for treatment beneficiaries (distinct from mortality burden).
 
 **Inputs**:
 
-- [Annual Chronic Disease Patients Treated](#sec-chronic_disease_treated_patients_annual) 🔢: 982 million people
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-- [Treatment Disability Reduction](#sec-treatment_disability_reduction) 📊: 0.25 weight (95% CI: 0.15 weight - 0.35 weight)
+- [Annual Chronic Disease Patients Treated](#sec-chronic_disease_treated_patients_annual): 982 million people
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: ±2 years)
+- [Treatment Disability Reduction](#sec-treatment_disability_reduction): 0.25 weight (95% CI: 0.15 weight - 0.35 weight)
 
 $$
 \begin{gathered}
@@ -588,14 +588,14 @@ $$
 
 ### Total Deaths from Historical Progress Delays: 102 million deaths {#sec-existing_drugs_efficacy_lag_deaths_total}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total deaths from delaying existing drugs over 8.2-year efficacy lag. One-time impact of eliminating Phase 2-4 testing delay for drugs already approved 1962-2024. Based on Lichtenberg (2019) estimate of 12M lives saved annually × 8.2 years efficacy lag. Excludes innovation acceleration effects.
 
 **Inputs**:
 
-- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual) 🔢: 12.4 million deaths
-- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Annual Lives Saved by Pharmaceuticals](#sec-pharma_lives_saved_annual): 12.4 million deaths
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years): 8.2 years (SE: ±2 years)
 
 $$
 \begin{gathered}
@@ -627,13 +627,13 @@ $$
 
 ### Annual Lives Saved by Pharmaceuticals: 12.4 million deaths {#sec-pharma_lives_saved_annual}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Annual lives saved by pharmaceutical interventions globally. Derived from Lichtenberg (2019) finding of 148.7M life-years saved, divided by assumed 12-year average life extension per beneficiary. Note: Life-years is the primary metric; lives is an approximation for intuitive communication.
 
 **Inputs**:
 
-- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual) 📊: 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
+- [Annual Life-Years Saved by Pharmaceuticals](#sec-pharma_life_years_saved_annual): 149 million life-years (95% CI: 79.4 million life-years - 240 million life-years)
 - [Average Life Extension per Beneficiary](#sec-avg_life_extension_per_beneficiary): 12 years (95% CI: 8 years - 18 years)
 
 $$
@@ -667,14 +667,14 @@ $$
 
 ### Thalidomide DALYs Per Event: 41.8 thousand DALYs {#sec-thalidomide_dalys_per_event}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0 thousand years
-- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8 thousand years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event): 13.0 thousand years
+- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event): 28.8 thousand years
 
 $$
 \begin{gathered}
@@ -726,14 +726,14 @@ $$
 
 ### Thalidomide Deaths Per Event: 360 deaths {#sec-thalidomide_deaths_per_event}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Deaths per US-scale thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
-- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate): 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented): 900 cases
 
 $$
 \begin{gathered}
@@ -768,14 +768,14 @@ $$
 
 ### Thalidomide Survivors Per Event: 540 cases {#sec-thalidomide_survivors_per_event}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Survivors per US-scale thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
-- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
+- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate): 40% (95% CI: 35% - 45%)
+- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented): 900 cases
 
 $$
 \begin{gathered}
@@ -810,14 +810,14 @@ $$
 
 ### Thalidomide US Cases Prevented: 900 cases {#sec-thalidomide_us_cases_prevented}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0 thousand cases (95% CI: 10.0 thousand cases - 20.0 thousand cases)
-- [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide): 15.0 thousand cases (95% CI: 10.0 thousand cases - 20.0 thousand cases)
+- [US Population Share 1960](#sec-thalidomide_us_population_share_1960): 6% (95% CI: 5.5% - 6.5%)
 
 $$
 \begin{gathered}
@@ -848,15 +848,15 @@ $$
 
 ### Thalidomide YLD Per Event: 13.0 thousand years {#sec-thalidomide_yld_per_event}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Years Lived with Disability per thalidomide event
 
 **Inputs**:
 
-- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight) 📊: 0.4:1 (95% CI: 0.32:1 - 0.48:1)
-- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event) 🔢: 540 cases
-- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan) 📊: 60 years (95% CI: 50 years - 70 years)
+- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight): 0.4:1 (95% CI: 0.32:1 - 0.48:1)
+- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event): 540 cases
+- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan): 60 years (95% CI: 50 years - 70 years)
 
 $$
 \begin{gathered}
@@ -895,13 +895,13 @@ $$
 
 ### Thalidomide YLL Per Event: 28.8 thousand years {#sec-thalidomide_yll_per_event}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Years of Life Lost per thalidomide event (infant deaths)
 
 **Inputs**:
 
-- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event) 🔢: 360 deaths
+- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event): 360 deaths
 
 $$
 \begin{gathered}
@@ -937,14 +937,14 @@ $$
 
 ### Ratio of Type II Error Cost to Type I Error Benefit: 3.07k:1 {#sec-type_ii_error_cost_ratio}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
 
 **Inputs**:
 
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 7.94 billion DALYs
-- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59 million DALYs
+- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys): 7.94 billion DALYs
+- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys): 2.59 million DALYs
 
 $$
 \begin{gathered}
@@ -1015,13 +1015,13 @@ $$
 
 ### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59 million DALYs {#sec-type_i_error_benefit_dalys}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
 
 **Inputs**:
 
-- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41.8 thousand DALYs
+- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event): 41.8 thousand DALYs
 
 $$
 \begin{gathered}
@@ -1078,7 +1078,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### Disability Weight for Untreated Chronic Conditions: 0.35 weight {#sec-chronic_disease_disability_weight}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Disability weight for untreated chronic conditions (WHO Global Burden of Disease)
 
@@ -1092,13 +1092,13 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 
 {{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
 
-*~ Medium confidence • 📊 Peer-reviewed*
+*~ Medium confidence • Peer-reviewed*
 
 :::
 
 ### Average Annual New Drug Approvals Globally: 50 drugs/year {#sec-current_drug_approvals_per_year}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Average annual new drug approvals globally
 
@@ -1122,7 +1122,7 @@ Average annual new drug approvals globally
 
 ### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
@@ -1146,7 +1146,7 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 
 ### Drug Development Cost (1980s): $194M {#sec-drug_development_cost_1980s}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Drug development cost in 1980s (compounded to approval, 1990 dollars)
 
@@ -1170,7 +1170,7 @@ Drug development cost in 1980s (compounded to approval, 1990 dollars)
 
 ### Regulatory Delay for Efficacy Testing Post-Safety Verification: 8.2 years {#sec-efficacy_lag_years}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Regulatory delay for efficacy testing (Phase II/III) post-safety verification. Based on BIO 2021 industry survey. Note: This is for drugs that COMPLETE the pipeline - survivor bias means actual delay for any given disease may be longer if candidates fail and must restart.
 
@@ -1184,13 +1184,13 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
-*~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
+*~ Medium confidence • Peer-reviewed • Updated 2021*
 
 :::
 
 ### FDA Phase 1 to Approval Timeline: 10.5 years {#sec-fda_phase_1_to_approval_years}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry survey: Phase 1 (2.3 years) + efficacy lag (8.2 years) = 10.5 years. Consistent with PMC meta-analysis finding 9.1 years median (95% CI: 8.2-10.0).
 
@@ -1214,7 +1214,7 @@ FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry surv
 
 ### Annual Days of Chronic Disease Therapy: 1.28 trillion days {#sec-global_chronic_therapy_days_annual}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Annual days of therapy for chronic conditions globally (diabetes, CVD, respiratory, cancer). IQVIA reports 1.8 trillion total days of therapy in 2019, with 71% for chronic conditions.
 
@@ -1238,7 +1238,7 @@ Annual days of therapy for chronic conditions globally (diabetes, CVD, respirato
 
 ### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total global deaths per day from all disease and aging (WHO Global Burden of Disease 2024)
 
@@ -1252,13 +1252,13 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 {{< include ../figures/distribution-global_disease_deaths_daily.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed*
+*✓ High confidence • Peer-reviewed*
 
 :::
 
 ### Global Life Expectancy (2024): 79 years {#sec-global_life_expectancy_2024}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Global life expectancy (2024)
 
@@ -1272,13 +1272,13 @@ Global life expectancy (2024)
 
 {{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+*✓ High confidence • Peer-reviewed • Updated 2024*
 
 :::
 
 ### Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Average cost to develop one drug in current system
 
@@ -1296,13 +1296,13 @@ Average cost to develop one drug in current system
 
 {{< include ../figures/distribution-pharma_drug_development_cost_current.qmd >}}
 
-*✓ High confidence • 📊 Peer-reviewed*
+*✓ High confidence • Peer-reviewed*
 
 :::
 
 ### Annual Life-Years Saved by Pharmaceuticals: 149 million life-years {#sec-pharma_life_years_saved_annual}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (2019, NBER WP 25483) found that drugs launched after 1981 saved 148.7M life-years in 2013 across 22 countries using 3-way fixed-effects regression (disease-country-year). 95% CI [79.4M, 239.8M] propagated from Table 2 regression standard errors (β₀₋₁₁=-0.031±0.008, β₁₂₊=-0.057±0.013).
 
@@ -1326,31 +1326,31 @@ Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (201
 
 ### Pharma Drug Success Rate (Current System): 10% {#sec-pharma_success_rate_current_pct}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Percentage of drugs that reach market in current system
 
 **Source**: [@drug-trial-success-rate-12-pct]
 
-*✓ High confidence • 📊 Peer-reviewed*
+*✓ High confidence • Peer-reviewed*
 
 :::
 
 ### Phase I Safety Trial Duration: 2.3 years {#sec-phase_1_safety_duration_years}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Phase I safety trial duration
 
 **Source**: [@bio-clinical-development-2021]
 
-*✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+*✓ High confidence • Peer-reviewed • Updated 2021*
 
 :::
 
 ### Post-1962 Drug Approval Reduction: 70% {#sec-post_1962_drug_approval_reduction_pct}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop from 43→17 drugs/year)
 
@@ -1362,7 +1362,7 @@ Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop f
 
 ### Pre-1962 Physician Count (Unverified): 144 thousand physicians {#sec-pre_1962_physician_count}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
 
@@ -1374,7 +1374,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 ### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total number of rare diseases globally
 
@@ -1398,7 +1398,7 @@ Total number of rare diseases globally
 
 ### Mean Age of Preventable Death from Post-Safety Efficacy Delay: 62 years {#sec-regulatory_delay_mean_age_of_death}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Mean age of preventable death from post-safety efficacy testing regulatory delay (Phase 2-4)
 
@@ -1412,13 +1412,13 @@ Mean age of preventable death from post-safety efficacy testing regulatory delay
 
 {{< include ../figures/distribution-regulatory_delay_mean_age_of_death.qmd >}}
 
-*~ Medium confidence • 📊 Peer-reviewed*
+*~ Medium confidence • Peer-reviewed*
 
 :::
 
 ### Pre-Death Suffering Period During Post-Safety Efficacy Delay: 6 years {#sec-regulatory_delay_suffering_period_years}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Pre-death suffering period during post-safety efficacy testing delay (average years lived with untreated condition while awaiting Phase 2-4 completion)
 
@@ -1436,13 +1436,13 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 {{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
 
-*~ Medium confidence • 📊 Peer-reviewed*
+*~ Medium confidence • Peer-reviewed*
 
 :::
 
 ### September 11 Deaths: 2.98 thousand people {#sec-sept_11_deaths}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hijackers). Used as a reference point for scale comparisons.
 
@@ -1458,7 +1458,7 @@ Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hija
 
 ### Standard Economic Value per QALY: $150K {#sec-standard_economic_qaly_value_usd}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Standard economic value per QALY
 
@@ -1478,7 +1478,7 @@ Standard economic value per QALY
 
 ### Thalidomide Cases Worldwide: 15.0 thousand cases {#sec-thalidomide_cases_worldwide}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total thalidomide birth defect cases worldwide (1957-1962)
 
@@ -1502,7 +1502,7 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 ### Thalidomide Disability Weight: 0.4:1 {#sec-thalidomide_disability_weight}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Disability weight for thalidomide survivors (limb deformities, organ damage)
 
@@ -1526,7 +1526,7 @@ Disability weight for thalidomide survivors (limb deformities, organ damage)
 
 ### Thalidomide Mortality Rate: 40% {#sec-thalidomide_mortality_rate}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Mortality rate for thalidomide-affected infants (died within first year)
 
@@ -1550,7 +1550,7 @@ Mortality rate for thalidomide-affected infants (died within first year)
 
 ### Thalidomide Survivor Lifespan: 60 years {#sec-thalidomide_survivor_lifespan}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Average lifespan for thalidomide survivors
 
@@ -1574,7 +1574,7 @@ Average lifespan for thalidomide survivors
 
 ### US Population Share 1960: 6% {#sec-thalidomide_us_population_share_1960}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US share of world population in 1960
 
@@ -1598,7 +1598,7 @@ US share of world population in 1960
 
 ### Phase 3 Cost per Patient: $41K {#sec-traditional_phase3_cost_per_patient}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Phase 3 cost per patient (median from FDA study)
 
@@ -1622,7 +1622,7 @@ Phase 3 cost per patient (median from FDA study)
 
 ### Treatment Disability Reduction: 0.25 weight {#sec-treatment_disability_reduction}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Average disability weight reduction from pharmaceutical treatment. Untreated chronic disease averages 0.35 disability weight, treated disease averages 0.10, difference is 0.25.
 
@@ -1640,7 +1640,7 @@ Average disability weight reduction from pharmaceutical treatment. Untreated chr
 
 {{< include ../figures/distribution-treatment_disability_reduction.qmd >}}
 
-*~ Medium confidence • 📊 Peer-reviewed*
+*~ Medium confidence • Peer-reviewed*
 
 :::
 
@@ -1650,7 +1650,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Average years of life extension per person saved by pharmaceutical interventions. Assumption used to convert life-years saved to approximate lives saved. Based on Lichtenberg's methodology where life-years are calculated from Years of Life Lost (YLL) reductions.
 
@@ -1672,7 +1672,7 @@ Average years of life extension per person saved by pharmaceutical interventions
 
 ### Eventually Avoidable Death Percentage: 92.6% {#sec-eventually_avoidable_death_pct}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.
 
@@ -1694,7 +1694,7 @@ Percentage of deaths that are eventually avoidable with sufficient biomedical re
 
 ### Fundamentally Unavoidable Death Percentage: 7.37% {#sec-fundamentally_unavoidable_death_pct}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Percentage of deaths that are fundamentally unavoidable even with perfect biotechnology (primarily accidents). Calculated as Σ(disease_burden × (1 - max_cure_potential)) across all disease categories.
 
@@ -1704,7 +1704,7 @@ Percentage of deaths that are fundamentally unavoidable even with perfect biotec
 
 ### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Standard discount rate for NPV analysis (3% annual, social discount rate)
 
@@ -1718,7 +1718,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 ### Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B {#sec-pharma_phase_2_3_cost_barrier}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of $2.6B total)
 

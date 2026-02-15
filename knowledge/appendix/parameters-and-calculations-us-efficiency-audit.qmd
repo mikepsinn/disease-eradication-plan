@@ -41,13 +41,13 @@ Parameters derived from mathematical formulas and economic models.
 
 ### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Annual funding from 1% of global military spending redirected to DIH
 
 **Inputs**:
 
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024): $2.72T
 - [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
@@ -65,14 +65,14 @@ $$
 
 ### US Discretionary Efficiency: 40.5% {#sec-us_fed_discretionary_efficiency}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US federal discretionary spending efficiency. What fraction of discretionary spending avoids direct waste (Cat 1 only: military overspend, corporate welfare, drug war, fossil/ag subsidies). ~41%. Some Cat 1 items (farm subsidies, tax expenditures) are technically mandatory/off-budget but are fungible policy choices.
 
 **Inputs**:
 
-- [Category 1: Direct Spending Waste](#sec-us_gov_waste_category_1_direct_spending) 🔢: $1.01T
-- [US Federal Discretionary Spending (FY2024)](#sec-us_fed_discretionary_spending_2024) 📊: $1.70T
+- [Category 1: Direct Spending Waste](#sec-us_gov_waste_category_1_direct_spending): $1.01T
+- [US Federal Discretionary Spending (FY2024)](#sec-us_fed_discretionary_spending_2024): $1.70T
 
 $$
 \begin{gathered}
@@ -108,14 +108,14 @@ $$
 
 ### US Governance Efficiency (GDP): 83% {#sec-us_governance_efficiency_gdp}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total US governance efficiency: all 4 waste categories as share of GDP. 1 - ($4.9T / $28.78T) = ~83%. This broader metric captures direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency relative to total economic output.
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
-- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8T
+- [US Government Waste (Total)](#sec-us_gov_waste_total): $4.90T
+- [US GDP (2024)](#sec-us_gdp_2024): $28.8T
 
 $$
 \begin{gathered}
@@ -152,17 +152,17 @@ $$
 
 ### Category 1: Direct Spending Waste: $1.01T {#sec-us_gov_waste_category_1_direct_spending}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Category 1: Direct Federal Spending Waste. Actual federal budget allocations that could be redirected. Includes military overspend ($615B), corporate welfare ($181B), drug war ($90B), fossil fuel subsidies ($50B), and agricultural subsidies ($75B). Total: ~$1.01T annually. Solution: Budget reallocation.
 
 **Inputs**:
 
-- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
-- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181B (95% CI: $150B - $220B)
-- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90B (95% CI: $60B - $150B)
-- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50B (95% CI: $30B - $80B)
-- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
+- [Military Overspend](#sec-us_gov_waste_military_overspend): $615B (95% CI: $500B - $750B)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare): $181B (95% CI: $150B - $220B)
+- [Drug War Cost](#sec-us_gov_waste_drug_war): $90B (95% CI: $60B - $150B)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies): $50B (95% CI: $30B - $80B)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies): $75B (95% CI: $50B - $120B)
 
 $$
 \begin{gathered}
@@ -194,14 +194,14 @@ $$
 
 ### Category 2: Compliance Burden: $1.13T {#sec-us_gov_waste_category_2_compliance}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Category 2: Compliance Burden on Private Sector. Private sector resources consumed by government-imposed compliance requirements. Includes tax compliance ($546B) and regulatory red tape ($580B). Total: ~$1.13T annually. Solution: Simplification (tax code reform, regulatory streamlining).
 
 **Inputs**:
 
-- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
-- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance): $546B (95% CI: $450B - $650B)
+- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape): $580B (95% CI: $290B - $1T)
 
 $$
 \begin{gathered}
@@ -232,14 +232,14 @@ $$
 
 ### Category 3: GDP Loss: $1.56T {#sec-us_gov_waste_category_3_gdp_loss}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Category 3: Policy-Induced GDP Loss. Economic output foregone due to policy constraints on markets. Includes housing/zoning restrictions ($1.4T) and tariffs ($160B). Total: ~$1.56T annually. Solution: Policy reform (zoning liberalization, trade policy).
 
 **Inputs**:
 
-- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $500B - $2T)
-- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning): $1.40T (95% CI: $500B - $2T)
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs): $160B (95% CI: $90B - $250B)
 
 $$
 \begin{gathered}
@@ -270,13 +270,13 @@ $$
 
 ### Category 4: System Inefficiency: $1.20T {#sec-us_gov_waste_category_4_system}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Category 4: Total System Inefficiency. Fundamental system design failures requiring structural redesign. Currently only healthcare system inefficiency ($1.2T). Solution: System redesign using competitive market models (Singapore's catastrophic coverage + HSAs, Switzerland's regulated competition).
 
 **Inputs**:
 
-- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.20T (95% CI: $1T - $1.50T)
+- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency): $1.20T (95% CI: $1T - $1.50T)
 
 $$
 W_{cat4} = W_{health} = \$1.2T = \$1.2T
@@ -302,14 +302,14 @@ $$
 
 ### US Waste (% GDP): 17% {#sec-us_gov_waste_pct_gdp}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US government waste as percentage of GDP. ~$4.90T waste / $28.78T GDP = ~17%. This represents the 'dysfunction tax' that American citizens effectively pay through inefficient governance.
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
-- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8T
+- [US Government Waste (Total)](#sec-us_gov_waste_total): $4.90T
+- [US GDP (2024)](#sec-us_gdp_2024): $28.8T
 
 $$
 \begin{gathered}
@@ -346,14 +346,14 @@ $$
 
 ### US Waste (QALY Equivalents): 49.0 million QALYs {#sec-us_gov_waste_qaly_equivalents}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US government waste expressed as QALY equivalents. This is an economic equivalent, NOT epidemiological health outcomes. Dividing by QALY threshold yields a measure of foregone welfare.
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
-- [Medical QALY Threshold](#sec-medical_qaly_threshold) 📊: $100K
+- [US Government Waste (Total)](#sec-us_gov_waste_total): $4.90T
+- [Medical QALY Threshold](#sec-medical_qaly_threshold): $100K
 
 $$
 \begin{gathered}
@@ -390,22 +390,22 @@ $$
 
 ### US Gov Waste (Raw Total): $4.90T {#sec-us_gov_waste_raw_total}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Raw sum of US government waste components before overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.
 
 **Inputs**:
 
-- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.20T (95% CI: $1T - $1.50T)
-- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.40T (95% CI: $500B - $2T)
-- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
-- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
-- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
-- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181B (95% CI: $150B - $220B)
-- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
-- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90B (95% CI: $60B - $150B)
-- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50B (95% CI: $30B - $80B)
-- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
+- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency): $1.20T (95% CI: $1T - $1.50T)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning): $1.40T (95% CI: $500B - $2T)
+- [Military Overspend](#sec-us_gov_waste_military_overspend): $615B (95% CI: $500B - $750B)
+- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape): $580B (95% CI: $290B - $1T)
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance): $546B (95% CI: $450B - $650B)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare): $181B (95% CI: $150B - $220B)
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs): $160B (95% CI: $90B - $250B)
+- [Drug War Cost](#sec-us_gov_waste_drug_war): $90B (95% CI: $60B - $150B)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies): $50B (95% CI: $30B - $80B)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies): $75B (95% CI: $50B - $120B)
 
 $$
 \begin{gathered}
@@ -439,13 +439,13 @@ $$
 
 ### Recoverable Capital: $2.45T {#sec-us_gov_waste_recoverable}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Recoverable capital if US improved to OECD median efficiency. Current US efficiency ~38-48%; OECD median ~75-85%. Closing to ~80% would recover approximately half the gap.
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
+- [US Government Waste (Total)](#sec-us_gov_waste_total): $4.90T
 
 $$
 \begin{gathered}
@@ -485,13 +485,13 @@ $$
 
 ### US Government Waste (Total): $4.90T {#sec-us_gov_waste_total}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Total annual US government waste (additive sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as additive; any overlap offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.
 
 **Inputs**:
 
-- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total) 🔢: $4.90T
+- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total): $4.90T
 - [Overlap Discount Factor](#sec-us_gov_waste_overlap_discount): 1:1
 
 $$
@@ -528,14 +528,14 @@ $$
 
 ### US Waste (VSL Equivalents): 357 thousand people {#sec-us_gov_waste_vsl_equivalents}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US government waste expressed as VSL equivalents. This is an economic equivalent, NOT literal deaths. Dividing the efficiency gap by VSL yields a measure of foregone welfare.
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
-- [DOT VSL](#sec-dot_value_of_statistical_life) 📊: $13.7M
+- [US Government Waste (Total)](#sec-us_gov_waste_total): $4.90T
+- [DOT VSL](#sec-dot_value_of_statistical_life): $13.7M
 
 $$
 \begin{gathered}
@@ -572,14 +572,14 @@ $$
 
 ### Efficiency Gap / Treaty Funding: 180:1 {#sec-us_gov_waste_vs_treaty_multiplier}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 How many times the US government efficiency gap could fund the 1% Treaty. The efficiency gap represents capital that could fund transformative health research many times over.
 
 **Inputs**:
 
-- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.90T
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+- [US Government Waste (Total)](#sec-us_gov_waste_total): $4.90T
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding): $27.2B
 
 $$
 \begin{gathered}
@@ -624,7 +624,7 @@ Parameters sourced from peer-reviewed publications, institutional databases, and
 
 ### DOT VSL: $13.7M {#sec-dot_value_of_statistical_life}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 DOT Value of Statistical Life (2024). Used by federal agencies to evaluate safety regulations and quantify the economic value of mortality risk reductions.
 
@@ -640,7 +640,7 @@ DOT Value of Statistical Life (2024). Used by federal agencies to evaluate safet
 
 ### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Global military spending in 2024
 
@@ -656,7 +656,7 @@ Global military spending in 2024
 
 ### Medical QALY Threshold: $100K {#sec-medical_qaly_threshold}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Medical cost-effectiveness QALY threshold. Standard threshold for evaluating whether health interventions are cost-effective. Interventions below $100K/QALY are generally considered cost-effective.
 
@@ -672,7 +672,7 @@ Medical cost-effectiveness QALY threshold. Standard threshold for evaluating whe
 
 ### US Federal Spending (FY2024): $6.80T {#sec-us_federal_spending_2024}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US federal government spending in FY2024. CBO reports outlays of $6.8T (23.9% of GDP). Includes mandatory spending, discretionary spending, and net interest ($888B).
 
@@ -688,7 +688,7 @@ US federal government spending in FY2024. CBO reports outlays of $6.8T (23.9% of
 
 ### US Federal Discretionary Spending (FY2024): $1.70T {#sec-us_fed_discretionary_spending_2024}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US federal discretionary spending in FY2024. Approximately $886B defense + ~$814B non-defense discretionary = ~$1.7T. Used as denominator for discretionary efficiency rating (Cat 1 waste items are discretionary/fungible).
 
@@ -704,7 +704,7 @@ US federal discretionary spending in FY2024. Approximately $886B defense + ~$814
 
 ### US GDP (2024): $28.8T {#sec-us_gdp_2024}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
@@ -720,7 +720,7 @@ US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
 
 ### Agricultural Subsidies Deadweight Loss: $75B {#sec-us_gov_waste_agricultural_subsidies}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high economist consensus. [CATEGORY 1: Direct Spending]
 
@@ -744,7 +744,7 @@ Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but cr
 
 ### Corporate Welfare Waste: $181B {#sec-us_gov_waste_corporate_welfare}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits, semiconductor aid, aviation support. Agricultural subsidies are highly regressive (top 10% receive 63%). Cato Institute forensic tally. [CATEGORY 1: Direct Spending]
 
@@ -768,7 +768,7 @@ Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green en
 
 ### Drug War Cost: $90B {#sec-us_gov_waste_drug_war}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY 1: Direct Spending]
 
@@ -792,7 +792,7 @@ Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local en
 
 ### Fossil Fuel Subsidies (Explicit): $50B {#sec-us_gov_waste_fossil_fuel_subsidies}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). This figure includes only explicit subsidies (~$50B) for defensibility. [CATEGORY 1: Direct Spending]
 
@@ -816,7 +816,7 @@ US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates U
 
 ### Healthcare System Inefficiency: $1.20T {#sec-us_gov_waste_healthcare_inefficiency}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]
 
@@ -840,7 +840,7 @@ US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in c
 
 ### Housing/Zoning Restrictions Cost: $1.40T {#sec-us_gov_waste_housing_zoning}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]
 
@@ -864,7 +864,7 @@ GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macr
 
 ### Military Overspend: $615B {#sec-us_gov_waste_military_overspend}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 US military spending above 'Strict Deterrence' baseline. Current budget ~$900B supports global power projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]
 
@@ -888,7 +888,7 @@ US military spending above 'Strict Deterrence' baseline. Current budget ~$900B s
 
 ### Regulatory Red Tape Waste: $580B {#sec-us_gov_waste_regulatory_red_tape}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Deadweight loss from US regulatory red tape (procedural friction without safety benefits). Competitive Enterprise Institute estimates total regulatory burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B. [CATEGORY 2: Compliance Burden]
 
@@ -912,7 +912,7 @@ Deadweight loss from US regulatory red tape (procedural friction without safety 
 
 ### Tariff Cost (GDP Loss): $160B {#sec-us_gov_waste_tariffs}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices. [CATEGORY 3: GDP Loss]
 
@@ -936,7 +936,7 @@ Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 
 
 ### Tax Compliance Waste: $546B {#sec-us_gov_waste_tax_compliance}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing. [CATEGORY 2: Compliance Burden]
 
@@ -964,7 +964,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 1% reduction in military spending/war costs from treaty
 
@@ -978,7 +978,7 @@ Fundamental parameters and constants used throughout the analysis.
 
 ### Overlap Discount Factor: 1:1 {#sec-us_gov_waste_overlap_discount}
 
-::: {.callout-note collapse="true" title="📊 Details"}
+::: {.callout-note collapse="true" title="Details"}
 
 Overlap discount factor between US government waste categories. Set to 1.0 (no discount). Categories are treated as additive, recognizing that any overlap is offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects).
 
