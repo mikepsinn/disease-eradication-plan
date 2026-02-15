@@ -344,6 +344,15 @@ def main() -> int:
     chapter_list = extract_chapter_list(config)
     print(f"Found {len(chapter_list)} active chapters")
 
+    # Exclude auto-generated chapters from metrics (skew averages)
+    auto_generated = ["parameters-and-calculations", "papers.qmd", "index.qmd", "right-to-trial-fda-upgrade-act.qmd"]
+    excluded = [c for c in chapter_list if any(pat in c["href"] for pat in auto_generated)]
+    if excluded:
+        chapter_list = [c for c in chapter_list if not any(pat in c["href"] for pat in auto_generated)]
+        for ex in excluded:
+            print(f"  Excluded from metrics: {ex['href']}")
+        print(f"  {len(chapter_list)} chapters after excluding auto-generated")
+
     # Filter by chapter name if specified
     if args.chapter:
         chapter_list = [c for c in chapter_list if args.chapter in c["href"]]

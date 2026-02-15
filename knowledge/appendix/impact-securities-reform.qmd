@@ -1,6 +1,6 @@
 ---
 title: Impact Securities Reform Act
-description: Draft Legislation for Digital Public Goods Financing - Model law to enable high‑impact public‑good financing via impact securities, expanded investor access, and on‑chain reporting safe harbors.
+description: Draft Legislation for Digital Public Goods Financing - Model law to enable high-impact public-good financing via impact securities, expanded investor access, and on-chain reporting safe harbors.
 published: true
 tags:
   - impact-securities
@@ -23,85 +23,108 @@ image: /assets/og-images/knowledge/appendix/impact-securities-reform-og-retro-ac
 
 ![](/assets/infographics/knowledge/appendix/impact-securities-reform-infographic-retro-academic.jpg)
 
+## What This Act Does (Plain English)
 
-To accelerate financing for public‑good initiatives (e.g., a decentralized framework for drug assessment (dFDA), a decentralized institutes of health (DIH), and a 1% treaty), this Act creates an "impact securities" category with simplified offering, expanded investor participation, and automated, on‑chain disclosures, preserving investor protections while lowering capital formation frictions.
+Right now, selling your VICTORY Incentive Alignment Bonds requires navigating a regulatory maze built for Wall Street banks in the 1930s. Your species hasn't updated it much since then. This Act carves out a simpler path for securities that fund public goods.
+
+Three changes:
+
+1. **Skip the paperwork.** If you publish all your financials on a public blockchain in real time, you don't need to file paper reports with the SEC.
+2. **Let more people invest.** Your current rules lock out most Americans from early-stage investments because your regulators decided that being rich means being smart. This opens the door based on knowledge, not just wealth.
+3. **Protect governance tokens.** Tokens used for voting (not profit) aren't securities. This gives projects three years to decentralize before the SEC decides for them.
+
+This matters for your dFDA, your DIH, and your 1% treaty because all three need capital. This Act makes raising that capital legal, fast, and transparent.
 
 ## Section 2. Definitions
 
-- "Impact Security": A financing instrument whose proceeds are predominantly allocated to measurable public‑good outcomes (e.g., reductions in disease burden, DALYs, or verified fiscal savings), subject to transparency and outcome reporting.
-- "On‑Chain Reporting System": A public blockchain‑based registry that provides real‑time disclosures: use of proceeds, reserves, liabilities, coupon accruals, coverage ratios, disbursements, auditor attestations.
-- "Outcome Oracle": A public methodology and set of data sources used to compute societal outcomes (e.g., QALYs gained) with auditable code and data provenance.
+**"Impact Security"**: A financial instrument where the money raised goes primarily toward measurable public-good outcomes. Think: fewer deaths (DALYs reduced), verified fiscal savings, or disease burden reduction. Must include transparency and outcome reporting.
 
-## Section 3. Impact Securities Safe Harbor (Offering and Distribution)
+**"On-Chain Reporting System"**: A public blockchain registry showing everything in real time: where the money went, what's in reserve, what's owed, when coupons pay, audit results. All public. All machine-readable.
 
-No pre‑filing or pre‑clearance is required under this safe harbor. If the live, public on‑chain disclosures specified in Section 4 are available at launch and continuously maintained, issuers may offer, sell, and resell impact securities without prior agency approval or periodic paper filings, subject only to applicable anti‑fraud laws and jurisdictional KYC/AML.
+**"Outcome Oracle"**: The public method for measuring results (e.g., QALYs gained). Code and data sources are auditable.
+
+## Section 3. Impact Securities Safe Harbor
+
+The core rule: **radical transparency replaces pre-approval.**
 
 ![How being extremely transparent about everything on the blockchain makes regulators leave you alone. Like showing the teacher all your work, except the teacher is the SEC and the work is financial crimes prevention.](/assets/images/impact-securities-reform/impact-securities-reform-section-section-3-impact-securities-saf-bw-academic.jpg)
 
+If your on-chain disclosures (Section 4) are live at launch and continuously maintained, you can offer, sell, and resell impact securities without prior agency approval or periodic paper filings. Anti-fraud laws and KYC/AML still apply.
 
-- Universal Exemption: Offerings of impact securities qualify regardless of raise size, conditioned on on‑chain disclosures and KYC/AML as required by applicable law.
-- Preemption: State blue‑sky law preempted to enable cross‑border digital offerings.
+- **Universal Exemption**: Any raise size qualifies, as long as on-chain disclosures are live and KYC/AML is in place.
+- **Preemption**: State blue-sky laws are preempted for cross-border digital offerings.
 
-## Section 4. On‑Chain Disclosure and Reporting (Automation)
+No pre-filing. No pre-clearance. Just publish everything on-chain and don't commit fraud.
 
-- Mandatory public, machine‑readable disclosures via an on‑chain registry:
-  - Use of proceeds; proof‑of‑reserves; liabilities; coupon schedules; waterfall and seniority; covenant checks; incident logs.
-  - Open‑source report schemas; cryptographic attestations.
+## Section 4. On-Chain Disclosure and Reporting
 
+Required public disclosures via on-chain registry:
+
+- Use of proceeds
+- Proof-of-reserves and liabilities
+- Coupon schedules and waterfall/seniority rules
+- Covenant checks and incident logs
+- Open-source report schemas with cryptographic attestations
 
 ![The mandatory transparency system. Everything goes on the blockchain in real time. It's like a glass house, but for money, and you can't turn the lights off.](/assets/images/impact-securities-reform/impact-securities-reform-section-on-chain-disclosure-architecture-bw-academic.jpg)
 
-## Section 4A. Marketing & Disclosures Safe Harbor (Plain-English, Outcome-Linked)
+Everything is machine-readable. Anyone can audit it. No waiting for quarterly reports.
 
-- Issuers may state targets and objectives (e.g., “risk‑adjusted returns competitive with leading alternatives”) if:
-  - All marketing references outcomes as targets, not guarantees; includes standardized risk warnings.
-  - Payouts are described as capped shares of verified inflows/savings; the cap and methodology are prominently disclosed.
-  - A standardized, plain‑English “Key Facts” box is provided (use of proceeds, risks, fees, max payout share, seniority, governance rights, dispute channels), not to exceed 500 words.
+## Section 4A. Marketing and Disclosures Safe Harbor
+
+You can advertise returns if you follow three rules:
+
+1. **Call them targets, not guarantees.** Include standard risk warnings.
+2. **Explain the payout cap.** Payouts are capped shares of verified inflows/savings. Disclose the cap and the methodology.
+3. **Include a "Key Facts" box.** Plain English, under 500 words. Covers: use of proceeds, risks, fees, max payout share, seniority, governance rights, dispute channels.
 
 ![The rules for advertising tokens without going to jail: put all the important facts in a box, don't lie about performance, and maybe the government won't prosecute you. Maybe.](/assets/images/impact-securities-reform/impact-securities-reform-section-section-4a-marketing-disclosure-bw-academic.jpg)
 
+Comparative statements must cite a public benchmark and link to the on-chain methodology. Backtests must be labeled and reproducible.
 
-- Performance advertising safe harbor: Comparative statements must cite a public benchmark and link to the on‑chain EV methodology; backtests must be clearly labeled and reproducible.
+## Section 5. Token Classification Safe Harbor
 
-## Section 5. Token Classification Safe Harbor (Governance and Utility)
+Tokens are presumed **not securities** if they meet these criteria:
 
-- Tokens with the following characteristics are presumed non‑securities unless marketed with profit promises:
-  - Primary functions are governance, access, or usage within a protocol.
-  - Public on‑chain disclosures of treasury, token supply, and admin keys.
-  - No contractual right to profits; no promises of appreciation; reasonable decentralization criteria.
+- Primary function is governance, access, or protocol usage
+- Treasury, token supply, and admin keys are disclosed on-chain
+- No contractual right to profits. No promises of price appreciation.
+- Reasonable decentralization
 
-- Transitional Path: A 3‑year safe harbor for network decentralization and disclosures [@peirce-token-safe-harbor], after which tokens can qualify as non‑securities if criteria are met.
-
+**Transitional path**: Three-year safe harbor for decentralization [@peirce-token-safe-harbor]. After that, tokens either qualify as non-securities or they don't.
 
 ![How to tell if your token is a security, and how long you have to decentralize it before the government decides for you. It's like a countdown timer, but for regulatory compliance.](/assets/images/impact-securities-reform/impact-securities-reform-section-token-classification-logic-flow-bw-academic.jpg)
 
-## Section 6. Outcome‑Linked Incentives (Impact‑Based Value Capture)
+## Section 6. Outcome-Linked Incentives
 
-- Permit capped value‑sharing rights for impact securities tied to verified savings/outcomes (e.g., a basis‑point share of measured payer savings), with guardrails:
-  - Public calculation methodology; third‑party validation; clawback for fraud.
-  - Caps to prevent excessive privatization of public savings; sunset clauses.
+Impact securities can include capped value-sharing rights tied to verified outcomes. For example: a basis-point share of measured payer savings.
 
+Guardrails:
 
-![How the money flows: outcomes happen, we verify them, investors get paid (but not too much), and compliance rules keep everyone honest. Like a normal business cycle, but with more blockchain and fewer fraud charges.](/assets/images/impact-securities-reform/impact-securities-reform-section-impact-based-value-capture-cycle-bw-academic.jpg)
+- Public calculation methodology with third-party validation
+- Clawback for fraud
+- Caps to prevent excessive privatization of public savings
+- Sunset clauses
 
-## Section 9. Implementation
+![How the money flows: outcomes happen, you verify them, investors get paid (but not too much), and compliance rules keep everyone honest. Like a normal business cycle, but with more blockchain and fewer fraud charges.](/assets/images/impact-securities-reform/impact-securities-reform-section-impact-based-value-capture-cycle-bw-academic.jpg)
 
 ## Section 10. Enforcement and Remedies
 
-- Anti‑fraud provisions apply. Failure to provide required disclosures or manipulation of outcome data voids safe‑harbor protections and triggers enhanced penalties.
+Anti-fraud provisions apply. If you fail to provide required disclosures or manipulate outcome data, the safe harbor vanishes. Enhanced penalties kick in.
 
 ![What happens if you cheat: you lose your legal protection and get punished extra hard. Like a reverse immunity deal, but you gave it to yourself and then threw it away.](/assets/images/impact-securities-reform/impact-securities-reform-section-section-10-enforcement-and-remedies-bw-academic.jpg)
 
+Cheat and you lose everything. Don't cheat and you get a faster, cheaper way to raise money for curing diseases. Your species has historically struggled with this concept, but the blockchain makes cheating visible to everyone, which helps.
 
-## Commentary: Relation to dFDA/DIH and VICTORY Incentive Alignment Bonds
+## Why This Matters for VICTORY Bonds
 
-- This Act enables compliant financing for [VICTORY instruments](../economics/victory-bonds.qmd) and the [1% Treaty Fund](../solution/dih.qmd) by:
-  - Lowering offering frictions for impact-linked bonds/tokens.
-  - Automating disclosures on‑chain to improve transparency and lower costs.
-  - Broadening investor access with knowledge‑based eligibility.
-  - Providing a clear token safe harbor for governance‑first designs.
+This Act makes your [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) and your [1% Treaty Fund](../solution/dih.qmd) dramatically easier to launch:
+
+- **Lower offering friction** for impact-linked bonds and tokens
+- **Automated disclosures** on-chain (cheaper and more transparent than paper filings)
+- **Broader investor access** based on knowledge, not just net worth
+- **Clear token safe harbor** for governance-first designs like Wishocracy
 
 ![How the Act makes VICTORY bonds easier to sell: less paperwork, automatic transparency, and more people can buy them. Like removing friction from a machine, if the machine was fixing democracy.](/assets/images/impact-securities-reform/impact-securities-reform-section-commentary-relation-to-dfda-dih-bw-academic.jpg)
 
-
-- It complements the risk, return, and repayment framing in the [VICTORY Incentive Alignment Bond Investment Thesis](../economics/victory-bonds.qmd).
+It complements the risk, return, and repayment framing in the [VICTORY Incentive Alignment Bond Investment Thesis](../economics/victory-bonds.qmd).

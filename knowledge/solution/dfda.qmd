@@ -18,7 +18,7 @@ image: /assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg
 
 {{< include ../figures/trial-access-disparity-chart.qmd >}}
 
-Out of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} [participate in trials annually](../appendix/clinical-trial-participants.qmd). That's **{{< var current_clinical_trial_participation_rate >}}**.
+Out of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually [@global-trial-participant-capacity]. That's **{{< var current_clinical_trial_participation_rate >}}**.
 
 Half of humanity would volunteer [@patient-willingness-clinical-trials] if they could. We have **240 times more willing participants** than we're using.
 

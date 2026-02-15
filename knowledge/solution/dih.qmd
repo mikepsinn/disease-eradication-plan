@@ -18,21 +18,19 @@ image: /assets/og-images/knowledge/solution/dih-og-retro-academic.jpg
 
 ![What if the National Institutes of Health, but without the institute part or the national part.](../../assets/icons/dih-icon-6-wide.png)
 
-## The Objective: Total Disease Eradication
+## Your Objective: Total Disease Eradication
 
-The goal is simple: **eliminate all disease**.
+Your goal is simple: **eliminate all disease**.
 
-![Money spent on paperwork versus money spent on not dying. Currently we prefer the paperwork.](/assets/images/dih/dih-section-the-objective-total-disease-eradication-bw-academic.jpg)
+![Money spent on paperwork versus money spent on not dying. Currently your species prefers the paperwork.](/assets/images/dih/dih-section-the-objective-total-disease-eradication-bw-academic.jpg)
 
-The constraint is also simple: **resources are scarce**.
+The constraint is also simple: **resources are scarce**. You have limited money, time, and talent. Every dollar on a low-impact trial is a dollar not curing cancer. Every researcher writing grant applications is a researcher not doing research. Every patient excluded from trials is data you don't collect.
 
-This creates an optimization problem. With limited money, time, and talent, how do you maximize progress toward eradication? Every dollar spent on a low-impact trial is a dollar not spent on a high-impact one. Every researcher writing grant applications is a researcher not curing cancer. Every patient excluded from trials is data we don't collect.
+Your current system fails this optimization spectacularly.
 
-The current system fails this optimization spectacularly.
+Your NIH spends {{< var nih_annual_budget >}} a year. Your scientists spend 50-67% of their time writing grant applications [@grant-writing-time-50pct] instead of doing science. Billions flow to projects that never produce treatments. Your system isn't designed to maximize cures. It's designed to maximize grant-writing.
 
-The NIH spends {{< var nih_annual_budget >}} a year. Scientists spend 50-67% of their time writing grant applications [@grant-writing-time-50pct] instead of doing research. Billions flow to projects that never produce treatments. The system isn't designed to maximize cures. It's designed to maximize grant-writing.
-
-This isn't a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results.
+This isn't a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results. Your species does this a lot.
 
 ### Why Current Systems Fail
 
@@ -43,33 +41,33 @@ This isn't a conspiracy. It's just what happens when you design a system that re
 | **Regulatory capture** | Concentrated interests influence allocation | Resources flow to lobbies, not impact |
 | **Information silos** | Negative results hidden | Same failures repeated globally |
 
-A decentralized institute of health (DIH) is an alternative design that optimizes for a single metric: **maximum ROI toward disease eradication**.
+Your Decentralized Institute of Health (DIH) is an alternative design that optimizes for a single metric: **maximum ROI toward disease eradication**. It's what you'd build if you started from scratch and actually wanted results.
 
-## The Health-Industrial Complex: Coordinating the War on Disease
+## The Health-Industrial Complex: Coordinating Your War on Disease
 
 ### The Olsonian Problem
 
-Economist Mancur Olson identified why public goods are systematically underproduced: **diffuse benefits and concentrated costs**.
+Your economist Mancur Olson identified why public goods are systematically underproduced: **diffuse benefits and concentrated costs**. It's one of those observations that's obvious once someone says it and invisible before.
 
-![Why we're so good at making weapons and so bad at curing diseases. The weapons people are organized, the disease people are scattered.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
+![Why your species is so good at making weapons and so bad at curing diseases. The weapons people are organized, the disease people are scattered.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
 
-Curing cancer benefits 8 billion people a little. Blocking cancer cures benefits a few thousand pharmaceutical executives a lot. The executives show up to lobby. The 8 billion don't. This is why we've spent 50 years "fighting cancer" while the defense industry got stealth bombers, aircraft carriers, and GPS.
+Curing cancer benefits 8 billion people a little. Blocking cancer cures benefits a few thousand pharmaceutical executives a lot. The executives show up to lobby. The 8 billion don't. This is why your species has spent 50 years "fighting cancer" while your defense industry got stealth bombers, aircraft carriers, and GPS.
 
-The military-industrial complex solved this problem for defense. Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets. The result: the most powerful military in human history.
+Your military-industrial complex solved this problem for defense. Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets. Result: the most powerful military in human history.
 
-Disease has no such coalition. Patients are diffuse. Researchers compete for scraps. Funders lack coordination. Politicians get no credit for cures that arrive after their term. Everyone wants disease eradicated; no one has a concentrated interest in making it happen.
+Disease has no such coalition. Your patients are diffuse. Your researchers compete for scraps. Your funders lack coordination. Your politicians get no credit for cures that arrive after their term. Everyone wants disease eradicated; no one has a concentrated interest in making it happen. It's like everyone wanting a clean kitchen but nobody wanting to do the dishes, except the dishes are cancer.
 
-**DIH solves the Olsonian problem by creating concentrated interests in disease eradication.** See [The Incentive Stack](#the-incentive-stack-making-roi-the-selfish-choice) for how DIH aligns every actor's self-interest with maximum-impact work.
+**Your DIH solves the Olsonian problem by creating concentrated interests in disease eradication.** See [The Incentive Stack](#the-incentive-stack-making-roi-the-selfish-choice) for how.
 
-The military-industrial complex coordinates actors around defense. DIH creates a **health-industrial complex** that coordinates actors around eradication.
+Your military-industrial complex coordinates actors around defense. Your DIH creates a **health-industrial complex** that coordinates actors around eradication. Same structure, opposite purpose.
 
-### SHAEF for the War on Disease
+### SHAEF for Your War on Disease
 
-In 1944, the Allied forces faced a coordination problem. The Americans, British, Canadians, Free French, and others each had their own armies, their own generals, their own supply chains, and their own objectives. Without coordination, they would have fought separate wars and lost.
+In 1944, your Allied forces faced a coordination problem. Americans, British, Canadians, Free French, each had their own armies, generals, supply chains, and objectives. Without coordination, they would have fought separate wars and lost.
 
-The solution was SHAEF: Supreme Headquarters Allied Expeditionary Force. Eisenhower didn't replace the individual armies. He coordinated them. SHAEF set the overall objective (defeat Nazi Germany), allocated resources across theaters, resolved conflicts between commands, and ensured every division's actions contributed to the unified goal.
+The solution was SHAEF: Supreme Headquarters Allied Expeditionary Force. Eisenhower didn't replace the individual armies. He coordinated them. Set the objective, allocated resources, resolved conflicts, and made sure everyone pulled in the same direction.
 
-**DIH is SHAEF for the war on disease.**
+**Your DIH is SHAEF for the war on disease.**
 
 | WW2 Allied Forces | War on Disease |
 |:------------------|:---------------|
@@ -81,13 +79,13 @@ The solution was SHAEF: Supreme Headquarters Allied Expeditionary Force. Eisenho
 | Intelligence sharing | Open data commons, mandatory publication |
 | Combined Chiefs of Staff | Algorithmic governance, no single commander to corrupt |
 
-The individual armies didn't disappear. The British Army remained British. The US Army remained American. But they fought as one force because SHAEF coordinated their actions toward a shared objective.
+The individual armies didn't disappear. The British Army stayed British. The US Army stayed American. But they fought as one force because SHAEF coordinated them toward a shared objective.
 
-Similarly, DIH doesn't replace existing institutions. Pharma companies remain pharma companies. Universities remain universities. Patient advocacy groups remain advocates. But they operate as one force because DIH coordinates their actions toward eradication.
+Your DIH works the same way. Pharma companies stay pharma companies. Universities stay universities. Patient groups stay patient groups. But they operate as one force because your DIH coordinates them toward eradication.
 
 ### Why This Framing Matters
 
-The war on disease has been losing for 50 years because it's not actually a war. It's a collection of uncoordinated skirmishes.
+Your war on disease has been losing for 50 years because it's not actually a war. It's a collection of uncoordinated skirmishes.
 
 ![Medical researchers currently work in separate rooms and don't talk to each other. This is a picture of them in the same room, talking.](/assets/images/dih/dih-section-why-this-framing-matters-bw-academic.jpg)
 
@@ -97,38 +95,40 @@ The war on disease has been losing for 50 years because it's not actually a war.
 - Politicians fund what lobbyists want, not what works
 - Funders spray money without measuring impact
 
-Imagine if D-Day had been run this way. The Americans land at one beach, the British at another, neither tells the other what they learned, and both compete for the same supply ships while German intelligence reads their grant applications.
+Imagine if D-Day had been run this way. The Americans land at one beach, the British at another, neither tells the other what they learned, and both compete for the same supply ships while the enemy reads their grant applications.
 
-That's the current war on disease. DIH is the coordination layer that turns scattered skirmishes into a unified campaign.
+That's your current war on disease. Your DIH is the coordination layer that turns scattered skirmishes into a unified campaign.
 
-## DIH: The ROI Maximization Protocol
+## Your DIH: The ROI Maximization Protocol
 
 ![Everyone involved in medicine pointing in the same direction instead of wandering around like confused sheep.](/assets/images/dih/dih-section-dih-the-roi-maximization-protocol-bw-academic.jpg)
 
-A DIH is not a platform. It's not an organization. It's a **coordination protocol** with one function:
+Your DIH is not a platform. It's not an organization. It's a **coordination protocol** with one function:
 
-> **Ensure every actor does the highest-ROI thing toward total disease eradication.**
+> **Make every actor do the highest-ROI thing toward total disease eradication.**
 
 This means:
 
 - Every dollar flows to maximum impact
 - Every researcher works on highest-value problems
 - Every patient joins trials that matter most
-- Scarce resources are never wasted on low-ROI activities
+- Nothing gets wasted on low-ROI activities
+
+On your planet, this is considered radical. On mine, it's called "obvious."
 
 ### Three Core Functions
 
-A DIH does exactly three things:
+Your DIH does exactly three things:
 
 1. **Receive funds** (from the [1% Treaty](1-percent-treaty.qmd), donations, etc.)
 2. **Allocate research via patient subsidies** (market mechanism) and **infrastructure via [Wishocracy](wishocracy.qmd)**
 3. **Verify results and pay proportional to impact**
 
-Everything operational is outsourced. Trial infrastructure? That's [dFDA's](dfda.qmd) job. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
+Everything operational is outsourced. Trial infrastructure? That's your [dFDA's](dfda.qmd) job. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
 
 ![A tiny middle bit that handles money, surrounded by other people who do the actual work. Like a very small manager with many employees.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
 
-Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to influence. Just code that moves money toward measured outcomes.
+Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to influence. Just code that moves money toward measured outcomes. Your species has a habit of corrupting every institution you build. This one is designed to be boring enough that nobody bothers.
 
 ::: {.callout-note icon=false}
 ## The Core Innovation: Pay for Results
@@ -147,23 +147,23 @@ Every dollar flows based on results, not promises:
 This is how most other industries work. You pay contractors when they build the house, not when they promise to build it. You pay farmers when they grow the food, not when they apply for a farming license.
 :::
 
-### The Data Commons: Publish Everything
+### Your Data Commons: Publish Everything
 
-The current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Scientists waste billions repeating mistakes someone else already made.
+Your current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Your scientists waste billions repeating mistakes someone else already made. It's like your entire species has amnesia, but only for the embarrassing parts.
 
 ![Currently, research results hide in separate filing cabinets. This shows them all dumped in one big pile where a computer can look at them.](/assets/images/dih/dih-section-the-data-commons-publish-everything-bw-academic.jpg)
 
-DIH requires **100% open publication** of all data, positive and negative, as a condition of funding:
+Your DIH requires **100% open publication** of all data, positive and negative, as a condition of funding:
 
 - Every trial, every result, every dataset published
 - AI models scan the global data commons, finding patterns humans miss
 - Failed experiments become shared knowledge, not repeated waste
 
-This is intelligence sharing in the SHAEF analogy. The Allies won partly because they shared Ultra intercepts across commands. The war on disease loses because everyone guards their failures like trade secrets. A group chat where everyone shares what didn't work, except the group is humanity and the topic is death prevention.
+This is intelligence sharing in the SHAEF analogy. Your Allies won partly because they shared Ultra intercepts across commands. Your war on disease loses because everyone guards their failures like trade secrets. Think of it as a group chat where everyone shares what didn't work, except the group is your entire species and the topic is death prevention.
 
 ## Governance: Market Mechanism + Wishocracy
 
-DIH uses two allocation mechanisms:
+Your DIH uses two allocation mechanisms:
 
 - **Patient subsidies (market mechanism):** Research funding follows patient choice. Patients enroll in trials they believe in; funding flows accordingly. Variable subsidy rates ensure rare diseases remain viable. No committees decide "cancer vs Alzheimer's."
 
@@ -173,7 +173,7 @@ DIH uses two allocation mechanisms:
 
 ## The Incentive Stack: Making ROI the Selfish Choice
 
-DIH doesn't rely on altruism. It **pays everyone to do the highest-ROI thing**.
+Your DIH doesn't rely on altruism. Altruism is lovely but unreliable. Instead, it **pays everyone to do the highest-ROI thing**. Greed is more dependable than kindness. Your entire economic system proves this daily.
 
 | Actor | Self-Interest | DIH Incentive | ROI Alignment |
 |:------|:--------------|:--------------|:--------------|
@@ -184,25 +184,25 @@ DIH doesn't rely on altruism. It **pays everyone to do the highest-ROI thing**.
 | **Data providers** | Revenue | Fees tied to data utility | More useful data = more revenue |
 | **Campaigns** | Funding | Results-based continued funding | Higher ROI = more funding |
 
-Every incentive is ROI-weighted. Not just "do good" but "do the MOST good per dollar/hour." DIH makes the highest-ROI action the selfish choice for every actor.
+Every incentive is ROI-weighted. Not just "do good" but "do the MOST good per dollar/hour." Your DIH makes the highest-ROI action the selfish choice for every actor. Selfishness, properly directed, cures cancer.
 
-### How Researchers Get Paid
+### How Your Researchers Get Paid
 
-Traditional system: Write a grant proposal. Hope a committee likes it. Get paid to try.
+Your traditional system: Write a grant proposal. Hope a committee likes it. Get paid to try. Maybe produce results. Maybe not. Get paid either way.
 
 ![Old way: write a letter begging for money. New way: cure someone and get paid. One of these seems more efficient.](/assets/images/dih/dih-section-how-researchers-get-paid-bw-academic.jpg)
 
-DIH system:
+Your DIH system:
 
-1. **Per-patient subsidies:** The more patients who believe in your trial enough to join, the more funding you get. Subsidies are paid per enrolled patient.
-2. **Variable subsidy rates:** Rare diseases and high-unmet-need conditions receive higher per-patient subsidies, making them economically viable despite smaller patient pools.
-3. **Results-based continuation:** Deliver results, get more funding. Don't deliver, get defunded.
+1. **Per-patient subsidies:** The more patients who join your trial, the more funding you get. Patients vote with their enrollment.
+2. **Variable subsidy rates:** Rare diseases get higher per-patient subsidies. Small patient pools don't mean small budgets.
+3. **Results-based continuation:** Deliver results, get more funding. Don't deliver, get defunded. Like every other job on your planet except, somehow, research.
 
-**Single-sentence summary:** Pay scientists like you pay plumbers: for fixing the problem, not for explaining why it's hard.
+Pay your scientists like you pay your plumbers: for fixing the problem, not for explaining why it's hard.
 
-### How Politicians Get Aligned
+### How Your Politicians Get Aligned
 
-Politicians optimize for reelection, status, and post-office careers. Not "humans continuing to exist."
+Your politicians optimize for reelection, status, and post-office careers. Not "humans continuing to exist." This is a design flaw in your democracy, not a moral failing. Well, it's both.
 
 ![Politicians who vote for good things get good scores, which get them good jobs later. Like a report card that follows you into adulthood.](/assets/images/dih/dih-section-how-politicians-get-aligned-bw-academic.jpg)
 
@@ -212,7 +212,7 @@ Politicians optimize for reelection, status, and post-office careers. Not "human
 - **Electoral support** flows to high-scorers via independent PACs
 - **Post-office opportunities** (fellowships, boards) reserved for leaders who governed well
 
-No bribes. No corruption. Just a standing rule: if you support policies that measurably reduce suffering, your political life gets easier.
+No bribes. No corruption. Just a standing rule: support policies that measurably reduce suffering and your political life gets easier. Oppose them and it gets harder. Your politicians will figure it out. They're not stupid. They're just badly incentivized.
 
 ## How the Money Flows
 
@@ -237,16 +237,16 @@ No bribes. No corruption. Just a standing rule: if you support policies that mea
 - Research allocation via patient subsidies (market mechanism)
 - Verifies results, pays for outcomes
 
-**The [Decentralized Framework for Drug Assessment (dFDA)](dfda.qmd):**
+**Your [dFDA](dfda.qmd):**
 
-- A funded **campaign**, not part of DIH itself
+- A funded **campaign**, not part of your DIH itself
 - Provides technical infrastructure for trials
 - Competes with other research models for funding
 - Has no budget authority (just a service provider)
 
 ### The Fund Flow
 
-A [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the 1% Treaty Fund. But not all of it reaches research:
+Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the 1% Treaty Fund. But not all of it reaches research (some of it goes to keeping the machine running):
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
@@ -256,7 +256,7 @@ A [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}
 
 ### What Gets Funded: Market Failures Only
 
-Since most research allocation is handled automatically (patients choose trials → funding flows there), the 1% Treaty Fund primarily funds **market failures**, things the ecosystem can't handle:
+Since most research allocation happens automatically (patients choose trials, funding flows there), your 1% Treaty Fund primarily funds **market failures**: the things your ecosystem can't handle on its own.
 
 **Infrastructure**
 
@@ -271,11 +271,11 @@ Since most research allocation is handled automatically (patients choose trials 
 - Negative results publishing
 - Replication studies
 
-This is minimal by design. The ecosystem eliminates most traditional research funding needs. Companies register treatments → Patients join trials → Revenue flows → Research happens. DIH only directs the 1% Treaty Fund to cover what the ecosystem truly can't handle.
+This is minimal by design. Your ecosystem handles most research funding automatically: companies register treatments, patients join trials, revenue flows, research happens. Your DIH only directs the 1% Treaty Fund to cover what the market genuinely can't.
 
-## What DIH Outsources (and Why)
+## What Your DIH Outsources (and Why)
 
-DIH is intentionally minimal. It outsources everything operational:
+Your DIH is intentionally minimal. It outsources everything operational because the best way to avoid corruption is to have nothing worth corrupting:
 
 | Function | Outsourced To | Why |
 |:---------|:--------------|:----|
@@ -287,7 +287,7 @@ DIH is intentionally minimal. It outsources everything operational:
 
 ## How Campaigns Plug In
 
-dFDA is the primary example of a funded campaign. It's not part of DIH; it's a service provider competing for funding.
+Your dFDA is the primary example of a funded campaign. It's not part of your DIH; it's a service provider competing for funding. If it stops performing, you fund something better. This is how your species runs restaurants. Time to try it with medicine.
 
 ### Campaign Lifecycle
 
@@ -302,13 +302,13 @@ dFDA is the primary example of a funded campaign. It's not part of DIH; it's a s
 
 ## Anti-Capture Design
 
-The current system is trivially captured. Concentrate billions of dollars in a few committees, and lobbyists will find them.
+Your current system is trivially captured. Concentrate billions of dollars in a few committees, and lobbyists will find them. This is as predictable as gravity. Your species keeps being surprised by it anyway.
 
-DIH is designed to make capture economically irrational.
+Your DIH is designed to make capture economically irrational.
 
 {{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
 
-### How DIH Resists Capture
+### How Your DIH Resists Capture
 
 | Mechanism | How It Works | Capture Cost |
 |:----------|:-------------|:-------------|
@@ -321,17 +321,17 @@ DIH is designed to make capture economically irrational.
 
 ### The "New FDA" Risk
 
-**Risk:** "What if dFDA becomes the new FDA, capturing regulatory power?"
+**Risk:** "What if your dFDA becomes the new FDA, capturing regulatory power?"
 
 ![When the FDA gets corrupted, you just build a second FDA with the same money. Like switching to the other queue at the grocery store.](/assets/images/dih/dih-section-the-new-fda-risk-bw-academic.jpg)
 
-**Mitigation:** dFDA has no budget authority. It's just a campaign competing for funding from the 1% Treaty Fund. If it gets captured, fund a competing framework instead.
+**Mitigation:** Your dFDA has no budget authority. It's just a campaign competing for funding. If it gets captured, fund a competing framework instead. Replace it like you replace a bad restaurant: stop going there and open a better one.
 
-The protocol is designed so that **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves.
+Your protocol is designed so that **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves.
 
 ### Security Architecture: Multi-Layered Defense
 
-A {{< var treaty_annual_funding >}} treasury is a massive target. DIH uses defense in depth:
+A {{< var treaty_annual_funding >}} treasury is a massive target. Every thief, hacker, and corrupt bureaucrat on your planet will try to steal from it. Your DIH uses defense in depth:
 
 **1. Nobody's in Charge (And That's the Point)**
 
@@ -367,20 +367,20 @@ A {{< var treaty_annual_funding >}} treasury is a massive target. DIH uses defen
 
 ### Beyond Medical Research
 
-Once you prove you can run a {{< var treaty_annual_funding >}} treasury without anyone stealing from it, you can do the same for schools, roads, or anything else the government currently screws up:
+Once you prove you can run a {{< var treaty_annual_funding >}} treasury without anyone stealing from it, you can apply the same model to everything else your governments currently mismanage:
 
 - **Education:** Pay teachers based on whether kids actually learn things
 - **Infrastructure:** Fund roads that don't immediately fall apart
 - **Environment:** Pay for actual carbon reduction, not paperwork
 - **Social Services:** Get help to people who need it without 47 forms
 
-This isn't just about protecting health funding. It's an experiment in demonstrating a new model for uncorruptible, transparent governance of public goods. The 1% Treaty Fund becomes the prototype for a new era of public governance, one that eliminates human corruption points entirely while delivering measurable results.
+This isn't just about protecting health funding. It's a proof of concept for uncorruptible governance. Your 1% Treaty Fund becomes the prototype. If you can manage {{< var treaty_annual_funding >}} without humans stealing it, you can manage anything. The trick is removing the humans from the parts where they steal.
 
 ![Money distributed by robots instead of people, because people kept stealing it.](/assets/images/governance/governance-section-beyond-medical-research-a-template-for-uncorruptible-governance-bw-academic.jpg)
 
-## Summary: The Coordination Layer
+## Summary: Your Coordination Layer
 
-DIH is not trying to be a research institution, a trial platform, or a funding agency. It's trying to be **the thin layer that coordinates all of them**.
+Your DIH is not a research institution, a trial platform, or a funding agency. It's **the thin layer that coordinates all of them**.
 
 | Component | Function | DIH's Role |
 |:----------|:---------|:-----------|
@@ -393,6 +393,6 @@ DIH is not trying to be a research institution, a trial platform, or a funding a
 
 **The single sentence version:**
 
-> DIH is a coordination protocol that receives funds, allocates research funding via patient subsidies (market mechanism), governs infrastructure via Wishocracy, verifies results, and pays proportional to outcomes, making the highest-ROI action the selfish choice for every actor.
+> Your DIH receives funds, allocates research via patient subsidies, governs infrastructure via Wishocracy, verifies results, and pays proportional to outcomes, making the highest-ROI action the selfish choice for every actor.
 
-That's the theory. The rest of this guide explains how you'd actually build it.
+That's the theory. The rest of this manual explains how you actually build it.

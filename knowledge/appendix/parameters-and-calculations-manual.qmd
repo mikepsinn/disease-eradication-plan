@@ -24,15 +24,15 @@ format:
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 261 parameters used in the analysis, organized by type:
+This appendix documents all 260 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 106
+- External sources (peer-reviewed): 105
 - Calculated values: 99
 - Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (106 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (105 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6633,18 +6633,6 @@ Phase I safety trial duration
 **Source**: [@bio-clinical-development-2021]
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
-
-:::
-
-### Phase 3 Trial Total Cost (Minimum): $20M {#sec-phase_3_trial_cost_min}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Phase 3 trial total cost (minimum)
-
-**Source**: [@phase-3-cost-per-trial-range]
-
-*✓ High confidence*
 
 :::
 

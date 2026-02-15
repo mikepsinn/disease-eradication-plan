@@ -15,87 +15,95 @@ image: /assets/og-images/knowledge/economics/financial-plan-og-retro-academic.jp
 
 ![](/assets/infographics/knowledge/economics/financial-plan-infographic-retro-academic.jpg)
 
-> **Related:** [Campaign Budget](campaign-budget.qmd) | [Fundraising Strategy](../appendix/fundraising-strategy.qmd)
+> **Related:** [Campaign Budget](campaign-budget.qmd) | [VICTORY Incentive Alignment Bonds](victory-bonds.qmd)
 
-Most financial plans are complicated because the people writing them are either confused or lying. This one is complicated because moving {{< var treaty_annual_funding >}} annually from military budgets to disease eradication while generating perpetual returns for investors actually IS complicated.
+Most financial plans are complicated because the writers are confused or lying. This one is complicated because moving {{< var treaty_annual_funding >}} annually from your military budgets to disease eradication while paying your investors forever actually IS complicated.
 
-But the architecture is clean: Raise {{< var treaty_campaign_total_cost >}}. Spend it to pass the treaty. Manage {{< var treaty_annual_funding >}}+ annually forever.
+But the architecture is clean:
 
-Three financial pillars. That's it.
+1. Raise {{< var treaty_campaign_total_cost >}}.
+2. Spend it to pass the treaty.
+3. Manage {{< var treaty_annual_funding >}}+ annually forever.
 
-For detailed breakdowns, see the linked documents. For the overview that explains why this works, keep reading.
+Three pillars. That's it.
 
-## The Three Financial Pillars
-
-### Fundraising: How To Raise {{< var treaty_campaign_total_cost >}}
+## Pillar 1: Fundraising (Raise {{< var treaty_campaign_total_cost >}})
 
 **Instrument:** [VICTORY Incentive Alignment Bonds](victory-bonds.qmd)
 
-- **Target Returns:** {{< var victory_bond_annual_return_pct >}} annually (sounds fake but is just arithmetic: {{< var victory_bond_annual_payout >}} ÷ {{< var treaty_campaign_total_cost >}})
-- **Structure:** Debt instrument, senior to all other claims
-- **Payout:** {{< var victory_bond_funding_pct >}} of all 1% Treaty Fund inflows ({{< var victory_bond_annual_payout >}}/year)
-- **Protection:** Bondholders paid before mission spending
-- **Collateral:** {{< var treaty_annual_funding >}}+ annual treaty revenue stream
-- **The Pitch:** "Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever." (Yes, this sounds like a scam. It's not. It's what happens when you redirect money from destruction to construction.)
+- **Returns:** {{< var victory_bond_annual_return_pct >}} annually. Sounds fake. It's just arithmetic: {{< var victory_bond_annual_payout >}} / {{< var treaty_campaign_total_cost >}}.
+- **Structure:** Senior debt. Bondholders get paid before anyone else.
+- **Payout:** {{< var victory_bond_funding_pct >}} of all treaty inflows. That's {{< var victory_bond_annual_payout >}}/year.
+- **Collateral:** {{< var treaty_annual_funding >}}+ annual treaty revenue stream.
+- **The pitch:** "Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever."
+
+Yes, this sounds like a scam. It's what happens when you redirect money from destruction to construction.
 
 ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
 
-#### Why This Works
 
-![Take a tiny slice of the 2.4 trillion dollar murder budget, invest it in not-murder, generate sustainable returns. Financial innovation meets not being evil.](/assets/images/financial-plan/financial-plan-section-why-this-works-bw-academic.jpg)
+**Timeline:** 12-24 months to raise {{< var treaty_campaign_total_cost >}}.
 
-- The pitch sounds like a scam: "{{< var victory_bond_annual_return_pct >}} returns, forever." It's not a scam. It's what happens when you redirect money from destruction to construction.
-- Clean {{< var treaty_campaign_total_cost >}} target (vs confusing $1.2-2.5B range)
-- {{< var victory_bond_funding_pct >}} payout is easy math (vs 5% complex calculations)
-- "Forever" works because treaties are perpetual revenue streams (like mineral rights, not tech startups)
-- Returns are high because the *source* is high: military budgets total $2.4T globally
+### The Fundraising Strategy
 
-**Timeline:** 12-24 months to raise {{< var treaty_campaign_total_cost >}} (simplified structure accelerates fundraising)
+Think of it as a {{< var treaty_campaign_total_cost >}} vending machine that dispenses {{< var treaty_annual_funding >}} per year. Forever.
 
-### Campaign Budget: How To Spend {{< var treaty_campaign_total_cost >}}
+**Why bonds, not donations?** Marriage equality raised $153M over 11 years through foundations. You need {{< var treaty_campaign_total_cost >}} in 12-24 months. Bonds can do that because investors chase {{< var victory_bond_annual_return_pct >}} returns. Donations require generosity. Returns require greed. Greed is faster.
+
+**Why {{< var treaty_campaign_total_cost >}}?** To outspend pharma lobbying (~$300M/year) and the military-industrial complex (~$150M/year) combined. You raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. They spend $450M/year to maintain the status quo. You just need to outspend them for 2-3 years.
+
+**Nobody gets paid unless it works.** Lawyers get success-based compensation. Public awareness organizations compete for prizes. Team compensation is mostly equity.
+
+**Multi-Phase Approach:**
+
+| Phase | Amount | Milestone |
+|-------|--------|-----------|
+| Seed ($250-400M) | Platform, policy frameworks, pilots | 50M verified participants |
+| Series A ($500M-1B) | Scale to G7 nations | {{< var global_population_activism_threshold_pct >}} global participation (280M people) |
+| Growth ($500M-1.1B) | Ratification push in major powers | First $1B disbursement |
+
+**Most realistic funding source:** Your defense contractors. They already spend $150M/year lobbying. They keep 99% of the military budget ($2.67T) PLUS earn {{< var victory_bond_annual_return_pct >}} on the 1% redirected. They just redirect existing lobbying spend. Your weapons manufacturers fund disease eradication and make more money doing it. Your species would call this irony. I call it incentive design.
+
+## Pillar 2: Campaign Budget (Spend {{< var treaty_campaign_total_cost >}})
 
 ![How to spend one billion convincing humans to stop killing each other: some for lobbying politicians, some for asking citizens directly, some for emergencies. Democracy is expensive.](/assets/images/financial-plan/financial-plan-section-campaign-budget-how-to-spend-var-treaty-campaign-total-cost-bw-academic.jpg)
 
 **Detailed Breakdown:** [Campaign Budget](campaign-budget.qmd)
 
-The one-time "activation energy" to pass a 1% treaty, made affordable through AI and viral mechanics:
+The one-time "activation energy" to pass a 1% treaty:
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
 | **Global Referendum** | {{< var treaty_campaign_viral_referendum_base_case >}} | Viral referral system ($0.20-1.05/vote tiered), 280M votes, platform development. [Budget details](campaign-budget.qmd#base-case-scenario): $150M-$410M range |
-| **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion, legal/compliance. Outspends pharma + MIC |
+| **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion. Outspends pharma + MIC |
 | **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-passage transition, contingency buffer |
 
-#### Key Innovations
+### Key Innovations
 
 ![Traditional diplomacy: slow, expensive, mostly cocktail parties. AI-accelerated diplomacy: fast, cheap, mostly algorithms. Both equally likely to prevent nuclear war.](/assets/images/financial-plan/financial-plan-section-key-innovations-bw-academic.jpg)
 
 - **Viral mechanics**: $0.20/vote vs $5-15 traditional cost per voter
 - **Strategic focus**: 20 high-impact countries, not all 195
 
-**Timeline:** 36-60 months (optimistic) to 120+ months (realistic)
+**Timeline:** 36-60 months (optimistic) to 120+ months (realistic).
 
-For context: the Paris Climate Agreement took 23 years from Rio (1992) to signing (2015). The landmine ban took 6 years from campaign launch to treaty. Our timeline assumes viral referendum mechanics and pre-existing disarmament treaty frameworks. If timeline extends, investor returns simply delay (same perpetual structure, later start)
+For context: the Paris Climate Agreement took 23 years (Rio 1992 to signing 2015). The landmine ban took 6. You're betting on viral referendum mechanics and existing disarmament frameworks. If the timeline extends, investor returns just delay. Same structure, later start.
 
-### Treasury Management: How To Manage {{< var treaty_annual_funding >}}+ Annually
+## Pillar 3: Treasury (Manage {{< var treaty_annual_funding >}}+/Year)
 
 Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from military budgets to the 1% Treaty Fund.
 
 ![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
 
-#### Revenue Sources
+### Where the Money Comes From
 
 ![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
 
-**Primary:** 1% treaty ({{< var treaty_annual_funding >}} annually)
+100+ nations contribute 1% of military budgets. Military spending data is already public via SIPRI (tracking since 1966). Either the money arrives or it doesn't.
 
-- 100+ nations contribute 1% of military budgets
-- Military spending data already public via SIPRI (tracking since 1966)
-- No complex "verification" needed: either the money arrives or it doesn't
+**Why no enforcement?** The [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing. Politicians in non-compliant countries watch their Public Good Scores drop. Electoral support shifts to opponents. Post-office opportunities disappear. Nobody punishes defectors. Compliance is just the career-optimal choice.
 
-**Why traditional enforcement is unnecessary:** The [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing. Politicians in non-compliant countries see their Public Good Scores drop, electoral support shift to opponents, and post-office opportunities disappear. Defection isn't punished; compliance is simply the career-optimal choice. See [Why 10%: The Scaling Engine](../appendix/incentive-alignment-bonds-paper.qmd) for the political ratchet mechanism
-
-#### Growth Scenarios (Not Predictions)
+### Growth Scenarios (Not Predictions)
 
 | Scenario | Probability | Treaty Level | Annual Flow |
 |----------|-------------|--------------|-------------|
@@ -104,44 +112,41 @@ Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from mi
 | **Rapid success** | 10% | 5% by Year 10 | $135B |
 | **Reversal** | 5% | Treaty collapses | $0 |
 
-Growth beyond 1% requires: (a) demonstrated health outcomes, (b) continued public pressure, (c) no major geopolitical crisis. None guaranteed
+Growth beyond 1% requires demonstrated health outcomes, continued public pressure, and no major geopolitical crisis. None guaranteed.
 
-#### Expenditure Allocation
+### How the Money Gets Spent: 80/10/10
 
-The 1% Treaty Fund uses an **80/10/10 automatic allocation** before any funds reach discretionary spending:
+The allocation is automatic. No committees. No debates.
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
-| **Pragmatic Clinical Trials & Platform** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, research, platform |
-| **VICTORY Incentive Alignment Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
+| **Clinical Trials & Platform** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, research, platform |
+| **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
-#### The Fixed Costs ({{< var victory_bond_funding_pct >}} + {{< var iab_political_incentive_funding_pct >}} = 20%)
+### The Fixed 20%
 
 ![Twenty percent goes to paying investors and politicians automatically via smart contracts. Finally, a use for blockchain that isn't fraud or monkey pictures.](/assets/images/financial-plan/financial-plan-section-the-fixed-costs-bw-academic.jpg)
 
-- **VICTORY Incentive Alignment Bond returns:** {{< var victory_bond_annual_payout >}} annually ({{< var victory_bond_funding_pct >}} of treaty inflows)
-- **IAB political incentives:** {{< var iab_political_incentive_funding_annual >}} annually ({{< var iab_political_incentive_funding_pct >}} of treaty inflows)
-- Both are sacred and untouchable (or the system fails)
-- Automatically distributed via smart contracts
-- {{< var victory_bond_annual_return_pct >}} to bondholders
+- **Bond returns:** {{< var victory_bond_annual_payout >}}/year ({{< var victory_bond_funding_pct >}})
+- **Political incentives:** {{< var iab_political_incentive_funding_annual >}}/year ({{< var iab_political_incentive_funding_pct >}})
+- Both are sacred and untouchable. Touch them and the system dies.
+- Distributed automatically via smart contracts.
 
-##### Everything Else ({{< var dih_treasury_medical_research_pct >}}): Medical Research Allocation
+### The Other 80%: Medical Research
 
-The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic clinical trials and research infrastructure. Allocation is governed through transparent democratic mechanisms described in the [Wishocracy](../solution/wishocracy.qmd) chapter. Treasury security uses smart contract automation with multi-sig wallets and time-locked withdrawals.
+The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic clinical trials and research infrastructure. Allocation is governed through [Wishocracy](../solution/wishocracy.qmd). Treasury security uses multi-sig wallets and time-locked withdrawals.
 
-#### Dynamic Patient Subsidies
+### Dynamic Patient Subsidies
 
-**The revolutionary part:** your decentralized institutes of health don't pay researchers. They subsidize patients.
-
-#### How It Works
+**The revolutionary part:** your DIH doesn't pay researchers. It subsidizes patients.
 
 ```
-Base Subsidy = Medical Research Allocation ÷ Active Trial Participants
+Base Subsidy = Medical Research Allocation / Active Trial Participants
 
 Example with 1M participants:
 
-{{< var dih_treasury_to_medical_research_annual >}} ÷ 1M = $21,760 per patient per year
+{{< var dih_treasury_to_medical_research_annual >}} / 1M = $21,760 per patient per year
 
 (Note: 80% of {{< var treaty_annual_funding >}} goes to medical research after bond and IAB payouts)
 
@@ -151,42 +156,42 @@ As more patients join:
 10M participants = $2,176 per patient
 ```
 
-#### Why This Creates Perfect Incentives
+### Why This Creates Perfect Incentives
 
 ![Patients want cures, researchers want funding, insurers want lower costs. Everyone gets what they want from the same pot. It's almost like cooperation works.](/assets/images/financial-plan/financial-plan-section-why-this-creates-perfect-incentives-bw-academic.jpg)
 
-- Patients organize to grow treasury (2% treaty = double subsidies)
+- Patients organize to grow the treasury (2% treaty = double subsidies)
 - Researchers compete to attract patients (better trials win)
-- Insurance companies save money (trials cheaper than chronic care)
+- Insurance companies save money (trials are cheaper than chronic care)
 - Everyone wants more people in trials (network effects)
 
-#### Compare to Grant System
+### Compare to NIH Grants
 
 ![NIH grants: slow, bureaucratic, expensive overhead. Decentralized model: fast, distributed, minimal overhead. One was designed in 1887, the other in 2025. Guess which is which.](/assets/images/financial-plan/financial-plan-section-compare-to-grant-system-bw-academic.jpg)
 
-- NIH grants: 6 months of proposal writing, committees decide, universities take 40% overhead
-- Subsidies via your decentralized institutes of health: Patient wants treatment, joins trial, funds follow automatically, zero overhead
+- **NIH grants:** 6 months of proposal writing. Committees decide. Universities take 40% overhead.
+- **Patient subsidies:** Patient wants treatment. Joins trial. Funds follow automatically. Zero overhead.
 
 ## Risk Management
 
-For detailed risk analysis, see **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)**.
+For detailed analysis, see **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)**.
 
 ![Your money sits in escrow until milestones are hit, then gets released automatically. Trust, but verify. Mostly verify. All verify, actually.](/assets/images/financial-plan/financial-plan-section-risk-management-bw-academic.jpg)
 
 Key protections:
 
-- **Assurance contracts:** Funds escrowed until milestones hit, automatic refund if targets missed
-- **Milestone-based release:** Phased funding tied to platform launch, user growth, and treaty progress
-- **Downside protection:** Even partial treaty adoption ($13B) returns 130% annually to bondholders
-- **Smart contract security:** Multi-sig wallets, time-locked withdrawals, independent audits
-- **On-chain transparency:** All treasury movements public, anyone can audit independently
+- **Assurance contracts:** Funds escrowed until milestones hit. Automatic refund if targets missed.
+- **Milestone-based release:** Phased funding tied to platform launch, user growth, and treaty progress.
+- **Downside protection:** Even partial treaty adoption ($13B) returns 130% annually.
+- **Smart contract security:** Multi-sig wallets, time-locked withdrawals, independent audits.
+- **On-chain transparency:** All treasury movements public. Anyone can audit.
 
 ## Related Documents
 
 - **[VICTORY Incentive Alignment Bonds](victory-bonds.qmd)** - Investment thesis and bond structure
 - **[Campaign Budget](campaign-budget.qmd)** - Detailed line-item breakdown
 - **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)** - Risk factors and mitigations
-- **[Fundraising Strategy](../appendix/fundraising-strategy.qmd)** - How to raise {{< var treaty_campaign_total_cost >}}
+- **[Co-opting Defense Contractors](../strategy/co-opting-defense-contractors.qmd)** - Defense contractor conversion strategy
 - **[Cost-Benefit Analysis for a Decentralized Drug Assessment Framework](https://dfda-impact.warondisease.org)** - Complete ROI analysis
 
 ## Summary
@@ -198,4 +203,4 @@ Key protections:
 | **Manage** | {{< var treaty_annual_funding >}}+/year | 80/10/10 automatic allocation |
 | **Return** | {{< var victory_bond_annual_return_pct >}} annually | Perpetual {{< var victory_bond_funding_pct >}} of treaty inflows |
 
-**The math:** Invest {{< var treaty_campaign_total_cost >}} → Get {{< var victory_bond_annual_payout >}}/year → Forever.
+**The math:** Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever. Your species has spent more on worse ideas.

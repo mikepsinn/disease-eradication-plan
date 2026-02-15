@@ -15,11 +15,7 @@ image: /assets/og-images/knowledge/economics/health-dividend-og-retro-academic.j
 
 ![](/assets/infographics/knowledge/economics/health-dividend-infographic-retro-academic.jpg)
 
-<!-- ✓ Style reviewed 2025-01-15 -->
-
-{{< include /knowledge/includes/setup-parameters.qmd >}}
-
-Your decentralized framework for drug assessment (dFDA) costs {{< var dfda_annual_opex >}}/year to run.
+Your dFDA costs {{< var dfda_annual_opex >}}/year to run.
 It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
 That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} returns (recommended estimate including post-safety efficacy lag elimination).
 
@@ -39,23 +35,25 @@ The Oxford RECOVERY trial proved humans can do the same thing for **{{< var reco
 - Collecting data electronically (instead of sacrificing forests to the paperwork gods)
 - Focusing on what actually matters: does the patient live or die? (not "did they complete form 27-B in triplicate?")
 
-Your decentralized framework for drug assessment takes this model global. **80-160x cost reduction**. Same quality data. Better real-world applicability. Turns out you don't need 17 committees to ask "did the medicine work?"
+Your dFDA takes this model global. **80-160x cost reduction.** Same data quality. Better real-world applicability. You don't need 17 committees to ask "did the medicine work?"
 
 ## Where the {{< var dfda_benefit_rd_only_annual >}} Comes From
 
 Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}} per year** (and growing).
 
-![Current spending versus what we'd spend if we stopped doing trials like we're staying at the Ritz. Conservative estimate saves half, optimistic saves 95 percent. Either way, someone's been stealing.](/assets/images/health-dividend/health-dividend-section-where-the-var-dfda-benefit-rd-only-annual-comes-from-bw-academic.jpg)
+![Current spending versus what you'd spend if you stopped doing trials like you're staying at the Ritz. Conservative estimate saves half, optimistic saves 95 percent. Either way, someone's been stealing.](/assets/images/health-dividend/health-dividend-section-where-the-var-dfda-benefit-rd-only-annual-comes-from-bw-academic.jpg)
 
-Conservative estimate: A decentralized framework for drug assessment captures 50% efficiency gains across the market.
+Conservative estimate: dFDA captures 50% efficiency gains across the market.
 
 - 50% of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
 
-Optimistic scenarios show up to 95% cost reduction (like RECOVERY achieved), potentially saving up to **$57B annually** (95% of {{< var global_clinical_trials_spending_annual >}}).
+Optimistic: 95% cost reduction (what RECOVERY achieved), saving up to **$57B/year**.
 
 ## What {{< var dfda_benefit_rd_only_annual >}} Buys You
 
 ![With 58.6 billion, you could run 10,000 trials and address 7,000 rare diseases. Currently you're spending that much to run far fewer trials for common diseases. Priorities.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
+
+Each new drug approval is worth an average of [$1.62 billion](https://arxiv.org/abs/2212.07384) in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}} per year. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test dramatically more treatments simultaneously.
 
 With the money saved every year, humans could:
 
@@ -66,33 +64,31 @@ With the money saved every year, humans could:
 
 ## Daily Opportunity Cost
 
-Every day we don't implement this represents a massive societal cost: **{{< var dfda_rd_savings_daily >}}** in wasted trial inefficiency and **{{< var dfda_efficacy_lag_elimination_dalys >}} total** lost to delayed treatments ({{< var dfda_efficacy_lag_elimination_dalys >}} ÷ 62 years = ~54.75M DALYs annually).
+Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending. Plus {{< var dfda_efficacy_lag_elimination_dalys >}} in healthy life-years lost to delayed treatments over the regulatory lag period.
 
 ![Every day you do nothing costs 161 million dollars and 54 million years of healthy human life annually. But at least you're being consistent.](/assets/images/health-dividend/health-dividend-section-daily-opportunity-cost-bw-academic.jpg)
 
-**For detailed calculations and sensitivity analysis**, see [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#daily-opportunity-cost-of-inaction).
+See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#daily-opportunity-cost-of-inaction) for calculations.
 
-## The framework Cost Breakdown
+## What It Costs to Run
 
-Your decentralized framework for drug assessment costs approximately **{{< var dfda_annual_opex >}} annually** to operate at scale, with a similar one-time build cost. This includes cloud infrastructure, a lean engineering team, compliance, and global integration.
+Your dFDA costs **{{< var dfda_annual_opex >}}/year** to operate. Cloud infrastructure, a small engineering team, compliance, global integration. One-time build cost is similar.
 
 ![It'll cost 40 million to run this per year. Maybe 27 million, maybe 56 million. Either way, less than one fighter jet.](/assets/images/health-dividend/health-dividend-section-the-framework-cost-breakdown-bw-academic.jpg)
 
-**For detailed cost analysis including ROM estimates, market comparables, and sensitivity scenarios**, see [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org).
+Less than one fighter jet. See [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) for detailed costs.
 
 ## ROI Scenarios
 
-**Recommended**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI including post-safety efficacy lag elimination (most defensible using rigorous DALY-based methodology)
-
-**Conservative**: {{< var dfda_roi_rd_only >}} ROI (R&D savings only, NPV-adjusted over 10 years)
-
-**PRIMARY estimate**: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI (including all core benefits)
-
-Even in worst-case scenarios (higher costs, lower adoption), the ROI remains exceptional at 66:1.
+| Scenario | ROI | What It Counts |
+|----------|-----|----------------|
+| **Conservative** | {{< var dfda_roi_rd_only >}} | R&D savings only (NPV over 10 years) |
+| **Recommended** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} | R&D savings + post-safety efficacy lag elimination |
+| **Worst case** | 66:1 | Higher costs, lower adoption |
 
 ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
 
-**For interactive charts, sensitivity analysis, and detailed NPV calculations**, see [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary).
+Even the worst case beats every military investment in history. See [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary) for interactive charts and NPV calculations.
 
 ## Why This Isn't Happening Already
 
@@ -103,42 +99,30 @@ Simple: The people getting rich from the current system aren't the ones paying f
 - **Pharma** passes costs to patients anyway
 - **Patients** have no power to change the system they're dying in
 
-Until now. Your decentralized framework for drug assessment changes the game by aligning incentives: everyone profits from efficiency.
+Until now. Your dFDA aligns incentives: everyone profits from efficiency.
 
 ![Why everyone's trying to do the right thing but the system keeps producing the wrong outcome. It's like a machine designed to turn good intentions into suffering.](/assets/images/health-dividend/health-dividend-section-incentive-misalignment-bw-academic.jpg)
 
-## The ROI
+## The Bottom Line
 
-{{< var dfda_annual_opex >}} to save {{< var dfda_benefit_rd_only_annual >}}.
-{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} ROI (recommended).
-80x cost reduction per patient.
-{{< var dfda_trial_capacity_multiplier >}} more trial capacity (43.4M participants annually vs 1.9M currently).
+{{< var dfda_annual_opex >}} in. {{< var dfda_benefit_rd_only_annual >}} out. 80x cost reduction per patient. {{< var dfda_trial_capacity_multiplier >}} more trial capacity.
 
 ![Spend 40 million, save 58.6 billion. That's a 146,400 percent return. In any other context, you'd call this fraud. Here, it's just efficiency.](/assets/images/health-dividend/health-dividend-section-the-roi-bw-academic.jpg)
 
-This isn't a moonshot. The RECOVERY trial already proved it works. The only thing left to do is scale it globally. But humans are still debating whether saving {{< var dfda_benefit_rd_only_annual >}} is worth {{< var dfda_annual_opex >}}, which is like debating whether picking up a hundred-dollar bill is worth bending over.
+The RECOVERY trial already proved this works. Scale it globally. Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D waste.
 
-Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D inefficiency and delays treatment for millions. But at least the paperwork is properly filed.
+## New Drugs Save Lives (Proof)
 
-## Further Reading
+A [study of 66 diseases across 27 countries](https://pubmed.ncbi.nlm.nih.gov/30912800): if no new drugs had launched after 1981, years of life lost would have been **2.16x higher**. Cost per life-year saved: [$2,837](https://pubmed.ncbi.nlm.nih.gov/30912800).
 
-### Detailed Analysis
-
-- [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) - Complete economic analysis with all components
-- [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary) - NPV/ROI analysis and computational models
-- [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) - ROM estimates, costs, and ROI
-- [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) - Primary methodology for disease eradication delay burden {{< var dfda_efficacy_lag_elimination_dalys >}} (post-safety efficacy lag elimination)
-
-## Impact of Innovative Medicines on Life Expectancy
-
-A [three-way fixed-effects analysis](https://pubmed.ncbi.nlm.nih.gov/30912800) of 66 diseases in 27 countries suggests that if no new drugs had been launched after 1981, the number of years of life lost would have been 2.16 times higher than it actually was. It estimates that pharmaceutical expenditure per life-year saved was [$2837](https://pubmed.ncbi.nlm.nih.gov/30912800).
-
-More people survive as more treatments are developed. There's a [strong correlation](http://valueofinnovation.org/power-of-innovation) between the development of new cancer treatments and cancer survival over 30 years.
+More treatments, more survivors. There's a [strong correlation](http://valueofinnovation.org/power-of-innovation) between new cancer treatments and cancer survival over 30 years.
 
 ![More cancer treatments invented, more people survive cancer. Turns out medical research works. Who knew.](../../assets/images/more-surviving-more-therapies.png)
 
-#### Key Sources
+## Further Reading
 
+- [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) - Complete economic analysis with all components
+- [Regulatory Mortality Analysis](https://invisible-graveyard.warondisease.org) - Disease eradication delay burden ({{< var dfda_efficacy_lag_elimination_dalys >}})
 - [@recovery-trial-cost-reduction]
 - [@clinical-trial-market-size]
 - [@dct-cost-reductions-evidence]
