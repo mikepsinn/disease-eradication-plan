@@ -811,6 +811,8 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     # Use per-paper filtered parameters-and-calculations.qmd if available
     # This ensures the appendix only includes parameters used by this paper.
     # Renamed to canonical name so links from _variables.yml work correctly.
+    # Config files reference the canonical name (parameters-and-calculations.qmd),
+    # and this copy ensures the filtered content is used instead of the full master file.
     filtered_params = project_root / "knowledge" / "appendix" / f"parameters-and-calculations-{config_name}.qmd"
     if config_name != "book" and filtered_params.exists():
         target_params = build_temp / "knowledge" / "appendix" / "parameters-and-calculations.qmd"

@@ -46,12 +46,12 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
     - knowledge/references.qmd
   navbar:
     right:
       - text: "Calculations"
-        href: knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd
+        href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "VOTE"
         href: https://WarOnDisease.org
   sidebar:
@@ -68,7 +68,7 @@ book:
 
       - section: "Appendices"
         contents:
-          - href: knowledge/appendix/parameters-and-calculations-1-pct-treaty-impact.qmd
+          - href: knowledge/appendix/parameters-and-calculations.qmd
             text: "Parameters & Calculations"
 
       - section: "Related Materials"
