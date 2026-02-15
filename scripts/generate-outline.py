@@ -19,6 +19,10 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
+# Add project root to path for dih_models imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from dih_models.variable_replacement import load_variables, replace_variables
+
 # Set UTF-8 encoding for stdout and stderr on Windows
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
@@ -253,20 +257,36 @@ def extract_chapters_from_config(config: Dict, project_root: Path) -> List[Dict[
     """Extract all chapters with metadata from a config."""
     chapters = []
 
+    # Resolve index.qmd -> dih-render.index-source (index.qmd is auto-generated at render time)
+    index_source = (config.get('dih-render') or {}).get('index-source', '')
+    index_source_map = {}
+    if index_source and index_source.endswith('.qmd'):
+        index_source_map['index.qmd'] = index_source
+
+    def _is_auto_generated(href: str) -> bool:
+        """Skip auto-generated files that add noise to outlines."""
+        basename = Path(href).name
+        return basename.startswith("parameters-and-calculations")
+
+    def _resolve_href(href: str) -> Tuple[str, Path]:
+        """Resolve href to actual source file. Returns (display_href, actual_path)."""
+        actual = index_source_map.get(href, href)
+        return actual, project_root / actual
+
     def process_items(items, current_part: str = "", is_appendix: bool = False):
         if not items:
             return
 
         for item in items:
             if isinstance(item, str):
-                if item.endswith('.qmd'):
-                    qmd_path = project_root / item
+                if item.endswith('.qmd') and not _is_auto_generated(item):
+                    href, qmd_path = _resolve_href(item)
                     fm = extract_frontmatter(qmd_path)
                     stats = get_qmd_stats(qmd_path)
                     chapters.append({
                         "part": current_part,
-                        "href": item,
-                        "title": fm.get("title", Path(item).stem),
+                        "href": href,
+                        "title": fm.get("title", Path(href).stem),
                         "description": fm.get("description", ""),
                         "words": stats["words"],
                         "lines": stats["lines"],
@@ -287,9 +307,9 @@ def extract_chapters_from_config(config: Dict, project_root: Path) -> List[Dict[
                     if 'chapters' in item:
                         process_items(item['chapters'], current_part, is_appendix)
                 elif 'href' in item:
-                    href = item['href']
-                    if href.endswith('.qmd'):
-                        qmd_path = project_root / href
+                    raw_href = item['href']
+                    if raw_href.endswith('.qmd') and not _is_auto_generated(raw_href):
+                        href, qmd_path = _resolve_href(raw_href)
                         fm = extract_frontmatter(qmd_path)
                         stats = get_qmd_stats(qmd_path)
                         chapters.append({
@@ -321,38 +341,38 @@ def extract_chapters_from_config(config: Dict, project_root: Path) -> List[Dict[
         elif isinstance(sidebar, dict) and sidebar.get('contents'):
             process_items(sidebar['contents'])
 
-    # dih-render index-source (single-file papers)
-    dih_render = config.get('dih-render', {})
-    if dih_render:
-        index_source = dih_render.get('index-source', '')
-        if index_source and index_source.endswith('.qmd'):
-            qmd_path = project_root / index_source
-            fm = extract_frontmatter(qmd_path)
-            stats = get_qmd_stats(qmd_path)
-            chapters.append({
-                "part": "",
-                "href": index_source,
-                "title": fm.get("title", Path(index_source).stem),
-                "description": fm.get("description", ""),
-                "words": stats["words"],
-                "lines": stats["lines"],
-                "exists": qmd_path.exists(),
-                "is_appendix": False,
-            })
+    # For single-file paper configs, the index-source is the paper itself.
+    # Only add it if no chapters were found (avoids duplicating it when
+    # the same file also appears in book.chapters via index.qmd resolution).
+    if not chapters:
+        dih_render = config.get('dih-render', {})
+        if dih_render:
+            src = dih_render.get('index-source', '')
+            if src and src.endswith('.qmd'):
+                qmd_path = project_root / src
+                fm = extract_frontmatter(qmd_path)
+                stats = get_qmd_stats(qmd_path)
+                chapters.append({
+                    "part": "",
+                    "href": src,
+                    "title": fm.get("title", Path(src).stem),
+                    "description": fm.get("description", ""),
+                    "words": stats["words"],
+                    "lines": stats["lines"],
+                    "exists": qmd_path.exists(),
+                    "is_appendix": False,
+                })
 
     return chapters
 
 
-def generate_outline(project_root: Path) -> str:
-    """Generate complete project outline from all Quarto configs."""
-    outline_lines = []
+def build_config_summaries(project_root: Path) -> List[Dict[str, Any]]:
+    """Parse all Quarto configs and return structured summaries."""
     config_summaries = []
 
-    # Find all Quarto configs
     configs = sorted(project_root.glob("_quarto-*.yml"))
     configs = [c for c in configs if "shared-defaults" not in c.name]
 
-    # Process each config
     for config_path in configs:
         config_name = re.match(r"_quarto-(.+)\.yml", config_path.name).group(1)
 
@@ -362,20 +382,14 @@ def generate_outline(project_root: Path) -> str:
         except Exception:
             continue
 
-        # Get title
         title = (
             config.get('book', {}).get('title') or
             config.get('website', {}).get('title') or
             config_name.replace('-', ' ').title()
         )
 
-        # Get project type
         project_type = config.get('project', {}).get('type', 'website')
-
-        # Extract chapters
         chapters = extract_chapters_from_config(config, project_root)
-
-        # Calculate totals
         total_words = sum(c['words'] for c in chapters)
         missing_files = [c for c in chapters if not c['exists']]
 
@@ -388,6 +402,65 @@ def generate_outline(project_root: Path) -> str:
             "total_words": total_words,
             "missing_files": missing_files,
         })
+
+    return config_summaries
+
+
+def format_config_chapters(cs: Dict[str, Any], project_root: Path) -> List[str]:
+    """Format chapters for a single config summary into outline lines."""
+    lines = []
+
+    if cs['missing_files']:
+        lines.append(f"**Missing:** {len(cs['missing_files'])} files")
+        lines.append("")
+
+    current_part = None
+    for ch in cs['chapters']:
+        if ch['part'] != current_part:
+            current_part = ch['part']
+            if current_part:
+                lines.append(f"### {current_part}")
+                lines.append("")
+
+        status = "" if ch['exists'] else " (NOT FOUND)"
+        lines.append(f"#### {ch['href']}{status}")
+        lines.append(f"**Title:** {ch['title']}")
+        if ch['description']:
+            lines.append(f"**Description:** {ch['description']}")
+        lines.append(f"**Stats:** {ch['words']:,} words | {ch['lines']:,} lines")
+        lines.append("")
+
+        if ch['exists']:
+            full_path = project_root / ch['href']
+            headings = extract_headings_from_file(full_path)
+            if headings:
+                for level, text in headings:
+                    lines.append(format_heading(level, text))
+                lines.append("")
+
+    return lines
+
+
+def generate_single_config_outline(cs: Dict[str, Any], project_root: Path) -> str:
+    """Generate outline for a single Quarto config."""
+    lines = [
+        f"# {cs['title']}",
+        "",
+        f"**Config:** {cs['file']}",
+        f"**Type:** {cs['type']}",
+        f"**Files:** {len(cs['chapters'])} | **Words:** {cs['total_words']:,}",
+        "",
+    ]
+
+    lines.extend(format_config_chapters(cs, project_root))
+
+    return "\n".join(lines)
+
+
+def generate_outline(project_root: Path) -> str:
+    """Generate complete project outline from all Quarto configs."""
+    outline_lines = []
+    config_summaries = build_config_summaries(project_root)
 
     # Build outline header
     outline_lines.extend([
@@ -411,38 +484,7 @@ def generate_outline(project_root: Path) -> str:
             "",
         ])
 
-        if cs['missing_files']:
-            outline_lines.append(f"**Missing:** {len(cs['missing_files'])} files")
-            outline_lines.append("")
-
-        # Group chapters by part
-        current_part = None
-        for ch in cs['chapters']:
-            if ch['part'] != current_part:
-                current_part = ch['part']
-                if current_part:
-                    outline_lines.append(f"### {current_part}")
-                    outline_lines.append("")
-
-            # Add chapter info
-            status = "" if ch['exists'] else " (NOT FOUND)"
-            outline_lines.append(f"#### {ch['href']}{status}")
-            outline_lines.append(f"**Title:** {ch['title']}")
-            if ch['description']:
-                desc = ch['description'][:200] + ('...' if len(ch['description']) > 200 else '')
-                outline_lines.append(f"**Description:** {desc}")
-            outline_lines.append(f"**Stats:** {ch['words']:,} words | {ch['lines']:,} lines")
-            outline_lines.append("")
-
-            # Add section headings
-            if ch['exists']:
-                full_path = project_root / ch['href']
-                headings = extract_headings_from_file(full_path)
-                if headings:
-                    for level, text in headings:
-                        outline_lines.append(format_heading(level, text))
-                    outline_lines.append("")
-
+        outline_lines.extend(format_config_chapters(cs, project_root))
         outline_lines.append("---")
         outline_lines.append("")
 
@@ -467,8 +509,7 @@ def generate_outline(project_root: Path) -> str:
             outline_lines.append(f"#### {rel_path}")
             outline_lines.append(f"- **Title:** {title}")
             if description:
-                desc = description[:100] + ('...' if len(description) > 100 else '')
-                outline_lines.append(f"- **Description:** {desc}")
+                outline_lines.append(f"- **Description:** {description}")
             outline_lines.append(f"- **Words:** {stats['words']:,}")
             outline_lines.append("")
 
@@ -520,18 +561,31 @@ def main():
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
 
-    # Generate outline
-    outline = generate_outline(project_root)
+    # Load variables for resolving {{< var name >}} patterns
+    variables_path = project_root / "_variables.yml"
+    variables = load_variables(variables_path)
 
-    # Always write to OUTLINE.md
-    output_path = project_root / "OUTLINE.md"
-    try:
-        with open(output_path, 'w', encoding='utf-8', newline='\n') as f:
-            f.write(outline)
-        print(f"Outline written to {output_path}")
-    except Exception as e:
-        print(f"Error: Could not write to {output_path}: {e}", file=sys.stderr)
-        sys.exit(1)
+    # Generate per-config outline files in assets/outlines/
+    outlines_dir = project_root / "assets" / "outlines"
+    outlines_dir.mkdir(parents=True, exist_ok=True)
+
+    config_summaries = build_config_summaries(project_root)
+
+    # Clean up old outline files (handles renames and removed configs)
+    for old_file in outlines_dir.glob("*-outline.md"):
+        old_file.unlink()
+
+    for cs in config_summaries:
+        per_config_outline = generate_single_config_outline(cs, project_root)
+        per_config_outline = replace_variables(per_config_outline, variables, highlight_missing=False)
+        per_config_path = outlines_dir / f"{cs['name']}-outline.md"
+        try:
+            with open(per_config_path, 'w', encoding='utf-8', newline='\n') as f:
+                f.write(per_config_outline)
+        except Exception as e:
+            print(f"Warning: Could not write {per_config_path}: {e}", file=sys.stderr)
+
+    print(f"Per-config outlines written to assets/outlines/ ({len(config_summaries)} files)")
 
 
 if __name__ == '__main__':
