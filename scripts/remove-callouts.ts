@@ -168,7 +168,7 @@ async function processFile(
       console.log(`   Converted ${type} callout${title ? ` "${title}"` : ''}`);
     }
 
-    return result;
+    return '\n' + result + '\n';
   });
 
   // Also handle nested callouts (:::: with 4 colons)
@@ -208,8 +208,11 @@ async function processFile(
       console.log(`   Converted nested ${type} callout${title ? ` "${title}"` : ''}`);
     }
 
-    return result;
+    return '\n' + result + '\n';
   });
+
+  // Clean up excessive blank lines (3+ consecutive blank lines -> 2)
+  newContent = newContent.replace(/\n{4,}/g, '\n\n\n');
 
   if (calloutsRemoved > 0 && !dryRun) {
     await fs.writeFile(filePath, newContent, 'utf-8');
