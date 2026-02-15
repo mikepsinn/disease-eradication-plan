@@ -1,0 +1,145 @@
+# The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy
+
+**Config:** _quarto-opg.yml
+**Type:** website
+**Files:** 1 | **Words:** 12,849
+
+#### knowledge/appendix/optimal-policy-generator-spec.qmd
+**Title:** The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy
+**Description:** The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.
+**Stats:** 12,849 words | 1,886 lines
+
+  - Abstract {.unnumbered}
+  - The Two Welfare Metrics {#sec-two-metrics}
+    - Why Only Two Metrics?
+    - Income Metric Definition {#sec-income-definition}
+    - Outcome Translation Methodology {#sec-outcome-translation}
+  - The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
+    - Scale of Available Natural Experiments
+    - The OPG Pipeline
+    - Why This Hasn't Been Done Before
+  - System Overview {#sec-opg-system-overview}
+    - What Policymakers See
+    - What Policy Analysts See
+  - Introduction
+    - Why Policy Ranking Fails Today
+    - Scale of Available Evidence
+    - Contributions
+    - Validation Status
+  - Related Work
+    - Existing Policy Evaluation Frameworks
+    - This Framework's Contribution
+  - Theoretical Framework
+    - The Policy Optimization Problem
+    - Evidence Aggregation Properties
+    - Information Value
+  - Core Methodology
+    - Policy-Outcome Data Structure
+      - Core Tables
+      - Policy Types
+    - Analysis Methods {#sec-analysis-methods}
+      - Synthetic Control Method
+      - Difference-in-Differences (DiD)
+      - Regression Discontinuity Design (RDD)
+      - Event Study / Interrupted Time Series
+      - Confidence Weighting by Method
+    - Bradford Hill Criteria Scoring Functions {#sec-bradford-hill}
+      - Strength of Association
+      - Consistency Across Jurisdictions
+      - Temporality (Required)
+      - Dose-Response Gradient
+      - Experiment Quality
+      - Plausibility (Mechanistic)
+      - Coherence with Literature
+      - Specificity
+    - Causal Confidence Score (CCS) Calculation
+  - Jurisdiction Policy Inventory
+    - Tracking Current Policies by Jurisdiction
+    - Data Sources for Policy Status
+    - Handling Missing Data
+  - Policy Gap Analysis {#sec-policy-gap}
+    - Comparing Current to Optimal
+    - Gap Types
+    - Priority Scoring
+    - Context Adjustment {#sec-context-adjustment}
+  - Recommendation Generation {#sec-recommendation-generation}
+    - Recommendation Types
+    - Blocking Factors {#sec-blocking-factors}
+    - Similar Jurisdictions {#sec-similar-jurisdictions}
+      - Computing Jurisdiction Similarity
+    - Recommended Tracking (for OPG Feedback)
+  - Optimal Jurisdictional Level for Policy Implementation
+    - The Subsidiarity Principle for Evidence Generation
+    - When Higher Levels Are Necessary
+    - Jurisdictional Level in Recommendations
+  - Policy Impact Score (Intermediate Metric) {#sec-pis}
+    - Overview
+    - Jurisdiction-Level PIS Calculation
+    - Always Report Both Metrics Separately
+    - Effect Estimate Standardization
+    - Quality Adjustment Factor
+    - Confounder Adjustment
+  - Global (Aggregate) PIS Calculation {#sec-global-pis}
+    - Pooled Effect Estimate
+    - Pooled PIS Across Jurisdictions
+    - Heterogeneity Statistics
+    - Evidence Grading {#sec-evidence-grading}
+    - Context-Specific Confidence
+  - Quality Requirements & Validation
+    - Minimum Thresholds for Inclusion
+    - Parallel Trends Testing (DiD)
+    - Pre-Treatment Fit (Synthetic Control)
+    - Placebo and Robustness Tests
+  - Interpreting Recommendations
+    - Priority Tiers
+    - Political Feasibility Notes
+    - Sequencing Guidance
+  - Effect Size Benchmarks {#sec-effect-benchmarks}
+  - Trial Prioritization {#sec-trial-prioritization}
+    - Value of Information Calculation
+    - Natural Experiment Identification
+    - Recommended Pilot Jurisdictions
+  - Data Sources
+    - Primary Policy Databases
+    - Primary Outcome Databases
+    - Subnational Data
+    - Jurisdiction Policy Inventory Sources
+  - Limitations
+    - Oracle Capture Risk
+    - Confounding Severity
+    - Heterogeneous Effects
+    - Jurisdiction-Specific Caveats
+    - Time-Varying Effects
+    - Publication Bias
+    - Epistemic Limitations
+  - Validation Framework {#sec-opg-validation-framework}
+    - The Critical Question
+    - Addressing Adoption Bias
+    - Proposed Validation Study
+    - Prospective Pre-Registration
+    - Known Limitations Requiring Validation
+    - Continuous Improvement via Adoption Feedback
+  - Future Directions
+    - Validation Priorities
+    - Data Infrastructure
+    - Integration with Decision-Making
+  - Conclusion
+  - Acknowledgments {.unnumbered}
+  - References
+  - Appendix A: Worked Example - Texas Policy Recommendations {.appendix}
+    - Warning SYNTHETIC DATA - NOT EMPIRICAL FINDINGS
+    - Overview
+    - Texas Policy Inventory (Sample)
+    - Step 1: Calculate Policy Impact Scores
+    - Step 2: Apply Context Adjustment for Texas
+    - Step 3: Generate Recommendations
+  - ENACT (New Policies to Adopt)
+  - REPLACE (Policies to Modify)
+  - REPEAL (Policies to Remove)
+  - MAINTAIN (No Change Needed)
+    - Step 4: Summary Dashboard
+    - Interpretation
+  - Appendix B: OPG Analysis Workflow {.appendix}
+    - Complete OPG Pipeline
+    - Minimum Data Requirements Checklist
+  - Appendix C: Glossary {.appendix}

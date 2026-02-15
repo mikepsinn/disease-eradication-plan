@@ -1,0 +1,159 @@
+# The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
+
+**Config:** _quarto-dfda-spec.yml
+**Type:** website
+**Files:** 1 | **Words:** 14,323
+
+#### knowledge/appendix/dfda-spec-paper.qmd
+**Title:** The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
+**Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x (95% CI: 39.4x-89.1x) lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
+**Stats:** 14,323 words | 1,979 lines
+
+  - Abstract
+  - System Overview: From Methodology to Implementation {#system-overview}
+    - What Patients See
+    - What Companies See
+    - Where This Methodology Fits
+  - Introduction
+    - The Human Cost of the Current System
+    - The Pharmacovigilance Gap
+    - The Real-World Data Opportunity
+    - Our Contribution
+  - Data Collection and Integration
+    - Data Sources
+    - Variable Ontology
+    - Measurement Structure
+    - Unit Standardization
+  - Mathematical Framework
+    - Data Structure
+    - Temporal Alignment
+      - Onset Delay and Duration of Action
+      - Outcome Window Calculation
+    - Pair Generation Strategies
+      - Outcome-Based Pairing (Predictor has Filling Value)
+      - Predictor-Based Pairing (No Filling Value)
+    - Filling Value Logic
+      - Filling Types
+      - Temporal Boundaries
+      - Conservative Bias
+    - Baseline Definition and Outcome Estimation
+      - Within-Subject Comparison
+      - Outcome Means
+    - Percent Change from Baseline
+    - Correlation Coefficients
+      - Pearson Correlation (Linear Relationships)
+      - Spearman Rank Correlation (Monotonic Relationships)
+      - Forward and Reverse Correlations
+    - Z-Score Normalization
+    - Statistical Significance
+    - Hyperparameter Optimization
+  - Population Aggregation
+    - Individual to Population
+    - Standard Error and Confidence Intervals
+    - Heterogeneity Assessment
+  - Data Quality Requirements
+    - Minimum Thresholds
+    - Variance Validation
+    - Outcome Value Spread
+  - Predictor Impact Score
+    - What Makes the Predictor Impact Score Novel
+    - User-Level Predictor Impact Score
+    - Aggregate (Population-Level) Predictor Impact Score
+    - Z-Score and Effect Magnitude Factor
+    - Temporality Factor
+    - Percent Change from Baseline
+    - Statistical Significance
+    - Interest Factor
+    - Additional Data Quality Components
+    - Bradford Hill Criteria Mapping {#bradford-hill-mapping}
+    - Interpreting Predictor Impact Scores
+  - Provisional Thresholds - Not Yet Validated
+    - Optimal Daily Value for Precision Dosing
+      - Value Predicting High Outcome
+      - Value Predicting Low Outcome
+      - Grouped Optimal Values
+      - Precision Dosing Recommendations
+      - Mathematical Relationship to Biological Gradient
+      - Clinical Applications
+      - Limitations
+      - Confidence Intervals for Optimal Values
+      - Individual vs Population Optimal Values
+      - Temporal Stability and Recalculation
+      - Edge Cases: Minimal Dose-Response
+      - Validation of Optimal Values
+    - Saturation Constant Rationale
+    - Effect Following High vs Low Predictor Values
+      - Average Outcome Metrics
+      - Calculation
+    - Predictor Baseline and Treatment Averages
+    - Relationship Quality Filters
+      - Filter Flags
+      - Boring Relationship Definition
+      - Usefulness and Causality Voting
+    - Variable Valence
+      - Impact on Interpretation
+    - Temporal Parameter Optimization
+      - Stored Optimization Data
+      - Optimization Grid
+      - Overfitting Protection
+    - Spearman Rank Correlation
+  - Outcome Label Generation
+    - Predictor Analysis Reports
+    - Report Structure
+    - Category-Specific Analysis
+    - Verification Status
+    - Outcome Labels vs. FDA Drug Labels
+    - Worked Example: Complete Outcome Label
+  - Treatment Ranking System
+    - Within-Category Rankings
+    - Ranking Algorithm
+    - Confidence Weighting
+    - Comparative Effectiveness Display
+  - Safety and Efficacy Quantification
+    - Safety Signal Detection
+    - Efficacy Signal Detection
+    - Benefit-Risk Assessment
+  - Addressing the Bradford Hill Criteria {#addressing-bradford-hill}
+    - Complete Criteria Mapping
+    - Quantitative Criteria Details
+  - Validation and Quality Assurance
+    - User Voting System
+    - Automated Quality Checks
+    - Flagged Study Handling
+  - Stage 2: Pragmatic Trial Confirmation
+    - The Two-Stage Pipeline
+    - Pragmatic Trial Methodology
+    - Signal-to-Trial Prioritization
+    - Comparative Effectiveness Randomization
+    - Feedback Loop: Trial Results Improve Observational Models
+    - Output: Validated Outcome Labels
+  - Limitations and How They're Addressed
+    - Fundamental Limitations: Observational Stage
+    - Methodological Weaknesses: Addressed by Two-Stage Design
+    - Residual Limitations
+    - What This Framework CAN Now Do
+  - Implementation Guide
+    - System Architecture
+    - Core Algorithm: Pair Generation
+    - Core Algorithm: Baseline Separation
+    - Algorithm 3: Predictor Impact Score Calculation
+    - Reference Implementation
+  - Regulatory Considerations
+    - Positioning Relative to RCTs
+    - Evidence Hierarchy Integration
+    - FDA Real-World Evidence Framework Alignment
+  - Validation Framework {#sec-dfda-validation-framework}
+    - The Critical Question
+    - Proposed Validation Study
+    - Known Limitations Requiring Validation
+  - Future Directions
+    - Methodological Improvements
+    - Validation Priorities
+    - Implementation Enhancements
+  - Conclusion
+  - Appendix A: Effect Size Classification
+  - Appendix B: Variable Category Defaults
+  - Appendix C: Glossary
+  - Appendix D: Worked Example
+    - Example: Calculating Predictor Impact Score for "Magnesium → Sleep Quality"
+  - Appendix E: Analysis Workflow

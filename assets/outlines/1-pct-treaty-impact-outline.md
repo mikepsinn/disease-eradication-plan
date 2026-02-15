@@ -1,0 +1,183 @@
+# The 1% Treaty: Harnessing Greed to Eradicate Disease
+
+**Config:** _quarto-1-pct-treaty-impact.yml
+**Type:** book
+**Files:** 2 | **Words:** 26,228
+
+#### knowledge/economics/1-pct-treaty-impact.qmd
+**Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
+**Description:** 6.65 thousand diseases (95% CI: 5.70 thousand diseases-8.24 thousand diseases) have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years (95% CI: 324 years-712 years). Redirecting 1% of military spending scales capacity 12.3x (95% CI: 4.19x-61.3x), cutting the timeline to ~36 years (95% CI: 11.6 years-77.2 years) and preventing 10.7 billion deaths (95% CI: 7.39 billion deaths-16.2 billion deaths). At $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.7kx-111.7kx) more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
+**Stats:** 26,166 words | 2,414 lines
+
+  - Abstract
+  - Key Findings
+  - How Pragmatic Trials Increase Safety
+  - Introduction
+    - Historical Precedents for Grand Challenges
+    - The Medical Research Bottleneck
+    - Contribution to Literature
+  - Research Hypothesis
+  - Nomenclature and Key Terms
+  - Problem Statement
+    - Current Resource Allocation
+      - Disease treatment vs. curing disease
+    - Mortality and Morbidity Burden
+  - How It Works
+  - A Decentralized Framework for Drug Assessment
+    - Trial Cost Reduction
+    - Enhanced Safety Monitoring
+    - Comparative Effectiveness Rankings
+      - How Comparative Effectiveness Data Is Collected
+    - Outcome Labels
+  - Summary of Results
+    - Total Economic Value
+        - Uncertainty Analysis: Total Economic Value
+    - Research Acceleration
+    - Treatment Timeline Acceleration
+    - Suffering Reduction
+    - Lives Saved
+    - DALYs Averted
+    - Why "Eventually Avoidable" Matters
+  - The Leverage Mechanism: Why 1% Is Enough
+    - 1. The Peace Dividend (Multiplier Differential)
+    - 2. Research Efficiency Dividend (Infrastructure Leverage)
+    - 3. 15–40 "NIH equivalents" of new research capacity
+  - How It Increases National Security
+    - What doesn't change
+    - What improves
+    - The De-escalation Trajectory
+    - Why The Ratchet Works: The IAB Scaling Engine
+    - Treaty Funding Allocation
+  - Political Economy and Financing
+    - Incentive Alignment Bonds
+      - Mechanism Architecture
+      - Comparative Static Analysis: Senator Smith
+      - Stakeholder Alignment
+      - Legal and Ethical Framework
+  - Dominance Analysis
+    - Quantitative Comparison
+  - Methodology
+  - Cost-Benefit Framework
+    - Cost Components
+    - Benefit Components
+  - ROI Calculation
+    - Combined Annual Benefits Uncertainty
+  - Cost-Effectiveness Analysis
+      - Pragmatic Trials vs. NIH Standard Research
+    - Expected Value Under Political Uncertainty
+      - Uncertainty in Risk-Adjusted Cost-Effectiveness
+      - Uncertainty in Cost-Effectiveness (Conditional on Success)
+    - Policy Advocacy Leverage vs Direct Funding
+      - Why Billionaires Buy Lottery Tickets Instead of the Casino
+      - Numerical Comparison: Treaty vs Direct Funding
+      - Direct Funding Scenario
+    - Direct Funding Still Excellent
+      - Treaty Campaign Advantage
+    - Detailed NPV Formulas
+      - NPV of Costs
+      - NPV of Benefits
+      - Return on Investment
+      - NPV of Regulatory Delay Avoidance
+  - Quality-Adjusted Life Year (QALY) Valuation
+    - QALY Calculation Model
+  - Economist Verification: Complete Derivation Chains
+    - 1. Trial Capacity Multiplier Derivation (12.3x (95% CI: 4.19x-61.3x))
+    - 2. Timeline Shift Derivation (212 years (95% CI: 135 years-355 years))
+    - 3. DALYs Averted Derivation (565 billion DALYs (95% CI: 361 billion DALYs-877 billion DALYs))
+    - 4. Cost per DALY Derivation ($0.0018 (95% CI: $0.0007-$0.0041))
+    - 5. ROI Derivation (Conservative: 637:1 (95% CI: 569:1-790:1))
+    - 6. ROI Derivation (Complete: 84.8M:1 (95% CI: 46.6M:1-144M:1))
+    - 7. Lives Saved Derivation (10.7 billion deaths (95% CI: 7.39 billion deaths-16.2 billion deaths))
+    - 8. Regulatory Delay Elimination Derivation
+    - 9. Annual Recurring Benefits Derivation
+    - Verification Summary
+  - Counterfactual Baseline Specification
+  - Peace Dividend Calculation Methodology
+    - Relative Importance
+    - Economic benefits of reduced military spending
+      - War Costs Breakdown
+  - Research Acceleration Mechanism
+    - Treatment Discovery Through Therapeutic Space Exploration
+      - The Unexplored Therapeutic Frontier
+      - Current Exploration Rate vs. Therapeutic Space
+    - Addressing the Returns Question: Diminishing, Linear, or Compounding?
+      - Why Diminishing Returns Is Unlikely (We Haven't Started Looking)
+      - The Case for Compounding Returns
+      - Mathematical Framework: When Would Diminishing Returns Dominate?
+      - The Conservative Default: Linear Assumption
+  - Data Sources and Primary Inputs
+    - Military and Conflict Data
+      - Clinical Trial Economics
+      - Health Economics
+      - Economic Parameters
+  - Sensitivity Analysis Approach
+  - Key Analytical Assumptions
+    - Strategic Stability Assumption
+    - Linear Scaling Assumption
+    - Adoption Rate Assumptions
+    - Cost Reduction Assumptions
+      - Empirical basis
+    - Historical Precedent: Pre-1962 Physician-Led Efficacy Trials
+      - Historical operational model
+      - Implications for generalizability
+    - Political Feasibility Assumption
+    - Expected Value Analysis Accounting for Political Risk
+    - Time Inconsistency and Commitment Credibility
+    - Technology Constancy Assumption
+    - Data Quality and Availability
+  - Scenario Analysis: Complete Case
+    - Timeline Shift Value
+      - Complete Case ROI
+  - Individual-Level Economic Impact
+  - Who Benefits and How
+  - Adoption Dynamics: Game-Theoretic Analysis
+  - Implementation Strategy
+    - Step 1: Global Mandate (The Philanthropic Catalyst)
+    - Step 2: Capitalization via Incentive Alignment Bonds (IABs)
+    - Step 3: Implement the Legislative Strategy
+    - Step 4: Build the Infrastructure
+    - Step 5: The Statutory Administration Utility
+    - Implementation Budget Breakdown
+  - Detailed Technical References
+  - Risk Analysis and Mitigation
+    - The "But Politicians Won't Do It" Problem
+    - Safety Concerns
+    - Patient Agency and Autonomy
+    - Accountability measures
+  - Limitations and Uncertainties
+    - Adoption Timeline Uncertainty
+    - Pragmatic Trial Internal Validity and Selection Bias
+      - Mitigation strategies
+    - QALY Calculation Uncertainties
+    - Data Limitations
+      - Military Spending Data
+      - Clinical Trial Market Sizing
+      - QALY Valuation Thresholds
+    - Generalizability Constraints
+      - Political Feasibility
+      - Institutional Capacity
+      - Healthcare System Integration
+    - Uncertainty Quantification
+      - Primary Risk Factors
+    - Scenario Analysis Robustness
+    - General Equilibrium Effects
+    - Conditional Benefits Interpretation
+    - Limitations Summary
+    - Why This Differs from Failed Megaprojects
+  - Policy Implications
+    - National Health Budgets
+    - International Development Priorities
+    - Military Budget Allocation
+    - Global Health Funding Mechanisms
+    - Implementation Pathway
+    - Bottom Line for Policymakers
+  - Treaty Adoption: Political Will and Diplomatic Strategy
+    - Why Simultaneous Commitment Works: Escaping the Prisoner's Dilemma
+    - Historical Treaty Precedents
+    - Adoption Pathway
+  - Conclusion
+
+#### knowledge/references.qmd
+**Title:** Source Quotes and References
+**Description:** Bibliography and citations for all sources cited
+**Stats:** 62 words | 22 lines
