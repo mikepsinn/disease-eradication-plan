@@ -572,16 +572,8 @@ def check_quarto_config_resources(output_dir):
         errors.append(ValidationError(quarto_config, 0, "YAML_PARSE_ERROR", f"Failed to parse _quarto.yml: {e}"))
         return errors
 
-    # Check PDF output file if specified
-    if 'format' in config and 'pdf' in config['format']:
-        pdf_config = config['format']['pdf']
-        if 'output-file' in pdf_config:
-            pdf_filename = pdf_config['output-file']
-            pdf_path = output_dir / pdf_filename
-
-            if not pdf_path.exists():
-                context = f"PDF file referenced in config not found: {pdf_filename}"
-                errors.append(ValidationError(quarto_config, 0, "MISSING_PDF", context))
+    # Skip PDF output-file check: this validation runs after HTML render but before
+    # PDF generation. PDF existence is verified later in the render pipeline.
 
     # Check navbar/sidebar PDF links
     def check_pdf_links(obj, path=""):

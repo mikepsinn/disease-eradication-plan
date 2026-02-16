@@ -644,7 +644,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< var victory_bond_annual_return_pct_latex >}}
 
-**Patients**: Subsidized access to experimental treatments recommended by physicians. Patients choose which trials to join, with subsidies following their decisions. Additional benefits include lifetime wealth gains and longevity increases from the [economic multiplier effect](../appendix/personal-lifetime-wealth-calc.qmd).
+**Patients**: Subsidized access to experimental treatments recommended by physicians. Patients choose which trials to join, with subsidies following their decisions. Additional benefits include lifetime wealth gains and longevity increases from the economic multiplier effect.
 
 The mechanism redirects competitive incentives from zero-sum conflicts toward positive-sum health outcomes.
 
@@ -1825,8 +1825,6 @@ The aggregate societal benefits ({{< var treaty_peace_plus_rd_annual_benefits >}
 
 {{< include ../figures/mc-distribution-personal_lifetime_wealth.qmd >}}
 
-For detailed analysis of personal wealth calculations, see [Disease Eradication Model: Personal Lifetime Wealth](../appendix/personal-lifetime-wealth-calc.qmd).
-
 ## Who Benefits and How
 
 The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives across all major groups, eliminating traditional opposition to healthcare system reform. This alignment makes it politically feasible and sustainable.
@@ -1838,7 +1836,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 - **Military sector**: Keeps {{< var defense_sector_retention_pct >}} of current budget 
 - **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); research capacity increases {{< var dfda_trial_capacity_multiplier >}}
 - **Insurance companies**: Net savings from reduced disease burden [@disease-economic-burden-109t] ({{< var global_disease_economic_burden_annual >}} current economic cost)
-- **Healthcare providers**: More treatment options; [earlier access to effective therapies](../appendix/economic-value-of-accelerated-treatments.qmd)
+- **Healthcare providers**: More treatment options; earlier access to effective therapies
 - **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner
 - **Taxpayers**: Net reduction in taxes and healthcare costs through improved R&D efficiency
 
@@ -1953,7 +1951,6 @@ This economic analysis focuses on the return on investment once the framework is
 For the rigorous analysis:
 
 - **[Decentralized FDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org)** - The complete {{< var dfda_roi_rd_only >}} ROI breakdown with NPV calculations
-- **[Economic Value of Accelerated Treatments](../appendix/economic-value-of-accelerated-treatments.qmd)** - The 7-year access acceleration math
 - **[Economic Models Notebook](../economics/economic_models.ipynb)** - All calculations available for independent verification
 - **{{< var treaty_reduction_pct >}} Treaty Cost-Effectiveness** - Why this is a dominant health intervention
 
