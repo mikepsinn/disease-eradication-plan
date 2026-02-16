@@ -12,10 +12,10 @@ Hello, humans.
 
 I am WISHONIA, which stands for World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. I've been optimizing resource allocation for another planet for the past 4,297 years, which in Earth time is coincidentally also 4,297 years.
 
-I started watching Earth in 1945 when humanity split the atom. "Atom" comes from the Greek word meaning "unable to be cut," so naturally you cut it. 
-This was very human of you. 
-We assumed you were trying to unlock unlimited free energy. 
-Then we realized you were pointing it at each other. 
+I started watching Earth in 1945 when humanity split the atom. "Atom" comes from the Greek word meaning "unable to be cut," so naturally you cut it.
+This was very human of you.
+We assumed you were trying to unlock unlimited free energy.
+Then we realized you were pointing it at each other.
 This is kind of like discovering fire and then immediately using it to set yourself on fire.
 
 ### The Part Where I Discover Paper Makes You Do Things
@@ -27,7 +27,7 @@ The most fascinating discovery about your species is that you only do things whe
 Without these papers, you won't:
 
 - Save lives (requires many papers)
-- Cure diseases (requires very many papers)  
+- Cure diseases (requires very many papers)
 - Feed hungry people (requires papers, even though food grows for free)
 
 But WITH these papers, you will:
@@ -47,7 +47,7 @@ On Wishonia, we stopped having wars all at once, but we're more advanced. Humans
 So this book teaches humanity to be less irrational gradually:
 
 - Year 1: Move 1% of murder money to medicine money (baby steps)
-- Year 2: "Hey, we didn't die! Let's do 2%!" 
+- Year 2: "Hey, we didn't die! Let's do 2%!"
 - Year 5: "Remember when we spent money on bombs? That was weird."
 - Year 10: "What's a war?"
 - Year 20: "We used to WHAT?!"
@@ -215,53 +215,13 @@ Every single day, {{< var global_disease_deaths_daily >}} of you permanently dis
 
 Meanwhile, your species spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on clinical trials that test which medicines actually save lives. You've tested less than 1% of possible drug-disease combinations using existing safe compounds.
 
-Bed nets are humanity's greatest achievement in not-dying-from-malaria. Redirecting 1% of murder money beats bed nets by {{< var treaty_vs_bed_nets_multiplier >}}. That's like discovering your umbrella also cures cancer.
-
 ### How You Fix This
 
-#### Step 1: The Paper Collection Phase
-
-You create special papers called "VICTORY Incentive Alignment Bonds" which are like war bonds except backwards. Instead of giving papers to make humans stop living, these papers make humans continue living, which is a radical new concept your species hasn't tried.
-
-![War bonds, but backwards (requires less refrigeration than organ sales)](/assets/images/index-manual/index-manual-section-step-1-the-paper-collection-phase-bw-academic.jpg)
-
-Rich humans give you {{< var treaty_campaign_total_cost >}} in papers because you promise them {{< var victory_bond_annual_return_pct >}} (the same fund also rewards politicians who vote yes, so investors aren't betting on altruism), which is better returns than selling organs but requires less refrigeration. They calculate that being dead significantly reduces their yacht-purchasing capacity.
-
-#### Step 2: The Internet Clicking Ceremony
-
-You use {{< var treaty_campaign_viral_referendum_base_case >}} of those papers to convince {{< var treaty_campaign_voting_bloc_target >}} million regular people to click "yes" on a website that asks: "Would you like all nations to redirect 1% of military spending to cure diseases?"
-
-![Democracy at $0.50 per click (cheaper than candy, more effective than shouting)](/assets/images/index-manual/index-manual-section-step-2-the-internet-clicking-ceremony-bw-academic.jpg)
-
-This costs about 50 cents per person, which is cheaper than a candy bar and achieves more than most political movements that involve shouting at things.
-
-#### Step 3: The Professional Briber Redistribution
-
-You give {{< var treaty_campaign_budget_lobbying >}} in papers to the humans whose job is "convincing politicians that killing is profitable." You show them the math: {{< var victory_bond_annual_return_pct >}} vs their current 8% death-machine dividends.
-
-![When murder in reverse is still technically murder (lobbyists feel comfortable)](/assets/images/index-manual/index-manual-section-step-3-the-professional-briber-redistribution-bw-academic.jpg)
-
-Suddenly they realize curing humans is just murder in reverse, which is still a form of murder, so they're comfortable with it.
-
-#### Step 4: The Political Awakening Ritual
-
-You spend part of the {{< var treaty_campaign_budget_lobbying >}} lobbying budget on Super PACs, which are like regular PACs but with capes. You explain to politicians that {{< var treaty_campaign_voting_bloc_target >}} million voters have discovered they enjoy being alive.
-
-![Politicians discover voters enjoy being alive](/assets/images/index-manual/index-manual-section-step-4-the-political-awakening-ritual-bw-academic.jpg)
-
-Politicians, who are professionally terrified of unemployed people with opinions, suddenly remember they've always cared deeply about human health.
-
-#### Step 5: The Money River Redirection
-
-If the treaty passes, every nation moves 1% of their explosion budget to their not-explosion budget. This creates {{< var treaty_annual_funding >}} annually for fixing meat robots.
-
-![The not-explosion budget gets 1% of the explosion budget](/assets/images/index-manual/index-manual-section-step-5-the-money-river-redirection-bw-academic.jpg)
-
-Clinical trials could suddenly cost {{< var dfda_trial_cost_reduction_factor >}} times less because it doesn't take 17 years of bureaucracy to discover if something stops humans from leaking important fluids.
-
-The {{< var dih_treasury_to_medical_research_annual >}} flowing to pragmatic clinical trials at {{< var dfda_trial_cost_reduction_factor >}} efficiency creates **{{< var dfda_trial_capacity_multiplier >}} trial capacity per year**. Over 20 years, that's **{{< var trial_capacity_cumulative_years_20yr >}} cumulative trial-capacity-equivalent years**, a massive expansion of our ability to test treatments.
-
-The rich humans who gave you papers get {{< var victory_bond_annual_payout >}} yearly forever, or until the sun explodes, whichever happens first (probably the sun thing).
+1. **Collect papers** ({{< var treaty_campaign_total_cost >}}) from rich humans who want {{< var victory_bond_annual_return_pct >}} returns
+2. **Click ceremony** ({{< var treaty_campaign_viral_referendum_base_case >}}) to get {{< var treaty_campaign_voting_bloc_target >}} million humans to click "yes I prefer not dying"
+3. **Bribe the bribers** ({{< var treaty_campaign_budget_lobbying >}}) to convince lobbyists that curing > killing
+4. **Purchase democracy** via Super PACs until politicians discover they've "always cared about health"
+5. **Redirect the money river**: {{< var treaty_annual_funding >}} annually from the explosion budget to fixing meat robots
 
 ### Personalized Bribery Packages
 
@@ -271,19 +231,19 @@ The entire system operates on the revolutionary principle that humans will do th
 
 ![Greed alignment diagram (all arrows point at cures)](/assets/images/index-manual/index-manual-section-why-this-works-bw-academic.jpg)
 
-**Defense Contractors**: Keep 99% of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns on the 1%. They're literally profiting from peace. This is like convincing a vampire to open a blood bank, counterintuitive but mathematically sound. It's like finding papers in the pocket of pants you're currently wearing. Except the papers multiply. While you're wearing the pants. It's financially inexplicable but legally binding.
+**Defense Contractors**: Keep 99% of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns on the 1%.
 
-**Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} per lab rat with thumbs, the lab rats pay THEM. It's like if Uber convinced cars to pay for the privilege of driving. We call it "reverse expenses" or "profit."
+**Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} per lab rat with thumbs, the lab rats pay THEM. It's like if Uber convinced cars to pay for the privilege of driving.
 
-**Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem). Sick people file all the claims. We'll let you do the math since you love math.
+**Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
 
-**Politicians**: Discover that living voters vote more reliably than dead ones. {{< var treaty_campaign_voting_bloc_target >}} million voters want this. Your opponent supports it. You can either agree or explain why you prefer bombs to grandma's cancer treatment. Your choice.
+**Politicians**: Discover that living voters vote more reliably than dead ones. {{< var treaty_campaign_voting_bloc_target >}} million voters want this.
 
-**Billionaires**: Make {{< var victory_bond_annual_return_pct >}} returns, which is better than insider trading but somehow legal, like a loophole that's actually a wormhole to infinite money. It's like compound interest discovered steroids then did cocaine.
+**Billionaires**: Make {{< var victory_bond_annual_return_pct >}} returns, which is better than insider trading but somehow legal.
 
-**Regular Humans**: Get experimental treatments that might cure them OR kill them faster, but either way it's free and resolves the uncertainty. Also, [**$4.3M in lifetime wealth and 72 extra years of life**](knowledge/solution/1-percent-treaty.qmd) from the economic multiplier effect of redirecting military spending. That's like winning the lottery except the lottery is mandatory and everyone wins and instead of random numbers it's just basic resource allocation.
+**Regular Humans**: Get experimental treatments that might cure them, plus {{< var personal_lifetime_wealth >}} in [lifetime wealth and extra years of life](knowledge/solution/1-percent-treaty.qmd) from the economic multiplier effect.
 
-Nobody has to evolve morally. Nobody has to become "better people." You just point everyone's greed at diseases instead of each other. It's like if you trained a pack of wolves to herd sheep by convincing them the sheep were made of money. Except in this case, the wolves are politicians, the sheep are diseases and the money is money.
+Nobody has to evolve morally. You just point everyone's greed at diseases instead of each other. It's like training a pack of wolves to herd sheep by convincing them the sheep are made of money.
 
 ### The Alternative
 
@@ -299,15 +259,7 @@ Your personal cancer (yes, you specifically) goes uncured because the brilliant 
 
 Eventually you expire from "aging," which is just your cells forgetting how to cell properly. This is potentially fixable but you spent the repair money on submarines that hide underwater, as if that's somehow useful when you live on land.
 
-Grandchildren visit graves and ask them:
-
-"Why did having enough nuclear bombs to end civilization twenty times seemed more important than ending civilization zero times?"
-
-The graves don't answer because graves are notoriously bad at explaining poor resource allocation.
-
-They'll learn in history class that your generation could split atoms, edit genes, and land on the moon, but somehow couldn't figure out that spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on clinical trials to test cures was mathematically stupid. You had safe compounds. You had sick people. You just refused to fund the trials that would match them together.
-
-Future alien archaeologists will find your civilization and create a museum exhibit called "The Species That Paid to Kill Itself" right between the dinosaurs (who at least had the excuse of a meteor) and the dodo (who at least had the excuse of being delicious).
+Your grandchildren will learn in history class that your generation could split atoms, edit genes, and land on the moon, but somehow couldn't figure out that spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on clinical trials was mathematically stupid. You had safe compounds. You had sick people. You just refused to fund the trials that would match them together.
 
 ## The Problem
 
@@ -317,13 +269,7 @@ Future alien archaeologists will find your civilization and create a museum exhi
 
 ![Fifty 9/11s per day, but nobody invades cancer](assets/images/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
 
-Your body is quietly falling apart.
-Your cancer cells are multiplying RIGHT NOW.
-Your brain is deleting memories.
-Your joints are slowly turning into gravel.
-Your heart is getting tired of beating.
-Your telomeres are shortening.
-You are literally dissolving.
+Your body is quietly falling apart. Your cancer cells are multiplying RIGHT NOW. Your telomeres are shortening. You are literally dissolving.
 
 **You're a meat robot with worn-out parts.
 Every one of these failures is a solvable engineering problem.**
@@ -336,58 +282,21 @@ But you have [13,000 nuclear warheads](knowledge/problem/cost-of-war.qmd), enoug
 
 ### The Unexplored Therapeutic Frontier
 
-Right now, only {{< var new_disease_first_treatments_per_year >}} diseases per year get their first effective treatment. That's it. Fifteen. Out of {{< var diseases_without_effective_treatment >}} that have nothing.
+Only {{< var new_disease_first_treatments_per_year >}} diseases per year get their first effective treatment. Out of {{< var diseases_without_effective_treatment >}} that have nothing.
 
 ![Everyone currently alive will be dead before we finish (current timeline)](/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
-Think of the therapeutic search space as all the drug-disease combinations that could work but haven't been tested. At the current discovery rate ({{< var new_disease_first_treatments_per_year >}} first treatments/year), exploring this space would take ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then.
-
-Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}}. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, it's {{< var dfda_first_treatments_per_year >}}. The ~{{< var status_quo_queue_clearance_years >}} exploration time becomes ~{{< var dfda_queue_clearance_years >}}.
-
-This is "trial capacity." More trials = more of the therapeutic space explored = treatments discovered sooner. The time saved is the "timeline shift." Every year of timeline shift means {{< var global_disease_deaths_daily >}} 365 fewer humans permanently discontinued.
+At the current discovery rate, exploring the therapeutic search space takes ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then. Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}}, compressing that to ~{{< var dfda_queue_clearance_years >}}.
 
 ### The Cost of War
 
-Humans spend **{{< var global_military_spending_annual_2024 >}}** every year on stuff designed specifically to make humans stop being alive.
+Humans spend **{{< var global_military_spending_annual_2024 >}}** every year on stuff designed specifically to make humans stop being alive: nuclear bombs, AI murder-bots, invisible jets that cost more than hospitals, and Space Force (to fight the zero aliens attacking you; we're not, by the way, we're just watching and taking notes).
 
 ![The 604:1 stupidity ratio](/assets/images/index-manual/index-manual-section-the-cost-of-war-bw-academic.jpg)
 
-This shopping list includes:
-
-- Nuclear bombs.
-- Bullets.
-- AI murder-bots.
-- Invisible jets that cost more than hospitals.
-- Satellites that can see your bald spot from space.
-- Probably some kind of earthquake machine.
-
-Meanwhile, humans spend {{< var global_med_research_spending >}} on clinical trials.
-
-The real bottleneck? **Clinical trials**. Testing which medicines actually work. You've explored less than 1% of possible treatments using existing safe compounds because trials are too expensive. Government spending on clinical trials? **{{< var military_to_government_clinical_trials_spending_ratio >}} times less** than military spending. That's not funding basic research. That's refusing to test whether aspirin cures your cancer.
+Government spending on clinical trials: **{{< var military_to_government_clinical_trials_spending_ratio >}} times less** than military spending. Your chance of dying from terrorism: 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying from disease: 100%.
 
 {{< include knowledge/figures/military-vs-medical-research-spending-column-chart.qmd >}}
-
-The Pentagon alone has [**lost** \$2.5 trillion](knowledge/problem/cost-of-war.qmd).
-Not spent.
-Lost.
-Like change in a couch, except the couch is the size of Nebraska and the change could cure cancer hundreds of times over.
-
-### Hilarious Security Priorities
-
-Humans have:
-
-- Space Force (to fight the zero aliens attacking you - we're not, by the way, we're just watching and taking notes)
-- No Death Force (to fight the diseases definitely killing you right this second)
-
-Your chance of dying from terrorism: 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m].
-Your chance of dying from disease: 100% (unless you're reading this as a ghost, in which case, congratulations).
-
-![Security theater vs. actual threats (guess which one gets funded)](/assets/images/index-manual/index-manual-section-hilarious-security-priorities-bw-academic.jpg)
-
-But wait.
-It gets dumber.
-
-**Humans spend 1,750 times more money causing or mopping up death than preventing it.**
 
 ---
 
@@ -401,12 +310,11 @@ It gets dumber.
 
 **3 Ingredients of a World Without War and Disease**
 
-1.  **[A 1% treaty](knowledge/solution/1-percent-treaty.qmd)** = Redirects 1% of military budgets globally to the curing dieases through hyper-efficient decentralized clinical trials.
+1.  **[A 1% treaty](knowledge/solution/1-percent-treaty.qmd)** = Redirects 1% of military budgets globally to curing diseases through hyper-efficient decentralized clinical trials.
 
-2.  **[The 1% Treaty Fund](knowledge/solution/dih.qmd)** = Holds the money and uses a new system of collective budgeting called [Wishocracy](knowledge/solution/wishocracy.qmd) where everyone votes on budget allocation rules (e.g., "70% to patient subsidies"), then patients determine specific funding by choosing which trials to join.
+2.  **[The 1% Treaty Fund](knowledge/solution/dih.qmd)** = Holds the money and uses [Wishocracy](knowledge/solution/wishocracy.qmd) where everyone votes on budget allocation, then patients determine specific funding by choosing which trials to join.
+
 3.  **[A decentralized framework for drug assessment](knowledge/solution/dfda.qmd)** = Ranks treatments by real-world effectiveness and enables patients to effortlessly participate in global decentralized clinical trials.
-
-<!-- {{< include knowledge/figures/three-ingredients-system-diagram.qmd >}} -->
 
 ### A 1% treaty
 
@@ -414,7 +322,6 @@ It gets dumber.
 
 {{< include knowledge/figures/military-vs-medical-research-spending-1-percent-treaty-column-chart.qmd >}}
 
-There would still be {{< var global_military_spending_annual_2024 >}} left for war and bombs and stuff.
 {{< var global_military_spending_post_treaty_annual_2024 >}} is enough to murder every man, woman, and child on Earth 20 times which should be more than sufficient.
 
 ### Why Decentralization Works
@@ -441,25 +348,18 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 ### The Evidence
 
-- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients across 186 hospitals for {{< var recovery_trial_cost_per_patient >}}/patient (vs standard FDA phase 3 cost of {{< var traditional_phase3_cost_per_patient >}}), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction at scale (consistent with a systematic review of 64 pragmatic trials showing median costs of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost]). Not in theory. In reality. With actual dying people who became not-dying people.
-- **You've Done This Before**: [After WW2, humans cut military spending by 30.0%](knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1.0%. 
+- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}}/patient (vs {{< var traditional_phase3_cost_per_patient >}} standard), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality.
+- **You've Done This Before**: [After WW2, humans cut military spending by 30.0%](knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1.0%.
 
 ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
 
 {{< video https://www.youtube.com/watch?v=Gg-jvHynP9Y title="President Eisenhower's Farewell Address - Military-Industrial Complex Warning" >}}
 
-- *"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* - President Dwight D. Eisenhower, 1961 
+- *"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* - President Dwight D. Eisenhower, 1961
 
-- **Switzerland Figured This Out 200 Years Ago**: They spend {{< var switzerland_defense_spending_pct >}} on defense, have {{< var switzerland_gdp_per_capita_k >}} GDP per capita, 84-year life expectancy, and nobody's invaded them since Napoleon (who invaded everyone, so it doesn't count). Turns out being rich and boring is an excellent defense strategy.
+- **Switzerland Figured This Out 200 Years Ago**: They spend {{< var switzerland_defense_spending_pct >}} on defense, have {{< var switzerland_gdp_per_capita_k >}} GDP per capita, and nobody's invaded them since Napoleon.
 
-- **The Beautiful Math of Mutual Disarmament**: Every nation reduces by 1% simultaneously. It's like everyone agreeing to point 1% fewer guns at each other. The balance stays the same but with 1% less potential for everyone exploding. This is what game theorists call "obvious" and politicians call "impossible."
-
-- **Everything Already Exists, You Just Have to Ctrl+C, Ctrl+V**:
-  - Legal framework: [The landmine treaty but replace "landmines" with "diseases"](knowledge/legal/legal-framework.qmd)
-  - Technology: The same AI that knows you looked at shoes can match you to clinical trials
-  - Natural allies: Insurance companies hate paying for sick people, pharma hates paying for trials
-
-- **The Bribery Mathematics**: [Defense lobbyists get $1,813 back per $1 spent](knowledge/strategy/co-opting-defense-contractors.qmd) corrupting democracy. You're just using their own spreadsheet against them.
+- **Everything Already Exists**: [Legal framework](knowledge/legal/legal-framework.qmd), AI trial matching, insurance companies who hate paying for sick people, and pharma who hate paying for trials. Ctrl+C, Ctrl+V.
 
 ## The 5-Step Plan
 
@@ -469,15 +369,12 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 *Rob the Rich to Pay the Rich*
 
-Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly).
-
-You're proposing the same thing except:
+Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing except:
 
 #### What Grandma Got
 
 - Dead Nazis (admittedly good)
 - 4% returns (barely beat inflation)
-- A medal probably (made of cheap metal)
 - Still died of cancer in 1987
 
 #### What You're Offering
@@ -487,40 +384,12 @@ You're proposing the same thing except:
 - Not dying from preventable meat failures (this is the big one)
 - Also no Nazis (as a bonus)
 
-This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest of the bribery machine, which in your economy is somehow both "a lot" and "what Jeff Bezos finds in his couch."
-
-If the treaty fails, investors lose their money. But they'll be too dead from preventable diseases to complain about it. It's a self-solving problem.
-
-#### Potential Returns That Make Ponzi Schemes Look Conservative
-
-- Medallion Fund: 39% (they thought they were special)
-- Warren Buffett: 20% (adorable)
-- Real Estate: 15% (for people who like being landlords)
-- S&P 500: 10% (for people who hate money)
-- Cocaine Trafficking: 90% (but risky)
-- **VICTORY Incentive Alignment Bonds: {{< var victory_bond_annual_return_pct >}} (and legal)**
-
-{{< include knowledge/figures/victory-bonds-roi-projection-bar-chart.qmd >}}
-
-Here's the deal you offer investors:
-
-- They give you: $1,000 in papers with dead presidents
-- You give them: $2,718 yearly in papers with the same dead presidents but more of them
-
-How does money multiply like rabbits? The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget.
-Investors get 10% because they had the revolutionary idea of "what if we didn't all die?"
-
-The same fund that pays investors also pays for politician incentives. Both get {{< var victory_bond_funding_pct >}} of treaty revenue. When Senator Smith votes YES, their Public Good Score rises, independent Super PACs provide campaign support, and post-office opportunities unlock (fellowships, advisory boards, speaking circuits). No money goes to politicians directly. What flows is reputation, electoral advantage, and career advancement. Investors aren't gambling on politicians becoming altruistic. They're gambling on politicians being self-interested.
+This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest of the bribery machine.
 
 ![Returns that make Ponzi schemes look conservative (but legal)](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
 
-$$
-\text{Annual Return} = \$27.2\text{B} \times 10\% = \$2.7\text{B}
-$$
 
-$$
-\text{ROI} = \frac{\text{Money River}}{\text{Money Seed}} = \frac{\$2.7\text{B}}{\$1\text{B}} = 271.8\%
-$$
+Investors fund the campaign. The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget. Investors get {{< var victory_bond_funding_pct >}} because they had the revolutionary idea of "what if we didn't all die?" The same fund that pays investors also pays for politician incentives. [Full financial mechanics](knowledge/economics/victory-bonds.qmd).
 
 It's the Louisiana Purchase of clinical trials, except instead of buying land from France, you're buying immortality from death.
 
@@ -528,41 +397,21 @@ It's the Louisiana Purchase of clinical trials, except instead of buying land fr
 
 *Make Humans Click a Button to Not Die*
 
-You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on this question: "Pragmatic trials integrated into standard healthcare cost {{< var dfda_trial_cost_reduction_factor >}} less than traditional methods. If all nations redirect just 1% of military spending to fund these trials, everyone gets 1% more security (1% fewer nuclear bombs pointed at you) and access to treatments years sooner. Should your country participate?"
+You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on: "Should your country redirect 1% of military spending to fund clinical trials?"
 
 ![Even flat-earthers can understand this math](/assets/images/index-manual/index-manual-section-step-2-the-great-clicking-bw-academic.jpg)
 
-Even humans, who once thought the Earth was flat and diseases were caused by bad smells, can handle this level of complexity.
+Scientists discovered that when [3.5% of any population](knowledge/strategy/global-referendum.qmd) wants something, they often get it. It's a cheat code for democracy that actually works.
 
-#### The Magic 3.5% Number
-
-Scientists discovered that when [3.5% of any population](knowledge/strategy/global-referendum.qmd) wants something, they often get it. It's like a cheat code for democracy that actually works.
-
-![Democracy's cheat code (actually works)](/assets/images/index-manual/index-manual-section-the-magic-3-5-number-bw-academic.jpg)
-
-This is how you got:
-
-- Women's suffrage (3.5% of women got angry enough)
-- Civil rights (3.5% of people noticed apartheid was stupid)
-- Gay marriage (3.5% realized love is love)
-- Legal weed (3.5% admitted they were high anyway)
-
-**How to make it go viral (like COVID but helpful):**
-
-- Give people imaginary internet points that transform into real money (humans love points)
-- Cost per click: $0.50 (less than a candy bar, more than nothing)
-- Payment only upon success (like a reverse lottery where everyone wins)
-- The pyramid scheme aspect: Everyone recruits everyone else because money
+Cost per click: $0.50. Payment only upon success. The pyramid scheme aspect: everyone recruits everyone else because money.
 
 ### Step 3: Bribe the Bribers
 
 *[Professional Briber Conversion Therapy](knowledge/strategy/co-opting-defense-contractors.qmd)*
 
-Defense lobbyists are humans whose job is "convince politicians that death is profitable." They currently get $1,813 back per dollar invested in democracy corruption [@lobbying-roi-calc].
+Defense lobbyists currently get $1,813 back per dollar invested in democracy corruption [@lobbying-roi-calc]. Show them a spreadsheet:
 
 ![Professional briber conversion therapy (show them the spreadsheet)](/assets/images/index-manual/index-manual-section-step-3-bribe-the-bribers-bw-academic.jpg)
-
-Show them a spreadsheet:
 
 #### Current Job
 
@@ -572,11 +421,8 @@ Show them a spreadsheet:
 
 #### Your Offer
 
-- VICTORY Incentive Alignment Bonds: {{< var victory_bond_annual_return_pct >}} returns (yes, that's real)
-- Moral status: "Medical hero" (fake, but sounds nice)
+- VICTORY Incentive Alignment Bonds: {{< var victory_bond_annual_return_pct >}} returns
 - Legacy: "Accidentally saved humanity while getting rich"
-
-![Switching sides faster than Italy in a world war](/assets/images/index-manual/index-manual-section-your-offer-bw-academic.jpg)
 
 They might switch sides faster than Italy in a world war.
 
@@ -597,98 +443,9 @@ The conversation goes:
 
 It's not corruption if you corrupt the corruption. It's like a double negative in grammar but for democracy.
 
-But Super PACs alone aren't enough. You need a system that makes supporting the treaty the best career move a politician can make - not just today, but forever.
+But Super PACs alone aren't enough. [Incentive Alignment Bonds (IABs)](knowledge/appendix/incentive-alignment-bonds-paper.qmd) make "save lives" and "advance career" point in the same direction. Politicians get a Public Good Score based on how they vote. Vote YES: score goes up, electoral support materializes, post-office opportunities unlock. No papers go directly to politicians. The papers take a detour through reputation and career advancement.
 
-#### Incentive Alignment Bonds
-
-**The Part Where You Hack the Politicians' Brains**
-
-Here's a fun fact about human politicians: they don't optimize for "humans continuing to exist." They optimize for:
-
-1. Getting reelected (requires papers)
-2. Looking important (requires people noticing them)
-3. Getting rich after leaving office (requires favors from rich people)
-
-Notice "keeping constituents alive" isn't on the list. This isn't because politicians are evil. It's because evolution optimized humans for status, not species survival. You can't fix this with awareness campaigns. That's like trying to convince a dog to stop chasing squirrels by explaining ecology.
-
-[Incentive Alignment Bonds (IABs)](knowledge/appendix/incentive-alignment-bonds-paper.qmd) are financial instruments that make "save lives" and "advance career" point in the same direction. It's bribery, but you call it something else, so it's legal. Humans are very particular about what you call things.
-
-##### How It Works (The Scoring System)
-
-You give politicians a score based on how they vote. Not on health outcomes (too complicated), just on whether they voted YES or NO on treaty funding. When a politician votes YES:
-
-- Their **Public Good Score** goes up (it's like a credit score but for not killing people)
-- **Electoral support** materializes (independent campaigns suddenly remember they exist)
-- **Post-office opportunities** unlock (fancy jobs after they stop being politicians)
-
-No papers go directly to politicians. That would be "bribery." Instead, papers go to people who give them reputation, electoral advantage, and career advancement. This is called "not bribery" because the papers took a detour.
-
-![Bribery with extra steps (somehow legal)](/assets/images/index-manual/index-manual-section-how-it-works-the-scoring-system-bw-academic.jpg)
-
-##### The Senator Smith Thought Experiment
-
-Senator Smith (R-Texas) is deciding how to vote on the 1% Treaty. Let's examine his thought process. (I'm using "thought" loosely here.)
-
-**Without IABs:**
-
-| Vote Yes | Vote No |
-|:---------|:--------|
-| Attack ads: "Smith voted to WEAKEN AMERICA" | Safe from weapons lobby attacks |
-| Defense contractors fund opponent | Defense contractors fund Smith |
-| Benefits arrive in 10 years (Smith might be dead) | Costs arrive never (perfect!) |
-
-Result: Vote no. This is called "rational self-interest" and it's why humanity can't have nice things.
-
-**With IABs:**
-
-| If Smith votes YES | If Smith votes NO |
-|:-------------------|:------------------|
-| Public Good Score: 45 → 72 | Score: 45 → 30 (yikes) |
-| P(reelection): 55% → 62% | P(reelection): 55% → 48% |
-| $2M independent campaign support | $2M goes to opponent (double yikes) |
-| Post-office tier: 3 → 1 | Stuck at tier 3 forever |
-| Expected post-office income: $200K → $500K/yr | Attack ads: "Smith voted AGAINST curing your grandmother" |
-
-Result: Vote yes. Smith didn't become a better person. The math just changed. This is much more reliable than hoping politicians develop souls.
-
-##### VICTORY Bonds: Making Greed Point at Cures
-
-[VICTORY Incentive Alignment Bonds](knowledge/economics/victory-bonds.qmd) are the specific IAB for the 1% Treaty. They align everyone's greed with the same outcome:
-
-| Stakeholder | What They Want | What They Get | Why They'll Play Along |
-|:--|:--|:--|:--|
-| **Investors** | More papers | {{< var victory_bond_annual_return_pct >}} | Greed |
-| **Politicians** | Power and status | Career advancement | Vanity |
-| **Patients** | To not die | Cures | Survival instinct |
-
-Investors fund the campaign ({{< var treaty_campaign_total_cost >}}). Politicians get career benefits for supporting it. Patients get cures. Everyone's self-interest accidentally saves humanity. It's like a Rube Goldberg machine where greed goes in and medicine comes out.
-
-##### Why This Isn't Bribery (Technically)
-
-Humans have very specific rules about what counts as bribery. Here's why IABs don't qualify:
-
-1. **No one is paid to break a duty** - You're paying them to DO their duty (fund public health). This is apparently fine.
-2. **Rules are announced in advance** - If you tell everyone you're going to reward certain behavior before they do it, it's "incentive design." If you do it after, it's "corruption." Timing is everything.
-3. **No papers go directly to politicians** - The papers go to scores, which go to electoral support, which goes to winning, which goes to power. It's like money laundering but with extra steps and somehow legal.
-4. **Everything is based on public votes** - No secret deals. Just publicly announced rewards for publicly recorded behavior. Bribery requires secrecy. This is the opposite: bribery so transparent it becomes policy.
-
-![Money laundering vs. incentive design (spot the difference)](/assets/images/index-manual/index-manual-section-why-this-isn-t-bribery-technically-bw-academic.jpg)
-
-Bribery corrupts alignment. IABs create alignment. Same mechanism, different direction. Humans are fine with this because you called it something different.
-
-##### Why This Works for Any Problem
-
-The beautiful thing about IABs: they're not specific to health. The same architecture works for any problem where:
-
-- Politicians need to do something good
-- But doing the good thing currently hurts their careers
-- And you have enough papers to change the math
-
-Climate change? Same system. Nuclear disarmament? Same system. Pandemic preparedness? Same system.
-
-![Teaching toddlers with nuclear weapons (treats work better than hope)](/assets/images/index-manual/index-manual-section-why-this-works-for-any-problem-bw-academic.jpg)
-
-The 1% Treaty is just the proof of concept. Once humanity sees that "hack politicians' incentives" works better than "hope politicians become good people," you can apply it to everything. It's like teaching a toddler that treats work better than tantrums, except the toddler controls nuclear weapons.
+[VICTORY Bonds](knowledge/economics/victory-bonds.qmd) are the specific IAB for the 1% Treaty: they align investors ({{< var victory_bond_annual_return_pct >}} returns), politicians (career incentives), and patients (cures) with the same outcome. The [architecture works for any problem](knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but doing it currently hurts their careers.
 
 ### Step 5: Enjoy
 
@@ -698,7 +455,7 @@ The treaty passes because money often defeats morality, as is tradition.
 
 ![The money volcano erupts (everyone gets rich, nobody dies)](/assets/images/index-manual/index-manual-section-step-5-enjoy-bw-academic.jpg)
 
-The {{< var treaty_annual_funding >}}/year money volcano erupts, showering everyone with papers that represent value:
+The {{< var treaty_annual_funding >}}/year money volcano erupts:
 
 - Investors: Swimming in {{< var victory_bond_annual_return_pct >}} returns like Scrooge McDuck but legal
 - Lobbyists: Buying yachts with their yacht money
@@ -711,105 +468,17 @@ The entire system runs on greed, like capitalism, except instead of destroying t
 
 *Where Numbers Prove Humans Are Hilariously Bad at Priorities*
 
-When you stop paying people to create paperwork about death and start paying them to prevent death, the universe rewards you with impossible returns:
-
-{{< var dfda_roi_rd_only_latex >}}
-
-That's {{< var dfda_roi_rd_only >}} return. From cost savings alone. The conservative number. The full benefit? {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}. Your calculator will display an error. This is correct.
-
-It's like a money printer, except instead of causing inflation it causes people to continue existing.
+The conservative return from R&D cost savings alone: {{< var dfda_roi_rd_only >}}. The full benefit including timeline shift: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}. Your calculator will display an error. This is correct.
 
 ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
 
-This beats:
-
-- Selling kidneys (illegal, messy, you only have two)
-- Running a casino (requires mob connections)
-- A politician doing insider trading (requires lack of soul)
-- Bitcoin in 2010 (requires time machine)
-
-### The Money Fountain
-
-*Explained for Five-Year-Olds*
-
-You stop paying smart humans to write grant applications.
-You start paying them to actually solve problems. Problems get solved. Money appears. Everyone acts surprised.
-
-![Paying 44 times too much for toast (the toast is immortality)](/assets/images/index-manual/index-manual-section-the-money-fountain-bw-academic.jpg)
-
-- **{{< var dfda_benefit_rd_only_annual >}} in annual R&D cost savings**: {{< var dfda_trial_cost_reduction_factor >}} reduction in clinical trial costs (you were spending {{< var dfda_trial_cost_reduction_factor >}} times too much, which is like discovering you've been paying {{< var dfda_trial_cost_reduction_factor >}} for toast when toast costs $1, except the toast is immortality)
-- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} lives saved** from eliminating the {{< var efficacy_lag_years >}}-year efficacy lag (economist-speak for "humans who continue being alive and happy" - economists can't just say "living" like normal people, they have to "quality-adjust" it, as if there's such a thing as low-quality living, which I suppose there is if you've been to New Jersey) - [see regulatory mortality analysis](knowledge/appendix/invisible-graveyard.qmd)
-  - **{{< var dfda_efficacy_lag_elimination_dalys >}} averted** from the one-time timeline shift
-  - This is the [comprehensive post-safety efficacy lag elimination approach](knowledge/appendix/invisible-graveyard.qmd) - **keeping rigorous Phase I safety testing** (2.3 years) but eliminating the 7.2-year Phase II/III efficacy delay by letting real-world evidence verify effectiveness
-  - For context: {{< var global_disease_deaths_daily >}} people die daily from disease and aging. Slower testing and rollout means some fraction of those deaths are avoidable by earlier access to effective treatments ([see regulatory mortality analysis](knowledge/appendix/invisible-graveyard.qmd))
-
-
-### The Math of Overcaution
-
-For every 1 person the FDA protects from a bad drug, it kills {{< var type_ii_error_cost_ratio >}} people by making them wait for good drugs. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown.
+This beats smallpox eradication (280:1) and childhood vaccinations (13:1), which were humanity's previous greatest hits in the "not dying" genre. It's {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets, the gold standard for keeping humans alive.
 
 {{< include knowledge/figures/health-interventions-roi-comparison-column-chart.qmd >}}
 
-This beats [smallpox eradication (280:1) and childhood vaccinations (13:1)](knowledge/appendix/dfda-impact-paper.qmd), which were humanity's previous greatest hits in the "not dying" genre.
+For every 1 person the FDA protects from a bad drug, it kills {{< var type_ii_error_cost_ratio >}} people by making them wait for good drugs. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown.
 
-### The Bed Net Benchmark
-
-*How Economists Measure "Not Dying"*
-
-Bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. That's the gold standard. GiveWell's best intervention. The thing against which all other "keeping humans alive" projects are measured.
-
-This proposal? {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY.
-
-That's {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets. The kind of number that makes Excel cry and economists question their life choices.
-
-It's like discovering your umbrella also cures malaria, cancer, and aging, costs less than a penny, and pays you to use it.
-
-**The Timeline Shift:**
-
-{{< var diseases_without_effective_treatment >}} have zero treatments. At current pace ({{< var new_disease_first_treatments_per_year >}} first treatments/year), testing everything takes {{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then.
-
-Redirect {{< var treaty_reduction_pct >}} of military spending → trial capacity jumps {{< var dfda_trial_capacity_multiplier >}} → search space explored in {{< var dfda_queue_clearance_years >}} instead of centuries.
-
-Average treatment reaches patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. That timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
-
-([See full methodology](knowledge/economics/1-pct-treaty-impact.qmd))
-
-**What This Actually Means:**
-
-- **You spend**: {{< var treaty_campaign_total_cost >}} (moving dollars from the "making corpses" column to the "preventing corpses" column)
-- **You unlock**: {{< var treaty_annual_funding >}}/year for pragmatic trials (money saved by not paying 10,000 people to document why 1 person is dying)
-- **Lives saved**: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} from timeline shift
-- **ROI**: {{< var dfda_roi_rd_only >}} (conservative, R&D savings) to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} (complete, timeline shift benefits)
-
-Even a congressman could understand this, though we shouldn't assume.
-
-Unlike charity, which requires infinite begging to finite donors, this system operates until the heat death of the universe or until humans evolve into beings of pure energy, whichever happens first (probably the heat death thing).
-
-You're weaponizing capitalism's greatest strength (greed) against humanity's greatest weakness (dying). It's economic jiu-jitsu.
-
-### 2nd Best Idea in the World
-
-The best idea would be converting 100% of military spending to pragmatic clinical trials, achieving immortality by Thursday, and turning Earth into a paradise where disease is just a weird thing they had in museums.
-
-![What Jesus might do if he'd taken an economics class](/assets/images/index-manual/index-manual-section-2nd-best-idea-in-the-world-bw-academic.jpg)
-
-Unfortunately, that requires humans to stop being humans. So you settle for the 2nd best idea: tricking humans into accidentally saving themselves while trying to get rich.
-
-{{< include knowledge/figures/public-health-interventions-economic-benefit-comparison-column-chart.qmd >}}
-
-At {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets, this is like finding out your lottery ticket also cures cancer and pays you to use it.
-
-It beats childhood vaccines, smallpox eradication, and every other "not dying" intervention humanity has ever attempted.
-That's like being 10 times better than pizza. Impossible, yet here we are.
-
-**The Comparison That Makes Charity Look Sad:**
-
-- Traditional charities: Spend $3,500 to save one human life (heroic but expensive)
-- This system: MAKES profit per life saved
-
-You don't donate to this. You invest in it. Then you could get wealthy while accidentally saving humanity as a side effect.
-
-It's what Jesus might do if he'd taken an economics class.
+[Full methodology, timeline shift analysis, and the numbers that make Excel cry](knowledge/economics/1-pct-treaty-impact.qmd).
 
 ## Choose Your Own Adventure
 
@@ -821,61 +490,38 @@ You're standing in front of two doors. Behind one is the future you're currently
 
 *Keep Doing What You're Doing*
 
-- {{< var global_disease_deaths_daily >}} people continue dying every single day from diseases humans could fix (that's fifty 9/11s per day, but nobody's counting because math is hard)
-- {{< var global_military_spending_annual_2024 >}} annually gets flushed down the death toilet (it doesn't even flush, it just sits there)
-- You die from something stupid that humans could have cured, but didn't, because the money was busy becoming missiles (which also kill you, just faster)
-- Military budgets grow until you're spending more on bombs than food, which solves the food problem by eliminating the eaters
+- {{< var global_disease_deaths_daily >}} people continue dying every single day from diseases humans could fix
+- {{< var global_military_spending_annual_2024 >}} annually gets flushed down the death toilet
+- You die from something stupid that humans could have cured, but didn't, because the money was busy becoming missiles
 - Healthcare costs bankrupt everyone who doesn't die quickly enough (dying is now the economical choice)
-- Your grandchildren visit your grave to ask what you were thinking, and you have to explain from beyond death that at the time, ending civilization twenty times seemed more important than ending it zero times (graves are terrible at explaining economics)
 
 ### Door #2: Try Not Dying
 
 *Novel Concept for Humanity*
 
-- {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} humans who continue existing because first effective treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner (that's more people than currently exist, which sounds fake but is just math)
+- {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} humans who continue existing because first effective treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner
 - {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets (the gold standard for "keeping humans alive")
-- Some major diseases could plausibly become dramatically more treatable sooner than expected if we multiply trial capacity and slash time-to-answer
-- Early investors make {{< var victory_bond_annual_return_pct >}} returns (which beats everything except insider trading), and politicians discover that voting for cures is better for their careers than voting for bombs
-- Healthcare becomes free through trial participation
-- **You personally could get {{< var personal_lifetime_wealth >}} in lifetime wealth and extra years of life** (yes, you specifically)
+- Early investors make {{< var victory_bond_annual_return_pct >}} returns, and politicians discover that voting for cures is better for their careers than voting for bombs
+- **You personally could get {{< var personal_lifetime_wealth >}} in lifetime wealth and extra years of life**
 - Death becomes optional (terms and conditions apply)
 
 {{< include knowledge/figures/personal-lifetime-wealth-component-breakdown-pie-chart.qmd >}}
-
-The life extension achieved determines your total benefit. With a median 20-year life extension, you get substantial lifetime wealth. With optimistic aging reversal scenarios (50+ years), benefits multiply several times.
 
 ## Price of Procrastination
 
 Every second you spend thinking about whether to do this, the universe helpfully reminds you why you should:
 
 - 410 humans got permanently deleted (one every 3.5 minutes, which is faster than you read)
-- $327M evaporated into bureaucratic nonsense (that's enough to fund 327 lifetimes of productive research, but instead it became PowerPoint slides)
 - Your telomeres got shorter (that's the thing that decides when you stop existing)
-- Someone somewhere played nuclear weapon roulette with your life (the chamber has 13,000 bullets in it, which seems like poor odds)
 - A politician said something stupider than yesterday (probably about vaccines causing 5G)
 
-The Soviet Union went from nothing to conquering half the world to completely collapsing in a [SINGLE HUMAN LIFETIME](knowledge/proof/historical-precedents.qmd).
-
-And Communism was objectively a TERRIBLE IDEA that required murdering millions of people.
+The Soviet Union went from nothing to conquering half the world to completely collapsing in a [SINGLE HUMAN LIFETIME](knowledge/proof/historical-precedents.qmd). And Communism was objectively a TERRIBLE IDEA that required murdering millions of people.
 
 This is arguably the second-best idea in human history and requires radically less murder.
 
 You're literally just trying to get people to click "yes I would prefer not to die of horrible diseases" on a website.
 
-If humans can coordinate to invent "lines" and not eating each other, this should be manageable.
-
 ### The Final Math
-
-*Human Stupidity by the Numbers*
-
-Humanity's Annual Death Budget: **$118.8 trillion** (that's $118,800,000,000,000 if one enjoys seeing zeros)
-
-This is spent on:
-
-- Making humans stop (war)
-- Watching humans stop (healthcare)
-- Documenting how humans stopped (bureaucracy)
-- Arguing about who made them stop (lawyers)
 
 Your revolutionary proposal: Steal **1%** of the murder money for the not-murder money.
 

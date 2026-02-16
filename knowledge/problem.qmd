@@ -40,61 +40,21 @@ The real bottleneck isn't research funding. It's testing which treatments actual
 
 ![Humanity spends 2.72 trillion on weapons and 4.5 billion on testing medicine. That's 604 times more money for killing than curing. You named yourselves Homo sapiens, which is Latin for 'wise man.' The irony is exquisite.](/assets/images/problem/problem-section-where-the-money-goes-bw-academic.jpg)
 
-For comparison, imagine if you spent $2,700 on guns and $68 on food. Your neighbors would stage an intervention (or call the police, or possibly just move). But when humanity does it, you call it "military spending" and give everyone medals.
-
-## On the Pentagon's Accounting
-
-The Pentagon has lost $2.5 trillion. Not spent. Lost. Like car keys, except the car keys could cure cancer several hundred times.
-
-![The Pentagon lost 2.5 trillion dollars. Just lost it. That's 37 years of cancer research, or 17 aircraft carriers, or one really expensive audit that found nothing except the missing 2.5 trillion dollars.](/assets/images/problem/problem-section-on-the-pentagon-s-accounting-bw-academic.jpg)
-
-When normal people lose $20, they search the couch cushions. When the Pentagon loses $2,500,000,000,000, they ask for more money and Congress says yes.
-
-If you tried this with your taxes, they'd arrest you. When the military does it, it's called "standard operating procedure," which is also Latin, probably for "you're making this up as you go."
-
-They say a trillion is just a number. But it's the number of dollars you lost that could have funded medical research for thirty-seven years. Give or take a few hospitals, several cancer cures, and maybe a solution to aging (but who needs that when you have seventeen redundant aircraft carrier strike groups).
-
 ## On Medical Research
 
-Since 1970, the National Institutes of Health has spent over $1 trillion studying diseases.
-
-![America spent $55,500 per patient to test COVID treatments. Britain spent $500. Same disease, same planet, same year. Different levels of commitment to wasting money.](/assets/images/problem/problem-section-on-medical-research-bw-academic.jpg)
+Since 1970, the [National Institutes of Health](problem/nih-fails-2-institute-health.qmd) has spent over $1 trillion studying diseases.
 
 Diseases cured: Zero.
 
-Well, technically that's not fair. They cured... let me check my notes... no, it's zero.
+Of its {{< var nih_annual_budget >}} annual budget, only {{< var nih_clinical_trials_spending_pct >}} goes to actual drug trials in humans. The other 97% goes to studying mice, building buildings, and publishing papers nobody reads. The system is operating at 2% of its potential capacity to save lives.
 
-Here's where it gets interesting. The NIH has a {{< var nih_annual_budget >}} annual budget. Of that, only {{< var nih_clinical_trials_spending_pct >}} goes to actual drug trials in humans. The other 97% goes to studying mice, building buildings, training researchers, and publishing papers nobody reads.
-
-It's like if you spent 97% of your grocery budget on cookbooks and 3% on food, then wondered why you're starving.
-
-But it gets worse. The NIH RECOVER Initiative spent $1.665 billion over four years testing COVID treatments. Trials completed: zero. Cost per patient: $55,500.
-
-Meanwhile, the UK's RECOVERY trial spent {{< var recovery_trial_total_cost >}} over six months, enrolled 48,000 patients, found multiple effective treatments, and saved over 1 million lives. Cost per patient: {{< var recovery_trial_cost_per_patient >}}.
-
-The NIH spent 133 times more per patient to achieve infinitely less (dividing by zero is still infinity, even in government accounting).
-
-This inefficiency has a body count. The misallocation costs approximately 100 million quality-adjusted life-years annually. That's 7 million death-equivalents per year from choosing the wrong research instead of the right research.
-
-![The US spent 111 times more per patient than the UK to get worse results slower. Efficiency is apparently un-American.](/assets/images/problem/problem-section-research-efficiency-comparison-bw-academic.jpg)
-
-The system is operating at 2% of its potential capacity to save lives.
-
-Also, NIH funding priorities have a 0.07 correlation with actual disease burden. That's essentially random. You could allocate the budget by throwing darts at a disease list and get better results (darts don't have institutional overhead or grant-writing requirements).
+![America spent $55,500 per patient to test COVID treatments. Britain spent $500. Same disease, same planet, same year. Different levels of commitment to wasting money.](/assets/images/problem/problem-section-on-medical-research-bw-academic.jpg)
 
 ## On the FDA
 
-The FDA is America's way of making sure drugs are safe. They do this by making the approval process so expensive and slow that most drugs never get approved at all.
+The [FDA](problem/fda-is-unsafe-and-ineffective.qmd) makes drugs {{< var recovery_trial_cost_reduction_factor >}} times more expensive than necessary. It takes {{< var drug_discovery_to_approval_years >}} and {{< var pharma_drug_development_cost_current >}} to get a drug from discovery to patient. That's longer than it took to build the pyramids, and the pharaohs didn't have to file quarterly progress reports in triplicate. Ninety-five percent of diseases have zero approved treatments because the FDA is excellent at preventing any drugs from reaching people.
 
 ![Oxford tests drugs for $500 per patient. The FDA does it for $41,000. Both use the same scientific method, discovered in the 17th century. Innovation takes time.](/assets/images/problem/problem-section-on-the-fda-bw-academic.jpg)
-
-It takes {{< var drug_discovery_to_approval_years >}} and {{< var pharma_drug_development_cost_current >}} to get a drug from discovery to patient. {{< var drug_discovery_to_approval_years >}}. That's longer than it took to build the pyramids, and those involved moving rocks the size of houses without machinery (also the pharaohs didn't have to file quarterly progress reports in triplicate).
-
-During the Oxford RECOVERY trial, they tested treatments on 40,000 patients for {{< var recovery_trial_cost_per_patient >}} per person. The FDA's process costs {{< var traditional_phase3_cost_per_patient >}}. That's {{< var recovery_trial_cost_reduction_factor >}} times more expensive for the same result, except slower. It's like if you could get a haircut for $10 or $820, but the $820 haircut takes {{< var drug_discovery_to_approval_years >}} from discovery to patient and you might be bald by then anyway.
-
-Ninety-five percent of diseases have zero approved treatments. This is because the FDA is very good at preventing bad drugs from reaching people, and also pretty good at preventing good drugs from reaching people, and absolutely excellent at preventing any drugs from reaching people.
-
-They say the road to hell is paved with good intentions. The FDA's road is paved with good intentions and also {{< var drug_discovery_to_approval_years >}} from discovery to patient.
 
 ## On What War Costs
 
@@ -117,132 +77,57 @@ The interesting thing about having 13,000 nuclear warheads is that after the fir
 
 ## On What Disease Costs
 
-Disease extracts {{< var global_disease_economic_burden_annual >}} from humanity annually. That's trillion with a T, which stands for "that's an unconscionably large number."
-
-This includes:
-
-- {{< var global_symptomatic_disease_treatment_annual >}} on healthcare (treating symptoms because cures are bad for business)
-- {{< var global_disease_economic_burden_annual >}} in economic losses (dead people are notoriously unproductive)
-- 10 million cancer deaths per year (cancer: 10 million, humanity: 0)
-- 2 billion people with chronic diseases (right now, as you read this)
-- 1 billion depressed humans (costing {{< var global_disease_productivity_loss_annual >}} in lost "wanting to exist")
-- 95% of rare diseases with zero treatments (too rare to profit from, sorry)
+Disease extracts {{< var global_disease_economic_burden_annual >}} from humanity annually, including 10 million cancer deaths per year, 2 billion people with chronic diseases, and 1 billion depressed humans costing {{< var global_disease_productivity_loss_annual >}} in lost "wanting to exist."
 
 {{< include figures/trial-access-disparity-chart.qmd >}}
 
-Out of {{< var current_disease_patients_global >}} suffering from chronic disease right now, only {{< var current_trial_slots_available >}} get to participate in clinical trials annually. That's {{< var current_patient_participation_rate >}}. The other 99.8% get to suffer and wait (and fill out insurance paperwork, and argue with their insurance company about whether dying is covered under their plan).
-
-Half of humanity would volunteer if asked. You're turning away 99.6% of willing participants. It's like running a restaurant but only serving 0.4% of the people who want to eat there, then wondering why everyone is so hungry.
-
-The last disease you cured was Hepatitis C in 2014. The next cure is scheduled for 2064. Please wait patiently and try not to die in the meantime.
-
 If disease were a country, it would be the richest country on Earth by a factor of ten. Unfortunately, disease doesn't have a flag or an army, so nobody invades it.
+
+Out of {{< var current_disease_patients_global >}} suffering from chronic disease, only {{< var current_trial_slots_available >}} get to participate in clinical trials annually. That's {{< var current_patient_participation_rate >}}. Half would volunteer if asked. You're turning away 99.6% of willing participants.
 
 ## On Democracy
 
-Democracy is when everyone votes and the government does what everyone wants. At least that's what the brochure says.
+A Princeton study found [0% correlation](problem/unrepresentative-democracy.qmd) between what the public wants and what policies get enacted. When military contractors want $100 billion, they spend $55 million lobbying for it. That's a 1,813% return on investment.
 
 ![Defense contractors spend $250 million on lobbying and get $850 billion in contracts. That's a 340,000 percent return. You voted and got a sticker. Both are forms of civic participation.](/assets/images/problem/problem-section-on-democracy-bw-academic.jpg)
 
-In reality, a Princeton study found 0% correlation between what the public wants and what policies get enacted. Zero percent. You'd get better results with a magic 8-ball.
+When you want healthcare, you have approximately zero dollars to lobby with because you spent it all on healthcare (or you're dead, which significantly reduces your lobbying capacity).
 
-This is because of something called "concentrated benefits versus diffuse costs." When military contractors want $100 billion, they spend $55 million lobbying for it. That's a 1,813% return on investment.
-
-When you want healthcare, you have approximately zero dollars to lobby with because you spent it all on healthcare (or you're dead, which significantly reduces your lobbying capacity - corpses have no political voice, despite making up a the largest constituency).
-
-Lobbying is basically legal bribery, except you call it "free speech" so it sounds nicer. It's like how "alternative facts" sounds better than "lies," or how "enhanced interrogation" sounds better than "torture."
-
-## On Regulatory Capture
-
-Regulatory capture is when the people who are supposed to regulate an industry used to work for that industry and will work for that industry again after they're done "regulating" it.
-
-The process works like this:
-
-1. Work at pharmaceutical company, learn what they want
-2. Join FDA, write rules pharmaceutical company likes  
-3. Return to pharmaceutical company with 400% raise
-4. Congratulations, you've completed the circle of life
-
-The Pentagon has the same system, except with more explosions.
-
-![The revolving door between industry and government. Regulate your future employer gently, get hired, then lobby your former colleagues to regulate your new employer even more gently. It's the circle of life, but for corruption.](/assets/images/problem/problem-section-the-regulatory-capture-cycle-bw-academic.jpg)
-
-This is why the FDA's rules mysteriously benefit large pharmaceutical companies who can afford {{< var pharma_drug_development_cost_current >}} approval processes, and why Pentagon procurement mysteriously benefits military contractors who can afford $1,800 hammers.
+Meanwhile, the people who regulate industries used to work for those industries and will work for them again after they're done "regulating." It's called the [revolving door](problem/unrepresentative-democracy.qmd), and it spins in one direction: toward money.
 
 ## On the Fixed Pie
 
-Here's something they don't teach in economics class: Money isn't real, but resources are.
+Money isn't real, but resources are. Earth has 8 billion human brains. Every MIT graduate building missiles is not [curing cancer](economics/central-banks.qmd). Switzerland spends {{< var switzerland_defense_spending_pct >}} of GDP on military and has {{< var switzerland_gdp_per_capita_k >}} GDP per capita. America spends {{< var us_military_spending_pct_gdp >}} and has $76,000.
 
 ![Switzerland pays doctors more than generals and has a higher GDP per capita than America. America pays generals more than doctors and has more aircraft carriers. Different priorities, different outcomes.](/assets/images/problem/problem-section-on-the-fixed-pie-bw-academic.jpg)
 
-Earth has 8 billion human brains. You can't print more brains. When the government prints money for military contractors, those contractors buy the smartest people. Every MIT graduate building missiles is not curing cancer.
-
-Medical research funding has increased 10X in dollars but decreased as a percentage of GDP. This is because you're printing money for weapons faster than you're printing money for cures. 
-
-The brain drain is real: Raytheon pays $150,000 to design bombs, the NIH pays $55,000 to cure diseases. Guess where the geniuses go.
-
-Switzerland spends {{< var switzerland_defense_spending_pct >}} of GDP on military and has {{< var switzerland_gdp_per_capita_k >}} GDP per capita. America spends {{< var us_military_spending_pct_gdp >}} on military and has $76,000 GDP per capita. 
-
 The solution isn't to print more money for medical research. The solution is to change the ratio. Take money from the killing budget, give it to the not-dying budget. This is called "arithmetic," which is apparently a controversial field of mathematics.
-
-## On Your Personal Situation
-
-While you've been reading this, approximately 8 people have died from disease and aging. Many of those deaths are likely eventually avoidable. By the end of this chapter, it'll be 15.
-
-![Your cells stop dividing, your joints wear out, your organs forget what they're supposed to do, and eventually you die. Scientists could maybe fix this, but you spent the money on jets instead.](/assets/images/problem/problem-section-on-your-personal-situation-bw-academic.jpg)
-
-Your body is currently:
-
-- Growing cancer cells (slowly, hopefully)
-- Forgetting memories (where did you park?)
-- Wearing out joints (that knee isn't getting better)
-- Shortening telomeres (your cellular countdown clock)
-- Accumulating damage (entropy is undefeated)
-
-You are literally falling apart at the molecular level. Every moment you exist, you're dying slightly. It's like being a sandcastle at high tide, except slower and with more paperwork.
-
-The technology to fix most of this exists. It's just busy building fighter jets instead.
 
 ## What This Means
 
-To summarize:
-
-- {{< var global_disease_deaths_daily >}} humans die daily from disease and aging, many of which are eventually avoidable
+- {{< var global_disease_deaths_daily >}} humans die daily from disease and aging, many eventually avoidable
 - {{< var global_military_spending_annual_2024 >}} spent annually on weapons
 - {{< var global_med_research_spending >}} spent annually on curing all diseases combined
-- {{< var military_to_government_clinical_trials_spending_ratio >}} weapons-to-clinical-trials spending ratio (the bottleneck isn't research. It's testing which medicines work.)
+- {{< var military_to_government_clinical_trials_spending_ratio >}} weapons-to-clinical-trials spending ratio
 - Zero diseases cured in 50 years
-- $2.5 trillion lost by Pentagon (whoops)
 - 0% correlation between public preferences and policy
 - You are dying while reading this
 
-If this seems bad, that's because you're paying attention.
-
 ![For every dollar spent curing disease, you spend 604 dollars on weapons. If you allocated your fear proportionally to actual threats, you'd be more afraid of your pancreas than North Korea.](/assets/images/problem/problem-section-what-this-means-bw-academic.jpg)
 
-The good news is you're going to fix it.
+If this seems bad, that's because you're paying attention.
 
-The bad news is it requires doing things.
-
-The weird news is you'll get rich doing it.
-
-They say every problem is an opportunity in disguise. In this case, the opportunity is disguised as 150,000 corpses per day, which is admittedly not the most encouraging disguise, but you work with what you have.
+The good news is you're going to fix it. The bad news is it requires doing things. The weird news is you'll get rich doing it.
 
 ## What's Next
 
-Now that you understand the problem, which is to say, now that you're appropriately horrified, here's how to fix it.
+The following chapters explain each problem in detail:
 
-![How your institutions conspire to make medicine expensive, slow, and ineffective. It's not a conspiracy; everyone's just doing their job. The system is working perfectly; it's just not working for you.](/assets/images/problem/problem-section-what-s-next-bw-academic.jpg)
+- [The Daily Body Count](problem/the-daily-massacre.qmd): Why 150,000 daily deaths don't make the news
+- [The NIH Spent $1 Trillion Curing Nothing](problem/nih-fails-2-institute-health.qmd): How 97% of medical research funding avoids testing drugs in humans
+- [The FDA Is Unsafe and Ineffective](problem/fda-is-unsafe-and-ineffective.qmd): How "safety" regulations make medicine more dangerous
+- [The Cost of War](problem/cost-of-war.qmd): $11.4 trillion annually, itemized
+- [Unrepresentative Democracy](problem/unrepresentative-democracy.qmd): Why 0% of what you want becomes policy
+- [You Are a Meat Robot](proof/body-as-repairable-machine.qmd): Your body is a machine, and the parts are fixable
 
-
-The following chapters will explain:
-
-- Why the NIH spent $1 trillion curing nothing
-- How the FDA makes medicine {{< var recovery_trial_cost_reduction_factor >}} more expensive than necessary  
-- Why democracy is mostly theater
-- How regulatory capture ensures nothing improves
-- What you're going to do about it
-
-But first, you need to understand each problem in detail. Not because understanding is fun (it isn't), but because you can't fix what you don't understand.
-
-And if you don't fix it, you're going to die from something that could likely have been eventually avoidable while the Pentagon loses another trillion dollars in their couch cushions.
+And if you don't fix it, you're going to die from something that could have been cured while the Pentagon loses another trillion dollars in their couch cushions.
