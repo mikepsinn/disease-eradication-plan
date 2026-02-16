@@ -11,6 +11,8 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
+  netlify-cname: "drug-cost-warondisease-org.netlify.app"
+  netlify-site-id: "d739329f-a0cb-44b9-91a1-9921345a75c2"
   emoji: "💊"
   index-source: knowledge/appendix/drug-development-cost-analysis.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org

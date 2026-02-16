@@ -698,6 +698,25 @@ jobs:
           retention-days: 7
 
 
+      - name: "Deploy Build Drug Development Cost Increase Analysis to Netlify (immediate)"
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/drug-development-cost/_site/drug-development-cost'
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy drug-development-cost from ${{ github.ref_name }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: d739329f-a0cb-44b9-91a1-9921345a75c2
+
+        timeout-minutes: 1
+
 
 
       - name: "Upload Build Drug Development Cost Increase Analysis PDF to Zenodo (draft)"
@@ -1798,6 +1817,25 @@ jobs:
             _build_temp/right-to-trial/**/*.out
           retention-days: 7
 
+
+      - name: "Deploy Build Right to Trial & FDA Upgrade Act to Netlify (immediate)"
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '_build_temp/right-to-trial/_site/right-to-trial'
+          production-deploy: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          deploy-message: "Deploy right-to-trial from ${{ github.ref_name }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+          NETLIFY_SITE_ID: f0cfd162-dc07-474f-9b19-367ce1c1616f
+
+        timeout-minutes: 1
 
 
 

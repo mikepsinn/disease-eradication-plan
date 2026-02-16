@@ -857,14 +857,9 @@ def update_netlify_domains(token: str, configs: dict) -> tuple[int, int]:
         else:
             print(f"  [OK] Custom domain already correct")
 
-        # Rename site if needed (changes the *.netlify.app subdomain)
+        # Never rename existing sites - it breaks DNS records pointing to the old .netlify.app name
         if current_name != expected_site_name:
-            print(f"  [*] Renaming site: {current_name} -> {expected_site_name}")
-            if rename_netlify_site(token, site_id, expected_site_name):
-                sites_renamed += 1
-                # Update config with new CNAME
-                new_cname = f"{expected_site_name}.netlify.app"
-                update_config_with_netlify_info(info["path"], site_id, new_cname)
+            print(f"  [INFO] Site name '{current_name}' differs from expected '{expected_site_name}' - keeping existing name to preserve DNS")
 
         time.sleep(1)  # Rate limit protection
 
@@ -959,16 +954,13 @@ def main():
                 if update_site_custom_domain(token, site_id, expected_domain):
                     domains_updated += 1
 
-            # Rename site if needed
+            # Never rename existing sites - it breaks DNS records pointing to the old .netlify.app name
             if current_name != expected_site_name:
-                if rename_netlify_site(token, site_id, expected_site_name):
-                    sites_renamed += 1
-                    new_cname = f"{expected_site_name}.netlify.app"
-                    update_config_with_netlify_info(info["path"], site_id, new_cname)
+                print(f"  [INFO] Site name '{current_name}' differs from expected '{expected_site_name}' - keeping existing name to preserve DNS")
 
             time.sleep(0.5)
 
-    if domains_updated == 0 and sites_renamed == 0:
+    if domains_updated == 0:
         print("  [OK] All domains already correct")
 
     # ===========================================
@@ -1008,7 +1000,7 @@ def main():
     # ===========================================
     # Regenerate workflow if anything changed
     # ===========================================
-    if sites_created > 0 or domains_updated > 0 or sites_renamed > 0:
+    if sites_created > 0 or domains_updated > 0:
         print("\n[*] Regenerating GitHub Actions workflow...")
         regenerate_workflow()
 
@@ -1019,7 +1011,6 @@ def main():
     print("Summary:")
     print(f"  Sites created:    {sites_created}")
     print(f"  Domains updated:  {domains_updated}")
-    print(f"  Sites renamed:    {sites_renamed}")
     print(f"  DNS created:      {dns_created}")
     print(f"  DNS updated:      {dns_updated}")
     print("=" * 60)
