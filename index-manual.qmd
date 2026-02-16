@@ -1,7 +1,7 @@
 ---
 title: How to End War and Disease
 published: true
-image: /assets/og-images/knowledge\solution/1-percent-treaty-og-retro-academic.jpg
+image: /assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg
 aliases:
   - /index-book.html
 ---
@@ -241,7 +241,7 @@ The entire system operates on the revolutionary principle that humans will do th
 
 **Billionaires**: Make {{< var victory_bond_annual_return_pct >}} returns, which is better than insider trading but somehow legal.
 
-**Regular Humans**: Get experimental treatments that might cure them, plus {{< var personal_lifetime_wealth >}} in [lifetime wealth and extra years of life](knowledge/solution/1-percent-treaty.qmd) from the economic multiplier effect.
+**Regular Humans**: Get experimental treatments that might cure them, plus {{< var personal_lifetime_wealth >}} in [lifetime wealth and extra years of life](/knowledge/solution/1-percent-treaty.qmd) from the economic multiplier effect.
 
 Nobody has to evolve morally. You just point everyone's greed at diseases instead of each other. It's like training a pack of wolves to herd sheep by convincing them the sheep are made of money.
 
@@ -267,7 +267,7 @@ Your grandchildren will learn in history class that your generation could split 
 
 {{< var global_disease_deaths_daily >}} humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with less Nazis and more insurance paperwork (though some would argue the paperwork is worse - at least the Nazis were straightforward about the killing part).
 
-![Fifty 9/11s per day, but nobody invades cancer](assets/images/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
+![Fifty 9/11s per day, but nobody invades cancer](/assets/images/deaths-from-disease-vs-deaths-from-terrorism-chart.png)
 
 Your body is quietly falling apart. Your cancer cells are multiplying RIGHT NOW. Your telomeres are shortening. You are literally dissolving.
 
@@ -277,8 +277,8 @@ Every one of these failures is a solvable engineering problem.**
 You'd think humans would prioritize solving these problems.
 You'd be adorable for thinking that.
 
-[You haven't cured a single disease](knowledge/problem/nih-fails-2-institute-health.qmd) in 50 years [@smallpox-eradicated].
-But you have [13,000 nuclear warheads](knowledge/problem/cost-of-war.qmd), enough to end civilization 13 times, just in case the first apocalypse doesn't take.
+[You haven't cured a single disease](/knowledge/problem/nih-fails-2-institute-health.qmd) in 50 years [@smallpox-eradicated].
+But you have [13,000 nuclear warheads](/knowledge/problem/cost-of-war.qmd), enough to end civilization 13 times, just in case the first apocalypse doesn't take.
 
 ### The Unexplored Therapeutic Frontier
 
@@ -310,11 +310,11 @@ Government spending on clinical trials: **{{< var military_to_government_clinica
 
 **3 Ingredients of a World Without War and Disease**
 
-1.  **[A 1% treaty](knowledge/solution/1-percent-treaty.qmd)** = Redirects 1% of military budgets globally to curing diseases through hyper-efficient decentralized clinical trials.
+1.  **[A 1% Treaty](/knowledge/solution/1-percent-treaty.qmd)** = Redirects 1% of military budgets globally to curing diseases through hyper-efficient decentralized clinical trials.
 
-2.  **[The 1% Treaty Fund](knowledge/solution/dih.qmd)** = Holds the money and uses [Wishocracy](knowledge/solution/wishocracy.qmd) where everyone votes on budget allocation, then patients determine specific funding by choosing which trials to join.
+2.  **[Your Decentralized Institutes of Health](/knowledge/solution/dih.qmd)** = Funds pragmatic clinical trials and uses [Wishocracy](/knowledge/solution/wishocracy.qmd) where everyone votes on budget allocation. Patients ultimately determine specific funding by choosing which trials to join.
 
-3.  **[A decentralized framework for drug assessment](knowledge/solution/dfda.qmd)** = Ranks treatments by real-world effectiveness and enables patients to effortlessly participate in global decentralized clinical trials.
+3.  **[Your dFDA](/knowledge/solution/dfda.qmd)** = Ranks treatments by real-world effectiveness and enables patients to effortlessly participate in global decentralized clinical trials.
 
 ### A 1% treaty
 
@@ -337,7 +337,7 @@ Nobody tells the 14,000 people involved in making a pencil what to do. They just
 
 ### The 1% Treaty Fund
 
-Instead of a committee of 200 bureaucrats giving their friends grants to write papers about diseases, [the 1% Treaty Fund](knowledge/solution/dih.qmd) directly subsidizes patients, letting them choose which trials to fund.
+Instead of a committee of 200 bureaucrats giving their friends grants to write papers about diseases, [the 1% Treaty Fund](/knowledge/solution/dih.qmd) directly subsidizes patients, letting them choose which trials to fund.
 
 ![Bureaucrats giving friends grants vs. patients choosing trials](/assets/images/index-manual/index-manual-section-the-1-treaty-fund-bw-academic.jpg)
 
@@ -351,8 +351,8 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 ### The Evidence
 
-- **Oxford Already Did It**: [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}}/patient (vs {{< var traditional_phase3_cost_per_patient >}} standard), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality.
-- **You've Done This Before**: [After WW2, humans cut military spending by 30.0%](knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1.0%.
+- **Oxford Already Did It**: [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}}/patient (vs {{< var traditional_phase3_cost_per_patient >}} standard), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality.
+- **You've Done This Before**: [After WW2, humans cut military spending by 30%](/knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1%.
 
 ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
 
@@ -366,7 +366,7 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 - **Switzerland Figured This Out 200 Years Ago**: They spend {{< var switzerland_defense_spending_pct >}} on defense, have {{< var switzerland_gdp_per_capita_k >}} GDP per capita, and nobody's invaded them since Napoleon.
 
-- **Everything Already Exists**: [Legal framework](knowledge/legal/legal-framework.qmd), AI trial matching, insurance companies who hate paying for sick people, and pharma who hate paying for trials. Ctrl+C, Ctrl+V.
+- **Everything Already Exists**: [Legal framework](/knowledge/legal/legal-framework.qmd), AI trial matching, insurance companies who hate paying for sick people, and pharma who hate paying for trials. Ctrl+C, Ctrl+V.
 
 ## The 5-Step Plan
 
@@ -396,7 +396,7 @@ This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest o
 ![Returns that make Ponzi schemes look conservative (but legal)](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
 
 
-Investors fund the campaign. The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget. Investors get {{< var victory_bond_funding_pct >}} because they had the revolutionary idea of "what if we didn't all die?" The same fund that pays investors also pays for politician incentives. [Full financial mechanics](knowledge/economics/victory-bonds.qmd).
+Investors fund the campaign. The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget. Investors get {{< var victory_bond_funding_pct >}} because they had the revolutionary idea of "what if we didn't all die?" The same fund that pays investors also pays for politician incentives. [Full financial mechanics](/knowledge/economics/victory-bonds.qmd).
 
 It's the Louisiana Purchase of clinical trials, except instead of buying land from France, you're buying immortality from death.
 
@@ -408,13 +408,13 @@ You need {{< var global_population_activism_threshold_pct >}} of humanity to vot
 
 ![Even flat-earthers can understand this math](/assets/images/index-manual/index-manual-section-step-2-the-great-clicking-bw-academic.jpg)
 
-Scientists discovered that when [3.5% of any population](knowledge/strategy/global-referendum.qmd) wants something, they often get it. It's a cheat code for democracy that actually works.
+Scientists discovered that when [3.5% of any population](/knowledge/strategy/global-referendum.qmd) wants something, they often get it. It's a cheat code for democracy that actually works.
 
 Cost per click: $0.50. Payment only upon success. The pyramid scheme aspect: everyone recruits everyone else because money.
 
 ### Step 3: Bribe the Bribers
 
-*[Professional Briber Conversion Therapy](knowledge/strategy/co-opting-defense-contractors.qmd)*
+*[Professional Briber Conversion Therapy](/knowledge/strategy/co-opting-defense-contractors.qmd)*
 
 Defense lobbyists currently get $1,813 back per dollar invested in democracy corruption [@lobbying-roi-calc]. Show them a spreadsheet:
 
@@ -450,9 +450,9 @@ The conversation goes:
 
 It's not corruption if you corrupt the corruption. It's like a double negative in grammar but for democracy.
 
-But Super PACs alone aren't enough. [Incentive Alignment Bonds (IABs)](knowledge/appendix/incentive-alignment-bonds-paper.qmd) make "save lives" and "advance career" point in the same direction. Politicians get a Public Good Score based on how they vote. Vote YES: score goes up, electoral support materializes, post-office opportunities unlock. No papers go directly to politicians. The papers take a detour through reputation and career advancement.
+But Super PACs alone aren't enough. [Incentive Alignment Bonds (IABs)](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) make "save lives" and "advance career" point in the same direction. Politicians get a Public Good Score based on how they vote. Vote YES: score goes up, electoral support materializes, post-office opportunities unlock. No papers go directly to politicians. The papers take a detour through reputation and career advancement.
 
-[VICTORY Bonds](knowledge/economics/victory-bonds.qmd) are the specific IAB for the 1% Treaty: they align investors ({{< var victory_bond_annual_return_pct >}} returns), politicians (career incentives), and patients (cures) with the same outcome. The [architecture works for any problem](knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but doing it currently hurts their careers.
+[VICTORY Bonds](/knowledge/economics/victory-bonds.qmd) are the specific IAB for the 1% Treaty: they align investors ({{< var victory_bond_annual_return_pct >}} returns), politicians (career incentives), and patients (cures) with the same outcome. The [architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but doing it currently hurts their careers.
 
 ### Step 5: Enjoy
 
@@ -485,7 +485,7 @@ This beats smallpox eradication (280:1) and childhood vaccinations (13:1), which
 
 For every 1 person the FDA protects from a bad drug, it kills {{< var type_ii_error_cost_ratio >}} people by making them wait for good drugs. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown.
 
-[Full methodology, timeline shift analysis, and the numbers that make Excel cry](knowledge/economics/1-pct-treaty-impact.qmd).
+[Full methodology, timeline shift analysis, and the numbers that make Excel cry](/knowledge/economics/1-pct-treaty-impact.qmd).
 
 ## Choose Your Own Adventure
 
@@ -509,7 +509,7 @@ You're standing in front of two doors. Behind one is the future you're currently
 - {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} humans who continue existing because first effective treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner
 - {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets (the gold standard for "keeping humans alive")
 - Early investors make {{< var victory_bond_annual_return_pct >}} returns, and politicians discover that voting for cures is better for their careers than voting for bombs
-- **You personally could get {{< var personal_lifetime_wealth >}} in lifetime wealth and extra years of life**
+- **You personally could get {{< var personal_lifetime_wealth >}} in [lifetime wealth and extra years of life](/knowledge/solution/1-percent-treaty.qmd)**
 - Death becomes optional (terms and conditions apply)
 
 ## Price of Procrastination
@@ -520,7 +520,7 @@ Every second you spend thinking about whether to do this, the universe helpfully
 - Your telomeres got shorter (that's the thing that decides when you stop existing)
 - A politician said something stupider than yesterday (probably about vaccines causing 5G)
 
-The Soviet Union went from nothing to conquering half the world to completely collapsing in a [SINGLE HUMAN LIFETIME](knowledge/proof/historical-precedents.qmd). And Communism was objectively a TERRIBLE IDEA that required murdering millions of people.
+The Soviet Union went from nothing to conquering half the world to completely collapsing in a [SINGLE HUMAN LIFETIME](/knowledge/proof/historical-precedents.qmd). And Communism was objectively a TERRIBLE IDEA that required murdering millions of people.
 
 This is arguably the second-best idea in human history and requires radically less murder.
 
@@ -545,8 +545,8 @@ This is why aliens don't visit.
 
 ::: {.content-hidden when-format="epub"}
 ::: {.content-hidden when-format="pdf"}
-<a href="assets/images/chaplin-great-dictator-320.mp4" target="_blank">
-![Charlie Chaplin - The Great Dictator Speech](assets/images/chaplin-great-dictator-thumbnail.png)
+<a href="/assets/images/chaplin-great-dictator-320.mp4" target="_blank">
+![Charlie Chaplin - The Great Dictator Speech](/assets/images/chaplin-great-dictator-thumbnail.png)
 </a>
 :::
 :::
