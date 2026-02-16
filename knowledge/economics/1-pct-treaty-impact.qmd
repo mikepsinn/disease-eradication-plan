@@ -77,7 +77,7 @@ aliases:
 
 **How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
-**Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis], and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits. All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
+**Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis], and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits. All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 **Implications**: This intervention corrects a fundamental capital misallocation: military spending creates depreciating assets (weapons become obsolete), while medical research creates appreciating assets (treatments compound in value). Comparable to smallpox eradication ({{< var smallpox_eradication_roi >}} ROI), it represents the highest-ROI reallocation available to policymakers.
 
@@ -725,7 +725,7 @@ This analysis uses three standard health economics tools:
 2. **Quality-Adjusted Life Years (QALYs)**: Measuring healthy life, not just survival - a year lived in full health scores 1.0, while years with illness or disability score proportionally lower
 3. **Return on Investment (ROI)**: Economic value generated per dollar invested
 
-The methodology follows standard health economics practices. All parameters, sources, and uncertainty ranges are documented in [Parameters and Calculations](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
+The methodology follows standard health economics practices. All parameters, sources, and uncertainty ranges are documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 ## Cost-Benefit Framework
 
@@ -1018,7 +1018,7 @@ For detailed DALY calculation methodology, see [Regulatory Mortality Analysis](h
 
 ## Economist Verification: Complete Derivation Chains
 
-This section provides step-by-step derivations for all headline claims, enabling independent verification. All intermediate values are linked to their source parameters in [Parameters and Calculations](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
+This section provides step-by-step derivations for all headline claims, enabling independent verification. All intermediate values are linked to their source parameters in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 ### Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
 
@@ -1213,7 +1213,7 @@ The complete ROI includes the full timeline shift health benefits:
 
 **Sensitivity to key assumptions**: The tornado diagrams throughout this document show that results are most sensitive to: (1) timeline shift duration, (2) QALY valuation, and (3) eventually avoidable percentage. Even under conservative parameter assumptions (lower timeline shift, lower QALY values, lower avoidability), the intervention remains cost-saving.
 
-For complete parameter definitions, uncertainty ranges, and Monte Carlo distributions, see [Parameters and Calculations](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
+For complete parameter definitions, uncertainty ranges, and Monte Carlo distributions, see [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 ## Counterfactual Baseline Specification
 
@@ -1593,7 +1593,7 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 
 {{< include ../figures/tornado-dfda_roi_rd_only.qmd >}}
 
-For comprehensive sensitivity analysis including tornado charts for all calculated parameters, see [Parameters and Calculations](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
+For comprehensive sensitivity analysis including tornado charts for all calculated parameters, see [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
 ## Key Analytical Assumptions
 
@@ -1767,7 +1767,7 @@ All primary data sources are documented in [References](../references.qmd) with 
 - **Medium confidence** (17%): Peace dividend estimates, QALY valuations (wide range in literature)
 - **Conservative bounds**: Where uncertainty exists, analysis uses conservative estimates favoring underestimation of benefits
 
-For complete parameter documentation with confidence indicators and peer-review status, see [Parameters and Calculations Reference](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
+For complete parameter documentation with confidence indicators and peer-review status, see [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd).
 
 ![How confident we are in our numbers. Very confident, mostly. Some guessing. You demanded a chart about the charts.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-data-quality-and-availability-bw-academic.jpg)
 
@@ -2258,7 +2258,7 @@ Despite these limitations, several factors support the analysis's robustness:
 3. **Sensitivity analysis:** Wide range of scenarios tested; positive returns maintained across all plausible parameter combinations
 4. **Dominant intervention status:** Cost-saving intervention ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY) means it saves money even if health benefits are substantially overstated
 
-**Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [Parameters and Calculations Reference](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd) and [References](../references.qmd).
+**Transparency commitment:** All parameters, data sources, and calculation methodologies are publicly documented with confidence levels and last-update dates in [Parameters and Calculations Reference](../appendix/parameters-and-calculations.qmd) and [References](../references.qmd).
 
 Future research priorities include prospective data collection during pilot implementations, real-world validation of cost reduction estimates, and longitudinal assessment of QALY gains across diverse populations and disease contexts.
 
