@@ -389,16 +389,51 @@
   }
 
   // ========================================
+  // FEATURE FLAGS
+  // ========================================
+
+  function getDisabledFeatures() {
+    var meta = document.querySelector('meta[name="dih-disable-features"]');
+    if (!meta) return [];
+    return meta.content.split(',').map(function(f) { return f.trim(); });
+  }
+
+  function isFeatureDisabled(name) {
+    return getDisabledFeatures().indexOf(name) !== -1;
+  }
+
+  // ========================================
+  // HIDE INDEX TITLE/DESCRIPTION
+  // ========================================
+
+  function hideIndexTitleElements() {
+    var meta = document.querySelector('meta[name="dih-hide-index-title"]');
+    if (!meta || meta.content !== 'true') return;
+
+    var path = window.location.pathname;
+    if (path === '/' || path === '/index.html' || path.endsWith('/index.html')) {
+      // Hide title (already in navbar) and description (meta-only), keep subtitle visible
+      var title = document.querySelector('#title-block-header .quarto-title > .title');
+      if (title) title.style.display = 'none';
+      var desc = document.querySelector('#title-block-header .description');
+      if (desc) desc.style.display = 'none';
+    }
+  }
+
+  // ========================================
   // INITIALIZATION
   // ========================================
+
+  // Hide index title/description immediately to avoid flash of content
+  hideIndexTitleElements();
 
   function onPageReady() {
     // Wait longer for large pages to fully render (loader takes 600ms to fade)
     setTimeout(function() {
       expandHashTarget();
-      createUncertaintyToggle();
+      if (!isFeatureDisabled('ci-toggle')) createUncertaintyToggle();
+      if (!isFeatureDisabled('cite')) createCopyCitationButton();
       createDarkModeToggle();
-      createCopyCitationButton();
       createBackToTopButton();
     }, 800);
   }

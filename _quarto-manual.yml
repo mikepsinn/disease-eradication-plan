@@ -37,7 +37,7 @@ book:
       affiliations:
         - name: "Institute for Accelerated Medicine"
           url: https://acceleratedmedicine.org
-  # description: Removed to allow page-level descriptions to override for og:description
+  description: "A Practical Guide: Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers"
   # cover-image: cover.jpg
   favicon: assets/icons/book-favicon.png
   site-url: https://manual.WarOnDisease.org
@@ -314,6 +314,9 @@ format:
       - file: assets/html/site-enhancements-loader.html
     include-in-header:
       - text: |
+          <!-- Feature flags for site-enhancements.js -->
+          <meta name="dih-disable-features" content="cite,ci-toggle">
+          <meta name="dih-hide-index-title" content="true">
           <!-- Icons (project-specific) -->
           <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/book-favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/book-favicon-16x16.png">
