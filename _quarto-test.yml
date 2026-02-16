@@ -15,7 +15,8 @@ dih-render:
   pdf-output-file: test-links.pdf  # Desired PDF filename (renamed after build)
 
 book:
-  title: 'Test Economics Document'
+  title: 'How to End War and Disease'
+  subtitle: 'The Exact Sequence of Bribes Required to Cure Every Disease'
   author:
     - name: Mike P. Sinn
       email: m@warondisease.org
@@ -91,6 +92,10 @@ format:
     filters:
       - scripts/filters/strip-parameter-links.lua
     output-file: "test-book.epub"
+    author:
+      - name: WISHONIA
+      - name: "Mike P. Sinn (Translator)"
+    epub-cover-image: assets/cover/book-cover-3.jpg
     html-math-method:
       method: webtex
       url: "https://latex.codecogs.com/svg.latex?"

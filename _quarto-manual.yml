@@ -29,6 +29,7 @@ website:
 
 book:
   title: 'How to End War and Disease'
+  subtitle: 'The Exact Sequence of Bribes Required to Cure Every Disease'
   author:
     - name: Mike P. Sinn
       email: m@warondisease.org
@@ -194,7 +195,8 @@ metadata:
   copyright-year: "2025"
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  # rights: moved to EPUB copyright page - Pandoc puts Dublin Core 'rights' on the title page
+  # rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
   
   # Publication information
   publisher: "Institute for Accelerated Medicine"
@@ -330,7 +332,10 @@ format:
       - scripts/filters/strip-parameter-links.lua
     output-file: "How-to-End-War-and-Disease.epub"
     # Author attribution for EPUB (different from HTML)
-    author: "WISHONIA (translated by Mike P. Sinn)"
+    # Structured author overrides book-level author for EPUB title page
+    author:
+      - name: WISHONIA
+      - name: "Mike P. Sinn (Translator)"
     # Cover image for EPUB (required for most e-book platforms)
     epub-cover-image: assets/cover/book-cover-3.jpg
     # Math rendering: webtex converts LaTeX to embedded SVG images via CodeCogs
@@ -413,9 +418,9 @@ format:
     #       <meta name="twitter:card" content="summary_large_image">
     #       <meta name="twitter:image" content="https://manual.WarOnDisease.org/assets/icons/og-image.png">
     #       <meta name="twitter:title" content="How to End War and Disease">
-    #       <meta name="twitter:description" content="A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
+    #       <meta name="twitter:description" content="A Practical Guide: Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
     #       <meta property="og:title" content="How to End War and Disease">
-    #       <meta property="og:description" content="A Practical Guide: Get 500 Years of Clinical Research in 20, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
+    #       <meta property="og:description" content="A Practical Guide: Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich by Giving Papers">
     #       <meta property="og:type" content="book">
     #       <meta property="og:url" content="https://manual.WarOnDisease.org">
   pdf:
