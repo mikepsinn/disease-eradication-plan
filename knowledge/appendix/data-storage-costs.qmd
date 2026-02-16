@@ -18,8 +18,8 @@ Storing clinical trial data costs {{< var dfda_storage_cost_total_per_patient_mo
 
 
 - Patient demographics and basic information: < 1MB
-- Trial-specific forms and data entries: [1-5MB](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research)
-- Medical imaging (when applicable): [50-500MB](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5840832/)
+- Trial-specific forms and data entries: 1-5MB [@phase-3-participant-numbers]
+- Medical imaging (when applicable): 50-500MB [@pmc5840832]
 - Continuous monitoring data: 1-10MB/month
 - Tracked variables: Hundreds to thousands per patient (symptoms, vitals, medications, behaviors)
 - Total typical storage: ~1GB per patient (varies significantly with data complexity)

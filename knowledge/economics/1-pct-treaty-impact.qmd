@@ -988,7 +988,7 @@ These benefits flow through three distinct channels:
 
 Health gains from bringing effective treatments to patients faster through shortened development and approval timelines:
 
-- **Baseline:** Research shows treatment delays significantly increase cancer mortality, with studies indicating approximately [10%](https://www.lshtm.ac.uk/newsevents/news/2020/every-month-delayed-cancer-treatment-can-raise-risk-death-around-10) increased risk per month of delay ([systematic review](https://pubmed.ncbi.nlm.nih.gov/33148535/))
+- **Baseline:** Research shows treatment delays significantly increase cancer mortality, with studies indicating approximately 10% [@lshtm-every-month-delayed-cancer-treatment-can-raise-risk-de] increased risk per month of delay [@systematic-review]
 - **Estimate:** 2-year average acceleration across pharmaceutical pipeline
 - **Impact:** Significant contribution to the total {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift 
 
@@ -2093,7 +2093,7 @@ Decentralized trials with broad eligibility criteria face potential selection bi
 - **Covariate adjustment:** Electronic health record data enables controlling for confounders ex-post using propensity score matching and instrumental variables
 - **Replication at scale:** Lower costs enable rapid replication across diverse populations, testing robustness
 
-**Empirical evidence, observational studies produce valid results:** A [meta-analysis in the New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJM200006223422506) compared effect sizes from high-quality observational studies to randomized controlled trials across multiple interventions. The findings demonstrate that well-designed observational studies produce results statistically indistinguishable from expensive RCTs.
+**Empirical evidence, observational studies produce valid results:** A meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] compared effect sizes from high-quality observational studies to randomized controlled trials across multiple interventions. The findings demonstrate that well-designed observational studies produce results statistically indistinguishable from expensive RCTs.
 
 ![Old trials: give people sugar pills and see what happens to perfectly healthy 25-year-olds. New trials: give people real drugs and see what happens to actual sick people. Groundbreaking.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-mitigation-strategies-bw-academic.jpg)
 

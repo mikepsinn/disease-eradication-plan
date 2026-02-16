@@ -184,7 +184,7 @@ The other 99.92% of disease patients (or 99.82% of willing participants) get to 
 
 ## Enrollment Data by Phase
 
-Data from [ClinicalTrials.gov](https://clinicaltrials.gov/data-api/api):
+Data from ClinicalTrials.gov [@clinicaltrials-gov-enrollment-data-2025]:
 
 | Phase | Trials | Total Enrollment | Median/Trial | Cost/Patient |
 |-------|--------|------------------|--------------|--------------|
@@ -261,4 +261,4 @@ The 99.92% of disease patients (99.82% of willing participants) who don't get ac
 
 ---
 
-**Methodology:** Primary source: IQVIA 2022 report [@global-trial-participant-capacity] showing 1.9M global participants (post-COVID normalization). Supporting data from [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api). Annual estimates based on phase-specific trial durations from [ASPE](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0). 
+**Methodology:** Primary source: IQVIA 2022 report [@global-trial-participant-capacity] showing 1.9M global participants (post-COVID normalization). Supporting data from ClinicalTrials.gov API v2 [@clinicaltrials-gov-enrollment-data-2025]. Annual estimates based on phase-specific trial durations from ASPE [@phase-3-therapeutic-area-costs]. 

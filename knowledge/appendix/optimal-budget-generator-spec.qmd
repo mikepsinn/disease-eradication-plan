@@ -893,20 +893,20 @@ International organizations maintain standardized cross-country spending and out
 
 | Database | Coverage | URL | Use Case |
 |----------|----------|-----|----------|
-| **OECD iLibrary** | 38 OECD members | [oecd-ilibrary.org](https://www.oecd-ilibrary.org) | Education, health, social spending |
-| **World Bank WDI** | 217 countries | [data.worldbank.org](https://data.worldbank.org) | Broad spending and outcomes |
-| **SIPRI** | Global | [sipri.org](https://www.sipri.org) | Military spending |
-| **WHO GHED** | 194 countries | [who.int/data/gho](https://www.who.int/data/gho) | Health expenditure |
-| **UNESCO UIS** | Global | [uis.unesco.org](https://uis.unesco.org) | Education spending |
+| **OECD iLibrary** | 38 OECD members | oecd-ilibrary.org [@oecd-ilibrary-org] | Education, health, social spending |
+| **World Bank WDI** | 217 countries | data.worldbank.org [@data-worldbank-org] | Broad spending and outcomes |
+| **SIPRI** | Global | sipri.org [@sipri-org] | Military spending |
+| **WHO GHED** | 194 countries | who.int/data/gho [@who-int-data-gho] | Health expenditure |
+| **UNESCO UIS** | Global | uis.unesco.org [@uis-unesco-org] | Education spending |
 
 ### Cost-Effectiveness Databases
 
 | Database | Coverage | URL | Use Case |
 |----------|----------|-----|----------|
-| **CEA Registry** | 8,000+ analyses | [cearegistry.org](https://cearegistry.org) | Health cost-effectiveness |
-| **Disease Control Priorities** | LMICs | [dcp-3.org](https://www.dcp-3.org) | Global health priorities |
-| **Cochrane Library** | 8,000+ reviews | [cochranelibrary.com](https://www.cochranelibrary.com) | Health intervention effects |
-| **Copenhagen Consensus** | Development | [copenhagenconsensus.com](https://www.copenhagenconsensus.com) | Development priorities |
+| **CEA Registry** | 8,000+ analyses | cearegistry.org [@cearegistry-org] | Health cost-effectiveness |
+| **Disease Control Priorities** | LMICs | dcp-3.org [@dcp-3-org] | Global health priorities |
+| **Cochrane Library** | 8,000+ reviews | cochranelibrary.com [@cochranelibrary-com] | Health intervention effects |
+| **Copenhagen Consensus** | Development | copenhagenconsensus.com [@copenhagenconsensus-com] | Development priorities |
 
 These databases enable systematic ranking of interventions by cost-effectiveness. For example, deworming programs consistently rank among the most cost-effective health interventions, with costs as low as $30-50 per DALY averted [@deworming-cost-per-daly].
 
@@ -914,10 +914,10 @@ These databases enable systematic ranking of interventions by cost-effectiveness
 
 | Source | Coverage | URL | Use Case |
 |--------|----------|-----|----------|
-| **OMB Historical Tables** | 1789-present | [whitehouse.gov/omb](https://www.whitehouse.gov/omb/historical-tables/) | Federal spending |
-| **CBO Budget Analyses** | Federal | [cbo.gov](https://www.cbo.gov) | Fiscal impact scoring [@cbo2015] |
-| **USASpending** | Federal awards | [usaspending.gov](https://www.usaspending.gov) | Program-level detail |
-| **Census of Governments** | State & local | [census.gov](https://www.census.gov/programs-surveys/cog.html) | Subnational spending |
+| **OMB Historical Tables** | 1789-present | whitehouse.gov/omb [@whitehouse-gov-omb] | Federal spending |
+| **CBO Budget Analyses** | Federal | cbo.gov [@cbo-gov] | Fiscal impact scoring [@cbo2015] |
+| **USASpending** | Federal awards | usaspending.gov [@usaspending-gov] | Program-level detail |
+| **Census of Governments** | State & local | census.gov [@census-gov] | Subnational spending |
 
 ## Limitations
 

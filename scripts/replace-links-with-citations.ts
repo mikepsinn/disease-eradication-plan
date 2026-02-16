@@ -303,8 +303,8 @@ function makeKey(text: string, url: string, existing: Set<string>): string {
     }
   }
 
-  // Final cleanup
-  base = base.replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
+  // Final cleanup: no dots (invalid in citation keys), collapse hyphens
+  base = base.replace(/\./g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
   if (!base) base = 'source';
 
   let key = base;

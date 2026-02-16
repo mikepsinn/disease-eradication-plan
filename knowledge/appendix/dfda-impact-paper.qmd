@@ -445,7 +445,7 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 - **Systematic Review Evidence**: A systematic review of 64 embedded pragmatic clinical trials found a **median cost per patient of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}** [@pmc-pragmatic-trial-cost]. This confirms that low-cost execution is a replicable property of the pragmatic design, not an anomaly of any single trial.
 
-- **ADAPTABLE Trial (PCORnet)**: The US-based [ADAPTABLE trial](https://pcornet.org/clinical-research/pcornet-clinical-trials-demonstrations/adaptable/) ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
+- **ADAPTABLE Trial (PCORnet)**: The US-based ADAPTABLE trial [@adaptable-trial] ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
 
 - **Framework Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 
@@ -1200,8 +1200,8 @@ To provide context for the estimated costs of a global pragmatic trial system, i
 | Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Framework's Annual Cost | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------- |
 | **Decentralized Framework (Lean Ecosystem)** | **~{{< var dfda_npv_annual_opex_total >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
-| **Cancer Moonshot Initiative**       | **[~\$257 Million / year](https://www.cancer.gov/about-nci/budget)** ($1.8B over 7 years)          | **~6.4x**                             | 21st Century Cures Act [@21st-century-cures-act-2016]          |
-| **NIH "All of Us" Research Program** | **~$500M / year** (FY23 Approx. Budget) | **~12.5x**                            | [NIH Budget](https://www.nih.gov/about-nih/what-we-do/budget)              |
+| **Cancer Moonshot Initiative**       | **~\$257 Million / year [@cancer-budget]** ($1.8B over 7 years)          | **~6.4x**                             | 21st Century Cures Act [@21st-century-cures-act-2016]          |
+| **NIH "All of Us" Research Program** | **~$500M / year** (FY23 Approx. Budget) | **~12.5x**                            | NIH Budget [@global-gov-med-research-spending]              |
 | **HealthCare.gov (Initial Build)**   | **~\$1.7 - \$2.1 Billion [@gao-healthcare-gov-costs]** (Total Upfront Cost)        | **~42x - 52x** (of one year's cost)   | GAO Reports / Public Reporting [@gao-healthcare-gov-costs] |
 | **National Cancer Institute (NCI)**  | **~\$7.2 Billion / year [@nih-institute-budgets-fy24]** (FY25 Budget)                 | **~180x**                             | NCI Budget Data [@nih-institute-budgets-fy24]                 |
 

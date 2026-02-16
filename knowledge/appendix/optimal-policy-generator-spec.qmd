@@ -1307,23 +1307,23 @@ For policies with PIS in the "pilot" range (0.10-0.25), we recommend jurisdictio
 
 | Database | Coverage | URL | Use Case |
 |----------|----------|-----|----------|
-| **V-Dem** | 202 countries, 1789-present | [v-dem.net](https://www.v-dem.net) | Democracy indices, political institutions |
-| **Polity V** | 167 countries, 1800-present | [systemicpeace.org](https://www.systemicpeace.org/polityproject.html) | Regime type, political stability |
-| **CPDS** | 36 OECD, 1960-present | [cpds-data.org](https://www.cpds-data.org) | Economic policy, welfare state |
-| **OECD iLibrary** | OECD members | [oecd-ilibrary.org](https://www.oecd-ilibrary.org) | Tax, labor, education policy |
-| **Congress.gov** | US federal, 1973-present | [congress.gov](https://www.congress.gov) | US federal legislation |
-| **EUR-Lex** | EU, 1951-present | [eur-lex.europa.eu](https://eur-lex.europa.eu) | EU legislation and regulations |
+| **V-Dem** | 202 countries, 1789-present | v-dem.net [@v-dem-net] | Democracy indices, political institutions |
+| **Polity V** | 167 countries, 1800-present | systemicpeace.org [@systemicpeace-org] | Regime type, political stability |
+| **CPDS** | 36 OECD, 1960-present | cpds-data.org [@cpds-data-org] | Economic policy, welfare state |
+| **OECD iLibrary** | OECD members | oecd-ilibrary.org [@oecd-ilibrary-org] | Tax, labor, education policy |
+| **Congress.gov** | US federal, 1973-present | congress.gov [@congress-gov] | US federal legislation |
+| **EUR-Lex** | EU, 1951-present | eur-lex.europa.eu [@eur-lex-europa-eu] | EU legislation and regulations |
 
 ### Primary Outcome Databases
 
 | Database | Coverage | URL | Use Case |
 |----------|----------|-----|----------|
-| **World Bank WDI** | 217 countries, 1960-present | [data.worldbank.org](https://data.worldbank.org) | GDP, poverty, education, health |
-| **Our World in Data** | Global, varies | [ourworldindata.org](https://ourworldindata.org) | Curated outcome metrics |
-| **WHO GHO** | Global | [who.int/data/gho](https://www.who.int/data/gho) | Health outcomes |
-| **Penn World Tables** | 183 countries, 1950-present | [ggdc.net/pwt](https://www.ggdc.net/pwt) | GDP, productivity, prices |
-| **SIPRI** | Global, 1949-present | [sipri.org](https://www.sipri.org) | Military spending |
-| **IMF** | 190 countries | [imf.org/data](https://www.imf.org/en/Data) | Fiscal, monetary indicators |
+| **World Bank WDI** | 217 countries, 1960-present | data.worldbank.org [@data-worldbank-org] | GDP, poverty, education, health |
+| **Our World in Data** | Global, varies | ourworldindata.org [@ourworldindata-org] | Curated outcome metrics |
+| **WHO GHO** | Global | who.int/data/gho [@who-int-data-gho] | Health outcomes |
+| **Penn World Tables** | 183 countries, 1950-present | ggdc.net/pwt [@ggdc-net-pwt] | GDP, productivity, prices |
+| **SIPRI** | Global, 1949-present | sipri.org [@sipri-org] | Military spending |
+| **IMF** | 190 countries | imf.org/data [@imf-org-data] | Fiscal, monetary indicators |
 
 ### Subnational Data
 

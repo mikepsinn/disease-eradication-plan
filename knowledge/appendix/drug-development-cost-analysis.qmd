@@ -28,7 +28,7 @@ Below: the math, the sources, and six real-world sanity checks proving this isn'
 
 > The average cost per new chemical entity (NCE) in the pre-1962 era was **{{< var pre_1962_drug_development_cost_1980_usd >}}** (1980 dollars), which adjusts to **{{< var pre_1962_drug_development_cost_2024_usd >}}** (2024 dollars).
 >
-> Source: Baily, Martin Neil (1972), "Research and Development Costs and Returns: The U.S. Pharmaceutical Industry," cited in Health Affairs 1982, [The Importance of Patent Term Restoration](https://samizdathealth.org/wp-content/uploads/2020/12/hlthaff.1.2.6.pdf)
+> Source: Baily, Martin Neil (1972), "Research and Development Costs and Returns: The U.S. Pharmaceutical Industry," cited in Health Affairs 1982, The Importance of Patent Term Restoration [@pre-1962-drug-costs-baily-1972]
 
 This covers the **total cost to bring a drug from discovery through FDA approval** under the pre-1962 regime (safety-only testing). It's the best academic estimate available.
 
@@ -200,7 +200,7 @@ Other researchers found the same thing:
 
 > "The cost of drug development has increased by a factor of approximately **100 to 400 times** from the 1960s to the 2010s, depending on baseline assumptions."
 >
-> Sources: Multiple studies ([Baily 1972](https://samizdathealth.org), [DiMasi et al. 2016](https://www.sciencedirect.com/science/article/abs/pii/S0167629616000291), [Tufts CSDD 2014](https://www.globenewswire.com/news-release/2014/11/18/1187467/0/en/Cost-to-Develop-and-Win-Marketing-Approval-for-a-New-Drug-Is-2-6-Billion-According-to-the-Tufts-Center-for-the-Study-of-Drug-Development.html))
+> Sources: Multiple studies (Baily 1972 [@baily-1972], DiMasi et al. 2016 [@dimasi-et-al-2016], Tufts CSDD 2014 [@tufts-csdd-2014])
 
 The **{{< var drug_cost_increase_pre1962_to_current_multiplier >}}** estimate falls right in the middle of the documented range.
 
@@ -315,7 +315,7 @@ dev_cost_amortized_1k = new_drug_dev_cost / (ultra_rare_patients_1k * amortizati
 
 ### Generic vs. Brand-Name Drugs (Patent Cliff Evidence)
 
-When a drug's patent expires and generic manufacturers enter the market, prices typically drop **80-90%** within the first year ([FDA Generic Drug Facts](https://www.fda.gov/drugs/generic-drugs/generic-drug-facts)).
+When a drug's patent expires and generic manufacturers enter the market, prices typically drop **80-90%** within the first year [@generic-drug-substitution-savings].
 
 **Example: Lipitor (atorvastatin)**
 

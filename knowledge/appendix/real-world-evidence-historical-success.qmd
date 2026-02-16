@@ -58,13 +58,13 @@ The most linear relationship in medical history. Suspiciously perfect. It lasted
 
 ### 1938 – The FDA Requires Phase 1 Safety Trials
 
-Elixir sulfanilamide caused over [100 deaths](https://www.fda.gov/files/about%20fda/published/The-Sulfanilamide-Disaster.pdf) in 1937.
+Elixir sulfanilamide caused over 100 deaths [@fda-the-sulfanilamide-disaster] in 1937.
 
-Congress [reacted](https://en.wikipedia.org/wiki/Elixir_sulfanilamide) by requiring all new drugs to include:
+Congress reacted [@wikipedia-elixir-sulfanilamide] by requiring all new drugs to include:
 
 > "adequate tests by all methods reasonably applicable to show whether or not such drug is safe for use under the conditions prescribed, recommended, or suggested in the proposed labeling thereof."
 
-These requirements evolved into the [Phase 1 Safety Trial](https://en.wikipedia.org/wiki/Phase_1_safety_trial). This was reasonable - testing if a compound kills people before giving it to patients makes sense.
+These requirements evolved into the Phase 1 Safety Trial [@phase-1-safety-trial]. This was reasonable - testing if a compound kills people before giving it to patients makes sense.
 
 The consistent 3.82 years per decade increase [@life-expectancy-increase-pre-1962] in life expectancy remained unchanged before and after the new safety regulations. Safety testing worked without slowing medical progress.
 
@@ -74,7 +74,7 @@ The regulations had no measurable positive or negative impact on developing life
 
 ### 1950s – Thalidomide: When Safety Regulations Actually Worked
 
-Thalidomide was first marketed in Europe in [1957](https://en.wikipedia.org/wiki/Thalidomide) for morning sickness. While it was initially thought to be safe in pregnancy, it resulted in thousands of horrific congenital disabilities [@thalidomide-birth-defects].
+Thalidomide was first marketed in Europe in 1957 [@wikipedia-thalidomide] for morning sickness. While it was initially thought to be safe in pregnancy, it resulted in thousands of horrific congenital disabilities [@thalidomide-birth-defects].
 
 Existing FDA safety regulations prevented any birth defects in the US [@thalidomide-no-us-birth-defects]. The 1938 safety testing framework worked exactly as intended. Zero American babies harmed.
 
@@ -134,7 +134,7 @@ Not gradually. Immediately.
 
 #### What Happened to Costs
 
-Since 1962, the cost of bringing a new treatment to market went from **{{< var pre_1962_drug_development_cost_2024_usd >}} to over $1 billion** ([source](https://publications.parliament.uk/pa/cm200405/cmselect/cmhealth/42/4207.htm)) (inflation-adjusted).
+Since 1962, the cost of bringing a new treatment to market went from **{{< var pre_1962_drug_development_cost_2024_usd >}} to over $1 billion** [@parliament-4207] (inflation-adjusted).
 
 A {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase. For worse results.
 
@@ -212,7 +212,7 @@ If you don't trust this method, you can't trust any clinical research. Or scienc
 
 ### Impact of Innovative Medicines on Life Expectancy
 
-A [three-way fixed-effects analysis](https://pubmed.ncbi.nlm.nih.gov/30912800) of 66 diseases in 27 countries suggests that if no new drugs had been launched after 1981, years of life lost would have been 2.16 times higher. It estimates pharmaceutical expenditure per life-year saved was [$2,837](https://pubmed.ncbi.nlm.nih.gov/30912800).
+A three-way fixed-effects analysis [@three-way-fixed-effects-analysis] of 66 diseases in 27 countries suggests that if no new drugs had been launched after 1981, years of life lost would have been 2.16 times higher. It estimates pharmaceutical expenditure per life-year saved was $2,837 [@three-way-fixed-effects-analysis].
 
 More people survive as more treatments are developed. There's a [strong correlation](http://valueofinnovation.org/power-of-innovation) between developing new cancer treatments and cancer survival over 30 years.
 

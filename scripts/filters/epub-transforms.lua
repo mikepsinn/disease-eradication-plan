@@ -6,8 +6,8 @@
 -- Book-level YAML keeps Mike P. Sinn for HTML; this filter swaps to WISHONIA for EPUB only.
 function Meta(meta)
   meta.author = pandoc.MetaList({
-    pandoc.MetaInlines({pandoc.Str("WISHONIA")}),
-    pandoc.MetaInlines({pandoc.Str("Mike"), pandoc.Space(), pandoc.Str("P."), pandoc.Space(), pandoc.Str("Sinn"), pandoc.Space(), pandoc.Str("(Translator)")})
+    pandoc.MetaInlines({pandoc.Str("By"), pandoc.Space(), pandoc.Str("WISHONIA")}),
+    pandoc.MetaInlines({pandoc.Str("Translated"), pandoc.Space(), pandoc.Str("by"), pandoc.Space(), pandoc.Str("Mike"), pandoc.Space(), pandoc.Str("P."), pandoc.Space(), pandoc.Str("Sinn")})
   })
   return meta
 end

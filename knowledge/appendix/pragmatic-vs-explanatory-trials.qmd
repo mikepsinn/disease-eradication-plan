@@ -27,9 +27,9 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 | Metric               | Pragmatic Trials (e.g., RECOVERY)    | Traditional Explanatory Trials                                                                      |
 | -------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| Cost per Trial       | Lower due to existing infrastructure | [$48-225 million](https://www.anjusoftware.com/insights/eclinical/clinical-trial-costs/)            |
-| Time to Results      | Weeks to months                      | [5-7 years average](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research) |
-| Participants         | Large (e.g., 47,000+ in RECOVERY)    | [Typically 500-3000](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6248200/)                         |
+| Cost per Trial       | Lower due to existing infrastructure | $48-225 million [@anjusoftware-clinical-trial-costs]            |
+| Time to Results      | Weeks to months                      | 5-7 years average [@phase-3-participant-numbers] |
+| Participants         | Large (e.g., 47,000+ in RECOVERY)    | Typically 500-3000 [@trial-costs-fda-study]                         |
 | Implementation Speed | Hours to days                        | Months to years                                                                                     |
 | Patient Population   | Diverse, real-world                  | Highly selected                                                                                     |
 | Setting              | Routine clinical practice            | Specialized research centers                                                                        |
@@ -43,7 +43,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 ![How much each phase of a clinical trial costs. Phase 3 costs the most. Cancer trials cost more than average. Pain trials cost less. The costs are sorted by how much suffering they measure.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-traditional-explanatory-trials-bw-academic.jpg)
 
-- Average phase costs ([source](https://www.sofpromed.com/how-much-does-a-clinical-trial-cost)):
+- Average phase costs [@phase-3-cost-per-trial-range]:
   - Phase 1: $4 million
   - Phase 2: $13 million
   - Phase 3: $20 million
@@ -81,7 +81,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 ![Clinical trials take 7.2 years and fail constantly. You built a system where dying people have to wait longer than it takes to get through primary school.](/assets/images/pragmatic-vs-explanatory-trials/pragmatic-vs-explanatory-trials-section-traditional-trial-metrics-bw-academic.jpg)
 
-- Average time from phase 1 to approval: [7.2 years](https://www.bio.org/sites/default/files/legacy/bioorg/docs/Clinical%20Development%20Success%20Rates%202006-2015%20-%20BIO,%20Biomedtracker,%20Amplion%202016.pdf)
+- Average time from phase 1 to approval: 7.2 years [@bio-clinical-development-success-rates-2006]
 - 80% of trials fail to meet enrollment timelines [@clinical-trial-enrollment-timelines]
 - Up to 50.0% of research sites enroll one or no patients [@clinical-trial-enrollment-timelines]
 
@@ -100,7 +100,7 @@ Pragmatic trials are designed to test interventions in real-world conditions, fo
 
 ### Traditional Trials
 
-- [14% success rate from phase 1 to approval](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6092479/)
+- 14% success rate from phase 1 to approval [@pmc6092479]
 - Average 7 years from discovery to clinical practice
 - Limited real-world applicability due to strict inclusion criteria
 

@@ -259,7 +259,7 @@ These represent the hard physical limits of medicine. Everything else, including
 
 1. **Development Timelines:** *Biotechnology Innovation Organization (BIO) Clinical Development Success Rates 2011–2020*.
    - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}}. Total Time to Market = {{< var fda_phase_1_to_approval_years >}}. **Lag = {{< var efficacy_lag_years >}} (95% CI: 4.3-12.1 years)** - wide variance by therapeutic area (oncology ~9y, vaccines ~7y, rare disease ~12+y).
-   - *Source:* [BIO.org Clinical Development Report](https://go.bio.org/rs/490-EHZ-999/images/ClinicalDevelopmentSuccessRates2011_2020.pdf)
+   - *Source:* BIO.org Clinical Development Report [@bio-clinical-development-2021]
 
 2. **Pharmaceutical Impact (Life-Years Saved):** Primary source: Lichtenberg (2019) [@lichtenberg-life-years-saved-2019].
    - **Primary metric:** {{< var pharma_life_years_saved_annual >}} saved annually by post-1981 drugs (22 countries, 66 diseases)
@@ -583,16 +583,16 @@ Japan's conditional approval does NOT eliminate efficacy assessment. It REORDERS
 
 - **Faster access:** 9 products received conditional early approval (2014-2024), reaching patients years earlier than traditional pathways
 - **Success cases:** STEMIRAC (spinal cord injury) showed 12/13 patients (92%) achieved neurological improvement, with 2 of 5 completely paralyzed patients regaining motor function [@stemirac-clinical-trial]. Five CAR-T therapies (Kymriah, Yescarta, Breyanzi, Abecma, Carvykti) are treating cancer patients under national insurance coverage [@japan-cart-therapy-insurance].
-- **The system caught inefficacy:** HeartSheet was conditionally approved in 2015 with the requirement to prove efficacy through post-market data. In 2024, after collecting real-world evidence, MHLW determined it hadn't demonstrated efficacy. The manufacturer [voluntarily withdrew](https://pubmed.ncbi.nlm.nih.gov/40100190/) the next day. *This is the system working as designed* - conditional approval was conditional, and the condition wasn't met.
+- **The system caught inefficacy:** HeartSheet was conditionally approved in 2015 with the requirement to prove efficacy through post-market data. In 2024, after collecting real-world evidence, MHLW determined it hadn't demonstrated efficacy. The manufacturer voluntarily withdrew [@voluntarily-withdrew] the next day. *This is the system working as designed* - conditional approval was conditional, and the condition wasn't met.
 - **Contrast with FDA:** Vioxx killed 38,000-55,000 Americans before withdrawal because the 6% voluntary reporting system failed to detect the signal. Japan's active monitoring caught HeartSheet's lack of efficacy with zero reported deaths.
 
 ![Japan approves drugs after Phase I, then checks if they work later. If they don't work, they take them back. Like a free trial but for not dying.](/assets/images/invisible-graveyard/invisible-graveyard-section-critical-distinction-efficacy-assessment-reordered-not-eliminated-bw-academic.jpg)
 
 **The real question for HeartSheet:** During those 9 years, did heart failure patients (who have few alternatives) benefit from access to an unproven treatment? The safety profile was acceptable - efficacy was the issue. This is a genuine tradeoff that merits cost-benefit analysis, not automatic condemnation.
 
-**2024 reforms strengthen, not abandon, conditional approval:** Japan's [June 2024 amendments](https://pmc.ncbi.nlm.nih.gov/articles/PMC12221229/) to the Regenerative Medicine Act add a formal revocation provision that was previously missing. The old system had no legal mechanism to force withdrawal if efficacy wasn't proven - HeartSheet was voluntary. The reforms close this gap while expanding coverage to in vivo gene therapy. Japan is refining conditional approval based on experience, not abandoning it.
+**2024 reforms strengthen, not abandon, conditional approval:** Japan's June 2024 amendments [@june-2024-amendments] to the Regenerative Medicine Act add a formal revocation provision that was previously missing. The old system had no legal mechanism to force withdrawal if efficacy wasn't proven - HeartSheet was voluntary. The reforms close this gap while expanding coverage to in vivo gene therapy. Japan is refining conditional approval based on experience, not abandoning it.
 
-**Pharmacovigilance infrastructure exists:** The FDA launched the [Sentinel Initiative](https://www.fda.gov/safety/fdas-sentinel-initiative) in 2008 to monitor safety using electronic health records. In 2024, FDA [eliminated major barriers](https://www.fda.gov/news-events/press-announcements/fda-eliminates-major-barrier-using-real-world-evidence-drug-and-device-application-reviews) to using real-world data. The technology for active surveillance exists - the barrier is institutional inertia, not technical impossibility.
+**Pharmacovigilance infrastructure exists:** The FDA launched the Sentinel Initiative [@fda-sentinel-initiative] in 2008 to monitor safety using electronic health records. In 2024, FDA eliminated major barriers [@eliminated-major-barriers] to using real-world data. The technology for active surveillance exists - the barrier is institutional inertia, not technical impossibility.
 
 ## Addressing Common Critiques
 
