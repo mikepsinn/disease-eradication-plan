@@ -16,7 +16,7 @@ image: /assets/og-images/knowledge/solution-og-retro-academic.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 
-Now that you understand the problem, which is that everyone is dying while you build missiles, it's time to learn how to fix it.
+Now you understand the problem: everyone is dying while you build missiles. Time to learn how to fix it.
 
 Your solution has three parts:
 
@@ -52,15 +52,15 @@ The math is simple: If everyone has 1% fewer weapons, the balance stays exactly 
 - Or curing 10-20 rare diseases completely in Year 1
 - Or preventing 180,000 deaths annually
 
-That money splits three ways: {{< var dih_treasury_medical_research_pct >}} to clinical trials, {{< var victory_bond_funding_pct >}} to investors, and {{< var iab_political_incentive_funding_pct >}} to political incentives. The [full allocation breakdown](appendix/incentive-alignment-bonds-paper.qmd) explains why each slice exists.
+That money splits three ways. {{< var dih_treasury_medical_research_pct >}} goes to clinical trials. {{< var victory_bond_funding_pct >}} goes to investors. {{< var iab_political_incentive_funding_pct >}} goes to political incentives. The [full allocation breakdown](appendix/incentive-alignment-bonds-paper.qmd) explains why each slice exists.
 
-They say you can't put a price on human life. But apparently the price is somewhere south of pet food, which seems like it should be revised upward (or you should admit you value dogs more than humans, which honestly might be fair).
+They say you can't put a price on human life. But apparently the price is somewhere south of pet food. That seems like it should be revised upward (or you should admit you value dogs more than humans, which honestly might be fair).
 
 ## The 1% Treaty Fund
 
-Once the 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**, a treasury with no CEO, no board, and no one to corrupt. Money flows directly to patients and researchers via algorithmic rules, not through any intermediary organization.
+Once the 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a treasury with no CEO, no board, and no one to corrupt. Money flows directly to patients and researchers via algorithmic rules, not through any intermediary organization.
 
-The governance protocol (sometimes called a "decentralized institute of health" or DIH) is the opposite of the NIH: instead of 200 people in a building guessing what to fund and giving grants to their friends, smart contracts hold the treasury, patients choose which trials to join, and funding flows automatically to researchers based on patient enrollment. Trials that work get more patients and more funding. Things actually get cured.
+The governance protocol (sometimes called a "decentralized institute of health" or DIH) is the opposite of the NIH. Instead of 200 people in a building guessing what to fund and giving grants to their friends, smart contracts hold the treasury. Patients choose which trials to join. Funding flows automatically to researchers based on patient enrollment. Trials that work get more patients and more funding. Things actually get cured.
 
 ![Money goes in, cures come out, repeat](/assets/images/solution/solution-section-what-your-decentralized-institutes-of-health-do-bw-academic.jpg)
 
@@ -68,7 +68,7 @@ The governance protocol (sometimes called a "decentralized institute of health" 
 
 [Wishocracy](solution/wishocracy.qmd) is how you let {{< var global_population_2024 >}} billion people control a budget without everyone killing each other in meetings.
 
-Anyone can propose how to spend the money. The app shows you random pairs of proposals. You swipe left or right. Everyone's swipes get aggregated using math, money flows automatically to top priorities. No committee. No gatekeepers. Just billions of micro-decisions that add up to what humanity actually wants, not what 200 people in suits think humanity wants.
+Anyone can propose how to spend the money. The app shows you random pairs of proposals. You swipe left or right. Everyone's swipes get aggregated using math. Money flows automatically to top priorities. No committee. No gatekeepers. Just billions of micro-decisions that add up to what humanity actually wants, not what 200 people in suits think humanity wants.
 
 ![Swipe right for immortality](/assets/images/solution/solution-section-on-wishocracy-bw-academic.jpg)
 
@@ -82,11 +82,11 @@ The FDA currently makes drugs {{< var dfda_trial_cost_reduction_factor >}} times
 2. **Tracks what actually works** (real-world data, not guesses)
 3. **Publishes outcome labels** (truth about every treatment)
 
-Instead of waiting {{< var drug_discovery_to_approval_years >}} from discovery to patient while you die, you join a trial at {{< var dfda_pragmatic_trial_cost_per_patient >}} instead of {{< var traditional_phase3_cost_per_patient >}}. You report outcomes through your phone. The AI analyzes millions of data points. The framework publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
+Instead of waiting {{< var drug_discovery_to_approval_years >}} from discovery to patient while you die, you join a trial. It costs {{< var dfda_pragmatic_trial_cost_per_patient >}} instead of {{< var traditional_phase3_cost_per_patient >}}. You report outcomes through your phone. The AI analyzes millions of data points. The framework publishes rankings: "For your condition, this works 73% of the time, this works 45%, this does nothing but costs less."
 
 It's like Amazon reviews except for not dying.
 
-Outcome labels replace "ask your doctor" with actual facts: "Improves memory 35%. Reduces symptoms 60%. Causes headaches 9% of the time. Based on 50,000 real patients like you." Just truth. No marketing. No 40-page legal documents written by lawyers having seizures.
+Outcome labels replace "ask your doctor" with actual facts. "Improves memory 35%. Reduces symptoms 60%. Causes headaches 9% of the time. Based on 50,000 real patients like you." Just truth. No marketing. No 40-page legal documents written by lawyers having seizures.
 
 ![Warning labels vs. labels that actually help](/assets/images/solution/solution-section-on-outcome-labels-bw-academic.jpg)
 
@@ -105,7 +105,7 @@ The solution only works if [everyone wins by winning](solution/aligning-incentiv
 **Billionaires:** {{< var victory_bond_annual_return_pct >}} returns + legacy + naming rights
 **Regular people:** Subsidized treatment + direct democracy + not dying
 
-Notice that everyone's selfish reason for participating happens to save humanity. The system doesn't require anyone to stop being selfish. It just redirects selfishness toward curing diseases instead of building bombs. It's like installing a fire alarm that also makes coffee; you're going to use it even if you don't care about fire safety.
+Notice that everyone's selfish reason for participating happens to save humanity. The system doesn't require anyone to stop being selfish. It just redirects selfishness toward curing diseases instead of building bombs. It's like installing a fire alarm that also makes coffee. You're going to use it even if you don't care about fire safety.
 
 ![Everyone gets what they want.](/assets/images/solution/solution-section-on-aligning-everyone-s-greed-bw-academic.jpg)
 
@@ -113,15 +113,15 @@ Notice that everyone's selfish reason for participating happens to save humanity
 
 The goal isn't 1%. The goal is 100%. The 1% treaty is just the door, not the destination.
 
-The {{< var iab_political_incentive_funding_pct >}} going to [Incentive Alignment Bonds](appendix/incentive-alignment-bonds-paper.qmd) creates a perpetual political machine that pushes for expansion. When 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, the pressure doubles. The political pressure for expansion *accelerates* with each success, creating a [ratchet that can eventually redirect all military spending](appendix/incentive-alignment-bonds-paper.qmd) from war to health.
+The {{< var iab_political_incentive_funding_pct >}} going to [Incentive Alignment Bonds](appendix/incentive-alignment-bonds-paper.qmd) creates a perpetual political machine that pushes for expansion. When 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, the pressure doubles. The political pressure for expansion *accelerates* with each success. This creates a [ratchet that can eventually redirect all military spending](appendix/incentive-alignment-bonds-paper.qmd) from war to health.
 
-[VICTORY Incentive Alignment Bonds](economics/victory-bonds.qmd) are the specific instrument: they align investors ({{< var victory_bond_funding_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} career incentives), and patients ({{< var dih_treasury_medical_research_pct >}} cures) with the same outcome.
+[VICTORY Incentive Alignment Bonds](economics/victory-bonds.qmd) are the specific instrument. They align investors ({{< var victory_bond_funding_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} career incentives), and patients ({{< var dih_treasury_medical_research_pct >}} cures) with the same outcome.
 
 ![When you give people money to cure diseases, they get more money to cure more diseases.](/assets/images/solution/solution-section-on-why-1-is-just-the-beginning-bw-academic.jpg)
 
 ## The War on Disease
 
-You're declaring war on disease. But unlike previous wars on abstract concepts (drugs, terror, poverty, Christmas), this one will actually work. Because you're using markets instead of bureaucracy.
+You're declaring war on disease. But unlike previous wars on abstract concepts (drugs, terror, poverty, Christmas), this one will actually work. You're using markets instead of bureaucracy.
 
 ![Your Wars on Drugs and Terror kept making more drugs and terror.](/assets/images/solution/solution-section-on-the-war-on-disease-bw-academic.jpg)
 
@@ -145,7 +145,7 @@ You're only asking for 1%.
 
 ## The Meta-Solution
 
-This solution isn't just about ending disease. It proves markets work better than bureaucracy for literally everything. If you can cure diseases by redirecting 1% of military spending through market mechanisms, you can solve education, housing, climate change, and literally any public goods problem using the same template.
+This solution isn't just about ending disease. It proves markets work better than bureaucracy for literally everything. You can cure diseases by redirecting 1% of military spending through market mechanisms. That same template solves education, housing, climate change, and literally any public goods problem.
 
 ![One simple trick solves health, education, housing, and climate change.](/assets/images/solution/solution-section-on-the-meta-solution-bw-academic.jpg)
 
@@ -174,4 +174,4 @@ If that seems anticlimactic, remember: Every revolution starts with someone doin
 
 In this case, the slightly less stupid thing is redirecting 1% of the murder budget to the not-dying budget.
 
-History will judge whether this was genius or obvious. But either way, you'll be alive to see it, which is more than you can say for the alternative.
+History will judge whether this was genius or obvious. But either way, you'll be alive to see it. That's more than you can say for the alternative.

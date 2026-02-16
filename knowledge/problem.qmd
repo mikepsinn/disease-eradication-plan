@@ -46,13 +46,13 @@ Since 1970, the [National Institutes of Health](problem/nih-fails-2-institute-he
 
 Diseases cured: Zero.
 
-Of its {{< var nih_annual_budget >}} annual budget, only {{< var nih_clinical_trials_spending_pct >}} goes to actual drug trials in humans. The other 97% goes to studying mice, building buildings, and publishing papers nobody reads. The system is operating at 2% of its potential capacity to save lives.
+Of its {{< var nih_annual_budget >}} annual budget, only {{< var nih_clinical_trials_spending_pct >}} goes to actual drug trials in humans. The other 97% goes to studying mice, building buildings, and publishing papers nobody reads. The system operates at 2% of its potential capacity to save lives.
 
 ![America spent $55,500 per patient to test COVID treatments. Britain spent $500. Same disease, same planet, same year. Different levels of commitment to wasting money.](/assets/images/problem/problem-section-on-medical-research-bw-academic.jpg)
 
 ## On the FDA
 
-The [FDA](problem/fda-is-unsafe-and-ineffective.qmd) makes drugs {{< var recovery_trial_cost_reduction_factor >}} times more expensive than necessary. It takes {{< var drug_discovery_to_approval_years >}} and {{< var pharma_drug_development_cost_current >}} to get a drug from discovery to patient. That's longer than it took to build the pyramids, and the pharaohs didn't have to file quarterly progress reports in triplicate. Ninety-five percent of diseases have zero approved treatments because the FDA is excellent at preventing any drugs from reaching people.
+The [FDA](problem/fda-is-unsafe-and-ineffective.qmd) makes drugs {{< var recovery_trial_cost_reduction_factor >}} times more expensive than necessary. It takes {{< var drug_discovery_to_approval_years >}} and {{< var pharma_drug_development_cost_current >}} to get a drug from discovery to patient. That's longer than it took to build the pyramids. The pharaohs didn't have to file quarterly progress reports in triplicate. Ninety-five percent of diseases have zero approved treatments because the FDA is excellent at preventing any drugs from reaching people.
 
 ![Oxford tests drugs for $500 per patient. The FDA does it for $41,000. Both use the same scientific method, discovered in the 17th century. Innovation takes time.](/assets/images/problem/problem-section-on-the-fda-bw-academic.jpg)
 
@@ -77,7 +77,7 @@ The interesting thing about having 13,000 nuclear warheads is that after the fir
 
 ## On What Disease Costs
 
-Disease extracts {{< var global_disease_economic_burden_annual >}} from humanity annually, including 10 million cancer deaths per year, 2 billion people with chronic diseases, and 1 billion depressed humans costing {{< var global_disease_productivity_loss_annual >}} in lost "wanting to exist."
+Disease extracts {{< var global_disease_economic_burden_annual >}} from humanity annually. That includes 10 million cancer deaths per year, 2 billion people with chronic diseases, and 1 billion depressed humans costing {{< var global_disease_productivity_loss_annual >}} in lost "wanting to exist."
 
 {{< include figures/trial-access-disparity-chart.qmd >}}
 
@@ -91,9 +91,9 @@ A Princeton study found [0% correlation](problem/unrepresentative-democracy.qmd)
 
 ![Defense contractors spend $250 million on lobbying and get $850 billion in contracts. That's a 340,000 percent return. You voted and got a sticker. Both are forms of civic participation.](/assets/images/problem/problem-section-on-democracy-bw-academic.jpg)
 
-When you want healthcare, you have approximately zero dollars to lobby with because you spent it all on healthcare (or you're dead, which significantly reduces your lobbying capacity).
+When you want healthcare, you have approximately zero dollars to lobby with. You spent it all on healthcare (or you're dead, which significantly reduces your lobbying capacity).
 
-Meanwhile, the people who regulate industries used to work for those industries and will work for them again after they're done "regulating." It's called the [revolving door](problem/unrepresentative-democracy.qmd), and it spins in one direction: toward money.
+Meanwhile, the people who regulate industries used to work for those industries. They'll work for them again after they're done "regulating." It's called the [revolving door](problem/unrepresentative-democracy.qmd), and it spins in one direction: toward money.
 
 ## On the Fixed Pie
 
@@ -130,4 +130,4 @@ The following chapters explain each problem in detail:
 - [Unrepresentative Democracy](problem/unrepresentative-democracy.qmd): Why 0% of what you want becomes policy
 - [You Are a Meat Robot](proof/body-as-repairable-machine.qmd): Your body is a machine, and the parts are fixable
 
-And if you don't fix it, you're going to die from something that could have been cured while the Pentagon loses another trillion dollars in their couch cushions.
+And if you don't fix it, you're going to die from something that could have been cured. Meanwhile, the Pentagon loses another trillion dollars in their couch cushions.

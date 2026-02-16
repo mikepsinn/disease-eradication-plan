@@ -31,7 +31,7 @@ Here's how to build that list.
 
 ### The Goal
 
-Build a privacy-preserving, globally verifiable referendum that shows public support for a [1% treaty](../solution/1-percent-treaty.qmd) and [decentralized institutes of health (DIH)](../solution/dih.qmd).
+Build a privacy-preserving, globally verifiable referendum. It shows public support for a [1% treaty](../solution/1-percent-treaty.qmd) and [decentralized institutes of health (DIH)](../solution/dih.qmd).
 
 ![The five things you need for a global referendum that politicians can't ignore: real votes, secret votes, fair votes, visible votes, and viral growth.](/assets/images/global-referendum/global-referendum-section-the-goal-bw-academic.jpg)
 
@@ -42,7 +42,7 @@ Requirements:
 - Must be persuasive (so policymakers actually care)
 - Must hit **{{< var global_population_activism_threshold_pct >}} global participation** (280M+ verified votes)
 
-That last number isn't arbitrary. It's based on historical data showing that once {{< var global_population_activism_threshold_pct >}} of a population actively supports something, it becomes unstoppable. More on that later.
+That last number isn't arbitrary. It's based on historical data. Once {{< var global_population_activism_threshold_pct >}} of a population actively supports something, it becomes unstoppable. More on that later.
 
 **The Principles (Or: How Not to Build a Fraudulent Voting System):**
 
@@ -50,20 +50,20 @@ That last number isn't arbitrary. It's based on historical data showing that onc
 - **Privacy**: Nobody knows who you voted for (including us)
 - **Equity**: Works for everyone, including people without bank accounts or government IDs
 - **Transparency**: Open-source code so anyone can audit it
-- **Viral Growth**: Needs to spread organically, targeting $0.50-0.64 per verified participant (includes referral payment + biometric verification + platform overhead)
+- **Viral Growth**: Needs to spread organically. Target: $0.50-0.64 per verified participant (includes referral payment + biometric verification + platform overhead)
 
-The trick is doing all of these simultaneously, which is harder than it sounds.
+The trick is doing all of these simultaneously. That's harder than it sounds.
 
 ## System Architecture (Or: Math That Politicians Can't Argue With)
 
-The voting system uses an **end-to-end verifiable scheme** (like Helios [@helios-voting]). Translation: cryptographic receipts that prove you voted, without proving how you voted. Politicians can claim polls are fake. They cannot claim math is fake. (Some have tried. It doesn't go well.)
+The voting system uses an **end-to-end verifiable scheme**. Translation: cryptographic receipts that prove you voted, without proving *how* you voted. Politicians can claim polls are fake. They cannot claim math is fake. (Some have tried. It doesn't go well.)
 
 ![Your vote gets encrypted, mixed with everyone else's votes like a cryptographic smoothie, then posted publicly. You can verify yours; nobody knows it's yours.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
 
 Four properties that make this unkillable:
 
 - **Individual Verification**: Each voter gets a cryptographic receipt proving their vote was counted
-- **Public Audit**: All ballots published (anonymized) so anyone can verify the total
+- **Public Audit**: All ballots are published (anonymized) so anyone can verify the total
 - **Zero-Knowledge Proofs**: Mathematical guarantees the count is legitimate without revealing how anyone voted
 - **Privacy by Design**: Biometric processing happens on your device; the system never sees raw data
 
@@ -71,7 +71,7 @@ The infrastructure handles 280M+ participants across 40+ languages. All code is 
 
 ## On Stopping People from Cheating (The Hard Part)
 
-The internet is full of bots, fraudsters, and people who think it's funny to vote 1,000 times. You need to verify that each vote comes from a real, unique human without requiring government ID (excludes billions), violating privacy (creepy and illegal), or making it impossible for normal people to participate (defeats the purpose).
+The internet is full of bots, fraudsters, and people who think it's funny to vote 1,000 times. You need to verify that each vote comes from a real, unique human. You can't require government ID (excludes billions). You can't violate privacy (creepy and illegal). And you can't make it impossible for normal people to participate (defeats the purpose).
 
 The system uses three escalating verification layers:
 
@@ -81,15 +81,15 @@ The system uses three escalating verification layers:
 
 ![Layer 1: Are you human? Layer 2: Are you a real human? Layer 3: Are you a real human who hasn't voted already?](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
 
-The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted. AI-powered fraud detection (pattern analysis, network mapping, real-time monitoring) catches the remaining edge cases at >99% detection with <1% false positives.
+The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted. AI-powered fraud detection (pattern analysis, network mapping, real-time monitoring) catches the remaining edge cases. Detection rate: >99% with <1% false positives.
 
-All biometric data is processed on your device, encrypted with keys you control, and never stored centrally. The system complies with GDPR [@gdpr-biometric-data], CCPA/CPRA [@ccpa-cpra-compliance], BIPA [@illinois-bipa], and COPPA [@coppa-compliance]. Privacy is the default, not a setting.
+Your biometric data stays on your device. It's encrypted with keys you control and never stored centrally. The system complies with GDPR [@gdpr-biometric-data], CCPA/CPRA [@ccpa-cpra-compliance], BIPA [@illinois-bipa], and COPPA [@coppa-compliance]. Privacy is the default, not a setting.
 
 ## Growth Strategy
 
 Getting 280 million people to do anything is hard. Getting 280 million people to click a button to maybe not die? Easier than you'd think, if you pay them.
 
-The growth engine is a viral referral system funded by [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd). Target: <$0.75 per verified participant. For comparison, acquiring a coffee customer costs $5-15. The product here is "not dying from preventable diseases," which sells itself if you give it a nudge.
+The growth engine is a viral referral system. It's funded by [Incentive Alignment Bonds](../economics/victory-bonds.qmd). Target: <$0.75 per verified participant. For comparison, acquiring a coffee customer costs $5-15. The product here is "not dying from preventable diseases." It sells itself if you give it a nudge.
 
 For the full marketing strategy (memes, influencers, referral economics, tiered incentives), see [Campaign Budget](../economics/campaign-budget.qmd). For the self-aware propaganda playbook, see [Recruitment Plan](../appendix/recruitment-and-propaganda-plan.qmd).
 
@@ -103,11 +103,11 @@ People will claim you cheated. This is inevitable. The only defense is making ch
 
 You can't just pay people to click buttons. Well, you can, but then you get garbage data and angry economists. Instead: reward structured learning paths before voting. Progressive unlocking of higher reward tiers (learn more = earn more). Result: informed participants, not confused button-clickers.
 
-**Legal positioning**: Non-binding global consultation to demonstrate consent. Country-specific bridges to official mechanisms where feasible. Constitutional law scholar review for legitimacy. GDPR/CCPA alignment with minimal data retention.
+**Legal positioning**: Non-binding global consultation to demonstrate consent. Country-specific bridges to official mechanisms where feasible. Constitutional law scholars review for legitimacy. GDPR/CCPA alignment with minimal data retention.
 
 ## Implementation Roadmap
 
-Building a global referendum in 12 months sounds insane. It is insane. But so is dying of diseases we know how to prevent, and we've been doing that for decades.
+Building a global referendum in 12 months sounds insane. It is insane. But so is dying of diseases we know how to prevent. We've been doing that for decades.
 
 ### Phase 1: Foundation (Months 1-2)
 
@@ -158,15 +158,15 @@ Secondary metrics track geographic distribution, brand awareness, and whether po
 
 ### What You're Building
 
-A global referendum that combines cutting-edge verification technology with viral marketing to achieve the {{< var global_population_activism_threshold_pct >}} tipping point.
+A global referendum. It combines verification technology with viral marketing to hit the {{< var global_population_activism_threshold_pct >}} tipping point.
 
 ![280 million people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
 
-Translation: You're getting 280 million humans to cryptographically prove they support the treaty, which creates political pressure so intense that ignoring it becomes career suicide for politicians.
+Translation: You're getting 280 million humans to cryptographically prove they support the treaty. This creates political pressure so intense that ignoring it becomes career suicide for politicians.
 
 #### The Innovation Part
 
-This isn't just a referendum. It's creating a new standard for global digital democracy that proves you can secure mass participation without building a surveillance state or trusting any central authority.
+This isn't just a referendum. It's a new standard for global digital democracy. It proves you can secure mass participation without building a surveillance state or trusting any central authority.
 
 ![Old way: Trust the government to count votes honestly. New way: Math counts votes; government can't cheat even if it wants to.](/assets/images/global-referendum/global-referendum-section-the-innovation-part-bw-academic.jpg)
 
@@ -180,7 +180,7 @@ $200M for the campaign, as allocated in the VICTORY [Incentive Alignment Bonds](
 
 Target cost: <$0.75 per verified participant to hit the 280M+ goal.
 
-That's cheaper than acquiring a customer for literally any consumer product, and the product is "not dying from preventable diseases."
+That's cheaper than acquiring a customer for literally any consumer product. The product is "not dying from preventable diseases."
 
 #### What Success Looks Like
 
@@ -188,7 +188,7 @@ That's cheaper than acquiring a customer for literally any consumer product, and
 
 ### On Why {{< var global_population_activism_threshold_pct >}} Is The Magic Number
 
-The 280 million target isn't pulled from thin air. It's based on the "{{< var global_population_activism_threshold_pct >}} Rule," a historical pattern that's held true across cultures and centuries:
+The 280 million target isn't pulled from thin air. It's based on the "{{< var global_population_activism_threshold_pct >}} Rule." This historical pattern has held true across cultures and centuries:
 
 **When {{< var global_population_activism_threshold_pct >}} of a population actively participates in sustained, nonviolent action, the movement becomes unstoppable.**
 
@@ -203,7 +203,7 @@ The pattern repeats because once you hit {{< var global_population_activism_thre
 2. The support is distributed (not just one region or demographic)
 3. Opposition becomes politically toxic
 
-The strategy leverages this precedent with a twist: offer people healthcare they actually want, and watch them voluntarily join the largest political movement in history. No marches required. Just clicking.
+The strategy leverages this precedent with a twist. Offer people healthcare they actually want. Watch them voluntarily join the largest political movement in history. No marches required. Just clicking.
 
 ![3.5% of people actively pushing for change is enough to topple governments. It's a historical pattern, like gravity but for revolutions.](/assets/images/global-referendum/global-referendum-section-on-why-3-5-is-the-magic-number-bw-academic.jpg)
 

@@ -21,9 +21,9 @@ You can align major interest groups behind a single goal: curing disease. Not th
 
 ## Defense Contractors: Teaching Merchants of Death to Love Life
 
-Defense contractors aren't evil. They're just following the money. Currently, that money comes from building things that explode. You're going to offer them something better: VICTORY Incentive Alignment Bonds at {{< var victory_bond_annual_return_pct >}}+ returns versus their current 2-3% defense stock yields. Add {{< var victory_bond_funding_pct >}} VICTORY bonds to a pension portfolio and blended returns jump from 7% to 33%+. It's like finding money in the pocket of pants you're currently wearing. Except the money multiplies. While you're wearing the pants.
+Defense contractors aren't evil. They're just following the money. Currently, that money comes from building things that explode. You're going to offer them something better. VICTORY Incentive Alignment Bonds deliver {{< var victory_bond_annual_return_pct >}}+ returns versus their current 2-3% defense stock yields. Add {{< var victory_bond_funding_pct >}} VICTORY bonds to a pension portfolio and blended returns jump from 7% to 33%+. It's like finding money in the pocket of pants you're currently wearing. Except the money multiplies. While you're wearing the pants.
 
-Once Lockheed buys bonds, Raytheon has to follow or get crushed by Lockheed's superior returns. It's a prisoners' dilemma where cooperation pays better than defection. Start with pension funds (fiduciary duty requires best returns), and they end up lobbying FOR the treaty to protect their investment. Defense contractors become your biggest supporters.
+Once Lockheed buys bonds, Raytheon has to follow or get crushed by Lockheed's superior returns. It's a prisoners' dilemma where cooperation pays better than defection. Start with pension funds (fiduciary duty requires best returns). They end up lobbying FOR the treaty to protect their investment. Defense contractors become your biggest supporters.
 
 See [Making Friends with the Military-Industrial Complex](../strategy/co-opting-defense-contractors.qmd) for the full playbook.
 
@@ -52,7 +52,7 @@ Insurance companies are already on your side. They just don't know it yet. Every
 | Heart Disease | {{< var us_heart_disease_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
 | Cancer | {{< var us_cancer_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
 
-Even partial cures dramatically improve their margins. They don't need $0 costs - they need costs to stop rising 7% annually.
+Even partial cures dramatically improve their margins. They don't need $0 costs. They need costs to stop rising 7% annually.
 
 #### The Implementation
 
@@ -78,7 +78,7 @@ You're offering insurance companies a world where chronic disease costs stop com
 
 ## Pharmaceutical Companies: Converting Drug Dealers to Drug Curers
 
-Pharma companies aren't evil either. They're trapped in a broken business model that rewards treating symptoms forever instead of curing diseases once. Here's how you free them.
+Pharma companies aren't evil either. They're trapped in a broken business model. That model rewards treating symptoms forever instead of curing diseases once. Here's how you free them.
 
 ![Old model: sell pills forever. New model: cure disease once. One makes steady money, the other makes sense.](/assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-converting-drug-dealers-to-drug-curers-bw-academic.jpg)
 
@@ -152,7 +152,7 @@ Result: 50,000-participant trial drops from $2.4 billion to under $50 million (r
 | Only blockbusters viable | Rare diseases = profitable |
 | Massive risk | Manageable risk per attempt |
 
-A decentralized institutes of health network doesn't change whether drugs work biologically. It changes the economics: you profit from TRYING, not just from SUCCEEDING.
+A decentralized institutes of health network doesn't change whether drugs work biologically. It changes the economics. You profit from TRYING, not just from SUCCEEDING.
 
 ![Current model: costs billions, takes decades. Proposed model: costs thousands, takes months. The expensive one is considered serious.](/assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-bw-academic.jpg)
 
@@ -174,7 +174,7 @@ The trade-off: **Lower revenue per drug, but massively more attempts.**
 - $500M per success is profitable (smaller markets work)
 - Can attempt all 10,000 compounds (failure doesn't bankrupt you)
 - Rare diseases become gold mines (no competition)
-- 115× more trials = 115× more shots on goal
+- 115x more trials = 115x more shots on goal
 
 ### How to Get Them Onboard
 
@@ -281,7 +281,7 @@ Once you align a few key players, others follow:
 
 ### Why This Can Work: Solving the Collective Action Problem
 
-Public choice theory predicts that concentrated interests (defense contractors, pharma incumbents) beat diffuse interests (patients, taxpayers) because small groups with high per-person stakes outorganize large groups with low per-person stakes. This is why the current system persists despite its inefficiency.
+Public choice theory predicts that concentrated interests (defense contractors, pharma incumbents) beat diffuse interests (patients, taxpayers). Why? Small groups with high per-person stakes outorganize large groups with low per-person stakes. The current system persists despite its inefficiency.
 
 **But here's what Olson missed:** The capital asymmetry is 90:1 in favor of diffuse beneficiaries.
 
@@ -290,23 +290,23 @@ Public choice theory predicts that concentrated interests (defense contractors, 
 | Concentrated interests (defense, fossil fuels) | ~{{< var concentrated_interest_sector_market_cap_usd >}} market cap | $100M-$1B annually |
 | Diffuse beneficiaries (everyone who'd benefit from cures) | {{< var global_household_wealth_usd >}} household wealth | ~$0 (coordination failure) |
 
-The problem isn't resources. It's coordination. Diffuse beneficiaries can't deploy their 90:1 capital advantage because each individual's stake is small and coordination costs are prohibitive.
+The problem isn't resources. It's coordination. Diffuse beneficiaries can't deploy their 90:1 capital advantage. Each individual's stake is small. Coordination costs are prohibitive.
 
-**[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve the coordination problem by securitizing political change.** When political outcomes become an investable asset class with 100-1000x expected returns, coordination happens through financial markets instead of grassroots organizing. Investors don't need to care about curing disease - they need to care about returns. The mechanism converts self-interest into collective action.
+**[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve the coordination problem by securitizing political change.** Political outcomes become an investable asset class with 100-1000x expected returns. Coordination happens through financial markets instead of grassroots organizing. Investors don't need to care about curing disease. They need to care about returns. The mechanism converts self-interest into collective action.
 
 #### Why the cascade can happen (not "must" happen)
 
 Once IABs concentrate financial benefits on the pro-health side:
 
 - Politicians face a new calculation: IAB benefits > concentrated opposition costs
-- Each policy success increases IAB funding, strengthening the coalition
+- Each policy success increases IAB funding. That strengthens the coalition.
 - Investors lobby for treaty expansion to increase their returns
 - The dynamic reverses: supporting pragmatic clinical trial funding becomes the concentrated-benefit option
 
-This isn't inevitable. It requires sufficient IAB funding to overcome opposition. But it's achievable because the capital is there - it just needs a coordination mechanism.
+This isn't inevitable. It requires sufficient IAB funding to overcome opposition. But it's achievable because the capital is there. It just needs a coordination mechanism.
 
 ![The virtuous cycle: fund research, cures happen, politicians look good, more funding arrives. Like the weapon-money cycle but nobody explodes.](/assets/images/aligning-incentives/aligning-incentives-section-why-the-cascade-can-happen-not-must-happen-bw-academic.jpg)
 
 ## Why This Scales: The Ratchet Effect
 
-Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, funding is {{< var iab_political_incentive_funding_annual >}}/year; at 10%, it's $27B/year. Politicians who supported the 1% treaty are rewarded; those rewards grow if they push for 2%. It's a ratchet that only moves in one direction. See [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) for the full scaling mechanism and tables.
+Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, it's $27B/year. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction. See [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) for the full scaling mechanism and tables.

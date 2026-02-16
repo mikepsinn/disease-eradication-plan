@@ -15,7 +15,7 @@ image: /assets/og-images/knowledge/solution/wishocracy-og-retro-academic.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 
-Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd) and now you've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund.
+Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd). Now you've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund.
 
 But not all of it is available for allocation. First, the automatic deductions:
 
@@ -25,9 +25,9 @@ But not all of it is available for allocation. First, the automatic deductions:
 | [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
 | **Available for Wishocracy** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | What you get to allocate |
 
-How do you avoid parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}} or bureaucracy from wasting it all?
+How do you stop parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}}? How do you stop bureaucracy from wasting it all?
 
-**Wishocracy** replaces committees with code and representatives with mathematics. It's how you let 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}} without it turning into a bureaucratic nightmare. The difference between this and the NIH is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach knows things bureaucrats don't.
+**Wishocracy** replaces committees with code and representatives with mathematics. It lets 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}}. Without turning it into a bureaucratic nightmare. The difference between this and the NIH is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach knows things bureaucrats don't.
 
 ## How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
 
@@ -68,7 +68,7 @@ Your [decentralized institutes of health (DIH)](dih.qmd) network functions as a 
 
 ### How It Works: Pairwise Comparisons Between Campaigns
 
-Instead of committees deciding "a framework for drug assessment gets $10B," the global population votes using pairwise comparisons:
+Committees don't decide "pragmatic clinical trial infrastructure gets $10B." The global population votes using pairwise comparisons:
 
 **"What's more important right now:"**
 
@@ -104,7 +104,7 @@ Instead of asking, "Rank these 10,000 campaign proposals," the system asks:
 
 ![Tinder, but for democracy](../../assets/images/wishocracy-slider.png)
 
-You make a choice. That's it. You do this a few times with different random pairs. It takes five minutes. Millions of other people do the same. An algorithm then takes these millions of simple, head-to-head comparisons and builds a representative, real-time ranking of infrastructure and public goods priorities.
+You make a choice. That's it. You do this a few times with different random pairs. It takes five minutes. Millions of other people do the same. An algorithm takes all these simple, head-to-head comparisons. It builds a real-time ranking of infrastructure and public goods priorities.
 
 (Remember: Wishocracy doesn't allocate between diseases. Patients do that by choosing which trials to join. Wishocracy allocates between *infrastructure campaigns* and *public goods* that markets can't handle.)
 
@@ -133,14 +133,14 @@ It's democracy without the stupidity. We still get the stupidity, but it's evenl
 
 ## From Priorities to Projects
 
-Once the Pairwise Slider Allocation tells you that "Curing Alzheimer's" is a top priority, Wishocracy translates that priority into action.
+The Pairwise Slider Allocation tells you "Curing Alzheimer's" is a top priority. Wishocracy translates that priority into action.
 
-1.  **AI Breaks It Down:** An AI takes the impossible goal of "Cure Alzheimer's" and breaks it down into thousands of smaller, concrete, fundable tasks. "Cure Alzheimer's" becomes "Map protein structures," which becomes "Run AlphaFold on these sequences," which becomes "Rent computing time." Every impossible problem is just a series of possible steps.
+1.  **AI Breaks It Down:** An AI takes the impossible goal of "Cure Alzheimer's." It breaks that goal into thousands of smaller, concrete, fundable tasks. "Cure Alzheimer's" becomes "Map protein structures." That becomes "Run AlphaFold on these sequences." That becomes "Rent computing time." Every impossible problem is just a series of possible steps.
 
-2.  **The Bounty Board:** These tasks are posted to a global marketplace. It's like eBay, but for saving humanity.
+2.  **The Bounty Board:** The system posts these tasks to a global marketplace. It's like eBay, but for saving humanity.
     -   **WANTED:** A cure for Alzheimer's. **BOUNTY:** $10 billion.
     -   **WANTED:** A map of all protein misfolding patterns. **BOUNTY:** $500 million.
 
-3.  **The World Competes:** The best teams from around the world, from MIT to some kid in a garage, bid on these tasks. Multiple approaches are funded in parallel. The ones that show promise get more funding. The ones that fail are defunded instantly. It's venture capital, but for not dying.
+3.  **The World Competes:** The best teams from around the world, from MIT to some kid in a garage, bid on these tasks. The system funds multiple approaches in parallel. The ones that show promise get more funding. The ones that fail lose funding instantly. It's venture capital, but for not dying.
 
 ![Computer breaks big wishes into small tasks. People compete to do the tasks. Wishes come true. We've automated hope.](/assets/images/wishocracy/wishocracy-section-execution-workflow-bw-academic.jpg)

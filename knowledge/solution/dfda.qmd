@@ -19,13 +19,13 @@ Out of {{< var current_disease_patients_global >}} with chronic disease, only {{
 
 Half of humanity would volunteer [@patient-willingness-clinical-trials] if they could. We have **240 times more willing participants** than we're using.
 
-This isn't because people don't want to help find cures. It's because the current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and have exclusion criteria that reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates].
+This isn't because people don't want to help find cures. The current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates].
 
 **We're not facing a recruitment problem. We're facing a capacity problem.**
 
 ## The Solution: Consumer Reports for Drugs
 
-Your decentralized framework for drug assessment (dFDA) is an **open coordination protocol** that enables existing platforms to connect companies with treatments to patients who need them. It's HTTP for clinical trials - a standard that lets all the existing systems talk to each other and share outcomes.
+Your decentralized framework for drug assessment (dFDA) is an **open coordination protocol**. It enables existing platforms to connect companies with treatments to patients who need them. It's HTTP for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes.
 
 ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
 
@@ -117,27 +117,27 @@ And then we could... write down what happens?
 
 And then other sick people could... see what worked?
 
-Your current system leaves 95% of rare diseases [@95-pct-diseases-no-treatment] with zero approved treatments and ensures 85% of patients are barred [@fda-trial-patient-exclusion-criteria] from the trials that might save them. We've managed to perfect a system where only the healthy and compliant are allowed to test cures for the sick and desperate. It's genius, in a suicidal sort of way.
+Your current system leaves 95% of rare diseases [@95-pct-diseases-no-treatment] with zero approved treatments. It bars 85% of patients [@fda-trial-patient-exclusion-criteria] from the trials that might save them. We've perfected a system where only the healthy and compliant test cures for the sick and desperate. It's genius, in a suicidal sort of way.
 
-This is because trials are designed to test drugs on people who don't actually exist. To get into a study for an antidepressant, for example, you can't have any other pesky problems like anxiety or PTSD. You can't have a history of drug or alcohol use. You can't be on other medications. You have to be the *perfect* kind of sick. The result? One investigation found that only 14.5% [@pubmed-14628985] of real-world patients with depression would actually qualify. The rest of us are too messy for their pristine, clean data.
+Trials are designed to test drugs on people who don't actually exist. To get into a study for an antidepressant, you can't have any other pesky problems like anxiety or PTSD. You can't have a history of drug or alcohol use. You can't be on other medications. You have to be the *perfect* kind of sick. The result? Only 14.5% [@pubmed-14628985] of real-world patients with depression would actually qualify. The rest of us are too messy for their pristine, clean data.
 
-On top of excluding everyone with a pulse, these "definitive" studies are run on comically small groups. They'll test a new heart drug on 275 people [@us-trial-enrollment-targets-2009], a cancer drug on just 20 people [@us-trial-enrollment-targets-2009], and a diabetes drug on 100 people [@us-trial-enrollment-targets-2009], then prescribe the winner to millions.
+On top of excluding everyone with a pulse, these "definitive" studies run on comically small groups. They'll test a new heart drug on 275 people [@us-trial-enrollment-targets-2009]. A cancer drug on just 20 people [@us-trial-enrollment-targets-2009]. A diabetes drug on 100 people [@us-trial-enrollment-targets-2009]. Then they prescribe the winner to millions.
 
 ![We tested this drug on thirty-six people and then gave it to millions. Like taste-testing a pie with one person and serving it to a stadium.](../../assets/images/wellbutrin-effectiveness-small-sample-size.png)
 
-We're basing the survival of our species on a sample size smaller than a kindergarten class. So, instead of studying these mythical, perfectly sick unicorns, what if we just collected data from everyone who's *actually* sick?
+We're basing the survival of our species on a sample size smaller than a kindergarten class. So instead of studying these mythical, perfectly sick unicorns, what if we just collected data from everyone who's *actually* sick?
 
 ### The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
 
-This framework is built on a simple, powerful, and slightly creepy idea: we can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE), which is a fancy term for "watching what happens."
+This framework is built on a simple, powerful, and slightly creepy idea. We can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE). That's a fancy term for "watching what happens."
 
 Skeptics will say, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is all voodoo.
 
-They're not wrong about the old way. Old observational studies were flawed because they couldn't easily separate correlation from causation. Did the people who ate eggs also smoke three packs a day? The studies couldn't always tell.
+They're not wrong about the old way. Old observational studies couldn't easily separate correlation from causation. Did the people who ate eggs also smoke three packs a day? The studies couldn't always tell.
 
-But here's what's changed: we now have so much data and such powerful computers that we can overcome these problems. With modern data from wearables, apps, and electronic health records, a single person can become their own control group. We can track someone's arthritis pain for a month, have them take Turmeric for a month, then stop, then start again. By doing this, we can see if the Turmeric is actually doing something or if it's just a coincidence.
+But here's what's changed: we now have so much data and such powerful computers that we can overcome these problems. With modern data from wearables, apps, and electronic health records, a single person can become their own control group. Track someone's arthritis pain for a month. Have them take Turmeric for a month, then stop, then start again. This reveals whether the Turmeric is actually doing something or if it's just a coincidence.
 
-Modern statistical methods are so good that a meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] found that the results from high-quality observational studies are generally the same as those from expensive, slow randomized controlled trials.
+Modern statistical methods are so good that a meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] confirmed this. The results from high-quality observational studies generally match those from expensive, slow randomized controlled trials.
 
 ![Watching what happens versus making it happen, and which one is better at predicting who dies.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
@@ -189,15 +189,15 @@ Search any condition and see every treatment ranked by real-world effectiveness:
 - **Experimental options** with preliminary data
 - One-click access to join available trials
 
-No more guessing which treatment your doctor half-remembers from a conference. Just clear rankings based on what actually worked for people like you. The current system never publishes negative results, so we waste billions repeating the same failed ideas. This ends that particular brand of expensive stupidity.
+No more guessing which treatment your doctor half-remembers from a conference. Just clear rankings based on what actually worked for people like you. The current system never publishes negative results. We waste billions repeating the same failed ideas. This ends that particular brand of expensive stupidity.
 
 ### Step 2.5: See the Future (With Financially-Backed Predictions)
 
-To complement the real-world data from past patients, the system will integrate a powerful forecasting tool: **live prediction markets**.
+The system also integrates a powerful forecasting tool: **live prediction markets**.
 
 ![Lots of people guessing whether drugs will work, and the average of their guesses is usually right. The wisdom of crowds, betting edition.](/assets/images/dfda/dfda-section-step-2-5-see-the-future-with-financially-backed-predictions-bw-academic.jpg)
 
-This isn't just polling experts; it's a marketplace where researchers, doctors, investors, and even the public can bet real money on a trial's future outcomes.
+This isn't just polling experts. It's a marketplace where researchers, doctors, investors, and the public can bet real money on a trial's future outcomes.
 
 For any given trial, you'll see real-time odds on questions like:
 
@@ -207,12 +207,12 @@ For any given trial, you'll see real-time odds on questions like:
 
 #### Why Trust This?
 
-1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong, creating a powerful incentive for accuracy.
-2.  **The Ultimate Fact-Checker**: Your decentralized institutes of health (DIH) network automatically resolves these bets using the actual, aggregated, and anonymized patient data collected through the dFDA protocol. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts, or bettors go broke.
+1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong. That creates a powerful incentive for accuracy.
+2.  **The Ultimate Fact-Checker**: Your decentralized institutes of health (DIH) network automatically resolves these bets using actual, aggregated, anonymized patient data from the dFDA protocol. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts. Or bettors go broke.
 
 ![People bet on drugs, patients take drugs, we check who won the bet. Like fantasy football but with your liver.](/assets/images/dfda/dfda-section-why-trust-this-bw-academic.jpg)
 
-This gives patients an invaluable second layer of information: not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
+This gives patients an invaluable second layer of information. Not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
 
 ### Step 3: Join a Trial from Your Couch (While Dying Comfortably)
 
@@ -276,15 +276,15 @@ Here's what we're NOT doing: building a government platform that competes with e
 
 ![One company owning the entire railway versus everyone sharing the tracks. We prefer sharing, as it's cheaper and less monopolistic.](/assets/images/dfda/dfda-section-the-partnership-approach-building-rails-not-trains-bw-academic.jpg)
 
-Here's what we ARE doing: establishing an open protocol that lets all the existing platforms talk to each other.
+Here's what we ARE doing: building an open protocol that lets all existing platforms talk to each other.
 
-Think of it like the internet. We didn't build one website that everyone has to use. We built HTTP - the protocol that lets all websites connect. Same idea.
+Think of it like the internet. We didn't build one website that everyone has to use. We built HTTP, the protocol that lets all websites connect. Same idea.
 
 **How your framework gets funded:** An implementation of this framework is one of many campaigns competing for funding from the 1% Treaty Fund via [Wishocracy](wishocracy.qmd). It has no independent budget authority. If a particular implementation gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
 
 ### The Players Already in the Game
 
-Multiple companies have already built decentralized clinical trial platforms, collectively raising hundreds of millions in venture funding [@dct-platform-funding-medable; @dct-platform-funding-others]. They're good at it. They have users. They have infrastructure.
+Multiple companies have already built decentralized clinical trial platforms. They've collectively raised hundreds of millions in venture funding [@dct-platform-funding-others]. They're good at it. They have users. They have infrastructure.
 
 Why compete with them? Partner instead.
 
@@ -481,13 +481,13 @@ Millions of Trials Simultaneously
 
 This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for 8 billion unique people. The FDA could work 24/7 for a million years and still be behind.
 
-The only solution is to let patients and doctors make their own decisions, then pool the data so everyone benefits from everyone's experience.
+Let patients and doctors make their own decisions. Then pool the data so everyone benefits from everyone's experience.
 
 ## Real Examples of This Working (While the FDA Wasn't Looking)
 
 ### The Oxford Recovery Trial: How the British Accidentally Saved Medicine
 
-During COVID, while America was filling out forms, Oxford University did something crazy: they just tested drugs on dying people to see if they stopped dying.
+During COVID, while America was filling out forms, Oxford University did something crazy. They just tested drugs on dying people to see if they stopped dying.
 
 ![Traditional clinical trials versus the Oxford approach. One costs 30 million dollars and takes years. The other costs less than a coffee shop franchise and actually saves people.](/assets/images/dfda/dfda-section-the-oxford-recovery-trial-how-the-british-accidentally-saved-medicine-bw-academic.jpg)
 
@@ -551,17 +551,17 @@ The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead o
 **FDAi**: "Based on 50,000 similar cases, here's what worked:
 
 - 60% success: Reattachment surgery + Drug A
-- 30% success: Prosthetic foot + Drug B  
+- 30% success: Prosthetic foot + Drug B
 - 10% success: Hopping lessons + Prayer
 - 0% success: Essential oils (but your remaining foot will smell lavender-fresh)"
 
-It does this by connecting to all your data, from wearables, apps, and your medical records, and looking for patterns. It's automated root cause analysis for your own body, finding what's wrong while your doctor is still trying to remember your name. It's like having every doctor who ever lived in your pocket, except they actually agree on something.
+It does this by connecting to all your data: wearables, apps, and medical records. Then it looks for patterns. It's automated root cause analysis for your own body. It finds what's wrong while your doctor is still trying to remember your name. It's like having every doctor who ever lived in your pocket, except they actually agree on something.
 
 ## The Digital Twin Safe: Your Medical Data's Panic Room
 
 <img src="../../assets/images/human-file-system.png" alt="Digital Twin Safe" style="max-width: 600px; width: 100%;" />
 
-Right now, your medical data is scattered across:
+Right now, your medical data sits scattered across:
 
 - 17 different doctors who don't talk
 - 5 insurance companies that hate you
@@ -581,7 +581,7 @@ You control who sees what:
 
 Food has nutrition labels. Cigarettes have warning labels. Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
 
-**Outcome Labels** fix that - clear, data-driven summaries showing exactly what happens when real people try a treatment:
+**Outcome Labels** fix that. Clear, data-driven summaries showing exactly what happens when real people try a treatment:
 
 ![What medicine labels would say if they were honest.](../../assets/images/dfda-outcome-labels.png)
 
@@ -634,7 +634,7 @@ The fact that we need a law for this tells you everything about our species.
 **Section 4**: Repeat until nobody's dying.
 **Section 5**: Seriously, how was this not already the law?
 
-Congress will debate this for 17 years, the same time it takes to approve one drug.
+Congress will debate this for 17 years. That's the same time it takes to approve one drug.
 
 ## The Future: Where Death Becomes Embarrassing
 

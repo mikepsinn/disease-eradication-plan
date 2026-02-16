@@ -54,7 +54,7 @@ Curing cancer benefits 8 billion people a little. Blocking cancer cures benefits
 
 Your military-industrial complex solved this problem for defense. Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets. Result: the most powerful military in human history.
 
-Disease has no such coalition. Your patients are diffuse. Your researchers compete for scraps. Your funders lack coordination. Your politicians get no credit for cures that arrive after their term. Everyone wants disease eradicated; no one has a concentrated interest in making it happen. It's like everyone wanting a clean kitchen but nobody wanting to do the dishes, except the dishes are cancer.
+Disease has no such coalition. Your patients are diffuse. Your researchers compete for scraps. Your funders lack coordination. Your politicians get no credit for cures that arrive after their term ends. Everyone wants disease eradicated; no one has a concentrated interest in making it happen. It's like everyone wanting a clean kitchen but nobody wanting to do the dishes, except the dishes are cancer.
 
 **Your DIH solves the Olsonian problem by creating concentrated interests in disease eradication.** See [The Incentive Stack](#the-incentive-stack-making-roi-the-selfish-choice) for how.
 
@@ -90,11 +90,11 @@ Your war on disease has been losing for 50 years because it's not actually a war
 
 - Researchers compete for grants instead of collaborating on cures
 - Pharma companies duplicate efforts and hide failures
-- Patients can't access trials; their data goes uncollected
+- Patients can't access trials; no one collects their data
 - Politicians fund what lobbyists want, not what works
 - Funders spray money without measuring impact
 
-Imagine if D-Day had been run this way. The Americans land at one beach, the British at another, neither tells the other what they learned, and both compete for the same supply ships while the enemy reads their grant applications.
+Imagine if D-Day had been run this way. The Americans land at one beach, the British at another. Neither tells the other what they learned. Both compete for the same supply ships while the enemy reads their grant applications.
 
 That's your current war on disease. Your DIH is the coordination layer that turns scattered skirmishes into a unified campaign.
 
@@ -113,7 +113,7 @@ This means:
 - Every patient joins trials that matter most
 - Nothing gets wasted on low-ROI activities
 
-On your planet, this is considered radical. On mine, it's called "obvious."
+On your planet, you call this radical. On mine, we call it "obvious."
 
 ### Three Core Functions
 
@@ -127,8 +127,7 @@ Everything operational is outsourced. Trial infrastructure? That's your [dFDA's]
 
 ![A tiny middle bit that handles money, surrounded by other people who do the actual work. Like a very small manager with many employees.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
 
-Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to influence. Just code that moves money toward measured outcomes. Your species has a habit of corrupting every institution you build. This one is designed to be boring enough that nobody bothers.
-
+Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to influence. Just code that moves money toward measured outcomes. Your species has a habit of corrupting every institution you build. This one is boring enough that nobody bothers.
 
 ## The Core Innovation: Pay for Results
 
@@ -147,7 +146,7 @@ This is how most other industries work. You pay contractors when they build the 
 
 ### Your Data Commons: Publish Everything
 
-Your current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Your scientists waste billions repeating mistakes someone else already made. It's like your entire species has amnesia, but only for the embarrassing parts.
+Your current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Your scientists waste billions repeating mistakes someone else already made. It's like your whole species has amnesia, but only for the embarrassing parts.
 
 ![Currently, research results hide in separate filing cabinets. This shows them all dumped in one big pile where a computer can look at them.](/assets/images/dih/dih-section-the-data-commons-publish-everything-bw-academic.jpg)
 
@@ -157,7 +156,7 @@ Your DIH requires **100% open publication** of all data, positive and negative, 
 - AI models scan the global data commons, finding patterns humans miss
 - Failed experiments become shared knowledge, not repeated waste
 
-This is intelligence sharing in the SHAEF analogy. Your Allies won partly because they shared Ultra intercepts across commands. Your war on disease loses because everyone guards their failures like trade secrets. Think of it as a group chat where everyone shares what didn't work, except the group is your entire species and the topic is death prevention.
+This is intelligence sharing in the SHAEF analogy. Your Allies won partly because they shared Ultra intercepts across commands. Your war on disease loses because everyone guards their failures like trade secrets. Think of it as a group chat where everyone shares what didn't work. Except the group is your entire species and the topic is death prevention.
 
 ## Governance: Market Mechanism + Wishocracy
 
@@ -167,7 +166,7 @@ Your DIH uses two allocation mechanisms:
 
 ![Sick people decide what to study; everyone votes on which buildings to build. Democracy, but only for the bits that make sense.](/assets/images/dih/dih-section-governance-market-mechanism-wishocracy-bw-academic.jpg)
 
-- **[Wishocracy](wishocracy.qmd):** For infrastructure and public goods only. Aggregates preferences through pairwise comparisons ("EHR integration or security audits?"). See the [dedicated page](wishocracy.qmd) for details.
+- **[Wishocracy](wishocracy.qmd):** For infrastructure and public goods only. Aggregates preferences through pairwise comparisons ("EHR integration or security audits?"). 
 
 ## The Incentive Stack: Making ROI the Selfish Choice
 
@@ -272,7 +271,7 @@ Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding
 
 ### What Gets Funded: Market Failures Only
 
-Since most research allocation happens automatically (patients choose trials, funding flows there), your 1% Treaty Fund primarily funds **market failures**: the things your ecosystem can't handle on its own.
+Most research allocation happens automatically (patients choose trials, funding flows there). Your 1% Treaty Fund primarily funds **market failures**. These are the things your ecosystem can't handle on its own.
 
 **Infrastructure**
 
@@ -303,7 +302,7 @@ Your DIH is intentionally minimal. It outsources everything operational because 
 
 ## How Campaigns Plug In
 
-Your dFDA is the primary example of a funded campaign. It's not part of your DIH; it's a service provider competing for funding. If it stops performing, you fund something better. This is how your species runs restaurants. Time to try it with medicine.
+Your dFDA is the main example of a funded campaign. It's not part of your DIH. It's a service provider competing for funding. If it stops performing, you fund something better. This is how your species runs restaurants. Time to try it with medicine.
 
 ### Campaign Lifecycle
 
@@ -313,14 +312,14 @@ Your dFDA is the primary example of a funded campaign. It's not part of your DIH
 2. **Wishocracy vote:** Humanity decides priority relative to alternatives
 3. **Funding:** Treasury allocates based on vote + Optimocracy recommendations
 4. **Execution:** Campaign delivers services (trials, infrastructure, etc.)
-5. **Verification:** Outcomes measured against milestones
+5. **Verification:** Measure outcomes against milestones
 6. **Continuation:** Results determine next year's funding
 
 ## Anti-Capture Design
 
 Your current system is trivially captured. Concentrate billions of dollars in a few committees, and lobbyists will find them. This is as predictable as gravity. Your species keeps being surprised by it anyway.
 
-Your DIH is designed to make capture economically irrational.
+Your DIH makes capture economically irrational.
 
 {{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
 
@@ -343,7 +342,7 @@ Your DIH is designed to make capture economically irrational.
 
 **Mitigation:** Your dFDA has no budget authority. It's just a campaign competing for funding. If it gets captured, fund a competing framework instead. Replace it like you replace a bad restaurant: stop going there and open a better one.
 
-Your protocol is designed so that **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves.
+Your protocol ensures **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves.
 
 ### Security Architecture: Multi-Layered Defense
 
@@ -383,7 +382,7 @@ A {{< var treaty_annual_funding >}} treasury is a massive target. Every thief, h
 
 ### Beyond Medical Research
 
-Once you prove you can run a {{< var treaty_annual_funding >}} treasury without anyone stealing from it, you can apply the same model to everything else your governments currently mismanage:
+You can prove this model works with a {{< var treaty_annual_funding >}} treasury. Then apply it to everything else your governments currently mismanage:
 
 - **Education:** Pay teachers based on whether kids actually learn things
 - **Infrastructure:** Fund roads that don't immediately fall apart
