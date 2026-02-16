@@ -2,11 +2,11 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 47 | **Words:** 116,492
+**Files:** 47 | **Words:** 116,494
 
 #### index-manual.qmd
 **Title:** Start Here
-**Stats:** 4,407 words | 544 lines
+**Stats:** 4,419 words | 550 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -497,7 +497,7 @@
     - Step 3: Join a Trial from Your Couch (While Dying Comfortably)
     - Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)
     - Step 5: Publish Results
-    - Step 6: Everyone Benefits from Everyone's Sufferingmeat
+    - Step 6: Everyone Benefits from Everyone's Suffering
   - The Partnership Approach: Building Rails, Not Trains
     - The Players Already in the Game
     - The Integration Consortium
@@ -686,21 +686,21 @@
 #### knowledge/proof/body-as-repairable-machine.qmd
 **Title:** You Are a Meat Robot
 **Description:** Aging, disease, and death are engineering problems with engineering solutions
-**Stats:** 1,726 words | 221 lines
+**Stats:** 1,720 words | 221 lines
 
   - Death is a Technical Problem
   - You Are a Self-Repairing Meat Robot
-  - Part 2: You've Already Started Fixing the Machine
+  - You've Already Started Fixing the Machine
     - Exhibit A: You Can Grow New Parts
     - Exhibit B: You Can Reprogram Your Cells
     - Exhibit C: You're Debugging Your Code
   - The Car Restoration Analogy
     - Why Death is Just Deferred Maintenance
-  - Part 4: The Proof That Aging is Reversible
+  - The Proof That Aging is Reversible
     - Nature Already Does It
     - You've Already Reversed Aging (In Mice... and Human Cells)
     - The Hallmarks of Aging (All Fixable)
-  - Part 5: Why You Haven't Been Fixed Yet (It's Just Money)
+  - Why You Haven't Been Fixed Yet (It's Just Money)
     - The Manhattan Project for Not Dying
     - The Economics of Mortality
   - The Conclusion
@@ -856,7 +856,7 @@
 #### knowledge/strategy/nonprofit-coalition-strategy.qmd
 **Title:** Why Every Nonprofit Should Support a 1% treaty
 **Description:** The strategic case for nonprofit coalition-building around a 1% treaty - escaping zero-sum competition through resource reallocation.
-**Stats:** 2,778 words | 367 lines
+**Stats:** 2,774 words | 367 lines
 
   - The Single Highest-ROI Intervention Available
     - Why This Applies to YOUR Organization
@@ -875,8 +875,8 @@
   - Why Nonprofits Must Prioritize a 1% treaty (Short Term)
   - The Ask Is Small, The Upside Is Massive
   - On Bribing Nonprofits (Legally)
-    - Part 1: Make The Organization Rich
-    - Part 2: Make The Leaders Personally Rich
+    - Make The Organization Rich
+    - Make The Leaders Personally Rich
     - The Real Prize: Stop Begging Forever
     - Earning Your Stake
   - The Bottom Line

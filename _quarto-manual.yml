@@ -136,10 +136,6 @@ book:
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
         - knowledge/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
   # appendices: Commented to get rid of the Appendix prefix in the titles
-    - part: "Policy & Regulatory"
-      chapters:
-        - knowledge/appendix/impact-securities-reform.qmd # ✅ (legal/regulatory, appropriate) ~3p
-
     - part: "Economics & Finance"
       chapters:
         - knowledge/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
