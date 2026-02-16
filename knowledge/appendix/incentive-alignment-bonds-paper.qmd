@@ -1410,7 +1410,7 @@ Formally, $\Delta U_i > 0$ holds for all strategy profiles $(a_{-i}) \in \{0,1\}
 
 This appendix provides detailed IAB specifications for the candidate domains discussed in Section 6.
 
-### B.1 Climate Change
+### Climate Change
 
 **Policy objective.** Reduce global greenhouse gas emissions in line with Paris Agreement targets (limiting warming to 1.5–2°C).
 
@@ -1445,7 +1445,7 @@ Weights $w_j$ sum to 1 and are calibrated to policy impact.
 
 **Calibration notes.** Fossil fuel industry opposition spending averages \$100–500M annually on federal elections. IAB funding at \$1B+ annually would satisfy @eq-ic for most legislators in competitive districts.
 
-### B.2 Nuclear Disarmament
+### Nuclear Disarmament
 
 **Policy objective.** Verified reduction of global nuclear arsenals and strengthened non-proliferation.
 
@@ -1472,7 +1472,7 @@ where:
 
 **Calibration notes.** Defense contractor opposition is substantial (over \$100M annually in lobbying). However, the concentrated-diffuse asymmetry is extreme: nuclear war risks affect all humanity. IAB funding levels comparable to current defense lobbying would create countervailing incentives.
 
-### B.3 Pandemic Preparedness
+### Pandemic Preparedness
 
 **Policy objective.** Strengthen global health security infrastructure to prevent and respond to pandemic threats.
 
@@ -1499,7 +1499,7 @@ where:
 
 **Calibration notes.** Pharmaceutical industry lobbying exceeds \$300M annually. However, pandemic preparedness funding faces less concentrated opposition than military or fossil fuels, suggesting lower IAB funding thresholds may achieve incentive compatibility.
 
-### B.4 Comparative Analysis
+### Comparative Analysis
 
 @tbl-comparison summarizes key parameters across domains.
 

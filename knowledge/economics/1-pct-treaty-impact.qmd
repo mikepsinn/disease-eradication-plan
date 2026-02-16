@@ -470,7 +470,7 @@ The lives saved calculation measures **timeline acceleration**, not current cura
 
 The protocol exploits two structural inefficiencies in global capital allocation:
 
-### 1. The Peace Dividend (Multiplier Differential)
+### The Peace Dividend (Multiplier Differential)
 
 {{< var peace_dividend_annual_societal_benefit >}}/year
 
@@ -485,7 +485,7 @@ This is standard economics: moving money from low-multiplier activities (weapons
 A {{< var treaty_reduction_pct >}} reduction in weapons procurement redirects {{< var peace_dividend_annual_societal_benefit >}} annually from activities with 0.5-1.0× multipliers to activities with 2-3× multipliers.
 This represents approximately the GDP of Austria, reallocated from military spending to medical research infrastructure.
 
-### 2. Research Efficiency Dividend (Infrastructure Leverage)
+### Research Efficiency Dividend (Infrastructure Leverage)
 
 {{< var dfda_benefit_rd_only_annual >}}–{{< var global_clinical_trials_spending_annual >}} {{< var global_clinical_trials_spending_annual_cite >}}
 
@@ -502,7 +502,7 @@ This structural difference explains why costs drop **{{< var dfda_trial_cost_red
 
 ![Traditional trials: massive overhead, special buildings, redundant staff. Pragmatic trials: use existing hospitals and doctors who were already there. One is building a new road every time you want to drive somewhere.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-research-efficiency-dividend-infrastructure-leverage-bw-academic.jpg)
 
-### 3. 15–40 "NIH equivalents" of new research capacity
+### 15–40 "NIH equivalents" of new research capacity
 
 Currently, diseases kill people faster than we develop effective treatments.
 This would change that.
@@ -1020,7 +1020,7 @@ For detailed DALY calculation methodology, see [Regulatory Mortality Analysis](h
 
 This section provides step-by-step derivations for all headline claims, enabling independent verification. All intermediate values are linked to their source parameters in [Parameters and Calculations](../appendix/parameters-and-calculations-1-pct-treaty-impact.qmd).
 
-### 1. Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
+### Trial Capacity Multiplier Derivation ({{< var dfda_trial_capacity_multiplier >}})
 
 **Current System Baseline**:
 
@@ -1051,7 +1051,7 @@ The trial capacity multiplier determines how many more trials can be run with re
 
 {{< var trial_capacity_cumulative_years_20yr_latex >}}
 
-### 2. Timeline Shift Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_years >}})
+### Timeline Shift Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_years >}})
 
 ![Top line: how long it takes to cure diseases now. Bottom line: how long it takes when you stop actively getting in your own way.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-2-timeline-shift-derivation-212-years-95-ci-135-years-355-ye-bw-academic.jpg)
 
@@ -1085,7 +1085,7 @@ Post-safety regulatory delay: {{< var efficacy_lag_years >}} (BIO 2021: 10.5 yea
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
 
-### 3. DALYs Averted Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}})
+### DALYs Averted Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}})
 
 **Step 1: Identify annual DALY burden**
 
@@ -1103,7 +1103,7 @@ Post-safety regulatory delay: {{< var efficacy_lag_years >}} (BIO 2021: 10.5 yea
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_latex >}}
 
-### 4. Cost per DALY Derivation ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}})
+### Cost per DALY Derivation ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}})
 
 **Step 1: Identify one-time implementation cost**
 
@@ -1120,7 +1120,7 @@ Post-safety regulatory delay: {{< var efficacy_lag_years >}} (BIO 2021: 10.5 yea
 
 ![Where the billion dollars goes, and why it's 100 times cheaper than bed nets. You really love those bed nets though.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-4-cost-per-daly-derivation-0-0018-95-ci-0-0007-0-0041-bw-academic.jpg)
 
-### 5. ROI Derivation (Conservative: {{< var dfda_roi_rd_only >}})
+### ROI Derivation (Conservative: {{< var dfda_roi_rd_only >}})
 
 ![Four simple steps to turn one dollar into 637 dollars. Like a recipe, except the ingredients are spreadsheets and the result is not dying.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-5-roi-derivation-conservative-637-1-95-ci-569-1-790-1-bw-academic.jpg)
 
@@ -1152,7 +1152,7 @@ The conservative ROI uses only R&D cost savings, ignoring all health benefits:
 
 {{< var dfda_roi_rd_only_latex >}}
 
-### 6. ROI Derivation (Complete: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}})
+### ROI Derivation (Complete: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}})
 
 The complete ROI includes the full timeline shift health benefits:
 
@@ -1167,7 +1167,7 @@ The complete ROI includes the full timeline shift health benefits:
 
 {{< var treaty_roi_trial_capacity_plus_efficacy_lag_latex >}}
 
-### 7. Lives Saved Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}})
+### Lives Saved Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}})
 
 ![Start with how many people die per day. Do some math. End up with how many you could save if you tried. The middle steps are depressing.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-7-lives-saved-derivation-10-7b-deaths-95-ci-7-39b-deaths-16-bw-academic.jpg)
 
@@ -1183,7 +1183,7 @@ The complete ROI includes the full timeline shift health benefits:
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_latex >}}
 
-### 8. Regulatory Delay Elimination Derivation
+### Regulatory Delay Elimination Derivation
 
 **Step 1: Lives Saved from Lag Elimination**
 
@@ -1193,7 +1193,7 @@ The complete ROI includes the full timeline shift health benefits:
 
 {{< var dfda_efficacy_lag_elimination_economic_value_latex >}}
 
-### 9. Annual Recurring Benefits Derivation
+### Annual Recurring Benefits Derivation
 
 {{< var treaty_peace_plus_rd_annual_benefits_latex >}}
 

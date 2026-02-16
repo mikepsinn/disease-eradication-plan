@@ -48,7 +48,7 @@ png_path = render_graphviz_with_watermark(dot, 'dih-money-flow')
 display(IPImage(str(png_path)))
 ```
 
-## 5. Why This Works Better Than Direct Payments
+## Why This Works Better Than Direct Payments
 
 ### Avoids Perverse Incentives
 
