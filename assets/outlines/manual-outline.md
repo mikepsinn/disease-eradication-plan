@@ -2,11 +2,11 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 46 | **Words:** 115,369
+**Files:** 46 | **Words:** 115,433
 
 #### index-manual.qmd
 **Title:** Start Here
-**Stats:** 4,325 words | 526 lines
+**Stats:** 4,419 words | 550 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -610,7 +610,7 @@
 #### knowledge/appendix/open-ecosystem-and-bounty-model.qmd
 **Title:** How to Not Build Most of It
 **Description:** A dFDA strategy for getting other people to build everything through open APIs and bounties, like WordPress but for not dying.
-**Stats:** 847 words | 123 lines
+**Stats:** 845 words | 123 lines
 
   - The Core Strategy (Build the Rails, Not Every Train)
     - The Model
@@ -620,8 +620,8 @@
     - What Bounties Fund
     - The Difference
   - Why This Actually Works (Not Wishful Thinking)
-    - 1. It's Already a Multi-Trillion-Dollar Reality
-    - 2. Governments Already Do This (And It Works)
+    - It's Already a Multi-Trillion-Dollar Reality
+    - Governments Already Do This (And It Works)
   - The Result
 
 ### The Evidence
@@ -629,7 +629,7 @@
 #### knowledge/proof.qmd
 **Title:** The Proof: Overview
 **Description:** This Already Works - Pragmatic trials prove 44.1x (95% CI: 39.4x-89.1x) efficiency. Switzerland proved peace pays. History proved 3.5% consistently wins. War bonds proved capitalism beats fascism. Death and suffering are optional.
-**Stats:** 1,914 words | 257 lines
+**Stats:** 1,909 words | 257 lines
 
   - Pragmatic Trials: 44.1x (95% CI: 39.4x-89.1x) More Efficient
   - Switzerland: 200 Years of Not Killing People
@@ -645,11 +645,11 @@
   - The Financial Precedents: How to Fund It
     - Mobilizing Mass Public Capital
       - The Precedent: WWII War Bonds
-    - B. Building a New Global Health Institution
-    - C. Pricing the Political Risk
-  - 4. The Cautionary Tales: How Not to Fail
-    - A. Don't Bring a Moral Argument to a Financial Fight
-    - B. Don't Have a Diffuse, Unactionable Goal
+    - Building a New Global Health Institution
+    - Pricing the Political Risk
+  - The Cautionary Tales: How Not to Fail
+    - Don't Bring a Moral Argument to a Financial Fight
+    - Don't Have a Diffuse, Unactionable Goal
       - The Precedent: Occupy Wall Street
   - In This Section
   - How a dFDA Would Compare to History's Best Health Interventions
@@ -658,7 +658,7 @@
 #### knowledge/proof/historical-precedents.qmd
 **Title:** Historical Precedents
 **Description:** Why This Isn't Insane - An analysis of historical movements and financial models that prove the core mechanics of a 1% treaty are not new ideas, but rather the application of proven models for mass mobilization, private capital for public good, and risk mitigation.
-**Stats:** 2,640 words | 279 lines
+**Stats:** 2,639 words | 279 lines
 
   - Humans Doing Smart Things (Accidentally): A Collection
     - That Time Humans Banned Landmines (Yes, Really)
@@ -680,7 +680,7 @@
     - On The Time George Soros Broke England
       - George Soros & The Quantum Fund
     - On When Smart People Lost All Their Money (The Cautionary Tales)
-  - 4. The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
+  - The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
     - Why?
 
 #### knowledge/proof/body-as-repairable-machine.qmd
@@ -1214,7 +1214,7 @@
 #### knowledge/economics/health-dividend.qmd
 **Title:** Health Dividend
 **Description:** How a $40M (95% CI: $27.3M-$55.6M) framework generates $58.6B (95% CI: $49.2B-$73.1B) in annual savings through 80x cost reduction
-**Stats:** 989 words | 127 lines
+**Stats:** 974 words | 125 lines
 
   - The Math: From $41K (95% CI: $20K-$120K) to $500 (95% CI: $400-$2.50K)
   - Where the $58.6B (95% CI: $49.2B-$73.1B) Comes From
@@ -1277,15 +1277,15 @@
 #### knowledge/appendix/investor-risk-analysis.qmd
 **Title:** Investor Risk Analysis
 **Description:** VICTORY Incentive Alignment Bonds vs. Traditional Venture Capital - Analysis of the unique risk profile of a 1% treaty initiative, comparing its political arbitrage model to the market-risk model of venture capital.
-**Stats:** 1,029 words | 94 lines
+**Stats:** 1,022 words | 94 lines
 
-  - 1. Political Arbitrage vs. Venture Capital
-  - 2. Risk Comparison
-  - 3. How You Mitigate Each Risk
-    - A. The Assurance Contract (Fundraising Risk)
-    - B. Prediction Markets & Dynamic Pricing (Political Risk)
-    - C. Front-Loaded Payouts (Timeline Risk)
-    - D. First-Loss Capital (Financial Risk)
+  - Political Arbitrage vs. Venture Capital
+  - Risk Comparison
+  - How You Mitigate Each Risk
+    - The Assurance Contract (Fundraising Risk)
+    - Prediction Markets & Dynamic Pricing (Political Risk)
+    - Front-Loaded Payouts (Timeline Risk)
+    - First-Loss Capital (Financial Risk)
   - Conclusion: Is This Less Risky Than VC?
 
 ### References

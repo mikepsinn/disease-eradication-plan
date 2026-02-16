@@ -2,12 +2,12 @@
 
 **Config:** _quarto-iab.yml
 **Type:** website
-**Files:** 1 | **Words:** 16,791
+**Files:** 1 | **Words:** 16,787
 
 #### knowledge/appendix/incentive-alignment-bonds-paper.qmd
 **Title:** Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 **Description:** Government spending is optimized for lobbying intensity, not net societal value. Programs with 100:1 benefit-cost ratios get billions while programs with negative returns get hundreds of billions. Incentive Alignment Bonds flip this by creating a capital pool that rewards politicians (via campaign support and post-office opportunities) for funding high-NSV programs over low-NSV alternatives. The result: public good becomes private profit for both investors and elected officials.
-**Stats:** 16,791 words | 1,516 lines
+**Stats:** 16,787 words | 1,516 lines
 
   - Introduction
     - The Information-Incentive Disconnect
@@ -73,7 +73,7 @@
     - Proof of Proposition 2 (Multiple Equilibria Without IABs)
     - Proof of Proposition 3 (Equilibrium Selection With IABs)
   - Appendix B: Detailed Application Specifications {.unnumbered}
-    - B.1 Climate Change
-    - B.2 Nuclear Disarmament
-    - B.3 Pandemic Preparedness
-    - B.4 Comparative Analysis
+    - Climate Change
+    - Nuclear Disarmament
+    - Pandemic Preparedness
+    - Comparative Analysis

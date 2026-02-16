@@ -2,12 +2,12 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 2 | **Words:** 26,228
+**Files:** 2 | **Words:** 26,216
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** 6.65 thousand diseases (95% CI: 5.70 thousand diseases-8.24 thousand diseases) have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years (95% CI: 324 years-712 years). Redirecting 1% of military spending scales capacity 12.3x (95% CI: 4.19x-61.3x), cutting the timeline to ~36 years (95% CI: 11.6 years-77.2 years) and preventing 10.7 billion deaths (95% CI: 7.39 billion deaths-16.2 billion deaths). At $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.7kx-111.7kx) more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
-**Stats:** 26,166 words | 2,414 lines
+**Stats:** 26,154 words | 2,414 lines
 
   - Abstract
   - Key Findings
@@ -39,9 +39,9 @@
     - DALYs Averted
     - Why "Eventually Avoidable" Matters
   - The Leverage Mechanism: Why 1% Is Enough
-    - 1. The Peace Dividend (Multiplier Differential)
-    - 2. Research Efficiency Dividend (Infrastructure Leverage)
-    - 3. 15–40 "NIH equivalents" of new research capacity
+    - The Peace Dividend (Multiplier Differential)
+    - Research Efficiency Dividend (Infrastructure Leverage)
+    - 15–40 "NIH equivalents" of new research capacity
   - How It Increases National Security
     - What doesn't change
     - What improves
@@ -81,15 +81,15 @@
   - Quality-Adjusted Life Year (QALY) Valuation
     - QALY Calculation Model
   - Economist Verification: Complete Derivation Chains
-    - 1. Trial Capacity Multiplier Derivation (12.3x (95% CI: 4.19x-61.3x))
-    - 2. Timeline Shift Derivation (212 years (95% CI: 135 years-355 years))
-    - 3. DALYs Averted Derivation (565 billion DALYs (95% CI: 361 billion DALYs-877 billion DALYs))
-    - 4. Cost per DALY Derivation ($0.0018 (95% CI: $0.0007-$0.0041))
-    - 5. ROI Derivation (Conservative: 637:1 (95% CI: 569:1-790:1))
-    - 6. ROI Derivation (Complete: 84.8M:1 (95% CI: 46.6M:1-144M:1))
-    - 7. Lives Saved Derivation (10.7 billion deaths (95% CI: 7.39 billion deaths-16.2 billion deaths))
-    - 8. Regulatory Delay Elimination Derivation
-    - 9. Annual Recurring Benefits Derivation
+    - Trial Capacity Multiplier Derivation (12.3x (95% CI: 4.19x-61.3x))
+    - Timeline Shift Derivation (212 years (95% CI: 135 years-355 years))
+    - DALYs Averted Derivation (565 billion DALYs (95% CI: 361 billion DALYs-877 billion DALYs))
+    - Cost per DALY Derivation ($0.0018 (95% CI: $0.0007-$0.0041))
+    - ROI Derivation (Conservative: 637:1 (95% CI: 569:1-790:1))
+    - ROI Derivation (Complete: 84.8M:1 (95% CI: 46.6M:1-144M:1))
+    - Lives Saved Derivation (10.7 billion deaths (95% CI: 7.39 billion deaths-16.2 billion deaths))
+    - Regulatory Delay Elimination Derivation
+    - Annual Recurring Benefits Derivation
     - Verification Summary
   - Counterfactual Baseline Specification
   - Peace Dividend Calculation Methodology
