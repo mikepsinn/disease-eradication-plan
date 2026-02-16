@@ -346,7 +346,7 @@ format:
     css: epub-math.css
     # Table of contents
     toc: true
-    toc-depth: 3
+    toc-depth: 2
     toc-title: "Contents"
     # Chapter splitting: Use level 2 for large books (81 chapters, ~900 pages)
     # This prevents oversized chapter files that cause performance issues

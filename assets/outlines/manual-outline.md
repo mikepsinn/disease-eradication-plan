@@ -2,11 +2,11 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 47 | **Words:** 125,733
+**Files:** 47 | **Words:** 116,492
 
 #### index-manual.qmd
 **Title:** Start Here
-**Stats:** 7,848 words | 897 lines
+**Stats:** 4,407 words | 544 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -22,18 +22,12 @@
     - In Conclusion
   - TL;DR
     - How You Fix This
-      - Step 1: The Paper Collection Phase
-      - Step 2: The Internet Clicking Ceremony
-      - Step 3: The Professional Briber Redistribution
-      - Step 4: The Political Awakening Ritual
-      - Step 5: The Money River Redirection
     - Personalized Bribery Packages
     - The Alternative
   - The Problem
     - The Daily Deletion Event
     - The Unexplored Therapeutic Frontier
     - The Cost of War
-    - Hilarious Security Priorities
   - The Solution
     - A 1% treaty
     - Why Decentralization Works
@@ -45,25 +39,13 @@
     - Step 1: Collect Papers
       - What Grandma Got
       - What You're Offering
-      - Potential Returns That Make Ponzi Schemes Look Conservative
     - Step 2: The Great Clicking
-      - The Magic 3.5% Number
     - Step 3: Bribe the Bribers
       - Current Job
       - Your Offer
     - Step 4: Purchase Democracy
-      - Incentive Alignment Bonds
-        - How It Works (The Scoring System)
-        - The Senator Smith Thought Experiment
-        - VICTORY Bonds: Making Greed Point at Cures
-        - Why This Isn't Bribery (Technically)
-        - Why This Works for Any Problem
     - Step 5: Enjoy
   - The Math
-    - The Money Fountain
-    - The Math of Overcaution
-    - The Bed Net Benchmark
-    - 2nd Best Idea in the World
   - Choose Your Own Adventure
     - Door #1: The Current Plan
     - Door #2: Try Not Dying
@@ -76,33 +58,30 @@
 #### knowledge/problem.qmd
 **Title:** Problem Overview
 **Description:** Humanity's spectacular failure at prioritizing not dying
-**Stats:** 2,668 words | 257 lines
+**Stats:** 1,289 words | 134 lines
 
-  - Daily Numbers
+  - The Daily Body Count
   - Where the Money Goes
-  - On the Pentagon's Accounting
   - On Medical Research
   - On the FDA
   - On What War Costs
   - On What Disease Costs
   - On Democracy
-  - On Regulatory Capture
   - On the Fixed Pie
-  - On Your Personal Situation
   - What This Means
   - What's Next
 
 #### knowledge/problem/the-daily-massacre.qmd
 **Title:** The Bi-Monthly Holocaust
 **Description:** 150,000 People Die Every Day While We Build Skynet, That's Fifty 9/11s Daily
-**Stats:** 266 words | 42 lines
+**Stats:** 354 words | 46 lines
 
   - The Math Of Death
 
 #### knowledge/problem/cost-of-war.qmd
 **Title:** The Cost of War
 **Description:** Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
-**Stats:** 3,744 words | 474 lines
+**Stats:** 3,774 words | 474 lines
 
   - The Itemized Receipt for Armageddon
     - The Shopping List (2024 Global Data)
@@ -167,7 +146,7 @@
 #### knowledge/problem/nih-fails-2-institute-health.qmd
 **Title:** NIH Fails to Institute Health
 **Description:** The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficent pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
-**Stats:** 2,039 words | 285 lines
+**Stats:** 2,060 words | 287 lines
 
   - The Allocation Scandal
   - Why This Allocation Exists
@@ -212,7 +191,7 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34× more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 4,584 words | 524 lines
+**Stats:** 4,624 words | 526 lines
 
   - A Note on Blame
   - Confidence Levels: What We Know vs. What We Model
@@ -251,7 +230,7 @@
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
 **Description:** Why democracy mathematically serves money over voters, and how to exploit that bug
-**Stats:** 4,326 words | 685 lines
+**Stats:** 2,873 words | 432 lines
 
   - Democracy
   - The Rational Ignorance Problem
@@ -267,9 +246,6 @@
   - Congressional Committees: Available for Purchase
   - The 4-Year Attention Span: Democracy Has ADHD
   - Why No One Can Fix This
-  - The Voting Paradox
-  - Special Interest Groups: Democracy's Real Winners
-  - Why Your Political Tribe Is Also Worthless
   - The Solution Democracy Can't Provide
   - Public Choice Theory: The Nobel Prize for Cynicism
     - What They Actually Maximize
@@ -278,23 +254,8 @@
     - Why This Is Liberating
   - Solution
   - Your Choice
-  - A Brief History of Human Decision-Making (Spoiler: It's Bad)
-  - Why Your Brain Can't Handle Democracy
-  - How Government Actually Allocates Money (A Horror Story)
-    - The Current Budget Process: Democracy Theater
-      - Step 1: Lobbyists Write Checks
-        - Step 2: Politicians Pretend to Think
-          - Step 3: The Budget Emerges
-          - Step 4: Everyone Gets Mad
   - Regulatory Capture: How Industries Write Their Own Rules
-    - How to Buy a Democracy: A Practical Guide
-    - The Money Machine: How Regulatory Capture Works
-    - The Military-Industrial Complex: Murder Inc.
-      - The Defense Budget: A Comedy in Three Acts
-    - Big Pharma: Your Dealer Has a Lobbyist
-    - The Incentive Structure From Hell
     - The Solution They Don't Want
-    - Your Democracy: An Auction House
 
 #### knowledge/economics/central-banks.qmd
 **Title:** How Central Banks Fund Your Death
@@ -353,7 +314,7 @@
 #### knowledge/problem/genetic-slavery.qmd
 **Title:** Genetic Slavery
 **Description:** An exploration of how our genes use pain and pleasure to enslave us, forcing actions inconsistent with our rational ethics.
-**Stats:** 2,689 words | 339 lines
+**Stats:** 2,404 words | 283 lines
 
   - The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)
   - Part 1: Your Brain Was Optimized for a World That Doesn't Exist
@@ -372,42 +333,29 @@
     - The Military-Industrial Cortex
   - Part 5: Breaking the Chains
   - Part 6: Breaking Free from Your Programming
-    - The First Step: Admitting You're Badly Designed
-    - The Solution: Trick the Monkey Brain
-    - The Meta-Slavery
-  - The Problem With Your Brain
 
 ### The Solution
 
 #### knowledge/solution.qmd
 **Title:** Solution Overview
 **Description:** How to Build Systems That Don't Suck
-**Stats:** 3,285 words | 360 lines
+**Stats:** 1,661 words | 178 lines
 
   - A 1% Treaty
-    - The 1% Treaty Fund
-      - What the NIH does
-      - What the 1% Treaty Fund does
-        - On Wishocracy
-        - Your decentralized framework for drug assessment
-        - On Outcome Labels
-        - On How Patients Pay Researchers
-        - On Why Defense Contractors Should Care
-        - On Why 1% Is Just The Beginning
-        - On Insurance Companies
-        - On the War on Disease
-      - Previous Wars on Things
-      - This War
-        - On The Part Where Other Problems Accidentally Get Solved
-        - On Aligning Everyone's Greed
-        - On Why This Isn't Clinically Insane
-        - On the Meta-Solution
-        - On What Comes Next
+  - The 1% Treaty Fund
+  - Wishocracy
+  - Your Decentralized Framework for Drug Assessment
+  - Who Wins
+  - The Scaling Engine
+  - The War on Disease
+  - Why This Isn't Clinically Insane
+  - The Meta-Solution
+  - What Comes Next
 
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
 **Description:** How to Redirect $27.2B from War to Medicine - The complete guide to a 1% treaty, the binding global accord that redirects $27.2B annually from military spending to curing disease while maintaining global security.
-**Stats:** 3,683 words | 439 lines
+**Stats:** 3,801 words | 447 lines
 
   - The Math
     - How It Works
@@ -489,7 +437,7 @@
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
 **Description:** How to allocate $27.2B and prevent it from getting stolen by parasitic lobbyists and special interests (as is the custom)
-**Stats:** 1,125 words | 146 lines
+**Stats:** 1,153 words | 146 lines
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
     - What your [decentralized framework for drug assessment (dFDA)](dfda.qmd) handles automatically:
@@ -549,7 +497,7 @@
     - Step 3: Join a Trial from Your Couch (While Dying Comfortably)
     - Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)
     - Step 5: Publish Results
-    - Step 6: Everyone Benefits from Everyone's Suffering
+    - Step 6: Everyone Benefits from Everyone's Sufferingmeat
   - The Partnership Approach: Building Rails, Not Trains
     - The Players Already in the Game
     - The Integration Consortium
@@ -583,16 +531,9 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 2,631 words | 378 lines
+**Stats:** 2,271 words | 313 lines
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
-    - Their Structural Vulnerabilities
-    - Here's Your Better Offer: VICTORY Incentive Alignment Bonds
-    - Why They'll Take the Deal
-      - The Portfolio Math
-      - The PR Victory
-      - The Competitive Pressure
-    - The Implementation Playbook
   - Insurance Companies: The Accidentally Aligned Industry
     - Their Current Death Spiral
     - Your Salvation Offer
@@ -745,7 +686,7 @@
 #### knowledge/proof/body-as-repairable-machine.qmd
 **Title:** You Are a Meat Robot
 **Description:** Aging, disease, and death are engineering problems with engineering solutions
-**Stats:** 1,696 words | 221 lines
+**Stats:** 1,726 words | 221 lines
 
   - Death is a Technical Problem
   - You Are a Self-Repairing Meat Robot
@@ -777,7 +718,7 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization decided murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 5,376 words | 752 lines
+**Stats:** 4,478 words | 593 lines
 
   - The Discovery (And Why I Regret Making It)
   - What I Tried to Tell Them
@@ -809,25 +750,16 @@
   - A Day in Moronian Life (Year 25)
   - The Diseases Moronia Didn't Cure
   - Moronia's Greatest Innovations
-    - The Peacekeeper 3000
-      - Project Guardian Angel
-        - The Harmony Protocol
-  - Treaties Moronia Rejected
-  - Moronia's Corporate Champions
   - Victory
   - The Last Moronian Message
   - The Path Moronia Didn't Take
   - The Lesson I Learned
-  - Year 25: Peak Gollum (My Precious Military Budget)
-    - Final Moronian Budget
-      - Final statistics
-  - Moronia's Obituary
   - My Warning to You
 
 #### knowledge/futures/wishonia.qmd
 **Title:** Wishonia
 **Description:** How My Planet Works and Why You Should Copy Our Homework
-**Stats:** 2,273 words | 319 lines
+**Stats:** 2,337 words | 321 lines
 
   - How My Planet Works
   - What the Optimized World Looks Like
@@ -1170,7 +1102,7 @@
 #### knowledge/strategy/co-opting-defense-contractors.qmd
 **Title:** Making Friends with the Military-Industrial Complex
 **Description:** Lobbyists are like pigeons. They go where the food is. This chapter teaches you how to move the food.
-**Stats:** 1,706 words | 294 lines
+**Stats:** 1,752 words | 296 lines
 
   - The Solution
   - The Offer
@@ -1224,7 +1156,7 @@
 #### knowledge/appendix/recruitment-and-propaganda-plan.qmd
 **Title:** Recruitment & Propaganda Plan
 **Description:** How to build an army of people who don't want to die (surprisingly difficult)
-**Stats:** 2,009 words | 335 lines
+**Stats:** 1,675 words | 246 lines
 
   - The Current Clusterfuck
   - The Three-Division Army Structure
@@ -1236,8 +1168,6 @@
       - How to identify them
   - The Enlistment Forms
     - Financial Infantry Enlistment Form
-    - Home Front Supporter Enlistment Form
-    - Allied Command Partnership Form
   - The Deployment Strategy
     - Step 1: Delete the Impossible Buttons
     - Step 2: Install the New Propaganda
@@ -1248,7 +1178,6 @@
     - Tagging System (How to Remember Who Matters)
     - Follow-Up Sequences (Automated Harassment)
   - The Communication Strategy
-  - The Privacy Theater
   - The Metrics That Matter
   - The Endgame
   - Your Marching Orders
@@ -1275,7 +1204,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,264 words | 199 lines
+**Stats:** 1,332 words | 201 lines
 
   - How 1% Less Violence Pays For Everything
     - The Captured Money: $27.2B/Year
