@@ -187,7 +187,7 @@ format:
     code-tools: false
   pdf:
     output-file: "drug-development-cost-analysis.pdf"
-    documentclass: article
+    documentclass: report
     institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
