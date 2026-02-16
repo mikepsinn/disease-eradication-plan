@@ -1,6 +1,6 @@
 ---
 title: NIH Fails to Institute Health
-description: The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficent pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
+description: The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficient pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
 published: true
 tags:
   - problem
@@ -21,7 +21,7 @@ aliases:
 
 ## The Allocation Scandal
 
-The National Institutes of Health has an annual budget of approximately **$51 billion**. 55 million people die annually [@who-daily-deaths] while this money gets allocated as follows:
+The National Institutes of Health has an annual budget of approximately **$51 billion**. 55 million people die annually [@who-daily-deaths]. Here is how the NIH allocates that money:
 
 A 2023 JAMA study [@nih-phased-trial-spending-2010-2019] analyzed $247 billion in NIH spending (2010-2019) and found:
 
@@ -55,9 +55,9 @@ This isn't bureaucratic accident. It's lobbied outcome.
 
 Drug companies benefit enormously from NIH funding basic research. Taxpayers absorb the risk; industry patents the successes. But independent pragmatic trials comparing drugs head-to-head? Those threaten blockbuster profits by revealing which treatments actually work best.
 
-PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI in 2010 to fund such research, industry successfully lobbied to prohibit PCORI from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. The message was clear: don't fund research that might lower drug prices.
+PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. The message was clear: don't fund research that might lower drug prices.
 
-The revolving door reinforces this. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants and consulting fees. Everyone's incentives align against the one thing that would actually help patients: cheap, fast trials testing whether expensive drugs outperform generics.
+The revolving door reinforces this. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants and consulting fees. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics.
 
 Basic research produces publications. Publications produce tenure. Tenure produces more grants. This self-perpetuating cycle rewards knowledge production over health production.
 
@@ -85,11 +85,11 @@ The difference between efficient and inefficient trial design isn't theoretical.
 **Treatments found:** Multiple, including dexamethasone [@recovery-trial-summary-quote] (saved over 1 million lives)
 **Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
 
-The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed). This massive efficiency gap is not unique to RECOVERY; a systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
+The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed). This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
 
 ![The UK trial cost 133 times less per patient and actually finished. America: where we do everything bigger, including waste.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recovery-trial-uk-approach-bw-academic.jpg)
 
-This proves the problem isn't that curing disease is hard. The problem is that the NIH funds the wrong things.
+This proves the problem isn't that curing disease is hard. The NIH funds the wrong things.
 
 ## The Death Toll: Opportunity Cost of Misallocation
 
@@ -100,14 +100,14 @@ When you misallocate $40 billion a year into low-efficiency research instead of 
 ### Cost Per QALY (Quality-Adjusted Life Year)
 
 - **Standard NIH Portfolio:** {{< var nih_standard_research_cost_per_qaly >}} per QALY {{< var nih_standard_research_cost_per_qaly_cite >}} (generous estimate)
-- **Pragmatic Platform Trials:** {{< var pragmatic_trial_cost_per_qaly >}} per QALY 
+- **Pragmatic Platform Trials:** {{< var pragmatic_trial_cost_per_qaly >}} per QALY
 - **NIH pragmatic trials funding:** Capped at $500K planning + $1M/year implementation [@pragmatic-trials-cost-advantage]. This is a tiny fraction of the $47B budget
 
 **The Multiplier:**
 
 Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH mix.
 
-Yet pragmatic trials remain severely underfunded [@pragmatic-trials-cost-advantage] despite the ADAPTABLE trial proving they cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M).
+Yet pragmatic trials remain severely underfunded [@pragmatic-trials-cost-advantage]. The ADAPTABLE trial proved they cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M).
 
 ![One method saves lives efficiently. The other publishes papers expensively. You're currently funding the papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-cost-per-qaly-bw-academic.jpg)
 
@@ -127,7 +127,7 @@ Even in the **most conservative 5th-percentile scenario**, NIH misallocation cos
 
 In the 95th-percentile scenario, it's burning health equivalent to **most of the global death toll** (60M deaths/year).
 
-The NIH isn't just inefficient. By blocking the shift to high-efficiency trial platforms, the current budget allocation is **actively destroying** the equivalent of millions of lives annually compared to the optimal allocation.
+The NIH isn't just inefficient. The current budget allocation blocks the shift to high-efficiency trial platforms. It **actively destroys** the equivalent of millions of lives annually compared to the optimal allocation.
 
 **Mathematical Conclusion:**
 
@@ -151,7 +151,7 @@ But the **flow** of trials is a trickle.
 
 ![Imagine a massive lake of possible cures connected to the ocean by a drinking straw. You built the straw that way on purpose.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-translation-crisis-concept-rich-trial-poor-bw-academic.jpg)
 
-The result is a system that produces papers, not cures:
+The system produces papers, not cures:
 
 - **Papers published:** 2.5 million annually [@nih-annual-papers-published]
 - **New treatments approved:** ~50 annually [@global-new-drug-approvals-50-annually]
@@ -168,7 +168,7 @@ The bottleneck isn't ideas. It's execution:
 
 We're drowning in hypotheses while patients are starving for trial slots.
 
-The system produces millions of papers testing ideas in mice, but offers trial participation to only 5% of humans. Even though half would say yes if asked.
+The system produces millions of papers testing ideas in mice. It offers trial participation to only 5% of humans. Half would say yes if asked.
 
 That's not an information failure. That's a capacity failure.
 
@@ -183,7 +183,7 @@ Because understanding disease and curing disease are completely different things
 ## The Public Goods vs. Club Goods Scam
 
 The NIH defends its existence by claiming to produce "Public Goods" (open science, data, training).
-In reality, it spends taxpayers' money to produce "Club Goods" for private industry.
+It actually spends taxpayers' money to produce "Club Goods" for private industry.
 
 ![You pay for the research. They take the profits. It's socialism for corporations, capitalism for you. You invented that.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
 
@@ -260,7 +260,7 @@ The problem isn't capability. It's allocation.
 
 ## What Would Actually Work
 
-The UK RECOVERY trial proved the alternative: {{< var recovery_trial_cost_per_patient >}} instead of {{< var traditional_phase3_cost_per_patient >}}, 100 days instead of years, and over 1 million lives saved.
+The UK RECOVERY trial proved the alternative. It cost {{< var recovery_trial_cost_per_patient >}} instead of {{< var traditional_phase3_cost_per_patient >}}. It took 100 days instead of years. It saved over 1 million lives.
 
 ![One trial costs 50,000 per patient and takes forever. The other costs 100 and finishes quickly. You picked the expensive one.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-what-would-actually-work-bw-academic.jpg)
 
