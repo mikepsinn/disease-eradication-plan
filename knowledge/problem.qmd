@@ -21,30 +21,22 @@ Before you can fix something, you need to understand what's broken. In this case
 
 They say knowledge is power. But in this case, knowledge is mostly just depressing. Still, you need it.
 
-## Daily Numbers
+## The Daily Body Count
 
-Every day, {{< var global_disease_deaths_daily >}} humans die from disease and aging. Many of those deaths are likely eventually avoidable with sufficient investment, but you are moving far too slowly.
+Every day, {{< var global_disease_deaths_daily >}} [humans die](problem/the-daily-massacre.qmd) from disease and aging. That's fifty 9/11s. Per day. Including weekends and holidays.
 
 ![Every day, 50 times as many people die from being old and sick as died on 9/11. You started two wars over 9/11. For aging, you bought face cream and called it a day.](/assets/images/problem/problem-section-daily-numbers-bw-academic.jpg)
 
-I tried to imagine what {{< var global_disease_deaths_daily >}} people looks like. It's like if you took everyone in a decent-sized stadium and deleted them. Then did it again tomorrow. And the day after that. Forever. You'd run out of stadiums before you'd run out of corpses, which seems like poor urban planning.
-
-That's fifty 9/11s. Per day. Every day. Including weekends and holidays.
+When one thing kills 3,000 people, it's a tragedy and you start wars. When diseases kill 50 times that every day, it's called "natural causes," which is Latin for "you couldn't be bothered."
 
 After the first 9/11, America invaded two countries and spent $2 trillion. After the fifty daily 9/11s, humanity shrugs and wonders what's for lunch.
 
-When one thing kills 3,000 people, it's a tragedy and you start wars. When diseases kill 50 times that every day, it's called "natural causes," which is Latin for "you couldn't be bothered".
-
-If aliens were studying you, they'd probably conclude you can't count past 3,000. 
-
 ## Where the Money Goes
-
-Here's how humanity allocates its resources:
 
 **Killing each other:** {{< var global_military_spending_annual_2024 >}} per year
 **Curing diseases:** {{< var global_med_research_spending >}} per year
 
-But the real bottleneck isn't research funding. It's testing which treatments actually work. Clinical trials determine whether medicines save lives or sit on shelves. On that front, governments worldwide spend {{< var global_government_clinical_trials_spending_annual >}} annually on clinical trials versus {{< var global_military_spending_annual_2024 >}} on weapons. That's a {{< var military_to_government_clinical_trials_spending_ratio >}} ratio, which in technical terms is called "having your priorities backwards."
+The real bottleneck isn't research funding. It's testing which treatments actually work. Governments worldwide spend {{< var global_government_clinical_trials_spending_annual >}} annually on clinical trials versus {{< var global_military_spending_annual_2024 >}} on weapons. That's a {{< var military_to_government_clinical_trials_spending_ratio >}} ratio, which in technical terms is called "[having your priorities backwards](problem/cost-of-war.qmd)."
 
 ![Humanity spends 2.72 trillion on weapons and 4.5 billion on testing medicine. That's 604 times more money for killing than curing. You named yourselves Homo sapiens, which is Latin for 'wise man.' The irony is exquisite.](/assets/images/problem/problem-section-where-the-money-goes-bw-academic.jpg)
 
