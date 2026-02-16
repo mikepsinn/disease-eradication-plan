@@ -29,7 +29,7 @@ website:
 
 book:
   title: 'How to End War and Disease'
-  subtitle: 'The Exact Sequence of Bribes Required to Cure Every Disease'
+  subtitle: "The Complete Idiot's Guide to Bribing Your Way to Utopia"
   author:
     - name: Mike P. Sinn
       email: m@warondisease.org
@@ -38,7 +38,6 @@ book:
         - name: "Institute for Accelerated Medicine"
           url: https://acceleratedmedicine.org
   # description: Removed to allow page-level descriptions to override for og:description
-  # Original: "Get 500 Years of Clinical Research in 20, Make Humanity Filthy Rich, and Avoid the Apocalypse by Giving Papers"
   # cover-image: cover.jpg
   favicon: assets/icons/book-favicon.png
   site-url: https://manual.WarOnDisease.org
