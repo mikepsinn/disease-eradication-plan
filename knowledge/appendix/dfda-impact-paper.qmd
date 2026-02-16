@@ -38,7 +38,7 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 
 ## Executive Summary
 
-**The Problem:** {{< var diseases_without_effective_treatment >}} lack effective treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
+**The Problem:** {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
 
 **The Solution:** A decentralized FDA, an open protocol that integrates pragmatic clinical trials into standard healthcare, enabling:
@@ -223,7 +223,7 @@ The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only
 
 **The Untested Treatment Backlog:**
 
-Approximately {{< var diseases_without_effective_treatment >}} lack effective treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}}), systematically testing all {{< var drug_disease_combinations_possible >}} plausible pairings would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, this drops to ~{{< var dfda_queue_clearance_years >}}.
+Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}}), systematically testing all {{< var drug_disease_combinations_possible >}} plausible pairings would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, this drops to ~{{< var dfda_queue_clearance_years >}}.
 
 ## Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates}
 

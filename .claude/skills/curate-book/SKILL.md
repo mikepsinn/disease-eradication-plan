@@ -26,13 +26,7 @@ Modes:
 
 ## Mode: check
 
-Run Phase 1 automated metrics only (fast, no LLM):
-
-```bash
-.venv\Scripts\python.exe -u scripts/curation/collect-chapter-metrics.py
-```
-
-Then generate a metrics-only report:
+Run automated metrics collection and generate a metrics-only report (fast, no LLM):
 
 ```bash
 .venv\Scripts\python.exe -u scripts/curation/generate-curation-report.py --metrics-only
@@ -61,7 +55,7 @@ Evaluate a single chapter:
 ### Step 1: Collect Metrics
 
 ```bash
-.venv\Scripts\python.exe -u scripts/curation/collect-chapter-metrics.py --chapter <name>
+.venv\Scripts\python.exe -u scripts/curation/generate-curation-report.py --chapter <name> --metrics-only
 ```
 
 ### Step 2: Read and Evaluate
@@ -81,7 +75,7 @@ Read the chapter content and the metrics from `_analysis/curation-metrics.json`.
 ### Phase 1: Automated Metrics
 
 ```bash
-.venv\Scripts\python.exe -u scripts/curation/collect-chapter-metrics.py
+.venv\Scripts\python.exe -u scripts/curation/generate-curation-report.py --metrics-only
 ```
 
 ### Phase 2: Parallel Chapter Evaluation
