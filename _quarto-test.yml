@@ -90,11 +90,9 @@ format:
           </script>
   epub:
     filters:
-      - scripts/filters/strip-parameter-links.lua
+      - scripts/filters/epub-transforms.lua
     output-file: "test-book.epub"
-    author:
-      - name: WISHONIA
-      - name: "Mike P. Sinn (Translator)"
+    # Author override handled by Lua filter (scripts/filters/epub-transforms.lua)
     epub-cover-image: assets/cover/book-cover-3.jpg
     html-math-method:
       method: webtex

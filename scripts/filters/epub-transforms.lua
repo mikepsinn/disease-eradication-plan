@@ -1,5 +1,16 @@
--- EPUB filter: strip parameter link HTML, fix emoji, and fix figure captions.
+-- EPUB transforms: author override, parameter link stripping, emoji replacement,
+-- and figure caption reordering. Only runs for EPUB builds.
 -- PDF doesn't need this (Pandoc drops raw HTML automatically for LaTeX).
+
+-- Override author metadata for EPUB title page and OPF.
+-- Book-level YAML keeps Mike P. Sinn for HTML; this filter swaps to WISHONIA for EPUB only.
+function Meta(meta)
+  meta.author = pandoc.MetaList({
+    pandoc.MetaInlines({pandoc.Str("WISHONIA")}),
+    pandoc.MetaInlines({pandoc.Str("Mike"), pandoc.Space(), pandoc.Str("P."), pandoc.Space(), pandoc.Str("Sinn"), pandoc.Space(), pandoc.Str("(Translator)")})
+  })
+  return meta
+end
 
 -- Emoji replacements for e-reader compatibility.
 -- E-readers lack emoji fonts, so these render as empty boxes.
