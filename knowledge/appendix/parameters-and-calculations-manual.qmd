@@ -30,15 +30,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 256 parameters used in the analysis, organized by type:
+This appendix documents all 253 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 103
-- Calculated values: 97
+- External sources (peer-reviewed): 102
+- Calculated values: 95
 - Core definitions: 56
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (95 parameters) • [External Data Sources](#sec-external) (102 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -528,82 +528,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
-
-:::
-
-### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
-
-**Inputs**:
-
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
-
-$$
-\begin{gathered}
-Treatments_{dFDA,ann} \\
-= Treatments_{new,ann} \times k_{capacity} \\
-= 15 \times 12.3 \\
-= 185 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_first_treatments_per_year.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_first_treatments_per_year.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_first_treatments_per_year.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_first_treatments_per_year.qmd >}}
 
 :::
 
@@ -4584,78 +4508,6 @@ $$
 
 :::
 
-### Cumulative Trial Capacity Years Over 20 Years: 246 years {#sec-trial_capacity_cumulative_years_20yr}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cumulative trial-capacity-equivalent years over 20-year period
-
-**Inputs**:
-
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
-
-$$
-\begin{gathered}
-Capacity_{20yr} = k_{capacity} \times 20 = 12.3 \times 20 = 246 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-trial_capacity_cumulative_years_20yr.qmd >}}
-
-{{< include ../figures/sensitivity-table-trial_capacity_cumulative_years_20yr.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-trial_capacity_cumulative_years_20yr.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-trial_capacity_cumulative_years_20yr.qmd >}}
-
-:::
-
 ### Ratio of Type II Error Cost to Type I Error Benefit: 3.07k:1 {#sec-type_ii_error_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6162,30 +6014,6 @@ Critical mass threshold for social change (3.5% rule)
 #### Input Distribution
 
 {{< include ../figures/distribution-global_population_activism_threshold_pct.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Annual Global Spending on Symptomatic Disease Treatment: $8.20T {#sec-global_symptomatic_disease_treatment_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual global spending on symptomatic disease treatment
-
-**Source**: [@disease-economic-burden-109t]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$6.50T, $10T] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $6.50T and $10T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_symptomatic_disease_treatment_annual.qmd >}}
 
 *✓ High confidence*
 
