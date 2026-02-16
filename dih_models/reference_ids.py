@@ -82,7 +82,6 @@ class ReferenceID(str, Enum):
     AVERAGE_US_HOURLY_WAGE = "average-us-hourly-wage"
     AVERAGE_US_SENATE_CAMPAIGN_COST = "average-us-senate-campaign-cost"
     AZT_PHASE_2_TRIAL = "azt-phase-2-trial"
-    BAILY_1972 = "baily-1972"
     BALL2014 = "ball2014"
     BALLOT_MEASURE_SIGNATURE_COSTS_2024 = "ballot-measure-signature-costs-2024"
     BARRO2011 = "barro2011"
