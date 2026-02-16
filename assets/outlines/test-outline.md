@@ -1,4 +1,4 @@
-# Test Economics Document
+# How to End War and Disease
 
 **Config:** _quarto-test.yml
 **Type:** book

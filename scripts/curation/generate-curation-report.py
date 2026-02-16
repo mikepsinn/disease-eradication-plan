@@ -48,6 +48,7 @@ EVALS_DIR = PROJECT_ROOT / "_analysis" / "curation-evaluations"
 CROSS_CHAPTER_FILE = PROJECT_ROOT / "_analysis" / "curation-cross-chapter.json"
 REPORT_JSON = PROJECT_ROOT / "_analysis" / "curation-report.json"
 REPORT_MD = PROJECT_ROOT / "_analysis" / "curation-report.md"
+CHECKLIST_MD = PROJECT_ROOT / "readability-checklist.md"
 
 HASH_FIELD = "lastCurationHash"
 WORDS_PER_PAGE = 250
@@ -812,6 +813,151 @@ def generate_markdown_report(chapters: List[dict], metrics: dict,
 
 
 # ---------------------------------------------------------------------------
+# Readability checklist generation
+# ---------------------------------------------------------------------------
+
+TARGET_GRADE = 8.0
+TARGET_AVG_SENTENCE = 18.0
+PASSIVE_THRESHOLD = 10
+HEDGING_THRESHOLD = 15
+
+def generate_readability_checklist(chapters: List[dict]) -> str:
+    """Generate a markdown checklist of per-chapter readability issues."""
+    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    lines: List[str] = []
+    lines.append("# Readability Improvement Checklist")
+    lines.append("")
+    lines.append(f"**Generated:** {now} | **Target:** Flesch-Kincaid grade <= {TARGET_GRADE}")
+    lines.append("")
+    lines.append("Each section lists specific issues for one chapter. Agents should:")
+    lines.append("1. Read `GUIDES/STYLE_GUIDE.md` for voice/tone rules before editing")
+    lines.append("2. Process one file at a time, applying all fixes listed")
+    lines.append("3. Check each item off when complete")
+    lines.append("4. Re-run `npm run curation:report` after all files are done to verify")
+    lines.append("")
+    lines.append("**IMPORTANT:** All edits MUST follow `GUIDES/STYLE_GUIDE.md`. Key rules:")
+    lines.append("- Voice: weary but loving parent; dark humor; Cunk/Adams/Vonnegut energy")
+    lines.append("- Be conversational. Write like explaining to a smart friend.")
+    lines.append("- Target the system, not the people. Assume self-interest, not idealism.")
+    lines.append("- No corporate buzzwords or academic jargon. No earnest evangelism.")
+    lines.append("- Frame as empowering: \"here's how you do this\", not \"we will do this\"")
+    lines.append("- Be ruthlessly concise. Every word earns its place.")
+    lines.append("")
+
+    # Sort chapters by grade (worst first)
+    ranked = sorted(chapters, key=lambda c: c.get("readability_grade", 0), reverse=True)
+
+    # Only include chapters that exceed the target
+    needs_work = [c for c in ranked if c.get("readability_grade", 0) > TARGET_GRADE]
+
+    if not needs_work:
+        lines.append("All chapters are at or below the target grade level. Nothing to do.")
+        return "\n".join(lines)
+
+    lines.append(f"**{len(needs_work)} of {len(chapters)} chapters exceed grade {TARGET_GRADE}.**")
+    lines.append("")
+
+    # Summary table
+    lines.append("## Overview")
+    lines.append("")
+    lines.append("| # | Chapter | Grade | Target | Flesch | AvgSent | Passive | Hedge | Status |")
+    lines.append("|---|---------|-------|--------|--------|---------|---------|-------|--------|")
+    for i, ch in enumerate(needs_work, 1):
+        name = Path(ch["href"]).stem
+        grade = ch.get("readability_grade", 0)
+        gap = round(grade - TARGET_GRADE, 1)
+        lines.append(
+            f"| {i} | {name} | {grade} | -{gap} | "
+            f"{ch.get('flesch_reading_ease', 0)} | "
+            f"{ch.get('avg_sentence_length', 0)} | "
+            f"{ch.get('passive_voice_count', 0)} | "
+            f"{ch.get('hedging_count', 0)} | "
+            f"pending |"
+        )
+    lines.append("")
+
+    # Per-chapter checklists
+    for i, ch in enumerate(needs_work, 1):
+        href = ch["href"]
+        name = Path(href).stem
+        grade = ch.get("readability_grade", 0)
+        flesch = ch.get("flesch_reading_ease", 0)
+        fog = ch.get("gunning_fog", 0)
+        dale = ch.get("dale_chall", 0)
+        avg_sent = ch.get("avg_sentence_length", 0)
+        passive = ch.get("passive_voice_count", 0)
+        hedge = ch.get("hedging_count", 0)
+        difficult = ch.get("difficult_word_count", 0)
+        long_sent = ch.get("long_sentence_count", 0)
+        words = ch.get("word_count", 0)
+
+        lines.append(f"## {i}. `{href}`")
+        lines.append("")
+        lines.append(f"**Current:** grade {grade} | Flesch ease {flesch} | "
+                     f"Fog {fog} | Dale-Chall {dale} | {words} words")
+        lines.append("")
+
+        # Build specific issue checklist
+        lines.append("### Issues")
+        lines.append("")
+
+        # Grade level
+        gap = round(grade - TARGET_GRADE, 1)
+        lines.append(f"- [ ] **Grade level {grade}** (need to drop {gap} grades): "
+                     f"Replace multi-syllable words with simpler ones. "
+                     f"{difficult} difficult words found.")
+
+        # Sentence length
+        if avg_sent > TARGET_AVG_SENTENCE:
+            lines.append(f"- [ ] **Avg sentence length {avg_sent} words** (target: <={TARGET_AVG_SENTENCE}): "
+                         f"Break long sentences. {long_sent} sentences exceed 40 words.")
+        elif avg_sent > 15:
+            lines.append(f"- [ ] **Avg sentence length {avg_sent} words**: Acceptable but could be shorter.")
+
+        # Passive voice
+        if passive > PASSIVE_THRESHOLD:
+            lines.append(f"- [ ] **{passive} passive voice constructions**: "
+                         f"Rewrite to active voice (\"X was done by Y\" -> \"Y did X\").")
+        elif passive > 0:
+            lines.append(f"- [ ] **{passive} passive voice constructions**: Minor; fix where easy.")
+
+        # Hedging
+        if hedge > HEDGING_THRESHOLD:
+            lines.append(f"- [ ] **{hedge} hedging words** (may, might, could, etc.): "
+                         f"Replace with direct statements where evidence supports it.")
+        elif hedge > 5:
+            lines.append(f"- [ ] **{hedge} hedging words**: Moderate; tighten where possible.")
+
+        # Flesch ease (lower = harder)
+        if flesch < 50:
+            lines.append(f"- [ ] **Flesch ease {flesch}** (\"difficult\"): "
+                         f"Simplify vocabulary and sentence structure significantly.")
+        elif flesch < 60:
+            lines.append(f"- [ ] **Flesch ease {flesch}** (\"fairly difficult\"): "
+                         f"Some simplification needed.")
+
+        lines.append("")
+        lines.append("### Recommendations")
+        lines.append("")
+        lines.append("- Read `GUIDES/STYLE_GUIDE.md` before editing this file")
+        lines.append("- Shorten sentences to 12-18 words average")
+        lines.append("- Replace jargon: \"expenditure\"->\"spending\", \"allocation\"->\"share\", "
+                     "\"methodology\"->\"method\", \"utilize\"->\"use\", \"implement\"->\"set up\", "
+                     "\"demonstrate\"->\"show\", \"facilitate\"->\"help\", \"approximately\"->\"about\"")
+        lines.append("- Keep technical terms that have no simpler equivalent (GDP, clinical trial, treaty)")
+        lines.append("- Preserve all {{< var >}} references, @citations, LaTeX, links, and code blocks")
+        lines.append("- Voice per style guide: weary parent, dark humor, Cunk/Adams/Vonnegut energy")
+        lines.append("- No buzzwords, no academic jargon, no earnest evangelism")
+        lines.append("- Frame as instructional: \"here's how you...\" not \"we will...\"")
+        lines.append("- Cut filler: \"it is important to note\", \"it should be noted\", \"in order to\"")
+        lines.append("- Cut hedging where evidence is solid: \"may\" -> direct statement")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -872,6 +1018,12 @@ def main() -> int:
     md = generate_markdown_report(chapters, metrics, cross_chapter, actions)
     REPORT_MD.write_text(md, encoding="utf-8")
     print(f"  Markdown: {REPORT_MD}")
+
+    # Write readability checklist
+    checklist = generate_readability_checklist(chapters)
+    CHECKLIST_MD.write_text(checklist, encoding="utf-8")
+    needs_work = sum(1 for c in chapters if c.get("readability_grade", 0) > TARGET_GRADE)
+    print(f"  Checklist: {CHECKLIST_MD} ({needs_work} chapters need work)")
 
     # Print summary
     evaluated = [c for c in chapters if c["chs"] is not None]
