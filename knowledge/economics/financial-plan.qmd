@@ -16,7 +16,7 @@ image: /assets/og-images/knowledge/economics/financial-plan-og-retro-academic.jp
 
 > **Related:** [Campaign Budget](campaign-budget.qmd) | [VICTORY Incentive Alignment Bonds](victory-bonds.qmd)
 
-Most financial plans are complicated because the writers are confused or lying. This one is complicated because moving {{< var treaty_annual_funding >}} annually from your military budgets to disease eradication while paying your investors forever actually IS complicated.
+Most financial plans are complicated because the writers are confused or lying. This one is different. Moving {{< var treaty_annual_funding >}} a year from military budgets to disease eradication? While paying your investors forever? That actually IS complicated.
 
 But the architecture is clean:
 
@@ -31,7 +31,7 @@ Three pillars. That's it.
 **Instrument:** [VICTORY Incentive Alignment Bonds](victory-bonds.qmd)
 
 - **Returns:** {{< var victory_bond_annual_return_pct >}} annually. Sounds fake. It's just arithmetic: {{< var victory_bond_annual_payout >}} / {{< var treaty_campaign_total_cost >}}.
-- **Structure:** Senior debt. Bondholders get paid before anyone else.
+- **Structure:** Senior debt. The fund pays bondholders before anyone else.
 - **Payout:** {{< var victory_bond_funding_pct >}} of all treaty inflows. That's {{< var victory_bond_annual_payout >}}/year.
 - **Collateral:** {{< var treaty_annual_funding >}}+ annual treaty revenue stream.
 - **The pitch:** "Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever."
@@ -47,7 +47,7 @@ Yes, this sounds like a scam. It's what happens when you redirect money from des
 
 Think of it as a {{< var treaty_campaign_total_cost >}} vending machine that dispenses {{< var treaty_annual_funding >}} per year. Forever.
 
-**Why bonds, not donations?** Marriage equality raised $153M over 11 years through foundations. You need {{< var treaty_campaign_total_cost >}} in 12-24 months. Bonds can do that because investors chase {{< var victory_bond_annual_return_pct >}} returns. Donations require generosity. Returns require greed. Greed is faster.
+**Why bonds, not donations?** Marriage equality raised $153M over 11 years through foundations. You need {{< var treaty_campaign_total_cost >}} in 12-24 months. Bonds can do that. Investors chase {{< var victory_bond_annual_return_pct >}} returns. Donations require generosity. Returns require greed. Greed is faster.
 
 **Why {{< var treaty_campaign_total_cost >}}?** To outspend pharma lobbying (~$300M/year) and the military-industrial complex (~$150M/year) combined. You raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. They spend $450M/year to maintain the status quo. You just need to outspend them for 2-3 years.
 
@@ -61,7 +61,7 @@ Think of it as a {{< var treaty_campaign_total_cost >}} vending machine that dis
 | Series A ($500M-1B) | Scale to G7 nations | {{< var global_population_activism_threshold_pct >}} global participation (280M people) |
 | Growth ($500M-1.1B) | Ratification push in major powers | First $1B disbursement |
 
-**Most realistic funding source:** Your defense contractors. They already spend $150M/year lobbying. They keep 99% of the military budget ($2.67T) PLUS earn {{< var victory_bond_annual_return_pct >}} on the 1% redirected. They just redirect existing lobbying spend. Your weapons manufacturers fund disease eradication and make more money doing it. Your species would call this irony. I call it incentive design.
+**Most realistic funding source:** Your defense contractors. They already spend $150M/year lobbying. They keep 99% of the military budget ($2.67T). They ALSO earn {{< var victory_bond_annual_return_pct >}} on the 1% they redirect. They just redirect existing lobbying spend. Your weapons manufacturers fund disease eradication and make more money doing it. Your species would call this irony. I call it incentive design.
 
 ## Pillar 2: Campaign Budget (Spend {{< var treaty_campaign_total_cost >}})
 
@@ -86,7 +86,7 @@ The one-time "activation energy" to pass a 1% treaty:
 
 **Timeline:** 36-60 months (optimistic) to 120+ months (realistic).
 
-For context: the Paris Climate Agreement took 23 years (Rio 1992 to signing 2015). The landmine ban took 6. You're betting on viral referendum mechanics and existing disarmament frameworks. If the timeline extends, investor returns just delay. Same structure, later start.
+For context: the Paris Climate Agreement took 23 years (Rio 1992 to signing 2015). The landmine ban took 6. You're betting on viral referendum mechanics and existing disarmament frameworks. If the timeline extends, investor returns just delay. Same structure. Later start.
 
 ## Pillar 3: Treasury (Manage {{< var treaty_annual_funding >}}+/Year)
 
@@ -98,9 +98,9 @@ Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from mi
 
 ![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
 
-100+ nations contribute 1% of military budgets. Military spending data is already public via SIPRI (tracking since 1966). Either the money arrives or it doesn't.
+100+ nations contribute 1% of military budgets. SIPRI has tracked military spending data publicly since 1966. Either the money arrives or it doesn't.
 
-**Why no enforcement?** The [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing. Politicians in non-compliant countries watch their Public Good Scores drop. Electoral support shifts to opponents. Post-office opportunities disappear. Nobody punishes defectors. Compliance is just the career-optimal choice.
+**Why no enforcement?** The [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing. Politicians in non-compliant countries watch their Public Good Scores drop. Electoral support shifts to opponents. Post-office opportunities vanish. Nobody punishes defectors. Compliance is just the career-optimal choice.
 
 ### Growth Scenarios (Not Predictions)
 
@@ -111,7 +111,7 @@ Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from mi
 | **Rapid success** | 10% | 5% by Year 10 | $135B |
 | **Reversal** | 5% | Treaty collapses | $0 |
 
-Growth beyond 1% requires demonstrated health outcomes, continued public pressure, and no major geopolitical crisis. None guaranteed.
+Growth beyond 1% requires proven health outcomes, continued public pressure, and no major geopolitical crisis. None guaranteed.
 
 ### How the Money Gets Spent: 80/10/10
 
@@ -130,11 +130,11 @@ The allocation is automatic. No committees. No debates.
 - **Bond returns:** {{< var victory_bond_annual_payout >}}/year ({{< var victory_bond_funding_pct >}})
 - **Political incentives:** {{< var iab_political_incentive_funding_annual >}}/year ({{< var iab_political_incentive_funding_pct >}})
 - Both are sacred and untouchable. Touch them and the system dies.
-- Distributed automatically via smart contracts.
+- Smart contracts distribute both automatically.
 
 ### The Other 80%: Medical Research
 
-The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic clinical trials and research infrastructure. Allocation is governed through [Wishocracy](../solution/wishocracy.qmd). Treasury security uses multi-sig wallets and time-locked withdrawals.
+The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds clinical trials and research infrastructure. [Wishocracy](../solution/wishocracy.qmd) governs the allocation. Treasury security uses multi-sig wallets and time-locked withdrawals.
 
 ### Dynamic Patient Subsidies
 
@@ -179,10 +179,10 @@ For detailed analysis, see **[Investor Risk Analysis](../appendix/investor-risk-
 
 Key protections:
 
-- **Assurance contracts:** Funds escrowed until milestones hit. Automatic refund if targets missed.
-- **Milestone-based release:** Phased funding tied to platform launch, user growth, and treaty progress.
+- **Assurance contracts:** Funds sit in escrow until you hit milestones. Miss a target, get a refund.
+- **Milestone-based release:** Milestones tie funding to platform launch, user growth, and treaty progress.
 - **Downside protection:** Even partial treaty adoption ($13B) returns 130% annually.
-- **Smart contract security:** Multi-sig wallets, time-locked withdrawals, independent audits.
+- **Smart contract security:** Multi-sig wallets. Time-locked withdrawals. Independent audits.
 - **On-chain transparency:** All treasury movements public. Anyone can audit.
 
 ## Related Documents

@@ -8075,7 +8075,7 @@ def calculate_personal_lifetime_wealth_disease_eradication(
 # ==============================================================================
 # INCENTIVE ALIGNMENT PARAMETERS
 # ==============================================================================
-# Parameters showing how different stakeholders benefit from the DIH/dFDA system
+# Parameters showing how different stakeholders benefit from your DIH/dFDA system
 # Source: knowledge/solution/aligning-incentives.qmd
 
 # ---

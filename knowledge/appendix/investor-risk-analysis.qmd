@@ -14,7 +14,7 @@ image: /assets/og-images/knowledge/appendix/investor-risk-analysis-og-retro-acad
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 
-Your investors will ask: "Is this riskier than a normal startup investment?" The answer is no. The risk isn't greater; it's fundamentally _different_. And different, in this case, means better.
+Your investors will ask: "Is this riskier than a normal startup investment?" The answer is no. The risk isn't greater; it's fundamentally _different_. And different, here, means better.
 
 ## Political Arbitrage vs. Venture Capital
 
@@ -22,13 +22,13 @@ The most critical distinction is where the risk lives.
 
 ![Venture capital: risk money on inventing something new. Political arbitrage: risk money on convincing politicians to stop buying bombs. One of these is considered the risky option.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-1-the-core-thesis-political-arbitrage-vs-venture-capital-bw-academic.jpg)
 
-**Normal VC risk:** Will customers want this product? Will the market adopt it? Can the company find product-market fit before the money runs out? Most startups fail here. The entire model is a bet on **creating a new cash flow from scratch.**
+**Normal VC risk:** Will customers want this product? Will the market adopt it? Can the company find product-market fit before the money runs out? Most startups fail here. The entire model bets on **creating a new cash flow from scratch.**
 
-**Your risk:** Will your 1% treaty get ratified? That's it. You're not creating a new market. You're **redirecting a pre-existing cash flow** ($2.72 trillion in annual military spending [@sipri2024]). The "market" already exists and is fully capitalized. Your species is already spending the money. You're just changing what it buys.
+**Your risk:** Will your 1% treaty get ratified? That's it. You're not creating a new market. You're **redirecting a pre-existing cash flow** ($2.72 trillion in annual military spending [@sipri2024]). The "market" already exists. It's fully capitalized. Your species is already spending the money. You're just changing what it buys.
 
-**Your payback:** Returns don't depend on product-market fit, user adoption, or competitive dynamics. They depend on treaty ratification, which unlocks direct, recurring government payments.
+**Your payback:** Returns don't depend on product-market fit, user adoption, or competitive dynamics. They depend on treaty ratification. That unlocks direct, recurring government payments.
 
-**The precedent:** Your military-industrial complex has proven this model for decades, spending ~$1.1 billion on lobbying to secure $2.02 trillion in contracts [@lobbying-roi-calc]. That's an ROI of 1,813:1. You're just reversing the cash flow. Same game, opposite direction.
+**The precedent:** Your military-industrial complex has proven this model for decades. It spends ~$1.1 billion on lobbying to secure $2.02 trillion in contracts [@lobbying-roi-calc]. That's an ROI of 1,813:1. You're just reversing the cash flow. Same game, opposite direction.
 
 ## Risk Comparison
 
@@ -40,20 +40,20 @@ The most critical distinction is where the risk lives.
 | **Political Risk** | **LOW** (operates within existing rules) | **VERY HIGH** (this is the whole bet) |
 | **Outcome Profile** | Graded (fail, 2x, 100x) | Binary (near-total loss or massive >28x win) |
 
-You've swapped the near-certainty of market and competition risk for a single, concentrated political risk. On your planet, this is considered exotic. In reality, it's a much cleaner bet. One variable instead of fifty.
+You've swapped market and competition risk for a single, concentrated political risk. On your planet, this is considered exotic. In reality, it's a much cleaner bet. One variable instead of fifty.
 
 
 ![Trade the risk of business failure for the risk of political failure. Like choosing between quicksand and a trapdoor.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-comparative-risk-analysis-bw-academic.jpg)
 
 ## How You Mitigate Each Risk
 
-Because your risk is so specific, you can engineer specific tools to neutralize it. Four mechanisms, each targeting a different failure mode.
+Your risk is specific. So you can engineer specific tools to neutralize it. Four mechanisms, each targeting a different failure mode.
 
 ### The Assurance Contract (Fundraising Risk)
 
-**Problem:** Early investors hesitate because they fear not enough others will join. Your species calls this the "collective action problem." Economists have been writing about it for decades. The solution has existed the whole time.
+**Problem:** Early investors hesitate. They fear not enough others will join. Your species calls this the "collective action problem." Economists have written about it for decades. The solution has existed the whole time.
 
-**Solution:** All initial funds sit in a transparent smart contract escrow. If the fundraising target isn't met by the deadline, **all capital returns to investors automatically.** You can't lose money on a project that never launches. The code won't let you.
+**Solution:** All initial funds sit in a smart contract escrow. It's transparent. If the fundraising target isn't met by the deadline, **all capital returns to investors automatically.** You can't lose money on a project that never launches. The code won't let you.
 
 ![Put money in a box. If enough people put money in the box, everyone gets what they wanted. If not enough people put money in the box, everyone gets their money back. This is somehow considered innovative.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-a-the-assurance-contract-mitigates-fundraising-risk-bw-academic.jpg)
 
@@ -62,24 +62,24 @@ Because your risk is so specific, you can engineer specific tools to neutralize 
 
 ![A website where people bet on whether politicians will do the right thing. The worse the odds get, the more you pay investors to keep hoping. It's like a sadness meter for democracy.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-b-metaculus-dynamic-pricing-mitigates-political-risk-bw-academic.jpg)
 
-**Problem:** Political risk is hard to quantify. Your species has been guessing about this since democracy was invented.
+**Problem:** Political risk is hard to quantify. Your species has been guessing about it since democracy was invented.
 
-**Solution:** Use a public prediction market (like Metaculus) to create real-time, transparent probability of treaty success. This dynamically prices your bond yields. High perceived risk? Higher yield. Low risk? Lower yield. Your investors always get a **fair premium for the precise level of political risk they're taking.** No guessing. Just math.
+**Solution:** Use a public prediction market (like Metaculus) to track the probability of treaty success in real time. This prices your bond yields on the fly. High perceived risk? Higher yield. Low risk? Lower yield. Your investors always get a **fair premium for the political risk they're taking.** No guessing. Just math.
 
 ### Front-Loaded Payouts (Timeline Risk)
 
-**Problem:** Your political processes are slow. Investors don't want their money locked up for a decade while your politicians deliberate.
+**Problem:** Your political processes are slow. Investors don't want money locked up for a decade while politicians deliberate.
 
-**Solution:** Payouts are aggressively front-loaded. In the first year of treaty inflows, the model pays out a multiple of the initial investment (e.g., 2.6x in the partial success scenario). This shortens your investors' risk exposure from a decade to a few years. See the [Cash Flow Model](../economics/financial-plan.qmd) for details.
+**Solution:** Payouts are front-loaded. In the first year of treaty inflows, the model pays out a multiple of the initial investment (e.g., 2.6x in the partial success scenario). This shortens risk exposure from a decade to a few years. See the [Cash Flow Model](../economics/financial-plan.qmd) for details.
 
 ![Pay investors early so they stop worrying early. Turns out the main risk in saving the world is having to think about it for ten years.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-c-front-loaded-payouts-mitigates-timeline-risk-bw-academic.jpg)
 
 
 ### First-Loss Capital (Financial Risk)
 
-**Problem:** If everything fails, your investors could lose their principal. This makes them nervous. Nervous investors don't invest.
+**Problem:** If everything fails, investors could lose their principal. This makes them nervous. Nervous investors don't invest.
 
-**Solution:** Your capital stack includes a first-loss tranche funded by philanthropic sources. This money absorbs initial losses before your senior investors lose a cent. Philanthropists take the risk because they were going to donate the money anyway. Your institutional investors get a buffer. Everyone's happy. Your species calls this "blended finance." It's just common sense with a fancy name.
+**Solution:** Your capital stack includes a first-loss tranche funded by philanthropic sources. This money absorbs losses before senior investors lose a cent. Philanthropists take the risk. They were going to donate the money anyway. Institutional investors get a buffer. Everyone's happy. Your species calls this "blended finance." It's just common sense with a fancy name.
 
 ![Some investors lose money first so other investors feel safe. It's like a financial human shield but everyone agreed to it.](/assets/images/investor-risk-analysis/investor-risk-analysis-section-engineered-risk-mitigation-bw-academic.jpg)
 
@@ -89,6 +89,6 @@ Because your risk is so specific, you can engineer specific tools to neutralize 
 
 On a risk-adjusted expected value basis? **Yes.**
 
-A typical VC portfolio is an unmanaged bet on a chaotic sea of variables: market, team, product, competition. Your VICTORY Bonds are a single, concentrated bet on one variable (political will) with four engineered safety nets and transparent pricing.
+A typical VC portfolio bets on a chaotic sea of variables: market, team, product, competition. Your VICTORY Bonds bet on one variable (political will). They come with four safety nets and transparent pricing.
 
-One variable. Four safety nets. Cleaner bet. Clearer path. And if you win, you also accidentally save millions of lives. Your species has a word for investments that are both profitable and moral. You call them "rare." Time to make them common.
+One variable. Four safety nets. Cleaner bet. Clearer path. And if you win, you also save millions of lives. Your species has a word for investments that are both profitable and moral. You call them "rare." Time to make them common.

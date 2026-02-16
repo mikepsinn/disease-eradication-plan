@@ -46,11 +46,11 @@ This {{< var treaty_campaign_total_cost >}} will:
 
 ### The Minimum Viable Budget
 
-The $1B target is overkill-by-design. The actual cost to get governments to sign a piece of paper? Historically, ~$90–140 million.
+The $1B target is overkill-by-design. The actual cost to get governments to sign a piece of paper? Historically, ~$90-140 million.
 
 ![Banning landmines cost $15 million. Banning nuclear weapons cost $10 million. Redirecting 1 percent of military spending to save billions of lives costs $1 billion. Apparently the price goes up when you're not just stopping murder, you're actively choosing life.](/assets/images/campaign-budget/campaign-budget-section-the-minimum-viable-budget-bw-academic.jpg)
 
-The Ottawa Treaty (banning landmines) cost $15M in diplomatic paperwork. The Nuclear Ban Treaty: $10M. Countries love signing papers - it makes them look good without doing anything.
+The Ottawa Treaty (banning landmines) cost $15M in diplomatic paperwork. The Nuclear Ban Treaty: $10M. Countries love signing papers. It makes them look good without doing anything.
 
 See [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.qmd) for the full breakdown of why getting signatures is cheap and implementation is where the real money goes.
 
@@ -96,7 +96,7 @@ When you're paying people real money ($0.25-0.30) for verified referrals, they b
 - Local versions (different cultures, same mortality)
 - Micro-influencers (people trust strangers with 10K followers more than experts)
 
-Alternative: Skip this, increase referral payment to $0.35-0.40, let economics drive virality. PayPal and Dropbox proved you don't need marketing when you're paying real money.
+Alternative: Skip this. Increase referral payment to $0.35-0.40. Let economics drive virality. PayPal and Dropbox proved you don't need marketing when you're paying real money.
 
 #### The Message That Spreads
 
@@ -138,11 +138,11 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 **Total Budget: {{< var treaty_campaign_viral_referendum_base_case >}}**
 
-**The Challenge**: Not all voters cost the same. Early adopters (believers, idealists) vote for minimal incentive. But to hit {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var global_population_activism_threshold_pct >}} of global population), you need skeptics and the actively resistant.
+**The Challenge**: Not all voters cost the same. Early adopters (believers, idealists) vote for minimal incentive. But hitting {{< var treaty_campaign_voting_bloc_target >}} votes ({{< var global_population_activism_threshold_pct >}} of global population) requires skeptics and the actively resistant.
 
 ![Early adopters are cheap to recruit because they're excited. Late adopters are expensive because they're suspicious. Eventually everyone costs money because you've run out of people who think independently. Human nature follows a predictable curve. So does human price.](/assets/images/campaign-budget/campaign-budget-section-budget-viral-referendum-with-tiered-incentives-base-case-scenario-bw-academic.jpg)
 
-**Diffusion of innovations theory** (Rogers, 2003) predicts that each new group of humans costs more to convince. Your species is predictable this way:
+**Diffusion of innovations theory** (Rogers, 2003) predicts each new group of humans costs more to convince. Your species is predictable this way:
 
 - 2.5% innovators (vote for free because they're excited)
 - 13.5% early adopters ($0.25/vote)
@@ -150,12 +150,12 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 - 34% late majority ($0.75-1.00/vote, suspicious)
 - 16% laggards ($1.50-2.00/vote, actively hostile to good ideas)
 
-**PayPal precedent**: Started at $20/referral (1999), optimized to $10-20. PayPal recruited early adopters in Silicon Valley, not laggards. You're recruiting the entire species. Budget accordingly.
+**PayPal precedent**: PayPal started at $20/referral (1999), then optimized to $10-20. They recruited early adopters in Silicon Valley, not laggards. You're recruiting the entire species. Budget accordingly.
 
 **Core Components**:
 
 - **Platform Development**: {{< var campaign_platform_development >}} (biometric verification, 50+ languages, mobile-first)
-- **Verification Infrastructure**: $59-63M (330-350M verification attempts × $0.18, accounting for 15-20% friction)
+- **Verification Infrastructure**: $59-63M (330-350M verification attempts x $0.18, accounting for 15-20% friction)
 - **Tiered Referral Payments**: $40-312M (varies by virality strength and marginal cost assumptions)
 - **Seed Marketing**: $5-40M (optional acceleration, or let referral economics drive virality)
 
@@ -173,7 +173,7 @@ Alternative: Skip this, use the $30M to increase verification budget or referral
 
 **You're 90% cheaper in the worst case.**
 
-**Your Execution Strategy**: Budget for worst-case ($400M+), execute with realistic assumptions, optimize in real-time based on actual cost-per-vote data. Unused funds roll into higher referral payments, treaty implementation, or dFDA development. Unlike your military, you don't lose the savings in a couch cushion.
+**Your Execution Strategy**: Budget for worst-case ($400M+). Execute with realistic assumptions. Optimize in real-time based on actual cost-per-vote data. Roll unused funds into higher referral payments, treaty implementation, or dFDA development. Unlike your military, you don't lose the savings in a couch cushion.
 
 **Live Transparency**: Dashboard at WarOnDisease.org shows real-time cost-per-vote by cohort, conversion rates, and funds allocation.
 
@@ -380,7 +380,7 @@ When everyone profits from cooperation, resistance becomes unprofitable. You've 
 - Politicians: Living voters vote more than dead ones
 - The public: Gets paid $0.20 to click a button
 
-Your species calls this "capitalism." Usually it optimizes for the wrong things. You're pointing it at the right thing and letting greed do the work.
+Your species calls this "capitalism." Usually it optimizes for the wrong things. You're pointing it at the right thing. Greed does the work.
 
 ![AI campaigns are cheaper than traditional advertising. Everyone benefits: lobbyists get paid, industry gets paid, public doesn't die. It's almost like aligning incentives works. Who knew? Besides every economist since Adam Smith, obviously.](/assets/images/campaign-budget/campaign-budget-section-why-this-works-bw-academic.jpg)
 
@@ -395,7 +395,7 @@ Your species calls this "capitalism." Usually it optimizes for the wrong things.
 
 **For bondholders**:
 
-- Invest {{< var treaty_campaign_total_cost >}} → Receive {{< var victory_bond_annual_payout >}}/year forever
+- Invest {{< var treaty_campaign_total_cost >}} -> Receive {{< var victory_bond_annual_payout >}}/year forever
 - {{< var victory_bond_annual_return_pct >}} until the sun explodes
 
 ## Transparency

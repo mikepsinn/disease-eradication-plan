@@ -1,5 +1,5 @@
 """
-Centralized chart styling for all visualizations in the DIH project.
+Centralized chart styling for all visualizations
 
 This module provides consistent B&W styling with patterns for categorical data.
 Import this module and call setup_chart_style() at the beginning of any visualization code.

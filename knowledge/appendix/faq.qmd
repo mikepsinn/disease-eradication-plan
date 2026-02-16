@@ -9,11 +9,11 @@ image: /assets/og-images/knowledge/appendix/faq-og-retro-academic.jpg
 
 **Objection**: "Nice idea, but it likely won't happen."
 
-**Response**: The Oxford RECOVERY trial tested 7 treatments in 6 months, saved 1 million lives, and cost {{< var recovery_trial_cost_per_patient >}}. The FDA's equivalent costs {{< var traditional_phase3_cost_per_patient >}}, which is approximately the price of a luxury car per question about whether aspirin works.
+**Response**: The Oxford RECOVERY trial tested 7 treatments in 6 months. It saved 1 million lives and cost {{< var recovery_trial_cost_per_patient >}}. The FDA's equivalent costs {{< var traditional_phase3_cost_per_patient >}}. That's roughly the price of a luxury car per question about whether aspirin works.
 
 The trial used existing hospital systems. Hospitals, it turns out, already contain sick people.
 
-We're proposing scaling what already succeeded. Netflix convinced hundreds of millions of humans to pay monthly subscriptions to watch strangers pretend to have problems. Medical trials could be comparatively feasible.
+We're proposing scaling what already succeeded. Netflix convinced hundreds of millions of humans to pay monthly subscriptions. They pay to watch strangers pretend to have problems. Medical trials could be comparatively feasible.
 
 **Follow-up**: "But globally?"
 
@@ -33,17 +33,17 @@ We're proposing scaling what already succeeded. Netflix convinced hundreds of mi
 
 Current US military budget: $999B. After 1% reduction: $989B. The Pentagon loses this much in accounting errors quarterly.
 
-Since every nation reduces by 1%, relative military balance remains largely proportional. It's similar to everyone agreeing to dial down the volume simultaneously. Your enemies have 1% fewer weapons pointed at you, which, even by strict military logic, counts as "better."
+Since every nation reduces by 1%, relative military balance stays largely proportional. It's like everyone agreeing to dial down the volume at once. Your enemies have 1% fewer weapons pointed at you. Even by strict military logic, that counts as "better."
 
-Think of it as upgrading your security system. The greatest threats today aren't tanks rolling over borders; they're microscopic things rolling through airports. COVID-19 killed more Americans than World War I, World War II, the Korean War, the Vietnam War, and the Iraq and Afghanistan wars combined. It did this without violating any airspace treaties or triggering any defense systems.
+Think of it as upgrading your security system. The greatest threats today aren't tanks rolling over borders. They're microscopic things rolling through airports. COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. It did this without violating any airspace treaties or triggering any defense systems.
 
-Also, strong nations are rarely invaded. And what makes a nation strong? Healthy, productive people. A country drowning in preventable disease is weak, broke, and cranky. Broke, cranky countries often start wars. Curing disease functions as preventative defense.
+Also, strong nations are rarely invaded. What makes a nation strong? Healthy, productive people. A country drowning in preventable disease is weak, broke, and cranky. Broke, cranky countries often start wars. Curing disease is preventative defense.
 
-Finally, consider soft power. You can spend a trillion dollars on "hard power" to make other countries fear you. Or you can spend a fraction of that curing their citizens' diseases and have them love you. Who has more real power: the world's scary policeman, or the world's beloved doctor?
+Finally, consider soft power. You can spend a trillion dollars on "hard power" to make other countries fear you. Or you can spend a fraction of that curing their diseases and have them love you. Who has more real power: the world's scary policeman, or the world's beloved doctor?
 
 **Follow-up**: "But what if enemies don't reduce?"
 
-**Response**: That's the point of a treaty. Participants sign simultaneously. Those who don't simply don't receive [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) benefits. Their politicians miss out on campaign funding and lucrative post-office opportunities. Meanwhile, participating nations' politicians get rewarded for supporting the treaty. Self-interest does the work.
+**Response**: That's the point of a treaty. Participants sign at the same time. Those who don't simply miss [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) benefits. Their politicians lose out on campaign funding and post-office opportunities. Participating nations' politicians get rewarded instead. Self-interest does the work.
 
 ## "Big Pharma Will Block This"
 
@@ -53,9 +53,9 @@ Finally, consider soft power. You can spend a trillion dollars on "hard power" t
 
 **Current system**: Pharma pays {{< var pharma_drug_development_cost_current >}} per drug. 90% fail. Only blockbusters turn profit. Net result: often bankruptcy.
 
-**New system**: The treaty fund pays pharma to run trials. Trials become revenue centers instead of cost centers. More drugs could become profitable, even the weird ones. More predictable revenue.
+**New system**: The treaty fund pays pharma to run trials. Trials become revenue centers, not cost centers. More drugs could become profitable, even the weird ones. More predictable revenue.
 
-Pharma might lobby FOR this harder than they've lobbied for anything. It's getting paid to do what they already do, except potentially more profitable.
+Pharma might lobby FOR this harder than they've lobbied for anything. They'd get paid to do what they already do, but more profitably.
 
 ![How drug companies currently lose billions gambling on pills versus how they could just get paid to run the experiments. It's like offering a casino steady paychecks instead of roulette.](/assets/images/faq/faq-section-pharma-incentive-model-bw-academic.jpg)
 
@@ -69,11 +69,11 @@ Pharma might lobby FOR this harder than they've lobbied for anything. It's getti
 
 **Response**: We trust 8 billion people to drive cars, use the internet, and vote for people with nuclear codes. But we can't trust them to click "yes" on "should we cure disease"?
 
-Polls consistently show people prefer their money fund medical trials rather than warfare. We're not fighting public opinion; we're unleashing it.
+Polls consistently show people prefer their money fund medical trials, not warfare. We're not fighting public opinion; we're unleashing it.
 
 **Follow-up**: "But they're not qualified!"
 
-**Response**: The qualified experts (a 200-person NIH committee) haven't eradicated a major disease class in 50 years. They have, however, become extremely qualified at explaining why they haven't. Perhaps qualification isn't the limiting factor.
+**Response**: The qualified experts (a 200-person NIH committee) haven't eradicated a major disease class in 50 years. They have become extremely qualified at explaining why they haven't. Perhaps qualification isn't the limiting factor.
 
 ## "What About National Sovereignty?"
 
@@ -82,7 +82,7 @@ Polls consistently show people prefer their money fund medical trials rather tha
 ![How voters get politicians to do things: ask nicely, then replace them if they don't. It's the same system you use with batteries.](/assets/images/faq/faq-section-what-about-national-sovereignty-bw-academic.jpg)
 
 
-**Response**: No force is typically involved. Countries voluntarily sign a treaty. Don't want to sign? Don't sign. Citizens demand it? Sign. This is how democracy is intended to work.
+**Response**: No force is involved. Countries sign a treaty by choice. Don't want to sign? Don't sign. Citizens demand it? Sign. This is how democracy is meant to work.
 
 **Follow-up**: "What if our government doesn't want to?"
 
@@ -100,7 +100,7 @@ Polls consistently show people prefer their money fund medical trials rather tha
 1. This isn't controlling healthcare. This funds pragmatic clinical trials.
 2. Military spending is already "socialized." It's government spending.
 3. This moves 1% from one government program to another.
-4. The decentralized framework for drug assessment uses decentralized markets, not central planning.
+4. The decentralized framework for drug assessment uses markets, not central planning.
 5. VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) are market-based ({{< var victory_bond_annual_return_pct >}} potential returns).
 
 This is arguably the most capitalist medical system proposed.
@@ -118,7 +118,7 @@ This is arguably the most capitalist medical system proposed.
 - FDA-prevented disasters: Maybe thalidomide (1,000 deaths)
 - Net: FDA policies may have contributed to 4,000-10,000 deaths for every person saved
 
-Under the decentralized framework for drug assessment, patients see real data on risks and benefits, then decide. Adults making informed choices about their own bodies.
+Under the decentralized framework for drug assessment, patients see real data on risks and benefits. Then they decide. Adults making informed choices about their own bodies.
 
 ## "What If Countries Cheat?"
 
@@ -129,12 +129,12 @@ Under the decentralized framework for drug assessment, patients see real data on
 
 **Response**: The system doesn't rely on trust or punishment. It relies on incentives.
 
-- **Politicians who comply** receive [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) benefits: campaign funding from the political incentive pool and lucrative post-office career opportunities
+- **Politicians who comply** receive [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) benefits. That means campaign funding from the political incentive pool and post-office career opportunities.
 - **Politicians who don't comply** simply don't receive those benefits
 - **Contributions are public** on blockchain, so compliance is verifiable
 - **Smart contracts** route benefits automatically to compliant participants
 
-Unlike traditional treaties based on trust and shame, this one is based on making compliance the career-maximizing choice. Politicians support the treaty because it's profitable, not because they're afraid of consequences.
+Traditional treaties rely on trust and shame. This one makes compliance the career-maximizing choice. Politicians support the treaty because it's profitable, not because they fear consequences.
 
 ## "You're Being Unfair to the NIH"
 
@@ -168,9 +168,9 @@ The NIH model produces papers. The smallpox model produced results. This plan at
 
 **Response**:
 
-**The returns** are high because the system captures value from a $109T disease burden. Economic benefits work out to over $7.5 million per person globally over 50 years. That's {{< var victory_bond_funding_pct >}} of {{< var treaty_annual_funding >}} yearly inflows divided among bondholders. The math appears to check out.
+**The returns** are high because the system captures value from a $109T disease burden. Economic benefits work out to over $7.5 million per person over 50 years. That's {{< var victory_bond_funding_pct >}} of {{< var treaty_annual_funding >}} yearly inflows divided among bondholders. The math checks out.
 
-**The cures** may be achievable because Oxford proved the model works, we're removing the FDA bottleneck, trials cost {{< var dfda_trial_cost_reduction_factor >}} less, and the timeline matches historical eradication efforts.
+**The cures** may be achievable. Oxford proved the model works. We're removing the FDA bottleneck. Trials cost {{< var dfda_trial_cost_reduction_factor >}} less. And the timeline matches historical eradication efforts.
 
 It sounds too good because we've been failing for so long, we forgot what success looks like.
 
@@ -212,7 +212,7 @@ Your body is a machine. Machines can be repaired. Aging is just harder engineeri
 
 **Response**:
 
-Every movement started with individuals. Civil rights started with Rosa Parks. Women's suffrage started with individual women. The end of slavery started with individuals opposing it.
+Every movement started with one person. Civil rights started with Rosa Parks. Women's suffrage started with individual women. The end of slavery started with individuals opposing it.
 
 This needs 280 million people. You're 1/280,000,000 of that.
 
@@ -231,11 +231,11 @@ You're not too small. You're the beginning.
 
 **Response**: It is difficult to do so with smart contracts.
 
-**Traditional budget**: Congress allocates, bureaucrats decide, lobbying influences, money disappears.
+**Traditional budget**: Congress allocates. Bureaucrats decide. Lobbying influences. Money disappears.
 
-**Treaty fund**: Smart contract holds money, code executes automatically, designed so no human can easily redirect, no committees.
+**Treaty fund**: A smart contract holds the money. Code executes on its own. No human can easily redirect it. No committees.
 
-The code doesn't just guard the money; it is designed to route funding to trials with high estimated probability of success, based on data, not politics. Just math finding cures.
+The code doesn't just guard the money. It routes funding to trials with the highest chance of success. Based on data, not politics. Just math finding cures.
 
 If politicians could easily steal it, we wouldn't propose this system.
 
@@ -253,9 +253,9 @@ If politicians could easily steal it, we wouldn't propose this system.
 - New regulations? Tried. Now takes 20 years instead of 17.
 - Reform bills? Tried. Lobbyists killed them in committee.
 
-The system is hard to fix because it IS working effectively for incumbents. Just not for you.
+The system is hard to fix because it IS working for incumbents. Just not for you.
 
-Defense contractors spend $300M annually on lobbying and get nearly $1T in contracts. That's not a broken system; that's an incredible ROI. They are unlikely to surrender it because you asked nicely.
+Defense contractors spend $300M yearly on lobbying and get nearly $1T in contracts. That's not a broken system; that's an incredible ROI. They won't surrender it because you asked nicely.
 
 The system rarely reforms itself. Build around it instead.
 
@@ -266,17 +266,17 @@ The system rarely reforms itself. Build around it instead.
 ![Weapons makers spend 127 million bribing politicians. We could spend 650 million. Outbidding death merchants: finally, a proper auction.](/assets/images/faq/faq-section-this-is-politically-impossible-bw-academic.jpg)
 
 
-**Response**: Politicians often follow the path of least resistance and most money. Aim to make this the easiest, most profitable decision of their careers.
+**Response**: Politicians follow the path of least resistance and most money. The aim: make this the easiest, most profitable decision of their careers.
 
-The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. It is hard to beat them with moral arguments. Beat them at their own game.
+The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments. Beat them at their own game.
 
-Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Bonds](../economics/victory-bonds.qmd), allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That's enough to overwhelm the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K-Street firms defense contractors use. Outbid them for their top talent.
+Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Bonds](../economics/victory-bonds.qmd). Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That's enough to overwhelm the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K-Street firms defense contractors use. Outbid them for their top talent.
 
 Hire their effective operatives to work for you.
 
-Lobbyists often work for the highest bidder. Become the highest bidder. Politicians suddenly hear more about votes from curing cancer, less about threats from countries they can't locate on maps.
+Lobbyists work for the highest bidder. Become the highest bidder. Politicians suddenly hear more about curing cancer. Less about threats from countries they can't find on maps.
 
-This isn't fantasy. It's democratic participation at scale, leveling the playing field against concentrated interests. Once 280 million voters demand it, refusal becomes politically difficult.
+This isn't fantasy. It's democratic participation at scale. It levels the playing field against concentrated interests. Once 280 million voters demand it, refusal becomes politically difficult.
 
 ## "I Don't Trust Blockchain"
 
@@ -290,7 +290,7 @@ This isn't fantasy. It's democratic participation at scale, leveling the playing
 Two things:
 
 1. You don't need crypto. Bonds can be traditional financial instruments.
-2. Blockchain is just a public database. Like the internet, it's a neutral tool. Criminals use it, but so do hospitals.
+2. Blockchain is just a public database. It's a neutral tool, like the internet. Criminals use it, but so do hospitals.
 
 This system uses blockchain for one reason: it's tampered-resistant.
 
@@ -309,7 +309,7 @@ You don't have to like blockchain. You just have to like that it makes theft sig
 
 **Response**:
 
-Worst case: We learn, with high certainty, 100,000 things that don't work. This data is more valuable than anything the NIH has produced in decades. Edison found 10,000 ways not to make a lightbulb. We might find 100,000 ways not to cure cancer. That's called science.
+Worst case: We learn, with high certainty, 100,000 things that don't work. That data beats anything the NIH has produced in decades. Edison found 10,000 ways not to make a lightbulb. We might find 100,000 ways not to cure cancer. That's called science.
 
 Still better than:
 
@@ -317,7 +317,7 @@ Still better than:
 - NIH: Fund safe research confirming water is wet
 - FDA: Block trials because paperwork had typos
 
-Science works through experimentation. The decentralized framework lets us run {{< var dfda_trial_cost_reduction_factor >}} more trials for the same budget.
+Science works through experimentation. The decentralized framework runs {{< var dfda_trial_cost_reduction_factor >}} more trials for the same budget.
 
 Even if 90% fail, we could still get 10× more cures than today.
 
@@ -365,7 +365,7 @@ Time you'll save if diseases are cured:
 
 ROI: 27 minutes for potentially 50,000 extra hours of life.
 
-You have time. You just haven't prioritized not dying. You spent more time today watching videos of cats doing unusual things.
+You have time. You just haven't prioritized not dying. You spent more time today watching cats do unusual things.
 
 ![Spend 27 minutes now, gain 50,000 hours later. That's a 111,000 percent return. Better than Bitcoin, and you don't die at the end.](/assets/images/faq/faq-section-time-investment-roi-bw-academic.jpg)
 
@@ -390,11 +390,11 @@ Things that were "unrealistic":
 
 What's actually unrealistic:
 
-- Spending {{< var global_military_spending_annual_2024 >}} on weapons while sitting on 13,000 nuclear warheads (enough for 130 extinction events)
+- Spending {{< var global_military_spending_annual_2024 >}} on weapons while sitting on 13,000 nuclear warheads. That's enough for 130 extinction events.
 - Expecting different results from the same broken system
 - Thinking we might survive the AI revolution without fixing incentives
 
-Reality check: 55 million people die unnecessarily each year from treatable causes. That's what's truly unrealistic to accept.
+Reality check: 55 million people die each year from treatable causes. That's what's truly unrealistic to accept.
 
 ## "War Is Human Nature"
 
@@ -405,7 +405,7 @@ Reality check: 55 million people die unnecessarily each year from treatable caus
 **Switzerland**:
 
 - 200+ years avoiding major wars
-- Surrounded by both World Wars (literally in the middle of apocalypse, made chocolate)
+- Surrounded by both World Wars (literally in the middle of it, made chocolate)
 - GDP per capita: {{< var switzerland_gdp_per_capita_k >}} (not killing people is profitable)
 - Defense spending: {{< var switzerland_defense_spending_pct >}} of GDP
 - Life expectancy: 84 years (5 years longer than Americans who spend 5× more on "military")
@@ -417,14 +417,14 @@ Reality check: 55 million people die unnecessarily each year from treatable caus
 - Still sovereign 75+ years later (nobody invaded the country with no oil)
 - Redirected military budget to education and health
 - Life expectancy matches US at fraction of cost
-- Zero invasions since abolishing military (nobody wants to conquer a country of happy, educated people)
+- Zero invasions since (nobody wants to conquer happy, educated people)
 
-The pattern: Countries choosing peace often get richer. Countries choosing war get poorer. Countries drained by disease are unstable and start fights. Countries investing in their people become too prosperous to bother with war.
+The pattern: Countries choosing peace often get richer. Countries choosing war get poorer. Countries drained by disease are unstable and start fights. Countries investing in their people become too prosperous to bother.
 
 ![Switzerland and Costa Rica spend nothing on military and somehow aren't dead. Curious.](/assets/images/faq/faq-section-peace-vs-prosperity-outcomes-bw-academic.jpg)
 
 
-The real world: Nuclear weapons made major territorial conquest largely obsolete. We're still acting like it's 1945.
+The real world: Nuclear weapons made territorial conquest largely obsolete. We're still acting like it's 1945.
 
 ## "All Wars on X Have Failed"
 
@@ -437,7 +437,7 @@ The real world: Nuclear weapons made major territorial conquest largely obsolete
 
 **Why government "wars" fail**: They create bureaucracies that need the problem to exist. War on Drugs needs drug crime. War on Poverty needs poor people. War on Terror needs enemies. Central planning can't solve complex problems.
 
-The only war humanity won was World War 2, and that was against other humans. When you declare war on abstract concepts, the concepts often win.
+The only war humanity won was World War 2. And that was against other humans. When you declare war on abstract concepts, the concepts often win.
 
 **Why the War on Disease is different**:
 
@@ -449,7 +449,7 @@ The only war humanity won was World War 2, and that was against other humans. Wh
 
 The War on Disease is really the Market for Health.
 
-You're not declaring war. You're declaring peace with biology and letting markets optimize.
+You're not declaring war. You're declaring peace with biology. Then letting markets optimize.
 
 ## "This Sounds Like Bribery"
 
@@ -458,7 +458,7 @@ You're not declaring war. You're declaring peace with biology and letting market
 ![Current lobbying: pay politicians, get wars. New lobbying: pay politicians, get cures. Same corruption, better outcome. It's called optimization.](/assets/images/faq/faq-section-this-sounds-like-bribery-bw-academic.jpg)
 
 
-**Response**: Current "legal" lobbying resembles bribery. It's slow, inefficient, and produces war, disease, and existential risk. We're applying market realities transparently to save lives. The consequentialist math is clear: the status quo results in preventable death. The goal is making healing more profitable than killing.
+**Response**: Current "legal" lobbying resembles bribery. It's slow, inefficient, and produces war, disease, and existential risk. We're applying market realities transparently to save lives. The status quo results in preventable death. The goal: make healing more profitable than killing.
 
 ## "This Isn't a Real Movement"
 
@@ -467,7 +467,7 @@ You're not declaring war. You're declaring peace with biology and letting market
 ![How to turn internet signatures into real votes that scare real politicians. Democracy, but faster and with more passwords.](/assets/images/faq/faq-section-this-isn-t-a-real-movement-bw-academic.jpg)
 
 
-**Response**: A cryptographically secure, on-chain list of 280 million verified supporters could be the largest, most powerful political mandate in human history. It represents a challenge to captured political parties. Clicks on screens are the new boots on the ground when those clicks represent a voting bloc that can swing any election.
+**Response**: A cryptographically secure, on-chain list of 280 million verified supporters could be the largest political mandate in human history. It challenges captured political parties. Clicks on screens are the new boots on the ground. Especially when those clicks represent a voting bloc that can swing any election.
 
 ## "It's Unenforceable"
 
@@ -476,7 +476,7 @@ You're not declaring war. You're declaring peace with biology and letting market
 ![If you break your promise, the system automatically funds your opponent. It's like a political immune system, but it actually works.](/assets/images/faq/faq-section-it-s-unenforceable-bw-academic.jpg)
 
 
-**Response**: This doesn't rely on courts. The system funds campaigns against leaders who break promises to their citizens. Enforcement relies on direct political and financial consequences for individual leaders who defy their mandate.
+**Response**: This doesn't rely on courts. The system funds campaigns against leaders who break promises. Enforcement relies on direct political and financial consequences for leaders who defy their mandate.
 
 ## "You Can't Verify 280M People"
 
@@ -490,9 +490,9 @@ You're not declaring war. You're declaring peace with biology and letting market
 - Government IDs: National e-ID systems (Estonia [@estonia-eresidency-stats], India [@indian-aadhaar-system], EU [@eu-eidas-network])
 - Biometrics: Fingerprints and face scans help ensure unique individuals
 - AI fraud detection: Algorithms spot suspicious patterns
-- Mathematical verification: End-to-end verifiable voting [@helios-voting] with zero-knowledge proofs
+- Math verification: End-to-end verifiable voting [@helios-voting] with zero-knowledge proofs
 
-These technologies already verify hundreds of millions globally for banking and government services.
+These tools already verify hundreds of millions of people for banking and government services.
 
 ## "Blockchain Harms the Environment"
 
@@ -501,7 +501,7 @@ These technologies already verify hundreds of millions globally for banking and 
 ![Old crypto: burns a country worth of electricity. New crypto: burns a toaster worth. Progress is occasionally visible from space.](/assets/images/faq/faq-section-blockchain-harms-the-environment-bw-academic.jpg)
 
 
-**Response**: That's old technology. This uses modern, energy-efficient Proof-of-Stake systems, which consume 99.9% less energy [@pos-energy-efficiency] than early Proof-of-Work blockchains. Saving global health includes planetary health.
+**Response**: That's old technology. This uses modern Proof-of-Stake systems. They consume 99.9% less energy [@pos-energy-efficiency] than early Proof-of-Work blockchains. Saving global health includes planetary health.
 
 ## "Billionaires Will Seize Control"
 
@@ -510,7 +510,7 @@ These technologies already verify hundreds of millions globally for banking and 
 ![Rich person buying votes: each vote costs more than the last. Poor person earning reputation: free. Math: occasionally on the side of justice.](/assets/images/faq/faq-section-billionaires-will-seize-control-bw-academic.jpg)
 
 
-**Response**: The system uses voting mechanisms to prevent this. Quadratic voting makes each additional vote progressively more expensive, making single-entity domination difficult. Plus identity-based voting power based on reputation and participation, not just capital. The goal is governance by active participants, not just the wealthiest.
+**Response**: The system uses voting mechanisms to prevent this. Quadratic voting makes each added vote cost more. This makes single-entity domination difficult. Voting power also comes from reputation and participation, not just capital. The goal is governance by active participants, not just the wealthiest.
 
 ## "Why Not Just Use Philanthropy?"
 
@@ -519,7 +519,7 @@ These technologies already verify hundreds of millions globally for banking and 
 ![Charity: billionaires give away pocket change. Government spending: trillions of actual dollars. One is a rounding error. The other could end death.](/assets/images/faq/faq-section-why-not-just-use-philanthropy-bw-academic.jpg)
 
 
-**Response**: Philanthropy is zero-sum. A massive campaign for this would cannibalize donations from thousands of vital health charities already doing critical work. The goal isn't reshuffling a small pot of charitable giving; it's tapping the multi-trillion dollar stream of wasted government spending. This aims to permanently shift global capital allocation from destruction to creation.
+**Response**: Philanthropy is zero-sum. A massive campaign would cannibalize donations from thousands of health charities already doing critical work. The goal isn't reshuffling a small pot of charitable giving. It's tapping the multi-trillion dollar stream of wasted government spending. This aims to permanently shift global capital from destruction to creation.
 
 ## "How Do You Prevent Waste?"
 
@@ -528,9 +528,9 @@ These technologies already verify hundreds of millions globally for banking and 
 ![Current budget: pays for three trials. Same budget in the new system: pays for 4,000 trials. Efficiency: turns out it matters.](/assets/images/faq/faq-section-how-do-you-prevent-waste-bw-academic.jpg)
 
 
-**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model achieves 80× lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials cost {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500] versus {{< var traditional_phase3_cost_per_patient >}} in traditional trials [@trial-cost-41k].
+**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model achieves 80x lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials cost {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500]. Traditional trials cost {{< var traditional_phase3_cost_per_patient >}} [@trial-cost-41k].
 
-The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that budget, this model could run 2,800 trials for 2.8 million patients. Evidence is strong.
+The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. With that budget, this model could run 2,800 trials for 2.8 million patients.
 
 ## "Why Not Just Increase Health Funding?"
 
@@ -539,7 +539,7 @@ The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. W
 ![Scientists currently building better bombs. Same scientists could build better pills. Bombs kill people. Pills don't. It's not complicated.](/assets/images/faq/faq-section-why-not-just-increase-health-funding-bw-academic.jpg)
 
 
-**Response**: It's about reallocating finite resources, not printing money. The world's top scientists, engineers, and manufacturing capacity are limited. A direct, treaty-bound reallocation encourages a real shift. Cutting 1% from military budgets doesn't just move dollars; it frees physicists and data scientists from building weapons to curing Alzheimer's.
+**Response**: It's about reallocating finite resources, not printing money. The world's top scientists, engineers, and manufacturing capacity are limited. A treaty-bound reallocation forces a real shift. Cutting 1% from military budgets doesn't just move dollars. It frees physicists and data scientists from building weapons to curing Alzheimer's.
 
 ## "What About Defense Industry Jobs?"
 
@@ -548,7 +548,7 @@ The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. W
 ![Engineers designing tanks versus engineers designing cure machines. Both are jobs. Only one increases your lifespan.](/assets/images/faq/faq-section-what-about-defense-industry-jobs-bw-academic.jpg)
 
 
-**Response**: This redirects resources into a new job creation engine. The US contribution is less than 0.5% of trillions the Pentagon can't account for [@pentagon-unaccounted-2-5t]. That wasted money creates medical jobs instead. Engineers building guidance systems can build next-generation medical imaging devices. This could be a net job creator.
+**Response**: This redirects resources into a new job creation engine. The US contribution is less than 0.5% of trillions the Pentagon can't account for [@pentagon-unaccounted-2-5t]. That wasted money creates medical jobs instead. Engineers building guidance systems can build medical imaging devices. This could be a net job creator.
 
 ## "This Disrespects Soldiers"
 
@@ -557,7 +557,7 @@ The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. W
 ![Military waste could buy soldiers better armor and pandemic protection. Currently it buys nothing because nobody knows where it went. Accountability: it's free.](/assets/images/faq/faq-section-this-disrespects-soldiers-bw-academic.jpg)
 
 
-**Response**: This supports soldiers by attacking budgetary waste that fails them. When trillions are unaccounted for, that's money not buying better equipment or support for troops. This redirects a fraction of that waste to protect soldiers and their families from threats statistically more likely to harm them: pandemics and chronic disease.
+**Response**: This supports soldiers by attacking the waste that fails them. Trillions are unaccounted for. That's money not buying better gear or support for troops. This redirects a fraction of that waste to protect soldiers and their families. The biggest threats aren't foreign armies. They're pandemics and chronic disease.
 
 ## "This Violates Election Law"
 
@@ -568,9 +568,9 @@ The NIH's RECOVER initiative spent $1.6B for zero completed trials in 4 years. W
 
 **Response**: Hire good lawyers. Keep everything separate.
 
-- Separate legal entities in each country with zero coordination on political spending
+- Separate legal entities in each country, with zero coordination on political spending
 - Utility token structures with proper exemptions (Reg S, Reg A+)
-- No shared systems, staff, or communication between entities involved in political action
+- No shared systems, staff, or communication between political entities
 
 Addressable legal challenge.
 
@@ -581,7 +581,7 @@ Addressable legal challenge.
 ![Rich countries spend 55 percent of global military budgets. Poor countries spend 10 percent. If the rich countries stop, everyone lives. Leverage: when not dying is negotiable.](/assets/images/faq/faq-section-what-if-major-powers-sabotage-it-bw-academic.jpg)
 
 
-**Response**: Start with friendly nations (US/EU cover 55% of spending [@us-eu-military-spending-share]). Holdouts like Russia (<10% share) [@russia-military-spending-share] struggle to derail the math. The alternative is unchecked geopolitics, risking nuclear winter killing 5+ billion people [@nuke-winter-150tg]. Even partial adoption is better.
+**Response**: Start with friendly nations. The US and EU cover 55% of spending [@us-eu-military-spending-share]. Holdouts like Russia (<10% share) [@russia-military-spending-share] can't derail the math. The alternative is unchecked geopolitics. That risks nuclear winter killing 5+ billion people [@nuke-winter-150tg]. Even partial adoption is better.
 
 ## Conclusion
 

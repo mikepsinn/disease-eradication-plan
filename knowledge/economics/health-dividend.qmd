@@ -16,8 +16,7 @@ image: /assets/og-images/knowledge/economics/health-dividend-og-retro-academic.j
 
 Your dFDA costs {{< var dfda_annual_opex >}}/year to run.
 It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
-That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} returns (recommended estimate including post-safety efficacy lag elimination).
-
+That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} returns. 
 **Conservative estimate**: {{< var dfda_roi_rd_only >}} (R&D savings only)
 
 Here's the breakdown.
@@ -52,7 +51,7 @@ Optimistic: 95% cost reduction (what RECOVERY achieved), saving up to **$57B/yea
 
 ![With 58.6 billion, you could run 10,000 trials and address 7,000 rare diseases. Currently you're spending that much to run far fewer trials for common diseases. Priorities.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
 
-Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}} per year. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test dramatically more treatments simultaneously.
+Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}} per year. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test far more treatments at once.
 
 With the money saved every year, humans could:
 
@@ -63,7 +62,7 @@ With the money saved every year, humans could:
 
 ## Daily Opportunity Cost
 
-Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending. Plus {{< var dfda_efficacy_lag_elimination_dalys >}} in healthy life-years lost to delayed treatments over the regulatory lag period.
+Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years each year. All because of the regulatory lag period.
 
 ![Every day you do nothing costs 161 million dollars and 54 million years of healthy human life annually. But at least you're being consistent.](/assets/images/health-dividend/health-dividend-section-daily-opportunity-cost-bw-academic.jpg)
 
@@ -112,7 +111,7 @@ The RECOVERY trial already proved this works. Scale it globally. Every day you w
 
 ## New Drugs Save Lives (Proof)
 
-A study of 66 diseases across 27 countries [@three-way-fixed-effects-analysis]: if no new drugs had launched after 1981, years of life lost would have been **2.16x higher**. Cost per life-year saved: $2,837 [@three-way-fixed-effects-analysis].
+Researchers studied 66 diseases across 27 countries [@three-way-fixed-effects-analysis]. Without new drugs after 1981, people would have lost **2.16x more** years of life. Cost per life-year saved: $2,837 [@three-way-fixed-effects-analysis].
 
 More treatments, more survivors. There's a strong correlation between new cancer treatments and cancer survival over 30 years.
 

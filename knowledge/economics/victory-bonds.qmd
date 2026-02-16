@@ -18,16 +18,16 @@ image: /assets/og-images/knowledge/economics/victory-bonds-og-retro-academic.jpg
 > **Related:** [IAB Mechanism Design](../appendix/incentive-alignment-bonds-paper.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)
 
 
-Remember when your grandparents funded WW2 by buying war bonds? They gave the government papers with dead presidents on them, got back slightly more papers later, and defeated fascism. Good times.
+Remember when your grandparents funded WW2 by buying war bonds? They gave the government papers with dead presidents on them. Got back slightly more papers later. Defeated fascism. Good times.
 
-You're doing the same thing, except instead of buying bonds to kill Nazis, you're buying bonds to kill diseases. It's like war bonds but backwards.
+You're doing the same thing. Except instead of buying bonds to kill Nazis, you're buying bonds to kill diseases. War bonds, but backwards.
 
 
 ## VICTORY Incentive Alignment Bonds
 
-[Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) are financial instruments that pay out when measurable public-good outcomes improve, translating those outcomes into benefits for the people who made them happen.
+[Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) are financial instruments. They pay out when measurable public-good outcomes improve. The people who made those outcomes happen get the benefits.
 
-**VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) are the specific implementation** designed to fund and sustain the 1% treaty. They contain two distinct "engines" in a single instrument:
+**VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) are the specific implementation** designed to fund and sustain the 1% treaty. They pack two distinct "engines" into a single instrument:
 
 | Component | Who It Incentivizes | What They Get | Funding Source |
 |-----------|---------------------|---------------|---------------|
@@ -50,7 +50,7 @@ A financial instrument that generates massive returns while accidentally curing 
 
 **What you're offering investors:** {{< var victory_bond_annual_return_pct >}}, which beats everything except insider trading and certain federal crimes
 
-**The money never stops.** No maturity date means bondholders get paid until the sun explodes or humanity achieves immortality, whichever happens first (probably the immortality thing)
+**The money never stops.** No maturity date. Bondholders get paid until the sun explodes or humanity achieves immortality. Whichever happens first (probably the immortality thing).
 
 ![Money goes in, saves humanity, pays dividends forever. Wall Street called it 'suspiciously sustainable.'](/assets/images/victory-bonds/victory-bonds-section-mechanism-overview-bw-academic.jpg)
 
@@ -59,7 +59,7 @@ A financial instrument that generates massive returns while accidentally curing 
 
 ### Phase 1: Collect Papers From People With Too Many Papers
 
-Find humans who have more papers than they need and convince them to give you {{< var treaty_campaign_total_cost >}} worth.
+Find humans who have more papers than they need. Convince them to give you {{< var treaty_campaign_total_cost >}} worth.
 
 #### Who has that many papers
 
@@ -77,7 +77,7 @@ They'll check the math. The math checks out. They give you papers.
 
 ### Phase 2: Spend the Papers Correctly
 
-Use the {{< var treaty_campaign_total_cost >}} according to the [Campaign Budget](campaign-budget.qmd) to convince humanity to stop being short-sighted:
+Use the {{< var treaty_campaign_total_cost >}} according to the [Campaign Budget](campaign-budget.qmd). The goal: convince humanity to stop being short-sighted:
 
 - **Internet clicking ceremony** - Get 280M humans to click "yes I would prefer not to die" ({{< var treaty_campaign_viral_referendum_base_case >}})
 - **Professional briber conversion** - Show lobbyists that curing is more profitable than killing ({{< var treaty_campaign_budget_lobbying >}})
@@ -93,7 +93,7 @@ For the complete breakdown of where every paper goes, see [Campaign Budget](camp
 
 ### Phase 3: Turn On the Money Faucet
 
-The treaty passes because you gave the right papers to the right humans in the right order. Now the magic happens:
+The treaty passes. You gave the right papers to the right humans in the right order. Now the magic happens:
 
 - {{< var treaty_annual_funding >}} annually stops going to bombs and starts going to the 1% Treaty Fund (automatic, no takebacks)
 - {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) automatically goes to bondholders (they get paid first, before anyone can steal it)
@@ -114,7 +114,7 @@ Set up automatic payments that continue until the heat death of the universe:
 - **Year 3**: {{< var victory_bond_annual_payout >}} distributed to bondholders (yacht accessories now)
 - **Year 4+**: Scale up as treaty expands (2% = $5.4B, 5% = $13.5B, etc.)
 
-No maturity date means the money never stops. As long as the treaty exists, bondholders get paid. And the treaty will exist because repealing it means explaining to voters why you want grandma's cancer to stay uncured.
+No maturity date means the money never stops. As long as the treaty exists, bondholders get paid. The treaty will exist because repealing it means one thing. You have to explain to voters why you want grandma's cancer to stay uncured.
 
 ![$2.72 billion per year, every year, forever, for not dying. The actuaries called it 'offensively simple.'](/assets/images/victory-bonds/victory-bonds-section-phase-4-watch-money-multiply-like-rabbits-bw-academic.jpg)
 
@@ -139,14 +139,14 @@ $$ 80\% \times \$27.2\text{B} = \$21.7\text{B}/\text{year} $$
 **What countries still have for wars**:
 $$ 99\% \times \$2.7\text{T} = \$2.67\text{T} $$
 
-This is important: Investors aren't "taking" money from sick people. {{< var dih_treasury_medical_research_pct >}} goes to cures. Bondholders get {{< var victory_bond_funding_pct >}} for having the revolutionary idea of "what if we didn't all die?" and another {{< var iab_political_incentive_funding_pct >}} keeps politicians incentivized to maintain and expand the treaty.
+Investors aren't "taking" money from sick people. {{< var dih_treasury_medical_research_pct >}} goes to cures. Bondholders get {{< var victory_bond_funding_pct >}} for having the revolutionary idea of "what if we didn't all die?" Another {{< var iab_political_incentive_funding_pct >}} keeps politicians incentivized to maintain and expand the treaty.
 
 
 ![Take 1 percent from weapons, split it three ways, cure all disease. The diagram was so simple a child drew it. Adults spent 10 years arguing about the arrows.](/assets/images/victory-bonds/victory-bonds-section-global-spend-vs-treaty-allocation-bw-academic.jpg)
 
 ### When Math Becomes Obscene
 
-Since VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) never mature (they just keep paying forever), you calculate lifetime value using the perpetuity formula, which is finance-speak for "money printer that never stops":
+VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) never mature. They just keep paying forever. So you calculate lifetime value using the perpetuity formula. That's finance-speak for "money printer that never stops":
 
 $$
 \text{Total Value} = \frac{\text{Annual Payment}}{\text{Discount Rate}} = \frac{\$2.7\text{B}}{r}
@@ -160,7 +160,7 @@ $$
 | Pretty skeptical (5% discount) | $54B | 54x your money |
 | Very skeptical (10% discount) | $27B | 27x your money |
 
-Even at 10% discount (which assumes this is as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} investment becomes worth {{< var treaty_annual_funding >}} total.
+Even at a 10% discount rate (as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} becomes worth {{< var treaty_annual_funding >}} total.
 
 **Translation for those who prefer simple math:**
 
@@ -180,7 +180,7 @@ Unlike:
 - Real estate (2-3x over 30 years, requires being a landlord)
 - Medallion Fund (39% annually but closed to mere mortals)
 
-VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) offer perpetual returns that transform into generational wealth while you sleep.
+VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) offer perpetual returns. Those returns transform into generational wealth while you sleep.
 
 ![VICTORY Bonds: 8 percent annual returns forever. Venture Capital: maybe. Real Estate: depends. Medallion Fund: no you can't invest. Investors chose uncertainty.](/assets/images/victory-bonds/victory-bonds-section-this-isn-t-complicated-math-bw-academic.jpg)
 
@@ -189,7 +189,7 @@ The perpetual nature isn't a bug. It's the entire point. As long as humans prefe
 
 ### How Returns Scale From "Obscene" to "Is This Even Legal?"
 
-The treaty starts at 1% (baby steps for humanity). As diseases get cured, voters demand more. Politicians, who are evolutionarily wired to avoid unemployment, comply.
+The treaty starts at 1% (baby steps for humanity). As diseases get cured, voters demand more. Politicians are evolutionarily wired to avoid unemployment. They comply.
 
 | Year | Treaty % | Annual Revenue | You Get Annually | ROI on Your {{< var treaty_campaign_total_cost >}} |
 |------|----------|----------------|-------------------|--------------|
@@ -203,7 +203,7 @@ The treaty starts at 1% (baby steps for humanity). As diseases get cured, voters
 - **Years 1-3:** First diseases get cured. Media goes crazy. "IT WORKS!" Headlines everywhere.
 - **Years 4-7:** More cures emerge. Politicians start noticing living voters really enjoy being alive.
 - **Years 8-10:** Cancer becomes rare. Alzheimer's gets solved. Public demands acceleration.
-- **Year 10+:** Politicians who oppose expansion lose to opponents who promise "I won't let your cancer come back."
+- **Year 10+:** Politicians who oppose expansion lose elections. Their opponents promise "I won't let your cancer come back."
 
 ![Year 1: cure Alzheimer's. Year 2: cure cancer. Year 3: politicians who oppose cures lose elections forever. Democracy finally does something useful.](/assets/images/victory-bonds/victory-bonds-section-why-this-actually-happens-bw-academic.jpg)
 
@@ -251,24 +251,24 @@ Show investors what full treaty adoption delivers:
 
 Structure the allocation to balance four goals:
 
-1. **Attract sufficient capital**: {{< var victory_bond_annual_return_pct >}} projected returns compete with high-risk VC/hedge funds ({{< var victory_bond_funding_pct >}} to investors)
-2. **Keep politicians aligned**: {{< var iab_political_incentive_funding_pct >}} funds [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) that make supporting the treaty career-optimal for politicians
+1. **Attract sufficient capital**: {{< var victory_bond_annual_return_pct >}} projected returns compete with high-risk VC/hedge funds. {{< var victory_bond_funding_pct >}} goes to investors.
+2. **Keep politicians aligned**: {{< var iab_political_incentive_funding_pct >}} funds [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). These make supporting the treaty career-optimal for politicians.
 3. **Fund the mission**: {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) gives researchers substantial capital
 4. **Align all incentives**: Investors, politicians, and researchers all profit from treaty expansion
 
-Tell investors: Everyone wins when treaties grow. More cures = bigger treaties = higher returns + more political support + more funding for pragmatic clinical trials.
+Tell investors: Everyone wins when treaties grow. More cures = bigger treaties = higher returns. More political support follows. So does more funding for pragmatic clinical trials.
 
 ![80 percent mission, 10 percent politics, 10 percent profit. A business model so ethical it had to be explained three times before investors believed it was legal.](/assets/images/victory-bonds/victory-bonds-section-explain-the-split-bw-academic.jpg)
 
 
 ## Set Up the Legal Structure
 
-The VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) are issued by **The Victory Corporation**, a for-profit Delaware C-Corp. This entity serves as the financial "Engine" of the entire operation, designed to attract for-profit capital to fund the political and social mission.
+**The Victory Corporation** issues the VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org). It's a for-profit Delaware C-Corp. It serves as the financial "Engine" of the entire operation. Its job: attract for-profit capital to fund the political and social mission.
 
 ![One corporation, four legal entities, infinite loopholes for doing good. Lawyers helped humanity for once.](/assets/images/victory-bonds/victory-bonds-section-set-up-the-legal-structure-bw-academic.jpg)
 
 
-This structure legally separates the investment activities from the philanthropic and lobbying arms of the organization. For a complete breakdown of the four-part hybrid legal model, see the [Legal Architecture](../legal/legal-framework.qmd) chapter.
+This structure legally separates investment activities from the philanthropic and lobbying arms. For the full four-part hybrid legal model, see the [Legal Architecture](../legal/legal-framework.qmd) chapter.
 
 ### Structure the Bond Instrument
 
@@ -319,23 +319,23 @@ Protect investors by releasing funds in tranches tied to achievements:
 
 ### Address Each Risk Category
 
-The investment carries two primary types of risk: **Project Risks**, which are inherent to the success of the campaign, and **Investor-Specific Risks**, which relate to the nature of the financial instrument.
+The investment carries two types of risk. **Project Risks** are inherent to the success of the campaign. **Investor-Specific Risks** relate to the nature of the financial instrument.
 
 ![Project risks: maybe we fail to save humanity. Investor risks: maybe you die before getting paid. The second one worried people more.](/assets/images/victory-bonds/victory-bonds-section-address-each-risk-category-bw-academic.jpg)
 
 
 #### Project Risks
 
-- **Political Risk:** The treaty may fail to pass in key nations. You mitigate this by building broad, bipartisan public support and using a multi-country strategy to avoid single points of failure.
-- **Execution Risk:** The campaign may fail to achieve its milestones. You mitigate this with milestone-gated funding, a lean operational model, and hiring an elite, experienced team.
+- **Political Risk:** The treaty may fail to pass in key nations. Mitigation: build broad, bipartisan public support. Use a multi-country strategy to avoid single points of failure.
+- **Execution Risk:** The campaign may fail to achieve its milestones. Mitigation: milestone-gated funding, a lean operational model, and an elite, experienced team.
 
 ![Political risk mitigation: bribe politicians legally. Execution risk mitigation: hire competent people. Revolutionary concepts in 2026.](/assets/images/victory-bonds/victory-bonds-section-project-risks-bw-academic.jpg)
 
 
 #### Investor-Specific Risks
 
-- **Liquidity Risk:** Funds are locked up for 18-36 months during the campaign phase before returns begin. You mitigate this by allowing secondary market trading after an initial lock-up period.
-- **Timeline Risk:** The political process could take longer than projected, delaying returns. The perpetual nature of the bond is designed to reward patience.
+- **Liquidity Risk:** Funds are locked for 18-36 months during the campaign phase. Returns start after that. Mitigation: secondary market trading after an initial lock-up period.
+- **Timeline Risk:** The political process could take longer than projected, delaying returns. The perpetual nature of the bond rewards patience.
 
 ![Your money is locked for 18 to 36 months while we save civilization. Then you can sell your shares to someone who doesn't believe in extinction.](/assets/images/victory-bonds/victory-bonds-section-investor-specific-risks-bw-academic.jpg)
 
@@ -355,9 +355,9 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 | Medallion Fund | 39% [@top-pe-hedge-funds] | Extreme | N/A | Closed to mortals |
 | Warren Buffett | 20% [@warren-buffett-career-average-return-20-pct] | Moderate | 60 years | Requires being Warren Buffett |
 
-**Remind investors:** Returns assume treaty passes. If politicians decide they prefer dead constituents to living ones, you lose your money. But even then, you'll be too dead from preventable diseases to complain about it.
+**Remind investors:** Returns assume the treaty passes. If politicians prefer dead constituents to living ones, you lose your money. But you'll be too dead from preventable diseases to complain about it.
 
-**Pitch angle:** Even accounting for "politicians might choose mass death over prosperity" risk, this crushes every legal investment except ones that are closed to new money.
+**Pitch angle:** Even accounting for "politicians might choose mass death" risk, this crushes every legal investment. The only exceptions are funds closed to new money.
 
 ## The Expansion Flywheel
 
@@ -380,7 +380,7 @@ The investment carries two primary types of risk: **Project Risks**, which are i
 
 ## Set Minimum Investment Thresholds
 
-**Investor lock-up period**: Tell investors funds are locked 12-36 months until treaty passes, then perpetual distributions begin.
+**Investor lock-up period**: Funds are locked 12-36 months until the treaty passes. Then perpetual distributions begin.
 
 ### Structure Your Minimums
 
@@ -413,29 +413,29 @@ Set these minimum investment amounts by investor type:
 
 ## When Rich People Ask Difficult Questions
 
-For broader objections about whether humanity is capable of not being stupid, see [Demolishing Objections](../appendix/faq.qmd). This section handles money-specific concerns.
+For broader objections about whether humanity can stop being stupid, see [Demolishing Objections](../appendix/faq.qmd). This section handles money-specific concerns.
 
 ### "This sounds like a Ponzi scheme run by someone who failed math."
 
-"Ponzi schemes pay old investors with new investor money, which is why they collapse. This pays investors with a share of a new {{< var treaty_annual_funding >}} annual revenue stream created by redirecting 1% of military budgets via treaty.
+"Ponzi schemes pay old investors with new investor money. That's why they collapse. This pays investors with a share of {{< var treaty_annual_funding >}} in annual revenue. That revenue comes from redirecting 1% of military budgets via treaty.
 
 ![One circle takes money from new investors to pay old investors until it collapses. The other circle takes money from weapons to fund cures and pays investors forever. Spot the difference.](/assets/images/victory-bonds/victory-bonds-section-this-sounds-like-a-ponzi-scheme-run-by-someone-who-failed-math-bw-academic.jpg)
 
 
-The money comes from governments that currently spend it on bombs. The returns are high because the political risk is high - you're betting that politicians will choose prosperity over mass death, which is historically a coin flip.
+The money comes from governments that currently spend it on bombs. The returns are high because the political risk is high. You're betting politicians will choose prosperity over mass death. Historically, that's a coin flip.
 
 It's not a Ponzi scheme. It's weaponized lobbying economics pointed at diseases instead of wars."
 
 ### "What happens when this fails and I lose my billion dollars?"
 
-"If the treaty fails completely, you lose your {{< var treaty_campaign_total_cost >}}. It gets spent on the campaign - convincing humans to click buttons, bribing lobbyists, building platforms, paying lawyers to make bribery legal.
+"If the treaty fails completely, you lose your {{< var treaty_campaign_total_cost >}}. It gets spent on the campaign. Convincing humans to click buttons. Bribing lobbyists. Building platforms. Paying lawyers to make bribery legal.
 
 ![Put in one billion dollars. Either get back 2.72 billion dollars, or get nothing and humanity continues destroying itself. No middle ground.](/assets/images/victory-bonds/victory-bonds-section-what-happens-when-this-fails-and-i-lose-my-billion-dollars-bw-academic.jpg)
 
 
-This is the primary risk. You're essentially funding a political campaign with a {{< var victory_bond_annual_return_pct >}} payout if it wins.
+This is the primary risk. You're funding a political campaign with a {{< var victory_bond_annual_return_pct >}} payout if it wins.
 
-If it fails completely, you'll probably die of a preventable disease anyway, so you won't be around to complain about the lost money.
+If it fails completely, you'll probably die of a preventable disease anyway. You won't be around to complain about the lost money.
 
 It's venture capital but for not dying."
 
@@ -456,7 +456,7 @@ It's venture capital but for not dying."
 - **Liquidity:** Your billion dollars is locked up for 18-36 months while we convince politicians (mitigated by secondary market trading after lock-up)
 - **Timeline:** Politics is slow, returns might start late (mitigated by perpetual payments - doesn't matter when it starts if it never stops)
 
-You're essentially betting that humans prefer being alive. Historically this is true, but your species has surprised us before."
+You're betting that humans prefer being alive. Historically this is true. But your species has surprised us before."
 
 ![Yes, your money is locked up for a bit. But then it pays forever. Like buying a immortal golden goose, if geese could end disease.](/assets/images/victory-bonds/victory-bonds-section-investor-risks-bw-academic.jpg)
 
@@ -468,11 +468,11 @@ You're essentially betting that humans prefer being alive. Historically this is 
 ![Charity: give money away, feel good, get tax break. VICTORY Bonds: give money away, feel good, get 272 percent back. One of these seems objectively better.](/assets/images/victory-bonds/victory-bonds-section-how-is-this-different-from-just-donating-to-charity-bw-academic.jpg)
 
 
-Charity is for people who want to feel good. This is for people who want to get obscenely rich while accidentally saving humanity as a side effect.
+Charity is for people who want to feel good. This is for people who want to get obscenely rich. Saving humanity is a side effect.
 
-You're not donating to cure diseases. You're investing in curing diseases because it's the most profitable legal thing you can do with a billion dollars.
+You're not donating to cure diseases. You're investing in curing diseases. It's the most profitable legal thing you can do with a billion dollars.
 
-It's the Louisiana Purchase of pragmatic clinical trials - except instead of buying land from France, you're buying life extension from death, and unlike Louisiana, it doesn't flood."
+It's the Louisiana Purchase of pragmatic clinical trials. Except instead of buying land from France, you're buying life extension from death. And unlike Louisiana, it doesn't flood."
 
 ### When they want detailed financials
 
@@ -498,12 +498,12 @@ Hand this to investors who can't read more than one page:
 - **Duration:** Perpetual (payments never stop until heat death of universe)
 - **Side effect:** Millions of humans continue existing who would otherwise stop
 - **Priority:** You get paid before anyone else touches the money
-- **Growth path:** 1% → 2% → 5%+ as diseases get cured and public demands more
+- **Growth path:** 1% to 2% to 5%+ as diseases get cured and public demands more
 
 ### What could go wrong
 
 - **Political risk:** Politicians might prefer dead voters (unlikely but humans are weird)
-- **Execution risk:** Campaign could be run incompetently (mitigated by hiring competent humans)
+- **Execution risk:** The campaign could be run incompetently (mitigated by hiring competent humans)
 - **Timeline risk:** 18-36 month lockup while convincing politicians to be smart
 - **Liquidity risk:** Your money is frozen during the convincing phase
 
@@ -524,11 +524,11 @@ Hand this to investors who can't read more than one page:
 
 1. Collect $1.0B from rich humans
 2. Use it to convince politicians that living constituents vote more reliably than dead ones
-3. The treaty passes, redirecting {{< var treaty_annual_funding >}} annually from bombs to cures via a 1% Treaty Fund
+3. The treaty passes. It redirects {{< var treaty_annual_funding >}} annually from bombs to cures via a 1% Treaty Fund.
 4. Give bondholders {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) every year, forever
 5. Fund political incentives with {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) to keep politicians aligned
 6. Use remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) to actually cure the diseases killing people
-7. Diseases decline, public demands more funding, returns scale up
+7. Diseases decline. Public demands more funding. Returns scale up.
 8. Repeat until death is optional or universe ends
 
-It's the simplest way to become generationally wealthy while making it harder for people to die from preventable things.
+It's the simplest way to become generationally wealthy. And it makes it harder for people to die from preventable things.

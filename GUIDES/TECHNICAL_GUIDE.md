@@ -1,6 +1,6 @@
 ---
 title: Technical Contribution Guide
-description: "Technical standards, development environment setup, and engineering best practices for the DIH project."
+description: "Technical standards, development environment setup, and engineering best practices"
 tags: [technical-guide, contributing, development, setup, standards]
 ---
 
