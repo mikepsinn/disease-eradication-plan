@@ -21,65 +21,11 @@ You can align major interest groups behind a single goal: curing disease. Not th
 
 ## Defense Contractors: Teaching Merchants of Death to Love Life
 
-Defense contractors aren't evil. They're just following the money. Currently, that money comes from building things that explode. You're going to offer them something better.
+Defense contractors aren't evil. They're just following the money. Currently, that money comes from building things that explode. You're going to offer them something better: VICTORY Incentive Alignment Bonds at {{< var victory_bond_annual_return_pct >}}+ returns versus their current 2-3% defense stock yields. Add {{< var victory_bond_funding_pct >}} VICTORY bonds to a pension portfolio and blended returns jump from 7% to 33%+. It's like finding money in the pocket of pants you're currently wearing. Except the money multiplies. While you're wearing the pants.
 
-![What weapons companies make when you pay them to save lives instead of end them. Turns out they'll build anything if you give them money.](/assets/images/aligning-incentives/aligning-incentives-section-defense-contractors-teaching-merchants-of-death-to-love-life-bw-academic.jpg)
+Once Lockheed buys bonds, Raytheon has to follow or get crushed by Lockheed's superior returns. It's a prisoners' dilemma where cooperation pays better than defection. Start with pension funds (fiduciary duty requires best returns), and they end up lobbying FOR the treaty to protect their investment. Defense contractors become your biggest supporters.
 
-### Their Structural Vulnerabilities
-
-Look at what they're working with:
-
-- **Customer base**: One customer (the government), meaning total revenue dependence on political cycles
-- **Product cycle**: 20 years to build a plane that's obsolete on delivery
-- **Risk**: Peace might break out (their literal nightmare)
-- **Public image**: "We make orphans" (hard to explain at parties)
-
-### Here's Your Better Offer: VICTORY Incentive Alignment Bonds
-
-Show them this math:
-
-- **Current defense stock yields**: 2-3% (basically inflation)
-- **VICTORY Incentive Alignment Bonds at full treaty**: {{< var victory_bond_annual_return_pct >}}+ perpetual returns
-- **With treaty expansion (2%, 5%, 10%)**: Returns scale automatically
-- **Liquidity**: Trade them anytime (unlike locked government contracts)
-- **Public image**: "We cure cancer" (instant party hero)
-
-The pitch: "Keep making bombs AND buy bonds that pay 10X better returns. Or your competitors will buy them and use the profits to destroy you."
-
-![Defense stocks return 7 percent. VICTORY bonds return 300 percent. Also, your children won't be embarrassed at Thanksgiving.](/assets/images/aligning-incentives/aligning-incentives-section-here-s-your-better-offer-victory-incentive-alignment-bonds-bw-academic.jpg)
-
-### Why They'll Take the Deal
-
-#### The Portfolio Math
-
-![Put 10 percent of your pension into VICTORY bonds. Your return goes from 7 percent to 33 percent. Math is hard but this part isn't.](/assets/images/aligning-incentives/aligning-incentives-section-the-portfolio-math-bw-academic.jpg)
-
-- They have billions in pension obligations
-- Current portfolio returns: 6-8% (barely covers inflation)
-- Add {{< var victory_bond_funding_pct >}} VICTORY Incentive Alignment Bonds: Portfolio returns jump to 33%+ (90% at 7% + {{< var victory_bond_funding_pct >}} at {{< var victory_bond_annual_return_pct >}} = 33.3% blended return)
-- Their retirees get paid, executives get bonuses, pension obligations get met. It's like finding money in the pocket of pants you're currently wearing. Except the money multiplies. While you're wearing the pants.
-
-#### The PR Victory
-
-![Before: weapons company, nobody wants to work there. After: cures cancer, everybody wants to work there. Same building, different brochure.](/assets/images/aligning-incentives/aligning-incentives-section-the-pr-victory-bw-academic.jpg)
-
-- Current headline: "Raytheon Missile Kills Wedding Party"
-- New headline: "Raytheon Funds Cancer Cure"
-- ESG scores improve dramatically
-- Recruiting top talent becomes possible again
-
-#### The Competitive Pressure
-
-Once Lockheed buys bonds, Raytheon has to follow or get crushed by Lockheed's superior returns. It's a prisoners' dilemma where cooperation pays better than defection.
-
-### The Implementation Playbook
-
-![How to make weapons companies lobby for peace: give them more money for peace than for war. Complicated problems, simple solutions.](/assets/images/aligning-incentives/aligning-incentives-section-the-implementation-playbook-bw-academic.jpg)
-
-1. **Start with pension funds** - Fiduciary duty requires best returns
-2. **Move to treasury** - Diversification mandate allows alternative investments
-3. **End with advocacy** - They lobby FOR the treaty to protect their investment
-4. **Result** - Defense contractors become your biggest supporters
+See [Making Friends with the Military-Industrial Complex](../strategy/co-opting-defense-contractors.qmd) for the full playbook.
 
 ## Insurance Companies: The Accidentally Aligned Industry
 
@@ -363,15 +309,4 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 ## Why This Scales: The Ratchet Effect
 
-The mechanisms above get the first 1% treaty passed. But the goal is expansion: 1% → 2% → 5% → eventually much more. The key insight: **political incentive funding grows with treaty size**.
-
-| Treaty Level | Political Incentive Funding |
-|:-------------|:---------------------------|
-| 1% | {{< var iab_political_incentive_funding_annual >}}/year |
-| 2% | $5.4B/year |
-| 5% | $13.5B/year |
-| 10% | $27B/year |
-
-Each expansion creates more funding to lobby for the next expansion. Politicians who supported the 1% treaty are rewarded; those rewards grow if they push for 2%. It's a ratchet that only moves in one direction.
-
-See [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) for the full mechanism design.
+Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, funding is {{< var iab_political_incentive_funding_annual >}}/year; at 10%, it's $27B/year. Politicians who supported the 1% treaty are rewarded; those rewards grow if they push for 2%. It's a ratchet that only moves in one direction. See [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) for the full scaling mechanism and tables.
