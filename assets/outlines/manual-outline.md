@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 46 | **Words:** 114,018
+**Files:** 46 | **Words:** 114,773
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -59,7 +59,7 @@
 #### knowledge/problem.qmd
 **Title:** Problem Overview
 **Description:** Humanity's spectacular failure at prioritizing not dying
-**Stats:** 1,299 words | 134 lines
+**Stats:** 1,286 words | 134 lines
 
   - The Daily Body Count
   - Where the Money Goes
@@ -75,7 +75,7 @@
 #### knowledge/problem/the-daily-massacre.qmd
 **Title:** The Bi-Monthly Holocaust
 **Description:** 150,000 People Die Every Day While We Build Skynet, That's Fifty 9/11s Daily
-**Stats:** 324 words | 46 lines
+**Stats:** 354 words | 46 lines
 
   - The Math Of Death
 
@@ -132,36 +132,36 @@
 #### knowledge/problem/cost-of-disease.qmd
 **Title:** The Cost of Disease
 **Description:** The annual bill for our collective decision to let our bodies fall apart. Spoiler alert, it's more than all the money on Earth.
-**Stats:** 1,634 words | 192 lines
+**Stats:** 1,680 words | 193 lines
 
-  - The Actual Bill
-  - How to Measure Suffering Without Feelings (The DALY)
-    - What the WHO Thinks You Are Worth
-  - Let's Break Down This Bill
-  - What Is Actually Killing Everyone
-  - Your Body Is Not Magic, It Is Just Broken
+  - The Actual Bill (Economist-Approved Misery Accounting)
+  - How to Measure Suffering Without Feeling Feelings (The DALY)
+    - What the WHO Thinks You're Worth (Spoiler: Not Much)
+  - Let's Break Down This Apocalypse By Time Unit
+  - What's Actually Deleting Everyone (The Greatest Hits)
+  - Your Body Is Not Magic, It's Just Broken
   - What This Actually Costs
     - Your Priorities, Written in Your Budgets
-    - The Future You Are Paying For
+    - The Future You're Paying For
 
 #### knowledge/problem/nih-fails-2-institute-health.qmd
 **Title:** NIH Fails to Institute Health
-**Description:** The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficent pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
-**Stats:** 1,944 words | 280 lines
+**Description:** The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficient pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
+**Stats:** 2,038 words | 287 lines
 
-  - The Spending Scandal
-  - Why They Spend It This Way
-  - The Gap: A Tale of Two Trials
-    - RECOVER (The American Way)
-    - RECOVERY Trial (The UK Way)
-  - The Death Toll: The Cost of Being Dumb
-    - Cost Per Healthy Year (QALY)
-    - What We Lose
-  - The Missing Link: All Ideas, No Action
-    - What We Know vs. What We Cure
+  - The Allocation Scandal
+  - Why This Allocation Exists
+  - The Efficiency Gap: A Tale of Two Trials
+    - RECOVER Initiative (NIH Approach)
+    - RECOVERY Trial (UK Approach)
+  - The Death Toll: Opportunity Cost of Misallocation
+    - Cost Per QALY (Quality-Adjusted Life Year)
+    - The "Death Equivalent" of Budget Misallocation
+  - The Translation Crisis: Concept Rich, Trial Poor
+    - Knowledge Production: Saturated. Translation Capacity: Starved.
       - What we don't have: Cures.
-  - The "Public Goods" Scam
-  - The Patient Disconnect
+  - The Public Goods vs. Club Goods Scam
+  - The Patient Disconnect: Zero Correlation with Health Outcomes
     - What patients want
       - What NIH funds
   - The Track Record
@@ -171,7 +171,7 @@
 #### knowledge/problem/untapped-therapeutic-frontier.qmd
 **Title:** The Untapped Therapeutic Frontier
 **Description:** You've explored less than 1% of medicine. The other 99% is where the cures are.
-**Stats:** 1,827 words | 210 lines
+**Stats:** 1,839 words | 211 lines
 
   - Your Tiny Sandbox
   - The Target List (Ways Your Body Breaks)
@@ -182,56 +182,56 @@
   - The Universe is Big. You Are Small.
   - Why You Are Still Sick
   - How Long to Explore Everything?
-    - Tier 1: Single Compounds (The Slowest Way)
-    - Tier 2: Combination Therapies (Still Reasonable)
-    - Tier 3: The Full Chemical Universe (Just for Fun)
+    - Tier 1: Single Compounds (Most Conservative)
+    - Tier 2: Combination Therapies (Still Defensible)
+    - Tier 3: The Full Chemical Universe (Illustrative)
     - "But Won't We Run Out of Easy Discoveries?"
   - The Fix
   - The Bottom Line
 
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
-**Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34× more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 3,708 words | 490 lines
+**Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34x more expensive per patient while making drugs demonstrably more dangerous.
+**Stats:** 4,600 words | 526 lines
 
   - A Note on Blame
-  - Confidence Levels: What We Know vs. What We Guess
+  - Confidence Levels: What We Know vs. What We Model
   - The 44.1x (95% CI: 39.4x-89.1x) Inefficiency Tax
-    - The 8.2 years (95% CI: 4.85 years-11.5 years)-Year Wait
-  - What Changed in 1962
-  - Detailed History
-    - The 1962 Policy Break: What Happened
+    - The 8.2 years (95% CI: 4.85 years-11.5 years)-Year Efficacy Lag
+  - What the 1962 Efficacy Requirements Changed
+  - Detailed Historical Analysis
+    - The 1962 Policy Break: Measured Impact
   - Detailed Cost Analysis
-    - The Consequences Today
-      - High Costs Kill Innovation
-    - Rare Diseases: Mathematically Doomed
-  - The Real Death Toll
+    - The Modern Consequences
+      - High Costs Kill Innovation, Reward Monopoly
+    - Off-Patent Drugs and Rare Diseases: Mathematically Doomed
+  - The Actual Death Toll of "Drug Lag"
     - The Global Body Count
-    - Years of Life Lost (DALYs)
+    - The Morbidity Burden (DALYs)
   - How the Incentives Work
-    - FDA Regulator's Choice
-      - Approve a bad drug
-      - Delay a good drug
-    - The Math: Why Rules Increase Harm
+    - FDA Regulator Decision Tree
+      - Approve drug that later shows problems
+      - Delay drug that could save lives
+    - The Math: Why Current Regulations Increase Total Harm
     - Why Bureaucrats Are Rewarded for Letting You Die
-  - Clinical Trial Theater: Excluding 86.1% of Reality
-    - Why This is Dangerous
-    - No Long-Term Data
-    - Paperwork Kills Innovation
-  - The Black Hole of Negative Results
+  - Clinical Trial Theater: Excluding 86.1% of Reality Makes Drugs More Dangerous
+    - Why This Makes Drugs More Dangerous
+    - No Long-Term Outcome Data
+    - Pre-Specification Requirements Kill Innovation
+  - The Negative Results Black Hole
   - Countries That Don't Have Our "Safety"
   - The COVID Test Fiasco
   - Small Trials Are Dangerous!
-    - Why Small Trials Miss Problems
-    - The Reporting Failure
-    - What Real Data Would Catch
+    - Why Small Trials Miss Safety Signals
+    - The Adverse Event Reporting Failure
+    - What Real-World Evidence Would Catch
   - The Bottom Line
   - Technical Analysis
 
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
 **Description:** Why democracy mathematically serves money over voters, and how to exploit that bug
-**Stats:** 2,947 words | 432 lines
+**Stats:** 2,863 words | 432 lines
 
   - Democracy
   - The Rational Ignorance Problem
@@ -261,48 +261,48 @@
 #### knowledge/economics/central-banks.qmd
 **Title:** How Central Banks Fund Your Death
 **Description:** The War Machine's ATM: How every fiat currency in history has been devalued to fund unpopular wars, and how to bypass the system.
-**Stats:** 3,163 words | 515 lines
+**Stats:** 2,990 words | 519 lines
 
-  - The Problem: All Paper Money Loses Value To Pay For Wars
+  - The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
     - Ancient Rome (3rd Century)
       - Revolutionary France (1790s)
       - Weimar Germany (1920s)
       - United States (1917-present)
-  - 1972: When Nixon Turned Money Against You
+  - 1972: When Nixon Weaponized Money Against You
     - Why He Really Did It
       - What Actually Happened
       - The Theft That Followed
-  - The Cantillon Effect: Why You Are Poor and Weapon Makers Are Not
-  - The Federal Reserve: A Private Company That Owns You
+  - The Cantillon Effect: Why You're Poor and Raytheon Isn't
+  - The Federal Reserve: A Private Corporation That Owns You
     - What They Actually Do
-  - Every War Since 1972: Paid for by Wrecking Your Savings
+  - Every War Since 1972: Funded by Destroying Your Savings
     - Vietnam War Extension (1972-1975)
       - Gulf War (1991)
       - Iraq War (2003-2011)
       - Afghanistan (2001-2021)
       - The Running Total
-  - The $300B Bank Handout (Your Money)
+  - The $300B Bank Subsidy (Your Money)
     - The Scam
       - What $300B Could Buy Instead
-  - Why Humans Can't Fix the Fed (It's Terminal)
+  - Why Humans Can't Reform the Fed (It's Terminal)
     - The Problem with Reform
-      - The Only Solution: Go Around It
+      - The Only Solution: Bypass It Entirely
   - Why "Just Fund Medical Research More" Is a Lie
-    - The Fixed Pie of Human Brains
+    - The Fixed Pie of Human Genius
       - The Resource Reality
     - The Inflation Shell Game (How They Steal Medical Progress)
       - Year 1
-      - Year 5 (after "boosting medical research")
+      - Year 5 (after "increasing medical research")
     - The Proof: 50 Years of Going Nowhere
       - Medical Research as % of GDP
       - What Actually Grew
     - Why Money Printing Matters: Resources Follow the Printer
       - The Brain Drain Math
-  - The 1% Treaty: Pointing the Death Printer at Life
+  - The 1% Treaty: Redirecting the Death Printer to Life
     - The Current Money Flow
       - A 1% Treaty Redirect
       - Why This Works
-  - The Historical Proof: When Markets Funded Victory
+  - The Historical Precedent: When Markets Funded Victory
     - World War II War Bonds
       - The Difference
   - The Choice: Keep Printing Death or Start Printing Life
@@ -315,23 +315,23 @@
 #### knowledge/problem/genetic-slavery.qmd
 **Title:** Genetic Slavery
 **Description:** An exploration of how our genes use pain and pleasure to enslave us, forcing actions inconsistent with our rational ethics.
-**Stats:** 2,168 words | 283 lines
+**Stats:** 2,384 words | 284 lines
 
   - The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)
-  - Part 1: Your Brain Was Built for a World That Doesn't Exist
+  - Part 1: Your Brain Was Optimized for a World That Doesn't Exist
     - The Scarcity Brain (Or: Why It's Hard to Stop Eating)
-    - The Violence Module (Or: Why You Pick Bombs Over Band-Aids)
+    - The Violence Module (Or: Why You Tend to Prefer Bombs Over Band-Aids)
     - The Tribal Brain: Why Democracy is Struggling
-  - Part 2: Genetic Slavery is Killing Us
+  - Part 2: Genetic Slavery is Literally Killing Us
     - We're Dying from Winning
-    - Living in the Craziest Timeline
+    - Living in the Most Irrational Timeline
       - Problems you solved
-  - Part 3: Why You Can't "Be Better"
+  - Part 3: Why You Can't Just "Be Better"
     - Your Brain is Not Your Friend
     - The Pentagon's Lizard Brain
   - Part 4: The Prison We Built Ourselves
-    - You Vote for Monkeys in Suits
-    - The War Part of Your Brain
+    - You Vote for Monkeys in Human-Skin Suits
+    - The Military-Industrial Cortex
   - Part 5: Breaking the Chains
   - Part 6: Breaking Free from Your Programming
 
@@ -340,7 +340,7 @@
 #### knowledge/solution.qmd
 **Title:** Solution Overview
 **Description:** How to Build Systems That Don't Suck
-**Stats:** 1,662 words | 176 lines
+**Stats:** 1,654 words | 178 lines
 
   - A 1% Treaty
   - The 1% Treaty Fund
@@ -349,14 +349,14 @@
   - Who Wins
   - The Scaling Engine
   - The War on Disease
-  - Why This Isn't Crazy
+  - Why This Isn't Clinically Insane
   - The Meta-Solution
   - What Comes Next
 
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
 **Description:** How to Redirect $27.2B from War to Medicine - The complete guide to a 1% treaty, the binding global accord that redirects $27.2B annually from military spending to curing disease while maintaining global security.
-**Stats:** 3,796 words | 447 lines
+**Stats:** 3,791 words | 449 lines
 
   - The Math
     - How It Works
@@ -404,7 +404,7 @@
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** A thin coordination protocol that makes doing the highest-ROI thing toward disease eradication the selfish choice for every actor.
-**Stats:** 3,641 words | 415 lines
+**Stats:** 3,633 words | 414 lines
 
   - Your Objective: Total Disease Eradication
     - Why Current Systems Fail
@@ -438,23 +438,23 @@
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
 **Description:** How to allocate $27.2B and prevent it from getting stolen by parasitic lobbyists and special interests (as is the custom)
-**Stats:** 1,106 words | 146 lines
+**Stats:** 1,148 words | 147 lines
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
-    - What your [dFDA](dfda.qmd) handles on its own:
+    - What your [decentralized framework for drug assessment (dFDA)](dfda.qmd) handles automatically:
     - What Wishocracy Actually Decides:
       - Infrastructure Campaigns
-      - Public Goods (Stuff the Market Won't Pay For)
+      - Public Goods (Market Failures)
       - Service Provider Bids
-    - How It Works: Pick One of Two
-    - Why You Can't Just Use a Spreadsheet
+    - How It Works: Pairwise Comparisons Between Campaigns
+    - Why This Is Actually Needed (Not "Just 3 Parameters")
     - Why This Actually Works (Math Warning)
   - From Priorities to Projects
 
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
 **Description:** Increasing trial capacity 12.3x (95% CI: 4.19x-61.3x) by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost
-**Stats:** 4,725 words | 683 lines
+**Stats:** 4,668 words | 683 lines
 
   - The Solution: Consumer Reports for Drugs
     - How Companies Register Treatments (5 Minutes, Zero Approval Needed)
@@ -508,7 +508,7 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 2,304 words | 313 lines
+**Stats:** 2,263 words | 313 lines
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
   - Insurance Companies: The Accidentally Aligned Industry
@@ -542,7 +542,7 @@
       - The Insurance
   - The Domino Effect: How This Cascade Works
     - The Sequence
-    - Why This Can Work: Solving the Group Action Problem
+    - Why This Can Work: Solving the Collective Action Problem
       - Why the cascade can happen (not "must" happen)
   - Why This Scales: The Ratchet Effect
 
@@ -587,7 +587,7 @@
 #### knowledge/appendix/open-ecosystem-and-bounty-model.qmd
 **Title:** How to Not Build Most of It
 **Description:** A dFDA strategy for getting other people to build everything through open APIs and bounties, like WordPress but for not dying.
-**Stats:** 817 words | 123 lines
+**Stats:** 845 words | 123 lines
 
   - The Core Strategy (Build the Rails, Not Every Train)
     - The Model
@@ -606,7 +606,7 @@
 #### knowledge/proof.qmd
 **Title:** The Proof: Overview
 **Description:** This Already Works - Pragmatic trials prove 44.1x (95% CI: 39.4x-89.1x) efficiency. Switzerland proved peace pays. History proved 3.5% consistently wins. War bonds proved capitalism beats fascism. Death and suffering are optional.
-**Stats:** 1,863 words | 255 lines
+**Stats:** 1,892 words | 257 lines
 
   - Pragmatic Trials: 44.1x (95% CI: 39.4x-89.1x) More Efficient
   - Switzerland: 200 Years of Not Killing People
@@ -635,7 +635,7 @@
 #### knowledge/proof/historical-precedents.qmd
 **Title:** Historical Precedents
 **Description:** Why This Isn't Insane - An analysis of historical movements and financial models that prove the core mechanics of a 1% treaty are not new ideas, but rather the application of proven models for mass mobilization, private capital for public good, and risk mitigation.
-**Stats:** 2,551 words | 280 lines
+**Stats:** 2,618 words | 280 lines
 
   - Humans Doing Smart Things (Accidentally): A Collection
     - That Time Humans Banned Landmines (Yes, Really)
@@ -663,7 +663,7 @@
 #### knowledge/proof/body-as-repairable-machine.qmd
 **Title:** You Are a Meat Robot
 **Description:** Aging, disease, and death are engineering problems with engineering solutions
-**Stats:** 1,713 words | 220 lines
+**Stats:** 1,724 words | 221 lines
 
   - Death is a Technical Problem
   - You Are a Self-Repairing Meat Robot
@@ -685,7 +685,7 @@
 #### knowledge/futures.qmd
 **Title:** The Two Futures
 **Description:** Two timelines diverge from this moment. One ends in extinction, the other in transcendence. The only difference is a 1% budget reallocation.
-**Stats:** 353 words | 47 lines
+**Stats:** 354 words | 47 lines
 
   - Path A: Moronia
   - Path B: Wishonia
@@ -695,12 +695,12 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization decided murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 4,400 words | 593 lines
+**Stats:** 4,472 words | 593 lines
 
   - The Discovery (And Why I Regret Making It)
   - What I Tried to Tell Them
   - How They Killed Themselves: A Timeline
-    - The Economics of Extinction: Why Collapse Was a Sure Thing
+    - The Economics of Extinction: Why Collapse Was Inevitable
       - The Olsonian Trap
       - The Prisoners' Dilemma Arms Race
       - The Incentive Inversion Cascade
@@ -716,7 +716,7 @@
       - Human criminal gestation
       - AI criminal gestation
       - The math
-    - Year 10: The Currency Collapse (When Most People Become Parasites)
+    - Year 10: The Currency Collapse (When Many Become Parasites)
       - The dominoes
     - Year 15: The Gap (Peak Achievement)
       - Children born in Year Zero (now 15)
@@ -759,7 +759,7 @@
 #### knowledge/appendix/faq.qmd
 **Title:** Frequently Asked Objections
 **Description:** For the Reasonably Skeptical
-**Stats:** 4,373 words | 602 lines
+**Stats:** 4,301 words | 602 lines
 
   - "We Need the Military Budget"
   - "Big Pharma Will Block This"
@@ -802,7 +802,7 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,122 words | 296 lines
+**Stats:** 3,145 words | 296 lines
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     - Step 1: Collect Papers from Rich People
@@ -822,7 +822,7 @@
       - The Package
       - The choice you give them
   - The Paper Collection Timeline: From $0 to Ending Death
-  - The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund at Once
+  - The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
   - The Political Strategy: Co-Opt, Don't Compete
   - Your Next Steps
   - Phase 4+: The Expansion Phases (Years 4-50)
@@ -833,7 +833,7 @@
 #### knowledge/strategy/nonprofit-coalition-strategy.qmd
 **Title:** Why Every Nonprofit Should Support a 1% treaty
 **Description:** The strategic case for nonprofit coalition-building around a 1% treaty - escaping zero-sum competition through resource reallocation.
-**Stats:** 2,714 words | 367 lines
+**Stats:** 2,774 words | 367 lines
 
   - The Single Highest-ROI Intervention Available
     - Why This Applies to YOUR Organization
@@ -861,7 +861,7 @@
 #### knowledge/legal/legal-framework.qmd
 **Title:** Legal Architecture
 **Description:** How to Stay Out of Prison While Revolutionizing Global Healthcare
-**Stats:** 3,013 words | 395 lines
+**Stats:** 2,931 words | 392 lines
 
   - Entity #1: The 501(c)(3) Public Charity ("The Brain")
     - What It Does
@@ -888,15 +888,15 @@
   - Your Escape Routes (If Everything Goes Wrong)
   - Regulatory Reform Agenda
     - What You Tell HHS to Do
-    - Your Five Policy Goals
+    - Your Five Policy Objectives
     - What This Gets You
-    - Rules You Need to Fix
+    - Regulations You Need to Fix
     - Exemptions for Certified Platforms
 
 #### knowledge/legal/election-law.qmd
 **Title:** Election Law
 **Description:** How to Buy Politicians Legally
-**Stats:** 1,816 words | 330 lines
+**Stats:** 1,761 words | 330 lines
 
   - The Legal Landscape: Money Is Speech
     - Citizens United Changed Everything
@@ -904,7 +904,7 @@
   - The Super PAC Strategy
     - Setting Up "Cure Not Kill PAC"
       - Formation (One Day)
-      - The Legal Rules
+      - The Legal Requirements
       - What You Can Do
   - The 501(c)(4) Dark Money Machine
     - Your Action Fund (The Dark Money Vehicle)
@@ -922,7 +922,7 @@
   - The Media Buy Strategy
     - Surgical Strikes
       - Early and Often
-      - The Flood Approach
+      - The Saturation Approach
       - Digital Micro-Targeting
   - The Ground Game
     - Paid "Volunteers"
@@ -947,11 +947,11 @@
 #### knowledge/economics/victory-bonds.qmd
 **Title:** VICTORY Incentive Alignment Bonds
 **Description:** Step-by-step guide to creating perpetual bonds that fund a 1% treaty campaign
-**Stats:** 4,009 words | 535 lines
+**Stats:** 4,077 words | 534 lines
 
   - VICTORY Incentive Alignment Bonds
   - What You're Actually Building
-  - The Four Phases of Getting Rich While Saving Humanity
+  - The Four Phases of Making Everyone Rich While Saving Humanity
     - Phase 1: Collect Papers From People With Too Many Papers
       - Who has that many papers
     - Phase 2: Spend the Papers Correctly
@@ -960,7 +960,7 @@
   - Calculate Your Numbers for Investors
     - Show Them Where the Papers Come From
     - When Math Becomes Obscene
-      - Even if you're very pessimistic
+      - Even if you're extremely pessimistic
       - This isn't complicated math
     - How Returns Scale From "Obscene" to "Is This Even Legal?"
       - Why this actually happens
@@ -980,7 +980,7 @@
   - Set Minimum Investment Thresholds
     - Structure Your Minimums
     - Draft Your Term Sheet
-  - When Rich People Ask Hard Questions
+  - When Rich People Ask Difficult Questions
     - "This sounds like a Ponzi scheme run by someone who failed math."
     - "What happens when this fails and I lose my billion dollars?"
     - "What could possibly go wrong?"
@@ -999,7 +999,7 @@
 #### knowledge/strategy/legislation-package.qmd
 **Title:** The Legislation Package
 **Description:** How to Write Laws That Actually Pass
-**Stats:** 2,605 words | 436 lines
+**Stats:** 2,573 words | 436 lines
 
   - The Treaty Implementation Act: Making It Real
     - The Core Provisions
@@ -1054,8 +1054,8 @@
 
 #### knowledge/strategy/global-referendum.qmd
 **Title:** Global Referendum Strategy
-**Description:** How to build a secure, worldwide vote that proves public support for a 1% treaty, covering setup, ID checks, and viral marketing.
-**Stats:** 1,817 words | 217 lines
+**Description:** Comprehensive strategy for implementing a secure, globally verifiable referendum to demonstrate public support for a 1% treaty, including implementation, verification, and viral marketing approaches.
+**Stats:** 1,723 words | 217 lines
 
   - On What You're Actually Trying to Do (The Boring But Necessary Part)
     - The Goal
@@ -1079,7 +1079,7 @@
 #### knowledge/solution/ai-coordination-army.qmd
 **Title:** Building Your AI Coordination Army
 **Description:** How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
-**Stats:** 3,332 words | 288 lines
+**Stats:** 3,440 words | 288 lines
 
   - Where Your Agents Get Their Missions (Not From a Management Consultant)
   - The Secret to Success: Cross-Sector Coordination (Forces for Good)
@@ -1103,7 +1103,7 @@
 #### knowledge/strategy/co-opting-defense-contractors.qmd
 **Title:** Making Friends with the Military-Industrial Complex
 **Description:** Lobbyists are like pigeons. They go where the food is. This chapter teaches you how to move the food.
-**Stats:** 1,763 words | 296 lines
+**Stats:** 1,751 words | 296 lines
 
   - The Solution
   - The Offer
@@ -1121,7 +1121,7 @@
   - Why This Works
     - You're Using Their Own Playbook
     - It's Legal
-    - It Will Work
+    - It Might Work
   - What You're NOT Asking
   - The Irony
   - What They Tell Their Boards
@@ -1132,7 +1132,7 @@
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis
 **Description:** Real-world evidence that getting a global treaty signed costs $90M, not billions
-**Stats:** 2,219 words | 239 lines
+**Stats:** 2,196 words | 239 lines
 
   - What Treaties Actually Cost
     - Inflation-Adjusted to 2024 Dollars
@@ -1141,23 +1141,23 @@
   - How to Make Governments Sign Things
     - Timeline to "Governments Can't Ignore This"
   - Conclusion
-  - Political Success Odds: The Money Math {#sec-political-success-probability}
-    - Past Attempts at Global Money Pledges
-    - Why a 1% Treaty is Harder Than Most of These
+  - Political Success Probability: Economic Analysis {#sec-political-success-probability}
+    - Historical Precedents for International Financial Commitments
+    - Why a 1% Treaty is Harder Than Most Precedents
     - Why a 1% Treaty Might Beat the Odds
-    - Odds Breakdown
-    - Expected Value: Why It Still Makes Sense
+    - Probability Estimates
+    - Expected Value Implications
   - Why The Treaty Won't Stop at 1%
-    - The Growth Engine
-    - Why This Is Different from Dead Treaties
+    - The Expansion Mechanism
+    - Why This Differs from Stagnant Treaties
     - The Ratchet Effect
-    - Long-Term Picture
+    - Long-Term Feasibility
   - Sources
 
 #### knowledge/appendix/recruitment-and-propaganda-plan.qmd
 **Title:** Recruitment & Propaganda Plan
 **Description:** How to build an army of people who don't want to die (surprisingly difficult)
-**Stats:** 1,675 words | 246 lines
+**Stats:** 1,664 words | 246 lines
 
   - The Current Clusterfuck
   - The Three-Division Army Structure
@@ -1215,12 +1215,12 @@
 #### knowledge/economics/health-dividend.qmd
 **Title:** Health Dividend
 **Description:** How a $40M (95% CI: $27.3M-$55.6M) framework generates $58.6B (95% CI: $49.2B-$73.1B) in annual savings through 80x cost reduction
-**Stats:** 1,028 words | 126 lines
+**Stats:** 968 words | 124 lines
 
   - The Math: From $41K (95% CI: $20K-$120K) to $500 (95% CI: $400-$2.50K)
   - Where the $58.6B (95% CI: $49.2B-$73.1B) Comes From
   - What $58.6B (95% CI: $49.2B-$73.1B) Buys You
-  - Daily Cost of Doing Nothing
+  - Daily Opportunity Cost
   - What It Costs to Run
   - ROI Scenarios
   - Why This Isn't Happening Already
@@ -1231,43 +1231,43 @@
 #### knowledge/economics/financial-plan.qmd
 **Title:** Financial Plan: Overview
 **Description:** High-level overview of how to fund, spend, and manage the financial flows required to pass a 1% treaty and operate the 1% Treaty Fund.
-**Stats:** 1,649 words | 206 lines
+**Stats:** 1,583 words | 206 lines
 
   - Pillar 1: Fundraising (Raise $1B)
-    - The Fundraising Plan
+    - The Fundraising Strategy
   - Pillar 2: Campaign Budget (Spend $1B)
-    - Key New Ideas
+    - Key Innovations
   - Pillar 3: Treasury (Manage $27.2B+/Year)
     - Where the Money Comes From
-    - Growth Paths (Not Promises)
+    - Growth Scenarios (Not Predictions)
     - How the Money Gets Spent: 80/10/10
-    - The Locked 20%
+    - The Fixed 20%
     - The Other 80%: Medical Research
-    - Sliding Patient Help
-    - Why This Lines Up Everyone's Wants
+    - Dynamic Patient Subsidies
+    - Why This Creates Perfect Incentives
     - Compare to NIH Grants
-  - Risk Safety Nets
+  - Risk Management
   - Related Documents
   - Summary
 
 #### knowledge/economics/campaign-budget.qmd
 **Title:** Campaign Budget: The $1B (95% CI: $700M-$1.30B) Legal Bribery Machine
-**Stats:** 3,384 words | 444 lines
+**Stats:** 3,303 words | 443 lines
 
   - Why $1B Instead of $5B {#ai-assisted-lobbying-250m-25}
-    - The Bare Minimum Budget
+    - The Minimum Viable Budget
   - Where the Papers Go
     - Viral Referendum (part of $250M Referendum Budget)
       - Paying Humans to Click
       - Payment structure
       - The Message That Spreads
-      - Budget: Viral Referendum with Tiered Rewards {#base-case-scenario}
+      - Budget: Viral Referendum with Tiered Incentives {#base-case-scenario}
     - Professional (Legal) Bribery (part of $650M Lobbying Budget)
     - Technology (part of $250M Referendum Budget)
-    - Lawyers (AI-Helped) (part of $650M Lobbying Budget)
-    - Co-opting the Other Side (part of $650M Lobbying Budget)
-    - Operations (overhead across all groups)
-    - Post-Victory Shift: $100M
+    - Lawyers (AI-Assisted) (part of $650M Lobbying Budget)
+    - Co-opting the Opposition (part of $650M Lobbying Budget)
+    - Operations (overhead across all categories)
+    - Post-Victory Transition: $100M
   - Timeline
   - Why This Works
   - Returns
@@ -1278,7 +1278,7 @@
 #### knowledge/appendix/investor-risk-analysis.qmd
 **Title:** Investor Risk Analysis
 **Description:** VICTORY Incentive Alignment Bonds vs. Traditional Venture Capital - Analysis of the unique risk profile of a 1% treaty initiative, comparing its political arbitrage model to the market-risk model of venture capital.
-**Stats:** 1,015 words | 94 lines
+**Stats:** 997 words | 94 lines
 
   - Political Arbitrage vs. Venture Capital
   - Risk Comparison
@@ -1312,25 +1312,25 @@
 #### knowledge/appendix/real-world-evidence-historical-success.qmd
 **Title:** Real-World Evidence Historical Success (Pre-1962)
 **Description:** How decentralized physician trials from 1883-1962 achieved 4 years/decade life expectancy gains, and what happened when the 1962 regulations replaced them with industry-controlled trials
-**Stats:** 1,791 words | 231 lines
+**Stats:** 1,742 words | 231 lines
 
-  - History: Why Real-World Evidence Works Better
+  - Historical Evidence: Why Real-World Evidence Works Better
     - 10,000 Years of Dying at 30
-    - 1883 -- The Year You Figured It Out
+    - 1883 – The Year You Figured It Out
     - The Result
-    - 1938 -- The FDA Adds Safety Tests
-    - 1950s -- Thalidomide: When Safety Rules Actually Worked
-    - 1962 -- The Year You Decided to Make Everything Worse
+    - 1938 – The FDA Requires Phase 1 Safety Trials
+    - 1950s – Thalidomide: When Safety Regulations Actually Worked
+    - 1962 – The Year You Decided to Make Everything Worse
       - What Changed
-      - What Happened to the Data
+      - What Happened to Efficacy Data
       - What Happened to New Treatments
       - What Happened to Costs
       - What Happened to Drug Patents
-      - No Way to Compare Drugs to Each Other
-    - What Happened to Life Span (The Part That Matters)
-    - The "Shrinking Returns" Excuse
-    - The "Doesn't Prove It" Excuse
-    - New Medicines Save Lives
+      - Decreased Ability to Determine Comparative Efficacy
+    - What Happened to Life Expectancy (The Part That Matters)
+    - The "Diminishing Returns" Excuse
+    - The "Correlation Is Not Causation" Excuse
+    - Impact of Innovative Medicines on Life Expectancy
   - The Summary
 
 #### knowledge/papers.qmd

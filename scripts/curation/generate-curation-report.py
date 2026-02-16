@@ -831,18 +831,23 @@ def generate_readability_checklist(chapters: List[dict]) -> str:
     lines.append(f"**Generated:** {now} | **Target:** Flesch-Kincaid grade <= {TARGET_GRADE}")
     lines.append("")
     lines.append("Each section lists specific issues for one chapter. Agents should:")
-    lines.append("1. Read `GUIDES/STYLE_GUIDE.md` for voice/tone rules before editing")
-    lines.append("2. Process one file at a time, applying all fixes listed")
-    lines.append("3. Check each item off when complete")
-    lines.append("4. Re-run `npm run curation:report` after all files are done to verify")
+    lines.append("1. Read `prompt.md` for detailed rewrite rules before editing")
+    lines.append("2. Process one file at a time")
+    lines.append("3. Focus on SENTENCE LENGTH (the #1 lever for grade level)")
+    lines.append("4. Do NOT replace common words with simpler synonyms")
+    lines.append("5. Re-run `npm run curation:report` after all files are done to verify")
     lines.append("")
-    lines.append("**IMPORTANT:** All edits MUST follow `GUIDES/STYLE_GUIDE.md`. Key rules:")
+    lines.append("**CRITICAL: Be surgical, not aggressive.** The biggest mistake is")
+    lines.append("replacing common words like 'philosophers', 'regulations', 'diminishing")
+    lines.append("returns' with dumbed-down synonyms. These are normal words that 8th")
+    lines.append("graders know. The Flesch-Kincaid formula weights sentence length 3x more")
+    lines.append("than syllable count. Break long sentences; leave word choices alone.")
+    lines.append("")
+    lines.append("**Style rules (from GUIDES/STYLE_GUIDE.md):**")
     lines.append("- Voice: weary but loving parent; dark humor; Cunk/Adams/Vonnegut energy")
     lines.append("- Be conversational. Write like explaining to a smart friend.")
-    lines.append("- Target the system, not the people. Assume self-interest, not idealism.")
-    lines.append("- No corporate buzzwords or academic jargon. No earnest evangelism.")
-    lines.append("- Frame as empowering: \"here's how you do this\", not \"we will do this\"")
     lines.append("- Be ruthlessly concise. Every word earns its place.")
+    lines.append("- No em-dashes. Use parentheses, commas, periods, or semicolons.")
     lines.append("")
 
     # Sort chapters by grade (worst first)
@@ -905,8 +910,8 @@ def generate_readability_checklist(chapters: List[dict]) -> str:
         # Grade level
         gap = round(grade - TARGET_GRADE, 1)
         lines.append(f"- [ ] **Grade level {grade}** (need to drop {gap} grades): "
-                     f"Replace multi-syllable words with simpler ones. "
-                     f"{difficult} difficult words found.")
+                     f"Primary fix: break long sentences. "
+                     f"{long_sent} sentences exceed 40 words.")
 
         # Sentence length
         if avg_sent > TARGET_AVG_SENTENCE:
@@ -940,18 +945,14 @@ def generate_readability_checklist(chapters: List[dict]) -> str:
         lines.append("")
         lines.append("### Recommendations")
         lines.append("")
-        lines.append("- Read `GUIDES/STYLE_GUIDE.md` before editing this file")
-        lines.append("- Shorten sentences to 12-18 words average")
-        lines.append("- Replace jargon: \"expenditure\"->\"spending\", \"allocation\"->\"share\", "
-                     "\"methodology\"->\"method\", \"utilize\"->\"use\", \"implement\"->\"set up\", "
-                     "\"demonstrate\"->\"show\", \"facilitate\"->\"help\", \"approximately\"->\"about\"")
-        lines.append("- Keep technical terms that have no simpler equivalent (GDP, clinical trial, treaty)")
-        lines.append("- Preserve all {{< var >}} references, @citations, LaTeX, links, and code blocks")
-        lines.append("- Voice per style guide: weary parent, dark humor, Cunk/Adams/Vonnegut energy")
-        lines.append("- No buzzwords, no academic jargon, no earnest evangelism")
-        lines.append("- Frame as instructional: \"here's how you...\" not \"we will...\"")
+        lines.append("- Read `prompt.md` for detailed rewrite rules before editing")
+        lines.append("- PRIMARY: Break sentences >20 words into shorter ones")
         lines.append("- Cut filler: \"it is important to note\", \"it should be noted\", \"in order to\"")
         lines.append("- Cut hedging where evidence is solid: \"may\" -> direct statement")
+        lines.append("- Use active voice: \"X was done by Y\" -> \"Y did X\"")
+        lines.append("- Do NOT replace common words (regulations, correlation, etc.) with simpler synonyms")
+        lines.append("- Do NOT change section headings unless genuinely unclear")
+        lines.append("- Preserve all {{< var >}}, @citations, LaTeX, links, images, code blocks")
         lines.append("")
 
     return "\n".join(lines)
