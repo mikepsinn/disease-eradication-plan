@@ -2,11 +2,11 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 47 | **Words:** 116,494
+**Files:** 46 | **Words:** 115,369
 
 #### index-manual.qmd
 **Title:** Start Here
-**Stats:** 4,419 words | 550 lines
+**Stats:** 4,325 words | 526 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -1181,23 +1181,6 @@
   - The Metrics That Matter
   - The Endgame
   - Your Marching Orders
-
-### Policy & Regulatory
-
-#### knowledge/appendix/impact-securities-reform.qmd
-**Title:** Impact Securities Reform Act
-**Description:** Draft Legislation for Digital Public Goods Financing - Model law to enable high-impact public-good financing via impact securities, expanded investor access, and on-chain reporting safe harbors.
-**Stats:** 1,031 words | 130 lines
-
-  - What This Act Does (Plain English)
-  - Section 2. Definitions
-  - Section 3. Impact Securities Safe Harbor
-  - Section 4. On-Chain Disclosure and Reporting
-  - Section 4A. Marketing and Disclosures Safe Harbor
-  - Section 5. Token Classification Safe Harbor
-  - Section 6. Outcome-Linked Incentives
-  - Section 10. Enforcement and Remedies
-  - Why This Matters for VICTORY Bonds
 
 ### Economics & Finance
 
