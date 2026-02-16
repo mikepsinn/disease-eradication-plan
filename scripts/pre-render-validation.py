@@ -11,7 +11,7 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - Broken anchor IDs in links (validates that #anchor-id exists in target file)
 - Broken include directives ({{< include path.qmd >}})
 - Missing Python imports in code blocks
-- GIF files not wrapped in HTML-only blocks (prevents PDF build failures)
+- GIF files not wrapped in HTML-only or epub/pdf-exclusion blocks (prevents PDF/epub build failures)
 - Unknown Quarto variables ({{< var name >}}) not defined in _variables.yml
 - Missing citations ([@citation-id]) not found in references.bib
 - _quarto.yml configuration (validates all chapter paths exist)
@@ -841,11 +841,14 @@ _html_gif_pattern = re.compile(r'<img[^>]+src=["\']([^"\']*\.gif[^"\']*)["\']', 
 
 def check_gif_references(content: str, filepath: str):
     """
-    Check for GIF files that aren't wrapped in HTML-only blocks
-    GIF files cannot be included in PDF output and must be wrapped in:
-    ::: {.content-visible when-format="html"}
-    <img src="path/to/file.gif" />
-    :::
+    Check for GIF files that aren't wrapped in format-exclusion blocks.
+    GIFs must not appear in PDF/epub output. Accept either:
+    (1) HTML-only: ::: {.content-visible when-format="html"} ... :::
+    (2) Epub+PDF exclusion: ::: {.content-hidden when-format="epub"}
+        ::: {.content-hidden when-format="pdf"}
+        <img src="...gif" />
+        :::
+        :::
     """
     # Early return if no GIF references in file
     if ".gif" not in content.lower():
@@ -853,20 +856,39 @@ def check_gif_references(content: str, filepath: str):
 
     lines = content.split("\n")
     in_html_only_block = False
-    block_depth = 0
+    html_block_depth = 0
+    # Stack of opened content-hidden blocks: 'epub' and 'pdf' in open order
+    epub_pdf_stack: List[str] = []
 
     for line_index, line in enumerate(lines):
+        stripped = line.strip()
+
         # Track HTML-only conditional blocks
         if '{.content-visible when-format="html"}' in line:
             in_html_only_block = True
-            block_depth = 0
-        elif in_html_only_block and line.strip().startswith(":::"):
-            if block_depth == 0:
+            html_block_depth = 0
+        elif in_html_only_block and stripped.startswith(":::"):
+            if html_block_depth == 0:
                 in_html_only_block = False
             else:
-                block_depth -= 1
+                html_block_depth -= 1
         elif in_html_only_block and ":::" in line:
-            block_depth += 1
+            html_block_depth += 1
+
+        # Track epub/pdf exclusion blocks (content-hidden when-format="epub" then "pdf")
+        if '{.content-hidden when-format="epub"}' in line and stripped.startswith(":::"):
+            epub_pdf_stack.append("epub")
+        elif '{.content-hidden when-format="pdf"}' in line and stripped.startswith(":::"):
+            epub_pdf_stack.append("pdf")
+        elif stripped == ":::" and epub_pdf_stack:
+            epub_pdf_stack.pop()
+
+        in_epub_pdf_exclusion = (
+            len(epub_pdf_stack) >= 2
+            and epub_pdf_stack[-2] == "epub"
+            and epub_pdf_stack[-1] == "pdf"
+        )
+        gif_is_wrapped = in_html_only_block or in_epub_pdf_exclusion
 
         # Check for GIF references (markdown or HTML)
         markdown_matches = _markdown_gif_pattern.finditer(line)
@@ -874,17 +896,17 @@ def check_gif_references(content: str, filepath: str):
 
         # Check markdown GIF references
         for match in markdown_matches:
-            if not in_html_only_block:
+            if not gif_is_wrapped:
                 errors.append(
                     ValidationError(
                         file=filepath,
                         line=line_index + 1,
-                        message='GIF file not wrapped in HTML-only block - will fail in PDF output. Use HTML <img> tag inside ::: {.content-visible when-format="html"}',
+                        message='GIF file not wrapped in format-exclusion block - will fail in PDF/epub. Wrap in ::: {.content-visible when-format="html"} or ::: {.content-hidden when-format="epub"} + ::: {.content-hidden when-format="pdf"}',
                         context=line.strip()[:80],
                     )
                 )
             else:
-                # Even inside HTML-only block, markdown syntax might not work - warn to use HTML
+                # Even inside block, markdown syntax might not work - warn to use HTML
                 errors.append(
                     ValidationError(
                         file=filepath,
@@ -896,12 +918,12 @@ def check_gif_references(content: str, filepath: str):
 
         # Check HTML GIF references
         for match in html_matches:
-            if not in_html_only_block:
+            if not gif_is_wrapped:
                 errors.append(
                     ValidationError(
                         file=filepath,
                         line=line_index + 1,
-                        message='GIF file not wrapped in HTML-only block - will fail in PDF output. Wrap in ::: {.content-visible when-format="html"}',
+                        message='GIF file not wrapped in format-exclusion block - will fail in PDF/epub. Wrap in ::: {.content-visible when-format="html"} or ::: {.content-hidden when-format="epub"} + ::: {.content-hidden when-format="pdf"}',
                         context=line.strip()[:80],
                     )
                 )
