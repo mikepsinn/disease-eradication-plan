@@ -17,95 +17,19 @@ image: /assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg
 
 Out of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually [@global-trial-participant-capacity]. That's **{{< var current_clinical_trial_participation_rate >}}**.
 
-Half of humanity would volunteer [@patient-willingness-clinical-trials] if they could. We have **240 times more willing participants** than we're using.
+{{< var patient_willingness_trial_participation_pct >}} would volunteer [@patient-willingness-clinical-trials] if they could. Only {{< var current_clinical_trial_participation_rate >}} currently participate.
 
 This isn't because people don't want to help find cures. The current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates].
 
 Meanwhile, the system that's supposed to catch dangerous side effects misses 90-99% of them. Only 1-10% of adverse drug events are ever reported to the FDA [@adverse-event-underreporting]. No denominator data. No effect sizes. No way to calculate how often a drug actually hurts people. The safety monitoring system is a suggestion box that nobody uses.
 
-**We're not facing a recruitment problem. We're facing a capacity problem.**
+**You don't have a recruitment problem. You have a capacity problem.**
 
 ## The Solution: Consumer Reports for Drugs
 
 Your decentralized framework for drug assessment (dFDA) is an **open coordination protocol**. It enables existing platforms to connect companies with treatments to patients who need them. It's HTTP for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes.
 
 ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
-
-### How Companies Register Treatments (5 Minutes, Zero Approval Needed)
-
-**Any company** - pharma, supplements, food, interventions - can instantly create a trial:
-
-1. **Register treatment** on a public portal (name, ingredients, condition, price)
-2. **Set treatment price** (what you charge patients - covers manufacturing + delivery)
-3. **Get automatic liability insurance** (built into protocol governance)
-4. **Trial goes live immediately** - appears in search results, ranked by existing data
-5. **Patients join** based on rankings → You collect zero-cost data on whether it works
-
-#### Net cost to company: $0
-
-![Patients pay for their own medicine, then you give them their money back, and somehow everyone profits. Economics is confusing.](/assets/images/dfda/dfda-section-net-cost-to-company-0-bw-academic.jpg)
-
-**Why?**
-
-- Patients pay for treatment (covers manufacturing/delivery)
-- Patients provide data (eliminates data collection cost ~{{< var traditional_phase3_cost_per_patient >}}/patient)
-- Protocol enables standardized analysis (eliminates analysis cost)
-- Insurance is built-in (eliminates liability cost)
-
-### The Payment Flow (Or: How Everyone Profits Except Disease)
-
-![Money goes from patient to fund to patient to company to fund to patient. It's a circle, like water cycle but for dollars.](/assets/images/dfda/dfda-section-the-payment-flow-or-how-everyone-profits-except-disease-bw-academic.jpg)
-
-**Patient pays:** Treatment cost + Refundable deposit
-**Patient receives:** Subsidy (from a 1% Treaty Fund)
-**Patient reports:** Outcomes via simple app
-**Deposit refunded:** When trial complete
-**Net to patient:** $0 to -$50 (they might profit)
-
-#### Example
-
-- Patient joins trial for experimental migraine treatment ($100/month)
-- Pays: $100 treatment + $50 deposit = $150
-- Receives: $125 subsidy
-- Out of pocket: $25
-- Completes trial, reports outcomes
-- Gets back: $50 deposit
-- **Net: +$25 profit + potentially cures migraines**
-
-![Everyone gets paid, patient pays nothing. If this sounds impossible, you're thinking like an economist instead of a magician.](/assets/images/dfda/dfda-section-economic-flow-diagram-bw-academic.jpg)
-
-#### Company receives
-
-![Companies make a little money from selling pills and a lot of money from knowing which pills work. Information is expensive, apparently.](/assets/images/dfda/dfda-section-company-receives-bw-academic.jpg)
-
-- $100/month from patient
-- Manufacturing cost: $20/month
-- Profit: $80/month per patient
-- Plus: Free clinical trial data worth {{< var traditional_phase3_cost_per_patient >}}/patient in traditional system
-
-### Why This Creates Unlimited Research Capacity
-
-| | Traditional Model | Decentralized Protocol |
-| :--- | :--- | :--- |
-| **Start** | Research ideas | Research ideas |
-| **Gatekeeping** | Grant committees select the few | Register instantly |
-| **Enrollment** | Recruit from limited pool | Patients decide by joining |
-| **Cost** | $57M per trial | $0 per trial |
-| **Throughput** | ~10 trials/year per company | Unlimited trials simultaneously |
-
-**This is why 95% of rare diseases have no treatments.** Traditional funding can't afford to test everything. This decentralized protocol enables testing EVERYTHING because:
-
-- No approval bottleneck (instant registration)
-- No funding bottleneck (patients pay for treatment)
-- No data collection bottleneck (patients provide data)
-- No disease too rare (if 100 patients exist globally, trial can run profitably)
-
-**Traditional trial:** Pharma spends $57M, tests most profitable drug only
-**Decentralized trial:** Pharma spends $0, tests everything including supplements, food, lifestyle, off-patent drugs
-
-A 1% Treaty Fund doesn't fund pragmatic clinical trials directly. **It subsidizes participation, which unlocks a self-sustaining ecosystem that funds ALL research.**
-
-![One research lab doing one thing at a time versus a million people doing a million things at once. Speed difference is noticeable.](/assets/images/dfda/dfda-section-bottleneck-vs-protocol-process-bw-academic.jpg)
 
 ## How It Works: Just Let People Try Stuff (Carefully)
 
@@ -159,13 +83,37 @@ Stage 1 filters millions of possibilities for almost nothing. Stage 2 confirms t
 
 The cheap stage does the hard work of searching. The expensive stage only runs on candidates that deserve it. Instead of spending $57 million testing one drug, you spend $1 watching a million treatments and $500 confirming the ones that work.
 
-### Introducing FDA.gov 2.0: Now With 80% Less Death
+## Proof It Works (While the FDA Wasn't Looking)
+
+### The Oxford Recovery Trial: How the British Accidentally Saved Medicine
+
+During COVID, while America was filling out forms, Oxford University did something crazy. They just tested drugs on dying people to see if they stopped dying.
+
+![Traditional clinical trials versus the Oxford approach. One costs 30 million dollars and takes years. The other costs less than a coffee shop franchise and actually saves people.](/assets/images/dfda/dfda-section-the-oxford-recovery-trial-how-the-british-accidentally-saved-medicine-bw-academic.jpg)
+
+Cost per patient:
+
+- Normal clinical trials: {{< var traditional_phase3_cost_per_patient >}}
+- Oxford pragmatic trials: {{< var recovery_trial_cost_per_patient >}}
+
+That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan to save a human life.
+
+Results:
+
+- Found that steroids cut COVID deaths by 30% [@recovery-trial-dexamethasone-results]
+- Saved over 1 million lives globally [@recovery-trial-summary-quote]
+- Took 3 months [@recovery-trial-100-days-to-cure] instead of 3 years
+- Cost less than one Super Bowl commercial
+
+The FDA's response: "But did they file the correct paperwork?"
+
+RECOVERY wasn't a fluke. A Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] found median costs of just $97 per patient. The PCORnet ADAPTABLE trial enrolled 15,076 patients across 40 clinical sites at {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage]. This model works across therapeutic areas, across countries, across decades. The evidence base for cheap, fast, embedded trials isn't one study. It's 108 and counting.
+
+## What You'd See: FDA.gov 2.0
 
 The protocol upgrades FDA.gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
 
 ![Upgrading the FDA website would save more lives than a fighter jet, cost less than a fighter jet, but we bought the fighter jet.](/assets/images/dfda/dfda-section-introducing-fda-gov-2-0-now-with-80-less-death-bw-academic.jpg)
-
-Here's the revolutionary process:
 
 ### Step 1: Type in What's Killing You
 
@@ -203,30 +151,7 @@ Search any condition and see every treatment ranked by real-world effectiveness:
 - **Experimental options** with preliminary data
 - One-click access to join available trials
 
-No more guessing which treatment your doctor half-remembers from a conference. Just clear rankings based on what actually worked for people like you. The current system never publishes negative results. Humanity wastes billions repeating the same failed ideas. 
-
-### Step 2.5: See the Future (With Financially-Backed Predictions)
-
-The system also integrates a powerful forecasting tool: **live prediction markets**.
-
-![Lots of people guessing whether drugs will work, and the average of their guesses is usually right. The wisdom of crowds, betting edition.](/assets/images/dfda/dfda-section-step-2-5-see-the-future-with-financially-backed-predictions-bw-academic.jpg)
-
-This isn't just polling experts. It's a marketplace where researchers, doctors, investors, and the public can bet real money on a trial's future outcomes.
-
-For any given trial, you'll see real-time odds on questions like:
-
-- **Effectiveness**: "What are the chances this treatment will reduce tumor size by >50% in the next 6 months?" **Market Price: 38%**
-- **Adverse Events**: "What is the probability of patients experiencing severe nausea?" **Market Price: 22%**
-- **Completion**: "What are the odds this trial will be fully enrolled by its target date?" **Market Price: 71%**
-
-#### Why Trust This?
-
-1.  **Skin in the Game**: These aren't cheap-talk opinions. Bettors lose money if they're wrong. That creates a powerful incentive for accuracy.
-2.  **The Ultimate Fact-Checker**: Your decentralized institutes of health (DIH) network automatically resolves these bets using actual, aggregated, anonymized patient data from the dFDA protocol. If the market predicts a 22% rate of nausea, and the real-world data shows 40%, the market learns and adjusts. Or bettors go broke.
-
-![People bet on drugs, patients take drugs, we check who won the bet. Like fantasy football but with your liver.](/assets/images/dfda/dfda-section-why-trust-this-bw-academic.jpg)
-
-This gives patients an invaluable second layer of information. Not just what *has happened*, but what the world's collective, financially-incentivized intelligence thinks *will happen*.
+No more guessing which treatment your doctor half-remembers from a conference. Just clear rankings based on what actually worked for people like you. The current system never publishes negative results. Humanity wastes billions repeating the same failed ideas.
 
 ### Step 3: Join a Trial from Your Couch (While Dying Comfortably)
 
@@ -284,6 +209,163 @@ Every pill becomes a tiny experiment. Every patient becomes a scientist. Every o
 
 You should have done this when you invented writing in 3000 BC.
 
+## Outcome Labels: Nutrition Facts for Drugs
+
+Food has nutrition labels. Cigarettes have warning labels. Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
+
+**Outcome Labels** fix that. Clear, data-driven summaries showing exactly what happens when real people try a treatment:
+
+![What medicine labels would say if they were honest.](../../assets/images/dfda-outcome-labels.png)
+
+No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
+
+Here's what an Outcome Label for depression would actually look like:
+
+**OUTCOME LABEL: Depression Severity**
+*Based on 47,832 participants*
+
+**Treatments Ranked by Effect Size**
+
+| Rank | Treatment | Effect | Sample Size | Optimal Dose |
+|:-----|:----------|:-------|:------------|:-------------|
+| 1 | Exercise | -31.2% | 12,847 | 45 min/day |
+| 2 | Bupropion | -28.3% | 2,847 | 300mg |
+| 3 | Sertraline | -24.7% | 5,123 | 100mg |
+| 4 | Sleep (7-9 hrs) | -22.1% | 31,204 | 8.2 hrs |
+| 5 | Venlafaxine | -21.2% | 1,892 | 150mg |
+| 6 | Omega-3 | -18.9% | 4,521 | 2000mg EPA+DHA |
+| 7 | Meditation | -16.4% | 8,932 | 20 min/day |
+| 8 | Fluoxetine | -15.8% | 3,456 | 40mg |
+
+**Makes It Worse:** Alcohol >2/day (+23.4%), sleep deprivation (+19.8%), social isolation (+15.2%)
+
+**No Significant Effect:** Multivitamin, Probiotics, B-complex, Ashwagandha, 5-HTP
+
+Notice anything? Exercise beats every drug. Sleep beats most drugs. Your doctor probably didn't mention that because there's no pharmaceutical rep buying lunch to promote jogging. This is what happens when you rank treatments by outcomes instead of by marketing budget.
+
+![The Depression Crusher 3000. Improves your mood 60 percent, ruins your sex life 40 percent. Every medicine is a negotiation with your body.](/assets/images/dfda/dfda-section-side-effects-bw-academic.jpg)
+
+## Your Personal Death-Prevention Assistant: The FDAi
+
+Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
+
+![Your watch tells the computer what's killing you. The computer tells you what might unkill you. We've had the watches for 15 years but kept the parts separate.](/assets/images/dfda/dfda-section-your-personal-death-prevention-assistant-the-fdai-bw-academic.jpg)
+
+The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead of telling you the weather, it tells you how not to die.
+
+**You**: "I have diabetes and my foot fell off."
+**FDAi**: "Based on 50,000 similar cases, here's what worked:
+
+- 60% success: Reattachment surgery + Drug A
+- 30% success: Prosthetic foot + Drug B
+- 10% success: Hopping lessons + Prayer
+- 0% success: Essential oils (but your remaining foot will smell lavender-fresh)"
+
+It connects to your wearables, apps, and medical records to find what's killing you while your doctor is still trying to remember your name. Every doctor who ever lived, in your pocket, and they actually agree on something.
+
+It also does something no doctor can: precision dosing. By analyzing what dose preceded your best outcomes, it generates personalized recommendations. Not "take some magnesium." Instead: "Your sleep quality was highest after 400mg of Magnesium over the previous 24 hours." Optimal doses derived from your data, not a study of 36 college students in 1997.
+
+## Making It Legal to Not Die
+
+This solution requires a law: the [Right to Trial and FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.qmd). It says dying people can try things that might help them not die, and what happens gets written down so other dying people can see what worked.
+
+The fact that this requires a law tells you everything about your species.
+
+## The Business Model: How Everyone Profits Except Disease
+
+### How Companies Register Treatments (5 Minutes, Zero Approval Needed)
+
+**Any company** - pharma, supplements, food, interventions - can instantly create a trial:
+
+1. **Register treatment** on a public portal (name, ingredients, condition, price)
+2. **Set treatment price** (what you charge patients - covers manufacturing + delivery)
+3. **Get automatic liability insurance** (built into protocol governance)
+4. **Trial goes live immediately** - appears in search results, ranked by existing data
+5. **Patients join** based on rankings → You collect zero-cost data on whether it works
+
+#### Net cost to company: $0
+
+![Patients pay for their own medicine, then you give them their money back, and somehow everyone profits. Economics is confusing.](/assets/images/dfda/dfda-section-net-cost-to-company-0-bw-academic.jpg)
+
+**Why?**
+
+- Patients pay for treatment (covers manufacturing/delivery)
+- Patients provide data (eliminates data collection cost ~{{< var traditional_phase3_cost_per_patient >}}/patient)
+- Protocol enables standardized analysis (eliminates analysis cost)
+- Insurance is built-in (eliminates liability cost)
+
+### The Payment Flow
+
+![Money goes from patient to fund to patient to company to fund to patient. It's a circle, like water cycle but for dollars.](/assets/images/dfda/dfda-section-the-payment-flow-or-how-everyone-profits-except-disease-bw-academic.jpg)
+
+**Patient pays:** Treatment cost + Refundable deposit
+**Patient receives:** Subsidy (from a 1% Treaty Fund)
+**Patient reports:** Outcomes via simple app
+**Deposit refunded:** When trial complete
+**Net to patient:** $0 to -$50 (they might profit)
+
+#### Example
+
+- Patient joins trial for experimental migraine treatment ($100/month)
+- Pays: $100 treatment + $50 deposit = $150
+- Receives: $125 subsidy
+- Out of pocket: $25
+- Completes trial, reports outcomes
+- Gets back: $50 deposit
+- **Net: +$25 profit + potentially cures migraines**
+
+![Everyone gets paid, patient pays nothing. If this sounds impossible, you're thinking like an economist instead of a magician.](/assets/images/dfda/dfda-section-economic-flow-diagram-bw-academic.jpg)
+
+#### Company receives
+
+![Companies make a little money from selling pills and a lot of money from knowing which pills work. Information is expensive, apparently.](/assets/images/dfda/dfda-section-company-receives-bw-academic.jpg)
+
+- $100/month from patient
+- Manufacturing cost: $20/month
+- Profit: $80/month per patient
+- Plus: Free clinical trial data worth {{< var traditional_phase3_cost_per_patient >}}/patient in traditional system
+
+### Why This Creates Unlimited Research Capacity
+
+| | Traditional Model | Decentralized Protocol |
+| :--- | :--- | :--- |
+| **Start** | Research ideas | Research ideas |
+| **Gatekeeping** | Grant committees select the few | Register instantly |
+| **Enrollment** | Recruit from limited pool | Patients decide by joining |
+| **Cost** | $57M per trial | $0 per trial |
+| **Throughput** | ~10 trials/year per company | Unlimited trials simultaneously |
+
+**This is why 95% of rare diseases have no treatments.** Traditional funding can't afford to test everything. This decentralized protocol enables testing EVERYTHING because:
+
+- No approval bottleneck (instant registration)
+- No funding bottleneck (patients pay for treatment)
+- No data collection bottleneck (patients provide data)
+- No disease too rare (if 100 patients exist globally, trial can run profitably)
+
+**Traditional trial:** Pharma spends $57M, tests most profitable drug only
+**Decentralized trial:** Pharma spends $0, tests everything including supplements, food, lifestyle, off-patent drugs
+
+A 1% Treaty Fund doesn't fund pragmatic clinical trials directly. **It subsidizes participation, which unlocks a self-sustaining ecosystem that funds ALL research.**
+
+![One research lab doing one thing at a time versus a million people doing a million things at once. Speed difference is noticeable.](/assets/images/dfda/dfda-section-bottleneck-vs-protocol-process-bw-academic.jpg)
+
+## The Money Shot: How to Save 95% on Not Killing People
+
+| Problem to Fix | Current Insanity | New Reality | Money Saved | Lives Saved |
+| :--- | :--- | :--- | :--- | :--- |
+| Clinical Phase Timeline | **9.1 years (avg) [@drug-development-timeline-17-years]** | **2-3 years** | ~7 years of waiting eliminated | ~50,000/year [@beta-blocker-drug-lag-deaths] |
+| Cost per trial | **$57 million** [@clinical-trial-cost-breakdown] | **$2 million** | $55 million | Infinite ROI |
+| Who can participate | **13.9% of patients [@antidepressant-trial-exclusion-rates]** | **100% of patients** | {{< var antidepressant_trial_exclusion_rate >}} inclusion rate | Everyone |
+| Rare diseases with treatments | **5% [@95-pct-diseases-no-treatment]** | **Eventually 100%** | Priceless | Millions |
+
+![How we do clinical trials now: slow, expensive, broken. How we could do them: fast, cheap, working. The difference is stark.](/assets/images/dfda/dfda-section-impact-comparison-matrix-bw-academic.jpg)
+
+### The Itemized Receipt of Eliminated Stupidity
+
+{{< include ../figures/dfda-cost-breakdown-itemized-table.qmd >}}
+
+This eliminates $55 million per trial.
+
 ## The Partnership Approach: Building Rails, Not Trains
 
 Here's what you're NOT doing: building a government platform that competes with existing medical technology companies.
@@ -337,48 +419,15 @@ This solves:
 - Vendor cooperation (they keep control)
 - Patient trust (data doesn't go to "the cloud")
 
-## The Money Shot: How to Save 95% on Not Killing People
-
-| Problem to Fix | Current Insanity | New Reality | Money Saved | Lives Saved |
-| :--- | :--- | :--- | :--- | :--- |
-| Clinical Phase Timeline | **9.1 years (avg) [@drug-development-timeline-17-years]** | **2-3 years** | ~7 years of waiting eliminated | ~50,000/year [@beta-blocker-drug-lag-deaths] |
-| Cost per trial | **$57 million** [@clinical-trial-cost-breakdown] | **$2 million** | $55 million | Infinite ROI |
-| Who can participate | **13.9% of patients [@antidepressant-trial-exclusion-rates]** | **100% of patients** | {{< var antidepressant_trial_exclusion_rate >}} inclusion rate | Everyone |
-| Rare diseases with treatments | **5% [@95-pct-diseases-no-treatment]** | **Eventually 100%** | Priceless | Millions |
-
-![How we do clinical trials now: slow, expensive, broken. How we could do them: fast, cheap, working. The difference is stark.](/assets/images/dfda/dfda-section-impact-comparison-matrix-bw-academic.jpg)
-
-### The Itemized Receipt of Eliminated Stupidity
-
-{{< include ../figures/dfda-cost-breakdown-itemized-table.qmd >}}
-
-This eliminates $55 million per trial.
-
 ## Why This Works: The Mathematical Impossibility of Committees
 
-Here's the problem with having ~200 FDA bureaucrats [@fda-reviewer-count] decide what 8 billion people can try when they're dying:
-
-### The Math That Proves Centralization Can't Work
-
-How long would it take the FDA to properly evaluate every treatment for every person?
+~200 FDA bureaucrats [@fda-reviewer-count] decide what 8 billion people can try when dying. Here's the math on why that can't work:
 
 **The FDA's processing capacity:** 200 committee members, working 8 hours a day, making 1 decision per hour = **1,600 decisions per day**.
 
-![Multiply diseases by treatments by patients and you get 800 trillion possible medical decisions. That's more decisions than humans can make, which is problematic.](/assets/images/dfda/dfda-section-information-that-actually-needs-processing-bw-academic.jpg)
+**The decisions that actually need making:** 10,000 known diseases × 100 potential treatments × 800 million genetically distinct patient profiles = **800 billion decisions**.
 
-**The decisions that actually need making:** 10,000 known diseases, each with roughly 100 potential treatments to evaluate, across 800 million genetically distinct patient profiles = **800 billion decisions**.
-
-At 1,600 decisions per day, the FDA would need **1,369,863 years** to evaluate everything.
-
-![Eight billion people all thinking at the same time about medicine. Like a very large brain made of smaller brains, which sounds horrifying but is apparently efficient.](/assets/images/dfda/dfda-section-market-processing-parallel-decentralized-bw-academic.jpg)
-
-In a decentralized system, 8 billion people each making one health decision per day process the same 800 billion decisions in **100 days**.
-
-**The committee needs 1.3 million years. The decentralized system needs 100 days.**
-
-![Time required to evaluate all potential treatment variations: Centralized Committee (1.3 million years) vs. Decentralized Market (100 days).](/assets/images/dfda/dfda-section-centralized-vs-decentralized-processing-time-bw-academic.jpg)
-
-### Why 200 People Can't Replace 8 Billion
+At 1,600 decisions per day, the FDA would need **1,369,863 years** to evaluate everything. A decentralized system where 8 billion people each make one health decision per day processes the same load in **100 days**.
 
 The FDA doesn't know:
 
@@ -387,173 +436,7 @@ The FDA doesn't know:
 - What risks **you're** willing to take (some prefer death to side effects, others the reverse)
 - Whether **you'd** rather die trying or die waiting (only you can answer this)
 
-But they decide for you anyway.
-
-![One committee in Maryland trying to decide what medicine works for 8 billion different people. It's like having one person choose shoes for the entire planet.](/assets/images/dfda/dfda-section-why-200-people-can-t-replace-8-billion-bw-academic.jpg)
-
-### The Solution: Let 8 Billion Experts Make 8 Billion Decisions
-
-| | Centralized (Current) | Decentralized (Proposed) |
-| :--- | :--- | :--- |
-| **Population** | 330 million Americans | 8 billion humans |
-| **Decision makers** | 200 FDA bureaucrats | Patients and doctors |
-| **Processing** | Sequential bottleneck | Massively parallel |
-| **Speed** | 17-year delays | Real-time results |
-| **Outcome** | Millions die waiting | Data saves everyone |
-
-This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for 8 billion unique people. The FDA could work 24/7 for a million years and still be behind.
-
-Let patients and doctors make their own decisions. Then pool the data so everyone benefits from everyone's experience.
-
-## Real Examples of This Working (While the FDA Wasn't Looking)
-
-### The Oxford Recovery Trial: How the British Accidentally Saved Medicine
-
-During COVID, while America was filling out forms, Oxford University did something crazy. They just tested drugs on dying people to see if they stopped dying.
-
-![Traditional clinical trials versus the Oxford approach. One costs 30 million dollars and takes years. The other costs less than a coffee shop franchise and actually saves people.](/assets/images/dfda/dfda-section-the-oxford-recovery-trial-how-the-british-accidentally-saved-medicine-bw-academic.jpg)
-
-Cost per patient:
-
-- Normal clinical trials: {{< var traditional_phase3_cost_per_patient >}}
-- Oxford pragmatic trials: {{< var recovery_trial_cost_per_patient >}}
-
-That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan to save a human life.
-
-Results:
-
-- Found that steroids cut COVID deaths by 30% [@recovery-trial-dexamethasone-results]
-- Saved over 1 million lives globally [@recovery-trial-summary-quote]
-- Took 3 months [@recovery-trial-100-days-to-cure] instead of 3 years
-- Cost less than one Super Bowl commercial
-
-The FDA's response: "But did they file the correct paperwork?"
-
-RECOVERY wasn't a fluke. A Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] found median costs of just $97 per patient. The PCORnet ADAPTABLE trial enrolled 15,076 patients across 40 clinical sites at {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage]. This model works across therapeutic areas, across countries, across decades. The evidence base for cheap, fast, embedded trials isn't one study. It's 108 and counting.
-
-### Wikipedia for Whether You'll Die
-
-The system includes **Clinipedia**: Wikipedia, but instead of arguing about whether tomatoes are fruits, people argue about whether they cure cancer.
-
-![Wikipedia for not dying. People add what worked, what didn't, and whether they're still alive to tell about it.](/assets/images/dfda/dfda-section-wikipedia-for-whether-you-ll-die-bw-academic.jpg)
-
-Every treatment gets a page. Every outcome gets recorded. Every patient contributes data.
-
-Imagine looking up your disease and seeing:
-
-**"Exploding Kidney Syndrome"**
-
-*From Clinipedia, the encyclopedia of not dying*
-
-#### Current Treatments Ranked by Not-Dying Score
-
-![Five treatments ranked by how well they prevent dying. We named it the Not-Dying Score because 'efficacy' made people's eyes glaze over.](/assets/images/dfda/dfda-section-current-treatments-ranked-by-not-dying-score-bw-academic.jpg)
-
-1. Prayer (3% effective, 0% side effects)
-2. Experimental Drug XJ-47 (67% effective, 30% chance of jazz hands)
-3. Traditional medicine (5% effective, tastes like sadness)
-4. Doing nothing (0% effective, 100% chance of exploded kidneys)
-5. Essential oils (0% effective, room smells nice while you die)
-
-*This page based on data from 10,847 patients who contributed their suffering to science*
-
-### Become a Scientist from Your Couch
-
-The system also lets you create your own studies. Got a theory that wearing socks inside-out cures baldness? Create a study. Get a link. Invite your balding friends to join. The system handles the rest. Your data gets published. Who knows, maybe you'll win a Nobel Prize. Or maybe you'll just prove that socks are socks. Either way, humanity learns something without spending two billion dollars.
-
-![How to do science: have idea, test idea, share results. Humanity invented this method in the 1600s and then made it take 17 years.](/assets/images/dfda/dfda-section-become-a-scientist-from-your-couch-bw-academic.jpg)
-
-## Your Personal Death-Prevention Assistant: The FDAi
-
-Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
-
-![Your watch tells the computer what's killing you. The computer tells you what might unkill you. We've had the watches for 15 years but kept the parts separate.](/assets/images/dfda/dfda-section-your-personal-death-prevention-assistant-the-fdai-bw-academic.jpg)
-
-The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead of telling you the weather, it tells you how not to die.
-
-**You**: "I have diabetes and my foot fell off."
-**FDAi**: "Based on 50,000 similar cases, here's what worked:
-
-- 60% success: Reattachment surgery + Drug A
-- 30% success: Prosthetic foot + Drug B
-- 10% success: Hopping lessons + Prayer
-- 0% success: Essential oils (but your remaining foot will smell lavender-fresh)"
-
-It connects to your wearables, apps, and medical records to find what's killing you while your doctor is still trying to remember your name. Every doctor who ever lived, in your pocket, and they actually agree on something.
-
-It also does something no doctor can: precision dosing. By analyzing what dose preceded your best outcomes, it generates personalized recommendations. Not "take some magnesium." Instead: "Your sleep quality was highest after 400mg of Magnesium over the previous 24 hours." Optimal doses derived from your data, not a study of 36 college students in 1997.
-
-## The Digital Twin Safe: Your Medical Data's Panic Room
-
-<img src="../../assets/images/human-file-system.png" alt="Digital Twin Safe" style="max-width: 600px; width: 100%;" />
-
-Right now, your medical data sits scattered across:
-
-- 17 different doctors who don't talk
-- 5 insurance companies that hate you
-- 3 pharmacies that can't spell your name
-- 1 veterinarian (long story)
-
-The Digital Twin Safe puts it all in one place. It's like a Swiss bank account, but for your cholesterol levels.
-
-You control who sees what:
-
-- Insurance companies: "He's mostly alive"
-- Doctors: Everything
-- Researchers: Anonymized data
-- Facebook: Absolutely nothing, Mark
-
-## Outcome Labels: Nutrition Facts for Drugs
-
-Food has nutrition labels. Cigarettes have warning labels. Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
-
-**Outcome Labels** fix that. Clear, data-driven summaries showing exactly what happens when real people try a treatment:
-
-![What medicine labels would say if they were honest.](../../assets/images/dfda-outcome-labels.png)
-
-No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
-
-Here's what an Outcome Label for depression would actually look like:
-
-**OUTCOME LABEL: Depression Severity**
-*Based on 47,832 participants*
-
-**Treatments Ranked by Effect Size**
-
-| Rank | Treatment | Effect | Sample Size | Optimal Dose |
-|:-----|:----------|:-------|:------------|:-------------|
-| 1 | Exercise | -31.2% | 12,847 | 45 min/day |
-| 2 | Bupropion | -28.3% | 2,847 | 300mg |
-| 3 | Sertraline | -24.7% | 5,123 | 100mg |
-| 4 | Sleep (7-9 hrs) | -22.1% | 31,204 | 8.2 hrs |
-| 5 | Venlafaxine | -21.2% | 1,892 | 150mg |
-| 6 | Omega-3 | -18.9% | 4,521 | 2000mg EPA+DHA |
-| 7 | Meditation | -16.4% | 8,932 | 20 min/day |
-| 8 | Fluoxetine | -15.8% | 3,456 | 40mg |
-
-**Makes It Worse:** Alcohol >2/day (+23.4%), sleep deprivation (+19.8%), social isolation (+15.2%)
-
-**No Significant Effect:** Multivitamin, Probiotics, B-complex, Ashwagandha, 5-HTP
-
-Notice anything? Exercise beats every drug. Sleep beats most drugs. Your doctor probably didn't mention that because there's no pharmaceutical rep buying lunch to promote jogging. This is what happens when you rank treatments by outcomes instead of by marketing budget.
-
-![The Depression Crusher 3000. Improves your mood 60 percent, ruins your sex life 40 percent. Every medicine is a negotiation with your body.](/assets/images/dfda/dfda-section-side-effects-bw-academic.jpg)
-
-Or, if you prefer your outcome labels with personality:
-
-**DEPRESSION CRUSHER 3000™** *(Outcome Label)*
-
-Based on 50,000 humans who tried this:
-
--  Depression: ⬇ 60% reduction
--  Sleep: ⬆ 30% improvement
--  Sex drive: ⬇ 90% reduction (sorry)
--  Spontaneous jazz hands: 15% chance
--  Death: 0.01% (better than depression!)
-
-*This label based on actual humans, not laboratory rats who've never paid rent*
-
-
+But they decide for you anyway. This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for 8 billion unique people.
 
 ## The Future: Where Death Becomes Embarrassing
 

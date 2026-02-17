@@ -6213,6 +6213,7 @@ WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
     latex_symbol=r"N_{willing}",  # LaTeX symbol for equations
 )  # 1.075 billion willing participants
 
+
 US_MILITARY_SPENDING_PCT_GDP = Parameter(
     0.035,
     source_ref=ReferenceID.US_MILITARY_BUDGET_3_5_PCT_GDP,
