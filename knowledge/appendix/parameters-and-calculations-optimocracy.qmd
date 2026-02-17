@@ -26,7 +26,12 @@ format:
 Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://optimocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://optimocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
 :::
 
-::: {.content-visible unless-format="epub"}
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://optimocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://optimocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
 
 ## Overview {#sec-parameters-and-calculations}
 
@@ -1548,4 +1553,5 @@ Government spending gap: US spends 3 percentage points MORE of GDP than Switzerl
 </script>
 ```
 
-:::
+::::
+:::::

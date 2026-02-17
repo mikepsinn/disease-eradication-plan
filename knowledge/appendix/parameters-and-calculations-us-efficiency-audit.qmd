@@ -26,7 +26,12 @@ format:
 Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://us-efficiency-audit.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://us-efficiency-audit.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
 :::
 
-::: {.content-visible unless-format="epub"}
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://us-efficiency-audit.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://us-efficiency-audit.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
 
 ## Overview {#sec-parameters-and-calculations}
 
@@ -1067,4 +1072,5 @@ Overlap discount factor between US government waste categories. Set to 1.0 (no d
 </script>
 ```
 
-:::
+::::
+:::::

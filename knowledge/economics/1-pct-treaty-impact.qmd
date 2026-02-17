@@ -256,8 +256,6 @@ That's {{< var medical_research_pct_of_disease_burden >}} of the disease burden 
 
 The World Health Organization reports {{< var global_disease_deaths_daily >}} {{< var global_disease_deaths_daily_cite >}} daily deaths from disease and aging. Many of these are eventually avoidable with accelerated biomedical progress ({{< var global_annual_deaths_curable_diseases >}} annually).
 
-<!-- ![Annual deaths from disease (54,750,000) versus deaths from 9/11 Terrorist Attacks (2,996)](../../assets/images/deaths-from-disease-vs-deaths-from-terrorism-chart.png) -->
-
 This mortality burden exceeds:
 
 - Annual terrorism deaths [@chance-of-dying-from-terrorism-1-in-30m] by a factor of {{< var disease_vs_terrorism_deaths_ratio >}}

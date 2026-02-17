@@ -26,7 +26,12 @@ format:
 Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://wishocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://wishocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
 :::
 
-::: {.content-visible unless-format="epub"}
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://wishocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://wishocracy.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
 
 ## Overview {#sec-parameters-and-calculations}
 
@@ -142,4 +147,5 @@ Estimated combined market capitalization of concentrated interest opposition (de
 </script>
 ```
 
-:::
+::::
+:::::

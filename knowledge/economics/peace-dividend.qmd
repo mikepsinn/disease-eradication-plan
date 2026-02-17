@@ -98,39 +98,6 @@ The Societal Dividend (theoretical maximum benefit):
 
 {{< var peace_dividend_annual_societal_benefit_latex >}}
 
-## Military vs Disease Research: The Opportunity
-
-{{< include ../figures/military-vs-disease-research-funding-bar-chart.qmd >}}
-
-## Peace Dividend Breakdown by Category
-
-{{< include ../figures/peace-dividend-breakdown-bar-chart.qmd >}}
-
-## Peace Dividend Composition
-
-{{< include ../figures/peace-dividend-composition-donut-chart.qmd >}}
-
-## Captured vs. Societal Dividend
-
-{{< include ../figures/captured-vs-societal-dividend-bar-chart.qmd >}}
-
-## How Confident Should You Be?
-
-The Monte Carlo simulation runs 10,000 scenarios. It varies every input at once to see what breaks.
-
-### What Matters Most
-
-Which inputs swing the result hardest:
-
-{{< include ../figures/tornado-peace_dividend_annual_societal_benefit.qmd >}}
-
-### Full Range of Outcomes
-
-{{< include ../figures/mc-distribution-peace_dividend_annual_societal_benefit.qmd >}}
-
-### Odds of Hitting Any Target
-
-{{< include ../figures/exceedance-peace_dividend_annual_societal_benefit.qmd >}}
 
 ### The Elasticity Question
 

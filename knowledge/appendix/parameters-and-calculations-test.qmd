@@ -26,7 +26,12 @@ format:
 Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://test.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://test.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
 :::
 
-::: {.content-visible unless-format="epub"}
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://test.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://test.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
 
 ## Overview {#sec-parameters-and-calculations}
 
@@ -202,4 +207,5 @@ Fundamental parameters and constants used throughout the analysis.
 </script>
 ```
 
-:::
+::::
+:::::

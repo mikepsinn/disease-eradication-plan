@@ -26,19 +26,24 @@ format:
 Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://manual.WarOnDisease.org/knowledge/appendix/parameters-and-calculations.html](https://manual.WarOnDisease.org/knowledge/appendix/parameters-and-calculations.html).
 :::
 
-::: {.content-visible unless-format="epub"}
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://manual.WarOnDisease.org/knowledge/appendix/parameters-and-calculations.html](https://manual.WarOnDisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 253 parameters used in the analysis, organized by type:
+This appendix documents all 255 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 102
+- External sources (peer-reviewed): 103
 - Calculated values: 95
-- Core definitions: 56
+- Core definitions: 57
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (95 parameters) • [External Data Sources](#sec-external) (102 parameters) • [Core Definitions](#sec-definitions) (56 parameters)
+[Calculated Values](#sec-calculated) (95 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (57 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4805,6 +4810,30 @@ $$
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
 
+### ADAPTABLE Trial Cost per Patient: $929 {#sec-adaptable_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: This is the direct grant cost; true cost including in-kind may be 10-40% higher.
+
+**Source**: [@pragmatic-trials-cost-advantage]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$929, $1.40K] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.40K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-adaptable_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### ADAPTABLE Trial Total Cost: $14M {#sec-adaptable_trial_total_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7531,6 +7560,28 @@ Decentralized Framework for Drug Assessment Core framework build cost
 
 :::
 
+### Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calculation). Validated by FDA Sentinel benchmark (~$1/patient/year for similar drug safety analysis at 100M+ scale). True cost varies with scale and complexity; exact value less important than order-of-magnitude difference vs pragmatic trials (~$500-929/patient) and traditional Phase 3 (~$41,000/patient).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.030, $1.00] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.030 and $1.00 (±485%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_observational_cost_per_patient.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8052,4 +8103,5 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 </script>
 ```
 
-:::
+::::
+:::::

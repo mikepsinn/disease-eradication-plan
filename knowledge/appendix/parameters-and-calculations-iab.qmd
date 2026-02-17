@@ -26,7 +26,12 @@ format:
 Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://iab.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://iab.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
 :::
 
-::: {.content-visible unless-format="epub"}
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://iab.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://iab.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
 
 ## Overview {#sec-parameters-and-calculations}
 
@@ -1873,4 +1878,5 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 </script>
 ```
 
-:::
+::::
+:::::
