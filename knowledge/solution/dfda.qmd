@@ -127,13 +127,11 @@ You're basing survival on sample sizes smaller than kindergarten classes. So ins
 
 ### The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
 
-This framework is built on a simple, powerful, and slightly creepy idea. You can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE). That's a fancy term for "watching what happens."
+This framework is built on a slightly creepy idea: analyzing data from real patients in the real world. Real-World Evidence (RWE). A fancy term for "watching what happens."
 
-Skeptics will say, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is all voodoo.
+Skeptics say, "Correlation isn't causation!" They point to flip-flopping egg advice as proof this is voodoo. They're not wrong about the old way. Old studies couldn't tell if eggs killed people or if egg-eaters just smoked three packs a day.
 
-They're not wrong about the old way. Old observational studies couldn't easily separate correlation from causation. Did the people who ate eggs also smoke three packs a day? The studies couldn't always tell.
-
-But here's what's changed: we now have so much data and such powerful computers that we can overcome these problems. With modern data from wearables, apps, and electronic health records, a single person can become their own control group. Track someone's arthritis pain for a month. Have them take Turmeric for a month, then stop, then start again. This reveals whether the Turmeric is actually doing something or if it's just a coincidence.
+But now there's enough data and computing power to make each person their own control group. Track arthritis pain for a month. Take Turmeric, stop, start again. The pattern reveals whether it works or if it's coincidence.
 
 Modern statistical methods are so good that a meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] confirmed this. The results from high-quality observational studies generally match those from expensive, slow randomized controlled trials.
 
@@ -300,55 +298,6 @@ Why compete with them? Partner instead.
 - Sponsor relationships
 - Regional expertise
 
-### The Integration Consortium
-
-![All the companies and organizations that have to cooperate for this to work. It's a lot of logos.](/assets/images/dfda/dfda-section-the-integration-consortium-bw-academic.jpg)
-
-Before writing code, form partnerships with:
-
-**EHR Vendors** (they have the patient data):
-
-- Major EHR vendors covering 80%+ of US hospitals
-- Ambulatory care platforms
-
-**Tech Giants** (they have distribution):
-
-- Apple Health (billions of devices)
-- Google Health (Android ecosystem)
-
-**Existing DCT Platforms** (they have expertise):
-
-- Existing decentralized trial platforms become "Founding Partners" with governance seats
-
-**International Partners** (already proven it works):
-
-- NHS/UK Biobank ([RECOVERY trial](../appendix/recovery-trial.qmd) model)
-- NIH All of Us (400k+ participants, genomic data)
-
-### Why They'll Cooperate
-
-**For EHR vendors**:
-
-- Reduced certification fees if they enable data portability
-- Public "seal of approval" for interoperability
-- Patient pressure (people want their data to work for them)
-- Eventually: regulatory requirement
-
-**For DCT platforms**:
-
-- "Founding Partner" status (branding/marketing value)
-- Access to the {{< var treaty_annual_funding >}} annual 1% Treaty Fund pool
-- Governance representation
-- Early access to protocol features
-- Revenue sharing on trials they run
-
-**For pharma/CROs**:
-
-- 50-95% cost reduction per trial
-- 240x more participants available
-- Faster enrollment
-- Better, more diverse data
-
 ![The new system plugs into all the old systems without replacing them. Like adding a power strip instead of rewiring your entire house.](/assets/images/dfda/dfda-section-federated-network-architecture-bw-academic.jpg)
 
 ### Federated, Not Centralized
@@ -371,8 +320,6 @@ This solves:
 - Patient trust (data doesn't go to "the cloud")
 
 ## The Money Shot: How to Save 95% on Not Killing People
-
-Look at these incredible savings! It's like Black Friday, but for survival!
 
 | Problem to Fix | Current Insanity | New Reality | Money Saved | Lives Saved |
 | :--- | :--- | :--- | :--- | :--- |
@@ -466,7 +413,7 @@ The FDA's response: "But did they file the correct paperwork?"
 
 ### Wikipedia for Whether You'll Die
 
-The system includes **Clinipedia**: Wikipedia but instead of arguing about whether tomatoes are fruits, we argue about whether they cure cancer.
+The system includes **Clinipedia**: Wikipedia, but instead of arguing about whether tomatoes are fruits, people argue about whether they cure cancer.
 
 ![Wikipedia for not dying. People add what worked, what didn't, and whether they're still alive to tell about it.](/assets/images/dfda/dfda-section-wikipedia-for-whether-you-ll-die-bw-academic.jpg)
 
@@ -512,7 +459,7 @@ The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead o
 - 10% success: Hopping lessons + Prayer
 - 0% success: Essential oils (but your remaining foot will smell lavender-fresh)"
 
-It does this by connecting to all your data: wearables, apps, and medical records. Then it looks for patterns. It's automated root cause analysis for your own body. It finds what's wrong while your doctor is still trying to remember your name. It's like having every doctor who ever lived in your pocket, except they actually agree on something.
+It connects to your wearables, apps, and medical records to find what's killing you while your doctor is still trying to remember your name. Every doctor who ever lived, in your pocket, and they actually agree on something.
 
 ## The Digital Twin Safe: Your Medical Data's Panic Room
 
@@ -542,21 +489,6 @@ Food has nutrition labels. Cigarettes have warning labels. Drugs have... incompr
 
 ![What medicine labels would say if they were honest.](../../assets/images/dfda-outcome-labels.png)
 
-Based on thousands of real patients with real outcomes:
-
-### Cognitive Improvements
-
-- Memory Recall: +35%
-- Cognitive Function: +28%
-- Executive Function: +22%
-- Hippocampal Volume: +15%
-
-#### Side Effects
-
-- Immune Response: +12%
-- Headache: +9%
-- Fatigue: +7%
-
 No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
 
 ![The Depression Crusher 3000. Improves your mood 60 percent, ruins your sex life 40 percent. Every medicine is a negotiation with your body.](/assets/images/dfda/dfda-section-side-effects-bw-academic.jpg)
@@ -581,7 +513,7 @@ Based on 50,000 humans who tried this:
 
 This solution requires a law that says: "Dying people can try things that might help them not die."
 
-The fact that we need a law for this tells you everything about our species.
+The fact that this requires a law tells you everything about your species.
 
 **The Right to Trial Act** (working title: "The Stop Being Stupid About Medicine Act"):
 
@@ -607,13 +539,11 @@ Pharmaceutical companies realize they can't charge $10,000 for pills that cost $
 
 ### 2035: The Great Revelation
 
-We realize we could have done this all along. We had the internet since 1990. We had computers since 1950. We had writing since 3000 BC.
+Humanity could have done this all along. The internet existed since 1990. Computers since 1950.
 
 ![Humans invented writing, then printing, then computers. Then used all three to make filling out forms take longer.](/assets/images/dfda/dfda-section-2035-the-great-revelation-bw-academic.jpg)
 
-We spent 5,000 years letting people die while we filled out forms.
-
-History books will call us "The Paperwork Age" and children will laugh at our stupidity.
+Five thousand years of letting people die while filling out forms. History books will call this "The Paperwork Age." Children will laugh.
 
 ### 2050: Death Becomes Opt-In
 
