@@ -159,18 +159,27 @@ def generate_parameters_and_calculations_qmd(
     content.append("---")
     content.append("")
 
-    # EPUB: show only a link to the full online version
-    content.append("::: {.content-visible when-format=\"epub\"}")
+    # EPUB + DOCX: show only a link to the full online version
+    # Note: Quarto doesn't support comma-separated formats, so we need separate blocks
     if site_url:
         full_url = f"{site_url.rstrip('/')}/knowledge/appendix/parameters-and-calculations.html"
-        content.append(f"Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [{full_url}]({full_url}).")
+        link_text = f"Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [{full_url}]({full_url})."
     else:
-        content.append("Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available in the online version of this document.")
+        link_text = "Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available in the online version of this document."
+
+    content.append("::: {.content-visible when-format=\"epub\"}")
+    content.append(link_text)
+    content.append(":::")
+    content.append("")
+    content.append("::: {.content-visible when-format=\"docx\"}")
+    content.append(link_text)
     content.append(":::")
     content.append("")
 
     # HTML + PDF: show overview, navigation, and all parameter details
-    content.append("::: {.content-visible unless-format=\"epub\"}")
+    # Nested divs: outer unless-format="epub" + inner unless-format="docx" = hidden from both
+    content.append("::::: {.content-visible unless-format=\"epub\"}")
+    content.append(":::: {.content-visible unless-format=\"docx\"}")
     content.append("")
     # Section ID for cross-references - on Overview to avoid duplicating title from frontmatter
     content.append("## Overview {#sec-parameters-and-calculations}")
@@ -641,9 +650,10 @@ def generate_parameters_and_calculations_qmd(
     content.append("</script>")
     content.append("```")
 
-    # Close the HTML-only content-visible wrapper
+    # Close the nested HTML-only content-visible wrappers (unless-epub inside unless-docx)
     content.append("")
-    content.append(":::")
+    content.append("::::")
+    content.append(":::::")
 
     # Write file
     output_path.parent.mkdir(parents=True, exist_ok=True)

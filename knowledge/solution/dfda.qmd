@@ -121,13 +121,13 @@ Trials are designed to test drugs on people who don't actually exist. To get int
 
 On top of excluding everyone with a pulse, these "definitive" studies run on comically small groups. They'll test a new heart drug on 275 people [@us-trial-enrollment-targets-2009]. A cancer drug on just 20 people [@us-trial-enrollment-targets-2009]. A diabetes drug on 100 people [@us-trial-enrollment-targets-2009]. Then they prescribe the winner to millions.
 
-![We tested this drug on thirty-six people and then gave it to millions. Like taste-testing a pie with one person and serving it to a stadium.](../../assets/images/wellbutrin-effectiveness-small-sample-size.png)
+![We tested this drug on thirty-six people and then gave it to millions. Like taste-testing with one person, then serving a stadium.](../../assets/images/wellbutrin-effectiveness-small-sample-size.png)
 
-We're basing the survival of our species on a sample size smaller than a kindergarten class. So instead of studying these mythical, perfectly sick unicorns, what if we just collected data from everyone who's *actually* sick?
+You're basing survival on sample sizes smaller than kindergarten classes. So instead of studying mythical, perfectly sick unicorns, what if you just collected data from everyone who's *actually* sick?
 
 ### The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
 
-This framework is built on a simple, powerful, and slightly creepy idea. We can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE). That's a fancy term for "watching what happens."
+This framework is built on a simple, powerful, and slightly creepy idea. You can learn more, faster, by analyzing data from real patients in the real world. This is called Real-World Evidence (RWE). That's a fancy term for "watching what happens."
 
 Skeptics will say, "But that's just observational research! Correlation isn't causation!" They'll point to flip-flopping diet advice about eggs and cholesterol as proof that this is all voodoo.
 
@@ -139,9 +139,9 @@ Modern statistical methods are so good that a meta-analysis in the New England J
 
 ![Watching what happens versus making it happen, and which one is better at predicting who dies.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
-![Watching versus doing, and which one tells you the truth more often. Spoiler: they're surprisingly similar.](../../assets/images/observational-vs-randomized-trial-effect-sizes.png)
+The evidence is clear: high-quality observational studies produce results comparable to RCTs.
 
-We have the tools to get reliable answers from real-world data. We just have to actually use them.
+You have the tools to get reliable answers from real-world data. You just refuse to use them.
 
 ### Introducing FDA.gov 2.0: Now With 80% Less Death
 
@@ -187,7 +187,7 @@ Search any condition and see every treatment ranked by real-world effectiveness:
 - **Experimental options** with preliminary data
 - One-click access to join available trials
 
-No more guessing which treatment your doctor half-remembers from a conference. Just clear rankings based on what actually worked for people like you. The current system never publishes negative results. We waste billions repeating the same failed ideas. This ends that particular brand of expensive stupidity.
+No more guessing which treatment your doctor half-remembers from a conference. Just clear rankings based on what actually worked for people like you. The current system never publishes negative results. Humanity wastes billions repeating the same failed ideas. 
 
 ### Step 2.5: See the Future (With Financially-Backed Predictions)
 
@@ -262,23 +262,23 @@ New system:
 :::
 :::
 
-Your data helps the next person. Their data helps you. It's socialism, but for not dying.
+Your data helps the next person. Their data helps you.
 
 Every pill becomes a tiny experiment. Every patient becomes a scientist. Every outcome gets recorded.
 
-It's what we should have been doing since we invented writing.
+You should have done this when you invented writing in 3000 BC.
 
 ## The Partnership Approach: Building Rails, Not Trains
 
-Here's what we're NOT doing: building a government platform that competes with existing medical technology companies.
+Here's what you're NOT doing: building a government platform that competes with existing medical technology companies.
 
-![One company owning the entire railway versus everyone sharing the tracks. We prefer sharing, as it's cheaper and less monopolistic.](/assets/images/dfda/dfda-section-the-partnership-approach-building-rails-not-trains-bw-academic.jpg)
+![One company owning the entire railway versus everyone sharing the tracks. Sharing is cheaper and less monopolistic.](/assets/images/dfda/dfda-section-the-partnership-approach-building-rails-not-trains-bw-academic.jpg)
 
-Here's what we ARE doing: building an open protocol that lets all existing platforms talk to each other.
+Here's what you ARE doing: building an open protocol that lets all existing platforms talk to each other.
 
 Think of it like the internet. We didn't build one website that everyone has to use. We built HTTP, the protocol that lets all websites connect. Same idea.
 
-**How your framework gets funded:** An implementation of this framework is one of many campaigns competing for funding from the 1% Treaty Fund via [Wishocracy](wishocracy.qmd). It has no independent budget authority. If a particular implementation gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
+**How your dFDA gets funded:** An implementation of this framework is one of many campaigns competing for funding from the 1% Treaty Fund via [Wishocracy](wishocracy.qmd). It has no independent budget authority. If a particular implementation gets captured or fails to deliver, the community can fund alternative implementations instead. This prevents the "new FDA" problem.
 
 ### The Players Already in the Game
 
