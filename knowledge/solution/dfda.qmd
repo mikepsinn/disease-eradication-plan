@@ -83,15 +83,13 @@ Your decentralized framework for drug assessment (dFDA) is an **open coordinatio
 
 ### Why This Creates Unlimited Research Capacity
 
-#### Traditional model (bottleneck)
-```
-Research ideas → Grant committees → Selected few → $57M per trial → ~10 trials/year per company
-```
-
-**Decentralized protocol (unlimited):**
-```
-Research ideas → Register instantly → Patients decide by joining → $0 per trial → Unlimited trials simultaneously
-```
+| | Traditional Model | Decentralized Protocol |
+| :--- | :--- | :--- |
+| **Start** | Research ideas | Research ideas |
+| **Gatekeeping** | Grant committees select the few | Register instantly |
+| **Enrollment** | Recruit from limited pool | Patients decide by joining |
+| **Cost** | $57M per trial | $0 per trial |
+| **Throughput** | ~10 trials/year per company | Unlimited trials simultaneously |
 
 **This is why 95% of rare diseases have no treatments.** Traditional funding can't afford to test everything. This decentralized protocol enables testing EVERYTHING because:
 
@@ -397,44 +395,19 @@ Here's the problem with having ~200 FDA bureaucrats [@fda-reviewer-count] decide
 
 ### The Math That Proves Centralization Can't Work
 
-Let's calculate how long it would take the FDA to properly evaluate every treatment for every person:
+How long would it take the FDA to properly evaluate every treatment for every person?
 
-```{python}
-# Information processing capacity of the FDA committee
-
-committee_members = 200
-hours_per_day = 8
-decisions_per_hour = 1
-committee_capacity = committee_members * hours_per_day * decisions_per_hour
-# = 1,600 decisions/day
-
-# Information that actually needs processing
+**The FDA's processing capacity:** 200 committee members, working 8 hours a day, making 1 decision per hour = **1,600 decisions per day**.
 
 ![Multiply diseases by treatments by patients and you get 800 trillion possible medical decisions. That's more decisions than humans can make, which is problematic.](/assets/images/dfda/dfda-section-information-that-actually-needs-processing-bw-academic.jpg)
 
-diseases = 10_000
-treatments_per_disease = 100  # Potential treatments to evaluate
-patients = 8_000_000_000
-patient_variations = patients * 0.1  # Genetic variations matter
-total_decisions_needed = diseases * treatments_per_disease * patient_variations
-# = 800,000,000,000 decisions needed
+**The decisions that actually need making:** 10,000 known diseases, each with roughly 100 potential treatments to evaluate, across 800 million genetically distinct patient profiles = **800 billion decisions**.
 
-# Time for committee to process everything
-
-years_to_process = total_decisions_needed / (committee_capacity * 365)
-print(f"Years for FDA to evaluate everything: {years_to_process:,.0f}")
-# Output: 1,369,863 years
-
-# Market processing (parallel, decentralized)
+At 1,600 decisions per day, the FDA would need **1,369,863 years** to evaluate everything.
 
 ![Eight billion people all thinking at the same time about medicine. Like a very large brain made of smaller brains, which sounds horrifying but is apparently efficient.](/assets/images/dfda/dfda-section-market-processing-parallel-decentralized-bw-academic.jpg)
 
-market_participants = 8_000_000_000
-market_decisions_per_day = market_participants * 1  # One health decision per person
-market_years = total_decisions_needed / (market_decisions_per_day * 365)
-print(f"Years for decentralized system: {market_years:.2f}")
-# Output: 0.27 years (100 days)
-```
+In a decentralized system, 8 billion people each making one health decision per day process the same 800 billion decisions in **100 days**.
 
 **The committee needs 1.3 million years. The decentralized system needs 100 days.**
 
@@ -455,29 +428,13 @@ But they decide for you anyway.
 
 ### The Solution: Let 8 Billion Experts Make 8 Billion Decisions
 
-#### Current system
-
-```
-330 Million Americans
-        ↓
-   200 FDA Bureaucrats (Bottleneck)
-        ↓
-    17-Year Delays
-        ↓
-    Millions Die
-```
-
-**Decentralized system:**
-
-```
-8 Billion Humans
-    ↓ ↓ ↓ ↓ ↓ (Parallel Processing)
-Millions of Trials Simultaneously
-        ↓
-    Real-Time Results
-        ↓
-    Data Saves Everyone
-```
+| | Centralized (Current) | Decentralized (Proposed) |
+| :--- | :--- | :--- |
+| **Population** | 330 million Americans | 8 billion humans |
+| **Decision makers** | 200 FDA bureaucrats | Patients and doctors |
+| **Processing** | Sequential bottleneck | Massively parallel |
+| **Speed** | 17-year delays | Real-time results |
+| **Outcome** | Millions die waiting | Data saves everyone |
 
 This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for 8 billion unique people. The FDA could work 24/7 for a million years and still be behind.
 

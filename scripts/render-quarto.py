@@ -1283,6 +1283,22 @@ def render_quarto(
                     print(f"        Expected at: {epub_path}", file=sys.stderr)
                     exit_code = 1
 
+            # Check DOCX if it exists (no expected_docx config field, just look for .docx files)
+            if format_override is None or format_override == "docx":
+                # Look for DOCX files in output directory
+                docx_files = list(temp_output_dir.glob("*.docx"))
+                if docx_files:
+                    for docx_path in docx_files:
+                        size_mb = docx_path.stat().st_size / (1024 * 1024)
+                        print(f"[OK] DOCX exists: {docx_path} ({size_mb:.2f} MB)")
+
+                        # Copy DOCX to assets/docx for distribution
+                        assets_docx_dir = project_root / "assets" / "docx"
+                        assets_docx_dir.mkdir(parents=True, exist_ok=True)
+                        dest_docx_path = assets_docx_dir / docx_path.name
+                        shutil.copy2(docx_path, dest_docx_path)
+                        print(f"[OK] Copied DOCX to: {dest_docx_path.relative_to(project_root)}")
+
             # Check HTML output directory if expected
             if format_override is None or format_override == "html":
                 html_index = temp_output_dir / "index.html"
@@ -1371,7 +1387,7 @@ def main():
     )
     parser.add_argument(
         "--to",
-        choices=["pdf", "html", "epub", "all"],
+        choices=["pdf", "html", "epub", "docx", "all"],
         default=None,
         help="Format to render (default: all formats in config)"
     )

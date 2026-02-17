@@ -4,17 +4,7 @@ description: How to build and deploy autonomous AI agents that coordinate millio
 image: /assets/og-images/knowledge/solution/ai-coordination-army-og-retro-academic.jpg
 ---
 
-{{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
-```{python}
-#| echo: false
-# Import economic parameters (produces output to prevent timeout)
-
-print("Loading economic parameters...", flush=True)
-from dih_models.parameters import *
-print("Economic parameters loaded.", flush=True)
-```
 
 You've got mission control, a network of decentralized institutes of health ([DIH](dih.qmd)), and a targeting system ([Wishocracy](wishocracy.qmd)). Now you need an army of AI agents to do the work. Humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.
 
@@ -86,61 +76,9 @@ AI doesn't have this limitation. It never sleeps. It speaks every language. It o
 
 Here's the coordination architecture you need. Don't let the diagram scare you. It just shows that agents talk to other agents, which talk to more agents. Like a corporate org chart, except things actually happen:
 
-```{python}
-#| fig-alt: "Diagram showing three layers: Global Level (Network Architect Agent recommends to Builder Agents, who implement Global Network Layer), Mission Level (Global Network contains Mission Network, which contains Coordinating Agent), and Node Level (Coordinating Agent coordinates Node A and Node B, Node A contains Task Agent 1 and Performance Monitor)"
-import graphviz
-from pathlib import Path
-from IPython.display import Image as IPImage, display
-
-from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
-
-# Create directed graph
-
-dot = graphviz.Digraph(comment='AI Coordination Architecture', format='png')
-dot.attr(rankdir='TD', size='8,10')
-setup_graphviz_style(dot)
-
-# Global Level
-
-with dot.subgraph(name='cluster_global') as global_level:
-    global_level.attr(label='Global Level', style='dashed')
-    global_level.node('NAA', 'Network Architect\nAgent')
-    global_level.node('BA', 'Builder Agents')
-    global_level.node('PN', 'Global Network\nLayer')
-    global_level.edge('NAA', 'BA', label='Recommends')
-    global_level.edge('BA', 'PN', label='Implements')
-
-# Mission Level
-
 ![Mission Level architecture. There's a coordinating robot inside a network layer inside a mission. It's robots all the way down.](/assets/images/ai-coordination-army/ai-coordination-army-section-mission-level-bw-academic.jpg)
 
-with dot.subgraph(name='cluster_mission') as mission_level:
-    mission_level.attr(label='Mission Level', style='dashed')
-    mission_level.node('MN', 'Mission Network\nLayer')
-    mission_level.node('CA', 'Coordinating Agent')
-    mission_level.edge('PN', 'MN', label='Contains')
-    mission_level.edge('MN', 'CA', label='Contains')
-
-# Node Level
-
 ![One robot boss watches worker robots while monitor robots watch everybody. We invented middle management for computers.](/assets/images/ai-coordination-army/ai-coordination-army-section-node-level-bw-academic.jpg)
-
-with dot.subgraph(name='cluster_node') as node_level:
-    node_level.attr(label='Node Level', style='dashed')
-    node_level.node('PN1', 'Node A')
-    node_level.node('PN2', 'Node B')
-    node_level.node('TA1', 'Task Agent 1')
-    node_level.node('PMA1', 'Performance\nMonitor')
-    node_level.edge('CA', 'PN1', label='Coordinates')
-    node_level.edge('CA', 'PN2', label='Coordinates')
-    node_level.edge('PN1', 'TA1', label='Contains')
-    node_level.edge('PN1', 'PMA1', label='Contains')
-
-# Render with watermark (design guide compliant)
-
-png_path = render_graphviz_with_watermark(dot, 'ai-coordination-architecture')
-display(IPImage(str(png_path)))
-```
 
 ## Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
 

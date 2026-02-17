@@ -11,64 +11,9 @@ tags:
   - organizational-structure
 image: /assets/og-images/knowledge/legal/legal-framework-og-retro-academic.jpg
 ---
-{{< include /knowledge/includes/setup-parameters.qmd >}}
 
 
-```{python}
-#| echo: false
-import sys
-import os
-from pathlib import Path
-
-# Find project root dynamically (works regardless of where Quarto executes from)
-from dih_models.plotting.chart_style import get_project_root
-
-project_root = get_project_root()
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
-
-from dih_models.parameters import *
-```
-
-
-```{python}
-#| echo: false
-import graphviz
-from pathlib import Path
-from IPython.display import Image as IPImage, display
-
-from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
-
-dot = graphviz.Digraph(comment='Four-Entity Legal Architecture', format='png')
-dot.attr(rankdir='TD', size='14,16')
-setup_graphviz_style(dot)
-
-with dot.subgraph(name='cluster_parent') as parent:
-    parent.attr(label='Parent Organization', style='dashed')
-    parent.node('Swiss', 'DIH Foundation\n(Swiss Foundation)\n"The Soul"\n- Owns Victory Corp\n- Neutral jurisdiction\n- Mission permanence')
-
-with dot.subgraph(name='cluster_entities') as entities:
-    entities.attr(label='Operating Entities', style='dashed')
-    entities.node('C3', '501(c)(3) Public Charity\n"The Brain"\n- Tax-deductible donations\n- Education & research\n- Global referendum')
-    entities.node('C4', '501(c)(4) Social Welfare\n"The Sword"\n- Political advocacy\n- Unlimited lobbying\n- Voter mobilization')
-    entities.node('Corp', 'Victory Corporation\n"The Engine"\n- For-profit\n- Issues VICTORY Incentive Alignment Bonds\n- Investor returns')
-
-dot.node('Foundations', 'Foundations\n(Tax-deductible)')
-dot.node('Donors', 'Political Donors\n(Not deductible)')
-dot.node('Investors', 'Investors\n(Seeking returns)')
-
-dot.edge('Swiss', 'Corp', label='100% Ownership')
-dot.edge('Foundations', 'C3')
-dot.edge('Donors', 'C4')
-dot.edge('Investors', 'Corp')
-dot.edge('C3', 'C4', label='Educates', style='dashed')
-dot.edge('C4', 'Corp', label='Creates Mandate', style='dashed')
-
-png_path = render_graphviz_with_watermark(dot, 'four-entity-legal-architecture')
-display(IPImage(str(png_path)))
-```
-
-## Entity #1: The 501(c)(3) Public Charity ("The Brain")
+## Entity #1: Your 501(c)(3) Public Charity ("The Brain")
 
 **What It Is:** Your standard non-profit. The kind that lets the Gates Foundation give you tax-deductible money.
 
@@ -85,7 +30,7 @@ display(IPImage(str(png_path)))
 
 **Why US 501(c)(3):** Unlocks foundation grants. A non-binding educational survey is clearly educational. The clue is in the name.
 
-## Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
+## Entity #2: Your 501(c)(4) Social Welfare Org ("The Sword")
 
 **What It Is:** Your political advocacy arm. Donations NOT tax-deductible. That's the price of being allowed to have opinions.
 
@@ -111,7 +56,7 @@ display(IPImage(str(png_path)))
 
 **Why Delaware:** More corporations than humans live there [@delaware-corporate-population]. Citizens United means corporations have political speech rights. Your Supreme Court decided that companies are people who can talk, and talking is spending money. This sounds like satire but is actually constitutional law.
 
-## Entity #4: The DIH Foundation ("The Soul")
+## Entity #4: Your DIH Foundation
 
 **What It Is:** The parent organization. Based in Switzerland, where they keep the souls.
 
@@ -180,37 +125,6 @@ Victory Corporation is the part that actually does things. It employs your core 
 
 ![The people who will buy your democracy. Org chart included for transparency, as if that helps.](/assets/images/legal-framework/legal-framework-section-organizational-structure-the-for-profit-management-company-bw-academic.jpg)
 
-```{python}
-#| fig-alt: "Organizational chart showing Board of Directors at top, Managing Director below, with three leads reporting: Capital Markets, Elections & IE Compliance, and Growth & Referrals. Future hires shown with dashed line."
-import graphviz
-from pathlib import Path
-from IPython.display import Image as IPImage, display
-
-from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
-
-dot = graphviz.Digraph(comment='For-Profit SPV Structure', format='png')
-dot.attr(rankdir='TD', size='8,10')
-setup_graphviz_style(dot)
-
-with dot.subgraph(name='cluster_spv') as spv:
-    spv.attr(label='For-Profit Management Co. (SPV)', style='dashed')
-    spv.node('A', 'Board of Directors\n(Investors & Founder)')
-    spv.node('B', 'Managing Director')
-    spv.node('C', 'Capital Markets Lead')
-    spv.node('D', 'Elections & IE Compliance Lead')
-    spv.node('E', 'Growth & Referrals Lead')
-    spv.node('F', 'Future Hires\n(Post-Seed Round)\nEngineering Lead, Design Lead, etc.')
-
-    spv.edge('A', 'B')
-    spv.edge('B', 'C')
-    spv.edge('B', 'D')
-    spv.edge('B', 'E')
-    spv.edge('B', 'F', style='dashed')
-
-png_path = render_graphviz_with_watermark(dot, 'spv-organizational-structure')
-display(IPImage(str(png_path)))
-```
-
 ### The General Staff (G-Staff)
 
 You're fighting a war against disease. Might as well organize like it. Your species has spent thousands of years perfecting how to organize large groups of people to kill each other. Time to use that expertise for the opposite.
@@ -229,34 +143,6 @@ You're fighting a war against disease. Might as well organize like it. Your spec
 Your DIH Foundation watches the Victory Corporation. It makes sure the Corporation doesn't forget why it exists. On your planet, organizations with noble missions tend to drift toward "maximizing shareholder value." That's a polite way of saying "forgetting the point." The Foundation prevents this.
 
 ![Who watches the watchmen? This chart. The chart watches the watchmen.](/assets/images/legal-framework/legal-framework-section-nonprofit-foundation-governance-bw-academic.jpg)
-
-```{python}
-#| fig-alt: "Two boxes: Non-Profit Foundation with Board of Trustees overseeing Executive Director, and For-Profit SPV with Founder & Managing Director. Connection shows mission oversight relationship."
-import graphviz
-from pathlib import Path
-from IPython.display import Image as IPImage, display
-
-from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
-
-dot = graphviz.Digraph(comment='Foundation and SPV Relationship', format='png')
-dot.attr(rankdir='TD', size='8,10')
-setup_graphviz_style(dot)
-
-with dot.subgraph(name='cluster_foundation') as foundation:
-    foundation.attr(label='DIH Foundation (Swiss)', style='dashed')
-    foundation.node('A', 'Board of Trustees\n(Independent, Mission-Aligned)')
-    foundation.node('B', '(Future) Executive Director')
-    foundation.edge('A', 'B')
-
-with dot.subgraph(name='cluster_spv') as spv:
-    spv.attr(label='Victory Corporation (For-Profit)', style='dashed')
-    spv.node('C', 'Founder & Managing Director')
-
-dot.edge('A', 'C', label='Provides Mission\nOversight To', style='dashed')
-
-png_path = render_graphviz_with_watermark(dot, 'foundation-spv-relationship')
-display(IPImage(str(png_path)))
-```
 
 ## Securities Law
 

@@ -40,6 +40,7 @@ bibliography: references.bib
 execute:
   cache: false
   freeze: false
+  echo: false
 
 metadata:
   title: "Test PDF Link Rewriting"
@@ -122,3 +123,9 @@ format:
       - left=1in
       - right=1in
     fontsize: 11pt
+  docx:
+    output-file: "test-book.docx"
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    echo: false

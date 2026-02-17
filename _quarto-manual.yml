@@ -287,6 +287,7 @@ execute:
   daemon-restart: false
   # Send all generated figures to a central directory
   fig-path: "knowledge/figures/"
+  echo: false  # Never show code in any output format
 
 # Tell Quarto to use the project's virtual environment
 # (QUARTO_PYTHON environment variable is set automatically by render_utils.py)
@@ -458,3 +459,9 @@ format:
           \noindent\includegraphics[width=\paperwidth,height=\paperheight]{assets/cover/book-cover-3.jpg}
           \restoregeometry
           \newpage
+  docx:
+    output-file: "How-to-End-War-and-Disease.docx"
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    echo: false
