@@ -1602,7 +1602,7 @@ ADAPTABLE_TRIAL_COST_PER_PATIENT = Parameter(
 )  # $929/patient from PCORI grant; up to ~$1,400 with in-kind
 
 # dFDA Pragmatic Trial Cost - Based on ADAPTABLE Trial (DELIBERATELY CONSERVATIVE)
-# Harvard meta-analysis of 108 trials (Ramsberg & Platt 2017) found median $97/patient
+# Harvard review of 108 embedded pragmatic trials (Ramsberg & Platt 2018); 64 had cost data, median $97/patient
 # We use ADAPTABLE ($929) - a 10x more conservative estimate for credibility
 # Reference: embedded-pragmatic-trials-meta-analysis in references.qmd
 # Central estimate uses ADAPTABLE's empirical cost ($929)
@@ -1612,14 +1612,14 @@ DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT = Parameter(
     929,  # ADAPTABLE trial empirical cost - CONSERVATIVE choice
     source_ref=ReferenceID.PRAGMATIC_TRIALS_COST_ADVANTAGE,
     source_type="external",
-    description="dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.",
+    description="dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.",
     display_name="dFDA Pragmatic Trial Cost per Patient",
     unit="USD/patient",
     confidence="medium",
     keywords=["dfda", "pragmatic", "trial", "cost", "per patient", "pcornet", "adaptable", "conservative"],
     distribution="lognormal",
     confidence_interval=(97, 3000),  # Evidence-based range:
-                                      # - Floor ($97): Meta-analysis median (n=108 trials)
+                                      # - Floor ($97): Meta-analysis median (64 trials with cost data, out of 108 reviewed)
                                       # - Central ($929): ADAPTABLE trial (conservative choice)
                                       # - Ceiling ($3,000): Complex chronic disease trials
     latex_symbol=r"Cost_{pragmatic,pt}",  # LaTeX symbol for equations
@@ -6041,7 +6041,7 @@ PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT = Parameter(
     97.0,
     source_ref="pmc-pragmatic-trial-cost",
     source_type="external",
-    description="Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).",
+    description="Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 2018: 108 trials reviewed, 64 with cost data). IQR: $19-$478 (2015 USD).",
     display_name="Pragmatic Trial Median Cost per Patient (PMC Review)",
     unit="USD/patient",
     confidence="high",

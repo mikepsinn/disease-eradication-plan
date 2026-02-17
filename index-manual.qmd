@@ -278,7 +278,7 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 
 ### The Evidence
 
-- **Oxford Already Did It**: [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}}/patient (vs {{< var traditional_phase3_cost_per_patient >}} standard), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality.
+- [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}}/patient (vs {{< var traditional_phase3_cost_per_patient >}} standard), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality. A [systematic review of pragmatic trials](/knowledge/appendix/pragmatic-vs-explanatory-trials.qmd) found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient {{< var pmc_pragmatic_trial_median_cost_per_patient_cite >}}.
 - **You've Done This Before**: [After WW2, humans cut military spending by 30%](/knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1%.
 
 ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
