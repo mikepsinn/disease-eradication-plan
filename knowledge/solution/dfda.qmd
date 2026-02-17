@@ -21,6 +21,8 @@ Half of humanity would volunteer [@patient-willingness-clinical-trials] if they 
 
 This isn't because people don't want to help find cures. The current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates].
 
+Meanwhile, the system that's supposed to catch dangerous side effects misses 90-99% of them. Only 1-10% of adverse drug events are ever reported to the FDA [@adverse-event-underreporting]. No denominator data. No effect sizes. No way to calculate how often a drug actually hurts people. The safety monitoring system is a suggestion box that nobody uses.
+
 **We're not facing a recruitment problem. We're facing a capacity problem.**
 
 ## The Solution: Consumer Reports for Drugs
@@ -133,13 +135,29 @@ Skeptics say, "Correlation isn't causation!" They point to flip-flopping egg adv
 
 But now there's enough data and computing power to make each person their own control group. Track arthritis pain for a month. Take Turmeric, stop, start again. The pattern reveals whether it works or if it's coincidence.
 
-Modern statistical methods are so good that a meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] confirmed this. The results from high-quality observational studies generally match those from expensive, slow randomized controlled trials.
+A landmark meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] settled this debate. Researchers compared observational studies against randomized controlled trials across 19 different treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. The result: nearly identical effect sizes.
 
-![Watching what happens versus making it happen, and which one is better at predicting who dies.](../../assets/images/observational-vs-randomized-effect-sizes.png)
+![Forest plot comparing effect sizes from observational studies vs. RCTs for cardiac treatments. The dots land in the same place. The expensive method and the cheap method found the same answers.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
-The evidence is clear: high-quality observational studies produce results comparable to RCTs.
+![Forest plot comparing effect sizes from observational studies vs. RCTs across surgery, ophthalmology, and obstetrics. Nineteen comparisons. Nineteen agreements.](../../assets/images/observational-vs-randomized-trial-effect-sizes.png)
 
-You have the tools to get reliable answers from real-world data. You just refuse to use them.
+Each pair of dots represents the same treatment tested two ways: one observational (cheap, fast, real patients) and one randomized controlled (expensive, slow, cherry-picked patients). In nearly every comparison, the confidence intervals overlap. Both methods found the same treatments work and the same treatments don't.
+
+### The Two-Stage Pipeline: Watch First, Then Test
+
+Observational data finds the signals. But correlation still isn't proof. So the framework uses a two-stage pipeline:
+
+**Stage 1 (Signal Detection):** Aggregate data from millions of patients. Score each treatment-outcome relationship using six Bradford Hill causality criteria [@bradford-hill-1965]: How strong is the effect? How consistent across people? Does the treatment come before the improvement? Is there a dose-response pattern? Cost: ~{{< var dfda_observational_cost_per_patient >}} per patient.
+
+**Stage 2 (Confirmation):** The top signals (the 0.1-1% most promising) proceed to pragmatic trials embedded in routine care. Simple randomization. Real patients. Real conditions. Cost: ~{{< var dfda_pragmatic_trial_cost_per_patient >}} per patient. This eliminates confounding and proves causation.
+
+Stage 1 filters millions of possibilities for almost nothing. Stage 2 confirms the winners for 1/80th the cost of traditional trials. The result: every treatment gets an evidence grade.
+
+- **Validated**: Confirmed by pragmatic trial
+- **Promising**: Strong observational signal, awaiting trial
+- **Signal**: Hypothesis only, needs more data
+
+The cheap stage does the hard work of searching. The expensive stage only runs on candidates that deserve it. Instead of spending $57 million testing one drug, you spend $1 watching a million treatments and $500 confirming the ones that work.
 
 ### Introducing FDA.gov 2.0: Now With 80% Less Death
 
@@ -411,6 +429,8 @@ Results:
 
 The FDA's response: "But did they file the correct paperwork?"
 
+RECOVERY wasn't a fluke. A Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] found median costs of just $97 per patient. The PCORnet ADAPTABLE trial enrolled 15,076 patients across 40 clinical sites at {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage]. This model works across therapeutic areas, across countries, across decades. The evidence base for cheap, fast, embedded trials isn't one study. It's 108 and counting.
+
 ### Wikipedia for Whether You'll Die
 
 The system includes **Clinipedia**: Wikipedia, but instead of arguing about whether tomatoes are fruits, people argue about whether they cure cancer.
@@ -461,6 +481,8 @@ The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead o
 
 It connects to your wearables, apps, and medical records to find what's killing you while your doctor is still trying to remember your name. Every doctor who ever lived, in your pocket, and they actually agree on something.
 
+It also does something no doctor can: precision dosing. By analyzing what dose preceded your best outcomes, it generates personalized recommendations. Not "take some magnesium." Instead: "Your sleep quality was highest after 400mg of Magnesium over the previous 24 hours." Optimal doses derived from your data, not a study of 36 college students in 1997.
+
 ## The Digital Twin Safe: Your Medical Data's Panic Room
 
 <img src="../../assets/images/human-file-system.png" alt="Digital Twin Safe" style="max-width: 600px; width: 100%;" />
@@ -491,11 +513,35 @@ Food has nutrition labels. Cigarettes have warning labels. Drugs have... incompr
 
 No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
 
+Here's what an Outcome Label for depression would actually look like:
+
+**OUTCOME LABEL: Depression Severity**
+*Based on 47,832 participants*
+
+**Treatments Ranked by Effect Size**
+
+| Rank | Treatment | Effect | Sample Size | Optimal Dose |
+|:-----|:----------|:-------|:------------|:-------------|
+| 1 | Exercise | -31.2% | 12,847 | 45 min/day |
+| 2 | Bupropion | -28.3% | 2,847 | 300mg |
+| 3 | Sertraline | -24.7% | 5,123 | 100mg |
+| 4 | Sleep (7-9 hrs) | -22.1% | 31,204 | 8.2 hrs |
+| 5 | Venlafaxine | -21.2% | 1,892 | 150mg |
+| 6 | Omega-3 | -18.9% | 4,521 | 2000mg EPA+DHA |
+| 7 | Meditation | -16.4% | 8,932 | 20 min/day |
+| 8 | Fluoxetine | -15.8% | 3,456 | 40mg |
+
+**Makes It Worse:** Alcohol >2/day (+23.4%), sleep deprivation (+19.8%), social isolation (+15.2%)
+
+**No Significant Effect:** Multivitamin, Probiotics, B-complex, Ashwagandha, 5-HTP
+
+Notice anything? Exercise beats every drug. Sleep beats most drugs. Your doctor probably didn't mention that because there's no pharmaceutical rep buying lunch to promote jogging. This is what happens when you rank treatments by outcomes instead of by marketing budget.
+
 ![The Depression Crusher 3000. Improves your mood 60 percent, ruins your sex life 40 percent. Every medicine is a negotiation with your body.](/assets/images/dfda/dfda-section-side-effects-bw-academic.jpg)
 
-**Example: DEPRESSION CRUSHER 3000™**
+Or, if you prefer your outcome labels with personality:
 
-*Outcome Label*
+**DEPRESSION CRUSHER 3000™** *(Outcome Label)*
 
 Based on 50,000 humans who tried this:
 
@@ -507,23 +553,7 @@ Based on 50,000 humans who tried this:
 
 *This label based on actual humans, not laboratory rats who've never paid rent*
 
-## The Disease Eradication Act: Making It Legal to Not Die
 
-<img src="../../assets/images/right_to_trial_act_image.jpg" alt="Disease Eradication Act" style="max-width: 600px; width: 100%;" />
-
-This solution requires a law that says: "Dying people can try things that might help them not die."
-
-The fact that this requires a law tells you everything about your species.
-
-**The Right to Trial Act** (working title: "The Stop Being Stupid About Medicine Act"):
-
-**Section 1**: If you're dying, you can try experimental treatments.
-**Section 2**: What happens is written down.
-**Section 3**: Other dying people can read what is written.
-**Section 4**: Repeat until nobody's dying.
-**Section 5**: Seriously, how was this not already the law?
-
-Congress will debate this for 17 years. That's the same time it takes to approve one drug.
 
 ## The Future: Where Death Becomes Embarrassing
 
@@ -553,7 +583,7 @@ Diseases are mostly solved. Death becomes a choice, like smoking or voting Repub
 
 The last FDA form is filled out. It's immediately lost. Nobody notices.
 
-### How Your Framework Actually Works
+### How Your dFDA Actually Works
 
 ::: {.content-hidden when-format="epub"}
 ::: {.content-hidden when-format="pdf"}
