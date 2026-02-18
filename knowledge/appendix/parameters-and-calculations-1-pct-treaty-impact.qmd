@@ -5807,7 +5807,7 @@ Cost per DALY for deworming programs (range $28-82, midpoint estimate). GiveWell
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Harvard meta-analysis of 108 trials found median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
 
 **Source**: [@pragmatic-trials-cost-advantage]
 
@@ -6843,7 +6843,7 @@ Phase I safety trial duration
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Median cost per patient in embedded pragmatic clinical trials (systematic review of 64 trials). IQR: $19-$478 (2015 USD).
+Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 2018: 108 trials reviewed, 64 with cost data). IQR: $19-$478 (2015 USD).
 
 **Source**: [@pmc-pragmatic-trial-cost]
 

@@ -155,6 +155,7 @@ book:
         - knowledge/appendix/real-world-evidence-historical-success.qmd # ✅ Pre-1962 system analysis ~12p
         - knowledge/papers.qmd
         - knowledge/references.qmd # CSL-rendered bibliography
+        - knowledge/appendix/copyright.qmd # Back matter - copyright page at end for Kindle
 
 # Project-level metadata (applies to all documents)
 metadata:

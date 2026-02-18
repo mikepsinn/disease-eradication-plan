@@ -1,6 +1,6 @@
 {
   "totalSites": 15,
-  "totalPages": 60,
+  "totalPages": 61,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -583,7 +583,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/references.qmd",
@@ -1170,7 +1170,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -1747,7 +1747,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -2325,7 +2325,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -2856,7 +2856,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/references.qmd",
@@ -3446,7 +3446,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -4023,7 +4023,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -4196,7 +4196,7 @@
             "Hidden Costs of War"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/problem/cost-of-disease.qmd",
@@ -4386,7 +4386,7 @@
             "The Solution They Don't Want"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/economics/central-banks.qmd",
@@ -4595,7 +4595,7 @@
             "Summary: Your Coordination Layer"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-16"
         },
         {
           "path": "knowledge/solution/wishocracy.qmd",
@@ -4622,7 +4622,7 @@
             "From Priorities to Projects"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/solution/dfda.qmd",
@@ -4638,48 +4638,40 @@
           ],
           "sections": [
             "The Solution: Consumer Reports for Drugs",
-            "How Companies Register Treatments (5 Minutes, Zero Approval Needed)",
-            "The Payment Flow (Or: How Everyone Profits Except Disease)",
-            "Why This Creates Unlimited Research Capacity",
             "How It Works: Just Let People Try Stuff (Carefully)",
             "The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)",
-            "Introducing FDA.gov 2.0: Now With 80% Less Death",
+            "The Two-Stage Pipeline: Watch First, Then Test",
+            "Proof It Works (While the FDA Wasn't Looking)",
+            "The Oxford Recovery Trial: How the British Accidentally Saved Medicine",
+            "What You'd See: FDA.gov 2.0",
             "Step 1: Type in What's Killing You",
             "Step 2: See What Actually Works (Based on Reality, Not Theory)",
-            "Step 2.5: See the Future (With Financially-Backed Predictions)",
             "Step 3: Join a Trial from Your Couch (While Dying Comfortably)",
             "Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)",
             "Step 5: Publish Results",
             "Step 6: Everyone Benefits from Everyone's Suffering",
-            "The Partnership Approach: Building Rails, Not Trains",
-            "The Players Already in the Game",
-            "The Integration Consortium",
-            "Why They'll Cooperate",
-            "Federated, Not Centralized",
+            "Outcome Labels: Nutrition Facts for Drugs",
+            "Your Personal Death-Prevention Assistant: The FDAi",
+            "Making It Legal to Not Die",
+            "The Business Model: How Everyone Profits Except Disease",
+            "How Companies Register Treatments (5 Minutes, Zero Approval Needed)",
+            "The Payment Flow",
+            "Why This Creates Unlimited Research Capacity",
             "The Money Shot: How to Save 95% on Not Killing People",
             "The Itemized Receipt of Eliminated Stupidity",
+            "The Partnership Approach: Building Rails, Not Trains",
+            "The Players Already in the Game",
+            "Federated, Not Centralized",
             "Why This Works: The Mathematical Impossibility of Committees",
-            "The Math That Proves Centralization Can't Work",
-            "Why 200 People Can't Replace 8 Billion",
-            "The Solution: Let 8 Billion Experts Make 8 Billion Decisions",
-            "Real Examples of This Working (While the FDA Wasn't Looking)",
-            "The Oxford Recovery Trial: How the British Accidentally Saved Medicine",
-            "Wikipedia for Whether You'll Die",
-            "Become a Scientist from Your Couch",
-            "Your Personal Death-Prevention Assistant: The FDAi",
-            "The Digital Twin Safe: Your Medical Data's Panic Room",
-            "Outcome Labels: Nutrition Facts for Drugs",
-            "Cognitive Improvements",
-            "The Disease Eradication Act: Making It Legal to Not Die",
             "The Future: Where Death Becomes Embarrassing",
             "2027: The Beginning of the End of Dying Slowly",
             "2030: Big Pharma Pivots or Dies",
             "2035: The Great Revelation",
             "2050: Death Becomes Opt-In",
-            "How Your Framework Actually Works"
+            "How Your dFDA Actually Works"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/solution/aligning-incentives.qmd",
@@ -4910,7 +4902,7 @@
             "The Two Paths"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-16"
         },
         {
           "path": "knowledge/futures/moronia.qmd",
@@ -4925,7 +4917,6 @@
             "collapse"
           ],
           "sections": [
-            "The Discovery (And Why I Regret Making It)",
             "What I Tried to Tell Them",
             "How They Killed Themselves: A Timeline",
             "The Economics of Extinction: Why Collapse Was Inevitable",
@@ -4950,7 +4941,7 @@
             "My Warning to You"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/futures/wishonia.qmd",
@@ -5074,7 +5065,7 @@
             "The Endgame"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-16"
         },
         {
           "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
@@ -5132,12 +5123,12 @@
             "organizational-structure"
           ],
           "sections": [
-            "Entity #1: The 501(c)(3) Public Charity (\"The Brain\")",
+            "Entity #1: Your 501(c)(3) Public Charity (\"The Brain\")",
             "What It Does",
-            "Entity #2: The 501(c)(4) Social Welfare Org (\"The Sword\")",
+            "Entity #2: Your 501(c)(4) Social Welfare Org (\"The Sword\")",
             "Entity #3: The Victory Corporation (\"The Engine\")",
             "What It Does",
-            "Entity #4: The DIH Foundation (\"The Soul\")",
+            "Entity #4: Your DIH Foundation",
             "What It Does",
             "Why This Four-Part Structure Works",
             "Legal Specialization",
@@ -5163,7 +5154,7 @@
             "Exemptions for Certified Platforms"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/legal/election-law.qmd",
@@ -5298,7 +5289,7 @@
             "Conclusion: Democracy Theater at Its Finest"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-16"
         },
         {
           "path": "knowledge/strategy/global-referendum.qmd",
@@ -5334,7 +5325,7 @@
             "On Why 3.5% Is The Magic Number"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-16"
         },
         {
           "path": "knowledge/solution/ai-coordination-army.qmd",
@@ -5363,7 +5354,7 @@
             "Rule 1 - Share to Play"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/strategy/co-opting-defense-contractors.qmd",
@@ -5499,14 +5490,6 @@
             "The Bonus Savings: $114B/Year",
             "Where the $114B Comes From",
             "The Formulas",
-            "Military vs Disease Research: The Opportunity",
-            "Peace Dividend Breakdown by Category",
-            "Peace Dividend Composition",
-            "Captured vs. Societal Dividend",
-            "How Confident Should You Be?",
-            "What Matters Most",
-            "Full Range of Outcomes",
-            "Odds of Hitting Any Target",
             "The Elasticity Question",
             "Key Findings",
             "What You're Assuming (and Where It Gets Shaky)",
@@ -5517,7 +5500,7 @@
             "The Safe Bet"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/economics/health-dividend.qmd",
@@ -6110,7 +6093,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/appendix/recovery-trial.qmd",
@@ -6172,7 +6155,7 @@
             "The Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-17"
         },
         {
           "path": "knowledge/papers.qmd",
@@ -6211,9 +6194,16 @@
           ],
           "published": false,
           "lastmod": "2026-01-27"
+        },
+        {
+          "path": "knowledge/appendix/copyright.qmd",
+          "url": "https://manual.WarOnDisease.org/appendix/copyright.html",
+          "title": "Copyright",
+          "published": true,
+          "lastmod": "2026-02-17"
         }
       ],
-      "pageCount": 46
+      "pageCount": 47
     },
     {
       "id": "obg",
@@ -6774,7 +6764,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -7440,7 +7430,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -8073,7 +8063,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -8642,7 +8632,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1
@@ -9218,7 +9208,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-17"
         }
       ],
       "pageCount": 1

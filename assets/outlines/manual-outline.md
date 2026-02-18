@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 46 | **Words:** 114,773
+**Files:** 47 | **Words:** 112,748
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 4,445 words | 554 lines
+**Stats:** 3,924 words | 481 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -21,10 +21,6 @@
       - Future A: You Ignore This Book
       - Future B: You Follow Instructions
     - In Conclusion
-  - TL;DR
-    - How You Fix This
-    - Personalized Bribery Packages
-    - The Alternative
   - The Problem
     - The Daily Deletion Event
     - The Unexplored Therapeutic Frontier
@@ -82,7 +78,7 @@
 #### knowledge/problem/cost-of-war.qmd
 **Title:** The Cost of War
 **Description:** Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
-**Stats:** 3,598 words | 473 lines
+**Stats:** 3,546 words | 470 lines
 
   - The Itemized Receipt for Armageddon
     - The Shopping List (2024 Global Data)
@@ -231,7 +227,7 @@
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
 **Description:** Why democracy mathematically serves money over voters, and how to exploit that bug
-**Stats:** 2,863 words | 432 lines
+**Stats:** 2,832 words | 430 lines
 
   - Democracy
   - The Rational Ignorance Problem
@@ -438,7 +434,7 @@
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
 **Description:** How to allocate $27.2B and prevent it from getting stolen by parasitic lobbyists and special interests (as is the custom)
-**Stats:** 1,148 words | 147 lines
+**Stats:** 1,144 words | 145 lines
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
     - What your [decentralized framework for drug assessment (dFDA)](dfda.qmd) handles automatically:
@@ -454,56 +450,43 @@
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
 **Description:** Increasing trial capacity 12.3x (95% CI: 4.19x-61.3x) by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost
-**Stats:** 4,668 words | 683 lines
+**Stats:** 3,903 words | 484 lines
 
   - The Solution: Consumer Reports for Drugs
-    - How Companies Register Treatments (5 Minutes, Zero Approval Needed)
-      - Net cost to company: $0
-    - The Payment Flow (Or: How Everyone Profits Except Disease)
-      - Example
-      - Company receives
-    - Why This Creates Unlimited Research Capacity
-      - Traditional model (bottleneck)
   - How It Works: Just Let People Try Stuff (Carefully)
     - The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause)
-    - Introducing FDA.gov 2.0: Now With 80% Less Death
+    - The Two-Stage Pipeline: Watch First, Then Test
+  - Proof It Works (While the FDA Wasn't Looking)
+    - The Oxford Recovery Trial: How the British Accidentally Saved Medicine
+  - What You'd See: FDA.gov 2.0
     - Step 1: Type in What's Killing You
     - Step 2: See What Actually Works (Based on Reality, Not Theory)
-    - Step 2.5: See the Future (With Financially-Backed Predictions)
-      - Why Trust This?
     - Step 3: Join a Trial from Your Couch (While Dying Comfortably)
     - Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving)
     - Step 5: Publish Results
     - Step 6: Everyone Benefits from Everyone's Suffering
-  - The Partnership Approach: Building Rails, Not Trains
-    - The Players Already in the Game
-    - The Integration Consortium
-    - Why They'll Cooperate
-    - Federated, Not Centralized
+  - Outcome Labels: Nutrition Facts for Drugs
+  - Your Personal Death-Prevention Assistant: The FDAi
+  - Making It Legal to Not Die
+  - The Business Model: How Everyone Profits Except Disease
+    - How Companies Register Treatments (5 Minutes, Zero Approval Needed)
+      - Net cost to company: $0
+    - The Payment Flow
+      - Example
+      - Company receives
+    - Why This Creates Unlimited Research Capacity
   - The Money Shot: How to Save 95% on Not Killing People
     - The Itemized Receipt of Eliminated Stupidity
+  - The Partnership Approach: Building Rails, Not Trains
+    - The Players Already in the Game
+    - Federated, Not Centralized
   - Why This Works: The Mathematical Impossibility of Committees
-    - The Math That Proves Centralization Can't Work
-    - Why 200 People Can't Replace 8 Billion
-    - The Solution: Let 8 Billion Experts Make 8 Billion Decisions
-      - Current system
-  - Real Examples of This Working (While the FDA Wasn't Looking)
-    - The Oxford Recovery Trial: How the British Accidentally Saved Medicine
-    - Wikipedia for Whether You'll Die
-      - Current Treatments Ranked by Not-Dying Score
-    - Become a Scientist from Your Couch
-  - Your Personal Death-Prevention Assistant: The FDAi
-  - The Digital Twin Safe: Your Medical Data's Panic Room
-  - Outcome Labels: Nutrition Facts for Drugs
-    - Cognitive Improvements
-      - Side Effects
-  - The Disease Eradication Act: Making It Legal to Not Die
   - The Future: Where Death Becomes Embarrassing
     - 2027: The Beginning of the End of Dying Slowly
     - 2030: Big Pharma Pivots or Dies
     - 2035: The Great Revelation
     - 2050: Death Becomes Opt-In
-    - How Your Framework Actually Works
+    - How Your dFDA Actually Works
 
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
@@ -695,9 +678,8 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization decided murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 4,472 words | 593 lines
+**Stats:** 4,406 words | 582 lines
 
-  - The Discovery (And Why I Regret Making It)
   - What I Tried to Tell Them
   - How They Killed Themselves: A Timeline
     - The Economics of Extinction: Why Collapse Was Inevitable
@@ -802,7 +784,7 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,145 words | 296 lines
+**Stats:** 3,141 words | 294 lines
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     - Step 1: Collect Papers from Rich People
@@ -861,14 +843,14 @@
 #### knowledge/legal/legal-framework.qmd
 **Title:** Legal Architecture
 **Description:** How to Stay Out of Prison While Revolutionizing Global Healthcare
-**Stats:** 2,931 words | 392 lines
+**Stats:** 2,538 words | 278 lines
 
-  - Entity #1: The 501(c)(3) Public Charity ("The Brain")
+  - Entity #1: Your 501(c)(3) Public Charity ("The Brain")
     - What It Does
-  - Entity #2: The 501(c)(4) Social Welfare Org ("The Sword")
+  - Entity #2: Your 501(c)(4) Social Welfare Org ("The Sword")
   - Entity #3: The Victory Corporation ("The Engine")
     - What It Does
-  - Entity #4: The DIH Foundation ("The Soul")
+  - Entity #4: Your DIH Foundation
     - What It Does
   - Why This Four-Part Structure Works
     - Legal Specialization
@@ -1079,7 +1061,7 @@
 #### knowledge/solution/ai-coordination-army.qmd
 **Title:** Building Your AI Coordination Army
 **Description:** How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
-**Stats:** 3,440 words | 288 lines
+**Stats:** 3,233 words | 226 lines
 
   - Where Your Agents Get Their Missions (Not From a Management Consultant)
   - The Secret to Success: Cross-Sector Coordination (Forces for Good)
@@ -1188,21 +1170,13 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,332 words | 201 lines
+**Stats:** 1,238 words | 168 lines
 
   - How 1% Less Violence Pays For Everything
     - The Captured Money: $27.2B/Year
     - The Bonus Savings: $114B (95% CI: $90.1B-$141B)/Year
     - Where the $114B (95% CI: $90.1B-$141B) Comes From
   - The Formulas
-  - Military vs Disease Research: The Opportunity
-  - Peace Dividend Breakdown by Category
-  - Peace Dividend Composition
-  - Captured vs. Societal Dividend
-  - How Confident Should You Be?
-    - What Matters Most
-    - Full Range of Outcomes
-    - Odds of Hitting Any Target
     - The Elasticity Question
   - Key Findings
   - What You're Assuming (and Where It Gets Shaky)
@@ -1312,7 +1286,7 @@
 #### knowledge/appendix/real-world-evidence-historical-success.qmd
 **Title:** Real-World Evidence Historical Success (Pre-1962)
 **Description:** How decentralized physician trials from 1883-1962 achieved 4 years/decade life expectancy gains, and what happened when the 1962 regulations replaced them with industry-controlled trials
-**Stats:** 1,742 words | 231 lines
+**Stats:** 1,757 words | 233 lines
 
   - Historical Evidence: Why Real-World Evidence Works Better
     - 10,000 Years of Dying at 30
@@ -1357,3 +1331,7 @@
 **Title:** Source Quotes and References
 **Description:** Bibliography and citations for all sources cited
 **Stats:** 62 words | 22 lines
+
+#### knowledge/appendix/copyright.qmd
+**Title:** Copyright
+**Stats:** 97 words | 27 lines

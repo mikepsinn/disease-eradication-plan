@@ -62,8 +62,6 @@ The treaty passes. {{< var treaty_annual_funding >}}/year flows from murder to m
 
 For humans who need more steps (you do seem to enjoy steps), here's the same thing with extra details. It's like a flowchart, except instead of managing a warehouse it's saving your species.
 
-{{< include ../figures/five-step-strategy-flowchart.qmd >}}
-
 **Step 1: Sell Papers That Make More Papers**
 
 Raise {{< var treaty_campaign_total_cost >}} by selling [VICTORY Incentive Alignment Bonds](../economics/victory-bonds.qmd) to investors. These are like war bonds except backwards. Instead of funding death, they fund not-death. This confuses some humans, but the {{< var victory_bond_annual_return_pct >}} returns help them overcome their confusion.
