@@ -20,11 +20,14 @@ Usage:
     results = generate_all_paper_parameters_qmd(project_root, parameters)
 """
 
+import logging
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
 from dih_models.yaml_utils import load_quarto_config
+
+logger = logging.getLogger("dih.paper_params")
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
@@ -170,13 +173,13 @@ def generate_all_paper_parameters_qmd(
             all_variables.update(file_vars)
 
         if not all_variables:
-            print(f"[*] {config_name}: no variables found, skipping parameters appendix")
+            logger.debug("%s: no variables found, skipping parameters appendix", config_name)
             continue
 
         # Trace dependencies to get all required parameters
         required_params = get_all_required_parameters(all_variables, parameters)
 
-        print(f"[*] {config_name}: {len(all_variables)} variables -> {len(required_params)} parameters (with dependencies)")
+        logger.debug("%s: %d variables -> %d parameters (with dependencies)", config_name, len(all_variables), len(required_params))
 
         # Filter parameters to only those required
         filtered_parameters = {k: v for k, v in parameters.items() if k in required_params}
@@ -226,8 +229,8 @@ if __name__ == "__main__":
     gen_module = import_module("generate-everything-parameters-variables-calculations-references")
     parameters = gen_module.parse_parameters_file(params_file)
 
-    print(f"[*] Loaded {len(parameters)} parameters")
-    print(f"[*] Generating per-paper parameters appendices...")
+    logger.debug("Loaded %d parameters", len(parameters))
+    logger.debug("Generating per-paper parameters appendices...")
 
     results = generate_all_paper_parameters_qmd(
         project_root=project_root,
@@ -236,4 +239,4 @@ if __name__ == "__main__":
         params_file=params_file
     )
 
-    print(f"[OK] Generated {len(results)} paper-specific appendices")
+    logger.debug("Generated %d paper-specific appendices", len(results))

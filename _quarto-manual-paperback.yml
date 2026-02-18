@@ -161,6 +161,8 @@ metadata:
   csl: nature-annotated.csl
 
 format:
+  docx:
+    output-file: "How-to-End-War-and-Disease-Paperback.docx"
   pdf:
     output-file: "How-to-End-War-and-Disease-Paperback.pdf"
     documentclass: report

@@ -52,6 +52,7 @@ Output:
 The generated files enable academic rigor with zero manual maintenance.
 """
 
+import logging
 import re
 import subprocess
 import sys
@@ -150,6 +151,8 @@ from dih_models.validation import (
 from dih_models.variables_yml_generator import generate_variables_yml
 from dih_models.formatting import format_parameter_value
 
+logger = logging.getLogger("dih.generate")
+
 # Delayed imports placeholders
 simulate = None
 one_at_a_time_sensitivity = None
@@ -180,7 +183,7 @@ def init_uncertainty():
     except ImportError:
         pass
     except Exception as e:
-        print(f"[WARN] Failed to load uncertainty module: {e}")
+        logger.warning(f"[WARN] Failed to load uncertainty module: {e}")
 
 
 def parse_parameters_file(parameters_path: Path) -> Dict[str, Dict[str, Any]]:
@@ -283,7 +286,7 @@ def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: P
     This is OPTIONAL and only runs when --inject-citations flag is used.
     """
     if not qmd_path.exists():
-        print(f"[WARN] QMD file not found: {qmd_path}")
+        logger.warning(f"[WARN] QMD file not found: {qmd_path}")
         return
 
     # Read file
@@ -332,11 +335,11 @@ def inject_citations_into_qmd(parameters: Dict[str, Dict[str, Any]], qmd_path: P
         with open(qmd_path, "w", encoding="utf-8", newline='\n') as f:
             f.write(modified_content)
 
-        print(f"[OK] Injected citations into {qmd_path}")
-        print(f"     {len(citation_map)} parameters with citations available")
-        print(f"     Modified {changes} characters")
+        logger.debug(f"[OK] Injected citations into {qmd_path}")
+        logger.debug(f"     {len(citation_map)} parameters with citations available")
+        logger.debug(f"     Modified {changes} characters")
     else:
-        print("[OK] No citation injection needed (already present or no external params)")
+        logger.debug("[OK] No citation injection needed (already present or no external params)")
 
 
 # Chart generation functions moved to scripts/chart_generators.py
@@ -427,13 +430,20 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
     with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.writelines(lines)
 
-    print(f"[OK] Wrote parameter summary to {output_path.relative_to(output_path.parent.parent)}")
+    logger.debug(f"[OK] Wrote parameter summary to {output_path.relative_to(output_path.parent.parent)}")
 
 
 from dih_models.environment_logger import log_environment_info, log_mc_fingerprint, enforce_reproducible_environment
 
 
 def main():
+    # Set up logging early (check for -v/--verbose before full arg parsing)
+    verbose = "-v" in sys.argv or "--verbose" in sys.argv
+    logging.basicConfig(
+        level=logging.DEBUG if verbose else logging.INFO,
+        format='%(message)s'
+    )
+
     # Verify numpy/scipy versions for reproducible MC results
     # Skip check if --no-version-check flag is passed (for testing)
     if "--no-version-check" not in sys.argv:
@@ -461,29 +471,27 @@ def main():
     # Parse references.bib FIRST (before parameters.py, to avoid circular dependency)
     # references.bib is the single source of truth for all citations
     # Parse ONCE and reuse for all generators (major performance optimization)
-    print("[*] Parsing references.bib...")
+    logger.debug("[*] Parsing references.bib...")
     bib_path = project_root / "references.bib"
     from dih_models.reference_parser import parse_references_bib
     citation_data = parse_references_bib(bib_path)
     available_refs = set(citation_data.keys())  # Derive keys from full parse
-    print(f"[OK] Found {len(available_refs)} reference entries")
-    print()
+    logger.info(f"[OK] Found {len(available_refs)} reference entries")
 
     # Add any Quarto papers with DOIs that aren't in references.bib yet
-    print("[*] Checking Quarto configs for new paper references...")
+    logger.debug("[*] Checking Quarto configs for new paper references...")
     added_papers = update_references_from_quarto(project_root, existing_citation_data=citation_data)
     if added_papers:
         # Re-parse references.bib to include newly added entries
-        print("[*] Re-parsing references.bib with new entries...")
+        logger.debug("[*] Re-parsing references.bib with new entries...")
         citation_data = parse_references_bib(bib_path)
         available_refs = set(citation_data.keys())
-        print(f"[OK] Now have {len(available_refs)} reference entries")
+        logger.debug(f"[OK] Now have {len(available_refs)} reference entries")
     else:
-        print("[OK] All Quarto papers already in references.bib")
-    print()
+        logger.debug("[OK] All Quarto papers already in references.bib")
 
     # Generate reference_ids.py enum SECOND (before loading parameters.py which imports it)
-    print("[*] Generating dih_models/reference_ids.py...")
+    logger.debug("[*] Generating dih_models/reference_ids.py...")
     reference_ids_path = project_root / "dih_models" / "reference_ids.py"
     generate_reference_ids_enum(available_refs, reference_ids_path)
 
@@ -496,16 +504,15 @@ def main():
         print(f"[ERROR] Parameters file not found: {parameters_path}", file=sys.stderr)
         sys.exit(1)
 
-    print(f"[*] Parsing {parameters_path}...")
+    logger.debug(f"[*] Parsing {parameters_path}...")
     parameters = parse_parameters_file(parameters_path)
-    print(f"[OK] Found {len(parameters)} numeric parameters")
-    print()
+    logger.info(f"[OK] Found {len(parameters)} numeric parameters")
 
     # Track fatal validation errors
     has_fatal_error = False
 
     # Validate that all external source_refs exist in references.qmd
-    print("[*] Validating external source references...")
+    logger.debug("[*] Validating external source references...")
     missing_refs, used_refs = validate_references(parameters, available_refs)
 
     if missing_refs:
@@ -527,11 +534,10 @@ def main():
         # Mark as fatal error so we exit with code 1 at the end
         has_fatal_error = True
     else:
-        print(f"[OK] All {len(set(used_refs))} external references validated")
-        print()
+        logger.info(f"[OK] All {len(set(used_refs))} external references validated")
 
     # Validate calculated parameters have formulas
-    print("[*] Validating calculated parameters...")
+    logger.debug("[*] Validating calculated parameters...")
     suspicious_params = validate_calculated_parameters(parameters)
 
     if suspicious_params:
@@ -546,11 +552,10 @@ def main():
         has_fatal_error = True
         print()
     else:
-        print("[OK] All calculated parameters have formulas or latex equations")
-        print()
+        logger.info("[OK] All calculated parameters have formulas or latex equations")
 
     # Validate calculated parameters don't have their own uncertainty (should derive from inputs)
-    print("[*] Validating uncertainty is only on input parameters...")
+    logger.debug("[*] Validating uncertainty is only on input parameters...")
     uncertainty_problems = validate_calculated_params_no_uncertainty(parameters)
 
     if uncertainty_problems:
@@ -564,27 +569,24 @@ def main():
         has_fatal_error = True
         print()
     else:
-        print("[OK] All calculated parameters derive uncertainty from inputs")
-        print()
+        logger.info("[OK] All calculated parameters derive uncertainty from inputs")
 
     # Validate formula strings use full parameter names (informational only)
     # Note: LaTeX auto-generation now infers operation from compute(), so formula is optional
-    print("[*] Checking formula strings (informational)...")
+    logger.debug("[*] Checking formula strings (informational)...")
     formula_mismatches = validate_formula_uses_full_param_names(parameters)
 
     if formula_mismatches:
-        print(f"[INFO] {len(formula_mismatches)} formulas use abbreviated names (this is OK - operation inferred from compute)")
+        logger.debug(f"[INFO] {len(formula_mismatches)} formulas use abbreviated names (this is OK - operation inferred from compute)")
         # Only show details if there are few
         if len(formula_mismatches) <= 5:
             for param_name, missing_input, formula in formula_mismatches:
-                print(f"       {param_name}: \"{formula}\"")
-        print()
+                logger.debug(f"       {param_name}: \"{formula}\"")
     else:
-        print("[OK] All formulas use full parameter names")
-        print()
+        logger.debug("[OK] All formulas use full parameter names")
 
     # Validate compute functions match inputs list
-    print("[*] Validating compute functions match inputs list...")
+    logger.debug("[*] Validating compute functions match inputs list...")
     compute_issues = validate_compute_inputs_match(parameters, parameters_path)
 
     if compute_issues:
@@ -602,16 +604,15 @@ def main():
             has_fatal_error = True
 
         if extra_issues:
-            print(f"[WARN] {len(extra_issues)} parameters have unused inputs (not fatal):")
+            logger.warning(f"[WARN] {len(extra_issues)} parameters have unused inputs (not fatal):")
             for param_name, extra_vars in extra_issues[:5]:
-                print(f"  - {param_name}: unused {extra_vars}")
+                logger.warning(f"  - {param_name}: unused {extra_vars}")
         print()
     else:
-        print("[OK] All compute functions match their inputs list")
-        print()
+        logger.info("[OK] All compute functions match their inputs list")
 
     # Validate inline calculations have inputs/compute metadata
-    print("[*] Checking for inline calculations missing inputs/compute...")
+    logger.debug("[*] Checking for inline calculations missing inputs/compute...")
     inline_issues = validate_inline_calculations_have_compute(parameters, parameters_path)
 
     if inline_issues:
@@ -625,8 +626,7 @@ def main():
         has_fatal_error = True
         print()
     else:
-        print("[OK] All inline calculations have inputs/compute metadata")
-        print()
+        logger.info("[OK] All inline calculations have inputs/compute metadata")
 
     # Exit early if validation errors found
     if has_fatal_error:
@@ -635,7 +635,7 @@ def main():
 
     # Remove duplicate units from QMD files before generating outputs
     # This ensures clean descriptions when syncing to YAML configs
-    print("[*] Removing duplicate units from QMD files...")
+    logger.debug("[*] Removing duplicate units from QMD files...")
     try:
         from scripts.review.remove_duplicate_units_from_qmd import (
             extract_units_from_parameters,
@@ -650,38 +650,33 @@ def main():
         )
 
         if total_replacements > 0:
-            print(f"[OK] Removed {total_replacements} duplicate unit(s) from {files_modified} file(s)")
+            logger.debug(f"[OK] Removed {total_replacements} duplicate unit(s) from {files_modified} file(s)")
         else:
-            print("[OK] No duplicate units found")
-        print()
+            logger.debug("[OK] No duplicate units found")
     except Exception as e:
-        print(f"[WARN] Duplicate unit removal skipped: {e}")
-        print()
+        logger.warning(f"[WARN] Duplicate unit removal skipped: {e}")
 
     # NOTE: _variables.yml generation moved to AFTER Monte Carlo simulation
     # so we can embed confidence intervals from samples.json
 
     # NOTE: references.bib is now the single source of truth (manually maintained)
     # Per-paper filtered bibliographies are no longer generated - all papers use references.bib
-    print("[OK] Using references.bib as single source of truth for citations")
-    print()
+    logger.debug("[OK] Using references.bib as single source of truth for citations")
 
     # Generate TypeScript parameters file for Next.js/React apps
-    print("[*] Generating TypeScript parameters file...")
+    logger.debug("[*] Generating TypeScript parameters file...")
     ts_output = project_root / "dih_models" / "parameters-calculations-citations.ts"
     generate_typescript_parameters(parameters, ts_output, include_metadata=True, references_path=bib_path, params_file=parameters_path, citation_data=citation_data)
-    print()
 
     # Generate TypeScript survey file (if survey exists)
-    print("[*] Generating TypeScript survey file...")
+    logger.debug("[*] Generating TypeScript survey file...")
     survey_json = project_root / "_analysis" / "economist-survey.json"
     ts_survey_output = project_root / "dih_models" / "economist-survey.ts"
     generate_typescript_survey(survey_json_path=survey_json, output_path=ts_survey_output)
-    print()
 
     # Always generate uncertainty outputs when module is available
     if simulate is not None:
-        print("[*] Generating uncertainty summaries...")
+        logger.debug("[*] Generating uncertainty summaries...")
         # Choose a target calculated parameter if any
         target = next((name for name, meta in parameters.items()
                        if hasattr(meta.get("value"), "formula") and meta.get("value").formula), None)
@@ -694,7 +689,7 @@ def main():
             import shutil
             stale_count = len(list(analysis_dir.glob("*.json")))
             if stale_count > 0:
-                print(f"[*] Cleaning {stale_count} stale analysis files...")
+                logger.debug(f"[*] Cleaning {stale_count} stale analysis files...")
                 shutil.rmtree(analysis_dir)
 
         analysis_dir.mkdir(exist_ok=True)
@@ -752,11 +747,10 @@ def main():
                 }
         with open(analysis_dir / "samples.json", "w", encoding="utf-8", newline='\n') as f:
             json.dump(summaries, f, indent=2)
-        print(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
-        print()
+        logger.debug(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
 
         # Generate parameter summary (compact reference file)
-        print("[*] Generating parameter summary...")
+        logger.debug("[*] Generating parameter summary...")
         summary_path = analysis_dir / "parameter-summary.md"
         samples_json_path = analysis_dir / "samples.json"
 
@@ -771,10 +765,9 @@ def main():
             )
 
         generate_parameter_summary(parameters, summary_path, samples_json_path)
-        print()
 
         # Generate _variables.yml with embedded confidence intervals
-        print(f"[*] Generating _variables.yml with confidence intervals (citation mode: {citation_mode})...")
+        logger.debug(f"[*] Generating _variables.yml with confidence intervals (citation mode: {citation_mode})...")
         clear_formula_fallback_log()  # Clear before generation
         output_path = project_root / "_variables.yml"
         generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path, samples_json_path=samples_json_path)
@@ -795,18 +788,17 @@ def main():
                     # Escape pipe characters in formula
                     safe_formula = formula.replace('|', '\\|')
                     f.write(f"| `{param_name}` | `{safe_formula}` | {reason} |\n")
-            print(f"[INFO] {len(formula_fallbacks)} parameters used formula fallback - see {fallback_log_path}")
-        print()
+            logger.debug(f"[INFO] {len(formula_fallbacks)} parameters used formula fallback - see {fallback_log_path}")
 
         # Generate input distribution charts for parameters with uncertainty metadata
-        print("[*] Generating input distribution charts...")
+        logger.debug("[*] Generating input distribution charts...")
         input_dist_figures_dir = project_root / "knowledge" / "figures"
         input_dist_figures_dir.mkdir(parents=True, exist_ok=True)
 
         # First, delete stale QMD files (we regenerate all)
         stale_dist_qmd = list(input_dist_figures_dir.glob("distribution-*.qmd"))
         if stale_dist_qmd:
-            print(f"[*] Cleaning {len(stale_dist_qmd)} existing distribution QMD files...")
+            logger.debug(f"[*] Cleaning {len(stale_dist_qmd)} existing distribution QMD files...")
             for f in stale_dist_qmd:
                 _unlink_with_retry(f)
 
@@ -834,25 +826,25 @@ def main():
             if expected_qmd not in generated_dist_qmds:
                 orphaned_dist_pngs.append(png_file)
         if orphaned_dist_pngs:
-            print(f"[*] Cleaning {len(orphaned_dist_pngs)} orphaned distribution PNG files...")
+            logger.debug(f"[*] Cleaning {len(orphaned_dist_pngs)} orphaned distribution PNG files...")
             for f in orphaned_dist_pngs:
                 _unlink_with_retry(f)
 
-        print(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
+        logger.debug(f"[OK] Generated {input_dist_count} input distribution charts in knowledge/figures/")
         for err in input_dist_errors:
-            print(f"[WARN] {err}")
+            logger.warning(f"[WARN] {err}")
 
         if target and _sens is not None:
             sens = _sens(parameters, target_name=target, n=2000)
             with open(analysis_dir / "sensitivity.json", "w", encoding="utf-8", newline='\n') as f:
                 json.dump(sens, f, indent=2)
-            print(f"[OK] Wrote {(analysis_dir / 'sensitivity.json').relative_to(project_root)}")
+            logger.debug(f"[OK] Wrote {(analysis_dir / 'sensitivity.json').relative_to(project_root)}")
         else:
-            print("[WARN] No calculated target found for sensitivity analysis.")
+            logger.warning("[WARN] No calculated target found for sensitivity analysis.")
 
         # Generate rigorous outcomes, tornado, and sensitivity indices for parameters with compute
         if tornado_deltas and regression_sensitivity and Outcome:
-            print("[*] Generating outcome distributions and sensitivity analysis...")
+            logger.debug("[*] Generating outcome distributions and sensitivity analysis...")
 
             figures_dir = project_root / "knowledge" / "figures"
 
@@ -865,7 +857,7 @@ def main():
             stale_qmd_files = stale_tornado_qmd + stale_sensitivity_qmd + stale_mc_dist_qmd + stale_exceedance_qmd
 
             if stale_qmd_files:
-                print(f"[*] Cleaning {len(stale_qmd_files)} existing QMD files...")
+                logger.debug(f"[*] Cleaning {len(stale_qmd_files)} existing QMD files...")
                 for f in stale_qmd_files:
                     _unlink_with_retry(f)
 
@@ -995,7 +987,7 @@ def main():
                     analyzable_params.append(outcome)
 
             if not analyzable_params:
-                print("[WARN] No parameters found with compute() and inputs for sensitivity analysis")
+                logger.warning("[WARN] No parameters found with compute() and inputs for sensitivity analysis")
 
             # Counters for summary output
             tornado_count = 0
@@ -1066,7 +1058,8 @@ def main():
                             tornado_qmd = generate_tornado_chart_qmd(
                                 outcome.name, tornado, figures_dir, param_meta,
                                 baseline=float(baseline),
-                                units=outcome.units
+                                units=outcome.units,
+                                parameters=parameters
                             )
                             generated_outcome_qmds.add(tornado_qmd.name)
                             tornado_count += 1
@@ -1075,7 +1068,7 @@ def main():
                             # This happens when a parameter is correctly marked as "calculated" but its
                             # input chain consists entirely of fixed/policy values with no uncertainty.
                             # These are valid calculations but have no sensitivity to visualize.
-                            print(f"[SKIP] Tornado chart for {outcome.name}: {val_err} (all inputs fixed)")
+                            logger.debug(f"[SKIP] Tornado chart for {outcome.name}: {val_err} (all inputs fixed)")
                         except Exception as chart_err:
                             print(f"[ERROR] Failed to generate tornado chart for {outcome.name}: {chart_err}", file=sys.stderr)
                             sys.exit(1)
@@ -1109,11 +1102,11 @@ def main():
                         max_coef = max(abs(v) for v in sens_indices.values()) if sens_indices else 0
                         if max_coef >= 0.001:
                             try:
-                                sens_qmd = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta)
+                                sens_qmd = generate_sensitivity_table_qmd(outcome.name, sens_indices, figures_dir, param_meta, parameters)
                                 generated_outcome_qmds.add(sens_qmd.name)
                                 sensitivity_count += 1
                             except Exception as table_err:
-                                print(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
+                                logger.warning(f"[WARN] Failed to generate sensitivity table for {outcome.name}: {table_err}")
 
                         # Generate Monte Carlo distribution chart
                         # Skip if zero variance (all samples identical) - these are meaningless
@@ -1141,11 +1134,11 @@ def main():
                                 generated_outcome_qmds.add(cdf_qmd.name)
                                 exceedance_count += 1
                             elif outcome_samples and outcome_std == 0:
-                                print(f"[SKIP] MC distribution chart for {outcome.name}: zero variance (deterministic)")
+                                logger.debug(f"[SKIP] MC distribution chart for {outcome.name}: zero variance (deterministic)")
                         except Exception as mc_err:
-                            print(f"[WARN] Failed to generate MC distribution charts for {outcome.name}: {mc_err}")
+                            logger.warning(f"[WARN] Failed to generate MC distribution charts for {outcome.name}: {mc_err}")
                 except Exception as e:
-                    print(f"[WARN] Skipped outcome {outcome.name}: {e}")
+                    logger.warning(f"[WARN] Skipped outcome {outcome.name}: {e}")
 
             with open(analysis_dir / "outcomes.json", "w", encoding="utf-8", newline='\n') as f:
                 json.dump(outcomes_data, f, indent=2)
@@ -1170,48 +1163,40 @@ def main():
                     orphaned_pngs.append(png_file)
 
             if orphaned_pngs:
-                print(f"[*] Cleaning {len(orphaned_pngs)} orphaned PNG files...")
+                logger.debug(f"[*] Cleaning {len(orphaned_pngs)} orphaned PNG files...")
                 for f in orphaned_pngs:
                     _unlink_with_retry(f)
 
             # Print summary of generated files
-            print(f"[OK] Generated {tornado_count} tornado charts in knowledge/figures/")
-            print(f"[OK] Generated {sensitivity_count} sensitivity tables in knowledge/figures/")
-            print(f"[OK] Generated {mc_dist_count} MC distribution charts in knowledge/figures/")
-            print(f"[OK] Generated {exceedance_count} exceedance charts in knowledge/figures/")
-            print(f"[OK] Wrote {analysis_json_count + 2} analysis JSON files to _analysis/")
+            logger.info(f"[OK] Generated {tornado_count} tornado, {sensitivity_count} sensitivity, {mc_dist_count} MC distribution, {exceedance_count} exceedance charts")
+            logger.info(f"[OK] Wrote {analysis_json_count + 2} analysis JSON files to _analysis/")
 
-        print()
     else:
         # No uncertainty module (numpy/scipy not installed) - generate basic outputs
-        print("[WARN] Uncertainty module unavailable; skipping uncertainty summaries.")
-        print()
+        logger.warning("[WARN] Uncertainty module unavailable; skipping uncertainty summaries.")
 
         # Generate parameter summary without uncertainty
-        print("[*] Generating parameter summary...")
+        logger.debug("[*] Generating parameter summary...")
         analysis_dir = project_root / "_analysis"
         analysis_dir.mkdir(exist_ok=True)
         summary_path = analysis_dir / "parameter-summary.md"
         generate_parameter_summary(parameters, summary_path)
-        print()
 
         # Generate _variables.yml without confidence intervals
-        print(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
+        logger.debug(f"[*] Generating _variables.yml (citation mode: {citation_mode})...")
         output_path = project_root / "_variables.yml"
         generate_variables_yml(parameters, output_path, citation_mode=citation_mode, params_file=parameters_path)
-        print()
 
     # Generate parameters-and-calculations.qmd AFTER uncertainty charts are created
     # so the file existence checks work correctly
-    print("[*] Generating parameters-and-calculations.qmd...")
+    logger.debug("[*] Generating parameters-and-calculations.qmd...")
     qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
     # citation_data already parsed at script start - reuse it here
     generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path, citation_data=citation_data)
-    print()
 
     # Generate filtered parameters-and-calculations files for all Quarto configs
     # Each config (book, manual, papers) gets only the parameters it uses (plus transitive dependencies)
-    print("[*] Generating per-config parameters-and-calculations files...")
+    logger.debug("[*] Generating per-config parameters-and-calculations files...")
     paper_params_results = generate_all_paper_parameters_qmd(
         project_root=project_root,
         parameters=parameters,
@@ -1220,17 +1205,15 @@ def main():
         citation_data=citation_data
     )
     if paper_params_results:
-        print(f"[OK] Generated {len(paper_params_results)} config-specific parameter appendices")
+        logger.debug(f"[OK] Generated {len(paper_params_results)} config-specific parameter appendices")
     else:
-        print("[*] No configs found or no parameters to include")
-    print()
+        logger.debug("[*] No configs found or no parameters to include")
 
     # Optionally inject citations
     if inject_citations:
-        print("[*] Injecting citations into economics.qmd...")
+        logger.debug("[*] Injecting citations into economics.qmd...")
         economics_qmd = project_root / "knowledge" / "economics" / "economics.qmd"
         inject_citations_into_qmd(parameters, economics_qmd)
-        print()
 
     # Generate search indexes for all Quarto configs
     # Keep generator instance to reuse in generate_sites_metadata (avoids re-parsing configs)
@@ -1239,7 +1222,7 @@ def main():
     _search_generator.generate_all_indexes()
 
     # Generate outline from updated headings (optional - OK to fail)
-    print("[*] Regenerating outline from chapter headings...")
+    logger.debug("[*] Regenerating outline from chapter headings...")
     generate_outline_script = project_root / "scripts" / "generate-outline.py"
     if generate_outline_script.exists():
         try:
@@ -1251,73 +1234,64 @@ def main():
                 encoding='utf-8'
             )
             if result.returncode == 0:
-                print("[OK] Outline regenerated")
+                logger.debug("[OK] Outline regenerated")
             else:
-                print(f"[WARN] Outline generation had issues: {result.stderr}", file=sys.stderr)
+                logger.warning(f"[WARN] Outline generation had issues: {result.stderr}")
         except Exception as e:
-            print(f"[WARN] Could not regenerate outline: {e}", file=sys.stderr)
+            logger.warning(f"[WARN] Could not regenerate outline: {e}")
     else:
-        print(f"[WARN] Outline script not found: {generate_outline_script}", file=sys.stderr)
-    print()
+        logger.warning(f"[WARN] Outline script not found: {generate_outline_script}")
 
     # Sync descriptions from QMD frontmatter to YAML configs (optional - OK to fail)
     try:
         sync_descriptions_to_yaml_configs(project_root, output_path)
     except Exception as e:
-        print(f"[WARN] Description sync skipped: {e}")
-        print()
+        logger.warning(f"[WARN] Description sync skipped: {e}")
 
     # Regenerate GitHub Actions workflow from Quarto configs (optional - CI catches issues)
     try:
         regenerate_workflow(project_root)
     except Exception as e:
-        print(f"[WARN] Workflow regeneration skipped: {e}")
-        print()
+        logger.warning(f"[WARN] Workflow regeneration skipped: {e}")
 
     # Sync shared config settings to all paper/site Quarto configs
-    print("[*] Syncing shared settings to Quarto configs...")
+    logger.debug("[*] Syncing shared settings to Quarto configs...")
     try:
         sync_results = sync_shared_config_settings(project_root)
         if sync_results:
-            print(f"[OK] Updated {len(sync_results)} Quarto configs with shared settings:")
+            logger.debug(f"[OK] Updated {len(sync_results)} Quarto configs with shared settings:")
             for config_name, changes in sync_results.items():
-                print(f"     {config_name}: {', '.join(changes[:3])}" +
+                logger.debug(f"     {config_name}: {', '.join(changes[:3])}" +
                       (f" (+{len(changes)-3} more)" if len(changes) > 3 else ""))
         else:
-            print("[OK] All Quarto configs are in sync with shared defaults")
+            logger.debug("[OK] All Quarto configs are in sync with shared defaults")
     except Exception as e:
-        print(f"[WARN] Config sync skipped: {e}")
-    print()
+        logger.warning(f"[WARN] Config sync skipped: {e}")
 
     # Generate site metadata JSON for external use (displaying papers on other sites)
     # Reuse search generator to avoid re-parsing all YAML configs and regenerating indexes
-    print("[*] Generating site metadata JSON...")
+    logger.debug("[*] Generating site metadata JSON...")
     sites_metadata_path = generate_sites_metadata(project_root, search_generator=_search_generator)
-    print()
 
     # Generate llms.txt and robots.txt for AI crawler access
-    print("[*] Generating llms.txt and robots.txt...")
+    logger.debug("[*] Generating llms.txt and robots.txt...")
     generate_robots_txt(project_root)
     generate_llms_txt(project_root)
-    print()
 
     # Generate papers.qmd listing all papers from Quarto configs
-    print("[*] Generating papers.qmd index...")
+    logger.debug("[*] Generating papers.qmd index...")
     papers_qmd_path = generate_papers_qmd(project_root)
-    print()
 
     # Generate shared footer HTML with links to all papers
-    print("[*] Generating footer HTML...")
+    logger.debug("[*] Generating footer HTML...")
     footer_html_path = generate_footer_html(project_root)
-    print()
 
     # Generate README.md from QMD sources with variables replaced
-    print("[*] Generating README.md from QMD sources...")
+    logger.debug("[*] Generating README.md from QMD sources...")
     readme_path = generate_readme(project_root)
-    print()
 
     # Final validation and sort of references.bib
-    print("[*] Validating and sorting references.bib...")
+    logger.debug("[*] Validating and sorting references.bib...")
     is_valid, issues = validate_bib_file(bib_path)
     if issues:
         # Check if only alphabetization issues (can auto-fix)
@@ -1332,40 +1306,13 @@ def main():
             # Only alphabetization issues - auto-fix
             reordered = sort_bib_file(bib_path, strict=False)
             if reordered:
-                print(f"[OK] Sorted references.bib ({reordered} entries reordered)")
+                logger.debug(f"[OK] Sorted references.bib ({reordered} entries reordered)")
             else:
-                print("[OK] references.bib already sorted")
+                logger.debug("[OK] references.bib already sorted")
     else:
-        print("[OK] references.bib is valid and sorted")
-    print()
+        logger.debug("[OK] references.bib is valid and sorted")
 
-    print("[OK] All academic outputs generated successfully!")
-    print()
-    print("[*] Next steps:")
-    print("    1. Review generated files:")
-    print(f"       - {output_path.relative_to(project_root)}")
-    print(f"       - {qmd_output.relative_to(project_root)}")
-    print(f"       - references.bib (source of truth)")
-    print(f"       - {reference_ids_path.relative_to(project_root)}")
-    print(f"       - {ts_output.relative_to(project_root)}")
-    print(f"       - _analysis/parameter-summary.md")
-    print("       - assets/json/sites-metadata.json")
-    print("       - knowledge/papers.qmd")
-    print("       - assets/html/generated-footer.html")
-    print("       - README.md (auto-generated from QMD sources)")
-    print("       - llms.txt (AI crawler content)")
-    print("       - robots.txt (crawler permissions)")
-    print("       - OUTLINE.md")
-    if inject_citations:
-        print(f"       - {economics_qmd.relative_to(project_root)} (citations injected)")
-    print("    2. Render Quarto book to see results")
-    print("    3. Zero manual maintenance required - just re-run this script!")
-    print()
-    if citation_mode == "none":
-        print("[TIP] Want citations? Try:")
-        print("      --cite-mode=inline    (automatic inline citations)")
-        print("      --cite-mode=separate  (flexible citation variables)")
-        print("      --cite-mode=both      (maximum control)")
+    logger.info("[OK] All academic outputs generated successfully!")
 
 
 if __name__ == "__main__":

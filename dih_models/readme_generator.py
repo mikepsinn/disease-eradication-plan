@@ -12,6 +12,7 @@ Generates README.md with a strategic structure designed to drive action:
 """
 from __future__ import annotations
 
+import logging
 import re
 from pathlib import Path
 from typing import Dict, Optional
@@ -21,6 +22,8 @@ from .variable_replacement import (
     replace_variables,
     clean_for_readme,
 )
+
+logger = logging.getLogger("dih.readme")
 
 
 def strip_confidence_intervals(text: str) -> str:
@@ -130,7 +133,7 @@ def generate_readme(
 
     # Load variables
     variables = load_variables(variables_path)
-    print(f"[*] Loaded {len(variables)} variables for README generation")
+    logger.debug("Loaded %d variables for README generation", len(variables))
 
     # Helper to resolve variables and clean for README prose
     def v(text: str, clean_units: bool = True) -> str:
@@ -146,7 +149,7 @@ def generate_readme(
 
     papers_qmd = project_root / "knowledge" / "papers.qmd"
     if papers_qmd.exists():
-        print(f"[*] Processing {papers_qmd.name}...")
+        logger.debug("Processing %s...", papers_qmd.name)
         with open(papers_qmd, 'r', encoding='utf-8') as f:
             content = f.read()
 
@@ -176,7 +179,7 @@ def generate_readme(
 
         readme_parts.append(content)
     else:
-        print(f"[WARN] {papers_qmd} not found")
+        logger.warning("%s not found", papers_qmd)
         readme_parts.append("See [warondisease.org](https://warondisease.org) for full documentation.\n\n")
 
 
@@ -219,5 +222,5 @@ def generate_readme(
     with open(output_path, 'w', encoding='utf-8', newline='\n') as f:
         f.write(readme_content)
 
-    print(f"[OK] Generated {output_path.relative_to(project_root)}")
+    logger.debug("Generated %s", output_path.relative_to(project_root))
     return output_path

@@ -10,6 +10,7 @@ Extracts frontmatter, section headings, and builds comprehensive search data.
 import sys
 import yaml
 import json
+import logging
 
 from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
 import re
@@ -19,6 +20,8 @@ from typing import Dict, List, Optional, Any
 from datetime import datetime, timezone
 
 from dih_models.variable_replacement import load_variables
+
+logger = logging.getLogger("dih.search_index")
 
 # Set UTF-8 encoding for stdout on Windows (reconfigure exists on TextIOWrapper at runtime)
 if sys.platform == 'win32':
@@ -253,15 +256,15 @@ class SearchIndexGenerator:
 
                 # Skip configs without required fields
                 if not output_dir:
-                    print(f"[WARN] Skipping {config_path.name}: missing output-dir")
+                    logger.warning("Skipping %s: missing output-dir", config_path.name)
                     continue
 
                 if not base_url:
-                    print(f"[WARN] Skipping {config_path.name}: missing site-url")
+                    logger.warning("Skipping %s: missing site-url", config_path.name)
                     continue
 
                 if not files:
-                    print(f"[WARN] Skipping {config_path.name}: no files/chapters defined")
+                    logger.warning("Skipping %s: no files/chapters defined", config_path.name)
                     continue
 
                 # Get index-source from dih-render section (used to copy actual content to index.qmd)
@@ -277,12 +280,12 @@ class SearchIndexGenerator:
                     'index_source': index_source,  # Path to actual source file for index.qmd
                 }
 
-                print(f"[OK] Loaded config: {config_name} ({config_path.name}) [{project_type}]")
+                logger.debug("Loaded config: %s (%s) [%s]", config_name, config_path.name, project_type)
 
             except yaml.YAMLError as e:
-                print(f"[WARN] Failed to parse {config_path.name}: {e}")
+                logger.warning("Failed to parse %s: %s", config_path.name, e)
             except Exception as e:
-                print(f"[WARN] Error loading {config_path.name}: {e}")
+                logger.warning("Error loading %s: %s", config_path.name, e)
 
         return configs
 
@@ -402,7 +405,7 @@ class SearchIndexGenerator:
                 source_path = self.project_root / config['index_source']
                 if source_path.exists():
                     actual_source_path = source_path
-                    print(f"  [*] Using index-source: {config['index_source']}")
+                    logger.debug("Using index-source: %s", config['index_source'])
 
             with open(actual_source_path, 'r', encoding='utf-8') as f:
                 content = f.read()
@@ -463,7 +466,7 @@ class SearchIndexGenerator:
             )
 
         except Exception as e:
-            print(f"[WARN] Failed to parse {qmd_path}: {e}")
+            logger.warning("Failed to parse %s: %s", qmd_path, e)
             return None
 
     def generate_index_for_config(self, config_name: str) -> List[SearchIndexEntry]:
@@ -476,11 +479,11 @@ class SearchIndexGenerator:
         if config_name in self._index_cache:
             return self._index_cache[config_name]
 
-        print(f"[*] Generating search index for {config_name}...")
+        logger.debug("Generating search index for %s...", config_name)
 
         qmd_files = self.get_qmd_files_for_config(config_name)
         if not qmd_files:
-            print(f"[WARN] No QMD files found for {config_name}")
+            logger.warning("No QMD files found for %s", config_name)
             return []
 
         entries = []
@@ -489,7 +492,7 @@ class SearchIndexGenerator:
             if entry:
                 entries.append(entry)
 
-        print(f"[OK] Generated {len(entries)} search index entries for {config_name}")
+        logger.debug("Generated %d search index entries for %s", len(entries), config_name)
         self._index_cache[config_name] = entries
         return entries
 
@@ -508,14 +511,14 @@ class SearchIndexGenerator:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
-        print(f"[OK] Wrote search index to {output_file.relative_to(self.project_root)}")
+        logger.debug("Wrote search index to %s", output_file.relative_to(self.project_root))
         return output_file
 
     def generate_all_indexes(self) -> Dict[str, Path]:
         """Generate search indexes for all Quarto configs."""
-        print("\n" + "="*60)
-        print("GENERATING SEARCH INDEXES")
-        print("="*60 + "\n")
+        logger.debug("=" * 60)
+        logger.debug("GENERATING SEARCH INDEXES")
+        logger.debug("=" * 60)
 
         output_files = {}
 
@@ -524,11 +527,10 @@ class SearchIndexGenerator:
             if entries:
                 output_file = self.write_index_json(config_name, entries)
                 output_files[config_name] = output_file
-            print()
 
-        print("="*60)
-        print(f"[OK] Generated {len(output_files)} search indexes")
-        print("="*60 + "\n")
+        logger.debug("=" * 60)
+        logger.debug("Generated %d search indexes", len(output_files))
+        logger.debug("=" * 60)
 
         return output_files
 

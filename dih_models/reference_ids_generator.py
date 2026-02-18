@@ -18,7 +18,10 @@ Usage:
     generate_reference_ids_enum(available_refs, output_path)
 """
 
+import logging
 from pathlib import Path
+
+logger = logging.getLogger("dih.reference_ids")
 
 
 def generate_reference_ids_enum(available_refs: set, output_path: Path):
@@ -86,14 +89,14 @@ def generate_reference_ids_enum(available_refs: set, output_path: Path):
     with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.write("\n".join(content))
 
-    print(f"[OK] Generated {output_path}")
-    print(f"     {len(sorted_refs)} reference IDs exported as enum")
-    print()
-    print("Usage in parameters.py:")
-    print("    from .reference_ids import ReferenceID")
+    logger.debug(f"[OK] Generated {output_path}")
+    logger.debug(f"     {len(sorted_refs)} reference IDs exported as enum")
+    logger.debug("")
+    logger.debug("Usage in parameters.py:")
+    logger.debug("    from .reference_ids import ReferenceID")
     if sorted_refs:
         first_ref = sorted_refs[0].upper().replace("-", "_")
         if first_ref[0].isdigit():
             first_ref = f"N{first_ref}"
-        print(f"    source_ref=ReferenceID.{first_ref}")
-    print()
+        logger.debug(f"    source_ref=ReferenceID.{first_ref}")
+    logger.debug("")

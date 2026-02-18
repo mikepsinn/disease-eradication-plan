@@ -16,12 +16,15 @@ Output:
 """
 
 import json
+import logging
 import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
+
+logger = logging.getLogger("dih.site_metadata")
 
 from dih_models.search_index_generator import SearchIndexGenerator, SearchIndexEntry
 from scripts.lib.yaml_sync_utils import substitute_quarto_variables, strip_confidence_intervals
@@ -274,9 +277,9 @@ def generate_sites_metadata(
     if variables_path.exists():
         with open(variables_path, encoding="utf-8") as f:
             variables = yaml_safe_load(f) or {}
-        print(f"[OK] Loaded {len(variables)} variables from _variables.yml")
+        logger.debug("Loaded %d variables from _variables.yml", len(variables))
     else:
-        print("[WARN] _variables.yml not found - Quarto variables will not be substituted")
+        logger.warning("_variables.yml not found - Quarto variables will not be substituted")
 
     # Reuse existing search generator if provided, otherwise create new one
     if search_generator is None:
@@ -303,9 +306,9 @@ def generate_sites_metadata(
 
                 sites.append(site_meta)
                 page_count = site_meta.get("pageCount", 0)
-                print(f"[OK] Extracted metadata from {config_path.name}: {site_meta.get('title', 'Untitled')[:50]} ({page_count} pages)")
+                logger.debug("Extracted metadata from %s: %s (%d pages)", config_path.name, site_meta.get('title', 'Untitled')[:50], page_count)
         except Exception as e:
-            print(f"[WARN] Failed to parse {config_path.name}: {e}")
+            logger.warning("Failed to parse %s: %s", config_path.name, e)
 
     # Calculate total pages across all sites
     total_pages = sum(site.get("pageCount", 0) for site in sites)
@@ -326,7 +329,7 @@ def generate_sites_metadata(
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-    print(f"[OK] Generated {output_path.relative_to(project_root)} with {len(sites)} sites, {total_pages} total pages")
+    logger.debug("Generated %s with %d sites, %d total pages", output_path.relative_to(project_root), len(sites), total_pages)
 
     return output_path
 
@@ -339,9 +342,9 @@ def main():
 
     project_root = Path(__file__).parent.parent.absolute()
 
-    print("[*] Generating site metadata JSON...")
+    logger.debug("Generating site metadata JSON...")
     output_path = generate_sites_metadata(project_root)
-    print(f"[OK] Output: {output_path}")
+    logger.debug("Output: %s", output_path)
 
 
 if __name__ == "__main__":

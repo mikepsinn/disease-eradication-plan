@@ -14,12 +14,15 @@ Output:
     knowledge/papers.qmd
 """
 
+import logging
 import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from dih_models.yaml_utils import load_quarto_config
+
+logger = logging.getLogger("dih.papers_qmd")
 
 # Add scripts directory to path for latex_utils import
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
@@ -245,7 +248,7 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
             if paper_info:
                 papers.append(paper_info)
         except Exception as e:
-            print(f"[WARN] Failed to parse {config_path.name}: {e}")
+            logger.warning("Failed to parse %s: %s", config_path.name, e)
 
     # Sort papers: Books first, then by title
     papers.sort(key=lambda p: (0 if p["paper_type"] == "Book" else 1, p["title"]))
@@ -303,7 +306,7 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines))
 
-    print(f"[OK] Generated {output_path.relative_to(project_root)} with {len(papers)} papers")
+    logger.debug("Generated %s with %d papers", output_path.relative_to(project_root), len(papers))
 
     return output_path
 
@@ -528,9 +531,9 @@ def main():
 
     project_root = Path(__file__).parent.parent.absolute()
 
-    print("[*] Generating papers.qmd...")
+    logger.debug("Generating papers.qmd...")
     output_path = generate_papers_qmd(project_root)
-    print(f"[OK] Output: {output_path}")
+    logger.debug("Output: %s", output_path)
 
 
 if __name__ == "__main__":

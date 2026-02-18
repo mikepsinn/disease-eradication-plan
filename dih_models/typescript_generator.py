@@ -18,6 +18,7 @@ Usage:
     generate_typescript_parameters(parameters, output_path, references_path=Path("references.bib"))
 """
 
+import logging
 from pathlib import Path
 from typing import Any, Dict, Optional
 import re
@@ -26,6 +27,8 @@ import shutil
 from dih_models.reference_parser import parse_references_bib
 from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
+
+logger = logging.getLogger("dih.typescript")
 
 
 def _escape_typescript_string(s: str) -> str:
@@ -565,22 +568,20 @@ def generate_typescript_parameters(
     with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.write("\n".join(content))
 
-    print(f"[OK] Generated {output_path}")
-    print(f"     {len(all_params)} parameters exported")
-    print(f"     {len(external_params)} external sources")
-    print(f"     {len(calculated_params)} calculated values")
-    print(f"     {len(definition_params)} core definitions")
+    logger.debug("Generated %s", output_path)
+    logger.debug("     %d parameters exported", len(all_params))
+    logger.debug("     %d external sources", len(external_params))
+    logger.debug("     %d calculated values", len(calculated_params))
+    logger.debug("     %d core definitions", len(definition_params))
     if all_citations:
-        print(f"     {len(all_citations)} citations (CSL JSON)")
+        logger.debug("     %d citations (CSL JSON)", len(all_citations))
 
     # Copy to Next.js project if it exists
     nextjs_lib = Path("E:/code/dih-neobrutalist/lib")
     if nextjs_lib.exists() and nextjs_lib.is_dir():
         dest_path = nextjs_lib / output_path.name
         shutil.copy2(output_path, dest_path)
-        print(f"[OK] Copied to {dest_path}")
-
-    print()
+        logger.debug("Copied to %s", dest_path)
 
 
 
@@ -873,18 +874,16 @@ def generate_typescript_survey(
     with open(output_path, "w", encoding="utf-8", newline='\n') as f:
         f.write("\n".join(content))
 
-    print(f"[OK] Generated {output_path}")
-    print(f"     {survey_data['metadata']['parameter_count']} parameters")
-    print(f"     {total_questions} questions")
+    logger.debug("Generated %s", output_path)
+    logger.debug("     %d parameters", survey_data['metadata']['parameter_count'])
+    logger.debug("     %d questions", total_questions)
 
     # Copy to Next.js project if it exists
     nextjs_lib = Path("E:/code/dih-neobrutalist/lib")
     if nextjs_lib.exists() and nextjs_lib.is_dir():
         dest_path = nextjs_lib / output_path.name
         shutil.copy2(output_path, dest_path)
-        print(f"[OK] Copied to {dest_path}")
-
-    print()
+        logger.debug("Copied to %s", dest_path)
 
 
 def _generate_parameter_constant(

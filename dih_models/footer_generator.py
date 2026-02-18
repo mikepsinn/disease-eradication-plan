@@ -14,12 +14,15 @@ Output:
     assets/html/generated-footer.html
 """
 
+import logging
 import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from dih_models.yaml_utils import load_quarto_config
+
+logger = logging.getLogger("dih.footer")
 
 
 def extract_footer_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
@@ -113,7 +116,7 @@ def generate_footer_html(project_root: Path) -> Path:
             if paper_info:
                 papers.append(paper_info)
         except Exception as e:
-            print(f"[WARN] Failed to parse {config_path.name}: {e}")
+            logger.warning("Failed to parse %s: %s", config_path.name, e)
 
     # Sort papers: prioritize key papers, then alphabetical by title
     priority_order = ["1-pct-treaty-impact", "iab", "wishocracy", "optimocracy", "dfda-impact", "dfda-spec"]
@@ -178,7 +181,7 @@ def generate_footer_html(project_root: Path) -> Path:
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(html_content)
 
-    print(f"[OK] Generated {output_path.relative_to(project_root)} with {len(papers)} paper links")
+    logger.debug("Generated %s with %d paper links", output_path.relative_to(project_root), len(papers))
 
     return output_path
 
@@ -239,11 +242,11 @@ def update_quarto_configs(project_root: Path, footer_file: str = "assets/html/ge
             if new_content != content:
                 with open(config_path, "w", encoding="utf-8", newline="\n") as f:
                     f.write(new_content)
-                print(f"[OK] Updated {config_path.name}")
+                logger.debug("Updated %s", config_path.name)
                 updated_count += 1
 
         except Exception as e:
-            print(f"[WARN] Failed to update {config_path.name}: {e}")
+            logger.warning("Failed to update %s: %s", config_path.name, e)
 
     return updated_count
 
@@ -255,16 +258,15 @@ def main():
 
     project_root = Path(__file__).parent.parent.absolute()
 
-    print("[*] Generating footer HTML...")
+    logger.debug("Generating footer HTML...")
     output_path = generate_footer_html(project_root)
-    print(f"[OK] Output: {output_path}")
+    logger.debug("Output: %s", output_path)
 
     # Optionally update configs (disabled by default - can be enabled with --update-configs flag)
     if len(sys.argv) > 1 and "--update-configs" in sys.argv:
-        print()
-        print("[*] Updating Quarto configs to reference footer file...")
+        logger.debug("Updating Quarto configs to reference footer file...")
         updated = update_quarto_configs(project_root)
-        print(f"[OK] Updated {updated} config files")
+        logger.debug("Updated %d config files", updated)
 
 
 if __name__ == "__main__":

@@ -371,9 +371,11 @@ def ensure_jupyter_kernel(kernel_name: str = "dih-project-kernel", display_name:
     # Ensure ipykernel is installed in venv
     print(f"[*] Ensuring ipykernel is installed in virtual environment...")
     try:
-        # Show output so user can see download progress; timeout after 5 minutes
-        subprocess.run(
+        # Suppress "Requirement already satisfied" noise; only show output on failure
+        result = subprocess.run(
             [str(venv_python), "-m", "pip", "install", "--progress-bar", "on", "ipykernel"],
+            capture_output=True,
+            text=True,
             check=True,
             timeout=300  # 5 minute timeout
         )
@@ -382,6 +384,10 @@ def ensure_jupyter_kernel(kernel_name: str = "dih-project-kernel", display_name:
         return False
     except subprocess.CalledProcessError as e:
         print(f"[ERROR] Failed to install ipykernel: {e}", file=sys.stderr)
+        if hasattr(e, 'stdout') and e.stdout:
+            print(e.stdout, file=sys.stderr)
+        if hasattr(e, 'stderr') and e.stderr:
+            print(e.stderr, file=sys.stderr)
         return False
 
     # Create kernel spec

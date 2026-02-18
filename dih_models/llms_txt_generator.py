@@ -20,11 +20,14 @@ Output:
     robots.txt in project root
 """
 
+import logging
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from dih_models.yaml_utils import load_quarto_config
+
+logger = logging.getLogger("dih.llms_txt")
 
 
 def extract_site_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
@@ -121,7 +124,7 @@ def generate_llms_txt(project_root: Path) -> Path:
             if info and info.get("site_url"):
                 sites.append(info)
         except Exception as e:
-            print(f"[WARN] Failed to parse {config_path.name} for llms.txt: {e}")
+            logger.warning("Failed to parse %s for llms.txt: %s", config_path.name, e)
 
     # Build llms.txt content following the spec at llmstxt.org
     lines = [
@@ -183,7 +186,7 @@ def generate_llms_txt(project_root: Path) -> Path:
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines))
 
-    print(f"[OK] Generated {output_path.name} with {len(sites)} papers")
+    logger.debug("Generated %s with %d papers", output_path.name, len(sites))
     return output_path
 
 
@@ -211,7 +214,7 @@ Allow: /
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(content)
 
-    print(f"[OK] Generated {output_path.name}")
+    logger.debug("Generated %s", output_path.name)
     return output_path
 
 
@@ -222,10 +225,10 @@ def main():
 
     project_root = Path(__file__).parent.parent.absolute()
 
-    print("[*] Generating llms.txt and robots.txt...")
+    logger.debug("Generating llms.txt and robots.txt...")
     generate_robots_txt(project_root)
     generate_llms_txt(project_root)
-    print("[OK] Done")
+    logger.debug("Done")
 
 
 if __name__ == "__main__":

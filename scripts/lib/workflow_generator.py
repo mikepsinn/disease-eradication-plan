@@ -11,10 +11,13 @@ if sys.platform == 'win32':
     if isinstance(sys.stdout, io.TextIOWrapper):
         sys.stdout.reconfigure(encoding='utf-8')
 
+import logging
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List
+
+logger = logging.getLogger("dih.workflow")
 
 # Add project root to path for dih_models imports
 _project_root = str(Path(__file__).parent.parent.parent)
@@ -158,7 +161,7 @@ def extract_job_configs(project_root: Path) -> List[JobConfig]:
             job_config = JobConfig.from_quarto_config(yml_path)
             configs.append(job_config)
         except Exception as e:
-            print(f"[WARN] Skipping {yml_path.name}: {e}")
+            logger.warning("Skipping %s: %s", yml_path.name, e)
 
     # Sort by config name for consistent ordering
     return sorted(configs, key=lambda c: c.config_name)
@@ -193,14 +196,14 @@ def regenerate_workflow(project_root: Path) -> None:
     3. Render template
     4. Write to .github/workflows/publish.yml
     """
-    print("[*] Regenerating GitHub Actions workflow from Quarto configs...")
+    logger.debug("Regenerating GitHub Actions workflow from Quarto configs...")
 
     # Extract configs
     job_configs = extract_job_configs(project_root)
-    print(f"[*] Found {len(job_configs)} Quarto configurations")
+    logger.debug("Found %d Quarto configurations", len(job_configs))
 
     if not job_configs:
-        print("[ERROR] No Quarto configs found!")
+        print("[ERROR] No Quarto configs found!", file=sys.stderr)
         return
 
     # Generate workflow
@@ -211,9 +214,8 @@ def regenerate_workflow(project_root: Path) -> None:
     workflow_path.parent.mkdir(parents=True, exist_ok=True)
     workflow_path.write_text(workflow_content, encoding='utf-8')
 
-    print(f"[OK] Generated {workflow_path}")
-    print(f"     {len(job_configs)} jobs: {', '.join(c.config_name for c in job_configs)}")
-    print()
+    logger.debug("Generated %s", workflow_path)
+    logger.debug("     %d jobs: %s", len(job_configs), ", ".join(c.config_name for c in job_configs))
 
 
 if __name__ == "__main__":

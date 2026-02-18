@@ -12,10 +12,13 @@ Usage:
     sync_shared_config_settings(project_root)
 """
 
+import logging
 from pathlib import Path
 from typing import Any, Dict, List, Set
 import re
 import sys
+
+logger = logging.getLogger("dih.quarto_config_sync")
 
 from dih_models.yaml_utils import load_quarto_config
 
@@ -362,7 +365,7 @@ def sync_shared_config_settings(project_root: Path, dry_run: bool = False) -> Di
     """
     defaults_path = project_root / "_quarto-shared-defaults.yml"
     if not defaults_path.exists():
-        print(f"[WARN] Shared defaults file not found: {defaults_path}")
+        logger.warning("Shared defaults file not found: %s", defaults_path)
         return {}
 
     defaults = load_yaml_for_check(defaults_path)
@@ -428,20 +431,20 @@ if __name__ == "__main__":
     project_root = Path(__file__).parent.parent
 
     if "--dry-run" in sys.argv:
-        print("[*] DRY RUN: Checking what would be synced...")
+        logger.debug("DRY RUN: Checking what would be synced...")
         results = sync_shared_config_settings(project_root, dry_run=True)
     elif "--report" in sys.argv:
-        print("[*] Reporting config drift from shared defaults...")
+        logger.debug("Reporting config drift from shared defaults...")
         results = report_config_drift(project_root)
     else:
-        print("[*] Syncing shared config settings...")
+        logger.debug("Syncing shared config settings...")
         results = sync_shared_config_settings(project_root)
 
     if results:
         for config_name, changes in results.items():
-            print(f"\n{config_name}:")
+            logger.debug("\n%s:", config_name)
             for change in changes:
-                print(f"  - {change}")
-        print(f"\n[OK] {len(results)} configs updated")
+                logger.debug("  - %s", change)
+        logger.debug("%d configs updated", len(results))
     else:
-        print("[OK] All configs are in sync with shared defaults")
+        logger.debug("All configs are in sync with shared defaults")

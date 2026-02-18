@@ -18,9 +18,12 @@ Usage:
     generate_variables_yml(parameters, output_path, citation_mode="separate")
 """
 
+import logging
 from pathlib import Path
 from typing import Any, Dict, Optional
 import json
+
+logger = logging.getLogger("dih.variables_yml")
 
 import yaml
 
@@ -365,23 +368,23 @@ def generate_variables_yml(
             width=1000000
         )
 
-    print(f"[OK] Generated {output_path}")
-    print(f"     {param_count} parameters exported")
-    print(f"     {latex_count} LaTeX equations exported")
+    logger.debug(f"[OK] Generated {output_path}")
+    logger.debug(f"     {param_count} parameters exported")
+    logger.debug(f"     {latex_count} LaTeX equations exported")
     if citation_mode in ("separate", "both"):
-        print(f"     {cite_count} citation keys exported")
+        logger.debug(f"     {cite_count} citation keys exported")
     if citation_mode in ("inline", "both"):
-        print("     Citation mode: inline [@key] for peer-reviewed sources")
-    print("\nUsage in QMD files:")
-    print(f"  {{{{< var {list(variables.keys())[0]} >}}}}")
+        logger.debug("     Citation mode: inline [@key] for peer-reviewed sources")
+    logger.debug("\nUsage in QMD files:")
+    logger.debug(f"  {{{{< var {list(variables.keys())[0]} >}}}}")
     if latex_count > 0:
         # Find first latex equation
         latex_var = next((k for k in variables.keys() if k.endswith("_latex")), None)
         if latex_var:
-            print(f"  {{{{< var {latex_var} >}}}}  (equation)")
+            logger.debug(f"  {{{{< var {latex_var} >}}}}  (equation)")
     if cite_count > 0:
         # Find first parameter with citation
         cite_var = next((k for k in variables.keys() if k.endswith("_cite")), None)
         if cite_var:
             base_var = cite_var[:-5]  # Remove "_cite"
-            print(f"  {{{{< var {base_var} >}}}} {{{{< var {cite_var} >}}}}")
+            logger.debug(f"  {{{{< var {base_var} >}}}} {{{{< var {cite_var} >}}}}")

@@ -28,6 +28,7 @@ Runs automatically via _quarto.yml pre-render hook
 
 import argparse
 import json
+import logging
 import os
 import re
 import sys
@@ -64,6 +65,8 @@ def _yaml_safe_load(stream):
     if yaml is None or _yaml_loader is None:
         raise RuntimeError("YAML support not available")
     return yaml.load(stream, Loader=_yaml_loader)
+
+logger = logging.getLogger("dih.validate")
 
 # Filler phrases that should be removed - just state the point directly
 FILLER_PHRASES = [
@@ -450,7 +453,7 @@ def load_parameter_names() -> Set[str]:
     parameter_names: Set[str] = set()
 
     if not os.path.exists(parameters_file):
-        print(f"Warning: {parameters_file} not found, skipping parameter import validation\n")
+        logger.debug(f"Warning: {parameters_file} not found, skipping parameter import validation")
         return parameter_names
 
     try:
@@ -467,7 +470,7 @@ def load_parameter_names() -> Set[str]:
 
         return parameter_names
     except Exception as e:
-        print(f"Warning: Failed to parse {parameters_file}: {str(e)}\n")
+        logger.debug(f"Warning: Failed to parse {parameters_file}: {str(e)}")
         return parameter_names
 
 
@@ -1278,7 +1281,7 @@ def load_anchor_ids(filepath: str) -> Set[str]:
 
         return anchor_ids
     except Exception as e:
-        print(f"Warning: Failed to load anchor IDs from {filepath}: {str(e)}\n", file=sys.stderr)
+        logger.debug(f"Warning: Failed to load anchor IDs from {filepath}: {str(e)}")
         return anchor_ids
 
 
@@ -1381,12 +1384,12 @@ def load_defined_variables() -> Tuple[Set[str], Optional[dict]]:
     defined_vars: Set[str] = set()
 
     if not os.path.exists(variables_file):
-        print(f"Warning: {variables_file} not found, skipping variable validation\n")
+        logger.debug(f"Warning: {variables_file} not found, skipping variable validation")
         return defined_vars, None
 
     if yaml is None:
-        print("Warning: PyYAML not installed, skipping variable validation\n")
-        print("  Install with: pip install pyyaml\n")
+        logger.debug("Warning: PyYAML not installed, skipping variable validation")
+        logger.debug("  Install with: pip install pyyaml")
         return defined_vars, None
 
     try:
@@ -1399,7 +1402,7 @@ def load_defined_variables() -> Tuple[Set[str], Optional[dict]]:
 
         return defined_vars, variables
     except Exception as e:
-        print(f"Warning: Failed to parse {variables_file}: {str(e)}\n")
+        logger.debug(f"Warning: Failed to parse {variables_file}: {str(e)}")
         return defined_vars, None
 
 
@@ -1476,11 +1479,11 @@ def check_variable_link_targets(variables_data=None):
                     ))
 
     if broken_count > 0:
-        print(f"  Found {broken_count} broken link target(s) in _variables.yml\n")
+        logger.debug(f"  Found {broken_count} broken link target(s) in _variables.yml")
     elif not_in_config_count > 0:
-        print(f"  All variable link targets exist on disk, but {not_in_config_count} target(s) not in any config chapter list (may be broken in rendered output)\n")
+        logger.debug(f"  All variable link targets exist on disk, but {not_in_config_count} target(s) not in any config chapter list (may be broken in rendered output)")
     else:
-        print("  All variable link targets OK\n")
+        logger.debug("  All variable link targets OK")
 
 
 def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str], lines: List[str]):
@@ -1535,7 +1538,7 @@ def load_citations_from_bib() -> Set[str]:
     for bib_file, description in bib_files:
         if not os.path.exists(bib_file):
             if bib_file == "references.bib":
-                print(f"Warning: {bib_file} not found")
+                logger.debug(f"Warning: {bib_file} not found")
             continue  # Skip optional files silently
 
         try:
@@ -1553,12 +1556,12 @@ def load_citations_from_bib() -> Set[str]:
                 count += 1
 
             if count > 0:
-                print(f"  Loaded {count} citations from {bib_file}")
-                print(f"  ({description})")
+                logger.debug(f"  Loaded {count} citations from {bib_file}")
+                logger.debug(f"  ({description})")
                 total_citations += count
 
         except Exception as e:
-            print(f"Warning: Failed to parse {bib_file}: {str(e)}\n")
+            logger.debug(f"Warning: Failed to parse {bib_file}: {str(e)}")
 
     return citation_ids
 
@@ -1652,12 +1655,11 @@ def validate_quarto_config():
     """
     config_path = "_quarto.yml"
     if not os.path.exists(config_path):
-        print(f"Warning: {config_path} not found, skipping config validation\n")
+        logger.debug(f"Warning: {config_path} not found, skipping config validation")
         return
 
     if yaml is None:
-        print("Warning: PyYAML not installed, skipping _quarto.yml validation\n")
-        print("  Install with: pip install pyyaml\n")
+        logger.debug("Warning: PyYAML not installed, skipping _quarto.yml validation")
         return
 
     try:
@@ -1776,16 +1778,16 @@ def check_source_image_dpi():
     Images with bad DPI (0 or 1) cause Word/EPUB to render them at hundreds of inches.
     Run 'python scripts/normalize-image-dpi.py --apply' to fix.
     """
-    print("Checking source image DPI metadata...")
+    logger.debug("Checking source image DPI metadata...")
     image_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "images")
     if not os.path.isdir(image_dir):
-        print("  Skipping (assets/images not found)\n")
+        logger.debug("  Skipping (assets/images not found)")
         return
 
     try:
         from PIL import Image as PILImage
     except ImportError:
-        print("  Skipping (Pillow not installed)\n")
+        logger.debug("  Skipping (Pillow not installed)")
         return
 
     supported = {".png", ".jpg", ".jpeg", ".bmp", ".tiff"}
@@ -1835,9 +1837,9 @@ def check_source_image_dpi():
                 pass
 
     if bad_dpi_count > 0:
-        print(f"  Found {bad_dpi_count} images with DPI issues\n")
+        logger.debug(f"  Found {bad_dpi_count} images with DPI issues")
     else:
-        print(f"  All source images OK\n")
+        logger.debug("  All source images OK")
 
 
 def check_epub_compatibility():
@@ -1848,7 +1850,7 @@ def check_epub_compatibility():
     - Backslash in URLs (Windows path separators)
     - Backslash-escaped percent in BibTeX URLs
     """
-    print("Checking EPUB compatibility patterns...")
+    logger.debug("Checking EPUB compatibility patterns...")
     project_root = os.path.dirname(os.path.dirname(__file__))
     issue_count = 0
 
@@ -1898,9 +1900,9 @@ def check_epub_compatibility():
             pass
 
     if issue_count > 0:
-        print(f"  Found {issue_count} EPUB compatibility issues\n")
+        logger.debug(f"  Found {issue_count} EPUB compatibility issues")
     else:
-        print(f"  All files OK for EPUB\n")
+        logger.debug("  All files OK for EPUB")
 
 
 def write_json_output(errors: List[ValidationError], output_path: str) -> None:
@@ -1945,10 +1947,18 @@ def main():
     parser.add_argument(
         "--output-json", help="Write errors to JSON file (for issue automation)"
     )
+    parser.add_argument(
+        "-v", "--verbose", action="store_true", help="Enable verbose debug logging"
+    )
     args = parser.parse_args()
 
+    logging.basicConfig(
+        level=logging.DEBUG if args.verbose else logging.INFO,
+        format='%(message)s'
+    )
+
     # First, regenerate _variables.yml to ensure it's current with parameters.py
-    print("Regenerating _variables.yml from parameters.py...\n")
+    logger.debug("Regenerating _variables.yml from parameters.py...\n")
     try:
         import subprocess
 
@@ -1968,50 +1978,50 @@ def main():
             # Print condensed output (just the summary lines)
             for line in result.stdout.split("\n"):
                 if line.startswith("[OK]") or line.startswith("[*]"):
-                    print(line)
-        print()
+                    logger.debug(line)
+        logger.debug("")
     except Exception as e:
         print(f"ERROR: Failed to regenerate _variables.yml: {e}\n", file=sys.stderr)
         sys.exit(1)
 
-    print("Running pre-render validation checks on .qmd files...\n")
+    logger.info("Running pre-render validation checks on .qmd files...\n")
 
     # Load defined variables from _variables.yml (parse once, reuse for link target check)
-    print("Loading defined variables from _variables.yml...")
+    logger.debug("Loading defined variables from _variables.yml...")
     defined_vars, variables_data = load_defined_variables()
     if defined_vars:
-        print(f"Loaded {len(defined_vars)} defined variables\n")
+        logger.debug(f"Loaded {len(defined_vars)} defined variables")
     else:
-        print("No variables loaded (PyYAML may not be installed or _variables.yml not found)\n")
+        logger.debug("No variables loaded (PyYAML may not be installed or _variables.yml not found)")
 
     # Check variable link targets in _variables.yml (reuses parsed data)
-    print("Checking variable link targets in _variables.yml...")
+    logger.debug("Checking variable link targets in _variables.yml...")
     check_variable_link_targets(variables_data)
 
     # Load defined parameters from dih_models/parameters.py
-    print("Loading defined parameters from dih_models/parameters.py...")
+    logger.debug("Loading defined parameters from dih_models/parameters.py...")
     defined_parameters = load_parameter_names()
     if defined_parameters:
-        print(f"Loaded {len(defined_parameters)} defined parameters\n")
+        logger.debug(f"Loaded {len(defined_parameters)} defined parameters")
     else:
-        print("No parameters loaded (dih_models/parameters.py not found)\n")
+        logger.debug("No parameters loaded (dih_models/parameters.py not found)")
 
     # Load anchor IDs from all files
-    print("Loading anchor IDs from all .qmd and .md files...")
+    logger.debug("Loading anchor IDs from all .qmd and .md files...")
     anchor_map = load_all_anchor_ids()
     total_anchors = sum(len(ids) for ids in anchor_map.values())
     if anchor_map:
-        print(f"Loaded {total_anchors} anchor IDs from {len(anchor_map)} files\n")
+        logger.debug(f"Loaded {total_anchors} anchor IDs from {len(anchor_map)} files")
     else:
-        print("No anchor IDs loaded\n")
+        logger.debug("No anchor IDs loaded")
 
     # Load citations from references.bib
-    print("Loading citations from references.bib...")
+    logger.debug("Loading citations from references.bib...")
     defined_citations = load_citations_from_bib()
     if defined_citations:
-        print(f"Loaded {len(defined_citations)} citation IDs\n")
+        logger.debug(f"Loaded {len(defined_citations)} citation IDs")
     else:
-        print("No citations loaded\n")
+        logger.debug("No citations loaded")
 
     # Validate _quarto.yml configuration first
     validate_quarto_config()
@@ -2032,7 +2042,7 @@ def main():
     # Skip .md files - they're documentation, not part of the Quarto book
     # (anchor IDs from .md files are still loaded for cross-reference validation)
     all_files = qmd_files
-    print(f"Found {len(qmd_files)} .qmd files to validate\n")
+    logger.info(f"Validating {len(qmd_files)} .qmd files...")
 
     # Validate each file
     for file in all_files:
@@ -2044,7 +2054,7 @@ def main():
 
     # Report results
     if len(errors) == 0:
-        print("No pre-validation errors found!\n")
+        logger.info("No pre-validation errors found!\n")
         sys.exit(0)
     else:
         print(f"Found {len(errors)} pre-validation error(s):\n", file=sys.stderr)

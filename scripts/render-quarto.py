@@ -456,7 +456,7 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
     return {
         "config_file": config_file,
         "index_source": dih_render.get("index-source"),
-        "target_url": dih_render.get("fallback-404-redirect-domain"),
+        "target_url": dih_render.get("fallback-404-redirect-domain", "https://manual.WarOnDisease.org"),
         "description": (
             config.get("book", {}).get("title") or
             config.get("website", {}).get("title") or

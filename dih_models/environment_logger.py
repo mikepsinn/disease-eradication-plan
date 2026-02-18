@@ -7,10 +7,13 @@ simulations or other numerical computations produce different results
 across different environments (shells, Python versions, etc.).
 """
 
+import logging
 import os
 import platform
 import sys
 from typing import Any, Dict, Optional
+
+logger = logging.getLogger("dih.environment")
 
 
 def log_environment_info(include_mc_info: bool = True) -> Dict[str, Any]:
@@ -29,61 +32,61 @@ def log_environment_info(include_mc_info: bool = True) -> Dict[str, Any]:
     """
     info: Dict[str, Any] = {}
 
-    print("=" * 70)
-    print("ENVIRONMENT DEBUG INFO (for reproducibility diagnosis)")
-    print("=" * 70)
+    logger.debug("=" * 70)
+    logger.debug("ENVIRONMENT DEBUG INFO (for reproducibility diagnosis)")
+    logger.debug("=" * 70)
 
     # Python version and implementation
     info["python_version"] = sys.version
     info["python_executable"] = sys.executable
     info["python_implementation"] = platform.python_implementation()
-    print(f"Python version:      {info['python_version']}")
-    print(f"Python executable:   {info['python_executable']}")
-    print(f"Python impl:         {info['python_implementation']}")
+    logger.debug(f"Python version:      {info['python_version']}")
+    logger.debug(f"Python executable:   {info['python_executable']}")
+    logger.debug(f"Python impl:         {info['python_implementation']}")
 
     # Platform info
     info["platform"] = platform.platform()
     info["machine"] = platform.machine()
     info["processor"] = platform.processor()
-    print(f"Platform:            {info['platform']}")
-    print(f"Machine:             {info['machine']}")
-    print(f"Processor:           {info['processor']}")
+    logger.debug(f"Platform:            {info['platform']}")
+    logger.debug(f"Machine:             {info['machine']}")
+    logger.debug(f"Processor:           {info['processor']}")
 
     # NumPy version (critical for random number generation)
     try:
         import numpy as np
         info["numpy_version"] = np.__version__
         info["numpy_rng_type"] = type(np.random.default_rng()).__name__
-        print(f"NumPy version:       {info['numpy_version']}")
-        print(f"NumPy RNG default:   {info['numpy_rng_type']}")
+        logger.debug(f"NumPy version:       {info['numpy_version']}")
+        logger.debug(f"NumPy RNG default:   {info['numpy_rng_type']}")
     except ImportError:
         info["numpy_version"] = "NOT INSTALLED"
-        print("NumPy version:       NOT INSTALLED")
+        logger.debug("NumPy version:       NOT INSTALLED")
 
     # SciPy version
     try:
         import scipy
         info["scipy_version"] = scipy.__version__
-        print(f"SciPy version:       {info['scipy_version']}")
+        logger.debug(f"SciPy version:       {info['scipy_version']}")
     except ImportError:
         info["scipy_version"] = "NOT INSTALLED"
-        print("SciPy version:       NOT INSTALLED")
+        logger.debug("SciPy version:       NOT INSTALLED")
 
     # Shell/terminal environment
     shell = os.environ.get("SHELL", os.environ.get("COMSPEC", "unknown"))
     info["shell"] = shell
-    print(f"Shell:               {shell}")
+    logger.debug(f"Shell:               {shell}")
 
     # Check for common shell indicators
     ps_module_path = os.environ.get("PSModulePath", "")
     info["powershell_detected"] = bool(ps_module_path)
     if ps_module_path:
-        print("PowerShell detected: Yes (PSModulePath set)")
+        logger.debug("PowerShell detected: Yes (PSModulePath set)")
 
     # Terminal type
     term = os.environ.get("TERM", os.environ.get("WT_SESSION", "unknown"))
     info["terminal"] = term
-    print(f"Terminal:            {term}")
+    logger.debug(f"Terminal:            {term}")
 
     # Check if running in git hook context
     git_hook_indicators = [
@@ -94,40 +97,39 @@ def log_environment_info(include_mc_info: bool = True) -> Dict[str, Any]:
     info["git_hook_context"] = bool(git_env_vars)
     info["git_env_vars"] = git_env_vars
     if git_env_vars:
-        print("Git hook context:    Yes")
+        logger.debug("Git hook context:    Yes")
         for k, v in git_env_vars.items():
-            print(f"  {k}={v[:50]}..." if len(v) > 50 else f"  {k}={v}")
+            logger.debug(f"  {k}={v[:50]}..." if len(v) > 50 else f"  {k}={v}")
     else:
-        print("Git hook context:    No (no GIT_* env vars)")
+        logger.debug("Git hook context:    No (no GIT_* env vars)")
 
     # Working directory
     info["working_directory"] = os.getcwd()
-    print(f"Working directory:   {info['working_directory']}")
+    logger.debug(f"Working directory:   {info['working_directory']}")
 
     # User running the script
     info["user"] = os.environ.get("USERNAME", os.environ.get("USER", "unknown"))
-    print(f"User:                {info['user']}")
+    logger.debug(f"User:                {info['user']}")
 
     # Check for CI/CD environment
     ci_indicators = ["CI", "GITHUB_ACTIONS", "GITLAB_CI", "JENKINS_URL", "TRAVIS"]
     ci_env = {k: os.environ.get(k, "") for k in ci_indicators if os.environ.get(k)}
     info["ci_environment"] = ci_env if ci_env else None
     if ci_env:
-        print(f"CI environment:      {ci_env}")
+        logger.debug(f"CI environment:      {ci_env}")
     else:
-        print("CI environment:      No")
+        logger.debug("CI environment:      No")
 
     # Monte Carlo specific info
     if include_mc_info:
         info["mc_random_seed"] = 42
-        print("MC Random seed:      42 (hardcoded)")
+        logger.debug("MC Random seed:      42 (hardcoded)")
 
     # Float precision check
     info["float_precision_digits"] = sys.float_info.dig
-    print(f"Float info:          {info['float_precision_digits']} digits precision")
+    logger.debug(f"Float info:          {info['float_precision_digits']} digits precision")
 
-    print("=" * 70)
-    print()
+    logger.debug("=" * 70)
 
     return info
 
@@ -152,19 +154,19 @@ def log_mc_fingerprint(
     """
     import hashlib
 
-    print(f"[MC DEBUG] Starting Monte Carlo simulation:")
-    print(f"[MC DEBUG]   Seed: {seed}")
-    print(f"[MC DEBUG]   N samples: {n_samples}")
-    print(f"[MC DEBUG]   Parameters with uncertainty: {n_params_with_uncertainty}")
+    logger.debug(f"[MC DEBUG] Starting Monte Carlo simulation:")
+    logger.debug(f"[MC DEBUG]   Seed: {seed}")
+    logger.debug(f"[MC DEBUG]   N samples: {n_samples}")
+    logger.debug(f"[MC DEBUG]   Parameters with uncertainty: {n_params_with_uncertainty}")
 
     # Log first few sample values as fingerprint
-    print(f"[MC DEBUG] Simulation complete. Sample fingerprint:")
+    logger.debug(f"[MC DEBUG] Simulation complete. Sample fingerprint:")
     fingerprint_params = list(sims.keys())[:3]
     for fp_param in fingerprint_params:
         fp_arr = sims[fp_param]
         if len(fp_arr) > 0:
             fp_vals = [f"{float(fp_arr[i]):.6g}" for i in range(min(5, len(fp_arr)))]
-            print(f"[MC DEBUG]   {fp_param}: [{', '.join(fp_vals)}, ...]")
+            logger.debug(f"[MC DEBUG]   {fp_param}: [{', '.join(fp_vals)}, ...]")
 
     # Generate deterministic hash of all simulation results
     hash_input = ""
@@ -174,8 +176,8 @@ def log_mc_fingerprint(
         hash_input += f"{name}:{','.join(vals)};"
 
     sim_hash = hashlib.md5(hash_input.encode()).hexdigest()[:12]
-    print(f"[MC DEBUG] Simulation hash: {sim_hash}")
-    print(f"[MC DEBUG] (If this hash differs between runs, MC results changed)")
+    logger.debug(f"[MC DEBUG] Simulation hash: {sim_hash}")
+    logger.debug(f"[MC DEBUG] (If this hash differs between runs, MC results changed)")
 
     return sim_hash
 
@@ -239,14 +241,14 @@ def check_reproducibility_requirements(strict: bool = False) -> bool:
         )
 
     if warnings:
-        print("[WARN] Reproducibility concerns:")
+        logger.warning("Reproducibility concerns:")
         for warning in warnings:
-            print(f"  - {warning}")
+            logger.warning(f"  - {warning}")
 
     if issues:
-        print("[ERROR] Reproducibility requirements not met:")
+        print("[ERROR] Reproducibility requirements not met:", file=sys.stderr)
         for issue in issues:
-            print(f"  - {issue}")
+            print(f"  - {issue}", file=sys.stderr)
         return False
 
     return True
@@ -293,22 +295,22 @@ def enforce_reproducible_environment():
         errors.append(f"SciPy {scipy.__version__} != required {REQUIRED_SCIPY}.x")
 
     if errors:
-        print("=" * 70)
-        print("[ERROR] VERSION MISMATCH - MC results may not be reproducible")
-        print("=" * 70)
+        print("=" * 70, file=sys.stderr)
+        print("[ERROR] VERSION MISMATCH - MC results may not be reproducible", file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
         for e in errors:
-            print(f"  - {e}")
-        print()
-        print("Required versions (from requirements.txt):")
-        print(f"  numpy=={REQUIRED_NUMPY}.0")
-        print(f"  scipy=={REQUIRED_SCIPY}.3")
-        print()
-        print("Fix: pip install -r requirements.txt")
-        print("  or: .venv/Scripts/activate && pip install -r requirements.txt")
-        print("=" * 70)
+            print(f"  - {e}", file=sys.stderr)
+        print(file=sys.stderr)
+        print("Required versions (from requirements.txt):", file=sys.stderr)
+        print(f"  numpy=={REQUIRED_NUMPY}.0", file=sys.stderr)
+        print(f"  scipy=={REQUIRED_SCIPY}.3", file=sys.stderr)
+        print(file=sys.stderr)
+        print("Fix: pip install -r requirements.txt", file=sys.stderr)
+        print("  or: .venv/Scripts/activate && pip install -r requirements.txt", file=sys.stderr)
+        print("=" * 70, file=sys.stderr)
         sys.exit(1)
 
-    print(f"[OK] Environment verified: NumPy {numpy_version}, SciPy {scipy_version}")
+    logger.debug(f"[OK] Environment verified: NumPy {numpy_version}, SciPy {scipy_version}")
 
 
 # Keep old function name as alias for backwards compatibility

@@ -11,10 +11,13 @@ Key features:
 - Update YAML configs while preserving formatting
 """
 
+import logging
 import re
 import sys
 from pathlib import Path
 from typing import Any, Dict
+
+logger = logging.getLogger("dih.yaml_sync")
 
 # Add project root to path for dih_models imports
 _project_root = str(Path(__file__).parent.parent.parent)
@@ -57,7 +60,7 @@ def parse_qmd_frontmatter(qmd_path: Path) -> Dict[str, Any]:
         frontmatter = yaml_safe_load(yaml_match.group(1))
         return frontmatter if isinstance(frontmatter, dict) else {}
     except Exception as e:
-        print(f"[WARN] Failed to parse frontmatter in {qmd_path}: {e}")
+        logger.warning("Failed to parse frontmatter in %s: %s", qmd_path, e)
         return {}
 
 
@@ -196,11 +199,11 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
         project_root: Path to project root directory
         variables_path: Path to _variables.yml file
     """
-    print("[*] Syncing descriptions and abstracts from QMD frontmatter to YAML configs...")
+    logger.debug("Syncing descriptions and abstracts from QMD frontmatter to YAML configs...")
 
     # Load variables for substitution
     if not variables_path.exists():
-        print(f"[WARN] {variables_path} not found - skipping description sync")
+        logger.warning("%s not found - skipping description sync", variables_path)
         return
 
     with open(variables_path, 'r', encoding='utf-8') as f:
@@ -229,7 +232,7 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
 
             qmd_path = project_root / index_source
             if not qmd_path.exists():
-                print(f"[WARN] Source QMD not found: {index_source} (referenced by {yaml_path.name})")
+                logger.warning("Source QMD not found: %s (referenced by %s)", index_source, yaml_path.name)
                 skipped_count += 1
                 continue
 
@@ -335,21 +338,20 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
             if updated:
                 # Write back with original line endings
                 yaml_path.write_text(content, encoding='utf-8')
-                print(f"[OK] Updated {yaml_path.name}")
+                logger.debug("Updated %s", yaml_path.name)
                 if title and title != current_title:
-                    print(f"     Title: {title[:80]}...")
+                    logger.debug("     Title: %s...", title[:80])
                 if description and description != current_desc:
-                    print(f"     Description: {description[:80]}...")
+                    logger.debug("     Description: %s...", description[:80])
                 if abstract and abstract != current_abstract:
-                    print(f"     Abstract: {abstract[:80]}...")
+                    logger.debug("     Abstract: %s...", abstract[:80])
                 updated_count += 1
 
         except Exception as e:
-            print(f"[WARN] Failed to sync {yaml_path.name}: {e}")
+            logger.warning("Failed to sync %s: %s", yaml_path.name, e)
             import traceback
             traceback.print_exc()
             skipped_count += 1
             continue
 
-    print(f"[OK] Synced {updated_count} YAML configs, skipped {skipped_count}")
-    print()
+    logger.debug("Synced %d YAML configs, skipped %d", updated_count, skipped_count)
