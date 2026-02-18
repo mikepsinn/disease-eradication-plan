@@ -73,10 +73,10 @@ def normalize_image(path: Path, apply: bool = False) -> dict | None:
         if current_dpi_x < MIN_VALID_DPI or current_dpi_y < MIN_VALID_DPI:
             reason = "bad_dpi"
         else:
-            # Check if physical size exceeds limit
+            # Check if physical size exceeds limit (with 1% tolerance for PNG float precision)
             w_inches = width / current_dpi_x
             h_inches = height / current_dpi_y
-            if w_inches > MAX_INCHES or h_inches > MAX_INCHES:
+            if w_inches > MAX_INCHES * 1.01 or h_inches > MAX_INCHES * 1.01:
                 reason = "oversized"
             else:
                 return None  # Image is fine
