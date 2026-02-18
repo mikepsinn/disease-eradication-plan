@@ -345,10 +345,8 @@ format:
       method: webtex
       url: "https://latex.codecogs.com/svg.latex?"
     css: epub-math.css
-    # Table of contents
-    toc: true
-    toc-depth: 2
-    toc-title: "Contents"
+    # Table of contents disabled - Kindle generates nav from chapter headings automatically
+    toc: false
     # Chapter splitting: Use level 2 for large books (81 chapters, ~900 pages)
     # This prevents oversized chapter files that cause performance issues
     epub-chapter-level: 2
@@ -431,8 +429,7 @@ format:
     documentclass: report
     institute: "Institute for Accelerated Medicine"
     echo: false
-    toc: true
-    toc-depth: 3
+    toc: false
     number-sections: false
     colorlinks: true
     link-citations: true
@@ -462,7 +459,6 @@ format:
           \newpage
   docx:
     output-file: "How-to-End-War-and-Disease.docx"
-    toc: true
-    toc-depth: 3
+    toc: false
     number-sections: false
     echo: false
