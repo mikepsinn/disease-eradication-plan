@@ -166,8 +166,7 @@ format:
     documentclass: report
     institute: "Institute for Accelerated Medicine"
     echo: false
-    toc: true
-    toc-depth: 2
+    toc: false
     number-sections: false
     colorlinks: false  # Print-friendly: no colored links
     link-citations: true
