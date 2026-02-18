@@ -1332,48 +1332,23 @@ def render_quarto(
                     shutil.copy2(epub_path, dest_epub_path)
                     print(f"[OK] Copied EPUB to: {dest_epub_path.relative_to(project_root)}")
 
-                    # Fix EPUB for Kindle compatibility (resize oversized images, fix DPI, compress)
-                    fix_kindle_script = project_root / "scripts" / "fix-epub-kindle.py"
-                    kindle_epub_name = expected_epub.replace(".epub", "-kindle.epub")
-                    dest_kindle_path = assets_epubs_dir / kindle_epub_name
-                    if fix_kindle_script.exists():
-                        print(f"[*] Generating Kindle-compatible EPUB...")
-                        kindle_result = subprocess.run(
-                            [sys.executable, "-u", str(fix_kindle_script), str(dest_epub_path), "-o", str(dest_kindle_path)],
+                    # Fix XHTML issues in EPUB (unclosed tags, scripts)
+                    fix_epub_script = project_root / "scripts" / "fix-epub-kindle.py"
+                    if fix_epub_script.exists():
+                        print(f"[*] Fixing EPUB XHTML...")
+                        fix_result = subprocess.run(
+                            [sys.executable, "-u", str(fix_epub_script), str(dest_epub_path)],
                             cwd=str(project_root),
                         )
-                        if kindle_result.returncode != 0:
-                            print(f"[WARN] Kindle EPUB fix encountered issues (exit code {kindle_result.returncode})", file=sys.stderr)
-                        elif dest_kindle_path.exists():
-                            kindle_mb = dest_kindle_path.stat().st_size / (1024 * 1024)
-                            print(f"[OK] Kindle EPUB: {dest_kindle_path.relative_to(project_root)} ({kindle_mb:.2f} MB)")
-
-                    # Validate Kindle compatibility
-                    validate_kindle_script = project_root / "scripts" / "validate-kindle-compat.py"
-                    kindle_target = dest_kindle_path if dest_kindle_path.exists() else dest_epub_path
-                    if validate_kindle_script.exists():
-                        print(f"[*] Validating Kindle compatibility...")
-                        validate_result = subprocess.run(
-                            [sys.executable, "-u", str(validate_kindle_script), str(kindle_target)],
-                            cwd=str(project_root),
-                            capture_output=True, text=True,
-                        )
-                        if validate_result.returncode != 0:
-                            # Extract just the error lines for concise output
-                            for line in validate_result.stdout.splitlines():
-                                if "[ERROR]" in line:
-                                    print(f"  {line.strip()}", file=sys.stderr)
-                            print(f"[WARN] Kindle validation found {validate_result.stdout.count('[ERROR]')} error(s)", file=sys.stderr)
-                        else:
-                            print(f"[OK] Kindle validation passed")
+                        if fix_result.returncode != 0:
+                            print(f"[WARN] EPUB XHTML fix encountered issues (exit code {fix_result.returncode})", file=sys.stderr)
 
                     # Run epubcheck for EPUB spec compliance (catches issues KDP rejects)
                     epubcheck_jar = ensure_epubcheck(project_root)
                     if epubcheck_jar:
-                        epubcheck_target = dest_kindle_path if dest_kindle_path.exists() else dest_epub_path
-                        print(f"[*] Running epubcheck on {epubcheck_target.name}...")
+                        print(f"[*] Running epubcheck on {dest_epub_path.name}...")
                         epubcheck_result = subprocess.run(
-                            ["java", "-jar", str(epubcheck_jar), str(epubcheck_target)],
+                            ["java", "-jar", str(epubcheck_jar), str(dest_epub_path)],
                             capture_output=True, text=True, encoding="utf-8",
                         )
                         # Count fatals and errors from stderr (epubcheck outputs there)
@@ -1388,6 +1363,26 @@ def render_quarto(
                                     print(f"  {line.strip()[:150]}", file=sys.stderr)
                         else:
                             print(f"[OK] epubcheck passed ({warning_count} warnings)")
+
+                    # Try KPF conversion via Kindle Previewer (optional, for early failure detection)
+                    kindle_previewer = Path(r"C:\Users\m\AppData\Local\Amazon\Kindle Previewer 3\Kindle Previewer 3.exe")
+                    if kindle_previewer.exists():
+                        kpf_output_dir = project_root / "assets" / "kpf"
+                        kpf_output_dir.mkdir(parents=True, exist_ok=True)
+                        print(f"[*] Attempting KPF conversion via Kindle Previewer...")
+                        kpf_result = subprocess.run(
+                            [str(kindle_previewer), str(dest_epub_path), "-convert", "-output", str(kpf_output_dir)],
+                            capture_output=True, text=True, timeout=300,
+                        )
+                        kpf_files = list(kpf_output_dir.glob("*.kpf"))
+                        if kpf_files:
+                            print(f"[OK] KPF generated: {kpf_files[0].name}")
+                        else:
+                            print(f"[WARN] KPF conversion failed (Enhanced Typesetting may not be supported)", file=sys.stderr)
+                            # Show any useful output from Kindle Previewer
+                            for line in (kpf_result.stdout or "").splitlines():
+                                if line.strip():
+                                    print(f"  {line.strip()[:150]}", file=sys.stderr)
                 else:
                     print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
                     print(f"        Expected at: {epub_path}", file=sys.stderr)

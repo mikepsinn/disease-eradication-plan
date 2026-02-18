@@ -586,8 +586,12 @@ def add_png_metadata(filepath, title=None, description=None):
         if description:
             meta.add_text("Description", description)
 
-        # Save with metadata
-        img.save(filepath, pnginfo=meta, optimize=False)
+        # Save with metadata, preserving DPI (critical for DOCX/EPUB physical sizing)
+        save_kwargs = {"pnginfo": meta, "optimize": False}
+        dpi = img.info.get("dpi")
+        if dpi:
+            save_kwargs["dpi"] = dpi
+        img.save(filepath, **save_kwargs)
 
     except ImportError:
         # PIL not available, skip metadata

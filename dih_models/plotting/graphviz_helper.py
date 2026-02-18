@@ -137,7 +137,12 @@ def add_watermark_to_png(png_path, text="WarOnDisease.org"):
         else:
             draw.text((text_x, text_y), text, fill=watermark_color, anchor="rt")
 
-        img.save(png_path)
+        # Preserve DPI metadata (critical for DOCX/EPUB physical sizing)
+        save_kwargs = {}
+        dpi = img.info.get("dpi")
+        if dpi:
+            save_kwargs["dpi"] = dpi
+        img.save(png_path, **save_kwargs)
     except Exception as e:
         print(f"Warning: Could not add watermark to {png_path}: {e}")
 

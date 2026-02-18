@@ -128,21 +128,30 @@ def normalize_image(path: Path, apply: bool = False) -> dict | None:
 def main():
     parser = argparse.ArgumentParser(description="Normalize image DPI metadata")
     parser.add_argument("--apply", action="store_true", help="Actually modify files (default: dry run)")
-    parser.add_argument("--dir", default="assets/images", help="Directory to scan")
+    parser.add_argument("--dir", action="append", default=None, help="Directory to scan (can specify multiple; default: assets/images assets/cover)")
     parser.add_argument("--verbose", "-v", action="store_true", help="Show all images, not just changes")
     args = parser.parse_args()
 
     script_dir = Path(__file__).parent.parent
-    scan_dir = script_dir / args.dir
+    default_dirs = ["assets"]
+    scan_dirs_raw = args.dir if args.dir else default_dirs
 
-    if not scan_dir.exists():
-        print(f"Error: Directory not found: {scan_dir}")
+    scan_dirs = []
+    for d in scan_dirs_raw:
+        p = script_dir / d
+        if p.exists():
+            scan_dirs.append(p)
+        else:
+            print(f"Warning: Directory not found, skipping: {p}")
+
+    if not scan_dirs:
+        print("Error: No valid directories to scan")
         sys.exit(1)
 
     mode = "APPLYING CHANGES" if args.apply else "DRY RUN (use --apply to modify files)"
     print(f"\n{'='*80}")
     print(f"Image DPI Normalization: {mode}")
-    print(f"Directory: {scan_dir}")
+    print(f"Directories: {', '.join(str(d) for d in scan_dirs)}")
     print(f"Target DPI: {TARGET_DPI}, Max physical size: {MAX_INCHES} inches")
     print(f"{'='*80}\n")
 
@@ -151,27 +160,28 @@ def main():
     skipped = 0
     total = 0
 
-    for path in sorted(scan_dir.rglob("*")):
-        if not path.is_file():
-            continue
-        ext = path.suffix.lower()
-        if ext in SKIP_FORMATS:
-            skipped += 1
-            continue
-        if ext not in SUPPORTED_FORMATS:
-            continue
+    for scan_dir in scan_dirs:
+        for path in sorted(scan_dir.rglob("*")):
+            if not path.is_file():
+                continue
+            ext = path.suffix.lower()
+            if ext in SKIP_FORMATS:
+                skipped += 1
+                continue
+            if ext not in SUPPORTED_FORMATS:
+                continue
 
-        total += 1
-        result = normalize_image(path, apply=args.apply)
+            total += 1
+            result = normalize_image(path, apply=args.apply)
 
-        if result is None:
-            continue
+            if result is None:
+                continue
 
-        if "error" in result:
-            errors.append(result)
-            continue
+            if "error" in result:
+                errors.append(result)
+                continue
 
-        changes.append(result)
+            changes.append(result)
 
     # Print results grouped by reason
     by_reason = {}
