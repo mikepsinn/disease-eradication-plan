@@ -10,6 +10,7 @@ project:
 dih-render:
   index-source: index-manual.qmd
   show-confidence-intervals: false
+  docx-output-file: "How-to-End-War-and-Disease-Paperback.docx"
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
 
 book:

@@ -443,12 +443,15 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
     dih_render = config.get("dih-render", {})
     pdf_output_file = dih_render.get("pdf-output-file")
     epub_output_file = dih_render.get("epub-output-file")
+    docx_output_file = dih_render.get("docx-output-file")
 
     # Fallback to format output-file when dih-render doesn't provide names.
     if not pdf_output_file:
         pdf_output_file = config.get("format", {}).get("pdf", {}).get("output-file")
     if not epub_output_file:
         epub_output_file = config.get("format", {}).get("epub", {}).get("output-file")
+    if not docx_output_file:
+        docx_output_file = config.get("format", {}).get("docx", {}).get("output-file")
 
     return {
         "config_file": config_file,
@@ -463,6 +466,7 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         # Read desired output filenames from dih-render, then format.* fallback.
         "pdf_output_file": pdf_output_file,
         "epub_output_file": epub_output_file,
+        "docx_output_file": docx_output_file,
         # Whether to show "(95% CI: ...)" in variable display values (default: True)
         "show_confidence_intervals": dih_render.get("show-confidence-intervals", True),
         # How to handle <a> links on parameter values (default: "html" = keep raw tags)
@@ -1244,6 +1248,15 @@ def render_quarto(
                         new_path = epub_file.parent / expected_epub
                         print(f"[*] Renaming {epub_file.name} -> {expected_epub}")
                         epub_file.rename(new_path)
+
+            # Rename DOCXs in temp folder to match config output-file
+            expected_docx = metadata.get("docx_output_file")
+            if expected_docx:
+                for docx_file in temp_output_dir.glob("*.docx"):
+                    if docx_file.name != expected_docx:
+                        new_path = docx_file.parent / expected_docx
+                        print(f"[*] Renaming {docx_file.name} -> {expected_docx}")
+                        docx_file.rename(new_path)
             gh_group_end()  # End VALIDATING BUILD OUTPUTS
 
             # Validate PDFs for Python code leakage
