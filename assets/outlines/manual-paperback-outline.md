@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 41 | **Words:** 96,264 | **Images:** 646 | **Est. Pages:** ~708
+**Files:** 41 | **Words:** 93,371 | **Images:** 625 | **Est. Pages:** ~686
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -1447,51 +1447,6 @@
     - On Why 3.5% Is The Magic Number
     ![3.5% of people actively pushing for change is enough to topple governments. It's a historical pattern, like gravity but for revolutions.](/assets/images/global-referendum/global-referendum-section-on-why-3-5-is-the-magic-number-bw-academic.jpg)
 
-#### knowledge/solution/ai-coordination-army.qmd
-**Title:** Building Your AI Coordination Army
-**Description:** How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
-**Stats:** 3,233 words | 226 lines | 22 images | ~24p
-
-    ![People pick goals, researchers pick targets, robots coordinate everything. Like mission control but the mission is not dying.](/assets/images/ai-coordination-army/ai-coordination-army-section-import-economic-parameters-produces-output-to-prevent-timeout-bw-academic.jpg)
-  - Where Your Agents Get Their Missions (Not From a Management Consultant)
-    ![The Wishocracy Task Tree. Big goal at top, tiny tasks at bottom. It's how you turn 'cure cancer' into 'send email to lab 47.'](/assets/images/ai-coordination-army/ai-coordination-army-section-wishocracy-task-tree-bw-academic.jpg)
-  - The Secret to Success: Cross-Sector Coordination (Forces for Good)
-    ![Before: biotech doesn't talk to government doesn't talk to universities. After: robots talk to each other, work gets done. We replaced the humans with the chattier species.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-secret-to-success-cross-sector-coordination-forces-for-good-bw-academic.jpg)
-  - Why You Need This (Humans Are Hilariously Bad at Coordination)
-    ![Humans can coordinate 150 people before everything breaks. AI can coordinate millions and doesn't need sleep. We're being outcompeted at cooperation by math.](/assets/images/ai-coordination-army/ai-coordination-army-section-why-you-need-this-humans-are-hilariously-bad-at-coordination-bw-academic.jpg)
-  - The Architecture You're Building (It's Simpler Than It Looks)
-    ![The robot org chart. Big boss robots tell medium robots tell little robots. We taught AI bureaucracy, which feels like a waste of AI.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-architecture-you-re-building-it-s-simpler-than-it-looks-bw-academic.jpg)
-    ![Mission Level architecture. There's a coordinating robot inside a network layer inside a mission. It's robots all the way down.](/assets/images/ai-coordination-army/ai-coordination-army-section-mission-level-bw-academic.jpg)
-    ![One robot boss watches worker robots while monitor robots watch everybody. We invented middle management for computers.](/assets/images/ai-coordination-army/ai-coordination-army-section-node-level-bw-academic.jpg)
-  - Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
-    ![The AI Coordination Hub. Finds donors, writes grants, coordinates everybody. It does the boring parts so humans can do the fun parts, like science.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-1-deploy-your-coordination-hub-bw-academic.jpg)
-    - To Mobilize Support
-    ![Before: humans schedule meetings. After: robots schedule meetings, humans have ideas. We finally found a good use for robots.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-mobilize-support-bw-academic.jpg)
-    - To Accelerate Research
-    ![Phase 1: robot finds money. Phase 2: robot does work. Humans just point at problems and robots solve them. This is what we wanted from the Jetsons.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-accelerate-research-bw-academic.jpg)
-    - To Build Awareness
-    ![Humans test 2 versions. AI tests 200 versions. AI wins. This is why robots will take all the marketing jobs first.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-build-awareness-bw-academic.jpg)
-    - To Optimize Impact
-    ![An AI node. Little task robots share a brain, talk to research labs, talk to government, talk to other nodes. It's like LinkedIn but the networking actually accomplishes something.](/assets/images/ai-coordination-army/ai-coordination-army-section-to-optimize-impact-bw-academic.jpg)
-  - Step 2: Define Each Agent's Mission (From the Task Tree, Not From Your Feelings)
-    ![The Task Tree with robots in every time zone. Each robot tracks what it's supposed to do and what it actually did. Performance reviews for software.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-2-define-each-agent-s-mission-bw-academic.jpg)
-  - Step 3: Enable Competition Between Agents (May the Best Robot Win)
-    ![Two robots compete. Winner gets resources. Loser gets deleted. We taught AI capitalism and called it evolution.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-3-enable-competition-between-agents-may-the-best-robot-win-bw-academic.jpg)
-  - How You Keep Control (Preventing the Robot Uprising)
-    ![Humans decide strategy. Robots execute tactics. This is called 'alignment' because 'keeping the robots from going rogue' sounded alarming.](/assets/images/ai-coordination-army/ai-coordination-army-section-how-you-keep-control-preventing-the-robot-uprising-bw-academic.jpg)
-    - AI Proposes
-    ![Robots analyze data, write up problems, file tickets for humans to fix. The robots are middle managers now. We've come full circle.](/assets/images/ai-coordination-army/ai-coordination-army-section-ai-proposes-bw-academic.jpg)
-    - You Decide
-    ![Humans used to make decisions slowly. Now computers help them make decisions slowly, but with more charts.](/assets/images/ai-coordination-army/ai-coordination-army-section-you-decide-bw-academic.jpg)
-    - AI Implements
-    ![Robots doing paperwork so humans can spend more time approving robots to do paperwork.](/assets/images/ai-coordination-army/ai-coordination-army-section-ai-implements-bw-academic.jpg)
-    - You Verify
-    ![One person checking the robot's homework before it gets sent to every robot on Earth. Nothing could go wrong.](/assets/images/ai-coordination-army/ai-coordination-army-section-you-verify-bw-academic.jpg)
-  - How You Prevent Data Silos (The Tragedy of the Nonprofit Commons)
-    ![Organizations used to keep secrets from each other. This is a drawing of them still keeping secrets, but feeling bad about it.](/assets/images/ai-coordination-army/ai-coordination-army-section-how-you-prevent-data-silos-the-tragedy-of-the-nonprofit-commons-bw-academic.jpg)
-    - Rule 1 - Share to Play
-    ![You give them your data. They give you money and a robot. It's like selling your diary, if your diary could cure cancer.](/assets/images/ai-coordination-army/ai-coordination-army-section-rule-1-share-to-play-bw-academic.jpg)
-
 #### knowledge/strategy/co-opting-defense-contractors.qmd
 **Title:** Making Friends with the Military-Industrial Complex
 **Description:** Lobbyists are like pigeons. They go where the food is. This chapter teaches you how to move the food.
@@ -1770,3 +1725,8 @@
 #### knowledge/appendix/copyright.qmd
 **Title:** Copyright
 **Stats:** 97 words | 27 lines | ~0p
+
+#### knowledge/appendix/back-cover.qmd
+**Title:** About This Book
+**Description:** The exact sequence of bribes needed to redirect 1% of military spending to curing disease, making everyone rich in the process.
+**Stats:** 340 words | 43 lines | 1 images | ~2p

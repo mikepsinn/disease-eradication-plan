@@ -156,6 +156,7 @@ book:
         - knowledge/papers.qmd
         - knowledge/references.qmd # CSL-rendered bibliography
         - knowledge/appendix/copyright.qmd # Back matter - copyright page at end for Kindle
+        - knowledge/appendix/back-cover.qmd # Back cover blurb - last page
 
 # Project-level metadata (applies to all documents)
 metadata:

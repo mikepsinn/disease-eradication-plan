@@ -70,7 +70,7 @@ book:
         - knowledge/economics/victory-bonds.qmd
         # CUT: legislation-package.qmd - draft bill text, nobody reads recreationally
         - knowledge/strategy/global-referendum.qmd
-        - knowledge/solution/ai-coordination-army.qmd
+        # CUT: ai-coordination-army.qmd - technical AI deployment instructions, not essential for core argument
         - knowledge/strategy/co-opting-defense-contractors.qmd
         - knowledge/appendix/treaty-feasibility.qmd
         - knowledge/appendix/recruitment-and-propaganda-plan.qmd
@@ -90,6 +90,7 @@ book:
         # CUT: papers.qmd - just links to websites, useless in print
         # CUT: references.qmd - auto-generated bibliography
         - knowledge/appendix/copyright.qmd
+        - knowledge/appendix/back-cover.qmd
 
 # Remove "Appendix" prefix
 language:

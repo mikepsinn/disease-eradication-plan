@@ -1,6 +1,6 @@
 {
   "totalSites": 16,
-  "totalPages": 61,
+  "totalPages": 62,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -6252,9 +6252,18 @@
           "title": "Copyright",
           "published": true,
           "lastmod": "2026-02-18"
+        },
+        {
+          "path": "knowledge/appendix/back-cover.qmd",
+          "url": "https://manual.WarOnDisease.org/appendix/back-cover.html",
+          "title": "About This Book",
+          "description": "The exact sequence of bribes needed to redirect 1% of military spending to curing disease, making everyone rich in the process.",
+          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg",
+          "published": true,
+          "lastmod": "2026-02-18"
         }
       ],
-      "pageCount": 47
+      "pageCount": 48
     },
     {
       "id": "obg",
