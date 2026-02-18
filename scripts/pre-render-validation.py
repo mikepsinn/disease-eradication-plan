@@ -50,11 +50,54 @@ except ImportError:
 from lib.quarto_file_utils import find_files_by_extension
 from lib.quarto_config_utils import get_all_book_qmd_files
 
+# Use C-accelerated YAML loader when available (21x faster on _variables.yml)
+try:
+    import yaml
+    _yaml_loader = getattr(yaml, 'CSafeLoader', yaml.SafeLoader)
+except ImportError:
+    yaml = None  # type: ignore[assignment]
+    _yaml_loader = None
+
+
+def _yaml_safe_load(stream):
+    """yaml.safe_load using C loader when available."""
+    if yaml is None or _yaml_loader is None:
+        raise RuntimeError("YAML support not available")
+    return yaml.load(stream, Loader=_yaml_loader)
+
 # Filler phrases that should be removed - just state the point directly
 FILLER_PHRASES = [
-    (r'\*\*[Kk]ey [Ii]nsight:?\*\*:?', 'Filler phrase "Key insight" found. Either (1) delete it and state the point directly, or (2) replace with a specific claim like "The ratio exceeds 300:1" or "This reduces costs by 82x".'),
-    (r'\*\*[Tt]he key [Ii]nsight:?\*\*:?', 'Filler phrase "The key insight" found. Either (1) delete it and state the point directly, or (2) replace with a specific claim like "The ratio exceeds 300:1" or "This reduces costs by 82x".'),
+    (re.compile(r'\*\*[Kk]ey [Ii]nsight:?\*\*:?', re.IGNORECASE), 'Filler phrase "Key insight" found. Either (1) delete it and state the point directly, or (2) replace with a specific claim like "The ratio exceeds 300:1" or "This reduces costs by 82x".'),
+    (re.compile(r'\*\*[Tt]he key [Ii]nsight:?\*\*:?', re.IGNORECASE), 'Filler phrase "The key insight" found. Either (1) delete it and state the point directly, or (2) replace with a specific claim like "The ratio exceeds 300:1" or "This reduces costs by 82x".'),
 ]
+
+# Pre-compiled regex patterns used across multiple check functions (avoids re._compile overhead)
+_RE_HTML_COMMENT_START = re.compile(r"^\s*<!--")
+_RE_PYTHON_BLOCK_START = re.compile(r"^```\{python\}")
+_RE_DISPLAY_MATH = re.compile(r"\$\$")
+_RE_LATEX_TEXT_BLOCK = re.compile(r"\\text\{[^}]*\}")
+_RE_ESCAPED_DOLLAR = re.compile(r"\\\$")
+_RE_MATH_BULLET = re.compile(r"^\s+\*\s+")
+_RE_QUARTO_VAR = re.compile(r"\{\{<\s*var\s+[^>]+\s*>\}\}")
+_RE_QUARTO_SHORTCODE = re.compile(r"\{\{<[^>]+>\}\}")
+_RE_MARKDOWN_IMAGE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
+_RE_HTML_IMAGE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
+_RE_EM_DASH = re.compile(r"\u2014")
+_RE_INLINE_CODE_EM_DASH = re.compile(r"`[^`]*\u2014[^`]*`")
+_RE_URL_EM_DASH = re.compile(r"https?://[^\s]*\u2014[^\s]*")
+_RE_CROSS_REF_LINK = re.compile(r"\[([^\]]+)\]\(([^)#]+\.qmd[^)]*)\)")
+_RE_MARKDOWN_LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+_RE_INCLUDE_DIRECTIVE = re.compile(r"\{\{<\s*include\s+([^\s>]+)\s*>\}\}")
+_RE_LINK_WITH_VAR = re.compile(r"\[([^\]]*\{\{<\s*var\s+[^>]+\s*>\}\}[^\]]*)\]\([^)]+\)")
+_RE_LATEX_VAR = re.compile(r"\{\{<\s*var\s+([a-z_]+_latex)\s*>\}\}")
+_RE_VAR_REFERENCE = re.compile(r"\{\{<\s*var\s+([^\s>]+)\s*>\}\}")
+_RE_BRACKETED_CITATION = re.compile(r'\[@([^\]]+)\]')
+_RE_BARE_CITATION = re.compile(r'(?<![a-zA-Z0-9_.])@([a-zA-Z][a-zA-Z0-9_:-]*)')
+_RE_CAPTION = re.compile(r'!\[([^\]]*)\]\([^)]+\)')
+_RE_HTML_IMG_ALT = re.compile(r'<img[^>]+alt=["\']([^"\']*)["\']', re.IGNORECASE)
+_RE_HARDCODED_PATH = re.compile(r"output_dir\s*=.*['\"]brain['\"].*['\"]figures['\"]")
+_RE_MANUAL_PATH = re.compile(r"output_path\s*=\s*output_dir\s*/")
+_RE_IDENTIFIER = re.compile(r"\b([A-Z][A-Z0-9_]{2,})\b")
 
 
 class ValidationError:
@@ -131,13 +174,12 @@ def resolve_link_path(link_path: str, file_dir: str) -> str:
         return os.path.normpath(os.path.join(file_dir, link_path))
 
 
-def check_math_delimiters(content: str, filename: str):
+def check_math_delimiters(content: str, filename: str, lines: List[str]):
     """Check for unmatched dollar signs in math mode"""
     # Early return if no display math in file
     if "$$" not in content:
         return
 
-    lines = content.split("\n")
     in_math_block = False
 
     for line_index, line in enumerate(lines):
@@ -146,7 +188,7 @@ def check_math_delimiters(content: str, filename: str):
             continue
 
         # Track display math mode ($$)
-        display_math_matches = re.findall(r"\$\$", line)
+        display_math_matches = _RE_DISPLAY_MATH.findall(line)
         for _ in display_math_matches:
             in_math_block = not in_math_block
 
@@ -154,8 +196,8 @@ def check_math_delimiters(content: str, filename: str):
         # BUT ignore \$ (escaped dollar signs, which are valid in \text{} blocks)
         if in_math_block and "$" in line and "$$" not in line:
             # Remove all \$ (escaped dollar signs) and \text{...} blocks
-            cleaned_line = re.sub(r"\\text\{[^}]*\}", "", line)  # Remove \text{...} blocks
-            cleaned_line = re.sub(r"\\\$", "", cleaned_line)  # Remove escaped dollar signs
+            cleaned_line = _RE_LATEX_TEXT_BLOCK.sub("", line)  # Remove \text{...} blocks
+            cleaned_line = _RE_ESCAPED_DOLLAR.sub("", cleaned_line)  # Remove escaped dollar signs
 
             # Now check if there are any remaining unescaped $ signs
             if "$" in cleaned_line:
@@ -170,7 +212,7 @@ def check_math_delimiters(content: str, filename: str):
                 )
 
         # Check for * at the start of a line inside math block (markdown bullet interfering)
-        if in_math_block and re.match(r"^\s+\*\s+", line):
+        if in_math_block and _RE_MATH_BULLET.match(line):
             context = line.strip()[:80]
             errors.append(
                 ValidationError(
@@ -195,8 +237,7 @@ def check_math_delimiters(content: str, filename: str):
         # Check for Quarto variables/shortcodes inside math blocks (they don't work there)
         if in_math_block:
             # Check for Quarto variable syntax: {{< var name >}}
-            var_pattern = re.compile(r"\{\{<\s*var\s+[^>]+\s*>\}\}")
-            if var_pattern.search(line):
+            if _RE_QUARTO_VAR.search(line):
                 context = line.strip()[:80]
                 errors.append(
                     ValidationError(
@@ -208,10 +249,9 @@ def check_math_delimiters(content: str, filename: str):
                 )
 
             # Check for other Quarto shortcodes: {{< include ... >}}, {{< ... >}}
-            shortcode_pattern = re.compile(r"\{\{<[^>]+>\}\}")
-            if shortcode_pattern.search(line):
+            if _RE_QUARTO_SHORTCODE.search(line):
                 # But allow if it's just a variable we already caught
-                if not var_pattern.search(line):
+                if not _RE_QUARTO_VAR.search(line):
                     context = line.strip()[:80]
                     errors.append(
                         ValidationError(
@@ -223,25 +263,19 @@ def check_math_delimiters(content: str, filename: str):
                     )
 
 
-def check_image_paths(content: str, filepath: str):
+def check_image_paths(content: str, filepath: str, lines: List[str]):
     """Check for missing image files"""
-    lines = content.split("\n")
     file_dir = os.path.dirname(filepath)
-
-    # Match markdown image syntax: ![alt text](path)
-    markdown_image_pattern = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
-    # Match HTML img tags: <img src="path" /> or <img src='path' />
-    html_image_pattern = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
 
     for line_index, line in enumerate(lines):
         # Check markdown image syntax
-        markdown_matches = markdown_image_pattern.finditer(line)
+        markdown_matches = _RE_MARKDOWN_IMAGE.finditer(line)
         for match in markdown_matches:
             image_path = match.group(2)
             _check_single_image_path(image_path, filepath, file_dir, line_index + 1, line)
 
         # Check HTML img tags
-        html_matches = html_image_pattern.finditer(line)
+        html_matches = _RE_HTML_IMAGE.finditer(line)
         for match in html_matches:
             image_path = match.group(1)
             _check_single_image_path(image_path, filepath, file_dir, line_index + 1, line)
@@ -282,24 +316,16 @@ def _check_single_image_path(image_path: str, filepath: str, file_dir: str, line
         )
 
 
-def check_em_dashes(content: str, filepath: str):
+def check_em_dashes(content: str, filepath: str, lines: List[str]):
     """
-    Check for em-dashes (—) which should be replaced with comma and space or other punctuation.
+    Check for em-dashes (\u2014) which should be replaced with comma and space or other punctuation.
     Detects ALL em-dashes except those in safe contexts (code blocks, inline code, URLs).
     """
     # Early return if no em-dashes in file
     if "\u2014" not in content:
         return
 
-    lines = content.split("\n")
     in_code_block = False
-
-    # Pattern to match em-dashes
-    em_dash_pattern = re.compile(r"—")
-    # Pattern to detect inline code
-    inline_code_pattern = re.compile(r"`[^`]*—[^`]*`")
-    # Pattern to detect URLs
-    url_pattern = re.compile(r"https?://[^\s]*—[^\s]*")
 
     for line_index, line in enumerate(lines):
         # Track code blocks
@@ -312,15 +338,15 @@ def check_em_dashes(content: str, filepath: str):
             continue
 
         # Skip if em-dash is inside inline code
-        if inline_code_pattern.search(line):
+        if _RE_INLINE_CODE_EM_DASH.search(line):
             continue
 
         # Skip if em-dash is inside a URL
-        if url_pattern.search(line):
+        if _RE_URL_EM_DASH.search(line):
             continue
 
         # Find all em-dashes
-        matches = list(em_dash_pattern.finditer(line))
+        matches = list(_RE_EM_DASH.finditer(line))
         if matches:
             for match in matches:
                 # Find the column position of the em-dash
@@ -336,12 +362,11 @@ def check_em_dashes(content: str, filepath: str):
                 )
 
 
-def check_filler_phrases(content: str, filepath: str):
+def check_filler_phrases(content: str, filepath: str, lines: List[str]):
     """
     Check for filler phrases like "Key insight:" that should be removed.
     These phrases add no value - just state the point directly.
     """
-    lines = content.split("\n")
     in_code_block = False
 
     for line_index, line in enumerate(lines):
@@ -355,12 +380,12 @@ def check_filler_phrases(content: str, filepath: str):
             continue
 
         # Skip HTML comments
-        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+        if _RE_HTML_COMMENT_START.match(line.strip()) or ("<!--" in line and "-->" in line):
             continue
 
-        # Check each filler phrase pattern
+        # Check each filler phrase pattern (patterns are pre-compiled in FILLER_PHRASES)
         for pattern, message in FILLER_PHRASES:
-            matches = list(re.finditer(pattern, line, re.IGNORECASE))
+            matches = list(pattern.finditer(line))
             if matches:
                 for match in matches:
                     column = match.start() + 1
@@ -375,24 +400,19 @@ def check_filler_phrases(content: str, filepath: str):
                     )
 
 
-def check_cross_reference_links(content: str, filepath: str):
+def check_cross_reference_links(content: str, filepath: str, lines: List[str]):
     """
     Check for broken cross-reference links to other .qmd files
     Matches patterns like: [text](path/to/file.qmd)
     """
-    lines = content.split("\n")
     file_dir = os.path.dirname(filepath)
-
-    # Match markdown link syntax: [text](path)
-    # Only check links that reference .qmd files
-    link_pattern = re.compile(r"\[([^\]]+)\]\(([^)#]+\.qmd[^)]*)\)")
 
     for line_index, line in enumerate(lines):
         # Skip lines that are HTML comments
-        if re.match(r"^\s*<!--", line.strip()):
+        if _RE_HTML_COMMENT_START.match(line.strip()):
             continue
 
-        matches = link_pattern.finditer(line)
+        matches = _RE_CROSS_REF_LINK.finditer(line)
         for match in matches:
             # Skip if this match is inside an HTML comment
             # Check if there's a <!-- before the match and --> after it on the same line
@@ -451,7 +471,7 @@ def load_parameter_names() -> Set[str]:
         return parameter_names
 
 
-def check_parameter_imports(content: str, filepath: str, defined_parameters: Set[str]):
+def check_parameter_imports(content: str, filepath: str, defined_parameters: Set[str], lines: List[str]):
     """
     Check if parameters from dih_models.parameters are used but not imported.
     This catches errors like using GLOBAL_CLINICAL_TRIAL_MARKET_ANNUAL without importing it.
@@ -473,12 +493,6 @@ def check_parameter_imports(content: str, filepath: str, defined_parameters: Set
     if "knowledge/figures/" in filepath.replace("\\", "/"):
         return
 
-    # Extract all uppercase identifiers from the file at once using a single regex,
-    # then intersect with defined_parameters. This avoids running 442 individual
-    # regex searches per code block (the previous approach took ~12s).
-    identifier_pattern = re.compile(r"\b([A-Z][A-Z0-9_]{2,})\b")
-
-    lines = content.split("\n")
     in_python_block = False
     current_block = []
     block_start_line = 0
@@ -488,7 +502,7 @@ def check_parameter_imports(content: str, filepath: str, defined_parameters: Set
     file_has_param_import = False
 
     for i, line in enumerate(lines):
-        if re.match(r"^```\{python\}", line):
+        if _RE_PYTHON_BLOCK_START.match(line):
             in_python_block = True
             block_start_line = i + 1
             current_block = []
@@ -508,7 +522,7 @@ def check_parameter_imports(content: str, filepath: str, defined_parameters: Set
                 continue
 
             # Extract all uppercase identifiers and check against parameter set
-            found_identifiers = set(identifier_pattern.findall(block_content))
+            found_identifiers = set(_RE_IDENTIFIER.findall(block_content))
             used_params = found_identifiers & defined_parameters
 
             # Report error for first used parameter
@@ -531,7 +545,7 @@ def check_parameter_imports(content: str, filepath: str, defined_parameters: Set
             current_block.append(line)
 
 
-def check_python_imports(content: str, filepath: str):
+def check_python_imports(content: str, filepath: str, lines: List[str]):
     """
     Check for missing imports in Python code blocks.
     Detects cases where a module is used but not imported in that specific block.
@@ -553,13 +567,12 @@ def check_python_imports(content: str, filepath: str):
         ),
     ]
 
-    lines = content.split("\n")
     in_python_block = False
     current_block = []
     block_start_line = 0
 
     for i, line in enumerate(lines):
-        if re.match(r"^```\{python\}", line):
+        if _RE_PYTHON_BLOCK_START.match(line):
             in_python_block = True
             block_start_line = i + 1
             current_block = []
@@ -592,7 +605,7 @@ def check_python_imports(content: str, filepath: str):
             current_block.append(line)
 
 
-def check_graphviz_variables(content: str, filepath: str):
+def check_graphviz_variables(content: str, filepath: str, lines: List[str]):
     """
     Check for Quarto variables ({{< var ... >}}) inside Python code blocks that generate Graphviz diagrams.
     Quarto variables don't work inside Python code blocks - use Python variables instead.
@@ -603,7 +616,6 @@ def check_graphviz_variables(content: str, filepath: str):
     if "{{<" not in content:
         return
 
-    lines = content.split("\n")
     in_python_block = False
     current_block = []
     block_start_line = 0
@@ -618,11 +630,8 @@ def check_graphviz_variables(content: str, filepath: str):
         r"Graph",
     ]
 
-    # Pattern to match Quarto variables
-    var_pattern = re.compile(r"\{\{<\s*var\s+[^>]+\s*>\}\}")
-
     for i, line in enumerate(lines):
-        if re.match(r"^```\{python\}", line):
+        if _RE_PYTHON_BLOCK_START.match(line):
             in_python_block = True
             block_start_line = i + 1
             current_block = []
@@ -636,7 +645,7 @@ def check_graphviz_variables(content: str, filepath: str):
             if is_graphviz_block:
                 # Check for Quarto variables in this block
                 for line_num, block_line in enumerate(current_block, block_start_line):
-                    if var_pattern.search(block_line):
+                    if _RE_QUARTO_VAR.search(block_line):
                         context = block_line.strip()[:80]
                         errors.append(
                             ValidationError(
@@ -706,20 +715,13 @@ def check_figure_file_imports(content: str, filepath: str):
         )
 
 
-def check_hardcoded_figure_paths(content: str, filepath: str):
+def check_hardcoded_figure_paths(content: str, filepath: str, lines: List[str]):
     """
     Check for hardcoded figure output paths instead of using get_figure_output_path().
     Figure files should use get_figure_output_path() for consistent output location.
     """
-    lines = content.split("\n")
-
-    # Pattern: output_dir = ... / 'brain' / 'figures' or similar manual path construction
-    hardcoded_path_pattern = re.compile(r"output_dir\s*=.*['\"]brain['\"].*['\"]figures['\"]")
-    # Pattern: output_path = output_dir / 'filename.png'
-    manual_path_pattern = re.compile(r"output_path\s*=\s*output_dir\s*/")
-
     for line_index, line in enumerate(lines):
-        if hardcoded_path_pattern.search(line):
+        if _RE_HARDCODED_PATH.search(line):
             errors.append(
                 ValidationError(
                     file=filepath,
@@ -728,7 +730,7 @@ def check_hardcoded_figure_paths(content: str, filepath: str):
                     context=line.strip()[:80],
                 )
             )
-        elif manual_path_pattern.search(line):
+        elif _RE_MANUAL_PATH.search(line):
             errors.append(
                 ValidationError(
                     file=filepath,
@@ -739,7 +741,7 @@ def check_hardcoded_figure_paths(content: str, filepath: str):
             )
 
 
-def check_figure_caption_latex_safety(content: str, filepath: str):
+def check_figure_caption_latex_safety(content: str, filepath: str, lines: List[str]):
     """
     Check figure captions for content that will break LaTeX aux file generation.
     These issues cause 'File ended while scanning use of \\@writefile' errors.
@@ -749,13 +751,6 @@ def check_figure_caption_latex_safety(content: str, filepath: str):
     - Unbalanced braces in captions
     - Very long captions that may cause buffer issues
     """
-    lines = content.split("\n")
-
-    # Pattern to extract figure captions: ![caption text](path)
-    caption_pattern = re.compile(r'!\[([^\]]*)\]\([^)]+\)')
-
-    # Pattern for HTML img alt text
-    html_img_pattern = re.compile(r'<img[^>]+alt=["\']([^"\']*)["\']', re.IGNORECASE)
 
     # Problematic patterns in captions
     # Double-backslash before special chars - becomes \textbackslash + special char
@@ -823,13 +818,13 @@ def check_figure_caption_latex_safety(content: str, filepath: str):
 
     for line_index, line in enumerate(lines):
         # Check markdown image captions
-        matches = caption_pattern.finditer(line)
+        matches = _RE_CAPTION.finditer(line)
         for match in matches:
             caption = match.group(1)
             check_caption(caption, line_index, line)
 
         # Check HTML img alt text
-        html_matches = html_img_pattern.finditer(line)
+        html_matches = _RE_HTML_IMG_ALT.finditer(line)
         for match in html_matches:
             alt_text = match.group(1)
             check_caption(alt_text, line_index, line)
@@ -839,7 +834,7 @@ _markdown_gif_pattern = re.compile(r"!\[([^\]]*)\]\(([^)]*\.gif[^)]*)\)", re.IGN
 _html_gif_pattern = re.compile(r'<img[^>]+src=["\']([^"\']*\.gif[^"\']*)["\']', re.IGNORECASE)
 
 
-def check_gif_references(content: str, filepath: str):
+def check_gif_references(content: str, filepath: str, lines: List[str]):
     """
     Check for GIF files that aren't wrapped in format-exclusion blocks.
     GIFs must not appear in PDF/epub output. Accept either:
@@ -853,8 +848,6 @@ def check_gif_references(content: str, filepath: str):
     # Early return if no GIF references in file
     if ".gif" not in content.lower():
         return
-
-    lines = content.split("\n")
     in_html_only_block = False
     html_block_depth = 0
     # Stack of opened content-hidden blocks: 'epub' and 'pdf' in open order
@@ -929,7 +922,7 @@ def check_gif_references(content: str, filepath: str):
                 )
 
 
-def check_include_directives(content: str, filepath: str):
+def check_include_directives(content: str, filepath: str, lines: List[str]):
     """
     Check for broken Quarto include directives: {{< include path.qmd >}}
     Ensures that all included files exist relative to the current file.
@@ -938,21 +931,17 @@ def check_include_directives(content: str, filepath: str):
     if "{{< include" not in content:
         return
 
-    lines = content.split("\n")
     file_dir = os.path.dirname(filepath)
-
-    # Match Quarto include syntax: {{< include path.qmd >}}
-    include_pattern = re.compile(r"\{\{<\s*include\s+([^\s>]+)\s*>\}\}")
 
     for line_index, line in enumerate(lines):
         # Skip lines that are HTML comments
-        if re.match(r"^\s*<!--", line.strip()):
+        if _RE_HTML_COMMENT_START.match(line.strip()):
             continue
         # Skip if this line contains <!-- before the include and --> after it
         if "<!--" in line and "-->" in line:
             continue
 
-        matches = include_pattern.finditer(line)
+        matches = _RE_INCLUDE_DIRECTIVE.finditer(line)
         for match in matches:
             include_path = match.group(1).strip()
 
@@ -1009,7 +998,7 @@ def check_inline_expressions(content: str, filepath: str):
                 )
 
 
-def check_figure_file_frontmatter(content: str, filepath: str):
+def check_figure_file_frontmatter(content: str, filepath: str, lines: List[str]):
     """
     Check that figure files (in knowledge/figures/) do not have YAML frontmatter.
     Figure files should start directly with Python code blocks, not frontmatter.
@@ -1019,8 +1008,6 @@ def check_figure_file_frontmatter(content: str, filepath: str):
     normalized_path = os.path.normpath(filepath)
     if not ("knowledge" + os.sep + "figures" in normalized_path or "knowledge/figures" in normalized_path):
         return
-
-    lines = content.split("\n")
 
     # Check if file starts with frontmatter delimiter (---)
     if lines and lines[0].strip() == "---":
@@ -1034,7 +1021,7 @@ def check_figure_file_frontmatter(content: str, filepath: str):
         )
 
 
-def check_duplicate_latex_variables(content: str, filepath: str):
+def check_duplicate_latex_variables(content: str, filepath: str, lines: List[str]):
     """
     Check for duplicate _latex variables within the same file.
     Having the same _latex variable appear multiple times in a file indicates
@@ -1044,20 +1031,15 @@ def check_duplicate_latex_variables(content: str, filepath: str):
     if "_latex" not in content:
         return
 
-    lines = content.split("\n")
-
-    # Pattern to match _latex variable references: {{< var something_latex >}}
-    latex_var_pattern = re.compile(r"\{\{<\s*var\s+([a-z_]+_latex)\s*>\}\}")
-
     # Track all _latex variable occurrences with line numbers
     latex_var_occurrences: Dict[str, List[int]] = {}
 
     for line_index, line in enumerate(lines):
         # Skip HTML comments
-        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+        if _RE_HTML_COMMENT_START.match(line.strip()) or ("<!--" in line and "-->" in line):
             continue
 
-        matches = latex_var_pattern.finditer(line)
+        matches = _RE_LATEX_VAR.finditer(line)
         for match in matches:
             var_name = match.group(1)
             if var_name not in latex_var_occurrences:
@@ -1077,12 +1059,11 @@ def check_duplicate_latex_variables(content: str, filepath: str):
             )
 
 
-def check_unclosed_code_blocks(content: str, filepath: str):
+def check_unclosed_code_blocks(content: str, filepath: str, lines: List[str]):
     """
     Check for unclosed code blocks (``` without matching closing ```).
     Unclosed code blocks cause code to leak into rendered output, which can break LaTeX compilation.
     """
-    lines = content.split("\n")
     in_code_block = False
     code_block_start_line = 0
     code_block_language = ""
@@ -1115,7 +1096,7 @@ def check_unclosed_code_blocks(content: str, filepath: str):
         )
 
 
-def check_quarto_variables_in_links(content: str, filepath: str):
+def check_quarto_variables_in_links(content: str, filepath: str, lines: List[str]):
     """
     Check for Quarto variables inside markdown link text.
     Quarto variables don't work inside link text: [{{< var ... >}}](url)
@@ -1125,18 +1106,12 @@ def check_quarto_variables_in_links(content: str, filepath: str):
     if "{{< var" not in content:
         return
 
-    lines = content.split("\n")
-
-    # Pattern to match markdown links with Quarto variables in link text
-    # [text with {{< var ... >}}](url)
-    link_with_var_pattern = re.compile(r"\[([^\]]*\{\{<\s*var\s+[^>]+\s*>\}\}[^\]]*)\]\([^)]+\)")
-
     for line_index, line in enumerate(lines):
         # Skip HTML comments
-        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+        if _RE_HTML_COMMENT_START.match(line.strip()) or ("<!--" in line and "-->" in line):
             continue
 
-        matches = link_with_var_pattern.finditer(line)
+        matches = _RE_LINK_WITH_VAR.finditer(line)
         for match in matches:
             context = line.strip()[:80]
             errors.append(
@@ -1149,25 +1124,21 @@ def check_quarto_variables_in_links(content: str, filepath: str):
             )
 
 
-def check_markdown_links(content: str, filepath: str):
+def check_markdown_links(content: str, filepath: str, lines: List[str]):
     """
     Check all markdown links in the file for:
     - Broken file references (for local files)
     - Malformed paths with '...'
     - References to old migration directories
     """
-    lines = content.split("\n")
     file_dir = os.path.dirname(filepath)
-
-    # Match markdown links: [text](path)
-    link_pattern = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
     for line_index, line in enumerate(lines):
         # Skip HTML comments
-        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+        if _RE_HTML_COMMENT_START.match(line.strip()) or ("<!--" in line and "-->" in line):
             continue
 
-        matches = link_pattern.finditer(line)
+        matches = _RE_MARKDOWN_LINK.finditer(line)
         for match in matches:
             match.group(1)
             link_path = match.group(2).strip()
@@ -1344,23 +1315,19 @@ def load_all_anchor_ids() -> Dict[str, Set[str]]:
     return anchor_map
 
 
-def check_anchor_ids(content: str, filepath: str, anchor_map: Dict[str, Set[str]]):
+def check_anchor_ids(content: str, filepath: str, anchor_map: Dict[str, Set[str]], lines: List[str]):
     """
     Check that all anchor IDs referenced in links actually exist in the target files.
     Validates patterns like: [text](path/to/file.qmd#anchor-id)
     """
-    lines = content.split("\n")
     file_dir = os.path.dirname(filepath)
-
-    # Match markdown links with anchors: [text](path#anchor-id)
-    link_pattern = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
     for line_index, line in enumerate(lines):
         # Skip HTML comments
-        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+        if _RE_HTML_COMMENT_START.match(line.strip()) or ("<!--" in line and "-->" in line):
             continue
 
-        matches = link_pattern.finditer(line)
+        matches = _RE_MARKDOWN_LINK.finditer(line)
         for match in matches:
             link_path = match.group(2).strip()
 
@@ -1405,59 +1372,56 @@ def check_anchor_ids(content: str, filepath: str, anchor_map: Dict[str, Set[str]
                 )
 
 
-def load_defined_variables() -> Set[str]:
+def load_defined_variables() -> Tuple[Set[str], Optional[dict]]:
     """
-    Load all defined variables from _variables.yml
-    Returns a set of variable names that are defined.
+    Load all defined variables from _variables.yml.
+    Returns (set of variable names, raw parsed dict or None).
     """
     variables_file = "_variables.yml"
     defined_vars: Set[str] = set()
 
     if not os.path.exists(variables_file):
         print(f"Warning: {variables_file} not found, skipping variable validation\n")
-        return defined_vars
+        return defined_vars, None
 
-    try:
-        import yaml
-    except ImportError:
+    if yaml is None:
         print("Warning: PyYAML not installed, skipping variable validation\n")
         print("  Install with: pip install pyyaml\n")
-        return defined_vars
+        return defined_vars, None
 
     try:
         with open(variables_file, encoding="utf-8") as f:
-            variables = yaml.safe_load(f)
+            variables = _yaml_safe_load(f)
 
         # Variables are the top-level keys in the YAML file
         if isinstance(variables, dict):
             defined_vars = set(variables.keys())
 
-        return defined_vars
+        return defined_vars, variables
     except Exception as e:
         print(f"Warning: Failed to parse {variables_file}: {str(e)}\n")
-        return defined_vars
+        return defined_vars, None
 
 
-def check_variable_link_targets():
+def check_variable_link_targets(variables_data=None):
     """
     Check that href targets in _variables.yml values point to existing .qmd files.
     Generated parameter links use .html extensions; this converts them back to .qmd
     and verifies the source file exists on disk.
     """
     variables_file = "_variables.yml"
-    if not os.path.exists(variables_file):
-        return
 
-    try:
-        import yaml
-    except ImportError:
-        return
-
-    try:
-        with open(variables_file, encoding="utf-8") as f:
-            variables = yaml.safe_load(f)
-    except Exception:
-        return
+    # Reuse pre-parsed YAML data if provided (avoids re-parsing 400KB file)
+    if variables_data is not None:
+        variables = variables_data
+    else:
+        if not os.path.exists(variables_file):
+            return
+        try:
+            with open(variables_file, encoding="utf-8") as f:
+                variables = _yaml_safe_load(f)
+        except Exception:
+            return
 
     if not isinstance(variables, dict):
         return
@@ -1519,7 +1483,7 @@ def check_variable_link_targets():
         print("  All variable link targets OK\n")
 
 
-def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str]):
+def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str], lines: List[str]):
     """
     Check for Quarto variables that are referenced but not defined in _variables.yml
     Pattern: {{< var variable_name >}}
@@ -1531,17 +1495,12 @@ def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str])
     if "{{< var" not in content:
         return
 
-    lines = content.split("\n")
-
-    # Pattern to match Quarto variable references: {{< var variable_name >}}
-    var_pattern = re.compile(r"\{\{<\s*var\s+([^\s>]+)\s*>\}\}")
-
     for line_index, line in enumerate(lines):
         # Skip HTML comments
-        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+        if _RE_HTML_COMMENT_START.match(line.strip()) or ("<!--" in line and "-->" in line):
             continue
 
-        matches = var_pattern.finditer(line)
+        matches = _RE_VAR_REFERENCE.finditer(line)
         for match in matches:
             var_name = match.group(1).strip()
 
@@ -1604,7 +1563,11 @@ def load_citations_from_bib() -> Set[str]:
     return citation_ids
 
 
-def check_citations(content: str, filepath: str, defined_citations: Set[str]):
+_QUARTO_XREF_PREFIXES = ('sec-', 'fig-', 'tbl-', 'eq-', 'thm-', 'lst-', 'exm-', 'def-', 'nte-', 'tip-', 'wrn-', 'imp-', 'cau-', 'prp-', 'cnj-', 'lem-', 'cor-', 'exr-', 'sol-')
+_RE_CITATION_SPLIT = re.compile(r'[,\s]+$')
+
+
+def check_citations(content: str, filepath: str, defined_citations: Set[str], lines: List[str]):
     """
     Check for citations that are referenced but not defined in references.bib
     Pattern: [@citation-id] or @citation-id (bare citations in text/tables)
@@ -1616,20 +1579,7 @@ def check_citations(content: str, filepath: str, defined_citations: Set[str]):
     if "@" not in content:
         return
 
-    lines = content.split("\n")
     in_code_block = False
-
-    # Pattern to match Pandoc citations: [@citation-id] or [@cite1; @cite2]
-    bracketed_citation_pattern = re.compile(r'\[@([^\]]+)\]')
-
-    # Pattern to match bare Pandoc citations: @citation-id
-    # Must start with letter, can contain letters, numbers, hyphens, underscores, colons
-    # Uses negative lookbehind to avoid matching email addresses (text@domain)
-    # Excludes Quarto cross-reference prefixes: @sec-, @fig-, @tbl-, @eq-, @thm-, @lst-, @exm-, @def-
-    bare_citation_pattern = re.compile(r'(?<![a-zA-Z0-9_.])@([a-zA-Z][a-zA-Z0-9_:-]*)')
-
-    # Quarto cross-reference prefixes to exclude from bare citation checks
-    quarto_xref_prefixes = ('sec-', 'fig-', 'tbl-', 'eq-', 'thm-', 'lst-', 'exm-', 'def-', 'nte-', 'tip-', 'wrn-', 'imp-', 'cau-', 'prp-', 'cnj-', 'lem-', 'cor-', 'exr-', 'sol-')
 
     for line_index, line in enumerate(lines):
         # Track code blocks
@@ -1642,11 +1592,11 @@ def check_citations(content: str, filepath: str, defined_citations: Set[str]):
             continue
 
         # Skip HTML comments
-        if re.match(r"^\s*<!--", line.strip()) or ("<!--" in line and "-->" in line):
+        if _RE_HTML_COMMENT_START.match(line.strip()) or ("<!--" in line and "-->" in line):
             continue
 
         # Check bracketed citations: [@citation-id]
-        matches = bracketed_citation_pattern.finditer(line)
+        matches = _RE_BRACKETED_CITATION.finditer(line)
         for match in matches:
             # Extract all citation IDs from the match (handles multiple citations like [@a; @b])
             citation_text = match.group(1)
@@ -1655,7 +1605,7 @@ def check_citations(content: str, filepath: str, defined_citations: Set[str]):
 
             for citation_id in citation_ids:
                 # Remove any trailing punctuation or spaces
-                citation_id = re.sub(r'[,\s]+$', '', citation_id)
+                citation_id = _RE_CITATION_SPLIT.sub('', citation_id)
 
                 # Check if citation is defined in references.bib
                 if citation_id and citation_id not in defined_citations:
@@ -1669,12 +1619,12 @@ def check_citations(content: str, filepath: str, defined_citations: Set[str]):
                     )
 
         # Check bare citations: @citation-id (without brackets)
-        bare_matches = bare_citation_pattern.finditer(line)
+        bare_matches = _RE_BARE_CITATION.finditer(line)
         for match in bare_matches:
             citation_id = match.group(1)
 
             # Skip Quarto cross-references (@sec-xxx, @fig-xxx, etc.)
-            if citation_id.startswith(quarto_xref_prefixes):
+            if citation_id.startswith(_QUARTO_XREF_PREFIXES):
                 continue
 
             # Skip if this looks like it's inside an already-matched bracketed citation
@@ -1705,16 +1655,14 @@ def validate_quarto_config():
         print(f"Warning: {config_path} not found, skipping config validation\n")
         return
 
-    try:
-        import yaml
-    except ImportError:
+    if yaml is None:
         print("Warning: PyYAML not installed, skipping _quarto.yml validation\n")
         print("  Install with: pip install pyyaml\n")
         return
 
     try:
         with open(config_path, encoding="utf-8") as f:
-            config = yaml.safe_load(f)
+            config = _yaml_safe_load(f)
     except Exception as e:
         errors.append(
             ValidationError(
@@ -1773,17 +1721,14 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
     with open(filepath, encoding="utf-8") as f:
         content = f.read()
 
+    # Split lines ONCE and pass to all check functions (avoids 22 redundant splits per file)
     lines = content.split("\n")
 
     # For .md files, only check broken links (skip citation validation - .md files often contain examples)
     if filepath.lower().endswith(".md"):
-        # Check cross-reference links
-        check_cross_reference_links(content, filepath)
-        # Check markdown links
-        check_markdown_links(content, filepath)
-        # Check anchor IDs
-        check_anchor_ids(content, filepath, anchor_map)
-        # Skip citation validation for .md files - they contain documentation examples
+        check_cross_reference_links(content, filepath, lines)
+        check_markdown_links(content, filepath, lines)
+        check_anchor_ids(content, filepath, anchor_map, lines)
         return
 
     # For .qmd files, run all validation checks
@@ -1795,80 +1740,34 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
         validator = pattern_config.get("validator")
 
         for match in pattern.finditer(content):
-            # If there's a custom validator, use it
             if validator and validator(match.group(0)):
-                continue  # Pattern is valid
-
-            # Find line number
+                continue
             before_match = content[: match.start()]
             line_number = before_match.count("\n") + 1
             line = lines[line_number - 1] if line_number <= len(lines) else ""
-
             errors.append(ValidationError(file=filepath, line=line_number, message=message, context=line.strip()[:80]))
 
-    # Check math delimiters
-    check_math_delimiters(content, filepath)
-
-    # Check image paths
-    check_image_paths(content, filepath)
-
-    # Check figure captions for LaTeX safety (prevents aux file corruption)
-    check_figure_caption_latex_safety(content, filepath)
-
-    # Check cross-reference links
-    check_cross_reference_links(content, filepath)
-
-    # Check Python imports
-    # Always check for get_figure_output_path/get_project_root imports (whole-file check)
+    check_math_delimiters(content, filepath, lines)
+    check_image_paths(content, filepath, lines)
+    check_figure_caption_latex_safety(content, filepath, lines)
+    check_cross_reference_links(content, filepath, lines)
     check_figure_file_imports(content, filepath)
-    # Also check for other imports per-block (npf, etc.)
-    check_python_imports(content, filepath)
-    # Check for parameter imports (catches missing imports from dih_models.parameters)
-    check_parameter_imports(content, filepath, defined_parameters)
-
-    # Check for Quarto variables in Graphviz code blocks
-    check_graphviz_variables(content, filepath)
-
-    # Check em-dashes
-    check_em_dashes(content, filepath)
-
-    # Check filler phrases ("Key insight:", etc.)
-    check_filler_phrases(content, filepath)
-
-    # Check for hardcoded figure paths
-    check_hardcoded_figure_paths(content, filepath)
-
-    # Check GIF references
-    check_gif_references(content, filepath)
-
-    # Check include directives
-    check_include_directives(content, filepath)
-    check_markdown_links(content, filepath)
-
-    # Check anchor IDs in links
-    check_anchor_ids(content, filepath, anchor_map)
-
-    # Check for Quarto variables in link text
-    check_quarto_variables_in_links(content, filepath)
-
-    # Check for unknown Quarto variables
-    check_unknown_variables(content, filepath, defined_vars)
-
-    # Check citations
-    check_citations(content, filepath, defined_citations)
-
-    # Check for inline expressions (incompatible with Jupyter Cache)
-    # DISABLED: We've disabled cache: true in Quarto configs, so inline expressions are fine
-    # check_inline_expressions(content, filepath)
-
-    # Check that figure files don't have frontmatter
-    check_figure_file_frontmatter(content, filepath)
-
-    # Check for unclosed code blocks
-    check_unclosed_code_blocks(content, filepath)
-
-    # Check for duplicate _latex variables (indicates redundant equations)
-    check_duplicate_latex_variables(content, filepath)
+    check_python_imports(content, filepath, lines)
+    check_parameter_imports(content, filepath, defined_parameters, lines)
+    check_graphviz_variables(content, filepath, lines)
+    check_em_dashes(content, filepath, lines)
+    check_filler_phrases(content, filepath, lines)
+    check_hardcoded_figure_paths(content, filepath, lines)
+    check_gif_references(content, filepath, lines)
+    check_include_directives(content, filepath, lines)
+    check_markdown_links(content, filepath, lines)
+    check_anchor_ids(content, filepath, anchor_map, lines)
+    check_quarto_variables_in_links(content, filepath, lines)
+    check_unknown_variables(content, filepath, defined_vars, lines)
+    check_citations(content, filepath, defined_citations, lines)
+    check_figure_file_frontmatter(content, filepath, lines)
+    check_unclosed_code_blocks(content, filepath, lines)
+    check_duplicate_latex_variables(content, filepath, lines)
 
 
 def check_source_image_dpi():
@@ -2014,17 +1913,17 @@ def main():
 
     print("Running pre-render validation checks on .qmd files...\n")
 
-    # Load defined variables from _variables.yml
+    # Load defined variables from _variables.yml (parse once, reuse for link target check)
     print("Loading defined variables from _variables.yml...")
-    defined_vars = load_defined_variables()
+    defined_vars, variables_data = load_defined_variables()
     if defined_vars:
         print(f"Loaded {len(defined_vars)} defined variables\n")
     else:
         print("No variables loaded (PyYAML may not be installed or _variables.yml not found)\n")
 
-    # Check variable link targets in _variables.yml
+    # Check variable link targets in _variables.yml (reuses parsed data)
     print("Checking variable link targets in _variables.yml...")
-    check_variable_link_targets()
+    check_variable_link_targets(variables_data)
 
     # Load defined parameters from dih_models/parameters.py
     print("Loading defined parameters from dih_models/parameters.py...")
