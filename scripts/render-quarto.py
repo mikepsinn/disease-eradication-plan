@@ -1278,6 +1278,41 @@ def render_quarto(
                     dest_epub_path = assets_epubs_dir / expected_epub
                     shutil.copy2(epub_path, dest_epub_path)
                     print(f"[OK] Copied EPUB to: {dest_epub_path.relative_to(project_root)}")
+
+                    # Fix EPUB for Kindle compatibility (resize oversized images, fix DPI, compress)
+                    fix_kindle_script = project_root / "scripts" / "fix-epub-kindle.py"
+                    kindle_epub_name = expected_epub.replace(".epub", "-kindle.epub")
+                    dest_kindle_path = assets_epubs_dir / kindle_epub_name
+                    if fix_kindle_script.exists():
+                        print(f"[*] Generating Kindle-compatible EPUB...")
+                        kindle_result = subprocess.run(
+                            [sys.executable, "-u", str(fix_kindle_script), str(dest_epub_path), "-o", str(dest_kindle_path)],
+                            cwd=str(project_root),
+                        )
+                        if kindle_result.returncode != 0:
+                            print(f"[WARN] Kindle EPUB fix encountered issues (exit code {kindle_result.returncode})", file=sys.stderr)
+                        elif dest_kindle_path.exists():
+                            kindle_mb = dest_kindle_path.stat().st_size / (1024 * 1024)
+                            print(f"[OK] Kindle EPUB: {dest_kindle_path.relative_to(project_root)} ({kindle_mb:.2f} MB)")
+
+                    # Validate Kindle compatibility
+                    validate_kindle_script = project_root / "scripts" / "validate-kindle-compat.py"
+                    kindle_target = dest_kindle_path if dest_kindle_path.exists() else dest_epub_path
+                    if validate_kindle_script.exists():
+                        print(f"[*] Validating Kindle compatibility...")
+                        validate_result = subprocess.run(
+                            [sys.executable, "-u", str(validate_kindle_script), str(kindle_target)],
+                            cwd=str(project_root),
+                            capture_output=True, text=True,
+                        )
+                        if validate_result.returncode != 0:
+                            # Extract just the error lines for concise output
+                            for line in validate_result.stdout.splitlines():
+                                if "[ERROR]" in line:
+                                    print(f"  {line.strip()}", file=sys.stderr)
+                            print(f"[WARN] Kindle validation found {validate_result.stdout.count('[ERROR]')} error(s)", file=sys.stderr)
+                        else:
+                            print(f"[OK] Kindle validation passed")
                 else:
                     print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
                     print(f"        Expected at: {epub_path}", file=sys.stderr)
