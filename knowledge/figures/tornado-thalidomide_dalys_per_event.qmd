@@ -25,6 +25,7 @@ baseline = 41760.0
 # Tornado data from sensitivity analysis
 
 drivers = ['THALIDOMIDE_CASES_WORLDWIDE', 'THALIDOMIDE_US_POPULATION_SHARE_1960', 'THALIDOMIDE_DISABILITY_WEIGHT', 'THALIDOMIDE_MORTALITY_RATE', 'THALIDOMIDE_SURVIVOR_LIFESPAN']
+driver_labels = ['Thalidomide Cases Worldwide', 'US Population Share 1960', 'Thalidomide Disability Weight', 'Thalidomide Mortality Rate', 'Thalidomide Survivor Lifespan']
 impacts_low = [-13920.0, -3480.0, -2592.0, -2520.0, -2160.0]
 impacts_high = [13920.0, 3480.0, 2592.0, 2520.0, 2160.0]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

@@ -25,6 +25,7 @@ baseline = 105.83061593479944
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'BED_NETS_COST_PER_DALY', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_ANNUAL_DALY_BURDEN', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable DALY Percentage', 'Annual Global Clinical Trial Participants', 'Bed Nets Cost per DALY', 'Total Number of Rare Diseases Globally', 'Global Annual DALY Burden', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
 impacts_low = [603.3111710506088, 41.90234711007109, -48.70381010124265, 18.309040822612815, -13.080188486323522, -5.8937327877730326, -5.512011246604118, -0.9990963241271373, 0.01572187554603488, 0.009433105692508548, 0.009433105692508548, 0.006288730582909352, 0.0031443620186024646]
 impacts_high = [-47.76612602695687, -18.595269950184246, 6.137923498971858, -11.827741572189836, 13.080188486323536, 19.447349698458268, 5.51201124660416, 0.9990963241271658, -0.02201035081772318, -0.015721711893789347, -0.012577382609549659, -0.009433046777672871, -0.0031443554725001377]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

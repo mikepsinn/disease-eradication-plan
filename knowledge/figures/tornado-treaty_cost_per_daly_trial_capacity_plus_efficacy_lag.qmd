@@ -25,6 +25,7 @@ baseline = 0.0017694250349878041
 # Tornado data from sensitivity analysis
 
 drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'TREATY_CAMPAIGN_BUDGET_LOBBYING', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'RARE_DISEASES_COUNT_GLOBAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE', 'TREATY_CAMPAIGN_BUDGET_RESERVE', 'GLOBAL_ANNUAL_DALY_BURDEN', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['Diseases Getting First Treatment Per Year', 'Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance', 'Eventually Avoidable DALY Percentage', 'Total Number of Rare Diseases Globally', 'dFDA Pragmatic Trial Cost per Patient', 'Viral Referendum Budget', 'Reserve Fund / Contingency Buffer', 'Global Annual DALY Burden', 'Annual Global Clinical Trial Participants', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
 impacts_low = [-0.000808372315912867, -0.0005750631363710364, 0.0015085342097283703, 0.00028167249353844726, -0.00012521084075333474, -0.00017694250349878046, -0.00014155400279902437, 9.722115576856036e-05, -3.111779783736496e-05, 1.6863497303485492e-05, -3.462659714232978e-08, -2.0778033715893734e-08, -2.0778033715893734e-08, -1.3852714391164242e-08, -6.9267031871551865e-09]
 impacts_high = [0.0016375540174002616, 0.0011501262727420724, -9.699684890812307e-05, -0.000516276142516275, 0.00041385682030851533, 0.00028310800559804873, 8.847125174939012e-05, -8.759529876177269e-05, 3.2252197242549525e-05, -1.654807460297323e-05, 4.8506306546272984e-08, 3.4643899309841006e-08, 2.7713734651992408e-08, 2.07842624961891e-08, 6.927395273517364e-09]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

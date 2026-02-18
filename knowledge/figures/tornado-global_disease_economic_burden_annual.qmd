@@ -25,6 +25,7 @@ baseline = 109100000000000.0
 # Tornado data from sensitivity analysis
 
 drivers = ['GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL', 'GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL', 'GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL']
+driver_labels = ['Global Annual Economic Value of Human Life Lost to Disease', 'Global Annual Direct Medical Costs of Disease', 'Global Annual Productivity Loss from Disease']
 impacts_low = [-28200000000000.0, -2900000000000.0, -1500000000000.0]
 impacts_high = [37800000000000.0, 4100000000000.0, 2000000000000.0]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

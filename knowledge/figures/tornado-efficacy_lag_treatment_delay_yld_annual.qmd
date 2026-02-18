@@ -25,6 +25,7 @@ baseline = 2012931506.849315
 # Tornado data from sensitivity analysis
 
 drivers = ['TREATMENT_DISABILITY_REDUCTION', 'EFFICACY_LAG_YEARS', 'GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL']
+driver_labels = ['Treatment Disability Reduction', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Annual Days of Chronic Disease Therapy']
 impacts_low = [-805172602.7397261, -490958904.1095891, -440328767.1232877]
 impacts_high = [805172602.7397258, 490958904.10958886, 345972602.7397258]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Pharma Drug Development Cost Current | 1.6909 | Strong driver |
-| Drug Development Cost 1980s | -0.7048 | Strong driver |
+| Pharma Drug Development Cost (Current System) (USD) | 1.6909 | Strong driver |
+| Drug Development Cost (1980s) (USD) | -0.7048 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

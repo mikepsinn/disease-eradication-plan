@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| NIH Standard Research Cost Per QALY | 1.5607 | Strong driver |
-| Pragmatic Trial Cost Per QALY | 0.6777 | Strong driver |
+| NIH Standard Research Cost per QALY (USD/QALY) | 1.5607 | Strong driver |
+| Pragmatic Trial Cost per QALY (RECOVERY) (USD/QALY) | 0.6777 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

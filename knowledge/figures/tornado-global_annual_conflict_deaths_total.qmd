@@ -25,6 +25,7 @@ baseline = 244600.0
 # Tornado data from sensitivity analysis
 
 drivers = ['GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE']
+driver_labels = ['Annual Deaths from Active Combat Worldwide', 'Annual Deaths from Terror Attacks Globally', 'Annual Deaths from State Violence']
 impacts_low = [-53600.0, -2300.0, -1200.0]
 impacts_high = [66400.0, 3700.0, 2300.0]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

@@ -25,6 +25,7 @@ baseline = 0.0014705882352941176
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
 impacts_low = [-0.0001838235294117647, -0.00011029411764705891, -0.00011029411764705891, -7.35294117647058e-05, -3.67647058823529e-05]
 impacts_high = [0.0002573529411764707, 0.0001838235294117647, 0.0001470588235294118, 0.00011029411764705891, 3.67647058823529e-05]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

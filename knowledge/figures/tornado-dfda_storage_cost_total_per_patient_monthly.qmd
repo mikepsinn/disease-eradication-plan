@@ -25,6 +25,7 @@ baseline = 0.72
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_STORAGE_COST_DATABASE_PER_PATIENT_MONTHLY', 'DFDA_STORAGE_COST_COMPUTE_PER_PATIENT_MONTHLY', 'DFDA_STORAGE_COST_BACKUP_PER_PATIENT_MONTHLY', 'DFDA_STORAGE_COST_RAW_PER_PATIENT_MONTHLY']
+driver_labels = ['Database Cost per Patient (Monthly)', 'Compute/API Cost per Patient (Monthly)', 'Backup/Redundancy Cost per Patient (Monthly)', 'Raw Storage Cost per Patient (Monthly)']
 impacts_low = [-0.1499999999999999, -0.09999999999999998, -0.09999999999999998, -0.010000000000000009]
 impacts_high = [0.30000000000000004, 0.30000000000000004, 0.20000000000000007, 0.030000000000000027]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

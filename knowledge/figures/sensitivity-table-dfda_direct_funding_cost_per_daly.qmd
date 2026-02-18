@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Trial Capacity Plus Efficacy Lag DALYs | -0.5182 | Strong driver |
-| dFDA Direct Funding Queue Clearance NPV | 0.4583 | Moderate driver |
+| Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput (DALYs) | -0.5182 | Strong driver |
+| dFDA Direct Funding NPV (Exploration Period) (USD) | 0.4583 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

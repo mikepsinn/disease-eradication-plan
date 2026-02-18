@@ -25,6 +25,7 @@ baseline = 180.03676470588235
 # Tornado data from sensitivity analysis
 
 drivers = ['US_GOV_WASTE_HOUSING_ZONING', 'US_GOV_WASTE_REGULATORY_RED_TAPE', 'US_GOV_WASTE_HEALTHCARE_INEFFICIENCY', 'US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_TAX_COMPLIANCE', 'US_GOV_WASTE_TARIFFS', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
+driver_labels = ['Housing/Zoning Restrictions Cost', 'Regulatory Red Tape Waste', 'Healthcare System Inefficiency', 'Military Overspend', 'Tax Compliance Waste', 'Tariff Cost (GDP Loss)', 'Drug War Cost', 'Agricultural Subsidies Deadweight Loss', 'Corporate Welfare Waste', 'Fossil Fuel Subsidies (Explicit)']
 impacts_low = [-33.08823529411765, -10.661764705882348, -7.35294117647058, -4.22794117647058, -3.529411764705884, -2.573529411764696, -1.1029411764705799, -0.9191176470588118, -1.1397058823529278, -0.7352941176470438]
 impacts_high = [22.058823529411768, 15.441176470588232, 11.029411764705884, 4.963235294117652, 3.8235294117647243, 3.308823529411768, 2.205882352941188, 1.654411764705884, 1.433823529411768, 1.1029411764705799]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

@@ -25,6 +25,7 @@ baseline = 203.65267802332718
 # Tornado data from sensitivity analysis
 
 drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally', 'dFDA Pragmatic Trial Cost per Patient', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
 impacts_low = [178.1960932704113, -29.09323971761816, 16.133087783916523, 3.7924186617556757, 0.004145912230910653, 0.002487776362841032, 0.002487776362841032, 0.0016585939272033556, 0.0008293351430950224]
 impacts_high = [-101.82633901166359, 87.27971915285454, -40.15820288520567, -3.7924186617556757, -0.00580748494004979, -0.004147821469786095, -0.003318104373420283, -0.002488463688820275, -0.0008294115126545876]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

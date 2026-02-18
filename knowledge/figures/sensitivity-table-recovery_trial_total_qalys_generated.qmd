@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| QALYs Per Covid Death Averted | 2.2404 | Strong driver |
-| Recovery Trial Global Lives Saved | -1.2571 | Strong driver |
+| QALYs per COVID Death Averted (QALYs/death) | 2.2404 | Strong driver |
+| RECOVERY Trial Global Lives Saved (lives) | -1.2571 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

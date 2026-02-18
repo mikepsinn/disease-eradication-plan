@@ -25,6 +25,7 @@ baseline = 2.72
 # Tornado data from sensitivity analysis
 
 drivers = ['TREATY_CAMPAIGN_BUDGET_LOBBYING', 'TREATY_CAMPAIGN_VIRAL_REFERENDUM_BASE_CASE', 'TREATY_CAMPAIGN_BUDGET_RESERVE']
+driver_labels = ['Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance', 'Viral Referendum Budget', 'Reserve Fund / Contingency Buffer']
 impacts_low = [1.309629629629629, 0.30222222222222195, 0.2365217391304344]
 impacts_high = [-1.0715151515151518, -0.37517241379310384, -0.1295238095238096]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

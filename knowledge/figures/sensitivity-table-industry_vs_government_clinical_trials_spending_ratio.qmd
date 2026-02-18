@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Government Clinical Trials Spending Annual | -4.3313 | Strong driver |
-| Global Clinical Trials Spending Annual | 3.4678 | Strong driver |
+| Annual Global Government Spending on Clinical Trials (USD) | -4.3313 | Strong driver |
+| Annual Global Spending on Clinical Trials (USD) | 3.4678 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

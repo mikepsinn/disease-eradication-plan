@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Annual War Direct Costs Total | 0.6553 | Strong driver |
-| Global Annual War Indirect Costs Total | 0.4150 | Moderate driver |
+| Total Annual Direct War Costs (USD/year) | 0.6553 | Strong driver |
+| Total Annual Indirect War Costs (USD/year) | 0.4150 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

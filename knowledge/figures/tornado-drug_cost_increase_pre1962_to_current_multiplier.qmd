@@ -25,6 +25,7 @@ baseline = 105.26315789473684
 # Tornado data from sensitivity analysis
 
 drivers = ['PHARMA_DRUG_DEVELOPMENT_COST_CURRENT', 'PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD']
+driver_labels = ['Pharma Drug Development Cost (Current System)', 'Pre-1962 Drug Development Cost (2024 Dollars)']
 impacts_low = [-44.534412955465584, 28.070175438596507]
 impacts_high = [56.680161943319845, -18.596491228070164]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

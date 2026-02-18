@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Existing Drugs Efficacy Lag Economic Loss | 1.2707 | Strong driver |
-| Treaty Campaign Total Cost | -0.3150 | Moderate driver |
+| Total Economic Loss from Historical Progress Delays (USD) | 1.2707 | Strong driver |
+| Total 1% Treaty Campaign Cost (USD) | -0.3150 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

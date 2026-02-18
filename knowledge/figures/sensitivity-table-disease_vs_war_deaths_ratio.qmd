@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Annual Conflict Deaths Total | -2.9115 | Strong driver |
-| Global Annual Deaths Curable Diseases | 1.9792 | Strong driver |
+| Total Annual Conflict Deaths Globally (deaths/year) | -2.9115 | Strong driver |
+| Annual Deaths from All Diseases and Aging Globally (deaths/year) | 1.9792 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

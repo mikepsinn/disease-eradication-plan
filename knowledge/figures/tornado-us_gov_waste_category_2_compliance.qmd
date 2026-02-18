@@ -25,6 +25,7 @@ baseline = 1126000000000.0
 # Tornado data from sensitivity analysis
 
 drivers = ['US_GOV_WASTE_REGULATORY_RED_TAPE', 'US_GOV_WASTE_TAX_COMPLIANCE']
+driver_labels = ['Regulatory Red Tape Waste', 'Tax Compliance Waste']
 impacts_low = [-290000000000.0, -96000000000.0]
 impacts_high = [420000000000.0, 104000000000.0]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

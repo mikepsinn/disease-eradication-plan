@@ -33,13 +33,13 @@ Usage:
 """
 
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, List, Optional
 
 from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import smart_title_case
 
 
-def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: Path, param_metadata: dict = None, baseline: float = None, units: str = "") -> Path:
+def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: Path, param_metadata: Optional[dict] = None, baseline: Optional[float] = None, units: str = "", parameters: Optional[Dict[str, Dict[str, Any]]] = None) -> Path:
     """
     Generate a tornado chart QMD file for a parameter with uncertainty.
 
@@ -84,6 +84,16 @@ def generate_tornado_chart_qmd(param_name: str, tornado_data: dict, output_dir: 
     if not has_meaningful_impact:
         raise ValueError(f"All tornado impacts near zero for {param_name}")
 
+    # Build display name lookup for input drivers
+    driver_display_names = {}
+    for driver, _ in sorted_drivers:
+        if parameters and driver in parameters:
+            input_val = parameters[driver]["value"]
+            if hasattr(input_val, "display_name") and input_val.display_name:
+                driver_display_names[driver] = input_val.display_name
+                continue
+        driver_display_names[driver] = smart_title_case(driver)
+
     # Generate Python code for tornado chart
     qmd_content = f'''```{{python}}
 #| echo: false
@@ -112,6 +122,7 @@ baseline = {baseline if baseline is not None else 0.0}
 # Tornado data from sensitivity analysis
 
 drivers = {[driver for driver, _ in sorted_drivers]}
+driver_labels = {[driver_display_names[driver] for driver, _ in sorted_drivers]}
 impacts_low = {[data["delta_minus"] for _, data in sorted_drivers]}
 impacts_high = {[data["delta_plus"] for _, data in sorted_drivers]}
 
@@ -152,7 +163,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {{display_name}}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units
@@ -203,7 +214,7 @@ plt.show()
     return output_file
 
 
-def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, output_dir: Path, param_metadata: dict = None, parameters: Dict[str, Dict[str, Any]] = None) -> Path:
+def generate_sensitivity_table_qmd(param_name: str, sensitivity_data: dict, output_dir: Path, param_metadata: Optional[dict] = None, parameters: Optional[Dict[str, Dict[str, Any]]] = None) -> Path:
     """
     Generate a sensitivity indices table QMD file for a parameter.
 
@@ -520,7 +531,7 @@ def generate_monte_carlo_distribution_chart_qmd(
     outcome_data: dict,
     samples: list,
     output_dir: Path,
-    param_metadata: dict = None
+    param_metadata: Optional[dict] = None
 ) -> Path:
     """
     Generate a Monte Carlo output distribution chart for a calculated parameter.
@@ -693,8 +704,8 @@ def generate_cdf_chart_qmd(
     param_name: str,
     samples: list,
     output_dir: Path,
-    param_metadata: dict = None,
-    thresholds: list = None
+    param_metadata: Optional[dict] = None,
+    thresholds: Optional[List] = None
 ) -> Path:
     """
     Generate a standalone Cumulative Distribution Function (CDF) chart.

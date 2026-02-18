@@ -25,6 +25,7 @@ baseline = 0.5947058823529412
 # Tornado data from sensitivity analysis
 
 drivers = ['US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
+driver_labels = ['Military Overspend', 'Drug War Cost', 'Agricultural Subsidies Deadweight Loss', 'Corporate Welfare Waste', 'Fossil Fuel Subsidies (Explicit)']
 impacts_low = [-0.0676470588235294, -0.01764705882352946, -0.014705882352941235, -0.018235294117647127, -0.01176470588235301]
 impacts_high = [0.07941176470588229, 0.03529411764705881, 0.026470588235294135, 0.022941176470588243, 0.01764705882352935]
 
@@ -65,7 +66,7 @@ for i, (low, high) in enumerate(zip(values_low, values_high)):
 ax.set_yticks(y_pos)
 # Simplified labels (just parameter names)
 
-ax.set_yticklabels([d.replace('_', ' ').title() for d in drivers], fontsize=11)
+ax.set_yticklabels(driver_labels, fontsize=11)
 ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
 
 # X-axis label with units

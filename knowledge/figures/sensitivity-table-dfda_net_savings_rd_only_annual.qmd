@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Benefit R&D Only Annual | 1.0011 | Strong driver |
-| dFDA Annual OPEX | -0.0011 | Minimal effect |
+| Decentralized Framework for Drug Assessment Annual Benefit: R&D Savings (USD/year) | 1.0011 | Strong driver |
+| Total Annual Decentralized Framework for Drug Assessment Operational Costs (USD/year) | -0.0011 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

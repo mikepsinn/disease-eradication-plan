@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| dFDA Direct Funding Cost Per DALY | 4.1716 | Strong driver |
-| Treaty Cost Per DALY Trial Capacity Plus Efficacy Lag | -3.7769 | Strong driver |
+| dFDA Direct Funding Cost per DALY (USD/DALY) | 4.1716 | Strong driver |
+| Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput) (USD/DALY) | -3.7769 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

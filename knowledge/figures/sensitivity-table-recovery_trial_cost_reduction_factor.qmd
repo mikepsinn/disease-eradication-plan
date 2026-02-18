@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Recovery Trial Cost Per Patient | -2.4783 | Strong driver |
-| Traditional Phase3 Cost Per Patient | 2.4635 | Strong driver |
+| Recovery Trial Cost per Patient (USD/patient) | -2.4783 | Strong driver |
+| Phase 3 Cost per Patient (USD/patient) | 2.4635 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
