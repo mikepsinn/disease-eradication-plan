@@ -10,6 +10,8 @@ Extracts frontmatter, section headings, and builds comprehensive search data.
 import sys
 import yaml
 import json
+
+from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
 import re
 import subprocess
 from pathlib import Path
@@ -82,7 +84,7 @@ class QMDParser:
             return None
 
         try:
-            return yaml.safe_load(match.group(1))
+            return yaml_safe_load(match.group(1))
         except yaml.YAMLError:
             return None
 
@@ -210,8 +212,7 @@ class SearchIndexGenerator:
                 continue
 
             try:
-                with open(config_path, 'r', encoding='utf-8') as f:
-                    quarto_yaml = yaml.safe_load(f)
+                quarto_yaml = load_quarto_config(config_path)
 
                 if not quarto_yaml:
                     continue

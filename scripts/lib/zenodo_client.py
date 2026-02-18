@@ -16,12 +16,20 @@ from __future__ import annotations
 
 import os
 import re
+import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
 import requests
 import yaml
+
+# Add project root to path for dih_models imports
+_project_root = str(Path(__file__).parent.parent.parent)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
+from dih_models.yaml_utils import yaml_safe_load
 
 ZENODO_API = "https://zenodo.org/api"
 ZENODO_COMMUNITY = "dih"
@@ -570,9 +578,8 @@ def extract_abstract_from_qmd(paper_key: str, quarto_config: dict, project_root:
         import re
         frontmatter_match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
         if frontmatter_match:
-            import yaml
             try:
-                frontmatter = yaml.safe_load(frontmatter_match.group(1))
+                frontmatter = yaml_safe_load(frontmatter_match.group(1))
                 if isinstance(frontmatter, dict) and "abstract" in frontmatter:
                     abstract = frontmatter["abstract"]
                     if abstract:
@@ -607,7 +614,6 @@ def resolve_quarto_variables(text: str, project_root: Path) -> str:
     Returns:
         Text with variables resolved
     """
-    import yaml
     from lib.yaml_sync_utils import substitute_quarto_variables
 
     # Load _variables.yml
@@ -617,7 +623,7 @@ def resolve_quarto_variables(text: str, project_root: Path) -> str:
 
     try:
         with open(variables_path, encoding="utf-8") as f:
-            variables = yaml.safe_load(f)
+            variables = yaml_safe_load(f)
     except:
         return text
 
@@ -1309,4 +1315,4 @@ def get_zenodo_token() -> Optional[str]:
 def load_quarto_config(config_path: Path) -> dict:
     """Load and parse a Quarto YAML config file."""
     with open(config_path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
+        return yaml_safe_load(f)

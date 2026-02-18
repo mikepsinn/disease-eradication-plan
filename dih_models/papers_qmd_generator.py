@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import yaml
+from dih_models.yaml_utils import load_quarto_config
 
 # Add scripts directory to path for latex_utils import
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
@@ -57,8 +57,7 @@ def extract_paper_info(
     Returns:
         Dict with paper info, or None if not a publishable paper
     """
-    with open(config_path, encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    config = load_quarto_config(config_path)
 
     if not config:
         return None

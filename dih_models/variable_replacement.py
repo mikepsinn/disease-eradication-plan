@@ -13,7 +13,7 @@ from html import unescape
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-import yaml
+from dih_models.yaml_utils import yaml_safe_load
 
 
 def strip_html_tags(text: str) -> str:
@@ -41,7 +41,7 @@ def load_variables(variables_yml_path: Path) -> Dict[str, str]:
         return variables
 
     with open(variables_yml_path, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
+        data = yaml_safe_load(f)
 
     if data:
         for key, value in data.items():

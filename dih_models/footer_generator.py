@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import yaml
+from dih_models.yaml_utils import load_quarto_config
 
 
 def extract_footer_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
@@ -33,8 +33,7 @@ def extract_footer_info(config_path: Path, config_name: str) -> Optional[Dict[st
     Returns:
         Dict with title, description, site_url, or None if not publishable
     """
-    with open(config_path, encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    config = load_quarto_config(config_path)
 
     if not config:
         return None

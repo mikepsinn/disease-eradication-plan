@@ -16,7 +16,12 @@ import sys
 from pathlib import Path
 from typing import Any, Dict
 
-import yaml
+# Add project root to path for dih_models imports
+_project_root = str(Path(__file__).parent.parent.parent)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
+from dih_models.yaml_utils import yaml_safe_load
 
 # Handle import from different contexts (direct run vs imported from scripts/)
 try:
@@ -49,7 +54,7 @@ def parse_qmd_frontmatter(qmd_path: Path) -> Dict[str, Any]:
         return {}
 
     try:
-        frontmatter = yaml.safe_load(yaml_match.group(1))
+        frontmatter = yaml_safe_load(yaml_match.group(1))
         return frontmatter if isinstance(frontmatter, dict) else {}
     except Exception as e:
         print(f"[WARN] Failed to parse frontmatter in {qmd_path}: {e}")
@@ -199,7 +204,7 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
         return
 
     with open(variables_path, 'r', encoding='utf-8') as f:
-        variables = yaml.safe_load(f) or {}
+        variables = yaml_safe_load(f) or {}
 
     # Find all Quarto config files (exclude _build_temp/ and non-syncable configs)
     yaml_configs = [
@@ -216,7 +221,7 @@ def sync_descriptions_to_yaml_configs(project_root: Path, variables_path: Path):
             content = yaml_path.read_text(encoding='utf-8')
 
             # Parse to get index-source
-            config = yaml.safe_load(content)
+            config = yaml_safe_load(content)
             index_source = config.get('dih-render', {}).get('index-source')
             if not index_source:
                 skipped_count += 1

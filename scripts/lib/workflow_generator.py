@@ -11,16 +11,22 @@ if sys.platform == 'win32':
     if isinstance(sys.stdout, io.TextIOWrapper):
         sys.stdout.reconfigure(encoding='utf-8')
 
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List
-import yaml
+
+# Add project root to path for dih_models imports
+_project_root = str(Path(__file__).parent.parent.parent)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
+from dih_models.yaml_utils import load_quarto_config
 
 # Handle import from different contexts (direct run vs imported from scripts/)
 try:
     from quarto_config_utils import NON_DEPLOYABLE_CONFIGS
 except ModuleNotFoundError:
-    import sys
     _lib_dir = Path(__file__).parent
     if str(_lib_dir) not in sys.path:
         sys.path.insert(0, str(_lib_dir))
@@ -45,8 +51,7 @@ class JobConfig:
         """Extract job config from _quarto-*.yml file."""
         config_name = config_path.stem.replace("_quarto-", "")
 
-        with open(config_path, 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f)
+        config = load_quarto_config(config_path)
 
         # Extract metadata
         project_type = config['project']['type']

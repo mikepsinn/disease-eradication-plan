@@ -24,7 +24,7 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
-import yaml
+from dih_models.yaml_utils import load_quarto_config
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
@@ -140,8 +140,7 @@ def generate_all_paper_parameters_qmd(
     for config_file in project_root.glob("_quarto-*.yml"):
         config_name = config_file.stem.replace("_quarto-", "")
 
-        with open(config_file, encoding='utf-8') as f:
-            config = yaml.safe_load(f)
+        config = load_quarto_config(config_file)
 
         dih_render = config.get("dih-render", {})
         index_source = dih_render.get("index-source")

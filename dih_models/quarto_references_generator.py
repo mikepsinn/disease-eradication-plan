@@ -28,7 +28,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
-import yaml
+from dih_models.yaml_utils import load_quarto_config
 
 from dih_models.reference_parser import parse_references_bib
 from dih_models.references_bib_utils import parse_bib_entries, save_references_bib
@@ -48,8 +48,7 @@ def extract_paper_citation_info(config_path: Path, config_name: str) -> Optional
     Returns:
         Dict with citation info, or None if not citable (no DOI)
     """
-    with open(config_path, encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    config = load_quarto_config(config_path)
 
     if not config:
         return None

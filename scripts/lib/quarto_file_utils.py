@@ -26,6 +26,11 @@ if sys.platform == 'win32':
     if isinstance(sys.stdout, io.TextIOWrapper):
         sys.stdout.reconfigure(encoding='utf-8')
 
+# Add project root to path for dih_models imports
+_project_root = str(Path(__file__).parent.parent.parent)
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
 
 # =============================================================================
 # Fallback Ignore Patterns (used when git is not available)
@@ -242,11 +247,7 @@ def get_book_qmd_files(
     if project_root is None:
         project_root = find_project_root()
 
-    try:
-        import yaml
-    except ImportError:
-        print("ERROR: Missing pyyaml. Run: pip install pyyaml", file=sys.stderr)
-        return []
+    from dih_models.yaml_utils import load_quarto_config
 
     config_path = project_root / f"_quarto-{config_name}.yml"
     if not config_path.exists():
@@ -254,8 +255,7 @@ def get_book_qmd_files(
         return []
 
     try:
-        with open(config_path, 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f) or {}
+        config = load_quarto_config(config_path)
     except Exception as e:
         print(f"WARNING: Failed to load config: {e}", file=sys.stderr)
         return []

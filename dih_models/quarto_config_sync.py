@@ -16,7 +16,8 @@ from pathlib import Path
 from typing import Any, Dict, List, Set
 import re
 import sys
-import yaml
+
+from dih_models.yaml_utils import load_quarto_config
 
 # Import shared config skip list from scripts/lib
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts" / "lib"))
@@ -105,8 +106,7 @@ SYNC_FORMAT_HTML_KEYS = {
 
 def load_yaml_for_check(path: Path) -> Dict[str, Any]:
     """Load YAML for checking what keys exist (read-only)."""
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+    return load_quarto_config(path)
 
 
 def find_section_end(lines: List[str], section_pattern: str, indent: int) -> int:

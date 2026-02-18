@@ -32,16 +32,98 @@ from typing import Set, Dict, List, Optional, Tuple, Any
 
 import yaml
 
-# Set UTF-8 encoding for stdout on Windows
+from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
+
+# Set UTF-8 encoding for stdout on Windows (reconfigure exists on TextIOWrapper in 3.7+)
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[reportAttributeAccessIssue]
+
+# Pre-compiled regex patterns (avoid re-compiling in loops)
+_RE_VAR = re.compile(r"\{\{<\s*var\s+([^\s>]+)\s*>\}\}")
+_RE_INCLUDE = re.compile(r'\{\{<\s*include\s+([^>]+)\s*>\}\}')
+_RE_BRACKETED_CITE = re.compile(r'\[-?@([a-zA-Z0-9_-]+)')
+_RE_INLINE_CITE = re.compile(r'(?:^|[\s\[(])@([a-zA-Z][a-zA-Z0-9_-]+)(?=[,.\s\)\]:]|$)', re.MULTILINE)
+_RE_DATA_SOURCE_REF = re.compile(r'data-source-ref="([^"]+)"')
+_RE_VAR_CITE = re.compile(r'@([a-zA-Z][a-zA-Z0-9_-]+)')
+_RE_BIB_ENTRY_START = re.compile(r'(@\w+)\{')
+_RE_BIB_ENTRY_KEY = re.compile(r'@\w+\{([^,\s]+)')
+
+# Module-level caches for cross-call reuse during a single generation run.
+# These eliminate redundant file I/O and parsing when the same files are
+# processed by multiple generators (bibliography, parameters, variables).
+_file_content_cache: Dict[str, str] = {}
+_extract_vars_cache: Dict[str, Set[str]] = {}
+_extract_cites_cache: Dict[str, Set[str]] = {}
+_variables_yml_cache: Dict[str, dict] = {}
+_bib_entries_cache: Dict[str, list] = {}
 
 
-def extract_variables_from_qmd(qmd_path: Path, project_root: Path = None) -> Set[str]:
+def _read_file_cached(file_path: Path) -> str:
+    """Read a file with content caching. Returns empty string if file doesn't exist."""
+    key = str(file_path)
+    if key not in _file_content_cache:
+        if not file_path.exists():
+            _file_content_cache[key] = ""
+        else:
+            with open(file_path, encoding='utf-8') as f:
+                _file_content_cache[key] = f.read()
+    return _file_content_cache[key]
+
+
+def _load_variables_yml_cached(path: Path) -> dict:
+    """Load and cache a YAML variables file (e.g., _variables.yml)."""
+    key = str(path.resolve())
+    if key not in _variables_yml_cache:
+        if not path.exists():
+            _variables_yml_cache[key] = {}
+        else:
+            with open(path, encoding='utf-8') as f:
+                data = yaml_safe_load(f) or {}
+            _variables_yml_cache[key] = data if isinstance(data, dict) else {}
+    return _variables_yml_cache[key]
+
+
+def _parse_bib_entries_cached(bib_path: Path) -> list:
+    """Parse BibTeX entries with caching. Returns list of (entry_text, entry_key) tuples."""
+    cache_key = str(bib_path.resolve())
+    if cache_key not in _bib_entries_cache:
+        content = _read_file_cached(bib_path.resolve())
+        if not content:
+            _bib_entries_cache[cache_key] = []
+        else:
+            entries = []
+            entry_starts = [(m.start(), m.group(1)) for m in _RE_BIB_ENTRY_START.finditer(content)]
+            for i, (start, entry_type) in enumerate(entry_starts):
+                key_match = _RE_BIB_ENTRY_KEY.match(content[start:])
+                if not key_match:
+                    continue
+                entry_key = key_match.group(1).strip()
+                end = entry_starts[i + 1][0] if i + 1 < len(entry_starts) else len(content)
+                entry_text = content[start:end].strip()
+                if not entry_text.endswith('}'):
+                    last_brace = entry_text.rfind('}')
+                    if last_brace > 0:
+                        entry_text = entry_text[:last_brace + 1]
+                entries.append((entry_text, entry_key))
+            _bib_entries_cache[cache_key] = entries
+    return _bib_entries_cache[cache_key]
+
+
+def clear_file_caches() -> None:
+    """Clear all file content and result caches (for testing or forced reload)."""
+    _file_content_cache.clear()
+    _extract_vars_cache.clear()
+    _extract_cites_cache.clear()
+    _variables_yml_cache.clear()
+    _bib_entries_cache.clear()
+
+
+def extract_variables_from_qmd(qmd_path: Path, project_root: Optional[Path] = None) -> Set[str]:
     """
     Extract all Quarto variable names used in a QMD file, including from {{< include >}} files.
 
     Pattern matched: {{< var variable_name >}}
+    Results are cached per resolved file path for cross-call reuse.
 
     Args:
         qmd_path: Path to the QMD file to analyze
@@ -50,32 +132,34 @@ def extract_variables_from_qmd(qmd_path: Path, project_root: Path = None) -> Set
     Returns:
         Set of variable names used in the file
     """
+    cache_key = str(qmd_path.resolve())
+    if cache_key in _extract_vars_cache:
+        return _extract_vars_cache[cache_key].copy()
+
     if not qmd_path.exists():
+        _extract_vars_cache[cache_key] = set()
         return set()
 
     variables: Set[str] = set()
-    processed_files: Set[Path] = set()
-
-    # Pattern to match Quarto variable references: {{< var variable_name >}}
-    var_pattern = re.compile(r"\{\{<\s*var\s+([^\s>]+)\s*>\}\}")
+    processed_files: Set[str] = set()
 
     def process_file(file_path: Path):
         """Recursively process a file and its includes."""
-        if file_path in processed_files or not file_path.exists():
+        resolved = str(file_path)
+        if resolved in processed_files:
             return
-        processed_files.add(file_path)
+        processed_files.add(resolved)
 
-        with open(file_path, encoding='utf-8') as f:
-            content = f.read()
+        content = _read_file_cached(file_path)
+        if not content:
+            return
 
         # Find all variable references
-        for match in var_pattern.finditer(content):
-            var_name = match.group(1).strip()
-            variables.add(var_name)
+        for match in _RE_VAR.finditer(content):
+            variables.add(match.group(1).strip())
 
         # Find and process {{< include >}} directives
-        include_pattern = r'\{\{<\s*include\s+([^>]+)\s*>\}\}'
-        for match in re.finditer(include_pattern, content):
+        for match in _RE_INCLUDE.finditer(content):
             include_path_str = match.group(1).strip().strip('"\'')
 
             # Resolve include path
@@ -90,6 +174,7 @@ def extract_variables_from_qmd(qmd_path: Path, project_root: Path = None) -> Set
             process_file(include_path.resolve())
 
     process_file(qmd_path.resolve())
+    _extract_vars_cache[cache_key] = variables
     return variables
 
 
@@ -111,13 +196,8 @@ def extract_citations_from_variable_values(
     Returns:
         Set of citation keys found in the variable values
     """
-    if not variables_yml_path.exists():
-        return set()
-
-    with open(variables_yml_path, encoding='utf-8') as f:
-        all_variables = yaml.safe_load(f)
-
-    if not isinstance(all_variables, dict):
+    all_variables = _load_variables_yml_cached(variables_yml_path)
+    if not all_variables:
         return set()
 
     citations: Set[str] = set()
@@ -129,15 +209,14 @@ def extract_citations_from_variable_values(
         value = str(all_variables[var_name])
 
         # Pattern 1: data-source-ref="citation-key" in HTML attributes
-        for match in re.finditer(r'data-source-ref="([^"]+)"', value):
+        for match in _RE_DATA_SOURCE_REF.finditer(value):
             ref = match.group(1).strip()
             # Skip empty refs and file paths
             if ref and not ref.startswith('/'):
                 citations.add(ref)
 
         # Pattern 2: @citation-key (for _cite variables like @who-report-2024)
-        # Match @ followed by valid citation key characters
-        for match in re.finditer(r'@([a-zA-Z][a-zA-Z0-9_-]+)', value):
+        for match in _RE_VAR_CITE.finditer(value):
             citations.add(match.group(1))
 
     return citations
@@ -159,14 +238,9 @@ def generate_filtered_variables_yml(
     Returns:
         Number of variables in the filtered file
     """
-    if not full_variables_path.exists():
-        print(f"[ERROR] Variables file not found: {full_variables_path}")
-        return 0
-
-    with open(full_variables_path, encoding='utf-8') as f:
-        all_variables = yaml.safe_load(f)
-
-    if not isinstance(all_variables, dict):
+    all_variables = _load_variables_yml_cached(full_variables_path)
+    if not all_variables:
+        print(f"[ERROR] Variables file not found or empty: {full_variables_path}")
         return 0
 
     # Filter to only requested variables
@@ -198,9 +272,10 @@ def generate_filtered_variables_yml(
     return len(filtered)
 
 
-def extract_citations_from_qmd(qmd_path: Path, project_root: Path = None) -> Set[str]:
+def extract_citations_from_qmd(qmd_path: Path, project_root: Optional[Path] = None) -> Set[str]:
     """
     Extract all citation keys from a QMD file, including from {{< include >}} files.
+    Results are cached per resolved file path for cross-call reuse.
 
     Args:
         qmd_path: Path to the QMD file to analyze
@@ -209,69 +284,66 @@ def extract_citations_from_qmd(qmd_path: Path, project_root: Path = None) -> Set
     Returns:
         Set of citation keys (without @ prefix)
     """
+    cache_key = str(qmd_path.resolve())
+    if cache_key in _extract_cites_cache:
+        return _extract_cites_cache[cache_key].copy()
+
     if not qmd_path.exists():
+        _extract_cites_cache[cache_key] = set()
         return set()
 
     citations: Set[str] = set()
-    processed_files: Set[Path] = set()
+    processed_files: Set[str] = set()
+
+    # Skip patterns and prefixes (defined once, not per file)
+    skip_patterns = {
+        'misc', 'article', 'book', 'inproceedings', 'techreport',
+        'phdthesis', 'mastersthesis', 'incollection', 'manual',
+        'proceedings', 'unpublished', 'booklet', 'conference',
+        'property', 'media', 'keyframes', 'import', 'charset',
+        'supports', 'layer', 'namespace', 'page', 'font-face',
+    }
+    skip_prefixes = ('eq-', 'fig-', 'tbl-', 'sec-', 'lst-', 'thm-', 'def-', 'lem-', 'cor-', 'prp-')
 
     def process_file(file_path: Path):
         """Recursively process a file and its includes."""
-        if file_path in processed_files or not file_path.exists():
+        resolved = str(file_path)
+        if resolved in processed_files:
             return
-        processed_files.add(file_path)
+        processed_files.add(resolved)
 
-        with open(file_path, encoding='utf-8') as f:
-            content = f.read()
+        content = _read_file_cached(file_path)
+        if not content:
+            return
 
-        # Find all citation patterns:
-        # 1. [@key] or [-@key] - standard and suppress-author bracketed citations
-        # 2. @key (followed by punctuation/whitespace) - inline citations (Pandoc style)
-        # Skip @ patterns in code blocks, frontmatter, and URLs
-        skip_patterns = {
-            # BibTeX entry types
-            'misc', 'article', 'book', 'inproceedings', 'techreport',
-            'phdthesis', 'mastersthesis', 'incollection', 'manual',
-            'proceedings', 'unpublished', 'booklet', 'conference',
-            # CSS @ rules
-            'property', 'media', 'keyframes', 'import', 'charset',
-            'supports', 'layer', 'namespace', 'page', 'font-face',
-        }
-        # Skip cross-reference prefixes (eq-, fig-, tbl-, sec-, etc.)
-        skip_prefixes = ('eq-', 'fig-', 'tbl-', 'sec-', 'lst-', 'thm-', 'def-', 'lem-', 'cor-', 'prp-')
-
-        # Pattern 1: Bracketed citations [@key] or [-@key] (suppress-author format)
-        for match in re.finditer(r'\[-?@([a-zA-Z0-9_-]+)', content):
+        # Pattern 1: Bracketed citations [@key] or [-@key]
+        for match in _RE_BRACKETED_CITE.finditer(content):
             key = match.group(1)
             if key not in skip_patterns and not key.startswith(skip_prefixes):
                 citations.add(key)
 
-        # Pattern 2: Inline citations @key (followed by punctuation, comma, period, or whitespace)
-        # Must be preceded by whitespace or start of line to avoid matching URLs like user@example.com
-        for match in re.finditer(r'(?:^|[\s\[(])@([a-zA-Z][a-zA-Z0-9_-]+)(?=[,.\s\)\]:]|$)', content, re.MULTILINE):
+        # Pattern 2: Inline citations @key
+        for match in _RE_INLINE_CITE.finditer(content):
             key = match.group(1)
             if key not in skip_patterns and not key.startswith(skip_prefixes):
                 citations.add(key)
 
         # Find and process {{< include >}} directives
-        include_pattern = r'\{\{<\s*include\s+([^>]+)\s*>\}\}'
-        for match in re.finditer(include_pattern, content):
+        for match in _RE_INCLUDE.finditer(content):
             include_path_str = match.group(1).strip().strip('"\'')
 
-            # Resolve include path
             if include_path_str.startswith('/'):
-                # Absolute path from project root
                 if project_root:
                     include_path = project_root / include_path_str.lstrip('/')
                 else:
                     include_path = Path(include_path_str.lstrip('/'))
             else:
-                # Relative path from current file
                 include_path = file_path.parent / include_path_str
 
             process_file(include_path.resolve())
 
     process_file(qmd_path.resolve())
+    _extract_cites_cache[cache_key] = citations
     return citations
 
 
@@ -279,8 +351,8 @@ def generate_paper_bibliography(
     paper_path: Path,
     main_bib_path: Path,
     output_bib_path: Path,
-    project_root: Path = None,
-    variables_yml_path: Path = None
+    project_root: Optional[Path] = None,
+    variables_yml_path: Optional[Path] = None,
 ) -> Tuple[int, Set[str]]:
     """
     Generate a filtered .bib file containing only citations used in a paper.
@@ -316,51 +388,18 @@ def generate_paper_bibliography(
         print(f"[WARN] No citations found in {paper_path.name}")
         return (0, used_variables)
 
-    # Read the main bibliography
+    # Parse BibTeX entries (cached - parsed once, reused across papers)
     if not main_bib_path.exists():
         print(f"[ERROR] Main bibliography not found: {main_bib_path}")
         return (0, used_variables)
 
-    with open(main_bib_path, encoding='utf-8') as f:
-        main_bib_content = f.read()
-
-    # Parse BibTeX entries
-    # Split by @type{ patterns to find entry boundaries
-    # This handles multi-line entries properly
-    entries = []
-    # Find all entry start positions
-    entry_starts = [(m.start(), m.group(1)) for m in re.finditer(r'(@\w+)\{', main_bib_content)]
-
-    for i, (start, entry_type) in enumerate(entry_starts):
-        # Find entry key (between { and ,)
-        key_match = re.match(r'@\w+\{([^,\s]+)', main_bib_content[start:])
-        if not key_match:
-            continue
-        entry_key = key_match.group(1).strip()
-
-        # Find entry end (next entry or end of file)
-        if i + 1 < len(entry_starts):
-            end = entry_starts[i + 1][0]
-        else:
-            end = len(main_bib_content)
-
-        entry_text = main_bib_content[start:end].strip()
-        # Ensure entry ends with }
-        if not entry_text.endswith('}'):
-            # Find the last }
-            last_brace = entry_text.rfind('}')
-            if last_brace > 0:
-                entry_text = entry_text[:last_brace + 1]
-
-        entries.append((entry_text, entry_key))
+    entries = _parse_bib_entries_cached(main_bib_path)
 
     # Filter entries to only include cited ones
     filtered_entries = []
     found_citations = set()
 
     for entry_text, entry_key in entries:
-        # Normalize key (strip whitespace)
-        entry_key = entry_key.strip()
         if entry_key in citations:
             filtered_entries.append(entry_text)
             found_citations.add(entry_key)
@@ -373,17 +412,17 @@ def generate_paper_bibliography(
             print(f"       ... and {len(missing) - 10} more")
 
     # Write filtered bibliography
-    content = [
+    output_content = [
         "% AUTO-GENERATED FILE - DO NOT EDIT",
         f"% Filtered bibliography for {paper_path.name}",
         f"% Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py",
         "",
     ]
-    content.extend(filtered_entries)
+    output_content.extend(filtered_entries)
 
     output_bib_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_bib_path, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(content))
+        f.write('\n'.join(output_content))
 
     return (len(filtered_entries), used_variables)
 
@@ -461,8 +500,7 @@ def generate_all_paper_bibliographies(project_root: Path) -> Dict[str, int]:
         if config_name == "book":
             continue
 
-        with open(config_file, encoding='utf-8') as f:
-            config = yaml.safe_load(f)
+        config = load_quarto_config(config_file)
 
         dih_render = config.get("dih-render", {})
         index_source = dih_render.get("index-source")
@@ -566,38 +604,14 @@ def _write_filtered_bibliography(
         print(f"[ERROR] Main bibliography not found: {main_bib_path}")
         return 0
 
-    with open(main_bib_path, encoding='utf-8') as f:
-        main_bib_content = f.read()
-
-    # Parse BibTeX entries
-    entries = []
-    entry_starts = [(m.start(), m.group(1)) for m in re.finditer(r'(@\w+)\{', main_bib_content)]
-
-    for i, (start, entry_type) in enumerate(entry_starts):
-        key_match = re.match(r'@\w+\{([^,\s]+)', main_bib_content[start:])
-        if not key_match:
-            continue
-        entry_key = key_match.group(1).strip()
-
-        if i + 1 < len(entry_starts):
-            end = entry_starts[i + 1][0]
-        else:
-            end = len(main_bib_content)
-
-        entry_text = main_bib_content[start:end].strip()
-        if not entry_text.endswith('}'):
-            last_brace = entry_text.rfind('}')
-            if last_brace > 0:
-                entry_text = entry_text[:last_brace + 1]
-
-        entries.append((entry_text, entry_key))
+    # Use cached bib entries (parsed once, reused across all papers)
+    entries = _parse_bib_entries_cached(main_bib_path)
 
     # Filter entries to only include cited ones
     filtered_entries = []
     found_citations = set()
 
     for entry_text, entry_key in entries:
-        entry_key = entry_key.strip()
         if entry_key in citations:
             filtered_entries.append(entry_text)
             found_citations.add(entry_key)
@@ -610,17 +624,17 @@ def _write_filtered_bibliography(
             print(f"       ... and {len(missing) - 10} more")
 
     # Write filtered bibliography
-    content = [
+    output_content = [
         "% AUTO-GENERATED FILE - DO NOT EDIT",
         f"% Filtered bibliography for {paper_name}",
         "% Re-generate with: python scripts/generate-everything-parameters-variables-calculations-references.py",
         "",
     ]
-    content.extend(filtered_entries)
+    output_content.extend(filtered_entries)
 
     output_bib_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_bib_path, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(content))
+        f.write('\n'.join(output_content))
 
     return len(filtered_entries)
 
