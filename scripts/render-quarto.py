@@ -28,6 +28,7 @@ Usage:
 """
 
 import argparse
+import csv
 import gc
 import os
 import re
@@ -1374,15 +1375,21 @@ def render_quarto(
                             [str(kindle_previewer), str(dest_epub_path), "-convert", "-output", str(kpf_output_dir)],
                             capture_output=True, text=True, timeout=300,
                         )
-                        kpf_files = list(kpf_output_dir.glob("*.kpf"))
+                        # Kindle Previewer puts KPF in a KPF/ subdirectory
+                        kpf_files = list(kpf_output_dir.glob("**/*.kpf"))
+                        # Parse Summary_Log.csv for Enhanced Typesetting status
+                        et_status = "Unknown"
+                        summary_csv = kpf_output_dir / "Summary_Log.csv"
+                        if summary_csv.exists():
+                            with open(summary_csv, "r", encoding="utf-8") as f:
+                                for row in csv.DictReader(f):
+                                    et_status = row.get("Enhanced Typesetting Status", "Unknown")
+                                    break
                         if kpf_files:
-                            print(f"[OK] KPF generated: {kpf_files[0].name}")
+                            kpf_mb = kpf_files[0].stat().st_size / (1024 * 1024)
+                            print(f"[OK] KPF generated: {kpf_files[0].name} ({kpf_mb:.1f} MB, Enhanced Typesetting: {et_status})")
                         else:
-                            print(f"[WARN] KPF conversion failed (Enhanced Typesetting may not be supported)", file=sys.stderr)
-                            # Show any useful output from Kindle Previewer
-                            for line in (kpf_result.stdout or "").splitlines():
-                                if line.strip():
-                                    print(f"  {line.strip()[:150]}", file=sys.stderr)
+                            print(f"[WARN] KPF not generated (Enhanced Typesetting: {et_status})", file=sys.stderr)
                 else:
                     print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
                     print(f"        Expected at: {epub_path}", file=sys.stderr)

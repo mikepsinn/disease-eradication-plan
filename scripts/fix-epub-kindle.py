@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Post-process EPUB for valid XHTML and correct OPF metadata.
+"""Post-process EPUB for valid XHTML, correct OPF metadata, and Kindle compatibility.
 
 Fixes issues that cause epubcheck errors and KDP rejections:
 - Unclosed <br>, <hr>, <img> tags (must be self-closing in XHTML)
 - <script> tags (unsupported by e-readers, can cause validation errors)
 - Wrong media-type in OPF manifest (e.g., .jpg declared as image/png)
+- Inline <style> blocks that block Kindle Enhanced Typesetting
+  (Quarto/Pandoc embeds callout/flex CSS in every chapter XHTML)
 
 Usage:
     python scripts/fix-epub-kindle.py assets/epubs/How-to-End-War-and-Disease.epub
@@ -52,6 +54,13 @@ def fix_xhtml_content(content: bytes) -> tuple[bytes, list[str]]:
     if script_pattern.search(text):
         text = script_pattern.sub('', text)
         fixes.append("Removed <script> tags")
+
+    # Remove inline <style> blocks (Quarto/Pandoc embeds callout/flex CSS
+    # in every chapter; these block Kindle Enhanced Typesetting)
+    style_pattern = re.compile(r'<style[^>]*>.*?</style>', re.DOTALL)
+    if style_pattern.search(text):
+        text = style_pattern.sub('', text)
+        fixes.append("Removed inline <style> blocks (Kindle ET fix)")
 
     return text.encode("utf-8"), fixes
 
