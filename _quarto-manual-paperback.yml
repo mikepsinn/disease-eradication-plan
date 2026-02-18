@@ -1,0 +1,200 @@
+project:
+  type: book
+  output-dir: _manual-paperback/warondisease
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+
+# Custom fields for render-quarto.py
+dih-render:
+  index-source: index-manual.qmd
+  show-confidence-intervals: false
+  favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
+
+book:
+  title: 'How to End War and Disease'
+  subtitle: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
+  author:
+    - name: Mike P. Sinn
+      email: m@warondisease.org
+      orcid: 0009-0006-0212-1094
+      affiliations:
+        - name: "Institute for Accelerated Medicine"
+          url: https://acceleratedmedicine.org
+  description: "Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery"
+  chapters:
+    - text: "Start Here"
+      href: index.qmd
+
+    - part: "The Problem"
+      chapters:
+        - knowledge/problem.qmd
+        - knowledge/problem/the-daily-massacre.qmd
+        - knowledge/problem/cost-of-war.qmd
+        - knowledge/problem/cost-of-disease.qmd
+        - knowledge/problem/nih-fails-2-institute-health.qmd
+        - knowledge/problem/untapped-therapeutic-frontier.qmd
+        - knowledge/problem/fda-is-unsafe-and-ineffective.qmd
+        - knowledge/problem/unrepresentative-democracy.qmd
+        - knowledge/economics/central-banks.qmd
+        - knowledge/problem/genetic-slavery.qmd
+
+    - part: "The Solution"
+      chapters:
+        - knowledge/solution.qmd
+        - knowledge/solution/1-percent-treaty.qmd
+        - knowledge/solution/dih.qmd
+        - knowledge/solution/wishocracy.qmd
+        - knowledge/solution/dfda.qmd
+        - knowledge/solution/aligning-incentives.qmd
+        - knowledge/solution/incentive-alignment-bonds.qmd
+        - knowledge/appendix/open-ecosystem-and-bounty-model.qmd
+
+    - part: "The Evidence"
+      chapters:
+        - knowledge/proof.qmd
+        - knowledge/proof/historical-precedents.qmd
+        - knowledge/proof/body-as-repairable-machine.qmd
+        - knowledge/futures.qmd
+        - knowledge/futures/moronia.qmd
+        - knowledge/futures/wishonia.qmd
+        - knowledge/appendix/faq.qmd
+
+    - part: "The Plan"
+      chapters:
+        - knowledge/strategy/roadmap.qmd
+        - knowledge/strategy/nonprofit-coalition-strategy.qmd
+        - knowledge/legal/legal-framework.qmd
+        # CUT: election-law.qmd - operational detail for campaign staff
+        - knowledge/economics/victory-bonds.qmd
+        # CUT: legislation-package.qmd - draft bill text, nobody reads recreationally
+        - knowledge/strategy/global-referendum.qmd
+        - knowledge/solution/ai-coordination-army.qmd
+        - knowledge/strategy/co-opting-defense-contractors.qmd
+        - knowledge/appendix/treaty-feasibility.qmd
+        - knowledge/appendix/recruitment-and-propaganda-plan.qmd
+
+    - part: "Economics & Finance"
+      chapters:
+        - knowledge/economics/peace-dividend.qmd
+        - knowledge/economics/health-dividend.qmd
+        - knowledge/economics/financial-plan.qmd
+        # CUT: campaign-budget.qmd - granular budget line items
+        # CUT: investor-risk-analysis.qmd - only relevant to actual investors
+
+    - part: "References"
+      chapters:
+        - knowledge/appendix/recovery-trial.qmd
+        - knowledge/appendix/real-world-evidence-historical-success.qmd
+        # CUT: papers.qmd - just links to websites, useless in print
+        # CUT: references.qmd - auto-generated bibliography
+        - knowledge/appendix/copyright.qmd
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+execute:
+  cache: false
+  freeze: auto
+  daemon: 300
+  daemon-restart: false
+  fig-path: "knowledge/figures/"
+  echo: false
+
+jupyter: dih-project-kernel
+
+# Project-level metadata
+metadata:
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
+  category: "Non-fiction, Public Policy, Health Economics, Peace Studies"
+  keywords: "war-on-disease, 1-percent-treaty, medical-research, public-health, peace-dividend, decentralized-trials, dfda, dih, victory-bonds, health-economics, cost-benefit-analysis, clinical-trials, drug-development, regulatory-reform, military-spending, peace-economics, decentralized-governance, wishocracy, blockchain-governance, impact-investing"
+  version: "1.0.0"
+  edition: "First Edition (Print)"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  geographic-coverage: "Global"
+  audience: "General Public, Policy Makers, Investors, Healthcare Professionals, Researchers"
+  format: "Book"
+  type: "Non-fiction"
+  genre: "Public Policy, Health Economics, Peace Studies"
+  medium: "Print"
+  author-website: "https://mikesinn.com"
+  coi-statement: "The author declares no competing interests, beyond a preference for being alive and for arithmetic, which may bias conclusions toward 'fewer people should die' and 'money should be spent on things that work.'"
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
+  ethics-statement: "This research did not involve human experimentation. The policies it examines, however, arguably do."
+  funding: "No funding was received. The author notes the irony of writing extensively about optimal resource allocation while being, himself, sub-optimally resourced."
+  github-profile: "https://github.com/mikepsinn"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  open-graph: true
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  rights: Creative Commons Attribution-NonCommercial 4.0 International License
+  twitter-creator: "https://x.com/warondisease"
+  twitter-site: "https://x.com/warondisease"
+  bibliography:
+    - references.bib
+  csl: nature-annotated.csl
+
+format:
+  pdf:
+    output-file: "How-to-End-War-and-Disease-Paperback.pdf"
+    documentclass: report
+    institute: "Institute for Accelerated Medicine"
+    echo: false
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    colorlinks: false  # Print-friendly: no colored links
+    link-citations: true
+    date: ""
+    author: "WISHONIA (translated by Mike P. Sinn)"
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://manual.WarOnDisease.org}
+      - text: |
+          % Use Arabic numerals for appendix chapters
+          \usepackage{etoolbox}
+          \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}
+      - text: |
+          % KDP 7x10 trim size
+          % Note: actual trim is set via geometry below
+          % Add "For appendices, detailed calculations, and full references visit manual.WarOnDisease.org" note
+    geometry:
+      - paperwidth=7in
+      - paperheight=10in
+      - top=0.75in
+      - bottom=0.75in
+      - left=0.75in
+      - right=0.75in
+    include-before-body:
+      - text: |
+          \thispagestyle{empty}
+          \newgeometry{margin=0pt}
+          \noindent\includegraphics[width=\paperwidth,height=\paperheight]{assets/cover/book-cover-3.jpg}
+          \restoregeometry
+          \newpage
