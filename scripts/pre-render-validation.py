@@ -1840,6 +1840,69 @@ def check_source_image_dpi():
         print(f"  All source images OK\n")
 
 
+def check_epub_compatibility():
+    """Check source files for patterns that break EPUB/Kindle processing.
+
+    Catches issues that epubcheck flags as FATAL or ERROR:
+    - Double-dash (--) inside HTML comments (violates XML spec)
+    - Backslash in URLs (Windows path separators)
+    - Backslash-escaped percent in BibTeX URLs
+    """
+    print("Checking EPUB compatibility patterns...")
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    issue_count = 0
+
+    # Check QMD files for -- inside HTML comments
+    _re_html_comment = re.compile(r'<!--.*?-->', re.DOTALL)
+    _re_double_dash_separator = re.compile(r'---\s')  # --- used as separator line
+    qmd_dir = os.path.join(project_root, "knowledge")
+    if os.path.isdir(qmd_dir):
+        for root, _dirs, files in os.walk(qmd_dir):
+            for fname in files:
+                if not fname.endswith(('.qmd', '.md')):
+                    continue
+                fpath = os.path.join(root, fname)
+                try:
+                    with open(fpath, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                except Exception:
+                    continue
+                for m in _re_html_comment.finditer(content):
+                    comment = m.group(0)
+                    # Check for --- separators inside comments (creates invalid --)
+                    if _re_double_dash_separator.search(comment[4:-3]):  # Skip <!-- and -->
+                        line_num = content[:m.start()].count('\n') + 1
+                        rel = os.path.relpath(fpath)
+                        errors.append(ValidationError(
+                            file=rel, line=line_num,
+                            message="HTML comment contains '---' which creates invalid '--' in XML/EPUB",
+                            context="Replace --- with === inside HTML comments"
+                        ))
+                        issue_count += 1
+                        break  # One per file is enough
+
+    # Check references.bib for backslash in URLs
+    bib_path = os.path.join(project_root, "references.bib")
+    if os.path.isfile(bib_path):
+        try:
+            with open(bib_path, 'r', encoding='utf-8') as f:
+                for line_num, line in enumerate(f, 1):
+                    if line.strip().lower().startswith('url') and '\\%' in line:
+                        errors.append(ValidationError(
+                            file="references.bib", line=line_num,
+                            message="URL contains backslash-percent (\\%), invalid in EPUB",
+                            context=line.strip()[:100]
+                        ))
+                        issue_count += 1
+        except Exception:
+            pass
+
+    if issue_count > 0:
+        print(f"  Found {issue_count} EPUB compatibility issues\n")
+    else:
+        print(f"  All files OK for EPUB\n")
+
+
 def write_json_output(errors: List[ValidationError], output_path: str) -> None:
     """Write validation errors to JSON file for GitHub Actions automation."""
     json_errors = []
@@ -1955,6 +2018,9 @@ def main():
 
     # Check source images for bad DPI / oversized physical dimensions
     check_source_image_dpi()
+
+    # Check for patterns that break EPUB/Kindle
+    check_epub_compatibility()
 
     # Find all .qmd files using centralized file utilities
     qmd_files = find_files_by_extension((".qmd",))

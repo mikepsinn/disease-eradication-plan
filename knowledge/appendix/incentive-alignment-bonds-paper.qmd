@@ -799,8 +799,6 @@ To implement score-dependent payoffs, we need mechanisms. This section specifies
 
 ![Vote good, get good score, get campaign help, get cushy job after politics. Like a loyalty card at a coffee shop, but for not destroying democracy.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-the-architecture-bw-academic.jpg)
 
-{{< include ../figures/iab-three-layer-architecture-diagram.qmd >}}
-
 ### Layer A: Scoring (Data Provision)
 
 An independent entity, structured as a 501(c)(3) research organization, maintains the Public Good Score system.

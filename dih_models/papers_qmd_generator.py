@@ -427,7 +427,7 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
     # Publishing status
     publishing = paper.get("publishing", {})
     if publishing:
-        lines.append("--- PLATFORM STATUS ---")
+        lines.append("=== PLATFORM STATUS ===")
 
         # Own site
         own_site = publishing.get("own-site", {})
@@ -453,7 +453,7 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
         # Journals
         journals = publishing.get("journals", [])
         if journals:
-            lines.append("--- JOURNAL TARGETS ---")
+            lines.append("=== JOURNAL TARGETS ===")
             for j in journals:
                 name = j.get("name", "")
                 tier = j.get("tier", "")
@@ -488,7 +488,7 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
     ethics = paper.get("ethics_statement", "")
     data_avail = paper.get("data_availability", "")
     if coi or funding or ethics or data_avail:
-        lines.append("--- STATEMENTS (for journal submissions) ---")
+        lines.append("=== STATEMENTS (for journal submissions) ===")
         if coi:
             lines.append(f"COI: {coi}")
         if funding:
@@ -501,7 +501,7 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
 
     # SSRN "Publication Details for Manuscript Identification" box
     # SSRN won't resolve Zenodo DOIs automatically, so use "Enter the details myself"
-    lines.append('--- SSRN "Publication Details" BOX ---')
+    lines.append('=== SSRN "Publication Details" BOX ===')
     lines.append('Select "Enter the details myself", then fill:')
     publisher = paper.get("publisher", "")
     if publisher:

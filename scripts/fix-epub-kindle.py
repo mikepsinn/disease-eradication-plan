@@ -231,58 +231,101 @@ def process_epub(epub_path: str, output_path: str, dry_run: bool = False) -> dic
     # Create a new EPUB with fixes applied
     temp_path = epub_path + ".tmp"
 
+    # First pass: process images, collect renames
+    processed_entries = {}  # entry_name -> (new_bytes, new_entry_name)
+    renames = {}  # old_basename -> new_basename (for reference updates)
+
+    with zipfile.ZipFile(epub_path, "r") as zf_in:
+        for entry in zf_in.namelist():
+            ext = Path(entry).suffix.lower()
+            if ext not in image_extensions:
+                continue
+
+            data = zf_in.read(entry)
+            original_kb = len(data) / 1024
+            summary["total_original_kb"] += original_kb
+
+            is_cover = "cover" in entry.lower()
+            new_bytes, new_ext, changes = resize_image(data, entry, is_cover)
+
+            if changes and "error" not in changes:
+                new_kb = len(new_bytes) / 1024
+                summary["total_new_kb"] += new_kb
+                summary["changes"].append({"file": entry, **changes})
+
+                if "resized" in changes:
+                    summary["images_resized"] += 1
+                if "compressed" in changes or "size" in changes:
+                    summary["images_compressed"] += 1
+
+                # Track renames when format changes (e.g., PNG -> JPEG)
+                if new_ext != ext:
+                    new_entry = str(Path(entry).with_suffix(new_ext))
+                    old_basename = Path(entry).name
+                    new_basename = Path(new_entry).name
+                    renames[old_basename] = new_basename
+                    processed_entries[entry] = (new_bytes, new_entry)
+                else:
+                    processed_entries[entry] = (new_bytes, entry)
+            else:
+                summary["total_new_kb"] += original_kb
+                processed_entries[entry] = (data, entry)
+
+    if renames:
+        summary["format_renames"] = len(renames)
+
+    # Second pass: write everything, updating references for renames
     with zipfile.ZipFile(epub_path, "r") as zf_in:
         with zipfile.ZipFile(temp_path, "w", zipfile.ZIP_DEFLATED) as zf_out:
             for entry in zf_in.namelist():
-                data = zf_in.read(entry)
                 ext = Path(entry).suffix.lower()
 
                 # Handle mimetype (must be first, uncompressed)
                 if entry == "mimetype":
-                    zf_out.writestr(entry, data, compress_type=zipfile.ZIP_STORED)
+                    zf_out.writestr(entry, zf_in.read(entry), compress_type=zipfile.ZIP_STORED)
                     continue
 
-                # Process images
-                if ext in image_extensions:
-                    original_kb = len(data) / 1024
-                    summary["total_original_kb"] += original_kb
-
-                    is_cover = "cover" in entry.lower()
-                    new_bytes, new_ext, changes = resize_image(data, entry, is_cover)
-
-                    if changes and "error" not in changes:
-                        new_kb = len(new_bytes) / 1024
-                        summary["total_new_kb"] += new_kb
-                        summary["changes"].append({"file": entry, **changes})
-
-                        if "resized" in changes:
-                            summary["images_resized"] += 1
-                        if "compressed" in changes or "size" in changes:
-                            summary["images_compressed"] += 1
-
-                        # If format changed, update the entry name
-                        if new_ext != ext:
-                            new_entry = str(Path(entry).with_suffix(new_ext))
-                            # We'd need to update references too - skip format changes for now
-                            zf_out.writestr(entry, new_bytes)
-                        else:
-                            zf_out.writestr(entry, new_bytes)
-                    else:
-                        summary["total_new_kb"] += original_kb
-                        zf_out.writestr(entry, data)
+                # Write processed images with potentially new names
+                if entry in processed_entries:
+                    new_bytes, new_entry = processed_entries[entry]
+                    zf_out.writestr(new_entry, new_bytes)
                     continue
 
-                # Process XHTML files
-                if ext in (".xhtml", ".html", ".htm"):
-                    new_data, fixes = fix_xhtml_content(data)
-                    if fixes:
-                        summary["xhtml_fixed"] += 1
-                        summary["changes"].append({"file": entry, "xhtml_fixes": fixes})
-                    zf_out.writestr(entry, new_data)
+                # Process text files: apply XHTML fixes + update renamed image references
+                if ext in (".xhtml", ".html", ".htm", ".opf", ".ncx", ".xml", ".css"):
+                    data = zf_in.read(entry)
+
+                    # Fix XHTML content
+                    if ext in (".xhtml", ".html", ".htm"):
+                        data, fixes = fix_xhtml_content(data)
+                        if fixes:
+                            summary["xhtml_fixed"] += 1
+                            summary["changes"].append({"file": entry, "xhtml_fixes": fixes})
+
+                    # Update image references for format renames
+                    if renames:
+                        text = data if isinstance(data, str) else data.decode("utf-8", errors="replace")
+                        for old_name, new_name in renames.items():
+                            text = text.replace(old_name, new_name)
+                        # Update media-type in OPF for renamed images
+                        if ext == ".opf":
+                            opf_str: str = text
+                            for old_name, new_name in renames.items():
+                                if new_name.endswith((".jpg", ".jpeg")):
+                                    # Fix: href="newname.jpg" media-type="image/png" -> "image/jpeg"
+                                    opf_str = re.sub(
+                                        rf'href="{re.escape(new_name)}"(\s+)media-type="image/png"',
+                                        f'href="{new_name}"\\1media-type="image/jpeg"',
+                                        opf_str,
+                                    )
+                            text = opf_str
+                        data = text.encode("utf-8") if isinstance(text, str) else text
+
+                    zf_out.writestr(entry, data)
                     continue
 
                 # Pass through everything else unchanged
-                zf_out.writestr(entry, data)
+                zf_out.writestr(entry, zf_in.read(entry))
 
     # Replace original or write to output
     if output_path == epub_path:

@@ -85,6 +85,19 @@ function Inlines(inlines)
   return result
 end
 
+-- Strip .qmd internal links that don't resolve in EPUB.
+-- Keep the link text, remove the link target.
+function Link(el)
+  if el.target:match("%.qmd") then
+    return el.content
+  end
+  -- Fix backslash in URLs (Windows path separators)
+  if el.target:match("\\") then
+    el.target = el.target:gsub("\\", "/")
+    return el
+  end
+end
+
 -- Move figure captions below images.
 -- Pandoc's EPUB writer puts <figcaption> before <img> in the XHTML.
 -- This reconstructs the figure HTML with caption after content.

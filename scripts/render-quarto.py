@@ -35,6 +35,8 @@ import shutil
 import subprocess
 import sys
 import time
+import urllib.request
+import zipfile
 from datetime import datetime
 from pathlib import Path
 from typing import Optional, List, Set, Dict, Any
@@ -66,6 +68,49 @@ from render_utils import (  # type: ignore[import-not-found]
     run_pdf_validation,
     validate_pdf_for_python_code
 )
+
+
+# =============================================================================
+# epubcheck auto-download
+# =============================================================================
+
+EPUBCHECK_VERSION = "5.1.0"
+EPUBCHECK_URL = f"https://github.com/w3c/epubcheck/releases/download/v{EPUBCHECK_VERSION}/epubcheck-{EPUBCHECK_VERSION}.zip"
+
+
+def ensure_epubcheck(project_root: Path) -> Optional[Path]:
+    """Download epubcheck if not present. Returns path to jar or None on failure."""
+    jar = project_root / "tools" / f"epubcheck-{EPUBCHECK_VERSION}" / "epubcheck.jar"
+    if jar.exists():
+        return jar
+
+    tools_dir = project_root / "tools"
+    tools_dir.mkdir(exist_ok=True)
+    zip_path = tools_dir / f"epubcheck-{EPUBCHECK_VERSION}.zip"
+
+    print(f"[*] Downloading epubcheck {EPUBCHECK_VERSION}...")
+    try:
+        urllib.request.urlretrieve(EPUBCHECK_URL, str(zip_path))
+    except Exception as e:
+        print(f"[WARN] Failed to download epubcheck: {e}", file=sys.stderr)
+        return None
+
+    print(f"[*] Extracting epubcheck...")
+    try:
+        with zipfile.ZipFile(str(zip_path), "r") as zf:
+            zf.extractall(str(tools_dir))
+    except Exception as e:
+        print(f"[WARN] Failed to extract epubcheck: {e}", file=sys.stderr)
+        return None
+    finally:
+        zip_path.unlink(missing_ok=True)
+
+    if jar.exists():
+        print(f"[OK] epubcheck installed at {jar}")
+        return jar
+
+    print(f"[WARN] epubcheck jar not found after extraction", file=sys.stderr)
+    return None
 
 
 # =============================================================================
@@ -1303,26 +1348,9 @@ def render_quarto(
                             kindle_mb = dest_kindle_path.stat().st_size / (1024 * 1024)
                             print(f"[OK] Kindle EPUB: {dest_kindle_path.relative_to(project_root)} ({kindle_mb:.2f} MB)")
 
-                    # Convert SVGs to PNGs for Kindle Enhanced Typesetting / KPF compatibility
-                    convert_svg_script = project_root / "scripts" / "convert-epub-svg-to-png.py"
-                    kpf_ready_name = expected_epub.replace(".epub", "-kindle-kpf-ready.epub")
-                    dest_kpf_ready_path = assets_epubs_dir / kpf_ready_name
-                    svg_source = dest_kindle_path if dest_kindle_path.exists() else dest_epub_path
-                    if convert_svg_script.exists():
-                        print(f"[*] Converting SVGs to PNGs for KPF compatibility...")
-                        svg_result = subprocess.run(
-                            [sys.executable, "-u", str(convert_svg_script), str(svg_source), "-o", str(dest_kpf_ready_path)],
-                            cwd=str(project_root),
-                        )
-                        if svg_result.returncode != 0:
-                            print(f"[WARN] SVG-to-PNG conversion encountered issues (exit code {svg_result.returncode})", file=sys.stderr)
-                        elif dest_kpf_ready_path.exists():
-                            kpf_mb = dest_kpf_ready_path.stat().st_size / (1024 * 1024)
-                            print(f"[OK] KPF-ready EPUB: {dest_kpf_ready_path.relative_to(project_root)} ({kpf_mb:.2f} MB)")
-
                     # Validate Kindle compatibility
                     validate_kindle_script = project_root / "scripts" / "validate-kindle-compat.py"
-                    kindle_target = dest_kpf_ready_path if dest_kpf_ready_path.exists() else (dest_kindle_path if dest_kindle_path.exists() else dest_epub_path)
+                    kindle_target = dest_kindle_path if dest_kindle_path.exists() else dest_epub_path
                     if validate_kindle_script.exists():
                         print(f"[*] Validating Kindle compatibility...")
                         validate_result = subprocess.run(
@@ -1338,6 +1366,28 @@ def render_quarto(
                             print(f"[WARN] Kindle validation found {validate_result.stdout.count('[ERROR]')} error(s)", file=sys.stderr)
                         else:
                             print(f"[OK] Kindle validation passed")
+
+                    # Run epubcheck for EPUB spec compliance (catches issues KDP rejects)
+                    epubcheck_jar = ensure_epubcheck(project_root)
+                    if epubcheck_jar:
+                        epubcheck_target = dest_kindle_path if dest_kindle_path.exists() else dest_epub_path
+                        print(f"[*] Running epubcheck on {epubcheck_target.name}...")
+                        epubcheck_result = subprocess.run(
+                            ["java", "-jar", str(epubcheck_jar), str(epubcheck_target)],
+                            capture_output=True, text=True, encoding="utf-8",
+                        )
+                        # Count fatals and errors from stderr (epubcheck outputs there)
+                        output = epubcheck_result.stderr or epubcheck_result.stdout or ""
+                        fatal_count = output.count("FATAL(")
+                        error_count = output.count("ERROR(")
+                        warning_count = output.count("WARNING(")
+                        if fatal_count > 0 or error_count > 0:
+                            print(f"[WARN] epubcheck: {fatal_count} fatal, {error_count} errors, {warning_count} warnings", file=sys.stderr)
+                            for line in output.splitlines():
+                                if line.startswith("FATAL(") or line.startswith("ERROR("):
+                                    print(f"  {line.strip()[:150]}", file=sys.stderr)
+                        else:
+                            print(f"[OK] epubcheck passed ({warning_count} warnings)")
                 else:
                     print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
                     print(f"        Expected at: {epub_path}", file=sys.stderr)
