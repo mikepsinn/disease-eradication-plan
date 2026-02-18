@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 48 | **Words:** 113,092 | **Images:** 739 | **Est. Pages:** ~822
+**Files:** 48 | **Words:** 113,595 | **Images:** 739 | **Est. Pages:** ~824
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -2031,4 +2031,4 @@
 #### knowledge/appendix/back-cover.qmd
 **Title:** About This Book
 **Description:** The exact sequence of bribes needed to redirect 1% of military spending to curing disease, making everyone rich in the process.
-**Stats:** 340 words | 43 lines | 1 images | ~2p
+**Stats:** 843 words | 64 lines | 1 images | ~4p
