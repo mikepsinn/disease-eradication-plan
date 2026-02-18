@@ -41,7 +41,7 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 **The Problem:** {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
 
-**The Solution:** A decentralized FDA, an open protocol that integrates pragmatic clinical trials into standard healthcare, enabling:
+**The Solution:** A decentralized FDA, an open protocol (like HTTP/FHIR, not a competing platform) that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
 
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
 2. **Universal Trial Access**: Any patient can join trials from home via their phone or computer - no travel to research centers required
@@ -49,18 +49,6 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 4. **Treatment Rankings**: Standardized effectiveness rankings for every treatment-condition pair, updated continuously with real-world evidence
 5. **Outcome Labels**: "Nutrition facts for drugs" showing exactly what happened to real patients who tried each treatment
 
-
-## Protocol, Not Platform
-
-This framework is **protocol infrastructure**, open standards that existing systems adopt, not a competing service:
-
-- **What it IS**: Open standards for trial data exchange, outcome reporting, and treatment ranking - like HTTP for clinical trials, or FHIR for health data
-- **What it is NOT**: A SaaS product that competes with existing clinical trial platforms
-- **How existing systems benefit**: DCT platforms, EHR systems, and health apps integrate the protocol to gain interoperability, access larger patient pools, and contribute to standardized treatment rankings
-
-**Who builds on it**: DCT platforms, major EHR systems, academic medical centers, consumer health apps - any system collecting health outcomes.
-
-**How it works:** Companies register treatments through any protocol-compliant system. Patients search for their condition, see treatments ranked by effectiveness, and can join trials through their preferred app or platform. Patient-reported outcomes flow back into the aggregated rankings. The result is a self-improving ecosystem where every participant's experience helps the next patient make better decisions.
 
 ### Key Findings
 

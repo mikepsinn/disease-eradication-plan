@@ -76,6 +76,7 @@
     "render:epub": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to epub && .venv\\Scripts\\python.exe -u scripts/fix-epub-kindle.py assets/epubs/How-to-End-War-and-Disease.epub",
     "render:epub:validate": "java -jar tools/epubcheck-5.1.0/epubcheck.jar assets/epubs/How-to-End-War-and-Disease.epub",
     "render:docx": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to docx",
+    "render:docx:paperback": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual-paperback --to docx",
     "render:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test",
     "render:test:epub": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to epub --verify && .venv\\Scripts\\python.exe -u scripts/fix-epub-kindle.py assets/epubs/test-book.epub",
     "render:test:docx": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to docx",
