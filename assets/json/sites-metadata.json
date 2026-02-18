@@ -1,5 +1,5 @@
 {
-  "totalSites": 15,
+  "totalSites": 16,
   "totalPages": 61,
   "sites": [
     {
@@ -583,7 +583,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         },
         {
           "path": "knowledge/references.qmd",
@@ -1170,7 +1170,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
@@ -1747,7 +1747,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
@@ -2325,7 +2325,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
@@ -2856,7 +2856,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         },
         {
           "path": "knowledge/references.qmd",
@@ -3446,7 +3446,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
@@ -4023,10 +4023,61 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
+    },
+    {
+      "id": "manual-paperback",
+      "type": "book",
+      "title": "How to End War and Disease",
+      "description": "Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery",
+      "ogImage": "",
+      "author": "Mike P. Sinn",
+      "authorEmail": "mike@warondisease.org",
+      "authorUrl": "https://mikesinn.com",
+      "orcid": "0009-0006-0212-1094",
+      "version": "1.0.0",
+      "edition": "First Edition (Print)",
+      "copyright": "© 2025 Mike P. Sinn",
+      "copyrightYear": "2025",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "publisher": "Institute for Accelerated Medicine",
+      "publisherUrl": "https://acceleratedmedicine.org",
+      "subject": "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform",
+      "category": "Non-fiction, Public Policy, Health Economics, Peace Studies",
+      "keywords": [
+        "war-on-disease",
+        "1-percent-treaty",
+        "medical-research",
+        "public-health",
+        "peace-dividend",
+        "decentralized-trials",
+        "dfda",
+        "dih",
+        "victory-bonds",
+        "health-economics",
+        "cost-benefit-analysis",
+        "clinical-trials",
+        "drug-development",
+        "regulatory-reform",
+        "military-spending",
+        "peace-economics",
+        "decentralized-governance",
+        "wishocracy",
+        "blockchain-governance",
+        "impact-investing"
+      ],
+      "audience": "General Public, Policy Makers, Investors, Healthcare Professionals, Researchers",
+      "format": "Book",
+      "genre": "Public Policy, Health Economics, Peace Studies",
+      "language": "en-US",
+      "twitterSite": "https://x.com/warondisease",
+      "twitterCreator": "https://x.com/warondisease",
+      "indexSource": "index-manual.qmd",
+      "outputDir": "_manual-paperback/warondisease"
     },
     {
       "id": "manual",
@@ -4735,7 +4786,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-18"
         },
         {
           "path": "knowledge/appendix/open-ecosystem-and-bounty-model.qmd",
@@ -5065,7 +5116,7 @@
             "The Endgame"
           ],
           "published": true,
-          "lastmod": "2026-02-16"
+          "lastmod": "2026-02-18"
         },
         {
           "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
@@ -6093,7 +6144,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         },
         {
           "path": "knowledge/appendix/recovery-trial.qmd",
@@ -6180,7 +6231,7 @@
             "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
           ],
           "published": true,
-          "lastmod": "2026-02-15"
+          "lastmod": "2026-02-18"
         },
         {
           "path": "knowledge/references.qmd",
@@ -6200,7 +6251,7 @@
           "url": "https://manual.WarOnDisease.org/appendix/copyright.html",
           "title": "Copyright",
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 47
@@ -6764,7 +6815,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
@@ -7430,7 +7481,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
@@ -8063,7 +8114,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
@@ -8632,7 +8683,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1
@@ -9208,7 +9259,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-02-17"
+          "lastmod": "2026-02-18"
         }
       ],
       "pageCount": 1

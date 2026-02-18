@@ -29,18 +29,39 @@ if sys.platform == 'win32':
     sys.stderr.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
 
 
-def extract_headings_from_file(filepath: Path) -> List[Tuple[int, str]]:
-    """Extract all headings from a .qmd file, ignoring code blocks."""
+def extract_headings_and_images_from_file(filepath: Path) -> List[Tuple[str, Any]]:
+    """Extract headings and images in order from a .qmd file.
+
+    Returns a list of tuples:
+      ("heading", (level, text))
+      ("image", {"path": ..., "alt": ...})
+    """
     if not filepath.exists():
         return []
 
-    headings = []
+    items = []
     in_code_block = False
+    in_frontmatter = False
+    frontmatter_started = False
 
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             for line in f:
                 stripped = line.strip()
+
+                # Track frontmatter
+                if stripped == '---':
+                    if not frontmatter_started:
+                        frontmatter_started = True
+                        in_frontmatter = True
+                        continue
+                    elif in_frontmatter:
+                        in_frontmatter = False
+                        continue
+
+                if in_frontmatter:
+                    continue
+
                 if stripped.startswith('```'):
                     in_code_block = not in_code_block
                     continue
@@ -48,18 +69,27 @@ def extract_headings_from_file(filepath: Path) -> List[Tuple[int, str]]:
                 if in_code_block:
                     continue
 
+                # Headings
                 match = re.match(r'^(#{1,6})\s+(.+)$', line)
                 if match:
                     level = len(match.group(1))
                     text = match.group(2).strip()
                     if text:
-                        headings.append((level, text))
+                        items.append(("heading", (level, text)))
+
+                # Markdown images: ![alt](path)
+                for m in re.finditer(r'!\[([^\]]*)\]\(([^)]+)\)', line):
+                    items.append(("image", {"path": m.group(2), "alt": m.group(1)}))
+
+                # Quarto video shortcode: {{< video path >}}
+                for m in re.finditer(r'\{\{<\s*video\s+([^\s>]+)', line):
+                    items.append(("image", {"path": m.group(1), "alt": "(video)"}))
 
     except Exception as e:
         print(f"Warning: Error reading {filepath}: {e}", file=sys.stderr)
         return []
 
-    return headings
+    return items
 
 
 def format_heading(level: int, text: str) -> str:
@@ -93,19 +123,92 @@ def extract_frontmatter(filepath: Path) -> Dict:
     return {}
 
 
-def get_qmd_stats(filepath: Path) -> Dict[str, int]:
-    """Get word and line count for a QMD file."""
+def extract_images_from_file(filepath: Path) -> List[Dict[str, str]]:
+    """Extract all image references from a QMD file.
+
+    Returns list of dicts with 'path' and 'alt' keys.
+    Detects: ![alt](path), {{< video path >}}, and image: in YAML frontmatter.
+    """
     if not filepath.exists():
-        return {"words": 0, "lines": 0}
+        return []
+
+    images = []
+    in_code_block = False
+    in_frontmatter = False
+    frontmatter_started = False
+
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            for line in f:
+                stripped = line.strip()
+
+                # Track frontmatter boundaries
+                if stripped == '---':
+                    if not frontmatter_started:
+                        frontmatter_started = True
+                        in_frontmatter = True
+                        continue
+                    elif in_frontmatter:
+                        in_frontmatter = False
+                        continue
+
+                if in_frontmatter:
+                    # image: in frontmatter
+                    m = re.match(r'^image:\s*(.+)$', stripped)
+                    if m:
+                        images.append({"path": m.group(1).strip().strip('"').strip("'"), "alt": "(frontmatter)"})
+                    continue
+
+                if stripped.startswith('```'):
+                    in_code_block = not in_code_block
+                    continue
+                if in_code_block:
+                    continue
+
+                # Markdown images: ![alt](path)
+                for m in re.finditer(r'!\[([^\]]*)\]\(([^)]+)\)', line):
+                    images.append({"path": m.group(2), "alt": m.group(1)})
+
+                # Quarto video shortcode: {{< video path >}}
+                for m in re.finditer(r'\{\{<\s*video\s+([^\s>]+)', line):
+                    images.append({"path": m.group(1), "alt": "(video)"})
+
+    except Exception:
+        pass
+
+    return images
+
+
+# Page estimation constants
+WORDS_PER_PAGE = 250  # Standard trade paperback estimate
+PAGE_PER_IMAGE = 0.5  # Average half-page per image
+
+
+def estimate_pages(words: int, image_count: int) -> float:
+    """Estimate printed page count from word count and image count."""
+    text_pages = words / WORDS_PER_PAGE
+    image_pages = image_count * PAGE_PER_IMAGE
+    return text_pages + image_pages
+
+
+def get_qmd_stats(filepath: Path) -> Dict[str, Any]:
+    """Get word count, line count, image count, and page estimate for a QMD file."""
+    if not filepath.exists():
+        return {"words": 0, "lines": 0, "images": [], "image_count": 0, "est_pages": 0.0}
 
     try:
         content = filepath.read_text(encoding='utf-8')
+        images = extract_images_from_file(filepath)
+        words = len(content.split())
         return {
-            "words": len(content.split()),
+            "words": words,
             "lines": len(content.split('\n')),
+            "images": images,
+            "image_count": len(images),
+            "est_pages": estimate_pages(words, len(images)),
         }
     except Exception:
-        return {"words": 0, "lines": 0}
+        return {"words": 0, "lines": 0, "images": [], "image_count": 0, "est_pages": 0.0}
 
 
 def get_all_included_files(project_root: Path) -> Set[str]:
@@ -288,6 +391,9 @@ def extract_chapters_from_config(config: Dict, project_root: Path) -> List[Dict[
                         "description": fm.get("description", ""),
                         "words": stats["words"],
                         "lines": stats["lines"],
+                        "images": stats["images"],
+                        "image_count": stats["image_count"],
+                        "est_pages": stats["est_pages"],
                         "exists": qmd_path.exists(),
                         "is_appendix": is_appendix,
                     })
@@ -317,6 +423,9 @@ def extract_chapters_from_config(config: Dict, project_root: Path) -> List[Dict[
                             "description": fm.get("description", ""),
                             "words": stats["words"],
                             "lines": stats["lines"],
+                            "images": stats["images"],
+                            "image_count": stats["image_count"],
+                            "est_pages": stats["est_pages"],
                             "exists": qmd_path.exists(),
                             "is_appendix": is_appendix,
                         })
@@ -357,6 +466,9 @@ def extract_chapters_from_config(config: Dict, project_root: Path) -> List[Dict[
                     "description": fm.get("description", ""),
                     "words": stats["words"],
                     "lines": stats["lines"],
+                    "images": stats["images"],
+                    "image_count": stats["image_count"],
+                    "est_pages": stats["est_pages"],
                     "exists": qmd_path.exists(),
                     "is_appendix": False,
                 })
@@ -424,15 +536,27 @@ def format_config_chapters(cs: Dict[str, Any], project_root: Path) -> List[str]:
         lines.append(f"**Title:** {ch['title']}")
         if ch['description']:
             lines.append(f"**Description:** {ch['description']}")
-        lines.append(f"**Stats:** {ch['words']:,} words | {ch['lines']:,} lines")
+        img_count = ch.get('image_count', 0)
+        est_pages = ch.get('est_pages', 0)
+        stats_parts = [f"{ch['words']:,} words", f"{ch['lines']:,} lines"]
+        if img_count > 0:
+            stats_parts.append(f"{img_count} images")
+        stats_parts.append(f"~{est_pages:.0f}p")
+        lines.append(f"**Stats:** {' | '.join(stats_parts)}")
         lines.append("")
 
         if ch['exists']:
             full_path = project_root / ch['href']
-            headings = extract_headings_from_file(full_path)
-            if headings:
-                for level, text in headings:
-                    lines.append(format_heading(level, text))
+            items = extract_headings_and_images_from_file(full_path)
+            if items:
+                for item_type, item_data in items:
+                    if item_type == "heading":
+                        level, text = item_data
+                        lines.append(format_heading(level, text))
+                    elif item_type == "image":
+                        alt = item_data['alt'] or '(no alt text)'
+                        indent = "    "
+                        lines.append(f"{indent}![{alt}]({item_data['path']})")
                 lines.append("")
 
     return lines
@@ -440,12 +564,14 @@ def format_config_chapters(cs: Dict[str, Any], project_root: Path) -> List[str]:
 
 def generate_single_config_outline(cs: Dict[str, Any], project_root: Path) -> str:
     """Generate outline for a single Quarto config."""
+    total_images = sum(c.get('image_count', 0) for c in cs['chapters'])
+    total_pages = sum(c.get('est_pages', 0) for c in cs['chapters'])
     lines = [
         f"# {cs['title']}",
         "",
         f"**Config:** {cs['file']}",
         f"**Type:** {cs['type']}",
-        f"**Files:** {len(cs['chapters'])} | **Words:** {cs['total_words']:,}",
+        f"**Files:** {len(cs['chapters'])} | **Words:** {cs['total_words']:,} | **Images:** {total_images} | **Est. Pages:** ~{total_pages:.0f}",
         "",
     ]
 
@@ -473,11 +599,13 @@ def generate_outline(project_root: Path) -> str:
 
     # Add each config section
     for cs in config_summaries:
+        cs_images = sum(c.get('image_count', 0) for c in cs['chapters'])
+        cs_pages = sum(c.get('est_pages', 0) for c in cs['chapters'])
         outline_lines.extend([
             f"## {cs['file']}",
             f"**Title:** {cs['title']}",
             f"**Type:** {cs['type']}",
-            f"**Files:** {len(cs['chapters'])} | **Words:** {cs['total_words']:,}",
+            f"**Files:** {len(cs['chapters'])} | **Words:** {cs['total_words']:,} | **Images:** {cs_images} | **Est. Pages:** ~{cs_pages:.0f}",
             "",
         ])
 
@@ -539,6 +667,8 @@ def generate_outline(project_root: Path) -> str:
     # Add summary
     unique_files = set(c['href'] for cs in config_summaries for c in cs['chapters'])
     total_words = sum(cs['total_words'] for cs in config_summaries)
+    total_images = sum(c.get('image_count', 0) for cs in config_summaries for c in cs['chapters'])
+    total_pages = sum(c.get('est_pages', 0) for cs in config_summaries for c in cs['chapters'])
 
     outline_lines.extend([
         "## SUMMARY",
@@ -546,6 +676,8 @@ def generate_outline(project_root: Path) -> str:
         f"- Quarto configs: {len(config_summaries)}",
         f"- Unique QMD files: {len(unique_files)}",
         f"- Total words: {total_words:,}",
+        f"- Total images: {total_images}",
+        f"- Est. total pages: ~{total_pages:.0f}",
         f"- Orphaned files: {len(orphans)}",
         f"- Paper configs: {len(papers)}",
     ])

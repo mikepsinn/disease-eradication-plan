@@ -2,12 +2,12 @@
 
 **Config:** _quarto-test.yml
 **Type:** book
-**Files:** 3 | **Words:** 751
+**Files:** 3 | **Words:** 751 | **Images:** 2 | **Est. Pages:** ~4
 
 #### knowledge/test/test-economics.qmd
 **Title:** Test Economics Document
 **Description:** PAGE-LEVEL DESCRIPTION: This is the description from the QMD file frontmatter that should be used for og:description meta tag
-**Stats:** 335 words | 68 lines
+**Stats:** 335 words | 68 lines | ~1p
 
 - Introduction
   - Link Test Cases
@@ -22,7 +22,7 @@
 #### knowledge/test/test-parameters.qmd
 **Title:** Test Parameters Document
 **Description:** Minimal parameters document for testing
-**Stats:** 354 words | 81 lines
+**Stats:** 354 words | 81 lines | 1 images | ~2p
 
 - Introduction {#sec-test-parameters-intro}
   - Test Parameters
@@ -31,6 +31,7 @@
   - Warning Example
   - Pro Tip
   - Figure Caption Test
+    ![Military spending vs. medical research funding. The disparity illustrates the opportunity cost of current budget priorities.](../../assets/images/spending-on-war-vs-cures-bar-chart.png)
   - Simple Variable Test
   - Calculated Variable Test
   - Citation Test
@@ -40,4 +41,4 @@
 #### knowledge/references.qmd
 **Title:** Source Quotes and References
 **Description:** Bibliography and citations for all sources cited
-**Stats:** 62 words | 22 lines
+**Stats:** 62 words | 22 lines | 1 images | ~1p
