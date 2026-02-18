@@ -22,12 +22,16 @@ import json
 import os
 import re
 import sys
-import yaml
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse, unquote
 
+# Add project root and scripts/lib to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
+
+from dih_models.yaml_utils import load_quarto_config
 from lib.yaml_sync_utils import strip_confidence_intervals
 
 # Set UTF-8 encoding for stdout
@@ -566,8 +570,7 @@ def check_quarto_config_resources(output_dir):
         return errors
 
     try:
-        with open(quarto_config, 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f)
+        config = load_quarto_config(quarto_config)
     except Exception as e:
         errors.append(ValidationError(quarto_config, 0, "YAML_PARSE_ERROR", f"Failed to parse _quarto.yml: {e}"))
         return errors

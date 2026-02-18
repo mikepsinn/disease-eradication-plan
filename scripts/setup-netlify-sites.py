@@ -37,17 +37,19 @@ if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 try:
-    import yaml
     import requests
 except ImportError:
-    print("ERROR: Missing dependencies. Run: pip install pyyaml requests")
+    print("ERROR: Missing dependencies. Run: pip install requests")
     sys.exit(1)
 
 PROJECT_ROOT = Path(__file__).parent.parent
 BASE_DOMAIN = "warondisease.org"
 
-# Import shared config discovery utilities
+# Add project root and scripts/lib to path for imports
+sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "scripts" / "lib"))
+
+from dih_models.yaml_utils import load_quarto_config
 from quarto_config_utils import NON_DEPLOYABLE_CONFIGS  # type: ignore[import-not-found]
 from python_utils import load_project_dotenv  # type: ignore[import-not-found]
 
@@ -522,8 +524,7 @@ def discover_configs() -> dict:
             continue
 
         try:
-            with open(config_path, "r", encoding="utf-8") as f:
-                config = yaml.safe_load(f)
+            config = load_quarto_config(config_path)
         except Exception as e:
             print(f"[WARN] Could not read {config_path}: {e}")
             continue

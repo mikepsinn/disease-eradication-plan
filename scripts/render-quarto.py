@@ -39,7 +39,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional, List, Set, Dict, Any
 
-import yaml
+from dih_models.yaml_utils import load_quarto_config
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32' and hasattr(sys.stdout, 'reconfigure'):
@@ -50,7 +50,8 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(line_buffering=True)  # type: ignore[union-attr]
     sys.stderr.reconfigure(line_buffering=True)  # type: ignore[union-attr]
 
-# Add scripts/lib to path for imports
+# Add project root and scripts/lib to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from build_logger import BuildLogger  # type: ignore[import-not-found]
 from python_utils import load_project_dotenv  # type: ignore[import-not-found]
@@ -249,8 +250,7 @@ def _build_paper_url_mapping(project_root: Path) -> Dict[str, str]:
             continue
 
         try:
-            with open(config_path, encoding="utf-8") as f:
-                config = yaml.safe_load(f)
+            config = load_quarto_config(config_path)
         except Exception:
             continue
 
@@ -392,8 +392,7 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
     if not config_path.exists():
         raise FileNotFoundError(f"Config file not found: {config_file}")
 
-    with open(config_path, encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    config = load_quarto_config(config_path)
 
     dih_render = config.get("dih-render", {})
     pdf_output_file = dih_render.get("pdf-output-file")
@@ -839,8 +838,7 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
 
     # Rewrite links to standalone papers with their deployed HTTPS URLs
     # This runs for all configs (not just manual) to fix "Unable to resolve link target" warnings
-    with open(project_root / metadata["config_file"], encoding="utf-8") as f:
-        current_cfg = yaml.safe_load(f)
+    current_cfg = load_quarto_config(project_root / metadata["config_file"])
     current_files = _extract_files_from_config(current_cfg)
     paper_files_to_process = list(current_files)
     if (build_temp / "index.qmd").exists():
@@ -874,10 +872,8 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         return build_temp
 
     # Parse configs to get file lists
-    with open(project_root / metadata["config_file"], encoding="utf-8") as f:
-        source_cfg = yaml.safe_load(f)
-    with open(target_yml, encoding="utf-8") as f:
-        target_cfg = yaml.safe_load(f)
+    source_cfg = load_quarto_config(project_root / metadata["config_file"])
+    target_cfg = load_quarto_config(target_yml)
 
     source_files = _extract_files_from_config(source_cfg)
     target_files = _extract_files_from_config(target_cfg)
@@ -1077,6 +1073,18 @@ def render_quarto(
             return 1
         os.chdir(build_temp)
         print(f"[*] Changed to temp directory: {build_temp}")
+
+        # Strip chart includes for EPUB/DOCX builds.
+        # Quarto processes {{< include >}} shortcodes before content-visible
+        # filters, so charts hidden by unless-format divs still get rendered.
+        if format_override in ("epub", "docx"):
+            params_qmd = build_temp / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
+            if params_qmd.exists():
+                text = params_qmd.read_text(encoding="utf-8")
+                text = re.sub(r'\{\{< include \.\./figures/.*?\.qmd >\}\}\n?', '', text)
+                params_qmd.write_text(text, encoding="utf-8", newline='\n')
+                print(f"[*] Stripped chart includes from parameters page ({format_override.upper()})")
+
         gh_group_end()
 
         # 4. Run Quarto render or preview
@@ -1295,9 +1303,26 @@ def render_quarto(
                             kindle_mb = dest_kindle_path.stat().st_size / (1024 * 1024)
                             print(f"[OK] Kindle EPUB: {dest_kindle_path.relative_to(project_root)} ({kindle_mb:.2f} MB)")
 
+                    # Convert SVGs to PNGs for Kindle Enhanced Typesetting / KPF compatibility
+                    convert_svg_script = project_root / "scripts" / "convert-epub-svg-to-png.py"
+                    kpf_ready_name = expected_epub.replace(".epub", "-kindle-kpf-ready.epub")
+                    dest_kpf_ready_path = assets_epubs_dir / kpf_ready_name
+                    svg_source = dest_kindle_path if dest_kindle_path.exists() else dest_epub_path
+                    if convert_svg_script.exists():
+                        print(f"[*] Converting SVGs to PNGs for KPF compatibility...")
+                        svg_result = subprocess.run(
+                            [sys.executable, "-u", str(convert_svg_script), str(svg_source), "-o", str(dest_kpf_ready_path)],
+                            cwd=str(project_root),
+                        )
+                        if svg_result.returncode != 0:
+                            print(f"[WARN] SVG-to-PNG conversion encountered issues (exit code {svg_result.returncode})", file=sys.stderr)
+                        elif dest_kpf_ready_path.exists():
+                            kpf_mb = dest_kpf_ready_path.stat().st_size / (1024 * 1024)
+                            print(f"[OK] KPF-ready EPUB: {dest_kpf_ready_path.relative_to(project_root)} ({kpf_mb:.2f} MB)")
+
                     # Validate Kindle compatibility
                     validate_kindle_script = project_root / "scripts" / "validate-kindle-compat.py"
-                    kindle_target = dest_kindle_path if dest_kindle_path.exists() else dest_epub_path
+                    kindle_target = dest_kpf_ready_path if dest_kpf_ready_path.exists() else (dest_kindle_path if dest_kindle_path.exists() else dest_epub_path)
                     if validate_kindle_script.exists():
                         print(f"[*] Validating Kindle compatibility...")
                         validate_result = subprocess.run(
@@ -1333,6 +1358,25 @@ def render_quarto(
                         dest_docx_path = assets_docx_dir / docx_path.name
                         shutil.copy2(docx_path, dest_docx_path)
                         print(f"[OK] Copied DOCX to: {dest_docx_path.relative_to(project_root)}")
+
+                        # Validate DOCX images (check for oversized images that break Word)
+                        analyze_docx_script = project_root / "scripts" / "analyze-docx-images.py"
+                        if analyze_docx_script.exists():
+                            print(f"[*] Validating DOCX images...")
+                            result = subprocess.run(
+                                [sys.executable, str(analyze_docx_script), str(dest_docx_path)],
+                                capture_output=True, text=True, encoding="utf-8"
+                            )
+                            if result.returncode != 0:
+                                print(f"[WARNING] DOCX has oversized images (may cause Word 22-inch limit errors)")
+                                print(f"          Run: npm run images:normalize-dpi:apply")
+                                print(f"          Then re-render to fix")
+                                # Print just the summary lines
+                                for line in result.stdout.splitlines():
+                                    if "ISSUES FOUND" in line or "WORD_OVERSIZE" in line:
+                                        print(f"          {line.strip()}")
+                            else:
+                                print(f"[OK] DOCX image validation passed")
 
             # Check HTML output directory if expected
             if format_override is None or format_override == "html":

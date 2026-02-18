@@ -25,7 +25,9 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Dict, List
 
-import yaml
+# Add project root to path for dih_models imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from dih_models.yaml_utils import yaml_safe_load
 
 
 class HTMLStripper(HTMLParser):
@@ -57,7 +59,7 @@ def load_variable_display_strings(variables_yml_path: Path) -> Dict[str, str]:
         Dict mapping display strings (e.g., "$50.0B") to variable names
     """
     with open(variables_yml_path, encoding="utf-8") as f:
-        variables = yaml.safe_load(f)
+        variables = yaml_safe_load(f)
 
     display_to_var = {}
 

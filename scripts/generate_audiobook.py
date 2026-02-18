@@ -23,12 +23,14 @@ from pathlib import Path
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')
 
-import yaml
 from pydub import AudioSegment
 
 # Add scripts directory to path for local imports
 sys.path.insert(0, str(Path(__file__).parent))
+# Add project root to path for dih_models imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
 from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE, DEFAULT_SPEAKING_INSTRUCTIONS
+from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
 
 # Configuration
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -42,8 +44,7 @@ NARRATOR_VOICE = DEFAULT_VOICE
 
 def load_book_config() -> dict:
     """Load and parse _quarto-manual.yml."""
-    with open(QUARTO_BOOK_YML, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f)
+    return load_quarto_config(QUARTO_BOOK_YML)
 
 
 def extract_chapters(config: dict) -> list[dict]:
@@ -135,7 +136,7 @@ def extract_title_from_qmd(file_path: Path) -> str:
         # Match YAML frontmatter
         match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
         if match:
-            frontmatter = yaml.safe_load(match.group(1))
+            frontmatter = yaml_safe_load(match.group(1))
             if frontmatter and 'title' in frontmatter:
                 return frontmatter['title']
     except Exception:

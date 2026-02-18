@@ -29,10 +29,14 @@ import zipfile
 from pathlib import Path
 from typing import cast
 
+# Add project root to path for dih_models imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 try:
-    import yaml
+    from dih_models.yaml_utils import load_quarto_config as _load_quarto_config
+    _yaml_available = True
 except ImportError:
-    yaml = None
+    _yaml_available = False
 
 if sys.platform == "win32":
     cast(io.TextIOWrapper, sys.stdout).reconfigure(encoding="utf-8")
@@ -490,7 +494,7 @@ def _build_qmd_to_chapter_map(epub, project_root):
     4. Scan EPUB chapter files for matching section IDs
     5. Build mapping with multiple path variants for lookup
     """
-    if not yaml:
+    if not _yaml_available:
         print("  [WARN] PyYAML not available, skipping QMD link fixing", file=sys.stderr)
         return {}
 
@@ -498,8 +502,7 @@ def _build_qmd_to_chapter_map(epub, project_root):
     if not config_path.exists():
         return {}
 
-    with open(config_path, encoding="utf-8") as f:
-        config = yaml.safe_load(f)
+    config = _load_quarto_config(config_path)
 
     qmd_files = _extract_config_files(config)
     if not qmd_files:

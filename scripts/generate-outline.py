@@ -14,13 +14,13 @@ Usage:
 
 import re
 import sys
-import yaml
 from datetime import date
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 # Add project root to path for dih_models imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
+from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
 from dih_models.variable_replacement import load_variables, replace_variables
 
 # Set UTF-8 encoding for stdout and stderr on Windows
@@ -86,7 +86,7 @@ def extract_frontmatter(filepath: Path) -> Dict:
 
             if end_idx:
                 frontmatter_text = '\n'.join(lines[1:end_idx])
-                return yaml.safe_load(frontmatter_text) or {}
+                return yaml_safe_load(frontmatter_text) or {}
     except Exception:
         pass
 
@@ -117,8 +117,7 @@ def get_all_included_files(project_root: Path) -> Set[str]:
             continue
 
         try:
-            with open(config_path, 'r', encoding='utf-8') as f:
-                config = yaml.safe_load(f) or {}
+            config = load_quarto_config(config_path)
         except Exception:
             continue
 
@@ -210,8 +209,7 @@ def get_paper_configs(project_root: Path) -> List[Dict]:
             continue
 
         try:
-            with open(config_path, 'r', encoding='utf-8') as f:
-                config = yaml.safe_load(f) or {}
+            config = load_quarto_config(config_path)
         except Exception:
             continue
 
@@ -377,8 +375,7 @@ def build_config_summaries(project_root: Path) -> List[Dict[str, Any]]:
         config_name = re.match(r"_quarto-(.+)\.yml", config_path.name).group(1)
 
         try:
-            with open(config_path, 'r', encoding='utf-8') as f:
-                config = yaml.safe_load(f) or {}
+            config = load_quarto_config(config_path)
         except Exception:
             continue
 
