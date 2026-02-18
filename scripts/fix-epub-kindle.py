@@ -90,11 +90,12 @@ def resize_image(img_bytes: bytes, name: str, is_cover: bool = False) -> tuple[b
         dpi_x = KINDLE_TARGET_DPI
         dpi_y = KINDLE_TARGET_DPI
 
-    # For physical size calculation, use the lower of reported DPI and 96
-    # (worst-case interpretation, since renderers vary)
-    effective_dpi = min(dpi_x, dpi_y, CALC_DPI)
-    phys_max_w = int(MAX_PHYSICAL_INCHES * effective_dpi)
-    phys_max_h = int(MAX_PHYSICAL_INCHES * effective_dpi)
+    # For physical size calculation, use the rounded save DPI (matches what gets written)
+    # Use min with 96 for worst-case interpretation since renderers vary
+    effective_dpi = min(round(dpi_x), round(dpi_y), CALC_DPI)
+    # Use 0.98 safety margin to account for rounding in resize
+    phys_max_w = int(MAX_PHYSICAL_INCHES * 0.98 * effective_dpi)
+    phys_max_h = int(MAX_PHYSICAL_INCHES * 0.98 * effective_dpi)
     max_w = min(max_w, phys_max_w)
     max_h = min(max_h, phys_max_h)
 
@@ -126,11 +127,12 @@ def resize_image(img_bytes: bytes, name: str, is_cover: bool = False) -> tuple[b
         changes["resized"] = f"{width}x{height} -> {new_width}x{new_height}"
 
     # Save with appropriate format, compression, and corrected DPI
-    save_dpi = (int(dpi_x), int(dpi_y))
+    # Use round() not int() to avoid truncation (95.96 -> 96, not 95)
+    save_dpi = (round(dpi_x), round(dpi_y))
     buf = io.BytesIO()
     if use_png:
         # PNG stores DPI as pixels-per-meter in pHYs chunk
-        ppi = int(dpi_x)
+        ppi = round(dpi_x)
         ppm = int(ppi * 39.3701)  # inches to meters
         img.save(buf, format="PNG", optimize=True, dpi=save_dpi)
         ext = ".png"

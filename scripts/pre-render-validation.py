@@ -1871,6 +1871,76 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
     check_duplicate_latex_variables(content, filepath)
 
 
+def check_source_image_dpi():
+    """Check source images for bad DPI metadata or oversized physical dimensions.
+
+    Images with bad DPI (0 or 1) cause Word/EPUB to render them at hundreds of inches.
+    Run 'python scripts/normalize-image-dpi.py --apply' to fix.
+    """
+    print("Checking source image DPI metadata...")
+    image_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "images")
+    if not os.path.isdir(image_dir):
+        print("  Skipping (assets/images not found)\n")
+        return
+
+    try:
+        from PIL import Image as PILImage
+    except ImportError:
+        print("  Skipping (Pillow not installed)\n")
+        return
+
+    supported = {".png", ".jpg", ".jpeg", ".bmp", ".tiff"}
+    bad_dpi_count = 0
+    MAX_INCHES = 10.0
+    MIN_DPI = 72
+
+    for root, _dirs, files in os.walk(image_dir):
+        for fname in files:
+            ext = os.path.splitext(fname)[1].lower()
+            if ext not in supported:
+                continue
+            fpath = os.path.join(root, fname)
+            try:
+                img = PILImage.open(fpath)
+                w, h = img.size
+                dpi = img.info.get("dpi", None)
+
+                if dpi is None:
+                    eff = 96
+                else:
+                    dx, dy = dpi
+                    if dx < MIN_DPI or dy < MIN_DPI:
+                        rel = os.path.relpath(fpath)
+                        errors.append(ValidationError(
+                            file=rel, line=0,
+                            message=f"Bad DPI metadata ({dx}x{dy}). Run: python scripts/normalize-image-dpi.py --apply",
+                            context=f"{w}x{h}px at {dx}x{dy} DPI"
+                        ))
+                        bad_dpi_count += 1
+                        continue
+                    eff = min(dx, dy)
+
+                w_in = w / eff
+                h_in = h / eff
+                if w_in > MAX_INCHES or h_in > MAX_INCHES:
+                    # Only warn for truly extreme cases (>20 inches), not the common 14-inch AI art
+                    if w_in > 20 or h_in > 20:
+                        rel = os.path.relpath(fpath)
+                        errors.append(ValidationError(
+                            file=rel, line=0,
+                            message=f"Image is {w_in:.0f}x{h_in:.0f} inches at {eff:.0f} DPI. Run: python scripts/normalize-image-dpi.py --apply",
+                            context=f"{w}x{h}px"
+                        ))
+                        bad_dpi_count += 1
+            except Exception:
+                pass
+
+    if bad_dpi_count > 0:
+        print(f"  Found {bad_dpi_count} images with DPI issues\n")
+    else:
+        print(f"  All source images OK\n")
+
+
 def write_json_output(errors: List[ValidationError], output_path: str) -> None:
     """Write validation errors to JSON file for GitHub Actions automation."""
     json_errors = []
@@ -1983,6 +2053,9 @@ def main():
 
     # Validate _quarto.yml configuration first
     validate_quarto_config()
+
+    # Check source images for bad DPI / oversized physical dimensions
+    check_source_image_dpi()
 
     # Find all .qmd files using centralized file utilities
     qmd_files = find_files_by_extension((".qmd",))
