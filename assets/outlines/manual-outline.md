@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 47 | **Words:** 112,748
+**Files:** 47 | **Words:** 112,752
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 3,924 words | 481 lines
+**Stats:** 3,932 words | 481 lines
 
     - The Part Where I Discover Paper Makes You Do Things
     - The Gradual Stupidity Reduction Program
@@ -532,7 +532,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** Incentive Alignment Bonds
 **Description:** A new financial instrument for aligning political incentives with public goods
-**Stats:** 3,904 words | 428 lines
+**Stats:** 3,900 words | 426 lines
 
     - The Core Problem: Good Ideas Die in Committee
     - What You Need: Legal Bribery
