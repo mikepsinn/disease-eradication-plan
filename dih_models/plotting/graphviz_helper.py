@@ -138,10 +138,11 @@ def add_watermark_to_png(png_path, text="WarOnDisease.org"):
             draw.text((text_x, text_y), text, fill=watermark_color, anchor="rt")
 
         # Preserve DPI metadata (critical for DOCX/EPUB physical sizing)
+        # Default to 300 DPI if not set, since Graphviz renders at 300 DPI
+        # but doesn't embed metadata, and 96 DPI default causes Word oversize
         save_kwargs = {}
         dpi = img.info.get("dpi")
-        if dpi:
-            save_kwargs["dpi"] = dpi
+        save_kwargs["dpi"] = dpi if dpi else (300, 300)
         img.save(png_path, **save_kwargs)
     except Exception as e:
         print(f"Warning: Could not add watermark to {png_path}: {e}")
@@ -242,21 +243,19 @@ def render_graphviz_with_watermark(dot, filename):
     # Add watermark
     png_path = f"{output_path}.png"
 
-    # Add padding to image if Graphviz didn't add enough
-    # Load image and check if we need to add more padding
+    # Graphviz renders at the DPI specified in graph attributes but does NOT
+    # embed DPI metadata in the output PNG. Set it explicitly so DOCX/EPUB
+    # renderers calculate correct physical dimensions instead of defaulting
+    # to 96 DPI (which makes large-pixel images appear enormous).
     try:
         from PIL import Image
 
         img = Image.open(png_path)
-        width, height = img.size
-
-        # Check if image has minimal padding (less than 20 pixels on any side)
-        # If so, add padding using PIL
-        # For now, just add watermark - Graphviz pad should handle margins
-        add_watermark_to_png(png_path)
+        img.save(png_path, dpi=(300, 300))
     except Exception:
-        # If PIL operations fail, still try to add watermark
-        add_watermark_to_png(png_path)
+        pass
+
+    add_watermark_to_png(png_path)
 
     # Add metadata (Author, Copyright, Source)
     # Extract title/description from dot object if available
