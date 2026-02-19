@@ -508,7 +508,7 @@ The investment carries two types of risk:
 | Investment | Annual Return | Risk | Term | Catch |
 |------------|---------------|------------|------|------|
 | **VICTORY Incentive Alignment Bonds** | **{{< var victory_bond_annual_return_pct >}}** | **High** | **Forever** | **Requires politicians to act rationally** |
-| Savings Account | {{< var dfda_trial_cost_reduction_pct >}} | None | Whenever | Loses to inflation |
+| Savings Account | 0.5% | None | Whenever | Loses to inflation |
 | S&P 500 | 10% | Moderate | Whenever | Boring, responsible |
 | Real Estate | 8% | Moderate | 30 years | Requires being a landlord |
 | Venture Capital | 15-25% | Extreme | 7-10 years | Requires picking winners |
