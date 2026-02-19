@@ -9,14 +9,13 @@ aliases:
   - /summary
 ---
 
-{{< include /knowledge/includes/setup-parameters.qmd >}}
+::: {.callout-important}
+## Why You Should Take 15 Minutes to Validate This Model
+If this model is generally correct and these policies are adopted, you could help save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and prevent {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of unnecessary suffering.
+:::
 
-::: {.callout-note}
-## Purpose
-We need health economists to validate these numbers.
 The [full paper](dfda-impact-paper.qmd) and [calculation appendix](parameters-and-calculations.qmd) contain complete derivations.
 Please flag any assumption you find implausible, any calculation step that needs revision, or any framing that would not survive peer review.
-:::
 
 ## Bottom-Line Claims
 

@@ -2,7 +2,7 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 3 | **Words:** 27,637 | **Images:** 87 | **Est. Pages:** ~154
+**Files:** 3 | **Words:** 27,678 | **Images:** 87 | **Est. Pages:** ~154
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
@@ -265,8 +265,9 @@
 #### knowledge/appendix/economist-feedback-treaty.qmd
 **Title:** Economist Review: 1% Treaty Headline Numbers
 **Description:** Concise summary of the 1% Treaty impact analysis for economist sign-off before foundation funding conversations.
-**Stats:** 1,452 words | 161 lines | ~6p
+**Stats:** 1,493 words | 166 lines | ~6p
 
+  - Why Your 15 Minutes Matter
   - Purpose
   - Bottom-Line Claims
   - The Treaty Mechanism

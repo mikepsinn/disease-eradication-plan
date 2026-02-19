@@ -163,7 +163,7 @@ metadata:
 format:
   docx:
     output-file: "How-to-End-War-and-Disease-Paperback.docx"
-    toc: false
+    toc: true
     number-sections: false
   pdf:
     output-file: "How-to-End-War-and-Disease-Paperback.pdf"
