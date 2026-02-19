@@ -1,6 +1,6 @@
 {
   "totalSites": 16,
-  "totalPages": 64,
+  "totalPages": 61,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -4771,6 +4771,13 @@
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/aligning-incentives-og-retro-academic.jpg",
           "sections": [
             "Defense Contractors: Teaching Merchants of Death to Love Life",
+            "The Offer",
+            "The Math",
+            "Why They Take It",
+            "The Flip",
+            "What You're NOT Asking",
+            "Why This Works",
+            "The Timeline",
             "Insurance Companies: The Accidentally Aligned Industry",
             "Their Current Death Spiral",
             "Your Salvation Offer",
@@ -4800,13 +4807,18 @@
         {
           "path": "knowledge/solution/incentive-alignment-bonds.qmd",
           "url": "https://manual.WarOnDisease.org/solution/incentive-alignment-bonds.html",
-          "title": "Incentive Alignment Bonds",
-          "description": "A new financial instrument for aligning political incentives with public goods",
+          "title": "VICTORY Incentive Alignment Bonds",
+          "description": "How to legally bribe politicians into saving lives, and how investors profit from it",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/incentive-alignment-bonds-og-retro-academic.jpg",
           "tags": [
             "financial-instruments",
             "mechanism-design",
-            "governance-innovation"
+            "governance-innovation",
+            "economics",
+            "fundraising",
+            "bond-structure",
+            "campaign-finance",
+            "capital-raising"
           ],
           "sections": [
             "The Core Problem: Good Ideas Die in Committee",
@@ -4816,12 +4828,17 @@
             "The Three-Layer Architecture (How to Not Go to Prison)",
             "Worked Example: How Senator Smith Votes Yes",
             "Why This Isn't Bribery",
-            "How IABs Connect to Your 1% Treaty",
             "The Revenue Split",
-            "Objections",
-            "Why This Matters",
             "Why 10% Goes to Political Incentives",
             "Beyond the 1% Treaty",
+            "For Investors",
+            "The Investor Pitch",
+            "Calculate Your Numbers for Investors",
+            "Security Package and Risk",
+            "What This Beats (Spoiler: Everything)",
+            "Investment Thresholds and Term Sheet",
+            "When Rich People Ask Difficult Questions",
+            "The One-Page Summary That Makes Calculators Weep",
             "Summary"
           ],
           "published": true,
@@ -4859,7 +4876,7 @@
           "path": "knowledge/proof.qmd",
           "url": "https://manual.WarOnDisease.org/proof.html",
           "title": "The Proof: Overview",
-          "description": "This Already Works - Pragmatic trials prove 44.1x efficiency. Switzerland proved peace pays. History proved 3.5% consistently wins. War bonds proved capitalism beats fascism. Death and suffering are optional.",
+          "description": "This Already Works - Pragmatic trials prove 44.1x efficiency. History proves every component. Switzerland, war bonds, landmines, the 3.5% rule, and Wall Street's craziest bets all prove humans can accidentally do smart things when properly motivated.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/proof-og-bw-academic.jpg",
           "tags": [
             "evidence",
@@ -4869,42 +4886,7 @@
             "switzerland",
             "peace-dividend",
             "3-5-rule",
-            "war-bonds"
-          ],
-          "sections": [
-            "Pragmatic Trials: 44.1x More Efficient",
-            "Switzerland: 200 Years of Not Killing People",
-            "Result",
-            "War Bonds: How Capitalism Beat Fascism",
-            "The Landmine Treaty: Citizens Beat Armies",
-            "The 3.5% Rule",
-            "The Post-WW2 Economic Miracle: History's Greatest Peace Dividend",
-            "You Have Advantages They Didn't",
-            "The Political Precedents: How to Win",
-            "Creating Binding International Law",
-            "Achieving a Political Tipping Point",
-            "The Financial Precedents: How to Fund It",
-            "Mobilizing Mass Public Capital",
-            "Building a New Global Health Institution",
-            "Pricing the Political Risk",
-            "The Cautionary Tales: How Not to Fail",
-            "Don't Bring a Moral Argument to a Financial Fight",
-            "Don't Have a Diffuse, Unactionable Goal",
-            "In This Section",
-            "How a dFDA Would Compare to History's Best Health Interventions",
-            "Additional Evidence"
-          ],
-          "published": true,
-          "lastmod": "2026-02-16"
-        },
-        {
-          "path": "knowledge/proof/historical-precedents.qmd",
-          "url": "https://manual.WarOnDisease.org/proof/historical-precedents.html",
-          "title": "Historical Precedents",
-          "description": "Why This Isn't Insane - An analysis of historical movements and financial models that prove the core mechanics of a 1% treaty are not new ideas, but rather the application of proven models for mass mobilization, private capital for public good, and risk mitigation.",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/proof/historical-precedents-og-retro-academic.jpg",
-          "tags": [
-            "proof",
+            "war-bonds",
             "precedents",
             "history",
             "social-movements",
@@ -4912,6 +4894,7 @@
             "governance"
           ],
           "sections": [
+            "Pragmatic Trials: 44.1x More Efficient",
             "Humans Doing Smart Things (Accidentally): A Collection",
             "That Time Humans Banned Landmines (Yes, Really)",
             "War Bonds: That Time Grandma Funded WW2",
@@ -4920,6 +4903,7 @@
             "The 1990s: When the Berlin Wall Fell and Wallets Exploded",
             "Switzerland: 200 Years of Not Shooting Anyone = Being Very Rich",
             "The 3.5% Rule: The Cheat Code for Democracy",
+            "You Have Advantages They Didn't",
             "When Good Intentions Met Reality (And Lost)",
             "Eisenhower's Warning: A 5-Star General Tried to Tell You",
             "The Nuclear Freeze Movement: Millions of People, Zero Results",
@@ -4929,7 +4913,10 @@
             "On The Time George Soros Broke England",
             "On When Smart People Lost All Their Money (The Cautionary Tales)",
             "The Ultimate Failsafe: The Worst-Case Scenario is Still a Win",
-            "Why?"
+            "Why?",
+            "How a dFDA Would Compare to History's Best Health Interventions",
+            "In This Section",
+            "Additional Evidence"
           ],
           "published": true,
           "lastmod": "2026-02-16"
@@ -5291,60 +5278,6 @@
           "lastmod": "2026-02-16"
         },
         {
-          "path": "knowledge/economics/victory-bonds.qmd",
-          "url": "https://manual.WarOnDisease.org/economics/victory-bonds.html",
-          "title": "VICTORY Incentive Alignment Bonds",
-          "description": "Step-by-step guide to creating perpetual bonds that fund a 1% treaty campaign",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/economics/victory-bonds-og-retro-academic.jpg",
-          "tags": [
-            "economics",
-            "fundraising",
-            "bond-structure",
-            "campaign-finance",
-            "capital-raising"
-          ],
-          "sections": [
-            "VICTORY Incentive Alignment Bonds",
-            "What You're Actually Building",
-            "The Four Phases of Making Everyone Rich While Saving Humanity",
-            "Phase 1: Collect Papers From People With Too Many Papers",
-            "Phase 2: Spend the Papers Correctly",
-            "Phase 3: Turn On the Money Faucet",
-            "Phase 4: Watch Money Multiply Like Rabbits",
-            "Calculate Your Numbers for Investors",
-            "Show Them Where the Papers Come From",
-            "When Math Becomes Obscene",
-            "How Returns Scale From \"Obscene\" to \"Is This Even Legal?\"",
-            "Structure the Security Package",
-            "What Full Success Looks Like",
-            "Explain the 80%/10%/10% Split",
-            "Set Up the Legal Structure",
-            "Structure the Bond Instrument",
-            "Create Milestone-Based Releases",
-            "Address Each Risk Category",
-            "What This Beats (Spoiler: Everything)",
-            "Show Investors This Table",
-            "The Expansion Flywheel",
-            "Explain the flywheel to investors",
-            "Set Minimum Investment Thresholds",
-            "Structure Your Minimums",
-            "Draft Your Term Sheet",
-            "When Rich People Ask Difficult Questions",
-            "\"This sounds like a Ponzi scheme run by someone who failed math.\"",
-            "\"What happens when this fails and I lose my billion dollars?\"",
-            "\"What could possibly go wrong?\"",
-            "\"How is this different from just donating to charity?\"",
-            "When they want detailed financials",
-            "The One-Page Summary That Makes Calculators Weep",
-            "What you get",
-            "What could go wrong",
-            "Related Implementation Guides",
-            "For detailed execution plans"
-          ],
-          "published": true,
-          "lastmod": "2026-02-16"
-        },
-        {
           "path": "knowledge/strategy/legislation-package.qmd",
           "url": "https://manual.WarOnDisease.org/strategy/legislation-package.html",
           "title": "The Legislation Package",
@@ -5445,47 +5378,6 @@
           ],
           "published": true,
           "lastmod": "2026-02-17"
-        },
-        {
-          "path": "knowledge/strategy/co-opting-defense-contractors.qmd",
-          "url": "https://manual.WarOnDisease.org/strategy/co-opting-defense-contractors.html",
-          "title": "Making Friends with the Military-Industrial Complex",
-          "description": "Lobbyists are like pigeons. They go where the food is. This chapter teaches you how to move the food.",
-          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/co-opting-defense-contractors-og-retro-academic.jpg",
-          "tags": [
-            "strategy",
-            "military-contractors",
-            "lobbying",
-            "incentives",
-            "victory-bonds"
-          ],
-          "sections": [
-            "The Solution",
-            "The Offer",
-            "The Math",
-            "Why They Take It",
-            "It's More Papers",
-            "The Treaty Doesn't Actually Hurt Them",
-            "Political Cover",
-            "How You Do This",
-            "Step 1: Identify Targets",
-            "Step 2: The Meeting",
-            "Step 3: The Flip",
-            "Step 4: Active Support",
-            "Budget",
-            "Why This Works",
-            "You're Using Their Own Playbook",
-            "It's Legal",
-            "It Might Work",
-            "What You're NOT Asking",
-            "The Irony",
-            "What They Tell Their Boards",
-            "Optimistic Timeline (If This Works)",
-            "Pessimistic Timeline (If This Doesn't Work)",
-            "Summary"
-          ],
-          "published": true,
-          "lastmod": "2026-02-16"
         },
         {
           "path": "knowledge/appendix/treaty-feasibility.qmd",
@@ -6302,7 +6194,7 @@
           "lastmod": "2026-02-18"
         }
       ],
-      "pageCount": 48
+      "pageCount": 45
     },
     {
       "id": "obg",

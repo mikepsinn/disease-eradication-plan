@@ -283,7 +283,7 @@ Instead of a committee of 200 bureaucrats giving their friends grants to write p
 ### The Evidence
 
 - [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}}/patient (vs {{< var traditional_phase3_cost_per_patient >}} standard), demonstrating a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality. A systematic review of pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient {{< var pmc_pragmatic_trial_median_cost_per_patient_cite >}}.
-- **You've Done This Before**: [After WW2, humans cut military spending by 30%](/knowledge/proof/historical-precedents.qmd) and inadvertently created the greatest economic boom in history. You're only asking for 1%.
+- **You've Done This Before**: [After WW2, humans cut military spending by 30%](/knowledge/proof.qmd#post-ww2) and inadvertently created the greatest economic boom in history. You're only asking for 1%.
 
 ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
 
@@ -329,7 +329,7 @@ This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest o
 ![Returns that make Ponzi schemes look conservative (but legal)](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
 
 
-Investors fund the campaign. The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget. Investors get {{< var victory_bond_funding_pct >}} because they had the revolutionary idea of "what if we didn't all die?" The same fund that pays investors also pays for politician incentives. [Full financial mechanics](/knowledge/economics/victory-bonds.qmd).
+Investors fund the campaign. The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget. Investors get {{< var victory_bond_funding_pct >}} because they had the revolutionary idea of "what if we didn't all die?" The same fund that pays investors also pays for politician incentives. [Full financial mechanics](/knowledge/solution/incentive-alignment-bonds.qmd).
 
 It's the Louisiana Purchase of clinical trials, except instead of buying land from France, you're buying immortality from death.
 
@@ -345,7 +345,7 @@ Cost per click: $0.50. Payment only upon success. The pyramid scheme aspect: eve
 
 ### Step 3: Bribe the Bribers
 
-*[Professional Briber Conversion Therapy](/knowledge/strategy/co-opting-defense-contractors.qmd)*
+*[Professional Briber Conversion Therapy](/knowledge/solution/aligning-incentives.qmd#defense-contractors-teaching-merchants-of-death-to-love-life)*
 
 Defense lobbyists currently get $1,813 back per dollar invested in democracy corruption [@lobbying-roi-calc]. Show them a spreadsheet:
 
@@ -379,7 +379,7 @@ It's not corruption if you corrupt the corruption. It's like a double negative i
 
 But Super PACs alone aren't enough. [Incentive Alignment Bonds (IABs)](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) make "save lives" and "advance career" point in the same direction. Politicians get a Public Good Score based on how they vote. Vote YES: score goes up, electoral support materializes, post-office opportunities unlock. No papers go directly to politicians. The papers take a detour through reputation and career advancement.
 
-[VICTORY Bonds](/knowledge/economics/victory-bonds.qmd) are the specific IAB for the 1% Treaty: they align investors ({{< var victory_bond_annual_return_pct >}} returns), politicians (career incentives), and patients (cures) with the same outcome. The [architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but doing it currently hurts their careers.
+[VICTORY Bonds](/knowledge/solution/incentive-alignment-bonds.qmd) are the specific IAB for the 1% Treaty: they align investors ({{< var victory_bond_annual_return_pct >}} returns), politicians (career incentives), and patients (cures) with the same outcome. The [architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but doing it currently hurts their careers.
 
 ### Step 5: Enjoy
 
@@ -448,7 +448,7 @@ Every second you spend thinking about whether to do this, the universe helpfully
 - Your telomeres got shorter (that's the thing that decides when you stop existing)
 - A politician said something stupider than yesterday (probably about vaccines causing 5G)
 
-The Soviet Union went from nothing to conquering half the world to completely collapsing in a [SINGLE HUMAN LIFETIME](/knowledge/proof/historical-precedents.qmd). And Communism was objectively a TERRIBLE IDEA that required murdering millions of people.
+The Soviet Union went from nothing to conquering half the world to completely collapsing in a [SINGLE HUMAN LIFETIME](/knowledge/proof.qmd#historical-precedents). And Communism was objectively a TERRIBLE IDEA that required murdering millions of people.
 
 This is arguably the second-best idea in human history and requires radically less murder.
 

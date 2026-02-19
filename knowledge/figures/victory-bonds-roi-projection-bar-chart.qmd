@@ -16,7 +16,7 @@ setup_chart_style(style='light', dpi=150)
 # Data
 # Sources: S&P 500 (historical avg), Real Estate (avg appreciation),
 # Venture Capital (industry avg), Medallion Fund (../references.qmd),
-# Cocaine (UN estimates), VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) (../economics/victory-bonds.qmd)
+# Cocaine (UN estimates), VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) (../solution/incentive-alignment-bonds.qmd)
 
 investments = ['S&P 500', 'Real Estate', 'Venture\nCapital', 'Medallion\nFund', 'Cocaine\nTrafficking', 'VICTORY\nBonds']
 returns = [

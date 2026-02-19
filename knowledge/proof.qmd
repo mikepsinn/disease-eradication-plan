@@ -1,6 +1,6 @@
 ---
 title: 'The Proof: Overview'
-description: This Already Works - Pragmatic trials prove {{< var dfda_trial_cost_reduction_factor >}} efficiency. Switzerland proved peace pays. History proved {{< var global_population_activism_threshold_pct >}} consistently wins. War bonds proved capitalism beats fascism. Death and suffering are optional.
+description: This Already Works - Pragmatic trials prove {{< var dfda_trial_cost_reduction_factor >}} efficiency. History proves every component. Switzerland, war bonds, landmines, the 3.5% rule, and Wall Street's craziest bets all prove humans can accidentally do smart things when properly motivated.
 published: true
 tags:
   - evidence
@@ -11,14 +11,23 @@ tags:
   - peace-dividend
   - 3-5-rule
   - war-bonds
+  - precedents
+  - history
+  - social-movements
+  - finance
+  - governance
 image: /assets/og-images/knowledge/proof-og-bw-academic.jpg
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-This isn't a theoretical plan. It's a greatest hits album of things that already worked. Like mixing chocolate and peanut butter, except the chocolate is "not dying" and the peanut butter is "getting rich."
+This isn't a theoretical plan. It's a greatest hits album of things that already worked.
 
-## Pragmatic Trials: {{< var dfda_trial_cost_reduction_factor >}} More Efficient
+Before you say "this is impossible," let me remind you: humans have accidentally done smart things before. Not often. But occasionally, when properly motivated by either fear or greed (usually both), your species stumbles into competence.
+
+Here's proof you've done every single part of this plan already. You just haven't combined them yet. You're like someone who owns all the ingredients for bread but keeps eating them separately. Like mixing chocolate and peanut butter, except the chocolate is "not dying" and the peanut butter is "getting rich."
+
+## Pragmatic Trials: {{< var dfda_trial_cost_reduction_factor >}} More Efficient {#pragmatic-trials}
 
 Traditional Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} [@trial-costs-fda-study].
 Pragmatic trials embedded in routine care cost {{< var dfda_pragmatic_trial_cost_per_patient >}} [@pragmatic-trials-cost-advantage], a **{{< var dfda_trial_cost_reduction_factor >}} cost reduction**.
@@ -30,91 +39,114 @@ A Harvard meta-analysis of 108 embedded pragmatic trials found median costs of j
 
 Oxford's RECOVERY trial achieved {{< var recovery_trial_cost_per_patient >}}. It found life-saving COVID treatments in under 100 days. It saved over a million lives [@recovery-trial-1m-lives-saved].
 
-## Switzerland: 200 Years of Not Killing People
+## Humans Doing Smart Things (Accidentally): A Collection {#historical-precedents}
 
-Two world wars.
-Everyone else fought.
-Switzerland made chocolate.
+### That Time Humans Banned Landmines (Yes, Really) {#landmine-treaty}
 
-### Result
+**What happened:** A bunch of NGOs decided landmines were bad actually. They convinced 160 nations to sign a treaty banning them [@icbl-ottawa-treaty] in 1997. Major military powers initially opposed it. The NGOs won anyway.
 
-- 25% richer than Americans [@swiss-vs-us-gdp-per-capita] ({{< var switzerland_gdp_per_capita_k >}} vs $76K GDP per capita)
-- Live 5 years longer (84 vs 79 years) [@swiss-vs-us-life-expectancy]
-- Haven't had a war death since 1847 [@switzerland-last-war-death-1847]
-- Military budget: {{< var switzerland_defense_spending_pct >}} GDP (source [@swiss-military-budget-0-7-pct-gdp]) (US: {{< var us_military_spending_pct_gdp >}})
+![Some activists with clipboards convinced 160 countries to ban landmines while America, Russia, and China said no. The landmines are still banned. Democracy works in mysterious ways.](/assets/images/historical-precedents/historical-precedents-section-that-time-humans-banned-landmines-yes-really-bw-academic.jpg)
+
+
+**Why this matters for you:** This proves citizen movements can create binding international law even when governments don't want to. If humans can globally ban a weapon because "it's mean," you can definitely redirect 1% of the murder budget to the not-murder budget. And they did it with fax machines. Just pissed-off citizens with fax machines. You have the internet.
+
+### War Bonds: That Time Grandma Funded WW2 {#war-bonds}
+
+**What happened:** Governments needed money to fight Nazis. They sold "war bonds" (basically IOUs that paid interest) directly to regular people. Promise them profit + dead Nazis. Kill Nazis, earn 3%. Good deal. The U.S. raised $185 billion [@wwii-war-bonds] (trillions in today's dollars [@wwii-cost-4-trillion-today]).
+
+**Why this matters for you:** Your grandparents gave the government money to stop Hitler and got 4% returns. You're offering {{< var victory_bond_annual_return_pct >}} returns to stop cancer. [VICTORY Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd) are the same thing except with better ROI and fewer Nazis (hopefully zero Nazis). Except instead of dead Nazis, you offer dead cancer cells.
+
+The formula worked: mix moral incentives (patriotism) with financial self-interest (interest payments). You're just applying it to a different war: the one against your own mortality. When saving the world is profitable, people fund it.
+
+![War Bonds: give us money, we'll build bombs, you might get paid back. VICTORY Bonds: give us money, we'll cure diseases, you definitely get paid back. One of these sells better.](/assets/images/historical-precedents/historical-precedents-section-incentive-alignment-bonds-comparison-bw-academic.jpg)
+
+
+### The Global Fund (Proof That New Health Institutions Can Exist) {#global-fund}
+
+**What happened:** In 2002, the world created a new organization [@global-fund] to pool billions for fighting AIDS, TB, and malaria. It bypassed traditional bureaucracies and just... worked. It has since saved an estimated 70 million lives [@global-fund-50-million-lives-saved] (as of 2025).
+
+![Started fighting AIDS, TB, and malaria. Realized other diseases also exist. Expanded accordingly. This took decades.](/assets/images/historical-precedents/historical-precedents-section-the-global-fund-proof-that-new-health-institutions-can-exist-bw-academic.jpg)
+
+
+**Why this matters for you:** A network of decentralized institutes of health ([DIH](solution/dih.qmd)) isn't fantasy. It's the Global Fund but bigger and for all diseases. If humans can create new health institutions for three diseases, you can create one for all of them. It's just multiplication.
+
+### Post-WW2: That Time America Accidentally Discovered Peace Is Profitable {#post-ww2}
+
+**What happened:** 1945: US military spending was 37% of GDP [@us-post-wwii-military-spending-cut] (we were very serious about the war thing). 1948: Cut to 7%. That's a 30 percentage point drop. Not 1%. THIRTY.
+
+**The results:** The greatest economic boom in human history:
+
+  - GDP growth: 8% yearly for a decade [@us-post-wwii-gdp-growth-8-pct] (vs normal 2-3%)
+  - Home ownership doubled [@us-post-wwii-home-ownership-doubled] (middle class explosion)
+  - GI Bill created modern knowledge economy
+  - Built the interstate highway system
+
+**Why this matters for you:** You're asking for 1%. America did 30% and got rich. This is like asking someone who lost 100 pounds if they can spare 3 pounds. The answer is obviously yes, and they'll probably feel better.
+
+
+![After World War II, America cut military spending by 90 percent and became the richest country on Earth. We learned absolutely nothing from this.](/assets/images/historical-precedents/historical-precedents-section-post-ww2-economic-impact-bw-academic.jpg)
+
+### The 1990s: When the Berlin Wall Fell and Wallets Exploded {#cold-war-dividend}
+
+**What happened:** Cold War ended. Military spending dropped from 6% of GDP to 3%. That's $300B redirected from pointing missiles at Russia to literally anything else.
+
+![When the Cold War ended, we stopped building so many missiles and accidentally invented the internet. Imagine what we could invent on purpose.](/assets/images/historical-precedents/historical-precedents-section-the-1990s-when-the-berlin-wall-fell-and-wallets-exploded-bw-academic.jpg)
+
+
+**The results:** The 1990s economic boom everyone remembers fondly:
+
+  - Internet became commercial (freed resources)
+  - First budget surplus in 30 years
+  - Unemployment: 3.9% (lowest in a generation)
+  - Productivity: +2.5% yearly (double the normal rate)
+
+**Why this matters for you:** The pattern isn't subtle. Every time humans stop spending money on murder, prosperity appears like magic. It's not magic. It's arithmetic.
+
+### Switzerland: 200 Years of Not Shooting Anyone = Being Very Rich {#switzerland}
+
+Two world wars. Everyone else fought. Switzerland made chocolate.
+
+**What they have:** Mountains, cows, and a complete lack of natural resources. They're surrounded by countries that kept starting world wars. They have been neutral since 1815.
+
+![Switzerland spends less on defense than its neighbors and is much richer. They also make excellent chocolate. These facts may be related.](/assets/images/historical-precedents/historical-precedents-section-switzerland-200-years-of-not-shooting-anyone-being-very-rich-bw-academic.jpg)
+
+
+**What they spend on defense:** {{< var switzerland_defense_spending_pct >}} of GDP (source [@swiss-military-budget-0-7-pct-gdp]) (purely defensive; they're not invading anyone with those Alps) (US: {{< var us_military_spending_pct_gdp >}})
+
+#### The results
+
+  - {{< var switzerland_gdp_per_capita_k >}} GDP per capita [@swiss-vs-us-gdp-per-capita] (vs US $76K), 25% richer than Americans
+  - Universal healthcare, excellent quality, 12% of GDP (vs US 18%)
+  - Life expectancy: 84 years [@swiss-vs-us-life-expectancy] (vs US 79)
+  - Last invaded: Never (Napoleon tried in 1798, didn't go well for him)
+  - Haven't had a war death since 1847 [@switzerland-last-war-death-1847]
 
 The difference went to education, healthcare, and trains that actually work.
-Peace dividends compound over centuries.
-War debts compound faster.
+
+**Why this matters for you:** Peace dividends compound over centuries. Switzerland proves you don't need oil, colonies, or weapons to get rich. Just stop wasting money on stupid things. They've been doing this for 200 years. You're asking for a 1% start. War debts compound faster.
 
 ![Switzerland spends less on weapons and lives longer. America spends more on weapons and dies sooner. Science is still investigating whether these facts are related.](/assets/images/proof/proof-section-switzerland-peace-dividend-bw-academic.jpg)
 
-## War Bonds: How Capitalism Beat Fascism
+### The {{< var global_population_activism_threshold_pct >}} Rule: The Cheat Code for Democracy {#three-five-rule}
 
-WWII cost $4 trillion (today's dollars) [@wwii-cost-4-trillion-today].
-America was broke.
+**What scientists discovered:** When just {{< var global_population_activism_threshold_pct >}} of a population actively participates in sustained resistance, success becomes nearly inevitable. Not 51%. Not a majority. Just {{< var global_population_activism_threshold_pct >}}.
 
-**Solution:** Sell bonds to regular people.
-Promise them profit + dead Nazis.
-
-**Result:** Funded the entire war [@wwii-war-bonds], defeated fascism, everyone made money.
-
-**The lesson:** When saving the world is profitable, people fund it.
-
-[VICTORY Incentive Alignment Bonds](economics/victory-bonds.qmd) use the same model.
-Except instead of dead Nazis, you offer dead cancer cells.
-
-## The Landmine Treaty: Citizens Beat Armies
-
-1992: Random people decided landmines were stupid.
-1997: 160 countries banned them [@icbl-ottawa-treaty].
-
-![A Canadian schoolteacher annoyed 160 countries into banning landmines in five years. Your government said it was impossible, then watched it happen, then continued making landmines anyway because freedom.](/assets/images/proof/proof-section-the-landmine-treaty-citizens-beat-armies-bw-academic.jpg)
+![You only need 3.5 percent of people to agree on something before everyone else gets peer-pressured into it. It's like high school, but for overthrowing governments.](/assets/images/historical-precedents/historical-precedents-section-the-bw-academic.jpg)
 
 
-No government started it.
-No UN committee.
-Just pissed-off citizens with fax machines.
+#### Historical proof
 
-They beat the entire military-industrial complex in 5 years with fax machines.
+  - Civil rights: {{< var global_population_activism_threshold_pct >}} ended segregation
+  - Indian independence: {{< var global_population_activism_threshold_pct >}} beat the British Empire (nuclear power defeated by non-violence, embarrassing)
+  - Women's suffrage: {{< var global_population_activism_threshold_pct >}} got half of humanity the vote
+  - Gay marriage: {{< var global_population_activism_threshold_pct >}} made love legal
 
-You have the internet.
+**Why this matters for you:** One person in every classroom. One family on every block. That's {{< var global_population_activism_threshold_pct >}}. The [global referendum](strategy/global-referendum.qmd) needs 280 million people ({{< var global_population_activism_threshold_pct >}} of humanity). Not billions. Just {{< var global_population_activism_threshold_pct >}} clicking "yes, I prefer not dying" on a website. The internet reaches 5 billion [@internet-users-5-billion]. If humans can mobilize {{< var global_population_activism_threshold_pct >}} to get the vote, you can mobilize {{< var global_population_activism_threshold_pct >}} to not die from cancer. Math says it wins.
 
-## The {{< var global_population_activism_threshold_pct >}} Rule
-
-Harvard analyzed every major movement in history.
-
-![You only need 3.5 percent of people to agree on something before everyone else gets peer-pressured into it. It's like high school, but for overthrowing governments.](/assets/images/proof/proof-section-the-var-global-population-activism-threshold-pct-rule-bw-academic.jpg)
+![Gandhi's independence movement, civil rights, women's suffrage. All succeeded with 3.5 percent participation. We need 280 million people. That's still only 3.5 percent of Earth. Math keeps being encouraging.](/assets/images/historical-precedents/historical-precedents-section-historical-proof-bw-academic.jpg)
 
 
-**Finding:** Once {{< var global_population_activism_threshold_pct >}} of any population actively supports something, it wins.
-
-- Civil rights: Won at {{< var global_population_activism_threshold_pct >}}
-- Women's suffrage: Won at {{< var global_population_activism_threshold_pct >}}
-- Indian independence: Won at {{< var global_population_activism_threshold_pct >}}
-- Failed movements: Never hit {{< var global_population_activism_threshold_pct >}}
-
-The strategy needs {{< var treaty_campaign_voting_bloc_target >}} million people.
-The internet reaches 5 billion [@internet-users-5-billion].
-Math says it wins.
-
-## The Post-WW2 Economic Miracle: History's Greatest Peace Dividend
-
-1945: US military spending 37% of GDP [@us-post-wwii-military-spending-cut] (highest in history).
-1948: Cut to 7% of GDP [@us-post-wwii-military-spending-cut] (30 percentage points redirected).
-
-**Result:** The greatest economic boom in human history.
-
-- GDP growth: **8% average [@us-post-wwii-gdp-growth-8-pct]** for a decade (vs 2-3% normal)
-- Middle class explosion: Home ownership doubled [@us-post-wwii-home-ownership-doubled]
-- Education boom: GI Bill created modern knowledge economy
-- Infrastructure: Interstate highway system built
-
-**The lesson:** Redirecting military spending to productive uses = prosperity explosion.
-
-![When you stop spending money on tanks, you have more money for things that make money. Economists wrote papers about this for decades before anyone noticed.](/assets/images/proof/proof-section-post-ww2-economic-shift-bw-academic.jpg)
-
-## You Have Advantages They Didn't
+## You Have Advantages They Didn't {#advantages}
 
 ![You have the internet now. And also 150,000 people die every day, which creates a certain sense of urgency. The landmine people didn't have either of those things. You're out of excuses.](/assets/images/proof/proof-section-you-have-advantages-they-didn-t-bw-academic.jpg)
 
@@ -124,116 +156,163 @@ Math says it wins.
 - **Data:** You can prove what works in real-time
 - **Urgency:** 150,000 people die daily [@who-daily-deaths] (motivation is high)
 
-## The Political Precedents: How to Win
+## When Good Intentions Met Reality (And Lost) {#cautionary-tales}
 
-### Creating Binding International Law
+Failures teach more than successes. Here's every mistake past movements made, so you don't repeat them.
 
-**The Precedent: The International Campaign to Ban Landmines (ICBL)**
+### Eisenhower's Warning: A 5-Star General Tried to Tell You {#eisenhower}
 
-Random citizens created international law with fax machines.
+In 1961, President Dwight D. Eisenhower used his farewell address to warn you about something terrifying. He was a former 5-star general and Supreme Allied Commander. He was the guy who beat the Nazis.
 
-![In 1997, people used fax machines to bully countries into banning landmines. In 2026, you have TikTok. This should be easier.](/assets/images/proof/proof-section-creating-binding-international-law-bw-academic.jpg)
+**The warning:** "We must guard against the military-industrial complex."
 
-
-- The ICBL got 160 nations to ban landmines through peer pressure and shame.
-- No government started it. Citizens did.
-- It worked in 5 years.
-
-**The Lesson:** Citizens with fax machines beat the military-industrial complex. You have Twitter. The **[Global Referendum](strategy/roadmap.qmd)** copies their homework.
-
-### Achieving a Political Tipping Point
-
-**The Precedent: The {{< var global_population_activism_threshold_pct >}} Rule (Erica Chenoweth's Research)**
-
-Harvard did the math on revolutions. Found the magic number: {{< var global_population_activism_threshold_pct >}}.
-
-![In a classroom of 30 kids, you only need one annoying kid to change the rules. Humanity works the same way, just with more people and bigger problems.](/assets/images/proof/proof-section-achieving-a-political-tipping-point-bw-academic.jpg)
+![Every bomber built is a hospital not built, said the five-star general. Then everyone ignored him and built more bombers. He knew how these things go.](/assets/images/historical-precedents/historical-precedents-section-eisenhower-s-warning-a-5-star-general-tried-to-tell-you-bw-academic.jpg)
 
 
-- Once {{< var global_population_activism_threshold_pct >}} of any population actively protests something, it wins.
+**The reality check:** "Every gun made, every warship launched, every rocket fired signifies theft from those who hunger."
 
-- Civil rights: Won at {{< var global_population_activism_threshold_pct >}}
-- Indian independence: Won at {{< var global_population_activism_threshold_pct >}}
-- Failed movements: Never hit {{< var global_population_activism_threshold_pct >}}
+**The prophecy:** He predicted the permanent war economy you're currently living in. Military spending becomes self-perpetuating regardless of whether anyone's actually threatening you.
 
-**The Lesson:** You don't need everyone. You need {{< var treaty_campaign_voting_bloc_target >}} million people out of {{< var global_population_2024 >}} billion. That's one person in every classroom. One family on every block.
+**Why this matters:** Eisenhower understood you can't dismantle the system. You have to give it something more profitable to build instead. He was right. Nobody listened. Now you get to try his solution: redirect the resources.
 
-## The Financial Precedents: How to Fund It
+### The Nuclear Freeze Movement: Millions of People, Zero Results {#nuclear-freeze}
 
-### Mobilizing Mass Public Capital
+**What happened:** In the 1980s, a massive global movement [@nuclear-disarmament-movement-freeze] tried to freeze nuclear weapons production. Millions of protesters. Enormous popular support. Good vibes everywhere.
 
-#### The Precedent: WWII War Bonds
-
-Americans funded beating Hitler by buying bonds. Made money while saving democracy.
-
-![Your grandparents bought bonds paying 3 percent interest to defeat Nazis. You can buy bonds paying 272 percent to defeat cancer. Cancer is slower than Nazis but kills more people, so this seems fair.](/assets/images/proof/proof-section-the-precedent-wwii-war-bonds-bw-academic.jpg)
+![Asking defense contractors to be nice doesn't work. Offering them biotech profits does. Greed is easier to redirect than eliminate.](/assets/images/historical-precedents/historical-precedents-section-the-nuclear-freeze-movement-millions-of-people-zero-results-bw-academic.jpg)
 
 
-- War Bonds raised trillions (today's dollars)
-- Regular people bought them. Kill Nazis, earn 3%. Good deal.
-- It worked
+**The result:** Failed completely. Nuclear arsenals kept growing.
 
-**The Lesson:** **[VICTORY Incentive Alignment Bonds](https://impact.warondisease.org)** copy the formula. Except instead of killing Nazis for 3%, you kill cancer for {{< var victory_bond_annual_return_pct >}}.
+**Why it failed:** You cannot defeat money with good intentions. The military-industrial complex has more money than God, and protesters have signs. This is why a 1% treaty doesn't ask nicely; it bribes everyone into submission. You're not fighting greed. You're redirecting it. Morality is lovely, but capitalism is faster.
 
-### Building a New Global Health Institution
+**The lesson:** Make peace more profitable than war, or peace loses. Every time.
 
-**The Precedent: The Global Fund to Fight AIDS, Tuberculosis and Malaria**
+### Occupy Wall Street: When "We're Angry" Isn't a Strategy {#occupy}
 
-People have built new, multi-billion-dollar global health institutions from scratch before.
+**What happened:** In 2011, thousands occupied parks [@occupy-wall-street] to protest economic inequality. They changed the conversation! They raised awareness! They accomplished nothing permanent!
 
-![The Global Fund used this exact model to fight AIDS, TB, and malaria. It worked. Now you're suggesting using it again for other diseases. Radical innovation through doing the same thing that already worked.](/assets/images/proof/proof-section-b-building-a-new-global-health-institution-bw-academic.jpg)
+![Occupy Wall Street had 50 demands and changed nothing. We have one demand. This is either much smarter or much sadder.](/assets/images/historical-precedents/historical-precedents-section-occupy-wall-street-when-we-re-angry-isn-t-a-strategy-bw-academic.jpg)
 
 
-- The Global Fund was created in 2002 as a public-private partnership. It pools and distributes billions of dollars to fight these three diseases. It operates outside of traditional institutional channels. It has since saved an estimated 70 million lives [@global-fund-50-million-lives-saved] (as of 2025).
+**Why it failed:** No specific demand. Just diffuse anger at "the system." The energy dissipated because nobody knew what success looked like.
 
-**The Lesson:** This provides the precedent for **[your decentralized institutes of health (DIH)](solution/dih.qmd).**
-The world can create new, large-scale, efficient financial institutions for global health. It happens when existing systems are insufficient.
+**Why this matters:** This plan has ONE demand: ratify a [1% treaty](solution/1-percent-treaty.qmd). That's it. Not "fix inequality" or "be better." One specific, achievable, measurable goal. You want to change one number from 0 to 1. Ambition is inspiring, but subtraction is effective. A network of decentralized institutes of health (DIH), a decentralized framework for drug assessment ([dFDA](solution/dfda.qmd)), and the cures are all downstream of that single objective.
 
-### Pricing the Political Risk
+When you ask for everything, you get nothing. When you ask for 1%, you might get it.
 
-**The Precedent: Michael Milken's High-Yield Bonds & George Soros's Political Arbitrage**
+## On How Rich People Made Money Doing Crazy Things (And Why That Matters) {#financial-precedents}
 
-VICTORY Incentive Alignment Bonds are a high-risk, high-reward bet on a political outcome. The investment thesis is grounded in proven financial strategies.
+You need investment terms that don't sound insane to people with money. Fortunately, history is full of rich people doing riskier things for lower returns.
 
-![Take Michael Milken's junk bonds and George Soros's political betting strategy. Combine them. Point them at disease instead of hostile takeovers. What's the worst that could happen? (Actually curing things, apparently.)](/assets/images/proof/proof-section-c-pricing-the-political-risk-bw-academic.jpg)
-
-
-- **Michael Milken** proved that high-risk ventures need a correspondingly high, contractually obligated return to attract capital.
-- **George Soros** made a legendary bet against the British pound in 1992. It is the ultimate example of privately financed political arbitrage. It proved you can deploy immense private capital to bet on a political outcome.
-
-**The Lesson:** The financial model offers a **$>{{< var victory_bond_annual_return_pct >}} targeted return**. This is a direct application of these principles.
-It correctly prices the political risk to attract the sophisticated capital needed to win.
-
-## The Cautionary Tales: How Not to Fail
-
-Past movement failures are even more instructive than the successes. They reveal the exact failure modes the strategy is engineered to avoid.
-
-### Don't Bring a Moral Argument to a Financial Fight
-
-**The Precedent: The Nuclear Disarmament Movement ("The Freeze")**
-
-- **The Failure:** The movement had enormous popular support in the 1980s. It largely failed. It could not overcome the entrenched financial interests of the military-industrial complex.
-- **The Lesson:** This is the historical proof for the core thesis: **You cannot defeat bad money with good intentions alone.** It justifies the strategy of **["legal bribery"](strategy/roadmap.qmd)** and co-opting opposition with a superior financial offer.
-
-![Telling weapons companies that killing is bad doesn't work. Offering them more money to cure cancer does work. Morality is lovely, but capitalism is faster.](/assets/images/proof/proof-section-a-don-t-bring-a-moral-argument-to-a-financial-fight-bw-academic.jpg)
+![Investing in ending war sounds crazy until you remember people invested in pet rocks and Beanie Babies. At least this one might work.](/assets/images/historical-precedents/historical-precedents-section-on-how-rich-people-made-money-doin-bw-academic.jpg)
 
 
-### Don't Have a Diffuse, Unactionable Goal
+### On The Time Junk Bonds Saved Capitalism {#milken}
 
-#### The Precedent: Occupy Wall Street
+#### Michael Milken & High-Yield ("Junk") Bonds
 
-- **The Failure:** It successfully changed the public conversation in 2011. But the movement produced no lasting policy change. It lacked a single, specific, actionable demand.
-- **The Lesson:** The project avoids this trap. It focuses all energy and capital on a single, clear, achievable goal: **ratification of a "[1% treaty](solution/1-percent-treaty.qmd)."** That is the only ask.
+In the 1980s, a guy named Michael Milken figured out something revolutionary: if you offer people high enough returns, they'll invest in almost anything [@milken-high-yield-bonds].
 
-![Occupy Wall Street wanted to change everything and changed nothing. You want to change one number from 0 to 1. Ambition is inspiring, but subtraction is effective.](/assets/images/proof/proof-section-the-precedent-occupy-wall-street-bw-academic.jpg)
+![Safe bonds pay 3 percent. Risky bonds pay 8 percent. World peace bonds pay 12 percent. Turns out you can put a price on everything, including virtue.](/assets/images/historical-precedents/historical-precedents-section-michael-milken-high-yield-junk-bonds-bw-academic.jpg)
 
 
-## In This Section
+Wall Street called these "junk bonds" because they were trash. Milken called them "high-yield bonds" because marketing. He financed leveraged buyouts that the establishment said were impossible. He raised billions.
 
-- [Chapter 19: Political Movements That Changed Everything](proof/historical-precedents.qmd) - Switzerland's 200-year peace dividend, war bonds, landmine treaty, {{< var global_population_activism_threshold_pct >}} rule advantages
-- [Chapter 20: Your Body Is Just a Machine](proof/body-as-repairable-machine.qmd) - Hearts, kidneys, blood, DNA, you replace everything else, aging is just neglected maintenance
+The establishment said it would never work. It worked spectacularly until it didn't (Milken went to prison for unrelated fraud, which is how you know it was successful).
 
-## How a dFDA Would Compare to History's Best Health Interventions
+**The Lesson:** To attract capital for high-risk ventures, you must offer absurdly high returns. VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) promise 270% returns. This isn't generosity, it's economics. It's the "high-yield" premium necessary to compensate for betting on the unprecedented act of governments doing something smart.
+
+If people invested in literal junk, they'll invest in not dying. You just need to price it correctly.
+
+### On The Time George Soros Broke England {#soros}
+
+#### George Soros & The Quantum Fund
+
+In 1992, George Soros risked $10 billion betting that the UK would have to leave the European Exchange Rate Mechanism [@soros-bet-against-the-pound].
+
+![A diagram illustrating the binary outcomes of Soros's high-stakes bet against the British Pound, showing the tension between private capital and government policy decisions.](/assets/images/historical-precedents/historical-precedents-section-george-soros-the-quantum-fund-bw-academic.jpg)
+
+
+This was a binary political bet: Either the UK government capitulates, or Soros loses everything.
+
+He won. Made over $1 billion in a single day. The Bank of England lost. The Queen was reportedly not amused.
+
+**The Lesson:** You can deploy immense private capital to bet on political outcomes. The trick is framing it as sophisticated arbitrage. What it really is: gambling on whether governments will do the obvious thing or the stupid thing.
+
+History suggests governments usually do the stupid thing. But occasionally they surprise you. That's the bet you're making.
+
+### On When Smart People Lost All Their Money (The Cautionary Tales) {#cautionary-finance}
+
+**Long-Term Capital Management (LTCM): When Nobel Laureates Get Humbled**
+
+In 1998, a hedge fund run by actual Nobel Prize winners collapsed. It required a $3.6 billion bailout [@long-term-capital-management-collapse].
+
+![Past financial disasters: no safeguards, pure chaos, everyone loses. This plan: many safeguards, organized chaos, probably fine. Progress is incremental.](/assets/images/historical-precedents/historical-precedents-section-on-when-smart-people-lost-all-their-money-the-cautionary-tales-bw-academic.jpg)
+
+
+Their crime? Building sophisticated mathematical models that accounted for everything except the part where Russia just... defaults. Whoops.
+
+These were the smartest people in finance. They had Nobels. They had PhDs from MIT. They had models that predicted everything except reality.
+
+**The Lesson:** Never underestimate systemic risk, also known as "the part where everything goes wrong at once."
+
+For this project, the "black swan" is complete political failure. Everyone says no, the treaty dies, and you look stupid.
+
+This is why the plan includes:
+
+- **Assurance contracts**: Miss the fundraising target? Everyone gets their money back. No partial failures allowed.
+- **First-loss philanthropic capital**: Rich altruists absorb the initial losses so regular investors don't get wiped out if things go sideways.
+
+It's risk mitigation for people who understand that Nobel laureates can still be catastrophically wrong.
+
+**The South Sea Bubble (1720): When Everyone Went Insane**
+
+In 1720, people in England went collectively mad. They invested in a company that promised a monopoly on trade with South America [@south-sea-bubble-1720].
+
+Neat! Except the company had almost no actual trade. And no profits. And no business plan beyond "tell people we're going to be really rich."
+
+The stock went up 1,000%. Then it crashed. Everyone lost everything. Isaac Newton lost £20,000 (in today's money, "a lot"). He famously said "I can calculate the motion of heavenly bodies, but not the madness of people."
+
+**The Lesson:** Speculation based on hype alone ends badly.
+
+This is why VICTORY Incentive Alignment Bond payouts are contractually tied to real, verifiable events:
+
+- Treaty ratification (actual government signatures)
+- Real government money flowing into the 1% Treaty Fund
+- Actual treatments being tested in pragmatic clinical trials
+
+No hype. No maybes. No "we're going to be really rich someday." Just math tied to observable reality.
+
+If you're going to lose your money, at least it won't be because the plan promised a monopoly on South American trade without checking if South America exists.
+
+## The Ultimate Failsafe: The Worst-Case Scenario is Still a Win {#failsafe}
+
+Even if one is skeptical of the above precedents, the core proposal has a powerful, built-in failsafe.
+
+![Worst case: we reduce global weaponry slightly and waste some money on science. Current case: mountains of bombs and no cancer cure. Hard choice.](/assets/images/historical-precedents/historical-precedents-section-4-the-ultimate-failsafe-the-worst-case-scenario-is-still-a-win-bw-academic.jpg)
+
+
+Let's imagine your decentralized institutes of health is a complete and total failure. Imagine every dollar of the {{< var treaty_annual_funding >}} is mismanaged, wasted, or simply dumped into the ocean.
+
+The world would *still* be better off.
+
+### Why?
+
+Because we would still have achieved a **1% reduction in the global capacity for organized violence and destruction.**
+
+- Fewer bombs.
+- Fewer missiles.
+- Fewer AI-powered weapons systems.
+
+![If this fails, we have fewer bombs. If it succeeds, we cure death. These are not symmetrical risks, but we treat them like they are.](/assets/images/historical-precedents/historical-precedents-section-why-bw-academic.jpg)
+
+
+The absolute worst outcome of this plan is still a net gain for global security, stability, and human life. The best outcome is a cure for your cancer, your grandmother's Alzheimer's, and every other disease that plagues humanity.
+
+This asymmetrical risk profile is the ultimate justification for the mission. Failure is still a victory. Success changes the course of human history. It's a bet you can't afford not to take.
+
+## How a dFDA Would Compare to History's Best Health Interventions {#dfda-comparison}
 
 | Intervention | ROI (per $1) | Cost per QALY | QALYs per $1M |
 |---|---|---|---|
@@ -245,12 +324,15 @@ Past movement failures are even more instructive than the successes. They reveal
 
 A decentralized drug assessment framework projects higher ROI than any single health intervention in history. That includes smallpox eradication. It accelerates the entire R&D ecosystem rather than targeting one disease.
 
-## Additional Evidence
+## In This Section
+
+- [Your Body Is Just a Machine](proof/body-as-repairable-machine.qmd) - Hearts, kidneys, blood, DNA, you replace everything else, aging is just neglected maintenance
+
+## Additional Evidence {#additional-evidence}
 
 ![You're not inventing anything new. You're just combining things that already worked in places where people were paying attention. Innovation is mostly plagiarism with better marketing.](/assets/images/proof/proof-section-additional-evidence-bw-academic.jpg)
 
 None of this is theoretical. Every component worked somewhere:
 
 - **[The RECOVERY Trial Case Study](appendix/recovery-trial.qmd):** How Oxford achieved {{< var dfda_trial_cost_reduction_factor >}} efficiency
-- **[Organizational Precedents](proof/historical-precedents.qmd):** Global Fund, ICBL, and other successful models
 - **[Historical Evidence for Decentralized Trials](problem/fda-is-unsafe-and-ineffective.qmd):** Pre-1962, when doctors just tried things

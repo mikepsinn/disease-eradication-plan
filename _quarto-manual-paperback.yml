@@ -55,7 +55,6 @@ book:
     - part: "The Evidence"
       chapters:
         - knowledge/proof.qmd
-        - knowledge/proof/historical-precedents.qmd
         - knowledge/proof/body-as-repairable-machine.qmd
         - knowledge/futures.qmd
         - knowledge/futures/moronia.qmd
@@ -68,11 +67,13 @@ book:
         - knowledge/strategy/nonprofit-coalition-strategy.qmd
         - knowledge/legal/legal-framework.qmd
         # CUT: election-law.qmd - operational detail for campaign staff
-        - knowledge/economics/victory-bonds.qmd
+        # REMOVED: Merged into knowledge/solution/incentive-alignment-bonds.qmd
+        # - knowledge/economics/victory-bonds.qmd
         # CUT: legislation-package.qmd - draft bill text, nobody reads recreationally
         - knowledge/strategy/global-referendum.qmd
         # CUT: ai-coordination-army.qmd - technical AI deployment instructions, not essential for core argument
-        - knowledge/strategy/co-opting-defense-contractors.qmd
+        # REMOVED: Merged into knowledge/solution/aligning-incentives.qmd defense section
+        # - knowledge/strategy/co-opting-defense-contractors.qmd
         - knowledge/appendix/treaty-feasibility.qmd
         - knowledge/appendix/recruitment-and-propaganda-plan.qmd
 

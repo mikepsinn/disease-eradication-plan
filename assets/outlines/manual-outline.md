@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 48 | **Words:** 113,085 | **Images:** 739 | **Est. Pages:** ~822
+**Files:** 45 | **Words:** 108,793 | **Images:** 700 | **Est. Pages:** ~785
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -492,7 +492,7 @@
 #### knowledge/solution.qmd
 **Title:** Solution Overview
 **Description:** How to Build Systems That Don't Suck
-**Stats:** 1,654 words | 178 lines | 13 images | ~13p
+**Stats:** 1,642 words | 177 lines | 13 images | ~13p
 
   - A 1% Treaty
   - The 1% Treaty Fund
@@ -722,9 +722,22 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 2,263 words | 313 lines | 17 images | ~18p
+**Stats:** 3,108 words | 395 lines | 23 images | ~24p
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
+    - The Offer
+    ![The offer: 272% returns, early access to cures, and a legacy besides 'warmonger.' Even defense lobbyists can do math.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-offer-bw-academic.jpg)
+    - The Math
+    ![Current job: Get rich selling weapons; die hated. New job: Get richer ending disease; die beloved. Career pivot, simplified.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-incentive-comparison-bw-academic.jpg)
+    - Why They Take It
+    ![The defense industry keeps 99% of its budget. They lose 1% and gain trillions in cure markets. This is the easiest math problem in history.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-treaty-doesn-t-actually-hurt-them-bw-academic.jpg)
+    - The Flip
+    ![First one flips: brave. Tenth one flips: smart. Hundredth one flips: inevitable. Last one flips: too late for the good bond rates.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-step-3-the-flip-bw-academic.jpg)
+    - What You're NOT Asking
+    ![Defense contractors keep 99% of their money and get extra cash for being nice. They're crying all the way to the bank about the hardship.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-what-you-re-not-asking-bw-academic.jpg)
+    - Why This Works
+    - The Timeline
+    ![How long it takes for politicians to go from 'this is outrageous' to 'I supported this all along.' Three years, apparently.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-adoption-timeline-bw-academic.jpg)
   - Insurance Companies: The Accidentally Aligned Industry
     - Their Current Death Spiral
     ![The insurance death spiral. Costs go up, premiums go up, healthy people leave, costs go up more. Like a toilet flush but with your healthcare.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-death-spiral-bw-academic.jpg)
@@ -777,9 +790,9 @@
   - Why This Scales: The Ratchet Effect
 
 #### knowledge/solution/incentive-alignment-bonds.qmd
-**Title:** Incentive Alignment Bonds
-**Description:** A new financial instrument for aligning political incentives with public goods
-**Stats:** 3,900 words | 426 lines | 35 images | ~33p
+**Title:** VICTORY Incentive Alignment Bonds
+**Description:** How to legally bribe politicians into saving lives, and how investors profit from it
+**Stats:** 5,864 words | 678 lines | 47 images | ~47p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -823,28 +836,58 @@
     ![Where $27 billion goes: some to investors, some to politicians, most to actually curing diseases. Everyone gets a slice of the virtue pie.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-math-for-victory-incentive-alignment-bond-investors-bw-academic.jpg)
     - Why This Isn't Bribery
     ![Bribery: pay someone to betray the public. This thing: pay someone to help the public. Spot the difference, legally speaking.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-why-this-is-not-bribery-legally-speaking-bw-academic.jpg)
-    - How IABs Connect to Your 1% Treaty
-    ![The machine that turns 'we should cure diseases' into 'Senator Smith gets $4 million if she votes yes.' Translation is everything.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-how-this-plugs-into-the-1-trea-bw-academic.jpg)
     - The Revenue Split
     ![Money flows through two engines, investors and politicians, before reaching the actual medical research. It's trickle-down economics, but for not dying.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-7a-the-two-engines-financial-and-political-bw-academic.jpg)
-    - Objections
-      - "Won't politicians game the metrics?"
-    ![Things people can lie about versus things they can't. Turns out politicians are better at lying than numbers are.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-1-won-t-politicians-game-the-metrics-bw-academic.jpg)
-      - "Isn't this just rich people buying policy?"
-    ![Three separate boxes to keep politicians from stealing money directly. They have to steal it indirectly now, which takes longer.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-2-isn-t-this-just-rich-people-buying-policy-bw-academic.jpg)
-      - "What if politicians reverse the policy?"
-    ![What happens to your score when you do good things for a while and then suddenly decide to do bad things instead. The graph goes down quite dramatically.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-3-what-if-politicians-pocket-the-career-rewards-th-bw-academic.jpg)
-      - "Is this realistic globally?"
-    ![How countries copy each other's homework after seeing someone else get a good grade. Like peer pressure, but for governments.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-4-is-this-realistic-at-a-global-scale-bw-academic.jpg)
-    - Why This Matters
-    ![Paying politicians to do their jobs properly. Like a chore chart for adults who run countries.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-why-this-matters-for-ending-war-and-disease-bw-academic.jpg)
     - Why 10% Goes to Political Incentives {#sec-why-ten-pct-scaling-engine}
     ![The plan to gradually stop buying bombs versus the four reasons we'll probably keep buying bombs anyway.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-goal-isn-t-a-1-treaty-the-goal-is-100-bw-academic.jpg)
     ![How much money politicians get for being nice increases as they're nicer. By the end, they get 270 billion dollars for not killing people.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-iabs-are-the-political-ratchet-bw-academic.jpg)
     ![Spend 270 billion bribing politicians to unlock 2.16 trillion for medicine. Like using a small key to open a very large door full of money.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-math-changes-everything-bw-academic.jpg)
     ![What happens over fifty years if we do nothing special versus if we pay politicians to care. One line stays flat, the other goes up like a rocket.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-alternative-is-stagnation-bw-academic.jpg)
+    ![Cures make money, money buys more cures, more cures make more money. Capitalism accidentally does something good and is deeply confused by the experience.](/assets/images/victory-bonds/victory-bonds-section-expansion-flywheel-bw-academic.jpg)
     - Beyond the 1% Treaty
     ![The four boxes you need to tick before you can bribe governments into solving global problems. Apparently you can't just bribe them willy-nilly.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-beyond-the-1-treaty-iabs-as-a-general-governance-tool-bw-academic.jpg)
+  - For Investors
+    - The Investor Pitch
+    ![Money goes in, saves humanity, pays dividends forever. Wall Street called it 'suspiciously sustainable.'](/assets/images/victory-bonds/victory-bonds-section-mechanism-overview-bw-academic.jpg)
+    - Calculate Your Numbers for Investors
+      - Show Them Where the Papers Come From
+    ![Take 1 percent from weapons, split it three ways, cure all disease. The diagram was so simple a child drew it. Adults spent 10 years arguing about the arrows.](/assets/images/victory-bonds/victory-bonds-section-global-spend-vs-treaty-allocation-bw-academic.jpg)
+      - When Math Becomes Obscene
+      - Even if you're extremely pessimistic
+      - This isn't complicated math
+    ![VICTORY Bonds: 8 percent annual returns forever. Venture Capital: maybe. Real Estate: depends. Medallion Fund: no you can't invest. Investors chose uncertainty.](/assets/images/victory-bonds/victory-bonds-section-this-isn-t-complicated-math-bw-academic.jpg)
+    - Security Package and Risk
+    ![Five layers of legal protection ensuring you get paid even if governments collapse. We learned from history: trust nobody, especially nations.](/assets/images/victory-bonds/victory-bonds-section-structure-the-security-package-bw-academic.jpg)
+      - Project Risks
+    ![Political risk mitigation: bribe politicians legally. Execution risk mitigation: hire competent people. Revolutionary concepts in 2026.](/assets/images/victory-bonds/victory-bonds-section-project-risks-bw-academic.jpg)
+      - Investor-Specific Risks
+    ![Your money is locked for 18 to 36 months while we save civilization. Then you can sell your shares to someone who doesn't believe in extinction.](/assets/images/victory-bonds/victory-bonds-section-investor-specific-risks-bw-academic.jpg)
+    - What This Beats (Spoiler: Everything)
+    - Investment Thresholds and Term Sheet
+    ![You need different amounts of money to be allowed to make more money, depending on how much money you already have. The rich call this 'protecting investors.'](/assets/images/victory-bonds/victory-bonds-section-structure-your-minimums-bw-academic.jpg)
+    ![Money goes in from treaty, money comes out to bondholders. It's like a water fountain, but the water is money and the fountain is preventing war.](/assets/images/victory-bonds/victory-bonds-section-draft-your-term-sheet-bw-academic.jpg)
+    - When Rich People Ask Difficult Questions
+      - "This sounds like a Ponzi scheme run by someone who failed math."
+    ![One circle takes money from new investors to pay old investors until it collapses. The other circle takes money from weapons to fund cures and pays investors forever. Spot the difference.](/assets/images/victory-bonds/victory-bonds-section-this-sounds-like-a-ponzi-scheme-run-by-someone-who-failed-math-bw-academic.jpg)
+      - "Isn't this just rich people buying policy?"
+    ![Three separate boxes to keep politicians from stealing money directly. They have to steal it indirectly now, which takes longer.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-2-isn-t-this-just-rich-people-buying-policy-bw-academic.jpg)
+      - "Won't politicians game the metrics?"
+    ![Things people can lie about versus things they can't. Turns out politicians are better at lying than numbers are.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-1-won-t-politicians-game-the-metrics-bw-academic.jpg)
+      - "What if politicians reverse the policy?"
+    ![What happens to your score when you do good things for a while and then suddenly decide to do bad things instead. The graph goes down quite dramatically.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-3-what-if-politicians-pocket-the-career-rewards-th-bw-academic.jpg)
+      - "What happens when this fails and I lose my billion dollars?"
+    ![Put in one billion dollars. Either get back 2.72 billion dollars, or get nothing and humanity continues destroying itself. No middle ground.](/assets/images/victory-bonds/victory-bonds-section-what-happens-when-this-fails-and-i-lose-my-billion-dollars-bw-academic.jpg)
+      - "Is this realistic globally?"
+    ![How countries copy each other's homework after seeing someone else get a good grade. Like peer pressure, but for governments.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-4-is-this-realistic-at-a-global-scale-bw-academic.jpg)
+      - "How is this different from just donating to charity?"
+    ![Charity: give money away, feel good, get tax break. VICTORY Bonds: give money away, feel good, get 272 percent back. One of these seems objectively better.](/assets/images/victory-bonds/victory-bonds-section-how-is-this-different-from-just-donating-to-charity-bw-academic.jpg)
+      - When they want detailed financials
+    - The One-Page Summary That Makes Calculators Weep
+    ![The more people you save, the more money you make. Capitalism finally discovers that helping people is profitable.](/assets/images/victory-bonds/victory-bonds-section-the-one-page-summary-that-makes-calculators-weep-bw-academic.jpg)
+      - What you get
+      - What could go wrong
+      - The core mechanism is stupid simple
+    ![Investors give money to convince politicians to redirect war budgets to medical research, which pays the investors, politicians, and researchers. The circle of life, but useful.](/assets/images/victory-bonds/victory-bonds-section-the-core-mechanism-is-stupid-simple-bw-academic.jpg)
     - Summary
     ![How to make politicians care about the future by promising them good jobs after they stop being politicians. Turns out they like money that comes later too.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-summary-what-iabs-actually-are-bw-academic.jpg)
 
@@ -877,92 +920,57 @@
 
 #### knowledge/proof.qmd
 **Title:** The Proof: Overview
-**Description:** This Already Works - Pragmatic trials prove 44.1x (95% CI: 39.4x-89.1x) efficiency. Switzerland proved peace pays. History proved 3.5% consistently wins. War bonds proved capitalism beats fascism. Death and suffering are optional.
-**Stats:** 1,892 words | 257 lines | 15 images | ~15p
+**Description:** This Already Works - Pragmatic trials prove 44.1x (95% CI: 39.4x-89.1x) efficiency. History proves every component. Switzerland, war bonds, landmines, the 3.5% rule, and Wall Street's craziest bets all prove humans can accidentally do smart things when properly motivated.
+**Stats:** 3,249 words | 339 lines | 22 images | ~24p
 
-  - Pragmatic Trials: 44.1x (95% CI: 39.4x-89.1x) More Efficient
+  - Pragmatic Trials: 44.1x (95% CI: 39.4x-89.1x) More Efficient {#pragmatic-trials}
     ![The British figured out how to test drugs for $929 per patient. Americans spend $41,000. Both countries speak English, so language barrier isn't the issue.](/assets/images/proof/proof-section-pragmatic-trials-44-1x-95-ci-39-4x-89-1x-more-efficient-bw-academic.jpg)
-  - Switzerland: 200 Years of Not Killing People
-    - Result
-    ![Switzerland spends less on weapons and lives longer. America spends more on weapons and dies sooner. Science is still investigating whether these facts are related.](/assets/images/proof/proof-section-switzerland-peace-dividend-bw-academic.jpg)
-  - War Bonds: How Capitalism Beat Fascism
-  - The Landmine Treaty: Citizens Beat Armies
-    ![A Canadian schoolteacher annoyed 160 countries into banning landmines in five years. Your government said it was impossible, then watched it happen, then continued making landmines anyway because freedom.](/assets/images/proof/proof-section-the-landmine-treaty-citizens-beat-armies-bw-academic.jpg)
-  - The 3.5% Rule
-    ![You only need 3.5 percent of people to agree on something before everyone else gets peer-pressured into it. It's like high school, but for overthrowing governments.](/assets/images/proof/proof-section-the-var-global-population-activism-threshold-pct-rule-bw-academic.jpg)
-  - The Post-WW2 Economic Miracle: History's Greatest Peace Dividend
-    ![When you stop spending money on tanks, you have more money for things that make money. Economists wrote papers about this for decades before anyone noticed.](/assets/images/proof/proof-section-post-ww2-economic-shift-bw-academic.jpg)
-  - You Have Advantages They Didn't
-    ![You have the internet now. And also 150,000 people die every day, which creates a certain sense of urgency. The landmine people didn't have either of those things. You're out of excuses.](/assets/images/proof/proof-section-you-have-advantages-they-didn-t-bw-academic.jpg)
-  - The Political Precedents: How to Win
-    - Creating Binding International Law
-    ![In 1997, people used fax machines to bully countries into banning landmines. In 2026, you have TikTok. This should be easier.](/assets/images/proof/proof-section-creating-binding-international-law-bw-academic.jpg)
-    - Achieving a Political Tipping Point
-    ![In a classroom of 30 kids, you only need one annoying kid to change the rules. Humanity works the same way, just with more people and bigger problems.](/assets/images/proof/proof-section-achieving-a-political-tipping-point-bw-academic.jpg)
-  - The Financial Precedents: How to Fund It
-    - Mobilizing Mass Public Capital
-      - The Precedent: WWII War Bonds
-    ![Your grandparents bought bonds paying 3 percent interest to defeat Nazis. You can buy bonds paying 272 percent to defeat cancer. Cancer is slower than Nazis but kills more people, so this seems fair.](/assets/images/proof/proof-section-the-precedent-wwii-war-bonds-bw-academic.jpg)
-    - Building a New Global Health Institution
-    ![The Global Fund used this exact model to fight AIDS, TB, and malaria. It worked. Now you're suggesting using it again for other diseases. Radical innovation through doing the same thing that already worked.](/assets/images/proof/proof-section-b-building-a-new-global-health-institution-bw-academic.jpg)
-    - Pricing the Political Risk
-    ![Take Michael Milken's junk bonds and George Soros's political betting strategy. Combine them. Point them at disease instead of hostile takeovers. What's the worst that could happen? (Actually curing things, apparently.)](/assets/images/proof/proof-section-c-pricing-the-political-risk-bw-academic.jpg)
-  - The Cautionary Tales: How Not to Fail
-    - Don't Bring a Moral Argument to a Financial Fight
-    ![Telling weapons companies that killing is bad doesn't work. Offering them more money to cure cancer does work. Morality is lovely, but capitalism is faster.](/assets/images/proof/proof-section-a-don-t-bring-a-moral-argument-to-a-financial-fight-bw-academic.jpg)
-    - Don't Have a Diffuse, Unactionable Goal
-      - The Precedent: Occupy Wall Street
-    ![Occupy Wall Street wanted to change everything and changed nothing. You want to change one number from 0 to 1. Ambition is inspiring, but subtraction is effective.](/assets/images/proof/proof-section-the-precedent-occupy-wall-street-bw-academic.jpg)
-  - In This Section
-  - How a dFDA Would Compare to History's Best Health Interventions
-  - Additional Evidence
-    ![You're not inventing anything new. You're just combining things that already worked in places where people were paying attention. Innovation is mostly plagiarism with better marketing.](/assets/images/proof/proof-section-additional-evidence-bw-academic.jpg)
-
-#### knowledge/proof/historical-precedents.qmd
-**Title:** Historical Precedents
-**Description:** Why This Isn't Insane - An analysis of historical movements and financial models that prove the core mechanics of a 1% treaty are not new ideas, but rather the application of proven models for mass mobilization, private capital for public good, and risk mitigation.
-**Stats:** 2,618 words | 280 lines | 19 images | ~20p
-
-  - Humans Doing Smart Things (Accidentally): A Collection
-    - That Time Humans Banned Landmines (Yes, Really)
+  - Humans Doing Smart Things (Accidentally): A Collection {#historical-precedents}
+    - That Time Humans Banned Landmines (Yes, Really) {#landmine-treaty}
     ![Some activists with clipboards convinced 160 countries to ban landmines while America, Russia, and China said no. The landmines are still banned. Democracy works in mysterious ways.](/assets/images/historical-precedents/historical-precedents-section-that-time-humans-banned-landmines-yes-really-bw-academic.jpg)
-    - War Bonds: That Time Grandma Funded WW2
+    - War Bonds: That Time Grandma Funded WW2 {#war-bonds}
     ![War Bonds: give us money, we'll build bombs, you might get paid back. VICTORY Bonds: give us money, we'll cure diseases, you definitely get paid back. One of these sells better.](/assets/images/historical-precedents/historical-precedents-section-incentive-alignment-bonds-comparison-bw-academic.jpg)
-    - The Global Fund (Proof That New Health Institutions Can Exist)
+    - The Global Fund (Proof That New Health Institutions Can Exist) {#global-fund}
     ![Started fighting AIDS, TB, and malaria. Realized other diseases also exist. Expanded accordingly. This took decades.](/assets/images/historical-precedents/historical-precedents-section-the-global-fund-proof-that-new-health-institutions-can-exist-bw-academic.jpg)
-    - Post-WW2: That Time America Accidentally Discovered Peace Is Profitable
+    - Post-WW2: That Time America Accidentally Discovered Peace Is Profitable {#post-ww2}
     ![After World War II, America cut military spending by 90 percent and became the richest country on Earth. We learned absolutely nothing from this.](/assets/images/historical-precedents/historical-precedents-section-post-ww2-economic-impact-bw-academic.jpg)
-    - The 1990s: When the Berlin Wall Fell and Wallets Exploded
+    - The 1990s: When the Berlin Wall Fell and Wallets Exploded {#cold-war-dividend}
     ![When the Cold War ended, we stopped building so many missiles and accidentally invented the internet. Imagine what we could invent on purpose.](/assets/images/historical-precedents/historical-precedents-section-the-1990s-when-the-berlin-wall-fell-and-wallets-exploded-bw-academic.jpg)
-    - Switzerland: 200 Years of Not Shooting Anyone = Being Very Rich
+    - Switzerland: 200 Years of Not Shooting Anyone = Being Very Rich {#switzerland}
     ![Switzerland spends less on defense than its neighbors and is much richer. They also make excellent chocolate. These facts may be related.](/assets/images/historical-precedents/historical-precedents-section-switzerland-200-years-of-not-shooting-anyone-being-very-rich-bw-academic.jpg)
       - The results
-    ![Switzerland: small army, rich people, long lives. America: huge army, sick people, expensive healthcare. One of these countries is doing it wrong.](/assets/images/historical-precedents/historical-precedents-section-switzerland-vs-us-metrics-bw-academic.jpg)
-    - The 3.5% Rule: The Cheat Code for Democracy
-    ![Turns out you don't need half the population to change society. You only need 3.5 percent to really commit. The rest will follow along once it looks safe.](/assets/images/historical-precedents/historical-precedents-section-the-bw-academic.jpg)
+    ![Switzerland spends less on weapons and lives longer. America spends more on weapons and dies sooner. Science is still investigating whether these facts are related.](/assets/images/proof/proof-section-switzerland-peace-dividend-bw-academic.jpg)
+    - The 3.5% Rule: The Cheat Code for Democracy {#three-five-rule}
+    ![You only need 3.5 percent of people to agree on something before everyone else gets peer-pressured into it. It's like high school, but for overthrowing governments.](/assets/images/historical-precedents/historical-precedents-section-the-bw-academic.jpg)
       - Historical proof
     ![Gandhi's independence movement, civil rights, women's suffrage. All succeeded with 3.5 percent participation. We need 280 million people. That's still only 3.5 percent of Earth. Math keeps being encouraging.](/assets/images/historical-precedents/historical-precedents-section-historical-proof-bw-academic.jpg)
-  - When Good Intentions Met Reality (And Lost)
-    - Eisenhower's Warning: A 5-Star General Tried to Tell You
+  - You Have Advantages They Didn't {#advantages}
+    ![You have the internet now. And also 150,000 people die every day, which creates a certain sense of urgency. The landmine people didn't have either of those things. You're out of excuses.](/assets/images/proof/proof-section-you-have-advantages-they-didn-t-bw-academic.jpg)
+  - When Good Intentions Met Reality (And Lost) {#cautionary-tales}
+    - Eisenhower's Warning: A 5-Star General Tried to Tell You {#eisenhower}
     ![Every bomber built is a hospital not built, said the five-star general. Then everyone ignored him and built more bombers. He knew how these things go.](/assets/images/historical-precedents/historical-precedents-section-eisenhower-s-warning-a-5-star-general-tried-to-tell-you-bw-academic.jpg)
-    - The Nuclear Freeze Movement: Millions of People, Zero Results
+    - The Nuclear Freeze Movement: Millions of People, Zero Results {#nuclear-freeze}
     ![Asking defense contractors to be nice doesn't work. Offering them biotech profits does. Greed is easier to redirect than eliminate.](/assets/images/historical-precedents/historical-precedents-section-the-nuclear-freeze-movement-millions-of-people-zero-results-bw-academic.jpg)
-    - Occupy Wall Street: When "We're Angry" Isn't a Strategy
+    - Occupy Wall Street: When "We're Angry" Isn't a Strategy {#occupy}
     ![Occupy Wall Street had 50 demands and changed nothing. We have one demand. This is either much smarter or much sadder.](/assets/images/historical-precedents/historical-precedents-section-occupy-wall-street-when-we-re-angry-isn-t-a-strategy-bw-academic.jpg)
-  - On How Rich People Made Money Doing Crazy Things (And Why That Matters)
+  - On How Rich People Made Money Doing Crazy Things (And Why That Matters) {#financial-precedents}
     ![Investing in ending war sounds crazy until you remember people invested in pet rocks and Beanie Babies. At least this one might work.](/assets/images/historical-precedents/historical-precedents-section-on-how-rich-people-made-money-doin-bw-academic.jpg)
-    - On The Time Junk Bonds Saved Capitalism
+    - On The Time Junk Bonds Saved Capitalism {#milken}
       - Michael Milken & High-Yield ("Junk") Bonds
     ![Safe bonds pay 3 percent. Risky bonds pay 8 percent. World peace bonds pay 12 percent. Turns out you can put a price on everything, including virtue.](/assets/images/historical-precedents/historical-precedents-section-michael-milken-high-yield-junk-bonds-bw-academic.jpg)
-    - On The Time George Soros Broke England
+    - On The Time George Soros Broke England {#soros}
       - George Soros & The Quantum Fund
     ![A diagram illustrating the binary outcomes of Soros's high-stakes bet against the British Pound, showing the tension between private capital and government policy decisions.](/assets/images/historical-precedents/historical-precedents-section-george-soros-the-quantum-fund-bw-academic.jpg)
-    - On When Smart People Lost All Their Money (The Cautionary Tales)
+    - On When Smart People Lost All Their Money (The Cautionary Tales) {#cautionary-finance}
     ![Past financial disasters: no safeguards, pure chaos, everyone loses. This plan: many safeguards, organized chaos, probably fine. Progress is incremental.](/assets/images/historical-precedents/historical-precedents-section-on-when-smart-people-lost-all-their-money-the-cautionary-tales-bw-academic.jpg)
-  - The Ultimate Failsafe: The Worst-Case Scenario is Still a Win
+  - The Ultimate Failsafe: The Worst-Case Scenario is Still a Win {#failsafe}
     ![Worst case: we reduce global weaponry slightly and waste some money on science. Current case: mountains of bombs and no cancer cure. Hard choice.](/assets/images/historical-precedents/historical-precedents-section-4-the-ultimate-failsafe-the-worst-case-scenario-is-still-a-win-bw-academic.jpg)
     - Why?
     ![If this fails, we have fewer bombs. If it succeeds, we cure death. These are not symmetrical risks, but we treat them like they are.](/assets/images/historical-precedents/historical-precedents-section-why-bw-academic.jpg)
+  - How a dFDA Would Compare to History's Best Health Interventions {#dfda-comparison}
+  - In This Section
+  - Additional Evidence {#additional-evidence}
+    ![You're not inventing anything new. You're just combining things that already worked in places where people were paying attention. Innovation is mostly plagiarism with better marketing.](/assets/images/proof/proof-section-additional-evidence-bw-academic.jpg)
 
 #### knowledge/proof/body-as-repairable-machine.qmd
 **Title:** You Are a Meat Robot
@@ -1402,85 +1410,6 @@
     ![The game where money buys survival and survival needs money. Like Monopoly, but the board is America.](/assets/images/election-law/election-law-section-conclusion-democracy-as-designed-bw-academic.jpg)
   - Legal Notice
 
-#### knowledge/economics/victory-bonds.qmd
-**Title:** VICTORY Incentive Alignment Bonds
-**Description:** Step-by-step guide to creating perpetual bonds that fund a 1% treaty campaign
-**Stats:** 4,077 words | 534 lines | 28 images | ~30p
-
-  - VICTORY Incentive Alignment Bonds
-  - What You're Actually Building
-    ![Money goes in, saves humanity, pays dividends forever. Wall Street called it 'suspiciously sustainable.'](/assets/images/victory-bonds/victory-bonds-section-mechanism-overview-bw-academic.jpg)
-  - The Four Phases of Making Everyone Rich While Saving Humanity
-    - Phase 1: Collect Papers From People With Too Many Papers
-      - Who has that many papers
-    ![Rich people: give millions, save billions of lives. Medium rich people: give thousands, save millions of lives. Poor people: already knew cooperation works.](/assets/images/victory-bonds/victory-bonds-section-who-has-that-many-papers-bw-academic.jpg)
-    - Phase 2: Spend the Papers Correctly
-    ![40 percent lobbying, 30 percent infrastructure, 20 percent public engagement, 10 percent legal. Saving humanity requires more lawyers than science.](/assets/images/victory-bonds/victory-bonds-section-phase-2-spend-the-papers-correctly-bw-academic.jpg)
-    - Phase 3: Turn On the Money Faucet
-    ![80 percent cures disease, 10 percent pays investors, 10 percent bribes politicians. We need the last part because politicians won't save lives for free.](/assets/images/victory-bonds/victory-bonds-section-phase-3-turn-on-the-money-faucet-bw-academic.jpg)
-    - Phase 4: Watch Money Multiply Like Rabbits
-    ![$2.72 billion per year, every year, forever, for not dying. The actuaries called it 'offensively simple.'](/assets/images/victory-bonds/victory-bonds-section-phase-4-watch-money-multiply-like-rabbits-bw-academic.jpg)
-  - Calculate Your Numbers for Investors
-    - Show Them Where the Papers Come From
-    ![Take 1 percent from weapons, split it three ways, cure all disease. The diagram was so simple a child drew it. Adults spent 10 years arguing about the arrows.](/assets/images/victory-bonds/victory-bonds-section-global-spend-vs-treaty-allocation-bw-academic.jpg)
-    - When Math Becomes Obscene
-      - Even if you're extremely pessimistic
-      - This isn't complicated math
-    ![VICTORY Bonds: 8 percent annual returns forever. Venture Capital: maybe. Real Estate: depends. Medallion Fund: no you can't invest. Investors chose uncertainty.](/assets/images/victory-bonds/victory-bonds-section-this-isn-t-complicated-math-bw-academic.jpg)
-    - How Returns Scale From "Obscene" to "Is This Even Legal?"
-      - Why this actually happens
-    ![Year 1: cure Alzheimer's. Year 2: cure cancer. Year 3: politicians who oppose cures lose elections forever. Democracy finally does something useful.](/assets/images/victory-bonds/victory-bonds-section-why-this-actually-happens-bw-academic.jpg)
-    - Structure the Security Package
-    ![Five layers of legal protection ensuring you get paid even if governments collapse. We learned from history: trust nobody, especially nations.](/assets/images/victory-bonds/victory-bonds-section-structure-the-security-package-bw-academic.jpg)
-  - What Full Success Looks Like
-    ![Cures create voters, voters demand more cures, cures create more voters. It's a death spiral, but for life.](/assets/images/victory-bonds/victory-bonds-section-what-full-success-looks-like-bw-academic.jpg)
-  - Explain the 80%/10%/10% Split
-    ![80 percent mission, 10 percent politics, 10 percent profit. A business model so ethical it had to be explained three times before investors believed it was legal.](/assets/images/victory-bonds/victory-bonds-section-explain-the-split-bw-academic.jpg)
-  - Set Up the Legal Structure
-    ![One corporation, four legal entities, infinite loopholes for doing good. Lawyers helped humanity for once.](/assets/images/victory-bonds/victory-bonds-section-set-up-the-legal-structure-bw-academic.jpg)
-    - Structure the Bond Instrument
-    ![You own a bond, the bond owns part of the treaty, the treaty owns 1 percent of all weapons money forever. Property rights finally save lives.](/assets/images/victory-bonds/victory-bonds-section-structure-the-bond-instrument-bw-academic.jpg)
-    - Create Milestone-Based Releases
-    ![Phase 1: raise money. Phase 2: pass treaty. Phase 3: cure everything. The hardest part was Phase 1 because rich people don't like giving away money even to save themselves.](/assets/images/victory-bonds/victory-bonds-section-create-milestone-based-releases-bw-academic.jpg)
-    - Address Each Risk Category
-    ![Project risks: maybe we fail to save humanity. Investor risks: maybe you die before getting paid. The second one worried people more.](/assets/images/victory-bonds/victory-bonds-section-address-each-risk-category-bw-academic.jpg)
-      - Project Risks
-    ![Political risk mitigation: bribe politicians legally. Execution risk mitigation: hire competent people. Revolutionary concepts in 2026.](/assets/images/victory-bonds/victory-bonds-section-project-risks-bw-academic.jpg)
-      - Investor-Specific Risks
-    ![Your money is locked for 18 to 36 months while we save civilization. Then you can sell your shares to someone who doesn't believe in extinction.](/assets/images/victory-bonds/victory-bonds-section-investor-specific-risks-bw-academic.jpg)
-  - What This Beats (Spoiler: Everything)
-    - Show Investors This Table
-  - The Expansion Flywheel
-    - Explain the flywheel to investors
-    ![Cures make money, money buys more cures, more cures make more money. Capitalism accidentally does something good and is deeply confused by the experience.](/assets/images/victory-bonds/victory-bonds-section-expansion-flywheel-bw-academic.jpg)
-  - Set Minimum Investment Thresholds
-    - Structure Your Minimums
-    ![You need different amounts of money to be allowed to make more money, depending on how much money you already have. The rich call this 'protecting investors.'](/assets/images/victory-bonds/victory-bonds-section-structure-your-minimums-bw-academic.jpg)
-    - Draft Your Term Sheet
-    ![Money goes in from treaty, money comes out to bondholders. It's like a water fountain, but the water is money and the fountain is preventing war.](/assets/images/victory-bonds/victory-bonds-section-draft-your-term-sheet-bw-academic.jpg)
-  - When Rich People Ask Difficult Questions
-    - "This sounds like a Ponzi scheme run by someone who failed math."
-    ![One circle takes money from new investors to pay old investors until it collapses. The other circle takes money from weapons to fund cures and pays investors forever. Spot the difference.](/assets/images/victory-bonds/victory-bonds-section-this-sounds-like-a-ponzi-scheme-run-by-someone-who-failed-math-bw-academic.jpg)
-    - "What happens when this fails and I lose my billion dollars?"
-    ![Put in one billion dollars. Either get back 2.72 billion dollars, or get nothing and humanity continues destroying itself. No middle ground.](/assets/images/victory-bonds/victory-bonds-section-what-happens-when-this-fails-and-i-lose-my-billion-dollars-bw-academic.jpg)
-    - "What could possibly go wrong?"
-      - Project Risks
-    ![Bad things that could happen, and the things we'll do to stop them. It's like duck and cover, but for democracy.](/assets/images/victory-bonds/victory-bonds-section-project-risks-bw-academic.jpg)
-      - Investor Risks
-    ![Yes, your money is locked up for a bit. But then it pays forever. Like buying a immortal golden goose, if geese could end disease.](/assets/images/victory-bonds/victory-bonds-section-investor-risks-bw-academic.jpg)
-    - "How is this different from just donating to charity?"
-    ![Charity: give money away, feel good, get tax break. VICTORY Bonds: give money away, feel good, get 272 percent back. One of these seems objectively better.](/assets/images/victory-bonds/victory-bonds-section-how-is-this-different-from-just-donating-to-charity-bw-academic.jpg)
-    - When they want detailed financials
-      - Direct them
-  - The One-Page Summary That Makes Calculators Weep
-    ![The more people you save, the more money you make. Capitalism finally discovers that helping people is profitable.](/assets/images/victory-bonds/victory-bonds-section-the-one-page-summary-that-makes-calculators-weep-bw-academic.jpg)
-    - What you get
-    - What could go wrong
-  - Related Implementation Guides
-    - For detailed execution plans
-      - The core mechanism is stupid simple
-    ![Investors give money to convince politicians to redirect war budgets to medical research, which pays the investors, politicians, and researchers. The circle of life, but useful.](/assets/images/victory-bonds/victory-bonds-section-the-core-mechanism-is-stupid-simple-bw-academic.jpg)
-
 #### knowledge/strategy/legislation-package.qmd
 **Title:** The Legislation Package
 **Description:** How to Write Laws That Actually Pass
@@ -1649,51 +1578,6 @@
     ![Organizations used to keep secrets from each other. This is a drawing of them still keeping secrets, but feeling bad about it.](/assets/images/ai-coordination-army/ai-coordination-army-section-how-you-prevent-data-silos-the-tragedy-of-the-nonprofit-commons-bw-academic.jpg)
     - Rule 1 - Share to Play
     ![You give them your data. They give you money and a robot. It's like selling your diary, if your diary could cure cancer.](/assets/images/ai-coordination-army/ai-coordination-army-section-rule-1-share-to-play-bw-academic.jpg)
-
-#### knowledge/strategy/co-opting-defense-contractors.qmd
-**Title:** Making Friends with the Military-Industrial Complex
-**Description:** Lobbyists are like pigeons. They go where the food is. This chapter teaches you how to move the food.
-**Stats:** 1,751 words | 296 lines | 17 images | ~16p
-
-  - The Solution
-    ![Current system: Pay people to block progress. Proposed system: Pay the same people to support progress. Incentives, redirected.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-solution-bw-academic.jpg)
-  - The Offer
-    ![The offer: 272% returns, early access to cures, and a legacy besides 'warmonger.' Even defense lobbyists can do math.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-offer-bw-academic.jpg)
-  - The Math
-    ![Current job: Get rich selling weapons; die hated. New job: Get richer ending disease; die beloved. Career pivot, simplified.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-incentive-comparison-bw-academic.jpg)
-  - Why They Take It
-    - It's More Papers
-    - The Treaty Doesn't Actually Hurt Them
-    ![The defense industry keeps 99% of its budget. They lose 1% and gain trillions in cure markets. This is the easiest math problem in history.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-treaty-doesn-t-actually-hurt-them-bw-academic.jpg)
-    - Political Cover
-  - How You Do This
-    - Step 1: Identify Targets
-    ![Target audience: 500 defense lobbyists, 200 CEOs, 1,000 investors, and 300 ex-officials. The people currently blocking progress get the first offer.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-step-1-identify-targets-bw-academic.jpg)
-    - Step 2: The Meeting
-    ![Support the treaty: earn 272% returns. Oppose it: earn normal lobbying fees. The defense sector keeps 99% either way. Alignment, achieved.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-step-2-the-meeting-bw-academic.jpg)
-    - Step 3: The Flip
-    ![First one flips: brave. Tenth one flips: smart. Hundredth one flips: inevitable. Last one flips: too late for the good bond rates.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-step-3-the-flip-bw-academic.jpg)
-    - Step 4: Active Support
-    ![Stage 1: Identify blockers. Stage 2: Offer money. Stage 3: They accept money. Stage 4: They lobby for you. Corruption, but backwards.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-lobbying-flip-process-bw-academic.jpg)
-  - Budget
-    ![It costs less to bribe senators than to argue with them. This is what you call democracy.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-budget-bw-academic.jpg)
-  - Why This Works
-    - You're Using Their Own Playbook
-    ![The weapons lobby turns $127 million into $181 billion. You could do the same thing, but for not dying. Novel concept.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-you-re-using-their-own-playbook-bw-academic.jpg)
-    - It's Legal
-    ![All the different ways to legally buy politicians, organized by which ones make you feel better about yourself.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-it-s-legal-bw-academic.jpg)
-    - It Might Work
-    ![Some people take money early, some take it late, some refuse it entirely and feel superior. Guess which group is smallest.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-it-might-work-bw-academic.jpg)
-  - What You're NOT Asking
-    ![Defense contractors keep 99% of their money and get extra cash for being nice. They're crying all the way to the bank about the hardship.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-what-you-re-not-asking-bw-academic.jpg)
-  - The Irony
-    ![The same machine that makes bombs can make medicine. You just point it in a different direction. Like a very expensive garden hose.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-irony-bw-academic.jpg)
-  - What They Tell Their Boards
-    ![Three different types of rich people explaining why they definitely care about saving lives, and not at all about the 8% returns. Definitely.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-what-they-tell-their-boards-bw-academic.jpg)
-  - Optimistic Timeline (If This Works)
-    ![How long it takes for politicians to go from 'this is outrageous' to 'I supported this all along.' Three years, apparently.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-adoption-timeline-bw-academic.jpg)
-  - Pessimistic Timeline (If This Doesn't Work)
-  - Summary
 
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis

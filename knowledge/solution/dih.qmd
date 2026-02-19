@@ -265,7 +265,7 @@ Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
-| [VICTORY Bond investors](../economics/victory-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
+| [VICTORY Bond investors](incentive-alignment-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
 | [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
 | **Research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Patient subsidies (market allocation) |
 

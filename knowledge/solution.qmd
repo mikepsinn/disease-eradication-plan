@@ -98,7 +98,7 @@ Researchers set their own price. Patients choose which trials to join. Money flo
 
 The solution only works if [everyone wins by winning](solution/aligning-incentives.qmd). Here's who gets what:
 
-**[Defense contractors](strategy/co-opting-defense-contractors.qmd):** Keep {{< var defense_sector_retention_pct >}} of budget + {{< var victory_bond_annual_return_pct >}} returns on bonds
+**[Defense contractors](solution/aligning-incentives.qmd#defense-contractors-teaching-merchants-of-death-to-love-life):** Keep {{< var defense_sector_retention_pct >}} of budget + {{< var victory_bond_annual_return_pct >}} returns on bonds
 **Pharmaceutical companies:** Patients pay them instead of vice versa
 **Politicians:** Campaign donations + not losing elections
 **Insurance companies:** They want you either dead or immortal, anything but expensively lingering. Cures help.
@@ -115,7 +115,7 @@ The goal isn't 1%. The goal is 100%. The 1% treaty is just the door, not the des
 
 The {{< var iab_political_incentive_funding_pct >}} going to [Incentive Alignment Bonds](appendix/incentive-alignment-bonds-paper.qmd) creates a perpetual political machine that pushes for expansion. When 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, the pressure doubles. The political pressure for expansion *accelerates* with each success. This creates a [ratchet that can eventually redirect all military spending](appendix/incentive-alignment-bonds-paper.qmd) from war to health.
 
-[VICTORY Incentive Alignment Bonds](economics/victory-bonds.qmd) are the specific instrument. They align investors ({{< var victory_bond_funding_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} career incentives), and patients ({{< var dih_treasury_medical_research_pct >}} cures) with the same outcome.
+[VICTORY Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd) are the specific instrument. They align investors ({{< var victory_bond_funding_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} career incentives), and patients ({{< var dih_treasury_medical_research_pct >}} cures) with the same outcome.
 
 ![When you give people money to cure diseases, they get more money to cure more diseases.](/assets/images/solution/solution-section-on-why-1-is-just-the-beginning-bw-academic.jpg)
 
@@ -133,7 +133,7 @@ And the benefits cascade beyond medicine. Addiction, poverty, radicalization, cr
 
 ## Why This Isn't Clinically Insane
 
-[History shows this works](proof/historical-precedents.qmd):
+[History shows this works](proof.qmd#historical-precedents):
 
 - Post-WWII: Cut military {{< var post_ww2_military_cut_pct >}}, greatest boom ever
 - Post-Cold War: Cut military 3%, 1990s prosperity
@@ -162,8 +162,7 @@ The rest of Part II explains each component in detail:
 - [Wishocracy](solution/wishocracy.qmd): How to let billions of people control a budget without lobbyists stealing it
 - [The dFDA](solution/dfda.qmd): How to achieve {{< var dfda_trial_cost_reduction_factor >}} cost reduction in drug trials
 - [Aligning Incentives](solution/aligning-incentives.qmd): How to make selfishness save humanity
-- [Co-opting Defense Contractors](strategy/co-opting-defense-contractors.qmd): How to make the military-industrial complex cure cancer
-- [VICTORY Bonds](economics/victory-bonds.qmd): How everyone makes money
+- [VICTORY Bonds](solution/incentive-alignment-bonds.qmd): How everyone makes money
 - [The Peace Dividend](economics/peace-dividend.qmd): Why curing disease accidentally solves everything else
 
 That's it. That's the plan.

@@ -101,17 +101,16 @@ book:
         # REMOVED: Merged unique content (biology fixes society) into solution.qmd
         # - knowledge/solution/war-on-disease.qmd
         - knowledge/solution/aligning-incentives.qmd # ✅ Aligning Incentives ~7p
-        - knowledge/solution/incentive-alignment-bonds.qmd # ✅ Incentive Alignment Bonds ~12p
+        - knowledge/solution/incentive-alignment-bonds.qmd # ✅ VICTORY Incentive Alignment Bonds ~28p (merged with victory-bonds.qmd)
         - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
 
     - part: "The Evidence"
       chapters:
-        - knowledge/proof.qmd # ✅ Part III Intro ~6p
-        - knowledge/proof/historical-precedents.qmd # ✅ Historical Precedent ~8p
+        - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         # STANDALONE PAPER - see impact.warondisease.org
         # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
-        # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in victory-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
+        # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in incentive-alignment-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
         # - knowledge/call-to-action/your-personal-benefits.qmd
         - knowledge/futures.qmd # ✅ Intro to Paths ~1p
         - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
@@ -124,13 +123,15 @@ book:
         - knowledge/strategy/nonprofit-coalition-strategy.qmd # ✅ Why every nonprofit should support a 1% treaty ~4p
         - knowledge/legal/legal-framework.qmd # ✅ (DETAILED 4-PART LEGAL ARCHITECTURE) ~9p
         - knowledge/legal/election-law.qmd # ✅ Election Law ~6p
-        - knowledge/economics/victory-bonds.qmd # ✅ The Investment Vehicle (formal by design) ~14p
+        # REMOVED: Merged into knowledge/solution/incentive-alignment-bonds.qmd
+        # - knowledge/economics/victory-bonds.qmd
         - knowledge/strategy/legislation-package.qmd # ✅ Legislation Package ~7p
         - knowledge/strategy/global-referendum.qmd # ✅ Global Referendum (IMPROVED) ~10p
         - knowledge/solution/ai-coordination-army.qmd # ✅ (EXCELLENT voice - "goldfish organizing a space program") ~12p
         # REMOVED: Merged messaging strategy, content ladder, and meme arsenal into campaign-budget.qmd
         # - knowledge/strategy/viral-marketing.qmd
-        - knowledge/strategy/co-opting-defense-contractors.qmd # ✅ PROMOTED ~4p
+        # REMOVED: Merged into knowledge/solution/aligning-incentives.qmd defense section
+        # - knowledge/strategy/co-opting-defense-contractors.qmd
         # REMOVED: Placeholder links and references to bonds that don't exist yet
         # - knowledge/call-to-action/three-actions.qmd
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
