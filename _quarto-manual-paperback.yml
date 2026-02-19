@@ -163,6 +163,9 @@ metadata:
 format:
   docx:
     output-file: "How-to-End-War-and-Disease-Paperback.docx"
+    author:
+      - "By Wishonia"
+      - "Translated by Mike P. Sinn"
     toc: true
     toc-depth: 1
     number-sections: false

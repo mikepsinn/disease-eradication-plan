@@ -13,6 +13,8 @@ aliases:
 If this model is right and these policies are adopted, you will have helped to save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and prevent {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of unnecessary suffering. (Which would be nice.)
 :::
 
+{{< var diseases_without_effective_treatment >}} diseases have no effective treatment. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing that backlog takes {{< var status_quo_queue_clearance_years >}}. We're proposing integrating pragmatic clinical trials into routine healthcare, which increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, cuts the backlog to {{< var dfda_queue_clearance_years >}}, and gets treatments to patients an average of {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner.
+
 The [insanely long full paper](dfda-impact-paper.qmd) and [really boring calculations and uncertainty analysis page](parameters-and-calculations.qmd) contain complete derivations.
 Please flag any assumption you find insane, calculation steps that needs revision, or any framing that would not survive peer review. Any feedback to [m@warondisease.org](mailto:m@warondisease.org) would be greatly appreciated!  :D
 
