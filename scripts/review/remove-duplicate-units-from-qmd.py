@@ -44,7 +44,7 @@ def extract_units_from_parameters() -> Dict[str, str]:
                     unit_text = None
 
                     # Skip units that don't create text duplicates
-                    if unit in ("USD", "percentage", "ratio"):
+                    if unit in ("USD", "USD/year", "percentage", "ratio", "rate", "multiplier"):
                         continue
 
                     # Map technical units to prose text
@@ -63,6 +63,11 @@ def extract_units_from_parameters() -> Dict[str, str]:
                         "drugs": "drugs",
                         "trials": "trials",
                         "lives": "lives",
+                        "compounds": "compounds",
+                        "combinations": "combinations",
+                        "relationships": "relationships",
+                        "physicians": "physicians",
+                        "trials/year": "trials/year",
                     }
 
                     unit_text = unit_map.get(unit)
@@ -124,6 +129,24 @@ def find_and_replace_duplicates(
                     # Replace with just the variable reference (group 1)
                     content = pattern.sub(r'\1', content)
                     file_replacements += len(matches)
+
+                # For trials/year variables, also match "trials per year"
+                if unit == "trials/year":
+                    alt_pattern = create_pattern(var_name, "trials per year")
+                    matches = list(alt_pattern.finditer(content))
+                    if matches:
+                        content = alt_pattern.sub(r'\1', content)
+                        file_replacements += len(matches)
+
+                # For years variables, also match -year compound adjective
+                # e.g., {{< var efficacy_lag_years >}}-year → renders as "8.2 years-year"
+                if unit == "years":
+                    var_pat = r'\{\{< var ' + re.escape(var_name) + r' >\}\}'
+                    year_pat = re.compile(f'({var_pat})-years?\\b', re.IGNORECASE)
+                    matches = list(year_pat.finditer(content))
+                    if matches:
+                        content = year_pat.sub(r'\1', content)
+                        file_replacements += len(matches)
 
             if content != original_content:
                 files_modified += 1

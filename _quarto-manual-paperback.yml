@@ -190,6 +190,10 @@ format:
           % Suppress default title page (we use a custom cover image instead)
           \renewcommand{\maketitle}{}
       - text: |
+          % Align page content to top instead of vertically justifying
+          % (prevents big gaps between sections when images float to next page)
+          \raggedbottom
+      - text: |
           \paperurl{https://manual.WarOnDisease.org}
       - text: |
           % Use Arabic numerals for appendix chapters
