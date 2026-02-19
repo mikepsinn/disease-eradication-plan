@@ -6,6 +6,9 @@ toc: false
 number-sections: false
 aliases:
   - /summary
+format:
+  html:
+    toc: true
 ---
 
 ::: {.callout-important}
