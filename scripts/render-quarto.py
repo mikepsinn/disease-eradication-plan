@@ -547,6 +547,8 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         # Options: "html" (keep raw <a> tags), "markdown" (convert to [text](path.qmd)),
         #          "none" (strip to plain text)
         "parameter_link_format": dih_render.get("parameter-link-format", "html"),
+        # BibTeX fields to strip from references.bib (e.g., ["abstract", "note"] to shorten print refs)
+        "strip_bib_fields": dih_render.get("strip-bib-fields", []),
     }
 
 
@@ -789,6 +791,86 @@ def _convert_parameter_links(variables_path: Path, mode: str = "markdown", verbo
     return n
 
 
+def _strip_bib_fields(bib_path: Path, fields: List[str], verbose: bool = True) -> int:
+    """
+    Strip specified fields from BibTeX entries in a .bib file.
+
+    Removes entire field lines (including multi-line values enclosed in braces)
+    to reduce reference list length in print builds.
+
+    Args:
+        bib_path: Path to the .bib file to modify.
+        fields: List of BibTeX field names to strip (e.g., ["abstract", "note"]).
+        verbose: Whether to print status messages.
+
+    Returns:
+        Number of field occurrences stripped.
+    """
+    if not bib_path.exists() or not fields:
+        return 0
+
+    with open(bib_path, encoding="utf-8") as f:
+        content = f.read()
+
+    original = content
+    stripped = 0
+
+    for field in fields:
+        # Match field = {value}, or field = {multi-line value},
+        # Handles nested braces inside the value.
+        pattern = re.compile(
+            r'^\s*' + re.escape(field) + r'\s*=\s*\{',
+            re.MULTILINE | re.IGNORECASE
+        )
+        result_lines: List[str] = []
+        skip_mode = False
+        brace_depth = 0
+
+        for line in content.split('\n'):
+            if skip_mode:
+                # Count braces to find the end of the field value
+                for ch in line:
+                    if ch == '{':
+                        brace_depth += 1
+                    elif ch == '}':
+                        brace_depth -= 1
+                        if brace_depth <= 0:
+                            skip_mode = False
+                            break
+                continue
+
+            if pattern.match(line):
+                stripped += 1
+                # Count opening/closing braces on this line
+                brace_depth = 0
+                for ch in line:
+                    if ch == '{':
+                        brace_depth += 1
+                    elif ch == '}':
+                        brace_depth -= 1
+                if brace_depth > 0:
+                    # Value spans multiple lines
+                    skip_mode = True
+                # Either way, skip this line
+                continue
+
+            result_lines.append(line)
+
+        content = '\n'.join(result_lines)
+
+    if content != original:
+        with open(bib_path, "w", encoding="utf-8", newline='\n') as f:
+            f.write(content)
+
+    if verbose:
+        if stripped > 0:
+            print(f"[OK] Stripped {stripped} BibTeX fields ({', '.join(fields)}) from {bib_path.name}", flush=True)
+        else:
+            print(f"[*] No matching BibTeX fields found to strip", flush=True)
+
+    return stripped
+
+
 def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]:
     """
     Create temp build directory with cross-site link rewriting.
@@ -930,6 +1012,12 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     if link_format != "html":
         target_vars = build_temp / "_variables.yml"
         _convert_parameter_links(target_vars, mode=link_format, verbose=verbose)
+
+    # Strip specified BibTeX fields from references.bib (e.g., abstract/note for shorter print refs)
+    strip_fields = metadata.get("strip_bib_fields", [])
+    if strip_fields:
+        for bib_file in build_temp.glob("references*.bib"):
+            _strip_bib_fields(bib_file, strip_fields, verbose=verbose)
 
     # Use per-paper filtered parameters-and-calculations.qmd if available
     # This ensures the appendix only includes parameters used by this paper.

@@ -12,6 +12,7 @@ dih-render:
   show-confidence-intervals: false
   docx-output-file: "How-to-End-War-and-Disease-Paperback.docx"
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
+  strip-bib-fields: [abstract, note]
 
 book:
   title: 'How to End War and Disease'
