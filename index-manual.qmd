@@ -10,7 +10,11 @@ aliases:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ::: {.content-hidden when-format="html"}
+::: {.content-hidden when-format="pdf"}
+::: {.content-hidden when-format="docx"}
 ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
+:::
+:::
 :::
 
 Hello, humans.
