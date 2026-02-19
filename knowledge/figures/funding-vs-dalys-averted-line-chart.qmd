@@ -20,6 +20,7 @@ from dih_models.dfda_trial_economics import (
 setup_chart_style()
 
 # ── Computation via shared library ─────────────────────────────────────
+
 sweep = compute_across_funding_levels()
 funding_levels = sweep["funding_levels"]
 dalys_averted = sweep["dalys_averted"]
@@ -29,6 +30,7 @@ ceiling_dalys = get_ceiling_dalys()
 efficacy_only_dalys = get_efficacy_lag_dalys()
 
 # Unpack proposed values for annotations
+
 pf = proposed["funding"]
 proposed_multiplier = proposed["multiplier"]
 proposed_clearance = proposed["clearance_years"]
@@ -36,6 +38,7 @@ proposed_total_shift = proposed["total_shift"]
 proposed_dalys = proposed["dalys_averted"]
 
 # ── Plot ────────────────────────────────────────────────────────────────
+
 fig, ax = plt.subplots(figsize=(16, 11))
 
 valid = ~np.isnan(dalys_averted)
@@ -43,6 +46,7 @@ ax.plot(funding_levels[valid] / 1e9, dalys_averted[valid] / 1e9,
         linewidth=3.5, color=COLOR_BLACK, linestyle='-')
 
 # Asymptotic ceiling
+
 ax.axhline(y=ceiling_dalys / 1e9, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.5)
 ax.text(0.03, 0.97,
         f'Ceiling: {ceiling_dalys/1e9:.0f}B DALYs\n(all avoidable diseases treated\nas fast as possible)',
@@ -51,6 +55,7 @@ ax.text(0.03, 0.97,
                   edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
 
 # Efficacy lag baseline
+
 ax.axhline(y=efficacy_only_dalys / 1e9, color=COLOR_BLACK, linestyle='--', linewidth=1.5, alpha=0.4)
 ax.text(0.03, 0.12,
         f'Efficacy lag elimination only:\n{efficacy_only_dalys/1e9:.0f}B DALYs (fixed baseline,\nindependent of funding)',
@@ -60,6 +65,7 @@ ax.text(0.03, 0.12,
                   edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
 
 # Mark proposed funding
+
 ax.plot(pf / 1e9, proposed_dalys / 1e9,
         marker='o', markersize=14, color=COLOR_BLACK, zorder=5)
 
@@ -81,6 +87,7 @@ ax.annotate(
     arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, linewidth=2.5))
 
 # Causal explanation annotations
+
 ax.text(0.97, 0.20,
         'High funding: acceleration\napproaches ceiling at\n1/k saturation',
         transform=ax.transAxes, fontsize=20, color=COLOR_BLACK, va='top', ha='right',
@@ -89,6 +96,7 @@ ax.text(0.97, 0.20,
                   edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
 
 # Axes
+
 ax.set_xscale('log')
 ax.set_xlabel('Annual Funding Level ($B)', fontsize=22, fontweight='bold', color=COLOR_BLACK)
 ax.set_ylabel('Total DALYs Averted (Billions)', fontsize=22, fontweight='bold', color=COLOR_BLACK)
@@ -117,6 +125,7 @@ add_png_metadata(
 plt.show()
 
 # Print verification
+
 print(f"\nVerification at proposed funding (${pf/1e9:.1f}B/yr):")
 print(f"  Trial capacity multiplier: {proposed_multiplier:.1f}x")
 print(f"  Queue clearance: {proposed_clearance:.1f} years")

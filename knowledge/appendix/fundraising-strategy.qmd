@@ -12,7 +12,6 @@ image: /assets/og-images/knowledge/appendix/fundraising-strategy-og-retro-academ
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 > **Related:** [Financial Plan Overview](../economics/financial-plan.qmd) | [Campaign Budget](../economics/campaign-budget.qmd)
 
 <!-- This file contains content consolidated from orphaned fundraising files -->
@@ -29,7 +28,6 @@ Think of it as a {{< var treaty_campaign_total_cost >}} vending machine that dis
 
 ![Spend 1 billion once, get 27 billion every year forever. It's the best investment humans have ever ignored.](/assets/images/fundraising-strategy/fundraising-strategy-section-on-how-to-raise-bw-academic.jpg)
 
-
 The economics are stupidly obvious. The challenge is convincing people the vending machine is real.
 
 **Total Requirement:** {{< var treaty_campaign_total_cost >}} over 36 months
@@ -40,7 +38,6 @@ The economics are stupidly obvious. The challenge is convincing people the vendi
 
 ![How to start a health revolution: get some money, tell people about it, test it somewhere small, then count how many people join. It's like planning a very important party.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-1-seed-round-250m-400m-bw-academic.jpg)
 
-
 - Build public engagement platform and policy frameworks for a potential referendum
 - Prove model in pilot countries
 - **Milestone:** 50M verified participants OR demonstrated public support for the treaty in a G20 nation
@@ -48,7 +45,6 @@ The economics are stupidly obvious. The challenge is convincing people the vendi
 #### Phase 2: Series A ($500M - $1B)
 
 ![Phase 2: convince the seven richest countries to try it, recruit 280 million people. That's more people than live in Brazil.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-2-series-a-500m-1b-bw-academic.jpg)
-
 
 - Scale to all G7 nations
 - Achieve {{< var global_population_activism_threshold_pct >}} global participation (280M people)
@@ -58,7 +54,6 @@ The economics are stupidly obvious. The challenge is convincing people the vendi
 
 ![How to get governments to sign: talk to diplomats, teach the public, make them vote yes, give them money. Democracy, but with diagrams.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-3-growth-round-500m-1-1b-bw-academic.jpg)
 
-
 - Foster conditions for ratification in major powers (US, EU, China) through public education and diplomatic engagement
 - Lay the groundwork for the future capitalization of your 1% Treaty Fund upon treaty ratification
 - **Milestone:** First $1B disbursement
@@ -66,7 +61,6 @@ The economics are stupidly obvious. The challenge is convincing people the vendi
 ### Key Innovation: Nobody Gets Paid Unless It Works
 
 ![Everyone gets paid if it works, nobody gets paid if it fails. Turns out people try harder when their money depends on not failing.](/assets/images/fundraising-strategy/fundraising-strategy-section-key-innovation-nobody-gets-paid-unless-it-works-bw-academic.jpg)
-
 
 All major costs are structured so people only get paid if they succeed:
 
@@ -85,13 +79,11 @@ All major costs are structured so people only get paid if they succeed:
 
 ![Before the treaty: 1 billion dollars to convince people. After the treaty: 27 billion dollars per year to actually cure diseases. The convincing costs less than the doing.](/assets/images/fundraising-strategy/fundraising-strategy-section-capital-structure-campaign-vs-imple-bw-academic.jpg)
 
-
 #### Why {{< var treaty_campaign_total_cost >}}?
 
 **The campaign** ({{< var treaty_campaign_total_cost >}}) is NOT building your dFDA - it's getting people to vote for the treaty and lobbying governments to sign it. Your dFDA gets built AFTER the treaty passes using the {{< var treaty_annual_funding >}}/year revenue.
 
 ![Drug companies and weapons makers spend more on lobbying every year than we need to spend once to redirect 27 billion dollars forever. They're very good at protecting their money.](/assets/images/fundraising-strategy/fundraising-strategy-section-why-var-treaty-campaign-total-cost-bw-academic.jpg)
-
 
 **Why this amount?** To significantly exceed combined annual lobbying spend of:
 
@@ -129,7 +121,6 @@ All major costs are structured so people only get paid if they succeed:
 
 ![Bonds versus donations. With donations, you give money and feel good. With bonds, you give money, get more money back, and diseases get cured. Both make you feel good, but one is illegal.](/assets/images/fundraising-strategy/fundraising-strategy-section-why-victory-incentive-alignment-bon-bw-academic.jpg)
 
-
 **Investor alignment**: Returns only pay if treaty passes - investors are incentivized to fund maximum lobbying power (not penny-pinch like foundations).
 
 **Speed**: Can raise {{< var treaty_campaign_total_cost >}} in 12-24 months (like SPACs) vs. 10+ years for foundation grants (marriage equality took 11 years to raise $153M).
@@ -164,7 +155,6 @@ This is NOT part of the {{< var treaty_campaign_total_cost >}} campaign budget. 
 
 ![How to spend 27 billion dollars per year on health: split it between trials, data, technology, and global coordination. It's a budget, but for saving lives instead of ending them.](/assets/images/fundraising-strategy/fundraising-strategy-section-post-treaty-implementation-var-treaty-annual-funding-year-bw-academic.jpg)
 
-
 #### Legal Structure: Two Separate Entities
 
 ##### Entity 1: Nonprofit Foundation (501c3)
@@ -187,7 +177,6 @@ This is NOT part of the {{< var treaty_campaign_total_cost >}} campaign budget. 
 
 **Coordination**: Shared board members, information sharing agreements, but legally separate for compliance.
 
-
 ![The legal wall between the charity part and the political part. Americans invented this because they don't trust themselves to keep money separate from voting.](/assets/images/fundraising-strategy/fundraising-strategy-section-legal-structure-firewall-bw-academic.jpg)
 
 #### Nonprofit Compliance Checklist
@@ -206,7 +195,6 @@ For foundations/donors to feel comfortable funding:
 ### Funding Model Comparison: What Actually Works
 
 ![Different ways to fund big campaigns and whether they worked. Some grow like trees, some grow like rabbits, some die like houseplants.](/assets/images/fundraising-strategy/fundraising-strategy-section-funding-model-comparison-what-actually-works-bw-academic.jpg)
-
 
 To understand realistic funding strategies, we examined historical evidence from similar large-scale campaigns. The data shows distinct patterns in how successful campaigns were funded and scaled:
 
@@ -231,7 +219,6 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ![The plan: ask rich people for money, spend 3 to 5 years testing it, build a charity that lasts forever. Like a startup, but for not dying.](/assets/images/fundraising-strategy/fundraising-strategy-section-how-it-would-work-bw-academic.jpg)
 
-
 - Approach Gates, Wellcome Trust, Open Society, Chan Zuckerberg Initiative
 - Pitch: "Fund a decentralized framework for drug assessment (dFDA) / Wishocracy platforms as civic infrastructure"
 - Timeline: 3-5 years of grant applications and pilot programs
@@ -240,7 +227,6 @@ To understand realistic funding strategies, we examined historical evidence from
 ##### Evidence
 
 ![How much rich people spent campaigning for gay marriage, eliminating polio, and privatizing schools. Turns out you can buy social change if you're patient and wealthy.](/assets/images/fundraising-strategy/fundraising-strategy-section-evidence-bw-academic.jpg)
-
 
 - Largest foundation-funded advocacy: Marriage equality ($153M over 11 years)
 - Polio: $500M over 20 years before Gates joined with $2B
@@ -265,7 +251,6 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ![We need 442 million dollars. We have 10 to 20 million dollars. We have 11 years. There are many laws against this. It's going great.](/assets/images/fundraising-strategy/fundraising-strategy-section-cons-bw-academic.jpg)
 
-
 **Verdict:** ✗ Too slow, wrong tool for political campaign
 
 #### Model B: VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) (Traditional Securities) ($500M-$1B)
@@ -273,7 +258,6 @@ To understand realistic funding strategies, we examined historical evidence from
 ##### How it would work
 
 ![How money flows from treaty signatures to investor pockets. Ten percent goes to the people who paid for it. The SEC approved this, which means it's legal but confusing.](/assets/images/fundraising-strategy/fundraising-strategy-section-how-it-would-work-bw-academic.jpg)
-
 
 - Issue registered securities offering {{< var victory_bond_annual_return_pct >}} from treaty revenue
 - Target accredited investors, family offices, hedge funds
@@ -306,7 +290,6 @@ To understand realistic funding strategies, we examined historical evidence from
 **Realistic assessment:** Could raise $100M-$500M if pilots show proof of concept.
 
 ![The Reg A+ timeline. Year 1: prove it works. Year 2: raise more money. Year 3: raise even more money. Each step requires the previous step to not fail.](/assets/images/fundraising-strategy/fundraising-strategy-section-cons-bw-academic.jpg)
-
 
 **Verdict:** ✓ Viable but needs proof first (Phase 2-3, not Phase 1)
 
@@ -433,7 +416,6 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ![Phase 1: get 10 to 20 million from rich people, use it to prove this works in one or two countries. SAFE notes means the investors get rewarded later if we don't fail.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-1-pilot-10-20m-years-1-2-bw-academic.jpg)
 
-
 - **Source**: Angel investors (tech billionaires, crypto whales)
 - **Evidence**: Every successful campaign started with small proof
 - **Structure**: SAFE notes or convertible debt
@@ -444,7 +426,6 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ![Phase 2: ask institutions for much more money, route it through complicated financial structures, spend it on scaling up. Institutions means organizations too big to say yes quickly.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-2-campaign-100-200m-years-3-5-bw-academic.jpg)
 
-
 - **Source**: VICTORY Incentive Alignment Bonds (traditional securities) + military contractor conversion
 - **Evidence**: Marriage equality ($153M), Obamacare ($47M), SPACs ($300M average)
 - **Structure**: Reg A+ offering or private placement
@@ -454,7 +435,6 @@ To understand realistic funding strategies, we examined historical evidence from
 ###### Phase 3: Implementation ({{< var treaty_annual_funding >}}/year, Year 6+)
 
 ![Phase 3: governments sign the treaty, money flows into the health system, 10 percent goes back to bond investors. Capitalism, but for curing things.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-3-implementation-var-treaty-annual-funding-year-year-6-bw-academic.jpg)
-
 
 - **Source**: Government appropriations (treaty signatories)
 - **Evidence**: PEPFAR ($15B/year federal), Paris Agreement (government commitments)
@@ -470,7 +450,6 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ![Years 1 to 2: where the seed money comes from and how SAFE notes turn into VICTORY bonds. Money metamorphosis, like a caterpillar becoming a butterfly made of returns.](/assets/images/fundraising-strategy/fundraising-strategy-section-year-1-2-seed-10-20m-bw-academic.jpg)
 
-
 - Crypto whales: $5-10M (fast, mission-aligned)
 - Tech billionaires: $5-10M (Musk, Thiel, Andreessen - contrarian bets)
 - Structure: SAFE notes convertible to VICTORY Incentive Alignment Bonds
@@ -478,7 +457,6 @@ To understand realistic funding strategies, we examined historical evidence from
 ###### Year 3-4: Series A ($50-100M)
 
 ![Series A: military budgets and private money combine to fund pilot programs and convince countries to sign treaties. Peace through creative accounting.](/assets/images/fundraising-strategy/fundraising-strategy-section-year-3-4-series-a-50-100m-bw-academic.jpg)
-
 
 - Defense contractors: Redirect $50M of existing lobbying budget
 - VICTORY Incentive Alignment Bonds (Reg D): $50M from family offices, hedge funds
@@ -488,7 +466,6 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ![Series B: where 200 million dollars comes from and what it buys. Specifically, it buys treaty signatures and recurring revenue. Democracy has a price, and this is it.](/assets/images/fundraising-strategy/fundraising-strategy-section-year-5-6-series-b-100-200m-bw-academic.jpg)
 
-
 - Defense contractors: Redirect another $100M lobbying
 - VICTORY Incentive Alignment Bonds (Reg A+ or public): $100M from institutional investors
 - Milestone: Treaty ratified in pilot countries, revenue starting
@@ -496,7 +473,6 @@ To understand realistic funding strategies, we examined historical evidence from
 ###### Year 7+: Implementation
 
 ![How 27 billion flows from governments to health programs each year, with 10 percent going to bondholders to keep them happy. Stability requires feeding the investors.](/assets/images/fundraising-strategy/fundraising-strategy-section-year-7-implementation-bw-academic.jpg)
-
 
 - Government appropriations: {{< var treaty_annual_funding >}}/year from treaty signatories
 - VICTORY Incentive Alignment Bondholders: {{< var victory_bond_annual_payout >}}/year ({{< var victory_bond_funding_pct >}})
@@ -525,7 +501,6 @@ The ~{{< var treaty_campaign_total_cost >}} VICTORY Incentive Alignment Bond cam
 
 **Funding source: 100% VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) ({{< var treaty_campaign_total_cost >}} total)**
 
-
 ![The flywheel: selling bonds pays for votes, votes make bonds more valuable, valuable bonds sell better. It's a circular logic that accidentally cures diseases.](/assets/images/fundraising-strategy/fundraising-strategy-section-virtuous-cycle-flywheel-bw-academic.jpg)
 
 ###### Why only bonds (not donations)?
@@ -543,7 +518,6 @@ The ~{{< var treaty_campaign_total_cost >}} VICTORY Incentive Alignment Bond cam
 
 ![Bonds versus donations, round two. Bonds take longer, have more legal options, and give people their money back with interest. Donations are faster but require generosity, which is rare.](/assets/images/fundraising-strategy/fundraising-strategy-section-why-only-bonds-not-donations-bw-academic.jpg)
 
-
 ##### Timeline milestones
 
 - 1M votes: Prove the model works → Easier to sell Series A bonds
@@ -560,7 +534,6 @@ The ~{{< var treaty_campaign_total_cost >}} VICTORY Incentive Alignment Bond cam
 
 ![The plan: beat hedge fund returns, but cap profits at 50 percent so investors don't eat all the medicine money. Greed is useful, but only in moderation.](/assets/images/fundraising-strategy/fundraising-strategy-section-the-marketing-message-the-hook-bw-academic.jpg)
 
-
 For marketing and high-level communications, lead with a simple, audacious target:
 
 > **"The model targets returns superior to the world's most elite hedge funds (~{{< var victory_bond_annual_return_pct >}} annualized). The financial model is governed by a simple principle: investor payouts never exceed 50% of income, guaranteeing the mission is always protected."**
@@ -568,7 +541,6 @@ For marketing and high-level communications, lead with a simple, audacious targe
 #### The Backend Engine (Market-Driven Pricing)
 
 ![How the bond sale works: Dutch auction sets the price, smart contracts hold the money, automatic refunds if it fails. It's like eBay, but for saving humanity.](/assets/images/fundraising-strategy/fundraising-strategy-section-the-backend-engine-market-driven-pricing-bw-academic.jpg)
-
 
 For sophisticated investors, use efficient market mechanisms:
 
@@ -579,7 +551,6 @@ For sophisticated investors, use efficient market mechanisms:
 ### De-Risking with Assurance Contracts
 
 ![Assurance contracts: money goes into escrow. If we hit the goal, money goes to the project. If we don't, money goes back to investors. Nobody loses unless we win.](/assets/images/fundraising-strategy/fundraising-strategy-section-de-risking-with-assurance-contracts-bw-academic.jpg)
-
 
 The primary risk elimination mechanism:
 
@@ -659,7 +630,6 @@ The primary risk elimination mechanism:
 
 ![Who controls the 27 billion: bond investors and health experts vote on how to spend it. Democracy, but the voters have medical degrees and financial stakes.](/assets/images/fundraising-strategy/fundraising-strategy-section-template-1-crypto-whales-governance-angle-bw-academic.jpg)
 
-
 This isn't just an investment - it's a chance to influence the direction of more capital than the NIH budget toward curing diseases through 80X lower cost per patient [@recovery-trial-82x-cost-reduction] decentralized trials."
 
 #### Template 2: Health Billionaires (Industry Advantage)
@@ -670,7 +640,6 @@ This isn't just an investment - it's a chance to influence the direction of more
 
 ![Take 1 percent from weapons, give it to health research. Drug companies get 2 to 5 times more research money. Missiles don't cure cancer, but their budgets can.](/assets/images/fundraising-strategy/fundraising-strategy-section-template-2-health-billionaires-industry-advantage-bw-academic.jpg)
 
-
 For [Company], this means 2-5X more R&D funding for the same work you're already doing, plus the opportunity to influence priority areas."
 
 #### Template 3: Foundations (Mission Multiplication)
@@ -680,7 +649,6 @@ For [Company], this means 2-5X more R&D funding for the same work you're already
 "Your $50M investment would empower [Foundation] to significantly influence the policy recommendations for the allocation of {{< var victory_bond_annual_payout >}} annually - 54X leverage on your committed capital, in perpetuity.
 
 ![Spend 50 million to control 2.72 billion. That's 54 times your money in leverage. It's like a very long lever, but for budgets instead of rocks.](/assets/images/fundraising-strategy/fundraising-strategy-section-template-3-foundations-mission-multiplication-bw-academic.jpg)
-
 
 This uses the same proven model that created $7T in fossil fuel subsidies [@fossil-fuel-subsidies], but directed toward saving lives."
 
@@ -739,7 +707,6 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 
 ![How lawyers and lobbyists team up to make VICTORY bonds legal. Law firms know the rules, advocacy groups know the politicians, together they make impossible things possible.](/assets/images/fundraising-strategy/fundraising-strategy-section-legal-policy-engagement-bw-academic.jpg)
 
-
 - 5 top-tier global law firms ($5M/year each)
 - 3 policy advocacy and government consultation firms ($5M/year each)
 - 2-year retainer for pilot phase
@@ -748,7 +715,6 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 #### Public Engagement & Policy Education Initiatives
 
 ![The scaling plan: start small, expand to rich countries, use prizes to make people compete. Humans love competitions, even for things that matter.](/assets/images/fundraising-strategy/fundraising-strategy-section-public-engagement-policy-education-initiatives-bw-academic.jpg)
-
 
 - Public education and civic engagement initiatives replicated in 2 key pilot regions for Phase 1
 - Scaled to 5-10 G7 nations for Phase 2 public awareness initiatives
@@ -767,7 +733,6 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 #### Option 2: Convertible Note
 
 ![How debt becomes voting power. Investors loan money, time passes, debt turns into tokens, tokens let you vote. It's financial alchemy.](/assets/images/fundraising-strategy/fundraising-strategy-section-option-2-convertible-note-bw-academic.jpg)
-
 
 - **Best for:** Traditional investors/foundations
 - **Structure:** Debt that converts to governance tokens
@@ -792,7 +757,6 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 #### Month 1-2: List Building & Warm Intros
 
 ![How to ask rich people for money: make a list, get someone they trust to introduce you, prepare the legal paperwork. Never cold-call a billionaire.](/assets/images/fundraising-strategy/fundraising-strategy-section-month-1-2-list-building-warm-intros-bw-academic.jpg)
-
 
 - Finalize top 100 target list with contact information
 - Secure warm introductions through mutual connections
@@ -822,7 +786,6 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 ### Success Metrics
 
 ![The fundraising growth curve. Month 3: a little money, few investors. Month 12: more money, more investors. The line goes up, which is good.](/assets/images/fundraising-strategy/fundraising-strategy-section-success-metrics-bw-academic.jpg)
-
 
 - **Month 3:** 25 outreach attempts, 10 meetings scheduled
 - **Month 6:** $250M committed, 5 investors closed
@@ -854,7 +817,6 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 This isn't traditional fundraising; it's strategic policy activation. The approach is inspired by the effectiveness of robust public and diplomatic engagement in shaping policy, where focused efforts can unlock significant societal benefits, similar to how focused advocacy in other sectors can lead to substantial economic shifts.
 
 ![Economic arbitrage: spend 1 billion on politics, get 27 billion per year in government money. It's not bribery, it's lobbying. The difference is legal, not moral.](/assets/images/fundraising-strategy/fundraising-strategy-section-the-economic-reality-bw-academic.jpg)
-
 
 The twist: offer them an even better deal to fund cures instead of wars.
 

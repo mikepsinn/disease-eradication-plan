@@ -14,7 +14,6 @@ image: /assets/og-images/knowledge/appendix/neuromodulation-case-study-og-bw-aca
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 Depression is the leading global cause of disability [@depression-leading-cause-disability] and the strongest behavioral predictor of suicide. Existing antidepressant drugs fail to achieve remission in about two-thirds of patients [@antidepressant-failure-rate-stard], and pharmacologic innovation has stagnated. Closed-loop neuromodulation, implantable or wearable systems that sense neural activity and adjust stimulation in real time, has shown response rates of 60–80% [@neuromodulation-trd-response-rates] in pilot trials for treatment-resistant depression and obsessive–compulsive disorder.
 
 Yet under current FDA and EMA processes, large-scale availability is unlikely before **2035**. <!-- TODO: NEEDS_HUMAN_INPUT - Verify this 2035 estimate with current regulatory timelines -->A cost-benefit model indicates this delay could cost millions of lives and hundreds of millions of quality-adjusted life-years (QALYs) globally.

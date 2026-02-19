@@ -20,10 +20,12 @@ from dih_models.dfda_trial_economics import (
 setup_chart_style()
 
 # ── Parameters (only those needed for display, not computation) ────────
+
 bed_nets = float(BED_NETS_COST_PER_DALY)
 upfront_cost = float(DFDA_NPV_UPFRONT_COST_TOTAL)
 
 # ── Computation via shared library ─────────────────────────────────────
+
 sweep = compute_across_funding_levels()
 funding_levels = sweep["funding_levels"]
 cost_per_daly = sweep["cost_per_daly"]
@@ -33,6 +35,7 @@ floor_cpd = get_floor_cost_per_daly()
 floor_cost = get_floor_queue_cost()
 
 # ── Plot ────────────────────────────────────────────────────────────────
+
 valid = ~np.isnan(cost_per_daly)
 valid_cpd = cost_per_daly[valid]
 valid_funding = funding_levels[valid]
@@ -43,6 +46,7 @@ ax.plot(valid_funding / 1e9, valid_cpd,
         linewidth=3.5, color=COLOR_BLACK, linestyle='-')
 
 # Reference line: bed nets ($89/DALY)
+
 ax.axhline(y=bed_nets, color=COLOR_BLACK, linestyle='--', linewidth=1.5, alpha=0.6)
 ax.text(valid_funding[-1] / 1e9 * 0.7, bed_nets,
         f'Bed Nets (${bed_nets:.0f}/DALY)',
@@ -51,6 +55,7 @@ ax.text(valid_funding[-1] / 1e9 * 0.7, bed_nets,
                   edgecolor=COLOR_BLACK, linewidth=1))
 
 # Asymptotic floor line
+
 ax.axhline(y=floor_cpd, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.5)
 ax.text(0.97, 0.08,
         f'Asymptotic floor: ${floor_cpd:.2f}/DALY\n'
@@ -62,6 +67,7 @@ ax.text(0.97, 0.08,
                   edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
 
 # Mark proposed funding
+
 pf = proposed["funding"]
 proposed_cpd = proposed["cost_per_daly"]
 proposed_clearance = proposed["clearance_years"]
@@ -85,6 +91,7 @@ ax.annotate(
     arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, linewidth=2.5))
 
 # Causal explanation annotations
+
 ax.text(0.03, 0.92,
         'Low funding: capacity barely\nexceeds status quo, so\nacceleration is near zero\n(but you still pay for the\nfull queue over centuries)',
         transform=ax.transAxes, fontsize=18, color=COLOR_BLACK, va='top', ha='left',
@@ -100,6 +107,7 @@ ax.text(0.97, 0.42,
                   edgecolor=COLOR_BLACK, linewidth=1, alpha=0.9))
 
 # Axes
+
 ax.set_xscale('log')
 ax.set_yscale('log')
 ax.set_xlabel('Annual Funding Level ($B)', fontsize=22, fontweight='bold', color=COLOR_BLACK)
@@ -114,6 +122,7 @@ ax.text(0.5, 1.01,
 ax.tick_params(axis='both', labelsize=18)
 
 # Format x-axis ticks as dollar amounts
+
 from matplotlib.ticker import FuncFormatter
 ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'${x:.0f}B' if x >= 1 else f'${x*1000:.0f}M'))
 ax.yaxis.set_major_formatter(FuncFormatter(lambda y, _: f'${y:,.0f}' if y >= 1 else f'${y:.2f}'))
@@ -131,6 +140,7 @@ add_png_metadata(
 plt.show()
 
 # Print verification
+
 print(f"\nVerification at proposed funding (${pf/1e9:.1f}B/yr):")
 print(f"  Trial capacity multiplier: {proposed_multiplier:.1f}x")
 print(f"  Queue clearance: {proposed_clearance:.1f} years")

@@ -497,6 +497,9 @@ export function programmaticFormat(content: string, options: ProgrammaticFormatO
     '$1\n\n$2'
   );
 
+  // Collapse 3+ consecutive newlines into 2 (one blank line max)
+  result = result.replace(/\n{3,}/g, '\n\n');
+
   return result;
 }
 

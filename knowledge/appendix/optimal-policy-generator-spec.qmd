@@ -130,7 +130,6 @@ The framework does not hide this tradeoff by claiming healthcare cost savings ar
 
 While OPG uses only two terminal metrics (income growth and healthy life years), evidence often measures **surrogate outcomes** (smoking rates, traffic deaths, crime rates). This section specifies how surrogate outcomes are translated to the terminal metrics.
 
-
 **The translation chain:**
 
 ```
@@ -174,7 +173,6 @@ Where CV is the coefficient of variation at each translation step. A three-step 
 ## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
 
 Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists, scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
-
 
 ### Scale of Available Natural Experiments
 
@@ -1017,7 +1015,6 @@ $$
 \text{PIS}_{jp} = 0.5 \times \text{PIS}^{\text{inc}}_{jp} + 0.5 \times \text{PIS}^{\text{hlth}}_{jp}
 $$
 
-
 ### Always Report Both Metrics Separately
 
 While combined PIS is useful for ranking, recommendations should always display effects on both metrics:
@@ -1568,7 +1565,6 @@ The Optimal Policy Generator provides a systematic framework for translating pol
 
 ## Appendix A: Worked Example - Texas Policy Recommendations {.appendix}
 
-
 ### Warning SYNTHETIC DATA - NOT EMPIRICAL FINDINGS
 
 **All numbers in this appendix are fabricated for illustration.** The effect sizes (+0.15 years, +0.02 pp/year, etc.), confidence intervals, and Bradford Hill scores are synthetic placeholders demonstrating the OPG framework's output format. They were not derived from actual data analysis.
@@ -1631,7 +1627,6 @@ From meta-analysis of 47 US states (2000-2020):
 
 **OPG Recommendations for Texas**
 
-
 ## ENACT (New Policies to Adopt)
 
 **1. Primary Seat Belt Enforcement Law** (Current: secondary enforcement only)
@@ -1658,7 +1653,6 @@ From meta-analysis of 47 US states (2000-2020):
 - **Blocking factors**: Political (autonomy concerns from rider groups)
 - **Similar jurisdictions**: California (all ages since 1992)
 
-
 ## REPLACE (Policies to Modify)
 
 **3. Maximum Speed Limit: 85 mph → 70 mph**
@@ -1674,13 +1668,11 @@ From meta-analysis of 47 US states (2000-2020):
 - **Priority**: Low
 - **Blocking factors**: Political (driver opposition), autonomy
 
-
 ## REPEAL (Policies to Remove)
 
 *No high-priority repeal recommendations for Texas at this time.*
 
 *(Example format: If Texas had a policy shown to cause net harm, it would appear here with expected welfare gain from removal.)*
-
 
 ## MAINTAIN (No Change Needed)
 

@@ -13,10 +13,12 @@ from dih_models.dfda_trial_economics import (
 )
 
 # ── Compute eradication program cost via shared library ─────────────────
+
 proposed = compute_at_funding_level()  # at proposed treaty funding
 proposed_funding = proposed["funding"]
 
 # ── Waste categories (from parameters.py) ────────────────────────────────
+
 categories = [
     ("Housing & Zoning Restrictions", float(US_GOV_WASTE_HOUSING_ZONING)),
     ("Healthcare Inefficiency", float(US_GOV_WASTE_HEALTHCARE_INEFFICIENCY)),
@@ -37,6 +39,7 @@ total_waste = waste_arr.sum()
 total_times = total_waste / proposed_funding
 
 # Build markdown table
+
 rows = []
 rows.append("| Category | Annual Waste | x Treaty Funding |")
 rows.append("|:---------|------------:|-----------------:|")

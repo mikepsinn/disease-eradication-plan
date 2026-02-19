@@ -12,7 +12,6 @@ image: /assets/og-images/knowledge/appendix/nuclear-weapon-cost-and-casualties-o
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 This analysis calculates the cost per death for a modern nuclear weapon. Then it uses that figure to estimate the potential human cost of the $2.69 trillion military budget that would remain AFTER redirecting 1% to pragmatic clinical trials.
 
 Spoiler: Even after giving 1% to pragmatic clinical trials, we'd still have enough money to end civilization 20 times.
@@ -26,7 +25,6 @@ This is not a defense strategy. This is a hobby.
 This is harder to calculate than you'd think, because the military bundles warhead costs into "modernization programs" and "delivery systems" to hide the individual price tags.
 
 ![One fancy airplane costs the same as four city destroyers. The airplane breaks a lot. The bombs would work perfectly on the first try, but you can only use them once.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-on-the-price-of-a-city-destroying-weapon-bw-academic.jpg)
-
 
 But we have the **B61-12 Life Extension Program** as a benchmark:
 
@@ -51,7 +49,6 @@ Modern strategic warheads are many times more powerful than the bombs used on Hi
 
 ![How many people a nuclear bomb kills depends on three things: how big the bomb is, how many people are standing nearby, and whether you blow it up in the air or on the ground. Modern bombs are better at all three.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-on-how-many-people-one-bomb-kills-bw-academic.jpg)
 
-
 ### The Simulation
 
 NUKEMAP (created by historian Alex Wellerstein) simulates nuclear detonations. If you detonate a single, modern 300-kiloton W87 warhead over Manhattan:
@@ -62,13 +59,11 @@ That's immediate deaths from the blast, heat, and initial radiation.
 
 ![The explosion kills this many people immediately. Then the radiation, starvation, disease, and collapse of civilization kill... some other amount. We stopped counting because we got sad.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-the-simulation-bw-academic.jpg)
 
-
 It doesn't include long-term deaths from fallout, disease, starvation, or the collapse of medical infrastructure. Those numbers are much higher. But this is a conservative estimate.
 
 ## On The Math That Makes You Uncomfortable
 
 ![Nuclear weapons are extremely affordable per death. This is the worst possible way to measure value for money, but here we are, measuring it.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-on-the-math-that-makes-you-uncomfortable-bw-academic.jpg)
-
 
 Now you can calculate the cost to kill one person with a nuclear weapon:
 
@@ -87,7 +82,6 @@ We've industrialized death to the point where killing you costs less than caffei
 A 1% treaty redirects 1% of military spending to fund pragmatic clinical trials.
 
 ![Tiny sliver: cure diseases. Massive remainder: prepare for war. The military keeps 99 percent. They'll barely notice it's gone, like losing one fry from a large order.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-on-what-happens-after-bw-academic.jpg)
-
 
 This leaves $2.69 trillion for killing people.
 
@@ -119,7 +113,6 @@ This illustrates why a 1% treaty is a modest proposal. The treaty asks militarie
 
 Nobody needs to end civilization 20 times. That's just showing off.
 
-
 ![After giving up 1 percent of the death budget, we can still kill everyone on Earth twenty times. We only need to kill them once. This is called 'overkill' because naming things is sometimes honest.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-overkill-capacity-analysis-bw-academic.jpg)
 
 ## On The Summary (In Case You Skipped The Math)
@@ -142,7 +135,6 @@ Even after redirecting 1% to pragmatic clinical trials, we'd still have enough d
 
 ![Eight billion people. Weapons that can kill 160 billion people. Even after the 1 percent cut. Someone should check if we're doing math right.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-what-a-1-treaty-changes-bw-academic.jpg)
 
-
 A 1% treaty doesn't disarm anyone. It just reduces overkill from "absurd" to "slightly less absurd."
 
 ## On Comparing Different Ways to Kill People (The Efficiency Rankings)
@@ -150,7 +142,6 @@ A 1% treaty doesn't disarm anyone. It just reduces overkill from "absurd" to "sl
 Now that you know nuclear weapons cost $16.98 per death, you can compare them to other weapons.
 
 ![Bullets: expensive per death. Missiles: very expensive per death. Tanks: extremely expensive per death. Nuclear weapons: so cheap per death they broke the chart. Efficiency!](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-on-comparing-differen-bw-academic.jpg)
-
 
 This is the darkest optimization problem in human history. But here we are.
 
@@ -160,7 +151,6 @@ In Iraq and Afghanistan, U.S. forces fired approximately **250,000 bullets for e
 
 ![It takes 250,000 bullets to kill one person in modern warfare. This seems inefficient. At 40 cents each, that's 100,000 per death. The bullets cost more than a house.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-small-arms-rifles-machine-guns-bw-academic.jpg)
 
-
 - Cost per bullet: **$0.40**
 - Bullets per death: **250,000**
 - **Cost per death: $100,000**
@@ -168,7 +158,6 @@ In Iraq and Afghanistan, U.S. forces fired approximately **250,000 bullets for e
 ### Artillery (155mm Howitzer Shells)
 
 ![Twenty big shells at ten thousand dollars each equals two hundred thousand dollars per casualty. Artillery is expensive. Being on the receiving end is worse.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-artillery-155mm-howitzer-shells-bw-academic.jpg)
-
 
 - Typical fire missions use **10-50 rounds** per target
 - Cost per shell: **$8,000-$14,000**
@@ -213,7 +202,6 @@ They're **10,000-350,000× more "cost-effective"** than precision missiles.
 
 This explains why $2.69 trillion in military spending has such enormous destructive capacity: We've optimized for maximum death per dollar.
 
-
 ![Conventional weapons: expensive per death. Nuclear weapons: so cheap per death that accountants get excited. The accountants should probably not get excited about this.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-cost-per-death-comparison-bw-academic.jpg)
 
 #### The Point
@@ -221,7 +209,6 @@ This explains why $2.69 trillion in military spending has such enormous destruct
 This grotesque "efficiency" calculation exists to illustrate one thing: We've industrialized human destruction to a degree that would make assembly line manufacturers jealous.
 
 ![The Death Budget is huge. The Not-Dying Budget is tiny. The proposal moves 1 percent from Death to Not-Dying. This should not be controversial, and yet.](/assets/images/nuclear-weapon-cost-and-casualties/nuclear-weapon-cost-and-casualties-section-the-point-bw-academic.jpg)
-
 
 We can calculate a "cost per death" metric. We've optimized it. We've competed on it.
 

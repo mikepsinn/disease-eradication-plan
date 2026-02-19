@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: Harnessing Greed to Eradicate Disease'
-description: "{{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending scales capacity {{< var dfda_trial_capacity_multiplier >}}, cutting the timeline to ~{{< var dfda_queue_clearance_years >}} and preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. At {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable."
+description: '{{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending scales capacity {{< var dfda_trial_capacity_multiplier >}}, cutting the timeline to ~{{< var dfda_queue_clearance_years >}} and preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. At {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.'
 abstract: |
   {{< var diseases_without_effective_treatment >}} have 0 FDA-approved treatments. At current trial
   capacity ({{< var new_disease_first_treatments_per_year >}}), exploring the therapeutic search
@@ -107,7 +107,6 @@ aliases:
 | **Investment Required** | {{< var treaty_campaign_total_cost >}} | Annual benefits ({{< var treaty_peace_plus_rd_annual_benefits >}}) exceed costs |
 
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}} ROI).
-
 
 ## How Pragmatic Trials Increase Safety
 
@@ -230,7 +229,6 @@ Humanity's budget priorities, explained simply:
 {{< var military_vs_medical_research_ratio_latex >}}
 
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding ~7-fold.
-
 
 The bottleneck isn't basic research or laboratory science. It's **clinical trials**. We've tested {{< var exploration_ratio >}} of [possible drug-disease combinations](../problem/untapped-therapeutic-frontier.qmd) using existing safe compounds. Not because the science is impossible, but because traditional trials cost {{< var traditional_phase3_cost_per_patient >}} while pragmatic trials like Oxford RECOVERY run for {{< var recovery_trial_cost_per_patient >}}. At current funding levels, testing the remaining {{< var unexplored_ratio >}} of therapeutic space would take millennia. Meanwhile, military budgets dwarf the funding needed to automate ubiquitous clinical trials and systematically explore what actually helps people.
 
@@ -885,7 +883,6 @@ The answer reveals the treaty campaign's massive leverage advantage:
 
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
 
-
 ### Direct Funding Still Excellent
 
 Even without treaty leverage, direct funding achieves **{{< var dfda_direct_funding_cost_per_daly >}}/DALY** - competitive with GiveWell's top interventions (bed nets at {{< var bed_nets_cost_per_daly >}}/DALY). This validates the pragmatic trial model independent of political feasibility.
@@ -1158,7 +1155,6 @@ The complete ROI includes the full timeline shift health benefits:
 
 **QALY Valuation Justification ({{< var standard_economic_qaly_value_usd >}})**: This uses standard US economic valuations. WHO recommends {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} per QALY for cost-effectiveness thresholds in high-income countries. The {{< var standard_economic_qaly_value_usd >}} value reflects revealed preferences from regulatory decisions (EPA, FDA), wage-risk tradeoffs, and health insurance willingness-to-pay studies. International analyses often use lower thresholds ($50-100K), which would reduce the ROI proportionally but not change the cost-saving classification.
 
-
 **Step 2: Calculate ROI**
 
 {{< var treaty_roi_trial_capacity_plus_efficacy_lag_latex >}}
@@ -1230,7 +1226,6 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 **Conservative interpretation**: Even if alternative uses generate positive economic value, a global pragmatic trial system exhibits **dominant intervention** characteristics (cost-saving: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY), indicating it saves costs while improving health outcomes. Under standard cost-effectiveness frameworks, dominant interventions are unconditionally recommended regardless of alternative uses, as they represent free gains in both dimensions (reduced costs and improved health).
 
 ## Peace Dividend Calculation Methodology
-
 
 ### Relative Importance
 

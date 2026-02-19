@@ -7,7 +7,6 @@ image: /assets/og-images/knowledge/appendix/data-storage-costs-og-retro-academic
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 ## How Much Space One Patient Takes
 
 Storing clinical trial data costs {{< var dfda_storage_cost_total_per_patient_monthly >}}/month per patient. That's less than a coffee.
@@ -15,7 +14,6 @@ Storing clinical trial data costs {{< var dfda_storage_cost_total_per_patient_mo
 ### What's Actually Stored
 
 ![Medical images take up 99.8% of the space. Patient data takes up 0.2%. We could store the important bits on a floppy disk.](/assets/images/data-storage-costs/data-storage-costs-section-what-s-actually-stored-bw-academic.jpg)
-
 
 - Patient demographics and basic information: < 1MB
 - Trial-specific forms and data entries: 1-5MB [@phase-3-participant-numbers]
@@ -77,7 +75,6 @@ The most relevant comparison is to existing large-scale health data platforms:
 
 ![How much you save when you don't build everything twice and store it in three places while six companies take a cut.](/assets/images/data-storage-costs/data-storage-costs-section-why-costs-are-lower-than-traditional-platforms-bw-academic.jpg)
 
-
 1. Focused use case with optimized data types
 2. No need for collaboration tools or email storage
 3. Efficient data structures for clinical trial data
@@ -96,7 +93,6 @@ The most relevant comparison is to existing large-scale health data platforms:
 
 ![Compress the files. Put old files in the cheap storage. Only run computers when you need them. This required consultants.](/assets/images/data-storage-costs/data-storage-costs-section-cost-optimization-strategies-bw-academic.jpg)
 
-
 1. Implement efficient data compression
 2. Use tiered storage for older/less accessed data
 3. Optimize image and continuous monitoring data storage
@@ -111,7 +107,6 @@ The most relevant comparison is to existing large-scale health data platforms:
 ## Methodology and Limitations
 
 ![How we calculated that cloud storage and computers cost money, more patients cost more money, and inefficiency costs even more money.](/assets/images/data-storage-costs/data-storage-costs-section-methodology-and-limitations-bw-academic.jpg)
-
 
 These estimates are illustrative order-of-magnitude figures based on:
 
@@ -152,7 +147,6 @@ The component estimates in this document assume operation at 1M+ patient scale w
 Observational analysis costs cents per patient, not hundreds or thousands of dollars. Even if actual costs are 5-10x higher than these estimates, the economic case for decentralized trials remains compelling compared to traditional Phase 3 trials at {{< var traditional_phase3_cost_per_patient >}}.
 
 ![When you build something once and share it with millions of people, each person's share gets very small. Economics discovered this in 1776.](/assets/images/data-storage-costs/data-storage-costs-section-economies-of-scale-chart-bw-academic.jpg)
-
 
 ## Conclusion
 

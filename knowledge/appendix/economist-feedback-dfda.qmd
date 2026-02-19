@@ -1,6 +1,6 @@
 ---
-title: "Is This Crazy?"
-description: "Integrating pragmatic trials into routine healthcare claims to clear a {{< var status_quo_queue_clearance_years >}} treatment backlog at {{< var dfda_direct_funding_cost_per_daly >}}/DALY. One-page calculation chain for economist review."
+title: Is This Crazy?
+description: Integrating pragmatic trials into routine healthcare claims to clear a {{< var status_quo_queue_clearance_years >}} treatment backlog at {{< var dfda_direct_funding_cost_per_daly >}}/DALY. One-page calculation chain for economist review.
 published: true
 toc: false
 number-sections: false
@@ -13,6 +13,7 @@ format:
 
 ::: {.callout-important}
 ## Why You Should Take 15 Minutes to Validate This Model
+
 If this model is right and these policies are adopted, you will have helped to save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and prevent {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of unnecessary suffering. (Which would be nice.)
 :::
 
@@ -90,6 +91,7 @@ Note: Costs are discounted at {{< var npv_discount_rate_standard >}}; DALYs are 
 
 ::: {.callout-warning}
 ## 1. Eventually Avoidable Fraction: {{< var eventually_avoidable_death_pct >}} of disease deaths
+
 Single most influential assumption. Remaining ~7.4% covers accidents, violence, and fundamentally irreducible causes.
 
 **Our defense:** {{< var unexplored_ratio >}} of the therapeutic search space remains untested ({{< var safe_compounds_count >}} safe compounds x {{< var trial_relevant_diseases_count >}} diseases = {{< var drug_disease_combinations_possible >}} pairings, only {{< var exploration_ratio >}} tested). {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating effective treatments exist but haven't been matched to conditions. Emerging modalities (mRNA platforms, CRISPR gene therapy, epigenetic reprogramming, AI-guided drug discovery) are expanding the space of testable candidates faster than ever. At 50%, all headline numbers halve but cost-effectiveness remains strong. [Full defense](dfda-impact-paper.qmd#why-eventually-avoidable-matters).
@@ -99,6 +101,7 @@ Single most influential assumption. Remaining ~7.4% covers accidents, violence, 
 
 ::: {.callout-warning}
 ## 2. Trial Capacity = Discovery Rate
+
 A {{< var dfda_trial_capacity_multiplier >}} increase in trial slots produces a proportional increase in the discovery rate ({{< var new_disease_first_treatments_per_year >}} -> {{< var dfda_first_treatments_per_year >}}).
 
 **Our defense:** Linear is conservative. {{< var valley_of_death_attrition_pct >}} of promising compounds are abandoned at the "valley of death" because Phase II/III costs ({{< var traditional_phase3_cost_per_patient >}}/patient) make them uneconomical, not because they lack efficacy. Eliminating this cost barrier would reactivate ~{{< var additional_drugs_from_cost_elimination >}} additional approvals. Knowledge accumulation creates potential for *superlinear* returns: each trial generates efficacy signals, biomarker insights, and combination data that inform subsequent trials. Pre-1962 decentralized physician-led testing achieved drug development at {{< var pre_1962_drug_development_cost_2024_usd >}}/drug vs. today's {{< var pharma_drug_development_cost_current >}}, consistent with trial throughput being the binding constraint.
@@ -108,6 +111,7 @@ A {{< var dfda_trial_capacity_multiplier >}} increase in trial slots produces a 
 
 ::: {.callout-warning}
 ## 3. Pragmatic Trial Cost: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient
+
 Deliberately conservative.
 
 **Our defense:** Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials across multiple therapeutic areas; of 64 with cost data, **median was $97/patient**. Our central estimate is **10x higher than the meta-analysis median**. RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient across 186 sites. Cost reductions come from structural factors: existing healthcare encounters, EHR-based data capture, broader eligibility. At our upper CI bound ($3,000/patient), the capacity multiplier drops from 12.3x to ~3.8x, still cutting the backlog from 443 years to ~116 years.

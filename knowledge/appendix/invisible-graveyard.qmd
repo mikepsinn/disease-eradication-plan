@@ -40,7 +40,6 @@ aliases:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 ## The Short Version
 
 The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} efficacy delay after drugs are proven safe. This creates two distinct mortality costs:
@@ -195,7 +194,6 @@ $$
 
 Before calculating regulatory delay costs, we must establish what percentage of deaths are *theoretically* preventable with sufficient biomedical advancement. This sets the upper bound for any intervention.
 
-
 ## Methodological Note: Distinguishing Current vs. Theoretical Preventability
 
 ![We could prevent 30 to 50 percent more deaths but we're saving that for later, like dessert.](/assets/images/invisible-graveyard/invisible-graveyard-methodological-note-distinguishing-current-vs-theoretical-preventability-bw-academic.jpg)
@@ -266,7 +264,6 @@ These represent the hard physical limits of medicine. Everything else, including
    - **Methodology:** 3-way fixed-effects regression (disease-country-year) controlling for confounders
    - **Derived lives saved:** {{< var pharma_lives_saved_annual >}} (assuming {{< var avg_life_extension_per_beneficiary >}} average life extension per beneficiary)
 
-
    ### Note
    
    ## Life-Years vs. Lives
@@ -310,7 +307,6 @@ See [Parameters & Calculations Appendix](/knowledge/appendix/parameters-and-calc
 ### Primary Estimate
 
 **Important Clarification:** Throughout this analysis, "regulatory delay" refers specifically to the **post-safety efficacy testing delay** - the period AFTER safety has been established but BEFORE efficacy approval is granted under current FDA/EMA requirements. This is distinct from safety testing (Phase I), which we consider necessary and effective (as demonstrated by the thalidomide case where safety testing prevented thousands of U.S. deaths).
-
 
 ## Methodological Caveat: Cascade Assumption
 
@@ -372,7 +368,6 @@ The YLD calculation above captures suffering *before death* for those who ultima
 
 ![982 million people waiting 8.2 years for treatment they already invented. It's like knowing where you left your keys but deciding to look for them very, very slowly.](/assets/images/invisible-graveyard/invisible-graveyard-years-lived-with-disability-treatment-beneficiaries-treatment-morbidity-bw-academic.jpg)
 
-
 ## Distinction: Mortality vs. Morbidity Burden
 
 The "{{< var pharma_lives_saved_annual >}} lives saved annually" from Lichtenberg's analysis captures mortality - people who would have *died* without post-1962 drugs. But pharmaceutical treatments primarily improve quality of life for people with *non-terminal* chronic conditions: diabetes, hypertension, depression, COPD, arthritis, and cardiovascular disease.
@@ -421,7 +416,6 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 ## Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}
 
 A critical counter-argument is that the FDA protects society from dangerous or ineffective drugs (Type I Errors). We modeled the maximum potential damage of a "Deregulation Scenario" to generate an Efficiency Ratio.
-
 
 ## Methodological Note: Steelmanning the FDA's Position
 
@@ -573,7 +567,6 @@ Several countries have implemented alternative regulatory models that provide na
 | **EU (EMA)** | Adaptive Pathways available | ~10 years | Similar to FDA; conditional marketing authorization option |
 | **Canada** | Priority Review pathway | ~12 months (priority) | Limited data on outcomes |
 | **Australia (TGA)** | Provisional approval pathway | Variable | Similar conditional pathways |
-
 
 ## Critical Distinction: Efficacy Assessment Reordered, Not Eliminated
 

@@ -14,7 +14,6 @@ tags:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 This document outlines the design for an n8n workflow to automate the evaluation of candidates applying for the **Supreme Allied Commander, War on Disease** role. The goal is to create an efficient, objective screening process that surfaces candidates with both world-class AI/automation skills and the full-stack engineering prowess to build the required systems.
 
 ### Workflow Diagram

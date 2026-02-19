@@ -11,7 +11,6 @@ image: /assets/og-images/knowledge/appendix/dih-integration-model-og-retro-acade
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 ```{python}
 #| echo: false
 import graphviz
@@ -94,7 +93,6 @@ display(IPImage(str(png_path)))
 8. Reports blood sugar via app
 9. Data helps next patient
 
-
 ![Getting experimental cancer treatment used to take six months and a lawyer. Now it takes six clicks. The lawyers are very upset.](/assets/images/dih-integration-model/dih-integration-model-section-real-world-example-workflow-bw-academic.jpg)
 
 ## Implementation Requirements
@@ -118,7 +116,6 @@ display(IPImage(str(png_path)))
 ### Who Gets What
 
 ![Everyone makes money when patients get better faster. You had to draw a diagram to explain why this might be worth doing.](/assets/images/dih-integration-model/dih-integration-model-section-who-gets-what-bw-academic.jpg)
-
 
 - **Doctors:** CME credits for trial participation
 - **Pharmacies:** Dispensing fees for trial meds
@@ -182,7 +179,6 @@ display(IPImage(str(png_path)))
 ## Integration Strategy
 
 ![Your healthcare system is like a sandwich. This adds a new layer so the sandwich can learn which ingredients make people less dead.](/assets/images/dih-integration-model/dih-integration-model-section-integration-strategy-bw-academic.jpg)
-
 
 Your decentralized institutes of health (DIH) network isn't trying to replace the healthcare system. It's adding an "experimental treatment insurance layer" that:
 

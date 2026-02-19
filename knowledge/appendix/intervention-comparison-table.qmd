@@ -6,7 +6,6 @@ image: /assets/og-images/knowledge/appendix/intervention-comparison-table-og-ret
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 <!-- ✓ Style reviewed 2025-01-15 -->
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -20,7 +19,6 @@ _Note: The bar represents the mid-point of the uncertainty range, and the error 
 ## Comparison Table
 
 ![Some health interventions save 1,000 times more lives per dollar. We put this on a logarithmic scale so the bad ones would still fit on the chart.](/assets/images/intervention-comparison-table/intervention-comparison-table-section-comparison-table-bw-academic.jpg)
-
 
 | Intervention                                |                                                                              Estimated ROI (Return per $1)                                                                              |                                     Cost per QALY Gained (ICER)                                      |                                                         QALYs Gained per $1M                                                          | Notes & Sources                                                                                         |
 | ------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------------------- |

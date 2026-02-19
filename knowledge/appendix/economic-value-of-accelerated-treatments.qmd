@@ -12,7 +12,6 @@ image: /assets/og-images/knowledge/appendix/economic-value-of-accelerated-treatm
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 **Estimating the Economic Value of Accelerating Medical Progress Through New Therapies**
 
 ## **Introduction**
@@ -24,7 +23,6 @@ Understanding the economic value of new therapies is essential for evaluating th
 - An estimation of the potential value created by **increasing trial capacity by {{< var dfda_trial_capacity_multiplier >}}**.
 
 ![One cure is worth billions. Fifty cures per year is worth more billions. Twelve times more trials is worth so many billions we had to make a chart.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-introduction-bw-academic.jpg)
-
 
 ## **Average Economic Value of a New Therapy**
 
@@ -48,7 +46,6 @@ What would happen with {{< var dfda_trial_capacity_multiplier >}} more trial cap
 
 ![Currently: 50 new drugs per year. With more trials: 615 new drugs per year. Subtraction is hard but this seems good.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-impact-of-bw-academic.jpg)
 
-
 - **Hypothetical Annual Approvals:** {{< var current_drug_approvals_per_year >}} new therapies × {{< var dfda_trial_capacity_multiplier >}} = **{{< var dfda_trial_capacity_multiplier >}} {{< var current_drug_approvals_per_year >}} new therapies annually**.
 - **Projected Economic Value:** This increased capacity could dramatically accelerate cure discovery, though actual approval rates depend on regulatory capacity and market dynamics.
 
@@ -59,7 +56,6 @@ What would happen with {{< var dfda_trial_capacity_multiplier >}} more trial cap
 - **Societal Benefits:** Beyond direct economic value, accelerated medical progress could lead to **improved health outcomes**, **increased productivity**, and **reduced long-term healthcare costs**.
 
 ![Faster cures need three things: money that makes sense, hospitals that work, and everyone not dying. Triangle: the strongest shape in geometry and healthcare policy.](/assets/images/economic-value-of-accelerated-treatments/economic-value-of-accelerated-treatments-section-considerations-and-context-bw-academic.jpg)
-
 
 ## **Conclusion**
 

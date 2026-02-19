@@ -6,7 +6,6 @@ image: /assets/og-images/knowledge/appendix/drug-development-cost-analysis-og-re
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 ## The Short Version
 
 Developing a new drug costs **{{< var drug_cost_increase_pre1962_to_current_multiplier >}} more** today than before 1962. Adjusted for inflation. Using real academic data (Baily 1972).
@@ -553,5 +552,4 @@ One law in 1962 turned a 2-3 year, $1.2M process into a 10-15 year, $2.6B gauntl
 | `PHARMA_DRUG_DEVELOPMENT_COST_CURRENT` | {{< var pharma_drug_development_cost_current >}} | Tufts CSDD (2013 dollars) |
 | `DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER` | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} | Calculated with inflation adjustment |
 | `TRIAL_COST_REDUCTION_FACTOR` | {{< var recovery_trial_cost_reduction_factor >}} | Per-patient cost increase |
-
 

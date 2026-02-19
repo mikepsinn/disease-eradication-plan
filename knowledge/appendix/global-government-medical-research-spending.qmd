@@ -12,7 +12,6 @@ image: /assets/og-images/knowledge/appendix/global-government-medical-research-s
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 Here is the complete accounting of humanity's commitment to curing disease. Spoiler: It's largely an accounting trick.
 
 ## The Broad Number vs. The Real Number
@@ -20,7 +19,6 @@ Here is the complete accounting of humanity's commitment to curing disease. Spoi
 Governments claim they spend billions on "medical research." In 2024, the official global total for government medical R&D was approximately **{{< var global_med_research_spending >}}**.
 
 ![The 'official' number for medical research versus the real number after you subtract all the parts that aren't actually curing diseases. Like restaurant portions, governments describe things generously.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-broad-nu-bw-academic.jpg)
-
 
 It sounds like a lot. It is a lie.
 
@@ -34,13 +32,11 @@ That $68 billion figure includes:
 
 ![Where the 68 billion goes: basic science, overhead, bureaucracy, and epidemiology. Notice how 'curing diseases' is not on this list.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-accounting-trick-bw-academic.jpg)
 
-
 ### The Real Number: {{< var global_government_clinical_trials_spending_annual >}}
 
 When you strip away the overhead and basic science to ask **"How much do governments spend on actually testing cures in humans?"** the number collapses.
 
 ![4.5 billion for clinical trials, divided by 8 billion people. That's about 56 cents per human per year. You spend more on a pack of gum.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-real-num-bw-academic.jpg)
-
 
 **Global government spending on interventional clinical trials is only ~{{< var global_government_clinical_trials_spending_annual >}} per year.**
 
@@ -53,7 +49,6 @@ In 2024, global military spending reached **{{< var global_military_spending_ann
 In contrast, global government spending on interventional clinical trials is estimated at **{{< var global_government_clinical_trials_spending_annual >}}**.
 
 ![For every dollar we spend on clinical trials, we spend 604 dollars on the military. We're very good at killing people and very bad at not killing people. Consistency is important.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-604x-disparity-bw-academic.jpg)
-
 
 This represents a funding ratio of **{{< var military_to_government_clinical_trials_spending_ratio >}}**.
 
@@ -74,7 +69,6 @@ This creates a fatal incentive structure:
 
 **We have outsourced our survival to a business model that requires us to stay sick enough to buy pills, but alive enough to pay for them.**
 
-
 ![The drug industry flowchart: will it make money? No? Don't cure it. Yes? Cure it. This is why we have seventeen acne medications and zero malaria vaccines. The market has spoken, and it has terrible skin.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-industry-incentive-cycle-bw-academic.jpg)
 
 ## Broad R&D Breakdown: The Hall of Shame
@@ -91,7 +85,6 @@ This creates a fatal incentive structure:
 
 ![Where the NIH's 47.1 billion goes after universities and administrators take their cut. Like watching a cake get sliced, if most of the slices went to people who weren't hungry.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-united-state-bw-academic.jpg)
 
-
 ### China: The Rising Power
 
 **Medical Research Spending: ~$15 billion [@china-medical-research-spending-15b]**
@@ -100,7 +93,6 @@ This creates a fatal incentive structure:
 - Spends 97x more [@china-surveillance-vs-medicine-spending] on domestic security than clinical research.
 
 ![China spends 97 dollars on domestic security for every dollar on clinical research. They're very committed to making sure people stay alive long enough to be monitored.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-china-the-rising-power-bw-academic.jpg)
-
 
 ### European Union
 
@@ -111,7 +103,6 @@ This creates a fatal incentive structure:
 
 ![The EU health budget per citizen, compared to a cup of coffee. The coffee costs more. At least the coffee keeps you awake while you slowly die of preventable diseases.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-european-union-bw-academic.jpg)
 
-
 ### The Rest of the World
 
 - **Japan:** $5 billion [@japan-medical-research-spending-5b] (Aging population, zero urgency).
@@ -119,7 +110,6 @@ This creates a fatal incentive structure:
 - **Russia:** $800 million [@russia-medical-research-spending-800m] (Spend huge on nukes, pennies on health).
 
 ![Medical research spending in Japan, India, and Russia. The differences are significant, like comparing a swimming pool, a bathtub, and a shot glass. All full of water, very different outcomes.](/assets/images/global-government-medical-research-spending/global-government-medical-research-spending-section-the-rest-of-the-world-bw-academic.jpg)
-
 
 ## Conclusion: A Species-Wide Failure
 

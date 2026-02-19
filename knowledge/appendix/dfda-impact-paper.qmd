@@ -1,5 +1,5 @@
 ---
-title: "Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
+title: 'Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents'
 description: Only {{< var new_disease_first_treatments_per_year >}} get their first treatment each year. With {{< var diseases_without_effective_treatment >}} lacking effective treatments, the backlog would take {{< var status_quo_queue_clearance_years >}} to clear. Integrating pragmatic trials into standard healthcare increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, cutting that timeline from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average untreated disease gets a treatment {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} at {{< var dfda_direct_funding_cost_per_daly >}} per year of healthy life saved.
 abstract: |
   Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only
@@ -40,7 +40,6 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 
 **The Problem:** {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
-
 **The Solution:** A decentralized FDA, an open protocol (like HTTP/FHIR, not a competing platform) that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
 
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
@@ -48,7 +47,6 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 3. **Real-World Data Aggregation**: Outcomes from all participants are aggregated into a unified database
 4. **Treatment Rankings**: Standardized effectiveness rankings for every treatment-condition pair, updated continuously with real-world evidence
 5. **Outcome Labels**: "Nutrition facts for drugs" showing exactly what happened to real patients who tried each treatment
-
 
 ### Key Findings
 
@@ -64,7 +62,6 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 | **Annual R&D Savings** | {{< var dfda_benefit_rd_only_annual >}} | From {{< var dfda_trial_cost_reduction_pct >}} cost reduction |
 | **Trial Capacity Increase** | {{< var dfda_trial_capacity_multiplier >}} | Enabling parallel therapeutic space exploration |
 
-
 ### Key Metric Derivations
 
 **Lives Saved:**
@@ -78,7 +75,6 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 **Cost per DALY:**
 
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
-
 
 ### Interpreting These Figures: Cumulative, Not Annual
 
@@ -134,7 +130,6 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 ![A map of how sick people might meet doctors, if everyone agreed to use the same computer system. They won't.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-core-model-an-open-coordination-protocol-bw-academic.jpg)
 
 ### Key Capabilities
-
 
 - **Treatment Rankings**: Every treatment for every condition ranked by real-world effectiveness, updated continuously as new data arrives
 - **Outcome Labels**: Standardized "nutrition facts for drugs" showing effectiveness rates, side effects, and outcomes from real patients
@@ -194,7 +189,6 @@ Even if only 25% of deaths are eventually avoidable (half our estimate), the fra
 This analysis models a scenario with {{< var dih_treasury_to_medical_research_annual >}}/year allocated to pragmatic clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, this funds approximately {{< var dih_patients_fundable_annually >}} patient-years annually.
 
 ![With proper funding, we could solve the backlog in 36 years instead of 443. Your great-great-great-great-great-great-great-grandchildren will be so pleased.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg)
-
 
 ### On the Funding Assumption
 
@@ -299,7 +293,6 @@ The protocol creates value by enabling interoperability among existing clinical 
 | **Pharma Sponsors** | {{< var global_clinical_trials_spending_annual >}}/year on trials | Submit trials via compliant systems | Lower costs, faster enrollment, real-world evidence |
 | **Academic Medical Centers** | Research infrastructure | Contribute federated data nodes | Research funding, publication opportunities |
 | **Consumer Health Apps** | Consumer health data | Report patient outcomes to protocol | User engagement, clinical validation |
-
 
 ### Why This Matters
 
@@ -453,7 +446,6 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
   {{< var dfda_trial_cost_reduction_pct_latex >}}
 
-
 ### Scope of Cost Reduction
 
 This reduction applies to trials amenable to pragmatic design - approximately 70% of Phase III trial volume by patient count (chronic disease management, comparative effectiveness, dose optimization). First-in-human studies, novel mechanism trials, and high-risk interventions retain traditional controlled protocols. The confidence interval ($500-$3,000/patient) captures this heterogeneity: simple comparative studies approach RECOVERY-level efficiency while complex trials remain closer to traditional costs. The headline {{< var dfda_trial_cost_reduction_pct >}} figure represents the **weighted average** across the addressable trial market, not a claim that every trial achieves this reduction.
@@ -536,7 +528,6 @@ Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial 
 
 ### Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
 
-
 ### Relative Magnitude
 
 Efficacy lag elimination ({{< var efficacy_lag_years >}}) is the **smaller** of the two timeline shift components. Discovery acceleration from {{< var dfda_trial_capacity_multiplier >}} trial capacity contributes {{< var dfda_trial_capacity_treatment_acceleration_years >}}, over 10× more health impact. This section details the efficacy lag component; see [The Discovery Capacity Model](#the-discovery-capacity-model) for the dominant component.
@@ -613,7 +604,6 @@ For detailed methodology and assumptions on efficacy lag, see [The Human Cost of
 #### Current System Limitations: Dangerously Blind to Real-World Harms
 
 ![Current drug safety: please voluntarily report if you die. Proposed drug safety: computers notice when you die.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-h-bw-academic.jpg)
-
 
 ### Caution
 
