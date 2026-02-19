@@ -18,14 +18,17 @@ Please flag any assumption you find implausible, any calculation step that needs
 
 ## Bottom-Line Claims
 
-| Claim | Value | 95% CI |
-|:------|------:|-------:|
-| Cost per DALY saved | {{< var dfda_direct_funding_cost_per_daly >}} | |
-| Total DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | |
-| Lives saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | |
-| Suffering hours eliminated | {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} | |
-| Economic value (at $150K/QALY) | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | |
-| Bed net benchmark | {{< var bed_nets_cost_per_daly >}}/DALY | |
+| Claim | Value |
+|:------|------:|
+| Cost per DALY saved | {{< var dfda_direct_funding_cost_per_daly >}} |
+| Total DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} |
+| Lives saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} |
+| Economic value (at $150K/QALY) | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} |
+| Trial capacity increase | {{< var dfda_trial_capacity_multiplier >}} |
+| Timeline shift (avg. per disease) | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} |
+| Bed net benchmark | {{< var bed_nets_cost_per_daly >}}/DALY |
+
+All values include 95% confidence intervals from Monte Carlo simulation (10,000 draws). Hover/click any value for the full range.
 
 ## Calculation Chain
 
@@ -72,9 +75,11 @@ The logic is five steps. Each depends on the one above it.
 
 | Input | Value | Derivation |
 |:------|------:|:-----------|
-| Direct funding NPV | {{< var dfda_direct_funding_queue_clearance_npv >}} | NPV of $21.8B/yr over exploration period |
-| DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Step 4 |
+| Direct funding NPV | {{< var dfda_direct_funding_queue_clearance_npv >}} | NPV at {{< var npv_discount_rate_standard >}} social discount rate over exploration period |
+| DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Step 4 (undiscounted) |
 | **Cost per DALY** | **{{< var dfda_direct_funding_cost_per_daly >}}** | = NPV / DALYs |
+
+Note: Costs are discounted at {{< var npv_discount_rate_standard >}}; DALYs are undiscounted (standard in GBD methodology). Discounting DALYs at 3% would reduce them but also strengthen the cost-effectiveness ratio since the denominator shrinks less than the numerator.
 
 ## Key Assumptions Requiring Sign-Off
 
@@ -105,25 +110,12 @@ Deliberately conservative.
 **Question:** Is the meta-analysis median ($97) or our conservative anchor ({{< var dfda_pragmatic_trial_cost_per_patient >}}) more appropriate?
 :::
 
-::: {.callout-warning}
-## 4. Cumulative vs. Annual Framing
-Cumulative over the ~212-year acceleration window, not annual figures.
+**Note on framing:** All health impact figures are cumulative over the acceleration window, not annual. This is inherent to the model: treatments arrive X years earlier than an unknown future discovery date, and the benefit is the disease burden during that gap. Same methodology as smallpox eradication ROI calculations.
 
-**Our defense:** Standard methodology for one-time infrastructure investments. Smallpox eradication ($300M, 280:1 ROI) and climate investments use the same framing. This is bounded: once the therapeutic search space is explored (~36 years), no further acceleration occurs.
-
-**Question:** Should we lead with annualized figures instead for foundations?
-:::
-
-## What We Need From You
-
-1. **Flag any number that would not survive peer review** in a health economics journal (Value in Health, Health Affairs, PharmacoEconomics).
-2. **Identify the weakest link** in the calculation chain above.
-3. **Suggest sensitivity ranges** for the assumptions you find most uncertain.
-4. **Advise on framing**: Which metrics should we lead with when talking to foundations?
-
-::: {.callout-tip}
 ## Full Materials
+
 - [Full paper with all derivations](dfda-impact-paper.qmd)
 - [Complete parameter list with sources and confidence levels](parameters-and-calculations.qmd)
 - [Source code and data](https://github.com/mikepsinn/disease-eradication-plan)
-:::
+
+We welcome any feedback on the numbers, methodology, or framing. Please send comments to [m@warondisease.org](mailto:m@warondisease.org).

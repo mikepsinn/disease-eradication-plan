@@ -25,13 +25,11 @@ Please flag any assumption you find implausible, any calculation step that needs
 | Cost per DALY (direct funding alternative) | {{< var dfda_direct_funding_cost_per_daly >}} |
 | Total DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} |
 | Lives saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} |
-| Economic value (at $150K/QALY) | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} |
 | ROI (complete benefits) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} |
-| ROI (R&D savings only) | {{< var dfda_roi_rd_only >}} |
-| vs. bed nets (conditional) | {{< var treaty_vs_bed_nets_multiplier >}} better |
-| vs. bed nets (risk-adjusted) | {{< var treaty_expected_vs_bed_nets_multiplier >}} better |
 | Treaty leverage vs. direct funding | {{< var treaty_vs_direct_funding_leverage >}} |
 | Bed net benchmark | {{< var bed_nets_cost_per_daly >}}/DALY |
+
+All values include 95% confidence intervals from Monte Carlo simulation (10,000 draws). Hover/click any value for the full range.
 
 ## The Treaty Mechanism
 
@@ -92,7 +90,9 @@ The logic builds in six steps.
 | Framing | Cost | DALYs | Cost/DALY |
 |:--------|-----:|------:|----------:|
 | Treaty campaign | {{< var treaty_campaign_total_cost >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
-| Direct funding (NPV) | {{< var dfda_direct_funding_queue_clearance_npv >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | {{< var dfda_direct_funding_cost_per_daly >}} |
+| Direct funding (NPV at {{< var npv_discount_rate_standard >}}) | {{< var dfda_direct_funding_queue_clearance_npv >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | {{< var dfda_direct_funding_cost_per_daly >}} |
+
+Note: Costs are discounted at {{< var npv_discount_rate_standard >}} social discount rate; DALYs are undiscounted (standard in GBD methodology).
 
 **Step 6: Risk Adjustment**
 
@@ -149,26 +149,12 @@ Deliberately conservative.
 **Question:** Is the meta-analysis median ($97) or our conservative anchor ({{< var dfda_pragmatic_trial_cost_per_patient >}}) more appropriate?
 :::
 
-::: {.callout-warning}
-## 6. Cumulative vs. Annual Framing
-Cumulative over the ~212-year acceleration window, not annual figures.
+**Note on framing:** All health impact figures are cumulative over the acceleration window, not annual. This is inherent to the model: treatments arrive X years earlier than an unknown future discovery date, and the benefit is the disease burden during that gap. Same methodology as smallpox eradication ROI calculations.
 
-**Our defense:** Standard methodology for one-time infrastructure investments. Smallpox eradication ($300M, {{< var smallpox_eradication_roi >}} ROI) and climate investments use the same framing. This is bounded: once the therapeutic search space is explored (~36 years), no further acceleration occurs.
-
-**Question:** Should we lead with annualized figures instead?
-:::
-
-## What We Need From You
-
-1. **Flag any number that would not survive peer review** in a health economics journal (Health Affairs, Value in Health, The Lancet).
-2. **Identify the weakest link** in the calculation chain above.
-3. **Advise on the treaty vs. direct funding framing**: Which denominator should we lead with for foundations?
-4. **Validate the risk-adjustment approach**: Is dividing by political success probability the right methodology?
-5. **Suggest sensitivity ranges** for the assumptions you find most uncertain.
-
-::: {.callout-tip}
 ## Full Materials
+
 - [Full paper with all derivations](/knowledge/economics/1-pct-treaty-impact.qmd)
 - [Complete parameter list with sources and confidence levels](parameters-and-calculations.qmd)
 - [Source code and data](https://github.com/mikepsinn/disease-eradication-plan)
-:::
+
+We welcome any feedback on the numbers, methodology, or framing. Please send comments to [m@warondisease.org](mailto:m@warondisease.org).
