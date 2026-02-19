@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 48 | **Words:** 113,081 | **Images:** 739 | **Est. Pages:** ~822
+**Files:** 48 | **Words:** 113,085 | **Images:** 739 | **Est. Pages:** ~822
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 3,932 words | 481 lines | 15 images | ~23p
+**Stats:** 3,936 words | 483 lines | 15 images | ~23p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Part Where I Discover Paper Makes You Do Things

@@ -420,6 +420,80 @@ def _rewrite_paper_links(
     return links_rewritten
 
 
+def _rewrite_index_source_links(
+    build_temp: Path,
+    index_source: str,
+    files_to_process: List[str],
+    verbose: bool = True
+) -> int:
+    """
+    Rewrite links to the current config's index-source to point to index.qmd.
+
+    When a config uses dih-render.index-source, prepare_config copies that file
+    to index.qmd. Other chapter files linking to the original path need updating
+    so Quarto can resolve them (the original path isn't a book chapter).
+    """
+    if not index_source:
+        return 0
+
+    links_rewritten = 0
+
+    for file_path_str in files_to_process:
+        qmd_file = build_temp / file_path_str
+        if not qmd_file.exists():
+            continue
+
+        with open(qmd_file, encoding="utf-8") as f:
+            content = f.read()
+
+        original = content
+
+        def rewrite_to_index(match: re.Match[str]) -> str:
+            nonlocal links_rewritten
+            text, full_path = match.group(1), match.group(2)
+
+            if full_path.startswith(("http://", "https://", "#", "mailto:")):
+                return match.group(0)
+            if ".qmd" not in full_path:
+                return match.group(0)
+
+            # Split anchor
+            path_part = full_path
+            anchor = ""
+            if "#" in full_path:
+                path_part, anchor_part = full_path.split("#", 1)
+                anchor = "#" + anchor_part
+
+            # Resolve to project-relative path
+            path_normalized = path_part.replace("\\", "/")
+            if path_normalized.startswith("/"):
+                resolved = path_normalized[1:]
+            elif path_normalized.startswith(("../", "./")):
+                file_dir = Path(file_path_str).parent
+                resolved = os.path.normpath(
+                    os.path.join(str(file_dir), path_normalized)
+                ).replace("\\", "/")
+            else:
+                resolved = path_normalized
+
+            if resolved == index_source:
+                new_path = f"/index.qmd{anchor}"
+                if verbose:
+                    print(f"    {file_path_str}: {full_path} -> {new_path}")
+                links_rewritten += 1
+                return f"[{text}]({new_path})"
+
+            return match.group(0)
+
+        content = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", rewrite_to_index, content)
+
+        if content != original:
+            with open(qmd_file, "w", encoding="utf-8", newline='\n') as f:
+                f.write(content)
+
+    return links_rewritten
+
+
 def get_config_metadata(config_name: str) -> Dict[str, Any]:
     """
     Read build configuration from dih-render section of a Quarto config file.
@@ -907,6 +981,24 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
 
     if paper_links_rewritten > 0 and verbose:
         print(f"[OK] Rewrote {paper_links_rewritten} paper links to HTTPS URLs", flush=True)
+
+    # Rewrite links to current config's index-source to index.qmd
+    # (prepare_config copies the index-source to index.qmd, but other chapter
+    # files that link to the original path need updating so Quarto resolves them)
+    index_source = metadata.get("index_source")
+    if index_source:
+        # Only process chapter files, not index.qmd itself
+        index_source_files = list(current_files)
+        if verbose:
+            print(f"[*] Rewriting links to index-source ({index_source}) -> /index.qmd...", flush=True)
+        index_links = _rewrite_index_source_links(
+            build_temp=build_temp,
+            index_source=index_source,
+            files_to_process=index_source_files,
+            verbose=verbose
+        )
+        if index_links > 0 and verbose:
+            print(f"[OK] Rewrote {index_links} index-source links to /index.qmd", flush=True)
 
     # Cross-site link rewriting
     target_url = metadata.get("target_url")
