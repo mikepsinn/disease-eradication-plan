@@ -6,9 +6,7 @@ image: /assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.j
 aliases:
   - /index-book.html
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 ::: {.content-hidden when-format="html"}
 ::: {.content-hidden when-format="pdf"}
 ::: {.content-hidden when-format="docx"}
