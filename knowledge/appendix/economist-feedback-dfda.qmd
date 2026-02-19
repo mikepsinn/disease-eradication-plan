@@ -5,6 +5,8 @@ description: "Concise summary of the dFDA impact analysis for economist sign-off
 published: true
 toc: false
 number-sections: false
+aliases:
+  - /summary
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}

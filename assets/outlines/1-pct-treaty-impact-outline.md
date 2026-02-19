@@ -2,7 +2,7 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 3 | **Words:** 27,724 | **Images:** 87 | **Est. Pages:** ~154
+**Files:** 3 | **Words:** 27,637 | **Images:** 87 | **Est. Pages:** ~154
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
@@ -265,7 +265,7 @@
 #### knowledge/appendix/economist-feedback-treaty.qmd
 **Title:** Economist Review: 1% Treaty Headline Numbers
 **Description:** Concise summary of the 1% Treaty impact analysis for economist sign-off before foundation funding conversations.
-**Stats:** 1,539 words | 175 lines | ~6p
+**Stats:** 1,452 words | 161 lines | ~6p
 
   - Purpose
   - Bottom-Line Claims
@@ -277,8 +277,6 @@
   - 3. Political Success Probability: 1% (95% CI: 0.1%-10%)
   - 4. $1B Campaign -> $27.2B/yr Government Funding (Treaty Leverage)
   - 5. Pragmatic Trial Cost: $929 (95% CI: $97-$3K)/patient
-  - 6. Cumulative vs. Annual Framing
-  - What We Need From You
   - Full Materials
 
 #### knowledge/references.qmd

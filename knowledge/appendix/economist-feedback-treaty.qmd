@@ -5,6 +5,8 @@ description: "Concise summary of the 1% Treaty impact analysis for economist sig
 published: true
 toc: false
 number-sections: false
+aliases:
+  - /summary
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
