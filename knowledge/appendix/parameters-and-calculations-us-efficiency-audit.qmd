@@ -90,15 +90,19 @@ $$
 E_{US,disc} \\
 = 1 - \frac{W_{cat1}}{Spending_{fed}} \\
 = 1 - \frac{\$1.01T}{\$1.7T} \\
-= 40.5\% \\[0.5em]
-\text{where } W_{cat1} \\
-= W_{military} + W_{corporate} + W_{drugs} \\
-+ W_{fossil} + W_{agriculture} \\
+= 40.5\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{cat1} \\
+= W_{military} + W_{corporate} + W_{drugs} + W_{fossil} \\
++ W_{agriculture} \\
 = \$615B + \$181B + \$90B + \$50B + \$75B \\
 = \$1.01T
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -130,19 +134,33 @@ Total US governance efficiency: all 4 waste categories as share of GDP. 1 - ($4.
 
 $$
 \begin{gathered}
-E_{US,GDP} = 1 - \frac{W_{total,US}}{USGDP} = 1 - \frac{\$4.9T}{\$28.8T} = 83\% \\[0.5em]
-\text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
-\text{where } W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} \\
-+ W_{regulatory} + W_{tax} + W_{corporate} \\
-+ W_{tariffs} + W_{drugs} + W_{fossil} \\
-+ W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
-+ \$181B + \$160B + \$90B + \$50B + \$75B \\
+E_{US,GDP} \\
+= 1 - \frac{W_{total,US}}{USGDP} \\
+= 1 - \frac{\$4.9T}{\$28.8T} \\
+= 83\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -324,19 +342,33 @@ US government waste as percentage of GDP. ~$4.90T waste / $28.78T GDP = ~17%. Th
 
 $$
 \begin{gathered}
-W_{US,\%GDP} = \frac{W_{total,US}}{USGDP} = \frac{\$4.9T}{\$28.8T} = 17\% \\[0.5em]
-\text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
-\text{where } W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} \\
-+ W_{regulatory} + W_{tax} + W_{corporate} \\
-+ W_{tariffs} + W_{drugs} + W_{fossil} \\
-+ W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
-+ \$181B + \$160B + \$90B + \$50B + \$75B \\
+W_{US,\%GDP} \\
+= \frac{W_{total,US}}{USGDP} \\
+= \frac{\$4.9T}{\$28.8T} \\
+= 17\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -368,19 +400,33 @@ US government waste expressed as QALY equivalents. This is an economic equivalen
 
 $$
 \begin{gathered}
-W_{US,QALY} = \frac{W_{total,US}}{QALY_{threshold}} = \frac{\$4.9T}{\$100K} = 49M \\[0.5em]
-\text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
-\text{where } W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} \\
-+ W_{regulatory} + W_{tax} + W_{corporate} \\
-+ W_{tariffs} + W_{drugs} + W_{fossil} \\
-+ W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
-+ \$181B + \$160B + \$90B + \$50B + \$75B \\
+W_{US,QALY} \\
+= \frac{W_{total,US}}{QALY_{threshold}} \\
+= \frac{\$4.9T}{\$100K} \\
+= 49M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -463,19 +509,30 @@ $$
 W_{US,recoverable} \\
 = W_{total,US} \times 0.5 \\
 = \$4.9T \times 0.5 \\
-= \$2.45T \\[0.5em]
-\text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
-\text{where } W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} \\
-+ W_{regulatory} + W_{tax} + W_{corporate} \\
-+ W_{tariffs} + W_{drugs} + W_{fossil} \\
-+ W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
-+ \$181B + \$160B + \$90B + \$50B + \$75B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -507,18 +564,24 @@ Total annual US government waste (additive sum of components). Consolidates heal
 
 $$
 \begin{gathered}
-W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
-\text{where } W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} \\
-+ W_{regulatory} + W_{tax} + W_{corporate} \\
-+ W_{tariffs} + W_{drugs} + W_{fossil} \\
-+ W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
-+ \$181B + \$160B + \$90B + \$50B + \$75B \\
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -550,19 +613,33 @@ US government waste expressed as VSL equivalents. This is an economic equivalent
 
 $$
 \begin{gathered}
-W_{US,VSL} = \frac{W_{total,US}}{VSL_{DOT}} = \frac{\$4.9T}{\$13.7M} = 357{,}000 \\[0.5em]
-\text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
-\text{where } W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} \\
-+ W_{regulatory} + W_{tax} + W_{corporate} \\
-+ W_{tariffs} + W_{drugs} + W_{fossil} \\
-+ W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
-+ \$181B + \$160B + \$90B + \$50B + \$75B \\
+W_{US,VSL} \\
+= \frac{W_{total,US}}{VSL_{DOT}} \\
+= \frac{\$4.9T}{\$13.7M} \\
+= 357{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
 = \$4.9T
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -594,23 +671,42 @@ How many times the US government efficiency gap could fund the 1% Treaty. The ef
 
 $$
 \begin{gathered}
-k_{waste:treaty} = \frac{W_{total,US}}{Funding_{treaty}} = \frac{\$4.9T}{\$27.2B} = 180 \\[0.5em]
-\text{where } W_{total,US} = W_{raw,US} \times US = \$4.9T \times 1 = \$4.9T \\[0.5em]
-\text{where } W_{raw,US} \\
-= W_{health} + W_{housing} + W_{military} \\
-+ W_{regulatory} + W_{tax} + W_{corporate} \\
-+ W_{tariffs} + W_{drugs} + W_{fossil} \\
-+ W_{agriculture} \\
-= \$1.2T + \$1.4T + \$615B + \$580B + \$546B \\
-+ \$181B + \$160B + \$90B + \$50B + \$75B \\
-= \$4.9T \\[0.5em]
-\text{where } Funding_{treaty} \\
+k_{waste:treaty} \\
+= \frac{W_{total,US}}{Funding_{treaty}} \\
+= \frac{\$4.9T}{\$27.2B} \\
+= 180
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis

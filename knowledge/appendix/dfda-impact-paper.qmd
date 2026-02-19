@@ -46,7 +46,7 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 4. **Treatment Rankings**: Standardized effectiveness rankings for every treatment-condition pair, updated continuously with real-world evidence
 5. **Outcome Labels**: "Nutrition facts for drugs" showing exactly what happened to real patients who tried each treatment
 
-### Key Findings
+### The Receipts {#key-findings}
 
 | Metric | Value | Context |
 |--------|-------|---------|
@@ -587,7 +587,7 @@ This represents the health benefits from eliminating the post-safety efficacy la
 1. **Efficacy lag elimination**: {{< var efficacy_lag_years >}} (this section)
 2. **Trial capacity/discovery acceleration**: {{< var dfda_trial_capacity_treatment_acceleration_years >}} (from {{< var dfda_trial_capacity_multiplier >}} more trials)
 
-The **combined total** timeline shift is {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}, yielding {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}. See [Key Findings](#key-findings) for the combined totals.
+The **combined total** timeline shift is {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}, yielding {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}. See [The Receipts](#key-findings) for the combined totals.
 
 For detailed methodology and assumptions on efficacy lag, see [The Human Cost of Regulatory Latency](https://invisible-graveyard.warondisease.org).
 
@@ -1183,7 +1183,7 @@ To provide context for the estimated costs of a global pragmatic trial system, i
 
 {{< include ../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
 
-**Key Takeaway:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the system's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
+**Translation for Budget Committees:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the system's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
 
 ## Why This Differs from Failed Megaprojects
 

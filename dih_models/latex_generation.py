@@ -28,6 +28,11 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from .formatting import format_parameter_value
 
+# Separator between equation blocks in expanded LaTeX output.
+# Each block is a self-contained equation that can be wrapped in its own $$ delimiters,
+# allowing LaTeX to break pages between them.
+LATEX_BLOCK_SEP = "\n%%BLOCK%%\n"
+
 # Track parameters that fall back to formula-based LaTeX generation
 # Format: {param_name: (formula_used, reason)}
 _formula_fallback_log: Dict[str, Tuple[str, str]] = {}
@@ -49,6 +54,30 @@ def log_formula_fallback(param_name: str, formula: str, reason: str):
     # Only log first occurrence (avoid duplicates from recursive expansion)
     if param_name not in _formula_fallback_log:
         _formula_fallback_log[param_name] = (formula, reason)
+
+
+def collapse_latex_blocks(latex: str) -> str:
+    r"""
+    Collapse multi-block LaTeX back into a single gathered environment.
+
+    Use this when you need a single LaTeX expression (e.g., for web display)
+    rather than multiple page-breakable blocks (used for PDF).
+
+    Args:
+        latex: LaTeX string possibly containing LATEX_BLOCK_SEP separators
+
+    Returns:
+        Single LaTeX expression with \begin{gathered} wrapping
+    """
+    if LATEX_BLOCK_SEP not in latex:
+        return latex
+
+    blocks = [b.strip() for b in latex.split(LATEX_BLOCK_SEP)]
+    lines = [blocks[0]]
+    for block in blocks[1:]:
+        lines.append(f"\\\\[0.5em]\n\\text{{where }} {block}")
+    combined = '\n'.join(lines)
+    return f"\\begin{{gathered}}\n{combined}\n\\end{{gathered}}"
 
 
 def extract_distinguishing_suffix(param_name: str, all_input_names: list[str] | None = None) -> str | None:
@@ -985,19 +1014,20 @@ def generate_expanded_latex(
     max_depth: int = 10,
     _depth: int = 0,
     _visited: set | None = None,
-    _memoized: dict | None = None
+    _memoized: dict | None = None,
+    _globally_shown: set | None = None
 ) -> str | None:
     r"""
     Generate FULLY EXPANDED LaTeX equation with recursive derivation of all calculated inputs.
-    
+
     This creates a complete derivation chain showing how every intermediate value
     is calculated, all the way down to leaf parameters (external sources/definitions).
-    
-    Uses memoization to avoid repeating the same derivation multiple times when
-    the same intermediate parameter is used in multiple branches.
-    
+
+    Uses de-duplication: each sub-expression is fully derived only once. Subsequent
+    references show just the single-level equation (no repeated "where" clauses).
+
     Example output for DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED:
-    
+
     \begin{aligned}
     Lives_{saved} &= Deaths_{daily} \times Years_{shift} \times 365 \times 0.919 \\
                   &= 190K \times 207 \times 365 \times 0.919 = 184.6M \\[0.5em]
@@ -1006,7 +1036,7 @@ def generate_expanded_latex(
     \text{where } Years_{accel} &= \frac{Queue_{current} - Queue_{dfda}}{Rate} \\
                                 &= \frac{451 - 36}{2.2} = 197
     \end{aligned}
-    
+
     Args:
         param_name: Name of the parameter
         param_value: Parameter object with metadata
@@ -1016,7 +1046,8 @@ def generate_expanded_latex(
         _depth: Current recursion depth (internal use)
         _visited: Set of already-visited params (cycle detection, internal use)
         _memoized: Cache of already-generated LaTeX (prevents duplication, internal use)
-        
+        _globally_shown: Tracks params already fully derived (de-duplication, internal use)
+
     Returns:
         Fully expanded LaTeX string with derivation chain, or None if cannot generate
     """
@@ -1024,7 +1055,16 @@ def generate_expanded_latex(
         _visited = set()
     if _memoized is None:
         _memoized = {}
-    
+    if _globally_shown is None:
+        _globally_shown = set()
+
+    # De-duplication: if already fully derived elsewhere, return single-level only
+    if _depth > 0 and param_name in _globally_shown:
+        single = generate_auto_latex(param_name, param_value, parameters, params_file)
+        if single is None:
+            single = getattr(param_value, 'latex', None)
+        return single
+
     # Check memoization cache first (but only at depth > 0 to avoid caching root)
     if _depth > 0 and param_name in _memoized:
         return _memoized[param_name]
@@ -1066,55 +1106,70 @@ def generate_expanded_latex(
     
     # If no calculated inputs or at max depth, return single equation
     if not calculated_inputs or _depth >= max_depth:
-        # Cache and return
+        # Cache and mark as shown
         _memoized[param_name] = this_level
+        _globally_shown.add(param_name)
         return this_level
     
-    # Build multi-step derivation
-    lines = []
-    
-    # Add the main equation
-    lines.append(this_level)
-    
+    # Build multi-step derivation as separate blocks.
+    # Each block is a self-contained equation. Callers split on LATEX_BLOCK_SEP
+    # and wrap each in its own $$ delimiters, allowing page breaks between them.
+    blocks = []
+
+    # Main equation is the first block
+    blocks.append(this_level)
+
     # Track which sub-derivations we've already added to avoid duplicates
     added_derivations = set()
-    
+    # Track block content to deduplicate identical equations from different branches
+    # (e.g., Funding_{treaty} appearing as input to Payout, Political, AND Treasury)
+    seen_blocks = {this_level}
+
     # Recursively expand each calculated input
     for inp_name, inp_value in calculated_inputs:
         # Skip if we've already added this derivation
         if inp_name in added_derivations:
             continue
-        
+
         sub_latex = generate_expanded_latex(
             inp_name, inp_value, parameters, params_file,
             max_depth=max_depth,
             _depth=_depth + 1,
             _visited=_visited,
-            _memoized=_memoized
+            _memoized=_memoized,
+            _globally_shown=_globally_shown
         )
-        
+
         if sub_latex:
             added_derivations.add(inp_name)
-            # Add "where" prefix and indent
-            # Handle if sub_latex is already an aligned environment
-            if r'\begin{aligned}' in sub_latex:
-                # Extract content from aligned environment
+
+            if LATEX_BLOCK_SEP in sub_latex:
+                # Sub-derivation is itself multi-block.
+                # First sub-block is the sub-equation, rest are its "where" clauses.
+                # Deduplicate blocks that already appeared from other branches.
+                for block in sub_latex.split(LATEX_BLOCK_SEP):
+                    block = block.strip()
+                    if block and block not in seen_blocks:
+                        seen_blocks.add(block)
+                        blocks.append(block)
+            elif r'\begin{aligned}' in sub_latex:
                 inner = sub_latex.replace(r'\begin{aligned}', '').replace(r'\end{aligned}', '').strip()
-                lines.append(f"\\\\[0.5em]\n\\text{{where }} {inner}")
+                if inner not in seen_blocks:
+                    seen_blocks.add(inner)
+                    blocks.append(inner)
             else:
-                lines.append(f"\\\\[0.5em]\n\\text{{where }} {sub_latex}")
-    
-    # Combine into aligned environment
-    combined = '\n'.join(lines)
-    
-    # Only wrap in aligned if not already wrapped and we have multiple lines
-    if r'\begin{aligned}' not in combined and len(lines) > 1:
-        result = f"\\begin{{aligned}}\n{combined}\n\\end{{aligned}}"
+                if sub_latex not in seen_blocks:
+                    seen_blocks.add(sub_latex)
+                    blocks.append(sub_latex)
+
+    if len(blocks) == 1:
+        result = blocks[0]
     else:
-        result = combined
-    
-    # Cache the result
+        result = LATEX_BLOCK_SEP.join(blocks)
+
+    # Cache the result and mark as globally shown
     _memoized[param_name] = result
+    _globally_shown.add(param_name)
     return result
 
 

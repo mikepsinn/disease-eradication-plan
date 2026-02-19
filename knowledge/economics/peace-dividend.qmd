@@ -108,7 +108,7 @@ The elasticity parameter (e = {{< var peace_dividend_conflict_elasticity >}}) as
 
 Even with the most pessimistic assumption (e = 0.25), the Captured Dividend of {{< var treaty_annual_funding >}} is guaranteed. That money moves regardless of whether wars get cheaper.
 
-## Key Findings
+## The Part Where the Math Gets Embarrassing
 
 1. **Guaranteed money**: {{< var treaty_annual_funding >}} annually is a direct budget transfer. If the treaty passes, this happens.
 

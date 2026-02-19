@@ -101,27 +101,35 @@ Total Disability-Adjusted Life Years lost from disease eradication delay (PRIMAR
 - [Years Lived with Disability During Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_yld) 🔢: 873 million years
 
 $$
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+$$
+where:
+$$
 \begin{gathered}
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
-\text{where } YLL_{lag} \\
+YLL_{lag} \\
 = Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
 = 416M \times (79 - 62) \\
-= 7.07B \\[0.5em]
-\text{where } Deaths_{lag} \\
-= T_{lag} \times Deaths_{disease,daily} \times 338 \\
-= 8.2 \times 150{,}000 \times 338 \\
-= 416M \\[0.5em]
-\text{where } YLD_{lag} \\
-= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
-= 416M \times 6 \times 0.35 \\
-= 873M \\[0.5em]
-\text{where } Deaths_{lag} \\
+= 7.07B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag} \\
 = T_{lag} \times Deaths_{disease,daily} \times 338 \\
 = 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+YLD_{lag} \\
+= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
+= 416M \times 6 \times 0.35 \\
+= 873M
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -194,27 +202,40 @@ $$
 Value_{lag} \\
 = DALYs_{lag} \times Value_{QALY} \\
 = 7.94B \times \$150K \\
-= \$1190T \\[0.5em]
-\text{where } DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
-\text{where } YLL_{lag} \\
+= \$1190T
+\end{gathered}
+$$
+where:
+$$
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+$$
+where:
+$$
+\begin{gathered}
+YLL_{lag} \\
 = Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
 = 416M \times (79 - 62) \\
-= 7.07B \\[0.5em]
-\text{where } Deaths_{lag} \\
-= T_{lag} \times Deaths_{disease,daily} \times 338 \\
-= 8.2 \times 150{,}000 \times 338 \\
-= 416M \\[0.5em]
-\text{where } YLD_{lag} \\
-= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
-= 416M \times 6 \times 0.35 \\
-= 873M \\[0.5em]
-\text{where } Deaths_{lag} \\
+= 7.07B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag} \\
 = T_{lag} \times Deaths_{disease,daily} \times 338 \\
 = 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+YLD_{lag} \\
+= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
+= 416M \times 6 \times 0.35 \\
+= 873M
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -250,14 +271,18 @@ $$
 YLD_{lag} \\
 = Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
 = 416M \times 6 \times 0.35 \\
-= 873M \\[0.5em]
-\text{where } Deaths_{lag} \\
+= 873M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag} \\
 = T_{lag} \times Deaths_{disease,daily} \times 338 \\
 = 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -293,14 +318,18 @@ $$
 YLL_{lag} \\
 = Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
 = 416M \times (79 - 62) \\
-= 7.07B \\[0.5em]
-\text{where } Deaths_{lag} \\
+= 7.07B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag} \\
 = T_{lag} \times Deaths_{disease,daily} \times 338 \\
 = 8.2 \times 150{,}000 \times 338 \\
 = 416M
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -491,11 +520,18 @@ $$
 Cost_{eff,cumul} \\
 = Cost_{P2+P3} \times N_{drugs,62} \\
 = \$1.56B \times 3{,}100 \\
-= \$4.84T \\[0.5em]
-\text{where } N_{drugs,62} = Drugs_{ann,curr} \times 62 = 50 \times 62 = 3{,}100
+= \$4.84T
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+N_{drugs,62} \\
+= Drugs_{ann,curr} \times 62 \\
+= 50 \times 62 \\
+= 3{,}100
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -527,15 +563,30 @@ Total deaths from efficacy lag expressed in 9/11 equivalents. Makes the mortalit
 
 $$
 \begin{gathered}
-N_{9/11,equiv} = \frac{Deaths_{lag,total}}{N_{9/11}} = \frac{102M}{2{,}980} = 34{,}100 \\[0.5em]
-\text{where } Deaths_{lag,total} \\
-= Lives_{saved,annual} \times T_{lag} \\
-= 12.4M \times 8.2 \\
-= 102M \\[0.5em]
-\text{where } Lives_{saved,annual} = \frac{LY_{saved,annual}}{T_{ext}} = \frac{149M}{12} = 12.4M
+N_{9/11,equiv} \\
+= \frac{Deaths_{lag,total}}{N_{9/11}} \\
+= \frac{102M}{2{,}980} \\
+= 34{,}100
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Deaths_{lag,total} \\
+= Lives_{saved,annual} \times T_{lag} \\
+= 12.4M \times 8.2 \\
+= 102M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -571,14 +622,18 @@ $$
 YLD_{treat\_delay} \\
 = N_{treated} \times T_{lag} \times \Delta DW_{treat} \\
 = 982M \times 8.2 \times 0.25 \\
-= 2.01B \\[0.5em]
-\text{where } N_{treated} \\
+= 2.01B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{treated} \\
 = DOT_{chronic} \times 0.000767 \\
 = 1.28T \times 0.000767 \\
 = 982M
 \end{gathered}
 $$
-
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -613,11 +668,18 @@ $$
 Deaths_{lag,total} \\
 = Lives_{saved,annual} \times T_{lag} \\
 = 12.4M \times 8.2 \\
-= 102M \\[0.5em]
-\text{where } Lives_{saved,annual} = \frac{LY_{saved,annual}}{T_{ext}} = \frac{149M}{12} = 12.4M
+= 102M
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -692,31 +754,54 @@ $$
 DALY_{thal} \\
 = YLD_{thal} + YLL_{thal} \\
 = 13{,}000 + 28{,}800 \\
-= 41{,}800 \\[0.5em]
-\text{where } YLD_{thal} \\
+= 41{,}800
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+YLD_{thal} \\
 = DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
 = 0.4 \times 540 \times 60 \\
-= 13{,}000 \\[0.5em]
-\text{where } N_{thal,survive} \\
+= 13{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,survive} \\
 = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
 = 900 \times (1 - 40\%) \\
-= 540 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900 \\[0.5em]
-\text{where } YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
-\text{where } Deaths_{thal} \\
-= Rate_{thal,mort} \times N_{thal,US,prevent} \\
-= 40\% \times 900 \\
-= 360 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
+= 540
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,US,prevent} \\
 = N_{thal,global} \times Pct_{US,1960} \\
 = 15{,}000 \times 6\% \\
 = 900
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+YLL_{thal} \\
+= Deaths_{thal} \times 80 \\
+= 360 \times 80 \\
+= 28{,}800
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{thal} \\
+= Rate_{thal,mort} \times N_{thal,US,prevent} \\
+= 40\% \times 900 \\
+= 360
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -751,14 +836,18 @@ $$
 Deaths_{thal} \\
 = Rate_{thal,mort} \times N_{thal,US,prevent} \\
 = 40\% \times 900 \\
-= 360 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
+= 360
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,US,prevent} \\
 = N_{thal,global} \times Pct_{US,1960} \\
 = 15{,}000 \times 6\% \\
 = 900
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -793,14 +882,18 @@ $$
 N_{thal,survive} \\
 = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
 = 900 \times (1 - 40\%) \\
-= 540 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
+= 540
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,US,prevent} \\
 = N_{thal,global} \times Pct_{US,1960} \\
 = 15{,}000 \times 6\% \\
 = 900
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -874,18 +967,27 @@ $$
 YLD_{thal} \\
 = DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
 = 0.4 \times 540 \times 60 \\
-= 13{,}000 \\[0.5em]
-\text{where } N_{thal,survive} \\
+= 13{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,survive} \\
 = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
 = 900 \times (1 - 40\%) \\
-= 540 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
+= 540
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,US,prevent} \\
 = N_{thal,global} \times Pct_{US,1960} \\
 = 15{,}000 \times 6\% \\
 = 900
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -916,18 +1018,30 @@ Years of Life Lost per thalidomide event (infant deaths)
 
 $$
 \begin{gathered}
-YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
-\text{where } Deaths_{thal} \\
+YLL_{thal} \\
+= Deaths_{thal} \times 80 \\
+= 360 \times 80 \\
+= 28{,}800
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{thal} \\
 = Rate_{thal,mort} \times N_{thal,US,prevent} \\
 = 40\% \times 900 \\
-= 360 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
+= 360
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,US,prevent} \\
 = N_{thal,global} \times Pct_{US,1960} \\
 = 15{,}000 \times 6\% \\
 = 900
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -959,53 +1073,106 @@ Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm pr
 
 $$
 \begin{gathered}
-Ratio_{TypeII} = \frac{DALYs_{lag}}{DALY_{TypeI}} = \frac{7.94B}{2.59M} = 3{,}070 \\[0.5em]
-\text{where } DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B \\[0.5em]
-\text{where } YLL_{lag} \\
+Ratio_{TypeII} \\
+= \frac{DALYs_{lag}}{DALY_{TypeI}} \\
+= \frac{7.94B}{2.59M} \\
+= 3{,}070
+\end{gathered}
+$$
+where:
+$$
+DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.07B + 873M = 7.94B
+$$
+where:
+$$
+\begin{gathered}
+YLL_{lag} \\
 = Deaths_{lag} \times (LE_{global} - Age_{death,delay}) \\
 = 416M \times (79 - 62) \\
-= 7.07B \\[0.5em]
-\text{where } Deaths_{lag} \\
+= 7.07B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{lag} \\
 = T_{lag} \times Deaths_{disease,daily} \times 338 \\
 = 8.2 \times 150{,}000 \times 338 \\
-= 416M \\[0.5em]
-\text{where } YLD_{lag} \\
+= 416M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+YLD_{lag} \\
 = Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
 = 416M \times 6 \times 0.35 \\
-= 873M \\[0.5em]
-\text{where } Deaths_{lag} \\
-= T_{lag} \times Deaths_{disease,daily} \times 338 \\
-= 8.2 \times 150{,}000 \times 338 \\
-= 416M \\[0.5em]
-\text{where } DALY_{TypeI} = DALY_{thal} \times 62 = 41{,}800 \times 62 = 2.59M \\[0.5em]
-\text{where } DALY_{thal} \\
+= 873M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALY_{TypeI} \\
+= DALY_{thal} \times 62 \\
+= 41{,}800 \times 62 \\
+= 2.59M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALY_{thal} \\
 = YLD_{thal} + YLL_{thal} \\
 = 13{,}000 + 28{,}800 \\
-= 41{,}800 \\[0.5em]
-\text{where } YLD_{thal} \\
+= 41{,}800
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+YLD_{thal} \\
 = DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
 = 0.4 \times 540 \times 60 \\
-= 13{,}000 \\[0.5em]
-\text{where } N_{thal,survive} \\
+= 13{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,survive} \\
 = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
 = 900 \times (1 - 40\%) \\
-= 540 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900 \\[0.5em]
-\text{where } YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
-\text{where } Deaths_{thal} \\
-= Rate_{thal,mort} \times N_{thal,US,prevent} \\
-= 40\% \times 900 \\
-= 360 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
+= 540
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,US,prevent} \\
 = N_{thal,global} \times Pct_{US,1960} \\
 = 15{,}000 \times 6\% \\
 = 900
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+YLL_{thal} \\
+= Deaths_{thal} \times 80 \\
+= 360 \times 80 \\
+= 28{,}800
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{thal} \\
+= Rate_{thal,mort} \times N_{thal,US,prevent} \\
+= 40\% \times 900 \\
+= 360
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -1036,35 +1203,66 @@ Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024
 
 $$
 \begin{gathered}
-DALY_{TypeI} = DALY_{thal} \times 62 = 41{,}800 \times 62 = 2.59M \\[0.5em]
-\text{where } DALY_{thal} \\
+DALY_{TypeI} \\
+= DALY_{thal} \times 62 \\
+= 41{,}800 \times 62 \\
+= 2.59M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALY_{thal} \\
 = YLD_{thal} + YLL_{thal} \\
 = 13{,}000 + 28{,}800 \\
-= 41{,}800 \\[0.5em]
-\text{where } YLD_{thal} \\
+= 41{,}800
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+YLD_{thal} \\
 = DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
 = 0.4 \times 540 \times 60 \\
-= 13{,}000 \\[0.5em]
-\text{where } N_{thal,survive} \\
+= 13{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,survive} \\
 = N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
 = 900 \times (1 - 40\%) \\
-= 540 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900 \\[0.5em]
-\text{where } YLL_{thal} = Deaths_{thal} \times 80 = 360 \times 80 = 28{,}800 \\[0.5em]
-\text{where } Deaths_{thal} \\
-= Rate_{thal,mort} \times N_{thal,US,prevent} \\
-= 40\% \times 900 \\
-= 360 \\[0.5em]
-\text{where } N_{thal,US,prevent} \\
+= 540
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{thal,US,prevent} \\
 = N_{thal,global} \times Pct_{US,1960} \\
 = 15{,}000 \times 6\% \\
 = 900
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+YLL_{thal} \\
+= Deaths_{thal} \times 80 \\
+= 360 \times 80 \\
+= 28{,}800
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{thal} \\
+= Rate_{thal,mort} \times N_{thal,US,prevent} \\
+= 40\% \times 900 \\
+= 360
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis

@@ -28,7 +28,7 @@ from pathlib import Path
 from typing import Any, Dict
 
 from dih_models.formatting import format_parameter_value
-from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, smart_title_case
+from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, smart_title_case, LATEX_BLOCK_SEP
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.quarto_formatting import convert_qmd_to_html, generate_uncertainty_section
 from dih_models.reference_parser import parse_references_bib
@@ -300,12 +300,23 @@ def generate_parameters_and_calculations_qmd(
                 content.append("$$")
                 content.append("")
             elif expanded_latex:
-                # Wrap for mobile if equation is wide
-                wrapped_latex = wrap_latex_for_mobile(expanded_latex, max_width=60)
-                content.append("$$")
-                content.append(wrapped_latex)
-                content.append("$$")
-                content.append("")
+                if LATEX_BLOCK_SEP in expanded_latex:
+                    # Multi-block: each block gets its own $$ for page-breaking
+                    eq_blocks = [b.strip() for b in expanded_latex.split(LATEX_BLOCK_SEP)]
+                    for i, block in enumerate(eq_blocks):
+                        block = wrap_latex_for_mobile(block, max_width=60)
+                        if i > 0:
+                            content.append("where:")
+                        content.append("$$")
+                        content.append(block)
+                        content.append("$$")
+                else:
+                    # Single block
+                    wrapped_latex = wrap_latex_for_mobile(expanded_latex, max_width=60)
+                    content.append("$$")
+                    content.append(wrapped_latex)
+                    content.append("$$")
+                    content.append("")
             elif hasattr(value, "formula") and value.formula:
                 content.append(f"*Formula*: `{value.formula}`")
                 content.append("")

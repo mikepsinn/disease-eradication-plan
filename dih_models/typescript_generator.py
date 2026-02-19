@@ -25,7 +25,7 @@ import re
 import shutil
 
 from dih_models.reference_parser import parse_references_bib
-from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex
+from dih_models.latex_generation import generate_auto_latex, generate_expanded_latex, collapse_latex_blocks
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 
 logger = logging.getLogger("dih.typescript")
@@ -998,6 +998,8 @@ def _generate_parameter_constant(
                 # Silently skip if auto-generation fails
                 pass
         if latex:
+            # Collapse multi-block back to single expression for web display
+            latex = collapse_latex_blocks(latex)
             # Apply mobile-friendly line breaks for responsive display
             latex = wrap_latex_for_mobile(latex, max_width=60)
             lines.append(f"  latex: {_format_typescript_value(latex)},")

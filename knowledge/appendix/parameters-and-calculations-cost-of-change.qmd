@@ -105,47 +105,76 @@ Trial capacity multiplier from DIH funding capacity vs. current global trial par
 
 $$
 \begin{gathered}
-k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
+k_{capacity} \\
+= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -181,56 +210,122 @@ $$
 DALYs_{max} \\
 = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
 = 2.88B \times 92.6\% \times 212 \\
-= 565B \\[0.5em]
-\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
-\text{where } T_{accel} \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
 = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
 = 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204 \\[0.5em]
-\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
-\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -265,60 +360,131 @@ $$
 Value_{max} \\
 = DALYs_{max} \times Value_{QALY} \\
 = 565B \times \$150K \\
-= \$84800T \\[0.5em]
-\text{where } DALYs_{max} \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
 = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
 = 2.88B \times 92.6\% \times 212 \\
-= 565B \\[0.5em]
-\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
-\text{where } T_{accel} \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
 = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
 = 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204 \\[0.5em]
-\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
-\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -353,56 +519,122 @@ $$
 Lives_{max} \\
 = Deaths_{disease,daily} \times T_{accel,max} \times 338 \\
 = 150{,}000 \times 212 \times 338 \\
-= 10.7B \\[0.5em]
-\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
-\text{where } T_{accel} \\
+= 10.7B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
 = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
 = 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204 \\[0.5em]
-\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
-\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -433,56 +665,117 @@ Average years earlier patients receive treatments due to dFDA. Combines treatmen
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 
 $$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
 \begin{gathered}
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
-\text{where } T_{accel} \\
+T_{accel} \\
 = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
 = 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204 \\[0.5em]
-\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
-\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -517,51 +810,109 @@ $$
 T_{accel} \\
 = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
 = 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204 \\[0.5em]
-\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
-\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -596,43 +947,64 @@ $$
 N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -668,30 +1040,36 @@ $$
 Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *✓ High confidence*
 
 :::
@@ -712,39 +1090,55 @@ $$
 Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -818,17 +1212,26 @@ $$
 Cost_{global,reform} \\
 = Cost_{US,total} \times \rho_{global/US} \\
 = \$25.5B \times 5 \\
-= \$128B \\[0.5em]
-\text{where } Cost_{US,total} \\
-= (Cost_{campaign} + Cost_{lobby} \times 2) \times \mu_{effort} \\
-+ Cost_{career} \\[0.5em]
-\text{where } Cost_{US,congress} \\
+= \$128B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{US,total} \\
+= (Cost_{campaign} \\
++ Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{US,congress} \\
 = N_{congress} \times V_{post-office} \\
 = 535 \times \$10M \\
 = \$5.35B
 \end{gathered}
 $$
-
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -863,14 +1266,18 @@ $$
 Funding_{political,ann} \\
 = Funding_{treaty} \times Pct_{political} \\
 = \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 :::
@@ -887,12 +1294,30 @@ Average years until first treatment discovered for a typical disease under curre
 
 $$
 \begin{gathered}
-T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
-\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
 **Methodology**: [@status-quo-cure-timeline-estimate]
 
 *? Low confidence*
@@ -926,11 +1351,21 @@ Years to explore the entire therapeutic search space under current system. At cu
 
 $$
 \begin{gathered}
-T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
 **Methodology**: [@status-quo-cure-timeline-estimate]
 
 *? Low confidence*
@@ -1028,65 +1463,144 @@ Cost per DALY averted from elimination of efficacy lag plus earlier treatment di
 
 $$
 \begin{gathered}
-Cost_{treaty,DALY} = \frac{Cost_{campaign}}{DALYs_{max}} = \frac{\$1B}{565B} = \$0.00177 \\[0.5em]
-\text{where } Cost_{campaign} \\
+Cost_{treaty,DALY} \\
+= \frac{Cost_{campaign}}{DALYs_{max}} \\
+= \frac{\$1B}{565B} \\
+= \$0.00177
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
 = Budget_{viral,base} + Budget_{lobby,treaty} \\
 + Budget_{reserve} \\
 = \$250M + \$650M + \$100M \\
-= \$1B \\[0.5em]
-\text{where } DALYs_{max} \\
+= \$1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
 = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
 = 2.88B \times 92.6\% \times 212 \\
-= 565B \\[0.5em]
-\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
-\text{where } T_{accel} \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
 = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
 = 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204 \\[0.5em]
-\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
-\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
+= Funding_{treaty} \times Pct_{bond} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -1118,69 +1632,153 @@ Treaty ROI from elimination of efficacy lag plus earlier treatment discovery fro
 
 $$
 \begin{gathered}
-ROI_{max} = \frac{Value_{max}}{Cost_{campaign}} = \frac{\$84800T}{\$1B} = 84.8M \\[0.5em]
-\text{where } Value_{max} \\
+ROI_{max} \\
+= \frac{Value_{max}}{Cost_{campaign}} \\
+= \frac{\$84800T}{\$1B} \\
+= 84.8M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Value_{max} \\
 = DALYs_{max} \times Value_{QALY} \\
 = 565B \times \$150K \\
-= \$84800T \\[0.5em]
-\text{where } DALYs_{max} \\
+= \$84800T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
 = DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
 = 2.88B \times 92.6\% \times 212 \\
-= 565B \\[0.5em]
-\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212 \\[0.5em]
-\text{where } T_{accel} \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
 = T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
 = 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204 \\[0.5em]
-\text{where } T_{first,SQ} = T_{queue,SQ} \times 0.5 = 443 \times 0.5 = 222 \\[0.5em]
-\text{where } T_{queue,SQ} = \frac{N_{untreated}}{Treatments_{new,ann}} = \frac{6{,}650}{15} = 443 \\[0.5em]
-\text{where } N_{untreated} = N_{rare} \times 0.95 = 7{,}000 \times 0.95 = 6{,}650 \\[0.5em]
-\text{where } k_{capacity} = \frac{N_{fundable,ann}}{Slots_{curr}} = \frac{23.4M}{1.9M} = 12.3 \\[0.5em]
-\text{where } N_{fundable,ann} \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ann} \\
 = \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.7B}{\$929} \\
-= 23.4M \\[0.5em]
-\text{where } Subsidies_{trial,ann} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ann} \\
 = Treasury_{RD,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= \$21.7B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Treasury_{RD,ann} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Treasury_{RD,ann} \\
 = Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
 = \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Payout_{bond,ann} \\
+= \$27.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
 = Funding_{treaty} \times Pct_{bond} \\
 = \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Funding_{political,ann} \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
 = Funding_{treaty} \times Pct_{political} \\
 = \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Cost_{campaign} \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
 = Budget_{viral,base} + Budget_{lobby,treaty} \\
 + Budget_{reserve} \\
 = \$250M + \$650M + \$100M \\
 = \$1B
 \end{gathered}
 $$
-
 *~ Medium confidence*
 
 #### Sensitivity Analysis
@@ -1282,14 +1880,18 @@ $$
 Payout_{bond,ann} \\
 = Funding_{treaty} \times Pct_{bond} \\
 = \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 :::

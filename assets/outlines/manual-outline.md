@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 45 | **Words:** 107,116 | **Images:** 676 | **Est. Pages:** ~766
+**Files:** 45 | **Words:** 107,074 | **Images:** 674 | **Est. Pages:** ~765
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -783,7 +783,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** VICTORY Incentive Alignment Bonds
 **Description:** How to legally bribe politicians into saving lives, and how investors profit from it
-**Stats:** 5,836 words | 673 lines | 46 images | ~46p
+**Stats:** 5,812 words | 671 lines | 45 images | ~46p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -833,7 +833,6 @@
     ![The plan to gradually stop buying bombs versus the four reasons we'll probably keep buying bombs anyway.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-goal-isn-t-a-1-treaty-the-goal-is-100-bw-academic.jpg)
     ![How much money politicians get for being nice increases as they're nicer. By the end, they get 270 billion dollars for not killing people.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-iabs-are-the-political-ratchet-bw-academic.jpg)
     ![What happens over fifty years if we do nothing special versus if we pay politicians to care. One line stays flat, the other goes up like a rocket.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-alternative-is-stagnation-bw-academic.jpg)
-    ![Cures make money, money buys more cures, more cures make more money. Capitalism accidentally does something good and is deeply confused by the experience.](/assets/images/victory-bonds/victory-bonds-section-expansion-flywheel-bw-academic.jpg)
     - Beyond the 1% Treaty
     ![The four boxes you need to tick before you can bribe governments into solving global problems. Apparently you can't just bribe them willy-nilly.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-beyond-the-1-treaty-iabs-as-a-general-governance-tool-bw-academic.jpg)
   - For Investors
@@ -1163,7 +1162,7 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,121 words | 288 lines | 19 images | ~22p
+**Stats:** 3,098 words | 286 lines | 18 images | ~21p
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     ![How to stop spending money on death and start spending it on life, in three simple steps. You'd think this would be obvious.](/assets/images/roadmap/roadmap-section-high-level-strategy-the-three-step-recipe-for-not-dying-bw-academic.jpg)
@@ -1197,7 +1196,6 @@
   - The Paper Collection Timeline: From $0 to Ending Death
     ![Phase one: collect papers. Phase two: collect more papers. Phase three: 1 billion people sign, world changes. Bureaucracy saves humanity.](/assets/images/roadmap/roadmap-section-the-paper-collection-timeline-from-0-to-ending-death-bw-academic.jpg)
   - The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
-    ![A charity that lobbies politicians and makes profit. You invented a four-headed monster that can't be killed because each head files different taxes.](/assets/images/roadmap/roadmap-section-legal-architecture-diagram-bw-academic.jpg)
   - The Political Strategy: Co-Opt, Don't Compete
     ![Take the people who profit from death. Make them profit more from life. They switch sides. You call it judo. It's just math with better marketing.](/assets/images/roadmap/roadmap-section-the-political-strategy-co-opt-don-t-compete-bw-academic.jpg)
   - Your Next Steps
@@ -1617,7 +1615,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,238 words | 164 lines | 9 images | ~9p
+**Stats:** 1,243 words | 164 lines | 9 images | ~9p
 
   - How 1% Less Violence Pays For Everything
     ![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
@@ -1629,7 +1627,7 @@
   - The Formulas
     ![The money you definitely get versus the total benefit to society. One is guaranteed, the other is probably much bigger. Like ordering fries and getting the whole potato farm.](/assets/images/peace-dividend/peace-dividend-section-the-formulas-bw-academic.jpg)
     - The Elasticity Question
-  - Key Findings
+  - The Part Where the Math Gets Embarrassing
     ![Best case: 114 billion in benefits. Worst case: 27.2 billion and you double medical research funding. Truly a devastating range of outcomes.](/assets/images/peace-dividend/peace-dividend-section-key-findings-bw-academic.jpg)
   - What You're Assuming (and Where It Gets Shaky)
     - The GDP Multiplier

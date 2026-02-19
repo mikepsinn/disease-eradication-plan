@@ -108,14 +108,18 @@ $$
 Benefit_{RD,ann} \\
 = Spending_{trials} \times Reduce_{pct} \\
 = \$60B \times 97.7\% \\
-= \$58.6B \\[0.5em]
-\text{where } Reduce_{pct} \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
 = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
 = 1 - \frac{\$929}{\$41K} \\
 = 97.7\%
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -150,23 +154,37 @@ $$
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{dFDA} \\
 = \$58.6B - \$40M \\
-= \$58.6B \\[0.5em]
-\text{where } Benefit_{RD,ann} \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
 = Spending_{trials} \times Reduce_{pct} \\
 = \$60B \times 97.7\% \\
-= \$58.6B \\[0.5em]
-\text{where } Reduce_{pct} \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
 = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
 = 1 - \frac{\$929}{\$41K} \\
-= 97.7\% \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= 97.7\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -309,19 +327,31 @@ $$
 Cost_{dFDA,total} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
-= \$611M \\[0.5em]
-\text{where } PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
-\text{where } OPEX_{total} \\
+= \$611M
+\end{gathered}
+$$
+where:
+$$
+PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
-= \$40M \\[0.5em]
-\text{where } Cost_{upfront,total} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{upfront,total} \\
 = Cost_{upfront} + Cost_{DIH,init} \\
 = \$40M + \$230M \\
 = \$270M
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -391,41 +421,87 @@ ROI from Decentralized Framework for Drug Assessment R&D savings only (10-year N
 
 $$
 \begin{gathered}
-ROI_{RD} = \frac{NPV_{RD}}{Cost_{dFDA,total}} = \frac{\$389B}{\$611M} = 637 \\[0.5em]
-\text{where } NPV_{RD} = \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t} \\[0.5em]
-\text{where } Savings_{RD,ann} \\
+ROI_{RD} \\
+= \frac{NPV_{RD}}{Cost_{dFDA,total}} \\
+= \frac{\$389B}{\$611M} \\
+= 637
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+NPV_{RD} \\
+= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \times \frac{\min(t,5)}{5}}{(1+r)^t}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{dFDA} \\
 = \$58.6B - \$40M \\
-= \$58.6B \\[0.5em]
-\text{where } Benefit_{RD,ann} \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
 = Spending_{trials} \times Reduce_{pct} \\
 = \$60B \times 97.7\% \\
-= \$58.6B \\[0.5em]
-\text{where } Reduce_{pct} \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
 = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
 = 1 - \frac{\$929}{\$41K} \\
-= 97.7\% \\[0.5em]
-\text{where } OPEX_{dFDA} \\
+= 97.7\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
 = Cost_{platform} + Cost_{staff} + Cost_{infra} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M \\[0.5em]
-\text{where } Cost_{dFDA,total} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{dFDA,total} \\
 = PV_{OPEX} + Cost_{upfront,total} \\
 = \$342M + \$270M \\
-= \$611M \\[0.5em]
-\text{where } PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r} \\[0.5em]
-\text{where } OPEX_{total} \\
+= \$611M
+\end{gathered}
+$$
+where:
+$$
+PV_{OPEX} = OPEX_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{total} \\
 = OPEX_{ann} + OPEX_{DIH,ann} \\
 = \$18.9M + \$21.1M \\
-= \$40M \\[0.5em]
-\text{where } Cost_{upfront,total} \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{upfront,total} \\
 = Cost_{upfront} + Cost_{DIH,init} \\
 = \$40M + \$230M \\
 = \$270M
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis

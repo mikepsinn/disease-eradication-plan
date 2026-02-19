@@ -104,11 +104,18 @@ $$
 Deaths_{lag,total} \\
 = Lives_{saved,annual} \times T_{lag} \\
 = 12.4M \times 8.2 \\
-= 102M \\[0.5em]
-\text{where } Lives_{saved,annual} = \frac{LY_{saved,annual}}{T_{ext}} = \frac{149M}{12} = 12.4M
+= 102M
 \end{gathered}
 $$
-
+where:
+$$
+\begin{gathered}
+Lives_{saved,annual} \\
+= \frac{LY_{saved,annual}}{T_{ext}} \\
+= \frac{149M}{12} \\
+= 12.4M
+\end{gathered}
+$$
 *~ Medium confidence*
 
 #### Sensitivity Analysis

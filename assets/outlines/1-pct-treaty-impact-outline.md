@@ -10,7 +10,7 @@
 **Stats:** 26,115 words | 2,400 lines | 86 images | ~147p
 
   - Abstract
-  - Key Findings
+  - Primary Findings
   - How Pragmatic Trials Increase Safety
     ![Current trials: small, slow, safe. Pragmatic trials: large, fast, slightly less safe. Treatment delays kill millions. Safety delays kill dozens. You're choosing to kill millions to save dozens. It's like wearing a seatbelt made of land mines.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-how-pragmatic-trials-increase-safety-bw-academic.jpg)
   - Introduction

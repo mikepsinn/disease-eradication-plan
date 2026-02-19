@@ -66,14 +66,18 @@ $$
 Benefit_{RD,ann} \\
 = Spending_{trials} \times Reduce_{pct} \\
 = \$60B \times 97.7\% \\
-= \$58.6B \\[0.5em]
-\text{where } Reduce_{pct} \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
 = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
 = 1 - \frac{\$929}{\$41K} \\
 = 97.7\%
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -146,49 +150,86 @@ $$
 Cost_{war,total} \\
 = Cost_{war,direct} + Cost_{war,indirect} \\
 = \$7.66T + \$3.7T \\
-= \$11.4T \\[0.5em]
-\text{where } Cost_{war,direct} \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
 = Loss_{life,conflict} + Damage_{infra,total} \\
 + Disruption_{trade} + Spending_{mil} \\
 = \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T \\[0.5em]
-\text{where } Loss_{life,conflict} \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
 = Cost_{combat,human} + Cost_{state,human} \\
 + Cost_{terror,human} \\
 = \$2.34T + \$27B + \$83B \\
-= \$2.45T \\[0.5em]
-\text{where } Cost_{combat,human} \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
 = Deaths_{combat} \times VSL \\
 = 234{,}000 \times \$10M \\
-= \$2.34T \\[0.5em]
-\text{where } Cost_{state,human} \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
 = Deaths_{state} \times VSL \\
 = 2{,}700 \times \$10M \\
-= \$27B \\[0.5em]
-\text{where } Cost_{terror,human} \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
 = Deaths_{terror} \times VSL \\
 = 8{,}300 \times \$10M \\
-= \$83B \\[0.5em]
-\text{where } Damage_{infra,total} \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
 = Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} \\
-+ Damage_{water} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
 = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T \\[0.5em]
-\text{where } Disruption_{trade} \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
 = Disruption_{currency} + Disruption_{energy} \\
 + Disruption_{shipping} + Disruption_{supply} \\
 = \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B \\[0.5em]
-\text{where } Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} \\
-+ Loss_{capital,conflict} + Cost_{psych} \\
-+ Cost_{refugee} + Cost_{vet} \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
 = \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
 = \$3.7T
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -339,22 +380,36 @@ Loss_{life,conflict} \\
 = Cost_{combat,human} + Cost_{state,human} \\
 + Cost_{terror,human} \\
 = \$2.34T + \$27B + \$83B \\
-= \$2.45T \\[0.5em]
-\text{where } Cost_{combat,human} \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
 = Deaths_{combat} \times VSL \\
 = 234{,}000 \times \$10M \\
-= \$2.34T \\[0.5em]
-\text{where } Cost_{state,human} \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
 = Deaths_{state} \times VSL \\
 = 2{,}700 \times \$10M \\
-= \$27B \\[0.5em]
-\text{where } Cost_{terror,human} \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
 = Deaths_{terror} \times VSL \\
 = 8{,}300 \times \$10M \\
 = \$83B
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -476,38 +531,66 @@ Cost_{war,direct} \\
 = Loss_{life,conflict} + Damage_{infra,total} \\
 + Disruption_{trade} + Spending_{mil} \\
 = \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T \\[0.5em]
-\text{where } Loss_{life,conflict} \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
 = Cost_{combat,human} + Cost_{state,human} \\
 + Cost_{terror,human} \\
 = \$2.34T + \$27B + \$83B \\
-= \$2.45T \\[0.5em]
-\text{where } Cost_{combat,human} \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
 = Deaths_{combat} \times VSL \\
 = 234{,}000 \times \$10M \\
-= \$2.34T \\[0.5em]
-\text{where } Cost_{state,human} \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
 = Deaths_{state} \times VSL \\
 = 2{,}700 \times \$10M \\
-= \$27B \\[0.5em]
-\text{where } Cost_{terror,human} \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
 = Deaths_{terror} \times VSL \\
 = 8{,}300 \times \$10M \\
-= \$83B \\[0.5em]
-\text{where } Damage_{infra,total} \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
 = Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} \\
-+ Damage_{water} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
 = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T \\[0.5em]
-\text{where } Disruption_{trade} \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
 = Disruption_{currency} + Disruption_{energy} \\
 + Disruption_{shipping} + Disruption_{supply} \\
 = \$57.4B + \$125B + \$247B + \$187B \\
 = \$616B
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -582,69 +665,134 @@ Benefit-Cost Ratio of the IAB mechanism itself
 
 $$
 \begin{gathered}
-BCR_{IAB} = \frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} = \frac{\$172B}{\$750M} = 230 \\[0.5em]
-\text{where } Benefit_{peace+RD} \\
+BCR_{IAB} \\
+= \frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} \\
+= \frac{\$172B}{\$750M} \\
+= 230
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace+RD} \\
 = Benefit_{peace,soc} + Benefit_{RD,ann} \\
 = \$114B + \$58.6B \\
-= \$172B \\[0.5em]
-\text{where } Benefit_{peace,soc} \\
+= \$172B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
 = Cost_{war,total} \times Reduce_{treaty} \\
 = \$11.4T \times 1\% \\
-= \$114B \\[0.5em]
-\text{where } Cost_{war,total} \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
 = Cost_{war,direct} + Cost_{war,indirect} \\
 = \$7.66T + \$3.7T \\
-= \$11.4T \\[0.5em]
-\text{where } Cost_{war,direct} \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
 = Loss_{life,conflict} + Damage_{infra,total} \\
 + Disruption_{trade} + Spending_{mil} \\
 = \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T \\[0.5em]
-\text{where } Loss_{life,conflict} \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
 = Cost_{combat,human} + Cost_{state,human} \\
 + Cost_{terror,human} \\
 = \$2.34T + \$27B + \$83B \\
-= \$2.45T \\[0.5em]
-\text{where } Cost_{combat,human} \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
 = Deaths_{combat} \times VSL \\
 = 234{,}000 \times \$10M \\
-= \$2.34T \\[0.5em]
-\text{where } Cost_{state,human} \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
 = Deaths_{state} \times VSL \\
 = 2{,}700 \times \$10M \\
-= \$27B \\[0.5em]
-\text{where } Cost_{terror,human} \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
 = Deaths_{terror} \times VSL \\
 = 8{,}300 \times \$10M \\
-= \$83B \\[0.5em]
-\text{where } Damage_{infra,total} \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
 = Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} \\
-+ Damage_{water} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
 = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T \\[0.5em]
-\text{where } Disruption_{trade} \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
 = Disruption_{currency} + Disruption_{energy} \\
 + Disruption_{shipping} + Disruption_{supply} \\
 = \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B \\[0.5em]
-\text{where } Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} \\
-+ Loss_{capital,conflict} + Cost_{psych} \\
-+ Cost_{refugee} + Cost_{vet} \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
 = \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T \\[0.5em]
-\text{where } Benefit_{RD,ann} \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
 = Spending_{trials} \times Reduce_{pct} \\
 = \$60B \times 97.7\% \\
-= \$58.6B \\[0.5em]
-\text{where } Reduce_{pct} \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
 = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
 = 1 - \frac{\$929}{\$41K} \\
 = 97.7\%
 \end{gathered}
 $$
-
 **Methodology**: [https://iab.warondisease.org##welfare-analysis](https://iab.warondisease.org##welfare-analysis)
 
 *✓ High confidence*
@@ -681,14 +829,18 @@ $$
 Funding_{political,ann} \\
 = Funding_{treaty} \times Pct_{political} \\
 = \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 :::
@@ -709,53 +861,95 @@ $$
 Benefit_{peace,soc} \\
 = Cost_{war,total} \times Reduce_{treaty} \\
 = \$11.4T \times 1\% \\
-= \$114B \\[0.5em]
-\text{where } Cost_{war,total} \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
 = Cost_{war,direct} + Cost_{war,indirect} \\
 = \$7.66T + \$3.7T \\
-= \$11.4T \\[0.5em]
-\text{where } Cost_{war,direct} \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
 = Loss_{life,conflict} + Damage_{infra,total} \\
 + Disruption_{trade} + Spending_{mil} \\
 = \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T \\[0.5em]
-\text{where } Loss_{life,conflict} \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
 = Cost_{combat,human} + Cost_{state,human} \\
 + Cost_{terror,human} \\
 = \$2.34T + \$27B + \$83B \\
-= \$2.45T \\[0.5em]
-\text{where } Cost_{combat,human} \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
 = Deaths_{combat} \times VSL \\
 = 234{,}000 \times \$10M \\
-= \$2.34T \\[0.5em]
-\text{where } Cost_{state,human} \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
 = Deaths_{state} \times VSL \\
 = 2{,}700 \times \$10M \\
-= \$27B \\[0.5em]
-\text{where } Cost_{terror,human} \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
 = Deaths_{terror} \times VSL \\
 = 8{,}300 \times \$10M \\
-= \$83B \\[0.5em]
-\text{where } Damage_{infra,total} \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
 = Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} \\
-+ Damage_{water} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
 = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T \\[0.5em]
-\text{where } Disruption_{trade} \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
 = Disruption_{currency} + Disruption_{energy} \\
 + Disruption_{shipping} + Disruption_{supply} \\
 = \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B \\[0.5em]
-\text{where } Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} \\
-+ Loss_{capital,conflict} + Cost_{psych} \\
-+ Cost_{refugee} + Cost_{vet} \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
 = \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
 = \$3.7T
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -854,65 +1048,122 @@ $$
 Benefit_{peace+RD} \\
 = Benefit_{peace,soc} + Benefit_{RD,ann} \\
 = \$114B + \$58.6B \\
-= \$172B \\[0.5em]
-\text{where } Benefit_{peace,soc} \\
+= \$172B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
 = Cost_{war,total} \times Reduce_{treaty} \\
 = \$11.4T \times 1\% \\
-= \$114B \\[0.5em]
-\text{where } Cost_{war,total} \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
 = Cost_{war,direct} + Cost_{war,indirect} \\
 = \$7.66T + \$3.7T \\
-= \$11.4T \\[0.5em]
-\text{where } Cost_{war,direct} \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
 = Loss_{life,conflict} + Damage_{infra,total} \\
 + Disruption_{trade} + Spending_{mil} \\
 = \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T \\[0.5em]
-\text{where } Loss_{life,conflict} \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
 = Cost_{combat,human} + Cost_{state,human} \\
 + Cost_{terror,human} \\
 = \$2.34T + \$27B + \$83B \\
-= \$2.45T \\[0.5em]
-\text{where } Cost_{combat,human} \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
 = Deaths_{combat} \times VSL \\
 = 234{,}000 \times \$10M \\
-= \$2.34T \\[0.5em]
-\text{where } Cost_{state,human} \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
 = Deaths_{state} \times VSL \\
 = 2{,}700 \times \$10M \\
-= \$27B \\[0.5em]
-\text{where } Cost_{terror,human} \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
 = Deaths_{terror} \times VSL \\
 = 8{,}300 \times \$10M \\
-= \$83B \\[0.5em]
-\text{where } Damage_{infra,total} \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
 = Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} \\
-+ Damage_{water} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
 = \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T \\[0.5em]
-\text{where } Disruption_{trade} \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
 = Disruption_{currency} + Disruption_{energy} \\
 + Disruption_{shipping} + Disruption_{supply} \\
 = \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B \\[0.5em]
-\text{where } Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} \\
-+ Loss_{capital,conflict} + Cost_{psych} \\
-+ Cost_{refugee} + Cost_{vet} \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
 = \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T \\[0.5em]
-\text{where } Benefit_{RD,ann} \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
 = Spending_{trials} \times Reduce_{pct} \\
 = \$60B \times 97.7\% \\
-= \$58.6B \\[0.5em]
-\text{where } Reduce_{pct} \\
+= \$58.6B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
 = 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
 = 1 - \frac{\$929}{\$41K} \\
 = 97.7\%
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -947,14 +1198,18 @@ $$
 Payout_{bond,ann} \\
 = Funding_{treaty} \times Pct_{bond} \\
 = \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
 = \$27.2B
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 :::
@@ -972,23 +1227,40 @@ Annual return percentage for VICTORY Incentive Alignment Bondholders
 
 $$
 \begin{gathered}
-r_{bond} = \frac{Payout_{bond,ann}}{Cost_{campaign}} = \frac{\$2.72B}{\$1B} = 272\% \\[0.5em]
-\text{where } Payout_{bond,ann} \\
+r_{bond} \\
+= \frac{Payout_{bond,ann}}{Cost_{campaign}} \\
+= \frac{\$2.72B}{\$1B} \\
+= 272\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Payout_{bond,ann} \\
 = Funding_{treaty} \times Pct_{bond} \\
 = \$27.2B \times 10\% \\
-= \$2.72B \\[0.5em]
-\text{where } Funding_{treaty} \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
 = Spending_{mil} \times Reduce_{treaty} \\
 = \$2.72T \times 1\% \\
-= \$27.2B \\[0.5em]
-\text{where } Cost_{campaign} \\
+= \$27.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
 = Budget_{viral,base} + Budget_{lobby,treaty} \\
 + Budget_{reserve} \\
 = \$250M + \$650M + \$100M \\
 = \$1B
 \end{gathered}
 $$
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
