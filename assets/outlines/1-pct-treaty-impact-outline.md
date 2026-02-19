@@ -2,7 +2,7 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 3 | **Words:** 27,807 | **Images:** 87 | **Est. Pages:** ~155
+**Files:** 3 | **Words:** 27,805 | **Images:** 87 | **Est. Pages:** ~155
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
@@ -265,7 +265,7 @@
 #### knowledge/appendix/economist-feedback-treaty.qmd
 **Title:** Is This Crazy?
 **Description:** A 1% redirect of military spending to pragmatic trials claims to avert 565 billion DALYs (95% CI: 361 billion DALYs-877 billion DALYs) at $0.0018 (95% CI: $0.0007-$0.0041) each. One-page calculation chain for economist review.
-**Stats:** 1,630 words | 169 lines | ~7p
+**Stats:** 1,628 words | 169 lines | ~7p
 
   - Why You Should Take 15 Minutes to Validate This Model
   - Bottom-Line Claims

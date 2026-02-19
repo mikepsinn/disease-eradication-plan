@@ -546,7 +546,7 @@ This approach would reduce the efficacy lag from {{< var efficacy_lag_years >}} 
 
 If implemented today, the bifurcated model would:
 
-- **Eliminate the {{< var efficacy_lag_years >}}-year efficacy lag** for drugs with demonstrated safety
+- **Eliminate the {{< var efficacy_lag_years >}} efficacy lag** for drugs with demonstrated safety
 - **Reduce trial costs by {{< var dfda_trial_cost_reduction_pct >}}** (from {{< var pharma_drug_development_cost_current >}} per drug)
 - **Accelerate treatments for {{< var diseases_without_effective_treatment >}}** currently without effective therapy
 
@@ -763,7 +763,7 @@ The pre-1962 system (1938-1962) included:
 
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
 
-- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from {{< var efficacy_lag_years >}}-year timeline shift**
+- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from {{< var efficacy_lag_years >}} timeline shift**
 - **{{< var dfda_efficacy_lag_elimination_dalys >}} lost**
 - **{{< var dfda_efficacy_lag_elimination_economic_value >}} economic destruction**
 - **{{< var type_ii_error_cost_ratio >}} harm ratio** (Type II vs. Type I errors)

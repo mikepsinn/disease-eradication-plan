@@ -53,7 +53,7 @@ This chapter relies on three tiers of evidence:
 
 **Model-Dependent Estimates** (quantitative analysis with Monte Carlo confidence intervals):
 
-- {{< var dfda_efficacy_lag_elimination_deaths_averted >}} from {{< var efficacy_lag_years >}}-year efficacy lag
+- {{< var dfda_efficacy_lag_elimination_deaths_averted >}} from {{< var efficacy_lag_years >}} efficacy lag
 - {{< var dfda_efficacy_lag_elimination_dalys >}} lost
 - {{< var type_ii_error_cost_ratio >}} Type II/Type I error ratio
 
@@ -68,7 +68,7 @@ Compare two real-world systems for testing drugs:
 
 The current system costs **{{< var dfda_trial_cost_reduction_factor >}} more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer**. Not a small difference; the difference between functional and designed-to-fail.
 
-### The {{< var efficacy_lag_years >}}-Year Efficacy Lag
+### The {{< var efficacy_lag_years >}} Efficacy Lag
 
 Here's the breakdown of where the time goes:
 
@@ -85,7 +85,7 @@ You're two lifetimes from applying the scientific method to medicine. That's 0.0
 
 The 1962 Kefauver-Harris Amendments fundamentally restructured how drugs reach patients. To understand what changed, consider the system they replaced.
 
-For 10,000 years, life expectancy remained at 30 years. Then in 1883, doctors started sharing information through JAMA. **{{< var pre_1962_physician_count >}} physicians** tested treatments on real patients and published results. Life expectancy increased by 3.82 years every decade [@life-expectancy-increase-pre-1962] (calculated from 1880-1960 data) for 80 years.
+For 10,000 years, life expectancy remained at 30 years. Then in 1883, doctors started sharing information through JAMA. **{{< var pre_1962_physician_count >}}** tested treatments on real patients and published results. Life expectancy increased by 3.82 years every decade [@life-expectancy-increase-pre-1962] (calculated from 1880-1960 data) for 80 years.
 
 In 1938, Phase I safety testing was added after the Elixir sulfanilamide disaster. This was reasonable and didn't slow progress. Safety regulations worked perfectly. They prevented all US deaths from thalidomide while Europe had thousands.
 
@@ -194,7 +194,7 @@ But that was just the US. And just the visible delays.
 
 ### The Global Body Count
 
-A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease.org) uses WHO mortality data and Monte Carlo modeling. It estimates the *total* cost of blocking patient access during the {{< var efficacy_lag_years >}}-year post-safety efficacy delay:
+A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease.org) uses WHO mortality data and Monte Carlo modeling. It estimates the *total* cost of blocking patient access during the {{< var efficacy_lag_years >}} post-safety efficacy delay:
 
 **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths** from the efficacy lag alone.
 

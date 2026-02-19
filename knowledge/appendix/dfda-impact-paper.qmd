@@ -78,7 +78,7 @@ image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.
 
 These are **cumulative benefits over the entire acceleration period**, not annual figures. This is the same methodology used to value smallpox eradication (program cost -> total future lives saved) and climate infrastructure investments: the one-time benefit of permanently accelerating medical progress.
 
-**Interpreting the Timeline Figure:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year figure represents a **discovery capacity model** of medical research. Think of the therapeutic search space as the set of all untested drug-disease combinations, with trial capacity determining how fast we can explore it.
+**Interpreting the Timeline Figure:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} figure represents a **discovery capacity model** of medical research. Think of the therapeutic search space as the set of all untested drug-disease combinations, with trial capacity determining how fast we can explore it.
 
 ### The Discovery Capacity Model {#the-discovery-capacity-model}
 
@@ -150,7 +150,7 @@ The decentralized physician-led efficacy model is not theoretical. It operated s
 
 **How the pre-1962 system worked:**
 
-From 1883 to 1960, {{< var pre_1962_physician_count >}} physicians across America tested drug efficacy on real patients in routine clinical practice. The Journal of the American Medical Association (JAMA) compiled observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized approach successfully identified antibiotics, vaccines, and countless surgical techniques.
+From 1883 to 1960, {{< var pre_1962_physician_count >}} across America tested drug efficacy on real patients in routine clinical practice. The Journal of the American Medical Association (JAMA) compiled observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized approach successfully identified antibiotics, vaccines, and countless surgical techniques.
 
 **Cost comparison demonstrates dramatic efficiency:**
 
@@ -784,7 +784,7 @@ $$
 
 **Timeline to Crossover:**
 
-At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the framework. For combination therapies ({{< var combination_therapy_disease_space >}} combinations), reaching 53% exploration would take millions of years.
+At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the framework. For combination therapies ({{< var combination_therapy_disease_space >}}), reaching 53% exploration would take millions of years.
 
 **Conclusion**: For any plausible planning horizon, learning effects dominate. Diminishing returns is a theoretical concern for civilizations operating on multi-century timescales, not a practical constraint for the next 100+ years of medical research.
 
@@ -1134,7 +1134,7 @@ The following table provides the data and sources that support the chart. The li
 
 | Intervention                           | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :------------------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#dfda-icer-analysis---cost-utility-framework). Based on {{< var dfda_npv_annual_opex >}}-{{< var dfda_npv_annual_opex_total >}} annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year timeline shift.                                                                              |
+| **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#dfda-icer-analysis---cost-utility-framework). Based on {{< var dfda_npv_annual_opex >}}-{{< var dfda_npv_annual_opex_total >}} annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.                                                                              |
 | **Smallpox Eradication**               |      **100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. (WHO, 2010 [@who-smallpox-eradication-commemoration]) |
 | **Childhood Vaccinations**             |        **22+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. (CDC, 2023 [@childhood-vaccinations-prevent-deaths])                                 |
 | **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $100-$500/DALY averted. Community water supply improvements cost $200/DALY. (WHO, 2004 [@who-clean-water-daly-costs])                                              |

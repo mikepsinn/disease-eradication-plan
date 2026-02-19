@@ -34,7 +34,7 @@ dot.node('Wishocracy', 'Wishocracy\nPairwise Allocation Voting', shape='diamond'
 with dot.subgraph(name='cluster_campaigns') as campaigns:
     campaigns.attr(label='Campaign Proposals (Anyone Can Submit)', style='dashed')
 
-    campaigns.node('PatientSubs', 'Patient Subsidies\n$800B/year\n(Automatic Formula)', shape='box')
+    campaigns.node('PatientSubs', 'Patient Subsidies\n$800M/year\n(Automatic Formula)', shape='box')
     campaigns.node('DrugAssessment', 'A decentralized framework\nfor drug assessment\n$10B/year\n(One of many campaigns)', shape='box')
     campaigns.node('Infrastructure', 'Infrastructure Services\n$20B/year total\n(Competing providers)', shape='box')
     campaigns.node('Prizes', 'Research Prizes\n$100B total\n(Cure bounties)', shape='box')

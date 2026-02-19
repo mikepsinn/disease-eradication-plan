@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 36 | **Words:** 84,152 | **Images:** 533 | **Est. Pages:** ~603
+**Files:** 36 | **Words:** 84,095 | **Images:** 531 | **Est. Pages:** ~602
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -224,7 +224,7 @@
 #### knowledge/problem/untapped-therapeutic-frontier.qmd
 **Title:** The Untapped Therapeutic Frontier
 **Description:** You've explored less than 1% of medicine. The other 99% is where the cures are.
-**Stats:** 1,832 words | 193 lines | 15 images | ~15p
+**Stats:** 1,821 words | 193 lines | 15 images | ~15p
 
   - Your Tiny Sandbox
     ![Twenty thousand drug products, but only 9,500 unique ingredients. It's like having 20,000 sandwiches but only 9,500 types of bread. You keep repackaging the same bread.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-your-tiny-sandbox-bw-academic.jpg)
@@ -259,13 +259,13 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34x more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 4,551 words | 514 lines | 26 images | ~31p
+**Stats:** 4,550 words | 514 lines | 26 images | ~31p
 
   - A Note on Blame
   - Confidence Levels: What We Know vs. What We Model
     ![Bottom tier: facts you can't argue with. Middle tier: facts you can sort of argue with. Top tier: educated guesses. This book uses all three because reality is complicated.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-confidence-levels-what-we-know-vs-what-we-model-bw-academic.jpg)
   - The 44.1x (95% CI: 39.4x-89.1x) Inefficiency Tax
-    - The 8.2 years (95% CI: 4.85 years-11.5 years)-Year Efficacy Lag
+    - The 8.2 years (95% CI: 4.85 years-11.5 years) Efficacy Lag
   - What the 1962 Efficacy Requirements Changed
     ![Average Life Expectancy Over Time](../../assets/images/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
   - Detailed Historical Analysis
@@ -631,10 +631,9 @@
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
 **Description:** How to allocate $27.2B and prevent it from getting stolen by parasitic lobbyists and special interests (as is the custom)
-**Stats:** 1,144 words | 143 lines | 5 images | ~7p
+**Stats:** 1,119 words | 141 lines | 4 images | ~6p
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
-    ![Money flows from the treaty, through a system with too many acronyms, into campaigns that compete to cure things. It's like Kickstarter, but with stakes.](/assets/images/wishocracy/wishocracy-section-how-wishocracy-allocates-the-1-treaty-fund-decentralized-crowdfunding-bw-academic.jpg)
     - What your [decentralized framework for drug assessment (dFDA)](dfda.qmd) handles automatically:
     - What Wishocracy Actually Decides:
       - Infrastructure Campaigns
@@ -1127,7 +1126,7 @@
   - "You Can't Cure Aging"
     ![Why your body falls apart and which tools might fix it. Instructions unclear: currently still dying.](/assets/images/faq/faq-section-aging-as-engineering-bw-academic.jpg)
   - "I'm Just One Person"
-    ![You tell six friends, who each tell six friends, until 280 million people know about it. Like a pyramid scheme, but for not dying, so legally distinct.](/assets/images/faq/faq-section-i-m-just-one-person-bw-academic.jpg)
+    ![You tell ten friends, who each tell ten friends, until 280 million people know about it. Like a pyramid scheme, but for not dying, so legally distinct.](/assets/images/faq/faq-section-i-m-just-one-person-bw-academic.jpg)
   - "Reform the System Instead"
     ![Why you can't fix a broken system from inside: because the system is only broken if you're not the one getting rich from it.](/assets/images/faq/faq-section-reform-the-system-instead-bw-academic.jpg)
   - "This Is Politically Impossible"
@@ -1164,7 +1163,7 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,141 words | 290 lines | 20 images | ~23p
+**Stats:** 3,121 words | 288 lines | 19 images | ~22p
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     ![How to stop spending money on death and start spending it on life, in three simple steps. You'd think this would be obvious.](/assets/images/roadmap/roadmap-section-high-level-strategy-the-three-step-recipe-for-not-dying-bw-academic.jpg)
@@ -1198,7 +1197,7 @@
   - The Paper Collection Timeline: From $0 to Ending Death
     ![Phase one: collect papers. Phase two: collect more papers. Phase three: 1 billion people sign, world changes. Bureaucracy saves humanity.](/assets/images/roadmap/roadmap-section-the-paper-collection-timeline-from-0-to-ending-death-bw-academic.jpg)
   - The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
-    ![A charity that lobbies politicians and makes profit. You invented a three-headed monster that can't be killed because each head files different taxes.](/assets/images/roadmap/roadmap-section-legal-architecture-diagram-bw-academic.jpg)
+    ![A charity that lobbies politicians and makes profit. You invented a four-headed monster that can't be killed because each head files different taxes.](/assets/images/roadmap/roadmap-section-legal-architecture-diagram-bw-academic.jpg)
   - The Political Strategy: Co-Opt, Don't Compete
     ![Take the people who profit from death. Make them profit more from life. They switch sides. You call it judo. It's just math with better marketing.](/assets/images/roadmap/roadmap-section-the-political-strategy-co-opt-don-t-compete-bw-academic.jpg)
   - Your Next Steps
@@ -1207,7 +1206,6 @@
     - Why Expansion Is Built Into The System
     ![As more countries join, the bribe pool gets bigger. Corruption scales beautifully when it's trying to save lives.](/assets/images/roadmap/roadmap-section-incentive-growth-chart-bw-academic.jpg)
     - Here's Why It Keeps Growing
-    ![More bonds mean higher returns. Higher returns mean more bonds. It's a Ponzi scheme, except everyone lives and gets rich.](/assets/images/roadmap/roadmap-section-here-s-why-it-keeps-growing-bw-academic.jpg)
     - The Endgame
     ![1.35 trillion moves from killing people to healing them. Some goes to bribing politicians, the rest to actual medicine. Priorities.](/assets/images/roadmap/roadmap-section-the-endgame-bw-academic.jpg)
 

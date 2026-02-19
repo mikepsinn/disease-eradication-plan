@@ -46,7 +46,7 @@ Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var t
 
 ![Nine thousand drugs times one thousand diseases equals nine million possible cures. You've tested 30,000. See you in the year 5000.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-math-you-re-ignoring-bw-academic.jpg)
 
-**{{< var safe_compounds_count >}} compounds × {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} plausible drug-condition combinations.**
+**{{< var safe_compounds_count >}} × {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} plausible drug-condition combinations.**
 
 ### What You've Actually Tested
 
@@ -56,7 +56,7 @@ Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var t
 
 ![Most drug trials fail. A few succeed. Humanity's entire medical knowledge is a tiny pile of successes next to a mountain of expensive failures we learned nothing from.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-what-you-ve-actually-tested-bw-academic.jpg)
 
-**Total tested: {{< var tested_relationships_estimate >}} relationships.**
+**Total tested: {{< var tested_relationships_estimate >}}.**
 
 ### The Scorecard
 
@@ -116,13 +116,13 @@ It's not because science is hard. It's because:
 
 ## How Long to Explore Everything?
 
-At the current pace of {{< var current_trials_per_year >}} trials per year, how long would it take to systematically test therapeutic possibilities?
+At the current pace of {{< var current_trials_per_year >}}, how long would it take to systematically test therapeutic possibilities?
 
 ### Tier 1: Single Compounds (Most Conservative)
 
 Testing every known safe compound against every major disease:
 
-**{{< var drug_disease_combinations_possible >}} combinations ÷ {{< var current_trials_per_year >}} trials/year = {{< var current_known_safe_exploration_years >}}**
+**{{< var drug_disease_combinations_possible >}} ÷ {{< var current_trials_per_year >}} = {{< var current_known_safe_exploration_years >}}**
 
 That's almost 3,000 years to explore compounds we *already know are safe*. By that math, we won't finish until the year 5000.
 
@@ -132,7 +132,7 @@ That's almost 3,000 years to explore compounds we *already know are safe*. By th
 
 Modern medicine increasingly relies on multi-drug regimens. Oncology, HIV treatment, cardiology, and psychiatry all routinely use drug combinations. Testing pairwise combinations of safe compounds:
 
-**{{< var combination_therapy_disease_space >}} combinations ÷ {{< var current_trials_per_year >}} trials/year = {{< var current_combination_exploration_years >}}**
+**{{< var combination_therapy_disease_space >}} ÷ {{< var current_trials_per_year >}} = {{< var current_combination_exploration_years >}}**
 
 That's longer than *Homo sapiens* has existed as a species. Using only compounds with established safety data. Testing only pairs, not triplets or higher-order combinations.
 
@@ -168,7 +168,7 @@ The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials ca
 
 With a [decentralized framework for drug assessment](../solution/dfda.qmd), trial capacity increases by {{< var dfda_trial_capacity_multiplier >}}:
 
-**{{< var drug_disease_combinations_possible >}} combinations ÷ {{< var dfda_trials_per_year_capacity >}} trials/year = {{< var dfda_known_safe_exploration_years >}}**
+**{{< var drug_disease_combinations_possible >}} ÷ {{< var dfda_trials_per_year_capacity >}} = {{< var dfda_known_safe_exploration_years >}}**
 
 Still a long time, but within the planning horizon of institutions. The first few decades would capture the highest-value discoveries, the low-hanging fruit that current trial scarcity forces us to ignore.
 
