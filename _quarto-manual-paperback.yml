@@ -32,7 +32,6 @@ book:
     - part: "The Problem"
       chapters:
         - knowledge/problem.qmd
-        - knowledge/problem/the-daily-massacre.qmd
         - knowledge/problem/cost-of-war.qmd
         - knowledge/problem/cost-of-disease.qmd
         - knowledge/problem/nih-fails-2-institute-health.qmd
@@ -52,7 +51,7 @@ book:
         - knowledge/solution/aligning-incentives.qmd
         - knowledge/solution/incentive-alignment-bonds.qmd
 
-    - part: "The Evidence"
+    - part: "For Skeptics"
       chapters:
         - knowledge/proof.qmd
         - knowledge/proof/body-as-repairable-machine.qmd

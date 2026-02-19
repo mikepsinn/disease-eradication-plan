@@ -20,7 +20,7 @@ They say knowledge is power. But in this case, knowledge is mostly just depressi
 
 ## The Daily Body Count
 
-Every day, {{< var global_disease_deaths_daily >}} [humans die](problem/the-daily-massacre.qmd) from disease and aging. That's fifty 9/11s. Per day. Including weekends and holidays.
+Every day, {{< var global_disease_deaths_daily >}} [humans die](problem/cost-of-disease.qmd) from disease and aging. That's fifty 9/11s. Per day. Including weekends and holidays.
 
 ![Every day, 50 times as many people die from being old and sick as died on 9/11. You started two wars over 9/11. For aging, you bought face cream and called it a day.](/assets/images/problem/problem-section-daily-numbers-bw-academic.jpg)
 
@@ -120,7 +120,7 @@ The good news is you're going to fix it. The bad news is it requires doing thing
 
 The following chapters explain each problem in detail:
 
-- [The Daily Body Count](problem/the-daily-massacre.qmd): Why 150,000 daily deaths don't make the news
+- [The Daily Body Count](problem/cost-of-disease.qmd): Why 150,000 daily deaths don't make the news
 - [The NIH Spent $1 Trillion Curing Nothing](problem/nih-fails-2-institute-health.qmd): How 97% of medical research funding avoids testing drugs in humans
 - [The FDA Is Unsafe and Ineffective](problem/fda-is-unsafe-and-ineffective.qmd): How "safety" regulations make medicine more dangerous
 - [The Cost of War](problem/cost-of-war.qmd): $11.4 trillion annually, itemized

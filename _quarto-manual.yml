@@ -81,7 +81,6 @@ book:
     - part: "The Problem"
       chapters:
         - knowledge/problem.qmd  # ✅ Part I Intro ~8p
-        - knowledge/problem/the-daily-massacre.qmd # ✅ Daily Holocaust ~3p
         - knowledge/problem/cost-of-war.qmd # ✅ Cost of War ~32p
         - knowledge/problem/cost-of-disease.qmd # ✅ Cost of Disease ~9p
         - knowledge/problem/nih-fails-2-institute-health.qmd # ✅ The NIH ~9p
@@ -104,7 +103,7 @@ book:
         - knowledge/solution/incentive-alignment-bonds.qmd # ✅ VICTORY Incentive Alignment Bonds ~28p (merged with victory-bonds.qmd)
         - knowledge/appendix/open-ecosystem-and-bounty-model.qmd # ✅ (IMPROVED) ~4p
 
-    - part: "The Evidence"
+    - part: "For Skeptics"
       chapters:
         - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
