@@ -86,8 +86,8 @@ book:
 
     - part: "References"
       chapters:
-        - knowledge/appendix/recovery-trial.qmd
-        - knowledge/appendix/real-world-evidence-historical-success.qmd
+        # CUT: recovery-trial.qmd - key stats already in FDA, dFDA, proof, and health-dividend chapters
+        # CUT: real-world-evidence-historical-success.qmd - pre-1962 data already covered in FDA chapter
         # CUT: papers.qmd - just links to websites, useless in print
         - knowledge/references.qmd
         - knowledge/appendix/copyright.qmd

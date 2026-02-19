@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 41 | **Words:** 93,364 | **Images:** 625 | **Est. Pages:** ~686
+**Files:** 39 | **Words:** 90,062 | **Images:** 594 | **Est. Pages:** ~657
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -1651,82 +1651,11 @@
 
 ### References
 
-#### knowledge/appendix/recovery-trial.qmd
-**Title:** The Oxford RECOVERY Trial
-**Description:** Proof that decentralized pragmatic trials reduce costs by 82X while saving millions of lives
-**Stats:** 1,278 words | 158 lines | 13 images | ~12p
-
-  - Pragmatic vs Traditional Trials
-  - Key RECOVERY Trial Statistics
-    ![The UK spent $500 per patient and saved one million lives. America spends $41,000 per patient. This is an 82-times-worse deal that kills people by costing too much.](/assets/images/recovery-trial/recovery-trial-section-key-recovery-trial-statistics-bw-academic.jpg)
-    - They Used Regular Hospitals
-    ![Traditional trials build special buildings with special doctors for special patients. RECOVERY used the hospital that was already there with the doctors and patients already inside it.](/assets/images/recovery-trial/recovery-trial-section-they-used-regular-hospitals-bw-academic.jpg)
-    - They Collected Only Useful Data
-    ![Old way: mountains of paper and vials. New way: one form. The difference is someone asked if the paper was necessary.](/assets/images/recovery-trial/recovery-trial-section-they-collected-only-useful-data-bw-academic.jpg)
-    - They Integrated With Normal Care
-    ![In the old model, sick people travel to a special building to get experimental medicine. In the new model, they get it from their regular doctor during their regular visit at their regular hospital.](/assets/images/recovery-trial/recovery-trial-section-they-integrated-with-normal-care-bw-academic.jpg)
-    - They Were Flexible
-    ![FDA trials work like a factory assembly line. RECOVERY worked like a kitchen where you can taste the soup while it's cooking and add more salt.](/assets/images/recovery-trial/recovery-trial-section-they-were-flexible-bw-academic.jpg)
-    - They Prioritized Speed Over Bureaucracy
-    ![RECOVERY wanted to know if the drug worked and wanted to know fast. The FDA wanted to know if you filled out the forms correctly.](/assets/images/recovery-trial/recovery-trial-section-they-prioritized-speed-over-bureaucracy-bw-academic.jpg)
-    - The Result
-    ![$500 versus $41,000 to ask the same question. One country used hospitals. The other country used bureaucracy. Bureaucracy costs 82 times more.](/assets/images/recovery-trial/recovery-trial-section-the-result-bw-academic.jpg)
-    - What RECOVERY Proved
-    ![RECOVERY: cheap, fast, huge. Traditional U.S. trials: expensive, slow, small. These are opposites. One saved a million lives.](/assets/images/recovery-trial/recovery-trial-section-the-implications-what-recovery-proved-bw-academic.jpg)
-    - Cost Per Medical Answer
-    ![$41,000 to answer a question the traditional way. $50 to answer it the RECOVERY way. You could answer 820 questions for the price of one. You answer one.](/assets/images/recovery-trial/recovery-trial-section-the-bottom-line-math-bw-academic.jpg)
-    - Sources
-    ![500 per patient, 40,000 patients, one million lives saved. Traditional trials spend $41,000 per patient and save far fewer lives. The British discovered that waste is expensive.](/assets/images/recovery-trial/recovery-trial-section-sources-and-key-quotes-bw-academic.jpg)
-  - Scaling RECOVERY's Model
-    ![Centralized: patients come to the data. Decentralized: data comes to the patients. One requires patients to travel. The other requires the internet.](/assets/images/recovery-trial/recovery-trial-section-proof-this-isn-t-insane-bw-academic.jpg)
-    ![$2.2 billion to develop a drug the traditional way. $27 million to do it the RECOVERY way. That's an 82-times discount for using common sense.](/assets/images/recovery-trial/recovery-trial-section-the-math-bw-academic.jpg)
-
-#### knowledge/appendix/real-world-evidence-historical-success.qmd
-**Title:** Real-World Evidence Historical Success (Pre-1962)
-**Description:** How decentralized physician trials from 1883-1962 achieved 4 years/decade life expectancy gains, and what happened when the 1962 regulations replaced them with industry-controlled trials
-**Stats:** 1,757 words | 233 lines | 18 images | ~16p
-
-  - Historical Evidence: Why Real-World Evidence Works Better
-    ![Trials run in the real world with real patients produce better health outcomes than trials run by pharmaceutical companies with carefully selected patients. Reality is more helpful than theater.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-historical-eviden-bw-academic.jpg)
-    - 10,000 Years of Dying at 30
-    ![Life expectancy over time. It goes up. Then in 1962 it stops going up as fast. Something happened in 1962.](../../assets/images/life-expectancy-historical.jpg)
-    - 1883 – The Year You Figured It Out
-    ![In 1883, doctors started sharing notes. Doctor sees something, writes it down, other doctors check the notes, JAMA says 'Yes, this is real.' Collaboration was invented.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-1883-the-year-you-figured-it-out-bw-academic.jpg)
-    - The Result
-    - 1938 – The FDA Requires Phase 1 Safety Trials
-    ![Life expectancy before and after the FDA required safety trials. The line goes up both times but at different speeds. Safety has a speed limit.](../../assets/images/fda-safety-trials-life-expectancy.png)
-    - 1950s – Thalidomide: When Safety Regulations Actually Worked
-    ![Thalidomide babies. This is what happens when you don't test drugs on pregnant women. So now we test nothing on pregnant women and they take untested drugs.](../../assets/images/thalidomide.jpg)
-    - 1962 – The Year You Decided to Make Everything Worse
-    ![Before 1962: doctors tested if drugs worked. After 1962: drug companies tested if drugs worked. Costs went up. Time went up. Asking the seller if the product works costs more than asking the buyer.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-1962-the-year-you-bw-academic.jpg)
-      - What Changed
-    ![Before 1962: doctors in charge, cheap, simple. After 1962: drug companies in charge, expensive, complicated. We replaced the people who use the product with the people who sell it.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-pre-vs-post-1962-regulations-bw-academic.jpg)
-      - What Happened to Efficacy Data
-    ![After 1962, trials got smaller, patients got less representative, and conflicts of interest got bigger. Making trials more rigorous made them worse at everything except paperwork.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-what-happened-to-efficacy-data-bw-academic.jpg)
-      - What Happened to New Treatments
-    ![New treatments per year. The line goes up until 1962. Then it goes down. Regulating medicine made less medicine.](../../assets/images/new-treatments-per-year-2.png)
-      - What Happened to Costs
-      - What Happened to Drug Patents
-    ![In 1984, patents got extended to encourage innovation. Prices went up. Availability went down. Safety went down. The incentive to innovate became an incentive to charge more for less.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-what-happened-to-drug-patents-bw-academic.jpg)
-      - Decreased Ability to Determine Comparative Efficacy
-    ![Drug A beats placebo. Drug B beats placebo. No one compares Drug A to Drug B. You know they both work better than nothing. You don't know which one works better than the other.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-decreased-ability-bw-academic.jpg)
-    - What Happened to Life Expectancy (The Part That Matters)
-    ![Average Life Expectancy Over Time](../../assets/images/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
-    ![Before 1962: gaining 3.82 years per decade. After 1962: gaining 1.54 years per decade. The line breaks exactly at 1962. Coincidences are supposed to be less precise than this.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-life-expectancy-slope-change-1962-bw-academic.jpg)
-    - The "Diminishing Returns" Excuse
-    ![This is what diminishing returns look like when you smooth out all the noise and variables. A gentle curve. Reality is not a gentle curve. Reality is a sharp break in 1962.](../../assets/images/diminishing-returns.png)
-    - The "Correlation Is Not Causation" Excuse
-    ![How to prove something caused something else: it happened at the same time, there's a reason it would happen, and the timing is suspiciously exact. 1962 has all three.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-the-correlation-i-bw-academic.jpg)
-    - Impact of Innovative Medicines on Life Expectancy
-    ![More cancer treatments invented, more people survive cancer. Turns out medical research works. Who knew.](../../assets/images/more-surviving-more-therapies.png)
-  - The Summary
-    ![Medical progress: 3.82 years gained per decade. Then 1962 happens. Medical progress: 1.54 years gained per decade. We cut medical progress in half with good intentions and paperwork.](/assets/images/real-world-evidence-historical-success/real-world-evidence-historical-success-section-the-summary-bw-academic.jpg)
+#### knowledge/references.qmd
+**Title:** Source Quotes and References
+**Description:** Bibliography and citations for all sources cited
+**Stats:** 62 words | 22 lines | 1 images | ~1p
 
 #### knowledge/appendix/copyright.qmd
 **Title:** Copyright
 **Stats:** 97 words | 27 lines | ~0p
-
-#### knowledge/appendix/back-cover.qmd
-**Title:** About This Book
-**Description:** The exact sequence of bribes needed to redirect 1% of military spending to curing disease, making everyone rich in the process.
-**Stats:** 329 words | 25 lines | 1 images | ~2p
