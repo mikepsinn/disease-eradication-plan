@@ -1,6 +1,6 @@
 {
   "totalSites": 16,
-  "totalPages": 62,
+  "totalPages": 64,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -106,6 +106,29 @@
         ]
       },
       "pages": [
+        {
+          "path": "knowledge/appendix/economist-feedback-treaty.qmd",
+          "url": "https://impact.warondisease.org/appendix/economist-feedback-treaty.html",
+          "title": "Economist Review: 1% Treaty Headline Numbers",
+          "description": "Concise summary of the 1% Treaty impact analysis for economist sign-off before foundation funding conversations.",
+          "sections": [
+            "Purpose",
+            "Bottom-Line Claims",
+            "The Treaty Mechanism",
+            "Calculation Chain",
+            "Key Assumptions Requiring Sign-Off",
+            "1. Eventually Avoidable Fraction: 92.6% of disease deaths",
+            "2. Trial Capacity = Discovery Rate (Linear Assumption)",
+            "3. Political Success Probability: 1%",
+            "4. $1B Campaign -> $27.2B/yr Government Funding (Treaty Leverage)",
+            "5. Pragmatic Trial Cost: $929/patient",
+            "6. Cumulative vs. Annual Framing",
+            "What We Need From You",
+            "Full Materials"
+          ],
+          "published": true,
+          "lastmod": "2026-02-18"
+        },
         {
           "path": "knowledge/appendix/parameters-and-calculations.qmd",
           "url": "https://impact.warondisease.org/appendix/parameters-and-calculations.html",
@@ -599,7 +622,7 @@
           "lastmod": "2026-01-27"
         }
       ],
-      "pageCount": 2
+      "pageCount": 3
     },
     {
       "id": "cost-of-change",
@@ -1748,9 +1771,29 @@
           ],
           "published": true,
           "lastmod": "2026-02-18"
+        },
+        {
+          "path": "knowledge/appendix/economist-feedback-dfda.qmd",
+          "url": "https://dfda-impact.warondisease.org/appendix/economist-feedback-dfda.html",
+          "title": "Economist Review: Headline Numbers for Validation",
+          "description": "Concise summary of the dFDA impact analysis for economist sign-off before foundation funding conversations.",
+          "sections": [
+            "Purpose",
+            "Bottom-Line Claims",
+            "Calculation Chain",
+            "Key Assumptions Requiring Sign-Off",
+            "1. Eventually Avoidable Fraction: 92.6% of disease deaths",
+            "2. Trial Capacity = Discovery Rate",
+            "3. Pragmatic Trial Cost: $929/patient",
+            "4. Cumulative vs. Annual Framing",
+            "What We Need From You",
+            "Full Materials"
+          ],
+          "published": true,
+          "lastmod": "2026-02-18"
         }
       ],
-      "pageCount": 1
+      "pageCount": 2
     },
     {
       "id": "dfda-spec",

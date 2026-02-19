@@ -2,7 +2,7 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 2 | **Words:** 26,185 | **Images:** 87 | **Est. Pages:** ~148
+**Files:** 3 | **Words:** 27,724 | **Images:** 87 | **Est. Pages:** ~154
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
@@ -261,6 +261,25 @@
     - Adoption Pathway
     ![Four things need to happen: voters want it, economists prove it works, investors fund it, and diplomats sign it. The order is flexible, like doing laundry.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-adoption-pathway-bw-academic.jpg)
   - Conclusion
+
+#### knowledge/appendix/economist-feedback-treaty.qmd
+**Title:** Economist Review: 1% Treaty Headline Numbers
+**Description:** Concise summary of the 1% Treaty impact analysis for economist sign-off before foundation funding conversations.
+**Stats:** 1,539 words | 175 lines | ~6p
+
+  - Purpose
+  - Bottom-Line Claims
+  - The Treaty Mechanism
+  - Calculation Chain
+  - Key Assumptions Requiring Sign-Off
+  - 1. Eventually Avoidable Fraction: 92.6% (95% CI: 50%-98%) of disease deaths
+  - 2. Trial Capacity = Discovery Rate (Linear Assumption)
+  - 3. Political Success Probability: 1% (95% CI: 0.1%-10%)
+  - 4. $1B Campaign -> $27.2B/yr Government Funding (Treaty Leverage)
+  - 5. Pragmatic Trial Cost: $929 (95% CI: $97-$3K)/patient
+  - 6. Cumulative vs. Annual Framing
+  - What We Need From You
+  - Full Materials
 
 #### knowledge/references.qmd
 **Title:** Source Quotes and References

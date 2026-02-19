@@ -46,10 +46,13 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
+    - knowledge/appendix/economist-feedback-treaty.qmd
     - knowledge/appendix/parameters-and-calculations.qmd
     - knowledge/references.qmd
   navbar:
     right:
+      - text: "Economist Review"
+        href: knowledge/appendix/economist-feedback-treaty.qmd
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "VOTE"
@@ -68,6 +71,8 @@ book:
 
       - section: "Appendices"
         contents:
+          - href: knowledge/appendix/economist-feedback-treaty.qmd
+            text: "Economist Review"
           - href: knowledge/appendix/parameters-and-calculations.qmd
             text: "Parameters & Calculations"
 

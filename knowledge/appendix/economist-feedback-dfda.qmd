@@ -1,0 +1,129 @@
+---
+title: "Economist Review: Headline Numbers for Validation"
+subtitle: "One-page summary of key claims, assumptions, and calculation chain"
+description: "Concise summary of the dFDA impact analysis for economist sign-off before foundation funding conversations."
+published: true
+toc: false
+number-sections: false
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+::: {.callout-note}
+## Purpose
+We need health economists to validate these numbers.
+The [full paper](dfda-impact-paper.qmd) and [calculation appendix](parameters-and-calculations.qmd) contain complete derivations.
+Please flag any assumption you find implausible, any calculation step that needs revision, or any framing that would not survive peer review.
+:::
+
+## Bottom-Line Claims
+
+| Claim | Value | 95% CI |
+|:------|------:|-------:|
+| Cost per DALY saved | {{< var dfda_direct_funding_cost_per_daly >}} | |
+| Total DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | |
+| Lives saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | |
+| Suffering hours eliminated | {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} | |
+| Economic value (at $150K/QALY) | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | |
+| Bed net benchmark | {{< var bed_nets_cost_per_daly >}}/DALY | |
+
+## Calculation Chain
+
+The logic is five steps. Each depends on the one above it.
+
+**Step 1: The Backlog**
+
+| Input | Value | Source |
+|:------|------:|:------|
+| Diseases without effective treatment | {{< var diseases_without_effective_treatment >}} | Orphanet 2024 (95% of ~7,000 rare diseases) |
+| Current discovery rate | {{< var new_disease_first_treatments_per_year >}} | FDA + ODA historical data |
+| Backlog clearance time | {{< var status_quo_queue_clearance_years >}} | = 6,650 / 15 |
+
+**Step 2: Trial Capacity Multiplier**
+
+| Input | Value | Source |
+|:------|------:|:------|
+| Pragmatic trial cost/patient | {{< var dfda_pragmatic_trial_cost_per_patient >}} | 10x conservative vs. $97 meta-analysis median (Ramsberg & Platt 2018, 108 trials) |
+| Traditional Phase III cost/patient | {{< var traditional_phase3_cost_per_patient >}} | FDA study median |
+| Annual budget | {{< var dih_treasury_to_medical_research_annual >}} | 1% of $2.72T global military spending |
+| Fundable patients/year | {{< var dih_patients_fundable_annually >}} | = budget / cost per patient |
+| Current trial slots | {{< var current_trial_slots_available >}} | Global enrollment |
+| **Capacity multiplier** | **{{< var dfda_trial_capacity_multiplier >}}** | = fundable / current slots |
+| Accelerated clearance time | {{< var dfda_queue_clearance_years >}} | = 443 / 12.3 |
+
+**Step 3: Timeline Shift**
+
+| Component | Value | Derivation |
+|:----------|------:|:-----------|
+| Discovery acceleration | {{< var dfda_trial_capacity_treatment_acceleration_years >}} | = (443/2) x (1 - 1/12.3) |
+| Efficacy lag elimination | {{< var efficacy_lag_years >}} | Post-Phase I access removes Phase II/III delay |
+| **Total timeline shift** | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}** | = discovery + efficacy lag |
+
+**Step 4: Health Impact**
+
+| Input | Value | Source |
+|:------|------:|:------|
+| Global annual DALY burden | {{< var global_annual_daly_burden >}} | WHO/IHME GBD 2021 |
+| Eventually avoidable fraction | {{< var eventually_avoidable_daly_pct >}} | Conservative estimate (see below) |
+| Timeline shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Step 3 |
+| **DALYs averted** | **{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}** | = burden x avoidable% x shift |
+
+**Step 5: Cost-Effectiveness**
+
+| Input | Value | Derivation |
+|:------|------:|:-----------|
+| Direct funding NPV | {{< var dfda_direct_funding_queue_clearance_npv >}} | NPV of $21.8B/yr over exploration period |
+| DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Step 4 |
+| **Cost per DALY** | **{{< var dfda_direct_funding_cost_per_daly >}}** | = NPV / DALYs |
+
+## Key Assumptions Requiring Sign-Off
+
+::: {.callout-warning}
+## 1. Eventually Avoidable Fraction: {{< var eventually_avoidable_death_pct >}} of disease deaths
+Single most influential assumption. Remaining ~7.4% covers accidents, violence, and fundamentally irreducible causes.
+
+**Our defense:** {{< var unexplored_ratio >}} of the therapeutic search space remains untested ({{< var safe_compounds_count >}} safe compounds x {{< var trial_relevant_diseases_count >}} diseases = {{< var drug_disease_combinations_possible >}} pairings, only {{< var exploration_ratio >}} tested). {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating effective treatments exist but haven't been matched to conditions. Life expectancy rose from ~47 to ~79 since 1900, with most gains from preventing deaths once considered inevitable. At 50%, all headline numbers halve but cost-effectiveness remains strong.
+
+**Question:** Is {{< var eventually_avoidable_death_pct >}} defensible, or what figure would you use?
+:::
+
+::: {.callout-warning}
+## 2. Trial Capacity = Discovery Rate
+A {{< var dfda_trial_capacity_multiplier >}} increase in trial slots produces a proportional increase in the discovery rate ({{< var new_disease_first_treatments_per_year >}} -> {{< var dfda_first_treatments_per_year >}}).
+
+**Our defense:** Linear is conservative. {{< var valley_of_death_attrition_pct >}} of promising compounds are abandoned at the "valley of death" because Phase II/III costs ({{< var traditional_phase3_cost_per_patient >}}/patient) make them uneconomical, not because they lack efficacy. Eliminating this cost barrier would reactivate ~{{< var additional_drugs_from_cost_elimination >}} additional approvals. Knowledge accumulation creates potential for *superlinear* returns: each trial generates efficacy signals, biomarker insights, and combination data that inform subsequent trials. Pre-1962 decentralized physician-led testing achieved drug development at {{< var pre_1962_drug_development_cost_2024_usd >}}/drug vs. today's {{< var pharma_drug_development_cost_current >}}, consistent with trial throughput being the binding constraint.
+
+**Question:** Should we model diminishing returns, or does the superlinear case justify the linear assumption as a middle ground?
+:::
+
+::: {.callout-warning}
+## 3. Pragmatic Trial Cost: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient
+Deliberately conservative.
+
+**Our defense:** Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials across multiple therapeutic areas; of 64 with cost data, **median was $97/patient**. Our central estimate is **10x higher than the meta-analysis median**. RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient across 186 sites. Cost reductions come from structural factors: existing healthcare encounters, EHR-based data capture, broader eligibility. At our upper CI bound ($3,000/patient), the capacity multiplier drops from 12.3x to ~3.8x, still cutting the backlog from 443 years to ~116 years.
+
+**Question:** Is the meta-analysis median ($97) or our conservative anchor ({{< var dfda_pragmatic_trial_cost_per_patient >}}) more appropriate?
+:::
+
+::: {.callout-warning}
+## 4. Cumulative vs. Annual Framing
+Cumulative over the ~212-year acceleration window, not annual figures.
+
+**Our defense:** Standard methodology for one-time infrastructure investments. Smallpox eradication ($300M, 280:1 ROI) and climate investments use the same framing. This is bounded: once the therapeutic search space is explored (~36 years), no further acceleration occurs.
+
+**Question:** Should we lead with annualized figures instead for foundations?
+:::
+
+## What We Need From You
+
+1. **Flag any number that would not survive peer review** in a health economics journal (Value in Health, Health Affairs, PharmacoEconomics).
+2. **Identify the weakest link** in the calculation chain above.
+3. **Suggest sensitivity ranges** for the assumptions you find most uncertain.
+4. **Advise on framing**: Which metrics should we lead with when talking to foundations?
+
+::: {.callout-tip}
+## Full Materials
+- [Full paper with all derivations](dfda-impact-paper.qmd)
+- [Complete parameter list with sources and confidence levels](parameters-and-calculations.qmd)
+- [Source code and data](https://github.com/mikepsinn/disease-eradication-plan)
+:::

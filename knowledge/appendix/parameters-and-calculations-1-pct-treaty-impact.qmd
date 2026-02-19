@@ -35,20 +35,58 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 214 parameters used in the analysis, organized by type:
+This appendix documents all 216 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 88
-- Calculated values: 97
+- External sources (peer-reviewed): 89
+- Calculated values: 98
 - Core definitions: 29
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (88 parameters) • [Core Definitions](#sec-definitions) (29 parameters)
+[Calculated Values](#sec-calculated) (98 parameters) • [External Data Sources](#sec-external) (89 parameters) • [Core Definitions](#sec-definitions) (29 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Additional Drug Approvals from Cost Elimination: 20 drugs/year {#sec-additional_drugs_from_cost_elimination}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Additional drug approvals per year when Phase 2/3 cost barrier eliminated. Assumes valley-of-death compounds (abandoned due to cost) would have similar success rate to funded compounds.
+
+**Inputs**:
+
+- [Average Annual New Drug Approvals Globally](#sec-current_drug_approvals_per_year) 📊: 50 drugs/year (95% CI: 45 drugs/year - 60 drugs/year)
+- [Valley of Death Attrition Rate](#sec-valley_of_death_attrition_pct) 📊: 40% (95% CI: 25% - 55%)
+
+$$
+\begin{gathered}
+Drugs_{new} \\
+= Drugs_{ann,curr} \times Attrition_{valley} \\
+= 50 \times 40\% \\
+= 20
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-additional_drugs_from_cost_elimination.qmd >}}
+
+{{< include ../figures/sensitivity-table-additional_drugs_from_cost_elimination.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-additional_drugs_from_cost_elimination.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-additional_drugs_from_cost_elimination.qmd >}}
+
+:::
 
 ### Combination Therapy Space: 45.1 billion combinations {#sec-combination_therapy_disease_space}
 
@@ -5714,6 +5752,30 @@ Global population with chronic diseases
 #### Input Distribution
 
 {{< include ../figures/distribution-current_disease_patients_global.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Average Annual New Drug Approvals Globally: 50 drugs/year {#sec-current_drug_approvals_per_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average annual new drug approvals globally
+
+**Source**: [@global-new-drug-approvals-50-annually]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [45 drugs/year, 60 drugs/year] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 45 drugs/year and 60 drugs/year (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_drug_approvals_per_year.qmd >}}
 
 *✓ High confidence*
 
