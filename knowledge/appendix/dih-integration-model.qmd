@@ -10,7 +10,6 @@ tags:
 image: /assets/og-images/knowledge/appendix/dih-integration-model-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 ```{python}
 #| echo: false
 import graphviz

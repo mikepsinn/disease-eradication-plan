@@ -13,9 +13,7 @@ format:
     code-fold: true
 image: /assets/og-images/knowledge/problem/the-daily-massacre-og-retro-academic.jpg
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 Every single day:
 
 - **{{< var global_disease_deaths_daily >}} people stop existing**

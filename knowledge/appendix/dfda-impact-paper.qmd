@@ -33,9 +33,7 @@ tags:
   - cost-effectiveness
 image: /assets/og-images/knowledge/appendix/dfda-impact-paper-og-retro-academic.jpg
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 ## Executive Summary
 
 **The Problem:** {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. We have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances), yet only {{< var exploration_ratio >}} of {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations have been tested. At the current discovery rate of {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take ~{{< var status_quo_queue_clearance_years >}}. Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).

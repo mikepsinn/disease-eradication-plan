@@ -72,9 +72,7 @@ format:
     fontsize: 11pt
 image: /assets/og-images/knowledge/appendix/dfda-spec-paper-og-bw-academic.jpg
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 ## Abstract
 
 Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated unprecedented volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.

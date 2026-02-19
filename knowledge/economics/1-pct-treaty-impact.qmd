@@ -48,9 +48,7 @@ image: /assets/og-images/knowledge/economics/economics-og-retro-academic.jpg
 aliases:
   - /knowledge/economics/economics.html
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 ## Abstract
 
 **The bottleneck:** Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At current trial capacity (~{{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Effectively never.

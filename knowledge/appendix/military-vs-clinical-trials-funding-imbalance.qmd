@@ -9,9 +9,7 @@ tags:
   - market-failure
 image: /assets/og-images/knowledge/appendix/military-vs-clinical-trials-funding-imbalance-og-bw-academic.jpg
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 **Executive Summary**
 
 This analysis derives a single, critical economic ratio that defines the current global security posture: **{{< var military_to_government_clinical_trials_spending_ratio >}}**.

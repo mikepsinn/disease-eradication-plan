@@ -10,9 +10,7 @@ tags:
   - oxford
 image: /assets/og-images/knowledge/appendix/recovery-trial-og-retro-academic.jpg
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 The Oxford RECOVERY trial isn't theory. It's proof.
 
 In 2020, Oxford spent {{< var recovery_trial_cost_per_patient >}} per patient [@trial-cost-41k]. Traditional trials cost {{< var traditional_phase3_cost_per_patient >}}. RECOVERY saved over 1 million lives [@recovery-trial-1m-lives-saved]. That's an {{< var recovery_trial_cost_reduction_factor >}} efficiency gain.

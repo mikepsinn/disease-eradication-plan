@@ -37,9 +37,7 @@ image: /assets/og-images/knowledge/appendix/invisible-graveyard-og-retro-academi
 aliases:
   - /knowledge/appendix/regulatory-mortality-analysis.html
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 ## The Short Version
 
 The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} efficacy delay after drugs are proven safe. This creates two distinct mortality costs:

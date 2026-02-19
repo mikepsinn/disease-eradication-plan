@@ -9,9 +9,7 @@ tags:
   - death-by-clipboard
 image: /assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 {{< include ../figures/trial-access-disparity-chart.qmd >}}
 
 Out of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually [@global-trial-participant-capacity]. That's **{{< var current_clinical_trial_participation_rate >}}**.

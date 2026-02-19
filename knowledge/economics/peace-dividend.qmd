@@ -9,9 +9,7 @@ tags:
   - cost-of-war
 image: /assets/og-images/knowledge/economics/peace-dividend-og-retro-academic.jpg
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 Here's what 1% less murder money buys you:
 
 - **The 1% Treaty Fund gets**: {{< var treaty_annual_funding >}} to subsidize hyper-efficient pragmatic clinical trials

@@ -11,9 +11,7 @@ tags:
   - cost-benefit
 image: /assets/og-images/knowledge/appendix/regulatory-mortality-analysis-og-retro-academic.jpg
 ---
-
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 In 1962, Congress passed the Kefauver-Harris Amendments requiring proof of efficacy before drugs could reach patients. The intent was protection. The effect was an {{< var efficacy_lag_years >}}-year delay after safety is established.
 
 Nobody at the FDA chose this. They're executing the law Congress wrote. But the law has a cost, and humanity pays it daily.

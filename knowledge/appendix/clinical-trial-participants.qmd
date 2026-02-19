@@ -10,7 +10,6 @@ tags:
 image: /assets/og-images/knowledge/appendix/clinical-trial-participants-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 Humanity spends {{< var global_clinical_trials_spending_annual >}} a year on clinical trials [@industry-clinical-trial-spending-estimate]. Here are the actual enrollment numbers:
 
 ## Enrollment Data from ClinicalTrials.gov

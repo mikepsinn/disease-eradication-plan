@@ -4,7 +4,6 @@ description: CRM system for automated lead capture, classification, nurturing, a
 image: /assets/og-images/knowledge/operations/engagement-tracking-workflow-og-bw-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 **Purpose:** Never lose a lead, never miss a follow-up, never forget a conversation
 **System:** Database + Email + Calendar + Automation
 **Goal:** Turn every interaction into a tracked, measurable opportunity to advance the mission

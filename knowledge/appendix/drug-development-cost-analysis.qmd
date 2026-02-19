@@ -5,7 +5,6 @@ jupyter: dih-project-kernel
 image: /assets/og-images/knowledge/appendix/drug-development-cost-analysis-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
 ## The Short Version
 
 Developing a new drug costs **{{< var drug_cost_increase_pre1962_to_current_multiplier >}} more** today than before 1962. Adjusted for inflation. Using real academic data (Baily 1972).
