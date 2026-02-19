@@ -55,7 +55,7 @@ The FDA thinks humans can manually coordinate global trials. These are the same 
 
 Meanwhile, military contractors somehow coordinate {{< var global_military_spending_annual_2024 >}} in annual spending to build jets that don't work. They're idiots, but they're *coordinated* idiots with database infrastructure.
 
-Health advocates? We coordinate billions in funding using email threads that descend into reply-all hell. We use Zoom calls where 18 people are on mute and 2 are talking over each other.
+Health advocates? They coordinate billions in funding using email threads that descend into reply-all hell. They use Zoom calls where 18 people are on mute and 2 are talking over each other.
 
 The problem isn't that people don't want to help cure disease. Coordinating millions of people manually is impossible:
 
@@ -73,10 +73,6 @@ AI doesn't have this limitation. It never sleeps. It speaks every language. It o
 ![The robot org chart. Big boss robots tell medium robots tell little robots. We taught AI bureaucracy, which feels like a waste of AI.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-architecture-you-re-building-it-s-simpler-than-it-looks-bw-academic.jpg)
 
 Here's the coordination architecture you need. Don't let the diagram scare you. It just shows that agents talk to other agents, which talk to more agents. Like a corporate org chart, except things actually happen:
-
-![Mission Level architecture. There's a coordinating robot inside a network layer inside a mission. It's robots all the way down.](/assets/images/ai-coordination-army/ai-coordination-army-section-mission-level-bw-academic.jpg)
-
-![One robot boss watches worker robots while monitor robots watch everybody. We invented middle management for computers.](/assets/images/ai-coordination-army/ai-coordination-army-section-node-level-bw-academic.jpg)
 
 ## Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
 

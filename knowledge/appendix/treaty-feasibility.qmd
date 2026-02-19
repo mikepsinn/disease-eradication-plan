@@ -79,7 +79,7 @@ Politicians move when they see (a) voters demanding it and (b) political safety.
 
 ### Timeline to "Governments Can't Ignore This"
 
-With ~$60M in seed funding, we can reach "Treaty-Ready" status in **2–3 years**:
+With ~$60M in seed funding, you can reach "Treaty-Ready" status in **2–3 years**:
 
 - **Platform:** 280M verified supporters (3.5% threshold)
 - **Modeling:** Country-by-country impact analysis
@@ -91,11 +91,11 @@ Once these assets exist, formal negotiations become inevitable.
 
 ## Conclusion
 
-We aren't trying to buy the treaty. We are buying the **machinery** that makes the treaty inevitable. That machinery costs about $90M. A rounding error compared to the $140 Trillion/year problem we are solving.
+You aren't trying to buy the treaty. You are buying the **machinery** that makes the treaty inevitable. That machinery costs about $90M. A rounding error compared to the $140 Trillion/year problem you are solving.
 
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
-We need to estimate the probability that a 1% treaty campaign actually succeeds. This matters for expected value calculations. This section documents the rationale for our **{{< var political_success_probability >}} central estimate** with a **0.1%-25% confidence interval**.
+To calculate expected value, you need to estimate the probability that a 1% treaty campaign actually succeeds. This section documents the rationale for the **{{< var political_success_probability >}} central estimate** with a **0.1%-25% confidence interval**.
 
 ![Even if this only has a 1 percent chance of working, it saves 503 times more lives per dollar than bed nets. Math is strange.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
 
@@ -141,9 +141,9 @@ Economists would find the following defensible:
 | **Conservative central** | {{< var political_success_probability >}} | Assumes 99% failure rate - yet still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets |
 | **Optimistic ceiling** | 25% | Major crisis creates political window; unique self-funding advantage |
 
-**Our model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 25%]**
+**The model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 25%]**
 
-This is deliberately conservative. An economist reviewing our expected value calculations should find:
+This is deliberately conservative. An economist reviewing the expected value calculations should find:
 
 - The {{< var political_success_probability >}} central estimate assumes a **99% chance of complete failure**
 - The 0.1% floor admits this could be nearly impossible
