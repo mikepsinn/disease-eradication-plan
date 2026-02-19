@@ -7,7 +7,7 @@
 #### knowledge/appendix/political-dysfunction-tax.qmd
 **Title:** The Political Dysfunction Tax
 **Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 31-53% efficiency score and $97 trillion in annual opportunity costs.
-**Stats:** 4,468 words | 350 lines | 20 images | ~28p
+**Stats:** 4,468 words | 328 lines | 20 images | ~28p
 
   - Introduction: The Mechanism Design of Civilizational Stagnation
     ![You waste 90 percent of everything. It's impressive, really. Like throwing nine out of every ten sandwiches directly into the bin.](/assets/images/political-dysfunction-tax/political-dysfunction-tax-section-introduction-the-mechanism-des-bw-academic.jpg)

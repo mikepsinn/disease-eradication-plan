@@ -187,6 +187,9 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
+          % Suppress default title page (we use a custom cover image instead)
+          \renewcommand{\maketitle}{}
+      - text: |
           \paperurl{https://manual.WarOnDisease.org}
       - text: |
           % Use Arabic numerals for appendix chapters
@@ -203,10 +206,3 @@ format:
       - bottom=0.75in
       - inner=0.875in  # KDP minimum gutter for 700+ pages
       - outer=0.5in
-    include-before-body:
-      - text: |
-          \thispagestyle{empty}
-          \newgeometry{margin=0pt}
-          \noindent\includegraphics[width=\paperwidth,height=\paperheight]{assets/cover/book-cover-3.jpg}
-          \restoregeometry
-          \newpage

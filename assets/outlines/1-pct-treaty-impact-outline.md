@@ -2,12 +2,12 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 3 | **Words:** 27,815 | **Images:** 87 | **Est. Pages:** ~155
+**Files:** 3 | **Words:** 27,807 | **Images:** 87 | **Est. Pages:** ~155
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** 6.65 thousand diseases (95% CI: 5.70 thousand diseases-8.24 thousand diseases) have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years (95% CI: 324 years-712 years). Redirecting 1% of military spending scales capacity 12.3x (95% CI: 4.19x-61.3x), cutting the timeline to ~36 years (95% CI: 11.6 years-77.2 years) and preventing 10.7 billion deaths (95% CI: 7.39 billion deaths-16.2 billion deaths). At $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.7kx-111.7kx) more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
-**Stats:** 26,123 words | 2,407 lines | 86 images | ~147p
+**Stats:** 26,115 words | 2,400 lines | 86 images | ~147p
 
   - Abstract
   - Key Findings
@@ -265,7 +265,7 @@
 #### knowledge/appendix/economist-feedback-treaty.qmd
 **Title:** Is This Crazy?
 **Description:** A 1% redirect of military spending to pragmatic trials claims to avert 565 billion DALYs (95% CI: 361 billion DALYs-877 billion DALYs) at $0.0018 (95% CI: $0.0007-$0.0041) each. One-page calculation chain for economist review.
-**Stats:** 1,630 words | 163 lines | ~7p
+**Stats:** 1,630 words | 169 lines | ~7p
 
   - Why You Should Take 15 Minutes to Validate This Model
   - Bottom-Line Claims

@@ -7,7 +7,7 @@
 #### knowledge/test/test-economics.qmd
 **Title:** Test Economics Document
 **Description:** PAGE-LEVEL DESCRIPTION: This is the description from the QMD file frontmatter that should be used for og:description meta tag
-**Stats:** 335 words | 68 lines | ~1p
+**Stats:** 335 words | 67 lines | ~1p
 
 - Introduction
   - Link Test Cases
@@ -22,7 +22,7 @@
 #### knowledge/test/test-parameters.qmd
 **Title:** Test Parameters Document
 **Description:** Minimal parameters document for testing
-**Stats:** 354 words | 81 lines | 1 images | ~2p
+**Stats:** 354 words | 78 lines | 1 images | ~2p
 
 - Introduction {#sec-test-parameters-intro}
   - Test Parameters
