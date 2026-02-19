@@ -1,7 +1,6 @@
 ---
-title: "Economist Review: 1% Treaty Headline Numbers"
-subtitle: "One-page summary of key claims, assumptions, and calculation chain"
-description: "Concise summary of the 1% Treaty impact analysis for economist sign-off before foundation funding conversations."
+title: "Is This Crazy?"
+description: "A {{< var treaty_reduction_pct >}} redirect of military spending to pragmatic trials claims to avert {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} each. One-page calculation chain for economist review."
 published: true
 toc: false
 number-sections: false
@@ -11,7 +10,7 @@ aliases:
 
 ::: {.callout-important}
 ## Why You Should Take 15 Minutes to Validate This Model
-If this model is right, you could help save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and prevent {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of unnecessary suffering.
+If this model is right and these policies are adopted, you will have helped to save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and prevent {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of unnecessary suffering. (Which would be nice.)
 :::
 
 The [insanely long full paper](/knowledge/economics/1-pct-treaty-impact.qmd) and [really boring calculations and uncertainty analysis page](parameters-and-calculations.qmd) contain complete derivations.
@@ -109,7 +108,7 @@ Note: Costs are discounted at {{< var npv_discount_rate_standard >}} social disc
 ## 1. Eventually Avoidable Fraction: {{< var eventually_avoidable_death_pct >}} of disease deaths
 Single most influential assumption. Remaining ~7.4% covers accidents, violence, and fundamentally irreducible causes.
 
-**Our defense:** {{< var unexplored_ratio >}} of the therapeutic search space remains untested ({{< var safe_compounds_count >}} safe compounds x {{< var trial_relevant_diseases_count >}} diseases = {{< var drug_disease_combinations_possible >}} pairings, only {{< var exploration_ratio >}} tested). {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating effective treatments exist but haven't been matched to conditions. Life expectancy rose from ~47 to ~79 since 1900, with most gains from preventing deaths once considered inevitable. At 50%, all headline numbers halve but cost-effectiveness remains strong.
+**Our defense:** {{< var unexplored_ratio >}} of the therapeutic search space remains untested ({{< var safe_compounds_count >}} safe compounds x {{< var trial_relevant_diseases_count >}} diseases = {{< var drug_disease_combinations_possible >}} pairings, only {{< var exploration_ratio >}} tested). {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating effective treatments exist but haven't been matched to conditions. Emerging modalities (mRNA platforms, CRISPR gene therapy, epigenetic reprogramming, AI-guided drug discovery) are expanding the space of testable candidates faster than ever. At 50%, all headline numbers halve but cost-effectiveness remains strong. [Full defense](/knowledge/economics/1-pct-treaty-impact.qmd#why-eventually-avoidable-matters).
 
 **Question:** Is {{< var eventually_avoidable_death_pct >}} defensible, or what figure would you use?
 :::
@@ -127,18 +126,18 @@ A {{< var dfda_trial_capacity_multiplier >}} increase in trial slots produces a 
 ## 3. Political Success Probability: {{< var political_success_probability >}}
 Risk-adjusted at {{< var political_success_probability >}} (99% failure), cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) still beats bed nets ({{< var bed_nets_cost_per_daly >}}/DALY).
 
-**Our defense:** Ottawa Treaty (landmines, 1997) negotiated in under two years via 1,000+ NGO coalition. Montreal Protocol achieved near-universal ratification. The 1% Treaty adds Incentive Alignment Bonds tying legislators' career incentives to treaty support, a mechanism neither precedent had.
+**Our defense:** The math dominates the politics. Even assuming 99% failure, expected cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets. The model doesn't need political optimism to work. Separately, [Incentive Alignment Bonds](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) address feasibility by making treaty support financially self-interested for legislators, investors, and military contractors (military lobbyists currently earn $1,813 per $1 spent on influence; IABs offer comparable returns for treaty compliance). [Full political economy analysis](/knowledge/economics/1-pct-treaty-impact.qmd#political-economy-and-financing).
 
-**Question:** Is {{< var political_success_probability >}} the right baseline? What probability breaks even with bed nets?
+**Question:** Is {{< var political_success_probability >}} the right baseline?
 :::
 
 ::: {.callout-warning}
 ## 4. $1B Campaign -> $27.2B/yr Government Funding (Treaty Leverage)
 {{< var treaty_vs_direct_funding_leverage >}} leverage assumes {{< var treaty_campaign_total_cost >}} advocacy campaign redirects {{< var treaty_reduction_pct >}} of global military spending.
 
-**Our defense:** We present both framings: treaty ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, cost to funder) and direct funding ({{< var dfda_direct_funding_cost_per_daly >}}/DALY, cost to society). For foundations, the treaty framing is relevant: $1B unlocking $27.2B/yr in government spending is standard policy advocacy leverage.
+**Our defense:** We present both framings. Direct funding ({{< var dfda_direct_funding_cost_per_daly >}}/DALY) validates the pragmatic trial model independent of political feasibility. Treaty framing ({{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY) reflects policy advocacy leverage, which has precedent: Gates Foundation's $10B vaccine pledge leveraged $200B+ in government commitments (20x); Bloomberg's $1B in tobacco control unlocked $15B+ in government spending (15x). The 1% Treaty targets a larger base (global military budgets), enabling proportionally higher leverage. [Full comparison](/knowledge/economics/1-pct-treaty-impact.qmd#policy-advocacy-leverage-vs-direct-funding).
 
-**Question:** Which denominator should we lead with for foundations?
+**Question:** Is the leverage ratio plausible?
 :::
 
 ::: {.callout-warning}

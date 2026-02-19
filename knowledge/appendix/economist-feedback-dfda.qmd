@@ -1,7 +1,6 @@
 ---
-title: "Economist Review: Headline Numbers for Validation"
-subtitle: "One-page summary of key claims, assumptions, and calculation chain"
-description: "Concise summary of the dFDA impact analysis for economist sign-off before foundation funding conversations."
+title: "Is This Crazy?"
+description: "Integrating pragmatic trials into routine healthcare claims to clear a {{< var status_quo_queue_clearance_years >}} treatment backlog at {{< var dfda_direct_funding_cost_per_daly >}}/DALY. One-page calculation chain for economist review."
 published: true
 toc: false
 number-sections: false
@@ -11,7 +10,7 @@ aliases:
 
 ::: {.callout-important}
 ## Why You Should Take 15 Minutes to Validate This Model
-If this model is generally correct and these policies are adopted, you could help save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and prevent {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of unnecessary suffering.
+If this model is right and these policies are adopted, you will have helped to save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and prevent {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of unnecessary suffering. (Which would be nice.)
 :::
 
 The [insanely long full paper](dfda-impact-paper.qmd) and [really boring calculations and uncertainty analysis page](parameters-and-calculations.qmd) contain complete derivations.
@@ -88,7 +87,7 @@ Note: Costs are discounted at {{< var npv_discount_rate_standard >}}; DALYs are 
 ## 1. Eventually Avoidable Fraction: {{< var eventually_avoidable_death_pct >}} of disease deaths
 Single most influential assumption. Remaining ~7.4% covers accidents, violence, and fundamentally irreducible causes.
 
-**Our defense:** {{< var unexplored_ratio >}} of the therapeutic search space remains untested ({{< var safe_compounds_count >}} safe compounds x {{< var trial_relevant_diseases_count >}} diseases = {{< var drug_disease_combinations_possible >}} pairings, only {{< var exploration_ratio >}} tested). {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating effective treatments exist but haven't been matched to conditions. Life expectancy rose from ~47 to ~79 since 1900, with most gains from preventing deaths once considered inevitable. At 50%, all headline numbers halve but cost-effectiveness remains strong.
+**Our defense:** {{< var unexplored_ratio >}} of the therapeutic search space remains untested ({{< var safe_compounds_count >}} safe compounds x {{< var trial_relevant_diseases_count >}} diseases = {{< var drug_disease_combinations_possible >}} pairings, only {{< var exploration_ratio >}} tested). {{< var drug_repurposing_success_rate >}} of approved drugs gain new indications, demonstrating effective treatments exist but haven't been matched to conditions. Emerging modalities (mRNA platforms, CRISPR gene therapy, epigenetic reprogramming, AI-guided drug discovery) are expanding the space of testable candidates faster than ever. At 50%, all headline numbers halve but cost-effectiveness remains strong. [Full defense](dfda-impact-paper.qmd#why-eventually-avoidable-matters).
 
 **Question:** Is {{< var eventually_avoidable_death_pct >}} defensible, or what figure would you use?
 :::
