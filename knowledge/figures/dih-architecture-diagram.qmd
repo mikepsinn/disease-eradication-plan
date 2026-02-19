@@ -22,7 +22,7 @@ setup_graphviz_style(dot)
 
 # 1% Treaty Fund (top)
 
-dot.node('Treaty', 'The 1% Treaty\n$1T/year', shape='box', style='filled', fillcolor='white')
+dot.node('Treaty', 'The 1% Treaty\n$27.2B/year', shape='box', style='filled', fillcolor='white')
 dot.node('Treasury', '1% Treaty Fund\nDecentralized Governance Layer', shape='box', penwidth='3')
 
 # Wishocracy voting

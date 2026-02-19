@@ -1,7 +1,7 @@
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
-#| fig-cap: "VICTORY Incentive Alignment Bonds: 270% Perpetual Returns"
+#| fig-cap: "VICTORY Incentive Alignment Bonds: 272% Perpetual Returns"
 from pathlib import Path
 
 import matplotlib.pyplot as plt

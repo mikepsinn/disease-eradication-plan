@@ -70,12 +70,12 @@ aliases:
 | Benefit Type | Timeline Shift | Mechanism | Impact |
 |--------------|----------------|-----------|--------|
 | **Efficacy Lag Elimination** | {{< var efficacy_lag_years >}} | Offer conditional access via opt-in pragmatic trials after Phase I safety, with continuous real-world monitoring replacing Phase II/III efficacy delay | All newly discovered treatments reach patients {{< var efficacy_lag_years >}} sooner |
-| **Discovery Acceleration** | {{< var dfda_trial_capacity_treatment_acceleration_years >}} average | Scale trial capacity {{< var dfda_trial_capacity_multiplier >}} (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year), enabling parallel exploration of therapeutic space | Treatments that already exist among safe compounds are discovered {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier |
+| **Discovery Acceleration** | {{< var dfda_trial_capacity_treatment_acceleration_years >}} average | Scale trial capacity {{< var dfda_trial_capacity_multiplier >}} (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}), enabling parallel exploration of therapeutic space | Treatments that already exist among safe compounds are discovered {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier |
 | **Combined Total** | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}** | Both effects act simultaneously | **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-year average timeline shift** for treatment delivery |
 
 **Interpreting the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}-Year Timeline Figure:** This is a **discovery capacity model result**, not "time travel" or a prediction that we will achieve results centuries from now. If we must test {{< var drug_disease_combinations_possible >}} drug-disease combinations to find all effective treatments, the current system ({{< var new_disease_first_treatments_per_year >}} treatments/year) would take ~{{< var status_quo_queue_clearance_years >}} to explore this therapeutic search space. Scaling capacity {{< var dfda_trial_capacity_multiplier >}} reduces exploration time to ~{{< var dfda_queue_clearance_years >}}. The "{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}" represents the average time a treatment that *could* be discovered today would have waited under the old system versus the new system. Treatments discovered sooner save lives during the intervening period; this cumulative benefit over the acceleration period yields the headline mortality and economic figures.
 
-**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} diseases/year. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
+**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** Redirecting {{< var treaty_annual_funding >}}/year at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient under exceptional NHS/COVID conditions) enables {{< var dih_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 **Methods**: Cost-benefit analysis, NPV calculations, QALY modeling, and ICER analysis using SIPRI military expenditure data, WHO mortality statistics, Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis], and published clinical trial cost literature. Conservative estimates exclude research acceleration effects; complete estimates include all quantifiable benefits. All parameters, data sources, and uncertainty ranges documented in [Parameters and Calculations](../appendix/parameters-and-calculations.qmd).
 
@@ -632,7 +632,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 **Pharmaceutical Companies**: Trial costs convert to revenue streams. Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} subsidies when patients enroll. This transforms trials from cost centers to profit centers.
 
-**Politicians**: {{< var treaty_campaign_voting_bloc_target >}} million voters represent a significant electoral constituency. Politicians supporting the treaty gain reputation benefits, campaign support, and reduced opposition funding. Those opposing it face well-funded challengers and organized voter blocs.
+**Politicians**: {{< var treaty_campaign_voting_bloc_target >}} voters represent a significant electoral constituency. Politicians supporting the treaty gain reputation benefits, campaign support, and reduced opposition funding. Those opposing it face well-funded challengers and organized voter blocs.
 
 {{< var treaty_campaign_voting_bloc_target_latex >}}
 
@@ -1364,7 +1364,7 @@ This calculation is empirically grounded: only ~5% of the {{< var rare_diseases_
 **With framework implementation**:
 
 - Trial capacity increases {{< var dfda_trial_capacity_multiplier >}}, enabling parallel exploration of the therapeutic space
-- Exploration rate: **{{< var dfda_first_treatments_per_year >}} diseases receiving first treatments/year** (vs {{< var new_disease_first_treatments_per_year >}}/year status quo)
+- Exploration rate: **{{< var dfda_first_treatments_per_year >}}** (vs {{< var new_disease_first_treatments_per_year >}} status quo)
 - Time to systematically explore disease space: **{{< var dfda_queue_clearance_years >}}** (vs {{< var status_quo_queue_clearance_years >}})
 - Average disease receives first treatment **{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier**
 
@@ -1854,7 +1854,7 @@ The economic benefits outlined above demonstrate the value proposition of the {{
 
 ### Step 1: Global Mandate (The Philanthropic Catalyst)
 
-**Goal**: Survey **3.5% of the global population** ({{< var treaty_campaign_voting_bloc_target >}} people).
+**Goal**: Survey **3.5% of the global population** ({{< var treaty_campaign_voting_bloc_target >}}).
 
 ![Get 3.5% of people angry enough and the government has to listen. That's 280 million humans. Luckily you're already angry, you're just angry about the wrong things.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-1-global-mandate-the-philanthropic-catalyst-bw-academic.jpg)
 

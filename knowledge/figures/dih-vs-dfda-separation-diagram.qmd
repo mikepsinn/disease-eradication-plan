@@ -22,7 +22,7 @@ setup_graphviz_style(dot)
 
 # 1% Treaty Fund node (The Treasury)
 
-dot.node('Fund', '1% Treaty Fund\n($1T/year)', shape='box')
+dot.node('Fund', '1% Treaty Fund\n($27.2B/year)', shape='box')
 
 # Your decentralized institutes of health (DIH) cluster (Governance)
 
