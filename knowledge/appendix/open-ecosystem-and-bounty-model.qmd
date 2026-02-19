@@ -11,110 +11,44 @@ tags:
 image: /assets/og-images/knowledge/appendix/open-ecosystem-and-bounty-model-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-The infrastructure for a decentralized framework for drug assessment (dFDA) won't cost billions to build. Because you're not building most of it.
+The infrastructure for a dFDA won't cost billions to build. Because you're not building most of it.
 
-Here's the plan:
+Here's the plan: build the foundation (core API and data standards), pay bounties for critical features nobody wants to build first, and let everyone else build everything else for free. This is how WordPress, Linux, and every successful open platform works. You build the rails, not every train.
 
-1. Build the foundation (core API)
-2. Pay bounties for critical features that nobody wants to build yet
-3. Let everyone else build everything else for free
+## The Open Platform Model
 
-This is how WordPress, Linux, and every successful platform works. You build the rails, not every train.
+The most successful software platforms share a pattern: a small core team builds the foundation, then thousands of outside developers build specialized tools on top of it.
 
-## The Core Strategy (Build the Rails, Not Every Train)
+Linux started as one person in Finland writing a kernel. Today it runs most of the internet, every Android phone, and the world's fastest supercomputers. The core team is still tiny. The contributor network is massive. WordPress works the same way: a small core, 60,000+ plugins built by other people.
 
-The most successful software platforms don't build every feature. That would be slow and expensive.
+Open-source platform models aren't theoretical. They're a multi-trillion-dollar economic reality [@open-source-platform-multi-trillion-dollar-reality]. WordPress, Linux, Android, and Chrome were all built this way. Combined value: trillions. Combined cost to build the cores: billions. The math is not subtle.
 
-Instead, they build the foundation and let others build on top.
+A dFDA follows the same structure:
 
-### The Model
+- **Core infrastructure:** APIs, data standards, identity, and consent management. You build this.
+- **Everything else:** Trial matching tools, analysis dashboards, EHR connectors, patient-facing apps. Developers (companies, academics, individuals with too much free time) build these.
 
-![The rails go everywhere. Other people build the trains. You just maintain the tracks and let everyone ride for free. It's socialism for code.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-model-bw-academic.jpg)
+## Bounties: Paying for Results, Not Promises
 
-- **Build the Rails:** Core infrastructure, APIs, data standards
-- **Not Every Destination:** Developers (companies, academics, individual humans with too much time) build specialized tools
+An open platform mostly builds itself, but sometimes you need specific features that nobody's volunteering to create. That's where bounties come in.
 
-### Why This Works (Evidence Not Theory)
+The traditional approach is grants: "Here's money. Build something. Let us know how it goes." The bounty approach inverts this: "Build this specific thing. If it works, you get paid. If it doesn't, you don't." One of these wastes less money. The distinction is left as an exercise for the reader.
 
-#### Linux
+The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program** for exactly this reason. What it funds:
 
-- The kernel: Small core team
-- Everything else: Thousands of companies and individuals
-- Result: Runs most of the internet, all Android phones, world's fastest supercomputers
-- Core team is tiny. Network of contributors is massive.
+- **Critical features:** Essential tools nobody's building yet. Post a bounty, pay on delivery.
+- **Security reporting:** Pay hackers to find vulnerabilities and report them instead of exploiting them. Cheaper than getting hacked.
+- **High-value integrations:** Connectors to major EHR systems and national health registries. Everyone benefits, nobody wants to go first. Bounties fix the coordination problem.
+- **Major prizes:** Big money for big achievements. Want a breakthrough component? Offer $1M to whoever builds it best.
 
-![Thirty people in Finland accidentally built the operating system that runs the internet. Then thousands of other people helped. Now it's everywhere and no one owns it. This probably shouldn't have worked.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-linux-bw-academic.jpg)
+## This Already Works
 
-## Bounties and Prizes (Paying for Results Not Promises)
+Governments already use bounties and prizes [@us-government-prize-and-bounty-programs] to solve complex problems, and they consistently outperform traditional procurement:
 
-While an open platform mostly builds itself, sometimes you need specific features that nobody's building yet.
+- **XPRIZE:** Private-sector space travel
+- **NASA Centennial Challenges:** Lunar lander, space robotics
+- **Department of Defense bug bounties:** Cybersecurity
 
-![Grant model: here's money, please build the thing. Bounty model: build the thing, here's money. One pays for promises. The other pays for results. Guess which one works better.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-bounties-and-prizes-payi-bw-academic.jpg)
+All succeeded. All cost less than the traditional "hire a contractor and hope" approach.
 
-That's where bounties come in.
-
-The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program**. Not grants (pay people who promise to build). Bounties (pay people who actually built it).
-
-You don't get papers for proposals. You get papers for code that works.
-
-### What Bounties Fund
-
-**Critical Features:** Essential tools nobody's building. Pay someone to build it. Problem solved.
-
-![Four things you can pay people to do after they do them: build important tools, find security holes, make things work together, and win prizes for being clever.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-what-bounties-fund-bw-academic.jpg)
-
-**Security Reporting:** Bug bounty program. Pay hackers to find security flaws and report them instead of exploiting them. Cheaper than getting hacked.
-
-**High-Value Integrations:** Connectors to major EHR systems, national health registries. Benefits everyone but nobody wants to build first. Bounties solve this.
-
-**Major Prizes:** Big money for big achievements. Want a critical component? Offer $1M to whoever builds it best. Competition drives innovation.
-
-### The Difference
-
-**Grants:** "Here's money. Build something. Let us know how it goes."
-
-![Grant model: here's money, please build the thing. Bounty model: build the thing, here's money. Yes, this is the same as two captions ago. Apparently it needed two diagrams.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-difference-bw-academic.jpg)
-
-**Bounties:** "Build this specific thing. If it works, you get paid. If it doesn't, you don't."
-
-One wastes less money. You can guess which.
-
-## Why This Actually Works (Not Wishful Thinking)
-
-This model is proven and cheap for two reasons:
-
-### It's Already a Multi-Trillion-Dollar Reality
-
-Open-source and platform models aren't theoretical. They're a multi-trillion-dollar economic reality [@open-source-platform-multi-trillion-dollar-reality].
-
-![Spend a few billion making free software. Get trillions of economic value. This is the best investment humans have ever made, and we did it by accident while trying to avoid paying Microsoft.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-1-it-s-already-a-multi-trillion-dollar-reality-bw-academic.jpg)
-
-WordPress, Linux, Android, Chrome all built this way. Combined value: trillions. Combined cost to build cores: billions.
-
-The math works.
-
-### Governments Already Do This (And It Works)
-
-Public bodies already use bounties and prizes [@us-government-prize-and-bounty-programs] to solve complex problems. They work better and cost less than traditional procurement:
-
-- **XPRIZE:** Private-sector space travel (worked)
-- **NASA Centennial Challenges:** Lunar lander, space robotics (worked)
-- **Department of Defense bug bounties:** Cybersecurity (worked)
-
-All succeeded. All cost less than traditional procurement. All delivered better results.
-
-![Government says 'build me a thing' and pays fifty companies to try. Only pay the ones that succeed. Somehow this saves money and works better. Even the Pentagon figured this out.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-3-governments-already-do-this-and-it-works-bw-academic.jpg)
-
-Bounties work. Not experimental.
-
-## The Result
-
-Your decentralized framework for drug assessment can foster a thriving global network of tools. It delivers medical innovation at a fraction of the cost of centralized, top-down development.
-
-![Old way: one company, one lab, one drug, one patent. New way: everyone works on everything, shares everything, cures everything. One of these approaches seems better for not dying.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-result-bw-academic.jpg)
-
-WordPress proved this works for websites.
-Linux proved it works for operating systems.
-Your framework will prove it works for curing disease.
-
-Or it won't, and everyone continues dying from preventable things. Your choice.
+Apply the same model to medical research infrastructure, and you get a global network of tools built by people who actually want them to work, at a fraction of what centralized development would cost. The alternative is continuing to build everything from scratch, slowly, expensively, and badly. Which is also an option, if you prefer tradition to results.
