@@ -14,7 +14,6 @@ image: /assets/og-images/knowledge/problem/fda-is-unsafe-and-ineffective-og-retr
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-
 The FDA's 1962 law requiring years of pre-approval efficacy testing was supposed to prove drugs work before allowing patient access. Instead, it made drugs more dangerous.
 
 How? By blocking patient access during lengthy trials and forcing small, artificial studies instead of large real-world evidence, the current system:
@@ -28,13 +27,11 @@ The result: drugs approved as "safe" based on testing 3,000 cherry-picked patien
 
 Meanwhile, regulatory delays prevent millions from accessing treatments that could save their lives. The system doesn't just fail to ensure safety. It actively undermines it while simultaneously killing people through delay.
 
-
 ## A Note on Blame
 
 The FDA employees executing this system didn't design it. Congress did, in 1962, via the Kefauver-Harris Amendments. The FDA implements what Congress mandated. The problem isn't bad people at the FDA. The problem is a bad law that makes good outcomes structurally impossible.
 
 When this chapter says "the FDA does X," read it as "the 1962 law requires the FDA to do X." The humans at the agency follow the rules they were given. The rules are the problem.
-
 
 ## Confidence Levels: What We Know vs. What We Model
 
@@ -71,8 +68,6 @@ Compare two real-world systems for testing drugs:
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 47,000 patients for **{{< var recovery_trial_cost_per_patient >}}**. Found a life-saving treatment in 3 months.
 2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}}** per trial. Takes **9.1 years [@drug-development-timeline-17-years]** to approve a new drug.
 
-![Oxford trial: 100 dollars per patient, done in 9 days. Standard trial: 50,000 dollars per patient, done in 7 years. You chose standard.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bw-academic.jpg)
-
 The current system costs **{{< var dfda_trial_cost_reduction_factor >}} more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer**. Not a small difference; the difference between functional and designed-to-fail.
 
 ### The {{< var efficacy_lag_years >}}-Year Efficacy Lag
@@ -83,8 +78,6 @@ Here's the breakdown of where the time goes:
 - **Phase II/III (Efficacy Testing):** {{< var efficacy_lag_years >}} - Tests if the drug works better than placebo. *This is where people die waiting.*
 
 The math is simple: If you die in year 5 and the drug gets approved in year 10, the regulatory process murdered you.
-
-![Proving a drug is safe takes 2 years. Proving it works takes 8 years. The extra 6 years are called regulatory purgatory. People die during purgatory.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-var-efficacy-lag-years-year-efficacy-lag-bw-academic.jpg)
 
 That's {{< var efficacy_lag_years >}} sitting in regulatory purgatory *after* we already know the drug won't kill you.
 
@@ -109,7 +102,6 @@ The temporal break is exact. Life expectancy growth cut in half the moment regul
 
 ![Average Life Expectancy Over Time](../../assets/images/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
-
 ## Detailed Historical Analysis
 
 ![Medicine before 1962: pretty good, one horrible mistake. Medicine after 1962: very safe, very slow, millions die waiting. You traded one type of death for another.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-detailed-historical-analysis-bw-academic.jpg)
@@ -129,7 +121,6 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 | **Time to Approval** | 2-3 years | {{< var fda_phase_1_to_approval_years >}} | 5-8x slower |
 
 The temporal break is exact. Every negative metric changed immediately in 1962.
-
 
 ## Detailed Cost Analysis
 
@@ -513,7 +504,6 @@ Blocking patient access during the 8.2-year post-safety efficacy delay kills peo
 Many pieces already exist. The bottleneck is scale, incentives, and time-to-answer. The core idea is straightforward even if implementation is hard.
 
 What's missing is the political will to admit that the 1962 "reforms" were a catastrophic mistake.
-
 
 ## Technical Analysis
 

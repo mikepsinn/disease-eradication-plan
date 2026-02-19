@@ -200,7 +200,7 @@ format:
       - paperwidth=7in
       - paperheight=10in
       - top=0.5in
-      - bottom=0.5in
+      - bottom=0.75in
       - inner=0.875in  # KDP minimum gutter for 700+ pages
       - outer=0.5in
     include-before-body:

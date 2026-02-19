@@ -26,10 +26,10 @@ Here's some math. Don't worry, it's painful but brief.
 
 Here is everything humanity considers "medicine" after 5,000 years of civilization:
 
-* **Prescriptions:** {{< var fda_approved_products_count >}} products approved in the U.S. Sounds impressive until you realize most are just "Tylenol, but blue."
-* **Unique Ingredients:** These products contain only {{< var fda_approved_unique_active_ingredients >}} unique active ingredients. That's fewer ingredients than a decent French bakery uses.
-* **Investigational Drugs:** Pipeline analyses suggest {{< var phase_1_passed_compounds_global >}} compounds have passed Phase I globally.
-* **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}} substances.
+* **Prescriptions:** {{< var fda_approved_products_count >}} approved in the U.S. Sounds impressive until you realize most are just "Tylenol, but blue."
+* **Unique Ingredients:** These products contain only {{< var fda_approved_unique_active_ingredients >}}. That's fewer ingredients than a decent French bakery uses.
+* **Investigational Drugs:** Pipeline analyses suggest {{< var phase_1_passed_compounds_global >}} have passed Phase I globally.
+* **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}}.
 
 ![Twenty thousand drug products, but only 9,500 unique ingredients. It's like having 20,000 sandwiches but only 9,500 types of bread. You keep repackaging the same bread.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-your-tiny-sandbox-bw-academic.jpg)
 
