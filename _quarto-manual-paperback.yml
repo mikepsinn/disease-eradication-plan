@@ -173,6 +173,7 @@ format:
   pdf:
     output-file: "How-to-End-War-and-Disease-Paperback.pdf"
     documentclass: report
+    classoption: [twoside]
     institute: "Institute for Accelerated Medicine"
     echo: false
     toc: false
@@ -197,10 +198,10 @@ format:
     geometry:
       - paperwidth=7in
       - paperheight=10in
-      - top=0.75in
-      - bottom=0.75in
-      - left=0.75in
-      - right=0.75in
+      - top=0.5in
+      - bottom=0.5in
+      - inner=0.875in  # KDP minimum gutter for 700+ pages
+      - outer=0.5in
     include-before-body:
       - text: |
           \thispagestyle{empty}
