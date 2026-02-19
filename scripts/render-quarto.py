@@ -474,7 +474,11 @@ def _rewrite_index_source_links(
                     os.path.join(str(file_dir), path_normalized)
                 ).replace("\\", "/")
             else:
-                resolved = path_normalized
+                # Bare filename (e.g., "dfda-impact-paper.qmd") - resolve relative to file's directory
+                file_dir = Path(file_path_str).parent
+                resolved = os.path.normpath(
+                    os.path.join(str(file_dir), path_normalized)
+                ).replace("\\", "/")
 
             if resolved == index_source:
                 new_path = f"/index.qmd{anchor}"
