@@ -164,6 +164,7 @@ format:
   docx:
     output-file: "How-to-End-War-and-Disease-Paperback.docx"
     toc: true
+    toc-depth: 1
     number-sections: false
   pdf:
     output-file: "How-to-End-War-and-Disease-Paperback.pdf"
