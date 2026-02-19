@@ -11,235 +11,104 @@ tags:
 image: /assets/og-images/knowledge/appendix/recruitment-and-propaganda-plan-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-*Phase 0: Building Your Revolutionary Database Before You Have Anything to Revolution With*
+*Phase 0: Collecting Humans Before You Have Anything to Offer Them*
 
-Here's how you build a list of humans willing to fight death. You don't have the weapons yet. That's fine. This is Phase 0. You pretend you're organized while frantically building the plane mid-flight. Think of it as a Kickstarter for not dying. Instead of a shitty smartwatch, backers get to potentially live forever.
+Here's the problem. You want to end war and disease. You don't have a nonprofit, registered securities, or a bank account. What you do have is an argument and the audacity to think that might be enough.
 
-The goal isn't to collect money yet. You don't have the legal structure for that without going to prison. The goal is to identify and catalog every human who's tired of the whole "inevitable death" thing. You're building a database of the not-yet-dead who want to stay that way.
+This is Phase 0. The goal isn't money (you can't legally accept it yet). The goal is building a database of every human who agrees that dying from preventable causes is a strange thing to tolerate. You're collecting proof of demand before you have a product. It's a Kickstarter where the reward is "possibly not dying."
 
-## The Current Clusterfuck
+## The Bootstrapping Problem
 
-*Why Your Website Is Lying to People*
+Before you can accept donations, you need 501(c)(3) status. Before you can sell bonds, you need SEC registration. Before you can do either, you need a bank account. This creates a chicken-and-egg problem that humanity has solved exactly one way: you collect people first, then point at the crowd when institutions ask "but who wants this?"
 
-Right now your propaganda says "Donate" and "Buy VICTORY Incentive Alignment Bonds." Both are literally impossible because:
+Every social movement in history started as a mailing list with ambitions. Abolition, suffrage, civil rights. Someone wrote down names. The names became bargaining power. The bargaining power became change.
 
-1. You don't have a 501(c)(3) yet (donations would be taxable gifts)
-2. You haven't registered securities (the SEC has opinions about that)
-3. You don't have a bank account (minor detail)
+So that's Phase 0. Collect names. Collect stated interest. Build the crowd you'll point to when institutions ask "but who wants this?"
 
-You're asking people to give you money through a slot that doesn't exist. It's like putting up a "Free Pizza" sign when you don't have pizza, an oven, or even flour. People show up excited. They leave confused and slightly angry.
+## Three Types of Allies
 
-![The website asks for donations and bond purchases. The legal infrastructure to accept them doesn't exist yet. It's like a store that displays prices but hasn't invented money.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-the-current-clusterfuck-bw-academic.jpg)
+People who want to help tend to fall into three categories. Understanding which type you're talking to determines what you ask them to do.
 
-Every day this continues, you lose potential revolutionaries. They clicked, got confused, and went back to scrolling cat videos. These people were literally ready to throw money at the "not dying" problem. You sent them away empty-handed.
+### Investors
 
-## The Three-Division Army Structure
+These are people motivated by returns. They hear "{{< var victory_bond_annual_return_pct >}} annual return backed by health savings" and start doing math. They're not heartless; they just evaluate opportunities through spreadsheets. This is fine. Self-interest aligned with public good is the entire thesis of this book.
 
-*How to Categorize Your Cannon Fodder*
+**What they need from you:** Financial projections, risk analysis, legal structure, and a clear path to securities registration. They'll wait if the math is good.
 
-You create three categories of future revolutionaries. Humans need labels to understand their purpose:
+**What you need from them:** Contact information, investment range, investor type (individual, angel, VC, family office), and permission to follow up when the legal structure exists.
 
-### Division 1: Financial Infantry (The Money People)
+### Advocates
 
-These are the capitalists who smell {{< var victory_bond_annual_return_pct >}} returns and start salivating. They have money. They want more money. They're willing to bet on humanity not going extinct to get it.
+These are people motivated by the mission. They share things on social media, write to politicians, volunteer time, and donate money they probably shouldn't. They're the reason movements move.
 
-#### How to identify them
+**What they need from you:** Clear information about the problem, a believable plan, and specific actions they can take right now (even small ones).
 
-- They ask about ROI before asking about the mission
-- Their LinkedIn has more than 500+ connections
-- They use phrases like "deploy capital" instead of "spend money"
-- They own Tesla stock but complain about Elon on Twitter
+**What you need from them:** Contact information, skills, geographic location, and areas of interest (policy, healthcare, economics, outreach).
 
-### Division 2: Home Front Supporters (The Feels People)
+### Institutional Partners
 
-These are the bleeding hearts who cry at pharmaceutical commercials. They have feelings. They want to help. They'll donate $20 they can't afford because a child has cancer somewhere.
+These are organizations (nonprofits, research institutions, health agencies, advocacy groups) that already work on pieces of this problem. They have infrastructure, credibility, and donor bases. You have a framework that could make their existing work more effective.
 
-#### How to identify them
+**What they need from you:** Evidence that your approach complements rather than competes with their mission. Partnership terms that make them look smart, not subordinate.
 
-- They share every charity post on Facebook
-- They have strong opinions about healthcare despite knowing nothing about it  
-- They own at least three "awareness" ribbons
-- They think essential oils might actually work but they're "keeping an open mind"
+**What you need from them:** Organization type, mission alignment, partnership interest, and who makes decisions.
 
-### Division 3: Allied Command (The Institution People)
+## The Registration Forms
 
-These are the organizations pretending to solve problems while perpetuating them. They have infrastructure. They want good PR. They'll partner with anyone who makes them look innovative.
+Create three forms, one for each group. Keep them short. Every additional field loses you 10% of completions (roughly, per UX research on form abandonment).
 
-![The Allied Command talks about innovation while building infrastructure to manage the problem they claim to be solving. It's a nonprofit that runs on the disease, not the cure.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-division-3-allied-command-the-institution-people-bw-academic.jpg)
+**Investor Interest Form:** Name, email, organization, investment range, investor type, LinkedIn (optional). Title: "Register Interest in VICTORY Bonds."
 
-#### How to identify them
+**Advocate Signup Form:** Name, email, location, areas of interest, skills you'd be willing to contribute. Title: "Join the Coalition."
 
-![The CEO makes 500 times more than the people doing the actual work. The gala costs more than the mission. This is a charity that celebrates itself for existing.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-how-to-identify-them-bw-academic.jpg)
+**Partnership Inquiry Form:** Organization name, type, mission, annual budget range, partnership interest, decision-maker contact. Title: "Explore a Partnership."
 
-- They have "impact" or "innovation" in their name
-- Their website has stock photos of diverse people looking at tablets
-- They spend more on their annual gala than their actual mission
-- Their CEO makes 500X what their program coordinators make
+The key principle: ask for exactly what you need, explain honestly what happens next ("we'll contact you when the legal structure is in place"), and don't pretend to be further along than you are. Transparency is both ethical and strategic. People forgive "we're early" but not "we lied."
 
-## The Enlistment Forms
+## Follow-Up Strategy
 
-*How to Harvest Data Without Being Creepy (Too Creepy)*
+People who sign up and never hear from you again will forget you exist. People who get spammed weekly will unsubscribe. The middle ground:
 
-You create three different forms, each psychologically optimized for its target audience:
+**Month 1:** Welcome email explaining the plan, the timeline, and what happens next. Be specific about what you're working on (501(c)(3) application, SEC registration, platform development).
 
-### Financial Infantry Enlistment Form
+**Monthly updates:** Actual progress. What got done, what didn't, what's next. Include real numbers. "We have 3,247 registered investors representing $180M in stated interest" is more persuasive than vague optimism because it's verifiable.
 
-```
-Title: "Reserve Your VICTORY Incentive Alignment Bonds (Before We Run Out)"
+**Milestone announcements:** When the 501(c)(3) clears, when securities registration happens, when the platform launches. These are the moments your database converts from "interested" to "active."
 
-Fields:
+The goal of every communication: give people a reason to stay on the list and a reason to forward it to someone else.
 
-- Full Name (what the IRS knows you as)
-- Email (where we send your fortune)
-- Organization (who currently owns your soul)
-- Investment Range:
-  □ Under $25K (testing the waters)
-  □ $25K-$100K (serious but cautious)
-  □ $100K-$500K (true believer)
-  □ $500K+ (either genius or insane)
+## Metrics Worth Tracking
 
-- Investor Type:
-  □ Angel (lost soul with money)
-  □ VC (spreadsheet with a pulse)
-  □ Family Office (inherited wealth feeling guilty)
-  □ Individual (regular person with irregular dreams)
+- **Registration rate:** What percentage of visitors fill out a form
+- **Stated investment interest:** Total dollar amount registered (this becomes your proof of demand)
+- **Geographic distribution:** Where your supporters are (matters for political pressure)
+- **Referral rate:** How many people each supporter brings in
+- **Retention:** How many people open your monthly updates
 
-- LinkedIn URL (for stalking your net worth)
-- [ ] Yes, send me updates about not dying
-```
+The metric that matters most is stated investment interest. When you walk into a senator's office or an SEC meeting, "$2 billion in registered demand from 50 states" is an argument. "We have a newsletter" is not.
 
-The Home Front Supporter form ("Join the Fight Against Death") collects name, email, area of interest, and special skills. The Allied Command Partnership form ("Make Your Organization Look Good") collects org type, annual budget, partnership interest, and mission statement. Your beautiful lies. Same structure. Different delusions.
+## Phase 0 Targets
 
-## The Deployment Strategy
+By the end of Phase 0, you want:
 
-*How to Replace Lies With Different Lies*
+- **100,000+ registered supporters** across all three categories
+- **1,000+ qualified investors** with stated investment ranges
+- **100+ institutional partners** with expressed interest
+- **$1B+ in stated investment demand** (registered, not committed)
 
-Here's how you fix your website's false advertising:
+This database is your ammunition for everything that follows:
 
-### Step 1: Delete the Impossible Buttons
+- 501(c)(3) applications ("here are our supporters")
+- SEC registration ("here is market demand")
+- Political meetings ("here are your constituents")
+- Platform launch ("here are your users")
 
-Remove "Donate" and "Buy VICTORY Incentive Alignment Bonds" immediately. You're not a charity. You're not selling securities. Stop pretending.
+## Getting Started
 
-### Step 2: Install the New Propaganda
+1. **Set up a CRM.** Free tiers of HubSpot, Airtable, or even a well-organized spreadsheet. You need to store contacts, categorize them, and send emails.
+2. **Build the three forms.** Google Forms works. Typeform is prettier. The tool matters less than the existence of the forms.
+3. **Put up a website.** It doesn't need to be fancy. It needs the three forms and the argument.
+4. **Start telling people.** Social media, Reddit, forums, conferences, your dentist. Every human who agrees that preventable death is bad is a potential registration.
+5. **Send monthly updates.** Real progress, real numbers, real timeline.
 
-Replace with:
-
-- **"Reserve Your Bonds"** → Financial Infantry Form (the greed button)
-- **"Join the Revolution"** → Home Front Form (the feelings button)  
-- **"Partner With Us"** → Allied Command Form (the PR button)
-
-### Step 3: Create Artificial Urgency
-
-Add counters everywhere:
-
-- "7,234 spots remaining in first allocation"
-- "Join 142,337 revolutionaries"
-- "Applications close in 47:23:16"
-
-All lies, but effective lies.
-
-### Step 4: A/B Test Everything
-
-![Marketing tests revealed that 'End Death', '272 percent Returns', and 'Fear' perform best. Humans respond to three things: not dying, getting rich, and panic. Science.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-step-4-a-b-test-everything-bw-academic.jpg)
-
-Because science:
-
-- Test "End Death" vs "Cure Disease" (death wins)
-- Test "{{< var victory_bond_annual_return_pct >}} Returns" vs "Save Humanity" (money wins)
-- Test fear vs hope (fear wins, unfortunately)
-
-## The Management Protocol
-
-*How to Pretend You're Organized*
-
-Once people start signing up, here's how you handle the flood:
-
-### Weekly Reviews (Monday Morning Triage)
-
-1. **New signups:** Categorize by delusion level
-2. **High-value targets:** Flag the rich ones
-3. **Partnerships:** Identify who's actually useful
-4. **Nutjobs:** Flag but don't delete (they're persistent)
-
-### Tagging System (How to Remember Who Matters)
-
-![Rich people sorted by how much money they have, how famous they are, and how likely they are to give you both.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-tagging-system-how-to-remember-who-matters-bw-academic.jpg)
-
-Create tags for:
-
-- **Whale:** Can fund everything
-- **Dolphin:** Can fund something
-- **Minnow:** Can fund nothing but tries
-- **Influencer:** Loud on social media
-- **Connected:** Knows important people
-- **Crazy But Rich:** Self-explanatory
-- **Crazy But Poor:** Avoid
-
-### Follow-Up Sequences (Automated Harassment)
-
-![A 16-week robot convinces you to invest. Week 1: Hello. Week 16: Give us money. Weeks 2 through 15: becoming friends.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-follow-up-sequences-automated-harassment-bw-academic.jpg)
-
-**Week 1:** "Welcome to the revolution" (hope and dreams)
-**Week 2:** "Here's what we're building" (vague promises)
-**Week 4:** "First victories" (made-up milestones)
-**Week 8:** "The movement grows" (cherry-picked stats)
-**Week 16:** "Ready to invest?" (the ask)
-
-## The Communication Strategy
-
-Send weekly "Battlefield Reports." Fill them with made-up statistics, out-of-context celebrity quotes, and progress bars that always go up. Add testimonials from "supporters" (you wrote them). Use subject lines like "We're 72% closer to ending death" and "Last chance (until next week's last chance)."
-
-![How to build a progress report when there's no progress: fake statistics, quotes with the context removed, and progress bars that don't measure anything.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-the-communication-strategy-bw-academic.jpg)
-
-Add privacy checkboxes nobody reads. "I agree to terms" in War and Peace legalese. "I understand risks" when you don't. "I want updates," a.k.a. spam me daddy. Your privacy policy says you protect data (until you don't). You never sell information (you give it away). You use industry standards (from 1995).
-
-## The Metrics That Matter
-
-*Numbers to Obsess Over*
-
-Track everything:
-
-- **Conversion rate:** How many visitors become revolutionaries
-- **Email open rate:** Who's still paying attention
-- **Geographic distribution:** Where hope lives
-- **Wealth indicators:** LinkedIn profiles, email domains, zip codes
-- **Engagement decay:** How fast people stop caring
-- **Viral coefficient:** How many people each person recruits
-
-## The Endgame
-
-![Build a database of people who want the thing. Use it to become legal, register securities, pressure politicians, and launch the platform. The database is a weapon made of signatures.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-the-endgame-bw-academic.jpg)
-
-*What Success Looks Like*
-
-By the end of Phase 0, you have:
-
-- **100,000+ emails** (your army)
-- **1,000+ qualified investors** (your war chest)
-- **100+ organizations** (your infrastructure)
-- **$1B in "intended" investments** (IOUs for the revolution)
-
-This database becomes your proof of demand when you:
-
-- Apply for 501(c)(3) status (look, we have supporters!)
-- Register securities (look, we have buyers!)
-- Approach politicians (look, we have voters!)
-- Launch the actual platform (look, we have users!)
-
-## Your Marching Orders
-
-*The Five Steps to Start Right Now*
-
-1. **Set up a database** 
-2. **Create the three forms** (copy-paste from above)
-3. **Replace your lying website buttons** (stop the bleeding)
-4. **Start collecting humans** (they're everywhere)
-5. **Send weekly propaganda** (keep the dream alive)
-
-Remember: You're not building a mailing list. You're building an army. These are humans who've decided that dying is stupid. They're ready to do something about it. Every email is a future soldier in the war against death. Every signup is a vote against the status quo of inevitable mortality.
-
-![Step 1: Build the thing. Step 5: People use the thing. Steps 2, 3, and 4: Convincing people the thing exists.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-your-marching-orders-bw-academic.jpg)
-
-The military-industrial complex has tanks and missiles. You have a spreadsheet and a dream. History shows that's usually enough.
-
-Now stop reading and start recruiting. Death is signing up its own army. It has a head start of about 300,000 years.
+Every registration is a data point proving that demand exists for a world where we spend money on not dying instead of on dying. The military-industrial complex has a 75-year head start, unlimited budgets, and thousands of lobbyists. You have a spreadsheet and an argument. Historically, that's been enough.
