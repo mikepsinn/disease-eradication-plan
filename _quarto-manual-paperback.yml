@@ -89,9 +89,9 @@ book:
         - knowledge/appendix/recovery-trial.qmd
         - knowledge/appendix/real-world-evidence-historical-success.qmd
         # CUT: papers.qmd - just links to websites, useless in print
-        # CUT: references.qmd - auto-generated bibliography
+        - knowledge/references.qmd
         - knowledge/appendix/copyright.qmd
-        - knowledge/appendix/back-cover.qmd
+        # - knowledge/appendix/back-cover.qmd
 
 # Remove "Appendix" prefix
 language:
