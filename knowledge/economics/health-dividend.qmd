@@ -41,9 +41,9 @@ Global clinical trial spending: **{{< var global_clinical_trials_spending_annual
 
 ![Current spending versus what you'd spend if you stopped doing trials like you're staying at the Ritz. Conservative estimate saves half, optimistic saves 95 percent. Either way, someone's been stealing.](/assets/images/health-dividend/health-dividend-section-where-the-var-dfda-benefit-rd-only-annual-comes-from-bw-academic.jpg)
 
-Conservative estimate: dFDA captures 50% efficiency gains across the market.
+Conservative estimate: dFDA captures {{< var dfda_trial_cost_reduction_pct >}} efficiency gains across the market.
 
-- 50% of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
+- {{< var dfda_trial_cost_reduction_pct >}} of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
 
 Optimistic: 95% cost reduction (what RECOVERY achieved), saving up to **$57B/year**.
 
