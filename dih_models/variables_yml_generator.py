@@ -334,8 +334,8 @@ def generate_variables_yml(
                     if i == 0:
                         parts.append(f"$$\n{block}\n$$")
                     else:
-                        parts.append(f"where:\n$$\n{block}\n$$")
-                variables[latex_var_name] = '\n'.join(parts)
+                        parts.append(f"where:\n\n$$\n{block}\n$$")
+                variables[latex_var_name] = '\n\n'.join(parts)
             else:
                 # Single block - existing logic
                 if wrap_latex_width > 0:

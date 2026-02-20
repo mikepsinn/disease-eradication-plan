@@ -1465,11 +1465,6 @@ def render_quarto(
                         print("[OK] PDF validation passed")
                     gh_group_end()
 
-            # Log EPUB files
-            for epub_file in temp_output_dir.glob("*.epub"):
-                size_mb = epub_file.stat().st_size / (1024 * 1024)
-                print(f"[*] EPUB: {epub_file} ({size_mb:.2f} MB)")
-
             # Verify expected outputs exist
             gh_group_start("VERIFICATION: EXPECTED OUTPUTS")
 
@@ -1505,10 +1500,20 @@ def render_quarto(
                     print(f"        Expected at: {pdf_path}", file=sys.stderr)
                     exit_code = 1
 
-            # Check EPUB if expected
-            if expected_epub and (format_override is None or format_override == "epub"):
-                epub_path = temp_output_dir / expected_epub
-                if epub_path.exists():
+            # Check EPUB if expected or any .epub files exist
+            if format_override is None or format_override == "epub":
+                # Find EPUB: use expected name if configured, otherwise glob for any .epub
+                if expected_epub:
+                    epub_candidates = [temp_output_dir / expected_epub] if (temp_output_dir / expected_epub).exists() else []
+                else:
+                    epub_candidates = list(temp_output_dir.glob("*.epub"))
+
+                if expected_epub and not epub_candidates:
+                    print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
+                    print(f"        Expected at: {temp_output_dir / expected_epub}", file=sys.stderr)
+                    exit_code = 1
+
+                for epub_path in epub_candidates:
                     size_mb = epub_path.stat().st_size / (1024 * 1024)
                     print(f"[OK] EPUB exists: {epub_path} ({size_mb:.2f} MB)")
 
@@ -1526,7 +1531,7 @@ def render_quarto(
                     # Copy EPUB to assets/epubs for distribution
                     assets_epubs_dir = project_root / "assets" / "epubs"
                     assets_epubs_dir.mkdir(parents=True, exist_ok=True)
-                    dest_epub_path = assets_epubs_dir / expected_epub
+                    dest_epub_path = assets_epubs_dir / epub_path.name
                     shutil.copy2(epub_path, dest_epub_path)
                     print(f"[OK] Copied EPUB to: {dest_epub_path.relative_to(project_root)}")
 
@@ -1587,10 +1592,6 @@ def render_quarto(
                             print(f"[OK] KPF generated: {kpf_files[0].name} ({kpf_mb:.1f} MB, Enhanced Typesetting: {et_status})")
                         else:
                             print(f"[WARN] KPF not generated (Enhanced Typesetting: {et_status})", file=sys.stderr)
-                else:
-                    print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
-                    print(f"        Expected at: {epub_path}", file=sys.stderr)
-                    exit_code = 1
 
             # Check DOCX if it exists (no expected_docx config field, just look for .docx files)
             if format_override is None or format_override == "docx":

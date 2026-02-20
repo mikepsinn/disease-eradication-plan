@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 34 | **Words:** 81,923 | **Images:** 501 | **Est. Pages:** ~578
+**Files:** 34 | **Words:** 81,905 | **Images:** 501 | **Est. Pages:** ~578
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 3,936 words | 481 lines | 14 images | ~23p
+**Stats:** 3,932 words | 479 lines | 14 images | ~23p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Part Where I Discover Paper Makes You Do Things
@@ -180,7 +180,7 @@
 #### knowledge/problem/nih-fails-2-institute-health.qmd
 **Title:** NIH Fails to Institute Health
 **Description:** The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficient pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
-**Stats:** 2,038 words | 283 lines | 15 images | ~16p
+**Stats:** 2,034 words | 281 lines | 15 images | ~16p
 
   - The Allocation Scandal
     ![The NIH spends 85 percent on research and 3 percent on humans. Apparently mice are more important.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
@@ -253,7 +253,7 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34x more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 4,550 words | 514 lines | 26 images | ~31p
+**Stats:** 4,548 words | 514 lines | 26 images | ~31p
 
   - A Note on Blame
   - Confidence Levels: What We Know vs. What We Model
@@ -1113,7 +1113,7 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,098 words | 286 lines | 18 images | ~21p
+**Stats:** 3,094 words | 284 lines | 18 images | ~21p
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     ![How to stop spending money on death and start spending it on life, in three simple steps. You'd think this would be obvious.](/assets/images/roadmap/roadmap-section-high-level-strategy-the-three-step-recipe-for-not-dying-bw-academic.jpg)
@@ -1340,7 +1340,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,243 words | 164 lines | 9 images | ~9p
+**Stats:** 1,239 words | 162 lines | 9 images | ~9p
 
   - How 1% Less Violence Pays For Everything
     ![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
