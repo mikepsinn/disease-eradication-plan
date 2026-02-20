@@ -69,13 +69,6 @@ No backroom deals. No suitcases of cash. Just a standing, public rule: do the ob
 
 Not charity (doesn't scale). Not lobbying (taken). Not "paying politicians" (illegal, also taken). IABs make investors and politicians cooperate on public goods by appealing to the only thing they respond to: self-interest.
 
-| | Social Impact Bonds | Incentive Alignment Bonds |
-|:--|:--|:--|
-| **Who's rewarded** | Service providers (nonprofits) | Politicians AND investors |
-| **What's measured** | Service delivery outcomes | Policy adoption and funding flows |
-| **Scale** | City/program level | National/global |
-| **Funding source** | External (government pays) | Self-funding (policy outcome funds returns) |
-
 ### How IABs Work (Four Steps)
 
 ![How to build a legal bribery machine in four easy steps. Lawyers helped.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-how-incentive-alignment-bonds-work-the-simple-version-bw-academic.jpg)
@@ -302,20 +295,9 @@ Bribery **corrupts** alignment. IABs **create** it.
 
 ![Money flows through two engines, investors and politicians, before reaching the actual medical research. It's trickle-down economics, but for not dying.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-7a-the-two-engines-financial-and-political-bw-academic.jpg)
 
-[VICTORY Bonds](https://iab.warondisease.org) raise the capital. IABs align the politicians. Together they split the treaty revenue:
+[Incentive Alignment Bonds](https://iab.warondisease.org) raise the capital and align the politicians. Treaty revenue splits: {{< var victory_bond_funding_pct >}} to investors ({{< var victory_bond_annual_payout >}}), {{< var iab_political_incentive_funding_pct >}} to political incentives ({{< var iab_political_incentive_funding_annual >}}), and {{< var dih_treasury_medical_research_pct >}} to research ({{< var dih_treasury_to_medical_research_annual >}}).
 
-| Allocation | Share | Annual Amount | Purpose |
-|:-----------|:------|:--------------|:--------|
-| **Investors** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Returns for funding the campaign |
-| **Politicians** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Electoral support, post-office fellowships |
-| **Research** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Actually curing diseases |
-
-This split balances four goals:
-
-1. **Attract sufficient capital**: {{< var victory_bond_annual_return_pct >}} projected returns compete with high-risk VC/hedge funds
-2. **Keep politicians aligned**: {{< var iab_political_incentive_funding_pct >}} funds the three-layer architecture that makes supporting the treaty career-optimal
-3. **Fund the mission**: {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) gives researchers substantial capital
-4. **Align all incentives**: Investors, politicians, and researchers all profit from treaty expansion
+Everyone profits from treaty expansion.
 
 ### Why 10% Goes to Political Incentives {#sec-why-ten-pct-scaling-engine}
 
@@ -632,27 +614,12 @@ Hand this to investors who can't read more than one page:
 
 ![Investors give money to convince politicians to redirect war budgets to medical research, which pays the investors, politicians, and researchers. The circle of life, but useful.](/assets/images/victory-bonds/victory-bonds-section-the-core-mechanism-is-stupid-simple-bw-academic.jpg)
 
-1. Collect $1.0B from rich humans
-2. Use it to convince politicians that living constituents vote more reliably than dead ones
-3. The treaty passes. It redirects {{< var treaty_annual_funding >}} annually from bombs to cures via a 1% Treaty Fund.
-4. Give bondholders {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) every year, forever
-5. Fund political incentives with {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) to keep politicians aligned
-6. Use remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) to actually cure the diseases killing people
-7. Diseases decline. Public demands more funding. Returns scale up.
-8. Repeat until death is optional or universe ends
-
-It's the simplest way to become generationally wealthy. And it makes it harder for people to die from preventable things.
+Collect {{< var treaty_campaign_total_cost >}} from investors. Convince politicians that living constituents vote more reliably than dead ones. Treaty passes. {{< var treaty_annual_funding >}} flows annually from bombs to cures. Bondholders get {{< var victory_bond_funding_pct >}}, politicians get {{< var iab_political_incentive_funding_pct >}}, research gets {{< var dih_treasury_medical_research_pct >}}. Diseases decline, public demands more, returns scale up. Repeat until death is optional.
 
 ### Summary
 
 ![How to make politicians care about the future by promising them good jobs after they stop being politicians. Turns out they like money that comes later too.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-summary-what-iabs-actually-are-bw-academic.jpg)
 
-IABs don't change human nature. They redirect it.
+IABs don't change human nature. They redirect it. They're legal (three-layer architecture, no money to officials), they scale (one country then FOMO), and they're self-reinforcing (each expansion increases IAB funding, driving the next expansion).
 
-1. **They solve political economy.** Concentrated losers lobby harder than diffuse beneficiaries. IABs concentrate benefits on politicians who support good policies.
-2. **They're legal.** Three-layer architecture avoids bribery law. No money to officials.
-3. **They scale.** One country, then FOMO.
-4. **They're self-reinforcing.** 1% → 2% → 5% → each expansion increases IAB funding, which drives the next expansion.
-5. **They generalize.** Climate, nuclear risk, pandemics. Same architecture, different metric.
-
-You're not asking your politicians to be saints. You're just making "save millions of lives" and "advance my career" point in the same direction. The rest is self-interest doing what self-interest does.
+You're not asking your politicians to be saints. You're making "save millions of lives" and "advance my career" point in the same direction. The rest is self-interest doing what self-interest does.

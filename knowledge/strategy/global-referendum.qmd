@@ -52,34 +52,32 @@ The trick is doing all of these simultaneously. That's harder than it sounds.
 
 ## System Architecture (Or: Math That Politicians Can't Argue With)
 
-The voting system uses an **end-to-end verifiable scheme**. Translation: cryptographic receipts that prove you voted, without proving *how* you voted. Politicians can claim polls are fake. They cannot claim math is fake. (Some have tried. It doesn't go well.)
+The voting system uses **end-to-end verifiable cryptography**: receipts that prove you voted, without proving *how* you voted.
+Politicians can claim polls are fake.
+They cannot claim math is fake. (Some have tried. It doesn't go well.)
 
 ![Your vote gets encrypted, mixed with everyone else's votes like a cryptographic smoothie, then posted publicly. You can verify yours; nobody knows it's yours.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
 
-Four properties that make this unkillable:
-
-- **Individual Verification**: Each voter gets a cryptographic receipt proving their vote was counted
-- **Public Audit**: All ballots are published (anonymized) so anyone can verify the total
-- **Zero-Knowledge Proofs**: Mathematical guarantees the count is legitimate without revealing how anyone voted
-- **Privacy by Design**: Biometric processing happens on your device; the system never sees raw data
-
-The infrastructure handles 280M+ participants across 40+ languages. All code is open-source for independent audit.
+Each voter gets a cryptographic receipt.
+All ballots are published anonymized.
+Zero-knowledge proofs guarantee the count is legitimate.
+Biometric processing happens on your device; the system never sees raw data.
+All code is open-source.
 
 ## On Stopping People from Cheating (The Hard Part)
 
-The internet is full of bots, fraudsters, and people who think it's funny to vote 1,000 times. You need to verify that each vote comes from a real, unique human. You can't require government ID (excludes billions). You can't violate privacy (creepy and illegal). And you can't make it impossible for normal people to participate (defeats the purpose).
+Three escalating verification layers:
 
-The system uses three escalating verification layers:
-
-1. **Basic checks** (stops ~90% of fraud): email/phone OTP, device fingerprinting, IP geolocation, velocity limits
-2. **Enhanced verification** (for higher trust and higher rewards): government e-ID integration (Estonia [@estonia-eresidency-stats], India Aadhaar [@indian-aadhaar-system], EU eIDAS [@eu-eidas-network], US via ID.me [@id-me-verification]), biometric liveness detection, proof-of-uniqueness partners (Worldcoin [@worldcoin-scale], BrightID [@brightid-social-verification-network], Gitcoin Passport [@gitcoin-passport])
-3. **Social verification**: community attestation for people without digital IDs, social media cross-reference (opt-in)
+1. **Basic checks** (stops ~90% of fraud): email/phone OTP, device fingerprinting, IP geolocation
+2. **Enhanced verification** (higher trust, higher rewards): government e-ID integration (Estonia [@estonia-eresidency-stats], India Aadhaar [@indian-aadhaar-system], EU eIDAS [@eu-eidas-network], US via ID.me [@id-me-verification]), biometric liveness detection, proof-of-uniqueness partners (Worldcoin [@worldcoin-scale], BrightID [@brightid-social-verification-network], Gitcoin Passport [@gitcoin-passport])
+3. **Social verification**: community attestation for people without digital IDs
 
 ![Layer 1: Are you human? Layer 2: Are you a real human? Layer 3: Are you a real human who hasn't voted already?](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
 
-The more layers you pass, the more trustworthy your vote. But even Layer 1 gets you counted. AI-powered fraud detection (pattern analysis, network mapping, real-time monitoring) catches the remaining edge cases. Detection rate: >99% with <1% false positives.
-
-Your biometric data stays on your device. It's encrypted with keys you control and never stored centrally. The system complies with GDPR [@gdpr-biometric-data], CCPA/CPRA [@ccpa-cpra-compliance], BIPA [@illinois-bipa], and COPPA [@coppa-compliance]. Privacy is the default, not a setting.
+Even Layer 1 gets you counted.
+AI fraud detection catches edge cases: >99% detection, <1% false positives.
+Biometric data stays on your device, encrypted with keys you control.
+Compliant with GDPR [@gdpr-biometric-data], CCPA/CPRA [@ccpa-cpra-compliance], BIPA [@illinois-bipa], and COPPA [@coppa-compliance].
 
 ## Growth Strategy
 
@@ -91,50 +89,31 @@ For the full marketing strategy (memes, influencers, referral economics, tiered 
 
 ## Integrity (Proving You Didn't Cheat)
 
-People will claim you cheated. This is inevitable. The only defense is making cheating mathematically impossible, then publishing the math.
+People will claim you cheated.
+The defense: making cheating mathematically impossible, then publishing the math.
+NGO and academic observers get read-only monitors with real-time fraud detection dashboards.
 
-- **Cryptographic receipts**: Each voter gets a tracking code to verify inclusion. Zero-knowledge proofs guarantee the count is legitimate without revealing how anyone voted.
-- **Public audit**: Anonymized ballots, ZK proofs, and open-source code with commit hashes. Anyone can verify the total.
-- **Observer program**: NGO and academic observers with read-only monitors, real-time fraud detection alerts, and public dashboards.
+You can't just pay people to click buttons. Well, you can, but then you get garbage data and angry economists. So: participants complete structured learning paths before voting; higher reward tiers unlock as you learn more.
+Result: informed participants, not confused button-clickers.
 
-You can't just pay people to click buttons. Well, you can, but then you get garbage data and angry economists. Instead: reward structured learning paths before voting. Progressive unlocking of higher reward tiers (learn more = earn more). Result: informed participants, not confused button-clickers.
-
-**Legal positioning**: Non-binding global consultation to demonstrate consent. Country-specific bridges to official mechanisms where feasible. Constitutional law scholars review for legitimacy. GDPR/CCPA alignment with minimal data retention.
+**Legal positioning**: Non-binding global consultation.
+Country-specific bridges to official mechanisms where feasible.
+Constitutional law scholars review for legitimacy.
 
 ## Implementation Roadmap
 
 Building a global referendum in 12 months sounds insane. It is insane. But so is dying of diseases we know how to prevent. We've been doing that for decades.
 
-### Phase 1: Foundation (Months 1-2)
-
 ![Month 1-2: Build the website, plan the marketing, and make the blockchain work. Multitasking, but organized.](/assets/images/global-referendum/global-referendum-section-phase-1-foundation-months-1-2-bw-academic.jpg)
 
-- Design and test QR code t-shirt concept
-- Create basic social media challenge framework
-- Establish community building guidelines
-- Deploy core verification infrastructure
-
-### Phase 2: Scaling (Months 3-6)
-
-- Launch wearable marketing program
-- Implement social media challenges
-- Begin local community building
-- Deploy enhanced verification layers
-
-### Phase 3: Global Launch (Months 7-12)
+| Phase | Timeline | Focus |
+|:------|:---------|:------|
+| **Foundation** | Months 1-2 | Deploy core verification infrastructure, social media framework |
+| **Scaling** | Months 3-6 | Launch marketing program, deploy enhanced verification layers |
+| **Global Launch** | Months 7-12 | Full-scale campaign, target {{< var global_population_activism_threshold_pct >}} participation |
+| **Optimization** | Months 13+ | Scale what works, prepare for treaty negotiations |
 
 ![Launch day: Turn on the system, flood social media, and coordinate volunteers worldwide. The hardest part is getting everyone to press 'go' simultaneously.](/assets/images/global-referendum/global-referendum-section-phase-3-global-launch-months-7-12-bw-academic.jpg)
-
-- Full-scale viral marketing campaign
-- International verification system deployment
-- Cross-regional community coordination
-- Target {{< var global_population_activism_threshold_pct >}} global participation
-
-### Phase 4: Optimization (Months 13+)
-
-- Analyze performance data and optimize high-performing tactics
-- Scale successful strategies globally
-- Prepare for treaty negotiation phase
 
 ## Success Metrics
 
@@ -149,37 +128,20 @@ Secondary metrics track geographic distribution, brand awareness, and whether po
 
 ![Success metrics: get 280 million people for under $210 million, grow exponentially, and catch 99% of cheaters. Ambitious, but measurable.](/assets/images/global-referendum/global-referendum-section-success-metrics-bw-academic.jpg)
 
-## On Putting It All Together
-
-### What You're Building
-
-A global referendum. It combines verification technology with viral marketing to hit the {{< var global_population_activism_threshold_pct >}} tipping point.
+## The Bottom Line
 
 ![280 million people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
 
-Translation: You're getting 280 million humans to cryptographically prove they support the treaty. This creates political pressure so intense that ignoring it becomes career suicide for politicians.
-
-#### The Innovation Part
-
-This isn't just a referendum. It's a new standard for global digital democracy. It proves you can secure mass participation without building a surveillance state or trusting any central authority.
-
-![Old way: Trust the government to count votes honestly. New way: Math counts votes; government can't cheat even if it wants to.](/assets/images/global-referendum/global-referendum-section-the-innovation-part-bw-academic.jpg)
-
-It's democracy, but with math instead of hope.
-
-#### The Money Part
-
-$200M for the campaign, as allocated in the VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org).
+$200M for the campaign, funded by VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org).
+Target cost: <$0.75 per verified participant.
+That's cheaper than acquiring a customer for any consumer product.
+The product is "not dying from preventable diseases."
 
 ![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
 
-Target cost: <$0.75 per verified participant to hit the 280M+ goal.
-
-That's cheaper than acquiring a customer for literally any consumer product. The product is "not dying from preventable diseases."
-
-#### What Success Looks Like
-
-280 million verified humans saying "do this or lose your job" to every politician on Earth. That's not a petition. That's a mandate with teeth.
+280 million verified humans saying "do this or lose your job" to every politician on Earth.
+That's not a petition.
+That's a mandate with teeth.
 
 ### On Why {{< var global_population_activism_threshold_pct >}} Is The Magic Number
 

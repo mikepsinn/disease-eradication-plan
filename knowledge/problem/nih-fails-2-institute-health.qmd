@@ -88,7 +88,8 @@ This proves the problem isn't that curing disease is hard. The NIH funds the wro
 
 ## The Death Toll: Opportunity Cost of Misallocation
 
-When you misallocate $40 billion a year into low-efficiency research instead of high-efficiency clinical trials, you aren't just wasting money. You are burning lives.
+When you misallocate $40 billion a year into low-efficiency research instead of high-efficiency clinical trials, you aren't just wasting money.
+You are burning lives.
 
 ![Spend 40 billion on efficient trials, save millions. Spend it on inefficient research, publish papers. You chose papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-death-toll-opportunity-cost-of-misallocation-bw-academic.jpg)
 
@@ -96,39 +97,16 @@ When you misallocate $40 billion a year into low-efficiency research instead of 
 
 - **Standard NIH Portfolio:** {{< var nih_standard_research_cost_per_qaly >}} per QALY {{< var nih_standard_research_cost_per_qaly_cite >}} (generous estimate)
 - **Pragmatic Platform Trials:** {{< var pragmatic_trial_cost_per_qaly >}} per QALY
-- **NIH pragmatic trials funding:** Capped at $500K planning + $1M/year implementation [@pragmatic-trials-cost-advantage]. This is a tiny fraction of the {{< var nih_annual_budget >}} budget
-
-**The Multiplier:**
 
 Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH mix.
-
-Yet pragmatic trials remain severely underfunded [@pragmatic-trials-cost-advantage]. The ADAPTABLE trial proved they cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M).
+The ADAPTABLE trial proved pragmatic trials cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M).
 
 ![One method saves lives efficiently. The other publishes papers expensively. You're currently funding the papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-cost-per-qaly-bw-academic.jpg)
 
 ### The "Death Equivalent" of Budget Misallocation
 
-**Annual Opportunity Cost (Central Estimates):**
-
-- **QALYs Lost:** ~100 million life-years per year
-- **Deaths NOT Prevented:** ~7 million death-equivalents per year
-
-**Conservative 90% Confidence Interval:**
-
-- **QALYs Lost:** 10 million to 820 million per year
-- **Deaths NOT Prevented:** 0.7 million to 64 million per year
-
-Even in the **most conservative 5th-percentile scenario**, NIH misallocation costs ~10 million QALYs and prevents ~700,000 deaths' worth of health gains annually.
-
-In the 95th-percentile scenario, it's burning health equivalent to **most of the global death toll** (60M deaths/year).
-
-The NIH isn't just inefficient. The current budget allocation blocks the shift to high-efficiency trial platforms. It **actively destroys** the equivalent of millions of lives annually compared to the optimal allocation.
-
-**Mathematical Conclusion:**
-
-$$
-\text{Efficiency Loss} = 1 - \frac{\text{Current QALYs gained}}{\text{Potential QALYs gained}} \approx 98\%
-$$
+**Annual Opportunity Cost:** ~100 million QALYs and ~7 million death-equivalents per year.
+Even in the most conservative scenario, NIH misallocation costs ~10 million QALYs and ~700,000 preventable deaths annually.
 
 You are operating at ~2% of your potential theoretical capacity to save lives.
 
@@ -154,26 +132,18 @@ The system produces papers, not cures:
 
 ### Knowledge Production: Saturated. Translation Capacity: Starved.
 
-The bottleneck isn't ideas. It's execution:
+- **Patients who've participated in trials:** ~5% [@clinical-trial-patient-participation-rate]
+- **Patients willing to participate if invited:** ~50% [@patient-willingness-clinical-trials]
+- **Patients actually invited:** ~9-11% [@patient-willingness-clinical-trials]
 
-- **Biomedical papers produced:** 2.5 million per year [@nih-annual-papers-published]
-- **Adults who've participated in trials:** ~5% [@clinical-trial-patient-participation-rate]
-- **Adults willing to participate if invited:** ~50-75% [@patient-willingness-clinical-trials]
-- **Adults actually invited:** ~9-11% [@patient-willingness-clinical-trials]
-
-We're drowning in hypotheses while patients are starving for trial slots.
-
-The system produces millions of papers testing ideas in mice. It offers trial participation to only 5% of humans. Half would say yes if asked.
-
-That's not an information failure. That's a capacity failure.
-
-We know everything about how cancer works in mice. We've mapped every pathway, gene, and protein. We have Nobel Prizes for understanding mechanisms.
+Half of all patients would join a clinical trial if asked.
+Almost nobody asks.
 
 ![The funnel has 500,000 safe molecules at the top and 50 approved drugs at the bottom. This is technically a funnel. Also technically a tragedy.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-translation-funnel-bw-academic.jpg)
 
-#### What we don't have: Cures.
-
-Because understanding disease and curing disease are completely different things. The NIH chose understanding. Patients needed cures.
+Understanding disease and curing disease are completely different things.
+The NIH chose understanding.
+Patients needed cures.
 
 ## The Public Goods vs. Club Goods Scam
 
@@ -182,25 +152,18 @@ It actually spends taxpayers' money to produce "Club Goods" for private industry
 
 ![You pay for the research. They take the profits. It's socialism for corporations, capitalism for you. You invented that.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
 
-**The Scam in Numbers:**
-
-- **Direct commercialization support:** ~3-5% of budget
-- **Indirect subsidy to profitable firms:** ~40-60% of NIH spending [@nih-clinical-trials-small-fraction] functions as a de facto subsidy to industry. This includes funding basic research, training scientists, and generating patents that private companies exploit
-- **NIH contribution to approved drugs:** Funded research for 99% of new drugs [@nih-funded-approved-drugs] (356 drugs, 2010-2019), but covers only ~10% of clinical trial costs
-- **Who pays for translation:** NIH covers only ~10% of what industry spends [@nih-clinical-trials-small-fraction] on clinical trials for approved drugs
-
-The pattern is clear: taxpayers fund 40-60% of the knowledge pipeline (~$20-30B/year), industry patents the winners, and the public pays again through high drug prices.
-
-When a discovery leads to a blockbuster drug, the IP is privatized.
-When the research leads to a dead end, the public eats the loss.
+Taxpayers funded research behind 99% of new drugs [@nih-funded-approved-drugs] (356 drugs, 2010-2019).
+Industry patents the winners.
+The public pays again through high drug prices.
+When research leads to a dead end, the public eats the loss.
 
 **Socialized Risk, Privatized Profit.**
 
-True public goods would be **unpatentable** but high-value assets like:
+The only things the NIH *should* fund are things private companies *cannot* profitably fund:
 
 - **Open pragmatic trial platforms:** 30x cheaper than traditional trials [@pragmatic-trials-cost-advantage], yet receive minimal NIH funding
 - **Re-purposing generic drugs:** 4,700+ clinically-tested compounds [@drug-repurposing-hub-collection] where no patent exists
-- **Comparative effectiveness data:** Head-to-Head trials that would reveal which drugs actually work best
+- **Comparative effectiveness data:** Head-to-head trials revealing which drugs actually work best
 
 Private companies *cannot* profitably fund these, so they are the **only** thing the NIH should be funding.
 Instead, the NIH explicitly avoids them to "not crowd out industry."
