@@ -250,7 +250,7 @@ That's {{< var medical_research_pct_of_disease_burden >}} of the disease burden 
 
 ### Mortality and Morbidity Burden
 
-The World Health Organization reports {{< var global_disease_deaths_daily >}} {{< var global_disease_deaths_daily_cite >}} daily deaths from disease and aging. Many of these are eventually avoidable with accelerated biomedical progress ({{< var global_annual_deaths_curable_diseases >}} annually).
+The World Health Organization reports 150,000 daily deaths from disease and aging [@who-global-health-estimates-2024]. Many of these are eventually avoidable with accelerated biomedical progress ({{< var global_annual_deaths_curable_diseases >}} annually).
 
 This mortality burden exceeds:
 
@@ -429,7 +429,7 @@ This total combines two effects:
 - **Treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} on average)**: With {{< var dfda_trial_capacity_multiplier >}} trial capacity, the average disease receives first effective treatment ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier
 - **Efficacy lag elimination ({{< var efficacy_lag_years >}})**: Once discovered, treatments are deployed without post-safety delay
 
-For context: **{{< var global_disease_deaths_daily >}} people die every day** under the current system.
+For context: **150,000 people die every day** under the current system.
 
 ![More trials plus faster learning equals earlier cures equals billions of lives saved. You learned this arithmetic in third grade. Then you forgot it sometime between graduation and building the Pentagon.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-lives-saved-bw-academic.jpg)
 
@@ -449,7 +449,7 @@ DALYs capture both mortality (years of life lost) AND morbidity (years lived wit
 
 ### Why "Eventually Avoidable" Matters
 
-Of {{< var global_disease_deaths_daily >}}:
+Of those 150,000 daily deaths:
 
 - **{{< var eventually_avoidable_death_pct >}} eventually avoidable** with sufficient biomedical research (gene therapy, AI drug discovery, cellular reprogramming, etc.)
 - **{{< var fundamentally_unavoidable_death_pct >}} fundamentally unavoidable** (primarily accidents, even with advanced prevention)
@@ -1163,7 +1163,7 @@ The complete ROI includes the full timeline shift health benefits:
 
 **Step 1: Identify daily mortality**
 
-- Global daily deaths from disease: {{< var global_disease_deaths_daily >}} {{< var global_disease_deaths_daily_cite >}}
+- Global daily deaths from disease: 150,000 [@who-global-health-estimates-2024]
 
 **Step 2: Apply avoidable fraction**
 

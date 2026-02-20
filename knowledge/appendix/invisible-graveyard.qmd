@@ -314,9 +314,9 @@ The assumption is not empirically validated at the aggregate level, though indiv
 
 | Metric | Estimate | Methodology |
 |:-------|:---------|:------------|
-| **Total Deaths** | **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** | Regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}}. Uses WHO global disease mortality rate ({{< var global_disease_deaths_daily >}}/day). |
+| **Total Deaths** | **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** | Regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}}. Uses WHO global disease mortality rate (150,000/day). |
 
-**Finding:** The disease eradication delay model estimates **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} total eventually avoidable deaths**, with **{{< var global_disease_deaths_daily >}} per day** - greater than the combined casualties of World War I and World War II over the 62-year period.
+**Finding:** The disease eradication delay model estimates **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} total eventually avoidable deaths**, with **150,000 per day**, greater than the combined casualties of World War I and World War II over the 62-year period.
 
 {{< var dfda_efficacy_lag_elimination_deaths_averted_latex >}}
 

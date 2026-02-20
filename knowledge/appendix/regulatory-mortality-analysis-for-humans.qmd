@@ -121,7 +121,7 @@ In the "Upper Bound" scenario, we aren't just looking at preventable *premature*
 
 ##### The Variables
 
-* $M_{daily}$ = Total Global Deaths per Day from Disease/Aging ({{< var global_disease_deaths_daily >}}).
+* $M_{daily}$ = Total Global Deaths per Day from Disease/Aging (150,000).
 * $T_{lag}$ = The Regulatory Delay ({{< var efficacy_lag_years >}}).
 
 ##### The Equation
@@ -134,7 +134,7 @@ $$D_{total} = M_{daily} \times T_{lag} \times \text{Avoidable\%}$$
 
 ##### Step-by-Step for the 5th Grader
 
-1.  Every day, **{{< var global_disease_deaths_daily >}} people** die from health problems (heart attacks, cancer, old age).
+1.  Every day, **150,000 people** die from health problems (heart attacks, cancer, old age).
 2.  We delayed the solution to these problems by **{{< var efficacy_lag_years >}}**.
 3.  That means we let **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} people** die who would have been saved if we had arrived at the finish line on time.
 
@@ -204,7 +204,7 @@ If we assume we *will* eventually cure all disease, but the law requires us to w
 
 *Scenario: Total Eradication Delayed by {{< var efficacy_lag_years >}}*
 
-* **Daily Lives Cost:** **{{< var global_disease_deaths_daily >}}** people died today. (The entire population of Savannah, Georgia, wiped out every morning.)
+* **Daily Lives Cost:** **150,000** people died today. (The entire population of Savannah, Georgia, wiped out every morning.)
 * **Total Lives Cost:** **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** over the {{< var efficacy_lag_years >}} delay.
 * **Total Time Cost:** **{{< var dfda_efficacy_lag_elimination_dalys >}}** of healthy life deleted.
 * **Total Money Cost:** **{{< var dfda_efficacy_lag_elimination_economic_value >}}** burned. (10× more money than exists in the world.)

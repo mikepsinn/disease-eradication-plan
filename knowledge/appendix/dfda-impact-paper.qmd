@@ -891,7 +891,7 @@ For economist verification, this section provides complete derivation chains for
 
 **Step 1: Daily mortality from eventually avoidable causes**
 
-- Global disease deaths: {{< var global_disease_deaths_daily >}}/day
+- Global disease deaths: 150,000/day [@who-global-health-estimates-2024]
 - Eventually avoidable percentage: {{< var eventually_avoidable_death_pct >}}
 
 **Step 2: Timeline shift period**
