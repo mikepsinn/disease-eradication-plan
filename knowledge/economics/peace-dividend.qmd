@@ -99,8 +99,6 @@ The Societal Dividend (theoretical maximum benefit):
 
 The elasticity parameter (e = {{< var peace_dividend_conflict_elasticity >}}) asks: if you cut military spending 1%, do war costs drop 1% too?
 
-{{< include ../figures/distribution-peace_dividend_conflict_elasticity.qmd >}}
-
 - **e = 0.25**: Weak link. Only a quarter of cuts translate to savings.
 - **e = 0.5**: Moderate. Conservative guess.
 - **e = 1.0**: Full match. The baseline assumption.
