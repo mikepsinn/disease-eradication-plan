@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 105,100 | **Images:** 645 | **Est. Pages:** ~743
+**Files:** 44 | **Words:** 105,484 | **Images:** 645 | **Est. Pages:** ~744
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -986,7 +986,7 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 3,480 words | 387 lines | 15 images | ~21p
+**Stats:** 3,864 words | 403 lines | 15 images | ~23p
 
     ![Earth is exactly 47 years behind Moronia. Like following someone off a cliff, but slower.](/assets/images/moronia/moronia-section-the-discovery-and-why-i-regret-making-it-bw-academic.jpg)
   - What I Tried to Tell Them
