@@ -1,0 +1,185 @@
+## The Allocation Scandal
+
+The National Institutes of Health has an annual budget of approximately **$47B**. 55 million people die annually. Here is how the NIH allocates that money:
+
+A 2023 JAMA study analyzed $247 billion in NIH spending (2010-2019) and found:
+
+- **84.9% - Basic research** ($209.9B): Mice, molecules, mechanisms - "experimental work...without any particular application in view"
+- **11.8% - Applied research (non-trial)** ($29.3B): Research with practical aims, but not actually testing treatments in humans
+  - **CTSA infrastructure program:** ~$1B/year in buildings, overhead, salaries
+  - **Observational studies:** Watching patients get sicker without testing treatments (All of Us: $2.16B, zero treatments tested)
+  - **Other applied research:** Drug characterization, health services research, epidemiology
+
+- **3.3% - Phased clinical trials** ($8.1B): Actually testing if drugs work in humans (Phases 1-3)
+  - Phase 1: $1.5B (18.5% of clinical trial budget)
+  - Phase 2: $3.5B (43.2%)
+  - Phase 3: $2.6B (32.1%) - **NIH covers only 3.7-4.3% of Phase 3 costs**, then abandons funding
+  - Pragmatic trials (30x cheaper): Severely underfunded despite proven efficiency
+
+**The NIH spends 96.7% of its budget on everything except the highest-value activity: running efficient clinical trials in humans.**
+
+It's like if you spent 97% of your grocery budget on cookbooks and 3% on food, then wondered why you're starving.
+
+This isn't just inefficiency. It's a body count.
+
+## Why This Allocation Exists
+
+This isn't bureaucratic accident. It's lobbied outcome.
+
+Drug companies benefit enormously from NIH funding basic research. Taxpayers absorb the risk; industry patents the successes. But independent pragmatic trials comparing drugs head-to-head? Those threaten blockbuster profits by revealing which treatments actually work best.
+
+PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness. The message was clear: don't fund research that might lower drug prices.
+
+The revolving door reinforces this. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants and consulting fees. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics.
+
+Basic research produces publications. Publications produce tenure. Tenure produces more grants. This self-perpetuating cycle rewards knowledge production over health production.
+
+The 3.3% allocation isn't a mystery. It's a business model.
+
+## The Efficiency Gap: A Tale of Two Trials
+
+The difference between efficient and inefficient trial design isn't theoretical. We have a controlled experiment.
+
+### RECOVER Initiative (NIH Approach)
+
+**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) (source)
+**Timeline:** 4 years and counting
+**Patients enrolled:** ~30,000
+**Trials completed:** Zero
+**Cost per patient:** \$55,500
+
+### RECOVERY Trial (UK Approach)
+
+**Budget:** $20M
+**Timeline:** 6 months
+**Patients enrolled:** 48,000
+**Treatments found:** Multiple, including dexamethasone (saved over 1 million lives)
+**Cost per patient:** $500
+
+The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed). This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of $97/patient.
+
+This proves the problem isn't that curing disease is hard. The NIH funds the wrong things.
+
+## The Death Toll: Opportunity Cost of Misallocation
+
+When you misallocate $40 billion a year into low-efficiency research instead of high-efficiency clinical trials, you aren't just wasting money.
+You are burning lives.
+
+### Cost Per QALY (Quality-Adjusted Life Year)
+
+- **Standard NIH Portfolio:** $50K per QALY @standard-medical-research-roi (generous estimate)
+- **Pragmatic Platform Trials:** $4.00 per QALY
+
+Every $1 spent on efficient pragmatic trials buys **12.5kx more health** than a dollar spent on the current NIH mix.
+The ADAPTABLE trial proved pragmatic trials cost 30x less than traditional RCTs ($14M vs $420M).
+
+### The "Death Equivalent" of Budget Misallocation
+
+**Annual Opportunity Cost:** ~100 million QALYs and ~7 million death-equivalents per year.
+Even in the most conservative scenario, NIH misallocation costs ~10 million QALYs and ~700,000 preventable deaths annually.
+
+You are operating at ~2% of your potential theoretical capacity to save lives.
+
+## The Translation Crisis: Concept Rich, Trial Poor
+
+Here is the "Stock vs Flow" problem in one sentence: **You are not short of hypotheses; you are short of trial slots.**
+
+- **FDA-approved drugs:** >20,000 known safe in humans
+- **Repurposable compounds:** ~4,700-6,800 clinically-tested candidates (including 3,422 marketed drugs) sitting on shelves
+- **Plausible dementia interventions:** Hundreds
+- **Clinical trials available for your grandma in St. Louis:** Zero
+
+We have a massive **stock** of safe molecules that have never been systematically evaluated for new uses.
+But the **flow** of trials is a trickle.
+
+The system produces papers, not cures:
+
+- **Papers published:** 2.5 million annually
+- **New treatments approved:** ~50 annually
+- **Conversion rate from paper to patient:** 0.002%
+
+### Knowledge Production: Saturated. Translation Capacity: Starved.
+
+- **Patients who've participated in trials:** ~5%
+- **Patients willing to participate if invited:** ~50%
+- **Patients actually invited:** ~9-11%
+
+Half of all patients would join a clinical trial if asked.
+Almost nobody asks.
+
+Understanding disease and curing disease are completely different things.
+The NIH chose understanding.
+Patients needed cures.
+
+## The Public Goods vs. Club Goods Scam
+
+The NIH defends its existence by claiming to produce "Public Goods" (open science, data, training).
+It actually spends taxpayers' money to produce "Club Goods" for private industry.
+
+Taxpayers funded research behind 99% of new drugs (356 drugs, 2010-2019).
+Industry patents the winners.
+The public pays again through high drug prices.
+When research leads to a dead end, the public eats the loss.
+
+**Socialized Risk, Privatized Profit.**
+
+The only things the NIH *should* fund are things private companies *cannot* profitably fund:
+
+- **Open pragmatic trial platforms:** 30x cheaper than traditional trials, yet receive minimal NIH funding
+- **Re-purposing generic drugs:** 4,700+ clinically-tested compounds where no patent exists
+- **Comparative effectiveness data:** Head-to-head trials revealing which drugs actually work best
+
+Private companies *cannot* profitably fund these, so they are the **only** thing the NIH should be funding.
+Instead, the NIH explicitly avoids them to "not crowd out industry."
+Translation: We won't run the trials that would lower drug prices or fix problems without a patent attached.
+
+## The Patient Disconnect: Zero Correlation with Health Outcomes
+
+Here's the most damning statistic of all:
+
+**Correlation between NIH funding priorities and actual disease burden: 0.07**
+
+That's essentially random. You'd get better allocation by throwing darts at a list of diseases.
+
+### What patients want
+
+- Treatments that work
+- Access to experimental therapies
+- Trials they can actually join
+- Cures for their specific disease
+
+#### What NIH funds
+
+- Understanding molecular mechanisms
+- Publishing papers in prestigious journals
+- Building research empires
+- Protecting institutional overhead
+
+The system optimizes for everything except patient outcomes.
+Because patients don't control the money.
+Committees do.
+
+## The Track Record
+
+Since 1970, the NIH has spent over **$1.1 trillion** (inflation-adjusted).
+
+Number of diseases eradicated: **Zero**.
+
+This isn't because eradicating disease is impossible:
+
+- The WHO eradicated smallpox for \$300 million
+- Jonas Salk developed the polio vaccine in a university lab
+- Veterinarians have eradicated multiple animal diseases while the NIH was forming subcommittees
+
+The problem isn't capability. It's allocation.
+
+## What Would Actually Work
+
+The UK RECOVERY trial proved the alternative. It cost $500 instead of $41K. It took 100 days instead of years. It saved over 1 million lives.
+
+What it requires:
+
+1. **Pay for results:** Treatment = payment, no treatment = no payment
+2. **Published everything:** Including failures (especially failures)
+3. **Eliminated gatekeepers:** Let patients vote with participation
+4. **Automated administration:** Smart contracts > committees

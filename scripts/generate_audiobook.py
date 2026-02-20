@@ -3,9 +3,14 @@
 """
 Audiobook Generator
 
-Generates an audiobook from all chapters in _quarto-manual.yml using Gemini TTS.
-Extracts prose content from QMD files, converts to speech, and outputs individual
-chapter audio files plus a combined full audiobook.
+Generates an audiobook from all chapters in _quarto-manual-paperback.yml using Gemini TTS.
+
+Preferred pipeline (two-step):
+    1. python scripts/generate_audiobook_text.py   # QMD -> programmatic cleanup -> LLM polish -> audiobook/text/
+    2. python scripts/generate_audiobook.py         # audiobook/text/ -> TTS -> audiobook/chapters/
+
+If pre-generated text files exist in audiobook/text/, they are used automatically.
+Otherwise falls back to raw QMD extraction (no variable resolution, no number conversion).
 
 Usage:
     python scripts/generate_audiobook.py                    # Generate full audiobook
@@ -34,9 +39,10 @@ from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
 
 # Configuration
 PROJECT_ROOT = Path(__file__).parent.parent
-QUARTO_BOOK_YML = PROJECT_ROOT / "_quarto-manual.yml"
+QUARTO_BOOK_YML = PROJECT_ROOT / "_quarto-manual-paperback.yml"
 OUTPUT_DIR = PROJECT_ROOT / "audiobook"
 CHAPTER_AUDIO_DIR = OUTPUT_DIR / "chapters"
+TEXT_DIR = OUTPUT_DIR / "text"
 
 # Voice for narration (uses library default: Aoede with Cunk-style delivery)
 NARRATOR_VOICE = DEFAULT_VOICE
@@ -61,6 +67,13 @@ def extract_chapters(config: dict) -> list[dict]:
     chapter_index = 0
 
     book = config.get('book', {})
+    # Some configs use index-source to map index.qmd -> actual source file
+    index_source = config.get('dih-render', {}).get('index-source')
+
+    def resolve_path(path: str) -> str:
+        if index_source and path == 'index.qmd':
+            return index_source
+        return path
 
     # Process main chapters
     for item in book.get('chapters', []):
@@ -68,7 +81,7 @@ def extract_chapters(config: dict) -> list[dict]:
             # Simple chapter reference
             chapter_index += 1
             chapters.append({
-                'path': item,
+                'path': resolve_path(item),
                 'title': None,  # Will be extracted from file
                 'part': None,
                 'index': chapter_index
@@ -78,7 +91,7 @@ def extract_chapters(config: dict) -> list[dict]:
                 # Chapter with explicit text/href
                 chapter_index += 1
                 chapters.append({
-                    'path': item['href'],
+                    'path': resolve_path(item['href']),
                     'title': item.get('text'),
                     'part': None,
                     'index': chapter_index
@@ -90,14 +103,14 @@ def extract_chapters(config: dict) -> list[dict]:
                     chapter_index += 1
                     if isinstance(sub_chapter, str):
                         chapters.append({
-                            'path': sub_chapter,
+                            'path': resolve_path(sub_chapter),
                             'title': None,
                             'part': part_name,
                             'index': chapter_index
                         })
                     elif isinstance(sub_chapter, dict) and 'href' in sub_chapter:
                         chapters.append({
-                            'path': sub_chapter['href'],
+                            'path': resolve_path(sub_chapter['href']),
                             'title': sub_chapter.get('text'),
                             'part': part_name,
                             'index': chapter_index
@@ -111,14 +124,14 @@ def extract_chapters(config: dict) -> list[dict]:
                 chapter_index += 1
                 if isinstance(sub_chapter, str):
                     chapters.append({
-                        'path': sub_chapter,
+                        'path': resolve_path(sub_chapter),
                         'title': None,
                         'part': f"Appendix: {part_name}",
                         'index': chapter_index
                     })
                 elif isinstance(sub_chapter, dict) and 'href' in sub_chapter:
                     chapters.append({
-                        'path': sub_chapter['href'],
+                        'path': resolve_path(sub_chapter['href']),
                         'title': sub_chapter.get('text'),
                         'part': f"Appendix: {part_name}",
                         'index': chapter_index
@@ -233,13 +246,34 @@ def extract_prose_from_qmd(file_path: Path) -> str:
     return content
 
 
+def find_text_file(chapter: dict, title: str) -> Path | None:
+    """
+    Look for a pre-generated audiobook text file for this chapter.
+    Returns the path if found, None otherwise.
+    """
+    safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
+    text_file = TEXT_DIR / f"{chapter['index']:03d}-{safe_title}.txt"
+    if text_file.exists():
+        return text_file
+
+    # Fallback: match by chapter index prefix in case title changed
+    for f in TEXT_DIR.glob(f"{chapter['index']:03d}-*.txt"):
+        if not f.name.endswith('.resolved.txt'):
+            return f
+
+    return None
+
+
 def generate_chapter_audio(
     chapter: dict,
     voice: str = NARRATOR_VOICE,
-    force: bool = False
+    force: bool = False,
 ) -> Path | None:
     """
     Generate audio for a single chapter.
+
+    Prefers pre-generated text from audiobook/text/ (created by generate_audiobook_text.py).
+    Falls back to raw QMD extraction if no text file exists.
 
     Args:
         chapter: Chapter dict with path, title, part, index
@@ -268,32 +302,36 @@ def generate_chapter_audio(
         print(f"  [SKIP] Already exists: {output_path.name}")
         return output_path
 
-    # Extract prose content
-    prose = extract_prose_from_qmd(qmd_path)
+    # Try pre-generated text file first
+    text_file = find_text_file(chapter, title)
 
-    if not prose or len(prose) < 50:
-        print(f"  [SKIP] Insufficient content in {qmd_path.name}")
-        return None
+    if text_file:
+        print(f"  Using pre-generated text: {text_file.name}")
+        full_text = text_file.read_text(encoding='utf-8')
+        source = "text"
+    else:
+        print(f"  No text file found, falling back to raw QMD")
+        prose = extract_prose_from_qmd(qmd_path)
+        if not prose or len(prose) < 50:
+            print(f"  [SKIP] Insufficient content in {qmd_path.name}")
+            return None
+        part_intro = f"Part: {chapter['part']}. " if chapter['part'] else ""
+        intro = f"Chapter {chapter['index']}. {title}. {part_intro}"
+        full_text = intro + "\n\n" + prose
+        source = "raw"
 
-    # Add chapter intro for TTS
-    part_intro = f"Part: {chapter['part']}. " if chapter['part'] else ""
-    intro = f"Chapter {chapter['index']}. {title}. {part_intro}"
-    full_text = intro + "\n\n" + prose
-
-    # Limit text length for API (Gemini has limits)
+    # Limit text length for API (Gemini TTS has limits)
     # ~30,000 chars is safe for most TTS APIs
     if len(full_text) > 30000:
         print(f"  [WARN] Chapter too long ({len(full_text)} chars), truncating...")
         full_text = full_text[:30000] + "... Content truncated for audio generation."
 
-    print(f"  Generating audio for: {title}")
-    print(f"    Content length: {len(prose):,} chars")
+    print(f"  Generating audio for: {title} (source: {source})")
+    print(f"    Content length: {len(full_text):,} chars")
 
     try:
-        # Ensure output directory exists
         CHAPTER_AUDIO_DIR.mkdir(parents=True, exist_ok=True)
 
-        # Generate speech (uses library defaults for Cunk-style delivery)
         audio_path = generate_speech(
             text=full_text,
             output_path=output_path,
