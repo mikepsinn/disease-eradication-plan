@@ -128,7 +128,7 @@ metadata:
   category: "Non-fiction, Public Policy, Health Economics, Peace Studies"
   keywords: "war-on-disease, 1-percent-treaty, medical-research, public-health, peace-dividend, decentralized-trials, dfda, dih, victory-bonds, health-economics, cost-benefit-analysis, clinical-trials, drug-development, regulatory-reform, military-spending, peace-economics, decentralized-governance, wishocracy, blockchain-governance, impact-investing"
   version: "1.0.0"
-  edition: "First Edition (Print)"
+  edition: "First Edition"
   copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
   license: "CC BY-NC 4.0"
@@ -142,7 +142,7 @@ metadata:
   format: "Book"
   type: "Non-fiction"
   genre: "Public Policy, Health Economics, Peace Studies"
-  medium: "Print"
+  medium: "Print, Digital"
   author-website: "https://mikesinn.com"
   coi-statement: "The author declares no competing interests, beyond a preference for being alive and for arithmetic, which may bias conclusions toward 'fewer people should die' and 'money should be spent on things that work.'"
   data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
@@ -161,6 +161,21 @@ metadata:
   csl: nature-annotated.csl
 
 format:
+  epub:
+    # EPUB/Kindle format - same trimmed chapter list as paperback
+    filters:
+      - scripts/filters/epub-transforms.lua
+    output-file: "How-to-End-War-and-Disease.epub"
+    epub-cover-image: assets/cover/book-cover-3.jpg
+    html-math-method:
+      method: webtex
+      url: "https://latex.codecogs.com/svg.latex?"
+    css: epub-math.css
+    toc: false
+    epub-chapter-level: 2
+    echo: false
+    number-sections: false
+    keep-ipynb: false
   docx:
     output-file: "How-to-End-War-and-Disease-Paperback.docx"
     author:

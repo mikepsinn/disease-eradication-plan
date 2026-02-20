@@ -303,7 +303,7 @@ jobs:
 
 
   build-dfda-impact:
-    name: "Build Decentralized FDA Impact Analysis: How to Prevent "
+    name: "Build Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -371,7 +371,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build Decentralized FDA Impact Analysis: How to Prevent "
+      - name: "Render Build Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent"
         run: python scripts/render-quarto.py dfda-impact
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -412,7 +412,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build Decentralized FDA Impact Analysis: How to Prevent  to Netlify (immediate)"
+      - name: "Deploy Build Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent to Netlify (immediate)"
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -433,7 +433,7 @@ jobs:
 
 
 
-      - name: "Upload Build Decentralized FDA Impact Analysis: How to Prevent  PDF to Zenodo (draft)"
+      - name: "Upload Build Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
@@ -442,7 +442,7 @@ jobs:
 
 
   build-dfda-spec:
-    name: "Build The Decentralized FDA Protocol: Two-Stage Validati"
+    name: "Build The Continuous Evidence Generation Protocol: Two-Stage Va"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -510,7 +510,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The Decentralized FDA Protocol: Two-Stage Validati"
+      - name: "Render Build The Continuous Evidence Generation Protocol: Two-Stage Va"
         run: python scripts/render-quarto.py dfda-spec
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -551,7 +551,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Deploy Build The Decentralized FDA Protocol: Two-Stage Validati to Netlify (immediate)"
+      - name: "Deploy Build The Continuous Evidence Generation Protocol: Two-Stage Va to Netlify (immediate)"
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: nwtgck/actions-netlify@v3.0
         with:
@@ -572,7 +572,7 @@ jobs:
 
 
 
-      - name: "Upload Build The Decentralized FDA Protocol: Two-Stage Validati PDF to Zenodo (draft)"
+      - name: "Upload Build The Continuous Evidence Generation Protocol: Two-Stage Va PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
