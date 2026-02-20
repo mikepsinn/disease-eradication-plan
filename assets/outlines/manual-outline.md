@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 105,066 | **Images:** 629 | **Est. Pages:** ~735
+**Files:** 44 | **Words:** 96,576 | **Images:** 608 | **Est. Pages:** ~690
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 3,929 words | 479 lines | 14 images | ~23p
+**Stats:** 3,922 words | 479 lines | 14 images | ~23p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Part Where I Discover Paper Makes You Do Things
@@ -68,7 +68,7 @@
 #### knowledge/problem.qmd
 **Title:** Problem Overview
 **Description:** Humanity's spectacular failure at prioritizing not dying
-**Stats:** 1,286 words | 131 lines | 9 images | ~10p
+**Stats:** 1,280 words | 131 lines | 9 images | ~10p
 
   - The Daily Body Count
     ![Every day, 50 times as many people die from being old and sick as died on 9/11. You started two wars over 9/11. For aging, you bought face cream and called it a day.](/assets/images/problem/problem-section-daily-numbers-bw-academic.jpg)
@@ -92,7 +92,7 @@
 #### knowledge/problem/cost-of-war.qmd
 **Title:** The Cost of War
 **Description:** Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
-**Stats:** 3,481 words | 459 lines | 14 images | ~21p
+**Stats:** 2,683 words | 330 lines | 12 images | ~17p
 
   - The Itemized Receipt for Armageddon
     - The Shopping List (2024 Global Data)
@@ -100,18 +100,9 @@
     - The Equation of Immediate Destruction
       - Current Annual Calculation
   - Military Hardware: The World's Worst Investment
-    - OFFERING MEMORANDUM
-      - RETURNS
-      - COSTS
-    ![Buying a missile is cheap. Storing a missile costs more. Guarding the missile costs even more. Disposing of the missile you never used costs most. It's like buying a pet that eats money and might kill everyone.](/assets/images/cost-of-war/cost-of-war-section-costs-bw-academic.jpg)
-      - DEPRECIATION
-    ![Your fighter jet physically lasts 40 years. It becomes obsolete in 15. So you throw away a working jet to buy a newer working jet. The old jet is sad but understands.](/assets/images/cost-of-war/cost-of-war-section-depreciation-bw-academic.jpg)
-      - RISK FACTORS
     ![You buy weapons because they have weapons. They buy weapons because you have weapons. Everyone has weapons. Nobody is safer. You're very good at circles.](/assets/images/cost-of-war/cost-of-war-section-risk-factors-bw-academic.jpg)
     - The Dead Capital Problem
     ![Normal investment: money becomes factories, factories make products, products make money. Military investment: money becomes bombs, bombs make rubble, rubble makes nothing. You prefer the second one.](/assets/images/cost-of-war/cost-of-war-section-the-dead-capital-problem-bw-academic.jpg)
-      - Outcome A (Unused)
-      - Outcome B (Used)
     ![A tractor builds value forever. A tank destroys value once. You bought more tanks.](/assets/images/cost-of-war/cost-of-war-section-economic-vs-military-capital-flow-bw-academic.jpg)
     - The Price of a Ghost: Valuing Human Life
     ![The Transportation Department says your life is worth $13.6 million. The EPA says $9.6 million. They can't agree on the price of you. But they can agree to spend it on missiles.](/assets/images/cost-of-war/cost-of-war-section-the-price-of-a-ghost-valuing-human-life-bw-academic.jpg)
@@ -133,8 +124,6 @@
       - Veteran Healthcare Cost Projections
       - Refugee Support: The Mathematics of Displacement
     ![108.4 million refugees. $1,384 per person to house them. Total cost: less than three weeks of global military spending. You chose the missiles.](/assets/images/cost-of-war/cost-of-war-section-refugee-support-the-mathematics-of-displacement-bw-academic.jpg)
-        - Annual Refugee Support Cost
-        - Lost Economic Productivity
     - Environmental Degradation: Poisoning the Planet Costs Money Too
       - Environmental Cost Calculation Matrix
     - The Existential Overdraft: The AI Arms Race
@@ -144,10 +133,8 @@
       - Direct Costs Summary
       - Indirect Costs Summary
       - Ultimate Total
-      - Per Capita Mathematics: What War Costs You
     ![War costs you $113,551 in your lifetime. That's a car, or college, or a down payment on a house. You got none of those things. You got bombs in countries you can't pronounce.](/assets/images/cost-of-war/cost-of-war-section-lifetime-cost-vs-personal-assets-bw-academic.jpg)
-    - Statistical Perspectives: Putting Numbers in Context
-    - The Grotesque Mathematics of Misallocation
+    - For Context
     ![Each missile costs the same as 50 teachers' salaries. You have many missiles. You have large classrooms.](/assets/images/cost-of-war/cost-of-war-section-the-grotesque-mathematics-of-misallocation-bw-academic.jpg)
     - Hidden Costs of War
     ![War destroys the hospital. Then there's no hospital to treat the war wounds. Then people die of preventable diseases. Then the economy collapses. Then you have another war. It's very efficient.](/assets/images/cost-of-war/cost-of-war-section-hidden-costs-of-war-bw-academic.jpg)
@@ -155,7 +142,7 @@
 #### knowledge/problem/cost-of-disease.qmd
 **Title:** The Cost of Disease
 **Description:** The annual bill for our collective decision to let our bodies fall apart. Spoiler alert, it's more than all the money on Earth.
-**Stats:** 1,810 words | 203 lines | 7 images | ~11p
+**Stats:** 1,654 words | 186 lines | 7 images | ~10p
 
   - The Daily Body Count
   - The Financial Cost
@@ -178,7 +165,7 @@
 #### knowledge/problem/nih-fails-2-institute-health.qmd
 **Title:** NIH Fails to Institute Health
 **Description:** The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficient pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
-**Stats:** 2,034 words | 281 lines | 15 images | ~16p
+**Stats:** 1,627 words | 231 lines | 14 images | ~14p
 
   - The Allocation Scandal
     ![The NIH spends 85 percent on research and 3 percent on humans. Apparently mice are more important.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
@@ -198,7 +185,6 @@
     ![Imagine a massive lake of possible cures connected to the ocean by a drinking straw. You built the straw that way on purpose.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-translation-crisis-concept-rich-trial-poor-bw-academic.jpg)
     - Knowledge Production: Saturated. Translation Capacity: Starved.
     ![The funnel has 500,000 safe molecules at the top and 50 approved drugs at the bottom. This is technically a funnel. Also technically a tragedy.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-translation-funnel-bw-academic.jpg)
-      - What we don't have: Cures.
   - The Public Goods vs. Club Goods Scam
     ![You pay for the research. They take the profits. It's socialism for corporations, capitalism for you. You invented that.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
   - The Patient Disconnect: Zero Correlation with Health Outcomes
@@ -210,8 +196,6 @@
     ![WHO spent 300 million and eradicated smallpox. NIH spent 1.1 trillion and eradicated zero diseases. At least they published many papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-track-record-bw-academic.jpg)
   - What Would Actually Work
     ![One trial costs 50,000 per patient and takes forever. The other costs 100 and finishes quickly. You picked the expensive one.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-what-would-actually-work-bw-academic.jpg)
-  - The Bottom Line
-    ![The NIH: where massive inputs meet bureaucratic outputs and diseases never leave.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-bottom-line-bw-academic.jpg)
 
 #### knowledge/problem/untapped-therapeutic-frontier.qmd
 **Title:** The Untapped Therapeutic Frontier
@@ -251,19 +235,13 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34x more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 4,524 words | 512 lines | 26 images | ~31p
+**Stats:** 2,728 words | 346 lines | 22 images | ~22p
 
   - A Note on Blame
-  - Confidence Levels: What We Know vs. What We Model
-    ![Bottom tier: facts you can't argue with. Middle tier: facts you can sort of argue with. Top tier: educated guesses. This book uses all three because reality is complicated.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-confidence-levels-what-we-know-vs-what-we-model-bw-academic.jpg)
   - The 44.1x (95% CI: 39.4x-89.1x) Inefficiency Tax
     - The 8.2 years (95% CI: 4.85 years-11.5 years) Efficacy Lag
   - What the 1962 Efficacy Requirements Changed
     ![Average Life Expectancy Over Time](../../assets/images/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
-  - Detailed Historical Analysis
-    ![Medicine before 1962: pretty good, one horrible mistake. Medicine after 1962: very safe, very slow, millions die waiting. You traded one type of death for another.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-detailed-historical-analysis-bw-academic.jpg)
-    - The 1962 Policy Break: Measured Impact
-  - Detailed Cost Analysis
     - The Modern Consequences
     ![Scientists discover cure. 17 years pass. Patients die. Drug finally available. This is called 'safety.'](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-modern-consequences-bw-academic.jpg)
       - High Costs Kill Innovation, Reward Monopoly
@@ -271,9 +249,7 @@
     - Off-Patent Drugs and Rare Diseases: Mathematically Doomed
     ![Rare disease patients need cheap old drugs. Development costs 2 billion dollars. Math says they should die. Math wins.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-off-patent-drugs-and-rare-bw-academic.jpg)
   - The Actual Death Toll of "Drug Lag"
-    - The Global Body Count
     ![416 million people died waiting for permission to try medicine. That's more than every war ever fought, combined. We invented a way to kill more people than war, and we call it safety.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-global-body-count-bw-academic.jpg)
-    - The Morbidity Burden (DALYs)
     ![(no alt text)](../../assets/images/non-existent-times.png)
     ![In 1962, Americans and Swiss people died at the same age. Then America made medicine safer. Now Americans die younger. This is what winning looks like.](../../assets/images/us-swiss-life-expectancy-5.png)
     ![The more drugs America blocked, the earlier Americans died. It's like correlation, but stupider.](../../assets/images/us-swiss-life-expectancy-drug-approvals.png)
@@ -288,7 +264,6 @@
     ![Regulators who approve drugs that hurt people get fired. Regulators who delay drugs that could save people get promoted. You built a machine that runs on cowardice.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-bureaucrats-are-rewarded-for-letting-you-die-bw-academic.jpg)
   - Clinical Trial Theater: Excluding 86.1% of Reality Makes Drugs More Dangerous
     ![They test drugs on healthy people, then give them to sick people. It's like testing a ladder on Olympic gymnasts, then selling it to your grandmother.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-clinical-trial-theater-excluding-86-1-of-reality-makes-drugs-bw-academic.jpg)
-    - Why This Makes Drugs More Dangerous
     ![Clinical trials use healthy 25-year-olds with no other conditions. Then you give the drug to 80-year-olds taking twelve other medications. What could go wrong, you asked. Everything, it turns out.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-this-makes-drugs-more-dangerous-bw-academic.jpg)
     - No Long-Term Outcome Data
     ![They test drugs for two years, then you take them for forty years. It's like test-driving a car to the end of the driveway, then driving it to the moon.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-no-long-term-outcome-data-bw-academic.jpg)
@@ -300,14 +275,9 @@
     ![Japan approves experimental drugs fast. Europe approves them medium fast. America approves them after you die. Different cultures, different priorities.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-countries-that-don-t-have-our-safety-bw-academic.jpg)
   - The COVID Test Fiasco
     ![While COVID spread, America banned COVID tests. Not because the tests didn't work. Because they weren't American enough. Patriotism killed thousands. Nobody got a medal.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-covid-test-fiasco-bw-academic.jpg)
-  - Small Trials Are Dangerous!
+  - Small Trials Are Dangerous
     ![Before 1962, they tested drugs on everyone who took them. After 1962, they tested drugs on 2,000 people, then gave them to 2 billion. They called this improvement.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-small-trials-are-dangerous-bw-academic.jpg)
-    - Why Small Trials Miss Safety Signals
-    ![Phase III trials are quiet libraries. Real life is a tornado in a fireworks factory. You're using library data to predict tornados.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-small-trials-miss-safety-signals-bw-academic.jpg)
-    - The Adverse Event Reporting Failure
     ![Doctors report 10% of drug side effects. The other 90% just happen to people who assume that's what dying feels like.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
-    - What Real-World Evidence Would Catch
-    ![Old way: test 2,000 people for 2 years, miss everything. New way: monitor 2 billion people forever, catch everything. You're still using the old way.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-what-real-world-evidence-would-catch-bw-academic.jpg)
   - The Bottom Line
     ![It takes 8.2 years to prove a drug works. During those 8.2 years, 3,000 people die for every one person the delay might save. You're very bad at math.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bottom-line-bw-academic.jpg)
   - Technical Analysis
@@ -315,7 +285,7 @@
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
 **Description:** Why democracy mathematically serves money over voters, and how to exploit that bug
-**Stats:** 2,832 words | 409 lines | 21 images | ~22p
+**Stats:** 2,754 words | 390 lines | 20 images | ~21p
 
   - Democracy
     ![The government has three branches. Two-thirds of voters can't name them. These same voters choose who runs the branches. It's like a pilot test where nobody knows what a plane is.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-democracy-bw-academic.jpg)
@@ -335,9 +305,8 @@
   - Why Politicians Don't Care About You (With Math!)
     ![Your vote: one. Corporate campaign funding: billions of dollars. Corporate media coverage: all of it. You have a voice. They have a megaphone factory.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-why-politicians-don-t-care-about-you-with-math-bw-academic.jpg)
   - The Iron Law of Oligarchy
-    ![Step one: organization needs leaders. Step two: leaders gain power. Step three: power concentrates. Step four: oligarchy. Democracy is just oligarchy with more steps.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-iron-law-of-oligarchy-bw-academic.jpg)
   - Your Congressman: A Prostitute with a Pension
-  - Congressional Committees: Available for Purchase
+  - Congressional Committees: The Menu
   - The 4-Year Attention Span: Democracy Has ADHD
     ![Politicians promise things, bureaucracy stalls, election happens, new politicians promise things. It's a loop. The loop doesn't fix anything but it does repeat reliably.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-4-year-attention-span-democracy-has-adhd-bw-academic.jpg)
   - Why No One Can Fix This
@@ -365,13 +334,12 @@
 #### knowledge/economics/central-banks.qmd
 **Title:** How Central Banks Fund Your Death
 **Description:** The War Machine's ATM: How every fiat currency in history has been devalued to fund unpopular wars, and how to bypass the system.
-**Stats:** 2,954 words | 512 lines | 22 images | ~23p
+**Stats:** 2,776 words | 472 lines | 22 images | ~22p
 
   - The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
-    - Ancient Rome (3rd Century)
-      - Revolutionary France (1790s)
+    - Revolutionary France (1790s)
     ![France fights war, runs out of money, prints money, money becomes worthless. It's like a tutorial level for economic collapse.](/assets/images/central-banks/central-banks-section-revolutionary-france-1790s-bw-academic.jpg)
-      - Weimar Germany (1920s)
+    - Weimar Germany (1920s)
       - United States (1917-present)
     ![Create Federal Reserve in 1913. Federal Reserve prints money for wars. Dollar loses value. Fight more wars. Print more money. The circle continues until someone notices.](/assets/images/central-banks/central-banks-section-united-states-1917-present-bw-academic.jpg)
   - 1972: When Nixon Weaponized Money Against You
@@ -414,7 +382,6 @@
       - What Actually Grew
     - Why Money Printing Matters: Resources Follow the Printer
     ![When you spend money on weapons, the smart people go work on weapons. Then you wonder why nobody's curing your diseases. You built a waterslide into a shark tank and asked where all the swimmers went.](/assets/images/central-banks/central-banks-section-why-money-printing-matters-resources-follow-the-printer-bw-academic.jpg)
-      - The Brain Drain Math
     ![MIT graduate with student debt: cure cancer for $60,000 or design missiles for $150,000. You made saving lives the financially irresponsible choice. Like pricing vegetables at $100 and candy at $1, then wondering why everyone's diabetic.](/assets/images/central-banks/central-banks-section-the-brain-drain-math-bw-academic.jpg)
   - The 1% Treaty: Redirecting the Death Printer to Life
     - The Current Money Flow
@@ -440,7 +407,7 @@
 #### knowledge/problem/genetic-slavery.qmd
 **Title:** Genetic Slavery
 **Description:** An exploration of how our genes use pain and pleasure to enslave us, forcing actions inconsistent with our rational ethics.
-**Stats:** 2,370 words | 268 lines | 13 images | ~16p
+**Stats:** 2,114 words | 241 lines | 12 images | ~14p
 
   - The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)
     ![Your brain was designed for running from lions. Now it runs from emails. The hardware hasn't caught up.](/assets/images/genetic-slavery/genetic-slavery-section-the-selfish-gene-made-you-illogical-it-was-a-good-idea-at-the-time-bw-academic.jpg)
@@ -459,9 +426,6 @@
       - Problems you solved
     ![You conquered nature. Then you built bombs that could end nature. You're very good at solving problems by creating worse problems.](/assets/images/genetic-slavery/genetic-slavery-section-problems-you-solved-bw-academic.jpg)
   - Part 3: Why You Can't Just "Be Better"
-    - Your Brain is Not Your Friend
-    ![Rational brain says save money. Lizard brain says buy the shiny thing. Lizard brain wins every time.](/assets/images/genetic-slavery/genetic-slavery-section-the-impulse-override-loop-bw-academic.jpg)
-    - The Pentagon's Lizard Brain
     ![Lizard brain: spend trillions on bombs for scary foreigners. Rational brain: spend millions on medicine for diseases killing millions. You listen to the lizard.](/assets/images/genetic-slavery/genetic-slavery-section-the-pentagon-s-lizard-brain-bw-academic.jpg)
   - Part 4: The Prison We Built Ourselves
     - You Vote for Monkeys in Human-Skin Suits
@@ -505,15 +469,13 @@
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
 **Description:** How to Redirect $27.2B from War to Medicine - The complete guide to a 1% treaty, the binding global accord that redirects $27.2B annually from military spending to curing disease while maintaining global security.
-**Stats:** 3,768 words | 444 lines | 22 images | ~26p
+**Stats:** 3,438 words | 409 lines | 21 images | ~24p
 
   - The Math
     ![If you take one penny from every dollar spent on bombs and use it for medicine instead, you get 27 billion pennies. Math is wonderful.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-math-bw-academic.jpg)
     - How It Works
     ![Money goes from the war budget through several boxes with important-sounding names until it reaches someone in a lab coat. Democracy in action.](/assets/images/1-percent-treaty/1-percent-treaty-section-how-it-works-bw-academic.jpg)
-  - This Isn't a Trade-Off.
-    - You Get Two Good Things By Removing One Stupid Thing
-      - Good Thing #1: You Become Safer
+  - This Isn't a Trade-Off
     ![Fewer bombs means fewer bomb-related deaths and more money for keeping people alive. Economists needed a special term for this obvious idea.](/assets/images/1-percent-treaty/1-percent-treaty-section-good-thing-1-you-become-safer-bw-academic.jpg)
     - The Dead Capital Problem (Or: Why Bombs Are the Worst Investment Since Tulips)
     ![Money you spend on food keeps working. Money you spend on missiles sits in a hole waiting to vaporize someone. One of these is considered a smart investment.](/assets/images/1-percent-treaty/1-percent-treaty-the-dead-capital-problem-or-why-bombs-are-the-worst-investment-since-tulips-bw-academic.jpg)
@@ -523,7 +485,6 @@
   - The Reallocation: How to Redirect $27.2B a Year (Legally)
     ![Humanity spends 2.72 trillion dollars on weapons. We're asking for 1 percent of that. The weapons will barely notice it's gone.](/assets/images/1-percent-treaty/1-percent-treaty-the-reallocation-how-to-redirect-annual-funding-a-year-legally-bw-academic.jpg)
   - The Beautiful Mathematics of Mutual Stupidity Reduction
-    - The Proof That Even Generals Can Follow
     ![Before: everyone can destroy everyone. After: everyone can still destroy everyone, but with 1 percent less enthusiasm.](/assets/images/1-percent-treaty/1-percent-treaty-section-relative-power-balance-bw-academic.jpg)
   - The Blueprint for a Saner World
     - A 1% Treaty: Technical Specifications for Global Survival
@@ -558,8 +519,6 @@
     ![Scientists cure a disease. People like it. More money flows to science. More diseases get cured. The circle continues until someone remembers they like tanks.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-ratchet-effect-how-to-boil-a-frog-the-frog-is-the-war-machine-bw-academic.jpg)
     - The Economic Gold Rush
     ![Smart people stop building better ways to kill humans and start building better ways to keep humans alive. Revolutionary concept.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-economic-gold-rush-bw-academic.jpg)
-    - The Vision
-    ![Cure disease, get applause, get money, cure more disease. It's like the defense industry loop, but backwards and helpful.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-vision-bw-academic.jpg)
   - Objections
   - Avoiding Treaty Pitfalls
     - Reservation Games
@@ -574,14 +533,12 @@
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** A thin coordination protocol that makes doing the highest-ROI thing toward disease eradication the selfish choice for every actor.
-**Stats:** 3,595 words | 404 lines | 15 images | ~22p
+**Stats:** 3,306 words | 372 lines | 15 images | ~21p
 
-    - Why Current Systems Fail
   - The Health-Industrial Complex: Coordinating Your War on Disease
     - The Olsonian Problem
     ![Why your species is so good at making weapons and so bad at curing diseases. The weapons people are organized, the disease people are scattered.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
     - SHAEF for Your War on Disease
-    - Why This Framing Matters
     ![Medical researchers currently work in separate rooms and don't talk to each other. This is a picture of them in the same room, talking.](/assets/images/dih/dih-section-why-this-framing-matters-bw-academic.jpg)
   - Your DIH: The ROI Maximization Protocol
     ![Everyone involved in medicine pointing in the same direction instead of wandering around like confused sheep.](/assets/images/dih/dih-section-dih-the-roi-maximization-protocol-bw-academic.jpg)
@@ -772,7 +729,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** VICTORY Incentive Alignment Bonds
 **Description:** How to legally bribe politicians into saving lives, and how investors profit from it
-**Stats:** 5,682 words | 659 lines | 39 images | ~42p
+**Stats:** 5,413 words | 626 lines | 39 images | ~41p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -877,7 +834,7 @@
 #### knowledge/proof.qmd
 **Title:** The Proof: Overview
 **Description:** This Already Works - Pragmatic trials prove 44.1x (95% CI: 39.4x-89.1x) efficiency. History proves every component. Switzerland, war bonds, landmines, the 3.5% rule, and Wall Street's craziest bets all prove humans can accidentally do smart things when properly motivated.
-**Stats:** 3,162 words | 306 lines | 21 images | ~23p
+**Stats:** 3,091 words | 306 lines | 21 images | ~23p
 
   - Pragmatic Trials: 44.1x (95% CI: 39.4x-89.1x) More Efficient {#pragmatic-trials}
     ![The British figured out how to test drugs for $929 per patient. Americans spend $41,000. Both countries speak English, so language barrier isn't the issue.](/assets/images/proof/proof-section-pragmatic-trials-44-1x-95-ci-39-4x-89-1x-more-efficient-bw-academic.jpg)
@@ -921,14 +878,13 @@
     ![Past financial disasters: no safeguards, pure chaos, everyone loses. This plan: many safeguards, organized chaos, probably fine. Progress is incremental.](/assets/images/historical-precedents/historical-precedents-section-on-when-smart-people-lost-all-their-money-the-cautionary-tales-bw-academic.jpg)
   - The Ultimate Failsafe: The Worst-Case Scenario is Still a Win {#failsafe}
     ![Worst case: we reduce global weaponry slightly and waste some money on science. Current case: mountains of bombs and no cancer cure. Hard choice.](/assets/images/historical-precedents/historical-precedents-section-4-the-ultimate-failsafe-the-worst-case-scenario-is-still-a-win-bw-academic.jpg)
-    - Why?
     ![If this fails, we have fewer bombs. If it succeeds, we cure death. These are not symmetrical risks, but we treat them like they are.](/assets/images/historical-precedents/historical-precedents-section-why-bw-academic.jpg)
   - How a dFDA Would Compare to History's Best Health Interventions {#dfda-comparison}
 
 #### knowledge/proof/body-as-repairable-machine.qmd
 **Title:** You Are a Meat Robot
 **Description:** Aging, disease, and death are engineering problems with engineering solutions
-**Stats:** 1,697 words | 202 lines | 13 images | ~13p
+**Stats:** 1,601 words | 202 lines | 13 images | ~13p
 
   - Death is a Technical Problem
     ![Your body fixes itself constantly. When the damage happens faster than the fixes, you call it aging. When it stops happening at all, you call it dying.](/assets/images/body-as-repairable-machine/body-as-repairable-machine-section-death-is-a-technical-problem-bw-academic.jpg)
@@ -975,7 +931,7 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** How a civilization murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 3,864 words | 403 lines | 15 images | ~23p
+**Stats:** 3,535 words | 371 lines | 15 images | ~22p
 
     ![Earth is exactly 47 years behind Moronia. Like following someone off a cliff, but slower.](/assets/images/moronia/moronia-section-the-discovery-and-why-i-regret-making-it-bw-academic.jpg)
   - What I Tried to Tell Them
@@ -983,7 +939,6 @@
   - How They Killed Themselves: A Timeline
     - Year Zero: Already Broken (Much Like You)
     ![For every dollar spent curing disease, you spend $40 causing it. You're very efficient at being inefficient.](/assets/images/moronia/moronia-section-year-zero-already-broken-much-like-you-bw-academic.jpg)
-    - Year 1-2: The Cognitive Collapse
     - Year 3: The First Autonomous Criminals
     - Year 4: The Infrastructure Cascade
     - Year 5: The Arms Race
@@ -1019,7 +974,7 @@
 #### knowledge/futures/wishonia.qmd
 **Title:** Wishonia
 **Description:** How My Planet Works and Why You Should Copy Our Homework
-**Stats:** 2,337 words | 311 lines | 17 images | ~18p
+**Stats:** 2,246 words | 286 lines | 16 images | ~17p
 
   - How My Planet Works
     ![Earth: everyone fights over scraps. Wishonia: robot does math, nobody dies. Tough choice.](/assets/images/wishonia/wishonia-section-how-my-planet-works-bw-academic.jpg)
@@ -1046,8 +1001,6 @@
     ![Life when nobody needs anything because everything is free and nobody dies. Your biggest problem is deciding what to do Tuesday.](/assets/images/wishonia/wishonia-section-your-personal-future-bw-academic.jpg)
   - What Fixing Health Fixed
     ![Fix health, accidentally fix six other things. It's called a cascading benefit. Like dominoes, but everyone wins.](/assets/images/wishonia/wishonia-section-systemic-impact-network-bw-academic.jpg)
-  - Reality Check
-    ![Before: car crash kills you. After: car crash is Tuesday. Nanobots fix everything, you complain about the inconvenience.](/assets/images/wishonia/wishonia-section-reality-check-bw-academic.jpg)
   - Message from the Future
     ![Old Earth: make money by killing people. New Earth: make money by not killing people. Radical concept.](/assets/images/wishonia/wishonia-section-message-from-the-future-bw-academic.jpg)
   - What Comes After
@@ -1058,7 +1011,7 @@
 #### knowledge/appendix/faq.qmd
 **Title:** Frequently Asked Objections
 **Description:** For the Reasonably Skeptical
-**Stats:** 3,033 words | 382 lines | 24 images | ~24p
+**Stats:** 2,902 words | 371 lines | 24 images | ~24p
 
     ![Oxford's trial cost 15,000 dollars. FDA trials cost 48 million. Both test if drugs work, but one uses existing hospitals and common sense.](/assets/images/faq/faq-section-trial-efficiency-comparison-bw-academic.jpg)
   - "We Need the Military Budget"
@@ -1158,12 +1111,12 @@
 #### knowledge/strategy/nonprofit-coalition-strategy.qmd
 **Title:** Why Every Nonprofit Should Support a 1% treaty
 **Description:** The strategic case for nonprofit coalition-building around a 1% treaty - escaping zero-sum competition through resource reallocation.
-**Stats:** 2,774 words | 364 lines | 12 images | ~17p
+**Stats:** 2,425 words | 329 lines | 11 images | ~15p
 
   - The Single Highest-ROI Intervention Available
     ![War causes poverty, climate collapse, and disease. Humans look at diagram, nod knowingly, increase war budget.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-war-as-the-upstream-driver-bw-academic.jpg)
     - Why This Applies to YOUR Organization
-    ![Move 1 percent of war money to medicine. Environment improves, poverty drops, clinical trials increase 604 times. One percent. You were that close the whole time.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-why-this-applies-to-your-organization-bw-academic.jpg)
+    ![Move 1 percent of war money to medicine. Environment improves, poverty drops, military-to-clinical-trials spending ratio is 604:1. One percent. You were that close the whole time.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-why-this-applies-to-your-organization-bw-academic.jpg)
   - "But Shouldn't Nonprofits Focus on Their Core Mission?"
     ![Military budget: massive mountain. Charity budget: tiny puddle. Move 1 percent from mountain to puddle. Puddle becomes lake, mountain stays mountain.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-but-shouldn-t-nonprofits-focus-on-their-core-mission-bw-academic.jpg)
   - The Zero-Sum Trap vs. The Positive-Sum Solution
@@ -1181,9 +1134,6 @@
     - Global Stability
     - Nonprofit Impact
     ![1 percent solves health, climate, poverty, and war. You put all your skill points into violence and forgot to check if there were alternatives.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-cross-sector-impact-of-1-shift-bw-academic.jpg)
-  - The Moral Argument Is Simple
-    ![War spending: things explode, people die. Healthcare spending: people live longer, things don't explode. Side by side, in case you forgot which is which.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-the-moral-argument-is-simple-bw-academic.jpg)
-  - Why Nonprofits Must Prioritize a 1% treaty (Short Term)
   - The Ask Is Small, The Upside Is Massive
     ![1 percent of war budget: 27.2 billion. Enough to transform global health. You were sitting on the solution and using it to buy missiles.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-the-ask-is-small-the-upside-is-massive-bw-academic.jpg)
   - On Bribing Nonprofits (Legally)
@@ -1197,7 +1147,7 @@
 #### knowledge/legal/legal-framework.qmd
 **Title:** Legal Architecture
 **Description:** How to Stay Out of Prison While Revolutionizing Global Healthcare
-**Stats:** 2,538 words | 277 lines | 20 images | ~20p
+**Stats:** 1,606 words | 197 lines | 16 images | ~14p
 
   - Entity #1: Your 501(c)(3) Public Charity ("The Brain")
     - What It Does
@@ -1210,18 +1160,13 @@
     ![The Swiss foundation is the soul of the organization. Souls live in Switzerland because Switzerland has excellent tax treaties and doesn't ask uncomfortable questions.](/assets/images/legal-framework/legal-framework-section-entity-4-the-dih-foundation-the-soul-bw-academic.jpg)
     - What It Does
   - Why This Four-Part Structure Works
-    - Legal Specialization
     ![One charity pretending to be four charities so the lawyers have something to do.](/assets/images/legal-framework/legal-framework-section-legal-specialization-bw-academic.jpg)
-    - Firewall Protection
     ![Money walls. Like regular walls, but made of receipts and the tears of accountants.](/assets/images/legal-framework/legal-framework-section-firewall-protection-bw-academic.jpg)
-    - Risk Distribution
     ![How to be technically legal in seventeen countries at once. It's like being technically alive, but with more paperwork.](/assets/images/legal-framework/legal-framework-section-risk-distribution-bw-academic.jpg)
-  - Multi-Jurisdiction Strategy
   - Organizational Structure: The For-Profit Management Company
     ![The people who will buy your democracy. Org chart included for transparency, as if that helps.](/assets/images/legal-framework/legal-framework-section-organizational-structure-the-for-profit-management-company-bw-academic.jpg)
     - The General Staff (G-Staff)
     ![You called your charity staff 'General Staff' like it's an army. To be fair, you're fighting death. Death doesn't have an org chart.](/assets/images/legal-framework/legal-framework-section-the-general-staff-g-staff-bw-academic.jpg)
-  - Nonprofit Foundation Governance
     ![Who watches the watchmen? This chart. The chart watches the watchmen.](/assets/images/legal-framework/legal-framework-section-nonprofit-foundation-governance-bw-academic.jpg)
   - Securities Law
     ![How to take money from rich people legally, then regular people legally, then convert the regular people into rich people. It's called capitalism, apparently.](/assets/images/legal-framework/legal-framework-section-securities-law-bw-academic.jpg)
@@ -1231,21 +1176,9 @@
     ![How a piece of paper becomes law. Takes longer than making a person from scratch.](/assets/images/legal-framework/legal-framework-section-treaty-framework-bw-academic.jpg)
   - Risk Mitigation (When They Come For You)
     - The Legal Attack Vectors
-    - Your Lawyer Budget: $100M
     - The Strategy
     ![Bore the prosecutors to death with paperwork. They can't arrest you if they're asleep.](/assets/images/legal-framework/legal-framework-section-the-strategy-bw-academic.jpg)
-  - Your Escape Routes (If Everything Goes Wrong)
     ![Five backup plans for when they try to stop you from curing disease. You made contingencies for your contingencies. This is called 'paranoia' in individuals and 'strategic planning' in organizations.](/assets/images/legal-framework/legal-framework-section-the-escape-routes-if-everything-goes-wrong-bw-academic.jpg)
-  - Regulatory Reform Agenda
-    - What You Tell HHS to Do
-    ![Government pays prize money for curing disease. Winners give cure away for free. Capitalism somehow survives the shock.](/assets/images/legal-framework/legal-framework-section-hhs-policy-recommendations-bw-academic.jpg)
-    - Your Five Policy Objectives
-    ![Five things coming together to let sick people try medicine. Currently takes more planning than the moon landing.](/assets/images/legal-framework/legal-framework-section-key-policy-objectives-bw-academic.jpg)
-    - What This Gets You
-    ![Big numbers that mean fewer dead people and more alive people, faster. Revolutionary concept.](/assets/images/legal-framework/legal-framework-section-projected-impact-bw-academic.jpg)
-    - Regulations You Need to Fix
-    ![Forms you need to fill out to save lives. Now with fewer forms. Still too many forms.](/assets/images/legal-framework/legal-framework-section-high-priority-streamlining-targets-bw-academic.jpg)
-    - Exemptions for Certified Platforms
     ![Before: jumping through seventeen hoops. After: jumping through three hoops. Progress is relative.](/assets/images/legal-framework/legal-framework-section-revolutionary-exemptions-for-certified-platforms-bw-academic.jpg)
 
 #### knowledge/legal/election-law.qmd
@@ -1409,7 +1342,7 @@
 #### knowledge/strategy/global-referendum.qmd
 **Title:** Global Referendum Strategy
 **Description:** Comprehensive strategy for implementing a secure, globally verifiable referendum to demonstrate public support for a 1% treaty, including implementation, verification, and viral marketing approaches.
-**Stats:** 1,723 words | 211 lines | 11 images | ~12p
+**Stats:** 1,329 words | 173 lines | 10 images | ~10p
 
   - On What You're Actually Trying to Do (The Boring But Necessary Part)
     - The Goal
@@ -1421,22 +1354,13 @@
   - Growth Strategy
   - Integrity (Proving You Didn't Cheat)
   - Implementation Roadmap
-    - Phase 1: Foundation (Months 1-2)
     ![Month 1-2: Build the website, plan the marketing, and make the blockchain work. Multitasking, but organized.](/assets/images/global-referendum/global-referendum-section-phase-1-foundation-months-1-2-bw-academic.jpg)
-    - Phase 2: Scaling (Months 3-6)
-    - Phase 3: Global Launch (Months 7-12)
     ![Launch day: Turn on the system, flood social media, and coordinate volunteers worldwide. The hardest part is getting everyone to press 'go' simultaneously.](/assets/images/global-referendum/global-referendum-section-phase-3-global-launch-months-7-12-bw-academic.jpg)
-    - Phase 4: Optimization (Months 13+)
   - Success Metrics
     ![Success metrics: get 280 million people for under $210 million, grow exponentially, and catch 99% of cheaters. Ambitious, but measurable.](/assets/images/global-referendum/global-referendum-section-success-metrics-bw-academic.jpg)
-  - On Putting It All Together
-    - What You're Building
+  - The Bottom Line
     ![280 million people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
-      - The Innovation Part
-    ![Old way: Trust the government to count votes honestly. New way: Math counts votes; government can't cheat even if it wants to.](/assets/images/global-referendum/global-referendum-section-the-innovation-part-bw-academic.jpg)
-      - The Money Part
     ![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
-      - What Success Looks Like
     - On Why 3.5% Is The Magic Number
     ![3.5% of people actively pushing for change is enough to topple governments. It's a historical pattern, like gravity but for revolutions.](/assets/images/global-referendum/global-referendum-section-on-why-3-5-is-the-magic-number-bw-academic.jpg)
 
@@ -1486,7 +1410,7 @@
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis
 **Description:** Real-world evidence that getting a global treaty signed costs $90M, not billions
-**Stats:** 2,077 words | 214 lines | 10 images | ~13p
+**Stats:** 1,865 words | 200 lines | 10 images | ~12p
 
   - What Treaties Actually Cost
     - Inflation-Adjusted to 2024 Dollars
@@ -1498,7 +1422,6 @@
     ![Get 3.5 percent of people to care, show politicians the math won't break anything, and suddenly they have to listen. Democracy has an override button.](/assets/images/treaty-feasibility/treaty-feasibility-section-how-to-make-governments-sign-things-bw-academic.jpg)
     - Timeline to "Governments Can't Ignore This"
     ![Two to three years to build the website, run the numbers, and assemble the coalition before you can ask countries to sign. Diplomacy is slow.](/assets/images/treaty-feasibility/treaty-feasibility-section-timeline-to-governments-can-t-ignore-this-bw-academic.jpg)
-  - Conclusion
   - Political Success Probability: Economic Analysis {#sec-political-success-probability}
     ![Even if this only has a 1 percent chance of working, it saves 503 times more lives per dollar than bed nets. Math is strange.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
     - Historical Precedents for International Financial Commitments
@@ -1519,16 +1442,13 @@
 #### knowledge/appendix/recruitment-and-propaganda-plan.qmd
 **Title:** Recruitment & Propaganda Plan
 **Description:** How to build an army of people who don't want to die (surprisingly difficult)
-**Stats:** 1,198 words | 115 lines | 1 images | ~5p
+**Stats:** 649 words | 83 lines | 1 images | ~3p
 
   - The Bootstrapping Problem
   - Three Types of Allies
     - Investors
     - Advocates
     - Institutional Partners
-  - The Registration Forms
-  - Follow-Up Strategy
-  - Metrics Worth Tracking
   - Phase 0 Targets
   - Getting Started
 
@@ -1537,7 +1457,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,209 words | 160 lines | 8 images | ~9p
+**Stats:** 1,122 words | 151 lines | 7 images | ~8p
 
   - How 1% Less Violence Pays For Everything
     ![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
@@ -1556,14 +1476,12 @@
     - The Elasticity Assumption
     ![Theory says less war spending means proportionally less war. Reality is messier. Turns out humans aren't very good at reducing violence incrementally.](/assets/images/peace-dividend/peace-dividend-section-causal-elasticity-assumption-bw-academic.jpg)
     - How Good Are the Sources?
-    - What This Does NOT Claim
-    ![The four reasons this won't work as well as pure math suggests. Reality is disappointing, but still better than the current system of organized murder.](/assets/images/peace-dividend/peace-dividend-section-what-this-does-not-claim-bw-academic.jpg)
     - The Safe Bet
 
 #### knowledge/economics/health-dividend.qmd
 **Title:** Health Dividend
 **Description:** How a $40M (95% CI: $27.3M-$55.6M) framework generates $58.6B (95% CI: $49.2B-$73.1B) in annual savings through 80x cost reduction
-**Stats:** 918 words | 112 lines | 8 images | ~8p
+**Stats:** 777 words | 94 lines | 7 images | ~7p
 
   - The Math: From $41K (95% CI: $20K-$120K) to $500 (95% CI: $400-$2.50K)
   - Where the $58.6B (95% CI: $49.2B-$73.1B) Comes From
@@ -1576,41 +1494,27 @@
     ![It'll cost 40 million to run this per year. Maybe 27 million, maybe 56 million. Either way, less than one fighter jet.](/assets/images/health-dividend/health-dividend-section-the-framework-cost-breakdown-bw-academic.jpg)
   - ROI Scenarios
     ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
-  - Why This Isn't Happening Already
-    ![Why everyone's trying to do the right thing but the system keeps producing the wrong outcome. It's like a machine designed to turn good intentions into suffering.](/assets/images/health-dividend/health-dividend-section-incentive-misalignment-bw-academic.jpg)
   - The Bottom Line
     ![Spend 40 million, save 58.6 billion. That's a 146,400 percent return. In any other context, you'd call this fraud. Here, it's just efficiency.](/assets/images/health-dividend/health-dividend-section-the-roi-bw-academic.jpg)
-  - New Drugs Save Lives (Proof)
 
 #### knowledge/economics/financial-plan.qmd
 **Title:** Financial Plan
 **Description:** High-level overview of how to fund, spend, and manage the financial flows required to pass a 1% treaty and operate the 1% Treaty Fund.
-**Stats:** 1,548 words | 198 lines | 9 images | ~11p
+**Stats:** 1,010 words | 144 lines | 7 images | ~8p
 
   - Pillar 1: Fundraising (Raise $1B)
     ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
-    - The Fundraising Strategy
   - Pillar 2: Campaign Budget (Spend $1B)
     ![How to spend one billion convincing humans to stop killing each other: some for lobbying politicians, some for asking citizens directly, some for emergencies. Democracy is expensive.](/assets/images/financial-plan/financial-plan-section-campaign-budget-how-to-spend-var-treaty-campaign-total-cost-bw-academic.jpg)
     - Key Innovations
     ![Traditional diplomacy: slow, expensive, mostly cocktail parties. AI-accelerated diplomacy: fast, cheap, mostly algorithms. Both equally likely to prevent nuclear war.](/assets/images/financial-plan/financial-plan-section-key-innovations-bw-academic.jpg)
   - Pillar 3: Treasury (Manage $27.2B+/Year)
     ![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
-    - Where the Money Comes From
     ![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
-    - Growth Scenarios (Not Predictions)
     - How the Money Gets Spent: 80/10/10
-    - The Fixed 20%
     ![Twenty percent goes to paying investors and politicians automatically via smart contracts. Finally, a use for blockchain that isn't fraud or monkey pictures.](/assets/images/financial-plan/financial-plan-section-the-fixed-costs-bw-academic.jpg)
-    - The Other 80%: Medical Research
     - Dynamic Patient Subsidies
-    - Why This Creates Perfect Incentives
-    ![Patients want cures, researchers want funding, insurers want lower costs. Everyone gets what they want from the same pot. It's almost like cooperation works.](/assets/images/financial-plan/financial-plan-section-why-this-creates-perfect-incentives-bw-academic.jpg)
-    - Compare to NIH Grants
-  - Risk Management
-    ![Your money sits in escrow until milestones are hit, then gets released automatically. Trust, but verify. Mostly verify. All verify, actually.](/assets/images/financial-plan/financial-plan-section-risk-management-bw-academic.jpg)
   - Related Documents
-  - Summary
 
 #### knowledge/economics/campaign-budget.qmd
 **Title:** Campaign Budget: The $1B (95% CI: $700M-$1.30B) Legal Bribery Machine

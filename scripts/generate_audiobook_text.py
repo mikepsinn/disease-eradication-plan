@@ -153,39 +153,17 @@ def prepare_for_narration(raw_qmd: str, variables: dict) -> str:
 # LLM narration rewrite (creative stuff)
 # ---------------------------------------------------------------------------
 
-AUDIOBOOK_REWRITE_PROMPT = """You are converting a book chapter into a narration script for an audiobook.
+AUDIOBOOK_REWRITE_PROMPT = """Convert this book chapter to an audiobook narration script.
 
-The text has been pre-cleaned: citations removed, code blocks removed, LaTeX removed,
-Quarto variables resolved to real values. But it still has markdown formatting (bold,
-headers, lists, tables) and raw numbers. Your job is to convert it into natural spoken text.
+Input is pre-cleaned markdown with raw numbers. Convert to natural spoken text.
 
-CONVERT:
-- Numbers/money to spoken form: "$8.2 Trillion" -> "eight point two trillion dollars"
-- Percentages: "50%" -> "fifty percent"
-- Ratios: "100:1" -> "a hundred to one"
-- Years: "2024" -> "twenty twenty-four", "1962" -> "nineteen sixty-two"
-- Tables: convert rows into flowing spoken sentences
-- Bullet lists: weave into natural paragraphs
-- Section headers (lines starting with ##): smooth transitions, not announcements
-- Acronyms on first use: "GDP" -> "G.D.P.", "NIH" -> "the N.I.H.", "DALY" -> "dally"
-- Bold/italic markers (**text**): just the text, no markers
+CONVERT: numbers/money to words ("$8.2T" -> "eight point two trillion dollars"), percentages ("50%" -> "fifty percent"), ratios ("100:1" -> "a hundred to one"), years to spoken form, tables to flowing sentences, bullet lists to paragraphs, headers to smooth transitions, acronyms on first use ("GDP" -> "G.D.P.", "DALY" -> "dally"). Strip all markdown formatting.
 
-REMOVE:
-- Image captions (lines that were image alt text)
-- Any remaining markdown formatting
+PRESERVE: the irreverent, darkly humorous voice exactly as written. ALL content and meaning; do not cut or summarize. Paragraph breaks as natural pauses.
 
-PRESERVE:
-- The book's irreverent, darkly humorous voice. This is NOT a textbook. Keep every joke,
-  every sarcastic aside, every Philomena-Cunk-meets-policy-wonk moment. The voice IS the book.
-- ALL content and meaning. Do not cut, summarize, or skip anything.
-- Paragraph breaks (blank lines) as natural pauses for TTS.
+DO NOT: add chapter headers, "end of chapter", or narrator instructions. Do not formalize the tone. No markdown in output.
 
-DO NOT:
-- Add "Chapter X" headers, "end of chapter", or narrator instructions
-- Make the tone more formal or professional
-- Add any markdown formatting to the output
-
-OUTPUT: Return ONLY the narration text."""
+Return ONLY the narration text."""
 
 
 def rewrite_for_audiobook(text: str, title: str) -> str:
@@ -334,12 +312,11 @@ def generate_chapter_text(
 
     if dry_run:
         OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-        dry_path = output_path.with_suffix('.prepared.txt')
-        dry_path.write_text(prepared, encoding='utf-8')
-        print(f"  [DRY RUN] Prepared text saved to: {dry_path.name}")
+        output_path.write_text(prepared, encoding='utf-8')
+        print(f"  [DRY RUN] Prepared text saved to: {output_path.name}")
         return {
             'index': chapter['index'], 'title': title, 'part': chapter['part'],
-            'path': chapter['path'], 'text_file': str(dry_path.relative_to(PROJECT_ROOT)),
+            'path': chapter['path'], 'text_file': str(output_path.relative_to(PROJECT_ROOT)),
             'status': 'dry_run',
         }
 
