@@ -18,7 +18,7 @@ aliases:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## The Allocation Scandal
 
-The National Institutes of Health has an annual budget of approximately **$51 billion**. 55 million people die annually [@who-daily-deaths]. Here is how the NIH allocates that money:
+The National Institutes of Health has an annual budget of approximately **{{< var nih_annual_budget >}}**. 55 million people die annually [@who-daily-deaths]. Here is how the NIH allocates that money:
 
 A 2023 JAMA study [@nih-phased-trial-spending-2010-2019] analyzed $247 billion in NIH spending (2010-2019) and found:
 
@@ -96,7 +96,7 @@ When you misallocate $40 billion a year into low-efficiency research instead of 
 
 - **Standard NIH Portfolio:** {{< var nih_standard_research_cost_per_qaly >}} per QALY {{< var nih_standard_research_cost_per_qaly_cite >}} (generous estimate)
 - **Pragmatic Platform Trials:** {{< var pragmatic_trial_cost_per_qaly >}} per QALY
-- **NIH pragmatic trials funding:** Capped at $500K planning + $1M/year implementation [@pragmatic-trials-cost-advantage]. This is a tiny fraction of the $47B budget
+- **NIH pragmatic trials funding:** Capped at $500K planning + $1M/year implementation [@pragmatic-trials-cost-advantage]. This is a tiny fraction of the {{< var nih_annual_budget >}} budget
 
 **The Multiplier:**
 
