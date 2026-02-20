@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 105,466 | **Images:** 645 | **Est. Pages:** ~744
+**Files:** 44 | **Words:** 105,345 | **Images:** 640 | **Est. Pages:** ~741
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -92,11 +92,10 @@
 #### knowledge/problem/cost-of-war.qmd
 **Title:** The Cost of War
 **Description:** Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
-**Stats:** 3,508 words | 461 lines | 15 images | ~22p
+**Stats:** 3,481 words | 459 lines | 14 images | ~21p
 
   - The Itemized Receipt for Armageddon
     - The Shopping List (2024 Global Data)
-    ![Where your war money goes. Personnel: paying people to shoot. Operations: fuel for shooting vehicles. Procurement: buying new shooting things. R&D: inventing better shooting. It's very organized.](/assets/images/cost-of-war/cost-of-war-section-global-military-budget-breakdown-bw-academic.jpg)
       - Total Direct Military Spending: \$2,718.0 billion
     - The Equation of Immediate Destruction
       - Current Annual Calculation
@@ -367,7 +366,7 @@
 #### knowledge/economics/central-banks.qmd
 **Title:** How Central Banks Fund Your Death
 **Description:** The War Machine's ATM: How every fiat currency in history has been devalued to fund unpopular wars, and how to bypass the system.
-**Stats:** 2,990 words | 514 lines | 23 images | ~23p
+**Stats:** 2,954 words | 512 lines | 22 images | ~23p
 
   - The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
     - Ancient Rome (3rd Century)
@@ -432,7 +431,6 @@
     - Option A: Keep the Current System
     ![You spend money on weapons. The money loses value. People die. Contractors get rich. Repeat. It's a perpetual motion machine powered by death. You should be proud, those are hard to build.](/assets/images/central-banks/central-banks-section-option-a-keep-the-current-system-bw-academic.jpg)
       - Option B: The 1% Redirect
-    ![The Federal Reserve creates $8 trillion. We want 1 percent for disease cures. That's $80 billion. You currently spend that on 1.3 aircraft carriers. We're not even asking for the whole carrier, just the radar system.](/assets/images/central-banks/central-banks-section-option-b-the-1-redirect-bw-academic.jpg)
       - How Tiny 1% Really Is
     ![Total currency printed versus the 1 percent sliver for curing diseases. If the full amount were a football field, we're asking for the width of a deck chair. You can keep the rest of the stadium.](/assets/images/central-banks/central-banks-section-how-tiny-1-really-is-bw-academic.jpg)
       - Why This Can Actually Happen
@@ -443,7 +441,7 @@
 #### knowledge/problem/genetic-slavery.qmd
 **Title:** Genetic Slavery
 **Description:** An exploration of how our genes use pain and pleasure to enslave us, forcing actions inconsistent with our rational ethics.
-**Stats:** 2,384 words | 270 lines | 14 images | ~17p
+**Stats:** 2,370 words | 268 lines | 13 images | ~16p
 
   - The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)
     ![Your brain was designed for running from lions. Now it runs from emails. The hardware hasn't caught up.](/assets/images/genetic-slavery/genetic-slavery-section-the-selfish-gene-made-you-illogical-it-was-a-good-idea-at-the-time-bw-academic.jpg)
@@ -474,7 +472,6 @@
     ![Current system: profit from sickness and war. Alternative system: profit from cures and peace. You really had to think about which one to pick.](/assets/images/genetic-slavery/genetic-slavery-section-part-5-breaking-the-chains-bw-academic.jpg)
   - Part 6: Breaking Free from Your Programming
     ![Your brain evolved to find berries and avoid tigers. Now it has to understand tax law and cryptocurrency. It is not going well.](/assets/images/genetic-slavery/genetic-slavery-section-the-first-step-admitting-you-re-badly-designed-bw-academic.jpg)
-    ![What if you used greed for good? Like judo, but for terrible human impulses.](/assets/images/genetic-slavery/genetic-slavery-section-the-solution-trick-the-monkey-brain-bw-academic.jpg)
 
 ### The Solution
 
@@ -707,11 +704,10 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 3,108 words | 391 lines | 23 images | ~24p
+**Stats:** 3,089 words | 389 lines | 22 images | ~23p
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
     - The Offer
-    ![The offer: 272% returns, early access to cures, and a legacy besides 'warmonger.' Even defense lobbyists can do math.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-offer-bw-academic.jpg)
     - The Math
     ![Current job: Get rich selling weapons; die hated. New job: Get richer ending disease; die beloved. Career pivot, simplified.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-incentive-comparison-bw-academic.jpg)
     - Why They Take It
@@ -1600,7 +1596,7 @@
 #### knowledge/economics/financial-plan.qmd
 **Title:** Financial Plan
 **Description:** High-level overview of how to fund, spend, and manage the financial flows required to pass a 1% treaty and operate the 1% Treaty Fund.
-**Stats:** 1,573 words | 200 lines | 10 images | ~11p
+**Stats:** 1,548 words | 198 lines | 9 images | ~11p
 
   - Pillar 1: Fundraising (Raise $1B)
     ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
@@ -1622,7 +1618,6 @@
     - Why This Creates Perfect Incentives
     ![Patients want cures, researchers want funding, insurers want lower costs. Everyone gets what they want from the same pot. It's almost like cooperation works.](/assets/images/financial-plan/financial-plan-section-why-this-creates-perfect-incentives-bw-academic.jpg)
     - Compare to NIH Grants
-    ![NIH grants: slow, bureaucratic, expensive overhead. Decentralized model: fast, distributed, minimal overhead. One was designed in 1887, the other in 2025. Guess which is which.](/assets/images/financial-plan/financial-plan-section-compare-to-grant-system-bw-academic.jpg)
   - Risk Management
     ![Your money sits in escrow until milestones are hit, then gets released automatically. Trust, but verify. Mostly verify. All verify, actually.](/assets/images/financial-plan/financial-plan-section-risk-management-bw-academic.jpg)
   - Related Documents

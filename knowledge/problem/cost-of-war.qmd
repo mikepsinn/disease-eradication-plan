@@ -40,7 +40,7 @@ The costs of war look like a grocery receipt from Hell. Everything is on the lis
 The basic math for direct war costs looks like this:
 
 $$
-C_{\text{direct}} = M_{\text{spending}} + I_{\text{damage}} + H_{\text{casualties}} + T_{\text{disruption}}
+\mathrm{C}_{\text{direct}} = \mathrm{M}_{\text{spending}} + \mathrm{I}_{\text{damage}} + \mathrm{H}_{\text{casualties}} + \mathrm{T}_{\text{disruption}}
 $$
 
 Here is what those letters mean:
@@ -192,7 +192,7 @@ Expensive things.
 It is not just about the price tag. Replacing a bridge in a war zone costs more than building one in peace. This should be obvious.
 
 $$
-R_{\text{cost}} = D_{\text{value}} \times M_{\text{replacement}} \times C_{\text{conflict}} \times T_{\text{time}}
+\mathrm{R}_{\text{cost}} = \mathrm{D}_{\text{value}} \times \mathrm{M}_{\text{replacement}} \times \mathrm{C}_{\text{conflict}} \times \mathrm{T}_{\text{time}}
 $$
 
 Where:
@@ -222,7 +222,7 @@ They interrupt business like a drunk person crashing a dance.
 Basically, economists have a formula. It calculates money lost when ships cannot ship and trucks cannot truck because of bombs.
 
 $$
-L_{\text{trade}} = \sum (V_{i} \times D_{i} \times M_{i} \times T_{\text{recovery}})
+\mathrm{L}_{\text{trade}} = \sum (\mathrm{V}_{i} \times \mathrm{D}_{i} \times \mathrm{M}_{i} \times \mathrm{T}_{\text{recovery}})
 $$
 
 Where V is trade volume, D is disruption intensity, M is multiplier effect, and T is recovery time for each affected sector i.
@@ -291,8 +291,8 @@ The math is sad. It counts how many veterans there are, how much their care cost
 
 $$
 \begin{aligned}
-V_{\text{lifetime}} = {} & (N_{\text{veterans}} \times C_{\text{annual}} \times L_{\text{lifespan}}) \\
-& + (D_{\text{disability}} \times I_{\text{inflation}})
+\mathrm{V}_{\text{lifetime}} = {} & (\mathrm{N}_{\text{veterans}} \times \mathrm{C}_{\text{annual}} \times \mathrm{L}_{\text{lifespan}}) \\
+& + (\mathrm{D}_{\text{disability}} \times \mathrm{I}_{\text{inflation}})
 \end{aligned}
 $$
 

@@ -1410,12 +1410,12 @@ def render_quarto(
         # 6. Validate and verify outputs in temp directory (skip in preview mode)
         # Skip if build already failed - no point validating broken/missing outputs
         if not preview and build_temp and exit_code == 0:
-            gh_group_start("VALIDATING BUILD OUTPUTS")
-
             # Determine output directory in temp build folder
             temp_output_dir = build_temp / metadata["output_dir"]
 
-            # Rename PDFs in temp folder to match config output-file
+            # ── Step 6a: Rename outputs to match config names ──
+            gh_group_start("RENAMING BUILD OUTPUTS")
+
             expected_pdf = metadata.get("pdf_output_file")
             if expected_pdf:
                 for pdf_file in temp_output_dir.glob("*.pdf"):
@@ -1424,7 +1424,6 @@ def render_quarto(
                         print(f"[*] Renaming {pdf_file.name} -> {expected_pdf}")
                         pdf_file.rename(new_path)
 
-            # Rename EPUBs in temp folder to match config output-file
             expected_epub = metadata.get("epub_output_file")
             if expected_epub:
                 for epub_file in temp_output_dir.glob("*.epub"):
@@ -1433,7 +1432,6 @@ def render_quarto(
                         print(f"[*] Renaming {epub_file.name} -> {expected_epub}")
                         epub_file.rename(new_path)
 
-            # Rename DOCXs in temp folder to match config output-file
             expected_docx = metadata.get("docx_output_file")
             if expected_docx:
                 for docx_file in temp_output_dir.glob("*.docx"):
@@ -1441,18 +1439,167 @@ def render_quarto(
                         new_path = docx_file.parent / expected_docx
                         print(f"[*] Renaming {docx_file.name} -> {expected_docx}")
                         docx_file.rename(new_path)
-            gh_group_end()  # End VALIDATING BUILD OUTPUTS
 
-            # Validate PDFs for Python code leakage
-            for pdf_file in temp_output_dir.glob("*.pdf"):
-                size_mb = pdf_file.stat().st_size / (1024 * 1024)
-                print(f"[*] PDF: {pdf_file} ({size_mb:.2f} MB)")
+            gh_group_end()
 
+            # ── Step 6b: Copy ALL outputs to assets/ for distribution ──
+            gh_group_start("COPYING OUTPUTS TO ASSETS")
+
+            dest_pdf_path = None
+            dest_epub_path = None
+            dest_docx_path = None
+
+            # Copy PDF
+            if format_override is None or format_override == "pdf":
+                for pdf_file in temp_output_dir.glob("*.pdf"):
+                    size_mb = pdf_file.stat().st_size / (1024 * 1024)
+                    print(f"[OK] PDF: {pdf_file.name} ({size_mb:.2f} MB)")
+                    assets_pdfs_dir = project_root / "assets" / "pdfs"
+                    assets_pdfs_dir.mkdir(parents=True, exist_ok=True)
+                    dest_pdf_path = assets_pdfs_dir / pdf_file.name
+                    shutil.copy2(pdf_file, dest_pdf_path)
+                    print(f"[OK] Copied PDF to: {dest_pdf_path.relative_to(project_root)}")
+
+            # Copy EPUB (glob for any .epub regardless of config filename)
+            if format_override is None or format_override == "epub":
+                for epub_file in temp_output_dir.glob("*.epub"):
+                    size_mb = epub_file.stat().st_size / (1024 * 1024)
+                    print(f"[OK] EPUB: {epub_file.name} ({size_mb:.2f} MB)")
+                    assets_epubs_dir = project_root / "assets" / "epubs"
+                    assets_epubs_dir.mkdir(parents=True, exist_ok=True)
+                    dest_epub_path = assets_epubs_dir / epub_file.name
+                    shutil.copy2(epub_file, dest_epub_path)
+                    print(f"[OK] Copied EPUB to: {dest_epub_path.relative_to(project_root)}")
+
+            # Copy DOCX (glob for any .docx regardless of config filename)
+            if format_override is None or format_override == "docx":
+                for docx_file in temp_output_dir.glob("*.docx"):
+                    size_mb = docx_file.stat().st_size / (1024 * 1024)
+                    print(f"[OK] DOCX: {docx_file.name} ({size_mb:.2f} MB)")
+                    assets_docx_dir = project_root / "assets" / "docx"
+                    assets_docx_dir.mkdir(parents=True, exist_ok=True)
+                    dest_docx_path = assets_docx_dir / docx_file.name
+                    shutil.copy2(docx_file, dest_docx_path)
+                    print(f"[OK] Copied DOCX to: {dest_docx_path.relative_to(project_root)}")
+
+            # Check HTML
+            if format_override is None or format_override == "html":
+                html_index = temp_output_dir / "index.html"
+                if html_index.exists():
+                    print(f"[OK] HTML exists: {html_index}")
+                else:
+                    print(f"[ERROR] Expected HTML not found: index.html", file=sys.stderr)
+                    print(f"        Expected at: {html_index}", file=sys.stderr)
+                    exit_code = 1
+
+            gh_group_end()
+
+            # Print deployment path for GitHub Actions
+            gh_group_start("DEPLOYMENT INFO")
+            print(f"[*] Deploy from: {temp_output_dir}")
+            print(f"[*] Example: publish-dir: '{temp_output_dir.relative_to(project_root)}'")
+            gh_group_end()
+
+            # ── Step 6c: Post-process EPUB ──
+            if dest_epub_path and dest_epub_path.exists():
+                gh_group_start("EPUB POST-PROCESSING")
+
+                # Post-process for e-reader compatibility
+                validate_epub_script = project_root / "scripts" / "validate-epub.py"
+                if validate_epub_script.exists():
+                    print(f"[*] Post-processing EPUB for e-reader compatibility...")
+                    fix_result = subprocess.run(
+                        [sys.executable, "-u", str(validate_epub_script), "--fix", str(dest_epub_path)],
+                        cwd=str(project_root),
+                    )
+                    if fix_result.returncode != 0:
+                        print(f"[WARN] EPUB validation found issues (exit code {fix_result.returncode})", file=sys.stderr)
+
+                # Fix XHTML issues (unclosed tags, scripts)
+                fix_epub_script = project_root / "scripts" / "fix-epub-kindle.py"
+                if fix_epub_script.exists():
+                    print(f"[*] Fixing EPUB XHTML...")
+                    fix_result = subprocess.run(
+                        [sys.executable, "-u", str(fix_epub_script), str(dest_epub_path)],
+                        cwd=str(project_root),
+                    )
+                    if fix_result.returncode != 0:
+                        print(f"[WARN] EPUB XHTML fix encountered issues (exit code {fix_result.returncode})", file=sys.stderr)
+
+                # Run epubcheck for EPUB spec compliance
+                epubcheck_jar = ensure_epubcheck(project_root)
+                if epubcheck_jar:
+                    print(f"[*] Running epubcheck on {dest_epub_path.name}...")
+                    epubcheck_result = subprocess.run(
+                        ["java", "-jar", str(epubcheck_jar), str(dest_epub_path)],
+                        capture_output=True, text=True, encoding="utf-8",
+                    )
+                    output = epubcheck_result.stderr or epubcheck_result.stdout or ""
+                    fatal_count = output.count("FATAL(")
+                    error_count = output.count("ERROR(")
+                    warning_count = output.count("WARNING(")
+                    if fatal_count > 0 or error_count > 0:
+                        print(f"[WARN] epubcheck: {fatal_count} fatal, {error_count} errors, {warning_count} warnings", file=sys.stderr)
+                        for line in output.splitlines():
+                            if line.startswith("FATAL(") or line.startswith("ERROR("):
+                                print(f"  {line.strip()[:150]}", file=sys.stderr)
+                    else:
+                        print(f"[OK] epubcheck passed ({warning_count} warnings)")
+
+                # Try KPF conversion via Kindle Previewer
+                kindle_previewer = Path(r"C:\Users\m\AppData\Local\Amazon\Kindle Previewer 3\Kindle Previewer 3.exe")
+                if kindle_previewer.exists():
+                    kpf_output_dir = project_root / "assets" / "kpf"
+                    kpf_output_dir.mkdir(parents=True, exist_ok=True)
+                    print(f"[*] Attempting KPF conversion via Kindle Previewer...")
+                    kpf_result = subprocess.run(
+                        [str(kindle_previewer), str(dest_epub_path), "-convert", "-output", str(kpf_output_dir)],
+                        capture_output=True, text=True, timeout=300,
+                    )
+                    kpf_files = list(kpf_output_dir.glob("**/*.kpf"))
+                    et_status = "Unknown"
+                    summary_csv = kpf_output_dir / "Summary_Log.csv"
+                    if summary_csv.exists():
+                        with open(summary_csv, "r", encoding="utf-8") as f:
+                            for row in csv.DictReader(f):
+                                et_status = row.get("Enhanced Typesetting Status", "Unknown")
+                                break
+                    if kpf_files:
+                        kpf_mb = kpf_files[0].stat().st_size / (1024 * 1024)
+                        print(f"[OK] KPF generated: {kpf_files[0].name} ({kpf_mb:.1f} MB, Enhanced Typesetting: {et_status})")
+                    else:
+                        print(f"[WARN] KPF not generated (Enhanced Typesetting: {et_status})", file=sys.stderr)
+
+                gh_group_end()
+
+            # ── Step 6d: DOCX validation ──
+            if dest_docx_path and dest_docx_path.exists():
+                analyze_docx_script = project_root / "scripts" / "analyze-docx-images.py"
+                if analyze_docx_script.exists():
+                    gh_group_start("DOCX IMAGE VALIDATION")
+                    print(f"[*] Validating DOCX images...")
+                    result = subprocess.run(
+                        [sys.executable, str(analyze_docx_script), str(dest_docx_path)],
+                        capture_output=True, text=True, encoding="utf-8"
+                    )
+                    if result.returncode != 0:
+                        print(f"[WARNING] DOCX has oversized images (may cause Word 22-inch limit errors)")
+                        print(f"          Run: npm run images:normalize-dpi:apply")
+                        print(f"          Then re-render to fix")
+                        for line in result.stdout.splitlines():
+                            if "ISSUES FOUND" in line or "WORD_OVERSIZE" in line:
+                                print(f"          {line.strip()}")
+                    else:
+                        print(f"[OK] DOCX image validation passed")
+                    gh_group_end()
+
+            # ── Step 6e: PDF validation (slowest, runs last) ──
+            if dest_pdf_path and dest_pdf_path.exists():
                 if skip_validation:
-                    print("[SKIP] PDF Python code check (--skip-validation)")
+                    print("[SKIP] PDF validation (--skip-validation)")
                 else:
                     gh_group_start("VALIDATION: PDF PYTHON CODE CHECK")
-                    found_issues, issues = validate_pdf_for_python_code(str(pdf_file))
+                    found_issues, issues = validate_pdf_for_python_code(str(dest_pdf_path))
                     if found_issues:
                         print("[ERROR] PDF validation failed: Python code detected!", file=sys.stderr)
                         for issue in issues[:5]:
@@ -1465,185 +1612,15 @@ def render_quarto(
                         print("[OK] PDF validation passed")
                     gh_group_end()
 
-            # Verify expected outputs exist
-            gh_group_start("VERIFICATION: EXPECTED OUTPUTS")
-
-            # Check PDF if expected
-            if expected_pdf and (format_override is None or format_override == "pdf"):
-                pdf_path = temp_output_dir / expected_pdf
-                if pdf_path.exists():
-                    size_mb = pdf_path.stat().st_size / (1024 * 1024)
-                    print(f"[OK] PDF exists: {pdf_path} ({size_mb:.2f} MB)")
-
-                    # Copy PDF to assets/pdfs for distribution
-                    assets_pdfs_dir = project_root / "assets" / "pdfs"
-                    assets_pdfs_dir.mkdir(parents=True, exist_ok=True)
-                    dest_pdf_path = assets_pdfs_dir / expected_pdf
-                    shutil.copy2(pdf_path, dest_pdf_path)
-                    print(f"[OK] Copied PDF to: {dest_pdf_path.relative_to(project_root)}")
-
-                    # Run comprehensive PDF validation (LLM if GEMINI key available)
-                    if skip_validation:
-                        print("[SKIP] Comprehensive PDF validation (--skip-validation)")
-                    else:
-                        gh_group_start("VALIDATION: COMPREHENSIVE PDF CHECK")
-                        pdf_validation_exit = run_pdf_validation(
-                            str(dest_pdf_path),
-                            skip_url_check=True,  # URLs already checked in post-validation
-                        )
-                        if pdf_validation_exit != 0:
-                            print("[ERROR] Comprehensive PDF validation failed", file=sys.stderr)
-                            exit_code = pdf_validation_exit
-                        gh_group_end()
-                else:
-                    print(f"[ERROR] Expected PDF not found: {expected_pdf}", file=sys.stderr)
-                    print(f"        Expected at: {pdf_path}", file=sys.stderr)
-                    exit_code = 1
-
-            # Check EPUB if expected or any .epub files exist
-            if format_override is None or format_override == "epub":
-                # Find EPUB: use expected name if configured, otherwise glob for any .epub
-                if expected_epub:
-                    epub_candidates = [temp_output_dir / expected_epub] if (temp_output_dir / expected_epub).exists() else []
-                else:
-                    epub_candidates = list(temp_output_dir.glob("*.epub"))
-
-                if expected_epub and not epub_candidates:
-                    print(f"[ERROR] Expected EPUB not found: {expected_epub}", file=sys.stderr)
-                    print(f"        Expected at: {temp_output_dir / expected_epub}", file=sys.stderr)
-                    exit_code = 1
-
-                for epub_path in epub_candidates:
-                    size_mb = epub_path.stat().st_size / (1024 * 1024)
-                    print(f"[OK] EPUB exists: {epub_path} ({size_mb:.2f} MB)")
-
-                    # Post-process EPUB for e-reader compatibility
-                    validate_epub_script = project_root / "scripts" / "validate-epub.py"
-                    if validate_epub_script.exists():
-                        print(f"[*] Post-processing EPUB for e-reader compatibility...")
-                        fix_result = subprocess.run(
-                            [sys.executable, "-u", str(validate_epub_script), "--fix", str(epub_path)],
-                            cwd=str(project_root),
-                        )
-                        if fix_result.returncode != 0:
-                            print(f"[WARN] EPUB validation found issues (exit code {fix_result.returncode})", file=sys.stderr)
-
-                    # Copy EPUB to assets/epubs for distribution
-                    assets_epubs_dir = project_root / "assets" / "epubs"
-                    assets_epubs_dir.mkdir(parents=True, exist_ok=True)
-                    dest_epub_path = assets_epubs_dir / epub_path.name
-                    shutil.copy2(epub_path, dest_epub_path)
-                    print(f"[OK] Copied EPUB to: {dest_epub_path.relative_to(project_root)}")
-
-                    # Fix XHTML issues in EPUB (unclosed tags, scripts)
-                    fix_epub_script = project_root / "scripts" / "fix-epub-kindle.py"
-                    if fix_epub_script.exists():
-                        print(f"[*] Fixing EPUB XHTML...")
-                        fix_result = subprocess.run(
-                            [sys.executable, "-u", str(fix_epub_script), str(dest_epub_path)],
-                            cwd=str(project_root),
-                        )
-                        if fix_result.returncode != 0:
-                            print(f"[WARN] EPUB XHTML fix encountered issues (exit code {fix_result.returncode})", file=sys.stderr)
-
-                    # Run epubcheck for EPUB spec compliance (catches issues KDP rejects)
-                    epubcheck_jar = ensure_epubcheck(project_root)
-                    if epubcheck_jar:
-                        print(f"[*] Running epubcheck on {dest_epub_path.name}...")
-                        epubcheck_result = subprocess.run(
-                            ["java", "-jar", str(epubcheck_jar), str(dest_epub_path)],
-                            capture_output=True, text=True, encoding="utf-8",
-                        )
-                        # Count fatals and errors from stderr (epubcheck outputs there)
-                        output = epubcheck_result.stderr or epubcheck_result.stdout or ""
-                        fatal_count = output.count("FATAL(")
-                        error_count = output.count("ERROR(")
-                        warning_count = output.count("WARNING(")
-                        if fatal_count > 0 or error_count > 0:
-                            print(f"[WARN] epubcheck: {fatal_count} fatal, {error_count} errors, {warning_count} warnings", file=sys.stderr)
-                            for line in output.splitlines():
-                                if line.startswith("FATAL(") or line.startswith("ERROR("):
-                                    print(f"  {line.strip()[:150]}", file=sys.stderr)
-                        else:
-                            print(f"[OK] epubcheck passed ({warning_count} warnings)")
-
-                    # Try KPF conversion via Kindle Previewer (optional, for early failure detection)
-                    kindle_previewer = Path(r"C:\Users\m\AppData\Local\Amazon\Kindle Previewer 3\Kindle Previewer 3.exe")
-                    if kindle_previewer.exists():
-                        kpf_output_dir = project_root / "assets" / "kpf"
-                        kpf_output_dir.mkdir(parents=True, exist_ok=True)
-                        print(f"[*] Attempting KPF conversion via Kindle Previewer...")
-                        kpf_result = subprocess.run(
-                            [str(kindle_previewer), str(dest_epub_path), "-convert", "-output", str(kpf_output_dir)],
-                            capture_output=True, text=True, timeout=300,
-                        )
-                        # Kindle Previewer puts KPF in a KPF/ subdirectory
-                        kpf_files = list(kpf_output_dir.glob("**/*.kpf"))
-                        # Parse Summary_Log.csv for Enhanced Typesetting status
-                        et_status = "Unknown"
-                        summary_csv = kpf_output_dir / "Summary_Log.csv"
-                        if summary_csv.exists():
-                            with open(summary_csv, "r", encoding="utf-8") as f:
-                                for row in csv.DictReader(f):
-                                    et_status = row.get("Enhanced Typesetting Status", "Unknown")
-                                    break
-                        if kpf_files:
-                            kpf_mb = kpf_files[0].stat().st_size / (1024 * 1024)
-                            print(f"[OK] KPF generated: {kpf_files[0].name} ({kpf_mb:.1f} MB, Enhanced Typesetting: {et_status})")
-                        else:
-                            print(f"[WARN] KPF not generated (Enhanced Typesetting: {et_status})", file=sys.stderr)
-
-            # Check DOCX if it exists (no expected_docx config field, just look for .docx files)
-            if format_override is None or format_override == "docx":
-                # Look for DOCX files in output directory
-                docx_files = list(temp_output_dir.glob("*.docx"))
-                if docx_files:
-                    for docx_path in docx_files:
-                        size_mb = docx_path.stat().st_size / (1024 * 1024)
-                        print(f"[OK] DOCX exists: {docx_path} ({size_mb:.2f} MB)")
-
-                        # Copy DOCX to assets/docx for distribution
-                        assets_docx_dir = project_root / "assets" / "docx"
-                        assets_docx_dir.mkdir(parents=True, exist_ok=True)
-                        dest_docx_path = assets_docx_dir / docx_path.name
-                        shutil.copy2(docx_path, dest_docx_path)
-                        print(f"[OK] Copied DOCX to: {dest_docx_path.relative_to(project_root)}")
-
-                        # Validate DOCX images (check for oversized images that break Word)
-                        analyze_docx_script = project_root / "scripts" / "analyze-docx-images.py"
-                        if analyze_docx_script.exists():
-                            print(f"[*] Validating DOCX images...")
-                            result = subprocess.run(
-                                [sys.executable, str(analyze_docx_script), str(dest_docx_path)],
-                                capture_output=True, text=True, encoding="utf-8"
-                            )
-                            if result.returncode != 0:
-                                print(f"[WARNING] DOCX has oversized images (may cause Word 22-inch limit errors)")
-                                print(f"          Run: npm run images:normalize-dpi:apply")
-                                print(f"          Then re-render to fix")
-                                # Print just the summary lines
-                                for line in result.stdout.splitlines():
-                                    if "ISSUES FOUND" in line or "WORD_OVERSIZE" in line:
-                                        print(f"          {line.strip()}")
-                            else:
-                                print(f"[OK] DOCX image validation passed")
-
-            # Check HTML output directory if expected
-            if format_override is None or format_override == "html":
-                html_index = temp_output_dir / "index.html"
-                if html_index.exists():
-                    print(f"[OK] HTML exists: {html_index}")
-                else:
-                    print(f"[ERROR] Expected HTML not found: index.html", file=sys.stderr)
-                    print(f"        Expected at: {html_index}", file=sys.stderr)
-                    exit_code = 1
-            gh_group_end()  # End VERIFICATION: EXPECTED OUTPUTS
-
-            # Print deployment path for GitHub Actions
-            gh_group_start("DEPLOYMENT INFO")
-            print(f"[*] Deploy from: {temp_output_dir}")
-            print(f"[*] Example: publish-dir: '{temp_output_dir.relative_to(project_root)}'")
-            gh_group_end()
+                    gh_group_start("VALIDATION: COMPREHENSIVE PDF CHECK")
+                    pdf_validation_exit = run_pdf_validation(
+                        str(dest_pdf_path),
+                        skip_url_check=True,
+                    )
+                    if pdf_validation_exit != 0:
+                        print("[ERROR] Comprehensive PDF validation failed", file=sys.stderr)
+                        exit_code = pdf_validation_exit
+                    gh_group_end()
 
         # 7. Run verification tests (test config only, skip in preview mode)
         if not preview and verify and config_name == "test" and exit_code == 0:

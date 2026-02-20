@@ -221,7 +221,7 @@ Senator Smith (R-Texas) is up for reelection in 2026. The 1% Treaty Implementati
 | No immediate upside | Status quo maintained |
 | Benefits arrive in 10 years | Costs arrive never |
 
-**Expected utility of No vote:** $U = 0.55 \cdot \text{Office} + \$200K/\text{year} \cdot 20\text{yrs} + \text{Medium Legacy}$
+**Expected utility of No vote:** $U = 0.55 \cdot \text{Office} + \$200\text{K}/\text{year} \cdot 20\text{yrs} + \text{Medium Legacy}$
 
 Result: Vote no. Obviously.
 
@@ -243,12 +243,10 @@ Result: Vote no. Obviously.
 - Post-office tier: Stuck at 3
 - Attack ads funded: "Smith voted AGAINST the cure your family needs"
 
-![Vote yes: 73% chance you keep your job, make millions after. Vote no: 55% chance you're unemployed next year. Choose carefully, Senator.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-new-calculus-with-iabs-bw-academic.jpg)
-
 **The math:**
 
 $$
-\Delta U_{\text{Yes vs No}} = 0.14 \cdot \text{Office} + \$100K/\text{year} \cdot 20\text{yrs} + \text{Legacy Boost}
+\Delta U_{\text{Yes vs No}} = 0.14 \cdot \text{Office} + \$100\text{K}/\text{year} \cdot 20\text{yrs} + \text{Legacy Boost}
 $$
 
 That's a +14 percentage point swing in reelection odds and +$2M in lifetime post-office earnings.
@@ -287,8 +285,6 @@ The flywheel spins. Each expansion increases the stakes, increases the score dif
 | 3 | 2% | $54B | $5.4B |
 | 5 | 5% | $135B | $13.5B |
 
-![Where $27 billion goes: some to investors, some to politicians, most to actually curing diseases. Everyone gets a slice of the virtue pie.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-math-for-victory-incentive-alignment-bond-investors-bw-academic.jpg)
-
 ### Why This Isn't Bribery
 
 ![Bribery: pay someone to betray the public. This thing: pay someone to help the public. Spot the difference, legally speaking.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-why-this-is-not-bribery-legally-speaking-bw-academic.jpg)
@@ -323,13 +319,9 @@ This split balances four goals:
 
 ### Why 10% Goes to Political Incentives {#sec-why-ten-pct-scaling-engine}
 
-![The plan to gradually stop buying bombs versus the four reasons we'll probably keep buying bombs anyway.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-goal-isn-t-a-1-treaty-the-goal-is-100-bw-academic.jpg)
-
 Your 1% treaty is the proof of concept. The endgame is redirecting *most* of military spending to health. That doesn't happen automatically. Without sustained political pressure, your treaty stalls at 1% forever, like your Paris Agreement.
 
 The {{< var iab_political_incentive_funding_pct >}} allocation creates a **political ratchet** that only moves one direction:
-
-![How much money politicians get for being nice increases as they're nicer. By the end, they get 270 billion dollars for not killing people.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-iabs-are-the-political-ratchet-bw-academic.jpg)
 
 | Treaty Level | IAB Political Funding (10%) | Research Funding (80%) | Effect |
 |:-------------|:----------------------------|:-----------------------|:-------|
@@ -440,7 +432,7 @@ $$
 |---------------|-----|---------------------------|
 | Mildly skeptical (3% discount) | {{< var global_clinical_trials_spending_annual >}} | 90x your money |
 | Pretty skeptical (5% discount) | $54B | 54x your money |
-| Very skeptical (10% discount) | $27B | 27x your money |
+| Very skeptical (10% discount) | $27.2B | 27x your money |
 
 Even at a 10% discount rate (as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} becomes worth {{< var treaty_annual_funding >}} total.
 
@@ -463,8 +455,6 @@ Unlike:
 - Medallion Fund (39% annually but closed to mere mortals)
 
 [VICTORY Incentive Alignment Bonds](https://iab.warondisease.org) offer perpetual returns. Those returns transform into generational wealth while you sleep.
-
-![VICTORY Bonds: 272 percent annual returns forever. Venture Capital: maybe. Real Estate: depends. Medallion Fund: no you can't invest. Investors chose uncertainty.](/assets/images/victory-bonds/victory-bonds-section-this-isn-t-complicated-math-bw-academic.jpg)
 
 The perpetual nature isn't a bug. It's the entire point. As long as humans prefer being alive to being dead, the treaty exists. As long as the treaty exists, you get paid.
 
@@ -577,8 +567,6 @@ Score decay. Vote to reverse funding and your Public Good Score tanks. The same 
 #### "What happens when this fails and I lose my billion dollars?"
 
 "If the treaty fails completely, you lose your {{< var treaty_campaign_total_cost >}}. It gets spent on the campaign. Convincing humans to click buttons. Bribing lobbyists. Building platforms. Paying lawyers to make bribery legal.
-
-![Put in one billion dollars. Either get back 2.72 billion dollars, or get nothing and humanity continues destroying itself. No middle ground.](/assets/images/victory-bonds/victory-bonds-section-what-happens-when-this-fails-and-i-lose-my-billion-dollars-bw-academic.jpg)
 
 This is the primary risk. You're funding a political campaign with a {{< var victory_bond_annual_return_pct >}} payout if it wins.
 
