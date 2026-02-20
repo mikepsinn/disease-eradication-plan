@@ -111,7 +111,7 @@ For the complete analysis including the 1883-1962 timeline, thalidomide case stu
 
 | Metric | Pre-1962 (1883-1962) | Post-1962 (1962-Present) | Change |
 |--------|---------------------|-------------------------|--------|
-| **Efficacy Testing** | {{< var pre_1962_physician_count >}} independent physicians | Drug company-run trials | -99.8% independence |
+| **Efficacy Testing** | {{< var pre_1962_physician_count >}} | Drug company-run trials | -99.8% independence |
 | **Cost per Drug** | {{< var pre_1962_drug_development_cost_2024_usd >}} | {{< var pharma_drug_development_cost_current >}} | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase |
 | **New Approvals** | 46/year (1960) [@post-1962-drug-approval-drop] | 13/year (1963) [@post-1962-drug-approval-drop] | {{< var post_1962_drug_approval_reduction_pct >}} decline |
 | **Life Expectancy Growth** | 3.82 years/decade [@life-expectancy-increase-pre-1962] | 1.54 years/decade [@post-1962-life-expectancy-slowdown] | 60% reduction [@post-1962-life-expectancy-slowdown] |
