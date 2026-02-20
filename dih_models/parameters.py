@@ -2285,7 +2285,7 @@ DFDA_ANNUAL_TRIAL_FUNDING = Parameter(
     21_800_000_000,
     source_type="definition",
     distribution="fixed",
-    description="Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from treaty reallocation, philanthropy, or government appropriation.",
+    description="Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.",
     display_name="dFDA Annual Trial Funding",
     unit="USD/year",
     keywords=["funding", "annual", "trials", "dfda", "pragmatic trials"],
@@ -6866,10 +6866,9 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
 )  # Expected cost per DALY at 1% probability (still better than bed nets)
 
 # ---
-# DIRECT FUNDING SCENARIO (Alternative to Treaty Campaign)
+# DIRECT FUNDING SCENARIO
 # ---
-# What if philanthropists/governments directly funded $21.76B/year instead of
-# spending $1B on a treaty campaign? This shows the cost-effectiveness trade-off.
+# Cost-effectiveness of directly funding ~$21.8B/year in pragmatic clinical trials.
 
 # NPV of direct funding for therapeutic space exploration period
 DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
@@ -6877,7 +6876,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
     source_type="calculated",  # NPV calculation from funding, discount rate, and time horizon
-    description="NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year therapeutic space exploration period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until the therapeutic space is fully explored. Funding period is exploration time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After exploration completes, the timeline shift benefit (200B DALYs) is fully realized.",
+    description="NPV of ~$21.8B/year in direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
     display_name="dFDA Direct Funding NPV (Exploration Period)",
     unit="USD",
     formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = exploration time",
@@ -6888,13 +6887,13 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
         / ctx["NPV_DISCOUNT_RATE_STANDARD"],
     latex_symbol=r"NPV_{direct}",  # LaTeX symbol for equations
     latex=r"NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}",  # PV of annuity formula
-)  # ~$541.9B NPV (vs $1B treaty campaign)
+)  # ~$541.9B NPV
 
 # Cost per DALY for direct funding scenario
 DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
     source_type="calculated",  # Derived from NPV and DALYs
-    description=f"Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (therapeutic space exploration period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
+    description=f"Cost per DALY at ~$21.8B/year direct funding for the therapeutic space exploration period (NPV: ~$541.9B). Still highly cost-effective vs bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
     display_name="dFDA Direct Funding Cost per DALY",
     unit="USD/DALY",
     formula="NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",    confidence="medium",
@@ -6902,16 +6901,13 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     inputs=["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
     latex_symbol=r"Cost_{direct,DALY}",  # LaTeX symbol for equations
-)  # ~$0.98/DALY (still excellent, but 542× worse than treaty campaign)
+)  # ~$0.98/DALY
 
-# Direct funding ROI (mirrors TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)
-# What if philanthropists/governments directly funded medical research instead of treaty campaign?
+# Direct funding ROI
 DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV,
     source_type="calculated",
-    description="ROI from direct philanthropic/government funding of medical research (vs treaty campaign). "
-                "Same benefits as treaty but costs $541.9B NPV instead of $1B campaign. "
-                "Still excellent ROI, but treaty campaign achieves 542× better leverage.",
+    description="ROI from directly funding ~$21.8B/year in pragmatic clinical trials over the therapeutic space exploration period (NPV: ~$541.9B).",
     display_name="Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput",
     unit="ratio",
     formula="ECONOMIC_VALUE ÷ DIRECT_FUNDING_NPV",
@@ -6920,14 +6916,13 @@ DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
     latex_symbol=r"ROI_{direct,max}",  # LaTeX symbol for equations
-)  # ~152,000:1 ROI (still massive, but 542× less than treaty campaign's 82.7M:1)
+)  # ~152,000:1 ROI
 
 # Direct funding vs bed nets comparison
 DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
     BED_NETS_COST_PER_DALY / DFDA_DIRECT_FUNDING_COST_PER_DALY,
     source_type="calculated",
-    description="How many times more cost-effective direct funding is vs bed nets ($89/DALY). "
-                "Even without treaty leverage, direct funding of medical research is highly cost-effective.",
+    description="How many times more cost-effective direct funding of medical research is vs bed nets ($89/DALY).",
     display_name="Direct Funding Cost-Effectiveness vs Bed Nets",
     unit="x",
     formula="BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY",

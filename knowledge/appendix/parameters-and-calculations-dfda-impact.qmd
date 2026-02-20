@@ -282,7 +282,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~46.5 years (therapeutic space exploration period, NPV: ~$541.9B) instead of treaty campaign ($1B). Treaty achieves 542× leverage: $1B campaign unlocks government funding for 46.5 years (NPV: $541.9B), avoiding direct philanthropic commitment. Both achieve same 200B DALY timeline shift benefit. Still cost-effective vs bed nets ($89.0/DALY).
+Cost per DALY at ~$21.8B/year direct funding for the therapeutic space exploration period (NPV: ~$541.9B). Still highly cost-effective vs bed nets ($89.0/DALY).
 
 **Inputs**:
 
@@ -418,7 +418,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-NPV of direct funding ($21.76B/year for medical research after bond/IAB allocations) for the ~46.5-year therapeutic space exploration period. Alternative scenario: instead of $1B treaty campaign to unlock government funding, philanthropists/NIH directly fund clinical trials until the therapeutic space is fully explored. Funding period is exploration time (46.5 years with 9.5× trial capacity), not timeline shift amount (207 years). After exploration completes, the timeline shift benefit (200B DALYs) is fully realized.
+NPV of ~$21.8B/year in direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
 
 **Inputs**:
 
@@ -452,7 +452,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-ROI from direct philanthropic/government funding of medical research (vs treaty campaign). Same benefits as treaty but costs $541.9B NPV instead of $1B campaign. Still excellent ROI, but treaty campaign achieves 542× better leverage.
+ROI from directly funding ~$21.8B/year in pragmatic clinical trials over the therapeutic space exploration period (NPV: ~$541.9B).
 
 **Inputs**:
 
@@ -4306,7 +4306,7 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from treaty reallocation, philanthropy, or government appropriation.
+Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.
 
 #### Uncertainty Range
 

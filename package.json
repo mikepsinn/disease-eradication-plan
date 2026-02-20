@@ -73,6 +73,7 @@
     "validate:1-pct-treaty-impact": ".venv\\Scripts\\python.exe -u scripts/pdf-validation.py --pdf assets/pdfs/1-percent-treaty-impact.pdf",
     "preview:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --preview",
     "render:website": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to html",
+    "render:manual:paperback": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual-paperback",
     "render:epub": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual-paperback --to epub && .venv\\Scripts\\python.exe -u scripts/fix-epub-kindle.py assets/epubs/How-to-End-War-and-Disease.epub",
     "render:epub:validate": "java -jar tools/epubcheck-5.1.0/epubcheck.jar assets/epubs/How-to-End-War-and-Disease.epub",
     "render:docx": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to docx",
