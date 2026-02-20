@@ -126,11 +126,8 @@ Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on hea
 
 ### The Elasticity Assumption
 
-The Societal Dividend assumes that 1% less spending means 1% less war cost. That's the theoretical ceiling. Reality is messier:
-
-- Military spending might deter some wars (hard to measure).
-- The link between spending and actual conflict is complicated.
-- Some costs (like PTSD treatment) lag by years.
+The Societal Dividend assumes 1% less spending means 1% less war cost.
+Reality is messier; some costs lag by years, and military spending may deter some wars.
 
 ![Theory says less war spending means proportionally less war. Reality is messier. Turns out humans aren't very good at reducing violence incrementally.](/assets/images/peace-dividend/peace-dividend-section-causal-elasticity-assumption-bw-academic.jpg)
 
@@ -145,15 +142,9 @@ The Societal Dividend assumes that 1% less spending means 1% less war cost. That
 | Psychological Impact | PubMed meta-analysis | Medium |
 | Lost Human Capital | Author estimates | Low |
 
-### What This Does NOT Claim
-
-![The four reasons this won't work as well as pure math suggests. Reality is disappointing, but still better than the current system of organized murder.](/assets/images/peace-dividend/peace-dividend-section-what-this-does-not-claim-bw-academic.jpg)
-
-1. **Not a prediction.** The Societal Dividend is a ceiling, not a forecast.
-2. **Not modeling deterrence.** Maybe some of that spending prevents wars. Maybe.
-3. **Not claiming instant results.** Indirect costs shrink over years, not overnight.
-4. **Not claiming fake precision.** The confidence intervals are wide on purpose.
-
 ### The Safe Bet
 
-For policy decisions, use the **Captured Dividend ({{< var treaty_annual_funding >}})** as the reliable number. That's money directly sent to medical research. No assumptions about conflict dynamics needed. The Societal Dividend is the upside if things go well.
+The Societal Dividend is a ceiling, not a forecast; confidence intervals are wide on purpose.
+For policy decisions, use the **Captured Dividend ({{< var treaty_annual_funding >}})** as the reliable number.
+That's money directly sent to medical research, no assumptions about conflict dynamics needed.
+The Societal Dividend is the upside if things go well.
