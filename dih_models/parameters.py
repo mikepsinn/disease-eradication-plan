@@ -2274,6 +2274,51 @@ DFDA_ANNUAL_OPEX = Parameter(
 )  # $40M annually
 
 # ===================================================================
+# STANDALONE dFDA FUNDING CHAIN (source-agnostic)
+# ===================================================================
+# These parameters represent dFDA's assumed annual funding level WITHOUT
+# specifying the source (treaty, philanthropy, government, etc.).
+# The treaty-derived chain (DIH_TREASURY_*) is kept separately for
+# the treaty impact paper.
+
+DFDA_ANNUAL_TRIAL_FUNDING = Parameter(
+    21_800_000_000,
+    source_type="definition",
+    distribution="fixed",
+    description="Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from treaty reallocation, philanthropy, or government appropriation.",
+    display_name="dFDA Annual Trial Funding",
+    unit="USD/year",
+    keywords=["funding", "annual", "trials", "dfda", "pragmatic trials"],
+    latex_symbol=r"Funding_{dFDA,ann}",
+)  # $21.8B/year (source-agnostic)
+
+DFDA_TRIAL_SUBSIDIES_ANNUAL = Parameter(
+    DFDA_ANNUAL_TRIAL_FUNDING - DFDA_ANNUAL_OPEX,
+    source_type="calculated",
+    description="Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)",
+    display_name="dFDA Annual Trial Subsidies",
+    unit="USD/year",
+    formula="DFDA_ANNUAL_TRIAL_FUNDING - DFDA_ANNUAL_OPEX",
+    keywords=["subsidy", "trial", "patient", "funding", "dfda"],
+    inputs=["DFDA_ANNUAL_TRIAL_FUNDING", "DFDA_ANNUAL_OPEX"],
+    compute=lambda ctx: ctx["DFDA_ANNUAL_TRIAL_FUNDING"] - ctx["DFDA_ANNUAL_OPEX"],
+    latex_symbol=r"Subsidies_{dFDA,ann}",
+)  # $21.76B/year
+
+DFDA_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
+    DFDA_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+    source_type="calculated",
+    description="Number of patients fundable annually from dFDA funding at pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.",
+    display_name="dFDA Patients Fundable Annually",
+    unit="patients/year",
+    formula="DFDA_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT",
+    keywords=["patients", "fundable", "trial", "capacity", "dfda"],
+    inputs=["DFDA_TRIAL_SUBSIDIES_ANNUAL", "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    compute=lambda ctx: ctx["DFDA_TRIAL_SUBSIDIES_ANNUAL"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    latex_symbol=r"N_{fundable,dFDA}",
+)  # ~23.4M patients/year
+
+# ===================================================================
 # dFDA BENEFIT STRUCTURE (SIMPLIFIED)
 # ===================================================================
 # RECURRING ANNUAL BENEFITS (Happen every year forever):
@@ -5454,21 +5499,21 @@ TOTAL_RESEARCH_FUNDING_WITH_TREATY = Parameter(
 )
 
 # Trial Capacity Multiplier (Simple Economic Calculation)
-# DIH funding can support 48.8M patients/year at RECOVERY trial cost ($500/patient)
+# dFDA funding can support ~23.4M patients/year at pragmatic trial cost ($929/patient)
 # Current global trial capacity: 1.9M patients/year (IQVIA 2022)
-# Capacity Multiplier = DIH capacity / Current capacity
+# Capacity Multiplier = dFDA capacity / Current capacity
 DFDA_TRIAL_CAPACITY_MULTIPLIER = Parameter(
-    DIH_PATIENTS_FUNDABLE_ANNUALLY / CURRENT_TRIAL_SLOTS_AVAILABLE,
+    DFDA_PATIENTS_FUNDABLE_ANNUALLY / CURRENT_TRIAL_SLOTS_AVAILABLE,
     source_type="calculated",
-    description="Trial capacity multiplier from DIH funding capacity vs. current global trial participation",
+    description="Trial capacity multiplier from dFDA funding capacity vs. current global trial participation",
     display_name="Trial Capacity Multiplier",
     unit="x",
-    formula="DIH_PATIENTS_FUNDABLE ÷ CURRENT_TRIAL_SLOTS",
+    formula="DFDA_PATIENTS_FUNDABLE_ANNUALLY ÷ CURRENT_TRIAL_SLOTS",
     keywords=["pragmatic trials", "real world evidence", "economic impact", "fiscal multiplier", "gdp multiplier", "multiplier effect", "multiple"],
-    inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'DIH_PATIENTS_FUNDABLE_ANNUALLY'],
-    compute=lambda ctx: ctx["DIH_PATIENTS_FUNDABLE_ANNUALLY"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_PATIENTS_FUNDABLE_ANNUALLY'],
+    compute=lambda ctx: ctx["DFDA_PATIENTS_FUNDABLE_ANNUALLY"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
     latex_symbol=r"k_{capacity}",  # LaTeX symbol for equations
-)  # Trial capacity multiplier from simple funding economics (DIH patients fundable / current trial slots)
+)  # Trial capacity multiplier from simple funding economics (dFDA patients fundable / current trial slots)
 
 TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
     float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * 20,
@@ -6828,7 +6873,7 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
 
 # NPV of direct funding for therapeutic space exploration period
 DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
-    DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL
+    DFDA_ANNUAL_TRIAL_FUNDING
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
     source_type="calculated",  # NPV calculation from funding, discount rate, and time horizon
@@ -6837,8 +6882,8 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     unit="USD",
     formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = exploration time",
     keywords=["philanthropy", "direct funding", "alternative", "npv", "exploration"],
-    inputs=['DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_QUEUE_CLEARANCE_YEARS'],
-    compute=lambda ctx: ctx["DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL"]
+    inputs=['DFDA_ANNUAL_TRIAL_FUNDING', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_QUEUE_CLEARANCE_YEARS'],
+    compute=lambda ctx: ctx["DFDA_ANNUAL_TRIAL_FUNDING"]
         * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
         / ctx["NPV_DISCOUNT_RATE_STANDARD"],
     latex_symbol=r"NPV_{direct}",  # LaTeX symbol for equations

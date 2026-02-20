@@ -20,14 +20,14 @@ display_name = "Decentralized Framework for Drug Assessment Maximum Trials per Y
 
 # Baseline and units
 
-baseline = 40607.33102940343
+baseline = 40682.114327800125
 
 # Tornado data from sensitivity analysis
 
 drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'CURRENT_TRIALS_PER_YEAR', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
 driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Annual Global Clinical Trial Participants', 'Current Global Clinical Trials per Year', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
-impacts_low = [348302.0558398315, 10828.62160784092, -8121.466205880686, 9.347912299585005, 5.608747379759734, 5.608747379759734, 3.7391649198398227, 1.8695824599199113]
-impacts_high = [-28032.594187298168, -7062.144526852768, 8121.466205880686, -13.087077219417552, -9.347912299585005, -7.4783298396650935, -5.608747379745182, -1.8695824599199113]
+impacts_low = [348943.49608999694, 10848.563820746698, -8136.422865560024, 9.347912299585005, 5.608747379752458, 5.608747379752458, 3.7391649198325467, 1.8695824599199113]
+impacts_high = [-28084.21959095802, -7075.1503178782805, 8136.422865560024, -13.087077219417552, -9.347912299585005, -7.4783298396650935, -5.608747379759734, -1.8695824599199113]
 
 # Convert deltas to absolute values (baseline + delta)
 

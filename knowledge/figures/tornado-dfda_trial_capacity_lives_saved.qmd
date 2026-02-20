@@ -20,14 +20,14 @@ display_name = "Lives Saved from Trial Capacity Increase"
 
 # Baseline and units
 
-baseline = 10327985873.295258
+baseline = 10329665205.028845
 
 # Tornado data from sensitivity analysis
 
 drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_DISEASE_DEATHS_DAILY', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
 driver_labels = ['Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally', 'dFDA Pragmatic Trial Cost per Patient', 'Global Daily Deaths from Disease and Aging', 'Annual Global Clinical Trial Participants', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
-impacts_low = [9036987639.13335, -1475426553.3278942, 818168974.4626694, -516399293.6647644, 192327676.43618965, 210254.65202903748, 126164.40589141846, 126164.40589141846, 84113.47602081299, 42058.67423439026]
-impacts_high = [-5163992936.647629, 4426279659.983683, -2036572050.6156158, 516399293.6647606, -192327676.43618965, -294519.1931800842, -210351.47664642334, -168273.432138443, -126199.26275444031, -42062.5472202301]
+impacts_low = [9038457054.40024, -1475666457.8612614, 816664987.3772621, -516483260.25144196, 191974132.91333008, 209482.45608520508, 125701.02440071106, 125701.02440071106, 83804.53371429443, 41904.19242477417]
+impacts_high = [-5164832602.514422, 4426999373.583792, -2032828351.9931583, 516483260.25144386, -191974132.91332817, -293437.2233428955, -209578.74772262573, -167655.29166030884, -125735.68938827515, -41908.04408836365]
 
 # Convert deltas to absolute values (baseline + delta)
 

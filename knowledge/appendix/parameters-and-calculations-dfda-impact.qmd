@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 122 parameters used in the analysis, organized by type:
+This appendix documents all 115 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 41
-- Calculated values: 57
-- Core definitions: 24
+- External sources (peer-reviewed): 40
+- Calculated values: 53
+- Core definitions: 22
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (57 parameters) • [External Data Sources](#sec-external) (41 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
+[Calculated Values](#sec-calculated) (53 parameters) • [External Data Sources](#sec-external) (40 parameters) • [Core Definitions](#sec-definitions) (22 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -278,7 +278,7 @@ $$
 
 :::
 
-### dFDA Direct Funding Cost per DALY: $0.841 {#sec-dfda_direct_funding_cost_per_daly}
+### dFDA Direct Funding Cost per DALY: $0.842 {#sec-dfda_direct_funding_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -286,56 +286,20 @@ Cost per DALY if philanthropists/governments directly funded $21.76B/year for ~4
 
 **Inputs**:
 
-- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $475B
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476B
 - [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
 
 $$
 \begin{gathered}
 Cost_{direct,DALY} \\
 = \frac{NPV_{direct}}{DALYs_{max}} \\
-= \frac{\$475B}{565B} \\
-= \$0.841
+= \frac{\$476B}{565B} \\
+= \$0.842
 \end{gathered}
 $$
 where:
 $$
 NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
 $$
 where:
 $$
@@ -368,7 +332,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -376,19 +340,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -450,7 +414,7 @@ $$
 
 :::
 
-### dFDA Direct Funding NPV (Exploration Period): $475B {#sec-dfda_direct_funding_queue_clearance_npv}
+### dFDA Direct Funding NPV (Exploration Period): $476B {#sec-dfda_direct_funding_queue_clearance_npv}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -458,7 +422,7 @@ NPV of direct funding ($21.76B/year for medical research after bond/IAB allocati
 
 **Inputs**:
 
-- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.8B
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [dFDA Therapeutic Space Exploration Time](#sec-dfda_queue_clearance_years) 🔢: 36 years
 
@@ -493,13 +457,13 @@ ROI from direct philanthropic/government funding of medical research (vs treaty 
 **Inputs**:
 
 - [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
-- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $475B
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476B
 
 $$
 \begin{gathered}
 ROI_{direct,max} \\
 = \frac{Value_{max}}{NPV_{direct}} \\
-= \frac{\$84800T}{\$475B} \\
+= \frac{\$84800T}{\$476B} \\
 = 178{,}000
 \end{gathered}
 $$
@@ -565,7 +529,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -573,19 +537,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -596,42 +560,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 where:
@@ -947,7 +875,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -955,19 +883,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -978,42 +906,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *? Low confidence*
@@ -1416,6 +1308,62 @@ $$
 
 :::
 
+### dFDA Patients Fundable Annually: 23.4 million patients/year {#sec-dfda_patients_fundable_annually}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of patients fundable annually from dFDA funding at pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.
+
+**Inputs**:
+
+- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8B
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_patients_fundable_annually.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_patients_fundable_annually.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_patients_fundable_annually.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_patients_fundable_annually.qmd >}}
+
+:::
+
 ### dFDA Therapeutic Space Exploration Time: 36 years {#sec-dfda_queue_clearance_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1457,7 +1405,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1465,19 +1413,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -1488,42 +1436,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *? Low confidence*
@@ -1660,17 +1572,17 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial capacity multiplier from DIH funding capacity vs. current global trial participation
+Trial capacity multiplier from dFDA funding capacity vs. current global trial participation
 
 **Inputs**:
 
 - [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
-- [Patients Fundable Annually](#sec-dih_patients_fundable_annually) 🔢: 23.4 million patients/year
+- [dFDA Patients Fundable Annually](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1678,19 +1590,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -1701,42 +1613,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *✓ High confidence*
@@ -1821,7 +1697,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1829,19 +1705,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -1852,42 +1728,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *? Low confidence*
@@ -1980,7 +1820,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -1988,19 +1828,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -2011,42 +1851,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *? Low confidence*
@@ -2130,7 +1934,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -2138,19 +1942,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -2161,42 +1965,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *? Low confidence*
@@ -2289,7 +2057,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -2297,19 +2065,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -2320,42 +2088,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *? Low confidence*
@@ -2430,7 +2162,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -2438,19 +2170,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -2461,42 +2193,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *? Low confidence*
@@ -2567,7 +2263,7 @@ where:
 $$
 \begin{gathered}
 k_{capacity} \\
-= \frac{N_{fundable,ann}}{Slots_{curr}} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
 = \frac{23.4M}{1.9M} \\
 = 12.3
 \end{gathered}
@@ -2575,19 +2271,19 @@ $$
 where:
 $$
 \begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
 = 23.4M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -2598,42 +2294,6 @@ OPEX_{dFDA} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
 \end{gathered}
 $$
 *? Low confidence*
@@ -2730,166 +2390,23 @@ $$
 
 :::
 
-### Patients Fundable Annually: 23.4 million patients/year {#sec-dih_patients_fundable_annually}
+### dFDA Annual Trial Subsidies: $21.8B {#sec-dfda_trial_subsidies_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
+Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)
 
 **Inputs**:
 
-- [Annual Clinical Trial Patient Subsidies](#sec-dih_treasury_trial_subsidies_annual) 🔢: $21.7B
-- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
-
-$$
-\begin{gathered}
-N_{fundable,ann} \\
-= \frac{Subsidies_{trial,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.7B}{\$929} \\
-= 23.4M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.7B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dih_patients_fundable_annually.qmd >}}
-
-{{< include ../figures/sensitivity-table-dih_patients_fundable_annually.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dih_patients_fundable_annually.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dih_patients_fundable_annually.qmd >}}
-
-:::
-
-### Annual Funding for Pragmatic Clinical Trials: $21.8B {#sec-dih_treasury_to_medical_research_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual funding for pragmatic clinical trials (treaty funding minus VICTORY Incentive Alignment Bond payouts and IAB political incentive mechanism)
-
-**Inputs**:
-
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
-- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout) 🔢: $2.72B
-- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72B
-
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-*✓ High confidence*
-
-:::
-
-### Annual Clinical Trial Patient Subsidies: $21.7B {#sec-dih_treasury_trial_subsidies_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual clinical trial patient subsidies (all medical research funds after Decentralized Framework for Drug Assessment operations)
-
-**Inputs**:
-
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
 - [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
-- [Annual Funding for Pragmatic Clinical Trials](#sec-dih_treasury_to_medical_research_annual) 🔢: $21.8B
 
 $$
 \begin{gathered}
-Subsidies_{trial,ann} \\
-= Treasury_{RD,ann} - OPEX_{dFDA} \\
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
 = \$21.8B - \$40M \\
-= \$21.7B
+= \$21.8B
 \end{gathered}
 $$
 where:
@@ -2902,57 +2419,21 @@ OPEX_{dFDA} \\
 = \$40M
 \end{gathered}
 $$
-where:
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
 *✓ High confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-dih_treasury_trial_subsidies_annual.qmd >}}
+{{< include ../figures/tornado-dfda_trial_subsidies_annual.qmd >}}
 
-{{< include ../figures/sensitivity-table-dih_treasury_trial_subsidies_annual.qmd >}}
+{{< include ../figures/sensitivity-table-dfda_trial_subsidies_annual.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-dih_treasury_trial_subsidies_annual.qmd >}}
+{{< include ../figures/mc-distribution-dfda_trial_subsidies_annual.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-dih_treasury_trial_subsidies_annual.qmd >}}
+{{< include ../figures/exceedance-dfda_trial_subsidies_annual.qmd >}}
 
 :::
 
@@ -3106,38 +2587,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-exploration_ratio.qmd >}}
-
-:::
-
-### Annual IAB Political Incentive Funding: $2.72B {#sec-iab_political_incentive_funding_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
-
-**Inputs**:
-
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
-- [IAB Political Incentive Funding Percentage](#sec-iab_political_incentive_funding_pct): 10%
-
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-*✓ High confidence*
 
 :::
 
@@ -3708,30 +3157,6 @@ $$
 
 :::
 
-### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2B {#sec-treaty_annual_funding}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual funding from 1% of global military spending redirected to DIH
-
-**Inputs**:
-
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
-- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
-
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-:::
-
 ### Ratio of Type II Error Cost to Type I Error Benefit: 3.07k:1 {#sec-type_ii_error_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3996,38 +3421,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-unexplored_ratio.qmd >}}
-
-:::
-
-### Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)
-
-**Inputs**:
-
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
-- [Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds](#sec-victory_bond_funding_pct): 10%
-
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-*✓ High confidence*
 
 :::
 
@@ -4360,22 +3753,6 @@ Global life expectancy (2024)
 {{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
-
-:::
-
-### Global Military Spending in 2024: $2.72T {#sec-global_military_spending_annual_2024}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Global military spending in 2024
-
-**Source**: [@global-military-spending]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
 
 :::
 
@@ -4909,6 +4286,20 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 :::
 
+### dFDA Annual Trial Funding: $21.8B {#sec-dfda_annual_trial_funding}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from treaty reallocation, philanthropy, or government appropriation.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### Decentralized Framework for Drug Assessment Core framework Annual OPEX: $18.9M {#sec-dfda_npv_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5171,20 +4562,6 @@ Percentage of deaths that are eventually avoidable with sufficient biomedical re
 
 :::
 
-### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
 ### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5289,20 +4666,6 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 :::
 
-### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-1% reduction in military spending/war costs from treaty
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
 ### Trial-Relevant Diseases: 1.00 thousand diseases {#sec-trial_relevant_diseases_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5320,20 +4683,6 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 #### Input Distribution
 
 {{< include ../figures/distribution-trial_relevant_diseases_count.qmd >}}
-
-*Core definition*
-
-:::
-
-### Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
 
 *Core definition*
 

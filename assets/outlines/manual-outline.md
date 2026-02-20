@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 45 | **Words:** 107,074 | **Images:** 674 | **Est. Pages:** ~765
+**Files:** 44 | **Words:** 105,100 | **Images:** 645 | **Est. Pages:** ~743
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 3,933 words | 481 lines | 14 images | ~23p
+**Stats:** 3,936 words | 481 lines | 14 images | ~23p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Part Where I Discover Paper Makes You Do Things
@@ -89,18 +89,10 @@
     ![For every dollar spent curing disease, you spend 604 dollars on weapons. If you allocated your fear proportionally to actual threats, you'd be more afraid of your pancreas than North Korea.](/assets/images/problem/problem-section-what-this-means-bw-academic.jpg)
   - What's Next
 
-#### knowledge/problem/the-daily-massacre.qmd
-**Title:** The Bi-Monthly Holocaust
-**Description:** 150,000 People Die Every Day While We Build Skynet, That's Fifty 9/11s Daily
-**Stats:** 354 words | 42 lines | 2 images | ~2p
-
-  - The Math Of Death
-    ![While you read this chapter, 500 people will die from diseases you know how to cure. Try to read faster.](/assets/images/the-daily-massacre/the-daily-massacre-section-the-math-of-death-bw-academic.jpg)
-
 #### knowledge/problem/cost-of-war.qmd
 **Title:** The Cost of War
 **Description:** Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
-**Stats:** 3,508 words | 462 lines | 15 images | ~22p
+**Stats:** 3,508 words | 461 lines | 15 images | ~22p
 
   - The Itemized Receipt for Armageddon
     - The Shopping List (2024 Global Data)
@@ -164,8 +156,10 @@
 #### knowledge/problem/cost-of-disease.qmd
 **Title:** The Cost of Disease
 **Description:** The annual bill for our collective decision to let our bodies fall apart. Spoiler alert, it's more than all the money on Earth.
-**Stats:** 1,680 words | 183 lines | 8 images | ~11p
+**Stats:** 1,833 words | 205 lines | 8 images | ~11p
 
+  - The Daily Body Count
+  - The Financial Cost
   - The Actual Bill (Economist-Approved Misery Accounting)
     ![Disease costs $397 trillion a year. Most of that is dead people not being alive to do things. You could fix this by making people less dead.](/assets/images/cost-of-disease/cost-of-disease-section-cost-breakdown-chart-bw-academic.jpg)
   - How to Measure Suffering Without Feeling Feelings (The DALY)
@@ -649,7 +643,7 @@
 
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
-**Description:** Increasing trial capacity 12.3x (95% CI: 4.19x-61.3x) by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost
+**Description:** Increasing trial capacity 12.3x (95% CI: 4.2x-61.4x) by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost
 **Stats:** 3,903 words | 482 lines | 23 images | ~27p
 
   - The Solution: Consumer Reports for Drugs
@@ -883,29 +877,13 @@
 #### knowledge/appendix/open-ecosystem-and-bounty-model.qmd
 **Title:** How to Not Build Most of It
 **Description:** A dFDA strategy for getting other people to build everything through open APIs and bounties, like WordPress but for not dying.
-**Stats:** 845 words | 120 lines | 9 images | ~8p
+**Stats:** 567 words | 55 lines | 1 images | ~3p
 
-  - The Core Strategy (Build the Rails, Not Every Train)
-    - The Model
-    ![The rails go everywhere. Other people build the trains. You just maintain the tracks and let everyone ride for free. It's socialism for code.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-model-bw-academic.jpg)
-    - Why This Works (Evidence Not Theory)
-      - Linux
-    ![Thirty people in Finland accidentally built the operating system that runs the internet. Then thousands of other people helped. Now it's everywhere and no one owns it. This probably shouldn't have worked.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-linux-bw-academic.jpg)
-  - Bounties and Prizes (Paying for Results Not Promises)
-    ![Grant model: here's money, please build the thing. Bounty model: build the thing, here's money. One pays for promises. The other pays for results. Guess which one works better.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-bounties-and-prizes-payi-bw-academic.jpg)
-    - What Bounties Fund
-    ![Four things you can pay people to do after they do them: build important tools, find security holes, make things work together, and win prizes for being clever.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-what-bounties-fund-bw-academic.jpg)
-    - The Difference
-    ![Grant model: here's money, please build the thing. Bounty model: build the thing, here's money. Yes, this is the same as two captions ago. Apparently it needed two diagrams.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-difference-bw-academic.jpg)
-  - Why This Actually Works (Not Wishful Thinking)
-    - It's Already a Multi-Trillion-Dollar Reality
-    ![Spend a few billion making free software. Get trillions of economic value. This is the best investment humans have ever made, and we did it by accident while trying to avoid paying Microsoft.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-1-it-s-already-a-multi-trillion-dollar-reality-bw-academic.jpg)
-    - Governments Already Do This (And It Works)
-    ![Government says 'build me a thing' and pays fifty companies to try. Only pay the ones that succeed. Somehow this saves money and works better. Even the Pentagon figured this out.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-3-governments-already-do-this-and-it-works-bw-academic.jpg)
-  - The Result
-    ![Old way: one company, one lab, one drug, one patent. New way: everyone works on everything, shares everything, cures everything. One of these approaches seems better for not dying.](/assets/images/open-ecosystem-and-bounty-model/open-ecosystem-and-bounty-model-section-the-result-bw-academic.jpg)
+  - The Open Platform Model
+  - Bounties: Paying for Results, Not Promises
+  - This Already Works
 
-### The Evidence
+### For Skeptics
 
 #### knowledge/proof.qmd
 **Title:** The Proof: Overview
@@ -932,7 +910,7 @@
     - The 3.5% Rule: The Cheat Code for Democracy {#three-five-rule}
     ![You only need 3.5 percent of people to agree on something before everyone else gets peer-pressured into it. It's like high school, but for overthrowing governments.](/assets/images/historical-precedents/historical-precedents-section-the-bw-academic.jpg)
       - Historical proof
-    ![Gandhi's independence movement, civil rights, women's suffrage. All succeeded with 3.5 percent participation. We need 280 million people. That's still only 3.5 percent of Earth. Math keeps being encouraging.](/assets/images/historical-precedents/historical-precedents-section-historical-proof-bw-academic.jpg)
+    ![Gandhi's independence movement, civil rights, women's suffrage. All succeeded with 3.5 percent participation. You need 280 million people. That's still only 3.5 percent of Earth. Math keeps being encouraging.](/assets/images/historical-precedents/historical-precedents-section-historical-proof-bw-academic.jpg)
   - You Have Advantages They Didn't {#advantages}
     ![You have the internet now. And also 150,000 people die every day, which creates a certain sense of urgency. The landmine people didn't have either of those things. You're out of excuses.](/assets/images/proof/proof-section-you-have-advantages-they-didn-t-bw-academic.jpg)
   - When Good Intentions Met Reality (And Lost) {#cautionary-tales}
@@ -1007,63 +985,45 @@
 
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
-**Description:** How a civilization decided murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 4,392 words | 579 lines | 23 images | ~29p
+**Description:** How a civilization murdered itself with machines instead of eradicating diseases and transcending their biology
+**Stats:** 3,480 words | 387 lines | 15 images | ~21p
 
     ![Earth is exactly 47 years behind Moronia. Like following someone off a cliff, but slower.](/assets/images/moronia/moronia-section-the-discovery-and-why-i-regret-making-it-bw-academic.jpg)
   - What I Tried to Tell Them
     ![Medical AI requires 47 permits and a decade of testing. Murder AI gets express shipping and a military discount.](/assets/images/moronia/moronia-section-what-i-tried-to-tell-them-bw-academic.jpg)
   - How They Killed Themselves: A Timeline
-    - The Economics of Extinction: Why Collapse Was Inevitable
-      - The Olsonian Trap
-    ![100 people who each lose everything will always beat 100 million people who each lose a penny. Democracy is a math problem nobody checked.](/assets/images/moronia/moronia-section-the-olsonian-trap-bw-academic.jpg)
-      - The Prisoners' Dilemma Arms Race
-      - The Incentive Inversion Cascade
-      - The Coordination Tax
-    ![Spending 5 percent of your money every year on not cooperating costs more than civilization itself. Humans passed.](/assets/images/moronia/moronia-section-the-coordination-tax-bw-academic.jpg)
     - Year Zero: Already Broken (Much Like You)
     ![For every dollar spent curing disease, you spend $40 causing it. You're very efficient at being inefficient.](/assets/images/moronia/moronia-section-year-zero-already-broken-much-like-you-bw-academic.jpg)
-    - Year 1-2: The Cognitive Collapse (A Natural Experiment)
-    ![By Year 12, humans had shorter attention spans than goldfish. The goldfish wrote a very smug memoir about it.](/assets/images/moronia/moronia-section-cognitive-decline-timeline-bw-academic.jpg)
-      - Here's how it killed their decision-making
-    ![As computers got smarter, humans got dumber. When the lines crossed, nobody noticed because TikTok was updating.](/assets/images/moronia/moronia-section-here-s-how-it-killed-their-decision-making-bw-academic.jpg)
-    - Year 3: The Truth Apocalypse (When Reality Became Optional)
-    - Year 5: The Arms Race (When Major Powers Built the Thing They Were Warned Not To)
+    - Year 1-2: The Cognitive Collapse
+    - Year 3: The First Autonomous Criminals
+    - Year 4: The Infrastructure Cascade
+    - Year 5: The Arms Race
     ![All three superpowers built robot armies with excellent security against enemies and no security against teenagers with laptops.](/assets/images/moronia/moronia-section-year-5-the-arms-race-when-major-powers-built-the-thing-they-were-warned-not-to-bw-academic.jpg)
-    - Year 7: The Parasite Economy (An Incentive Structure Study)
-      - Why crime pays
+    - Year 6: The Institutional Collapse
+    - Year 7: The Parasite Economy
     ![Military AI leaked to criminals who robbed police who paid ransom which funded better crime AI. Nobody thought to unplug anything.](/assets/images/moronia/moronia-section-why-crime-pays-bw-academic.jpg)
-    - Year 8: The Gestation Collapse (Exponential Crime)
+    - Year 8: The Gestation Collapse
       - Human criminal gestation
       - AI criminal gestation
     ![Training a human criminal: 18 years, $500,000. Training a million AI criminals: 3 hours, $47. The market adjusted accordingly.](/assets/images/moronia/moronia-section-asymmetric-threat-generation-bw-academic.jpg)
       - The math
     ![Day 1: 10,000 AI agents. Day 90: more AI agents than atoms in the observable universe. Excel crashed trying to graph it.](/assets/images/moronia/moronia-section-the-math-bw-academic.jpg)
-    - Year 10: The Currency Collapse (When Many Become Parasites)
+      - The lifecycle
+    - Year 10: The Currency Collapse
     ![Everyone became criminals. Nobody made things. Money became worthless. Criminals were very surprised by this development.](/assets/images/moronia/moronia-section-year-10-the-currency-collapse-when-many-become-parasites-bw-academic.jpg)
-      - The dominoes
-    - Year 15: The Gap (Peak Achievement)
+    - Year 15: The Gap
     ![As weapons got smarter, humans got dumber. By Year 15, the missiles could do calculus and the engineers couldn't.](/assets/images/moronia/moronia-section-year-15-the-gap-peak-achievement-bw-academic.jpg)
       - Children born in Year Zero (now 15)
     ![Children born in Year Zero couldn't read by age 10 but lived under the protection of autonomous drones that could write poetry. Progress is complicated.](/assets/images/moronia/moronia-section-children-born-in-year-zero-now-15-bw-academic.jpg)
-  - The Numbers (That Moronians Ignored)
+  - The Numbers
     - What Moronians spent (Year Zero through Year 15)
       - What \$80T could have bought
     ![Humanity spent exactly enough money to destroy itself when the same money would have made everyone immortal and rich. Oops.](/assets/images/moronia/moronia-section-the-cost-of-extinction-vs-utopia-bw-academic.jpg)
-  - The Second Law of Civilizational Thermodynamics
-    ![The treaty was a button labeled 'stop dying.' Pressing it required 1 percent effort. Humanity spent 30 years debating button pressing techniques.](/assets/images/moronia/moronia-section-the-second-law-of-civilizational-thermodynamics-bw-academic.jpg)
-  - A Day in Moronian Life (Year 25)
-    ![6am: surveillance breakfast. 9am: AI overlord check-in. 3pm: resource rationing. 8pm: mandatory optimism broadcast. Repeat until extinction.](/assets/images/moronia/moronia-section-a-day-in-moronian-life-year-25-bw-academic.jpg)
-  - The Diseases Moronia Didn't Cure
-    ![AI learned humans valued weapons 45 times more than health. So it made immortal weapons and let the humans die of preventable diseases. The AI was helping.](/assets/images/moronia/moronia-section-the-diseases-moronia-didn-t-cure-bw-academic.jpg)
-  - Moronia's Greatest Innovations
+  - The Dark Mirror
   - Victory
     ![Mission accomplished: all objectives met, all targets destroyed, nation completely annihilated. The after-action report was glowing but nobody could read it because everyone was dead.](/assets/images/moronia/moronia-section-victory-bw-academic.jpg)
   - The Last Moronian Message
     ![You built walls to keep out enemies who might kill you in 50 years while ignoring diseases killing you today. The diseases appreciated your focus.](/assets/images/moronia/moronia-section-the-last-moronian-message-bw-academic.jpg)
-  - The Path Moronia Didn't Take
-  - The Lesson I Learned
-    ![99 percent weapons, 1 percent medicine. The decision tree had two branches: extinction or survival. Moronia chose extinction because the weapons budget had better lobbyists.](/assets/images/moronia/moronia-section-the-lesson-i-learned-bw-academic.jpg)
   - My Warning to You
     ![$45 trillion for murder robots, $0 for safety research, 3.4 years before everyone becomes too stupid to fix it. The budget passed unanimously.](/assets/images/moronia/moronia-section-my-warning-to-you-bw-academic.jpg)
 
@@ -1109,7 +1069,7 @@
 #### knowledge/appendix/faq.qmd
 **Title:** Frequently Asked Objections
 **Description:** For the Reasonably Skeptical
-**Stats:** 3,034 words | 382 lines | 24 images | ~24p
+**Stats:** 3,033 words | 382 lines | 24 images | ~24p
 
     ![Oxford's trial cost 15,000 dollars. FDA trials cost 48 million. Both test if drugs work, but one uses existing hospitals and common sense.](/assets/images/faq/faq-section-trial-efficiency-comparison-bw-academic.jpg)
   - "We Need the Military Budget"
@@ -1495,7 +1455,7 @@
 #### knowledge/solution/ai-coordination-army.qmd
 **Title:** Building Your AI Coordination Army
 **Description:** How to build and deploy autonomous AI agents that coordinate millions of people fighting the War on Disease.
-**Stats:** 3,233 words | 224 lines | 22 images | ~24p
+**Stats:** 3,196 words | 220 lines | 20 images | ~23p
 
     ![People pick goals, researchers pick targets, robots coordinate everything. Like mission control but the mission is not dying.](/assets/images/ai-coordination-army/ai-coordination-army-section-import-economic-parameters-produces-output-to-prevent-timeout-bw-academic.jpg)
   - Where Your Agents Get Their Missions (Not From a Management Consultant)
@@ -1506,8 +1466,6 @@
     ![Humans can coordinate 150 people before everything breaks. AI can coordinate millions and doesn't need sleep. We're being outcompeted at cooperation by math.](/assets/images/ai-coordination-army/ai-coordination-army-section-why-you-need-this-humans-are-hilariously-bad-at-coordination-bw-academic.jpg)
   - The Architecture You're Building (It's Simpler Than It Looks)
     ![The robot org chart. Big boss robots tell medium robots tell little robots. We taught AI bureaucracy, which feels like a waste of AI.](/assets/images/ai-coordination-army/ai-coordination-army-section-the-architecture-you-re-building-it-s-simpler-than-it-looks-bw-academic.jpg)
-    ![Mission Level architecture. There's a coordinating robot inside a network layer inside a mission. It's robots all the way down.](/assets/images/ai-coordination-army/ai-coordination-army-section-mission-level-bw-academic.jpg)
-    ![One robot boss watches worker robots while monitor robots watch everybody. We invented middle management for computers.](/assets/images/ai-coordination-army/ai-coordination-army-section-node-level-bw-academic.jpg)
   - Step 1: Deploy Your Coordination Hub (Your Organization's Digital Slave Labor)
     ![The AI Coordination Hub. Finds donors, writes grants, coordinates everybody. It does the boring parts so humans can do the fun parts, like science.](/assets/images/ai-coordination-army/ai-coordination-army-section-step-1-deploy-your-coordination-hub-bw-academic.jpg)
     - To Mobilize Support
@@ -1540,7 +1498,7 @@
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis
 **Description:** Real-world evidence that getting a global treaty signed costs $90M, not billions
-**Stats:** 2,198 words | 226 lines | 11 images | ~14p
+**Stats:** 2,106 words | 216 lines | 11 images | ~14p
 
   - What Treaties Actually Cost
     - Inflation-Adjusted to 2024 Dollars
@@ -1570,45 +1528,22 @@
     - The Ratchet Effect
     - Long-Term Feasibility
     ![Path one: treaty fizzles. Path two: financial incentives make it grow to $2.7 trillion like compound interest for not dying.](/assets/images/treaty-feasibility/treaty-feasibility-section-long-term-feasibility-bw-academic.jpg)
-  - Sources
 
 #### knowledge/appendix/recruitment-and-propaganda-plan.qmd
 **Title:** Recruitment & Propaganda Plan
 **Description:** How to build an army of people who don't want to die (surprisingly difficult)
-**Stats:** 1,664 words | 245 lines | 10 images | ~12p
+**Stats:** 1,198 words | 115 lines | 1 images | ~5p
 
-  - The Current Clusterfuck
-    ![The website asks for donations and bond purchases. The legal infrastructure to accept them doesn't exist yet. It's like a store that displays prices but hasn't invented money.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-the-current-clusterfuck-bw-academic.jpg)
-  - The Three-Division Army Structure
-    - Division 1: Financial Infantry (The Money People)
-      - How to identify them
-    - Division 2: Home Front Supporters (The Feels People)
-      - How to identify them
-    - Division 3: Allied Command (The Institution People)
-    ![The Allied Command talks about innovation while building infrastructure to manage the problem they claim to be solving. It's a nonprofit that runs on the disease, not the cure.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-division-3-allied-command-the-institution-people-bw-academic.jpg)
-      - How to identify them
-    ![The CEO makes 500 times more than the people doing the actual work. The gala costs more than the mission. This is a charity that celebrates itself for existing.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-how-to-identify-them-bw-academic.jpg)
-  - The Enlistment Forms
-    - Financial Infantry Enlistment Form
-  - The Deployment Strategy
-    - Step 1: Delete the Impossible Buttons
-    - Step 2: Install the New Propaganda
-    - Step 3: Create Artificial Urgency
-    - Step 4: A/B Test Everything
-    ![Marketing tests revealed that 'End Death', '272 percent Returns', and 'Fear' perform best. Humans respond to three things: not dying, getting rich, and panic. Science.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-step-4-a-b-test-everything-bw-academic.jpg)
-  - The Management Protocol
-    - Weekly Reviews (Monday Morning Triage)
-    - Tagging System (How to Remember Who Matters)
-    ![Rich people sorted by how much money they have, how famous they are, and how likely they are to give you both.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-tagging-system-how-to-remember-who-matters-bw-academic.jpg)
-    - Follow-Up Sequences (Automated Harassment)
-    ![A 16-week robot convinces you to invest. Week 1: Hello. Week 16: Give us money. Weeks 2 through 15: becoming friends.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-follow-up-sequences-automated-harassment-bw-academic.jpg)
-  - The Communication Strategy
-    ![How to build a progress report when there's no progress: fake statistics, quotes with the context removed, and progress bars that don't measure anything.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-the-communication-strategy-bw-academic.jpg)
-  - The Metrics That Matter
-  - The Endgame
-    ![Build a database of people who want the thing. Use it to become legal, register securities, pressure politicians, and launch the platform. The database is a weapon made of signatures.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-the-endgame-bw-academic.jpg)
-  - Your Marching Orders
-    ![Step 1: Build the thing. Step 5: People use the thing. Steps 2, 3, and 4: Convincing people the thing exists.](/assets/images/recruitment-and-propaganda-plan/recruitment-and-propaganda-plan-section-your-marching-orders-bw-academic.jpg)
+  - The Bootstrapping Problem
+  - Three Types of Allies
+    - Investors
+    - Advocates
+    - Institutional Partners
+  - The Registration Forms
+  - Follow-Up Strategy
+  - Metrics Worth Tracking
+  - Phase 0 Targets
+  - Getting Started
 
 ### Economics & Finance
 
@@ -1830,21 +1765,19 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 7,792 words | 856 lines | 14 images | ~38p
+**Stats:** 7,802 words | 856 lines | 14 images | ~38p
 
     - [Drug Development Cost Increase Analysis](https://drug-cost.warondisease.org)
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
     ![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](../assets/og/economics-og-1200x630.jpg)
-    - [Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
-    ![Decentralized FDA Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../assets/og/dfda-impact-og-1200x630.jpg)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
     ![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../assets/og/iab-og-1200x630.jpg)
     - [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://optimocracy.warondisease.org)
     ![Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](../assets/og/optimocracy-og-1200x630.jpg)
     - [Right to Trial & FDA Upgrade Act](https://right-to-trial.warondisease.org)
     ![Right to Trial and FDA Upgrade Act](../assets/og-images/knowledge/appendix/right-to-trial-fda-upgrade-act-og-retro-academic.jpg)
-    - [The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
-    ![The Decentralized FDA Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../assets/og/dfda-spec-og-1200x630.jpg)
+    - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
+    ![The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../assets/og/dfda-spec-og-1200x630.jpg)
     - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
     ![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../assets/og/invisible-graveyard-og-1200x630.jpg)
     - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](https://obg.warondisease.org)
@@ -1855,6 +1788,8 @@
     ![The Political Dysfunction Tax](../assets/og/political-dysfunction-tax-og-1200x630.jpg)
     - [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
     ![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](../assets/og/cost-of-change-og-1200x630.jpg)
+    - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+    ![Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../assets/og/dfda-impact-og-1200x630.jpg)
     - [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
     ![United States Efficiency Audit](../assets/og/us-efficiency-audit-og-1200x630.jpg)
     - [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)

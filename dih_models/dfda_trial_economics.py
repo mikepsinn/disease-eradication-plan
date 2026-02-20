@@ -20,9 +20,9 @@ import numpy as np
 from dih_models.parameters import (
     CURRENT_TRIAL_SLOTS_AVAILABLE,
     DFDA_ANNUAL_OPEX,
+    DFDA_ANNUAL_TRIAL_FUNDING,
     DFDA_NPV_UPFRONT_COST_TOTAL,
     DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
-    DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL,
     EFFICACY_LAG_YEARS,
     EVENTUALLY_AVOIDABLE_DALY_PCT,
     GLOBAL_ANNUAL_DALY_BURDEN,
@@ -44,7 +44,7 @@ def _params() -> dict:
         efficacy_lag=float(EFFICACY_LAG_YEARS),
         annual_daly_burden=float(GLOBAL_ANNUAL_DALY_BURDEN),
         avoidable_pct=float(EVENTUALLY_AVOIDABLE_DALY_PCT),
-        proposed_funding=float(DIH_TREASURY_TO_MEDICAL_RESEARCH_ANNUAL),
+        proposed_funding=float(DFDA_ANNUAL_TRIAL_FUNDING),
         upfront_cost=float(DFDA_NPV_UPFRONT_COST_TOTAL),
     )
 
@@ -56,7 +56,7 @@ def compute_at_funding_level(funding: float | None = None) -> dict:
     Compute the full funding->DALYs->cost chain at a single funding level.
 
     Args:
-        funding: Annual funding in USD.  Defaults to proposed treaty level.
+        funding: Annual funding in USD.  Defaults to proposed funding level.
 
     Returns:
         dict with keys: funding, subsidy, multiplier, clearance_years,

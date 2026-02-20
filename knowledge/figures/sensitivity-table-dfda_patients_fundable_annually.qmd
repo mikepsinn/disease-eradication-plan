@@ -1,10 +1,10 @@
-**Sensitivity Indices for Direct Funding Cost-Effectiveness vs Bed Nets**
+**Sensitivity Indices for dFDA Patients Fundable Annually**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Bed Nets Cost per DALY (USD/DALY) | -1.0558 | Strong driver |
-| dFDA Direct Funding Cost per DALY (USD/DALY) | 0.2036 | Weak driver |
+| dFDA Annual Trial Subsidies (USD/year) | 2.3351 | Strong driver |
+| dFDA Pragmatic Trial Cost per Patient (USD/patient) | 1.5755 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

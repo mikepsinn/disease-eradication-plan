@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput"
+display_name = "dFDA Patients Fundable Annually"
 
 # Baseline and units
 
-baseline = 1931098485636352.8
+baseline = 23423035.52206674
 
 # Tornado data from sensitivity analysis
 
-drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'GLOBAL_YLD_PROPORTION_OF_DALYS', 'GLOBAL_ANNUAL_DALY_BURDEN', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable DALY Percentage', 'dFDA Pragmatic Trial Cost per Patient', 'YLD Proportion of Total DALYs', 'Global Annual DALY Burden', 'Annual Global Clinical Trial Participants', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
-impacts_low = [1624319194160375.8, -265194970475163.0, -888701753273117.5, 146764498211542.25, -148546037356642.75, -100578046126893.0, 34500055374120.25, -18227729831758.25, 37646511148.0, 22589982497.25, 22589982497.25, 15060680362.75, 7530686228.75]
-impacts_high = [-928182396663071.6, 795584911425490.2, 111999109795588.25, -365323648793394.5, 148546037356642.5, 100578046126893.75, -34500055374120.0, 18227729831758.5, -52734190281.0, -37663815910.5, -30129667775.0, -22596212211.5, -7531378419.5]
+drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['dFDA Pragmatic Trial Cost per Patient', 'Decentralized Framework for Drug Assessment Maintenance Costs', 'Decentralized Framework for Drug Assessment Staff Costs', 'Decentralized Framework for Drug Assessment Infrastructure Costs', 'Decentralized Framework for Drug Assessment Regulatory Coordination Costs', 'Decentralized Framework for Drug Assessment Community Support Costs']
+impacts_low = [200906861.38514975, 5382.131324004382, 3229.2787944041193, 3229.2787944041193, 2152.8525296002626, 1076.4262648001313]
+impacts_high = [-16169702.188733406, -7534.9838536046445, -5382.131324004382, -4305.705059204251, -3229.2787944041193, -1076.4262648001313]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "hours"
+units_label = "patients/year"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-dfda_trial_capacity_plus_efficacy_lag_suffering_hours.png')
+output_path = get_figure_output_path('tornado-dfda_patients_fundable_annually.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
