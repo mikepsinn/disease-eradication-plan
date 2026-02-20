@@ -1515,6 +1515,17 @@ def render_quarto(
                     if fix_result.returncode != 0:
                         print(f"[WARN] EPUB validation found issues (exit code {fix_result.returncode})", file=sys.stderr)
 
+                # Compress images to meet KDP 95 MB limit
+                compress_epub_script = project_root / "scripts" / "compress-epub-images.py"
+                if compress_epub_script.exists():
+                    print(f"[*] Compressing EPUB images for KDP size limit...")
+                    compress_result = subprocess.run(
+                        [sys.executable, "-u", str(compress_epub_script), str(dest_epub_path)],
+                        cwd=str(project_root),
+                    )
+                    if compress_result.returncode != 0:
+                        print(f"[WARN] EPUB image compression encountered issues (exit code {compress_result.returncode})", file=sys.stderr)
+
                 # Fix XHTML issues (unclosed tags, scripts)
                 fix_epub_script = project_root / "scripts" / "fix-epub-kindle.py"
                 if fix_epub_script.exists():

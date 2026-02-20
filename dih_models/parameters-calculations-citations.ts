@@ -6252,7 +6252,7 @@ export const citations: Record<string, Citation> = {
         author: [
           {
             family: "Hsieh",
-            given: "Chang-Tai and Enrico Moretti"
+            given: "Chang-Tai and Moretti, Enrico"
           },
         ],
         issued: { 'date-parts': [[2019]] },
@@ -6486,7 +6486,7 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2021]] },
-        'container-title': "Think by Numbers: War Costs \\$74",
+        'container-title': "Think by Numbers",
         URL: "https://thinkbynumbers.org/military/war/the-economic-case-for-peace-a-comprehensive-financial-analysis/",
         note: "Think by Numbers: War Costs \\$74,259/Lifetime | WEF: War Violence Costs \\$5/Day | PubMed: Economic Value DALYs Violence",
   },
@@ -6710,8 +6710,8 @@ export const citations: Record<string, Citation> = {
         title: "Pragmatic Trial Cost per Patient (Median \\$97)",
         author: [
           {
-            family: "Ramsberg J",
-            given: "Platt R"
+            family: "Ramsberg",
+            given: "J. and Platt, R."
           },
         ],
         issued: { 'date-parts': [[2018]] },

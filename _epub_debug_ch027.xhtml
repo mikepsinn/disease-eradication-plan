@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <title>ch027.xhtml</title>
+  <style>
+  </style>
+  <link rel="stylesheet" type="text/css" href="../styles/stylesheet1.css" />
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    /* Figure formatting */
+    .quarto-layout-panel>figure>figcaption,
+    .quarto-layout-panel>.panel-caption {
+      margin-top: 10pt;
+    }
+
+    .quarto-layout-row {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .quarto-layout-valign-top {
+      align-items: flex-start;
+    }
+
+    .quarto-layout-valign-bottom {
+      align-items: flex-end;
+    }
+
+    .quarto-layout-valign-center {
+      align-items: center;
+    }
+
+    .quarto-layout-cell {
+      position: relative;
+      margin-right: 20px;
+    }
+
+    .quarto-layout-cell:last-child {
+      margin-right: 0;
+    }
+
+    .quarto-layout-cell figure,
+    .quarto-layout-cell>p {
+      margin: 0.2em;
+    }
+
+    .quarto-layout-cell .html-widget {
+      width: 100% !important;
+    }
+
+    .quarto-layout-cell div figure p {
+      margin: 0;
+    }
+
+    .quarto-layout-cell figure {
+      display: inline-block;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+
+    .quarto-layout-cell table {
+      display: inline-table;
+    }
+
+    .quarto-layout-cell-subref figcaption {
+      font-style: italic;
+      text-align: center;
+    }
+
+    .quarto-figure>figure {
+      width: 100%;
+    }
+
+    .quarto-figure-left>figure>p {
+      text-align: left;
+    }
+
+    .quarto-figure-center>figure>p {
+      text-align: center;
+    }
+
+    .quarto-figure-right>figure>p {
+      text-align: right;
+    }
+
+    figure>p:empty {
+      display: none;
+    }
+
+    figure>p:first-child {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    figure>figcaption {
+      margin-top: 0.5em;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+    }
+
+    details {
+      margin-bottom: 1em;
+    }
+
+    details[show] {
+      margin-bottom: 0;
+    }
+
+    .quarto-unresolved-ref {
+      font-weight: 600;
+    }
+
+    .quarto-cover-image {
+      float: right;
+      margin-left: 30px;
+    }
+
+    .cell-output-display {
+      overflow-x: scroll;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body epub:type="bodymatter">
+<section id="the-total-cost-of-organized-violence" class="level2">
+<h2>The Total Cost of Organized Violence</h2>
+<p>Here is the grand total of your obsession with violence:</p>
+<section id="comprehensive-cost-analysis-2024" class="level3">
+<h3>Comprehensive Cost Analysis (2024)</h3>
+<section id="direct-costs-summary" class="level4">
+<h4>Direct Costs Summary</h4>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Amount (Billions)</th>
+<th>Percentage</th>
+<th>Daily Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Military Expenditure</td>
+<td>$2,718.0</td>
+<td>36.0%</td>
+<td>$7.45B</td>
+</tr>
+<tr class="even">
+<td>Human Life Losses</td>
+<td>$2,446.0</td>
+<td>32.4%</td>
+<td>$6.70B</td>
+</tr>
+<tr class="odd">
+<td>Infrastructure Destruction</td>
+<td>$1,875.0</td>
+<td>24.9%</td>
+<td>$5.14B</td>
+</tr>
+<tr class="even">
+<td>Trade Disruption</td>
+<td>$616.0</td>
+<td>8.2%</td>
+<td>$1.69B</td>
+</tr>
+<tr class="odd">
+<td><strong>Direct Subtotal</strong></td>
+<td><strong>$7,655.0</strong></td>
+<td><strong>100%</strong></td>
+<td><strong>$20.97B</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="indirect-costs-summary" class="level4">
+<h4>Indirect Costs Summary</h4>
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 34%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Amount (Billions)</th>
+<th>Percentage</th>
+<th>Daily Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lost Economic Growth</td>
+<td>$2,718.0</td>
+<td>76.4%</td>
+<td>$7.45B</td>
+</tr>
+<tr class="even">
+<td>Veteran Healthcare</td>
+<td>$200.1<span class="citation" data-cites="veteran-healthcare-cost-projections"><sup>40</sup></span></td>
+<td>5.6%</td>
+<td>$0.55B</td>
+</tr>
+<tr class="odd">
+<td>Refugee Support</td>
+<td>$150.0<span class="citation" data-cites="unhcr-forcibly-displaced-2023"><sup>151</sup></span></td>
+<td>4.2%</td>
+<td>$0.41B</td>
+</tr>
+<tr class="even">
+<td>Environmental Damage</td>
+<td>$100.0<span class="citation" data-cites="environmental-cost-of-war"><sup>33</sup></span></td>
+<td>2.8%</td>
+<td>$0.27B</td>
+</tr>
+<tr class="odd">
+<td>Psychological Impact</td>
+<td>$232.0<span class="citation" data-cites="psychological-impact-war-cost"><sup>37</sup></span></td>
+<td>6.3%</td>
+<td>$0.64B</td>
+</tr>
+<tr class="even">
+<td>Lost Human Capital</td>
+<td>$300.0<span class="citation" data-cites="lost-human-capital-war-cost"><sup>36</sup></span></td>
+<td>8.1%</td>
+<td>$0.82B</td>
+</tr>
+<tr class="odd">
+<td><strong>Indirect Subtotal</strong></td>
+<td><strong>$3,700.1</strong></td>
+<td><strong>100%</strong></td>
+<td><strong>$10.14B</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ultimate-total" class="level4">
+<h4>Ultimate Total</h4>
+<p><span class="math display"><img src="../media/file86.svg" alt="
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+" /></span> where: <span class="math display"><img src="../media/file87.svg" alt="
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+" /></span> where: <span class="math display"><img src="../media/file88.svg" alt="
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+" /></span> where: <span class="math display"><img src="../media/file89.svg" alt="
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+" /></span> where: <span class="math display"><img src="../media/file90.svg" alt="
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+" /></span> where: <span class="math display"><img src="../media/file91.svg" alt="
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+" /></span> where: <span class="math display"><img src="../media/file92.svg" alt="
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+" /></span> where: <span class="math display"><img src="../media/file93.svg" alt="
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+" /></span> where: <span class="math display"><img src="../media/file94.svg" alt="
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+" /></span></p>
+<p>Adding the direct and indirect costs gives us our grand total.</p>
+<p>That’s $11.4 trillion. Every. Single. Year.</p>
+</section>
+<section id="per-capita-mathematics-what-war-costs-you" class="level4">
+<h4>Per Capita Mathematics: What War Costs You</h4>
+<p>With 8 billion people on the planet, the math is simple and depressing.</p>
+<p><span class="math display"><img src="../media/file223.svg" alt="
+\text{Direct military spending per person: } \$2.7\text{T} \div 8.0\text{B} = \text{\$340/year}
+" /></span></p>
+<p><strong>Direct military spending per person is $340/year.</strong> This is what your government spends on weapons for you.</p>
+<p><span class="math display"><img src="../media/file224.svg" alt="
+\text{Total societal cost per person: } \text{\$11,355.1B} \div 8.0\text{B} = \text{\$1,419/year}
+" /></span></p>
+<p><strong>The total societal cost per person is $1,419/year.</strong> This is the real cost to you when you count the destruction and lost chances.</p>
+<p><span class="math display"><img src="../media/file225.svg" alt="
+\text{Over an 80-year lifetime: } \text{\$1,419.39} \times 80 = \text{\$113,551.20}
+" /></span></p>
+<p>Over an 80-year lifetime, that is <strong>$113,551.20</strong> per person.</p>
+<p>That is a decent car. Or a year at a private university. Or the down payment on a house.</p>
+<p>Instead, humans spend it on getting very good at killing each other.</p>
+<figure>
+<img src="../media/file226.jpg" alt="War costs you $113,551 in your lifetime. That’s a car, or college, or a down payment on a house. You got none of those things. You got bombs in countries you can’t pronounce." />
+<figcaption>
+War costs you $113,551 in your lifetime. That’s a car, or college, or a down payment on a house. You got none of those things. You got bombs in countries you can’t pronounce.
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="statistical-perspectives-putting-numbers-in-context" class="level3">
+<h3>Statistical Perspectives: Putting Numbers in Context</h3>
+<p>To understand the scale of $11.4 trillion annually:</p>
+<ul>
+<li>It is more than the GDP of Japan and Germany combined.</li>
+<li>It is 12.7% of global GDP ($89.5 trillion in 2023<span class="citation" data-cites="global-gdp-2023"><sup>153</sup></span>).</li>
+<li>It is 168 times<span class="citation" data-cites="who-budget-comparison"><sup>154</sup></span> the budget of the World Health Organization<span class="citation" data-cites="world-health-organization"><sup>155</sup></span>.</li>
+<li>It could end extreme poverty globally 11.4 times over<span class="citation" data-cites="world-bank-poverty-eradication-cost"><sup>149</sup></span>.</li>
+<li>It is enough to give every person on Earth $1,419 per year.</li>
+</ul>
+<p>If we stacked $11.4 trillion in $100 bills, the stack would be wider than the Earth<span class="citation" data-cites="us-currency-thickness"><sup>156</sup></span>.</p>
+</section>
+<section id="the-grotesque-mathematics-of-misallocation" class="level3">
+<h3>The Grotesque Mathematics of Misallocation</h3>
+<p>You created the most expensive way possible to end human lives. If death were a startup, you would have the worst business model in history. But somehow you keep getting funding.</p>
+<figure>
+<img src="../media/file227.jpg" alt="Each missile costs the same as 50 teachers’ salaries. You have many missiles. You have large classrooms." />
+<figcaption>
+Each missile costs the same as 50 teachers’ salaries. You have many missiles. You have large classrooms.
+</figcaption>
+</figure>
+<p>The math of human priorities would be fascinating if it weren’t so sad. It is like finding a bird that builds nests out of dynamite. You want to study it, but you mostly want to back away slowly.</p>
+</section>
+<section id="hidden-costs-of-war" class="level3">
+<h3>Hidden Costs of War</h3>
+<figure>
+<img src="../media/file228.jpg" alt="War destroys the hospital. Then there’s no hospital to treat the war wounds. Then people die of preventable diseases. Then the economy collapses. Then you have another war. It’s very efficient." />
+<figcaption>
+War destroys the hospital. Then there’s no hospital to treat the war wounds. Then people die of preventable diseases. Then the economy collapses. Then you have another war. It’s very efficient.
+</figcaption>
+</figure>
+<p>When you look at the secondary effects of war, the costs explode:</p>
+<ul>
+<li>Cities become parking lots (expensive to rebuild).</li>
+<li>Children miss school (they become uneducated adults).</li>
+<li>Hospitals explode (sick people die faster).</li>
+<li>Farms get poisoned (everyone gets hungry).</li>
+<li>Millions get PTSD (they can’t work and need therapy forever).</li>
+<li>The lucky ones just die.</li>
+<li>The unlucky ones live with half a face.</li>
+</ul>
+</section>
+</section>
+</body>
+</html>

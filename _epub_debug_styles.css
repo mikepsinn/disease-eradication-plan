@@ -1,0 +1,61 @@
+/* Title page styling */
+.titlepage {
+  text-align: center;
+  padding-top: 20%;
+  page-break-after: always;
+}
+
+.titlepage .title {
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.titlepage .subtitle {
+  font-size: 1.1em;
+  font-style: italic;
+  margin-bottom: 2em;
+  line-height: 1.4;
+}
+
+.titlepage .author {
+  font-size: 1.1em;
+  margin: 0.3em 0;
+}
+
+/* Inline math images (webtex) - align with surrounding text */
+img.math {
+  vertical-align: middle;
+  height: 1.1em;
+}
+
+/* Display math images - center on page */
+img.display-math,
+p > img.math:only-child {
+  display: block;
+  margin: 1em auto;
+  height: auto;
+  max-width: 90%;
+}
+
+/* Figures: keep in document flow, prevent e-reader repositioning */
+figure {
+  display: block;
+  margin: 1em 0;
+  text-align: center;
+  page-break-inside: avoid;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+figcaption {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 0.5em;
+  text-align: center;
+}

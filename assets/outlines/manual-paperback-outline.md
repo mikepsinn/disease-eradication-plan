@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 34 | **Words:** 81,784 | **Images:** 496 | **Est. Pages:** ~575
+**Files:** 34 | **Words:** 81,505 | **Images:** 485 | **Est. Pages:** ~569
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 3,932 words | 479 lines | 14 images | ~23p
+**Stats:** 3,929 words | 479 lines | 14 images | ~23p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Part Where I Discover Paper Makes You Do Things
@@ -155,7 +155,7 @@
 #### knowledge/problem/cost-of-disease.qmd
 **Title:** The Cost of Disease
 **Description:** The annual bill for our collective decision to let our bodies fall apart. Spoiler alert, it's more than all the money on Earth.
-**Stats:** 1,833 words | 205 lines | 8 images | ~11p
+**Stats:** 1,810 words | 203 lines | 7 images | ~11p
 
   - The Daily Body Count
   - The Financial Cost
@@ -172,7 +172,6 @@
   - What This Actually Costs
     ![The Disease Tax: $1.09 trillion per day in lost human potential. You pay it every day. You get nothing. At least real taxes build roads.](/assets/images/cost-of-disease/cost-of-disease-section-what-this-actually-costs-bw-academic.jpg)
     - Your Priorities, Written in Your Budgets
-    ![Daily military spending: $7.46 billion. Daily medical research: $185 million. You spend 40 times more on killing than curing. This is called civilization.](/assets/images/cost-of-disease/cost-of-disease-section-budget-priority-comparison-bw-academic.jpg)
     - The Future You're Paying For
     ![Every day of military spending delays the cancer cure by another day. You've been delaying it for 75 years. The cancer is very patient.](/assets/images/cost-of-disease/cost-of-disease-section-the-future-you-re-paying-for-bw-academic.jpg)
 
@@ -252,7 +251,7 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34x more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 4,548 words | 514 lines | 26 images | ~31p
+**Stats:** 4,524 words | 512 lines | 26 images | ~31p
 
   - A Note on Blame
   - Confidence Levels: What We Know vs. What We Model
@@ -748,7 +747,7 @@
     ![Step 1: small companies try it. Step 2: it works. Step 3: big companies notice. Step 4: everybody does it and pretends it was their idea.](/assets/images/aligning-incentives/aligning-incentives-section-how-to-get-them-onboard-bw-academic.jpg)
   - Politicians: Hacking Democracy's Source Code
     - Their Current Misery
-    ![The modern politician: 60 percent fundraising calls, 12 percent approval rating, 3 percent actual decision-making. It's like being a telemarketer who everybody hates but won't fire.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-misery-bw-academic.jpg)
+    ![The modern politician: 70 percent fundraising calls, 18 percent approval rating, 3 percent actual decision-making. It's like being a telemarketer who everybody hates but won't fire.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-misery-bw-academic.jpg)
     - Your Political Welfare Program
       - The Money Pipeline
       - The Vote Harvest
@@ -773,7 +772,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** VICTORY Incentive Alignment Bonds
 **Description:** How to legally bribe politicians into saving lives, and how investors profit from it
-**Stats:** 5,812 words | 671 lines | 45 images | ~46p
+**Stats:** 5,682 words | 659 lines | 39 images | ~42p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -809,19 +808,15 @@
     ![Senator Smith's report card: below average score, barely passing reelection odds, medium-quality retirement prospects. Her mother is disappointed.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-setup-bw-academic.jpg)
       - The Old Calculus (Without IABs)
       - The New Calculus (With IABs)
-    ![Vote yes: 73% chance you keep your job, make millions after. Vote no: 55% chance you're unemployed next year. Choose carefully, Senator.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-new-calculus-with-iabs-bw-academic.jpg)
       - What Actually Happens
     ![All the math a senator does before deciding how to vote. Turns out they can count when money's involved.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-what-actually-happens-bw-academic.jpg)
       - Post-Treaty
     ![Senator Smith's career trajectory before and after voting yes. One line goes up, one line stays flat. Guess which one she prefers.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-post-treaty-the-numbers-bw-academic.jpg)
-    ![Where $27 billion goes: some to investors, some to politicians, most to actually curing diseases. Everyone gets a slice of the virtue pie.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-math-for-victory-incentive-alignment-bond-investors-bw-academic.jpg)
     - Why This Isn't Bribery
     ![Bribery: pay someone to betray the public. This thing: pay someone to help the public. Spot the difference, legally speaking.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-why-this-is-not-bribery-legally-speaking-bw-academic.jpg)
     - The Revenue Split
     ![Money flows through two engines, investors and politicians, before reaching the actual medical research. It's trickle-down economics, but for not dying.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-7a-the-two-engines-financial-and-political-bw-academic.jpg)
     - Why 10% Goes to Political Incentives {#sec-why-ten-pct-scaling-engine}
-    ![The plan to gradually stop buying bombs versus the four reasons we'll probably keep buying bombs anyway.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-goal-isn-t-a-1-treaty-the-goal-is-100-bw-academic.jpg)
-    ![How much money politicians get for being nice increases as they're nicer. By the end, they get 270 billion dollars for not killing people.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-iabs-are-the-political-ratchet-bw-academic.jpg)
     ![What happens over fifty years if we do nothing special versus if we pay politicians to care. One line stays flat, the other goes up like a rocket.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-alternative-is-stagnation-bw-academic.jpg)
     - Beyond the 1% Treaty
     ![The four boxes you need to tick before you can bribe governments into solving global problems. Apparently you can't just bribe them willy-nilly.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-beyond-the-1-treaty-iabs-as-a-general-governance-tool-bw-academic.jpg)
@@ -834,7 +829,6 @@
       - When Math Becomes Obscene
       - Even if you're extremely pessimistic
       - This isn't complicated math
-    ![VICTORY Bonds: 272 percent annual returns forever. Venture Capital: maybe. Real Estate: depends. Medallion Fund: no you can't invest. Investors chose uncertainty.](/assets/images/victory-bonds/victory-bonds-section-this-isn-t-complicated-math-bw-academic.jpg)
     - Security Package and Risk
     ![Five layers of legal protection ensuring you get paid even if governments collapse. We learned from history: trust nobody, especially nations.](/assets/images/victory-bonds/victory-bonds-section-structure-the-security-package-bw-academic.jpg)
       - Project Risks
@@ -855,7 +849,6 @@
       - "What if politicians reverse the policy?"
     ![What happens to your score when you do good things for a while and then suddenly decide to do bad things instead. The graph goes down quite dramatically.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-3-what-if-politicians-pocket-the-career-rewards-th-bw-academic.jpg)
       - "What happens when this fails and I lose my billion dollars?"
-    ![Put in one billion dollars. Either get back 2.72 billion dollars, or get nothing and humanity continues destroying itself. No middle ground.](/assets/images/victory-bonds/victory-bonds-section-what-happens-when-this-fails-and-i-lose-my-billion-dollars-bw-academic.jpg)
       - "Is this realistic globally?"
     ![How countries copy each other's homework after seeing someone else get a good grade. Like peer pressure, but for governments.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-4-is-this-realistic-at-a-global-scale-bw-academic.jpg)
       - "How is this different from just donating to charity?"
@@ -1109,12 +1102,11 @@
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,094 words | 284 lines | 18 images | ~21p
+**Stats:** 3,077 words | 282 lines | 17 images | ~21p
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     ![How to stop spending money on death and start spending it on life, in three simple steps. You'd think this would be obvious.](/assets/images/roadmap/roadmap-section-high-level-strategy-the-three-step-recipe-for-not-dying-bw-academic.jpg)
     - Step 1: Collect Papers from Rich People
-    ![Rich people give money. Get 272 percent back. Humanity lives. Everyone's confused why this took so long.](/assets/images/roadmap/roadmap-section-step-1-collect-papers-from-rich-people-bw-academic.jpg)
     - Step 2: Pay Humans to Click YES
     ![280 million people click a button. Politicians notice. Democracy, but with more clicking and less dying.](/assets/images/roadmap/roadmap-section-step-2-pay-humans-to-click-yes-bw-academic.jpg)
     - Step 3: Apply Papers to Politicians Until Treaty Happens
@@ -1284,7 +1276,7 @@
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis
 **Description:** Real-world evidence that getting a global treaty signed costs $90M, not billions
-**Stats:** 2,106 words | 216 lines | 11 images | ~14p
+**Stats:** 2,077 words | 214 lines | 10 images | ~13p
 
   - What Treaties Actually Cost
     - Inflation-Adjusted to 2024 Dollars
@@ -1307,7 +1299,6 @@
     - Expected Value Implications
     ![Worst case: you wasted less money than bed nets cost. Best case: you ended most diseases. Risk-reward has never been clearer.](/assets/images/treaty-feasibility/treaty-feasibility-section-expected-value-implications-bw-academic.jpg)
   - Why The Treaty Won't Stop at 1%
-    ![Take 10 percent of the treaty money and use it to pay politicians to expand the treaty. The system funds its own growth, like a pyramid scheme for good.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-the-treaty-won-t-stop-at-1-bw-academic.jpg)
     - The Expansion Mechanism
     - Why This Differs from Stagnant Treaties
     ![Old way: charities beg governments. New way: investors get paid when governments cooperate. Greed works faster than guilt.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-this-differs-from-stagnant-treaties-bw-academic.jpg)
@@ -1336,12 +1327,11 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,239 words | 162 lines | 9 images | ~9p
+**Stats:** 1,209 words | 160 lines | 8 images | ~9p
 
   - How 1% Less Violence Pays For Everything
     ![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
     - The Captured Money: $27.2B/Year
-    ![Take one percent of the money humans spend on killing each other. Use it to cure disease instead. Math is surprisingly simple when you're not trying to obfuscate mass murder.](/assets/images/peace-dividend/peace-dividend-section-the-captured-money-var-treaty-annual-funding-year-bw-academic.jpg)
     - The Bonus Savings: $114B (95% CI: $90.1B-$141B)/Year
     - Where the $114B (95% CI: $90.1B-$141B) Comes From
     ![The 114 billion you save by fighting one percent less: some from buying fewer bombs, some from burying fewer people, some from economies not collapsing. War is expensive.](/assets/images/peace-dividend/peace-dividend-section-where-the-var-peace-dividend-annual-societal-benefit-comes-from-bw-academic.jpg)
@@ -1363,10 +1353,9 @@
 #### knowledge/economics/health-dividend.qmd
 **Title:** Health Dividend
 **Description:** How a $40M (95% CI: $27.3M-$55.6M) framework generates $58.6B (95% CI: $49.2B-$73.1B) in annual savings through 80x cost reduction
-**Stats:** 941 words | 114 lines | 9 images | ~8p
+**Stats:** 918 words | 112 lines | 8 images | ~8p
 
   - The Math: From $41K (95% CI: $20K-$120K) to $500 (95% CI: $400-$2.50K)
-    ![Traditional clinical trials: 41,000 dollars per patient. Oxford figured out how to do it for 500 dollars. You've been overpaying by 8,100 percent.](/assets/images/health-dividend/health-dividend-section-the-math-from-bw-academic.jpg)
   - Where the $58.6B (95% CI: $49.2B-$73.1B) Comes From
     ![Current spending versus what you'd spend if you stopped doing trials like you're staying at the Ritz. Conservative estimate saves half, optimistic saves 95 percent. Either way, someone's been stealing.](/assets/images/health-dividend/health-dividend-section-where-the-var-dfda-benefit-rd-only-annual-comes-from-bw-academic.jpg)
   - What $58.6B (95% CI: $49.2B-$73.1B) Buys You
