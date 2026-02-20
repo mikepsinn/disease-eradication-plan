@@ -9,12 +9,6 @@
 
 > 6.65 thousand diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7 billion deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.0018/DALY, 50.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard.
 
-### [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
-
-[![Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
-
-> Of 9.50 million combinations plausible drug-disease pairings, only 0.342% have been clinically tested. At the current discovery rate of 15 diseases/year, clearing this backlog would take ~443 years. A decentralized FDA integrating pragmatic clinical trials into standard healthcare at $929/patient (vs. $41K traditional) increases trial capacity 12.3x, reducing backlog clearance to 36 years. Combined with eliminating the 8.2 years post-safety efficacy delay through opt-in trial participation after Phase I, treatments arrive 212 years earlier on average. This timeline shift saves 10.7 billion deaths, averts 565 billion DALYs, and eliminates 1.93 quadrillion hours of suffering at $0.841/DALY, competitive with bed nets ($89/DALY) at vastly greater scale. Full impact yields $84.8 quadrillion in value (178k:1 ROI).
-
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
 
 [![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](assets/og/iab-og-1200x630.jpg)](https://iab.warondisease.org)
@@ -68,6 +62,12 @@
 [![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
 
 > What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
+
+### [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](https://dfda-impact.warondisease.org)
+
+[![Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](assets/og/dfda-impact-og-1200x630.jpg)](https://dfda-impact.warondisease.org)
+
+> Of 9.50 million combinations plausible drug-disease pairings, only 0.342% have been clinically tested. At the current discovery rate of 15 diseases/year, clearing this backlog would take ~443 years. A decentralized FDA integrating pragmatic clinical trials into standard healthcare at $929/patient (vs. $41K traditional) increases trial capacity 12.3x, reducing backlog clearance to 36 years. Combined with eliminating the 8.2 years post-safety efficacy delay through opt-in trial participation after Phase I, treatments arrive 212 years earlier on average. This timeline shift saves 10.7 billion deaths, averts 565 billion DALYs, and eliminates 1.93 quadrillion hours of suffering at $0.842/DALY, competitive with bed nets ($89/DALY) at vastly greater scale. Full impact yields $84.8 quadrillion in value (178k:1 ROI).
 
 ### [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
 
