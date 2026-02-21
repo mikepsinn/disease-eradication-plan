@@ -294,6 +294,8 @@ Patients can search treatments ranked by real-world effectiveness and join trial
 
 The FDA doesn't even publish adverse event rates. They make you guess. The framework tells you "12% of patients got headaches, 3% were severe, 0.1% discontinued treatment." That's not less safe than the current system. That's actually safer. You have real safety data instead of guessing.
 
+Also, under the current system, there is is 8 year delay between when a drug is found to be safe via Phase I trials and when patients can actually take it. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown.
+
 #### Treatment Rankings
 
 Consumer Reports for Drugs
@@ -359,6 +361,12 @@ Just cold, hard data about whether this chemical makes your meat robot work bett
 - **Switzerland Figured This Out 200 Years Ago**: They spend {{< var switzerland_defense_spending_pct >}} on defense, have {{< var switzerland_gdp_per_capita_k >}} GDP per capita, and nobody's invaded them since Napoleon.
 
 - **Everything Already Exists**: [Legal framework](/knowledge/legal/legal-framework.qmd), AI trial matching, insurance companies who hate paying for sick people, and pharma who hate paying for trials. Ctrl+C, Ctrl+V.
+
+- **The ROI**: The conservative return from R&D cost savings alone: {{< var dfda_roi_rd_only >}}:1. The full benefit including timeline shift: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1. Your calculator will display an error. This is correct.
+
+![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
+
+This beats smallpox eradication (280:1) and childhood vaccinations (13:1), which were humanity's previous greatest hits in the "not dying" genre. It's {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets, the gold standard for keeping humans alive. Full methodology, timeline shift analysis, and the numbers that make Excel cry available at [https://impact.warondisease.org](https://impact.warondisease.org).
 
 ## The 5-Step Plan
 
@@ -447,20 +455,6 @@ The {{< var treaty_annual_funding >}}/year money volcano erupts:
 - **Regular humans**: Not dying from stupid things (priceless, but also free)
 
 Nobody has to evolve morally. You just point everyone's greed at diseases instead of each other. It's like training a pack of wolves to herd sheep by convincing them the sheep are made of money.
-
-## The Math
-
-*Where Numbers Prove Humans Are Hilariously Bad at Priorities*
-
-The conservative return from R&D cost savings alone: {{< var dfda_roi_rd_only >}}:1. The full benefit including timeline shift: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1. Your calculator will display an error. This is correct.
-
-![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
-
-This beats smallpox eradication (280:1) and childhood vaccinations (13:1), which were humanity's previous greatest hits in the "not dying" genre. It's {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets, the gold standard for keeping humans alive.
-
-For every 1 person the FDA protects from a bad drug, it kills {{< var type_ii_error_cost_ratio >}} people by making them wait for good drugs. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown.
-
-Full methodology, timeline shift analysis, and the numbers that make Excel cry available at [https://impact.warondisease.org](https://impact.warondisease.org).
 
 ## Choose Your Own Adventure
 
