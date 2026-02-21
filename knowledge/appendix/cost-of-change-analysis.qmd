@@ -347,7 +347,7 @@ For detailed analysis of the political economy and implementation mechanisms, se
 
 | Political Investment | ROI | Cost per DALY |
 |---------------------|-----|---------------|
-| {{< var treaty_campaign_total_cost >}} (realistic) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
+| {{< var treaty_campaign_total_cost >}} (realistic) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
 | {{< var us_political_reform_investment_total >}} (US) | 3,390,000:1 | $0.05 |
 | {{< var global_political_reform_investment >}} (global) | 678,000:1 | $0.23 |
 

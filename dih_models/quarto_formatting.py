@@ -75,7 +75,7 @@ def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", i
     if hasattr(value, "display_value") and value.display_value:
         formatted_value = value.display_value
     else:
-        formatted_value = format_parameter_value(value, unit, include_unit=True)
+        formatted_value = format_parameter_value(value, unit, include_unit=True, ratio_suffix=False)
 
     # Check if value is a Parameter instance with source metadata
     has_source = hasattr(value, "source_ref") and value.source_ref

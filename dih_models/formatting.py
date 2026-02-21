@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     # Use string forward reference to avoid importing Parameter
     Parameter = Any
 
-def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str | None = None, include_unit: bool = True) -> str:
+def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str | None = None, include_unit: bool = True, ratio_suffix: bool = True) -> str:
     """
     Universal formatter - handles Parameter objects, auto-scales based on value.
 
@@ -180,7 +180,7 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             ratio_formatted = clean_number(f"{value:.2f}")
         else:
             ratio_formatted = clean_number(f"{value:.3g}")
-        return f"{ratio_formatted}:1"
+        return f"{ratio_formatted}:1" if ratio_suffix else ratio_formatted
 
     elif is_multiplier:
         # Format as Xx (e.g., 22x for multipliers)

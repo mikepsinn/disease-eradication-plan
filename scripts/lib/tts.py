@@ -7,6 +7,7 @@ Uses the gemini-2.5-pro-preview-tts model for high-quality speech synthesis.
 import sys
 import os
 import struct
+import time
 import mimetypes
 from pathlib import Path
 
@@ -218,13 +219,18 @@ def _chunk_text_for_tts(text: str, max_chars: int = 7000) -> list[str]:
     return chunks
 
 
+MAX_TTS_RETRIES = 3
+TTS_RETRY_BACKOFF = [10, 30, 60]  # seconds between retries
+
+
 def _generate_speech_single(
     text: str,
     voice_name: str,
     speaking_instructions: str,
 ) -> tuple[bytes, str]:
     """
-    Generate speech for a single chunk of text. Returns (raw_audio_bytes, mime_type).
+    Generate speech for a single chunk of text with retry logic.
+    Returns (raw_audio_bytes, mime_type).
     """
     prompt_text = f"{speaking_instructions}\n\n{text}"
 
@@ -247,30 +253,54 @@ def _generate_speech_single(
         ),
     )
 
-    audio_chunks = []
-    mime_type = None
+    last_error = None
+    for attempt in range(1, MAX_TTS_RETRIES + 1):
+        audio_chunks = []
+        mime_type = None
+        total_bytes = 0
+        start_time = time.time()
 
-    for chunk in google_client.models.generate_content_stream(
-        model=TTS_MODEL_ID,
-        contents=contents,
-        config=generate_content_config,
-    ):
-        if (
-            chunk.candidates is None
-            or chunk.candidates[0].content is None
-            or chunk.candidates[0].content.parts is None
-        ):
-            continue
+        try:
+            for chunk in google_client.models.generate_content_stream(
+                model=TTS_MODEL_ID,
+                contents=contents,
+                config=generate_content_config,
+            ):
+                if (
+                    chunk.candidates is None
+                    or chunk.candidates[0].content is None
+                    or chunk.candidates[0].content.parts is None
+                ):
+                    continue
 
-        part = chunk.candidates[0].content.parts[0]
-        if part.inline_data and part.inline_data.data:
-            audio_chunks.append(part.inline_data.data)
-            if mime_type is None:
-                mime_type = part.inline_data.mime_type
+                part = chunk.candidates[0].content.parts[0]
+                if part.inline_data and part.inline_data.data:
+                    audio_chunks.append(part.inline_data.data)
+                    total_bytes += len(part.inline_data.data)
+                    elapsed = time.time() - start_time
+                    print(f"  TTS streaming: {total_bytes:,} bytes ({elapsed:.0f}s)", flush=True)
+                    if mime_type is None:
+                        mime_type = part.inline_data.mime_type
 
-    if not audio_chunks:
-        raise RuntimeError("No audio data received from TTS API")
+            elapsed = time.time() - start_time
+            if not audio_chunks:
+                raise RuntimeError(f"No audio data received after {elapsed:.0f}s")
 
+            print(f"  TTS complete: {total_bytes:,} bytes in {elapsed:.0f}s")
+            return b"".join(audio_chunks), mime_type or "audio/L16;rate=24000"
+
+        except Exception as e:
+            last_error = e
+            elapsed = time.time() - start_time
+            if attempt < MAX_TTS_RETRIES:
+                wait = TTS_RETRY_BACKOFF[attempt - 1]
+                print(f"  [RETRY] Attempt {attempt}/{MAX_TTS_RETRIES} failed after {elapsed:.0f}s: {e}")
+                print(f"  [RETRY] Waiting {wait}s before retry...", flush=True)
+                time.sleep(wait)
+            else:
+                print(f"  [FAILED] All {MAX_TTS_RETRIES} attempts failed. Last error: {e}")
+
+    raise last_error
     return b"".join(audio_chunks), mime_type or "audio/L16;rate=24000"
 
 
@@ -282,11 +312,11 @@ def generate_speech(
 ) -> Path:
     """
     Generates speech audio from text using Gemini TTS.
-    Automatically chunks long text to stay within the API's
-    16,384 output token limit (~10:55 of audio per call).
+    Text should be pre-chunked by the caller (e.g. generate_audiobook_text.py)
+    to stay within the API's 16,384 output token limit (~10:55 of audio).
 
     Args:
-        text: The text to convert to speech.
+        text: The text to convert to speech (should be <8,000 chars).
         output_path: Path to save the audio file (will be saved as .wav).
         voice_name: Name of the voice to use (see AVAILABLE_VOICES).
         speaking_instructions: Instructions for how to read the text.
@@ -300,24 +330,10 @@ def generate_speech(
     if output_path.suffix.lower() != ".wav":
         output_path = output_path.with_suffix(".wav")
 
-    chunks = _chunk_text_for_tts(text)
-    all_audio = []
-    final_mime_type = None
+    print(f"Generating speech with voice '{voice_name}' ({len(text):,} chars)...")
+    audio_data, mime_type = _generate_speech_single(text, voice_name, speaking_instructions)
 
-    for i, chunk in enumerate(chunks):
-        if len(chunks) > 1:
-            print(f"Generating speech with voice '{voice_name}' (chunk {i+1}/{len(chunks)}, {len(chunk):,} chars)...")
-        else:
-            print(f"Generating speech with voice '{voice_name}'...")
-
-        audio_data, mime_type = _generate_speech_single(chunk, voice_name, speaking_instructions)
-        all_audio.append(audio_data)
-        if final_mime_type is None:
-            final_mime_type = mime_type
-
-    # Combine all audio data and convert to WAV
-    combined_audio = b"".join(all_audio)
-    wav_data = convert_to_wav(combined_audio, final_mime_type)
+    wav_data = convert_to_wav(audio_data, mime_type)
 
     # Save to file
     output_path.parent.mkdir(parents=True, exist_ok=True)

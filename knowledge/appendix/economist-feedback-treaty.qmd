@@ -28,7 +28,7 @@ Please flag any assumption you find implausible, any calculation step that needs
 | Cost per DALY (direct funding alternative) | {{< var dfda_direct_funding_cost_per_daly >}} |
 | Total DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} |
 | Lives saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} |
-| ROI (complete benefits) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} |
+| ROI (complete benefits) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 |
 | Treaty leverage vs. direct funding | {{< var treaty_vs_direct_funding_leverage >}} |
 | Bed net benchmark | {{< var bed_nets_cost_per_daly >}}/DALY |
 

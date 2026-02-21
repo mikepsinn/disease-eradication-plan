@@ -295,7 +295,7 @@ The worst outcome is still a net gain. The best outcome cures your cancer and yo
 
 | Intervention | ROI (per $1) | Cost per QALY | QALYs per $1M |
 |---|---|---|---|
-| **Decentralized drug assessment** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} | Dominant (cost-saving) | 5,000-90,000+ |
+| **Decentralized drug assessment** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Dominant (cost-saving) | 5,000-90,000+ |
 | Smallpox Eradication | 159:1 to 400:1 [@smallpox-eradication-roi] | Dominant | 10,000+ |
 | Childhood Vaccination (US) | 10:1 to 16:1 [@childhood-vaccination-roi] | Dominant | 1,000-10,000 |
 | Clean Water & Sanitation | 4:1 to 21:1 [@clean-water-sanitation-roi] | Dominant | 1,000-10,000 |

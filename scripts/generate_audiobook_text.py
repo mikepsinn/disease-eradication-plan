@@ -50,7 +50,7 @@ VARIABLES_YML = PROJECT_ROOT / "_variables.yml"
 OUTPUT_DIR = PROJECT_ROOT / "audiobook" / "text"
 MANIFEST_PATH = PROJECT_ROOT / "audiobook" / "manifest.json"
 
-MAX_CHUNK_CHARS = 25_000
+MAX_CHUNK_CHARS = 3_000
 
 
 # ---------------------------------------------------------------------------
@@ -125,6 +125,9 @@ def strip_qmd_markup(content: str) -> str:
     content = re.sub(r'^---+$', '', content, flags=re.MULTILINE)
     content = re.sub(r'^\*\*\*+$', '', content, flags=re.MULTILINE)
 
+    # Add periods to lines that don't end with punctuation (helps TTS prosody)
+    content = re.sub(r'([a-zA-Z0-9\)\]"\'])$', r'\1.', content, flags=re.MULTILINE)
+
     # Clean up excessive whitespace
     content = re.sub(r'\n{4,}', '\n\n\n', content)
     content = re.sub(r'^\s+$', '', content, flags=re.MULTILINE)
@@ -188,34 +191,52 @@ CONVERT (only these):
 - Years to spoken form: "1945" -> "nineteen forty-five"
 - Tables: convert rows into short spoken sentences
 - Bullet lists: one sentence per bullet, keep them as separate paragraphs
-- Acronyms on first use: "GDP" -> "G.D.P.", "DALY" -> "dally"
+- Acronyms that are spelled out: "GDP" -> "G.D.P.", "FDA" -> "F.D.A.", "IAB" -> "I.A.B."
+- Acronyms pronounced as words: keep as-is. "PAC", "DALY", "NATO" stay "PAC", "DALY", "NATO"
 - Strip markdown formatting characters only (**, ##, -, etc.)
 
 KEEP for TTS:
 - ALL-CAPS words like "WITH", "MORE", "KNOWS" -- TTS engines stress these, keep them capitalized
 - Quote marks around dialogue: "Hey, we didn't die!" -- helps TTS shift into speaking prosody
 - Contractions (don't, can't, it's stay as-is)
-- Parenthetical asides -- they're the comedic delivery
+- Parenthetical asides IN PARENTHESES -- they're the comedic delivery. TTS handles parentheses well.
+  NEVER convert "(they're very vain)" to ", they're very vain" or "as they're very vain" or "which is very vain".
+  NEVER convert "(requires many papers)" to ", which requires many papers".
+  Keep the literal ( ) characters exactly as written.
 
 Section headers (## lines): keep the text as a standalone paragraph (strip ## markers), then add a blank line after. They're often jokes or punchy phrases that work as natural pauses.
 
-DO NOT:
-- Collapse paragraphs together. Keep the original paragraph breaks. Short punchy lines should stay short and punchy.
-- Add transition phrases like "Regarding...", "As for...", "Now let's consider..."
-- Rewrite, rephrase, or "improve" any sentence that already reads naturally
-- Add chapter headers or narrator instructions
+RULES:
+- DO NOT remove or rephrase parenthetical asides. "(they're very vain)" must stay as "(they're very vain)", not become ", they're very vain"
+- DO NOT collapse paragraphs together. Keep the original paragraph breaks. Short punchy lines should stay short and punchy.
+- DO NOT add transition phrases like "Regarding...", "As for...", "Now let's consider..."
+- DO NOT rewrite, rephrase, or "improve" any sentence that already reads naturally
+- DO NOT add chapter headers or narrator instructions
 
 Return ONLY the narration text."""
 
 
-def rewrite_for_audiobook(text: str, title: str) -> str:
-    """Send pre-processed text to LLM for narration rewrite."""
-    from lib.llm import generate_gemini_pro_content
+def rewrite_for_audiobook(text: str, title: str, output_path: Path) -> str:
+    """
+    Send pre-processed text to LLM for narration rewrite.
+    Saves each chunk to disk as it completes so we can resume after crashes.
+    """
+    from lib.llm import generate_gemini_flash_content
 
     chunks = chunk_text(text)
+    chunk_dir = output_path.parent / "chunks" / output_path.stem
+    chunk_dir.mkdir(parents=True, exist_ok=True)
+
     rewritten_parts = []
 
     for i, chunk in enumerate(chunks):
+        chunk_file = chunk_dir / f"chunk-{i+1:02d}-of-{len(chunks):02d}.txt"
+
+        if chunk_file.exists():
+            print(f"    [CACHED] chunk {i + 1}/{len(chunks)} ({chunk_file.stat().st_size:,} bytes)")
+            rewritten_parts.append(chunk_file.read_text(encoding='utf-8'))
+            continue
+
         if len(chunks) > 1:
             context = f"\n\nThis is part {i + 1} of {len(chunks)} of the chapter \"{title}\". Continue from where the previous part left off."
         else:
@@ -224,8 +245,24 @@ def rewrite_for_audiobook(text: str, title: str) -> str:
         prompt = AUDIOBOOK_REWRITE_PROMPT + context + "\n\n---\n\nCONTENT TO CONVERT:\n\n" + chunk
 
         print(f"    Calling LLM ({len(chunk):,} chars, chunk {i + 1}/{len(chunks)})...")
-        result = generate_gemini_pro_content(prompt)
-        rewritten_parts.append(result.strip())
+        max_retries = 3
+        backoff = [10, 30, 60]
+        for attempt in range(1, max_retries + 1):
+            try:
+                result = generate_gemini_flash_content(prompt).strip()
+                break
+            except Exception as e:
+                if attempt < max_retries:
+                    wait = backoff[attempt - 1]
+                    print(f"    [RETRY] Attempt {attempt}/{max_retries} failed: {e}")
+                    print(f"    [RETRY] Waiting {wait}s...", flush=True)
+                    import time
+                    time.sleep(wait)
+                else:
+                    raise
+        chunk_file.write_text(result, encoding='utf-8')
+        print(f"    [SAVED] chunk {i + 1}/{len(chunks)} -> {chunk_file.name}")
+        rewritten_parts.append(result)
 
     return '\n\n'.join(rewritten_parts)
 
@@ -363,7 +400,7 @@ def generate_chapter_text(
         }
 
     print(f"  Rewriting for audiobook...")
-    rewritten = rewrite_for_audiobook(prepared, title)
+    rewritten = rewrite_for_audiobook(prepared, title, output_path)
 
     if not rewritten or len(rewritten) < 50:
         print(f"  [ERROR] LLM returned insufficient content")

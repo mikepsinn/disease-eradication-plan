@@ -71,7 +71,7 @@ Unlike marginal-return frameworks that ask "where should we invest the next doll
 
 The framework combines two evidence sources: (1) **diminishing returns modeling** from cross-country dose-response studies, and (2) **cost-effectiveness threshold analysis** from health economics. The **Budget Impact Score (BIS)** measures our *confidence* in each category's OSL estimate based on the quality and quantity of causal evidence from the econometric literature.
 
-The result is a gap analysis showing which categories are underfunded relative to evidence-based optimal levels, enabling systematic reallocation from overinvestment to underinvestment. Applied to the US federal budget, the framework identifies pragmatic clinical trials as the most severely underinvested category (9,900% below optimal with {{< var dfda_roi_rd_only >}} benefit-cost ratio), followed by vaccinations, basic research, and early childhood education.
+The result is a gap analysis showing which categories are underfunded relative to evidence-based optimal levels, enabling systematic reallocation from overinvestment to underinvestment. Applied to the US federal budget, the framework identifies pragmatic clinical trials as the most severely underinvested category (9,900% below optimal with {{< var dfda_roi_rd_only >}}:1 benefit-cost ratio), followed by vaccinations, basic research, and early childhood education.
 
 ## System Overview {#obg-system-overview}
 
@@ -537,7 +537,7 @@ Evidence from cross-state variation suggests:
 
 ![Some ways of spending government money work better than others. Also, cheap trials work as well as expensive trials, but cost less. This required two charts to explain.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-highest-return-public-investment-bw-academic.jpg)
 
-Pragmatic clinical trials represent perhaps the single highest-return category of public investment identified in the literature. While vaccinations return {{< var childhood_vaccination_roi >}} and early childhood education returns 4:1, pragmatic trials demonstrate benefit-cost ratios of **{{< var dfda_roi_rd_only >}}** [@dfda-impact-paper-2025].
+Pragmatic clinical trials represent perhaps the single highest-return category of public investment identified in the literature. While vaccinations return {{< var childhood_vaccination_roi >}}:1 and early childhood education returns 4:1, pragmatic trials demonstrate benefit-cost ratios of **{{< var dfda_roi_rd_only >}}:1** [@dfda-impact-paper-2025].
 
 The UK's RECOVERY trial demonstrated this dramatically during COVID-19: it cost approximately {{< var recovery_trial_cost_per_patient >}} versus {{< var traditional_phase3_cost_per_patient >}} for traditional Phase 3 trials, a {{< var recovery_trial_cost_reduction_factor >}} cost reduction [@recovery-trial-summary-quote]. This single trial identified dexamethasone as a life-saving treatment, preventing an estimated 1 million deaths globally.
 
@@ -589,7 +589,7 @@ Using standard health economics methodology:
 | OSL | $50B |
 | **Gap** | **+$49.5B (99x underinvestment)** |
 | Gap % of current | +9,900% |
-| Opportunity cost | {{< var dfda_roi_rd_only >}} foregone returns |
+| Opportunity cost | {{< var dfda_roi_rd_only >}}:1 foregone returns |
 
 **Evidence grade**: A (RCT evidence from RECOVERY, ADAPTABLE; strong theoretical foundation)
 
@@ -1200,7 +1200,7 @@ This appendix applies the OBG methodology to the US discretionary budget as an i
 
 **Illustrative findings** (subject to the caveats above):
 
-1. **Extreme underinvestment in pragmatic trials**: At 9,900% below OSL with {{< var dfda_roi_rd_only >}} BCR, this appears to be the single largest misallocation in the federal budget (see Section 6 for full derivation)
+1. **Extreme underinvestment in pragmatic trials**: At 9,900% below OSL with {{< var dfda_roi_rd_only >}}:1 BCR, this appears to be the single largest misallocation in the federal budget (see Section 6 for full derivation)
 2. **Apparent overinvestment**: Military spending is ~$391B (46%) above preliminary OSL estimates based on cross-country benchmarking
 3. **Apparent underinvestment**: Vaccinations, basic research, and health research appear far below evidence-optimal levels
 4. **Negative-return spending**: Agricultural subsidies produce negative welfare effects per the cost-effectiveness literature

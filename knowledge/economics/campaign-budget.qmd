@@ -100,7 +100,7 @@ Your species responds to four things: anger, fear, hope, and greed. Your messagi
 
 **The Content Ladder:**
 
-- **3 seconds (The Hook):** "Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}}X more on weapons than testing which medicines work"
+- **3 seconds (The Hook):** "Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than testing which medicines work"
 - **30 seconds (The Emotion):** "While you read this, 50 people died of preventable disease. Your species has the money to cure them. It spends it on weapons instead."
 - **3 minutes (The Solution):** "A 1% treaty: Redirect 1% of military spending to pragmatic clinical trials {{< var dfda_trial_cost_reduction_factor >}} cheaper. Cure major diseases in 19 years."
 - **Immediate (The Action):** "Vote YES. Buy bonds. Share this."
@@ -387,7 +387,7 @@ Your species calls this "capitalism." Usually it optimizes for the wrong things.
 **Per $1 invested**:
 
 - {{< var treaty_annual_funding >}} annual treaty revenue (forever)
-- {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} total societal value (lives saved, wealth created, suffering reduced)
+- {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 total societal value (lives saved, wealth created, suffering reduced)
 
 **For bondholders**:
 
@@ -433,7 +433,7 @@ Your {{< var treaty_campaign_total_cost >}} redirects {{< var treaty_annual_fund
 But the real return is better than that:
 
 - Your bondholders: {{< var victory_bond_annual_payout >}}/year forever ({{< var victory_bond_annual_return_pct >}} annually)
-- Your society: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} per dollar (cures, wealth, fewer dead people)
+- Your society: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 per dollar (cures, wealth, fewer dead people)
 - Your species: Optional death by 2050
 
 You spend more than this on Super Bowl ads. Those don't cure anything either, but at least yours will.

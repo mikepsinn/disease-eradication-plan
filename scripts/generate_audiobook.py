@@ -34,10 +34,9 @@ from pydub import AudioSegment
 sys.path.insert(0, str(Path(__file__).parent))
 # Add project root to path for dih_models imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
+import subprocess
 from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE, DEFAULT_SPEAKING_INSTRUCTIONS
 from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
-from dih_models.variable_replacement import load_variables
-from generate_audiobook_text import generate_chapter_text, VARIABLES_YML
 
 # Configuration
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -267,19 +266,16 @@ def find_text_file(chapter: dict, title: str) -> Path | None:
 
 def generate_chapter_audio(
     chapter: dict,
-    variables: dict,
     voice: str = NARRATOR_VOICE,
     force: bool = False,
 ) -> Path | None:
     """
     Generate audio for a single chapter.
 
-    Always regenerates the prepared text first (via generate_audiobook_text),
-    then converts to audio via TTS.
+    Regenerates prepared text first (via subprocess), then converts to audio via TTS.
 
     Args:
         chapter: Chapter dict with path, title, part, index
-        variables: Loaded variables dict for text preparation
         voice: TTS voice name
         force: Regenerate even if file exists
 
@@ -305,41 +301,69 @@ def generate_chapter_audio(
         print(f"  [SKIP] Already exists: {output_path.name}")
         return output_path
 
-    # Always regenerate prepared text to stay up to date
+    # Regenerate prepared text via subprocess (avoids API client conflicts)
     print(f"  Preparing text...")
-    text_result = generate_chapter_text(chapter, variables, force=True)
-    if not text_result:
-        print(f"  [SKIP] Text preparation failed")
+    text_script = Path(__file__).parent / "generate_audiobook_text.py"
+    result = subprocess.run(
+        [sys.executable, "-u", str(text_script), "--chapter", str(chapter['index']), "--force"],
+        cwd=str(PROJECT_ROOT),
+    )
+    if result.returncode != 0:
+        print(f"  [ERROR] Text preparation failed (exit code {result.returncode})")
         return None
 
-    text_file = PROJECT_ROOT / text_result['text_file']
-    full_text = text_file.read_text(encoding='utf-8')
-    source = "prepared"
-
-    # Limit text length for API (Gemini TTS has limits)
-    # ~30,000 chars is safe for most TTS APIs
-    if len(full_text) > 30000:
-        print(f"  [WARN] Chapter too long ({len(full_text)} chars), truncating...")
-        full_text = full_text[:30000] + "... Content truncated for audio generation."
-
-    print(f"  Generating audio for: {title} (source: {source})")
-    print(f"    Content length: {len(full_text):,} chars")
-
-    try:
-        CHAPTER_AUDIO_DIR.mkdir(parents=True, exist_ok=True)
-
-        audio_path = generate_speech(
-            text=full_text,
-            output_path=output_path,
-            voice_name=voice
-        )
-
-        print(f"    [OK] Saved: {output_path.name}")
-        return audio_path
-
-    except Exception as e:
-        print(f"    [ERROR] Failed to generate audio: {e}")
+    # Find text chunk files (produced by generate_audiobook_text.py)
+    text_file = find_text_file(chapter, title)
+    if not text_file:
+        print(f"  [SKIP] No text file found after preparation")
         return None
+
+    chunk_dir = text_file.parent / "chunks" / text_file.stem
+    chunk_files = sorted(chunk_dir.glob("chunk-*.txt")) if chunk_dir.exists() else []
+
+    if not chunk_files:
+        # Single chunk - use the main text file directly
+        chunk_files = [text_file]
+
+    print(f"  Generating audio for: {title} ({len(chunk_files)} text chunks)")
+    CHAPTER_AUDIO_DIR.mkdir(parents=True, exist_ok=True)
+    audio_chunk_dir = CHAPTER_AUDIO_DIR / "audio-chunks" / output_path.stem
+    audio_chunk_dir.mkdir(parents=True, exist_ok=True)
+
+    for i, chunk_file in enumerate(chunk_files):
+        chunk_text = chunk_file.read_text(encoding='utf-8')
+        audio_chunk_path = audio_chunk_dir / f"chunk-{i+1:02d}-of-{len(chunk_files):02d}.wav"
+
+        if audio_chunk_path.exists():
+            print(f"    [CACHED] audio chunk {i+1}/{len(chunk_files)} ({audio_chunk_path.stat().st_size:,} bytes)")
+            continue
+
+        print(f"    Chunk {i+1}/{len(chunk_files)} ({len(chunk_text):,} chars)")
+        try:
+            generate_speech(
+                text=chunk_text,
+                output_path=audio_chunk_path,
+                voice_name=voice
+            )
+        except Exception as e:
+            print(f"    [ERROR] Failed on chunk {i+1}: {e}")
+            return None
+
+    # Combine audio chunks into final chapter WAV
+    audio_chunk_files = sorted(audio_chunk_dir.glob("chunk-*.wav"))
+    if len(audio_chunk_files) == 1:
+        # Single chunk - just copy
+        import shutil
+        shutil.copy2(audio_chunk_files[0], output_path)
+    else:
+        print(f"  Combining {len(audio_chunk_files)} audio chunks...")
+        combined = AudioSegment.empty()
+        for acf in audio_chunk_files:
+            combined += AudioSegment.from_wav(str(acf))
+        combined.export(str(output_path), format="wav")
+
+    print(f"    [OK] Saved: {output_path.name}")
+    return output_path
 
 
 def combine_chapter_audio(chapter_files: list[Path], output_path: Path):
@@ -489,11 +513,6 @@ def main():
         end = args.end or len(chapters)
         chapters = [ch for ch in chapters if start <= ch['index'] <= end]
 
-    # Load variables for text preparation
-    print(f"Loading variables: {VARIABLES_YML.name}")
-    variables = load_variables(VARIABLES_YML)
-    print(f"Loaded {len(variables)} variables")
-
     print(f"\nGenerating audio for {len(chapters)} chapter(s)...")
     print(f"Voice: {args.voice}")
     print(f"Output: {OUTPUT_DIR}")
@@ -507,7 +526,7 @@ def main():
 
         print(f"\n[{chapter['index']}/{len(chapters)}] {title}")
 
-        audio_path = generate_chapter_audio(chapter, variables, voice=args.voice, force=args.force)
+        audio_path = generate_chapter_audio(chapter, voice=args.voice, force=args.force)
         if audio_path:
             generated_files.append(audio_path)
 

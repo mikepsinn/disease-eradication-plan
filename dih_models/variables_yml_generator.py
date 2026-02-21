@@ -241,7 +241,7 @@ def generate_variables_yml(
 
             if has_meaningful_uncertainty:
                 # Format central value WITH unit for cleaner display
-                central_formatted = format_parameter_value(central_value, unit, include_unit=True)
+                central_formatted = format_parameter_value(central_value, unit, include_unit=True, ratio_suffix=False)
 
                 # Format CI bounds - for percentages, multiply by 100 and format as percent
                 if unit == "percentage":
@@ -249,8 +249,8 @@ def generate_variables_yml(
                     ci_high_formatted = f"{ci_high * 100:.0f}%"
                 else:
                     # Include units in CI bounds for clarity
-                    ci_low_formatted = format_parameter_value(ci_low, unit, include_unit=True)
-                    ci_high_formatted = format_parameter_value(ci_high, unit, include_unit=True)
+                    ci_low_formatted = format_parameter_value(ci_low, unit, include_unit=True, ratio_suffix=False)
+                    ci_high_formatted = format_parameter_value(ci_high, unit, include_unit=True, ratio_suffix=False)
 
                 # Embed specified CI in display value: "184.6M deaths (95% CI: 150M deaths-220M deaths)"
                 display_value_with_ci = f"{central_formatted} (95% CI: {ci_low_formatted}-{ci_high_formatted})"
@@ -276,9 +276,9 @@ def generate_variables_yml(
                 # Always use deterministic baseline for consistency with tooltips, LaTeX, and parameter-summary.md
                 # The confidence interval will still show Monte Carlo uncertainty range
                 # Include units in all formatted values for cleaner display
-                central_formatted = format_parameter_value(central_value, unit, include_unit=True)
-                p5_formatted = format_parameter_value(p5, unit, include_unit=True)
-                p95_formatted = format_parameter_value(p95, unit, include_unit=True)
+                central_formatted = format_parameter_value(central_value, unit, include_unit=True, ratio_suffix=False)
+                p5_formatted = format_parameter_value(p5, unit, include_unit=True, ratio_suffix=False)
+                p95_formatted = format_parameter_value(p95, unit, include_unit=True, ratio_suffix=False)
 
                 # Embed CI in display value: "184.6M deaths (95% CI: 150M deaths-220M deaths)"
                 display_value_with_ci = f"{central_formatted} (95% CI: {p5_formatted}-{p95_formatted})"

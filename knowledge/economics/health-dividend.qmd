@@ -13,8 +13,8 @@ image: /assets/og-images/knowledge/economics/health-dividend-og-retro-academic.j
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your dFDA costs {{< var dfda_annual_opex >}}/year to run.
 It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
-That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} returns. 
-**Conservative estimate**: {{< var dfda_roi_rd_only >}} (R&D savings only)
+That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 returns.
+**Conservative estimate**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only)
 
 Here's the breakdown.
 
@@ -75,8 +75,8 @@ Less than one fighter jet. See [dFDA Cost-Benefit Analysis](https://dfda-impact.
 
 | Scenario | ROI | What It Counts |
 |----------|-----|----------------|
-| **Conservative** | {{< var dfda_roi_rd_only >}} | R&D savings only (NPV over 10 years) |
-| **Recommended** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} | R&D savings + post-safety efficacy lag elimination |
+| **Conservative** | {{< var dfda_roi_rd_only >}}:1 | R&D savings only (NPV over 10 years) |
+| **Recommended** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | R&D savings + post-safety efficacy lag elimination |
 | **Worst case** | 66:1 | Higher costs, lower adoption |
 
 ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
