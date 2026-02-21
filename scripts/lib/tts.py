@@ -99,10 +99,12 @@ VOICE_DESCRIPTIONS = {
 }
 
 # Default voice for narration
-DEFAULT_VOICE = "Aoede"
-
-# Default speaking style - Philomena Cunk-inspired: innocent, childlike, warm
-DEFAULT_SPEAKING_INSTRUCTIONS = "British accent. Innocent, childlike delivery. Read like a curious child presenting a school report. No judgment, matter-of-fact. Warm and friendly tone."
+# Winner from A/B testing 53 voice+style combos (see scripts/test_tts_voices.py).
+# Kore + ctx-dinner-party beat all others for animation and listenability.
+# Northern English variants lost energy when accent was specified.
+# Male voices (Charon, Puck) tested but female won for this book's tone.
+DEFAULT_VOICE = "Kore"
+DEFAULT_SPEAKING_INSTRUCTIONS = "Generate a voice with the energy of someone telling the best story at a dinner party."
 
 # --- API Setup ---
 GOOGLE_GENERATIVE_AI_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")

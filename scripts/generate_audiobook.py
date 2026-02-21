@@ -36,6 +36,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE, DEFAULT_SPEAKING_INSTRUCTIONS
 from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
+from dih_models.variable_replacement import load_variables
+from generate_audiobook_text import generate_chapter_text, VARIABLES_YML
 
 # Configuration
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -252,31 +254,32 @@ def find_text_file(chapter: dict, title: str) -> Path | None:
     Returns the path if found, None otherwise.
     """
     safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
-    text_file = TEXT_DIR / f"{chapter['index']:03d}-{safe_title}.txt"
+    text_file = TEXT_DIR / f"{chapter['index']:03d}-{safe_title}.prepared.txt"
     if text_file.exists():
         return text_file
 
     # Fallback: match by chapter index prefix in case title changed
-    for f in TEXT_DIR.glob(f"{chapter['index']:03d}-*.txt"):
-        if not f.name.endswith('.resolved.txt'):
-            return f
+    for f in TEXT_DIR.glob(f"{chapter['index']:03d}-*.prepared.txt"):
+        return f
 
     return None
 
 
 def generate_chapter_audio(
     chapter: dict,
+    variables: dict,
     voice: str = NARRATOR_VOICE,
     force: bool = False,
 ) -> Path | None:
     """
     Generate audio for a single chapter.
 
-    Prefers pre-generated text from audiobook/text/ (created by generate_audiobook_text.py).
-    Falls back to raw QMD extraction if no text file exists.
+    Always regenerates the prepared text first (via generate_audiobook_text),
+    then converts to audio via TTS.
 
     Args:
         chapter: Chapter dict with path, title, part, index
+        variables: Loaded variables dict for text preparation
         voice: TTS voice name
         force: Regenerate even if file exists
 
@@ -302,23 +305,16 @@ def generate_chapter_audio(
         print(f"  [SKIP] Already exists: {output_path.name}")
         return output_path
 
-    # Try pre-generated text file first
-    text_file = find_text_file(chapter, title)
+    # Always regenerate prepared text to stay up to date
+    print(f"  Preparing text...")
+    text_result = generate_chapter_text(chapter, variables, force=True)
+    if not text_result:
+        print(f"  [SKIP] Text preparation failed")
+        return None
 
-    if text_file:
-        print(f"  Using pre-generated text: {text_file.name}")
-        full_text = text_file.read_text(encoding='utf-8')
-        source = "text"
-    else:
-        print(f"  No text file found, falling back to raw QMD")
-        prose = extract_prose_from_qmd(qmd_path)
-        if not prose or len(prose) < 50:
-            print(f"  [SKIP] Insufficient content in {qmd_path.name}")
-            return None
-        part_intro = f"Part: {chapter['part']}. " if chapter['part'] else ""
-        intro = f"Chapter {chapter['index']}. {title}. {part_intro}"
-        full_text = intro + "\n\n" + prose
-        source = "raw"
+    text_file = PROJECT_ROOT / text_result['text_file']
+    full_text = text_file.read_text(encoding='utf-8')
+    source = "prepared"
 
     # Limit text length for API (Gemini TTS has limits)
     # ~30,000 chars is safe for most TTS APIs
@@ -493,6 +489,11 @@ def main():
         end = args.end or len(chapters)
         chapters = [ch for ch in chapters if start <= ch['index'] <= end]
 
+    # Load variables for text preparation
+    print(f"Loading variables: {VARIABLES_YML.name}")
+    variables = load_variables(VARIABLES_YML)
+    print(f"Loaded {len(variables)} variables")
+
     print(f"\nGenerating audio for {len(chapters)} chapter(s)...")
     print(f"Voice: {args.voice}")
     print(f"Output: {OUTPUT_DIR}")
@@ -506,7 +507,7 @@ def main():
 
         print(f"\n[{chapter['index']}/{len(chapters)}] {title}")
 
-        audio_path = generate_chapter_audio(chapter, voice=args.voice, force=args.force)
+        audio_path = generate_chapter_audio(chapter, variables, voice=args.voice, force=args.force)
         if audio_path:
             generated_files.append(audio_path)
 

@@ -133,6 +133,28 @@ def strip_qmd_markup(content: str) -> str:
     return content.strip()
 
 
+def split_long_lines(text: str, max_chars: int = 300) -> str:
+    """Split lines longer than max_chars at sentence boundaries for better TTS prosody."""
+    lines = text.split('\n')
+    result = []
+    for line in lines:
+        if len(line) <= max_chars:
+            result.append(line)
+            continue
+        # Split at sentence boundaries (. ! ?) followed by a space
+        sentences = re.split(r'(?<=[.!?])\s+', line)
+        current = ''
+        for sentence in sentences:
+            if current and len(current) + len(sentence) + 1 > max_chars:
+                result.append(current)
+                current = sentence
+            else:
+                current = current + ' ' + sentence if current else sentence
+        if current:
+            result.append(current)
+    return '\n'.join(result)
+
+
 def prepare_for_narration(raw_qmd: str, variables: dict) -> str:
     """
     Programmatic pipeline: resolve variables first, then strip markup.
@@ -145,6 +167,8 @@ def prepare_for_narration(raw_qmd: str, variables: dict) -> str:
     text = re.sub(r'\{\{<\s*var\s+\w+\s*>\}\}', '', text)
     # 2. Strip all markup
     text = strip_qmd_markup(text)
+    # 3. Split very long lines at sentence boundaries for better TTS prosody
+    text = split_long_lines(text)
     text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()
 
@@ -155,20 +179,38 @@ def prepare_for_narration(raw_qmd: str, variables: dict) -> str:
 
 AUDIOBOOK_REWRITE_PROMPT = """Convert this book chapter to an audiobook narration script.
 
-Input is pre-cleaned markdown with raw numbers. Convert to natural spoken text.
+Your job is MINIMAL: only change what would sound wrong spoken aloud. Leave everything else EXACTLY as written.
 
-CONVERT: numbers/money to words ("$8.2T" -> "eight point two trillion dollars"), percentages ("50%" -> "fifty percent"), ratios ("100:1" -> "a hundred to one"), years to spoken form, tables to flowing sentences, bullet lists to paragraphs, headers to smooth transitions, acronyms on first use ("GDP" -> "G.D.P.", "DALY" -> "dally"). Strip all markdown formatting.
+CONVERT (only these):
+- Numbers/money to words: "$8.2T" -> "eight point two trillion dollars"
+- Percentages: "50%" -> "fifty percent"
+- Ratios: "100:1" -> "a hundred to one"
+- Years to spoken form: "1945" -> "nineteen forty-five"
+- Tables: convert rows into short spoken sentences
+- Bullet lists: one sentence per bullet, keep them as separate paragraphs
+- Acronyms on first use: "GDP" -> "G.D.P.", "DALY" -> "dally"
+- Strip markdown formatting characters only (**, ##, -, etc.)
 
-PRESERVE: the irreverent, darkly humorous voice exactly as written. ALL content and meaning; do not cut or summarize. Paragraph breaks as natural pauses.
+KEEP for TTS:
+- ALL-CAPS words like "WITH", "MORE", "KNOWS" -- TTS engines stress these, keep them capitalized
+- Quote marks around dialogue: "Hey, we didn't die!" -- helps TTS shift into speaking prosody
+- Contractions (don't, can't, it's stay as-is)
+- Parenthetical asides -- they're the comedic delivery
 
-DO NOT: add chapter headers, "end of chapter", or narrator instructions. Do not formalize the tone. No markdown in output.
+Section headers (## lines): keep the text as a standalone paragraph (strip ## markers), then add a blank line after. They're often jokes or punchy phrases that work as natural pauses.
+
+DO NOT:
+- Collapse paragraphs together. Keep the original paragraph breaks. Short punchy lines should stay short and punchy.
+- Add transition phrases like "Regarding...", "As for...", "Now let's consider..."
+- Rewrite, rephrase, or "improve" any sentence that already reads naturally
+- Add chapter headers or narrator instructions
 
 Return ONLY the narration text."""
 
 
 def rewrite_for_audiobook(text: str, title: str) -> str:
     """Send pre-processed text to LLM for narration rewrite."""
-    from lib.llm import generate_gemini_flash_content
+    from lib.llm import generate_gemini_pro_content
 
     chunks = chunk_text(text)
     rewritten_parts = []
@@ -182,7 +224,7 @@ def rewrite_for_audiobook(text: str, title: str) -> str:
         prompt = AUDIOBOOK_REWRITE_PROMPT + context + "\n\n---\n\nCONTENT TO CONVERT:\n\n" + chunk
 
         print(f"    Calling LLM ({len(chunk):,} chars, chunk {i + 1}/{len(chunks)})...")
-        result = generate_gemini_flash_content(prompt)
+        result = generate_gemini_pro_content(prompt)
         rewritten_parts.append(result.strip())
 
     return '\n\n'.join(rewritten_parts)
@@ -288,7 +330,7 @@ def generate_chapter_text(
     title = chapter['title'] or extract_title_from_qmd(qmd_path)
 
     safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
-    output_path = OUTPUT_DIR / f"{chapter['index']:03d}-{safe_title}.txt"
+    output_path = OUTPUT_DIR / f"{chapter['index']:03d}-{safe_title}.prepared.txt"
 
     if output_path.exists() and not force:
         print(f"  [SKIP] Already exists: {output_path.name}")
@@ -364,7 +406,7 @@ def list_chapters(chapters: list[dict]):
             title = extract_title_from_qmd(qmd_path)
         title = title or ch['path']
         safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
-        text_file = OUTPUT_DIR / f"{ch['index']:03d}-{safe_title}.txt"
+        text_file = OUTPUT_DIR / f"{ch['index']:03d}-{safe_title}.prepared.txt"
         if text_file.exists():
             status = f"[x] ({text_file.stat().st_size:,} bytes)"
         else:
