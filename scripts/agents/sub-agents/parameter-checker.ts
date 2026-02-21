@@ -1,6 +1,7 @@
 import { Agent } from "@voltagent/core";
 import { google } from "@ai-sdk/google";
 import type { Memory } from "@voltagent/core";
+import { GEMINI_PRO_MODEL_ID } from "../../lib/llm";
 
 /**
  * Parameter Checker Agent
@@ -24,7 +25,7 @@ When you find a hardcoded number:
 - Always provide the file path and line number where the number appears
 
 Be thorough and systematic. Check all numeric values, percentages, dollar amounts, and statistical figures.`,
-    model: google("gemini-2.5-pro"),
+    model: google(GEMINI_PRO_MODEL_ID),
     memory,
   });
 }

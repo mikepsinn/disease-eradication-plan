@@ -15,10 +15,12 @@ Usage:
     python scripts/generate_audiobook.py --list            # List all chapters
 """
 import sys
+import json
 import re
 import argparse
 import subprocess
 from pathlib import Path
+from typing import TypedDict
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32':
@@ -39,9 +41,60 @@ QUARTO_BOOK_YML = PROJECT_ROOT / "_quarto-manual-paperback.yml"
 OUTPUT_DIR = PROJECT_ROOT / "audiobook"
 CHAPTER_AUDIO_DIR = OUTPUT_DIR / "chapters"
 TEXT_DIR = OUTPUT_DIR / "text"
+MANIFEST_PATH = OUTPUT_DIR / "manifest.json"
 
 # Voice for narration (Kore + dinner-party energy, winner from A/B testing)
 NARRATOR_VOICE = DEFAULT_VOICE
+
+
+def extract_book_metadata(config: dict) -> dict:
+    """Extract book metadata (title, author, year, publisher, cover) from quarto config."""
+    book = config.get('book', {})
+    metadata = config.get('metadata', {})
+
+    # Author: first entry in book.author list, or fallback to metadata.creator
+    authors = book.get('author', [])
+    if isinstance(authors, list) and authors:
+        author = authors[0].get('name', '') if isinstance(authors[0], dict) else str(authors[0])
+    else:
+        author = metadata.get('creator', 'Unknown')
+
+    # Cover art: from epub config, fall back to conventional path
+    cover_path = config.get('format', {}).get('epub', {}).get('epub-cover-image')
+    if cover_path:
+        cover_art = PROJECT_ROOT / cover_path
+    else:
+        cover_art = PROJECT_ROOT / "assets" / "cover" / "book-cover-3.jpg"
+
+    return {
+        'title': book.get('title', 'Untitled'),
+        'author': author,
+        'year': metadata.get('copyright-year', ''),
+        'publisher': metadata.get('publisher', ''),
+        'cover_art': cover_art,
+    }
+
+
+class ChapterTimestamp(TypedDict):
+    index: int
+    title: str
+    part: str | None
+    file: str
+    start_ms: int
+    end_ms: int
+    duration_ms: int
+    duration_formatted: str
+
+
+def format_duration(ms: int) -> str:
+    """Format milliseconds as H:MM:SS or M:SS."""
+    total_seconds = ms // 1000
+    hours = total_seconds // 3600
+    minutes = (total_seconds % 3600) // 60
+    seconds = total_seconds % 60
+    if hours > 0:
+        return f"{hours}:{minutes:02d}:{seconds:02d}"
+    return f"{minutes}:{seconds:02d}"
 
 
 def load_book_config() -> dict:
@@ -274,34 +327,69 @@ def generate_chapter_audio(
     return output_path
 
 
-def combine_chapter_audio(chapter_files: list[Path], output_path: Path):
+def combine_chapter_audio(
+    chapter_files: list[Path],
+    chapters: list[dict],
+    output_path: Path,
+) -> tuple[Path, list[ChapterTimestamp]]:
     """
     Combine individual chapter audio files into a single audiobook.
 
     Args:
         chapter_files: List of paths to chapter WAV files (in order)
+        chapters: Chapter metadata dicts from extract_chapters()
         output_path: Path for combined output file
+
+    Returns:
+        Tuple of (mp3_path, list of ChapterTimestamp dicts)
     """
     print(f"\nCombining {len(chapter_files)} chapters into audiobook...")
 
+    # Build lookup: chapter index -> metadata (parse "001-" prefix from filename)
+    chapter_meta_by_index: dict[int, dict] = {}
+    for ch in chapters:
+        chapter_meta_by_index[ch['index']] = ch
+
     # Start with empty audio
     combined = AudioSegment.empty()
+    timestamps: list[ChapterTimestamp] = []
 
     # Add 2 seconds of silence between chapters
     silence = AudioSegment.silent(duration=2000)
+    current_position_ms = 0
 
     for i, chapter_file in enumerate(chapter_files):
         print(f"  Adding: {chapter_file.name}")
 
-        try:
-            chapter_audio = AudioSegment.from_wav(str(chapter_file))
+        chapter_audio = AudioSegment.from_wav(str(chapter_file))
 
-            if i > 0:
-                combined += silence
-            combined += chapter_audio
+        if i > 0:
+            combined += silence
+            current_position_ms += len(silence)
 
-        except Exception as e:
-            print(f"    [ERROR] Failed to add {chapter_file.name}: {e}")
+        start_ms = current_position_ms
+        combined += chapter_audio
+        end_ms = current_position_ms + len(chapter_audio)
+        current_position_ms = end_ms
+        duration_ms = len(chapter_audio)
+
+        # Match metadata by parsing index prefix from filename (e.g. "001-Start-Here.wav")
+        index_match = re.match(r'^(\d+)-', chapter_file.stem)
+        chapter_index = int(index_match.group(1)) if index_match else i + 1
+        meta = chapter_meta_by_index.get(chapter_index, {})
+
+        title = meta.get('title') or chapter_file.stem.split('-', 1)[-1].replace('-', ' ')
+
+        timestamps.append(ChapterTimestamp(
+            index=chapter_index,
+            title=title,
+            part=meta.get('part'),
+            file=chapter_file.name,
+            start_ms=start_ms,
+            end_ms=end_ms,
+            duration_ms=duration_ms,
+            duration_formatted=format_duration(duration_ms),
+        ))
 
     # Export combined audio
     print(f"\nExporting combined audiobook...")
@@ -317,13 +405,10 @@ def combine_chapter_audio(chapter_files: list[Path], output_path: Path):
     print(f"  [OK] WAV: {wav_path}")
 
     # Print duration
-    duration_seconds = len(combined) / 1000
-    hours = int(duration_seconds // 3600)
-    minutes = int((duration_seconds % 3600) // 60)
-    seconds = int(duration_seconds % 60)
-    print(f"\nTotal duration: {hours}h {minutes}m {seconds}s")
+    total_ms = len(combined)
+    print(f"\nTotal duration: {format_duration(total_ms)}")
 
-    return mp3_path
+    return mp3_path, timestamps
 
 
 def list_chapters(chapters: list[dict]):
@@ -355,6 +440,166 @@ def list_chapters(chapters: list[dict]):
 
     print("=" * 80)
     print(f"Total: {len(chapters)} chapters")
+
+
+def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int):
+    """Update audiobook/manifest.json with duration and timing data."""
+    manifest = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
+
+    # Build lookup by chapter index
+    ts_by_index = {ts['index']: ts for ts in timestamps}
+
+    for chapter in manifest.get('chapters', []):
+        ts = ts_by_index.get(chapter['index'])
+        if ts:
+            chapter['duration_ms'] = ts['duration_ms']
+            chapter['duration_formatted'] = ts['duration_formatted']
+            chapter['audio_start_ms'] = ts['start_ms']
+            chapter['audio_end_ms'] = ts['end_ms']
+            chapter['audio_file'] = ts['file']
+
+    manifest['total_duration_ms'] = total_duration_ms
+    manifest['total_duration_formatted'] = format_duration(total_duration_ms)
+
+    MANIFEST_PATH.write_text(
+        json.dumps(manifest, indent=2, ensure_ascii=False) + '\n',
+        encoding='utf-8',
+    )
+    print(f"  [OK] Updated manifest: {MANIFEST_PATH}")
+
+
+def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict):
+    """Embed ID3v2.4 tags with chapter markers and cover art into the combined MP3."""
+    from mutagen.mp3 import MP3
+    from mutagen.id3 import (
+        ID3, TIT2, TPE1, TALB, TCON, TDRC, TPUB, APIC, CHAP, CTOC, CTOCFlags,
+    )
+
+    print(f"\nTagging MP3 with metadata and chapter markers...")
+
+    audio = MP3(str(mp3_path))
+    if audio.tags is None:
+        audio.add_tags()
+    tag = audio.tags
+
+    # Basic metadata
+    tag.add(TIT2(encoding=3, text=[book_meta['title']]))
+    tag.add(TPE1(encoding=3, text=[book_meta['author']]))
+    tag.add(TALB(encoding=3, text=[book_meta['title']]))
+    tag.add(TCON(encoding=3, text=["Audiobook"]))
+    tag.add(TDRC(encoding=3, text=[book_meta['year']]))
+    tag.add(TPUB(encoding=3, text=[book_meta['publisher']]))
+
+    # Cover art
+    cover_art: Path = book_meta['cover_art']
+    if cover_art.exists():
+        cover_data = cover_art.read_bytes()
+        mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
+        tag.add(APIC(
+            encoding=3,
+            mime=mime,
+            type=3,  # Front cover
+            desc='Cover',
+            data=cover_data,
+        ))
+        print(f"  [OK] Embedded cover art ({len(cover_data):,} bytes)")
+
+    # Chapter markers (CHAP frames)
+    chapter_ids = []
+    for ts in timestamps:
+        element_id = f"chp{ts['index']:02d}"
+        chapter_ids.append(element_id)
+
+        tag.add(CHAP(
+            element_id=element_id,
+            start_time=ts['start_ms'],
+            end_time=ts['end_ms'],
+            start_offset=0xFFFFFFFF,  # Not used
+            end_offset=0xFFFFFFFF,    # Not used
+            sub_frames=[
+                TIT2(encoding=3, text=[ts['title']]),
+            ],
+        ))
+
+    # Table of contents (CTOC frame)
+    tag.add(CTOC(
+        element_id="toc",
+        flags=CTOCFlags.TOP_LEVEL | CTOCFlags.ORDERED,
+        child_element_ids=chapter_ids,
+        sub_frames=[
+            TIT2(encoding=3, text=["Table of Contents"]),
+        ],
+    ))
+
+    audio.save()
+    print(f"  [OK] Tagged {len(timestamps)} chapters in {mp3_path.name}")
+
+
+def export_m4b(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict):
+    """Export M4B audiobook with chapter metadata using ffmpeg."""
+    m4b_path = mp3_path.with_suffix('.m4b')
+    metadata_path = mp3_path.with_suffix('.ffmetadata')
+
+    print(f"\nExporting M4B audiobook...")
+
+    # Write ffmetadata file with chapter entries
+    lines = [";FFMETADATA1"]
+    lines.append(f"title={book_meta['title']}")
+    lines.append(f"artist={book_meta['author']}")
+    lines.append(f"album={book_meta['title']}")
+    lines.append(f"genre=Audiobook")
+    lines.append(f"date={book_meta['year']}")
+    lines.append("")
+
+    for ts in timestamps:
+        lines.append("[CHAPTER]")
+        lines.append("TIMEBASE=1/1000")
+        lines.append(f"START={ts['start_ms']}")
+        lines.append(f"END={ts['end_ms']}")
+        lines.append(f"title={ts['title']}")
+        lines.append("")
+
+    metadata_path.write_text('\n'.join(lines), encoding='utf-8')
+
+    # Build ffmpeg command
+    cmd = [
+        "ffmpeg", "-y",
+        "-i", str(mp3_path),
+        "-i", str(metadata_path),
+    ]
+
+    # Add cover art if available
+    cover_art: Path = book_meta['cover_art']
+    if cover_art.exists():
+        cmd.extend(["-i", str(cover_art)])
+        cmd.extend([
+            "-map", "0:a",           # Audio from MP3
+            "-map", "2:v",           # Cover art
+            "-disposition:v:0", "attached_pic",
+        ])
+    else:
+        cmd.extend(["-map", "0:a"])
+
+    cmd.extend([
+        "-map_metadata", "1",    # Metadata from ffmetadata file
+        "-c:a", "aac",
+        "-b:a", "128k",
+        "-f", "mp4",
+        str(m4b_path),
+    ])
+
+    print(f"  Running ffmpeg...")
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"  [ERROR] ffmpeg failed:\n{result.stderr}")
+        metadata_path.unlink(missing_ok=True)
+        return
+
+    # Clean up temp metadata file
+    metadata_path.unlink(missing_ok=True)
+
+    m4b_size = m4b_path.stat().st_size
+    print(f"  [OK] M4B: {m4b_path} ({m4b_size / 1024 / 1024:.1f} MB)")
 
 
 def main():
@@ -447,8 +692,19 @@ def main():
         all_chapter_files = sorted(CHAPTER_AUDIO_DIR.glob("*.wav"))
 
         if all_chapter_files:
+            # Reload full config for metadata matching
+            full_config = load_book_config()
+            all_chapters = extract_chapters(full_config)
+            book_meta = extract_book_metadata(full_config)
+
             combined_path = OUTPUT_DIR / "How-to-End-War-and-Disease-Audiobook"
-            combine_chapter_audio(all_chapter_files, combined_path)
+            mp3_path, timestamps = combine_chapter_audio(all_chapter_files, all_chapters, combined_path)
+
+            total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
+
+            update_manifest(timestamps, total_duration_ms)
+            tag_mp3(mp3_path, timestamps, book_meta)
+            export_m4b(mp3_path, timestamps, book_meta)
 
     print("\nDone!")
 

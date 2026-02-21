@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 34 | **Words:** 73,262 | **Images:** 464 | **Est. Pages:** ~525
+**Files:** 34 | **Words:** 73,645 | **Images:** 464 | **Est. Pages:** ~527
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 4,169 words | 436 lines | 14 images | ~24p
+**Stats:** 4,579 words | 450 lines | 14 images | ~25p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Beautiful Inefficiency of the Human Economy
@@ -40,7 +40,7 @@
     ![(video)](https://www.youtube.com/watch?v=Gg-jvHynP9Y)
     ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
   - The 5-Step Plan
-    - Step 1: Sell VICTORY Bonds
+    - Step 1: Sell Incentive Alignment Bonds
       - What Grandma Got
       - What You're Offering
     ![Returns that make Ponzi schemes look conservative (but legal)](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
@@ -724,7 +724,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** VICTORY Incentive Alignment Bonds
 **Description:** How to legally bribe politicians into saving lives, and how investors profit from it
-**Stats:** 5,413 words | 626 lines | 39 images | ~41p
+**Stats:** 5,386 words | 623 lines | 39 images | ~41p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -791,7 +791,6 @@
     - Investment Thresholds and Term Sheet
     ![You need different amounts of money to be allowed to make more money, depending on how much money you already have. The rich call this 'protecting investors.'](/assets/images/victory-bonds/victory-bonds-section-structure-your-minimums-bw-academic.jpg)
     ![Money goes in from treaty, money comes out to bondholders. It's like a water fountain, but the water is money and the fountain is preventing war.](/assets/images/victory-bonds/victory-bonds-section-draft-your-term-sheet-bw-academic.jpg)
-    - When Rich People Ask Difficult Questions
       - "This sounds like a Ponzi scheme run by someone who failed math."
     ![One circle takes money from new investors to pay old investors until it collapses. The other circle takes money from weapons to fund cures and pays investors forever. Spot the difference.](/assets/images/victory-bonds/victory-bonds-section-this-sounds-like-a-ponzi-scheme-run-by-someone-who-failed-math-bw-academic.jpg)
       - "Isn't this just rich people buying policy?"

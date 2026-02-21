@@ -71,6 +71,7 @@
     "audiobook:text:dry-run": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_text.py --dry-run",
     "audiobook:text:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_text.py --list",
     "audiobook:generate": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook.py",
+    "audiobook:generate:all": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_text.py && .venv\\Scripts\\python.exe -u scripts/generate_audiobook.py",
     "audiobook:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook.py --list",
     "param:unused": "tsx scripts/parameter-audit.ts --unused",
     "param:list": "tsx scripts/parameter-audit.ts --all",

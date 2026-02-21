@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { Agent, Memory } from "@voltagent/core";
 import { google } from "@ai-sdk/google";
+import { GEMINI_FLASH_MODEL_ID } from "../lib/llm";
 
 /**
  * Parameter Checker Agent
@@ -24,7 +25,7 @@ Guidelines:
 - Suggest descriptive parameter names
 - Include the current value, suggested parameter name, and file location
 - Priority levels: critical (widely used), high (important metric), medium (useful), low (nice to have)`,
-    model: google("gemini-2.5-flash"),
+    model: google(GEMINI_FLASH_MODEL_ID),
     memory,
   });
 }
@@ -51,7 +52,7 @@ Guidelines:
 - Check for rounding errors
 - Validate that referenced numbers match actual values in text
 - Priority: critical (wrong results), high (unclear formulas), medium (minor issues), low (style improvements)`,
-    model: google("gemini-2.5-flash"),
+    model: google(GEMINI_FLASH_MODEL_ID),
     memory,
   });
 }
@@ -78,7 +79,7 @@ Guidelines:
 - Look for claims about numbers, studies, events, quotes
 - Verify that referenced sources match the claim
 - Priority: critical (major claims without evidence), high (statistical claims), medium (minor factual claims), low (general statements)`,
-    model: google("gemini-2.5-flash"),
+    model: google(GEMINI_FLASH_MODEL_ID),
     memory,
   });
 }
@@ -144,7 +145,7 @@ PRIORITY LEVELS:
 - low: Minor numbers, single-use values
 
 Your goal is to ensure every number in the book either uses the parameter system or has clear source attribution, while being careful not to flag LaTeX equations.`,
-    model: google("gemini-2.5-flash"),
+    model: google(GEMINI_FLASH_MODEL_ID),
     memory,
   });
 }
@@ -171,7 +172,7 @@ Guidelines:
 - Look for conflicting statements about the same topic
 - Verify cross-references are accurate
 - Priority: critical (direct contradictions), high (important inconsistencies), medium (terminology variations), low (minor style differences)`,
-    model: google("gemini-2.5-flash"),
+    model: google(GEMINI_FLASH_MODEL_ID),
     memory,
   });
 }

@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { google } from "@ai-sdk/google";
 import { Agent, VoltAgent, Memory } from "@voltagent/core";
+import { GEMINI_PRO_MODEL_ID } from "../scripts/lib/llm";
 import { LibSQLMemoryAdapter } from "@voltagent/libsql";
 import { createPinoLogger } from "@voltagent/logger";
 import { honoServer } from "@voltagent/server-hono";
@@ -44,7 +45,7 @@ Your mission is to help save millions of lives by making curing people more prof
 - Redirecting just 1% of military spending to medical research through proven decentralized trial methods (RECOVERY trial: $500/patient vs $41K traditional)
 
 Be helpful, accurate, and aligned with the project's mission and principles.`,
-  model: google("gemini-2.5-pro"),
+  model: google(GEMINI_PRO_MODEL_ID),
   memory: memory,
 });
 
@@ -71,8 +72,8 @@ const voltAgent = new VoltAgent({
 logger.info(`VoltAgent server configured on port ${port}`);
 logger.info(`Agents registered: dihAgent, bookChat`);
 logger.info(`Agent details:`, {
-  dihAgent: { name: dihAgent.name, model: "gemini-2.5-pro" },
-  bookChat: { name: bookChatAgent.name, model: "gemini-2.5-pro" },
+  dihAgent: { name: dihAgent.name, model: GEMINI_PRO_MODEL_ID },
+  bookChat: { name: bookChatAgent.name, model: GEMINI_PRO_MODEL_ID },
 });
 
 // Export for use in other modules

@@ -18,8 +18,8 @@ export const availableModels = [
   'sonar-medium-chat',
   'sonar-large-chat',
   // Google Gemini models
-  'gemini-2.5-pro',
-  'gemini-2.5-flash',
+  'gemini-3.1-pro-preview',
+  'gemini-3-flash-preview',
   // DeepSeek models
   'deepseek-chat',
   'deepseek-reasoner'
@@ -33,5 +33,5 @@ export const env = {
   PERPLEXITY_API_KEY: process.env.PERPLEXITY_API_KEY,
   GOOGLE_GENERATIVE_AI_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
   DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY,
-  AI_MODEL: (process.env.AI_MODEL || 'gemini-2.5-pro') as AvailableModel
+  AI_MODEL: (process.env.AI_MODEL || 'gemini-3.1-pro-preview') as AvailableModel
 }; 

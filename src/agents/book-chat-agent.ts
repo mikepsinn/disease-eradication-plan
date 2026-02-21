@@ -1,5 +1,6 @@
 import { Agent, Memory, BaseRetriever, type BaseMessage, type RetrieveOptions } from "@voltagent/core";
 import { google } from "@ai-sdk/google";
+import { GEMINI_PRO_MODEL_ID } from "../../../scripts/lib/llm";
 import { LibSQLMemoryAdapter } from "@voltagent/libsql";
 import { AiSdkEmbeddingAdapter, InMemoryVectorAdapter } from "@voltagent/core";
 import { BookVectorStore } from "../../scripts/vector/vector-store";
@@ -99,7 +100,7 @@ Guidelines:
 - If you don't know something, say so rather than making it up
 - Be helpful and aligned with the book's mission to save millions of lives
 - Use the retrieved context to provide accurate answers`,
-    model: google("gemini-2.5-pro"),
+    model: google(GEMINI_PRO_MODEL_ID),
     memory,
     retriever: retriever,
   });

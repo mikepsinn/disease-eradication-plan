@@ -21,8 +21,8 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 
 # --- Model IDs ---
-# Updated January 2026 - Gemini 3 models (preview)
-GEMINI_PRO_MODEL_ID = "gemini-3-pro-preview"
+# Updated February 2026 - Gemini 3.1 Pro, Gemini 3 Flash
+GEMINI_PRO_MODEL_ID = "gemini-3.1-pro-preview"
 GEMINI_FLASH_MODEL_ID = "gemini-3-flash-preview"
 CLAUDE_OPUS_4_1_MODEL_ID = "claude-opus-4-1-20250805"
 CLAUDE_SONNET_4_5_MODEL_ID = "claude-sonnet-4-5-20250929"

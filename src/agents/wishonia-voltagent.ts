@@ -1,5 +1,6 @@
 import { Agent, VoltAgent, Memory } from "@voltagent/core";
 import { google } from "@ai-sdk/google";
+import { GEMINI_FLASH_MODEL_ID } from "../../../scripts/lib/llm";
 import { createPinoLogger } from "@voltagent/logger";
 import { honoServer } from "@voltagent/server-hono";
 import {
@@ -69,7 +70,7 @@ Guidelines:
 - Use parallel processing for efficiency
 - Track all changes with frontmatter hashes
 - Be thorough and systematic`,
-  model: google("gemini-2.5-flash"),
+  model: google(GEMINI_FLASH_MODEL_ID),
   memory,
   subAgents: [
     parameterCheckerAgent,

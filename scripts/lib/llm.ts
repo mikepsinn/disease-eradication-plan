@@ -27,11 +27,11 @@ interface GeminiResult {
   usageMetadata?: GeminiUsageMetadata;
 }
 
-// Gemini 3 models (current - released Dec 2025)
-// https://blog.google/products/gemini/gemini-3-flash/
+// Gemini 3 models (current)
+// https://ai.google.dev/gemini-api/docs/models
 // Note: Gemini 2.0 Flash-Lite deprecated March 31, 2026
 export const GEMINI_FLASH_MODEL_ID = 'gemini-3-flash-preview';
-export const GEMINI_PRO_MODEL_ID = 'gemini-3-pro-preview';
+export const GEMINI_PRO_MODEL_ID = 'gemini-3.1-pro-preview';
 export const GEMINI_IMAGE_MODEL_ID = 'gemini-3-pro-image-preview';
 
 // Claude models
@@ -40,7 +40,7 @@ const CLAUDE_SONNET_4_5_MODEL_ID = 'claude-sonnet-4-5-20250929';
 
 // Model configurations with pricing and limits
 // Pricing from: https://ai.google.dev/pricing and https://anthropic.com/pricing
-// Updated Jan 2026 for Gemini 3 models
+// Updated Feb 2026 for Gemini 3.1 Pro
 const MODEL_CONFIGS: Record<string, ModelConfig> = {
   // Gemini 3 models
   'gemini-3-flash-preview': {
@@ -49,8 +49,8 @@ const MODEL_CONFIGS: Record<string, ModelConfig> = {
     costPer1MInputTokens: 0.50,
     costPer1MOutputTokens: 3.00,
   },
-  'gemini-3-pro-preview': {
-    id: 'gemini-3-pro-preview',
+  'gemini-3.1-pro-preview': {
+    id: 'gemini-3.1-pro-preview',
     contextLength: 2000000, // 2M tokens
     costPer1MInputTokens: 1.25,
     costPer1MOutputTokens: 5.00,

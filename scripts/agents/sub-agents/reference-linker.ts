@@ -1,6 +1,7 @@
 import { Agent } from "@voltagent/core";
 import { google } from "@ai-sdk/google";
 import type { Memory } from "@voltagent/core";
+import { GEMINI_PRO_MODEL_ID } from "../../lib/llm";
 
 /**
  * Reference Linker Agent
@@ -24,7 +25,7 @@ When you find a number or claim without a link:
 - Verify the link target is correct and accessible
 
 Be systematic. Every number should trace back to its source.`,
-    model: google("gemini-2.5-pro"),
+    model: google(GEMINI_PRO_MODEL_ID),
     memory,
   });
 }

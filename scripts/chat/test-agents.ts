@@ -6,6 +6,7 @@
 
 import { google } from "@ai-sdk/google";
 import { Agent, VoltAgent, Memory } from "@voltagent/core";
+import { GEMINI_PRO_MODEL_ID } from "../lib/llm";
 import { LibSQLMemoryAdapter } from "@voltagent/libsql";
 import { createPinoLogger } from "@voltagent/logger";
 import {
@@ -46,7 +47,7 @@ async function testAgents() {
     const dihAgent = new Agent({
       name: "DIH Agent",
       instructions: "Test agent",
-      model: google("gemini-2.5-pro"),
+      model: google(GEMINI_PRO_MODEL_ID),
       memory: memory,
     });
     console.log(`✅ DIH Agent created: ${dihAgent.name}`);

@@ -12,6 +12,7 @@ import { glob } from "glob";
 import { google } from "@ai-sdk/google";
 import { generateObject } from "ai";
 import { z } from "zod";
+import { GEMINI_FLASH_MODEL_ID } from "../../../scripts/lib/llm";
 
 interface VariableInfo {
   name: string;
@@ -173,7 +174,7 @@ If no numbers need linking, return an empty array.`;
 
   try {
     const result = await generateObject({
-      model: google("gemini-2.5-flash"),
+      model: google(GEMINI_FLASH_MODEL_ID),
       schema: ReplacementSchema,
       prompt,
     });

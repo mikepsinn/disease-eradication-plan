@@ -1,6 +1,7 @@
 import { Agent } from "@voltagent/core";
 import { google } from "@ai-sdk/google";
 import type { Memory } from "@voltagent/core";
+import { GEMINI_PRO_MODEL_ID } from "../../lib/llm";
 
 /**
  * Math Validator Agent
@@ -25,7 +26,7 @@ When you find an error:
 - Check if related calculations are also affected
 
 Be precise and mathematical. Verify all calculations step by step.`,
-    model: google("gemini-2.5-pro"),
+    model: google(GEMINI_PRO_MODEL_ID),
     memory,
   });
 }

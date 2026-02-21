@@ -1,6 +1,7 @@
 import { Agent } from "@voltagent/core";
 import { google } from "@ai-sdk/google";
 import type { Memory } from "@voltagent/core";
+import { GEMINI_PRO_MODEL_ID } from "../../lib/llm";
 
 /**
  * Consistency Checker Agent
@@ -25,7 +26,7 @@ When you find an inconsistency:
 - Check if related files are also affected
 
 Be thorough. Consistency is critical for a professional book.`,
-    model: google("gemini-2.5-pro"),
+    model: google(GEMINI_PRO_MODEL_ID),
     memory,
   });
 }
