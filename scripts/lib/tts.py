@@ -188,31 +188,44 @@ def convert_to_wav(audio_data: bytes, mime_type: str) -> bytes:
     return header + audio_data
 
 
-def generate_speech(
+def _chunk_text_for_tts(text: str, max_chars: int = 7000) -> list[str]:
+    """
+    Split text into chunks at paragraph boundaries for TTS.
+    Gemini TTS output limit is 16,384 tokens (~10:55 of audio).
+    Keeping chunks to ~7,000 chars gives ~8-9 min per chunk with safe margin.
+    """
+    if len(text) <= max_chars:
+        return [text]
+
+    paragraphs = text.split('\n\n')
+    chunks = []
+    current: list[str] = []
+    current_len = 0
+
+    for para in paragraphs:
+        para_len = len(para) + 2  # +2 for \n\n
+        if current_len + para_len > max_chars and current:
+            chunks.append('\n\n'.join(current))
+            current = [para]
+            current_len = para_len
+        else:
+            current.append(para)
+            current_len += para_len
+
+    if current:
+        chunks.append('\n\n'.join(current))
+
+    return chunks
+
+
+def _generate_speech_single(
     text: str,
-    output_path: str | Path,
-    voice_name: str = DEFAULT_VOICE,
-    speaking_instructions: str = DEFAULT_SPEAKING_INSTRUCTIONS
-) -> Path:
+    voice_name: str,
+    speaking_instructions: str,
+) -> tuple[bytes, str]:
     """
-    Generates speech audio from text using Gemini TTS.
-
-    Args:
-        text: The text to convert to speech.
-        output_path: Path to save the audio file (will be saved as .wav).
-        voice_name: Name of the voice to use (see AVAILABLE_VOICES).
-        speaking_instructions: Instructions for how to read the text.
-
-    Returns:
-        Path to the generated audio file.
+    Generate speech for a single chunk of text. Returns (raw_audio_bytes, mime_type).
     """
-    output_path = Path(output_path)
-
-    # Ensure .wav extension
-    if output_path.suffix.lower() != ".wav":
-        output_path = output_path.with_suffix(".wav")
-
-    # Prepare the prompt with speaking instructions
     prompt_text = f"{speaking_instructions}\n\n{text}"
 
     contents = [
@@ -234,9 +247,6 @@ def generate_speech(
         ),
     )
 
-    print(f"Generating speech with voice '{voice_name}'...")
-
-    # Collect all audio chunks
     audio_chunks = []
     mime_type = None
 
@@ -261,15 +271,53 @@ def generate_speech(
     if not audio_chunks:
         raise RuntimeError("No audio data received from TTS API")
 
-    # Combine all chunks
-    combined_audio = b"".join(audio_chunks)
+    return b"".join(audio_chunks), mime_type or "audio/L16;rate=24000"
 
-    # Convert to WAV format
-    if mime_type:
-        wav_data = convert_to_wav(combined_audio, mime_type)
-    else:
-        # Assume default parameters if mime_type is missing
-        wav_data = convert_to_wav(combined_audio, "audio/L16;rate=24000")
+
+def generate_speech(
+    text: str,
+    output_path: str | Path,
+    voice_name: str = DEFAULT_VOICE,
+    speaking_instructions: str = DEFAULT_SPEAKING_INSTRUCTIONS
+) -> Path:
+    """
+    Generates speech audio from text using Gemini TTS.
+    Automatically chunks long text to stay within the API's
+    16,384 output token limit (~10:55 of audio per call).
+
+    Args:
+        text: The text to convert to speech.
+        output_path: Path to save the audio file (will be saved as .wav).
+        voice_name: Name of the voice to use (see AVAILABLE_VOICES).
+        speaking_instructions: Instructions for how to read the text.
+
+    Returns:
+        Path to the generated audio file.
+    """
+    output_path = Path(output_path)
+
+    # Ensure .wav extension
+    if output_path.suffix.lower() != ".wav":
+        output_path = output_path.with_suffix(".wav")
+
+    chunks = _chunk_text_for_tts(text)
+    all_audio = []
+    final_mime_type = None
+
+    for i, chunk in enumerate(chunks):
+        if len(chunks) > 1:
+            print(f"Generating speech with voice '{voice_name}' (chunk {i+1}/{len(chunks)}, {len(chunk):,} chars)...")
+        else:
+            print(f"Generating speech with voice '{voice_name}'...")
+
+        audio_data, mime_type = _generate_speech_single(chunk, voice_name, speaking_instructions)
+        all_audio.append(audio_data)
+        if final_mime_type is None:
+            final_mime_type = mime_type
+
+    # Combine all audio data and convert to WAV
+    combined_audio = b"".join(all_audio)
+    wav_data = convert_to_wav(combined_audio, final_mime_type)
 
     # Save to file
     output_path.parent.mkdir(parents=True, exist_ok=True)
