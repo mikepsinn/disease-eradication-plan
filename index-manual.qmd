@@ -331,7 +331,25 @@ This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest o
 
 ![Returns that make Ponzi schemes look conservative (but legal)](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
 
-Investors fund the campaign. The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget. Investors get {{< var victory_bond_funding_pct >}} because they had the revolutionary idea of "what if we didn't all die?" The same fund that pays investors also pays for politician incentives. [Full financial mechanics](/knowledge/solution/incentive-alignment-bonds.qmd).
+#### How the Money Loop Works
+
+Here's the part where humans usually stop reading because it involves following money through more than one step. Try to keep up:
+
+1. You sell {{< var treaty_campaign_total_cost >}} in VICTORY Bonds to investors. This funds the campaign.
+2. The campaign succeeds. The treaty redirects 1% of military spending: {{< var treaty_annual_funding >}}/year flows from the murder budget to clinical trials.
+3. The Victory Corporation (the SPV that issues the bonds) takes a 20% management fee on that {{< var treaty_annual_funding >}}.
+4. Half of that fee ({{< var victory_bond_funding_pct >}}) goes to investor dividends: {{< var victory_bond_annual_payout >}}/year on a {{< var treaty_campaign_total_cost >}} investment. That's {{< var victory_bond_annual_return_pct >}} annual returns. Your investors will think it's a typo. It's not.
+5. The other half ({{< var iab_political_incentive_funding_pct >}}) goes to a Super PAC that algorithmically allocates {{< var iab_political_incentive_funding_annual >}}/year to getting treaty-friendly politicians elected and funding cushy post-office careers for the ones who voted yes. The more you voted for the treaty, the more support you get. It's Pavlovian conditioning, but for senators.
+
+The remaining 80% of {{< var treaty_annual_funding >}} goes where it's supposed to: funding clinical trials that keep humans alive.
+
+This is the entire trick. You use greed to fund the campaign, greed to pass the treaty, and greed to keep it passed. Nobody has to become a better person. The money just circulates until diseases stop existing.
+
+If this sounds familiar, it should. Eisenhower warned you about the Military Industrial Complex: defense contractors fund politicians, politicians fund defense contracts, contracts fund contractors, contractors fund politicians. It's a self-sustaining loop that prints money and corpses.
+
+You're building the same machine, but pointed at diseases instead of countries. Call it the Patient Industrial Complex. Investors fund politicians, politicians fund clinical trials, trials generate returns, returns fund investors, investors fund politicians. Same loop. Same greed. Same self-sustaining mechanics. Different corpses (fewer of them).
+
+The Military Industrial Complex wasn't designed. It evolved, because the incentives aligned. You're just aligning them on purpose, toward something that doesn't require orphans. [Full financial mechanics](/knowledge/solution/incentive-alignment-bonds.qmd).
 
 ### Step 2: The Great Clicking
 
@@ -339,9 +357,13 @@ Investors fund the campaign. The treaty unlocks {{< var treaty_annual_funding >}
 
 You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on: "Should your country redirect 1% of military spending to fund clinical trials?"
 
-Scientists discovered that when [3.5% of any population](/knowledge/strategy/global-referendum.qmd) wants something, they often get it.
+Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](/knowledge/strategy/global-referendum.qmd) {{< var global_population_activism_threshold_pct_cite >}}. Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. It's like a cheat code for civilization, except it's real and backed by a century of data.
 
-Cost per click: $0.50. The pyramid scheme aspect: everyone recruits everyone else because money.
+That's 280 million humans. Sounds like a lot until you remember that 2 billion of you downloaded TikTok to watch people twerk. You can get 280 million to click "yes" on not dying.
+
+Here's how: everyone who votes gets a referral link. Every person who votes using your link earns you $0.50. That's it. That's the entire viral mechanism. You don't need to convince people to care about humanity. You just need to convince them that $0.50 is worth clicking a button, which on your planet is apparently an easier sell than "please don't die."
+
+It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases. The least sinister pyramid scheme in history.
 
 ### Step 3: Bribe the Bribers
 
@@ -370,7 +392,7 @@ Politicians are simple organisms with one evolutionary drive: reelection. Curren
 
 It's not corruption if you corrupt the corruption. It's like a double negative in grammar but for democracy.
 
-Super PACs get you in the door (part of the {{< var treaty_campaign_budget_lobbying >}} lobbying budget). But the real trick is [VICTORY Bonds](/knowledge/solution/incentive-alignment-bonds.qmd), which make "save lives" and "advance career" point in the same direction. Politicians who vote YES get electoral support, career advancement, and the novel experience of being thanked by living constituents instead of mourned by dead ones. No papers go directly to politicians. The papers take a scenic route.
+Remember that {{< var iab_political_incentive_funding_annual >}}/year from Step 1? This is where it goes. The Super PAC algorithmically scores politicians based on their treaty voting record and allocates accordingly: campaign support for the ones running, post-office fellowships for the ones retiring. Vote yes on the treaty, get rewarded. Vote no, watch your opponent get rewarded. No papers go directly to politicians. The papers take a scenic route through a scoring algorithm, which is apparently the only legal way to train a senator.
 
 The [architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but currently get punished for it, which on your planet is most problems.
 
