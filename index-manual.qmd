@@ -311,7 +311,7 @@ Consumer Reports for Drugs
 
 ![Which pills work better than other pills, in list form. Like a leaderboard for medicine.](/assets/images/dfda-comparative-effectiveness-ranking-search.png)
 
-Rankings are based on frequency and magnitude of health outcome changes across all patients - or filtered to patients with similar omic profiles to yours. A treatment that works great for 25-year-old women with your genetic variants might not work for 60-year-old men with different variants. The framework shows you what works for people like you, not average effects across everyone.
+Rankings are based on frequency and magnitude of health outcome changes across all patients - or filtered to patients most similar to you.
 
 ##### Outcome Labels
 
@@ -321,7 +321,7 @@ Food has nutrition labels.
 Cigarettes have warning labels.
 Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
 
-[Your decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) fixes that with **[Outcome Labels](/knowledge/solution/dfda.qmd)** - simple, data-driven summaries showing exactly what happens when real people try a treatment:
+[Your decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) fixes that with **[Outcome Labels](/knowledge/solution/dfda.qmd)** - simple, evidence-based summaries showing exactly what happens when real people try a treatment:
 
 ![What medicine labels would say if they were honest.](/assets/images/dfda-outcome-labels.png)
 
@@ -331,10 +331,6 @@ Based on thousands of real patients, you see:
 - **Side Effects**: Headache +9% (mild), Fatigue +7% (moderate)
 - **Discontinuation rate**: 2.3% stopped due to side effects
 - **The Truth**: Not marketing claims, actual measured effects from real humans
-
-No more pharmaceutical fan fiction.
-No more lawyers writing medical advice during fever dreams.
-Just cold, hard data about whether this chemical makes your meat robot work better or worse.
 
 
 ## Why This Could Actually Work
@@ -395,17 +391,15 @@ This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest o
 
 Investors fund the campaign. The treaty unlocks {{< var treaty_annual_funding >}} annually from the murder budget. Investors get {{< var victory_bond_funding_pct >}} because they had the revolutionary idea of "what if we didn't all die?" The same fund that pays investors also pays for politician incentives. [Full financial mechanics](/knowledge/solution/incentive-alignment-bonds.qmd).
 
-It's the Louisiana Purchase of clinical trials, except instead of buying land from France, you're buying immortality from death.
-
 ### Step 2: The Great Clicking
 
 *Make Humans Click a Button to Not Die*
 
 You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on: "Should your country redirect 1% of military spending to fund clinical trials?"
 
-Scientists discovered that when [3.5% of any population](/knowledge/strategy/global-referendum.qmd) wants something, they often get it. It's a cheat code for democracy that actually works.
+Scientists discovered that when [3.5% of any population](/knowledge/strategy/global-referendum.qmd) wants something, they often get it.
 
-Cost per click: $0.50. Payment only upon success. The pyramid scheme aspect: everyone recruits everyone else because money.
+Cost per click: $0.50. The pyramid scheme aspect: everyone recruits everyone else because money.
 
 ### Step 3: Bribe the Bribers
 
@@ -477,8 +471,6 @@ You're standing in front of two doors. Behind one is the future you're currently
 - Investors and politicians both profit from cures instead of bombs
 - **You personally could get {{< var personal_lifetime_wealth >}} in [lifetime wealth and extra years of life](/knowledge/solution/1-percent-treaty.qmd)**
 - Death becomes optional (terms and conditions apply)
-
-
 
 The universe is literally offering you infinite money and eternal life, and you're thinking about it.
 
