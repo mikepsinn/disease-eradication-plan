@@ -269,9 +269,11 @@ This beats smallpox eradication (280:1) and childhood vaccinations (13:1), which
 
 *Saving Humanity While Making Everyone Obscenely Wealthy*
 
-### Step 1: Sell VICTORY Bonds
+### Step 1: Sell Incentive Alignment Bonds
 
-Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing except:
+An Incentive Alignment Bond (IAB) is a financial instrument that funds a policy campaign, then splits the resulting government savings three ways: 80% to the public good, 10% to investors as returns, and 10% to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors get rich, politicians get reelected, and 80% of the money goes where it's supposed to. Everyone's greed points at the same target. It's a war bond, but for any war you want to win.
+
+For the 1% Treaty, these are called VICTORY Bonds. Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing except:
 
 #### What Grandma Got
 
@@ -308,7 +310,7 @@ If this sounds familiar, it should. Eisenhower warned you about the Military Ind
 
 You're building the same machine, but pointed at diseases instead of countries. Call it the Patient Industrial Complex. Investors fund politicians, politicians fund clinical trials, trials generate returns, returns fund investors, investors fund politicians. Same loop. Same greed. Same self-sustaining mechanics. Different corpses (fewer of them).
 
-The Military Industrial Complex wasn't designed. It evolved, because the incentives aligned. You're just aligning them on purpose, toward something that doesn't require orphans. [Full financial mechanics](/knowledge/solution/incentive-alignment-bonds.qmd).
+The Military Industrial Complex wasn't designed. It evolved, because the incentives aligned. An Incentive Alignment Bond just aligns them on purpose, toward something that doesn't require orphans. [Full financial mechanics](/knowledge/solution/incentive-alignment-bonds.qmd).
 
 ### Step 2: The Great Clicking
 
@@ -353,7 +355,7 @@ It's not corruption if you corrupt the corruption. It's like a double negative i
 
 Remember that {{< var iab_political_incentive_funding_annual >}}/year from Step 1? This is where it goes. The Super PAC algorithmically scores politicians based on their treaty voting record and allocates accordingly: campaign support for the ones running, post-office fellowships for the ones retiring. Vote yes on the treaty, get rewarded. Vote no, watch your opponent get rewarded. No papers go directly to politicians. The papers take a scenic route through a scoring algorithm, which is apparently the only legal way to train a senator.
 
-The [architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but currently get punished for it, which on your planet is most problems.
+The [IAB architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but currently get punished for it, which on your planet is most problems. Climate change, pandemic preparedness, infrastructure, education. Pick your cause, issue the bond, fund the campaign, align the greed. VICTORY Bonds are just the first implementation.
 
 ### Step 5: Enjoy
 
@@ -366,7 +368,7 @@ The {{< var treaty_annual_funding >}}/year money volcano erupts:
 - **Defense Contractors**: Keep 99% of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns on the 1%.
 - **Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} per lab rat with thumbs, the lab rats pay THEM. It's like if Uber convinced cars to pay for the privilege of driving.
 - **Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
-- **Investors**: Swimming in {{< var victory_bond_annual_return_pct >}} returns like Scrooge McDuck but legal
+- **Investors**: Swimming in {{< var victory_bond_annual_return_pct >}} returns like Scrooge McDuck, except with fewer nephews and more clinical trials
 - **Lobbyists**: Buying yachts with their yacht money
 - **Politicians**: Getting reelected by living voters (a revolutionary strategy)
 - **Regular humans**: Not dying from stupid things (priceless, but also free)

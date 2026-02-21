@@ -2,26 +2,20 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 96,576 | **Images:** 608 | **Est. Pages:** ~690
+**Files:** 44 | **Words:** 96,824 | **Images:** 608 | **Est. Pages:** ~691
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 3,922 words | 479 lines | 14 images | ~23p
+**Stats:** 4,169 words | 436 lines | 14 images | ~24p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
-    - The Part Where I Discover Paper Makes You Do Things
+    - The Beautiful Inefficiency of the Human Economy
     - The Gradual Stupidity Reduction Program
+    - What to Do When They Try to Institutionalize You
     - The Sacred Order of Paper Distribution
     - Why Your Leaders Pretend Not to Understand
-    - The Beautiful Inefficiency of the Human Economy
     - Humanity's Adorable Death Wish
-    - How This Manual Could Fix Everything
-    - The Part Where Humanity Has No Choice
-    - Your Two Futures
-      - Future A: You Ignore This Book
-      - Future B: You Follow Instructions
-    - In Conclusion
   - The Problem
     - The Daily Deletion Event
     - The Unexplored Therapeutic Frontier
@@ -29,38 +23,39 @@
     - The Cost of War
     ![The 604:1 stupidity ratio](/assets/images/index-manual/index-manual-section-the-cost-of-war-bw-academic.jpg)
   - The Solution
-    - A 1% treaty
+    - [A 1% Treaty](/knowledge/solution/1-percent-treaty.qmd)
     ![Still enough left to murder everyone 20 times](/assets/images/index-manual/index-manual-section-a-1-treaty-bw-academic.jpg)
     - Why Decentralization Works
     ![(video)](assets/videos/milton-friedman-i-pencil-free-to-choose-network-360p-h264.mp4)
     ![Committees vs. prices (no PowerPoints required)](/assets/images/index-manual/index-manual-section-why-decentralization-works-bw-academic.jpg)
-    - The 1% Treaty Fund
-    ![Bureaucrats giving friends grants vs. patients choosing trials](/assets/images/index-manual/index-manual-section-the-1-treaty-fund-bw-academic.jpg)
-    - A Decentralized Framework for Drug Assessment (dFDA)
+    - The [dFDA](/knowledge/solution/dfda.qmd)
+      - Safer Than the FDA
+      - Treatment Rankings
+    ![Which pills work better than other pills, in list form. Like a leaderboard for not dying.](/assets/images/dfda-comparative-effectiveness-ranking-search.png)
+        - Outcome Labels
+    ![What medicine labels would say if they were honest.](/assets/images/dfda-outcome-labels.png)
   - Why This Could Actually Work
     - The Evidence
     ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
     ![(video)](https://www.youtube.com/watch?v=Gg-jvHynP9Y)
+    ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
   - The 5-Step Plan
-    - Step 1: Collect Papers
+    - Step 1: Sell VICTORY Bonds
       - What Grandma Got
       - What You're Offering
     ![Returns that make Ponzi schemes look conservative (but legal)](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
+      - How the Money Loop Works
     - Step 2: The Great Clicking
     - Step 3: Bribe the Bribers
       - Current Job
       - Your Offer
     - Step 4: Purchase Democracy
     - Step 5: Enjoy
-  - The Math
-    ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
+    - How This Manual Could Fix Everything
+    - The Part Where Humanity Has No Choice
   - Choose Your Own Adventure
-    - Door #1: The Current Plan
-    - Door #2: Try Not Dying
-  - Price of Procrastination
-    - The Final Math
-    ![If you can't end the world with 19 attempts, the 20th won't help](/assets/images/index-manual/index-manual-section-the-final-math-bw-academic.jpg)
-      - Your Binary Choice Matrix
+      - Future A: You Ignore This Book
+      - Future B: You Follow Instructions
     ![Charlie Chaplin - The Great Dictator Speech](/assets/images/chaplin-great-dictator-thumbnail.png)
 
 ### The Problem
@@ -1518,7 +1513,7 @@
 
 #### knowledge/economics/campaign-budget.qmd
 **Title:** Campaign Budget: The $1B (95% CI: $700M-$1.30B) Legal Bribery Machine
-**Stats:** 3,303 words | 439 lines | 16 images | ~21p
+**Stats:** 3,304 words | 439 lines | 16 images | ~21p
 
   - Why $1B Instead of $5B {#ai-assisted-lobbying-250m-25}
     ![Traditional lobbying: pay humans to beg politicians. AI-assisted lobbying: pay computers to beg politicians. 80 percent cheaper and the computers don't get drunk at fundraisers.](/assets/images/campaign-budget/campaign-budget-why-campaign-total-cost-instead-of-5b-ai-assisted-lobbying-250m-25-bw-academic.jpg)

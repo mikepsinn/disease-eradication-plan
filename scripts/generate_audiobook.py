@@ -5,12 +5,8 @@ Audiobook Generator
 
 Generates an audiobook from all chapters in _quarto-manual-paperback.yml using Gemini TTS.
 
-Preferred pipeline (two-step):
-    1. python scripts/generate_audiobook_text.py   # QMD -> programmatic cleanup -> LLM polish -> audiobook/text/
-    2. python scripts/generate_audiobook.py         # audiobook/text/ -> TTS -> audiobook/chapters/
-
-If pre-generated text files exist in audiobook/text/, they are used automatically.
-Otherwise falls back to raw QMD extraction (no variable resolution, no number conversion).
+Pipeline: Regenerates prepared text (via generate_audiobook_text.py subprocess),
+then converts each text chunk to audio via Gemini TTS, and combines into chapter WAVs.
 
 Usage:
     python scripts/generate_audiobook.py                    # Generate full audiobook
@@ -19,9 +15,9 @@ Usage:
     python scripts/generate_audiobook.py --list            # List all chapters
 """
 import sys
-import os
 import re
 import argparse
+import subprocess
 from pathlib import Path
 
 # Set UTF-8 encoding for stdout on Windows
@@ -34,8 +30,7 @@ from pydub import AudioSegment
 sys.path.insert(0, str(Path(__file__).parent))
 # Add project root to path for dih_models imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
-import subprocess
-from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE, DEFAULT_SPEAKING_INSTRUCTIONS
+from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE
 from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
 
 # Configuration
@@ -45,7 +40,7 @@ OUTPUT_DIR = PROJECT_ROOT / "audiobook"
 CHAPTER_AUDIO_DIR = OUTPUT_DIR / "chapters"
 TEXT_DIR = OUTPUT_DIR / "text"
 
-# Voice for narration (uses library default: Aoede with Cunk-style delivery)
+# Voice for narration (Kore + dinner-party energy, winner from A/B testing)
 NARRATOR_VOICE = DEFAULT_VOICE
 
 
@@ -158,93 +153,6 @@ def extract_title_from_qmd(file_path: Path) -> str:
 
     # Fallback: use filename
     return file_path.stem.replace('-', ' ').replace('_', ' ').title()
-
-
-def extract_prose_from_qmd(file_path: Path) -> str:
-    """
-    Extract readable prose content from a QMD file.
-
-    Removes:
-    - YAML frontmatter
-    - Code blocks (```...```)
-    - Python/R code blocks ({python}, {r})
-    - Quarto includes
-    - Quarto variables (replace with placeholder)
-    - HTML tags
-    - Markdown image syntax
-    - Markdown link URLs (keep link text)
-    - LaTeX math blocks
-    - Comments
-    """
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-
-    # Remove YAML frontmatter
-    content = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, flags=re.DOTALL)
-
-    # Remove code blocks (fenced)
-    content = re.sub(r'```[\s\S]*?```', '', content)
-
-    # Remove Quarto code blocks with options
-    content = re.sub(r'\{[#]?(?:python|r|julia|bash|sql)[\s\S]*?\}[\s\S]*?(?=\n\n|\n#|\Z)', '', content)
-
-    # Remove Quarto includes
-    content = re.sub(r'\{\{<\s*include\s+.*?>\}\}', '', content)
-
-    # Remove Quarto video embeds
-    content = re.sub(r'\{\{<\s*video\s+.*?>\}\}', '', content)
-
-    # Replace Quarto variables with "value" placeholder for natural reading
-    content = re.sub(r'\{\{<\s*var\s+\w+\s*>\}\}', 'the relevant value', content)
-
-    # Remove LaTeX display math blocks
-    content = re.sub(r'\$\$[\s\S]*?\$\$', '', content)
-
-    # Remove inline LaTeX math
-    content = re.sub(r'\$[^$]+\$', '', content)
-
-    # Remove HTML tags but keep content
-    content = re.sub(r'<[^>]+>', '', content)
-
-    # Remove HTML comments
-    content = re.sub(r'<!--[\s\S]*?-->', '', content)
-
-    # Remove markdown images
-    content = re.sub(r'!\[([^\]]*)\]\([^)]+\)', r'\1', content)
-
-    # Convert markdown links to just text
-    content = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', content)
-
-    # Remove reference-style link definitions
-    content = re.sub(r'^\[[^\]]+\]:\s+.*$', '', content, flags=re.MULTILINE)
-
-    # Remove horizontal rules
-    content = re.sub(r'^---+$', '', content, flags=re.MULTILINE)
-    content = re.sub(r'^\*\*\*+$', '', content, flags=re.MULTILINE)
-
-    # Clean up markdown formatting for speech
-    # Remove bold/italic markers but keep text
-    content = re.sub(r'\*\*([^*]+)\*\*', r'\1', content)
-    content = re.sub(r'\*([^*]+)\*', r'\1', content)
-    content = re.sub(r'__([^_]+)__', r'\1', content)
-    content = re.sub(r'_([^_]+)_', r'\1', content)
-
-    # Convert headers to spoken form
-    content = re.sub(r'^#{1,6}\s+(.+)$', r'\n\1.\n', content, flags=re.MULTILINE)
-
-    # Remove bullet points but keep content
-    content = re.sub(r'^\s*[-*+]\s+', '', content, flags=re.MULTILINE)
-
-    # Remove numbered list markers
-    content = re.sub(r'^\s*\d+\.\s+', '', content, flags=re.MULTILINE)
-
-    # Clean up multiple newlines
-    content = re.sub(r'\n{3,}', '\n\n', content)
-
-    # Clean up whitespace
-    content = content.strip()
-
-    return content
 
 
 def find_text_file(chapter: dict, title: str) -> Path | None:

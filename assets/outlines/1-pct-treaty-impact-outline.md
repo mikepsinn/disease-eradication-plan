@@ -123,9 +123,9 @@
     - DALYs Averted Derivation (565 billion DALYs (95% CI: 361 billion DALYs-877 billion DALYs))
     - Cost per DALY Derivation ($0.0018 (95% CI: $0.0007-$0.0041))
     ![Where the billion dollars goes, and why it's 100 times cheaper than bed nets. You really love those bed nets though.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-4-cost-per-daly-derivation-0-0018-95-ci-0-0007-0-0041-bw-academic.jpg)
-    - ROI Derivation (Conservative: 637:1 (95% CI: 569:1-790:1))
+    - ROI Derivation (Conservative: 637 (95% CI: 569-790):1)
     ![Four simple steps to turn one dollar into 637 dollars. Like a recipe, except the ingredients are spreadsheets and the result is not dying.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-5-roi-derivation-conservative-637-1-95-ci-569-1-790-1-bw-academic.jpg)
-    - ROI Derivation (Complete: 84.8M:1 (95% CI: 46.6M:1-144M:1))
+    - ROI Derivation (Complete: 84.8M (95% CI: 46.6M-144M):1)
     - Lives Saved Derivation (10.7 billion deaths (95% CI: 7.40 billion deaths-16.2 billion deaths))
     ![Start with how many people die per day. Do some math. End up with how many you could save if you tried. The middle steps are depressing.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-7-lives-saved-derivation-10-7b-deaths-95-ci-7-39b-deaths-16-bw-academic.jpg)
     - Regulatory Delay Elimination Derivation

@@ -8,7 +8,6 @@ import sys
 import os
 import struct
 import time
-import mimetypes
 from pathlib import Path
 
 # Set UTF-8 encoding for stdout on Windows
@@ -189,36 +188,6 @@ def convert_to_wav(audio_data: bytes, mime_type: str) -> bytes:
     return header + audio_data
 
 
-def _chunk_text_for_tts(text: str, max_chars: int = 7000) -> list[str]:
-    """
-    Split text into chunks at paragraph boundaries for TTS.
-    Gemini TTS output limit is 16,384 tokens (~10:55 of audio).
-    Keeping chunks to ~7,000 chars gives ~8-9 min per chunk with safe margin.
-    """
-    if len(text) <= max_chars:
-        return [text]
-
-    paragraphs = text.split('\n\n')
-    chunks = []
-    current: list[str] = []
-    current_len = 0
-
-    for para in paragraphs:
-        para_len = len(para) + 2  # +2 for \n\n
-        if current_len + para_len > max_chars and current:
-            chunks.append('\n\n'.join(current))
-            current = [para]
-            current_len = para_len
-        else:
-            current.append(para)
-            current_len += para_len
-
-    if current:
-        chunks.append('\n\n'.join(current))
-
-    return chunks
-
-
 MAX_TTS_RETRIES = 3
 TTS_RETRY_BACKOFF = [10, 30, 60]  # seconds between retries
 
@@ -301,7 +270,6 @@ def _generate_speech_single(
                 print(f"  [FAILED] All {MAX_TTS_RETRIES} attempts failed. Last error: {e}")
 
     raise last_error
-    return b"".join(audio_chunks), mime_type or "audio/L16;rate=24000"
 
 
 def generate_speech(
