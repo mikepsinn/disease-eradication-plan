@@ -60,6 +60,85 @@ ASPECT_RATIOS = ["16:9", "9:16"]
 # Video keyframe style (distinct from BW_ACADEMIC_STYLE used for book section images)
 IMAGE_STYLE = "70s sci-fi surrealism"
 
+# --- Prompt Variants ---
+# Each variant is a function(scene_text, full_context, attempt) -> str
+# scene_text = narration text for this scene (visual-cleaned)
+# full_context = full chapter text (visual-cleaned)
+# attempt = typo retry attempt (1=normal, 2=spell correctly, 3=no text)
+
+def _prompt_original(scene_text, full_context, attempt):
+    """Original: style + raw narration + full chapter context."""
+    prompt = (
+        f"Generate a {IMAGE_STYLE} illustration.\n"
+        f"--- ILLUSTRATE THIS ---\n"
+        f"{scene_text}\n"
+        f"--- END ILLUSTRATE ---\n"
+    )
+    if full_context:
+        prompt += (
+            f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
+            f"{full_context}\n"
+            f"--- END CONTEXT ---"
+        )
+    return prompt
+
+def _prompt_metaphor(scene_text, full_context, attempt):
+    """Original + metaphor instruction."""
+    prompt = (
+        f"Generate a {IMAGE_STYLE} illustration. Interpret metaphors visually; do not depict them literally.\n"
+        f"--- ILLUSTRATE THIS ---\n"
+        f"{scene_text}\n"
+        f"--- END ILLUSTRATE ---\n"
+    )
+    if full_context:
+        prompt += (
+            f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
+            f"{full_context}\n"
+            f"--- END CONTEXT ---"
+        )
+    return prompt
+
+def _prompt_powerpoint(scene_text, full_context, attempt):
+    """Two-step: conceptualize as presentation slide, then render as 70s sci-fi."""
+    prompt = (
+        f"Imagine how this concept would be depicted on a presentation slide given the full chapter context below. "
+        f"Then generate that image in the style of a {IMAGE_STYLE} paperback book cover illustration.\n"
+        f"--- ILLUSTRATE THIS ---\n"
+        f"{scene_text}\n"
+        f"--- END ILLUSTRATE ---\n"
+    )
+    if full_context:
+        prompt += (
+            f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
+            f"{full_context}\n"
+            f"--- END CONTEXT ---"
+        )
+    return prompt
+
+def _prompt_bookcover(scene_text, full_context, attempt):
+    """Direct book cover framing."""
+    prompt = (
+        f"Generate an illustration for the cover of a {IMAGE_STYLE} paperback novel that captures this moment in the story:\n"
+        f"--- ILLUSTRATE THIS ---\n"
+        f"{scene_text}\n"
+        f"--- END ILLUSTRATE ---\n"
+    )
+    if full_context:
+        prompt += (
+            f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
+            f"{full_context}\n"
+            f"--- END CONTEXT ---"
+        )
+    return prompt
+
+PROMPT_VARIANTS = {
+    "original": _prompt_original,
+    "metaphor": _prompt_metaphor,
+    "powerpoint": _prompt_powerpoint,
+    "bookcover": _prompt_bookcover,
+}
+DEFAULT_PROMPT_VARIANT = "original"
+
 # Suppress Veo-generated speech so we can overlay our own TTS narration.
 # Veo ambient audio (music + SFX) is kept and mixed at reduced volume.
 VEO_NEGATIVE_PROMPT = "narration, dialogue, voice, speech, talking, spoken words"
@@ -265,26 +344,17 @@ def parse_json_array(response_text: str) -> list[dict]:
 
 # --- Step A: Scene Segmentation ---
 
-SCENE_SEGMENTATION_PROMPT = """Segment this audiobook narration into visual scenes for animated video clips.
-
-Read the ENTIRE text first.
+SCENE_SEGMENTATION_PROMPT = """Segment this audiobook narration into visual scenes. Read the ENTIRE text first.
 
 Rules:
-- Each scene targets ~8 seconds of narration (~120-250 characters). Prefer scenes that break at natural narrative boundaries.
+- Each scene: ~120-250 characters, breaking at natural narrative boundaries
 - char_start/char_end: exact character offsets, no gaps, no overlaps
 - narration_text: exact original text for that span
-- context: 10-15 sentences from elsewhere in the chapter that help explain what this scene is about. Pick the most relevant surrounding context. Do NOT repeat the narration_text.
-- animation_prompt: Describe the 8-second video animation. This accompanies a still keyframe image, so focus on MOTION and TRANSFORMATION. Style: 70s sci-fi surrealism.
-  CRITICAL: The animation must LITERALLY illustrate the specific concepts the narrator is describing. Read the narration_text carefully. If it mentions "cybercrime draws the smartest minds," show smart people being pulled toward hacking screens. If it mentions "1% budget reallocation," show a budget or money physically shifting. If it mentions "antibiotics fail," show pills crumbling. Do NOT invent unrelated surrealist imagery.
-  Use the actual nouns and concepts from the narration as your visual subjects. Then make those subjects do something dramatic and cinematic:
-  - "smartest minds drawn to cybercrime" -> Scientists in lab coats turn away from microscopes and walk zombie-like toward glowing screens of cascading exploit code. Their shadows stretch and darken behind them.
-  - "hockey stick pointing straight down" -> A massive glowing graph line arcs upward then nosedives through the floor, cracking the ground open. Numbers on the axis spin backward.
-  - "more funding leads to more cures leads to more public support" -> Dollar bills transform into pill bottles that transform into cheering crowds that transform into larger piles of dollar bills, spiraling upward in an accelerating loop.
-  - "cured death, solved physics" -> An old man's wrinkles smooth in reverse aging while equations solve themselves on a floating blackboard behind him, each solution lighting up a new star.
-  The animation should make someone who can't hear the audio STILL understand the point being made. 2-3 sentences.
+- context: relevant surrounding context from the chapter that explains the scene. Do NOT repeat the narration_text.
+- animation_prompt: simple camera/subject motion for animating the keyframe image.
 
 Return ONLY a JSON array:
-[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "context": "relevant context from chapter...", "animation_prompt": "description of motion that literally illustrates the narration concepts...", "char_start": 0, "char_end": 120}}]
+[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "context": "...", "animation_prompt": "...", "char_start": 0, "char_end": 120}}]
 
 Text:
 ---
@@ -355,13 +425,27 @@ def segment_scenes(text: str) -> list[dict]:
 # --- Step B: Timestamp Estimation ---
 
 def estimate_timestamps(scenes: list[dict], total_chars: int, total_duration_ms: int) -> list[dict]:
-    """Map char offsets to audio timestamps using linear interpolation."""
+    """Map char offsets to audio timestamps using linear interpolation.
+
+    Ensures the last scene extends to exactly total_duration_ms so the
+    assembled video fully covers the audio track.
+    """
     print("Step B: Estimating audio timestamps...")
     for scene in scenes:
         scene['start_ms'] = int((scene['char_start'] / total_chars) * total_duration_ms)
         scene['end_ms'] = int((scene['char_end'] / total_chars) * total_duration_ms)
         scene['duration_ms'] = scene['end_ms'] - scene['start_ms']
         print(f"    Scene {scene['scene_index']}: {scene['start_ms']}ms - {scene['end_ms']}ms ({scene['duration_ms']}ms)")
+
+    # Force last scene to extend to full audio duration to prevent cutoff
+    if scenes:
+        last = scenes[-1]
+        if last['end_ms'] < total_duration_ms:
+            gap = total_duration_ms - last['end_ms']
+            last['end_ms'] = total_duration_ms
+            last['duration_ms'] = last['end_ms'] - last['start_ms']
+            print(f"    [FIX] Extended last scene by {gap}ms to cover full audio ({total_duration_ms}ms)")
+
     return scenes
 
 
@@ -396,10 +480,10 @@ class RateLimiter:
 imagen_rate_limiter = RateLimiter(max_requests=18, window_seconds=60)  # 18 to stay safely under 20
 
 
-def rate_limited_generate_image(prompt: str, output_path: Path, aspect_ratio: str) -> Path:
+def rate_limited_generate_image(prompt: str, output_path: Path, aspect_ratio: str, negative_prompt: str | None = None) -> Path:
     """Wrapper around generate_image that respects the Imagen rate limit."""
     imagen_rate_limiter.acquire()
-    return generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect_ratio)
+    return generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect_ratio, negative_prompt=negative_prompt)
 
 
 # --- Image/Video Metadata ---
@@ -427,20 +511,11 @@ def _tag_image_metadata(image_path: Path, chapter: dict, scene: dict, book_meta:
 IMAGEN_PARALLEL_WORKERS = 4  # Concurrent Imagen requests
 MAX_KEYFRAME_ATTEMPTS = 3    # Generate + check up to 3 times before crashing
 
-KEYFRAME_TEXT_CHECK_PROMPT = """This is a 70s sci-fi surrealism illustration. Check ONLY for prominent text that is clearly TRYING to spell a specific English word but got it wrong (e.g. "SCIENEC" instead of "SCIENCE", or "HEATLH" instead of "HEALTH").
+KEYFRAME_TEXT_CHECK_PROMPT = """70s sci-fi surrealism image. Only flag text that is large, prominent, and clearly a misspelling of a real English word (e.g. "SCIENEC" instead of "SCIENCE"). Ignore small, decorative, atmospheric, alien, or garbled text on screens/signs/labels (normal for this style). If there are no obvious prominent misspellings, answer CLEAN.
 
-IGNORE all of the following (these are normal for this art style):
-- Random, decorative, or atmospheric text on background signs, screens, labels, bottles, etc.
-- Nonsensical or alien-looking text that isn't trying to be a real word
-- Garbled text on holographic displays, monitors, or sci-fi interfaces
-- Small or distant text that's hard to read
-- Stylized or artistic lettering
+Valid proper nouns: Wishonia, Moronia, Gollum, Gollums, Wishocracy, DALY, DALYs.
 
-Valid proper nouns (NOT misspellings): Wishonia, Moronia, Gollum, Gollums, Wishocracy, DALY, DALYs.
-
-Answer with ONLY one of:
-- "CLEAN" if there are no obvious misspellings of prominent English words
-- "TYPO: <description>" ONLY if a large, prominent word is clearly a misspelling of a specific English word (e.g. "TYPO: 'SCIENEC' instead of 'SCIENCE'")"""
+Answer ONLY: "CLEAN" or "TYPO: <description>"."""
 
 
 def _check_keyframe_for_typos(image_path: Path) -> str | None:
@@ -472,7 +547,7 @@ def _tts_to_visual(text: str) -> str:
     return text
 
 
-def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | None = None, book_meta: dict | None = None, chapter_text: str = "") -> list[dict]:
+def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | None = None, book_meta: dict | None = None, chapter_text: str = "", prompt_variant: str = DEFAULT_PROMPT_VARIANT) -> list[dict]:
     """Generate keyframe images for each scene using Imagen (parallel), with inline typo checking."""
     print("Step C: Generating keyframe images (with typo checking)...")
     keyframes_dir = chapter_dir / "keyframes"
@@ -501,21 +576,12 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
 
     print(f"    Generating {len(work_items)} keyframes ({IMAGEN_PARALLEL_WORKERS} parallel workers)...")
 
-    def _build_prompt(scene, attempt=1):
+    def _build_prompt(scene, attempt=1, variant_name=None):
         scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
         full_context = _tts_to_visual(chapter_text) if chapter_text else ""
-        prompt = (
-            f"Generate a {IMAGE_STYLE} illustration.\n"
-            f"--- ILLUSTRATE THIS ---\n"
-            f"{scene_text}\n"
-            f"--- END ILLUSTRATE ---\n"
-        )
-        if full_context:
-            prompt += (
-                f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
-                f"{full_context}\n"
-                f"--- END CONTEXT ---"
-            )
+        vname = variant_name or prompt_variant
+        prompt_fn = PROMPT_VARIANTS[vname]
+        prompt = prompt_fn(scene_text, full_context, attempt)
         if attempt == 2:
             prompt += "\n\nAny text in the image must be spelled correctly."
         elif attempt >= 3:
@@ -529,6 +595,9 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
 
         for attempt in range(1, MAX_KEYFRAME_ATTEMPTS + 1):
             prompt = _build_prompt(scene, attempt=attempt)
+            # Save rendered prompt to manifest for review (only on first attempt, first aspect)
+            if attempt == 1 and 'imagen_prompt' not in scene:
+                scene['imagen_prompt'] = prompt
             rate_limited_generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect)
 
             typo = _check_keyframe_for_typos(output_path)
@@ -571,9 +640,77 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
     return scenes
 
 
+# --- Prompt A/B Testing ---
+
+def test_prompt_variants(scenes: list[dict], chapter_dir: Path, chapter_text: str = "", variants: list[str] | None = None, max_scenes: int | None = None):
+    """Generate one 16:9 keyframe per variant per scene for side-by-side comparison.
+
+    Output structure:
+        chapter_dir/prompt-tests/
+            original/scene-01.jpg
+            metaphor/scene-01.jpg
+            powerpoint/scene-01.jpg
+            bookcover/scene-01.jpg
+    """
+    variants = variants or list(PROMPT_VARIANTS.keys())
+    test_scenes = scenes[:max_scenes] if max_scenes else scenes
+    test_dir = chapter_dir / "prompt-tests"
+
+    total = len(variants) * len(test_scenes)
+    print(f"\nPrompt A/B test: {len(variants)} variants x {len(test_scenes)} scenes = {total} images")
+    print(f"  Output: {test_dir}")
+    print(f"  Variants: {', '.join(variants)}")
+
+    work_items = []
+    for vname in variants:
+        variant_dir = test_dir / vname
+        variant_dir.mkdir(parents=True, exist_ok=True)
+        for scene in test_scenes:
+            scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
+            full_context = _tts_to_visual(chapter_text) if chapter_text else ""
+            prompt_fn = PROMPT_VARIANTS[vname]
+            prompt = prompt_fn(scene_text, full_context, attempt=1)
+            output_path = variant_dir / f"scene-{scene['scene_index']:02d}.jpg"
+            if output_path.exists():
+                print(f"  [CACHED] {vname}/scene-{scene['scene_index']:02d}.jpg")
+                continue
+            work_items.append((vname, scene['scene_index'], prompt, output_path))
+
+    if not work_items:
+        print("  All test images cached.")
+        return
+
+    print(f"  Generating {len(work_items)} images ({IMAGEN_PARALLEL_WORKERS} parallel)...")
+
+    def _gen(item):
+        vname, scene_idx, prompt, output_path = item
+        rate_limited_generate_image(prompt=prompt, output_path=output_path, aspect_ratio="16:9")
+        return vname, scene_idx
+
+    errors = []
+    with ThreadPoolExecutor(max_workers=IMAGEN_PARALLEL_WORKERS) as executor:
+        futures = {executor.submit(_gen, item): item for item in work_items}
+        for future in as_completed(futures):
+            try:
+                vname, scene_idx = future.result()
+                print(f"  [OK] {vname}/scene-{scene_idx:02d}.jpg")
+            except Exception as e:
+                item = futures[future]
+                errors.append(f"{item[0]}/scene-{item[1]:02d}: {e}")
+                print(f"  [ERROR] {item[0]}/scene-{item[1]:02d}: {e}")
+
+    if errors:
+        print(f"\n  {len(errors)} errors during prompt testing:")
+        for err in errors:
+            print(f"    {err}")
+    else:
+        print(f"\n  All {total} test images generated!")
+    print(f"  Compare results in: {test_dir}")
+
+
 # --- Step D: Veo Animation ---
 
-def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = True) -> list[dict]:
+def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = True, chapter_text: str = "") -> list[dict]:
     """Generate video clips using Veo 3.1 with parallel requests.
 
     When use_keyframes=True (default), uses image-to-video with keyframe as first frame.
@@ -619,14 +756,15 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
 
     def _generate_one(item):
         scene, aspect, keyframe_path, clip_path, clip_filename = item
-        animation = scene.get('animation_prompt', '').strip()
-        if animation:
-            veo_prompt = f"{IMAGE_STYLE} style. {animation}"
-        else:
-            # Fallback if no animation_prompt (old manifests)
-            scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
-            veo_prompt = f"Gentle camera movement across a {IMAGE_STYLE} illustration. {scene_text}"
-        veo_prompt += " No dialogue, narration, or speech."
+        scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
+        full_context = _tts_to_visual(chapter_text) if chapter_text else ""
+        veo_prompt = f"Generate a {IMAGE_STYLE} animation. Interpret metaphors visually; do not depict them literally.\n--- ILLUSTRATE THIS ---\n{scene_text}\n--- END ILLUSTRATE ---\n"
+        if full_context:
+            veo_prompt += f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n{full_context}\n--- END CONTEXT ---\n"
+        veo_prompt += "No dialogue, narration, or speech."
+        # Save rendered prompt to manifest for review (only first aspect)
+        if 'veo_prompt' not in scene:
+            scene['veo_prompt'] = veo_prompt
         generate_video(
             prompt=veo_prompt,
             output_path=clip_path,
@@ -684,6 +822,9 @@ def assemble_chapter_video(
 
     clips_dir = chapter_dir / "clips"
 
+    # Get actual audio duration for padding calculation
+    audio_duration_ms = len(AudioSegment.from_file(str(audio_path)))
+
     clip_entries = []
     for scene in scenes:
         clip_rel = scene.get('clips', {}).get(aspect)
@@ -694,7 +835,15 @@ def assemble_chapter_video(
             raise FileNotFoundError(f"Clip file missing: {clip_path}")
         clip_entries.append((clip_path, scene['duration_ms']))
 
-    print(f"  Assembling {aspect} video ({len(clip_entries)} scenes)...")
+    # Ensure total video duration covers full audio (add 1s buffer to last clip)
+    total_scene_ms = sum(ms for _, ms in clip_entries)
+    if total_scene_ms < audio_duration_ms:
+        gap = audio_duration_ms - total_scene_ms + 1000  # 1s buffer
+        path, ms = clip_entries[-1]
+        clip_entries[-1] = (path, ms + gap)
+        print(f"  [FIX] Last clip extended by {gap}ms to cover audio ({audio_duration_ms}ms)")
+
+    print(f"  Assembling {aspect} video ({len(clip_entries)} scenes, target {sum(ms for _,ms in clip_entries)/1000:.1f}s for {audio_duration_ms/1000:.1f}s audio)...")
 
     # Step 1: Speed-adjust each clip to match its scene duration (keep audio)
     temp_clips = []
@@ -761,6 +910,10 @@ def assemble_chapter_video(
 
     # Step 3: Mix Veo ambient audio (reduced) with TTS narration (full volume)
     # [0:a] = Veo ambient (music/SFX), [1:a] = TTS narration
+    # Use TTS duration as the master (duration=first refers to first input of amix = veo,
+    # but we want TTS to control length). We use duration=longest so the full TTS plays,
+    # and the video track (which we've padded to be >= audio) gets trimmed by -t.
+    audio_duration_s = audio_duration_ms / 1000.0
     vol = VEO_AMBIENT_VOLUME
     filter_complex = (
         f"[0:a]volume={vol}[veo];"
@@ -777,7 +930,7 @@ def assemble_chapter_video(
         "-map", "0:v", "-map", "[mixed]",
         "-c:v", "libx264", "-preset", "medium", "-crf", "23",
         "-c:a", "aac", "-b:a", "192k",
-        "-shortest",
+        "-t", f"{audio_duration_s:.3f}",
         "-movflags", "+faststart",
         "-metadata", f"title={chapter['title']}",
     ]
@@ -805,7 +958,7 @@ def assemble_chapter_video(
             "-c:v", "libx264", "-preset", "medium", "-crf", "23",
             "-c:a", "aac", "-b:a", "192k",
             "-map", "0:v", "-map", "1:a",
-            "-shortest",
+            "-t", f"{audio_duration_s:.3f}",
             "-movflags", "+faststart",
             "-metadata", f"title={chapter['title']}",
             str(output_path),
@@ -933,7 +1086,7 @@ def list_chapters(chapters: list[dict]):
 
 # --- Main Pipeline ---
 
-def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None, no_keyframes: bool = False, book_meta: dict | None = None):
+def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None, no_keyframes: bool = False, book_meta: dict | None = None, prompt_variant: str = DEFAULT_PROMPT_VARIANT, test_prompts: bool = False):
     """Run the video generation pipeline for a single chapter."""
     print(f"\n{'=' * 60}")
     print(f"Chapter {chapter['index']}: {chapter['title']}")
@@ -1031,15 +1184,19 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
         print("\n--scenes-only: stopping after scene segmentation.")
         return
 
+    if test_prompts:
+        test_prompt_variants(scenes, chapter_dir, chapter_text=text, max_scenes=max_scenes)
+        return
+
     if not no_keyframes:
-        scenes = generate_keyframes(scenes, chapter_dir, chapter=chapter, book_meta=book_meta, chapter_text=text)
+        scenes = generate_keyframes(scenes, chapter_dir, chapter=chapter, book_meta=book_meta, chapter_text=text, prompt_variant=prompt_variant)
         save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
 
         if keyframes_only:
             print("\n--keyframes-only: stopping after keyframe generation.")
             return
 
-    scenes = animate_scenes(scenes, chapter_dir, use_keyframes=not no_keyframes)
+    scenes = animate_scenes(scenes, chapter_dir, use_keyframes=not no_keyframes, chapter_text=text)
     save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
 
     print("\nStep E: Assembling final videos...")
@@ -1107,6 +1264,17 @@ def main():
         action="store_true",
         help="Skip keyframe generation; use text-to-video instead of image-to-video"
     )
+    parser.add_argument(
+        "--prompt",
+        choices=list(PROMPT_VARIANTS.keys()),
+        default=DEFAULT_PROMPT_VARIANT,
+        help=f"Prompt variant for keyframe generation (default: {DEFAULT_PROMPT_VARIANT})"
+    )
+    parser.add_argument(
+        "--test-prompts",
+        action="store_true",
+        help="Generate one 16:9 keyframe per prompt variant per scene for A/B comparison"
+    )
     args = parser.parse_args()
 
     try:
@@ -1151,6 +1319,8 @@ def main():
             max_scenes=args.max_scenes,
             no_keyframes=args.no_keyframes,
             book_meta=book_meta,
+            prompt_variant=args.prompt,
+            test_prompts=args.test_prompts,
         )
 
     print(f"\n{'=' * 60}")

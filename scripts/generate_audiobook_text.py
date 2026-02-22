@@ -187,10 +187,7 @@ AUDIOBOOK_REWRITE_PROMPT = """Convert this book chapter to an audiobook narratio
 Your job is MINIMAL: only change what would sound wrong spoken aloud. Leave everything else EXACTLY as written.
 
 CONVERT (only these):
-- Numbers/money to words: "$8.2T" -> "eight point two trillion dollars"
-- Percentages: "50%" -> "fifty percent"
-- Ratios: "100:1" -> "a hundred to one"
-- Years to spoken form: "1945" -> "nineteen forty-five"
+- Abbreviated money/units to spoken form: "$8.2T" -> "eight point two trillion dollars", "$519M" -> "five hundred nineteen million dollars"
 - Tables: convert rows into short spoken sentences
 - Bullet lists: one sentence per bullet, keep them as separate paragraphs
 - Acronyms that are spelled out: "GDP" -> "G.D.P.", "FDA" -> "F.D.A.", "IAB" -> "I.A.B."

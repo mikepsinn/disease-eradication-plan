@@ -43,6 +43,7 @@ def generate_image(
     prompt: str,
     output_path: Path,
     aspect_ratio: str = "16:9",
+    negative_prompt: str | None = None,
 ) -> Path:
     """
     Generate an image using Imagen.
@@ -51,6 +52,7 @@ def generate_image(
         prompt: Text prompt describing the desired image.
         output_path: Where to save the generated image (JPEG).
         aspect_ratio: "16:9" or "9:16".
+        negative_prompt: What to exclude from the image (e.g., "photorealistic, anime").
 
     Returns:
         Path to the saved image.
@@ -60,14 +62,18 @@ def generate_image(
 
     print(f"  Generating image ({aspect_ratio}): {prompt[:80]}...")
 
+    config_kwargs = dict(
+        number_of_images=1,
+        aspect_ratio=aspect_ratio,
+        output_mime_type="image/jpeg",
+    )
+    if negative_prompt:
+        config_kwargs["negative_prompt"] = negative_prompt
+
     response = google_client.models.generate_images(
         model=IMAGEN_MODEL_ID,
         prompt=prompt,
-        config=types.GenerateImagesConfig(
-            number_of_images=1,
-            aspect_ratio=aspect_ratio,
-            output_mime_type="image/jpeg",
-        ),
+        config=types.GenerateImagesConfig(**config_kwargs),
     )
 
     if not response.generated_images:
