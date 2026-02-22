@@ -16,7 +16,7 @@ Out of {{< var current_disease_patients_global >}} with chronic disease, only {{
 
 {{< var patient_willingness_trial_participation_pct >}} would volunteer [@patient-willingness-clinical-trials] if they could. Only {{< var current_clinical_trial_participation_rate >}} currently participate.
 
-This isn't because people don't want to help find cures. The current system can't scale. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates].
+This isn't because people don't want to help find cures. It's because your system was designed by someone who hates sick people. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates]. You built a hospital you can't get into. Impressive, in a genocidal sort of way.
 
 Meanwhile, the system that's supposed to catch dangerous side effects misses 90-99% of them. Only 1-10% of adverse drug events are ever reported to the FDA [@adverse-event-underreporting]. No denominator data. No effect sizes. No way to calculate how often a drug actually hurts people. The safety monitoring system is a suggestion box that nobody uses.
 
@@ -24,7 +24,7 @@ Meanwhile, the system that's supposed to catch dangerous side effects misses 90-
 
 ## The Solution: Consumer Reports for Drugs
 
-Your decentralized framework for drug assessment (dFDA) is an **open coordination protocol**. It enables existing platforms to connect companies with treatments to patients who need them. It's HTTP for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes.
+Your decentralized framework for drug assessment (dFDA) is an **open coordination protocol**. It connects companies with treatments to patients who need them. It's HTTP for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes. You invented the internet thirty years ago and somehow forgot to plug medicine into it.
 
 ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
 
@@ -52,11 +52,11 @@ You're basing survival on sample sizes smaller than kindergarten classes. So ins
 
 This framework is built on a slightly creepy idea: analyzing data from real patients in the real world. Real-World Evidence (RWE). A fancy term for "watching what happens."
 
-Skeptics say, "Correlation isn't causation!" They point to flip-flopping egg advice as proof this is voodoo. They're not wrong about the old way. Old studies couldn't tell if eggs killed people or if egg-eaters just smoked three packs a day.
+Skeptics say, "Correlation isn't causation!" They say this while dying of diseases nobody bothered to study properly. They point to flip-flopping egg advice as proof this is voodoo. They're not wrong about the old way. Old studies couldn't tell if eggs killed people or if egg-eaters just smoked three packs a day.
 
 But now there's enough data and computing power to make each person their own control group. Track arthritis pain for a month. Take Turmeric, stop, start again. The pattern reveals whether it works or if it's coincidence.
 
-A landmark meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] settled this debate. Researchers compared observational studies against randomized controlled trials across 19 different treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. The result: nearly identical effect sizes.
+A landmark meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] quietly ended this argument while nobody was listening. Researchers compared observational studies against randomized controlled trials across 19 different treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. The result: nearly identical effect sizes. The cheap method and the expensive method found the same answers. You've been overpaying for data like tourists at an airport restaurant.
 
 ![Forest plot comparing effect sizes from observational studies vs. RCTs for cardiac treatments. The dots land in the same place. The expensive method and the cheap method found the same answers.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
@@ -66,7 +66,7 @@ Each pair of dots represents the same treatment tested two ways: one observation
 
 ### The Two-Stage Pipeline: Watch First, Then Test
 
-Observational data finds the signals. But correlation still isn't proof. So the framework uses a two-stage pipeline:
+Observational data finds the signals. But correlation still isn't proof (even you know that). So the framework uses a two-stage pipeline:
 
 **Stage 1 (Signal Detection):** Aggregate data from millions of patients. Score each treatment-outcome relationship using six Bradford Hill causality criteria [@bradford-hill-1965]: How strong is the effect? How consistent across people? Does the treatment come before the improvement? Is there a dose-response pattern? Cost: ~{{< var dfda_observational_cost_per_patient >}} per patient.
 
@@ -380,7 +380,7 @@ Think of it like the internet. We didn't build one website that everyone has to 
 
 Multiple companies have already built decentralized clinical trial platforms. They've collectively raised hundreds of millions in venture funding [@dct-platform-funding-others]. They're good at it. They have users. They have infrastructure.
 
-Why compete with them? Partner instead.
+Why compete with them? That would be very human of you. Partner instead.
 
 **The protocol provides**:
 
@@ -400,13 +400,13 @@ Why compete with them? Partner instead.
 
 ### Federated, Not Centralized
 
-Data doesn't move to a central database. It stays where it is:
+Data doesn't move to a central database. It stays where it is. Everyone keeps their toys.
 
 - Epic systems keep their data
 - Apple Health keeps its data
 - Cerner keeps its data
 
-Your framework's protocol just lets you run queries ACROSS systems without moving data. Federated data networks already do this with 300M+ patient records.
+Your framework's protocol just lets you run queries ACROSS systems without moving data. Like asking every library in the world a question without stealing their books. Federated data networks already do this with 300M+ patient records.
 
 ![Instead of copying everyone's medical data to one place, we ask questions to many places and combine the answers. Your data stays where it is, we just visit.](/assets/images/dfda/dfda-section-federated-not-centralized-bw-academic.jpg)
 
@@ -446,7 +446,7 @@ FDA.gov becomes actually useful. Millions join trials from home. The first "Wiki
 
 ### 2030: Big Pharma Pivots or Dies
 
-Pharmaceutical companies realize they can't charge $10,000 for pills that cost $1 to make when everyone can see the data. Some adapt. Some become museums.
+Pharmaceutical companies realize they can't charge $10,000 for pills that cost $1 to make when everyone can see the data. Some adapt. Some become museums. The gift shop sells expired painkillers at original markup.
 
 ### 2035: The Great Revelation
 

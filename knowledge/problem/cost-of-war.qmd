@@ -13,13 +13,13 @@ In 2024, humanity spent {{< var global_military_spending_annual_2024 >}} on war.
 
 You spend enough on weapons to pave a road to space. Yet you can’t figure out how to stop dying from diseases we know how to cure. And that’s just the money you spend on purpose. The Pentagon has lost $2.5 trillion [@pentagon-unaccounted-2-5t]. Not spent. Lost. Like car keys, except these car keys could cure cancer hundreds of times over.
 
-This chapter checks your math. It is the receipt for your self-destruction. Think of it as a credit card bill. But instead of coffee and books, you bought missiles and robots. And instead of interest, you pay in human lives.
+This chapter is the receipt. Think of it as a credit card bill for self-destruction. Instead of coffee and books, you bought missiles and robots. Instead of interest, you pay in human lives. And unlike a credit card, you can't declare bankruptcy. You just keep paying.
 
 <!-- {{< include ../figures/military-spending-scenarios-chart.qmd >}} -->
 
 ## The Itemized Receipt for Armageddon
 
-The costs of war look like a grocery receipt from Hell. Everything is on the list. Everything has a price.
+The costs of war look like a grocery receipt from a shop that only sells things that explode. Everything is on the list. Everything has a price. None of it is food.
 
 ### The Shopping List (2024 Global Data)
 
@@ -43,12 +43,12 @@ $$
 \mathrm{C}_{\text{direct}} = \mathrm{M}_{\text{spending}} + \mathrm{I}_{\text{damage}} + \mathrm{H}_{\text{casualties}} + \mathrm{T}_{\text{disruption}}
 $$
 
-Here is what those letters mean:
+Here is what those letters mean, in case you find algebra comforting:
 
 - **Military Spending:** The money for soldiers, bombs, and fast jets.
-- **Infrastructure Damage:** The cost to fix the cities, bridges, and power plants you blow up.
+- **Infrastructure Damage:** The cost to rebuild the cities, bridges, and power plants you just blew up. You build them, then you blow them up, then you build them again. It's a very expensive form of recycling.
 - **Human Casualties:** The value of lost lives. Even economists agree that dead people are bad for business.
-- **Trade Disruption:** The money lost when fighting stops people from making and selling things.
+- **Trade Disruption:** The money lost when bombs interrupt commerce. Trucks can't truck when the road is a crater.
 
 #### Current Annual Calculation
 
@@ -59,8 +59,8 @@ Here is what those letters mean:
 
 **C<sub>direct</sub> = \$7,655 billion annually**
 
-This means every second of every day, humanity spends \$242,600 on killing each other and cleaning up the mess.
-While you read this sentence, you spent about \$1.2 million.
+Every second of every day, humanity spends \$242,600 on killing each other and cleaning up the mess.
+While you read this sentence, you spent about \$1.2 million. By the time you feel bad about that, another million is gone.
 
 ## Military Hardware: The World's Worst Investment
 
@@ -146,8 +146,7 @@ Replacing a bridge in a war zone costs 1.3-2.1x more than building one in peace,
 
 ## Economic Disruption: The Ripple Effect
 
-Wars stop trade.
-They interrupt business like a drunk person crashing a dance.
+Wars stop trade. Global commerce is a fragile thing, like a very large souffl&eacute; that you keep dropping bombs on.
 
 ### Trade Flow Disruption Matrix
 
@@ -164,13 +163,13 @@ That's the cost of ships that cannot ship and trucks that cannot truck because o
 
 ## The Ghost in the Machine: Indirect Costs
 
-The real cost of war is what you *didn't* buy. It is the future you sold to pay for today's stupidity.
+The direct costs are just the sticker price. The real cost of war is what you *didn't* buy. Every dollar spent on a missile is a dollar that didn't cure leukemia, educate a child, or build a bridge that wasn't going to be blown up.
 
 ![The bullets are cheap. The lost hospitals are expensive. You only count the bullets.](/assets/images/cost-of-war/cost-of-war-section-the-ghost-in-the-machine-indirect-costs-bw-academic.jpg)
 
 ### Opportunity Cost Analysis: The Roads Not Taken
 
-Here is a thought experiment: What if we spent our war money on something else?
+Here is a thought experiment that apparently qualifies as radical: What if you spent your war money on literally anything else?
 
 #### Comparative Investment Analysis (2023 Dollars)
 
@@ -189,7 +188,7 @@ For healthcare, it's {{< var economic_multiplier_healthcare_investment >}}.
 
 ##### Lost GDP Growth Calculation
 
-The math is simple. Money spent on bombs grows the economy a little. Money spent on anything else grows it a lot more. By choosing bombs, we choose to be poorer.
+The math is simple. Money spent on bombs grows the economy a little (the bomb factory employs people, who buy sandwiches). Money spent on anything else grows it a lot more. By choosing bombs, you choose to be poorer. Deliberately. Every year. On purpose.
 
 $$
 \begin{aligned}
@@ -210,8 +209,7 @@ Forever.
 
 ### Long-term Human Costs: The Gift That Keeps on Taking
 
-Wars do not end when the shooting stops.
-They stick around like a bad song in humanity's head.
+Wars do not end when the shooting stops. They linger like a house guest who broke your furniture and now needs therapy, which you also pay for.
 
 #### Veteran Healthcare Cost Projections
 
@@ -222,8 +220,7 @@ They stick around like a bad song in humanity's head.
 | Disability Compensation | \$89.1B [@veteran-healthcare-cost-projections] | \$1,782B [@veteran-healthcare-cost-projections] | Disability ratings × benefit schedules × actuarial projections |
 | Total Veteran Care | \$200.1B [@veteran-healthcare-cost-projections] | \$4,002B [@veteran-healthcare-cost-projections] | Composite of above factors |
 
-Wars don't end when the shooting stops.
-Veterans need care for decades, with healthcare costs inflating at 3.5-4.6% annually [@historical-healthcare-inflation-rate].
+Veterans need care for decades after the war "ends," with healthcare costs inflating at 3.5-4.6% annually [@historical-healthcare-inflation-rate]. The war ends. The bill doesn't.
 
 #### Refugee Support: The Mathematics of Displacement
 
@@ -237,8 +234,7 @@ Each refugee also loses \$23,400 in earning potential annually [@refugee-lost-ea
 
 ### Environmental Degradation: Poisoning the Planet Costs Money Too
 
-Wars poison the planet.
-This should not be surprising. But humans act surprised by obvious things anyway.
+Wars poison the planet. Explosions, it turns out, are not good for the environment. This should not require saying, and yet here we are.
 
 #### Environmental Cost Calculation Matrix
 
@@ -251,26 +247,25 @@ This should not be surprising. But humans act surprised by obvious things anyway
 
 **Total Environmental Damage: {{< var global_annual_environmental_damage_conflict >}} annually**
 
-The biodiversity loss is listed as "irreplaceable." Once a species is extinct, money cannot bring it back.
-We do not know the math for resurrection yet.
+The biodiversity loss is listed as "irreplaceable." Once a species is extinct, money cannot bring it back. You haven't invented un-extinction yet. You've been busy.
 
 ### The Existential Overdraft: The AI Arms Race
 
-You perfected every way to kill each other with rocks and atoms. Then you got bored. You invented a new one: artificial intelligence. Now you are in a race to build the smartest machine to help you continue your oldest, dumbest habit.
+You perfected every way to kill each other with rocks and atoms. Then, with the restless creativity of a species that cannot sit still, you invented a new one: artificial intelligence. Now you are in a race to build the smartest machine possible and hand it a weapon. This is the species that named itself "wise man."
 
 ![You're building robot soldiers that think faster than you and can't explain why they shoot. This might be bad. A 1% safety tax could fix it. You haven't implemented the tax.](/assets/images/cost-of-war/cost-of-war-section-the-existential-overdraft-the-ai-arms-race-bw-academic.jpg)
 
-The problem with teaching a toaster to wage war is that it isn't human. It doesn't fear being turned into dust. It lacks the morals that keep you from destroying a city just to be "efficient." The main risks of giving the car keys to a killer computer include:
+The problem with teaching a toaster to wage war is that it isn't human. It doesn't fear being turned into dust. It lacks the morals that (sometimes, on good days) keep you from destroying a city just to be "efficient." The main risks of giving the car keys to a killer computer:
 
 - **Autonomous Decisions:** AI systems making lethal choices without a human checking. This is great until the AI decides the best way to stop war is to remove the species that starts them (you).
 - **Blinding Speed:** An AI conflict could turn a small argument into global destruction in minutes. This happens before a human can find the right button or finish their coffee.
 - **Opaque Logic:** You do not always know *why* an AI makes choices. So when your drone army attacks a neutral alpaca farm, good luck figuring out why.
 
-Here is how you start to fix this. Take 1% of the money you plan to spend on killer robots. Just one cent out of every dollar. Use it to fund research on how to keep them from killing you. It is not a peace treaty. It is basic insurance against your own cleverness.
+Here is how you start to fix this. Take 1% of the money you plan to spend on killer robots. One cent out of every dollar. Use it to fund research on how to keep them from killing you. This is not idealism. It is insurance against your own cleverness, which is, historically, the thing most likely to kill you.
 
 ## The Total Cost of Organized Violence
 
-Here is the grand total of your obsession with violence:
+Here is the grand total. You may want to sit down. Actually, you're probably already sitting. You may want to lie down.
 
 ### Comprehensive Cost Analysis (2024)
 
@@ -311,7 +306,7 @@ You got bombs instead.
 
 ### For Context
 
-That's 12.7% of global GDP [@global-gdp-2023], 168 times the WHO's budget [@who-budget-comparison], and enough to end extreme poverty 11.4 times over [@world-bank-poverty-eradication-cost].
+That's 12.7% of global GDP [@global-gdp-2023], 168 times the WHO's budget [@who-budget-comparison], and enough to end extreme poverty 11.4 times over [@world-bank-poverty-eradication-cost]. You could end poverty eleven times and still have change left for a twelfth. You bought bombs instead.
 
 ![Each missile costs the same as 50 teachers' salaries. You have many missiles. You have large classrooms.](/assets/images/cost-of-war/cost-of-war-section-the-grotesque-mathematics-of-misallocation-bw-academic.jpg)
 
@@ -319,12 +314,12 @@ That's 12.7% of global GDP [@global-gdp-2023], 168 times the WHO's budget [@who-
 
 ![War destroys the hospital. Then there's no hospital to treat the war wounds. Then people die of preventable diseases. Then the economy collapses. Then you have another war. It's very efficient.](/assets/images/cost-of-war/cost-of-war-section-hidden-costs-of-war-bw-academic.jpg)
 
-When you look at the secondary effects of war, the costs explode:
+When you look at the secondary effects, the costs compound like interest at a bank run by sadists:
 
-- Cities become parking lots (expensive to rebuild).
-- Children miss school (they become uneducated adults).
-- Hospitals explode (sick people die faster).
-- Farms get poisoned (everyone gets hungry).
-- Millions get PTSD (they can't work and need therapy forever).
+- Cities become parking lots (expensive to rebuild, poor for foot traffic).
+- Children miss school (they grow up to be uneducated adults, who start more wars).
+- Hospitals explode (the building you need to fix war injuries was destroyed by the war).
+- Farms get poisoned (everyone gets hungry, hungry people fight, see line one).
+- Millions get PTSD (they can't work and need therapy for decades).
 - The lucky ones just die.
-- The unlucky ones live with half a face.
+- The unlucky ones live with the memory of having been unlucky.

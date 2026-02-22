@@ -14,13 +14,13 @@ image: /assets/og-images/knowledge/solution/dih-og-retro-academic.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your goal is simple: **eliminate all disease**.
 
-The constraint is also simple: **resources are scarce**. You have limited money, time, and talent. Every dollar on a low-impact trial is a dollar not curing cancer. Every researcher writing grant applications is a researcher not doing research. Every patient excluded from trials is data you don't collect.
+The constraint is also simple: **resources are scarce**. You have limited money, time, and talent. Every dollar on a low-impact trial is a dollar not curing cancer. Every researcher writing grant applications is a researcher not doing research. Every patient excluded from trials is data you'll never collect and a person you'll never help.
 
-Your current system fails this optimization spectacularly.
+Your current system fails this optimization so thoroughly it almost looks intentional.
 
 Your NIH spends {{< var nih_annual_budget >}} a year. Your scientists spend 50-67% of their time writing grant applications [@grant-writing-time-50pct] instead of doing science. Billions flow to projects that never produce treatments. Your system isn't designed to maximize cures. It's designed to maximize grant-writing.
 
-This isn't a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results. Your species does this a lot.
+This isn't a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results. You've accidentally built a machine whose primary output is paperwork and whose secondary output is occasionally, reluctantly, medicine.
 
 Your Decentralized Institute of Health (DIH) is an alternative design that optimizes for a single metric: **maximum ROI toward disease eradication**.
 It's what you'd build if you started from scratch and actually wanted results.
@@ -29,7 +29,7 @@ It's what you'd build if you started from scratch and actually wanted results.
 
 ### The Olsonian Problem
 
-Your economist Mancur Olson identified why public goods are systematically underproduced: **diffuse benefits and concentrated costs**. It's one of those observations that's obvious once someone says it and invisible before.
+Your economist Mancur Olson identified why public goods are systematically underproduced: **diffuse benefits and concentrated costs**. In simpler terms: everyone benefits from a cure for cancer, but nobody benefits enough to fight for it the way a weapons manufacturer fights for a bomber contract. It's one of those observations that's obvious once someone says it, and invisible before, which describes most of your species' problems.
 
 ![Why your species is so good at making weapons and so bad at curing diseases. The weapons people are organized, the disease people are scattered.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
 
@@ -37,7 +37,7 @@ Curing cancer benefits 8 billion people a little. Blocking cancer cures benefits
 
 Your military-industrial complex solved this problem for defense. Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets. Result: the most powerful military in human history.
 
-Disease has no such coalition. Your patients are diffuse. Your researchers compete for scraps. Your funders lack coordination. Your politicians get no credit for cures that arrive after their term ends. Everyone wants disease eradicated; no one has a concentrated interest in making it happen. It's like everyone wanting a clean kitchen but nobody wanting to do the dishes, except the dishes are cancer.
+Disease has no such coalition. Your patients are too sick to lobby. Your researchers compete for scraps. Your funders lack coordination. Your politicians get no credit for cures that arrive after their term ends (which is all of them, because cures take 15 years and terms last 4). Everyone wants disease eradicated; no one has a concentrated interest in making it happen. It's like everyone wanting a clean kitchen but nobody wanting to do the dishes, except the dishes are cancer and the kitchen is on fire.
 
 **Your DIH solves the Olsonian problem by creating concentrated interests in disease eradication.** See [The Incentive Stack](#the-incentive-stack-making-roi-the-selfish-choice) for how.
 
@@ -51,7 +51,7 @@ Pharma companies stay pharma companies. Universities stay universities. Patient 
 
 ![Medical researchers currently work in separate rooms and don't talk to each other. This is a picture of them in the same room, talking.](/assets/images/dih/dih-section-why-this-framing-matters-bw-academic.jpg)
 
-Your war on disease has been losing for 50 years because it's not actually a war. It's a collection of uncoordinated skirmishes where researchers compete for grants, pharma companies hide failures, and patients can't access trials.
+Your war on disease has been losing for 50 years because it's not actually a war. It's a collection of uncoordinated skirmishes where researchers compete for grants, pharma companies hide failures, and patients can't access trials. You've been "fighting" cancer the way a cat "fights" a laser pointer: lots of energy, no coordination, nothing caught.
 
 Imagine if D-Day had been run this way. The Americans land at one beach, the British at another. Neither tells the other what they learned. Both compete for the same supply ships while the enemy reads their grant applications.
 
@@ -61,7 +61,7 @@ Your DIH is the coordination layer that turns scattered skirmishes into a unifie
 
 ![Everyone involved in medicine pointing in the same direction instead of wandering around like confused sheep.](/assets/images/dih/dih-section-dih-the-roi-maximization-protocol-bw-academic.jpg)
 
-Your DIH is not a platform. It's not an organization. It's a **coordination protocol** with one function:
+Your DIH is not a platform. It's not an organization. It's not even really a thing. It's a **coordination protocol** with one function:
 
 > **Make every actor do the highest-ROI thing toward total disease eradication.**
 
@@ -86,7 +86,7 @@ Everything operational is outsourced. Trial infrastructure? That's your [dFDA's]
 
 ![A tiny middle bit that handles money, surrounded by other people who do the actual work. Like a very small manager with many employees.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
 
-Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to influence. Just code that moves money toward measured outcomes. Your species has a habit of corrupting every institution you build. This one is boring enough that nobody bothers.
+Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to take on a yacht trip. Just code that moves money toward measured outcomes. Your species has a habit of corrupting every institution you build. You corrupt them the way water corrodes pipes: inevitably, given enough time and contact. This one is boring enough that nobody bothers.
 
 ## The Core Innovation: Pay for Results
 
@@ -105,7 +105,7 @@ This is how most other industries work. You pay contractors when they build the 
 
 ### Your Data Commons: Publish Everything
 
-Your current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Your scientists waste billions repeating mistakes someone else already made. It's like your whole species has amnesia, but only for the embarrassing parts.
+Your current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Your scientists waste billions repeating mistakes someone else already made because they literally cannot find out those mistakes were already made. It's like your whole species has amnesia, but only for the embarrassing parts. You remember your triumphs in high definition and forget your failures completely. This is called "being human." It's also called "why you keep dying."
 
 ![Currently, research results hide in separate filing cabinets. This shows them all dumped in one big pile where a computer can look at them.](/assets/images/dih/dih-section-the-data-commons-publish-everything-bw-academic.jpg)
 
@@ -129,7 +129,7 @@ Your DIH uses two allocation mechanisms:
 
 ## The Incentive Stack: Making ROI the Selfish Choice
 
-Your DIH doesn't rely on altruism. Altruism is lovely but unreliable. Instead, it **pays everyone to do the highest-ROI thing**. Greed is more dependable than kindness. Your entire economic system proves this daily.
+Your DIH doesn't rely on altruism. Altruism is lovely but flaky. It shows up when it feels like it, cancels last minute, and is always "busy that weekend." Instead, your DIH **pays everyone to do the highest-ROI thing**. Greed is more dependable than kindness. Your entire economic system proves this daily. Nobody ever forgot to be greedy.
 
 | Actor | Self-Interest | DIH Incentive | ROI Alignment |
 |:------|:--------------|:--------------|:--------------|
@@ -176,7 +176,7 @@ Your DIH doesn't replace your healthcare system. It adds an "experimental treatm
 
 ### How Your Politicians Get Aligned
 
-Your politicians optimize for reelection, status, and post-office careers. Not "humans continuing to exist." This is a design flaw in your democracy, not a moral failing. Well, it's both.
+Your politicians optimize for reelection, status, and post-office careers. "Humans continuing to exist" doesn't appear on their performance review. This is a design flaw in your democracy, not a moral failing. Well, it's both. But mostly it's a design flaw, because if you put saints in a badly designed system, you get the same results. You just feel more betrayed.
 
 ![Politicians who vote for good things get good scores, which get them good jobs later. Like a report card that follows you into adulthood.](/assets/images/dih/dih-section-how-politicians-get-aligned-bw-academic.jpg)
 
@@ -186,7 +186,7 @@ Your politicians optimize for reelection, status, and post-office careers. Not "
 - **Electoral support** flows to high-scorers via independent PACs
 - **Post-office opportunities** (fellowships, boards) reserved for leaders who governed well
 
-No bribes. No corruption. Just a standing rule: support policies that measurably reduce suffering and your political life gets easier. Oppose them and it gets harder. Your politicians will figure it out. They're not stupid. They're just badly incentivized.
+No bribes. No corruption. Just a standing rule: support policies that measurably reduce suffering and your political career gets easier. Oppose them and it gets harder. Your politicians will figure it out. They're not stupid. They got elected, which requires a very specific and impressive type of intelligence, none of which involves curing diseases.
 
 ## How the Money Flows
 
@@ -275,7 +275,7 @@ Your dFDA is the main example of a funded campaign. It's not part of your DIH. I
 
 ## Anti-Capture Design
 
-Your current system is trivially captured. Concentrate billions of dollars in a few committees, and lobbyists will find them. This is as predictable as gravity. Your species keeps being surprised by it anyway.
+Your current system is trivially captured. Concentrate billions of dollars in a few committees, and lobbyists will find them. This is as predictable as gravity, and your species keeps being surprised by it the way a dog is surprised by a vacuum cleaner. Every single time.
 
 Your DIH makes capture economically irrational.
 
@@ -304,7 +304,7 @@ Your protocol ensures **no single component can monopolize power**. Everything i
 
 ### Security Architecture: Multi-Layered Defense
 
-A {{< var treaty_annual_funding >}} treasury is a massive target. Every thief, hacker, and corrupt bureaucrat on your planet will try to steal from it. Your DIH uses defense in depth:
+A {{< var treaty_annual_funding >}} treasury is a massive target. Every thief, hacker, and corrupt bureaucrat on your planet will try to steal from it. This is not speculation. This is a certainty, like sunrise or a politician lying. Your DIH uses defense in depth:
 
 **1. Nobody's in Charge (And That's the Point)**
 
@@ -347,7 +347,7 @@ You can prove this model works with a {{< var treaty_annual_funding >}} treasury
 - **Environment:** Pay for actual carbon reduction, not paperwork
 - **Social Services:** Get help to people who need it without 47 forms
 
-This isn't just about protecting health funding. It's a proof of concept for uncorruptible governance. Your 1% Treaty Fund becomes the prototype. If you can manage {{< var treaty_annual_funding >}} without humans stealing it, you can manage anything. The trick is removing the humans from the parts where they steal.
+This isn't just about protecting health funding. It's a proof of concept for uncorruptible governance. Your 1% Treaty Fund becomes the prototype. If you can manage {{< var treaty_annual_funding >}} without humans stealing it, you can manage anything. The trick is removing the humans from the parts where they steal, which, historically, is all the parts.
 
 ![Money distributed by robots instead of people, because people kept stealing it.](/assets/images/governance/governance-section-beyond-medical-research-a-template-for-uncorruptible-governance-bw-academic.jpg)
 

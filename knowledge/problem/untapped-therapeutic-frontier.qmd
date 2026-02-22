@@ -81,8 +81,8 @@ You might argue, "Maybe the other 99% is useless!"
 Biology disagrees.
 
 * **Undrugged Targets:** Mapping 350,000+ clinical trials showed that only {{< var human_interactome_targeted_pct >}} of the human interactome has ever been targeted by drugs. You're ignoring 88% of your own biology. It's like having a 100-room mansion and only ever entering the bathroom.
-* **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend. This means "side effects" are often "cures for something else" that you haven't noticed yet. Every headache pill might cure Alzheimer's. You won't know until you check.
-* **Network Overlap:** Diseases cluster on shared biological networks [@disease-network-overlap]. A drug for arthritis might cure Alzheimer's. You won't know until you check. But you're not checking.
+* **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend. This means "side effects" are often "cures for something else" that nobody bothered to notice. Every headache pill might cure Alzheimer's. You won't know until you check. You're not checking.
+* **Network Overlap:** Diseases cluster on shared biological networks [@disease-network-overlap]. Arthritis and Alzheimer's share biological pathways. A drug for one might cure the other. The cure for your grandmother's dementia might be sitting in your grandfather's medicine cabinet. But you'll never find out, because testing it would require paperwork.
 
 ## The Universe is Big. You Are Small.
 
@@ -104,7 +104,7 @@ This is like exploring Earth by looking at one grain of sand on one beach in New
 
 It's not because science is hard. It's because:
 
-1. **Trials Cost Too Much:** A typical Phase II-III RCT costs **$30-$100M** (Median cost per patient {{< var traditional_phase3_cost_per_patient >}}). At that price, you only test "sure things." You test the equivalent of betting your house that the sun will rise. Safe bets. Boring bets. Bets that don't cure cancer.
+1. **Trials Cost Too Much:** A typical Phase II-III RCT costs **$30-$100M** (Median cost per patient {{< var traditional_phase3_cost_per_patient >}}). At that price, you only test "sure things." Safe bets. Boring bets. Bets that don't cure cancer. You've made clinical trials so expensive that only rich molecules get tested, like a velvet-rope nightclub where the bouncer is a regulatory agency.
 
 ![High costs, patent rules, and fear of lawsuits form a bottleneck between cures and people. The bottleneck is shaped like a dollar sign.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-why-you-are-still-sick-bw-academic.jpg)
 
@@ -112,7 +112,7 @@ It's not because science is hard. It's because:
 
 3. **No Profit:** Most molecules have no patent. No patent = no $100M trial = no approval. Your potential cure for cancer might be aspirin plus vitamin D, but nobody will ever test it because you can't patent aspirin plus vitamin D. This is a system designed by people who hate you.
 
-4. **Neglect:** If you have a rare disease with no market, you don't get a drug. Sorry. Your cells malfunction in an unprofitable way. The invisible hand of the market has determined your death is not worth preventing.
+4. **Neglect:** If you have a rare disease with no market, you don't get a drug. Your cells malfunction in an unprofitable way. The invisible hand of the market has weighed your life against quarterly earnings and found you wanting. Sorry about your death. It was a business decision.
 
 ## How Long to Explore Everything?
 
@@ -130,7 +130,7 @@ That's almost 3,000 years to explore compounds we *already know are safe*. By th
 
 ### Tier 2: Combination Therapies (Still Defensible)
 
-Modern medicine increasingly relies on multi-drug regimens. Oncology, HIV treatment, cardiology, and psychiatry all routinely use drug combinations. Testing pairwise combinations of safe compounds:
+Modern medicine increasingly relies on multi-drug cocktails. Oncology, HIV, cardiology, and psychiatry all routinely use drug combinations. So the real question isn't "does this one drug work?" but "which combinations work?" Testing pairwise combinations of safe compounds:
 
 **{{< var combination_therapy_disease_space >}} ÷ {{< var current_trials_per_year >}} = {{< var current_combination_exploration_years >}}**
 
@@ -140,7 +140,7 @@ That's longer than *Homo sapiens* has existed as a species. Using only compounds
 
 ### Tier 3: The Full Chemical Universe (Illustrative)
 
-Beyond known compounds lies the vast chemical space of 10^23 to 10^60 drug-like molecules. At current trial capacity, exploring even the *synthesizable* fraction would take longer than the universe has existed.
+Beyond known compounds lies the vast chemical space of 10^23 to 10^60 drug-like molecules. At current trial capacity, exploring even the *synthesizable* fraction would take longer than the universe has existed. The universe is 13.8 billion years old. You need more time than that. To test pills.
 
 ![The dot is every drug you've ever discovered. The sphere is every drug that could exist. There are more possible molecules than atoms in the galaxy. You've tried about 9,000.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-3-the-full-chemical-universe-illustrative-bw-academic.jpg)
 
@@ -170,9 +170,9 @@ With a [decentralized framework for drug assessment](../solution/dfda.qmd), tria
 
 **{{< var drug_disease_combinations_possible >}} ÷ {{< var dfda_trials_per_year_capacity >}} = {{< var dfda_known_safe_exploration_years >}}**
 
-Still a long time, but within the planning horizon of institutions. The first few decades would capture the highest-value discoveries, the low-hanging fruit that current trial scarcity forces us to ignore.
+Still a long time, but at least it's a number with fewer digits than a phone book. The first few decades would capture the highest-value discoveries, the low-hanging fruit that current trial scarcity forces you to ignore while people die waiting.
 
-More importantly, dFDA builds *permanent infrastructure* for systematic therapeutic exploration. The goal isn't to "finish", it's to stop leaving cures on the table while we form subcommittees.
+More importantly, dFDA builds *permanent infrastructure* for systematic therapeutic exploration. The goal isn't to "finish." It's to stop leaving cures on the table while you form subcommittees to discuss whether to form committees about them.
 
 ![Traditional trials: expensive, slow, picky about participants. Decentralized trials: cheaper, faster, will accept literally anyone. Both test the same drugs.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-fix-pragmatic-vs-traditional-bw-academic.jpg)
 
@@ -186,7 +186,7 @@ More importantly, dFDA builds *permanent infrastructure* for systematic therapeu
 
 **A decentralized, automated pragmatic trial system is the only route to systematically explore the remaining 99.999...% of medical space.**
 
-You're not in the parking lot because there's nothing inside Disney World. You're in the parking lot because the entrance fee is $100 million and requires 17 years..
+You're not in the parking lot because there's nothing inside Disney World. You're in the parking lot because the entrance fee is $100 million and requires 17 years of paperwork. People are dying in the parking lot. The rides are right there.
 
 ![Everything you know about medicine is a dot. Everything you could know is the universe. Between them: money and time. You have neither.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-bottom-line-bw-academic.jpg)
 

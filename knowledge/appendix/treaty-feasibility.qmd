@@ -17,7 +17,7 @@ No. Getting countries to *implement* things costs billions. Getting them to *sig
 
 ## What Treaties Actually Cost
 
-NGO campaign budgets are rarely disclosed publicly. But we know enough about organizational structure and government funding to establish something surprising. Treaty campaigns operate on remarkably modest resources:
+NGO campaign budgets are rarely disclosed publicly, because nonprofits guard their finances the way dragons guard gold. But we know enough to establish something surprising. Treaty campaigns operate on remarkably modest resources:
 
 | Treaty | Timeline | Campaign Structure | Government Support | Outcome |
 | :--- | :--- | :--- | :--- | :--- |
@@ -45,7 +45,7 @@ That's **less than 0.2%** of the implementation cost. Banning landmines: ~$40M i
 
 ## Cost for a 1% Health Treaty
 
-This one touches military budgets, the sacred cow of national sovereignty. Governments get nervous when you suggest moving their explosion money. So budget 3-4x what landmines cost.
+This one touches military budgets, the sacred cow of national sovereignty. Governments get nervous when you suggest moving their explosion money. They look at you like you've asked to borrow their favorite child. So budget 3-4x what landmines cost.
 
 | Phase | Duration | Estimated Cost | Who Pays |
 | :--- | :--- | :--- | :--- |
@@ -111,14 +111,16 @@ Even at {{< var political_success_probability >}} probability of success, this i
 | **NATO 2% GDP Defense** | 2% of GDP on defense | ~10 of 31 members (~32%) | Since 2014 | Even with security pressure, most miss target |
 | **EU Stability Pact** | 3% deficit, 60% debt | Routinely violated | Since 1997 | France, Germany themselves violated it |
 
-**Pattern**: Binding international financial commitments requiring ongoing budget reallocation achieve **<25% meaningful compliance**. This holds even with strong institutional pressure.
+**Pattern**: Binding international financial commitments requiring ongoing budget reallocation achieve **<25% meaningful compliance**. This holds even with strong institutional pressure. Your species signs things and then doesn't do them. It's like a New Year's resolution, but for geopolitics.
 
 ### Why a 1% Treaty is Harder Than Most Precedents
 
-1. **Touches military budgets**: The most politically sensitive area of national sovereignty
-2. **Requires ongoing annual allocation**: Not a one-time action like banning a weapon
-3. **No immediate security threat**: Unlike NATO spending increases post-Ukraine
-4. **Novel mechanism**: Military-to-health reallocation is unprecedented
+Let's be honest about the obstacles. This is not a chapter written by someone trying to sell you something (it is, but at least it's being honest about the hard parts):
+
+1. **Touches military budgets**: The most politically sensitive area of national sovereignty. Politicians would rather discuss their browser history than their defense budget.
+2. **Requires ongoing annual allocation**: Not a one-time action like banning a weapon. It's like a gym membership for peace. Monthly. Forever.
+3. **No immediate security threat**: Unlike NATO spending increases post-Ukraine. Hard to motivate governments without an active catastrophe, even though 150,000 daily disease deaths apparently doesn't qualify.
+4. **Novel mechanism**: Military-to-health reallocation is unprecedented. Humans are suspicious of things they haven't done before, which is odd for a species that also invented bungee jumping.
 5. **Coordination problem**: Benefits require critical mass of participants
 
 ### Why a 1% Treaty Might Beat the Odds
@@ -158,9 +160,9 @@ Even assuming a 99% chance of total failure, this beats the gold standard of glo
 
 ## Why The Treaty Won't Stop at 1%
 
-Most international commitments stagnate after initial signing. The table above tells the story. 0.7% ODA targets unmet for 50+ years. Kyoto Protocol abandoned. Paris Agreement goals missed. Why expect different from a 1% health treaty?
+Most international commitments stagnate after initial signing. The table above tells the depressing story. 0.7% ODA targets unmet for 50+ years. Kyoto Protocol abandoned. Paris Agreement goals missed. Your track record with follow-through makes goldfish look disciplined. So why expect different from a 1% health treaty?
 
-**Because we've built a scaling engine into the mechanism.**
+**Because this time, people get paid.**
 
 The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd) allocates {{< var iab_political_incentive_funding_pct >}} of treaty funding ({{< var iab_political_incentive_funding_annual >}}/year at 1%) to [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). These are securities that pay out when treaties *expand*, not just maintain.
 
@@ -175,7 +177,7 @@ The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd
 
 ### Why This Differs from Stagnant Treaties
 
-**0.7% ODA failed** because no financial mechanism incentivized expansion. The NGOs pushing for compliance have small budgets. They compete with each other.
+**0.7% ODA failed** because nobody made money when countries complied. The NGOs pushing for compliance have small budgets. They compete with each other. It's guilt-powered advocacy, and guilt has terrible fuel efficiency.
 
 ![Old way: charities beg governments. New way: investors get paid when governments cooperate. Greed works faster than guilt.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-this-differs-from-stagnant-treaties-bw-academic.jpg)
 
@@ -189,11 +191,12 @@ Once 1% passes:
 3. When 5% passes, **$13.5B/year** pushes for 10%
 4. The political pressure for expansion *accelerates* with each success
 
-This is the opposite of typical treaties where political momentum fades after signing. The IAB mechanism ensures that the constituency for expansion *grows* rather than shrinks over time.
+This is the opposite of typical treaties where political momentum fades after signing, like a gym membership purchased in January and abandoned by February. The IAB mechanism ensures that the constituency for expansion *grows* rather than shrinks over time. Greed, it turns out, doesn't take holidays.
 
 ### Long-Term Feasibility
 
 ![Path one: treaty fizzles. Path two: financial incentives make it grow to $2.7 trillion like compound interest for not dying.](/assets/images/treaty-feasibility/treaty-feasibility-section-long-term-feasibility-bw-academic.jpg)
 
-With IABs, the {{< var iab_political_incentive_funding_pct >}} allocation creates a perpetual political engine.
-Without IABs, this joins the long list of international commitments that stagnated because nobody had a financial reason to push for more.
+With IABs, the {{< var iab_political_incentive_funding_pct >}} allocation creates a perpetual political engine. A machine that runs on greed and outputs health. Your species would find this embarrassing if it weren't so effective.
+
+Without IABs, this joins the long list of international commitments that stagnated because nobody had a financial reason to push for more. It would sit next to the Kyoto Protocol in the Museum of Things Humanity Promised to Do and Then Didn't.

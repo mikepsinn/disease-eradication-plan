@@ -16,7 +16,7 @@ image: /assets/og-images/knowledge/problem-og-retro-academic.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Before you can fix something, you need to understand what's broken. In this case, what's broken is approximately everything.
 
-They say knowledge is power. But in this case, knowledge is mostly just depressing. Still, you need it.
+They say knowledge is power. In this case, knowledge is mostly just depressing. But you need it, the way you need to know your house is on fire before you can put it out.
 
 ## The Daily Body Count
 
@@ -68,9 +68,9 @@ This budget includes:
 - Submarines (one submarine = 1,000 cancer research labs)
 - Probably some kind of earthquake machine
 
-Your personal lifetime contribution to the murder budget is $74,259. You could have bought a really nice casket instead.
+Your personal lifetime contribution to the murder budget is $74,259. You could have bought a really nice casket instead. Or, and this is just a thought, not needed a casket quite so soon.
 
-The interesting thing about having 13,000 nuclear warheads is that after the first few hundred, you're just showing off. It's like having 13,000 fire extinguishers in your kitchen. After a while, you're not worried about fires, you're just collecting them.
+The interesting thing about having 13,000 nuclear warheads is that after the first few hundred, you're just showing off. You can only destroy Earth once. The remaining 12,700 are for what, exactly? Destroying Earth's ghost? It's like buying 13,000 fire extinguishers for a one-room flat. At some point, the fire extinguishers are the fire hazard.
 
 ## On What Disease Costs
 
@@ -84,17 +84,17 @@ Out of {{< var current_disease_patients_global >}} suffering from chronic diseas
 
 ## On Democracy
 
-A Princeton study found [0% correlation](problem/unrepresentative-democracy.qmd) between what the public wants and what policies get enacted. When military contractors want $100 billion, they spend $55 million lobbying for it. That's a 1,813% return on investment.
+A Princeton study found [0% correlation](problem/unrepresentative-democracy.qmd) between what the public wants and what policies get enacted. Zero. Not "low." Not "disappointing." Zero. Your democracy has the same correlation with your preferences as a coin flip has with your breakfast order.
 
 ![Defense contractors spend $250 million on lobbying and get $850 billion in contracts. That's a 340,000 percent return. You voted and got a sticker. Both are forms of civic participation.](/assets/images/problem/problem-section-on-democracy-bw-academic.jpg)
 
-When you want healthcare, you have approximately zero dollars to lobby with. You spent it all on healthcare (or you're dead, which significantly reduces your lobbying capacity).
+When military contractors want $100 billion, they spend $55 million lobbying for it. That's a 1,813% return on investment. When you want healthcare, you have approximately zero dollars to lobby with. You spent it all on healthcare. Or you're dead, which significantly reduces your lobbying capacity.
 
 Meanwhile, the people who regulate industries used to work for those industries. They'll work for them again after they're done "regulating." It's called the [revolving door](problem/unrepresentative-democracy.qmd), and it spins in one direction: toward money.
 
 ## On the Fixed Pie
 
-Money isn't real, but resources are. Earth has 8 billion human brains. Every MIT graduate building missiles is not [curing cancer](economics/central-banks.qmd). Switzerland spends {{< var switzerland_defense_spending_pct >}} of GDP on military and has {{< var switzerland_gdp_per_capita_k >}} GDP per capita. America spends {{< var us_military_spending_pct_gdp >}} and has $76,000.
+Money isn't real, but resources are. Earth has 8 billion human brains. Every MIT graduate building missiles is not [curing cancer](economics/central-banks.qmd). Every brilliant physicist designing warheads is not designing MRI machines. You have a fixed number of geniuses. You are using them to build things that kill other geniuses. Switzerland spends {{< var switzerland_defense_spending_pct >}} of GDP on military and has {{< var switzerland_gdp_per_capita_k >}} GDP per capita. America spends {{< var us_military_spending_pct_gdp >}} and has $76,000.
 
 ![Switzerland pays doctors more than generals and has a higher GDP per capita than America. America pays generals more than doctors and has more aircraft carriers. Different priorities, different outcomes.](/assets/images/problem/problem-section-on-the-fixed-pie-bw-academic.jpg)
 
@@ -127,4 +127,4 @@ The following chapters explain each problem in detail:
 - [Unrepresentative Democracy](problem/unrepresentative-democracy.qmd): Why 0% of what you want becomes policy
 - [You Are a Meat Robot](proof/body-as-repairable-machine.qmd): Your body is a machine, and the parts are fixable
 
-And if you don't fix it, you're going to die from something that could have been cured. Meanwhile, the Pentagon loses another trillion dollars in their couch cushions.
+And if you don't fix it, you are going to die from something that could have been cured. Personally. You. The person reading this. While the Pentagon loses another trillion dollars between the sofa cushions of its accounting department.

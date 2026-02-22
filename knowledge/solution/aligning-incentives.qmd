@@ -10,15 +10,13 @@ image: /assets/og-images/knowledge/solution/aligning-incentives-og-retro-academi
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) details the specific financial mechanism design.
 
-This book is not about convincing people to be better. It's about building a system where doing well and doing good are the same thing. The current system pays for death and disease. The new system pays for life and health.
+This book is not about convincing people to be better. You've been trying that for six thousand years and it hasn't worked once. This is about building a system where doing well and doing good are the same thing. The current system pays for death and disease. The new system pays for life and health.
 
-This chapter shows how to align incentives so everyone profits from human flourishing instead of suffering. You don't appeal to better angels. You make the math work.
-
-You can align major interest groups behind a single goal: curing disease. Not through charity. Not through guilt. Through **pure profit**.
+You can align major interest groups behind a single goal: curing disease. Not through charity. Not through guilt. Through **pure profit**. Moral appeals are for species that respond to moral appeals. Yours responds to money.
 
 ## Defense Contractors: Teaching Merchants of Death to Love Life
 
-Defense lobbyists spend {{< var defense_lobbying_annual >}} on lobbying. They get $181B in government contracts back. That's a 1,810:1 ROI [@lobbying-roi-calc]. They will kill any treaty that threatens this. Not because they're evil (though that helps), but because murder is profitable and they like money.
+Defense lobbyists spend {{< var defense_lobbying_annual >}} on lobbying. They get $181B in government contracts back. That's a 1,810:1 ROI [@lobbying-roi-calc]. Better returns than any hedge fund in history, and all you have to do is help kill strangers. They will oppose any treaty that threatens this. Not because they're evil (though that helps), but because murder is profitable and they like money.
 
 Lobbyists are like pigeons. They go where the food is. Currently the food is in opposing the treaty. You could try convincing them that saving lives is noble. Or you could just move the food. It's like convincing a vampire to open a blood bank; counterintuitive but mathematically sound.
 
@@ -106,7 +104,7 @@ You can't fight the military-industrial complex. It's too big. Too entrenched. T
 
 ## Insurance Companies: The Accidentally Aligned Industry
 
-Insurance companies are already on your side. They just don't know it yet. Every disease you cure is billions they don't have to pay out.
+Insurance companies are already on your side. They just don't know it yet, because nobody at an insurance company has ever had an original thought. Every disease you cure is billions they don't have to pay out.
 
 ### Their Current Death Spiral
 
@@ -129,7 +127,7 @@ Insurance companies are already on your side. They just don't know it yet. Every
 | Heart Disease | {{< var us_heart_disease_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
 | Cancer | {{< var us_cancer_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
 
-Even partial cures dramatically improve their margins. They don't need $0 costs. They need costs to stop rising 7% annually.
+Even partial cures dramatically improve their margins. They don't need $0 costs. They just need costs to stop rising 7% annually, which is currently the speed at which their business model is committing suicide.
 
 #### The Implementation
 
@@ -155,7 +153,7 @@ You're offering insurance companies a world where chronic disease costs stop com
 
 ## Pharmaceutical Companies: Converting Drug Dealers to Drug Curers
 
-Pharma companies aren't evil either. They're trapped in a broken business model. That model rewards treating symptoms forever instead of curing diseases once. Here's how you free them.
+Pharma companies aren't evil. They're just doing what any rational organism does when you pay it to keep people sick: keeping people sick. They're trapped in a business model that rewards treating symptoms forever instead of curing diseases once. Here's how you free them from their golden cage.
 
 ![Old model: sell pills forever. New model: cure disease once. One makes steady money, the other makes sense.](/assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-converting-drug-dealers-to-drug-curers-bw-academic.jpg)
 
@@ -263,7 +261,7 @@ The trade-off: **Lower revenue per drug, but massively more attempts.**
 
 ## Politicians: Hacking Democracy's Source Code
 
-Politicians are the simplest organisms in this ecosystem. They want exactly two things: votes and money. You're going to give them both.
+Politicians are the simplest organisms in this ecosystem. Simpler than bacteria. Bacteria at least reproduce usefully. Politicians want exactly two things: votes and money. You're going to give them both.
 
 ### Their Current Misery
 
@@ -305,7 +303,7 @@ Everyone can claim victory because the framing works for each ideology.
 
 ## Billionaires: Self-Interest Meets Self-Preservation
 
-Billionaires have everything except the one thing money can't buy: not dying. You're offering returns AND longevity research. The incentives align naturally.
+Billionaires have everything except the one thing money can't buy: not dying. A billion dollars and a body that rots at the same rate as everyone else's. You're offering returns AND longevity research. The incentives align naturally.
 
 ![How to get billionaires to fund immortality research: tell them it pays 300 percent returns. They wanted to live forever anyway, now they can afford to.](/assets/images/aligning-incentives/aligning-incentives-section-billionaires-self-interest-meets-self-preservation-bw-academic.jpg)
 
@@ -357,7 +355,7 @@ Once you align a few key players, others follow:
 
 ### Why This Can Work: Solving the Collective Action Problem
 
-Public choice theory predicts that concentrated interests (defense contractors, pharma incumbents) beat diffuse interests (patients, taxpayers). Why? Small groups with high per-person stakes outorganize large groups with low per-person stakes. The current system persists despite its inefficiency.
+Public choice theory (a branch of economics devoted to explaining why nothing good ever happens) predicts that concentrated interests (defense contractors, pharma incumbents) beat diffuse interests (patients, taxpayers). Small groups with high per-person stakes outorganize large groups with low per-person stakes. Ten lobbyists who each make $10 million from war will always outfight ten million patients who each lose $10 from disease. The current system persists despite its inefficiency. Or rather, because of it.
 
 **But here's what Olson missed:** The capital asymmetry is 90:1 in favor of diffuse beneficiaries.
 
@@ -385,4 +383,4 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 ## Why This Scales: The Ratchet Effect
 
-Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, it's $27B/year. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction. See [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) for the full scaling mechanism and tables.
+Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, it's $27B/year. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying. You've accidentally built ratchets like this before (Social Security, Medicare), but always by accident and never on purpose. This time, try doing it on purpose. See [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) for the full scaling mechanism and tables.

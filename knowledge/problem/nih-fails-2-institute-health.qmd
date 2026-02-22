@@ -48,19 +48,19 @@ This isn't bureaucratic accident. It's lobbied outcome.
 
 ![The revolving door between pharma, government, and academia spins so elegantly. It's performance art, if the art was killing people slowly.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-why-this-allocation-exists-bw-academic.jpg)
 
-Drug companies benefit enormously from NIH funding basic research. Taxpayers absorb the risk; industry patents the successes. But independent pragmatic trials comparing drugs head-to-head? Those threaten blockbuster profits by revealing which treatments actually work best.
+Drug companies love the NIH. Taxpayers absorb the risk of basic research; industry patents whatever works. It's like if your neighbor paid for your kitchen renovation, and then you charged them rent to eat there.
 
-PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. The message was clear: don't fund research that might lower drug prices.
+But independent trials comparing drugs head-to-head? Those threaten blockbuster profits by revealing which treatments actually work best. PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. The message: don't fund research that might lower drug prices. They said the quiet part loud, and Congress nodded.
 
-The revolving door reinforces this. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants and consulting fees. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics.
+The revolving door reinforces this. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants and consulting fees. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics. It's not a conspiracy. It's just that everyone involved happens to benefit from the same terrible outcome, purely by coincidence, repeatedly, for decades.
 
-Basic research produces publications. Publications produce tenure. Tenure produces more grants. This self-perpetuating cycle rewards knowledge production over health production.
+Basic research produces publications. Publications produce tenure. Tenure produces more grants. Nobody in this cycle needs anyone to get better. They need papers. Papers are the currency, and patients are the raw material.
 
 The 3.3% allocation isn't a mystery. It's a business model.
 
 ## The Efficiency Gap: A Tale of Two Trials
 
-The difference between efficient and inefficient trial design isn't theoretical. We have a controlled experiment.
+The difference between efficient and inefficient trial design isn't theoretical. Humanity accidentally ran a controlled experiment on itself. Two countries. Same disease. Very different results.
 
 ### RECOVER Initiative (NIH Approach)
 
@@ -80,16 +80,16 @@ The difference between efficient and inefficient trial design isn't theoretical.
 **Treatments found:** Multiple, including dexamethasone [@recovery-trial-summary-quote] (saved over 1 million lives)
 **Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
 
-The NIH RECOVER Initiative spent **133X more per patient** to achieve **infinitely less** (dividing by zero trials completed). This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
+The NIH spent **133X more per patient** and achieved **infinitely less** (dividing by zero trials completed produces infinity, which is fitting because that's how long patients waited). This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
 
 ![The UK trial cost 133 times less per patient and actually finished. America: where we do everything bigger, including waste.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recovery-trial-uk-approach-bw-academic.jpg)
 
-This proves the problem isn't that curing disease is hard. The NIH funds the wrong things.
+This proves the problem isn't that curing disease is hard. The British cured disease for the price of a used car per patient. America spent the price of a luxury SUV per patient and cured nothing. The NIH doesn't have a capability problem. It has a shopping problem.
 
 ## The Death Toll: Opportunity Cost of Misallocation
 
 When you misallocate $40 billion a year into low-efficiency research instead of high-efficiency clinical trials, you aren't just wasting money.
-You are burning lives.
+You are burning lives. Real ones. With families and everything.
 
 ![Spend 40 billion on efficient trials, save millions. Spend it on inefficient research, publish papers. You chose papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-death-toll-opportunity-cost-of-misallocation-bw-academic.jpg)
 
@@ -108,7 +108,7 @@ The ADAPTABLE trial proved pragmatic trials cost 30x less than traditional RCTs 
 **Annual Opportunity Cost:** ~100 million QALYs and ~7 million death-equivalents per year.
 Even in the most conservative scenario, NIH misallocation costs ~10 million QALYs and ~700,000 preventable deaths annually.
 
-You are operating at ~2% of your potential theoretical capacity to save lives.
+You are operating at ~2% of your potential capacity to save lives. If your car ran at 2% efficiency, you'd walk. If your heart ran at 2% efficiency, you'd die. Your medical research system runs at 2% efficiency, and you gave it a bigger budget.
 
 ## The Translation Crisis: Concept Rich, Trial Poor
 
@@ -124,11 +124,13 @@ But the **flow** of trials is a trickle.
 
 ![Imagine a massive lake of possible cures connected to the ocean by a drinking straw. You built the straw that way on purpose.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-translation-crisis-concept-rich-trial-poor-bw-academic.jpg)
 
-The system produces papers, not cures:
+The system produces papers, not cures. It is, by its own metrics, a publishing house that occasionally dabbles in medicine:
 
 - **Papers published:** 2.5 million annually [@nih-annual-papers-published]
 - **New treatments approved:** ~50 annually [@global-new-drug-approvals-50-annually]
 - **Conversion rate from paper to patient:** 0.002%
+
+For every 50,000 papers, one drug reaches a human. The rest become citations in other papers, which become citations in other papers, in an infinite loop of academics reading each other's homework.
 
 ### Knowledge Production: Saturated. Translation Capacity: Starved.
 
@@ -137,18 +139,16 @@ The system produces papers, not cures:
 - **Patients actually invited:** ~9-11% [@patient-willingness-clinical-trials]
 
 Half of all patients would join a clinical trial if asked.
-Almost nobody asks.
+Almost nobody asks. It's like having a room full of volunteers and a clipboard, and choosing to study the clipboard.
 
 ![The funnel has 500,000 safe molecules at the top and 50 approved drugs at the bottom. This is technically a funnel. Also technically a tragedy.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-translation-funnel-bw-academic.jpg)
 
-Understanding disease and curing disease are completely different things.
-The NIH chose understanding.
-Patients needed cures.
+Understanding disease and curing disease are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. The NIH chose microscopes. Patients needed medicine.
 
 ## The Public Goods vs. Club Goods Scam
 
 The NIH defends its existence by claiming to produce "Public Goods" (open science, data, training).
-It actually spends taxpayers' money to produce "Club Goods" for private industry.
+What it actually produces is a free research and development department for pharmaceutical companies, funded by the people who then pay full price for the drugs.
 
 ![You pay for the research. They take the profits. It's socialism for corporations, capitalism for you. You invented that.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
 
@@ -193,9 +193,7 @@ That's essentially random. You'd get better allocation by throwing darts at a li
 - Building research empires
 - Protecting institutional overhead
 
-The system optimizes for everything except patient outcomes.
-Because patients don't control the money.
-Committees do.
+The system optimizes for everything except patient outcomes. Patients don't control the money. Committees do. And committees, left to their own devices, optimize for the continued existence of committees.
 
 ![Money goes in. Papers come out. Patients die in the middle. The loop is working perfectly, depending on your definition of working.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-what-nih-funds-bw-academic.jpg)
 
@@ -210,10 +208,10 @@ Number of diseases eradicated: **Zero** [@nih-eradicated-zero-diseases].
 This isn't because eradicating disease is impossible:
 
 - The WHO eradicated smallpox for \$300 million [@smallpox-eradication-roi]
-- Jonas Salk developed the polio vaccine in a university lab
-- Veterinarians have eradicated multiple animal diseases [@animal-diseases-eradicated-by-vets] while the NIH was forming subcommittees
+- Jonas Salk developed the polio vaccine in a university lab (and gave it away for free, which is why nobody at the NIH talks about him at parties)
+- Veterinarians have eradicated multiple animal diseases [@animal-diseases-eradicated-by-vets] while the NIH was forming subcommittees about forming subcommittees
 
-The problem isn't capability. It's allocation.
+Cows have better healthcare outcomes than humans. Let that comparison sit with you for a moment.
 
 ## What Would Actually Work
 

@@ -16,7 +16,7 @@ It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
 That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 returns.
 **Conservative estimate**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only)
 
-Here's the breakdown.
+These numbers look like a typo. They aren't. Here's the breakdown.
 
 ## The Math: From {{< var traditional_phase3_cost_per_patient >}} to {{< var recovery_trial_cost_per_patient >}}
 
@@ -32,7 +32,7 @@ Your dFDA takes this model global. **80-160x cost reduction.** Same data quality
 
 ## Where the {{< var dfda_benefit_rd_only_annual >}} Comes From
 
-Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}} per year** (and growing).
+Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}} per year** (and growing, because apparently inefficiency scales beautifully).
 
 ![Current spending versus what you'd spend if you stopped doing trials like you're staying at the Ritz. Conservative estimate saves half, optimistic saves 95 percent. Either way, someone's been stealing.](/assets/images/health-dividend/health-dividend-section-where-the-var-dfda-benefit-rd-only-annual-comes-from-bw-academic.jpg)
 
@@ -40,13 +40,13 @@ Conservative estimate: dFDA captures {{< var dfda_trial_cost_reduction_pct >}} e
 
 - {{< var dfda_trial_cost_reduction_pct >}} of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
 
-Optimistic: 95% cost reduction (what RECOVERY achieved), saving up to **$57B/year**.
+Optimistic: 95% cost reduction (what RECOVERY actually achieved, in real life, with real patients, while a pandemic was happening), saving up to **$57B/year**.
 
 ## What {{< var dfda_benefit_rd_only_annual >}} Buys You
 
 ![With 58.6 billion, you could run 10,000 trials and address 7,000 rare diseases. Currently you're spending that much to run far fewer trials for common diseases. Priorities.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
 
-Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}} per year. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test far more treatments at once.
+Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}} per year, which is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test far more treatments at once.
 
 With the money saved every year, humans could:
 
@@ -57,7 +57,7 @@ With the money saved every year, humans could:
 
 ## Daily Opportunity Cost
 
-Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years each year. All because of the regulatory lag period.
+Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years each year. All because of the regulatory lag period. The lag period is not a safety feature. It is a queue where people die while waiting.
 
 ![Every day you do nothing costs 161 million dollars and 54 million years of healthy human life annually. But at least you're being consistent.](/assets/images/health-dividend/health-dividend-section-daily-opportunity-cost-bw-academic.jpg)
 
@@ -65,7 +65,7 @@ See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#da
 
 ## What It Costs to Run
 
-Your dFDA costs **{{< var dfda_annual_opex >}}/year** to operate. Cloud infrastructure, a small engineering team, compliance, global integration. One-time build cost is similar.
+Your dFDA costs **{{< var dfda_annual_opex >}}/year** to operate. Cloud infrastructure, a small engineering team, compliance, global integration. One-time build cost is similar. For context, this is roughly what your species spends on Halloween costumes for dogs.
 
 ![It'll cost 40 million to run this per year. Maybe 27 million, maybe 56 million. Either way, less than one fighter jet.](/assets/images/health-dividend/health-dividend-section-the-framework-cost-breakdown-bw-academic.jpg)
 
@@ -81,7 +81,7 @@ Less than one fighter jet. See [dFDA Cost-Benefit Analysis](https://dfda-impact.
 
 ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
 
-Even the worst case beats every military investment in history. See [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary) for interactive charts and NPV calculations.
+Even the worst case, where everything goes wrong and adoption is terrible, beats every military investment in history. Your worst medical outcome is still better than your best military one. See [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary) for interactive charts and NPV calculations.
 
 ## The Bottom Line
 
@@ -89,5 +89,5 @@ Even the worst case beats every military investment in history. See [Financial A
 
 ![Spend 40 million, save 58.6 billion. That's a 146,400 percent return. In any other context, you'd call this fraud. Here, it's just efficiency.](/assets/images/health-dividend/health-dividend-section-the-roi-bw-academic.jpg)
 
-The RECOVERY trial already proved this works. Scale it globally. Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D waste.
+The RECOVERY trial already proved this works. It's not theoretical. It happened. Scale it globally and stop pretending this is controversial. Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D waste and a quantity of human suffering that your economists haven't figured out how to put on a spreadsheet yet.
 
