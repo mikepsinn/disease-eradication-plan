@@ -33,7 +33,7 @@ from pydub import AudioSegment
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from lib.llm import generate_gemini_flash_content, GEMINI_FLASH_MODEL_ID
+from lib.llm import generate_gemini_pro_content, generate_gemini_flash_content, GEMINI_PRO_MODEL_ID, GEMINI_FLASH_MODEL_ID
 from lib.veo import generate_image, generate_video
 from dih_models.yaml_utils import load_quarto_config
 
@@ -49,8 +49,8 @@ DEFAULT_CONFIG_NAME = "manual-paperback"
 
 ASPECT_RATIOS = ["16:9", "9:16"]
 
-# Must match BW_ACADEMIC_STYLE from scripts/lib/image-prompts.ts
-IMAGE_STYLE = "Use a black and white scientific illustration style."
+# Video keyframe style (distinct from BW_ACADEMIC_STYLE used for book section images)
+IMAGE_STYLE = "Black and white only. Use a fun retro scientific illustration style. No color."
 
 # Suppress Veo-generated speech so we can overlay our own TTS narration.
 # Veo ambient audio (music + SFX) is kept and mixed at reduced volume.
@@ -257,16 +257,19 @@ def parse_json_array(response_text: str) -> list[dict]:
 
 # --- Step A: Scene Segmentation ---
 
-SCENE_SEGMENTATION_PROMPT = """Split this audiobook narration into visual scenes. Each scene is a stretch of narration that gets one visual on screen. Each scene becomes an 8-second video clip, so keep scenes short.
+SCENE_SEGMENTATION_PROMPT = """Segment this audiobook narration into visual scenes for 8-second video clips.
+
+Read the ENTIRE text first. Write each scene's prompts informed by the full chapter context, not just that scene's snippet.
 
 Rules:
-- 80-150 characters per scene (roughly 6-10 seconds of narration)
-- char_start/char_end are exact character offsets (no gaps, no overlaps)
-- narration_text is the exact original text for that span
-- Break at natural sentence or phrase boundaries
+- Each scene targets ~6-10 seconds of narration. Break at natural boundaries.
+- char_start/char_end: exact character offsets, no gaps, no overlaps
+- narration_text: exact original text for that span
+- image_prompt: Start with "Use a fun black and white retro scientific illustration style to illustrate: " then describe WHAT to show, informed by full chapter context. Self-contained. No extra style instructions.
+- animation_prompt: Start with "Use a fun black and white retro scientific illustration style to illustrate: " then describe what is happening visually, with enough context to stand completely alone. No dialogue or narration.
 
 Return ONLY a JSON array:
-[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "char_start": 0, "char_end": 120}}]
+[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "image_prompt": "Use a fun black and white retro scientific illustration style to illustrate: ...", "animation_prompt": "Use a fun black and white retro scientific illustration style to illustrate: ...", "char_start": 0, "char_end": 120}}]
 
 Text:
 ---
@@ -275,10 +278,10 @@ Text:
 
 
 def segment_scenes(text: str) -> list[dict]:
-    """Use Gemini Flash to segment narration text into visual scenes."""
+    """Use Gemini Pro 3.1 to segment narration text into visual scenes."""
     print("Step A: Segmenting text into visual scenes...")
     prompt = SCENE_SEGMENTATION_PROMPT.format(text=text)
-    response = generate_gemini_flash_content(prompt)
+    response = generate_gemini_pro_content(prompt)
     scenes = parse_json_array(response)
 
     total_chars = len(text)
@@ -311,14 +314,21 @@ def estimate_timestamps(scenes: list[dict], total_chars: int, total_duration_ms:
 
 # --- Step C: Keyframe Generation ---
 
+IMAGEN_PARALLEL_WORKERS = 4  # Concurrent Imagen requests
+
+
 def generate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
-    """Generate keyframe images for each scene using Imagen."""
+    """Generate keyframe images for each scene using Imagen (parallel)."""
     print("Step C: Generating keyframe images...")
     keyframes_dir = chapter_dir / "keyframes"
     keyframes_dir.mkdir(parents=True, exist_ok=True)
 
+    # Initialize and collect work items
     for scene in scenes:
         scene['keyframes'] = {}
+
+    work_items = []
+    for scene in scenes:
         for aspect in ASPECT_RATIOS:
             aspect_tag = aspect.replace(":", "x")
             filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.jpg"
@@ -329,22 +339,47 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
                 scene['keyframes'][aspect] = f"keyframes/{filename}"
                 continue
 
-            prompt = f"{IMAGE_STYLE}\n\n{scene['narration_text']}"
-            generate_image(
-                prompt=prompt,
-                output_path=output_path,
-                aspect_ratio=aspect,
-            )
-            scene['keyframes'][aspect] = f"keyframes/{filename}"
+            work_items.append((scene, aspect, output_path, filename))
+
+    if not work_items:
+        print("    All keyframes cached.")
+        return scenes
+
+    print(f"    Generating {len(work_items)} keyframes ({IMAGEN_PARALLEL_WORKERS} parallel workers)...")
+
+    def _generate_one(item):
+        scene, aspect, output_path, filename = item
+        prompt = scene.get('image_prompt') or scene['narration_text']
+        generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect)
+        return scene['scene_index'], aspect, f"keyframes/{filename}"
+
+    with ThreadPoolExecutor(max_workers=IMAGEN_PARALLEL_WORKERS) as executor:
+        futures = {executor.submit(_generate_one, item): item for item in work_items}
+        for future in as_completed(futures):
+            item = futures[future]
+            scene_idx, aspect = item[0]['scene_index'], item[1]
+            try:
+                _, _, kf_rel = future.result()
+                for s in scenes:
+                    if s['scene_index'] == scene_idx:
+                        s['keyframes'][aspect] = kf_rel
+                        break
+            except Exception as e:
+                print(f"    [ERROR] Keyframe scene {scene_idx} ({aspect}): {e}")
 
     return scenes
 
 
 # --- Step D: Veo Animation ---
 
-def animate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
-    """Animate each keyframe using Veo 3.1 with parallel requests."""
-    print("Step D: Animating keyframes with Veo 3.1...")
+def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = True) -> list[dict]:
+    """Generate video clips using Veo 3.1 with parallel requests.
+
+    When use_keyframes=True (default), uses image-to-video with keyframe as first frame.
+    When use_keyframes=False, uses text-to-video from animation prompt only.
+    """
+    mode = "image-to-video" if use_keyframes else "text-to-video"
+    print(f"Step D: Generating video clips with Veo 3.1 ({mode})...")
     clips_dir = chapter_dir / "clips"
     clips_dir.mkdir(parents=True, exist_ok=True)
     keyframes_dir = chapter_dir / "keyframes"
@@ -360,17 +395,19 @@ def animate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
             aspect_tag = aspect.replace(":", "x")
             clip_filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.mp4"
             clip_path = clips_dir / clip_filename
-            keyframe_filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.jpg"
-            keyframe_path = keyframes_dir / keyframe_filename
 
             if clip_path.exists():
                 print(f"    [CACHED] {clip_filename}")
                 scene['clips'][aspect] = f"clips/{clip_filename}"
                 continue
 
-            if not keyframe_path.exists():
-                print(f"    [SKIP] No keyframe for {clip_filename}")
-                continue
+            keyframe_path = None
+            if use_keyframes:
+                keyframe_filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.jpg"
+                keyframe_path = keyframes_dir / keyframe_filename
+                if not keyframe_path.exists():
+                    print(f"    [SKIP] No keyframe for {clip_filename}")
+                    continue
 
             work_items.append((scene, aspect, keyframe_path, clip_path, clip_filename))
 
@@ -382,10 +419,11 @@ def animate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
 
     def _generate_one(item):
         scene, aspect, keyframe_path, clip_path, clip_filename = item
+        veo_prompt = scene.get('animation_prompt') or scene['narration_text']
         generate_video(
-            prompt=scene['narration_text'],
-            first_frame_path=keyframe_path,
+            prompt=veo_prompt,
             output_path=clip_path,
+            first_frame_path=keyframe_path,
             aspect_ratio=aspect,
             duration_seconds=8,
             negative_prompt=VEO_NEGATIVE_PROMPT,
@@ -580,7 +618,7 @@ def save_scene_manifest(scenes: list[dict], chapter: dict, chapter_dir: Path, to
         "chapter_title": chapter['title'],
         "total_chars": len(scenes[-1].get('narration_text', '')) if scenes else 0,
         "total_duration_ms": total_duration_ms,
-        "model_used": GEMINI_FLASH_MODEL_ID,
+        "model_used": GEMINI_PRO_MODEL_ID,
         "scenes": scenes,
     }
     # Compute total chars from scene coverage
@@ -677,7 +715,7 @@ def list_chapters(chapters: list[dict]):
 
 # --- Main Pipeline ---
 
-def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None):
+def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None, no_keyframes: bool = False):
     """Run the video generation pipeline for a single chapter."""
     print(f"\n{'=' * 60}")
     print(f"Chapter {chapter['index']}: {chapter['title']}")
@@ -715,8 +753,27 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
         print(f"  Found existing scene manifest ({len(existing['scenes'])} scenes)")
         scenes = existing['scenes']
     else:
-        if force and existing:
-            print(f"  --force: re-segmenting (was {len(existing.get('scenes', []))} scenes)")
+        if force:
+            # Clean old artifacts so stale keyframes/clips don't get reused
+            import shutil
+            subdirs_to_clean = ["clips"]
+            if not no_keyframes:
+                subdirs_to_clean.insert(0, "keyframes")
+            for subdir in subdirs_to_clean:
+                old_dir = chapter_dir / subdir
+                if old_dir.exists():
+                    shutil.rmtree(old_dir)
+                    print(f"  --force: deleted {subdir}/")
+            # Also delete assembled videos
+            safe_title = re.sub(r'[^\w\s-]', '', chapter['title']).strip().replace(' ', '-')[:50]
+            for aspect in ASPECT_RATIOS:
+                aspect_tag = aspect.replace(":", "x")
+                old_video = VIDEO_DIR / f"{chapter['index']:03d}-{safe_title}-{aspect_tag}.mp4"
+                if old_video.exists():
+                    old_video.unlink()
+                    print(f"  --force: deleted {old_video.name}")
+            if existing:
+                print(f"  --force: re-segmenting (was {len(existing.get('scenes', []))} scenes)")
         scenes = segment_scenes(text)
 
     if max_scenes and len(scenes) > max_scenes:
@@ -730,14 +787,15 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
         print("\n--scenes-only: stopping after scene segmentation.")
         return
 
-    scenes = generate_keyframes(scenes, chapter_dir)
-    save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms)
+    if not no_keyframes:
+        scenes = generate_keyframes(scenes, chapter_dir)
+        save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms)
 
-    if keyframes_only:
-        print("\n--keyframes-only: stopping after keyframe generation.")
-        return
+        if keyframes_only:
+            print("\n--keyframes-only: stopping after keyframe generation.")
+            return
 
-    scenes = animate_keyframes(scenes, chapter_dir)
+    scenes = animate_scenes(scenes, chapter_dir, use_keyframes=not no_keyframes)
     save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms)
 
     print("\nStep E: Assembling final videos...")
@@ -800,6 +858,11 @@ def main():
         type=int,
         help="Limit number of scenes to process (for quick testing)"
     )
+    parser.add_argument(
+        "--no-keyframes",
+        action="store_true",
+        help="Skip keyframe generation; use text-to-video instead of image-to-video"
+    )
     args = parser.parse_args()
 
     try:
@@ -834,6 +897,7 @@ def main():
             keyframes_only=args.keyframes_only,
             force=args.force,
             max_scenes=args.max_scenes,
+            no_keyframes=args.no_keyframes,
         )
 
     print(f"\n{'=' * 60}")

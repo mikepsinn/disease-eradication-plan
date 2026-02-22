@@ -84,19 +84,22 @@ def generate_image(
 
 def generate_video(
     prompt: str,
-    first_frame_path: Path,
     output_path: Path,
+    first_frame_path: Path | None = None,
     aspect_ratio: str = "16:9",
     duration_seconds: int = 8,
     negative_prompt: str | None = None,
 ) -> Path:
     """
-    Generate an animated video clip using Veo 3.1 from a keyframe image.
+    Generate a video clip using Veo 3.1.
+
+    Supports both text-to-video (no image) and image-to-video (with first frame).
 
     Args:
         prompt: Animation prompt describing the desired motion/scene.
-        first_frame_path: Path to the keyframe image (JPEG) to use as first frame.
         output_path: Where to save the generated MP4 clip.
+        first_frame_path: Optional keyframe image (JPEG) to use as first frame.
+                          If None, generates from text prompt only.
         aspect_ratio: "16:9" or "9:16".
         duration_seconds: Clip duration (5-8 seconds).
         negative_prompt: What to exclude from the video (e.g., "narration, dialogue").
@@ -107,7 +110,8 @@ def generate_video(
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    print(f"  Generating video ({aspect_ratio}, {duration_seconds}s): {prompt[:80]}...")
+    mode = "img2vid" if first_frame_path else "txt2vid"
+    print(f"  Generating video [{mode}] ({aspect_ratio}, {duration_seconds}s): {prompt[:80]}...")
 
     config_kwargs: dict = {
         "aspect_ratio": aspect_ratio,
@@ -117,16 +121,19 @@ def generate_video(
     if negative_prompt:
         config_kwargs["negative_prompt"] = negative_prompt
 
+    gen_kwargs: dict = {
+        "model": VEO_MODEL_ID,
+        "prompt": prompt,
+        "config": types.GenerateVideosConfig(**config_kwargs),
+    }
+    if first_frame_path:
+        gen_kwargs["image"] = types.Image.from_file(location=str(first_frame_path))
+
     last_error = None
     for attempt in range(1, MAX_RETRIES + 1):
         start_time = time.time()
         try:
-            operation = google_client.models.generate_videos(
-                model=VEO_MODEL_ID,
-                prompt=prompt,
-                image=types.Image.from_file(location=str(first_frame_path)),
-                config=types.GenerateVideosConfig(**config_kwargs),
-            )
+            operation = google_client.models.generate_videos(**gen_kwargs)
 
             # Poll until complete
             while not operation.done:
