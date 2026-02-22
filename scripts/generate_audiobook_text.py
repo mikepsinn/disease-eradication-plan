@@ -29,7 +29,6 @@ import sys
 import re
 import argparse
 import hashlib
-import json
 import shutil
 from pathlib import Path
 from typing import cast
@@ -44,13 +43,15 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from dih_models.yaml_utils import load_quarto_config
 from dih_models.variable_replacement import load_variables, replace_variables
+from lib.audiobook_common import (
+    PROJECT_ROOT, TEXT_DIR, VARIABLES_YML, DEFAULT_CONFIG_PATH, MANIFEST_PATH,
+    extract_chapters, extract_title_from_qmd, safe_filename,
+)
+from lib.audiobook_manifest import save_text_results
+from lib.retry import retry_with_backoff
 
 # Configuration
-PROJECT_ROOT = Path(__file__).parent.parent
-DEFAULT_CONFIG = PROJECT_ROOT / "_quarto-manual-paperback.yml"
-VARIABLES_YML = PROJECT_ROOT / "_variables.yml"
-OUTPUT_DIR = PROJECT_ROOT / "audiobook" / "text"
-MANIFEST_PATH = PROJECT_ROOT / "audiobook" / "manifest.json"
+OUTPUT_DIR = TEXT_DIR
 
 MAX_CHUNK_CHARS = 3_000
 
@@ -244,84 +245,15 @@ def rewrite_for_audiobook(text: str, title: str, output_path: Path) -> str:
         prompt = AUDIOBOOK_REWRITE_PROMPT + context + "\n\n---\n\nCONTENT TO CONVERT:\n\n" + chunk
 
         print(f"    Calling LLM ({len(chunk):,} chars, chunk {i + 1}/{len(chunks)})...")
-        max_retries = 3
-        backoff = [10, 30, 60]
-        for attempt in range(1, max_retries + 1):
-            try:
-                result = generate_gemini_flash_content(prompt).strip()
-                break
-            except Exception as e:
-                if attempt < max_retries:
-                    wait = backoff[attempt - 1]
-                    print(f"    [RETRY] Attempt {attempt}/{max_retries} failed: {e}")
-                    print(f"    [RETRY] Waiting {wait}s...", flush=True)
-                    import time
-                    time.sleep(wait)
-                else:
-                    raise
+        result = retry_with_backoff(
+            lambda: generate_gemini_flash_content(prompt).strip(),
+            label=f"chunk {i + 1}/{len(chunks)} ",
+        )
         chunk_file.write_text(result, encoding='utf-8')
         print(f"    [SAVED] chunk {i + 1}/{len(chunks)} -> {chunk_file.name}")
         rewritten_parts.append(result)
 
     return '\n\n'.join(rewritten_parts)
-
-
-# ---------------------------------------------------------------------------
-# Chapter extraction from Quarto config
-# ---------------------------------------------------------------------------
-
-def extract_chapters(config: dict) -> list[dict]:
-    """Extract all chapters from the book config in order."""
-    chapters = []
-    idx = 0
-    book = config.get('book', {})
-    # Some configs use index-source to map index.qmd -> actual source file
-    index_source = config.get('dih-render', {}).get('index-source')
-
-    def resolve_path(path: str) -> str:
-        """Map index.qmd -> actual source file if index-source is set."""
-        if index_source and path == 'index.qmd':
-            return index_source
-        return path
-
-    for item in book.get('chapters', []):
-        if isinstance(item, str):
-            idx += 1
-            chapters.append({'path': resolve_path(item), 'title': None, 'part': None, 'index': idx})
-        elif isinstance(item, dict):
-            if 'href' in item:
-                idx += 1
-                chapters.append({'path': resolve_path(item['href']), 'title': item.get('text'), 'part': None, 'index': idx})
-            elif 'part' in item:
-                for sub in item.get('chapters', []):
-                    idx += 1
-                    if isinstance(sub, str):
-                        chapters.append({'path': resolve_path(sub), 'title': None, 'part': item['part'], 'index': idx})
-                    elif isinstance(sub, dict) and 'href' in sub:
-                        chapters.append({'path': resolve_path(sub['href']), 'title': sub.get('text'), 'part': item['part'], 'index': idx})
-
-    for item in book.get('appendices', []):
-        if isinstance(item, dict) and 'part' in item:
-            for sub in item.get('chapters', []):
-                idx += 1
-                if isinstance(sub, str):
-                    chapters.append({'path': sub, 'title': None, 'part': f"Appendix: {item['part']}", 'index': idx})
-                elif isinstance(sub, dict) and 'href' in sub:
-                    chapters.append({'path': sub['href'], 'title': sub.get('text'), 'part': f"Appendix: {item['part']}", 'index': idx})
-
-    return chapters
-
-
-def extract_title_from_qmd(file_path: Path) -> str:
-    """Extract title from QMD file's YAML frontmatter."""
-    from dih_models.yaml_utils import yaml_safe_load
-    content = file_path.read_text(encoding='utf-8')
-    match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-    if match:
-        frontmatter = yaml_safe_load(match.group(1))
-        if frontmatter and 'title' in frontmatter:
-            return frontmatter['title']
-    return file_path.stem.replace('-', ' ').replace('_', ' ').title()
 
 
 def chunk_text(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list[str]:
@@ -365,8 +297,7 @@ def generate_chapter_text(
 
     title = chapter['title'] or extract_title_from_qmd(qmd_path)
 
-    safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
-    output_path = OUTPUT_DIR / f"{chapter['index']:03d}-{safe_title}.prepared.txt"
+    output_path = OUTPUT_DIR / f"{chapter['index']:03d}-{safe_filename(title)}.prepared.txt"
 
     if output_path.exists() and not force:
         print(f"  [SKIP] Already exists: {output_path.name}")
@@ -433,15 +364,8 @@ def generate_chapter_text(
 
 
 # ---------------------------------------------------------------------------
-# Manifest and listing
+# Listing
 # ---------------------------------------------------------------------------
-
-def save_manifest(results: list[dict]):
-    MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
-    manifest = {'chapters': results, 'output_dir': str(OUTPUT_DIR.relative_to(PROJECT_ROOT))}
-    MANIFEST_PATH.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
-    print(f"\nManifest saved to: {MANIFEST_PATH.relative_to(PROJECT_ROOT)}")
-
 
 def list_chapters(chapters: list[dict]):
     print("\nBook Chapters:")
@@ -457,8 +381,7 @@ def list_chapters(chapters: list[dict]):
         if not title and qmd_path.exists():
             title = extract_title_from_qmd(qmd_path)
         title = title or ch['path']
-        safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
-        text_file = OUTPUT_DIR / f"{ch['index']:03d}-{safe_title}.prepared.txt"
+        text_file = OUTPUT_DIR / f"{ch['index']:03d}-{safe_filename(title)}.prepared.txt"
         if text_file.exists():
             status = f"[x] ({text_file.stat().st_size:,} bytes)"
         else:
@@ -474,7 +397,7 @@ def list_chapters(chapters: list[dict]):
 
 def main():
     parser = argparse.ArgumentParser(description="Generate audiobook-friendly text from Quarto book chapters")
-    parser.add_argument("--config", "-cfg", default=str(DEFAULT_CONFIG), help=f"Quarto config YAML (default: {DEFAULT_CONFIG.name})")
+    parser.add_argument("--config", "-cfg", default=str(DEFAULT_CONFIG_PATH), help=f"Quarto config YAML (default: {DEFAULT_CONFIG_PATH.name})")
     parser.add_argument("--chapter", "-c", type=int, help="Generate only specific chapter number")
     parser.add_argument("--start", type=int, help="Start from chapter number (inclusive)")
     parser.add_argument("--end", type=int, help="End at chapter number (inclusive)")
@@ -536,7 +459,7 @@ def main():
     print(f"Results: {generated} generated, {cached} cached, {dry_runs} dry-run")
 
     if results and not args.dry_run:
-        save_manifest(results)
+        save_text_results(results)
 
     print("\nDone!")
 

@@ -25,7 +25,6 @@ import argparse
 import shutil
 import subprocess
 import threading
-from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -44,15 +43,16 @@ from dih_models.yaml_utils import load_quarto_config
 from dih_models.variable_replacement import load_variables, replace_variables
 from generate_audiobook_text import generate_chapter_text
 from generate_audiobook import extract_book_metadata, generate_chapter_audio
+from lib.audiobook_common import (
+    PROJECT_ROOT, AUDIOBOOK_DIR, VIDEO_DIR, SCENES_DIR, TEXT_DIR,
+    CHAPTER_AUDIO_DIR, MANIFEST_PATH, extract_chapters as _extract_chapters,
+    extract_title_from_qmd, safe_filename, find_prepared_text, find_chapter_audio,
+    resolve_chapter_titles, VARIABLES_YML,
+)
+from lib.audiobook_manifest import update_chapter_fields as _update_chapter_fields
+from lib.retry import RateLimiter
 
 # --- Configuration ---
-PROJECT_ROOT = Path(__file__).parent.parent
-AUDIOBOOK_DIR = PROJECT_ROOT / "audiobook"
-VIDEO_DIR = AUDIOBOOK_DIR / "video"
-SCENES_DIR = VIDEO_DIR / "scenes"
-TEXT_DIR = AUDIOBOOK_DIR / "text"
-CHAPTER_AUDIO_DIR = AUDIOBOOK_DIR / "chapters"
-MANIFEST_PATH = AUDIOBOOK_DIR / "manifest.json"
 DEFAULT_CONFIG_NAME = "manual-paperback"
 
 ASPECT_RATIOS = ["16:9", "9:16"]
@@ -177,116 +177,18 @@ def get_available_configs() -> list[str]:
 
 # --- Quarto Config Parsing ---
 
-def extract_title_from_qmd(file_path: Path) -> str:
-    """Extract title from QMD file's YAML frontmatter."""
-    if not file_path.exists():
-        return file_path.stem.replace('-', ' ').replace('_', ' ').title()
-    content = file_path.read_text(encoding='utf-8')
-    match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-    if match:
-        # Quick YAML title extraction without full parse
-        for line in match.group(1).split('\n'):
-            m = re.match(r'^title:\s*["\']?(.+?)["\']?\s*$', line)
-            if m:
-                return m.group(1)
-    return file_path.stem.replace('-', ' ').replace('_', ' ').title()
-
-
 def extract_chapters_from_config(config_path: Path) -> list[dict]:
-    """
-    Extract ordered chapter list from a Quarto book YAML config.
-    Starts with the index-source file, then processes chapters in config order.
-
-    Returns list of dicts with: index, path, title, part
-    """
+    """Extract ordered chapter list from a Quarto book YAML config."""
     config = load_quarto_config(config_path)
-    book = config.get('book', {})
-    index_source = config.get('dih-render', {}).get('index-source')
-
-    def resolve_path(path: str) -> str:
-        if index_source and path == 'index.qmd':
-            return index_source
-        return path
-
-    chapters = []
-    chapter_index = 0
-
-    for item in book.get('chapters', []):
-        if isinstance(item, str):
-            chapter_index += 1
-            path = resolve_path(item)
-            chapters.append({
-                'index': chapter_index,
-                'path': path,
-                'title': None,
-                'part': None,
-            })
-        elif isinstance(item, dict):
-            if 'href' in item:
-                chapter_index += 1
-                path = resolve_path(item['href'])
-                chapters.append({
-                    'index': chapter_index,
-                    'path': path,
-                    'title': item.get('text'),
-                    'part': None,
-                })
-            elif 'part' in item:
-                part_name = item['part']
-                for sub in item.get('chapters', []):
-                    chapter_index += 1
-                    if isinstance(sub, str):
-                        chapters.append({
-                            'index': chapter_index,
-                            'path': resolve_path(sub),
-                            'title': None,
-                            'part': part_name,
-                        })
-                    elif isinstance(sub, dict) and 'href' in sub:
-                        chapters.append({
-                            'index': chapter_index,
-                            'path': resolve_path(sub['href']),
-                            'title': sub.get('text'),
-                            'part': part_name,
-                        })
-
-    # Resolve titles from QMD files where missing
-    for ch in chapters:
-        if not ch['title']:
-            ch['title'] = extract_title_from_qmd(PROJECT_ROOT / ch['path'])
-
-    return chapters
+    chapters = _extract_chapters(config)
+    return resolve_chapter_titles(chapters)
 
 
 # --- Chapter File Resolution ---
 
-def find_prepared_text(chapter: dict) -> Path | None:
-    """Find the prepared audiobook text file for a chapter."""
-    safe_title = re.sub(r'[^\w\s-]', '', chapter['title']).strip().replace(' ', '-')[:50]
-    text_file = TEXT_DIR / f"{chapter['index']:03d}-{safe_title}.prepared.txt"
-    if text_file.exists():
-        return text_file
-    # Fallback: match by chapter index prefix
-    for f in TEXT_DIR.glob(f"{chapter['index']:03d}-*.prepared.txt"):
-        return f
-    return None
-
-
-def find_chapter_audio(chapter: dict) -> Path | None:
-    """Find the WAV audio file for a chapter."""
-    safe_title = re.sub(r'[^\w\s-]', '', chapter['title']).strip().replace(' ', '-')[:50]
-    audio_file = CHAPTER_AUDIO_DIR / f"{chapter['index']:03d}-{safe_title}.wav"
-    if audio_file.exists():
-        return audio_file
-    for f in CHAPTER_AUDIO_DIR.glob(f"{chapter['index']:03d}-*.wav"):
-        return f
-    return None
-
-
 def get_chapter_dir(chapter: dict) -> Path:
     """Get the scene directory for a chapter."""
-    safe_title = re.sub(r'[^\w\s-]', '', chapter['title']).strip().replace(' ', '-')[:50]
-    return SCENES_DIR / f"{chapter['index']:03d}-{safe_title}"
+    return SCENES_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}"
 
 
 # --- JSON Extraction ---
@@ -447,33 +349,6 @@ def estimate_timestamps(scenes: list[dict], total_chars: int, total_duration_ms:
             print(f"    [FIX] Extended last scene by {gap}ms to cover full audio ({total_duration_ms}ms)")
 
     return scenes
-
-
-# --- Rate Limiter ---
-
-class RateLimiter:
-    """Thread-safe sliding-window rate limiter."""
-
-    def __init__(self, max_requests: int, window_seconds: float):
-        self._max = max_requests
-        self._window = window_seconds
-        self._timestamps: deque[float] = deque()
-        self._lock = threading.Lock()
-
-    def acquire(self):
-        """Block until a request slot is available."""
-        while True:
-            with self._lock:
-                now = time.monotonic()
-                # Evict timestamps outside the window
-                while self._timestamps and self._timestamps[0] <= now - self._window:
-                    self._timestamps.popleft()
-                if len(self._timestamps) < self._max:
-                    self._timestamps.append(now)
-                    return
-                # Calculate wait time until oldest request exits the window
-                wait = self._timestamps[0] + self._window - now
-            time.sleep(max(0.1, wait))
 
 
 # Imagen: 20 requests per minute
@@ -813,8 +688,7 @@ def assemble_chapter_video(
     with TTS narration at full volume.
     """
     aspect_tag = aspect.replace(":", "x")
-    safe_title = re.sub(r'[^\w\s-]', '', chapter['title']).strip().replace(' ', '-')[:50]
-    output_path = VIDEO_DIR / f"{chapter['index']:03d}-{safe_title}-{aspect_tag}.mp4"
+    output_path = VIDEO_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
 
     audio_path = find_chapter_audio(chapter)
     if not audio_path:
@@ -1017,22 +891,12 @@ def load_scene_manifest(chapter_dir: Path) -> dict | None:
 
 def update_audiobook_manifest(chapter_index: int, video_16x9: Path | None, video_9x16: Path | None, scene_count: int):
     """Add video fields to audiobook/manifest.json for a chapter."""
-    if not MANIFEST_PATH.exists():
-        return
-    manifest = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
-    for ch in manifest.get('chapters', []):
-        if ch['index'] == chapter_index:
-            if video_16x9:
-                ch['video_16x9'] = str(video_16x9.relative_to(PROJECT_ROOT))
-            if video_9x16:
-                ch['video_9x16'] = str(video_9x16.relative_to(PROJECT_ROOT))
-            ch['scenes'] = scene_count
-            ch['video_status'] = "generated"
-            break
-    MANIFEST_PATH.write_text(
-        json.dumps(manifest, indent=2, ensure_ascii=False) + '\n',
-        encoding='utf-8',
-    )
+    fields = {'scenes': scene_count, 'video_status': 'generated'}
+    if video_16x9:
+        fields['video_16x9'] = str(video_16x9.relative_to(PROJECT_ROOT))
+    if video_9x16:
+        fields['video_9x16'] = str(video_9x16.relative_to(PROJECT_ROOT))
+    _update_chapter_fields(chapter_index, **fields)
     print(f"  Audiobook manifest updated for chapter {chapter_index}")
 
 
@@ -1096,50 +960,63 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
     chapter_dir = get_chapter_dir(chapter)
     chapter_dir.mkdir(parents=True, exist_ok=True)
 
-    # Regenerate prepared text (fast: QMD -> strip markup -> LLM rewrite)
-    variables = load_variables(PROJECT_ROOT / "_variables.yml")
-    result = generate_chapter_text(chapter, variables, force=True)
-    if not result:
-        print(f"  [SKIP] Text generation failed for chapter {chapter['index']}.")
-        return
+    if keyframes_only or scenes_only or test_prompts:
+        # Fast path: require existing text+audio, skip regeneration
+        text_file = find_prepared_text(chapter)
+        if not text_file:
+            print(f"  [ERROR] No prepared text for chapter {chapter['index']}. Run generate_audiobook_text.py first.")
+            return
 
-    text_file = find_prepared_text(chapter)
-    if not text_file:
-        print(f"  [SKIP] No prepared text file for chapter {chapter['index']}.")
-        return
+        audio_path = find_chapter_audio(chapter)
+        if not audio_path:
+            print(f"  [ERROR] No audio for chapter {chapter['index']}. Run generate_audiobook.py first.")
+            return
+    else:
+        # Full pipeline: regenerate text if needed
+        variables = load_variables(VARIABLES_YML)
+        result = generate_chapter_text(chapter, variables, force=True)
+        if not result:
+            print(f"  [SKIP] Text generation failed for chapter {chapter['index']}.")
+            return
+
+        text_file = find_prepared_text(chapter)
+        if not text_file:
+            print(f"  [SKIP] No prepared text file for chapter {chapter['index']}.")
+            return
 
     text = text_file.read_text(encoding='utf-8')
     total_chars = len(text)
     text_hash = hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
     print(f"Text: {total_chars:,} chars ({text_file.name}) [hash: {text_hash}]")
 
-    # Get audio duration + check freshness; regenerate if stale or missing
+    # Get audio: in fast-path mode we already validated it exists
     audio_path = find_chapter_audio(chapter)
-    audio_stale = False
-    if audio_path:
-        audio_hash_file = audio_path.with_suffix('.text_hash')
-        old_hash = audio_hash_file.read_text(encoding='utf-8').strip() if audio_hash_file.exists() else ''
-        if old_hash != text_hash:
-            audio_stale = True
-    else:
-        audio_stale = True
 
-    if audio_stale:
-        reason = "text changed" if audio_path else "not found"
-        print(f"Audio: regenerating ({reason})...")
-        # Clear stale audio chunk cache so TTS regenerates from new text
+    if not (keyframes_only or scenes_only or test_prompts):
+        # Full pipeline: check audio freshness and regenerate if stale
+        audio_stale = False
         if audio_path:
-            audio_chunk_dir = audio_path.parent / "audio-chunks" / audio_path.stem
-            if audio_chunk_dir.exists():
-                shutil.rmtree(audio_chunk_dir)
-            audio_path.unlink(missing_ok=True)
-        audio_path = generate_chapter_audio(chapter, force=True)
-        if not audio_path:
-            print(f"  [ERROR] Audio generation failed for chapter {chapter['index']}.")
-            return
-        # Save text hash alongside the audio for future staleness checks
-        audio_hash_file = audio_path.with_suffix('.text_hash')
-        audio_hash_file.write_text(text_hash, encoding='utf-8')
+            audio_hash_file = audio_path.with_suffix('.text_hash')
+            old_hash = audio_hash_file.read_text(encoding='utf-8').strip() if audio_hash_file.exists() else ''
+            if old_hash != text_hash:
+                audio_stale = True
+        else:
+            audio_stale = True
+
+        if audio_stale:
+            reason = "text changed" if audio_path else "not found"
+            print(f"Audio: regenerating ({reason})...")
+            if audio_path:
+                audio_chunk_dir = audio_path.parent / "audio-chunks" / audio_path.stem
+                if audio_chunk_dir.exists():
+                    shutil.rmtree(audio_chunk_dir)
+                audio_path.unlink(missing_ok=True)
+            audio_path = generate_chapter_audio(chapter, force=True)
+            if not audio_path:
+                print(f"  [ERROR] Audio generation failed for chapter {chapter['index']}.")
+                return
+            audio_hash_file = audio_path.with_suffix('.text_hash')
+            audio_hash_file.write_text(text_hash, encoding='utf-8')
 
     audio = AudioSegment.from_wav(str(audio_path))
     total_duration_ms = len(audio)
@@ -1152,7 +1029,6 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
         scenes = existing['scenes']
     else:
         if force:
-            # Clean old artifacts so stale keyframes/clips don't get reused
             subdirs_to_clean = ["clips"]
             if not no_keyframes:
                 subdirs_to_clean.insert(0, "keyframes")
@@ -1161,11 +1037,9 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
                 if old_dir.exists():
                     shutil.rmtree(old_dir)
                     print(f"  --force: deleted {subdir}/")
-            # Also delete assembled videos
-            safe_title = re.sub(r'[^\w\s-]', '', chapter['title']).strip().replace(' ', '-')[:50]
             for aspect in ASPECT_RATIOS:
                 aspect_tag = aspect.replace(":", "x")
-                old_video = VIDEO_DIR / f"{chapter['index']:03d}-{safe_title}-{aspect_tag}.mp4"
+                old_video = VIDEO_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
                 if old_video.exists():
                     old_video.unlink()
                     print(f"  --force: deleted {old_video.name}")
@@ -1223,6 +1097,11 @@ def main():
         nargs="?",
         default=DEFAULT_CONFIG_NAME,
         help=f"Config name or YAML file (default: {DEFAULT_CONFIG_NAME}). Available: {', '.join(available)}"
+    )
+    parser.add_argument(
+        "--chapter", "-c",
+        type=int,
+        help="Process only specific chapter number"
     )
     parser.add_argument(
         "--start", "-s",
@@ -1298,12 +1177,15 @@ def main():
     book = full_config.get('book', {})
     book_meta['description'] = book.get('description', '')
 
-    # Apply start/limit filters
-    if args.start:
-        chapters = [ch for ch in chapters if ch['index'] >= args.start]
-    if args.limit:
-        chapters = chapters[:args.limit]
-    if args.start or args.limit:
+    # Apply chapter/start/limit filters
+    if args.chapter:
+        chapters = [ch for ch in chapters if ch['index'] == args.chapter]
+    else:
+        if args.start:
+            chapters = [ch for ch in chapters if ch['index'] >= args.start]
+        if args.limit:
+            chapters = chapters[:args.limit]
+    if args.chapter or args.start or args.limit:
         print(f"Processing {len(chapters)} chapter(s)")
 
     if not chapters:

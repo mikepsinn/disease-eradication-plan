@@ -15,7 +15,6 @@ Usage:
     python scripts/generate_audiobook.py --list            # List all chapters
 """
 import sys
-import json
 import re
 import argparse
 import subprocess
@@ -33,15 +32,15 @@ sys.path.insert(0, str(Path(__file__).parent))
 # Add project root to path for dih_models imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE
-from dih_models.yaml_utils import yaml_safe_load, load_quarto_config
+from dih_models.yaml_utils import load_quarto_config
+from lib.audiobook_common import (
+    PROJECT_ROOT, AUDIOBOOK_DIR, TEXT_DIR, CHAPTER_AUDIO_DIR, MANIFEST_PATH,
+    DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
+)
+from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
 
 # Configuration
-PROJECT_ROOT = Path(__file__).parent.parent
-QUARTO_BOOK_YML = PROJECT_ROOT / "_quarto-manual-paperback.yml"
-OUTPUT_DIR = PROJECT_ROOT / "audiobook"
-CHAPTER_AUDIO_DIR = OUTPUT_DIR / "chapters"
-TEXT_DIR = OUTPUT_DIR / "text"
-MANIFEST_PATH = OUTPUT_DIR / "manifest.json"
+OUTPUT_DIR = AUDIOBOOK_DIR
 
 # Voice for narration (Kore + dinner-party energy, winner from A/B testing)
 NARRATOR_VOICE = DEFAULT_VOICE
@@ -98,131 +97,8 @@ def format_duration(ms: int) -> str:
 
 
 def load_book_config() -> dict:
-    """Load and parse _quarto-manual.yml."""
-    return load_quarto_config(QUARTO_BOOK_YML)
-
-
-def extract_chapters(config: dict) -> list[dict]:
-    """
-    Extract all chapters from the book config in order.
-
-    Returns list of dicts with:
-        - path: Path to the QMD file
-        - title: Chapter title (from part or inferred from file)
-        - part: Part name if applicable
-        - index: Chapter number
-    """
-    chapters = []
-    chapter_index = 0
-
-    book = config.get('book', {})
-    # Some configs use index-source to map index.qmd -> actual source file
-    index_source = config.get('dih-render', {}).get('index-source')
-
-    def resolve_path(path: str) -> str:
-        if index_source and path == 'index.qmd':
-            return index_source
-        return path
-
-    # Process main chapters
-    for item in book.get('chapters', []):
-        if isinstance(item, str):
-            # Simple chapter reference
-            chapter_index += 1
-            chapters.append({
-                'path': resolve_path(item),
-                'title': None,  # Will be extracted from file
-                'part': None,
-                'index': chapter_index
-            })
-        elif isinstance(item, dict):
-            if 'href' in item:
-                # Chapter with explicit text/href
-                chapter_index += 1
-                chapters.append({
-                    'path': resolve_path(item['href']),
-                    'title': item.get('text'),
-                    'part': None,
-                    'index': chapter_index
-                })
-            elif 'part' in item:
-                # Part with sub-chapters
-                part_name = item['part']
-                for sub_chapter in item.get('chapters', []):
-                    chapter_index += 1
-                    if isinstance(sub_chapter, str):
-                        chapters.append({
-                            'path': resolve_path(sub_chapter),
-                            'title': None,
-                            'part': part_name,
-                            'index': chapter_index
-                        })
-                    elif isinstance(sub_chapter, dict) and 'href' in sub_chapter:
-                        chapters.append({
-                            'path': resolve_path(sub_chapter['href']),
-                            'title': sub_chapter.get('text'),
-                            'part': part_name,
-                            'index': chapter_index
-                        })
-
-    # Process appendices
-    for item in book.get('appendices', []):
-        if isinstance(item, dict) and 'part' in item:
-            part_name = item['part']
-            for sub_chapter in item.get('chapters', []):
-                chapter_index += 1
-                if isinstance(sub_chapter, str):
-                    chapters.append({
-                        'path': resolve_path(sub_chapter),
-                        'title': None,
-                        'part': f"Appendix: {part_name}",
-                        'index': chapter_index
-                    })
-                elif isinstance(sub_chapter, dict) and 'href' in sub_chapter:
-                    chapters.append({
-                        'path': resolve_path(sub_chapter['href']),
-                        'title': sub_chapter.get('text'),
-                        'part': f"Appendix: {part_name}",
-                        'index': chapter_index
-                    })
-
-    return chapters
-
-
-def extract_title_from_qmd(file_path: Path) -> str:
-    """Extract title from QMD file's YAML frontmatter."""
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-
-        # Match YAML frontmatter
-        match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-        if match:
-            frontmatter = yaml_safe_load(match.group(1))
-            if frontmatter and 'title' in frontmatter:
-                return frontmatter['title']
-    except Exception:
-        pass
-
-    # Fallback: use filename
-    return file_path.stem.replace('-', ' ').replace('_', ' ').title()
-
-
-def find_text_file(chapter: dict, title: str) -> Path | None:
-    """
-    Look for a pre-generated audiobook text file for this chapter.
-    Returns the path if found, None otherwise.
-    """
-    safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
-    text_file = TEXT_DIR / f"{chapter['index']:03d}-{safe_title}.prepared.txt"
-    if text_file.exists():
-        return text_file
-
-    # Fallback: match by chapter index prefix in case title changed
-    for f in TEXT_DIR.glob(f"{chapter['index']:03d}-*.prepared.txt"):
-        return f
-
-    return None
+    """Load and parse the default Quarto book config."""
+    return load_quarto_config(DEFAULT_CONFIG_PATH)
 
 
 def generate_chapter_audio(
@@ -253,8 +129,7 @@ def generate_chapter_audio(
     title = chapter['title'] or extract_title_from_qmd(qmd_path)
 
     # Create output filename
-    safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
-    output_filename = f"{chapter['index']:03d}-{safe_title}.wav"
+    output_filename = f"{chapter['index']:03d}-{safe_filename(title)}.wav"
     output_path = CHAPTER_AUDIO_DIR / output_filename
 
     # Skip if already exists (unless force)
@@ -274,7 +149,8 @@ def generate_chapter_audio(
         return None
 
     # Find text chunk files (produced by generate_audiobook_text.py)
-    text_file = find_text_file(chapter, title)
+    from lib.audiobook_common import find_prepared_text
+    text_file = find_prepared_text({'index': chapter['index'], 'title': title})
     if not text_file:
         print(f"  [SKIP] No text file found after preparation")
         return None
@@ -432,8 +308,7 @@ def list_chapters(chapters: list[dict]):
         title = title or ch['path']
 
         # Check if audio exists
-        safe_title = re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:50]
-        audio_file = CHAPTER_AUDIO_DIR / f"{ch['index']:03d}-{safe_title}.wav"
+        audio_file = CHAPTER_AUDIO_DIR / f"{ch['index']:03d}-{safe_filename(title)}.wav"
         status = "[x]" if audio_file.exists() else "[ ]"
 
         print(f"  {status} {ch['index']:3d}. {title}")
@@ -444,27 +319,20 @@ def list_chapters(chapters: list[dict]):
 
 def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int):
     """Update audiobook/manifest.json with duration and timing data."""
-    manifest = json.loads(MANIFEST_PATH.read_text(encoding='utf-8'))
+    for ts in timestamps:
+        update_chapter_fields(
+            ts['index'],
+            duration_ms=ts['duration_ms'],
+            duration_formatted=ts['duration_formatted'],
+            audio_start_ms=ts['start_ms'],
+            audio_end_ms=ts['end_ms'],
+            audio_file=ts['file'],
+        )
 
-    # Build lookup by chapter index
-    ts_by_index = {ts['index']: ts for ts in timestamps}
-
-    for chapter in manifest.get('chapters', []):
-        ts = ts_by_index.get(chapter['index'])
-        if ts:
-            chapter['duration_ms'] = ts['duration_ms']
-            chapter['duration_formatted'] = ts['duration_formatted']
-            chapter['audio_start_ms'] = ts['start_ms']
-            chapter['audio_end_ms'] = ts['end_ms']
-            chapter['audio_file'] = ts['file']
-
+    manifest = read_manifest()
     manifest['total_duration_ms'] = total_duration_ms
     manifest['total_duration_formatted'] = format_duration(total_duration_ms)
-
-    MANIFEST_PATH.write_text(
-        json.dumps(manifest, indent=2, ensure_ascii=False) + '\n',
-        encoding='utf-8',
-    )
+    write_manifest(manifest)
     print(f"  [OK] Updated manifest: {MANIFEST_PATH}")
 
 
