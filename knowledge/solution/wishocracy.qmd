@@ -13,9 +13,9 @@ tags:
 image: /assets/og-images/knowledge/solution/wishocracy-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd). Now you've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund.
+Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd). Now you've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund. That's the good news. The bad news is that humans are involved.
 
-But not all of it is available for allocation. First, the automatic deductions:
+Not all of it is available for allocation. First, the automatic deductions (think of these as the "cost of convincing humans to stop killing each other" tax):
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
@@ -23,40 +23,40 @@ But not all of it is available for allocation. First, the automatic deductions:
 | [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
 | **Available for Wishocracy** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | What you get to allocate |
 
-How do you stop parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}}? How do you stop bureaucracy from wasting it all?
+How do you stop parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}}? If history is any guide, you don't. Every pool of money humanity has ever created has attracted lobbyists the way a dropped ice cream cone attracts ants, except ants at least work hard.
 
 **Wishocracy** replaces committees with code and representatives with mathematics. It lets 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}} without turning it into a bureaucratic nightmare. The difference between this and the NIH is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach has never once funded a colleague's lunch out of professional courtesy.
 
 ## How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
 
-Your [decentralized institutes of health (DIH)](dih.qmd) network functions as a **decentralized crowdfunding platform**. Anyone can submit a campaign proposal. Wishocracy allocates funds from the 1% Treaty Fund across competing campaigns.
+Your [decentralized institutes of health (DIH)](dih.qmd) network functions as a **decentralized crowdfunding platform**. Anyone can submit a campaign proposal. Wishocracy allocates funds from the 1% Treaty Fund across competing campaigns. It's Kickstarter, but backed by the GDP of nations instead of your friend's credit card.
 
-### What your [decentralized framework for drug assessment (dFDA)](dfda.qmd) handles automatically:
+### What the [decentralized framework for drug assessment (dFDA)](dfda.qmd) handles automatically (no voting required):
 
-- **Which specific treatments get tested** → Companies register, patients choose
-- **Which diseases get researched** → Patients join trials for their conditions
-- **Resource allocation within pragmatic clinical trials** → Market prices and participant choices
+- **Which treatments get tested** → Companies register, patients choose (capitalism, for once, doing something useful)
+- **Which diseases get researched** → Patients join trials for their conditions (people tend to be motivated about their own mortality)
+- **Resource allocation within trials** → Market prices and participant choices
 
 ### What Wishocracy Actually Decides:
 
-**Allocation across campaign proposals competing for 1% Treaty Fund funds:**
+**The hard stuff. Allocation across campaign proposals competing for 1% Treaty Fund funds:**
 
-#### Infrastructure Campaigns
+#### Infrastructure Campaigns (the boring but essential plumbing)
 
 - "Decentralized Framework for Drug Assessment Development" - $1B/year proposal
 - "Epic EHR Integration Project" - $5M one-time
 - "AWS Infrastructure Services" - $3M/year
 - "Security Audit Program" - $2M/year
-- "Alternative decentralized framework for drug assessment" - $8M/year (competing approach)
+- "Alternative decentralized framework for drug assessment" - $8M/year (competition! novel concept for government!)
 
-#### Public Goods (Market Failures)
+#### Public Goods (things the market won't fund because nobody gets rich curing diseases that don't sell pills)
 
 - "Patient Trial Subsidies Program" - $800M/year (automatic formula)
 - "Off-Patent Drug Research" - $20B/year
 - "Rare Disease Initiative" - $10B/year
-- "Negative Results Publishing Fund" - $5B/year
+- "Negative Results Publishing Fund" - $5B/year (yes, knowing what *doesn't* work is worth billions; your species keeps re-running failed experiments because nobody publishes failures)
 
-#### Service Provider Bids
+#### Service Provider Bids (capitalism, but supervised)
 
 - "Data Storage Provider A" - $2B/year
 - "Data Storage Provider B" - $1.5B/year (competing)
@@ -64,7 +64,7 @@ Your [decentralized institutes of health (DIH)](dih.qmd) network functions as a 
 
 ### How It Works: Pairwise Comparisons Between Campaigns
 
-Committees don't decide "pragmatic clinical trial infrastructure gets $10B." The global population votes using pairwise comparisons:
+No committee on Earth has ever looked at a list of 10,000 proposals and made a good decision. Committees are where good ideas go to die of old age. Instead, the global population votes using pairwise comparisons:
 
 **"What's more important right now:"**
 
@@ -75,18 +75,18 @@ Committees don't decide "pragmatic clinical trial infrastructure gets $10B." The
 
 ![People choose between two things at a time, over and over, until math decides what gets funded. Democracy, but make it exhausting.](/assets/images/wishocracy/wishocracy-section-how-it-works-pairwise-comparisons-between-campaigns-bw-academic.jpg)
 
-Millions of people make simple pairwise choices. The algorithm aggregates preferences into funding allocations.
+Millions of people make simple pairwise choices. The algorithm aggregates preferences into funding allocations. No filibustering. No horse-trading. No senators holding medical research hostage because they want a highway in their district.
 
-### Why This Is Actually Needed (Not "Just 3 Parameters")
+### Why You Can't Just Use a Spreadsheet
 
-You can't reduce this to simple formulas, much as your species loves reducing things to simple formulas, because:
+Someone is going to ask, "Why not just write a formula?" Because the decisions look like this:
 
-1. **Multiple competing implementations** - Which decentralized framework for drug assessment to fund? Which infrastructure provider?
-2. **Trade-offs between prizes** - $100B for aging reversal or $50B for Alzheimer's + $50B for cancer?
-3. **Public goods allocation** - How much for off-patent drugs vs rare diseases?
+1. **Multiple competing implementations** - Three teams want to build the drug assessment platform. Which one? All three? Two? The one with the best logo?
+2. **Trade-offs between prizes** - $100B for aging reversal or $50B for Alzheimer's + $50B for cancer? There is no "correct" answer. There is only what humanity collectively values, which is exactly what Wishocracy measures.
+3. **Public goods allocation** - How much for off-patent drugs vs rare diseases? Markets won't answer this because there's no profit in it.
 4. **Service provider competition** - Which companies get contracts for what amounts?
 
-Your [decentralized framework for drug assessment (dFDA)](dfda.qmd) allocates resources **within** pragmatic clinical trials. Wishocracy allocates resources **between** campaigns.
+Your [decentralized framework for drug assessment (dFDA)](dfda.qmd) allocates resources **within** pragmatic clinical trials. Wishocracy allocates resources **between** campaigns. One is the engine, the other is the steering wheel. You need both unless you enjoy driving into walls.
 
 ---
 
@@ -106,28 +106,27 @@ It's the wisdom of crowds, but without the crowds having to talk to each other.
 
 ### Why This Actually Works (Math Warning)
 
-When millions of people make pairwise choices:
+When millions of people make pairwise choices, something almost magical happens (and by "magical" I mean "statistically inevitable," which is the only kind of magic that actually works):
 
-- Random pairs prevent gaming
-- Statistical models (Bradley-Terry, PageRank) [@bradley-terry-pagerank-models] extract global preferences
-- Outliers cancel out
-- Wisdom of crowds emerges
+- **Random pairs prevent gaming.** You can't lobby 5 million people. Well, you can try. Good luck.
+- **Statistical models** (Bradley-Terry, PageRank) [@bradley-terry-pagerank-models] extract global preferences from individual comparisons. The same math that ranks Google search results can rank humanity's medical priorities. Google uses it to find cat videos. You'll use it to cure cancer. Progress.
+- **Outliers cancel out.** The guy who votes "fund my personal jetpack" gets drowned out by the millions voting for "cure my mother's Alzheimer's."
+- **Wisdom of crowds emerges.** Reliably. Repeatedly. Boringly.
 
 Example with real numbers:
 
-- 5 million people vote
-- Each makes 20 comparisons
-- 100 million data points
-- Algorithm crunches numbers
+- 5 million people vote. Each makes 20 comparisons. That's 100 million data points.
+- Algorithm processes them in seconds.
 - Output: "Allocate 40% to patient subsidy programs, 25% to dFDA platform development, 15% to off-patent drug research, 10% to rare disease initiatives, 5% to security infrastructure, 5% to negative results publishing..."
+- No committee meetings were harmed in the making of this budget.
 
 ![Millions of clicks get crunched by algorithms into one list of what humanity wants most. Turns out we can agree on things when there's money involved.](/assets/images/wishocracy/wishocracy-section-why-this-actually-works-math-warning-bw-academic.jpg)
 
 It's democracy without the shouting. The stupidity is still there, but it's evenly distributed across millions of people and thus cancels out. This is called "the wisdom of crowds." It works for the same reason that guessing the weight of a cow at a fair works: individually you're all terrible at it, but collectively you're weirdly accurate.
 
-## From Priorities to Projects
+## From Priorities to Projects (Where Wishes Become Tasks)
 
-The Pairwise Slider Allocation tells you "Curing Alzheimer's" is a top priority. Wishocracy translates that priority into action.
+Great, so the Pairwise Slider Allocation tells you "Curing Alzheimer's" is a top priority. Wonderful. Now what? Having a priority without a plan is just a wish. And wishes, as a rule, don't cure anything. Wishocracy translates that priority into action.
 
 1.  **AI Breaks It Down:** An AI takes the impossible goal of "Cure Alzheimer's" and breaks it into thousands of smaller, concrete, fundable tasks. "Cure Alzheimer's" becomes "Map protein structures." That becomes "Run AlphaFold on these sequences." That becomes "Rent computing time." Every impossible problem is just a series of possible steps arranged in a line. Your species figured this out for building pyramids 4,500 years ago but keeps forgetting to apply it to medicine.
 

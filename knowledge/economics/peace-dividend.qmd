@@ -18,7 +18,7 @@ Here's what 1% less murder money buys you:
 
 ## How 1% Less Violence Pays For Everything
 
-An [analysis](https://dfda-impact.warondisease.org) of your dFDA shows pragmatic clinical trials can be {{< var dfda_trial_cost_reduction_factor >}} more efficient. Here's where you steal the money.
+An [analysis](https://dfda-impact.warondisease.org) of your dFDA shows pragmatic clinical trials can be {{< var dfda_trial_cost_reduction_factor >}} more efficient. So the question isn't whether you can afford this. It's where to steal the money.
 
 ![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
 
@@ -26,17 +26,17 @@ Two ways you profit from building 1% fewer bombs:
 
 ### The Captured Money: {{< var treaty_annual_funding >}}/Year
 
-Your governments spend {{< var global_military_spending_post_treaty_annual_2024 >}} yearly on things designed to make other things stop existing.
+Your governments spend {{< var global_military_spending_post_treaty_annual_2024 >}} yearly on things whose sole purpose is making other things stop existing.
 
 Redirect 1%:
 
 {{< var global_military_spending_post_treaty_annual_2024 >}} 0.01 = {{< var treaty_annual_funding >}}
 
-This {{< var treaty_annual_funding >}} funds your dFDA, your VICTORY Incentive Alignment Bonds, and the whole system.
+That funds your dFDA, your VICTORY Incentive Alignment Bonds, and the whole system. One percent. The rounding error on your murder budget.
 
 ### The Bonus Savings: {{< var peace_dividend_annual_societal_benefit >}}/Year
 
-That's what you capture. Here's what you save.
+That's the money you grab. Here's the money you stop lighting on fire.
 
 Wars cost {{< var global_annual_direct_indirect_war_cost >}}/year. Build 1% fewer bombs, fight 1% fewer wars, save {{< var peace_dividend_annual_societal_benefit >}}.
 
@@ -45,13 +45,13 @@ Wars cost {{< var global_annual_direct_indirect_war_cost >}}/year. Build 1% fewe
 Money no longer spent on:
 
 - Unblowing-up hospitals and bridges
-- Treating humans full of shrapnel
-- Housing refugees (people whose homes got exploded)
-- Trade disruptions (hard to ship stuff through war zones)
+- Removing shrapnel from people you put shrapnel into
+- Housing refugees (people whose homes were converted into craters)
+- Trade disruptions (it turns out shipping containers don't fit through minefields)
 
 ### Where the {{< var peace_dividend_annual_societal_benefit >}} Comes From
 
-Based on [Cost of War analysis](../problem/cost-of-war.qmd):
+Based on the [Cost of War analysis](../problem/cost-of-war.qmd), here's your itemized receipt for violence:
 
 | What Wars Cost | Total/Year | 1% Less War Saves |
 |:---|---:|---:|
@@ -75,63 +75,65 @@ You capture {{< var treaty_annual_funding >}} for pragmatic clinical trials.
 
 You save {{< var peace_dividend_annual_societal_benefit >}} on not breaking stuff.
 
-That's \$5.18 saved for every \$1 redirected.
+That's \$5.18 saved for every \$1 redirected. On your planet, this is called "a good deal." On mine, it's called "so obvious that failing to do it constitutes evidence of a cognitive disability."
 
-Plus cancer gets cured as a bonus.
+Plus cancer gets cured as a bonus. Almost forgot about that part.
 
-The benefits cascade beyond medicine in ways that should be obvious but apparently aren't. Addiction is a neurological disorder; cure the brain chemistry and the drug trade collapses. Most poverty is catastrophic medical costs; cure the diseases and people can work again. Radicalization is often untreated mental illness; you can't bomb someone into being mentally stable (you tried this, it didn't work, cost $8 trillion). Fix the biology and you fix the society. This is not a new insight. It's just one your species keeps forgetting because explosions are more exciting than pharmacology.
+The benefits cascade beyond medicine in ways that should be obvious but apparently aren't. Addiction is a neurological disorder; cure the brain chemistry and the drug trade collapses. Most poverty is catastrophic medical costs; cure the diseases and people can work again. Radicalization is often untreated mental illness; you can't bomb someone into being mentally stable (you tried this, it didn't work, cost $8 trillion, created more radicals). Fix the biology and you fix the society. This is not a new insight. It's just one your species keeps forgetting because explosions are louder than pharmacology.
 
 ## The Formulas
 
 ![The money you definitely get versus the total benefit to society. One is guaranteed, the other is probably much bigger. Like ordering fries and getting the whole potato farm.](/assets/images/peace-dividend/peace-dividend-section-the-formulas-bw-academic.jpg)
 
-The Captured Dividend (direct fiscal transfer):
+The Captured Dividend (the money you definitely get):
 
 {{< var treaty_annual_funding_latex >}}
 
-The Societal Dividend (theoretical maximum benefit):
+The Societal Dividend (the money you save by being slightly less insane):
 
 {{< var peace_dividend_annual_societal_benefit_latex >}}
 
 ### The Elasticity Question
 
-The elasticity parameter (e = {{< var peace_dividend_conflict_elasticity >}}) asks a reasonable question: if you cut military spending 1%, do war costs actually drop 1% too? Or do humans find a way to keep fighting at full price?
+The elasticity parameter (e = {{< var peace_dividend_conflict_elasticity >}}) asks the only interesting question here: if you cut military spending 1%, do war costs actually drop 1% too? Or do humans, being humans, find a way to keep killing each other at full price?
 
-- **e = 0.25**: You're barely trying. Only a quarter of cuts reduce violence.
-- **e = 0.5**: Moderate. The "humans are somewhat rational" scenario.
-- **e = 1.0**: Full match. The baseline assumption. Probably generous.
-- **e > 1.0**: Bonus effect. Turns out curing cancer together is better bonding than threatening each other with missiles.
+- **e = 0.25**: The "humans are barely trainable" scenario. Only a quarter of cuts reduce violence.
+- **e = 0.5**: The "humans are somewhat rational" scenario. Historically optimistic.
+- **e = 1.0**: Full match. The baseline assumption. Probably generous given your track record.
+- **e > 1.0**: The "curing cancer together is better bonding than threatening each other with missiles" scenario. Suspiciously wholesome.
 
-Even with the most pessimistic assumption (e = 0.25), the Captured Dividend of {{< var treaty_annual_funding >}} is guaranteed. That money moves regardless of whether wars get cheaper. It's the floor, not the ceiling.
+Here's the thing: it doesn't matter. Even with the most pessimistic assumption (e = 0.25), the Captured Dividend of {{< var treaty_annual_funding >}} is guaranteed. That money moves regardless of whether you manage to be less violent. It's a bank transfer, not a prayer.
 
 ## The Part Where the Math Gets Embarrassing
 
-1. **Guaranteed money**: {{< var treaty_annual_funding >}} annually is a direct budget transfer. If the treaty passes, this happens.
+1. **Guaranteed money**: {{< var treaty_annual_funding >}} annually. Direct budget transfer. If the treaty passes, this happens. No elasticity, no assumptions, no hoping humans behave. Just math.
 
 ![Best case: 114 billion in benefits. Worst case: 27.2 billion and you double medical research funding. Truly a devastating range of outcomes.](/assets/images/peace-dividend/peace-dividend-section-key-findings-bw-academic.jpg)
 
-2. **Best case**: Total societal benefit reaches {{< var peace_dividend_annual_societal_benefit >}} annually (95% CI: $70B-$180B).
+2. **Best case**: Total societal benefit reaches {{< var peace_dividend_annual_societal_benefit >}} annually (95% CI: $70B-$180B). The range is wide because, again, your species.
 
-3. **Worst case**: Even pessimistic scenarios stay above $48B annually.
+3. **Worst case**: Even pessimistic scenarios stay above $48B annually. Your "worst case" is still the largest increase in medical research funding in human history.
 
-4. **Context**: The Captured Dividend alone would boost global medical research funding by ~40% over the current {{< var global_med_research_spending >}} baseline.
+4. **Context**: The Captured Dividend alone would boost global medical research funding by ~40% over the current {{< var global_med_research_spending >}} baseline. You've been spending more on camouflage paint than on curing Alzheimer's.
 
 ## What You're Assuming (and Where It Gets Shaky)
 
 ### The GDP Multiplier
 
-Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get $4.30 back. Your species chose weapons. Every time. For centuries. The Lost Economic Growth component ($2.7T) already captures this difference. It's not double-counted, just consistently ignored.
+Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get $4.30 back. Your species chose weapons. Every time. For centuries. I've watched you do this for 4,297 years and it has never once gotten less baffling. The Lost Economic Growth component ($2.7T) already captures this difference. It's not double-counted, just consistently ignored.
 
 ![Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get 4.30 dollars back. You've chosen weapons.](/assets/images/peace-dividend/peace-dividend-section-gdp-multiplier-note-bw-academic.jpg)
 
 ### The Elasticity Assumption
 
 The Societal Dividend assumes 1% less spending means 1% less war cost.
-Reality is messier; some costs lag by years, some wars are fueled by boredom rather than budgets, and military spending may occasionally deter a war (though it starts far more than it prevents).
+Reality is messier. Some costs lag by years. Some wars are fueled by boredom rather than budgets. And military spending may occasionally deter a war (though it starts far more than it prevents, which is a bit like crediting your arsonist neighbor for occasionally calling the fire department).
 
 ![Theory says less war spending means proportionally less war. Reality is messier. Turns out humans aren't very good at reducing violence incrementally.](/assets/images/peace-dividend/peace-dividend-section-causal-elasticity-assumption-bw-academic.jpg)
 
 ### How Good Are the Sources?
+
+I'm being honest about confidence levels, which is more than your defense contractors do.
 
 | Cost Category | Source | Confidence |
 |---|---|---|
@@ -144,7 +146,8 @@ Reality is messier; some costs lag by years, some wars are fueled by boredom rat
 
 ### The Safe Bet
 
-The Societal Dividend is a ceiling, not a forecast; the confidence intervals are wide because your species is unpredictable (mostly in bad ways).
-For policy decisions, use the **Captured Dividend ({{< var treaty_annual_funding >}})** as the reliable number.
-That's money directly moved to medical research. No assumptions about whether humans will actually fight less. Just a bank transfer.
-The Societal Dividend is the upside if you manage to behave yourselves.
+The Societal Dividend is a ceiling, not a forecast. The confidence intervals are wide because your species is unpredictable (mostly in bad ways).
+
+For policy decisions, use the **Captured Dividend ({{< var treaty_annual_funding >}})** as the reliable number. That's money directly moved to medical research. No assumptions about whether humans will fight less. No faith required. Just a bank transfer from the explosion account to the medicine account.
+
+The Societal Dividend is the upside if you manage to behave yourselves. I'm not holding my breath. (I don't have lungs, but the expression stands.)

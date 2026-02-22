@@ -16,19 +16,19 @@ It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
 That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 returns.
 **Conservative estimate**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only)
 
-These numbers look like a typo. They aren't. Here's the breakdown.
+I know. Those numbers look like someone fell asleep on the keyboard. They didn't. Here's the breakdown.
 
 ## The Math: From {{< var traditional_phase3_cost_per_patient >}} to {{< var recovery_trial_cost_per_patient >}}
 
-Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}}**. That's more than a Tesla per person to find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
+Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}}** per patient. That's a Tesla. Per person. To find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
 
-The Oxford RECOVERY trial proved humans can do the same thing for **{{< var recovery_trial_cost_per_patient >}}**. They tested COVID treatments on 40,000+ patients by:
+Then the Oxford RECOVERY trial proved you can do the same thing for **{{< var recovery_trial_cost_per_patient >}}**. During a pandemic. While panicking. They tested COVID treatments on 40,000+ patients by:
 
 - Using existing hospital staff (revolutionary concept: doctors treating patients)
 - Collecting data electronically (instead of sacrificing forests to the paperwork gods)
 - Focusing on what actually matters: does the patient live or die? (not "did they complete form 27-B in triplicate?")
 
-Your dFDA takes this model global. **80-160x cost reduction.** Same data quality. Better real-world applicability. You don't need 17 committees to ask "did the medicine work?"
+Your dFDA takes this model global. **80-160x cost reduction.** Same data quality. Better real-world applicability. It turns out you don't need 17 committees to answer the question "did the medicine work?"
 
 ## Where the {{< var dfda_benefit_rd_only_annual >}} Comes From
 
@@ -40,24 +40,24 @@ Conservative estimate: dFDA captures {{< var dfda_trial_cost_reduction_pct >}} e
 
 - {{< var dfda_trial_cost_reduction_pct >}} of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
 
-Optimistic: 95% cost reduction (what RECOVERY actually achieved, in real life, with real patients, while a pandemic was happening), saving up to **$57B/year**.
+Optimistic: 95% cost reduction (what RECOVERY actually achieved, during a pandemic, with real patients who were actively dying), saving up to **$57B/year**. I'm being generous by using the conservative number. You're welcome.
 
 ## What {{< var dfda_benefit_rd_only_annual >}} Buys You
 
 ![With 58.6 billion, you could run 10,000 trials and address 7,000 rare diseases. Currently you're spending that much to run far fewer trials for common diseases. Priorities.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
 
-Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}} per year, which is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test far more treatments at once.
+Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}} per year. That is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself. Staggering. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test far more treatments at once.
 
-With the money saved every year, humans could:
+With the money saved every year, you could:
 
-- Fund **10,000 new pragmatic clinical trials** (at $5M each using efficient methods)
+- Fund **10,000 new pragmatic clinical trials** (at $5M each, which is still luxurious by RECOVERY standards)
 - Test treatments for **7,000 rare diseases** currently ignored (because orphan diseases aren't profitable enough for your orphan-making economic system)
-- Cut drug development time from 17 years to 3-5 years (most terminal patients don't have 17 years, which seems like a design flaw)
-- Make medicines affordable by eliminating {{< var pharma_drug_development_cost_current >}} development costs (this is mostly lawyers arguing about commas)
+- Cut drug development time from 17 years to 3-5 years (most terminal patients don't have 17 years; this has not occurred to anyone in charge)
+- Make medicines affordable by eliminating {{< var pharma_drug_development_cost_current >}} development costs (roughly 90% of which is lawyers arguing about commas)
 
 ## Daily Opportunity Cost
 
-Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years each year. All because of the regulatory lag period. The lag period is not a safety feature. It is a queue where people die while waiting.
+Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years each year. All because of the regulatory lag period. The lag period is not a safety feature. It is a waiting room where people die. You just gave the waiting room a nicer name.
 
 ![Every day you do nothing costs 161 million dollars and 54 million years of healthy human life annually. But at least you're being consistent.](/assets/images/health-dividend/health-dividend-section-daily-opportunity-cost-bw-academic.jpg)
 
@@ -65,11 +65,11 @@ See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#da
 
 ## What It Costs to Run
 
-Your dFDA costs **{{< var dfda_annual_opex >}}/year** to operate. Cloud infrastructure, a small engineering team, compliance, global integration. One-time build cost is similar. For context, this is roughly what your species spends on Halloween costumes for dogs.
+Your dFDA costs **{{< var dfda_annual_opex >}}/year** to operate. Servers, engineers, compliance, global integration. The boring stuff that saves billions. One-time build cost is similar. For context, this is roughly what your species spends annually on Halloween costumes for dogs. I need you to sit with that for a moment.
 
 ![It'll cost 40 million to run this per year. Maybe 27 million, maybe 56 million. Either way, less than one fighter jet.](/assets/images/health-dividend/health-dividend-section-the-framework-cost-breakdown-bw-academic.jpg)
 
-Less than one fighter jet. See [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) for detailed costs.
+Less than one fighter jet. Less than one yacht. Less than what FIFA spends on "hospitality." See [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) for detailed costs.
 
 ## ROI Scenarios
 
@@ -81,7 +81,7 @@ Less than one fighter jet. See [dFDA Cost-Benefit Analysis](https://dfda-impact.
 
 ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
 
-Even the worst case, where everything goes wrong and adoption is terrible, beats every military investment in history. Your worst medical outcome is still better than your best military one. See [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary) for interactive charts and NPV calculations.
+Even the worst case (everything goes wrong, adoption is terrible, the engineers quit and the servers catch fire) returns 66:1. That beats every military investment in human history. Your worst medical outcome is still better than your best military one. Let that sink in while you're approving next year's defense budget. See [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary) for interactive charts and NPV calculations.
 
 ## The Bottom Line
 
@@ -89,5 +89,5 @@ Even the worst case, where everything goes wrong and adoption is terrible, beats
 
 ![Spend 40 million, save 58.6 billion. That's a 146,400 percent return. In any other context, you'd call this fraud. Here, it's just efficiency.](/assets/images/health-dividend/health-dividend-section-the-roi-bw-academic.jpg)
 
-The RECOVERY trial already proved this works. It's not theoretical. It happened. Scale it globally and stop pretending this is controversial. Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D waste and a quantity of human suffering that your economists haven't figured out how to put on a spreadsheet yet.
+The RECOVERY trial already proved this works. Not in theory. Not in a white paper. In a hospital, during a plague, on actual dying humans. It happened. Scale it globally and stop pretending this is controversial. Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D waste and a quantity of human suffering that your economists haven't figured out how to put on a spreadsheet yet (though not for lack of trying).
 
