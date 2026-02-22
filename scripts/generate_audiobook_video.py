@@ -22,6 +22,7 @@ import json
 import re
 import time
 import argparse
+import shutil
 import subprocess
 import threading
 from collections import deque
@@ -42,7 +43,7 @@ from lib.veo import generate_image, generate_video
 from dih_models.yaml_utils import load_quarto_config
 from dih_models.variable_replacement import load_variables, replace_variables
 from generate_audiobook_text import generate_chapter_text
-from generate_audiobook import extract_book_metadata
+from generate_audiobook import extract_book_metadata, generate_chapter_audio
 
 # --- Configuration ---
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -264,18 +265,26 @@ def parse_json_array(response_text: str) -> list[dict]:
 
 # --- Step A: Scene Segmentation ---
 
-SCENE_SEGMENTATION_PROMPT = """Segment this audiobook narration into visual scenes for 8-second video clips.
+SCENE_SEGMENTATION_PROMPT = """Segment this audiobook narration into visual scenes for animated video clips.
 
 Read the ENTIRE text first.
 
 Rules:
-- Each scene targets ~8-18 seconds of narration (~120-250 characters). Prefer scenes that break at natural narrative boundaries.
+- Each scene targets ~8 seconds of narration (~120-250 characters). Prefer scenes that break at natural narrative boundaries.
 - char_start/char_end: exact character offsets, no gaps, no overlaps
 - narration_text: exact original text for that span
-- context: 5-15 sentences from elsewhere in the chapter that help explain what this scene is about. Pick the most relevant surrounding context. Do NOT repeat the narration_text.
+- context: 10-15 sentences from elsewhere in the chapter that help explain what this scene is about. Pick the most relevant surrounding context. Do NOT repeat the narration_text.
+- animation_prompt: Describe the 8-second video animation. This accompanies a still keyframe image, so focus on MOTION and TRANSFORMATION. Style: 70s sci-fi surrealism.
+  CRITICAL: The animation must LITERALLY illustrate the specific concepts the narrator is describing. Read the narration_text carefully. If it mentions "cybercrime draws the smartest minds," show smart people being pulled toward hacking screens. If it mentions "1% budget reallocation," show a budget or money physically shifting. If it mentions "antibiotics fail," show pills crumbling. Do NOT invent unrelated surrealist imagery.
+  Use the actual nouns and concepts from the narration as your visual subjects. Then make those subjects do something dramatic and cinematic:
+  - "smartest minds drawn to cybercrime" -> Scientists in lab coats turn away from microscopes and walk zombie-like toward glowing screens of cascading exploit code. Their shadows stretch and darken behind them.
+  - "hockey stick pointing straight down" -> A massive glowing graph line arcs upward then nosedives through the floor, cracking the ground open. Numbers on the axis spin backward.
+  - "more funding leads to more cures leads to more public support" -> Dollar bills transform into pill bottles that transform into cheering crowds that transform into larger piles of dollar bills, spiraling upward in an accelerating loop.
+  - "cured death, solved physics" -> An old man's wrinkles smooth in reverse aging while equations solve themselves on a floating blackboard behind him, each solution lighting up a new star.
+  The animation should make someone who can't hear the audio STILL understand the point being made. 2-3 sentences.
 
 Return ONLY a JSON array:
-[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "context": "relevant context from chapter...", "char_start": 0, "char_end": 120}}]
+[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "context": "relevant context from chapter...", "animation_prompt": "description of motion that literally illustrates the narration concepts...", "char_start": 0, "char_end": 120}}]
 
 Text:
 ---
@@ -336,7 +345,9 @@ def segment_scenes(text: str) -> list[dict]:
     for s in scenes:
         chars = len(s.get('narration_text', ''))
         pct = chars / total_chars * 100 if total_chars else 0
-        print(f"    Scene {s['scene_index']}: {s['title']} ({chars} chars, ~{pct:.0f}%)")
+        anim = s.get('animation_prompt', '')
+        anim_preview = f" | {anim[:60]}..." if len(anim) > 60 else (f" | {anim}" if anim else "")
+        print(f"    Scene {s['scene_index']}: {s['title']} ({chars} chars, ~{pct:.0f}%){anim_preview}")
 
     return scenes
 
@@ -416,13 +427,20 @@ def _tag_image_metadata(image_path: Path, chapter: dict, scene: dict, book_meta:
 IMAGEN_PARALLEL_WORKERS = 4  # Concurrent Imagen requests
 MAX_KEYFRAME_ATTEMPTS = 3    # Generate + check up to 3 times before crashing
 
-KEYFRAME_TEXT_CHECK_PROMPT = """Look at this image carefully. Does it contain any text with SPELLING ERRORS, TYPOS, or GARBLED/NONSENSICAL letters? Correctly spelled text is fine.
+KEYFRAME_TEXT_CHECK_PROMPT = """This is a 70s sci-fi surrealism illustration. Check ONLY for prominent text that is clearly TRYING to spell a specific English word but got it wrong (e.g. "SCIENEC" instead of "SCIENCE", or "HEATLH" instead of "HEALTH").
 
-These are valid proper nouns from the book (NOT misspellings): Wishonia, Moronia, Gollum, Gollums, Wishocracy, DALY, DALYs.
+IGNORE all of the following (these are normal for this art style):
+- Random, decorative, or atmospheric text on background signs, screens, labels, bottles, etc.
+- Nonsensical or alien-looking text that isn't trying to be a real word
+- Garbled text on holographic displays, monitors, or sci-fi interfaces
+- Small or distant text that's hard to read
+- Stylized or artistic lettering
+
+Valid proper nouns (NOT misspellings): Wishonia, Moronia, Gollum, Gollums, Wishocracy, DALY, DALYs.
 
 Answer with ONLY one of:
-- "CLEAN" if the image has no text, or all text is correctly spelled
-- "TYPO: <brief description>" if any misspelled, garbled, or nonsensical text is visible (e.g. "TYPO: 'SCIENEC' instead of 'SCIENCE'")"""
+- "CLEAN" if there are no obvious misspellings of prominent English words
+- "TYPO: <description>" ONLY if a large, prominent word is clearly a misspelling of a specific English word (e.g. "TYPO: 'SCIENEC' instead of 'SCIENCE'")"""
 
 
 def _check_keyframe_for_typos(image_path: Path) -> str | None:
@@ -454,7 +472,7 @@ def _tts_to_visual(text: str) -> str:
     return text
 
 
-def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | None = None, book_meta: dict | None = None) -> list[dict]:
+def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | None = None, book_meta: dict | None = None, chapter_text: str = "") -> list[dict]:
     """Generate keyframe images for each scene using Imagen (parallel), with inline typo checking."""
     print("Step C: Generating keyframe images (with typo checking)...")
     keyframes_dir = chapter_dir / "keyframes"
@@ -485,10 +503,19 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
 
     def _build_prompt(scene, attempt=1):
         scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
-        context = _tts_to_visual(scene.get('context', '').strip())
-        prompt = f"Generate a {IMAGE_STYLE} illustration of this scene: {scene_text}"
-        if context:
-            prompt += f"\n\nFor background understanding only, not to depict directly: {context}"
+        full_context = _tts_to_visual(chapter_text) if chapter_text else ""
+        prompt = (
+            f"Generate a {IMAGE_STYLE} illustration.\n"
+            f"--- ILLUSTRATE THIS ---\n"
+            f"{scene_text}\n"
+            f"--- END ILLUSTRATE ---\n"
+        )
+        if full_context:
+            prompt += (
+                f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
+                f"{full_context}\n"
+                f"--- END CONTEXT ---"
+            )
         if attempt == 2:
             prompt += "\n\nAny text in the image must be spelled correctly."
         elif attempt >= 3:
@@ -592,12 +619,14 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
 
     def _generate_one(item):
         scene, aspect, keyframe_path, clip_path, clip_filename = item
-        scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
-        context = _tts_to_visual(scene.get('context', '').strip())
-        veo_prompt = f"Generate a {IMAGE_STYLE} animation of this scene: {scene_text}"
-        if context:
-            veo_prompt += f"\n\nFor background understanding only, not to depict directly: {context}"
-        veo_prompt += "\n\nNo dialogue or narration."
+        animation = scene.get('animation_prompt', '').strip()
+        if animation:
+            veo_prompt = f"{IMAGE_STYLE} style. {animation}"
+        else:
+            # Fallback if no animation_prompt (old manifests)
+            scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
+            veo_prompt = f"Gentle camera movement across a {IMAGE_STYLE} illustration. {scene_text}"
+        veo_prompt += " No dialogue, narration, or speech."
         generate_video(
             prompt=veo_prompt,
             output_path=clip_path,
@@ -931,22 +960,37 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
     text_hash = hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
     print(f"Text: {total_chars:,} chars ({text_file.name}) [hash: {text_hash}]")
 
-    # Get audio duration + check freshness
+    # Get audio duration + check freshness; regenerate if stale or missing
     audio_path = find_chapter_audio(chapter)
+    audio_stale = False
     if audio_path:
-        audio = AudioSegment.from_wav(str(audio_path))
-        total_duration_ms = len(audio)
-        # Check if audio matches current text
-        existing_manifest = load_scene_manifest(chapter_dir)
-        old_hash = existing_manifest.get('text_hash', '') if existing_manifest else ''
-        if old_hash and old_hash != text_hash:
-            print(f"Audio: {total_duration_ms:,}ms ({total_duration_ms / 1000:.1f}s) [STALE - text changed since audio was generated]")
-        else:
-            print(f"Audio: {total_duration_ms:,}ms ({total_duration_ms / 1000:.1f}s)")
+        audio_hash_file = audio_path.with_suffix('.text_hash')
+        old_hash = audio_hash_file.read_text(encoding='utf-8').strip() if audio_hash_file.exists() else ''
+        if old_hash != text_hash:
+            audio_stale = True
     else:
-        # Estimate: ~150 wpm, ~5 chars/word
-        total_duration_ms = int((total_chars / 5 / 150) * 60 * 1000)
-        print(f"Audio: not found, estimated {total_duration_ms:,}ms")
+        audio_stale = True
+
+    if audio_stale:
+        reason = "text changed" if audio_path else "not found"
+        print(f"Audio: regenerating ({reason})...")
+        # Clear stale audio chunk cache so TTS regenerates from new text
+        if audio_path:
+            audio_chunk_dir = audio_path.parent / "audio-chunks" / audio_path.stem
+            if audio_chunk_dir.exists():
+                shutil.rmtree(audio_chunk_dir)
+            audio_path.unlink(missing_ok=True)
+        audio_path = generate_chapter_audio(chapter, force=True)
+        if not audio_path:
+            print(f"  [ERROR] Audio generation failed for chapter {chapter['index']}.")
+            return
+        # Save text hash alongside the audio for future staleness checks
+        audio_hash_file = audio_path.with_suffix('.text_hash')
+        audio_hash_file.write_text(text_hash, encoding='utf-8')
+
+    audio = AudioSegment.from_wav(str(audio_path))
+    total_duration_ms = len(audio)
+    print(f"Audio: {total_duration_ms:,}ms ({total_duration_ms / 1000:.1f}s)")
 
     # Check for existing scene manifest
     existing = load_scene_manifest(chapter_dir)
@@ -956,7 +1000,6 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
     else:
         if force:
             # Clean old artifacts so stale keyframes/clips don't get reused
-            import shutil
             subdirs_to_clean = ["clips"]
             if not no_keyframes:
                 subdirs_to_clean.insert(0, "keyframes")
@@ -989,7 +1032,7 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
         return
 
     if not no_keyframes:
-        scenes = generate_keyframes(scenes, chapter_dir, chapter=chapter, book_meta=book_meta)
+        scenes = generate_keyframes(scenes, chapter_dir, chapter=chapter, book_meta=book_meta, chapter_text=text)
         save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
 
         if keyframes_only:
