@@ -28,7 +28,9 @@ import io
 import sys
 import re
 import argparse
+import hashlib
 import json
+import shutil
 from pathlib import Path
 from typing import cast
 
@@ -399,8 +401,24 @@ def generate_chapter_text(
             'status': 'dry_run',
         }
 
+    # Invalidate chunk cache if prepared text has changed
+    chunk_dir = output_path.parent / "chunks" / output_path.stem
+    hash_file = chunk_dir / ".prepared_hash"
+    prepared_hash = hashlib.sha256(prepared.encode('utf-8')).hexdigest()[:16]
+    if chunk_dir.exists():
+        old_hash = hash_file.read_text(encoding='utf-8').strip() if hash_file.exists() else ''
+        if old_hash != prepared_hash:
+            print(f"  [CACHE] Source text changed (was {old_hash or 'unknown'}, now {prepared_hash}), clearing chunk cache")
+            shutil.rmtree(chunk_dir)
+        else:
+            print(f"  [CACHE] Source text unchanged ({prepared_hash}), reusing chunk cache")
+
     print(f"  Rewriting for audiobook...")
     rewritten = rewrite_for_audiobook(prepared, title, output_path)
+
+    # Save hash for future cache validation
+    chunk_dir.mkdir(parents=True, exist_ok=True)
+    hash_file.write_text(prepared_hash, encoding='utf-8')
 
     if not rewritten or len(rewritten) < 50:
         print(f"  [ERROR] LLM returned insufficient content")
