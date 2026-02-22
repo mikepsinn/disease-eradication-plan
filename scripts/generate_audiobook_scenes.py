@@ -121,7 +121,7 @@ def process_chapter(chapter: dict, force: bool = False, paths: AudiobookPaths | 
     print(f"  Done: {len(scenes)} scenes")
 
 
-def list_chapters(chapters: list[dict]):
+def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
     """Print all chapters with scene segmentation status."""
     print(f"\nScene Segmentation Status ({len(chapters)} chapters):")
     print("=" * 90)
@@ -133,13 +133,13 @@ def list_chapters(chapters: list[dict]):
             if current_part:
                 print(f"\n  [{current_part}]")
 
-        chapter_dir = get_chapter_dir(ch)
+        chapter_dir = get_chapter_dir(ch, paths=paths)
         manifest = load_scene_manifest(chapter_dir)
         scene_count = len(manifest['scenes']) if manifest else 0
 
-        text_file = find_prepared_text(ch)
-        audio_file = find_chapter_audio(ch)
-        alignment_file = find_alignment(ch)
+        text_file = find_prepared_text(ch, paths=paths)
+        audio_file = find_chapter_audio(ch, paths=paths)
+        alignment_file = find_alignment(ch, paths=paths)
 
         status_parts = []
         if text_file:
@@ -175,6 +175,11 @@ def main():
         description="Segment audiobook chapters into visual scenes with precise timestamps"
     )
     parser.add_argument(
+        "--config", "-cfg",
+        default=str(DEFAULT_CONFIG_PATH),
+        help=f"Quarto config YAML (default: {DEFAULT_CONFIG_PATH.name})"
+    )
+    parser.add_argument(
         "--chapter", "-c",
         type=int,
         help="Process only specific chapter number"
@@ -201,14 +206,21 @@ def main():
     )
     args = parser.parse_args()
 
-    print("Loading book configuration...")
-    config = load_quarto_config(DEFAULT_CONFIG_PATH)
+    config_path = Path(args.config)
+    if not config_path.is_absolute():
+        config_path = PROJECT_ROOT / config_path
+
+    cfg_name = config_name_from_path(config_path)
+    paths = get_paths(cfg_name)
+
+    print(f"Loading book configuration: {config_path.name} (output: audiobook/{cfg_name}/)")
+    config = load_quarto_config(config_path)
     chapters = extract_chapters(config)
     chapters = resolve_chapter_titles(chapters)
     print(f"Found {len(chapters)} chapters")
 
     if args.list:
-        list_chapters(chapters)
+        list_chapters(chapters, paths=paths)
         return
 
     chapters = filter_chapters(chapters, chapter=args.chapter, start=args.start, end=args.end)
@@ -218,7 +230,7 @@ def main():
 
     print(f"Processing {len(chapters)} chapter(s)...")
     for chapter in chapters:
-        process_chapter(chapter, force=args.force)
+        process_chapter(chapter, force=args.force, paths=paths)
 
     print(f"\n{'=' * 60}")
     print(f"All done! Processed {len(chapters)} chapter(s).")

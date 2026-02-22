@@ -39,10 +39,12 @@ from lib.veo import generate_image, generate_video
 from dih_models.yaml_utils import load_quarto_config
 from generate_audiobook import extract_book_metadata
 from lib.audiobook_common import (
-    PROJECT_ROOT, AUDIOBOOK_DIR, VIDEO_DIR, SCENES_DIR, TEXT_DIR,
-    CHAPTER_AUDIO_DIR, MANIFEST_PATH, extract_chapters as _extract_chapters,
+    PROJECT_ROOT, VIDEO_DIR, SCENES_DIR,
+    extract_chapters as _extract_chapters,
     extract_title_from_qmd, safe_filename, find_prepared_text, find_chapter_audio,
     resolve_chapter_titles,
+    AudiobookPaths, config_name_from_path, get_paths,
+    resolve_config_path, get_available_configs,
 )
 from lib.audiobook_manifest import update_chapter_fields as _update_chapter_fields
 from lib.retry import RateLimiter
@@ -142,35 +144,6 @@ VEO_AMBIENT_VOLUME = 0.15  # Veo ambient audio level (0-1) when mixed with TTS
 VEO_PARALLEL_WORKERS = 8   # Concurrent Veo generation requests
 
 
-def resolve_config_path(name_or_path: str) -> Path:
-    """
-    Resolve a config name or path to an actual file.
-    Accepts: 'manual-paperback', '_quarto-manual-paperback.yml', or a full path.
-    """
-    # Already a full path or filename with _quarto- prefix
-    candidate = PROJECT_ROOT / name_or_path
-    if candidate.exists():
-        return candidate
-
-    # Try as a config name -> _quarto-{name}.yml
-    candidate = PROJECT_ROOT / f"_quarto-{name_or_path}.yml"
-    if candidate.exists():
-        return candidate
-
-    raise FileNotFoundError(
-        f"Config not found: tried '{name_or_path}' and '_quarto-{name_or_path}.yml' in {PROJECT_ROOT}"
-    )
-
-
-def get_available_configs() -> list[str]:
-    """Discover available config names from _quarto-*.yml files."""
-    configs = []
-    for yml in PROJECT_ROOT.glob("_quarto-*.yml"):
-        name = yml.stem.replace("_quarto-", "")
-        configs.append(name)
-    return sorted(configs)
-
-
 # --- Quarto Config Parsing ---
 
 def extract_chapters_from_config(config_path: Path) -> list[dict]:
@@ -182,9 +155,10 @@ def extract_chapters_from_config(config_path: Path) -> list[dict]:
 
 # --- Chapter File Resolution ---
 
-def get_chapter_dir(chapter: dict) -> Path:
+def get_chapter_dir(chapter: dict, paths: AudiobookPaths | None = None) -> Path:
     """Get the scene directory for a chapter."""
-    return SCENES_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}"
+    scenes_dir = paths.scenes if paths else SCENES_DIR
+    return scenes_dir / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}"
 
 
 
@@ -517,6 +491,7 @@ def assemble_chapter_video(
     chapter_dir: Path,
     aspect: str,
     book_meta: dict | None = None,
+    paths: AudiobookPaths | None = None,
 ) -> Path:
     """
     Assemble scene clips + audio into a chapter-level MP4.
@@ -524,10 +499,11 @@ def assemble_chapter_video(
     Keeps Veo ambient audio (music/SFX) at reduced volume and mixes
     with TTS narration at full volume.
     """
+    video_dir = paths.video if paths else VIDEO_DIR
     aspect_tag = aspect.replace(":", "x")
-    output_path = VIDEO_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
+    output_path = video_dir / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
 
-    audio_path = find_chapter_audio(chapter)
+    audio_path = find_chapter_audio(chapter, paths=paths)
     if not audio_path:
         raise FileNotFoundError(f"No audio file for chapter {chapter['index']}. Run audiobook:audio first.")
 
@@ -692,21 +668,22 @@ def assemble_chapter_video(
 
 # --- Update Audiobook Manifest ---
 
-def update_audiobook_manifest(chapter_index: int, video_16x9: Path | None, video_9x16: Path | None, scene_count: int):
-    """Add video fields to audiobook/manifest.json for a chapter."""
+def update_audiobook_manifest(chapter_index: int, video_16x9: Path | None, video_9x16: Path | None, scene_count: int, paths: AudiobookPaths | None = None):
+    """Add video fields to manifest.json for a chapter."""
     fields = {'scenes': scene_count, 'video_status': 'generated'}
     if video_16x9:
         fields['video_16x9'] = str(video_16x9.relative_to(PROJECT_ROOT))
     if video_9x16:
         fields['video_9x16'] = str(video_9x16.relative_to(PROJECT_ROOT))
-    _update_chapter_fields(chapter_index, **fields)
+    _update_chapter_fields(chapter_index, paths=paths, **fields)
     print(f"  Audiobook manifest updated for chapter {chapter_index}")
 
 
 # --- List Command ---
 
-def list_chapters(chapters: list[dict]):
+def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
     """Print all chapters with their video generation status."""
+    video_dir = paths.video if paths else VIDEO_DIR
     print(f"\nChapter Video Status ({len(chapters)} chapters):")
     print("=" * 90)
 
@@ -717,19 +694,19 @@ def list_chapters(chapters: list[dict]):
             if current_part:
                 print(f"\n  [{current_part}]")
 
-        chapter_dir = get_chapter_dir(ch)
+        chapter_dir = get_chapter_dir(ch, paths=paths)
         scene_manifest = load_scene_manifest(chapter_dir)
         scene_count = len(scene_manifest['scenes']) if scene_manifest else 0
 
-        text_file = find_prepared_text(ch)
-        audio_file = find_chapter_audio(ch)
+        text_file = find_prepared_text(ch, paths=paths)
+        audio_file = find_chapter_audio(ch, paths=paths)
         text_chars = len(text_file.read_text(encoding='utf-8')) if text_file else 0
 
         has_video = False
-        if VIDEO_DIR.exists():
+        if video_dir.exists():
             for ar in ASPECT_RATIOS:
                 pattern = f"{ch['index']:03d}-*-{ar.replace(':', 'x')}.mp4"
-                if next(VIDEO_DIR.glob(pattern), None):
+                if next(video_dir.glob(pattern), None):
                     has_video = True
                     break
 
@@ -753,7 +730,7 @@ def list_chapters(chapters: list[dict]):
 
 # --- Main Pipeline ---
 
-def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None, no_keyframes: bool = False, book_meta: dict | None = None, prompt_variant: str = DEFAULT_PROMPT_VARIANT, test_prompts: bool = False):
+def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None, no_keyframes: bool = False, book_meta: dict | None = None, prompt_variant: str = DEFAULT_PROMPT_VARIANT, test_prompts: bool = False, paths: AudiobookPaths | None = None):
     """Run the video generation pipeline for a single chapter.
 
     Requires pre-existing scene-manifest.json (produced by generate_audiobook_scenes.py)
@@ -764,7 +741,7 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
     print(f"  QMD: {chapter['path']}")
     print(f"{'=' * 60}")
 
-    chapter_dir = get_chapter_dir(chapter)
+    chapter_dir = get_chapter_dir(chapter, paths=paths)
 
     # Load scene manifest (required)
     existing = load_scene_manifest(chapter_dir)
@@ -779,7 +756,7 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
     print(f"  Loaded scene manifest: {len(scenes)} scenes")
 
     # Load audio (required)
-    audio_path = find_chapter_audio(chapter)
+    audio_path = find_chapter_audio(chapter, paths=paths)
     if not audio_path:
         print(f"  [ERROR] No audio for chapter {chapter['index']}.")
         print(f"  Run: python scripts/generate_audiobook.py --chapter {chapter['index']}")
@@ -791,7 +768,7 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
     print(f"  Audio: {total_duration_ms:,}ms ({total_duration_ms / 1000:.1f}s)")
 
     # Load text for image prompt context
-    text_file = find_prepared_text(chapter)
+    text_file = find_prepared_text(chapter, paths=paths)
     text = text_file.read_text(encoding='utf-8') if text_file else ""
     if text:
         print(f"  Text: {len(text):,} chars ({text_file.name})")
@@ -809,9 +786,10 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
             if old_dir.exists():
                 shutil.rmtree(old_dir)
                 print(f"  --force: deleted {subdir}/")
+        video_dir = paths.video if paths else VIDEO_DIR
         for aspect in ASPECT_RATIOS:
             aspect_tag = aspect.replace(":", "x")
-            old_video = VIDEO_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
+            old_video = video_dir / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
             if old_video.exists():
                 old_video.unlink()
                 print(f"  --force: deleted {old_video.name}")
@@ -832,11 +810,11 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
     save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
 
     print("\nAssembling final videos...")
-    video_16x9 = assemble_chapter_video(scenes, chapter, chapter_dir, "16:9", book_meta=book_meta)
-    video_9x16 = assemble_chapter_video(scenes, chapter, chapter_dir, "9:16", book_meta=book_meta)
+    video_16x9 = assemble_chapter_video(scenes, chapter, chapter_dir, "16:9", book_meta=book_meta, paths=paths)
+    video_9x16 = assemble_chapter_video(scenes, chapter, chapter_dir, "9:16", book_meta=book_meta, paths=paths)
 
     print("\nUpdating manifest...")
-    update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(scenes))
+    update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(scenes), paths=paths)
 
     print(f"\nDone! Chapter {chapter['index']}: {chapter['title']}")
     if video_16x9:
@@ -914,7 +892,10 @@ def main():
     except FileNotFoundError as e:
         parser.error(str(e))
 
-    print(f"Config: {config_path.name}")
+    cfg_name = config_name_from_path(config_path)
+    paths = get_paths(cfg_name)
+
+    print(f"Config: {config_path.name} (output: audiobook/{cfg_name}/)")
 
     # Load full config for book metadata
     full_config = load_quarto_config(config_path)
@@ -922,7 +903,7 @@ def main():
     print(f"Found {len(chapters)} chapters")
 
     if args.list:
-        list_chapters(chapters)
+        list_chapters(chapters, paths=paths)
         return
 
     # Extract book metadata for tagging images/videos
@@ -955,6 +936,7 @@ def main():
             book_meta=book_meta,
             prompt_variant=args.prompt,
             test_prompts=args.test_prompts,
+            paths=paths,
         )
 
     print(f"\n{'=' * 60}")
