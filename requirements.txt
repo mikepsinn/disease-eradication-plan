@@ -42,3 +42,4 @@ python-docx
 ebooklib
 lxml
 mutagen
+stable-ts  # Whisper-based forced alignment for audiobook subtitles
