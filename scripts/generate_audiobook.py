@@ -35,7 +35,9 @@ from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE
 from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
     PROJECT_ROOT, AUDIOBOOK_DIR, TEXT_DIR, CHAPTER_AUDIO_DIR, MANIFEST_PATH,
+    ALIGNMENT_DIR, SUBTITLES_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
+    find_prepared_text,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
 
@@ -149,7 +151,6 @@ def generate_chapter_audio(
         return None
 
     # Find text chunk files (produced by generate_audiobook_text.py)
-    from lib.audiobook_common import find_prepared_text
     text_file = find_prepared_text({'index': chapter['index'], 'title': title})
     if not text_file:
         print(f"  [SKIP] No text file found after preparation")
@@ -470,6 +471,40 @@ def export_m4b(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: di
     print(f"  [OK] M4B: {m4b_path} ({m4b_size / 1024 / 1024:.1f} MB)")
 
 
+def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = False):
+    """Run forced alignment and generate subtitles for a chapter.
+
+    Gracefully skips if stable-ts is not installed.
+    """
+    safe = safe_filename(title)
+    alignment_path = ALIGNMENT_DIR / f"{chapter['index']:03d}-{safe}.alignment.json"
+    vtt_path = SUBTITLES_DIR / f"{chapter['index']:03d}-{safe}.vtt"
+
+    if alignment_path.exists() and not force:
+        print(f"  [SKIP] Alignment exists: {alignment_path.name}")
+        return
+
+    text_file = find_prepared_text({'index': chapter['index'], 'title': title})
+    if not text_file:
+        print(f"  [SKIP] No text file for alignment")
+        return
+
+    try:
+        from lib.alignment import align_chapter, generate_vtt
+    except ImportError as e:
+        print(f"  [SKIP] {e}")
+        return
+
+    words = align_chapter(audio_path, text_file, alignment_path, chapter=chapter)
+    generate_vtt(words, vtt_path)
+
+    update_chapter_fields(
+        chapter['index'],
+        alignment_file=str(alignment_path.relative_to(PROJECT_ROOT)),
+        subtitle_file=str(vtt_path.relative_to(PROJECT_ROOT)),
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Generate audiobook from Quarto book chapters"
@@ -499,6 +534,11 @@ def main():
         "--no-combine",
         action="store_true",
         help="Skip combining chapters into single audiobook"
+    )
+    parser.add_argument(
+        "--no-align",
+        action="store_true",
+        help="Skip forced alignment and subtitle generation"
     )
     parser.add_argument(
         "--start",
@@ -550,6 +590,10 @@ def main():
         audio_path = generate_chapter_audio(chapter, voice=args.voice, force=args.force)
         if audio_path:
             generated_files.append(audio_path)
+
+            # Run forced alignment + subtitle generation
+            if not args.no_align:
+                _run_alignment(chapter, audio_path, title, force=args.force)
 
     print(f"\n{'=' * 60}")
     print(f"Generated {len(generated_files)} audio files")

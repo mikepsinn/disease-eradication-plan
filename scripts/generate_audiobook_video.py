@@ -4,27 +4,25 @@
 Audiobook Video Generator
 
 Generates animated video for audiobook chapters using:
-1. LLM scene segmentation (Gemini Flash)
+1. Pre-existing scene-manifest.json (from generate_audiobook_scenes.py)
 2. Keyframe image generation (Imagen)
 3. Video animation (Veo 3.1)
 4. Assembly with ffmpeg
 
-Reads chapter list from any Quarto book YAML config.
+Requires scene-manifest.json and audio to exist already. Run the earlier pipeline
+steps first: generate_audiobook_text.py -> generate_audiobook.py -> generate_audiobook_scenes.py
 
 Usage:
-    python scripts/generate_audiobook_video.py --config _quarto-manual-paperback.yml --limit 1 --scenes-only
-    python scripts/generate_audiobook_video.py --config _quarto-manual-paperback.yml --limit 3
-    python scripts/generate_audiobook_video.py --config _quarto-manual-paperback.yml --list
+    python scripts/generate_audiobook_video.py --chapter 20 --keyframes-only
+    python scripts/generate_audiobook_video.py --chapter 20
+    python scripts/generate_audiobook_video.py --list
 """
 import io
 import sys
-import json
 import re
-import time
 import argparse
 import shutil
 import subprocess
-import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -36,21 +34,19 @@ from pydub import AudioSegment
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-import hashlib
-from lib.llm import generate_gemini_pro_content, generate_gemini_flash_content, generate_gemini_flash_content_with_image, GEMINI_PRO_MODEL_ID, GEMINI_FLASH_MODEL_ID
+from lib.llm import generate_gemini_flash_content_with_image
 from lib.veo import generate_image, generate_video
 from dih_models.yaml_utils import load_quarto_config
-from dih_models.variable_replacement import load_variables, replace_variables
-from generate_audiobook_text import generate_chapter_text
-from generate_audiobook import extract_book_metadata, generate_chapter_audio
+from generate_audiobook import extract_book_metadata
 from lib.audiobook_common import (
     PROJECT_ROOT, AUDIOBOOK_DIR, VIDEO_DIR, SCENES_DIR, TEXT_DIR,
     CHAPTER_AUDIO_DIR, MANIFEST_PATH, extract_chapters as _extract_chapters,
     extract_title_from_qmd, safe_filename, find_prepared_text, find_chapter_audio,
-    resolve_chapter_titles, VARIABLES_YML,
+    resolve_chapter_titles,
 )
 from lib.audiobook_manifest import update_chapter_fields as _update_chapter_fields
 from lib.retry import RateLimiter
+from lib.scenes import save_scene_manifest, load_scene_manifest
 
 # --- Configuration ---
 DEFAULT_CONFIG_NAME = "manual-paperback"
@@ -190,165 +186,6 @@ def get_chapter_dir(chapter: dict) -> Path:
     """Get the scene directory for a chapter."""
     return SCENES_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}"
 
-
-# --- JSON Extraction ---
-
-def parse_json_array(response_text: str) -> list[dict]:
-    """
-    Extract a JSON array from LLM response text.
-    Handles markdown code blocks and trailing text.
-    """
-    text = response_text.strip()
-    # Strip markdown code blocks
-    text = re.sub(r'^```(?:json)?\s*\n?', '', text)
-    text = re.sub(r'\n?```\s*$', '', text)
-    text = text.strip()
-
-    # Try direct parse first
-    try:
-        result = json.loads(text)
-        if isinstance(result, list):
-            return result
-    except json.JSONDecodeError:
-        pass
-
-    # Find the outermost balanced JSON array
-    start = text.find('[')
-    if start == -1:
-        raise ValueError(f"No JSON array found in response: {text[:200]}...")
-
-    depth = 0
-    in_string = False
-    escape_next = False
-    for i in range(start, len(text)):
-        c = text[i]
-        if escape_next:
-            escape_next = False
-            continue
-        if c == '\\' and in_string:
-            escape_next = True
-            continue
-        if c == '"' and not escape_next:
-            in_string = not in_string
-            continue
-        if in_string:
-            continue
-        if c == '[':
-            depth += 1
-        elif c == ']':
-            depth -= 1
-            if depth == 0:
-                candidate = text[start:i + 1]
-                return json.loads(candidate)
-
-    raise ValueError(f"No balanced JSON array found in response: {text[:200]}...")
-
-
-# --- Step A: Scene Segmentation ---
-
-SCENE_SEGMENTATION_PROMPT = """Segment this audiobook narration into visual scenes. Read the ENTIRE text first.
-
-Rules:
-- Each scene: ~120-250 characters, breaking at natural narrative boundaries
-- char_start/char_end: exact character offsets, no gaps, no overlaps
-- narration_text: exact original text for that span
-- context: relevant surrounding context from the chapter that explains the scene. Do NOT repeat the narration_text.
-- animation_prompt: simple camera/subject motion for animating the keyframe image.
-
-Return ONLY a JSON array:
-[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "context": "...", "animation_prompt": "...", "char_start": 0, "char_end": 120}}]
-
-Text:
----
-{text}
----"""
-
-
-LLM_CALL_TIMEOUT = 120  # seconds - our own timeout since SDK timeout can hang
-
-
-def _call_llm_with_timeout(prompt: str, timeout: int = LLM_CALL_TIMEOUT) -> str:
-    """Call Gemini Flash with a hard thread-based timeout."""
-    result: list[str | None] = [None]
-    error: list[Exception | None] = [None]
-
-    def _call():
-        try:
-            result[0] = generate_gemini_flash_content(prompt)
-        except Exception as e:
-            error[0] = e
-
-    t = threading.Thread(target=_call)
-    t.start()
-    t.join(timeout)
-    if t.is_alive():
-        raise TimeoutError(f"LLM call hung for {timeout}s")
-    if error[0] is not None:
-        raise error[0]
-    assert result[0] is not None
-    return result[0]
-
-
-def segment_scenes(text: str) -> list[dict]:
-    """Use Gemini Flash to segment narration text into visual scenes."""
-    print("Step A: Segmenting text into visual scenes...")
-    prompt = SCENE_SEGMENTATION_PROMPT.format(text=text)
-    for attempt in range(1, 4):
-        try:
-            response = _call_llm_with_timeout(prompt)
-            break
-        except Exception as e:
-            if attempt < 3:
-                wait = attempt * 15
-                print(f"  [RETRY] LLM attempt {attempt}/3 failed: {e}")
-                print(f"  [RETRY] Waiting {wait}s...", flush=True)
-                time.sleep(wait)
-            else:
-                raise
-    scenes = parse_json_array(response)
-
-    total_chars = len(text)
-    if scenes:
-        last_end = scenes[-1]['char_end']
-        if abs(last_end - total_chars) > 10:
-            print(f"  [WARN] Scene coverage ends at {last_end}, text is {total_chars} chars")
-
-    print(f"  Segmented into {len(scenes)} scenes")
-    for s in scenes:
-        chars = len(s.get('narration_text', ''))
-        pct = chars / total_chars * 100 if total_chars else 0
-        anim = s.get('animation_prompt', '')
-        anim_preview = f" | {anim[:60]}..." if len(anim) > 60 else (f" | {anim}" if anim else "")
-        print(f"    Scene {s['scene_index']}: {s['title']} ({chars} chars, ~{pct:.0f}%){anim_preview}")
-
-    return scenes
-
-
-# --- Step B: Timestamp Estimation ---
-
-def estimate_timestamps(scenes: list[dict], total_chars: int, total_duration_ms: int) -> list[dict]:
-    """Map char offsets to audio timestamps using linear interpolation.
-
-    Ensures the last scene extends to exactly total_duration_ms so the
-    assembled video fully covers the audio track.
-    """
-    print("Step B: Estimating audio timestamps...")
-    for scene in scenes:
-        scene['start_ms'] = int((scene['char_start'] / total_chars) * total_duration_ms)
-        scene['end_ms'] = int((scene['char_end'] / total_chars) * total_duration_ms)
-        scene['duration_ms'] = scene['end_ms'] - scene['start_ms']
-        print(f"    Scene {scene['scene_index']}: {scene['start_ms']}ms - {scene['end_ms']}ms ({scene['duration_ms']}ms)")
-
-    # Force last scene to extend to full audio duration to prevent cutoff
-    if scenes:
-        last = scenes[-1]
-        if last['end_ms'] < total_duration_ms:
-            gap = total_duration_ms - last['end_ms']
-            last['end_ms'] = total_duration_ms
-            last['duration_ms'] = last['end_ms'] - last['start_ms']
-            print(f"    [FIX] Extended last scene by {gap}ms to cover full audio ({total_duration_ms}ms)")
-
-    return scenes
 
 
 # Imagen: 20 requests per minute
@@ -853,40 +690,6 @@ def assemble_chapter_video(
     return output_path
 
 
-# --- Scene Manifest ---
-
-def save_scene_manifest(scenes: list[dict], chapter: dict, chapter_dir: Path, total_duration_ms: int, text_hash: str = ""):
-    """Save scene-manifest.json with all scene metadata."""
-    manifest = {
-        "chapter_index": chapter['index'],
-        "chapter_title": chapter['title'],
-        "total_chars": len(scenes[-1].get('narration_text', '')) if scenes else 0,
-        "total_duration_ms": total_duration_ms,
-        "model_used": GEMINI_FLASH_MODEL_ID,
-        "text_hash": text_hash,
-        "scenes": scenes,
-    }
-    # Compute total chars from scene coverage
-    if scenes:
-        manifest['total_chars'] = max(s.get('char_end', 0) for s in scenes)
-
-    manifest_path = chapter_dir / "scene-manifest.json"
-    chapter_dir.mkdir(parents=True, exist_ok=True)
-    manifest_path.write_text(
-        json.dumps(manifest, indent=2, ensure_ascii=False) + '\n',
-        encoding='utf-8',
-    )
-    print(f"  Scene manifest saved: {manifest_path}")
-
-
-def load_scene_manifest(chapter_dir: Path) -> dict | None:
-    """Load existing scene-manifest.json if present."""
-    manifest_path = chapter_dir / "scene-manifest.json"
-    if manifest_path.exists():
-        return json.loads(manifest_path.read_text(encoding='utf-8'))
-    return None
-
-
 # --- Update Audiobook Manifest ---
 
 def update_audiobook_manifest(chapter_index: int, video_16x9: Path | None, video_9x16: Path | None, scene_count: int):
@@ -950,113 +753,68 @@ def list_chapters(chapters: list[dict]):
 
 # --- Main Pipeline ---
 
-def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None, no_keyframes: bool = False, book_meta: dict | None = None, prompt_variant: str = DEFAULT_PROMPT_VARIANT, test_prompts: bool = False):
-    """Run the video generation pipeline for a single chapter."""
+def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None, no_keyframes: bool = False, book_meta: dict | None = None, prompt_variant: str = DEFAULT_PROMPT_VARIANT, test_prompts: bool = False):
+    """Run the video generation pipeline for a single chapter.
+
+    Requires pre-existing scene-manifest.json (produced by generate_audiobook_scenes.py)
+    and audio file (produced by generate_audiobook.py).
+    """
     print(f"\n{'=' * 60}")
     print(f"Chapter {chapter['index']}: {chapter['title']}")
     print(f"  QMD: {chapter['path']}")
     print(f"{'=' * 60}")
 
     chapter_dir = get_chapter_dir(chapter)
-    chapter_dir.mkdir(parents=True, exist_ok=True)
 
-    if keyframes_only or scenes_only or test_prompts:
-        # Fast path: require existing text+audio, skip regeneration
-        text_file = find_prepared_text(chapter)
-        if not text_file:
-            print(f"  [ERROR] No prepared text for chapter {chapter['index']}. Run generate_audiobook_text.py first.")
-            return
+    # Load scene manifest (required)
+    existing = load_scene_manifest(chapter_dir)
+    if not existing or not existing.get('scenes'):
+        print(f"  [ERROR] No scene-manifest.json for chapter {chapter['index']}.")
+        print(f"  Run: python scripts/generate_audiobook_scenes.py --chapter {chapter['index']}")
+        return
 
-        audio_path = find_chapter_audio(chapter)
-        if not audio_path:
-            print(f"  [ERROR] No audio for chapter {chapter['index']}. Run generate_audiobook.py first.")
-            return
-    else:
-        # Full pipeline: regenerate text if needed
-        variables = load_variables(VARIABLES_YML)
-        result = generate_chapter_text(chapter, variables, force=True)
-        if not result:
-            print(f"  [SKIP] Text generation failed for chapter {chapter['index']}.")
-            return
+    scenes = existing['scenes']
+    text_hash = existing.get('text_hash', '')
+    total_duration_ms = existing.get('total_duration_ms', 0)
+    print(f"  Loaded scene manifest: {len(scenes)} scenes")
 
-        text_file = find_prepared_text(chapter)
-        if not text_file:
-            print(f"  [SKIP] No prepared text file for chapter {chapter['index']}.")
-            return
-
-    text = text_file.read_text(encoding='utf-8')
-    total_chars = len(text)
-    text_hash = hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
-    print(f"Text: {total_chars:,} chars ({text_file.name}) [hash: {text_hash}]")
-
-    # Get audio: in fast-path mode we already validated it exists
+    # Load audio (required)
     audio_path = find_chapter_audio(chapter)
+    if not audio_path:
+        print(f"  [ERROR] No audio for chapter {chapter['index']}.")
+        print(f"  Run: python scripts/generate_audiobook.py --chapter {chapter['index']}")
+        return
 
-    if not (keyframes_only or scenes_only or test_prompts):
-        # Full pipeline: check audio freshness and regenerate if stale
-        audio_stale = False
-        if audio_path:
-            audio_hash_file = audio_path.with_suffix('.text_hash')
-            old_hash = audio_hash_file.read_text(encoding='utf-8').strip() if audio_hash_file.exists() else ''
-            if old_hash != text_hash:
-                audio_stale = True
-        else:
-            audio_stale = True
-
-        if audio_stale:
-            reason = "text changed" if audio_path else "not found"
-            print(f"Audio: regenerating ({reason})...")
-            if audio_path:
-                audio_chunk_dir = audio_path.parent / "audio-chunks" / audio_path.stem
-                if audio_chunk_dir.exists():
-                    shutil.rmtree(audio_chunk_dir)
-                audio_path.unlink(missing_ok=True)
-            audio_path = generate_chapter_audio(chapter, force=True)
-            if not audio_path:
-                print(f"  [ERROR] Audio generation failed for chapter {chapter['index']}.")
-                return
-            audio_hash_file = audio_path.with_suffix('.text_hash')
-            audio_hash_file.write_text(text_hash, encoding='utf-8')
-
+    # Get actual audio duration for assembly
     audio = AudioSegment.from_wav(str(audio_path))
     total_duration_ms = len(audio)
-    print(f"Audio: {total_duration_ms:,}ms ({total_duration_ms / 1000:.1f}s)")
+    print(f"  Audio: {total_duration_ms:,}ms ({total_duration_ms / 1000:.1f}s)")
 
-    # Check for existing scene manifest
-    existing = load_scene_manifest(chapter_dir)
-    if existing and existing.get('scenes') and not force:
-        print(f"  Found existing scene manifest ({len(existing['scenes'])} scenes)")
-        scenes = existing['scenes']
-    else:
-        if force:
-            subdirs_to_clean = ["clips"]
-            if not no_keyframes:
-                subdirs_to_clean.insert(0, "keyframes")
-            for subdir in subdirs_to_clean:
-                old_dir = chapter_dir / subdir
-                if old_dir.exists():
-                    shutil.rmtree(old_dir)
-                    print(f"  --force: deleted {subdir}/")
-            for aspect in ASPECT_RATIOS:
-                aspect_tag = aspect.replace(":", "x")
-                old_video = VIDEO_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
-                if old_video.exists():
-                    old_video.unlink()
-                    print(f"  --force: deleted {old_video.name}")
-            if existing:
-                print(f"  --force: re-segmenting (was {len(existing.get('scenes', []))} scenes)")
-        scenes = segment_scenes(text)
+    # Load text for image prompt context
+    text_file = find_prepared_text(chapter)
+    text = text_file.read_text(encoding='utf-8') if text_file else ""
+    if text:
+        print(f"  Text: {len(text):,} chars ({text_file.name})")
 
     if max_scenes and len(scenes) > max_scenes:
         print(f"  --max-scenes {max_scenes}: truncating from {len(scenes)} scenes")
         scenes = scenes[:max_scenes]
 
-    scenes = estimate_timestamps(scenes, total_chars, total_duration_ms)
-    save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
-
-    if scenes_only:
-        print("\n--scenes-only: stopping after scene segmentation.")
-        return
+    if force:
+        subdirs_to_clean = ["clips"]
+        if not no_keyframes:
+            subdirs_to_clean.insert(0, "keyframes")
+        for subdir in subdirs_to_clean:
+            old_dir = chapter_dir / subdir
+            if old_dir.exists():
+                shutil.rmtree(old_dir)
+                print(f"  --force: deleted {subdir}/")
+        for aspect in ASPECT_RATIOS:
+            aspect_tag = aspect.replace(":", "x")
+            old_video = VIDEO_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
+            if old_video.exists():
+                old_video.unlink()
+                print(f"  --force: deleted {old_video.name}")
 
     if test_prompts:
         test_prompt_variants(scenes, chapter_dir, chapter_text=text, max_scenes=max_scenes)
@@ -1073,11 +831,11 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
     scenes = animate_scenes(scenes, chapter_dir, use_keyframes=not no_keyframes, chapter_text=text)
     save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
 
-    print("\nStep E: Assembling final videos...")
+    print("\nAssembling final videos...")
     video_16x9 = assemble_chapter_video(scenes, chapter, chapter_dir, "16:9", book_meta=book_meta)
     video_9x16 = assemble_chapter_video(scenes, chapter, chapter_dir, "9:16", book_meta=book_meta)
 
-    print("\nStep F: Updating manifest...")
+    print("\nUpdating manifest...")
     update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(scenes))
 
     print(f"\nDone! Chapter {chapter['index']}: {chapter['title']}")
@@ -1112,11 +870,6 @@ def main():
         "--limit", "-n",
         type=int,
         help="Max number of chapters to process"
-    )
-    parser.add_argument(
-        "--scenes-only",
-        action="store_true",
-        help="Only run scene segmentation (dry run, no image/video generation)"
     )
     parser.add_argument(
         "--keyframes-only",
@@ -1195,7 +948,6 @@ def main():
     for chapter in chapters:
         run_pipeline(
             chapter=chapter,
-            scenes_only=args.scenes_only,
             keyframes_only=args.keyframes_only,
             force=args.force,
             max_scenes=args.max_scenes,
