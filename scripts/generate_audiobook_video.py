@@ -20,8 +20,11 @@ import io
 import sys
 import json
 import re
+import time
 import argparse
 import subprocess
+import threading
+from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -33,7 +36,7 @@ from pydub import AudioSegment
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from lib.llm import generate_gemini_pro_content, generate_gemini_flash_content, GEMINI_PRO_MODEL_ID, GEMINI_FLASH_MODEL_ID
+from lib.llm import generate_gemini_pro_content, generate_gemini_flash_content, generate_gemini_flash_content_with_image, GEMINI_PRO_MODEL_ID, GEMINI_FLASH_MODEL_ID
 from lib.veo import generate_image, generate_video
 from dih_models.yaml_utils import load_quarto_config
 
@@ -50,7 +53,7 @@ DEFAULT_CONFIG_NAME = "manual-paperback"
 ASPECT_RATIOS = ["16:9", "9:16"]
 
 # Video keyframe style (distinct from BW_ACADEMIC_STYLE used for book section images)
-IMAGE_STYLE = "Black and white only. Use a fun retro scientific illustration style. No color."
+IMAGE_STYLE = "70s sci-fi surrealism"
 
 # Suppress Veo-generated speech so we can overlay our own TTS narration.
 # Veo ambient audio (music + SFX) is kept and mixed at reduced volume.
@@ -262,14 +265,12 @@ SCENE_SEGMENTATION_PROMPT = """Segment this audiobook narration into visual scen
 Read the ENTIRE text first. Write each scene's prompts informed by the full chapter context, not just that scene's snippet.
 
 Rules:
-- Each scene targets ~6-10 seconds of narration. Break at natural boundaries.
+- Each scene targets ~6-10 seconds of narration (~80-140 characters). Prefer more, shorter scenes over fewer, longer ones. Break at natural boundaries.
 - char_start/char_end: exact character offsets, no gaps, no overlaps
 - narration_text: exact original text for that span
-- image_prompt: Start with "Use a fun black and white retro scientific illustration style to illustrate: " then describe WHAT to show, informed by full chapter context. Self-contained. No extra style instructions.
-- animation_prompt: Start with "Use a fun black and white retro scientific illustration style to illustrate: " then describe what is happening visually, with enough context to stand completely alone. No dialogue or narration.
 
 Return ONLY a JSON array:
-[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "image_prompt": "Use a fun black and white retro scientific illustration style to illustrate: ...", "animation_prompt": "Use a fun black and white retro scientific illustration style to illustrate: ...", "char_start": 0, "char_end": 120}}]
+[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "char_start": 0, "char_end": 120}}]
 
 Text:
 ---
@@ -281,7 +282,18 @@ def segment_scenes(text: str) -> list[dict]:
     """Use Gemini Pro 3.1 to segment narration text into visual scenes."""
     print("Step A: Segmenting text into visual scenes...")
     prompt = SCENE_SEGMENTATION_PROMPT.format(text=text)
-    response = generate_gemini_pro_content(prompt)
+    for attempt in range(1, 4):
+        try:
+            response = generate_gemini_pro_content(prompt)
+            break
+        except Exception as e:
+            if attempt < 3:
+                wait = attempt * 15
+                print(f"  [RETRY] LLM attempt {attempt}/3 failed: {e}")
+                print(f"  [RETRY] Waiting {wait}s...", flush=True)
+                time.sleep(wait)
+            else:
+                raise
     scenes = parse_json_array(response)
 
     total_chars = len(text)
@@ -312,12 +324,49 @@ def estimate_timestamps(scenes: list[dict], total_chars: int, total_duration_ms:
     return scenes
 
 
+# --- Rate Limiter ---
+
+class RateLimiter:
+    """Thread-safe sliding-window rate limiter."""
+
+    def __init__(self, max_requests: int, window_seconds: float):
+        self._max = max_requests
+        self._window = window_seconds
+        self._timestamps: deque[float] = deque()
+        self._lock = threading.Lock()
+
+    def acquire(self):
+        """Block until a request slot is available."""
+        while True:
+            with self._lock:
+                now = time.monotonic()
+                # Evict timestamps outside the window
+                while self._timestamps and self._timestamps[0] <= now - self._window:
+                    self._timestamps.popleft()
+                if len(self._timestamps) < self._max:
+                    self._timestamps.append(now)
+                    return
+                # Calculate wait time until oldest request exits the window
+                wait = self._timestamps[0] + self._window - now
+            time.sleep(max(0.1, wait))
+
+
+# Imagen: 20 requests per minute
+imagen_rate_limiter = RateLimiter(max_requests=18, window_seconds=60)  # 18 to stay safely under 20
+
+
+def rate_limited_generate_image(prompt: str, output_path: Path, aspect_ratio: str) -> Path:
+    """Wrapper around generate_image that respects the Imagen rate limit."""
+    imagen_rate_limiter.acquire()
+    return generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect_ratio)
+
+
 # --- Step C: Keyframe Generation ---
 
 IMAGEN_PARALLEL_WORKERS = 4  # Concurrent Imagen requests
 
 
-def generate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
+def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter_text: str = "") -> list[dict]:
     """Generate keyframe images for each scene using Imagen (parallel)."""
     print("Step C: Generating keyframe images...")
     keyframes_dir = chapter_dir / "keyframes"
@@ -349,10 +398,20 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
 
     def _generate_one(item):
         scene, aspect, output_path, filename = item
-        prompt = scene.get('image_prompt') or scene['narration_text']
-        generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect)
+        scene_text = scene.get('narration_text', '').strip()
+        prompt = (
+            f"Generate a {IMAGE_STYLE} illustration.\n"
+            f"--- ILLUSTRATE THIS ---\n"
+            f"{scene_text}\n"
+            f"--- END ILLUSTRATE ---\n"
+            f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
+            f"{chapter_text}\n"
+            f"--- END CONTEXT ---"
+        )
+        rate_limited_generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect)
         return scene['scene_index'], aspect, f"keyframes/{filename}"
 
+    errors = []
     with ThreadPoolExecutor(max_workers=IMAGEN_PARALLEL_WORKERS) as executor:
         futures = {executor.submit(_generate_one, item): item for item in work_items}
         for future in as_completed(futures):
@@ -365,14 +424,103 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
                         s['keyframes'][aspect] = kf_rel
                         break
             except Exception as e:
+                errors.append(f"Keyframe scene {scene_idx} ({aspect}): {e}")
                 print(f"    [ERROR] Keyframe scene {scene_idx} ({aspect}): {e}")
 
+    if errors:
+        raise RuntimeError(f"Failed to generate {len(errors)} keyframe(s):\n" + "\n".join(errors))
+
+    return scenes
+
+
+# --- Step C.5: Keyframe Quality Check ---
+
+KEYFRAME_TEXT_CHECK_PROMPT = """Look at this image carefully. Does it contain any text with SPELLING ERRORS, TYPOS, or GARBLED/NONSENSICAL letters? Correctly spelled text is fine.
+
+Answer with ONLY one of:
+- "CLEAN" if the image has no text, or all text is correctly spelled
+- "TYPO: <brief description>" if any misspelled, garbled, or nonsensical text is visible (e.g. "TYPO: 'SCIENEC' instead of 'SCIENCE'")"""
+
+MAX_REGEN_ATTEMPTS = 2  # Max times to regenerate a single keyframe
+
+
+def check_and_fix_keyframes(scenes: list[dict], chapter_dir: Path, chapter_text: str = "") -> list[dict]:
+    """Check keyframe images for garbled text using Gemini vision, regenerate bad ones."""
+    print("Step C.5: Checking keyframes for text/typos...")
+    keyframes_dir = chapter_dir / "keyframes"
+
+    check_items = []
+    for scene in scenes:
+        for aspect in ASPECT_RATIOS:
+            kf_rel = scene.get('keyframes', {}).get(aspect)
+            if not kf_rel:
+                continue
+            kf_path = chapter_dir / kf_rel
+            if not kf_path.exists():
+                continue
+            check_items.append((scene, aspect, kf_path))
+
+    if not check_items:
+        print("    No keyframes to check.")
+        return scenes
+
+    print(f"    Checking {len(check_items)} keyframes...")
+
+    clean_count = 0
+    regen_count = 0
+
+    for scene, aspect, kf_path in check_items:
+        scene_idx = scene['scene_index']
+        aspect_tag = aspect.replace(":", "x")
+        label = f"scene-{scene_idx:02d}-{aspect_tag}"
+
+        for attempt in range(1, MAX_REGEN_ATTEMPTS + 1):
+            image_bytes = kf_path.read_bytes()
+            mime = "image/jpeg" if kf_path.suffix.lower() in (".jpg", ".jpeg") else "image/png"
+
+            response = generate_gemini_flash_content_with_image(
+                prompt=KEYFRAME_TEXT_CHECK_PROMPT,
+                image_bytes=image_bytes,
+                mime_type=mime,
+            )
+            result = response.strip()
+
+            if result.upper().startswith("CLEAN"):
+                if attempt == 1:
+                    clean_count += 1
+                else:
+                    print(f"    [FIXED] {label} (attempt {attempt})")
+                    regen_count += 1
+                break
+
+            # Typo detected - regenerate
+            print(f"    [TYPO] {label}: {result}")
+            kf_path.unlink()
+
+            scene_text = scene.get('narration_text', '').strip()
+            prompt = (
+                f"Generate a {IMAGE_STYLE} illustration. Any text must be spelled correctly.\n"
+                f"--- ILLUSTRATE THIS ---\n"
+                f"{scene_text}\n"
+                f"--- END ILLUSTRATE ---\n"
+                f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
+                f"{chapter_text}\n"
+                f"--- END CONTEXT ---"
+            )
+            rate_limited_generate_image(prompt=prompt, output_path=kf_path, aspect_ratio=aspect)
+
+            if attempt == MAX_REGEN_ATTEMPTS:
+                # Accept whatever we got on the last attempt
+                print(f"    [ACCEPT] {label} after {attempt} regen attempts")
+                regen_count += 1
+
+    print(f"    Results: {clean_count} clean, {regen_count} regenerated")
     return scenes
 
 
 # --- Step D: Veo Animation ---
 
-def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = True) -> list[dict]:
+def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = True, chapter_text: str = "") -> list[dict]:
     """Generate video clips using Veo 3.1 with parallel requests.
 
     When use_keyframes=True (default), uses image-to-video with keyframe as first frame.
@@ -406,8 +554,7 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
                 keyframe_filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.jpg"
                 keyframe_path = keyframes_dir / keyframe_filename
                 if not keyframe_path.exists():
-                    print(f"    [SKIP] No keyframe for {clip_filename}")
-                    continue
+                    raise FileNotFoundError(f"Missing keyframe: {keyframe_path}")
 
             work_items.append((scene, aspect, keyframe_path, clip_path, clip_filename))
 
@@ -419,7 +566,16 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
 
     def _generate_one(item):
         scene, aspect, keyframe_path, clip_path, clip_filename = item
-        veo_prompt = scene.get('animation_prompt') or scene['narration_text']
+        scene_text = scene.get('narration_text', '').strip()
+        veo_prompt = (
+            f"Generate a {IMAGE_STYLE} animation. No dialogue or narration.\n"
+            f"--- ANIMATE THIS ---\n"
+            f"{scene_text}\n"
+            f"--- END ANIMATE ---\n"
+            f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
+            f"{chapter_text}\n"
+            f"--- END CONTEXT ---"
+        )
         generate_video(
             prompt=veo_prompt,
             output_path=clip_path,
@@ -430,6 +586,7 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
         )
         return scene['scene_index'], aspect, f"clips/{clip_filename}"
 
+    errors = []
     with ThreadPoolExecutor(max_workers=VEO_PARALLEL_WORKERS) as executor:
         futures = {executor.submit(_generate_one, item): item for item in work_items}
         for future in as_completed(futures):
@@ -437,13 +594,16 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
             scene_idx, aspect = item[0]['scene_index'], item[1]
             try:
                 _, _, clip_rel = future.result()
-                # Find the scene and update its clips
                 for s in scenes:
                     if s['scene_index'] == scene_idx:
                         s['clips'][aspect] = clip_rel
                         break
             except Exception as e:
+                errors.append(f"Clip scene {scene_idx} ({aspect}): {e}")
                 print(f"    [ERROR] Scene {scene_idx} ({aspect}): {e}")
+
+    if errors:
+        raise RuntimeError(f"Failed to generate {len(errors)} clip(s):\n" + "\n".join(errors))
 
     return scenes
 
@@ -455,7 +615,7 @@ def assemble_chapter_video(
     chapter: dict,
     chapter_dir: Path,
     aspect: str,
-) -> Path | None:
+) -> Path:
     """
     Assemble scene clips + audio into a chapter-level MP4.
 
@@ -468,8 +628,7 @@ def assemble_chapter_video(
 
     audio_path = find_chapter_audio(chapter)
     if not audio_path:
-        print(f"  [SKIP] No audio file for chapter {chapter['index']}")
-        return None
+        raise FileNotFoundError(f"No audio file for chapter {chapter['index']}. Run audiobook:audio first.")
 
     clips_dir = chapter_dir / "clips"
 
@@ -477,12 +636,10 @@ def assemble_chapter_video(
     for scene in scenes:
         clip_rel = scene.get('clips', {}).get(aspect)
         if not clip_rel:
-            print(f"  [SKIP] No clip for scene {scene['scene_index']} ({aspect})")
-            return None
+            raise FileNotFoundError(f"No clip for scene {scene['scene_index']} ({aspect})")
         clip_path = chapter_dir / clip_rel
         if not clip_path.exists():
-            print(f"  [SKIP] Clip file missing: {clip_path}")
-            return None
+            raise FileNotFoundError(f"Clip file missing: {clip_path}")
         clip_entries.append((clip_path, scene['duration_ms']))
 
     print(f"  Assembling {aspect} video ({len(clip_entries)} scenes)...")
@@ -541,8 +698,7 @@ def assemble_chapter_video(
 
         result = subprocess.run(cmd, capture_output=True, text=True)
         if result.returncode != 0:
-            print(f"    [ERROR] ffmpeg adjust failed for scene {i+1}: {result.stderr[:200]}")
-            return None
+            raise RuntimeError(f"ffmpeg adjust failed for scene {i+1}: {result.stderr[:300]}")
 
         temp_clips.append(adjusted_path)
         concat_lines.append(f"file '{adjusted_path.as_posix()}'")
@@ -594,11 +750,10 @@ def assemble_chapter_video(
         ]
         result = subprocess.run(cmd_fallback, capture_output=True, text=True)
         if result.returncode != 0:
-            print(f"    [ERROR] ffmpeg fallback failed: {result.stderr[:300]}")
             for tc in temp_clips:
                 tc.unlink(missing_ok=True)
             concat_file.unlink(missing_ok=True)
-            return None
+            raise RuntimeError(f"ffmpeg assembly failed (both mix and fallback): {result.stderr[:300]}")
 
     for tc in temp_clips:
         tc.unlink(missing_ok=True)
@@ -788,14 +943,17 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
         return
 
     if not no_keyframes:
-        scenes = generate_keyframes(scenes, chapter_dir)
+        scenes = generate_keyframes(scenes, chapter_dir, chapter_text=text)
+        save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms)
+
+        scenes = check_and_fix_keyframes(scenes, chapter_dir, chapter_text=text)
         save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms)
 
         if keyframes_only:
             print("\n--keyframes-only: stopping after keyframe generation.")
             return
 
-    scenes = animate_scenes(scenes, chapter_dir, use_keyframes=not no_keyframes)
+    scenes = animate_scenes(scenes, chapter_dir, use_keyframes=not no_keyframes, chapter_text=text)
     save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms)
 
     print("\nStep E: Assembling final videos...")
