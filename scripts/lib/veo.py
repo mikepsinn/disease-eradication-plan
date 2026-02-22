@@ -88,6 +88,7 @@ def generate_video(
     output_path: Path,
     aspect_ratio: str = "16:9",
     duration_seconds: int = 8,
+    negative_prompt: str | None = None,
 ) -> Path:
     """
     Generate an animated video clip using Veo 3.1 from a keyframe image.
@@ -98,6 +99,7 @@ def generate_video(
         output_path: Where to save the generated MP4 clip.
         aspect_ratio: "16:9" or "9:16".
         duration_seconds: Clip duration (5-8 seconds).
+        negative_prompt: What to exclude from the video (e.g., "narration, dialogue").
 
     Returns:
         Path to the saved MP4 clip.
@@ -107,6 +109,14 @@ def generate_video(
 
     print(f"  Generating video ({aspect_ratio}, {duration_seconds}s): {prompt[:80]}...")
 
+    config_kwargs: dict = {
+        "aspect_ratio": aspect_ratio,
+        "duration_seconds": duration_seconds,
+        "number_of_videos": 1,
+    }
+    if negative_prompt:
+        config_kwargs["negative_prompt"] = negative_prompt
+
     last_error = None
     for attempt in range(1, MAX_RETRIES + 1):
         start_time = time.time()
@@ -115,11 +125,7 @@ def generate_video(
                 model=VEO_MODEL_ID,
                 prompt=prompt,
                 image=types.Image.from_file(location=str(first_frame_path)),
-                config=types.GenerateVideosConfig(
-                    aspect_ratio=aspect_ratio,
-                    duration_seconds=duration_seconds,
-                    number_of_videos=1,
-                ),
+                config=types.GenerateVideosConfig(**config_kwargs),
             )
 
             # Poll until complete

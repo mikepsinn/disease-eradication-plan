@@ -22,6 +22,7 @@ import json
 import re
 import argparse
 import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 if sys.platform == 'win32' and isinstance(sys.stdout, io.TextIOWrapper):
@@ -44,12 +45,47 @@ SCENES_DIR = VIDEO_DIR / "scenes"
 TEXT_DIR = AUDIOBOOK_DIR / "text"
 CHAPTER_AUDIO_DIR = AUDIOBOOK_DIR / "chapters"
 MANIFEST_PATH = AUDIOBOOK_DIR / "manifest.json"
-DEFAULT_CONFIG = "_quarto-manual-paperback.yml"
+DEFAULT_CONFIG_NAME = "manual-paperback"
 
 ASPECT_RATIOS = ["16:9", "9:16"]
 
 # Must match BW_ACADEMIC_STYLE from scripts/lib/image-prompts.ts
 IMAGE_STYLE = "Use a black and white scientific illustration style."
+
+# Suppress Veo-generated speech so we can overlay our own TTS narration.
+# Veo ambient audio (music + SFX) is kept and mixed at reduced volume.
+VEO_NEGATIVE_PROMPT = "narration, dialogue, voice, speech, talking, spoken words"
+VEO_AMBIENT_VOLUME = 0.15  # Veo ambient audio level (0-1) when mixed with TTS
+VEO_PARALLEL_WORKERS = 8   # Concurrent Veo generation requests
+
+
+def resolve_config_path(name_or_path: str) -> Path:
+    """
+    Resolve a config name or path to an actual file.
+    Accepts: 'manual-paperback', '_quarto-manual-paperback.yml', or a full path.
+    """
+    # Already a full path or filename with _quarto- prefix
+    candidate = PROJECT_ROOT / name_or_path
+    if candidate.exists():
+        return candidate
+
+    # Try as a config name -> _quarto-{name}.yml
+    candidate = PROJECT_ROOT / f"_quarto-{name_or_path}.yml"
+    if candidate.exists():
+        return candidate
+
+    raise FileNotFoundError(
+        f"Config not found: tried '{name_or_path}' and '_quarto-{name_or_path}.yml' in {PROJECT_ROOT}"
+    )
+
+
+def get_available_configs() -> list[str]:
+    """Discover available config names from _quarto-*.yml files."""
+    configs = []
+    for yml in PROJECT_ROOT.glob("_quarto-*.yml"):
+        name = yml.stem.replace("_quarto-", "")
+        configs.append(name)
+    return sorted(configs)
 
 
 # --- Quarto Config Parsing ---
@@ -221,15 +257,16 @@ def parse_json_array(response_text: str) -> list[dict]:
 
 # --- Step A: Scene Segmentation ---
 
-SCENE_SEGMENTATION_PROMPT = """Split this audiobook narration into visual scenes. Each scene is a stretch of narration that gets one visual on screen.
+SCENE_SEGMENTATION_PROMPT = """Split this audiobook narration into visual scenes. Each scene is a stretch of narration that gets one visual on screen. Each scene becomes an 8-second video clip, so keep scenes short.
 
 Rules:
-- 200-800 characters per scene
+- 80-150 characters per scene (roughly 6-10 seconds of narration)
 - char_start/char_end are exact character offsets (no gaps, no overlaps)
 - narration_text is the exact original text for that span
+- Break at natural sentence or phrase boundaries
 
 Return ONLY a JSON array:
-[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "char_start": 0, "char_end": 245}}]
+[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "char_start": 0, "char_end": 120}}]
 
 Text:
 ---
@@ -306,14 +343,19 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
 # --- Step D: Veo Animation ---
 
 def animate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
-    """Animate each keyframe using Veo 3.1."""
+    """Animate each keyframe using Veo 3.1 with parallel requests."""
     print("Step D: Animating keyframes with Veo 3.1...")
     clips_dir = chapter_dir / "clips"
     clips_dir.mkdir(parents=True, exist_ok=True)
     keyframes_dir = chapter_dir / "keyframes"
 
+    # Initialize clips dict for all scenes
     for scene in scenes:
         scene['clips'] = {}
+
+    # Build work items, skipping cached/missing
+    work_items = []
+    for scene in scenes:
         for aspect in ASPECT_RATIOS:
             aspect_tag = aspect.replace(":", "x")
             clip_filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.mp4"
@@ -330,14 +372,40 @@ def animate_keyframes(scenes: list[dict], chapter_dir: Path) -> list[dict]:
                 print(f"    [SKIP] No keyframe for {clip_filename}")
                 continue
 
-            generate_video(
-                prompt=scene['narration_text'],
-                first_frame_path=keyframe_path,
-                output_path=clip_path,
-                aspect_ratio=aspect,
-                duration_seconds=8,
-            )
-            scene['clips'][aspect] = f"clips/{clip_filename}"
+            work_items.append((scene, aspect, keyframe_path, clip_path, clip_filename))
+
+    if not work_items:
+        print("    All clips cached.")
+        return scenes
+
+    print(f"    Generating {len(work_items)} clips ({VEO_PARALLEL_WORKERS} parallel workers)...")
+
+    def _generate_one(item):
+        scene, aspect, keyframe_path, clip_path, clip_filename = item
+        generate_video(
+            prompt=scene['narration_text'],
+            first_frame_path=keyframe_path,
+            output_path=clip_path,
+            aspect_ratio=aspect,
+            duration_seconds=8,
+            negative_prompt=VEO_NEGATIVE_PROMPT,
+        )
+        return scene['scene_index'], aspect, f"clips/{clip_filename}"
+
+    with ThreadPoolExecutor(max_workers=VEO_PARALLEL_WORKERS) as executor:
+        futures = {executor.submit(_generate_one, item): item for item in work_items}
+        for future in as_completed(futures):
+            item = futures[future]
+            scene_idx, aspect = item[0]['scene_index'], item[1]
+            try:
+                _, _, clip_rel = future.result()
+                # Find the scene and update its clips
+                for s in scenes:
+                    if s['scene_index'] == scene_idx:
+                        s['clips'][aspect] = clip_rel
+                        break
+            except Exception as e:
+                print(f"    [ERROR] Scene {scene_idx} ({aspect}): {e}")
 
     return scenes
 
@@ -350,7 +418,12 @@ def assemble_chapter_video(
     chapter_dir: Path,
     aspect: str,
 ) -> Path | None:
-    """Assemble scene clips + audio into a chapter-level MP4."""
+    """
+    Assemble scene clips + audio into a chapter-level MP4.
+
+    Keeps Veo ambient audio (music/SFX) at reduced volume and mixes
+    with TTS narration at full volume.
+    """
     aspect_tag = aspect.replace(":", "x")
     safe_title = re.sub(r'[^\w\s-]', '', chapter['title']).strip().replace(' ', '-')[:50]
     output_path = VIDEO_DIR / f"{chapter['index']:03d}-{safe_title}-{aspect_tag}.mp4"
@@ -376,42 +449,88 @@ def assemble_chapter_video(
 
     print(f"  Assembling {aspect} video ({len(clip_entries)} scenes)...")
 
+    # Step 1: Speed-adjust each clip to match its scene duration (keep audio)
     temp_clips = []
     concat_lines = []
 
     for i, (clip_path, target_ms) in enumerate(clip_entries):
         target_seconds = max(1.0, target_ms / 1000.0)
 
-        extended_path = clips_dir / f"_extended-{i:02d}-{aspect_tag}.mp4"
-        cmd = [
-            "ffmpeg", "-y",
-            "-stream_loop", "-1",
-            "-i", str(clip_path),
-            "-t", f"{target_seconds:.3f}",
-            "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-            "-an",
-            "-movflags", "+faststart",
-            str(extended_path),
+        # Get actual clip duration via ffprobe
+        probe_cmd = [
+            "ffprobe", "-v", "error",
+            "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1",
+            str(clip_path),
         ]
+        probe_result = subprocess.run(probe_cmd, capture_output=True, text=True)
+        clip_duration = float(probe_result.stdout.strip()) if probe_result.returncode == 0 else 8.0
+
+        # Calculate speed adjustment
+        time_scale = target_seconds / clip_duration
+        speed_factor = 1.0 / time_scale  # atempo: >1 = faster, <1 = slower
+
+        adjusted_path = clips_dir / f"_adjusted-{i:02d}-{aspect_tag}.mp4"
+
+        if abs(time_scale - 1.0) < 0.02:
+            # Close enough, just trim/pad without speed change
+            cmd = [
+                "ffmpeg", "-y",
+                "-i", str(clip_path),
+                "-t", f"{target_seconds:.3f}",
+                "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+                "-c:a", "aac", "-b:a", "128k",
+                "-movflags", "+faststart",
+                str(adjusted_path),
+            ]
+        else:
+            # Speed-adjust video and audio
+            # Clamp atempo to valid range (0.5 - 100.0)
+            atempo = max(0.5, min(100.0, speed_factor))
+            print(f"    Scene {i+1}: {clip_duration:.1f}s -> {target_seconds:.1f}s ({time_scale:.2f}x)")
+            cmd = [
+                "ffmpeg", "-y",
+                "-i", str(clip_path),
+                "-filter_complex",
+                f"[0:v]setpts=PTS*{time_scale:.4f}[v];[0:a]atempo={atempo:.4f}[a]",
+                "-map", "[v]", "-map", "[a]",
+                "-t", f"{target_seconds:.3f}",
+                "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+                "-c:a", "aac", "-b:a", "128k",
+                "-movflags", "+faststart",
+                str(adjusted_path),
+            ]
+
         result = subprocess.run(cmd, capture_output=True, text=True)
         if result.returncode != 0:
-            print(f"    [ERROR] ffmpeg loop failed for scene {i+1}: {result.stderr[:200]}")
+            print(f"    [ERROR] ffmpeg adjust failed for scene {i+1}: {result.stderr[:200]}")
             return None
 
-        temp_clips.append(extended_path)
-        concat_lines.append(f"file '{extended_path.as_posix()}'")
+        temp_clips.append(adjusted_path)
+        concat_lines.append(f"file '{adjusted_path.as_posix()}'")
 
+    # Step 2: Concat all adjusted clips (video + Veo ambient audio)
     concat_file = clips_dir / f"_concat-{aspect_tag}.txt"
     concat_file.write_text('\n'.join(concat_lines), encoding='utf-8')
+
+    # Step 3: Mix Veo ambient audio (reduced) with TTS narration (full volume)
+    # [0:a] = Veo ambient (music/SFX), [1:a] = TTS narration
+    vol = VEO_AMBIENT_VOLUME
+    filter_complex = (
+        f"[0:a]volume={vol}[veo];"
+        f"[1:a]aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=mono[tts];"
+        f"[veo][tts]amix=inputs=2:duration=longest:dropout_transition=2[mixed]"
+    )
 
     cmd = [
         "ffmpeg", "-y",
         "-f", "concat", "-safe", "0",
         "-i", str(concat_file),
         "-i", str(audio_path),
+        "-filter_complex", filter_complex,
+        "-map", "0:v", "-map", "[mixed]",
         "-c:v", "libx264", "-preset", "medium", "-crf", "23",
         "-c:a", "aac", "-b:a", "192k",
-        "-map", "0:v", "-map", "1:a",
         "-shortest",
         "-movflags", "+faststart",
         "-metadata", f"title={chapter['title']}",
@@ -419,8 +538,29 @@ def assemble_chapter_video(
     ]
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"    [ERROR] ffmpeg concat failed: {result.stderr[:300]}")
-        return None
+        print(f"    [ERROR] ffmpeg mix failed: {result.stderr[:300]}")
+        # Fallback: try without Veo audio mixing (just TTS)
+        print(f"    [FALLBACK] Trying TTS-only audio...")
+        cmd_fallback = [
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0",
+            "-i", str(concat_file),
+            "-i", str(audio_path),
+            "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+            "-c:a", "aac", "-b:a", "192k",
+            "-map", "0:v", "-map", "1:a",
+            "-shortest",
+            "-movflags", "+faststart",
+            "-metadata", f"title={chapter['title']}",
+            str(output_path),
+        ]
+        result = subprocess.run(cmd_fallback, capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"    [ERROR] ffmpeg fallback failed: {result.stderr[:300]}")
+            for tc in temp_clips:
+                tc.unlink(missing_ok=True)
+            concat_file.unlink(missing_ok=True)
+            return None
 
     for tc in temp_clips:
         tc.unlink(missing_ok=True)
@@ -537,7 +677,7 @@ def list_chapters(chapters: list[dict]):
 
 # --- Main Pipeline ---
 
-def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool = False):
+def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None):
     """Run the video generation pipeline for a single chapter."""
     print(f"\n{'=' * 60}")
     print(f"Chapter {chapter['index']}: {chapter['title']}")
@@ -571,11 +711,17 @@ def run_pipeline(chapter: dict, scenes_only: bool = False, keyframes_only: bool 
 
     # Check for existing scene manifest
     existing = load_scene_manifest(chapter_dir)
-    if existing and existing.get('scenes'):
+    if existing and existing.get('scenes') and not force:
         print(f"  Found existing scene manifest ({len(existing['scenes'])} scenes)")
         scenes = existing['scenes']
     else:
+        if force and existing:
+            print(f"  --force: re-segmenting (was {len(existing.get('scenes', []))} scenes)")
         scenes = segment_scenes(text)
+
+    if max_scenes and len(scenes) > max_scenes:
+        print(f"  --max-scenes {max_scenes}: truncating from {len(scenes)} scenes")
+        scenes = scenes[:max_scenes]
 
     scenes = estimate_timestamps(scenes, total_chars, total_duration_ms)
     save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms)
@@ -612,10 +758,12 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate audiobook video from Quarto book chapters using LLM scenes + Veo animation"
     )
+    available = get_available_configs()
     parser.add_argument(
-        "--config",
-        default=DEFAULT_CONFIG,
-        help=f"Quarto book YAML config (default: {DEFAULT_CONFIG})"
+        "config",
+        nargs="?",
+        default=DEFAULT_CONFIG_NAME,
+        help=f"Config name or YAML file (default: {DEFAULT_CONFIG_NAME}). Available: {', '.join(available)}"
     )
     parser.add_argument(
         "--start", "-s",
@@ -642,13 +790,24 @@ def main():
         action="store_true",
         help="List all chapters with video generation status"
     )
+    parser.add_argument(
+        "--force", "-f",
+        action="store_true",
+        help="Force re-segmentation even if scene manifest exists"
+    )
+    parser.add_argument(
+        "--max-scenes",
+        type=int,
+        help="Limit number of scenes to process (for quick testing)"
+    )
     args = parser.parse_args()
 
-    config_path = PROJECT_ROOT / args.config
-    if not config_path.exists():
-        parser.error(f"Config not found: {config_path}")
+    try:
+        config_path = resolve_config_path(args.config)
+    except FileNotFoundError as e:
+        parser.error(str(e))
 
-    print(f"Config: {args.config}")
+    print(f"Config: {config_path.name}")
     chapters = extract_chapters_from_config(config_path)
     print(f"Found {len(chapters)} chapters")
 
@@ -673,6 +832,8 @@ def main():
             chapter=chapter,
             scenes_only=args.scenes_only,
             keyframes_only=args.keyframes_only,
+            force=args.force,
+            max_scenes=args.max_scenes,
         )
 
     print(f"\n{'=' * 60}")
