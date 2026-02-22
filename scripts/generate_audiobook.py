@@ -34,15 +34,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE
 from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
-    PROJECT_ROOT, AUDIOBOOK_DIR, TEXT_DIR, CHAPTER_AUDIO_DIR, MANIFEST_PATH,
-    ALIGNMENT_DIR, SUBTITLES_DIR,
+    PROJECT_ROOT, AUDIOBOOK_DIR, CHAPTER_AUDIO_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
-    find_prepared_text,
+    find_prepared_text, AudiobookPaths, config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
-
-# Configuration
-OUTPUT_DIR = AUDIOBOOK_DIR
 
 # Voice for narration (Kore + dinner-party energy, winner from A/B testing)
 NARRATOR_VOICE = DEFAULT_VOICE
@@ -98,15 +94,17 @@ def format_duration(ms: int) -> str:
     return f"{minutes}:{seconds:02d}"
 
 
-def load_book_config() -> dict:
-    """Load and parse the default Quarto book config."""
-    return load_quarto_config(DEFAULT_CONFIG_PATH)
+def load_book_config(config_path: Path = DEFAULT_CONFIG_PATH) -> dict:
+    """Load and parse a Quarto book config."""
+    return load_quarto_config(config_path)
 
 
 def generate_chapter_audio(
     chapter: dict,
     voice: str = NARRATOR_VOICE,
     force: bool = False,
+    paths: AudiobookPaths | None = None,
+    config_path: Path = DEFAULT_CONFIG_PATH,
 ) -> Path | None:
     """
     Generate audio for a single chapter.
@@ -117,10 +115,13 @@ def generate_chapter_audio(
         chapter: Chapter dict with path, title, part, index
         voice: TTS voice name
         force: Regenerate even if file exists
+        paths: Config-specific output paths
+        config_path: Quarto config path (passed to text subprocess)
 
     Returns:
         Path to generated audio file, or None on error
     """
+    chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
     qmd_path = PROJECT_ROOT / chapter['path']
 
     if not qmd_path.exists():
@@ -132,7 +133,7 @@ def generate_chapter_audio(
 
     # Create output filename
     output_filename = f"{chapter['index']:03d}-{safe_filename(title)}.wav"
-    output_path = CHAPTER_AUDIO_DIR / output_filename
+    output_path = chapters_dir / output_filename
 
     # Skip if already exists (unless force)
     if output_path.exists() and not force:
@@ -143,7 +144,8 @@ def generate_chapter_audio(
     print(f"  Preparing text...")
     text_script = Path(__file__).parent / "generate_audiobook_text.py"
     result = subprocess.run(
-        [sys.executable, "-u", str(text_script), "--chapter", str(chapter['index']), "--force"],
+        [sys.executable, "-u", str(text_script), "--chapter", str(chapter['index']), "--force",
+         "--config", str(config_path)],
         cwd=str(PROJECT_ROOT),
     )
     if result.returncode != 0:
@@ -151,7 +153,7 @@ def generate_chapter_audio(
         return None
 
     # Find text chunk files (produced by generate_audiobook_text.py)
-    text_file = find_prepared_text({'index': chapter['index'], 'title': title})
+    text_file = find_prepared_text({'index': chapter['index'], 'title': title}, paths=paths)
     if not text_file:
         print(f"  [SKIP] No text file found after preparation")
         return None
@@ -164,8 +166,8 @@ def generate_chapter_audio(
         chunk_files = [text_file]
 
     print(f"  Generating audio for: {title} ({len(chunk_files)} text chunks)")
-    CHAPTER_AUDIO_DIR.mkdir(parents=True, exist_ok=True)
-    audio_chunk_dir = CHAPTER_AUDIO_DIR / "audio-chunks" / output_path.stem
+    chapters_dir.mkdir(parents=True, exist_ok=True)
+    audio_chunk_dir = chapters_dir / "audio-chunks" / output_path.stem
     audio_chunk_dir.mkdir(parents=True, exist_ok=True)
 
     for i, chunk_file in enumerate(chunk_files):
@@ -288,8 +290,9 @@ def combine_chapter_audio(
     return mp3_path, timestamps
 
 
-def list_chapters(chapters: list[dict]):
+def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
     """Print a formatted list of all chapters."""
+    chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
     print("\nBook Chapters:")
     print("=" * 80)
 
@@ -309,7 +312,7 @@ def list_chapters(chapters: list[dict]):
         title = title or ch['path']
 
         # Check if audio exists
-        audio_file = CHAPTER_AUDIO_DIR / f"{ch['index']:03d}-{safe_filename(title)}.wav"
+        audio_file = chapters_dir / f"{ch['index']:03d}-{safe_filename(title)}.wav"
         status = "[x]" if audio_file.exists() else "[ ]"
 
         print(f"  {status} {ch['index']:3d}. {title}")
@@ -318,11 +321,12 @@ def list_chapters(chapters: list[dict]):
     print(f"Total: {len(chapters)} chapters")
 
 
-def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int):
-    """Update audiobook/manifest.json with duration and timing data."""
+def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int, paths: AudiobookPaths | None = None):
+    """Update manifest.json with duration and timing data."""
     for ts in timestamps:
         update_chapter_fields(
             ts['index'],
+            paths=paths,
             duration_ms=ts['duration_ms'],
             duration_formatted=ts['duration_formatted'],
             audio_start_ms=ts['start_ms'],
@@ -330,11 +334,12 @@ def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int):
             audio_file=ts['file'],
         )
 
-    manifest = read_manifest()
+    manifest = read_manifest(paths)
     manifest['total_duration_ms'] = total_duration_ms
     manifest['total_duration_formatted'] = format_duration(total_duration_ms)
-    write_manifest(manifest)
-    print(f"  [OK] Updated manifest: {MANIFEST_PATH}")
+    write_manifest(manifest, paths)
+    manifest_path = paths.manifest if paths else AUDIOBOOK_DIR / "manifest.json"
+    print(f"  [OK] Updated manifest: {manifest_path.relative_to(PROJECT_ROOT)}")
 
 
 def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict):
@@ -471,20 +476,24 @@ def export_m4b(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: di
     print(f"  [OK] M4B: {m4b_path} ({m4b_size / 1024 / 1024:.1f} MB)")
 
 
-def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = False):
+def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = False, paths: AudiobookPaths | None = None):
     """Run forced alignment and generate subtitles for a chapter.
 
     Gracefully skips if stable-ts is not installed.
     """
+    from lib.audiobook_common import ALIGNMENT_DIR, SUBTITLES_DIR
+    alignment_dir = paths.alignment if paths else ALIGNMENT_DIR
+    subtitles_dir = paths.subtitles if paths else SUBTITLES_DIR
+
     safe = safe_filename(title)
-    alignment_path = ALIGNMENT_DIR / f"{chapter['index']:03d}-{safe}.alignment.json"
-    vtt_path = SUBTITLES_DIR / f"{chapter['index']:03d}-{safe}.vtt"
+    alignment_path = alignment_dir / f"{chapter['index']:03d}-{safe}.alignment.json"
+    vtt_path = subtitles_dir / f"{chapter['index']:03d}-{safe}.vtt"
 
     if alignment_path.exists() and not force:
         print(f"  [SKIP] Alignment exists: {alignment_path.name}")
         return
 
-    text_file = find_prepared_text({'index': chapter['index'], 'title': title})
+    text_file = find_prepared_text({'index': chapter['index'], 'title': title}, paths=paths)
     if not text_file:
         print(f"  [SKIP] No text file for alignment")
         return
@@ -495,11 +504,14 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
         print(f"  [SKIP] {e}")
         return
 
+    alignment_dir.mkdir(parents=True, exist_ok=True)
+    subtitles_dir.mkdir(parents=True, exist_ok=True)
     words = align_chapter(audio_path, text_file, alignment_path, chapter=chapter)
     generate_vtt(words, vtt_path)
 
     update_chapter_fields(
         chapter['index'],
+        paths=paths,
         alignment_file=str(alignment_path.relative_to(PROJECT_ROOT)),
         subtitle_file=str(vtt_path.relative_to(PROJECT_ROOT)),
     )
@@ -508,6 +520,11 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
 def main():
     parser = argparse.ArgumentParser(
         description="Generate audiobook from Quarto book chapters"
+    )
+    parser.add_argument(
+        "--config", "-cfg",
+        default=str(DEFAULT_CONFIG_PATH),
+        help=f"Quarto config YAML (default: {DEFAULT_CONFIG_PATH.name})"
     )
     parser.add_argument(
         "--chapter", "-c",
@@ -552,15 +569,23 @@ def main():
     )
     args = parser.parse_args()
 
+    # Resolve config and derive paths
+    config_path = Path(args.config)
+    if not config_path.is_absolute():
+        config_path = PROJECT_ROOT / config_path
+
+    cfg_name = config_name_from_path(config_path)
+    paths = get_paths(cfg_name)
+
     # Load book config
-    print("Loading book configuration...")
-    config = load_book_config()
+    print(f"Loading book configuration: {config_path.name} (output: audiobook/{cfg_name}/)")
+    config = load_book_config(config_path)
     chapters = extract_chapters(config)
     print(f"Found {len(chapters)} chapters")
 
     # List mode
     if args.list:
-        list_chapters(chapters)
+        list_chapters(chapters, paths=paths)
         return
 
     # Filter chapters if specified
@@ -576,7 +601,7 @@ def main():
 
     print(f"\nGenerating audio for {len(chapters)} chapter(s)...")
     print(f"Voice: {args.voice}")
-    print(f"Output: {OUTPUT_DIR}")
+    print(f"Output: {paths.root.relative_to(PROJECT_ROOT)}")
     print()
 
     # Generate chapter audio
@@ -587,13 +612,13 @@ def main():
 
         print(f"\n[{chapter['index']}/{len(chapters)}] {title}")
 
-        audio_path = generate_chapter_audio(chapter, voice=args.voice, force=args.force)
+        audio_path = generate_chapter_audio(chapter, voice=args.voice, force=args.force, paths=paths, config_path=config_path)
         if audio_path:
             generated_files.append(audio_path)
 
             # Run forced alignment + subtitle generation
             if not args.no_align:
-                _run_alignment(chapter, audio_path, title, force=args.force)
+                _run_alignment(chapter, audio_path, title, force=args.force, paths=paths)
 
     print(f"\n{'=' * 60}")
     print(f"Generated {len(generated_files)} audio files")
@@ -601,20 +626,20 @@ def main():
     # Combine into single audiobook
     if not args.no_combine and len(generated_files) > 1:
         # Get all chapter files in order (including previously generated)
-        all_chapter_files = sorted(CHAPTER_AUDIO_DIR.glob("*.wav"))
+        all_chapter_files = sorted(paths.chapters.glob("*.wav"))
 
         if all_chapter_files:
             # Reload full config for metadata matching
-            full_config = load_book_config()
+            full_config = load_book_config(config_path)
             all_chapters = extract_chapters(full_config)
             book_meta = extract_book_metadata(full_config)
 
-            combined_path = OUTPUT_DIR / "How-to-End-War-and-Disease-Audiobook"
+            combined_path = paths.root / f"{safe_filename(book_meta['title'], max_len=80)}-Audiobook"
             mp3_path, timestamps = combine_chapter_audio(all_chapter_files, all_chapters, combined_path)
 
             total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
 
-            update_manifest(timestamps, total_duration_ms)
+            update_manifest(timestamps, total_duration_ms, paths=paths)
             tag_mp3(mp3_path, timestamps, book_meta)
             export_m4b(mp3_path, timestamps, book_meta)
 

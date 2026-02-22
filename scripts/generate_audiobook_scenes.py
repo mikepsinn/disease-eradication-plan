@@ -33,10 +33,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
-    PROJECT_ROOT, AUDIOBOOK_DIR, ALIGNMENT_DIR, SCENES_DIR,
+    PROJECT_ROOT, ALIGNMENT_DIR, SCENES_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd,
     safe_filename, find_prepared_text, find_chapter_audio,
     resolve_chapter_titles, filter_chapters,
+    AudiobookPaths, config_name_from_path, get_paths,
 )
 from lib.scenes import (
     segment_scenes, estimate_timestamps, assign_timestamps_from_alignment,
@@ -44,41 +45,43 @@ from lib.scenes import (
 )
 
 
-def get_chapter_dir(chapter: dict) -> Path:
+def get_chapter_dir(chapter: dict, paths: AudiobookPaths | None = None) -> Path:
     """Get the scene directory for a chapter."""
-    return SCENES_DIR / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}"
+    scenes_dir = paths.scenes if paths else SCENES_DIR
+    return scenes_dir / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}"
 
 
-def find_alignment(chapter: dict) -> Path | None:
+def find_alignment(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find alignment JSON for a chapter."""
+    alignment_dir = paths.alignment if paths else ALIGNMENT_DIR
     title = chapter.get('title') or ''
     safe = safe_filename(title)
-    alignment_file = ALIGNMENT_DIR / f"{chapter['index']:03d}-{safe}.alignment.json"
+    alignment_file = alignment_dir / f"{chapter['index']:03d}-{safe}.alignment.json"
     if alignment_file.exists():
         return alignment_file
-    for f in ALIGNMENT_DIR.glob(f"{chapter['index']:03d}-*.alignment.json"):
+    for f in alignment_dir.glob(f"{chapter['index']:03d}-*.alignment.json"):
         return f
     return None
 
 
-def process_chapter(chapter: dict, force: bool = False):
+def process_chapter(chapter: dict, force: bool = False, paths: AudiobookPaths | None = None):
     """Run scene segmentation for a single chapter."""
     print(f"\n{'=' * 60}")
     print(f"Chapter {chapter['index']}: {chapter['title']}")
     print(f"{'=' * 60}")
 
     # Find required files
-    text_file = find_prepared_text(chapter)
+    text_file = find_prepared_text(chapter, paths=paths)
     if not text_file:
         print(f"  [SKIP] No prepared text. Run generate_audiobook_text.py first.")
         return
 
-    audio_path = find_chapter_audio(chapter)
+    audio_path = find_chapter_audio(chapter, paths=paths)
     if not audio_path:
         print(f"  [SKIP] No audio file. Run generate_audiobook.py first.")
         return
 
-    chapter_dir = get_chapter_dir(chapter)
+    chapter_dir = get_chapter_dir(chapter, paths=paths)
 
     # Check existing manifest
     existing = load_scene_manifest(chapter_dir)
@@ -104,7 +107,7 @@ def process_chapter(chapter: dict, force: bool = False):
     scenes = segment_scenes(text)
 
     # Assign timestamps: prefer alignment, fall back to interpolation
-    alignment_path = find_alignment(chapter)
+    alignment_path = find_alignment(chapter, paths=paths)
     if alignment_path:
         print(f"  Using alignment: {alignment_path.name}")
         from lib.alignment import load_alignment

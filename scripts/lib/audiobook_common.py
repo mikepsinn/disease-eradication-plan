@@ -1,11 +1,13 @@
 """Shared constants and functions for the audiobook pipeline.
 
-Used by generate_audiobook_text.py, generate_audiobook.py, and generate_audiobook_video.py.
+Used by generate_audiobook_text.py, generate_audiobook.py, generate_audiobook_scenes.py,
+and generate_audiobook_video.py.
 """
 import re
+from dataclasses import dataclass
 from pathlib import Path
 
-# --- Path constants ---
+# --- Path constants (legacy, kept for backward compat) ---
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 AUDIOBOOK_DIR = PROJECT_ROOT / "audiobook"
 TEXT_DIR = AUDIOBOOK_DIR / "text"
@@ -17,6 +19,77 @@ SCENES_DIR = VIDEO_DIR / "scenes"
 MANIFEST_PATH = AUDIOBOOK_DIR / "manifest.json"
 DEFAULT_CONFIG_PATH = PROJECT_ROOT / "_quarto-manual-paperback.yml"
 VARIABLES_YML = PROJECT_ROOT / "_variables.yml"
+
+
+# --- Config-aware path management ---
+
+@dataclass(frozen=True)
+class AudiobookPaths:
+    """All output paths for a single audiobook config."""
+    root: Path
+    text: Path
+    chapters: Path
+    alignment: Path
+    subtitles: Path
+    video: Path
+    scenes: Path
+    manifest: Path
+
+
+def get_paths(config_name: str) -> AudiobookPaths:
+    """Create an AudiobookPaths for the given config name.
+
+    Output structure: audiobook/{config_name}/text/, chapters/, etc.
+    """
+    root = AUDIOBOOK_DIR / config_name
+    video = root / "video"
+    return AudiobookPaths(
+        root=root,
+        text=root / "text",
+        chapters=root / "chapters",
+        alignment=root / "alignment",
+        subtitles=root / "subtitles",
+        video=video,
+        scenes=video / "scenes",
+        manifest=root / "manifest.json",
+    )
+
+
+def config_name_from_path(config_path: Path) -> str:
+    """Derive a short config name from a Quarto config path.
+
+    _quarto-manual-paperback.yml -> manual-paperback
+    """
+    stem = config_path.stem  # e.g. "_quarto-manual-paperback"
+    name = re.sub(r'^_quarto-', '', stem)
+    return name
+
+
+def resolve_config_path(name_or_path: str) -> Path:
+    """Resolve a config name or path to an actual file.
+
+    Accepts: 'manual-paperback', '_quarto-manual-paperback.yml', or a full path.
+    """
+    candidate = PROJECT_ROOT / name_or_path
+    if candidate.exists():
+        return candidate
+
+    candidate = PROJECT_ROOT / f"_quarto-{name_or_path}.yml"
+    if candidate.exists():
+        return candidate
+
+    raise FileNotFoundError(
+        f"Config not found: tried '{name_or_path}' and '_quarto-{name_or_path}.yml' in {PROJECT_ROOT}"
+    )
+
+
+def get_available_configs() -> list[str]:
+    """Discover available config names from _quarto-*.yml files."""
+    configs = []
+    for yml in PROJECT_ROOT.glob("_quarto-*.yml"):
+        name = yml.stem.replace("_quarto-", "")
+        configs.append(name)
+    return sorted(configs)
 
 
 def safe_filename(title: str, max_len: int = 50) -> str:
@@ -92,27 +165,29 @@ def extract_chapters(config: dict) -> list[dict]:
     return chapters
 
 
-def find_prepared_text(chapter: dict) -> Path | None:
+def find_prepared_text(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find the prepared audiobook text file for a chapter."""
+    text_dir = paths.text if paths else TEXT_DIR
     title = chapter.get('title') or ''
     safe = safe_filename(title)
-    text_file = TEXT_DIR / f"{chapter['index']:03d}-{safe}.prepared.txt"
+    text_file = text_dir / f"{chapter['index']:03d}-{safe}.prepared.txt"
     if text_file.exists():
         return text_file
     # Fallback: match by chapter index prefix
-    for f in TEXT_DIR.glob(f"{chapter['index']:03d}-*.prepared.txt"):
+    for f in text_dir.glob(f"{chapter['index']:03d}-*.prepared.txt"):
         return f
     return None
 
 
-def find_chapter_audio(chapter: dict) -> Path | None:
+def find_chapter_audio(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find the WAV audio file for a chapter."""
+    chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
     title = chapter.get('title') or ''
     safe = safe_filename(title)
-    audio_file = CHAPTER_AUDIO_DIR / f"{chapter['index']:03d}-{safe}.wav"
+    audio_file = chapters_dir / f"{chapter['index']:03d}-{safe}.wav"
     if audio_file.exists():
         return audio_file
-    for f in CHAPTER_AUDIO_DIR.glob(f"{chapter['index']:03d}-*.wav"):
+    for f in chapters_dir.glob(f"{chapter['index']:03d}-*.wav"):
         return f
     return None
 

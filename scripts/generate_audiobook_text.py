@@ -44,8 +44,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from dih_models.yaml_utils import load_quarto_config
 from dih_models.variable_replacement import load_variables, replace_variables
 from lib.audiobook_common import (
-    PROJECT_ROOT, TEXT_DIR, VARIABLES_YML, DEFAULT_CONFIG_PATH, MANIFEST_PATH,
+    PROJECT_ROOT, TEXT_DIR, VARIABLES_YML, DEFAULT_CONFIG_PATH,
     extract_chapters, extract_title_from_qmd, safe_filename,
+    config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import save_text_results
 from lib.retry import retry_with_backoff
@@ -411,7 +412,14 @@ def main():
     if not config_path.is_absolute():
         config_path = PROJECT_ROOT / config_path
 
-    print(f"Loading config: {config_path.name}")
+    cfg_name = config_name_from_path(config_path)
+    paths = get_paths(cfg_name)
+
+    # Point module-level OUTPUT_DIR at config-specific text dir
+    global OUTPUT_DIR
+    OUTPUT_DIR = paths.text
+
+    print(f"Loading config: {config_path.name} (output: audiobook/{cfg_name}/)")
     config = load_quarto_config(config_path)
     chapters = extract_chapters(config)
     print(f"Found {len(chapters)} chapters")
@@ -459,7 +467,7 @@ def main():
     print(f"Results: {generated} generated, {cached} cached, {dry_runs} dry-run")
 
     if results and not args.dry_run:
-        save_text_results(results)
+        save_text_results(results, paths=paths)
 
     print("\nDone!")
 
