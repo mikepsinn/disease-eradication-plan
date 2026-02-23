@@ -124,10 +124,9 @@ def strip_qmd_markup(content: str) -> str:
     # The LLM prompt says to remove image captions anyway
     content = re.sub(r'!\[[^\]]*\]\([^)]+\)(?:\{[^}]*\})?', '', content)
 
-    # Links: keep text, drop URL
-    content = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', content)
-
-    # Remove reference-style link definitions
+    # Links: keep full markdown syntax so the LLM can see what was a link
+    # and decide whether link text is spoken prose vs. a navigation label to drop.
+    # Only strip reference-style link definitions (not useful for the LLM).
     content = re.sub(r'^\[[^\]]+\]:\s+.*$', '', content, flags=re.MULTILINE)
 
     # Remove horizontal rules
@@ -215,6 +214,9 @@ KEEP for TTS:
   Keep the literal ( ) characters exactly as written.
 
 Section headers (## lines): keep the text as a standalone paragraph (strip ## markers), then add a blank line after. They're often jokes or punchy phrases that work as natural pauses.
+
+REMOVE:
+- Markdown links: remove links and their text if not meant to be spoke in an audiobook. Keep the text (drop only the URL) if the text is part of the spoken sentence.
 
 RULES:
 - DO NOT remove or rephrase parenthetical asides. "(they're very vain)" must stay as "(they're very vain)", not become ", they're very vain"
