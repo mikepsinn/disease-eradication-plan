@@ -37,10 +37,6 @@ To be excruciatingly clear: this chapter is not arguing against efficacy testing
 
 On Wishonia, we have a word for "preventing someone from accessing a substance confirmed not to harm them while they die from the condition it might treat." The word is "murder." You call it "the approval process."
 
-The objection to this chapter is always: "But without efficacy testing, people might take drugs that don't work!" We agree. That's why we want to test efficacy on millions of real patients instead of 3,000 healthy volunteers. That's why we want every trial result published instead of letting companies bury the failures. That's why the [dFDA](/knowledge/solution/dfda.qmd) runs {{< var dfda_trial_cost_reduction_factor >}} more trials at {{< var dfda_trial_cost_reduction_factor >}} lower cost. The current system's answer to "we need more efficacy data" is to test 3,000 triathletes, hide half the results, and block everyone else from participating. Our answer is to test millions of real patients and publish everything. One of these produces more efficacy data. It is not the current one.
-
-What the current system actually does is block access to known-safe drugs for {{< var efficacy_lag_years >}} while generating efficacy data from a tiny, unrepresentative sample with no obligation to share the results. This is not pro-efficacy-testing. It is anti-patient.
-
 ## The {{< var dfda_trial_cost_reduction_factor >}} Inefficiency Tax
 
 Compare two real-world systems for testing drugs:
@@ -223,8 +219,6 @@ Dead patients don't testify before Congress.
 
 Here is the part I find most baffling about your species. You block dying patients from accessing known-safe drugs because you need to "test efficacy first." Then you *also* block those dying patients from the efficacy trials. So they can't take the drug, and they can't participate in the test that would let them take the drug. They can, however, die. Nobody blocks that.
 
-On Wishonia, if someone is dying, and there's a substance that passed every safety test (no toxicity, no organ damage, no turning your skeleton into a suggestion), and they want to try it, we let them. We also let them participate in the efficacy trials, because (and I cannot stress this enough) *testing a drug on people who actually have the disease produces better efficacy data than testing it on people who don't*. This is considered baseline sentience. On Earth, this is considered radical.
-
 The FDA requires rigorous trials to ensure safety. Then it tests the drugs on people who aren't sick, aren't old, aren't on other drugs, and aren't pregnant. Basically, it tests drugs on triathletes and then acts surprised when grandma has a reaction.
 
 ![They test drugs on healthy people, then give them to sick people. It's like testing a ladder on Olympic gymnasts, then selling it to your grandmother.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-clinical-trial-theater-excluding-86-1-of-reality-makes-drugs-bw-academic.jpg)
@@ -238,7 +232,7 @@ Trials under the current system exclude [@antidepressant-trial-exclusion-rates]:
 - **Anyone on other medications:** Everyone elderly (can't detect drug interactions)
 - **Anyone too far from trial sites:** Poor and rural populations
 
-Let me restate this so the full absurdity registers: The people *most likely to be harmed by the drug* are excluded from the trial *designed to detect harm*. The people *most likely to benefit from the drug* are excluded from the trial *designed to measure benefit*. Then you prescribe the drug to all of them anyway. This is like crash-testing a car by gently rolling it into a pillow, declaring it safe, and selling it to demolition derby drivers.
+This is like crash-testing a car by gently rolling it into a pillow, declaring it safe, and selling it to demolition derby drivers.
 
 **Result:** In antidepressant trials alone, {{< var antidepressant_trial_exclusion_rate >}} of real patients are excluded. The drugs are tested on the healthiest people alive, declared "safe," then handed to everyone the trial specifically avoided. This is how Vioxx, Fen-Phen, and Bextra all got approved, celebrated, prescribed to millions, and then withdrawn after killing people whose demographics the trials had carefully excluded. The {{< var efficacy_lag_years >}} delay didn't make these drugs safer. It made them seem safer by hiding the danger behind an exclusion list.
 
@@ -329,25 +323,15 @@ After approval, the FDA monitors safety using FAERS, a system where doctors volu
 
 ![Doctors report 10% of drug side effects. The other 90% just happen to people who assume that's what dying feels like.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
 
-A dFDA with 10 million participants catches 1-in-10,000 reactions, includes real populations, tracks long-term outcomes, and provides automated surveillance instead of voluntary paperwork. This isn't a theoretical alternative. It's what actual safety looks like. The current system is the theoretical one; it just theorizes using corpses.
-
-The current system tests 3,000 cherry-picked healthy patients, blocks the actual sick population from participating, then hopes doctors voluntarily fill out forms when their patients drop dead. The alternative is letting real patients try known-safe drugs while monitoring millions of them automatically. One of these is a safety system. The other is a prayer with an 8-year waiting period.
-
-On Wishonia, we have safety systems that detect problems in real time across entire populations. You have a fax machine and a suggestion box. Somehow, your system is considered the gold standard. On my planet, "gold standard" doesn't mean "most people die."
+A dFDA with 10 million participants catches 1-in-10,000 reactions, includes real populations, tracks long-term outcomes, and provides automated surveillance instead of voluntary paperwork. You have a fax machine and a suggestion box. One of these is a safety system. The other is a prayer with an 8-year waiting period.
 
 ## The Bottom Line
 
-The post-safety efficacy lag is {{< var efficacy_lag_years >}}. During that lag, {{< var dfda_efficacy_lag_elimination_deaths_averted >}} died, {{< var dfda_efficacy_lag_elimination_dalys >}} of healthy life were destroyed, and the economic cost reached {{< var dfda_efficacy_lag_elimination_economic_value >}}. For every 1 unit of harm the delay prevented, it created {{< var type_ii_error_cost_ratio >}} units of harm through blocking access.
-
-Phase I safety testing works. Keep it. Nobody is arguing otherwise.
-
-The {{< var efficacy_lag_years >}} post-safety efficacy delay does not work. It blocks access to known-safe drugs. It excludes the sick from trials. It buries negative results. It kills {{< var type_ii_error_cost_ratio >}} people for every 1 it protects. It is not a safety system and it is not an efficacy system. It is a filing system that produces corpses as a byproduct.
+The post-safety efficacy lag is {{< var efficacy_lag_years >}}. During that lag, {{< var dfda_efficacy_lag_elimination_deaths_averted >}} died, {{< var dfda_efficacy_lag_elimination_dalys >}} of healthy life were destroyed, and the economic cost reached {{< var dfda_efficacy_lag_elimination_economic_value >}}. For every 1 unit of harm the delay prevented, it created {{< var type_ii_error_cost_ratio >}} units of harm through blocking access. It is not a safety system. It is a filing system that produces corpses as a byproduct.
 
 ![It takes 8.2 years to prove a drug works. During those 8.2 years, 3,000 people die for every one person the delay might save. You're very bad at math.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bottom-line-bw-academic.jpg)
 
-Replace the {{< var efficacy_lag_years >}} access blockade with open efficacy testing: let any patient try known-safe drugs, open every trial to the people who actually have the disease, require all results (positive and negative) to be published, and track outcomes automatically across millions of real humans instead of 3,000 triathletes. More testing. Better testing. On real patients. With transparent results. And nobody dies in a waiting room for the privilege.
-
-This is what Wishonia calls "medicine." You call it "radical." The only thing missing is the political will to admit that a law signed before the Beatles existed might not be the pinnacle of pharmaceutical regulation.
+The only thing missing is the political will to admit that a law signed before the Beatles existed might not be the pinnacle of pharmaceutical regulation.
 
 ## Technical Analysis
 

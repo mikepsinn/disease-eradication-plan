@@ -2,7 +2,7 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 34 | **Words:** 81,137 | **Images:** 457 | **Est. Pages:** ~553
+**Files:** 34 | **Words:** 82,084 | **Images:** 457 | **Est. Pages:** ~557
 
 #### index-manual.qmd
 **Title:** Start Here
@@ -61,7 +61,7 @@
 #### knowledge/problem.qmd
 **Title:** Problem Overview
 **Description:** Humanity's spectacular failure at prioritizing not dying
-**Stats:** 1,388 words | 131 lines | 9 images | ~10p
+**Stats:** 1,391 words | 131 lines | 9 images | ~10p
 
   - The Daily Body Count
     ![Every day, 50 times as many people die from being old and sick as died on 9/11. You started two wars over 9/11. For aging, you bought face cream and called it a day.](/assets/images/problem/problem-section-daily-numbers-bw-academic.jpg)
@@ -228,9 +228,10 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34x more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 3,040 words | 335 lines | 22 images | ~23p
+**Stats:** 3,815 words | 342 lines | 22 images | ~26p
 
   - A Note on Blame
+  - "But What About Safety?"
   - The 44.1x (95% CI: 39.4x-89.1x) Inefficiency Tax
     - The 8.2 years (95% CI: 4.85 years-11.5 years) Efficacy Lag
   - What the 1962 Efficacy Requirements Changed
@@ -278,7 +279,7 @@
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
 **Description:** Why democracy mathematically serves money over voters, and how to exploit that bug
-**Stats:** 3,153 words | 360 lines | 20 images | ~23p
+**Stats:** 3,208 words | 362 lines | 20 images | ~23p
 
   - Democracy
     ![The government has three branches. Two-thirds of voters can't name them. These same voters choose who runs the branches. It's like a pilot test where nobody knows what a plane is.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-democracy-bw-academic.jpg)
@@ -721,7 +722,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** VICTORY Incentive Alignment Bonds
 **Description:** How to legally bribe politicians into saving lives, and how investors profit from it
-**Stats:** 5,580 words | 610 lines | 39 images | ~42p
+**Stats:** 5,706 words | 610 lines | 39 images | ~42p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -816,7 +817,7 @@
 #### knowledge/proof.qmd
 **Title:** The Proof: Overview
 **Description:** This Already Works - Pragmatic trials prove 44.1x (95% CI: 39.4x-89.1x) efficiency. History proves every component. Switzerland, war bonds, landmines, the 3.5% rule, and Wall Street's craziest bets all prove humans can accidentally do smart things when properly motivated.
-**Stats:** 3,186 words | 303 lines | 20 images | ~23p
+**Stats:** 3,224 words | 305 lines | 20 images | ~23p
 
   - Pragmatic Trials: 44.1x (95% CI: 39.4x-89.1x) More Efficient {#pragmatic-trials}
     ![The British figured out how to test drugs for $929 per patient. Americans spend $41,000. Both countries speak English, so language barrier isn't the issue.](/assets/images/proof/proof-section-pragmatic-trials-44-1x-95-ci-39-4x-89-1x-more-efficient-bw-academic.jpg)
@@ -860,7 +861,7 @@
   - The Ultimate Failsafe: The Worst-Case Scenario is Still a Win {#failsafe}
     ![Worst case: we reduce global weaponry slightly and waste some money on science. Current case: mountains of bombs and no cancer cure. Hard choice.](/assets/images/historical-precedents/historical-precedents-section-4-the-ultimate-failsafe-the-worst-case-scenario-is-still-a-win-bw-academic.jpg)
     ![If this fails, we have fewer bombs. If it succeeds, we cure death. These are not symmetrical risks, but we treat them like they are.](/assets/images/historical-precedents/historical-precedents-section-why-bw-academic.jpg)
-  - How a dFDA Would Compare to History's Best Health Interventions {#dfda-comparison}
+  - How Your dFDA Would Compare to History's Best Health Interventions {#dfda-comparison}
 
 #### knowledge/proof/body-as-repairable-machine.qmd
 **Title:** You Are a Meat Robot
@@ -990,7 +991,7 @@
 #### knowledge/appendix/faq.qmd
 **Title:** Frequently Asked Objections
 **Description:** For the Reasonably Skeptical
-**Stats:** 3,189 words | 348 lines | 23 images | ~24p
+**Stats:** 3,195 words | 348 lines | 23 images | ~24p
 
   - "We Need the Military Budget"
     ![What 1 percent of military spending buys: fewer tanks, more cured diseases, and soft power. Turns out healthy people like you more than people you bombed.](/assets/images/faq/faq-section-we-need-the-military-budget-bw-academic.jpg)
@@ -1187,7 +1188,7 @@
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis
 **Description:** Real-world evidence that getting a global treaty signed costs $90M, not billions
-**Stats:** 2,136 words | 202 lines | 10 images | ~14p
+**Stats:** 2,084 words | 203 lines | 10 images | ~13p
 
   - What Treaties Actually Cost
     - Inflation-Adjusted to 2024 Dollars
@@ -1274,7 +1275,7 @@
 #### knowledge/economics/financial-plan.qmd
 **Title:** Financial Plan
 **Description:** High-level overview of how to fund, spend, and manage the financial flows required to pass a 1% treaty and operate the 1% Treaty Fund.
-**Stats:** 1,382 words | 145 lines | 7 images | ~9p
+**Stats:** 1,378 words | 145 lines | 7 images | ~9p
 
   - Pillar 1: Fundraising (Raise $1B)
     ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
