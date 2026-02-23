@@ -190,7 +190,7 @@ def prepare_for_narration(raw_qmd: str, variables: dict) -> str:
 
 AUDIOBOOK_REWRITE_PROMPT = """Convert this book chapter to an audiobook narration script.
 
-Your job is MINIMAL: only change what would sound wrong spoken aloud. Leave everything else EXACTLY as written.
+Your job is MINIMAL: only change what would sound obviously wrong or excruciatingly boring spoken aloud. Leave everything else EXACTLY as written.
 
 CONVERT (only these):
 - Abbreviated money/units to spoken form: "$8.2T" -> "eight point two trillion dollars", "$519M" -> "five hundred nineteen million dollars"
@@ -198,11 +198,9 @@ CONVERT (only these):
 - Alphanumeric abbreviations: "WW2" -> "World War Two", "WW1" -> "World War One", "G7" -> "G Seven", "G20" -> "G Twenty", "21st" -> "twenty-first"
 - Tables: convert rows into short spoken sentences
 - Bullet lists: one sentence per bullet, keep them as separate paragraphs
-- Acronyms that are spelled out: "GDP" -> "G.D.P.", "FDA" -> "F.D.A.", "IAB" -> "I.A.B."
-- Unfamiliar acronyms: expand on first use, then spell out. "DALYs" -> "disability-adjusted life years, or D.A.L.Y.s", "QALY" -> "quality-adjusted life year, or Q.A.L.Y."
-- "dFDA" always becomes "D.F.D.A." (the decentralized FDA)
-- Acronyms pronounced as words: keep as-is. "PAC", "NATO" stay "PAC", "NATO"
-- Strip markdown formatting characters only (**, ##, -, etc.)
+- Condense/improve extremely boring sentences with too many dense numbers or weird units: condense or round or use different unit framings when a run of numbers would sound excruciatingly boring or extremely weird spoken aloud. When in doubt, leave as-is.
+- Acronyms: spell out with dots ("GDP" -> "G.D.P.", "FDA" -> "F.D.A.") EXCEPT acronyms pronounced as words ("PAC", "NATO" stay as-is). Unfamiliar acronyms: expand on first use ("DALYs" -> "disability-adjusted life years, or D.A.L.Y.s"). Well-known acronyms (GDP, FDA, NIH, NATO): just add dots, don't expand. "dFDA" always becomes "D.F.D.A." (a decentralized FDA).
+- Strip markdown formatting characters (**, ##, -, etc.)
 
 KEEP for TTS:
 - ALL-CAPS words like "WITH", "MORE", "KNOWS" -- TTS engines stress these, keep them capitalized
@@ -216,7 +214,7 @@ KEEP for TTS:
 Section headers (## lines): keep the text as a standalone paragraph (strip ## markers), then add a blank line after. They're often jokes or punchy phrases that work as natural pauses.
 
 REMOVE:
-- Markdown links: remove links and their text if not meant to be spoke in an audiobook. Keep the text (drop only the URL) if the text is part of the spoken sentence.
+- Markdown links: remove links and their text if not meant to be spoken in an audiobook. Keep the text (drop only the URL) if the text is part of the spoken sentence.
 
 RULES:
 - DO NOT remove or rephrase parenthetical asides. "(they're very vain)" must stay as "(they're very vain)", not become ", they're very vain"
@@ -366,12 +364,16 @@ def generate_chapter_text(
     hash_file = chunk_dir / ".prepared_hash"
     prepared_hash = hashlib.sha256(prepared.encode('utf-8')).hexdigest()[:16]
     if chunk_dir.exists():
-        old_hash = hash_file.read_text(encoding='utf-8').strip() if hash_file.exists() else ''
-        if old_hash != prepared_hash:
-            print(f"  [CACHE] Source text changed (was {old_hash or 'unknown'}, now {prepared_hash}), clearing chunk cache")
+        if force:
+            print(f"  [CACHE] Force flag set, clearing chunk cache")
             shutil.rmtree(chunk_dir)
         else:
-            print(f"  [CACHE] Source text unchanged ({prepared_hash}), reusing chunk cache")
+            old_hash = hash_file.read_text(encoding='utf-8').strip() if hash_file.exists() else ''
+            if old_hash != prepared_hash:
+                print(f"  [CACHE] Source text changed (was {old_hash or 'unknown'}, now {prepared_hash}), clearing chunk cache")
+                shutil.rmtree(chunk_dir)
+            else:
+                print(f"  [CACHE] Source text unchanged ({prepared_hash}), reusing chunk cache")
 
     print(f"  Rewriting for audiobook...")
     rewritten = rewrite_for_audiobook(prepared, title, output_path)
