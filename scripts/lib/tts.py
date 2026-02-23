@@ -104,7 +104,7 @@ VOICE_DESCRIPTIONS = {
 # Northern English variants lost energy when accent was specified.
 # Male voices (Charon, Puck) tested but female won for this book's tone.
 DEFAULT_VOICE = "Kore"
-DEFAULT_SPEAKING_INSTRUCTIONS = "Generate a voice with the energy of someone telling the best story at a dinner party."
+DEFAULT_SPEAKING_INSTRUCTIONS = "Generate a patient, warm voice explaining something counterintuitive to someone smart. Not condescending. Respects the listener's intelligence. Slightly quick."
 
 # --- API Setup ---
 GOOGLE_GENERATIVE_AI_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")

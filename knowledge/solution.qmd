@@ -53,11 +53,11 @@ That money splits three ways. {{< var dih_treasury_medical_research_pct >}} goes
 
 They say you can't put a price on human life. But apparently the price is somewhere south of pet food. That seems like it should be revised upward (or you should admit you value dogs more than humans, which honestly might be fair).
 
-## The 1% Treaty Fund
+## Your Decentralized Institutes of Health
 
-Once the 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a treasury with no CEO, no board, and no one to corrupt. Money flows directly to patients and researchers via algorithmic rules, not through any intermediary organization.
+Once your 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a treasury with no CEO, no board, and no one to corrupt. Money flows directly to patients and researchers via algorithmic rules, not through any intermediary organization.
 
-The governance protocol (sometimes called a "decentralized institute of health" or DIH) is the opposite of the NIH. Instead of 200 people in a building guessing what to fund and giving grants to their college roommates, smart contracts hold the treasury. Patients choose which trials to join. Funding flows automatically to researchers based on patient enrollment. Trials that work get more patients and more funding. Trials that don't work get defunded, which is apparently a concept so radical it took your species 80 years to consider.
+The governance protocol is the opposite of the NIH. Instead of 200 people in a building guessing what to fund and giving grants to their college roommates, smart contracts hold the treasury. Patients choose which trials to join. Funding flows automatically to researchers based on patient enrollment. Trials that work get more patients and more funding. Trials that don't work get defunded, which is apparently a concept so radical it took your species 80 years to consider.
 
 ![Money goes in, cures come out, repeat](/assets/images/solution/solution-section-what-your-decentralized-institutes-of-health-do-bw-academic.jpg)
 
@@ -154,12 +154,12 @@ They say if something seems too good to be true, it probably is. But sometimes t
 
 The rest of Part II explains each component in detail:
 
-- [The 1% Treaty](solution/1-percent-treaty.qmd): How to structure it so countries actually sign it
-- [The 1% Treaty Fund](solution/dih.qmd): How algorithmic governance prevents corruption
+- [Your 1% Treaty](solution/1-percent-treaty.qmd): How to structure it so countries actually sign it
+- [Your Decentralized Institutes of Health](solution/dih.qmd): How algorithmic governance prevents corruption
 - [Wishocracy](solution/wishocracy.qmd): How to let billions of people control a budget without lobbyists stealing it
-- [The dFDA](solution/dfda.qmd): How to achieve {{< var dfda_trial_cost_reduction_factor >}} cost reduction in drug trials
+- [Your dFDA](solution/dfda.qmd): How to achieve {{< var dfda_trial_cost_reduction_factor >}} cost reduction in drug trials
 - [Aligning Incentives](solution/aligning-incentives.qmd): How to make selfishness save humanity
-- [VICTORY Bonds](solution/incentive-alignment-bonds.qmd): How everyone makes money
+- [Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd): How everyone makes money
 - [The Peace Dividend](economics/peace-dividend.qmd): Why curing disease accidentally solves everything else
 
 That's it. That's the plan.
