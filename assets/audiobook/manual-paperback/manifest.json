@@ -8,8 +8,8 @@
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\001-Start-Here.prepared.txt",
       "chars": 30351,
       "status": "generated",
-      "alignment_file": "audiobook\\manual-paperback\\alignment\\001-Start-Here.alignment.json",
-      "subtitle_file": "audiobook\\manual-paperback\\subtitles\\001-Start-Here.vtt"
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\001-Start-Here.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\001-Start-Here.vtt"
     },
     {
       "index": 2,
@@ -17,7 +17,10 @@
       "part": "The Problem",
       "path": "knowledge/problem.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\002-Problem-Overview.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 7239,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\002-Problem-Overview.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\002-Problem-Overview.vtt"
     },
     {
       "index": 3,
@@ -25,7 +28,10 @@
       "part": "The Problem",
       "path": "knowledge/problem/cost-of-war.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\003-The-Cost-of-War.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 21714,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\003-The-Cost-of-War.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\003-The-Cost-of-War.vtt"
     },
     {
       "index": 4,
@@ -33,7 +39,10 @@
       "part": "The Problem",
       "path": "knowledge/problem/cost-of-disease.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\004-The-Cost-of-Disease.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 10584,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\004-The-Cost-of-Disease.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\004-The-Cost-of-Disease.vtt"
     },
     {
       "index": 5,
@@ -41,7 +50,10 @@
       "part": "The Problem",
       "path": "knowledge/problem/nih-fails-2-institute-health.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\005-NIH-Fails-to-Institute-Health.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 12259,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\005-NIH-Fails-to-Institute-Health.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\005-NIH-Fails-to-Institute-Health.vtt"
     },
     {
       "index": 6,
@@ -49,7 +61,10 @@
       "part": "The Problem",
       "path": "knowledge/problem/untapped-therapeutic-frontier.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\006-The-Untapped-Therapeutic-Frontier.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 11758,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\006-The-Untapped-Therapeutic-Frontier.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\006-The-Untapped-Therapeutic-Frontier.vtt"
     },
     {
       "index": 7,
@@ -57,7 +72,8 @@
       "part": "The Problem",
       "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\007-The-FDA-Is-Unsafe-and-Ineffective.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 16652
     },
     {
       "index": 8,
