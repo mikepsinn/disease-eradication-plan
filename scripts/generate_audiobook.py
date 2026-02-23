@@ -173,7 +173,7 @@ def generate_chapter_audio(
         return None, False
 
     # Find text chunk files (produced by generate_audiobook_text.py)
-    text_file = find_prepared_text({'index': chapter['index'], 'title': title}, paths=paths)
+    text_file = find_prepared_text(chapter, paths=paths)
     if not text_file:
         print(f"  [SKIP] No text file found after preparation")
         return None, False
@@ -831,7 +831,7 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
     if audio_changed and alignment_path.exists():
         print(f"  [STALE] Audio changed, regenerating alignment...")
 
-    text_file = find_prepared_text({'index': chapter['index'], 'title': title}, paths=paths)
+    text_file = find_prepared_text(chapter, paths=paths)
     if not text_file:
         print(f"  [SKIP] No text file for alignment")
         return

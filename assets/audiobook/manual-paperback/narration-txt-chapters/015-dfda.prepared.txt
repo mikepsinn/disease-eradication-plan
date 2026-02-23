@@ -1,21 +1,18 @@
-Out of 2.40 billion people with chronic disease, only 1.90 million patients per year participate in trials annually. That's zero point zero six percent.
+Out of two point four billion people with chronic disease, only one point nine million patients per year participate in trials annually. That's zero point zero six percent.
 
 Forty-four point eight percent would volunteer if they could. Only zero point zero six percent currently participate.
 
 This isn't because people don't want to help find cures. It's because your system was designed by someone who hates sick people. Trials cost forty-one thousand dollars, require traveling to major medical centers, and reject eighty-six point one percent of actual patients. You built a hospital you can't get into.
-
 Impressive, in a genocidal sort of way.
 
 Meanwhile, the system that's supposed to catch dangerous side effects misses ninety to ninety-nine percent of them. Only one to ten percent of adverse drug events are ever reported to the F.D.A. No denominator data. No effect sizes. No way to calculate how often a drug actually hurts people.
-
 The safety monitoring system is a suggestion box that nobody uses.
 
 You don't have a recruitment problem. You have a capacity problem.
 
 The Solution: Consumer Reports for Drugs.
 
-Your decentralized framework for drug assessment (D.F.D.A. (the decentralized F.D.A.)) is an OPEN coordination protocol. It connects companies with treatments to patients who need them. It's H.T.T.P. for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes.
-
+Your decentralized framework for drug assessment (D.F.D.A. (the decentralized FDA)) is an open coordination protocol. It connects companies with treatments to patients who need them. It's H.T.T.P. for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes.
 You invented the internet thirty years ago and somehow forgot to plug medicine into it.
 
 How It Works: Just Let People Try Stuff (Carefully).
@@ -31,12 +28,11 @@ And then other sick people could... see what worked?
 Your current system leaves ninety-five percent of rare diseases with zero approved treatments. It bars eighty-five percent of patients from the trials that might save them. We've perfected a system where only the healthy and compliant test cures for the sick and desperate. It's genius, in a suicidal sort of way.
 
 Trials are designed to test drugs on people who don't actually exist. To get into a study for an antidepressant, you can't have any other pesky problems like anxiety or P.T.S.D. You can't have a history of drug or alcohol use. You can't be on other medications.
+You have to be the perfect kind of sick. The result? Only fourteen point five percent of real-world patients with depression would actually qualify. The rest of us are too messy for their pristine, clean data.
 
-You have to be the PERFECT kind of sick. The result? Fourteen point five percent of real-world patients with depression would actually qualify. The rest of us are too messy for their pristine, clean data.
+On top of excluding everyone with a pulse, these "definitive" studies run on comically small groups. They'll test a new heart drug on two hundred and seventy-five people. A cancer drug on just twenty people. A diabetes drug on one hundred people. Then they prescribe the winner to millions.
 
-On top of excluding everyone with a pulse, these "definitive" studies run on comically small groups. They'll test a new heart drug on 275 people. A cancer drug on just 20 people. A diabetes drug on 100 people. Then they prescribe the winner to millions.
-
-You're basing survival on sample sizes smaller than kindergarten classes. So instead of studying mythical, perfectly sick unicorns, what if you just collected data from everyone who's ACTUALLY sick?
+You're basing survival on sample sizes smaller than kindergarten classes. So instead of studying mythical, perfectly sick unicorns, what if you just collected data from everyone who's actually sick?
 
 The Power of Real-World Evidence (Or: Spying on Sick People for a Good Cause).
 
@@ -58,9 +54,9 @@ The Two-Stage Pipeline: Watch First, Then Test.
 Observational data finds the signals. But correlation still isn't proof (even you know that). So the framework uses a two-stage pipeline:
 
 Stage 1 (Signal Detection): Aggregate data from millions of patients. Score each treatment-outcome relationship using six Bradford Hill causality criteria: How strong is the effect? How consistent across people? Does the treatment come before the improvement? Is there a dose-response pattern?
-Cost: roughly zero point one zero zero dollars per patient.
+Cost: approximately ten cents per patient.
 
-Stage 2 (Confirmation): The top signals (the zero point one to one percent most promising) proceed to pragmatic trials embedded in routine care. Simple randomization. Real patients. Real conditions. Cost: roughly nine hundred twenty-nine dollars per patient. This eliminates confounding and proves causation.
+Stage 2 (Confirmation): The top signals (the zero point one to one percent most promising) proceed to pragmatic trials embedded in routine care. Simple randomization. Real patients. Real conditions. Cost: approximately nine hundred twenty-nine dollars per patient. This eliminates confounding and proves causation.
 
 Stage 1 filters millions of possibilities for almost nothing. Stage 2 confirms the winners for one-eightieth the cost of traditional trials. The result: every treatment gets an evidence grade.
 
@@ -78,23 +74,27 @@ The Oxford Recovery Trial: How the British Accidentally Saved Medicine.
 
 During COVID, while America was filling out forms, Oxford University did something crazy. They just tested drugs on dying people to see if they stopped dying.
 
-Cost per patient:
+Cost per patient.
 
 Normal clinical trials cost forty-one thousand dollars.
+
 Oxford pragmatic trials cost five hundred dollars.
 
 That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan to save a human life.
 
-Results:
+Results.
 
 They found that steroids cut COVID deaths by thirty percent.
+
 They saved over one million lives globally.
+
 It took three months instead of three years.
+
 It cost less than one Super Bowl commercial.
 
 The F.D.A.'s response: "But did they file the correct paperwork?".
 
-RECOVERY wasn't a fluke. A Harvard meta-analysis of one hundred and eight embedded pragmatic trials found median costs of just ninety-seven dollars per patient. The Patient-Centered Outcomes Research Network, or P.C.O.R.net, ADAPTABLE trial enrolled fifteen thousand and seventy-six patients across forty clinical sites at nine hundred and twenty-nine dollars per patient.
+RECOVERY wasn't a fluke. A Harvard meta-analysis of one hundred and eight embedded pragmatic trials found median costs of just ninety-seven dollars per patient. The Patient-Centered Outcomes Research Network, or P.C.O.R.net, ADAPTABLE trial enrolled fifteen thousand seventy-six patients across forty clinical sites at nine hundred twenty-nine dollars per patient.
 
 This model works across therapeutic areas, across countries, across decades. The evidence base for cheap, fast, embedded trials isn't one study. It's one hundred and eight and counting.
 
@@ -102,19 +102,22 @@ What You'd See: F.D.A. dot gov two point zero.
 
 The protocol upgrades F.D.A. dot gov from a digital cemetery to something useful. Cost: Less than one fighter jet that doesn't work.
 
-Step 1: Type in What's Killing You.
+Step One: Type in What's Killing You.
 
 Revolutionary feature: A search box. The F.D.A.'s current website doesn't have this because they assume you've already died.
 
-Step 2: See What Actually Works (Based on Reality, Not Theory).
+Step Two: See What Actually Works (Based on Reality, Not Theory).
 
 Instead of "This drug is approved for exactly this condition in exactly these patients on exactly Tuesdays," you get:
 
 "Here's what happened to fifty thousand people who tried this:
 
 Forty percent got much better.
+
 Thirty percent got somewhat better.
+
 Twenty percent had no change.
+
 Ten percent grew a third nipple (but a useful one)".
 
 It's like Consumer Reports, but for not dying.
@@ -123,14 +126,17 @@ Treatment Rankings: Every Option, Ranked by Reality
 
 Search any condition and see every treatment ranked by real-world effectiveness:
 
-F.D.A. Approved treatments with effectiveness scores from actual patients.
-Phase three and Phase two trials you can join right now.
-Experimental options with preliminary data.
-One-click access to join available trials.
+F.D.A. Approved treatments are shown with effectiveness scores from actual patients.
+
+Phase Three and Phase Two trials are listed that you can join right now.
+
+Experimental options are available with preliminary data.
+
+One-click access is available to join trials.
 
 No more guessing which treatment your doctor half-remembers from a conference. Just clear rankings based on what actually worked for people like you. The current system never publishes negative results. Humanity wastes billions repeating the same failed ideas.
 
-Step 3: Join a Trial from Your Couch (While Dying Comfortably).
+Step Three: Join a Trial from Your Couch (While Dying Comfortably).
 
 Current system: Drive five hundred miles to a university hospital, wait six months, get rejected for having the wrong kind of dying.
 
@@ -138,15 +144,15 @@ New system: Click button. Get pills. Report if you die.
 
 Revolutionary!
 
-Step 4: Get Drugs Delivered Like Pizza (But More Life-Saving).
+Step Four: Get Drugs Delivered Like Pizza (But More Life-Saving).
 
 Amazon can deliver a banana costume in two hours but experimental medications take six months and require seven forms of I.D.?
 
 Your framework fixes that. Your pharmacy becomes a trial site. Your doctor becomes a researcher. Your dying becomes data.
 
-Step 5: Publish Results.
+Step Five: Publish Results.
 
-Current system: 500-page case report forms that ask questions like "Rate your suffering on a scale of mauve to burnt sienna.".
+Current system: five hundred-page case report forms that ask questions like "Rate your suffering on a scale of mauve to burnt sienna.".
 
 New system:
 
@@ -166,27 +172,47 @@ You should have done this when you invented writing in three thousand B.C.
 
 Outcome Labels: Nutrition Facts for Drugs.
 
-Food has nutrition labels. Cigarettes have warning labels. Drugs have... incomprehensible 40-page inserts written by lawyers having seizures.
+Food has nutrition labels. Cigarettes have warning labels. Drugs have... incomprehensible forty-page inserts written by lawyers having seizures.
 
 Outcome Labels fix that. Clear, data-driven summaries showing exactly what happens when real people try a treatment:
 
-No marketing spin. No 40-page legal disclaimers. Just clear data about what actually happens to people like you.
+No marketing spin. No forty-page legal disclaimers. Just clear data about what actually happens to people like you.
 
-Here's what an Outcome Label for depression would actually look like, based on nearly fifty thousand participants:
+Here's what an Outcome Label for depression would actually look like:
 
 OUTCOME LABEL: Depression Severity
 
-The top-ranked treatment? Exercise, reducing symptoms by about thirty-one percent. Second is Bupropion, then Sertraline. Getting proper sleep ranks fourth, beating most prescription drugs.
+Based on forty-seven thousand eight hundred thirty-two participants
 
-The list continues through Venlafaxine, Omega-3, Meditation, and Fluoxetine, each with progressively smaller but measurable effects.
+Treatments Ranked by Effect Size
 
-Makes It Worse: Alcohol, sleep deprivation, and social isolation all significantly worsen depression.
+Rank one, Exercise, negative thirty-one point two percent effect, sample size of twelve thousand eight hundred forty-seven, optimal dose forty-five minutes per day.
 
-No Significant Effect: Multivitamin, Probiotics, B-complex, Ashwagandha, five-hydroxytryptophan, or five H.T.P.
+Rank two, Bupropion, negative twenty-eight point three percent effect, sample size of two thousand eight hundred forty-seven, optimal dose three hundred milligrams.
+
+Rank three, Sertraline, negative twenty-four point seven percent effect, sample size of five thousand one hundred twenty-three, optimal dose one hundred milligrams.
+
+Rank four, Sleep (seven to nine hours), negative twenty-two point one percent effect, sample size of thirty-one thousand two hundred four, optimal dose eight point two hours.
+
+Rank five, Venlafaxine, negative twenty-one point two percent effect, sample size of one thousand eight hundred ninety-two, optimal dose one hundred fifty milligrams.
+
+Rank six, Omega-three, negative eighteen point nine percent effect, sample size of four thousand five hundred twenty-one, optimal dose two thousand milligrams of E.P.A. and D.H.A.
+
+Rank seven, Meditation, negative sixteen point four percent effect, sample size of eight thousand nine hundred thirty-two, optimal dose twenty minutes per day.
+
+Rank eight, Fluoxetine, negative fifteen point eight percent effect, sample size of three thousand four hundred fifty-six, optimal dose forty milligrams.
+
+Makes It Worse: Alcohol more than two per day, positive twenty-three point four percent.
+
+Sleep deprivation, positive nineteen point eight percent.
+
+Social isolation, positive fifteen point two percent.
+
+No Significant Effect: Multivitamin, Probiotics, B-complex, Ashwagandha, and five H.T.P.
 
 Notice anything? Exercise beats every drug. Sleep beats most drugs. Your doctor probably didn't mention that because there's no pharmaceutical rep buying lunch to promote jogging. This is what happens when you rank treatments by outcomes instead of by marketing budget.
 
-Your Personal Death-Prevention Assistant: The Food and Drug Artificial intelligence, or F.D.A.i.
+Your Personal Death-Prevention Assistant: The F.D.A.i.
 
 Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?".
 
@@ -202,12 +228,12 @@ Thirty percent success: Prosthetic foot plus Drug B.
 
 Ten percent success: Hopping lessons plus Prayer.
 
-Zero percent success: Essential oils (but your remaining foot will smell lavender-fresh)"
+Zero percent success: Essential oils (but your remaining foot will smell lavender-fresh)".
 
 It connects to your wearables, apps, and medical records to find what's killing you while your doctor is still trying to remember your name. Every doctor who ever lived, in your pocket, and they actually agree on something.
 
 It also does something no doctor can: precision dosing. By analyzing what dose preceded your best outcomes, it generates personalized recommendations.
-Not "take some magnesium." Instead: "Your sleep quality was highest after four hundred milligrams of Magnesium over the previous 24 hours." Optimal doses derived from your data, not a study of 36 college students in 1997.
+Not "take some magnesium." Instead: "Your sleep quality was highest after four hundred milligrams of Magnesium over the previous 24 hours." Optimal doses derived from your data, not a study of thirty-six college students in 1997.
 
 Making It Legal to Not Die.
 
@@ -217,9 +243,9 @@ The fact that this requires a law tells you everything about your species.
 
 The Business Model: How Everyone Profits Except Disease.
 
-How Companies Register Treatments (5 Minutes, Zero Approval Needed).
+How Companies Register Treatments (five Minutes, Zero Approval Needed).
 
-Any company - pharma, supplements, food, interventions - can instantly create a trial:
+ANY COMPANY - pharma, supplements, food, interventions - can instantly create a trial:
 
 Register treatment on a public portal (name, ingredients, condition, price).
 
@@ -229,15 +255,15 @@ Get automatic liability insurance (built into protocol governance).
 
 Trial goes live immediately - appears in search results, ranked by existing data.
 
-Patients join based on rankings; You collect zero-cost data on whether it works.
+Patients join based on rankings, meaning you collect zero-cost data on whether it works.
 
 Net cost to company: zero dollars.
 
-Why?
+WHY?
 
 Patients pay for treatment (covers manufacturing/delivery).
 
-Patients provide data (eliminates data collection cost approximately forty-one thousand dollars per patient).
+Patients provide data (eliminates data collection cost of approximately forty-one thousand dollars per patient).
 
 Protocol enables standardized analysis (eliminates analysis cost).
 
@@ -253,27 +279,27 @@ Patient reports: Outcomes via simple app.
 
 Deposit refunded: When trial complete.
 
-Net to patient: zero dollars to negative fifty dollars (they might profit).
+Net to patient: zero dollars to minus fifty dollars (they might profit).
 
 Example.
 
 Patient joins trial for experimental migraine treatment (one hundred dollars per month).
 
-Pays: one hundred dollars treatment plus fifty dollars deposit equals one hundred fifty dollars.
+Pays: one hundred dollars treatment plus fifty dollars deposit equals one hundred and fifty dollars.
 
-Receives: one hundred twenty-five dollars subsidy.
+Receives: one hundred and twenty-five dollar subsidy.
 
 Out of pocket: twenty-five dollars.
 
 Completes trial, reports outcomes.
 
-Gets back: fifty dollars deposit.
+Gets back: fifty dollar deposit.
 
-Net: plus twenty-five dollars profit plus potentially cures migraines
+Net: plus twenty-five dollar profit and potentially cures migraines.
 
 Company receives.
 
-one hundred dollars per month from patient.
+One hundred dollars per month from patient.
 
 Manufacturing cost: twenty dollars per month.
 
@@ -283,15 +309,15 @@ Plus: Free clinical trial data worth forty-one thousand dollars per patient in t
 
 Why This Creates Unlimited Research Capacity.
 
-For the starting point, the traditional model and the decentralized protocol both begin with research ideas.
+For the start of the process, both the traditional model and the decentralized protocol begin with research ideas.
 
-For gatekeeping, grant committees select the few in the traditional model, while the decentralized protocol allows you to register instantly.
+In terms of gatekeeping, the traditional model relies on grant committees to select the few, while the decentralized protocol allows you to register instantly.
 
-For enrollment, the traditional model recruits from a limited pool, while in the decentralized protocol, patients decide by joining.
+Regarding enrollment, the traditional model recruits from a limited pool, while under the decentralized protocol, patients decide by joining.
 
-The cost for the traditional model is fifty-seven million dollars per trial, while the decentralized protocol costs zero dollars per trial.
+The cost for a traditional model is fifty-seven million dollars per trial, compared to zero dollars per trial for the decentralized protocol.
 
-The throughput for the traditional model is approximately ten trials per year per company, while the decentralized protocol allows for unlimited trials simultaneously.
+Throughput for the traditional model is approximately ten trials per year per company, while the decentralized protocol allows for unlimited trials simultaneously.
 
 This is why ninety-five percent of rare diseases have no treatments. Traditional funding can't afford to test everything. This decentralized protocol enables testing EVERYTHING because:
 
@@ -311,8 +337,13 @@ A one percent Treaty Fund doesn't fund pragmatic clinical trials directly. It su
 
 The Money Shot: How to Save ninety-five percent on Not Killing People.
 
-Here's what changes. The clinical phase timeline drops from over nine years to two or three, eliminating roughly seven years of waiting and saving an estimated fifty thousand lives per year. Cost per trial plummets from fifty-seven million dollars to two million dollars. Participation opens from just thirteen point nine percent of patients to one hundred percent.
-And the ninety-five percent of rare diseases with zero treatments today? Eventually all of them get studied.
+Regarding the clinical phase timeline, the current average of nine point one years is reduced to two to three years, eliminating seven years of waiting and saving fifty thousand lives per year.
+
+The cost per trial drops from fifty-seven million dollars to two million dollars, saving fifty-five million dollars with an infinite R.O.I.
+
+Participation increases from thirteen point nine percent of patients to one hundred percent, an eighty-six point one percent inclusion rate that saves everyone.
+
+Rare diseases with treatments will increase from five percent to eventually one hundred percent, which is priceless and saves millions.
 
 The Itemized Receipt of Eliminated Stupidity.
 
@@ -340,7 +371,7 @@ The protocol provides:
 
 Open protocol for data exchange (like email protocols).
 
-Federated data network (data stays in Epic/Cerner/Apple Health systems).
+Federated data network (data stays in Epic, Cerner, or Apple Health systems).
 
 Treatment ranking algorithms (open source, anyone can verify).
 
@@ -370,7 +401,7 @@ Your framework's protocol just lets you run queries ACROSS systems without movin
 
 This solves:
 
-General Data Protection Regulation, or G.D.P.R. and Health Insurance Portability and Accountability Act, or H.I.P.A.A. compliance (data never leaves source).
+G.D.P.R. and H.I.P.A.A. compliance (data never leaves source).
 
 Privacy concerns (no central honeypot to hack).
 
@@ -382,9 +413,9 @@ Why This Works: The Mathematical Impossibility of Committees.
 
 About two hundred F.D.A. bureaucrats decide what eight billion people can try when dying. Here's the math on why that can't work:
 
-The F.D.A.'s processing capacity: two hundred committee members, working eight hours a day, making one decision per hour equals one thousand six hundred decisions per day.
+The F.D.A.'s processing capacity includes two hundred committee members, working eight hours a day, making one decision per hour, which equals one thousand six hundred decisions per day.
 
-The decisions that actually need making: ten thousand known diseases times one hundred potential treatments times eight hundred million genetically distinct patient profiles equals eight hundred billion decisions.
+The decisions that actually need making involve ten thousand known diseases, multiplied by one hundred potential treatments, multiplied by eight hundred million genetically distinct patient profiles, for a total of eight hundred billion decisions.
 
 At one thousand six hundred decisions per day, the F.D.A. would need one million three hundred sixty-nine thousand eight hundred sixty-three years to evaluate everything. A decentralized system where eight billion people each make one health decision per day processes the same load in one hundred days.
 
@@ -402,32 +433,32 @@ But they decide for you anyway. This isn't ideology. It's information theory. Yo
 
 The Future: Where Death Becomes Embarrassing.
 
-Twenty twenty-seven: The Beginning of the End of Dying Slowly.
+2027: The Beginning of the End of Dying Slowly.
 
 F.D.A. dot gov becomes actually useful. Millions join trials from home. The first "Wikipedia disease" gets cured entirely through crowdsourced trials. The F.D.A. claims credit.
 
-Twenty thirty: Big Pharma Pivots or Dies.
+2030: Big Pharma Pivots or Dies.
 
 Pharmaceutical companies realize they can't charge ten thousand dollars for pills that cost one dollar to make when everyone can see the data. Some adapt. Some become museums. The gift shop sells expired painkillers at original markup.
 
-Twenty thirty-five: The Great Revelation.
+2035: The Great Revelation.
 
 Humanity could have done this all along. The internet existed since nineteen ninety. Computers since nineteen fifty.
 
 Five thousand years of letting people die while filling out forms. History books will call this "The Paperwork Age." Children will laugh.
 
-Twenty fifty: Death Becomes Opt-In.
+2050: Death Becomes Opt-In.
 
 Diseases are mostly solved. Death becomes a choice, like smoking or voting Republican. The F.D.A.'s job becomes preventing people from becoming immortal too quickly (traffic is bad enough).
 
 The last F.D.A. form is filled out. It's immediately lost. Nobody notices.
 
-How Your D.F.D.A. (the decentralized F.D.A.) Actually Works.
+How Your D.F.D.A. Actually Works.
 
 This approach achieves forty-four point one times More Efficiency through:
 
 Cost per patient is nine hundred twenty-nine dollars versus the current forty-one thousand dollars.
 
-Time to results is 2 years versus the current 17 years.
+Time to results is two years versus the current seventeen years.
 
 Patient access is universal access versus eighty-six point one percent excluded currently.
