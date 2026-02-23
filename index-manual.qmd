@@ -168,7 +168,9 @@ But you have [13,000 nuclear warheads](/knowledge/problem/cost-of-war.qmd), enou
 
 ![Everyone currently alive will be dead before we finish (current timeline)](/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
-At the current discovery rate, exploring the therapeutic search space takes ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then. Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}}, compressing that to ~{{< var dfda_queue_clearance_years >}}.
+At the current discovery rate, exploring the therapeutic search space takes ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then. Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}} (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} new treatments/year), compressing that to ~{{< var dfda_queue_clearance_years >}}.
+
+Two things save lives here. First, finding cures faster: treatments that would have sat undiscovered for centuries get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay between proving a drug is safe and letting dying humans take it (more on this insanity below). Combined, treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. I will repeat that number because your species tends to skim past large figures: **{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}**.
 
 ### The Cost of War
 
@@ -200,25 +202,11 @@ The first objection every human has: "But if we cut our military budget, our ene
 
 "But humans would never agree to that!" You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned nuclear testing (1996, 187 countries). You even agreed to keep Antarctica weapon-free (1959), and nobody lives there. You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
 
-### Why Decentralization Works
-
-::: {.content-hidden when-format="epub"}
-::: {.content-hidden when-format="pdf"}
-::: {.content-hidden when-format="docx"}
-{{< video assets/videos/milton-friedman-i-pencil-free-to-choose-network-360p-h264.mp4 title="Milton Friedman - I, Pencil (Free to Choose)" >}}
-:::
-:::
-:::
-
-Nobody tells the 14,000 people involved in making a pencil what to do. No meetings. No committees. No PowerPoints. Just prices quietly coordinating everything, like an invisible adult supervising a playground.
-
-Your current drug approval system is the opposite: a committee of people who've never had the disease voting on whether you're allowed to try treating it. It's like requiring a building permit to put out a fire.
-
-![Committees vs. prices (no PowerPoints required)](/assets/images/index-manual/index-manual-section-why-decentralization-works-bw-academic.jpg)
-
 ### Your [dFDA](/knowledge/solution/dfda.qmd)
 
-So where does the money go? Not to a committee of bureaucrats giving their friends grants to write papers about diseases. It goes to a [decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) that cuts trial costs by {{< var dfda_trial_cost_reduction_factor >}} and lets patients choose which trials to join. Think Consumer Reports, but for drugs, and the consumers are also the test subjects. Voluntarily. Because they're dying anyway and would like to stop.
+So where does the money go? Not to a committee of bureaucrats giving their friends grants to write papers about diseases. Most of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year. You invented this system for restaurants (it's called Yelp). Now do it for not dying.
+
+The whole thing runs on a [decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) that cuts trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funds {{< var dih_patients_fundable_annually >}} trial participants per year (versus the current {{< var current_trial_slots_available >}}). Currently, a committee of people who've never had the disease votes on whether you're allowed to try treating it. It's like requiring a building permit to put out a fire. Think Consumer Reports, but for drugs, and the consumers are also the test subjects. Voluntarily. Because they're dying anyway and would like to stop.
 
 #### Safer Than the FDA
 
@@ -226,7 +214,7 @@ Your current safety system works like this: if a drug gives you a heart attack, 
 
 The decentralized system collects every side effect automatically from every patient in real time. You know "12% got headaches, 3% were severe" BEFORE you take the pill, not after the class action lawsuit. The FDA doesn't publish these numbers at all. They make you guess. Somehow, having actual data is considered the dangerous option.
 
-Also, there's an 8-year delay between proving a drug is safe and letting dying humans take it. It's like a lifeguard who checks if the life preserver is safe while {{< var type_ii_error_cost_ratio >}} people drown. [Full safety analysis](/knowledge/solution/dfda.qmd).
+Also, there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough, and you're not allowed to volunteer for the trials that would answer that question faster. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while {{< var type_ii_error_cost_ratio >}} people drown. [Full safety analysis](/knowledge/solution/dfda.qmd).
 
 #### Treatment Rankings
 
@@ -268,11 +256,11 @@ Humans usually want "proof" before they stop doing something stupid, so:
 
 Even your own war heroes figured this out. Eisenhower, the human who won WW2, spent his last speech warning you that the weapons industry was eating your civilization alive: *"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* You gave him a standing ovation and then immediately ignored him for 65 years.
 
-- **The ROI**: Conservative return from R&D savings alone: {{< var dfda_roi_rd_only >}}:1. Full benefit including timeline shift: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1. Your calculator will display an error. This is correct.
+- **The ROI**: Conservative return from R&D savings alone: {{< var dfda_roi_rd_only >}}:1. Full benefit including timeline shift: {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1. Total economic value: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. Your calculator will display an error, then catch fire. This is correct.
 
 ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
 
-This beats smallpox eradication (280:1) and childhood vaccinations (13:1), which were humanity's previous greatest hits in the "not dying" genre. It's {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets, the gold standard for keeping humans alive. Full methodology and the numbers that make Excel cry at [https://impact.warondisease.org](https://impact.warondisease.org).
+Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of healthy life saved. This beats smallpox eradication ({{< var smallpox_eradication_roi >}}:1) and childhood vaccinations (13:1), which were humanity's previous greatest hits in the "not dying" genre. It's {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than bed nets, the gold standard for keeping humans alive. Even at {{< var political_success_probability >}} probability of the treaty actually passing (because you're you), the risk-adjusted cost-effectiveness is still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets. Full methodology and the numbers that make Excel cry at [https://impact.warondisease.org](https://impact.warondisease.org).
 
 ## The 5-Step Plan
 

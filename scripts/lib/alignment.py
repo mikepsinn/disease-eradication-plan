@@ -46,7 +46,7 @@ def align_chapter(
 
     print(f"  Aligning audio to text ({model_name} model)...")
     model = stable_whisper.load_model(model_name)
-    result = model.align(str(wav_path), source_text)
+    result = model.align(str(wav_path), source_text, language="en")  # pyright: ignore[reportCallIssue]
 
     # Extract word-level data from stable-ts result
     raw_words = []

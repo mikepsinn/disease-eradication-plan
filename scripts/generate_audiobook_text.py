@@ -195,6 +195,8 @@ Your job is MINIMAL: only change what would sound wrong spoken aloud. Leave ever
 
 CONVERT (only these):
 - Abbreviated money/units to spoken form: "$8.2T" -> "eight point two trillion dollars", "$519M" -> "five hundred nineteen million dollars"
+- Small numbers with k/K suffix: compute the actual number and speak it in full. "3.07k" -> "three thousand and seventy", "1.5k" -> "one thousand five hundred". Do NOT say "three point zero seven thousand".
+- Alphanumeric abbreviations: "WW2" -> "World War Two", "WW1" -> "World War One", "G7" -> "G Seven", "G20" -> "G Twenty", "21st" -> "twenty-first"
 - Tables: convert rows into short spoken sentences
 - Bullet lists: one sentence per bullet, keep them as separate paragraphs
 - Acronyms that are spelled out: "GDP" -> "G.D.P.", "FDA" -> "F.D.A.", "IAB" -> "I.A.B."
