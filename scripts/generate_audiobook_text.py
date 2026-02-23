@@ -30,6 +30,7 @@ import re
 import argparse
 import hashlib
 import shutil
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import cast
 
@@ -49,12 +50,16 @@ from lib.audiobook_common import (
     config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import save_text_results
-from lib.retry import retry_with_backoff
+from lib.retry import retry_with_backoff, RateLimiter
 
 # Configuration
 OUTPUT_DIR = TEXT_DIR
 
 MAX_CHUNK_CHARS = 3_000
+
+# LLM parallelization
+LLM_PARALLEL_WORKERS = 4
+llm_rate_limiter = RateLimiter(max_requests=15, window_seconds=60)
 
 
 # ---------------------------------------------------------------------------
@@ -221,6 +226,7 @@ def rewrite_for_audiobook(text: str, title: str, output_path: Path) -> str:
     """
     Send pre-processed text to LLM for narration rewrite.
     Saves each chunk to disk as it completes so we can resume after crashes.
+    Uses parallel workers for uncached chunks.
     """
     from lib.llm import generate_gemini_flash_content
 
@@ -228,33 +234,50 @@ def rewrite_for_audiobook(text: str, title: str, output_path: Path) -> str:
     chunk_dir = output_path.parent / "chunks" / output_path.stem
     chunk_dir.mkdir(parents=True, exist_ok=True)
 
-    rewritten_parts = []
+    total = len(chunks)
+    # results[i] holds the rewritten text for chunk i
+    results: list[str | None] = [None] * total
 
+    # Collect cached results and build work items for uncached chunks
+    work_items = []
     for i, chunk in enumerate(chunks):
-        chunk_file = chunk_dir / f"chunk-{i+1:02d}-of-{len(chunks):02d}.txt"
-
+        chunk_file = chunk_dir / f"chunk-{i+1:02d}-of-{total:02d}.txt"
         if chunk_file.exists():
-            print(f"    [CACHED] chunk {i + 1}/{len(chunks)} ({chunk_file.stat().st_size:,} bytes)")
-            rewritten_parts.append(chunk_file.read_text(encoding='utf-8'))
-            continue
-
-        if len(chunks) > 1:
-            context = f"\n\nThis is part {i + 1} of {len(chunks)} of the chapter \"{title}\". Continue from where the previous part left off."
+            print(f"    [CACHED] chunk {i + 1}/{total} ({chunk_file.stat().st_size:,} bytes)")
+            results[i] = chunk_file.read_text(encoding='utf-8')
         else:
-            context = f"\n\nThis is the chapter \"{title}\"."
+            work_items.append((i, chunk, chunk_file))
 
-        prompt = AUDIOBOOK_REWRITE_PROMPT + context + "\n\n---\n\nCONTENT TO CONVERT:\n\n" + chunk
+    if work_items:
+        def _rewrite_one(item):
+            i, chunk, chunk_file = item
+            label = f"chunk {i + 1}/{total}"
+            if total > 1:
+                context = f"\n\nThis is part {i + 1} of {total} of the chapter \"{title}\". Continue from where the previous part left off."
+            else:
+                context = f"\n\nThis is the chapter \"{title}\"."
+            prompt = AUDIOBOOK_REWRITE_PROMPT + context + "\n\n---\n\nCONTENT TO CONVERT:\n\n" + chunk
 
-        print(f"    Calling LLM ({len(chunk):,} chars, chunk {i + 1}/{len(chunks)})...")
-        result = retry_with_backoff(
-            lambda: generate_gemini_flash_content(prompt).strip(),
-            label=f"chunk {i + 1}/{len(chunks)} ",
-        )
-        chunk_file.write_text(result, encoding='utf-8')
-        print(f"    [SAVED] chunk {i + 1}/{len(chunks)} -> {chunk_file.name}")
-        rewritten_parts.append(result)
+            print(f"    [{label}] Calling LLM ({len(chunk):,} chars)...")
+            llm_rate_limiter.acquire()
+            # Capture prompt in default arg to avoid closure issues
+            result = retry_with_backoff(
+                lambda p=prompt: generate_gemini_flash_content(p).strip(),
+                label=f"{label} ",
+            )
+            chunk_file.write_text(result, encoding='utf-8')
+            print(f"    [{label}] Saved -> {chunk_file.name}")
+            return i, result
 
-    return '\n\n'.join(rewritten_parts)
+        workers = min(LLM_PARALLEL_WORKERS, len(work_items))
+        print(f"    Rewriting {len(work_items)} chunks ({workers} parallel workers)...")
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {executor.submit(_rewrite_one, item): item for item in work_items}
+            for future in as_completed(futures):
+                i, result = future.result()
+                results[i] = result
+
+    return '\n\n'.join(r for r in results if r is not None)
 
 
 def chunk_text(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list[str]:

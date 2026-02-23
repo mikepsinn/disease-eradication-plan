@@ -3,6 +3,7 @@
 """Generate TTS voice samples with different voices and speaking instructions."""
 import sys
 import io
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 if sys.platform == 'win32':
@@ -12,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from lib.tts import generate_speech
+from lib.retry import RateLimiter
 
 PROJECT_ROOT = Path(__file__).parent.parent
 SAMPLE_TEXT = (PROJECT_ROOT / "audiobook" / "test-sample.txt").read_text(encoding='utf-8')
@@ -103,19 +105,46 @@ STYLES = {
 # Generate all voice + style combos
 TESTS = [(voice, style_name, prompt) for voice in VOICES for style_name, prompt in STYLES.items()]
 
-print(f"Generating {len(TESTS)} voice samples ({len(VOICES)} voices x {len(STYLES)} styles)...")
-print(f"Output: {OUTPUT_DIR}\n")
+# Parallelization config
+TTS_PARALLEL_WORKERS = 4
+tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
 
+# Filter to uncached items
+work_items = []
 for i, (voice, style, instructions) in enumerate(TESTS):
     filename = f"{voice}-{style}.wav"
     output_path = OUTPUT_DIR / filename
-
     if output_path.exists():
         print(f"[{i+1}/{len(TESTS)}] SKIP (exists): {filename}")
-        continue
+    else:
+        work_items.append((i, voice, style, instructions, output_path))
 
-    print(f"[{i+1}/{len(TESTS)}] {voice} + {style}")
+print(f"\nGenerating {len(work_items)} voice samples ({len(TESTS) - len(work_items)} cached, {TTS_PARALLEL_WORKERS} parallel workers)...")
+print(f"Output: {OUTPUT_DIR}\n")
+
+def _generate_one(item):
+    i, voice, style, instructions, output_path = item
+    label = f"[{i+1}/{len(TESTS)}] {voice} + {style}"
+    print(f"{label} - starting...")
+    tts_rate_limiter.acquire()
     generate_speech(SAMPLE_TEXT, output_path, voice_name=voice, speaking_instructions=instructions)
-    print()
+    print(f"{label} - done")
+    return i
+
+errors = []
+with ThreadPoolExecutor(max_workers=TTS_PARALLEL_WORKERS) as executor:
+    futures = {executor.submit(_generate_one, item): item for item in work_items}
+    for future in as_completed(futures):
+        item = futures[future]
+        try:
+            future.result()
+        except Exception as e:
+            errors.append(f"{item[1]}-{item[2]}: {e}")
+            print(f"[ERROR] {item[1]} + {item[2]}: {e}")
+
+if errors:
+    print(f"\n{len(errors)} errors:")
+    for err in errors:
+        print(f"  {err}")
 
 print(f"\nDone! {len(TESTS)} samples in {OUTPUT_DIR}")

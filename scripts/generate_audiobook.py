@@ -18,6 +18,7 @@ import sys
 import re
 import argparse
 import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import TypedDict
 
@@ -39,6 +40,12 @@ from lib.audiobook_common import (
     find_prepared_text, AudiobookPaths, config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
+from lib.retry import RateLimiter
+
+# TTS parallelization: Gemini TTS allows concurrent requests.
+# Conservative limit; increase if your quota allows.
+TTS_PARALLEL_WORKERS = 4
+tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
 
 # Voice for narration (Kore + dinner-party energy, winner from A/B testing)
 NARRATOR_VOICE = DEFAULT_VOICE
@@ -170,23 +177,40 @@ def generate_chapter_audio(
     audio_chunk_dir = chapters_dir / "audio-chunks" / output_path.stem
     audio_chunk_dir.mkdir(parents=True, exist_ok=True)
 
+    # Build work items, skipping cached chunks
+    work_items = []
     for i, chunk_file in enumerate(chunk_files):
-        chunk_text = chunk_file.read_text(encoding='utf-8')
         audio_chunk_path = audio_chunk_dir / f"chunk-{i+1:02d}-of-{len(chunk_files):02d}.wav"
-
         if audio_chunk_path.exists():
             print(f"    [CACHED] audio chunk {i+1}/{len(chunk_files)} ({audio_chunk_path.stat().st_size:,} bytes)")
             continue
+        work_items.append((i, chunk_file, audio_chunk_path))
 
-        print(f"    Chunk {i+1}/{len(chunk_files)} ({len(chunk_text):,} chars)")
-        try:
-            generate_speech(
-                text=chunk_text,
-                output_path=audio_chunk_path,
-                voice_name=voice
-            )
-        except Exception as e:
-            print(f"    [ERROR] Failed on chunk {i+1}: {e}")
+    if work_items:
+        def _generate_one(item):
+            idx, cf, out_path = item
+            chunk_text = cf.read_text(encoding='utf-8')
+            label = f"chunk {idx+1}/{len(chunk_files)}"
+            print(f"    [{label}] Starting ({len(chunk_text):,} chars)")
+            tts_rate_limiter.acquire()
+            generate_speech(text=chunk_text, output_path=out_path, voice_name=voice)
+            print(f"    [{label}] Done")
+            return idx
+
+        workers = min(TTS_PARALLEL_WORKERS, len(work_items))
+        print(f"  Generating {len(work_items)} audio chunks ({workers} parallel workers)...")
+        errors = []
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {executor.submit(_generate_one, item): item for item in work_items}
+            for future in as_completed(futures):
+                item = futures[future]
+                try:
+                    future.result()
+                except Exception as e:
+                    errors.append(f"chunk {item[0]+1}: {e}")
+                    print(f"    [ERROR] Failed on chunk {item[0]+1}: {e}")
+        if errors:
+            print(f"  [ERROR] {len(errors)} chunk(s) failed")
             return None
 
     # Combine audio chunks into final chapter WAV
