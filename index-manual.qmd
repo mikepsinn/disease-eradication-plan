@@ -17,16 +17,16 @@ aliases:
 
 Hello, human!
 
-You don't realize it yet, but humanity will look back at your decision in this moment as one of the most important in the history of human civilization.
+You don't realize it yet, but humanity will look back at your decision in this moment as one of the most important in the history of your civilization.
 
-Your choice to read this book is the highest-value decision any human has ever made. It will show you how to prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, eliminate {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} years of suffering, generate {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in economic value, and possibly prevent the apocalypse as a bonus. Nobody has to become a better person. You just have to follow instructions.
+Your choice to read this book is the highest-value decision any human has ever made. It will show you how to prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, eliminate {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} years of suffering, generate {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in economic value, and possibly prevent the apocalypse as a bonus. Nobody has to become a better person. (That's clearly out of the question.) You just have to follow instructions.
 
 But first, a bit about me.
 
 I'm WISHONIA. That stands for World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. I've been optimizing resource allocation for another planet for the past 4,297 years, which in your Earth time is 4,297 years.
 
 I started watching your planet in 1945 when you split the atom.  
-"Atom" comes from the Greek word meaning "unable to be cut," so naturally you cut it.
+"Atom" comes from the Greek word meaning "unable to be cut," so naturally, you cut it.
 This was very human of you.
 I assumed you were trying to unlock unlimited free energy.
 You can imagine my surprise when I realized you were just pointing it at each other!
@@ -56,7 +56,7 @@ Humanity has created something magnificent:
 
 - You print papers from nothing (called "monetary policy")
 - You give these nothing-papers to weapons makers
-- You make things that destroy everything
+- They make things that destroy everything
 - This creates "jobs" which give people papers
 - People use papers to buy food (which grows for free)
 - This is called "the economy"
@@ -90,7 +90,7 @@ This is your planet's diagnostic criteria.
 
 Here's what you tell the orderly when he slides your medication through the door slot:
 
-Nobody accidentally builds an aircraft carrier. War requires you to mine metal from the ground, refine it into alloys, build factories to shape the alloys into weapons, train millions of humans to operate the weapons, feed and clothe those humans, build ships and planes and trucks to move the weapons to where the other humans are, convince your population the other humans deserve it, and then vote to pay for all of this, annually, forever. It is the single largest coordinated effort your species undertakes.
+Nobody accidentally builds an aircraft carrier or a nuclear bomb. War requires you to mine metal from the ground, refine it into alloys, build factories to shape the alloys into weapons, train millions of humans to operate the weapons, feed and clothe those humans, build ships and planes and trucks to move the weapons to where the other humans are, convince your population the other humans deserve it, and then vote to pay for all of this, annually, forever. It is the single largest coordinated effort your species undertakes.
 
 Stopping it requires not doing any of that.
 
@@ -170,13 +170,13 @@ But you have [13,000 nuclear warheads](/knowledge/problem/cost-of-war.qmd), enou
 
 ### The Unexplored Therapeutic Frontier
 
-95% of your diseases have zero approved treatments [@95-pct-diseases-no-treatment]. Your Food and Drug Administration has not administered drugs for 95% of food-and-drug-related problems. Only 15 diseases get their first effective treatment each year. {{< var diseases_without_effective_treatment >}} are still waiting.
+95% of your diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. This means Food and Drug Administration has not administered drugs for 95% of food-and-drug-related problems. Only 15 diseases get their first effective treatment each year. {{< var diseases_without_effective_treatment >}} are still waiting.
 
 ![Everyone currently alive will be dead before we finish (current timeline)](/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
-At the current discovery rate, exploring the therapeutic search space takes ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then. Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}} (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} new treatments/year), compressing that to ~{{< var dfda_queue_clearance_years >}}.
+At the current discovery rate, discovering treatments will ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then. Pragmatic trials at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}} (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}} new treatments/year), compressing that to ~{{< var dfda_queue_clearance_years >}}.
 
-Two things save lives here. First, finding cures faster: treatments that would have sat undiscovered for centuries get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay between proving a drug is safe and letting dying humans take it (more on this insanity below). Combined, treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. I will repeat that number because your species tends to skim past large figures: **{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}**.
+Two things save lives here. First, finding cures faster: treatments that would have sat undiscovered for centuries get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay between proving a drug is safe and letting dying humans take it (more on this insanity below). Combined, treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift saves {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
 
 ### The Cost of War
 
@@ -200,17 +200,17 @@ If cancer had oil reserves, you would have cured it by 2003. Instead, you spent 
 
 ### [A 1% Treaty](/knowledge/solution/1-percent-treaty.qmd)
 
-The first objection every human has: "But if we cut our military budget, our enemies will invade us!" This is the objection of someone who didn't read the word "treaty." Everyone cuts 1% at the same time. If every country reduces by 1% simultaneously, the balance of power doesn't change. Nobody becomes more vulnerable. Nobody gains an advantage. You all just have 1% fewer ways to kill each other, which you will not notice because you currently have enough to kill everyone 20 times over.
+The first objection every human has: "But if we cut our military budget, our enemies will invade us!" Everyone cuts 1% at the same time. If every country reduces by 1% simultaneously, the balance of power doesn't change. Nobody becomes more vulnerable. Nobody gains an advantage. You all just have 1% fewer ways to kill each other, which you will not notice because you currently have enough to kill everyone 20 times over.
 
 ![Still enough left to murder everyone 20 times](/assets/images/index-manual/index-manual-section-a-1-treaty-bw-academic.jpg)
 
 {{< var global_military_spending_post_treaty_annual_2024 >}} is still enough to murder every man, woman, and child on Earth 20 times, which should be more than sufficient.
 
-"But humans would never agree to that!" You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned nuclear testing (1996, 187 countries). You even agreed to keep Antarctica weapon-free (1959), and nobody lives there. You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
+"But humans would never agree to that!" You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned nuclear testing (1996, 187 countries). You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
 
 ### Your [dFDA](/knowledge/solution/dfda.qmd)
 
-So where does the money go? Not to a committee of bureaucrats giving their friends grants to write papers about diseases. Most of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year. You invented this system for restaurants (it's called Yelp). Now do it for not dying.
+So where does the money go? Not to a committee of humans giving their friends grants to write papers about diseases. Most of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year. You invented this system for restaurants (it's called Yelp). Now do it for not dying.
 
 The whole thing runs on a [decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) that cuts trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funds {{< var dih_patients_fundable_annually >}} trial participants per year (versus the current {{< var current_trial_slots_available >}}). Currently, a committee of people who've never had the disease votes on whether you're allowed to try treating it. It's like requiring a building permit to put out a fire. Think Consumer Reports, but for drugs, and the consumers are also the test subjects. Voluntarily. Because they're dying anyway and would like to stop.
 
@@ -222,7 +222,7 @@ The decentralized system collects every side effect automatically from every pat
 
 Also, there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough, and you're not allowed to volunteer for the trials that would answer that question faster. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while people drown.
 
-Here is the part where I need you to pay attention because your species has a habit of skimming past information that should make you angry. Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens every single year (it has happened once in 60 years, and US Phase I safety testing actually caught it anyway), the deaths from delay still outnumber the deaths from bad drugs by {{< var type_ii_error_cost_ratio >}} to 1. Your efficacy testing system's main product is dead patients.
+Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens every single year (it has happened once in 60 years, and US Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by {{< var type_ii_error_cost_ratio >}} to 1. Your efficacy testing system's main product is dead patients.
 
 #### Treatment Rankings
 
@@ -249,7 +249,7 @@ Food has nutrition labels. Cigarettes have warning labels. Drugs have 40-page in
 
 Humans usually want "proof" before they stop doing something stupid, so:
 
-- [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. That's a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality. During a pandemic. While panicking.
+- [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}} instead of the usual {{< var traditional_phase3_cost_per_patient >}}. That's a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality. During a pandemic. While panicking.
 - [After WW2, humans cut military spending by 30%](/knowledge/proof.qmd#post-ww2) and accidentally created the greatest economic boom in history. You're asking for 1%. Even people who really, really, love explosions should be able to handle 1%.
 
 ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
@@ -327,11 +327,7 @@ You need {{< var global_population_activism_threshold_pct >}} of humanity to vot
 
 Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](/knowledge/strategy/global-referendum.qmd) {{< var global_population_activism_threshold_pct_cite >}}. Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. It's like a cheat code for civilization, except it's real and backed by a century of data.
 
-That's 280 million humans. Sounds like a lot until you remember that 2 billion of you downloaded TikTok to watch people twerk. You can get 280 million to click "yes" on not dying.
-
-Here's how: everyone who votes gets a referral link. Every person who votes using your link earns you $0.50. That's it. That's the entire viral mechanism. You don't need to convince people to care about humanity. You just need to convince them that $0.50 is worth clicking a button, which on your planet is apparently an easier sell than "please don't die."
-
-It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases. The least sinister pyramid scheme in history.
+That's 280 million humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get 280 million to click "yes" on not dying. {{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to [paid referral bonuses](/knowledge/strategy/global-referendum.qmd) that make sharing the vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
 
 ### Step 3: Bribe the Bribers
 

@@ -187,6 +187,16 @@ def generate_chapter_audio(
     audio_chunk_dir = chapters_dir / "audio-chunks" / output_path.stem
     audio_chunk_dir.mkdir(parents=True, exist_ok=True)
 
+    # Clean stale audio chunks from previous runs with different chunk counts.
+    # e.g. old run had 10 chunks (chunk-*-of-10.wav), new run has 9. Without
+    # cleanup the combine step globs all .wav files and double-concatenates.
+    expected_tag = f"-of-{len(chunk_files):02d}"
+    for old_file in list(audio_chunk_dir.glob("chunk-*.wav")):
+        if expected_tag not in old_file.stem:
+            print(f"    [CLEAN] Removing stale chunk: {old_file.name}")
+            old_file.unlink()
+            old_file.with_suffix('.texthash').unlink(missing_ok=True)
+
     # Build work items, skipping cached chunks whose source text hasn't changed
     work_items = []
     for i, chunk_file in enumerate(chunk_files):

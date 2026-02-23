@@ -200,7 +200,9 @@ CONVERT (only these):
 - Tables: convert rows into short spoken sentences
 - Bullet lists: one sentence per bullet, keep them as separate paragraphs
 - Acronyms that are spelled out: "GDP" -> "G.D.P.", "FDA" -> "F.D.A.", "IAB" -> "I.A.B."
-- Acronyms pronounced as words: keep as-is. "PAC", "DALY", "NATO" stay "PAC", "DALY", "NATO"
+- Unfamiliar acronyms: expand on first use, then spell out. "DALYs" -> "disability-adjusted life years, or D.A.L.Y.s", "QALY" -> "quality-adjusted life year, or Q.A.L.Y."
+- "dFDA" always becomes "D.F.D.A." (the decentralized FDA)
+- Acronyms pronounced as words: keep as-is. "PAC", "NATO" stay "PAC", "NATO"
 - Strip markdown formatting characters only (**, ##, -, etc.)
 
 KEEP for TTS:
