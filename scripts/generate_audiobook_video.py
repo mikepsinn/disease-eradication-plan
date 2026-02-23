@@ -20,6 +20,7 @@ Usage:
 import io
 import sys
 import re
+import hashlib
 import argparse
 import shutil
 import subprocess
@@ -162,6 +163,12 @@ def get_chapter_dir(chapter: dict, paths: AudiobookPaths | None = None) -> Path:
 
 
 
+def _narration_hash(scene: dict) -> str:
+    """Compute a short hash of a scene's narration text for cache invalidation."""
+    text = scene.get('narration_text', '')
+    return hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
+
+
 # Imagen: 20 requests per minute
 imagen_rate_limiter = RateLimiter(max_requests=18, window_seconds=60)  # 18 to stay safely under 20
 
@@ -244,15 +251,23 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
 
     work_items = []
     for scene in scenes:
+        nh = _narration_hash(scene)
+        old_hash = scene.get('keyframe_hash', '')
+        stale = old_hash and old_hash != nh
+
         for aspect in ASPECT_RATIOS:
             aspect_tag = aspect.replace(":", "x")
             filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.jpg"
             output_path = keyframes_dir / filename
 
-            if output_path.exists():
+            if output_path.exists() and not stale:
                 print(f"    [CACHED] {filename}")
                 scene['keyframes'][aspect] = f"keyframes/{filename}"
                 continue
+
+            if output_path.exists() and stale:
+                print(f"    [STALE] {filename} narration changed ({old_hash} -> {nh})")
+                output_path.unlink()
 
             work_items.append((scene, aspect, output_path, filename))
 
@@ -315,6 +330,8 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
                 for s in scenes:
                     if s['scene_index'] == scene_idx:
                         s['keyframes'][aspect] = kf_rel
+                        # Store narration hash so we can detect stale keyframes later
+                        s['keyframe_hash'] = _narration_hash(s)
                         break
             except Exception as e:
                 errors.append(str(e))
@@ -415,15 +432,23 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
     # Build work items, skipping cached/missing
     work_items = []
     for scene in scenes:
+        nh = _narration_hash(scene)
+        old_hash = scene.get('clip_hash', '')
+        stale = old_hash and old_hash != nh
+
         for aspect in ASPECT_RATIOS:
             aspect_tag = aspect.replace(":", "x")
             clip_filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.mp4"
             clip_path = clips_dir / clip_filename
 
-            if clip_path.exists():
+            if clip_path.exists() and not stale:
                 print(f"    [CACHED] {clip_filename}")
                 scene['clips'][aspect] = f"clips/{clip_filename}"
                 continue
+
+            if clip_path.exists() and stale:
+                print(f"    [STALE] {clip_filename} narration changed ({old_hash} -> {nh})")
+                clip_path.unlink()
 
             keyframe_path = None
             if use_keyframes:
@@ -472,6 +497,8 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
                 for s in scenes:
                     if s['scene_index'] == scene_idx:
                         s['clips'][aspect] = clip_rel
+                        # Store narration hash so we can detect stale clips later
+                        s['clip_hash'] = _narration_hash(s)
                         break
             except Exception as e:
                 errors.append(f"Clip scene {scene_idx} ({aspect}): {e}")

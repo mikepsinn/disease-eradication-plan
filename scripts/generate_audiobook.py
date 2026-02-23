@@ -16,6 +16,7 @@ Usage:
 """
 import sys
 import re
+import hashlib
 import argparse
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -112,11 +113,12 @@ def generate_chapter_audio(
     force: bool = False,
     paths: AudiobookPaths | None = None,
     config_path: Path = DEFAULT_CONFIG_PATH,
-) -> Path | None:
+) -> tuple[Path | None, bool]:
     """
     Generate audio for a single chapter.
 
     Regenerates prepared text first (via subprocess), then converts to audio via TTS.
+    Uses content hashes to detect stale audio chunks when source text changes.
 
     Args:
         chapter: Chapter dict with path, title, part, index
@@ -126,14 +128,14 @@ def generate_chapter_audio(
         config_path: Quarto config path (passed to text subprocess)
 
     Returns:
-        Path to generated audio file, or None on error
+        Tuple of (path to generated audio file or None, whether audio was regenerated)
     """
     chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
     qmd_path = PROJECT_ROOT / chapter['path']
 
     if not qmd_path.exists():
         print(f"  [SKIP] File not found: {qmd_path}")
-        return None
+        return None, False
 
     # Get or extract title
     title = chapter['title'] or extract_title_from_qmd(qmd_path)
@@ -142,12 +144,7 @@ def generate_chapter_audio(
     output_filename = f"{chapter['index']:03d}-{safe_filename(title)}.wav"
     output_path = chapters_dir / output_filename
 
-    # Skip if already exists (unless force)
-    if output_path.exists() and not force:
-        print(f"  [SKIP] Already exists: {output_path.name}")
-        return output_path
-
-    # Regenerate prepared text via subprocess (avoids API client conflicts)
+    # Regenerate prepared text via subprocess (has its own hash-based caching)
     print(f"  Preparing text...")
     text_script = Path(__file__).parent / "generate_audiobook_text.py"
     result = subprocess.run(
@@ -157,13 +154,13 @@ def generate_chapter_audio(
     )
     if result.returncode != 0:
         print(f"  [ERROR] Text preparation failed (exit code {result.returncode})")
-        return None
+        return None, False
 
     # Find text chunk files (produced by generate_audiobook_text.py)
     text_file = find_prepared_text({'index': chapter['index'], 'title': title}, paths=paths)
     if not text_file:
         print(f"  [SKIP] No text file found after preparation")
-        return None
+        return None, False
 
     chunk_dir = text_file.parent / "chunks" / text_file.stem
     chunk_files = sorted(chunk_dir.glob("chunk-*.txt")) if chunk_dir.exists() else []
@@ -172,19 +169,45 @@ def generate_chapter_audio(
         # Single chunk - use the main text file directly
         chunk_files = [text_file]
 
-    print(f"  Generating audio for: {title} ({len(chunk_files)} text chunks)")
     chapters_dir.mkdir(parents=True, exist_ok=True)
     audio_chunk_dir = chapters_dir / "audio-chunks" / output_path.stem
     audio_chunk_dir.mkdir(parents=True, exist_ok=True)
 
-    # Build work items, skipping cached chunks
+    # Build work items, skipping cached chunks whose source text hasn't changed
     work_items = []
     for i, chunk_file in enumerate(chunk_files):
         audio_chunk_path = audio_chunk_dir / f"chunk-{i+1:02d}-of-{len(chunk_files):02d}.wav"
+        hash_path = audio_chunk_path.with_suffix('.texthash')
+
         if audio_chunk_path.exists():
-            print(f"    [CACHED] audio chunk {i+1}/{len(chunk_files)} ({audio_chunk_path.stat().st_size:,} bytes)")
-            continue
+            # Check if source text has changed since this audio was generated
+            text_content = chunk_file.read_text(encoding='utf-8')
+            text_hash = hashlib.sha256(text_content.encode('utf-8')).hexdigest()[:16]
+            old_hash = hash_path.read_text(encoding='utf-8').strip() if hash_path.exists() else ''
+
+            if old_hash == text_hash:
+                print(f"    [CACHED] audio chunk {i+1}/{len(chunk_files)} ({audio_chunk_path.stat().st_size:,} bytes)")
+                continue
+            else:
+                print(f"    [STALE] audio chunk {i+1}/{len(chunk_files)} text changed ({old_hash or 'none'} -> {text_hash}), regenerating")
+                audio_chunk_path.unlink()
+                hash_path.unlink(missing_ok=True)
+
         work_items.append((i, chunk_file, audio_chunk_path))
+
+    # If nothing to regenerate and chapter WAV exists, skip
+    if not work_items and output_path.exists() and not force:
+        print(f"  [SKIP] All audio chunks fresh, chapter WAV up to date: {output_path.name}")
+        return output_path, False
+
+    # If force and no stale chunks detected, still regenerate all
+    if force and not work_items:
+        work_items = [
+            (i, cf, audio_chunk_dir / f"chunk-{i+1:02d}-of-{len(chunk_files):02d}.wav")
+            for i, cf in enumerate(chunk_files)
+        ]
+
+    print(f"  Generating audio for: {title} ({len(work_items)} of {len(chunk_files)} chunks to generate)")
 
     if work_items:
         def _generate_one(item):
@@ -194,6 +217,9 @@ def generate_chapter_audio(
             print(f"    [{label}] Starting ({len(chunk_text):,} chars)")
             tts_rate_limiter.acquire()
             generate_speech(text=chunk_text, output_path=out_path, voice_name=voice)
+            # Write text hash sidecar so we can detect stale audio later
+            text_hash = hashlib.sha256(chunk_text.encode('utf-8')).hexdigest()[:16]
+            out_path.with_suffix('.texthash').write_text(text_hash, encoding='utf-8')
             print(f"    [{label}] Done")
             return idx
 
@@ -211,7 +237,7 @@ def generate_chapter_audio(
                     print(f"    [ERROR] Failed on chunk {item[0]+1}: {e}")
         if errors:
             print(f"  [ERROR] {len(errors)} chunk(s) failed")
-            return None
+            return None, False
 
     # Combine audio chunks into final chapter WAV
     audio_chunk_files = sorted(audio_chunk_dir.glob("chunk-*.wav"))
@@ -227,7 +253,7 @@ def generate_chapter_audio(
         combined.export(str(output_path), format="wav")
 
     print(f"    [OK] Saved: {output_path.name}")
-    return output_path
+    return output_path, True
 
 
 def combine_chapter_audio(
@@ -500,7 +526,7 @@ def export_m4b(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: di
     print(f"  [OK] M4B: {m4b_path} ({m4b_size / 1024 / 1024:.1f} MB)")
 
 
-def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = False, paths: AudiobookPaths | None = None):
+def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = False, paths: AudiobookPaths | None = None, audio_changed: bool = False):
     """Run forced alignment and generate subtitles for a chapter.
 
     Gracefully skips if stable-ts is not installed.
@@ -513,9 +539,11 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
     alignment_path = alignment_dir / f"{chapter['index']:03d}-{safe}.alignment.json"
     vtt_path = subtitles_dir / f"{chapter['index']:03d}-{safe}.vtt"
 
-    if alignment_path.exists() and not force:
+    if alignment_path.exists() and not force and not audio_changed:
         print(f"  [SKIP] Alignment exists: {alignment_path.name}")
         return
+    if audio_changed and alignment_path.exists():
+        print(f"  [STALE] Audio changed, regenerating alignment...")
 
     text_file = find_prepared_text({'index': chapter['index'], 'title': title}, paths=paths)
     if not text_file:
@@ -636,13 +664,13 @@ def main():
 
         print(f"\n[{chapter['index']}/{len(chapters)}] {title}")
 
-        audio_path = generate_chapter_audio(chapter, voice=args.voice, force=args.force, paths=paths, config_path=config_path)
+        audio_path, audio_changed = generate_chapter_audio(chapter, voice=args.voice, force=args.force, paths=paths, config_path=config_path)
         if audio_path:
             generated_files.append(audio_path)
 
             # Run forced alignment + subtitle generation
             if not args.no_align:
-                _run_alignment(chapter, audio_path, title, force=args.force, paths=paths)
+                _run_alignment(chapter, audio_path, title, force=args.force, paths=paths, audio_changed=audio_changed)
 
     print(f"\n{'=' * 60}")
     print(f"Generated {len(generated_files)} audio files")
