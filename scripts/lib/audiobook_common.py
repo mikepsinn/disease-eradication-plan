@@ -9,7 +9,7 @@ from pathlib import Path
 
 # --- Path constants (legacy, kept for backward compat) ---
 PROJECT_ROOT = Path(__file__).parent.parent.parent
-AUDIOBOOK_DIR = PROJECT_ROOT / "audiobook"
+AUDIOBOOK_DIR = PROJECT_ROOT / "assets" / "audiobook"
 TEXT_DIR = AUDIOBOOK_DIR / "text"
 CHAPTER_AUDIO_DIR = AUDIOBOOK_DIR / "chapters"
 ALIGNMENT_DIR = AUDIOBOOK_DIR / "alignment"
@@ -39,7 +39,7 @@ class AudiobookPaths:
 def get_paths(config_name: str) -> AudiobookPaths:
     """Create an AudiobookPaths for the given config name.
 
-    Output structure: audiobook/{config_name}/text/, chapters/, etc.
+    Output structure: assets/audiobook/{config_name}/text/, chapters/, etc.
     """
     root = AUDIOBOOK_DIR / config_name
     video = root / "video"

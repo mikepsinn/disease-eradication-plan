@@ -1,0 +1,28 @@
+# Directories to exclude from R2 sync
+# Uses gitignore-style patterns (relative to each sync root)
+
+# === assets/ exclusions ===
+# Build artifacts and temp files
+kindle-diagnosis/
+kpf/
+docx/
+need-watermark/
+watermarked/
+
+# Documentation (not needed on CDN)
+*.md
+image-index.json
+
+# === audiobook/ exclusions ===
+# Intermediate audio chunks (huge, not for distribution)
+audio-chunks/
+
+# Raw WAV files (only distribute MP3/M4B)
+*.wav
+
+# Cache sidecars
+*.texthash
+.prepared_hash
+
+# Alignment data (regeneratable, large)
+alignment/

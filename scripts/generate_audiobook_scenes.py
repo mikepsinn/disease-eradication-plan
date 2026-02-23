@@ -213,7 +213,7 @@ def main():
     cfg_name = config_name_from_path(config_path)
     paths = get_paths(cfg_name)
 
-    print(f"Loading book configuration: {config_path.name} (output: audiobook/{cfg_name}/)")
+    print(f"Loading book configuration: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_quarto_config(config_path)
     chapters = extract_chapters(config)
     chapters = resolve_chapter_titles(chapters)

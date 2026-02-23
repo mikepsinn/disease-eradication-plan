@@ -1,0 +1,16 @@
+{
+  "chapters": [
+    {
+      "index": 1,
+      "title": "Start Here",
+      "part": null,
+      "path": "index-manual.qmd",
+      "text_file": "audiobook\\manual-paperback\\text\\001-Start-Here.prepared.txt",
+      "chars": 30495,
+      "status": "generated",
+      "alignment_file": "audiobook\\manual-paperback\\alignment\\001-Start-Here.alignment.json",
+      "subtitle_file": "audiobook\\manual-paperback\\subtitles\\001-Start-Here.vtt"
+    }
+  ],
+  "output_dir": "audiobook\\manual-paperback\\text"
+}

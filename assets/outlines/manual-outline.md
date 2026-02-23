@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 104,235 | **Images:** 604 | **Est. Pages:** ~719
+**Files:** 44 | **Words:** 104,699 | **Images:** 601 | **Est. Pages:** ~719
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 4,578 words | 450 lines | 14 images | ~25p
+**Stats:** 5,065 words | 454 lines | 12 images | ~26p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Beautiful Inefficiency of the Human Economy
@@ -25,9 +25,6 @@
   - The Solution
     - [A 1% Treaty](/knowledge/solution/1-percent-treaty.qmd)
     ![Still enough left to murder everyone 20 times](/assets/images/index-manual/index-manual-section-a-1-treaty-bw-academic.jpg)
-    - Why Decentralization Works
-    ![(video)](assets/videos/milton-friedman-i-pencil-free-to-choose-network-360p-h264.mp4)
-    ![Committees vs. prices (no PowerPoints required)](/assets/images/index-manual/index-manual-section-why-decentralization-works-bw-academic.jpg)
     - Your [dFDA](/knowledge/solution/dfda.qmd)
       - Safer Than the FDA
       - Treatment Rankings
@@ -38,6 +35,7 @@
     - The Evidence
     ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
     ![(video)](https://www.youtube.com/watch?v=Gg-jvHynP9Y)
+    - The Math
     ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
   - The 5-Step Plan
     - Step 1: Sell Incentive Alignment Bonds
@@ -827,7 +825,7 @@
 #### knowledge/proof.qmd
 **Title:** The Proof: Overview
 **Description:** This Already Works - Pragmatic trials prove 44.1x (95% CI: 39.4x-89.1x) efficiency. History proves every component. Switzerland, war bonds, landmines, the 3.5% rule, and Wall Street's craziest bets all prove humans can accidentally do smart things when properly motivated.
-**Stats:** 3,209 words | 306 lines | 21 images | ~23p
+**Stats:** 3,186 words | 303 lines | 20 images | ~23p
 
   - Pragmatic Trials: 44.1x (95% CI: 39.4x-89.1x) More Efficient {#pragmatic-trials}
     ![The British figured out how to test drugs for $929 per patient. Americans spend $41,000. Both countries speak English, so language barrier isn't the issue.](/assets/images/proof/proof-section-pragmatic-trials-44-1x-95-ci-39-4x-89-1x-more-efficient-bw-academic.jpg)
@@ -860,7 +858,6 @@
     - Occupy Wall Street: When "We're Angry" Isn't a Strategy {#occupy}
     ![Occupy Wall Street had 50 demands and changed nothing. We have one demand. This is either much smarter or much sadder.](/assets/images/historical-precedents/historical-precedents-section-occupy-wall-street-when-we-re-angry-isn-t-a-strategy-bw-academic.jpg)
   - On How Rich People Made Money Doing Crazy Things (And Why That Matters) {#financial-precedents}
-    ![Investing in ending war sounds crazy until you remember people invested in pet rocks and Beanie Babies. At least this one might work.](/assets/images/historical-precedents/historical-precedents-section-on-how-rich-people-made-money-doin-bw-academic.jpg)
     - On The Time Junk Bonds Saved Capitalism {#milken}
       - Michael Milken & High-Yield ("Junk") Bonds
     ![Safe bonds pay 3 percent. Risky bonds pay 8 percent. World peace bonds pay 12 percent. Turns out you can put a price on everything, including virtue.](/assets/images/historical-precedents/historical-precedents-section-michael-milken-high-yield-junk-bonds-bw-academic.jpg)

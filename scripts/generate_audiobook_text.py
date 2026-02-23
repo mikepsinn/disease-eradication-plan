@@ -448,7 +448,7 @@ def main():
     global OUTPUT_DIR
     OUTPUT_DIR = paths.text
 
-    print(f"Loading config: {config_path.name} (output: audiobook/{cfg_name}/)")
+    print(f"Loading config: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_quarto_config(config_path)
     chapters = extract_chapters(config)
     print(f"Found {len(chapters)} chapters")

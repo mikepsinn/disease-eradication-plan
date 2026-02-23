@@ -43,3 +43,4 @@ ebooklib
 lxml
 mutagen
 stable-ts  # Whisper-based forced alignment for audiobook subtitles
+boto3  # S3-compatible API for Cloudflare R2 audiobook uploads

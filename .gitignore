@@ -146,6 +146,14 @@ README.html
 
 
 
+# Audiobook build artifacts (regenerate with: npm run audiobook:generate:all)
+# Keep: prepared text, subtitles, manifest, RSS feed
+# Ignore: audio files (WAV/MP3/M4B), alignment data, cache sidecars
+assets/audiobook/**/chapters/
+assets/audiobook/**/alignment/
+assets/audiobook/**/*.texthash
+assets/audiobook/**/.prepared_hash
+
 /.luarc.json
 /tools/
 kindle-diagnosis/

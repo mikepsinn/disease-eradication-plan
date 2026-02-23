@@ -16,8 +16,8 @@ from lib.tts import generate_speech
 from lib.retry import RateLimiter
 
 PROJECT_ROOT = Path(__file__).parent.parent
-SAMPLE_TEXT = (PROJECT_ROOT / "audiobook" / "test-sample.txt").read_text(encoding='utf-8')
-OUTPUT_DIR = PROJECT_ROOT / "audiobook" / "voice-tests"
+SAMPLE_TEXT = (PROJECT_ROOT / "assets" / "audiobook" / "test-sample.txt").read_text(encoding='utf-8')
+OUTPUT_DIR = PROJECT_ROOT / "assets" / "audiobook" / "voice-tests"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Voices to test

@@ -726,7 +726,7 @@ def generate_podcast_rss(
 
     site_url = book_meta.get('site_url', 'https://manual.WarOnDisease.org')
     # MP3s will be served from audiobook/{config}/mp3/ on the site
-    mp3_base = paths.root.relative_to(PROJECT_ROOT) if paths else Path("audiobook")
+    mp3_base = paths.root.relative_to(PROJECT_ROOT) if paths else Path("assets/audiobook")
     mp3_url_base = f"{site_url}/{mp3_base.as_posix()}/mp3"
 
     # Build timestamp lookup
@@ -905,7 +905,7 @@ def main():
     paths = get_paths(cfg_name)
 
     # Load book config
-    print(f"Loading book configuration: {config_path.name} (output: audiobook/{cfg_name}/)")
+    print(f"Loading book configuration: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_book_config(config_path)
     chapters = extract_chapters(config)
     print(f"Found {len(chapters)} chapters")

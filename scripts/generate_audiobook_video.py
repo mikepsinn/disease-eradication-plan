@@ -922,7 +922,7 @@ def main():
     cfg_name = config_name_from_path(config_path)
     paths = get_paths(cfg_name)
 
-    print(f"Config: {config_path.name} (output: audiobook/{cfg_name}/)")
+    print(f"Config: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
 
     # Load full config for book metadata
     full_config = load_quarto_config(config_path)
