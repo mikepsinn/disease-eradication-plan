@@ -35,7 +35,7 @@ from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
     PROJECT_ROOT, ALIGNMENT_DIR, SCENES_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd,
-    safe_filename, find_prepared_text, find_chapter_audio,
+    safe_filename, chapter_slug, find_prepared_text, find_chapter_audio,
     resolve_chapter_titles, filter_chapters,
     AudiobookPaths, config_name_from_path, get_paths,
 )
@@ -48,15 +48,14 @@ from lib.scenes import (
 def get_chapter_dir(chapter: dict, paths: AudiobookPaths | None = None) -> Path:
     """Get the scene directory for a chapter."""
     scenes_dir = paths.scenes if paths else SCENES_DIR
-    return scenes_dir / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}"
+    return scenes_dir / f"{chapter['index']:03d}-{chapter_slug(chapter)}"
 
 
 def find_alignment(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find alignment JSON for a chapter."""
     alignment_dir = paths.alignment if paths else ALIGNMENT_DIR
-    title = chapter.get('title') or ''
-    safe = safe_filename(title)
-    alignment_file = alignment_dir / f"{chapter['index']:03d}-{safe}.alignment.json"
+    slug = chapter_slug(chapter)
+    alignment_file = alignment_dir / f"{chapter['index']:03d}-{slug}.alignment.json"
     if alignment_file.exists():
         return alignment_file
     for f in alignment_dir.glob(f"{chapter['index']:03d}-*.alignment.json"):

@@ -168,15 +168,23 @@ def extract_chapters(config: dict) -> list[dict]:
     return chapters
 
 
+def chapter_slug(chapter: dict) -> str:
+    """Stable filename slug derived from the QMD path, not the title.
+
+    Titles change; filenames shouldn't. Uses the QMD stem (e.g. 'cost-of-war')
+    which is stable across title renames.
+    """
+    return Path(chapter['path']).stem
+
+
 def find_prepared_text(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find the prepared audiobook text file for a chapter."""
     text_dir = paths.narration_txt if paths else NARRATION_DIR
-    title = chapter.get('title') or ''
-    safe = safe_filename(title)
-    text_file = text_dir / f"{chapter['index']:03d}-{safe}.prepared.txt"
+    slug = chapter_slug(chapter)
+    text_file = text_dir / f"{chapter['index']:03d}-{slug}.prepared.txt"
     if text_file.exists():
         return text_file
-    # Fallback: match by chapter index prefix
+    # Fallback: match by chapter index prefix (handles legacy title-based names)
     for f in text_dir.glob(f"{chapter['index']:03d}-*.prepared.txt"):
         return f
     return None
@@ -185,11 +193,11 @@ def find_prepared_text(chapter: dict, paths: AudiobookPaths | None = None) -> Pa
 def find_chapter_audio(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find the WAV audio file for a chapter."""
     chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
-    title = chapter.get('title') or ''
-    safe = safe_filename(title)
-    audio_file = chapters_dir / f"{chapter['index']:03d}-{safe}.wav"
+    slug = chapter_slug(chapter)
+    audio_file = chapters_dir / f"{chapter['index']:03d}-{slug}.wav"
     if audio_file.exists():
         return audio_file
+    # Fallback: match by chapter index prefix (handles legacy title-based names)
     for f in chapters_dir.glob(f"{chapter['index']:03d}-*.wav"):
         return f
     return None

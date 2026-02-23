@@ -73,7 +73,9 @@
       "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\007-The-FDA-Is-Unsafe-and-Ineffective.prepared.txt",
       "status": "generated",
-      "chars": 16652
+      "chars": 16652,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\007-The-FDA-Is-Unsafe-and-Ineffective.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\007-The-FDA-Is-Unsafe-and-Ineffective.vtt"
     },
     {
       "index": 8,
@@ -81,7 +83,10 @@
       "part": "The Problem",
       "path": "knowledge/problem/unrepresentative-democracy.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\008-Unrepresentative-Democracy.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 18607,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\008-Unrepresentative-Democracy.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\008-Unrepresentative-Democracy.vtt"
     },
     {
       "index": 9,
@@ -89,7 +94,10 @@
       "part": "The Problem",
       "path": "knowledge/economics/central-banks.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\009-How-Central-Banks-Fund-Your-Death.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 17025,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\009-How-Central-Banks-Fund-Your-Death.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\009-How-Central-Banks-Fund-Your-Death.vtt"
     },
     {
       "index": 10,
@@ -97,7 +105,10 @@
       "part": "The Problem",
       "path": "knowledge/problem/genetic-slavery.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\010-Genetic-Slavery.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 13456,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\010-Genetic-Slavery.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\010-Genetic-Slavery.vtt"
     },
     {
       "index": 11,
@@ -105,7 +116,10 @@
       "part": "The Solution",
       "path": "knowledge/solution.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\011-Solution-Overview.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 10004,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\011-Solution-Overview.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\011-Solution-Overview.vtt"
     },
     {
       "index": 12,
@@ -113,7 +127,10 @@
       "part": "The Solution",
       "path": "knowledge/solution/1-percent-treaty.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\012-A-1-Treaty.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 20205,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\012-A-1-Treaty.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\012-A-1-Treaty.vtt"
     },
     {
       "index": 13,
@@ -121,7 +138,10 @@
       "part": "The Solution",
       "path": "knowledge/solution/dih.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\013-Decentralized-Institutes-of-Health.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 22309,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\013-Decentralized-Institutes-of-Health.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\013-Decentralized-Institutes-of-Health.vtt"
     },
     {
       "index": 14,
@@ -129,7 +149,10 @@
       "part": "The Solution",
       "path": "knowledge/solution/wishocracy.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\014-Wishocracy.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 9467,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\014-Wishocracy.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\014-Wishocracy.vtt"
     },
     {
       "index": 15,
@@ -137,7 +160,10 @@
       "part": "The Solution",
       "path": "knowledge/solution/dfda.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\015-A-Decentralized-Framework-for-Drug-Assessment.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 22445,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\015-A-Decentralized-Framework-for-Drug-Assessment.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\015-A-Decentralized-Framework-for-Drug-Assessment.vtt"
     },
     {
       "index": 16,
@@ -145,7 +171,10 @@
       "part": "The Solution",
       "path": "knowledge/solution/aligning-incentives.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\016-Aligning-Incentives.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 19083,
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\016-Aligning-Incentives.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\016-Aligning-Incentives.vtt"
     },
     {
       "index": 17,
@@ -153,7 +182,8 @@
       "part": "The Solution",
       "path": "knowledge/solution/incentive-alignment-bonds.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\017-VICTORY-Incentive-Alignment-Bonds.prepared.txt",
-      "status": "cached"
+      "status": "generated",
+      "chars": 33508
     },
     {
       "index": 18,

@@ -42,7 +42,8 @@ from generate_audiobook import extract_book_metadata
 from lib.audiobook_common import (
     PROJECT_ROOT, VIDEO_DIR, SCENES_DIR,
     extract_chapters as _extract_chapters,
-    extract_title_from_qmd, safe_filename, find_prepared_text, find_chapter_audio,
+    extract_title_from_qmd, safe_filename, chapter_slug,
+    find_prepared_text, find_chapter_audio,
     resolve_chapter_titles,
     AudiobookPaths, config_name_from_path, get_paths,
     resolve_config_path, get_available_configs,
@@ -159,7 +160,7 @@ def extract_chapters_from_config(config_path: Path) -> list[dict]:
 def get_chapter_dir(chapter: dict, paths: AudiobookPaths | None = None) -> Path:
     """Get the scene directory for a chapter."""
     scenes_dir = paths.scenes if paths else SCENES_DIR
-    return scenes_dir / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}"
+    return scenes_dir / f"{chapter['index']:03d}-{chapter_slug(chapter)}"
 
 
 
@@ -528,7 +529,8 @@ def assemble_chapter_video(
     """
     video_dir = paths.video if paths else VIDEO_DIR
     aspect_tag = aspect.replace(":", "x")
-    output_path = video_dir / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
+    slug = chapter_slug(chapter)
+    output_path = video_dir / f"{chapter['index']:03d}-{slug}-{aspect_tag}.mp4"
 
     audio_path = find_chapter_audio(chapter, paths=paths)
     if not audio_path:
@@ -816,7 +818,7 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
         video_dir = paths.video if paths else VIDEO_DIR
         for aspect in ASPECT_RATIOS:
             aspect_tag = aspect.replace(":", "x")
-            old_video = video_dir / f"{chapter['index']:03d}-{safe_filename(chapter['title'])}-{aspect_tag}.mp4"
+            old_video = video_dir / f"{chapter['index']:03d}-{chapter_slug(chapter)}-{aspect_tag}.mp4"
             if old_video.exists():
                 old_video.unlink()
                 print(f"  --force: deleted {old_video.name}")

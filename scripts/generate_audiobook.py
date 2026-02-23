@@ -39,7 +39,7 @@ from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
     PROJECT_ROOT, AUDIOBOOK_DIR, CHAPTER_AUDIO_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
-    find_prepared_text, AudiobookPaths, config_name_from_path, get_paths,
+    chapter_slug, find_prepared_text, AudiobookPaths, config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
 from lib.retry import RateLimiter
@@ -155,8 +155,9 @@ def generate_chapter_audio(
     # Get or extract title
     title = chapter['title'] or extract_title_from_qmd(qmd_path)
 
-    # Create output filename
-    output_filename = f"{chapter['index']:03d}-{safe_filename(title)}.wav"
+    # Create output filename using QMD slug (stable across title renames)
+    slug = chapter_slug(chapter)
+    output_filename = f"{chapter['index']:03d}-{slug}.wav"
     output_path = chapters_dir / output_filename
 
     # Regenerate prepared text via subprocess (has its own hash-based caching)
@@ -388,7 +389,8 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
         title = title or ch['path']
 
         # Check if audio exists
-        audio_file = chapters_dir / f"{ch['index']:03d}-{safe_filename(title)}.wav"
+        slug = chapter_slug(ch)
+        audio_file = chapters_dir / f"{ch['index']:03d}-{slug}.wav"
         status = "[x]" if audio_file.exists() else "[ ]"
 
         print(f"  {status} {ch['index']:3d}. {title}")
@@ -819,9 +821,9 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
     alignment_dir = paths.alignment if paths else ALIGNMENT_DIR
     subtitles_dir = paths.subtitles if paths else SUBTITLES_DIR
 
-    safe = safe_filename(title)
-    alignment_path = alignment_dir / f"{chapter['index']:03d}-{safe}.alignment.json"
-    vtt_path = subtitles_dir / f"{chapter['index']:03d}-{safe}.vtt"
+    slug = chapter_slug(chapter)
+    alignment_path = alignment_dir / f"{chapter['index']:03d}-{slug}.alignment.json"
+    vtt_path = subtitles_dir / f"{chapter['index']:03d}-{slug}.vtt"
 
     if alignment_path.exists() and not force and not audio_changed:
         print(f"  [SKIP] Alignment exists: {alignment_path.name}")
@@ -840,7 +842,7 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
         print(f"  [SKIP] {e}")
         return
 
-    srt_path = subtitles_dir / f"{chapter['index']:03d}-{safe}.srt"
+    srt_path = subtitles_dir / f"{chapter['index']:03d}-{slug}.srt"
 
     alignment_dir.mkdir(parents=True, exist_ok=True)
     subtitles_dir.mkdir(parents=True, exist_ok=True)

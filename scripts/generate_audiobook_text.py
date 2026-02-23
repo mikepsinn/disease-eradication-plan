@@ -46,7 +46,7 @@ from dih_models.yaml_utils import load_quarto_config
 from dih_models.variable_replacement import load_variables, replace_variables
 from lib.audiobook_common import (
     PROJECT_ROOT, NARRATION_DIR, VARIABLES_YML, DEFAULT_CONFIG_PATH,
-    extract_chapters, extract_title_from_qmd, safe_filename,
+    extract_chapters, extract_title_from_qmd, safe_filename, chapter_slug,
     config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import save_text_results
@@ -328,7 +328,8 @@ def generate_chapter_text(
 
     title = chapter['title'] or extract_title_from_qmd(qmd_path)
 
-    output_path = OUTPUT_DIR / f"{chapter['index']:03d}-{safe_filename(title)}.prepared.txt"
+    slug = chapter_slug(chapter)
+    output_path = OUTPUT_DIR / f"{chapter['index']:03d}-{slug}.prepared.txt"
 
     if output_path.exists() and not force:
         print(f"  [SKIP] Already exists: {output_path.name}")
@@ -412,7 +413,8 @@ def list_chapters(chapters: list[dict]):
         if not title and qmd_path.exists():
             title = extract_title_from_qmd(qmd_path)
         title = title or ch['path']
-        text_file = OUTPUT_DIR / f"{ch['index']:03d}-{safe_filename(title)}.prepared.txt"
+        slug = chapter_slug(ch)
+        text_file = OUTPUT_DIR / f"{ch['index']:03d}-{slug}.prepared.txt"
         if text_file.exists():
             status = f"[x] ({text_file.stat().st_size:,} bytes)"
         else:
