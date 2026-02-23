@@ -250,6 +250,60 @@ def _make_cue(words: list[dict]) -> dict:
     }
 
 
+def generate_srt(words: list[dict], output_path: Path, chars_per_cue: int = 120):
+    """Generate SRT subtitle file from word-level alignment.
+
+    Same cue logic as generate_vtt but in SubRip format (needed for YouTube
+    and most video platforms).
+    """
+    if not words:
+        return
+
+    cues = []
+    current_words: list[dict] = []
+    current_chars = 0
+
+    for w in words:
+        word_text = w["word"]
+        current_words.append(w)
+        current_chars += len(word_text) + 1
+
+        at_sentence_end = word_text.rstrip().endswith((".", "!", "?", '."', '!"', '?"'))
+        over_limit = current_chars >= chars_per_cue
+
+        if at_sentence_end and current_chars >= chars_per_cue * 0.5:
+            cues.append(_make_cue(current_words))
+            current_words = []
+            current_chars = 0
+        elif over_limit:
+            cues.append(_make_cue(current_words))
+            current_words = []
+            current_chars = 0
+
+    if current_words:
+        cues.append(_make_cue(current_words))
+
+    lines = []
+    for i, cue in enumerate(cues, 1):
+        lines.append(str(i))
+        lines.append(f"{_format_srt_time(cue['start_ms'])} --> {_format_srt_time(cue['end_ms'])}")
+        lines.append(cue["text"])
+        lines.append("")
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text("\n".join(lines), encoding="utf-8")
+    print(f"  SRT subtitles saved: {output_path.name} ({len(cues)} cues)")
+
+
+def _format_srt_time(ms: int) -> str:
+    """Format milliseconds as HH:MM:SS,mmm for SRT (comma, not dot)."""
+    hours = ms // 3_600_000
+    minutes = (ms % 3_600_000) // 60_000
+    seconds = (ms % 60_000) // 1000
+    millis = ms % 1000
+    return f"{hours:02d}:{minutes:02d}:{seconds:02d},{millis:03d}"
+
+
 def _format_vtt_time(ms: int) -> str:
     """Format milliseconds as HH:MM:SS.mmm for WebVTT."""
     hours = ms // 3_600_000

@@ -25,7 +25,7 @@ from typing import TypedDict
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')  # pyright: ignore[reportAttributeAccessIssue]
 
 from pydub import AudioSegment
 
@@ -53,16 +53,19 @@ NARRATOR_VOICE = DEFAULT_VOICE
 
 
 def extract_book_metadata(config: dict) -> dict:
-    """Extract book metadata (title, author, year, publisher, cover) from quarto config."""
+    """Extract book metadata (title, author, year, publisher, cover, etc.) from quarto config."""
     book = config.get('book', {})
     metadata = config.get('metadata', {})
 
     # Author: first entry in book.author list, or fallback to metadata.creator
     authors = book.get('author', [])
     if isinstance(authors, list) and authors:
-        author = authors[0].get('name', '') if isinstance(authors[0], dict) else str(authors[0])
+        first = authors[0]
+        author = first.get('name', '') if isinstance(first, dict) else str(first)
+        email = first.get('email', '') if isinstance(first, dict) else ''
     else:
         author = metadata.get('creator', 'Unknown')
+        email = metadata.get('author-email', '')
 
     # Cover art: from epub config, fall back to conventional path
     cover_path = config.get('format', {}).get('epub', {}).get('epub-cover-image')
@@ -71,12 +74,23 @@ def extract_book_metadata(config: dict) -> dict:
     else:
         cover_art = PROJECT_ROOT / "assets" / "cover" / "book-cover-3.jpg"
 
+    # Site URL from website or book config
+    site_url = (
+        config.get('website', {}).get('site-url')
+        or book.get('site-url', '')
+    )
+
     return {
         'title': book.get('title', 'Untitled'),
+        'subtitle': book.get('subtitle', ''),
+        'description': book.get('description', ''),
         'author': author,
+        'email': email,
         'year': metadata.get('copyright-year', ''),
         'publisher': metadata.get('publisher', ''),
         'cover_art': cover_art,
+        'site_url': site_url.rstrip('/'),
+        'narrator': 'WISHONIA',
     }
 
 
@@ -395,8 +409,9 @@ def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int, 
 def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict):
     """Embed ID3v2.4 tags with chapter markers and cover art into the combined MP3."""
     from mutagen.mp3 import MP3
-    from mutagen.id3 import (
-        ID3, TIT2, TPE1, TALB, TCON, TDRC, TPUB, APIC, CHAP, CTOC, CTOCFlags,
+    from mutagen.id3 import (  # pyright: ignore[reportPrivateImportUsage]
+        ID3, TIT2, TPE1, TPE2, TALB, TCON, TDRC, TPUB, APIC, CHAP, CTOC, CTOCFlags,
+        TXXX, TLAN, COMM,
     )
 
     print(f"\nTagging MP3 with metadata and chapter markers...")
@@ -404,15 +419,24 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict)
     audio = MP3(str(mp3_path))
     if audio.tags is None:
         audio.add_tags()
+    assert audio.tags is not None
     tag = audio.tags
 
     # Basic metadata
     tag.add(TIT2(encoding=3, text=[book_meta['title']]))
     tag.add(TPE1(encoding=3, text=[book_meta['author']]))
+    tag.add(TPE2(encoding=3, text=[book_meta['author']]))  # Album artist
     tag.add(TALB(encoding=3, text=[book_meta['title']]))
     tag.add(TCON(encoding=3, text=["Audiobook"]))
     tag.add(TDRC(encoding=3, text=[book_meta['year']]))
     tag.add(TPUB(encoding=3, text=[book_meta['publisher']]))
+    tag.add(TLAN(encoding=3, text=["eng"]))
+    # Narrator (custom TXXX frame, recognized by Apple Books/Audible/Overcast)
+    narrator = book_meta.get('narrator', 'WISHONIA')
+    tag.add(TXXX(encoding=3, desc='narrator', text=[narrator]))
+    # Description
+    if book_meta.get('description'):
+        tag.add(COMM(encoding=3, lang='eng', desc='', text=[book_meta['description']]))
 
     # Cover art
     cover_art: Path = book_meta['cover_art']
@@ -526,6 +550,244 @@ def export_m4b(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: di
     print(f"  [OK] M4B: {m4b_path} ({m4b_size / 1024 / 1024:.1f} MB)")
 
 
+def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
+    """Normalize audio loudness using ffmpeg's loudnorm filter (two-pass).
+
+    Args:
+        wav_path: Input WAV file.
+        target_lufs: Target integrated loudness (default -16 LUFS for streaming;
+                     use -23 for Audible/broadcast).
+
+    Returns:
+        Path to normalized WAV (overwrites input).
+    """
+    temp_path = wav_path.with_suffix('.norm.wav')
+
+    # Pass 1: Measure loudness
+    measure_cmd = [
+        "ffmpeg", "-y", "-i", str(wav_path),
+        "-af", f"loudnorm=I={target_lufs}:TP=-1.5:LRA=11:print_format=json",
+        "-f", "null", "-"
+    ]
+    result = subprocess.run(measure_cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"  [WARN] Loudness measurement failed, skipping normalization")
+        return wav_path
+
+    # Parse measured values from stderr
+    import json as _json
+    stderr = result.stderr
+    json_start = stderr.rfind('{')
+    json_end = stderr.rfind('}') + 1
+    if json_start < 0:
+        print(f"  [WARN] Could not parse loudnorm output, skipping")
+        return wav_path
+
+    stats = _json.loads(stderr[json_start:json_end])
+    measured_i = stats.get('input_i', '-24.0')
+    measured_tp = stats.get('input_tp', '-1.0')
+    measured_lra = stats.get('input_lra', '11.0')
+    measured_thresh = stats.get('input_thresh', '-34.0')
+    target_offset = stats.get('target_offset', '0.0')
+
+    print(f"  Loudness: {measured_i} LUFS (target: {target_lufs} LUFS)")
+
+    # Pass 2: Apply normalization with measured values
+    norm_cmd = [
+        "ffmpeg", "-y", "-i", str(wav_path),
+        "-af", (
+            f"loudnorm=I={target_lufs}:TP=-1.5:LRA=11:"
+            f"measured_I={measured_i}:measured_TP={measured_tp}:"
+            f"measured_LRA={measured_lra}:measured_thresh={measured_thresh}:"
+            f"offset={target_offset}:linear=true"
+        ),
+        str(temp_path),
+    ]
+    result = subprocess.run(norm_cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"  [WARN] Loudness normalization failed: {result.stderr[:200]}")
+        temp_path.unlink(missing_ok=True)
+        return wav_path
+
+    # Replace original with normalized version
+    import shutil as _shutil
+    _shutil.move(str(temp_path), str(wav_path))
+    print(f"  [OK] Normalized to {target_lufs} LUFS")
+    return wav_path
+
+
+def export_chapter_mp3s(
+    chapter_files: list[Path],
+    chapters: list[dict],
+    book_meta: dict,
+    paths: AudiobookPaths | None = None,
+) -> list[Path]:
+    """Export each chapter WAV as a tagged MP3 for per-chapter distribution.
+
+    Each MP3 gets ID3 tags: title, artist, album, narrator, track number,
+    cover art, and genre.
+    """
+    from mutagen.mp3 import MP3
+    from mutagen.id3 import (  # pyright: ignore[reportPrivateImportUsage]
+        TIT2, TPE1, TPE2, TALB, TCON, TDRC, TPUB, APIC, TRCK, TLAN, TXXX, COMM,
+    )
+
+    mp3_dir = paths.root / "mp3" if paths else AUDIOBOOK_DIR / "mp3"
+    mp3_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"\nExporting {len(chapter_files)} chapter MP3s...")
+
+    # Build chapter lookup
+    chapter_meta_by_index = {ch['index']: ch for ch in chapters}
+
+    # Load cover art once
+    cover_data = None
+    cover_mime = 'image/jpeg'
+    cover_art: Path = book_meta.get('cover_art', Path())
+    if cover_art.exists():
+        cover_data = cover_art.read_bytes()
+        cover_mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
+
+    mp3_files = []
+    total_chapters = len(chapter_files)
+    narrator = book_meta.get('narrator', 'WISHONIA')
+
+    for chapter_file in chapter_files:
+        # Parse chapter index from filename (e.g. "001-Start-Here.wav")
+        index_match = re.match(r'^(\d+)-', chapter_file.stem)
+        chapter_index = int(index_match.group(1)) if index_match else 0
+        meta = chapter_meta_by_index.get(chapter_index, {})
+        title = meta.get('title') or chapter_file.stem.split('-', 1)[-1].replace('-', ' ')
+
+        mp3_path = mp3_dir / chapter_file.with_suffix('.mp3').name
+
+        # Convert WAV to MP3 via pydub
+        audio = AudioSegment.from_wav(str(chapter_file))
+        audio.export(str(mp3_path), format="mp3", bitrate="192k")
+
+        # Tag with ID3
+        mp3 = MP3(str(mp3_path))
+        if mp3.tags is None:
+            mp3.add_tags()
+        assert mp3.tags is not None
+        tag = mp3.tags
+
+        tag.add(TIT2(encoding=3, text=[title]))
+        tag.add(TPE1(encoding=3, text=[book_meta['author']]))
+        tag.add(TPE2(encoding=3, text=[book_meta['author']]))
+        tag.add(TALB(encoding=3, text=[book_meta['title']]))
+        tag.add(TCON(encoding=3, text=["Audiobook"]))
+        tag.add(TDRC(encoding=3, text=[book_meta['year']]))
+        tag.add(TPUB(encoding=3, text=[book_meta['publisher']]))
+        tag.add(TRCK(encoding=3, text=[f"{chapter_index}/{total_chapters}"]))
+        tag.add(TLAN(encoding=3, text=["eng"]))
+        tag.add(TXXX(encoding=3, desc='narrator', text=[narrator]))
+        if book_meta.get('description'):
+            tag.add(COMM(encoding=3, lang='eng', desc='', text=[book_meta['description']]))
+
+        if cover_data:
+            tag.add(APIC(encoding=3, mime=cover_mime, type=3, desc='Cover', data=cover_data))
+
+        mp3.save()
+        size_mb = mp3_path.stat().st_size / 1024 / 1024
+        print(f"  [OK] {mp3_path.name} ({size_mb:.1f} MB)")
+        mp3_files.append(mp3_path)
+
+    print(f"  Exported {len(mp3_files)} chapter MP3s to {mp3_dir}")
+    return mp3_files
+
+
+def generate_podcast_rss(
+    chapter_mp3s: list[Path],
+    chapters: list[dict],
+    timestamps: list[ChapterTimestamp],
+    book_meta: dict,
+    paths: AudiobookPaths | None = None,
+) -> Path:
+    """Generate a podcast RSS 2.0 feed with iTunes namespace tags.
+
+    MP3 URLs are constructed relative to the site URL so the feed works
+    when deployed to the book's Netlify site.
+    """
+    from xml.sax.saxutils import escape
+
+    rss_dir = paths.root if paths else AUDIOBOOK_DIR
+    rss_path = rss_dir / "feed.xml"
+
+    site_url = book_meta.get('site_url', 'https://manual.WarOnDisease.org')
+    # MP3s will be served from audiobook/{config}/mp3/ on the site
+    mp3_base = paths.root.relative_to(PROJECT_ROOT) if paths else Path("audiobook")
+    mp3_url_base = f"{site_url}/{mp3_base.as_posix()}/mp3"
+
+    # Build timestamp lookup
+    ts_by_index = {ts['index']: ts for ts in timestamps}
+
+    title = escape(book_meta['title'])
+    author = escape(book_meta['author'])
+    description = escape(book_meta.get('description', ''))
+    narrator = escape(book_meta.get('narrator', 'WISHONIA'))
+    cover_url = f"{site_url}/assets/cover/book-cover-3.jpg"
+
+    items = []
+    for mp3_path in chapter_mp3s:
+        index_match = re.match(r'^(\d+)-', mp3_path.stem)
+        chapter_index = int(index_match.group(1)) if index_match else 0
+        ts = ts_by_index.get(chapter_index)
+        ch_meta = next((ch for ch in chapters if ch['index'] == chapter_index), {})
+        ch_title = escape(ch_meta.get('title', mp3_path.stem))
+        part = ch_meta.get('part', '')
+        ep_title = f"{ch_title}" if not part else f"{part}: {ch_title}"
+
+        duration_s = ts['duration_ms'] // 1000 if ts else 0
+        duration_fmt = ts['duration_formatted'] if ts else "0:00"
+        file_size = mp3_path.stat().st_size
+        mp3_url = f"{mp3_url_base}/{mp3_path.name}"
+
+        items.append(f"""    <item>
+      <title>{escape(ep_title)}</title>
+      <enclosure url="{escape(mp3_url)}" length="{file_size}" type="audio/mpeg"/>
+      <itunes:duration>{duration_fmt}</itunes:duration>
+      <itunes:episode>{chapter_index}</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <guid isPermaLink="false">chapter-{chapter_index:03d}</guid>
+      <description>Chapter {chapter_index} of {title}</description>
+    </item>""")
+
+    feed = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{title}</title>
+    <link>{escape(site_url)}</link>
+    <description>{description}</description>
+    <language>en-us</language>
+    <itunes:author>{author}</itunes:author>
+    <itunes:owner>
+      <itunes:name>{author}</itunes:name>
+      <itunes:email>{escape(book_meta.get('email', ''))}</itunes:email>
+    </itunes:owner>
+    <itunes:image href="{escape(cover_url)}"/>
+    <itunes:category text="Society &amp; Culture"/>
+    <itunes:category text="Science">
+      <itunes:category text="Medicine"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>serial</itunes:type>
+    <podcast:medium>audiobook</podcast:medium>
+    <atom:link href="{escape(site_url)}/{mp3_base.as_posix()}/feed.xml" rel="self" type="application/rss+xml"/>
+{chr(10).join(items)}
+  </channel>
+</rss>
+"""
+
+    rss_path.write_text(feed, encoding='utf-8')
+    print(f"\n  [OK] Podcast RSS: {rss_path.relative_to(PROJECT_ROOT)}")
+    print(f"  Feed URL: {site_url}/{mp3_base.as_posix()}/feed.xml")
+    return rss_path
+
+
 def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = False, paths: AudiobookPaths | None = None, audio_changed: bool = False):
     """Run forced alignment and generate subtitles for a chapter.
 
@@ -551,15 +813,18 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
         return
 
     try:
-        from lib.alignment import align_chapter, generate_vtt
+        from lib.alignment import align_chapter, generate_vtt, generate_srt
     except ImportError as e:
         print(f"  [SKIP] {e}")
         return
+
+    srt_path = subtitles_dir / f"{chapter['index']:03d}-{safe}.srt"
 
     alignment_dir.mkdir(parents=True, exist_ok=True)
     subtitles_dir.mkdir(parents=True, exist_ok=True)
     words = align_chapter(audio_path, text_file, alignment_path, chapter=chapter)
     generate_vtt(words, vtt_path)
+    generate_srt(words, srt_path)
 
     update_chapter_fields(
         chapter['index'],
@@ -675,6 +940,12 @@ def main():
     print(f"\n{'=' * 60}")
     print(f"Generated {len(generated_files)} audio files")
 
+    # Normalize loudness on each generated chapter WAV
+    if generated_files:
+        print(f"\nNormalizing loudness (-16 LUFS)...")
+        for wav_file in generated_files:
+            normalize_loudness(wav_file, target_lufs=-16.0)
+
     # Combine into single audiobook
     if not args.no_combine and len(generated_files) > 1:
         # Get all chapter files in order (including previously generated)
@@ -694,6 +965,12 @@ def main():
             update_manifest(timestamps, total_duration_ms, paths=paths)
             tag_mp3(mp3_path, timestamps, book_meta)
             export_m4b(mp3_path, timestamps, book_meta)
+
+            # Export per-chapter MP3s with ID3 tags
+            chapter_mp3s = export_chapter_mp3s(all_chapter_files, all_chapters, book_meta, paths=paths)
+
+            # Generate podcast RSS feed
+            generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
 
     print("\nDone!")
 

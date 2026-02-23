@@ -13,8 +13,8 @@ image: /assets/og-images/knowledge/economics/health-dividend-og-retro-academic.j
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your dFDA costs {{< var dfda_annual_opex >}}/year to run.
 It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
-That's {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 returns.
-**Conservative estimate**: {{< var dfda_roi_rd_only >}}:1 (R&D savings only)
+That's {{< var dfda_roi_rd_only >}}:1 returns on R&D savings alone.
+**Total societal benefit** (including lives saved): {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1
 
 I know. Those numbers look like someone fell asleep on the keyboard. They didn't. Here's the breakdown.
 
@@ -34,13 +34,11 @@ Your dFDA takes this model global. **80-160x cost reduction.** Same data quality
 
 Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}} per year** (and growing, because apparently inefficiency scales beautifully).
 
-![Current spending versus what you'd spend if you stopped doing trials like you're staying at the Ritz. Conservative estimate saves half, optimistic saves 95 percent. Either way, someone's been stealing.](/assets/images/health-dividend/health-dividend-section-where-the-var-dfda-benefit-rd-only-annual-comes-from-bw-academic.jpg)
-
-Conservative estimate: dFDA captures {{< var dfda_trial_cost_reduction_pct >}} efficiency gains across the market.
+Baseline estimate: {{< var dfda_trial_cost_reduction_pct >}} efficiency gains across the market (based on RECOVERY trial's actual per-patient cost ratio).
 
 - {{< var dfda_trial_cost_reduction_pct >}} of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
 
-Optimistic: 95% cost reduction (what RECOVERY actually achieved, during a pandemic, with real patients who were actively dying), saving up to **$57B/year**. I'm being generous by using the conservative number. You're welcome.
+
 
 ## What {{< var dfda_benefit_rd_only_annual >}} Buys You
 
@@ -81,13 +79,7 @@ Less than one fighter jet. Less than one yacht. Less than what FIFA spends on "h
 
 ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
 
-Even the worst case (everything goes wrong, adoption is terrible, the engineers quit and the servers catch fire) returns 66:1. That beats every military investment in human history. Your worst medical outcome is still better than your best military one. Let that sink in while you're approving next year's defense budget. See [Financial Analysis Summary](https://dfda-impact.warondisease.org#financial-analysis-summary) for interactive charts and NPV calculations.
+Even the worst case (everything goes wrong, adoption is terrible, the engineers quit and the servers catch fire) returns 66:1. That beats every military investment in human history. Your worst medical outcome is still better than your best military one. Let that sink in while you're approving next year's defense budget. 
 
-## The Bottom Line
 
-{{< var dfda_annual_opex >}} in. {{< var dfda_benefit_rd_only_annual >}} out. 80x cost reduction per patient. {{< var dfda_trial_capacity_multiplier >}} more trial capacity.
-
-![Spend 40 million, save 58.6 billion. That's a 146,400 percent return. In any other context, you'd call this fraud. Here, it's just efficiency.](/assets/images/health-dividend/health-dividend-section-the-roi-bw-academic.jpg)
-
-The RECOVERY trial already proved this works. Not in theory. Not in a white paper. In a hospital, during a plague, on actual dying humans. It happened. Scale it globally and stop pretending this is controversial. Every day you wait costs {{< var dfda_rd_savings_daily >}} in R&D waste and a quantity of human suffering that your economists haven't figured out how to put on a spreadsheet yet (though not for lack of trying).
 

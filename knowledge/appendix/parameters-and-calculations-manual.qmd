@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 255 parameters used in the analysis, organized by type:
+This appendix documents all 254 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 102
-- Calculated values: 95
+- Calculated values: 94
 - Core definitions: 58
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (95 parameters) • [External Data Sources](#sec-external) (102 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
+[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (102 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5634,52 +5634,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-type_i_error_benefit_dalys.qmd >}}
-
-:::
-
-### Unexplored Therapeutic Frontier: 99.7% {#sec-unexplored_ratio}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Fraction of possible drug-disease space that remains unexplored (>99%)
-
-**Inputs**:
-
-- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15.0 thousand relationships - 50.0 thousand relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
-
-$$
-\begin{gathered}
-Ratio_{unexplored} \\
-= 1 - \frac{N_{tested}}{N_{combos}} \\
-= 1 - \frac{32{,}500}{9.5M} \\
-= 99.7\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{combos} \\
-= N_{safe} \times N_{diseases,trial} \\
-= 9{,}500 \times 1{,}000 \\
-= 9.5M
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-unexplored_ratio.qmd >}}
-
-{{< include ../figures/sensitivity-table-unexplored_ratio.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-unexplored_ratio.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-unexplored_ratio.qmd >}}
 
 :::
 

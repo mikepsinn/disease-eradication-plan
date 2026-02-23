@@ -254,7 +254,7 @@ These represent the hard physical limits of medicine. Everything else, including
 ### Data Sources & Parameterization
 
 1. **Development Timelines:** *Biotechnology Innovation Organization (BIO) Clinical Development Success Rates 2011–2020*.
-   - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}}. Total Time to Market = {{< var fda_phase_1_to_approval_years >}}. **Lag = {{< var efficacy_lag_years >}} (95% CI: 4.3-12.1 years)** - wide variance by therapeutic area (oncology ~9y, vaccines ~7y, rare disease ~12+y).
+   - *Verified Metric:* Phase I duration = {{< var phase_1_safety_duration_years >}}. Total Time to Market = {{< var fda_phase_1_to_approval_years >}}. **Lag = {{< var efficacy_lag_years >}}** - wide variance by therapeutic area (oncology ~9y, vaccines ~7y, rare disease ~12+y).
    - *Source:* BIO.org Clinical Development Report [@bio-clinical-development-2021]
 
 2. **Pharmaceutical Impact (Life-Years Saved):** Primary source: Lichtenberg (2019) [@lichtenberg-life-years-saved-2019].

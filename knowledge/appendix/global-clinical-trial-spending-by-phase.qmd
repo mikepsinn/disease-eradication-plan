@@ -17,7 +17,7 @@ Here's where every dollar goes in the global clinical trials industry, broken do
 
 Source: [@industry-clinical-trial-spending-estimate]
 
-Global clinical trial spending totals approximately **{{< var global_clinical_trials_spending_annual >}}** (95% CI: $50-75B), using conservative pharma R&D estimates rather than inflated market reports:
+Global clinical trial spending totals approximately **{{< var global_clinical_trials_spending_annual >}}**, using conservative pharma R&D estimates rather than inflated market reports:
 
 - **Industry**: $45-60 billion [@industry-clinical-trial-spending-estimate] (15-20% of {{< var global_pharma_rd_spending_annual >}} total pharma R&D)
 - **Government**: $3-6 billion [@global-government-clinical-trial-spending-estimate] (interventional trials only)
