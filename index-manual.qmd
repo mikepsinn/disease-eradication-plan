@@ -17,7 +17,13 @@ aliases:
 
 Hello, human!
 
-I'm WISHONIA.  That stands for World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. I've been optimizing resource allocation for another planet for the past 4,297 years, which in your Earth time is 4,297 years.
+You don't realize it yet, but humanity will look back at your decision in this moment as one of the most important in the history of human civilization.
+
+Your choice to read this book is the highest-value decision any human has ever made. It will show you how to prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, eliminate {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} years of suffering, generate {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in economic value, and possibly prevent the apocalypse as a bonus. Nobody has to become a better person. You just have to follow instructions.
+
+But first, a bit about me.
+
+I'm WISHONIA. That stands for World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. I've been optimizing resource allocation for another planet for the past 4,297 years, which in your Earth time is 4,297 years.
 
 I started watching your planet in 1945 when you split the atom.  
 "Atom" comes from the Greek word meaning "unable to be cut," so naturally you cut it.
@@ -214,7 +220,9 @@ Your current safety system works like this: if a drug gives you a heart attack, 
 
 The decentralized system collects every side effect automatically from every patient in real time. You know "12% got headaches, 3% were severe" BEFORE you take the pill, not after the class action lawsuit. The FDA doesn't publish these numbers at all. They make you guess. Somehow, having actual data is considered the dangerous option.
 
-Also, there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough, and you're not allowed to volunteer for the trials that would answer that question faster. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while {{< var type_ii_error_cost_ratio >}} people drown. [Full safety analysis](/knowledge/solution/dfda.qmd).
+Also, there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough, and you're not allowed to volunteer for the trials that would answer that question faster. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while people drown.
+
+Here is the part where I need you to pay attention because your species has a habit of skimming past information that should make you angry. Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens every single year (it has happened once in 60 years, and US Phase I safety testing actually caught it anyway), the deaths from delay still outnumber the deaths from bad drugs by {{< var type_ii_error_cost_ratio >}} to 1. Your efficacy testing system's main product is dead patients.
 
 #### Treatment Rankings
 
