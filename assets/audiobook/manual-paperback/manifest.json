@@ -5,12 +5,293 @@
       "title": "Start Here",
       "part": null,
       "path": "index-manual.qmd",
-      "text_file": "audiobook\\manual-paperback\\text\\001-Start-Here.prepared.txt",
-      "chars": 30495,
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\001-Start-Here.prepared.txt",
+      "chars": 30351,
       "status": "generated",
       "alignment_file": "audiobook\\manual-paperback\\alignment\\001-Start-Here.alignment.json",
       "subtitle_file": "audiobook\\manual-paperback\\subtitles\\001-Start-Here.vtt"
+    },
+    {
+      "index": 2,
+      "title": "Problem Overview",
+      "part": "The Problem",
+      "path": "knowledge/problem.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\002-Problem-Overview.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 3,
+      "title": "The Cost of War",
+      "part": "The Problem",
+      "path": "knowledge/problem/cost-of-war.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\003-The-Cost-of-War.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 4,
+      "title": "The Cost of Disease",
+      "part": "The Problem",
+      "path": "knowledge/problem/cost-of-disease.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\004-The-Cost-of-Disease.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 5,
+      "title": "NIH Fails to Institute Health",
+      "part": "The Problem",
+      "path": "knowledge/problem/nih-fails-2-institute-health.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\005-NIH-Fails-to-Institute-Health.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 6,
+      "title": "The Untapped Therapeutic Frontier",
+      "part": "The Problem",
+      "path": "knowledge/problem/untapped-therapeutic-frontier.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\006-The-Untapped-Therapeutic-Frontier.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 7,
+      "title": "The FDA Is Unsafe and Ineffective",
+      "part": "The Problem",
+      "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\007-The-FDA-Is-Unsafe-and-Ineffective.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 8,
+      "title": "Unrepresentative Democracy",
+      "part": "The Problem",
+      "path": "knowledge/problem/unrepresentative-democracy.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\008-Unrepresentative-Democracy.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 9,
+      "title": "How Central Banks Fund Your Death",
+      "part": "The Problem",
+      "path": "knowledge/economics/central-banks.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\009-How-Central-Banks-Fund-Your-Death.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 10,
+      "title": "Genetic Slavery",
+      "part": "The Problem",
+      "path": "knowledge/problem/genetic-slavery.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\010-Genetic-Slavery.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 11,
+      "title": "Solution Overview",
+      "part": "The Solution",
+      "path": "knowledge/solution.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\011-Solution-Overview.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 12,
+      "title": "A 1% Treaty",
+      "part": "The Solution",
+      "path": "knowledge/solution/1-percent-treaty.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\012-A-1-Treaty.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 13,
+      "title": "Decentralized Institutes of Health",
+      "part": "The Solution",
+      "path": "knowledge/solution/dih.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\013-Decentralized-Institutes-of-Health.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 14,
+      "title": "Wishocracy",
+      "part": "The Solution",
+      "path": "knowledge/solution/wishocracy.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\014-Wishocracy.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 15,
+      "title": "A Decentralized Framework for Drug Assessment",
+      "part": "The Solution",
+      "path": "knowledge/solution/dfda.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\015-A-Decentralized-Framework-for-Drug-Assessment.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 16,
+      "title": "Aligning Incentives",
+      "part": "The Solution",
+      "path": "knowledge/solution/aligning-incentives.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\016-Aligning-Incentives.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 17,
+      "title": "VICTORY Incentive Alignment Bonds",
+      "part": "The Solution",
+      "path": "knowledge/solution/incentive-alignment-bonds.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\017-VICTORY-Incentive-Alignment-Bonds.prepared.txt",
+      "status": "cached"
+    },
+    {
+      "index": 18,
+      "title": "The Proof: Overview",
+      "part": "For Skeptics",
+      "path": "knowledge/proof.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\018-The-Proof-Overview.prepared.txt",
+      "chars": 17762,
+      "status": "generated"
+    },
+    {
+      "index": 19,
+      "title": "You Are a Meat Robot",
+      "part": "For Skeptics",
+      "path": "knowledge/proof/body-as-repairable-machine.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\019-You-Are-a-Meat-Robot.prepared.txt",
+      "chars": 8353,
+      "status": "generated"
+    },
+    {
+      "index": 20,
+      "title": "The Two Futures",
+      "part": "For Skeptics",
+      "path": "knowledge/futures.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\020-The-Two-Futures.prepared.txt",
+      "chars": 1830,
+      "status": "generated"
+    },
+    {
+      "index": 21,
+      "title": "The Cautionary Tale of Moronia",
+      "part": "For Skeptics",
+      "path": "knowledge/futures/moronia.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\021-The-Cautionary-Tale-of-Moronia.prepared.txt",
+      "chars": 21808,
+      "status": "generated"
+    },
+    {
+      "index": 22,
+      "title": "Wishonia",
+      "part": "For Skeptics",
+      "path": "knowledge/futures/wishonia.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\022-Wishonia.prepared.txt",
+      "chars": 15746,
+      "status": "generated"
+    },
+    {
+      "index": 23,
+      "title": "Frequently Asked Objections",
+      "part": "For Skeptics",
+      "path": "knowledge/appendix/faq.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\023-Frequently-Asked-Objections.prepared.txt",
+      "chars": 18167,
+      "status": "generated"
+    },
+    {
+      "index": 24,
+      "title": "The Roadmap to End War and Disease",
+      "part": "The Plan",
+      "path": "knowledge/strategy/roadmap.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\024-The-Roadmap-to-End-War-and-Disease.prepared.txt",
+      "chars": 18813,
+      "status": "generated"
+    },
+    {
+      "index": 25,
+      "title": "Why Every Nonprofit Should Support a 1% treaty",
+      "part": "The Plan",
+      "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\025-Why-Every-Nonprofit-Should-Support-a-1-treaty.prepared.txt",
+      "chars": 15537,
+      "status": "generated"
+    },
+    {
+      "index": 26,
+      "title": "Legal Architecture",
+      "part": "The Plan",
+      "path": "knowledge/legal/legal-framework.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\026-Legal-Architecture.prepared.txt",
+      "chars": 9442,
+      "status": "generated"
+    },
+    {
+      "index": 27,
+      "title": "Global Referendum Strategy",
+      "part": "The Plan",
+      "path": "knowledge/strategy/global-referendum.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\027-Global-Referendum-Strategy.prepared.txt",
+      "chars": 6260,
+      "status": "generated"
+    },
+    {
+      "index": 28,
+      "title": "Treaty Feasibility & Cost Analysis",
+      "part": "The Plan",
+      "path": "knowledge/appendix/treaty-feasibility.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\028-Treaty-Feasibility--Cost-Analysis.prepared.txt",
+      "chars": 15292,
+      "status": "generated"
+    },
+    {
+      "index": 29,
+      "title": "Recruitment & Propaganda Plan",
+      "part": "The Plan",
+      "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\029-Recruitment--Propaganda-Plan.prepared.txt",
+      "chars": 4917,
+      "status": "generated"
+    },
+    {
+      "index": 30,
+      "title": "Peace Dividend",
+      "part": "Economics & Finance",
+      "path": "knowledge/economics/peace-dividend.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\030-Peace-Dividend.prepared.txt",
+      "chars": 8844,
+      "status": "generated"
+    },
+    {
+      "index": 31,
+      "title": "Health Dividend",
+      "part": "Economics & Finance",
+      "path": "knowledge/economics/health-dividend.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\031-Health-Dividend.prepared.txt",
+      "chars": 4745,
+      "status": "generated"
+    },
+    {
+      "index": 32,
+      "title": "Financial Plan",
+      "part": "Economics & Finance",
+      "path": "knowledge/economics/financial-plan.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\032-Financial-Plan.prepared.txt",
+      "chars": 8248,
+      "status": "generated"
+    },
+    {
+      "index": 33,
+      "title": "Source Quotes and References",
+      "part": "References",
+      "path": "knowledge/references.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\033-Source-Quotes-and-References.prepared.txt",
+      "chars": 60,
+      "status": "generated"
+    },
+    {
+      "index": 34,
+      "title": "Copyright",
+      "part": "References",
+      "path": "knowledge/appendix/copyright.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\034-Copyright.prepared.txt",
+      "chars": 661,
+      "status": "generated"
     }
   ],
-  "output_dir": "audiobook\\manual-paperback\\text"
+  "output_dir": "assets\\audiobook\\manual-paperback\\narration-txt-chapters"
 }
