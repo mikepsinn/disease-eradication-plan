@@ -45,7 +45,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from dih_models.yaml_utils import load_quarto_config
 from dih_models.variable_replacement import load_variables, replace_variables
 from lib.audiobook_common import (
-    PROJECT_ROOT, TEXT_DIR, VARIABLES_YML, DEFAULT_CONFIG_PATH,
+    PROJECT_ROOT, NARRATION_DIR, VARIABLES_YML, DEFAULT_CONFIG_PATH,
     extract_chapters, extract_title_from_qmd, safe_filename,
     config_name_from_path, get_paths,
 )
@@ -53,7 +53,7 @@ from lib.audiobook_manifest import save_text_results
 from lib.retry import retry_with_backoff, RateLimiter
 
 # Configuration
-OUTPUT_DIR = TEXT_DIR
+OUTPUT_DIR = NARRATION_DIR
 
 MAX_CHUNK_CHARS = 3_000
 
@@ -237,7 +237,8 @@ def rewrite_for_audiobook(text: str, title: str, output_path: Path) -> str:
     from lib.llm import generate_gemini_flash_content
 
     chunks = chunk_text(text)
-    chunk_dir = output_path.parent / "chunks" / output_path.stem
+    # Chunks go in the adjacent narration-txt-chunks/ dir, not nested under narration-txt-chapters/
+    chunk_dir = output_path.parent.parent / "narration-txt-chunks" / output_path.stem
     chunk_dir.mkdir(parents=True, exist_ok=True)
 
     total = len(chunks)
@@ -360,7 +361,7 @@ def generate_chapter_text(
         }
 
     # Invalidate chunk cache if prepared text has changed
-    chunk_dir = output_path.parent / "chunks" / output_path.stem
+    chunk_dir = output_path.parent.parent / "narration-txt-chunks" / output_path.stem
     hash_file = chunk_dir / ".prepared_hash"
     prepared_hash = hashlib.sha256(prepared.encode('utf-8')).hexdigest()[:16]
     if chunk_dir.exists():
@@ -446,7 +447,7 @@ def main():
 
     # Point module-level OUTPUT_DIR at config-specific text dir
     global OUTPUT_DIR
-    OUTPUT_DIR = paths.text
+    OUTPUT_DIR = paths.narration_txt
 
     print(f"Loading config: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_quarto_config(config_path)

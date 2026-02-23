@@ -12,16 +12,16 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from lib.audiobook_common import AudiobookPaths
 
-from lib.audiobook_common import MANIFEST_PATH, PROJECT_ROOT, TEXT_DIR
+from lib.audiobook_common import MANIFEST_PATH, PROJECT_ROOT, NARRATION_DIR
 
 
 def read_manifest(paths: AudiobookPaths | None = None) -> dict:
     """Read manifest.json, returning empty structure if missing."""
     manifest_path = paths.manifest if paths else MANIFEST_PATH
-    text_dir = paths.text if paths else TEXT_DIR
+    narration_dir = paths.narration_txt if paths else NARRATION_DIR
     if manifest_path.exists():
         return json.loads(manifest_path.read_text(encoding='utf-8'))
-    return {'chapters': [], 'output_dir': str(text_dir.relative_to(PROJECT_ROOT))}
+    return {'chapters': [], 'output_dir': str(narration_dir.relative_to(PROJECT_ROOT))}
 
 
 def write_manifest(manifest: dict, paths: AudiobookPaths | None = None):
@@ -66,7 +66,7 @@ def save_text_results(results: list[dict], paths: AudiobookPaths | None = None):
     Each result dict should have at minimum an 'index' key.
     """
     manifest = read_manifest(paths)
-    text_dir = paths.text if paths else TEXT_DIR
+    narration_dir = paths.narration_txt if paths else NARRATION_DIR
     manifest_path = paths.manifest if paths else MANIFEST_PATH
     existing = {ch['index']: ch for ch in manifest.get('chapters', [])}
 
@@ -78,6 +78,6 @@ def save_text_results(results: list[dict], paths: AudiobookPaths | None = None):
             existing[idx] = result
 
     manifest['chapters'] = [existing[k] for k in sorted(existing.keys())]
-    manifest['output_dir'] = str(text_dir.relative_to(PROJECT_ROOT))
+    manifest['output_dir'] = str(narration_dir.relative_to(PROJECT_ROOT))
     write_manifest(manifest, paths)
     print(f"\nManifest saved to: {manifest_path.relative_to(PROJECT_ROOT)}")

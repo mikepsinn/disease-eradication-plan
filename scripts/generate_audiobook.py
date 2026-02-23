@@ -15,6 +15,7 @@ Usage:
     python scripts/generate_audiobook.py --list            # List all chapters
 """
 import sys
+import os
 import re
 import hashlib
 import argparse
@@ -176,7 +177,8 @@ def generate_chapter_audio(
         print(f"  [SKIP] No text file found after preparation")
         return None, False
 
-    chunk_dir = text_file.parent / "chunks" / text_file.stem
+    # Chunks are in the adjacent narration-txt-chunks/ dir, not nested under narration-txt-chapters/
+    chunk_dir = text_file.parent.parent / "narration-txt-chunks" / text_file.stem
     chunk_files = sorted(chunk_dir.glob("chunk-*.txt")) if chunk_dir.exists() else []
 
     if not chunk_files:
@@ -725,9 +727,10 @@ def generate_podcast_rss(
     rss_path = rss_dir / "feed.xml"
 
     site_url = book_meta.get('site_url', 'https://manual.WarOnDisease.org')
-    # MP3s will be served from audiobook/{config}/mp3/ on the site
+    # MP3s served from R2 (falls back to site URL if R2_PUBLIC_URL not set)
+    cdn_url = os.environ.get('R2_PUBLIC_URL', site_url).rstrip('/')
     mp3_base = paths.root.relative_to(PROJECT_ROOT) if paths else Path("assets/audiobook")
-    mp3_url_base = f"{site_url}/{mp3_base.as_posix()}/mp3"
+    mp3_url_base = f"{cdn_url}/{mp3_base.as_posix()}/mp3"
 
     # Build timestamp lookup
     ts_by_index = {ts['index']: ts for ts in timestamps}
@@ -736,10 +739,14 @@ def generate_podcast_rss(
     author = escape(book_meta['author'])
     description = escape(book_meta.get('description', ''))
     narrator = escape(book_meta.get('narrator', 'WISHONIA'))
-    cover_url = f"{site_url}/assets/cover/book-cover-3.jpg"
+    cover_url = f"{cdn_url}/assets/cover/book-cover-3.jpg"
+
+    from datetime import datetime, timezone, timedelta
+    # Each chapter gets a pubDate 1 day apart so podcast apps sort them correctly
+    base_date = datetime.now(timezone.utc)
 
     items = []
-    for mp3_path in chapter_mp3s:
+    for ep_num, mp3_path in enumerate(chapter_mp3s):
         index_match = re.match(r'^(\d+)-', mp3_path.stem)
         chapter_index = int(index_match.group(1)) if index_match else 0
         ts = ts_by_index.get(chapter_index)
@@ -752,10 +759,14 @@ def generate_podcast_rss(
         duration_fmt = ts['duration_formatted'] if ts else "0:00"
         file_size = mp3_path.stat().st_size
         mp3_url = f"{mp3_url_base}/{mp3_path.name}"
+        pub_date = (base_date - timedelta(days=len(chapter_mp3s) - ep_num)).strftime(
+            "%a, %d %b %Y %H:%M:%S +0000"
+        )
 
         items.append(f"""    <item>
       <title>{escape(ep_title)}</title>
       <enclosure url="{escape(mp3_url)}" length="{file_size}" type="audio/mpeg"/>
+      <pubDate>{pub_date}</pubDate>
       <itunes:duration>{duration_fmt}</itunes:duration>
       <itunes:episode>{chapter_index}</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
@@ -785,8 +796,9 @@ def generate_podcast_rss(
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>serial</itunes:type>
+    <pubDate>{base_date.strftime("%a, %d %b %Y %H:%M:%S +0000")}</pubDate>
     <podcast:medium>audiobook</podcast:medium>
-    <atom:link href="{escape(site_url)}/{mp3_base.as_posix()}/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="{escape(cdn_url)}/{mp3_base.as_posix()}/feed.xml" rel="self" type="application/rss+xml"/>
 {chr(10).join(items)}
   </channel>
 </rss>
@@ -956,31 +968,29 @@ def main():
         for wav_file in generated_files:
             normalize_loudness(wav_file, target_lufs=-16.0)
 
-    # Combine into single audiobook
-    if not args.no_combine and len(generated_files) > 1:
-        # Get all chapter files in order (including previously generated)
-        all_chapter_files = sorted(paths.chapters.glob("*.wav"))
+    # Combine into single audiobook + export per-chapter MP3s + podcast RSS
+    # Runs when: not --no-combine AND at least 2 chapter WAVs exist on disk
+    all_chapter_files = sorted(paths.chapters.glob("*.wav")) if not args.no_combine else []
+    if len(all_chapter_files) > 1:
+        # Reload full config for metadata matching
+        full_config = load_book_config(config_path)
+        all_chapters = extract_chapters(full_config)
+        book_meta = extract_book_metadata(full_config)
 
-        if all_chapter_files:
-            # Reload full config for metadata matching
-            full_config = load_book_config(config_path)
-            all_chapters = extract_chapters(full_config)
-            book_meta = extract_book_metadata(full_config)
+        combined_path = paths.root / f"{safe_filename(book_meta['title'], max_len=80)}-Audiobook"
+        mp3_path, timestamps = combine_chapter_audio(all_chapter_files, all_chapters, combined_path)
 
-            combined_path = paths.root / f"{safe_filename(book_meta['title'], max_len=80)}-Audiobook"
-            mp3_path, timestamps = combine_chapter_audio(all_chapter_files, all_chapters, combined_path)
+        total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
 
-            total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
+        update_manifest(timestamps, total_duration_ms, paths=paths)
+        tag_mp3(mp3_path, timestamps, book_meta)
+        export_m4b(mp3_path, timestamps, book_meta)
 
-            update_manifest(timestamps, total_duration_ms, paths=paths)
-            tag_mp3(mp3_path, timestamps, book_meta)
-            export_m4b(mp3_path, timestamps, book_meta)
+        # Export per-chapter MP3s with ID3 tags
+        chapter_mp3s = export_chapter_mp3s(all_chapter_files, all_chapters, book_meta, paths=paths)
 
-            # Export per-chapter MP3s with ID3 tags
-            chapter_mp3s = export_chapter_mp3s(all_chapter_files, all_chapters, book_meta, paths=paths)
-
-            # Generate podcast RSS feed
-            generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
+        # Generate podcast RSS feed
+        generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
 
     print("\nDone!")
 

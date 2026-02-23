@@ -20,6 +20,9 @@ audio-chunks/
 # Raw WAV files (only distribute MP3/M4B)
 *.wav
 
+# LLM narration text chunks (intermediate, not for distribution)
+narration-txt-chunks/
+
 # Cache sidecars
 *.texthash
 .prepared_hash

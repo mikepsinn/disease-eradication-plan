@@ -473,9 +473,13 @@ render();
 {sitemap_entries}
 </urlset>"""
 
+    # --- robots.txt ---
+    robots_txt = f"User-agent: *\nAllow: /\n\nSitemap: {public_url}/sitemap.xml\n"
+
     if dry_run:
         print(f"\n  [DRY-RUN] Would generate index.html ({len(entries)} files)")
         print(f"  [DRY-RUN] Would generate sitemap.xml ({len(entries)} URLs)")
+        print(f"  [DRY-RUN] Would generate robots.txt")
         return
 
     # Write temp files and upload
@@ -486,6 +490,7 @@ render();
     for filename, content, ct in [
         ("index.html", index_html, "text/html; charset=utf-8"),
         ("sitemap.xml", sitemap_xml, "application/xml; charset=utf-8"),
+        ("robots.txt", robots_txt, "text/plain; charset=utf-8"),
     ]:
         tmp = Path(tempfile.mktemp(suffix=f"_{filename}"))
         tmp.write_text(content, encoding="utf-8")

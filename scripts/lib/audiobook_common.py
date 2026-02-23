@@ -10,7 +10,8 @@ from pathlib import Path
 # --- Path constants (legacy, kept for backward compat) ---
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 AUDIOBOOK_DIR = PROJECT_ROOT / "assets" / "audiobook"
-TEXT_DIR = AUDIOBOOK_DIR / "text"
+NARRATION_DIR = AUDIOBOOK_DIR / "narration-txt-chapters"
+NARRATION_CHUNKS_DIR = AUDIOBOOK_DIR / "narration-txt-chunks"
 CHAPTER_AUDIO_DIR = AUDIOBOOK_DIR / "chapters"
 ALIGNMENT_DIR = AUDIOBOOK_DIR / "alignment"
 SUBTITLES_DIR = AUDIOBOOK_DIR / "subtitles"
@@ -27,7 +28,8 @@ VARIABLES_YML = PROJECT_ROOT / "_variables.yml"
 class AudiobookPaths:
     """All output paths for a single audiobook config."""
     root: Path
-    text: Path
+    narration_txt: Path
+    narration_txt_chunks: Path
     chapters: Path
     alignment: Path
     subtitles: Path
@@ -39,13 +41,14 @@ class AudiobookPaths:
 def get_paths(config_name: str) -> AudiobookPaths:
     """Create an AudiobookPaths for the given config name.
 
-    Output structure: assets/audiobook/{config_name}/text/, chapters/, etc.
+    Output structure: assets/audiobook/{config_name}/narration-txt-chapters/, chapters/, etc.
     """
     root = AUDIOBOOK_DIR / config_name
     video = root / "video"
     return AudiobookPaths(
         root=root,
-        text=root / "text",
+        narration_txt=root / "narration-txt-chapters",
+        narration_txt_chunks=root / "narration-txt-chunks",
         chapters=root / "chapters",
         alignment=root / "alignment",
         subtitles=root / "subtitles",
@@ -167,7 +170,7 @@ def extract_chapters(config: dict) -> list[dict]:
 
 def find_prepared_text(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find the prepared audiobook text file for a chapter."""
-    text_dir = paths.text if paths else TEXT_DIR
+    text_dir = paths.narration_txt if paths else NARRATION_DIR
     title = chapter.get('title') or ''
     safe = safe_filename(title)
     text_file = text_dir / f"{chapter['index']:03d}-{safe}.prepared.txt"

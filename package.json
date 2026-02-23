@@ -72,6 +72,7 @@
     "audiobook:text:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_text.py --config _quarto-manual-paperback.yml --list",
     "audiobook:generate": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook.py --config _quarto-manual-paperback.yml",
     "audiobook:generate:all": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_text.py --config _quarto-manual-paperback.yml && .venv\\Scripts\\python.exe -u scripts/generate_audiobook.py --config _quarto-manual-paperback.yml",
+    "audiobook:publish": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_text.py --config _quarto-manual-paperback.yml && .venv\\Scripts\\python.exe -u scripts/generate_audiobook.py --config _quarto-manual-paperback.yml && .venv\\Scripts\\python.exe -u scripts/sync_r2.py",
     "audiobook:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook.py --config _quarto-manual-paperback.yml --list",
     "audiobook:scenes": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_scenes.py --config _quarto-manual-paperback.yml",
     "audiobook:scenes:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_scenes.py --config _quarto-manual-paperback.yml --list",
