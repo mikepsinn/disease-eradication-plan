@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 228 parameters used in the analysis, organized by type:
+This appendix documents all 231 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 102
-- Calculated values: 94
+- External sources (peer-reviewed): 103
+- Calculated values: 96
 - Core definitions: 32
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (102 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
+[Calculated Values](#sec-calculated) (96 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -574,6 +574,80 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+:::
+
+### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+
+$$
+\begin{gathered}
+Treatments_{dFDA,ann} \\
+= Treatments_{new,ann} \times k_{capacity} \\
+= 15 \times 12.3 \\
+= 185
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_first_treatments_per_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_first_treatments_per_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_first_treatments_per_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_first_treatments_per_year.qmd >}}
 
 :::
 
@@ -1627,6 +1701,120 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_economic_value.qmd >}}
+
+:::
+
+### Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 10.7 billion deaths {#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total eventually avoidable deaths from the combined dFDA timeline shift. Represents deaths prevented when cures arrive earlier due to both increased trial capacity and eliminated efficacy lag.
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
+
+$$
+\begin{gathered}
+Lives_{max} \\
+= Deaths_{disease,daily} \times T_{accel,max} \times 338 \\
+= 150{,}000 \times 212 \times 338 \\
+= 10.7B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_lives_saved.qmd >}}
 
 :::
 
@@ -7537,6 +7725,18 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 {{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed*
+
+:::
+
+### Return on Investment from Smallpox Eradication Campaign: 280:1 {#sec-smallpox_eradication_roi}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return on investment from smallpox eradication campaign
+
+**Source**: [@smallpox-eradication-roi]
+
+*✓ High confidence*
 
 :::
 
