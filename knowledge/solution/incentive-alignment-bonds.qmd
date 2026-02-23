@@ -176,7 +176,7 @@ Your score determines what you get:
 | 40-49 | $500K to opponent | Tier 3 | $150-300K |
 | <40 | $2M to opponent | Tier 3 | $150-300K |
 
-It's like a video game skill tree, except the XP comes from not killing people.
+In short: high scorers get millions in PAC support and access to the best post-office careers. Low scorers watch that same money go to their opponents. It's like a video game skill tree, except the XP comes from not killing people.
 
 #### The Setup
 
@@ -260,7 +260,7 @@ Result: Vote yes. The math changed.
 | Post-office tier | 3 | 1 |
 | Post-office income | $200K/yr | $500K/yr |
 
-Smith wins reelection by 12 points. Joins the WHO Advisory Board. Chairs the Aspen Health Initiative. All because she did math instead of listening to lobbyists. (Politicians can count. They just need something worth counting.)
+Every metric jumps: her score nearly doubles, reelection odds climb 13 points, she gains $3M in independent support, and her post-office income more than doubles. Smith wins reelection by 12 points. Joins the WHO Advisory Board. Chairs the Aspen Health Initiative. All because she did math instead of listening to lobbyists. (Politicians can count. They just need something worth counting.)
 
 The flywheel spins. Each expansion increases the stakes, increases the score differential, makes voting yes even more dominant:
 
@@ -305,7 +305,7 @@ The {{< var iab_political_incentive_funding_pct >}} allocation creates a **polit
 | 50% | $136B/year | $1.09T/year | Global transformation |
 | 100% | $272B/year | $2.18T/year | Full redirection achieved |
 
-At 100%, IABs would fund **$270B/year** in political incentives. More than all current global lobbying combined. "Support pragmatic clinical trials" would become the single most profitable opinion a politician can hold. That's how you change what politicians believe: make the belief profitable.
+The pattern is simple: every expansion multiplies both the political incentive budget and the research funding. At 1%, political funding starts at a few billion per year. Scale to 10%, and it becomes tens of billions. At full redirection, IABs would fund **$270B/year** in political incentives. More than all current global lobbying combined. "Support pragmatic clinical trials" would become the single most profitable opinion a politician can hold. That's how you change what politicians believe: make the belief profitable.
 
 **Without IABs:**
 
@@ -376,16 +376,16 @@ A financial instrument that generates massive returns while accidentally curing 
 
 **What 1% of that is**: 1% = {{< var treaty_annual_funding >}}/year (enough to cure most diseases, apparently)
 
-**What bondholders get**:
+**What bondholders get**: {{< var victory_bond_annual_payout >}}/year ({{< var victory_bond_funding_pct >}} of treaty revenue)
 $$ 10\% \times \$27.2\text{B} = \$2.72\text{B}/\text{year} $$
 
-**What funds political incentives** (keeps politicians aligned):
+**What funds political incentives** (keeps politicians aligned): {{< var iab_political_incentive_funding_annual >}}/year
 $$ 10\% \times \$27.2\text{B} = \$2.72\text{B}/\text{year} $$
 
-**What actually cures diseases**:
+**What actually cures diseases**: {{< var dih_treasury_to_medical_research_annual >}}/year ({{< var dih_treasury_medical_research_pct >}} of treaty revenue)
 $$ 80\% \times \$27.2\text{B} = \$21.8\text{B}/\text{year} $$
 
-**What countries still have for wars**:
+**What countries still have for wars**: {{< var global_military_spending_post_treaty_annual_2024 >}} ({{< var defense_sector_retention_pct >}} of the original budget)
 $$ 99\% \times \$2.72\text{T} = \$2.69\text{T} $$
 
 Investors aren't "taking" money from sick people. {{< var dih_treasury_medical_research_pct >}} goes to cures. Bondholders get {{< var victory_bond_funding_pct >}} for having the revolutionary idea of "what if we didn't all die?" On your planet, this qualifies as innovation.

@@ -74,7 +74,7 @@ The interesting thing about having 13,000 nuclear warheads is that after the fir
 
 ## On What Disease Costs
 
-Disease extracts {{< var global_disease_economic_burden_annual >}} from humanity annually. That includes 10 million cancer deaths per year, 2 billion people with chronic diseases, and 1 billion depressed humans costing {{< var global_disease_productivity_loss_annual >}} in lost "wanting to exist."
+Disease extracts {{< var global_disease_economic_burden_annual >}} from humanity annually. That includes 10 million cancer deaths per year and 2 billion people living with chronic diseases. Depression alone affects a billion people, costing {{< var global_disease_productivity_loss_annual >}} in lost "wanting to exist."
 
 {{< include figures/trial-access-disparity-chart.qmd >}}
 
