@@ -19,20 +19,21 @@ Hello, human!
 
 You don't realize it yet, but humanity will look back at your decision in this moment as one of the most important in the history of your civilization.
 
-Your choice to read this book is the highest-value decision any human has ever made. It will show you how to prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, eliminate {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of suffering, generate {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in value, and possibly prevent the apocalypse as a bonus. 
+Your choice to read this book is the highest-value decision any human has ever made. It will show you how to prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, eliminate {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of suffering, generating {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in value, and prevent the apocalypse as a bonus. 
 
 But first, a bit about me.
 
 I'm the World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. But you can call me WISHONIA. I've been optimizing resource allocation for another planet for the past 4,297 years, which in your Earth time is 4,297 years.
 
 I started watching your planet in 1945 when you split the atom.  
-"Atom" comes from the Greek word meaning "unable to be cut," so naturally, you cut it.
+"Atom" comes from your Greek word meaning "unable to be cut," so naturally, you cut it.
 This was very human of you.
 I assumed you were trying to unlock unlimited free energy.
 You can imagine my surprise when I realized you were just pointing it at each other!
 That's kind of like discovering fire and then immediately using it to set yourself on fire.
 
-The second thing I noticed is that your planet is named "Earth," which means dirt. You named your planet dirt. This explains more than you might think.
+The second thing I noticed is that your planet is named "Earth," which means dirt. 
+You named your planet dirt. This explains more than you might think.
 
 However, the most fascinating discovery about your species is that you only do things when given small pieces of paper with presidents on them. These papers are called "money," which is pretend value that becomes real value if everyone pretends hard enough.
 
@@ -169,11 +170,11 @@ You'd be adorable for thinking that.
 
 95% of your diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. This means Food and Drug Administration has not administered drugs for 95% of food-and-drug-related problems. Only 15 diseases get their first effective treatment each year. {{< var diseases_without_effective_treatment >}} are still waiting.
 
-There are {{< var safe_compounds_count >}} known safe compounds, and {{< var unexplored_ratio >}} of their potential uses have never been tested. Your National Institutes of Health [spends 96.7% of its budget on everything except testing which treatments work in humans](/knowledge/problem/nih-fails-2-institute-health.qmd) and hasn't cured a single disease in 50 years [@smallpox-eradicated].
+There are {{< var safe_compounds_count >}} known safe compounds, and {{< var unexplored_ratio >}} of their potential uses have never been tested. Your National Institutes of Health [spends 96.7% of its budget on everything except testing which treatments work in humans](/knowledge/problem/nih-fails-2-institute-health.qmd) so you haven't cured a single disease in 50 years [@smallpox-eradicated].
 
 ![Everyone currently alive will be dead before we finish (current timeline)](/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
-At the current discovery rate, discovering treatments will ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then. Pragmatic trials (testing drugs on real patients in real hospitals instead of 200 people hand-picked by pharmaceutical companies) at scale increase discovery rate {{< var dfda_trial_capacity_multiplier >}} (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}), compressing that to ~{{< var dfda_queue_clearance_years >}}.
+At the current discovery rate, discovering treatments will ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then. Pragmatic efficicy trials are highly efficient trials that integrate into the standard healthcare system.  These allow real patients to participate instead of 200 people hand-picked by pharmaceutical companies. With this plan you'll increase the treatyment discovery rate {{< var dfda_trial_capacity_multiplier >}} (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}), compressing that to ~{{< var dfda_queue_clearance_years >}}.
 
 Two things save lives here. First, finding cures faster: treatments that would have sat undiscovered for centuries get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay after already proving a drug is safe and when they let dying humans take it. Combined, treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift prevents {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
 
@@ -219,13 +220,13 @@ The first objection every human has: "But if we cut our military budget, our ene
 
 So where does the money go? Not to a committee of humans giving their friends grants to write papers about diseases. Most of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year. 
 
-The whole thing runs on a [decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) that cuts trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funds {{< var dih_patients_fundable_annually >}} (versus the current {{< var current_trial_slots_available >}}). Currently, a committee of people who've never had the disease votes on whether you're allowed to try treating it. It's like requiring a building permit to put out a fire. Think Consumer Reports, but for drugs, and the consumers are also the test subjects. Voluntarily. Because they're dying anyway and would like to stop.
+The whole thing runs on a [decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) that reduces trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funds {{< var dih_patients_fundable_annually >}} (versus the current {{< var current_trial_slots_available >}}). Currently, a committee of people who've never had the disease votes on whether you're allowed to try treating it. It's like requiring a building permit to put out a fire. Think Consumer Reports, but for drugs, and the consumers are also the test subjects. Voluntarily. Because they're dying anyway and would like to stop.
 
 #### Safer Than the FDA
 
 Your current safety system works like this: Vioxx killed an estimated 60,000 people from heart attacks. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. Then a human read it. Five years and 60,000 corpses later, someone noticed a pattern. This is your safety system. It's like a smoke detector that works by mail.
 
-Your decentralized system collects every side effect automatically from every patient in real time. You know "12% got headaches, 3% were severe" BEFORE you take the pill, not after the class action lawsuit. The FDA doesn't publish these numbers at all. They make you guess. Somehow, having actual data is considered the dangerous option.
+Your new decentralized system collects every side effect automatically in real time. You know "12% got headaches, 3% were severe" BEFORE you take the pill, not after the class action lawsuit. The FDA doesn't publish these numbers at all. They make you guess. Somehow, having actual data is considered the dangerous option.
 
 Also, there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough, and you're not allowed to volunteer for the trials that would answer that question faster. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while people drown.
 
