@@ -283,6 +283,22 @@ def generate_chapter_audio(
     return output_path, True
 
 
+def _get_wav_duration_ms(wav_path: Path) -> int:
+    """Get WAV duration in milliseconds using ffprobe (no memory load)."""
+    cmd = [
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1",
+        str(wav_path),
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        # Fallback: load just enough to get duration
+        audio = AudioSegment.from_wav(str(wav_path))
+        return len(audio)
+    return int(float(result.stdout.strip()) * 1000)
+
+
 def combine_chapter_audio(
     chapter_files: list[Path],
     chapters: list[dict],
@@ -290,6 +306,9 @@ def combine_chapter_audio(
 ) -> tuple[Path, list[ChapterTimestamp]]:
     """
     Combine individual chapter audio files into a single audiobook.
+
+    Uses ffmpeg concat demuxer to avoid loading all audio into memory
+    (32+ chapters of WAV would exceed available RAM with pydub).
 
     Args:
         chapter_files: List of paths to chapter WAV files (in order)
@@ -301,39 +320,42 @@ def combine_chapter_audio(
     """
     print(f"\nCombining {len(chapter_files)} chapters into audiobook...")
 
-    # Build lookup: chapter index -> metadata (parse "001-" prefix from filename)
+    # Build lookup: chapter index -> metadata
     chapter_meta_by_index: dict[int, dict] = {}
     for ch in chapters:
         chapter_meta_by_index[ch['index']] = ch
 
-    # Start with empty audio
-    combined = AudioSegment.empty()
-    timestamps: list[ChapterTimestamp] = []
+    # Generate 2s silence file for inter-chapter gaps
+    silence_path = output_path.parent / "_silence_2s.wav"
+    subprocess.run(
+        ["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono",
+         "-t", "2", str(silence_path)],
+        capture_output=True,
+    )
 
-    # Add 2 seconds of silence between chapters
-    silence = AudioSegment.silent(duration=2000)
+    # Build concat list and collect timestamps (using ffprobe, not memory)
+    concat_file = output_path.parent / "_concat_chapters.txt"
+    timestamps: list[ChapterTimestamp] = []
     current_position_ms = 0
+    concat_lines = []
 
     for i, chapter_file in enumerate(chapter_files):
-        print(f"  Adding: {chapter_file.name}")
-
-        chapter_audio = AudioSegment.from_wav(str(chapter_file))
+        duration_ms = _get_wav_duration_ms(chapter_file)
+        print(f"  Adding: {chapter_file.name} ({format_duration(duration_ms)})")
 
         if i > 0:
-            combined += silence
-            current_position_ms += len(silence)
+            concat_lines.append(f"file '{silence_path.as_posix()}'")
+            current_position_ms += 2000
+
+        concat_lines.append(f"file '{chapter_file.as_posix()}'")
 
         start_ms = current_position_ms
-        combined += chapter_audio
-        end_ms = current_position_ms + len(chapter_audio)
+        end_ms = current_position_ms + duration_ms
         current_position_ms = end_ms
-        duration_ms = len(chapter_audio)
 
-        # Match metadata by parsing index prefix from filename (e.g. "001-Start-Here.wav")
         index_match = re.match(r'^(\d+)-', chapter_file.stem)
         chapter_index = int(index_match.group(1)) if index_match else i + 1
         meta = chapter_meta_by_index.get(chapter_index, {})
-
         title = meta.get('title') or chapter_file.stem.split('-', 1)[-1].replace('-', ' ')
 
         timestamps.append(ChapterTimestamp(
@@ -347,21 +369,29 @@ def combine_chapter_audio(
             duration_formatted=format_duration(duration_ms),
         ))
 
-    # Export combined audio
+    concat_file.write_text('\n'.join(concat_lines), encoding='utf-8')
+
+    # Export as MP3 directly via ffmpeg (streaming, no memory spike)
     print(f"\nExporting combined audiobook...")
-
-    # Export as MP3 for smaller file size
     mp3_path = output_path.with_suffix('.mp3')
-    combined.export(str(mp3_path), format="mp3", bitrate="192k")
-    print(f"  [OK] MP3: {mp3_path}")
+    result = subprocess.run([
+        "ffmpeg", "-y",
+        "-f", "concat", "-safe", "0", "-i", str(concat_file),
+        "-codec:a", "libmp3lame", "-b:a", "192k",
+        "-movflags", "+faststart",
+        str(mp3_path),
+    ], capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"  [ERROR] ffmpeg MP3 export failed:\n{result.stderr[:500]}")
+    else:
+        mp3_size = mp3_path.stat().st_size / 1024 / 1024
+        print(f"  [OK] MP3: {mp3_path.name} ({mp3_size:.1f} MB)")
 
-    # Also export as WAV for highest quality
-    wav_path = output_path.with_suffix('.wav')
-    combined.export(str(wav_path), format="wav")
-    print(f"  [OK] WAV: {wav_path}")
+    # Clean up temp files
+    concat_file.unlink(missing_ok=True)
+    silence_path.unlink(missing_ok=True)
 
-    # Print duration
-    total_ms = len(combined)
+    total_ms = current_position_ms
     print(f"\nTotal duration: {format_duration(total_ms)}")
 
     return mp3_path, timestamps
