@@ -33,7 +33,7 @@ After the first 9/11, America invaded two countries and spent $2 trillion. After
 **Killing each other:** {{< var global_military_spending_annual_2024 >}} per year
 **Curing diseases:** {{< var global_med_research_spending >}} per year
 
-The real bottleneck isn't research funding. It's testing which treatments actually work. Governments worldwide spend {{< var global_government_clinical_trials_spending_annual >}} annually on clinical trials versus {{< var global_military_spending_annual_2024 >}} on weapons. That's a {{< var military_to_government_clinical_trials_spending_ratio >}} ratio, which in technical terms is called "[having your priorities backwards](problem/cost-of-war.qmd)."
+The real bottleneck isn't research funding. It's testing which treatments actually work. Governments worldwide spend {{< var global_government_clinical_trials_spending_annual >}} annually on clinical trials, a {{< var military_to_government_clinical_trials_spending_ratio >}} ratio, which in technical terms is called "[having your priorities backwards](problem/cost-of-war.qmd)."
 
 ![Humanity spends 2.72 trillion on weapons and 4.5 billion on testing medicine. That's 604 times more money for killing than curing. You named yourselves Homo sapiens, which is Latin for 'wise man.' The irony is exquisite.](/assets/images/problem/problem-section-where-the-money-goes-bw-academic.jpg)
 
@@ -70,7 +70,7 @@ This budget includes:
 
 Your personal lifetime contribution to the murder budget is $74,259. You could have bought a really nice casket instead. Or, and this is just a thought, not needed a casket quite so soon.
 
-The interesting thing about having 13,000 nuclear warheads is that after the first few hundred, you're just showing off. You can only destroy Earth once. The remaining 12,700 are for what, exactly? Destroying Earth's ghost? It's like buying 13,000 fire extinguishers for a one-room flat. At some point, the fire extinguishers are the fire hazard.
+The interesting thing about having 13,000 nuclear warheads is that after the first few hundred, you're just showing off. You can only destroy Earth once. The remaining 12,700 are for what, exactly? Destroying Earth's ghost?
 
 ## On What Disease Costs
 
@@ -100,30 +100,12 @@ Money isn't real, but resources are. Earth has 8 billion human brains. Every MIT
 
 The solution isn't to print more money for medical research. The solution is to change the ratio. Take money from the killing budget, give it to the not-dying budget. This is called "arithmetic," which is apparently a controversial field of mathematics.
 
-## What This Means
-
-- 150,000 humans die daily from disease and aging, many eventually avoidable
-- {{< var global_military_spending_annual_2024 >}} spent annually on weapons
-- {{< var global_med_research_spending >}} spent annually on curing all diseases combined
-- {{< var military_to_government_clinical_trials_spending_ratio >}} weapons-to-clinical-trials spending ratio
-- Zero diseases cured in 50 years
-- 0% correlation between public preferences and policy
-- You are dying while reading this
-
-![For every dollar spent curing disease, you spend 604 dollars on weapons. If you allocated your fear proportionally to actual threats, you'd be more afraid of your pancreas than North Korea.](/assets/images/problem/problem-section-what-this-means-bw-academic.jpg)
-
-If this seems bad, that's because you're paying attention.
-
-The good news is you're going to fix it. The bad news is it requires doing things. The weird news is you'll get rich doing it.
-
 ## What's Next
 
 The following chapters explain each problem in detail:
 
-- [The Daily Body Count](problem/cost-of-disease.qmd): Why 150,000 daily deaths don't make the news
 - [The NIH Spent $1 Trillion Curing Nothing](problem/nih-fails-2-institute-health.qmd): How 97% of medical research funding avoids testing drugs in humans
 - [The FDA Is Unsafe and Ineffective](problem/fda-is-unsafe-and-ineffective.qmd): How "safety" regulations make medicine more dangerous
-- [The Cost of War](problem/cost-of-war.qmd): $11.4 trillion annually, itemized
 - [Unrepresentative Democracy](problem/unrepresentative-democracy.qmd): Why 0% of what you want becomes policy
 - [You Are a Meat Robot](proof/body-as-repairable-machine.qmd): Your body is a machine, and the parts are fixable
 

@@ -25,15 +25,16 @@ book:
         - name: "Institute for Accelerated Medicine"
           url: https://acceleratedmedicine.org
   description: "Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery"
+  site-url: https://manual.WarOnDisease.org
   chapters:
     - text: "Start Here"
       href: index.qmd
 
     - part: "The Problem"
       chapters:
-        - knowledge/problem.qmd
-        - knowledge/problem/cost-of-war.qmd
-        - knowledge/problem/cost-of-disease.qmd
+        # CUT: problem.qmd - overview chapter that previews all sub-chapters; redundant in sequential reading
+        # CUT: cost-of-war.qmd - key stats already in peace-dividend.qmd (itemized table, multipliers) and 1-percent-treaty.qmd; "war is expensive" is not a non-obvious argument
+        # CUT: cost-of-disease.qmd - "disease kills people" is not news; $397T DALY argument moved to health-dividend.qmd
         - knowledge/problem/nih-fails-2-institute-health.qmd
         - knowledge/problem/untapped-therapeutic-frontier.qmd
         - knowledge/problem/fda-is-unsafe-and-ineffective.qmd

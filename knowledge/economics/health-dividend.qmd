@@ -11,6 +11,12 @@ tags:
 image: /assets/og-images/knowledge/economics/health-dividend-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+Disease costs humanity **$397.4 trillion annually** [@disease-economic-burden-109t]. That's more than global GDP ($101 trillion [@global-gdp]). The number sounds wrong because economists spent centuries measuring productivity without accounting for the people who stopped being productive on account of being dead.
+
+The missing piece is DALYs (Disability-Adjusted Life Years): healthy years deleted by disease. Die at 40 instead of 80? That's 40 DALYs. Spend 10 years severely depressed? That's 5 DALYs. Globally: **2.55 billion DALYs annually** [@ihme-gbd-2019]. At 3x GDP per capita ($150,000/year [@who-choice-daly-value]), that's $382.5 trillion in lost human potential, plus $8.2 trillion in direct medical costs [@global-health-spending-gdp] and $6.7 trillion in lost productivity [@wef-harvard-ncd-cost].
+
+That's the bill. Here's the receipt for the fix:
+
 Your dFDA costs {{< var dfda_annual_opex >}}/year to run.
 It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
 That's {{< var dfda_roi_rd_only >}}:1 returns on R&D savings alone.
