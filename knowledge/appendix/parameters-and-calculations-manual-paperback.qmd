@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 221 parameters used in the analysis, organized by type:
+This appendix documents all 216 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 95
+- External sources (peer-reviewed): 91
 - Calculated values: 94
-- Core definitions: 32
+- Core definitions: 31
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (95 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
+[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (91 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6381,26 +6381,6 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 :::
 
-### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual deaths from all diseases and aging globally
-
-**Source**: [@who-global-health-estimates-2024]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 5.00 million deaths/year)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
-
-*✓ High confidence*
-
-:::
-
 ### Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6925,18 +6905,6 @@ Global military spending in 2024
 
 :::
 
-### Annual Global Pharmaceutical R&D Spending: $300B {#sec-global_pharma_rd_spending_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)
-
-**Source**: [@global-pharma-rd-spending-300b]
-
-*✓ High confidence*
-
-:::
-
 ### Global Population in 2024: 8.00 billion of people {#sec-global_population_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7296,18 +7264,6 @@ Reduction in new drug approvals after 1962 Kefauver-Harris Amendment (70% drop f
 **Source**: [@post-1962-drug-approval-drop]
 
 *✓ High confidence • Updated 1962-1970*
-
-:::
-
-### Percentage Military Spending Cut After WW2: 30% {#sec-post_ww2_military_cut_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Percentage military spending cut after WW2 (historical precedent)
-
-**Source**: [@us-post-wwii-military-spending-cut]
-
-*✓ High confidence*
 
 :::
 
@@ -7795,18 +7751,6 @@ Annual US cost of heart disease and stroke (direct and indirect)
 
 :::
 
-### US Military Spending as Percentage of GDP: 3.5% {#sec-us_military_spending_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US military spending as percentage of GDP (2024)
-
-**Source**: [@us-military-budget-3-5-pct-gdp]
-
-*✓ High confidence*
-
-:::
-
 ### Value of Statistical Life: $10M {#sec-value_of_statistical_life}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8082,16 +8026,6 @@ Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
 #### Input Distribution
 
 {{< include ../figures/distribution-dfda_opex_staff.qmd >}}
-
-*Core definition*
-
-:::
-
-### Decentralized Framework for Drug Assessment Target Cost per Patient in USD: $1K {#sec-dfda_target_cost_per_patient_usd}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Target cost per patient in USD (same as DFDA_TARGET_COST_PER_PATIENT but in dollars)
 
 *Core definition*
 

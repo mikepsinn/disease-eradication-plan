@@ -191,11 +191,11 @@ def find_prepared_text(chapter: dict, paths: AudiobookPaths | None = None) -> Pa
     """Find the prepared audiobook text file for a chapter."""
     text_dir = paths.narration_txt if paths else NARRATION_DIR
     slug = chapter_slug(chapter)
-    text_file = text_dir / f"{chapter['index']:03d}-{slug}.prepared.txt"
+    text_file = text_dir / f"{slug}.prepared.txt"
     if text_file.exists():
         return text_file
-    # Fallback: match by chapter index prefix (handles legacy title-based names)
-    for f in text_dir.glob(f"{chapter['index']:03d}-*.prepared.txt"):
+    # Fallback: legacy index-prefixed name (e.g. 005-nih-fails.prepared.txt)
+    for f in sorted(text_dir.glob(f"*-{slug}.prepared.txt")):
         return f
     return None
 
@@ -204,11 +204,11 @@ def find_chapter_audio(chapter: dict, paths: AudiobookPaths | None = None) -> Pa
     """Find the WAV audio file for a chapter."""
     chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
     slug = chapter_slug(chapter)
-    audio_file = chapters_dir / f"{chapter['index']:03d}-{slug}.wav"
+    audio_file = chapters_dir / f"{slug}.wav"
     if audio_file.exists():
         return audio_file
-    # Fallback: match by chapter index prefix (handles legacy title-based names)
-    for f in chapters_dir.glob(f"{chapter['index']:03d}-*.wav"):
+    # Fallback: legacy index-prefixed name (e.g. 005-nih-fails.wav)
+    for f in sorted(chapters_dir.glob(f"*-{slug}.wav")):
         return f
     return None
 

@@ -48,17 +48,18 @@ from lib.scenes import (
 def get_chapter_dir(chapter: dict, paths: AudiobookPaths | None = None) -> Path:
     """Get the scene directory for a chapter."""
     scenes_dir = paths.scenes if paths else SCENES_DIR
-    return scenes_dir / f"{chapter['index']:03d}-{chapter_slug(chapter)}"
+    return scenes_dir / chapter_slug(chapter)
 
 
 def find_alignment(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find alignment JSON for a chapter."""
     alignment_dir = paths.alignment if paths else ALIGNMENT_DIR
     slug = chapter_slug(chapter)
-    alignment_file = alignment_dir / f"{chapter['index']:03d}-{slug}.alignment.json"
+    alignment_file = alignment_dir / f"{slug}.alignment.json"
     if alignment_file.exists():
         return alignment_file
-    for f in alignment_dir.glob(f"{chapter['index']:03d}-*.alignment.json"):
+    # Fallback: legacy index-prefixed name
+    for f in sorted(alignment_dir.glob(f"*-{slug}.alignment.json")):
         return f
     return None
 

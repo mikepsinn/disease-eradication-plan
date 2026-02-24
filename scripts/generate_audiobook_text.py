@@ -329,7 +329,7 @@ def generate_chapter_text(
     title = chapter['title'] or extract_title_from_qmd(qmd_path)
 
     slug = chapter_slug(chapter)
-    output_path = OUTPUT_DIR / f"{chapter['index']:03d}-{slug}.prepared.txt"
+    output_path = OUTPUT_DIR / f"{slug}.prepared.txt"
 
     if output_path.exists() and not force:
         print(f"  [SKIP] Already exists: {output_path.name}")
@@ -418,7 +418,7 @@ def list_chapters(chapters: list[dict]):
             title = extract_title_from_qmd(qmd_path)
         title = title or ch['path']
         slug = chapter_slug(ch)
-        text_file = OUTPUT_DIR / f"{ch['index']:03d}-{slug}.prepared.txt"
+        text_file = OUTPUT_DIR / f"{slug}.prepared.txt"
         if text_file.exists():
             status = f"[x] ({text_file.stat().st_size:,} bytes)"
         else:

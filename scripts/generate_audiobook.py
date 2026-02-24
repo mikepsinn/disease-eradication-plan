@@ -39,7 +39,7 @@ from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
     PROJECT_ROOT, AUDIOBOOK_DIR, CHAPTER_AUDIO_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
-    chapter_slug, find_prepared_text, AudiobookPaths, config_name_from_path, get_paths,
+    chapter_slug, find_prepared_text, find_chapter_audio, AudiobookPaths, config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
 from lib.retry import RateLimiter
@@ -194,7 +194,7 @@ def generate_chapter_audio(
 
     # Create output filename using QMD slug (stable across title renames)
     slug = chapter_slug(chapter)
-    output_filename = f"{chapter['index']:03d}-{slug}.wav"
+    output_filename = f"{slug}.wav"
     output_path = chapters_dir / output_filename
 
     # Regenerate prepared text via subprocess (has its own hash-based caching)
@@ -337,9 +337,9 @@ def _get_wav_duration_ms(wav_path: Path) -> int:
 
 
 def combine_chapter_audio(
-    chapter_files: list[Path],
     chapters: list[dict],
     output_path: Path,
+    paths: AudiobookPaths | None = None,
 ) -> tuple[Path, list[ChapterTimestamp]]:
     """
     Combine individual chapter audio files into a single audiobook.
@@ -347,20 +347,27 @@ def combine_chapter_audio(
     Uses ffmpeg concat demuxer to avoid loading all audio into memory
     (32+ chapters of WAV would exceed available RAM with pydub).
 
+    Ordering comes from the config chapter list, not filename sorting.
+
     Args:
-        chapter_files: List of paths to chapter WAV files (in order)
-        chapters: Chapter metadata dicts from extract_chapters()
+        chapters: Chapter metadata dicts from extract_chapters() (defines order)
         output_path: Path for combined output file
+        paths: Config-specific audiobook paths
 
     Returns:
         Tuple of (mp3_path, list of ChapterTimestamp dicts)
     """
-    print(f"\nCombining {len(chapter_files)} chapters into audiobook...")
-
-    # Build lookup: chapter index -> metadata
-    chapter_meta_by_index: dict[int, dict] = {}
+    # Resolve WAV files from config chapter order (not filesystem glob)
+    chapter_files: list[tuple[dict, Path]] = []
     for ch in chapters:
-        chapter_meta_by_index[ch['index']] = ch
+        audio_path = find_chapter_audio(ch, paths=paths)
+        if audio_path:
+            chapter_files.append((ch, audio_path))
+
+    if len(chapter_files) < 2:
+        raise ValueError(f"Need at least 2 chapter WAVs to combine, found {len(chapter_files)}")
+
+    print(f"\nCombining {len(chapter_files)} chapters into audiobook...")
 
     # Generate 2s silence file for inter-chapter gaps
     silence_path = output_path.parent / "_silence_2s.wav"
@@ -376,7 +383,7 @@ def combine_chapter_audio(
     current_position_ms = 0
     concat_lines = []
 
-    for i, chapter_file in enumerate(chapter_files):
+    for i, (ch, chapter_file) in enumerate(chapter_files):
         duration_ms = _get_wav_duration_ms(chapter_file)
         print(f"  Adding: {chapter_file.name} ({format_duration(duration_ms)})")
 
@@ -390,26 +397,10 @@ def combine_chapter_audio(
         end_ms = current_position_ms + duration_ms
         current_position_ms = end_ms
 
-        index_match = re.match(r'^(\d+)-', chapter_file.stem)
-        if not index_match:
-            raise ValueError(f"WAV filename does not start with chapter index: {chapter_file.name}")
-        chapter_index = int(index_match.group(1))
-        meta = chapter_meta_by_index.get(chapter_index)
-        if meta is None:
-            raise ValueError(
-                f"No chapter metadata for index {chapter_index} (WAV: {chapter_file.name}). "
-                f"Available indices: {sorted(chapter_meta_by_index)}"
-            )
-        if not meta.get('title'):
-            raise ValueError(
-                f"Chapter {chapter_index} has no title (path: {meta.get('path', '?')}). "
-                f"Check the Quarto config chapter list."
-            )
-
         timestamps.append(ChapterTimestamp(
-            index=chapter_index,
-            title=meta['title'],
-            part=meta.get('part'),
+            index=ch['index'],
+            title=ch['title'],
+            part=ch.get('part'),
             file=chapter_file.name,
             start_ms=start_ms,
             end_ms=end_ms,
@@ -467,8 +458,8 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
 
         # Check if audio exists
         slug = chapter_slug(ch)
-        audio_file = chapters_dir / f"{ch['index']:03d}-{slug}.wav"
-        status = "[x]" if audio_file.exists() else "[ ]"
+        audio_file = find_chapter_audio(ch, paths=paths)
+        status = "[x]" if audio_file else "[ ]"
 
         print(f"  {status} {ch['index']:3d}. {title}")
 
@@ -688,6 +679,11 @@ def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
 
     print(f"  Loudness: {measured_i} LUFS (target: {target_lufs} LUFS)")
 
+    # Skip if already within 0.5 LUFS of target (avoids quality loss from re-normalizing)
+    if abs(float(measured_i) - target_lufs) < 0.5:
+        print(f"  [SKIP] Already at target loudness ({measured_i} LUFS)")
+        return wav_path
+
     # Pass 2: Apply normalization with measured values
     norm_cmd = [
         "ffmpeg", "-y", "-i", str(wav_path),
@@ -713,15 +709,14 @@ def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
 
 
 def export_chapter_mp3s(
-    chapter_files: list[Path],
     chapters: list[dict],
     book_meta: dict,
     paths: AudiobookPaths | None = None,
 ) -> list[Path]:
     """Export each chapter WAV as a tagged MP3 for per-chapter distribution.
 
-    Each MP3 gets ID3 tags: title, artist, album, narrator, track number,
-    cover art, and genre.
+    Iterates chapters in config order. Each MP3 gets ID3 tags: title, artist,
+    album, narrator, track number, cover art, and genre.
     """
     from mutagen.mp3 import MP3
     from mutagen.id3 import (  # pyright: ignore[reportPrivateImportUsage]
@@ -731,40 +726,20 @@ def export_chapter_mp3s(
     mp3_dir = paths.root / "mp3" if paths else AUDIOBOOK_DIR / "mp3"
     mp3_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"\nExporting {len(chapter_files)} chapter MP3s...")
-
-    # Build chapter lookup
-    chapter_meta_by_index = {ch['index']: ch for ch in chapters}
-
-    # Load cover art once
+    # Load cover art once (validated in extract_book_metadata)
     cover_art: Path = book_meta['cover_art']
-    if not cover_art.exists():
-        raise FileNotFoundError(f"Cover art not found: {cover_art}")
     cover_data = cover_art.read_bytes()
     cover_mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
 
     mp3_files = []
-    total_chapters = len(chapter_files)
     narrator = book_meta['narrator']
+    total_chapters = len(chapters)
 
-    for chapter_file in chapter_files:
-        # Parse chapter index from filename (e.g. "001-Start-Here.wav")
-        index_match = re.match(r'^(\d+)-', chapter_file.stem)
-        if not index_match:
-            raise ValueError(f"WAV filename does not start with chapter index: {chapter_file.name}")
-        chapter_index = int(index_match.group(1))
-        meta = chapter_meta_by_index.get(chapter_index)
-        if meta is None:
-            raise ValueError(
-                f"No chapter metadata for index {chapter_index} (WAV: {chapter_file.name}). "
-                f"Available indices: {sorted(chapter_meta_by_index)}"
-            )
-        if not meta.get('title'):
-            raise ValueError(
-                f"Chapter {chapter_index} has no title (path: {meta.get('path', '?')}). "
-                f"Check the Quarto config chapter list."
-            )
-        title = meta['title']
+    for track_num, ch in enumerate(chapters, 1):
+        chapter_file = find_chapter_audio(ch, paths=paths)
+        if not chapter_file:
+            print(f"  [SKIP] No WAV for chapter {ch['index']}: {ch['title']}")
+            continue
 
         mp3_path = mp3_dir / chapter_file.with_suffix('.mp3').name
 
@@ -779,14 +754,14 @@ def export_chapter_mp3s(
         assert mp3.tags is not None
         tag = mp3.tags
 
-        tag.add(TIT2(encoding=3, text=[title]))
+        tag.add(TIT2(encoding=3, text=[ch['title']]))
         tag.add(TPE1(encoding=3, text=[book_meta['author']]))
         tag.add(TPE2(encoding=3, text=[book_meta['author']]))
         tag.add(TALB(encoding=3, text=[book_meta['title']]))
         tag.add(TCON(encoding=3, text=["Audiobook"]))
         tag.add(TDRC(encoding=3, text=[book_meta['year']]))
         tag.add(TPUB(encoding=3, text=[book_meta['publisher']]))
-        tag.add(TRCK(encoding=3, text=[f"{chapter_index}/{total_chapters}"]))
+        tag.add(TRCK(encoding=3, text=[f"{track_num}/{total_chapters}"]))
         tag.add(TLAN(encoding=3, text=["eng"]))
         tag.add(TXXX(encoding=3, desc='narrator', text=[narrator]))
         if book_meta.get('description'):
@@ -841,38 +816,26 @@ def generate_podcast_rss(
     # Each chapter gets a pubDate 1 day apart so podcast apps sort them correctly
     base_date = datetime.now(timezone.utc)
 
+    # Build MP3 lookup by slug for matching with timestamps
+    mp3_by_slug = {mp3.stem: mp3 for mp3 in chapter_mp3s}
+
     items = []
-    for ep_num, mp3_path in enumerate(chapter_mp3s):
-        index_match = re.match(r'^(\d+)-', mp3_path.stem)
-        if not index_match:
-            raise ValueError(f"MP3 filename does not start with chapter index: {mp3_path.name}")
-        chapter_index = int(index_match.group(1))
-        ts = ts_by_index.get(chapter_index)
-        ch_meta = next((ch for ch in chapters if ch['index'] == chapter_index), None)
-        if ch_meta is None:
-            raise ValueError(
-                f"No chapter metadata found for index {chapter_index} (MP3: {mp3_path.name}). "
-                f"Available indices: {sorted(ch['index'] for ch in chapters)}"
-            )
-        if not ch_meta.get('title'):
-            raise ValueError(
-                f"Chapter {chapter_index} has no title (path: {ch_meta.get('path', '?')}). "
-                f"Check the Quarto config chapter list."
-            )
-        ch_title = escape(ch_meta['title'])
-        part = ch_meta.get('part', '')
+    total_eps = len(chapter_mp3s)
+    for ep_num, ts in enumerate(timestamps):
+        slug = Path(ts['file']).stem  # WAV slug -> MP3 slug
+        mp3_path = mp3_by_slug.get(slug)
+        if not mp3_path:
+            print(f"  [WARN] No MP3 for timestamp entry: {ts['file']}")
+            continue
+
+        ch_title = escape(ts['title'])
+        part = ts.get('part', '')
         ep_title = f"{ch_title}" if not part else f"{part}: {ch_title}"
 
-        if ts is None:
-            raise ValueError(
-                f"No timestamp data for chapter {chapter_index} (MP3: {mp3_path.name}). "
-                f"Available indices: {sorted(ts_by_index)}"
-            )
-        duration_s = ts['duration_ms'] // 1000
         duration_fmt = ts['duration_formatted']
         file_size = mp3_path.stat().st_size
         mp3_url = f"{mp3_url_base}/{mp3_path.name}"
-        pub_date = (base_date - timedelta(days=len(chapter_mp3s) - ep_num)).strftime(
+        pub_date = (base_date - timedelta(days=total_eps - ep_num)).strftime(
             "%a, %d %b %Y %H:%M:%S +0000"
         )
 
@@ -881,10 +844,10 @@ def generate_podcast_rss(
       <enclosure url="{escape(mp3_url)}" length="{file_size}" type="audio/mpeg"/>
       <pubDate>{pub_date}</pubDate>
       <itunes:duration>{duration_fmt}</itunes:duration>
-      <itunes:episode>{chapter_index}</itunes:episode>
+      <itunes:episode>{ep_num + 1}</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-{chapter_index:03d}</guid>
-      <description>Chapter {chapter_index} of {title}</description>
+      <guid isPermaLink="false">chapter-{slug}</guid>
+      <description>Chapter {ep_num + 1} of {title}</description>
     </item>""")
 
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -933,8 +896,8 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
     subtitles_dir = paths.subtitles if paths else SUBTITLES_DIR
 
     slug = chapter_slug(chapter)
-    alignment_path = alignment_dir / f"{chapter['index']:03d}-{slug}.alignment.json"
-    vtt_path = subtitles_dir / f"{chapter['index']:03d}-{slug}.vtt"
+    alignment_path = alignment_dir / f"{slug}.alignment.json"
+    vtt_path = subtitles_dir / f"{slug}.vtt"
 
     if alignment_path.exists() and not force and not audio_changed:
         print(f"  [SKIP] Alignment exists: {alignment_path.name}")
@@ -953,7 +916,7 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
         print(f"  [SKIP] {e}")
         return
 
-    srt_path = subtitles_dir / f"{chapter['index']:03d}-{slug}.srt"
+    srt_path = subtitles_dir / f"{slug}.srt"
 
     alignment_dir.mkdir(parents=True, exist_ok=True)
     subtitles_dir.mkdir(parents=True, exist_ok=True)
@@ -1082,28 +1045,29 @@ def main():
             normalize_loudness(wav_file, target_lufs=-16.0)
 
     # Combine into single audiobook + export per-chapter MP3s + podcast RSS
-    # Runs when: not --no-combine AND at least 2 chapter WAVs exist on disk
-    all_chapter_files = sorted(paths.chapters.glob("*.wav")) if not args.no_combine else []
-    if len(all_chapter_files) > 1:
-        # Reload full config for metadata matching
+    # Uses config chapter list for ordering (not filesystem glob)
+    if not args.no_combine:
         full_config = load_book_config(config_path)
         all_chapters = extract_chapters(full_config)
         book_meta = extract_book_metadata(full_config)
 
-        combined_path = paths.root / f"{safe_filename(book_meta['title'], max_len=80)}-Audiobook"
-        mp3_path, timestamps = combine_chapter_audio(all_chapter_files, all_chapters, combined_path)
+        # Count how many chapters have audio on disk
+        chapters_with_audio = [ch for ch in all_chapters if find_chapter_audio(ch, paths=paths)]
+        if len(chapters_with_audio) > 1:
+            combined_path = paths.root / f"{safe_filename(book_meta['title'], max_len=80)}-Audiobook"
+            mp3_path, timestamps = combine_chapter_audio(all_chapters, combined_path, paths=paths)
 
-        total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
+            total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
 
-        update_manifest(timestamps, total_duration_ms, paths=paths)
-        tag_mp3(mp3_path, timestamps, book_meta)
-        export_m4b(mp3_path, timestamps, book_meta)
+            update_manifest(timestamps, total_duration_ms, paths=paths)
+            tag_mp3(mp3_path, timestamps, book_meta)
+            export_m4b(mp3_path, timestamps, book_meta)
 
-        # Export per-chapter MP3s with ID3 tags
-        chapter_mp3s = export_chapter_mp3s(all_chapter_files, all_chapters, book_meta, paths=paths)
+            # Export per-chapter MP3s with ID3 tags
+            chapter_mp3s = export_chapter_mp3s(all_chapters, book_meta, paths=paths)
 
-        # Generate podcast RSS feed
-        generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
+            # Generate podcast RSS feed
+            generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
 
     print("\nDone!")
 

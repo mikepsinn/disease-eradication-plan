@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 258 parameters used in the analysis, organized by type:
+This appendix documents all 256 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 103
+- External sources (peer-reviewed): 101
 - Calculated values: 97
 - Core definitions: 58
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
+[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (101 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6572,26 +6572,6 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 :::
 
-### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual deaths from all diseases and aging globally
-
-**Source**: [@who-global-health-estimates-2024]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 5.00 million deaths/year)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
-
-*✓ High confidence*
-
-:::
-
 ### Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7183,18 +7163,6 @@ Global military spending in 2024
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Annual Global Pharmaceutical R&D Spending: $300B {#sec-global_pharma_rd_spending_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total global pharmaceutical R&D spending ($300B annually, clinical trials represent 15-20% of this total)
-
-**Source**: [@global-pharma-rd-spending-300b]
 
 *✓ High confidence*
 
