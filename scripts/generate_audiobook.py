@@ -111,12 +111,18 @@ def extract_book_metadata(config: dict) -> dict:
     if missing:
         raise ValueError(f"Quarto config missing required fields: {', '.join(missing)}")
 
+    description = book.get('description')
+    if not description:
+        missing.append('book.description')
+    if not email:
+        missing.append('book.author[0].email (or metadata.author-email)')
+
     return {
         'title': title,
         'subtitle': book.get('subtitle', ''),
-        'description': book.get('description', ''),
+        'description': description or '',
         'author': author,
-        'email': email,
+        'email': email or '',
         'year': year,
         'publisher': publisher,
         'cover_art': cover_art,
@@ -424,10 +430,9 @@ def combine_chapter_audio(
         str(mp3_path),
     ], capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"  [ERROR] ffmpeg MP3 export failed:\n{result.stderr[:500]}")
-    else:
-        mp3_size = mp3_path.stat().st_size / 1024 / 1024
-        print(f"  [OK] MP3: {mp3_path.name} ({mp3_size:.1f} MB)")
+        raise RuntimeError(f"ffmpeg MP3 export failed:\n{result.stderr[:500]}")
+    mp3_size = mp3_path.stat().st_size / 1024 / 1024
+    print(f"  [OK] MP3: {mp3_path.name} ({mp3_size:.1f} MB)")
 
     # Clean up temp files
     concat_file.unlink(missing_ok=True)
@@ -826,13 +831,10 @@ def generate_podcast_rss(
 
     title = escape(book_meta['title'])
     author = escape(book_meta['author'])
-    description = escape(book_meta.get('description', ''))
-    narrator = escape(book_meta.get('narrator', 'WISHONIA'))
-    podcast_cover = book_meta.get('podcast_cover', Path())
-    if podcast_cover.exists():
-        cover_filename = podcast_cover.relative_to(PROJECT_ROOT).as_posix()
-    else:
-        cover_filename = "assets/cover/book-cover-3.jpg"
+    description = escape(book_meta['description'])
+    narrator = escape(book_meta['narrator'])
+    podcast_cover: Path = book_meta['podcast_cover']
+    cover_filename = podcast_cover.relative_to(PROJECT_ROOT).as_posix()
     cover_url = f"{cdn_url}/{cover_filename}"
 
     from datetime import datetime, timezone, timedelta
@@ -861,8 +863,13 @@ def generate_podcast_rss(
         part = ch_meta.get('part', '')
         ep_title = f"{ch_title}" if not part else f"{part}: {ch_title}"
 
-        duration_s = ts['duration_ms'] // 1000 if ts else 0
-        duration_fmt = ts['duration_formatted'] if ts else "0:00"
+        if ts is None:
+            raise ValueError(
+                f"No timestamp data for chapter {chapter_index} (MP3: {mp3_path.name}). "
+                f"Available indices: {sorted(ts_by_index)}"
+            )
+        duration_s = ts['duration_ms'] // 1000
+        duration_fmt = ts['duration_formatted']
         file_size = mp3_path.stat().st_size
         mp3_url = f"{mp3_url_base}/{mp3_path.name}"
         pub_date = (base_date - timedelta(days=len(chapter_mp3s) - ep_num)).strftime(
@@ -893,7 +900,7 @@ def generate_podcast_rss(
     <itunes:author>{author}</itunes:author>
     <itunes:owner>
       <itunes:name>{author}</itunes:name>
-      <itunes:email>{escape(book_meta.get('email', ''))}</itunes:email>
+      <itunes:email>{escape(book_meta['email'])}</itunes:email>
     </itunes:owner>
     <itunes:image href="{escape(cover_url)}"/>
     <itunes:category text="Society &amp; Culture"/>

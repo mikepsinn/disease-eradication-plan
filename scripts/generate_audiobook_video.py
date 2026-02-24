@@ -166,7 +166,12 @@ def get_chapter_dir(chapter: dict, paths: AudiobookPaths | None = None) -> Path:
 
 def _narration_hash(scene: dict) -> str:
     """Compute a short hash of a scene's narration text for cache invalidation."""
-    text = scene.get('narration_text', '')
+    text = scene.get('narration_text')
+    if not text:
+        raise ValueError(
+            f"Scene {scene.get('scene_index', '?')} has no narration_text. "
+            f"Re-run scene segmentation to fix."
+        )
     return hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
 
 
@@ -279,7 +284,7 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
     print(f"    Generating {len(work_items)} keyframes ({IMAGEN_PARALLEL_WORKERS} parallel workers)...")
 
     def _build_prompt(scene, attempt=1, variant_name=None):
-        scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
+        scene_text = _tts_to_visual(scene['narration_text'].strip())
         full_context = _tts_to_visual(chapter_text) if chapter_text else ""
         vname = variant_name or prompt_variant
         prompt_fn = PROMPT_VARIANTS[vname]
@@ -370,7 +375,7 @@ def test_prompt_variants(scenes: list[dict], chapter_dir: Path, chapter_text: st
         variant_dir = test_dir / vname
         variant_dir.mkdir(parents=True, exist_ok=True)
         for scene in test_scenes:
-            scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
+            scene_text = _tts_to_visual(scene['narration_text'].strip())
             full_context = _tts_to_visual(chapter_text) if chapter_text else ""
             prompt_fn = PROMPT_VARIANTS[vname]
             prompt = prompt_fn(scene_text, full_context, attempt=1)
@@ -468,7 +473,7 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
 
     def _generate_one(item):
         scene, aspect, keyframe_path, clip_path, clip_filename = item
-        scene_text = _tts_to_visual(scene.get('narration_text', '').strip())
+        scene_text = _tts_to_visual(scene['narration_text'].strip())
         full_context = _tts_to_visual(chapter_text) if chapter_text else ""
         veo_prompt = f"Generate a {IMAGE_STYLE} animation. Interpret metaphors visually; do not depict them literally.\n--- ILLUSTRATE THIS ---\n{scene_text}\n--- END ILLUSTRATE ---\n"
         if full_context:
@@ -656,10 +661,9 @@ def assemble_chapter_video(
             "-metadata", f"album={book_meta['title']}",
             "-metadata", f"genre=Audiobook",
             "-metadata", f"track={chapter['index']}",
-            "-metadata", f"comment={book_meta.get('description', '')}",
+            "-metadata", f"comment={book_meta['description']}",
+            "-metadata", f"date={book_meta['year']}",
         ])
-        if book_meta.get('year'):
-            cmd.extend(["-metadata", f"date={book_meta['year']}"])
     cmd.append(str(output_path))
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
@@ -775,9 +779,10 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
     # Load scene manifest (required)
     existing = load_scene_manifest(chapter_dir)
     if not existing or not existing.get('scenes'):
-        print(f"  [ERROR] No scene-manifest.json for chapter {chapter['index']}.")
-        print(f"  Run: python scripts/generate_audiobook_scenes.py --chapter {chapter['index']}")
-        return
+        raise FileNotFoundError(
+            f"No scene-manifest.json for chapter {chapter['index']} ({chapter_dir}). "
+            f"Run: python scripts/generate_audiobook_scenes.py --chapter {chapter['index']}"
+        )
 
     scenes = existing['scenes']
     text_hash = existing.get('text_hash', '')
@@ -787,9 +792,10 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
     # Load audio (required)
     audio_path = find_chapter_audio(chapter, paths=paths)
     if not audio_path:
-        print(f"  [ERROR] No audio for chapter {chapter['index']}.")
-        print(f"  Run: python scripts/generate_audiobook.py --chapter {chapter['index']}")
-        return
+        raise FileNotFoundError(
+            f"No audio for chapter {chapter['index']}. "
+            f"Run: python scripts/generate_audiobook.py --chapter {chapter['index']}"
+        )
 
     # Get actual audio duration for assembly
     audio = AudioSegment.from_wav(str(audio_path))
@@ -937,8 +943,6 @@ def main():
 
     # Extract book metadata for tagging images/videos
     book_meta = extract_book_metadata(full_config)
-    book = full_config.get('book', {})
-    book_meta['description'] = book.get('description', '')
 
     # Apply chapter/start/limit filters
     if args.chapter:
