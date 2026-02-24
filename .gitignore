@@ -154,6 +154,10 @@ assets/audiobook/**/alignment/
 assets/audiobook/**/narration-txt-chunks/
 assets/audiobook/**/*.texthash
 assets/audiobook/**/.prepared_hash
+assets/audiobook/**/*.source_hash
+assets/audiobook/**/*.mp3
+assets/audiobook/**/*.m4b
+assets/audiobook/**/mp3/
 
 /.luarc.json
 /tools/

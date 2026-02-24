@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 # --- Style constant (shared across image/video generation) ---
-IMAGE_STYLE = "70s sci-fi retro-futuristic utopian surrealism"
+IMAGE_STYLE = "retro academic illustration"
 
 # --- Path constants (legacy, kept for backward compat) ---
 PROJECT_ROOT = Path(__file__).parent.parent.parent
@@ -111,40 +111,79 @@ def safe_filename(title: str, max_len: int = 50) -> str:
     return re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:max_len]
 
 
-def extract_title_from_qmd(file_path: Path) -> str:
-    """Extract title from QMD file's YAML frontmatter.
+def _parse_qmd_frontmatter(file_path: Path) -> dict:
+    """Parse YAML frontmatter from a QMD file.
 
-    Uses proper YAML parsing when available, falls back to regex.
+    Returns the frontmatter dict, or empty dict on failure.
     """
     if not file_path.exists():
-        return file_path.stem.replace('-', ' ').replace('_', ' ').title()
+        return {}
 
     content = file_path.read_text(encoding='utf-8')
     match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-    if match:
-        try:
-            from dih_models.yaml_utils import yaml_safe_load
-            frontmatter = yaml_safe_load(match.group(1))
-            if frontmatter and 'title' in frontmatter:
-                return frontmatter['title']
-        except Exception:
-            # Fall back to regex extraction
-            for line in match.group(1).split('\n'):
-                m = re.match(r'^title:\s*["\']?(.+?)["\']?\s*$', line)
-                if m:
-                    return m.group(1)
+    if not match:
+        return {}
+
+    try:
+        from dih_models.yaml_utils import yaml_safe_load
+        fm = yaml_safe_load(match.group(1))
+        return fm if isinstance(fm, dict) else {}
+    except Exception:
+        # Fall back to regex extraction of key: value pairs
+        result = {}
+        for line in match.group(1).split('\n'):
+            m = re.match(r'^(\w+):\s*["\']?(.+?)["\']?\s*$', line)
+            if m:
+                result[m.group(1)] = m.group(2)
+        return result
+
+
+def extract_title_from_qmd(file_path: Path) -> str:
+    """Extract title from QMD file's YAML frontmatter."""
+    fm = _parse_qmd_frontmatter(file_path)
+    if 'title' in fm:
+        return fm['title']
     return file_path.stem.replace('-', ' ').replace('_', ' ').title()
+
+
+def extract_description_from_qmd(file_path: Path) -> str:
+    """Extract description from QMD file's YAML frontmatter.
+
+    Returns empty string if no description found.
+    """
+    fm = _parse_qmd_frontmatter(file_path)
+    return fm.get('description', '')
+
+
+def _load_quarto_variables() -> dict:
+    """Load _variables.yml for resolving Quarto shortcodes in descriptions."""
+    if not VARIABLES_YML.exists():
+        return {}
+    try:
+        from dih_models.yaml_utils import yaml_safe_load
+        return yaml_safe_load(VARIABLES_YML.read_text(encoding='utf-8')) or {}
+    except Exception:
+        return {}
+
+
+def _resolve_quarto_vars(text: str, variables: dict) -> str:
+    """Replace {{< var name >}} shortcodes with plain-text values."""
+    if '{{< var' not in text:
+        return text
+    from lib.yaml_sync_utils import substitute_quarto_variables
+    return substitute_quarto_variables(text, variables)
 
 
 def extract_chapters(config: dict) -> list[dict]:
     """Extract all chapters from a Quarto book config in order.
 
-    Returns list of dicts with: index, path, title, part.
+    Returns list of dicts with: index, path, title, part, description.
     """
     chapters = []
     idx = 0
     book = config.get('book', {})
     index_source = config.get('dih-render', {}).get('index-source')
+    variables = _load_quarto_variables()
 
     def resolve_path(path: str) -> str:
         if index_source and path == 'index.qmd':
@@ -155,15 +194,20 @@ def extract_chapters(config: dict) -> list[dict]:
         nonlocal idx
         idx += 1
         resolved = resolve_path(path)
+        qmd_path = PROJECT_ROOT / resolved
         if not title:
-            # Read title from QMD frontmatter
-            qmd_path = PROJECT_ROOT / resolved
             title = extract_title_from_qmd(qmd_path)
         if not title:
             raise ValueError(
                 f"Chapter {idx} ({resolved}) has no title in Quarto config or QMD frontmatter"
             )
-        chapters.append({'path': resolved, 'title': title, 'part': part, 'index': idx})
+        description = extract_description_from_qmd(qmd_path)
+        if description:
+            description = _resolve_quarto_vars(description, variables)
+        chapters.append({
+            'path': resolved, 'title': title, 'part': part,
+            'index': idx, 'description': description,
+        })
 
     for item in book.get('chapters', []):
         if isinstance(item, str):

@@ -118,6 +118,11 @@ def extract_book_metadata(config: dict) -> dict:
     if not email:
         missing.append('book.author[0].email (or metadata.author-email)')
 
+    # Podcast-specific overrides from dih-podcast config section
+    podcast = config.get('dih-podcast', {})
+    podcast_author = podcast.get('author', author)
+    podcast_description_suffix = podcast.get('description-suffix', '')
+
     return {
         'title': title,
         'subtitle': book.get('subtitle', ''),
@@ -130,6 +135,8 @@ def extract_book_metadata(config: dict) -> dict:
         'podcast_cover': podcast_cover,
         'site_url': site_url.rstrip('/'),
         'narrator': 'WISHONIA',
+        'podcast_author': podcast_author,
+        'podcast_description_suffix': podcast_description_suffix,
     }
 
 
@@ -806,8 +813,9 @@ def generate_podcast_rss(
     ts_by_index = {ts['index']: ts for ts in timestamps}
 
     title = escape(book_meta['title'])
-    author = escape(book_meta['author'])
+    author = escape(book_meta.get('podcast_author', book_meta['author']))
     description = escape(book_meta['description'])
+    desc_suffix = book_meta.get('podcast_description_suffix', '')
     narrator = escape(book_meta['narrator'])
     podcast_cover: Path = book_meta['podcast_cover']
     cover_filename = podcast_cover.relative_to(PROJECT_ROOT).as_posix()
@@ -820,14 +828,17 @@ def generate_podcast_rss(
     # Build MP3 lookup by slug for matching with timestamps
     mp3_by_slug = {mp3.stem: mp3 for mp3 in chapter_mp3s}
 
-    # Build per-episode image URL lookup
+    # Build per-episode lookups from chapter list (keyed by slug)
     ep_image_urls: dict[str, str] = {}
+    ep_descriptions: dict[str, str] = {}
     for ch in chapters:
+        s = chapter_slug(ch)
         img = find_podcast_image(ch, paths=paths)
         if img:
-            s = chapter_slug(ch)
             img_rel = img.relative_to(PROJECT_ROOT).as_posix()
             ep_image_urls[s] = f"{cdn_url}/{img_rel}"
+        if ch.get('description'):
+            ep_descriptions[s] = ch['description']
 
     items = []
     total_eps = len(chapter_mp3s)
@@ -841,6 +852,11 @@ def generate_podcast_rss(
         ch_title = escape(ts['title'])
         part = ts.get('part', '')
         ep_title = f"{ch_title}" if not part else f"{part}: {ch_title}"
+
+        # Use QMD description if available, fall back to generic; append CTA suffix
+        ep_desc = ep_descriptions.get(slug, f"Chapter {ep_num + 1} of {title}")
+        if desc_suffix:
+            ep_desc = f"{ep_desc}\n\n{desc_suffix}"
 
         duration_fmt = ts['duration_formatted']
         file_size = mp3_path.stat().st_size
@@ -860,7 +876,7 @@ def generate_podcast_rss(
       <itunes:episode>{ep_num + 1}</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <guid isPermaLink="false">chapter-{slug}</guid>
-      <description>Chapter {ep_num + 1} of {title}</description>{image_tag}
+      <description>{escape(ep_desc)}</description>{image_tag}
     </item>""")
 
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -875,7 +891,7 @@ def generate_podcast_rss(
     <language>en-us</language>
     <itunes:author>{author}</itunes:author>
     <itunes:owner>
-      <itunes:name>{author}</itunes:name>
+      <itunes:name>{escape(book_meta['author'])}</itunes:name>
       <itunes:email>{escape(book_meta['email'])}</itunes:email>
     </itunes:owner>
     <itunes:image href="{escape(cover_url)}"/>

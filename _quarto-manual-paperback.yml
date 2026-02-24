@@ -14,6 +14,11 @@ dih-render:
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
   strip-bib-fields: [abstract, note]
 
+# Podcast-specific overrides (used by generate_audiobook.py RSS generation)
+dih-podcast:
+  author: "WISHONIA"
+  description-suffix: "Click a glowing rectangle. 15 seconds. 38 lives saved + 2,018 years of suffering prevented \U0001F449\U0001F3FF https://warondisease.org"
+
 book:
   title: 'How to End War and Disease'
   subtitle: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"

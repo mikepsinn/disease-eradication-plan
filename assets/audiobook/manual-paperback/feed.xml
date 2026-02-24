@@ -20,348 +20,316 @@
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>serial</itunes:type>
-    <pubDate>Tue, 24 Feb 2026 05:36:00 +0000</pubDate>
+    <pubDate>Tue, 24 Feb 2026 07:52:00 +0000</pubDate>
     <podcast:medium>audiobook</podcast:medium>
     <atom:link href="https://static.warondisease.org/assets/audiobook/manual-paperback/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Start Here</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/001-index-manual.mp3" length="52857579" type="audio/mpeg"/>
-      <pubDate>Wed, 21 Jan 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.mp3" length="52857579" type="audio/mpeg"/>
+      <pubDate>Tue, 27 Jan 2026 07:52:00 +0000</pubDate>
       <itunes:duration>36:25</itunes:duration>
       <itunes:episode>1</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-001</guid>
+      <guid isPermaLink="false">chapter-index-manual</guid>
       <description>Chapter 1 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>The Problem: Problem Overview</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/002-problem.mp3" length="13147066" type="audio/mpeg"/>
-      <pubDate>Thu, 22 Jan 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>8:52</itunes:duration>
-      <itunes:episode>2</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-002</guid>
-      <description>Chapter 2 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>The Problem: The Cost of War</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/003-cost-of-war.mp3" length="32442757" type="audio/mpeg"/>
-      <pubDate>Fri, 23 Jan 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>22:15</itunes:duration>
-      <itunes:episode>3</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-003</guid>
-      <description>Chapter 3 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>The Problem: The Cost of Disease</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/004-cost-of-disease.mp3" length="18415820" type="audio/mpeg"/>
-      <pubDate>Sat, 24 Jan 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>12:31</itunes:duration>
-      <itunes:episode>4</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-004</guid>
-      <description>Chapter 4 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/index-manual-podcast.jpg"/>
     </item>
     <item>
       <title>The Problem: NIH Fails to Institute Health</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/005-nih-fails-2-institute-health.mp3" length="21089413" type="audio/mpeg"/>
-      <pubDate>Sun, 25 Jan 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/nih-fails-2-institute-health.mp3" length="21089413" type="audio/mpeg"/>
+      <pubDate>Wed, 28 Jan 2026 07:52:00 +0000</pubDate>
       <itunes:duration>14:22</itunes:duration>
-      <itunes:episode>5</itunes:episode>
+      <itunes:episode>2</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-005</guid>
-      <description>Chapter 5 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-nih-fails-2-institute-health</guid>
+      <description>Chapter 2 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/nih-fails-2-institute-health-podcast.jpg"/>
     </item>
     <item>
       <title>The Problem: The Untapped Therapeutic Frontier</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/006-untapped-therapeutic-frontier.mp3" length="19500950" type="audio/mpeg"/>
-      <pubDate>Mon, 26 Jan 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/untapped-therapeutic-frontier.mp3" length="19500950" type="audio/mpeg"/>
+      <pubDate>Thu, 29 Jan 2026 07:52:00 +0000</pubDate>
       <itunes:duration>13:16</itunes:duration>
-      <itunes:episode>6</itunes:episode>
+      <itunes:episode>3</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-006</guid>
-      <description>Chapter 6 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-untapped-therapeutic-frontier</guid>
+      <description>Chapter 3 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/untapped-therapeutic-frontier-podcast.jpg"/>
     </item>
     <item>
       <title>The Problem: The FDA Is Unsafe and Ineffective</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/007-fda-is-unsafe-and-ineffective.mp3" length="35760970" type="audio/mpeg"/>
-      <pubDate>Tue, 27 Jan 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/fda-is-unsafe-and-ineffective.mp3" length="35760970" type="audio/mpeg"/>
+      <pubDate>Fri, 30 Jan 2026 07:52:00 +0000</pubDate>
       <itunes:duration>24:33</itunes:duration>
-      <itunes:episode>7</itunes:episode>
+      <itunes:episode>4</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-007</guid>
-      <description>Chapter 7 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-fda-is-unsafe-and-ineffective</guid>
+      <description>Chapter 4 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/fda-is-unsafe-and-ineffective-podcast.jpg"/>
     </item>
     <item>
       <title>The Problem: Unrepresentative Democracy</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/008-unrepresentative-democracy.mp3" length="30564860" type="audio/mpeg"/>
-      <pubDate>Wed, 28 Jan 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/unrepresentative-democracy.mp3" length="30564860" type="audio/mpeg"/>
+      <pubDate>Sat, 31 Jan 2026 07:52:00 +0000</pubDate>
       <itunes:duration>20:57</itunes:duration>
-      <itunes:episode>8</itunes:episode>
+      <itunes:episode>5</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-008</guid>
-      <description>Chapter 8 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-unrepresentative-democracy</guid>
+      <description>Chapter 5 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/unrepresentative-democracy-podcast.jpg"/>
     </item>
     <item>
       <title>The Problem: How Central Banks Fund Your Death</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/009-central-banks.mp3" length="30524507" type="audio/mpeg"/>
-      <pubDate>Thu, 29 Jan 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/central-banks.mp3" length="30524507" type="audio/mpeg"/>
+      <pubDate>Sun, 01 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>20:55</itunes:duration>
-      <itunes:episode>9</itunes:episode>
+      <itunes:episode>6</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-009</guid>
-      <description>Chapter 9 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-central-banks</guid>
+      <description>Chapter 6 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/central-banks-podcast.jpg"/>
     </item>
     <item>
       <title>The Problem: Genetic Slavery</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/010-genetic-slavery.mp3" length="23385326" type="audio/mpeg"/>
-      <pubDate>Fri, 30 Jan 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/genetic-slavery.mp3" length="23385325" type="audio/mpeg"/>
+      <pubDate>Mon, 02 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>15:58</itunes:duration>
-      <itunes:episode>10</itunes:episode>
+      <itunes:episode>7</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-010</guid>
-      <description>Chapter 10 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>The Solution: Solution Overview</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/011-solution.mp3" length="17316865" type="audio/mpeg"/>
-      <pubDate>Sat, 31 Jan 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>11:45</itunes:duration>
-      <itunes:episode>11</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-011</guid>
-      <description>Chapter 11 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-genetic-slavery</guid>
+      <description>Chapter 7 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/genetic-slavery-podcast.jpg"/>
     </item>
     <item>
       <title>The Solution: A 1% Treaty</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/012-1-percent-treaty.mp3" length="34493635" type="audio/mpeg"/>
-      <pubDate>Sun, 01 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/1-percent-treaty.mp3" length="34493634" type="audio/mpeg"/>
+      <pubDate>Tue, 03 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>23:40</itunes:duration>
-      <itunes:episode>12</itunes:episode>
+      <itunes:episode>8</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-012</guid>
-      <description>Chapter 12 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-1-percent-treaty</guid>
+      <description>Chapter 8 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/1-percent-treaty-podcast.jpg"/>
     </item>
     <item>
       <title>The Solution: Decentralized Institutes of Health</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/013-dih.mp3" length="37899492" type="audio/mpeg"/>
-      <pubDate>Mon, 02 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/dih.mp3" length="37899491" type="audio/mpeg"/>
+      <pubDate>Wed, 04 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>26:02</itunes:duration>
-      <itunes:episode>13</itunes:episode>
+      <itunes:episode>9</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-013</guid>
-      <description>Chapter 13 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-dih</guid>
+      <description>Chapter 9 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/dih-podcast.jpg"/>
     </item>
     <item>
       <title>The Solution: Wishocracy</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/014-wishocracy.mp3" length="16714913" type="audio/mpeg"/>
-      <pubDate>Tue, 03 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/wishocracy.mp3" length="16714913" type="audio/mpeg"/>
+      <pubDate>Thu, 05 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>11:20</itunes:duration>
-      <itunes:episode>14</itunes:episode>
+      <itunes:episode>10</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-014</guid>
-      <description>Chapter 14 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-wishocracy</guid>
+      <description>Chapter 10 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/wishocracy-podcast.jpg"/>
     </item>
     <item>
       <title>The Solution: A Decentralized Framework for Drug Assessment</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/015-dfda.mp3" length="40027069" type="audio/mpeg"/>
-      <pubDate>Wed, 04 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/dfda.mp3" length="40027069" type="audio/mpeg"/>
+      <pubDate>Fri, 06 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>27:31</itunes:duration>
-      <itunes:episode>15</itunes:episode>
+      <itunes:episode>11</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-015</guid>
-      <description>Chapter 15 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-dfda</guid>
+      <description>Chapter 11 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/dfda-podcast.jpg"/>
     </item>
     <item>
       <title>The Solution: Aligning Incentives</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/016-aligning-incentives.mp3" length="29161468" type="audio/mpeg"/>
-      <pubDate>Thu, 05 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/aligning-incentives.mp3" length="29161468" type="audio/mpeg"/>
+      <pubDate>Sat, 07 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>19:58</itunes:duration>
-      <itunes:episode>16</itunes:episode>
+      <itunes:episode>12</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-016</guid>
-      <description>Chapter 16 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-aligning-incentives</guid>
+      <description>Chapter 12 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/aligning-incentives-podcast.jpg"/>
     </item>
     <item>
       <title>The Solution: VICTORY Incentive Alignment Bonds</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/017-incentive-alignment-bonds.mp3" length="57144445" type="audio/mpeg"/>
-      <pubDate>Fri, 06 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/incentive-alignment-bonds.mp3" length="57144445" type="audio/mpeg"/>
+      <pubDate>Sun, 08 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>39:23</itunes:duration>
-      <itunes:episode>17</itunes:episode>
+      <itunes:episode>13</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-017</guid>
-      <description>Chapter 17 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>For Skeptics: The Proof: Overview</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/018-proof.mp3" length="41336447" type="audio/mpeg"/>
-      <pubDate>Sat, 07 Feb 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>28:25</itunes:duration>
-      <itunes:episode>18</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-018</guid>
-      <description>Chapter 18 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-incentive-alignment-bonds</guid>
+      <description>Chapter 13 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/incentive-alignment-bonds-podcast.jpg"/>
     </item>
     <item>
       <title>For Skeptics: You Are a Meat Robot</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/019-body-as-repairable-machine.mp3" length="14034998" type="audio/mpeg"/>
-      <pubDate>Sun, 08 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/body-as-repairable-machine.mp3" length="14034998" type="audio/mpeg"/>
+      <pubDate>Mon, 09 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>9:29</itunes:duration>
-      <itunes:episode>19</itunes:episode>
+      <itunes:episode>14</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-019</guid>
-      <description>Chapter 19 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>For Skeptics: The Two Futures</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/020-futures.mp3" length="3734463" type="audio/mpeg"/>
-      <pubDate>Mon, 09 Feb 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>2:20</itunes:duration>
-      <itunes:episode>20</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-020</guid>
-      <description>Chapter 20 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-body-as-repairable-machine</guid>
+      <description>Chapter 14 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/body-as-repairable-machine-podcast.jpg"/>
     </item>
     <item>
       <title>For Skeptics: The Cautionary Tale of Moronia</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/021-moronia.mp3" length="38102443" type="audio/mpeg"/>
-      <pubDate>Tue, 10 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/moronia.mp3" length="38102443" type="audio/mpeg"/>
+      <pubDate>Tue, 10 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>26:11</itunes:duration>
-      <itunes:episode>21</itunes:episode>
+      <itunes:episode>15</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-021</guid>
-      <description>Chapter 21 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-moronia</guid>
+      <description>Chapter 15 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/moronia-podcast.jpg"/>
     </item>
     <item>
       <title>For Skeptics: Wishonia</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/022-wishonia.mp3" length="28722106" type="audio/mpeg"/>
-      <pubDate>Wed, 11 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/wishonia.mp3" length="28722106" type="audio/mpeg"/>
+      <pubDate>Wed, 11 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>19:40</itunes:duration>
-      <itunes:episode>22</itunes:episode>
+      <itunes:episode>16</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-022</guid>
-      <description>Chapter 22 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-wishonia</guid>
+      <description>Chapter 16 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/wishonia-podcast.jpg"/>
     </item>
     <item>
       <title>For Skeptics: Frequently Asked Objections</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/023-faq.mp3" length="29891421" type="audio/mpeg"/>
-      <pubDate>Thu, 12 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/faq.mp3" length="29891421" type="audio/mpeg"/>
+      <pubDate>Thu, 12 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>20:29</itunes:duration>
-      <itunes:episode>23</itunes:episode>
+      <itunes:episode>17</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-023</guid>
-      <description>Chapter 23 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-faq</guid>
+      <description>Chapter 17 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/faq-podcast.jpg"/>
     </item>
     <item>
       <title>The Plan: The Roadmap to End War and Disease</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/024-roadmap.mp3" length="31378994" type="audio/mpeg"/>
-      <pubDate>Fri, 13 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/roadmap.mp3" length="31378994" type="audio/mpeg"/>
+      <pubDate>Fri, 13 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>21:31</itunes:duration>
-      <itunes:episode>24</itunes:episode>
+      <itunes:episode>18</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-024</guid>
-      <description>Chapter 24 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>The Plan: Why Every Nonprofit Should Support a 1% treaty</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/025-nonprofit-coalition-strategy.mp3" length="26011084" type="audio/mpeg"/>
-      <pubDate>Sat, 14 Feb 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>17:47</itunes:duration>
-      <itunes:episode>25</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-025</guid>
-      <description>Chapter 25 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>The Plan: Legal Architecture</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/026-legal-framework.mp3" length="15835066" type="audio/mpeg"/>
-      <pubDate>Sun, 15 Feb 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>10:44</itunes:duration>
-      <itunes:episode>26</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-026</guid>
-      <description>Chapter 26 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-roadmap</guid>
+      <description>Chapter 18 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/roadmap-podcast.jpg"/>
     </item>
     <item>
       <title>The Plan: Global Referendum Strategy</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/027-global-referendum.mp3" length="9540594" type="audio/mpeg"/>
-      <pubDate>Mon, 16 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/global-referendum.mp3" length="9540594" type="audio/mpeg"/>
+      <pubDate>Sat, 14 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>6:22</itunes:duration>
-      <itunes:episode>27</itunes:episode>
+      <itunes:episode>19</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-027</guid>
-      <description>Chapter 27 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-global-referendum</guid>
+      <description>Chapter 19 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/global-referendum-podcast.jpg"/>
     </item>
     <item>
       <title>The Plan: Treaty Feasibility &amp;amp; Cost Analysis</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/028-treaty-feasibility.mp3" length="24510821" type="audio/mpeg"/>
-      <pubDate>Tue, 17 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/treaty-feasibility.mp3" length="24510821" type="audio/mpeg"/>
+      <pubDate>Sun, 15 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>16:45</itunes:duration>
-      <itunes:episode>28</itunes:episode>
+      <itunes:episode>20</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-028</guid>
-      <description>Chapter 28 of How to End War and Disease</description>
-    </item>
-    <item>
-      <title>The Plan: Recruitment &amp;amp; Propaganda Plan</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/029-recruitment-and-propaganda-plan.mp3" length="8291733" type="audio/mpeg"/>
-      <pubDate>Wed, 18 Feb 2026 05:36:00 +0000</pubDate>
-      <itunes:duration>5:30</itunes:duration>
-      <itunes:episode>29</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-029</guid>
-      <description>Chapter 29 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-treaty-feasibility</guid>
+      <description>Chapter 20 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/treaty-feasibility-podcast.jpg"/>
     </item>
     <item>
       <title>Economics &amp; Finance: Peace Dividend</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/030-peace-dividend.mp3" length="15858702" type="audio/mpeg"/>
-      <pubDate>Thu, 19 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/peace-dividend.mp3" length="15858702" type="audio/mpeg"/>
+      <pubDate>Mon, 16 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>10:45</itunes:duration>
-      <itunes:episode>30</itunes:episode>
+      <itunes:episode>21</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-030</guid>
-      <description>Chapter 30 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-peace-dividend</guid>
+      <description>Chapter 21 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/peace-dividend-podcast.jpg"/>
     </item>
     <item>
       <title>Economics &amp; Finance: Health Dividend</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/031-health-dividend.mp3" length="8413953" type="audio/mpeg"/>
-      <pubDate>Fri, 20 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/health-dividend.mp3" length="8413953" type="audio/mpeg"/>
+      <pubDate>Tue, 17 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>5:35</itunes:duration>
-      <itunes:episode>31</itunes:episode>
+      <itunes:episode>22</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-031</guid>
-      <description>Chapter 31 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-health-dividend</guid>
+      <description>Chapter 22 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/health-dividend-podcast.jpg"/>
     </item>
     <item>
       <title>Economics &amp; Finance: Financial Plan</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/032-financial-plan.mp3" length="13748434" type="audio/mpeg"/>
-      <pubDate>Sat, 21 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/financial-plan.mp3" length="13748434" type="audio/mpeg"/>
+      <pubDate>Wed, 18 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>9:17</itunes:duration>
-      <itunes:episode>32</itunes:episode>
+      <itunes:episode>23</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-032</guid>
-      <description>Chapter 32 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-financial-plan</guid>
+      <description>Chapter 23 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/financial-plan-podcast.jpg"/>
+    </item>
+    <item>
+      <title>Operations Manual: Why Every Nonprofit Should Support a 1% treaty</title>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/nonprofit-coalition-strategy.mp3" length="26011084" type="audio/mpeg"/>
+      <pubDate>Thu, 19 Feb 2026 07:52:00 +0000</pubDate>
+      <itunes:duration>17:47</itunes:duration>
+      <itunes:episode>24</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <guid isPermaLink="false">chapter-nonprofit-coalition-strategy</guid>
+      <description>Chapter 24 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/nonprofit-coalition-strategy-podcast.jpg"/>
+    </item>
+    <item>
+      <title>Operations Manual: Legal Architecture</title>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/legal-framework.mp3" length="15835066" type="audio/mpeg"/>
+      <pubDate>Fri, 20 Feb 2026 07:52:00 +0000</pubDate>
+      <itunes:duration>10:44</itunes:duration>
+      <itunes:episode>25</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <guid isPermaLink="false">chapter-legal-framework</guid>
+      <description>Chapter 25 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/legal-framework-podcast.jpg"/>
+    </item>
+    <item>
+      <title>Operations Manual: Recruitment &amp;amp; Propaganda Plan</title>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/recruitment-and-propaganda-plan.mp3" length="8291733" type="audio/mpeg"/>
+      <pubDate>Sat, 21 Feb 2026 07:52:00 +0000</pubDate>
+      <itunes:duration>5:30</itunes:duration>
+      <itunes:episode>26</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+      <guid isPermaLink="false">chapter-recruitment-and-propaganda-plan</guid>
+      <description>Chapter 26 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/recruitment-and-propaganda-plan-podcast.jpg"/>
     </item>
     <item>
       <title>References: Source Quotes and References</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/033-references.mp3" length="464713" type="audio/mpeg"/>
-      <pubDate>Sun, 22 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/references.mp3" length="464713" type="audio/mpeg"/>
+      <pubDate>Sun, 22 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>0:04</itunes:duration>
-      <itunes:episode>33</itunes:episode>
+      <itunes:episode>27</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-033</guid>
-      <description>Chapter 33 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-references</guid>
+      <description>Chapter 27 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/references-podcast.jpg"/>
     </item>
     <item>
       <title>References: Copyright</title>
-      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/034-copyright.mp3" length="1854242" type="audio/mpeg"/>
-      <pubDate>Mon, 23 Feb 2026 05:36:00 +0000</pubDate>
+      <enclosure url="https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/copyright.mp3" length="1854242" type="audio/mpeg"/>
+      <pubDate>Mon, 23 Feb 2026 07:52:00 +0000</pubDate>
       <itunes:duration>1:02</itunes:duration>
-      <itunes:episode>34</itunes:episode>
+      <itunes:episode>28</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">chapter-034</guid>
-      <description>Chapter 34 of How to End War and Disease</description>
+      <guid isPermaLink="false">chapter-copyright</guid>
+      <description>Chapter 28 of How to End War and Disease</description>
+      <itunes:image href="https://static.warondisease.org/assets/audiobook/manual-paperback/podcast-images/copyright-podcast.jpg"/>
     </item>
   </channel>
 </rss>

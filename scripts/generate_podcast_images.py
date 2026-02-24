@@ -7,7 +7,7 @@ Generates per-chapter images for the audiobook podcast feed and YouTube:
   - Podcast: 1:1 square (1400x1400+) for Apple Podcasts / Spotify itunes:image
   - YouTube: 16:9 landscape thumbnails
 
-Uses Imagen 4.0 with "70s sci-fi surrealism" style (same as video keyframes).
+Uses Imagen 4.
 Prompts are built from prepared audiobook text (already variable-resolved).
 
 Pipeline position:
@@ -45,6 +45,7 @@ from lib.audiobook_common import (
 )
 
 # --- Configuration ---
+# Gemini 3.1 Pro: 10 RPM limit, rate limiter allows 8; keep workers <= 4
 PARALLEL_WORKERS = 4
 
 
@@ -103,17 +104,19 @@ def process_chapter(
     if gen_youtube:
         targets.append(("16:9", f"{slug}-youtube.jpg"))
 
+    ch_label = f"Ch {chapter['index']}: {chapter['title']}"
+
     for aspect, filename in targets:
         output_path = img_dir / filename
         if output_path.exists() and not force:
             old_hash = _hash_file(output_path)
             if old_hash == text_h:
-                print(f"  [CACHED] {filename}")
+                print(f"  [CACHED] {ch_label} -> {filename}")
                 continue
             if old_hash:
-                print(f"  [STALE] {filename} (text changed)")
+                print(f"  [STALE] {ch_label} -> {filename} (text changed)")
             else:
-                print(f"  [CACHED] {filename} (no hash, assuming current)")
+                print(f"  [CACHED] {ch_label} -> {filename} (no hash, assuming current)")
                 continue
 
         work_items.append((chapter, aspect, output_path))
@@ -148,6 +151,8 @@ def generate_images(
         assert text_file, f"No prepared text for chapter {chapter['index']}"
         text = text_file.read_text(encoding='utf-8')
         text_h = text_hash(text)
+
+        print(f"\n  [GEN] Ch {chapter['index']}: {chapter['title']} -> {output_path.name} ({aspect})")
 
         prompt = _build_prompt(text, chapter['title'])
         output_path.parent.mkdir(parents=True, exist_ok=True)

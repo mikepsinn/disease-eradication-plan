@@ -2,19 +2,19 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 105,646 | **Images:** 601 | **Est. Pages:** ~723
+**Files:** 44 | **Words:** 102,946 | **Images:** 579 | **Est. Pages:** ~701
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 5,065 words | 454 lines | 12 images | ~26p
+**Stats:** 5,217 words | 460 lines | 12 images | ~27p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Beautiful Inefficiency of the Human Economy
     - The Gradual Irrationality Reduction Program
     - What to Do When They Try to Institutionalize You
     - The Sacred Order of Paper Distribution
-    - Why Your Leaders Pretend Not to Understand
+    - Why Your Leaders Aren't the Problem
     - Humanity's Adorable Death Wish
   - The Problem
     - The Daily Deletion Event
@@ -61,7 +61,7 @@
 #### knowledge/problem.qmd
 **Title:** Problem Overview
 **Description:** Humanity's spectacular failure at prioritizing not dying
-**Stats:** 1,391 words | 131 lines | 9 images | ~10p
+**Stats:** 1,208 words | 113 lines | 8 images | ~9p
 
   - The Daily Body Count
     ![Every day, 50 times as many people die from being old and sick as died on 9/11. You started two wars over 9/11. For aging, you bought face cream and called it a day.](/assets/images/problem/problem-section-daily-numbers-bw-academic.jpg)
@@ -78,14 +78,12 @@
     ![Defense contractors spend $250 million on lobbying and get $850 billion in contracts. That's a 340,000 percent return. You voted and got a sticker. Both are forms of civic participation.](/assets/images/problem/problem-section-on-democracy-bw-academic.jpg)
   - On the Fixed Pie
     ![Switzerland pays doctors more than generals and has a higher GDP per capita than America. America pays generals more than doctors and has more aircraft carriers. Different priorities, different outcomes.](/assets/images/problem/problem-section-on-the-fixed-pie-bw-academic.jpg)
-  - What This Means
-    ![For every dollar spent curing disease, you spend 604 dollars on weapons. If you allocated your fear proportionally to actual threats, you'd be more afraid of your pancreas than North Korea.](/assets/images/problem/problem-section-what-this-means-bw-academic.jpg)
   - What's Next
 
 #### knowledge/problem/cost-of-war.qmd
 **Title:** The Cost of War
 **Description:** Quantifying Human Idiocy - A precise accounting of what humans spend to destroy themselves, with numbers that would make a statistician weep.
-**Stats:** 3,312 words | 326 lines | 12 images | ~19p
+**Stats:** 3,301 words | 326 lines | 12 images | ~19p
 
   - The Itemized Receipt for Armageddon
     - The Shopping List (2024 Global Data)
@@ -228,7 +226,7 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34x more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 3,815 words | 342 lines | 22 images | ~26p
+**Stats:** 3,838 words | 344 lines | 22 images | ~26p
 
   - A Note on Blame
   - "But What About Safety?"
@@ -263,15 +261,15 @@
     ![They test drugs for two years, then you take them for forty years. It's like test-driving a car to the end of the driveway, then driving it to the moon.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-no-long-term-outcome-data-bw-academic.jpg)
     - Pre-Specification Requirements Kill Innovation
     ![Dendreon's cancer drug worked. The FDA said it didn't count because they forgot to specify they were checking if it worked. Thousands died. The FDA was very proud of following procedure.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-pre-specification-requirements-kill-innovation-bw-academic.jpg)
+    - Small Trials Are Dangerous
+    ![Before 1962, they tested drugs on everyone who took them. After 1962, they tested drugs on 2,000 people, then gave them to 2 billion. They called this improvement.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-small-trials-are-dangerous-bw-academic.jpg)
+    ![Doctors report 10% of drug side effects. The other 90% just happen to people who assume that's what dying feels like.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
   - The Negative Results Black Hole
     ![Drug companies publish successful trials and hide failed ones. So researchers keep testing things that already failed, like a scientist trying to invent fire without knowing fire already exists. Except the fire is death.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-negative-results-black-hole-bw-academic.jpg)
   - Countries That Don't Have Our "Safety"
     ![Japan approves experimental drugs fast. Europe approves them medium fast. America approves them after you die. Different cultures, different priorities.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-countries-that-don-t-have-our-safety-bw-academic.jpg)
   - The COVID Test Fiasco
     ![While COVID spread, America banned COVID tests. Not because the tests didn't work. Because they weren't American enough. Patriotism killed thousands. Nobody got a medal.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-covid-test-fiasco-bw-academic.jpg)
-  - Small Trials Are Dangerous
-    ![Before 1962, they tested drugs on everyone who took them. After 1962, they tested drugs on 2,000 people, then gave them to 2 billion. They called this improvement.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-small-trials-are-dangerous-bw-academic.jpg)
-    ![Doctors report 10% of drug side effects. The other 90% just happen to people who assume that's what dying feels like.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
   - The Bottom Line
     ![It takes 8.2 years to prove a drug works. During those 8.2 years, 3,000 people die for every one person the delay might save. You're very bad at math.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bottom-line-bw-academic.jpg)
   - Technical Analysis
@@ -279,12 +277,8 @@
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
 **Description:** Why democracy mathematically serves money over voters, and how to exploit that bug
-**Stats:** 3,208 words | 362 lines | 20 images | ~23p
+**Stats:** 1,982 words | 188 lines | 9 images | ~12p
 
-  - Democracy
-    ![The government has three branches. Two-thirds of voters can't name them. These same voters choose who runs the branches. It's like a pilot test where nobody knows what a plane is.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-democracy-bw-academic.jpg)
-  - The Rational Ignorance Problem
-    ![Learning about politics costs you 50 hours. Your vote changes nothing. The rational choice is to watch television instead. Democracy runs on people who don't understand it.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-rational-ignorance-problem-bw-academic.jpg)
   - What Democracy Should Look Like vs Reality
     ![In theory, voter support determines which laws pass. In reality, voter support has zero effect. You keep voting anyway. It's like writing letters to Santa but for taxes.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-princeton-policy-study-chart-bw-academic.jpg)
   - The Mathematics of Political Failure
@@ -292,34 +286,15 @@
     ![A small group gets 100 million dollars. The cost spreads across 100 million taxpayers. Each taxpayer loses one dollar. Nobody notices. The small group notices very much.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-concentrated-benefits-vs-diffuse-costs-bw-academic.jpg)
   - How Money Buys Power
     ![More money equals more votes. More votes equal more power. More power equals more money. It's a circle. Calling it a "cycle" makes it sound natural.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-how-money-buys-power-bw-academic.jpg)
-    - The Lobbying ROI: 1,810:1 Returns
-    ![Spend one dollar lobbying, get 1,810 dollars in government funding. That's a better return than any drug you've ever tested. You don't test it though. You test the drugs.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-lobbying-roi-1-810-1-returns-bw-academic.jpg)
-    - Why Nothing Ever Changes: A Mathematical Proof
-    ![One thousand executives with money versus 330 million citizens without. The executives win every time. You call this democracy. The executives call it Tuesday.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-why-nothing-ever-changes-a-mathematical-proof-bw-academic.jpg)
-  - Why Politicians Don't Care About You (With Math!)
-    ![Your vote: one. Corporate campaign funding: billions of dollars. Corporate media coverage: all of it. You have a voice. They have a megaphone factory.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-why-politicians-don-t-care-about-you-with-math-bw-academic.jpg)
-  - The Iron Law of Oligarchy
+    - The Lobbying ROI: 18:1 Returns
+    ![Spend one dollar lobbying, get 18 dollars in government funding. That's a better return than any stock on Wall Street. Congressmen are the real blue chips.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-lobbying-roi-1-810-1-returns-bw-academic.jpg)
   - Your Congressman: A Fundraiser Who Occasionally Legislates
   - Congressional Committees: The Menu
-  - The 4-Year Attention Span: Democracy Has ADHD
-    ![Politicians promise things, bureaucracy stalls, election happens, new politicians promise things. It's a loop. The loop doesn't fix anything but it does repeat reliably.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-4-year-attention-span-democracy-has-adhd-bw-academic.jpg)
-  - Why No One Can Fix This
-    ![Good people enter bad systems. The system has corporate money and institutional pressure. The people do what the system wants. Character is irrelevant. The system works perfectly.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-why-no-one-can-fix-this-bw-academic.jpg)
-  - The Solution Democracy Can't Provide
-    ![Option one: pay now, survive later. Option two: survive now, catastrophe later. Democracy picks option two every time. Future you will understand.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-solution-democracy-can-t-provide-bw-academic.jpg)
   - Public Choice Theory: The Nobel Prize for Cynicism
     ![Business people want money. Government people want money. You expect one group to be greedy and the other to be noble. Both groups are laughing.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-public-choice-theory-the-nobel-prize-for-cynicism-bw-academic.jpg)
     - What They Actually Maximize
     - The Libertarian Paradox
     ![Libertarians say government is bad because government is bad. Socialists say government is bad because capitalism is bad. Public Choice Theory says government is bad because people are people. Only one of these is true.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-libertarian-paradox-bw-academic.jpg)
-  - Why This Is Actually Good News
-    ![Changing 240 million minds: impossible. Aligning 1,000 investors: offer profit. Democracy requires the impossible. Markets require greed. Greed is abundant.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-why-this-is-actually-good-news-bw-academic.jpg)
-    - Why This Is Liberating
-    ![Plan A: wait for virtuous leaders. Plan B: make selfish leaders do good things by accident. Plan A has never worked. Plan B is how sewers got invented.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-why-this-is-liberating-bw-academic.jpg)
-  - Solution
-    ![Democracy's bugs: rational ignorance, concentrated benefits, short-term thinking. The treaty's features: same bugs, pointed at curing disease instead of buying tanks. Bugs become features.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-solution-bw-academic.jpg)
-  - Your Choice
-    ![Democracy: everyone votes for the right thing. Markets: everyone does the selfish thing, accidentally fixes problems. One of these exists in reality.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-your-choice-bw-academic.jpg)
   - Regulatory Capture: How Industries Write Their Own Rules
     ![You hired a guard dog. The burglar fed it treats. Now the dog helps with burglaries.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-regulatory-capture-cycle-bw-academic.jpg)
     - The Solution They Don't Want
@@ -328,7 +303,7 @@
 #### knowledge/economics/central-banks.qmd
 **Title:** How Central Banks Fund Your Death
 **Description:** The War Machine's ATM: How every fiat currency in history has been devalued to fund unpopular wars, and how to bypass the system.
-**Stats:** 3,329 words | 458 lines | 22 images | ~24p
+**Stats:** 1,466 words | 187 lines | 12 images | ~12p
 
   - The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
     - Revolutionary France (1790s)
@@ -344,22 +319,6 @@
     ![Since 1972, productivity went up 246 percent. Wages went up 115 percent. Someone kept the difference. Guess who.](/assets/images/central-banks/central-banks-section-the-theft-that-followed-bw-academic.jpg)
   - The Cantillon Effect: Why You're Poor and Raytheon Isn't
     ![Print new money. Money flows up to banks and war contractors. Costs flow down to everyone else. Gravity works backwards in economics.](/assets/images/central-banks/central-banks-section-cantillon-effect-mechanism-bw-academic.jpg)
-  - The Federal Reserve: A Private Corporation That Owns You
-    ![The Federal Reserve is owned by private banks, sort of supervised by Congress, and controls your money supply. It's like putting foxes in charge of the henhouse, then asking the hens to vote.](/assets/images/central-banks/central-banks-section-the-federal-reserve-a-private-corporation-that-owns-you-bw-academic.jpg)
-    - What They Actually Do
-    ![Money flows to military and banks. Purchasing power flows away from you. It's not theft if you write the laws first.](/assets/images/central-banks/central-banks-section-what-they-actually-do-bw-academic.jpg)
-  - Every War Since 1972: Funded by Destroying Your Savings
-    - Vietnam War Extension (1972-1975)
-      - Gulf War (1991)
-      - Iraq War (2003-2011)
-      - Afghanistan (2001-2021)
-      - The Running Total
-  - The $300B Bank Subsidy (Your Money)
-      - What $300B Could Buy Instead
-    ![300 billion dollars: could house the homeless, could feed the hungry, or could pay banker bonuses. You chose bonuses.](/assets/images/central-banks/central-banks-section-what-300b-could-buy-instead-bw-academic.jpg)
-  - Why Humans Can't Reform the Fed (It's Terminal)
-    - The Problem with Reform
-      - The Only Solution: Bypass It Entirely
   - Why "Just Fund Medical Research More" Is a Lie
     - The Fixed Pie of Human Genius
     ![Humans smart enough to build weapons or cure disease, but not enough to do both. You picked weapons.](/assets/images/central-banks/central-banks-section-the-fixed-pie-of-human-genius-bw-academic.jpg)
@@ -376,26 +335,6 @@
     - Why Money Printing Matters: Resources Follow the Printer
     ![When you spend money on weapons, the smart people go work on weapons. Then you wonder why nobody's curing your diseases. You built a waterslide into a shark tank and asked where all the swimmers went.](/assets/images/central-banks/central-banks-section-why-money-printing-matters-resources-follow-the-printer-bw-academic.jpg)
     ![MIT graduate with student debt: cure cancer for $60,000 or design missiles for $150,000. You made saving lives the financially irresponsible choice. Like pricing vegetables at $100 and candy at $1, then wondering why everyone's diabetic.](/assets/images/central-banks/central-banks-section-the-brain-drain-math-bw-academic.jpg)
-  - The 1% Treaty: Redirecting the Death Printer to Life
-    - The Current Money Flow
-      - A 1% Treaty Redirect
-    ![You print money every year. If you redirect 1 percent of it to medical trials instead of war, you get cures. The money was going to lose value anyway. Like choosing whether your leaky bucket waters flowers or a parking lot.](/assets/images/central-banks/central-banks-section-a-1-treaty-redirect-bw-academic.jpg)
-      - Why This Works
-    ![The money river flows toward bullets. We're suggesting a small canal toward medicine. You're welcome to keep the river, we just want a creek.](/assets/images/central-banks/central-banks-section-treaty-flow-redirect-bw-academic.jpg)
-  - The Historical Precedent: When Markets Funded Victory
-    - World War II War Bonds
-      - The Difference
-    ![Defense contractors get rich building weapons. VICTORY Bonds let people get rich curing diseases. Same mechanism, different output. Like replacing a factory that makes poison with one that makes cake, keeping all the employees.](/assets/images/central-banks/central-banks-section-the-difference-bw-academic.jpg)
-  - The Choice: Keep Printing Death or Start Printing Life
-    - Option A: Keep the Current System
-    ![You spend money on weapons. The money loses value. People die. Contractors get rich. Repeat. It's a perpetual motion machine powered by death. You should be proud, those are hard to build.](/assets/images/central-banks/central-banks-section-option-a-keep-the-current-system-bw-academic.jpg)
-      - Option B: The 1% Redirect
-      - How Tiny 1% Really Is
-    ![Total currency printed versus the 1 percent sliver for curing diseases. If the full amount were a football field, we're asking for the width of a deck chair. You can keep the rest of the stadium.](/assets/images/central-banks/central-banks-section-how-tiny-1-really-is-bw-academic.jpg)
-      - Why This Can Actually Happen
-    ![Defense contractors still get rich. Politicians still get donations. The Federal Reserve still prints money. The only difference is people live instead of die. Everyone wins except death, and death doesn't vote.](/assets/images/central-banks/central-banks-section-why-this-can-actually-happen-bw-academic.jpg)
-  - Your Money, Your Choice
-    ![Current system: war and inflation. Proposed system: medical cures and financial returns. One produces corpses, the other produces customers. From a business perspective, customers are better because they can buy things twice.](/assets/images/central-banks/central-banks-section-your-money-your-choice-bw-academic.jpg)
 
 #### knowledge/problem/genetic-slavery.qmd
 **Title:** Genetic Slavery
@@ -434,7 +373,7 @@
 #### knowledge/solution.qmd
 **Title:** Solution Overview
 **Description:** How to Build Systems That Don't Suck
-**Stats:** 1,701 words | 174 lines | 13 images | ~13p
+**Stats:** 1,685 words | 174 lines | 13 images | ~13p
 
   - A 1% Treaty
   - Your Decentralized Institutes of Health
@@ -1445,7 +1384,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,418 words | 154 lines | 7 images | ~9p
+**Stats:** 1,425 words | 154 lines | 7 images | ~9p
 
   - How 1% Less Violence Pays For Everything
     ![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
@@ -1469,7 +1408,7 @@
 #### knowledge/economics/health-dividend.qmd
 **Title:** Health Dividend
 **Description:** How a $40M (95% CI: $27.3M-$55.6M) framework generates $58.6B (95% CI: $49.2B-$73.1B) in annual savings through 80x cost reduction
-**Stats:** 829 words | 86 lines | 5 images | ~6p
+**Stats:** 942 words | 92 lines | 5 images | ~6p
 
   - The Math: From $41K (95% CI: $20K-$120K) to $500 (95% CI: $400-$2.50K)
   - Where the $58.6B (95% CI: $49.2B-$73.1B) Comes From
@@ -1638,9 +1577,10 @@
 #### knowledge/papers.qmd
 **Title:** Papers & Publications
 **Description:** Academic papers and working drafts from the Disease Eradication Plan project.
-**Stats:** 7,802 words | 856 lines | 14 images | ~38p
+**Stats:** 8,106 words | 901 lines | 14 images | ~39p
 
     - [Drug Development Cost Increase Analysis](https://drug-cost.warondisease.org)
+    - [How to End War and Disease](https://manual.WarOnDisease.org)
     - [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
     ![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](../assets/og/economics-og-1200x630.jpg)
     - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)

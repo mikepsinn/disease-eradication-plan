@@ -27,6 +27,7 @@ load_project_dotenv(Path(__file__).parent.parent.parent)
 # --- Configuration ---
 VEO_MODEL_ID = "veo-3.1-generate-preview"
 IMAGEN_MODEL_ID = "imagen-4.0-generate-001"
+GEMINI_IMAGE_MODEL_ID = "gemini-3.1-pro-preview"
 
 MAX_RETRIES = 3
 RETRY_BACKOFF = [10, 30, 60]
@@ -89,6 +90,66 @@ def generate_image(
     return output_path
 
 
+import base64
+
+
+def generate_image_gemini(
+    prompt: str,
+    output_path: Path,
+    aspect_ratio: str = "16:9",
+    negative_prompt: str | None = None,
+) -> Path:
+    """
+    Generate an image using Gemini 3.1 Pro via generateContent with IMAGE response modality.
+
+    Same interface as generate_image() but uses the Gemini model instead of Imagen,
+    which produces better edge-to-edge compositions.
+    """
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    print(f"  Generating image via Gemini ({aspect_ratio}): {prompt[:80]}...")
+
+    full_prompt = prompt + f"\n\nIMPORTANT: Generate image with aspect ratio {aspect_ratio}."
+    if negative_prompt:
+        full_prompt += f"\n\nDO NOT include: {negative_prompt}"
+
+    contents = [
+        types.Content(
+            role="user",
+            parts=[types.Part.from_text(text=full_prompt)],
+        ),
+    ]
+
+    config = types.GenerateContentConfig(
+        response_modalities=["image"],
+        safety_settings=[
+            types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="BLOCK_NONE"),
+            types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="BLOCK_NONE"),
+            types.SafetySetting(category="HARM_CATEGORY_HARASSMENT", threshold="BLOCK_NONE"),
+            types.SafetySetting(category="HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold="BLOCK_NONE"),
+        ],
+    )
+
+    response = google_client.models.generate_content(
+        model=GEMINI_IMAGE_MODEL_ID,
+        contents=contents,
+        config=config,
+    )
+
+    if not response.candidates or not response.candidates[0].content:
+        raise RuntimeError(f"No image generated. Prompt: {prompt[:100]}")
+
+    for part in response.candidates[0].content.parts or []:
+        if part.inline_data and part.inline_data.data:
+            image_bytes = base64.b64decode(part.inline_data.data) if isinstance(part.inline_data.data, str) else part.inline_data.data
+            output_path.write_bytes(image_bytes)
+            print(f"  Image saved: {output_path.name}")
+            return output_path
+
+    raise RuntimeError("Response contained no image data (possibly safety filtered).")
+
+
 # --- Rate-limited wrapper (shared by video and podcast pipelines) ---
 
 if TYPE_CHECKING:
@@ -101,6 +162,9 @@ else:
     except ImportError:
         from retry import RateLimiter
 
+# Gemini: 10 requests per minute for pro models; 8 to stay safely under
+_gemini_image_rate_limiter = RateLimiter(max_requests=8, window_seconds=60)
+
 # Imagen: 20 requests per minute; 18 to stay safely under
 _imagen_rate_limiter = RateLimiter(max_requests=18, window_seconds=60)
 
@@ -111,7 +175,19 @@ def rate_limited_generate_image(
     aspect_ratio: str = "16:9",
     negative_prompt: str | None = None,
 ) -> Path:
-    """Generate an image with Imagen rate limiting (18 req/min)."""
+    """Generate an image with Gemini 3.1 Pro (rate limited 8 req/min)."""
+    _gemini_image_rate_limiter.acquire()
+    return generate_image_gemini(prompt=prompt, output_path=output_path,
+                                 aspect_ratio=aspect_ratio, negative_prompt=negative_prompt)
+
+
+def rate_limited_generate_image_imagen(
+    prompt: str,
+    output_path: Path,
+    aspect_ratio: str = "16:9",
+    negative_prompt: str | None = None,
+) -> Path:
+    """Generate an image with Imagen 4.0 (rate limited 18 req/min)."""
     _imagen_rate_limiter.acquire()
     return generate_image(prompt=prompt, output_path=output_path,
                           aspect_ratio=aspect_ratio, negative_prompt=negative_prompt)
@@ -217,4 +293,5 @@ if __name__ == "__main__":
     print("Veo library loaded successfully.")
     print(f"  Veo model: {VEO_MODEL_ID}")
     print(f"  Imagen model: {IMAGEN_MODEL_ID}")
+    print(f"  Gemini image model: {GEMINI_IMAGE_MODEL_ID}")
     print(f"  API key configured: {'yes' if GOOGLE_GENERATIVE_AI_API_KEY else 'no'}")
