@@ -331,15 +331,21 @@ def generate_chapter_text(
     slug = chapter_slug(chapter)
     output_path = OUTPUT_DIR / f"{slug}.prepared.txt"
 
-    if output_path.exists() and not force:
-        print(f"  [SKIP] Already exists: {output_path.name}")
-        return {
-            'index': chapter['index'], 'title': title, 'part': chapter['part'],
-            'path': chapter['path'], 'text_file': str(output_path.relative_to(PROJECT_ROOT)),
-            'status': 'cached',
-        }
-
     raw_qmd = qmd_path.read_text(encoding='utf-8')
+
+    # Check if source QMD has changed since last generation
+    source_hash = hashlib.sha256(raw_qmd.encode('utf-8')).hexdigest()[:16]
+    source_hash_file = OUTPUT_DIR / f"{slug}.source_hash"
+    if output_path.exists() and not force:
+        old_source_hash = source_hash_file.read_text(encoding='utf-8').strip() if source_hash_file.exists() else ''
+        if old_source_hash == source_hash:
+            print(f"  [SKIP] Source unchanged: {output_path.name}")
+            return {
+                'index': chapter['index'], 'title': title, 'part': chapter['part'],
+                'path': chapter['path'], 'text_file': str(output_path.relative_to(PROJECT_ROOT)),
+                'status': 'cached',
+            }
+        print(f"  [STALE] Source QMD changed (was {old_source_hash or 'unknown'}, now {source_hash}), regenerating")
     original_vars = len(re.findall(r'\{\{<\s*var\s+\w+\s*>\}\}', raw_qmd))
 
     prepared = prepare_for_narration(raw_qmd, variables)
@@ -354,6 +360,7 @@ def generate_chapter_text(
     if dry_run:
         OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
         output_path.write_text(prepared, encoding='utf-8')
+        source_hash_file.write_text(source_hash, encoding='utf-8')
         print(f"  [DRY RUN] Prepared text saved to: {output_path.name}")
         return {
             'index': chapter['index'], 'title': title, 'part': chapter['part'],
@@ -390,6 +397,7 @@ def generate_chapter_text(
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path.write_text(rewritten, encoding='utf-8')
+    source_hash_file.write_text(source_hash, encoding='utf-8')
     print(f"  [OK] {output_path.name} ({len(rewritten):,} chars)")
 
     return {

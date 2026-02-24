@@ -36,11 +36,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from lib.llm import generate_gemini_flash_content_with_image
-from lib.veo import generate_image, generate_video
+from lib.veo import generate_image, generate_video, rate_limited_generate_image
 from dih_models.yaml_utils import load_quarto_config
 from generate_audiobook import extract_book_metadata
 from lib.audiobook_common import (
-    PROJECT_ROOT, VIDEO_DIR, SCENES_DIR,
+    PROJECT_ROOT, VIDEO_DIR, SCENES_DIR, IMAGE_STYLE, text_hash,
     extract_chapters as _extract_chapters,
     extract_title_from_qmd, safe_filename, chapter_slug,
     find_prepared_text, find_chapter_audio,
@@ -49,7 +49,6 @@ from lib.audiobook_common import (
     resolve_config_path, get_available_configs,
 )
 from lib.audiobook_manifest import update_chapter_fields as _update_chapter_fields
-from lib.retry import RateLimiter
 from lib.scenes import save_scene_manifest, load_scene_manifest
 
 # --- Configuration ---
@@ -57,8 +56,7 @@ DEFAULT_CONFIG_NAME = "manual-paperback"
 
 ASPECT_RATIOS = ["16:9", "9:16"]
 
-# Video keyframe style (distinct from BW_ACADEMIC_STYLE used for book section images)
-IMAGE_STYLE = "70s sci-fi surrealism"
+# IMAGE_STYLE imported from audiobook_common
 
 # --- Prompt Variants ---
 # Each variant is a function(scene_text, full_context, attempt) -> str
@@ -102,7 +100,7 @@ def _prompt_powerpoint(scene_text, full_context, attempt):
     """Two-step: conceptualize as presentation slide, then render as 70s sci-fi."""
     prompt = (
         f"Imagine how this concept would be depicted on a presentation slide given the full chapter context below. "
-        f"Then generate that image in the style of a {IMAGE_STYLE} paperback book cover illustration.\n"
+        f"Then generate that image in {IMAGE_STYLE} style. Do not include any text, titles, or author names.\n"
         f"--- ILLUSTRATE THIS ---\n"
         f"{scene_text}\n"
         f"--- END ILLUSTRATE ---\n"
@@ -116,9 +114,9 @@ def _prompt_powerpoint(scene_text, full_context, attempt):
     return prompt
 
 def _prompt_bookcover(scene_text, full_context, attempt):
-    """Direct book cover framing."""
+    """Direct scene illustration."""
     prompt = (
-        f"Generate an illustration for the cover of a {IMAGE_STYLE} paperback novel that captures this moment in the story:\n"
+        f"Generate a {IMAGE_STYLE} illustration that captures this moment in the story. Do not include any text, titles, or author names.\n"
         f"--- ILLUSTRATE THIS ---\n"
         f"{scene_text}\n"
         f"--- END ILLUSTRATE ---\n"
@@ -172,17 +170,10 @@ def _narration_hash(scene: dict) -> str:
             f"Scene {scene.get('scene_index', '?')} has no narration_text. "
             f"Re-run scene segmentation to fix."
         )
-    return hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
+    return text_hash(text)
 
 
-# Imagen: 20 requests per minute
-imagen_rate_limiter = RateLimiter(max_requests=18, window_seconds=60)  # 18 to stay safely under 20
-
-
-def rate_limited_generate_image(prompt: str, output_path: Path, aspect_ratio: str, negative_prompt: str | None = None) -> Path:
-    """Wrapper around generate_image that respects the Imagen rate limit."""
-    imagen_rate_limiter.acquire()
-    return generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect_ratio, negative_prompt=negative_prompt)
+# rate_limited_generate_image imported from lib.veo
 
 
 # --- Image/Video Metadata ---

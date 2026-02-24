@@ -1,11 +1,15 @@
 """Shared constants and functions for the audiobook pipeline.
 
 Used by generate_audiobook_text.py, generate_audiobook.py, generate_audiobook_scenes.py,
-and generate_audiobook_video.py.
+generate_audiobook_video.py, and generate_podcast_images.py.
 """
+import hashlib
 import re
 from dataclasses import dataclass
 from pathlib import Path
+
+# --- Style constant (shared across image/video generation) ---
+IMAGE_STYLE = "70s sci-fi retro-futuristic utopian surrealism"
 
 # --- Path constants (legacy, kept for backward compat) ---
 PROJECT_ROOT = Path(__file__).parent.parent.parent
@@ -95,6 +99,11 @@ def get_available_configs() -> list[str]:
         name = yml.stem.replace("_quarto-", "")
         configs.append(name)
     return sorted(configs)
+
+
+def text_hash(text: str) -> str:
+    """SHA-256 hash prefix for content-based cache invalidation."""
+    return hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
 
 
 def safe_filename(title: str, max_len: int = 50) -> str:

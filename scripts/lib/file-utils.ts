@@ -1293,6 +1293,8 @@ export function cleanContentForImagePrompt(content: string): string {
     .replace(/\{\{<\s*(?!var\s)[^>]+>\}\}/gi, '')
     // Strip unresolved Quarto variables (already resolved ones are plain text)
     .replace(/\{\{<\s*var\s+[^>]+>\}\}/gi, '')
+    // Strip bold/italic markers, keep text: **text** -> text, *text* -> text
+    .replace(/\*{1,3}([^*]+)\*{1,3}/g, '$1')
     // Strip blockquote markers but keep text
     .replace(/^>\s*/gm, '')
     // Collapse multiple blank lines

@@ -24,7 +24,6 @@ Usage:
 """
 import io
 import sys
-import hashlib
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -35,11 +34,10 @@ if sys.platform == 'win32' and isinstance(sys.stdout, io.TextIOWrapper):
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from lib.veo import generate_image
-from lib.retry import RateLimiter
+from lib.veo import rate_limited_generate_image
 from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
-    PROJECT_ROOT, DEFAULT_CONFIG_PATH,
+    PROJECT_ROOT, DEFAULT_CONFIG_PATH, IMAGE_STYLE, text_hash,
     extract_chapters, chapter_slug, find_prepared_text,
     find_podcast_image, find_youtube_thumbnail,
     resolve_chapter_titles, filter_chapters,
@@ -47,31 +45,18 @@ from lib.audiobook_common import (
 )
 
 # --- Configuration ---
-IMAGE_STYLE = "70s sci-fi surrealism"
 PARALLEL_WORKERS = 4
-
-# Imagen: 20 requests per minute; stay safely under
-imagen_rate_limiter = RateLimiter(max_requests=18, window_seconds=60)
-
-
-def _text_hash(text: str) -> str:
-    return hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
 
 
 def _build_prompt(prepared_text: str, chapter_title: str) -> str:
     """Build an Imagen prompt from prepared audiobook text."""
     return (
-        f"Generate an illustration for the cover of a {IMAGE_STYLE} paperback novel "
-        f"that captures this chapter:\n"
+        f"Generate a {IMAGE_STYLE} illustration that captures this chapter. "
+        f"Do not include any text, titles, or author names in the image.\n"
         f"--- CHAPTER: {chapter_title} ---\n"
         f"{prepared_text[:4000]}\n"
         f"--- END ---"
     )
-
-
-def _rate_limited_generate(prompt: str, output_path: Path, aspect_ratio: str) -> Path:
-    imagen_rate_limiter.acquire()
-    return generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect_ratio)
 
 
 def _hash_file(path: Path) -> str:
@@ -82,10 +67,10 @@ def _hash_file(path: Path) -> str:
     return ''
 
 
-def _write_hash(path: Path, text_hash: str):
+def _write_hash(path: Path, content_hash: str):
     """Write a text hash sidecar so we can detect staleness."""
     hash_path = path.with_suffix(path.suffix + '.hash')
-    hash_path.write_text(text_hash, encoding='utf-8')
+    hash_path.write_text(content_hash, encoding='utf-8')
 
 
 def process_chapter(
@@ -108,7 +93,7 @@ def process_chapter(
         return []
 
     text = text_file.read_text(encoding='utf-8')
-    text_h = _text_hash(text)
+    text_h = text_hash(text)
 
     work_items = []
 
@@ -160,12 +145,13 @@ def generate_images(
         chapter, aspect, output_path = item
         slug = chapter_slug(chapter)
         text_file = find_prepared_text(chapter, paths=paths)
+        assert text_file, f"No prepared text for chapter {chapter['index']}"
         text = text_file.read_text(encoding='utf-8')
-        text_h = _text_hash(text)
+        text_h = text_hash(text)
 
         prompt = _build_prompt(text, chapter['title'])
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        _rate_limited_generate(prompt, output_path, aspect)
+        rate_limited_generate_image(prompt, output_path, aspect)
         _write_hash(output_path, text_h)
         return output_path
 

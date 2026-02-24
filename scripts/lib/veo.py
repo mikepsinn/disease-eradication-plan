@@ -8,9 +8,11 @@ import sys
 import os
 import time
 from pathlib import Path
+from typing import Any, TYPE_CHECKING, cast
 
-if sys.platform == 'win32':
-    sys.stdout.reconfigure(encoding='utf-8')
+if sys.platform == "win32":
+    # sys.stdout.reconfigure exists at runtime on CPython, but is missing from TextIO stubs
+    cast(Any, sys.stdout).reconfigure(encoding="utf-8")
 
 from google import genai
 from google.genai import types
@@ -62,18 +64,17 @@ def generate_image(
 
     print(f"  Generating image ({aspect_ratio}): {prompt[:80]}...")
 
-    config_kwargs = dict(
+    config = types.GenerateImagesConfig(
         number_of_images=1,
         aspect_ratio=aspect_ratio,
         output_mime_type="image/jpeg",
+        negative_prompt=negative_prompt,
     )
-    if negative_prompt:
-        config_kwargs["negative_prompt"] = negative_prompt
 
     response = google_client.models.generate_images(
         model=IMAGEN_MODEL_ID,
         prompt=prompt,
-        config=types.GenerateImagesConfig(**config_kwargs),
+        config=config,
     )
 
     if not response.generated_images:
@@ -86,6 +87,34 @@ def generate_image(
     image.save(str(output_path))
     print(f"  Image saved: {output_path.name}")
     return output_path
+
+
+# --- Rate-limited wrapper (shared by video and podcast pipelines) ---
+
+if TYPE_CHECKING:
+    # For static type checkers, always use the local retry module.
+    from .retry import RateLimiter
+else:
+    # At runtime, fall back to absolute import when run as a stand-alone script.
+    try:
+        from .retry import RateLimiter
+    except ImportError:
+        from retry import RateLimiter
+
+# Imagen: 20 requests per minute; 18 to stay safely under
+_imagen_rate_limiter = RateLimiter(max_requests=18, window_seconds=60)
+
+
+def rate_limited_generate_image(
+    prompt: str,
+    output_path: Path,
+    aspect_ratio: str = "16:9",
+    negative_prompt: str | None = None,
+) -> Path:
+    """Generate an image with Imagen rate limiting (18 req/min)."""
+    _imagen_rate_limiter.acquire()
+    return generate_image(prompt=prompt, output_path=output_path,
+                          aspect_ratio=aspect_ratio, negative_prompt=negative_prompt)
 
 
 def generate_video(
@@ -179,7 +208,9 @@ def generate_video(
             else:
                 print(f"  [FAILED] All {MAX_RETRIES} attempts failed. Last error: {e}")
 
-    raise last_error
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError("Video generation failed for an unknown reason.")
 
 
 if __name__ == "__main__":
