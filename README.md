@@ -3,6 +3,10 @@
 
 > Rigorous analysis of the 105x increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis
 
+### [How to End War and Disease](https://manual.WarOnDisease.org)
+
+> Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
+
 ### [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
 
 [![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)

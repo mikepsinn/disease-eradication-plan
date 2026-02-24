@@ -44,7 +44,7 @@ book:
 
     - part: "The Solution"
       chapters:
-        - knowledge/solution.qmd
+        # CUT: solution.qmd - overview that previews all solution sub-chapters; redundant in sequential reading
         - knowledge/solution/1-percent-treaty.qmd
         - knowledge/solution/dih.qmd
         - knowledge/solution/wishocracy.qmd
@@ -54,9 +54,9 @@ book:
 
     - part: "For Skeptics"
       chapters:
-        - knowledge/proof.qmd
+        # CUT: proof.qmd - overview that previews proof sub-chapters; redundant in sequential reading
         - knowledge/proof/body-as-repairable-machine.qmd
-        - knowledge/futures.qmd
+        # CUT: futures.qmd - 37-line intro to moronia/wishonia; those chapters stand alone
         - knowledge/futures/moronia.qmd
         - knowledge/futures/wishonia.qmd
         - knowledge/appendix/faq.qmd
