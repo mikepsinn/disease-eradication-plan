@@ -203,10 +203,10 @@ CONVERT (only these):
 - Strip markdown formatting characters (**, ##, -, etc.)
 
 KEEP for TTS:
-- ALL-CAPS words like "WITH", "MORE", "KNOWS" -- TTS engines stress these, keep them capitalized
-- Quote marks around dialogue: "Hey, we didn't die!" -- helps TTS shift into speaking prosody
-- Contractions (don't, can't, it's stay as-is)
-- Parenthetical asides IN PARENTHESES -- they're the comedic delivery. TTS handles parentheses well.
+- PRESERVE ALL-CAPS words or italics where they would help the TTS engine speak with emphasis.
+- PRESERVE Quote marks around dialogue: "Hey, we didn't die!" -- helps TTS shift into speaking prosody
+- PRESERVE Contractions (don't, can't, it's stay as-is)
+- PRESERVE Parenthetical asides IN PARENTHESES -- they're the comedic delivery. TTS handles parentheses well.
   NEVER convert "(they're very vain)" to ", they're very vain" or "as they're very vain" or "which is very vain".
   NEVER convert "(requires many papers)" to ", which requires many papers".
   Keep the literal ( ) characters exactly as written.
@@ -214,7 +214,7 @@ KEEP for TTS:
 Section headers (## lines): keep the text as a standalone paragraph (strip ## markers), then add a blank line after. They're often jokes or punchy phrases that work as natural pauses.
 
 REMOVE:
-- Markdown links: remove links and their text if not meant to be spoken in an audiobook. Keep the text (drop only the URL) if the text is part of the spoken sentence.
+- remove or edit text only if would sound extremly weird to be spoken in an audiobook. 
 
 RULES:
 - DO NOT remove or rephrase parenthetical asides. "(they're very vain)" must stay as "(they're very vain)", not become ", they're very vain"
