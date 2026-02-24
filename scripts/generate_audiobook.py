@@ -55,17 +55,19 @@ NARRATOR_VOICE = DEFAULT_VOICE
 
 def extract_book_metadata(config: dict) -> dict:
     """Extract book metadata (title, author, year, publisher, cover, etc.) from quarto config."""
-    book = config.get('book', {})
+    book = config.get('book')
+    if not book:
+        raise ValueError("Quarto config missing required 'book' section")
     metadata = config.get('metadata', {})
 
     # Author: first entry in book.author list, or fallback to metadata.creator
     authors = book.get('author', [])
     if isinstance(authors, list) and authors:
         first = authors[0]
-        author = first.get('name', '') if isinstance(first, dict) else str(first)
+        author = first.get('name') if isinstance(first, dict) else str(first)
         email = first.get('email', '') if isinstance(first, dict) else ''
     else:
-        author = metadata.get('creator', 'Unknown')
+        author = metadata.get('creator')
         email = metadata.get('author-email', '')
 
     # Cover art: portrait (for MP3/M4B embedding) and square (for podcast RSS)
@@ -74,11 +76,16 @@ def extract_book_metadata(config: dict) -> dict:
         cover_art = PROJECT_ROOT / cover_path
     else:
         cover_art = PROJECT_ROOT / "assets" / "cover" / "book-cover-3.jpg"
+    if not cover_art.exists():
+        raise FileNotFoundError(f"Cover art not found: {cover_art}")
 
     # Square podcast cover (1400x1400+ required by Apple/Spotify)
     podcast_cover = PROJECT_ROOT / "assets" / "cover" / "podcast-cover.jpg"
     if not podcast_cover.exists():
-        podcast_cover = cover_art  # fallback to portrait cover
+        raise FileNotFoundError(
+            f"Podcast cover not found: {podcast_cover}. "
+            f"Generate a 1400x1400+ square cover (Apple/Spotify requirement)."
+        )
 
     # Site URL from website or book config
     site_url = (
@@ -86,14 +93,32 @@ def extract_book_metadata(config: dict) -> dict:
         or book.get('site-url', '')
     )
 
+    title = book.get('title')
+    year = metadata.get('copyright-year')
+    publisher = metadata.get('publisher')
+
+    missing = []
+    if not title:
+        missing.append('book.title')
+    if not author:
+        missing.append('book.author (or metadata.creator)')
+    if not site_url:
+        missing.append('book.site-url (or website.site-url)')
+    if not year:
+        missing.append('metadata.copyright-year')
+    if not publisher:
+        missing.append('metadata.publisher')
+    if missing:
+        raise ValueError(f"Quarto config missing required fields: {', '.join(missing)}")
+
     return {
-        'title': book.get('title', 'Untitled'),
+        'title': title,
         'subtitle': book.get('subtitle', ''),
         'description': book.get('description', ''),
         'author': author,
         'email': email,
-        'year': metadata.get('copyright-year', ''),
-        'publisher': metadata.get('publisher', ''),
+        'year': year,
+        'publisher': publisher,
         'cover_art': cover_art,
         'podcast_cover': podcast_cover,
         'site_url': site_url.rstrip('/'),
@@ -360,13 +385,24 @@ def combine_chapter_audio(
         current_position_ms = end_ms
 
         index_match = re.match(r'^(\d+)-', chapter_file.stem)
-        chapter_index = int(index_match.group(1)) if index_match else i + 1
-        meta = chapter_meta_by_index.get(chapter_index, {})
-        title = meta.get('title') or chapter_file.stem.split('-', 1)[-1].replace('-', ' ')
+        if not index_match:
+            raise ValueError(f"WAV filename does not start with chapter index: {chapter_file.name}")
+        chapter_index = int(index_match.group(1))
+        meta = chapter_meta_by_index.get(chapter_index)
+        if meta is None:
+            raise ValueError(
+                f"No chapter metadata for index {chapter_index} (WAV: {chapter_file.name}). "
+                f"Available indices: {sorted(chapter_meta_by_index)}"
+            )
+        if not meta.get('title'):
+            raise ValueError(
+                f"Chapter {chapter_index} has no title (path: {meta.get('path', '?')}). "
+                f"Check the Quarto config chapter list."
+            )
 
         timestamps.append(ChapterTimestamp(
             index=chapter_index,
-            title=title,
+            title=meta['title'],
             part=meta.get('part'),
             file=chapter_file.name,
             start_ms=start_ms,
@@ -482,25 +518,24 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict)
     tag.add(TPUB(encoding=3, text=[book_meta['publisher']]))
     tag.add(TLAN(encoding=3, text=["eng"]))
     # Narrator (custom TXXX frame, recognized by Apple Books/Audible/Overcast)
-    narrator = book_meta.get('narrator', 'WISHONIA')
+    narrator = book_meta['narrator']
     tag.add(TXXX(encoding=3, desc='narrator', text=[narrator]))
     # Description
     if book_meta.get('description'):
         tag.add(COMM(encoding=3, lang='eng', desc='', text=[book_meta['description']]))
 
-    # Cover art
+    # Cover art (validated in extract_book_metadata)
     cover_art: Path = book_meta['cover_art']
-    if cover_art.exists():
-        cover_data = cover_art.read_bytes()
-        mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
-        tag.add(APIC(
-            encoding=3,
-            mime=mime,
-            type=3,  # Front cover
-            desc='Cover',
-            data=cover_data,
-        ))
-        print(f"  [OK] Embedded cover art ({len(cover_data):,} bytes)")
+    cover_data = cover_art.read_bytes()
+    mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
+    tag.add(APIC(
+        encoding=3,
+        mime=mime,
+        type=3,  # Front cover
+        desc='Cover',
+        data=cover_data,
+    ))
+    print(f"  [OK] Embedded cover art ({len(cover_data):,} bytes)")
 
     # Chapter markers (CHAP frames)
     chapter_ids = []
@@ -566,18 +601,15 @@ def export_m4b(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: di
         "-i", str(metadata_path),
     ]
 
-    # Add cover art if available
+    # Add cover art (validated in extract_book_metadata)
     cover_art: Path = book_meta['cover_art']
-    if cover_art.exists():
-        cmd.extend(["-i", str(cover_art)])
-        cmd.extend([
-            "-map", "0:a",           # Audio from MP3
-            "-map", "2:v",           # Cover art (keep as JPEG, don't re-encode)
-            "-c:v", "copy",
-            "-disposition:v:0", "attached_pic",
-        ])
-    else:
-        cmd.extend(["-map", "0:a"])
+    cmd.extend(["-i", str(cover_art)])
+    cmd.extend([
+        "-map", "0:a",           # Audio from MP3
+        "-map", "2:v",           # Cover art (keep as JPEG, don't re-encode)
+        "-c:v", "copy",
+        "-disposition:v:0", "attached_pic",
+    ])
 
     cmd.extend([
         "-map_metadata", "1",    # Metadata from ffmetadata file
@@ -630,15 +662,24 @@ def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
     json_start = stderr.rfind('{')
     json_end = stderr.rfind('}') + 1
     if json_start < 0:
-        print(f"  [WARN] Could not parse loudnorm output, skipping")
-        return wav_path
+        raise RuntimeError(
+            f"Could not parse loudnorm JSON from ffmpeg stderr for {wav_path.name}. "
+            f"Stderr: {stderr[-500:]}"
+        )
 
     stats = _json.loads(stderr[json_start:json_end])
-    measured_i = stats.get('input_i', '-24.0')
-    measured_tp = stats.get('input_tp', '-1.0')
-    measured_lra = stats.get('input_lra', '11.0')
-    measured_thresh = stats.get('input_thresh', '-34.0')
-    target_offset = stats.get('target_offset', '0.0')
+    required_keys = ['input_i', 'input_tp', 'input_lra', 'input_thresh', 'target_offset']
+    missing_keys = [k for k in required_keys if k not in stats]
+    if missing_keys:
+        raise RuntimeError(
+            f"ffmpeg loudnorm missing keys {missing_keys} for {wav_path.name}. "
+            f"Got: {stats}"
+        )
+    measured_i = stats['input_i']
+    measured_tp = stats['input_tp']
+    measured_lra = stats['input_lra']
+    measured_thresh = stats['input_thresh']
+    target_offset = stats['target_offset']
 
     print(f"  Loudness: {measured_i} LUFS (target: {target_lufs} LUFS)")
 
@@ -691,23 +732,34 @@ def export_chapter_mp3s(
     chapter_meta_by_index = {ch['index']: ch for ch in chapters}
 
     # Load cover art once
-    cover_data = None
-    cover_mime = 'image/jpeg'
-    cover_art: Path = book_meta.get('cover_art', Path())
-    if cover_art.exists():
-        cover_data = cover_art.read_bytes()
-        cover_mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
+    cover_art: Path = book_meta['cover_art']
+    if not cover_art.exists():
+        raise FileNotFoundError(f"Cover art not found: {cover_art}")
+    cover_data = cover_art.read_bytes()
+    cover_mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
 
     mp3_files = []
     total_chapters = len(chapter_files)
-    narrator = book_meta.get('narrator', 'WISHONIA')
+    narrator = book_meta['narrator']
 
     for chapter_file in chapter_files:
         # Parse chapter index from filename (e.g. "001-Start-Here.wav")
         index_match = re.match(r'^(\d+)-', chapter_file.stem)
-        chapter_index = int(index_match.group(1)) if index_match else 0
-        meta = chapter_meta_by_index.get(chapter_index, {})
-        title = meta.get('title') or chapter_file.stem.split('-', 1)[-1].replace('-', ' ')
+        if not index_match:
+            raise ValueError(f"WAV filename does not start with chapter index: {chapter_file.name}")
+        chapter_index = int(index_match.group(1))
+        meta = chapter_meta_by_index.get(chapter_index)
+        if meta is None:
+            raise ValueError(
+                f"No chapter metadata for index {chapter_index} (WAV: {chapter_file.name}). "
+                f"Available indices: {sorted(chapter_meta_by_index)}"
+            )
+        if not meta.get('title'):
+            raise ValueError(
+                f"Chapter {chapter_index} has no title (path: {meta.get('path', '?')}). "
+                f"Check the Quarto config chapter list."
+            )
+        title = meta['title']
 
         mp3_path = mp3_dir / chapter_file.with_suffix('.mp3').name
 
@@ -735,8 +787,7 @@ def export_chapter_mp3s(
         if book_meta.get('description'):
             tag.add(COMM(encoding=3, lang='eng', desc='', text=[book_meta['description']]))
 
-        if cover_data:
-            tag.add(APIC(encoding=3, mime=cover_mime, type=3, desc='Cover', data=cover_data))
+        tag.add(APIC(encoding=3, mime=cover_mime, type=3, desc='Cover', data=cover_data))
 
         mp3.save()
         size_mb = mp3_path.stat().st_size / 1024 / 1024
@@ -791,10 +842,22 @@ def generate_podcast_rss(
     items = []
     for ep_num, mp3_path in enumerate(chapter_mp3s):
         index_match = re.match(r'^(\d+)-', mp3_path.stem)
-        chapter_index = int(index_match.group(1)) if index_match else 0
+        if not index_match:
+            raise ValueError(f"MP3 filename does not start with chapter index: {mp3_path.name}")
+        chapter_index = int(index_match.group(1))
         ts = ts_by_index.get(chapter_index)
-        ch_meta = next((ch for ch in chapters if ch['index'] == chapter_index), {})
-        ch_title = escape(ch_meta.get('title', mp3_path.stem))
+        ch_meta = next((ch for ch in chapters if ch['index'] == chapter_index), None)
+        if ch_meta is None:
+            raise ValueError(
+                f"No chapter metadata found for index {chapter_index} (MP3: {mp3_path.name}). "
+                f"Available indices: {sorted(ch['index'] for ch in chapters)}"
+            )
+        if not ch_meta.get('title'):
+            raise ValueError(
+                f"Chapter {chapter_index} has no title (path: {ch_meta.get('path', '?')}). "
+                f"Check the Quarto config chapter list."
+            )
+        ch_title = escape(ch_meta['title'])
         part = ch_meta.get('part', '')
         ep_title = f"{ch_title}" if not part else f"{part}: {ch_title}"
 

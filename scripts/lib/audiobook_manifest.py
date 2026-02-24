@@ -53,7 +53,7 @@ def update_chapter_fields(chapter_index: int, paths: AudiobookPaths | None = Non
         entry = {'index': chapter_index}
         entry.update(fields)
         chapters.append(entry)
-        chapters.sort(key=lambda c: c.get('index', 0))
+        chapters.sort(key=lambda c: c['index'])
 
     manifest['chapters'] = chapters
     write_manifest(manifest, paths)

@@ -140,30 +140,40 @@ def extract_chapters(config: dict) -> list[dict]:
             return index_source
         return path
 
+    def add_chapter(path: str, title: str | None, part: str | None) -> None:
+        nonlocal idx
+        idx += 1
+        resolved = resolve_path(path)
+        if not title:
+            # Read title from QMD frontmatter
+            qmd_path = PROJECT_ROOT / resolved
+            title = extract_title_from_qmd(qmd_path)
+        if not title:
+            raise ValueError(
+                f"Chapter {idx} ({resolved}) has no title in Quarto config or QMD frontmatter"
+            )
+        chapters.append({'path': resolved, 'title': title, 'part': part, 'index': idx})
+
     for item in book.get('chapters', []):
         if isinstance(item, str):
-            idx += 1
-            chapters.append({'path': resolve_path(item), 'title': None, 'part': None, 'index': idx})
+            add_chapter(item, None, None)
         elif isinstance(item, dict):
             if 'href' in item:
-                idx += 1
-                chapters.append({'path': resolve_path(item['href']), 'title': item.get('text'), 'part': None, 'index': idx})
+                add_chapter(item['href'], item.get('text'), None)
             elif 'part' in item:
                 for sub in item.get('chapters', []):
-                    idx += 1
                     if isinstance(sub, str):
-                        chapters.append({'path': resolve_path(sub), 'title': None, 'part': item['part'], 'index': idx})
+                        add_chapter(sub, None, item['part'])
                     elif isinstance(sub, dict) and 'href' in sub:
-                        chapters.append({'path': resolve_path(sub['href']), 'title': sub.get('text'), 'part': item['part'], 'index': idx})
+                        add_chapter(sub['href'], sub.get('text'), item['part'])
 
     for item in book.get('appendices', []):
         if isinstance(item, dict) and 'part' in item:
             for sub in item.get('chapters', []):
-                idx += 1
                 if isinstance(sub, str):
-                    chapters.append({'path': sub, 'title': None, 'part': f"Appendix: {item['part']}", 'index': idx})
+                    add_chapter(sub, None, f"Appendix: {item['part']}")
                 elif isinstance(sub, dict) and 'href' in sub:
-                    chapters.append({'path': sub['href'], 'title': sub.get('text'), 'part': f"Appendix: {item['part']}", 'index': idx})
+                    add_chapter(sub['href'], sub.get('text'), f"Appendix: {item['part']}")
 
     return chapters
 
