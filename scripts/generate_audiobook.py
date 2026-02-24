@@ -68,12 +68,17 @@ def extract_book_metadata(config: dict) -> dict:
         author = metadata.get('creator', 'Unknown')
         email = metadata.get('author-email', '')
 
-    # Cover art: from epub config, fall back to conventional path
+    # Cover art: portrait (for MP3/M4B embedding) and square (for podcast RSS)
     cover_path = config.get('format', {}).get('epub', {}).get('epub-cover-image')
     if cover_path:
         cover_art = PROJECT_ROOT / cover_path
     else:
         cover_art = PROJECT_ROOT / "assets" / "cover" / "book-cover-3.jpg"
+
+    # Square podcast cover (1400x1400+ required by Apple/Spotify)
+    podcast_cover = PROJECT_ROOT / "assets" / "cover" / "podcast-cover.jpg"
+    if not podcast_cover.exists():
+        podcast_cover = cover_art  # fallback to portrait cover
 
     # Site URL from website or book config
     site_url = (
@@ -90,6 +95,7 @@ def extract_book_metadata(config: dict) -> dict:
         'year': metadata.get('copyright-year', ''),
         'publisher': metadata.get('publisher', ''),
         'cover_art': cover_art,
+        'podcast_cover': podcast_cover,
         'site_url': site_url.rstrip('/'),
         'narrator': 'WISHONIA',
     }
@@ -566,7 +572,8 @@ def export_m4b(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: di
         cmd.extend(["-i", str(cover_art)])
         cmd.extend([
             "-map", "0:a",           # Audio from MP3
-            "-map", "2:v",           # Cover art
+            "-map", "2:v",           # Cover art (keep as JPEG, don't re-encode)
+            "-c:v", "copy",
             "-disposition:v:0", "attached_pic",
         ])
     else:
@@ -583,9 +590,8 @@ def export_m4b(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: di
     print(f"  Running ffmpeg...")
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"  [ERROR] ffmpeg failed:\n{result.stderr}")
         metadata_path.unlink(missing_ok=True)
-        return
+        raise RuntimeError(f"M4B export failed:\n{result.stderr[:500]}")
 
     # Clean up temp metadata file
     metadata_path.unlink(missing_ok=True)
@@ -771,7 +777,12 @@ def generate_podcast_rss(
     author = escape(book_meta['author'])
     description = escape(book_meta.get('description', ''))
     narrator = escape(book_meta.get('narrator', 'WISHONIA'))
-    cover_url = f"{cdn_url}/assets/cover/book-cover-3.jpg"
+    podcast_cover = book_meta.get('podcast_cover', Path())
+    if podcast_cover.exists():
+        cover_filename = podcast_cover.relative_to(PROJECT_ROOT).as_posix()
+    else:
+        cover_filename = "assets/cover/book-cover-3.jpg"
+    cover_url = f"{cdn_url}/{cover_filename}"
 
     from datetime import datetime, timezone, timedelta
     # Each chapter gets a pubDate 1 day apart so podcast apps sort them correctly
