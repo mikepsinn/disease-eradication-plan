@@ -163,11 +163,11 @@ def generate_chapter_audio(
     # Regenerate prepared text via subprocess (has its own hash-based caching)
     print(f"  Preparing text...")
     text_script = Path(__file__).parent / "generate_audiobook_text.py"
-    result = subprocess.run(
-        [sys.executable, "-u", str(text_script), "--chapter", str(chapter['index']), "--force",
-         "--config", str(config_path)],
-        cwd=str(PROJECT_ROOT),
-    )
+    text_cmd = [sys.executable, "-u", str(text_script), "--chapter", str(chapter['index']),
+                "--config", str(config_path)]
+    if force:
+        text_cmd.append("--force")
+    result = subprocess.run(text_cmd, cwd=str(PROJECT_ROOT))
     if result.returncode != 0:
         print(f"  [ERROR] Text preparation failed (exit code {result.returncode})")
         return None, False
