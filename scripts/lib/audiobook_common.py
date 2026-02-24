@@ -35,6 +35,7 @@ class AudiobookPaths:
     subtitles: Path
     video: Path
     scenes: Path
+    podcast_images: Path
     manifest: Path
 
 
@@ -54,6 +55,7 @@ def get_paths(config_name: str) -> AudiobookPaths:
         subtitles=root / "subtitles",
         video=video,
         scenes=video / "scenes",
+        podcast_images=root / "podcast-images",
         manifest=root / "manifest.json",
     )
 
@@ -239,3 +241,19 @@ def resolve_chapter_titles(chapters: list[dict]) -> list[dict]:
         if not ch['title']:
             ch['title'] = extract_title_from_qmd(PROJECT_ROOT / ch['path'])
     return chapters
+
+
+def find_podcast_image(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
+    """Find the podcast episode image for a chapter."""
+    img_dir = paths.podcast_images if paths else AUDIOBOOK_DIR / "podcast-images"
+    slug = chapter_slug(chapter)
+    img = img_dir / f"{slug}-podcast.jpg"
+    return img if img.exists() else None
+
+
+def find_youtube_thumbnail(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
+    """Find the YouTube thumbnail image for a chapter."""
+    img_dir = paths.podcast_images if paths else AUDIOBOOK_DIR / "podcast-images"
+    slug = chapter_slug(chapter)
+    img = img_dir / f"{slug}-youtube.jpg"
+    return img if img.exists() else None

@@ -51,7 +51,7 @@ def generate_image(
     Args:
         prompt: Text prompt describing the desired image.
         output_path: Where to save the generated image (JPEG).
-        aspect_ratio: "16:9" or "9:16".
+        aspect_ratio: Imagen aspect ratio. Supported: "1:1", "3:4", "4:3", "9:16", "16:9".
         negative_prompt: What to exclude from the image (e.g., "photorealistic, anime").
 
     Returns:

@@ -64,8 +64,6 @@ book:
     - part: "The Plan"
       chapters:
         - knowledge/strategy/roadmap.qmd
-        - knowledge/strategy/nonprofit-coalition-strategy.qmd
-        - knowledge/legal/legal-framework.qmd
         # CUT: election-law.qmd - operational detail for campaign staff
         # REMOVED: Merged into knowledge/solution/incentive-alignment-bonds.qmd
         # - knowledge/economics/victory-bonds.qmd
@@ -75,7 +73,6 @@ book:
         # REMOVED: Merged into knowledge/solution/aligning-incentives.qmd defense section
         # - knowledge/strategy/co-opting-defense-contractors.qmd
         - knowledge/appendix/treaty-feasibility.qmd
-        - knowledge/appendix/recruitment-and-propaganda-plan.qmd
 
     - part: "Economics & Finance"
       chapters:
@@ -84,6 +81,12 @@ book:
         - knowledge/economics/financial-plan.qmd
         # CUT: campaign-budget.qmd - granular budget line items
         # CUT: investor-risk-analysis.qmd - only relevant to actual investors
+
+    - part: "Operations Manual"
+      chapters:
+        - knowledge/strategy/nonprofit-coalition-strategy.qmd
+        - knowledge/legal/legal-framework.qmd
+        - knowledge/appendix/recruitment-and-propaganda-plan.qmd
 
     - part: "References"
       chapters:

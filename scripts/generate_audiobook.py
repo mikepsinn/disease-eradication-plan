@@ -39,7 +39,8 @@ from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
     PROJECT_ROOT, AUDIOBOOK_DIR, CHAPTER_AUDIO_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
-    chapter_slug, find_prepared_text, find_chapter_audio, AudiobookPaths, config_name_from_path, get_paths,
+    chapter_slug, find_prepared_text, find_chapter_audio, find_podcast_image,
+    AudiobookPaths, config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
 from lib.retry import RateLimiter
@@ -819,6 +820,15 @@ def generate_podcast_rss(
     # Build MP3 lookup by slug for matching with timestamps
     mp3_by_slug = {mp3.stem: mp3 for mp3 in chapter_mp3s}
 
+    # Build per-episode image URL lookup
+    ep_image_urls: dict[str, str] = {}
+    for ch in chapters:
+        img = find_podcast_image(ch, paths=paths)
+        if img:
+            s = chapter_slug(ch)
+            img_rel = img.relative_to(PROJECT_ROOT).as_posix()
+            ep_image_urls[s] = f"{cdn_url}/{img_rel}"
+
     items = []
     total_eps = len(chapter_mp3s)
     for ep_num, ts in enumerate(timestamps):
@@ -839,6 +849,9 @@ def generate_podcast_rss(
             "%a, %d %b %Y %H:%M:%S +0000"
         )
 
+        ep_img = ep_image_urls.get(slug)
+        image_tag = f'\n      <itunes:image href="{escape(ep_img)}"/>' if ep_img else ''
+
         items.append(f"""    <item>
       <title>{escape(ep_title)}</title>
       <enclosure url="{escape(mp3_url)}" length="{file_size}" type="audio/mpeg"/>
@@ -847,7 +860,7 @@ def generate_podcast_rss(
       <itunes:episode>{ep_num + 1}</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <guid isPermaLink="false">chapter-{slug}</guid>
-      <description>Chapter {ep_num + 1} of {title}</description>
+      <description>Chapter {ep_num + 1} of {title}</description>{image_tag}
     </item>""")
 
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
