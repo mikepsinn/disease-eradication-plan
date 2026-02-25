@@ -1,6 +1,6 @@
 ---
 title: Frequently Asked Objections
-description: For the Reasonably Skeptical
+description: "Every objection to this plan is technically correct. You can't cut military spending (you keep 99%). Pharma will fight threats to profits (they profit more under this system). Politicians follow money, not morality (so does this plan). Seventeen reasonable concerns that accidentally make the case for the thing they're objecting to."
 image: /assets/og-images/knowledge/appendix/faq-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -54,11 +54,15 @@ Pharma would lobby FOR this harder than they've ever lobbied for anything. You'd
 
 ![How voters get politicians to do things: ask nicely, then replace them if they don't. It's the same system you use with batteries.](/assets/images/faq/faq-section-what-about-national-sovereignty-bw-academic.jpg)
 
-**Response**: No force involved. Countries sign by choice. Don't want to? Don't. Miss out on the benefits. Citizens demand it? Sign. This is how democracy is supposed to work. I understand you may be unfamiliar with the concept.
+**Response**: Sovereignty matters. Countries should decide how to spend their own money. That's exactly what this is.
+
+No country is forced to sign. No country is penalized for not signing. Countries that join get access to the treaty fund and bond benefits. Countries that don't simply miss out. Citizens who want it vote for politicians who support it. Citizens who don't, don't.
+
+The treaty doesn't override sovereignty. It gives voters a specific thing to ask for and politicians a profitable reason to say yes.
 
 **Follow-up**: "What if our government doesn't want to?"
 
-**Response**: Vote them out. This is also how democracy works. (I'm told you've done this before.)
+**Response**: Then they don't sign. If enough citizens disagree with that decision, they vote in someone who will. That's sovereignty working exactly as designed.
 
 ## "The FDA Exists for a Reason"
 
@@ -66,13 +70,13 @@ Pharma would lobby FOR this harder than they've ever lobbied for anything. You'd
 
 ![For every person the FDA saves by being careful, 4,000 people die waiting. That's not caution, that's just very slow murder with excellent paperwork.](/assets/images/faq/faq-section-the-fda-exists-for-a-reason-bw-academic.jpg)
 
-**Response**: The FDA is a lifeguard who won't throw the life preserver until it passes a 12-year safety review. By which point you have drowned, decomposed, and become a coral reef.
+**Response**: Drug safety is genuinely important. Nobody wants another thalidomide. The question is whether the current approach to safety is actually safe.
 
-- FDA delays (1962-present): 4-10 million American deaths from drug lag
-- FDA-prevented disasters: Maybe thalidomide (1,000 deaths)
-- Net: FDA policies may have contributed to 4,000-10,000 deaths for every life saved
+Phase 1 safety testing prevented thalidomide from reaching the US market. That saved roughly 1,000 lives. Since 1962, FDA drug lag has contributed to an estimated 4-10 million American deaths from delayed access to treatments already proven safe. That's 4,000-10,000 deaths caused for every death prevented.
 
-Under the decentralized framework for drug assessment, patients see real data on risks and benefits. Then they decide. The radical concept of adults making informed choices about their own bodies.
+The current system isn't cautious. It's the most dangerous option available. It just doesn't feel dangerous because the people it kills die quietly, in waiting rooms, rather than dramatically, in headlines.
+
+Under the decentralized framework, patients see real data on risks and benefits. Then they decide. Safety doesn't decrease. The paperwork does.
 
 ## "What If Countries Cheat?"
 
@@ -80,14 +84,16 @@ Under the decentralized framework for drug assessment, patients see real data on
 
 ![Politicians who keep their promises get paid. Politicians who don't, don't. Novel concept: paying people for doing their jobs instead of for having jobs.](/assets/images/faq/faq-section-what-if-countries-cheat-bw-academic.jpg)
 
-**Response**: The system doesn't rely on trust. (Good, because you have none.) It relies on incentives.
+**Response**: You're right not to trust governments to keep promises. Most treaties fail for exactly this reason. Trust is a terrible enforcement mechanism.
+
+Which is why this system doesn't use it.
 
 - **Politicians who comply** receive [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) benefits: campaign funding and post-office career opportunities
 - **Politicians who don't comply** get nothing
 - **Contributions are public** on blockchain, so compliance is verifiable
 - **Smart contracts** route benefits automatically to compliant participants
 
-Traditional treaties rely on trust and shame. This one makes compliance the career-maximizing choice. Politicians comply because it's profitable, not because they grew a conscience. (They didn't.)
+Traditional treaties rely on trust and shame. This one makes compliance the career-maximizing choice. The system assumes the worst about human nature and designs around it. Your cynicism about politicians isn't an objection; it's the engineering requirement.
 
 ## "You Can't Cure Aging"
 
@@ -269,7 +275,11 @@ You're not declaring war on disease. You're declaring peace with biology. Then l
 
 ![Current lobbying: pay politicians, get wars. New lobbying: pay politicians, get cures. Same corruption, better outcome. It's called optimization.](/assets/images/faq/faq-section-this-sounds-like-bribery-bw-academic.jpg)
 
-**Response**: Current "legal" lobbying is bribery with better stationery. It currently produces war, disease, and existential risk. This applies the same mechanics, transparently, to save lives instead. The status quo kills people. This kills fewer people. If you're confused about the ethics, count the bodies.
+**Response**: You're describing lobbying. And yes, the mechanics are identical. Same K Street firms, same campaign contributions, same revolving door.
+
+The difference is what it buys. Current lobbying buys $1 trillion in defense contracts and a pharmaceutical system optimized for chronic treatment over cures. This uses the same mechanics, transparently, to fund clinical trials instead.
+
+Same tool. Opposite direction. The tool was never the problem.
 
 ## "It's Unenforceable"
 
