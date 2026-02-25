@@ -15,9 +15,7 @@ podcast-image: /assets/podcast/fda-is-unsafe-and-ineffective-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 In 1962, your Congress decided that after proving a drug won't kill you, sick people should wait another {{< var efficacy_lag_years >}} before they're allowed to take it. The drug passed safety testing. It won't kill you, won't melt your liver, won't make your hair migrate to your back. But you can't have it, because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You're not allowed to volunteer for the trials that would answer that question faster, either. You are, however, allowed to die. This was called "safety."
 
-On Wishonia, when we confirm something won't harm you (no organ damage, no mutations, no growing a second head), we let you try it. On Earth, you lock it in a cabinet and form a committee. The committee meets quarterly. You decompose on a different schedule.
-
-Then, during those {{< var efficacy_lag_years >}} of efficacy testing, the drugs are tested on 3,000 young, healthy volunteers (excluding the sick, elderly, and anyone on other medications). The very people dying from the disease are banned from the trials testing treatments for their disease. When the drug is finally approved, it's prescribed to millions of actual sick people, where the problems finally show up. It's like testing sunscreen on people who live in caves, then acting surprised when it fails outdoors.
+On Wishonia, when we confirm something won't harm you, we let you try it. On Earth, you lock it in a cabinet and form a committee. The committee meets quarterly. You decompose on a different schedule.
 
 ## A Note on Blame
 
@@ -52,11 +50,7 @@ The current system costs **{{< var dfda_trial_cost_reduction_factor >}} more** a
 Here's where your lifespan goes to die:
 
 - **Phase I (Safety Testing):** {{< var phase_1_safety_duration_years >}} - Tests if the drug harms people: death, organ damage, mutations, serious adverse reactions, all the ways a molecule can ruin your day. *This part works. Keep it.*
-- **Phase II/III (Efficacy Testing):** {{< var efficacy_lag_years >}} - The drug is now *known safe*. But patients can't have it. Instead, it's tested on young, healthy volunteers to see if it works better than placebo. The sick people who actually need the drug are excluded from the trial, and access is blocked until the committee is satisfied. *This is where people die waiting for a drug that already passed every safety check your species invented. Not because efficacy testing is bad, but because you do it on the wrong people and lock everyone else out while you wait.*
-
-The math is simple: If you die in year 5 and the drug that passed every safety screen gets approved in year 10, the regulatory process murdered you. Not hypothetically. You are dead because a committee decided that confirming efficacy was more important than your continued existence.
-
-That's {{< var efficacy_lag_years >}} sitting in regulatory purgatory *after* we already know the drug won't harm you. No toxicity. No organ failure. No spontaneous extra limbs. The solution isn't to skip efficacy testing. It's to stop using it as a reason to block access. On Wishonia, when we confirm a substance is safe, we make it available with real-time outcome tracking so we learn if it works from the millions who take it (all of whom volunteered), not from 3,000 hand-picked healthy people in a controlled environment that resembles no actual patient's life. We get *more* efficacy data, *faster*, from *real patients*, while *nobody dies in a queue*.
+- **Phase II/III (Efficacy Testing):** {{< var efficacy_lag_years >}} - The drug is now *known safe*. But patients can't have it until the committee is satisfied. *This is where people die waiting for a drug that already passed every safety check your species invented.*
 
 You invented science yesterday, cosmically speaking.
 Nearly every study ends with "more research is needed," which is scientist for "please keep paying us while we figure out what we're looking at."
@@ -90,7 +84,7 @@ Even if you think historical analysis is just opinions with footnotes, the curre
 7. The FDA approves the cure
 8. Pharmaceutical companies charge your widow $10,000 per pill
 
-On Wishonia, this sequence would be considered a war crime. On Earth, it's called "the approval process." Beautiful system if you're a mortician or bankruptcy lawyer.
+Beautiful system if you're a mortician or bankruptcy lawyer.
 
 {{< var drug_discovery_to_approval_years >}} from discovery to patient. That's longer than it took to build the pyramids. Those involved moving rocks the size of houses without machinery (also the pharaohs didn't have to file quarterly progress reports in triplicate).
 
@@ -218,8 +212,6 @@ Dead patients don't testify before Congress.
 
 ## Clinical Trial Theater: Excluding {{< var antidepressant_trial_exclusion_rate >}} of Reality Makes Drugs More Dangerous
 
-Here is the part I find most baffling about your species. You block dying patients from accessing known-safe drugs because you need to "test efficacy first." Then you *also* block those dying patients from the efficacy trials. So they can't take the drug, and they can't participate in the test that would let them take the drug. They can, however, die. Nobody blocks that.
-
 The FDA requires rigorous trials to ensure safety. Then it tests the drugs on people who aren't sick, aren't old, aren't on other drugs, and aren't pregnant. Basically, it tests drugs on triathletes and then acts surprised when grandma has a reaction.
 
 ![They test drugs on healthy people, then give them to sick people. It's like testing a ladder on Olympic gymnasts, then selling it to your grandmother.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-clinical-trial-theater-excluding-86-1-of-reality-makes-drugs-bw-academic.jpg)
@@ -328,7 +320,7 @@ Except people died.
 
 ## The Bottom Line
 
-The post-safety efficacy lag is {{< var efficacy_lag_years >}}. During that lag, {{< var dfda_efficacy_lag_elimination_deaths_averted >}} died, {{< var dfda_efficacy_lag_elimination_dalys >}} of healthy life were destroyed, and the economic cost reached {{< var dfda_efficacy_lag_elimination_economic_value >}}. For every 1 unit of harm the delay prevented, it created {{< var type_ii_error_cost_ratio >}} units of harm through blocking access. It is not a safety system. It is a filing system that produces corpses as a byproduct.
+For every 1 unit of harm the current system prevents, it creates {{< var type_ii_error_cost_ratio >}} units through delay. It is not a safety system. It is a filing system that produces corpses as a byproduct.
 
 ![It takes 8.2 years to prove a drug works. During those 8.2 years, 3,000 people die for every one person the delay might save. You're very bad at math.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bottom-line-bw-academic.jpg)
 
