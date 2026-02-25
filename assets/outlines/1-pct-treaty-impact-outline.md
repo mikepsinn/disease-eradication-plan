@@ -2,7 +2,7 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 3 | **Words:** 27,791 | **Images:** 87 | **Est. Pages:** ~155
+**Files:** 3 | **Words:** 27,808 | **Images:** 87 | **Est. Pages:** ~155
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
@@ -281,5 +281,5 @@
 
 #### knowledge/references.qmd
 **Title:** Source Quotes and References
-**Description:** Bibliography and citations for all sources cited
-**Stats:** 62 words | 22 lines | 1 images | ~1p
+**Description:** Every claim in this book has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.
+**Stats:** 79 words | 22 lines | 1 images | ~1p

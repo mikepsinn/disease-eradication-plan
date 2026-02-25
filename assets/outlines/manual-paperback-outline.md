@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 28 | **Words:** 67,563 | **Images:** 372 | **Est. Pages:** ~456
+**Files:** 28 | **Words:** 68,394 | **Images:** 372 | **Est. Pages:** ~460
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 5,217 words | 460 lines | 12 images | ~27p
+**Stats:** 5,382 words | 466 lines | 12 images | ~28p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Beautiful Inefficiency of the Human Economy
@@ -25,7 +25,7 @@
   - The Solution
     - [A 1% Treaty](/knowledge/solution/1-percent-treaty.qmd)
     ![Still enough left to murder everyone 20 times](/assets/images/index-manual/index-manual-section-a-1-treaty-bw-academic.jpg)
-    - Your [dFDA](/knowledge/solution/dfda.qmd)
+    - Your [Decentralized FDA](/knowledge/solution/dfda.qmd)
       - Safer Than the FDA
       - Treatment Rankings
     ![Which pills work better than other pills, in list form. Like a leaderboard for not dying.](/assets/images/dfda-comparative-effectiveness-ranking-search.png)
@@ -60,8 +60,8 @@
 
 #### knowledge/problem/nih-fails-2-institute-health.qmd
 **Title:** NIH Fails to Institute Health
-**Description:** The NIH spends only 3.3% on testing if drugs actually work in humans and almost nothing on highly efficient pragmatic trials. This misallocation costs ~100 million quality-adjusted life-years annually.
-**Stats:** 1,959 words | 214 lines | 14 images | ~15p
+**Description:** The National Institutes of Health spends 96.7% of its budget on everything except testing whether drugs work in humans. It's like a fire department that spends 96.7% of its budget on fire-themed calendars and 3.3% on water.
+**Stats:** 1,967 words | 214 lines | 14 images | ~15p
 
   - The Allocation Scandal
     ![The NIH spends 85 percent on research and 3 percent on humans. Apparently mice are more important.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
@@ -95,8 +95,8 @@
 
 #### knowledge/problem/untapped-therapeutic-frontier.qmd
 **Title:** The Untapped Therapeutic Frontier
-**Description:** You've explored less than 1% of medicine. The other 99% is where the cures are.
-**Stats:** 2,105 words | 193 lines | 15 images | ~16p
+**Description:** There are 9 million possible drug-disease combinations. You've tested 30,000. That's like searching for your keys in 0.3% of your house and declaring them lost. The other 99.7% is sitting right there, untested, because paperwork.
+**Stats:** 2,125 words | 193 lines | 15 images | ~16p
 
   - Your Tiny Sandbox
     ![Twenty thousand drug products, but only 9,500 unique ingredients. It's like having 20,000 sandwiches but only 9,500 types of bread. You keep repackaging the same bread.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-your-tiny-sandbox-bw-academic.jpg)
@@ -130,8 +130,8 @@
 
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
-**Description:** How blocking patient access during 8+ years of efficacy testing made clinical trials 34x more expensive per patient while making drugs demonstrably more dangerous.
-**Stats:** 3,838 words | 344 lines | 22 images | ~26p
+**Description:** Dying patients can't access drugs that already passed every safety test. They also can't join the trials testing those drugs. They can, however, die. Nobody blocks that.
+**Stats:** 3,841 words | 344 lines | 22 images | ~26p
 
   - A Note on Blame
   - "But What About Safety?"
@@ -181,8 +181,8 @@
 
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
-**Description:** Why democracy mathematically serves money over voters, and how to exploit that bug
-**Stats:** 1,982 words | 188 lines | 9 images | ~12p
+**Description:** Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get a 22,000% return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.
+**Stats:** 2,008 words | 188 lines | 9 images | ~13p
 
   - What Democracy Should Look Like vs Reality
     ![In theory, voter support determines which laws pass. In reality, voter support has zero effect. You keep voting anyway. It's like writing letters to Santa but for taxes.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-princeton-policy-study-chart-bw-academic.jpg)
@@ -207,8 +207,8 @@
 
 #### knowledge/economics/central-banks.qmd
 **Title:** How Central Banks Fund Your Death
-**Description:** The War Machine's ATM: How every fiat currency in history has been devalued to fund unpopular wars, and how to bypass the system.
-**Stats:** 1,466 words | 187 lines | 12 images | ~12p
+**Description:** Every fiat currency in history has been devalued to fund wars nobody voted for. Your savings lose value each year to pay for bombs you didn't order. Here's how central banks quietly tax you to fund the war machine, and what to do about it.
+**Stats:** 1,488 words | 187 lines | 12 images | ~12p
 
   - The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
     - Revolutionary France (1790s)
@@ -243,8 +243,8 @@
 
 #### knowledge/problem/genetic-slavery.qmd
 **Title:** Genetic Slavery
-**Description:** An exploration of how our genes use pain and pleasure to enslave us, forcing actions inconsistent with our rational ethics.
-**Stats:** 2,398 words | 233 lines | 12 images | ~16p
+**Description:** You're running 200,000-year-old software on modern hardware. Your brain was designed for running from lions; now it runs from emails, craves sugar that's everywhere, fears strangers it needs to cooperate with, and builds nuclear weapons using the same instinct that once made it good at throwing rocks.
+**Stats:** 2,425 words | 233 lines | 12 images | ~16p
 
   - The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)
     ![Your brain was designed for running from lions. Now it runs from emails. The hardware hasn't caught up.](/assets/images/genetic-slavery/genetic-slavery-section-the-selfish-gene-made-you-illogical-it-was-a-good-idea-at-the-time-bw-academic.jpg)
@@ -277,8 +277,8 @@
 
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
-**Description:** How to Redirect $27.2B from War to Medicine - The complete guide to a 1% treaty, the binding global accord that redirects $27.2B annually from military spending to curing disease while maintaining global security.
-**Stats:** 3,561 words | 407 lines | 21 images | ~25p
+**Description:** You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.8 times and use the savings on medicine. Controversial, apparently.
+**Stats:** 3,546 words | 407 lines | 21 images | ~25p
 
   - The Math
     ![If you take one penny from every dollar spent on bombs and use it for medicine instead, you get 27 billion pennies. Math is wonderful.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-math-bw-academic.jpg)
@@ -341,8 +341,8 @@
 
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
-**Description:** A thin coordination protocol that makes doing the highest-ROI thing toward disease eradication the selfish choice for every actor.
-**Stats:** 3,568 words | 372 lines | 15 images | ~22p
+**Description:** You've been fighting disease like a cat fights a laser pointer: lots of energy, no coordination, nothing caught. This is the plan to make curing disease the most profitable thing every hospital, pharma company, and researcher can do, so they do it by accident while trying to get rich.
+**Stats:** 3,598 words | 372 lines | 15 images | ~22p
 
   - The Health-Industrial Complex: Coordinating Your War on Disease
     - The Olsonian Problem
@@ -386,8 +386,8 @@
 
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
-**Description:** How to allocate $27.2B and prevent it from getting stolen by parasitic lobbyists and special interests (as is the custom)
-**Stats:** 1,588 words | 140 lines | 4 images | ~8p
+**Description:** How to spend $27 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.
+**Stats:** 1,600 words | 140 lines | 4 images | ~8p
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
     - What the [decentralized framework for drug assessment (dFDA)](dfda.qmd) handles automatically (no voting required):
@@ -405,8 +405,8 @@
 
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
-**Description:** Increasing trial capacity 12.3x (95% CI: 4.2x-61.4x) by giving all patients the right to effortlessly participate in global decentralized clinical trials at 80× lower cost
-**Stats:** 4,012 words | 482 lines | 23 images | ~28p
+**Description:** It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs 80x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.
+**Stats:** 4,034 words | 482 lines | 23 images | ~28p
 
   - The Solution: Consumer Reports for Drugs
     ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
@@ -468,8 +468,8 @@
 
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
-**Description:** How to Make the Right Choice More Profitable Than the Wrong One
-**Stats:** 3,245 words | 387 lines | 22 images | ~24p
+**Description:** Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn 1,810:1 returns on lobbying for wars. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.
+**Stats:** 3,275 words | 387 lines | 22 images | ~24p
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
     - The Offer
@@ -537,8 +537,8 @@
 
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** VICTORY Incentive Alignment Bonds
-**Description:** How to legally bribe politicians into saving lives, and how investors profit from it
-**Stats:** 5,706 words | 610 lines | 39 images | ~42p
+**Description:** War bonds, but backwards. Your grandparents funded WW2 at 4% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.
+**Stats:** 5,715 words | 610 lines | 39 images | ~42p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -632,8 +632,8 @@
 
 #### knowledge/proof/body-as-repairable-machine.qmd
 **Title:** You Are a Meat Robot
-**Description:** Aging, disease, and death are engineering problems with engineering solutions
-**Stats:** 1,675 words | 194 lines | 13 images | ~13p
+**Description:** You can 3D-print a windpipe, reprogram skin cells into brain cells, and restore vision with a single injection. Then you went back to mostly not doing any of that. Fascinating.
+**Stats:** 1,695 words | 194 lines | 13 images | ~13p
 
   - Death is a Technical Problem
     ![Your body fixes itself constantly. When the damage happens faster than the fixes, you call it aging. When it stops happening at all, you call it dying.](/assets/images/body-as-repairable-machine/body-as-repairable-machine-section-death-is-a-technical-problem-bw-academic.jpg)
@@ -666,8 +666,8 @@
 
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
-**Description:** How a civilization murdered itself with machines instead of eradicating diseases and transcending their biology
-**Stats:** 3,458 words | 347 lines | 15 images | ~21p
+**Description:** A planet had every tool needed to cure disease and chose to build weapons instead. They went extinct. Their last words were 'but the economy.' This is a bedtime story for civilizations that can't do math.
+**Stats:** 3,479 words | 347 lines | 15 images | ~21p
 
     ![Earth is exactly 47 years behind Moronia. Like following someone off a cliff, but slower.](/assets/images/moronia/moronia-section-the-discovery-and-why-i-regret-making-it-bw-academic.jpg)
   - What I Tried to Tell Them
@@ -709,8 +709,8 @@
 
 #### knowledge/futures/wishonia.qmd
 **Title:** Wishonia
-**Description:** How My Planet Works and Why You Should Copy Our Homework
-**Stats:** 2,685 words | 285 lines | 16 images | ~19p
+**Description:** On one planet, citizens allocate the budget directly, lobbyists don't exist, and disease was eradicated 2,000 years ago. It uses the same technology you have. The difference is they pointed it at biology instead of each other.
+**Stats:** 2,711 words | 285 lines | 16 images | ~19p
 
   - How My Planet Works
     ![Earth: everyone fights over scraps. Wishonia: robot does math, nobody dies. Tough choice.](/assets/images/wishonia/wishonia-section-how-my-planet-works-bw-academic.jpg)
@@ -746,8 +746,8 @@
 
 #### knowledge/appendix/faq.qmd
 **Title:** Frequently Asked Objections
-**Description:** For the Reasonably Skeptical
-**Stats:** 3,195 words | 348 lines | 23 images | ~24p
+**Description:** Every objection to this plan is technically correct. You can't cut military spending (you keep 99%). Pharma will fight threats to profits (they profit more under this system). Politicians follow money, not morality (so does this plan). Seventeen reasonable concerns that accidentally make the case for the thing they're objecting to.
+**Stats:** 3,368 words | 358 lines | 23 images | ~25p
 
   - "We Need the Military Budget"
     ![What 1 percent of military spending buys: fewer tanks, more cured diseases, and soft power. Turns out healthy people like you more than people you bombed.](/assets/images/faq/faq-section-we-need-the-military-budget-bw-academic.jpg)
@@ -798,8 +798,8 @@
 
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
-**Description:** Step-by-step instructions for bootstrapping a global revolution by bribing everyone into accidentally saving humanity while getting rich.
-**Stats:** 3,128 words | 284 lines | 17 images | ~21p
+**Description:** Defense contractors earn 8% returns killing people. This plan offers 272% returns not killing people. Here are the exact steps from incorporating a nonprofit to ratifying an international treaty, with a budget for every phase.
+**Stats:** 3,146 words | 284 lines | 17 images | ~21p
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     ![How to stop spending money on death and start spending it on life, in three simple steps. You'd think this would be obvious.](/assets/images/roadmap/roadmap-section-high-level-strategy-the-three-step-recipe-for-not-dying-bw-academic.jpg)
@@ -845,8 +845,8 @@
 
 #### knowledge/strategy/global-referendum.qmd
 **Title:** Global Referendum Strategy
-**Description:** How to get 280 million people to click a button, prove they're real, and make politicians nervous.
-**Stats:** 1,627 words | 163 lines | 10 images | ~12p
+**Description:** Humanity downloaded TikTok 2 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.
+**Stats:** 1,637 words | 163 lines | 10 images | ~12p
 
   - What You're Actually Building
     - The Goal
@@ -870,8 +870,8 @@
 
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis
-**Description:** Real-world evidence that getting a global treaty signed costs $90M, not billions
-**Stats:** 2,084 words | 203 lines | 10 images | ~13p
+**Description:** Previous treaties failed because they ran on guilt. Guilt has terrible fuel efficiency. This one runs on greed, which is (regrettably) humanity's only reliable fuel source.
+**Stats:** 2,098 words | 203 lines | 10 images | ~13p
 
   - What Treaties Actually Cost
     - Inflation-Adjusted to 2024 Dollars
@@ -904,8 +904,8 @@
 
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
-**Description:** What happens when you build 1% fewer things that explode
-**Stats:** 1,425 words | 154 lines | 7 images | ~9p
+**Description:** Your government spends more on camouflage paint than on curing Alzheimer's. Move 1% of the bomb budget to medicine: $27.2 billion for clinical trials, plus $114 billion saved by slightly fewer explosions. The worst-case scenario is still the largest increase in medical research in history.
+**Stats:** 1,460 words | 154 lines | 7 images | ~9p
 
   - How 1% Less Violence Pays For Everything
     ![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
@@ -928,8 +928,8 @@
 
 #### knowledge/economics/health-dividend.qmd
 **Title:** Health Dividend
-**Description:** How a $40M (95% CI: $27.3M-$55.6M) framework generates $58.6B (95% CI: $49.2B-$73.1B) in annual savings through 80x cost reduction
-**Stats:** 942 words | 92 lines | 5 images | ~6p
+**Description:** 6.65 thousand diseases (95% CI: 5.70 thousand diseases-8.24 thousand diseases) diseases have zero approved treatments. At your current pace, you'll get to all of them in 443 years (95% CI: 324 years-712 years). Redirect 1% of military spending and it drops to 36 years (95% CI: 11.6 years-77.1 years), preventing 10.7 billion deaths (95% CI: 7.40 billion deaths-16.2 billion deaths) deaths at 50.3kx (95% CI: 23.8kx-111.7kx) the cost-effectiveness of anti-malaria bed nets. The whole thing costs less per year to run than Halloween costumes for dogs. But sure, take your time.
+**Stats:** 999 words | 92 lines | 5 images | ~6p
 
   - The Math: From $41K (95% CI: $20K-$120K) to $500 (95% CI: $400-$2.50K)
   - Where the $58.6B (95% CI: $49.2B-$73.1B) Comes From
@@ -944,8 +944,8 @@
 
 #### knowledge/economics/financial-plan.qmd
 **Title:** Financial Plan
-**Description:** High-level overview of how to fund, spend, and manage the financial flows required to pass a 1% treaty and operate the 1% Treaty Fund.
-**Stats:** 1,378 words | 145 lines | 7 images | ~9p
+**Description:** Invest $1B. Pass a treaty. Manage $27B/year forever. 80% cures diseases, 10% pays investors, 10% keeps politicians obedient. Three pillars, no committees, no generosity required.
+**Stats:** 1,379 words | 145 lines | 7 images | ~9p
 
   - Pillar 1: Fundraising (Raise $1B)
     ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
@@ -965,8 +965,8 @@
 
 #### knowledge/strategy/nonprofit-coalition-strategy.qmd
 **Title:** Why Every Nonprofit Should Support a 1% treaty
-**Description:** The strategic case for nonprofit coalition-building around a 1% treaty - escaping zero-sum competition through resource reallocation.
-**Stats:** 2,648 words | 334 lines | 11 images | ~16p
+**Description:** Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.
+**Stats:** 2,671 words | 334 lines | 11 images | ~16p
 
   - The Single Highest-ROI Intervention Available
     ![War causes poverty, climate collapse, and disease. Humans look at diagram, nod knowingly, increase war budget.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-war-as-the-upstream-driver-bw-academic.jpg)
@@ -1001,8 +1001,8 @@
 
 #### knowledge/legal/legal-framework.qmd
 **Title:** Legal Architecture
-**Description:** How to Stay Out of Prison While Revolutionizing Global Healthcare
-**Stats:** 1,711 words | 197 lines | 16 images | ~15p
+**Description:** Bribing politicians is illegal unless you call it 'lobbying' or 'campaign contributions.' Then it's protected speech. Here's the legal architecture for saving humanity using your own ridiculous laws.
+**Stats:** 1,729 words | 197 lines | 16 images | ~15p
 
   - Entity #1: Your 501(c)(3) Public Charity ("The Brain")
     - What It Does
@@ -1038,8 +1038,8 @@
 
 #### knowledge/appendix/recruitment-and-propaganda-plan.qmd
 **Title:** Recruitment & Propaganda Plan
-**Description:** How to build an army of people who don't want to die (surprisingly difficult)
-**Stats:** 803 words | 83 lines | 1 images | ~4p
+**Description:** You want to end war and disease but don't have a nonprofit, a bank account, or anything to offer anyone. Here's how to recruit 100,000 humans before you have anything except an argument. It's a Kickstarter where the reward tier is 'possibly not dying,' which is the most compelling crowdfunding offer in history.
+**Stats:** 842 words | 83 lines | 1 images | ~4p
 
   - The Bootstrapping Problem
   - Three Types of Allies
@@ -1053,8 +1053,8 @@
 
 #### knowledge/references.qmd
 **Title:** Source Quotes and References
-**Description:** Bibliography and citations for all sources cited
-**Stats:** 62 words | 22 lines | 1 images | ~1p
+**Description:** Every claim in this book has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.
+**Stats:** 79 words | 22 lines | 1 images | ~1p
 
 #### knowledge/appendix/copyright.qmd
 **Title:** Copyright

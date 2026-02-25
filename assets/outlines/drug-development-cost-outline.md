@@ -2,7 +2,7 @@
 
 **Config:** _quarto-drug-development-cost.yml
 **Type:** book
-**Files:** 2 | **Words:** 3,333 | **Images:** 16 | **Est. Pages:** ~21
+**Files:** 2 | **Words:** 3,350 | **Images:** 16 | **Est. Pages:** ~21
 
 #### knowledge/appendix/drug-development-cost-analysis.qmd
 **Title:** Drug Development Cost Increase Analysis
@@ -63,5 +63,5 @@
 
 #### knowledge/references.qmd
 **Title:** Source Quotes and References
-**Description:** Bibliography and citations for all sources cited
-**Stats:** 62 words | 22 lines | 1 images | ~1p
+**Description:** Every claim in this book has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.
+**Stats:** 79 words | 22 lines | 1 images | ~1p

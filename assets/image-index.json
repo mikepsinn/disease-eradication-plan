@@ -1,7 +1,7 @@
 {
-  "totalImages": 2601,
-  "totalSizeBytes": 1278566062,
-  "totalSize": "1219.3 MB",
+  "totalImages": 2603,
+  "totalSizeBytes": 1279262237,
+  "totalSize": "1220.0 MB",
   "images": [
     {
       "path": "assets/cover/a-1970s-retro-futuristic-book-cover-how-to-end-war-and-disease.jpeg",
@@ -252,6 +252,43 @@
         "cover",
         "book"
       ]
+    },
+    {
+      "path": "assets/cover/h2ewd-linkedin-banner-1584x396.jpg",
+      "filename": "h2ewd-linkedin-banner-1584x396.jpg",
+      "extension": "jpg",
+      "sizeBytes": 286277,
+      "size": "279.6 KB",
+      "width": 1264,
+      "height": 848,
+      "format": "jpeg",
+      "aspectRatio": "79:53",
+      "imageType": "cover",
+      "generationPrompt": "[EDITED] Resize and recompose this image to fit a LinkedIn banner format (1584x396 pixels, very wide 4:1 aspect ratio). Keep the title 'How to End War and Disease' prominently readable. Maintain the retro-futuristic sci-fi style with the planets, DNA helix, earth, and utopian city. Make sure all key visual elements are visible and well-composed for the extreme wide format.",
+      "transcript": "HOW TO END WAR AND DISEASE",
+      "metadataCreatedAt": "2026-02-24T04:30:44.432Z",
+      "title": "book-cover-wide.png",
+      "description": "",
+      "keywords": [],
+      "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/cover/podcast-cover.jpg",
+      "filename": "podcast-cover.jpg",
+      "extension": "jpg",
+      "sizeBytes": 175704,
+      "size": "171.6 KB",
+      "width": 1024,
+      "height": 1024,
+      "format": "jpeg",
+      "aspectRatio": "1:1",
+      "imageType": "cover",
+      "title": "h2ewd-cover.png",
+      "description": "",
+      "keywords": [],
+      "generationPrompt": "[EDITED] Recompose this book cover into a perfect square format (1:1 aspect ratio). Keep the title 'How to End War and Disease' prominent and centered. Keep the retro sun rays, rainbow arc, and tron grid. Include 'A Practical Guide' and 'by Wishonia - Translated by Mike P. Sinn' at the bottom. Maintain the exact same 70s retro sci-fi style. The image must be exactly square.",
+      "transcript": "How to End War and Disease\nA Practical Guide\nby Wishonia — Translated by Mike P. Sinn",
+      "imageProblemsDetected": false
     },
     {
       "path": "assets/curedao/curedao-icon-square.jpg",
