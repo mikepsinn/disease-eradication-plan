@@ -226,7 +226,7 @@ The data would be better too. More diverse. More representative. Collected from 
 
 ## The Bottom Line
 
-**{{< var current_trial_slots_available >}} people a year (drug trials, IQVIA 2022), at a cost of $43,684 each.**
+**{{< var current_trial_slots_available_nounit >}} people a year (drug trials, IQVIA 2022), at a cost of $43,684 each.**
 
 Or **~5 million** if you count all clinical research (observational, device, behavioral) at **$16,600 each**.
 

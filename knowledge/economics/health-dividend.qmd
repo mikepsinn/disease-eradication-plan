@@ -1,6 +1,6 @@
 ---
 title: Health Dividend
-description: '{{< var diseases_without_effective_treatment >}} diseases have zero approved treatments. At your current pace, you''ll get to all of them in {{< var status_quo_queue_clearance_years >}}. Redirect {{< var treaty_reduction_pct >}} of military spending and it drops to {{< var dfda_queue_clearance_years >}}, preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} deaths at {{< var treaty_vs_bed_nets_multiplier >}} the cost-effectiveness of anti-malaria bed nets. The whole thing costs less per year to run than Halloween costumes for dogs. But sure, take your time.'
+description: '{{< var diseases_without_effective_treatment >}} have zero approved treatments. At your current pace, you''ll get to all of them in {{< var status_quo_queue_clearance_years >}}. Redirect {{< var treaty_reduction_pct >}} of military spending and it drops to {{< var dfda_queue_clearance_years >}}, preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} at {{< var treaty_vs_bed_nets_multiplier >}} the cost-effectiveness of anti-malaria bed nets. The whole thing costs less per year to run than Halloween costumes for dogs. But sure, take your time.'
 published: true
 tags:
   - dfda
@@ -51,7 +51,7 @@ Baseline estimate: {{< var dfda_trial_cost_reduction_pct >}} efficiency gains ac
 
 ![With 58.6 billion, you could run 10,000 trials and address 7,000 rare diseases. Currently you're spending that much to run far fewer trials for common diseases. Priorities.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
 
-Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}} per year. That is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself. Staggering. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test far more treatments at once.
+Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] in market value. The FDA approves roughly {{< var current_drug_approvals_per_year >}}. That is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself. Staggering. With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could test far more treatments at once.
 
 With the money saved every year, you could:
 

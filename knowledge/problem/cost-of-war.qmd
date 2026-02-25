@@ -120,7 +120,7 @@ Two government agencies, both American, cannot agree on what you are worth. A fo
 
 **Total Human Cost: {{< var global_annual_human_life_losses_conflict >}} annually**
 
-{{< var global_annual_conflict_deaths_total >}} people die in conflicts each year.
+{{< var global_annual_conflict_deaths_total_nounit >}} people die in conflicts each year.
 That is 670 people every day.
 One every 2.2 minutes.
 Each worth \$10 million, apparently.

@@ -13,7 +13,7 @@ abstract: |
   cost barriers; (2) Future timeline shift: an additional
   {{< var dfda_efficacy_lag_elimination_deaths_averted >}} will eventually die because the disease
   eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. Combined, these
-  represent {{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years when
+  represent {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years when
   adjusted for morbidity, with a cumulative economic deadweight loss of approximately
   {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 USD). The societal cost of Type II
   Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I
@@ -43,7 +43,7 @@ podcast-image: /assets/podcast/invisible-graveyard-podcast.jpg
 
 The 1962 Kefauver-Harris Amendments require a {{< var efficacy_lag_years >}} efficacy delay after drugs are proven safe. This creates two distinct mortality costs:
 
-1. **Historical deaths (1962-2024):** {{< var existing_drugs_efficacy_lag_deaths_total >}} people died waiting for approved drugs during their approval process - a **lower bound** excluding drugs never developed due to cost barriers
+1. **Historical deaths (1962-2024):** {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people died waiting for approved drugs during their approval process - a **lower bound** excluding drugs never developed due to cost barriers
 2. **Future timeline shift (under cascade assumption):** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} additional deaths will occur because the entire disease eradication timeline is pushed back by {{< var efficacy_lag_years >}}
 
 **The ratio:** Type II errors (blocking effective drugs) cost {{< var type_ii_error_cost_ratio >}} more lives than Type I errors (approving dangerous drugs) prevent.
@@ -70,7 +70,7 @@ Using data from the Tufts Center for the Study of Drug Development (CSDD) and th
 
 {{< include ../figures/tornado-existing_drugs_efficacy_lag_deaths_total.qmd >}}
 
-Combined, these represent **{{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years (DALYs)** when adjusted for morbidity. All estimates include Monte Carlo confidence intervals.
+Combined, these represent **{{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years (DALYs)** when adjusted for morbidity. All estimates include Monte Carlo confidence intervals.
 
 Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var dfda_efficacy_lag_elimination_economic_value >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}**.
 
@@ -369,7 +369,7 @@ The YLD calculation above captures suffering *before death* for those who ultima
 
 ## Distinction: Mortality vs. Morbidity Burden
 
-The "{{< var pharma_lives_saved_annual >}} lives saved annually" from Lichtenberg's analysis captures mortality - people who would have *died* without post-1962 drugs. But pharmaceutical treatments primarily improve quality of life for people with *non-terminal* chronic conditions: diabetes, hypertension, depression, COPD, arthritis, and cardiovascular disease.
+The "{{< var pharma_lives_saved_annual_nounit >}} lives saved annually" from Lichtenberg's analysis captures mortality - people who would have *died* without post-1962 drugs. But pharmaceutical treatments primarily improve quality of life for people with *non-terminal* chronic conditions: diabetes, hypertension, depression, COPD, arthritis, and cardiovascular disease.
 
 **Treatment beneficiaries vastly exceed mortality beneficiaries.**
 

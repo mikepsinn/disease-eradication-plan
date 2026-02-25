@@ -164,7 +164,7 @@ $$H_{lost} \text{ (Healthy Years Lost)} = D_{total} \times Y_{lost}$$
 
 ##### Step-by-Step for the 5th Grader
 
-1.  Those {{< var dfda_efficacy_lag_elimination_deaths_averted >}} people didn't just die; they missed out on decades of life.
+1.  Those {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} people didn't just die; they missed out on decades of life.
 2.  If you add up all the birthdays they missed, it equals **{{< var dfda_efficacy_lag_elimination_dalys >}}**.
 3.  That is more time than the Earth has existed (4.5 Billion years).
 

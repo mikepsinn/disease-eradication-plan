@@ -54,7 +54,7 @@ def convert_qmd_to_html(path: str) -> str:
     return path
 
 
-def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", include_citation: bool = False) -> str:
+def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", include_citation: bool = False, include_unit: bool = True) -> str:
     """
     Generate HTML link with tooltip for a parameter.
 
@@ -63,6 +63,7 @@ def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", i
         value: The numeric value (may be Parameter instance with metadata)
         comment: Optional comment from parameters.py
         include_citation: If True, append Quarto citation [@key] for external sources
+        include_unit: If False, omit unit text from the formatted value (for _nounit variants)
 
     Returns:
         HTML string with formatted value, clickable link, and tooltip
@@ -75,7 +76,7 @@ def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", i
     if hasattr(value, "display_value") and value.display_value:
         formatted_value = value.display_value
     else:
-        formatted_value = format_parameter_value(value, unit, include_unit=True, ratio_suffix=False)
+        formatted_value = format_parameter_value(value, unit, include_unit=include_unit, ratio_suffix=False)
 
     # Check if value is a Parameter instance with source metadata
     has_source = hasattr(value, "source_ref") and value.source_ref

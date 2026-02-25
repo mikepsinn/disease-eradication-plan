@@ -173,6 +173,34 @@ class ValueWithCI:
         return float(self._original)
 
 
+def _format_ci_display(central_value: float, unit: str | None,
+                       ci_low: float, ci_high: float,
+                       include_unit: bool = True) -> str:
+    """Format a value with 95% CI as a display string.
+
+    Args:
+        central_value: The central/deterministic value.
+        ci_low: Lower bound of confidence interval.
+        ci_high: Upper bound of confidence interval.
+        unit: Unit string (e.g. "deaths", "USD").
+        include_unit: Whether to include the unit text in the formatted output.
+
+    Returns:
+        String like "416 million deaths (95% CI: 225 million deaths-630 million deaths)"
+        or without units: "416 million (95% CI: 225 million-630 million)"
+    """
+    central_formatted = format_parameter_value(central_value, unit, include_unit=include_unit, ratio_suffix=False)
+
+    if unit == "percentage":
+        ci_low_formatted = f"{ci_low * 100:.0f}%"
+        ci_high_formatted = f"{ci_high * 100:.0f}%"
+    else:
+        ci_low_formatted = format_parameter_value(ci_low, unit, include_unit=include_unit, ratio_suffix=False)
+        ci_high_formatted = format_parameter_value(ci_high, unit, include_unit=include_unit, ratio_suffix=False)
+
+    return f"{central_formatted} (95% CI: {ci_low_formatted}-{ci_high_formatted})"
+
+
 def generate_variables_yml(
     parameters: Dict[str, Dict[str, Any]],
     output_path: Path,
@@ -234,26 +262,16 @@ def generate_variables_yml(
         # This is preferred as it represents the author's judgment about plausible ranges
         specified_ci = getattr(value, "confidence_interval", None)
 
+        # Track CI bounds for reuse in _nounit variant
+        ci_bounds = None  # (ci_low, ci_high) if meaningful CI exists
+
         if not hide_ci and specified_ci and len(specified_ci) == 2:
             ci_low, ci_high = specified_ci
-            # Check if there's meaningful uncertainty in the specified CI
             has_meaningful_uncertainty = abs(ci_high - ci_low) > 0.001
 
             if has_meaningful_uncertainty:
-                # Format central value WITH unit for cleaner display
-                central_formatted = format_parameter_value(central_value, unit, include_unit=True, ratio_suffix=False)
-
-                # Format CI bounds - for percentages, multiply by 100 and format as percent
-                if unit == "percentage":
-                    ci_low_formatted = f"{ci_low * 100:.0f}%"
-                    ci_high_formatted = f"{ci_high * 100:.0f}%"
-                else:
-                    # Include units in CI bounds for clarity
-                    ci_low_formatted = format_parameter_value(ci_low, unit, include_unit=True, ratio_suffix=False)
-                    ci_high_formatted = format_parameter_value(ci_high, unit, include_unit=True, ratio_suffix=False)
-
-                # Embed specified CI in display value: "184.6M deaths (95% CI: 150M deaths-220M deaths)"
-                display_value_with_ci = f"{central_formatted} (95% CI: {ci_low_formatted}-{ci_high_formatted})"
+                ci_bounds = (ci_low, ci_high)
+                display_value_with_ci = _format_ci_display(central_value, unit, ci_low, ci_high, include_unit=True)
                 value_with_ci = ValueWithCI(value, display_value_with_ci)
 
         # Fall back to Monte Carlo derived CI if no specified CI and not hidden
@@ -273,15 +291,8 @@ def generate_variables_yml(
                 has_meaningful_uncertainty = abs(p95 - p5) > 0
 
             if has_meaningful_uncertainty:
-                # Always use deterministic baseline for consistency with tooltips, LaTeX, and parameter-summary.md
-                # The confidence interval will still show Monte Carlo uncertainty range
-                # Include units in all formatted values for cleaner display
-                central_formatted = format_parameter_value(central_value, unit, include_unit=True, ratio_suffix=False)
-                p5_formatted = format_parameter_value(p5, unit, include_unit=True, ratio_suffix=False)
-                p95_formatted = format_parameter_value(p95, unit, include_unit=True, ratio_suffix=False)
-
-                # Embed CI in display value: "184.6M deaths (95% CI: 150M deaths-220M deaths)"
-                display_value_with_ci = f"{central_formatted} (95% CI: {p5_formatted}-{p95_formatted})"
+                ci_bounds = (p5, p95)
+                display_value_with_ci = _format_ci_display(central_value, unit, p5, p95, include_unit=True)
                 value_with_ci = ValueWithCI(value, display_value_with_ci)
 
         # Generate formatted HTML with tooltip
@@ -289,6 +300,20 @@ def generate_variables_yml(
         html_value = generate_html_with_tooltip(param_name, value_with_ci, comment, include_citation=include_inline_citation)
 
         variables[var_name] = html_value
+
+        # Generate _nounit variant if the unit produces visible text
+        # Auto-detect: compare formatted output with and without unit
+        with_unit = format_parameter_value(central_value, unit, include_unit=True, ratio_suffix=False)
+        without_unit = format_parameter_value(central_value, unit, include_unit=False, ratio_suffix=False)
+        if with_unit != without_unit:
+            # Unit produces visible text (e.g. "deaths", "years") - generate _nounit
+            if ci_bounds:
+                nounit_display = _format_ci_display(central_value, unit, ci_bounds[0], ci_bounds[1], include_unit=False)
+                nounit_value = ValueWithCI(value, nounit_display)
+            else:
+                nounit_value = value
+            nounit_html = generate_html_with_tooltip(param_name, nounit_value, comment, include_citation=include_inline_citation, include_unit=False)
+            variables[f"{var_name}_nounit"] = nounit_html
 
         # Export citation key separately for external sources (if mode enabled)
         if citation_mode in ("separate", "both"):
@@ -345,11 +370,13 @@ def generate_variables_yml(
     # Count exports by type BEFORE adding metadata variables
     latex_count = sum(1 for k in variables.keys() if k.endswith("_latex"))
     cite_count = sum(1 for k in variables.keys() if k.endswith("_cite"))
-    param_count = len(variables) - latex_count - cite_count
+    nounit_count = sum(1 for k in variables.keys() if k.endswith("_nounit"))
+    param_count = len(variables) - latex_count - cite_count - nounit_count
 
     # Add metadata variables for use in QMD files
     variables["total_parameter_count"] = str(param_count)
     variables["total_latex_equation_count"] = str(latex_count)
+    variables["total_nounit_variant_count"] = str(nounit_count)
     if citation_mode in ("separate", "both"):
         variables["total_citation_count"] = str(cite_count)
 
@@ -385,6 +412,7 @@ def generate_variables_yml(
 
     logger.debug(f"[OK] Generated {output_path}")
     logger.debug(f"     {param_count} parameters exported")
+    logger.debug(f"     {nounit_count} _nounit variants exported")
     logger.debug(f"     {latex_count} LaTeX equations exported")
     if citation_mode in ("separate", "both"):
         logger.debug(f"     {cite_count} citation keys exported")

@@ -137,7 +137,7 @@ For the complete user-facing vision, see [A Decentralized Framework for Drug Ass
 
 ### The Human Cost of the Current System
 
-Every year, {{< var global_annual_deaths_curable_diseases >}} people die from diseases for which treatments exist or could exist. The tragedy is not that we lack medical knowledge. It's that our system for generating and validating that knowledge operates at a fraction of its potential capacity.
+Every year, {{< var global_annual_deaths_curable_diseases_nounit >}} people die from diseases for which treatments exist or could exist. The tragedy is not that we lack medical knowledge. It's that our system for generating and validating that knowledge operates at a fraction of its potential capacity.
 
 ![While you waited for permission to try new cancer drugs, more people died than in all of World War II. The forms were very thorough though.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-the-human-cost-of-the-current-system-bw-academic.jpg)
 

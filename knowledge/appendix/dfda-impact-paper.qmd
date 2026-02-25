@@ -541,7 +541,7 @@ Efficacy lag elimination ({{< var efficacy_lag_years >}}) is the **smaller** of 
 A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease.org) of post-safety efficacy lag costs (1962-2024) found:
 
 - **Total Deaths**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths over {{< var efficacy_lag_years >}} efficacy lag (1962-2024)
-- **Total DALYs**: {{< var dfda_efficacy_lag_elimination_dalys >}} Disability-Adjusted Life Years lost
+- **Total DALYs**: {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years lost
 - **Total Timeline Shift**: One-time {{< var efficacy_lag_years >}} acceleration in disease eradication
 
 The analysis shows that for every 1 unit of harm the FDA prevents through safety testing, it generates **{{< var type_ii_error_cost_ratio >}} units** of harm through efficacy delay (Type II vs. Type I error ratio).

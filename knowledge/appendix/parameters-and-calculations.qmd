@@ -1,6 +1,6 @@
 ---
-title: Methodology, Parameters, and Calculations
-description: Parameter definitions, formulas, uncertainty ranges, and data sources.
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
 keywords:
   - health economics methodology
   - clinical trial cost analysis
@@ -20,7 +20,6 @@ format:
     toc-depth: 3
     number-sections: false
     code-fold: true
-podcast-image: /assets/podcast/parameters-and-calculations-podcast.jpg
 ---
 
 ::: {.content-visible when-format="epub"}

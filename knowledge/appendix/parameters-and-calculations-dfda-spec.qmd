@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 14 parameters used in the analysis, organized by type:
+This appendix documents all 13 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 9
+- External sources (peer-reviewed): 8
 - Calculated values: 3
 - Core definitions: 2
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (3 parameters) • [External Data Sources](#sec-external) (9 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
+[Calculated Values](#sec-calculated) (3 parameters) • [External Data Sources](#sec-external) (8 parameters) • [Core Definitions](#sec-definitions) (2 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -267,26 +267,6 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 {{< include ../figures/distribution-efficacy_lag_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed • Updated 2021*
-
-:::
-
-### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual deaths from all diseases and aging globally
-
-**Source**: [@who-global-health-estimates-2024]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Normal (SE: 5.00 million deaths/year)
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
-
-*✓ High confidence*
 
 :::
 
