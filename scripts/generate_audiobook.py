@@ -121,6 +121,7 @@ def extract_book_metadata(config: dict) -> dict:
     # Podcast-specific overrides from dih-podcast config section
     podcast = config.get('dih-podcast', {})
     podcast_author = podcast.get('author', author)
+    podcast_description = podcast.get('description', '')
     podcast_description_suffix = podcast.get('description-suffix', '')
 
     return {
@@ -136,6 +137,7 @@ def extract_book_metadata(config: dict) -> dict:
         'site_url': site_url.rstrip('/'),
         'narrator': 'WISHONIA',
         'podcast_author': podcast_author,
+        'podcast_description': podcast_description,
         'podcast_description_suffix': podcast_description_suffix,
     }
 
@@ -814,7 +816,7 @@ def generate_podcast_rss(
 
     title = escape(book_meta['title'])
     author = escape(book_meta.get('podcast_author', book_meta['author']))
-    description = escape(book_meta['description'])
+    description = escape(book_meta.get('podcast_description') or book_meta['description'])
     desc_suffix = book_meta.get('podcast_description_suffix', '')
     narrator = escape(book_meta['narrator'])
     podcast_cover: Path = book_meta['podcast_cover']
@@ -887,7 +889,7 @@ def generate_podcast_rss(
   <channel>
     <title>{title}</title>
     <link>{escape(site_url)}</link>
-    <description>{description}</description>
+    <description>{description + chr(10) + chr(10) + escape(desc_suffix) if desc_suffix else description}</description>
     <language>en-us</language>
     <itunes:author>{author}</itunes:author>
     <itunes:owner>

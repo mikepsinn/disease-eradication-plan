@@ -199,7 +199,7 @@ CONVERT (only these):
 - Bullet lists: one sentence per bullet, keep them as separate paragraphs
 - Condense/improve extremely boring sentences with too many dense numbers or weird units: condense or round or use different unit framings when a run of numbers would sound excruciatingly boring or extremely weird spoken aloud. When in doubt, leave as-is.
 - Acronyms: spell out with dots ("GDP" -> "G.D.P.", "FDA" -> "F.D.A.") EXCEPT acronyms pronounced as words ("PAC", "NATO" stay as-is). 
-- Unfamiliar acronyms: expand acronyms that the average person would not know on first use (for example, "DALYs" -> "disability-adjusted life years, or D.A.L.Y.s"). 
+- Unfamiliar acronyms: expand acronyms that the average person would not know on first use (for example, "DALYs" -> "disability-adjusted life years, or D.A.L.Y.s"). BUT if the text already expands an acronym (e.g., "DALYs (Disability-Adjusted Life Years)"), do NOT expand it again; just add dots to the acronym part.
 - Well-known acronyms (GDP, FDA, NIH, NATO): just add dots, don't expand. "dFDA" always becomes "D.F.D.A." (a decentralized FDA).
 - Strip markdown formatting characters (**, ##, -, etc.)
 

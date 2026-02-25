@@ -2,12 +2,12 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 3 | **Words:** 27,814 | **Images:** 87 | **Est. Pages:** ~155
+**Files:** 3 | **Words:** 27,809 | **Images:** 87 | **Est. Pages:** ~155
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
 **Description:** 6.65 thousand diseases (95% CI: 5.70 thousand diseases-8.24 thousand diseases) have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years (95% CI: 324 years-712 years). Redirecting 1% of military spending scales capacity 12.3x (95% CI: 4.2x-61.4x), cutting the timeline to ~36 years (95% CI: 11.6 years-77.1 years) and preventing 10.7 billion deaths (95% CI: 7.40 billion deaths-16.2 billion deaths). At $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.8kx-111.7kx) more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
-**Stats:** 26,103 words | 2,401 lines | 86 images | ~147p
+**Stats:** 26,098 words | 2,401 lines | 86 images | ~147p
 
   - Abstract
   - Primary Findings
