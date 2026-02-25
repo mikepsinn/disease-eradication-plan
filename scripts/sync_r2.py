@@ -234,7 +234,7 @@ class UploadProgress:
             return
         self.last_print = now
         pct = self.uploaded / self.total * 100 if self.total else 100
-        print(f"\r  ... {format_size(self.uploaded)} / {format_size(self.total)} ({pct:.0f}%)", end="", flush=True)
+        print(f"    ... {format_size(self.uploaded)} / {format_size(self.total)} ({pct:.0f}%)")
 
 
 def collect_files(prefix: str, local_root: Path, patterns: list[str]) -> dict[str, Path]:
@@ -370,7 +370,7 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
             transferred_bytes += size
             continue
 
-        print(f"  [{i}/{len(to_upload)}] [{action}] {key} ({format_size(size)})...", end="", flush=True)
+        print(f"  [{i}/{len(to_upload)}] [{action}] {key} ({format_size(size)})")
         # Use progress callback for files > 10MB
         callback = UploadProgress(size) if size > 10 * 1024 * 1024 else None
         try:
@@ -384,11 +384,10 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
                 },
                 Callback=callback,
             )
-            print(f"\r  [{i}/{len(to_upload)}] [{action}] {key} ({format_size(size)})... OK    ")
             uploaded += 1
             transferred_bytes += size
         except Exception as e:
-            print(f"\r  [{i}/{len(to_upload)}] [{action}] {key} ({format_size(size)})... FAILED: {e}    ")
+            print(f"    FAILED: {e}")
             errors += 1
 
     if to_delete:
@@ -396,12 +395,11 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
             if dry_run:
                 print(f"  [DELETE] {key}")
             else:
-                print(f"  [DELETE] {key}...", end="", flush=True)
+                print(f"  [DELETE] {key}")
                 try:
                     client.delete_object(Bucket=bucket, Key=key)
-                    print(" OK")
                 except Exception as e:
-                    print(f" FAILED: {e}")
+                    print(f"    FAILED: {e}")
                     errors += 1
             deleted += 1
 
