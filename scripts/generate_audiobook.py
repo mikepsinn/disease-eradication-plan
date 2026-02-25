@@ -652,10 +652,11 @@ def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
     temp_path = wav_path.with_suffix('.norm.wav')
 
     # Pass 1: Measure loudness
+    null_out = "NUL" if sys.platform == "win32" else "/dev/null"
     measure_cmd = [
         "ffmpeg", "-y", "-i", str(wav_path),
         "-af", f"loudnorm=I={target_lufs}:TP=-1.5:LRA=11:print_format=json",
-        "-f", "null", "-"
+        "-f", "null", null_out
     ]
     result = subprocess.run(measure_cmd, capture_output=True, text=True)
     if result.returncode != 0:
