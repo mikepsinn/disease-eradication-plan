@@ -1,6 +1,6 @@
 ---
 title: Health Dividend
-description: "{{< var diseases_without_effective_treatment >}} diseases have zero approved treatments. At your current pace, you'll get to all of them in {{< var status_quo_queue_clearance_years >}}. Redirect {{< var treaty_reduction_pct >}} of military spending and it drops to {{< var dfda_queue_clearance_years >}}, preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} deaths at {{< var treaty_vs_bed_nets_multiplier >}} the cost-effectiveness of anti-malaria bed nets. The whole thing costs less per year to run than Halloween costumes for dogs. But sure, take your time."
+description: '{{< var diseases_without_effective_treatment >}} diseases have zero approved treatments. At your current pace, you''ll get to all of them in {{< var status_quo_queue_clearance_years >}}. Redirect {{< var treaty_reduction_pct >}} of military spending and it drops to {{< var dfda_queue_clearance_years >}}, preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} deaths at {{< var treaty_vs_bed_nets_multiplier >}} the cost-effectiveness of anti-malaria bed nets. The whole thing costs less per year to run than Halloween costumes for dogs. But sure, take your time.'
 published: true
 tags:
   - dfda
@@ -9,6 +9,7 @@ tags:
   - cost-reduction
   - economics
 image: /assets/og-images/knowledge/economics/health-dividend-og-retro-academic.jpg
+podcast-image: /assets/podcast/health-dividend-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Disease costs humanity **$397.4 trillion annually** [@disease-economic-burden-109t]. That's more than global GDP ($101 trillion [@global-gdp]). The number sounds wrong because economists spent centuries measuring productivity without accounting for the people who stopped being productive on account of being dead.

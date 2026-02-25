@@ -1,6 +1,6 @@
 ---
 title: The FDA Is Unsafe and Ineffective
-description: "Dying patients can't access drugs that already passed every safety test. They also can't join the trials testing those drugs. They can, however, die. Nobody blocks that."
+description: Dying patients can't access drugs that already passed every safety test. They also can't join the trials testing those drugs. They can, however, die. Nobody blocks that.
 published: true
 tags:
   - problem
@@ -10,6 +10,7 @@ tags:
   - bureaucracy
   - regulatory-capture
 image: /assets/og-images/knowledge/problem/fda-is-unsafe-and-ineffective-og-retro-academic.jpg
+podcast-image: /assets/podcast/fda-is-unsafe-and-ineffective-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 In 1962, your Congress decided that after proving a drug won't kill you, sick people should wait another {{< var efficacy_lag_years >}} before they're allowed to take it. The drug passed safety testing. It won't kill you, won't melt your liver, won't make your hair migrate to your back. But you can't have it, because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You're not allowed to volunteer for the trials that would answer that question faster, either. You are, however, allowed to die. This was called "safety."

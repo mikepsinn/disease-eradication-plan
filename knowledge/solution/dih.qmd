@@ -1,6 +1,6 @@
 ---
 title: Decentralized Institutes of Health
-description: "You've been fighting disease like a cat fights a laser pointer: lots of energy, no coordination, nothing caught. This is the plan to make curing disease the most profitable thing every hospital, pharma company, and researcher can do, so they do it by accident while trying to get rich."
+description: 'You''ve been fighting disease like a cat fights a laser pointer: lots of energy, no coordination, nothing caught. This is the plan to make curing disease the most profitable thing every hospital, pharma company, and researcher can do, so they do it by accident while trying to get rich.'
 published: true
 tags:
   - solution
@@ -10,6 +10,7 @@ tags:
   - funding-model
   - coordination
 image: /assets/og-images/knowledge/solution/dih-og-retro-academic.jpg
+podcast-image: /assets/podcast/dih-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your goal is simple: **eliminate all disease**.

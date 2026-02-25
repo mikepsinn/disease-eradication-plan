@@ -1,6 +1,6 @@
 ---
-title: VICTORY Incentive Alignment Bonds
-description: "War bonds, but backwards. Your grandparents funded WW2 at 4% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet."
+title: Incentive Alignment Bonds
+description: War bonds, but backwards. Your grandparents funded WW2 at 4% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.
 published: true
 tags:
   - financial-instruments
@@ -15,6 +15,7 @@ title-id: sec-victory-bonds
 image: /assets/og-images/knowledge/solution/incentive-alignment-bonds-og-retro-academic.jpg
 aliases:
   - /knowledge/economics/victory-bonds.html
+podcast-image: /assets/podcast/incentive-alignment-bonds-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Aligning Incentives](aligning-incentives.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)

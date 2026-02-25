@@ -1,11 +1,12 @@
 ---
 title: Aligning Incentives
-description: "Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn 1,810:1 returns on lobbying for wars. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target."
+description: Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn 1,810:1 returns on lobbying for wars. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.
 format:
   html:
     toc: true
     toc-depth: 3
 image: /assets/og-images/knowledge/solution/aligning-incentives-og-retro-academic.jpg
+podcast-image: /assets/podcast/aligning-incentives-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) details the specific financial mechanism design.
