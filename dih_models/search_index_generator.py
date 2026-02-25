@@ -298,6 +298,9 @@ class SearchIndexGenerator:
         chapters = config.get('chapters', [])
         qmd_files = []
 
+        # Get index-source fallback (used when index.qmd doesn't exist yet)
+        index_source = config.get('index_source')
+
         def extract_files(chapter_list: List) -> None:
             """Recursively extract QMD files from chapter list."""
             for chapter in chapter_list:
@@ -305,6 +308,11 @@ class SearchIndexGenerator:
                     qmd_path = self.project_root / chapter
                     if qmd_path.exists() and qmd_path.suffix == '.qmd':
                         qmd_files.append(qmd_path)
+                    elif chapter == 'index.qmd' and index_source:
+                        # Fall back to index-source when index.qmd doesn't exist yet
+                        source_path = self.project_root / index_source
+                        if source_path.exists() and source_path.suffix == '.qmd':
+                            qmd_files.append(source_path)
                 elif isinstance(chapter, dict):
                     # Handle various nested structures:
                     # - part: "Title" with chapters: [...]
@@ -484,6 +492,7 @@ class SearchIndexGenerator:
         qmd_files = self.get_qmd_files_for_config(config_name)
         if not qmd_files:
             logger.warning("No QMD files found for %s", config_name)
+            self._index_cache[config_name] = []
             return []
 
         entries = []

@@ -34,12 +34,15 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 |------|----|-------|
 | Raw values | `Parameter(519_000_000, unit="USD")` | `Parameter(519, unit="millions USD")` |
 | Formatting | `{{< var param >}}` | `${{< var param >}}M` |
+| Unit-free | `{{< var param_nounit >}} people` | `{{< var param >}} people` (duplicates unit) |
 | Calculated | Use formulas: `A * B` | Hardcode result: `Parameter(113_550_000_000)` |
 | Units | `"USD"`, `"percent"`, `"senators"`, `""` | `"count"`, `"millions USD"` |
 | Constants | `distribution="fixed"` | Monte Carlo on constitutional values |
 | LaTeX | `{{< var name_latex >}}` | Variables inside `$$` blocks |
 
-**Auto-generated (don't hardcode):** `latex=` formulas, confidence intervals, `_latex` variables. **Do add:** `latex_symbol=r"W_{total}"`
+**Auto-generated (don't hardcode):** `latex=` formulas, confidence intervals, `_latex` variables, `_nounit` variants. **Do add:** `latex_symbol=r"W_{total}"`
+
+**`_nounit` variants:** Auto-generated for params with visible text units (deaths, years, people, etc.). Use `{{< var param_nounit >}}` when prose supplies its own unit word. Not generated for format-inherent units (USD, %, ratio, x). Analyze: `python scripts/analyze-unit-duplication.py`
 
 **source_type:** `"external"` (WHO, SIPRI), `"calculated"` (formulas), `"definition"` (assumptions)
 

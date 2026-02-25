@@ -193,9 +193,8 @@ AUDIOBOOK_REWRITE_PROMPT = """Convert this book chapter to an audiobook narratio
 Your job is MINIMAL: only change what would sound obviously wrong or excruciatingly boring spoken aloud. Leave everything else EXACTLY as written.
 
 CONVERT (only these):
-- Abbreviated money/units to spoken form: "$8.2T" -> "eight point two trillion dollars", "$519M" -> "five hundred nineteen million dollars"
-- Small numbers with k/K suffix: compute the actual number and speak it in full. "3.07k" -> "three thousand and seventy", "1.5k" -> "one thousand five hundred". Do NOT say "three point zero seven thousand".
-- Alphanumeric abbreviations: "WW2" -> "World War Two", "WW1" -> "World War One", "G7" -> "G Seven", "G20" -> "G Twenty", "21st" -> "twenty-first"
+- ALL numbers to spoken words. Never leave bare digits in the output: "50" -> "fifty", "$8.2T" -> "eight point two trillion dollars", "2024" -> "twenty twenty-four", "5%" -> "five percent". For k/K suffixes compute the full number: "3.07k" -> "three thousand and seventy" (not "three point zero seven thousand").
+- Alphanumeric abbreviations: "WW2" -> "World War Two", "WW1" -> "World War One", "G7" -> "G Seven", "G20" -> "G Twenty"
 - Tables: convert rows into short spoken sentences
 - Bullet lists: one sentence per bullet, keep them as separate paragraphs
 - Condense/improve extremely boring sentences with too many dense numbers or weird units: condense or round or use different unit framings when a run of numbers would sound excruciatingly boring or extremely weird spoken aloud. When in doubt, leave as-is.
