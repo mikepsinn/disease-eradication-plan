@@ -60,7 +60,7 @@ The fix: tell every politician on Earth, "Vote for a 1%-style reform and you get
 
 ![Rich people give money to politicians who save lives. The triangle of virtue signaling that actually works.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-definition-what-are-incentive-alignment-bonds-bw-academic.jpg)
 
-Not charity (doesn't scale). Not lobbying (slot taken). Not "paying politicians" (illegal, slot also taken). IABs make investors and politicians cooperate on public goods by appealing to the only thing either species responds to: self-interest. You work with the primates you have, not the primates you wish you had.
+Not charity (doesn't scale). Not lobbying (slot taken). Not "paying politicians" (illegal, slot also taken). You work with the primates you have, not the primates you wish you had.
 
 ### How IABs Work (Four Steps)
 
@@ -88,7 +88,7 @@ When a politician votes for a 1%-style policy and funding actually flows:
 * **Electoral support** increases (independent campaigns favor high-scorers)
 * **Post-office opportunities** unlock (fellowships, boards, speaking circuits)
 
-No money flows to politicians. What flows is **reputation, electoral advantage, and career advancement**. They're getting credit for doing their job. On your planet, this is apparently revolutionary.
+No money flows to politicians (see [why this isn't bribery](#sec-why-not-bribery)). What flows is **reputation, electoral advantage, and career advancement**.
 
 #### Step 4: Watch Self-Interest Do the Rest
 
@@ -110,9 +110,9 @@ You cannot legally say "support Bill #XYZ123 and get paid." That's bribery. But 
 
 ![Your state's health plus your voting record equals your Good Boy Points. Gold stars for senators who behave.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-layer-a-outcome-and-policy-scoring-data-only-bw-academic.jpg)
 
-An independent org assigns each politician a **Public Good Score** based on: votes for 1%-equivalent measures, bill sponsorship, blocking harmful reversals, and actual funding flows.
+An independent org assigns each politician a **Public Good Score** based on votes, sponsorship, and funding flows. Like a credit score for your soul, except useful. (See the [Senator Smith example](#worked-example-how-senator-smith-votes-yes) for concrete scoring tables.)
 
-Critical detail: **don't tie scores to "The 1% Treaty" specifically.** Define a policy class: "Policies that reallocate >=1% of military spending into independently governed pragmatic clinical trials." Any politician supporting *any* matching policy gets credit. Public, rules-based, non-partisan. Like a credit score for your soul, except useful.
+Critical detail: **don't tie scores to "The 1% Treaty" specifically.** Define a policy class covering any policy that reallocates >=1% of military spending into independently governed pragmatic clinical trials. Public, rules-based, non-partisan.
 
 #### Layer B: Electoral Benefits (Separate Actors)
 
@@ -365,19 +365,11 @@ $$
 
 | How Skeptical You Are | Total Lifetime Value | Your {{< var treaty_campaign_total_cost >}} Becomes |
 |---------------|-----|---------------------------|
-| Mildly skeptical (3% discount) | {{< var global_clinical_trials_spending_annual >}} | 90x your money |
-| Pretty skeptical (5% discount) | $54B | 54x your money |
+| Mildly skeptical (3% discount) | $90.7B | 90x your money |
+| Pretty skeptical (5% discount) | $54.4B | 54x your money |
 | Very skeptical (10% discount) | $27.2B | 27x your money |
 
-Even at a 10% discount rate (as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} becomes worth {{< var treaty_annual_funding >}} total.
-
-**For people who skipped the math:**
-
-- You give: {{< var treaty_campaign_total_cost >}}
-- You get: $54-90 billion equivalent
-- Time required: Wait for politicians to do math
-- Effort required: Literally none after the initial campaign
-- Moral status: Accidentally heroic
+Even at a 10% discount rate (as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} becomes worth $27.2B.
 
 As long as humans prefer being alive to being dead, the treaty exists. As long as the treaty exists, you get paid.
 
@@ -464,19 +456,19 @@ It's not a Ponzi scheme. It's lobbying economics pointed at diseases instead of 
 
 #### "Isn't this just rich people buying policy?"
 
-Wealthy actors *already* buy policy. Pharma spends $300M/year on lobbying. Defense contractors spend more. That ship sailed, sank, and was rebuilt. The difference: IABs point the money at welfare instead of warfare (see [why this isn't bribery](#sec-why-not-bribery)).
+That ship sailed, sank, and was rebuilt. IABs point the money at welfare instead of warfare (see [why this isn't bribery](#sec-why-not-bribery)).
 
 #### "Won't politicians game the metrics?"
 
 ![Things people can lie about versus things they can't. Turns out politicians are better at lying than numbers are.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-1-won-t-politicians-game-the-metrics-bw-academic.jpg)
 
-Yes. Your politicians game everything. But to game *these* metrics, you'd have to falsify your own vote (public record) or pretend money moved when it didn't (treasury records are public). That's orders of magnitude harder than self-reported ESG compliance, which is the bar your species currently uses. (It is an extremely low bar.)
+To game these metrics, you'd have to falsify your own vote (public record) or pretend money moved when it didn't (treasury records). Orders of magnitude harder than self-reported ESG compliance, which is the bar your species currently uses.
 
 #### "What if politicians reverse the policy?"
 
 ![What happens to your score when you do good things for a while and then suddenly decide to do bad things instead. The graph goes down quite dramatically.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-3-what-if-politicians-pocket-the-career-rewards-th-bw-academic.jpg)
 
-Score decay. The same mechanism that rewarded you punishes backsliding. You can't prevent all reversals, but you can make them career suicide, which is the only kind of death politicians fear.
+Score decay. The same mechanism that rewarded you punishes backsliding, making reversals career suicide (the only kind of death politicians fear).
 
 #### "What happens when this fails and I lose my billion dollars?"
 
