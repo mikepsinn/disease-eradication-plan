@@ -354,7 +354,8 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
         return
     print()
 
-    # --- Pass 2: Execute uploads ---
+    # --- Pass 2: Execute uploads (smallest first, largest last) ---
+    to_upload.sort(key=lambda x: x[3])
     uploaded = 0
     errors = 0
     deleted = 0
