@@ -24,17 +24,9 @@ Congress wrote the rules. The FDA follows them. Blaming the FDA is like blaming 
 
 ## "But What About Safety?"
 
-This is the part where humans panic, so let me be very precise about what this chapter is (and isn't) proposing.
+This is the part where humans panic, so let me be very precise about what this chapter is (and isn't) proposing: keep Phase I safety testing (it works, it caught thalidomide, nobody is suggesting you skip it). Do *radically more* efficacy testing, on *real patients*, with *transparent results*. But stop holding known-safe drugs hostage while you run the trials.
 
-**Keep:** Phase I safety testing. It screens for death, organ damage, toxic reactions, dangerous side effects, and all the creative ways a molecule can ruin a human body. It works. It caught thalidomide. It takes {{< var phase_1_safety_duration_years >}}. Nobody is suggesting you skip it.
-
-**Keep (but fix):** Efficacy testing. You should do *massively more* of it. But open it to every patient who wants to participate, publish all results (positive AND negative), and stop blocking access to known-safe drugs while you run the trials.
-
-**Remove:** The part where known-safe drugs sit in a cabinet for {{< var efficacy_lag_years >}} while dying patients are *banned from trying them* and *banned from the trials testing them*.
-
-To be excruciatingly clear: this chapter is not arguing against efficacy testing. It is arguing for *radically more* efficacy testing, on *real patients*, with *transparent results*, while *not holding known-safe drugs hostage* during the process.
-
-On Wishonia, we have a word for "preventing someone from accessing a substance confirmed not to harm them while they die from the condition it might treat." The word is "murder." You call it "the approval process."
+On Wishonia, we have a word for "preventing someone from accessing a safe substance that could help them while they die." The word is "murder." You call it "the approval process."
 
 ## The {{< var dfda_trial_cost_reduction_factor >}} Inefficiency Tax
 
@@ -61,7 +53,7 @@ This would be fine except people are decomposing while you figure it out. On Wis
 Before 1962, {{< var pre_1962_physician_count >}} tested treatments on real patients and published results.
 Life expectancy grew 3.82 years every decade [@life-expectancy-increase-pre-1962] for 80 straight years. Things were going well. Naturally, Congress intervened.
 
-Phase I safety testing (added in 1938) worked perfectly. It screens for toxicity, organ damage, dangerous side effects, and all the ways a drug can physically harm you. It prevented all US thalidomide deaths while Europe had thousands. So in 1962, Congress looked at a system that was working and thought, "What if we made this much worse?" They added massive **pre-approval efficacy requirements** via the Kefauver Harris Amendment [@kefauver-harris-amendment-1962], blocking patient access for years during testing.
+Phase I safety testing (added in 1938) prevented all US thalidomide deaths while Europe had thousands. So in 1962, Congress looked at a system that was working and thought, "What if we made this much worse?" They added massive **pre-approval efficacy requirements** via the Kefauver Harris Amendment [@kefauver-harris-amendment-1962], blocking patient access for years during testing.
 
 The cost of developing a drug went from {{< var pre_1962_drug_development_cost_2024_usd >}} to {{< var pharma_drug_development_cost_current >}}, a {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase. New drug approvals dropped from 46 per year to 13 [@post-1962-drug-approval-drop], a {{< var post_1962_drug_approval_reduction_pct >}} decline. Life expectancy gains slowed from 3.82 years per decade to 1.54 [@life-expectancy-increase-pre-1962; @post-1962-life-expectancy-slowdown], a 60% reduction. Time to approval stretched from 2-3 years to {{< var fda_phase_1_to_approval_years >}}.
 
@@ -85,8 +77,6 @@ Even if you think historical analysis is just opinions with footnotes, the curre
 8. Pharmaceutical companies charge your widow $10,000 per pill
 
 Beautiful system if you're a mortician or bankruptcy lawyer.
-
-{{< var drug_discovery_to_approval_years >}} from discovery to patient. That's longer than it took to build the pyramids. Those involved moving rocks the size of houses without machinery (also the pharaohs didn't have to file quarterly progress reports in triplicate).
 
 ![Scientists discover cure. 17 years pass. Patients die. Drug finally available. This is called 'safety.'](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-modern-consequences-bw-academic.jpg)
 
@@ -320,7 +310,7 @@ Except people died.
 
 ## The Bottom Line
 
-For every 1 unit of harm the current system prevents, it creates {{< var type_ii_error_cost_ratio >}} units through delay. It is not a safety system. It is a filing system that produces corpses as a byproduct.
+It is not a safety system. It is a filing system that produces corpses as a byproduct.
 
 ![It takes 8.2 years to prove a drug works. During those 8.2 years, 3,000 people die for every one person the delay might save. You're very bad at math.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-bottom-line-bw-academic.jpg)
 
