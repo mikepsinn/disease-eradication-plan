@@ -102,4 +102,4 @@ with dot.subgraph() as s:
 png_path = render_graphviz_with_watermark(dot, 'utility-function-post-iab')
 ```
 
-**After IABs:** The same utility function becomes score-dependent: each component (electoral, career, legacy) now depends on the politician's score, which is determined by their voting record on NSV-ranked programs. Supporting high-NSV programs becomes the rational, self-interested choice.
+**After Incentive Alignment Bonds (IABs):** The same utility function becomes score-dependent: each component (electoral, career, legacy) now depends on the politician's score, which is determined by their voting record on NSV-ranked programs. Supporting high-NSV programs becomes the rational, self-interested choice.

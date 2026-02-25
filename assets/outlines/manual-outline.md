@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 101,289 | **Images:** 567 | **Est. Pages:** ~689
+**Files:** 44 | **Words:** 100,912 | **Images:** 567 | **Est. Pages:** ~687
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 5,371 words | 470 lines | 12 images | ~27p
+**Stats:** 5,372 words | 470 lines | 12 images | ~27p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Beautiful Inefficiency of the Human Economy
@@ -390,7 +390,7 @@
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
 **Description:** You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.8 times and use the savings on medicine. Controversial, apparently.
-**Stats:** 2,875 words | 350 lines | 18 images | ~20p
+**Stats:** 2,878 words | 350 lines | 18 images | ~21p
 
   - The Math
     ![If you take one penny from every dollar spent on bombs and use it for medicine instead, you get 27 billion pennies. Math is wonderful.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-math-bw-academic.jpg)
@@ -443,7 +443,7 @@
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** You've been fighting disease like a cat fights a laser pointer: lots of energy, no coordination, nothing caught. This is the plan to make curing disease the most profitable thing every hospital, pharma company, and researcher can do, so they do it by accident while trying to get rich.
-**Stats:** 3,601 words | 373 lines | 15 images | ~22p
+**Stats:** 3,604 words | 373 lines | 15 images | ~22p
 
   - The Health-Industrial Complex: Coordinating Your War on Disease
     - The Olsonian Problem
@@ -488,7 +488,7 @@
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
 **Description:** How to spend $27 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.
-**Stats:** 1,593 words | 141 lines | 4 images | ~8p
+**Stats:** 1,595 words | 141 lines | 4 images | ~8p
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
     - What your [decentralized FDA](dfda.qmd) handles automatically (no voting required):
@@ -635,14 +635,13 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** Incentive Alignment Bonds
 **Description:** War bonds, but backwards. Your grandparents funded WW2 at 4% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.
-**Stats:** 5,030 words | 524 lines | 35 images | ~38p
+**Stats:** 4,644 words | 480 lines | 35 images | ~36p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
     ![Politician does good thing. People get healthier. Politician gets money. It's a bribe, but backwards and legal.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-what-you-need-legal-bribery-that-isn-t-technically-bribery-bw-academic.jpg)
-    - What IABs Are
-    ![Rich people give money to politicians who save lives. The triangle of virtue signaling that actually works.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-definition-what-are-incentive-alignment-bonds-bw-academic.jpg)
     - How IABs Work (Four Steps)
+    ![Rich people give money to politicians who save lives. The triangle of virtue signaling that actually works.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-definition-what-are-incentive-alignment-bonds-bw-academic.jpg)
     ![How to build a legal bribery machine in four easy steps. Lawyers helped.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-how-incentive-alignment-bonds-work-the-simple-version-bw-academic.jpg)
       - Step 1: Pick a Measurable Outcome
     ![Things we can count right now versus things that matter later. One gets you reelected, the other gets you into heaven. Choose wisely.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-step-1-define-a-measurable-outcome-bw-academic.jpg)
@@ -698,7 +697,6 @@
     ![Money goes in from treaty, money comes out to bondholders. It's like a water fountain, but the water is money and the fountain is preventing war.](/assets/images/victory-bonds/victory-bonds-section-draft-your-term-sheet-bw-academic.jpg)
       - "This sounds like a Ponzi scheme run by someone who failed math."
     ![One circle takes money from new investors to pay old investors until it collapses. The other circle takes money from weapons to fund cures and pays investors forever. Spot the difference.](/assets/images/victory-bonds/victory-bonds-section-this-sounds-like-a-ponzi-scheme-run-by-someone-who-failed-math-bw-academic.jpg)
-      - "Isn't this just rich people buying policy?"
       - "Won't politicians game the metrics?"
     ![Things people can lie about versus things they can't. Turns out politicians are better at lying than numbers are.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-1-won-t-politicians-game-the-metrics-bw-academic.jpg)
       - "What if politicians reverse the policy?"
@@ -708,10 +706,8 @@
     ![How countries copy each other's homework after seeing someone else get a good grade. Like peer pressure, but for governments.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-4-is-this-realistic-at-a-global-scale-bw-academic.jpg)
       - "How is this different from just donating to charity?"
     ![Charity: give money away, feel good, get tax break. VICTORY Bonds: give money away, feel good, get 272 percent back. One of these seems objectively better.](/assets/images/victory-bonds/victory-bonds-section-how-is-this-different-from-just-donating-to-charity-bw-academic.jpg)
-    - The One-Page Summary That Makes Calculators Weep
-    ![The more people you save, the more money you make. Capitalism finally discovers that helping people is profitable.](/assets/images/victory-bonds/victory-bonds-section-the-one-page-summary-that-makes-calculators-weep-bw-academic.jpg)
-      - What you get
     - Summary
+    ![The more people you save, the more money you make. Capitalism finally discovers that helping people is profitable.](/assets/images/victory-bonds/victory-bonds-section-the-one-page-summary-that-makes-calculators-weep-bw-academic.jpg)
     ![How to make politicians care about the future by promising them good jobs after they stop being politicians. Turns out they like money that comes later too.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-summary-what-iabs-actually-are-bw-academic.jpg)
 
 #### knowledge/appendix/open-ecosystem-and-bounty-model.qmd

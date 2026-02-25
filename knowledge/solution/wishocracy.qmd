@@ -21,7 +21,7 @@ Not all of it is available for allocation. First, the automatic deductions (thin
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
 | [VICTORY Incentive Alignment Bond investors](incentive-alignment-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
-| [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
+| [Political incentives (Incentive Alignment Bonds)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
 | **Available for Wishocracy** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | What you get to allocate |
 
 How do you stop parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}}? If history is any guide, you don't. Every pool of money humanity has ever created has attracted lobbyists the way a dropped ice cream cone attracts ants, except ants at least work hard.

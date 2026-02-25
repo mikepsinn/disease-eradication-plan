@@ -96,4 +96,4 @@ with dot.subgraph() as s:
 png_path = render_graphviz_with_watermark(dot, 'utility-function-pre-iab')
 ```
 
-**Before IABs:** Politicians maximize utility based on lobbying intensity. The NSV ranking exists but doesn't affect their utility function, so they have no incentive to support high-NSV programs.
+**Before Incentive Alignment Bonds (IABs):** Politicians maximize utility based on lobbying intensity. The NSV ranking exists but doesn't affect their utility function, so they have no incentive to support high-NSV programs.

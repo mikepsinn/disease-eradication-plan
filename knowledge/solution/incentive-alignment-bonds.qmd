@@ -50,19 +50,11 @@ No politician wants to be the one who "cut the military." Even by 1%. Even if th
 
 The fix: tell every politician on Earth, "Vote for a 1%-style reform and you get better reelection odds and a Goldman Sachs board seat when you retire." No backroom deals. No suitcases of cash. Just a standing, public rule: do the objectively good thing, and the world systematically rewards you. Nobody has to become a better person. The money just circulates until diseases stop existing.
 
-### What IABs Are
-
-**Incentive Alignment Bonds** are financial instruments that:
-
-1. **Reward investors** with returns from public-good funding achieved
-2. **Reward politicians** with electoral support and career benefits for voting right
-3. **Fund the actual public good** from the policy outcome (self-sustaining)
-
-![Rich people give money to politicians who save lives. The triangle of virtue signaling that actually works.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-definition-what-are-incentive-alignment-bonds-bw-academic.jpg)
+### How IABs Work (Four Steps)
 
 Not charity (doesn't scale). Not lobbying (slot taken). Not "paying politicians" (illegal, slot also taken). You work with the primates you have, not the primates you wish you had.
 
-### How IABs Work (Four Steps)
+![Rich people give money to politicians who save lives. The triangle of virtue signaling that actually works.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-definition-what-are-incentive-alignment-bonds-bw-academic.jpg)
 
 ![How to build a legal bribery machine in four easy steps. Lawyers helped.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-how-incentive-alignment-bonds-work-the-simple-version-bw-academic.jpg)
 
@@ -110,25 +102,19 @@ You cannot legally say "support Bill #XYZ123 and get paid." That's bribery. But 
 
 ![Your state's health plus your voting record equals your Good Boy Points. Gold stars for senators who behave.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-layer-a-outcome-and-policy-scoring-data-only-bw-academic.jpg)
 
-An independent org assigns each politician a **Public Good Score** based on votes, sponsorship, and funding flows. Like a credit score for your soul, except useful. (See the [Senator Smith example](#worked-example-how-senator-smith-votes-yes) for concrete scoring tables.)
-
-Critical detail: **don't tie scores to "The 1% Treaty" specifically.** Define a policy class covering any policy that reallocates >=1% of military spending into independently governed pragmatic clinical trials. Public, rules-based, non-partisan.
+An independent org assigns each politician a **Public Good Score** based on votes, sponsorship, and funding flows. Scores cover a *policy class* (any >=1% military-to-health reallocation), not a specific bill. Public, rules-based, non-partisan. (See the [Senator Smith example](#worked-example-how-senator-smith-votes-yes) for how scores translate to concrete payoffs.)
 
 #### Layer B: Electoral Benefits (Separate Actors)
 
 ![Your score gets broadcast to every organization with money and opinions. Peer pressure, but with Super PACs.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-layer-b-electoral-and-reputational-benefits-separate-actors-bw-academic.jpg)
 
-Independent PACs and 501(c)(4)s commit **in advance** to favor high-scoring politicians. NGOs publish rankings. Conferences invite high-scorers. Awards go to high-scorers. Your politicians love awards even more than they love conferences, which is saying something.
-
-The goal: make the Public Good Score as influential as Moody's credit ratings. Moody's can downgrade a country and suddenly borrowing costs spike. Same energy, different metric: "did you vote for policies that measurably reduced human suffering?" This is exactly how NRA grades already work. Same gun, different target.
+Independent PACs and 501(c)(4)s commit **in advance** to favor high-scoring politicians. The goal: make the Public Good Score as influential as Moody's credit ratings or NRA grades. Moody's can downgrade a country and suddenly borrowing costs spike. NRA grades already determine which politicians get funded. Same gun, different target.
 
 #### Layer C: Post-Office Careers (The Goldman Sachs Board Problem)
 
 ![Old way: help corporations, get cushy job. New way: help humans, get cushy job. Same job, different resume line.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-layer-c-post-office-career-ben-bw-academic.jpg)
 
-After office, your politicians want prestigious jobs. The "revolving door" usually points at whoever paid the most lobbyists. You can point it somewhere else.
-
-Foundations and think tanks establish: "Eligibility for fellowships and advisory roles requires a Public Good Score above threshold X." Politicians know this rule in advance. Support reform = WHO boards and Aspen fellowships. Oppose it = explaining at dinner why you voted against curing diseases. The revolving door, but spinning toward "saved lives."
+Foundations and think tanks set eligibility rules: Public Good Score above X gets you WHO boards and Aspen fellowships. Below X, you're explaining at dinner why you voted against curing diseases. The revolving door, but spinning toward "saved lives" instead of toward whoever paid the most lobbyists.
 
 #### Legal Entity Separation
 
@@ -161,7 +147,7 @@ Abstract mechanisms are great for economists and incomprehensible to everyone wh
 
 ![Vote to cure cancer: plus 10 points. Vote to bomb Yemen: minus 15 points. It's like Weight Watchers, but for your soul.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-public-good-score-bw-academic.jpg)
 
-Each politician gets a Public Good Score based on their voting record:
+Each politician gets a Public Good Score based on their voting record (like a credit score for your soul, except useful):
 
 | Bill Type | Yes Vote | No Vote |
 |:----------|:---------|:--------|
@@ -292,7 +278,7 @@ The {{< var iab_political_incentive_funding_pct >}} allocation creates a **polit
 
 The pattern is simple: every expansion multiplies the political incentive budget, the research funding, *and* bondholder payouts. "Support pragmatic clinical trials" would become the single most profitable opinion a politician can hold. That's how you change what politicians believe: make the belief profitable.
 
-**The bondholder constituency.** This is the part your defense lobby should worry about. IABs create a permanent class of wealthy investors whose income scales directly with treaty expansion. At 1%, bondholders collect {{< var victory_bond_annual_payout >}}/year. At 5%, that's $13.6B/year. At full redirection, $272B/year. These people have perpetual bonds that never mature, which means they have a perpetual financial incentive to lobby for expansion every single year, forever. You've built the defense lobby's mirror image: a permanently funded constituency that gets richer every time military spending moves toward treatments. The defense industry spends billions lobbying to *keep* military budgets high. Bondholders will spend billions lobbying to *redirect* them. Except bondholders have better math and a more popular product ("not dying" polls well).
+**The bondholder constituency.** IABs create the defense lobby's mirror image: a permanent class of wealthy investors whose income scales directly with treaty expansion. At 1%, bondholders collect {{< var victory_bond_annual_payout >}}/year. At full redirection, $272B/year. Perpetual bonds mean a perpetual financial incentive to lobby for expansion, every single year, forever. Except bondholders have better math and a more popular product ("not dying" polls well).
 
 **Without IABs:**
 
@@ -310,19 +296,6 @@ The pattern is simple: every expansion multiplies the political incentive budget
 - Year 50+: Full redirection. Disease: solved.
 
 The {{< var iab_political_incentive_funding_pct >}} isn't a cost. It's the engine. Without it, you get a one-time win. With it, you get compounding political pressure that makes each expansion easier than the last.
-
-{{< include ../figures/victory-bonds-expansion-flywheel-diagram.qmd >}}
-
-The flywheel explained (for anyone who's never seen a virtuous cycle, which is most of your species):
-
-1. Treaty passes. Bondholders get first distributions.
-2. DIH funds trials. Breakthroughs start emerging.
-3. Media covers wins. Public awareness explodes.
-4. Bondholders lobby for expansion (their payouts scale with treaty %).
-5. Public demands more. Politicians face electoral pressure from both voters and a wealthy bondholder constituency.
-6. Treaty % increases. Revenue scales up. Bondholder payouts increase. Lobbying budget increases.
-7. More breakthroughs emerge. Cycle reinforces itself.
-8. Long-term result: Compounding returns + saved lives + a permanently funded lobby that makes reversal politically and financially impossible.
 
 ### Beyond the 1% Treaty
 
@@ -457,10 +430,6 @@ The money comes from governments that currently spend it on bombs. The returns a
 
 It's not a Ponzi scheme. It's lobbying economics pointed at diseases instead of wars. Same weapon, different enemy."
 
-#### "Isn't this just rich people buying policy?"
-
-That ship sailed, sank, and was rebuilt. IABs point the money at welfare instead of warfare (see [why this isn't bribery](#sec-why-not-bribery)).
-
 #### "Won't politicians game the metrics?"
 
 ![Things people can lie about versus things they can't. Turns out politicians are better at lying than numbers are.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-1-won-t-politicians-game-the-metrics-bw-academic.jpg)
@@ -497,24 +466,11 @@ Credit ratings started as one guy in the 1800s publishing opinions about railroa
 
 Charity is for people who want to feel good. This is for people who want to get obscenely rich while curing diseases as a side effect. It's the Louisiana Purchase of pragmatic clinical trials. Except instead of buying land from France, you're buying life extension from death. And unlike Louisiana, it doesn't flood. And unlike France, it doesn't surrender.
 
-### The One-Page Summary That Makes Calculators Weep
+### Summary
 
 ![The more people you save, the more money you make. Capitalism finally discovers that helping people is profitable.](/assets/images/victory-bonds/victory-bonds-section-the-one-page-summary-that-makes-calculators-weep-bw-academic.jpg)
 
-Hand this to investors who can't read more than one page:
-
-**VICTORY Incentive Alignment Bonds: How to Get Obscenely Rich While Accidentally Saving Humanity**
-
-#### What you get
-
-- **Returns:** {{< var victory_bond_annual_return_pct >}} annually forever (assuming politicians don't choose mass death)
-- **Duration:** Perpetual (payments never stop until heat death of universe)
-- **Side effect:** Millions of humans continue existing who would otherwise stop
-- **Priority:** You get paid before anyone else touches the money
-- **Growth path:** 1% to 2% to 5%+ as treatments improve and public demands more
-
-
-### Summary
+**For investors:** {{< var victory_bond_annual_return_pct >}} annually, forever, with first-lien priority. Perpetual payments that grow as the treaty expands from 1% to 5%+. Side effect: millions of humans continue existing.
 
 ![How to make politicians care about the future by promising them good jobs after they stop being politicians. Turns out they like money that comes later too.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-summary-what-iabs-actually-are-bw-academic.jpg)
 
