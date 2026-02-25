@@ -177,13 +177,9 @@ You'd be adorable for thinking that.
 
 95% of your diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. This means Food and Drug Administration has not administered drugs for 95% of food-and-drug-related problems. Only 15 diseases get their first effective treatment each year. {{< var diseases_without_effective_treatment >}} are still waiting.
 
-There are {{< var safe_compounds_count >}} known safe compounds, and {{< var unexplored_ratio >}} of their potential uses have never been tested. Your National Institutes of Health [spends 96.7% of its budget on everything except testing which treatments work in humans](/knowledge/problem/nih-fails-2-institute-health.qmd) so you haven't cured a single disease in 50 years [@smallpox-eradicated].
+There are {{< var safe_compounds_count >}} known safe compounds, and {{< var unexplored_ratio >}} of their potential uses have never been tested. At the current discovery rate, finding treatments for all of them will take ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then.
 
 ![Everyone currently alive will be dead before we finish (current timeline)](/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
-
-At the current discovery rate, discovering treatments will ~{{< var status_quo_queue_clearance_years >}}. Everyone currently alive will be dead by then. Pragmatic efficicy trials are highly efficient trials that integrate into the standard healthcare system.  These allow real patients to participate instead of 200 people hand-picked by pharmaceutical companies. With this plan you'll increase the treatyment discovery rate {{< var dfda_trial_capacity_multiplier >}} (from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}), compressing that to ~{{< var dfda_queue_clearance_years >}}.
-
-Two things save lives here. First, finding cures faster: treatments that would have sat undiscovered for centuries get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay after already proving a drug is safe and when they let dying humans take it. Combined, treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift prevents {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
 
 ### The Cost of War
 
@@ -201,6 +197,18 @@ Government spending on clinical trials: **{{< var military_to_government_clinica
 
 If cancer had oil reserves, you would have cured it by 2003. Instead, you spent the repair money on murder tubes that cost more than countries and submarines that hide underwater, as if that's somehow useful when you live on land.
 
+### The FDA is Unsafe and Ineffective
+
+Even the money you DO spend on medicine is mostly wasted, because the system that approves treatments is a smoke detector that works by mail.
+
+Vioxx killed an estimated 60,000 people from heart attacks. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. (Yes, this is how your system works in the 21st century.) Then a human read it. Five years and 60,000 corpses later, someone noticed a pattern. This is your safety system.
+
+Your National Institutes of Health, the agency nominally responsible for finding cures, [spends {{< var nih_clinical_trials_spending_pct >}} of its budget on clinical trials](/knowledge/problem/nih-fails-2-institute-health.qmd). The other 96.7% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
+
+Then there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would {{< var willing_trial_participants_global >}} other patients, and the current system has {{< var current_trial_slots_available >}} slots. That's a participation rate of {{< var current_clinical_trial_participation_rate >}}. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
+
+Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by {{< var type_ii_error_cost_ratio >}} to 1. Your safety system's main product is dead patients.
+
 ---
 
 **The good news:** You already know how to fix this.
@@ -215,37 +223,33 @@ If cancer had oil reserves, you would have cured it by 2003. Instead, you spent 
 
 This is going to sound crazy. But you're going to use those papers to persude the the leader of every country on Earth to simultaneously redirect 1% of its military budget to clinical trials. That's it. That's the treaty.
 
-After the craziness objection (while we'll address later), the second objection every human has: "But if we cut our military budget, our enemies will invade us!" Everyone cuts 1% at the same time. If every country reduces by 1% simultaneously, the balance of power doesn't change. Nobody becomes more vulnerable. Nobody gains an advantage. You all just have 1% fewer missiles pointed at you, which you will not notice because you currently have enough to kill everyone 20 times over.
+After the craziness objection, the second objection every human has: "But if we cut our military budget, our enemies will invade us!" Everyone cuts 1% at the same time. If every country reduces by 1% simultaneously, the balance of power doesn't change. Nobody becomes more vulnerable. Nobody gains an advantage. You all just have 1% fewer missiles pointed at you, which you will not notice because you currently have enough to kill everyone 20 times over.
 
 ![Still enough left to murder everyone 20 times](/assets/images/index-manual/index-manual-section-a-1-treaty-bw-academic.jpg)
 
 {{< var global_military_spending_post_treaty_annual_2024 >}} is still enough to murder every man, woman, and child on Earth 20 times, which should be more than sufficient.
 
-"But humans would never agree to that!" you say. You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned landmines (1997, 164 countries). You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
+"But humans would never agree to a treaty!" you say. You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned landmines (1997, 164 countries). You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
 
 I ran 10,000 simulations of this plan. The math works in every one. The money works in every one. The incentives align in every one. The only variable that produces failure is the percentage of humans who decide it sounds crazy without reading the next page. That is the same reflex that kept you from inventing antibiotics for 200,000 years while bread mold sat right there on your bread.
 
-And you have two other advantages, the internet and a new financial instrument designed specifically for harnessing the awesome power of human greed.
+And you have two other advantages, the internet and a new financial instrument designed specifically for harnessing the most powerful force in the universe: human greed.
 
 ### Your [Decentralized FDA](/knowledge/solution/dfda.qmd)
 
-So what happens with that 1% of military spending? 80% of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year. 
+So what happens with that 1% of military spending? 80% of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year.
 
-The whole thing uses your new protocol called the [decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) that reduces trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funds {{< var dih_patients_fundable_annually >}} (versus the current {{< var current_trial_slots_available >}}). Currently, a committee of people who've never had the disease votes on whether you're allowed to try treating it. It's like requiring a building permit to put out a fire. Think Consumer Reports, but for drugs.
+Pragmatic trials integrate into the standard healthcare system. Real patients participate instead of 200 people hand-picked by pharmaceutical companies. The whole thing uses your new protocol called the [decentralized framework for drug assessment](/knowledge/solution/dfda.qmd) that reduces trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funds {{< var dih_patients_fundable_annually >}} (versus the current {{< var current_trial_slots_available >}}). Remember that billion patients drowning in line for two life jackets? Your dFDA hands out 23 million.
 
-#### Safer Than the FDA
+This increases the treatment discovery rate {{< var dfda_trial_capacity_multiplier >}}, compressing that ~{{< var status_quo_queue_clearance_years >}} wait to ~{{< var dfda_queue_clearance_years >}}. Two things save lives. First, finding cures faster: treatments that would have sat undiscovered for centuries get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay between proving a drug is safe and letting dying humans take it. Combined, treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift prevents {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
 
-Your current safety system works like this: Vioxx killed an estimated 60,000 people from heart attacks. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. Then a human read it. Five years and 60,000 corpses later, someone noticed a pattern. This is your safety system. It's like a smoke detector that works by mail.
+#### Real-Time Safety Monitoring
 
-Your new decentralized system collects every side effect automatically in real time. You know "12% got headaches, 3% were severe" BEFORE you take the pill, not after the class action lawsuit. The FDA doesn't publish these numbers at all. They make you guess. Somehow, having actual data is considered the dangerous option.
-
-Also, there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough, and you're not allowed to volunteer for the trials that would answer that question faster. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while people drown.
-
-Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens every single year (it has happened once in 60 years, and US Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by {{< var type_ii_error_cost_ratio >}} to 1. Your efficacy testing system's main product is dead patients.
+Remember Vioxx and the smoke detector that works by mail? Your new system collects every side effect automatically in real time. You know "12% got headaches, 3% were severe" BEFORE you take the pill, not after the class action lawsuit. The FDA doesn't publish these numbers at all. They make you guess.
 
 #### Treatment Rankings
 
-Your doctor currently picks treatments based on: that drug rep who brought good donuts in 2003, something they half-remember from medical school, whatever the insurance company allows, and vibes. This is called "evidence-based medicine," which contains the word "evidence" the same way "grape soda" contains the word "grape."
+Currently, your doctor picks treatments based on: that drug rep who brought good donuts in 2003, something they half-remember from medical school, whatever the insurance company allows, and vibes. This is called "evidence-based medicine," which contains the word "evidence" the same way "grape soda" contains the word "grape."
 
 Your [dFDA](/knowledge/solution/dfda.qmd) ranks every treatment by what actually happened to real humans who took it:
 
@@ -285,7 +289,7 @@ Even your own war heroes figured this out. Eisenhower, the human who won WW2, sp
 
 ### The Math
 
-Remember the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift from above? Multiply those years of healthy life saved by $150,000 (the standard economic valuation of one year of human life), and you get {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in total economic value. Divide that by the {{< var treaty_campaign_total_cost >}} campaign cost, and you get a return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1. Your calculator will display an error, then catch fire. This is correct.
+Remember the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift? Multiply those years of healthy life saved by $150,000 (the standard economic valuation of one year of human life), and you get {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in total economic value. Divide that by the {{< var treaty_campaign_total_cost >}} campaign cost, and you get a return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1. Your calculator will display an error, then catch fire. This is correct.
 
 ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
 
