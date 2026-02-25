@@ -5,9 +5,8 @@ Audiobook Publish Pipeline
 
 Single script that runs the full audiobook pipeline:
   1. Generate narration text from QMD chapters (LLM rewrite)
-  2. Generate podcast episode images (skips existing)
-  3. Generate audio (TTS), combine, MP3s, RSS, alignment, subtitles
-  4. Sync assets to Cloudflare R2
+  2. Generate audio (TTS), combine, MP3s, RSS, alignment, subtitles
+  3. Sync assets to Cloudflare R2
 
 Passes all arguments through to the underlying scripts, so you can use
 --chapter, --start, --end, --force, --list, etc.
@@ -93,16 +92,7 @@ def main():
         print("\n[DONE] Dry run complete (text only, no audio generated).")
         return
 
-    # --- Step 2: Generate podcast episode images ---
-    img_args = list(shared)
-    if args.force:
-        img_args.append("--force")
-    img_args.append("--podcast-only")
-
-    if not run_step("Generate podcast images", "generate_podcast_images.py", img_args):
-        sys.exit(1)
-
-    # --- Step 3: Generate audio ---
+    # --- Step 2: Generate audio ---
     audio_args = list(shared)
     if args.force:
         audio_args.append("--force")
@@ -110,7 +100,7 @@ def main():
     if not run_step("Generate audio + MP3s + RSS", "generate_audiobook.py", audio_args):
         sys.exit(1)
 
-    # --- Step 4: Sync to R2 ---
+    # --- Step 3: Sync to R2 ---
     if args.no_sync:
         print("\n[DONE] Audio generation complete (--no-sync: skipped R2 upload).")
         return

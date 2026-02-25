@@ -30,7 +30,7 @@ import sharp from 'sharp';
 import matter from 'gray-matter';
 import { generateAndSaveImages } from '../lib/gemini-images';
 import { VisualStyles } from '../lib/image-prompts';
-import { stringifyWithFrontmatter, resolveAndCleanText } from '../lib/file-utils';
+import { stringifyWithFrontmatter, resolveAndCleanText, prepareContentForLLM } from '../lib/file-utils';
 
 // Load environment variables
 dotenv.config();
@@ -138,19 +138,22 @@ ${config.description}`;
  * Build podcast cover prompt for a chapter
  * Optimized for small-screen legibility (60-100px thumbnails on phones)
  */
-function buildPodcastImagePrompt(chapterTitle: string, chapterDescription: string): string {
+function buildPodcastImagePrompt(chapterTitle: string, chapterDescription: string, chapterBody: string): string {
   const style = VisualStyles['bw-academic'];
 
   return `${style.style}
 
-CRITICAL: This is a podcast cover image viewed as a TINY THUMBNAIL (60-100px) on phones.
+CRITICAL: This is an image viewed as a TINY THUMBNAIL (60-100px).
 Design rules:
-- ONE bold, simple central icon or symbol. 
+- Create fun retro scientific illustration imagery that most effectively conveys the content in a simple, visual way.
 - Title text must be LARGE, bold, and legible at 100px.
 
 Text to display: "${chapterTitle}"
 
-${chapterDescription}`;
+${chapterDescription}
+
+Content for context:
+${chapterBody}`;
 }
 
 /**
@@ -294,10 +297,97 @@ function extractChapterFiles(doc: Record<string, any>): string[] {
   return allFiles;
 }
 
+// Max parallel image generation requests
+const PODCAST_CONCURRENCY = 4;
+
+/**
+ * Generate a single chapter's podcast cover image and update its frontmatter
+ */
+async function generateSinglePodcastImage(
+  chapterFile: string,
+  config: QuartoConfig,
+  outputDir: string,
+  force: boolean,
+): Promise<boolean> {
+  const filePath = path.join(process.cwd(), chapterFile);
+  if (!existsSync(filePath) || !filePath.endsWith('.qmd')) return false;
+
+  const fileContent = await fs.readFile(filePath, 'utf-8');
+  const { data: frontmatter, content: body } = matter(fileContent);
+
+  const chapterName = path.basename(chapterFile, '.qmd');
+  const outputFileName = `${chapterName}-podcast`;
+  const outputPath = path.join(outputDir, `${outputFileName}.jpg`);
+  const podcastImageValue = `/assets/podcast/${outputFileName}.jpg`;
+
+  // Skip if podcast-image is set in frontmatter and the referenced file exists
+  if (frontmatter['podcast-image']) {
+    const existingPath = path.join(process.cwd(), frontmatter['podcast-image']);
+    if (existsSync(existingPath)) {
+      console.log(`  [SKIP] ${chapterName}: podcast image exists`);
+      return true;
+    }
+  }
+
+  // Skip if output file exists (even without frontmatter reference)
+  if (!force && existsSync(outputPath)) {
+    // File exists but frontmatter is missing/stale - update frontmatter
+    frontmatter['podcast-image'] = podcastImageValue;
+    const updatedContent = stringifyWithFrontmatter(body, frontmatter);
+    await fs.writeFile(filePath, updatedContent, 'utf-8');
+    console.log(`  [SKIP] ${chapterName}: image exists, updated frontmatter`);
+    return true;
+  }
+
+  // Resolve Quarto variables and strip confidence intervals / HTML
+  const title = await resolveAndCleanText(frontmatter.title || chapterName);
+  const description = await resolveAndCleanText(frontmatter.description || '');
+  const cleanBody = await prepareContentForLLM(body);
+
+  console.log(`  Generating podcast image for: ${title}`);
+  const prompt = buildPodcastImagePrompt(title, description, cleanBody);
+
+  const files = await generateAndSaveImages({
+    prompt,
+    aspectRatio: '1:1',
+    outputDir,
+    filePrefix: `${outputFileName}-raw`,
+    format: 'jpg',
+    metadata: {
+      title,
+      description,
+      keywords: config.keywords,
+      sourceUrl: config.siteUrl,
+    },
+  });
+
+  if (!files || files.length === 0) {
+    console.error(`  [ERROR] Failed: ${chapterName}`);
+    return false;
+  }
+
+  // Resize to 3000x3000 (Apple Podcasts max, works everywhere)
+  const generatedPath = files[0];
+  await sharp(generatedPath)
+    .resize(3000, 3000, { fit: 'cover' })
+    .jpeg({ quality: 90 })
+    .toFile(outputPath);
+  if (path.resolve(generatedPath) !== path.resolve(outputPath)) {
+    try { await fs.unlink(generatedPath); } catch { /* ignore */ }
+  }
+
+  // Update frontmatter
+  frontmatter['podcast-image'] = podcastImageValue;
+  const updatedContent = stringifyWithFrontmatter(body, frontmatter);
+  await fs.writeFile(filePath, updatedContent, 'utf-8');
+
+  console.log(`  [OK] ${chapterName}: generated + frontmatter updated`);
+  return true;
+}
+
 /**
  * Generate podcast cover images for all chapters in a config (one per episode)
- * Saves to: assets/podcast/{chapter-name}-podcast.jpg (3000x3000)
- * Updates podcast-image in each QMD's frontmatter
+ * Runs up to PODCAST_CONCURRENCY image generations in parallel
  */
 async function generatePodcastImages(config: QuartoConfig, force: boolean = false): Promise<number> {
   const configPath = path.join(process.cwd(), `${config.configFile}.yml`);
@@ -310,82 +400,16 @@ async function generatePodcastImages(config: QuartoConfig, force: boolean = fals
 
   let generated = 0;
 
-  for (const chapterFile of chapterFiles) {
-    const filePath = path.join(process.cwd(), chapterFile);
-    if (!existsSync(filePath) || !filePath.endsWith('.qmd')) continue;
-
-    const fileContent = await fs.readFile(filePath, 'utf-8');
-    const { data: frontmatter, content: body } = matter(fileContent);
-
-    const chapterName = path.basename(chapterFile, '.qmd');
-    const outputFileName = `${chapterName}-podcast`;
-    const outputPath = path.join(outputDir, `${outputFileName}.jpg`);
-    const podcastImageValue = `/assets/podcast/${outputFileName}.jpg`;
-
-    // Skip if podcast-image is set in frontmatter and the referenced file exists
-    if (frontmatter['podcast-image']) {
-      const existingPath = path.join(process.cwd(), frontmatter['podcast-image']);
-      if (existsSync(existingPath)) {
-        console.log(`  [SKIP] ${chapterName}: podcast image exists`);
-        generated++;
-        continue;
-      }
+  // Process in batches of PODCAST_CONCURRENCY
+  for (let i = 0; i < chapterFiles.length; i += PODCAST_CONCURRENCY) {
+    const batch = chapterFiles.slice(i, i + PODCAST_CONCURRENCY);
+    const results = await Promise.allSettled(
+      batch.map(f => generateSinglePodcastImage(f, config, outputDir, force))
+    );
+    for (const result of results) {
+      if (result.status === 'fulfilled' && result.value) generated++;
+      if (result.status === 'rejected') console.error(`  [ERROR]`, result.reason);
     }
-
-    // Skip if output file exists (even without frontmatter reference)
-    if (!force && existsSync(outputPath)) {
-      // File exists but frontmatter is missing/stale - update frontmatter
-      frontmatter['podcast-image'] = podcastImageValue;
-      const updatedContent = stringifyWithFrontmatter(body, frontmatter);
-      await fs.writeFile(filePath, updatedContent, 'utf-8');
-      console.log(`  [SKIP] ${chapterName}: image exists, updated frontmatter`);
-      generated++;
-      continue;
-    }
-
-    // Resolve Quarto variables and strip confidence intervals / HTML
-    const title = await resolveAndCleanText(frontmatter.title || chapterName);
-    const description = await resolveAndCleanText(frontmatter.description || '');
-
-    console.log(`  Generating podcast image for: ${title}`);
-    const prompt = buildPodcastImagePrompt(title, description);
-
-    const files = await generateAndSaveImages({
-      prompt,
-      aspectRatio: '1:1',
-      outputDir,
-      filePrefix: `${outputFileName}-raw`,
-      format: 'jpg',
-      metadata: {
-        title,
-        description,
-        keywords: config.keywords,
-        sourceUrl: config.siteUrl,
-      },
-    });
-
-    if (!files || files.length === 0) {
-      console.error(`  [ERROR] Failed: ${chapterName}`);
-      continue;
-    }
-
-    // Resize to 3000x3000 (Apple Podcasts max, works everywhere)
-    const generatedPath = files[0];
-    await sharp(generatedPath)
-      .resize(3000, 3000, { fit: 'cover' })
-      .jpeg({ quality: 90 })
-      .toFile(outputPath);
-    if (path.resolve(generatedPath) !== path.resolve(outputPath)) {
-      try { await fs.unlink(generatedPath); } catch { /* ignore */ }
-    }
-
-    // Update frontmatter
-    frontmatter['podcast-image'] = podcastImageValue;
-    const updatedContent = stringifyWithFrontmatter(body, frontmatter);
-    await fs.writeFile(filePath, updatedContent, 'utf-8');
-
-    console.log(`  [OK] ${chapterName}: generated + frontmatter updated`);
-    generated++;
   }
 
   return generated;

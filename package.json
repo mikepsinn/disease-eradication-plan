@@ -76,8 +76,6 @@
     "audiobook:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook.py --config _quarto-manual-paperback.yml --list",
     "audiobook:scenes": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_scenes.py --config _quarto-manual-paperback.yml",
     "audiobook:scenes:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_scenes.py --config _quarto-manual-paperback.yml --list",
-    "podcast:images": ".venv\\Scripts\\python.exe -u scripts/generate_podcast_images.py --config _quarto-manual-paperback.yml",
-    "podcast:images:list": ".venv\\Scripts\\python.exe -u scripts/generate_podcast_images.py --config _quarto-manual-paperback.yml --list",
     "audiobook:video": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_video.py",
     "audiobook:video:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_video.py --list",
     "sync:r2": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py",

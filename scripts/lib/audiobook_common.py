@@ -1,7 +1,7 @@
 """Shared constants and functions for the audiobook pipeline.
 
 Used by generate_audiobook_text.py, generate_audiobook.py, generate_audiobook_scenes.py,
-generate_audiobook_video.py, and generate_podcast_images.py.
+and generate_audiobook_video.py.
 """
 import hashlib
 import re
@@ -204,9 +204,11 @@ def extract_chapters(config: dict) -> list[dict]:
         description = extract_description_from_qmd(qmd_path)
         if description:
             description = _resolve_quarto_vars(description, variables)
+        fm = _parse_qmd_frontmatter(qmd_path)
         chapters.append({
             'path': resolved, 'title': title, 'part': part,
             'index': idx, 'description': description,
+            'podcast_image': fm.get('podcast-image'),
         })
 
     for item in book.get('chapters', []):
@@ -297,7 +299,20 @@ def resolve_chapter_titles(chapters: list[dict]) -> list[dict]:
 
 
 def find_podcast_image(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
-    """Find the podcast episode image for a chapter."""
+    """Find the podcast episode image for a chapter.
+
+    Checks the podcast-image frontmatter property first, then falls back
+    to the convention-based slug lookup in the podcast-images directory.
+    """
+    # Check frontmatter podcast-image property (e.g. /assets/podcast/foo-podcast.jpg)
+    fm_image = chapter.get('podcast_image')
+    if fm_image:
+        # Strip leading slash to make it relative to project root
+        img = PROJECT_ROOT / fm_image.lstrip('/')
+        if img.exists():
+            return img
+
+    # Fallback: convention-based slug lookup
     img_dir = paths.podcast_images if paths else AUDIOBOOK_DIR / "podcast-images"
     slug = chapter_slug(chapter)
     img = img_dir / f"{slug}-podcast.jpg"

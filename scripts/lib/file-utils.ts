@@ -1362,10 +1362,13 @@ export function cleanContentForLLM(content: string): string {
   // 11. Remove table of contents patterns (links to anchors on same page)
   cleaned = cleaned.replace(/^[-*]\s*\[.*?\]\(#.*?\).*$/gm, '');
 
-  // 12. Remove excessive blank lines (more than 2 consecutive newlines)
+  // 12. Strip confidence intervals: (95% CI: X-Y)
+  cleaned = cleaned.replace(/\s*\(95% CI:[^)]*\)/g, '');
+
+  // 13. Remove excessive blank lines (more than 2 consecutive newlines)
   cleaned = cleaned.replace(/\n{3,}/g, '\n\n');
 
-  // 13. Trim whitespace
+  // 14. Trim whitespace
   cleaned = cleaned.trim();
 
   return cleaned;
