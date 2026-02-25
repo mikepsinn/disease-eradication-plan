@@ -25,6 +25,7 @@ import hashlib
 import argparse
 import fnmatch
 import mimetypes
+import time
 from pathlib import Path
 
 if sys.platform == 'win32':
@@ -218,6 +219,24 @@ def cache_control_for(path: Path) -> str:
     return CACHE_CONTROL.get(path.suffix.lower(), DEFAULT_CACHE)
 
 
+class UploadProgress:
+    """Callback for boto3 upload_file to show transfer progress."""
+    def __init__(self, total_bytes: int):
+        self.total = total_bytes
+        self.uploaded = 0
+        self.last_print = 0.0
+
+    def __call__(self, bytes_transferred: int):
+        self.uploaded += bytes_transferred
+        now = time.monotonic()
+        # Update at most every 0.5s to avoid spamming
+        if now - self.last_print < 0.5 and self.uploaded < self.total:
+            return
+        self.last_print = now
+        pct = self.uploaded / self.total * 100 if self.total else 100
+        print(f"\r  ... {format_size(self.uploaded)} / {format_size(self.total)} ({pct:.0f}%)", end="", flush=True)
+
+
 def collect_files(prefix: str, local_root: Path, patterns: list[str]) -> dict[str, Path]:
     """Collect local files to sync, keyed by R2 object key."""
     if not local_root.exists():
@@ -274,16 +293,26 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
         print(f"No files to sync in {prefix}/")
         return
 
-    print(f"Found {len(local_files)} local files. Checking remote state...")
+    total_local = len(local_files)
+    print(f"Found {total_local} local files. Fetching remote state...")
     remote_objects = list_remote_objects(client, bucket, f"{prefix}/")
+    print(f"Found {len(remote_objects)} remote files. Comparing hashes...")
 
-    uploaded = 0
+    # --- Pass 1: Plan (compare hashes, build upload list) ---
+    to_upload: list[tuple[str, Path, str, int]] = []  # (key, path, action, size)
     skipped = 0
-    deleted = 0
-    errors = 0
-    upload_bytes = 0
+    checked = 0
+    plan_start = time.monotonic()
 
     for key, local_path in sorted(local_files.items()):
+        checked += 1
+        if checked % 50 == 0 or checked == total_local:
+            elapsed = time.monotonic() - plan_start
+            rate = checked / elapsed if elapsed > 0 else 0
+            remaining = (total_local - checked) / rate if rate > 0 else 0
+            print(f"\r  Comparing [{checked}/{total_local}] "
+                  f"({remaining:.0f}s remaining)...    ", end="", flush=True)
+
         remote_etag = remote_objects.get(key)
         size = local_path.stat().st_size
 
@@ -292,15 +321,57 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
             continue
 
         action = "NEW" if remote_etag is None else "UPDATE"
+        to_upload.append((key, local_path, action, size))
+
+    print()  # Clear the progress line
+
+    to_delete: list[str] = []
+    if delete_removed:
+        for key in sorted(remote_objects):
+            if key not in local_files:
+                to_delete.append(key)
+
+    # --- Summary before upload ---
+    upload_bytes = sum(size for _, _, _, size in to_upload)
+    new_count = sum(1 for _, _, a, _ in to_upload if a == "NEW")
+    update_count = sum(1 for _, _, a, _ in to_upload if a == "UPDATE")
+
+    print(f"\n  Plan: {skipped} unchanged, "
+          f"{new_count} new, {update_count} changed, "
+          f"{len(to_delete)} to delete")
+    if to_upload:
+        print(f"  Upload size: {format_size(upload_bytes)}")
+        # Show largest files that will be uploaded
+        large = sorted(to_upload, key=lambda x: x[3], reverse=True)[:5]
+        if large[0][3] > 1024 * 1024:  # Only show if largest > 1MB
+            print(f"  Largest files:")
+            for key, _, action, size in large:
+                if size < 1024 * 1024:
+                    break
+                print(f"    [{action}] {key} ({format_size(size)})")
+    if not to_upload and not to_delete:
+        print(f"\n  Nothing to do.")
+        return
+    print()
+
+    # --- Pass 2: Execute uploads ---
+    uploaded = 0
+    errors = 0
+    deleted = 0
+    transferred_bytes = 0
+
+    for i, (key, local_path, action, size) in enumerate(to_upload, 1):
         ct = content_type_for(local_path)
 
         if dry_run:
             print(f"  [{action}] {key} ({format_size(size)}, {ct})")
             uploaded += 1
-            upload_bytes += size
+            transferred_bytes += size
             continue
 
-        print(f"  [{action}] {key} ({format_size(size)})...", end="", flush=True)
+        print(f"  [{i}/{len(to_upload)}] [{action}] {key} ({format_size(size)})...", end="", flush=True)
+        # Use progress callback for files > 10MB
+        callback = UploadProgress(size) if size > 10 * 1024 * 1024 else None
         try:
             client.upload_file(
                 str(local_path),
@@ -310,31 +381,31 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
                     "ContentType": ct,
                     "CacheControl": cache_control_for(local_path),
                 },
+                Callback=callback,
             )
-            print(" OK")
+            print(f"\r  [{i}/{len(to_upload)}] [{action}] {key} ({format_size(size)})... OK    ")
             uploaded += 1
-            upload_bytes += size
+            transferred_bytes += size
         except Exception as e:
-            print(f" FAILED: {e}")
+            print(f"\r  [{i}/{len(to_upload)}] [{action}] {key} ({format_size(size)})... FAILED: {e}    ")
             errors += 1
 
-    if delete_removed:
-        for key in sorted(remote_objects):
-            if key not in local_files:
-                if dry_run:
-                    print(f"  [DELETE] {key}")
-                else:
-                    print(f"  [DELETE] {key}...", end="", flush=True)
-                    try:
-                        client.delete_object(Bucket=bucket, Key=key)
-                        print(" OK")
-                    except Exception as e:
-                        print(f" FAILED: {e}")
-                        errors += 1
-                deleted += 1
+    if to_delete:
+        for key in to_delete:
+            if dry_run:
+                print(f"  [DELETE] {key}")
+            else:
+                print(f"  [DELETE] {key}...", end="", flush=True)
+                try:
+                    client.delete_object(Bucket=bucket, Key=key)
+                    print(" OK")
+                except Exception as e:
+                    print(f" FAILED: {e}")
+                    errors += 1
+            deleted += 1
 
     verb = "would upload" if dry_run else "uploaded"
-    print(f"\n  {uploaded} {verb} ({format_size(upload_bytes)}), "
+    print(f"\n  {uploaded} {verb} ({format_size(transferred_bytes)}), "
           f"{skipped} unchanged, {deleted} deleted, {errors} errors")
 
 

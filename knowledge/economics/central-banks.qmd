@@ -136,7 +136,7 @@ Watch closely. This is how they rob you in broad daylight while you clap:
 
 - Global medical research: {{< var global_clinical_trials_spending_annual >}}
 - Global military spending: {{< var global_military_spending_annual_2024 >}}
-- Ratio: ~45:1 for death
+- Ratio: {{< var military_vs_medical_research_ratio >}}:1 for death
 
 #### Five Years Later (after "increasing medical research")
 
@@ -144,7 +144,7 @@ Watch closely. This is how they rob you in broad daylight while you clap:
 - Military spending also up 50%
 - Central banks printed 50% more money
 - Real purchasing power: Exactly the same
-- Ratio: Still 45:1 for death
+- Ratio: Still {{< var military_vs_medical_research_ratio >}}:1 for death
 
 You got a 50% raise. Everything costs 50% more. The pie did not grow. They gave you a bigger number on a smaller slice and expected you to say thank you. You did. You always do.
 
