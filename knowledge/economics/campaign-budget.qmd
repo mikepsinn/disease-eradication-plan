@@ -187,9 +187,9 @@ Here's how professional democracy corruption works:
 - Focus: US ({{< var campaign_lobbying_us >}}), EU ({{< var campaign_lobbying_eu >}}), G20 ({{< var campaign_lobbying_g20_millions >}})
 - AI writes the laws, lawyers make them legal-sounding
 
-**Buying Defense Lobbyists**: {{< var campaign_defense_lobbyist_budget >}}
+**Buying Military lobbyists**: {{< var campaign_defense_lobbyist_budget >}}
 
-Defense lobbyists currently work for whoever pays them. So you pay them more:
+Military lobbyists currently work for whoever pays them. So you pay them more:
 
 - Top 50 lobbyists get bond offers (become rich by lobbying FOR life instead of death)
 - Defense execs get early bond access ({{< var victory_bond_annual_return_pct >}} beats their stock options)
@@ -371,7 +371,7 @@ Papers for when plans fail (plans always fail somewhere)
 
 When everyone profits from cooperation, resistance becomes unprofitable. You've aligned every incentive:
 
-- Defense lobbyists: {{< var victory_bond_annual_return_pct >}} returns > current salary
+- Military lobbyists: {{< var victory_bond_annual_return_pct >}} returns > current salary
 - Insurance companies: Healthy people file zero claims
 - Pharma: Trials generate revenue, not expenses
 - Politicians: Living voters vote more than dead ones
