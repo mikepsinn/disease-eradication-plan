@@ -18,7 +18,7 @@ The missing piece is DALYs (Disability-Adjusted Life Years): healthy years delet
 
 That's the bill. Here's the receipt for the fix:
 
-Your dFDA costs {{< var dfda_annual_opex >}}/year to run.
+Your decentralized FDA costs {{< var dfda_annual_opex >}}/year to run.
 It saves {{< var dfda_benefit_rd_only_annual >}}/year in clinical trial waste.
 That's {{< var dfda_roi_rd_only >}}:1 returns on R&D savings alone.
 **Total societal benefit** (including lives saved): {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1
@@ -35,7 +35,7 @@ Then the Oxford RECOVERY trial proved you can do the same thing for **{{< var re
 - Collecting data electronically (instead of sacrificing forests to the paperwork gods)
 - Focusing on what actually matters: does the patient live or die? (not "did they complete form 27-B in triplicate?")
 
-Your dFDA takes this model global. **80-160x cost reduction.** Same data quality. Better real-world applicability. It turns out you don't need 17 committees to answer the question "did the medicine work?"
+Your decentralized FDA takes this model global. **80-160x cost reduction.** Same data quality. Better real-world applicability. It turns out you don't need 17 committees to answer the question "did the medicine work?"
 
 ## Where the {{< var dfda_benefit_rd_only_annual >}} Comes From
 
@@ -70,11 +70,11 @@ See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#da
 
 ## What It Costs to Run
 
-Your dFDA costs **{{< var dfda_annual_opex >}}/year** to operate. Servers, engineers, compliance, global integration. The boring stuff that saves billions. One-time build cost is similar. For context, this is roughly what your species spends annually on Halloween costumes for dogs. I need you to sit with that for a moment.
+Your decentralized FDA costs **{{< var dfda_annual_opex >}}/year** to operate. Servers, engineers, compliance, global integration. The boring stuff that saves billions. One-time build cost is similar. For context, this is roughly what your species spends annually on Halloween costumes for dogs. I need you to sit with that for a moment.
 
 ![It'll cost 40 million to run this per year. Maybe 27 million, maybe 56 million. Either way, less than one fighter jet.](/assets/images/health-dividend/health-dividend-section-the-framework-cost-breakdown-bw-academic.jpg)
 
-Less than one fighter jet. Less than one yacht. Less than what FIFA spends on "hospitality." See [dFDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) for detailed costs.
+Less than one fighter jet. Less than one yacht. Less than what FIFA spends on "hospitality." See [Decentralized FDA Cost-Benefit Analysis](https://dfda-impact.warondisease.org) for detailed costs.
 
 ## ROI Scenarios
 

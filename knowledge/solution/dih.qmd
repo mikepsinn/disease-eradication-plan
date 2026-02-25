@@ -83,7 +83,7 @@ Your DIH does exactly three things:
 2. **Allocate research via patient subsidies** (market mechanism) and **infrastructure via [Wishocracy](wishocracy.qmd)**
 3. **Verify results and pay proportional to impact**
 
-Everything operational is outsourced. Trial infrastructure? That's your [dFDA's](dfda.qmd) job. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
+Everything operational is outsourced. Trial infrastructure? That's your [decentralized FDA's](dfda.qmd) job. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
 
 ![A tiny middle bit that handles money, surrounded by other people who do the actual work. Like a very small manager with many employees.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
 
@@ -211,7 +211,7 @@ No bribes. No corruption. Just a standing rule: support policies that measurably
 - Research allocation via patient subsidies (market mechanism)
 - Verifies results, pays for outcomes
 
-**Your [dFDA](dfda.qmd):**
+**Your [Decentralized FDA](dfda.qmd):**
 
 - A funded **campaign**, not part of your DIH itself
 - Provides technical infrastructure for trials
@@ -256,12 +256,12 @@ Your DIH is intentionally minimal. It outsources everything operational because 
 | **Crowdfunding** | Gitcoin, Juicebox, etc. | They already exist and work |
 | **Task decomposition** | AI services | Machines are better at this |
 | **Talent matching** | Existing marketplaces | Don't reinvent LinkedIn |
-| **Trial infrastructure** | dFDA (a funded campaign) | Separate concerns |
+| **Trial infrastructure** | Decentralized FDA (a funded campaign) | Separate concerns |
 | **Data storage** | Competing providers | Market competition |
 
 ## How Campaigns Plug In
 
-Your dFDA is the main example of a funded campaign. It's not part of your DIH. It's a service provider competing for funding. If it stops performing, you fund something better. This is how your species runs restaurants. Time to try it with medicine.
+Your decentralized FDA is the main example of a funded campaign. It's not part of your DIH. It's a service provider competing for funding. If it stops performing, you fund something better. This is how your species runs restaurants. Time to try it with medicine.
 
 ### Campaign Lifecycle
 
@@ -299,7 +299,7 @@ Your DIH makes capture economically irrational.
 
 ![When the FDA gets corrupted, you just build a second FDA with the same money. Like switching to the other queue at the grocery store.](/assets/images/dih/dih-section-the-new-fda-risk-bw-academic.jpg)
 
-**Mitigation:** Your dFDA has no budget authority. It's just a campaign competing for funding. If it gets captured, fund a competing framework instead. Replace it like you replace a bad restaurant: stop going there and open a better one.
+**Mitigation:** Your decentralized FDA has no budget authority. It's just a campaign competing for funding. If it gets captured, fund a competing framework instead. Replace it like you replace a bad restaurant: stop going there and open a better one.
 
 Your protocol ensures **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves.
 
@@ -361,7 +361,7 @@ Your DIH is not a research institution, a trial platform, or a funding agency. I
 | 1% Treaty Fund | Treasury | Receives funds from treaty |
 | Patient subsidies | Research allocation | Market mechanism (patients choose trials) |
 | Wishocracy | Infrastructure governance | Allocates between infrastructure/public goods |
-| dFDA | Trial infrastructure | Funded campaign |
+| Decentralized FDA | Trial infrastructure | Funded campaign |
 | IABs | Political alignment | Keeps politicians incentivized |
 | VICTORY Bonds | Investor alignment | Funds the campaign |
 
