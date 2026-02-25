@@ -148,6 +148,17 @@ Foundations and think tanks establish: "Eligibility for fellowships and advisory
 
 Three separate entities that definitely don't coordinate but somehow all reward the same behavior. Your species invented this structure. It's genuinely one of your better ideas, which is a low bar, but still.
 
+#### Why This Isn't Bribery {#sec-why-not-bribery}
+
+Four reasons your lawyers will stop hyperventilating:
+
+1. **No one is paid to break a duty.** "Do your job better and we'll tell everyone you did." That's a performance review, not a bribe.
+2. **Rules are universal and ex-ante.** Same rules, all politicians, all parties, announced publicly in advance. No envelopes in parking garages.
+3. **No money goes to politicians.** They benefit indirectly: better scores, electoral support, nicer career options. This is how democracy was supposed to work before your species broke it.
+4. **Scores are based on public voting records.** Did they vote YES? Verifiable and ungameable. The {{< var iab_political_incentive_funding_pct >}} fund flows automatically based on treasury inflows. Pure math.
+
+Bribery **corrupts** alignment. IABs **create** it. Wealthy actors already buy policy (pharma spends $300M/year on lobbying, defense contractors spend more). The question isn't "should money influence policy?" but "can you point the money at welfare instead of warfare?" IAB funders will have more influence over which public goods get prioritized. So does the Gates Foundation over malaria. The difference is that IABs are transparent, measurable, and auditable. Most lobbying satisfies zero of those criteria.
+
 ### Worked Example: How Senator Smith Votes Yes
 
 Abstract mechanisms are great for economists and incomprehensible to everyone who matters. Here's how IABs work on an actual human politician (a creature that navigates entirely by self-interest, like a moth but with a pension).
@@ -263,27 +274,6 @@ Result: Vote yes. The math changed.
 
 Every metric jumps: her score nearly doubles, reelection odds climb 13 points, she gains $3M in independent support, and her post-office income more than doubles. Smith wins reelection by 12 points. Joins the WHO Advisory Board. Chairs the Aspen Health Initiative. All because she did math instead of listening to lobbyists. (Politicians can count. They just need something worth counting.)
 
-The flywheel spins. Each expansion increases the stakes, increases the score differential, makes voting yes even more dominant:
-
-| Year | Treaty % | Revenue | Bondholder Payout |
-|:-----|:---------|:--------|:------------------|
-| 1 | 1% | {{< var treaty_annual_funding >}} | {{< var victory_bond_annual_payout >}} |
-| 3 | 2% | $54B | $5.4B |
-| 5 | 5% | $135B | $13.5B |
-
-### Why This Isn't Bribery
-
-![Bribery: pay someone to betray the public. This thing: pay someone to help the public. Spot the difference, legally speaking.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-why-this-is-not-bribery-legally-speaking-bw-academic.jpg)
-
-Four reasons your lawyers will stop hyperventilating:
-
-1. **No one is paid to break a duty.** "Do your job better and we'll tell everyone you did." That's a performance review, not a bribe.
-2. **Rules are universal and ex-ante.** Same rules, all politicians, all parties, announced publicly in advance. No envelopes in parking garages.
-3. **No money goes to politicians.** They benefit indirectly: better scores, electoral support, nicer career options. This is how democracy was supposed to work before your species broke it.
-4. **Scores are based on public voting records.** Did they vote YES? Verifiable and ungameable. The {{< var iab_political_incentive_funding_pct >}} fund flows automatically based on treasury inflows. Pure math.
-
-Bribery **corrupts** alignment. IABs **create** it.
-
 ### The Revenue Split
 
 ![Money flows through two engines, investors and politicians, before reaching the actual medical research. It's trickle-down economics, but for not dying.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-7a-the-two-engines-financial-and-political-bw-academic.jpg)
@@ -378,16 +368,12 @@ A financial instrument that generates massive returns while accidentally curing 
 **What 1% of that is**: 1% = {{< var treaty_annual_funding >}}/year (enough to cure most diseases, apparently)
 
 **What bondholders get**: {{< var victory_bond_annual_payout >}}/year ({{< var victory_bond_funding_pct >}} of treaty revenue)
-$$ 10\% \times \$27.2\text{B} = \$2.72\text{B}/\text{year} $$
 
 **What funds political incentives** (keeps politicians aligned): {{< var iab_political_incentive_funding_annual >}}/year
-$$ 10\% \times \$27.2\text{B} = \$2.72\text{B}/\text{year} $$
 
 **What actually cures diseases**: {{< var dih_treasury_to_medical_research_annual >}}/year ({{< var dih_treasury_medical_research_pct >}} of treaty revenue)
-$$ 80\% \times \$27.2\text{B} = \$21.8\text{B}/\text{year} $$
 
 **What countries still have for wars**: {{< var global_military_spending_post_treaty_annual_2024 >}} ({{< var defense_sector_retention_pct >}} of the original budget)
-$$ 99\% \times \$2.72\text{T} = \$2.69\text{T} $$
 
 Investors aren't "taking" money from sick people. {{< var dih_treasury_medical_research_pct >}} goes to cures. Bondholders get {{< var victory_bond_funding_pct >}} for having the revolutionary idea of "what if we didn't all die?" On your planet, this qualifies as innovation.
 
@@ -421,7 +407,7 @@ Even at a 10% discount rate (as risky as funding a Mars casino), your {{< var tr
 
 #### This isn't complicated math
 
-- **Annual return**: {{< var victory_bond_annual_return_pct >}} (sounds fake, isn't)
+- **Annual return**: the returns described above (sounds fake, isn't)
 - **Lifetime value**: 54-90x (sounds impossible, is just arithmetic)
 
 Compare: venture capital gets 3-5x over 7-10 years (requires picking winners). Real estate gets 2-3x over 30 years (requires being a landlord). The Medallion Fund gets 39% annually (closed to mere mortals).
@@ -444,7 +430,7 @@ Two categories of risk (both involving trusting humans, which is historically un
 
 #### Project Risks
 
-- **Political Risk:** The treaty may fail to pass because politicians conclude that dead constituents are preferable to living ones who complain. Mitigation: broad bipartisan support, multi-country strategy, no single points of failure.
+- **Political Risk:** The treaty may fail to pass because politicians prefer the status quo to political risk. Mitigation: broad bipartisan support, multi-country strategy, no single points of failure.
 - **Execution Risk:** The campaign may fail to hit milestones. Mitigation: milestone-gated funding, lean operations, and competent humans (finding those is itself a risk).
 
 ![Political risk mitigation: bribe politicians legally. Execution risk mitigation: hire competent people. Revolutionary concepts in 2026.](/assets/images/victory-bonds/victory-bonds-section-project-risks-bw-academic.jpg)
@@ -471,7 +457,7 @@ Two categories of risk (both involving trusting humans, which is historically un
 
 **Fine print:** Returns assume the treaty passes. If politicians prefer dead constituents to living ones, you lose your money. But you'll be too dead from preventable diseases to notice.
 
-**Pitch angle:** Even accounting for "politicians might choose mass death" risk, this crushes every legal investment on the table.
+**Pitch angle:** Even accounting for "treaty fails to pass" risk, this crushes every legal investment on the table.
 
 ### Investment Thresholds and Term Sheet
 
@@ -505,19 +491,13 @@ Minimum investment amounts by investor type (your species requires gatekeeping e
 
 ![One circle takes money from new investors to pay old investors until it collapses. The other circle takes money from weapons to fund cures and pays investors forever. Spot the difference.](/assets/images/victory-bonds/victory-bonds-section-this-sounds-like-a-ponzi-scheme-run-by-someone-who-failed-math-bw-academic.jpg)
 
-The money comes from governments that currently spend it on bombs. The returns are high because the political risk is high. You're betting politicians will choose prosperity over mass death. Historically, that's a coin flip at best.
+The money comes from governments that currently spend it on bombs. The returns are high because the political risk is high. You're betting politicians will act rationally when shown the numbers. Historically, that's a coin flip at best.
 
 It's not a Ponzi scheme. It's lobbying economics pointed at diseases instead of wars. Same weapon, different enemy."
 
 #### "Isn't this just rich people buying policy?"
 
-Wealthy actors *already* buy policy. Pharma spends $300M/year on lobbying. Defense contractors spend more. That ship sailed, sank, and was rebuilt. The question isn't "should money influence policy?" It's "can you point the money at welfare instead of warfare?"
-
-![Three separate boxes to keep politicians from stealing money directly. They have to steal it indirectly now, which takes longer.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-2-isn-t-this-just-rich-people-buying-policy-bw-academic.jpg)
-
-Safeguards: no quid pro quo (standing rules only), universal and ex-ante (same for all parties), no cash to politicians (indirect benefits only), and the metric is suffering reduced, not interests served.
-
-Honest admission: yes, IAB funders will have more influence over which public goods get prioritized. So does the Gates Foundation over malaria. So does anyone with money over anything. The question is whether the influence is transparent, measurable, and auditable. IABs satisfy all three. Most lobbying satisfies zero.
+Wealthy actors *already* buy policy. Pharma spends $300M/year on lobbying. Defense contractors spend more. That ship sailed, sank, and was rebuilt. The safeguards are rule-based, universal, no cash to politicians, and the metric is suffering reduced, not interests served.
 
 #### "Won't politicians game the metrics?"
 
@@ -535,7 +515,7 @@ Score decay. Vote to reverse funding and your Public Good Score tanks. The same 
 
 "If the treaty fails completely, you lose your {{< var treaty_campaign_total_cost >}}. It gets spent on the campaign. Convincing humans to click buttons. Bribing lobbyists. Building platforms. Paying lawyers to make bribery legal.
 
-This is the primary risk. You're funding a political campaign with a {{< var victory_bond_annual_return_pct >}} payout if it wins.
+This is the primary risk. You're funding a political campaign with a massive payout if it wins.
 
 If it fails completely, you'll probably die of a preventable disease anyway. You won't be around to complain about the lost money.
 
@@ -551,7 +531,7 @@ Credit ratings started as one guy in the 1800s publishing opinions about railroa
 
 #### "How is this different from just donating to charity?"
 
-"Charities give you 0% returns and a tax deduction. [VICTORY Incentive Alignment Bonds](https://iab.warondisease.org) give you {{< var victory_bond_annual_return_pct >}} returns and generational wealth.
+"Charities give you 0% returns and a tax deduction. [VICTORY Incentive Alignment Bonds](https://iab.warondisease.org) give you perpetual returns and generational wealth.
 
 ![Charity: give money away, feel good, get tax break. VICTORY Bonds: give money away, feel good, get 272 percent back. One of these seems objectively better.](/assets/images/victory-bonds/victory-bonds-section-how-is-this-different-from-just-donating-to-charity-bw-academic.jpg)
 
@@ -560,13 +540,6 @@ Charity is for people who want to feel good. This is for people who want to get 
 You're not donating to cure diseases. You're investing in curing diseases. It's the most profitable legal thing you can do with a billion dollars.
 
 It's the Louisiana Purchase of pragmatic clinical trials. Except instead of buying land from France, you're buying life extension from death. And unlike Louisiana, it doesn't flood. And unlike France, it doesn't surrender."
-
-#### When they want detailed financials
-
-"Complete breakdowns available:
-
-- [Financial Plan](../economics/financial-plan.qmd) - System architecture
-- Full offering docs - Email for access"
 
 ### The One-Page Summary That Makes Calculators Weep
 
@@ -584,16 +557,6 @@ Hand this to investors who can't read more than one page:
 - **Priority:** You get paid before anyone else touches the money
 - **Growth path:** 1% to 2% to 5%+ as diseases get cured and public demands more
 
-#### What could go wrong
-
-- **Political risk:** Politicians might prefer dead voters (unlikely but humans are weird)
-- **Execution risk:** The campaign could be run incompetently (mitigated by hiring competent humans)
-- **Timeline risk:** 18-36 month lockup while convincing politicians to be smart
-- **Liquidity risk:** Your money is frozen during the convincing phase
-
-{{< include ../figures/victory-bonds-roi-projection-bar-chart.qmd >}}
-
-{{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
 #### The core mechanism is stupid simple
 
