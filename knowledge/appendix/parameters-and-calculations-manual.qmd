@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 259 parameters used in the analysis, organized by type:
+This appendix documents all 258 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 102
-- Calculated values: 99
+- Calculated values: 98
 - Core definitions: 58
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (102 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
+[Calculated Values](#sec-calculated) (98 parameters) • [External Data Sources](#sec-external) (102 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -574,80 +574,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
-
-:::
-
-### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
-
-**Inputs**:
-
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
-
-$$
-\begin{gathered}
-Treatments_{dFDA,ann} \\
-= Treatments_{new,ann} \times k_{capacity} \\
-= 15 \times 12.3 \\
-= 185
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
-= \frac{23.4M}{1.9M} \\
-= 12.3
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.8B}{\$929} \\
-= 23.4M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M
-\end{gathered}
-$$
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_first_treatments_per_year.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_first_treatments_per_year.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_first_treatments_per_year.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_first_treatments_per_year.qmd >}}
 
 :::
 

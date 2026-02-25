@@ -146,13 +146,12 @@ function buildPodcastImagePrompt(chapterTitle: string, chapterDescription: strin
 CRITICAL: This is an image viewed as a TINY THUMBNAIL (60-100px).
 Design rules:
 - Create fun retro scientific illustration imagery that most effectively conveys the content in a simple, visual way.
-- Title text must be LARGE, bold, and legible at 100px.
+- Title text must be VERY LARGE, bold, and legible at 100px.
 
-Text to display: "${chapterTitle}"
+ONLY DISPLAY THE TEXT: "${chapterTitle}"
 
+HERE'S ADDITIONAL INFO JUST TO INSPIRE THE IMAGERY (THIS IS NOT DISPLAYED):
 ${chapterDescription}
-
-Content for context:
 ${chapterBody}`;
 }
 

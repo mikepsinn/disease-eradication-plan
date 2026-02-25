@@ -108,7 +108,7 @@ After 80 years of observation, I've decoded the paper-giving sequence. This manu
 
 **Step 1: Get Many Papers from Rich Humans**
 
-You convince rich humans to give you papers (at least one billion to be exact) by promising them even more papers later. This is called "investment," which is gambling but wearing a suit. You need one human with a billion papers who prefers not dying of horrible diseases to dying of horrible diseases. There are approximately 2,800 of these humans on your planet. Statistically, at least one of them prefers living.
+You convince rich humans to give you papers (at least one billion to be exact) by promising them even more papers later. This is called "investment," which is gambling but wearing a suit. You really only need one human with a billion papers who prefers not dying of horrible diseases to dying of horrible diseases. There are approximately 2,800 of these humans on your planet. Statistically, at least one of them prefers living.
 
 **Step 2: Give Some of the Papers to Loud Humans**
 
@@ -203,7 +203,7 @@ Even the money you DO spend on medicine is mostly wasted, because the system tha
 
 Vioxx killed an estimated 60,000 people from heart attacks. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. (Yes, this is how your system works in the 21st century.) Then a human read it. Five years and 60,000 corpses later, someone noticed a pattern. This is your safety system.
 
-Your National Institutes of Health, the agency nominally responsible for finding cures, [spends {{< var nih_clinical_trials_spending_pct >}} of its budget on clinical trials](/knowledge/problem/nih-fails-2-institute-health.qmd). The other 96.7% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
+Your National Institutes of Health, the agency nominally responsible for finding cures, spends {{< var nih_clinical_trials_spending_pct >}} of its budget on clinical trials (see [NIH fails to institute health](/knowledge/problem/nih-fails-2-institute-health.qmd)). The other 96.7% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
 
 Then there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would {{< var willing_trial_participants_global >}} other patients, and the current system has {{< var current_trial_slots_available >}} slots. That's a participation rate of {{< var current_clinical_trial_participation_rate >}}. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
@@ -305,7 +305,7 @@ On Wishonia, people do useful things because they're useful. On Earth, you need 
 
 An Incentive Alignment Bond (IAB) funds a policy campaign, then splits the resulting government savings three ways: 80% to the public good, 10% to investors as returns, and 10% to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors get rich, politicians get reelected, and 80% of the money goes where it's supposed to. Everyone's greed points at the same target. It's a war bond, but for any war you want to win.
 
-For your 1% Treaty, these are called VICTORY Bonds. Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing except:
+For your 1% Treaty, these are called VICTORY Incentive Alignment Bonds. Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing except:
 
 #### What Grandma Got
 
@@ -328,7 +328,7 @@ This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest o
 
 Here's the part where humans usually stop reading because it involves following money through more than one step. Try to keep up:
 
-1. You sell {{< var treaty_campaign_total_cost >}} in VICTORY Bonds to investors. This funds the campaign.
+1. You sell {{< var treaty_campaign_total_cost >}} in VICTORY Incentive Alignment Bonds to investors. This funds the campaign.
 2. The campaign succeeds. Your treaty redirects 1% of military spending: {{< var treaty_annual_funding >}}/year flows from the murder budget to clinical trials.
 3. The Victory Corporation (your SPV that issues the bonds) takes a 20% management fee on that {{< var treaty_annual_funding >}}.
 4. Half of that fee ({{< var victory_bond_funding_pct >}}) goes to investor dividends: {{< var victory_bond_annual_payout >}}/year on a {{< var treaty_campaign_total_cost >}} investment. That's {{< var victory_bond_annual_return_pct >}} annual returns. Your investors will think it's a typo. It's not.
@@ -342,7 +342,7 @@ If this sounds familiar, it should. Eisenhower warned you about the Military Ind
 
 You're building the same machine, but pointed at diseases instead of countries. Call it the Patient Industrial Complex. Investors fund politicians, politicians fund clinical trials, trials generate returns, returns fund investors, investors fund politicians. Same loop. Same greed. Same self-sustaining mechanics. Different corpses (fewer of them).
 
-The Military Industrial Complex wasn't designed. It evolved, because the incentives aligned. An Incentive Alignment Bond just aligns them on purpose, toward something that doesn't require orphans. [Full financial mechanics](/knowledge/solution/incentive-alignment-bonds.qmd).
+The Military Industrial Complex wasn't designed. It evolved, because the incentives aligned. An Incentive Alignment Bond just aligns them on purpose, toward something that doesn't require orphans. 
 
 ### Step 2: The Great Clicking
 
@@ -350,9 +350,9 @@ The Military Industrial Complex wasn't designed. It evolved, because the incenti
 
 You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on: "Should your country redirect 1% of military spending to fund clinical trials?"
 
-Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](/knowledge/strategy/global-referendum.qmd) {{< var global_population_activism_threshold_pct_cite >}}. Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. It's like a cheat code for civilization, except it's real and backed by a century of data.
+Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](/knowledge/strategy/global-referendum.qmd) {{< var global_population_activism_threshold_pct_cite >}}. Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. It's like a cheat code for civilization.
 
-That's 280 million humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get 280 million to click "yes" on not dying. {{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to [paid referral bonuses](/knowledge/strategy/global-referendum.qmd) that make sharing the vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
+That's 280 million humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get 280 million to vote yes or no on the treaty. {{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to [paid referral bonuses](/knowledge/strategy/global-referendum.qmd) that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
 
 ### Step 3: Bribe the Bribers
 
@@ -388,18 +388,18 @@ Remember that {{< var iab_political_incentive_funding_annual >}}/year from Step 
 
 The NRA already perfected this technology. They give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. You're plagiarizing their system and replacing "guns" with "not dying from diseases."
 
-The [IAB architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but currently get punished for it, which on your planet is most problems. Climate change, pandemic preparedness, infrastructure, education, anything where the answer is obvious and the obstacle is that nobody gets paid to do it. Pick your cause, issue the bond, fund the campaign, align the greed. VICTORY Bonds are just the first implementation.
+The [Incentive Alignment Bond architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but currently get punished for it, which on your planet is most problems.
 
 ### Step 5: Enjoy
 
 *Everyone Gets Rich and Nobody Dies*
 
-Your treaty passes because money often defeats morality, as is tradition.
+Your treaty passes because money defeats morality, as is tradition.
 
 The {{< var treaty_annual_funding >}}/year money volcano erupts:
 
-- **Defense Contractors**: Keep 99% of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns on the 1%.
-- **Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} per lab rat with thumbs, the lab rats pay THEM. It's like if Uber convinced cars to pay for the privilege of driving.
+- **Defense Contractors**: Keep 99% of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns.
+- **Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} for phase 2 and 3 trials, the treaty pay THEM for each patient that joins their trials.
 - **Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
 - **Investors**: {{< var victory_bond_annual_return_pct >}} returns, which they will assume is a typo until you show them the math, at which point they will assume the math is a typo
 - **Lobbyists**: Same job, same salary, but their Wikipedia page no longer needs a "Controversies" section
@@ -407,7 +407,6 @@ The {{< var treaty_annual_funding >}}/year money volcano erupts:
 - **Regular humans**: Not dying from stupid things (priceless, but also free)
 
 Nobody has to evolve morally. You just point everyone's greed at diseases instead of each other. It's like training a pack of wolves to herd sheep by convincing them the sheep are made of money.
-
 
 ### How This Manual Could Fix Everything
 

@@ -1323,7 +1323,10 @@ export function cleanContentForImagePrompt(content: string): string {
 export function cleanContentForLLM(content: string): string {
   let cleaned = content;
 
-  // 1. Remove Quarto includes (e.g., {{< include /path/to/file.qmd >}})
+  // 1a. Remove Quarto raw format code blocks (e.g., ```{=html} ... ```)
+  cleaned = cleaned.replace(/```\{=[a-z]+\}[\s\S]*?```/g, '');
+
+  // 1b. Remove Quarto includes (e.g., {{< include /path/to/file.qmd >}})
   cleaned = cleaned.replace(/\{\{<\s*include\s+[^>]+>\}\}/gi, '');
 
   // 2. Remove Quarto shortcodes except variables (video, embed, etc.)

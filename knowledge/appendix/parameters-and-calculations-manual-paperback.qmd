@@ -37,13 +37,13 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 This appendix documents all 219 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 92
-- Calculated values: 96
+- External sources (peer-reviewed): 93
+- Calculated values: 95
 - Core definitions: 31
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (96 parameters) • [External Data Sources](#sec-external) (92 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
+[Calculated Values](#sec-calculated) (95 parameters) • [External Data Sources](#sec-external) (93 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -574,80 +574,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
-
-:::
-
-### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
-
-**Inputs**:
-
-- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
-- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
-
-$$
-\begin{gathered}
-Treatments_{dFDA,ann} \\
-= Treatments_{new,ann} \times k_{capacity} \\
-= 15 \times 12.3 \\
-= 185
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
-= \frac{23.4M}{1.9M} \\
-= 12.3
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.8B}{\$929} \\
-= 23.4M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M
-\end{gathered}
-$$
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_first_treatments_per_year.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_first_treatments_per_year.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_first_treatments_per_year.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_first_treatments_per_year.qmd >}}
 
 :::
 
@@ -7223,6 +7149,30 @@ NIH annual budget (FY2024/2025)
 #### Input Distribution
 
 {{< include ../figures/distribution-nih_annual_budget.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### NIH Clinical Trials Spending Percentage: 3.3% {#sec-nih_clinical_trials_spending_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of NIH budget spent on clinical trials (3.3%)
+
+**Source**: [@nih-clinical-trials-spending-pct-3-3]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2%, 5%] • Distribution: Beta
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 2% and 5% (±45%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-nih_clinical_trials_spending_pct.qmd >}}
 
 *✓ High confidence*
 
