@@ -35,10 +35,10 @@ with dot.subgraph(name='cluster_dih') as dih:
     dih.node('DIHDoes', 'A DIH handles:\n• Budget decisions\n• Campaign funding\n• Wishocracy voting\n• Prize distribution',
              shape='note', style='filled', fillcolor='white')
 
-# Your decentralized framework for drug assessment (dFDA) cluster (Technical Platform)
+# Your decentralized FDA cluster (Technical Platform)
 
 with dot.subgraph(name='cluster_dfda') as dfda:
-    dfda.attr(label='Your decentralized framework for drug assessment (dFDA):\nTechnical Protocol', style='solid', penwidth='3')
+    dfda.attr(label='Your decentralized FDA:\nTechnical Protocol', style='solid', penwidth='3')
     dfda.node('Protocol', 'Open Protocol\n(Like HTTP)', shape='box')
     dfda.node('Marketplace', 'Pragmatic Trial\nEcosystem', shape='box')
     dfda.node('Data', 'Data Commons\n& Rankings', shape='box')

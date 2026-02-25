@@ -90,7 +90,7 @@ def calculate_dfda_roi(
     addressable_market: float = GLOBAL_CLINICAL_TRIAL_MARKET
 ) -> Dict[str, float]:
     """
-    Calculate ROI for a decentralized framework for drug assessment (dFDA).
+    Calculate ROI for a decentralized FDA.
 
     Returns:
         Dictionary with ROI metrics
