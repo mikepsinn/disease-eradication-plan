@@ -19,29 +19,34 @@ podcast-image: /assets/podcast/nih-fails-2-institute-health-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## The Allocation Scandal
 
-The National Institutes of Health has an annual budget of approximately **{{< var nih_annual_budget >}}**. 55 million people die annually [@who-daily-deaths]. You would think those two facts would be related. They are not.
+55 million people die annually [@who-daily-deaths]. The National Institutes of Health has an annual budget of approximately **{{< var nih_annual_budget >}}**. You would think those two facts would be related. They are not.
 
-A 2023 JAMA study [@nih-phased-trial-spending-2010-2019] analyzed $247 billion in NIH spending (2010-2019) and found:
+Of $247 billion the NIH spent over a decade, exactly 3.3% went to testing whether treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% went to everything else.
 
-- **84.9% - Basic research** ($209.9B): Mice, molecules, mechanisms. "Experimental work without any particular application in view." They put the quiet part in the job description.
-- **11.8% - Applied research (non-trial)** ($29.3B): Research with "practical aims" that does not practically aim at testing treatments in humans.
-  - **CTSA infrastructure program:** ~$1B/year in buildings, overhead, salaries [@nih-ctsa]
-  - **Observational studies:** Watching patients get sicker without testing treatments (All of Us [@nih-all-of-us-inefficiency]: $2.16B to observe disease happening. Heroic.)
-  - **Other applied research:** Drug characterization, health services research, epidemiology
-
-- **3.3% - Phased clinical trials** ($8.1B): Actually testing if drugs work in humans [@nih-phased-trial-spending-2010-2019] (Phases 1-3)
-  - Phase 1: $1.5B (18.5% of clinical trial budget)
-  - Phase 2: $3.5B (43.2%)
-  - Phase 3: $2.6B (32.1%). **NIH covers only 3.7-4.3% of Phase 3 costs**, then wanders off like a cat that lost interest.
-  - Pragmatic trials [@pragmatic-trials-cost-advantage] (30x cheaper): Severely underfunded despite proven efficiency
-
-**The NIH spends 96.7% of its budget on everything except the one thing that saves lives: testing treatments in humans.**
+That might be defensible if we'd already tested all the known safe compounds that are piled up waiting for human testing. We haven't. There are roughly {{< var safe_compounds_count >}} with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. The pipeline is overflowing with candidates. The bottleneck is trials.
 
 It's like spending 97% of your grocery budget on cookbooks and 3% on food, then wondering why you're starving.
 
 This isn't just inefficiency. It's a body count.
 
 ![The NIH spends 85 percent on research and 3 percent on humans. Apparently mice are more important.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
+
+::: {.callout-note collapse="true" title="The Receipts: Where $247 Billion Went (2010-2019)"}
+
+A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247 billion in NIH spending (2010-2019). Each of these categories funds valuable work. The question is whether the ratio makes sense when thousands of safe compounds sit untested.
+
+- **84.9% - Basic research** ($209.9B): Understanding disease mechanisms, molecular biology, genomics. Essential for identifying new targets, but 85 cents of every dollar is a lot of understanding and not much testing.
+- **11.8% - Applied research (non-trial)** ($29.3B): Translating discoveries toward practical use, but without the final step of testing them in patients.
+  - **CTSA infrastructure program:** ~$1B/year in trial infrastructure, coordination, and training [@nih-ctsa]
+  - **Observational studies:** Population health data collection (All of Us [@nih-all-of-us-inefficiency]: $2.16B). Valuable for identifying patterns, but observation without intervention doesn't cure anyone.
+  - **Other applied research:** Drug characterization, health services research, epidemiology
+- **3.3% - Phased clinical trials** ($8.1B): The only category that directly tests whether treatments work in humans (Phases 1-3)
+  - Phase 1: $1.5B (18.5% of clinical trial budget)
+  - Phase 2: $3.5B (43.2%)
+  - Phase 3: $2.6B (32.1%). **NIH covers only 3.7-4.3% of Phase 3 costs**, leaving completion to industry, which only funds trials with patent-protected profit potential.
+  - Pragmatic trials [@pragmatic-trials-cost-advantage] (30x cheaper): Severely underfunded despite proven efficiency
+
+:::
 
 ## Why This Allocation Exists
 
