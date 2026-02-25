@@ -1,11 +1,12 @@
 /**
- * Generate OG images and favicons for all Quarto configurations
+ * Generate OG images, podcast covers, and favicons for all Quarto configurations
  *
  * Dynamically discovers _quarto-*.yml configs and generates missing branding assets.
  * Reads image prompts from dih-render.favicon-prompt and dih-render.og-image-prompt.
  *
  * Output locations:
  *   - OG images: assets/og/{config-name}-og-1200x630.jpg (JPG for compression)
+ *   - Podcast covers: assets/podcast/{chapter-name}-podcast.jpg (3000x3000, one per episode)
  *   - Favicons: assets/icons/{config-name}-favicon*.png (PNG for transparency)
  *
  * Usage:
@@ -26,8 +27,10 @@ import fs from 'fs/promises';
 import { existsSync } from 'fs';
 import yaml from 'js-yaml';
 import sharp from 'sharp';
+import matter from 'gray-matter';
 import { generateAndSaveImages } from '../lib/gemini-images';
 import { VisualStyles } from '../lib/image-prompts';
+import { stringifyWithFrontmatter } from '../lib/file-utils';
 
 // Load environment variables
 dotenv.config();
@@ -129,6 +132,25 @@ function buildOgImagePrompt(config: QuartoConfig): string {
 ${config.title}
 
 ${config.description}`;
+}
+
+/**
+ * Build podcast cover prompt for a chapter
+ * Optimized for small-screen legibility (60-100px thumbnails on phones)
+ */
+function buildPodcastImagePrompt(chapterTitle: string, chapterDescription: string): string {
+  const style = VisualStyles['bw-academic'];
+
+  return `${style.style}
+
+CRITICAL: This is a podcast cover image viewed as a TINY THUMBNAIL (60-100px) on phones.
+Design rules:
+- ONE bold, simple central icon or symbol. No fine details.
+- If any text, maximum 3-5 LARGE bold words. Text must be legible at 100px.
+
+Episode title: ${chapterTitle}
+
+${chapterDescription}`;
 }
 
 /**
@@ -242,6 +264,133 @@ async function generateOgImage(config: QuartoConfig, force: boolean = false): Pr
 }
 
 /**
+ * Extract QMD file paths from a Quarto config document
+ */
+function extractChapterFiles(doc: Record<string, any>): string[] {
+  const extract = (section: any[]): string[] => {
+    const files: string[] = [];
+    if (!section) return files;
+    for (const item of section) {
+      if (typeof item === 'string') {
+        files.push(item);
+      } else if (item && item.href) {
+        files.push(item.href);
+      } else if (item && item.chapters) {
+        files.push(...extract(item.chapters));
+      } else if (item && item.contents) {
+        files.push(...extract(item.contents));
+      }
+    }
+    return files;
+  };
+
+  const allFiles: string[] = [];
+  if (doc.book && doc.book.chapters) {
+    allFiles.push(...extract(doc.book.chapters));
+  }
+  if (doc['dih-render'] && doc['dih-render']['index-source']) {
+    allFiles.push(doc['dih-render']['index-source']);
+  }
+  return allFiles;
+}
+
+/**
+ * Generate podcast cover images for all chapters in a config (one per episode)
+ * Saves to: assets/podcast/{chapter-name}-podcast.jpg (3000x3000)
+ * Updates podcast-image in each QMD's frontmatter
+ */
+async function generatePodcastImages(config: QuartoConfig, force: boolean = false): Promise<number> {
+  const configPath = path.join(process.cwd(), `${config.configFile}.yml`);
+  const configContent = await fs.readFile(configPath, 'utf-8');
+  const doc = yaml.load(configContent) as Record<string, any>;
+
+  const chapterFiles = extractChapterFiles(doc);
+  const outputDir = path.join(process.cwd(), 'assets', 'podcast');
+  await fs.mkdir(outputDir, { recursive: true });
+
+  let generated = 0;
+
+  for (const chapterFile of chapterFiles) {
+    const filePath = path.join(process.cwd(), chapterFile);
+    if (!existsSync(filePath) || !filePath.endsWith('.qmd')) continue;
+
+    const fileContent = await fs.readFile(filePath, 'utf-8');
+    const { data: frontmatter, content: body } = matter(fileContent);
+
+    const chapterName = path.basename(chapterFile, '.qmd');
+    const outputFileName = `${chapterName}-podcast`;
+    const outputPath = path.join(outputDir, `${outputFileName}.jpg`);
+    const podcastImageValue = `/assets/podcast/${outputFileName}.jpg`;
+
+    // Skip if podcast-image is set in frontmatter and the referenced file exists
+    if (frontmatter['podcast-image']) {
+      const existingPath = path.join(process.cwd(), frontmatter['podcast-image']);
+      if (existsSync(existingPath)) {
+        console.log(`  [SKIP] ${chapterName}: podcast image exists`);
+        generated++;
+        continue;
+      }
+    }
+
+    // Skip if output file exists (even without frontmatter reference)
+    if (!force && existsSync(outputPath)) {
+      // File exists but frontmatter is missing/stale - update frontmatter
+      frontmatter['podcast-image'] = podcastImageValue;
+      const updatedContent = stringifyWithFrontmatter(body, frontmatter);
+      await fs.writeFile(filePath, updatedContent, 'utf-8');
+      console.log(`  [SKIP] ${chapterName}: image exists, updated frontmatter`);
+      generated++;
+      continue;
+    }
+
+    const title = frontmatter.title || chapterName;
+    const description = frontmatter.description || '';
+
+    console.log(`  Generating podcast image for: ${title}`);
+    const prompt = buildPodcastImagePrompt(title, description);
+
+    const files = await generateAndSaveImages({
+      prompt,
+      aspectRatio: '1:1',
+      outputDir,
+      filePrefix: `${outputFileName}-raw`,
+      format: 'jpg',
+      metadata: {
+        title,
+        description,
+        keywords: config.keywords,
+        sourceUrl: config.siteUrl,
+      },
+    });
+
+    if (!files || files.length === 0) {
+      console.error(`  [ERROR] Failed: ${chapterName}`);
+      continue;
+    }
+
+    // Resize to 3000x3000 (Apple Podcasts max, works everywhere)
+    const generatedPath = files[0];
+    await sharp(generatedPath)
+      .resize(3000, 3000, { fit: 'cover' })
+      .jpeg({ quality: 90 })
+      .toFile(outputPath);
+    if (path.resolve(generatedPath) !== path.resolve(outputPath)) {
+      try { await fs.unlink(generatedPath); } catch { /* ignore */ }
+    }
+
+    // Update frontmatter
+    frontmatter['podcast-image'] = podcastImageValue;
+    const updatedContent = stringifyWithFrontmatter(body, frontmatter);
+    await fs.writeFile(filePath, updatedContent, 'utf-8');
+
+    console.log(`  [OK] ${chapterName}: generated + frontmatter updated`);
+    generated++;
+  }
+
+  return generated;
+}
+
+/**
  * Generate favicon for a config
  * Saves to: assets/icons/{config-name}-favicon*.png
  */
@@ -325,8 +474,9 @@ async function main(): Promise<void> {
   console.log('='.repeat(60));
   console.log('');
   console.log('Output locations:');
-  console.log('  OG images: assets/og/{config}-og-1200x630.jpg');
-  console.log('  Favicons:  assets/icons/{config}-favicon*.png');
+  console.log('  OG images:  assets/og/{config}-og-1200x630.jpg');
+  console.log('  Podcasts:   assets/podcast/{chapter}-podcast.jpg');
+  console.log('  Favicons:   assets/icons/{config}-favicon*.png');
   console.log('');
 
   if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
@@ -352,6 +502,7 @@ async function main(): Promise<void> {
   console.log(`[OK] Found ${configFiles.length} configs\n`);
 
   let ogCount = 0;
+  let podcastCount = 0;
   let faviconCount = 0;
 
   for (const configFile of configFiles) {
@@ -370,12 +521,14 @@ async function main(): Promise<void> {
     const og = await generateOgImage(config, force);
     if (og) ogCount++;
 
+    podcastCount += await generatePodcastImages(config, force);
+
     const fav = await generateFavicon(config, force);
     if (fav) faviconCount++;
   }
 
   console.log('\n' + '='.repeat(60));
-  console.log(`Summary: ${ogCount} OG images, ${faviconCount} favicons`);
+  console.log(`Summary: ${ogCount} OG images, ${podcastCount} podcast covers, ${faviconCount} favicons`);
   console.log('='.repeat(60));
 }
 

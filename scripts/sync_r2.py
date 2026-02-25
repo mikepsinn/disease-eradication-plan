@@ -163,12 +163,47 @@ def get_public_url():
     return os.environ.get("R2_PUBLIC_URL", "").rstrip("/")
 
 
+MULTIPART_THRESHOLD = 8 * 1024 * 1024   # 8 MB (boto3 default)
+MULTIPART_CHUNKSIZE = 8 * 1024 * 1024   # 8 MB (boto3 default)
+
+
 def md5_file(path: Path) -> str:
+    """Simple whole-file MD5 hash."""
     h = hashlib.md5()
     with open(path, "rb") as f:
         for chunk in iter(lambda: f.read(8192), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def multipart_etag(path: Path, chunk_size: int = MULTIPART_CHUNKSIZE) -> str:
+    """Compute the S3/R2 multipart ETag for a file.
+
+    When boto3 uses multipart upload, the ETag is:
+        md5(concat(md5(part1), md5(part2), ...))-num_parts
+    """
+    md5s = []
+    with open(path, "rb") as f:
+        while True:
+            data = f.read(chunk_size)
+            if not data:
+                break
+            md5s.append(hashlib.md5(data).digest())
+    if not md5s:
+        return hashlib.md5(b"").hexdigest()
+    composite = hashlib.md5(b"".join(md5s)).hexdigest()
+    return f"{composite}-{len(md5s)}"
+
+
+def file_matches_etag(path: Path, remote_etag: str | None) -> bool:
+    """Check if a local file matches a remote ETag (single-part or multipart)."""
+    if remote_etag is None:
+        return False
+    if "-" in remote_etag:
+        # Multipart ETag
+        return multipart_etag(path) == remote_etag
+    # Simple MD5 ETag
+    return md5_file(path) == remote_etag
 
 
 def content_type_for(path: Path) -> str:
@@ -249,11 +284,10 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
     upload_bytes = 0
 
     for key, local_path in sorted(local_files.items()):
-        local_md5 = md5_file(local_path)
         remote_etag = remote_objects.get(key)
         size = local_path.stat().st_size
 
-        if remote_etag == local_md5:
+        if file_matches_etag(local_path, remote_etag):
             skipped += 1
             continue
 
@@ -529,16 +563,17 @@ def check_status(dirs: list[str], patterns: list[str]):
         print(f"\nChecking {prefix}/ ({len(local_files)} local, {len(remote_objects)} remote)...")
 
         for key, local_path in local_files.items():
+            if not local_path.exists():
+                continue
             ext = local_path.suffix.lower() or "(none)"
             size = local_path.stat().st_size
             if ext not in by_ext:
                 by_ext[ext] = {"up_to_date": 0, "needs_upload": 0, "new": 0,
                                "up_to_date_bytes": 0, "needs_upload_bytes": 0}
 
-            local_md5 = md5_file(local_path)
             remote_etag = remote_objects.get(key)
 
-            if remote_etag == local_md5:
+            if file_matches_etag(local_path, remote_etag):
                 by_ext[ext]["up_to_date"] += 1
                 by_ext[ext]["up_to_date_bytes"] += size
             elif remote_etag is None:
