@@ -30,7 +30,7 @@ import sharp from 'sharp';
 import matter from 'gray-matter';
 import { generateAndSaveImages } from '../lib/gemini-images';
 import { VisualStyles } from '../lib/image-prompts';
-import { stringifyWithFrontmatter } from '../lib/file-utils';
+import { stringifyWithFrontmatter, resolveAndCleanText } from '../lib/file-utils';
 
 // Load environment variables
 dotenv.config();
@@ -145,10 +145,10 @@ function buildPodcastImagePrompt(chapterTitle: string, chapterDescription: strin
 
 CRITICAL: This is a podcast cover image viewed as a TINY THUMBNAIL (60-100px) on phones.
 Design rules:
-- ONE bold, simple central icon or symbol. No fine details.
-- If any text, maximum 3-5 LARGE bold words. Text must be legible at 100px.
+- ONE bold, simple central icon or symbol. 
+- Title text must be LARGE, bold, and legible at 100px.
 
-Episode title: ${chapterTitle}
+Text to display: "${chapterTitle}"
 
 ${chapterDescription}`;
 }
@@ -343,8 +343,9 @@ async function generatePodcastImages(config: QuartoConfig, force: boolean = fals
       continue;
     }
 
-    const title = frontmatter.title || chapterName;
-    const description = frontmatter.description || '';
+    // Resolve Quarto variables and strip confidence intervals / HTML
+    const title = await resolveAndCleanText(frontmatter.title || chapterName);
+    const description = await resolveAndCleanText(frontmatter.description || '');
 
     console.log(`  Generating podcast image for: ${title}`);
     const prompt = buildPodcastImagePrompt(title, description);

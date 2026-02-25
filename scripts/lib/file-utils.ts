@@ -1246,6 +1246,18 @@ export function replaceQuartoVariables(
 }
 
 /**
+ * Resolve Quarto variables and strip confidence intervals / HTML tags
+ * Useful for preparing frontmatter values (title, description) for display or prompts
+ */
+export async function resolveAndCleanText(text: string): Promise<string> {
+  const variables = await loadQuartoVariables();
+  return replaceQuartoVariables(text, variables)
+    .replace(/\s*\(95% CI:[^)]*\)/g, '')
+    .replace(/<[^>]+>/g, '')
+    .trim();
+}
+
+/**
  * Clean content for AI image generation prompts
  * More aggressive than cleanContentForLLM - strips all markup that doesn't convey visual meaning
  * @param content Raw QMD/Markdown content
