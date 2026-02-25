@@ -36,7 +36,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from lib.llm import generate_gemini_flash_content_with_image
-from lib.veo import generate_image, generate_video, rate_limited_generate_image
+from lib.image_gen import generate_image, rate_limited_generate_image
+from lib.veo import generate_video
 from dih_models.yaml_utils import load_quarto_config
 from generate_audiobook import extract_book_metadata
 from lib.audiobook_common import (

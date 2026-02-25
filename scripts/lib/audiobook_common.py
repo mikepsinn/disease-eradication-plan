@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 # --- Style constant (shared across image/video generation) ---
-IMAGE_STYLE = "retro academic illustration"
+IMAGE_STYLE = "retro academic"
 
 # --- Path constants (legacy, kept for backward compat) ---
 PROJECT_ROOT = Path(__file__).parent.parent.parent

@@ -3,194 +3,34 @@
 """
 Veo 3.1 video generation wrapper using google-genai SDK.
 Follows same patterns as scripts/lib/tts.py (shared google_client, env var auth).
+
+Image generation has moved to scripts/lib/image_gen.py.
 """
 import sys
-import os
 import time
 from pathlib import Path
-from typing import Any, TYPE_CHECKING, cast
+from typing import Any, cast
 
 if sys.platform == "win32":
-    # sys.stdout.reconfigure exists at runtime on CPython, but is missing from TextIO stubs
     cast(Any, sys.stdout).reconfigure(encoding="utf-8")
 
-from google import genai
 from google.genai import types
 
-try:
-    from .python_utils import load_project_dotenv
-except ImportError:
-    from python_utils import load_project_dotenv
-
-load_project_dotenv(Path(__file__).parent.parent.parent)
+# Re-export image functions for backwards compatibility
+from .image_gen import (  # noqa: F401
+    google_client,
+    generate_image,
+    generate_image_gemini,
+    rate_limited_generate_image,
+    rate_limited_generate_image_imagen,
+)
 
 # --- Configuration ---
 VEO_MODEL_ID = "veo-3.1-generate-preview"
-IMAGEN_MODEL_ID = "imagen-4.0-generate-001"
-GEMINI_IMAGE_MODEL_ID = "gemini-3.1-pro-preview"
 
 MAX_RETRIES = 3
 RETRY_BACKOFF = [10, 30, 60]
 POLL_INTERVAL_SECONDS = 10
-
-# --- API Setup ---
-GOOGLE_GENERATIVE_AI_API_KEY = os.getenv("GOOGLE_GENERATIVE_AI_API_KEY")
-
-if not GOOGLE_GENERATIVE_AI_API_KEY:
-    raise ValueError("GOOGLE_GENERATIVE_AI_API_KEY is not set in the .env file.")
-
-google_client = genai.Client(api_key=GOOGLE_GENERATIVE_AI_API_KEY)
-
-
-def generate_image(
-    prompt: str,
-    output_path: Path,
-    aspect_ratio: str = "16:9",
-    negative_prompt: str | None = None,
-) -> Path:
-    """
-    Generate an image using Imagen.
-
-    Args:
-        prompt: Text prompt describing the desired image.
-        output_path: Where to save the generated image (JPEG).
-        aspect_ratio: Imagen aspect ratio. Supported: "1:1", "3:4", "4:3", "9:16", "16:9".
-        negative_prompt: What to exclude from the image (e.g., "photorealistic, anime").
-
-    Returns:
-        Path to the saved image.
-    """
-    output_path = Path(output_path)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    print(f"  Generating image ({aspect_ratio}): {prompt[:80]}...")
-
-    config = types.GenerateImagesConfig(
-        number_of_images=1,
-        aspect_ratio=aspect_ratio,
-        output_mime_type="image/jpeg",
-        negative_prompt=negative_prompt,
-    )
-
-    response = google_client.models.generate_images(
-        model=IMAGEN_MODEL_ID,
-        prompt=prompt,
-        config=config,
-    )
-
-    if not response.generated_images:
-        raise RuntimeError(f"No images generated. Prompt: {prompt[:100]}")
-
-    image = response.generated_images[0].image
-    if image is None:
-        raise RuntimeError("Generated image object is None (possibly safety filtered).")
-
-    image.save(str(output_path))
-    print(f"  Image saved: {output_path.name}")
-    return output_path
-
-
-import base64
-
-
-def generate_image_gemini(
-    prompt: str,
-    output_path: Path,
-    aspect_ratio: str = "16:9",
-    negative_prompt: str | None = None,
-) -> Path:
-    """
-    Generate an image using Gemini 3.1 Pro via generateContent with IMAGE response modality.
-
-    Same interface as generate_image() but uses the Gemini model instead of Imagen,
-    which produces better edge-to-edge compositions.
-    """
-    output_path = Path(output_path)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    print(f"  Generating image via Gemini ({aspect_ratio}): {prompt[:80]}...")
-
-    full_prompt = prompt + f"\n\nIMPORTANT: Generate image with aspect ratio {aspect_ratio}."
-    if negative_prompt:
-        full_prompt += f"\n\nDO NOT include: {negative_prompt}"
-
-    contents = [
-        types.Content(
-            role="user",
-            parts=[types.Part.from_text(text=full_prompt)],
-        ),
-    ]
-
-    config = types.GenerateContentConfig(
-        response_modalities=["image"],
-        safety_settings=[
-            types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="BLOCK_NONE"),
-            types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="BLOCK_NONE"),
-            types.SafetySetting(category="HARM_CATEGORY_HARASSMENT", threshold="BLOCK_NONE"),
-            types.SafetySetting(category="HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold="BLOCK_NONE"),
-        ],
-    )
-
-    response = google_client.models.generate_content(
-        model=GEMINI_IMAGE_MODEL_ID,
-        contents=contents,
-        config=config,
-    )
-
-    if not response.candidates or not response.candidates[0].content:
-        raise RuntimeError(f"No image generated. Prompt: {prompt[:100]}")
-
-    for part in response.candidates[0].content.parts or []:
-        if part.inline_data and part.inline_data.data:
-            image_bytes = base64.b64decode(part.inline_data.data) if isinstance(part.inline_data.data, str) else part.inline_data.data
-            output_path.write_bytes(image_bytes)
-            print(f"  Image saved: {output_path.name}")
-            return output_path
-
-    raise RuntimeError("Response contained no image data (possibly safety filtered).")
-
-
-# --- Rate-limited wrapper (shared by video and podcast pipelines) ---
-
-if TYPE_CHECKING:
-    # For static type checkers, always use the local retry module.
-    from .retry import RateLimiter
-else:
-    # At runtime, fall back to absolute import when run as a stand-alone script.
-    try:
-        from .retry import RateLimiter
-    except ImportError:
-        from retry import RateLimiter
-
-# Gemini: 10 requests per minute for pro models; 8 to stay safely under
-_gemini_image_rate_limiter = RateLimiter(max_requests=8, window_seconds=60)
-
-# Imagen: 20 requests per minute; 18 to stay safely under
-_imagen_rate_limiter = RateLimiter(max_requests=18, window_seconds=60)
-
-
-def rate_limited_generate_image(
-    prompt: str,
-    output_path: Path,
-    aspect_ratio: str = "16:9",
-    negative_prompt: str | None = None,
-) -> Path:
-    """Generate an image with Gemini 3.1 Pro (rate limited 8 req/min)."""
-    _gemini_image_rate_limiter.acquire()
-    return generate_image_gemini(prompt=prompt, output_path=output_path,
-                                 aspect_ratio=aspect_ratio, negative_prompt=negative_prompt)
-
-
-def rate_limited_generate_image_imagen(
-    prompt: str,
-    output_path: Path,
-    aspect_ratio: str = "16:9",
-    negative_prompt: str | None = None,
-) -> Path:
-    """Generate an image with Imagen 4.0 (rate limited 18 req/min)."""
-    _imagen_rate_limiter.acquire()
-    return generate_image(prompt=prompt, output_path=output_path,
-                          aspect_ratio=aspect_ratio, negative_prompt=negative_prompt)
 
 
 def generate_video(
@@ -292,6 +132,3 @@ def generate_video(
 if __name__ == "__main__":
     print("Veo library loaded successfully.")
     print(f"  Veo model: {VEO_MODEL_ID}")
-    print(f"  Imagen model: {IMAGEN_MODEL_ID}")
-    print(f"  Gemini image model: {GEMINI_IMAGE_MODEL_ID}")
-    print(f"  API key configured: {'yes' if GOOGLE_GENERATIVE_AI_API_KEY else 'no'}")

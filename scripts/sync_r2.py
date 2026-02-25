@@ -13,6 +13,7 @@ Usage:
     python scripts/sync_r2.py --dry-run                 # show what would upload
     python scripts/sync_r2.py --list                    # show remote files
     python scripts/sync_r2.py --delete-removed          # remove orphaned remote files
+    python scripts/sync_r2.py --status                   # show sync status by file type
 
 Env vars (in .env):
     R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_ENDPOINT,
@@ -510,6 +511,96 @@ render();
             tmp.unlink(missing_ok=True)
 
 
+def check_status(dirs: list[str], patterns: list[str]):
+    """Check which files are up to date vs need uploading, summarized by file type."""
+    client = get_r2_client()
+    bucket = get_bucket()
+
+    # Per-extension tallies: {ext: {"up_to_date": n, "needs_upload": n, "new": n,
+    #                                "up_to_date_bytes": n, "needs_upload_bytes": n}}
+    by_ext: dict[str, dict[str, int]] = {}
+    orphaned: dict[str, int] = {}  # remote-only files by ext
+
+    for prefix in dirs:
+        local_root = SYNC_DIRS[prefix]
+        local_files = collect_files(prefix, local_root, patterns)
+        remote_objects = list_remote_objects(client, bucket, f"{prefix}/")
+
+        print(f"\nChecking {prefix}/ ({len(local_files)} local, {len(remote_objects)} remote)...")
+
+        for key, local_path in local_files.items():
+            ext = local_path.suffix.lower() or "(none)"
+            size = local_path.stat().st_size
+            if ext not in by_ext:
+                by_ext[ext] = {"up_to_date": 0, "needs_upload": 0, "new": 0,
+                               "up_to_date_bytes": 0, "needs_upload_bytes": 0}
+
+            local_md5 = md5_file(local_path)
+            remote_etag = remote_objects.get(key)
+
+            if remote_etag == local_md5:
+                by_ext[ext]["up_to_date"] += 1
+                by_ext[ext]["up_to_date_bytes"] += size
+            elif remote_etag is None:
+                by_ext[ext]["new"] += 1
+                by_ext[ext]["needs_upload"] += 1
+                by_ext[ext]["needs_upload_bytes"] += size
+            else:
+                by_ext[ext]["needs_upload"] += 1
+                by_ext[ext]["needs_upload_bytes"] += size
+
+        # Check for orphaned remote files (on R2 but not local)
+        for key in remote_objects:
+            if key not in local_files:
+                ext = Path(key).suffix.lower() or "(none)"
+                orphaned[ext] = orphaned.get(ext, 0) + 1
+
+    # Print summary table
+    print(f"\n{'='*72}")
+    print(f"{'Type':<8} {'Up to date':>12} {'Need upload':>13} {'New':>6} {'Upload size':>13}")
+    print(f"{'-'*8} {'-'*12} {'-'*13} {'-'*6} {'-'*13}")
+
+    total_ok = 0
+    total_upload = 0
+    total_new = 0
+    total_upload_bytes = 0
+
+    for ext in sorted(by_ext):
+        s = by_ext[ext]
+        total_ok += s["up_to_date"]
+        total_upload += s["needs_upload"]
+        total_new += s["new"]
+        total_upload_bytes += s["needs_upload_bytes"]
+        changed = s["needs_upload"] - s["new"]
+        upload_label = str(s["needs_upload"])
+        if changed > 0 and s["new"] > 0:
+            upload_label = f"{changed} changed + {s['new']} new"
+        elif s["new"] > 0:
+            upload_label = f"{s['new']} new"
+        elif changed > 0:
+            upload_label = f"{changed} changed"
+        else:
+            upload_label = "-"
+        print(f"{ext:<8} {s['up_to_date']:>12} {upload_label:>13} "
+              f"{'':>6} {format_size(s['needs_upload_bytes']):>13}")
+
+    print(f"{'-'*8} {'-'*12} {'-'*13} {'-'*6} {'-'*13}")
+    print(f"{'TOTAL':<8} {total_ok:>12} {total_upload:>13} {total_new:>6} "
+          f"{format_size(total_upload_bytes):>13}")
+
+    if orphaned:
+        total_orphaned = sum(orphaned.values())
+        print(f"\nOrphaned remote files (not found locally): {total_orphaned}")
+        for ext in sorted(orphaned):
+            print(f"  {ext:<8} {orphaned[ext]:>6}")
+        print("  (use --delete-removed to clean up)")
+
+    if total_upload == 0:
+        print("\nAll files are up to date!")
+    else:
+        print(f"\n{total_upload} file(s) need uploading ({format_size(total_upload_bytes)})")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sync static assets to Cloudflare R2")
     parser.add_argument("--dir", choices=list(SYNC_DIRS.keys()), action="append",
@@ -520,6 +611,8 @@ def main():
                         help="Delete remote files not found locally")
     parser.add_argument("--no-index", action="store_true",
                         help="Skip generating index.html and sitemap.xml")
+    parser.add_argument("--status", action="store_true",
+                        help="Show sync status summary by file type (no uploads)")
     args = parser.parse_args()
 
     dirs = args.dir or list(SYNC_DIRS.keys())
@@ -530,6 +623,10 @@ def main():
 
     if args.list:
         list_remote(dirs)
+        return
+
+    if args.status:
+        check_status(dirs, patterns)
         return
 
     # Collect all files across dirs for index generation

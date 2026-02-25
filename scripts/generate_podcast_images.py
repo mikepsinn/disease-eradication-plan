@@ -34,7 +34,7 @@ if sys.platform == 'win32' and isinstance(sys.stdout, io.TextIOWrapper):
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from lib.veo import rate_limited_generate_image
+from lib.image_gen import rate_limited_generate_image
 from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
     PROJECT_ROOT, DEFAULT_CONFIG_PATH, IMAGE_STYLE, text_hash,

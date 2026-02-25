@@ -5,8 +5,9 @@ Audiobook Publish Pipeline
 
 Single script that runs the full audiobook pipeline:
   1. Generate narration text from QMD chapters (LLM rewrite)
-  2. Generate audio (TTS), combine, MP3s, RSS, alignment, subtitles
-  3. Sync assets to Cloudflare R2
+  2. Generate podcast episode images (skips existing)
+  3. Generate audio (TTS), combine, MP3s, RSS, alignment, subtitles
+  4. Sync assets to Cloudflare R2
 
 Passes all arguments through to the underlying scripts, so you can use
 --chapter, --start, --end, --force, --list, etc.
@@ -15,7 +16,6 @@ Usage:
     python scripts/publish_audiobook.py                         # Full pipeline
     python scripts/publish_audiobook.py --chapter 5             # Single chapter
     python scripts/publish_audiobook.py --force                 # Regenerate everything
-    python scripts/publish_audiobook.py --config manual-paperback  # Explicit config
     python scripts/publish_audiobook.py --no-sync               # Skip R2 upload
     python scripts/publish_audiobook.py --list                  # List chapters and exit
     python scripts/publish_audiobook.py --dry-run               # Text dry-run only
@@ -63,10 +63,6 @@ def main():
     parser.add_argument("--list", "-l", action="store_true", help="List chapters and exit")
     parser.add_argument("--dry-run", "-n", action="store_true", help="Text dry-run (skip LLM)")
     parser.add_argument("--no-sync", action="store_true", help="Skip R2 sync step")
-    parser.add_argument("--no-align", action="store_true", help="Skip forced alignment")
-    parser.add_argument("--no-combine", action="store_true", help="Skip combining into single audiobook")
-    parser.add_argument("--voice", "-v", help="TTS voice name")
-    parser.add_argument("--sync-only", action="store_true", help="Skip generation, only sync to R2")
     args = parser.parse_args()
 
     # Build shared args that get passed to text + audio scripts
@@ -83,13 +79,6 @@ def main():
         run_step("List chapters", "generate_audiobook.py", shared + ["--list"])
         return
 
-    # --- Sync-only mode ---
-    if args.sync_only:
-        if not run_step("Sync to R2", "sync_r2.py", []):
-            sys.exit(1)
-        print("\n[DONE] R2 sync complete.")
-        return
-
     # --- Step 1: Generate narration text ---
     text_args = list(shared)
     if args.force:
@@ -104,21 +93,24 @@ def main():
         print("\n[DONE] Dry run complete (text only, no audio generated).")
         return
 
-    # --- Step 2: Generate audio ---
+    # --- Step 2: Generate podcast episode images ---
+    img_args = list(shared)
+    if args.force:
+        img_args.append("--force")
+    img_args.append("--podcast-only")
+
+    if not run_step("Generate podcast images", "generate_podcast_images.py", img_args):
+        sys.exit(1)
+
+    # --- Step 3: Generate audio ---
     audio_args = list(shared)
     if args.force:
         audio_args.append("--force")
-    if args.no_align:
-        audio_args.append("--no-align")
-    if args.no_combine:
-        audio_args.append("--no-combine")
-    if args.voice:
-        audio_args += ["--voice", args.voice]
 
     if not run_step("Generate audio + MP3s + RSS", "generate_audiobook.py", audio_args):
         sys.exit(1)
 
-    # --- Step 3: Sync to R2 ---
+    # --- Step 4: Sync to R2 ---
     if args.no_sync:
         print("\n[DONE] Audio generation complete (--no-sync: skipped R2 upload).")
         return
