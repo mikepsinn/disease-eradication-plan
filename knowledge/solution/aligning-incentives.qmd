@@ -42,7 +42,6 @@ You give them:
 
 - Pay: $5-20M in bonds
 - Returns: {{< var victory_bond_annual_return_pct >}} annually (for as long as the treaty holds, which is forever unless humanity decides it prefers dying again)
-- Job security: Better ({{< var defense_sector_retention_pct >}} of military budget still exists)
 - Legacy: "Accidentally saved humanity while getting rich"
 
 Most people can do this math. You hope.
@@ -83,11 +82,7 @@ That's it. They keep {{< var defense_sector_retention_pct >}} of their current i
 
 ### Why This Works
 
-You're using their own playbook. Defense contractors spend {{< var defense_lobbying_annual >}} on lobbying and get $181B back. You're offering better returns to lobby for something else. It's not revolutionary. It's just capitalism but pointed at diseases instead of humans.
-
-It's all legal. VICTORY Incentive Alignment Bonds are legal investment vehicles. Lobbying is protected free speech. Consulting fees are standard practice. Strategic advisor positions are completely normal (if "normal" means "legal corruption"). They designed the system to allow this. You're just using it correctly.
-
-The same incentive structures that created the military-industrial complex get pointed at curing disease instead. Like a very expensive garden hose. No moral evolution required. Just different math. This is either brilliant or ridiculous. Possibly both.
+It's all legal. VICTORY Incentive Alignment Bonds are legal investment vehicles. Lobbying is protected free speech. Consulting fees are standard practice. Strategic advisor positions are completely normal (if "normal" means "legal corruption"). They designed the system to allow this. You're just using it correctly for the first time.
 
 **Defense Contractor CEO** (to board): "We diversified into bonds paying {{< var victory_bond_annual_return_pct >}} returns vs the market's {{< var average_market_return_pct >}}. If the treaty passes, we profit enormously. If it fails, we still have our defense contracts. It's a hedge. I'm being prudent. You're welcome."
 
@@ -148,8 +143,6 @@ Insurance companies are the only industry that profits from human health. Every 
 - **Hospitals want full beds** - Insurance wants empty ones
 - **Doctors want repeat visits** - Insurance wants one-time fixes
 
-You're offering insurance companies a world where chronic disease costs stop compounding at 7% annually.
-
 ![Hospitals get paid when you're sick. Insurance companies lose money when you're sick. Only one of them wants you to stop being sick.](/assets/images/aligning-incentives/aligning-incentives-section-why-they-re-your-natural-allies-bw-academic.jpg)
 
 ## Pharmaceutical Companies: Converting Drug Dealers to Drug Curers
@@ -162,45 +155,21 @@ Pharma companies aren't evil. They're just doing what any rational organism does
 
 ![The Pharma Trap: test 10,000 chemicals for 17 years, spend 2.6 billion dollars, get one medicine. It's like panning for gold in a pile of poison.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-trap-bw-academic.jpg)
 
+![Drug companies spend billions to make 1.2 percent profit. You could make more money with a savings account, but that wouldn't justify the yacht.](/assets/images/aligning-incentives/aligning-incentives-section-current-pharma-economics-bw-academic.jpg)
+
 - **R&D costs**: {{< var pharma_drug_development_cost_current >}} per drug (unsustainable)
 - **Success rate**: {{< var pharma_success_rate_current_pct >}} (lottery odds)
 - **Timeline**: 17 years to market (patients die waiting)
+- **Revenue per success**: {{< var pharma_drug_revenue_average_current >}}
+- **ROI: {{< var pharma_roi_current_system_pct >}}** (barely profitable)
 - **Patent cliffs**: Blockbusters become generics overnight
 - **Public hatred**: Martin Shkreli is their poster boy
 
-### The Cost Elimination
-
-![Traditional trials: 17 years, 2.6 billion dollars, maybe works. Decentralized trials: 100 days, costs less than a house, definitely tells you something.](/assets/images/aligning-incentives/aligning-incentives-section-the-cost-elimination-bw-academic.jpg)
-
-Current model (pharma pays for trials):
-
-- Pharma spends {{< var traditional_phase3_cost_per_patient >}} per trial participant
-- Burns cash for 17 years hoping for approval
-- 90% of drugs fail in trials = money incinerated
-- Success means jacking up prices to recover losses
-
-The new model (using decentralized pragmatic trials):
-
-- Trial cost drops ~{{< var dfda_trial_cost_reduction_pct >}} (pragmatic design, existing medical records, no dedicated sites)
-- Can afford to run {{< var dfda_trial_cost_reduction_factor >}} more trials with same budget
-- Success means profit, failure doesn't bankrupt you
-
 ### The Math That Converts Them
 
-#### Current Pharma Economics
-
-![Drug companies spend billions to make 1.2 percent profit. You could make more money with a savings account, but that wouldn't justify the yacht.](/assets/images/aligning-incentives/aligning-incentives-section-current-pharma-economics-bw-academic.jpg)
-
-- Development cost: {{< var pharma_drug_development_cost_current >}}
-- Success rate: {{< var pharma_success_rate_current_pct >}} (90% fail)
-- Average revenue per success: {{< var pharma_drug_revenue_average_current >}}
-- **ROI: {{< var pharma_roi_current_system_pct >}}** (Barely profitable!)
-
-#### New System - Cost Elimination
+#### New System: How Decentralized Trials Eliminate Costs
 
 The main benefit: pragmatic clinical trials become {{< var dfda_trial_cost_reduction_factor >}} cheaper.
-
-## How your decentralized institutes of health eliminate trial costs
 
 **Current system:** Pharma spends {{< var traditional_phase3_cost_per_patient >}} per participant on:
 
