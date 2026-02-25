@@ -67,14 +67,12 @@ The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase i
 
 Even if you think historical analysis is just opinions with footnotes, the current system's failures are undeniable:
 
-1. Scientists discover a cure for your disease
-2. Phase I confirms the drug is safe ({{< var phase_1_safety_duration_years >}})
-3. You are not allowed to take the known-safe drug
-4. You are also not allowed to join the efficacy trial (you're too sick, too old, or on other medications)
-5. You wait {{< var efficacy_lag_years >}} more years
-6. You die
-7. The FDA approves the cure
-8. Pharmaceutical companies charge your widow $10,000 per pill
+1. A cure passes safety testing
+2. You can't take it (pending efficacy review)
+3. You can't join the trial either (too sick, too old, wrong medications)
+4. You die
+5. The FDA approves the cure
+6. Pharmaceutical companies charge your widow $10,000 per pill
 
 Beautiful system if you're a mortician or bankruptcy lawyer.
 
@@ -169,13 +167,23 @@ Fewer approvals in the '90s widened it again.
 #### Delay drug that could save lives
 
 - Nothing happens
-- Dead people don't complain
+- Nobody writes a headline
 - Promotion on schedule
 - Retire to pharma job [@fda-regulatory-capture-evidence]
 
 This isn't conspiracy. It's just a system where the only career-ending move is doing something. Approve a bad drug, your name is in the newspaper. Delay a good drug, the people who could have complained are dead. It's a perfect incentive structure if you're optimizing for cowardice.
 
 ![If a regulator approves a bad drug, CNN says their name. If they delay a good drug, nobody dies on television. So nobody dies on television.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-incentive-structure-flowchart-bw-academic.jpg)
+
+Dr. Henry I. Miller ran the FDA team reviewing recombinant human insulin in the early 1980s.
+Mountains of evidence showed it was safe and effective.
+His supervisor refused to approve it.
+If someone died from the drug, heads would roll.
+If people died waiting for the drug? Nothing happens.
+
+Dead patients don't testify before Congress.
+
+![Regulators who approve drugs that hurt people get fired. Regulators who delay drugs that could save people get promoted. You built a machine that runs on cowardice.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-bureaucrats-are-rewarded-for-letting-you-die-bw-academic.jpg)
 
 ### The Math: Why Current Regulations Increase Total Harm
 
@@ -187,18 +195,6 @@ The delay harm totals {{< var dfda_efficacy_lag_elimination_dalys >}}.
 **For every 1 unit of harm prevented, the current system creates {{< var type_ii_error_cost_ratio >}} units of harm through delay.**
 
 ![For every person saved by blocking a bad drug, 3,070 died waiting for good ones. It's like hiring a lifeguard who's very good at preventing sharks but keeps everyone on the beach until they die of old age.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-harm-ratio-balance-bw-academic.jpg)
-
-### Why Bureaucrats Are Rewarded for Letting You Die
-
-![Regulators who approve drugs that hurt people get fired. Regulators who delay drugs that could save people get promoted. You built a machine that runs on cowardice.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-bureaucrats-are-rewarded-for-letting-you-die-bw-academic.jpg)
-
-Dr. Henry I. Miller ran the FDA team reviewing recombinant human insulin in the early 1980s.
-Mountains of evidence showed it was safe and effective.
-His supervisor refused to approve it.
-If someone died from the drug, heads would roll.
-If people died waiting for the drug? Nothing happens.
-
-Dead patients don't testify before Congress.
 
 ## Clinical Trial Theater: Excluding {{< var antidepressant_trial_exclusion_rate >}} of Reality Makes Drugs More Dangerous
 
@@ -254,7 +250,7 @@ After approval, the FDA monitors safety using FAERS, a system where doctors volu
 
 ![Doctors report 10% of drug side effects. The other 90% just happen to people who assume that's what dying feels like.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
 
-A dFDA with 10 million participants catches 1-in-10,000 reactions, includes real populations, tracks long-term outcomes, and provides automated surveillance instead of voluntary paperwork. You have a fax machine and a suggestion box. One of these is a safety system. The other is a prayer with an 8-year waiting period.
+A decentralized FDA with 10 million participants catches 1-in-10,000 reactions, includes real populations, tracks long-term outcomes, and provides automated surveillance instead of voluntary paperwork. You have a fax machine and a suggestion box. One of these is a safety system. The other is a prayer with an 8-year waiting period.
 
 ## The Negative Results Black Hole
 
