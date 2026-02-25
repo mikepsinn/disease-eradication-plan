@@ -13,6 +13,8 @@ podcast-image: /assets/podcast/dfda-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 {{< include ../figures/trial-access-disparity-chart.qmd >}}
 
+On Wishonia, we eliminated disease 4,000 years ago. Every citizen has access to every treatment. Every outcome is recorded. Every disease gets studied. It's not complicated. You let sick people try things and write down what happens. But since your planet somehow hasn't figured this out, here's the instruction manual.
+
 Out of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually [@global-trial-participant-capacity]. That's **{{< var current_clinical_trial_participation_rate >}}**.
 
 {{< var patient_willingness_trial_participation_pct >}} would volunteer [@patient-willingness-clinical-trials] if they could. Only {{< var current_clinical_trial_participation_rate >}} currently participate.
@@ -24,6 +26,8 @@ Meanwhile, the system that's supposed to catch dangerous side effects misses 90-
 **You don't have a recruitment problem. You have a capacity problem.**
 
 ## The Solution: Consumer Reports for Drugs
+
+On Wishonia, this is just called "medicine." You type in what's wrong with you, see what worked for everyone else, and try it. The outcomes get recorded automatically. We've had this for millennia. You have all the technology to build it right now, and somehow haven't.
 
 Your decentralized FDA is an **open coordination protocol**. It connects companies with treatments to patients who need them. It's HTTP for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes. You invented the internet thirty years ago and somehow forgot to plug medicine into it.
 
@@ -227,24 +231,18 @@ Here's what an Outcome Label for depression would actually look like:
 
 | Rank | Treatment | Effect | Sample Size | Optimal Dose |
 |:-----|:----------|:-------|:------------|:-------------|
-| 1 | Exercise | -31.2% | 12,847 | 45 min/day |
-| 2 | Bupropion | -28.3% | 2,847 | 300mg |
-| 3 | Sertraline | -24.7% | 5,123 | 100mg |
-| 4 | Sleep (7-9 hrs) | -22.1% | 31,204 | 8.2 hrs |
-| 5 | Venlafaxine | -21.2% | 1,892 | 150mg |
-| 6 | Omega-3 | -18.9% | 4,521 | 2000mg EPA+DHA |
-| 7 | Meditation | -16.4% | 8,932 | 20 min/day |
-| 8 | Fluoxetine | -15.8% | 3,456 | 40mg |
+| 1 | Bupropion | -28.3% | 2,847 | 300mg |
+| 2 | Sertraline | -24.7% | 5,123 | 100mg |
+| 3 | Venlafaxine | -21.2% | 1,892 | 150mg |
+| ... | ... | ... | ... | ... |
 
-**Makes It Worse:** Alcohol >2/day (+23.4%), sleep deprivation (+19.8%), social isolation (+15.2%)
-
-**No Significant Effect:** Multivitamin, Probiotics, B-complex, Ashwagandha, 5-HTP
-
-Notice anything? Exercise beats every drug. Sleep beats most drugs. Your doctor probably didn't mention that because there's no pharmaceutical rep buying lunch to promote jogging. This is what happens when you rank treatments by outcomes instead of by marketing budget.
+Every treatment ranked. Drugs, supplements, lifestyle interventions, off-label uses. All compared head-to-head using the same outcome data. No marketing budget required.
 
 ![The Depression Crusher 3000. Improves your mood 60 percent, ruins your sex life 40 percent. Every medicine is a negotiation with your body.](/assets/images/dfda/dfda-section-side-effects-bw-academic.jpg)
 
 ## Your Personal Death-Prevention Assistant: The FDAi
+
+On Wishonia, every citizen gets one of these at birth. It monitors their health, finds treatments matched to their biology, and adjusts dosing in real time. We've had them for 3,000 years. You've had the technology for 15 and used it to count steps.
 
 Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
 
