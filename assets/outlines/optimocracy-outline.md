@@ -2,12 +2,12 @@
 
 **Config:** _quarto-optimocracy.yml
 **Type:** website
-**Files:** 1 | **Words:** 9,151 | **Images:** 30 | **Est. Pages:** ~52
+**Files:** 1 | **Words:** 9,153 | **Images:** 30 | **Est. Pages:** ~52
 
 #### knowledge/appendix/optimocracy-paper.qmd
 **Title:** Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth
 **Description:** Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving democratic structures.
-**Stats:** 9,151 words | 947 lines | 30 images | ~52p
+**Stats:** 9,153 words | 948 lines | 30 images | ~52p
 
   - The Mechanism
     ![Optimocracy: measure what works, recommend what works, check if anyone listened, pay people who listened. It's the revolutionary idea of doing the thing that works.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg)

@@ -2,12 +2,12 @@
 
 **Config:** _quarto-wishocracy.yml
 **Type:** website
-**Files:** 1 | **Words:** 10,527 | **Images:** 35 | **Est. Pages:** ~60
+**Files:** 1 | **Words:** 10,529 | **Images:** 35 | **Est. Pages:** ~60
 
 #### knowledge/appendix/wishocracy-paper.qmd
 **Title:** Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation
 **Description:** Representative democracy suffers from an inescapable principal-agent problem where elected officials' incentives diverge from citizen welfare. Wishocracy introduces RAPPA (Randomized Aggregated Pairwise Preference Allocation), which aggregates citizen preferences through cognitively tractable pairwise comparisons and creates accountability via Citizen Alignment Scores that channel electoral resources toward politicians who actually represent what citizens want.
-**Stats:** 10,527 words | 785 lines | 35 images | ~60p
+**Stats:** 10,529 words | 786 lines | 35 images | ~60p
 
 - **Abstract**
     ![You compare things in pairs, math adds it up, politicians get scored on whether they do what you wanted, and bonds reward the ones who listen.](/assets/images/wishocracy-paper/wishocracy-paper-section-abstract-bw-academic.jpg)

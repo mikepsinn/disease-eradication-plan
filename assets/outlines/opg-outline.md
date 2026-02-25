@@ -2,12 +2,12 @@
 
 **Config:** _quarto-opg.yml
 **Type:** website
-**Files:** 1 | **Words:** 12,861 | **Images:** 34 | **Est. Pages:** ~68
+**Files:** 1 | **Words:** 12,863 | **Images:** 34 | **Est. Pages:** ~68
 
 #### knowledge/appendix/optimal-policy-generator-spec.qmd
 **Title:** The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy
 **Description:** The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.
-**Stats:** 12,861 words | 1,878 lines | 34 images | ~68p
+**Stats:** 12,863 words | 1,879 lines | 34 images | ~68p
 
   - Abstract {.unnumbered}
   - The Two Welfare Metrics {#sec-two-metrics}

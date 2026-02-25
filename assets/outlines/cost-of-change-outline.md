@@ -2,12 +2,12 @@
 
 **Config:** _quarto-cost-of-change.yml
 **Type:** website
-**Files:** 1 | **Words:** 3,073 | **Images:** 5 | **Est. Pages:** ~15
+**Files:** 1 | **Words:** 3,075 | **Images:** 5 | **Est. Pages:** ~15
 
 #### knowledge/appendix/cost-of-change-analysis.qmd
 **Title:** The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 **Description:** What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields ROI exceeding 400,000:1.
-**Stats:** 3,073 words | 400 lines | 5 images | ~15p
+**Stats:** 3,075 words | 401 lines | 5 images | ~15p
 
   - Introduction
     - The Political Impossibility Objection

@@ -2,12 +2,12 @@
 
 **Config:** _quarto-obg.yml
 **Type:** website
-**Files:** 1 | **Words:** 8,912 | **Images:** 27 | **Est. Pages:** ~49
+**Files:** 1 | **Words:** 8,914 | **Images:** 27 | **Est. Pages:** ~49
 
 #### knowledge/appendix/optimal-budget-generator-spec.qmd
 **Title:** The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding
 **Description:** The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact Score (BIS) measures confidence in each recommendation based on the quality of causal evidence.
-**Stats:** 8,912 words | 1,222 lines | 27 images | ~49p
+**Stats:** 8,914 words | 1,223 lines | 27 images | ~49p
 
   - Abstract {.unnumbered}
     ![Three ways to figure out optimal spending combine to show the gap between what you spend and what you should spend. The gap is filled with lobbyists.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-abstract-unnumbered-bw-academic.jpg)

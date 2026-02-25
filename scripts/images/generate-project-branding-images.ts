@@ -376,7 +376,7 @@ async function generateSinglePodcastImage(
   const generatedPath = files[0];
   await sharp(generatedPath)
     .resize(3000, 3000, { fit: 'cover' })
-    .jpeg({ quality: 90 })
+    .jpeg({ quality: 75 })
     .toFile(outputPath);
   if (path.resolve(generatedPath) !== path.resolve(outputPath)) {
     try { await fs.unlink(generatedPath); } catch { /* ignore */ }
