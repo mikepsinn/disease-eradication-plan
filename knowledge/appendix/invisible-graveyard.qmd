@@ -536,7 +536,7 @@ A superior framework would:
 
 1. **Maintain rigorous Phase I safety testing** ({{< var phase_1_safety_duration_years >}})
 2. **Allow provisional approval post-safety** with real-world evidence collection
-3. **Continuous monitoring** via distributed systems (see: [decentralized framework for drug assessment](../solution/dfda.qmd))
+3. **Continuous monitoring** via distributed systems (see: [decentralized FDA](../solution/dfda.qmd))
 4. **Outcome-based validation** rather than pre-market prediction
 
 This approach would reduce the efficacy lag from {{< var efficacy_lag_years >}} to near-zero while maintaining safety standards.
@@ -742,7 +742,7 @@ The analysis explicitly models this in [Section 6: Risk Analysis](#risk-analysis
 
 1. **Phase I safety testing remains** (proven effective: prevented thalidomide in US while Europe had thousands of deaths)
 2. **Real-world evidence collection** (catches problems faster than current passive reporting)
-3. **Continuous monitoring** via distributed systems (see [decentralized framework for drug assessment](../solution/dfda.qmd))
+3. **Continuous monitoring** via distributed systems (see [decentralized FDA](../solution/dfda.qmd))
 
 **Historical evidence:**
 

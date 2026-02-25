@@ -321,7 +321,7 @@ This is a solved problem wearing an unsolved hat.
 
 ![Current budget: pays for three trials. Same budget in the new system: pays for 4,000 trials. Efficiency: turns out it matters.](/assets/images/faq/faq-section-how-do-you-prevent-waste-bw-academic.jpg)
 
-**Response**: The [decentralized framework for drug assessment](../solution/dfda.qmd) model achieves 80x lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500]. Traditional trials: {{< var traditional_phase3_cost_per_patient >}} [@trial-cost-41k]. Same science. 80x less overhead.
+**Response**: A [decentralized FDA](../solution/dfda.qmd) model achieves 80x lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500]. Traditional trials: {{< var traditional_phase3_cost_per_patient >}} [@trial-cost-41k]. Same science. 80x less overhead.
 
 The NIH's RECOVER initiative spent $1.6 billion over four years and completed zero trials. Zero. With that same budget, the decentralized model could have run thousands of trials for millions of patients. The NIH managed to spend all that money learning nothing. That takes talent.
 

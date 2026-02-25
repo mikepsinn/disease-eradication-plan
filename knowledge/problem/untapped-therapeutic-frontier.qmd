@@ -167,7 +167,7 @@ The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials ca
 
 {{< var recovery_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}. Read those numbers again. One of them is the reason people are dying.
 
-With a [decentralized framework for drug assessment](../solution/dfda.qmd), trial capacity increases by {{< var dfda_trial_capacity_multiplier >}}:
+With a [decentralized FDA](../solution/dfda.qmd), trial capacity increases by {{< var dfda_trial_capacity_multiplier >}}:
 
 **{{< var drug_disease_combinations_possible >}} ÷ {{< var dfda_trials_per_year_capacity >}} = {{< var dfda_known_safe_exploration_years >}}**
 

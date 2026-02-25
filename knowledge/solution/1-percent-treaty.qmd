@@ -32,7 +32,7 @@ For comparison, {{< var treaty_annual_funding >}} is about what Americans spend 
 ![Money goes from the war budget through several boxes with important-sounding names until it reaches someone in a lab coat. Democracy in action.](/assets/images/1-percent-treaty/1-percent-treaty-section-how-it-works-bw-academic.jpg)
 
 1.  **Funding:** Creates a {{< var treaty_annual_funding >}}/year revenue stream for **the 1% Treaty Fund**
-2.  **Execution:** **A network of decentralized institutes of health (DIH)** subsidizes patient participation in **a decentralized framework for drug assessment ([dFDA](dfda.qmd))**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}} cheaper** than the current model
+2.  **Execution:** **A network of decentralized institutes of health (DIH)** subsidizes patient participation in **a decentralized FDA ([dFDA](dfda.qmd))**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}} cheaper** than the current model
 3.  **Governance:** Decentralized Autonomous Organization (DAO) governed by smart contracts and global population via [Wishocracy](wishocracy.qmd)
 4.  **Transparency:** All research, data, and spending published on public ledger
 
@@ -206,7 +206,7 @@ Right now, only {{< var current_trial_slots_available >}} participate in drug tr
 - {{< var willing_trial_participants_global >}} willing to participate, but turned away
 - {{< var drug_discovery_to_approval_years >}} from discovery to patient
 
-#### With a 1% treaty + a decentralized framework for drug assessment
+#### With a 1% treaty + a decentralized FDA
 
 - {{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty
 - Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} ({{< var dfda_trial_cost_reduction_factor >}} cheaper)
