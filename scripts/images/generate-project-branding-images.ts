@@ -347,22 +347,28 @@ async function generateSinglePodcastImage(
   console.log(`  Generating podcast image for: ${title}`);
   const prompt = buildPodcastImagePrompt(title, description, cleanBody);
 
-  const files = await generateAndSaveImages({
-    prompt,
-    aspectRatio: '1:1',
-    outputDir,
-    filePrefix: `${outputFileName}-raw`,
-    format: 'jpg',
-    metadata: {
-      title,
-      description,
-      keywords: config.keywords,
-      sourceUrl: config.siteUrl,
-    },
-  });
+  let files: string[] | undefined;
+  try {
+    files = await generateAndSaveImages({
+      prompt,
+      aspectRatio: '1:1',
+      outputDir,
+      filePrefix: `${outputFileName}-raw`,
+      format: 'jpg',
+      metadata: {
+        title,
+        description,
+        keywords: config.keywords,
+        sourceUrl: config.siteUrl,
+      },
+    });
+  } catch (err: any) {
+    console.error(`  [ERROR] ${chapterName}: ${err.message || err}`);
+    return false;
+  }
 
   if (!files || files.length === 0) {
-    console.error(`  [ERROR] Failed: ${chapterName}`);
+    console.error(`  [ERROR] ${chapterName}: no images returned`);
     return false;
   }
 
