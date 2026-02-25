@@ -31,7 +31,7 @@ Here's your species' fun puzzle: you know how to save millions of lives. You can
 Not because your politicians are evil. Because your system is built so that:
 
 * Politicians maximize **reelection, status, and post-office careers**, not "humans continuing to exist"
-* Bureaucracies maximize **budget and turf**, not "speed of cures"
+* Bureaucracies maximize **budget and turf**, not "speed of treatments"
 * Lobbyists maximize **client profits**, not "global welfare"
 
 You don't fix this with awareness campaigns. You've been "raising awareness" for decades and everyone is still dying, but they're dying *aware*, so that's nice. You don't fix it with white papers. Politicians use white papers to stabilize wobbly tables. You fix it by changing **what self-interest points at**.
@@ -70,7 +70,7 @@ Not charity (doesn't scale). Not lobbying (slot taken). Not "paying politicians"
 
 ![Things we can count right now versus things that matter later. One gets you reelected, the other gets you into heaven. Choose wisely.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-step-1-define-a-measurable-outcome-bw-academic.jpg)
 
-**Measure funding flows, not health outcomes.** You can't attribute a cure to any single country's funding. But you CAN measure: % of military spending redirected, total $ contributed, and politician votes on treaty passage. Health improvements justify the policy. Funding flows are the scoreboard, because that's what politicians actually control.
+**Measure funding flows, not health outcomes.** You can't attribute a treatment breakthrough to any single country's funding. But you CAN measure: % of military spending redirected, total $ contributed, and politician votes on treaty passage. Health improvements justify the policy. Funding flows are the scoreboard, because that's what politicians actually control.
 
 #### Step 2: Raise Capital
 
@@ -272,7 +272,7 @@ Every metric jumps: her score nearly doubles, reelection odds climb 13 points, s
 
 ![Money flows through two engines, investors and politicians, before reaching the actual medical research. It's trickle-down economics, but for not dying.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-7a-the-two-engines-financial-and-political-bw-academic.jpg)
 
-[Incentive Alignment Bonds](https://iab.warondisease.org) raise the capital and align the politicians. Treaty revenue splits three ways: {{< var victory_bond_funding_pct >}} to investors ({{< var victory_bond_annual_payout >}}), {{< var iab_political_incentive_funding_pct >}} to political incentives ({{< var iab_political_incentive_funding_annual >}}), and {{< var dih_treasury_medical_research_pct >}} to the part that actually cures diseases ({{< var dih_treasury_to_medical_research_annual >}}).
+[Incentive Alignment Bonds](https://iab.warondisease.org) raise the capital and align the politicians. Treaty revenue splits three ways: {{< var victory_bond_funding_pct >}} to investors ({{< var victory_bond_annual_payout >}}), {{< var iab_political_incentive_funding_pct >}} to political incentives ({{< var iab_political_incentive_funding_annual >}}), and {{< var dih_treasury_medical_research_pct >}} to the part that actually funds treatments ({{< var dih_treasury_to_medical_research_annual >}}).
 
 Everyone profits from treaty expansion. This is the rare financial instrument where "everyone profits" isn't a lie.
 
@@ -282,15 +282,17 @@ Your 1% treaty is the proof of concept. The endgame is redirecting *most* of mil
 
 The {{< var iab_political_incentive_funding_pct >}} allocation creates a **political ratchet** that only moves one direction:
 
-| Treaty Level | IAB Political Funding (10%) | Research Funding (80%) | Effect |
-|:-------------|:----------------------------|:-----------------------|:-------|
-| 1% | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year | Politicians rewarded for passage |
-| 5% | $13.6B/year | $109B/year | Defense industry pivots to health |
-| 10% | $27.2B/year | $218B/year | War becomes economically obsolete |
-| 50% | $136B/year | $1.09T/year | Global transformation |
-| 100% | $272B/year | $2.18T/year | Full redirection achieved |
+| Treaty Level | Bondholder Payouts (10%) | Political Incentives (10%) | Research Funding (80%) | Effect |
+|:-------------|:-------------------------|:---------------------------|:-----------------------|:-------|
+| 1% | {{< var victory_bond_annual_payout >}}/year | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year | Politicians rewarded for passage |
+| 5% | $13.6B/year | $13.6B/year | $109B/year | Defense industry pivots to health |
+| 10% | $27.2B/year | $27.2B/year | $218B/year | War becomes economically obsolete |
+| 50% | $136B/year | $136B/year | $1.09T/year | Global transformation |
+| 100% | $272B/year | $272B/year | $2.18T/year | Full redirection achieved |
 
-The pattern is simple: every expansion multiplies both the political incentive budget and the research funding. At 1%, political funding starts at a few billion per year. Scale to 10%, and it becomes tens of billions. At full redirection, IABs would fund **$270B/year** in political incentives. More than all current global lobbying combined. "Support pragmatic clinical trials" would become the single most profitable opinion a politician can hold. That's how you change what politicians believe: make the belief profitable.
+The pattern is simple: every expansion multiplies the political incentive budget, the research funding, *and* bondholder payouts. "Support pragmatic clinical trials" would become the single most profitable opinion a politician can hold. That's how you change what politicians believe: make the belief profitable.
+
+**The bondholder constituency.** This is the part your defense lobby should worry about. IABs create a permanent class of wealthy investors whose income scales directly with treaty expansion. At 1%, bondholders collect {{< var victory_bond_annual_payout >}}/year. At 5%, that's $13.6B/year. At full redirection, $272B/year. These people have perpetual bonds that never mature, which means they have a perpetual financial incentive to lobby for expansion every single year, forever. You've built the defense lobby's mirror image: a permanently funded constituency that gets richer every time military spending moves toward treatments. The defense industry spends billions lobbying to *keep* military budgets high. Bondholders will spend billions lobbying to *redirect* them. Except bondholders have better math and a more popular product ("not dying" polls well).
 
 **Without IABs:**
 
@@ -316,10 +318,11 @@ The flywheel explained (for anyone who's never seen a virtuous cycle, which is m
 1. Treaty passes. Bondholders get first distributions.
 2. DIH funds trials. Breakthroughs start emerging.
 3. Media covers wins. Public awareness explodes.
-4. Public demands more. Politicians face electoral pressure.
-5. Treaty % increases. Revenue scales up dramatically.
-6. More cures emerge. Cycle reinforces itself.
-7. Long-term result: Compounding returns + saved lives. The two things humans want most, finally in the same direction.
+4. Bondholders lobby for expansion (their payouts scale with treaty %).
+5. Public demands more. Politicians face electoral pressure from both voters and a wealthy bondholder constituency.
+6. Treaty % increases. Revenue scales up. Bondholder payouts increase. Lobbying budget increases.
+7. More breakthroughs emerge. Cycle reinforces itself.
+8. Long-term result: Compounding returns + saved lives + a permanently funded lobby that makes reversal politically and financially impossible.
 
 ### Beyond the 1% Treaty
 
@@ -379,7 +382,7 @@ Five layers of "you'll get paid":
 
 1. **{{< var treaty_annual_funding >}}+ annual treaty revenue stream** (starts year 1 if treaty passes)
 2. **Political entrenchment** (treaties are historically hard to repeal once implemented, unlike New Year's resolutions)
-3. **Public support** (70%+ approval, grows with each cure)
+3. **Public support** (70%+ approval, grows with each breakthrough)
 4. **Aligned incentives** (everyone profits from cooperation)
 5. **First-lien position** (bondholders get paid before anyone else touches the money)
 
@@ -508,7 +511,7 @@ Hand this to investors who can't read more than one page:
 - **Duration:** Perpetual (payments never stop until heat death of universe)
 - **Side effect:** Millions of humans continue existing who would otherwise stop
 - **Priority:** You get paid before anyone else touches the money
-- **Growth path:** 1% to 2% to 5%+ as diseases get cured and public demands more
+- **Growth path:** 1% to 2% to 5%+ as treatments improve and public demands more
 
 
 ### Summary
