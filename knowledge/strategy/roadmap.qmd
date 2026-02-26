@@ -103,7 +103,7 @@ Here's the precise order for distributing papers to specific categories of human
 
 **Money-back guarantee:** If the treaty fails, they get their papers back via assurance contracts. Funds are escrowed until milestones hit. Automatic refund if targets are missed. This is basically saying "if everyone dies from preventable diseases, you'll be too dead to complain about losing money."
 
-**What happens:** Defense contractors do math. Math says {{< var victory_bond_annual_return_pct >}} > 8%. Defense contractors become health contractors. Democracy continues as normal.
+**What happens:** Defense contractors do math. The 8% is their operating margin; the {{< var victory_bond_annual_return_pct >}} is a bond return, not a direct comparison. But that's the point: they invest their profits in the bonds AND pivot their contracts to the new health spending. Both revenue streams beat the status quo. Defense contractors become health contractors. Democracy continues as normal.
 
 #### The Specific Offer to Bomb Makers
 
@@ -131,7 +131,7 @@ They choose Option B. Not because they've become better people, but because they
 
 ![Give 200 million, get 272 percent back plus control of 27 billion. It's like venture capital discovered immortality has a business model.](/assets/images/roadmap/roadmap-section-legal-bribe-category-2-the-true-believers-early-adopters-who-want-control-bw-academic.jpg)
 
-**The (legal) bribe you offer:** Fund the {{< var campaign_phase1_budget >}} referendum campaign and receive special [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) with governance rights. They get {{< var victory_bond_annual_return_pct >}} returns PLUS they get to decide how the {{< var treaty_annual_funding >}} gets spent.
+**The (legal) bribe you offer:** Seed the referendum with {{< var campaign_phase1_budget >}} in Phase 1 funding (the full referendum costs {{< var treaty_campaign_viral_referendum_base_case >}}, with the remainder raised as momentum builds). In return, they receive special [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) with governance rights. They get {{< var victory_bond_annual_return_pct >}} returns PLUS they get to decide how the {{< var treaty_annual_funding >}} gets spent.
 
 **What they fund:** The [Global Referendum](global-referendum.qmd). Basically paying {{< var treaty_campaign_voting_bloc_target_nounit >}} people to click YES on a website.
 

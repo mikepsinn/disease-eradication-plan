@@ -69,7 +69,7 @@ We propose a three-phase pilot design that allows governments to test Wishocracy
 
 ## **2.1 Platform Architecture**
 
-The Wishocracy platform requires:
+The Wishocracy protocol requires:
 
 1. **User Interface:** Mobile-first responsive design with accessibility compliance (WCAG 2.1 AA). Simple slider interface for pairwise allocation. Multi-language support.
 2. **Identity Layer:** Integration with government identity systems or independent verification service. Privacy-preserving authentication (zero-knowledge proofs possible).

@@ -41,7 +41,7 @@ Using BLS CPI data [@bls-cpi-inflation-calculator]:
 | Arms Trade Treaty (2013) | $20-30M | **$27-41M** | ~1.35x |
 | Nuclear Ban (2017) | $10-20M | **$13-25M** | ~1.25x |
 
-**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD). That's **less than 0.2%** of the implementation cost. Banning landmines: ~$40M to get the signatures, $5B+ to actually dig them up [@icbl-ottawa-treaty]. The paperwork is the cheap part. The not-exploding-anymore part is where it gets expensive.
+**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD). That's **less than 1%** of the implementation cost. Banning landmines: ~$40M to get the signatures, $5B+ to actually dig them up [@icbl-ottawa-treaty]. The paperwork is the cheap part. The not-exploding-anymore part is where it gets expensive.
 
 ## Cost for a 1% Health Treaty
 
@@ -93,7 +93,7 @@ You're buying the machinery that makes the treaty inevitable.
 
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
-To calculate expected value, you need to estimate the probability this actually works. This section documents the rationale for the **{{< var political_success_probability >}} central estimate** with a **0.1%-10% confidence interval** (and a 25% optimistic scenario ceiling). Yes, the model assumes a 99% chance of failure. It's still a good bet. Stay with me.
+To calculate expected value, you need to estimate the probability this actually works. This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). Yes, the model assumes a 99% chance of failure. It's still a good bet. Stay with me.
 
 ![Even if this only has a 1 percent chance of working, it saves 503 times more lives per dollar than bed nets. Math is strange.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
 
@@ -141,7 +141,7 @@ Economists would find the following defensible (and economists find very little 
 | **Conservative central** | {{< var political_success_probability >}} | 99% chance of failure. Still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets. |
 | **Optimistic ceiling** | 25% | A major crisis opens a political window. Or humans just... decide to be smart for once. |
 
-**The model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 10%]**
+**The model uses**: Central estimate **{{< var political_success_probability >}}**
 
 ### Expected Value (Even When You Assume Failure)
 

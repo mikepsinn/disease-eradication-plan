@@ -161,7 +161,7 @@ Pharma companies aren't evil. They're just doing what any rational organism does
 - **Success rate**: {{< var pharma_success_rate_current_pct >}} (lottery odds)
 - **Timeline**: 17 years to market (patients die waiting)
 - **Revenue per success**: {{< var pharma_drug_revenue_average_current >}}
-- **ROI: {{< var pharma_roi_current_system_pct >}}** (barely profitable)
+- **ROI: {{< var pharma_roi_current_system_pct >}}** measured as IRR on late-stage pipeline assets (Deloitte's 2022 historic low for top-20 pharma; it bounced to 5.9% by 2024, which is still the kind of number that makes venture capitalists cry). That $6.7B revenue per success looks generous until you remember the other nine drugs that cost $2.6B each and produced nothing but expensive urine samples.
 - **Patent cliffs**: Blockbusters become generics overnight
 - **Public hatred**: Martin Shkreli is their poster boy
 

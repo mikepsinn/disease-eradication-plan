@@ -36,6 +36,8 @@ You invented the internet over three decades ago and somehow forgot to plug medi
 
 ## How It Works: Just Let People Try Stuff (Carefully)
 
+Yes, the FDA exists because patent medicine salesmen were literally poisoning people, and thalidomide gave "birth defect" a whole new meaning. Nobody's arguing for no regulation; we're arguing for regulation that doesn't kill more people than it saves.
+
 Here's a thought that apparently never occurred to anyone in Washington:
 
 What if sick people could just... try treatments?
@@ -296,7 +298,7 @@ The fact that this requires a law tells you everything about your species.
 **Patient receives:** Subsidy (from a 1% Treaty Fund)
 **Patient reports:** Outcomes via simple app
 **Deposit refunded:** When trial complete
-**Net to patient:** $0 to -$50 (they might profit)
+**Net cost to patient:** zero. Some patients profit up to $50.
 
 #### Example
 
@@ -468,7 +470,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 :::
 :::
 
-This approach achieves **{{< var dfda_trial_cost_reduction_factor >}} More Efficiency** through:
+This approach is **{{< var dfda_trial_cost_reduction_factor >}} more cost-efficient** than the current system, driven by:
 
 - **Cost per patient**: {{< var dfda_pragmatic_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient >}}
 - **Time to results**: 2 years vs the current 17 years

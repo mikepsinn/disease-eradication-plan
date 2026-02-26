@@ -46,7 +46,7 @@ When every nation builds 1% fewer explosion devices *at the same time*, you get 
 
 ![Fewer bombs means fewer bomb-related deaths and more money for keeping people alive. Economists needed a special term for this obvious idea.](/assets/images/1-percent-treaty/1-percent-treaty-section-good-thing-1-you-become-safer-bw-academic.jpg)
 
-This is called a Pareto improvement, which is economist-speak for "everybody wins and nobody loses." In practice, some defense contractors lose 1% of their contracts, but the net effect is positive for everyone who prefers being alive.
+Economists call this a Kaldor-Hicks improvement, which is their way of saying "the winners win more than the losers lose, and we've decided that counts." In practice, some defense contractors lose 1% of their contracts. In exchange, they and everyone they love become less likely to die of cancer. Most people consider this a good trade. Defense contractors are still doing the math.
 
 ### The Dead Capital Problem (Or: Why Bombs Are the Worst Investment Since Tulips)
 
@@ -116,12 +116,12 @@ Here's what actually threatens nations today:
 5. **Climate Disasters**: Making entire regions uninhabitable
 6. **Mental Health Crisis**: More people kill themselves than die in wars [@suicide-deaths-vs-war-deaths]
 
-### Fake Threats (That Countries Spend Trillions On)
+### Overfunded Threats (That Countries Spend Trillions On)
 
-1. **Other Countries Maybe Attacking**: Happens occasionally, usually over stupid stuff
+1. **Other Countries Attacking**: It happens. It's real. Ask Ukraine. But disease kills 15x more people every year, and you're funding them in the opposite ratio.
 2. **Terrorists**: Kill fewer people than furniture accidents [@furniture-accidents-vs-terrorism-deaths]
 
-A 1% treaty addresses the real threats. It doesn't weaken your ability to handle the imaginary ones. You'll still have 99% of your weapons.
+A 1% treaty addresses the real threats. It doesn't weaken your ability to handle the conventional ones. You keep 99% of your weapons. If 99% of your military can't handle the job, the last 1% wasn't going to save you.
 
 ![The disease bar is very tall. The war bar is shorter. We spend more money on the shorter bar. This is called strategy.](/assets/images/1-percent-treaty/1-percent-treaty-section-threat-assessment-comparison-bw-academic.jpg)
 
@@ -179,7 +179,7 @@ The {{< var treaty_annual_funding >}} flows into the 1% Treaty Fund. An **80/10/
 | **VICTORY Incentive Alignment Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **Incentive Alignment Bond (IAB) Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
-The {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials is then distributed by the actual people of Earth via the Wishocracy platform, not by a committee of 12 people in a conference room who haven't had a new idea since 1987. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
+The {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials is then distributed by the actual people of Earth via  Wishocracy, not by a committee of 12 people in a conference room who haven't had a new idea since 1987. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
 
 - **Patient Subsidies:** The largest portion, creating a market for clinical trials.
 - **Research & Development:** Funding for breakthrough platform technologies.
@@ -193,12 +193,12 @@ Governance is handled by Wishocracy, a system of direct digital democracy detail
 
 ### Year One Projected Outcomes
 
-Right now, only {{< var current_trial_slots_available >}} participate in drug trials annually out of {{< var current_disease_patients_global >}} with chronic disease. A 1% treaty changes this:
+Right now, only {{< var current_trial_slots_available_nounit >}} participate in drug trials annually out of {{< var current_disease_patients_global >}} with chronic disease. A 1% treaty changes this:
 
 #### Current System
 
 - Pivotal trials: {{< var traditional_phase3_cost_per_patient >}}
-- Only {{< var current_trial_slots_available >}} participants per year globally
+- Only {{< var current_trial_slots_available_nounit >}} participants per year globally
 - {{< var willing_trial_participants_global >}} willing to participate, but turned away
 - {{< var drug_discovery_to_approval_years >}} from discovery to patient
 
@@ -206,7 +206,7 @@ Right now, only {{< var current_trial_slots_available >}} participate in drug tr
 
 - {{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty
 - Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} ({{< var dfda_trial_cost_reduction_factor >}} cheaper)
-- {{< var dih_patients_fundable_annually >}} participants per year ({{< var dfda_trial_capacity_multiplier >}} capacity increase)
+- {{< var dih_patients_fundable_annually_nounit >}} participants per year ({{< var dfda_trial_capacity_multiplier >}} capacity increase)
 
 ![The old way: expensive, slow, nobody joins. The new way: cheaper, faster, everyone joins. We've been using the old way for 80 years.](/assets/images/1-percent-treaty/1-percent-treaty-section-efficiency-comparison-bw-academic.jpg)
 

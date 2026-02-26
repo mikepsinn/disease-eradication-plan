@@ -141,9 +141,9 @@ The {{< var treaty_campaign_voting_bloc_target_nounit >}} target isn't pulled fr
 
 The evidence:
 
-- **Civil Rights (US):** {{< var global_population_activism_threshold_pct >}} participation ended segregation
-- **Indian Independence:** {{< var global_population_activism_threshold_pct >}} of Indians kicked out the British Empire
-- **Women's Suffrage:** {{< var global_population_activism_threshold_pct >}} of women won the vote
+- **Civil Rights (US):** Crossed the {{< var global_population_activism_threshold_pct >}} threshold. Ended segregation.
+- **Indian Independence:** Crossed the {{< var global_population_activism_threshold_pct >}} threshold. Kicked out the British Empire.
+- **Women's Suffrage:** Crossed the {{< var global_population_activism_threshold_pct >}} threshold. Won the vote.
 
 Once you hit {{< var global_population_activism_threshold_pct >}}, three things happen simultaneously: it's clearly not a fringe movement, the support is geographically distributed, and opposition becomes career suicide.
 

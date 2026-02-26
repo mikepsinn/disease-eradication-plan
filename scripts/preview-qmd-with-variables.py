@@ -166,8 +166,11 @@ def main():
         output_path = Path(args.output)
         if not output_path.is_absolute():
             output_path = project_root / output_path
+        # Add source link at top of preview file
+        rel_source = qmd_path.relative_to(project_root).as_posix()
+        header = f"<!-- Source: {rel_source} -->\n\n"
         with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(preview)
+            f.write(header + preview)
         print(f"Preview written to {output_path}")
     else:
         print(preview)

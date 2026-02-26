@@ -201,7 +201,7 @@ If cancer had oil reserves, you would have cured it by 2003. Instead, you spent 
 
 Even the money you DO spend on medicine is mostly wasted, because the system that approves treatments is a smoke detector that works by mail.
 
-Vioxx killed an estimated 60,000 people from heart attacks. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. (Yes, this is how your system works in the 21st century.) Then a human read it. Five years and 60,000 corpses later, someone noticed a pattern. This is your safety system.
+Vioxx killed an estimated 38,000-55,000 people from heart attacks [@vioxx-deaths]. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. (Yes, this is how your system works in the 21st century.) Then a human read it. Five years and tens of thousands of corpses later, someone noticed a pattern. This is your safety system.
 
 Your National Institutes of Health, the agency nominally responsible for finding cures, spends {{< var nih_clinical_trials_spending_pct >}} of its budget on clinical trials (see [NIH fails to institute health](/knowledge/problem/nih-fails-2-institute-health.qmd)). The other ~97% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
 
@@ -272,7 +272,7 @@ Your new system will produce [Outcome Labels](/knowledge/solution/dfda.qmd) that
 
 Humans usually want "proof" before they stop doing something stupid, so:
 
-- [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 47,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient instead of the usual {{< var traditional_phase3_cost_per_patient >}} per patient. That's a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality. During a pandemic. While panicking.
+- [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 48,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient instead of the usual {{< var traditional_phase3_cost_per_patient >}} per patient. That's a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality. During a pandemic. While panicking.
 - [After WW2, humans cut military spending by 30%](/knowledge/proof.qmd#post-ww2) and accidentally created the greatest economic boom in history. You're asking for 1%. Even people who really, really, love explosions should be able to handle 1%.
 
 ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
