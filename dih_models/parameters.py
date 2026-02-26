@@ -7133,6 +7133,34 @@ TREATY_CAMPAIGN_VOTING_BLOC_TARGET = Parameter(
     hide_ci=True,  # CI clutters display for this target figure
 )  # 280M people = 3.5% of 8B (critical mass threshold)
 
+# Per-voter impact (total impact ÷ voting bloc target)
+# Used in podcast outro CTA and campaign materials
+VOTER_LIVES_SAVED = Parameter(
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED) / float(TREATY_CAMPAIGN_VOTING_BLOC_TARGET),
+    source_type="calculated",
+    description="Lives saved attributable to each voter if the treaty passes (total lives saved ÷ 3.5% voting bloc target)",
+    display_name="Lives Saved per Voter",
+    unit="lives",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
+    keywords=["per voter", "individual impact", "lives saved", "CTA", "campaign"],
+    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED', 'TREATY_CAMPAIGN_VOTING_BLOC_TARGET'],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED"] / ctx["TREATY_CAMPAIGN_VOTING_BLOC_TARGET"],
+    latex_symbol=r"Lives_{voter}",
+)
+
+VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS) / float(TREATY_CAMPAIGN_VOTING_BLOC_TARGET),
+    source_type="calculated",
+    description="Hours of suffering prevented attributable to each voter if the treaty passes (total suffering hours ÷ 3.5% voting bloc target)",
+    display_name="Suffering Hours Prevented per Voter",
+    unit="hours",
+    formula="DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS ÷ TREATY_CAMPAIGN_VOTING_BLOC_TARGET",
+    keywords=["per voter", "individual impact", "suffering", "CTA", "campaign"],
+    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS', 'TREATY_CAMPAIGN_VOTING_BLOC_TARGET'],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS"] / ctx["TREATY_CAMPAIGN_VOTING_BLOC_TARGET"],
+    latex_symbol=r"Hours_{suffer,voter}",
+)
+
 # Historical & Comparison Multipliers
 MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_MED_RESEARCH_SPENDING,

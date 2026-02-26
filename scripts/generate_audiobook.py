@@ -911,7 +911,7 @@ def wrap_mp3_with_intro_outro(
     if hash_file.exists() and hash_file.read_text(encoding='utf-8').strip() == wrap_hash:
         # Also verify MP3 is newer than hash file (wasn't re-exported since wrapping)
         if mp3_path.stat().st_mtime >= hash_file.stat().st_mtime:
-            print(f"  [SKIP WRAP] Already wrapped: {mp3_path.name}")
+            print(f"  [SKIP WRAP] Already wrapped: {mp3_path}")
             return
 
     # Save existing tags before overwriting
@@ -948,6 +948,8 @@ def wrap_mp3_with_intro_outro(
 
     # Write wrap hash so we don't re-wrap unnecessarily
     hash_file.write_text(wrap_hash, encoding='utf-8')
+    size_mb = mp3_path.stat().st_size / 1024 / 1024
+    print(f"  [OK WRAP] {mp3_path} ({size_mb:.1f} MB)")
 
 
 def export_single_chapter_mp3(
@@ -997,7 +999,7 @@ def export_single_chapter_mp3(
             # Also check WAV is not newer than MP3 (audio was regenerated)
             if chapter_file.stat().st_mtime <= mp3_path.stat().st_mtime:
                 size_mb = mp3_path.stat().st_size / 1024 / 1024
-                print(f"  [SKIP MP3] Up to date (hash {current_qmd_hash}): {mp3_path.name} ({size_mb:.1f} MB)")
+                print(f"  [SKIP MP3] Up to date (hash {current_qmd_hash}): {mp3_path} ({size_mb:.1f} MB)")
                 return mp3_path
             else:
                 print(f"  [STALE MP3] WAV newer than MP3, re-exporting")
@@ -1077,7 +1079,7 @@ def export_single_chapter_mp3(
 
     mp3.save()
     size_mb = mp3_path.stat().st_size / 1024 / 1024
-    print(f"  [OK MP3] {mp3_path.name} ({size_mb:.1f} MB, hash {current_qmd_hash or 'none'})")
+    print(f"  [OK MP3] {mp3_path} ({size_mb:.1f} MB, hash {current_qmd_hash or 'none'})")
     return mp3_path
 
 

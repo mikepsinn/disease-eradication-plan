@@ -115,6 +115,8 @@ book:
         - knowledge/legal/legal-framework.qmd
         - knowledge/appendix/recruitment-and-propaganda-plan.qmd
 
+    - knowledge/appendix/conclusion.qmd
+
     - part: "References"
       chapters:
         # CUT: recovery-trial.qmd - key stats already in FDA, dFDA, proof, and health-dividend chapters
