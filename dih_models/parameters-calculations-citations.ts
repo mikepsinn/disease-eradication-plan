@@ -2922,7 +2922,7 @@ export const EXPLORATION_RATIO: Parameter = {
 
 export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   value: 42.0,
-  unit: "ratio",
+  unit: "multiplier",
   displayName: "FDA to Oxford RECOVERY Trial Time Multiplier",
   description: "FDA approval timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower)",
   sourceType: "calculated",

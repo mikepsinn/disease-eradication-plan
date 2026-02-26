@@ -37,6 +37,7 @@ def generate_video(
     prompt: str,
     output_path: Path,
     first_frame_path: Path | None = None,
+    reference_image_paths: list[Path] | None = None,
     aspect_ratio: str = "16:9",
     duration_seconds: int = 8,
     negative_prompt: str | None = None,
@@ -44,13 +45,16 @@ def generate_video(
     """
     Generate a video clip using Veo 3.1.
 
-    Supports both text-to-video (no image) and image-to-video (with first frame).
+    Supports text-to-video, image-to-video (first frame), and reference images
+    for character/style consistency across scenes.
 
     Args:
         prompt: Animation prompt describing the desired motion/scene.
         output_path: Where to save the generated MP4 clip.
         first_frame_path: Optional keyframe image (JPEG) to use as first frame.
                           If None, generates from text prompt only.
+        reference_image_paths: Optional list of up to 3 reference images for
+                               character/style consistency across scenes.
         aspect_ratio: "16:9" or "9:16".
         duration_seconds: Clip duration (5-8 seconds).
         negative_prompt: What to exclude from the video (e.g., "narration, dialogue").
@@ -61,7 +65,8 @@ def generate_video(
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    mode = "img2vid" if first_frame_path else "txt2vid"
+    has_refs = reference_image_paths and len(reference_image_paths) > 0
+    mode = "img2vid" if first_frame_path else ("ref2vid" if has_refs else "txt2vid")
     print(f"  Generating video [{mode}] ({aspect_ratio}, {duration_seconds}s): {prompt[:80]}...")
 
     config_kwargs: dict = {
@@ -71,6 +76,10 @@ def generate_video(
     }
     if negative_prompt:
         config_kwargs["negative_prompt"] = negative_prompt
+    if has_refs:
+        config_kwargs["reference_images"] = [
+            types.Image.from_file(location=str(p)) for p in reference_image_paths
+        ]
 
     gen_kwargs: dict = {
         "model": VEO_MODEL_ID,

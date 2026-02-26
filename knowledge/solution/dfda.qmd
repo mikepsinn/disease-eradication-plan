@@ -471,7 +471,7 @@ The last FDA form is filled out. It's immediately lost. Nobody notices.
 This approach is **{{< var dfda_trial_cost_reduction_factor >}} more cost-efficient** than the current system, driven by:
 
 - **Cost per patient**: {{< var dfda_pragmatic_trial_cost_per_patient >}} vs the current {{< var traditional_phase3_cost_per_patient >}}
-- **Time to results**: 2 years vs the current 17 years
+- **Time to results**: {{< var oxford_recovery_trial_duration_months >}} vs the current {{< var fda_phase_1_to_approval_years >}}
 - **Patient access**: Universal access vs {{< var antidepressant_trial_exclusion_rate >}} excluded currently
 
 {{< include ../figures/fda-vs-dfda-efficiency-comparison-diagram.qmd >}}

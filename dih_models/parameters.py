@@ -1232,7 +1232,7 @@ FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
     source_type="calculated",
     description="FDA approval timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower)",
     display_name="FDA to Oxford RECOVERY Trial Time Multiplier",
-    unit="ratio",
+    unit="multiplier",
     formula="FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
     latex=r"""\begin{aligned}
 \text{Multiplier}_{RD} &= \frac{Y_{FDA} \times 12}{M_{RECOVERY}} \\
