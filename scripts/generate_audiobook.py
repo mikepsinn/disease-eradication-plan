@@ -53,6 +53,10 @@ tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
 # Voice for narration (Kore + dinner-party energy, winner from A/B testing)
 NARRATOR_VOICE = DEFAULT_VOICE
 
+# Podcast intro/outro assets
+THEME_SONG_PATH = PROJECT_ROOT / "assets" / "music" / "podcast-theme-song.mp3"
+OUTRO_QMD_PATH = PROJECT_ROOT / "knowledge" / "appendix" / "podcast-outro.qmd"
+
 
 def _read_mp3_source_hash(mp3_path: Path) -> str | None:
     """Read the source_qmd_hash TXXX frame from an MP3 file.
@@ -819,6 +823,133 @@ def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
     return wav_path
 
 
+def generate_outro_audio(
+    voice: str = NARRATOR_VOICE,
+    force: bool = False,
+    paths: AudiobookPaths | None = None,
+    config_path: Path = DEFAULT_CONFIG_PATH,
+) -> Path | None:
+    """Generate TTS audio for the podcast outro from podcast-outro.qmd.
+
+    Processes the outro QMD through the same text preparation + TTS pipeline
+    as regular chapters. Caches based on source QMD hash.
+
+    Returns path to the outro WAV file, or None on failure.
+    """
+    if not OUTRO_QMD_PATH.exists():
+        print(f"  [SKIP OUTRO] {OUTRO_QMD_PATH.name} not found")
+        return None
+
+    chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
+    outro_wav = chapters_dir / "podcast-outro.wav"
+
+    # Hash-based cache check
+    qmd_content = OUTRO_QMD_PATH.read_text(encoding='utf-8')
+    current_hash = hashlib.sha256(qmd_content.encode('utf-8')).hexdigest()[:16]
+    hash_file = chapters_dir / "podcast-outro.qmdhash"
+
+    if outro_wav.exists() and not force:
+        old_hash = hash_file.read_text(encoding='utf-8').strip() if hash_file.exists() else ''
+        if old_hash == current_hash:
+            print(f"  [CACHED OUTRO] {outro_wav.name}")
+            return outro_wav
+        print(f"  [STALE OUTRO] QMD changed ({old_hash or 'none'} -> {current_hash})")
+
+    # Build a fake chapter dict so we can reuse generate_chapter_audio()
+    outro_chapter = {
+        'index': 9999,
+        'path': str(OUTRO_QMD_PATH.relative_to(PROJECT_ROOT)),
+        'title': 'Podcast Outro',
+        'part': None,
+        'podcast': False,
+    }
+
+    audio_path, _ = generate_chapter_audio(
+        outro_chapter, voice=voice, force=force, paths=paths, config_path=config_path
+    )
+    if audio_path:
+        # Normalize loudness to match chapters
+        normalize_loudness(audio_path, target_lufs=-16.0)
+        # Write hash for cache
+        chapters_dir.mkdir(parents=True, exist_ok=True)
+        hash_file.write_text(current_hash, encoding='utf-8')
+
+    return audio_path
+
+
+def _compute_wrap_hash(intro_path: Path | None, outro_path: Path | None) -> str:
+    """Compute a combined hash of intro + outro files for cache invalidation."""
+    h = hashlib.sha256()
+    for p in (intro_path, outro_path):
+        if p and p.exists():
+            h.update(p.read_bytes())
+    return h.hexdigest()[:16]
+
+
+def wrap_mp3_with_intro_outro(
+    mp3_path: Path,
+    intro_path: Path | None = None,
+    outro_path: Path | None = None,
+) -> None:
+    """Prepend theme song and/or append outro audio to an MP3 file in-place.
+
+    Loads the existing MP3, sandwiches it between intro and outro audio,
+    and overwrites the original file. ID3 tags are preserved by re-applying
+    after the audio manipulation.
+
+    Uses a sidecar .wraphash file to skip re-wrapping when intro/outro
+    haven't changed and the MP3 was already wrapped.
+    """
+    from mutagen.mp3 import MP3
+
+    if not intro_path and not outro_path:
+        return
+
+    # Check if already wrapped with same intro/outro
+    wrap_hash = _compute_wrap_hash(intro_path, outro_path)
+    hash_file = mp3_path.with_suffix('.wraphash')
+    if hash_file.exists() and hash_file.read_text(encoding='utf-8').strip() == wrap_hash:
+        # Also verify MP3 is newer than hash file (wasn't re-exported since wrapping)
+        if mp3_path.stat().st_mtime >= hash_file.stat().st_mtime:
+            print(f"  [SKIP WRAP] Already wrapped: {mp3_path.name}")
+            return
+
+    # Save existing tags before overwriting
+    existing_mp3 = MP3(str(mp3_path))
+    saved_tags = existing_mp3.tags
+
+    # Load chapter audio
+    chapter_audio = AudioSegment.from_mp3(str(mp3_path))
+    combined = AudioSegment.empty()
+
+    if intro_path and intro_path.exists():
+        if intro_path.suffix.lower() == '.mp3':
+            intro_audio = AudioSegment.from_mp3(str(intro_path))
+        else:
+            intro_audio = AudioSegment.from_wav(str(intro_path))
+        combined += intro_audio
+
+    combined += chapter_audio
+
+    if outro_path and outro_path.exists():
+        if outro_path.suffix.lower() == '.mp3':
+            outro_audio = AudioSegment.from_mp3(str(outro_path))
+        else:
+            outro_audio = AudioSegment.from_wav(str(outro_path))
+        combined += outro_audio
+
+    combined.export(str(mp3_path), format="mp3", bitrate="192k")
+
+    # Restore ID3 tags
+    if saved_tags:
+        tagged = MP3(str(mp3_path))
+        tagged.tags = saved_tags
+        tagged.save()
+
+    # Write wrap hash so we don't re-wrap unnecessarily
+    hash_file.write_text(wrap_hash, encoding='utf-8')
+
+
 def export_single_chapter_mp3(
     chapter: dict,
     book_meta: dict,
@@ -1282,6 +1413,30 @@ def main():
     print(f"Output: {paths.root.relative_to(PROJECT_ROOT)}")
     print()
 
+    # Generate podcast outro audio (once, before chapter loop)
+    outro_wav = None
+    if OUTRO_QMD_PATH.exists():
+        print("=" * 60)
+        print("  Generating podcast outro audio...")
+        print("=" * 60)
+        outro_wav = generate_outro_audio(
+            voice=args.voice, force=args.force, paths=paths, config_path=config_path
+        )
+        if outro_wav:
+            print(f"  [OK] Outro audio: {outro_wav.name}")
+        else:
+            print(f"  [WARN] Outro audio generation failed, chapters will not have outro")
+    else:
+        print(f"  [INFO] No outro QMD found at {OUTRO_QMD_PATH.name}, skipping outro")
+
+    # Check for theme song
+    intro_mp3 = THEME_SONG_PATH if THEME_SONG_PATH.exists() else None
+    if intro_mp3:
+        print(f"  [OK] Theme song: {intro_mp3.name}")
+    else:
+        print(f"  [INFO] No theme song at {THEME_SONG_PATH}, skipping intro")
+    print()
+
     # Per-chapter pipeline: text -> WAV -> normalize -> align -> MP3
     generated_files = []
     for chapter in chapters:
@@ -1307,7 +1462,12 @@ def main():
         # 4. Export tagged chapter MP3
         if not args.no_combine:
             track_num = next((i for i, ch in enumerate(all_chapters, 1) if ch['index'] == chapter['index']), chapter['index'])
-            export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
+            mp3_out = export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
+
+            # 5. Wrap podcast MP3 with theme song + outro (not applied to combined audiobook)
+            if mp3_out and (intro_mp3 or outro_wav):
+                print(f"  [WRAP] Adding intro/outro to {mp3_out.name}")
+                wrap_mp3_with_intro_outro(mp3_out, intro_path=intro_mp3, outro_path=outro_wav)
 
     print(f"\n{'=' * 60}")
     print(f"Processed {len(generated_files)} chapters")

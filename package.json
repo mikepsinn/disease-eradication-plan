@@ -33,6 +33,8 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "render:manual:paperback": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual-paperback",
+    "sync:r2": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py",
     "audiobook:publish": ".venv\\Scripts\\python.exe -u scripts/publish_audiobook.py",
     "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
     "images:fix": "tsx scripts/images/fix-image-issues.ts",
@@ -78,7 +80,7 @@
     "audiobook:scenes:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_scenes.py --config _quarto-manual-paperback.yml --list",
     "audiobook:video": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_video.py",
     "audiobook:video:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_video.py --list",
-    "sync:r2": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py",
+
     "sync:r2:dry-run": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py --dry-run",
     "sync:r2:list": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py --list",
     "param:unused": "tsx scripts/parameter-audit.ts --unused",
@@ -87,7 +89,6 @@
     "validate:1-pct-treaty-impact": ".venv\\Scripts\\python.exe -u scripts/pdf-validation.py --pdf assets/pdfs/1-percent-treaty-impact.pdf",
     "preview:test": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --preview",
     "render:website": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to html",
-    "render:manual:paperback": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual-paperback",
     "render:epub": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual-paperback --to epub && .venv\\Scripts\\python.exe -u scripts/fix-epub-kindle.py assets/epubs/How-to-End-War-and-Disease.epub",
     "render:epub:validate": "java -jar tools/epubcheck-5.1.0/epubcheck.jar assets/epubs/How-to-End-War-and-Disease.epub",
     "render:docx": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual --to docx",

@@ -940,6 +940,11 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     extra_path_len = len(str(build_temp)) - len(str(project_root))
     max_path_len = (250 - extra_path_len) if sys.platform == 'win32' else 4096
 
+    # Windows reserved device names that cannot be used as filenames
+    windows_reserved = {"CON", "PRN", "AUX", "NUL",
+                        *(f"COM{i}" for i in range(1, 10)),
+                        *(f"LPT{i}" for i in range(1, 10))}
+
     def should_ignore(directory: str, files: List[str]) -> Set[str]:
         ignored = set()
         for f in files:
@@ -948,6 +953,8 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
             elif os.path.splitext(f)[1] in build_artifact_extensions:
                 ignored.add(f)
             elif len(os.path.join(directory, f)) > max_path_len:
+                ignored.add(f)
+            elif sys.platform == 'win32' and os.path.splitext(f)[0].upper() in windows_reserved:
                 ignored.add(f)
         return ignored
 
