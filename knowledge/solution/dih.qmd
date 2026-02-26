@@ -6,7 +6,6 @@ tags:
   - solution
   - dih
   - governance
-  - dao
   - funding-model
   - coordination
 image: /assets/og-images/knowledge/solution/dih-og-retro-academic.jpg
@@ -34,7 +33,7 @@ Your economist Mancur Olson identified why public goods are systematically under
 
 ![Why your species is so good at making weapons and so bad at curing diseases. The weapons people are organized, the disease people are scattered.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
 
-Curing cancer benefits {{< var global_population_2024_nounit >}} people a little. Blocking cancer cures benefits a few thousand pharmaceutical executives a lot. The executives show up to lobby. The {{< var global_population_2024_nounit >}} don't. This is why your species has spent 50 years "fighting cancer" while your defense industry got stealth bombers, aircraft carriers, and GPS.
+Curing cancer benefits {{< var global_population_2024_nounit >}} people a little. But nobody benefits enough to organize, lobby, and fight for it the way a defense contractor fights for a bomber contract. The {{< var global_population_2024_nounit >}} don't show up. This is why your species has spent 50 years "fighting cancer" while your defense industry got stealth bombers, aircraft carriers, and GPS.
 
 Your military-industrial complex solved this problem for defense. Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets. Result: the most powerful military in human history.
 
@@ -83,7 +82,7 @@ Your DIH does exactly three things:
 2. **Allocate research via patient subsidies** (market mechanism) and **infrastructure via [Wishocracy](wishocracy.qmd)**
 3. **Verify results and pay proportional to impact**
 
-Everything operational is outsourced. Trial infrastructure? That's your [decentralized FDA's](dfda.qmd) job. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
+Everything operational is outsourced. Trial infrastructure? [Existing and new providers](dfda.qmd) compete for that work. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
 
 ![A tiny middle bit that handles money, surrounded by other people who do the actual work. Like a very small manager with many employees.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
 
@@ -161,33 +160,13 @@ Pay your scientists like you pay your plumbers: for fixing the problem, not for 
 
 Your DIH doesn't replace your healthcare system. It adds an "experimental treatment insurance layer" on top. Your species already understands insurance. You just hadn't thought to apply it to not dying of untreated diseases.
 
-**Sarah has Type 2 Diabetes. Old system:** Metformin not working. No other options covered. Pays $500/month for branded drug. Still has poor control.
+**Sarah has Type 2 Diabetes. Old system:** Metformin not working. No other options covered. Pays hundreds per month for a branded drug. Still has poor control.
 
-**With your DIH:** Her doctor checks the trial network during a regular visit. Sees 5 relevant trials. Recommends one based on Sarah's profile. Sarah enrolls with one click. The trial coverage pool covers all costs. Sarah pays a $30 copay. Gets an experimental drug that might work better. Reports blood sugar via app. Her data helps the next patient. Total time added to doctor visit: 3 minutes.
+**With your DIH:** Her doctor checks the trial network during a regular visit. Sees relevant trials. Recommends one based on Sarah's profile. Sarah enrolls with one click. The trial coverage pool covers all costs. Sarah pays a small copay. Gets an experimental drug that might work better. Reports blood sugar via app. Her data helps the next patient. Total time added to doctor visit: 3 minutes.
 
-**Cost per patient per month:**
+**Why your doctors will cooperate:** More treatment options for desperate patients. No liability (covered by trial insurance). Minimal workflow changes.
 
-- DIH trial coverage: $310-2,510 (medication + monitoring + data collection)
-- Traditional trial: $6,800-13,600 [@trial-costs-fda-study]
-- Efficiency gain: 81-95%
-
-**Why your doctors will cooperate:** More treatment options for desperate patients. CME credits for participation. No liability (covered by trial insurance). One click in their EMR. No new systems to learn.
-
-**Why your patients will use it:** Affordable access to experimental treatments ($20-50 copay). Doctor-recommended. Insurance-like coverage (familiar model). No financial risk. They help others while helping themselves. It's like being a guinea pig, except the guinea pig gets paid and gets medicine.
-
-### How Your Politicians Get Aligned
-
-Your politicians optimize for reelection, status, and post-office careers. "Humans continuing to exist" doesn't appear on their performance review. This is a design flaw in your democracy, not a moral failing. Well, it's both. But mostly it's a design flaw, because if you put saints in a badly designed system, you get the same results. You just feel more betrayed.
-
-![Politicians who vote for good things get good scores, which get them good jobs later. Like a report card that follows you into adulthood.](/assets/images/dih/dih-section-how-politicians-get-aligned-bw-academic.jpg)
-
-[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) solve this by making "support pragmatic clinical trial funding" the career-optimal move:
-
-- **Public Good Scores** track voting records on health policy
-- **Electoral support** flows to high-scorers via independent PACs
-- **Post-office opportunities** (fellowships, boards) reserved for leaders who governed well
-
-No bribes. No corruption. Just a standing rule: support policies that measurably reduce suffering and your political career gets easier. Oppose them and it gets harder. Your politicians will figure it out. They're not stupid. They got elected, which requires a very specific and impressive type of intelligence, none of which involves curing diseases.
+**Why your patients will use it:** Affordable access to experimental treatments. Doctor-recommended. Insurance-like coverage (familiar model). No financial risk. They help others while helping themselves. It's like being a guinea pig, except the guinea pig gets paid and gets medicine.
 
 ## How the Money Flows
 
@@ -211,12 +190,7 @@ No bribes. No corruption. Just a standing rule: support policies that measurably
 - Research allocation via patient subsidies (market mechanism)
 - Verifies results, pays for outcomes
 
-**Your [Decentralized FDA](dfda.qmd):**
-
-- A funded **campaign**, not part of your DIH itself
-- Provides technical infrastructure for trials
-- Competes with other research models for funding
-- Has no budget authority (just a service provider)
+**[Trial infrastructure providers](dfda.qmd):** Funded campaigns that compete to provide trial infrastructure. Not part of your DIH itself; just service providers with no budget authority.
 
 ### The Fund Flow
 
@@ -224,8 +198,7 @@ Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
-| [VICTORY Bond investors](incentive-alignment-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
-| [Political incentives (IABs)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
+| [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) | {{< var victory_bond_funding_pct >}} + {{< var iab_political_incentive_funding_pct >}} | {{< var victory_bond_annual_payout >}} + {{< var iab_political_incentive_funding_annual >}} | Align investors and politicians with outcomes |
 | **Research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Patient subsidies (market allocation) |
 
 ### What Gets Funded: Market Failures Only
@@ -249,30 +222,16 @@ This is minimal by design. Your ecosystem handles most research funding automati
 
 ## What Your DIH Outsources (and Why)
 
-Your DIH is intentionally minimal. It outsources everything operational because the best way to avoid corruption is to have nothing worth corrupting:
+Your DIH is intentionally minimal. It outsources everything operational because the best way to avoid corruption is to have nothing worth corrupting. If a provider stops performing, you fund a better one. This is how your species runs restaurants. Time to try it with medicine.
 
 | Function | Outsourced To | Why |
 |:---------|:--------------|:----|
-| **Crowdfunding** | Gitcoin, Juicebox, etc. | They already exist and work |
-| **Task decomposition** | AI services | Machines are better at this |
-| **Talent matching** | Existing marketplaces | Don't reinvent LinkedIn |
-| **Trial infrastructure** | Decentralized FDA (a funded campaign) | Separate concerns |
+| **Trial infrastructure** | [Competing providers](dfda.qmd) (funded campaigns) | Separate concerns |
+| **Crowdfunding** | Existing platforms | They already exist and work |
+| **Talent matching** | Existing marketplaces | Don't reinvent what already works |
 | **Data storage** | Competing providers | Market competition |
 
-## How Campaigns Plug In
-
-Your decentralized FDA is the main example of a funded campaign. It's not part of your DIH. It's a service provider competing for funding. If it stops performing, you fund something better. This is how your species runs restaurants. Time to try it with medicine.
-
-### Campaign Lifecycle
-
-![The six steps from 'someone has an idea' to 'did they actually do it.' Arranged in a circle to show it happens over and over.](/assets/images/dih/dih-section-campaign-lifecycle-bw-academic.jpg)
-
-1. **Proposal:** Submit campaign description, budget, milestones
-2. **Wishocracy vote:** Humanity decides priority relative to alternatives
-3. **Funding:** Treasury allocates based on Wishocracy vote + AI-driven policy analysis recommendations
-4. **Execution:** Campaign delivers services (trials, infrastructure, etc.)
-5. **Verification:** Measure outcomes against milestones
-6. **Continuation:** Results determine next year's funding
+Every outsourced function follows the same lifecycle: propose, vote via [Wishocracy](wishocracy.qmd), receive funding, deliver, get measured, and earn continued funding based on results.
 
 ## Anti-Capture Design
 
@@ -280,77 +239,29 @@ Your current system is trivially captured. Concentrate billions of dollars in a 
 
 Your DIH makes capture economically irrational.
 
-{{< include ../figures/dih-vs-dfda-separation-diagram.qmd >}}
-
 ### How Your DIH Resists Capture
 
 | Mechanism | How It Works | Capture Cost |
 |:----------|:-------------|:-------------|
 | **No CEO** | Nothing to bribe | N/A |
-| **Algorithmic governance** | Rules in smart contracts | Can't bribe an if-statement |
+| **Algorithmic governance** | Rules encoded in transparent, auditable systems | Can't bribe an algorithm |
 | **Public ledger** | Every dollar tracked | Corruption is visible |
-| **Forkable** | Anyone can clone the protocol | Capture triggers replacement |
+| **Replaceable** | Anyone can build a competing alternative | Capture triggers competition |
 | **Distributed voting** | Millions vote via Wishocracy | Lobbying doesn't scale |
 | **Outcome-based funding** | Results determine allocation | Gaming harder than performing |
 
-### The "New FDA" Risk
+Your protocol ensures **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves. If any campaign provider gets captured, fund a competing one instead.
 
-**Risk:** "What if your decentralized FDA becomes the new FDA, capturing regulatory power?"
-
-![When the FDA gets corrupted, you just build a second FDA with the same money. Like switching to the other queue at the grocery store.](/assets/images/dih/dih-section-the-new-fda-risk-bw-academic.jpg)
-
-**Mitigation:** Your decentralized FDA has no budget authority. It's just a campaign competing for funding. If it gets captured, fund a competing framework instead. Replace it like you replace a bad restaurant: stop going there and open a better one.
-
-Your protocol ensures **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves.
-
-### Security Architecture: Multi-Layered Defense
+### Security: Defense in Depth
 
 A {{< var treaty_annual_funding >}} treasury is a massive target. Every thief, hacker, and corrupt bureaucrat on your planet will try to steal from it. This is not speculation. This is a certainty, like sunrise or a politician lying. Your DIH uses defense in depth:
 
-**1. Nobody's in Charge (And That's the Point)**
-
-*Turns out you don't need a CEO when you have math.*
-
-- Every VICTORY Bond holder directly controls treasury through on-chain voting
-- No human signers = no kidnapping, corruption, or coercion targets
-- Smart contracts automatically execute community decisions after 24-72h timelocks
-- Battle-tested approach already managing billions in MakerDAO, Uniswap, Aave
-
-**2. AI-Powered Fraud Detection**
-
-- **Fraud Agent:** Real-time anomaly detection, duplication monitoring, collusion identification, sybil detection
-- **Safety Oracle:** Incident severity scoring with automatic payout holds for affected interventions
-- **Identity Oracle:** Verifies affiliations and conflicts, prevents unauthorized access
-- Manual review queue for flagged actions with whistleblower bounty rewards
-
-**3. Complete Transparency & Auditability**
-
-- All treasury addresses published with real-time public dashboards
-- Immutable transaction logs with standardized disbursement tags
-- Annual smart contract audits and semiannual operational audits with published reports
-- Hash-committed invoices and budgets for full accountability
-
-**4. Recovery & Response Mechanisms**
-
-- Clawbacks for data falsification or trial misconduct
-- Emergency pause capabilities triggered by incident signals
-- Progressive unpause policies tied to remediation completion
-- Guardian modules for pausing non-critical functions under defined conditions
+- **Distributed control:** No single person or committee holds the keys. Community governance with time-delayed execution so fraud can be caught before funds move.
+- **Automated fraud detection:** Real-time anomaly detection, duplication monitoring, and whistleblower bounties. Machines watch the money so humans don't have to be trusted with it.
+- **Full transparency:** Every dollar tracked on public ledgers. Regular independent audits. You can't steal what everyone can see.
+- **Recovery mechanisms:** Clawbacks for data falsification. Emergency pause capabilities. If something goes wrong, the system stops and fixes itself before continuing.
 
 ![Four different ways to stop people from stealing the money. Because one way would be insufficient, apparently.](/assets/images/governance/governance-section-security-architecture-bw-academic.jpg)
-
-### Beyond Medical Research
-
-You can prove this model works with a {{< var treaty_annual_funding >}} treasury. Then apply it to everything else your governments currently mismanage:
-
-- **Education:** Pay teachers based on whether kids actually learn things
-- **Infrastructure:** Fund roads that don't immediately fall apart
-- **Environment:** Pay for actual carbon reduction, not paperwork
-- **Social Services:** Get help to people who need it without 47 forms
-
-This isn't just about protecting health funding. It's a proof of concept for uncorruptible governance. Your 1% Treaty Fund becomes the prototype. If you can manage {{< var treaty_annual_funding >}} without humans stealing it, you can manage anything. The trick is removing the humans from the parts where they steal, which, historically, is all the parts.
-
-![Money distributed by robots instead of people, because people kept stealing it.](/assets/images/governance/governance-section-beyond-medical-research-a-template-for-uncorruptible-governance-bw-academic.jpg)
 
 ## Summary: Your Coordination Layer
 
@@ -361,9 +272,8 @@ Your DIH is not a research institution, a trial platform, or a funding agency. I
 | 1% Treaty Fund | Treasury | Receives funds from treaty |
 | Patient subsidies | Research allocation | Market mechanism (patients choose trials) |
 | Wishocracy | Infrastructure governance | Allocates between infrastructure/public goods |
-| Decentralized FDA | Trial infrastructure | Funded campaign |
-| IABs | Political alignment | Keeps politicians incentivized |
-| VICTORY Bonds | Investor alignment | Funds the campaign |
+| [Trial infrastructure](dfda.qmd) | Clinical trial services | Funded campaigns (competing providers) |
+| [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) | Investor and political alignment | Outcome-based rewards |
 
 **The single sentence version:**
 
