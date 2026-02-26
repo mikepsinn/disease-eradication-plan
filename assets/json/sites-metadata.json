@@ -763,10 +763,9 @@
           "description": "Every claim in this book has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.",
           "image": "https://impact.warondisease.org/assets/og-images/knowledge/references-og-bw-academic.jpg",
           "tags": [
-            "references",
-            "deprecated"
+            "references"
           ],
-          "published": false,
+          "published": true,
           "lastmod": "2026-02-25"
         }
       ],
@@ -3368,10 +3367,9 @@
           "description": "Every claim in this book has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.",
           "image": "https://drug-cost.warondisease.org/assets/og-images/knowledge/references-og-bw-academic.jpg",
           "tags": [
-            "references",
-            "deprecated"
+            "references"
           ],
-          "published": false,
+          "published": true,
           "lastmod": "2026-02-25"
         }
       ],
@@ -4681,7 +4679,7 @@
       "id": "manual-paperback",
       "type": "book",
       "title": "How to End War and Disease",
-      "description": "Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery",
+      "description": "Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery",
       "siteUrl": "https://manual.WarOnDisease.org",
       "ogImage": "",
       "pdfUrl": "https://manual.WarOnDisease.org/How-to-End-War-and-Disease-Paperback.pdf",
@@ -4951,7 +4949,7 @@
             "What Each Country Pays",
             "Why This Is Actually About National Security (No, Really)",
             "Real Threats (That Actually Kill People)",
-            "Fake Threats (That Countries Spend Trillions On)",
+            "Overfunded Threats (That Countries Spend Trillions On)",
             "The Rebranding Campaign: From \"Weakness\" to \"Strategic Genius\"",
             "\"The Strategic Health Defense Initiative\"",
             "The Talking Points That Make Hawks Sound Like Doves",
@@ -4983,7 +4981,6 @@
             "solution",
             "dih",
             "governance",
-            "dao",
             "funding-model",
             "coordination"
           ],
@@ -4999,19 +4996,14 @@
             "The Incentive Stack: Making ROI the Selfish Choice",
             "How Your Researchers Get Paid",
             "How It Works For Your Patients",
-            "How Your Politicians Get Aligned",
             "How the Money Flows",
             "The Architecture",
             "The Fund Flow",
             "What Gets Funded: Market Failures Only",
             "What Your DIH Outsources (and Why)",
-            "How Campaigns Plug In",
-            "Campaign Lifecycle",
             "Anti-Capture Design",
             "How Your DIH Resists Capture",
-            "The \"New FDA\" Risk",
-            "Security Architecture: Multi-Layered Defense",
-            "Beyond Medical Research",
+            "Security: Defense in Depth",
             "Summary: Your Coordination Layer"
           ],
           "published": true,
@@ -5329,7 +5321,6 @@
             "Step 2: Pay Humans to Click YES",
             "Step 3: Apply Papers to Politicians Until Treaty Happens",
             "Detailed Execution: The Five-Step Cascade",
-            "Step 2: The Great Internet Clicking",
             "Tactical Implementation: The Sacred (Legal) Bribery Sequence",
             "(Legal) Bribe Category #1: Rich People (The Paper Collectors)",
             "(Legal) Bribe Category #2: The True Believers (Early Adopters Who Want Control)",
@@ -5596,10 +5587,9 @@
           "description": "Every claim in this book has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/references-og-bw-academic.jpg",
           "tags": [
-            "references",
-            "deprecated"
+            "references"
           ],
-          "published": false,
+          "published": true,
           "lastmod": "2026-02-25"
         },
         {
@@ -5616,7 +5606,7 @@
       "id": "manual",
       "type": "book",
       "title": "How to End War and Disease",
-      "description": "Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery",
+      "description": "Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery",
       "siteUrl": "https://manual.WarOnDisease.org",
       "favicon": "https://manual.WarOnDisease.org/assets/icons/book-favicon.png",
       "ogImage": "https://manual.WarOnDisease.org/assets/cover/book-cover-wide.png",
@@ -6040,7 +6030,7 @@
             "What Each Country Pays",
             "Why This Is Actually About National Security (No, Really)",
             "Real Threats (That Actually Kill People)",
-            "Fake Threats (That Countries Spend Trillions On)",
+            "Overfunded Threats (That Countries Spend Trillions On)",
             "The Rebranding Campaign: From \"Weakness\" to \"Strategic Genius\"",
             "\"The Strategic Health Defense Initiative\"",
             "The Talking Points That Make Hawks Sound Like Doves",
@@ -6072,7 +6062,6 @@
             "solution",
             "dih",
             "governance",
-            "dao",
             "funding-model",
             "coordination"
           ],
@@ -6088,19 +6077,14 @@
             "The Incentive Stack: Making ROI the Selfish Choice",
             "How Your Researchers Get Paid",
             "How It Works For Your Patients",
-            "How Your Politicians Get Aligned",
             "How the Money Flows",
             "The Architecture",
             "The Fund Flow",
             "What Gets Funded: Market Failures Only",
             "What Your DIH Outsources (and Why)",
-            "How Campaigns Plug In",
-            "Campaign Lifecycle",
             "Anti-Capture Design",
             "How Your DIH Resists Capture",
-            "The \"New FDA\" Risk",
-            "Security Architecture: Multi-Layered Defense",
-            "Beyond Medical Research",
+            "Security: Defense in Depth",
             "Summary: Your Coordination Layer"
           ],
           "published": true,
@@ -6508,7 +6492,6 @@
             "Step 2: Pay Humans to Click YES",
             "Step 3: Apply Papers to Politicians Until Treaty Happens",
             "Detailed Execution: The Five-Step Cascade",
-            "Step 2: The Great Internet Clicking",
             "Tactical Implementation: The Sacred (Legal) Bribery Sequence",
             "(Legal) Bribe Category #1: Rich People (The Paper Collectors)",
             "(Legal) Bribe Category #2: The True Believers (Early Adopters Who Want Control)",
@@ -6902,7 +6885,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/appendix/investor-risk-analysis.qmd",
@@ -7499,7 +7482,7 @@
             "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/references.qmd",
@@ -7508,10 +7491,9 @@
           "description": "Every claim in this book has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/references-og-bw-academic.jpg",
           "tags": [
-            "references",
-            "deprecated"
+            "references"
           ],
-          "published": false,
+          "published": true,
           "lastmod": "2026-02-25"
         },
         {

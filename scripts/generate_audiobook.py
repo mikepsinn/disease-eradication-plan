@@ -1004,8 +1004,47 @@ def generate_podcast_rss(
     cover_url = f"{cdn_url}/{cover_filename}"
 
     from datetime import datetime, timezone, timedelta
-    # Each chapter gets a pubDate 1 day apart so podcast apps sort them correctly
-    base_date = datetime.now(timezone.utc)
+
+    # Get git last-modified dates for each chapter QMD file.
+    # Falls back to file mtime if git fails, then to a spaced-out synthetic date.
+    def _git_last_modified(qmd_path: str) -> datetime | None:
+        """Get the last git commit date for a file."""
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%aI", "--", qmd_path],
+            capture_output=True, text=True, cwd=str(PROJECT_ROOT),
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return datetime.fromisoformat(result.stdout.strip())
+        return None
+
+    ch_pub_dates: dict[int, datetime] = {}
+    fallback_date = datetime.now(timezone.utc)
+    for ch in chapters:
+        git_date = _git_last_modified(ch['path'])
+        if git_date:
+            ch_pub_dates[ch['index']] = git_date
+        else:
+            # Fallback: file modification time
+            qmd_file = PROJECT_ROOT / ch['path']
+            if qmd_file.exists():
+                mtime = qmd_file.stat().st_mtime
+                ch_pub_dates[ch['index']] = datetime.fromtimestamp(mtime, tz=timezone.utc)
+            else:
+                ch_pub_dates[ch['index']] = fallback_date
+
+    # Ensure dates are monotonically DECREASING in chapter order so podcast
+    # apps (which sort by pubDate descending = newest first) show chapter 1
+    # at the top.  Chapter 1 gets the latest date, last chapter gets the earliest.
+    # If a chapter's git date is >= the previous chapter's, push it back.
+    sorted_indices = sorted(ch_pub_dates.keys())
+    for i in range(1, len(sorted_indices)):
+        prev_idx = sorted_indices[i - 1]
+        curr_idx = sorted_indices[i]
+        if ch_pub_dates[curr_idx] >= ch_pub_dates[prev_idx]:
+            ch_pub_dates[curr_idx] = ch_pub_dates[prev_idx] - timedelta(minutes=1)
+
+    # Channel pubDate = chapter 1's date (the latest after monotonic fix)
+    latest_date = ch_pub_dates[sorted_indices[0]] if sorted_indices else fallback_date
 
     # Build MP3 lookup by slug for matching with timestamps
     mp3_by_slug = {mp3.stem: mp3 for mp3 in chapter_mp3s}
@@ -1052,9 +1091,8 @@ def generate_podcast_rss(
         duration_fmt = ts['duration_formatted']
         file_size = mp3_path.stat().st_size
         mp3_url = f"{mp3_url_base}/{mp3_path.name}"
-        pub_date = (base_date - timedelta(days=total_eps - ep_num)).strftime(
-            "%a, %d %b %Y %H:%M:%S +0000"
-        )
+        ep_date = ch_pub_dates.get(ts['index'], fallback_date)
+        pub_date = ep_date.strftime("%a, %d %b %Y %H:%M:%S +0000")
 
         ep_img = ep_image_urls.get(slug)
         image_tag = f'\n      <itunes:image href="{escape(ep_img)}"/>' if ep_img else ''
@@ -1092,7 +1130,7 @@ def generate_podcast_rss(
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>serial</itunes:type>
-    <pubDate>{base_date.strftime("%a, %d %b %Y %H:%M:%S +0000")}</pubDate>
+    <pubDate>{latest_date.strftime("%a, %d %b %Y %H:%M:%S +0000")}</pubDate>
     <podcast:medium>audiobook</podcast:medium>
     <atom:link href="{escape(cdn_url)}/{mp3_base.as_posix()}/feed.xml" rel="self" type="application/rss+xml"/>
 {chr(10).join(items)}
