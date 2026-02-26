@@ -33,6 +33,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "audiobook:publish": ".venv\\Scripts\\python.exe -u scripts/publish_audiobook.py",
     "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
     "images:fix": "tsx scripts/images/fix-image-issues.ts",
     "images:whiten": "tsx scripts/images/whiten-backgrounds-sharp.ts",
@@ -72,7 +73,6 @@
     "audiobook:text:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_text.py --config _quarto-manual-paperback.yml --list",
     "audiobook:generate": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook.py --config _quarto-manual-paperback.yml",
     "audiobook:generate:all": ".venv\\Scripts\\python.exe -u scripts/publish_audiobook.py --no-sync",
-    "audiobook:publish": ".venv\\Scripts\\python.exe -u scripts/publish_audiobook.py",
     "audiobook:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook.py --config _quarto-manual-paperback.yml --list",
     "audiobook:scenes": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_scenes.py --config _quarto-manual-paperback.yml",
     "audiobook:scenes:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_scenes.py --config _quarto-manual-paperback.yml --list",
