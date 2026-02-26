@@ -1,6 +1,6 @@
 ---
 title: Global Referendum Strategy
-description: Humanity downloaded TikTok 2 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.
+description: Humanity downloaded TikTok over 4 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.
 published: true
 tags:
   - referendum
@@ -15,13 +15,13 @@ image: /assets/og-images/knowledge/strategy/global-referendum-og-retro-academic.
 podcast-image: /assets/podcast/global-referendum-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-A cryptographically secure, on-chain list of 280 million verified supporters is not an "analogy" or a "metaphor" or a "nice idea."
+A cryptographically secure, on-chain list of {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters is not an "analogy" or a "metaphor" or a "nice idea."
 
 It is the largest political mandate in human history. Nothing else comes close.
 
 Politicians can ignore protests. They can ignore polls. They can ignore reality for surprisingly long periods (see: climate change, 1970-present).
 
-They cannot ignore 280 million cryptographically verified humans saying "do this thing or we vote you out."
+They cannot ignore {{< var treaty_campaign_voting_bloc_target_nounit >}} cryptographically verified humans saying "do this thing or we vote you out."
 
 Here's how to build that list.
 
@@ -37,7 +37,7 @@ Requirements:
 
 - Must be auditable (so politicians can't claim it's fake, though they will absolutely try)
 - Must be persuasive (so policymakers actually do their jobs for once)
-- Must hit **{{< var global_population_activism_threshold_pct >}} global participation** (280M+ verified votes)
+- Must hit **{{< var global_population_activism_threshold_pct >}} global participation** ({{< var treaty_campaign_voting_bloc_target_nounit >}}+ verified votes)
 
 That last number isn't arbitrary. Once {{< var global_population_activism_threshold_pct >}} of a population actively supports something, it becomes unstoppable. Every time. Across all cultures. For centuries. More on that later.
 
@@ -47,7 +47,7 @@ That last number isn't arbitrary. Once {{< var global_population_activism_thresh
 - **Privacy**: Nobody knows who you voted for (including us)
 - **Equity**: Works for everyone, including people without bank accounts or government IDs (which is most of Earth, by the way)
 - **Transparency**: Open-source code so anyone can audit it
-- **Viral Growth**: Needs to spread organically. Target: $0.50-0.64 per verified participant (includes referral payment + biometric verification + platform overhead)
+- **Viral Growth**: Needs to spread organically. Target: <$1.00 per verified participant (includes referral payment + biometric verification + platform overhead)
 
 The trick is doing all of these simultaneously. It's like juggling while riding a bicycle while the bicycle is on fire. But the alternative is everyone dies of preventable diseases, so the bicycle stays on fire.
 
@@ -78,9 +78,9 @@ Compliant with GDPR [@gdpr-biometric-data], CCPA/CPRA [@ccpa-cpra-compliance], B
 
 ## Growth Strategy
 
-Getting 280 million people to do anything is hard. Getting 280 million people to click a button to maybe not die? Surprisingly easy, if you pay them. Your species downloaded TikTok 2 billion times to watch strangers dance. You can get 280 million to click "yes" on not dying.
+Getting {{< var treaty_campaign_voting_bloc_target_nounit >}} people to do anything is hard. Getting {{< var treaty_campaign_voting_bloc_target_nounit >}} people to click a button to maybe not die? Surprisingly easy, if you pay them. Your species downloaded TikTok over 4 billion times to watch strangers dance. You can get {{< var treaty_campaign_voting_bloc_target_nounit >}} to click "yes" on not dying.
 
-The growth engine is a viral referral system funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). Target: <$0.75 per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online. We're asking for seventy-five cents to save lives. The economics of your civilization are genuinely upsetting.
+The growth engine is a viral referral system funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). Target: <$1.00 per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online. We're asking for under a dollar to save lives. The economics of your civilization are genuinely upsetting.
 
 ## Integrity (Proving You Didn't Cheat)
 
@@ -112,32 +112,30 @@ Building a global referendum in 12 months sounds insane. It is insane. But so is
 
 **How you know it's working:**
 
-- **280M+ verified participants** (the magic {{< var global_population_activism_threshold_pct >}} threshold)
-- **<$0.75 per verified participant** (cheaper than a latte, and the product is "not dying")
+- **{{< var treaty_campaign_voting_bloc_target_nounit >}}+ verified participants** (the magic {{< var global_population_activism_threshold_pct >}} threshold)
+- **<$1.00 per verified participant** (cheaper than a latte, and the product is "not dying")
 - **Viral coefficient >1.0** (each person brings more than one person, which is how avalanches work)
 - **>99% fraud detection** with <1% false positives (the bots stay out, the humans stay in)
 
 Secondary metrics track geographic distribution, brand awareness, and whether politicians have started sweating yet. (The sweat metric is informal but surprisingly reliable. They always sweat before they act.)
 
-![Success metrics: get 280 million people for under $210 million, grow exponentially, and catch 99% of cheaters. Ambitious, but measurable.](/assets/images/global-referendum/global-referendum-section-success-metrics-bw-academic.jpg)
-
 ## The Bottom Line
 
-![280 million people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
+![Enough people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
 
-$200M for the campaign, funded by VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org).
-Target cost: <$0.75 per verified participant.
+{{< var treaty_campaign_viral_referendum_base_case >}} for the campaign, funded by VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org).
+Target cost: <$1.00 per verified participant.
 That's cheaper than acquiring a customer for literally any consumer product on Earth. You spend more marketing soda.
 
 ![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
 
-280 million verified humans saying "do this or lose your job" to every politician on Earth.
+{{< var treaty_campaign_voting_bloc_target_nounit >}} verified humans saying "do this or lose your job" to every politician on Earth.
 That's not a petition. Petitions are what you ignore.
-That's a pink slip with 280 million signatures.
+That's a pink slip with {{< var treaty_campaign_voting_bloc_target_nounit >}} signatures.
 
 ### On Why {{< var global_population_activism_threshold_pct >}} Is The Magic Number
 
-The 280 million target isn't pulled from thin air. It's based on the "{{< var global_population_activism_threshold_pct >}} Rule," a historical pattern that has held across cultures, centuries, and continents with the reliability of a physical law:
+The {{< var treaty_campaign_voting_bloc_target_nounit >}} target isn't pulled from thin air. It's based on the "{{< var global_population_activism_threshold_pct >}} Rule," a historical pattern that has held across cultures, centuries, and continents with the reliability of a physical law:
 
 **When {{< var global_population_activism_threshold_pct >}} of a population actively participates in sustained, nonviolent action, the movement wins. Every time.**
 
@@ -153,7 +151,7 @@ Previous movements required marching in the rain, getting tear-gassed, or going 
 
 ![3.5% of people actively pushing for change is enough to topple governments. It's a historical pattern, like gravity but for revolutions.](/assets/images/global-referendum/global-referendum-section-on-why-3-5-is-the-magic-number-bw-academic.jpg)
 
-People show up for the healthcare. Politicians see 280 million verified supporters. The treaty becomes inevitable.
+People show up for the healthcare. Politicians see {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters. The treaty becomes inevitable.
 
 It's not manipulation. It's just understanding what motivates humans (not dying) and what motivates politicians (not losing elections). These two facts have been true for your entire history. Nobody thought to combine them until now.
 

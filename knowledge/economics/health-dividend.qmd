@@ -14,7 +14,7 @@ podcast-image: /assets/podcast/health-dividend-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Disease costs humanity **$397.4 trillion annually** [@disease-economic-burden-109t]. That's more than global GDP ($101 trillion [@global-gdp]). The number sounds wrong because economists spent centuries measuring productivity without accounting for the people who stopped being productive on account of being dead.
 
-The missing piece is DALYs (Disability-Adjusted Life Years): healthy years deleted by disease. Die at 40 instead of 80? That's 40 DALYs. Spend 10 years severely depressed? That's 5 DALYs. Globally: **2.55 billion DALYs annually** [@ihme-gbd-2019]. At 3x GDP per capita ($150,000/year [@who-choice-daly-value]), that's $382.5 trillion in lost human potential, plus $8.2 trillion in direct medical costs [@global-health-spending-gdp] and $6.7 trillion in lost productivity [@wef-harvard-ncd-cost].
+The missing piece is DALYs (Disability-Adjusted Life Years): healthy years deleted by disease. Die at 40 instead of 80? That's 40 DALYs. Spend 10 years severely depressed? That's 5 DALYs. Globally: **{{< var global_annual_daly_burden_nounit >}} DALYs annually** [@ihme-gbd-2021]. Using the commonly used $150,000 VSLY (value of a statistical life-year [@who-choice-daly-value]), that's $382.5 trillion in lost human potential, plus $8.2 trillion in direct medical costs [@global-health-spending-gdp] and $6.7 trillion in lost productivity [@wef-harvard-ncd-cost].
 
 That's the bill. Here's the receipt for the fix:
 
@@ -35,13 +35,13 @@ Then the Oxford RECOVERY trial proved you can do the same thing for **{{< var re
 - Collecting data electronically (instead of sacrificing forests to the paperwork gods)
 - Focusing on what actually matters: does the patient live or die? (not "did they complete form 27-B in triplicate?")
 
-Your decentralized FDA takes this model global. **80-160x cost reduction.** Same data quality. Better real-world applicability. It turns out you don't need 17 committees to answer the question "did the medicine work?"
+Your decentralized FDA takes this model global. **Up to 82x cost reduction.** Same data quality. Better real-world applicability. It turns out you don't need 17 committees to answer the question "did the medicine work?"
 
 ## Where the {{< var dfda_benefit_rd_only_annual >}} Comes From
 
 Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}} per year** (and growing, because apparently inefficiency scales beautifully).
 
-Baseline estimate: {{< var dfda_trial_cost_reduction_pct >}} efficiency gains across the market (based on RECOVERY trial's actual per-patient cost ratio).
+Baseline estimate: {{< var dfda_trial_cost_reduction_pct >}} efficiency gains across the market (based on pragmatic trial cost estimates).
 
 - {{< var dfda_trial_cost_reduction_pct >}} of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
 
@@ -56,7 +56,7 @@ Each new drug approval is worth an average of $1.62 billion [@arxiv-2212-07384] 
 With the money saved every year, you could:
 
 - Fund **10,000 new pragmatic clinical trials** (at $5M each, which is still luxurious by RECOVERY standards)
-- Test treatments for **7,000 rare diseases** currently ignored (because orphan diseases aren't profitable enough for your orphan-making economic system)
+- Test treatments for **{{< var rare_diseases_count_global_nounit >}} rare diseases** currently ignored (because orphan diseases aren't profitable enough for your orphan-making economic system)
 - Cut drug development time from 17 years to 3-5 years (most terminal patients don't have 17 years; this has not occurred to anyone in charge)
 - Make medicines affordable by eliminating {{< var pharma_drug_development_cost_current >}} development costs (roughly 90% of which is lawyers arguing about commas)
 
@@ -64,7 +64,6 @@ With the money saved every year, you could:
 
 Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years each year. All because of the regulatory lag period. The lag period is not a safety feature. It is a waiting room where people die. You just gave the waiting room a nicer name.
 
-![Every day you do nothing costs 161 million dollars and 54 million years of healthy human life annually. But at least you're being consistent.](/assets/images/health-dividend/health-dividend-section-daily-opportunity-cost-bw-academic.jpg)
 
 See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#daily-opportunity-cost-of-inaction) for calculations.
 
@@ -82,11 +81,11 @@ Less than one fighter jet. Less than one yacht. Less than what FIFA spends on "h
 |----------|-----|----------------|
 | **Conservative** | {{< var dfda_roi_rd_only >}}:1 | R&D savings only (NPV over 10 years) |
 | **Recommended** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | R&D savings + post-safety efficacy lag elimination |
-| **Worst case** | 66:1 | Higher costs, lower adoption |
+| **Worst case** | estimated 66:1 | Higher costs, lower adoption |
 
 ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
 
-Even the worst case (everything goes wrong, adoption is terrible, the engineers quit and the servers catch fire) returns 66:1. That beats every military investment in human history. Your worst medical outcome is still better than your best military one. Let that sink in while you're approving next year's defense budget. 
+Even the worst case (everything goes wrong, adoption is terrible, the engineers quit and the servers catch fire) returns an estimated 66:1. That beats every military investment in human history. Your worst medical outcome is still better than your best military one. Let that sink in while you're approving next year's defense budget.
 
 
 

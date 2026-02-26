@@ -1,6 +1,6 @@
 ---
 title: A 1% Treaty
-description: You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.8 times and use the savings on medicine. Controversial, apparently.
+description: You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.87 times and use the savings on medicine. Controversial, apparently.
 published: true
 tags:
   - solution
@@ -20,8 +20,6 @@ Your 1% Treaty is a piece of paper that says every signatory nation redirects 1%
 1.  **The Problem:** The world spends {{< var global_military_spending_annual_2024 >}} a year on military forces.
 2.  **The Hack:** If every nation reduces military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
 3.  **The Prize:** That 1%, a **{{< var treaty_annual_funding >}}-a-year river of cash**, is redirected to fund clinical trials for every human disease.
-
-![If you take one penny from every dollar spent on bombs and use it for medicine instead, you get 27 billion pennies. Math is wonderful.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-math-bw-academic.jpg)
 
 {{< var treaty_annual_funding_latex >}}
 
@@ -71,8 +69,6 @@ Here's something nobody tells you: when countries "invest" in military hardware,
 - Makes everyone nervous
 
 This is what economists call "dead capital," resources trapped in a form that can't generate returns. It's like if you converted your house into a pile of TNT. Sure, it's impressive. But you can't live in it, rent it out, or do anything except eventually blow it up, at which point you have neither a house nor TNT.
-
-![This missile cost the same as 50,000 hospital beds. The missile is lonely in its silo. The hospital beds would have been quite busy.](/assets/images/1-percent-treaty/1-percent-treaty-section-a-missile-bw-academic.jpg)
 
 As President Eisenhower (a 5-star General who knew about killing professionally) put it:
 
@@ -307,7 +303,7 @@ WHEREAS, this seems somewhat counterproductive;
 
 WHEREAS, diseases kill more people than all wars combined [@pandemics-vs-wars] and don't even have the decency to be quick about it;
 
-WHEREAS, we have nuclear weapons sufficient to end civilization 20 times but haven't cured Alzheimer's once;
+WHEREAS, we have nuclear weapons sufficient to end civilization 13 times but haven't cured Alzheimer's once;
 
 WHEREAS, this is embarrassing;
 

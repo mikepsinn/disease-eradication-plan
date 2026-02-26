@@ -1,6 +1,6 @@
 ---
 title: Incentive Alignment Bonds
-description: War bonds, but backwards. Your grandparents funded WW2 at 4% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.
+description: War bonds, but backwards. Your grandparents funded WW2 at roughly 3% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.
 published: true
 tags:
   - financial-instruments
@@ -20,7 +20,7 @@ podcast-image: /assets/podcast/incentive-alignment-bonds-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Aligning Incentives](aligning-incentives.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)
 
-Remember when your grandparents funded WW2 by buying war bonds? They got 4% returns and a world without Nazis (mostly). Good deal.
+Remember when your grandparents funded WW2 by buying war bonds? They got roughly 3% returns and a world without Nazis (mostly). Good deal.
 
 You're doing the same thing. Except instead of buying bonds to kill Nazis, you're buying bonds to kill diseases. War bonds, but backwards.
 
@@ -137,7 +137,7 @@ Four reasons your lawyers will stop hyperventilating:
 3. **No money goes to politicians.** They benefit indirectly: better scores, electoral support, nicer career options. This is how democracy was supposed to work before your species broke it.
 4. **Scores are based on public voting records.** Did they vote YES? Verifiable and ungameable. The {{< var iab_political_incentive_funding_pct >}} fund flows automatically based on treasury inflows. Pure math.
 
-Bribery **corrupts** alignment. IABs **create** it. Wealthy actors already buy policy (pharma spends $300M/year on lobbying, defense contractors spend more). The question isn't "should money influence policy?" but "can you point the money at welfare instead of warfare?" IAB funders will have more influence over which public goods get prioritized. So does the Gates Foundation over malaria. The difference is that IABs are transparent, measurable, and auditable. Most lobbying satisfies zero of those criteria.
+Bribery **corrupts** alignment. IABs **create** it. Wealthy actors already buy policy (pharma spends $300M/year on lobbying, defense contractors spend {{< var defense_lobbying_annual >}}/year). The question isn't "should money influence policy?" but "can you point the money at welfare instead of warfare?" IAB funders will have more influence over which public goods get prioritized. So does the Gates Foundation over malaria. The difference is that IABs are transparent, measurable, and auditable. Most lobbying satisfies zero of those criteria.
 
 ### Worked Example: How Senator Smith Votes Yes
 
@@ -207,7 +207,7 @@ Result: Vote no. Obviously.
 **If Smith votes YES:**
 
 - VoteRecord: +15 points (major treaty vote)
-- New Score: 45 + 15 = 60 → jumps to 72 with multiplier for being early supporter
+- New Score: 45 + 15 = 60, rising to 72 with the early-supporter multiplier (the scoring system rewards politicians who vote yes before the outcome is certain)
 - P(reelection): 55% → 62% (score boost + $500K independent support)
 - Post-office tier: 3 → 2 (with path to Tier 1 if she becomes a champion)
 - Expected post-office income: $200K → $300K/year
@@ -220,13 +220,13 @@ Result: Vote no. Obviously.
 - Post-office tier: Stuck at 3
 - Attack ads funded: "Smith voted AGAINST the cure your family needs"
 
-**The math:**
+**The math (at the moment of the vote):**
 
 $$
 \Delta U_{\text{Yes vs No}} = 0.14 \cdot \text{Office} + \$100\text{K}/\text{year} \cdot 20\text{yrs} + \text{Legacy Boost}
 $$
 
-That's a +14 percentage point swing in reelection odds and +$2M in lifetime post-office earnings.
+That's a +14 percentage point swing in reelection odds (62% vs 48%) and +$2M in lifetime post-office earnings. These numbers improve further after the treaty passes (see post-treaty table below).
 
 Result: Vote yes. The math changed.
 
@@ -238,9 +238,11 @@ Result: Vote yes. The math changed.
 2. **Lobbying meeting**: Military lobby threatens. But three major contractors already support the treaty (272% returns beat 8%). Threat is empty.
 3. **Campaign finance**: Health advocacy Super PACs have committed $50M nationally. At score 72, she gets $2M. A no vote sends that $2M to her opponent.
 4. **Constituent mail**: 70% of Texans voted yes in the referendum. Voting against that means explaining why you think they're wrong about not wanting to die.
-5. **The vote**: Smith votes yes. So do 67 others. Treaty passes.
+5. **The vote**: Smith votes yes. So do 50 others. The bill passes the Senate.
 
 #### Post-Treaty
+
+After the treaty passes and public support solidifies, Smith's numbers improve beyond the initial vote-day projections. Her score climbs from 72 to 78 as she co-sponsors expansion legislation and the early-supporter multiplier compounds. That pushes her into Tier 1 territory.
 
 ![Senator Smith's career trajectory before and after voting yes. One line goes up, one line stays flat. Guess which one she prefers.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-post-treaty-the-numbers-bw-academic.jpg)
 
@@ -252,7 +254,9 @@ Result: Vote yes. The math changed.
 | Post-office tier | 3 | 1 |
 | Post-office income | $200K/yr | $500K/yr |
 
-Every metric jumps: her score nearly doubles, reelection odds climb 13 points, she gains $3M in independent support, and her post-office income more than doubles. Smith wins reelection by 12 points. Joins the WHO Advisory Board. Chairs the Aspen Health Initiative. All because she did math instead of listening to lobbyists. (Politicians can count. They just need something worth counting.)
+Every metric jumps: her score increases by over 70%, reelection odds climb 13 points, she gains $3M in independent support, and her post-office income more than doubles.
+
+Smith wins reelection comfortably. Joins the WHO Advisory Board. Chairs the Aspen Health Initiative. All because she did math instead of listening to lobbyists. (Politicians can count. They just need something worth counting.)
 
 ### The Revenue Split
 
@@ -271,7 +275,7 @@ The {{< var iab_political_incentive_funding_pct >}} allocation creates a **polit
 | Treaty Level | Bondholder Payouts (10%) | Political Incentives (10%) | Research Funding (80%) | Effect |
 |:-------------|:-------------------------|:---------------------------|:-----------------------|:-------|
 | 1% | {{< var victory_bond_annual_payout >}}/year | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year | Politicians rewarded for passage |
-| 5% | $13.6B/year | $13.6B/year | $109B/year | Defense industry pivots to health |
+| 5% | $13.6B/year | $13.6B/year | $108.8B/year | Defense industry pivots to health |
 | 10% | $27.2B/year | $27.2B/year | $218B/year | War becomes economically obsolete |
 | 50% | $136B/year | $136B/year | $1.09T/year | Global transformation |
 | 100% | $272B/year | $272B/year | $2.18T/year | Full redirection achieved |
@@ -372,10 +376,10 @@ Two categories of risk (both involving trusting humans, which is historically un
 
 #### Investor-Specific Risks
 
-- **Liquidity Risk:** Funds locked 18-36 months during the campaign phase (roughly how long it takes to convince politicians that living voters are better than dead ones). Mitigation: secondary market trading after lock-up.
+- **Liquidity Risk:** Funds locked 12-36 months during the campaign phase (roughly how long it takes to convince politicians that living voters are better than dead ones). Mitigation: secondary market trading after lock-up.
 - **Timeline Risk:** Politicians could take longer than projected. They are famously slow at everything except accepting donations. The perpetual nature of the bond rewards patience.
 
-![Your money is locked for 18 to 36 months while we save civilization. Then you can sell your shares to someone who doesn't believe in extinction.](/assets/images/victory-bonds/victory-bonds-section-investor-specific-risks-bw-academic.jpg)
+![Your money is locked for 12 to 36 months while we save civilization. Then you can sell your shares to someone who doesn't believe in extinction.](/assets/images/victory-bonds/victory-bonds-section-investor-specific-risks-bw-academic.jpg)
 
 ### What This Beats (Everything)
 

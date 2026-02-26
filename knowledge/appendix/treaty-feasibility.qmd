@@ -65,9 +65,7 @@ Signing the treaty: ~$83M.
 What the treaty unlocks: {{< var treaty_annual_funding >}}/year.
 Forever.
 
-![Spend $90 million once, get $27 billion back every year forever. That's a 300:1 return, which is better than most scams.](/assets/images/treaty-feasibility/treaty-feasibility-section-the-math-bw-academic.jpg)
-
-That's a 300:1 return on paperwork.
+That's over 300:1 return on paperwork.
 
 ## How to Make Governments Sign Things
 
@@ -95,7 +93,7 @@ You're buying the machinery that makes the treaty inevitable.
 
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
-To calculate expected value, you need to estimate the probability this actually works. This section documents the rationale for the **{{< var political_success_probability >}} central estimate** with a **0.1%-25% confidence interval**. Yes, the model assumes a 99% chance of failure. It's still a good bet. Stay with me.
+To calculate expected value, you need to estimate the probability this actually works. This section documents the rationale for the **{{< var political_success_probability >}} central estimate** with a **0.1%-10% confidence interval** (and a 25% optimistic scenario ceiling). Yes, the model assumes a 99% chance of failure. It's still a good bet. Stay with me.
 
 ![Even if this only has a 1 percent chance of working, it saves 503 times more lives per dollar than bed nets. Math is strange.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
 
@@ -119,7 +117,7 @@ Let's be honest about the obstacles. This is not a chapter written by someone tr
 
 1. **Touches military budgets**: Politicians would rather discuss their browser history than their defense budget.
 2. **Requires ongoing annual allocation**: Not a one-time signature like banning a weapon. It's a gym membership for peace. Monthly. Forever.
-3. **No immediate security threat**: Unlike NATO spending increases post-Ukraine. Hard to motivate governments without an active catastrophe, even though 150,000 daily disease deaths apparently doesn't qualify as one.
+3. **No immediate security threat**: Unlike NATO spending increases post-Ukraine. Hard to motivate governments without an active catastrophe, even though {{< var global_disease_deaths_daily >}} apparently doesn't qualify as one.
 4. **Novel mechanism**: Military-to-health reallocation has never been done. Humans are suspicious of things they haven't tried before, which is odd for a species that also invented bungee jumping.
 5. **Coordination problem**: Benefits require critical mass. Nobody wants to go first. Everybody wants to go second.
 
@@ -130,7 +128,7 @@ Let's be honest about the obstacles. This is not a chapter written by someone tr
 1. **Self-funding**: Creates health dividends that exceed the "cost." You make money doing this. That's unusual for moral obligations.
 2. **Bipartisan appeal**: "Should we cure more diseases?" polls well across every political spectrum. Shocking, I know.
 3. **Referendum pathway**: Can bypass government resistance through direct democracy. Politicians hate this one weird trick.
-4. **Visible beneficiaries**: 150,000 daily disease deaths. Hard to argue with the body count.
+4. **Visible beneficiaries**: {{< var global_disease_deaths_daily >}}. Hard to argue with the body count.
 5. **Network effects**: Each signing country makes the next more likely. Peer pressure: humanity's most reliable technology.
 
 ### Probability Estimates
@@ -143,7 +141,7 @@ Economists would find the following defensible (and economists find very little 
 | **Conservative central** | {{< var political_success_probability >}} | 99% chance of failure. Still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets. |
 | **Optimistic ceiling** | 25% | A major crisis opens a political window. Or humans just... decide to be smart for once. |
 
-**The model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 25%]**
+**The model uses**: Central estimate **{{< var political_success_probability >}}**, 95% CI **[0.1%, 10%]**
 
 ### Expected Value (Even When You Assume Failure)
 
@@ -172,9 +170,9 @@ The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd
 | Treaty Level | Annual IAB Pool | Political Pressure | Historical Comparison |
 |:-------------|:----------------|:-------------------|:---------------------|
 | 1% | $2.72B/year | Strong | 10x largest NGO budgets |
-| 2% | $5.4B/year | Very strong | Nation-state level |
-| 5% | $13.5B/year | Overwhelming | Major industry lobby |
-| 10% | $27B/year | Unstoppable | No precedent |
+| 2% | $5.44B/year | Very strong | Nation-state level |
+| 5% | $13.6B/year | Overwhelming | Major industry lobby |
+| 10% | $27.2B/year | Unstoppable | No precedent |
 
 ### Why This Differs from Every Other Treaty
 
@@ -188,8 +186,8 @@ The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd
 
 Once 1% passes:
 1. **$2.72B/year** flows to IAB holders pushing for 2%
-2. When 2% passes, **$5.4B/year** pushes for 5%
-3. When 5% passes, **$13.5B/year** pushes for 10%
+2. When 2% passes, **$5.44B/year** pushes for 5%
+3. When 5% passes, **$13.6B/year** pushes for 10%
 4. The political pressure for expansion *accelerates* with each success
 
 Most treaties are gym memberships purchased in January and abandoned by February. IABs are the opposite: the constituency for expansion *grows* with each success. Greed doesn't take holidays.

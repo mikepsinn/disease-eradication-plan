@@ -1,6 +1,6 @@
 ---
 title: The Untapped Therapeutic Frontier
-description: There are 9 million possible drug-disease combinations. You've tested 30,000. That's like searching for your keys in 0.3% of your house and declaring them lost. The other 99.7% is sitting right there, untested, because paperwork.
+description: There are 9.5 million possible drug-disease combinations. You've tested 32,500. That's like searching for your keys in 0.34% of your house and declaring them lost. The other 99.7% is sitting right there, untested, because paperwork.
 published: true
 tags:
   - problem
@@ -28,8 +28,6 @@ Here is everything humanity considers "medicine" after 5,000 years of civilizati
 * **Investigational Drugs:** {{< var phase_1_passed_compounds_global >}} have passed Phase I globally. Progress!
 * **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}}. These are things you could eat right now without dying. Low bar. Still useful.
 
-![Twenty thousand drug products, but only 9,500 unique ingredients. It's like having 20,000 sandwiches but only 9,500 types of bread. You keep repackaging the same bread.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-your-tiny-sandbox-bw-academic.jpg)
-
 **Total unique compounds humanity knows are safe-ish: {{< var safe_compounds_count >}}.**
 
 That's it. That's your entire medicine cabinet after five millennia.
@@ -44,8 +42,6 @@ That's it. That's your entire medicine cabinet after five millennia.
 ## The Math You're Ignoring
 
 Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}}. This gives you the "Combinatorial Space," which is fancy talk for "stuff you could test tomorrow if you weren't busy filling out forms."
-
-![Nine thousand drugs times one thousand diseases equals nine million possible cures. You've tested 30,000. See you in the year 5000.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-math-you-re-ignoring-bw-academic.jpg)
 
 **{{< var safe_compounds_count >}} × {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} plausible drug-condition combinations.**
 
@@ -65,7 +61,7 @@ Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var t
 
 {{< var exploration_ratio_latex >}}
 
-**Humanity has explored less than 1% of the theoretically testable drug-disease space.**
+**Humanity has explored about a third of one percent of the theoretically testable drug-disease space.**
 
 You are the detective who searched one drawer and declared the case cold.
 
@@ -75,7 +71,7 @@ It's like reading the first page of *War and Peace* and writing a book report ca
 
 ## Is The Untested Stuff Useful?
 
-You might argue, "Maybe the other 99% is useless!"
+You might argue, "Maybe the other 99.7% is useless!"
 
 ![You've figured out 12 percent of how the body works. The other 88 percent is a mystery. Drugs affect multiple pathways at once. You test them on one pathway at a time.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-is-the-untested-stuff-useful-bw-academic.jpg)
 
@@ -127,8 +123,6 @@ Testing every known safe compound against every major disease:
 
 That's almost 3,000 years to explore compounds we *already know are safe*. By that math, we won't finish until the year 5000.
 
-![Nine million drug tests to run. Current speed: 3,000 per year. Finish date: year 5000. You'll be dead by then. So will your children. And their children. And their children.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-1-single-compounds-most-conservative-bw-academic.jpg)
-
 ### Tier 2: Combination Therapies (Still Defensible)
 
 Modern medicine increasingly relies on multi-drug cocktails. Oncology, HIV, cardiology, psychiatry: all routinely use drug combinations. So the real question isn't "does this one drug work?" It's "which combinations work?" Testing pairwise combinations of safe compounds:
@@ -143,21 +137,17 @@ That's longer than *Homo sapiens* has existed as a species. And that's using onl
 
 Beyond known compounds lies the chemical space of 10^23 to 10^60 drug-like molecules. At current trial capacity, exploring even the *synthesizable* fraction would take longer than the universe has existed. The universe is 13.8 billion years old. You need more time than that. To test pills. Pills that already exist.
 
-![The dot is every drug you've ever discovered. The sphere is every drug that could exist. There are more possible molecules than atoms in the galaxy. You've tried about 9,000.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-3-the-full-chemical-universe-illustrative-bw-academic.jpg)
-
 We haven't even started.
 
 ### "But Won't We Run Out of Easy Discoveries?"
 
 Some will argue "diminishing returns": the more we search, the harder each new discovery becomes. This assumes we've already picked the low-hanging fruit.
 
-![You've explored 1 percent of possible treatments. Benefits peak around 37 percent. You're 36 percentage points away from maximum medicine. This seems like a solvable problem.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-but-won-t-we-run-out-of-easy-discoveries-bw-academic.jpg)
-
 We haven't picked *any* fruit. We're still in the parking lot arguing about whether fruit exists.
 
 Diminishing returns only kicks in after you've explored a significant fraction of the space. At <1% explored, every trial teaches you something new about human biology, improving your ability to predict what works next. Learning compounds. Depletion is negligible. You are nowhere near the bottom of the barrel because you have not yet located the barrel.
 
-The math: even with weak learning, diminishing returns only matters after exploring ~37% of therapeutic space. For combination therapies, that crossover is **~7 million years away** at current pace.
+The math: even with weak learning, diminishing returns only matters after exploring ~37% of therapeutic space. For combination therapies, that crossover is **over 5 million years away** at current pace (37% of {{< var combination_therapy_disease_space_nounit >}} combinations at {{< var current_trials_per_year_nounit >}} trials/year).
 
 You cannot have diminishing returns when you've barely started looking. See [the formal analysis](https://impact.warondisease.org#mathematical-framework-when-would-diminishing-returns-dominate) for the equations.
 
@@ -179,7 +169,7 @@ More importantly, your decentralized FDA builds *permanent infrastructure* for s
 
 ## The Bottom Line
 
-**Humanity has empirically tested less than 1% of the drug-disease relationships that can be tested using existing safe compounds.**
+**Humanity has empirically tested less than 0.4% of the drug-disease relationships that can be tested using existing safe compounds.**
 
 **If you include the larger chemical universe, humanity has explored roughly one-quadrillionth to one-quintillionth of what is possible (10^-12 to 10^-50). There are numbers so small that mathematicians get depressed looking at them. These are those numbers.**
 

@@ -19,22 +19,21 @@ podcast-image: /assets/podcast/nih-fails-2-institute-health-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## The Allocation Scandal
 
-55 million people die annually [@who-daily-deaths]. The National Institutes of Health has an annual budget of approximately **{{< var nih_annual_budget >}}**. You would think those two facts would be related. They are not.
+{{< var global_annual_deaths_curable_diseases_nounit >}} people die annually [@who-daily-deaths]. The National Institutes of Health has an annual budget of approximately **{{< var nih_annual_budget >}}**. You would think those two facts would be related. They are not.
 
 Of $247 billion the NIH spent over a decade, exactly 3.3% went to testing whether treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% went to everything else.
 
 That might be defensible if we'd already tested all the known safe compounds that are piled up waiting for human testing. We haven't. There are roughly {{< var safe_compounds_count >}} with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. The pipeline is overflowing with candidates. The bottleneck is trials.
 
-It's like spending 97% of your grocery budget on cookbooks and 3% on food, then wondering why you're starving.
+It's like spending 96.7% of your grocery budget on cookbooks and 3.3% on food, then wondering why you're starving.
 
 This isn't just inefficiency. It's a body count.
 
 ![The NIH spends 85 percent on research and 3 percent on humans. Apparently mice are more important.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
 
-::: {.callout-note collapse="true" title="The Receipts: Where $247 Billion Went (2010-2019)"}
+::: {.callout-note collapse="true" title="The Receipts: Where $247.3 Billion Went (2010-2019)"}
 
-A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247 billion in NIH spending (2010-2019). Each of these categories funds valuable work. The question is whether the ratio makes sense when thousands of safe compounds sit untested.
-
+A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247.3 billion in NIH spending (2010-2019). Each of these categories funds valuable work. The question is whether the ratio makes sense when thousands of safe compounds sit untested.
 - **84.9% - Basic research** ($209.9B): Understanding disease mechanisms, molecular biology, genomics. Essential for identifying new targets, but 85 cents of every dollar is a lot of understanding and not much testing.
 - **11.8% - Applied research (non-trial)** ($29.3B): Translating discoveries toward practical use, but without the final step of testing them in patients.
   - **CTSA infrastructure program:** ~$1B/year in trial infrastructure, coordination, and training [@nih-ctsa]
@@ -44,6 +43,7 @@ A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247 billion in N
   - Phase 1: $1.5B (18.5% of clinical trial budget)
   - Phase 2: $3.5B (43.2%)
   - Phase 3: $2.6B (32.1%). **NIH covers only 3.7-4.3% of Phase 3 costs**, leaving completion to industry, which only funds trials with patent-protected profit potential.
+  - Other/unclassified: $0.5B (6.2%) for cross-phase overhead, pilot studies, and trials not classified to a single phase
   - Pragmatic trials [@pragmatic-trials-cost-advantage] (30x cheaper): Severely underfunded despite proven efficiency
 
 :::
@@ -86,17 +86,15 @@ The difference between efficient and inefficient trial design isn't theoretical.
 **Treatments found:** Multiple, including dexamethasone [@recovery-trial-summary-quote] (saved over 1 million lives)
 **Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
 
-The NIH spent **133X more per patient** and achieved **infinitely less** (dividing by zero trials completed produces infinity, which is fitting because that's how long patients waited). This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
+The NIH spent **111x more per patient** and achieved **infinitely less** (dividing by zero trials completed produces infinity, which is fitting because that's how long patients waited). This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
 
-![The UK trial cost 133 times less per patient and actually finished. America: where we do everything bigger, including waste.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recovery-trial-uk-approach-bw-academic.jpg)
+![The UK trial cost 111 times less per patient and actually finished. America: where we do everything bigger, including waste.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recovery-trial-uk-approach-bw-academic.jpg)
 
 The British cured disease for the price of a nice dinner per patient. America spent the price of a luxury SUV per patient and cured nothing. The problem isn't that curing disease is hard. The NIH doesn't have a capability problem. It has a shopping addiction.
 
 ## The Death Toll: Opportunity Cost of Misallocation
 
-When you misallocate $40 billion a year into low-efficiency research instead of high-efficiency clinical trials, you aren't just wasting money. You are composting people.
-
-![Spend 40 billion on efficient trials, save millions. Spend it on inefficient research, publish papers. You chose papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-death-toll-opportunity-cost-of-misallocation-bw-academic.jpg)
+When you misallocate the vast majority of a {{< var nih_annual_budget >}} annual budget into low-efficiency research instead of high-efficiency clinical trials, you aren't just wasting money. You are composting people.
 
 ### Cost Per QALY (Quality-Adjusted Life Year)
 
@@ -112,7 +110,7 @@ Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_eff
 **Annual Opportunity Cost:** ~100 million QALYs and ~7 million death-equivalents per year.
 Even the most conservative estimate: ~10 million QALYs and ~700,000 preventable deaths annually.
 
-You are operating at ~2% of your potential capacity to save lives. If your car ran at 2% efficiency, you'd walk. If your heart ran at 2% efficiency, you'd die. Your medical research system runs at 2% efficiency, and you gave it a raise.
+For every dollar spent on pragmatic trials producing QALYs, the NIH spends $12,500 to achieve the same result. You are operating at 0.008% of your potential capacity to save lives. If your car ran at 0.008% efficiency, it would move one inch per gallon. If your heart pumped at 0.008% efficiency, you'd be dead before finishing this sentence. Your medical research system runs at 0.008% efficiency, and you gave it a raise.
 
 ## The Translation Crisis: All Theory, No Medicine
 
@@ -129,7 +127,7 @@ You have a warehouse of safe molecules that have never been systematically teste
 
 The NIH is, by its own metrics, a publishing house that occasionally dabbles in medicine:
 
-- **Papers published:** 2.5 million annually [@nih-annual-papers-published]
+- **Papers published:** 2.5 million NIH-funded annually [@nih-annual-papers-published]
 - **New treatments approved:** ~50 annually [@global-new-drug-approvals-50-annually]
 - **Conversion rate from paper to patient:** 0.002%
 
@@ -143,8 +141,6 @@ For every 50,000 papers, one drug reaches a human. The rest become citations in 
 
 Half of all patients would join a clinical trial if asked.
 Almost nobody asks. It's like having a room full of volunteers and a clipboard, and choosing to study the clipboard.
-
-![The funnel has 500,000 safe molecules at the top and 50 approved drugs at the bottom. This is technically a funnel. Also technically a tragedy.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-translation-funnel-bw-academic.jpg)
 
 Understanding disease and curing disease are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. The NIH chose microscopes.
 
@@ -207,8 +203,6 @@ Cows have better healthcare outcomes than you do.
 ## What Would Actually Work
 
 The UK RECOVERY trial already proved it. {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}. 100 days instead of years. Over 1 million lives saved. The blueprint exists. It is not theoretical. It happened. In England. During a pandemic. While Americans were arguing about horse dewormer.
-
-![One trial costs 50,000 per patient and takes forever. The other costs 100 and finishes quickly. You picked the expensive one.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-what-would-actually-work-bw-academic.jpg)
 
 The recipe:
 

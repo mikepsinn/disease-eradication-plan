@@ -1,6 +1,6 @@
 ---
 title: A Decentralized Framework for Drug Assessment
-description: It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs 80x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.
+description: It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs over 40x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.
 published: true
 tags:
   - overview
@@ -29,7 +29,8 @@ Meanwhile, the system that's supposed to catch dangerous side effects misses 90-
 
 On Wishonia, this is just called "medicine." You type in what's wrong with you, see what worked for everyone else, and try it. The outcomes get recorded automatically. We've had this for millennia. You have all the technology to build it right now, and somehow haven't.
 
-Your decentralized FDA is an **open coordination protocol**. It connects companies with treatments to patients who need them. It's HTTP for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes. You invented the internet thirty years ago and somehow forgot to plug medicine into it.
+Your decentralized FDA is an **open coordination protocol**. It connects companies with treatments to patients who need them. It's HTTP for clinical trials. A standard that lets all the existing systems talk to each other and share outcomes.
+You invented the internet over three decades ago and somehow forgot to plug medicine into it.
 
 ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
 
@@ -43,9 +44,9 @@ And then we could... write down what happens?
 
 And then other sick people could... see what worked?
 
-Your current system leaves 95% of rare diseases [@95-pct-diseases-no-treatment] with zero approved treatments. It bars 85% of patients [@fda-trial-patient-exclusion-criteria] from the trials that might save them. We've perfected a system where only the healthy and compliant test cures for the sick and desperate. It's genius, in a suicidal sort of way.
+Your current system leaves 95% of rare diseases [@95-pct-diseases-no-treatment] with zero approved treatments. It bars over 85% of patients [@fda-trial-patient-exclusion-criteria; @antidepressant-trial-exclusion-rates] from the trials that might save them. We've perfected a system where only the healthy and compliant test cures for the sick and desperate. It's genius, in a suicidal sort of way.
 
-Trials are designed to test drugs on people who don't actually exist. To get into a study for an antidepressant, you can't have any other pesky problems like anxiety or PTSD. You can't have a history of drug or alcohol use. You can't be on other medications. You have to be the *perfect* kind of sick. The result? Only 14.5% [@pubmed-14628985] of real-world patients with depression would actually qualify. The rest of us are too messy for their pristine, clean data.
+Trials are designed to test drugs on people who don't actually exist. To get into a study for an antidepressant, you can't have any other pesky problems like anxiety or PTSD. You can't have a history of drug or alcohol use. You can't be on other medications. You have to be the *perfect* kind of sick. The result? Only about 14% [@pubmed-14628985; @antidepressant-trial-exclusion-rates] of real-world patients with depression would actually qualify. The rest of us are too messy for their pristine, clean data.
 
 On top of excluding everyone with a pulse, these "definitive" studies run on comically small groups. They'll test a new heart drug on 275 people [@us-trial-enrollment-targets-2009]. A cancer drug on just 20 people [@us-trial-enrollment-targets-2009]. A diabetes drug on 100 people [@us-trial-enrollment-targets-2009]. Then they prescribe the winner to millions.
 
@@ -77,21 +78,19 @@ Observational data finds the signals. But correlation still isn't proof (even yo
 
 **Stage 2 (Confirmation):** The top signals (the 0.1-1% most promising) proceed to pragmatic trials embedded in routine care. Simple randomization. Real patients. Real conditions. Cost: ~{{< var dfda_pragmatic_trial_cost_per_patient >}} per patient. This eliminates confounding and proves causation.
 
-Stage 1 filters millions of possibilities for almost nothing. Stage 2 confirms the winners for 1/80th the cost of traditional trials. The result: every treatment gets an evidence grade.
+Stage 1 filters millions of possibilities for almost nothing. Stage 2 confirms the winners for 1/44th the cost of traditional trials. The result: every treatment gets an evidence grade.
 
 - **Validated**: Confirmed by pragmatic trial
 - **Promising**: Strong observational signal, awaiting trial
 - **Signal**: Hypothesis only, needs more data
 
-The cheap stage does the hard work of searching. The expensive stage only runs on candidates that deserve it. Instead of spending $57 million testing one drug, you spend $1 watching a million treatments and $500 confirming the ones that work.
+The cheap stage does the hard work of searching. The expensive stage only runs on candidates that deserve it. Instead of spending $57 million testing one drug, you spend pennies watching a million treatments and under a thousand dollars confirming the ones that work.
 
 ## Proof It Works (While the FDA Wasn't Looking)
 
 ### The Oxford Recovery Trial: How the British Accidentally Saved Medicine
 
 During COVID, while America was filling out forms, Oxford University did something crazy. They just tested drugs on dying people to see if they stopped dying.
-
-![Traditional clinical trials versus the Oxford approach. One costs 30 million dollars and takes years. The other costs less than a coffee shop franchise and actually saves people.](/assets/images/dfda/dfda-section-the-oxford-recovery-trial-how-the-british-accidentally-saved-medicine-bw-academic.jpg)
 
 Cost per patient:
 
@@ -242,11 +241,9 @@ Every treatment ranked. Drugs, supplements, lifestyle interventions, off-label u
 
 ## Your Personal Death-Prevention Assistant: The FDAi
 
-On Wishonia, every citizen gets one of these at birth. It monitors their health, finds treatments matched to their biology, and adjusts dosing in real time. We've had them for 3,000 years. You've had the technology for 15 and used it to count steps.
+On Wishonia, every citizen gets one of these at birth. It monitors their health, finds treatments matched to their biology, and adjusts dosing in real time. We've had them for 3,000 years. You've had the technology for nearly two decades and used it to count steps.
 
 Everyone gets a superintelligent doctor that lives in their phone and doesn't judge them for Googling "is my poop normal?"
-
-![Your watch tells the computer what's killing you. The computer tells you what might unkill you. We've had the watches for 15 years but kept the parts separate.](/assets/images/dfda/dfda-section-your-personal-death-prevention-assistant-the-fdai-bw-academic.jpg)
 
 The **FDAi** (Food and Drug Artificial intelligence) is like Siri, but instead of telling you the weather, it tells you how not to die.
 
@@ -350,9 +347,9 @@ A 1% Treaty Fund doesn't fund pragmatic clinical trials directly. **It subsidize
 
 | Problem to Fix | Current Insanity | New Reality | Money Saved | Lives Saved |
 | :--- | :--- | :--- | :--- | :--- |
-| Clinical Phase Timeline | **9.1 years (avg) [@drug-development-timeline-17-years]** | **2-3 years** | ~7 years of waiting eliminated | ~50,000/year [@beta-blocker-drug-lag-deaths] |
+| Clinical Phase Timeline | **Over a decade [@drug-development-timeline-17-years]** | **2-3 years** | ~7 years of waiting eliminated | ~50,000/year [@beta-blocker-drug-lag-deaths] |
 | Cost per trial | **$57 million** [@clinical-trial-cost-breakdown] | **$2 million** | $55 million | Infinite ROI |
-| Who can participate | **13.9% of patients [@antidepressant-trial-exclusion-rates]** | **100% of patients** | {{< var antidepressant_trial_exclusion_rate >}} inclusion rate | Everyone |
+| Who can participate | **13.9% of patients [@antidepressant-trial-exclusion-rates]** | **100% of patients** | {{< var antidepressant_trial_exclusion_rate >}} exclusion rate eliminated | Everyone |
 | Rare diseases with treatments | **5% [@95-pct-diseases-no-treatment]** | **Eventually 100%** | Priceless | Millions |
 
 ![How we do clinical trials now: slow, expensive, broken. How we could do them: fast, cheap, working. The difference is stark.](/assets/images/dfda/dfda-section-impact-comparison-matrix-bw-academic.jpg)
@@ -422,7 +419,7 @@ This solves:
 
 **The FDA's processing capacity:** 200 committee members, working 8 hours a day, making 1 decision per hour = **1,600 decisions per day**.
 
-**The decisions that actually need making:** 10,000 known diseases × 100 potential treatments × 800 million genetically distinct patient profiles = **800 billion decisions**.
+**The decisions that actually need making:** 10,000 known diseases × 100 potential treatments × 800 thousand genetically distinct patient profiles = **800 billion decisions**.
 
 At 1,600 decisions per day, the FDA would need **1,369,863 years** to evaluate everything. A decentralized system where 8 billion people each make one health decision per day processes the same load in **100 days**.
 

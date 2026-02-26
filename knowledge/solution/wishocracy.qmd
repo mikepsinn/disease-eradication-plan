@@ -1,6 +1,6 @@
 ---
 title: Wishocracy
-description: How to spend $27 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.
+description: How to spend $27.2 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.
 published: true
 tags:
   - solution
@@ -14,6 +14,7 @@ image: /assets/og-images/knowledge/solution/wishocracy-og-retro-academic.jpg
 podcast-image: /assets/podcast/wishocracy-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
 Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd). Now you've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund. That's the good news. The bad news is that humans are involved.
 
 Not all of it is available for allocation. First, the automatic deductions (think of these as the "cost of convincing humans to stop killing each other" tax):

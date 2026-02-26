@@ -41,7 +41,7 @@ That's the money you grab. Here's the money you stop lighting on fire.
 
 Wars cost {{< var global_annual_direct_indirect_war_cost >}}/year. Build 1% fewer bombs, fight 1% fewer wars, save {{< var peace_dividend_annual_societal_benefit >}}.
 
-{{< var global_annual_direct_indirect_war_cost >}} 0.01 = {{< var peace_dividend_annual_societal_benefit >}}
+{{< var global_annual_direct_indirect_war_cost >}} × 0.01 = {{< var peace_dividend_annual_societal_benefit >}}
 
 Money no longer spent on:
 
@@ -113,7 +113,7 @@ Here's the thing: it doesn't matter. Even with the most pessimistic assumption (
 
 2. **Best case**: Total societal benefit reaches {{< var peace_dividend_annual_societal_benefit >}} annually. The range is wide because, again, your species.
 
-3. **Worst case**: Even pessimistic scenarios stay above $48B annually. Your "worst case" is still the largest increase in medical research funding in human history.
+3. **Worst case**: Even pessimistic scenarios stay above roughly $50B annually. Your "worst case" is still the largest increase in medical research funding in human history.
 
 4. **Context**: The Captured Dividend alone would boost global medical research funding by ~40% over the current {{< var global_med_research_spending >}} baseline. You've been spending more on camouflage paint than on curing Alzheimer's.
 
@@ -121,7 +121,7 @@ Here's the thing: it doesn't matter. Even with the most pessimistic assumption (
 
 ### The GDP Multiplier
 
-Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get $4.30 back. Your species chose weapons. Every time. For centuries. I've watched you do this for 4,297 years and it has never once gotten less baffling. The Lost Economic Growth component ($2.7T) already captures this difference. It's not double-counted, just consistently ignored.
+Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get $4.30 back. Your species chose weapons. Every time. For centuries. I've watched you do this for 4,297 years and it has never once gotten less baffling. The Lost Economic Growth component ({{< var global_annual_lost_economic_growth_military_spending >}}) already captures this difference. It's not double-counted, just consistently ignored.
 
 ![Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get 4.30 dollars back. You've chosen weapons.](/assets/images/peace-dividend/peace-dividend-section-gdp-multiplier-note-bw-academic.jpg)
 

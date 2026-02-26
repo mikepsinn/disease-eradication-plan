@@ -5,7 +5,7 @@
 
 ### [How to End War and Disease](https://manual.WarOnDisease.org)
 
-> Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
+> Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
 
 ### [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
 

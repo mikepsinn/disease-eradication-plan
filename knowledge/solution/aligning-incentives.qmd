@@ -1,6 +1,6 @@
 ---
 title: Aligning Incentives
-description: Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,813 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.
+description: Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,425 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.
 format:
   html:
     toc: true
@@ -17,7 +17,7 @@ You can align major interest groups behind a single goal: curing disease. Not th
 
 ## Defense Contractors: Teaching Merchants of Death to Love Life
 
-Military lobbyists spend {{< var defense_lobbying_annual >}} on lobbying. They get $181B in government contracts back. That's $1,813 returned per dollar invested [@lobbying-roi-calc]. Better returns than any hedge fund in history, and all you have to do is help kill strangers. They will oppose any treaty that threatens this. Not because they're evil (though that helps), but because murder is profitable and they like money.
+Military lobbyists spend {{< var defense_lobbying_annual >}} on lobbying. They get $181B in government contracts back. That's roughly $1,425 returned per dollar invested [@lobbying-roi-calc]. Better returns than any hedge fund in history, and all you have to do is help kill strangers. They will oppose any treaty that threatens this. Not because they're evil (though that helps), but because murder is profitable and they like money.
 
 Lobbyists are like pigeons. They go where the food is. Currently the food is in opposing the treaty. You could try convincing them that saving lives is noble. Or you could just move the food. It's like convincing a vampire to open a blood bank; counterintuitive but mathematically sound.
 
@@ -255,7 +255,7 @@ Politicians are the simplest organisms in this ecosystem. Simpler than bacteria.
 
 ![Wishocracy: people vote on what they want, app tells politicians, politicians see the votes are real, politicians reconsider their donors. Democracy by app because democracy by government stopped working.](/assets/images/aligning-incentives/aligning-incentives-section-the-vote-harvest-bw-academic.jpg)
 
-- {{< var treaty_campaign_voting_bloc_target >}} voting on Wishocracy
+- {{< var treaty_campaign_voting_bloc_target_nounit >}} people voting on Wishocracy
 - You publish voting records: "Senator X opposes cheaper healthcare"
 - Their constituents see this in real-time
 - Support the treaty or face electoral extinction
@@ -274,8 +274,6 @@ Everyone can claim victory because the framing works for each ideology.
 ## Billionaires: Self-Interest Meets Self-Preservation
 
 Billionaires have everything except the one thing money can't buy: not dying. A billion dollars and a body that rots at the same rate as everyone else's. You're offering returns AND longevity research. The incentives align naturally.
-
-![How to get billionaires to fund immortality research: tell them it pays 300 percent returns. They wanted to live forever anyway, now they can afford to.](/assets/images/aligning-incentives/aligning-incentives-section-billionaires-self-interest-meets-self-preservation-bw-academic.jpg)
 
 ### What They Really Want
 
@@ -355,4 +353,4 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 ## Why This Scales: The Ratchet Effect
 
-Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, it's $27B/year. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying. You've accidentally built ratchets like this before (Social Security, Medicare), but always by accident and never on purpose. This time, try doing it on purpose. 
+Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, it's $27.2B/year. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying. You've accidentally built ratchets like this before (Social Security, Medicare), but always by accident and never on purpose. This time, try doing it on purpose. 

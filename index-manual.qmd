@@ -1,6 +1,6 @@
 ---
 title: How to End War and Disease
-description: Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
+description: Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
 published: true
 image: /assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg
 aliases:
@@ -128,7 +128,7 @@ Your treaty passes, redirecting {{< var treaty_annual_funding >}} in papers annu
 
 ### Why Your Leaders Aren't the Problem
 
-With over two billion humans suffering from disease, you'd have to be a complete psychopath to make the concious decision to spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on helping them. 
+With over two billion humans suffering from disease, you'd have to be a complete psychopath to make the conscious decision to spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on helping them. 
 But your leaders aren't monsters. They're just operating in a system that rewards the wrong things.
 
 Your civilization's incentive structure is the psychopath:
@@ -163,7 +163,7 @@ But I digress. That's an Earth word I learned. It means continuing after you sho
 
 ### The Daily Deletion Event
 
-150,000 humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork (though some would argue the paperwork is worse; at least the Nazis were straightforward about the killing part). That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
+{{< var global_disease_deaths_daily_nounit >}} humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork (though some would argue the paperwork is worse; at least the Nazis were straightforward about the killing part). That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
 
 Your body is quietly falling apart. Your cells are forgetting how to cell properly. Your cancer cells are multiplying RIGHT NOW. Your telomeres are shortening. You are literally dissolving.
 
@@ -189,7 +189,7 @@ Humans spend **{{< var global_military_spending_annual_2024 >}}** every year on 
 - AI murder-bots
 - Invisible jets that cost more than hospitals
 - Space Force (to fight the zero aliens attacking you)
-- And Some kind of earthquake machine (probably)
+- And some kind of earthquake machine (probably)
 
 ![The 604:1 stupidity ratio](/assets/images/index-manual/index-manual-section-the-cost-of-war-bw-academic.jpg)
 
@@ -203,9 +203,9 @@ Even the money you DO spend on medicine is mostly wasted, because the system tha
 
 Vioxx killed an estimated 60,000 people from heart attacks. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. (Yes, this is how your system works in the 21st century.) Then a human read it. Five years and 60,000 corpses later, someone noticed a pattern. This is your safety system.
 
-Your National Institutes of Health, the agency nominally responsible for finding cures, spends {{< var nih_clinical_trials_spending_pct >}} of its budget on clinical trials (see [NIH fails to institute health](/knowledge/problem/nih-fails-2-institute-health.qmd)). The other 96.7% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
+Your National Institutes of Health, the agency nominally responsible for finding cures, spends {{< var nih_clinical_trials_spending_pct >}} of its budget on clinical trials (see [NIH fails to institute health](/knowledge/problem/nih-fails-2-institute-health.qmd)). The other ~97% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
 
-Then there's an 8-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8 years making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would {{< var willing_trial_participants_global >}} other patients, and the current system has {{< var current_trial_slots_available >}} slots. That's a participation rate of {{< var current_clinical_trial_participation_rate >}}. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for 8 years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
+Then there's a {{< var efficacy_lag_years >}} delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would {{< var willing_trial_participants_global >}} other patients, and the current system has {{< var current_trial_slots_available >}} slots. That's a participation rate of {{< var current_clinical_trial_participation_rate >}}. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
 Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by {{< var type_ii_error_cost_ratio >}} to 1. Your safety system's main product is dead patients.
 
@@ -221,7 +221,7 @@ Your regulatory system can make two mistakes: approve a bad drug (Type I error),
 
 ### [A 1% Treaty](/knowledge/solution/1-percent-treaty.qmd)
 
-This is going to sound crazy. But you're going to use those papers to persude the the leader of every country on Earth to simultaneously redirect 1% of its military budget to clinical trials. That's it. That's the treaty.
+This is going to sound crazy. But you're going to use those papers to persuade the leader of every country on Earth to simultaneously redirect 1% of its military budget to clinical trials. That's it. That's the treaty.
 
 After the craziness objection, the second objection every human has: "But if we cut our military budget, our enemies will invade us!" Everyone cuts 1% at the same time. If every country reduces by 1% simultaneously, the balance of power doesn't change. Nobody becomes more vulnerable. Nobody gains an advantage. You all just have 1% fewer missiles pointed at you, which you will not notice because you currently have enough to kill everyone 20 times over.
 
@@ -259,7 +259,7 @@ Your [dFDA](/knowledge/solution/dfda.qmd) ranks every treatment by what actually
 
 Food has nutrition labels. Cigarettes have warning labels. Drugs have 40-page inserts written by lawyers having seizures, which nobody reads, including your doctor.
 
-Your new system will produce [Outcome Labels](/knowledge/solution/dfda.qmd) tell you what actually happens when real humans take a drug. Not what a marketing department hopes happens. Not what a lawyer is comfortable admitting happens. What happens.
+Your new system will produce [Outcome Labels](/knowledge/solution/dfda.qmd) that tell you what actually happens when real humans take a drug. Not what a marketing department hopes happens. Not what a lawyer is comfortable admitting happens. What happens.
 
 ![What medicine labels would say if they were honest.](/assets/images/dfda-outcome-labels.png)
 
@@ -285,11 +285,11 @@ Humans usually want "proof" before they stop doing something stupid, so:
 :::
 :::
 
-Even your own war heroes figured this out. Eisenhower, the human who won WW2, spent his last speech warning you that the weapons industry was eating your civilization alive: *"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* You gave him a standing ovation and then immediately ignored him for 65 years.
+Even your own war heroes figured this out. Eisenhower, the human who won WW2, warned you in his "Chance for Peace" speech that the weapons industry was eating your civilization alive: *"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* Then he warned you AGAIN in his farewell address about the "military-industrial complex." You gave him standing ovations and then immediately ignored him for 65 years.
 
 ### The Math
 
-Remember the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift? Multiply those years of healthy life saved by $150,000 (the standard economic valuation of one year of human life), and you get {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in total economic value. Divide that by the {{< var treaty_campaign_total_cost >}} campaign cost, and you get a return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1. Your calculator will display an error, then catch fire. This is correct.
+Remember the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift? Treatments reaching patients that many years sooner means billions of people gain years of healthy life. Value each of those life-years at $150,000 (the standard economic valuation), multiply across the global disease burden over the acceleration window, and you get {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in total economic value. Divide that by the {{< var treaty_campaign_total_cost >}} campaign cost, and you get a return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1. Your calculator will display an error, then catch fire. This is correct.
 
 ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
 
@@ -316,7 +316,7 @@ For your 1% Treaty, these are called VICTORY Incentive Alignment Bonds. Remember
 #### What You're Offering
 
 - Dead diseases (objectively better than dead Nazis because diseases kill more people)
-- {{< var victory_bond_annual_return_pct >}} returns (beats Grandma's bonds by 67x)
+- {{< var victory_bond_annual_return_pct >}} returns (beats Grandma's bonds by 68x)
 - Not dying from preventable meat failures (this is the big one)
 - Also no Nazis (as a bonus)
 
@@ -380,7 +380,7 @@ They might switch sides faster than Italy in a world war.
 
 Politicians are simple organisms with one evolutionary drive: reelection. Currently, weapons manufacturers feed this drive. You're going to feed it better.
 
-Your explosion manufacturers spend {{< var defense_lobbying_annual >}}/year buying politicians. Your bribery budget is {{< var treaty_campaign_total_cost >}}. That's 8 times more. Politicians are surprisingly affordable.
+Your explosion manufacturers spend {{< var defense_lobbying_annual >}}/year buying politicians. Your one-time bribery budget is {{< var treaty_campaign_total_cost >}}, which is 8 times their annual spend (and about twice what they spend over a full election cycle). Politicians are surprisingly affordable.
 
 It's not corruption if you corrupt the corruption. It's like a double negative in grammar but for democracy.
 
@@ -399,7 +399,7 @@ Your treaty passes because money defeats morality, as is tradition.
 The {{< var treaty_annual_funding >}}/year money volcano erupts:
 
 - **Defense Contractors**: Keep 99% of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns.
-- **Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} for phase 2 and 3 trials, the treaty pay THEM for each patient that joins their trials.
+- **Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} for phase 2 and 3 trials, the treaty pays THEM for each patient that joins their trials.
 - **Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
 - **Investors**: {{< var victory_bond_annual_return_pct >}} returns, which they will assume is a typo until you show them the math, at which point they will assume the math is a typo
 - **Lobbyists**: Same job, same salary, but their Wikipedia page no longer needs a "Controversies" section
