@@ -193,7 +193,7 @@ AUDIOBOOK_REWRITE_PROMPT = """Convert this book chapter to an audiobook narratio
 Your job is MINIMAL: only change what would sound obviously wrong or excruciatingly boring spoken aloud. Leave everything else EXACTLY as written.
 
 CONVERT (only these):
-- ALL numbers to spoken words. Never leave bare digits in the output: "50" -> "fifty", "$8.2T" -> "eight point two trillion dollars", "2024" -> "twenty twenty-four", "5%" -> "five percent". For k/K suffixes compute the full number: "3.07k" -> "three thousand and seventy" (not "three point zero seven thousand").
+- ALL numbers to spoken words. Never leave bare digits in the output: "50" -> "fifty", "$8.2T" -> "eight point two trillion dollars", "5%" -> "five percent". For k/K suffixes compute the full number: "3.07k" -> "three thousand and seventy" (not "three point zero seven thousand"). Years: use natural English pronunciation. Years 2010+ split as "twenty XX" ("2024" -> "twenty twenty-four"). Years 2000-2009 use "two thousand and X" ("2003" -> "two thousand and three", NOT "twenty oh-three"). Years before 2000 use standard form ("1993" -> "nineteen ninety-three", "1975" -> "nineteen seventy-five").
 - Alphanumeric abbreviations: "WW2" -> "World War Two", "WW1" -> "World War One", "G7" -> "G Seven", "G20" -> "G Twenty"
 - Tables: convert rows into short spoken sentences
 - Bullet lists: one sentence per bullet, keep them as separate paragraphs
