@@ -54,6 +54,25 @@ tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
 NARRATOR_VOICE = DEFAULT_VOICE
 
 
+def _read_mp3_source_hash(mp3_path: Path) -> str | None:
+    """Read the source_qmd_hash TXXX frame from an MP3 file.
+
+    Returns the hash string, or None if the frame doesn't exist or the file
+    can't be read (e.g. not yet tagged with this field).
+    """
+    try:
+        from mutagen.mp3 import MP3
+        audio = MP3(str(mp3_path))
+        if audio.tags is None:
+            return None
+        frame = audio.tags.get('TXXX:source_qmd_hash')
+        if frame and frame.text:
+            return frame.text[0]
+    except Exception:
+        pass
+    return None
+
+
 def extract_book_metadata(config: dict) -> dict:
     """Extract book metadata (title, author, year, publisher, cover, etc.) from quarto config."""
     book = config.get('book')
@@ -139,6 +158,15 @@ def extract_book_metadata(config: dict) -> dict:
         'podcast_author': podcast_author,
         'podcast_description': podcast_description,
         'podcast_description_suffix': podcast_description_suffix,
+        # Rich metadata from config
+        'copyright': metadata.get('copyright', f'(c) {year} {author}'),
+        'license': metadata.get('license', ''),
+        'license_url': metadata.get('license-url', ''),
+        'version': metadata.get('version', ''),
+        'subject': metadata.get('subject', ''),
+        'keywords': metadata.get('keywords', ''),
+        'author_url': metadata.get('author-website', ''),
+        'publisher_url': metadata.get('publisher-url', ''),
     }
 
 
@@ -206,6 +234,22 @@ def generate_chapter_audio(
     slug = chapter_slug(chapter)
     output_filename = f"{slug}.wav"
     output_path = chapters_dir / output_filename
+
+    # Compute current QMD source hash for staleness detection
+    qmd_content = qmd_path.read_text(encoding='utf-8')
+    current_qmd_hash = hashlib.sha256(qmd_content.encode('utf-8')).hexdigest()[:16]
+
+    # Fallback staleness check: if sidecar hash files are missing but a chapter
+    # MP3 exists, check its embedded source_qmd_hash to detect stale audio.
+    # This makes audio files self-contained for cache invalidation.
+    if not force:
+        mp3_dir = (paths.root / "mp3") if paths else (AUDIOBOOK_DIR / "mp3")
+        mp3_path = mp3_dir / f"{slug}.mp3"
+        if mp3_path.exists():
+            mp3_qmd_hash = _read_mp3_source_hash(mp3_path)
+            if mp3_qmd_hash and mp3_qmd_hash != current_qmd_hash:
+                print(f"  [STALE] MP3 source_qmd_hash mismatch ({mp3_qmd_hash} -> {current_qmd_hash}), forcing regeneration")
+                force = True
 
     # Regenerate prepared text via subprocess (has its own hash-based caching)
     print(f"  Preparing text...")
@@ -503,7 +547,7 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict)
     from mutagen.mp3 import MP3
     from mutagen.id3 import (  # pyright: ignore[reportPrivateImportUsage]
         ID3, TIT2, TPE1, TPE2, TALB, TCON, TDRC, TPUB, APIC, CHAP, CTOC, CTOCFlags,
-        TXXX, TLAN, COMM,
+        TXXX, TLAN, COMM, TCOP, WOAF, WOAR, WPUB,
     )
 
     print(f"\nTagging MP3 with metadata and chapter markers...")
@@ -529,6 +573,30 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict)
     # Description
     if book_meta.get('description'):
         tag.add(COMM(encoding=3, lang='eng', desc='', text=[book_meta['description']]))
+
+    # Copyright and license
+    if book_meta.get('copyright'):
+        tag.add(TCOP(encoding=3, text=[book_meta['copyright']]))
+    if book_meta.get('license'):
+        tag.add(TXXX(encoding=3, desc='license', text=[book_meta['license']]))
+    if book_meta.get('license_url'):
+        tag.add(TXXX(encoding=3, desc='license_url', text=[book_meta['license_url']]))
+
+    # URLs
+    if book_meta.get('site_url'):
+        tag.add(WOAF(url=book_meta['site_url']))
+    if book_meta.get('author_url'):
+        tag.add(WOAR(url=book_meta['author_url']))
+    if book_meta.get('publisher_url'):
+        tag.add(WPUB(url=book_meta['publisher_url']))
+
+    # Provenance and discoverability
+    if book_meta.get('version'):
+        tag.add(TXXX(encoding=3, desc='version', text=[book_meta['version']]))
+    if book_meta.get('subject'):
+        tag.add(TXXX(encoding=3, desc='subject', text=[book_meta['subject']]))
+    if book_meta.get('keywords'):
+        tag.add(TXXX(encoding=3, desc='keywords', text=[book_meta['keywords']]))
 
     # Cover art (validated in extract_book_metadata)
     cover_art: Path = book_meta['cover_art']
@@ -722,29 +790,36 @@ def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
 def export_chapter_mp3s(
     chapters: list[dict],
     book_meta: dict,
+    voice: str = NARRATOR_VOICE,
     paths: AudiobookPaths | None = None,
 ) -> list[Path]:
     """Export each chapter WAV as a tagged MP3 for per-chapter distribution.
 
     Iterates chapters in config order. Each MP3 gets ID3 tags: title, artist,
-    album, narrator, track number, cover art, and genre.
+    album, narrator, track number, cover art, genre, copyright, license,
+    source QMD hash (for staleness detection), TTS voice, and generation date.
+    Per-chapter descriptions and podcast images from QMD frontmatter are used
+    when available, falling back to book-level defaults.
     """
+    from datetime import datetime, timezone
     from mutagen.mp3 import MP3
     from mutagen.id3 import (  # pyright: ignore[reportPrivateImportUsage]
         TIT2, TPE1, TPE2, TALB, TCON, TDRC, TPUB, APIC, TRCK, TLAN, TXXX, COMM,
+        TCOP, WOAF,
     )
 
     mp3_dir = paths.root / "mp3" if paths else AUDIOBOOK_DIR / "mp3"
     mp3_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load cover art once (validated in extract_book_metadata)
+    # Load book-level cover art once (validated in extract_book_metadata)
     cover_art: Path = book_meta['cover_art']
-    cover_data = cover_art.read_bytes()
-    cover_mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
+    book_cover_data = cover_art.read_bytes()
+    book_cover_mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
 
     mp3_files = []
     narrator = book_meta['narrator']
     total_chapters = len(chapters)
+    generation_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
     for track_num, ch in enumerate(chapters, 1):
         chapter_file = find_chapter_audio(ch, paths=paths)
@@ -765,6 +840,7 @@ def export_chapter_mp3s(
         assert mp3.tags is not None
         tag = mp3.tags
 
+        # Basic metadata
         tag.add(TIT2(encoding=3, text=[ch['title']]))
         tag.add(TPE1(encoding=3, text=[book_meta['author']]))
         tag.add(TPE2(encoding=3, text=[book_meta['author']]))
@@ -775,10 +851,45 @@ def export_chapter_mp3s(
         tag.add(TRCK(encoding=3, text=[f"{track_num}/{total_chapters}"]))
         tag.add(TLAN(encoding=3, text=["eng"]))
         tag.add(TXXX(encoding=3, desc='narrator', text=[narrator]))
-        if book_meta.get('description'):
-            tag.add(COMM(encoding=3, lang='eng', desc='', text=[book_meta['description']]))
 
-        tag.add(APIC(encoding=3, mime=cover_mime, type=3, desc='Cover', data=cover_data))
+        # Per-chapter description (fall back to book-level)
+        ch_desc = ch.get('description') or book_meta.get('description', '')
+        if ch_desc:
+            tag.add(COMM(encoding=3, lang='eng', desc='', text=[ch_desc]))
+
+        # Copyright and license
+        if book_meta.get('copyright'):
+            tag.add(TCOP(encoding=3, text=[book_meta['copyright']]))
+        if book_meta.get('license'):
+            tag.add(TXXX(encoding=3, desc='license', text=[book_meta['license']]))
+
+        # Official URL
+        if book_meta.get('site_url'):
+            tag.add(WOAF(url=book_meta['site_url']))
+
+        # Per-chapter podcast image (fall back to book cover)
+        ep_image = find_podcast_image(ch, paths=paths)
+        if ep_image and ep_image.exists():
+            img_data = ep_image.read_bytes()
+            img_mime = 'image/png' if ep_image.suffix.lower() == '.png' else 'image/jpeg'
+        else:
+            img_data = book_cover_data
+            img_mime = book_cover_mime
+        tag.add(APIC(encoding=3, mime=img_mime, type=3, desc='Cover', data=img_data))
+
+        # Source QMD hash for staleness detection
+        qmd_path = PROJECT_ROOT / ch['path']
+        if qmd_path.exists():
+            qmd_content = qmd_path.read_text(encoding='utf-8')
+            source_hash = hashlib.sha256(qmd_content.encode('utf-8')).hexdigest()[:16]
+            tag.add(TXXX(encoding=3, desc='source_qmd_hash', text=[source_hash]))
+            tag.add(TXXX(encoding=3, desc='source_qmd_path', text=[ch['path']]))
+
+        # TTS provenance
+        tag.add(TXXX(encoding=3, desc='tts_voice', text=[voice]))
+        tag.add(TXXX(encoding=3, desc='generation_date', text=[generation_date]))
+        if book_meta.get('version'):
+            tag.add(TXXX(encoding=3, desc='version', text=[book_meta['version']]))
 
         mp3.save()
         size_mb = mp3_path.stat().st_size / 1024 / 1024
@@ -1096,7 +1207,7 @@ def main():
             export_m4b(mp3_path, timestamps, book_meta)
 
             # Export per-chapter MP3s with ID3 tags
-            chapter_mp3s = export_chapter_mp3s(all_chapters, book_meta, paths=paths)
+            chapter_mp3s = export_chapter_mp3s(all_chapters, book_meta, voice=args.voice, paths=paths)
 
             # Generate podcast RSS feed
             generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)

@@ -38,12 +38,12 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 This appendix documents all 260 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 103
-- Calculated values: 98
-- Core definitions: 59
+- Calculated values: 99
+- Core definitions: 58
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (98 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (59 parameters)
+[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2525,6 +2525,52 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
+
+:::
+
+### Ratio of Annual Disease Deaths to War Deaths: 225:1 {#sec-disease_vs_war_deaths_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of annual disease deaths to war deaths
+
+**Inputs**:
+
+- [Annual Deaths from All Diseases and Aging Globally](#sec-global_annual_deaths_curable_diseases) 📊: 55.0 million deaths/year (SE: ±5.00 million deaths/year)
+- [Total Annual Conflict Deaths Globally](#sec-global_annual_conflict_deaths_total) 🔢: 245 thousand deaths/year
+
+$$
+\begin{gathered}
+Ratio_{dis:war} \\
+= \frac{Deaths_{curable,ann}}{Deaths_{conflict}} \\
+= \frac{55M}{245{,}000} \\
+= 225
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Deaths_{conflict} \\
+= Deaths_{combat} + Deaths_{state} + Deaths_{terror} \\
+= 234{,}000 + 2{,}700 + 8{,}300 \\
+= 245{,}000
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-disease_vs_war_deaths_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-disease_vs_war_deaths_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-disease_vs_war_deaths_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-disease_vs_war_deaths_ratio.qmd >}}
 
 :::
 
@@ -6671,6 +6717,26 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 :::
 
+### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual deaths from all diseases and aging globally
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5.00 million deaths/year)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_annual_deaths_curable_diseases.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Annual Environmental Damage and Restoration Costs from Conflict: $100B {#sec-global_annual_environmental_damage_conflict}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7342,18 +7408,6 @@ Proportion of global DALYs that are YLD (years lived with disability) vs YLL (ye
 Percentage of human interactome (protein-protein interactions) targeted by drugs
 
 **Source**: [@clinical-trials-puzzle-interactome]
-
-*✓ High confidence*
-
-:::
-
-### ICD-10 Total Codes: 14.0 thousand codes {#sec-icd_10_total_codes}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total ICD-10 diagnostic codes for human diseases and conditions
-
-**Source**: [@icd-10-code-count]
 
 *✓ High confidence*
 
@@ -9124,28 +9178,6 @@ Standard time horizon for NPV analysis
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Peace Dividend Conflict Elasticity: 1:1 {#sec-peace_dividend_conflict_elasticity}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Conflict reduction elasticity: how much conflict costs decrease per 1% military spending cut. ε=0: no effect (spending cuts don't reduce conflict). ε=0.5: moderate linkage (conservative). ε=1.0: proportional (baseline assumption). ε>1.0: shared enemy amplification (redirecting to disease creates unity).
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [0.25:1, 1.5:1] • Distribution: Beta
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 0.25:1 and 1.5:1 (±62%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-peace_dividend_conflict_elasticity.qmd >}}
 
 *Core definition*
 

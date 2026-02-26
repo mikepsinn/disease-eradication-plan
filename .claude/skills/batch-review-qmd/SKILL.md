@@ -47,8 +47,12 @@ Review book chapters via variable-resolved previews. Flag ONLY judgment-required
 | LOGIC_ERROR | Argument doesn't follow, false equivalence, single case proves universal claim |
 | FACTUAL_ERROR | Verifiably wrong (only when confident) |
 | WEAK_CLAIM | Smart audiobook listener would think "that's obviously wrong/naive/easily refuted" |
+| CONSPIRATORIAL | Attributes malice where incentive misalignment is the actual argument. "They're blocking cures" vs "nobody has a concentrated interest in funding cures" |
 | STALE_COMPARISON | Reference point no longer matches variable value |
 | REDUNDANT | Same point twice in different words, same stat in two sections (callbacks/running gags are fine) |
+| CROSS_CHAPTER_REDUNDANT | Section re-explains a concept that has its own chapter. Should be a sentence + link, not a subsection |
+| NAMED_PRODUCT | Names a specific company, platform, or protocol (Gitcoin, MakerDAO, LinkedIn) that dates the content or narrows the audience. Use generic descriptions instead |
+
 
 ## Quality Flags (sparingly, clear wins only)
 
