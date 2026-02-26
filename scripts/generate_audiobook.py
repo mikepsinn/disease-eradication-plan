@@ -1010,6 +1010,9 @@ def generate_podcast_rss(
     # Build MP3 lookup by slug for matching with timestamps
     mp3_by_slug = {mp3.stem: mp3 for mp3 in chapter_mp3s}
 
+    # Build chapter lookup by index for podcast exclusion check
+    ch_by_index = {ch['index']: ch for ch in chapters}
+
     # Build per-episode lookups from chapter list (keyed by slug)
     ep_image_urls: dict[str, str] = {}
     ep_descriptions: dict[str, str] = {}
@@ -1025,6 +1028,12 @@ def generate_podcast_rss(
     items = []
     total_eps = len(chapter_mp3s)
     for ep_num, ts in enumerate(timestamps):
+        # Skip chapters with podcast: false in frontmatter
+        ch = ch_by_index.get(ts['index'])
+        if ch and not ch.get('podcast', True):
+            print(f"  [SKIP RSS] {ts['title']} (podcast: false)")
+            continue
+
         slug = Path(ts['file']).stem  # WAV slug -> MP3 slug
         mp3_path = mp3_by_slug.get(slug)
         if not mp3_path:

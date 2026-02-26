@@ -205,10 +205,15 @@ def extract_chapters(config: dict) -> list[dict]:
         if description:
             description = _resolve_quarto_vars(description, variables)
         fm = _parse_qmd_frontmatter(qmd_path)
+        # podcast: false in frontmatter excludes from podcast feed (still generates audio)
+        podcast_include = fm.get('podcast', True)
+        if isinstance(podcast_include, str):
+            podcast_include = podcast_include.lower() not in ('false', 'no', '0')
         chapters.append({
             'path': resolved, 'title': title, 'part': part,
             'index': idx, 'description': description,
             'podcast_image': fm.get('podcast-image'),
+            'podcast': bool(podcast_include),
         })
 
     for item in book.get('chapters', []):
