@@ -9,7 +9,6 @@ image: /assets/og-images/knowledge/solution/aligning-incentives-og-retro-academi
 podcast-image: /assets/podcast/aligning-incentives-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-> **Related:** [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) details the specific financial mechanism design.
 
 This book is not about convincing people to be better. You've been trying that for six thousand years and it hasn't worked once. This is about building a system where doing well and doing good are the same thing. The current system pays for death and disease. The new system pays for life and health.
 
@@ -353,4 +352,4 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 ## Why This Scales: The Ratchet Effect
 
-Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, it's $27.2B/year. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying. You've accidentally built ratchets like this before (Social Security, Medicare), but always by accident and never on purpose. This time, try doing it on purpose. 
+Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, political incentive funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, that scales to 10x as much. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying. You've accidentally built ratchets like this before (Social Security, Medicare), but always by accident and never on purpose. This time, try doing it on purpose.

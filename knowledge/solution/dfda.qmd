@@ -328,7 +328,7 @@ The fact that this requires a law tells you everything about your species.
 | **Start** | Research ideas | Research ideas |
 | **Gatekeeping** | Grant committees select the few | Register instantly |
 | **Enrollment** | Recruit from limited pool | Patients decide by joining |
-| **Cost** | $57M per trial | $0 per trial |
+| **Cost to company** | $57M per trial | $0 (patients pay for treatment) |
 | **Throughput** | ~10 trials/year per company | Unlimited trials simultaneously |
 
 **This is why 95% of rare diseases have no treatments.** Traditional funding can't afford to test everything. This decentralized protocol enables testing EVERYTHING because:
@@ -419,11 +419,9 @@ This solves:
 
 ~200 FDA bureaucrats [@fda-reviewer-count] decide what {{< var global_population_2024_nounit >}} people can try when dying. Here's the math on why that can't work:
 
-**The FDA's processing capacity:** 200 committee members, working 8 hours a day, making 1 decision per hour = **1,600 decisions per day**.
+**The FDA approves ~50 new drugs per year.** There are 10,000 known diseases. At that rate, covering every disease once takes 200 years. And that's before you account for the fact that different patients respond differently to the same drug based on genetics, age, comorbidities, and whether they had breakfast.
 
-**The decisions that actually need making:** 10,000 known diseases × 100 potential treatments × 800 thousand genetically distinct patient profiles = **800 billion decisions**.
-
-At 1,600 decisions per day, the FDA would need **1,369,863 years** to evaluate everything. A decentralized system where {{< var global_population_2024_nounit >}} people each make one health decision per day processes the same load in **100 days**.
+**The real bottleneck isn't speed; it's information.** Centralized approval assumes a 200-person committee can evaluate what works for {{< var global_population_2024_nounit >}} genetically unique humans. They can't. A decentralized system where millions of patients generate real-world evidence simultaneously processes more therapeutic information in a month than the FDA generates in a decade.
 
 The FDA doesn't know:
 

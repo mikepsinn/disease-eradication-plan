@@ -15,7 +15,7 @@ Here's what 1% less murder money buys you:
 
 - **The 1% Treaty Fund gets**: {{< var treaty_annual_funding >}} to subsidize hyper-efficient pragmatic clinical trials
 - **World saves**: {{< var peace_dividend_annual_societal_benefit >}} not spent rebuilding bombed hospitals, treating shrapnel wounds, and housing refugees
-- **Your lifetime tab**: $113,551 per person over 80 years, for bombs in countries you can't find on a map
+- **Your lifetime tab**: $113,551 per person over 80 years, for wars in countries you can't find on a map
 
 ## How 1% Less Violence Pays For Everything
 
@@ -96,7 +96,7 @@ The Societal Dividend (the money you save by being slightly less insane):
 
 ### The Elasticity Question
 
-The elasticity parameter (e = {{< var peace_dividend_conflict_elasticity >}}) asks the only interesting question here: if you cut military spending 1%, do war costs actually drop 1% too? Or do humans, being humans, find a way to keep killing each other at full price?
+The elasticity parameter (e = 1.0) asks the only interesting question here: if you cut military spending 1%, do war costs actually drop 1% too? Or do humans, being humans, find a way to keep killing each other at full price?
 
 - **e = 0.25**: The "humans are barely trainable" scenario. Only a quarter of cuts reduce violence.
 - **e = 0.5**: The "humans are somewhat rational" scenario. Historically optimistic.

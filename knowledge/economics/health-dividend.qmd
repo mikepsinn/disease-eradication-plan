@@ -41,7 +41,7 @@ Your decentralized FDA takes this model global. **Up to {{< var dfda_trial_cost_
 
 Global clinical trial spending: **{{< var global_clinical_trials_spending_annual >}} per year** (and growing, because apparently inefficiency scales beautifully).
 
-Baseline estimate: {{< var dfda_trial_cost_reduction_pct >}} efficiency gains across the market (based on pragmatic trial cost estimates).
+Baseline estimate: {{< var dfda_trial_cost_reduction_pct >}} efficiency gains across the market (based on pragmatic trial cost estimates). This assumes pragmatic designs scale beyond simple mortality endpoints to most therapeutic areas. Some trial types (complex imaging, rare disease custom endpoints, device trials) won't hit that reduction. But the majority of spending goes to large therapeutic-area trials where RECOVERY-style designs work, and the estimate is conservative enough that even if a third of the market resists pragmatic redesign, the savings still dwarf the costs.
 
 - {{< var dfda_trial_cost_reduction_pct >}} of {{< var global_clinical_trials_spending_annual >}} = **{{< var dfda_benefit_rd_only_annual >}} saved annually**
 

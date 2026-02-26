@@ -95,16 +95,18 @@ Result: informed participants, not confused button-clickers. (Though honestly, c
 
 ## Implementation Roadmap
 
-Building a global referendum in 12 months sounds insane. It is insane. But so is dying of diseases you know how to prevent because nobody filled out the right forms. You've been doing that for decades and nobody calls it insane. They call it "the healthcare system."
+Building a global referendum sounds insane. It is insane. But so is dying of diseases you know how to prevent because nobody filled out the right forms. You've been doing that for decades and nobody calls it insane. They call it "the healthcare system."
+
+The aggressive target is a live platform in 12 months. The realistic target for {{< var global_population_activism_threshold_pct >}} participation ({{< var treaty_campaign_voting_bloc_target_nounit >}} verified humans) is 18 to 36 months, scaling alongside the [full campaign roadmap](roadmap.qmd). Twelve months gets you a working system with millions of participants. The remaining months get you a mandate that makes politicians physically uncomfortable.
 
 ![Month 1-2: Build the website, plan the marketing, and make the blockchain work. Multitasking, but organized.](/assets/images/global-referendum/global-referendum-section-phase-1-foundation-months-1-2-bw-academic.jpg)
 
 | Phase | Timeline | Focus |
 |:------|:---------|:------|
-| **Foundation** | Months 1-2 | Build the thing. Verification infrastructure, social media framework |
-| **Scaling** | Months 3-6 | Turn it on. Marketing blitz, enhanced verification layers |
-| **Global Launch** | Months 7-12 | Full-scale campaign, target {{< var global_population_activism_threshold_pct >}} participation |
-| **Optimization** | Months 13+ | Scale what works, prepare treaty negotiations, watch politicians sweat |
+| **Foundation** | Months 1-3 | Build the thing. Verification infrastructure, social media framework |
+| **Scaling** | Months 4-12 | Turn it on. Marketing blitz, enhanced verification, millions of participants |
+| **Full Campaign** | Months 13-36 | Global push to {{< var global_population_activism_threshold_pct >}} participation, bond-funded growth |
+| **Treaty Pressure** | Months 24+ | Prepare treaty negotiations, watch politicians sweat |
 
 ![Launch day: Turn on the system, flood social media, and coordinate volunteers worldwide. The hardest part is getting everyone to press 'go' simultaneously.](/assets/images/global-referendum/global-referendum-section-phase-3-global-launch-months-7-12-bw-academic.jpg)
 

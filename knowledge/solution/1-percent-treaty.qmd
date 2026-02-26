@@ -118,7 +118,7 @@ Here's what actually threatens nations today:
 
 ### Overfunded Threats (That Countries Spend Trillions On)
 
-1. **Other Countries Attacking**: It happens. It's real. Ask Ukraine. But disease kills 15x more people every year, and you're funding them in the opposite ratio.
+1. **Other Countries Attacking**: It happens. It's real. Ask Ukraine. But disease kills {{< var disease_vs_war_deaths_ratio >}} more people every year, and you're funding them in the opposite ratio.
 2. **Terrorists**: Kill fewer people than furniture accidents [@furniture-accidents-vs-terrorism-deaths]
 
 A 1% treaty addresses the real threats. It doesn't weaken your ability to handle the conventional ones. You keep 99% of your weapons. If 99% of your military can't handle the job, the last 1% wasn't going to save you.
@@ -154,7 +154,7 @@ So you don't frame this as "reducing military spending." You frame it as:
 "Our nation grows stronger when our people stop dying of diseases we can prevent. A healthy population is a powerful population."
 
 **For Economists**:
-"The ROI is {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1. On paper, that beats every public health intervention on record."
+"The ROI on the {{< var treaty_campaign_total_cost >}} campaign to pass it is {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1. On paper, that beats every public health intervention on record."
 
 **For Conspiracy Theorists**:
 "Big Pharma hates this one weird trick that makes medicine basically free."
@@ -198,7 +198,6 @@ Right now, only {{< var current_trial_slots_available_nounit >}} participate in 
 #### Current System
 
 - Pivotal trials: {{< var traditional_phase3_cost_per_patient >}}
-- Only {{< var current_trial_slots_available_nounit >}} participants per year globally
 - {{< var willing_trial_participants_global >}} willing to participate, but turned away
 - {{< var drug_discovery_to_approval_years >}} from discovery to patient
 
@@ -222,7 +221,7 @@ Why? Because they get to:
 1.  **Keep {{< var defense_sector_retention_pct >}} of their budget** (still plenty for bombs)
 2.  **Pivot 1% to biotech** (higher profit margins)
 3.  **Look like heroes** (rare for arms dealers)
-4.  **Invest in the fund** ({{< var victory_bond_annual_return_pct >}}, remember?)
+4.  **Invest in the fund** ([VICTORY Incentive Alignment Bonds](incentive-alignment-bonds.qmd) pay {{< var victory_bond_annual_return_pct >}} annually)
 5.  **Not die of cancer** (even arms dealers get cancer)
 
 Lockheed Martin Presents: The F-35 Cancer Killer™
@@ -277,7 +276,7 @@ Executive signs, legislature refuses to implement.
 
 ![Regular treaties need Congress to agree twice. Self-executing treaties only need them to agree once. This is considered a dramatic improvement.](/assets/images/1-percent-treaty/1-percent-treaty-section-parliamentary-obstacles-bw-academic.jpg)
 
-**Solution:** Self-executing treaty. No implementing legislation needed. Direct effect in domestic law (per the Supremacy Clause in the US, similar provisions elsewhere).
+**Solution:** The treaty obligates the percentage; Congress implements via the annual National Defense Authorization Act (NDAA). After *Medellin v. Texas* (2008), the US Supreme Court made clear that not all treaties are self-executing, and a treaty directing budget appropriations would collide with Congress's power of the purse. So the treaty doesn't try to bypass Congress. It creates a binding international obligation that Congress fulfills through its normal appropriations process, the same way NATO's spending commitments work. The [IAB mechanism](incentive-alignment-bonds.qmd) ensures legislators have a personal financial incentive to include the 1% line item every year. In other signatory nations, similar provisions route implementation through existing budget processes.
 
 ## Summary
 
