@@ -71,7 +71,7 @@ It's like reading the first page of *War and Peace* and writing a book report ca
 
 ## Is The Untested Stuff Useful?
 
-You might argue, "Maybe the other 99.7% is useless!"
+You might argue, "Maybe the other {{< var unexplored_ratio >}} is useless!"
 
 ![You've figured out 12 percent of how the body works. The other 88 percent is a mystery. Drugs affect multiple pathways at once. You test them on one pathway at a time.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-is-the-untested-stuff-useful-bw-academic.jpg)
 
@@ -121,7 +121,7 @@ Testing every known safe compound against every major disease:
 
 **{{< var drug_disease_combinations_possible >}} ÷ {{< var current_trials_per_year >}} = {{< var current_known_safe_exploration_years >}}**
 
-That's almost 3,000 years to explore compounds we *already know are safe*. By that math, we won't finish until the year 5000.
+That's almost {{< var current_known_safe_exploration_years >}} to explore compounds we *already know are safe*. By that math, we won't finish until the year 5000.
 
 ### Tier 2: Combination Therapies (Still Defensible)
 
@@ -169,7 +169,7 @@ More importantly, your decentralized FDA builds *permanent infrastructure* for s
 
 ## The Bottom Line
 
-**Humanity has empirically tested less than 0.4% of the drug-disease relationships that can be tested using existing safe compounds.**
+**Humanity has empirically tested less than {{< var exploration_ratio >}} of the drug-disease relationships that can be tested using existing safe compounds.**
 
 **If you include the larger chemical universe, humanity has explored roughly one-quadrillionth to one-quintillionth of what is possible (10^-12 to 10^-50). There are numbers so small that mathematicians get depressed looking at them. These are those numbers.**
 

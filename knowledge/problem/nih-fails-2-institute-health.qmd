@@ -21,11 +21,11 @@ podcast-image: /assets/podcast/nih-fails-2-institute-health-podcast.jpg
 
 {{< var global_annual_deaths_curable_diseases_nounit >}} people die annually [@who-daily-deaths]. The National Institutes of Health has an annual budget of approximately **{{< var nih_annual_budget >}}**. You would think those two facts would be related. They are not.
 
-Of $247 billion the NIH spent over a decade, exactly 3.3% went to testing whether treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% went to everything else.
+Of $247 billion the NIH spent over a decade, exactly {{< var nih_clinical_trials_spending_pct >}} went to testing whether treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% went to everything else.
 
 That might be defensible if we'd already tested all the known safe compounds that are piled up waiting for human testing. We haven't. There are roughly {{< var safe_compounds_count >}} with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. The pipeline is overflowing with candidates. The bottleneck is trials.
 
-It's like spending 96.7% of your grocery budget on cookbooks and 3.3% on food, then wondering why you're starving.
+It's like spending 96.7% of your grocery budget on cookbooks and {{< var nih_clinical_trials_spending_pct >}} on food, then wondering why you're starving.
 
 This isn't just inefficiency. It's a body count.
 
@@ -62,7 +62,7 @@ The revolving door helps. NIH advisory committees include industry representativ
 
 Basic research produces publications. Publications produce tenure. Tenure produces more grants. Nobody in this cycle needs anyone to get better. They need papers.
 
-The 3.3% allocation isn't a mystery. It's a business model.
+The {{< var nih_clinical_trials_spending_pct >}} allocation isn't a mystery. It's a business model.
 
 ## The Efficiency Gap: A Tale of Two Trials
 
@@ -83,7 +83,7 @@ The difference between efficient and inefficient trial design isn't theoretical.
 **Budget:** {{< var recovery_trial_total_cost >}}
 **Timeline:** 6 months [@landray-recovery-trial-quote]
 **Patients enrolled:** 48,000 [@recovery-trial-82x-cost-reduction]
-**Treatments found:** Multiple, including dexamethasone [@recovery-trial-summary-quote] (saved over 1 million lives)
+**Treatments found:** Multiple, including dexamethasone [@recovery-trial-summary-quote] (saved over {{< var recovery_trial_global_lives_saved >}})
 **Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
 
 The NIH spent **111x more per patient** and achieved **infinitely less** (dividing by zero trials completed produces infinity, which is fitting because that's how long patients waited). This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
@@ -116,7 +116,7 @@ For every dollar spent on pragmatic trials producing QALYs, the NIH spends $12,5
 
 The problem is not a shortage of ideas. It is a shortage of anyone bothering to test them.
 
-- **FDA-approved drugs:** >20,000 known safe in humans
+- **FDA-approved drugs:** >{{< var fda_approved_products_count_nounit >}} known safe in humans
 - **Repurposable compounds:** ~4,700-6,800 clinically-tested candidates [@drug-repurposing-hub-collection] (including 3,422 marketed drugs) gathering dust
 - **Plausible dementia interventions:** Hundreds
 - **Clinical trials available for your grandma in St. Louis:** Zero
@@ -128,7 +128,7 @@ You have a warehouse of safe molecules that have never been systematically teste
 The NIH is, by its own metrics, a publishing house that occasionally dabbles in medicine:
 
 - **Papers published:** 2.5 million NIH-funded annually [@nih-annual-papers-published]
-- **New treatments approved:** ~50 annually [@global-new-drug-approvals-50-annually]
+- **New treatments approved:** ~{{< var current_drug_approvals_per_year_nounit >}} annually [@global-new-drug-approvals-50-annually]
 - **Conversion rate from paper to patient:** 0.002%
 
 For every 50,000 papers, one drug reaches a human. The rest become citations in other papers, which become citations in other papers, in an infinite loop of academics reading each other's homework.
@@ -202,7 +202,7 @@ Cows have better healthcare outcomes than you do.
 
 ## What Would Actually Work
 
-The UK RECOVERY trial already proved it. {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}. 100 days instead of years. Over 1 million lives saved. The blueprint exists. It is not theoretical. It happened. In England. During a pandemic. While Americans were arguing about horse dewormer.
+The UK RECOVERY trial already proved it. {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}. 100 days instead of years. Over {{< var recovery_trial_global_lives_saved >}} saved. The blueprint exists. It is not theoretical. It happened. In England. During a pandemic. While Americans were arguing about horse dewormer.
 
 The recipe:
 

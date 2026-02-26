@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 217 parameters used in the analysis, organized by type:
+This appendix documents all 219 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 92
+- External sources (peer-reviewed): 93
 - Calculated values: 94
-- Core definitions: 31
+- Core definitions: 32
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (92 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
+[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (93 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6036,6 +6036,18 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 :::
 
+### Return on Investment from Childhood Vaccination Programs: 13:1 {#sec-childhood_vaccination_roi}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return on investment from childhood vaccination programs
+
+**Source**: [@childhood-vaccination-roi]
+
+*✓ High confidence*
+
+:::
+
 ### Disability Weight for Untreated Chronic Conditions: 0.35 weight {#sec-chronic_disease_disability_weight}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8195,6 +8207,16 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Minimum investment for institutional investors
+
+*Core definition*
+
+:::
+
+### Maximum Bond Investment for Lobbyist Incentives: $20M {#sec-lobbyist_bond_investment_max}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Maximum bond investment for lobbyist incentives
 
 *Core definition*
 

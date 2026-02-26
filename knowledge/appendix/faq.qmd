@@ -21,7 +21,7 @@ The trial used existing hospital systems. Hospitals, it turns out, already conta
 
 ![What 1 percent of military spending buys: fewer tanks, more cured diseases, and soft power. Turns out healthy people like you more than people you bombed.](/assets/images/faq/faq-section-we-need-the-military-budget-bw-academic.jpg)
 
-**Response**: The treaty takes 1%. You keep 99%. If you can't defend yourself with 99% of history's largest military budget, the problem isn't money.
+**Response**: The treaty takes 1%. You keep {{< var defense_sector_retention_pct >}}. If you can't defend yourself with {{< var defense_sector_retention_pct >}} of history's largest military budget, the problem isn't money.
 
 The Pentagon literally cannot account for $2.5 trillion in spending. You're asking them to redirect money they already lost in the couch cushions.
 
@@ -232,7 +232,7 @@ What's actually unrealistic:
 - Surrounded by both World Wars (literally in the middle, made chocolate)
 - GDP per capita: {{< var switzerland_gdp_per_capita_k >}} (not killing people is profitable)
 - Defense spending: {{< var switzerland_defense_spending_pct >}} of GDP
-- Life expectancy: 84 years (5 years longer than Americans who spend 5x more on "defense")
+- Life expectancy: {{< var switzerland_life_expectancy_nounit >}} years ({{< var us_vs_switzerland_life_expectancy_gap_nounit >}} years longer than Americans who spend 5x more on "defense")
 
 **Costa Rica**:
 

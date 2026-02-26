@@ -121,7 +121,7 @@ def extract_book_metadata(config: dict) -> dict:
     # Podcast-specific overrides from dih-podcast config section
     podcast = config.get('dih-podcast', {})
     podcast_author = podcast.get('author', author)
-    podcast_description = podcast.get('description', '')
+    podcast_description = podcast.get('podcast-description', '')
     podcast_description_suffix = podcast.get('description-suffix', '')
 
     return {

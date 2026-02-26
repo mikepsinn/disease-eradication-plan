@@ -102,8 +102,8 @@ That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan 
 Results:
 
 - Found that steroids cut COVID deaths by 30% [@recovery-trial-dexamethasone-results]
-- Saved over 1 million lives globally [@recovery-trial-summary-quote]
-- Took 3 months [@recovery-trial-100-days-to-cure] instead of 3 years
+- Saved over {{< var recovery_trial_global_lives_saved >}} globally [@recovery-trial-summary-quote]
+- Took {{< var oxford_recovery_trial_duration_months >}} [@recovery-trial-100-days-to-cure] instead of 3 years
 - Cost less than one Super Bowl commercial
 
 The FDA's response: "But did they file the correct paperwork?"
@@ -415,13 +415,13 @@ This solves:
 
 ## Why This Works: The Mathematical Impossibility of Committees
 
-~200 FDA bureaucrats [@fda-reviewer-count] decide what 8 billion people can try when dying. Here's the math on why that can't work:
+~200 FDA bureaucrats [@fda-reviewer-count] decide what {{< var global_population_2024_nounit >}} people can try when dying. Here's the math on why that can't work:
 
 **The FDA's processing capacity:** 200 committee members, working 8 hours a day, making 1 decision per hour = **1,600 decisions per day**.
 
 **The decisions that actually need making:** 10,000 known diseases × 100 potential treatments × 800 thousand genetically distinct patient profiles = **800 billion decisions**.
 
-At 1,600 decisions per day, the FDA would need **1,369,863 years** to evaluate everything. A decentralized system where 8 billion people each make one health decision per day processes the same load in **100 days**.
+At 1,600 decisions per day, the FDA would need **1,369,863 years** to evaluate everything. A decentralized system where {{< var global_population_2024_nounit >}} people each make one health decision per day processes the same load in **100 days**.
 
 The FDA doesn't know:
 
@@ -430,7 +430,7 @@ The FDA doesn't know:
 - What risks **you're** willing to take (some prefer death to side effects, others the reverse)
 - Whether **you'd** rather die trying or die waiting (only you can answer this)
 
-But they decide for you anyway. This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for 8 billion unique people.
+But they decide for you anyway. This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for {{< var global_population_2024_nounit >}} unique people.
 
 ## The Future: Where Death Becomes Embarrassing
 

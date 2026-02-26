@@ -50,7 +50,7 @@ This one touches military budgets, the sacred cow of national sovereignty. Sugge
 | Phase | Duration | Estimated Cost | Who Pays |
 | :--- | :--- | :--- | :--- |
 | **1. Pre-negotiations**<br>(Coalition building, expert drafts) | 18–24 months | **$8–12M** | Philanthropy (Gates, Open Philanthropy, etc.) + Champion Governments |
-| **2. Global Campaign**<br>(Platform, 3.5% consent, media) | 3–5 years | **$45–80M** | Philanthropy + Crowd-funding |
+| **2. Global Campaign**<br>(Platform, {{< var global_population_activism_threshold_pct >}} consent, media) | 3–5 years | **$45–80M** | Philanthropy + Crowd-funding |
 | **3. Diplomatic Process**<br>(Conferences, delegate travel) | 18–30 months | **$15–25M** | Host Governments + UN Trust Fund |
 | **4. Ratification Drive**<br>(Legal reviews, parliamentary aid) | 2–4 years | **$5–8M** | Philanthropy |
 | **5. Contingency**<br>(Opposition management) | Ongoing | **$10–15M** | Strategic Comms / Lobbying |
@@ -71,7 +71,7 @@ That's over 300:1 return on paperwork.
 
 Politicians move when they see (a) voters demanding it and (b) political cover. Give them both:
 
-1. **Prove public demand**: Get 3.5% of the population [@3-5-rule] (280M people) to say "yes" with verified identity. Harvard researcher Erica Chenoweth found that every nonviolent campaign [@3-5-rule] with 3.5%+ participation succeeded. That's not activism. That's a mandate. 280 million verified humans is the kind of number that makes politicians suddenly remember they work for you.
+1. **Prove public demand**: Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. Harvard researcher Erica Chenoweth found that every nonviolent campaign [@3-5-rule] with {{< var global_population_activism_threshold_pct >}}+ participation succeeded. That's not activism. That's a mandate. {{< var treaty_campaign_voting_bloc_target_nounit >}} verified humans is the kind of number that makes politicians suddenly remember they work for you.
 2. **Prove it's safe**: Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness. Give them studies to wave around.
 
 ![Get 3.5 percent of people to care, show politicians the math won't break anything, and suddenly they have to listen. Democracy has an override button.](/assets/images/treaty-feasibility/treaty-feasibility-section-how-to-make-governments-sign-things-bw-academic.jpg)
@@ -80,11 +80,11 @@ Politicians move when they see (a) voters demanding it and (b) political cover. 
 
 With ~$60M in seed funding, you can reach "Treaty-Ready" status in **2-3 years**:
 
-- **Platform:** 280M verified supporters (3.5% threshold)
+- **Platform:** {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters ({{< var global_population_activism_threshold_pct >}} threshold)
 - **Modeling:** Country-by-country impact analysis
 - **Coalition:** 120+ supportive NGOs and 5-10 champion governments
 
-Once these assets exist, formal negotiations become inevitable. Not because politicians want them. Because ignoring 280 million people is the kind of career decision that leads to "spending more time with family."
+Once these assets exist, formal negotiations become inevitable. Not because politicians want them. Because ignoring {{< var treaty_campaign_voting_bloc_target_nounit >}} people is the kind of career decision that leads to "spending more time with family."
 
 ![Two to three years to build the website, run the numbers, and assemble the coalition before you can ask countries to sign. Diplomacy is slow.](/assets/images/treaty-feasibility/treaty-feasibility-section-timeline-to-governments-can-t-ignore-this-bw-academic.jpg)
 

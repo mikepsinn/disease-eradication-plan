@@ -40,7 +40,7 @@ You give them:
 
 **Your offer** (lobbying for treaty):
 
-- Pay: $5-20M in bonds
+- Pay: {{< var family_office_investment_min >}}-{{< var lobbyist_bond_investment_max >}} in bonds
 - Returns: {{< var victory_bond_annual_return_pct >}} annually (for as long as the treaty holds, which is forever unless humanity decides it prefers dying again)
 - Legacy: "Accidentally saved humanity while getting rich"
 

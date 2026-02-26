@@ -235,7 +235,7 @@ Result: Vote yes. The math changed.
 ![All the math a senator does before deciding how to vote. Turns out they can count when money's involved.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-what-actually-happens-bw-academic.jpg)
 
 1. **Pre-vote**: Smith's staff models the yes vote. Score jumps to 72. Reelection odds rise 7 points.
-2. **Lobbying meeting**: Military lobby threatens. But three major contractors already support the treaty (272% returns beat 8%). Threat is empty.
+2. **Lobbying meeting**: Military lobby threatens. But three major contractors already support the treaty ({{< var victory_bond_annual_return_pct >}} returns beat 8%). Threat is empty.
 3. **Campaign finance**: Health advocacy Super PACs have committed $50M nationally. At score 72, she gets $2M. A no vote sends that $2M to her opponent.
 4. **Constituent mail**: 70% of Texans voted yes in the referendum. Voting against that means explaining why you think they're wrong about not wanting to die.
 5. **The vote**: Smith votes yes. So do 50 others. The bill passes the Senate.
@@ -272,7 +272,7 @@ Your 1% treaty is the proof of concept. The endgame is redirecting *most* of mil
 
 The {{< var iab_political_incentive_funding_pct >}} allocation creates a **political ratchet** that only moves one direction:
 
-| Treaty Level | Bondholder Payouts (10%) | Political Incentives (10%) | Research Funding (80%) | Effect |
+| Treaty Level | Bondholder Payouts ({{< var victory_bond_funding_pct >}}) | Political Incentives ({{< var iab_political_incentive_funding_pct >}}) | Research Funding ({{< var dih_treasury_medical_research_pct >}}) | Effect |
 |:-------------|:-------------------------|:---------------------------|:-----------------------|:-------|
 | 1% | {{< var victory_bond_annual_payout >}}/year | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year | Politicians rewarded for passage |
 | 5% | $13.6B/year | $13.6B/year | $108.8B/year | Defense industry pivots to health |
@@ -387,7 +387,7 @@ Two categories of risk (both involving trusting humans, which is historically un
 |------------|---------------|------------|------|------|
 | **VICTORY Incentive Alignment Bonds** | **{{< var victory_bond_annual_return_pct >}}** | **High** | **Forever** | **Requires politicians to act rationally** |
 | Savings Account | 0.5% | None | Whenever | Loses to inflation |
-| S&P 500 | 10% | Moderate | Whenever | Boring, responsible |
+| S&P 500 | {{< var average_market_return_pct >}} | Moderate | Whenever | Boring, responsible |
 | Real Estate | 8% | Moderate | 30 years | Requires being a landlord |
 | Venture Capital | 15-25% | Extreme | 7-10 years | Requires picking winners |
 | Hedge Funds | 8-15% | High | Lock-ups | Requires being rich already |

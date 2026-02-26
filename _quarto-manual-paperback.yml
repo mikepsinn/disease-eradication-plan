@@ -17,7 +17,8 @@ dih-render:
 # Podcast-specific overrides (used by generate_audiobook.py RSS generation)
 dih-podcast:
   author: "WISHONIA"
-  description: >-
+  podcast-description: |
+    Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery.
     Your choice to listen is the highest-value decision any human has ever made.
     You are about to prevent 10.7 billion deaths, eliminate 1.93 quadrillion hours
     of human suffering, and prevent the apocalypse as a bonus.
@@ -50,7 +51,7 @@ book:
       affiliations:
         - name: "Institute for Accelerated Medicine"
           url: https://acceleratedmedicine.org
-  description: "Get 443 Years of Clinical Research Done in 39, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery"
+  description: 'Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery'
   site-url: https://manual.WarOnDisease.org
   chapters:
     - text: "How to End War and Disease (for Busy People)"

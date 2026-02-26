@@ -57,7 +57,7 @@ Raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generate
 
 **Detailed Breakdown:** [Campaign Budget](campaign-budget.qmd)
 
-The one-time "activation energy" to convince 8 billion people to marginally reduce their commitment to mutual annihilation. Think of it as a Kickstarter for not going extinct:
+The one-time "activation energy" to convince {{< var global_population_2024_nounit >}} people to marginally reduce their commitment to mutual annihilation. Think of it as a Kickstarter for not going extinct:
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
@@ -82,7 +82,7 @@ Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from "h
 
 ![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
 
-100+ nations contribute 1% of military budgets. Not because they've had a moral awakening. Because the math makes non-compliance look like setting money on fire, which, to be fair, is also what military budgets do, just with more steps.
+100+ nations contribute {{< var treaty_reduction_pct >}} of military budgets. Not because they've had a moral awakening. Because the math makes non-compliance look like setting money on fire, which, to be fair, is also what military budgets do, just with more steps.
 
 The [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing: politicians in non-compliant countries watch their Public Good Scores drop, voters abandon them for someone who can do basic arithmetic, and compliance becomes the career-optimal choice. You don't need politicians to be good. You just need them to be selfish in the right direction.
 

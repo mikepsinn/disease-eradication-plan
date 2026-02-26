@@ -4764,12 +4764,22 @@
             "What Would Actually Work"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/problem/untapped-therapeutic-frontier.qmd",
           "url": "https://manual.WarOnDisease.org/problem/untapped-therapeutic-frontier.html",
-          "title": "Untapped Therapeutic Frontier",
+          "title": "The Untapped Therapeutic Frontier",
+          "description": "There are 9.5 million possible drug-disease combinations. You've tested 32,500. That's like searching for your keys in 0.34% of your house and declaring them lost. The other 99.7% is sitting right there, untested, because paperwork.",
+          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/problem/untapped-therapeutic-frontier-og-retro-academic.jpg",
+          "tags": [
+            "problem",
+            "drug-discovery",
+            "chemical-space",
+            "clinical-trials",
+            "repurposing",
+            "opportunity"
+          ],
           "sections": [
             "Your Tiny Sandbox",
             "The Target List (Ways Your Body Breaks)",
@@ -4788,7 +4798,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
@@ -4827,13 +4837,13 @@
             "Technical Analysis"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/problem/unrepresentative-democracy.qmd",
           "url": "https://manual.WarOnDisease.org/problem/unrepresentative-democracy.html",
           "title": "Unrepresentative Democracy",
-          "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get a 22,000% return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
+          "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/problem/unrepresentative-democracy-og-retro-academic.jpg",
           "tags": [
             "democracy",
@@ -4858,7 +4868,7 @@
             "The Solution They Don't Want"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/central-banks.qmd",
@@ -4877,7 +4887,8 @@
             "The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars",
             "Revolutionary France (1790s)",
             "Weimar Germany (1920s)",
-            "1972: When Nixon Weaponized Money Against You",
+            "United States (1917-present)",
+            "1971: When Nixon Weaponized Money Against You",
             "Why He Really Did It",
             "The Cantillon Effect: Why You're Poor and Raytheon Isn't",
             "Why \"Just Fund Medical Research More\" Is a Lie",
@@ -4887,7 +4898,7 @@
             "Why Money Printing Matters: Resources Follow the Printer"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/problem/genetic-slavery.qmd",
@@ -4910,17 +4921,18 @@
             "The Violence Module (Or: Why You Tend to Prefer Bombs Over Band-Aids)",
             "The Tribal Brain (Or: Why Democracy Was Always Going to Be a Mess)",
             "Part 2: Genetic Slavery is Literally Killing Us",
+            "Problems you solved",
             "Part 3: Why You Can't Just \"Be Better\"",
             "Part 4: Breaking the Chains"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/1-percent-treaty.qmd",
           "url": "https://manual.WarOnDisease.org/solution/1-percent-treaty.html",
           "title": "A 1% Treaty",
-          "description": "You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.8 times and use the savings on medicine. Controversial, apparently.",
+          "description": "You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.87 times and use the savings on medicine. Controversial, apparently.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg",
           "tags": [
             "solution",
@@ -4959,7 +4971,7 @@
             "Addendum: The Actual Treaty Text (First Draft)"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/dih.qmd",
@@ -5003,13 +5015,13 @@
             "Summary: Your Coordination Layer"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/wishocracy.qmd",
           "url": "https://manual.WarOnDisease.org/solution/wishocracy.html",
           "title": "Wishocracy",
-          "description": "How to spend $27 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.",
+          "description": "How to spend $27.2 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/wishocracy-og-retro-academic.jpg",
           "tags": [
             "solution",
@@ -5030,13 +5042,13 @@
             "From Priorities to Projects (Where Wishes Become Tasks)"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/dfda.qmd",
           "url": "https://manual.WarOnDisease.org/solution/dfda.html",
           "title": "A Decentralized Framework for Drug Assessment",
-          "description": "It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs 80x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.",
+          "description": "It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs over 40x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg",
           "tags": [
             "overview",
@@ -5079,13 +5091,13 @@
             "How Your Decentralized FDA Actually Works"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/aligning-incentives.qmd",
           "url": "https://manual.WarOnDisease.org/solution/aligning-incentives.html",
           "title": "Aligning Incentives",
-          "description": "Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,813 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.",
+          "description": "Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,425 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/aligning-incentives-og-retro-academic.jpg",
           "sections": [
             "Defense Contractors: Teaching Merchants of Death to Love Life",
@@ -5118,13 +5130,13 @@
             "Why This Scales: The Ratchet Effect"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/incentive-alignment-bonds.qmd",
           "url": "https://manual.WarOnDisease.org/solution/incentive-alignment-bonds.html",
           "title": "Incentive Alignment Bonds",
-          "description": "War bonds, but backwards. Your grandparents funded WW2 at 4% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.",
+          "description": "War bonds, but backwards. Your grandparents funded WW2 at roughly 3% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/incentive-alignment-bonds-og-retro-academic.jpg",
           "tags": [
             "financial-instruments",
@@ -5153,7 +5165,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/proof/body-as-repairable-machine.qmd",
@@ -5189,7 +5201,7 @@
             "The Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/futures/moronia.qmd",
@@ -5223,13 +5235,13 @@
             "My Warning to You"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/futures/wishonia.qmd",
           "url": "https://manual.WarOnDisease.org/futures/wishonia.html",
           "title": "Wishonia",
-          "description": "On one planet, citizens allocate the budget directly, lobbyists don't exist, and disease was eradicated 2,000 years ago. It uses the same technology you have. The difference is they pointed it at biology instead of each other.",
+          "description": "On one planet, citizens allocate the budget directly, lobbyists don't exist, and disease was eradicated 4,000 years ago. It uses the same technology you have. The difference is they pointed it at biology instead of each other.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/futures/wishonia-og-retro-academic.jpg",
           "tags": [
             "utopia",
@@ -5258,7 +5270,7 @@
             "Your Two Paths"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/appendix/faq.qmd",
@@ -5283,7 +5295,7 @@
             "\"All Wars on X Have Failed\"",
             "\"This Sounds Like Bribery\"",
             "\"It's Unenforceable\"",
-            "\"You Can't Verify 280M People\"",
+            "\"You Can't Verify 280 million People\"",
             "\"Why Not Just Use Philanthropy?\"",
             "\"How Do You Prevent Waste?\"",
             "\"Why Not Just Increase Health Funding?\"",
@@ -5291,7 +5303,7 @@
             "\"This Violates Election Law\""
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/strategy/roadmap.qmd",
@@ -5333,13 +5345,13 @@
             "The Endgame"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/strategy/global-referendum.qmd",
           "url": "https://manual.WarOnDisease.org/strategy/global-referendum.html",
           "title": "Global Referendum Strategy",
-          "description": "Humanity downloaded TikTok 2 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.",
+          "description": "Humanity downloaded TikTok over 4 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/global-referendum-og-retro-academic.jpg",
           "tags": [
             "referendum",
@@ -5364,7 +5376,7 @@
             "On Why 3.5% Is The Magic Number"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/appendix/treaty-feasibility.qmd",
@@ -5399,7 +5411,7 @@
             "Long-Term Feasibility"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/peace-dividend.qmd",
@@ -5428,7 +5440,7 @@
             "The Safe Bet"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/health-dividend.qmd",
@@ -5452,13 +5464,13 @@
             "ROI Scenarios"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/financial-plan.qmd",
           "url": "https://manual.WarOnDisease.org/economics/financial-plan.html",
           "title": "Financial Plan",
-          "description": "Invest $1B. Pass a treaty. Manage $27B/year forever. 80% cures diseases, 10% pays investors, 10% keeps politicians obedient. Three pillars, no committees, no generosity required.",
+          "description": "Invest $1B. Pass a treaty. Manage $27.2B/year forever. 80% cures diseases, 10% pays investors, 10% keeps politicians obedient. Three pillars, no committees, no generosity required.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/economics/financial-plan-og-retro-academic.jpg",
           "tags": [
             "finance",
@@ -5476,13 +5488,13 @@
             "Related Documents"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
           "url": "https://manual.WarOnDisease.org/strategy/nonprofit-coalition-strategy.html",
           "title": "Why Every Nonprofit Should Support a 1% treaty",
-          "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.",
+          "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/nonprofit-coalition-strategy-og-retro-academic.jpg",
           "tags": [
             "strategy",
@@ -5515,7 +5527,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/legal/legal-framework.qmd",
@@ -5550,7 +5562,7 @@
             "The Strategy"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
@@ -5575,7 +5587,7 @@
             "Getting Started"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/references.qmd",
@@ -5811,12 +5823,22 @@
             "What Would Actually Work"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/problem/untapped-therapeutic-frontier.qmd",
           "url": "https://manual.WarOnDisease.org/problem/untapped-therapeutic-frontier.html",
-          "title": "Untapped Therapeutic Frontier",
+          "title": "The Untapped Therapeutic Frontier",
+          "description": "There are 9.5 million possible drug-disease combinations. You've tested 32,500. That's like searching for your keys in 0.34% of your house and declaring them lost. The other 99.7% is sitting right there, untested, because paperwork.",
+          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/problem/untapped-therapeutic-frontier-og-retro-academic.jpg",
+          "tags": [
+            "problem",
+            "drug-discovery",
+            "chemical-space",
+            "clinical-trials",
+            "repurposing",
+            "opportunity"
+          ],
           "sections": [
             "Your Tiny Sandbox",
             "The Target List (Ways Your Body Breaks)",
@@ -5835,7 +5857,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
@@ -5874,13 +5896,13 @@
             "Technical Analysis"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/problem/unrepresentative-democracy.qmd",
           "url": "https://manual.WarOnDisease.org/problem/unrepresentative-democracy.html",
           "title": "Unrepresentative Democracy",
-          "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get a 22,000% return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
+          "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/problem/unrepresentative-democracy-og-retro-academic.jpg",
           "tags": [
             "democracy",
@@ -5905,7 +5927,7 @@
             "The Solution They Don't Want"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/central-banks.qmd",
@@ -5924,7 +5946,8 @@
             "The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars",
             "Revolutionary France (1790s)",
             "Weimar Germany (1920s)",
-            "1972: When Nixon Weaponized Money Against You",
+            "United States (1917-present)",
+            "1971: When Nixon Weaponized Money Against You",
             "Why He Really Did It",
             "The Cantillon Effect: Why You're Poor and Raytheon Isn't",
             "Why \"Just Fund Medical Research More\" Is a Lie",
@@ -5934,7 +5957,7 @@
             "Why Money Printing Matters: Resources Follow the Printer"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/problem/genetic-slavery.qmd",
@@ -5957,11 +5980,12 @@
             "The Violence Module (Or: Why You Tend to Prefer Bombs Over Band-Aids)",
             "The Tribal Brain (Or: Why Democracy Was Always Going to Be a Mess)",
             "Part 2: Genetic Slavery is Literally Killing Us",
+            "Problems you solved",
             "Part 3: Why You Can't Just \"Be Better\"",
             "Part 4: Breaking the Chains"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution.qmd",
@@ -5997,7 +6021,7 @@
           "path": "knowledge/solution/1-percent-treaty.qmd",
           "url": "https://manual.WarOnDisease.org/solution/1-percent-treaty.html",
           "title": "A 1% Treaty",
-          "description": "You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.8 times and use the savings on medicine. Controversial, apparently.",
+          "description": "You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.87 times and use the savings on medicine. Controversial, apparently.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg",
           "tags": [
             "solution",
@@ -6036,7 +6060,7 @@
             "Addendum: The Actual Treaty Text (First Draft)"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/dih.qmd",
@@ -6080,13 +6104,13 @@
             "Summary: Your Coordination Layer"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/wishocracy.qmd",
           "url": "https://manual.WarOnDisease.org/solution/wishocracy.html",
           "title": "Wishocracy",
-          "description": "How to spend $27 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.",
+          "description": "How to spend $27.2 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/wishocracy-og-retro-academic.jpg",
           "tags": [
             "solution",
@@ -6107,13 +6131,13 @@
             "From Priorities to Projects (Where Wishes Become Tasks)"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/dfda.qmd",
           "url": "https://manual.WarOnDisease.org/solution/dfda.html",
           "title": "A Decentralized Framework for Drug Assessment",
-          "description": "It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs 80x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.",
+          "description": "It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs over 40x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg",
           "tags": [
             "overview",
@@ -6156,13 +6180,13 @@
             "How Your Decentralized FDA Actually Works"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/aligning-incentives.qmd",
           "url": "https://manual.WarOnDisease.org/solution/aligning-incentives.html",
           "title": "Aligning Incentives",
-          "description": "Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,813 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.",
+          "description": "Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,425 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/aligning-incentives-og-retro-academic.jpg",
           "sections": [
             "Defense Contractors: Teaching Merchants of Death to Love Life",
@@ -6195,13 +6219,13 @@
             "Why This Scales: The Ratchet Effect"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/incentive-alignment-bonds.qmd",
           "url": "https://manual.WarOnDisease.org/solution/incentive-alignment-bonds.html",
           "title": "Incentive Alignment Bonds",
-          "description": "War bonds, but backwards. Your grandparents funded WW2 at 4% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.",
+          "description": "War bonds, but backwards. Your grandparents funded WW2 at roughly 3% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/incentive-alignment-bonds-og-retro-academic.jpg",
           "tags": [
             "financial-instruments",
@@ -6230,7 +6254,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/appendix/open-ecosystem-and-bounty-model.qmd",
@@ -6333,7 +6357,7 @@
             "The Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/futures.qmd",
@@ -6390,13 +6414,13 @@
             "My Warning to You"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/futures/wishonia.qmd",
           "url": "https://manual.WarOnDisease.org/futures/wishonia.html",
           "title": "Wishonia",
-          "description": "On one planet, citizens allocate the budget directly, lobbyists don't exist, and disease was eradicated 2,000 years ago. It uses the same technology you have. The difference is they pointed it at biology instead of each other.",
+          "description": "On one planet, citizens allocate the budget directly, lobbyists don't exist, and disease was eradicated 4,000 years ago. It uses the same technology you have. The difference is they pointed it at biology instead of each other.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/futures/wishonia-og-retro-academic.jpg",
           "tags": [
             "utopia",
@@ -6425,7 +6449,7 @@
             "Your Two Paths"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/appendix/faq.qmd",
@@ -6450,7 +6474,7 @@
             "\"All Wars on X Have Failed\"",
             "\"This Sounds Like Bribery\"",
             "\"It's Unenforceable\"",
-            "\"You Can't Verify 280M People\"",
+            "\"You Can't Verify 280 million People\"",
             "\"Why Not Just Use Philanthropy?\"",
             "\"How Do You Prevent Waste?\"",
             "\"Why Not Just Increase Health Funding?\"",
@@ -6458,7 +6482,7 @@
             "\"This Violates Election Law\""
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/strategy/roadmap.qmd",
@@ -6500,13 +6524,13 @@
             "The Endgame"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
           "url": "https://manual.WarOnDisease.org/strategy/nonprofit-coalition-strategy.html",
           "title": "Why Every Nonprofit Should Support a 1% treaty",
-          "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.",
+          "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/nonprofit-coalition-strategy-og-retro-academic.jpg",
           "tags": [
             "strategy",
@@ -6539,7 +6563,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/legal/legal-framework.qmd",
@@ -6574,7 +6598,7 @@
             "The Strategy"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/legal/election-law.qmd",
@@ -6661,7 +6685,7 @@
           "path": "knowledge/strategy/global-referendum.qmd",
           "url": "https://manual.WarOnDisease.org/strategy/global-referendum.html",
           "title": "Global Referendum Strategy",
-          "description": "Humanity downloaded TikTok 2 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.",
+          "description": "Humanity downloaded TikTok over 4 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/global-referendum-og-retro-academic.jpg",
           "tags": [
             "referendum",
@@ -6686,7 +6710,7 @@
             "On Why 3.5% Is The Magic Number"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/solution/ai-coordination-army.qmd",
@@ -6750,7 +6774,7 @@
             "Long-Term Feasibility"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
@@ -6775,7 +6799,7 @@
             "Getting Started"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/peace-dividend.qmd",
@@ -6804,7 +6828,7 @@
             "The Safe Bet"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/health-dividend.qmd",
@@ -6828,13 +6852,13 @@
             "ROI Scenarios"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/financial-plan.qmd",
           "url": "https://manual.WarOnDisease.org/economics/financial-plan.html",
           "title": "Financial Plan",
-          "description": "Invest $1B. Pass a treaty. Manage $27B/year forever. 80% cures diseases, 10% pays investors, 10% keeps politicians obedient. Three pillars, no committees, no generosity required.",
+          "description": "Invest $1B. Pass a treaty. Manage $27.2B/year forever. 80% cures diseases, 10% pays investors, 10% keeps politicians obedient. Three pillars, no committees, no generosity required.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/economics/financial-plan-og-retro-academic.jpg",
           "tags": [
             "finance",
@@ -6852,7 +6876,7 @@
             "Related Documents"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-02-26"
         },
         {
           "path": "knowledge/economics/campaign-budget.qmd",
