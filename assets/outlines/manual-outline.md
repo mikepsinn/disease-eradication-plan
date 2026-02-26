@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 101,077 | **Images:** 535 | **Est. Pages:** ~672
+**Files:** 44 | **Words:** 101,105 | **Images:** 534 | **Est. Pages:** ~671
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 5,471 words | 471 lines | 12 images | ~28p
+**Stats:** 5,498 words | 472 lines | 11 images | ~27p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Beautiful Inefficiency of the Human Economy
@@ -15,7 +15,7 @@
     - What to Do When They Try to Institutionalize You
     - The Sacred Order of Paper Distribution
     - Why Your Leaders Aren't the Problem
-    - Humanity's Adorable Death Wish
+    - Humanity's Death Wish
   - The Problem
     - The Daily Deletion Event
     - The Unexplored Therapeutic Frontier
@@ -25,7 +25,6 @@
     - The FDA is Unsafe and Ineffective
   - The Solution
     - [A 1% Treaty](/knowledge/solution/1-percent-treaty.qmd)
-    ![Still enough left to murder everyone 20 times](/assets/images/index-manual/index-manual-section-a-1-treaty-bw-academic.jpg)
     - Your [Decentralized FDA](/knowledge/solution/dfda.qmd)
       - Real-Time Safety Monitoring
       - Treatment Rankings
@@ -377,7 +376,7 @@
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
 **Description:** You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.87 times and use the savings on medicine. Controversial, apparently.
-**Stats:** 2,976 words | 345 lines | 16 images | ~20p
+**Stats:** 2,975 words | 345 lines | 16 images | ~20p
 
   - The Math
     - How It Works
@@ -483,7 +482,7 @@
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
 **Description:** It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs over 40x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.
-**Stats:** 4,117 words | 478 lines | 21 images | ~27p
+**Stats:** 4,119 words | 478 lines | 21 images | ~27p
 
   - The Solution: Consumer Reports for Drugs
     ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
