@@ -145,7 +145,7 @@ There's literally no voting your way out of this. It doesn't matter which politi
 
 This book doesn't ask politicians to become better people (that's clearly out of the question). It builds a better loop. You give them MORE papers to do the OPPOSITE thing. Same dog, same tail, but now the tail is made of cured diseases and the dog gets reelected for chasing it.
 
-### Humanity's Adorable Death Wish
+### Humanity's Death Wish
 
 What's most endearing about your species is it KNOWS it's being illogical:
 
@@ -236,10 +236,12 @@ And you have two other advantages, the internet and a new financial instrument d
 
 ### Your [Decentralized FDA](/knowledge/solution/dfda.qmd)
 
-So what happens with that 1% of military spending? {{< var dih_treasury_medical_research_pct >}} of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year.
+On Wishonia, we solved this 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on cures while people die. You'd call our system a Decentralized FDA. Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
+
+{{< var dih_treasury_medical_research_pct >}} of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year.
 
 Pragmatic trials integrate into the standard healthcare system. Real patients participate instead of 200 people hand-picked by pharmaceutical companies. The whole thing uses your new [decentralized FDA](/knowledge/solution/dfda.qmd) protocol that reduces trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funds {{< var dih_patients_fundable_annually >}} (versus the current {{< var current_trial_slots_available >}}).
-Remember that billion patients drowning in line for two life jackets? Your dFDA hands out {{< var dih_patients_fundable_annually_nounit >}}.
+Remember that billion patients drowning in line for two life jackets? Your decentralized FDA hands out {{< var dih_patients_fundable_annually_nounit >}}.
 
 This increases the treatment discovery rate {{< var dfda_trial_capacity_multiplier >}}, compressing that ~{{< var status_quo_queue_clearance_years >}} wait to ~{{< var dfda_queue_clearance_years >}}. Two things save lives. First, finding cures faster: treatments that would have sat undiscovered for centuries get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay between proving a drug is safe and letting dying humans take it. Combined, treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift prevents {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
 
@@ -251,7 +253,7 @@ Remember Vioxx and the smoke detector that works by mail? Your new system collec
 
 Currently, your doctor picks treatments based on: that drug rep who brought good donuts in 2003, something they half-remember from medical school, whatever the insurance company allows, and vibes. This is called "evidence-based medicine," which contains the word "evidence" the same way "grape soda" contains the word "grape."
 
-Your [dFDA](/knowledge/solution/dfda.qmd) ranks every treatment by what actually happened to real humans who took it:
+Your [decentralized FDA](/knowledge/solution/dfda.qmd) ranks every treatment by what actually happened to real humans who took it:
 
 ![Which pills work better than other pills, in list form. Like a leaderboard for not dying.](/assets/images/dfda-comparative-effectiveness-ranking-search.png)
 
@@ -303,9 +305,9 @@ Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_la
 
 On Wishonia, people do useful things because they're useful. On Earth, you need a financial instrument. So here's one.
 
-An Incentive Alignment Bond (IAB) funds a policy campaign, then splits the resulting government savings three ways: {{< var dih_treasury_medical_research_pct >}} to the public good, {{< var victory_bond_funding_pct >}} to investors as returns, and {{< var iab_political_incentive_funding_pct >}} to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors get rich, politicians get reelected, and {{< var dih_treasury_medical_research_pct >}} of the money goes where it's supposed to. Everyone's greed points at the same target. It's a war bond to fund any public good that's currently politically impossible.
+An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: {{< var dih_treasury_medical_research_pct >}} to the public good, {{< var victory_bond_funding_pct >}} to investors as returns, and {{< var iab_political_incentive_funding_pct >}} to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors get rich, politicians get reelected, and {{< var dih_treasury_medical_research_pct >}} of the money goes where it's supposed to. Everyone's greed points at the same target. It's a war bond to fund any public good that's currently politically impossible.
 
-For your 1% Treaty, these are called VICTORY Incentive Alignment Bonds. Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing except:
+Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing.
 
 #### What Grandma Got
 
