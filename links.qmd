@@ -1,0 +1,135 @@
+---
+title: "Get the Book"
+description: "Read, buy, or listen to 'How to End War and Disease' - available free online, in print, ebook, and audiobook."
+published: true
+page-layout: full
+toc: false
+---
+
+```{=html}
+<style>
+.links-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.links-page h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+.links-page .hero-img {
+  max-width: 280px;
+  margin: 0 auto 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.links-page .tagline {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+.link-btn {
+  display: block;
+  padding: 1rem 1.5rem;
+  margin: 0.6rem 0;
+  border-radius: 8px;
+  text-decoration: none !important;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 2px solid #222;
+  color: #222 !important;
+  background: #fff;
+}
+.link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.link-btn .btn-sub {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #777;
+  margin-top: 0.15rem;
+}
+/* Accent styles for primary actions */
+.link-btn.primary {
+  background: #222;
+  color: #fff !important;
+  border-color: #222;
+}
+.link-btn.primary .btn-sub {
+  color: #bbb;
+}
+.link-btn.primary:hover {
+  background: #333;
+}
+</style>
+
+<div class="links-page">
+
+<img src="/assets/cover/book-cover-3.jpg" alt="How to End War and Disease - Book Cover" class="hero-img">
+
+<div class="tagline">
+  The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
+</div>
+
+<h2>Read Free</h2>
+
+<a href="https://manual.WarOnDisease.org" class="link-btn primary">
+  Read Online
+  <span class="btn-sub">Full book, free, no account needed</span>
+</a>
+
+<a href="/How-to-End-War-and-Disease.pdf" class="link-btn">
+  Download PDF
+</a>
+
+<a href="/How-to-End-War-and-Disease.epub" class="link-btn">
+  Download EPUB
+</a>
+
+<h2>Buy</h2>
+
+<a href="https://books2read.com/u/baegEq" class="link-btn primary">
+  All Retailers
+  <span class="btn-sub">Apple Books, Barnes & Noble, Kobo, and more</span>
+</a>
+
+<a href="https://www.amazon.com/dp/B0GPLXFMMT" class="link-btn">
+  Amazon Paperback
+</a>
+
+<a href="https://www.amazon.com/dp/B0GPBH77XN" class="link-btn">
+  Amazon Kindle
+</a>
+
+<h2>Listen</h2>
+
+<a href="https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2" class="link-btn primary">
+  Spotify
+  <span class="btn-sub">Full audiobook podcast</span>
+</a>
+
+<a href="https://static.warondisease.org/assets/audiobook/manual-paperback/feed.xml" class="link-btn">
+  Podcast RSS Feed
+  <span class="btn-sub">Add to any podcast app</span>
+</a>
+
+<h2>Take Action</h2>
+
+<a href="https://WarOnDisease.org" class="link-btn primary">
+  Vote
+  <span class="btn-sub">15 seconds. 38 lives saved.</span>
+</a>
+
+</div>
+```

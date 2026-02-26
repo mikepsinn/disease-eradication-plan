@@ -57,6 +57,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from build_logger import BuildLogger  # type: ignore[import-not-found]
+from local_webtex import start_server as start_webtex, stop_server as stop_webtex  # type: ignore[import-not-found]
 from python_utils import load_project_dotenv  # type: ignore[import-not-found]
 from render_utils import (  # type: ignore[import-not-found]
     BuildMonitor,
@@ -1272,6 +1273,7 @@ def render_quarto(
     monitor = None
     quarto_exit_code = 0  # Track original Quarto exit code
     html_can_deploy = False  # Track if HTML deployment should proceed despite PDF failure
+    webtex_running = False  # Track if local webtex server needs shutdown
 
     try:
         # Start capturing ALL stdout/stderr to log file
@@ -1325,6 +1327,22 @@ def render_quarto(
                 text = re.sub(r'\{\{< include \.\./figures/.*?\.qmd >\}\}\n?', '', text)
                 params_qmd.write_text(text, encoding="utf-8", newline='\n')
                 print(f"[*] Stripped chart includes from parameters page ({format_override.upper()})")
+
+        # Start local webtex caching server for EPUB builds.
+        # Proxies codecogs with local disk cache so builds survive outages.
+        rendering_epub = format_override in (None, "epub")
+        if rendering_epub:
+            webtex_cache = project_root / "_build_temp" / ".webtex-cache"
+            webtex_port = start_webtex(cache_dir=webtex_cache)
+            webtex_running = True
+            # Patch _quarto.yml in temp dir to use local server instead of codecogs
+            quarto_yml = build_temp / "_quarto.yml"
+            yml_text = quarto_yml.read_text(encoding="utf-8")
+            yml_text = yml_text.replace(
+                'url: "https://latex.codecogs.com/svg.latex?"',
+                f'url: "http://127.0.0.1:{webtex_port}/svg.latex?"',
+            )
+            quarto_yml.write_text(yml_text, encoding="utf-8", newline='\n')
 
         gh_group_end()
 
@@ -1671,6 +1689,10 @@ def render_quarto(
         exit_code = 1
     finally:
         os.chdir(original_cwd)
+
+        # Stop local webtex server if it was started
+        if webtex_running:
+            stop_webtex()
 
         # Note: Temp directory (_build_temp/) is NOT cleaned up automatically
         # - In CI: GitHub Actions runner is destroyed after job completes

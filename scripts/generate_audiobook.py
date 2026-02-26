@@ -459,11 +459,10 @@ def combine_chapter_audio(
         "ffmpeg", "-y",
         "-f", "concat", "-safe", "0", "-i", str(concat_file),
         "-codec:a", "libmp3lame", "-b:a", "192k",
-        "-movflags", "+faststart",
         str(mp3_path),
     ], capture_output=True, text=True)
     if result.returncode != 0:
-        raise RuntimeError(f"ffmpeg MP3 export failed:\n{result.stderr[:500]}")
+        raise RuntimeError(f"ffmpeg MP3 export failed:\n{result.stderr[-1000:]}")
     mp3_size = mp3_path.stat().st_size / 1024 / 1024
     print(f"  [OK] MP3: {mp3_path.name} ({mp3_size:.1f} MB)")
 
@@ -1165,19 +1164,19 @@ def generate_podcast_rss(
             else:
                 ch_pub_dates[ch['index']] = fallback_date
 
-    # Ensure dates are monotonically DECREASING in chapter order so podcast
-    # apps (which sort by pubDate descending = newest first) show chapter 1
-    # at the top.  Chapter 1 gets the latest date, last chapter gets the earliest.
-    # If a chapter's git date is >= the previous chapter's, push it back.
+    # Ensure dates are monotonically INCREASING in chapter order so that
+    # serial podcast apps (Spotify, Apple) show episode 1 first naturally.
+    # The <itunes:type>serial</itunes:type> + <itunes:episode> numbers
+    # control reading order; ascending pubDates reinforce that ordering.
     sorted_indices = sorted(ch_pub_dates.keys())
     for i in range(1, len(sorted_indices)):
         prev_idx = sorted_indices[i - 1]
         curr_idx = sorted_indices[i]
-        if ch_pub_dates[curr_idx] >= ch_pub_dates[prev_idx]:
-            ch_pub_dates[curr_idx] = ch_pub_dates[prev_idx] - timedelta(minutes=1)
+        if ch_pub_dates[curr_idx] <= ch_pub_dates[prev_idx]:
+            ch_pub_dates[curr_idx] = ch_pub_dates[prev_idx] + timedelta(minutes=1)
 
-    # Channel pubDate = chapter 1's date (the latest after monotonic fix)
-    latest_date = ch_pub_dates[sorted_indices[0]] if sorted_indices else fallback_date
+    # Channel pubDate = last chapter's date (the latest after monotonic fix)
+    latest_date = ch_pub_dates[sorted_indices[-1]] if sorted_indices else fallback_date
 
     # Build MP3 lookup by slug for matching with timestamps
     mp3_by_slug = {mp3.stem: mp3 for mp3 in chapter_mp3s}

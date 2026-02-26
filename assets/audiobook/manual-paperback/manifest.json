@@ -6,7 +6,7 @@
       "part": null,
       "path": "index-manual.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\index-manual.prepared.txt",
-      "chars": 33763,
+      "chars": 33693,
       "status": "cached",
       "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\index-manual.alignment.json",
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\index-manual.vtt",
@@ -119,7 +119,7 @@
       "path": "knowledge/solution/1-percent-treaty.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\1-percent-treaty.prepared.txt",
       "status": "cached",
-      "chars": 17178,
+      "chars": 17018,
       "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\1-percent-treaty.alignment.json",
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\1-percent-treaty.vtt",
       "duration_ms": 1140745,
@@ -167,13 +167,13 @@
       "path": "knowledge/solution/dfda.qmd",
       "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\dfda.prepared.txt",
       "status": "cached",
-      "chars": 23707,
+      "chars": 23560,
       "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\dfda.alignment.json",
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\dfda.vtt",
-      "duration_ms": 1632847,
-      "duration_formatted": "27:12",
+      "duration_ms": 1618167,
+      "duration_formatted": "26:58",
       "audio_start_ms": 9996246,
-      "audio_end_ms": 11629093,
+      "audio_end_ms": 11614413,
       "audio_file": "dfda.wav"
     },
     {
@@ -188,8 +188,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\aligning-incentives.vtt",
       "duration_ms": 1259436,
       "duration_formatted": "20:59",
-      "audio_start_ms": 11631093,
-      "audio_end_ms": 12890529,
+      "audio_start_ms": 11616413,
+      "audio_end_ms": 12875849,
       "audio_file": "aligning-incentives.wav"
     },
     {
@@ -204,8 +204,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\incentive-alignment-bonds.vtt",
       "duration_ms": 1932429,
       "duration_formatted": "32:12",
-      "audio_start_ms": 12892529,
-      "audio_end_ms": 14824958,
+      "audio_start_ms": 12877849,
+      "audio_end_ms": 14810278,
       "audio_file": "incentive-alignment-bonds.wav"
     },
     {
@@ -220,8 +220,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\body-as-repairable-machine.vtt",
       "duration_ms": 604632,
       "duration_formatted": "10:04",
-      "audio_start_ms": 14826958,
-      "audio_end_ms": 15431590,
+      "audio_start_ms": 14812278,
+      "audio_end_ms": 15416910,
       "audio_file": "body-as-repairable-machine.wav"
     },
     {
@@ -236,8 +236,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\moronia.vtt",
       "duration_ms": 1611127,
       "duration_formatted": "26:51",
-      "audio_start_ms": 15433590,
-      "audio_end_ms": 17044717,
+      "audio_start_ms": 15418910,
+      "audio_end_ms": 17030037,
       "audio_file": "moronia.wav"
     },
     {
@@ -252,8 +252,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\wishonia.vtt",
       "duration_ms": 1159105,
       "duration_formatted": "19:19",
-      "audio_start_ms": 17046717,
-      "audio_end_ms": 18205822,
+      "audio_start_ms": 17032037,
+      "audio_end_ms": 18191142,
       "audio_file": "wishonia.wav"
     },
     {
@@ -268,8 +268,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\faq.vtt",
       "duration_ms": 1263036,
       "duration_formatted": "21:03",
-      "audio_start_ms": 18207822,
-      "audio_end_ms": 19470858,
+      "audio_start_ms": 18193142,
+      "audio_end_ms": 19456178,
       "audio_file": "faq.wav"
     },
     {
@@ -284,8 +284,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\roadmap.vtt",
       "duration_ms": 1291356,
       "duration_formatted": "21:31",
-      "audio_start_ms": 19472858,
-      "audio_end_ms": 20764214,
+      "audio_start_ms": 19458178,
+      "audio_end_ms": 20749534,
       "audio_file": "roadmap.wav"
     },
     {
@@ -300,8 +300,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\global-referendum.vtt",
       "duration_ms": 304101,
       "duration_formatted": "5:04",
-      "audio_start_ms": 20766214,
-      "audio_end_ms": 21070315,
+      "audio_start_ms": 20751534,
+      "audio_end_ms": 21055635,
       "audio_file": "global-referendum.wav"
     },
     {
@@ -316,8 +316,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\treaty-feasibility.vtt",
       "duration_ms": 1077654,
       "duration_formatted": "17:57",
-      "audio_start_ms": 21072315,
-      "audio_end_ms": 22149969,
+      "audio_start_ms": 21057635,
+      "audio_end_ms": 22135289,
       "audio_file": "treaty-feasibility.wav"
     },
     {
@@ -332,8 +332,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\peace-dividend.vtt",
       "duration_ms": 606392,
       "duration_formatted": "10:06",
-      "audio_start_ms": 22151969,
-      "audio_end_ms": 22758361,
+      "audio_start_ms": 22137289,
+      "audio_end_ms": 22743681,
       "audio_file": "peace-dividend.wav"
     },
     {
@@ -348,8 +348,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\health-dividend.vtt",
       "duration_ms": 426301,
       "duration_formatted": "7:06",
-      "audio_start_ms": 22760361,
-      "audio_end_ms": 23186662,
+      "audio_start_ms": 22745681,
+      "audio_end_ms": 23171982,
       "audio_file": "health-dividend.wav"
     },
     {
@@ -364,8 +364,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\financial-plan.vtt",
       "duration_ms": 629672,
       "duration_formatted": "10:29",
-      "audio_start_ms": 23188662,
-      "audio_end_ms": 23818334,
+      "audio_start_ms": 23173982,
+      "audio_end_ms": 23803654,
       "audio_file": "financial-plan.wav"
     },
     {
@@ -380,8 +380,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\nonprofit-coalition-strategy.vtt",
       "duration_ms": 1165145,
       "duration_formatted": "19:25",
-      "audio_start_ms": 23820334,
-      "audio_end_ms": 24985479,
+      "audio_start_ms": 23805654,
+      "audio_end_ms": 24970799,
       "audio_file": "nonprofit-coalition-strategy.wav"
     },
     {
@@ -396,8 +396,8 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\legal-framework.vtt",
       "duration_ms": 679723,
       "duration_formatted": "11:19",
-      "audio_start_ms": 24987479,
-      "audio_end_ms": 25667202,
+      "audio_start_ms": 24972799,
+      "audio_end_ms": 25652522,
       "audio_file": "legal-framework.wav"
     },
     {
@@ -412,48 +412,48 @@
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\recruitment-and-propaganda-plan.vtt",
       "duration_ms": 320861,
       "duration_formatted": "5:20",
-      "audio_start_ms": 25669202,
-      "audio_end_ms": 25990063,
+      "audio_start_ms": 25654522,
+      "audio_end_ms": 25975383,
       "audio_file": "recruitment-and-propaganda-plan.wav"
     },
     {
       "index": 27,
-      "title": "Source Quotes and References",
-      "part": "References",
-      "path": "knowledge/references.qmd",
-      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\references.prepared.txt",
-      "chars": 60,
+      "title": "Conclusion",
+      "part": null,
+      "path": "knowledge/appendix/conclusion.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\conclusion.prepared.txt",
+      "chars": 752,
       "status": "cached",
-      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\references.alignment.json",
-      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\references.vtt",
+      "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\conclusion.alignment.json",
+      "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\conclusion.vtt",
       "duration_ms": 5450,
       "duration_formatted": "0:05",
-      "audio_start_ms": 25992063,
-      "audio_end_ms": 25997513,
+      "audio_start_ms": 25977383,
+      "audio_end_ms": 25982833,
       "audio_file": "references.wav"
     },
     {
       "index": 28,
-      "title": "Copyright",
+      "title": "Source Quotes and References",
       "part": "References",
-      "path": "knowledge/appendix/copyright.qmd",
-      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\copyright.prepared.txt",
+      "path": "knowledge/references.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\references.prepared.txt",
       "chars": 872,
       "status": "cached",
       "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\copyright.alignment.json",
       "subtitle_file": "assets\\audiobook\\manual-paperback\\subtitles\\copyright.vtt",
       "duration_ms": 76410,
       "duration_formatted": "1:16",
-      "audio_start_ms": 25999513,
-      "audio_end_ms": 26075923,
+      "audio_start_ms": 25984833,
+      "audio_end_ms": 26061243,
       "audio_file": "copyright.wav"
     },
     {
       "index": 29,
-      "title": "Recruitment & Propaganda Plan",
-      "part": "The Plan",
-      "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
-      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\029-recruitment-and-propaganda-plan.prepared.txt",
+      "title": "Copyright",
+      "part": "References",
+      "path": "knowledge/appendix/copyright.qmd",
+      "text_file": "assets\\audiobook\\manual-paperback\\narration-txt-chapters\\copyright.prepared.txt",
       "chars": 5077,
       "status": "cached",
       "alignment_file": "assets\\audiobook\\manual-paperback\\alignment\\029-recruitment-and-propaganda-plan.alignment.json",
@@ -546,6 +546,6 @@
     }
   ],
   "output_dir": "assets\\audiobook\\manual-paperback\\narration-txt-chapters",
-  "total_duration_ms": 26021923,
-  "total_duration_formatted": "7:13:41"
+  "total_duration_ms": 26007243,
+  "total_duration_formatted": "7:13:27"
 }
