@@ -15,7 +15,9 @@ abstract: |
   eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. Combined, these
   represent {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years when
   adjusted for morbidity, with a cumulative economic deadweight loss of approximately
-  {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 USD). The societal cost of Type II
+  {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 USD), reflecting
+  {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} DALYs valued at the standard WHO
+  cost-effectiveness threshold of {{< var standard_economic_qaly_value_usd >}}/DALY. The societal cost of Type II
   Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I
   Regulatory Errors (market access for ineffective therapies) by a factor of
   {{< var type_ii_error_cost_ratio >}}.
@@ -72,7 +74,7 @@ Using data from the Tufts Center for the Study of Drug Development (CSDD) and th
 
 Combined, these represent **{{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years (DALYs)** when adjusted for morbidity. All estimates include Monte Carlo confidence intervals.
 
-Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY), we find a cumulative economic deadweight loss of approximately **{{< var dfda_efficacy_lag_elimination_economic_value >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}**.
+Valuing these lost years at a conservative global Value of a Statistical Life Year (VSLY) of {{< var standard_economic_qaly_value_usd >}}/DALY (the standard normative valuation used in WHO and health economics cost-effectiveness analyses), we find a cumulative economic deadweight loss of approximately **{{< var dfda_efficacy_lag_elimination_economic_value >}}** (2024 USD). The study concludes that the societal cost of **Type II Regulatory Errors** (delayed access to effective therapies) exceeds the averted cost of **Type I Regulatory Errors** (market access for ineffective therapies) by a factor of **{{< var type_ii_error_cost_ratio >}}**.
 
 ## Scale
 
@@ -409,8 +411,8 @@ Using a conservative global VSLY of **{{< var standard_economic_qaly_value_usd >
 
 ![The cost of regulatory delay is 1.19 quadrillion dollars, give or take. For context, that's more money than you have.](/assets/images/invisible-graveyard/invisible-graveyard-section-contextualizing-the-loss-bw-academic.jpg)
 
-- **Total Loss (1962-2024):** {{< var dfda_efficacy_lag_elimination_economic_value >}} over 62 years
-- **Annualized Loss:** Total loss ÷ 62 years represents a substantial fraction of global economic output in lost human capital and foregone productivity
+- **Total Loss (1962-2024):** {{< var dfda_efficacy_lag_elimination_economic_value >}} over 62 years (averaging approximately $19 trillion/year, or roughly 18% of annual global GDP in lost human capital)
+- **Annualized Loss:** Total loss / 62 years represents a substantial fraction of global economic output in lost human capital and foregone productivity
 
 ## Risk Analysis: The Type I vs. Type II Ratio {#risk-analysis}
 
@@ -766,7 +768,7 @@ The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy re
 
 - **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from {{< var efficacy_lag_years >}} timeline shift**
 - **{{< var dfda_efficacy_lag_elimination_dalys >}} lost**
-- **{{< var dfda_efficacy_lag_elimination_economic_value >}} economic destruction**
+- **{{< var dfda_efficacy_lag_elimination_economic_value >}} economic destruction** (cumulative DALYs valued at {{< var standard_economic_qaly_value_usd >}}/DALY, standard WHO methodology)
 - **{{< var type_ii_error_cost_ratio >}} harm ratio** (Type II vs. Type I errors)
 
 The {{< var type_ii_error_cost_ratio >}} ratio demonstrates that these costs dwarf the benefits. The regulatory framework optimizes for bureaucratic risk minimization (avoiding blame for approvals) rather than population health maximization (saving lives).

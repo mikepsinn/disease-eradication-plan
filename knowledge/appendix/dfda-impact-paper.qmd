@@ -14,11 +14,13 @@ abstract: |
   {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier on average. This timeline shift saves
   {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}, averts
   {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}, and eliminates
-  {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering at
+  {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering
+  (YLD portion of {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} converted to hours) at
   {{< var dfda_direct_funding_cost_per_daly >}}/DALY, competitive with bed nets
   ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. Full impact yields
   {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in value
-  ({{< var dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI).
+  ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} at $150K/DALY, cumulative over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift;
+  {{< var dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI).
 jel:
   - I18
   - I11
@@ -54,8 +56,8 @@ podcast-image: /assets/podcast/dfda-impact-paper-podcast.jpg
 | **Cost-Effectiveness** | {{< var dfda_direct_funding_cost_per_daly >}}/DALY | Competitive with bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale |
 | **Lives Saved** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | One-time benefit from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift |
 | **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Captures both mortality and morbidity |
-| **Suffering Eliminated** | {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} | Human suffering averted from timeline shift |
-| **Total Economic Value** | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} standard QALY valuation |
+| **Suffering Eliminated** | {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} | YLD portion of DALYs (39%) x 8,760 hrs/yr over timeline shift |
+| **Total Economic Value** | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | Cumulative DALYs x $150K/DALY (WHO threshold) over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} shift |
 | **Efficacy Lag Eliminated** | {{< var efficacy_lag_years >}} | Post-Phase I access via trial participation |
 | **ROI (R&D Savings)** | {{< var dfda_roi_rd_only >}}:1 | {{< var dfda_trial_cost_reduction_factor >}} cheaper trials |
 | **Annual R&D Savings** | {{< var dfda_benefit_rd_only_annual >}} | From {{< var dfda_trial_cost_reduction_pct >}} cost reduction |
@@ -569,7 +571,7 @@ This eliminates the post-safety efficacy lag (the Phase II/III portion, while pr
 The elimination of the post-safety efficacy lag by such a framework achieves a one-time {{< var efficacy_lag_years >}} timeline acceleration (the smaller component of the total {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} shift):
 
 - **Total DALYs Averted**: {{< var dfda_efficacy_lag_elimination_dalys >}} (total one-time impact from {{< var efficacy_lag_years >}} timeline shift)
-- **Total Economic Value**: {{< var dfda_efficacy_lag_elimination_economic_value >}} (total one-time benefit from timeline shift)
+- **Total Economic Value**: {{< var dfda_efficacy_lag_elimination_economic_value >}} ({{< var dfda_efficacy_lag_elimination_dalys >}} at $150,000/DALY, cumulative over {{< var efficacy_lag_years >}} of accelerated treatment access)
 - **Deaths Prevented**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} (total over the {{< var efficacy_lag_years >}} period)
 
 {{< var dfda_efficacy_lag_elimination_dalys_latex >}}

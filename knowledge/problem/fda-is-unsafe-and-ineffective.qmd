@@ -124,7 +124,7 @@ A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease
 ![416 million people died waiting for permission to try medicine. That's more than every war ever fought, combined. We invented a way to kill more people than war, and we call it safety.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-global-body-count-bw-academic.jpg)
 
 Including years lived with disability: {{< var dfda_efficacy_lag_elimination_dalys >}} of healthy human life deleted.
-Economic cost: {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 USD).
+Economic cost: {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 USD), reflecting those {{< var dfda_efficacy_lag_elimination_dalys >}} valued at {{< var standard_economic_qaly_value_usd >}}/DALY, the standard normative rate used in WHO cost-effectiveness analyses.
 
 Even if those death estimates are off by a factor of 10, that's still tens of millions of deaths. And the inefficiency is independently verifiable: the system costs {{< var recovery_trial_cost_reduction_factor >}} more per patient and takes {{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer than proven alternatives. Those numbers don't depend on mortality estimates at all.
 

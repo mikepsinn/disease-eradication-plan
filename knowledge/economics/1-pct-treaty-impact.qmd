@@ -152,7 +152,7 @@ Multiple large-scale pragmatic trials and systematic reviews demonstrate that pr
 
 1. **Regulatory delay cost quantification**
    - First comprehensive estimate of the {{< var efficacy_lag_years >}} efficacy lag cost
-   - {{< var dfda_efficacy_lag_elimination_economic_value >}} in foregone economic value
+   - {{< var dfda_efficacy_lag_elimination_economic_value >}} in foregone economic value (cumulative over the {{< var efficacy_lag_years >}} delay: DALYs lost to regulatory waiting x {{< var standard_economic_qaly_value_usd >}}/DALY standard valuation)
    - {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} lives lost (excludes unavoidable deaths)
    - Uses standard QALY methodology ({{< var standard_economic_qaly_value_usd >}}/QALY)
 
@@ -419,7 +419,7 @@ Under the status quo, {{< var diseases_without_effective_treatment >}} lack trea
 
 ![Accelerating treatments by 212 years prevents 1931 trillion hours of human suffering. That's with confidence intervals, because we're honest about uncertainty. Unlike your current system, which is confidently wrong.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-suffering-reduction-bw-academic.jpg)
 
-{{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering eliminated (from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} average timeline shift)
+{{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering eliminated (from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} average timeline shift; derived from the disability burden component of {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted, converted to hours)
 
 ### Lives Saved
 
@@ -957,7 +957,7 @@ This yields an NPV assuming first effective treatments are discovered 100 years 
 
 **Note**: This NPV calculation covers only the efficacy lag component ({{< var efficacy_lag_years >}}). The treatment acceleration component (~{{< var dfda_trial_capacity_treatment_acceleration_years >}} on average) would add substantially more value, but is harder to model with NPV due to uncertainty in when each disease receives its first treatment.
 
-**Comparison**: The regulatory delay avoidance benefit ({{< var dfda_efficacy_lag_elimination_economic_value >}} annually) is substantially larger than the conservative R&D-only benefit ({{< var dfda_npv_benefit_rd_only >}}:1 ROI), demonstrating that health outcomes substantially exceed cost savings even with far-future discounting. Note: These are separate benefit streams; the delay avoidance benefit does not include R&D savings.
+**Comparison**: The regulatory delay avoidance benefit ({{< var dfda_efficacy_lag_elimination_economic_value >}} cumulative over the {{< var efficacy_lag_years >}} lag) is substantially larger than the conservative R&D-only benefit ({{< var dfda_npv_benefit_rd_only >}}:1 ROI), demonstrating that health outcomes substantially exceed cost savings even with far-future discounting. Note: These are separate benefit streams; the delay avoidance benefit does not include R&D savings.
 
 **Why this matters**: Eliminating the regulatory delay still provides value even if first effective treatments are 100 years away on average, but far-future discounting means the NPV is much smaller. The actual value depends on when diseases actually receive first effective treatments, which varies by disease category. Some may receive treatments in 10-20 years (moderate discounting), others in 50-100+ years (heavy discounting). The 100-year assumption is conservative for many diseases that may take decades to treat effectively.
 
