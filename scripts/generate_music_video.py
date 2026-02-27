@@ -191,14 +191,12 @@ SCENES = [
         "end_s": 39.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "a Cartoon marionette figure in a suit with strings attached to their limbs "
-            "shoveling money from a government treasury into a bomb factory. "
-            "A Giant anthropomorphic dollar bill holds the puppet strings from above."
+            "A Giant anthropomorphic dollar bill holds the puppet strings from above controlling a man in "
+            "a suit with strings attached to his limbs. The puppet man is sticking a shovel into a pile of money from a government treasury on his left and there's a bomb factory on his right."
         ),
         "veo_prompt": (
-            "The dollar bills pull the marionette strings. The puppet "
-            "shovels money from the government treasury into the bomb factory, smiling obliviously. "
-            "Dark comedy. 1950s editorial cartoon style."
+            "The anthropromorphic dollar bills pull the marionette strings. The puppet "
+            "shovels the money from the government treasury on the left into the bomb factory on the right. "
         ),
     },
     {
@@ -258,13 +256,13 @@ SCENES = [
         "end_s": 71.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A greedy businessman standing next to an elaborate "
-            "Rube Goldberg machine. He holds a wad of money near the input funnel."
+            "A greedy businessman with dollar signs in his eyes standing next to an elaborate "
+            "Rube Goldberg machine illustrating the corrupt political system and producing bombs. He holds a wad of money near the input funnel."
         ),
         "veo_prompt": (
-            "The businessman shoves money into the Rube Goldberg machine. "
+            "The businessman shoves money into the Rube Goldberg machine that's initially producing bombs. "
             "It bounces through gears, dominoes, catapults, and tubes in a comedic chain reaction. "
-            "Medicine bottles pop out the other end. 1950s animation."
+            "Medicine bottles eventually pop out the other end instead of bombs. 1950s animation."
         ),
     },
     {
@@ -274,12 +272,12 @@ SCENES = [
         "end_s": 79.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} "
-            'An man reading a book with title '
-            '"How to End War and Disease" visible on the cover. The man is holding the book upside down. A trash can and a small cockroach are to the side.  '
+            'Illustrate a goofy man reading a book with title '
+            '"How to End War and Disease" visible on the cover.  A trash can and a small cockroach are to the side.  '
         ),
         "veo_prompt": (
-            "The idiot reads the book and then throws the book in a trash can. "
-            " The man pulls out a phone showing a girl dancing. "
+            "The man reads the book upside down and then throws the book in the trash can. "
+            " The man pulls out a cell phone showing a girl dancing. "
             "The man ages and turns into a skeleton while staring at the phone. "
             "A cockroach crawls up, evolves intelligence, "
             "pulls the book out of the trash, and starts reading it. "
@@ -293,12 +291,12 @@ SCENES = [
         "end_s": 86.5,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "An old man and woman stand in a dystopian war-torn city looking confused at a path made of dollar bills going off the screen."
+            "Sick patients stand in a dystopian war-torn city with lots of bombs lying around looking confused at a path made of dollar bills going off the screen."
         ),
         "veo_prompt": (
-            "The old man and woman stumble along the path of money and gradually become young. "
-            "Every step accidentally turns bills into flowers and medicine "
-            "until they reach a futuristic utopian paradise city. "
+            "The patients stumble along the path of money. "
+            "Every step accidentally turns the bombs into flowers and medicine "
+            "a futuristic utopian paradise city slowly appears before them in the distance as they make their way closer. "
             "Use a 1950s animation style with solid colors only."
         ),
     },
@@ -730,10 +728,10 @@ def main():
         for scene in scenes:
             kf = KEYFRAMES_DIR / f"scene-{scene['index']:02d}.jpg"
             clip = CLIPS_DIR / f"scene-{scene['index']:02d}.mp4"
-            if kf.exists():
+            if not args.skip_keyframes and kf.exists():
                 kf.unlink()
                 print(f"  --force: deleted keyframe scene-{scene['index']:02d}")
-            if clip.exists():
+            if not args.skip_animate and clip.exists():
                 clip.unlink()
                 print(f"  --force: deleted clip scene-{scene['index']:02d}")
 
