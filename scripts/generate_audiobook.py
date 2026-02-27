@@ -1497,9 +1497,8 @@ def main():
     cfg_name = config_name_from_path(config_path)
     paths = get_paths(cfg_name)
 
-    # Set up logging
+    # Set up logging (file-only; TeeWriter segfaults on Windows with subprocess I/O)
     logger = BuildLogger("generate-audiobook.log")
-    logger.start_capture()
 
     # Load book config
     print(f"Loading book configuration: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
@@ -1510,7 +1509,6 @@ def main():
     # List mode
     if args.list:
         list_chapters(chapters, paths=paths)
-        logger.stop_capture()
         logger.close()
         return
 
@@ -1519,7 +1517,6 @@ def main():
         chapters = [ch for ch in chapters if ch['index'] == args.chapter]
         if not chapters:
             print(f"Error: Chapter {args.chapter} not found")
-            logger.stop_capture()
             logger.close()
             return
     elif args.start or args.end:
@@ -1628,7 +1625,6 @@ def main():
             generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
 
     print("\nDone!")
-    logger.stop_capture()
     logger.close()
 
 
