@@ -143,7 +143,7 @@ Total annual cost of war worldwide (direct + indirect costs)
 **Inputs**:
 
 - [Total Annual Direct War Costs](#sec-global_annual_war_direct_costs_total) 🔢: $7.66T
-- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.70T
+- [Total Annual Indirect War Costs](#sec-global_annual_war_indirect_costs_total) 🔢: $3.7T
 
 $$
 \begin{gathered}
@@ -294,7 +294,7 @@ Annual cost of state violence deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.70 thousand deaths/year (95% CI: 1.50 thousand deaths/year - 5.00 thousand deaths/year)
+- [Annual Deaths from State Violence](#sec-global_annual_conflict_deaths_state_violence) 📊: 2.7 thousand deaths/year (95% CI: 1.5 thousand deaths/year - 5 thousand deaths/year)
 - [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
 
 $$
@@ -332,7 +332,7 @@ Annual cost of terror deaths (deaths × VSL)
 
 **Inputs**:
 
-- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.30 thousand deaths/year (95% CI: 6.00 thousand deaths/year - 12.0 thousand deaths/year)
+- [Annual Deaths from Terror Attacks Globally](#sec-global_annual_conflict_deaths_terror_attacks) 📊: 8.3 thousand deaths/year (95% CI: 6 thousand deaths/year - 12 thousand deaths/year)
 - [Value of Statistical Life](#sec-value_of_statistical_life) 📊: $10M (95% CI: $5M - $15M)
 
 $$
@@ -609,7 +609,7 @@ $$
 
 :::
 
-### Total Annual Indirect War Costs: $3.70T {#sec-global_annual_war_indirect_costs_total}
+### Total Annual Indirect War Costs: $3.7T {#sec-global_annual_war_indirect_costs_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -618,7 +618,7 @@ Total annual indirect war costs (opportunity cost + veterans + refugees + enviro
 **Inputs**:
 
 - [Annual Environmental Damage and Restoration Costs from Conflict](#sec-global_annual_environmental_damage_conflict) 📊: $100B (95% CI: $70B - $140B)
-- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.90T - $3.80T)
+- [Annual Lost Economic Growth from Military Spending Opportunity Cost](#sec-global_annual_lost_economic_growth_military_spending) 📊: $2.72T (95% CI: $1.9T - $3.8T)
 - [Annual Lost Productivity from Conflict Casualties](#sec-global_annual_lost_human_capital_conflict) 📊: $300B (95% CI: $210B - $420B)
 - [Annual PTSD and Mental Health Costs from Conflict](#sec-global_annual_psychological_impact_costs_conflict) 📊: $232B (95% CI: $162B - $325B)
 - [Annual Refugee Support Costs](#sec-global_annual_refugee_support_costs) 📊: $150B (95% CI: $105B - $210B)
@@ -1001,7 +1001,7 @@ Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
 **Inputs**:
 
 - [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250M (95% CI: $150M - $410M)
-- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650M (95% CI: $325M - $1.30B)
+- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650M (95% CI: $325M - $1.3B)
 - [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100M (95% CI: $20M - $150M)
 
 $$
@@ -1367,7 +1367,7 @@ Annual deaths from active combat worldwide
 
 :::
 
-### Annual Deaths from State Violence: 2.70 thousand deaths/year {#sec-global_annual_conflict_deaths_state_violence}
+### Annual Deaths from State Violence: 2.7 thousand deaths/year {#sec-global_annual_conflict_deaths_state_violence}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1377,9 +1377,9 @@ Annual deaths from state violence
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50 thousand deaths/year, 5.00 thousand deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.5 thousand deaths/year, 5 thousand deaths/year] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1.50 thousand deaths/year and 5.00 thousand deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1.5 thousand deaths/year and 5 thousand deaths/year (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1391,7 +1391,7 @@ Annual deaths from state violence
 
 :::
 
-### Annual Deaths from Terror Attacks Globally: 8.30 thousand deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
+### Annual Deaths from Terror Attacks Globally: 8.3 thousand deaths/year {#sec-global_annual_conflict_deaths_terror_attacks}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1401,9 +1401,9 @@ Annual deaths from terror attacks globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6.00 thousand deaths/year, 12.0 thousand deaths/year] • Distribution: Lognormal
+**Technical**: 95% CI: [6 thousand deaths/year, 12 thousand deaths/year] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6.00 thousand deaths/year and 12.0 thousand deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand deaths/year and 12 thousand deaths/year (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1435,7 +1435,7 @@ Global annual DALY burden from all diseases and injuries (WHO/IHME Global Burden
 
 :::
 
-### Annual Deaths from All Diseases and Aging Globally: 55.0 million deaths/year {#sec-global_annual_deaths_curable_diseases}
+### Annual Deaths from All Diseases and Aging Globally: 55 million deaths/year {#sec-global_annual_deaths_curable_diseases}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1445,7 +1445,7 @@ Annual deaths from all diseases and aging globally
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 5.00 million deaths/year)
+**Technical**: Distribution: Normal (SE: 5 million deaths/year)
 
 #### Input Distribution
 
@@ -1633,9 +1633,9 @@ Annual foregone economic output from military spending vs productive alternative
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1.90T, $3.80T] • Distribution: Lognormal
+**Technical**: 95% CI: [$1.9T, $3.8T] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.90T and $3.80T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.9T and $3.8T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1995,9 +1995,9 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$325M, $1.30B] • Distribution: Lognormal
+**Technical**: 95% CI: [$325M, $1.3B] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $325M and $1.30B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $325M and $1.3B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

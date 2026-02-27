@@ -84,55 +84,52 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             if abs(scaled) >= 100:
                 formatted_num = f"${scaled:.0f} quadrillion"
             elif abs(scaled) >= 10:
-                formatted_num = f"${scaled:.1f} quadrillion"
+                formatted_num = f"${clean_number(f'{scaled:.1f}')} quadrillion"
             else:
-                formatted_num = f"${scaled:.2f} quadrillion"
+                formatted_num = f"${clean_number(f'{scaled:.2f}')} quadrillion"
         elif abs_raw >= 1e12:  # Trillions
             scaled = raw_dollars / 1e12
             if abs(scaled) >= 100:
                 formatted_num = f"${scaled:.0f}T"
             elif abs(scaled) >= 10:
-                formatted_num = f"${scaled:.1f}T"
+                formatted_num = f"${clean_number(f'{scaled:.1f}')}T"
             else:
-                formatted_num = f"${scaled:.2f}T"
+                formatted_num = f"${clean_number(f'{scaled:.2f}')}T"
         elif abs_raw >= 1e9:  # Billions
             scaled = raw_dollars / 1e9
             if abs(scaled) >= 100:
                 formatted_num = f"${scaled:.0f}B"
             elif abs(scaled) >= 10:
-                formatted_num = f"${scaled:.1f}B"
+                formatted_num = f"${clean_number(f'{scaled:.1f}')}B"
             else:
-                formatted_num = f"${scaled:.2f}B"
+                formatted_num = f"${clean_number(f'{scaled:.2f}')}B"
         elif abs_raw >= 1e6:  # Millions
             scaled = raw_dollars / 1e6
             if abs(scaled) >= 100:
                 formatted_num = f"${scaled:.0f}M"
             elif abs(scaled) >= 10:
-                formatted_num = f"${scaled:.1f}M"
+                formatted_num = f"${clean_number(f'{scaled:.1f}')}M"
             else:
-                formatted_num = f"${scaled:.2f}M"
+                formatted_num = f"${clean_number(f'{scaled:.2f}')}M"
         elif abs_raw >= 1e3:  # Thousands
             scaled = raw_dollars / 1e3
             if abs(scaled) >= 100:
                 formatted_num = f"${scaled:.0f}K"
             elif abs(scaled) >= 10:
-                formatted_num = f"${scaled:.1f}K"
+                formatted_num = f"${clean_number(f'{scaled:.1f}')}K"
             else:
-                formatted_num = f"${scaled:.2f}K"
+                formatted_num = f"${clean_number(f'{scaled:.2f}')}K"
         elif abs_raw >= 10:
             formatted_num = f"${raw_dollars:.0f}"
         elif abs_raw >= 1:
-            formatted_num = f"${raw_dollars:.2f}"
+            formatted_num = f"${clean_number(f'{raw_dollars:.2f}')}"
         elif abs_raw >= 0.01:
-            formatted_num = f"${raw_dollars:.3f}"
+            formatted_num = f"${clean_number(f'{raw_dollars:.3f}')}"
         elif abs_raw > 0:
-            formatted_num = f"${raw_dollars:.4f}"
+            formatted_num = f"${clean_number(f'{raw_dollars:.4f}')}"
         else:
             formatted_num = "$0"
 
-        # Clean up trailing .0 and .00 for cleaner look (e.g. $50.0B -> $50B, $1.00B -> $1B)
-        formatted_num = formatted_num.replace(".00 ", " ").replace(".00T", "T").replace(".00B", "B").replace(".00M", "M").replace(".00K", "K")
-        formatted_num = formatted_num.replace(".0 ", " ").replace(".0T", "T").replace(".0B", "B").replace(".0M", "M").replace(".0K", "K")
         return formatted_num
 
     elif is_percentage:
@@ -239,9 +236,9 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             if abs(scaled) >= 100:
                 formatted_num = f"{scaled:.0f}{suffix}"      # 565 billion (3 sig figs)
             elif abs(scaled) >= 10:
-                formatted_num = f"{scaled:.1f}{suffix}"      # 10.7 billion (3 sig figs)
+                formatted_num = clean_number(f"{scaled:.1f}") + suffix   # 10.7 billion (3 sig figs)
             else:
-                formatted_num = f"{scaled:.2f}{suffix}"      # 1.93 quadrillion (3 sig figs)
+                formatted_num = clean_number(f"{scaled:.2f}") + suffix   # 1.93 quadrillion (3 sig figs)
         else:
             # No suffix, small number — also use 3 sig figs
             if abs_raw >= 100:

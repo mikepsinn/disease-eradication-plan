@@ -60,9 +60,9 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$400, $2.50K] • Distribution: Lognormal
+**Technical**: 95% CI: [$400, $2.5K] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.50K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.5K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

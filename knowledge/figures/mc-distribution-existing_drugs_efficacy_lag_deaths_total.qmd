@@ -120,7 +120,7 @@ plt.show()
 | Baseline (deterministic) | 102 million |
 | Mean (expected value) | 107 million |
 | Median (50th percentile) | 97.3 million |
-| Standard Deviation | 53.0 million |
+| Standard Deviation | 53 million |
 | 90% Range (5th-95th percentile) | [36.9 million, 214 million] |
 
 *The histogram shows the distribution of Total Deaths from Historical Progress Delays across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -118,7 +118,7 @@ plt.show()
 | Statistic | Value |
 |:----------|------:|
 | Baseline (deterministic) | 2.01 billion |
-| Mean (expected value) | 2.20 billion |
+| Mean (expected value) | 2.2 billion |
 | Median (50th percentile) | 1.99 billion |
 | Standard Deviation | 1.18 billion |
 | 90% Range (5th-95th percentile) | [661 million, 4.41 billion] |

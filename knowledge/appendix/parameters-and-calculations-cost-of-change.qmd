@@ -156,7 +156,7 @@ Trial capacity multiplier from dFDA funding capacity vs. current global trial pa
 
 **Inputs**:
 
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
 - [dFDA Patients Fundable Annually](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
@@ -459,7 +459,7 @@ Total eventually avoidable deaths from the combined dFDA timeline shift. Represe
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
@@ -826,7 +826,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
 
 $$
 \begin{gathered}
@@ -1048,7 +1048,7 @@ Total treaty campaign cost (100% VICTORY Incentive Alignment Bonds)
 **Inputs**:
 
 - [Viral Referendum Budget](#sec-treaty_campaign_viral_referendum_base_case): $250M (95% CI: $150M - $410M)
-- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650M (95% CI: $325M - $1.30B)
+- [Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance](#sec-treaty_campaign_budget_lobbying): $650M (95% CI: $325M - $1.3B)
 - [Reserve Fund / Contingency Buffer](#sec-treaty_campaign_budget_reserve): $100M (95% CI: $20M - $150M)
 
 $$
@@ -1391,7 +1391,7 @@ Total upper-bound investment for US political reform: (campaign spending + 2 yea
 **Inputs**:
 
 - [US Federal Campaign Spending (2024)](#sec-us_total_federal_campaign_spending_2024) 📊: $20B (95% CI: $18B - $22B)
-- [US Total Lobbying (2024)](#sec-us_total_lobbying_annual) 📊: $4.40B (95% CI: $3.74B - $5.06B)
+- [US Total Lobbying (2024)](#sec-us_total_lobbying_annual) 📊: $4.4B (95% CI: $3.74B - $5.06B)
 - [Political Effort Multiplier (US)](#sec-us_political_effort_multiplier): 0.7x (95% CI: 0.4x - 1.2x)
 - [US Congress Full Advocacy Cost](#sec-us_congress_full_advocacy_cost) 🔢: $5.35B
 
@@ -1449,7 +1449,7 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 :::
 
-### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
+### Annual Global Clinical Trial Participants: 1.9 million patients/year {#sec-current_trial_slots_available}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1459,9 +1459,9 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50 million patients/year, 2.30 million patients/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.5 million patients/year, 2.3 million patients/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50 million patients/year and 2.30 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.5 million patients/year and 2.3 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1547,7 +1547,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.50 thousand deaths/day)
+**Technical**: Distribution: Normal (SE: 7.5 thousand deaths/day)
 
 #### Input Distribution
 
@@ -1619,7 +1619,7 @@ Net present value of post-office career premium for average congressperson (10 y
 
 :::
 
-### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1629,9 +1629,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6.00 thousand diseases, 10.0 thousand diseases] • Distribution: Normal
+**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6.00 thousand diseases and 10.0 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -1701,7 +1701,7 @@ Total US federal election spending in 2024 cycle including presidential, congres
 
 :::
 
-### US Total Lobbying (2024): $4.40B {#sec-us_total_lobbying_annual}
+### US Total Lobbying (2024): $4.4B {#sec-us_total_lobbying_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1903,9 +1903,9 @@ Political lobbying campaign: direct lobbying (US/EU/G20), Super PACs, opposition
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$325M, $1.30B] • Distribution: Lognormal
+**Technical**: 95% CI: [$325M, $1.3B] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $325M and $1.30B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $325M and $1.3B (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

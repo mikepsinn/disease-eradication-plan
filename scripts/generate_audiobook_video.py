@@ -74,9 +74,13 @@ _visual_style = IMAGE_STYLE
 
 # --- Prompt Variants ---
 
+NO_TEXT_INSTRUCTION = "Do not include any text, words, letters, or numbers in the image."
+
+
 def _prompt_original(scene_text, full_context, attempt):
     """Style + raw narration + full chapter context."""
     prompt = (
+        f"{NO_TEXT_INSTRUCTION}\n"
         f"Generate a {_visual_style} illustration.\n"
         f"--- ILLUSTRATE THIS ---\n"
         f"{scene_text}\n"
@@ -86,13 +90,15 @@ def _prompt_original(scene_text, full_context, attempt):
         prompt += (
             f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
             f"{full_context}\n"
-            f"--- END CONTEXT ---"
+            f"--- END CONTEXT ---\n"
         )
+    prompt += NO_TEXT_INSTRUCTION
     return prompt
 
 def _prompt_metaphor(scene_text, full_context, attempt):
     """Original + metaphor instruction."""
     prompt = (
+        f"{NO_TEXT_INSTRUCTION}\n"
         f"Generate a {_visual_style} illustration. Interpret metaphors visually; do not depict them literally.\n"
         f"--- ILLUSTRATE THIS ---\n"
         f"{scene_text}\n"
@@ -102,15 +108,17 @@ def _prompt_metaphor(scene_text, full_context, attempt):
         prompt += (
             f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
             f"{full_context}\n"
-            f"--- END CONTEXT ---"
+            f"--- END CONTEXT ---\n"
         )
+    prompt += NO_TEXT_INSTRUCTION
     return prompt
 
 def _prompt_powerpoint(scene_text, full_context, attempt):
     """Two-step: conceptualize as presentation slide, then render in style."""
     prompt = (
+        f"{NO_TEXT_INSTRUCTION}\n"
         f"Imagine how this concept would be depicted on a presentation slide given the full chapter context below. "
-        f"Then generate that image in {_visual_style} style. Do not include any text, titles, or author names.\n"
+        f"Then generate that image in {_visual_style} style.\n"
         f"--- ILLUSTRATE THIS ---\n"
         f"{scene_text}\n"
         f"--- END ILLUSTRATE ---\n"
@@ -119,14 +127,16 @@ def _prompt_powerpoint(scene_text, full_context, attempt):
         prompt += (
             f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
             f"{full_context}\n"
-            f"--- END CONTEXT ---"
+            f"--- END CONTEXT ---\n"
         )
+    prompt += NO_TEXT_INSTRUCTION
     return prompt
 
 def _prompt_bookcover(scene_text, full_context, attempt):
     """Direct scene illustration."""
     prompt = (
-        f"Generate a {_visual_style} illustration that captures this moment in the story. Do not include any text, titles, or author names.\n"
+        f"{NO_TEXT_INSTRUCTION}\n"
+        f"Generate a {_visual_style} illustration that captures this moment in the story.\n"
         f"--- ILLUSTRATE THIS ---\n"
         f"{scene_text}\n"
         f"--- END ILLUSTRATE ---\n"
@@ -135,8 +145,9 @@ def _prompt_bookcover(scene_text, full_context, attempt):
         prompt += (
             f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n"
             f"{full_context}\n"
-            f"--- END CONTEXT ---"
+            f"--- END CONTEXT ---\n"
         )
+    prompt += NO_TEXT_INSTRUCTION
     return prompt
 
 PROMPT_VARIANTS = {

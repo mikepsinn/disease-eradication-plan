@@ -605,7 +605,7 @@ Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost /
 **Inputs**:
 
 - [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
-- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.50K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.5K)
 
 $$
 \begin{gathered}
@@ -650,9 +650,9 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$929, $1.40K] • Distribution: Lognormal
+**Technical**: 95% CI: [$929, $1.4K] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.40K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.4K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -754,9 +754,9 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$400, $2.50K] • Distribution: Lognormal
+**Technical**: 95% CI: [$400, $2.5K] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.50K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.5K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

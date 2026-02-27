@@ -117,8 +117,8 @@ plt.show()
 
 | Statistic | Value |
 |:----------|------:|
-| Baseline (deterministic) | $4.00 |
-| Mean (expected value) | $5.10 |
+| Baseline (deterministic) | $4 |
+| Mean (expected value) | $5.1 |
 | Median (50th percentile) | $4.55 |
 | Standard Deviation | $2.59 |
 | 90% Range (5th-95th percentile) | [$1.71, $10] |

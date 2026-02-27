@@ -120,7 +120,7 @@ plt.show()
 | Baseline (deterministic) | $24.5B |
 | Mean (expected value) | $24.2B |
 | Median (50th percentile) | $23.5B |
-| Standard Deviation | $7.40B |
+| Standard Deviation | $7.4B |
 | 90% Range (5th-95th percentile) | [$13.1B, $37.5B] |
 
 *The histogram shows the distribution of Annual Savings from 1% Reduction in Human Casualties across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

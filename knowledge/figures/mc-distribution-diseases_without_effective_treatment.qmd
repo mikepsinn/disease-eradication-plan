@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | 6.73 thousand |
 | Median (50th percentile) | 6.64 thousand |
 | Standard Deviation | 835 |
-| 90% Range (5th-95th percentile) | [5.70 thousand, 8.24 thousand] |
+| 90% Range (5th-95th percentile) | [5.7 thousand, 8.24 thousand] |
 
 *The histogram shows the distribution of Diseases Without Effective Treatment across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

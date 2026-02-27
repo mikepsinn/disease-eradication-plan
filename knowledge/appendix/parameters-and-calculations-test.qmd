@@ -88,9 +88,9 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$929, $1.40K] • Distribution: Lognormal
+**Technical**: 95% CI: [$929, $1.4K] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.40K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.4K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

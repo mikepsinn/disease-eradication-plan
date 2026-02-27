@@ -58,7 +58,7 @@ Estimated unique patients receiving chronic disease treatment annually. Derived 
 
 **Inputs**:
 
-- [Annual Days of Chronic Disease Therapy](#sec-global_chronic_therapy_days_annual) 📊: 1.28 trillion days (95% CI: 1.00 trillion days - 1.50 trillion days)
+- [Annual Days of Chronic Disease Therapy](#sec-global_chronic_therapy_days_annual) 📊: 1.28 trillion days (95% CI: 1 trillion days - 1.5 trillion days)
 
 $$
 \begin{gathered}
@@ -157,7 +157,7 @@ Total eventually avoidable deaths from delaying disease eradication by 8.2 years
 **Inputs**:
 
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
 
 $$
 \begin{gathered}
@@ -394,7 +394,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
 
 $$
 \begin{gathered}
@@ -425,7 +425,7 @@ $$
 
 :::
 
-### Total Drugs Approved Since 1962: 3.10 thousand drugs {#sec-drugs_approved_since_1962}
+### Total Drugs Approved Since 1962: 3.1 thousand drugs {#sec-drugs_approved_since_1962}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -473,7 +473,7 @@ Drug development cost increase from 1980s to current
 **Inputs**:
 
 - [Drug Development Cost (1980s)](#sec-drug_development_cost_1980s) 📊: $194M (95% CI: $146M - $242M)
-- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.6B (95% CI: $1.5B - $4B)
 
 $$
 \begin{gathered}
@@ -513,7 +513,7 @@ Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cos
 **Inputs**:
 
 - [Pharma Phase 2/3 Cost Barrier Per Drug](#sec-pharma_phase_2_3_cost_barrier): $1.56B (SE: ±$200M)
-- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962) 🔢: 3.10 thousand drugs
+- [Total Drugs Approved Since 1962](#sec-drugs_approved_since_1962) 🔢: 3.1 thousand drugs
 
 $$
 \begin{gathered}
@@ -746,7 +746,7 @@ Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0 thousand years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13 thousand years
 - [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8 thousand years
 
 $$
@@ -920,7 +920,7 @@ Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0 thousand cases (95% CI: 10.0 thousand cases - 20.0 thousand cases)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15 thousand cases (95% CI: 10 thousand cases - 20 thousand cases)
 - [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
@@ -950,7 +950,7 @@ $$
 
 :::
 
-### Thalidomide YLD Per Event: 13.0 thousand years {#sec-thalidomide_yld_per_event}
+### Thalidomide YLD Per Event: 13 thousand years {#sec-thalidomide_yld_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1431,9 +1431,9 @@ Annual days of therapy for chronic conditions globally (diabetes, CVD, respirato
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.00 trillion days, 1.50 trillion days] • Distribution: Lognormal
+**Technical**: 95% CI: [1 trillion days, 1.5 trillion days] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.00 trillion days and 1.50 trillion days (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1 trillion days and 1.5 trillion days (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1455,7 +1455,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.50 thousand deaths/day)
+**Technical**: Distribution: Normal (SE: 7.5 thousand deaths/day)
 
 #### Input Distribution
 
@@ -1485,7 +1485,7 @@ Global life expectancy (2024)
 
 :::
 
-### Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
+### Pharma Drug Development Cost (Current System): $2.6B {#sec-pharma_drug_development_cost_current}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1495,9 +1495,9 @@ Average cost to develop one drug in current system
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1.50B, $4B] • Distribution: Lognormal (SE: $500M)
+**Technical**: 95% CI: [$1.5B, $4B] • Distribution: Lognormal (SE: $500M)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.50B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.5B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1581,7 +1581,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 :::
 
-### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1591,9 +1591,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6.00 thousand diseases, 10.0 thousand diseases] • Distribution: Normal
+**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6.00 thousand diseases and 10.0 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -1685,7 +1685,7 @@ Standard economic value per QALY
 
 :::
 
-### Thalidomide Cases Worldwide: 15.0 thousand cases {#sec-thalidomide_cases_worldwide}
+### Thalidomide Cases Worldwide: 15 thousand cases {#sec-thalidomide_cases_worldwide}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1695,9 +1695,9 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10.0 thousand cases, 20.0 thousand cases] • Distribution: Lognormal
+**Technical**: 95% CI: [10 thousand cases, 20 thousand cases] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10.0 thousand cases and 20.0 thousand cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 10 thousand cases and 20 thousand cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

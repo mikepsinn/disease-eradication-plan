@@ -59,7 +59,7 @@ Total combination therapy space (pairwise drug combinations × diseases). Standa
 **Inputs**:
 
 - [Pairwise Drug Combinations](#sec-combination_therapy_pairs) 🔢: 45.1 million combinations
-- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00 thousand diseases (95% CI: 800 diseases - 1.20 thousand diseases)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1 thousand diseases (95% CI: 800 diseases - 1.2 thousand diseases)
 
 $$
 \begin{gathered}
@@ -86,7 +86,7 @@ Unique pairwise drug combinations from known safe compounds (n choose 2)
 
 **Inputs**:
 
-- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.50 thousand compounds (95% CI: 7.00 thousand compounds - 12.0 thousand compounds)
+- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.5 thousand compounds (95% CI: 7 thousand compounds - 12 thousand compounds)
 
 *Formula*: `SAFE_COMPOUNDS × (SAFE_COMPOUNDS - 1) ÷ 2`
 
@@ -107,7 +107,7 @@ Years to test all pairwise drug combinations at current trial capacity. Combinat
 **Inputs**:
 
 - [Combination Therapy Space](#sec-combination_therapy_disease_space) 🔢: 45.1 billion combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.3 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
 
 $$
 \begin{gathered}
@@ -152,8 +152,8 @@ Years to test all known safe drug-disease combinations at current global trial c
 
 **Inputs**:
 
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
-- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.30 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.5 million combinations
+- [Current Global Clinical Trials per Year](#sec-current_trials_per_year) 📊: 3.3 thousand trials/year (95% CI: 2.64 thousand trials/year - 3.96 thousand trials/year)
 
 $$
 \begin{gathered}
@@ -661,7 +661,7 @@ Total eventually avoidable deaths from delaying disease eradication by 8.2 years
 **Inputs**:
 
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
 
 $$
 \begin{gathered}
@@ -1576,7 +1576,7 @@ Trial capacity multiplier from dFDA funding capacity vs. current global trial pa
 
 **Inputs**:
 
-- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.90 million patients/year (95% CI: 1.50 million patients/year - 2.30 million patients/year)
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
 - [dFDA Patients Fundable Annually](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
 
 $$
@@ -1879,7 +1879,7 @@ Total eventually avoidable deaths from the combined dFDA timeline shift. Represe
 
 **Inputs**:
 
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.50 thousand deaths/day)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
 - [dFDA Average Total Timeline Shift](#sec-dfda_trial_capacity_plus_efficacy_lag_years) 🔢: 212 years
 
 $$
@@ -2445,7 +2445,7 @@ Number of diseases without effective treatment. 95% of 7,000 rare diseases lack 
 
 **Inputs**:
 
-- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7.00 thousand diseases (95% CI: 6.00 thousand diseases - 10.0 thousand diseases)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
 
 $$
 \begin{gathered}
@@ -2484,7 +2484,7 @@ Drug development cost increase from pre-1962 to current
 
 **Inputs**:
 
-- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.6B (95% CI: $1.5B - $4B)
 - [Pre-1962 Drug Development Cost (2024 Dollars)](#sec-pre_1962_drug_development_cost_2024_usd) 📊: $24.7M (95% CI: $19.5M - $30M)
 
 $$
@@ -2516,7 +2516,7 @@ $$
 
 :::
 
-### Possible Drug-Disease Combinations: 9.50 million combinations {#sec-drug_disease_combinations_possible}
+### Possible Drug-Disease Combinations: 9.5 million combinations {#sec-drug_disease_combinations_possible}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2524,8 +2524,8 @@ Total possible drug-disease combinations using existing safe compounds
 
 **Inputs**:
 
-- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.50 thousand compounds (95% CI: 7.00 thousand compounds - 12.0 thousand compounds)
-- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1.00 thousand diseases (95% CI: 800 diseases - 1.20 thousand diseases)
+- [Safe Compounds Available for Testing](#sec-safe_compounds_count): 9.5 thousand compounds (95% CI: 7 thousand compounds - 12 thousand compounds)
+- [Trial-Relevant Diseases](#sec-trial_relevant_diseases_count): 1 thousand diseases (95% CI: 800 diseases - 1.2 thousand diseases)
 
 $$
 \begin{gathered}
@@ -2552,8 +2552,8 @@ Fraction of possible drug-disease space actually tested (<1%)
 
 **Inputs**:
 
-- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15.0 thousand relationships - 50.0 thousand relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
+- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15 thousand relationships - 50 thousand relationships)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.5 million combinations
 
 $$
 \begin{gathered}
@@ -2590,7 +2590,7 @@ $$
 
 :::
 
-### Pragmatic Trial Cost per QALY (RECOVERY): $4.00 {#sec-pragmatic_trial_cost_per_qaly}
+### Pragmatic Trial Cost per QALY (RECOVERY): $4 {#sec-pragmatic_trial_cost_per_qaly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2599,7 +2599,7 @@ Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data
 **Inputs**:
 
 - [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost) 📊: $20M (95% CI: $15M - $25M)
-- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated) 🔢: 5.00 million QALYs
+- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated) 🔢: 5 million QALYs
 
 $$
 \begin{gathered}
@@ -2647,7 +2647,7 @@ How many times more cost-effective pragmatic trials are vs standard NIH research
 **Inputs**:
 
 - [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly) 📊: $50K (95% CI: $20K - $100K)
-- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly) 🔢: $4.00
+- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly) 🔢: $4
 
 $$
 \begin{gathered}
@@ -2693,7 +2693,7 @@ $$
 
 :::
 
-### RECOVERY Trial Total QALYs Generated: 5.00 million QALYs {#sec-recovery_trial_total_qalys_generated}
+### RECOVERY Trial Total QALYs Generated: 5 million QALYs {#sec-recovery_trial_total_qalys_generated}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2701,7 +2701,7 @@ Total QALYs generated by RECOVERY trial's discoveries (lives saved × QALYs per 
 
 **Inputs**:
 
-- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved) 📊: 1.00 million lives (95% CI: 500 thousand lives - 2.00 million lives)
+- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved) 📊: 1 million lives (95% CI: 500 thousand lives - 2 million lives)
 - [QALYs per COVID Death Averted](#sec-qalys_per_covid_death_averted): 5 QALYs/death (95% CI: 3 QALYs/death - 10 QALYs/death)
 
 $$
@@ -2843,7 +2843,7 @@ Total DALYs per US-scale thalidomide event (YLL + YLD)
 
 **Inputs**:
 
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13.0 thousand years
+- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 13 thousand years
 - [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28.8 thousand years
 
 $$
@@ -3017,7 +3017,7 @@ Estimated US thalidomide cases prevented by FDA rejection
 
 **Inputs**:
 
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15.0 thousand cases (95% CI: 10.0 thousand cases - 20.0 thousand cases)
+- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15 thousand cases (95% CI: 10 thousand cases - 20 thousand cases)
 - [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
 
 $$
@@ -3047,7 +3047,7 @@ $$
 
 :::
 
-### Thalidomide YLD Per Event: 13.0 thousand years {#sec-thalidomide_yld_per_event}
+### Thalidomide YLD Per Event: 13 thousand years {#sec-thalidomide_yld_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3386,8 +3386,8 @@ Fraction of possible drug-disease space that remains unexplored (>99%)
 
 **Inputs**:
 
-- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15.0 thousand relationships - 50.0 thousand relationships)
-- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.50 million combinations
+- [Tested Drug-Disease Relationships](#sec-tested_relationships_estimate): 32.5 thousand relationships (95% CI: 15 thousand relationships - 50 thousand relationships)
+- [Possible Drug-Disease Combinations](#sec-drug_disease_combinations_possible) 🔢: 9.5 million combinations
 
 $$
 \begin{gathered}
@@ -3438,9 +3438,9 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$929, $1.40K] • Distribution: Lognormal
+**Technical**: 95% CI: [$929, $1.4K] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.40K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.4K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3544,7 +3544,7 @@ Current clinical trial participation rate (0.06% of population)
 
 :::
 
-### Global Population with Chronic Diseases: 2.40 billion people {#sec-current_disease_patients_global}
+### Global Population with Chronic Diseases: 2.4 billion people {#sec-current_disease_patients_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3554,9 +3554,9 @@ Global population with chronic diseases
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [2.00 billion people, 2.80 billion people] • Distribution: Lognormal
+**Technical**: 95% CI: [2 billion people, 2.8 billion people] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2.00 billion people and 2.80 billion people (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2 billion people and 2.8 billion people (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3568,7 +3568,7 @@ Global population with chronic diseases
 
 :::
 
-### Current Global Clinical Trials per Year: 3.30 thousand trials/year {#sec-current_trials_per_year}
+### Current Global Clinical Trials per Year: 3.3 thousand trials/year {#sec-current_trials_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3592,7 +3592,7 @@ Current global clinical trials per year
 
 :::
 
-### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
+### Annual Global Clinical Trial Participants: 1.9 million patients/year {#sec-current_trial_slots_available}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3602,9 +3602,9 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50 million patients/year, 2.30 million patients/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.5 million patients/year, 2.3 million patients/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50 million patients/year and 2.30 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.5 million patients/year and 2.3 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3726,7 +3726,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Normal (SE: 7.50 thousand deaths/day)
+**Technical**: Distribution: Normal (SE: 7.5 thousand deaths/day)
 
 #### Input Distribution
 
@@ -3852,7 +3852,7 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 :::
 
-### Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
+### Pharma Drug Development Cost (Current System): $2.6B {#sec-pharma_drug_development_cost_current}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3862,9 +3862,9 @@ Average cost to develop one drug in current system
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1.50B, $4B] • Distribution: Lognormal (SE: $500M)
+**Technical**: 95% CI: [$1.5B, $4B] • Distribution: Lognormal (SE: $500M)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.50B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.5B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3948,7 +3948,7 @@ Estimated physicians conducting real-world efficacy trials pre-1962 (unverified 
 
 :::
 
-### Total Number of Rare Diseases Globally: 7.00 thousand diseases {#sec-rare_diseases_count_global}
+### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3958,9 +3958,9 @@ Total number of rare diseases globally
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [6.00 thousand diseases, 10.0 thousand diseases] • Distribution: Normal
+**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 6.00 thousand diseases and 10.0 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
@@ -3982,9 +3982,9 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$400, $2.50K] • Distribution: Lognormal
+**Technical**: 95% CI: [$400, $2.5K] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.50K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.5K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -3996,7 +3996,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 :::
 
-### RECOVERY Trial Global Lives Saved: 1.00 million lives {#sec-recovery_trial_global_lives_saved}
+### RECOVERY Trial Global Lives Saved: 1 million lives {#sec-recovery_trial_global_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4006,9 +4006,9 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [500 thousand lives, 2.00 million lives] • Distribution: Lognormal
+**Technical**: 95% CI: [500 thousand lives, 2 million lives] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 500 thousand lives and 2.00 million lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 500 thousand lives and 2 million lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4120,7 +4120,7 @@ Standard economic value per QALY
 
 :::
 
-### Thalidomide Cases Worldwide: 15.0 thousand cases {#sec-thalidomide_cases_worldwide}
+### Thalidomide Cases Worldwide: 15 thousand cases {#sec-thalidomide_cases_worldwide}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4130,9 +4130,9 @@ Total thalidomide birth defect cases worldwide (1957-1962)
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [10.0 thousand cases, 20.0 thousand cases] • Distribution: Lognormal
+**Technical**: 95% CI: [10 thousand cases, 20 thousand cases] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 10.0 thousand cases and 20.0 thousand cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 10 thousand cases and 20 thousand cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4638,7 +4638,7 @@ Average QALYs gained per COVID death averted. Conservative estimate reflecting o
 
 :::
 
-### Safe Compounds Available for Testing: 9.50 thousand compounds {#sec-safe_compounds_count}
+### Safe Compounds Available for Testing: 9.5 thousand compounds {#sec-safe_compounds_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4646,9 +4646,9 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [7.00 thousand compounds, 12.0 thousand compounds] • Distribution: Uniform
+**Technical**: 95% CI: [7 thousand compounds, 12 thousand compounds] • Distribution: Uniform
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 7.00 thousand compounds and 12.0 thousand compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between 7 thousand compounds and 12 thousand compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
 
@@ -4668,9 +4668,9 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [15.0 thousand relationships, 50.0 thousand relationships] • Distribution: Lognormal
+**Technical**: 95% CI: [15 thousand relationships, 50 thousand relationships] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 15.0 thousand relationships and 50.0 thousand relationships (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 15 thousand relationships and 50 thousand relationships (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -4682,7 +4682,7 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 :::
 
-### Trial-Relevant Diseases: 1.00 thousand diseases {#sec-trial_relevant_diseases_count}
+### Trial-Relevant Diseases: 1 thousand diseases {#sec-trial_relevant_diseases_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4690,9 +4690,9 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [800 diseases, 1.20 thousand diseases] • Distribution: Uniform
+**Technical**: 95% CI: [800 diseases, 1.2 thousand diseases] • Distribution: Uniform
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1.20 thousand diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 800 diseases and 1.2 thousand diseases (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The uniform distribution means any value in the range is equally likely.*
 

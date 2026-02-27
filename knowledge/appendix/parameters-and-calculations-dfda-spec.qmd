@@ -188,9 +188,9 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$929, $1.40K] • Distribution: Lognormal
+**Technical**: 95% CI: [$929, $1.4K] • Distribution: Lognormal
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.40K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $929 and $1.4K (±25%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -202,7 +202,7 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 :::
 
-### Annual Global Clinical Trial Participants: 1.90 million patients/year {#sec-current_trial_slots_available}
+### Annual Global Clinical Trial Participants: 1.9 million patients/year {#sec-current_trial_slots_available}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -212,9 +212,9 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.50 million patients/year, 2.30 million patients/year] • Distribution: Lognormal
+**Technical**: 95% CI: [1.5 million patients/year, 2.3 million patients/year] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.50 million patients/year and 2.30 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.5 million patients/year and 2.3 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -306,7 +306,7 @@ Phase 3 trial total cost (minimum)
 
 :::
 
-### RECOVERY Trial Global Lives Saved: 1.00 million lives {#sec-recovery_trial_global_lives_saved}
+### RECOVERY Trial Global Lives Saved: 1 million lives {#sec-recovery_trial_global_lives_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -316,9 +316,9 @@ Estimated lives saved globally by RECOVERY trial's dexamethasone discovery. NHS 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [500 thousand lives, 2.00 million lives] • Distribution: Lognormal
+**Technical**: 95% CI: [500 thousand lives, 2 million lives] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 500 thousand lives and 2.00 million lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 500 thousand lives and 2 million lives (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -380,7 +380,7 @@ Average years of life extension per person saved by pharmaceutical interventions
 
 :::
 
-### Stage 1 Observational Analysis Cost per Patient: $0.100 {#sec-dfda_observational_cost_per_patient}
+### Stage 1 Observational Analysis Cost per Patient: $0.1 {#sec-dfda_observational_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -388,9 +388,9 @@ Order-of-magnitude estimate for Stage 1 observational signal detection (PIS calc
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$0.030, $1.00] • Distribution: Lognormal
+**Technical**: 95% CI: [$0.03, $1] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $0.030 and $1.00 (±485%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.03 and $1 (±485%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

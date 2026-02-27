@@ -121,6 +121,6 @@ plt.show()
 | Mean (expected value) | $1.01T |
 | Median (50th percentile) | $998B |
 | Standard Deviation | $146B |
-| 90% Range (5th-95th percentile) | [$790B, $1.30T] |
+| 90% Range (5th-95th percentile) | [$790B, $1.3T] |
 
 *The histogram shows the distribution of Category 1: Direct Spending Waste across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

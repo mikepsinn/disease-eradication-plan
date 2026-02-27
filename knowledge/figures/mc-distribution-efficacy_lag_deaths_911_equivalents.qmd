@@ -118,7 +118,7 @@ plt.show()
 | Statistic | Value |
 |:----------|------:|
 | Baseline (deterministic) | 34.1 thousand |
-| Mean (expected value) | 36.0 thousand |
+| Mean (expected value) | 36 thousand |
 | Median (50th percentile) | 32.7 thousand |
 | Standard Deviation | 17.8 thousand |
 | 90% Range (5th-95th percentile) | [12.4 thousand, 71.8 thousand] |

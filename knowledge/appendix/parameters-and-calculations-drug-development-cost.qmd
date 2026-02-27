@@ -58,7 +58,7 @@ Drug development cost increase from pre-1962 to current
 
 **Inputs**:
 
-- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.60B (95% CI: $1.50B - $4B)
+- [Pharma Drug Development Cost (Current System)](#sec-pharma_drug_development_cost_current) 📊: $2.6B (95% CI: $1.5B - $4B)
 - [Pre-1962 Drug Development Cost (2024 Dollars)](#sec-pre_1962_drug_development_cost_2024_usd) 📊: $24.7M (95% CI: $19.5M - $30M)
 
 $$
@@ -99,7 +99,7 @@ Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost /
 **Inputs**:
 
 - [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
-- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.50K)
+- [Recovery Trial Cost per Patient](#sec-recovery_trial_cost_per_patient) 📊: $500 (95% CI: $400 - $2.5K)
 
 $$
 \begin{gathered}
@@ -182,7 +182,7 @@ Average annual new drug approvals globally
 
 :::
 
-### Pharma Drug Development Cost (Current System): $2.60B {#sec-pharma_drug_development_cost_current}
+### Pharma Drug Development Cost (Current System): $2.6B {#sec-pharma_drug_development_cost_current}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -192,9 +192,9 @@ Average cost to develop one drug in current system
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$1.50B, $4B] • Distribution: Lognormal (SE: $500M)
+**Technical**: 95% CI: [$1.5B, $4B] • Distribution: Lognormal (SE: $500M)
 
-**What this means**: There's significant uncertainty here. The true value likely falls between $1.50B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: There's significant uncertainty here. The true value likely falls between $1.5B and $4B (±48%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -230,7 +230,7 @@ Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 
 
 :::
 
-### Pre-1962 Drug Development Cost (1980 Dollars): $6.50M {#sec-pre_1962_drug_development_cost_1980_usd}
+### Pre-1962 Drug Development Cost (1980 Dollars): $6.5M {#sec-pre_1962_drug_development_cost_1980_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -240,9 +240,9 @@ Average drug development cost before 1962 FDA efficacy regulations, adjusted to 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$5.20M, $7.80M] • Distribution: Lognormal
+**Technical**: 95% CI: [$5.2M, $7.8M] • Distribution: Lognormal
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $5.20M and $7.80M (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $5.2M and $7.8M (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -288,9 +288,9 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$400, $2.50K] • Distribution: Lognormal
+**Technical**: 95% CI: [$400, $2.5K] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.50K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $400 and $2.5K (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
