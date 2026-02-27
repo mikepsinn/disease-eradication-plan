@@ -116,17 +116,16 @@ SCENES = [
         "end_s": 13.5,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A relay chain of cartoon characters passing stacks of dollar bills "
-            "left to right: a rich man in a top hat hands bills to a loud man "
-            "with a megaphone, who hands them to a sneaky lobbyist in a trench coat, "
-            "who hands them to a grinning Super PAC man, who hands them to a "
-            "smiling politician at a podium. Assembly line of bribery. "
+            "A lineup of cartoon characters standing in a row left to right: "
+            "a rich man in a top hat, a loud man with a megaphone, a sneaky "
+            "lobbyist in a trench coat, a grinning Super PAC man, and a "
+            "smiling politician at a podium. Each holds a stack of dollar bills. "
             "Navy background, warm orange spotlights."
         ),
         "veo_prompt": (
-            "A chain of cartoon characters pass stacks of dollar bills like a relay "
-            "race: rich man in top hat, loud man with megaphone, sneaky lobbyist, "
-            "grinning Super PAC man, smiling politician. Each handoff has a sparkle. "
+            "The characters pass stacks of dollar bills down the line like a relay "
+            "race: rich man hands to megaphone guy, who hands to lobbyist, who hands "
+            "to Super PAC man, who hands to politician. Each handoff has a sparkle. "
             "Assembly line of legal bribery. 1950s style. Orange and navy."
         ),
     },
@@ -137,13 +136,13 @@ SCENES = [
         "end_s": 20.5,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A grumpy nuclear warhead being shoved into a magician hat. "
-            "A happy pill bottle pops out the other side with sparkles. "
+            "A grumpy nuclear warhead standing next to a magician's top hat. "
+            "A magician in a cape stands behind the hat with a wand. "
             "Navy background, orange confetti."
         ),
         "veo_prompt": (
-            "A grumpy cartoon warhead gets stuffed into a magician hat. "
-            "A happy medicine bottle pops out the other side with sparkles. "
+            "The magician shoves the grumpy warhead into the hat. "
+            "A happy medicine bottle pops out the other side with sparkles and confetti. "
             "Slapstick magic trick. Retro 1950s style."
         ),
     },
@@ -171,13 +170,13 @@ SCENES = [
         "end_s": 31.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "An enormous pile of money bags and dollar bills. Cartoon missiles "
-            "stacked at the base. Happy skeletons dance around giving thumbs up. "
+            "A small pile of money bags and dollar bills next to cartoon missiles. "
+            "Happy skeletons stand nearby. "
             "Navy background, warm orange glow."
         ),
         "veo_prompt": (
-            "A mountain of money bags grows taller. Cartoon missiles pile up. "
-            "Happy skeletons dance around giving thumbs up. "
+            "The pile of money bags grows into an enormous mountain. Cartoon missiles "
+            "pile up higher and higher. Happy skeletons dance around giving thumbs up. "
             "Darkly comedic. 1950s animation. Warm orange and navy."
         ),
     },
@@ -188,13 +187,15 @@ SCENES = [
         "end_s": 39.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "Cartoon puppet politicians with"
-            "Giant sinister dollar bills behind them operating them "
-            "like puppets so they shovel money from the treasury to bomb factories. Navy background, orange accents."
+            "Cartoon politicians sitting at desks with innocent expressions. "
+            "Giant sinister dollar bills loom behind them holding puppet strings. "
+            "A treasury vault and bomb factory visible in the background. "
+            "Navy background, orange accents."
         ),
         "veo_prompt": (
-            "Cartoon politicians being operated like puppets by sinister dollar bills"
-            " so the politicians shovel money from the treasury to bomb factories. "
+            "The sinister dollar bills pull the puppet strings and the politicians "
+            "start shoveling money from the treasury vault into the bomb factory. "
+            "The politicians smile obliviously. "
             "Dark comedy. 1950s editorial cartoon style."
         ),
     },
@@ -240,15 +241,15 @@ SCENES = [
         "keyframe_prompt": (
             f"{VISUAL_STYLE} "
             "A giant pie chart. 99% of the pie is dark navy filled with bombs, "
-            "skulls, and missiles. A tiny 1% bright orange slice is being pulled "
-            "out by cheering doctors. The slice has medicine bottles and hearts on it. "
+            "skulls, and missiles. A tiny 1% bright orange slice sits at the edge. "
+            "Doctors and sick patients stand on the right side watching hopefully. "
             'A parchment scroll below reads "1% Treaty". Navy background.'
         ),
         "veo_prompt": (
-            "A giant pie chart filled with bombs and skulls. A tiny 1% orange "
-            "slice slides out and floats to the right where cheering doctors "
-            "and sick patients catch it. The slice transforms into medicine "
-            'bottles. A parchment unfurls reading "1% Treaty". '
+            "The tiny 1% orange slice slides out of the giant bomb-and-skull pie chart "
+            "and floats to the right. Cheering doctors and sick patients catch it. "
+            "The slice transforms into glowing medicine bottles. "
+            'A parchment unfurls reading "1% Treaty". '
             "1950s style. Orange and navy."
         ),
     },
@@ -259,14 +260,16 @@ SCENES = [
         "end_s": 71.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A Rube Goldberg machine: a greedy businessman shoves money in one "
-            "end, it bounces through gears and tubes, medicine bottles pop out "
-            "the other end. Navy and orange."
+            "A greedy businessman in a suit standing next to an elaborate "
+            "Rube Goldberg machine with gears, tubes, and catapults. "
+            "He holds a wad of money near the input funnel. "
+            "Navy and orange."
         ),
         "veo_prompt": (
-            "A Rube Goldberg machine activates: money goes in, bounces through "
-            "gears, dominoes, catapults, and tubes. Medicine bottles pop out "
-            "the other end. Comedic chain reaction. 1950s animation."
+            "The businessman shoves money into the Rube Goldberg machine. "
+            "It bounces through gears, dominoes, catapults, and tubes in a "
+            "comedic chain reaction. Medicine bottles pop out the other end. "
+            "1950s animation. Orange and navy."
         ),
     },
     {
@@ -296,13 +299,13 @@ SCENES = [
         "end_s": 86.5,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A winding path made of dollar bills. Characters walk "
-            "along it, accidentally turning bills into flowers and medicine "
-            "wherever they step. Navy background, warm orange glow."
+            "A winding path made of dollar bills stretching into the distance. "
+            "Characters stand at the start of the path looking confused. "
+            "Navy background, warm orange glow."
         ),
         "veo_prompt": (
-            "Characters stumble along a path made of money. Every step "
-            "accidentally makes something good happen: bills turn to flowers. "
+            "The characters stumble along the path of money. Every step "
+            "accidentally turns bills into flowers and medicine. "
             "Comedy of accidental good deeds. 1950s animation. Orange and navy."
         ),
     },
@@ -329,18 +332,16 @@ SCENES = [
         "end_s": 100.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} "
-            "Grand finale: the grumpy warhead, puppet politicians, dancing "
-            "skeletons, grim reaper, confused general, and happy medicine bottle "
-            f"all line up and bow. {WISHONIA_CHARACTER} in the center. "
-            "Massive confetti. "
-            'A glowing neon sign above reads "How to End War and Disease". '
+            "All the characters standing in a line on stage: grumpy warhead, "
+            "puppet politicians, dancing skeletons, grim reaper, confused general, "
+            f"happy medicine bottle. {WISHONIA_CHARACTER} in the center. "
+            'A neon sign above reads "How to End War and Disease". '
             "Navy background, warm orange glow."
         ),
         "veo_prompt": (
-            "Grand curtain call: the grumpy warhead, puppet politicians, "
-            "dancing skeletons, grim reaper, confused general, and happy "
-            "medicine bottle all line up and bow. Confetti cannons explode. "
-            'A glowing neon sign flickers on reading "How to End War and Disease". '
+            "The whole cast takes a bow together. Confetti cannons explode. "
+            'The neon sign flickers on reading "How to End War and Disease". '
+            f"{WISHONIA_CHARACTER} waves from the center. "
             "Classic showstopper ending. 1950s style. Orange and navy."
         ),
     },
