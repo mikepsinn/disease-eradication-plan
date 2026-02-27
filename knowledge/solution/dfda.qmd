@@ -380,9 +380,9 @@ Multiple companies have already built decentralized clinical trial platforms. Th
 
 Why compete with them? That would be very human of you. Partner instead.
 
-**The protocol provides**:
+**The open standard provides**:
 
-- Open protocol for data exchange (like email protocols)
+- Common data exchange format (like email protocols)
 - Federated data network (data stays in Epic/Cerner/Apple Health systems)
 - Treatment ranking algorithms (open source, anyone can verify)
 - Trial matching services (connects patients to ANY platform)
@@ -404,7 +404,7 @@ Data doesn't move to a central database. It stays where it is. Everyone keeps th
 - Apple Health keeps its data
 - Cerner keeps its data
 
-Your framework's protocol just lets you run queries ACROSS systems without moving data. Like asking every library in the world a question without stealing their books. Federated data networks already do this with 300M+ patient records.
+Your decentralized protocol will let you run queries ACROSS systems without moving data. Like asking every library in the world a question without stealing their books. Federated data networks already do this with 300M+ patient records.
 
 ![Instead of copying everyone's medical data to one place, we ask questions to many places and combine the answers. Your data stays where it is, we just visit.](/assets/images/dfda/dfda-section-federated-not-centralized-bw-academic.jpg)
 
