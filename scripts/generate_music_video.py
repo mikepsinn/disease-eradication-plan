@@ -66,8 +66,9 @@ WISHONIA_PLANET = (
     "utopian cities and glowing circuits, with a giant friendly smiley face on its surface"
 )
 WISHONIA_CHARACTER = (
-    "A cute smiling pale-skinned humanoid alien young woman with a black bob "
-    "haircut wearing a spacey dress with glowing rings orbiting around her"
+    "A cute smiling white-skinned humanoid alien young woman with big cute eyes, "
+    "little antennae, a black bob haircut, "
+    "wearing a spacey dress with glowing rings orbiting around her"
 )
 
 # --- Scene Definitions ---
@@ -82,14 +83,14 @@ SCENES = [
         "end_s": 5.7,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            f"{WISHONIA_PLANET} sends a radio transmission signal "
-            "toward a small Earth in the distance. Orange radio waves "
-            "radiate outward. Navy space, warm orange beam."
+            f"{WISHONIA_PLANET} sending a radio transmission and hearts to a "
+            "small Earth in the distance. "
         ),
         "veo_prompt": (
-            f"{WISHONIA_PLANET} sends a radio transmission beam toward "
-            "tiny Earth in the distance. Orange radio waves pulse outward. "
-            "Stars twinkle. 1950s sci-fi. Navy space, warm orange."
+            f"{WISHONIA_PLANET} smiles and waves at tiny Earth. "
+            "Glowing hearts float from the planet toward Earth. "
+            "The planet pulses brighter with excitement. "
+            "1950s sci-fi."
         ),
     },
     {
@@ -100,13 +101,13 @@ SCENES = [
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
             "A cartoon young boy and girl. "
-            "Behind them, a grim reaper skeleton in a dark hooded "
-            "robe creeps up holding a giant scythe. Navy background, orange spotlights."
+            "Behind them, a creeping grim reaper skeleton in a dark hooded robe "
+            "creeps up holding a giant scythe."
         ),
         "veo_prompt": (
-            "The boy and girl gradually age and deteriorate into skeletons. Behind them "
-            "a towering grim reaper skeleton with a giant scythe gradually creeps "
-            "closer and closer. 1950s illustration style. Warm orange and navy."
+            "The boy and girl gradually age and deteriorate into skeletons. "
+            "The towering grim reaper creeps closer and closer. "
+            "1950s illustration style."
         ),
     },
     {
@@ -116,17 +117,16 @@ SCENES = [
         "end_s": 13.5,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A lineup of cartoon characters standing in a row left to right: "
-            "a rich man in a top hat, a loud man with a megaphone, a sneaky "
-            "lobbyist in a trench coat, a grinning Super PAC man, and a "
-            "smiling politician at a podium. Each holds a stack of dollar bills. "
-            "Navy background, warm orange spotlights."
+            "A lineup of cartoon characters in a row: a rich man in a top hat, "
+            "a loud woman with a megaphone, a sneaky superpac lobbyist in a trench coat, "
+            "and a politician at podium. "
+            "Each holds a stack of dollar bills."
         ),
         "veo_prompt": (
-            "The characters pass stacks of dollar bills down the line like a relay "
-            "race: rich man hands to megaphone guy, who hands to lobbyist, who hands "
-            "to Super PAC man, who hands to politician. Each handoff has a sparkle. "
-            "Assembly line of legal bribery. 1950s style. Orange and navy."
+            "The characters pass dollar bills down the line like a relay race: "
+            "rich man to megaphone guy to lobbyist to Super PAC man to politician. "
+            "Each handoff has a sparkle. Assembly line of legal bribery. "
+            "1950s style."
         ),
     },
     {
@@ -137,13 +137,14 @@ SCENES = [
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
             "A grumpy nuclear warhead standing next to a magician's top hat. "
-            "A magician in a cape stands behind the hat with a wand. "
-            "Navy background, orange confetti."
+            "A magician stands behind the hat. "
+            "A policeman stands off to the side watching with arms crossed."
         ),
         "veo_prompt": (
             "The magician shoves the grumpy warhead into the hat. "
-            "A happy medicine bottle pops out the other side with sparkles and confetti. "
-            "Slapstick magic trick. Retro 1950s style."
+            "A happy medicine bottle pops out the other side with sparkles. "
+            "The policeman smiles and gives a big thumbs up. "
+            "Slapstick magic trick. 1950s style."
         ),
     },
     {
@@ -153,14 +154,13 @@ SCENES = [
         "end_s": 26.5,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A comically tiny crumpled dollar bill on a massive empty plate. "
-            "A sad cartoon scientist peers at it through a magnifying glass. "
-            "Navy background, warm orange spotlight."
+            "A comically tiny dollar bill on a massive empty plate. "
+            "A sad cartoon scientist in a white lab coat peers at it through a magnifying glass."
         ),
         "veo_prompt": (
-            "A sad cartoon scientist peers through a magnifying glass at a "
-            "comically tiny crumpled dollar bill on a massive empty plate and a military contractor comedically steals the dollar bill. "
-            "1950s sad comedy. Warm orange on navy."
+            "A rich lobbyist in a top hat comedically steals the tiny dollar bill "
+            "off the plate while the sad scientist watches helplessly. "
+            "1950s sad comedy."
         ),
     },
     {
@@ -170,14 +170,14 @@ SCENES = [
         "end_s": 31.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A small pile of money bags and dollar bills next to cartoon missiles. "
-            "Happy skeletons stand nearby. "
-            "Navy background, warm orange glow."
+            "A small pile of money bags and dollar bills next to anthropomorphic cartoon missiles. "
+            "Happy skeletons stand nearby."
         ),
         "veo_prompt": (
-            "The pile of money bags grows into an enormous mountain. Cartoon missiles "
-            "pile up higher and higher. Happy skeletons dance around giving thumbs up. "
-            "Darkly comedic. 1950s animation. Warm orange and navy."
+            "The pile of money bags grows into an enormous mountain. "
+            "Missiles pile up higher and higher. "
+            "Happy skeletons dance around giving thumbs up. "
+            "Darkly comedic. 1950s animation."
         ),
     },
     {
@@ -187,15 +187,13 @@ SCENES = [
         "end_s": 39.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "Cartoon politicians sitting at desks with innocent expressions. "
-            "Giant sinister dollar bills loom behind them holding puppet strings. "
-            "A treasury vault and bomb factory visible in the background. "
-            "Navy background, orange accents."
+            "a Cartoon marionette figure in a suit with strings attached to their limbs "
+            "shoveling money from a government treasury into a bomb factory. "
+            "A Giant anthropomorphic dollar bill holds the puppet strings from above."
         ),
         "veo_prompt": (
-            "The sinister dollar bills pull the puppet strings and the politicians "
-            "start shoveling money from the treasury vault into the bomb factory. "
-            "The politicians smile obliviously. "
+            "The dollar bills pull the marionette strings. The puppet "
+            "shovels money from the government treasury into the bomb factory, smiling obliviously. "
             "Dark comedy. 1950s editorial cartoon style."
         ),
     },
@@ -207,12 +205,11 @@ SCENES = [
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
             f"{WISHONIA_PLANET}. "
-            "Tiny Earth visible in the distance. Navy space, warm orange glow."
+            "Tiny Earth visible in the distance."
         ),
         "veo_prompt": (
-            f"{WISHONIA_PLANET} pulses with energy. A giant "
-            "friendly smiley face beams from the planet. Camera slowly "
-            "zooms in. 1950s sci-fi. Navy space, warm orange glow."
+            f"{WISHONIA_PLANET} pulses with energy. "
+            "The giant smiley face beams. Camera slowly zooms in. 1950s sci-fi."
         ),
     },
     {
@@ -222,10 +219,8 @@ SCENES = [
         "end_s": 55.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            f"{WISHONIA_CHARACTER}, at a massive "
-            "holographic dashboard, flicking and swiping glowing data "
-            "visualizations. Streams of information flow around her. "
-            "Navy background, warm orange glow."
+            f"{WISHONIA_CHARACTER} at a holographic dashboard "
+            "with glowing data visualizations of health and happiness data."
         ),
         "veo_prompt": (
             f"{WISHONIA_CHARACTER} swipes and flicks holographic data "
@@ -241,13 +236,12 @@ SCENES = [
         "keyframe_prompt": (
             f"{VISUAL_STYLE} "
             "A giant pie chart. 99% of the pie is dark navy filled with bombs, "
-            "skulls, and missiles. A tiny 1% bright orange slice sits at the edge. "
-            "Doctors and sick patients stand on the right side watching hopefully. "
+            "skulls, and missiles."
+            "Doctors and sick cancer patients staring to pull a tiny 1% orange slice out of the pie chart. "
             'A parchment scroll below reads "1% Treaty". Navy background.'
         ),
         "veo_prompt": (
-            "The tiny 1% orange slice slides out of the giant bomb-and-skull pie chart "
-            "and floats to the right. Cheering doctors and sick patients catch it. "
+            "doctors and sick cancer patients pull the tiny 1% orange slice slides out of the giant bomb-and-skull pie chart "
             "The slice transforms into glowing medicine bottles. "
             'A parchment unfurls reading "1% Treaty". '
             "1950s style. Orange and navy."
@@ -260,16 +254,13 @@ SCENES = [
         "end_s": 71.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A greedy businessman in a suit standing next to an elaborate "
-            "Rube Goldberg machine with gears, tubes, and catapults. "
-            "He holds a wad of money near the input funnel. "
-            "Navy and orange."
+            "A greedy businessman standing next to an elaborate "
+            "Rube Goldberg machine. He holds a wad of money near the input funnel."
         ),
         "veo_prompt": (
             "The businessman shoves money into the Rube Goldberg machine. "
-            "It bounces through gears, dominoes, catapults, and tubes in a "
-            "comedic chain reaction. Medicine bottles pop out the other end. "
-            "1950s animation. Orange and navy."
+            "It bounces through gears, dominoes, catapults, and tubes in a comedic chain reaction. "
+            "Medicine bottles pop out the other end. 1950s animation."
         ),
     },
     {
@@ -280,16 +271,15 @@ SCENES = [
         "keyframe_prompt": (
             f"{VISUAL_STYLE} "
             'A comically oversized vintage book. The cover reads '
-            '"How to End War and Disease" in large retro typography. '
-            'That meme cartoon idiot '
-            'holds the book proudly upside down. '
-            'Navy background, warm orange spotlights.'
+            '"How to End War and Disease". '
+            'That meme cartoon idiot holds the book proudly upside down.'
         ),
         "veo_prompt": (
-            'A massive vintage book with "How to End War and Disease" on the '
-            "cover. That meme idiot with holds it "
-            "upside down "
-            "1950s comedy. Navy and warm orange."
+            "The idiot throws the book in a trash can and pulls out a phone showing a girl dancing. "
+            "He ages and turns into a skeleton while staring at the phone. "
+            "Meanwhile a cockroach crawls up, evolves intelligence, "
+            "pulls the book out of the trash, and starts reading it. "
+            "1950s comedy."
         ),
     },
     {
@@ -299,14 +289,15 @@ SCENES = [
         "end_s": 86.5,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A winding path made of dollar bills stretching into the distance. "
-            "Characters stand at the start of the path looking confused. "
-            "Navy background, warm orange glow."
+            "A winding path made of dollar bills starting in a dystopian war-torn city. "
+            "Old, sick, frail characters stand at the start looking confused."
         ),
         "veo_prompt": (
-            "The characters stumble along the path of money. Every step "
-            "accidentally turns bills into flowers and medicine. "
-            "Comedy of accidental good deeds. 1950s animation. Orange and navy."
+            "The old sick characters stumble along the path of money and gradually become younger and healthier with each step. "
+            "The colors shift from gray and muted to vibrant rainbow colors. "
+            "Every step accidentally turns bills into flowers and medicine "
+            "until they reach a futuristic utopian paradise city. "
+            "Comedy of accidental good deeds. 1950s animation."
         ),
     },
     {
@@ -314,15 +305,13 @@ SCENES = [
         "lyrics": "...to Utopia!",
         "start_s": 86.5,
         "end_s": 93.0,
-        "keyframe_prompt": (
-            f"{VISUAL_STYLE} {NO_TEXT} "
-            "A gleaming retro-futuristic utopian city. Soaring towers, flying "
-            "saucer cars. Happy people. "
-            "Warm orange against navy sky. "
-        ),
+        "keyframe_from_clip": 13,  # Extract last frame from scene 13's clip
+        "keyframe_prompt": None,
         "veo_prompt": (
-            "A retro-futuristic utopian city. happy people. Flying saucers cars zoom overhead. "
-            "1950s vision of a perfect future. Orange and navy."
+            "The buildings come alive with smiling faces and start dancing. "
+            "Hearts emanate from the buildings toward the happy people below. "
+            "Everyone and everything is dancing. Flying cars zoom overhead. "
+            "1950s vision of a perfect future."
         ),
     },
     {
@@ -332,17 +321,16 @@ SCENES = [
         "end_s": 100.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} "
-            "All the characters standing in a line on stage: grumpy warhead, "
-            "puppet politicians, dancing skeletons, grim reaper, confused general, "
-            f"happy medicine bottle. {WISHONIA_CHARACTER} in the center. "
-            'A neon sign above reads "How to End War and Disease". '
-            "Navy background, warm orange glow."
+            "All characters in a line: grumpy warhead, puppet politicians, "
+            "dancing skeletons, grim reaper, confused general, happy medicine bottle. "
+            f"{WISHONIA_CHARACTER} in the center. "
+            'A neon sign reads "How to End War and Disease".'
         ),
         "veo_prompt": (
-            "The whole cast takes a bow together. Confetti cannons explode. "
+            "The whole cast takes a bow. Confetti cannons explode. "
             'The neon sign flickers on reading "How to End War and Disease". '
             f"{WISHONIA_CHARACTER} waves from the center. "
-            "Classic showstopper ending. 1950s style. Orange and navy."
+            "Classic showstopper ending. 1950s style."
         ),
     },
 ]
@@ -381,10 +369,10 @@ def generate_keyframe(scene: dict) -> Path:
         config=types.GenerateContentConfig(
             response_modalities=["image"],
             safety_settings=[
-                types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="BLOCK_NONE"),
-                types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="BLOCK_NONE"),
-                types.SafetySetting(category="HARM_CATEGORY_HARASSMENT", threshold="BLOCK_NONE"),
-                types.SafetySetting(category="HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold="BLOCK_NONE"),
+                types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+                types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+                types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+                types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
             ],
         ),
     )
@@ -407,8 +395,31 @@ def generate_keyframes_all(scenes: list[dict]) -> dict[int, Path]:
     """Generate keyframes for all scenes."""
     print("\n=== Step 1: Generating Keyframes ===")
     keyframes = {}
+    # First pass: generate all scenes that use Gemini (skip keyframe_from_clip scenes)
+    deferred = []
     for scene in scenes:
-        keyframes[scene["index"]] = generate_keyframe(scene)
+        if scene.get("keyframe_from_clip"):
+            deferred.append(scene)
+            continue
+        for attempt in range(3):
+            try:
+                keyframes[scene["index"]] = generate_keyframe(scene)
+                break
+            except RuntimeError as e:
+                if attempt < 2:
+                    print(f"  [RETRY] Keyframe scene {scene['index']} attempt {attempt + 1}/3 failed: {e}")
+                    time.sleep(5)
+                    # Delete partial file if exists
+                    kf = KEYFRAMES_DIR / f"scene-{scene['index']:02d}.jpg"
+                    kf.unlink(missing_ok=True)
+                else:
+                    raise
+    # Deferred scenes will have keyframes extracted after their source clip is animated
+    for scene in deferred:
+        src = scene["keyframe_from_clip"]
+        output_path = KEYFRAMES_DIR / f"scene-{scene['index']:02d}.jpg"
+        print(f"  [DEFERRED] Scene {scene['index']} keyframe will be extracted from scene {src} clip after animation")
+        keyframes[scene["index"]] = output_path
     return keyframes
 
 
@@ -436,45 +447,80 @@ def animate_scene(scene: dict, keyframe_path: Path) -> Path:
     return clip_path
 
 
+def extract_last_frame(clip_path: Path, output_path: Path) -> Path:
+    """Extract the last frame from a video clip as a JPEG keyframe."""
+    import subprocess
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.run(
+        ["ffmpeg", "-y", "-sseof", "-0.1", "-i", str(clip_path),
+         "-frames:v", "1", "-q:v", "2", "-update", "1", str(output_path)],
+        capture_output=True, check=True,
+    )
+    print(f"  [EXTRACTED] keyframe scene-{output_path.stem.split('-')[1]}.jpg from last frame of {clip_path.name}")
+    return output_path
+
+
 def animate_all(scenes: list[dict], keyframes: dict[int, Path]) -> dict[int, Path]:
     """Animate all scenes with Veo 3.1 (parallel)."""
     print("\n=== Step 2: Animating Scenes with Veo 3.1 ===")
     clips = {}
 
-    # Check for already-cached clips
+    # Split into independent scenes and scenes that depend on another clip
+    deferred = []
     work_items = []
     for scene in scenes:
+        clip_path = CLIPS_DIR / f"scene-{scene['index']:02d}.mp4"
+        if clip_path.exists() and not scene.get("keyframe_from_clip"):
+            print(f"  [CACHED] clip scene-{scene['index']:02d}.mp4")
+            clips[scene["index"]] = clip_path
+        elif scene.get("keyframe_from_clip"):
+            deferred.append(scene)
+        else:
+            work_items.append(scene)
+
+    if not work_items and not deferred:
+        print("  All clips cached.")
+        return clips
+
+    # Animate independent scenes in parallel
+    if work_items:
+        print(f"  Generating {len(work_items)} clips ({VEO_PARALLEL_WORKERS} parallel workers)...")
+
+        def _gen(scene):
+            kf = keyframes[scene["index"]]
+            return scene["index"], animate_scene(scene, kf)
+
+        errors = []
+        with ThreadPoolExecutor(max_workers=VEO_PARALLEL_WORKERS) as executor:
+            futures = {executor.submit(_gen, s): s for s in work_items}
+            for future in as_completed(futures):
+                scene = futures[future]
+                try:
+                    idx, clip_path = future.result()
+                    clips[idx] = clip_path
+                except Exception as e:
+                    errors.append(f"Scene {scene['index']}: {e}")
+                    print(f"  [ERROR] Scene {scene['index']}: {e}")
+
+        if errors:
+            raise RuntimeError(f"Failed to animate {len(errors)} scene(s):\n" + "\n".join(errors))
+
+    # Now handle deferred scenes (keyframe extracted from another scene's clip)
+    for scene in deferred:
+        src_idx = scene["keyframe_from_clip"]
+        src_clip = clips.get(src_idx) or (CLIPS_DIR / f"scene-{src_idx:02d}.mp4")
+        if not src_clip.exists():
+            raise RuntimeError(f"Scene {scene['index']} needs clip from scene {src_idx}, but it doesn't exist")
+        kf_path = KEYFRAMES_DIR / f"scene-{scene['index']:02d}.jpg"
+        extract_last_frame(src_clip, kf_path)
+        keyframes[scene["index"]] = kf_path
         clip_path = CLIPS_DIR / f"scene-{scene['index']:02d}.mp4"
         if clip_path.exists():
             print(f"  [CACHED] clip scene-{scene['index']:02d}.mp4")
             clips[scene["index"]] = clip_path
         else:
-            work_items.append(scene)
-
-    if not work_items:
-        print("  All clips cached.")
-        return clips
-
-    print(f"  Generating {len(work_items)} clips ({VEO_PARALLEL_WORKERS} parallel workers)...")
-
-    def _gen(scene):
-        kf = keyframes[scene["index"]]
-        return scene["index"], animate_scene(scene, kf)
-
-    errors = []
-    with ThreadPoolExecutor(max_workers=VEO_PARALLEL_WORKERS) as executor:
-        futures = {executor.submit(_gen, s): s for s in work_items}
-        for future in as_completed(futures):
-            scene = futures[future]
-            try:
-                idx, clip_path = future.result()
-                clips[idx] = clip_path
-            except Exception as e:
-                errors.append(f"Scene {scene['index']}: {e}")
-                print(f"  [ERROR] Scene {scene['index']}: {e}")
-
-    if errors:
-        raise RuntimeError(f"Failed to animate {len(errors)} scene(s):\n" + "\n".join(errors))
+            clip = animate_scene(scene, kf_path)
+            clips[scene["index"]] = clip
 
     return clips
 

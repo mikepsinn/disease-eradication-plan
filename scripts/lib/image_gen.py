@@ -105,40 +105,41 @@ def generate_image_gemini(
     if negative_prompt:
         full_prompt += f"\n\nDO NOT include: {negative_prompt}"
 
-    contents = [
-        types.Content(
-            role="user",
-            parts=[types.Part.from_text(text=full_prompt)],
-        ),
-    ]
+    user_content = types.Content(
+        role="user",
+        parts=[types.Part.from_text(text=full_prompt)],
+    )
 
     config = types.GenerateContentConfig(
-        response_modalities=["image"],
-        safety_settings=[
-            types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="BLOCK_NONE"),
-            types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="BLOCK_NONE"),
-            types.SafetySetting(category="HARM_CATEGORY_HARASSMENT", threshold="BLOCK_NONE"),
-            types.SafetySetting(category="HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold="BLOCK_NONE"),
+        response_modalities=["image"],  # type: ignore[reportCallIssue]
+        safety_settings=[  # type: ignore[reportCallIssue]
+            types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+            types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+            types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_HARASSMENT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
+            types.SafetySetting(category=types.HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold=types.HarmBlockThreshold.BLOCK_NONE),
         ],
     )
 
     response = google_client.models.generate_content(
         model=GEMINI_IMAGE_MODEL_ID,
-        contents=contents,
+        contents=user_content,
         config=config,
     )
 
-    if not response.candidates or not response.candidates[0].content:
-        block_reason = getattr(response, 'prompt_feedback', None)
-        filters = getattr(response.candidates[0], 'safety_ratings', None) if response.candidates else None
-        finish = getattr(response.candidates[0], 'finish_reason', None) if response.candidates else None
+    if not response.candidates:
         raise RuntimeError(
-            f"No image generated. finish_reason={finish}, "
-            f"prompt_feedback={block_reason}, safety_ratings={filters}, "
+            f"No image generated. prompt_feedback={getattr(response, 'prompt_feedback', None)}, "
             f"prompt: {prompt[:120]}"
         )
+    candidate = response.candidates[0]
+    content = candidate.content
+    if not content:
+        raise RuntimeError(
+            f"No image generated. finish_reason={getattr(candidate, 'finish_reason', None)}, "
+            f"safety_ratings={getattr(candidate, 'safety_ratings', None)}, prompt: {prompt[:120]}"
+        )
 
-    for part in response.candidates[0].content.parts or []:
+    for part in content.parts or []:
         if part.inline_data and part.inline_data.data:
             image_bytes = base64.b64decode(part.inline_data.data) if isinstance(part.inline_data.data, str) else part.inline_data.data
             output_path.write_bytes(image_bytes)
@@ -146,8 +147,7 @@ def generate_image_gemini(
             return output_path
 
     # Response had candidates but no image bytes
-    candidate = response.candidates[0]
-    parts_info = [(type(p).__name__, bool(getattr(p, 'inline_data', None))) for p in (candidate.content.parts or [])]
+    parts_info = [(type(p).__name__, bool(getattr(p, 'inline_data', None))) for p in (content.parts or [])]
     finish = getattr(candidate, 'finish_reason', None)
     safety = getattr(candidate, 'safety_ratings', None)
     raise RuntimeError(
