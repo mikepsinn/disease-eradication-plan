@@ -173,7 +173,7 @@ def extract_book_metadata(config: dict) -> dict:
         'cover_art': cover_art,
         'podcast_cover': podcast_cover,
         'site_url': site_url.rstrip('/'),
-        'narrator': 'WISHONIA',
+        'narrator': 'Wishonia',
         'podcast_author': podcast_author,
         'podcast_description': podcast_description,
         'podcast_description_suffix': podcast_description_suffix,

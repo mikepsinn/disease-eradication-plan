@@ -3,7 +3,7 @@
 ## 1. Prose Style & Voice
 The project employs a dual-voice strategy to reach different audiences while maintaining a shared core of factual integrity.
 
-### 1.1 The "WISHONIA" Voice (The Manual)
+### 1.1 The "Wishonia" Voice (The Manual)
 - **Characteristics:** Bold, provocative, slightly cynical, and high-impact. It uses direct address and dark humor to highlight the absurdity of current resource allocation.
 - **Key Metaphors:** "Meat robots" (humans), "Murder budget" (military spending), "Purchasing umbrellas while the house is on fire."
 - **Goal:** To strip away political euphemisms and provoke a visceral realization of the opportunity cost of disease.

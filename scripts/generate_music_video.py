@@ -626,7 +626,7 @@ def assemble_video(scenes: list[dict], clips: dict[int, Path]) -> Path:
         "-t", f"{song_duration:.3f}",
         "-movflags", "+faststart",
         "-metadata", "title=How to End War and Disease - Theme Song",
-        "-metadata", "artist=WISHONIA",
+        "-metadata", "artist=Wishonia",
         "-metadata", "genre=Musical",
         str(output_path),
     ]

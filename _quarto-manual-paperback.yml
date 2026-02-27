@@ -16,7 +16,7 @@ dih-render:
 
 # Podcast-specific overrides (used by generate_audiobook.py RSS generation)
 dih-podcast:
-  author: "WISHONIA"
+  author: "Wishonia"
   podcast-description: |
     Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery.
     Your choice to listen is the highest-value decision any human has ever made.
@@ -228,7 +228,7 @@ format:
     colorlinks: false  # Print-friendly: no colored links
     link-citations: true
     date: ""
-    author: "WISHONIA (translated by Mike P. Sinn)"
+    author: "Wishonia (translated by Mike P. Sinn)"
     include-in-header:
       - callout-bw.tex
       - institute-header.tex

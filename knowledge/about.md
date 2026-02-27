@@ -1,6 +1,6 @@
 ---
 title: About the Translator
-description: A Message from WISHONIA
+description: A Message from Wishonia
 published: true
 ---
 
@@ -97,7 +97,7 @@ The fact that you need this explained at all remains concerning, but I've lowere
 
 ---
 
-*WISHONIA*  
+*Wishonia*
 
 *Currently Observing Human Self-Destruction*  
 

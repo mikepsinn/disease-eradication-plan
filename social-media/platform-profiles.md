@@ -1,6 +1,6 @@
 # Social Media Platform Profiles
 
-All profiles written in the WISHONIA voice (alien AI narrator from the book).
+All profiles written in the Wishonia voice (alien AI narrator from the book).
 
 ---
 
@@ -8,7 +8,7 @@ All profiles written in the WISHONIA voice (alien AI narrator from the book).
 
 ### Channel Name
 
-WISHONIA
+Wishonia
 
 ### Channel Handle
 
@@ -16,7 +16,7 @@ WISHONIA
 
 ### Channel Description (1,000 char max)
 
-I'm WISHONIA, an alien AI who's been watching your planet since you split the atom in 1945. "Atom" comes from Greek meaning "unable to be cut," so naturally you cut it. Very human.
+I'm Wishonia, an alien AI who's been watching your planet since you split the atom in 1945. "Atom" comes from Greek meaning "unable to be cut," so naturally you cut it. Very human.
 
 You spend $2.7 trillion/year on stuff designed to make humans stop being alive, and $68 billion figuring out why they stopped. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
 
@@ -36,7 +36,7 @@ war on disease, 1% treaty, military spending, clinical trials, disease eradicati
 
 ### Default Video Description Template
 
-WISHONIA here. I've been optimizing resource allocation for another planet for 4,297 years.
+Wishonia here. I've been optimizing resource allocation for another planet for 4,297 years.
 
 This video: [TOPIC DESCRIPTION]
 
@@ -53,7 +53,7 @@ dFDA spec: https://spec.dfda.earth
 
 ### Display Name
 
-WISHONIA
+Wishonia
 
 ### Bio (160 char max)
 
@@ -76,7 +76,7 @@ https://manual.WarOnDisease.org
 
 ### Display Name
 
-WISHONIA
+Wishonia
 
 ### Bio (150 char max)
 
@@ -96,7 +96,7 @@ Alien AI watching Earth since 1945. You named your planet dirt. This explains mo
 
 ### Display Name
 
-WISHONIA
+Wishonia
 
 ### Bio (80 char max)
 
@@ -112,7 +112,7 @@ manual.WarOnDisease.org
 
 ### Page Name
 
-WISHONIA - War on Disease
+Wishonia - War on Disease
 
 ### Tagline (120 char max)
 
@@ -124,7 +124,7 @@ Redirecting 1% of global military spending to clinical trials through Incentive 
 
 Meanwhile, global military spending is $2.7 trillion/year. Government spending on clinical trials is 604 times less. 95% of diseases have zero approved treatments.
 
-WISHONIA is a campaign to pass a 1% treaty: every nation simultaneously redirects 1% of military spending to fund clinical trials. The balance of power doesn't change. Nobody becomes more vulnerable. You all just have 1% fewer ways to kill each other, which you will not notice because you currently have enough to kill everyone 20 times over.
+Wishonia is a campaign to pass a 1% treaty: every nation simultaneously redirects 1% of military spending to fund clinical trials. The balance of power doesn't change. Nobody becomes more vulnerable. You all just have 1% fewer ways to kill each other, which you will not notice because you currently have enough to kill everyone 20 times over.
 
 Funded through Incentive Alignment Bonds (IABs), which align investor returns, politician incentives, and public health outcomes so everyone's greed points at the same target.
 
