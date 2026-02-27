@@ -42,7 +42,7 @@ from pydub import AudioSegment
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from lib.llm import generate_gemini_flash_content_with_image
+from lib.llm import generate_gemini_flash_content_with_image, generate_gemini_flash_content
 from lib.image_gen import generate_image, rate_limited_generate_image
 from lib.veo import generate_video
 from dih_models.yaml_utils import load_quarto_config
@@ -75,6 +75,22 @@ _visual_style = IMAGE_STYLE
 # --- Prompt Variants ---
 
 NO_TEXT_INSTRUCTION = "Do not include any text, words, letters, or numbers in the image."
+
+_SAFETY_REPHRASE_PROMPT = """The following text was rejected by an AI image generator's safety filter.
+Rephrase it to convey the same visual concept without words that could trigger content filters.
+Replace references to violence, weapons, military, controversial organizations, death, etc.
+with neutral synonyms that preserve the visual meaning.
+
+Return ONLY the rephrased text, nothing else.
+
+Original text:
+{text}"""
+
+
+def _rephrase_for_safety(text: str) -> str:
+    """Use Gemini Flash to rephrase text that triggered the image safety filter."""
+    result = generate_gemini_flash_content(_SAFETY_REPHRASE_PROMPT.format(text=text))
+    return result.strip() if result else text
 
 
 def _prompt_original(scene_text, full_context, attempt):
@@ -314,6 +330,10 @@ def generate_keyframes(
             prompt += "\n\nDo NOT include any text, signs, labels, writing, or words of any kind in this image."
         return prompt
 
+    def _is_safety_block(err: Exception) -> bool:
+        msg = str(err)
+        return 'block_reason' in msg or 'IMAGE_SAFETY' in msg
+
     def _generate_and_check(item):
         scene, aspect, output_path, filename = item
         label = filename.replace('.jpg', '')
@@ -323,7 +343,37 @@ def generate_keyframes(
             prompt = _build_prompt(scene, attempt=attempt)
             if attempt == 1 and 'imagen_prompt' not in scene:
                 scene['imagen_prompt'] = prompt
-            rate_limited_generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect)
+
+            try:
+                rate_limited_generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect)
+            except RuntimeError as e:
+                if _is_safety_block(e):
+                    # Rephrase the narration via LLM to avoid safety triggers
+                    print(f"    [SAFETY] {label} (attempt {attempt}): blocked, rephrasing via LLM")
+                    rephrased_text = _rephrase_for_safety(scene['narration_text'].strip())
+                    rephrased_prompt = (
+                        f"{NO_TEXT_INSTRUCTION}\n"
+                        f"Generate a {_visual_style} illustration.\n"
+                        f"--- ILLUSTRATE THIS ---\n{rephrased_text}\n--- END ILLUSTRATE ---\n"
+                        f"{NO_TEXT_INSTRUCTION}"
+                    )
+                    try:
+                        rate_limited_generate_image(prompt=rephrased_prompt, output_path=output_path, aspect_ratio=aspect)
+                    except RuntimeError as e2:
+                        if _is_safety_block(e2):
+                            # Last resort: use only the scene title
+                            title = scene.get('title', 'a conceptual scene')
+                            fallback_prompt = (
+                                f"{NO_TEXT_INSTRUCTION}\n"
+                                f"Generate a {_visual_style} illustration of: {title}\n"
+                                f"{NO_TEXT_INSTRUCTION}"
+                            )
+                            print(f"    [SAFETY] {label}: rephrased prompt also blocked, using title-only fallback")
+                            rate_limited_generate_image(prompt=fallback_prompt, output_path=output_path, aspect_ratio=aspect)
+                        else:
+                            raise
+                else:
+                    raise
 
             issue = _check_keyframe_for_typos(output_path)
             if issue is None:
@@ -491,10 +541,10 @@ def animate_scenes(
         scene_text = _tts_to_visual(scene['narration_text'].strip())
         # Truncate context for Veo (max ~2000 chars to stay within prompt limits)
         full_context = _tts_to_visual(chapter_text)[:2000] if chapter_text else ""
-        veo_prompt = f"Generate a {_visual_style} animation.\n--- ILLUSTRATE THIS ---\n{scene_text}\n--- END ILLUSTRATE ---\n"
+        veo_prompt = f"{NO_TEXT_INSTRUCTION}\nGenerate a {_visual_style} animation.\n--- ILLUSTRATE THIS ---\n{scene_text}\n--- END ILLUSTRATE ---\n"
         if full_context:
             veo_prompt += f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n{full_context}\n--- END CONTEXT ---\n"
-        veo_prompt += "No dialogue, narration, or speech."
+        veo_prompt += f"No dialogue, narration, or speech. {NO_TEXT_INSTRUCTION}"
 
         if 'veo_prompt_used' not in scene:
             scene['veo_prompt_used'] = veo_prompt

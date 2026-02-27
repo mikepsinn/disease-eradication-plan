@@ -17,6 +17,9 @@ image-index.json
 # Intermediate audio chunks (huge, not for distribution)
 audio-chunks/
 
+# Raw MP3 intermediates (not for distribution)
+mp3-raw/
+
 # Raw WAV files (only distribute MP3/M4B)
 *.wav
 
