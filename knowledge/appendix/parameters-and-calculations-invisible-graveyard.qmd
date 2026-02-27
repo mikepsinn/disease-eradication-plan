@@ -352,7 +352,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
+Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)
 
 **Inputs**:
 
@@ -468,7 +468,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
+Drug development cost increase from 1980s to current
 
 **Inputs**:
 
@@ -508,7 +508,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost ($1.56B per drug) - this is a LOWER BOUND because it excludes opportunity cost of 8.2-year delays, compounds abandoned due to cost barrier, and regulatory overhead. Comparable to the $8 trillion spent on post-9/11 wars.
+Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost per drug - this is a LOWER BOUND because it excludes opportunity cost of delays, compounds abandoned due to cost barrier, and regulatory overhead.
 
 **Inputs**:
 
@@ -1929,7 +1929,7 @@ Standard discount rate for NPV analysis (3% annual, social discount rate)
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of $2.6B total)
+Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of total drug development cost)
 
 #### Uncertainty Range
 

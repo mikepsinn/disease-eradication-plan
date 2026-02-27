@@ -272,7 +272,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
+Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)
 
 **Inputs**:
 
@@ -360,7 +360,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY at ~$21.8B/year direct funding for the therapeutic space exploration period (NPV: ~$541.9B). Still highly cost-effective vs bed nets ($89.0/DALY).
+Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.
 
 **Inputs**:
 
@@ -496,7 +496,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-NPV of ~$21.8B/year in direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
+NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
 
 **Inputs**:
 
@@ -2381,7 +2381,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
+Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)
 
 **Inputs**:
 
@@ -2419,7 +2419,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
+Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)
 
 **Inputs**:
 
@@ -2534,7 +2534,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
+Number of patients fundable annually at dFDA pragmatic trial cost. Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
 
 **Inputs**:
 
@@ -3042,7 +3042,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
+Drug development cost increase from 1980s to current
 
 **Inputs**:
 
@@ -3082,7 +3082,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Drug development cost increase from pre-1962 to current ($24.7M → $2.6B = 105×)
+Drug development cost increase from pre-1962 to current
 
 **Inputs**:
 
@@ -4586,7 +4586,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
+Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost / RECOVERY cost per patient)
 
 **Inputs**:
 
@@ -6222,7 +6222,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)
+How many times more cost-effective than bed nets (using bed net cost per DALY midpoint estimate)
 
 **Inputs**:
 
@@ -6364,7 +6364,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (exploration period, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by exploring the therapeutic space 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.
+How many times more cost-effective the treaty campaign is vs direct funding. Treaty campaign unlocks government funding at scale, avoiding need for philanthropists/NIH to directly commit equivalent amounts. Both approaches achieve same DALY timeline shift benefit. Treaty spreads cost across governments while building sustainable public funding infrastructure.
 
 **Inputs**:
 

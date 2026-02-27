@@ -54,7 +54,7 @@ Parameters derived from mathematical formulas and economic models.
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
+Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)
 
 **Inputs**:
 
@@ -524,7 +524,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
+Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)
 
 **Inputs**:
 
@@ -562,7 +562,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
+Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)
 
 **Inputs**:
 
@@ -600,7 +600,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
+Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost / RECOVERY cost per patient)
 
 **Inputs**:
 

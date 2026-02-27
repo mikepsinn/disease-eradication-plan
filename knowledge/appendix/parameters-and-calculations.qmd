@@ -159,7 +159,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.
+Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing)
 
 **Inputs**:
 
@@ -197,7 +197,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.
+Average annual cost per clinical trial participant (total spending ÷ participants)
 
 **Inputs**:
 
@@ -515,7 +515,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
+Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)
 
 **Inputs**:
 
@@ -681,7 +681,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY at ~$21.8B/year direct funding for the therapeutic space exploration period (NPV: ~$541.9B). Still highly cost-effective vs bed nets ($89.0/DALY).
+Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.
 
 **Inputs**:
 
@@ -817,7 +817,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-NPV of ~$21.8B/year in direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
+NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
 
 **Inputs**:
 
@@ -851,7 +851,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-ROI from directly funding ~$21.8B/year in pragmatic clinical trials over the therapeutic space exploration period (NPV: ~$541.9B).
+ROI from directly funding pragmatic clinical trials over the therapeutic space exploration period.
 
 **Inputs**:
 
@@ -996,7 +996,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-How many times more cost-effective direct funding of medical research is vs bed nets ($89/DALY).
+How many times more cost-effective direct funding of medical research is vs bed nets.
 
 **Inputs**:
 
@@ -3711,7 +3711,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
+Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)
 
 **Inputs**:
 
@@ -3749,7 +3749,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
+Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)
 
 **Inputs**:
 
@@ -3864,7 +3864,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
+Number of patients fundable annually at dFDA pragmatic trial cost. Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).
 
 **Inputs**:
 
@@ -4467,7 +4467,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)
+Drug development cost increase from 1980s to current
 
 **Inputs**:
 
@@ -4507,7 +4507,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Drug development cost increase from pre-1962 to current ($24.7M → $2.6B = 105×)
+Drug development cost increase from pre-1962 to current
 
 **Inputs**:
 
@@ -4575,7 +4575,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost ($1.56B per drug) - this is a LOWER BOUND because it excludes opportunity cost of 8.2-year delays, compounds abandoned due to cost barrier, and regulatory overhead. Comparable to the $8 trillion spent on post-9/11 wars.
+Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost per drug - this is a LOWER BOUND because it excludes opportunity cost of delays, compounds abandoned due to cost barrier, and regulatory overhead.
 
 **Inputs**:
 
@@ -6439,7 +6439,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×
+Ratio of global military spending to all clinical trials spending (government + industry + nonprofit)
 
 **Inputs**:
 
@@ -7919,7 +7919,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)
+Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost / RECOVERY cost per patient)
 
 **Inputs**:
 
@@ -9688,7 +9688,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost. Excludes future innovation effects.
+Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by campaign cost. Excludes future innovation effects.
 
 **Inputs**:
 
@@ -9970,7 +9970,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)
+How many times more cost-effective than bed nets (using bed net cost per DALY midpoint estimate)
 
 **Inputs**:
 
@@ -10112,7 +10112,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (exploration period, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by exploring the therapeutic space 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.
+How many times more cost-effective the treaty campaign is vs direct funding. Treaty campaign unlocks government funding at scale, avoiding need for philanthropists/NIH to directly commit equivalent amounts. Both approaches achieve same DALY timeline shift benefit. Treaty spreads cost across governments while building sustainable public funding infrastructure.
 
 **Inputs**:
 
@@ -16796,7 +16796,7 @@ Direct fiscal savings from 1% military spending reduction (high confidence)
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of $2.6B total)
+Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of total drug development cost)
 
 #### Uncertainty Range
 

@@ -194,7 +194,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)
+Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)
 
 **Inputs**:
 
@@ -282,7 +282,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY at ~$21.8B/year direct funding for the therapeutic space exploration period (NPV: ~$541.9B). Still highly cost-effective vs bed nets ($89.0/DALY).
+Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.
 
 **Inputs**:
 
@@ -418,7 +418,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-NPV of ~$21.8B/year in direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
+NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
 
 **Inputs**:
 
@@ -452,7 +452,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-ROI from directly funding ~$21.8B/year in pragmatic clinical trials over the therapeutic space exploration period (NPV: ~$541.9B).
+ROI from directly funding pragmatic clinical trials over the therapeutic space exploration period.
 
 **Inputs**:
 
@@ -2318,7 +2318,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)
+Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)
 
 **Inputs**:
 
@@ -2356,7 +2356,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%
+Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)
 
 **Inputs**:
 
@@ -2480,7 +2480,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Drug development cost increase from pre-1962 to current ($24.7M → $2.6B = 105×)
+Drug development cost increase from pre-1962 to current
 
 **Inputs**:
 

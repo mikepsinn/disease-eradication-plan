@@ -17,6 +17,7 @@ Usage:
 import sys
 import os
 import re
+import time
 import hashlib
 import argparse
 import subprocess
@@ -57,6 +58,18 @@ NARRATOR_VOICE = DEFAULT_VOICE
 # Podcast intro/outro assets
 THEME_SONG_PATH = PROJECT_ROOT / "assets" / "music" / "podcast-theme-song.mp3"
 OUTRO_QMD_PATH = PROJECT_ROOT / "knowledge" / "appendix" / "podcast-outro.qmd"
+
+
+def _retry_fs_op(op, label: str = "", retries: int = 5, delay: float = 0.5):
+    """Retry a filesystem operation on Windows PermissionError (stale handles)."""
+    for attempt in range(retries):
+        try:
+            return op()
+        except PermissionError:
+            if attempt < retries - 1:
+                time.sleep(delay)
+            else:
+                raise
 
 
 def _read_mp3_source_hash(mp3_path: Path) -> str | None:
@@ -459,6 +472,9 @@ def combine_chapter_audio(
     # Export as MP3 directly via ffmpeg (streaming, no memory spike)
     print(f"\nExporting combined audiobook...")
     mp3_path = output_path.with_suffix('.mp3')
+    # Delete stale output first (Windows may hold handles from previous runs)
+    if mp3_path.exists():
+        _retry_fs_op(lambda: mp3_path.unlink(), f"remove old {mp3_path.name}")
     result = subprocess.run([
         "ffmpeg", "-y",
         "-f", "concat", "-safe", "0", "-i", str(concat_file),
@@ -470,9 +486,9 @@ def combine_chapter_audio(
     mp3_size = mp3_path.stat().st_size / 1024 / 1024
     print(f"  [OK] MP3: {mp3_path.name} ({mp3_size:.1f} MB)")
 
-    # Clean up temp files
-    concat_file.unlink(missing_ok=True)
-    silence_path.unlink(missing_ok=True)
+    # Clean up temp files (retry on Windows where ffmpeg may still hold the handle)
+    for _tmp in (concat_file, silence_path):
+        _retry_fs_op(lambda p=_tmp: p.unlink(missing_ok=True), f"clean {_tmp.name}")
 
     total_ms = current_position_ms
     print(f"\nTotal duration: {format_duration(total_ms)}")
@@ -1163,16 +1179,16 @@ def finalize_podcast_mp3(mp3_path: Path) -> Path:
     # Clean up old hashed versions (different hash, same slug)
     for old in mp3_path.parent.glob(f"{slug}.*.mp3"):
         if PODCAST_HASH_RE.match(old.name) and old != mp3_path and old != target:
-            old.unlink()
+            _retry_fs_op(lambda p=old: p.unlink(), f"clean {old.name}")
             print(f"  [CLEAN] Removed old version: {old.name}")
 
     # Move .wraphash sidecar to match new name
     old_wraphash = mp3_path.with_suffix('.wraphash')
     new_wraphash = target.with_suffix('.wraphash')
     if old_wraphash.exists() and old_wraphash != new_wraphash:
-        old_wraphash.rename(new_wraphash)
+        _retry_fs_op(lambda: old_wraphash.rename(new_wraphash), "rename wraphash")
 
-    mp3_path.rename(target)
+    _retry_fs_op(lambda: mp3_path.rename(target), f"rename {mp3_path.name}")
     print(f"  [HASH] {mp3_path.name} -> {target.name}")
     return target
 

@@ -552,6 +552,7 @@ def _prepare_scene_clip(
         cmd = [
             "ffmpeg", "-y", "-i", str(clip_path),
             "-t", f"{duration_s:.3f}",
+            "-vf", "format=yuv420p",
             "-c:v", "libx264", "-preset", "fast", "-crf", "18",
             "-an", str(out_path),
         ]
@@ -564,7 +565,7 @@ def _prepare_scene_clip(
         setpts = f"PTS*{ratio:.4f}"
         cmd = [
             "ffmpeg", "-y", "-i", str(clip_path),
-            "-filter:v", f"setpts={setpts}",
+            "-filter:v", f"setpts={setpts},format=yuv420p",
             "-t", f"{duration_s:.3f}",
             "-c:v", "libx264", "-preset", "fast", "-crf", "18",
             "-an", str(out_path),
@@ -583,12 +584,21 @@ def _prepare_scene_clip(
             kf_segment = temp_dir / f"scene-{scene_idx:03d}-kf.mp4"
             stretched_clip = temp_dir / f"scene-{scene_idx:03d}-str.mp4"
 
-            # Create static keyframe segment
+            # Probe clip resolution so keyframe matches exactly (xfade requires same dimensions)
+            probe = subprocess.run(
+                ["ffprobe", "-v", "error", "-select_streams", "v:0",
+                 "-show_entries", "stream=width,height", "-of", "csv=p=0", str(clip_path)],
+                capture_output=True, text=True,
+            )
+            clip_w, clip_h = (probe.stdout.strip().split(",") if probe.returncode == 0
+                              else ("1280", "720"))
+
+            # Create static keyframe segment scaled to clip resolution
             cmd_kf = [
                 "ffmpeg", "-y",
                 "-loop", "1", "-i", str(keyframe_path),
                 "-t", f"{fill_dur + crossfade_dur:.3f}",
-                "-vf", "scale=trunc(iw/2)*2:trunc(ih/2)*2",
+                "-vf", f"scale={clip_w}:{clip_h}:force_original_aspect_ratio=decrease,pad={clip_w}:{clip_h}:(ow-iw)/2:(oh-ih)/2",
                 "-c:v", "libx264", "-preset", "fast", "-crf", "18",
                 "-pix_fmt", "yuv420p", "-r", "24",
                 "-an", str(kf_segment),
@@ -597,10 +607,10 @@ def _prepare_scene_clip(
             if result.returncode != 0:
                 raise RuntimeError(f"ffmpeg keyframe segment failed for scene {scene_idx}: {result.stderr[:300]}")
 
-            # Stretch the Veo clip to MAX_SLOWDOWN
+            # Stretch the Veo clip to MAX_SLOWDOWN (match keyframe fps/pix_fmt for xfade)
             cmd_str = [
                 "ffmpeg", "-y", "-i", str(clip_path),
-                "-filter:v", f"setpts=PTS*{MAX_SLOWDOWN}",
+                "-filter:v", f"setpts=PTS*{MAX_SLOWDOWN},fps=24,format=yuv420p",
                 "-t", f"{stretched_dur:.3f}",
                 "-c:v", "libx264", "-preset", "fast", "-crf", "18",
                 "-an", str(stretched_clip),
@@ -630,7 +640,7 @@ def _prepare_scene_clip(
             setpts = f"PTS*{ratio:.4f}"
             cmd = [
                 "ffmpeg", "-y", "-i", str(clip_path),
-                "-filter:v", f"setpts={setpts}",
+                "-filter:v", f"setpts={setpts},format=yuv420p",
                 "-t", f"{duration_s:.3f}",
                 "-c:v", "libx264", "-preset", "fast", "-crf", "18",
                 "-an", str(out_path),
@@ -728,6 +738,7 @@ def assemble_chapter_video(
     audio_duration_s = audio_duration_ms / 1000.0
     vol = VEO_AMBIENT_VOLUME
     filter_complex = (
+        f"[0:v]format=yuv420p[vout];"
         f"[0:a]volume={vol}[veo];"
         f"[1:a]aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=mono[tts];"
         f"[veo][tts]amix=inputs=2:duration=longest:dropout_transition=2[mixed]"
@@ -738,8 +749,9 @@ def assemble_chapter_video(
         "-f", "concat", "-safe", "0", "-i", str(concat_file),
         "-i", str(audio_path),
         "-filter_complex", filter_complex,
-        "-map", "0:v", "-map", "[mixed]",
+        "-map", "[vout]", "-map", "[mixed]",
         "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+        "-profile:v", "high",
         "-c:a", "aac", "-b:a", "192k",
         "-t", f"{audio_duration_s:.3f}",
         "-movflags", "+faststart",
@@ -763,9 +775,11 @@ def assemble_chapter_video(
             "ffmpeg", "-y",
             "-f", "concat", "-safe", "0", "-i", str(concat_file),
             "-i", str(audio_path),
+            "-filter_complex", "[0:v]format=yuv420p[vout]",
+            "-map", "[vout]", "-map", "1:a",
             "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+            "-profile:v", "high",
             "-c:a", "aac", "-b:a", "192k",
-            "-map", "0:v", "-map", "1:a",
             "-t", f"{audio_duration_s:.3f}",
             "-movflags", "+faststart",
             "-metadata", f"title={chapter['title']}",

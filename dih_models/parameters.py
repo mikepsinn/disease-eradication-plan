@@ -1346,7 +1346,7 @@ CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
     source_ref="",
     source_type=SourceType.CALCULATED,
-    description="Average annual cost per clinical trial participant (total spending ÷ participants). Note: $60B ÷ 1.9M = $31,579 per participant.",
+    description="Average annual cost per clinical trial participant (total spending ÷ participants)",
     display_name="Annual Cost Per Clinical Trial Participant",
     unit="USD",
     formula="TOTAL_SPENDING / PARTICIPANTS",    keywords=["cost", "participant", "per patient", "trial cost", "enrollment"],
@@ -1360,10 +1360,10 @@ CLINICAL_TRIAL_COST_PER_APPROVED_DRUG = Parameter(
     GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL / CURRENT_DRUG_APPROVALS_PER_YEAR,
     source_ref="",
     source_type=SourceType.CALCULATED,
-    description="Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing). Note: $60B ÷ 50 drugs = $1.2B per drug.",
+    description="Annual clinical trial spending per approved drug (trials only, excluding other R&D costs like discovery, preclinical, manufacturing)",
     display_name="Clinical Trial Cost Per Approved Drug",
     unit="USD",
-    formula="TOTAL_TRIAL_SPENDING / NEW_DRUGS",    keywords=["cost", "drug", "approval", "fda", "trial cost", "1.2b"],
+    formula="TOTAL_TRIAL_SPENDING / NEW_DRUGS",    keywords=["cost", "drug", "approval", "fda", "trial cost"],
     inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "CURRENT_DRUG_APPROVALS_PER_YEAR"],
     compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] / ctx["CURRENT_DRUG_APPROVALS_PER_YEAR"],
     latex_symbol=r"Cost_{trial,drug}",  # LaTeX symbol for equations
@@ -1374,10 +1374,10 @@ MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
     source_ref="",
     source_type=SourceType.CALCULATED,
-    description="Ratio of global military spending to all clinical trials spending (government + industry + nonprofit). Note: $2.7T ÷ $60B = 45×",
+    description="Ratio of global military spending to all clinical trials spending (government + industry + nonprofit)",
     display_name="Ratio of Military to Clinical Trials Spending",
     unit="ratio",
-    formula="MILITARY_SPENDING / TOTAL_CLINICAL_TRIALS",    keywords=["ratio", "military", "clinical trials", "disparity", "spending", "45x", "misallocation"],
+    formula="MILITARY_SPENDING / TOTAL_CLINICAL_TRIALS",    keywords=["ratio", "military", "clinical trials", "disparity", "spending", "misallocation"],
     inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"],
     latex_symbol=r"Ratio_{mil:trials}",  # LaTeX symbol for equations
@@ -1642,52 +1642,48 @@ TRADITIONAL_PHASE3_COST_PER_PATIENT = Parameter(
 # Trial Cost Reduction Factors (calculated from cost per patient comparisons)
 
 # RECOVERY Trial Cost Reduction (historical evidence)
-# $41,000 traditional / $500 RECOVERY = 82x
 RECOVERY_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     TRADITIONAL_PHASE3_COST_PER_PATIENT / RECOVERY_TRIAL_COST_PER_PATIENT,
     source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
     source_type="calculated",
-    description="Cost reduction factor demonstrated by RECOVERY trial ($41K traditional / $500 RECOVERY = 82x)",
+    description="Cost reduction factor demonstrated by RECOVERY trial (traditional Phase 3 cost / RECOVERY cost per patient)",
     display_name="RECOVERY Trial Cost Reduction Factor",
     unit="multiplier",
     formula="TRADITIONAL_PHASE3_COST / RECOVERY_COST",    keywords=["oxford", "recovery", "82x", "rct", "clinical trial", "cost reduction", "historical"],
     inputs=['TRADITIONAL_PHASE3_COST_PER_PATIENT', 'RECOVERY_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"] / ctx["RECOVERY_TRIAL_COST_PER_PATIENT"],
     latex_symbol=r"k_{RECOVERY}",  # LaTeX symbol for equations
-)  # 82x reduction proven by RECOVERY trial ($41K / $500)
+)
 
 # dFDA Pragmatic Trial Cost Reduction (forward-looking projection)
-# $41,000 traditional / $1,200 dFDA pragmatic = 34.17x
 DFDA_TRIAL_COST_REDUCTION_FACTOR = Parameter(
     TRADITIONAL_PHASE3_COST_PER_PATIENT / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
     source_type="calculated",
-    description="Cost reduction factor projected for dFDA pragmatic trials ($41K traditional / $1,200 dFDA = 34x)",
+    description="Cost reduction factor projected for dFDA pragmatic trials (traditional Phase 3 cost / dFDA pragmatic cost per patient)",
     display_name="dFDA Trial Cost Reduction Factor",
     unit="multiplier",
-    formula="TRADITIONAL_PHASE3_COST / DFDA_PRAGMATIC_COST",    keywords=["dfda", "pragmatic", "34x", "rct", "clinical trial", "cost reduction", "projected"],
+    formula="TRADITIONAL_PHASE3_COST / DFDA_PRAGMATIC_COST",    keywords=["dfda", "pragmatic", "rct", "clinical trial", "cost reduction", "projected"],
     inputs=['TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
     latex_symbol=r"k_{reduce}",  # LaTeX symbol for equations
-)  # 34x reduction projected for dFDA ($41K / $1,200)
+)
 
 # dFDA Trial Cost Reduction as Percentage (derived from factor)
 DFDA_TRIAL_COST_REDUCTION_PCT = Parameter(
     1 - (DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT / TRADITIONAL_PHASE3_COST_PER_PATIENT),
     source_type="calculated",
-    description="Trial cost reduction percentage: (traditional - dFDA) / traditional = ($41K - $1.2K) / $41K = 97%",
+    description="Trial cost reduction percentage: 1 - (dFDA pragmatic cost / traditional Phase 3 cost)",
     display_name="dFDA Trial Cost Reduction Percentage",
     unit="percentage",
     formula="1 - (DFDA_COST / TRADITIONAL_COST)",
-    # Derived from: DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT ($1,200) vs TRADITIONAL_PHASE3_COST_PER_PATIENT ($41,000)
-    # This matches DFDA_TRIAL_COST_REDUCTION_FACTOR = 34× (which is the inverse: $41K / $1.2K)
-    # RECOVERY trial achieved 82× (98.8%), so 97% is conservative relative to historical evidence
+    # RECOVERY trial achieved higher reduction (98.8%), so this is conservative relative to historical evidence
     validation_min=0.90,   # Floor: 90% reduction (minimum based on RECOVERY-like efficiency)
     validation_max=0.99,   # Ceiling: 99% reduction (approaching theoretical maximum)
     inputs=["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT", "TRADITIONAL_PHASE3_COST_PER_PATIENT"],
     compute=lambda ctx: 1 - (ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"] / ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"]),
     keywords=["97%", "rct", "clinical study", "clinical trial", "cost reduction", "research trial", "randomized controlled trial"],
     latex_symbol=r"Reduce_{pct}",  # LaTeX symbol for equations
-)  # 97% reduction = 34× cost reduction factor
+)
 
 ANTIDEPRESSANT_TRIAL_EXCLUSION_RATE = Parameter(
     0.861,
@@ -2261,7 +2257,7 @@ DFDA_ANNUAL_OPEX = Parameter(
     + DFDA_OPEX_REGULATORY
     + DFDA_OPEX_COMMUNITY,
     source_type="calculated",
-    description="Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: $15M + $10M + $8M + $5M + $2M)",
+    description="Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)",
     display_name="Total Annual Decentralized Framework for Drug Assessment Operational Costs",
     unit="USD/year",
     formula="PLATFORM_MAINTENANCE + STAFF + INFRASTRUCTURE + REGULATORY + COMMUNITY",    keywords=["pragmatic trials", "real world evidence", "approval", "authorization", "oversight", "regulation", "decentralized trials"],
@@ -2271,7 +2267,7 @@ DFDA_ANNUAL_OPEX = Parameter(
     inputs=["DFDA_OPEX_PLATFORM_MAINTENANCE", "DFDA_OPEX_STAFF", "DFDA_OPEX_INFRASTRUCTURE", "DFDA_OPEX_REGULATORY", "DFDA_OPEX_COMMUNITY"],
     latex_symbol=r"OPEX_{dFDA}",  # LaTeX symbol for equations
     compute=lambda ctx: sum([ctx["DFDA_OPEX_PLATFORM_MAINTENANCE"], ctx["DFDA_OPEX_STAFF"], ctx["DFDA_OPEX_INFRASTRUCTURE"], ctx["DFDA_OPEX_REGULATORY"], ctx["DFDA_OPEX_COMMUNITY"]])
-)  # $40M annually
+)
 
 # ===================================================================
 # STANDALONE dFDA FUNDING CHAIN (source-agnostic)
@@ -5409,14 +5405,14 @@ DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL = Parameter(
 DIH_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
     DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
     source_type="calculated",
-    description="Number of patients fundable annually at dFDA pragmatic trial cost ($1,200/patient). Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).",
+    description="Number of patients fundable annually at dFDA pragmatic trial cost. Based on empirical pragmatic trial costs (RECOVERY to PCORnet range).",
     display_name="Patients Fundable Annually",
     unit="patients/year",
     formula="TRIAL_SUBSIDIES ÷ DFDA_COST_PER_PATIENT",    keywords=["trial", "participant", "enrollment", "capacity", "patient"],
     inputs=['DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT'],
     compute=lambda ctx: ctx["DIH_TREASURY_TRIAL_SUBSIDIES_ANNUAL"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
     latex_symbol=r"N_{fundable,ann}",  # LaTeX symbol for equations
-)  # ~20.4M patients/year at $1,200/patient
+)
 
 # Funding allocation percentages (calculated from absolute values)
 DIH_TREASURY_MEDICAL_RESEARCH_PCT = Parameter(
@@ -5564,7 +5560,7 @@ PHARMA_PHASE_2_3_COST_BARRIER = Parameter(
     1_560_000_000,  # $2.6B × 60% = $1.56B
     source_ref=ReferenceID.DRUG_DEVELOPMENT_COST,
     source_type="definition",  # Model estimate: 60% of $2.6B total drug dev cost
-    description="Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of $2.6B total)",
+    description="Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of total drug development cost)",
     display_name="Pharma Phase 2/3 Cost Barrier Per Drug",
     unit="USD",
     confidence="high",
@@ -5598,7 +5594,7 @@ DRUGS_APPROVED_SINCE_1962 = Parameter(
 EFFICACY_LAG_CUMULATIVE_EXCESS_COST = Parameter(
     PHARMA_PHASE_2_3_COST_BARRIER * DRUGS_APPROVED_SINCE_1962,
     source_type="calculated",
-    description="Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost ($1.56B per drug) - this is a LOWER BOUND because it excludes opportunity cost of 8.2-year delays, compounds abandoned due to cost barrier, and regulatory overhead. Comparable to the $8 trillion spent on post-9/11 wars.",
+    description="Cumulative Phase 2/3 efficacy testing cost since 1962. Uses direct Phase 2/3 cost per drug - this is a LOWER BOUND because it excludes opportunity cost of delays, compounds abandoned due to cost barrier, and regulatory overhead.",
     display_name="Cumulative Efficacy Testing Cost (1962-2024)",
     unit="USD",
     confidence="medium",
@@ -6497,7 +6493,7 @@ SMOKING_CESSATION_ANNUAL_BENEFIT = Parameter(
 TREATY_ROI_EXISTING_DRUGS_ONLY = Parameter(
     EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS / TREATY_CAMPAIGN_TOTAL_COST,
     source_type="calculated",
-    description="Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by $1B campaign cost. Excludes future innovation effects.",
+    description="Treaty ROI based on historical rate of drug development (existing drugs only). Total one-time benefit from avoiding regulatory delay for drugs already in development divided by campaign cost. Excludes future innovation effects.",
     display_name="Treaty ROI - Historical Rate (Existing Drugs)",
     unit="ratio",
     formula="HISTORICAL_PROGRESS_TOTAL ÷ CAMPAIGN_COST",
@@ -6876,7 +6872,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
     / NPV_DISCOUNT_RATE_STANDARD,
     source_type="calculated",  # NPV calculation from funding, discount rate, and time horizon
-    description="NPV of ~$21.8B/year in direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
+    description="NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
     display_name="dFDA Direct Funding NPV (Exploration Period)",
     unit="USD",
     formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = exploration time",
@@ -6893,7 +6889,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
 DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
     DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
     source_type="calculated",  # Derived from NPV and DALYs
-    description=f"Cost per DALY at ~$21.8B/year direct funding for the therapeutic space exploration period (NPV: ~$541.9B). Still highly cost-effective vs bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
+    description="Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.",
     display_name="dFDA Direct Funding Cost per DALY",
     unit="USD/DALY",
     formula="NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",    confidence="medium",
@@ -6907,7 +6903,7 @@ DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
 DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV,
     source_type="calculated",
-    description="ROI from directly funding ~$21.8B/year in pragmatic clinical trials over the therapeutic space exploration period (NPV: ~$541.9B).",
+    description="ROI from directly funding pragmatic clinical trials over the therapeutic space exploration period.",
     display_name="Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput",
     unit="ratio",
     formula="ECONOMIC_VALUE ÷ DIRECT_FUNDING_NPV",
@@ -6922,7 +6918,7 @@ DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
 DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
     BED_NETS_COST_PER_DALY / DFDA_DIRECT_FUNDING_COST_PER_DALY,
     source_type="calculated",
-    description="How many times more cost-effective direct funding of medical research is vs bed nets ($89/DALY).",
+    description="How many times more cost-effective direct funding of medical research is vs bed nets.",
     display_name="Direct Funding Cost-Effectiveness vs Bed Nets",
     unit="x",
     formula="BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY",
@@ -6937,7 +6933,7 @@ DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
 TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
     DFDA_DIRECT_FUNDING_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
     source_type="calculated",  # Ratio of cost per DALY metrics
-    description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty achieves 542× leverage: $1B campaign unlocks $27.2B/year government funding for 46.5 years (exploration period, NPV: $541.9B), avoiding need for philanthropists/NIH to directly commit this amount. Both approaches achieve same 200B DALY timeline shift benefit by exploring the therapeutic space 9.5× faster. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
+    description="How many times more cost-effective the treaty campaign is vs direct funding. Treaty campaign unlocks government funding at scale, avoiding need for philanthropists/NIH to directly commit equivalent amounts. Both approaches achieve same DALY timeline shift benefit. Treaty spreads cost across governments while building sustainable public funding infrastructure.",
     display_name="Treaty Campaign Leverage vs Direct Funding",
     unit="x",
     formula="DFDA_DIRECT_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",    confidence="high",
@@ -6951,7 +6947,7 @@ TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
 TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
     BED_NETS_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
     source_type="calculated",
-    description="How many times more cost-effective than bed nets (using $89/DALY midpoint estimate)",
+    description="How many times more cost-effective than bed nets (using bed net cost per DALY midpoint estimate)",
     display_name="Cost-Effectiveness vs Bed Nets Multiplier",
     unit="x",
     formula="BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
@@ -8186,7 +8182,7 @@ DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER = Parameter(
     PHARMA_DRUG_DEVELOPMENT_COST_CURRENT / DRUG_DEVELOPMENT_COST_1980S,
     source_ref=ReferenceID.PRE_1962_DRUG_COSTS_TIMELINE,
     source_type="calculated",
-    description="Drug development cost increase from 1980s to current ($194M → $2.6B = 13.4x)",
+    description="Drug development cost increase from 1980s to current",
     display_name="Drug Cost Increase: 1980s to Current",
     unit="x",
     formula="PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ DRUG_DEVELOPMENT_COST_1980S",
@@ -8201,7 +8197,7 @@ DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER = Parameter(
     PHARMA_DRUG_DEVELOPMENT_COST_CURRENT / PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD,
     source_ref=ReferenceID.PRE_1962_DRUG_COSTS_BAILY_1972,
     source_type="calculated",
-    description="Drug development cost increase from pre-1962 to current ($24.7M → $2.6B = 105×)",
+    description="Drug development cost increase from pre-1962 to current",
     display_name="Drug Cost Increase: Pre-1962 to Current",
     unit="x",
     formula="PHARMA_DRUG_DEVELOPMENT_COST_CURRENT ÷ PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD",

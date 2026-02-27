@@ -26,6 +26,8 @@ Usage:
 import sys
 import subprocess
 import argparse
+import time
+from datetime import datetime
 from pathlib import Path
 
 if sys.platform == 'win32':
@@ -35,18 +37,27 @@ SCRIPTS_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPTS_DIR.parent
 
 
+def _ts() -> str:
+    """Current timestamp for log lines."""
+    return datetime.now().strftime("%H:%M:%S")
+
+
 def run_step(label: str, script: str, args: list[str]) -> bool:
     """Run a pipeline step, returning True on success."""
     print(f"\n{'=' * 70}")
-    print(f"  STEP: {label}")
+    print(f"  [{_ts()}] STEP: {label}")
     print(f"{'=' * 70}\n")
 
+    t0 = time.monotonic()
     cmd = [sys.executable, "-u", str(SCRIPTS_DIR / script)] + args
     result = subprocess.run(cmd, cwd=str(PROJECT_ROOT))
+    elapsed = time.monotonic() - t0
+    mins, secs = divmod(int(elapsed), 60)
 
     if result.returncode != 0:
-        print(f"\n[FAILED] {label} (exit code {result.returncode})")
+        print(f"\n[{_ts()}] [FAILED] {label} (exit code {result.returncode}, {mins}m{secs:02d}s)")
         return False
+    print(f"\n[{_ts()}] [OK] {label} ({mins}m{secs:02d}s)")
     return True
 
 
@@ -95,7 +106,7 @@ def main():
         sys.exit(1)
 
     if args.dry_run:
-        print("\n[DONE] Dry run complete (text only, no audio generated).")
+        print(f"\n[{_ts()}] [DONE] Dry run complete (text only, no audio generated).")
         return
 
     # --- Step 2: Generate audio ---
@@ -140,14 +151,14 @@ def main():
 
     # --- Step 5: Sync to R2 ---
     if args.no_sync:
-        print("\n[DONE] Pipeline complete (--no-sync: skipped R2 upload).")
+        print(f"\n[{_ts()}] [DONE] Pipeline complete (--no-sync: skipped R2 upload).")
         return
 
     if not run_step("Sync to Cloudflare R2", "sync_r2.py", []):
         sys.exit(1)
 
     print(f"\n{'=' * 70}")
-    print("  PUBLISH COMPLETE")
+    print(f"  [{_ts()}] PUBLISH COMPLETE")
     print(f"{'=' * 70}")
 
 
