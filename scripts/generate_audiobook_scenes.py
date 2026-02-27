@@ -5,7 +5,7 @@ Audiobook Scene Segmentation
 
 Segments prepared audiobook text into visual scenes with precise timestamps
 from forced alignment data. Falls back to linear interpolation if alignment
-is unavailable.
+is unavailable. Generates keyframe_prompt and veo_prompt per scene.
 
 This is a standalone pipeline step between audio generation and video generation:
     generate_audiobook_text.py -> generate_audiobook.py -> generate_audiobook_scenes.py -> generate_audiobook_video.py
@@ -13,9 +13,11 @@ This is a standalone pipeline step between audio generation and video generation
 Usage:
     python scripts/generate_audiobook_scenes.py                    # All chapters
     python scripts/generate_audiobook_scenes.py --chapter 20       # Single chapter
+    python scripts/generate_audiobook_scenes.py --chapter 8 --scene 3  # Single scene prompt regen
     python scripts/generate_audiobook_scenes.py --start 5 --end 10 # Range
     python scripts/generate_audiobook_scenes.py --list             # List status
     python scripts/generate_audiobook_scenes.py --force            # Re-segment
+    python scripts/generate_audiobook_scenes.py --force --overwrite-edits  # Overwrite manual edits
 """
 import io
 import sys
@@ -40,8 +42,13 @@ from lib.audiobook_common import (
     AudiobookPaths, config_name_from_path, get_paths,
 )
 from lib.scenes import (
-    segment_scenes, estimate_timestamps, assign_timestamps_from_alignment,
+    segment_scenes, segment_scenes_with_prompts,
+    estimate_timestamps, assign_timestamps_from_alignment,
     save_scene_manifest, load_scene_manifest,
+    save_scene_files, load_scene_files, scene_has_manual_edits,
+)
+from lib.scene_config import (
+    load_scene_config, get_visual_style, get_no_text_instruction,
 )
 
 
@@ -64,7 +71,92 @@ def find_alignment(chapter: dict, paths: AudiobookPaths | None = None) -> Path |
     return None
 
 
-def process_chapter(chapter: dict, force: bool = False, paths: AudiobookPaths | None = None):
+def regenerate_single_scene_prompt(
+    chapter: dict,
+    scene_index: int,
+    text: str,
+    visual_style: str,
+    no_text: str,
+    overwrite_edits: bool,
+    chapter_dir: Path,
+):
+    """Regenerate prompts for a single scene using the LLM."""
+    from lib.scenes import _call_llm_with_timeout, parse_json_array, SCENE_SEGMENTATION_WITH_PROMPTS
+    import json
+
+    scenes = load_scene_files(chapter_dir)
+    if not scenes:
+        print(f"  [ERROR] No scene files found. Run full segmentation first.")
+        return
+
+    target = None
+    for s in scenes:
+        if s['scene_index'] == scene_index:
+            target = s
+            break
+    if not target:
+        print(f"  [ERROR] Scene {scene_index} not found (available: {[s['scene_index'] for s in scenes]})")
+        return
+
+    # Check for manual edits
+    if scene_has_manual_edits(target) and not overwrite_edits:
+        print(f"  [SKIP] Scene {scene_index} has manual edits. Use --overwrite-edits to regenerate.")
+        return
+
+    narration = target.get('narration_text', '')
+    context = target.get('context', '')
+
+    prompt = (
+        f"Generate a keyframe_prompt and veo_prompt for this scene.\n\n"
+        f"Visual style: {visual_style}\n"
+        f"No-text rule: {no_text}\n\n"
+        f"Scene narration: {narration}\n"
+        f"Context: {context}\n\n"
+        f"keyframe_prompt: A detailed image generation prompt in the visual style above. "
+        f"Describe the scene as a single illustration. Include the no-text rule. "
+        f"Do NOT include 'Generate' or 'Create'.\n"
+        f"veo_prompt: A video animation prompt describing camera motion and subject motion. "
+        f"Keep it concise (1-2 sentences). Include 'No dialogue, narration, or speech.'\n\n"
+        f"Return ONLY a JSON object:\n"
+        f'{{"keyframe_prompt": "...", "veo_prompt": "..."}}'
+    )
+
+    print(f"  Regenerating prompts for scene {scene_index}...")
+    response = _call_llm_with_timeout(prompt)
+    response_text = response.strip()
+    # Strip markdown
+    import re
+    response_text = re.sub(r'^```(?:json)?\s*\n?', '', response_text)
+    response_text = re.sub(r'\n?```\s*$', '', response_text)
+    result = json.loads(response_text)
+
+    target['keyframe_prompt'] = result['keyframe_prompt']
+    target['veo_prompt'] = result['veo_prompt']
+    target['_auto_generated'] = {
+        'keyframe_prompt': result['keyframe_prompt'],
+        'veo_prompt': result['veo_prompt'],
+    }
+
+    # Save back
+    scenes_dir = chapter_dir / "scenes"
+    scene_path = scenes_dir / f"scene-{scene_index:02d}.json"
+    scene_path.write_text(
+        json.dumps(target, indent=2, ensure_ascii=False) + '\n',
+        encoding='utf-8',
+    )
+    print(f"  [OK] Scene {scene_index} prompts regenerated")
+    print(f"    keyframe: {target['keyframe_prompt'][:80]}...")
+    print(f"    veo: {target['veo_prompt'][:80]}...")
+
+
+def process_chapter(
+    chapter: dict,
+    force: bool = False,
+    overwrite_edits: bool = False,
+    scene_index: int | None = None,
+    scene_config: dict | None = None,
+    paths: AudiobookPaths | None = None,
+):
     """Run scene segmentation for a single chapter."""
     print(f"\n{'=' * 60}")
     print(f"Chapter {chapter['index']}: {chapter['title']}")
@@ -82,16 +174,41 @@ def process_chapter(chapter: dict, force: bool = False, paths: AudiobookPaths | 
         return
 
     chapter_dir = get_chapter_dir(chapter, paths=paths)
-
-    # Check existing manifest
-    existing = load_scene_manifest(chapter_dir)
     text = text_file.read_text(encoding='utf-8')
     text_hash = hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
 
-    if existing and existing.get('scenes') and not force:
-        existing_hash = existing.get('text_hash', '')
+    # Load scene config for visual style
+    if not scene_config:
+        video_dir = paths.video if paths else chapter_dir.parent.parent
+        scene_config = load_scene_config(video_dir)
+    visual_style = get_visual_style(scene_config)
+    no_text = get_no_text_instruction(scene_config)
+
+    # Single scene prompt regeneration
+    if scene_index is not None:
+        regenerate_single_scene_prompt(
+            chapter, scene_index, text, visual_style, no_text,
+            overwrite_edits, chapter_dir,
+        )
+        return
+
+    # Check existing scene files first, then fall back to manifest
+    existing_scenes = load_scene_files(chapter_dir)
+    existing_manifest = load_scene_manifest(chapter_dir)
+
+    if existing_scenes and not force:
+        existing_hash = ""
+        if existing_manifest:
+            existing_hash = existing_manifest.get('text_hash', '')
         if existing_hash == text_hash:
-            print(f"  [SKIP] Scene manifest up to date ({len(existing['scenes'])} scenes, hash: {text_hash})")
+            print(f"  [SKIP] Scene files up to date ({len(existing_scenes)} scenes, hash: {text_hash})")
+            return
+        if existing_hash:
+            print(f"  Text changed (old: {existing_hash}, new: {text_hash}), re-segmenting...")
+    elif existing_manifest and existing_manifest.get('scenes') and not force:
+        existing_hash = existing_manifest.get('text_hash', '')
+        if existing_hash == text_hash:
+            print(f"  [SKIP] Scene manifest up to date ({len(existing_manifest['scenes'])} scenes, hash: {text_hash})")
             return
         print(f"  Text changed (old: {existing_hash}, new: {text_hash}), re-segmenting...")
 
@@ -103,8 +220,8 @@ def process_chapter(chapter: dict, force: bool = False, paths: AudiobookPaths | 
     total_duration_ms = len(audio)
     print(f"  Audio: {total_duration_ms:,}ms ({total_duration_ms / 1000:.1f}s)")
 
-    # LLM scene segmentation
-    scenes = segment_scenes(text)
+    # LLM scene segmentation (with prompts)
+    scenes = segment_scenes_with_prompts(text, visual_style, no_text)
 
     # Assign timestamps: prefer alignment, fall back to interpolation
     alignment_path = find_alignment(chapter, paths=paths)
@@ -117,6 +234,10 @@ def process_chapter(chapter: dict, force: bool = False, paths: AudiobookPaths | 
         print(f"  [WARN] No alignment data; using linear interpolation")
         scenes = estimate_timestamps(scenes, total_chars, total_duration_ms)
 
+    # Save individual scene files (preserving manual edits)
+    scenes = save_scene_files(scenes, chapter_dir, force=force, overwrite_edits=overwrite_edits)
+
+    # Also save legacy manifest for backward compatibility
     save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
     print(f"  Done: {len(scenes)} scenes")
 
@@ -135,7 +256,8 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
 
         chapter_dir = get_chapter_dir(ch, paths=paths)
         manifest = load_scene_manifest(chapter_dir)
-        scene_count = len(manifest['scenes']) if manifest else 0
+        scene_files = load_scene_files(chapter_dir)
+        scene_count = len(scene_files) if scene_files else (len(manifest['scenes']) if manifest else 0)
 
         text_file = find_prepared_text(ch, paths=paths)
         audio_file = find_chapter_audio(ch, paths=paths)
@@ -151,9 +273,15 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
         if scene_count:
             status_parts.append(f"S{scene_count}")
 
+        # Count edited scenes
+        edited_count = 0
+        if scene_files:
+            edited_count = sum(1 for s in scene_files if scene_has_manual_edits(s))
+
         ts_source = ""
-        if manifest and manifest.get('scenes'):
-            sources = set(s.get('timestamp_source', 'interpolation') for s in manifest['scenes'])
+        scenes_data = scene_files or (manifest.get('scenes', []) if manifest else [])
+        if scenes_data:
+            sources = set(s.get('timestamp_source', 'interpolation') for s in scenes_data)
             if sources == {'alignment'}:
                 ts_source = " [aligned]"
             elif 'alignment' in sources:
@@ -161,10 +289,12 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
             elif scene_count:
                 ts_source = " [interp]"
 
+        edit_marker = f" [{edited_count} edited]" if edited_count else ""
+
         status = ",".join(status_parts) if status_parts else "-"
         text_chars = len(text_file.read_text(encoding='utf-8')) if text_file else 0
         chars_info = f"{text_chars:,} chars" if text_chars else "no text"
-        print(f"    {ch['index']:3d}. [{status:>12s}] {ch['title']} ({chars_info}){ts_source}")
+        print(f"    {ch['index']:3d}. [{status:>12s}] {ch['title']} ({chars_info}){ts_source}{edit_marker}")
 
     print("=" * 90)
     print("  Legend: T=text, A=audio, AL=alignment, S#=scenes")
@@ -183,6 +313,11 @@ def main():
         "--chapter", "-c",
         type=int,
         help="Process only specific chapter number"
+    )
+    parser.add_argument(
+        "--scene",
+        type=int,
+        help="Regenerate prompts for a single scene (requires --chapter)"
     )
     parser.add_argument(
         "--start", "-s",
@@ -204,7 +339,15 @@ def main():
         action="store_true",
         help="Force re-segmentation even if manifest exists"
     )
+    parser.add_argument(
+        "--overwrite-edits",
+        action="store_true",
+        help="Overwrite manually edited prompts (default: preserve edits)"
+    )
     args = parser.parse_args()
+
+    if args.scene and not args.chapter:
+        parser.error("--scene requires --chapter")
 
     config_path = Path(args.config)
     if not config_path.is_absolute():
@@ -212,6 +355,9 @@ def main():
 
     cfg_name = config_name_from_path(config_path)
     paths = get_paths(cfg_name)
+
+    # Load scene config
+    scene_config = load_scene_config(paths.video)
 
     print(f"Loading book configuration: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_quarto_config(config_path)
@@ -230,7 +376,14 @@ def main():
 
     print(f"Processing {len(chapters)} chapter(s)...")
     for chapter in chapters:
-        process_chapter(chapter, force=args.force, paths=paths)
+        process_chapter(
+            chapter,
+            force=args.force,
+            overwrite_edits=args.overwrite_edits,
+            scene_index=args.scene,
+            scene_config=scene_config,
+            paths=paths,
+        )
 
     print(f"\n{'=' * 60}")
     print(f"All done! Processed {len(chapters)} chapter(s).")

@@ -4,17 +4,19 @@
 Audiobook Video Generator
 
 Generates animated video for audiobook chapters using:
-1. Pre-existing scene-manifest.json (from generate_audiobook_scenes.py)
+1. Pre-existing scene JSON files (from generate_audiobook_scenes.py)
 2. Keyframe image generation (Imagen)
 3. Video animation (Veo 3.1)
 4. Assembly with ffmpeg
 
-Requires scene-manifest.json and audio to exist already. Run the earlier pipeline
+Requires scene files and audio to exist already. Run the earlier pipeline
 steps first: generate_audiobook_text.py -> generate_audiobook.py -> generate_audiobook_scenes.py
 
 Usage:
     python scripts/generate_audiobook_video.py --chapter 20 --keyframes-only
     python scripts/generate_audiobook_video.py --chapter 20
+    python scripts/generate_audiobook_video.py --chapter 20 --scene 3 --skip-keyframes --force
+    python scripts/generate_audiobook_video.py --chapter 20 --skip-keyframes --skip-animate
     python scripts/generate_audiobook_video.py --list
 """
 import io
@@ -50,12 +52,17 @@ from lib.audiobook_common import (
     resolve_config_path, get_available_configs,
 )
 from lib.audiobook_manifest import update_chapter_fields as _update_chapter_fields
-from lib.scenes import save_scene_manifest, load_scene_manifest
+from lib.scenes import (
+    save_scene_manifest, load_scene_manifest,
+    load_scene_files, scene_has_manual_edits,
+)
+from lib.scene_config import (
+    load_scene_config, get_visual_style, get_no_text_instruction,
+    get_veo_negative_prompt, get_aspect_ratios, get_veo_parallel_workers,
+)
 
 # --- Configuration ---
 DEFAULT_CONFIG_NAME = "manual-paperback"
-
-ASPECT_RATIOS = ["16:9", "9:16"]
 
 # IMAGE_STYLE imported from audiobook_common
 
@@ -238,8 +245,23 @@ def _tts_to_visual(text: str) -> str:
     return text
 
 
-def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | None = None, book_meta: dict | None = None, chapter_text: str = "", prompt_variant: str = DEFAULT_PROMPT_VARIANT) -> list[dict]:
-    """Generate keyframe images for each scene using Imagen (parallel), with inline typo checking."""
+def generate_keyframes(
+    scenes: list[dict],
+    chapter_dir: Path,
+    chapter: dict | None = None,
+    book_meta: dict | None = None,
+    chapter_text: str = "",
+    prompt_variant: str = DEFAULT_PROMPT_VARIANT,
+    aspect_ratios: list[str] | None = None,
+) -> list[dict]:
+    """Generate keyframe images for each scene using Imagen (parallel), with inline typo checking.
+
+    If a scene has a keyframe_prompt field (from scene JSON), it is used directly.
+    Otherwise falls back to the prompt variant system.
+    """
+    if aspect_ratios is None:
+        aspect_ratios = ["16:9", "9:16"]
+
     print("Step C: Generating keyframe images (with typo checking)...")
     keyframes_dir = chapter_dir / "keyframes"
     keyframes_dir.mkdir(parents=True, exist_ok=True)
@@ -253,7 +275,7 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
         old_hash = scene.get('keyframe_hash', '')
         stale = old_hash and old_hash != nh
 
-        for aspect in ASPECT_RATIOS:
+        for aspect in aspect_ratios:
             aspect_tag = aspect.replace(":", "x")
             filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.jpg"
             output_path = keyframes_dir / filename
@@ -276,11 +298,16 @@ def generate_keyframes(scenes: list[dict], chapter_dir: Path, chapter: dict | No
     print(f"    Generating {len(work_items)} keyframes ({IMAGEN_PARALLEL_WORKERS} parallel workers)...")
 
     def _build_prompt(scene, attempt=1, variant_name=None):
-        scene_text = _tts_to_visual(scene['narration_text'].strip())
-        full_context = _tts_to_visual(chapter_text) if chapter_text else ""
-        vname = variant_name or prompt_variant
-        prompt_fn = PROMPT_VARIANTS[vname]
-        prompt = prompt_fn(scene_text, full_context, attempt)
+        # Use keyframe_prompt from scene JSON if available
+        scene_kf_prompt = scene.get('keyframe_prompt', '')
+        if scene_kf_prompt:
+            prompt = scene_kf_prompt
+        else:
+            scene_text = _tts_to_visual(scene['narration_text'].strip())
+            full_context = _tts_to_visual(chapter_text) if chapter_text else ""
+            vname = variant_name or prompt_variant
+            prompt_fn = PROMPT_VARIANTS[vname]
+            prompt = prompt_fn(scene_text, full_context, attempt)
         if attempt == 2:
             prompt += "\n\nAny text in the image must be spelled correctly."
         elif attempt >= 3:
@@ -411,12 +438,26 @@ def test_prompt_variants(scenes: list[dict], chapter_dir: Path, chapter_text: st
 
 # --- Step D: Veo Animation ---
 
-def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = True, chapter_text: str = "") -> list[dict]:
+def animate_scenes(
+    scenes: list[dict],
+    chapter_dir: Path,
+    use_keyframes: bool = True,
+    chapter_text: str = "",
+    veo_negative_prompt: str = VEO_NEGATIVE_PROMPT,
+    veo_parallel_workers: int = VEO_PARALLEL_WORKERS,
+    aspect_ratios: list[str] | None = None,
+) -> list[dict]:
     """Generate video clips using Veo 3.1 with parallel requests.
 
     When use_keyframes=True (default), uses image-to-video with keyframe as first frame.
     When use_keyframes=False, uses text-to-video from animation prompt only.
+
+    If a scene has a veo_prompt field (from scene JSON), it is used directly.
+    Otherwise constructs a prompt from narration text.
     """
+    if aspect_ratios is None:
+        aspect_ratios = ["16:9", "9:16"]
+
     mode = "image-to-video" if use_keyframes else "text-to-video"
     print(f"Step D: Generating video clips with Veo 3.1 ({mode})...")
     clips_dir = chapter_dir / "clips"
@@ -434,7 +475,7 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
         old_hash = scene.get('clip_hash', '')
         stale = old_hash and old_hash != nh
 
-        for aspect in ASPECT_RATIOS:
+        for aspect in aspect_ratios:
             aspect_tag = aspect.replace(":", "x")
             clip_filename = f"scene-{scene['scene_index']:02d}-{aspect_tag}.mp4"
             clip_path = clips_dir / clip_filename
@@ -461,31 +502,38 @@ def animate_scenes(scenes: list[dict], chapter_dir: Path, use_keyframes: bool = 
         print("    All clips cached.")
         return scenes
 
-    print(f"    Generating {len(work_items)} clips ({VEO_PARALLEL_WORKERS} parallel workers)...")
+    print(f"    Generating {len(work_items)} clips ({veo_parallel_workers} parallel workers)...")
 
     def _generate_one(item):
         scene, aspect, keyframe_path, clip_path, clip_filename = item
-        scene_text = _tts_to_visual(scene['narration_text'].strip())
-        full_context = _tts_to_visual(chapter_text) if chapter_text else ""
-        veo_prompt = f"Generate a {IMAGE_STYLE} animation. Interpret metaphors visually; do not depict them literally.\n--- ILLUSTRATE THIS ---\n{scene_text}\n--- END ILLUSTRATE ---\n"
-        if full_context:
-            veo_prompt += f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n{full_context}\n--- END CONTEXT ---\n"
-        veo_prompt += "No dialogue, narration, or speech."
+
+        # Use veo_prompt from scene JSON if available
+        scene_veo_prompt = scene.get('veo_prompt', '')
+        if scene_veo_prompt:
+            veo_prompt = scene_veo_prompt
+        else:
+            scene_text = _tts_to_visual(scene['narration_text'].strip())
+            full_context = _tts_to_visual(chapter_text) if chapter_text else ""
+            veo_prompt = f"Generate a {IMAGE_STYLE} animation. Interpret metaphors visually; do not depict them literally.\n--- ILLUSTRATE THIS ---\n{scene_text}\n--- END ILLUSTRATE ---\n"
+            if full_context:
+                veo_prompt += f"--- CONTEXT ONLY (for background understanding, do not illustrate directly) ---\n{full_context}\n--- END CONTEXT ---\n"
+            veo_prompt += "No dialogue, narration, or speech."
+
         # Save rendered prompt to manifest for review (only first aspect)
-        if 'veo_prompt' not in scene:
-            scene['veo_prompt'] = veo_prompt
+        if 'veo_prompt_used' not in scene:
+            scene['veo_prompt_used'] = veo_prompt
         generate_video(
             prompt=veo_prompt,
             output_path=clip_path,
             first_frame_path=keyframe_path,
             aspect_ratio=aspect,
             duration_seconds=8,
-            negative_prompt=VEO_NEGATIVE_PROMPT,
+            negative_prompt=veo_negative_prompt,
         )
         return scene['scene_index'], aspect, f"clips/{clip_filename}"
 
     errors = []
-    with ThreadPoolExecutor(max_workers=VEO_PARALLEL_WORKERS) as executor:
+    with ThreadPoolExecutor(max_workers=veo_parallel_workers) as executor:
         futures = {executor.submit(_generate_one, item): item for item in work_items}
         for future in as_completed(futures):
             item = futures[future]
@@ -622,10 +670,6 @@ def assemble_chapter_video(
     concat_file.write_text('\n'.join(concat_lines), encoding='utf-8')
 
     # Step 3: Mix Veo ambient audio (reduced) with TTS narration (full volume)
-    # [0:a] = Veo ambient (music/SFX), [1:a] = TTS narration
-    # Use TTS duration as the master (duration=first refers to first input of amix = veo,
-    # but we want TTS to control length). We use duration=longest so the full TTS plays,
-    # and the video track (which we've padded to be >= audio) gets trimmed by -t.
     audio_duration_s = audio_duration_ms / 1000.0
     vol = VEO_AMBIENT_VOLUME
     filter_complex = (
@@ -706,11 +750,13 @@ def update_audiobook_manifest(chapter_index: int, video_16x9: Path | None, video
 
 # --- List Command ---
 
-def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
-    """Print all chapters with their video generation status."""
+def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None, scene_config: dict | None = None):
+    """Print all chapters with their video generation status, including per-scene detail."""
     video_dir = paths.video if paths else VIDEO_DIR
+    aspect_ratios = get_aspect_ratios(scene_config) if scene_config else ["16:9", "9:16"]
+
     print(f"\nChapter Video Status ({len(chapters)} chapters):")
-    print("=" * 90)
+    print("=" * 100)
 
     current_part = None
     for ch in chapters:
@@ -720,8 +766,10 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
                 print(f"\n  [{current_part}]")
 
         chapter_dir = get_chapter_dir(ch, paths=paths)
+        scene_files = load_scene_files(chapter_dir)
         scene_manifest = load_scene_manifest(chapter_dir)
-        scene_count = len(scene_manifest['scenes']) if scene_manifest else 0
+        scenes = scene_files or (scene_manifest.get('scenes', []) if scene_manifest else [])
+        scene_count = len(scenes)
 
         text_file = find_prepared_text(ch, paths=paths)
         audio_file = find_chapter_audio(ch, paths=paths)
@@ -729,7 +777,7 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
 
         has_video = False
         if video_dir.exists():
-            for ar in ASPECT_RATIOS:
+            for ar in aspect_ratios:
                 pattern = f"{chapter_slug(ch)}-{ar.replace(':', 'x')}.mp4"
                 if next(video_dir.glob(pattern), None):
                     has_video = True
@@ -747,19 +795,62 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
 
         status = ",".join(status_parts) if status_parts else "-"
         chars_info = f"{text_chars:,} chars" if text_chars else "no text"
-        print(f"    {ch['index']:3d}. [{status:>8s}] {ch['title']} ({chars_info})")
+        print(f"    {ch['index']:3d}. [{status:>10s}] {ch['title']} ({chars_info})")
 
-    print("=" * 90)
-    print("  Legend: T=text, A=audio, S#=scenes, V=video")
+        # Per-scene detail if scene files exist
+        if scenes:
+            keyframes_dir = chapter_dir / "keyframes"
+            clips_dir = chapter_dir / "clips"
+            for s in scenes:
+                idx = s.get('scene_index', 0)
+                title = s.get('title', '')[:40]
+
+                # Check keyframe/clip existence per aspect ratio
+                kf_exists = any(
+                    (keyframes_dir / f"scene-{idx:02d}-{ar.replace(':', 'x')}.jpg").exists()
+                    for ar in aspect_ratios
+                )
+                clip_exists = any(
+                    (clips_dir / f"scene-{idx:02d}-{ar.replace(':', 'x')}.mp4").exists()
+                    for ar in aspect_ratios
+                )
+
+                markers = ""
+                if kf_exists:
+                    markers += "K"
+                if clip_exists:
+                    markers += "V"
+                markers = f"[{markers:>2s}]" if markers else "[  ]"
+
+                edited = " [edited]" if scene_has_manual_edits(s) else ""
+                dur_ms = s.get('duration_ms', 0)
+                dur_s = dur_ms / 1000.0 if dur_ms else 0
+                print(f"          {idx:2d}. {markers} {title} ({dur_s:.1f}s){edited}")
+
+    print("=" * 100)
+    print("  Legend: T=text, A=audio, S#=scenes, V=video | K=keyframe, V=clip, [edited]=manual prompt edits")
 
 
 # --- Main Pipeline ---
 
-def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = False, max_scenes: int | None = None, no_keyframes: bool = False, book_meta: dict | None = None, prompt_variant: str = DEFAULT_PROMPT_VARIANT, test_prompts: bool = False, paths: AudiobookPaths | None = None):
+def run_pipeline(
+    chapter: dict,
+    keyframes_only: bool = False,
+    force: bool = False,
+    max_scenes: int | None = None,
+    no_keyframes: bool = False,
+    skip_animate: bool = False,
+    scene_index: int | None = None,
+    book_meta: dict | None = None,
+    prompt_variant: str = DEFAULT_PROMPT_VARIANT,
+    test_prompts: bool = False,
+    scene_config: dict | None = None,
+    paths: AudiobookPaths | None = None,
+):
     """Run the video generation pipeline for a single chapter.
 
-    Requires pre-existing scene-manifest.json (produced by generate_audiobook_scenes.py)
-    and audio file (produced by generate_audiobook.py).
+    Requires pre-existing scene files or scene-manifest.json (produced by
+    generate_audiobook_scenes.py) and audio file (produced by generate_audiobook.py).
     """
     print(f"\n{'=' * 60}")
     print(f"Chapter {chapter['index']}: {chapter['title']}")
@@ -768,18 +859,33 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
 
     chapter_dir = get_chapter_dir(chapter, paths=paths)
 
-    # Load scene manifest (required)
-    existing = load_scene_manifest(chapter_dir)
-    if not existing or not existing.get('scenes'):
-        raise FileNotFoundError(
-            f"No scene-manifest.json for chapter {chapter['index']} ({chapter_dir}). "
-            f"Run: python scripts/generate_audiobook_scenes.py --chapter {chapter['index']}"
-        )
+    # Load scene config
+    if not scene_config:
+        scene_config = load_scene_config(paths.video if paths else VIDEO_DIR)
+    aspect_ratios = get_aspect_ratios(scene_config)
+    veo_negative_prompt = get_veo_negative_prompt(scene_config)
+    veo_workers = get_veo_parallel_workers(scene_config)
 
-    scenes = existing['scenes']
-    text_hash = existing.get('text_hash', '')
-    total_duration_ms = existing.get('total_duration_ms', 0)
-    print(f"  Loaded scene manifest: {len(scenes)} scenes")
+    # Load scenes: prefer individual scene files, fall back to manifest
+    scene_files = load_scene_files(chapter_dir)
+    if scene_files:
+        scenes = scene_files
+        print(f"  Loaded {len(scenes)} scenes from individual files")
+    else:
+        existing = load_scene_manifest(chapter_dir)
+        if not existing or not existing.get('scenes'):
+            raise FileNotFoundError(
+                f"No scene files for chapter {chapter['index']} ({chapter_dir}). "
+                f"Run: python scripts/generate_audiobook_scenes.py --chapter {chapter['index']}"
+            )
+        scenes = existing['scenes']
+        print(f"  Loaded scene manifest: {len(scenes)} scenes")
+
+    text_hash_val = ""
+    manifest = load_scene_manifest(chapter_dir)
+    if manifest:
+        text_hash_val = manifest.get('text_hash', '')
+    total_duration_ms = manifest.get('total_duration_ms', 0) if manifest else 0
 
     # Load audio (required)
     audio_path = find_chapter_audio(chapter, paths=paths)
@@ -800,48 +906,122 @@ def run_pipeline(chapter: dict, keyframes_only: bool = False, force: bool = Fals
     if text:
         print(f"  Text: {len(text):,} chars ({text_file.name})")
 
+    # Filter to single scene if requested
+    if scene_index is not None:
+        scenes = [s for s in scenes if s['scene_index'] == scene_index]
+        if not scenes:
+            print(f"  [ERROR] Scene {scene_index} not found")
+            return
+        print(f"  Processing scene {scene_index} only")
+
     if max_scenes and len(scenes) > max_scenes:
         print(f"  --max-scenes {max_scenes}: truncating from {len(scenes)} scenes")
         scenes = scenes[:max_scenes]
 
+    # Force cleanup: respect --skip-keyframes (only delete clips, not keyframes)
     if force:
-        subdirs_to_clean = ["clips"]
-        if not no_keyframes:
-            subdirs_to_clean.insert(0, "keyframes")
-        for subdir in subdirs_to_clean:
-            old_dir = chapter_dir / subdir
-            if old_dir.exists():
-                shutil.rmtree(old_dir)
-                print(f"  --force: deleted {subdir}/")
-        video_dir = paths.video if paths else VIDEO_DIR
-        for aspect in ASPECT_RATIOS:
-            aspect_tag = aspect.replace(":", "x")
-            old_video = video_dir / f"{chapter_slug(chapter)}-{aspect_tag}.mp4"
-            if old_video.exists():
-                old_video.unlink()
-                print(f"  --force: deleted {old_video.name}")
+        if not no_keyframes and not skip_animate:
+            # Delete everything
+            subdirs_to_clean = ["clips", "keyframes"] if not no_keyframes else ["clips"]
+        elif no_keyframes or skip_animate:
+            # Only delete clips when skipping keyframes or animation
+            subdirs_to_clean = ["clips"]
+        else:
+            subdirs_to_clean = ["clips"]
+
+        if scene_index is not None:
+            # Single scene: only delete files for that scene
+            for subdir in subdirs_to_clean:
+                subdir_path = chapter_dir / subdir
+                if subdir_path.exists():
+                    for ar in aspect_ratios:
+                        aspect_tag = ar.replace(":", "x")
+                        ext = "jpg" if subdir == "keyframes" else "mp4"
+                        f = subdir_path / f"scene-{scene_index:02d}-{aspect_tag}.{ext}"
+                        if f.exists():
+                            f.unlink()
+                            print(f"  --force: deleted {subdir}/scene-{scene_index:02d}-{aspect_tag}.{ext}")
+        else:
+            for subdir in subdirs_to_clean:
+                old_dir = chapter_dir / subdir
+                if old_dir.exists():
+                    shutil.rmtree(old_dir)
+                    print(f"  --force: deleted {subdir}/")
+            video_dir = paths.video if paths else VIDEO_DIR
+            for aspect in aspect_ratios:
+                aspect_tag = aspect.replace(":", "x")
+                old_video = video_dir / f"{chapter_slug(chapter)}-{aspect_tag}.mp4"
+                if old_video.exists():
+                    old_video.unlink()
+                    print(f"  --force: deleted {old_video.name}")
 
     if test_prompts:
         test_prompt_variants(scenes, chapter_dir, chapter_text=text, max_scenes=max_scenes)
         return
 
     if not no_keyframes:
-        scenes = generate_keyframes(scenes, chapter_dir, chapter=chapter, book_meta=book_meta, chapter_text=text, prompt_variant=prompt_variant)
-        save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
+        scenes = generate_keyframes(
+            scenes, chapter_dir, chapter=chapter, book_meta=book_meta,
+            chapter_text=text, prompt_variant=prompt_variant,
+            aspect_ratios=aspect_ratios,
+        )
+        save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash_val)
 
         if keyframes_only:
             print("\n--keyframes-only: stopping after keyframe generation.")
             return
 
-    scenes = animate_scenes(scenes, chapter_dir, use_keyframes=not no_keyframes, chapter_text=text)
-    save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
+    if not skip_animate:
+        scenes = animate_scenes(
+            scenes, chapter_dir, use_keyframes=not no_keyframes,
+            chapter_text=text, veo_negative_prompt=veo_negative_prompt,
+            veo_parallel_workers=veo_workers, aspect_ratios=aspect_ratios,
+        )
+        save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash_val)
+
+    # Assembly (skip if processing single scene)
+    if scene_index is not None:
+        print(f"\nScene {scene_index} processed. Run without --scene to assemble full video.")
+        return
+
+    # For assembly, we need all scenes (not filtered)
+    all_scene_files = load_scene_files(chapter_dir)
+    all_scenes = all_scene_files or scenes
+
+    # Check all clips exist for assembly
+    clips_dir = chapter_dir / "clips"
+    missing_clips = False
+    for s in all_scenes:
+        for ar in aspect_ratios:
+            aspect_tag = ar.replace(":", "x")
+            clip_path = clips_dir / f"scene-{s['scene_index']:02d}-{aspect_tag}.mp4"
+            if not clip_path.exists():
+                missing_clips = True
+                break
+        if missing_clips:
+            break
+
+    if missing_clips and skip_animate:
+        print("\n[WARN] Some clips missing; cannot assemble. Run without --skip-animate first.")
+        return
+
+    # Load clip paths into scenes for assembly
+    for s in all_scenes:
+        if 'clips' not in s:
+            s['clips'] = {}
+        for ar in aspect_ratios:
+            aspect_tag = ar.replace(":", "x")
+            clip_filename = f"scene-{s['scene_index']:02d}-{aspect_tag}.mp4"
+            clip_path = clips_dir / clip_filename
+            if clip_path.exists():
+                s['clips'][ar] = f"clips/{clip_filename}"
 
     print("\nAssembling final videos...")
-    video_16x9 = assemble_chapter_video(scenes, chapter, chapter_dir, "16:9", book_meta=book_meta, paths=paths)
-    video_9x16 = assemble_chapter_video(scenes, chapter, chapter_dir, "9:16", book_meta=book_meta, paths=paths)
+    video_16x9 = assemble_chapter_video(all_scenes, chapter, chapter_dir, "16:9", book_meta=book_meta, paths=paths) if "16:9" in aspect_ratios else None
+    video_9x16 = assemble_chapter_video(all_scenes, chapter, chapter_dir, "9:16", book_meta=book_meta, paths=paths) if "9:16" in aspect_ratios else None
 
     print("\nUpdating manifest...")
-    update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(scenes), paths=paths)
+    update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(all_scenes), paths=paths)
 
     print(f"\nDone! Chapter {chapter['index']}: {chapter['title']}")
     if video_16x9:
@@ -867,6 +1047,11 @@ def main():
         help="Process only specific chapter number"
     )
     parser.add_argument(
+        "--scene",
+        type=int,
+        help="Process only a specific scene number (requires --chapter)"
+    )
+    parser.add_argument(
         "--start", "-s",
         type=int,
         help="Start from this chapter number (inclusive)"
@@ -879,7 +1064,17 @@ def main():
     parser.add_argument(
         "--keyframes-only",
         action="store_true",
-        help="Run scene segmentation + keyframe generation, skip Veo animation"
+        help="Run keyframe generation only, skip Veo animation"
+    )
+    parser.add_argument(
+        "--skip-keyframes",
+        action="store_true",
+        help="Skip keyframe generation (use existing keyframes)"
+    )
+    parser.add_argument(
+        "--skip-animate",
+        action="store_true",
+        help="Skip Veo animation, go straight to assembly from existing clips"
     )
     parser.add_argument(
         "--list", "-l",
@@ -889,7 +1084,7 @@ def main():
     parser.add_argument(
         "--force", "-f",
         action="store_true",
-        help="Force re-segmentation even if scene manifest exists"
+        help="Force regeneration (delete cached files)"
     )
     parser.add_argument(
         "--max-scenes",
@@ -914,6 +1109,9 @@ def main():
     )
     args = parser.parse_args()
 
+    if args.scene and not args.chapter:
+        parser.error("--scene requires --chapter")
+
     try:
         config_path = resolve_config_path(args.config)
     except FileNotFoundError as e:
@@ -921,6 +1119,9 @@ def main():
 
     cfg_name = config_name_from_path(config_path)
     paths = get_paths(cfg_name)
+
+    # Load scene config
+    scene_config = load_scene_config(paths.video)
 
     print(f"Config: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
 
@@ -930,7 +1131,7 @@ def main():
     print(f"Found {len(chapters)} chapters")
 
     if args.list:
-        list_chapters(chapters, paths=paths)
+        list_chapters(chapters, paths=paths, scene_config=scene_config)
         return
 
     # Extract book metadata for tagging images/videos
@@ -957,10 +1158,13 @@ def main():
             keyframes_only=args.keyframes_only,
             force=args.force,
             max_scenes=args.max_scenes,
-            no_keyframes=args.no_keyframes,
+            no_keyframes=args.no_keyframes or args.skip_keyframes,
+            skip_animate=args.skip_animate,
+            scene_index=args.scene,
             book_meta=book_meta,
             prompt_variant=args.prompt,
             test_prompts=args.test_prompts,
+            scene_config=scene_config,
             paths=paths,
         )
 
