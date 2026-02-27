@@ -206,15 +206,21 @@ def segment_scenes_with_prompts(text: str, visual_style: str, no_text: str) -> l
     return scenes
 
 
-# --- Individual Scene JSON Files ---
+# --- Chapter Scene JSON File ---
+
+def scene_file_path(scenes_dir: Path, slug: str) -> Path:
+    """Path to the scene JSON file: scenes_dir/{slug}.json"""
+    return scenes_dir / f"{slug}.json"
+
 
 def save_scene_files(
     scenes: list[dict],
-    chapter_dir: Path,
+    scenes_dir: Path,
+    slug: str,
     force: bool = False,
     overwrite_edits: bool = False,
 ) -> list[dict]:
-    """Save each scene as an individual JSON file (scene-NN.json).
+    """Save all scenes to a single JSON file ({slug}.json).
 
     Preserves manual edits: if user has edited keyframe_prompt or veo_prompt
     (i.e. they differ from _auto_generated), the user's version is kept unless
@@ -222,12 +228,18 @@ def save_scene_files(
 
     Returns the scenes list (possibly with restored manual edits).
     """
-    scenes_dir = chapter_dir / "scenes"
-    scenes_dir.mkdir(parents=True, exist_ok=True)
+    path = scene_file_path(scenes_dir, slug)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Load existing scenes for edit preservation
+    existing_by_idx: dict[int, dict] = {}
+    if path.exists() and not overwrite_edits:
+        existing_scenes = json.loads(path.read_text(encoding='utf-8'))
+        for es in existing_scenes:
+            existing_by_idx[es.get('scene_index', 0)] = es
 
     for scene in scenes:
         idx = scene['scene_index']
-        scene_path = scenes_dir / f"scene-{idx:02d}.json"
 
         # Store auto-generated prompts
         auto_gen = {
@@ -235,54 +247,41 @@ def save_scene_files(
             'veo_prompt': scene.get('veo_prompt', ''),
         }
 
-        if scene_path.exists() and not overwrite_edits:
-            existing = json.loads(scene_path.read_text(encoding='utf-8'))
+        existing = existing_by_idx.get(idx)
+        if existing and not overwrite_edits:
             existing_auto = existing.get('_auto_generated', {})
-
-            # Check if user manually edited prompts
             for field in ('keyframe_prompt', 'veo_prompt'):
                 existing_val = existing.get(field, '')
                 auto_val = existing_auto.get(field, '')
                 if existing_val and auto_val and existing_val != auto_val:
-                    # User has manually edited this field; preserve their edit
-                    if not force or not overwrite_edits:
-                        print(f"    Scene {idx}: preserving manual edit of {field}")
-                        scene[field] = existing_val
+                    print(f"    Scene {idx}: preserving manual edit of {field}")
+                    scene[field] = existing_val
 
         scene['_auto_generated'] = auto_gen
 
-        scene_path.write_text(
-            json.dumps(scene, indent=2, ensure_ascii=False) + '\n',
-            encoding='utf-8',
-        )
-
-    print(f"  Saved {len(scenes)} scene files to {scenes_dir}")
+    path.write_text(
+        json.dumps(scenes, indent=2, ensure_ascii=False) + '\n',
+        encoding='utf-8',
+    )
+    print(f"  Saved {len(scenes)} scenes to {path.name}")
     return scenes
 
 
-def load_scene_files(chapter_dir: Path) -> list[dict] | None:
-    """Load individual scene JSON files from chapter_dir/scenes/.
+def load_scene_files(scenes_dir: Path, slug: str) -> list[dict] | None:
+    """Load scenes from scenes_dir/{slug}.json.
 
-    Returns sorted list of scenes, or None if no scene files exist.
+    Returns sorted list of scenes, or None if no file exists.
     """
-    scenes_dir = chapter_dir / "scenes"
-    if not scenes_dir.exists():
+    path = scene_file_path(scenes_dir, slug)
+    if not path.exists():
         return None
 
-    scene_files = sorted(scenes_dir.glob("scene-*.json"))
-    if not scene_files:
+    scenes = json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(scenes, list) or not scenes:
         return None
-
-    scenes = []
-    for sf in scene_files:
-        # Skip non-numbered files (e.g. scene-manifest.json)
-        if not re.match(r'scene-\d+\.json$', sf.name):
-            continue
-        scene = json.loads(sf.read_text(encoding='utf-8'))
-        scenes.append(scene)
 
     scenes.sort(key=lambda s: s.get('scene_index', 0))
-    return scenes if scenes else None
+    return scenes
 
 
 def scene_has_manual_edits(scene: dict) -> bool:
@@ -366,11 +365,12 @@ def assign_timestamps_from_alignment(
 def save_scene_manifest(
     scenes: list[dict],
     chapter: dict,
-    chapter_dir: Path,
+    scenes_dir: Path,
+    slug: str,
     total_duration_ms: int,
     text_hash: str = "",
 ):
-    """Save scene-manifest.json with all scene metadata."""
+    """Save {slug}-manifest.json with all scene metadata."""
     manifest = {
         "chapter_index": chapter['index'],
         "chapter_title": chapter['title'],
@@ -383,8 +383,8 @@ def save_scene_manifest(
     if scenes:
         manifest['total_chars'] = max(s.get('char_end', 0) for s in scenes)
 
-    manifest_path = chapter_dir / "scene-manifest.json"
-    chapter_dir.mkdir(parents=True, exist_ok=True)
+    scenes_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path = scenes_dir / f"{slug}-manifest.json"
     manifest_path.write_text(
         json.dumps(manifest, indent=2, ensure_ascii=False) + '\n',
         encoding='utf-8',
@@ -392,9 +392,13 @@ def save_scene_manifest(
     print(f"  Scene manifest saved: {manifest_path}")
 
 
-def load_scene_manifest(chapter_dir: Path) -> dict | None:
-    """Load existing scene-manifest.json if present."""
-    manifest_path = chapter_dir / "scene-manifest.json"
+def load_scene_manifest(scenes_dir: Path, slug: str) -> dict | None:
+    """Load existing {slug}-manifest.json if present."""
+    manifest_path = scenes_dir / f"{slug}-manifest.json"
     if manifest_path.exists():
         return json.loads(manifest_path.read_text(encoding='utf-8'))
+    # Fallback: legacy path (scenes_dir/slug/scene-manifest.json)
+    legacy = scenes_dir / slug / "scene-manifest.json"
+    if legacy.exists():
+        return json.loads(legacy.read_text(encoding='utf-8'))
     return None

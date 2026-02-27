@@ -64,7 +64,7 @@ Skeptics say, "Correlation isn't causation!" They say this while dying of diseas
 
 But now there's enough data and computing power to make each person their own control group. Track arthritis pain for a month. Take Turmeric, stop, start again. The pattern reveals whether it works or if it's coincidence.
 
-A landmark meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] quietly ended this argument while nobody was listening. Researchers compared observational studies against randomized controlled trials across 19 different treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. The result: nearly identical effect sizes. The cheap method and the expensive method found the same answers. You've been overpaying for data like tourists at an airport restaurant.
+A landmark meta-analysis in the New England Journal of Medicine [@meta-analysis-in-the-new-england-journal-of-medicine] quietly ended this argument while nobody was listening. Researchers compared observational studies against randomized controlled trials across 19 different treatments. Cardiac surgery, cancer, ophthalmology, obstetrics. The result: nearly identical effect sizes. The cheap method and the expensive method found the same answers. You've been overpaying for data like tourists at an airport restaurant. On Wishonia, we figured this out about 3,000 years ago. We call it "looking at what happened." You call it a "landmark meta-analysis."
 
 ![Forest plot comparing effect sizes from observational studies vs. RCTs for cardiac treatments. The dots land in the same place. The expensive method and the cheap method found the same answers.](../../assets/images/observational-vs-randomized-effect-sizes.png)
 
@@ -110,7 +110,7 @@ Results:
 
 The FDA's response: "But did they file the correct paperwork?"
 
-RECOVERY wasn't a fluke. A Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] found median costs of just $97 per patient. The PCORnet ADAPTABLE trial enrolled 15,076 patients across 40 clinical sites at {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage]. This model works across therapeutic areas, across countries, across decades. The evidence base for cheap, fast, embedded trials isn't one study. It's 108 and counting.
+RECOVERY wasn't a fluke. A Harvard meta-analysis of 108 embedded pragmatic trials [@embedded-pragmatic-trials-meta-analysis] found median costs of just $97 per patient. The PCORnet ADAPTABLE trial enrolled 15,076 patients across 40 clinical sites at {{< var adaptable_trial_cost_per_patient >}} per patient [@pragmatic-trials-cost-advantage]. This model works across therapeutic areas, across countries, across decades. The evidence base for cheap, fast, embedded trials isn't one study. It's 108 and counting. On most planets I've worked with, the pragmatic trial is the moment everyone looks at each other and says "wait, that's it?" Yes. That's it. You let sick people try things, write down what happens, and share the results.
 
 ## What You'd See: FDA.gov 2.0
 
@@ -431,6 +431,8 @@ The FDA doesn't know:
 - Whether **you'd** rather die trying or die waiting (only you can answer this)
 
 But they decide for you anyway. This isn't ideology. It's information theory. You mathematically cannot centralize medical decisions for {{< var global_population_2024_nounit >}} unique people.
+
+Every civilization I've worked with tried a centralized approval committee first. Every single one eventually abandoned it, once someone did the math and realized that a roomful of experts reviewing one drug at a time is just a queue with a death rate.
 
 ## The Future: Where Death Becomes Embarrassing
 

@@ -208,6 +208,7 @@ def generate_chapter_audio(
     force: bool = False,
     paths: AudiobookPaths | None = None,
     config_path: Path = DEFAULT_CONFIG_PATH,
+    skip_text_prep: bool = False,
 ) -> tuple[Path | None, bool]:
     """
     Generate audio for a single chapter.
@@ -221,6 +222,7 @@ def generate_chapter_audio(
         force: Regenerate even if file exists
         paths: Config-specific output paths
         config_path: Quarto config path (passed to text subprocess)
+        skip_text_prep: Skip the text preparation subprocess (caller already prepared text)
 
     Returns:
         Tuple of (path to generated audio file or None, whether audio was regenerated)
@@ -241,16 +243,17 @@ def generate_chapter_audio(
     output_path = chapters_dir / output_filename
 
     # Regenerate prepared text via subprocess (has its own hash-based caching)
-    print(f"  Preparing text...")
-    text_script = Path(__file__).parent / "generate_audiobook_text.py"
-    text_cmd = [sys.executable, "-u", str(text_script), "--chapter", str(chapter['index']),
-                "--config", str(config_path)]
-    if force:
-        text_cmd.append("--force")
-    result = subprocess.run(text_cmd, cwd=str(PROJECT_ROOT))
-    if result.returncode != 0:
-        print(f"  [ERROR] Text preparation failed (exit code {result.returncode})")
-        return None, False
+    if not skip_text_prep:
+        print(f"  Preparing text...")
+        text_script = Path(__file__).parent / "generate_audiobook_text.py"
+        text_cmd = [sys.executable, "-u", str(text_script), "--chapter", str(chapter['index']),
+                    "--config", str(config_path)]
+        if force:
+            text_cmd.append("--force")
+        result = subprocess.run(text_cmd, cwd=str(PROJECT_ROOT))
+        if result.returncode != 0:
+            print(f"  [ERROR] Text preparation failed (exit code {result.returncode})")
+            return None, False
 
     # Find text chunk files (produced by generate_audiobook_text.py)
     text_file = find_prepared_text(chapter, paths=paths)
@@ -864,8 +867,40 @@ def generate_outro_audio(
         'podcast': False,
     }
 
+    # Prepare text file directly (the outro QMD isn't in the Quarto config,
+    # so the text subprocess would fail looking up chapter 9999)
+    text_dir = paths.narration_txt if paths else (AUDIOBOOK_DIR / "manual-paperback" / "narration-txt-chapters")
+    text_dir.mkdir(parents=True, exist_ok=True)
+    slug = chapter_slug(outro_chapter)
+    prepared_path = text_dir / f"{slug}.prepared.txt"
+
+    # Strip frontmatter and include directives, resolve variables
+    lines = qmd_content.split('\n')
+    in_frontmatter = False
+    text_lines = []
+    for line in lines:
+        if line.strip() == '---':
+            in_frontmatter = not in_frontmatter
+            continue
+        if in_frontmatter:
+            continue
+        if re.match(r'\{\{<\s*include\s+', line.strip()):
+            continue
+        text_lines.append(line)
+    prepared_text = '\n'.join(text_lines).strip()
+
+    # Resolve {{< var ... >}} shortcodes
+    if '{{< var' in prepared_text:
+        from dih_models.variable_replacement import load_variables, replace_variables
+        from lib.audiobook_common import VARIABLES_YML
+        variables = load_variables(VARIABLES_YML)
+        prepared_text = replace_variables(prepared_text, variables)
+
+    prepared_path.write_text(prepared_text, encoding='utf-8')
+
     audio_path, _ = generate_chapter_audio(
-        outro_chapter, voice=voice, force=force, paths=paths, config_path=config_path
+        outro_chapter, voice=voice, force=force, paths=paths,
+        config_path=config_path, skip_text_prep=True,
     )
     if audio_path:
         # Normalize loudness to match chapters

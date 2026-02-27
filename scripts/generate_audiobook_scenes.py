@@ -46,16 +46,11 @@ from lib.scenes import (
     estimate_timestamps, assign_timestamps_from_alignment,
     save_scene_manifest, load_scene_manifest,
     save_scene_files, load_scene_files, scene_has_manual_edits,
+    scene_file_path,
 )
 from lib.scene_config import (
     load_scene_config, get_visual_style, get_no_text_instruction,
 )
-
-
-def get_chapter_dir(chapter: dict, paths: AudiobookPaths | None = None) -> Path:
-    """Get the scene directory for a chapter."""
-    scenes_dir = paths.scenes if paths else SCENES_DIR
-    return scenes_dir / chapter_slug(chapter)
 
 
 def find_alignment(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
@@ -78,15 +73,16 @@ def regenerate_single_scene_prompt(
     visual_style: str,
     no_text: str,
     overwrite_edits: bool,
-    chapter_dir: Path,
+    scenes_dir: Path,
+    slug: str,
 ):
     """Regenerate prompts for a single scene using the LLM."""
-    from lib.scenes import _call_llm_with_timeout, parse_json_array, SCENE_SEGMENTATION_WITH_PROMPTS
+    from lib.scenes import _call_llm_with_timeout
     import json
 
-    scenes = load_scene_files(chapter_dir)
+    scenes = load_scene_files(scenes_dir, slug)
     if not scenes:
-        print(f"  [ERROR] No scene files found. Run full segmentation first.")
+        print(f"  [ERROR] No scene file found. Run full segmentation first.")
         return
 
     target = None
@@ -137,11 +133,10 @@ def regenerate_single_scene_prompt(
         'veo_prompt': result['veo_prompt'],
     }
 
-    # Save back
-    scenes_dir = chapter_dir / "scenes"
-    scene_path = scenes_dir / f"scene-{scene_index:02d}.json"
-    scene_path.write_text(
-        json.dumps(target, indent=2, ensure_ascii=False) + '\n',
+    # Save back the full scenes list
+    path = scene_file_path(scenes_dir, slug)
+    path.write_text(
+        json.dumps(scenes, indent=2, ensure_ascii=False) + '\n',
         encoding='utf-8',
     )
     print(f"  [OK] Scene {scene_index} prompts regenerated")
@@ -158,6 +153,9 @@ def process_chapter(
     paths: AudiobookPaths | None = None,
 ):
     """Run scene segmentation for a single chapter."""
+    slug = chapter_slug(chapter)
+    scenes_dir = paths.scenes if paths else SCENES_DIR
+
     print(f"\n{'=' * 60}")
     print(f"Chapter {chapter['index']}: {chapter['title']}")
     print(f"{'=' * 60}")
@@ -173,13 +171,12 @@ def process_chapter(
         print(f"  [SKIP] No audio file. Run generate_audiobook.py first.")
         return
 
-    chapter_dir = get_chapter_dir(chapter, paths=paths)
     text = text_file.read_text(encoding='utf-8')
     text_hash = hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
 
     # Load scene config for visual style
     if not scene_config:
-        video_dir = paths.video if paths else chapter_dir.parent.parent
+        video_dir = paths.video if paths else scenes_dir.parent
         scene_config = load_scene_config(video_dir)
     visual_style = get_visual_style(scene_config)
     no_text = get_no_text_instruction(scene_config)
@@ -188,20 +185,20 @@ def process_chapter(
     if scene_index is not None:
         regenerate_single_scene_prompt(
             chapter, scene_index, text, visual_style, no_text,
-            overwrite_edits, chapter_dir,
+            overwrite_edits, scenes_dir, slug,
         )
         return
 
     # Check existing scene files first, then fall back to manifest
-    existing_scenes = load_scene_files(chapter_dir)
-    existing_manifest = load_scene_manifest(chapter_dir)
+    existing_scenes = load_scene_files(scenes_dir, slug)
+    existing_manifest = load_scene_manifest(scenes_dir, slug)
 
     if existing_scenes and not force:
         existing_hash = ""
         if existing_manifest:
             existing_hash = existing_manifest.get('text_hash', '')
         if existing_hash == text_hash:
-            print(f"  [SKIP] Scene files up to date ({len(existing_scenes)} scenes, hash: {text_hash})")
+            print(f"  [SKIP] Scene file up to date ({len(existing_scenes)} scenes, hash: {text_hash})")
             return
         if existing_hash:
             print(f"  Text changed (old: {existing_hash}, new: {text_hash}), re-segmenting...")
@@ -234,16 +231,18 @@ def process_chapter(
         print(f"  [WARN] No alignment data; using linear interpolation")
         scenes = estimate_timestamps(scenes, total_chars, total_duration_ms)
 
-    # Save individual scene files (preserving manual edits)
-    scenes = save_scene_files(scenes, chapter_dir, force=force, overwrite_edits=overwrite_edits)
+    # Save scene file (preserving manual edits)
+    scenes = save_scene_files(scenes, scenes_dir, slug, force=force, overwrite_edits=overwrite_edits)
 
     # Also save legacy manifest for backward compatibility
-    save_scene_manifest(scenes, chapter, chapter_dir, total_duration_ms, text_hash)
+    save_scene_manifest(scenes, chapter, scenes_dir, slug, total_duration_ms, text_hash)
     print(f"  Done: {len(scenes)} scenes")
 
 
 def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
     """Print all chapters with scene segmentation status."""
+    scenes_dir = paths.scenes if paths else SCENES_DIR
+
     print(f"\nScene Segmentation Status ({len(chapters)} chapters):")
     print("=" * 90)
 
@@ -254,9 +253,9 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
             if current_part:
                 print(f"\n  [{current_part}]")
 
-        chapter_dir = get_chapter_dir(ch, paths=paths)
-        manifest = load_scene_manifest(chapter_dir)
-        scene_files = load_scene_files(chapter_dir)
+        slug = chapter_slug(ch)
+        manifest = load_scene_manifest(scenes_dir, slug)
+        scene_files = load_scene_files(scenes_dir, slug)
         scene_count = len(scene_files) if scene_files else (len(manifest['scenes']) if manifest else 0)
 
         text_file = find_prepared_text(ch, paths=paths)
