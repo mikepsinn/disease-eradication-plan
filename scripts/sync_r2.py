@@ -707,6 +707,82 @@ def check_status(dirs: list[str], patterns: list[str]):
         print(f"\n{total_upload} file(s) need uploading ({format_size(total_upload_bytes)})")
 
 
+def regenerate_podcast_feed(dry_run: bool = False):
+    """Regenerate podcast RSS feed.xml to match current hashed MP3 filenames.
+
+    Reads chapter metadata from the Quarto config and timestamps from the
+    manifest, then rewrites feed.xml so enclosure URLs always point to the
+    actual MP3 files on disk. Must run before sync so R2 gets a consistent feed.
+    """
+    from lib.audiobook_manifest import read_manifest
+    from lib.audiobook_common import (
+        AUDIOBOOK_DIR, extract_chapters, find_current_mp3, chapter_slug, get_paths,
+    )
+    from dih_models.yaml_utils import load_quarto_config
+    from generate_audiobook import (
+        extract_book_metadata, generate_podcast_rss, ChapterTimestamp,
+    )
+    audiobook_dirs = [d for d in AUDIOBOOK_DIR.iterdir() if d.is_dir() and (d / "manifest.json").exists()]
+
+    for ab_dir in audiobook_dirs:
+        config_name = ab_dir.name
+        # Find matching Quarto config
+        config_path = PROJECT_ROOT / f"_quarto-{config_name}.yml"
+        if not config_path.exists():
+            # Try without the leading underscore prefix pattern
+            continue
+
+        print(f"\n  Regenerating podcast feed for {config_name}...")
+        paths = get_paths(config_name)
+        mp3_dir = paths.root / "mp3"
+        if not mp3_dir.exists():
+            print(f"    No mp3/ directory, skipping.")
+            continue
+
+        config = load_quarto_config(config_path)
+        all_chapters = extract_chapters(config)
+        book_meta = extract_book_metadata(config)
+        manifest = read_manifest(paths=paths)
+
+        # Reconstruct ChapterTimestamp list from manifest
+        timestamps: list[ChapterTimestamp] = []
+        for ch_data in manifest.get("chapters", []):
+            if "duration_ms" not in ch_data or "audio_file" not in ch_data:
+                continue
+            timestamps.append(ChapterTimestamp(
+                index=ch_data["index"],
+                title=ch_data["title"],
+                part=ch_data.get("part"),
+                file=ch_data["audio_file"],
+                start_ms=ch_data.get("audio_start_ms", 0),
+                end_ms=ch_data.get("audio_end_ms", ch_data["duration_ms"]),
+                duration_ms=ch_data["duration_ms"],
+                duration_formatted=ch_data.get("duration_formatted", "0:00"),
+            ))
+
+        if not timestamps:
+            print(f"    No timestamps in manifest, skipping.")
+            continue
+
+        # Collect current MP3s (hashed or canonical)
+        chapter_mp3s = []
+        for ch in all_chapters:
+            slug = chapter_slug(ch)
+            mp3 = find_current_mp3(slug, mp3_dir)
+            if mp3:
+                chapter_mp3s.append(mp3)
+
+        if not chapter_mp3s:
+            print(f"    No MP3 files found, skipping.")
+            continue
+
+        if dry_run:
+            print(f"    [DRY-RUN] Would regenerate feed.xml ({len(chapter_mp3s)} episodes)")
+            continue
+
+        generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
+
+
 def cleanup_old_podcast_versions(local_files: dict[str, Path], dry_run: bool = False):
     """Delete old hashed podcast MP3 versions from R2.
 
@@ -790,6 +866,11 @@ def main():
     if args.status:
         check_status(dirs, patterns)
         return
+
+    # Regenerate podcast feed.xml to match current MP3 hashes before syncing
+    print(f"\n{'='*60}")
+    print("Ensuring podcast feed is up to date...")
+    regenerate_podcast_feed(dry_run=args.dry_run)
 
     # Collect all files across dirs for index generation
     all_files: dict[str, Path] = {}

@@ -32,23 +32,20 @@ Text:
 {text}
 ---"""
 
-SCENE_SEGMENTATION_WITH_PROMPTS = """Segment this audiobook narration into visual scenes. Read the ENTIRE text first.
-
-Visual style: {visual_style}
-No-text rule: {no_text}
+SCENE_SEGMENTATION_WITH_PROMPTS = """Segment this audiobook narration into visual scenes. Read the ENTIRE text.
 
 Rules:
-- Each scene: ~120-250 characters, breaking at natural narrative boundaries
-- char_start/char_end: exact character offsets, no gaps, no overlaps
-- narration_text: exact original text for that span
-- context: relevant surrounding context from the chapter that explains the scene. Do NOT repeat the narration_text.
-- keyframe_prompt: A detailed image generation prompt in the visual style above. Describe the scene as a single illustration. Include the no-text rule. Do NOT include "Generate" or "Create".
-- veo_prompt: A video animation prompt describing camera motion and subject motion to animate the keyframe. Keep it concise (1-2 sentences). Include "No dialogue, narration, or speech."
+- Each scene: ~120-250 characters of narration, breaking at natural narrative boundaries
+- You MUST cover the ENTIRE text with no gaps and no overlaps
+- char_start/char_end: exact character offsets into the text below
+- narration_text: exact original text for that span (copy verbatim)
+- context: brief surrounding context that explains the scene
+- title: short descriptive title
 
 Return ONLY a JSON array:
-[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "context": "...", "keyframe_prompt": "...", "veo_prompt": "...", "char_start": 0, "char_end": 120}}]
+[{{"scene_index": 1, "title": "Short Title", "narration_text": "exact text...", "context": "...", "char_start": 0, "char_end": 120}}]
 
-Text:
+Text ({text_length} chars total, chunk starting at offset {chunk_offset}):
 ---
 {text}
 ---"""
@@ -165,15 +162,34 @@ def segment_scenes(text: str) -> list[dict]:
     return scenes
 
 
-def segment_scenes_with_prompts(text: str, visual_style: str, no_text: str) -> list[dict]:
-    """Segment narration text into scenes with keyframe_prompt and veo_prompt.
+CHUNK_SIZE = 4000  # chars per LLM chunk
 
-    Uses an enhanced prompt that instructs the LLM to generate image/video
-    prompts alongside the segmentation.
-    """
-    print("  Segmenting text into visual scenes (with prompts)...")
+
+def _split_text_into_chunks(text: str, chunk_size: int = CHUNK_SIZE) -> list[tuple[int, str]]:
+    """Split text into chunks at paragraph boundaries. Returns (offset, chunk_text) pairs."""
+    chunks = []
+    pos = 0
+    while pos < len(text):
+        end = min(pos + chunk_size, len(text))
+        if end < len(text):
+            # Find last paragraph break within the chunk
+            newline_pos = text.rfind('\n\n', pos, end)
+            if newline_pos > pos + chunk_size // 2:
+                end = newline_pos + 2  # include the double newline
+            else:
+                # Fall back to last single newline
+                newline_pos = text.rfind('\n', pos, end)
+                if newline_pos > pos + chunk_size // 2:
+                    end = newline_pos + 1
+        chunks.append((pos, text[pos:end]))
+        pos = end
+    return chunks
+
+
+def _segment_chunk(chunk_text: str, chunk_offset: int, total_length: int, chunk_num: int, total_chunks: int) -> list[dict]:
+    """Segment a single text chunk into scenes via LLM."""
     prompt = SCENE_SEGMENTATION_WITH_PROMPTS.format(
-        text=text, visual_style=visual_style, no_text=no_text,
+        text=chunk_text, text_length=total_length, chunk_offset=chunk_offset,
     )
     for attempt in range(1, 4):
         try:
@@ -182,28 +198,53 @@ def segment_scenes_with_prompts(text: str, visual_style: str, no_text: str) -> l
         except Exception as e:
             if attempt < 3:
                 wait = attempt * 15
-                print(f"  [RETRY] LLM attempt {attempt}/3 failed: {e}")
-                print(f"  [RETRY] Waiting {wait}s...", flush=True)
+                print(f"    [RETRY] Chunk {chunk_num}/{total_chunks} attempt {attempt}/3 failed: {e}")
                 time.sleep(wait)
             else:
                 raise
     scenes = parse_json_array(response)
 
-    total_chars = len(text)
-    if scenes:
-        last_end = scenes[-1]['char_end']
-        if abs(last_end - total_chars) > 10:
-            print(f"  [WARN] Scene coverage ends at {last_end}, text is {total_chars} chars")
-
-    print(f"  Segmented into {len(scenes)} scenes")
+    # Fix char offsets: LLM returns offsets relative to chunk, adjust to full text
     for s in scenes:
-        chars = len(s.get('narration_text', ''))
-        pct = chars / total_chars * 100 if total_chars else 0
-        kp = s.get('keyframe_prompt', '')
-        kp_preview = f" | {kp[:60]}..." if len(kp) > 60 else (f" | {kp}" if kp else "")
-        print(f"    Scene {s['scene_index']}: {s['title']} ({chars} chars, ~{pct:.0f}%){kp_preview}")
+        s['char_start'] = s.get('char_start', 0) + chunk_offset
+        s['char_end'] = s.get('char_end', 0) + chunk_offset
 
     return scenes
+
+
+def segment_scenes_with_prompts(text: str, visual_style: str, no_text: str) -> list[dict]:
+    """Segment narration text into scenes using chunked LLM calls.
+
+    Splits long text into ~4000 char chunks, segments each separately,
+    then merges and re-indexes.
+    """
+    total_chars = len(text)
+    chunks = _split_text_into_chunks(text)
+    print(f"  Segmenting text into visual scenes ({len(chunks)} chunk(s), {total_chars:,} chars)...")
+
+    all_scenes = []
+    for i, (offset, chunk_text) in enumerate(chunks):
+        print(f"    Chunk {i+1}/{len(chunks)}: offset {offset}, {len(chunk_text)} chars...")
+        chunk_scenes = _segment_chunk(chunk_text, offset, total_chars, i + 1, len(chunks))
+        print(f"      -> {len(chunk_scenes)} scenes")
+        all_scenes.extend(chunk_scenes)
+
+    # Sort by char_start and re-index
+    all_scenes.sort(key=lambda s: s.get('char_start', 0))
+    for i, s in enumerate(all_scenes, 1):
+        s['scene_index'] = i
+
+    if all_scenes:
+        last_end = all_scenes[-1]['char_end']
+        if abs(last_end - total_chars) > 50:
+            print(f"  [WARN] Scene coverage ends at {last_end}, text is {total_chars} chars")
+
+    print(f"  Segmented into {len(all_scenes)} scenes total")
+    for s in all_scenes:
+        chars = len(s.get('narration_text', ''))
+        print(f"    Scene {s['scene_index']}: {s['title']} ({chars} chars, {s['char_start']}-{s['char_end']})")
+
+    return all_scenes
 
 
 # --- Chapter Scene JSON File ---

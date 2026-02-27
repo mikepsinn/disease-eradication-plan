@@ -531,28 +531,48 @@ def assemble_chapter_video(
     clips_dir = video_dir / "clips"
     audio_duration_ms = len(AudioSegment.from_file(str(audio_path)))
 
+    # Check if we're assembling a subset of scenes (e.g. --max-scenes)
+    last_scene_end_ms = scenes[-1].get('end_ms', audio_duration_ms) if scenes else audio_duration_ms
+    is_partial = last_scene_end_ms < audio_duration_ms * 0.9
+
+    if is_partial:
+        audio_duration_ms = last_scene_end_ms
+        print(f"  [PARTIAL] Trimming audio to {audio_duration_ms/1000:.1f}s (covers scenes 1-{scenes[-1]['scene_index']})")
+
+    # Build clip entries with display duration = time from this scene's start
+    # to the next scene's start (so each image shows at the right audio moment)
     clip_entries = []
-    for scene in scenes:
+    for i, scene in enumerate(scenes):
         clip_rel = scene.get('clips', {}).get(aspect)
         if not clip_rel:
             raise FileNotFoundError(f"No clip for scene {scene['scene_index']} ({aspect})")
         clip_path = video_dir / clip_rel
         if not clip_path.exists():
             raise FileNotFoundError(f"Clip file missing: {clip_path}")
-        clip_entries.append((clip_path, scene['duration_ms']))
 
-    # Ensure total video covers full audio
-    total_scene_ms = sum(ms for _, ms in clip_entries)
-    if total_scene_ms < audio_duration_ms:
-        gap = audio_duration_ms - total_scene_ms + 1000
-        path, ms = clip_entries[-1]
-        clip_entries[-1] = (path, ms + gap)
-        print(f"  [FIX] Last clip extended by {gap}ms to cover audio ({audio_duration_ms}ms)")
+        scene_start = scene.get('start_ms', 0)
+        if i == 0:
+            # First scene starts from the beginning of the audio
+            display_start = 0
+        else:
+            display_start = scene_start
+
+        if i + 1 < len(scenes):
+            next_start = scenes[i + 1].get('start_ms', scene.get('end_ms', 0))
+            display_ms = next_start - display_start
+        else:
+            # Last scene extends to end of audio
+            display_ms = audio_duration_ms - display_start
+
+        display_ms = max(display_ms, 1000)  # at least 1s
+        clip_entries.append((clip_path, display_ms))
 
     print(f"  Assembling {aspect} video ({len(clip_entries)} scenes, target {sum(ms for _,ms in clip_entries)/1000:.1f}s for {audio_duration_ms/1000:.1f}s audio)...")
 
     temp_clips = []
     concat_lines = []
+
+    MAX_SLOWDOWN = 1.3  # never stretch clip more than 30% slower
 
     for i, (clip_path, target_ms) in enumerate(clip_entries):
         target_seconds = max(1.0, target_ms / 1000.0)
@@ -564,36 +584,53 @@ def assemble_chapter_video(
         ]
         probe_result = subprocess.run(probe_cmd, capture_output=True, text=True)
         clip_duration = float(probe_result.stdout.strip()) if probe_result.returncode == 0 else 8.0
-        time_scale = target_seconds / clip_duration
-        speed_factor = 1.0 / time_scale
 
         adjusted_path = clips_dir / f"_{slug}-adjusted-{i:02d}-{aspect_tag}.mp4"
 
-        if abs(time_scale - 1.0) < 0.02:
-            cmd = [
-                "ffmpeg", "-y", "-i", str(clip_path),
-                "-t", f"{target_seconds:.3f}",
-                "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-                "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart",
-                str(adjusted_path),
-            ]
+        if target_seconds <= clip_duration * MAX_SLOWDOWN:
+            # Target is close to clip length: slight stretch or trim
+            time_scale = target_seconds / clip_duration
+            if abs(time_scale - 1.0) < 0.02:
+                print(f"    Scene {i+1}: {clip_duration:.1f}s -> {target_seconds:.1f}s (1x)")
+                cmd = [
+                    "ffmpeg", "-y", "-i", str(clip_path),
+                    "-t", f"{target_seconds:.3f}",
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+                    "-an", "-movflags", "+faststart",
+                    str(adjusted_path),
+                ]
+            else:
+                print(f"    Scene {i+1}: {clip_duration:.1f}s -> {target_seconds:.1f}s ({time_scale:.2f}x)")
+                cmd = [
+                    "ffmpeg", "-y", "-i", str(clip_path),
+                    "-filter_complex",
+                    f"[0:v]setpts=PTS*{time_scale:.4f}[v]",
+                    "-map", "[v]",
+                    "-t", f"{target_seconds:.3f}",
+                    "-c:v", "libx264", "-preset", "fast", "-crf", "23",
+                    "-an", "-movflags", "+faststart",
+                    str(adjusted_path),
+                ]
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            if result.returncode != 0:
+                raise RuntimeError(f"ffmpeg adjust failed for scene {i+1}: {result.stderr[:300]}")
         else:
-            atempo = max(0.5, min(100.0, speed_factor))
-            print(f"    Scene {i+1}: {clip_duration:.1f}s -> {target_seconds:.1f}s ({time_scale:.2f}x)")
+            # Target is much longer than clip: play clip at 1x then freeze last frame
+            freeze_seconds = target_seconds - clip_duration
+            print(f"    Scene {i+1}: {clip_duration:.1f}s + {freeze_seconds:.1f}s freeze = {target_seconds:.1f}s")
             cmd = [
                 "ffmpeg", "-y", "-i", str(clip_path),
                 "-filter_complex",
-                f"[0:v]setpts=PTS*{time_scale:.4f}[v];[0:a]atempo={atempo:.4f}[a]",
-                "-map", "[v]", "-map", "[a]",
+                f"[0:v]tpad=stop_mode=clone:stop_duration={freeze_seconds:.3f}[v]",
+                "-map", "[v]",
                 "-t", f"{target_seconds:.3f}",
                 "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-                "-c:a", "aac", "-b:a", "128k", "-movflags", "+faststart",
+                "-an", "-movflags", "+faststart",
                 str(adjusted_path),
             ]
-
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode != 0:
-            raise RuntimeError(f"ffmpeg adjust failed for scene {i+1}: {result.stderr[:300]}")
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            if result.returncode != 0:
+                raise RuntimeError(f"ffmpeg tpad failed for scene {i+1}: {result.stderr[:300]}")
 
         temp_clips.append(adjusted_path)
         concat_lines.append(f"file '{adjusted_path.as_posix()}'")
