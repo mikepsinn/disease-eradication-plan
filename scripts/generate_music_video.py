@@ -56,7 +56,11 @@ VISUAL_STYLE = (
     "Saul Bass poster aesthetic."
 )
 
-VEO_NEGATIVE_PROMPT = "narration, dialogue, voice, speech, talking, spoken words, realistic photography, 3D render"
+VEO_NEGATIVE_PROMPT = (
+    "narration, dialogue, voice, speech, talking, spoken words, "
+    "realistic photography, 3D render, CGI, Pixar, Disney, DreamWorks, "
+    "smooth shading, soft gradients, glossy, plastic, ray tracing"
+)
 GEMINI_IMAGE_MODEL = "gemini-3-pro-image-preview"
 VEO_PARALLEL_WORKERS = 4
 
@@ -270,14 +274,14 @@ SCENES = [
         "end_s": 79.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} "
-            'A comically oversized vintage book. The cover reads '
-            '"How to End War and Disease". '
-            'That meme cartoon idiot holds the book proudly upside down.'
+            'An man reading a book with title '
+            '"How to End War and Disease" visible on the cover. The man is holding the book upside down. A trash can and a small cockroach are to the side.  '
         ),
         "veo_prompt": (
-            "The idiot throws the book in a trash can and pulls out a phone showing a girl dancing. "
-            "He ages and turns into a skeleton while staring at the phone. "
-            "Meanwhile a cockroach crawls up, evolves intelligence, "
+            "The idiot reads the book and then throws the book in a trash can. "
+            " The man pulls out a phone showing a girl dancing. "
+            "The man ages and turns into a skeleton while staring at the phone. "
+            "A cockroach crawls up, evolves intelligence, "
             "pulls the book out of the trash, and starts reading it. "
             "1950s comedy."
         ),
@@ -289,15 +293,13 @@ SCENES = [
         "end_s": 86.5,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} {NO_TEXT} "
-            "A winding path made of dollar bills starting in a dystopian war-torn city. "
-            "Old, sick, frail characters stand at the start looking confused."
+            "An old man and woman stand in a dystopian war-torn city looking confused at a path made of dollar bills going off the screen."
         ),
         "veo_prompt": (
-            "The old sick characters stumble along the path of money and gradually become younger and healthier with each step. "
-            "The colors shift from gray and muted to vibrant rainbow colors. "
+            "The old man and woman stumble along the path of money and gradually become young. "
             "Every step accidentally turns bills into flowers and medicine "
             "until they reach a futuristic utopian paradise city. "
-            "Comedy of accidental good deeds. 1950s animation."
+            "Use a 1950s animation style with solid colors only."
         ),
     },
     {
@@ -305,13 +307,17 @@ SCENES = [
         "lyrics": "...to Utopia!",
         "start_s": 86.5,
         "end_s": 93.0,
-        "keyframe_from_clip": 13,  # Extract last frame from scene 13's clip
-        "keyframe_prompt": None,
+        "keyframe_prompt": (
+            f"{VISUAL_STYLE} {NO_TEXT} "
+            "A beautiful utopian paradise city with happy anthropomorphic buildings with smiling faces, "
+            "flying cars, tree-lined boulevards, happy people dancing in the streets."
+        ),
         "veo_prompt": (
-            "The buildings come alive with smiling faces and start dancing. "
+            "Zoom out from the scene to reveal the entire utopian paradise city. "
+            "The buildings of the utopian paradise city come alive with smiling faces and start dancing. "
             "Hearts emanate from the buildings toward the happy people below. "
             "Everyone and everything is dancing. Flying cars zoom overhead. "
-            "1950s vision of a perfect future."
+            "Use a 1950s animation style with solid colors only."
         ),
     },
     {
@@ -321,16 +327,19 @@ SCENES = [
         "end_s": 100.0,
         "keyframe_prompt": (
             f"{VISUAL_STYLE} "
-            "All characters in a line: grumpy warhead, puppet politicians, "
+            "All characters in a line in a utopian city: grumpy warhead, puppet politicians, "
             "dancing skeletons, grim reaper, confused general, happy medicine bottle. "
             f"{WISHONIA_CHARACTER} in the center. "
             'A neon sign reads "How to End War and Disease".'
         ),
         "veo_prompt": (
-            "The whole cast takes a bow. Confetti cannons explode. "
-            'The neon sign flickers on reading "How to End War and Disease". '
-            f"{WISHONIA_CHARACTER} waves from the center. "
-            "Classic showstopper ending. 1950s style."
+            "A grumpy warhead, puppet politician, "
+            "skeleton, grim reaper, confused military general, happy medicine bottle, "
+            f"and {WISHONIA_CHARACTER} march into the scene. "
+            "They take a bow together. Confetti cannons explode. "
+            'A flickering neon sign appears above reading "How to End War and Disease". '
+            "Classic showstopper ending. "
+            "Use a 1950s animation style with solid colors only."
         ),
     },
 ]
@@ -700,7 +709,22 @@ def main():
         if not scenes:
             print(f"ERROR: Scene {args.scene} not found (valid: 1-{len(SCENES)})")
             sys.exit(1)
-        print(f"  Processing scene {args.scene} only")
+        # Auto-include dependent scenes (keyframe_from_clip chain)
+        if args.force:
+            included = {s["index"] for s in scenes}
+            changed = True
+            while changed:
+                changed = False
+                for s in SCENES:
+                    if s["index"] not in included and s.get("keyframe_from_clip") in included:
+                        scenes.append(s)
+                        included.add(s["index"])
+                        changed = True
+            scenes.sort(key=lambda s: s["index"])
+        if len(scenes) == 1:
+            print(f"  Processing scene {args.scene} only")
+        else:
+            print(f"  Processing scenes {', '.join(str(s['index']) for s in scenes)} (including dependents)")
 
     if args.force:
         for scene in scenes:
