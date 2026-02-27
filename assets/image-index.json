@@ -1,7 +1,7 @@
 {
-  "totalImages": 2660,
-  "totalSizeBytes": 1298557450,
-  "totalSize": "1238.4 MB",
+  "totalImages": 2662,
+  "totalSizeBytes": 1299157250,
+  "totalSize": "1239.0 MB",
   "images": [
     {
       "path": "assets/cover/a-1970s-retro-futuristic-book-cover-how-to-end-war-and-disease.jpeg",
@@ -12282,19 +12282,10 @@
       "modified": "2026-01-26T00:20:27.589Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Global Clinical Trials System Comparison: Current vs. 1% Treaty",
-      "description": "A side-by-side comparison of current clinical trial efficiency versus a proposed '1% Treaty' model. It contrasts the $41,000 per-patient cost and 17-year drug approval timeline of the current system with a proposed $929 per-patient cost and a system capable of testing 50,000 new treatments in months or a few years.",
-      "keywords": [
-        "clinical trials",
-        "medical research",
-        "drug approval",
-        "1% Treaty",
-        "pragmatic trials",
-        "healthcare economics",
-        "medical innovation",
-        "public health"
-      ],
-      "transcript": "GLOBAL CLINICAL TRIALS SYSTEM COMPARISON; CURRENT SYSTEM; WITH A 1% TREATY; PIVOTAL TRIALS: $41K (95% CI: $20K-$120K) PER PATIENT; ONLY 5M PARTICIPANTS PER YEAR GLOBALLY; 99.8% OF WILLING PARTICIPANTS TURNED AWAY; 17 YEARS TO APPROVE ONE DRUG; PRAGMATIC TRIALS: $929 (95% CI: $97-$3K) PER PATIENT; 44.1X CHEAPER; 220M PARTICIPANTS PER YEAR; 44X ACCELERATION; MONTHS FEW YEARS; 50,000 NEW TREATMENTS TESTED; WarOnDisease.org",
+      "title": "1-percent-treaty-section-efficiency-comparison-bw-academic.jpg",
+      "description": "",
+      "keywords": [],
+      "transcript": "GLOBAL CLINICAL TRIALS SYSTEM COMPARISON; CURRENT SYSTEM; WITH A 1% TREATY; PIVOTAL TRIALS: $41K; (95% CI: $20K-$120K) PER PATIENT; ONLY 1.9M PARTICIPANTS PER YEAR GLOBALLY; 99.8% OF WILLING PARTICIPANTS TURNED AWAY; 14 YEARS TO APPROVE ONE DRUG; PRAGMATIC TRIALS: $929; (95% CI: $97-$3K) PER PATIENT; 44.1X CHEAPER; 23.4M PARTICIPANTS PER YEAR; 12.3X ACCELERATION; MONTHS FEW YEARS; 50,000 NEW TREATMENTS TESTED; WarOnDisease.org",
       "qualityScore": 4,
       "standaloneScore": 5,
       "canShareStandalone": true,
@@ -12328,7 +12319,8 @@
       "qualityIssues": [
         "dense layout",
         "small text in confidence interval labels"
-      ]
+      ],
+      "generationPrompt": "[EDITED] Make the following text changes in this image: 1) Change \"ONLY 5M PARTICIPANTS PER YEAR GLOBALLY\" to \"ONLY 1.9M PARTICIPANTS PER YEAR GLOBALLY\" 2) Change \"220M PARTICIPANTS PER YEAR\" to \"23.4M PARTICIPANTS PER YEAR\" 3) Change \"44X ACCELERATION\" to \"12.3X ACCELERATION\" 4) Change \"17 YEARS\" to \"14 YEARS\""
     },
     {
       "path": "assets/images/1-percent-treaty/1-percent-treaty-section-good-thing-1-you-become-safer-bw-academic.jpg",
@@ -19032,18 +19024,10 @@
       "modified": "2026-01-26T00:10:12.106Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Budgetary Comparison: NIH vs. Military Spending and Inflation Ratios",
-      "description": "A comparative analysis showing NIH and Military budgets across five years. It illustrates that while nominal budgets for both entities increase by 50%, a corresponding 50% inflation rate keeps the real purchasing power and the 20:1 spending ratio favoring military over medical research identical.",
-      "keywords": [
-        "NIH budget",
-        "military spending",
-        "inflation",
-        "purchasing power",
-        "budget ratio",
-        "medical research funding",
-        "War on Disease"
-      ],
-      "transcript": "BUDGETARY & RATIO ANALYSIS: YEAR 1 vs. YEAR 5\nCOMPARISON OF NIH & MILITARY ALLOCATIONS & ESTIMATED RATIOS\nYEAR 1\nBUDGET (BILLIONS OF USD)\n$40 BILLION NIH\n$800 BILLION MILITARY\nENTITY\nRATIO ANALYSIS\nRATIO: 20:1 FOR DEATH\nYEAR 5\nBUDGET (BILLIONS OF USD)\n$60 BILLION (50% INCREASE!) NIH\nFED MONEY PRINTING: 50% INFLATION\n$1.2 TRILLION (ALSO 50% INCREASE) MILITARY\nREAL PURCHASING POWER: EXACTLY THE SAME\nRATIO ANALYSIS\nRATIO: STILL 20:1 FOR DEATH\nCONCLUSION: DESPITE NOMINAL INCREASES, INFLATION MAINTAINS RELATIVE SPENDING & OUTCOME RATIOS.\nWarOnDisease.org",
+      "title": "central-banks-section-inflation-shell-game-comparison-bw-academic.jpg",
+      "description": "",
+      "keywords": [],
+      "transcript": "BUDGETARY & RATIO ANALYSIS: YEAR 1 vs. YEAR 5\nCOMPARISON OF NIH & MILITARY ALLOCATIONS & ESTIMATED RATIOS\nYEAR 1\nBUDGET (BILLIONS OF USD)\n$40 BILLION\nNIH\n$800 BILLION\nMILITARY\nENTITY\nRATIO ANALYSIS\nRATIO: 40:1 FOR DEATH\nYEAR 5\nBUDGET (BILLIONS OF USD)\n$60 BILLION (50% INCREASE!)\nNIH\nFED MONEY PRINTING: 50% INFLATION\n$1.2 TRILLION (ALSO 50% INCREASE)\nMILITARY\nENTITY\nREAL PURCHASING POWER: EXACTLY THE SAME\nRATIO ANALYSIS\nRATIO: STILL 40:1 FOR DEATH\nCONCLUSION: DESPITE NOMINAL INCREASES, INFLATION MAINTAINS RELATIVE SPENDING & OUTCOME RATIOS\nWarOnDisease.org",
       "qualityScore": 4,
       "standaloneScore": 5,
       "canShareStandalone": true,
@@ -19078,7 +19062,8 @@
       "qualityIssues": [
         "Slightly busy layout with multiple icons"
       ],
-      "imageProblemsDetected": false
+      "imageProblemsDetected": false,
+      "generationPrompt": "[EDITED] Change all instances of \"20:1\" to \"40:1\" in this image. There are two ratio labels: \"RATIO: 20:1 FOR DEATH\" at the bottom left and \"RATIO: STILL 20:1 FOR DEATH\" at the bottom right. Change them to \"RATIO: 40:1 FOR DEATH\" and \"RATIO: STILL 40:1 FOR DEATH\" respectively."
     },
     {
       "path": "assets/images/central-banks/central-banks-section-medical-research-as-of-gdp-bw-academic.jpg",
@@ -51869,19 +51854,10 @@
       "modified": "2026-02-01T01:43:51.209Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Multi-Layered Identity Verification Protocols for Global Governance",
-      "description": "A three-tiered analytical diagram detailing the stages of identity assurance. It categorizes verification into basic technical checks (IP and device data), enhanced biometric and government ID integration, and social attestation based on community reputation and social media cross-referencing.",
-      "keywords": [
-        "identity verification",
-        "proof of personhood",
-        "biometric security",
-        "social attestation",
-        "Sybil resistance",
-        "digital identity",
-        "government ID integration",
-        "reputation systems"
-      ],
-      "transcript": "VISUALIZATION OF MULTI-LAYERED VERIFICATION PROTOCOLS: ANALYTICAL DIAGRAM OF IDENTITY ASSURANCE STAGES. LAYER 3: SOCIAL \"YOUR COMMUNITY SAYS YOU'RE REAL\" VERIFICATION. Social Media Cross-Reference. Reputation Systems. Community Attestation. LAYER 2: ENHANCED \"NOW YOU'RE GETTING SERIOUS\" VERIFICATION. Government ID Integration: Estonia e-Residency, Indian-Aadhaar-System, EU-eIDAS-Network, US State ID. Biometric Liveness Detection. Proof-of-Uniqueness Partners: Worldcoin, Iris Scanning, BrightID Social Verification, Gitcoin-Passport. LAYER 1: BASIC \"ARE YOU EVEN TRYING?\" CHECKS. Email/Phone OTP. Device Fingerprinting. IP Geolocation. Velocity Limits. Cross-hatching density relates to verification strength of verification layer. WarOnDisease.org",
+      "title": "global-referendum-section-verification-layers-bw-academic.jpg",
+      "description": "",
+      "keywords": [],
+      "transcript": "VISUALIZATION OF MULTI-LAYERED VERIFICATION PROTOCOLS\nANALYTICAL DIAGRAM OF IDENTITY ASSURANCE STAGES\n\nLAYER 3: SOCIAL \"YOUR COMMUNITY SAYS YOU'RE REAL\" VERIFICATION\nSocial Media Cross-Reference\nReputation Systems\nCommunity Attestation\nREAL\n\nLAYER 2: ENHANCED \"NOW YOU'RE GETTING SERIOUS\" VERIFICATION\nGovernment ID Integration: Estonia e-Residency, Indian-Aadhaar-System, EU-eIDAS-Network, US State ID\nBiometric Liveness Detection\nProof-of-Uniqueness Partners: Worldcoin Iris Scanning, BrightID Social Verification, Gitcoin-Passport\n\nLAYER 1: BASIC \"ARE YOU EVEN TRYING?\" CHECKS\nEmail/Phone OTP\nDevice Fingerprinting\nIP Geolocation\nVelocity Limits\n\nCross-hatching density relates to verification strength of verifcation layer\nWarOnDisease.org",
       "qualityScore": 5,
       "qualityIssues": [],
       "standaloneScore": 4,
@@ -51914,11 +51890,19 @@
         "Gitcoin-Passport"
       ],
       "factCheckNotes": "The systems mentioned (Aadhaar, Worldcoin, e-Residency) are real-world identity solutions currently in use or development.",
-      "imageProblemsDetected": false,
-      "imageProblems": [],
-      "imageProblemsRepairPrompt": "",
+      "imageProblemsDetected": true,
+      "imageProblems": [
+        "ANALYTICAL DIAGRAM OF",
+        "verifcation"
+      ],
+      "imageProblemsRepairPrompt": "Remove 'ANALYTICAL DIAGRAM OF' from the subtitle and correct the spelling of 'verifcation' to 'verification' in the legend text.",
       "metadataEnrichedAt": "2026-02-01T01:43:50.573Z",
-      "metadataCreatedAt": "2026-02-01T01:43:50.830Z"
+      "metadataCreatedAt": "2026-02-01T01:43:50.830Z",
+      "generationPrompt": "[EDITED] In the bottom-right legend box, change the text from \"Cross-hatching density relates relates to verification strength of verification layer\" to \"Cross-hatching density relates to verification strength of verification layer\" - remove the duplicate word relates",
+      "imageIssues": [
+        "text density makes it slightly cluttered",
+        "typo in legend ('verifcation')"
+      ]
     },
     {
       "path": "assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg",
@@ -70509,19 +70493,10 @@
       "modified": "2026-02-01T03:12:11.565Z",
       "imageType": "other",
       "style": "black and white academic",
-      "title": "Comparison of Military Spending vs Humanitarian Investment Potential",
-      "description": "This graphic compares the actual spending of a hypothetical society on military technologies totaling 80 trillion dollars against a 30 trillion dollar investment that could have funded global health, longevity, and space exploration. It highlights a 50 trillion dollar surplus that remains when destructive spending is redirected toward life-extending and scientific goals.",
-      "keywords": [
-        "military spending",
-        "war on disease",
-        "resource allocation",
-        "global health funding",
-        "opportunity cost",
-        "defense budget",
-        "longevity research",
-        "medical research"
-      ],
-      "transcript": "WHAT MORONIANS SPENT (YEAR ZERO-YEAR 15); BUNKERS (TOO LATE): $12T; AUTONOMOUS WEAPONS: $23T; MILITARY AI: $45T; TOTAL: $80T; WHAT $80T COULD HAVE BOUGHT; MARS COLONY (BACKUP PLAN): $15T; UNIVERSAL HEALTHCARE: $8T; LIFE EXTENSION TO 150 YEARS: $5T; CURE ALL MAJOR DISEASES: $2T; TOTAL: $30T; WITH $50T REMAINING (UNUSED POTENTIAL); TOO LATE; BACKUP PLAN; WarOnDisease.org",
+      "title": "moronia-section-the-cost-of-extinction-vs-utopia-bw-academic.jpg",
+      "description": "",
+      "keywords": [],
+      "transcript": "WHAT MORONIANS SPENT (YEAR ZERO–YEAR 15). EMERGENCY BUNKERS (TOO LATE): $4T. MILITARY (INCLUDING AI WEAPONS): $38T. TOTAL: $42T. WHAT $42T COULD HAVE BOUGHT. MARS COLONY (BACKUP PLAN): $10T. UNIVERSAL HEALTHCARE: $8T. LIFE EXTENSION TO 150 YEARS: $5T. CURE ALL MAJOR DISEASES: $2T. TOTAL: $25T. WITH $17T REMAINING (UNUSED POTENTIAL). WarOnDisease.org",
       "qualityScore": 5,
       "qualityIssues": [],
       "standaloneScore": 5,
@@ -70554,7 +70529,8 @@
       "imageProblems": [],
       "imageProblemsRepairPrompt": "",
       "metadataEnrichedAt": "2026-02-01T03:12:10.942Z",
-      "metadataCreatedAt": "2026-02-01T03:12:11.185Z"
+      "metadataCreatedAt": "2026-02-01T03:12:11.185Z",
+      "generationPrompt": "[EDITED] Update all the numbers in this image to match these values: LEFT SIDE \"WHAT MORONIANS SPENT\": Change \"MILITARY AI: $45T\" to \"MILITARY (INCLUDING AI WEAPONS): $38T\". Change \"AUTONOMOUS WEAPONS: $23T\" - remove this line entirely or merge into the military line. Change \"BUNKERS (TOO LATE): $12T\" to \"EMERGENCY BUNKERS (TOO LATE): $4T\". Change \"TOTAL: $80T\" to \"TOTAL: $42T\". RIGHT SIDE: Change the header from \"WHAT $80T COULD HAVE BOUGHT\" to \"WHAT $42T COULD HAVE BOUGHT\". Change \"MARS COLONY (BACKUP PLAN): $15T\" to \"$10T\". Change \"TOTAL: $30T\" to \"TOTAL: $25T\". Change \"WITH $50T REMAINING\" to \"WITH $17T REMAINING\""
     },
     {
       "path": "assets/images/moronia/moronia-section-the-discovery-and-why-i-regret-making-it-bw-academic.jpg",
@@ -101449,23 +101425,15 @@
       "modified": "2026-02-01T22:20:49.358Z",
       "imageType": "other",
       "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nInvestor-Specific Risks\n\n- **Liquidity Risk:** Funds are locked up for 18-36 months during the campaign phase before returns begin. You mitigate this by allowing secondary market trading after an initial lock-up period.\n- **Timeline Risk:** The political process could take longer than projected, delaying returns. The perpetual nature of the bond is designed to reward patience.",
-      "transcript": "INVESTOR-SPECIFIC RISKS. LIQUIDITY RISK. FUNDS LOCKED UP 18-36 MONTHS. SECONDARY MARKET TRADING. MITIGATION: ALLOWING SECONDARY MARKET TRADING AFTER INITIAL LOCK-UP. TIMELINE RISK. POLITICAL PROCESS. COULD TAKE LONGER THAN PROJECTED, DELAYING RETURNS. MITIGATION: PERPETUAL NATURE OF THE BOND REWARDS PATIENCE. WarOnDisease.org",
+      "generationPrompt": "[EDITED] On the treasure chest in the top-left section labeled LIQUIDITY RISK, change the text from \"FUNDS LOCKED UP 18-36 MONTHS\" to \"FUNDS LOCKED UP 12-36 MONTHS\" - change 18 to 12",
+      "transcript": "INVESTOR-SPECIFIC RISKS; LIQUIDITY RISK; FUNDS LOCKED UP 12-36 MONTHS; SECONDARY MARKET TRADING; MITIGATION: ALLOWING SECONDARY MARKET TRADING AFTER INITIAL LOCK-UP; TIMELINE RISK; POLITICAL PROCESS; COULD TAKE LONGER THAN PROJECTED, DELAYING RETURNS; MITIGATION: PERPETUAL NATURE OF THE BOND REWARDS PATIENCE; WarOnDisease.org",
       "imageIssues": [
         "small text on the winding path for 'POLITICAL PROCESS'"
       ],
       "metadataCreatedAt": "2026-01-30T09:22:05.489Z",
-      "title": "Investor-Specific Risks and Mitigations in Medical Research Funding",
-      "description": "An informational diagram detailing liquidity and timeline risks for investors. It explains that 18-36 month fund lock-ups are mitigated by secondary market trading, and political process delays are mitigated by the perpetual nature of bond rewards.",
-      "keywords": [
-        "liquidity risk",
-        "timeline risk",
-        "secondary market trading",
-        "perpetual bonds",
-        "medical research investment",
-        "political process",
-        "investment mitigation"
-      ],
+      "title": "victory-bonds-section-investor-specific-risks-bw-academic.jpg",
+      "description": "",
+      "keywords": [],
       "qualityScore": 5,
       "qualityIssues": [],
       "standaloneScore": 5,
@@ -115069,6 +115037,77 @@
         "manual",
         "1200x630"
       ]
+    },
+    {
+      "path": "assets/music-video/keyframes/retro-1950s-atomic-age-illustration-style-with-mid-century-m-illustration.jpg",
+      "filename": "retro-1950s-atomic-age-illustration-style-with-mid-century-m-illustration.jpg",
+      "extension": "jpg",
+      "sizeBytes": 374343,
+      "size": "365.6 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "other",
+      "generationPrompt": "Create a conceptual illustration depicting: Retro 1950s atomic age illustration style with mid-century modern aesthetic. Color palette: deep navy blue, warm orange, cream white, with geometric shapes (circles, triangles). Style of vintage educational films and Saul Bass posters. Broadway theater production with stage lighting, curtains, and theatrical staging. Broadway stage with cartoon politicians sitting at desks. Giant dollar bills with legs are whispering into the politicians' ears like puppet masters. The politicians have confused, innocent expressions. Retro editorial cartoon style with theatrical staging. Navy and orange color palette.\n\nStyle: Use a fun retro futuristic style and LARGE text.",
+      "transcript": "THE GREAT DOLLAR PUPPET SHOW, $, ..., ...",
+      "metadataCreatedAt": "2026-02-26T10:58:48.307Z",
+      "title": "Retro 1950s atomic age illustration style with mid-century modern aesthetic. Color palette: deep navy blue, warm orange, cream white, with geometric shapes (circles, triangles). Style of vintage educational films and Saul Bass posters. Broadway theater production with stage lighting, curtains, and theatrical staging. Broadway stage with cartoon politicians sitting at desks. Giant dollar bills with legs are whispering into the politicians' ears like puppet masters. The politicians have confused, innocent expressions. Retro editorial cartoon style with theatrical staging. Navy and orange color palette.",
+      "description": "Create a conceptual illustration depicting: Retro 1950s atomic age illustration style with mid-century modern aesthetic. Color palette: deep navy blue, warm orange, cream white, with geometric shapes (circles, triangles). Style of vintage educational films and Saul Bass posters. Broadway theater production with stage lighting, curtains, and theatrical staging. Broadway stage with cartoon politicians sitting at desks. Giant dollar bills with legs are whispering into the politicians' ears like puppet masters. The politicians have confused, innocent expressions. Retro editorial cartoon style with theatrical staging. Navy and orange color palette.\n\nStyle: Use a fun retro futuristic style and LARGE text.",
+      "keywords": [
+        "illustration",
+        "retro-futuristic"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "imageProblemsDetected": false,
+      "imageIssues": [
+        "Small text on the currency bags is slightly difficult to read"
+      ],
+      "imageProblems": [
+        "A RETRO-FUTURISTIC PRODUCTION!"
+      ],
+      "imageProblemsRepairPrompt": "Remove 'A RETRO-FUTURISTIC PRODUCTION!' from the bottom right text area."
+    },
+    {
+      "path": "assets/music-video/keyframes/retro-1950s-illustration-style-with-mid-century-modern-geome-illustration.jpg",
+      "filename": "retro-1950s-illustration-style-with-mid-century-modern-geome-illustration.jpg",
+      "extension": "jpg",
+      "sizeBytes": 225457,
+      "size": "220.2 KB",
+      "width": 1376,
+      "height": 768,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "other",
+      "generationPrompt": "Create a conceptual illustration depicting: Retro 1950s illustration style with mid-century modern geometric patterns. Color palette: deep navy blue, warm orange, cream white. Saul Bass poster aesthetic. Do not include any text, words, titles, labels, signs, banners, or writing of any kind in the image. A cheerful cartoon person is slowly turning into a skeleton from the feet up, looking down at their own bony legs in surprise. A friendly cartoon grim reaper in a dark robe stands beside them with one arm around their shoulder like an old pal, pointing at a wristwatch impatiently. The person looks alarmed but the grim reaper is smiling. Deep navy background, orange spotlights.\n\nStyle: Use a fun retro futuristic style and LARGE text.",
+      "metadataCreatedAt": "2026-02-26T11:06:19.458Z",
+      "title": "Retro 1950s illustration style with mid-century modern geometric patterns. Color palette: deep navy blue, warm orange, cream white. Saul Bass poster aesthetic. Do not include any text, words, titles, labels, signs, banners, or writing of any kind in the image. A cheerful cartoon person is slowly turning into a skeleton from the feet up, looking down at their own bony legs in surprise. A friendly cartoon grim reaper in a dark robe stands beside them with one arm around their shoulder like an old pal, pointing at a wristwatch impatiently. The person looks alarmed but the grim reaper is smiling. Deep navy background, orange spotlights.",
+      "description": "Create a conceptual illustration depicting: Retro 1950s illustration style with mid-century modern geometric patterns. Color palette: deep navy blue, warm orange, cream white. Saul Bass poster aesthetic. Do not include any text, words, titles, labels, signs, banners, or writing of any kind in the image. A cheerful cartoon person is slowly turning into a skeleton from the feet up, looking down at their own bony legs in surprise. A friendly cartoon grim reaper in a dark robe stands beside them with one arm around their shoulder like an old pal, pointing at a wristwatch impatiently. The person looks alarmed but the grim reaper is smiling. Deep navy background, orange spotlights.\n\nStyle: Use a fun retro futuristic style and LARGE text.",
+      "keywords": [
+        "illustration",
+        "retro-futuristic"
+      ],
+      "author": "Mike P. Sinn",
+      "copyright": "© Mike P. Sinn - WarOnDisease.org",
+      "license": "CC BY-NC 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "website": "https://WarOnDisease.org",
+      "credit": "WarOnDisease.org",
+      "imageProblemsDetected": false,
+      "transcript": "$",
+      "imageIssues": [
+        "abstract monitor UI"
+      ],
+      "imageProblems": [
+        "MIA...O",
+        "FIE...ROEN"
+      ],
+      "imageProblemsRepairPrompt": "Remove the garbled text 'MIA...O' from the top and 'FIE...ROEN' from the bottom of the stage."
     },
     {
       "path": "assets/og-images/index-book-foundations.jpg",

@@ -208,11 +208,18 @@ def _tag_image_metadata(image_path: Path, chapter: dict, scene: dict, book_meta:
 IMAGEN_PARALLEL_WORKERS = 4
 MAX_KEYFRAME_ATTEMPTS = 3
 
-KEYFRAME_TEXT_CHECK_PROMPT = """70s sci-fi surrealism image. Only flag text that is large, prominent, and clearly a misspelling of a real English word (e.g. "SCIENEC" instead of "SCIENCE"). Ignore small, decorative, atmospheric, alien, or garbled text on screens/signs/labels (normal for this style). If there are no obvious prominent misspellings, answer CLEAN.
+KEYFRAME_TEXT_CHECK_PROMPT = """Check this generated image for two problems:
 
-Valid proper nouns: Wishonia, Moronia, Gollum, Gollums, Wishocracy, DALY, DALYs.
+1. PROMPT BLEED: The image contains text leaked from the generation prompt, such as "ILLUSTRATE THIS", "CONTEXT ONLY", "END ILLUSTRATE", "END CONTEXT", "Generate a", or any instruction-like text that clearly came from a prompt rather than being part of the illustration.
 
-Answer ONLY: "CLEAN" or "TYPO: <description>"."""
+2. TYPOS: Large, prominent text that is clearly a misspelling of a real English word (e.g. "SCIENEC" instead of "SCIENCE"). Ignore small, decorative, atmospheric, or garbled text on screens/signs/labels.
+
+Valid proper nouns (not typos): Wishonia, Moronia, Gollum, Gollums, Wishocracy, DALY, DALYs.
+
+Answer ONLY one of:
+- "CLEAN" if no problems found
+- "PROMPT_BLEED: <description>" if prompt text leaked into the image
+- "TYPO: <description>" if there is a prominent misspelling"""
 
 
 def _check_keyframe_for_typos(image_path: Path) -> str | None:
@@ -291,7 +298,7 @@ def generate_keyframes(
         prompt_fn = PROMPT_VARIANTS[vname]
         prompt = prompt_fn(scene_text, full_context, attempt)
         if attempt == 2:
-            prompt += "\n\nAny text in the image must be spelled correctly."
+            prompt += "\n\nAny text in the image must be spelled correctly. Do NOT include any text from the prompt instructions."
         elif attempt >= 3:
             prompt += "\n\nDo NOT include any text, signs, labels, writing, or words of any kind in this image."
         return prompt
@@ -299,6 +306,7 @@ def generate_keyframes(
     def _generate_and_check(item):
         scene, aspect, output_path, filename = item
         label = filename.replace('.jpg', '')
+        last_issue = None
 
         for attempt in range(1, MAX_KEYFRAME_ATTEMPTS + 1):
             prompt = _build_prompt(scene, attempt=attempt)
@@ -306,19 +314,22 @@ def generate_keyframes(
                 scene['imagen_prompt'] = prompt
             rate_limited_generate_image(prompt=prompt, output_path=output_path, aspect_ratio=aspect)
 
-            typo = _check_keyframe_for_typos(output_path)
-            if typo is None:
+            issue = _check_keyframe_for_typos(output_path)
+            if issue is None:
                 if attempt > 1:
                     print(f"    [FIXED] {label} (attempt {attempt})")
                 if chapter and book_meta:
                     _tag_image_metadata(output_path, chapter, scene, book_meta)
                 return scene['scene_index'], aspect, str(output_path.relative_to(video_dir))
 
-            print(f"    [TYPO] {label} (attempt {attempt}/{MAX_KEYFRAME_ATTEMPTS}): {typo}")
+            is_bleed = issue.upper().startswith("PROMPT_BLEED")
+            tag = "PROMPT_BLEED" if is_bleed else "TYPO"
+            print(f"    [{tag}] {label} (attempt {attempt}/{MAX_KEYFRAME_ATTEMPTS}): {issue}")
+            last_issue = issue
             if attempt < MAX_KEYFRAME_ATTEMPTS:
                 output_path.unlink(missing_ok=True)
 
-        print(f"    [WARN] {label}: accepting image with typos after {MAX_KEYFRAME_ATTEMPTS} attempts")
+        print(f"    [WARN] {label}: accepting image after {MAX_KEYFRAME_ATTEMPTS} attempts ({last_issue})")
         if chapter and book_meta:
             _tag_image_metadata(output_path, chapter, scene, book_meta)
         return scene['scene_index'], aspect, str(output_path.relative_to(video_dir))
@@ -511,6 +522,126 @@ def animate_scenes(
 
 # --- Step E: Assembly ---
 
+MAX_SLOWDOWN = 1.3  # Maximum stretch factor before keyframe fill kicks in
+VEO_CLIP_DURATION_S = 8.0  # Veo clips are always ~8s
+
+
+def _prepare_scene_clip(
+    scene: dict,
+    clip_path: Path,
+    keyframe_path: Path | None,
+    temp_dir: Path,
+    scene_idx: int,
+) -> Path:
+    """Create a time-correct clip for one scene.
+
+    Three-tier strategy based on scene duration vs 8s Veo clip:
+      - Trim: scene < 8s, cut the clip shorter
+      - Stretch: scene 8-10.4s, slow down imperceptibly (up to 1.3x)
+      - Keyframe fill: scene > 10.4s, static keyframe then crossfade to stretched clip
+    """
+    duration_ms = scene.get('duration_ms') or (scene.get('end_ms', 8000) - scene.get('start_ms', 0))
+    if duration_ms <= 0:
+        duration_ms = 8000
+    duration_s = duration_ms / 1000.0
+    ratio = duration_s / VEO_CLIP_DURATION_S
+    out_path = temp_dir / f"scene-{scene_idx:03d}.mp4"
+
+    if ratio < 1.0:
+        # TRIM: scene is shorter than clip
+        cmd = [
+            "ffmpeg", "-y", "-i", str(clip_path),
+            "-t", f"{duration_s:.3f}",
+            "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+            "-an", str(out_path),
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            raise RuntimeError(f"ffmpeg trim failed for scene {scene_idx}: {result.stderr[:300]}")
+
+    elif ratio <= MAX_SLOWDOWN:
+        # STRETCH: slow down clip slightly (imperceptible)
+        setpts = f"PTS*{ratio:.4f}"
+        cmd = [
+            "ffmpeg", "-y", "-i", str(clip_path),
+            "-filter:v", f"setpts={setpts}",
+            "-t", f"{duration_s:.3f}",
+            "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+            "-an", str(out_path),
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            raise RuntimeError(f"ffmpeg stretch failed for scene {scene_idx}: {result.stderr[:300]}")
+
+    else:
+        # KEYFRAME FILL: static keyframe -> crossfade -> stretched clip
+        stretched_dur = VEO_CLIP_DURATION_S * MAX_SLOWDOWN  # 10.4s
+        fill_dur = duration_s - stretched_dur
+        crossfade_dur = min(0.5, fill_dur * 0.5)
+
+        if keyframe_path and keyframe_path.exists() and fill_dur > 0.1:
+            kf_segment = temp_dir / f"scene-{scene_idx:03d}-kf.mp4"
+            stretched_clip = temp_dir / f"scene-{scene_idx:03d}-str.mp4"
+
+            # Create static keyframe segment
+            cmd_kf = [
+                "ffmpeg", "-y",
+                "-loop", "1", "-i", str(keyframe_path),
+                "-t", f"{fill_dur + crossfade_dur:.3f}",
+                "-vf", "scale=trunc(iw/2)*2:trunc(ih/2)*2",
+                "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+                "-pix_fmt", "yuv420p", "-r", "24",
+                "-an", str(kf_segment),
+            ]
+            result = subprocess.run(cmd_kf, capture_output=True, text=True)
+            if result.returncode != 0:
+                raise RuntimeError(f"ffmpeg keyframe segment failed for scene {scene_idx}: {result.stderr[:300]}")
+
+            # Stretch the Veo clip to MAX_SLOWDOWN
+            cmd_str = [
+                "ffmpeg", "-y", "-i", str(clip_path),
+                "-filter:v", f"setpts=PTS*{MAX_SLOWDOWN}",
+                "-t", f"{stretched_dur:.3f}",
+                "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+                "-an", str(stretched_clip),
+            ]
+            result = subprocess.run(cmd_str, capture_output=True, text=True)
+            if result.returncode != 0:
+                raise RuntimeError(f"ffmpeg stretch failed for scene {scene_idx}: {result.stderr[:300]}")
+
+            # Crossfade keyframe into stretched clip
+            cmd_xfade = [
+                "ffmpeg", "-y",
+                "-i", str(kf_segment), "-i", str(stretched_clip),
+                "-filter_complex",
+                f"xfade=transition=fade:duration={crossfade_dur:.2f}:offset={fill_dur:.3f}",
+                "-t", f"{duration_s:.3f}",
+                "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+                "-an", str(out_path),
+            ]
+            result = subprocess.run(cmd_xfade, capture_output=True, text=True)
+            if result.returncode != 0:
+                raise RuntimeError(f"ffmpeg crossfade failed for scene {scene_idx}: {result.stderr[:300]}")
+
+            kf_segment.unlink(missing_ok=True)
+            stretched_clip.unlink(missing_ok=True)
+        else:
+            # No keyframe available: just stretch the full clip
+            setpts = f"PTS*{ratio:.4f}"
+            cmd = [
+                "ffmpeg", "-y", "-i", str(clip_path),
+                "-filter:v", f"setpts={setpts}",
+                "-t", f"{duration_s:.3f}",
+                "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+                "-an", str(out_path),
+            ]
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            if result.returncode != 0:
+                raise RuntimeError(f"ffmpeg stretch-fallback failed for scene {scene_idx}: {result.stderr[:300]}")
+
+    return out_path
+
+
 def assemble_chapter_video(
     scenes: list[dict],
     chapter: dict,
@@ -520,7 +651,12 @@ def assemble_chapter_video(
     book_meta: dict | None = None,
     paths: AudiobookPaths | None = None,
 ) -> Path:
-    """Assemble scene clips + audio into a chapter-level MP4."""
+    """Assemble scene clips + audio into a chapter-level MP4.
+
+    Two-pass sync-correct assembly:
+      Pass 1: Prepare per-scene clips matching each scene's duration_ms
+      Pass 2: Concat prepared clips + mix audio
+    """
     aspect_tag = aspect.replace(":", "x")
     output_path = video_dir / f"{slug}-{aspect_tag}.mp4"
 
@@ -528,7 +664,6 @@ def assemble_chapter_video(
     if not audio_path:
         raise FileNotFoundError(f"No audio file for chapter {chapter['index']}. Run audiobook:audio first.")
 
-    clips_dir = video_dir / "clips"
     audio_duration_ms = len(AudioSegment.from_file(str(audio_path)))
 
     # Check if we're assembling a subset of scenes (e.g. --max-scenes)
@@ -539,10 +674,8 @@ def assemble_chapter_video(
         audio_duration_ms = last_scene_end_ms
         print(f"  [PARTIAL] Trimming audio to {audio_duration_ms/1000:.1f}s (covers scenes 1-{scenes[-1]['scene_index']})")
 
-    # Build clip entries with display duration = time from this scene's start
-    # to the next scene's start (so each image shows at the right audio moment)
-    clip_entries = []
-    for i, scene in enumerate(scenes):
+    # Validate clip availability
+    for scene in scenes:
         clip_rel = scene.get('clips', {}).get(aspect)
         if not clip_rel:
             raise FileNotFoundError(f"No clip for scene {scene['scene_index']} ({aspect})")
@@ -550,92 +683,46 @@ def assemble_chapter_video(
         if not clip_path.exists():
             raise FileNotFoundError(f"Clip file missing: {clip_path}")
 
-        scene_start = scene.get('start_ms', 0)
-        if i == 0:
-            # First scene starts from the beginning of the audio
-            display_start = 0
+    keyframes_dir = video_dir / "keyframes"
+    temp_dir = video_dir / f"_temp-assembly-{slug}-{aspect_tag}"
+    temp_dir.mkdir(parents=True, exist_ok=True)
+
+    # --- Pass 1: Prepare time-correct clips ---
+    total_video_ms = 0
+    prepared = []
+    stats = {"trim": 0, "stretch": 0, "fill": 0, "fill_no_kf": 0}
+
+    for scene in scenes:
+        idx = scene['scene_index']
+        dur_ms = scene.get('duration_ms') or (scene.get('end_ms', 8000) - scene.get('start_ms', 0))
+        if dur_ms <= 0:
+            dur_ms = 8000
+        ratio = dur_ms / (VEO_CLIP_DURATION_S * 1000)
+
+        clip_rel = scene['clips'][aspect]
+        clip_path = video_dir / clip_rel
+        kf_path = keyframes_dir / _keyframe_filename(slug, idx, aspect)
+
+        if ratio < 1.0:
+            tier = "trim"
+        elif ratio <= MAX_SLOWDOWN:
+            tier = "stretch"
         else:
-            display_start = scene_start
+            tier = "fill" if (kf_path.exists()) else "fill_no_kf"
+        stats[tier] += 1
 
-        if i + 1 < len(scenes):
-            next_start = scenes[i + 1].get('start_ms', scene.get('end_ms', 0))
-            display_ms = next_start - display_start
-        else:
-            # Last scene extends to end of audio
-            display_ms = audio_duration_ms - display_start
+        prepared_path = _prepare_scene_clip(scene, clip_path, kf_path, temp_dir, idx)
+        prepared.append(prepared_path)
+        total_video_ms += dur_ms
+        print(f"    Scene {idx}: {dur_ms}ms -> {tier} (ratio {ratio:.2f})")
 
-        display_ms = max(display_ms, 1000)  # at least 1s
-        clip_entries.append((clip_path, display_ms))
+    fill_total = stats['fill'] + stats['fill_no_kf']
+    print(f"  Strategy: {stats['trim']} trim, {stats['stretch']} stretch, {fill_total} keyframe-fill ({stats['fill_no_kf']} without keyframe)")
+    print(f"  Total video: {total_video_ms/1000:.1f}s for {audio_duration_ms/1000:.1f}s audio")
 
-    print(f"  Assembling {aspect} video ({len(clip_entries)} scenes, target {sum(ms for _,ms in clip_entries)/1000:.1f}s for {audio_duration_ms/1000:.1f}s audio)...")
-
-    temp_clips = []
-    concat_lines = []
-
-    MAX_SLOWDOWN = 1.3  # never stretch clip more than 30% slower
-
-    for i, (clip_path, target_ms) in enumerate(clip_entries):
-        target_seconds = max(1.0, target_ms / 1000.0)
-        probe_cmd = [
-            "ffprobe", "-v", "error",
-            "-show_entries", "format=duration",
-            "-of", "default=noprint_wrappers=1:nokey=1",
-            str(clip_path),
-        ]
-        probe_result = subprocess.run(probe_cmd, capture_output=True, text=True)
-        clip_duration = float(probe_result.stdout.strip()) if probe_result.returncode == 0 else 8.0
-
-        adjusted_path = clips_dir / f"_{slug}-adjusted-{i:02d}-{aspect_tag}.mp4"
-
-        if target_seconds <= clip_duration * MAX_SLOWDOWN:
-            # Target is close to clip length: slight stretch or trim
-            time_scale = target_seconds / clip_duration
-            if abs(time_scale - 1.0) < 0.02:
-                print(f"    Scene {i+1}: {clip_duration:.1f}s -> {target_seconds:.1f}s (1x)")
-                cmd = [
-                    "ffmpeg", "-y", "-i", str(clip_path),
-                    "-t", f"{target_seconds:.3f}",
-                    "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-                    "-an", "-movflags", "+faststart",
-                    str(adjusted_path),
-                ]
-            else:
-                print(f"    Scene {i+1}: {clip_duration:.1f}s -> {target_seconds:.1f}s ({time_scale:.2f}x)")
-                cmd = [
-                    "ffmpeg", "-y", "-i", str(clip_path),
-                    "-filter_complex",
-                    f"[0:v]setpts=PTS*{time_scale:.4f}[v]",
-                    "-map", "[v]",
-                    "-t", f"{target_seconds:.3f}",
-                    "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-                    "-an", "-movflags", "+faststart",
-                    str(adjusted_path),
-                ]
-            result = subprocess.run(cmd, capture_output=True, text=True)
-            if result.returncode != 0:
-                raise RuntimeError(f"ffmpeg adjust failed for scene {i+1}: {result.stderr[:300]}")
-        else:
-            # Target is much longer than clip: play clip at 1x then freeze last frame
-            freeze_seconds = target_seconds - clip_duration
-            print(f"    Scene {i+1}: {clip_duration:.1f}s + {freeze_seconds:.1f}s freeze = {target_seconds:.1f}s")
-            cmd = [
-                "ffmpeg", "-y", "-i", str(clip_path),
-                "-filter_complex",
-                f"[0:v]tpad=stop_mode=clone:stop_duration={freeze_seconds:.3f}[v]",
-                "-map", "[v]",
-                "-t", f"{target_seconds:.3f}",
-                "-c:v", "libx264", "-preset", "fast", "-crf", "23",
-                "-an", "-movflags", "+faststart",
-                str(adjusted_path),
-            ]
-            result = subprocess.run(cmd, capture_output=True, text=True)
-            if result.returncode != 0:
-                raise RuntimeError(f"ffmpeg tpad failed for scene {i+1}: {result.stderr[:300]}")
-
-        temp_clips.append(adjusted_path)
-        concat_lines.append(f"file '{adjusted_path.as_posix()}'")
-
-    concat_file = clips_dir / f"_{slug}-concat-{aspect_tag}.txt"
+    # --- Pass 2: Concat prepared clips + audio mix ---
+    concat_lines = [f"file '{p.as_posix()}'" for p in prepared]
+    concat_file = temp_dir / "concat.txt"
     concat_file.write_text('\n'.join(concat_lines), encoding='utf-8')
 
     audio_duration_s = audio_duration_ms / 1000.0
@@ -686,14 +773,16 @@ def assemble_chapter_video(
         ]
         result = subprocess.run(cmd_fallback, capture_output=True, text=True)
         if result.returncode != 0:
-            for tc in temp_clips:
-                tc.unlink(missing_ok=True)
-            concat_file.unlink(missing_ok=True)
+            # Cleanup temp dir before raising
+            for f in temp_dir.iterdir():
+                f.unlink(missing_ok=True)
+            temp_dir.rmdir()
             raise RuntimeError(f"ffmpeg assembly failed (both mix and fallback): {result.stderr[:300]}")
 
-    for tc in temp_clips:
-        tc.unlink(missing_ok=True)
-    concat_file.unlink(missing_ok=True)
+    # Cleanup temp dir
+    for f in temp_dir.iterdir():
+        f.unlink(missing_ok=True)
+    temp_dir.rmdir()
 
     size_mb = output_path.stat().st_size / 1024 / 1024
     print(f"  [OK] {output_path.name} ({size_mb:.1f} MB)")

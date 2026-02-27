@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual.yml
 **Type:** book
-**Files:** 44 | **Words:** 101,105 | **Images:** 534 | **Est. Pages:** ~671
+**Files:** 44 | **Words:** 101,529 | **Images:** 533 | **Est. Pages:** ~673
 
 #### index-manual.qmd
 **Title:** Start Here
 **Description:** Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 5,498 words | 472 lines | 11 images | ~27p
+**Stats:** 5,537 words | 472 lines | 11 images | ~28p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Beautiful Inefficiency of the Human Economy
@@ -265,7 +265,7 @@
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
 **Description:** Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.
-**Stats:** 2,025 words | 190 lines | 9 images | ~13p
+**Stats:** 1,999 words | 189 lines | 8 images | ~12p
 
   - What Democracy Should Look Like vs Reality
     ![In theory, voter support determines which laws pass. In reality, voter support has zero effect. You keep voting anyway. It's like writing letters to Santa but for taxes.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-princeton-policy-study-chart-bw-academic.jpg)
@@ -275,7 +275,6 @@
   - How Money Buys Power
     ![More money equals more votes. More votes equal more power. More power equals more money. It's a circle. Calling it a "cycle" makes it sound natural.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-how-money-buys-power-bw-academic.jpg)
     - The Lobbying ROI: 18:1 Returns
-    ![Spend one dollar lobbying, get 18 dollars in government funding. That's a better return than any stock on Wall Street. Congressmen are the real blue chips.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-lobbying-roi-1-810-1-returns-bw-academic.jpg)
   - Your Congressman: A Fundraiser Who Occasionally Legislates
   - Congressional Committees: The Menu
   - Public Choice Theory: The Nobel Prize for Cynicism
@@ -376,7 +375,7 @@
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
 **Description:** You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.87 times and use the savings on medicine. Controversial, apparently.
-**Stats:** 2,975 words | 345 lines | 16 images | ~20p
+**Stats:** 3,030 words | 345 lines | 16 images | ~20p
 
   - The Math
     - How It Works
@@ -427,7 +426,7 @@
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** You've been fighting disease like a cat fights a laser pointer: lots of energy, no coordination, nothing caught. This is the plan to make curing disease the most profitable thing every hospital, pharma company, and researcher can do, so they do it by accident while trying to get rich.
-**Stats:** 2,963 words | 283 lines | 11 images | ~17p
+**Stats:** 3,025 words | 283 lines | 11 images | ~18p
 
   - The Health-Industrial Complex: Coordinating Your War on Disease
     - The Olsonian Problem
@@ -463,7 +462,7 @@
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
 **Description:** How to spend $27.2 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.
-**Stats:** 1,595 words | 142 lines | 4 images | ~8p
+**Stats:** 1,656 words | 144 lines | 4 images | ~9p
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
     - What your [decentralized FDA](dfda.qmd) handles automatically (no voting required):
@@ -482,7 +481,7 @@
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
 **Description:** It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs over 40x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.
-**Stats:** 4,119 words | 478 lines | 21 images | ~27p
+**Stats:** 4,228 words | 480 lines | 21 images | ~27p
 
   - The Solution: Consumer Reports for Drugs
     ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
@@ -543,7 +542,7 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,425 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.
-**Stats:** 3,227 words | 356 lines | 20 images | ~23p
+**Stats:** 3,280 words | 356 lines | 20 images | ~23p
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
     - The Offer
@@ -607,7 +606,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** Incentive Alignment Bonds
 **Description:** War bonds, but backwards. Your grandparents funded WW2 at roughly 3% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.
-**Stats:** 4,741 words | 484 lines | 35 images | ~36p
+**Stats:** 4,793 words | 487 lines | 35 images | ~37p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -1539,4 +1538,4 @@
 #### knowledge/appendix/back-cover.qmd
 **Title:** About This Book
 **Description:** The exact sequence of bribes needed to redirect 1% of military spending to curing disease, making everyone rich in the process.
-**Stats:** 331 words | 26 lines | 1 images | ~2p
+**Stats:** 350 words | 32 lines | 1 images | ~2p

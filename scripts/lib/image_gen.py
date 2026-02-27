@@ -120,11 +120,27 @@ def generate_image_gemini(
         ],
     )
 
-    response = google_client.models.generate_content(
-        model=GEMINI_IMAGE_MODEL_ID,
-        contents=user_content,
-        config=config,
-    )
+    import re as _re
+    for _attempt in range(1, 4):
+        try:
+            response = google_client.models.generate_content(
+                model=GEMINI_IMAGE_MODEL_ID,
+                contents=user_content,
+                config=config,
+            )
+            break
+        except Exception as _e:
+            err_str = str(_e)
+            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                # Extract retry delay from error if available
+                delay_match = _re.search(r'retryDelay.*?(\d+)', err_str)
+                wait = int(delay_match.group(1)) + 5 if delay_match else 30
+                if _attempt < 3:
+                    print(f"  [429] Rate limited, waiting {wait}s (attempt {_attempt}/3)...")
+                    import time as _time
+                    _time.sleep(wait)
+                    continue
+            raise
 
     if not response.candidates:
         raise RuntimeError(

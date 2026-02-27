@@ -896,6 +896,10 @@ def generate_outro_audio(
         variables = load_variables(VARIABLES_YML)
         prepared_text = replace_variables(prepared_text, variables)
 
+    # Strip markup (CI intervals, HTML tags, etc.) - same as regular chapters
+    from generate_audiobook_text import strip_qmd_markup
+    prepared_text = strip_qmd_markup(prepared_text)
+
     prepared_path.write_text(prepared_text, encoding='utf-8')
 
     audio_path, _ = generate_chapter_audio(
@@ -944,8 +948,8 @@ def wrap_mp3_with_intro_outro(
     wrap_hash = _compute_wrap_hash(intro_path, outro_path)
     hash_file = mp3_path.with_suffix('.wraphash')
     if hash_file.exists() and hash_file.read_text(encoding='utf-8').strip() == wrap_hash:
-        # Also verify MP3 is newer than hash file (wasn't re-exported since wrapping)
-        if mp3_path.stat().st_mtime >= hash_file.stat().st_mtime:
+        # Skip if MP3 hasn't been re-exported since wrapping (hash file is newer than MP3)
+        if mp3_path.stat().st_mtime <= hash_file.stat().st_mtime:
             print(f"  [SKIP WRAP] Already wrapped: {mp3_path}")
             return
 

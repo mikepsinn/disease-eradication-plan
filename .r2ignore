@@ -30,3 +30,6 @@ narration-txt-chunks/
 
 # Alignment data (regeneratable, large)
 alignment/
+
+# Video clip MP4s (intermediate, not for distribution)
+**/clips/*.mp4

@@ -35,7 +35,7 @@ Text:
 SCENE_SEGMENTATION_WITH_PROMPTS = """Segment this audiobook narration into visual scenes. Read the ENTIRE text.
 
 Rules:
-- Each scene: ~120-250 characters of narration, breaking at natural narrative boundaries
+- Each scene: ~100-150 characters of narration (~8 seconds of speech), breaking at natural narrative boundaries
 - You MUST cover the ENTIRE text with no gaps and no overlaps
 - char_start/char_end: exact character offsets into the text below
 - narration_text: exact original text for that span (copy verbatim)

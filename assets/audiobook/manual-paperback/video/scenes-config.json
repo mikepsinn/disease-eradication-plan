@@ -1,0 +1,8 @@
+{
+  "visual_style": "fun retro black and white scientific illustration style",
+  "no_text": "Do not include any text, words, titles, labels, signs, banners, or writing of any kind.",
+  "veo_negative_prompt": "narration, dialogue, voice, speech, talking, spoken words, realistic photography, 3D render, CGI, Pixar",
+  "veo_parallel_workers": 4,
+  "aspect_ratios": ["16:9", "9:16"],
+  "characters": {}
+}
