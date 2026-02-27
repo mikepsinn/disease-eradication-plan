@@ -116,3 +116,5 @@ reportUnknownVariableType = false  # Suppress "type of variable is unknown"
 reportMissingTypeStubs = false  # Don't complain about missing stubs
 reportPrivateUsage = false  # Allow accessing _private members
 
+[tool.pytest.ini_options]
+testpaths = ["scripts/tests"]

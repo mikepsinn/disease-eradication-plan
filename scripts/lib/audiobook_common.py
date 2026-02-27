@@ -40,6 +40,7 @@ class AudiobookPaths:
     video: Path
     scenes: Path
     podcast_images: Path
+    raw_mp3: Path
     manifest: Path
 
 
@@ -60,6 +61,7 @@ def get_paths(config_name: str) -> AudiobookPaths:
         video=video,
         scenes=video / "scenes",
         podcast_images=root / "podcast-images",
+        raw_mp3=root / "mp3-raw",
         manifest=root / "manifest.json",
     )
 

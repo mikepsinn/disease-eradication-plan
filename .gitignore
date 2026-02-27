@@ -158,6 +158,7 @@ assets/audiobook/**/*.source_hash
 assets/audiobook/**/*.mp3
 assets/audiobook/**/*.m4b
 assets/audiobook/**/mp3/
+assets/audiobook/**/mp3-raw/
 
 /.luarc.json
 /tools/

@@ -45,6 +45,7 @@ from lib.audiobook_common import (
     mp3_content_hash, find_current_mp3, parse_hashed_mp3, PODCAST_HASH_RE,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
+from lib.build_logger import BuildLogger
 from lib.retry import RateLimiter
 
 # TTS parallelization: Gemini TTS allows concurrent requests.
@@ -932,49 +933,54 @@ def generate_outro_audio(
     return audio_path
 
 
-def _compute_wrap_hash(intro_path: Path | None, outro_path: Path | None) -> str:
-    """Compute a combined hash of intro + outro files for cache invalidation."""
-    h = hashlib.sha256()
-    for p in (intro_path, outro_path):
-        if p and p.exists():
-            h.update(p.read_bytes())
-    return h.hexdigest()[:16]
-
-
 def wrap_mp3_with_intro_outro(
-    mp3_path: Path,
+    raw_mp3_path: Path,
+    wrapped_mp3_dir: Path,
     intro_path: Path | None = None,
     outro_path: Path | None = None,
-) -> None:
-    """Prepend theme song and/or append outro audio to an MP3 file in-place.
+) -> Path | None:
+    """Wrap a raw MP3 with intro/outro audio, writing to a separate output directory.
 
-    Loads the existing MP3, sandwiches it between intro and outro audio,
-    and overwrites the original file. ID3 tags are preserved by re-applying
-    after the audio manipulation.
+    Reads from raw_mp3_path (never mutated), writes to wrapped_mp3_dir/{slug}.mp3.
+    Uses mtime comparison for caching: skips if output exists and is newer than
+    all inputs (raw MP3 + intro + outro). ID3 tags are copied from raw to wrapped.
 
-    Uses a sidecar .wraphash file to skip re-wrapping when intro/outro
-    haven't changed and the MP3 was already wrapped.
+    Returns the wrapped MP3 path, or None if no wrapping was needed (no intro/outro).
     """
+    import shutil
     from mutagen.mp3 import MP3
 
+    wrapped_mp3_dir.mkdir(parents=True, exist_ok=True)
+    output_path = wrapped_mp3_dir / raw_mp3_path.name
+
     if not intro_path and not outro_path:
-        return
+        # No wrapping needed; just copy raw to output dir
+        if output_path.exists() and output_path.stat().st_mtime >= raw_mp3_path.stat().st_mtime:
+            print(f"  [SKIP WRAP] No intro/outro, copy up to date: {output_path.name}")
+            return output_path
+        shutil.copy2(str(raw_mp3_path), str(output_path))
+        print(f"  [COPY] {raw_mp3_path.name} -> {output_path.parent.name}/")
+        return output_path
 
-    # Check if already wrapped with same intro/outro
-    wrap_hash = _compute_wrap_hash(intro_path, outro_path)
-    hash_file = mp3_path.with_suffix('.wraphash')
-    if hash_file.exists() and hash_file.read_text(encoding='utf-8').strip() == wrap_hash:
-        # Skip if MP3 hasn't been re-exported since wrapping (hash file is newer than MP3)
-        if mp3_path.stat().st_mtime <= hash_file.stat().st_mtime:
-            print(f"  [SKIP WRAP] Already wrapped: {mp3_path}")
-            return
+    # Mtime-based cache: skip if output is newer than all inputs
+    if output_path.exists():
+        out_mtime = output_path.stat().st_mtime
+        input_mtimes = [raw_mp3_path.stat().st_mtime]
+        if intro_path and intro_path.exists():
+            input_mtimes.append(intro_path.stat().st_mtime)
+        if outro_path and outro_path.exists():
+            input_mtimes.append(outro_path.stat().st_mtime)
+        if out_mtime > max(input_mtimes):
+            size_mb = output_path.stat().st_size / 1024 / 1024
+            print(f"  [SKIP WRAP] Already wrapped: {output_path.name} ({size_mb:.1f} MB)")
+            return output_path
 
-    # Save existing tags before overwriting
-    existing_mp3 = MP3(str(mp3_path))
-    saved_tags = existing_mp3.tags
+    # Read tags from raw MP3
+    raw_mp3 = MP3(str(raw_mp3_path))
+    saved_tags = raw_mp3.tags
 
-    # Load chapter audio
-    chapter_audio = AudioSegment.from_mp3(str(mp3_path))
+    # Build combined audio: intro + chapter + outro
+    chapter_audio = AudioSegment.from_mp3(str(raw_mp3_path))
     combined = AudioSegment.empty()
 
     if intro_path and intro_path.exists():
@@ -993,18 +999,17 @@ def wrap_mp3_with_intro_outro(
             outro_audio = AudioSegment.from_wav(str(outro_path))
         combined += outro_audio
 
-    combined.export(str(mp3_path), format="mp3", bitrate="192k")
+    combined.export(str(output_path), format="mp3", bitrate="192k")
 
-    # Restore ID3 tags
+    # Copy ID3 tags from raw to wrapped
     if saved_tags:
-        tagged = MP3(str(mp3_path))
+        tagged = MP3(str(output_path))
         tagged.tags = saved_tags
         tagged.save()
 
-    # Write wrap hash so we don't re-wrap unnecessarily
-    hash_file.write_text(wrap_hash, encoding='utf-8')
-    size_mb = mp3_path.stat().st_size / 1024 / 1024
-    print(f"  [OK WRAP] {mp3_path} ({size_mb:.1f} MB)")
+    size_mb = output_path.stat().st_size / 1024 / 1024
+    print(f"  [OK WRAP] {output_path.name} ({size_mb:.1f} MB)")
+    return output_path
 
 
 def export_single_chapter_mp3(
@@ -1031,8 +1036,8 @@ def export_single_chapter_mp3(
         TCOP, WOAF,
     )
 
-    mp3_dir = paths.root / "mp3" if paths else AUDIOBOOK_DIR / "mp3"
-    mp3_dir.mkdir(parents=True, exist_ok=True)
+    raw_mp3_dir = paths.raw_mp3 if paths else AUDIOBOOK_DIR / "mp3-raw"
+    raw_mp3_dir.mkdir(parents=True, exist_ok=True)
 
     chapter_file = find_chapter_audio(chapter, paths=paths)
     if not chapter_file:
@@ -1040,33 +1045,30 @@ def export_single_chapter_mp3(
         return None
 
     slug = chapter_file.stem
-    # Canonical path for new exports; existing may be hashed ({slug}.{hash8}.mp3)
-    mp3_path = mp3_dir / f"{slug}.mp3"
-    existing_mp3 = find_current_mp3(slug, mp3_dir)
+    mp3_path = raw_mp3_dir / f"{slug}.mp3"
 
-    # Check if MP3 is already up-to-date via embedded source_qmd_hash
+    # Check if raw MP3 is already up-to-date via embedded source_qmd_hash
     qmd_path = PROJECT_ROOT / chapter['path']
     current_qmd_hash = ''
     if qmd_path.exists():
         qmd_content = qmd_path.read_text(encoding='utf-8')
         current_qmd_hash = hashlib.sha256(qmd_content.encode('utf-8')).hexdigest()[:16]
 
-    if existing_mp3 and current_qmd_hash:
-        existing_hash = _read_mp3_source_hash(existing_mp3)
+    if mp3_path.exists() and current_qmd_hash:
+        existing_hash = _read_mp3_source_hash(mp3_path)
         if existing_hash == current_qmd_hash:
-            # Also check WAV is not newer than MP3 (audio was regenerated)
-            if chapter_file.stat().st_mtime <= existing_mp3.stat().st_mtime:
-                size_mb = existing_mp3.stat().st_size / 1024 / 1024
-                print(f"  [SKIP MP3] Up to date (hash {current_qmd_hash}): {existing_mp3.name} ({size_mb:.1f} MB)")
-                return existing_mp3
+            if chapter_file.stat().st_mtime <= mp3_path.stat().st_mtime:
+                size_mb = mp3_path.stat().st_size / 1024 / 1024
+                print(f"  [SKIP RAW MP3] Up to date (hash {current_qmd_hash}): {mp3_path.name} ({size_mb:.1f} MB)")
+                return mp3_path
             else:
-                print(f"  [STALE MP3] WAV newer than MP3, re-exporting")
+                print(f"  [STALE RAW MP3] WAV newer than MP3, re-exporting")
         else:
-            print(f"  [STALE MP3] QMD hash changed ({existing_hash or 'none'} -> {current_qmd_hash}), re-exporting")
-    elif existing_mp3:
-        print(f"  [STALE MP3] No hash to verify, re-exporting")
+            print(f"  [STALE RAW MP3] QMD hash changed ({existing_hash or 'none'} -> {current_qmd_hash}), re-exporting")
+    elif mp3_path.exists():
+        print(f"  [STALE RAW MP3] No hash to verify, re-exporting")
     else:
-        print(f"  [NEW MP3] Exporting: {slug}.mp3")
+        print(f"  [NEW RAW MP3] Exporting: {slug}.mp3")
 
     # Convert WAV to MP3 via pydub
     audio = AudioSegment.from_wav(str(chapter_file))
@@ -1154,8 +1156,8 @@ def export_chapter_mp3s(
         mp3_path = export_single_chapter_mp3(ch, book_meta, track_num, total, voice=voice, paths=paths)
         if mp3_path:
             mp3_files.append(mp3_path)
-    mp3_dir = paths.root / "mp3" if paths else AUDIOBOOK_DIR / "mp3"
-    print(f"  Exported {len(mp3_files)} chapter MP3s to {mp3_dir}")
+    raw_mp3_dir = paths.raw_mp3 if paths else AUDIOBOOK_DIR / "mp3-raw"
+    print(f"  Exported {len(mp3_files)} raw chapter MP3s to {raw_mp3_dir}")
     return mp3_files
 
 
@@ -1163,7 +1165,7 @@ def finalize_podcast_mp3(mp3_path: Path) -> Path:
     """Rename an MP3 to include a content hash for podcast cache busting.
 
     Converts {slug}.mp3 (or {slug}.{oldhash}.mp3) to {slug}.{newhash}.mp3.
-    Cleans up old hashed versions of the same slug. Moves .wraphash sidecar.
+    Cleans up old hashed versions of the same slug.
     Returns the new path (unchanged if hash already matches).
     """
     # Determine the base slug (strip existing hash if present)
@@ -1181,12 +1183,6 @@ def finalize_podcast_mp3(mp3_path: Path) -> Path:
         if PODCAST_HASH_RE.match(old.name) and old != mp3_path and old != target:
             _retry_fs_op(lambda p=old: p.unlink(), f"clean {old.name}")
             print(f"  [CLEAN] Removed old version: {old.name}")
-
-    # Move .wraphash sidecar to match new name
-    old_wraphash = mp3_path.with_suffix('.wraphash')
-    new_wraphash = target.with_suffix('.wraphash')
-    if old_wraphash.exists() and old_wraphash != new_wraphash:
-        _retry_fs_op(lambda: old_wraphash.rename(new_wraphash), "rename wraphash")
 
     _retry_fs_op(lambda: mp3_path.rename(target), f"rename {mp3_path.name}")
     print(f"  [HASH] {mp3_path.name} -> {target.name}")
@@ -1219,9 +1215,20 @@ def generate_podcast_rss(
     # Build timestamp lookup
     ts_by_index = {ts['index']: ts for ts in timestamps}
 
+    def _unwrap_paragraphs(text: str) -> str:
+        """Collapse hard-wrapped lines within paragraphs into single lines.
+
+        Preserves blank lines between paragraphs so podcast apps (Spotify,
+        Apple) show proper paragraph breaks without mid-sentence line breaks.
+        """
+        import re
+        paragraphs = re.split(r'\n\s*\n', text.strip())
+        return '\n\n'.join(' '.join(p.split()) for p in paragraphs)
+
     title = escape(book_meta['title'])
     author = escape(book_meta.get('podcast_author', book_meta['author']))
-    description = escape(book_meta.get('podcast_description') or book_meta['description'])
+    raw_desc = book_meta.get('podcast_description') or book_meta['description']
+    description = escape(_unwrap_paragraphs(raw_desc))
     desc_suffix = book_meta.get('podcast_description_suffix', '')
     narrator = escape(book_meta['narrator'])
     podcast_cover: Path = book_meta['podcast_cover']
@@ -1315,6 +1322,7 @@ def generate_podcast_rss(
 
         # Use QMD description if available, fall back to generic; append CTA suffix
         ep_desc = ep_descriptions.get(slug, f"Chapter {ep_num + 1} of {title}")
+        ep_desc = _unwrap_paragraphs(ep_desc)
         if desc_suffix:
             ep_desc = f"{ep_desc}\n\n{desc_suffix}"
 
@@ -1420,6 +1428,15 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
     )
 
 
+def _cleanup_wraphash_sidecars(mp3_dir: Path) -> None:
+    """Remove legacy .wraphash sidecar files from the mp3 directory."""
+    if not mp3_dir.exists():
+        return
+    for f in mp3_dir.glob("*.wraphash"):
+        f.unlink()
+        print(f"  [CLEAN] Removed legacy sidecar: {f.name}")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Generate audiobook from Quarto book chapters"
@@ -1480,6 +1497,10 @@ def main():
     cfg_name = config_name_from_path(config_path)
     paths = get_paths(cfg_name)
 
+    # Set up logging
+    logger = BuildLogger("generate-audiobook.log")
+    logger.start_capture()
+
     # Load book config
     print(f"Loading book configuration: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_book_config(config_path)
@@ -1489,6 +1510,8 @@ def main():
     # List mode
     if args.list:
         list_chapters(chapters, paths=paths)
+        logger.stop_capture()
+        logger.close()
         return
 
     # Filter chapters if specified
@@ -1496,6 +1519,8 @@ def main():
         chapters = [ch for ch in chapters if ch['index'] == args.chapter]
         if not chapters:
             print(f"Error: Chapter {args.chapter} not found")
+            logger.stop_capture()
+            logger.close()
             return
     elif args.start or args.end:
         start = args.start or 1
@@ -1511,6 +1536,10 @@ def main():
     print(f"Voice: {args.voice}")
     print(f"Output: {paths.root.relative_to(PROJECT_ROOT)}")
     print()
+
+    # Clean up legacy .wraphash sidecars
+    mp3_dir = paths.root / "mp3"
+    _cleanup_wraphash_sidecars(mp3_dir)
 
     # Generate podcast outro audio (once, before chapter loop)
     outro_wav = None
@@ -1536,7 +1565,7 @@ def main():
         print(f"  [INFO] No theme song at {THEME_SONG_PATH}, skipping intro")
     print()
 
-    # Per-chapter pipeline: text -> WAV -> normalize -> align -> MP3
+    # Per-chapter pipeline: text -> WAV -> normalize -> align -> raw MP3 -> wrap -> finalize
     generated_files = []
     for chapter in chapters:
         qmd_path = PROJECT_ROOT / chapter['path']
@@ -1558,19 +1587,18 @@ def main():
         if not args.no_align:
             _run_alignment(chapter, audio_path, title, force=args.force, paths=paths, audio_changed=audio_changed)
 
-        # 4. Export tagged chapter MP3
+        # 4. Export raw tagged chapter MP3 (to mp3-raw/)
         if not args.no_combine:
             track_num = next((i for i, ch in enumerate(all_chapters, 1) if ch['index'] == chapter['index']), chapter['index'])
-            mp3_out = export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
+            raw_mp3 = export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
 
-            # 5. Wrap podcast MP3 with theme song + outro (not applied to combined audiobook)
-            if mp3_out and (intro_mp3 or outro_wav):
-                print(f"  [WRAP] Adding intro/outro to {mp3_out.name}")
-                wrap_mp3_with_intro_outro(mp3_out, intro_path=intro_mp3, outro_path=outro_wav)
+            # 5. Wrap with intro/outro (raw mp3-raw/ -> wrapped mp3/)
+            if raw_mp3:
+                wrapped = wrap_mp3_with_intro_outro(raw_mp3, mp3_dir, intro_path=intro_mp3, outro_path=outro_wav)
 
-            # 6. Rename to content-hashed filename for podcast cache busting
-            if mp3_out:
-                mp3_out = finalize_podcast_mp3(mp3_out)
+                # 6. Rename to content-hashed filename for podcast cache busting
+                if wrapped:
+                    wrapped = finalize_podcast_mp3(wrapped)
 
     print(f"\n{'=' * 60}")
     print(f"Processed {len(generated_files)} chapters")
@@ -1589,7 +1617,6 @@ def main():
             export_m4b(mp3_path, timestamps, book_meta)
 
             # Collect all chapter MP3s for RSS (hashed or canonical filenames)
-            mp3_dir = paths.root / "mp3"
             chapter_mp3s = []
             for ch in all_chapters:
                 slug = chapter_slug(ch)
@@ -1601,6 +1628,8 @@ def main():
             generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
 
     print("\nDone!")
+    logger.stop_capture()
+    logger.close()
 
 
 if __name__ == "__main__":
