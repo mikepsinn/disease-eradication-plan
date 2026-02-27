@@ -106,6 +106,48 @@ def text_hash(text: str) -> str:
     return hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]
 
 
+# --- Podcast MP3 cache-busting ---
+# Hashed filenames: {slug}.{8-hex-chars}.mp3
+PODCAST_HASH_LEN = 8
+PODCAST_HASH_RE = re.compile(r'^(.+)\.([0-9a-f]{8})\.mp3$')
+
+
+def mp3_content_hash(path: Path) -> str:
+    """MD5 hash prefix of MP3 file content for cache-busting filenames."""
+    h = hashlib.md5()
+    with open(path, 'rb') as f:
+        for chunk in iter(lambda: f.read(8192), b''):
+            h.update(chunk)
+    return h.hexdigest()[:PODCAST_HASH_LEN]
+
+
+def find_current_mp3(slug: str, mp3_dir: Path) -> Path | None:
+    """Find existing MP3 for a slug (hashed or canonical).
+
+    Returns hashed version if found, else canonical, else None.
+    """
+    # Prefer hashed version
+    for p in mp3_dir.glob(f"{slug}.*.mp3"):
+        if PODCAST_HASH_RE.match(p.name):
+            return p
+    # Fall back to canonical
+    canonical = mp3_dir / f"{slug}.mp3"
+    if canonical.exists():
+        return canonical
+    return None
+
+
+def parse_hashed_mp3(filename: str) -> tuple[str, str] | None:
+    """Parse a hashed MP3 filename into (slug, hash).
+
+    Returns None if the filename is not hashed.
+    """
+    m = PODCAST_HASH_RE.match(filename)
+    if m:
+        return m.group(1), m.group(2)
+    return None
+
+
 def safe_filename(title: str, max_len: int = 50) -> str:
     """Sanitize a title for filesystem use."""
     return re.sub(r'[^\w\s-]', '', title).strip().replace(' ', '-')[:max_len]

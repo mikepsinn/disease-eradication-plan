@@ -25,6 +25,7 @@ narration-txt-chunks/
 
 # Cache sidecars
 *.texthash
+*.wraphash
 .prepared_hash
 
 # Alignment data (regeneratable, large)

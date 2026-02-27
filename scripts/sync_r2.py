@@ -37,6 +37,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 sys.path.insert(0, str(SCRIPT_DIR))
 from lib.python_utils import load_project_dotenv
 load_project_dotenv(PROJECT_ROOT)
+from lib.audiobook_common import PODCAST_HASH_RE
 
 # Directories to sync (R2 prefix -> local path)
 SYNC_DIRS = {
@@ -706,6 +707,62 @@ def check_status(dirs: list[str], patterns: list[str]):
         print(f"\n{total_upload} file(s) need uploading ({format_size(total_upload_bytes)})")
 
 
+def cleanup_old_podcast_versions(local_files: dict[str, Path], dry_run: bool = False):
+    """Delete old hashed podcast MP3 versions from R2.
+
+    When podcast MP3s use content-hash filenames ({slug}.{hash8}.mp3),
+    old versions with different hashes accumulate on R2. This function
+    finds and removes them, keeping only the current version per slug.
+
+    Also cleans up legacy unhashed ({slug}.mp3) versions when a hashed
+    version exists locally.
+    """
+    # Build a map of slug -> current R2 key from local hashed MP3s
+    current_by_slug: dict[str, str] = {}
+    for key in local_files:
+        filename = key.split('/')[-1]
+        m = PODCAST_HASH_RE.match(filename)
+        if m:
+            current_by_slug[m.group(1)] = key
+
+    if not current_by_slug:
+        return
+
+    client = get_r2_client()
+    bucket = get_bucket()
+
+    # Scan R2 for MP3s in audiobook mp3 directories
+    remote = list_remote_objects(client, bucket, "assets/audiobook/")
+
+    to_delete: list[str] = []
+    for remote_key in remote:
+        if not remote_key.endswith('.mp3') or '/mp3/' not in remote_key:
+            continue
+        filename = remote_key.split('/')[-1]
+        m = PODCAST_HASH_RE.match(filename)
+        if m:
+            # Old hashed version: different hash for same slug
+            slug = m.group(1)
+            if slug in current_by_slug and current_by_slug[slug] != remote_key:
+                to_delete.append(remote_key)
+        else:
+            # Legacy unhashed version: {slug}.mp3 superseded by hashed version
+            slug = filename[:-4]  # strip .mp3
+            if slug in current_by_slug:
+                to_delete.append(remote_key)
+
+    if not to_delete:
+        return
+
+    print(f"\n  Cleaning up {len(to_delete)} old podcast MP3 version(s) from R2...")
+    for key in to_delete:
+        if dry_run:
+            print(f"  [DRY-RUN DELETE] {key}")
+        else:
+            print(f"  [DELETE OLD] {key}")
+            client.delete_object(Bucket=bucket, Key=key)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sync static assets to Cloudflare R2")
     parser.add_argument("--dir", choices=list(SYNC_DIRS.keys()), action="append",
@@ -740,6 +797,9 @@ def main():
         sync_dir(d, SYNC_DIRS[d], patterns, dry_run=args.dry_run,
                  delete_removed=args.delete_removed)
         all_files.update(collect_files(d, SYNC_DIRS[d], patterns))
+
+    # Clean up old podcast MP3 versions (runs automatically after sync)
+    cleanup_old_podcast_versions(all_files, dry_run=args.dry_run)
 
     # Generate index.html and sitemap.xml
     if not args.no_index:

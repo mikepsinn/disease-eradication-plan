@@ -41,6 +41,7 @@ from lib.audiobook_common import (
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
     chapter_slug, find_prepared_text, find_chapter_audio, find_podcast_image,
     AudiobookPaths, config_name_from_path, get_paths,
+    mp3_content_hash, find_current_mp3, parse_hashed_mp3, PODCAST_HASH_RE,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
 from lib.retry import RateLimiter
@@ -983,7 +984,10 @@ def export_single_chapter_mp3(
         print(f"  [SKIP MP3] No WAV for chapter {chapter['index']}: {chapter['title']}")
         return None
 
-    mp3_path = mp3_dir / chapter_file.with_suffix('.mp3').name
+    slug = chapter_file.stem
+    # Canonical path for new exports; existing may be hashed ({slug}.{hash8}.mp3)
+    mp3_path = mp3_dir / f"{slug}.mp3"
+    existing_mp3 = find_current_mp3(slug, mp3_dir)
 
     # Check if MP3 is already up-to-date via embedded source_qmd_hash
     qmd_path = PROJECT_ROOT / chapter['path']
@@ -992,22 +996,22 @@ def export_single_chapter_mp3(
         qmd_content = qmd_path.read_text(encoding='utf-8')
         current_qmd_hash = hashlib.sha256(qmd_content.encode('utf-8')).hexdigest()[:16]
 
-    if mp3_path.exists() and current_qmd_hash:
-        existing_hash = _read_mp3_source_hash(mp3_path)
+    if existing_mp3 and current_qmd_hash:
+        existing_hash = _read_mp3_source_hash(existing_mp3)
         if existing_hash == current_qmd_hash:
             # Also check WAV is not newer than MP3 (audio was regenerated)
-            if chapter_file.stat().st_mtime <= mp3_path.stat().st_mtime:
-                size_mb = mp3_path.stat().st_size / 1024 / 1024
-                print(f"  [SKIP MP3] Up to date (hash {current_qmd_hash}): {mp3_path} ({size_mb:.1f} MB)")
-                return mp3_path
+            if chapter_file.stat().st_mtime <= existing_mp3.stat().st_mtime:
+                size_mb = existing_mp3.stat().st_size / 1024 / 1024
+                print(f"  [SKIP MP3] Up to date (hash {current_qmd_hash}): {existing_mp3.name} ({size_mb:.1f} MB)")
+                return existing_mp3
             else:
                 print(f"  [STALE MP3] WAV newer than MP3, re-exporting")
         else:
             print(f"  [STALE MP3] QMD hash changed ({existing_hash or 'none'} -> {current_qmd_hash}), re-exporting")
-    elif mp3_path.exists():
+    elif existing_mp3:
         print(f"  [STALE MP3] No hash to verify, re-exporting")
     else:
-        print(f"  [NEW MP3] Exporting: {mp3_path.name}")
+        print(f"  [NEW MP3] Exporting: {slug}.mp3")
 
     # Convert WAV to MP3 via pydub
     audio = AudioSegment.from_wav(str(chapter_file))
@@ -1100,6 +1104,40 @@ def export_chapter_mp3s(
     return mp3_files
 
 
+def finalize_podcast_mp3(mp3_path: Path) -> Path:
+    """Rename an MP3 to include a content hash for podcast cache busting.
+
+    Converts {slug}.mp3 (or {slug}.{oldhash}.mp3) to {slug}.{newhash}.mp3.
+    Cleans up old hashed versions of the same slug. Moves .wraphash sidecar.
+    Returns the new path (unchanged if hash already matches).
+    """
+    # Determine the base slug (strip existing hash if present)
+    parsed = parse_hashed_mp3(mp3_path.name)
+    slug = parsed[0] if parsed else mp3_path.stem
+
+    content_hash = mp3_content_hash(mp3_path)
+    target = mp3_path.parent / f"{slug}.{content_hash}.mp3"
+
+    if target == mp3_path:
+        return mp3_path  # already has correct hash
+
+    # Clean up old hashed versions (different hash, same slug)
+    for old in mp3_path.parent.glob(f"{slug}.*.mp3"):
+        if PODCAST_HASH_RE.match(old.name) and old != mp3_path and old != target:
+            old.unlink()
+            print(f"  [CLEAN] Removed old version: {old.name}")
+
+    # Move .wraphash sidecar to match new name
+    old_wraphash = mp3_path.with_suffix('.wraphash')
+    new_wraphash = target.with_suffix('.wraphash')
+    if old_wraphash.exists() and old_wraphash != new_wraphash:
+        old_wraphash.rename(new_wraphash)
+
+    mp3_path.rename(target)
+    print(f"  [HASH] {mp3_path.name} -> {target.name}")
+    return target
+
+
 def generate_podcast_rss(
     chapter_mp3s: list[Path],
     chapters: list[dict],
@@ -1178,8 +1216,13 @@ def generate_podcast_rss(
     # Channel pubDate = last chapter's date (the latest after monotonic fix)
     latest_date = ch_pub_dates[sorted_indices[-1]] if sorted_indices else fallback_date
 
-    # Build MP3 lookup by slug for matching with timestamps
-    mp3_by_slug = {mp3.stem: mp3 for mp3 in chapter_mp3s}
+    # Build MP3 lookup by slug for matching with timestamps.
+    # Handles both hashed ({slug}.{hash8}.mp3) and canonical ({slug}.mp3) filenames.
+    mp3_by_slug: dict[str, Path] = {}
+    for mp3 in chapter_mp3s:
+        parsed = parse_hashed_mp3(mp3.name)
+        slug_key = parsed[0] if parsed else mp3.stem
+        mp3_by_slug[slug_key] = mp3
 
     # Build chapter lookup by index for podcast exclusion check
     ch_by_index = {ch['index']: ch for ch in chapters}
@@ -1470,6 +1513,10 @@ def main():
                 print(f"  [WRAP] Adding intro/outro to {mp3_out.name}")
                 wrap_mp3_with_intro_outro(mp3_out, intro_path=intro_mp3, outro_path=outro_wav)
 
+            # 6. Rename to content-hashed filename for podcast cache busting
+            if mp3_out:
+                mp3_out = finalize_podcast_mp3(mp3_out)
+
     print(f"\n{'=' * 60}")
     print(f"Processed {len(generated_files)} chapters")
 
@@ -1486,10 +1533,14 @@ def main():
             tag_mp3(mp3_path, timestamps, book_meta, chapters=all_chapters, paths=paths)
             export_m4b(mp3_path, timestamps, book_meta)
 
-            # Collect all chapter MP3s for RSS (already exported per-chapter above)
+            # Collect all chapter MP3s for RSS (hashed or canonical filenames)
             mp3_dir = paths.root / "mp3"
-            chapter_mp3s = [mp3_dir / f"{chapter_slug(ch)}.mp3" for ch in all_chapters
-                           if (mp3_dir / f"{chapter_slug(ch)}.mp3").exists()]
+            chapter_mp3s = []
+            for ch in all_chapters:
+                slug = chapter_slug(ch)
+                mp3 = find_current_mp3(slug, mp3_dir)
+                if mp3:
+                    chapter_mp3s.append(mp3)
 
             # Generate podcast RSS feed
             generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
