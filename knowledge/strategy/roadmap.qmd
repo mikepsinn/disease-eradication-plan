@@ -66,11 +66,11 @@ Here's the precise order for distributing papers to specific categories of human
 **The (legal) bribe you offer:** Modeled on WW2 War Bonds [@wwii-war-bonds], except instead of 4% returns for funding death, these pay {{< var victory_bond_annual_return_pct >}} for funding not-death. Like war bonds except backwards.
 
 
-**Why they accept:** Because {{< var victory_bond_annual_return_pct >}} annual returns on a policy campaign with measurable milestones is a better risk-adjusted bet than most alternatives.
+**Why they accept:** Because rich humans can read a spreadsheet, and no spreadsheet in history has ever said "give up {{< var victory_bond_annual_return_pct >}} annual returns because you feel weird about the source."
 
 **Money-back guarantee:** If the treaty fails, they get their papers back via assurance contracts. Funds are escrowed until milestones hit. Automatic refund if targets are missed. This is basically saying "if everyone dies from preventable diseases, you'll be too dead to complain about losing money."
 
-**What happens:** Defense contractors lose 1% of their revenue but gain access to a new {{< var treaty_annual_funding >}}/year health spending market. The same companies that build missile guidance systems can build medical device supply chains. They trade 1% of weapons revenue for health contracts. Defense contractors become health contractors. Democracy continues as normal.
+**What happens:** Defense contractors lose 1% of their revenue but discover a new {{< var treaty_annual_funding >}}/year health spending market has appeared where there used to be nothing. The same companies that build missile guidance systems can build medical device supply chains. It turns out the engineering skills transfer perfectly; the main difference is whether the end user survives.
 
 #### The Specific Offer to Bomb Makers
 
@@ -81,7 +81,7 @@ You show weapons manufacturers a spreadsheet (they love spreadsheets):
 - Operating margin: 8%
 - Product: Things that make humans stop existing
 - Customer satisfaction: N/A (customers deceased)
-- Market outlook: Shrinking by 1% (and counting)
+- Market outlook: Shrinking by 1%
 
 #### Option B (Your Offer)
 
@@ -90,12 +90,12 @@ You show weapons manufacturers a spreadsheet (they love spreadsheets):
 - Customer satisfaction: Very high (customers still alive to provide feedback)
 - Market outlook: Expanding (see [Phase 4+](#phase-4-the-expansion-phases-years-4-50))
 
-They choose Option B. Not because they've become better people, but because Option A is shrinking and Option B is growing.
+They choose Option B. Not because they've had a moral awakening, but because their shareholders can read a market forecast. Weapons manufacturers don't have feelings, but they do have quarterly earnings calls.
 
 
 ### (Legal) Bribe Category #2: The True Believers (Early Adopters)
 
-**Who you're (legally) bribing:** Humans who believe in curing diseases AND want {{< var victory_bond_annual_return_pct >}} returns on the investment. These exist. They're called "effective altruists" except rich.
+**Who you're (legally) bribing:** Humans who believe in curing diseases AND want to get rich doing it. These exist. They're called "effective altruists" except they also want a yacht. On Wishonia we call them "normal," but on Earth apparently wanting to do good AND get paid for it is a whole personality type.
 
 
 **The (legal) bribe you offer:** Seed the referendum with {{< var campaign_phase1_budget >}} in Phase 1 funding (the full referendum costs {{< var treaty_campaign_viral_referendum_base_case >}}, with the remainder raised as momentum builds). In return, they receive [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) with board representation on the issuing corporation. They get {{< var victory_bond_annual_return_pct >}} returns PLUS early-mover status in a {{< var treaty_annual_funding >}}/year market.
@@ -104,23 +104,21 @@ They choose Option B. Not because they've become better people, but because Opti
 
 **What they get:** Board seats on the corporation that issues the bonds, plus {{< var victory_bond_annual_return_pct >}} returns for as long as the treaty holds. It's like buying stock in democracy, except it's legal and called "philanthropy."
 
-**Why this works:** Rich people enjoy both money AND power. You're offering both. This is called "understanding your customer."
+**Why this works:** Rich people enjoy both money AND telling other people what to do. You're offering both. On Wishonia this combination is called "a job." On Earth it's called "being on a board."
 
 ### (Legal) Bribe Category #3: Regular People (Everyone Else)
 
 **Who you're (legally) bribing:** {{< var treaty_campaign_voting_bloc_target_nounit >}} regular humans ({{< var global_population_activism_threshold_pct >}} of your species, which history proves is enough to change anything). It's like reaching critical mass, except instead of a nuclear explosion it's democracy (much less lethal).
 
-**The (legal) bribe you offer:** Vote on the referendum via [wishocratic slider](../solution/wishocracy.qmd). Get paid referral bonuses for recruiting other voters. The referendum budget includes {{< var treaty_campaign_viral_referendum_base_case >}} for [paid referral bonuses](global-referendum.qmd) that make sharing your voting link financially attractive.
+**The (legal) bribe you offer:** Vote on the referendum via [wishocratic slider](../solution/wishocracy.qmd). Get paid [referral bonuses](global-referendum.qmd) for recruiting other voters. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
 
-![Vote on referendum, get points. Treaty passes. Points become money. Democracy gamified itself into accidentally working.](/assets/images/roadmap/roadmap-section-legal-bribe-category-3-regular-people-everyone-else-bw-academic.jpg)
-
-**What happens after:** Treaty passes. {{< var treaty_annual_funding >}}/year flows to clinical trials. You benefit because diseases get cured faster and your healthcare improves. You also helped create the political mandate that makes repeal politically suicidal.
+**What happens after:** Treaty passes. {{< var treaty_annual_funding >}}/year flows to clinical trials. Diseases get cured faster. Your healthcare improves. Also, you helped create a political mandate that {{< var treaty_campaign_voting_bloc_target_nounit >}} people will defend with the ferocity of humans who were promised something.
 
 **Why this works:** Humans love having opinions. Humans love getting paid. Humans (allegedly) love not dying. This combines all three. When {{< var global_population_activism_threshold_pct >}} of the population has voted on something, politicians experience what you call "responsive governance."
 
 ### (Legal) Bribe Category #4: Politicians (The Elected Paper Recipients)
 
-**Who you're (legally) bribing:** Humans whose job is "get elected by promising things, then do whatever the people with papers want." You're just offering more papers than the bomb people, and making their drive to stay employed align with not killing everyone.
+**Who you're (legally) bribing:** Humans whose job is "get elected by promising things, then do whatever the people with papers want." Politicians are simple organisms with one evolutionary drive: reelection. Currently, weapons manufacturers feed this drive. You're going to feed it better, the way you'd lure a dog away from garbage with a steak.
 
 ![Three ways to move politicians: bribe their campaign, threaten their job, or make them rich. You built a machine with three bribe settings.](/assets/images/roadmap/roadmap-section-legal-bribe-category-4-politicians-the-elected-paper-recipients-bw-academic.jpg)
 
@@ -132,7 +130,7 @@ They choose Option B. Not because they've become better people, but because Opti
 
 - **Papers for campaigns:** Massive Super PAC funding (legal bribery)
 - **Votes for staying employed:** Referendum voters who will vote for treaty supporters
-- **Papers for themselves:** Personal VICTORY Incentive Alignment Bond access
+- **Post-office rewards:** Fellowships, board seats, and speaking circuits for politicians who vote yes
 - **Power to reward friends:** Direct a portion of the 1% Treaty Fund's {{< var treaty_annual_funding >}} to their home districts (funding pragmatic clinical trials and building decentralized institutes of health for decades of ribbon-cutting ceremonies)
 
 #### The choice you give them
@@ -157,7 +155,7 @@ You want to end war and disease. You need {{< var treaty_campaign_total_cost >}}
 
 ![Phase one: collect papers. Phase two: collect more papers. Phase three: 1 billion people sign, world changes. Bureaucracy saves humanity.](/assets/images/roadmap/roadmap-section-the-paper-collection-timeline-from-0-to-ending-death-bw-academic.jpg)
 
-1.  **Phase 1: Proof That Voting Works (Months 1-3).** You build a simple version of **[Wishocracy](../solution/wishocracy.qmd)**. Basically a referendum platform where humans vote on whether to redirect 1% of the military budget to curing diseases. If anyone uses it, you've proven humans will participate in democracy when you make it easy and give them points. You show this to angel investors who understand that a working prototype is worth funding.
+1.  **Phase 1: Proof That Voting Works (Months 1-3).** You build a simple version of **[Wishocracy](../solution/wishocracy.qmd)**. Basically a referendum platform where humans vote on whether to redirect 1% of the military budget to curing diseases. If anyone uses it, you've proven humans will participate in democracy when you make it easy and give them points. You show this to angel investors. Angel investors are humans who give you papers based on a PowerPoint and a dream. On Wishonia this is called "mental illness," but on Earth it's called "Silicon Valley."
 2.  **Phase 2: Scale the Marketing, Hire Professional Bribers (Months 4-18).** Humans will vote when you make it easy and reward participation. You've proven that. Now you raise more papers from venture capitalists (humans who gamble professionally while wearing suits). You use these papers to market the referendum to millions of voters. You also hire your first professional lobbyists. Their actual job is "convince politicians that things are good."
 3.  **Phase 3: The Big Paper Sale (Months 19-36).** This is the final boss level. You launch **[VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** to raise the full {{< var treaty_campaign_total_cost >}} you need. You overwhelm the opposition, run a global "please don't die" advertising campaign, and get the **[1% treaty](../solution/1-percent-treaty.qmd)** signed by actual governments who thought weapons were the only option.
 
@@ -190,20 +188,20 @@ As treaty percentage increases, IAB funding scales proportionally (all values be
 
 | Stage | Year | Treaty % | Political Incentive Pool | What Happens |
 |:------|:-----|:---------|:------------------------|:-------------|
-| 1 | 1-3 | 1% | {{< var iab_political_incentive_funding_annual >}}/year | Treaty passes, cures begin |
-| 2 | 4-7 | 2% | $5.44B/year | Politicians compete to expand |
-| 3 | 8-12 | 5% | $13.6B/year | Defense lobby can't compete |
-| 4 | 13-20 | 10% | $27.2B/year | War becomes economically obsolete |
-| 5 | 21-35 | 25% | $68B/year | Superpowers compete on health outcomes |
-| 6 | 36-50 | 50%+ | $136B+/year | Full transformation |
+| 1 | 1-3 | 1% | {{< var iab_political_incentive_funding_annual >}}/year | Treaty passes. Humans cautiously try not dying. |
+| 2 | 4-7 | 2% | $5.44B/year | Politicians compete to expand (they've discovered voters like living) |
+| 3 | 8-12 | 5% | $13.6B/year | Health lobby rivals defense lobby. Lobbyists switch suits. |
+| 4 | 13-20 | 10% | $27.2B/year | "Funded pragmatic clinical trials" becomes the most rewarded phrase in politics |
+| 5 | 21-35 | 25% | $68B/year | Superpowers compete on health outcomes (much less radioactive) |
+| 6 | 36-50 | 50%+ | $136B+/year | Historians write confused books about why this took so long |
 
 ![As more countries join, the bribe pool gets bigger. Corruption scales beautifully when it's trying to save lives.](/assets/images/roadmap/roadmap-section-incentive-growth-chart-bw-academic.jpg)
 
 ### Here's Why It Keeps Growing
 
-**VICTORY Incentive Alignment Bond investors** are satisfied at 1%. They get their {{< var victory_bond_annual_return_pct >}} returns regardless of expansion.
+**VICTORY Incentive Alignment Bond investors** get {{< var victory_bond_funding_pct >}} of all treaty funds. At 1%, that's {{< var victory_bond_annual_return_pct >}} returns. At 2%, it doubles. At 10%, they're collecting ten times their original payout. This creates a permanent class of wealthy humans whose income grows every time the treaty expands, which means they will independently pressure politicians for expansion without being asked. You've built a defense lobby in reverse. Except instead of lobbying for more bombs, they're lobbying for more not-bombs. On Wishonia this is called "obvious." On Earth it's called "disruptive."
 
-**Politicians** see their [IAB-funded rewards](../appendix/incentive-alignment-bonds-paper.qmd) grow with each expansion. By Stage 4, the political incentive pool ($27.2B/year) exceeds all current global lobbying combined. "Support pragmatic clinical trial funding" becomes the single most rewarded political position on Earth.
+**Politicians** see their [IAB-funded rewards](../appendix/incentive-alignment-bonds-paper.qmd) grow with each expansion. By Stage 4, the political incentive pool ($27.2B/year) exceeds all current global lobbying combined. At that point, "I support pragmatic clinical trial funding" becomes the most profitable sentence a politician can say, which means they will say it constantly, which means they will eventually believe it. This is how your species forms convictions.
 
 ### The Endgame
 
@@ -212,8 +210,7 @@ By 2075, the math becomes irresistible:
 - $1.36+ trillion flows to health annually
 - $136+ billion funds political incentives (more than all lobbying ever)
 - $1.088+ trillion funds pragmatic clinical trials
-- War is economically obsolete
 
-The 1% treaty isn't the goal. It's the proof of concept. The IAB mechanism ensures the system keeps ratcheting upward because the people with the most money have the most to gain from ratcheting it upward. Eventually military spending becomes a historical curiosity, like jousting or the telegraph or paying for music.
+The 1% treaty isn't the goal. It's the proof of concept. The IAB mechanism creates pressure to expand because the people funding political incentives profit more from each increase. How far it goes depends on whether health spending demonstrably outperforms military spending at keeping populations safe. That's the bet this entire book is making. Given that diseases kill approximately everyone and wars kill approximately fewer people than diseases, the odds seem favorable. But you're humans, so nothing is certain.
 
 ![1.35 trillion moves from killing people to healing them. Some goes to bribing politicians, the rest to actual medicine. Priorities.](/assets/images/roadmap/roadmap-section-the-endgame-bw-academic.jpg)
