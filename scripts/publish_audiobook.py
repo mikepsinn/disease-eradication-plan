@@ -19,7 +19,7 @@ Usage:
     python scripts/publish_audiobook.py --chapter 5             # Single chapter
     python scripts/publish_audiobook.py --force                 # Regenerate everything
     python scripts/publish_audiobook.py --no-sync               # Skip R2 upload
-    python scripts/publish_audiobook.py --no-video              # Skip video stages
+    python scripts/publish_audiobook.py --video                 # Include video stages
     python scripts/publish_audiobook.py --no-audible            # Skip Audible export
     python scripts/publish_audiobook.py --audible-only          # Only run Audible export
     python scripts/publish_audiobook.py --keyframes-only        # Stop after keyframes
@@ -187,7 +187,7 @@ def main():
     parser.add_argument("--list", "-l", action="store_true", help="List chapters and exit")
     parser.add_argument("--dry-run", "-n", action="store_true", help="Text dry-run (skip LLM)")
     parser.add_argument("--no-sync", action="store_true", help="Skip R2 sync step")
-    parser.add_argument("--no-video", action="store_true", help="Skip scene segmentation and video generation")
+    parser.add_argument("--video", action="store_true", help="Include scene segmentation and video generation (off by default)")
     parser.add_argument("--no-audible", action="store_true", help="Skip Audible/ACX export step")
     parser.add_argument("--audible-only", action="store_true", help="Only run Audible/ACX export (skip all other steps)")
     parser.add_argument("--target-rms", type=float, default=-20.0, help="Target RMS for Audible export (default: -20.0 dB)")
@@ -247,7 +247,7 @@ def main():
         sys.exit(1)
 
     # --- Step 3: Scene segmentation ---
-    if not args.no_video:
+    if args.video:
         scene_args = list(shared)
         if args.force:
             scene_args.append("--force")

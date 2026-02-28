@@ -587,6 +587,15 @@ MAX_SLOWDOWN = 1.3  # Maximum stretch factor before keyframe fill kicks in
 VEO_CLIP_DURATION_S = 8.0  # Veo clips are always ~8s
 
 
+def _cleanup_temp_dir(temp_dir: Path) -> None:
+    """Remove temp assembly directory, tolerating Windows file locks."""
+    import shutil
+    try:
+        shutil.rmtree(str(temp_dir), ignore_errors=True)
+    except Exception:
+        pass
+
+
 def _prepare_scene_clip(
     scene: dict,
     clip_path: Path,
@@ -797,20 +806,15 @@ def assemble_chapter_video(
     concat_file.write_text('\n'.join(concat_lines), encoding='utf-8')
 
     audio_duration_s = audio_duration_ms / 1000.0
-    vol = VEO_AMBIENT_VOLUME
-    filter_complex = (
-        f"[0:v]format=yuv420p[vout];"
-        f"[0:a]volume={vol}[veo];"
-        f"[1:a]aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=mono[tts];"
-        f"[veo][tts]amix=inputs=2:duration=longest:dropout_transition=2[mixed]"
-    )
 
+    # Clips are generated with -an (no audio), so concat has no audio stream.
+    # Use TTS narration audio directly as the sole audio track.
     cmd = [
         "ffmpeg", "-y",
         "-f", "concat", "-safe", "0", "-i", str(concat_file),
         "-i", str(audio_path),
-        "-filter_complex", filter_complex,
-        "-map", "[vout]", "-map", "[mixed]",
+        "-filter_complex", "[0:v]format=yuv420p[vout]",
+        "-map", "[vout]", "-map", "1:a",
         "-c:v", "libx264", "-preset", "medium", "-crf", "23",
         "-profile:v", "high",
         "-c:a", "aac", "-b:a", "192k",
@@ -830,34 +834,10 @@ def assemble_chapter_video(
     cmd.append(str(output_path))
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
-        print(f"    [ERROR] ffmpeg mix failed: {result.stderr[:300]}")
-        print(f"    [FALLBACK] Trying TTS-only audio...")
-        cmd_fallback = [
-            "ffmpeg", "-y",
-            "-f", "concat", "-safe", "0", "-i", str(concat_file),
-            "-i", str(audio_path),
-            "-filter_complex", "[0:v]format=yuv420p[vout]",
-            "-map", "[vout]", "-map", "1:a",
-            "-c:v", "libx264", "-preset", "medium", "-crf", "23",
-            "-profile:v", "high",
-            "-c:a", "aac", "-b:a", "192k",
-            "-t", f"{audio_duration_s:.3f}",
-            "-movflags", "+faststart",
-            "-metadata", f"title={chapter['title']}",
-            str(output_path),
-        ]
-        result = subprocess.run(cmd_fallback, capture_output=True, text=True)
-        if result.returncode != 0:
-            # Cleanup temp dir before raising
-            for f in temp_dir.iterdir():
-                f.unlink(missing_ok=True)
-            temp_dir.rmdir()
-            raise RuntimeError(f"ffmpeg assembly failed (both mix and fallback): {result.stderr[:300]}")
+        _cleanup_temp_dir(temp_dir)
+        raise RuntimeError(f"ffmpeg assembly failed: {result.stderr[:500]}")
 
-    # Cleanup temp dir
-    for f in temp_dir.iterdir():
-        f.unlink(missing_ok=True)
-    temp_dir.rmdir()
+    _cleanup_temp_dir(temp_dir)
 
     size_mb = output_path.stat().st_size / 1024 / 1024
     print(f"  [OK] {output_path.name} ({size_mb:.1f} MB)")
