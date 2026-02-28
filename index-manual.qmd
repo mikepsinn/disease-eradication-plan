@@ -291,11 +291,11 @@ Even your own war heroes figured this out. Eisenhower, the human who won WW2, wa
 
 ### The Math
 
-Remember the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift? Treatments reaching patients that many years sooner means billions of people gain years of healthy life. Value each of those life-years at $150,000 (the standard economic valuation), multiply across the global disease burden over the acceleration window, and you get {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in total economic value. Divide that by the {{< var treaty_campaign_total_cost >}} campaign cost, and you get a return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1. Your calculator will display an error, then catch fire. This is correct.
+Remember the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift? Treatments reaching patients that many years sooner means billions of people gain years of healthy life. Value each of those life-years at {{< var standard_economic_qaly_value_usd >}} (the standard economic valuation), multiply across the global disease burden over the acceleration window, and you get {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in total economic value. Divide that by the {{< var treaty_campaign_total_cost >}} campaign cost, and you get a return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1. Your calculator will display an error, then catch fire. This is correct.
 
 ![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
 
-Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} to save one year of healthy human life. Anti-malaria bed nets, the gold standard for keeping humans alive, cost {{< var bed_nets_cost_per_daly >}}. This is {{< var treaty_vs_bed_nets_multiplier >}} cheaper. It beats smallpox eradication ({{< var smallpox_eradication_roi >}} to 1) and childhood vaccinations ({{< var childhood_vaccination_roi >}} to 1), which were humanity's previous greatest hits in the "not dying" genre. Even at {{< var political_success_probability >}} probability of the treaty actually passing (because you're you), the risk-adjusted return is still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than anti-malaria bed nets.
+Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} to save one year of healthy human life. Anti-malaria bed nets, the gold standard for keeping humans alive, cost {{< var bed_nets_cost_per_daly >}}. This is {{< var treaty_vs_bed_nets_multiplier >}} cheaper. It beats smallpox eradication ({{< var smallpox_eradication_roi >}} to 1) and childhood vaccinations ({{< var childhood_vaccination_roi >}} to 1), which were humanity's previous greatest hits in the "not dying" genre. Even if you assume only a {{< var political_success_probability >}} probability of the treaty actually passing (because you're you), the expected return is still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than anti-malaria bed nets.
 
 ## The 5-Step Plan
 
@@ -305,7 +305,7 @@ Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_la
 
 On Wishonia, people do useful things because they're useful. On Earth, you need a financial instrument. So here's one.
 
-An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: {{< var dih_treasury_medical_research_pct >}} to the public good, {{< var victory_bond_funding_pct >}} to investors as returns, and {{< var iab_political_incentive_funding_pct >}} to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors get rich, politicians get reelected, and {{< var dih_treasury_medical_research_pct >}} of the money goes where it's supposed to. Everyone's greed points at the same target. It's a war bond to fund any public good that's currently politically impossible.
+An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: {{< var dih_treasury_medical_research_pct >}} to clinical trials, {{< var victory_bond_funding_pct >}} to investors as a revenue share on treaty funds, and {{< var iab_political_incentive_funding_pct >}} to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors give money, get more money back. Politicians get reelected. {{< var dih_treasury_medical_research_pct >}} goes to curing diseases. The corruption is capped at 20% and fully transparent. The other 80% is uncorruptible public goods funding via [wishocratic allocation](knowledge/solution/wishocracy.qmd). 
 
 Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing.
 
@@ -318,13 +318,13 @@ Remember when your grandparents funded WW2 by buying bonds? They got 4% returns 
 #### What You're Offering
 
 - Dead diseases (objectively better than dead Nazis because diseases kill more people)
-- {{< var victory_bond_annual_return_pct >}} returns (beats Grandma's bonds by 68x)
+- {{< var victory_bond_annual_return_pct >}} annual returns (a revenue share on {{< var victory_bond_funding_pct >}} of treaty funds; if the treaty grows, so do their returns, which turns investors into the world's most motivated lobbyists for expanding it)
 - Not dying from preventable meat failures (this is the big one)
 - Also no Nazis (as a bonus)
 
 This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest of the bribery machine.
 
-![Returns that make Ponzi schemes look conservative (but legal)](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
+![Grandma's war bonds paid 4%. Yours pay 272%. Grandma would be furious if she hadn't died of cancer.](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
 
 #### How the Money Loop Works
 
@@ -354,7 +354,7 @@ You need {{< var global_population_activism_threshold_pct >}} of humanity to vot
 
 Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](/knowledge/strategy/global-referendum.qmd) {{< var global_population_activism_threshold_pct_cite >}}. Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. It's like a cheat code for civilization.
 
-That's 280 million humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get 280 million to vote yes or no on the treaty. {{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to [paid referral bonuses](/knowledge/strategy/global-referendum.qmd) that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
+That's {{< var treaty_campaign_voting_bloc_target_nounit >}} humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get {{< var treaty_campaign_voting_bloc_target_nounit >}} to vote yes or no on the treaty. {{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to [paid referral bonuses](/knowledge/strategy/global-referendum.qmd) that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
 
 ### Step 3: Bribe the Bribers
 
@@ -370,17 +370,17 @@ Military lobbyists currently get $1,813 back per dollar invested in democracy co
 
 #### Your Offer
 
-- Incentive Alignment Bonds: {{< var victory_bond_annual_return_pct >}} returns
+- Same salary, but for lobbying politicians to fund clinical trials instead of cluster bombs
 - Moral status: "Philanthropist" (but you get to keep the money)
 - Legacy: "Accidentally saved humanity while getting rich"
 
-They might switch sides faster than Italy in a world war.
+They might switch sides faster than Italy in a world war. Lobbyists don't have beliefs. They have clients. Give them a better client.
 
 ### Step 4: Purchase Democracy
 
 *It's For Sale Anyway*
 
-Politicians are simple organisms with one evolutionary drive: reelection. Currently, weapons manufacturers feed this drive. You're going to feed it better.
+Politicians need papers and votes to keep their jobs. Currently, weapons manufacturers provide both. You're going to outbid them.
 
 Your explosion manufacturers spend {{< var defense_lobbying_annual >}}/year buying politicians. Your one-time bribery budget is {{< var treaty_campaign_total_cost >}}, which is 8 times their annual spend (and about twice what they spend over a full election cycle). Politicians are surprisingly affordable.
 
@@ -403,7 +403,7 @@ The {{< var treaty_annual_funding >}}/year money volcano erupts:
 - **Defense Contractors**: Keep {{< var defense_sector_retention_pct >}} of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns.
 - **Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} for phase 2 and 3 trials, the treaty pays THEM for each patient that joins their trials.
 - **Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
-- **Investors**: {{< var victory_bond_annual_return_pct >}} returns, which they will assume is a typo until you show them the math, at which point they will assume the math is a typo
+- **Investors**: {{< var victory_bond_annual_return_pct >}} returns, which they will assume is a typo until you show them the math. Returns scale with every treaty expansion, so investors become the world's most aggressive pro-health and anti-war lobbying force. Not a sentence anyone expected to write.
 - **Lobbyists**: Same job, same salary, but their Wikipedia page no longer needs a "Controversies" section
 - **Politicians**: Getting reelected by living voters (a revolutionary strategy)
 - **Regular humans**: Not dying from stupid things (priceless, but also free)

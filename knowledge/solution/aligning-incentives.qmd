@@ -40,7 +40,7 @@ You give them:
 **Your offer** (lobbying for treaty):
 
 - Pay: {{< var family_office_investment_min >}}-{{< var lobbyist_bond_investment_max >}} in bonds
-- Returns: {{< var victory_bond_annual_return_pct >}} annually (for as long as the treaty holds, which is forever unless humanity decides it prefers dying again)
+- Returns: {{< var victory_bond_annual_return_pct >}} annually, for as long as the treaty holds (and since bondholders are billionaires with pre-existing influence over government, good luck repealing it)
 - Legacy: "Accidentally saved humanity while getting rich"
 
 Most people can do this math. You hope.
@@ -181,7 +181,7 @@ The main benefit: pragmatic clinical trials become {{< var dfda_trial_cost_reduc
 
 - Uses existing medical practices (no dedicated sites)
 - Patient's regular doctor enrolls them (one-click)
-- Leverages existing EHR data (no custom infrastructure)
+- Uses existing EHR data (no custom infrastructure)
 - Pragmatic design = minimal monitoring
 - Platform handles regulatory compliance automatically
 

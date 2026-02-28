@@ -179,7 +179,9 @@ The {{< var treaty_annual_funding >}} flows into the 1% Treaty Fund. An **80/10/
 | **VICTORY Incentive Alignment Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **Incentive Alignment Bond Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
-The {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials is then distributed by the actual people of Earth via  Wishocracy, not by a committee of 12 people in a conference room who haven't had a new idea since 1987. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
+Notice what this does: it disentangles money from influence. In current government budgets, the people who provide the money (lobbyists, donors) also control where it goes. Money buys influence, influence redirects money, and the loop is invisible. Here, investors get money ({{< var victory_bond_funding_pct >}}). Politicians get career incentives ({{< var iab_political_incentive_funding_pct >}}). Neither group touches the {{< var dih_treasury_medical_research_pct >}} that goes to clinical trials. The corruption is capped, transparent, and separated from the public goods funding.
+
+The {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials is then distributed by the actual people of Earth via Wishocracy, not by a committee of 12 people in a conference room who haven't had a new idea since 1987. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
 
 - **Patient Subsidies:** The largest portion, creating a market for clinical trials.
 - **Research & Development:** Funding for breakthrough platform technologies.
@@ -219,7 +221,7 @@ The military-industrial complex will LOVE this.
 Why? Because they get to:
 
 1.  **Keep {{< var defense_sector_retention_pct >}} of their budget** (still plenty for bombs)
-2.  **Pivot 1% to biotech** (higher profit margins)
+2.  **Pivot 1% to biotech** (the health market is growing; the bomb market just got 1% smaller)
 3.  **Look like heroes** (rare for arms dealers)
 4.  **Invest in the fund** ([VICTORY Incentive Alignment Bonds](incentive-alignment-bonds.qmd) pay {{< var victory_bond_annual_return_pct >}} annually)
 5.  **Not die of cancer** (even arms dealers get cancer)

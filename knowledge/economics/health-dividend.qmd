@@ -67,7 +67,7 @@ That waiting room empties. Your treatment arrives in your lifetime instead of ce
 
 ## The Cost of Taking Your Time
 
-Disease costs humanity **$397.4 trillion annually** [@disease-economic-burden-109t]. That's more than global GDP ($101 trillion [@global-gdp]). The number sounds wrong because your economists spent centuries measuring productivity without accounting for the humans who stopped being productive on account of being dead. The missing piece is DALYs (Disability-Adjusted Life Years): healthy years deleted by disease. Globally: **{{< var global_annual_daly_burden_nounit >}} DALYs annually** [@ihme-gbd-2021]. That is a large number of years of not being alive. Even by your standards.
+Disease costs humanity **{{< var global_disease_economic_burden_annual >}} annually** [@disease-economic-burden-109t]. That's comparable to global GDP ($101 trillion [@global-gdp]). The number sounds wrong because your economists spent centuries measuring productivity without accounting for the humans who stopped being productive on account of being dead. The missing piece is DALYs (Disability-Adjusted Life Years): healthy years deleted by disease. Globally: **{{< var global_annual_daly_burden_nounit >}} DALYs annually** [@ihme-gbd-2021]. That is a large number of years of not being alive. Even by your standards.
 
 Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years over the full lag period (cumulative across all deaths and disability during the delay, not a single year's burden). The regulatory lag period is not a safety feature. It is a waiting room where people die. You just gave the waiting room a nicer name.
 

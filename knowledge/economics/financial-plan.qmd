@@ -48,7 +48,7 @@ Raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generate
 | Phase | Amount | Activities | Milestone | Difficulty Level |
 |-------|--------|------------|-----------|-----------------|
 | Seed | $250-400M | Platform, policy frameworks, pilots | 50M verified participants | "Convince a few billionaires" |
-| Series A | $500M-1B | Scale to G7 nations | {{< var global_population_activism_threshold_pct >}} global participation (280M people) | "Convince several countries" |
+| Series A | $500M-1B | Scale to G7 nations | {{< var global_population_activism_threshold_pct >}} global participation ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) | "Convince several countries" |
 | Growth | $500M-1.1B | Ratification push in major powers | First $1B disbursement | "Convince the countries with nukes" |
 
 Ranges reflect scenario planning (optimistic to pessimistic). The {{< var treaty_campaign_total_cost >}} target is the base case; upper bounds cover contingencies because convincing nuclear powers to behave rationally occasionally requires overtime.
@@ -63,7 +63,7 @@ The one-time "activation energy" to convince {{< var global_population_2024_noun
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
-| **Global Referendum** | {{< var treaty_campaign_viral_referendum_base_case >}} | Viral referral system, 280M votes, platform development. [Budget details](campaign-budget.qmd#base-case-scenario) |
+| **Global Referendum** | {{< var treaty_campaign_viral_referendum_base_case >}} | Viral referral system, {{< var treaty_campaign_voting_bloc_target_nounit >}} votes, platform development. [Budget details](campaign-budget.qmd#base-case-scenario) |
 | **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion. Outspends pharma + MIC |
 | **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-passage transition, contingency buffer |
 

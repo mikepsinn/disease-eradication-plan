@@ -139,7 +139,11 @@ Four reasons your lawyers will stop hyperventilating:
 3. **No money goes to politicians.** They benefit indirectly: better scores, electoral support, nicer career options. This is how democracy was supposed to work before your species broke it.
 4. **Scores are based on public voting records.** Did they vote YES? Verifiable and ungameable. The {{< var iab_political_incentive_funding_pct >}} fund flows automatically based on treasury inflows. Pure math.
 
-Bribery **corrupts** alignment. IABs **create** it. Wealthy actors already buy policy (pharma spends $300M/year on lobbying, defense contractors spend {{< var defense_lobbying_annual >}}/year). The question isn't "should money influence policy?" but "can you point the money at welfare instead of warfare?" IAB funders will have more influence over which public goods get prioritized. So does the Gates Foundation over malaria. The difference is that IABs are transparent, measurable, and auditable. Most lobbying satisfies zero of those criteria.
+Bribery **corrupts** alignment. IABs **create** it. Wealthy actors already buy policy (pharma spends $300M/year on lobbying, defense contractors spend {{< var defense_lobbying_annual >}}/year). The question isn't "should money influence policy?" but "can you point the money at welfare instead of warfare?"
+
+Here's what makes this structurally different from current lobbying: in the current system, money and influence are inseparable. Give money, get influence over where the money goes, use that to get more money. The loop is opaque and self-reinforcing.
+
+IABs break the loop. Investors give money and get money back ({{< var victory_bond_funding_pct >}} revenue share). That's it. They don't decide which diseases get funded. Politicians get career incentives ({{< var iab_political_incentive_funding_pct >}}). They don't touch the research budget. The remaining {{< var dih_treasury_medical_research_pct >}} flows to clinical trials via [wishocratic allocation](../solution/wishocracy.qmd), controlled by direct democracy, not by the people who paid for it. The corruption is capped at 20%, transparent, and completely separated from the public goods funding. Name a government budget that can say the same.
 
 ### Worked Example: How Senator Smith Votes Yes
 
@@ -237,7 +241,7 @@ Result: Vote yes. The math changed.
 ![All the math a senator does before deciding how to vote. Turns out they can count when money's involved.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-what-actually-happens-bw-academic.jpg)
 
 1. **Pre-vote**: Smith's staff models the yes vote. Score jumps to 72. Reelection odds rise 7 points.
-2. **Lobbying meeting**: Military lobby threatens. But three major contractors already support the treaty ({{< var victory_bond_annual_return_pct >}} returns beat 8%). Threat is empty.
+2. **Lobbying meeting**: Military lobby threatens. But three major contractors already support the treaty (their market is shrinking 1%, the health market is growing, and the bond returns make their pension funds very happy). Threat is empty.
 3. **Campaign finance**: Health advocacy Super PACs have committed $50M nationally. At score 72, she gets $500K in independent support. A no vote sends that $500K to her opponent.
 4. **Constituent mail**: 70% of Texans voted yes in the referendum. Voting against that means explaining why you think they're wrong about not wanting to die.
 5. **The vote**: Smith votes yes. So do 50 others. The bill passes the Senate.
@@ -266,7 +270,7 @@ Smith wins reelection comfortably. Joins the WHO Advisory Board. Chairs the Aspe
 
 [Incentive Alignment Bonds](https://iab.warondisease.org) raise the capital and align the politicians. Treaty revenue splits three ways: {{< var victory_bond_funding_pct >}} to investors ({{< var victory_bond_annual_payout >}}), {{< var iab_political_incentive_funding_pct >}} to political incentives ({{< var iab_political_incentive_funding_annual >}}), and {{< var dih_treasury_medical_research_pct >}} to the part that actually funds treatments ({{< var dih_treasury_to_medical_research_annual >}}).
 
-Everyone profits from treaty expansion. This is the rare financial instrument where "everyone profits" isn't a lie.
+Everyone profits from treaty expansion. If the treaty holds, this is the rare financial instrument where "everyone profits" might actually be true.
 
 ### Why 10% Goes to Political Incentives {#sec-why-ten-pct-scaling-engine}
 
@@ -278,7 +282,7 @@ The {{< var iab_political_incentive_funding_pct >}} allocation creates a **polit
 |:-------------|:-------------------------|:---------------------------|:-----------------------|:-------|
 | 1% | {{< var victory_bond_annual_payout >}}/year | {{< var iab_political_incentive_funding_annual >}}/year | {{< var dih_treasury_to_medical_research_annual >}}/year | Politicians rewarded for passage |
 | 5% | $13.6B/year | $13.6B/year | $108.8B/year | Defense industry pivots to health |
-| 10% | $27.2B/year | $27.2B/year | $218B/year | War becomes economically obsolete |
+| 10% | $27.2B/year | $27.2B/year | $218B/year | Health lobbying starts to rival defense lobbying |
 | 50% | $136B/year | $136B/year | $1.09T/year | Global transformation |
 | 100% | $272B/year | $272B/year | $2.18T/year | Full redirection achieved |
 
@@ -330,15 +334,17 @@ The sections above explain why IABs work. The sections below explain why you sho
 
 A financial instrument that generates massive returns while accidentally curing diseases as a side effect. Like a hedge fund with a conscience, except the conscience is also profitable.
 
-**What you're offering investors:** {{< var victory_bond_annual_return_pct >}}, which beats everything except insider trading and certain federal crimes.
+**What you're offering investors:** {{< var victory_bond_annual_return_pct >}} annually, funded by a share of treaty revenue. That number looks absurd. It should. It's the premium for betting on politicians doing something useful, which is historically a bad bet, but the payout if it works is real.
 
-**The money never stops.** No maturity date. Bondholders get paid until the sun explodes or humanity achieves immortality. Whichever comes first. (Bet on the immortality thing. That's what the bonds are for.)
+**The money doesn't stop (if the treaty holds).** No maturity date. Bondholders get paid as long as the treaty exists, which could be until the sun explodes or humanity achieves immortality. Whichever comes first. (Bet on the immortality thing. That's what the bonds are for.)
+
+"If the treaty holds" is doing a lot of work in that sentence, so let's address it: the treaty creates a class of billionaire bondholders whose personal wealth depends on the treaty surviving and expanding. These are people with enormous unrelated influence over government (media access, campaign donations, social networks, board seats at companies that employ voters). They didn't buy influence over the treaty fund. They bought a revenue share. But their pre-existing influence over everything else means any politician who tries to repeal the treaty is picking a fight with the richest, most politically connected humans on the planet, all of whom have a quarterly earnings call explaining why the treaty should be bigger, not smaller.
 
 ![Money goes in, saves humanity, pays dividends forever. Wall Street called it 'suspiciously sustainable.'](/assets/images/victory-bonds/victory-bonds-section-mechanism-overview-bw-academic.jpg)
 
 ### The Perpetuity Math
 
-[VICTORY Incentive Alignment Bonds](https://iab.warondisease.org) never mature. They just keep paying. Forever. You calculate lifetime value using the perpetuity formula, which is finance-speak for "money printer that never stops":
+[VICTORY Incentive Alignment Bonds](https://iab.warondisease.org) never mature. They keep paying as long as the treaty exists. You calculate lifetime value using the perpetuity formula, which is finance-speak for "money printer that runs as long as the input does":
 
 $$
 \text{Total Value} = \frac{\text{Annual Payment}}{\text{Discount Rate}} = \frac{\$2.72\text{B}}{r}
@@ -354,7 +360,7 @@ $$
 
 Even at a 10% discount rate (as risky as funding a Mars casino), your {{< var treaty_campaign_total_cost >}} becomes worth $27.2B.
 
-As long as humans prefer being alive to being dead, the treaty exists. As long as the treaty exists, you get paid.
+As long as humans prefer being alive to being dead, the treaty exists. As long as the treaty exists, you get paid. And as long as you get paid, you have every reason to make sure the treaty keeps existing. It's a loyalty program for civilization, except the rewards are real and the members are billionaires with senators on speed dial.
 
 ### Security Package and Risk
 
@@ -384,11 +390,11 @@ Two categories of risk (both involving trusting humans, which is historically un
 
 ![Your money is locked for 12 to 36 months while we save civilization. Then you can sell your shares to someone who doesn't believe in extinction.](/assets/images/victory-bonds/victory-bonds-section-investor-specific-risks-bw-academic.jpg)
 
-### What This Beats (Everything)
+### How It Compares (If It Works)
 
 | Investment | Annual Return | Risk | Term | Catch |
 |------------|---------------|------------|------|------|
-| **VICTORY Incentive Alignment Bonds** | **{{< var victory_bond_annual_return_pct >}}** | **High** | **Forever** | **Requires politicians to act rationally** |
+| **VICTORY Incentive Alignment Bonds** | **{{< var victory_bond_annual_return_pct >}}** | **High (binary: treaty passes or it doesn't)** | **Forever** | **Requires politicians to act rationally** |
 | Savings Account | 0.5% | None | Whenever | Loses to inflation |
 | S&P 500 | {{< var average_market_return_pct >}} | Moderate | Whenever | Boring, responsible |
 | Real Estate | 8% | Moderate | 30 years | Requires being a landlord |
@@ -397,9 +403,9 @@ Two categories of risk (both involving trusting humans, which is historically un
 | Medallion Fund | 39% [@top-pe-hedge-funds] | Extreme | N/A | Closed to mortals |
 | Warren Buffett | 20% [@warren-buffett-career-average-return-20-pct] | Moderate | 60 years | Requires being Warren Buffett |
 
-**Fine print:** Returns assume the treaty passes. If politicians prefer dead constituents to living ones, you lose your money. But you'll be too dead from preventable diseases to notice.
+**Fine print:** The {{< var victory_bond_annual_return_pct >}} is a revenue-share return on campaign capital, not a market return on traded securities. It's a fundamentally different kind of bet: you're funding a political campaign, and the return is a permanent share of treaty revenue if that campaign succeeds. The other investments in this table are liquid and diversified. This one is concentrated and binary. The return is enormous because the risk is enormous. If the treaty fails, you lose your money. If politicians prefer dead constituents to living ones, that's exactly what happens. But you'll be too dead from preventable diseases to notice.
 
-**Pitch angle:** Even accounting for "treaty fails to pass" risk, this crushes every legal investment on the table.
+**Pitch angle:** If you believe the treaty can pass, the risk-adjusted return is compelling. If you don't, no return percentage will convince you.
 
 ### Investment Thresholds and Term Sheet
 
@@ -424,7 +430,7 @@ Minimum investment amounts by investor type (your species requires gatekeeping e
 - **Payment frequency**: Annual distributions
 - **Default provisions**: Transparent reporting, third-party audits
 - **Transferability**: Tradable on secondary market after 12 months
-- **Governance**: Grant bondholder board representation
+- **Governance**: Transparent reporting and third-party audits. Bondholders receive money, not influence.
 
 
 #### "This sounds like a Ponzi scheme run by someone who failed math."
@@ -477,7 +483,7 @@ Charity is for people who want to feel good. This is for people who want to get 
 
 ![The more people you save, the more money you make. Capitalism finally discovers that helping people is profitable.](/assets/images/victory-bonds/victory-bonds-section-the-one-page-summary-that-makes-calculators-weep-bw-academic.jpg)
 
-**For investors:** {{< var victory_bond_annual_return_pct >}} annually, forever, with first-lien priority. Perpetual payments that grow as the treaty expands from 1% to 5%+. Side effect: millions of humans continue existing.
+**For investors:** {{< var victory_bond_annual_return_pct >}} annually, for as long as the treaty holds, with first-lien priority. Perpetual payments that grow as the treaty expands from 1% to 5%+. Side effect: millions of humans continue existing.
 
 ![How to make politicians care about the future by promising them good jobs after they stop being politicians. Turns out they like money that comes later too.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-summary-what-iabs-actually-are-bw-academic.jpg)
 

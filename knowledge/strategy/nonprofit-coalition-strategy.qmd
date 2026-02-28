@@ -32,7 +32,7 @@ This is not an ideological claim. It's arithmetic. The kind where you multiply n
 Every year:
 
 * Military spending: {{< var global_military_spending_annual_2024 >}}
-* Global medical research (all sources): {{< var global_med_research_spending >}} (of which only $4.5B funds government clinical trials, the denominator in the {{< var military_to_government_clinical_trials_spending_ratio >}}x ratio above)
+* Global medical research (all sources): {{< var global_med_research_spending >}} (of which only {{< var global_government_clinical_trials_spending_annual >}} funds government clinical trials, the denominator in the {{< var military_to_government_clinical_trials_spending_ratio >}}x ratio above)
 * Military budgets: Rising by hundreds of billions annually
 * Medical research budgets: Facing **real-term cuts** [@nih-funding-cuts-brain-drain]
 
@@ -61,7 +61,7 @@ If your mission is:
 * promoting peace
 * stabilizing the biosphere
 
-...the single highest-leverage thing you can do is:
+...the single most impactful thing you can do is:
 
 **Help redirect 1% of global military budgets toward hyper-efficient pragmatic clinical trials.**
 
@@ -138,8 +138,8 @@ Right now, every grant you win is a grant another org loses. The bucket is shrin
 A 1% treaty grows the bucket by {{< var treaty_annual_funding >}}/year.
 Everyone gets funded.
 Malaria gets cured AND Alzheimer's gets cured.
-You stop writing proposals and start governing the fund.
-This is like discovering that instead of fighting over one pizza, you can just order infinite pizzas.
+You stop writing proposals and start getting paid for results.
+This is like discovering that instead of fighting over one pizza, you can just order more pizzas than anyone can eat.
 Except the pizzas are billions of dollars and the ordering is international treaty ratification.
 
 ![Current system: everyone fights over one bucket. New system: bucket gets bigger, everyone stops fighting. You needed a diagram for this.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-the-zero-sum-trap-vs-the-positive-sum-solution-bw-academic.jpg)
@@ -154,7 +154,7 @@ For the first time in 80 years, everything is going wrong at the same time. This
 * climate disasters have shifted public opinion from "debatable" to "my house is underwater"
 * pandemics exposed the cost of underfunding resilience
 * AI and biotech make accelerated progress possible
-* leaders are searching for high-leverage, unifying narratives (and finding none, which is where you come in)
+* leaders are searching for big, unifying narratives (and finding none, which is where you come in)
 
 You cannot pass a resource-reallocation treaty when people feel safe, rich, and complacent. Comfortable humans don't change things. Uncomfortable humans change everything.
 
@@ -197,7 +197,7 @@ You should.
 
 But decentralized trials alone don't solve the fundamental resource problem.
 
-**Decentralized trials scale infinitely better when the resource stream feeding them is over 10x larger.**
+**Decentralized trials scale dramatically better when the resource stream feeding them is over 10x larger.**
 
 If you build the most efficient trial system in the world but the budget for clinical progress is shrinking, you still lose. You've built a beautiful garden hose attached to a pipe with no water.
 
@@ -263,7 +263,7 @@ But that single percentage point:
 * funds global decentralized clinical trials
 * makes every nonprofit's mission dramatically more feasible
 
-It is the highest-leverage bargain available to humanity.
+It is the best bargain available to humanity.
 
 ## On Bribing Nonprofits (Legally)
 
@@ -283,27 +283,25 @@ The nonprofit's most rational path to maximizing their budget becomes: be your m
 
 Even performance grants get absorbed into general operations. "We hired three more grant writers!" Congratulations. You've invented a machine that converts donated money into more requests for donated money.
 
-The fix: Give leaders personal equity through **VOTE points**, future claims on the [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) and the 1% Treaty Fund. The Executive Director's personal wealth is now tied to treaty success. Their Tesla depends on it.
+The fix: Give leaders personal referral bonuses tied to campaign results. Every verified referendum vote their organization drives earns them a direct payout from [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). The Executive Director's personal wealth is now tied to treaty success. Their Tesla depends on it.
 
 Your species responds better to personal wealth than organizational mission statements. This is not a criticism. It's a design parameter.
 
 ### The Real Prize: Stop Begging Forever
 
-The performance grants and VOTE points are just the appetizer. The real prize is never writing a grant proposal again.
+The performance grants and referral bonuses are just the appetizer. The real prize is never writing a grant proposal again.
 
-The 1% Treaty Fund receives {{< var treaty_annual_funding >}} annually. Your [decentralized institutes of health](../solution/dih.qmd) governs this fund, allocating multi-billion dollar budgets to specialized institutes: Mental Health, Aging, whatever issue your organization addresses.
-
-Who controls these billions? The coalition of nonprofits who made the treaty happen. You helped create it. You govern it. This is the nonprofit equivalent of "I don't want a fish. I want to own the lake."
+The 1% Treaty Fund receives {{< var treaty_annual_funding >}} annually. Your [decentralized institutes of health](../solution/dih.qmd) allocates multi-billion dollar budgets to specialized institutes: Mental Health, Aging, whatever issue your organization addresses. When the treaty passes, that's {{< var treaty_annual_funding >}} of new money flowing to the exact diseases your organization exists to fight. You don't need influence. You need the treaty to pass.
 
 **Option A:** Keep competing for finite grants forever. Write proposals. Beg foundations. Hope your competitor doesn't write a better proposal.
 
-**Option B:** Join the coalition. Help pass the treaty. Collectively govern a multi-billion dollar annual treasury dedicated to your mission.
+**Option B:** Join the coalition. Help pass the treaty. Get paid referral bonuses for every verified referendum vote you drive, and watch {{< var treaty_annual_funding >}}/year flow to your disease area.
 
-One involves begging. The other involves being the person everyone begs to.
+One involves begging. The other involves getting paid.
 
-### Earning Your Stake
+### How You Get Paid
 
-A partner's governance stake is based on verified contributions during the campaign: funds raised, referendum votes driven, and in-kind contributions credited. Contribute more, govern more. It's the same incentive structure that makes capitalism work, except pointed at curing diseases instead of selling sugar water to people who already have diabetes.
+Direct referral bonuses for verified contributions during the campaign: funds raised and referendum votes driven. More votes, more money. It's the same incentive structure that makes capitalism work, except pointed at curing diseases instead of selling sugar water to people who already have diabetes.
 
 ## The Bottom Line
 

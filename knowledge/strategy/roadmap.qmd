@@ -95,13 +95,13 @@ They choose Option B. Not because they've had a moral awakening, but because the
 
 **Who you're (legally) bribing:** Humans who believe in curing diseases AND want to get rich doing it. These exist. They're called "effective altruists" except they also want a yacht. On Wishonia we call them "normal," but on Earth apparently wanting to do good AND get paid for it is a whole personality type.
 
-**The (legal) bribe you offer:** Give {{< var campaign_phase1_budget >}} to get the referendum started (the full thing costs {{< var treaty_campaign_viral_referendum_base_case >}}, but you don't need all of it upfront because humans love joining things that are already working). In return, they get [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd), a seat on the board of the corporation that issues them, and {{< var victory_bond_annual_return_pct >}} returns. They're first in line for a {{< var treaty_annual_funding >}}/year pie that didn't exist before they showed up.
+**The (legal) bribe you offer:** Give {{< var campaign_phase1_budget >}} to get the referendum started (the full thing costs {{< var treaty_campaign_viral_referendum_base_case >}}, but you don't need all of it upfront because humans love joining things that are already working). In return, they get [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) paying {{< var victory_bond_annual_return_pct >}} annually. They're first in line for a {{< var treaty_annual_funding >}}/year pie that didn't exist before they showed up.
 
 **What they fund:** The [Global Referendum](global-referendum.qmd) marketing campaign. Getting {{< var treaty_campaign_voting_bloc_target_nounit >}} people to learn the referendum exists and vote on it.
 
-**What they get:** A seat at the table, {{< var victory_bond_annual_return_pct >}} returns for as long as the treaty holds, and the ability to tell people at dinner parties that they helped cure diseases. On Earth, this last part is apparently worth more than the money.
+**What they get:** {{< var victory_bond_annual_return_pct >}} returns for as long as the treaty holds. And since their personal wealth now depends on the treaty surviving, they will use their considerable pre-existing influence over government, media, and other humans to make sure nobody repeals it. You didn't buy their influence. You bought their self-interest. Their influence comes free.
 
-**Why this works:** Rich people enjoy both money AND telling other people what to do. You're offering both. On Wishonia this combination is called "a job." On Earth it's called "being on a board."
+**Why this works:** You give them money. They give you money back, plus more money. On Wishonia this is called "a transaction." On Earth it's called "investing," and humans will do absolutely anything for it.
 
 ### (Legal) Bribe Category #3: Regular People (Everyone Else)
 
@@ -145,6 +145,8 @@ Most politicians are excellent at counting votes. The math becomes simple even f
 Each category of bribe creates the next. Rich people fund the referendum. The referendum creates voters. Voters pressure politicians. Politicians pass the treaty. The treaty makes money. Money funds more cures. Cures prove it works. More people demand expansion.
 
 This is the first time in your history that "I prefer being alive" has been organized into a political position. This seems obvious, but for humanity it's revolutionary.
+
+And unlike current government, where money and influence are tangled in ways nobody can trace, this system keeps them separate. Investors get money ({{< var victory_bond_funding_pct >}}). Politicians get career incentives ({{< var iab_political_incentive_funding_pct >}}). Neither group touches the {{< var dih_treasury_medical_research_pct >}} that goes to clinical trials via [wishocratic allocation](../solution/wishocracy.qmd). The corruption is capped at 20%, transparent, and completely disentangled from the public goods funding. Your current system can't say any of those things.
 
 ### The Timeline: From $0 to Ending Death
 

@@ -191,9 +191,9 @@ Your decentralized framework will run {{< var dfda_trial_cost_reduction_factor >
 
 **Response**: Vote at warondisease.org (2 min), share (15 min). Total: 17 minutes. You spent longer than that choosing what to watch on Netflix last night.
 
-If diseases get cured, you save hundreds of hours in doctor visits and sick days, plus potentially tens of thousands of hours of extra life. That's a 111,000x return on 27 minutes.
+If diseases get cured, you save hundreds of hours in doctor visits and sick days, plus potentially tens of thousands of hours of extra life. That's a 176,000x return on 17 minutes.
 
-![Spend 27 minutes now, gain 50,000 hours later. That's a 111,000x return. Better than Bitcoin, and you don't die at the end.](/assets/images/faq/faq-section-time-investment-roi-bw-academic.jpg)
+![Spend 17 minutes now, gain 50,000 hours later. That's a 176,000x return. Better than Bitcoin, and you don't die at the end.](/assets/images/faq/faq-section-time-investment-roi-bw-academic.jpg)
 
 ## "This Is Unrealistic"
 
@@ -280,7 +280,11 @@ You're not declaring war on disease. You're declaring peace with biology. Then l
 
 The difference is what it buys. Current lobbying buys $1 trillion in defense contracts and a pharmaceutical system optimized for chronic treatment over cures. This uses the same mechanics, transparently, to fund clinical trials instead.
 
-Same tool. Opposite direction. The tool was never the problem.
+But here's what makes it structurally better than the current system: in current government, money and influence are tangled together in ways nobody can trace. A defense contractor gives money, gets influence, uses influence to get more money, uses money to get more influence. The corruption is unlimited and invisible.
+
+This system caps corruption at 20% and makes it fully transparent. {{< var victory_bond_funding_pct >}} goes to investors (money for money, no influence attached). {{< var iab_political_incentive_funding_pct >}} goes to political incentives (campaign support and post-office careers for politicians who vote yes). The remaining {{< var dih_treasury_medical_research_pct >}} goes to clinical trials via [wishocratic allocation](../solution/wishocracy.qmd), where every human votes on priorities. That 80% is untouchable by lobbyists, investors, or politicians. No government budget in history has a lower corruption rate.
+
+Same tool. Opposite direction. And a much shorter leash.
 
 ## "It's Unenforceable"
 
@@ -352,7 +356,7 @@ Cutting 1% from military budgets doesn't just move dollars. It frees actual huma
 **Response**: Hire good lawyers. Defense contractors figured this out decades ago. You can too.
 
 - Separate legal entities in each country, zero coordination on political spending
-- Utility token structures with proper exemptions (Reg S, Reg A+)
+- Securities exemptions (Reg D for accredited investors, Reg S for offshore, Reg A+ for everyone else)
 - No shared systems, staff, or communication between political entities
 
 If Lockheed Martin can legally funnel money to politicians across 50 countries, you can legally funnel money toward not dying. This is an addressable legal challenge, not an existential one.
