@@ -29,9 +29,9 @@ Here's your three-step algorithm for fixing this adorable contradiction:
 
 ### Step 1: Collect Papers from Rich People
 
-You convince wealthy humans to give you {{< var treaty_campaign_total_cost >}} in [papers](../solution/incentive-alignment-bonds.qmd) by promising them {{< var victory_bond_annual_return_pct >}} more papers annually. This works because rich people are excellent at counting papers but terrible at not wanting more papers.
+You convince wealthy humans to give you {{< var treaty_campaign_total_cost >}} in [papers](../solution/incentive-alignment-bonds.qmd) by promising them returns that make military contractors nervous. This works because rich people are excellent at counting papers but terrible at not wanting more papers.
 
-The pitch is simple: "Give us papers now, get 2.7 times more papers forever, also maybe don't die from preventable diseases." Even humans who think vaccines cause 5G can understand "more papers good."
+The pitch is simple: "Give us papers now, get more papers forever, also maybe don't die from preventable diseases." Even humans who think vaccines cause 5G can understand "more papers good."
 
 ### Step 2: Tell Humans the Referendum Exists
 
@@ -53,37 +53,7 @@ Politicians discover they've always been very passionate about curing diseases. 
 
 The treaty passes. {{< var treaty_annual_funding >}}/year flows from murder to medicine. Forever. Or until the sun explodes. Whichever happens first (probably the sun).
 
-## Detailed Execution: The Five-Step Cascade
-
-For humans who need more steps (you do seem to enjoy steps), here's the same thing with extra details. It's like a flowchart, except instead of managing a warehouse it's saving your species.
-
-**Step 1: Sell Papers That Make More Papers**
-
-Raise {{< var treaty_campaign_total_cost >}} by selling [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) to investors. These are like war bonds except backwards. Instead of funding death, they fund not-death. This confuses some humans, but the {{< var victory_bond_annual_return_pct >}} returns help them overcome their confusion.
-
-**Step 2: The Great Internet Clicking**
-
-Launch a [global referendum](global-referendum.qmd) and market it until {{< var treaty_campaign_voting_bloc_target_nounit >}} people have voted. This is {{< var global_population_activism_threshold_pct >}} of your species. History shows that's the magic number where governments can no longer pretend not to notice. It's like reaching critical mass, except instead of a nuclear explosion it's democracy (much less lethal).
-
-![3.5 percent of Earth votes yes. Super PAC bribes politicians. Policy changes. You invented democracy the long way round.](/assets/images/roadmap/roadmap-section-step-2-the-great-internet-clicking-bw-academic.jpg)
-
-**Step 3: Purchase Democracy (It's For Sale Anyway)**
-
-[Deploy papers to politicians](../legal/election-law.qmd) via Super PACs, which are like regular PACs but super. You have {{< var treaty_campaign_voting_bloc_target_nounit >}} voters demanding the treaty and a budget that makes military lobbyists nervous. Politicians experience what you call "a change of heart" but what mathematicians call "responding to incentives."
-
-**Step 4: Treaty Achieves Existence**
-
-A [1% treaty](../solution/1-percent-treaty.qmd) passes. {{< var treaty_annual_funding >}} annually begins flowing from the murder budget to the medicine budget. Diseases start getting cured. Death becomes slightly less inevitable. Investors get very wealthy. Everyone acts surprised, even though the math was obvious.
-
-**Step 5: The Success Spiral (Where Things Get Fun)**
-
-Your 1% Treaty Fund finances cures. Cures work. People notice they're not dying. People become enthusiastic about continuing not-dying. This is the first time in your history that "I prefer being alive" has been organized into a political position.
-
-Political pressure builds to increase the treaty from 1% to 2% to 5%. Each success creates more success. It's a positive feedback loop, like compound interest except instead of money it's humans continuing to exist.
-
-Eventually you spend more on not-dying than dying. This seems obvious, but for humanity it's revolutionary.
-
-## Tactical Implementation: The Sacred (Legal) Bribery Sequence
+## The Sacred (Legal) Bribery Sequence
 
 Humans respond to papers. This is your most important discovery about Earth. You tried appealing to morality (failed). You tried appealing to logic (failed harder). But papers? Papers work every time.
 
@@ -95,7 +65,7 @@ Here's the precise order for distributing papers to specific categories of human
 
 **Who you're (legally) bribing:** Wealthy humans who have many papers and want even more papers, despite already having more papers than they could spend in several lifetimes
 
-**The (legal) bribe you offer:** The full {{< var treaty_campaign_total_cost >}} campaign, including public and investor funding, generates {{< var victory_bond_annual_return_pct >}} more papers annually forever. This is modeled on WW2 War Bonds [@wwii-war-bonds]. Instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns. Instead of funding death it funds not-death.
+**The (legal) bribe you offer:** The full {{< var treaty_campaign_total_cost >}} campaign, including public and investor funding, generates {{< var victory_bond_annual_return_pct >}} more papers annually forever. This is modeled on WW2 War Bonds [@wwii-war-bonds]. Instead of 4% returns it's {{< var victory_bond_annual_return_pct >}} returns. Instead of funding death it funds not-death. Like war bonds except backwards.
 
 ![Defense contractors get 8 percent. Health treaty investors get 272 percent. Math has picked a side.](/assets/images/roadmap/roadmap-section-legal-bribe-category-1-rich-people-the-paper-collectors-bw-academic.jpg)
 
@@ -103,7 +73,7 @@ Here's the precise order for distributing papers to specific categories of human
 
 **Money-back guarantee:** If the treaty fails, they get their papers back via assurance contracts. Funds are escrowed until milestones hit. Automatic refund if targets are missed. This is basically saying "if everyone dies from preventable diseases, you'll be too dead to complain about losing money."
 
-**What happens:** Defense contractors do math. The 8% is their operating margin; the {{< var victory_bond_annual_return_pct >}} is a bond return, not a direct comparison. But that's the point: they invest their profits in the bonds AND pivot their contracts to the new health spending. Both revenue streams beat the status quo. Defense contractors become health contractors. Democracy continues as normal.
+**What happens:** Defense contractors do math. The 8% is their operating margin; the {{< var victory_bond_annual_return_pct >}} is a bond return, not a direct comparison. But that's the point: they invest their profits in the bonds AND pivot their contracts to the new health spending. Both revenue streams beat the status quo. Defense contractors keep {{< var defense_sector_retention_pct >}} of their budget PLUS get bond returns. Defense contractors become health contractors. Democracy continues as normal.
 
 #### The Specific Offer to Bomb Makers
 
@@ -141,7 +111,7 @@ They choose Option B. Not because they've become better people, but because they
 
 ### (Legal) Bribe Category #3: Regular People (Everyone Else)
 
-**Who you're (legally) bribing:** {{< var treaty_campaign_voting_bloc_target_nounit >}} regular humans ({{< var global_population_activism_threshold_pct >}} of your species, which history proves is enough to change anything)
+**Who you're (legally) bribing:** {{< var treaty_campaign_voting_bloc_target_nounit >}} regular humans ({{< var global_population_activism_threshold_pct >}} of your species, which history proves is enough to change anything). It's like reaching critical mass, except instead of a nuclear explosion it's democracy (much less lethal).
 
 **The (legal) bribe you offer:** Vote on the referendum by setting a [wishocratic slider](../solution/wishocracy.qmd) for your preferred military-vs-clinical-trials allocation. Receive VOTE points for participating. Points become money after treaty passes. You literally get paid for having an opinion about not dying.
 
@@ -155,11 +125,11 @@ They choose Option B. Not because they've become better people, but because they
 
 ### (Legal) Bribe Category #4: Politicians (The Elected Paper Recipients)
 
-**Who you're (legally) bribing:** Humans whose job is "get elected by promising things, then do whatever the people with papers want." You're just offering more papers than the bomb people.
+**Who you're (legally) bribing:** Humans whose job is "get elected by promising things, then do whatever the people with papers want." You're just offering more papers than the bomb people. Politicians are simple organisms with one evolutionary drive: reelection. You're just making that drive align with not killing everyone. It's like a judo move but with capitalism.
 
 ![Three ways to move politicians: bribe their campaign, threaten their job, or make them rich. You built a machine with three bribe settings.](/assets/images/roadmap/roadmap-section-legal-bribe-category-4-politicians-the-elected-paper-recipients-bw-academic.jpg)
 
-**The (legal) bribe you offer:** Super PAC support from the {{< var treaty_campaign_budget_lobbying >}} lobbying budget. {{< var treaty_campaign_voting_bloc_target_nounit >}} voters demanding the treaty. Plus personal [VICTORY Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) investment opportunities that beat traditional corruption returns.
+**The (legal) bribe you offer:** Super PAC support from the {{< var treaty_campaign_budget_lobbying >}} lobbying budget. {{< var treaty_campaign_voting_bloc_target_nounit >}} voters demanding the treaty. Plus personal [VICTORY Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) investment opportunities that beat traditional corruption returns. Insurance companies realize healthy people file fewer death claims. Suddenly their lobbyists become your lobbyists. It's beautiful. Like watching a dog realize the mailman has treats.
 
 #### The Package
 
@@ -180,7 +150,13 @@ Most politicians are excellent at counting votes. The math becomes simple even f
 
 **What happens:** Politicians discover they've always been passionate about curing diseases. This sudden passion perfectly coincides with receiving papers and votes. On your planet, that's called "representative democracy."
 
-## The Paper Collection Timeline: From $0 to Ending Death
+### The Success Spiral
+
+Each category of bribe creates the next. Rich people fund the referendum. The referendum creates voters. Voters pressure politicians. Politicians pass the treaty. The treaty makes money. Money funds more cures. Cures prove it works. More people demand expansion.
+
+This is the first time in your history that "I prefer being alive" has been organized into a political position. This seems obvious, but for humanity it's revolutionary.
+
+### The Timeline: From $0 to Ending Death
 
 You want to end war and disease. You need {{< var treaty_campaign_total_cost >}} in papers. You currently have $0 in papers (probably). Here's the recipe.
 
@@ -206,42 +182,6 @@ So you build a four-part machine:
 - **The Swiss Foundation:** This is the "soul." The parent organization owns the corporation, ensuring profits can only fund the mission. You put it in Switzerland because they're good at keeping things neutral and also chocolate.
 
 This structure lets you legally accept papers from everyone (foundations, political donors, and Wall Street) and aim them all at diseases instead of each other.
-
-## The Political Strategy: Co-Opt, Don't Compete
-
-You cannot outspend the military-industrial complex in a head-to-head fight. They have more papers than countries.
-
-![Take the people who profit from death. Make them profit more from life. They switch sides. You call it judo. It's just math with better marketing.](/assets/images/roadmap/roadmap-section-the-political-strategy-co-opt-don-t-compete-bw-academic.jpg)
-
-So you don't fight them. You bribe them (legally).
-
-The strategy is simple: make it more profitable for everyone to support the treaty than to oppose it. Military contractors, politicians, insurance companies. All of them. You're not fighting greed. You're redirecting it, like a judo move but with capitalism.
-
-You use the {{< var treaty_campaign_total_cost >}} from the VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) to offer everyone a better deal:
-
-- Defense contractors keep {{< var defense_sector_retention_pct >}} of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns on bonds
-- Politicians get campaign funding AND {{< var treaty_campaign_voting_bloc_target_nounit >}} voters who want to not die
-- Insurance companies realize healthy people file fewer death claims
-
-Suddenly their lobbyists become your lobbyists. Their political action committees start making action for not-dying instead of dying. It's beautiful. Like watching a dog realize the mailman has treats.
-
-You combine this with overwhelming public pressure from {{< var treaty_campaign_voting_bloc_target_nounit >}} [verified voters](global-referendum.qmd) in the global referendum. The choice for politicians becomes mathematically simple: side with the public and get papers, or side with the status quo and get unemployed.
-
-Politicians are simple organisms with one evolutionary drive: reelection. You're just making that drive align with not killing everyone.
-
-## Your Next Steps
-
-You now know the exact sequence:
-
-1. **Build the legal machine:** [The four-part structure](../legal/legal-framework.qmd) that lets you collect papers from everyone simultaneously
-2. **Sell the bonds:** [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) that offer {{< var victory_bond_annual_return_pct >}} returns to humans who prefer not dying
-3. **Run the vote:** [The global referendum](global-referendum.qmd) marketed until {{< var treaty_campaign_voting_bloc_target_nounit >}} humans have voted on the treaty
-
-It's not complicated. You're just bribing everyone in the correct order with the correct amounts.
-
-![Step one: paperwork. Step two: financial instruments. Step three: everyone votes. Democracy, but in the correct order for once.](/assets/images/roadmap/roadmap-section-your-next-steps-bw-academic.jpg)
-
-Like a recipe, except instead of making bread, you're ending war and disease. And instead of yeast, it's greed.
 
 ## Phase 4+: The Expansion Phases (Years 4-50)
 
