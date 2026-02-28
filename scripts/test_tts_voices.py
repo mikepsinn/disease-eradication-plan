@@ -47,6 +47,11 @@ STYLES = {
     "persuade-evidence": "Generate a voice that sounds like a researcher sharing genuinely exciting findings with a colleague. Intellectually animated, not lecturing. Brisk pace.",
     "persuade-disarming": "Generate a voice that's disarmingly honest and a little vulnerable, like someone saying 'I know this sounds crazy, but hear me out.' Warm and real.",
     "persuade-patient": "Generate a patient, warm voice explaining something counterintuitive to someone smart. Not condescending. Respects the listener's intelligence. Slightly quick.",
+    "persuade-patient-loving": "Generate a patient, loving, warm voice explaining something counterintuitive to someone smart. Not condescending. Respects the listener's intelligence. Speak naturally and at a brisk pace.",
+    "persuade-patient-loving-minimal": "Generate a patient, loving, warm voice explaining something counterintuitive to someone smart.",
+    "persuade-patient-loving-brisk": "Generate a patient, loving, warm voice explaining something counterintuitive to someone smart. Speak naturally and at a brisk pace.",
+    "persuade-patient-loving-energetic": "Generate an energetic, patient, loving, warm voice explaining something counterintuitive to someone smart. Speak naturally and at a brisk pace.",
+    "persuade-patient-loving-friend": "Generate an energetic, patient, loving, warm voice explaining something counterintuitive to a smart friend. Speak naturally and at a brisk pace.",
 
     # --- Blends: dinner party energy + loving/persuasive ---
     "dinner-love-persuade": "Generate a voice with dinner-party energy but genuine love for the listener. Like someone who found the answer to a problem their friend is suffering from and can't wait to share it.",

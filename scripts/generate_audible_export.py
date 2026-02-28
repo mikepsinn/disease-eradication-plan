@@ -247,21 +247,22 @@ def generate_upload_instructions(
         f"",
         f"## File Upload Order",
         f"",
-        f"Upload these files **in order** from the `{output_dir.name}/` folder:",
+        f"Upload these files **in order**:",
         f"",
-        f"| # | Filename | Chapter Title | Duration | RMS (dB) | Peak (dB) |",
-        f"|---|----------|--------------|----------|----------|-----------|",
+        f"| # | File Path | Chapter Title | Duration | RMS (dB) | Peak (dB) |",
+        f"|---|-----------|--------------|----------|----------|-----------|",
     ]
 
     for ch, r in zip(chapters, results):
         num = ch["index"]
         filename = f"{num:02d}-{chapter_slug(ch)}.mp3"
+        full_path = output_dir / filename
         rms_ok = ACX_RMS_MIN <= (r["output_rms"] or -99) <= ACX_RMS_MAX
         peak_ok = (r["output_peak"] or 0) <= ACX_PEAK_MAX
         rms_flag = "" if rms_ok else " (!)"
         peak_flag = "" if peak_ok else " (!)"
         lines.append(
-            f"| {num} | `{filename}` | {ch['title']} | {r['duration_fmt']} | "
+            f"| {num} | `{full_path}` | {ch['title']} | {r['duration_fmt']} | "
             f"{r['output_rms']}{rms_flag} | {r['output_peak']}{peak_flag} |"
         )
 

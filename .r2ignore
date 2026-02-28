@@ -25,6 +25,7 @@ mp3-raw/
 
 # LLM narration text chunks (intermediate, not for distribution)
 narration-txt-chunks/
+narration-txt-chapters/
 
 # Cache sidecars
 *.texthash
