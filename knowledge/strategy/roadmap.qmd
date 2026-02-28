@@ -1,6 +1,6 @@
 ---
 title: The Roadmap to End War and Disease
-description: Defense contractors earn 8% returns killing people. This plan offers 272% returns not killing people. Here are the exact steps from incorporating a nonprofit to ratifying an international treaty, with a budget for every phase.
+description: Here are the exact steps from incorporating a nonprofit to ratifying an international treaty, with a budget for every phase.
 published: true
 tags:
   - roadmap
@@ -21,7 +21,7 @@ This isn't a protest. It's a recipe. Like making bread, except instead of bread 
 
 ## High-Level Strategy: The Three-Step Recipe for Not Dying
 
-Humans love steps. You put them on everything. Step 1: Breathe. Step 2: Keep breathing. Step 3: Try not to die. You're very methodical about staying alive. That makes it curious that you spend 40 times more on weapons than medical research.
+Humans love steps. You put them on everything. Step 1: Breathe. Step 2: Keep breathing. Step 3: Try not to die. You're very methodical about staying alive. That makes it curious that you spend {{< var military_to_clinical_trials_spending_ratio >}} times more on weapons than clinical trials.
 
 ![How to stop spending money on death and start spending it on life, in three simple steps. You'd think this would be obvious.](/assets/images/roadmap/roadmap-section-high-level-strategy-the-three-step-recipe-for-not-dying-bw-academic.jpg)
 
@@ -35,7 +35,7 @@ The pitch is simple: "Give us papers now, get more papers forever, also maybe do
 
 ### Step 2: Tell Humans the Referendum Exists
 
-Use some papers to launch a [global marketing campaign](global-referendum.qmd) so {{< var treaty_campaign_voting_bloc_target_nounit >}} people learn there's a referendum and vote on it. This costs about 90 cents per voter reached. That's cheaper than a candy bar and achieves more than most political movements involving shouting.
+Use some papers to launch a [global marketing campaign](global-referendum.qmd) so {{< var treaty_campaign_voting_bloc_target_nounit >}} people learn there's a referendum and vote on it. This achieves more than most political movements involving shouting.
 
 ![Enough people vote on a referendum. Politicians notice. Democracy, but with more clicking and less dying.](/assets/images/roadmap/roadmap-section-step-2-pay-humans-to-click-yes-bw-academic.jpg)
 
@@ -71,7 +71,7 @@ Here's the precise order for distributing papers to specific categories of human
 
 **Money-back guarantee:** If the treaty fails, they get their papers back via assurance contracts. Funds are escrowed until milestones hit. Automatic refund if targets are missed. This is basically saying "if everyone dies from preventable diseases, you'll be too dead to complain about losing money."
 
-**What happens:** Defense contractors do math. The 8% is their operating margin; the {{< var victory_bond_annual_return_pct >}} is a bond return, not a direct comparison. But that's the point: they invest their profits in the bonds AND pivot their contracts to the new health spending. Both revenue streams beat the status quo. Defense contractors keep {{< var defense_sector_retention_pct >}} of their budget PLUS get bond returns. Defense contractors become health contractors. Democracy continues as normal.
+**What happens:** Defense contractors lose 1% of their revenue but gain access to a new {{< var treaty_annual_funding >}}/year health spending market. They invest profits in bonds ({{< var victory_bond_annual_return_pct >}} returns) AND pivot contracts to the new health spending. Net result: they trade 1% of weapons revenue for bond returns plus health contracts. Defense contractors become health contractors. Democracy continues as normal.
 
 #### The Specific Offer to Bomb Makers
 
@@ -123,7 +123,7 @@ They choose Option B. Not because they've become better people, but because they
 
 ### (Legal) Bribe Category #4: Politicians (The Elected Paper Recipients)
 
-**Who you're (legally) bribing:** Humans whose job is "get elected by promising things, then do whatever the people with papers want." You're just offering more papers than the bomb people. Politicians are simple organisms with one evolutionary drive: reelection. You're just making that drive align with not killing everyone. It's like a judo move but with capitalism.
+**Who you're (legally) bribing:** Humans whose job is "get elected by promising things, then do whatever the people with papers want." You're just offering more papers than the bomb people, and making their drive to stay employed align with not killing everyone.
 
 ![Three ways to move politicians: bribe their campaign, threaten their job, or make them rich. You built a machine with three bribe settings.](/assets/images/roadmap/roadmap-section-legal-bribe-category-4-politicians-the-elected-paper-recipients-bw-academic.jpg)
 
@@ -134,8 +134,8 @@ They choose Option B. Not because they've become better people, but because they
 ![Four rivers of money and pressure, all flowing toward one senator. You call this 'The Package.' The Mafia calls it Tuesday.](/assets/images/roadmap/roadmap-section-the-package-bw-academic.jpg)
 
 - **Papers for campaigns:** Massive Super PAC funding (legal bribery)
-- **Votes for staying employed:** {{< var treaty_campaign_voting_bloc_target_nounit >}} people who will vote for treaty supporters
-- **Papers for themselves:** Personal VICTORY Incentive Alignment Bond access ({{< var victory_bond_annual_return_pct >}} beats insider trading)
+- **Votes for staying employed:** Referendum voters who will vote for treaty supporters
+- **Papers for themselves:** Personal VICTORY Incentive Alignment Bond access
 - **Power to reward friends:** Direct a portion of the 1% Treaty Fund's {{< var treaty_annual_funding >}} to their home districts (funding pragmatic clinical trials and building decentralized institutes of health for decades of ribbon-cutting ceremonies)
 
 #### The choice you give them
@@ -164,7 +164,7 @@ You want to end war and disease. You need {{< var treaty_campaign_total_cost >}}
 2.  **Phase 2: Scale the Marketing, Hire Professional Bribers (Months 4-18).** Humans will vote when you make it easy and reward participation. You've proven that. Now you raise more papers from venture capitalists (humans who gamble professionally while wearing suits). You use these papers to market the referendum to millions of voters. You also hire your first professional lobbyists. Their actual job is "convince politicians that things are good."
 3.  **Phase 3: The Big Paper Sale (Months 19-36).** This is the final boss level. You launch **[VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** to raise the full {{< var treaty_campaign_total_cost >}} you need. You overwhelm the opposition, run a global "please don't die" advertising campaign, and get the **[1% treaty](../solution/1-percent-treaty.qmd)** signed by actual governments who thought weapons were the only option.
 
-> **Feasibility Check:** The full plan costs {{< var treaty_campaign_total_cost >}} to ensure success. But the diplomatic phase alone (getting the treaty signed) historically costs only **$83M**. You raise {{< var treaty_campaign_total_cost >}} to make it highly probable. "Treaty-Ready" status is much cheaper. See [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.qmd).
+> **Feasibility Check:** The diplomatic phase alone is much cheaper than the full campaign. You raise {{< var treaty_campaign_total_cost >}} for high probability. See [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.qmd).
 
 ## The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
 
@@ -189,7 +189,7 @@ The 1% treaty is just the beginning. Like all addictions, not-dying starts with 
 
 The [80/10/10 funding allocation](../appendix/incentive-alignment-bonds-paper.qmd) includes {{< var iab_political_incentive_funding_pct >}} for political incentives via [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). This isn't a fixed cost. It's a **scaling engine**.
 
-As treaty percentage increases, IAB funding scales proportionally:
+As treaty percentage increases, IAB funding scales proportionally (all values below = {{< var iab_political_incentive_funding_annual >}} at 1%, multiplied by treaty percentage):
 
 | Stage | Year | Treaty % | Political Incentive Pool | What Happens |
 |:------|:-----|:---------|:------------------------|:-------------|
