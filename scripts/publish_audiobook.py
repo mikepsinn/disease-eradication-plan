@@ -29,6 +29,7 @@ Usage:
 import sys
 import subprocess
 import argparse
+import hashlib
 import time
 from datetime import datetime
 from pathlib import Path
@@ -38,6 +39,9 @@ if sys.platform == 'win32':
 
 SCRIPTS_DIR = Path(__file__).parent
 PROJECT_ROOT = SCRIPTS_DIR.parent
+sys.path.insert(0, str(SCRIPTS_DIR))
+
+OUTRO_QMD_PATH = PROJECT_ROOT / "knowledge" / "appendix" / "podcast-outro.qmd"
 
 
 def _ts() -> str:
@@ -62,6 +66,109 @@ def run_step(label: str, script: str, args: list[str]) -> bool:
         return False
     print(f"\n[{_ts()}] [OK] {label} ({mins}m{secs:02d}s)")
     return True
+
+
+def print_staleness_summary(config_path: Path, chapter_filter: int | None,
+                           start: int | None, end: int | None) -> None:
+    """Print a summary of which QMD files have changed since last generation."""
+    from lib.audiobook_common import (
+        extract_chapters, chapter_slug, config_name_from_path, get_paths,
+        VARIABLES_YML,
+    )
+    from dih_models.yaml_utils import load_quarto_config
+
+    config = load_quarto_config(config_path)
+    cfg_name = config_name_from_path(config_path)
+    paths = get_paths(cfg_name)
+    chapters = extract_chapters(config)
+
+    # Apply chapter filters
+    if chapter_filter is not None:
+        chapters = [c for c in chapters if c['index'] == chapter_filter]
+    if start is not None:
+        chapters = [c for c in chapters if c['index'] >= start]
+    if end is not None:
+        chapters = [c for c in chapters if c['index'] <= end]
+
+    stale = []
+    cached = []
+    missing = []
+
+    for ch in chapters:
+        slug = chapter_slug(ch)
+        qmd_path = PROJECT_ROOT / ch['path']
+        hash_file = paths.narration_txt / f"{slug}.source_hash"
+        prepared_file = paths.narration_txt / f"{slug}.prepared.txt"
+
+        if not qmd_path.exists():
+            missing.append((ch, "QMD file missing"))
+            continue
+
+        raw = qmd_path.read_text(encoding='utf-8')
+        current_hash = hashlib.sha256(raw.encode('utf-8')).hexdigest()[:16]
+
+        if not prepared_file.exists():
+            stale.append((ch, "no prepared text yet"))
+        elif not hash_file.exists():
+            stale.append((ch, "no hash recorded"))
+        else:
+            old_hash = hash_file.read_text(encoding='utf-8').strip()
+            if old_hash != current_hash:
+                stale.append((ch, "QMD changed"))
+            else:
+                cached.append(ch)
+
+    # Check outro
+    outro_status = None
+    if OUTRO_QMD_PATH.exists():
+        chapters_dir = paths.chapters
+        outro_hash_file = chapters_dir / "podcast-outro.qmdhash"
+        outro_wav = chapters_dir / "podcast-outro.wav"
+
+        qmd_content = OUTRO_QMD_PATH.read_text(encoding='utf-8')
+        hash_input = qmd_content
+        if VARIABLES_YML.exists():
+            hash_input += VARIABLES_YML.read_text(encoding='utf-8')
+        current_hash = hashlib.sha256(hash_input.encode('utf-8')).hexdigest()[:16]
+
+        if not outro_wav.exists():
+            outro_status = ("STALE", "no audio yet")
+        elif not outro_hash_file.exists():
+            outro_status = ("STALE", "no hash recorded")
+        else:
+            old_hash = outro_hash_file.read_text(encoding='utf-8').strip()
+            if old_hash != current_hash:
+                outro_status = ("STALE", "source or variables changed")
+            else:
+                outro_status = ("CACHED", "up to date")
+
+    # Print summary
+    print(f"\n{'=' * 70}")
+    print(f"  [{_ts()}] STALENESS SUMMARY")
+    print(f"{'=' * 70}\n")
+
+    total = len(stale) + len(cached) + len(missing)
+    print(f"  Chapters: {total} total, {len(stale)} stale, {len(cached)} cached, {len(missing)} missing")
+    if outro_status:
+        print(f"  Outro:    [{outro_status[0]}] {outro_status[1]}")
+    print()
+
+    if stale:
+        print("  STALE (will regenerate):")
+        for ch, reason in stale:
+            print(f"    [{ch['index']:2d}] {ch['title']}")
+            print(f"         {ch['path']} ({reason})")
+        print()
+
+    if missing:
+        print("  MISSING:")
+        for ch, reason in missing:
+            print(f"    [{ch['index']:2d}] {ch['title']} - {reason}")
+        print()
+
+    if not stale and not missing and (not outro_status or outro_status[0] == "CACHED"):
+        print("  Everything is up to date. Nothing to regenerate.")
+        print()
 
 
 def main():
@@ -110,6 +217,12 @@ def main():
             sys.exit(1)
         print(f"\n[{_ts()}] [DONE] Audible export complete.")
         return
+
+    # --- Pre-flight: show what's changed ---
+    config_path = Path(args.config)
+    if not config_path.is_absolute():
+        config_path = PROJECT_ROOT / config_path
+    print_staleness_summary(config_path, args.chapter, args.start, args.end)
 
     # --- Step 1: Generate narration text ---
     text_args = list(shared)

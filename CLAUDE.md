@@ -51,6 +51,25 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Used in calculations or 2+ files | One-off cited statistics with inline citations |
 | Aggregate metrics, Monte Carlo values | Historical facts, one-time context comparisons |
 
+## Content Rules
+
+**Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman.
+
+**Financial architecture:** Corruption capped at 20% (transparent), 80% untouchable via wishocracy. Money and influence are disentangled. This is the core selling point vs current government.
+
+| Rule | Do | Don't |
+|------|----|-------|
+| Investors | Money in, more money out (revenue share) | Board seats, governance, influence, "control the fund" |
+| Nonprofits | Mission funded + direct referral bonuses | "Seat at the table", governance stake, tokens, VOTE points |
+| Politicians | Campaign funding + votes + post-office careers | Personal bond investments, direct payments |
+| Regular people | Referral bonuses + diseases get cured | Tokens, ownership, crypto anything |
+| Confidence | "probably irresistible", "the math suggests" | "unstoppable", "inevitable", "guaranteed" |
+| Comparisons | Like with like (margins to margins) | 8% operating margin vs 272% bond return |
+| Treaty durability | Billionaire bondholders have pre-existing influence + motive to keep/expand | "if the treaty holds" without explaining why it will |
+| Cross-chapter | Each chapter gets its own joke version | Same joke verbatim in 2+ chapters |
+| Bond terms | Securities, revenue share, perpetual bonds | Utility tokens, DAO governance |
+| Jargon | Alien voice: "you give them money, they stop dying" | "leverage", "synergy", "stakeholder", "operationalize" |
+
 ## Quick Commands
 
 | Task | Command |

@@ -6,7 +6,7 @@
 
 #### knowledge/appendix/us-efficiency-audit.qmd
 **Title:** United States Efficiency Audit
-**Description:** Systems audit estimating an annual U.S. efficiency gap of $4.90T (95% CI: $3.62T-$6.50T), with $2.45T (95% CI: $1.81T-$3.25T) recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.
+**Description:** Systems audit estimating an annual U.S. efficiency gap of $4.9T (95% CI: $3.62T-$6.5T), with $2.45T (95% CI: $1.81T-$3.25T) recoverable at OECD-median performance across direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency.
 **Stats:** 6,251 words | 731 lines | 16 images | ~33p
 
   - Executive Summary

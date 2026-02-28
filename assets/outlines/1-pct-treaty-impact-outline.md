@@ -2,12 +2,12 @@
 
 **Config:** _quarto-1-pct-treaty-impact.yml
 **Type:** book
-**Files:** 3 | **Words:** 27,811 | **Images:** 87 | **Est. Pages:** ~155
+**Files:** 3 | **Words:** 27,854 | **Images:** 87 | **Est. Pages:** ~155
 
 #### knowledge/economics/1-pct-treaty-impact.qmd
 **Title:** The 1% Treaty: Harnessing Greed to Eradicate Disease
-**Description:** 6.65 thousand diseases (95% CI: 5.70 thousand diseases-8.24 thousand diseases) have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years (95% CI: 324 years-712 years). Redirecting 1% of military spending scales capacity 12.3x (95% CI: 4.2x-61.4x), cutting the timeline to ~36 years (95% CI: 11.6 years-77.1 years) and preventing 10.7 billion deaths (95% CI: 7.40 billion deaths-16.2 billion deaths). At $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.8kx-111.7kx) more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
-**Stats:** 26,100 words | 2,401 lines | 86 images | ~147p
+**Description:** 6.65 thousand diseases (95% CI: 5.7 thousand diseases-8.24 thousand diseases) have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years (95% CI: 324 years-712 years). Redirecting 1% of military spending scales capacity 12.3x (95% CI: 4.2x-61.4x), cutting the timeline to ~36 years (95% CI: 11.6 years-77.1 years) and preventing 10.7 billion deaths (95% CI: 7.4 billion deaths-16.2 billion deaths). At $0.0018 (95% CI: $0.0007-$0.0041)/DALY, 50.3kx (95% CI: 23.8kx-111.7kx) more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.
+**Stats:** 26,143 words | 2,401 lines | 86 images | ~148p
 
   - Abstract
   - Primary Findings
@@ -126,7 +126,7 @@
     - ROI Derivation (Conservative: 637 (95% CI: 569-790):1)
     ![Four simple steps to turn one dollar into 637 dollars. Like a recipe, except the ingredients are spreadsheets and the result is not dying.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-5-roi-derivation-conservative-637-1-95-ci-569-1-790-1-bw-academic.jpg)
     - ROI Derivation (Complete: 84.8M (95% CI: 46.6M-144M):1)
-    - Lives Saved Derivation (10.7 billion deaths (95% CI: 7.40 billion deaths-16.2 billion deaths))
+    - Lives Saved Derivation (10.7 billion deaths (95% CI: 7.4 billion deaths-16.2 billion deaths))
     ![Start with how many people die per day. Do some math. End up with how many you could save if you tried. The middle steps are depressing.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-7-lives-saved-derivation-10-7b-deaths-95-ci-7-39b-deaths-16-bw-academic.jpg)
     - Regulatory Delay Elimination Derivation
     - Annual Recurring Benefits Derivation
