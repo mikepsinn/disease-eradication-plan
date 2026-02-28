@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 220 parameters used in the analysis, organized by type:
+This appendix documents all 219 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 97
+- External sources (peer-reviewed): 96
 - Calculated values: 92
 - Core definitions: 31
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (92 parameters) • [External Data Sources](#sec-external) (97 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
+[Calculated Values](#sec-calculated) (92 parameters) • [External Data Sources](#sec-external) (96 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6289,28 +6289,6 @@ dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATE
 {{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
 
 *~ Medium confidence*
-
-:::
-
-### Drug Discovery to Approval Timeline: 14 years {#sec-drug_discovery_to_approval_years}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Full drug development timeline from discovery to FDA approval. Typical range is 12-15 years based on BIO 2021 and PMC meta-analyses. Breakdown: preclinical 4-6 years + clinical 10.5 years. Using 14 years as central estimate.
-
-**Source**: [@bio-clinical-development-2021]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [12 years, 17 years]
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 12 years and 17 years (±18%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-#### Input Distribution
-
-{{< include ../figures/distribution-drug_discovery_to_approval_years.qmd >}}
-
-*✓ High confidence*
 
 :::
 

@@ -583,7 +583,7 @@ def animate_scenes(
 
 # --- Step E: Assembly ---
 
-MAX_SLOWDOWN = 1.3  # Maximum stretch factor before keyframe fill kicks in
+MAX_SLOWDOWN = 1.3  # Stretch up to this factor is labeled "stretch"; beyond is still stretch but slower
 VEO_CLIP_DURATION_S = 8.0  # Veo clips are always ~8s
 
 
@@ -605,10 +605,9 @@ def _prepare_scene_clip(
 ) -> Path:
     """Create a time-correct clip for one scene.
 
-    Three-tier strategy based on scene duration vs 8s Veo clip:
+    Two strategies based on scene duration vs 8s Veo clip:
       - Trim: scene < 8s, cut the clip shorter
-      - Stretch: scene 8-10.4s, slow down imperceptibly (up to 1.3x)
-      - Keyframe fill: scene > 10.4s, static keyframe then crossfade to stretched clip
+      - Stretch: scene >= 8s, slow down clip to match duration
     """
     duration_ms = scene.get('duration_ms') or (scene.get('end_ms', 8000) - scene.get('start_ms', 0))
     if duration_ms <= 0:
@@ -645,77 +644,16 @@ def _prepare_scene_clip(
             raise RuntimeError(f"ffmpeg stretch failed for scene {scene_idx}: {result.stderr[:300]}")
 
     else:
-        # KEYFRAME FILL: static keyframe -> crossfade -> stretched clip
-        stretched_dur = VEO_CLIP_DURATION_S * MAX_SLOWDOWN  # 10.4s
-        fill_dur = duration_s - stretched_dur
-        crossfade_dur = min(0.5, fill_dur * 0.5)
-
-        if keyframe_path and keyframe_path.exists() and fill_dur > 0.1:
-            kf_segment = temp_dir / f"scene-{scene_idx:03d}-kf.mp4"
-            stretched_clip = temp_dir / f"scene-{scene_idx:03d}-str.mp4"
-
-            # Probe clip resolution so keyframe matches exactly (xfade requires same dimensions)
-            probe = subprocess.run(
-                ["ffprobe", "-v", "error", "-select_streams", "v:0",
-                 "-show_entries", "stream=width,height", "-of", "csv=p=0", str(clip_path)],
-                capture_output=True, text=True,
-            )
-            clip_w, clip_h = (probe.stdout.strip().split(",") if probe.returncode == 0
-                              else ("1280", "720"))
-
-            # Create static keyframe segment scaled to clip resolution
-            cmd_kf = [
-                "ffmpeg", "-y",
-                "-loop", "1", "-i", str(keyframe_path),
-                "-t", f"{fill_dur + crossfade_dur:.3f}",
-                "-vf", f"scale={clip_w}:{clip_h}:force_original_aspect_ratio=decrease,pad={clip_w}:{clip_h}:(ow-iw)/2:(oh-ih)/2",
-                "-c:v", "libx264", "-preset", "fast", "-crf", "18",
-                "-pix_fmt", "yuv420p", "-r", "24",
-                "-an", str(kf_segment),
-            ]
-            result = subprocess.run(cmd_kf, capture_output=True, text=True)
-            if result.returncode != 0:
-                raise RuntimeError(f"ffmpeg keyframe segment failed for scene {scene_idx}: {result.stderr[:300]}")
-
-            # Stretch the Veo clip to MAX_SLOWDOWN (match keyframe fps/pix_fmt for xfade)
-            cmd_str = [
-                "ffmpeg", "-y", "-i", str(clip_path),
-                "-filter:v", f"setpts=PTS*{MAX_SLOWDOWN},fps=24,format=yuv420p",
-                "-t", f"{stretched_dur:.3f}",
-                "-c:v", "libx264", "-preset", "fast", "-crf", "18",
-                "-an", str(stretched_clip),
-            ]
-            result = subprocess.run(cmd_str, capture_output=True, text=True)
-            if result.returncode != 0:
-                raise RuntimeError(f"ffmpeg stretch failed for scene {scene_idx}: {result.stderr[:300]}")
-
-            # Crossfade keyframe into stretched clip
-            cmd_xfade = [
-                "ffmpeg", "-y",
-                "-i", str(kf_segment), "-i", str(stretched_clip),
-                "-filter_complex",
-                f"xfade=transition=fade:duration={crossfade_dur:.2f}:offset={fill_dur:.3f}",
-                "-t", f"{duration_s:.3f}",
-                "-c:v", "libx264", "-preset", "fast", "-crf", "18",
-                "-an", str(out_path),
-            ]
-            result = subprocess.run(cmd_xfade, capture_output=True, text=True)
-            if result.returncode != 0:
-                raise RuntimeError(f"ffmpeg crossfade failed for scene {scene_idx}: {result.stderr[:300]}")
-
-            kf_segment.unlink(missing_ok=True)
-            stretched_clip.unlink(missing_ok=True)
-        else:
-            # No keyframe available: just stretch the full clip
-            setpts = f"PTS*{ratio:.4f}"
-            cmd = [
-                "ffmpeg", "-y", "-i", str(clip_path),
-                "-filter:v", f"setpts={setpts},format=yuv420p",
-                "-t", f"{duration_s:.3f}",
-                "-c:v", "libx264", "-preset", "fast", "-crf", "18",
-                "-an", str(out_path),
-            ]
-            result = subprocess.run(cmd, capture_output=True, text=True)
+        # STRETCH: slow down clip to fill the full scene duration
+        setpts = f"PTS*{ratio:.4f}"
+        cmd = [
+            "ffmpeg", "-y", "-i", str(clip_path),
+            "-filter:v", f"setpts={setpts},format=yuv420p",
+            "-t", f"{duration_s:.3f}",
+            "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+            "-an", str(out_path),
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
             if result.returncode != 0:
                 raise RuntimeError(f"ffmpeg stretch-fallback failed for scene {scene_idx}: {result.stderr[:300]}")
 
@@ -770,7 +708,7 @@ def assemble_chapter_video(
     # --- Pass 1: Prepare time-correct clips ---
     total_video_ms = 0
     prepared = []
-    stats = {"trim": 0, "stretch": 0, "fill": 0, "fill_no_kf": 0}
+    stats = {"trim": 0, "stretch": 0}
 
     for scene in scenes:
         idx = scene['scene_index']
@@ -783,12 +721,7 @@ def assemble_chapter_video(
         clip_path = video_dir / clip_rel
         kf_path = keyframes_dir / _keyframe_filename(slug, idx, aspect)
 
-        if ratio < 1.0:
-            tier = "trim"
-        elif ratio <= MAX_SLOWDOWN:
-            tier = "stretch"
-        else:
-            tier = "fill" if (kf_path.exists()) else "fill_no_kf"
+        tier = "trim" if ratio < 1.0 else "stretch"
         stats[tier] += 1
 
         prepared_path = _prepare_scene_clip(scene, clip_path, kf_path, temp_dir, idx)
@@ -796,8 +729,7 @@ def assemble_chapter_video(
         total_video_ms += dur_ms
         print(f"    Scene {idx}: {dur_ms}ms -> {tier} (ratio {ratio:.2f})")
 
-    fill_total = stats['fill'] + stats['fill_no_kf']
-    print(f"  Strategy: {stats['trim']} trim, {stats['stretch']} stretch, {fill_total} keyframe-fill ({stats['fill_no_kf']} without keyframe)")
+    print(f"  Strategy: {stats['trim']} trim, {stats['stretch']} stretch")
     print(f"  Total video: {total_video_ms/1000:.1f}s for {audio_duration_ms/1000:.1f}s audio")
 
     # --- Pass 2: Concat prepared clips + audio mix ---
