@@ -49,6 +49,9 @@ book:
         href: links.qmd
       - text: "VOTE"
         href: https://WarOnDisease.org
+      - icon: youtube
+        href: https://www.youtube.com/@WarOnDisease
+        aria-label: YouTube
   sidebar:
     collapse-level: 1
     contents:
@@ -79,6 +82,8 @@ book:
   chapters:
     - text: "Start Here"
       href: index.qmd  # ~19p
+    - text: "Get the Book"
+      href: links.qmd
 
     - part: "The Problem"
       chapters:
@@ -271,6 +276,59 @@ metadata:
         status: target
         url: ""
 
+# Book distribution links (used by links_generator.py -> links.qmd)
+links:
+  read:
+    - label: "Read Online"
+      url: "https://manual.WarOnDisease.org"
+      subtitle: "Full book, free, no account needed"
+      primary: true
+    - label: "Download PDF"
+      url: "/How-to-End-War-and-Disease.pdf"
+    - label: "Download EPUB"
+      url: "/How-to-End-War-and-Disease.epub"
+  buy:
+    - label: "All Retailers"
+      url: "https://books2read.com/u/baegEq"
+      subtitle: "Apple Books, Barnes & Noble, Kobo, and more"
+      primary: true
+    - label: "Amazon Paperback"
+      url: "https://www.amazon.com/dp/B0GPLXFMMT"
+    - label: "Amazon Kindle"
+      url: "https://www.amazon.com/dp/B0GPBH77XN"
+    - label: "Goodreads"
+      url: "https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease"
+      subtitle: "Rate & review"
+  listen:
+    - label: "Spotify"
+      url: "https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2"
+      subtitle: "Full audiobook podcast"
+      primary: true
+    - label: "Deezer"
+      url: "https://www.deezer.com/us/show/1002716281"
+      subtitle: "Audiobook podcast"
+    - label: "Podcast Addict"
+      url: "https://podcastaddict.com/podcast/how-to-end-war-and-disease/6814197"
+      subtitle: "Audiobook podcast"
+    - label: "Pocket Casts"
+      url: "https://pca.st/2a0yrrj1"
+      subtitle: "Audiobook podcast"
+    - label: "iHeartRadio"
+      url: "https://www.iheart.com/podcast/269-how-to-end-war-and-disease-325094373/"
+      subtitle: "Audiobook podcast"
+    - label: "YouTube Music"
+      url: "https://music.youtube.com/playlist?list=PLC81064vbLPFbngjHW2CRsvUtSUD2SERQ"
+      subtitle: "Audiobook podcast"
+    - label: "Amazon Music"
+      url: "https://music.amazon.com/podcasts/e820cf41-590f-4171-be02-484e70b93d5e/how-to-end-war-and-disease"
+      subtitle: "Audiobook podcast"
+    - label: "Apple Podcasts"
+      url: "https://podcasts.apple.com/us/podcast/how-to-end-war-and-disease/id1879755497"
+      subtitle: "Audiobook podcast"
+    - label: "Podcast RSS Feed"
+      url: "https://static.warondisease.org/assets/audiobook/manual-paperback/feed.xml"
+      subtitle: "Add to any podcast app"
+
 # Remove "Appendix" prefix from appendix chapters
 # THIS DOESN'T SEEM TO WORK SO I JUST COMMENTED THE APPENDIX LINE BELOW
 language:
@@ -333,6 +391,8 @@ format:
       - file: assets/html/fonts-preload.html
     include-before-body:
       - file: assets/html/page-loader.html
+    include-in-footer:
+      - file: assets/html/generated-footer.html
   epub:
     # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
     filters:

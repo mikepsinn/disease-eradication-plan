@@ -167,11 +167,6 @@ format:
       - economics-overrides.css
     include-in-footer:
       - file: assets/html/generated-footer.html
-      - text: |
-          <p style="text-align: center; margin: 0.5rem 0; font-size: 0.85rem; color: #8b7355;">
-            <strong>Download:</strong>
-            <a href="/drug-development-cost-analysis.pdf" style="color: #8b7355;">PDF</a>
-          </p>
     include-after-body:
       - file: assets/html/site-enhancements-loader.html
     include-in-header:

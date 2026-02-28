@@ -8,7 +8,8 @@ Single script that runs the full audiobook pipeline:
   2. Generate audio (TTS), combine, MP3s, RSS, alignment, subtitles
   3. Scene segmentation (LLM visual scenes with prompts)
   4. Video generation (keyframes + Veo animation + assembly)
-  5. Sync assets to Cloudflare R2
+  5. Audible/ACX export (compliant MP3s + upload instructions)
+  6. Sync assets to Cloudflare R2
 
 Passes all arguments through to the underlying scripts, so you can use
 --chapter, --start, --end, --force, --list, etc.
@@ -19,6 +20,8 @@ Usage:
     python scripts/publish_audiobook.py --force                 # Regenerate everything
     python scripts/publish_audiobook.py --no-sync               # Skip R2 upload
     python scripts/publish_audiobook.py --no-video              # Skip video stages
+    python scripts/publish_audiobook.py --no-audible            # Skip Audible export
+    python scripts/publish_audiobook.py --audible-only          # Only run Audible export
     python scripts/publish_audiobook.py --keyframes-only        # Stop after keyframes
     python scripts/publish_audiobook.py --list                  # List chapters and exit
     python scripts/publish_audiobook.py --dry-run               # Text dry-run only
@@ -78,6 +81,9 @@ def main():
     parser.add_argument("--dry-run", "-n", action="store_true", help="Text dry-run (skip LLM)")
     parser.add_argument("--no-sync", action="store_true", help="Skip R2 sync step")
     parser.add_argument("--no-video", action="store_true", help="Skip scene segmentation and video generation")
+    parser.add_argument("--no-audible", action="store_true", help="Skip Audible/ACX export step")
+    parser.add_argument("--audible-only", action="store_true", help="Only run Audible/ACX export (skip all other steps)")
+    parser.add_argument("--target-rms", type=float, default=-20.0, help="Target RMS for Audible export (default: -20.0 dB)")
     parser.add_argument("--keyframes-only", action="store_true", help="Stop after keyframe generation (skip Veo animation)")
     args = parser.parse_args()
 
@@ -93,6 +99,16 @@ def main():
     # --- List mode: just list from audio script and exit ---
     if args.list:
         run_step("List chapters", "generate_audiobook.py", shared + ["--list"])
+        return
+
+    # --- Audible-only mode: skip everything else ---
+    if args.audible_only:
+        audible_args = ["--config", args.config, "--target-rms", str(args.target_rms)]
+        if args.force:
+            audible_args.append("--force")
+        if not run_step("Audible/ACX export", "generate_audible_export.py", audible_args):
+            sys.exit(1)
+        print(f"\n[{_ts()}] [DONE] Audible export complete.")
         return
 
     # --- Step 1: Generate narration text ---
@@ -149,7 +165,15 @@ def main():
         if not run_step(step_label, "generate_audiobook_video.py", video_args):
             sys.exit(1)
 
-    # --- Step 5: Sync to R2 ---
+    # --- Step 5: Audible/ACX export ---
+    if not args.no_audible:
+        audible_args = ["--config", args.config, "--target-rms", str(args.target_rms)]
+        if args.force:
+            audible_args.append("--force")
+        if not run_step("Audible/ACX export", "generate_audible_export.py", audible_args):
+            sys.exit(1)
+
+    # --- Step 6: Sync to R2 ---
     if args.no_sync:
         print(f"\n[{_ts()}] [DONE] Pipeline complete (--no-sync: skipped R2 upload).")
         return

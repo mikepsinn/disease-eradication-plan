@@ -69,6 +69,7 @@ metadata:
 
   # Social profiles
   linkedin: "https://www.linkedin.com/in/mikesinn"
+  youtube: "https://www.youtube.com/@WarOnDisease"
   # bluesky: ""         # Add if available
 
   # Language
@@ -107,9 +108,68 @@ metadata:
   # Social media
   twitter-site: "https://x.com/warondisease"
   twitter-creator: "https://x.com/warondisease"
+  vote-url: "https://WarOnDisease.org"
 
   # Open Graph
   open-graph: true
+
+# External links (single source of truth for footer, links page, etc.)
+# Generated into: links.qmd, generated-footer.html
+# Run: npm run generate:everything
+links:
+  follow:
+    - label: "YouTube"
+      url: "https://www.youtube.com/@WarOnDisease"
+      subtitle: "@WarOnDisease"
+      footer-label: "&#9654; YouTube"
+    - label: "X / Twitter"
+      url: "https://x.com/warondisease"
+      subtitle: "@warondisease"
+      footer-label: "&#120143; / Twitter"
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/mikesinn"
+      subtitle: "Mike P. Sinn"
+    - label: "GitHub"
+      url: "https://github.com/mikepsinn/disease-eradication-plan"
+      subtitle: "Source code, data, and all papers"
+    - label: "Google Scholar"
+      url: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+      subtitle: "Publications"
+    - label: "ORCID"
+      url: "https://orcid.org/0009-0006-0212-1094"
+      subtitle: "0009-0006-0212-1094"
+    - label: "Goodreads"
+      url: "https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease"
+      subtitle: "Rate & review"
+    - label: "Deezer"
+      url: "https://www.deezer.com/us/show/1002716281"
+      subtitle: "Audiobook podcast"
+    - label: "Podcast Addict"
+      url: "https://podcastaddict.com/podcast/how-to-end-war-and-disease/6814197"
+      subtitle: "Audiobook podcast"
+    - label: "Pocket Casts"
+      url: "https://pca.st/2a0yrrj1"
+      subtitle: "Audiobook podcast"
+    - label: "iHeartRadio"
+      url: "https://www.iheart.com/podcast/269-how-to-end-war-and-disease-325094373/"
+      subtitle: "Audiobook podcast"
+    - label: "YouTube Music"
+      url: "https://music.youtube.com/playlist?list=PLC81064vbLPFbngjHW2CRsvUtSUD2SERQ"
+      subtitle: "Audiobook podcast"
+    - label: "Amazon Music"
+      url: "https://music.amazon.com/podcasts/e820cf41-590f-4171-be02-484e70b93d5e/how-to-end-war-and-disease"
+      subtitle: "Audiobook podcast"
+    - label: "Apple Podcasts"
+      url: "https://podcasts.apple.com/us/podcast/how-to-end-war-and-disease/id1879755497"
+      subtitle: "Audiobook podcast"
+    - label: "Spotify"
+      url: "https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2"
+      subtitle: "Audiobook podcast"
+  action:
+    - label: "Vote"
+      url: "https://WarOnDisease.org"
+      subtitle: "15 seconds. 38 lives saved."
+      primary: true
 
   # Academic statements (for journal submissions)
   funding: "No funding was received. The author notes the irony of writing extensively about optimal resource allocation while being, himself, sub-optimally resourced."

@@ -863,9 +863,14 @@ def generate_outro_audio(
     chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
     outro_wav = chapters_dir / "podcast-outro.wav"
 
-    # Hash-based cache check
+    # Hash-based cache check: hash both QMD source AND _variables.yml
+    # so the outro regenerates when variable values change (e.g. voter_lives_saved)
+    from lib.audiobook_common import VARIABLES_YML
     qmd_content = OUTRO_QMD_PATH.read_text(encoding='utf-8')
-    current_hash = hashlib.sha256(qmd_content.encode('utf-8')).hexdigest()[:16]
+    hash_input = qmd_content
+    if VARIABLES_YML.exists():
+        hash_input += VARIABLES_YML.read_text(encoding='utf-8')
+    current_hash = hashlib.sha256(hash_input.encode('utf-8')).hexdigest()[:16]
     hash_file = chapters_dir / "podcast-outro.qmdhash"
 
     if outro_wav.exists() and not force:
@@ -873,7 +878,7 @@ def generate_outro_audio(
         if old_hash == current_hash:
             print(f"  [CACHED OUTRO] {outro_wav.name}")
             return outro_wav
-        print(f"  [STALE OUTRO] QMD changed ({old_hash or 'none'} -> {current_hash})")
+        print(f"  [STALE OUTRO] source or variables changed ({old_hash or 'none'} -> {current_hash})")
 
     # Build a fake chapter dict so we can reuse generate_chapter_audio()
     outro_chapter = {
@@ -1184,7 +1189,7 @@ def finalize_podcast_mp3(mp3_path: Path) -> Path:
             _retry_fs_op(lambda p=old: p.unlink(), f"clean {old.name}")
             print(f"  [CLEAN] Removed old version: {old.name}")
 
-    _retry_fs_op(lambda: mp3_path.rename(target), f"rename {mp3_path.name}")
+    _retry_fs_op(lambda: mp3_path.replace(target), f"rename {mp3_path.name}")
     print(f"  [HASH] {mp3_path.name} -> {target.name}")
     return target
 

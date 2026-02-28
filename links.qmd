@@ -60,7 +60,6 @@ toc: false
   color: #777;
   margin-top: 0.15rem;
 }
-/* Accent styles for primary actions */
 .link-btn.primary {
   background: #222;
   color: #fff !important;
@@ -112,11 +111,51 @@ toc: false
   Amazon Kindle
 </a>
 
+<a href="https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease" class="link-btn">
+  Goodreads
+  <span class="btn-sub">Rate & review</span>
+</a>
+
 <h2>Listen</h2>
 
 <a href="https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2" class="link-btn primary">
   Spotify
   <span class="btn-sub">Full audiobook podcast</span>
+</a>
+
+<a href="https://www.deezer.com/us/show/1002716281" class="link-btn">
+  Deezer
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://podcastaddict.com/podcast/how-to-end-war-and-disease/6814197" class="link-btn">
+  Podcast Addict
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://pca.st/2a0yrrj1" class="link-btn">
+  Pocket Casts
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://www.iheart.com/podcast/269-how-to-end-war-and-disease-325094373/" class="link-btn">
+  iHeartRadio
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://music.youtube.com/playlist?list=PLC81064vbLPFbngjHW2CRsvUtSUD2SERQ" class="link-btn">
+  YouTube Music
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://music.amazon.com/podcasts/e820cf41-590f-4171-be02-484e70b93d5e/how-to-end-war-and-disease" class="link-btn">
+  Amazon Music
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://podcasts.apple.com/us/podcast/how-to-end-war-and-disease/id1879755497" class="link-btn">
+  Apple Podcasts
+  <span class="btn-sub">Audiobook podcast</span>
 </a>
 
 <a href="https://static.warondisease.org/assets/audiobook/manual-paperback/feed.xml" class="link-btn">
@@ -129,6 +168,83 @@ toc: false
 <a href="https://WarOnDisease.org" class="link-btn primary">
   Vote
   <span class="btn-sub">15 seconds. 38 lives saved.</span>
+</a>
+
+<h2>Follow</h2>
+
+<a href="https://www.youtube.com/@WarOnDisease" class="link-btn">
+  YouTube
+  <span class="btn-sub">@WarOnDisease</span>
+</a>
+
+<a href="https://x.com/warondisease" class="link-btn">
+  X / Twitter
+  <span class="btn-sub">@warondisease</span>
+</a>
+
+<a href="https://www.linkedin.com/in/mikesinn" class="link-btn">
+  LinkedIn
+  <span class="btn-sub">Mike P. Sinn</span>
+</a>
+
+<a href="https://github.com/mikepsinn/disease-eradication-plan" class="link-btn">
+  GitHub
+  <span class="btn-sub">Source code, data, and all papers</span>
+</a>
+
+<a href="https://scholar.google.com/citations?user=RjDd_qcAAAAJ" class="link-btn">
+  Google Scholar
+  <span class="btn-sub">Publications</span>
+</a>
+
+<a href="https://orcid.org/0009-0006-0212-1094" class="link-btn">
+  ORCID
+  <span class="btn-sub">0009-0006-0212-1094</span>
+</a>
+
+<a href="https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease" class="link-btn">
+  Goodreads
+  <span class="btn-sub">Rate & review</span>
+</a>
+
+<a href="https://www.deezer.com/us/show/1002716281" class="link-btn">
+  Deezer
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://podcastaddict.com/podcast/how-to-end-war-and-disease/6814197" class="link-btn">
+  Podcast Addict
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://pca.st/2a0yrrj1" class="link-btn">
+  Pocket Casts
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://www.iheart.com/podcast/269-how-to-end-war-and-disease-325094373/" class="link-btn">
+  iHeartRadio
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://music.youtube.com/playlist?list=PLC81064vbLPFbngjHW2CRsvUtSUD2SERQ" class="link-btn">
+  YouTube Music
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://music.amazon.com/podcasts/e820cf41-590f-4171-be02-484e70b93d5e/how-to-end-war-and-disease" class="link-btn">
+  Amazon Music
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://podcasts.apple.com/us/podcast/how-to-end-war-and-disease/id1879755497" class="link-btn">
+  Apple Podcasts
+  <span class="btn-sub">Audiobook podcast</span>
+</a>
+
+<a href="https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2" class="link-btn">
+  Spotify
+  <span class="btn-sub">Audiobook podcast</span>
 </a>
 
 </div>

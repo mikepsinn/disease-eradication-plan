@@ -3,8 +3,12 @@
 Footer Generator
 ================
 
-Generates a shared footer HTML file with navigation links to all papers/sites,
-extracted from Quarto YAML configs. Similar to papers_qmd_generator.py.
+Generates a single shared footer HTML file used by all Quarto sites.
+Reads social/action links from _quarto-shared-defaults.yml and paper
+listings from all _quarto-*.yml configs.
+
+PDF download links are NOT included here (already in each site's
+page-footer YAML section).
 
 Usage:
     from dih_models.footer_generator import generate_footer_html
@@ -26,56 +30,35 @@ logger = logging.getLogger("dih.footer")
 
 
 def extract_footer_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
-    """
-    Extract footer-relevant info from a Quarto config file.
-
-    Args:
-        config_path: Path to the _quarto-*.yml file
-        config_name: Name of the config (e.g., "iab", "dfda-impact")
-
-    Returns:
-        Dict with title, description, site_url, or None if not publishable
-    """
+    """Extract footer-relevant info from a Quarto config file."""
     config = load_quarto_config(config_path)
-
     if not config:
         return None
-
-    # Skip test and manual configs
     if config_name in ("test", "manual"):
         return None
 
-    # Extract from book or website section
     title = None
     description = None
     site_url = None
-    is_book = False
 
     if "book" in config:
         book = config["book"]
         title = book.get("title")
         description = book.get("description") or book.get("abstract")
         site_url = book.get("site-url")
-        is_book = True
     elif "website" in config:
         website = config["website"]
         title = website.get("title")
         description = website.get("description")
         site_url = website.get("site-url")
 
-    # Skip if no title or URL
     if not title or not site_url:
         return None
 
-    # Get emoji from dih-render section
-    dih_render = config.get("dih-render", {})
-    emoji = dih_render.get("emoji", "")
+    emoji = config.get("dih-render", {}).get("emoji", "")
 
-    # Clean up description for tooltip (escape quotes, limit length)
     if description:
-        # Escape double quotes for HTML attribute
         description = description.replace('"', '&quot;')
-        # Truncate if too long for tooltip
         if len(description) > 200:
             description = description[:197] + "..."
 
@@ -85,32 +68,57 @@ def extract_footer_info(config_path: Path, config_name: str) -> Optional[Dict[st
         "description": description,
         "emoji": emoji,
         "site_url": site_url,
-        "is_book": is_book,
     }
+
+
+def _build_social_links_html(project_root: Path) -> str:
+    """Read links from _quarto-shared-defaults.yml and build vote + social HTML rows."""
+    shared_config = load_quarto_config(project_root / "_quarto-shared-defaults.yml")
+    links = shared_config.get("links", {})
+
+    # Vote / CTA row
+    action_links = links.get("action", [])
+    vote_html = ""
+    if action_links:
+        vote = action_links[0]
+        vote_html = f"""  <p style="margin: 0.5rem 0; font-size: 0.85rem;">
+    <a href="{vote['url']}" style="color: #8b7355;">Join the War on Disease</a>
+  </p>"""
+
+    # Social links row
+    follow_links = links.get("follow", [])
+    parts = []
+    for link in follow_links:
+        label = link.get("footer-label", link["label"])
+        url = link["url"]
+        subtitle = link.get("subtitle", link["label"])
+        parts.append(f'<a href="{url}" style="color: #8b7355;" title="{subtitle}">{label}</a>')
+
+    social_links_html = ""
+    if parts:
+        separator = " &nbsp;|&nbsp;\n    "
+        social_links_html = f"""  <p style="margin: 0.5rem 0; font-size: 0.9rem;">
+    {separator.join(parts)}
+  </p>"""
+
+    return vote_html + "\n" + social_links_html if (vote_html or social_links_html) else ""
 
 
 def generate_footer_html(project_root: Path) -> Path:
     """
-    Generate assets/html/generated-footer.html with links to all papers.
-
-    Args:
-        project_root: Root directory of the project
+    Generate assets/html/generated-footer.html shared by all sites.
 
     Returns:
-        Path to the generated HTML file
+        Path to the generated file
     """
-    # Find all _quarto-*.yml files in root
-    quarto_configs = list(project_root.glob("_quarto-*.yml"))
-    quarto_configs.sort(key=lambda p: p.name)
-
+    quarto_configs = sorted(project_root.glob("_quarto-*.yml"), key=lambda p: p.name)
     papers: List[Dict[str, Any]] = []
+
     for config_path in quarto_configs:
         match = re.match(r"_quarto-(.+)\.yml", config_path.name)
         if not match:
             continue
-
         config_name = match.group(1)
-
         try:
             paper_info = extract_footer_info(config_path, config_name)
             if paper_info:
@@ -118,7 +126,7 @@ def generate_footer_html(project_root: Path) -> Path:
         except Exception as e:
             logger.warning("Failed to parse %s: %s", config_path.name, e)
 
-    # Sort papers: prioritize key papers, then alphabetical by title
+    # Sort: priority papers first, then alphabetical
     priority_order = ["1-pct-treaty-impact", "iab", "wishocracy", "optimocracy", "dfda-impact", "dfda-spec"]
 
     def sort_key(p: Dict[str, Any]) -> tuple:
@@ -130,42 +138,29 @@ def generate_footer_html(project_root: Path) -> Path:
 
     papers.sort(key=sort_key)
 
-    # Generate HTML content
-    if not papers:
-        html_content = "<!-- No papers found in Quarto configs -->\n"
-    else:
-        links = []
-        for paper in papers:
-            title = paper["title"]
-            url = paper["site_url"]
-            desc = paper.get("description", "")
-            emoji = paper.get("emoji", "")
+    # Build paper links
+    paper_links = []
+    for paper in papers:
+        display = f"{paper['emoji']} {paper['title']}" if paper.get("emoji") else paper["title"]
+        desc = paper.get("description", "")
+        if desc:
+            paper_links.append(f'<a href="{paper["site_url"]}" title="{desc}" style="color: #8b7355;">{display}</a>')
+        else:
+            paper_links.append(f'<a href="{paper["site_url"]}" style="color: #8b7355;">{display}</a>')
 
-            # Build display text with optional emoji prefix
-            display_text = f"{emoji} {title}" if emoji else title
+    links_html = "<br>\n    ".join(paper_links)
+    social_html = _build_social_links_html(project_root)
 
-            # Build link with optional tooltip
-            if desc:
-                link = f'<a href="{url}" title="{desc}" style="color: #8b7355;">{display_text}</a>'
-            else:
-                link = f'<a href="{url}" style="color: #8b7355;">{display_text}</a>'
-            links.append(link)
-
-        # Use line breaks between links since titles are longer
-        links_html = "<br>\n    ".join(links)
-
-        html_content = f"""<!-- AUTO-GENERATED: Shared Footer Content -->
+    html_content = f"""<!-- AUTO-GENERATED: Shared Footer Content -->
 <!-- Generated by dih_models/footer_generator.py -->
 <!-- Do not edit manually - regenerate with generate-everything script -->
 <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
   <p style="margin: 0.5rem 0;">
     &copy; 2025 <a href="https://acceleratedmedicine.org" style="color: #8b7355;">The Institute for Accelerated Medicine</a> |
     <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0</a> |
-    <a href="https://github.com/mikepsinn/disease-eradication-plan" style="color: #8b7355;">📂 Source Code &amp; Data</a>
+    <a href="https://github.com/mikepsinn/disease-eradication-plan" style="color: #8b7355;">&#128194; Source Code &amp; Data</a>
   </p>
-  <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-    <a href="https://WarOnDisease.org" style="color: #8b7355;">Join the War on Disease</a>
-  </p>
+{social_html}
   <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
     <strong>Related Papers:</strong><br>
     {links_html}
@@ -173,7 +168,6 @@ def generate_footer_html(project_root: Path) -> Path:
 </div>
 """
 
-    # Write output
     html_dir = project_root / "assets" / "html"
     html_dir.mkdir(parents=True, exist_ok=True)
     output_path = html_dir / "generated-footer.html"
@@ -181,74 +175,13 @@ def generate_footer_html(project_root: Path) -> Path:
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(html_content)
 
+    # Clean up any per-site footer files from previous runs
+    for old_file in html_dir.glob("generated-footer-*.html"):
+        old_file.unlink()
+        logger.debug("Removed old per-site footer: %s", old_file.name)
+
     logger.debug("Generated %s with %d paper links", output_path.relative_to(project_root), len(papers))
-
     return output_path
-
-
-def update_quarto_configs(project_root: Path, footer_file: str = "assets/html/generated-footer.html") -> int:
-    """
-    Update all _quarto-*.yml files to reference the shared footer file.
-
-    Adds a file reference to include-in-footer if not already present.
-
-    Args:
-        project_root: Root directory of the project
-        footer_file: Relative path to the generated footer HTML
-
-    Returns:
-        Number of configs updated
-    """
-    quarto_configs = list(project_root.glob("_quarto-*.yml"))
-    updated_count = 0
-
-    for config_path in quarto_configs:
-        match = re.match(r"_quarto-(.+)\.yml", config_path.name)
-        if not match:
-            continue
-
-        config_name = match.group(1)
-
-        # Skip test config
-        if config_name == "test":
-            continue
-
-        try:
-            with open(config_path, encoding="utf-8") as f:
-                content = f.read()
-
-            # Check if already has the file reference
-            if footer_file in content:
-                continue
-
-            # Check if has include-in-footer section
-            if "include-in-footer:" not in content:
-                continue
-
-            # Find the include-in-footer section and add file reference
-            # This is a simple approach - just append the file reference after the last - text: block
-            # More sophisticated parsing could use yaml library but risks reformatting
-
-            # Pattern to find include-in-footer section
-            pattern = r"(include-in-footer:\s*\n(?:.*?- text: \|[\s\S]*?</div>\n)+)"
-
-            def add_file_reference(match: re.Match) -> str:
-                existing = match.group(1)
-                # Add file reference after existing content
-                return existing + f"      - file: {footer_file}\n"
-
-            new_content = re.sub(pattern, add_file_reference, content)
-
-            if new_content != content:
-                with open(config_path, "w", encoding="utf-8", newline="\n") as f:
-                    f.write(new_content)
-                logger.debug("Updated %s", config_path.name)
-                updated_count += 1
-
-        except Exception as e:
-            logger.warning("Failed to update %s: %s", config_path.name, e)
-
-    return updated_count
 
 
 def main():
@@ -261,12 +194,6 @@ def main():
     logger.debug("Generating footer HTML...")
     output_path = generate_footer_html(project_root)
     logger.debug("Output: %s", output_path)
-
-    # Optionally update configs (disabled by default - can be enabled with --update-configs flag)
-    if len(sys.argv) > 1 and "--update-configs" in sys.argv:
-        logger.debug("Updating Quarto configs to reference footer file...")
-        updated = update_quarto_configs(project_root)
-        logger.debug("Updated %d config files", updated)
 
 
 if __name__ == "__main__":
