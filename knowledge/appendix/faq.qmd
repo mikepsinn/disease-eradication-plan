@@ -13,7 +13,7 @@ The trial used existing hospital systems. Hospitals, it turns out, already conta
 
 **Follow-up**: "But globally?"
 
-**Response**: The internet scaled globally. So did smartphones. So did TikTok, which is considerably less useful. This just scales what already worked.
+**Response**: The internet scaled globally. So did TikTok, which is considerably less useful.
 
 ## "We Need the Military Budget"
 
@@ -27,9 +27,7 @@ The Pentagon literally cannot account for $2.5 trillion in spending. You're aski
 
 Every nation reduces by 1%, so relative military balance stays proportional. Everyone turns the volume down together. Nobody gets quieter relative to anyone else.
 
-The greatest threats today aren't tanks rolling over borders. They're microscopic things rolling through airports. COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. It did this without triggering a single defense system. Your nearly $900 billion military budget watched it happen, fully armed and completely useless.
-
-Broke, sick countries start wars. Healthy countries start businesses. Curing disease is preventative defense with better ROI than any missile system ever built.
+COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. It did this without triggering a single defense system. Your nearly $900 billion military budget watched it happen, fully armed and completely useless.
 
 **Follow-up**: "But what if enemies don't reduce?"
 
@@ -39,9 +37,9 @@ Broke, sick countries start wars. Healthy countries start businesses. Curing dis
 
 **Objection**: "Pharmaceutical companies will kill this. They profit from disease."
 
-**Response**: Pharma makes *more* money under this model. Watch their opposition evaporate.
+**Response**: Pharma makes *more* money under this model.
 
-**Current system**: Pharma pays {{< var pharma_drug_development_cost_current >}} per drug. 90% fail. Only blockbusters profit. The business model is "spend billions gambling, hope one pill pays for the nine that didn't work."
+**Current system**: Pharma pays {{< var pharma_drug_development_cost_current >}} per drug. 90% fail. The business model is "spend billions gambling, hope one pill pays for the nine that didn't work."
 
 **New system**: The treaty fund pays pharma to run trials. Trials become revenue, not cost. More drugs become profitable, even the weird ones. Predictable income instead of pharmaceutical roulette.
 
@@ -55,15 +53,11 @@ Pharma would lobby FOR this harder than they've ever lobbied for anything. You'd
 
 ![How voters get politicians to do things: ask nicely, then replace them if they don't. It's the same system you use with batteries.](/assets/images/faq/faq-section-what-about-national-sovereignty-bw-academic.jpg)
 
-**Response**: Sovereignty matters. Countries should decide how to spend their own money. That's exactly what this is.
-
-No country is forced to sign. No country is penalized for not signing. Countries that join get access to the treaty fund and bond benefits. Countries that don't simply miss out. Citizens who want it vote for politicians who support it. Citizens who don't, don't.
-
-The treaty doesn't override sovereignty. It gives voters a specific thing to ask for and politicians a profitable reason to say yes.
+**Response**: No country is forced to sign. No country is penalized for not signing. Countries that join get treaty fund access. Countries that don't, miss out. Citizens who want it vote for politicians who support it.
 
 **Follow-up**: "What if our government doesn't want to?"
 
-**Response**: Then they don't sign. If enough citizens disagree with that decision, they vote in someone who will. That's sovereignty working exactly as designed.
+**Response**: Then they don't sign. If enough citizens disagree, they vote in someone who will. That's sovereignty working exactly as designed.
 
 ## "The FDA Exists for a Reason"
 
@@ -71,7 +65,7 @@ The treaty doesn't override sovereignty. It gives voters a specific thing to ask
 
 ![For every person the FDA saves by being careful, 4,000 people die waiting. That's not caution, that's just very slow murder with excellent paperwork.](/assets/images/faq/faq-section-the-fda-exists-for-a-reason-bw-academic.jpg)
 
-**Response**: Drug safety is genuinely important. Nobody wants another thalidomide. The question is whether the current approach to safety is actually safe.
+**Response**: Drug safety is genuinely important. The question is whether the current approach to safety is actually safe.
 
 Phase 1 safety testing prevented thalidomide from reaching the US market. That saved roughly 1,000 lives. Since 1962, FDA drug lag has contributed to an estimated 4-10 million American deaths from delayed access to treatments already proven safe. That's 4,000-10,000 deaths caused for every death prevented.
 
@@ -161,13 +155,9 @@ Don't reform the system. Build around it.
 
 **Response**: Politicians follow money the way rivers follow gravity. The aim: make this the easiest, most profitable decision of their careers.
 
-The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments. (They're immune.) Beat them at their own game.
+The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments. (They're immune.) Beat them at their own game. Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Bonds](../solution/incentive-alignment-bonds.qmd). Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K-Street firms. Outbid them. Lobbyists work for the highest bidder.
 
-Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Bonds](../solution/incentive-alignment-bonds.qmd). Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K-Street firms defense contractors use. Outbid them for their top talent. Lobbyists work for the highest bidder. Become the highest bidder.
-
-Politicians suddenly hear more about curing cancer and less about threats from countries they can't find on maps.
-
-This isn't fantasy. It's capitalism. Once {{< var treaty_campaign_voting_bloc_target_nounit >}} voters demand it and the money is behind it, refusal becomes career suicide. Politicians are very good at not committing career suicide.
+Once {{< var treaty_campaign_voting_bloc_target_nounit >}} voters demand it and the money is behind it, refusal becomes career suicide. Politicians are very good at not committing career suicide.
 
 ## "What If the Science Is Wrong?"
 
@@ -302,7 +292,7 @@ Break your word, the system automatically funds your replacement. Politicians un
 
 ![How to prove you're you: government ID, fingerprints, computers, and very angry math. One person, one vote, zero excuses.](/assets/images/faq/faq-section-you-can-t-verify-280m-people-bw-academic.jpg)
 
-**Response**: You already verify hundreds of millions of people for banking, government services, insurance, and online gambling. You can verify people for the purpose of not dying. It's the same technology. The stakes are just higher and the forms are shorter.
+**Response**: You already verify hundreds of millions of people for banking, government services, and online gambling. Same technology. The stakes are just higher and the forms are shorter.
 
 - Government IDs: National e-ID systems (Estonia [@estonia-eresidency-stats], India [@indian-aadhaar-system], EU [@eu-eidas-network])
 - Biometrics: Fingerprints and face scans ensure unique individuals

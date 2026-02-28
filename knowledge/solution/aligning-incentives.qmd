@@ -10,9 +10,7 @@ podcast-image: /assets/podcast/aligning-incentives-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-This book is not about convincing people to be better. You've been trying that for six thousand years and it hasn't worked once. This is about building a system where doing well and doing good are the same thing. The current system pays for death and disease. The new system pays for life and health.
-
-You can align major interest groups behind a single goal: curing disease. Not through charity. Not through guilt. Through **pure profit**. Moral appeals are for species that respond to moral appeals. Yours responds to money.
+This book is not about convincing people to be better. You've been trying that for six thousand years and it hasn't worked once. This is about building a system where doing well and doing good are the same thing. Every major interest group gets aligned behind curing disease, not through charity or guilt, but through **pure profit**.
 
 ## Defense Contractors: Teaching Merchants of Death to Love Life
 
@@ -51,23 +49,13 @@ Most people can do this math. You hope.
 
 {{< var victory_bond_annual_return_pct >}} > whatever they're making now. That's it. That's the whole reason.
 
-The treaty doesn't actually hurt them. Military budget drops 1% (from {{< var global_military_spending_annual_2024 >}} to {{< var global_military_spending_post_treaty_annual_2024 >}}). They still have {{< var defense_sector_retention_pct >}} to protect. Defense contracts still flow. Jobs stay. Wars probably still happen (1% less budget doesn't mean 1% fewer wars; that's not how wars work, but it's also not the point). You're asking them to accept slightly less murder funding in exchange for becoming extremely wealthy.
+The treaty doesn't actually hurt them. Military budget drops 1% (from {{< var global_military_spending_annual_2024 >}} to {{< var global_military_spending_post_treaty_annual_2024 >}}). They still have {{< var defense_sector_retention_pct >}} to protect. Defense contracts still flow. Jobs stay. You're asking them to accept slightly less murder funding in exchange for becoming extremely wealthy.
 
 ![The defense industry keeps 99% of its budget. They lose 1% and gain trillions in cure markets. This is the easiest math problem in history.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-treaty-doesn-t-actually-hurt-them-bw-academic.jpg)
 
-"I support life-saving medical research" sounds better at dinner parties than "I lobby for bombs." Their kids might even respect them. Probably not, but maybe.
+Add {{< var victory_bond_funding_pct >}} VICTORY bonds to a pension portfolio and blended returns jump from {{< var average_market_return_pct >}} to something that looks like a typo on a spreadsheet. (Be suspicious. Then check the math.) Once Lockheed buys bonds, Raytheon has to follow or explain to shareholders why Lockheed's portfolio is outperforming theirs. Start with pension funds (fiduciary duty requires best returns). They end up lobbying FOR the treaty to protect their investment.
 
-Add {{< var victory_bond_funding_pct >}} VICTORY bonds to a pension portfolio and blended returns jump from {{< var average_market_return_pct >}} to something that looks like a typo on a spreadsheet. (It's the kind of number that should make you suspicious. Be suspicious. Then check the math.) Once Lockheed buys bonds, Raytheon has to follow or explain to shareholders why Lockheed's portfolio is outperforming theirs. Start with pension funds (fiduciary duty requires best returns). They end up lobbying FOR the treaty to protect their investment.
 
-### The Flip
-
-Once enough key players flip, momentum shifts. Nobody wants to be the last holdout. Not while a treaty gains momentum and everyone else gets rich.
-
-![First one flips: brave. Tenth one flips: smart. Hundredth one flips: inevitable. Last one flips: too late for the good bond rates.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-step-3-the-flip-bw-academic.jpg)
-
-It's like a bank run, except instead of withdrawing money, they're depositing principles. Whether "enough" is 10 or 50 or 100, nobody knows. This has never been tried before. (On Earth. I've seen it work elsewhere, though admittedly not every time.) But the theory seems sound, assuming humans behave like humans usually do.
-
-Now they don't just stop opposing. They actively lobby FOR it: testifying to Congress that "this strengthens national security" (technically true: healthy soldiers fight better), writing op-eds about how "a strong military requires a healthy population" (also true: can't draft corpses), and convincing other lobbyists to flip.
 
 ### What You're NOT Asking
 
@@ -81,7 +69,7 @@ That's it. They keep {{< var defense_sector_retention_pct >}} of their current i
 
 ### Why This Works
 
-It's all legal. VICTORY Incentive Alignment Bonds are legal investment vehicles. Lobbying is protected free speech. Consulting fees are standard practice. Strategic advisor positions are completely normal (if "normal" means "legal corruption"). They designed the system to allow this. You're just using it correctly for the first time.
+It's all legal. VICTORY Incentive Alignment Bonds are legal investment vehicles. Lobbying is protected free speech. Consulting fees are standard practice. They designed the system to allow this. You're just using it correctly for the first time.
 
 **Defense Contractor CEO** (to board): "We diversified into bonds paying {{< var victory_bond_annual_return_pct >}} returns vs the market's {{< var average_market_return_pct >}}. If the treaty passes, we profit enormously. If it fails, we still have our defense contracts. It's a hedge. I'm being prudent. You're welcome."
 
@@ -99,7 +87,7 @@ You can't fight the military-industrial complex. It's too big. Too entrenched. T
 
 ## Insurance Companies: The Accidentally Aligned Industry
 
-Insurance companies are theoretically on your side. They've had this exact incentive for 150 years and haven't done anything about it, because nobody at an insurance company has ever had an original thought. But every disease you cure is billions they don't have to pay out, and eventually even they should notice.
+Insurance companies are theoretically on your side. They've had this exact incentive for 150 years and haven't done anything about it. But every disease you cure is billions they don't have to pay out, and eventually even they should notice.
 
 ### Their Current Death Spiral
 
@@ -122,7 +110,7 @@ Insurance companies are theoretically on your side. They've had this exact incen
 | Heart Disease | {{< var us_heart_disease_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
 | Cancer | {{< var us_cancer_annual_cost >}} | One-time cure cost | ~90% ongoing savings |
 
-Even partial cures dramatically improve their margins. They don't need $0 costs. They just need costs to stop rising 7% annually, which is currently the speed at which their business model is committing suicide.
+They don't need $0 costs. They just need costs to stop rising 7% annually.
 
 #### The Implementation
 
@@ -136,7 +124,7 @@ Even partial cures dramatically improve their margins. They don't need $0 costs.
 
 ### Why They're Your Natural Allies
 
-Insurance companies are the only industry that profits from human health. Every other healthcare player profits from sickness. (This raises the question of why insurers haven't cured everything already. See above re: original thoughts.) Use this natural alignment:
+Insurance companies are the only industry that profits from human health. Every other healthcare player profits from sickness:
 
 - **Pharma wants chronic patients** - Insurance wants cures
 - **Hospitals want full beds** - Insurance wants empty ones
@@ -146,7 +134,7 @@ Insurance companies are the only industry that profits from human health. Every 
 
 ## Pharmaceutical Companies: Converting Drug Dealers to Drug Curers
 
-Pharma companies aren't evil. They're just doing what any rational organism does when you pay it to keep people sick: keeping people sick. They're trapped in a business model that rewards treating symptoms forever instead of curing diseases once. Here's how you free them from their golden cage.
+Pharma companies aren't evil. They're just doing what any rational organism does when you pay it to keep people sick: keeping people sick. They're trapped in a business model that rewards treating symptoms forever instead of curing diseases once.
 
 ![Old model: sell pills forever. New model: cure disease once. One makes steady money, the other makes sense.](/assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-converting-drug-dealers-to-drug-curers-bw-academic.jpg)
 
@@ -160,7 +148,7 @@ Pharma companies aren't evil. They're just doing what any rational organism does
 - **Success rate**: {{< var pharma_success_rate_current_pct >}} (lottery odds)
 - **Timeline**: 17 years to market (patients die waiting)
 - **Revenue per success**: {{< var pharma_drug_revenue_average_current >}}
-- **ROI: {{< var pharma_roi_current_system_pct >}}** measured as IRR on late-stage pipeline assets (Deloitte's 2022 historic low for top-20 pharma; it bounced to 5.9% by 2024, which is still the kind of number that makes venture capitalists cry). That $6.7B revenue per success looks generous until you remember the other nine drugs that cost $2.6B each and produced nothing but expensive urine samples.
+- **ROI: {{< var pharma_roi_current_system_pct >}}** measured as IRR on late-stage pipeline assets (Deloitte's 2022 historic low for top-20 pharma; bounced to 5.9% by 2024, still the kind of number that makes venture capitalists cry)
 - **Patent cliffs**: Blockbusters become generics overnight
 - **Public hatred**: Martin Shkreli is their poster boy
 
@@ -168,24 +156,9 @@ Pharma companies aren't evil. They're just doing what any rational organism does
 
 #### New System: How Decentralized Trials Eliminate Costs
 
-The main benefit: pragmatic clinical trials become {{< var dfda_trial_cost_reduction_factor >}} cheaper.
+Pragmatic clinical trials become {{< var dfda_trial_cost_reduction_factor >}} cheaper. Current system: {{< var traditional_phase3_cost_per_patient >}} per participant on dedicated sites, monitoring, custom infrastructure, regulatory overhead. With your decentralized institutes of health: cost drops ~{{< var dfda_trial_cost_reduction_pct >}} because it uses existing medical practices, existing EHR data, and pragmatic design.
 
-**Current system:** Pharma spends {{< var traditional_phase3_cost_per_patient >}} per participant on:
-
-- Dedicated trial sites and staff
-- Extensive monitoring and site visits
-- Custom data collection infrastructure
-- Regulatory compliance overhead
-
-**A system using your decentralized institutes of health:** Cost drops ~{{< var dfda_trial_cost_reduction_pct >}} because:
-
-- Uses existing medical practices (no dedicated sites)
-- Patient's regular doctor enrolls them (one-click)
-- Uses existing EHR data (no custom infrastructure)
-- Pragmatic design = minimal monitoring
-- Platform handles regulatory compliance automatically
-
-Result: a 50,000-participant trial drops from ~$2B (at {{< var traditional_phase3_cost_per_patient >}}/patient) to ~$46M (at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient). That's a {{< var dfda_trial_cost_reduction_pct >}} reduction.
+Result: a 50,000-participant trial drops from ~$2B to ~$46M.
 
 | Current System | A decentralized trials framework |
 |---------------|-----------------|
@@ -195,29 +168,22 @@ Result: a 50,000-participant trial drops from ~$2B (at {{< var traditional_phase
 | Only blockbusters viable | Rare diseases = profitable |
 | Massive risk | Manageable risk per attempt |
 
-A decentralized institutes of health network doesn't change whether drugs work biologically. It changes the economics. You profit from TRYING, not just from SUCCEEDING.
+This doesn't change whether drugs work biologically. It changes the economics. You profit from TRYING, not just from SUCCEEDING.
 
 ![Current model: costs billions, takes decades. Proposed model: costs thousands, takes months. The expensive one is considered serious.](/assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-bw-academic.jpg)
 
 ### Pharma's New Business Model: Volume Over Blockbusters
 
-The trade-off: **Lower revenue per drug, but massively more attempts.**
+**Lower revenue per drug, but massively more attempts.**
 
-#### Current model
-
-- Chase $1B+ blockbusters
-- Can only afford ~10 attempts (each costs {{< var pharma_drug_development_cost_current >}})
-- Need huge markets to justify risk
-- 10,000 compounds sitting on shelf
-
-#### The new decentralized model
+| | Current | Decentralized |
+|:---|:---|:---|
+| Target | $1B+ blockbusters only | $500M per success is profitable |
+| Attempts | ~10 (each costs {{< var pharma_drug_development_cost_current >}}) | Thousands (failure doesn't bankrupt you) |
+| Rare diseases | Ignored | Gold mines (no competition) |
+| Capacity | Limited | {{< var dfda_trial_capacity_multiplier >}} more chances to find out what works |
 
 ![When trials are cheap, you can test everything, even diseases that only affect 47 people. Turns out those people would also like not to die.](/assets/images/aligning-incentives/aligning-incentives-section-the-new-decentralized-model-bw-academic.jpg)
-
-- $500M per success is profitable (smaller markets work)
-- Can attempt thousands of compounds (failure doesn't bankrupt you)
-- Rare diseases become gold mines (no competition)
-- {{< var dfda_trial_capacity_multiplier >}} more trial capacity. Not {{< var dfda_trial_capacity_multiplier >}} more cures (biology doesn't scale linearly with funding, unfortunately), but {{< var dfda_trial_capacity_multiplier >}} more chances to find out what works
 
 ### How to Get Them Onboard
 
@@ -230,7 +196,7 @@ The trade-off: **Lower revenue per drug, but massively more attempts.**
 
 ## Politicians: Hacking Democracy's Source Code
 
-Politicians are the simplest organisms in this ecosystem. Simpler than bacteria. Politicians want exactly two things: votes and money. You're going to give them both.
+Politicians want exactly two things: votes and money.
 
 ### Their Current Misery
 
@@ -248,7 +214,6 @@ Politicians are the simplest organisms in this ecosystem. Simpler than bacteria.
 
 - Treaty supporter: Super PAC funds flow in
 - Treaty opponent: Super PAC funds their opponent
-- It's not corruption, it's free speech (thanks Citizens United!)
 
 #### The Vote Harvest
 
@@ -261,53 +226,24 @@ Politicians are the simplest organisms in this ecosystem. Simpler than bacteria.
 
 ### The Bipartisan Beauty
 
-This works on everyone:
-
 - **Republicans**: "Free market solution! Cuts government spending!"
 - **Democrats**: "Universal healthcare access! Helps the poor!"
 - **Libertarians**: "Ends FDA tyranny! Personal freedom!"
 - **Socialists**: "Destroys Big Pharma monopoly! Power to people!"
 
-Everyone can claim victory because the framing works for each ideology.
-
 ## Billionaires: Self-Interest Meets Self-Preservation
 
-Billionaires have everything except the one thing money can't buy: not dying. A billion dollars and a body that rots at the same rate as everyone else's. You're offering returns AND longevity research. The incentives align naturally.
+Billionaires have everything except the one thing money can't buy: not dying. A billion dollars and a body that rots at the same rate as everyone else's.
 
-### What They Really Want
-
-- **Legacy**: Being remembered (narcissism is powerful)
-- **Returns**: Beating other billionaires (it's all a game)
-- **Survival**: Not dying of whatever will kill them
-- **Reputation**: Not being history's villain
-- **Control**: Shaping the future
-
-### Your Irresistible Package
-
-#### The Investment
-
-- VICTORY Incentive Alignment Bonds offer returns funded by treaty revenue
-- Beats traditional portfolio yields
-
-#### The Legacy
-
-- "The Gates Cancer Center" (permanent naming rights)
-- "The Musk Longevity Institute" (feed that ego)
-- History books: "Funded the cure for death"
-- Nobel Peace Prize possible (they crave validation)
-
-#### The Insurance
+### The Package
 
 ![Billionaires buying longevity like it's life insurance. Pay now, live forever. The premium is 100 million dollars but so is their watch.](/assets/images/aligning-incentives/aligning-incentives-section-the-insurance-bw-academic.jpg)
 
-- They're getting old (mortality is calling)
-- Their genetics aren't special (death doesn't care about wealth)
-- Every disease cured = their lifespan extended
-- Basically buying protection from biology
+- **Returns**: VICTORY bonds funded by treaty revenue, beating traditional portfolio yields
+- **Legacy**: "The Gates Cancer Center." Nobel Peace Prize possible. History books: "Funded the cure for death."
+- **Survival**: They're getting old. Their genetics aren't special. Every disease cured = their lifespan extended.
 
 ## The Domino Effect: How This Cascade Works
-
-Once you align a few key players, others follow:
 
 ### The Sequence
 
@@ -322,9 +258,7 @@ Once you align a few key players, others follow:
 
 ### Why This Can Work: The Coordination Problem Has a Price Tag
 
-Public choice theory (a branch of economics devoted to explaining why nothing good ever happens) predicts that concentrated interests beat diffuse interests. Always. Ten lobbyists who each make $10 million from war will outfight ten million patients who each lose $10 from disease. This is mathematically correct and morally disgusting, which is how you know it's real economics.
-
-The current system persists not despite its inefficiency but because of it. Inefficiency is profitable for the people running it.
+Public choice theory predicts that concentrated interests beat diffuse interests. Always. Ten lobbyists who each make $10 million from war will outfight ten million patients who each lose $10 from disease.
 
 **The part Olson didn't account for:** the people getting screwed have 90 times more money. They just can't coordinate.
 
@@ -352,4 +286,4 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 ## Why This Scales: The Ratchet Effect
 
-Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, political incentive funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, that scales to 10x as much. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying. You've accidentally built ratchets like this before (Social Security, Medicare), but always by accident and never on purpose. This time, try doing it on purpose. On Wishonia, we built this ratchet 4,297 years ago. It took us about three decades to go from 1% to full reallocation, which felt slow at the time but looks quite efficient compared to your six thousand years of not trying.
+Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, political incentive funding is {{< var iab_political_incentive_funding_annual >}}/year. At 10%, that scales to 10x. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying. You've accidentally built ratchets like this before (Social Security, Medicare), but always by accident. This time, try doing it on purpose.

@@ -18,17 +18,17 @@ No. Getting countries to *implement* things costs billions. Getting them to *sig
 
 ## What Treaties Actually Cost
 
-NGO campaign budgets are rarely disclosed publicly, because nonprofits guard their finances the way dragons guard gold. But we know enough to establish something surprising: treaty campaigns run on pocket change.
+NGO campaign budgets are rarely disclosed publicly, but treaty campaigns run on pocket change.
 
-The **Ottawa Treaty** [@icbl-ottawa-treaty] banning landmines took 14 months. It started with one staff member, Jody Williams, who grew a coalition to over a thousand organizations across 60 countries. Canada committed $100M CAD over 10 years; international donors added $169M in 1997 for mine action. 122 states signed. She won the Nobel Peace Prize.
+The **Ottawa Treaty** [@icbl-ottawa-treaty] banning landmines took 14 months. One staff member, Jody Williams, grew a coalition to over a thousand organizations across 60 countries. 122 states signed. She won the Nobel Peace Prize.
 
-The **Cluster Munitions Convention** [@cluster-munitions-convention-2008] took about two years. A coalition of NGOs backed by a core group of seven governments got 94 states to sign and over a million stockpiled munitions destroyed.
+The **Cluster Munitions Convention** [@cluster-munitions-convention-2008] took about two years. Seven governments and a coalition of NGOs got 94 states to sign.
 
-The **Arms Trade Treaty** [@arms-trade-treaty-2013] took a decade but started with just three supporting governments. The Control Arms coalition [@control-arms-coalition], led by Oxfam and Amnesty International, published 50+ reports and built support until 130 countries signed.
+The **Arms Trade Treaty** [@arms-trade-treaty-2013] took a decade but started with three supporting governments. The Control Arms coalition [@control-arms-coalition] published 50+ reports until 130 countries signed.
 
-The **Nuclear Ban Treaty** [@ican-nuclear-ban-treaty] also took a decade of campaigning. ICAN ran the entire operation with five staff in a Geneva office, coordinating 468 partner organizations. 122 states voted yes. Another Nobel Peace Prize.
+The **Nuclear Ban Treaty** [@ican-nuclear-ban-treaty] also took a decade. ICAN ran the entire operation with five staff in a Geneva office. 122 states voted yes. Another Nobel Prize.
 
-**Pattern**: One woman with a phone convinced 122 countries to ban landmines. Five people in a Geneva office won a Nobel Prize. The NGO costs are a few million dollars per year. Government conference costs add $10-30M. Total to get a treaty signed: **$15-50M**. Your species spends more than that on Super Bowl ads for beer.
+**Pattern**: One woman with a phone convinced 122 countries to ban landmines. Five people in a Geneva office won a Nobel Prize. Total to get a treaty signed: **$15-50M**. Your species spends more than that on Super Bowl ads for beer.
 
 ### Inflation-Adjusted to 2024 Dollars
 
@@ -41,11 +41,11 @@ Using BLS CPI data [@bls-cpi-inflation-calculator]:
 | Arms Trade Treaty (2013) | $20-30M | **$27-41M** | ~1.35x |
 | Nuclear Ban (2017) | $10-20M | **$13-25M** | ~1.25x |
 
-**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD). That's **less than 1%** of the implementation cost. Banning landmines: ~$40M to get the signatures, $5B+ to actually dig them up [@icbl-ottawa-treaty]. The paperwork is the cheap part. The not-exploding-anymore part is where it gets expensive.
+**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD). Banning landmines: ~$40M to get the signatures, $5B+ to actually dig them up [@icbl-ottawa-treaty]. The paperwork is the cheap part.
 
 ## Cost for a 1% Health Treaty
 
-This one touches military budgets, the sacred cow of national sovereignty. Suggest moving 1% of the explosion money and politicians look at you like you've asked to borrow their favorite child. So budget 3-4x what landmines cost.
+This one touches military budgets. Suggest moving 1% of the explosion money and politicians look at you like you've asked to borrow their favorite child. So budget 3-4x what landmines cost.
 
 | Phase | Duration | Estimated Cost | Who Pays |
 | :--- | :--- | :--- | :--- |
@@ -71,8 +71,8 @@ That's over 300:1 return on paperwork.
 
 Politicians move when they see (a) voters demanding it and (b) political cover. Give them both:
 
-1. **Prove public demand**: Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. Harvard researcher Erica Chenoweth found that every nonviolent campaign [@3-5-rule] with {{< var global_population_activism_threshold_pct >}}+ participation succeeded. That's not activism. That's a mandate. {{< var treaty_campaign_voting_bloc_target_nounit >}} verified humans is the kind of number that makes politicians suddenly remember they work for you.
-2. **Prove it's safe**: Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness. Give them studies to wave around.
+1. **Prove public demand**: Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. Every nonviolent campaign [@3-5-rule] with {{< var global_population_activism_threshold_pct >}}+ participation has succeeded. That's not activism. That's a mandate.
+2. **Prove it's safe**: Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness.
 
 ![Get 3.5 percent of people to care, show politicians the math won't break anything, and suddenly they have to listen. Democracy has an override button.](/assets/images/treaty-feasibility/treaty-feasibility-section-how-to-make-governments-sign-things-bw-academic.jpg)
 
@@ -88,12 +88,11 @@ Once these assets exist, formal negotiations become very hard to avoid. Not beca
 
 ![Two to three years to build the website, run the numbers, and assemble the coalition before you can ask countries to sign. Diplomacy is slow.](/assets/images/treaty-feasibility/treaty-feasibility-section-timeline-to-governments-can-t-ignore-this-bw-academic.jpg)
 
-You aren't buying a treaty.
-You're buying the machinery that makes the treaty very hard to refuse.
+You aren't buying a treaty. You're buying the machinery that makes the treaty very hard to refuse.
 
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
-To calculate expected value, you need to estimate the probability this actually works. This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). Yes, the model assumes a 99% chance of failure. It's still a good bet. Stay with me.
+This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). The model assumes a 99% chance of failure. It's still a good bet.
 
 ![Even if this only has a 1 percent chance of working, it saves 503 times more lives per dollar than bed nets. Math is strange.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
 

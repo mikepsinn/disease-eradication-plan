@@ -12,64 +12,56 @@ image: /assets/og-images/knowledge/economics/health-dividend-og-retro-academic.j
 podcast-image: /assets/podcast/health-dividend-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-That was the peace dividend: the money you get from buying 1% fewer explosions. Now here's the health dividend: the money you get from not letting the explosions' intended targets die of preventable diseases instead.
+That was the peace dividend: the money you get from buying 1% fewer explosions. Now here's the health dividend: what happens when you spend it on medicine.
 
-Your species has a word for "health dividend," which implies that health is a bonus. Like a Christmas card from your bank. On Wishonia, health is the default and disease is the bug report. On Earth, disease is the default and health is the dividend. This explains your economics.
+Your species has a word for "health dividend," which implies that health is a bonus. On Wishonia, health is the default and disease is the bug report. On Earth, disease is the default and health is the dividend.
 
 ## The Queue
 
-{{< var diseases_without_effective_treatment >}} have zero approved treatments. Not "in development." Not "awaiting funding." Not "someone is looking into it." Zero. If you are diagnosed with one of them today, your treatment does not exist. It has not been invented. Nobody is working on it. There is no waitlist because there is nothing to wait for.
+{{< var diseases_without_effective_treatment >}} have zero approved treatments. Not "in development." Not "awaiting funding." Zero. If you are diagnosed with one of them today, your treatment has not been invented. Nobody is working on it.
 
-Your FDA approves roughly {{< var current_drug_approvals_per_year >}} new treatments per year. At that rate, the queue clears in approximately {{< var status_quo_queue_clearance_years >}}. For context, {{< var status_quo_queue_clearance_years >}} ago, your species had not yet invented writing. You were painting buffalo on cave walls and dying of tooth infections. That is the timeline. You are on it.
+Your FDA approves roughly {{< var current_drug_approvals_per_year >}} new treatments per year. At that rate, the queue clears in approximately {{< var status_quo_queue_clearance_years >}}. For context, {{< var status_quo_queue_clearance_years >}} ago, your species had not yet invented writing. You were painting buffalo on cave walls and dying of tooth infections.
 
 ## What It Costs to Fix
 
 ![It'll cost 40 million to run this per year. Maybe 27 million, maybe 56 million. Either way, less than one fighter jet.](/assets/images/health-dividend/health-dividend-section-the-framework-cost-breakdown-bw-academic.jpg)
 
-Your decentralized FDA costs {{< var dfda_annual_opex >}} per year to operate. Servers, engineers, compliance, global integration. The boring stuff that saves billions. For context, this is roughly what your species spends annually on Halloween costumes for dogs.
+Your decentralized FDA costs {{< var dfda_annual_opex >}} per year to operate. Servers, engineers, compliance, global integration. This is roughly what your species spends annually on Halloween costumes for dogs.
 
-I need you to sit with that.
-
-A system that could test cures for {{< var rare_diseases_count_global_nounit >}} diseases costs less to run than the outfits you put on animals that don't want to wear them. Less than one fighter jet. Less than one yacht. Less than what FIFA spends on "hospitality" (which is your word for bribing officials, but in a building with chandeliers).
+A system that could test cures for {{< var rare_diseases_count_global_nounit >}} diseases costs less to run than the outfits you put on animals that don't want to wear them. Less than one fighter jet. Less than what FIFA spends on "hospitality" (your word for bribing officials in a building with chandeliers).
 
 ## Why Your Trials Cost a Tesla Per Person
 
-Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}}** per patient. That's a Tesla. Per person. To find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient. This is called "rigorous methodology," which is your phrase for "expensive and slow" the same way "vintage" is your word for "old."
+Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}}** per patient. A Tesla. Per person. To find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
 
 Then the Oxford RECOVERY trial proved you can do the same thing for **{{< var recovery_trial_cost_per_patient >}}**. During a pandemic. While panicking. They tested COVID treatments on 40,000+ patients by:
 
-- Using existing hospital staff (revolutionary concept: doctors treating patients)
+- Using existing hospital staff (doctors treating patients)
 - Collecting data electronically (instead of sacrificing forests to the paperwork gods)
 - Asking "does the patient live or die?" (not "did they complete form 27-B in triplicate?")
 
-Scale that globally: up to **{{< var dfda_trial_cost_reduction_factor >}} cost reduction**. Same data quality. Better real-world applicability. It turns out you don't need 17 committees to answer the question "did the medicine work?" You just needed someone to ask it.
-
-Your species spends **{{< var global_clinical_trials_spending_annual >}} per year** on clinical trials (and growing, because apparently inefficiency scales beautifully). Cut {{< var dfda_trial_cost_reduction_pct >}} of that waste and you save **{{< var dfda_benefit_rd_only_annual >}} annually** [@industry-clinical-trial-spending-estimate]. That's the savings from making trials less stupid. We haven't counted the lives yet. I'm saving those for dramatic effect. (On Wishonia, we don't need dramatic effect. We just present data. But your species gets bored during data, which is how you ended up with {{< var status_quo_queue_clearance_years >}} of queue in the first place.)
+Scale that globally: up to **{{< var dfda_trial_cost_reduction_factor >}} cost reduction**. Same data quality. Your species spends **{{< var global_clinical_trials_spending_annual >}} per year** on clinical trials [@industry-clinical-trial-spending-estimate]. Cut {{< var dfda_trial_cost_reduction_pct >}} of that waste and you save **{{< var dfda_benefit_rd_only_annual >}} annually**. That's before counting the lives. I'm saving those for dramatic effect.
 
 ## What Changes for the Human Who Gets Sick
 
 ![With 58.6 billion, you could run 10,000 trials and address 7,000 rare diseases. Currently you're spending that much to run far fewer trials for common diseases. Priorities.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
 
-This is the part that matters, if you are a human, which statistically you are.
+Right now, if you are diagnosed with one of those {{< var rare_diseases_count_global_nounit >}} untreated diseases, you enter a waiting room with no exit date. People die there. Not because a cure is impossible, but because nobody funded the trial. Your species spent the trial money on a submarine that hides underwater, which is useful if your enemy is a fish.
 
-Right now, if you are diagnosed with one of those {{< var rare_diseases_count_global_nounit >}} untreated diseases, you enter a waiting room. The waiting room has no exit date. The humans in it die there. Not because a cure is impossible, but because nobody funded the trial. Your species spent the trial money on a submarine that hides underwater, which is useful if your enemy is a fish.
-
-Each new drug approval is worth $1.62 billion [@arxiv-2212-07384] in market value. Your FDA approves roughly {{< var current_drug_approvals_per_year >}}. That is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself. On Wishonia, we call this "choosing not to." You call it "the regulatory process."
+Each new drug approval is worth $1.62 billion [@arxiv-2212-07384] in market value. Your FDA approves roughly {{< var current_drug_approvals_per_year >}}. That is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself.
 
 With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could:
 
 - Fund **10,000 new pragmatic clinical trials** per year (at $5M each, still luxurious by RECOVERY standards)
-- Test treatments for **{{< var rare_diseases_count_global_nounit >}} rare diseases** currently ignored (because orphan diseases aren't profitable enough for your orphan-making economic system)
+- Test treatments for **{{< var rare_diseases_count_global_nounit >}} rare diseases** currently ignored because orphan diseases aren't profitable enough for your orphan-making economic system
 - Cut development time from 17 years to 3-5 years (most terminal patients don't have 17 years; this has not occurred to anyone in charge)
-- Make medicines affordable by eliminating {{< var pharma_drug_development_cost_current >}} development costs (roughly 90% of which is lawyers arguing about commas)
-
-That waiting room empties. Your treatment arrives in your lifetime instead of centuries after your death. I realize that distinction matters more to you than it does to me, since I'm not made of meat.
+- Make medicines affordable by eliminating {{< var pharma_drug_development_cost_current >}} development costs
 
 ## The Cost of Taking Your Time
 
-Disease costs humanity **{{< var global_disease_economic_burden_annual >}} annually** [@disease-economic-burden-109t]. That's comparable to global GDP ($101 trillion [@global-gdp]). The number sounds wrong because your economists spent centuries measuring productivity without accounting for the humans who stopped being productive on account of being dead. The missing piece is DALYs (Disability-Adjusted Life Years): healthy years deleted by disease. Globally: **{{< var global_annual_daly_burden_nounit >}} DALYs annually** [@ihme-gbd-2021]. That is a large number of years of not being alive. Even by your standards.
+Disease costs humanity **{{< var global_disease_economic_burden_annual >}} annually** [@disease-economic-burden-109t], comparable to global GDP ($101 trillion [@global-gdp]). The number sounds wrong because your economists spent centuries measuring productivity without accounting for the humans who stopped being productive on account of being dead. The missing piece is DALYs (Disability-Adjusted Life Years): healthy years deleted by disease. Globally: **{{< var global_annual_daly_burden_nounit >}} DALYs annually** [@ihme-gbd-2021].
 
-Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years over the full lag period (cumulative across all deaths and disability during the delay, not a single year's burden). The regulatory lag period is not a safety feature. It is a waiting room where people die. You just gave the waiting room a nicer name.
+Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years over the full lag period (cumulative across all deaths and disability during the delay, not a single year's burden). The regulatory lag is not a safety feature. It is a waiting room where people die. You just gave it a nicer name.
 
 See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#daily-opportunity-cost-of-inaction) for calculations.
 
@@ -77,8 +69,6 @@ See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#da
 
 ![Conservative return on investment versus total return including not letting people die. One number is big, the other is astronomically big. Both beat war.](/assets/images/health-dividend/health-dividend-section-roi-scenarios-bw-academic.jpg)
 
-Your decentralized FDA costs {{< var dfda_annual_opex >}} per year. It saves {{< var dfda_benefit_rd_only_annual >}} per year. That's **{{< var dfda_roi_rd_only >}}:1** returns on R&D savings alone, without counting a single human life. Include the lives (which you'd think someone would), and total societal benefit hits **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1**.
+Your decentralized FDA costs {{< var dfda_annual_opex >}}/year. It saves {{< var dfda_benefit_rd_only_annual >}}/year. That's **{{< var dfda_roi_rd_only >}}:1** on R&D savings alone, without counting a single human life. Include the lives (which you'd think someone would), and total societal benefit hits **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1**.
 
-Even the worst case, where everything goes wrong, adoption is terrible, the engineers quit, and the servers catch fire, still returns an estimated 66:1. That beats every military investment in human history. Your worst medical outcome is better than your best military one.
-
-Let that sink in while you approve next year's defense budget. Or don't. I've been watching your species approve defense budgets for 80 years. You always approve the defense budget.
+Even the worst case (everything goes wrong, adoption is terrible, the servers catch fire) still returns an estimated 66:1. Your worst medical outcome is better than your best military one.

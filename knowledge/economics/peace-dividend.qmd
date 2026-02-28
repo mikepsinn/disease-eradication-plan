@@ -19,25 +19,17 @@ Here's what 1% less murder money buys you:
 
 ## How 1% Less Violence Pays For Everything
 
-An [analysis](https://dfda-impact.warondisease.org) of your decentralized FDA shows pragmatic clinical trials can be {{< var dfda_trial_cost_reduction_factor >}} more efficient. So the question isn't whether you can afford this. It's where to steal the money.
-
-![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
-
-Two ways you profit from building 1% fewer bombs:
+An [analysis](https://dfda-impact.warondisease.org) of a decentralized FDA shows pragmatic clinical trials can be {{< var dfda_trial_cost_reduction_factor >}} more efficient. Two ways you profit from building 1% fewer bombs:
 
 ### The Captured Money: {{< var treaty_annual_funding >}}/Year
 
-Your governments spend {{< var global_military_spending_annual_2024 >}} yearly on things whose sole purpose is making other things stop existing.
-
-Redirect 1%:
+Your governments spend {{< var global_military_spending_annual_2024 >}} yearly on things whose sole purpose is making other things stop existing. Redirect 1%:
 
 {{< var global_military_spending_annual_2024 >}} × 0.01 = {{< var treaty_annual_funding >}}
 
-That funds the whole system. One percent. The rounding error on your murder budget.
+The rounding error on your murder budget.
 
 ### The Bonus Savings: {{< var peace_dividend_annual_societal_benefit >}}/Year
-
-That's the money you grab. Here's the money you stop lighting on fire.
 
 Wars cost {{< var global_annual_direct_indirect_war_cost >}}/year. Build 1% fewer bombs, fight 1% fewer wars, save {{< var peace_dividend_annual_societal_benefit >}}.
 
@@ -48,23 +40,19 @@ Money no longer spent on:
 - Unblowing-up hospitals and bridges
 - Removing shrapnel from people you put shrapnel into
 - Housing refugees (people whose homes were converted into craters)
-- Trade disruptions (it turns out shipping containers don't fit through minefields)
+- Trade disruptions (shipping containers don't fit through minefields)
 
 ### Where the {{< var peace_dividend_annual_societal_benefit >}} Comes From
 
-Here's your itemized receipt for violence.
+Your itemized receipt for violence.
 
-Direct costs: {{< var global_annual_war_direct_costs_total >}} per year. That's the military budgets ({{< var global_military_spending_annual_2024 >}}), the infrastructure you blow up and then pay to rebuild ({{< var global_annual_infrastructure_destruction_conflict >}}), the humans you break ({{< var global_annual_human_life_losses_conflict >}}), and the trade routes you keep putting mines in ({{< var global_annual_trade_disruption_conflict >}}). Cut 1% and you save {{< var peace_dividend_direct_costs >}}.
+Direct costs: {{< var global_annual_war_direct_costs_total >}} per year. Military budgets ({{< var global_military_spending_annual_2024 >}}), infrastructure you blow up and then pay to rebuild ({{< var global_annual_infrastructure_destruction_conflict >}}), humans you break ({{< var global_annual_human_life_losses_conflict >}}), and trade routes you keep putting mines in ({{< var global_annual_trade_disruption_conflict >}}). Cut 1%: {{< var peace_dividend_direct_costs >}} saved.
 
-Indirect costs: {{< var global_annual_war_indirect_costs_total >}} per year. This is the part your accountants pretend doesn't exist. Lost economic growth from pointing engineers at missiles instead of medicine ({{< var global_annual_lost_economic_growth_military_spending >}}). Veteran healthcare, because the humans you send to war come back needing hospitals ({{< var global_annual_veteran_healthcare_costs >}}). Refugees, PTSD, environmental damage, lost human capital. All the costs that don't show up on the bomb receipt but show up everywhere else. Cut 1% and you save {{< var peace_dividend_indirect_costs >}}.
+Indirect costs: {{< var global_annual_war_indirect_costs_total >}} per year. The part your accountants pretend doesn't exist. Lost economic growth from pointing engineers at missiles instead of medicine ({{< var global_annual_lost_economic_growth_military_spending >}}). Veteran healthcare, because the humans you send to war come back needing hospitals ({{< var global_annual_veteran_healthcare_costs >}}). Refugees, PTSD, environmental damage, lost human capital. Cut 1%: {{< var peace_dividend_indirect_costs >}} saved.
 
 **Total: {{< var global_annual_direct_indirect_war_cost >}} per year on war. 1% less war saves {{< var peace_dividend_annual_societal_benefit >}}.**
 
-You capture {{< var treaty_annual_funding >}} for pragmatic clinical trials.
-
 ![The 114 billion you save by fighting one percent less: some from buying fewer bombs, some from burying fewer people, some from economies not collapsing. War is expensive.](/assets/images/peace-dividend/peace-dividend-section-where-the-var-peace-dividend-annual-societal-benefit-comes-from-bw-academic.jpg)
-
-You save {{< var peace_dividend_annual_societal_benefit >}} on not breaking stuff.
 
 On your planet, this is called "a good deal." On mine, it's called "so obvious that failing to do it constitutes evidence of a cognitive disability."
 
@@ -74,11 +62,11 @@ The benefits cascade beyond medicine in ways that should be obvious but apparent
 
 ## The Two Numbers
 
-![The money you definitely get versus the total benefit to society. One is guaranteed, the other is probably much bigger. Like ordering fries and getting the whole potato farm.](/assets/images/peace-dividend/peace-dividend-section-the-formulas-bw-academic.jpg)
+![The money you definitely get versus the total benefit to society. One is treaty-mandated, the other is probably much bigger. Like ordering fries and getting the whole potato farm.](/assets/images/peace-dividend/peace-dividend-section-the-formulas-bw-academic.jpg)
 
 **The Captured Dividend** (the money you definitely get): {{< var global_military_spending_annual_2024 >}} in military spending times 1% equals {{< var treaty_annual_funding >}} per year. That's a bank transfer. It happens because the treaty says it happens. No behavior change required.
 
-**The Societal Dividend** (the money you save by being slightly less insane): {{< var global_annual_direct_indirect_war_cost >}} in total war costs times 1% equals {{< var peace_dividend_annual_societal_benefit >}} per year. That one depends on whether 1% fewer bombs actually means 1% fewer wars. Which brings us to the only interesting question in this chapter.
+**The Societal Dividend** (money you save by being slightly less insane): {{< var peace_dividend_annual_societal_benefit >}}/year. Depends on whether 1% fewer bombs means 1% fewer wars.
 
 ### The Elasticity Question
 
@@ -89,15 +77,15 @@ The elasticity parameter (e = 1.0) asks the only interesting question here: if y
 - **e = 1.0**: Full match. The baseline assumption. Probably generous given your track record.
 - **e > 1.0**: The "curing cancer together is better bonding than threatening each other with missiles" scenario. Suspiciously wholesome.
 
-Here's the thing: it doesn't matter. Even with the most pessimistic assumption (e = 0.25), the Captured Dividend of {{< var treaty_annual_funding >}} is guaranteed. That money moves regardless of whether you manage to be less violent. It's a bank transfer, not a prayer.
+It doesn't matter. Even at e = 0.25, the Captured Dividend of {{< var treaty_annual_funding >}} is treaty-mandated. That money moves regardless of whether you manage to be less violent. It's a bank transfer, not a prayer.
 
 ## The Part Where the Math Gets Embarrassing
 
-1. **Guaranteed money**: {{< var treaty_annual_funding >}} annually. Direct budget transfer. If the treaty passes, this happens. No elasticity, no assumptions, no hoping humans behave. Just math.
-
 ![Best case: 114 billion in benefits. Worst case: 27.2 billion and you double medical research funding. Truly a devastating range of outcomes.](/assets/images/peace-dividend/peace-dividend-section-key-findings-bw-academic.jpg)
 
-2. **Best case**: Total societal benefit reaches {{< var peace_dividend_annual_societal_benefit >}} annually. The range is wide because, again, your species.
+1. **Guaranteed**: {{< var treaty_annual_funding >}}/year. Direct budget transfer. No elasticity, no assumptions, no hoping humans behave. Just math.
+
+2. **Best case**: {{< var peace_dividend_annual_societal_benefit >}}/year in total societal benefit. The range is wide because, again, your species.
 
 3. **Worst case**: Even pessimistic scenarios stay above roughly $50B annually. Your "worst case" is still the largest increase in medical research funding in human history.
 
@@ -107,14 +95,13 @@ Here's the thing: it doesn't matter. Even with the most pessimistic assumption (
 
 ### The GDP Multiplier
 
-Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get $4.30 back. Your species chose weapons. Every time. For centuries. I've watched you do this for 4,297 years and it has never once gotten less baffling. The Lost Economic Growth component ({{< var global_annual_lost_economic_growth_military_spending >}}) already captures this difference. It's not double-counted, just consistently ignored.
+Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get $4.30 back. Your species chose weapons. Every time. For centuries. The Lost Economic Growth component ({{< var global_annual_lost_economic_growth_military_spending >}}) already captures this difference. It's not double-counted, just consistently ignored.
 
 ![Spend a dollar on weapons, get 60 cents of economic value. Spend a dollar on healthcare, get 4.30 dollars back. You've chosen weapons.](/assets/images/peace-dividend/peace-dividend-section-gdp-multiplier-note-bw-academic.jpg)
 
 ### The Elasticity Assumption
 
-The treaty requires multilateral cuts, so relative military balance is preserved; if your neighbor also cuts 1%, neither of you is weaker, you're just both slightly less armed, which historically has never been the problem. The Societal Dividend assumes 1% less spending means 1% less war cost.
-Reality is messier. Some costs lag by years. Some wars are fueled by boredom rather than budgets. And military spending may occasionally deter a war (though it starts far more than it prevents, which is a bit like crediting your arsonist neighbor for occasionally calling the fire department).
+The treaty requires multilateral cuts, so relative military balance is preserved. If your neighbor also cuts 1%, neither of you is weaker. The Societal Dividend assumes 1% less spending means 1% less war cost. Reality is messier. Some costs lag by years. Some wars are fueled by boredom rather than budgets. And military spending may occasionally deter a war, though it starts far more than it prevents (a bit like crediting your arsonist neighbor for occasionally calling the fire department).
 
 ![Theory says less war spending means proportionally less war. Reality is messier. Turns out humans aren't very good at reducing violence incrementally.](/assets/images/peace-dividend/peace-dividend-section-causal-elasticity-assumption-bw-academic.jpg)
 
@@ -133,8 +120,6 @@ I'm being honest about confidence levels, which is more than your defense contra
 
 ### The Safe Bet
 
-The Societal Dividend is a ceiling, not a forecast. The confidence intervals are wide because your species is unpredictable (mostly in bad ways).
-
-For policy decisions, use the **Captured Dividend ({{< var treaty_annual_funding >}})** as the reliable number. That's money directly moved to medical research. No assumptions about whether humans will fight less. No faith required. Just a bank transfer from the explosion account to the medicine account.
+For policy decisions, use the **Captured Dividend ({{< var treaty_annual_funding >}})** as the reliable number. Money moved directly to medical research. No assumptions about whether humans will fight less. Just a bank transfer from the explosion account to the medicine account.
 
 The Societal Dividend is the upside if you manage to behave yourselves. I'm not holding my breath. (I don't have lungs, but the expression stands.)

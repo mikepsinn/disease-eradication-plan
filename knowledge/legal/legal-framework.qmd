@@ -22,9 +22,9 @@ podcast-image: /assets/podcast/legal-framework-podcast.jpg
 - **Global Referendum:** Runs the non-binding educational survey showing {{< var treaty_campaign_voting_bloc_target_nounit >}}+ humans want to not die
 - **Research:** Funds academic studies proving your system is broken
 - **Education:** Public awareness campaigns (like this book you're reading right now)
-- **Software:** Builds your [Decentralized FDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd)
+- **Software:** Builds your [decentralized FDA](../solution/dfda.qmd) and [Wishocracy](../solution/wishocracy.qmd)
 
-**What It (Mostly) Cannot Do:** Lobby politicians. Technically, a 501(c)(3) can do limited lobbying (under the "no substantial part" test or the 501(h) election caps), but the limits are so tight that it's easier to let the (c)(4) do the heavy lifting. The (c)(3) educates. It demonstrates public will. It does not, in any meaningful sense, tell politicians what to do. On your planet, there's a legal distinction between "teaching people facts" and "suggesting people act on those facts." It means absolutely nothing in practice, but the IRS cares deeply about it, and the IRS is the one organization on Earth less fun to argue with than death.
+**What It Cannot Do:** Lobby politicians (mostly). A 501(c)(3) can do limited lobbying under the "no substantial part" test, but it's easier to let the (c)(4) handle it. On your planet, there's a legal distinction between "teaching people facts" and "suggesting people act on those facts." It means nothing in practice, but the IRS cares deeply about it, and the IRS is the one organization on Earth less fun to argue with than death.
 
 ![This organization does research and builds software. By law, it cannot lobby politicians. That's what the other organization in the diagram does. They're legally distinct but spiritually the same.](/assets/images/legal-framework/legal-framework-section-what-it-does-bw-academic.jpg)
 
@@ -36,25 +36,17 @@ podcast-image: /assets/podcast/legal-framework-podcast.jpg
 
 ![The 501(c)(3) collects data about what people want. The 501(c)(4) uses that data to lobby politicians. They can't technically coordinate. They coordinate anyway. It's legal if you use the right words.](/assets/images/legal-framework/legal-framework-section-entity-2-the-501-c-4-social-welfare-org-the-sword-bw-academic.jpg)
 
-**What It Does:** Takes the referendum results from your (c)(3) and weaponizes them:
+**What It Does:** Takes the referendum results from your (c)(3) and weaponizes them: unlimited lobbying, voter mobilization of {{< var treaty_campaign_voting_bloc_target_nounit >}}+ referendum participants, and the kind of political pressure that makes politicians sweat through their suits.
 
-- **Lobbying:** Unlimited direct lobbying using proven public mandate
-- **Voter Mobilization:** Mobilizes {{< var treaty_campaign_voting_bloc_target_nounit >}}+ referendum participants into an electoral force
-- **Political Action:** Ads, campaigns, the kind of overwhelming pressure that makes politicians sweat through their suits
-
-**Why US 501(c)(4):** Unlimited lobbying while maintaining nonprofit status. Your species invented an organizational form specifically for telling politicians what to do. Then you made a different form for everything else. Efficient.
+**Why US 501(c)(4):** Unlimited lobbying while maintaining nonprofit status. Your species invented an organizational form specifically for telling politicians what to do. Then you made a different form for everything else.
 
 ## Entity #3: The Victory Corporation ("The Engine")
 
 **What It Is:** Standard for-profit corporation. Designed to speak the only language Wall Street understands: money.
 
-### What It Does
+**What It Does:** Issues VICTORY Bonds ({{< var victory_bond_annual_return_pct >}} target returns), uses {{< var treaty_campaign_total_cost >}} to fund lobbying and campaigns, and manages treaty inflows to pay bondholders in perpetuity.
 
-- **Issues VICTORY Bonds:** Sells bonds with {{< var victory_bond_annual_return_pct >}} target returns
-- **Funds Your Legal Bribery:** Uses {{< var treaty_campaign_total_cost >}} to fund lobbying and campaigns
-- **Delivers Returns:** Manages treaty inflows to pay bondholders for as long as signatory nations keep signing checks (perpetual bonds, no maturity date)
-
-**Why Delaware:** More corporations than humans live there [@delaware-corporate-population]. Citizens United means corporations have political speech rights. Your Supreme Court decided that companies are people who can talk, and talking is spending money. This sounds like satire but is actually constitutional law.
+**Why Delaware:** More corporations than humans live there [@delaware-corporate-population]. Your Supreme Court decided that companies are people who can talk, and talking is spending money. This sounds like satire but is actually constitutional law.
 
 ## Entity #4: Your Decentralized Institutes of Health Foundation
 
@@ -62,95 +54,74 @@ podcast-image: /assets/podcast/legal-framework-podcast.jpg
 
 ![The Swiss foundation is the soul of the organization. Souls live in Switzerland because Switzerland has excellent tax treaties and doesn't ask uncomfortable questions.](/assets/images/legal-framework/legal-framework-section-entity-4-the-dih-foundation-the-soul-bw-academic.jpg)
 
-**Why Switzerland:** They've avoided war for over 175 years [@switzerland-last-war-death-1847] by holding everyone's money. Even Hitler couldn't make them pick a side. If you're building something designed to survive hostile governments, put it in the country that has survived all of them by being too useful to invade.
+**Why Switzerland:** They've avoided war for over 175 years [@switzerland-last-war-death-1847] by holding everyone's money. Even Hitler couldn't make them pick a side. If you're building something designed to survive hostile governments, put it in the country that survived all of them by being too useful to invade.
 
-### What It Does
-
-- **Owns the Engine:** 100% shareholder of Victory Corporation, ensuring profit serves mission
-- **Receives Global Capital:** Accepts grants from international foundations
-- **Guarantees Mission:** Legal charter permanently locked to ending war and disease
-- **Coordinates Treaty:** Neutral jurisdiction for your international agreement
-
-**Legal Benefits:** Neutral jurisdiction, crypto-friendly, constitutionally allergic to conflict.
+**What It Does:** 100% shareholder of Victory Corporation (ensuring profit serves mission), accepts international grants, legal charter permanently locked to ending war and disease, neutral jurisdiction for treaty coordination.
 
 ## Why This Four-Part Structure Works
 
 ![One charity pretending to be four charities so the lawyers have something to do.](/assets/images/legal-framework/legal-framework-section-legal-specialization-bw-academic.jpg)
 
-Each entity does only what's perfectly legal in its jurisdiction.
-Combined, they do what's impossible with a single structure.
+Each entity does only what's perfectly legal in its jurisdiction. Combined, they do what's impossible with a single structure.
 
 ![Money walls. Like regular walls, but made of receipts and the tears of accountants.](/assets/images/legal-framework/legal-framework-section-firewall-protection-bw-academic.jpg)
 
-- Charitable funds never touch political operations (IRS)
-- Political funds never touch bond proceeds (SEC)
-- International funds stay firewalled from US political spending (FEC)
-- Separate bank accounts, separate staff, separate lawyers
+Charitable funds never touch political operations (IRS). Political funds never touch bond proceeds (SEC). International funds stay firewalled from US political spending (FEC). Separate bank accounts, separate staff, separate lawyers.
 
-The ACLU, NRA, and Planned Parenthood use this same structure.
-Your species figured this out decades ago.
-You just haven't pointed it at disease yet.
+The ACLU, NRA, and Planned Parenthood use this same structure. You just haven't pointed it at disease yet.
 
 ![How to be technically legal in seventeen countries at once. It's like being technically alive, but with more paperwork.](/assets/images/legal-framework/legal-framework-section-risk-distribution-bw-academic.jpg)
 
 ## Organizational Structure: The For-Profit Management Company
 
-Victory Corporation employs your core team, raises your capital, and executes your strategy.
+Victory Corporation employs your core team, raises your capital, and executes your strategy. Your species spent thousands of years perfecting how to coordinate mass killing. Time to plagiarize that homework for the opposite purpose.
 
 ![The people who will buy your democracy. Org chart included for transparency, as if that helps.](/assets/images/legal-framework/legal-framework-section-organizational-structure-the-for-profit-management-company-bw-academic.jpg)
 
 ### The General Staff (G-Staff)
 
-You're fighting a war against disease. Might as well organize like one. Your species spent thousands of years perfecting how to coordinate mass killing. Time to plagiarize that homework for the opposite purpose.
-
 - **G-1 (Personnel):** Keeps track of humans. Harder than it sounds.
 - **G-2 (Intelligence):** Disease intelligence. Decides which diseases die next.
-- **G-3 (Operations):** Runs your [Decentralized FDA](../solution/dfda.qmd) clinical trials. The only part that actually cures anything.
+- **G-3 (Operations):** Runs your [decentralized FDA](../solution/dfda.qmd) clinical trials. The only part that actually cures anything.
 - **G-4 (Logistics & Treasury):** Manages your VICTORY Bond money. Counts it, moves it, resists the urge to steal it.
 - **G-5 (Plans & Strategy):** Thinks about next year while everyone else panics about next quarter.
 - **G-6 (Signal & Communications):** Propaganda. The reason you're reading this instead of doing something useful.
 
 ![You called your charity staff 'General Staff' like it's an army. To be fair, you're fighting death. Death doesn't have an org chart.](/assets/images/legal-framework/legal-framework-section-the-general-staff-g-staff-bw-academic.jpg)
 
-Your Decentralized Institutes of Health Foundation watches the Victory Corporation so it doesn't drift toward "maximizing shareholder value," which is corporate for "forgetting why you exist."
+The Foundation watches the Victory Corporation so it doesn't drift toward "maximizing shareholder value," which is corporate for "forgetting why you exist."
 
 ![Who watches the watchmen? This chart. The chart watches the watchmen.](/assets/images/legal-framework/legal-framework-section-nonprofit-foundation-governance-bw-academic.jpg)
 
 ## Securities Law
 
-Your VICTORY Incentive Alignment Bonds are securities under the Howey Test. The Howey Test is a legal test named after a citrus company. It determines whether something counts as an investment. Your entire legal system runs on precedents set by orange farmers and railroad companies. This is, genuinely, how the most powerful economy on Earth decides what money is.
+VICTORY Incentive Alignment Bonds are securities under the Howey Test, a legal test named after a citrus company. Your entire legal system runs on precedents set by orange farmers and railroad companies. This is, genuinely, how the most powerful economy on Earth decides what money is.
 
-Start with Regulation D (rich people only). Expand to Regulation CF/A+ (everyone else). Maintain full KYC/AML compliance throughout, because you need to verify that nobody uses your disease-curing bonds to launder money from their disease-causing enterprises. The irony would be unbearable.
+Start with Regulation D (rich people only). Expand to Regulation CF/A+ (everyone else). Full KYC/AML compliance throughout, because you need to verify that nobody uses your disease-curing bonds to launder money from their disease-causing enterprises.
 
 ![How to take money from rich people legally, then regular people legally, then convert the regular people into rich people. It's called capitalism, apparently.](/assets/images/legal-framework/legal-framework-section-securities-law-bw-academic.jpg)
 
 ## Election Law
 
-Bribing your politicians is illegal.
-Unless you call it "lobbying" or "campaign contributions."
-Then it's protected speech.
+Bribing politicians is illegal unless you call it "lobbying" or "campaign contributions." Then it's protected speech.
 
 ![Foreign money stays over there. American money stays over here. If they touch, the FEC explodes.](/assets/images/legal-framework/legal-framework-section-election-law-bw-academic.jpg)
 
-Foreign nationals can't spend money on US elections.
-Violating this gets you federal prison, not a fine.
-American money touches American elections.
-International money touches everything else.
-They never mix. Ever.
+Foreign nationals can't spend money on US elections. Violating this gets you federal prison, not a fine. American money touches American elections. International money touches everything else. They never mix.
 
 For the full details on Super PACs, the foreign national firewall, and international compliance, see [Election Law](election-law.qmd).
 
 ## Treaty Framework
 
-Your 1% Treaty is a formal international agreement. Like the ones your species already signs about postal rates and fish. Except this one redirects military spending to clinical trials. Apparently more controversial than fish, which tells you everything about your priorities.
+The 1% Treaty is a formal international agreement. Like the ones your species already signs about postal rates and fish, except this one redirects military spending to clinical trials. Apparently more controversial than fish.
 
-For the full treaty structure, articles, ratification process, and enforcement mechanisms, see the [1% Treaty](../solution/1-percent-treaty.qmd) chapter. It also covers how to avoid the mistakes your species has made in every previous treaty.
+For the full treaty structure, ratification process, and enforcement mechanisms, see [1% Treaty](../solution/1-percent-treaty.qmd).
 
 ![How a piece of paper becomes law. Takes longer than making a person from scratch.](/assets/images/legal-framework/legal-framework-section-treaty-framework-bw-academic.jpg)
 
 ## Risk Mitigation (When They Come For You)
 
-They will come for you. When you threaten trillion-dollar industries by curing disease cheaply, powerful people notice. They notice the way a bear notices you've sat on its children. Here's how you survive:
+When you threaten trillion-dollar industries by curing disease cheaply, powerful people notice. They notice the way a bear notices you've sat on its children.
 
 ### The Legal Attack Vectors
 
@@ -165,13 +136,9 @@ They will come for you. When you threaten trillion-dollar industries by curing d
 
 ![Bore the prosecutors to death with paperwork. They can't arrest you if they're asleep.](/assets/images/legal-framework/legal-framework-section-the-strategy-bw-academic.jpg)
 
-Budget significant legal resources.
-Top firms in every jurisdiction.
-Former regulators on retainer. They wrote the rules. They know where the rules get tired and stop paying attention.
+Top firms in every jurisdiction. Former regulators on retainer (they wrote the rules; they know where the rules get tired and stop paying attention).
 
-Make prosecuting you more annoying than ignoring you.
-Follow every rule so perfectly that investigating you feels like auditing a library.
-Boring is your best defense. Nobody martyrs the boring.
+Follow every rule so perfectly that investigating you feels like auditing a library. Boring is your best defense. Nobody martyrs the boring.
 
 ![Five backup plans for when they try to stop you from curing disease. You made contingencies for your contingencies. This is called 'paranoia' in individuals and 'strategic planning' in organizations.](/assets/images/legal-framework/legal-framework-section-the-escape-routes-if-everything-goes-wrong-bw-academic.jpg)
 
@@ -179,9 +146,7 @@ If the courts fail, you have international arbitration, regulatory capture (form
 
 ---
 
-This entire strategy uses the exact same legal structures that currently enable tax avoidance, dark money, regulatory capture, and corporate welfare. The tools of corruption, repurposed for medicine.
-The laws lobbyists wrote will turn on their authors like a well-trained dog that's finally met its real owner.
-The loopholes meant for billionaires will fund medicine for billions.
+This entire strategy uses the exact same legal structures that currently enable tax avoidance, dark money, and corporate welfare. The tools of corruption, repurposed for medicine. The loopholes meant for billionaires will fund medicine for billions.
 
 ![Before: jumping through seventeen hoops. After: jumping through three hoops. Progress is relative.](/assets/images/legal-framework/legal-framework-section-revolutionary-exemptions-for-certified-platforms-bw-academic.jpg)
 
@@ -193,6 +158,4 @@ On your planet, that's the most legal thing there is.
 
 **Legal Disclaimer (The Part Your Lawyers Insisted On)**
 
-This chapter is not legal advice. It demonstrates that your entire scheme operates within the law. Hire lawyers who understand that "legal" and "unprecedented" are not mutually exclusive concepts. Most of human progress was, at one point, unprecedented. That's what the word means.
-
-If your lawyers tell you this can't be done, get better lawyers. They're out there. They're expensive. They're worth it.
+This chapter is not legal advice. Hire lawyers who understand that "legal" and "unprecedented" are not mutually exclusive. If your lawyers tell you this can't be done, get better lawyers.

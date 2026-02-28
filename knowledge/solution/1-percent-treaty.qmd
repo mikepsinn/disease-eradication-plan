@@ -13,25 +13,25 @@ image: /assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.j
 podcast-image: /assets/podcast/1-percent-treaty-podcast.jpg
 ---
 
-Your 1% Treaty is a piece of paper that says every signatory nation redirects 1% of its annual military budget to enable any patient to participate in pragmatic clinical trials for the most promising new treatments. 
+Your 1% Treaty is a piece of paper that says every signatory nation redirects 1% of its annual military budget to enable any patient to participate in pragmatic clinical trials for the most promising new treatments.
 
 ## The Math
 
 1.  **The Problem:** The world spends {{< var global_military_spending_annual_2024 >}} a year on military forces.
 2.  **The Hack:** If every nation reduces military spending by 1% *at the same time*, the balance of power remains identical. No country becomes more vulnerable.
-3.  **The Prize:** That 1%, a **{{< var treaty_annual_funding >}}-a-year river of cash**, is redirected to fund clinical trials for every human disease.
+3.  **The Prize:** That 1%, **{{< var treaty_annual_funding >}} a year**, is redirected to fund clinical trials for every human disease.
 
 {{< var treaty_annual_funding_latex >}}
 
-For comparison, {{< var treaty_annual_funding >}} is about what Americans spend on Valentine's Day (flowers and chocolate > curing cancer, apparently), and roughly what humans spend on pet food every three months. Apparently too much to ask for curing diseases.
+For comparison, {{< var treaty_annual_funding >}} is roughly what Americans spend on Valentine's Day, and what humans spend on pet food every three months.
 
 ### How It Works
 
 ![Money goes from the war budget through several boxes with important-sounding names until it reaches someone in a lab coat. Democracy in action.](/assets/images/1-percent-treaty/1-percent-treaty-section-how-it-works-bw-academic.jpg)
 
 1.  **Funding:** Creates a {{< var treaty_annual_funding >}}/year revenue stream for **the 1% Treaty Fund**
-2.  **Execution:** **A network of Decentralized Institutes of Health** subsidizes patient participation in **a [Decentralized FDA](dfda.qmd)**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}} cheaper** than the current model
-3.  **Governance:** Decentralized Autonomous Organization (DAO) governed by smart contracts and global population via [Wishocracy](wishocracy.qmd)
+2.  **Execution:** **A network of Decentralized Institutes of Health** subsidizes patient participation in **a [decentralized FDA](dfda.qmd)**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}} cheaper** than the current model
+3.  **Governance:** Global population via [Wishocracy](wishocracy.qmd), with transparent auditable rules and automated fund allocation
 4.  **Transparency:** All research, data, and spending published on public ledger
 
 ## This Isn't a Trade-Off
@@ -50,7 +50,7 @@ Economists call this a Kaldor-Hicks improvement, which is their way of saying "t
 
 ### The Dead Capital Problem (Or: Why Bombs Are the Worst Investment Since Tulips)
 
-Here's something nobody tells you: when countries "invest" in military hardware, they're not buying assets. They're buying very expensive paperweights that occasionally explode.
+When countries "invest" in military hardware, they're not buying assets. They're buying very expensive paperweights that occasionally explode.
 
 ![Money you spend on food keeps working. Money you spend on missiles sits in a hole waiting to vaporize someone. One of these is considered a smart investment.](/assets/images/1-percent-treaty/1-percent-treaty-the-dead-capital-problem-or-why-bombs-are-the-worst-investment-since-tulips-bw-academic.jpg)
 
@@ -68,7 +68,7 @@ Here's something nobody tells you: when countries "invest" in military hardware,
 - Can only destroy things (including itself)
 - Makes everyone nervous
 
-This is what economists call "dead capital," resources trapped in a form that can't generate returns. It's like if you converted your house into a pile of TNT. Sure, it's impressive. But you can't live in it, rent it out, or do anything except eventually blow it up, at which point you have neither a house nor TNT.
+This is what economists call "dead capital": resources trapped in a form that can't generate returns. It's like converting your house into a pile of TNT. Impressive, but you can't live in it, rent it out, or do anything except eventually blow it up, at which point you have neither a house nor TNT.
 
 As President Eisenhower (a 5-star General who knew about killing professionally) put it:
 
@@ -78,13 +78,9 @@ He literally ran the biggest military in history, and even HE thought you were b
 
 **A 1% treaty doesn't ask you to spend {{< var treaty_annual_funding >}} curing diseases. It asks you to redirect {{< var treaty_annual_funding >}} from the least useful 1% of your military budget to things that make you richer and less dead.**
 
-It's not spending. It's stopping wasting.
+## The Blueprint
 
-## The Blueprint for a Saner World
-
-Treaties are magic pieces of paper that countries sign when they want to pretend they'll behave.
-
-Sometimes they work (you haven't had World War III yet). Sometimes they don't (you've had about 200 other wars [@wars-since-1945]). But they're the only tool you have for getting countries to do anything together besides kill each other.
+Treaties are pieces of paper that countries sign when they want to pretend they'll behave. Sometimes they work (you haven't had World War III yet). Sometimes they don't (you've had about 200 other wars [@wars-since-1945]). But they're the only tool you have for getting countries to do anything together besides kill each other.
 
 ### What Each Country Pays
 
@@ -103,7 +99,7 @@ Every signatory nation contributes exactly 1% of their military budget to **the 
 
 ## Why This Is Actually About National Security (No, Really)
 
-Here's what actually threatens nations today:
+What actually threatens nations today:
 
 ### Real Threats (That Actually Kill People)
 
@@ -162,16 +158,11 @@ So you don't frame this as "reducing military spending." You frame it as:
 **For Everyone**:
 "Your mom has cancer. This might cure it. Sign here."
 
-## The Money Flow: Where {{< var treaty_annual_funding >}} Actually Goes
-
-Once nations sign the treaty and money starts flowing, here's what happens:
+## The Money Flow
 
 ### The 1% Treaty Fund
 
-**Input**: {{< var treaty_annual_funding >}} annually from military budgets worldwide
-
-**Distribution**:
-The {{< var treaty_annual_funding >}} flows into the 1% Treaty Fund. An **80/10/10 automatic split** divides it before any funds reach discretionary spending:
+{{< var treaty_annual_funding >}} annually from military budgets flows into the 1% Treaty Fund. An **80/10/10 automatic split** divides it before any funds reach discretionary spending:
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
@@ -181,44 +172,28 @@ The {{< var treaty_annual_funding >}} flows into the 1% Treaty Fund. An **80/10/
 
 Notice what this does: it disentangles money from influence. In current government budgets, the people who provide the money (lobbyists, donors) also control where it goes. Money buys influence, influence redirects money, and the loop is invisible. Here, investors get money ({{< var victory_bond_funding_pct >}}). Politicians get career incentives ({{< var iab_political_incentive_funding_pct >}}). Neither group touches the {{< var dih_treasury_medical_research_pct >}} that goes to clinical trials. The corruption is capped, transparent, and separated from the public goods funding.
 
-The {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials is then distributed by the actual people of Earth via Wishocracy, not by a committee of 12 people in a conference room who haven't had a new idea since 1987. While allocations are dynamic, initial priorities determined by the crowd are projected to focus on:
-
-- **Patient Subsidies:** The largest portion, creating a market for clinical trials.
-- **Research & Development:** Funding for breakthrough platform technologies.
-- **Pandemic Preparedness:** A global insurance policy against the next COVID.
-The exact percentages will shift in real-time based on humanity's collective will.
-
-**Governance**: 
-Governance is handled by Wishocracy, a system of direct digital democracy detailed in the '[How to Replace Congress With an App](wishocracy.qmd)' chapter. In short: every human gets direct say on funding priorities. Yes, even Florida Man. We'll risk it.
+The {{< var dih_treasury_medical_research_pct >}} for pragmatic clinical trials is distributed by the actual people of Earth via [Wishocracy](wishocracy.qmd), not by a committee of 12 people in a conference room who haven't had a new idea since 1987. Every human gets direct say on funding priorities. Yes, even Florida Man.
 
 ![Watch the money leave the Pentagon and flow through colorful ribbons to labs where people wear goggles. This is called progress.](/assets/images/1-percent-treaty/1-percent-treaty-section-capital-allocation-sankey-bw-academic.jpg)
 
 ### Year One Projected Outcomes
 
-Right now, only {{< var current_trial_slots_available_nounit >}} participate in drug trials annually out of {{< var current_disease_patients_global >}} with chronic disease. A 1% treaty changes this:
+Only {{< var current_trial_slots_available_nounit >}} participate in drug trials annually out of {{< var current_disease_patients_global >}} with chronic disease. With a 1% treaty + a decentralized FDA:
 
-#### Current System
-
-- Pivotal trials: {{< var traditional_phase3_cost_per_patient >}}
-- {{< var willing_trial_participants_global >}} willing to participate, but turned away
-- {{< var drug_discovery_to_approval_years >}} from discovery to patient
-
-#### With a 1% treaty + a decentralized FDA
-
-- {{< var global_clinical_trials_spending_annual >}} existing + {{< var treaty_annual_funding >}} from treaty
-- Pragmatic trials: {{< var dfda_pragmatic_trial_cost_per_patient >}} ({{< var dfda_trial_cost_reduction_factor >}} cheaper)
-- {{< var dih_patients_fundable_annually_nounit >}} participants per year ({{< var dfda_trial_capacity_multiplier >}} capacity increase)
+| | Current | With Treaty |
+|:---|:---|:---|
+| Cost per patient | {{< var traditional_phase3_cost_per_patient >}} | {{< var dfda_pragmatic_trial_cost_per_patient >}} ({{< var dfda_trial_cost_reduction_factor >}} cheaper) |
+| Funding | {{< var global_clinical_trials_spending_annual >}} | + {{< var treaty_annual_funding >}} from treaty |
+| Participants/year | {{< var current_trial_slots_available >}} | {{< var dih_patients_fundable_annually_nounit >}} ({{< var dfda_trial_capacity_multiplier >}} increase) |
 
 ![The old way: expensive, slow, nobody joins. The new way: cheaper, faster, everyone joins. We've been using the old way for 80 years.](/assets/images/1-percent-treaty/1-percent-treaty-section-efficiency-comparison-bw-academic.jpg)
 
 
 ## The Incentive Structure
 
-The military-industrial complex will LOVE this.
-
 ![Generals keep their budgets, get richer from biotech stocks, look like heroes, make investment profits, and might not die from cancer. Still took us this long to think of it.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-incentive-structure-bw-academic.jpg)
 
-Why? Because they get to:
+The military-industrial complex gets to:
 
 1.  **Keep {{< var defense_sector_retention_pct >}} of their budget** (still plenty for bombs)
 2.  **Pivot 1% to biotech** (the health market is growing; the bomb market just got 1% smaller)
@@ -226,33 +201,31 @@ Why? Because they get to:
 4.  **Invest in the fund** ([VICTORY Incentive Alignment Bonds](incentive-alignment-bonds.qmd) pay {{< var victory_bond_annual_return_pct >}} annually)
 5.  **Not die of cancer** (even arms dealers get cancer)
 
-Lockheed Martin Presents: The F-35 Cancer Killer™
-Boeing Proud Sponsor of: Not Dying of Alzheimer's
-Raytheon Technologies: Now With 1% Less Death
+Lockheed Martin Presents: The F-35 Cancer Killer. Boeing Proud Sponsor of: Not Dying of Alzheimer's. Raytheon Technologies: Now With 1% Less Death.
 
-They keep their contracts. They keep their profits. They just point 1% of their death machines at actual death. This isn't just about saving lives; it's about potentially creating the biggest growth industry of the century: the business of not-dying.
+They keep their contracts. They keep their profits. They just point 1% of their death machines at actual death.
 
 ## What Happens If This Actually Works
 
-### The Endgame: Reorienting Global Priorities
+### The Endgame
 
-A 1% treaty isn't the goal. It's the proof of concept. I've watched roughly 10,000 civilizations reach this exact fork in the road; the ones still around all started with something like 1%, and the ones that didn't are geological features now. Once your species gets a taste of "spending money on things that help instead of things that explode," you'll want more. You're not appealing to better angels. You're making peace more profitable than war. Turns out humans will do anything if you pay them enough, including surviving.
+A 1% treaty isn't the goal. It's the proof of concept. I've watched roughly 10,000 civilizations reach this exact fork in the road; the ones still around all started with something like 1%, and the ones that didn't are geological features now. Once your species gets a taste of "spending money on things that help instead of things that explode," you'll want more.
 
 ![Start with 1 percent. Then 2 percent. Eventually war becomes a hobby and peace becomes profitable. Like quitting smoking, but for nations.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-endgame-reorienting-global-priorities-bw-academic.jpg)
 
-### The Ratchet Effect: How to Boil a Frog (The Frog is the War Machine)
+### The Ratchet Effect
 
-Once a 1% treaty is signed and the first cures for "untreatable" diseases start rolling out, the system becomes more valuable. Every five to ten years, you hold another global vote. "Hey, that worked out great. Grandma's dementia is manageable now. You stopped that pandemic before it started. Want to try another half-percent?"
+Once a 1% treaty is signed and the first cures start rolling out, the system becomes more valuable. Every five to ten years, you hold another global vote. "Grandma's dementia is manageable now. Want to try another half-percent?"
 
 ![Scientists cure a disease. People like it. More money flows to science. More diseases get cured. The circle continues until someone remembers they like tanks.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-ratchet-effect-how-to-boil-a-frog-the-frog-is-the-war-machine-bw-academic.jpg)
 
-More cures lead to more popular support, which leads to more votes for more funding, which leads to more cures. It's a self-reinforcing flywheel for peace. The endgame: countries bragging about their cancer survival rates instead of their missile counts.
+More cures lead to more popular support, which leads to more votes for more funding, which leads to more cures. The endgame: countries bragging about their cancer survival rates instead of their missile counts.
 
 For quantitative projections of health and economic impacts, see [https://impact.warondisease.org](https://impact.warondisease.org).
 
 ## Avoiding Treaty Pitfalls
 
-Treaties fail in predictable ways. I know because I've catalogued every failed treaty on every planet I've consulted for, and they all fail for the same five boring reasons. Here's how this one avoids the common killers:
+Treaties fail in predictable ways. They all fail for the same boring reasons. Here's how this one avoids the common killers:
 
 ### Reservation Games
 
@@ -278,7 +251,7 @@ Executive signs, legislature refuses to implement.
 
 ![Regular treaties need Congress to agree twice. Self-executing treaties only need them to agree once. This is considered a dramatic improvement.](/assets/images/1-percent-treaty/1-percent-treaty-section-parliamentary-obstacles-bw-academic.jpg)
 
-**Solution:** The treaty obligates the percentage; Congress implements via the annual National Defense Authorization Act (NDAA). After *Medellin v. Texas* (2008), the US Supreme Court made clear that not all treaties are self-executing, and a treaty directing budget appropriations would collide with Congress's power of the purse. So the treaty doesn't try to bypass Congress. It creates a binding international obligation that Congress fulfills through its normal appropriations process, the same way NATO's spending commitments work. The [IAB mechanism](incentive-alignment-bonds.qmd) ensures legislators have a personal financial incentive to include the 1% line item every year. In other signatory nations, similar provisions route implementation through existing budget processes.
+**Solution:** The treaty obligates the percentage; Congress implements via the annual National Defense Authorization Act (NDAA). After *Medellin v. Texas* (2008), the Supreme Court made clear that not all treaties are self-executing, so the treaty doesn't try to bypass Congress. It creates a binding international obligation that Congress fulfills through its normal appropriations process, the same way NATO's spending commitments work. The [IAB mechanism](incentive-alignment-bonds.qmd) ensures legislators have a personal incentive to include the 1% line item every year.
 
 ## Summary
 
@@ -318,7 +291,7 @@ NOW, THEREFORE, the undersigned nations agree to stop being complete idiots abou
 
 **Article III**: Percentages may increase but never decrease. This is a ratchet, not a yo-yo.
 
-**Article IV**: Compliance shall be verified by blockchain and AI. No creative accounting.
+**Article IV**: Compliance shall be verified by public ledger and independent audits. No creative accounting.
 
 **Article V**: Non-compliant parties lose access to [IAB benefits](incentive-alignment-bonds.qmd) and treaty fund advantages. Your opponents get what you forfeit.
 

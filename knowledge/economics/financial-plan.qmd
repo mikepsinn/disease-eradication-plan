@@ -12,9 +12,9 @@ image: /assets/og-images/knowledge/economics/financial-plan-og-retro-academic.jp
 podcast-image: /assets/podcast/financial-plan-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Most financial plans are complicated because the writers are confused or lying. This one is complicated because you're trying to convince 195 countries to voluntarily stop buying so many weapons. While paying your investors forever. That actually IS complicated.
+Most financial plans are complicated because the writers are confused or lying. This one is complicated because you're convincing 195 countries to voluntarily stop buying so many weapons while paying your investors forever.
 
-But the architecture is embarrassingly simple:
+The architecture is embarrassingly simple:
 
 1. Raise {{< var treaty_campaign_total_cost >}}.
 2. Spend it to pass the treaty.
@@ -26,13 +26,13 @@ Three pillars. That's it.
 
 **Instrument:** [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)
 
-- **Returns:** {{< var victory_bond_annual_return_pct >}} annually. Yes, that number looks like a typo. It's just arithmetic: {{< var victory_bond_annual_payout >}} / {{< var treaty_campaign_total_cost >}}.
-- **Structure:** Senior debt. The fund pays bondholders before anyone else. Like a VIP line, but for not dying.
-- **Payout:** {{< var victory_bond_funding_pct >}} of all treaty inflows. That's {{< var victory_bond_annual_payout >}}/year.
+- **Returns:** {{< var victory_bond_annual_return_pct >}} annually. Looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} / {{< var treaty_campaign_total_cost >}}.
+- **Structure:** Senior debt. The fund pays bondholders before anyone else.
+- **Payout:** {{< var victory_bond_funding_pct >}} of all treaty inflows ({{< var victory_bond_annual_payout >}}/year).
 - **Collateral:** {{< var treaty_annual_funding >}}+ annual treaty revenue stream.
 - **The pitch:** "Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever."
 
-Every Ponzi scheme in history has promised returns like this. The difference is that this one has collateral: the entire military budget of the planet. Which, unlike Bernie Madoff's spreadsheet, actually exists.
+Every Ponzi scheme in history has promised returns like this. The difference is collateral: the entire military budget of the planet. Which, unlike Bernie Madoff's spreadsheet, actually exists.
 
 ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
 
@@ -40,8 +40,8 @@ Every Ponzi scheme in history has promised returns like this. The difference is 
 
 **Why bonds, not donations?** Donations require generosity. Returns require greed. Greed is faster.
 
-**Why {{< var treaty_campaign_total_cost >}}?** Pharma lobbying (~$300M/year) plus military-industrial complex (~$150M/year) equals $450M/year spent specifically to keep things exactly as terrible as they are. That's the price of the status quo, renewed annually, like a subscription to suffering.
-Raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. Over a realistic 10-year campaign, opposition spends roughly $4.5B to your $1B. They outspend you 4.5:1. But their $450M/year is spread across maintaining thousands of contracts, subsidizing dozens of incumbents, and defending the entire status quo. Your $1B is a single bullet aimed at a single treaty. Concentrated offense beats diffuse defense. Ask any general. (They'd know; you're paying them enough.)
+**Why {{< var treaty_campaign_total_cost >}}?** Pharma lobbying (~$300M/year) plus military-industrial complex (~$150M/year) equals $450M/year spent to keep things exactly as terrible as they are. A subscription to suffering.
+Raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. Over a 10-year campaign, opposition spends roughly $4.5B to your $1B. But their $450M/year is spread across thousands of contracts and dozens of incumbents. Your $1B is aimed at a single treaty. Concentrated offense beats diffuse defense.
 
 **Nobody gets paid unless it works.** Lawyers get success-based compensation. Team compensation is mostly equity. This is how you know it's not a government program.
 
@@ -59,7 +59,7 @@ Ranges reflect scenario planning (optimistic to pessimistic). The {{< var treaty
 
 **Detailed Breakdown:** [Campaign Budget](campaign-budget.qmd)
 
-The one-time "activation energy" to convince {{< var global_population_2024_nounit >}} people to marginally reduce their commitment to mutual annihilation. Think of it as a Kickstarter for not going extinct:
+The one-time activation energy to convince {{< var global_population_2024_nounit >}} people to marginally reduce their commitment to mutual annihilation:
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
@@ -80,13 +80,13 @@ You're betting on viral referendum mechanics and existing disarmament frameworks
 
 ## Pillar 3: Treasury (Manage {{< var treaty_annual_funding >}}+/Year)
 
-Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from "how to kill people" budgets into "how to stop people dying" budgets. Same money, opposite direction.
+Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from "how to kill people" budgets into "how to stop people dying" budgets.
 
 ![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
 
-100+ nations contribute {{< var treaty_reduction_pct >}} of military budgets. Not because they've had a moral awakening. Because the math makes non-compliance look like setting money on fire, which, to be fair, is also what military budgets do, just with more steps.
+100+ nations contribute {{< var treaty_reduction_pct >}} of military budgets. Not because they've had a moral awakening. Because the math makes non-compliance look like setting money on fire.
 
-The [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing: politicians in non-compliant countries watch their Public Good Scores drop, voters abandon them for someone who can do basic arithmetic, and compliance becomes the career-optimal choice. You don't need politicians to be good. You just need them to be selfish in the right direction.
+The [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing: politicians in non-compliant countries watch their Public Good Scores drop, voters abandon them, and compliance becomes the career-optimal choice. You don't need politicians to be good. You just need them to be selfish in the right direction.
 
 ![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
 
@@ -102,16 +102,13 @@ The allocation is automatic. No committees. No debates. No one arguing for six m
 
 ![Twenty percent goes to paying investors and politicians automatically via smart contracts. Finally, a use for blockchain that isn't fraud or monkey pictures.](/assets/images/financial-plan/financial-plan-section-the-fixed-costs-bw-academic.jpg)
 
-The 20% for bonds and political incentives is sacred and untouchable.
-Smart contracts distribute both automatically. No human hands involved, which, given your track record with money, is a feature.
-Touch them and the system dies.
+The 20% for bonds and political incentives is untouchable. Smart contracts distribute both automatically. No human hands involved, which, given your track record with money, is a feature.
 
-The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds clinical trials and research infrastructure.
-[Wishocracy](../solution/wishocracy.qmd) governs the allocation.
+The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds clinical trials and research infrastructure. [Wishocracy](../solution/wishocracy.qmd) governs the allocation.
 
 ### Dynamic Patient Subsidies
 
-**The revolutionary part:** instead of paying researchers to write about diseases, you pay patients to participate in curing them. I know. Paying the people who are actually sick. What a concept.
+Instead of paying researchers to write about diseases, you pay patients to participate in curing them. Paying the people who are actually sick. What a concept.
 
 ```
 Base Subsidy = Medical Research Allocation / Active Trial Participants
@@ -128,10 +125,10 @@ As more patients join:
 10M participants = ~$2,180 per patient
 ```
 
-Patients organize to grow the treasury (because for once, participating in their own survival is financially rewarded).
-Researchers compete to attract patients (instead of competing to write the most persuasive grant application, which is a different skill entirely from doing science, in the same way that writing a good restaurant review is a different skill from cooking).
-Insurance companies save money (trials are cheaper than paying for decades of chronic suffering).
-Compare that to NIH grants: 6 months of proposal writing, committees deciding whether the proposal writing was good enough, universities skimming 40% overhead, and then maybe, possibly, if the stars align and no one retires mid-review, some science.
+Patients organize to grow the treasury (participating in their own survival is, for once, financially rewarded).
+Researchers compete to attract patients (instead of competing to write persuasive grant applications, which is a different skill from doing science, the same way writing a restaurant review is a different skill from cooking).
+Insurance companies save money (trials are cheaper than decades of chronic suffering).
+Compare that to NIH grants: 6 months of proposal writing, committees judging the writing, universities skimming 40% overhead, and then maybe some science.
 
 ## Related Documents
 
@@ -141,7 +138,4 @@ Compare that to NIH grants: 6 months of proposal writing, committees deciding wh
 - **[Defense Contractor Alignment](../solution/aligning-incentives.qmd#defense-contractors-teaching-merchants-of-death-to-love-life)** - Defense contractor conversion strategy
 - **[Cost-Benefit Analysis for a Decentralized Drug Assessment Framework](https://dfda-impact.warondisease.org)** - Complete ROI analysis
 
-**The math:** Invest {{< var treaty_campaign_total_cost >}}.
-Get {{< var victory_bond_annual_payout >}}/year.
-Forever.
-Your species spent ~$5 billion on a particle accelerator to find a boson. This costs less and finds a cure for dying.
+**The math:** Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever. Your species spent ~$5 billion on a particle accelerator to find a boson. This costs less and finds a cure for dying.
