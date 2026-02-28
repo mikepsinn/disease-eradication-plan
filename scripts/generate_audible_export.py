@@ -46,7 +46,11 @@ ACX_PEAK_MAX = -3.0
 
 
 def get_rms(file_path: Path) -> float | None:
-    """Measure RMS level of an audio file using ffmpeg astats."""
+    """Measure RMS level of an audio file using ffmpeg astats.
+
+    Uses reset=0 so stats accumulate over the whole file.
+    The LAST line is the correct overall value.
+    """
     result = subprocess.run(
         [
             "ffmpeg", "-i", str(file_path),
@@ -55,16 +59,21 @@ def get_rms(file_path: Path) -> float | None:
         ],
         capture_output=True, text=True,
     )
+    last_val = None
     for line in result.stderr.splitlines():
         if "lavfi.astats.Overall.RMS_level=" in line:
             val = line.split("=")[-1].strip()
             if val != "-inf":
-                return float(val)
-    return None
+                last_val = float(val)
+    return last_val
 
 
 def get_peak(file_path: Path) -> float | None:
-    """Measure peak level of an audio file using ffmpeg astats."""
+    """Measure peak level of an audio file using ffmpeg astats.
+
+    Uses reset=0 so stats accumulate over the whole file.
+    The LAST line is the correct overall value.
+    """
     result = subprocess.run(
         [
             "ffmpeg", "-i", str(file_path),
@@ -73,12 +82,13 @@ def get_peak(file_path: Path) -> float | None:
         ],
         capture_output=True, text=True,
     )
+    last_val = None
     for line in result.stderr.splitlines():
         if "lavfi.astats.Overall.Peak_level=" in line:
             val = line.split("=")[-1].strip()
             if val != "-inf":
-                return float(val)
-    return None
+                last_val = float(val)
+    return last_val
 
 
 def get_duration_secs(file_path: Path) -> float:
@@ -97,6 +107,26 @@ def format_duration(secs: float) -> str:
     return f"{h:02d}:{m:02d}:{s:02d}"
 
 
+def _loudnorm_measure(wav_path: Path) -> dict:
+    """Pass 1: measure loudness stats with ffmpeg loudnorm in print mode."""
+    result = subprocess.run(
+        [
+            "ffmpeg", "-i", str(wav_path),
+            "-af", "loudnorm=print_format=json",
+            "-f", "null", "/dev/null",
+        ],
+        capture_output=True, text=True,
+    )
+    # Parse the JSON block from stderr
+    stderr = result.stderr
+    json_start = stderr.rfind("{")
+    json_end = stderr.rfind("}") + 1
+    if json_start < 0 or json_end <= json_start:
+        raise RuntimeError(f"Could not parse loudnorm stats from {wav_path.name}")
+    import json as _json
+    return _json.loads(stderr[json_start:json_end])
+
+
 def convert_to_audible_mp3(
     wav_path: Path,
     mp3_path: Path,
@@ -108,32 +138,37 @@ def convert_to_audible_mp3(
     artist: str,
     year: str,
 ) -> dict:
-    """Convert a WAV to ACX-compliant MP3 with two-pass loudness normalization.
+    """Convert a WAV to ACX-compliant MP3 with two-pass loudnorm normalization.
 
-    Pass 1: Measure current RMS
-    Pass 2: Apply volume adjustment + peak limiter, encode to MP3, tag with ID3
+    Pass 1: Measure integrated loudness, true peak, LRA via loudnorm
+    Pass 2: Apply loudnorm in linear mode with measured values, then encode
+
+    ACX wants RMS between -23 and -18 dB, peak <= -3 dB.
+    We target an integrated loudness (LUFS) that maps to the desired RMS range.
+    For speech, LUFS ~ RMS, so we use target_rms as the LUFS target.
     """
-    # Pass 1: measure source RMS
-    source_rms = get_rms(wav_path)
-    if source_rms is None:
-        raise RuntimeError(f"Could not measure RMS of {wav_path}")
+    # Pass 1: measure
+    stats = _loudnorm_measure(wav_path)
+    source_i = float(stats["input_i"])
+    source_tp = float(stats["input_tp"])
+    source_lra = float(stats["input_lra"])
+    source_thresh = float(stats["input_thresh"])
 
-    volume_adj = target_rms - source_rms
-
-    # Build audio filter: volume adjustment + peak limiter at -3 dB
-    af_parts = []
-    if abs(volume_adj) > 0.05:
-        af_parts.append(f"volume={volume_adj:.2f}dB")
-    af_parts.append(f"alimiter=limit={10 ** (ACX_PEAK_MAX / 20):.6f}:attack=5:release=50")
-
-    af_chain = ",".join(af_parts)
+    # Pass 2: apply loudnorm with measured values (linear mode for better quality)
+    # Target: integrated loudness = target_rms LUFS, true peak = -3 dB
+    af = (
+        f"loudnorm=I={target_rms}:TP={ACX_PEAK_MAX}:LRA=11"
+        f":measured_I={source_i}:measured_TP={source_tp}"
+        f":measured_LRA={source_lra}:measured_thresh={source_thresh}"
+        f":linear=true:print_format=summary"
+    )
 
     mp3_path.parent.mkdir(parents=True, exist_ok=True)
 
     cmd = [
         "ffmpeg", "-y",
         "-i", str(wav_path),
-        "-af", af_chain,
+        "-af", af,
         "-ar", str(ACX_SAMPLE_RATE),
         "-ac", "1",  # mono
         "-b:a", f"{ACX_BITRATE}k",
@@ -169,8 +204,8 @@ def convert_to_audible_mp3(
     duration = get_duration_secs(mp3_path)
 
     return {
-        "source_rms": round(source_rms, 2),
-        "volume_adj": round(volume_adj, 2),
+        "source_rms": round(source_i, 2),
+        "volume_adj": round(target_rms - source_i, 2),
         "output_rms": round(out_rms, 2) if out_rms else None,
         "output_peak": round(out_peak, 2) if out_peak else None,
         "duration_secs": round(duration, 1),
