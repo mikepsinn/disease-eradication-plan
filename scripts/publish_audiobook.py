@@ -23,6 +23,7 @@ Usage:
     python scripts/publish_audiobook.py --no-audible            # Skip Audible export
     python scripts/publish_audiobook.py --audible-only          # Only run Audible export
     python scripts/publish_audiobook.py --keyframes-only        # Stop after keyframes
+    python scripts/publish_audiobook.py --ken-burns             # Ken Burns stills video (no Veo)
     python scripts/publish_audiobook.py --list                  # List chapters and exit
     python scripts/publish_audiobook.py --dry-run               # Text dry-run only
 """
@@ -192,7 +193,12 @@ def main():
     parser.add_argument("--audible-only", action="store_true", help="Only run Audible/ACX export (skip all other steps)")
     parser.add_argument("--target-rms", type=float, default=-20.0, help="Target RMS for Audible export (default: -20.0 dB)")
     parser.add_argument("--keyframes-only", action="store_true", help="Stop after keyframe generation (skip Veo animation)")
+    parser.add_argument("--ken-burns", action="store_true", help="Generate Ken Burns stills video (pan/zoom on keyframes, no Veo)")
     args = parser.parse_args()
+
+    # --ken-burns implicitly enables --video
+    if args.ken_burns:
+        args.video = True
 
     # Build shared args that get passed to text + audio scripts
     shared = ["--config", args.config]
@@ -273,8 +279,15 @@ def main():
             video_args.append("--force")
         if args.keyframes_only:
             video_args.append("--keyframes-only")
+        if args.ken_burns:
+            video_args.append("--ken-burns")
 
-        step_label = "Generate keyframes" if args.keyframes_only else "Generate video (keyframes + Veo + assembly)"
+        if args.keyframes_only:
+            step_label = "Generate keyframes"
+        elif args.ken_burns:
+            step_label = "Generate Ken Burns stills video"
+        else:
+            step_label = "Generate video (keyframes + Veo + assembly)"
         if not run_step(step_label, "generate_audiobook_video.py", video_args):
             sys.exit(1)
 
