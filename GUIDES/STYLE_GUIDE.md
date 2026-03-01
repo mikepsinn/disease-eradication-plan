@@ -100,43 +100,35 @@ We're describing frameworks and concepts, not pitching branded products. Use com
 
 ### The Rule
 
-**Never write "Decentralized FDA"** - always use either:
-- `dFDA` (the acronym)
-- "decentralized framework for drug assessment" (expanded)
+**Write "your decentralized FDA"** (lowercase, with "your") as the default. This is a DIY guide; the reader is building this.
 
 | ❌ Never use | ✅ Use instead |
 |--------------|----------------|
-| Decentralized FDA | dFDA / decentralized framework for drug assessment |
-| The Decentralized Institutes of Health | your DIH / decentralized institutes of health |
-| Join the DIH | here's how you build a DIH |
-| Our dFDA platform | a dFDA framework / your decentralized trial system |
+| dFDA | your decentralized FDA |
+| Decentralized FDA (capitalized proper noun) | your decentralized FDA |
+| The Decentralized Institutes of Health | your decentralized institutes of health |
+| Join the DIH | here's how you build your decentralized institutes of health |
+| Our dFDA platform | your decentralized FDA |
 
 ### When to use "your"
 
-Use "your" in instructional/empowering contexts - this is a DIY guide:
-- "Your dFDA platform connects patients to trials"
+Use "your" in instructional/empowering contexts (most of the book):
+- "Your decentralized FDA connects patients to trials"
 - "Your 1% Treaty Fund holds the funds"
-- "Here's how your decentralized trial system works"
+- "Here's how your decentralized FDA works"
 
 ### When to stay neutral
 
-- **Definitions/glossary:** "dFDA (decentralized framework for drug assessment): A system for..."
-- **Technical/economic analysis:** "A dFDA model achieves 82× cost reduction..."
-- **Comparisons:** "A decentralized approach vs the current FDA..."
+Drop "your" in definitions and technical analysis:
+- **Definitions/glossary:** "A decentralized FDA is a system for..."
+- **Technical/economic analysis:** "A decentralized FDA achieves 82x cost reduction..."
+- **Comparisons:** "A decentralized FDA vs the current FDA..."
 
-### Acronyms are fine
+### Variants
 
-Keep using dFDA, DIH - these are shorthand, not branding. The goal is to avoid capitalized proper nouns that sound like company names.
-
-### "Framework" not "Platform"
-
-Use "framework" when describing the concept/approach. Use "platform" only when referring to actual software being built.
-
-| Context | Use |
-|---------|-----|
-| Conceptual discussions | "dFDA framework" |
-| Policy/methodology | "a dFDA approach" |
-| Actual software/infrastructure | "core platform build costs" |
+"Your decentralized FDA" is the default. In technical contexts, "framework" or "protocol" are both fine depending on what fits:
+- "a decentralized clinical trial framework" (describing the system design)
+- "a decentralized trial protocol" (describing the methodology)
 
 ### The test
 

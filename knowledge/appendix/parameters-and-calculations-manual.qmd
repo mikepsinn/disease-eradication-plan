@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 252 parameters used in the analysis, organized by type:
+This appendix documents all 254 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 103
-- Calculated values: 91
+- Calculated values: 93
 - Core definitions: 58
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (91 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
+[Calculated Values](#sec-calculated) (93 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (58 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5740,6 +5740,279 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-victory_bond_annual_return_pct.qmd >}}
+
+:::
+
+### Lives Saved per Voter: 38.4 lives {#sec-voter_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Lives saved attributable to each voter if the treaty passes (total lives saved ÷ 3.5% voting bloc target)
+
+**Inputs**:
+
+- [Total Lives Saved from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_lives_saved) 🔢: 10.7 billion deaths
+- [Target Voting Bloc Size for Campaign](#sec-treaty_campaign_voting_bloc_target) 🔢: 280 million of people
+
+$$
+\begin{gathered}
+Lives_{voter} \\
+= \frac{Lives_{max}}{N_{voters,target}} \\
+= \frac{10.7B}{280M} \\
+= 38.4
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{max} \\
+= Deaths_{disease,daily} \times T_{accel,max} \times 338 \\
+= 150{,}000 \times 212 \times 338 \\
+= 10.7B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{voters,target} \\
+= Pop_{global} \times Threshold_{activism} \\
+= 8B \times 3.5\% \\
+= 280M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-voter_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-voter_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-voter_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-voter_lives_saved.qmd >}}
+
+:::
+
+### Suffering Hours Prevented per Voter: 6.9 million hours {#sec-voter_suffering_hours_prevented}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of suffering prevented attributable to each voter if the treaty passes (total suffering hours ÷ 3.5% voting bloc target)
+
+**Inputs**:
+
+- [Suffering Hours Eliminated from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_suffering_hours) 🔢: 1.93 quadrillion hours
+- [Target Voting Bloc Size for Campaign](#sec-treaty_campaign_voting_bloc_target) 🔢: 280 million of people
+
+$$
+\begin{gathered}
+Hours_{suffer,voter} \\
+= \frac{Hours_{suffer,max}}{N_{voters,target}} \\
+= \frac{1930T}{280M} \\
+= 6.9M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Hours_{suffer,max} \\
+= DALYs_{max} \times Pct_{YLD} \times 8760 \\
+= 565B \times 0.39 \times 8760 \\
+= 1930T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{voters,target} \\
+= Pop_{global} \times Threshold_{activism} \\
+= 8B \times 3.5\% \\
+= 280M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-voter_suffering_hours_prevented.qmd >}}
+
+{{< include ../figures/sensitivity-table-voter_suffering_hours_prevented.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-voter_suffering_hours_prevented.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-voter_suffering_hours_prevented.qmd >}}
 
 :::
 
