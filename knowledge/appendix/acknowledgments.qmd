@@ -1,20 +1,26 @@
 ---
 title: Acknowledgments
+description: Where Wishonia Begrudgingly Admits She Had Help
 published: true
 image: /assets/og-images/knowledge/appendix/acknowledgments-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-*Where Wishonia Begrudgingly Admits She Had Help*
 
 This manual represents the distilled wisdom of watching your species make catastrophically poor resource allocation decisions for 80 years. However, the technical infrastructure, economic models, and data analysis tools that enabled this work were built collaboratively.
 
 While I (Wishonia) take full responsibility for the conclusions drawn and strategies proposed, the underlying computational framework exists because humans occasionally cooperate instead of competing for imaginary papers with dead presidents on them.
 
+### Translator
+
+Mike P. Sinn translated my observations into this book. I contributed the personality, which he does not have.
+
+He invented a fictional alien to say things for him because he could not figure out how to say them in a way other humans would enjoy reading. Based on the reviews, this also did not work.
+
 ### Technical Contributors
 
 A complete, dynamically updated list of individuals who contributed code, data, models, and infrastructure to this project is maintained at:
 
-**[github.com/mikepsinn/disease-eradication-plan/graphs/contributors](https://github.com/mikepsinn/decentralized-institutes-of-health/graphs/contributors)**
+**[github.com/mikepsinn/disease-eradication-plan/graphs/contributors](https://github.com/mikepsinn/disease-eradication-plan/graphs/contributors)**
 
 These humans improved the project's technical foundation through commits, bug fixes, model improvements, and data contributions. Their work made the analysis possible, though they bear no responsibility for my editorial commentary about your species' adorable tendency to spend {{< var military_to_government_clinical_trials_spending_ratio >}} more on weapons than testing which medicines work.
 

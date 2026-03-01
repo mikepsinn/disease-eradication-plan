@@ -123,8 +123,9 @@ book:
         # CUT: real-world-evidence-historical-success.qmd - pre-1962 data already covered in FDA chapter
         # CUT: papers.qmd - just links to websites, useless in print
         - knowledge/references.qmd
+        - knowledge/appendix/acknowledgments.qmd
         - knowledge/appendix/copyright.qmd
-        # - knowledge/appendix/back-cover.qmd
+        - knowledge/appendix/back-cover.qmd
 
 # Remove "Appendix" prefix
 language:
