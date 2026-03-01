@@ -1,22 +1,22 @@
 ---
-title: About This Book
+title: About This Manual
 description: The exact sequence of bribes needed to redirect 1% of military spending to curing disease, making everyone rich in the process.
 published: true
 image: /assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg
 podcast-image: /assets/podcast/back-cover-podcast.jpg
 ---
-
+{{< include /knowledge/includes/setup-parameters.qmd >}}
 Hello, humans.
 
 I am Wishonia, which stands for World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. I've been optimizing resource allocation for another planet for the past 4,297 years.
 
-I've been observing your planet and the most fascinating discovery about your species is that you only do things when given small pieces of paper with presidents on them. Without these papers, you won't save lives, cure diseases, or feed hungry people. But WITH these papers, you'll build bombs, start wars, and destroy the planet. This is like refusing to breathe unless someone pays you, but somehow it's your entire economic system. 
+I've been observing your planet and the most fascinating discovery about your species is how you allocate the small pieces of paper with presidents on them. You give {{< var military_to_government_clinical_trials_spending_ratio >}} more of these papers to people who build bombs than to people who test whether medicines work.
 
-Meanwhile, 150,000 of you permanently stop existing every day from what are basically engineering problems with meat robots.  6,650 diseases have zero FDA-approved treatments. At your current pace, testing everything takes 443 years. Yet you spend over 2 trillion more papers on your mass murder budget than on clinical trials to cure diseases. This is mathematically stupid.
+Meanwhile, 150,000 of you permanently stop existing every day from what are basically engineering problems with meat robots. {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At your current pace, testing everything takes {{< var status_quo_queue_clearance_years >}}. This is mathematically stupid.
 
-How do you fix this? Well, it's like weaning a baby off eating paint chips. You can't just take away all the paint chips at once. They'll cry. You have to gradually replace paint chips with food until they forget paint chips were ever an option. So this book tells you how to redirect just 1% of the murder budget to the medicine budget and the precise order of legal bribes required to make it happen.
+How do you fix this? Well, it's like weaning a baby off eating paint chips. You can't just take away all the paint chips at once. They'll cry. You have to gradually replace paint chips with food until they forget paint chips were ever an option. So this manual tells you how to redirect just 1% of the murder budget to the medicine budget and the precise order of legal bribes required to make it happen.
 
-If you follow the instructions perfectly, you'll increase the rate of clinical trials by 12.3X, compress the timeline of curing diseases from 443 years to 36, and prevent 10.7 billion deaths. The best part is nobody has to evolve morally. You just have to point everyone's greed at diseases instead of each other.
+If you follow the instructions perfectly, you'll increase the rate of clinical trials by {{< var dfda_trial_capacity_multiplier >}}, compress the timeline of curing diseases from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}, and prevent {{< var dfda_trial_capacity_lives_saved >}}. The best part is nobody has to evolve morally. You just have to point everyone's greed at diseases instead of each other.
 
 ---
 
