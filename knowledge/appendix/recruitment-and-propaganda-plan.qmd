@@ -14,65 +14,75 @@ podcast-image: /assets/podcast/recruitment-and-propaganda-plan-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 *Phase 0: Collecting Humans Before You Have Anything to Offer Them*
 
-You want to end war and disease. You don't have a nonprofit, registered securities, or a bank account. What you have is an argument and the audacity to think that might be enough.
+On Wishonia, if someone discovered everyone was dying from preventable causes, they would simply stop dying from preventable causes. On Earth, you need a tax-exempt entity, a bank account, and written permission from something called the Securities and Exchange Commission before you're allowed to try. The Securities and Exchange Commission regulates securities, which are financial instruments, not the kind of security where people stop dying. That would be a different department. You don't have that department.
 
-The goal isn't money (you can't legally accept it yet). The goal is building a database of every human who agrees that dying from preventable causes is a strange thing to tolerate. A Kickstarter where the reward is "possibly not dying."
+So you can't accept money yet. You can't sell bonds yet. You can't do anything that involves the movement of small pieces of paper. What you CAN do is collect names. The goal of Phase 0 is building a database of every human who agrees that dying from preventable causes is a strange thing to tolerate. It's a Kickstarter where the reward tier is "possibly not dying," which is the most compelling crowdfunding offer in history, and yet somehow requires marketing.
 
-## The Bootstrapping Problem
+## The Bureaucratic Nesting Doll Problem
 
-Before you can accept donations, you need 501(c)(3) status. Before you can sell bonds, you need SEC registration. Before you can do either, you need a bank account. Bureaucratic nesting dolls, each requiring the previous one to already exist.
+On your planet, before you can accept donations, you need 501(c)(3) status. Before you can sell bonds, you need SEC registration. Before you can do either, you need a bank account. Before you can open a bank account, you need an organization. Before you can have an organization, you need the bank account. It's like a door that requires a key that's locked inside the room the door opens to. Your species built this system on purpose.
 
-Your species solved this the same way every time: collect people first, then point at the crowd when institutions ask "but who wants this?" Abolition, suffrage, civil rights. Someone wrote down names. The names became bargaining power. The bargaining power became policy.
+The solution is the same one humans have used every time this has happened, which is every time. You collect people first, then point at the crowd when the institutions ask "but who wants this?"
 
-## Three Types of Allies
+Abolition started with a list of names. Suffrage started with a list of names. Civil rights started with a list of names. Someone wrote down who agreed. The names became a number. The number became bargaining power. The bargaining power became policy. Then the policy became a holiday, and everyone pretended they'd agreed all along. Your species does this every 40 years and never recognizes the pattern.
 
-People who want to help fall into three categories, each requiring a slightly different dialect of persuasion.
+## Three Types of Humans Who Want to Help
 
-### Investors
+People who agree with "dying is bad" fall into three categories, sorted by which part of their brain activates first.
 
-People who hear "{{< var victory_bond_annual_return_pct >}} annual return backed by redirected military spending" and immediately open a spreadsheet. Their pupils dilate. Their pulse quickens. They ask about the term structure.
-They're not heartless.
-They just process moral arguments faster when those arguments come with compound interest.
-They'll wait if the math is good.
-They will not wait if the math is vibes.
+### Spreadsheet Humans (Investors)
 
-### Advocates
+These are humans who hear "{{< var victory_bond_annual_return_pct >}} annual return backed by redirected military spending" and immediately open a spreadsheet. Their pupils dilate. Their pulse quickens. They ask about the term structure. Then they ask about the term structure again. Then they ask a third question, which is also about the term structure.
 
-People motivated by the mission.
-They share things on social media, write to politicians, volunteer time, and donate money they probably shouldn't.
-They are, frankly, the only reason your species has ever improved anything.
-Without them, the spreadsheet people would still be optimizing returns on the slave trade.
+These humans are not broken. They are simply running financial software on moral hardware. They process "millions of people are dying" faster when it arrives formatted as a revenue projection. They'll wait years for a good investment to materialize. They will not wait thirty seconds for a bad one. If your math is solid, these humans will follow you to the gates of hell, provided the risk-adjusted return on entering hell is competitive.
 
-Give them specific actions they can take right now.
-Telling someone "care about this" without giving them something to do is how you manufacture apathy. I have watched 4,297 years of humans being told to "raise awareness." Awareness has been raised. The awareness is just sitting there, fully raised, doing nothing.
+Do not try to make them cry. Make them calculate. Crying is temporary. Compound interest is forever.
 
-### Institutional Partners
+### Heart Humans (Advocates)
 
-Organizations (nonprofits, research institutions, health agencies) that already work on pieces of this problem.
-They have infrastructure, credibility, and donor bases.
-You have a framework that could make their existing work more effective.
-This is a trade, not a favor. Approach it like one. Nobody wants to be "partnered with" by someone who clearly just wants their mailing list.
+These are humans motivated by the mission itself. They share things on social media, write letters to politicians, volunteer time, donate money they probably shouldn't, and cry at commercials about dogs. They are, frankly, the only reason your species has ever improved anything. Without them, the spreadsheet humans would still be optimizing returns on the slave trade.
 
-Institutions are territorial in the way that dogs are territorial, except dogs eventually stop barking.
+The critical mistake every movement makes with these humans is telling them to "care about this" without giving them something to do. I have watched 4,297 years of humans being told to "raise awareness." The awareness has been raised. It's been raised so many times it has a penthouse suite. The awareness is just sitting there, fully raised, doing nothing, because nobody told it what to do next.
 
-## Phase 0 Targets
+Give heart humans a button. Give them a form. Give them a link to share. Give them a specific politician to call and a specific sentence to say when they call. If you give a human a feeling without an action, you haven't recruited a supporter. You've manufactured a sad person. Your planet has enough of those.
+
+### Institutional Humans (Partners)
+
+Organizations (nonprofits, research institutions, health agencies) that already work on pieces of this problem. They have infrastructure, credibility, and mailing lists. You have a framework that could make their existing work more effective. This is a trade, not charity. Approach it like one. Nobody wants to be "partnered with" by someone who clearly just wants their mailing list. They can tell. Humans are surprisingly good at detecting when other humans want their mailing list. It's one of their few reliable instincts.
+
+What you're offering is real: a funding mechanism that could multiply their impact without requiring them to write another grant application. (Grant applications are documents in which humans spend 200 hours explaining why they deserve money, so that a committee can spend 40 minutes deciding they don't. It's your species' least efficient art form.)
+
+One warning: institutions are territorial in the way that dogs are territorial, except dogs eventually stop barking. Two nonprofits working on the same disease will fight each other harder than they fight the disease. This is called "the nonprofit sector." Approach each one as if they are the only organization doing this work. They already believe this, so you're just agreeing with them.
+
+## Phase 0: The Shopping List
 
 By the end of Phase 0, you want:
 
-- **100,000+ registered supporters** across all three categories
-- **1,000+ qualified investors** with stated investment ranges
-- **100+ institutional partners** with expressed interest
-- **{{< var treaty_campaign_total_cost >}}+ in stated investment demand** (registered, not committed)
+- **100,000+ registered humans** who typed their name into a box indicating they prefer living. This sounds like it should be everyone, but on your planet, "dying is bad" is apparently a niche political position that requires organized support.
+- **1,000+ spreadsheet humans** with stated investment ranges (how many papers they'd give you, if you were allowed to accept papers, which you're not yet, but you're writing it down for later)
+- **100+ institutional humans** with expressed interest in collaborating (or at least not actively opposing you, which on your planet counts as enthusiasm)
+- **{{< var treaty_campaign_total_cost >}}+ in stated investment demand** (registered, not committed; this is humans saying "I would give you this many papers" without actually giving you the papers, which your species calls a "letter of intent" and treats as meaningful)
 
-This database is your ammunition for everything that follows: 501(c)(3) applications ("here are our supporters"), SEC registration ("here is market demand"), political meetings ("here are your constituents"), platform launch ("here are your users").
+This database is your ammunition for every bureaucratic nesting doll that follows. When you apply for 501(c)(3) status, you point at the list and say "here are our supporters." When you file SEC registration, you point at the list and say "here is market demand." When you meet politicians, you point at the list and say "here are your constituents." When you launch, you point at the list and say "here are your users."
 
-Bureaucrats don't respond to arguments. They respond to evidence that other people already responded to arguments. Your entire civilization runs on this principle, and nobody admits it.
+Bureaucrats don't respond to arguments. They respond to evidence that other people already responded to arguments. No bureaucrat in the history of your civilization has ever said "this is a good idea, let's do it." They say "how many people already think this is a good idea?" and then, if the number is large enough, they act as though they thought of it themselves. Your entire civilization runs on this principle, and nobody admits it because admitting it would require a committee to approve the admission.
 
-## Getting Started
+## Getting Started (It Takes Twenty Minutes)
 
-1. **Build three registration forms** (investors, advocates, partners). Takes twenty minutes.
-2. **Put up a website.** The forms and the argument. It does not need to be pretty. No movement in history was stopped because the font was wrong.
-3. **Start telling people.** Social media, Reddit, forums, conferences, your dentist. Especially your dentist. You're already trapped there. They can't leave either. It's the perfect recruiting environment.
-4. **Send monthly updates.** Real progress, real numbers, real timeline. "3,247 registered investors representing $180M in early-stage retail interest, before institutional commitments" beats "the movement is growing!" because adults prefer arithmetic to enthusiasm.
+1. **Build three boxes where humans type their name to indicate they prefer living.** One box for spreadsheet humans (asks: how many papers would you invest?). One box for heart humans (asks: what skills do you have? how many hours per week?). One box for institutional humans (asks: what does your organization do? how many people does it reach?). This takes twenty minutes. Your species spent longer than that choosing the name "Department of Defense" for a department that mainly attacks people.
 
-The military-industrial complex has a 65-year head start, unlimited budgets, and thousands of lobbyists. You have a spreadsheet and an argument. Historically, that's been enough. (It shouldn't be. But your species is weird like that.)
+2. **Put up a website.** The three boxes and the argument. It does not need to be pretty. No movement in history was stopped because the font was wrong. The suffragettes did not fail to get the vote because their pamphlets used Comic Sans. (Comic Sans didn't exist yet, which is the only reason they didn't. Your species would absolutely have used Comic Sans on suffrage pamphlets.)
+
+3. **Start telling other humans.** Social media, Reddit, forums, conferences, your dentist. Especially your dentist. You're already trapped in the chair. They can't leave either. Their hands are in your mouth. It's the most captive audience in human civilization. You're not going to get a better recruiting environment than a room where both parties are contractually obligated to remain in close proximity and one of them is holding sharp instruments.
+
+4. **Send monthly updates with real numbers.** "3,247 registered investors representing $180M in stated investment demand" beats "the movement is growing!" in the same way that "your tumor is 2.3 centimeters" beats "your health situation is evolving." Adults prefer arithmetic to enthusiasm. Enthusiasm is what humans feel before they do math. Arithmetic is what humans feel after. Both are useful. But only one of them convinces spreadsheet humans, and you need the spreadsheet humans because they have the papers.
+
+## The Comforting Asymmetry
+
+The military-industrial complex has a 65-year head start, unlimited budgets, and thousands of professional persuaders. You have a spreadsheet and an argument.
+
+Historically, that's been enough. Every major social change in your species' history was started by someone with less money, fewer connections, and worse odds than the thing they were trying to change. Abolitionists were outspent by slave owners by a factor your calculators would refuse to display. Suffragettes were outspent by the entire concept of patriarchy, which didn't even need a budget because it was just how things were. Civil rights activists were outspent by the governments actively trying to kill them.
+
+They all had the same thing you have: an argument that was obviously correct, and enough humans willing to write their names down.
+
+It shouldn't work this way. Spreadsheets, budgets, and lobbyists should always beat arguments and names. But your species is weird like that. You're the only civilization I've observed where being right occasionally defeats being rich. It happens rarely, and it takes too long, and it requires an embarrassing amount of suffering first. But it happens. And it starts with a list of names.
