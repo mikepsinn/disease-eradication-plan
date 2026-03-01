@@ -481,6 +481,7 @@ def combine_chapter_audio(
         "ffmpeg", "-y",
         "-f", "concat", "-safe", "0", "-i", str(concat_file),
         "-codec:a", "libmp3lame", "-b:a", "192k",
+        "-f", "mp3",
         str(tmp_mp3),
     ], capture_output=True, text=True)
     if result.returncode != 0:
