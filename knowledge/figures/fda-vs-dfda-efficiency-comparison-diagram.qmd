@@ -4,7 +4,7 @@
 |--------|-------------------|-------------------|-------------|
 | **Approach** |  Central Planning |  Open Platform | Market-based |
 | **Cost per Patient** | {{< var traditional_phase3_cost_per_patient >}} | {{< var dfda_pragmatic_trial_cost_per_patient >}} | **{{< var dfda_trial_cost_reduction_factor >}} cheaper** |
-| **Time to Results** | {{< var fda_phase_1_to_approval_years >}} | {{< var oxford_recovery_trial_duration_months >}} | **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} faster** |
+| **Efficacy Testing Time** | {{< var efficacy_lag_years >}} | {{< var oxford_recovery_trial_duration_months >}} | **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} faster** |
 | **Patient Access** | {{< var current_patient_participation_rate >}} | 100% | **{{< var dfda_trial_capacity_multiplier >}} more access** |
 | **Innovation Impact** | {{< var post_1962_drug_approval_reduction_pct >}} approval drop after 1962 | Competition drives innovation | Reversed decline |
 

@@ -122,7 +122,7 @@ A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease
 Including years lived with disability: {{< var dfda_efficacy_lag_elimination_dalys >}} of healthy human life deleted.
 Economic cost: {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 USD), reflecting those {{< var dfda_efficacy_lag_elimination_dalys >}} valued at {{< var standard_economic_qaly_value_usd >}}/DALY, the standard normative rate used in WHO cost-effectiveness analyses.
 
-Even if those death estimates are off by a factor of 10, that's still tens of millions of deaths. And the inefficiency is independently verifiable: the system costs {{< var recovery_trial_cost_reduction_factor >}} more per patient and takes {{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer than proven alternatives. Those numbers don't depend on mortality estimates at all.
+Even if those death estimates are off by a factor of 10, that's still tens of millions of deaths. And the inefficiency is independently verifiable: the efficacy testing process costs {{< var recovery_trial_cost_reduction_factor >}} more per patient and takes {{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer than proven alternatives like the Oxford RECOVERY trial. Those numbers don't depend on mortality estimates at all.
 
 Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people who die from lack of access to life-saving treatments that might have been.
 
@@ -166,7 +166,7 @@ Fewer approvals in the '90s widened it again.
 - Promotion on schedule
 - Retire to pharma job [@fda-regulatory-capture-evidence]
 
-This isn't conspiracy. It's just a system where the only career-ending move is doing something. Approve a bad drug, your name is in the newspaper. Delay a good drug, the people who could have complained are dead. It's a perfect incentive structure if you're optimizing for cowardice.
+This isn't conspiracy. It's just a system where the only career-ending move is letting patients access treatments. Approve a bad drug, your name is in the newspaper. Delay a good drug, the people who could have complained are dead. It's a perfect incentive structure if you're optimizing for cowardice.
 
 ![If a regulator approves a bad drug, CNN says their name. If they delay a good drug, nobody dies on television. So nobody dies on television.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-incentive-structure-flowchart-bw-academic.jpg)
 
