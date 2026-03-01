@@ -6,7 +6,7 @@ Audiobook Video Generator
 Generates animated video for audiobook chapters using:
 1. Pre-existing scene JSON files (from generate_audiobook_scenes.py)
 2. Keyframe image generation (Imagen)
-3. Video animation (Veo 3.1)
+3. Video animation (Veo 3.1) OR Ken Burns pan/zoom on stills
 4. Assembly with ffmpeg
 
 Requires scene files and audio to exist already. Run the earlier pipeline
@@ -16,11 +16,13 @@ Output structure (flat, slug-prefixed):
     video/scenes/{slug}.json
     video/keyframes/{slug}-scene-01-16x9.jpg
     video/clips/{slug}-scene-01-16x9.mp4
-    video/{slug}-16x9.mp4
+    video/{slug}-16x9.mp4              (Veo animated)
+    video/{slug}-16x9-stills.mp4       (Ken Burns stills)
 
 Usage:
     python scripts/generate_audiobook_video.py --chapter 20 --keyframes-only
     python scripts/generate_audiobook_video.py --chapter 20
+    python scripts/generate_audiobook_video.py --chapter 20 --ken-burns
     python scripts/generate_audiobook_video.py --chapter 20 --scene 3 --skip-keyframes --force
     python scripts/generate_audiobook_video.py --chapter 20 --skip-keyframes --skip-animate
     python scripts/generate_audiobook_video.py --list
@@ -586,6 +588,61 @@ def animate_scenes(
 MAX_SLOWDOWN = 1.3  # Stretch up to this factor is labeled "stretch"; beyond is still stretch but slower
 VEO_CLIP_DURATION_S = 8.0  # Veo clips are always ~8s
 
+# --- Ken Burns stills video constants ---
+STILLS_FPS = 24
+ASPECT_RESOLUTIONS = {"16:9": "1920x1080", "9:16": "1080x1920"}
+
+KEN_BURNS_EFFECTS = [
+    {"name": "zoom_in_center",     "z": "min(zoom+0.0015,1.5)", "x": "iw/2-(iw/zoom/2)", "y": "ih/2-(ih/zoom/2)"},
+    {"name": "zoom_out_center",    "z": "if(eq(on,1),1.5,max(zoom-0.0015,1.0))", "x": "iw/2-(iw/zoom/2)", "y": "ih/2-(ih/zoom/2)"},
+    {"name": "pan_left_to_right",  "z": "min(zoom+0.0008,1.2)", "x": "iw*0.1+(iw*0.3)*on/({frames})", "y": "ih/2-(ih/zoom/2)"},
+    {"name": "pan_right_to_left",  "z": "min(zoom+0.0008,1.2)", "x": "iw*0.4-(iw*0.3)*on/({frames})", "y": "ih/2-(ih/zoom/2)"},
+    {"name": "zoom_in_top_left",   "z": "min(zoom+0.0015,1.5)", "x": "iw*0.25-(iw/zoom/2)*0.5", "y": "ih*0.25-(ih/zoom/2)*0.5"},
+    {"name": "zoom_in_bot_right",  "z": "min(zoom+0.0015,1.5)", "x": "iw*0.75-(iw/zoom/2)*1.5", "y": "ih*0.75-(ih/zoom/2)*1.5"},
+]
+
+
+def _ken_burns_scene_clip(
+    image_path: Path,
+    output_path: Path,
+    duration_ms: int,
+    scene_index: int,
+    resolution: str,
+) -> Path:
+    """Generate a single Ken Burns clip from a still image using ffmpeg zoompan.
+
+    Picks effect deterministically via scene_index % len(KEN_BURNS_EFFECTS).
+    Returns the output path.
+    """
+    duration_s = duration_ms / 1000.0
+    frames = max(int(duration_s * STILLS_FPS), 1)
+    w, h = resolution.split("x")
+
+    effect = KEN_BURNS_EFFECTS[scene_index % len(KEN_BURNS_EFFECTS)]
+    z_expr = effect["z"]
+    x_expr = effect["x"].replace("{frames}", str(frames))
+    y_expr = effect["y"].replace("{frames}", str(frames))
+
+    zoompan = (
+        f"zoompan=z='{z_expr}':x='{x_expr}':y='{y_expr}'"
+        f":d={frames}:s={resolution}:fps={STILLS_FPS}"
+    )
+
+    cmd = [
+        "ffmpeg", "-y",
+        "-loop", "1", "-i", str(image_path),
+        "-vf", f"{zoompan},format=yuv420p",
+        "-t", f"{duration_s:.3f}",
+        "-c:v", "libx264", "-preset", "fast", "-crf", "18",
+        "-an", str(output_path),
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"ffmpeg Ken Burns failed for scene {scene_index}: {result.stderr[:500]}"
+        )
+    return output_path
+
 
 def _cleanup_temp_dir(temp_dir: Path) -> None:
     """Remove temp assembly directory, tolerating Windows file locks."""
@@ -654,8 +711,8 @@ def _prepare_scene_clip(
             "-an", str(out_path),
         ]
         result = subprocess.run(cmd, capture_output=True, text=True)
-            if result.returncode != 0:
-                raise RuntimeError(f"ffmpeg stretch-fallback failed for scene {scene_idx}: {result.stderr[:300]}")
+        if result.returncode != 0:
+            raise RuntimeError(f"ffmpeg stretch-fallback failed for scene {scene_idx}: {result.stderr[:300]}")
 
     return out_path
 
@@ -776,6 +833,108 @@ def assemble_chapter_video(
     return output_path
 
 
+def assemble_ken_burns_video(
+    scenes: list[dict],
+    chapter: dict,
+    video_dir: Path,
+    slug: str,
+    aspect: str,
+    book_meta: dict | None = None,
+    paths: AudiobookPaths | None = None,
+) -> Path:
+    """Assemble a Ken Burns stills video from keyframe images + audio.
+
+    Two-pass approach:
+      Pass 1: Generate per-scene zoompan clips from keyframe images
+      Pass 2: Concat clips + overlay audio (same pattern as Veo assembly)
+
+    Output: {slug}-{aspect_tag}-stills.mp4
+    """
+    aspect_tag = aspect.replace(":", "x")
+    output_path = video_dir / f"{slug}-{aspect_tag}-stills.mp4"
+    resolution = ASPECT_RESOLUTIONS.get(aspect, "1920x1080")
+
+    audio_path = find_chapter_audio(chapter, paths=paths)
+    if not audio_path:
+        raise FileNotFoundError(f"No audio file for chapter {chapter['index']}. Run audiobook:audio first.")
+
+    audio_duration_ms = len(AudioSegment.from_file(str(audio_path)))
+
+    # Check for partial assembly
+    last_scene_end_ms = scenes[-1].get('end_ms', audio_duration_ms) if scenes else audio_duration_ms
+    is_partial = last_scene_end_ms < audio_duration_ms * 0.9
+
+    if is_partial:
+        audio_duration_ms = last_scene_end_ms
+        print(f"  [PARTIAL] Trimming audio to {audio_duration_ms/1000:.1f}s (covers scenes 1-{scenes[-1]['scene_index']})")
+
+    keyframes_dir = video_dir / "keyframes"
+    temp_dir = video_dir / f"_temp-kb-{slug}-{aspect_tag}"
+    temp_dir.mkdir(parents=True, exist_ok=True)
+
+    # --- Pass 1: Generate Ken Burns clips per scene ---
+    prepared = []
+    for scene in scenes:
+        idx = scene['scene_index']
+        dur_ms = scene.get('duration_ms') or (scene.get('end_ms', 8000) - scene.get('start_ms', 0))
+        if dur_ms <= 0:
+            dur_ms = 8000
+
+        kf_path = keyframes_dir / _keyframe_filename(slug, idx, aspect)
+        if not kf_path.exists():
+            raise FileNotFoundError(
+                f"Keyframe missing for scene {idx} ({aspect}): {kf_path.name}. "
+                f"Run without --skip-keyframes first."
+            )
+
+        clip_out = temp_dir / f"scene-{idx:03d}.mp4"
+        effect = KEN_BURNS_EFFECTS[idx % len(KEN_BURNS_EFFECTS)]
+        print(f"    Scene {idx}: {dur_ms}ms -> {effect['name']}")
+        _ken_burns_scene_clip(kf_path, clip_out, dur_ms, idx, resolution)
+        prepared.append(clip_out)
+
+    # --- Pass 2: Concat + audio ---
+    concat_lines = [f"file '{p.as_posix()}'" for p in prepared]
+    concat_file = temp_dir / "concat.txt"
+    concat_file.write_text('\n'.join(concat_lines), encoding='utf-8')
+
+    audio_duration_s = audio_duration_ms / 1000.0
+
+    cmd = [
+        "ffmpeg", "-y",
+        "-f", "concat", "-safe", "0", "-i", str(concat_file),
+        "-i", str(audio_path),
+        "-filter_complex", "[0:v]format=yuv420p[vout]",
+        "-map", "[vout]", "-map", "1:a",
+        "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+        "-profile:v", "high",
+        "-c:a", "aac", "-b:a", "192k",
+        "-t", f"{audio_duration_s:.3f}",
+        "-movflags", "+faststart",
+        "-metadata", f"title={chapter['title']}",
+    ]
+    if book_meta:
+        cmd.extend([
+            "-metadata", f"artist={book_meta['author']}",
+            "-metadata", f"album={book_meta['title']}",
+            "-metadata", f"genre=Audiobook",
+            "-metadata", f"track={chapter['index']}",
+            "-metadata", f"comment={book_meta['description']}",
+            "-metadata", f"date={book_meta['year']}",
+        ])
+    cmd.append(str(output_path))
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        _cleanup_temp_dir(temp_dir)
+        raise RuntimeError(f"ffmpeg Ken Burns assembly failed: {result.stderr[:500]}")
+
+    _cleanup_temp_dir(temp_dir)
+
+    size_mb = output_path.stat().st_size / 1024 / 1024
+    print(f"  [OK] {output_path.name} ({size_mb:.1f} MB)")
+    return output_path
+
+
 # --- Update Audiobook Manifest ---
 
 def update_audiobook_manifest(chapter_index: int, video_16x9: Path | None, video_9x16: Path | None, scene_count: int, paths: AudiobookPaths | None = None):
@@ -869,6 +1028,39 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None, sce
     print("  Legend: T=text, A=audio, S#=scenes, V=video | K=keyframe, V=clip, [edited]=manual prompt edits")
 
 
+# --- Orphan Cleanup ---
+
+def cleanup_orphan_keyframes(
+    scenes: list[dict],
+    video_dir: Path,
+    slug: str,
+    aspect_ratios: list[str],
+) -> int:
+    """Delete keyframe/clip files whose scene index no longer exists.
+
+    Returns the number of files deleted.
+    """
+    valid_indices = {s['scene_index'] for s in scenes}
+    deleted = 0
+
+    for subdir in ("keyframes", "clips"):
+        target_dir = video_dir / subdir
+        if not target_dir.exists():
+            continue
+        for f in target_dir.glob(f"{slug}-scene-*"):
+            # Extract scene index from filename like slug-scene-03-16x9.jpg
+            match = re.search(r'-scene-(\d+)-', f.name)
+            if not match:
+                continue
+            idx = int(match.group(1))
+            if idx not in valid_indices:
+                f.unlink()
+                print(f"  [CLEANUP] Deleted orphan: {subdir}/{f.name}")
+                deleted += 1
+
+    return deleted
+
+
 # --- Main Pipeline ---
 
 def run_pipeline(
@@ -884,6 +1076,7 @@ def run_pipeline(
     test_prompts: bool = False,
     scene_config: dict | None = None,
     paths: AudiobookPaths | None = None,
+    ken_burns: bool = False,
 ):
     slug = chapter_slug(chapter)
     video_dir = paths.video if paths else VIDEO_DIR
@@ -917,6 +1110,11 @@ def run_pipeline(
             )
         scenes = existing['scenes']
         print(f"  Loaded scene manifest: {len(scenes)} scenes")
+
+    # Clean up orphan keyframes/clips from deleted/renumbered scenes
+    orphans = cleanup_orphan_keyframes(scenes, video_dir, slug, aspect_ratios)
+    if orphans:
+        print(f"  Cleaned up {orphans} orphan file(s)")
 
     text_hash_val = ""
     manifest = load_scene_manifest(scenes_dir, slug)
@@ -986,10 +1184,11 @@ def run_pipeline(
                     print(f"  --force: deleted {f.name}")
             for ar in aspect_ratios:
                 aspect_tag = ar.replace(":", "x")
-                old_video = video_dir / f"{slug}-{aspect_tag}.mp4"
-                if old_video.exists():
-                    old_video.unlink()
-                    print(f"  --force: deleted {old_video.name}")
+                for suffix in ("", "-stills"):
+                    old_video = video_dir / f"{slug}-{aspect_tag}{suffix}.mp4"
+                    if old_video.exists():
+                        old_video.unlink()
+                        print(f"  --force: deleted {old_video.name}")
 
     if test_prompts:
         test_prompt_variants(scenes, video_dir, slug, chapter_text=text, max_scenes=max_scenes)
@@ -1007,6 +1206,30 @@ def run_pipeline(
             print("\n--keyframes-only: stopping after keyframe generation.")
             return
 
+    # --- Ken Burns branch: skip Veo, assemble from stills ---
+    if ken_burns:
+        if scene_index is not None:
+            print(f"\nScene {scene_index} keyframes processed. Run without --scene to assemble.")
+            return
+
+        # Use all scenes for assembly
+        if max_scenes:
+            all_scenes = scenes
+        else:
+            all_scenes = load_scene_files(scenes_dir, slug) or scenes
+
+        print("\nAssembling Ken Burns stills videos...")
+        video_16x9 = assemble_ken_burns_video(all_scenes, chapter, video_dir, slug, "16:9", book_meta=book_meta, paths=paths) if "16:9" in aspect_ratios else None
+        video_9x16 = assemble_ken_burns_video(all_scenes, chapter, video_dir, slug, "9:16", book_meta=book_meta, paths=paths) if "9:16" in aspect_ratios else None
+
+        print(f"\nDone! Chapter {chapter['index']}: {chapter['title']} (Ken Burns stills)")
+        if video_16x9:
+            print(f"  16:9: {video_16x9}")
+        if video_9x16:
+            print(f"  9:16: {video_9x16}")
+        return
+
+    # --- Veo animation branch (default) ---
     if not skip_animate:
         scenes = animate_scenes(
             scenes, video_dir, slug, use_keyframes=not no_keyframes,
@@ -1080,6 +1303,7 @@ def main():
     parser.add_argument("--no-keyframes", action="store_true", help="Skip keyframe generation; use text-to-video instead of image-to-video")
     parser.add_argument("--prompt", choices=list(PROMPT_VARIANTS.keys()), default=DEFAULT_PROMPT_VARIANT, help=f"Prompt variant (default: {DEFAULT_PROMPT_VARIANT})")
     parser.add_argument("--test-prompts", action="store_true", help="Generate one 16:9 keyframe per prompt variant per scene for A/B comparison")
+    parser.add_argument("--ken-burns", action="store_true", help="Generate Ken Burns stills video (pan/zoom on keyframes, no Veo)")
     args = parser.parse_args()
 
     if args.scene and not args.chapter:
@@ -1134,6 +1358,7 @@ def main():
             test_prompts=args.test_prompts,
             scene_config=scene_config,
             paths=paths,
+            ken_burns=args.ken_burns,
         )
 
     print(f"\n{'=' * 60}")
