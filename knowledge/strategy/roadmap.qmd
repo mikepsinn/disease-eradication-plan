@@ -183,14 +183,14 @@ The 1% treaty is just the beginning. Like all addictions, not-dying starts with 
 
 The treaty money splits [80/10/10](../appendix/incentive-alignment-bonds-paper.qmd): {{< var dih_treasury_medical_research_pct >}} to clinical trials (the point), {{< var victory_bond_funding_pct >}} to investors (the bribe), and {{< var iab_political_incentive_funding_pct >}} to [political incentives](../appendix/incentive-alignment-bonds-paper.qmd) (the bribe for the other kind of human). That last slice is the interesting part, because it grows every time the treaty expands:
 
-| Stage | Year | Treaty % | Political Incentive Pool | What Happens |
+| Phase | Year | Treaty % | Political Incentive Pool | What Happens |
 |:------|:-----|:---------|:------------------------|:-------------|
-| 1 | 1-3 | 1% | {{< var iab_political_incentive_funding_annual >}}/year | Treaty passes. Humans cautiously try not dying. |
-| 2 | 4-7 | 2% | $5.44B/year | Politicians compete to expand (they've discovered voters like living) |
-| 3 | 8-12 | 5% | $13.6B/year | Health lobby rivals defense lobby. Lobbyists switch suits. |
-| 4 | 13-20 | 10% | $27.2B/year | "Funded pragmatic clinical trials" becomes the most rewarded phrase in politics |
-| 5 | 21-35 | 25% | $68B/year | Superpowers compete on health outcomes (much less radioactive) |
-| 6 | 36-50 | 50%+ | $136B+/year | Historians write confused books about why this took so long |
+| 3 | 1-3 | 1% | {{< var iab_political_incentive_funding_annual >}}/year | Treaty passes. Humans cautiously try not dying. |
+| 4 | 4-7 | 2% | $5.44B/year | Politicians compete to expand (they've discovered voters like living) |
+| 5 | 8-12 | 5% | $13.6B/year | Health lobby rivals defense lobby. Lobbyists switch suits. |
+| 6 | 13-20 | 10% | $27.2B/year | "Funded pragmatic clinical trials" becomes the most rewarded phrase in politics |
+| 7 | 21-35 | 25% | $68B/year | Superpowers compete on health outcomes (much less radioactive) |
+| 8 | 36-50 | 50%+ | $136B+/year | Historians write confused books about why this took so long |
 
 ### Here's Why It Keeps Growing
 

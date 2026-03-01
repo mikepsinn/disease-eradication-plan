@@ -2921,15 +2921,15 @@ export const EXPLORATION_RATIO: Parameter = {
 };
 
 export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
-  value: 42.0,
+  value: 32.8,
   unit: "multiplier",
-  displayName: "FDA to Oxford RECOVERY Trial Time Multiplier",
-  description: "FDA approval timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower)",
+  displayName: "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier",
+  description: "Efficacy testing time vs Oxford RECOVERY trial (8.2 years ÷ 3 months = 32.8x slower). Compares efficacy lag only (post-safety Phase II/III) since RECOVERY was an efficacy trial.",
   sourceType: "calculated",
   sourceRef: "recovery-trial-82x-cost-reduction",
   confidence: "high",
-  formula: "FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
-  latex: "\\begin{gathered}\n\\text{Multiplier}_{RD} = \\frac{Y_{FDA} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{10.5 \\times 12}{3} = 42\n\\end{gathered}",
+  formula: "EFFICACY_LAG_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
+  latex: "\\begin{gathered}\n\\text{Multiplier}_{RD} = \\frac{Y_{efficacy} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{8.2 \\times 12}{3} = 32.8\n\\end{gathered}",
 };
 
 export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {

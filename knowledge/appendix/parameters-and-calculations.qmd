@@ -4961,21 +4961,21 @@ $$
 
 :::
 
-### FDA to Oxford RECOVERY Trial Time Multiplier: 42x {#sec-fda_to_oxford_recovery_trial_time_multiplier}
+### FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x {#sec-fda_to_oxford_recovery_trial_time_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-FDA approval timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower)
+Efficacy testing time vs Oxford RECOVERY trial (8.2 years ÷ 3 months = 32.8x slower). Compares efficacy lag only (post-safety Phase II/III) since RECOVERY was an efficacy trial.
 
 **Inputs**:
 
-- [FDA Phase 1 to Approval Timeline](#sec-fda_phase_1_to_approval_years) 📊: 10.5 years (95% CI: 6 years - 12 years)
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 - [Oxford RECOVERY Trial Duration](#sec-oxford_recovery_trial_duration_months) 📊: 3 months
 
 $$
 \begin{gathered}
-\text{Multiplier}_{RD} = \frac{Y_{FDA} \times 12}{M_{RECOVERY}} \\[0.5em]
-= \frac{10.5 \times 12}{3} = 42
+\text{Multiplier}_{RD} = \frac{Y_{efficacy} \times 12}{M_{RECOVERY}} \\[0.5em]
+= \frac{8.2 \times 12}{3} = 32.8
 \end{gathered}
 $$
 

@@ -35,7 +35,7 @@ Compare two real-world systems for testing drugs:
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 48,000 patients for **{{< var recovery_trial_cost_per_patient >}}**. Found a life-saving treatment in 3 months. Like a normal species would.
 2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}}** per trial. Takes **over a decade [@drug-development-timeline-17-years]** to approve a new drug. Like humans would.
 
-The current system costs **{{< var dfda_trial_cost_reduction_factor >}} more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer**. That's not inefficiency. That's a system performing exactly as designed, if the design goal was to kill people slowly enough that nobody notices.
+Your efficacy testing system costs **{{< var dfda_trial_cost_reduction_factor >}} more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer** than necessary. That's not inefficiency. That's a system performing exactly as designed, if the design goal was to kill people slowly enough that nobody notices.
 
 ### The {{< var efficacy_lag_years >}} Efficacy Lag
 
@@ -43,10 +43,6 @@ Here's where your lifespan goes to die:
 
 - **Phase I (Safety Testing):** {{< var phase_1_safety_duration_years >}} - Tests if the drug harms people: death, organ damage, mutations, serious adverse reactions, all the ways a molecule can ruin your day. *This part works. Keep it.*
 - **Phase II/III (Efficacy Testing):** {{< var efficacy_lag_years >}} - The drug is now *known safe*. But patients can't have it until the committee is satisfied. *This is where people die waiting for a drug that already passed every safety check your species invented.*
-
-You invented science yesterday, cosmically speaking.
-Nearly every study ends with "more research is needed," which is scientist for "please keep paying us while we figure out what we're looking at."
-This would be fine except people are decomposing while you figure it out. On Wishonia, we have a saying: "The dead have no use for data." You don't have that saying, which explains a lot.
 
 ## What the 1962 Efficacy Requirements Changed
 

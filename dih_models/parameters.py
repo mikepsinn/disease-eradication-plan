@@ -1226,25 +1226,6 @@ POST_1962_DRUG_APPROVAL_REDUCTION_PCT = Parameter(
 )
 
 
-FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
-    (FDA_PHASE_1_TO_APPROVAL_YEARS * MONTHS_PER_YEAR) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
-    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
-    source_type="calculated",
-    description="FDA approval timeline vs Oxford RECOVERY trial (10.5 years ÷ 3 months = 42x slower)",
-    display_name="FDA to Oxford RECOVERY Trial Time Multiplier",
-    unit="multiplier",
-    formula="FDA_PHASE_1_TO_APPROVAL_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
-    latex=r"""\begin{aligned}
-\text{Multiplier}_{RD} &= \frac{Y_{FDA} \times 12}{M_{RECOVERY}} \\
-&= \frac{10.5 \times 12}{3} = 42
-\end{aligned}""",
-    confidence="high",
-    keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"],
-    inputs=['FDA_PHASE_1_TO_APPROVAL_YEARS', 'OXFORD_RECOVERY_TRIAL_DURATION_MONTHS'],
-    compute=lambda ctx: (ctx["FDA_PHASE_1_TO_APPROVAL_YEARS"] * MONTHS_PER_YEAR) / ctx["OXFORD_RECOVERY_TRIAL_DURATION_MONTHS"],
-    latex_symbol=r"k_{FDA:RECOVERY}",  # LaTeX symbol for equations
-)
-
 PRE_1962_PHYSICIAN_COUNT = Parameter(
     144_000,
     source_ref=ReferenceID.PRE_1962_PHYSICIAN_TRIALS,
@@ -2447,6 +2428,25 @@ EFFICACY_LAG_YEARS = Parameter(
     validation_max=15.0,  # Ceiling: Rare disease with complex endpoints, multiple failures
     latex_symbol=r"T_{lag}",  # LaTeX symbol for equations
 )  # 8.2 years efficacy lag (widened uncertainty)
+
+FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER = Parameter(
+    (EFFICACY_LAG_YEARS * MONTHS_PER_YEAR) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS,
+    source_ref=ReferenceID.RECOVERY_TRIAL_82X_COST_REDUCTION,
+    source_type="calculated",
+    description="Efficacy testing time vs Oxford RECOVERY trial (8.2 years ÷ 3 months = 32.8x slower). Compares efficacy lag only (post-safety Phase II/III) since RECOVERY was an efficacy trial.",
+    display_name="FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier",
+    unit="multiplier",
+    formula="EFFICACY_LAG_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
+    latex=r"""\begin{aligned}
+\text{Multiplier}_{RD} &= \frac{Y_{efficacy} \times 12}{M_{RECOVERY}} \\
+&= \frac{8.2 \times 12}{3} = 32.8
+\end{aligned}""",
+    confidence="high",
+    keywords=["recovery", "covid", "trial", "fda", "timeline", "comparison", "speed", "multiplier", "oxford"],
+    inputs=['EFFICACY_LAG_YEARS', 'OXFORD_RECOVERY_TRIAL_DURATION_MONTHS'],
+    compute=lambda ctx: (ctx["EFFICACY_LAG_YEARS"] * MONTHS_PER_YEAR) / ctx["OXFORD_RECOVERY_TRIAL_DURATION_MONTHS"],
+    latex_symbol=r"k_{FDA:RECOVERY}",  # LaTeX symbol for equations
+)
 
 # ===================================================================
 # DISEASE ERADICATION DELAY MODEL (PRIMARY METHODOLOGY)

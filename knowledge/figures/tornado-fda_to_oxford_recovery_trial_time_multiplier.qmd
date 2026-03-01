@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "FDA to Oxford RECOVERY Trial Time Multiplier"
+display_name = "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier"
 
 # Baseline and units
 
-baseline = 42.0
+baseline = 32.8
 
 # Tornado data from sensitivity analysis
 
-drivers = ['FDA_PHASE_1_TO_APPROVAL_YEARS']
-driver_labels = ['FDA Phase 1 to Approval Timeline']
-impacts_low = [-18.0]
-impacts_high = [6.0]
+drivers = ['EFFICACY_LAG_YEARS']
+driver_labels = ['Regulatory Delay for Efficacy Testing Post-Safety Verification']
+impacts_low = [-8.0]
+impacts_high = [8.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

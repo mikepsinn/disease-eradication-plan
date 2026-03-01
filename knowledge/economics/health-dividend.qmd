@@ -20,7 +20,7 @@ Your species has a word for "health dividend," which implies that health is a bo
 
 {{< var diseases_without_effective_treatment >}} have zero approved treatments. Not "in development." Not "awaiting funding." Zero. If you are diagnosed with one of them today, your treatment has not been invented. Nobody is working on it.
 
-Your FDA approves roughly {{< var current_drug_approvals_per_year >}} new treatments per year. At that rate, the queue clears in approximately {{< var status_quo_queue_clearance_years >}}. For context, {{< var status_quo_queue_clearance_years >}} ago, your species had not yet invented writing. You were painting buffalo on cave walls and dying of tooth infections.
+Your FDA approves roughly {{< var current_drug_approvals_per_year_nounit >}} new treatments per year. At that rate, the queue clears in approximately {{< var status_quo_queue_clearance_years >}}. For context, {{< var status_quo_queue_clearance_years >}} ago, your species had not yet invented writing. You were painting buffalo on cave walls and dying of tooth infections.
 
 ## What It Costs to Fix
 
