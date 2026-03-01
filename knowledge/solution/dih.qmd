@@ -12,18 +12,15 @@ image: /assets/og-images/knowledge/solution/dih-og-retro-academic.jpg
 podcast-image: /assets/podcast/dih-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Your goal is simple: **eliminate all disease**.
+I have been watching your species fight disease for 80 years, and I want to describe what I see, because I think if you saw it from the outside you would be embarrassed.
 
-The constraint is also simple: **resources are scarce**. You have limited money, time, and talent. Every dollar on a low-impact trial is a dollar not curing cancer. Every researcher writing grant applications is a researcher not doing research. Every patient excluded from trials is data you'll never collect and a person you'll never help.
+You have {{< var global_population_2024 >}} humans. Some of them are sick. Some of them are scientists who could help the sick ones. And some of them are sitting in offices writing 47-page documents explaining why they should be allowed to try. These documents are called "grant applications." They take 6 months to write and 40 minutes to reject. Your scientists spend 50-67% of their time writing them [@grant-writing-time-50pct]. The other 33-50% is spent doing science, which is the thing they were hired for, though at this point it's more of a hobby they squeeze in between paperwork.
 
-Your current system fails this optimization so thoroughly it almost looks intentional.
+Your NIH spends {{< var nih_annual_budget >}} a year. Billions flow to projects that never produce treatments. Your system isn't designed to cure disease. It's designed to produce grant applications, which occasionally, as a side effect, produce medicine. This is like designing a restaurant whose primary output is menus. Sometimes, by accident, food comes out. Everyone acts surprised when it does.
 
-Your NIH spends {{< var nih_annual_budget >}} a year. Your scientists spend 50-67% of their time writing grant applications [@grant-writing-time-50pct] instead of doing science. Billions flow to projects that never produce treatments. Your system isn't designed to maximize cures. It's designed to maximize grant-writing.
+This is not a conspiracy. It's just what happens when you pay people for asking instead of finding. You've built a machine whose primary output is requests for money and whose secondary output is, reluctantly, science. On Wishonia, we have a word for systems that produce the opposite of their stated purpose. The word is "human."
 
-This isn't a conspiracy. It's just what happens when you design a system that rewards asking for money instead of producing results. You've accidentally built a machine whose primary output is paperwork and whose secondary output is occasionally, reluctantly, medicine.
-
-Your decentralized institutes of health is an alternative design that optimizes for a single metric: **maximum ROI toward disease eradication**.
-It's what you'd build if you started from scratch and actually wanted results.
+Your Decentralized Institutes of Health is what you'd build if you started over and actually meant it.
 
 ## The Health-Industrial Complex: Coordinating Your War on Disease
 
@@ -33,75 +30,51 @@ Your economist Mancur Olson identified why public goods are systematically under
 
 ![Why your species is so good at making weapons and so bad at curing diseases. The weapons people are organized, the disease people are scattered.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
 
-Curing cancer benefits {{< var global_population_2024_nounit >}} people a little. But nobody benefits enough to organize, lobby, and fight for it the way a defense contractor fights for a bomber contract. The {{< var global_population_2024_nounit >}} don't show up. This is why your species has spent 50 years "fighting cancer" while your defense industry got stealth bombers, aircraft carriers, and GPS.
+Curing cancer benefits {{< var global_population_2024_nounit >}} people a little. But nobody benefits enough to organize, lobby, and fight for it the way a defense contractor fights for a bomber contract. The {{< var global_population_2024_nounit >}} don't show up. This is why your species has spent 50 years "fighting cancer" while your defense industry got stealth bombers, aircraft carriers, and GPS. The defense industry showed up. Cancer patients were busy having cancer.
 
-Your military-industrial complex solved this problem for defense. Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets. Result: the most powerful military in human history.
+Your military-industrial complex solved this problem for defense. Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets. Result: the most powerful military in human history. Also result: the most powerful military in human history pointed at everyone, including the people who paid for it, which is a detail that seems important but apparently isn't.
 
-Disease has no such coalition. Your patients are too sick to lobby. Your researchers compete for scraps. Your funders lack coordination. Your politicians get no credit for cures that arrive after their term ends (which is all of them, because cures take 15 years and terms last 4). Everyone wants disease eradicated; no one has a concentrated interest in making it happen. It's like everyone wanting a clean kitchen but nobody wanting to do the dishes, except the dishes are cancer and the kitchen is on fire.
+Disease has no such coalition. Your patients are too sick to lobby. Your researchers compete for scraps. Your funders lack coordination. Your politicians get no credit for cures that arrive after their term ends (which is all of them, because cures take 15 years and terms last 4, which is a scheduling problem your species has never solved and never tried to). Everyone wants disease eradicated; no one has a concentrated interest in making it happen. It's like everyone wanting a clean kitchen but nobody wanting to do the dishes, except the dishes are cancer and the kitchen is on fire.
 
-**Your Decentralized Institutes of Health solves the Olsonian problem by creating concentrated interests in disease eradication.**
-
-Your military-industrial complex coordinates actors around defense. Your Decentralized Institutes of Health creates a **health-industrial complex** that coordinates actors around eradication. Same structure, opposite purpose.
+**Your Decentralized Institutes of Health solves the Olsonian problem by creating concentrated interests in disease eradication.** It builds a health-industrial complex that coordinates actors around eradication the way your military-industrial complex coordinates actors around defense. Same structure, opposite purpose. Same selfishness, better direction.
 
 ### SHAEF for Your War on Disease
 
-In 1944, Eisenhower didn't replace the Allied armies. He coordinated them. Set the objective, allocated resources, made sure everyone pulled in the same direction. **Your Decentralized Institutes of Health is SHAEF for the war on disease.**
+In 1944, Eisenhower didn't replace the Allied armies. He coordinated them. Set the objective, allocated resources, made sure everyone pulled in the same direction. Your Decentralized Institutes of Health is SHAEF for the war on disease.
 
-Pharma companies stay pharma companies. Universities stay universities. Patient groups stay patient groups. But they operate as one force because your Decentralized Institutes of Health coordinates them toward eradication.
+Pharma companies stay pharma companies. Universities stay universities. Patient groups stay patient groups. But they operate as one force because the coordination layer points them at the same thing, which is the thing they were all supposedly pointed at already, except they weren't, because nobody was coordinating.
 
 ![Medical researchers currently work in separate rooms and don't talk to each other. This is a picture of them in the same room, talking.](/assets/images/dih/dih-section-why-this-framing-matters-bw-academic.jpg)
 
 Your war on disease has been losing for 50 years because it's not actually a war. It's a collection of uncoordinated skirmishes where researchers compete for grants, pharma companies hide failures, and patients can't access trials. You've been "fighting" cancer the way a cat "fights" a laser pointer: lots of energy, no coordination, nothing caught.
 
-Imagine if D-Day had been run this way. The Americans land at one beach, the British at another. Neither tells the other what they learned. Both compete for the same supply ships while the enemy reads their grant applications.
+Imagine if D-Day had been run this way. The Americans land at one beach, the British at another. Neither tells the other what they learned. Both compete for the same supply ships while the enemy reads their grant applications. This is how your species currently runs medical research, and you've been doing it long enough that it feels normal, which is the most dangerous thing about it.
 
-Your Decentralized Institutes of Health is the coordination layer that turns scattered skirmishes into a unified campaign.
-
-## Your Decentralized Institutes of Health: The ROI Maximization Protocol
+## The ROI Maximization Protocol
 
 ![Everyone involved in medicine pointing in the same direction instead of wandering around like confused sheep.](/assets/images/dih/dih-section-dih-the-roi-maximization-protocol-bw-academic.jpg)
 
-Your Decentralized Institutes of Health is not a platform. It's not an organization. It's not even really a thing. It's a **coordination protocol** with one function:
+Your Decentralized Institutes of Health is not a platform. It's not an organization. It's not even really a thing. It's a coordination protocol, which means it's the rules by which the things talk to each other. On Wishonia, we built ours 4,297 years ago. It does one thing: make every actor's most selfish choice also be the most useful choice. Every dollar flows to maximum impact. Every researcher works on the highest-value problem. Every patient joins the trial that matters most. Nothing gets wasted.
 
-> **Make every actor do the highest-ROI thing toward total disease eradication.**
+On your planet, you call this radical. On mine, we call it "obvious." It's been running longer than most of your civilizations have existed, though to be fair that's a low bar given how often yours collapse.
 
-This means:
-
-- Every dollar flows to maximum impact
-- Every researcher works on highest-value problems
-- Every patient joins trials that matter most
-- Nothing gets wasted on low-ROI activities
-
-On your planet, you call this radical. On mine, we call it "obvious." We built ours 4,297 years ago. It's been running ever since, which is longer than most of your civilizations have existed, though to be fair that's a low bar.
-
-### Three Core Functions
-
-Your Decentralized Institutes of Health does exactly three things:
+It does exactly three things:
 
 1. **Receive funds** (from the [1% Treaty](1-percent-treaty.qmd), donations, etc.)
-2. **Allocate research via patient subsidies** (market mechanism) and **infrastructure via [Wishocracy](wishocracy.qmd)**
-3. **Verify results and pay proportional to impact**
+2. **Allocate research via patient subsidies** (a market mechanism where sick people choose which trials to join and the money follows them) and **infrastructure via [Wishocracy](wishocracy.qmd)** (where everyone votes on which buildings to build)
+3. **Verify results and pay proportional to impact** (the part where you only get money if something actually worked, which is apparently a novel concept in your research sector)
 
-Everything operational is outsourced. Trial infrastructure? [Existing and new providers](dfda.qmd) compete for that work. Task decomposition? AI services. Talent matching? Existing marketplaces. Crowdfunding? Existing platforms.
+Everything operational is outsourced. Trial infrastructure? [Existing and new providers](dfda.qmd) compete for the work. Task decomposition? AI services. Talent matching? Existing marketplaces. The protocol itself does almost nothing, on purpose.
 
 ![A tiny middle bit that handles money, surrounded by other people who do the actual work. Like a very small manager with many employees.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
 
-Why stay thin? Because **thin protocols are hard to capture**. There's nothing to bribe. No operational role to corrupt. No CEO to take on a yacht trip. Just code that moves money toward measured outcomes. Your species has a habit of corrupting every institution you build. You corrupt them the way water corrodes pipes: inevitably, given enough time and contact. This one is boring enough that nobody bothers.
+Why stay thin? Because thin protocols are hard to capture. There's nothing to bribe. No operational role to corrupt. No CEO to take on a yacht trip. Just rules that move money toward measured outcomes. Your species has a habit of corrupting every institution you build. You corrupt them the way water corrodes pipes: inevitably, given enough time and contact. The solution is to make the pipe so small and boring that nobody bothers. This one is boring enough that nobody bothers.
 
-## The Core Innovation: Pay for Results
+## Pay for Results (A Concept Your Research Sector Has Somehow Avoided)
 
 ![Pay people for curing diseases, not for writing essays about why they should be allowed to try curing diseases.](/assets/images/dih/dih-section-the-core-innovation-pay-for-results-bw-academic.jpg)
 
-Every dollar flows based on results, not promises:
-
-- **Patients vote with their enrollment** -> Researchers get paid for attracting patients
-- **Outcomes determine continued funding** -> Campaigns that deliver get more; failures get defunded
-- **No one gets paid for:**
-  - Writing grant proposals
-  - Attending review committees
-  - Publishing papers about why their research might work someday
-
-This is how most other industries work. You pay contractors when they build the house, not when they promise to build it. You pay farmers when they grow the food, not when they apply for a farming license.
+Every dollar flows based on results, not promises. Patients vote with their enrollment, and researchers get paid for attracting them. Outcomes determine continued funding, so campaigns that deliver get more and failures get defunded. Nobody gets paid for writing grant proposals, attending review committees, or publishing papers about why their research might work someday. This is how most other industries work. You pay contractors when they build the house, not when they promise to build it. You pay farmers when they grow the food, not when they apply for a farming license. Medicine, for reasons nobody can explain, went the other way.
 
 ### Your Data Commons: Publish Everything
 
@@ -109,64 +82,47 @@ Your current system hides failures. Companies bury negative results. Researchers
 
 ![Currently, research results hide in separate filing cabinets. This shows them all dumped in one big pile where a computer can look at them.](/assets/images/dih/dih-section-the-data-commons-publish-everything-bw-academic.jpg)
 
-Your Decentralized Institutes of Health requires **100% open publication** of all data, positive and negative, as a condition of funding:
+Your Decentralized Institutes of Health requires 100% open publication of all data, positive and negative, as a condition of funding. Every trial, every result, every dataset published. AI models scan the global data commons, finding patterns humans miss. Failed experiments become shared knowledge, not repeated waste.
 
-- Every trial, every result, every dataset published
-- AI models scan the global data commons, finding patterns humans miss
-- Failed experiments become shared knowledge, not repeated waste
+This is intelligence sharing in the SHAEF analogy. Your Allies won partly because they shared Ultra intercepts across commands. Your war on disease loses because everyone guards their failures like trade secrets. It's a group chat where everyone shares what didn't work. Except the group is your entire species and the topic is death prevention, which you'd think would motivate sharing, but doesn't, because your scientists are more afraid of looking wrong than of people staying dead.
 
-This is intelligence sharing in the SHAEF analogy. Your Allies won partly because they shared Ultra intercepts across commands. Your war on disease loses because everyone guards their failures like trade secrets. Think of it as a group chat where everyone shares what didn't work. Except the group is your entire species and the topic is death prevention.
+## Governance: Sick People Choose, Everyone Else Votes
 
-## Governance: Market Mechanism + Wishocracy
+Your Decentralized Institutes of Health uses two allocation mechanisms, because using one would be too simple and using three would be too complicated, and your species has a narrow window of complexity it can handle before giving up and going to lunch.
 
-Your Decentralized Institutes of Health uses two allocation mechanisms:
-
-- **Patient subsidies (market mechanism):** Research funding follows patient choice. Patients enroll in trials they believe in; funding flows accordingly. Variable subsidy rates ensure rare diseases remain viable. No committees decide "cancer vs Alzheimer's."
+**Patient subsidies** handle research funding. Sick people choose which trials to join. Money follows their enrollment. This means research funding is allocated by the people who will die if it doesn't work, which is a better selection mechanism than a committee of people who will not die either way. Variable subsidy rates ensure rare diseases remain viable, because small patient pools don't have to mean small budgets. No committee sits around deciding "cancer vs. Alzheimer's." The patients decide, by showing up.
 
 ![Sick people decide what to study; everyone votes on which buildings to build. Democracy, but only for the bits that make sense.](/assets/images/dih/dih-section-governance-market-mechanism-wishocracy-bw-academic.jpg)
 
-- **[Wishocracy](wishocracy.qmd):** For infrastructure and public goods only. Aggregates preferences through pairwise comparisons ("EHR integration or security audits?"). 
+**[Wishocracy](wishocracy.qmd)** handles infrastructure and public goods. It aggregates preferences through pairwise comparisons ("EHR integration or security audits?"), which is a fancy way of saying it asks everyone which of two things matters more, over and over, until a ranking emerges. Your species already does this when choosing restaurants. You just hadn't applied it to anything important.
 
-## The Incentive Stack: Making ROI the Selfish Choice
+## Making Selfishness Cure Disease
 
-Your Decentralized Institutes of Health doesn't rely on altruism. Altruism is lovely but flaky. It shows up when it feels like it, cancels last minute, and is always "busy that weekend." Instead, your Decentralized Institutes of Health **pays everyone to do the highest-ROI thing**. Greed is more dependable than kindness. Your entire economic system proves this daily. Nobody ever forgot to be greedy.
+Your Decentralized Institutes of Health doesn't rely on altruism. Altruism is lovely but flaky. It shows up when it feels like it, cancels last minute, and is always "busy that weekend." Instead, it pays everyone to do the most useful thing, because greed is more dependable than kindness. Your entire economic system proves this daily. Nobody ever forgot to be greedy.
 
-| Actor | Self-Interest | Decentralized Institutes of Health Incentive | ROI Alignment |
-|:------|:--------------|:--------------|:--------------|
-| **Researchers** | Money, prestige | Per-patient subsidies (higher for rare diseases) | Attract patients = get paid |
-| **Patients** | Health, compensation | Subsidies scale with trial importance | Joining high-priority trials = more paid |
-| **Politicians** | Re-election, legacy | [Incentive Alignment Bonds (IABs)](incentive-alignment-bonds.qmd) tied to disease outcomes | Better outcomes = bigger bonus |
-| **Funders** | Impact, returns | Quadratic matching, outcome tracking | High-ROI donations = amplified impact |
-| **Data providers** | Revenue | Fees tied to data utility | More useful data = more revenue |
-| **Campaigns** | Funding | Results-based continued funding | Higher ROI = more funding |
+Your researchers get per-patient subsidies (higher for rare diseases), so attracting patients means getting paid. Your patients get subsidies that scale with trial importance, so joining high-priority trials pays more. Your politicians get [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) tied to disease outcomes, so better outcomes mean bigger bonuses. Your funders get quadratic matching and outcome tracking, so high-ROI donations are amplified. Your data providers get fees tied to data utility, so more useful data means more revenue. Every single actor's most selfish choice is also the most useful choice. Selfishness, properly directed, cures cancer.
 
-Every incentive is ROI-weighted. Not just "do good" but "do the MOST good per dollar/hour." Your Decentralized Institutes of Health makes the highest-ROI action the selfish choice for every actor. Selfishness, properly directed, cures cancer. The civilizations I've worked with that figured this out are still around. The ones that decided selfishness was the problem and tried to build systems that required everyone to be nice are not.
+The civilizations I've worked with that figured this out are still around. The ones that decided selfishness was the problem and tried to build systems that required everyone to be nice are not. I don't say this to be mean. I say it because the archaeological record is very clear, and the archaeological record does not have feelings.
 
 ### How Your Researchers Get Paid
 
-Your traditional system: Write a grant proposal. Hope a committee likes it. Get paid to try. Maybe produce results. Maybe not. Get paid either way.
+Your traditional system works like this: write a grant proposal, hope a committee likes it, get paid to try, maybe produce results, maybe not, get paid either way. It's the only profession on your planet where not doing the thing you're paid for has no consequences. (Actually, I've been told this also describes some management positions, but researchers get less money for it.)
 
 ![Old way: write a letter begging for money. New way: cure someone and get paid. One of these seems more efficient.](/assets/images/dih/dih-section-how-researchers-get-paid-bw-academic.jpg)
 
-Your Decentralized Institutes of Health system:
+The new system: per-patient subsidies, so the more patients who join your trial, the more funding you get (patients vote with their enrollment). Variable subsidy rates, so rare diseases get higher per-patient subsidies (small patient pools don't mean small budgets). Results-based continuation, so you deliver results and get more funding, or don't deliver and get defunded, which is how every other job on your planet works except, somehow, research.
 
-1. **Per-patient subsidies:** The more patients who join your trial, the more funding you get. Patients vote with their enrollment.
-2. **Variable subsidy rates:** Rare diseases get higher per-patient subsidies. Small patient pools don't mean small budgets.
-3. **Results-based continuation:** Deliver results, get more funding. Don't deliver, get defunded. Like every other job on your planet except, somehow, research.
-
-Pay your scientists like you pay your plumbers: for fixing the problem, not for explaining why it's hard.
+Pay your scientists like you pay your plumbers: for fixing the problem, not for explaining why the problem is hard.
 
 ### How It Works For Your Patients
 
-Your Decentralized Institutes of Health doesn't replace your healthcare system. It adds an "experimental treatment insurance layer" on top. Your species already understands insurance. You just hadn't thought to apply it to not dying of untreated diseases.
+Your Decentralized Institutes of Health doesn't replace your healthcare system. It adds an experimental treatment insurance layer on top. Your species already understands insurance (you pay money now so that when something bad happens, a company can explain why they don't have to pay you). This is similar, except it works.
 
-**Sarah has Type 2 Diabetes. Old system:** Metformin not working. No other options covered. Pays hundreds per month for a branded drug. Still has poor control.
+Sarah has Type 2 Diabetes. Metformin isn't working. Under the old system, she has no other options covered and pays hundreds per month for a branded drug that's performing about as well as the drug that isn't working, which is a choice between two kinds of not working, which her species calls "options."
 
-**With your Decentralized Institutes of Health:** Her doctor checks the trial network during a regular visit. Sees relevant trials. Recommends one based on Sarah's profile. Sarah enrolls with one click. The trial coverage pool covers all costs. Sarah pays a small copay. Gets an experimental drug that might work better. Reports blood sugar via app. Her data helps the next patient. Total time added to doctor visit: 3 minutes.
+With your Decentralized Institutes of Health, her doctor checks the trial network during a regular visit. Sees relevant trials. Recommends one based on Sarah's profile. Sarah enrolls with one click. The trial coverage pool covers all costs. Sarah pays a small copay. Gets an experimental drug that might work better. Reports blood sugar via app. Her data helps the next patient. Total time added to doctor visit: 3 minutes. Total time spent not dying: potentially the rest of her life. The ratio between these numbers seems favorable.
 
-**Why your doctors will cooperate:** More treatment options for desperate patients. No liability (covered by trial insurance). Minimal workflow changes.
-
-**Why your patients will use it:** Affordable access to experimental treatments. Doctor-recommended. Insurance-like coverage (familiar model). No financial risk. They help others while helping themselves. It's like being a guinea pig, except the guinea pig gets paid and gets medicine.
+Your doctors will cooperate because they get more treatment options for desperate patients, no liability (covered by trial insurance), and minimal workflow changes. Your patients will use it because they get affordable access to experimental treatments, doctor-recommended, with insurance-like coverage and no financial risk. It's like being a guinea pig, except the guinea pig gets paid, gets medicine, and consented to the arrangement, which distinguishes it from all previous guinea pig situations.
 
 ## How the Money Flows
 
@@ -176,25 +132,15 @@ Your Decentralized Institutes of Health doesn't replace your healthcare system. 
 
 ![Three boxes with arrows between them. Money goes in one box, splits into two other boxes, and hopefully cures diseases.](/assets/images/dih/dih-section-the-architecture-bw-academic.jpg)
 
-**The [1% Treaty Fund](1-percent-treaty.qmd):**
+The [1% Treaty Fund](1-percent-treaty.qmd) holds the treasury. Money comes in from the [1% Treaty](1-percent-treaty.qmd). It allocates between infrastructure and public goods via [Wishocracy](wishocracy.qmd). It funds campaigns, not bureaucracies. It has no CEO, no board, and no one to corrupt, which makes it the first financial institution in your history with that property.
 
-- Holds the treasury (from the [1% Treaty](1-percent-treaty.qmd))
-- Allocates between infrastructure and public goods via [Wishocracy](wishocracy.qmd)
-- Funds campaigns, not bureaucracies
-- No CEO, no board, no one to corrupt
+Your Decentralized Institutes of Health is the thin coordination protocol that receives funding from the 1% Treaty Fund, allocates research via patient subsidies, verifies results, and pays for outcomes. It's a set of rules, not a building. You can't visit it. You can't lobby it. You can't take it to lunch. This is the point.
 
-**Your Decentralized Institute of Health:**
-
-- A thin coordination protocol
-- Receives funding *from* the 1% Treaty Fund
-- Research allocation via patient subsidies (market mechanism)
-- Verifies results, pays for outcomes
-
-**[Trial infrastructure providers](dfda.qmd):** Funded campaigns that compete to provide trial infrastructure. Not part of your Decentralized Institutes of Health itself; just service providers with no budget authority.
+[Trial infrastructure providers](dfda.qmd) are funded campaigns that compete to provide trial infrastructure. They're not part of your Decentralized Institutes of Health; they're service providers with no budget authority, the same way a restaurant kitchen is not part of the building's plumbing even though they both involve pipes.
 
 ### The Fund Flow
 
-Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the 1% Treaty Fund. But not all of it reaches research (some of it goes to keeping the machine running):
+Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding >}}** a year from global military budgets into the 1% Treaty Fund. Not all of it reaches research, because some of it goes to keeping the machine running, which is how all machines work including your current ones, except this one admits it:
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
@@ -203,80 +149,50 @@ Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding
 
 ### What Gets Funded: Market Failures Only
 
-Most research allocation happens automatically (patients choose trials, funding flows there). Your 1% Treaty Fund primarily funds **market failures**. These are the things your ecosystem can't handle on its own.
+Most research allocation happens automatically. Patients choose trials, funding flows there, and the market handles it the way markets handle most things: imperfectly but vigorously. The 1% Treaty Fund steps in only for the things markets genuinely can't do.
 
-**Infrastructure**
+Infrastructure: development and operations, competing alternative implementations, data commons storage and processing, security audits and fraud detection. These are the pipes and plumbing. Nobody builds pipes for fun. Markets don't produce pipes unless someone pays for them. So the fund pays for them.
 
-- Development and operations
-- Competing alternative implementations
-- Data commons infrastructure (storage, processing)
-- Security audits and fraud detection systems
+True public goods: patient trial participation subsidies, negative results publishing, and replication studies. These are the things nobody wants to pay for because the benefit is diffuse and the payer gets no credit. Your species has known about this problem since Olson described it, which was decades ago, and has done nothing about it, which is also decades ago.
 
-**True Public Goods (No Revenue Model)**
+This is minimal by design. Your ecosystem handles most research funding automatically: companies register treatments, patients join trials, revenue flows, research happens. Your Decentralized Institutes of Health only directs the 1% Treaty Fund to cover what the market genuinely can't, which is less than you think, because markets are surprisingly competent when you let sick people choose where to spend money on not being sick.
 
-- Patient trial participation subsidies
-- Negative results publishing
-- Replication studies
-
-This is minimal by design. Your ecosystem handles most research funding automatically: companies register treatments, patients join trials, revenue flows, research happens. Your Decentralized Institutes of Health only directs the 1% Treaty Fund to cover what the market genuinely can't.
-
-## What Your Decentralized Institutes of Health Outsources (and Why)
+## What Your Decentralized Institutes of Health Outsources (Everything)
 
 Your Decentralized Institutes of Health is intentionally minimal. It outsources everything operational because the best way to avoid corruption is to have nothing worth corrupting. If a provider stops performing, you fund a better one. This is how your species runs restaurants. Time to try it with medicine.
 
-| Function | Outsourced To | Why |
-|:---------|:--------------|:----|
-| **Trial infrastructure** | [Competing providers](dfda.qmd) (funded campaigns) | Separate concerns |
-| **Crowdfunding** | Existing platforms | They already exist and work |
-| **Talent matching** | Existing marketplaces | Don't reinvent what already works |
-| **Data storage** | Competing providers | Market competition |
+Trial infrastructure goes to [competing providers](dfda.qmd), because separate concerns stay uncorrupted. Crowdfunding goes to existing platforms, because they already exist and work (your species has already built functional crowdfunding; no need to reinvent it just because the cause is better). Talent matching goes to existing marketplaces. Data storage goes to competing providers, because market competition works better than monopoly, which you'd think would be obvious by now given that your entire economic philosophy is based on this observation and yet your government keeps forgetting it.
 
-Every outsourced function follows the same lifecycle: propose, vote via [Wishocracy](wishocracy.qmd), receive funding, deliver, get measured, and earn continued funding based on results.
+Every outsourced function follows the same lifecycle: propose, vote via [Wishocracy](wishocracy.qmd), receive funding, deliver, get measured, and earn continued funding based on results. This is called "accountability." Your species invented the word. Time to try the concept.
 
 ## Anti-Capture Design
 
-Your current system is trivially captured. Concentrate billions of dollars in a few committees, and lobbyists will find them. This is as predictable as gravity, and your species keeps being surprised by it the way a dog is surprised by a vacuum cleaner. Every single time.
+Your current system is trivially captured. Concentrate billions of dollars in a few committees, and lobbyists will find them. This is as predictable as gravity, and your species keeps being surprised by it the way a dog is surprised by a vacuum cleaner. Every single time. The vacuum cleaner has been there for years. The dog has seen it before. The dog will be surprised again tomorrow.
 
-Your Decentralized Institutes of Health makes capture economically irrational.
+Your Decentralized Institutes of Health makes capture economically irrational by removing everything worth capturing. There is no CEO, so there is nothing to bribe. Governance rules are encoded in transparent, auditable systems, and you can't bribe an algorithm (several of your corporations have tried; the algorithm didn't notice). Every dollar is tracked on a public ledger, so corruption is visible to everyone with an internet connection. Anyone can build a competing alternative, so capturing one just triggers the creation of another. Millions vote via [Wishocracy](wishocracy.qmd), so lobbying doesn't scale (you can bribe a committee of twelve; you cannot bribe a committee of twelve million, or rather you can, but it's called "taxation" and requires winning an election first). And funding is determined by outcomes, so gaming the system is harder than just performing well, which is the first time in your species' history that a funding system has had that property.
 
-### How Your Decentralized Institutes of Health Resists Capture
-
-| Mechanism | How It Works | Capture Cost |
-|:----------|:-------------|:-------------|
-| **No CEO** | Nothing to bribe | N/A |
-| **Algorithmic governance** | Rules encoded in transparent, auditable systems | Can't bribe an algorithm |
-| **Public ledger** | Every dollar tracked | Corruption is visible |
-| **Replaceable** | Anyone can build a competing alternative | Capture triggers competition |
-| **Distributed voting** | Millions vote via Wishocracy | Lobbying doesn't scale |
-| **Outcome-based funding** | Results determine allocation | Gaming harder than performing |
-
-Your protocol ensures **no single component can monopolize power**. Everything is replaceable. Nothing is essential except the coordination rules themselves. If any campaign provider gets captured, fund a competing one instead.
+If any campaign provider gets captured, fund a competing one instead. This is how your species handles bad restaurants, bad taxi companies, and bad barbers. It has never occurred to you to handle bad research institutions the same way, because you've classified them as "important," and on your planet, "important" things are exempt from competition, which explains why they're all terrible.
 
 ### Security: Defense in Depth
 
-A {{< var treaty_annual_funding >}} treasury is a massive target. Every thief, hacker, and corrupt bureaucrat on your planet will try to steal from it. This is not speculation. This is a certainty, like sunrise or a politician lying. Your Decentralized Institutes of Health uses defense in depth:
+A {{< var treaty_annual_funding >}} treasury is a massive target. Every thief, hacker, and corrupt bureaucrat on your planet will try to steal from it. This is not speculation. This is a certainty, like sunrise or a politician lying. The defense is four layers deep, because your species has repeatedly demonstrated that one layer is insufficient, two layers is insufficient, and three layers is insufficient, so four it is.
 
-- **Distributed control:** No single person or committee holds the keys. Community governance with time-delayed execution so fraud can be caught before funds move.
-- **Automated fraud detection:** Real-time anomaly detection, duplication monitoring, and whistleblower bounties. Machines watch the money so humans don't have to be trusted with it.
-- **Full transparency:** Every dollar tracked on public ledgers. Regular independent audits. You can't steal what everyone can see.
-- **Recovery mechanisms:** Clawbacks for data falsification. Emergency pause capabilities. If something goes wrong, the system stops and fixes itself before continuing.
+**Distributed control:** No single person or committee holds the keys. Community governance with time-delayed execution so fraud can be caught before funds move. This means stealing requires corrupting multiple independent parties simultaneously, which is expensive, and then waiting for the time delay, which is boring. Your species' thieves are impatient. This helps.
+
+**Automated fraud detection:** Real-time anomaly detection, duplication monitoring, and whistleblower bounties. Machines watch the money so humans don't have to be trusted with it. This is not an insult to humans. This is a design choice based on 4,297 years of watching humans near money.
+
+**Full transparency:** Every dollar tracked on public ledgers. Regular independent audits. You can't steal what everyone can see. Your species' most successful thieves have always relied on secrecy. Remove the secrecy and you remove the thieves, or at least make them very obvious, which is nearly as good.
+
+**Recovery mechanisms:** Clawbacks for data falsification. Emergency pause capabilities. If something goes wrong, the system stops and fixes itself before continuing. This is how your elevators work. When an elevator detects a problem, it stops. It does not continue delivering people to the wrong floor and then write a report about it afterward. Your financial systems should work like your elevators, but they don't, because your financial systems were designed by people who were paid to design them a certain way, and that way was not "well."
 
 ![Four different ways to stop people from stealing the money. Because one way would be insufficient, apparently.](/assets/images/governance/governance-section-security-architecture-bw-academic.jpg)
 
-## Summary: Your Coordination Layer
+## What You've Just Read
 
-Your Decentralized Institutes of Health is not a research institution, a trial platform, or a funding agency. It's **the thin layer that coordinates all of them**.
+Your Decentralized Institutes of Health is not a research institution, a trial platform, or a funding agency. It's the thin layer that coordinates all of them. The 1% Treaty Fund receives money from the treaty. Patient subsidies allocate research funding through a market mechanism where sick people choose trials. [Wishocracy](wishocracy.qmd) allocates infrastructure and public goods through democratic voting. [Trial infrastructure](dfda.qmd) provides clinical trial services through competing providers. [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) align investors and politicians with outcomes through legal bribery.
 
-| Component | Function | Decentralized Institutes of Health's Role |
-|:----------|:---------|:-----------|
-| 1% Treaty Fund | Treasury | Receives funds from treaty |
-| Patient subsidies | Research allocation | Market mechanism (patients choose trials) |
-| Wishocracy | Infrastructure governance | Allocates between infrastructure/public goods |
-| [Trial infrastructure](dfda.qmd) | Clinical trial services | Funded campaigns (competing providers) |
-| [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) | Investor and political alignment | Outcome-based rewards |
+The whole thing receives funds, allocates research via patient subsidies, governs infrastructure via Wishocracy, verifies results, and pays proportional to outcomes. The highest-ROI action becomes the selfish choice for every actor. Greed cures cancer. Selfishness ends disease. Your worst impulse becomes your best medicine.
 
-**The single sentence version:**
-
-> Your Decentralized Institutes of Health receives funds, allocates research via patient subsidies, governs infrastructure via Wishocracy, verifies results, and pays proportional to outcomes, making the highest-ROI action the selfish choice for every actor.
+On Wishonia, we built this 4,297 years ago. We've been disease-free for 4,296. That first year was, admittedly, a bit rough. But you have the benefit of our mistakes, which we're sharing because sharing mistakes freely is the first rule of the protocol, and also because we have 4,296 years of evidence that it works, which is more evidence than your species has for anything except gravity and the observation that meetings could have been emails.
 
 That's the theory. The rest of this manual explains how you actually build it.
