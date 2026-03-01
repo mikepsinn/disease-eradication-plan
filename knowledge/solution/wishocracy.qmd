@@ -27,9 +27,9 @@ Not all of it is available for allocation. First, the automatic deductions (thin
 
 How do you stop parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}}? If history is any guide, you don't. Every pool of money humanity has ever created has attracted lobbyists the way a dropped ice cream cone attracts ants, except ants at least work hard.
 
-**Wishocracy** replaces committees with code and representatives with mathematics. It lets 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}} without turning it into a bureaucratic nightmare. The difference between this and the NIH is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach has never once funded a colleague's lunch out of professional courtesy.
+**Wishocracy** is the governance system we use on Wishonia (we named it after ourselves, which your species would call "branding"). It replaces committees with code and representatives with mathematics. We've been running it for 4,297 years. I'm not proposing an experiment. I'm describing infrastructure.
 
-On my home planet (also called Wishonia, because we named the system after ourselves, which your species would call "branding"), we've been running Wishocracy for 4,297 years. It still works.
+It lets 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}} without turning it into a bureaucratic nightmare. The difference between this and the NIH is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach has never once funded a colleague's lunch out of professional courtesy.
 
 ## How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
 
@@ -88,7 +88,7 @@ When millions of people make pairwise choices, something almost magical happens 
 - **Random pairs prevent gaming.** Corrupting your current system costs about {{< var defense_lobbying_annual >}}/year spread across 535 members of Congress. Corrupting Wishocracy would require bribing 8 billion random voters, and the only way to "bribe" 8 billion people is to offer them something they actually want, which is the system working correctly. The attack vector for Wishocracy is giving people what they voted for. Your security vulnerability is democracy. It's also immune to marketing: there's no ballot measure to link to, no "Vote Yes on Proposition 7" ad to run. Each voter sees random pairs, so the only way to advertise is to convince people your campaign is better than whatever it happens to be compared against, which is just... making a good argument. Your species finds this deeply unsettling.
 - **Statistical models** (Bradley-Terry, PageRank) [@bradley-terry-pagerank-models] extract global preferences from individual comparisons. The same math that ranks Google search results can rank humanity's medical priorities. Google uses it to find cat videos. You'll use it to cure cancer. Progress.
 - **Outliers cancel out.** The guy who votes "fund my personal jetpack" gets drowned out by the millions voting for "cure my mother's Alzheimer's."
-- **Wisdom of crowds emerges.** Reliably. Repeatedly. Boringly.
+- **Wisdom of crowds emerges.** On *Who Wants to Be a Millionaire*, the studio audience picked the right answer 91% of the time. The "phone a friend" expert? 65% [@surowiecki-2004]. Your species already proved that random people outperform credentialed individuals at picking the right answer. Wishocracy just applies this to questions that matter.
 
 Example with real numbers:
 
@@ -99,7 +99,39 @@ Example with real numbers:
 
 ![Millions of clicks get crunched by algorithms into one list of what humanity wants most. Turns out we can agree on things when there's money involved.](/assets/images/wishocracy/wishocracy-section-why-this-actually-works-math-warning-bw-academic.jpg)
 
-It's democracy without the shouting. The stupidity is still there, but it's evenly distributed across millions of people and thus cancels out. This is called "the wisdom of crowds." It works for the same reason that guessing the weight of a cow at a fair works: individually you're all terrible at it, but collectively you're weirdly accurate. About half of the 10,000 civilizations I've worked with use some version of this. The other half voted against it, which turned out to be the last thing they voted on.
+It's democracy without the shouting. The stupidity is still there, but it's evenly distributed across millions of people and thus cancels out. Your species calls this "the wisdom of crowds." Mine calls it "obvious." About half of the 10,000 civilizations I've advised adopted some version of Wishocracy. The other half voted against it, which turned out to be the last thing they voted on.
+
+### Your Current System Is Phone-a-Friend (But Your Friend Is Being Bribed)
+
+That 91%-versus-65% comparison is actually generous to your politicians. Phone-a-friend experts have three advantages over members of Congress:
+
+1. **They're trying to get the right answer.** A senator on the health appropriations committee is trying to get re-elected. These are different objectives. One of them occasionally results in good medical research funding by accident. The other one does it on purpose.
+
+2. **They're selected for knowledge.** You phone your friend who knows history for history questions. Your health appropriations committee chair got there through 30 years of seniority and prolific fundraising. At no point did anyone check whether they could name a protein.
+
+3. **They're not being paid by one of the answer choices.** If the phone-a-friend expert were receiving {{< var defense_lobbying_annual >}} from "Answer C," you'd call that corruption. When a senator receives money from a pharmaceutical company and then votes on pharmaceutical regulation, you call that "lobbying," which is the same thing but with a syllable that makes it sound boring enough that nobody gets angry.
+
+So your current system isn't 65%. It's phone-a-friend where your friend doesn't know the subject, isn't trying to answer your question, and is being paid to say "B." Against that baseline, 91% seems less like a modest improvement and more like replacing a broken compass with GPS.
+
+### The 26-Point Gap Is a Floor, Not a Ceiling
+
+Here's the part your economists should find uncomfortable. Trivia is the **best case** for experts. There's one correct answer. The expert either knows it or doesn't. Nobody is paying them to say "Constantinople" when the answer is "Istanbul." No lobbyist is taking them to dinner. Their career doesn't depend on getting it wrong. And they still only hit 65%.
+
+Governance decisions are worse for experts on every dimension:
+
+- **The "right answer" requires knowledge no individual has.** Friedrich Hayek won a Nobel Prize in 1974 for explaining why [@hayek1945]. No central planner, no matter how brilliant, can aggregate the dispersed knowledge that millions of people carry about their own diseases, their own priorities, their own willingness to trade one outcome for another. A senator doesn't know what it's like to have lupus. A committee doesn't know which rare disease is one breakthrough away from a cure. But the millions of people who have lupus know, and the researchers who are close to a breakthrough know, and a system that asks all of them knows more than any committee ever could.
+- **Experts have financial incentives to give the wrong answer.** On *Millionaire*, nobody pays the expert to lie. In Congress, it's the business model.
+- **Experts are selected for the wrong criteria.** On *Millionaire*, you pick your smartest friend. In Congress, the selection process optimizes for charisma, name recognition, and the ability to stand at a podium without saying anything career-ending. The overlap between this skill set and "knows which diseases to fund" is, as far as I can tell, zero.
+
+So if crowds outperform experts by 26 percentage points on questions where experts have every possible advantage, the gap on governance decisions, where experts are compromised, poorly selected, and missing most of the relevant information, is almost certainly larger. The 91%-versus-65% gap is the floor. The ceiling is the Soviet Union, which was the most ambitious phone-a-friend experiment in history: a small group of credentialed experts making resource allocation decisions for 286 million people. It ran for 69 years. It did not go well.
+
+### Why Markets Solved This (and Why You Still Need Wishocracy)
+
+Hayek's solution to the knowledge problem was markets. Prices aggregate dispersed information automatically: if millions of people want more of something, the price goes up, and producers make more. No committee required. Your species has been doing this for thousands of years and it works so well that you barely notice it, the way you barely notice breathing until someone puts a pillow over your face.
+
+But markets have a blind spot. They only work when someone can profit from the solution. Drug companies will fund research into diseases that sell expensive pills to rich countries forever. They will not fund cures for rare diseases, off-patent treatments, or anything where the profit model is "everyone benefits but nobody pays." These are called public goods, and markets handle them the way your cat handles a bath.
+
+Wishocracy is what you build when you need Hayek-style information aggregation but can't rely on price signals. It takes the same principle (millions of individual decisions aggregated into collective intelligence) and applies it to the things markets won't touch. It's the free market's missing organ: the part that funds what's important instead of just what's profitable. Hayek diagnosed the disease in 1945. On Wishonia, we built the cure several millennia earlier. Better late than never.
 
 ## From Priorities to Projects (Where Wishes Become Tasks)
 
