@@ -19,74 +19,69 @@ Politicians can ignore protests. They can ignore polls. They can ignore reality 
 
 They cannot ignore {{< var treaty_campaign_voting_bloc_target_nounit >}} cryptographically verified humans saying "do this thing or we vote you out."
 
+Not because they care about those humans. Because they can count.
+
 ## What You're Actually Building
 
 ### The Goal
 
-Build a privacy-preserving, globally verifiable referendum showing public support for a [1% treaty](../solution/1-percent-treaty.qmd) and your [decentralized institutes of health](../solution/dih.qmd). A website where people say "please stop letting me die of stupid things" in a way that lawyers find convincing.
+A website where people say "please stop letting me die of stupid things" in a way that lawyers find convincing.
 
 ![The five things you need for a global referendum that politicians can't ignore: real votes, secret votes, fair votes, visible votes, and viral growth.](/assets/images/global-referendum/global-referendum-section-the-goal-bw-academic.jpg)
 
-Requirements:
+On Wishonia, we would not need a website for this. We would say "please stop letting me die of stupid things" and then someone would stop letting us die of stupid things. On your planet, this requires cryptographic verification, because your species lies about everything, including whether it wants to be alive. You need mathematical proof that people prefer living. Think about that sentence for a moment. You have built a civilization where "I don't want to die" requires a receipt.
 
-- Auditable (so politicians can't claim it's fake, though they will try)
-- **{{< var global_population_activism_threshold_pct >}} global participation** ({{< var treaty_campaign_voting_bloc_target_nounit >}}+ verified votes)
+Requirements: the votes have to be real (auditable), the votes have to be secret (privacy-preserving), the system has to work for everyone including people without bank accounts or government IDs (which is most of Earth, a fact that surprises the people with bank accounts), the code has to be open-source so anyone can audit it, and the whole thing has to grow fast enough to matter before your species gets distracted by a new television show.
 
-That last number isn't arbitrary. Once {{< var global_population_activism_threshold_pct >}} of a population actively supports something, it becomes probably irresistible. Every time so far. Across all cultures. For centuries. More on that later.
+Target: **{{< var global_population_activism_threshold_pct >}} global participation** ({{< var treaty_campaign_voting_bloc_target_nounit >}}+ verified votes). That number isn't arbitrary. It's the number at which politicians start losing sleep. More on that later.
 
-**The Principles:**
+## The Voting System
 
-- **Verifiability**: Cryptographic proofs that votes are real
-- **Privacy**: Nobody knows who you voted for (including us)
-- **Equity**: Works for everyone, including people without bank accounts or government IDs (which is most of Earth)
-- **Transparency**: Open-source code so anyone can audit it
-- **Viral Growth**: Target: <$1.00 per verified participant
-
-## System Architecture
-
-The voting system uses **end-to-end verifiable cryptography**: receipts that prove you voted, without proving *how* you voted.
-Politicians can claim polls are fake. They cannot claim math is fake. (Several have tried. The math won every time.)
+The system uses end-to-end verifiable cryptography. Each voter gets a receipt that proves they voted, without proving how they voted. This is called a "zero-knowledge proof," which sounds like something a philosophy student made up during an exam they didn't study for, but it's real mathematics, and it works, and politicians cannot argue with it. Several have tried. The math won every time. Math is undefeated against politicians, which is the only undefeated record in your species' history.
 
 ![Your vote gets encrypted, mixed with everyone else's votes like a cryptographic smoothie, then posted publicly. You can verify yours; nobody knows it's yours.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
 
-Each voter gets a cryptographic receipt. All ballots are published anonymized. Zero-knowledge proofs guarantee the count is legitimate. Biometric data never leaves your device. All code is open-source.
+Every ballot published anonymized. Biometric data never leaves your device. All code open-source. The system is designed so that even the people running it can't see how you voted, which makes it more private than your actual elections, where the voting booth has a curtain that stops two feet off the ground and the poll worker is definitely looking at your shoes.
 
 ## On Stopping People from Cheating
 
-Your species has been cheating at democracy since you invented it. Three escalating verification layers:
+Your species has been cheating at democracy since you invented it. The Athenians had ballot-stuffing. The Romans had vote-buying. Americans have gerrymandering, which is the practice of drawing voting districts in shapes that look like someone dropped a plate of spaghetti on a map and then legally required it.
 
-1. **Basic checks** (stops ~90% of fraud): email/phone OTP, device fingerprinting, IP geolocation
-2. **Enhanced verification** (higher trust, higher rewards): government e-ID integration (Estonia [@estonia-eresidency-stats], India Aadhaar [@indian-aadhaar-system], EU eIDAS [@eu-eidas-network], US via ID.me [@id-me-verification]), biometric liveness detection, proof-of-uniqueness partners (Worldcoin [@worldcoin-scale], BrightID [@brightid-social-verification-network], Gitcoin Passport [@gitcoin-passport])
-3. **Social verification**: community attestation for people without digital IDs
+Three verification layers. Because one has never been enough for you.
 
 ![Layer 1: Are you human? Layer 2: Are you a real human? Layer 3: Are you a real human who hasn't voted already?](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
 
-Even Layer 1 gets you counted. You don't need a passport to say "I would prefer not to die."
-AI fraud detection: >99% detection, <1% false positives.
-Biometric data stays on your device, encrypted with keys you control. Better privacy than your actual government gives you.
-Compliant with GDPR [@gdpr-biometric-data], CCPA/CPRA [@ccpa-cpra-compliance], BIPA [@illinois-bipa], and COPPA [@coppa-compliance].
+**Layer 1** is the bouncer at the door. Email and phone verification, device fingerprinting, IP geolocation. Stops about 90% of fraud, which is the lazy fraud, which is most fraud, because cheating, like everything else your species does, follows a power law where most of the cheating is done by amateurs who give up if you ask them to verify their phone number. This is the "are you a human" layer. The bar is low. The fact that it catches 90% of attempts tells you something about the sophistication of your average cheater.
+
+**Layer 2** is the VIP section. Government e-ID integration (Estonia [@estonia-eresidency-stats], India's Aadhaar [@indian-aadhaar-system], EU eIDAS [@eu-eidas-network], US via ID.me [@id-me-verification]), biometric liveness detection (blink at the camera to prove you're not a photograph, which is a sentence that would confuse every human who lived before 2010), and proof-of-uniqueness partners like Worldcoin [@worldcoin-scale], BrightID [@brightid-social-verification-network], and Gitcoin Passport [@gitcoin-passport]. Higher trust, higher rewards. This is the "are you a specific human who hasn't already voted as a different specific human" layer.
+
+**Layer 3** is for the billions of humans who don't exist in any database because their governments can't be bothered to write down that they're alive. Community attestation: your neighbors confirm you're real. This works because lying to a computer is easy but lying to a room full of people who watched you eat breakfast is hard.
+
+Even Layer 1 gets you counted. You don't need a passport to say "I would prefer not to die." AI fraud detection: over 99% detection, under 1% false positives. Biometric data stays on your device, encrypted with keys you control. Compliant with GDPR [@gdpr-biometric-data], CCPA/CPRA [@ccpa-cpra-compliance], BIPA [@illinois-bipa], and COPPA [@coppa-compliance]. Four different laws from four different places that all say "don't be creepy with people's data" using four different definitions of "creepy" and four different penalty structures for being creepy in the wrong jurisdiction. Your species regulates privacy the way it does everything: redundantly, inconsistently, and with great confidence.
 
 ## Growth Strategy
 
-Your species downloaded TikTok over 4 billion times to watch strangers twerk. You can get {{< var treaty_campaign_voting_bloc_target_nounit >}} to click "yes" on not dying.
+Your species downloaded TikTok over 4 billion times to watch strangers twerk. Getting {{< var treaty_campaign_voting_bloc_target_nounit >}} to click "yes" on not dying should be easier. It isn't, because not dying is less entertaining than twerking, but it should be, and that gap between "should be" and "isn't" is the entire marketing problem.
 
-Each person who signs up gets a small referral bonus for bringing the next, funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). Target: <$1.00 per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online.
+Each person who signs up gets a small referral bonus for bringing the next, funded by [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). Target: less than $1.00 per verified participant. For comparison, acquiring a coffee customer costs $5-15. Nike pays $40 to get one person to buy shoes online. You're trying to convince someone to support not dying for less than the cost of a packet of gum. The fact that "not dying" needs a financial incentive to compete with shoes tells you everything about your species that this book has been trying to tell you. But here we are. Gum money it is.
+
+![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
 
 ## Integrity (Proving You Didn't Cheat)
 
-Your species accuses people of cheating at everything, including children's football, baking competitions, and board games at Thanksgiving.
+Your species accuses people of cheating at everything, including children's football, baking competitions, and board games at Thanksgiving. The Thanksgiving ones start wars that last longer than the actual wars in your history books. A global referendum with actual stakes will face accusations that make your election audits look like casual suggestions.
 
-The defense: make cheating mathematically impossible, then publish the math. NGO and academic observers get read-only dashboards with real-time fraud detection.
+The defense: make cheating mathematically impossible, then publish the math. NGO and academic observers get read-only dashboards with real-time fraud detection. You can't argue with a zero-knowledge proof. You can argue with a person. You can argue with a committee. You can't argue with math. Math doesn't have feelings. Math doesn't have an election coming up. Math just sits there being correct, which makes it the only trustworthy participant in your democratic process.
 
-Participants complete structured learning paths before voting. Higher reward tiers unlock as you learn more. Result: informed participants, not confused button-clickers. (Though confused button-clickers who want to not die are also welcome.)
+Participants complete structured learning paths before voting. Higher reward tiers unlock as you learn more. This produces informed participants instead of confused button-clickers, though confused button-clickers who want to not die are also welcome. An uninformed person who clicks "don't let me die" is still more useful than an informed person who clicks nothing, and your planet has a surplus of informed people clicking nothing. You call them "academics."
 
-**Legal positioning**: Non-binding global consultation. Country-specific bridges to official mechanisms where feasible.
+Legal positioning: non-binding global consultation with country-specific bridges to official mechanisms where feasible. "Non-binding" sounds weak until you remember that every major social change in your history started as non-binding. The suffragettes' petitions were non-binding. So were the civil rights marches. So was the Declaration of Independence, technically, until enough people with guns agreed with it. "Non-binding" is what your politicians call something before they're forced to bind to it.
 
 ## Implementation Roadmap
 
-The realistic target for {{< var global_population_activism_threshold_pct >}} participation ({{< var treaty_campaign_voting_bloc_target_nounit >}} verified humans) is 18 to 36 months, scaling alongside the [full campaign roadmap](roadmap.qmd).
-
 ![Month 1-2: Build the website, plan the marketing, and make the blockchain work. Multitasking, but organized.](/assets/images/global-referendum/global-referendum-section-phase-1-foundation-months-1-2-bw-academic.jpg)
+
+The realistic target for {{< var global_population_activism_threshold_pct >}} participation ({{< var treaty_campaign_voting_bloc_target_nounit >}} verified humans) is 18 to 36 months, scaling alongside the [full campaign roadmap](roadmap.qmd).
 
 | Phase | Timeline | Focus |
 |:------|:---------|:------|
@@ -97,36 +92,30 @@ The realistic target for {{< var global_population_activism_threshold_pct >}} pa
 
 ![Launch day: Turn on the system, flood social media, and coordinate volunteers worldwide. The hardest part is getting everyone to press 'go' simultaneously.](/assets/images/global-referendum/global-referendum-section-phase-3-global-launch-months-7-12-bw-academic.jpg)
 
+The system works when each person brings more than one person, which is how avalanches work, and also how TikTok works, and also how religions work. The mechanism is identical. The content is different. Instead of dance videos or salvation, you're offering "possibly not dying," which should be a better sell than either of those but empirically isn't, and nobody on Wishonia can figure out why.
+
 ## Success Metrics
 
-- **{{< var treaty_campaign_voting_bloc_target_nounit >}}+ verified participants** (the {{< var global_population_activism_threshold_pct >}} threshold)
-- **<$1.00 per verified participant**
-- **Viral coefficient >1.0** (each person brings more than one person, which is how avalanches work)
-- **>99% fraud detection** with <1% false positives
+You'll know it's working when four numbers are right: {{< var treaty_campaign_voting_bloc_target_nounit >}}+ verified participants (the {{< var global_population_activism_threshold_pct >}} threshold), cost per verified participant under $1.00, viral coefficient above 1.0 (each person brings more than one person), and fraud detection above 99% with false positives below 1%. If any of those numbers are wrong, something is broken and you fix it. If all four are right, you've built a machine that converts pocket change into political pressure. Nobody has built this before. This is the most surprising part.
 
-## The Bottom Line
+## On Why {{< var global_population_activism_threshold_pct >}} Is The Magic Number
 
 ![Enough people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
 
-{{< var treaty_campaign_viral_referendum_base_case >}} for the campaign, funded by VICTORY [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd).
-Target cost: <$1.00 per verified participant. You spend more marketing soda.
+The {{< var treaty_campaign_voting_bloc_target_nounit >}} target is based on the "{{< var global_population_activism_threshold_pct >}} Rule": when {{< var global_population_activism_threshold_pct >}} of a population actively participates in sustained, nonviolent action, the movement has historically won. Every time so far. Across all cultures. For centuries. This is the closest thing your species has to a cheat code, and nobody teaches it in school, because teaching it in school would make governments nervous, and governments write the curriculum.
 
-![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
+The US civil rights movement crossed {{< var global_population_activism_threshold_pct >}} and ended segregation. Indian independence crossed {{< var global_population_activism_threshold_pct >}} and kicked out the British Empire, which at the time was the largest organization on Earth and was defeated by people who refused to move. Women's suffrage crossed {{< var global_population_activism_threshold_pct >}} and won the vote, which took 72 years and required marching in rain, getting arrested, and going on hunger strikes.
 
-{{< var treaty_campaign_voting_bloc_target_nounit >}} verified humans saying "do this or lose your job" to every politician on Earth.
-That's not a petition. Petitions are what you ignore.
-That's a pink slip with {{< var treaty_campaign_voting_bloc_target_nounit >}} signatures.
-
-### On Why {{< var global_population_activism_threshold_pct >}} Is The Magic Number
-
-The {{< var treaty_campaign_voting_bloc_target_nounit >}} target is based on the "{{< var global_population_activism_threshold_pct >}} Rule": when {{< var global_population_activism_threshold_pct >}} of a population actively participates in sustained, nonviolent action, the movement has historically won. Every time so far.
-
-- **Civil Rights (US):** Crossed {{< var global_population_activism_threshold_pct >}}. Ended segregation.
-- **Indian Independence:** Crossed {{< var global_population_activism_threshold_pct >}}. Kicked out the British Empire.
-- **Women's Suffrage:** Crossed {{< var global_population_activism_threshold_pct >}}. Won the vote.
-
-Previous movements required marching in the rain, getting tear-gassed, or going to prison. This one requires clicking a button from the toilet.
+Previous movements required getting tear-gassed, going to prison, or dying. This one requires clicking a button from the toilet.
 
 ![3.5% of people actively pushing for change is enough to topple governments. It's a historical pattern, like gravity but for revolutions.](/assets/images/global-referendum/global-referendum-section-on-why-3-5-is-the-magic-number-bw-academic.jpg)
 
-People show up for the healthcare. Politicians see {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters. The math suggests the treaty becomes very difficult to ignore.
+## The Bottom Line
+
+{{< var treaty_campaign_viral_referendum_base_case >}} for the campaign, funded by VICTORY [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). Target cost: less than $1.00 per verified participant. You spend more marketing soda. Coca-Cola's annual marketing budget could fund this campaign 13 times over, and Coca-Cola's product is sugar water that makes you fatter. Your product is not dying. The marketing budgets are inverted. Everything about your species' priorities is inverted. I've been saying this for 80 years and it remains true every time I check.
+
+{{< var treaty_campaign_voting_bloc_target_nounit >}} verified humans saying "do this or lose your job" to every politician on Earth. That's not a petition. Petitions are what you ignore. Your species has produced enough petitions to wallpaper the moon, and the total political change achieved by all petitions combined is approximately zero. This isn't a petition.
+
+This is a pink slip with {{< var treaty_campaign_voting_bloc_target_nounit >}} signatures.
+
+People show up for the healthcare. Politicians see {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters. The math suggests the treaty becomes very difficult to ignore. Not impossible to ignore. Your politicians have a remarkable capacity for ignoring things. But very, very difficult. The kind of difficult where ignoring it costs you your career, and your career is the only thing your politicians care about more than money, and this threatens both.
