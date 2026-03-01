@@ -37,3 +37,6 @@ alignment/
 
 # Video clip MP4s (intermediate, not for distribution)
 **/clips/*.mp4
+
+# Scene JSON/manifests and intermediates (not for distribution)
+**/video/scenes/

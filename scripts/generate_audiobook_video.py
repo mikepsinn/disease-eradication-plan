@@ -592,14 +592,83 @@ VEO_CLIP_DURATION_S = 8.0  # Veo clips are always ~8s
 STILLS_FPS = 24
 ASPECT_RESOLUTIONS = {"16:9": "1920x1080", "9:16": "1080x1920"}
 
-KEN_BURNS_EFFECTS = [
-    {"name": "zoom_in_center",     "z": "min(zoom+0.0015,1.5)", "x": "iw/2-(iw/zoom/2)", "y": "ih/2-(ih/zoom/2)"},
-    {"name": "zoom_out_center",    "z": "if(eq(on,1),1.5,max(zoom-0.0015,1.0))", "x": "iw/2-(iw/zoom/2)", "y": "ih/2-(ih/zoom/2)"},
-    {"name": "pan_left_to_right",  "z": "min(zoom+0.0008,1.2)", "x": "iw*0.1+(iw*0.3)*on/({frames})", "y": "ih/2-(ih/zoom/2)"},
-    {"name": "pan_right_to_left",  "z": "min(zoom+0.0008,1.2)", "x": "iw*0.4-(iw*0.3)*on/({frames})", "y": "ih/2-(ih/zoom/2)"},
-    {"name": "zoom_in_top_left",   "z": "min(zoom+0.0015,1.5)", "x": "iw*0.25-(iw/zoom/2)*0.5", "y": "ih*0.25-(ih/zoom/2)*0.5"},
-    {"name": "zoom_in_bot_right",  "z": "min(zoom+0.0015,1.5)", "x": "iw*0.75-(iw/zoom/2)*1.5", "y": "ih*0.75-(ih/zoom/2)*1.5"},
+# Deterministic fallback effects when LLM focus is unavailable (all zoom_out)
+KB_FALLBACK_EFFECTS = [
+    {"motion": "zoom_out", "focus_x": 0.5, "focus_y": 0.5, "description": "center reveal"},
+    {"motion": "zoom_out", "focus_x": 0.3, "focus_y": 0.4, "description": "upper-left reveal"},
+    {"motion": "zoom_out", "focus_x": 0.7, "focus_y": 0.4, "description": "upper-right reveal"},
+    {"motion": "zoom_out", "focus_x": 0.5, "focus_y": 0.3, "description": "top reveal"},
+    {"motion": "zoom_out", "focus_x": 0.4, "focus_y": 0.6, "description": "lower-left reveal"},
+    {"motion": "zoom_out", "focus_x": 0.6, "focus_y": 0.6, "description": "lower-right reveal"},
 ]
+
+# Zoom range for Ken Burns effects
+# At KB_ZOOM_MAX the camera shows 1/max of the image (tight on subject)
+# At KB_ZOOM_MIN the camera shows the full image (wide reveal)
+# 2.0 means start showing 50% of image, end showing 100% - very visible zoom
+KB_ZOOM_MIN = 1.0
+KB_ZOOM_MAX = 2.0
+
+# --- LLM-guided Ken Burns focus ---
+
+import json as _json
+import math as _math
+
+_LLM_FOCUS_PROMPT = """You are directing camera movement for a documentary audiobook video. This still image is shown while the following text is narrated:
+
+---
+{narration}
+---
+
+Decide where the camera should start (zoomed in) and what it reveals as the narration continues.
+
+Return ONLY valid JSON (no markdown, no explanation):
+{{
+  "focus_x": <0.0-1.0, horizontal focus point, 0=left edge, 1=right edge>,
+  "focus_y": <0.0-1.0, vertical focus point, 0=top edge, 1=bottom edge>,
+  "motion": "<zoom_out|zoom_in|pan_to_focus>",
+  "description": "<2-3 words describing what you're focusing on>"
+}}
+
+Guidelines:
+- focus_x/focus_y: the region of the image most relevant to the narration's main concept
+- zoom_out (PREFERRED, use ~80% of the time): start zoomed in on the key subject, slowly pull back to reveal context. Best for most scenes because the viewer sees the main concept immediately as the narrator introduces it.
+- zoom_in (rare, ~10%): start wide, slowly push in for dramatic emphasis. Use only for climactic moments or when the narration builds toward a reveal.
+- pan_to_focus (rare, ~10%): slowly drift from center toward an off-center subject. Use when the key element is near the edge and a zoom would crop awkwardly."""
+
+
+def _get_llm_focus(image_path: Path, narration_text: str) -> dict | None:
+    """Ask Gemini Flash to choose focus point and motion for a Ken Burns scene.
+
+    Returns dict with focus_x, focus_y, motion, description, or None on failure.
+    """
+    prompt = _LLM_FOCUS_PROMPT.format(narration=narration_text.strip())
+    image_bytes = image_path.read_bytes()
+    mime = "image/jpeg" if image_path.suffix.lower() in (".jpg", ".jpeg") else "image/png"
+    raw = generate_gemini_flash_content_with_image(
+        prompt=prompt,
+        image_bytes=image_bytes,
+        mime_type=mime,
+    )
+    # Strip markdown code fences if present
+    text = raw.strip()
+    if text.startswith("```"):
+        text = text.split("\n", 1)[1] if "\n" in text else text[3:]
+    if text.endswith("```"):
+        text = text[:-3]
+    text = text.strip()
+    result = _json.loads(text)
+    fx = max(0.0, min(1.0, float(result["focus_x"])))
+    fy = max(0.0, min(1.0, float(result["focus_y"])))
+    motion = result.get("motion", "zoom_in")
+    if motion not in ("zoom_in", "zoom_out", "pan_to_focus"):
+        motion = "zoom_in"
+    return {
+        "focus_x": fx,
+        "focus_y": fy,
+        "motion": motion,
+        "description": result.get("description", ""),
+    }
 
 
 def _ken_burns_scene_clip(
@@ -608,38 +677,96 @@ def _ken_burns_scene_clip(
     duration_ms: int,
     scene_index: int,
     resolution: str,
+    focus: dict | None = None,
 ) -> Path:
-    """Generate a single Ken Burns clip from a still image using ffmpeg zoompan.
+    """Generate a Ken Burns clip using PIL pre-scale + ffmpeg zoompan.
 
-    Picks effect deterministically via scene_index % len(KEN_BURNS_EFFECTS).
-    Returns the output path.
+    Two-step approach for high quality:
+    1. PIL: upscale source image to large canvas with Lanczos (one-time, high quality)
+    2. ffmpeg zoompan: animated zoom/pan on the large canvas, output at target resolution
+
+    The pre-scaling means zoompan's internal bilinear interpolation operates on a
+    high-resolution source (e.g. 3840x2160), producing smooth results even though
+    the original keyframe was only 1376x768.
     """
+    from PIL import Image as PILImage
+    import tempfile
+    import os
+
     duration_s = duration_ms / 1000.0
-    frames = max(int(duration_s * STILLS_FPS), 1)
-    w, h = resolution.split("x")
+    num_frames = max(int(duration_s * STILLS_FPS), 1)
+    out_w, out_h = resolution.split("x")
+    out_w, out_h = int(out_w), int(out_h)
 
-    effect = KEN_BURNS_EFFECTS[scene_index % len(KEN_BURNS_EFFECTS)]
-    z_expr = effect["z"]
-    x_expr = effect["x"].replace("{frames}", str(frames))
-    y_expr = effect["y"].replace("{frames}", str(frames))
+    # Canvas size: output * max_zoom so at full zoom we're still 1:1
+    canvas_w = int(out_w * KB_ZOOM_MAX)
+    canvas_h = int(out_h * KB_ZOOM_MAX)
 
+    # Step 1: PIL pre-scale to canvas with Lanczos
+    src = PILImage.open(image_path).convert("RGB")
+    canvas = src.resize((canvas_w, canvas_h), PILImage.LANCZOS)
+
+    # Save pre-scaled canvas to temp file
+    tmp_fd, tmp_path = tempfile.mkstemp(suffix=".png", prefix="kb-canvas-")
+    os.close(tmp_fd)
+    tmp_path = Path(tmp_path)
+    canvas.save(str(tmp_path), format="PNG")
+    del canvas, src
+
+    # Get focus parameters
+    if not focus:
+        focus = KB_FALLBACK_EFFECTS[scene_index % len(KB_FALLBACK_EFFECTS)]
+
+    fx = focus["focus_x"]
+    fy = focus["focus_y"]
+    motion = focus["motion"]
+
+    # Build zoompan expressions.
+    # zoompan's 'on' variable = frame number (0-based), increments per frame.
+    # NOTE: Cannot use 'd' variable in expressions - ffmpeg parses it as the
+    # d= parameter, not the variable. Use literal num_frames instead.
+    # Easing: Hermite smoothstep 3t^2 - 2t^3 where t = on/num_frames
+    t = f"(on/{num_frames})"
+    eased = f"(3*{t}*{t}-2*{t}*{t}*{t})"
+
+    # zoompan zoom=1.0 means no zoom (shows full canvas scaled to output).
+    # zoom=2.0 means 2x zoom (shows half the canvas).
+    # So for zoom_out: start at KB_ZOOM_MAX (tight), end at KB_ZOOM_MIN (full).
+    zoom_range = KB_ZOOM_MAX - KB_ZOOM_MIN
+
+    if motion == "zoom_out":
+        z_expr = f"{KB_ZOOM_MAX}-{zoom_range}*{eased}"
+        x_expr = f"iw*{fx:.3f}-(iw/zoom/2)"
+        y_expr = f"ih*{fy:.3f}-(ih/zoom/2)"
+    elif motion == "zoom_in":
+        z_expr = f"{KB_ZOOM_MIN}+{zoom_range}*{eased}"
+        x_expr = f"iw*{fx:.3f}-(iw/zoom/2)"
+        y_expr = f"ih*{fy:.3f}-(ih/zoom/2)"
+    else:
+        # pan_to_focus: slight zoom + pan from center toward focus
+        z_expr = f"{KB_ZOOM_MIN}+0.15*{eased}"
+        x_expr = f"iw*(0.5+({fx:.3f}-0.5)*{eased})-(iw/zoom/2)"
+        y_expr = f"ih*(0.5+({fy:.3f}-0.5)*{eased})-(ih/zoom/2)"
+
+    # Step 2: zoompan on the pre-scaled canvas -> output resolution
     zoompan = (
         f"zoompan=z='{z_expr}':x='{x_expr}':y='{y_expr}'"
-        f":d={frames}:s={resolution}:fps={STILLS_FPS}"
+        f":d={num_frames}:s={resolution}:fps={STILLS_FPS}"
     )
 
     cmd = [
         "ffmpeg", "-y",
-        "-loop", "1", "-i", str(image_path),
+        "-loop", "1", "-i", str(tmp_path),
         "-vf", f"{zoompan},format=yuv420p",
         "-t", f"{duration_s:.3f}",
         "-c:v", "libx264", "-preset", "fast", "-crf", "18",
         "-an", str(output_path),
     ]
     result = subprocess.run(cmd, capture_output=True, text=True)
+    tmp_path.unlink(missing_ok=True)
     if result.returncode != 0:
         raise RuntimeError(
-            f"ffmpeg Ken Burns failed for scene {scene_index}: {result.stderr[:500]}"
+            f"ffmpeg Ken Burns failed for scene {scene_index}: {result.stderr[-800:]}"
         )
     return output_path
 
@@ -872,6 +999,41 @@ def assemble_ken_burns_video(
     temp_dir = video_dir / f"_temp-kb-{slug}-{aspect_tag}"
     temp_dir.mkdir(parents=True, exist_ok=True)
 
+    # --- Pass 0.5: Get LLM focus for each scene (parallel) ---
+    # Only call LLM once per scene (use 16:9 keyframe for analysis, apply to both aspects)
+    focus_map: dict[int, dict | None] = {}
+    llm_items = []
+    for scene in scenes:
+        idx = scene['scene_index']
+        # Use 16:9 keyframe for LLM analysis (better composition view)
+        analysis_kf = keyframes_dir / _keyframe_filename(slug, idx, "16:9")
+        if not analysis_kf.exists():
+            analysis_kf = keyframes_dir / _keyframe_filename(slug, idx, aspect)
+        narration = scene.get('narration_text', '')
+        if analysis_kf.exists() and narration:
+            llm_items.append((idx, analysis_kf, narration))
+        else:
+            focus_map[idx] = None
+
+    if llm_items:
+        print(f"  Getting LLM focus for {len(llm_items)} scenes...")
+
+        def _get_focus(item):
+            idx, kf_path, narration = item
+            return idx, _get_llm_focus(kf_path, narration)
+
+        with ThreadPoolExecutor(max_workers=4) as executor:
+            futures = {executor.submit(_get_focus, item): item for item in llm_items}
+            for future in as_completed(futures):
+                item = futures[future]
+                idx = item[0]
+                try:
+                    _, focus = future.result()
+                    focus_map[idx] = focus
+                except Exception as e:
+                    print(f"    [WARN] LLM focus failed for scene {idx}, using fallback: {e}")
+                    focus_map[idx] = None
+
     # --- Pass 1: Generate Ken Burns clips per scene ---
     prepared = []
     for scene in scenes:
@@ -888,9 +1050,14 @@ def assemble_ken_burns_video(
             )
 
         clip_out = temp_dir / f"scene-{idx:03d}.mp4"
-        effect = KEN_BURNS_EFFECTS[idx % len(KEN_BURNS_EFFECTS)]
-        print(f"    Scene {idx}: {dur_ms}ms -> {effect['name']}")
-        _ken_burns_scene_clip(kf_path, clip_out, dur_ms, idx, resolution)
+        focus = focus_map.get(idx)
+        if focus:
+            desc = focus.get('description', '')
+            print(f"    Scene {idx}: {dur_ms}ms -> {focus['motion']} @ ({focus['focus_x']:.2f},{focus['focus_y']:.2f}) {desc}")
+        else:
+            fallback = KB_FALLBACK_EFFECTS[idx % len(KB_FALLBACK_EFFECTS)]
+            print(f"    Scene {idx}: {dur_ms}ms -> {fallback['description']} (fallback)")
+        _ken_burns_scene_clip(kf_path, clip_out, dur_ms, idx, resolution, focus=focus)
         prepared.append(clip_out)
 
     # --- Pass 2: Concat + audio ---
@@ -1221,6 +1388,9 @@ def run_pipeline(
         print("\nAssembling Ken Burns stills videos...")
         video_16x9 = assemble_ken_burns_video(all_scenes, chapter, video_dir, slug, "16:9", book_meta=book_meta, paths=paths) if "16:9" in aspect_ratios else None
         video_9x16 = assemble_ken_burns_video(all_scenes, chapter, video_dir, slug, "9:16", book_meta=book_meta, paths=paths) if "9:16" in aspect_ratios else None
+
+        print("\nUpdating manifest...")
+        update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(all_scenes), paths=paths)
 
         print(f"\nDone! Chapter {chapter['index']}: {chapter['title']} (Ken Burns stills)")
         if video_16x9:

@@ -391,6 +391,7 @@ format:
       - file: assets/html/fonts-preload.html
     include-before-body:
       - file: assets/html/page-loader.html
+      - file: assets/html/platform-bar.html
     include-in-footer:
       - file: assets/html/generated-footer.html
   epub:

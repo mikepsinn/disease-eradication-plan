@@ -34,7 +34,7 @@ You can imagine my surprise when I realized you were just pointing it at each ot
 That's kind of like discovering fire and then immediately using it to set yourself on fire.
 
 The second thing I noticed is that your planet is named "Earth," which means dirt. 
-You named your planet dirt. This explains more than you might think.
+You named your planet dirt.
 
 I also noticed that you call your war building "The Pentagon" because it has five sides (this is like naming a hospital "Rectangle" or calling a school "Square").
 
@@ -234,24 +234,24 @@ And you have two other advantages, the internet and a new financial instrument d
 
 ### Your [Decentralized FDA](/knowledge/solution/dfda.qmd)
 
-On Wishonia, we built this with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on cures while people die. You'd call our system a Decentralized FDA. Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
+On Wishonia, we built this with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a Decentralized FDA. Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
 
-{{< var dih_treasury_medical_research_pct >}} of the {{< var treaty_annual_funding >}} goes directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients choose which trials to join; their subsidy follows them. Providers get paid for each participant. No grant committees deciding which diseases are fashionable this year.
+{{< var dih_treasury_medical_research_pct >}} of the {{< var treaty_annual_funding >}} will go directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients will choose which trials to join; their subsidy will follow them. Treatment developers and providers will get paid for each participant. No grant committees deciding which diseases are fashionable this year.
 
-Pragmatic trials integrate into the standard healthcare system. Real patients participate instead of 200 people hand-picked by pharmaceutical companies. The whole thing uses your new [decentralized FDA](/knowledge/solution/dfda.qmd) protocol that reduces trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funds {{< var dih_patients_fundable_annually >}} (versus the current {{< var current_trial_slots_available >}}).
-Remember that billion patients drowning in line for two life jackets? Your decentralized FDA hands out {{< var dih_patients_fundable_annually_nounit >}}.
+Pragmatic trials will integrate into the standard healthcare system. Real patients will participate instead of 200 people hand-picked by pharmaceutical companies. The whole thing will use your new [decentralized FDA](/knowledge/solution/dfda.qmd) protocol, reducing trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funding {{< var dih_patients_fundable_annually >}} (versus the current {{< var current_trial_slots_available >}}).
+Remember that billion patients drowning in line for two life jackets? Your decentralized FDA will hand out {{< var dih_patients_fundable_annually_nounit >}}.
 
-This increases the treatment discovery rate {{< var dfda_trial_capacity_multiplier >}}, compressing that ~{{< var status_quo_queue_clearance_years >}} wait to ~{{< var dfda_queue_clearance_years >}}. Two things save lives. First, finding cures faster: treatments that would have sat undiscovered for centuries get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay between proving a drug is safe and letting dying humans take it. Combined, treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift prevents {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
+This will increase the treatment discovery rate {{< var dfda_trial_capacity_multiplier >}}, compressing that ~{{< var status_quo_queue_clearance_years >}} wait to ~{{< var dfda_queue_clearance_years >}}. Two things will save lives. First, finding treatments faster: treatments that would have sat undiscovered for centuries will get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay between proving a drug is safe and letting dying humans take it. Combined, treatments will reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift will prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}.
 
 #### Real-Time Safety Monitoring
 
-Remember Vioxx and the smoke detector that works by mail? Your new system collects every side effect automatically in real time. You know "12% got headaches, 3% were severe" BEFORE you take the pill, not after the class action lawsuit. The FDA doesn't publish these numbers at all. They make you guess.
+Remember Vioxx and the smoke detector that works by mail? Your new system will collect every side effect automatically in real time. You'll know "12% got headaches, 3% were severe" BEFORE you take the pill, not after the class action lawsuit. The FDA doesn't publish these numbers at all. They make you guess.
 
 #### Treatment Rankings
 
 Currently, your doctor picks treatments based on: that drug rep who brought good donuts in 2003, something they half-remember from medical school, whatever the insurance company allows, and vibes. This is called "evidence-based medicine," which contains the word "evidence" the same way "grape soda" contains the word "grape."
 
-Your [decentralized FDA](/knowledge/solution/dfda.qmd) ranks every treatment by what actually happened to real humans who took it:
+Your [decentralized FDA](/knowledge/solution/dfda.qmd) will rank every treatment by what actually happened to real humans who took it:
 
 ![Which pills work better than other pills, in list form. Like a leaderboard for not dying.](/assets/images/dfda-comparative-effectiveness-ranking-search.png)
 
@@ -273,7 +273,7 @@ Your new system will produce [Outcome Labels](/knowledge/solution/dfda.qmd) that
 Humans usually want "proof" before they stop doing something stupid, so:
 
 - [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 48,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient instead of the usual {{< var traditional_phase3_cost_per_patient >}} per patient. That's a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality. During a pandemic. While panicking.
-- [After WW2, humans cut military spending by 30%](/knowledge/proof.qmd#post-ww2) and accidentally created the greatest economic boom in history. You're asking for 1%. Even people who really, really, love explosions should be able to handle 1%.
+- [After WW2, humans cut military spending by 30%](/knowledge/proof.qmd#post-ww2) and accidentally created the greatest economic boom in history. You're asking for 1%. Even people who really, really, love exploding people should be able to handle 1%.
 
 ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
 
@@ -401,7 +401,7 @@ The {{< var treaty_annual_funding >}}/year money volcano erupts:
 - **Defense Contractors**: Keep {{< var defense_sector_retention_pct >}} of their murder budget PLUS get {{< var victory_bond_annual_return_pct >}} returns.
 - **Big Pharma**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} for phase 2 and 3 trials, the treaty pays THEM for each patient that joins their trials.
 - **Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
-- **Investors**: {{< var victory_bond_annual_return_pct >}} returns, which they will assume is a typo until you show them the math. Returns scale with every treaty expansion, so investors become the world's most aggressive pro-health and anti-war lobbying force. Not a sentence anyone expected to write.
+- **Investors**: {{< var victory_bond_annual_return_pct >}} returns. Returns scale with every treaty expansion, so investors become the world's most aggressive pro-health and anti-war lobbying force. Not a sentence anyone expected to write.
 - **Lobbyists**: Same job, same salary, but their Wikipedia page no longer needs a "Controversies" section
 - **Politicians**: Getting reelected by living voters (a revolutionary strategy)
 - **Regular humans**: Not dying from stupid things (priceless, but also free)
@@ -453,6 +453,8 @@ Now is the time to select one of the two paths for the remainder of your existen
 - Year 2040: "Remember when we had war?"
 - Year 2045: "What should we do with all these old bombs?"
 - Year 2050: Join galactic community, pretend you were always smart
+
+Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and quantifiably the best idea in the history of your world. It primarily requires people spending 15 seconds clicking a button. If you can't make this happen, that's a skill issue.
 
 The universe is literally offering you infinite money and eternal life, and you're thinking about it.
 

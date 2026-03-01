@@ -61,13 +61,14 @@ THEME_SONG_PATH = PROJECT_ROOT / "assets" / "music" / "podcast-theme-song.mp3"
 OUTRO_QMD_PATH = PROJECT_ROOT / "knowledge" / "appendix" / "podcast-outro.qmd"
 
 
-def _retry_fs_op(op, label: str = "", retries: int = 5, delay: float = 0.5):
+def _retry_fs_op(op, label: str = "", retries: int = 8, delay: float = 1.0):
     """Retry a filesystem operation on Windows PermissionError (stale handles)."""
     for attempt in range(retries):
         try:
             return op()
         except PermissionError:
             if attempt < retries - 1:
+                print(f"  [retry {attempt+1}/{retries}] {label} - file locked, waiting {delay}s...")
                 time.sleep(delay)
             else:
                 raise
@@ -473,17 +474,20 @@ def combine_chapter_audio(
     # Export as MP3 directly via ffmpeg (streaming, no memory spike)
     print(f"\nExporting combined audiobook...")
     mp3_path = output_path.with_suffix('.mp3')
-    # Delete stale output first (Windows may hold handles from previous runs)
-    if mp3_path.exists():
-        _retry_fs_op(lambda: mp3_path.unlink(), f"remove old {mp3_path.name}")
+    # Write to temp file first, then replace (avoids Windows file lock issues
+    # from Search Indexer, Defender, or Obsidian holding the existing MP3)
+    tmp_mp3 = mp3_path.with_suffix('.mp3.tmp')
     result = subprocess.run([
         "ffmpeg", "-y",
         "-f", "concat", "-safe", "0", "-i", str(concat_file),
         "-codec:a", "libmp3lame", "-b:a", "192k",
-        str(mp3_path),
+        str(tmp_mp3),
     ], capture_output=True, text=True)
     if result.returncode != 0:
+        tmp_mp3.unlink(missing_ok=True)
         raise RuntimeError(f"ffmpeg MP3 export failed:\n{result.stderr[-1000:]}")
+    # Replace old file (os.replace is atomic on same filesystem, bypasses most locks)
+    _retry_fs_op(lambda: os.replace(str(tmp_mp3), str(mp3_path)), f"replace {mp3_path.name}")
     mp3_size = mp3_path.stat().st_size / 1024 / 1024
     print(f"  [OK] MP3: {mp3_path.name} ({mp3_size:.1f} MB)")
 
