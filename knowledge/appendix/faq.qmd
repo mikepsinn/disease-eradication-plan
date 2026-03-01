@@ -183,8 +183,6 @@ Your decentralized framework will run {{< var dfda_trial_cost_reduction_factor >
 
 If diseases get cured, you save hundreds of hours in doctor visits and sick days, plus potentially tens of thousands of hours of extra life. That's a 176,000x return on 17 minutes.
 
-![Spend 17 minutes now, gain 50,000 hours later. That's a 176,000x return. Better than Bitcoin, and you don't die at the end.](/assets/images/faq/faq-section-time-investment-roi-bw-academic.jpg)
-
 ## "This Is Unrealistic"
 
 **Objection**: "This will never happen. You're naive about human nature."
@@ -312,8 +310,6 @@ This is a solved problem wearing an unsolved hat.
 ## "How Do You Prevent Waste?"
 
 **Objection**: "How do you ensure money helps patients instead of funding bureaucracy?"
-
-![Current budget: pays for three trials. Same budget in the new system: pays for 4,000 trials. Efficiency: turns out it matters.](/assets/images/faq/faq-section-how-do-you-prevent-waste-bw-academic.jpg)
 
 **Response**: A [decentralized FDA](../solution/dfda.qmd) model achieves {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500]. Traditional trials: {{< var traditional_phase3_cost_per_patient >}} [@trial-cost-41k]. Same science. {{< var recovery_trial_cost_reduction_factor >}} less overhead.
 
