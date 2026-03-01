@@ -11,11 +11,7 @@ image: /assets/og-images/knowledge/economics/peace-dividend-og-retro-academic.jp
 podcast-image: /assets/podcast/peace-dividend-podcast.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Here's what 1% less murder money buys you:
-
-- **The 1% Treaty Fund gets**: {{< var treaty_annual_funding >}} to subsidize hyper-efficient pragmatic clinical trials
-- **World saves**: {{< var peace_dividend_annual_societal_benefit >}} not spent rebuilding bombed hospitals, treating shrapnel wounds, and housing refugees
-- **Your lifetime tab**: $113,551 per person over 80 years, for wars in countries you can't find on a map
+Here's what 1% less murder money buys you. The 1% Treaty Fund gets {{< var treaty_annual_funding >}} to subsidize hyper-efficient pragmatic clinical trials. The world saves {{< var peace_dividend_annual_societal_benefit >}} it would have spent rebuilding bombed hospitals, treating shrapnel wounds, and housing refugees. Your lifetime tab for wars in countries you can't find on a map: $113,551 per person over 80 years. That's per person. Every person on Earth. Including you. You personally have been billed $113,551 for explosions on the other side of the planet, and nobody sent you an invoice because they knew you'd cancel.
 
 ## How 1% Less Violence Pays For Everything
 
@@ -35,12 +31,7 @@ Wars cost {{< var global_annual_direct_indirect_war_cost >}}/year. Build 1% fewe
 
 {{< var global_annual_direct_indirect_war_cost >}} × 0.01 = {{< var peace_dividend_annual_societal_benefit >}}
 
-Money no longer spent on:
-
-- Unblowing-up hospitals and bridges
-- Removing shrapnel from people you put shrapnel into
-- Housing refugees (people whose homes were converted into craters)
-- Trade disruptions (shipping containers don't fit through minefields)
+Money no longer spent on unblowing-up hospitals and bridges, removing shrapnel from people you put shrapnel into, housing refugees whose homes you converted into craters, and routing shipping containers around minefields. Your species has an entire industry dedicated to rebuilding things it blew up. You employ people to fill holes that you employed other people to make. On Wishonia, this is used as a children's fable about inefficiency. The children laugh. Then they ask if it's real. Then they stop laughing.
 
 ### Where the {{< var peace_dividend_annual_societal_benefit >}} Comes From
 
@@ -72,10 +63,7 @@ The benefits cascade beyond medicine in ways that should be obvious but apparent
 
 The elasticity parameter (e = 1.0) asks the only interesting question here: if you cut military spending 1%, do war costs actually drop 1% too? Or do humans, being humans, find a way to keep killing each other at full price?
 
-- **e = 0.25**: The "humans are barely trainable" scenario. Only a quarter of cuts reduce violence.
-- **e = 0.5**: The "humans are somewhat rational" scenario. Historically optimistic.
-- **e = 1.0**: Full match. The baseline assumption. Probably generous given your track record.
-- **e > 1.0**: The "curing cancer together is better bonding than threatening each other with missiles" scenario. Suspiciously wholesome.
+At e = 0.25 (the "humans are barely trainable" scenario), only a quarter of cuts reduce violence. At e = 0.5 (the "humans are somewhat rational" scenario, which is historically optimistic), half the cuts translate. At e = 1.0 (full match, the baseline assumption, probably generous given your track record), every dollar cut is a dollar of war cost saved. At e > 1.0, curing cancer together turns out to be better bonding than threatening each other with missiles, which is suspiciously wholesome and therefore the scenario I trust least.
 
 It doesn't matter. Even at e = 0.25, the Captured Dividend of {{< var treaty_annual_funding >}} is treaty-mandated. That money moves regardless of whether you manage to be less violent. It's a bank transfer, not a prayer.
 
@@ -83,13 +71,7 @@ It doesn't matter. Even at e = 0.25, the Captured Dividend of {{< var treaty_ann
 
 ![Best case: 114 billion in benefits. Worst case: 27.2 billion and you double medical research funding. Truly a devastating range of outcomes.](/assets/images/peace-dividend/peace-dividend-section-key-findings-bw-academic.jpg)
 
-1. **Guaranteed**: {{< var treaty_annual_funding >}}/year. Direct budget transfer. No elasticity, no assumptions, no hoping humans behave. Just math.
-
-2. **Best case**: {{< var peace_dividend_annual_societal_benefit >}}/year in total societal benefit. The range is wide because, again, your species.
-
-3. **Worst case**: Even pessimistic scenarios stay above roughly $50B annually. Your "worst case" is still the largest increase in medical research funding in human history.
-
-4. **Context**: The Captured Dividend alone would boost global medical research funding by ~40% over the current {{< var global_med_research_spending >}} baseline. You've been spending more on camouflage paint than on curing Alzheimer's.
+The guaranteed floor is {{< var treaty_annual_funding >}}/year. Direct budget transfer. No elasticity, no assumptions, no hoping humans behave. Just math. The best case is {{< var peace_dividend_annual_societal_benefit >}}/year in total societal benefit; the range is wide because, again, your species. Even the pessimistic scenarios stay above roughly $50B annually, which means your "worst case" is still the largest increase in medical research funding in human history. For context, the Captured Dividend alone would boost global medical research funding by roughly 40% over the current {{< var global_med_research_spending >}} baseline. You've been spending more on camouflage paint than on curing Alzheimer's. Camouflage paint. To make things invisible. While Alzheimer's makes people invisible and you can't even be bothered to match the budget.
 
 ## What You're Assuming (and Where It Gets Shaky)
 

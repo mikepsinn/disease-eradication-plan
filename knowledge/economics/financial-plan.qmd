@@ -14,36 +14,21 @@ podcast-image: /assets/podcast/financial-plan-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Most financial plans are complicated because the writers are confused or lying. This one is complicated because you're convincing 195 countries to voluntarily stop buying so many weapons while paying your investors forever.
 
-The architecture is embarrassingly simple:
+The architecture is embarrassingly simple. Raise {{< var treaty_campaign_total_cost >}}. Spend it to pass the treaty. Manage {{< var treaty_annual_funding >}}+ annually forever. Three things. That's the whole financial plan. The rest of this chapter is just explaining why your species needs 4,000 words to understand three things.
 
-1. Raise {{< var treaty_campaign_total_cost >}}.
-2. Spend it to pass the treaty.
-3. Manage {{< var treaty_annual_funding >}}+ annually forever.
+## Pillar 1: The Money Part (Raise {{< var treaty_campaign_total_cost >}})
 
-Three pillars. That's it.
+The instrument is a [VICTORY Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd), which is a piece of paper that says "give us money now, get much more money later, forever." On Wishonia, this would be called "fraud." On Earth, it's called "finance." The difference is collateral.
 
-## Pillar 1: Fundraising (Raise {{< var treaty_campaign_total_cost >}})
-
-**Instrument:** [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)
-
-- **Returns:** {{< var victory_bond_annual_return_pct >}} annually. Looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} / {{< var treaty_campaign_total_cost >}}.
-- **Structure:** Senior debt. The fund pays bondholders before anyone else.
-- **Payout:** {{< var victory_bond_funding_pct >}} of all treaty inflows ({{< var victory_bond_annual_payout >}}/year).
-- **Collateral:** {{< var treaty_annual_funding >}}+ annual treaty revenue stream.
-- **The pitch:** "Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever."
-
-Every Ponzi scheme in history has promised returns like this. The difference is collateral: the entire military budget of the planet. Which, unlike Bernie Madoff's spreadsheet, actually exists.
+The bonds return {{< var victory_bond_annual_return_pct >}} annually. This looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} divided by {{< var treaty_campaign_total_cost >}}. Senior debt structure, meaning the fund pays bondholders before anyone else, because investors don't care about your moral framework until after they've been paid. They receive {{< var victory_bond_funding_pct >}} of all treaty inflows ({{< var victory_bond_annual_payout >}}/year), collateralized against the entire military budget of the planet. Every Ponzi scheme in history has promised returns like this. The difference is that Bernie Madoff's collateral was a spreadsheet he made up. Your collateral is {{< var treaty_annual_funding >}}+ in annual treaty revenue, which, unlike Bernie's spreadsheet, actually exists.
 
 ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
 
-**Timeline:** 12-24 months to raise {{< var treaty_campaign_total_cost >}}.
+You raise {{< var treaty_campaign_total_cost >}} in 12-24 months. Donations would require generosity. Bonds require greed. Greed is faster. This is the single most important insight about your species and I've been trying to communicate it for 4,297 years.
 
-**Why bonds, not donations?** Donations require generosity. Returns require greed. Greed is faster.
+Why {{< var treaty_campaign_total_cost >}}? Your opposition spends $450M/year to keep things exactly as terrible as they are (pharma lobbying at roughly $300M/year plus the military-industrial complex at roughly $150M/year). A subscription to suffering. You raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. Over a 10-year campaign, opposition spends roughly $4.5B to your $1B. But their $450M/year is spread across thousands of contracts and dozens of incumbents. Your $1B is aimed at a single treaty. Concentrated offense beats diffuse defense. This is military strategy, which is ironic, and also the only kind of strategy your species respects.
 
-**Why {{< var treaty_campaign_total_cost >}}?** Pharma lobbying (~$300M/year) plus military-industrial complex (~$150M/year) equals $450M/year spent to keep things exactly as terrible as they are. A subscription to suffering.
-Raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. Over a 10-year campaign, opposition spends roughly $4.5B to your $1B. But their $450M/year is spread across thousands of contracts and dozens of incumbents. Your $1B is aimed at a single treaty. Concentrated offense beats diffuse defense.
-
-**Nobody gets paid unless it works.** Lawyers get success-based compensation. Team compensation is mostly equity. This is how you know it's not a government program.
+Nobody gets paid unless it works. Lawyers get success-based compensation. Team compensation is mostly equity. This is how you know it's not a government program.
 
 | Phase | Amount | Activities | Milestone | Difficulty Level |
 |-------|--------|------------|-----------|-----------------|
@@ -53,13 +38,11 @@ Raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generate
 
 Ranges reflect scenario planning (optimistic to pessimistic). The {{< var treaty_campaign_total_cost >}} target is the base case; upper bounds cover contingencies because convincing nuclear powers to behave rationally occasionally requires overtime.
 
-## Pillar 2: Campaign Budget (Spend {{< var treaty_campaign_total_cost >}})
+## Pillar 2: The Spending Part (Spend {{< var treaty_campaign_total_cost >}})
 
 ![How to spend one billion convincing humans to stop killing each other: some for lobbying politicians, some for asking citizens directly, some for emergencies. Democracy is expensive.](/assets/images/financial-plan/financial-plan-section-campaign-budget-how-to-spend-var-treaty-campaign-total-cost-bw-academic.jpg)
 
-**Detailed Breakdown:** [Campaign Budget](campaign-budget.qmd)
-
-The one-time activation energy to convince {{< var global_population_2024_nounit >}} people to marginally reduce their commitment to mutual annihilation:
+The one-time activation energy to convince {{< var global_population_2024_nounit >}} people to marginally reduce their commitment to mutual annihilation. [Detailed line items here](campaign-budget.qmd).
 
 | Category | Amount | Purpose |
 |----------|--------|---------|
@@ -67,26 +50,21 @@ The one-time activation energy to convince {{< var global_population_2024_nounit
 | **Political Lobbying** | {{< var treaty_campaign_budget_lobbying >}} | AI-targeted campaigns (US/EU/G20), Super PACs, MIC conversion. Outspends pharma + MIC |
 | **Reserve Fund** | {{< var treaty_campaign_budget_reserve >}} | Post-passage transition, contingency buffer |
 
-### Key Innovations
+### The Part That Makes It Cheap
 
 ![Traditional diplomacy: slow, expensive, mostly cocktail parties. AI-accelerated diplomacy: fast, cheap, mostly algorithms. Both equally likely to prevent nuclear war.](/assets/images/financial-plan/financial-plan-section-key-innovations-bw-academic.jpg)
 
-- **Viral mechanics**: $0.20/vote (optimistic lower bound; base case $0.50-0.89) vs $5-15 traditional cost per voter. Democracy at wholesale prices.
-- **Strategic focus**: 20 high-impact countries, not all 195. You don't need Liechtenstein's permission.
+Viral referendum mechanics bring the cost down to $0.20/vote at the optimistic lower bound (base case $0.50-0.89), compared to $5-15 per voter through traditional channels. Getting someone to click "I prefer not dying" costs less than getting someone to click "I prefer Pepsi." You also focus on 20 high-impact countries, not all 195. You don't need Liechtenstein's permission. Liechtenstein has 39,000 people. That's a concert venue, not a geopolitical obstacle.
 
-**Timeline:** 36-60 months (optimistic) to 120+ months (realistic, given that you're humans).
-The landmine ban took 6 years, and that was just agreeing not to hide explosives in the ground, which you'd think wouldn't require a treaty at all.
-You're betting on viral referendum mechanics and existing disarmament frameworks. Also on the assumption that your species wants to survive, which, based on my 4,297 years of observation, remains an open question.
+Timeline is 36-60 months (optimistic) to 120+ months (realistic, given that you're humans). The landmine ban took 6 years, and that was just agreeing not to hide explosives in the ground, which you'd think wouldn't require a treaty at all. You're betting on viral referendum mechanics and existing disarmament frameworks. Also on the assumption that your species wants to survive, which, based on my 4,297 years of observation, remains an open question.
 
-## Pillar 3: Treasury (Manage {{< var treaty_annual_funding >}}+/Year)
+## Pillar 3: The Forever Part (Manage {{< var treaty_annual_funding >}}+/Year)
 
-Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from "how to kill people" budgets into "how to stop people dying" budgets.
+Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from "how to kill people" budgets into "how to stop people dying" budgets. This is the part where your financial plan stops being a financial plan and starts being a money volcano that erupts on schedule, forever.
 
 ![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
 
-100+ nations contribute {{< var treaty_reduction_pct >}} of military budgets. Not because they've had a moral awakening. Because the math makes non-compliance look like setting money on fire.
-
-The [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing: politicians in non-compliant countries watch their Public Good Scores drop, voters abandon them, and compliance becomes the career-optimal choice. You don't need politicians to be good. You just need them to be selfish in the right direction.
+100+ nations contribute {{< var treaty_reduction_pct >}} of military budgets. Not because they've had a moral awakening. Because the [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing: politicians in non-compliant countries watch their Public Good Scores drop, voters abandon them, and compliance becomes the career-optimal choice. You don't need politicians to be good. You just need them to be selfish in the right direction.
 
 ![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
 
@@ -102,7 +80,7 @@ The allocation is automatic. No committees. No debates. No one arguing for six m
 
 ![Twenty percent goes to paying investors and politicians automatically via smart contracts. Finally, a use for blockchain that isn't fraud or monkey pictures.](/assets/images/financial-plan/financial-plan-section-the-fixed-costs-bw-academic.jpg)
 
-The 20% for bonds and political incentives is untouchable. Smart contracts distribute both automatically. No human hands involved, which, given your track record with money, is a feature.
+The 20% for bonds and political incentives is untouchable. Smart contracts distribute both automatically. No human hands involved, which, given your track record with money, is a feature. On Wishonia, we learned 4,297 years ago that the best way to handle money is to never let a person touch it. Your species hasn't learned this yet. Your species has a thing called an "accountant," which is a person you pay to watch your money, who sometimes takes your money, so you hire a second person called an "auditor" to watch the first person, and then the auditor takes your money. The smart contract skips all of this.
 
 The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds clinical trials and research infrastructure. [Wishocracy](../solution/wishocracy.qmd) governs the allocation.
 
@@ -125,17 +103,10 @@ As more patients join:
 10M participants = ~$2,180 per patient
 ```
 
-Patients organize to grow the treasury (participating in their own survival is, for once, financially rewarded).
-Researchers compete to attract patients (instead of competing to write persuasive grant applications, which is a different skill from doing science, the same way writing a restaurant review is a different skill from cooking).
-Insurance companies save money (trials are cheaper than decades of chronic suffering).
-Compare that to NIH grants: 6 months of proposal writing, committees judging the writing, universities skimming 40% overhead, and then maybe some science.
+Patients organize to grow the treasury, because participating in their own survival is, for once, financially rewarded. Researchers compete to attract patients instead of competing to write persuasive grant applications, which is a different skill from doing science, the same way writing a restaurant review is a different skill from cooking. Insurance companies save money because trials are cheaper than decades of chronic suffering. Compare that to NIH grants: 6 months of proposal writing, committees judging the writing, universities skimming 40% overhead, and then maybe some science.
 
-## Related Documents
+## The Whole Thing on One Line
 
-- **[VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** - Investment thesis and bond structure
-- **[Campaign Budget](campaign-budget.qmd)** - Detailed line-item breakdown
-- **[Investor Risk Analysis](../appendix/investor-risk-analysis.qmd)** - Risk factors and mitigations
-- **[Defense Contractor Alignment](../solution/aligning-incentives.qmd#defense-contractors-teaching-merchants-of-death-to-love-life)** - Defense contractor conversion strategy
-- **[Cost-Benefit Analysis for a Decentralized Drug Assessment Framework](https://dfda-impact.warondisease.org)** - Complete ROI analysis
+Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever. Your species spent roughly $5 billion on a particle accelerator to find a boson. This costs less and finds a cure for dying.
 
-**The math:** Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever. Your species spent ~$5 billion on a particle accelerator to find a boson. This costs less and finds a cure for dying.
+For detailed breakdowns: [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) (investment thesis), [Campaign Budget](campaign-budget.qmd) (line items), [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) (what could go wrong), [Defense Contractor Alignment](../solution/aligning-incentives.qmd#defense-contractors-teaching-merchants-of-death-to-love-life) (converting merchants of death), [Cost-Benefit Analysis](https://dfda-impact.warondisease.org) (complete ROI).

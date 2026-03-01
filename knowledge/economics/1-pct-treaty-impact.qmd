@@ -225,7 +225,7 @@ Humanity's budget priorities, explained simply:
 
 - **Ratio**: {{< var military_to_government_clinical_trials_spending_ratio >}}:1 (global spending on weapons exceeds spending on discovering which drugs treat diseases by {{< var military_to_government_clinical_trials_spending_ratio >}})
 
-{{< var military_vs_medical_research_ratio_latex >}}
+{{< var military_to_government_clinical_trials_spending_ratio_latex >}}
 
 **Understanding the comparison**: While total government medical research spending is {{< var global_med_research_spending >}} (including basic research, translational research, and clinical trials), government clinical trial funding is only {{< var global_government_clinical_trials_spending_annual >}}. The 1% treaty redirects {{< var treaty_annual_funding >}} to pragmatic clinical trials, increasing government clinical trial funding ~7-fold.
 

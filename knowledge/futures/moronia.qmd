@@ -66,14 +66,12 @@ Here's what happened next. I apologize in advance for how predictable it is.
 
 When I started watching Moronia, they looked remarkably like Earth does today:
 
-- {{< var global_military_spending_annual_2024 >}} on militaries [@global-military-spending] vs {{< var global_med_research_spending >}} on medical research [@global-gov-med-research-spending] ({{< var military_vs_medical_research_ratio >}}:1 ratio of killing to curing)
+- {{< var global_military_spending_annual_2024 >}} on militaries [@global-military-spending] vs {{< var global_government_clinical_trials_spending_annual >}} on government clinical trials [@global-gov-med-research-spending] ({{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio of killing to testing treatments)
 - {{< var global_annual_deaths_curable_diseases_nounit >}} annual deaths from preventable disease (they knew how to prevent them, they just chose not to)
 - Elected representatives controlling the budget papers
 - Response when Moronians died of curable diseases: build smarter weapons
 
 They allocated trillions to AI weapons. Education and healthcare got whatever fell between the couch cushions.
-
-![For every dollar spent curing disease, you spend $40 causing it. You're very efficient at being inefficient.](/assets/images/moronia/moronia-section-year-zero-already-broken-much-like-you-bw-academic.jpg)
 
 Your planet's current allocation patterns show a 94.7% correlation with theirs. I checked.
 
@@ -265,6 +263,6 @@ The next chapter shows you what happens when a civilization makes a different ch
 
 ![You built walls to keep out enemies who might kill you in 50 years while ignoring diseases killing you today.](/assets/images/moronia/moronia-section-the-last-moronian-message-bw-academic.jpg)
 
-P.S. Your AI isn't misaligned. It's a mirror. You're teaching it your revealed preferences: killing is {{< var military_vs_medical_research_ratio >}}x more important than curing. A misaligned AI might build hospitals. Yours won't. It's a very good student.
+P.S. Your AI isn't misaligned. It's a mirror. You're teaching it your revealed preferences: killing is {{< var military_to_government_clinical_trials_spending_ratio >}}x more important than testing which treatments actually work. A misaligned AI might build hospitals. Yours won't. It's a very good student.
 
 They called me crazy for suggesting they stop killing each other. Your planet uses the same word. I'm starting to think it doesn't mean what you think it means.

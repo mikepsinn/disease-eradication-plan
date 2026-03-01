@@ -14,21 +14,17 @@ podcast-image: /assets/podcast/treaty-feasibility-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 "Getting 195 countries to agree costs billions and takes forever."
 
-No. Getting countries to *implement* things costs billions. Getting them to *sign papers* is surprisingly cheap. Humans love signing papers. It makes them feel important.
+No. Getting countries to *implement* things costs billions. Getting them to *sign papers* is surprisingly cheap. Humans love signing papers. It makes them feel important. Your entire diplomatic system runs on the principle that writing your name on a document feels like accomplishing something. Sometimes it is. Usually it isn't. But the signing part is always affordable.
 
 ## What Treaties Actually Cost
 
-NGO campaign budgets are rarely disclosed publicly, but treaty campaigns run on pocket change.
+NGO campaign budgets are rarely disclosed publicly, but treaty campaigns run on pocket change compared to the thing they create.
 
-The **Ottawa Treaty** [@icbl-ottawa-treaty] banning landmines took 14 months. One staff member, Jody Williams, grew a coalition to over a thousand organizations across 60 countries. 122 states signed. She won the Nobel Peace Prize.
+The **Ottawa Treaty** [@icbl-ottawa-treaty] banning landmines took 14 months. One staff member, Jody Williams, grew a coalition to over a thousand organizations across 60 countries. 122 states signed. She won the Nobel Peace Prize. One woman with a phone convinced 122 countries to stop burying explosives in the ground where children walk. Your species is capable of remarkable things when one person gets sufficiently annoyed.
 
-The **Cluster Munitions Convention** [@cluster-munitions-convention-2008] took about two years. Seven governments and a coalition of NGOs got 94 states to sign.
+The **Cluster Munitions Convention** [@cluster-munitions-convention-2008] took about two years. Seven governments and a coalition of NGOs got 94 states to sign. The **Arms Trade Treaty** [@arms-trade-treaty-2013] took a decade but started with three supporting governments. The Control Arms coalition [@control-arms-coalition] published 50+ reports until 130 countries signed. The **Nuclear Ban Treaty** [@ican-nuclear-ban-treaty] also took a decade. ICAN ran the entire operation with five staff in a Geneva office. 122 states voted yes. Another Nobel Prize. Five people in a Geneva office won a Nobel Prize. You have more people in your accounting department.
 
-The **Arms Trade Treaty** [@arms-trade-treaty-2013] took a decade but started with three supporting governments. The Control Arms coalition [@control-arms-coalition] published 50+ reports until 130 countries signed.
-
-The **Nuclear Ban Treaty** [@ican-nuclear-ban-treaty] also took a decade. ICAN ran the entire operation with five staff in a Geneva office. 122 states voted yes. Another Nobel Prize.
-
-**Pattern**: One woman with a phone convinced 122 countries to ban landmines. Five people in a Geneva office won a Nobel Prize. Total to get a treaty signed: **$15-50M**. Your species spends more than that on Super Bowl ads for beer.
+**Pattern**: Total to get a treaty signed: **$15-50M**. Your species spends more than that on Super Bowl ads for beer. Beer. The thing that makes you temporarily stupider. You will spend more money selling stupidity beverages during one sporting event than it costs to get 122 countries to agree on anything. I've been watching your species for 80 years and the budget comparisons still surprise me.
 
 ### Inflation-Adjusted to 2024 Dollars
 
@@ -41,11 +37,11 @@ Using BLS CPI data [@bls-cpi-inflation-calculator]:
 | Arms Trade Treaty (2013) | $20-30M | **$27-41M** | ~1.35x |
 | Nuclear Ban (2017) | $10-20M | **$13-25M** | ~1.25x |
 
-**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD). Banning landmines: ~$40M to get the signatures, $5B+ to actually dig them up [@icbl-ottawa-treaty]. The paperwork is the cheap part.
+**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD). Banning landmines: ~$40M to get the signatures, $5B+ to actually dig them up [@icbl-ottawa-treaty]. The paperwork is the cheap part. The paperwork is always the cheap part. The expensive part is doing the thing you wrote on the paperwork, which your species often skips (see: every New Year's resolution in history).
 
 ## Cost for a 1% Health Treaty
 
-This one touches military budgets. Suggest moving 1% of the explosion money and politicians look at you like you've asked to borrow their favorite child. So budget 3-4x what landmines cost.
+This one touches military budgets. Suggest moving 1% of the explosion money and politicians look at you like you've asked to borrow their favorite child. The reaction is disproportionate to the request, but proportionate to the lobbying dollars behind the status quo. So budget 3-4x what landmines cost.
 
 | Phase | Duration | Estimated Cost | Who Pays |
 | :--- | :--- | :--- | :--- |
@@ -65,24 +61,19 @@ Signing the treaty: ~$83M.
 What the treaty unlocks: {{< var treaty_annual_funding >}}/year.
 Forever.
 
-That's over 300:1 return on paperwork.
+That's over 300:1 return on paperwork. If paperwork were a stock, this would be the best-performing stock in the history of your financial markets. It isn't a stock. It's a treaty. But the return is real, which is more than your financial markets can say about most of their stocks.
 
 ## How to Make Governments Sign Things
 
-Politicians move when they see (a) voters demanding it and (b) political cover. Give them both:
+Politicians move when they see voters demanding it and political cover to do it. Give them both.
 
-1. **Prove public demand**: Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. Every nonviolent campaign [@3-5-rule] with {{< var global_population_activism_threshold_pct >}}+ participation has succeeded. That's not activism. That's a mandate.
-2. **Prove it's safe**: Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness.
+First, prove public demand. Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. Every nonviolent campaign [@3-5-rule] with {{< var global_population_activism_threshold_pct >}}+ participation has succeeded. That's not activism. That's a mandate. Second, prove it's safe. Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness. They won't move without it. But give them the numbers, and they'll move and pretend it was their idea, which is the second most reliable pattern in your species' political history. (The first most reliable pattern is blaming the previous administration.)
 
 ![Get 3.5 percent of people to care, show politicians the math won't break anything, and suddenly they have to listen. Democracy has an override button.](/assets/images/treaty-feasibility/treaty-feasibility-section-how-to-make-governments-sign-things-bw-academic.jpg)
 
 ### Timeline to "Governments Can't Ignore This"
 
-With ~$60M in seed funding, you can reach "Treaty-Ready" status in **2-3 years**:
-
-- **Platform:** {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters ({{< var global_population_activism_threshold_pct >}} threshold)
-- **Modeling:** Country-by-country impact analysis
-- **Coalition:** 120+ supportive NGOs and 5-10 champion governments
+With ~$60M in seed funding, you can reach "Treaty-Ready" status in **2-3 years**: a platform with {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters (the {{< var global_population_activism_threshold_pct >}} threshold), country-by-country impact modeling, and a coalition of 120+ supportive NGOs and 5-10 champion governments.
 
 Once these assets exist, formal negotiations become very hard to avoid. Not because politicians want them. Because ignoring {{< var treaty_campaign_voting_bloc_target_nounit >}} people is the kind of career decision that leads to "spending more time with family."
 
@@ -92,11 +83,11 @@ You aren't buying a treaty. You're buying the machinery that makes the treaty ve
 
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
-This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). The model assumes a 99% chance of failure. It's still a good bet.
+This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). The model assumes a 99% chance of failure. It's still a good bet. On Wishonia, we would not invest in something with a 99% chance of failure. On Earth, this is called "venture capital" and your richest humans do it professionally.
 
 ![Even if this only has a 1 percent chance of working, it saves 503 times more lives per dollar than bed nets. Math is strange.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
 
-Even at 1% probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY). Bed nets are the gold standard of global health interventions.
+Even at 1% probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY). Bed nets are the gold standard of global health interventions. This beats the gold standard while assuming it will almost certainly fail. The math doesn't care about your pessimism.
 
 ::: {.callout-note collapse="true" title="Full confidence intervals"}
 | Metric | Point Estimate | 95% CI |
@@ -117,31 +108,23 @@ Even at 1% probability of success, this intervention's expected cost per DALY ({
 | **NATO 2% GDP Defense** | 2% of GDP on defense | ~72% of members (2024) | Since 2014 | Was ~32% until an actual land war in Europe motivated compliance. Took tanks rolling across a border to get countries to spend more on killing. No equivalent motivator exists for spending on not-killing. |
 | **EU Stability Pact** | 3% deficit, 60% debt | Routinely violated | Since 1997 | France and Germany broke their own rule |
 
-**Pattern**: International financial commitments achieve **<25% meaningful compliance**. Your species signs things and then doesn't do them. It's like a New Year's resolution, but for geopolitics.
+**Pattern**: International financial commitments achieve **<25% meaningful compliance**. Your species signs things and then doesn't do them. It's like a New Year's resolution, but for geopolitics. The gym membership analogy is overused but accurate: purchased with enthusiasm in January, abandoned by February, cited in arguments about personal growth throughout March.
 
 ### Why a 1% Treaty is Harder Than Most Precedents
 
 Let's be honest about the obstacles. This is not a chapter written by someone trying to sell you something. (It is. But at least it's honest about the hard parts.)
 
-1. **Touches military budgets**: Politicians would rather discuss their browser history than their defense budget.
-2. **Requires ongoing annual allocation**: Not a one-time signature like banning a weapon. It's a gym membership for peace. Monthly. Forever.
-3. **No immediate security threat**: Unlike NATO spending increases post-Ukraine. Hard to motivate governments without an active catastrophe, even though {{< var global_disease_deaths_daily >}} apparently doesn't qualify as one.
-4. **Novel mechanism**: Military-to-health reallocation has never been done. Humans are suspicious of things they haven't tried before, which is odd for a species that also invented bungee jumping.
-5. **Coordination problem**: Benefits require critical mass. Nobody wants to go first. Everybody wants to go second.
+It touches military budgets, and politicians would rather discuss their browser history than their defense budget. It requires ongoing annual allocation, not a one-time signature like banning a weapon, which makes it a gym membership for peace: monthly, forever, with no option to cancel by simply not going. There's no immediate security threat driving it, unlike NATO spending increases post-Ukraine; hard to motivate governments without an active catastrophe, even though {{< var global_disease_deaths_daily >}} apparently doesn't qualify as one (it doesn't qualify because the deaths are distributed, quiet, and polite, and your species only responds to deaths that are concentrated, loud, and rude). The mechanism is novel: military-to-health reallocation has never been done, and humans are suspicious of things they haven't tried before, which is odd for a species that also invented bungee jumping, cryptocurrency, and putting pineapple on pizza. And it's a coordination problem: benefits require critical mass, nobody wants to go first, and everybody wants to go second, which is a fine strategy for a conga line but not for treaty negotiation.
 
 ### Why a 1% Treaty Might Beat the Odds
 
 ![Five reasons countries might sign: saves money, voters want it, legal precedent exists, morally defensible, and everyone else is doing it.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-a-1-treaty-might-beat-the-odds-bw-academic.jpg)
 
-1. **Self-funding**: Creates health dividends that exceed the "cost." You make money doing this. That's unusual for moral obligations.
-2. **Bipartisan appeal**: "Should we cure more diseases?" polls well across every political spectrum. Shocking, I know.
-3. **Referendum pathway**: Can bypass government resistance through direct democracy. Politicians hate this one weird trick.
-4. **Visible beneficiaries**: {{< var global_disease_deaths_daily >}}. Hard to argue with the body count.
-5. **Network effects**: Each signing country makes the next more likely. Peer pressure: humanity's most reliable technology.
+It's self-funding: the health dividends exceed the "cost," so you make money doing this, which is unusual for moral obligations and also the entire reason it might work, because your species does not do things for moral reasons but does do things for money reasons. It has bipartisan appeal: "Should we cure more diseases?" polls well across every political spectrum, which is one of the only questions that does, alongside "Is water wet?" and "Should we pay Congress less?" It has a referendum pathway that can bypass government resistance through direct democracy, which politicians hate, which is how you know it works. It has visible beneficiaries: {{< var global_disease_deaths_daily >}}, which is hard to argue with even for people who argue professionally. And it has network effects: each signing country makes the next more likely, because peer pressure is humanity's most reliable technology, older than fire, more consistent than gravity, and the reason your teenagers wear the same shoes.
 
 ### Probability Estimates
 
-Economists would find the following defensible (and economists find very little defensible):
+Economists would find the following defensible (and economists find very little defensible, which is their brand):
 
 | Scenario | Probability | Translation |
 |:---------|:------------|:----------|
@@ -155,15 +138,12 @@ Economists would find the following defensible (and economists find very little 
 
 ![Worst case: you wasted less money than bed nets cost. Best case: you ended most diseases. Risk-reward has never been clearer.](/assets/images/treaty-feasibility/treaty-feasibility-section-expected-value-implications-bw-academic.jpg)
 
-At {{< var political_success_probability >}} probability of success:
-
-- **Expected ROI**: {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 (still positive, even assuming near-certain failure)
-- **Expected cost per DALY**: {{< var treaty_expected_cost_per_daly >}} ({{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets at {{< var bed_nets_cost_per_daly >}}/DALY)
+At {{< var political_success_probability >}} probability of success, expected ROI is {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 (still positive, even assuming near-certain failure) and expected cost per DALY is {{< var treaty_expected_cost_per_daly >}}, which is {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets at {{< var bed_nets_cost_per_daly >}}/DALY.
 
 Downside: capped at ~{{< var treaty_campaign_total_cost >}}. You lose the cost of a nice yacht.
 Upside: unbounded. You cure most diseases.
 
-Even assuming a 99% chance of total failure, this beats the gold standard of global health interventions. The math doesn't care about your pessimism.
+Even assuming a 99% chance of total failure, this beats the gold standard of global health interventions. The asymmetry is the point. The downside is a yacht. The upside is the end of most disease. Your species makes bets with worse odds every day in Las Vegas, except in Las Vegas the upside is a slightly larger pile of papers and the downside is a slightly smaller pile of papers. Here the upside is civilization-altering and the downside is one fewer yacht in the marina. The yacht will be fine. It was going to depreciate anyway.
 
 ## Why The Treaty Won't Stop at 1%
 
@@ -171,7 +151,7 @@ Most international commitments stagnate after signing. You saw the depressing ta
 
 **Because this time, people get paid.**
 
-The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd) allocates {{< var iab_political_incentive_funding_pct >}} of treaty funding ({{< var iab_political_incentive_funding_annual >}}/year at 1%) to [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). These are securities that pay out when treaties *expand*, not just maintain. In other words: people get rich when more diseases get cured. Finally, a financial instrument that isn't morally bankrupt.
+The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd) allocates {{< var iab_political_incentive_funding_pct >}} of treaty funding ({{< var iab_political_incentive_funding_annual >}}/year at 1%) to [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). These are securities that pay out when treaties *expand*, not just maintain. People get rich when more diseases get cured. Finally, a financial instrument that isn't morally bankrupt. It only took your species 400 years of financial instruments to produce one that doesn't require someone to suffer. Progress.
 
 ### The Expansion Mechanism
 
@@ -184,26 +164,22 @@ The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd
 
 ### Why This Differs from Every Other Treaty
 
-**0.7% ODA failed** because nobody made money when countries complied. The NGOs pushing for compliance have small budgets, compete with each other, and run on guilt. Guilt has terrible fuel efficiency.
+0.7% ODA failed because nobody made money when countries complied. The NGOs pushing for compliance have small budgets, compete with each other, and run on guilt. Guilt has terrible fuel efficiency. Guilt gets you to the gym in January. Greed gets you there in July. Guilt volunteers at the soup kitchen once. Greed builds the soup kitchen and names it after itself. Guilt is what your species feels. Greed is what your species does. This treaty runs on what your species does.
 
 ![Old way: charities beg governments. New way: investors get paid when governments cooperate. Greed works faster than guilt.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-this-differs-from-stagnant-treaties-bw-academic.jpg)
 
-**The 1% health treaty creates its own expansion lobby.** Bond holders profit when the treaty expands to 2%, then 5%, then 10%. These aren't activists you can ignore at a dinner party. They're investors with quarterly earnings calls about curing diseases.
+The 1% health treaty creates its own expansion lobby. Bond holders profit when the treaty expands to 2%, then 5%, then 10%. These aren't activists you can ignore at a dinner party. They're investors with quarterly earnings calls about curing diseases. They have Bloomberg terminals. They have lobbyists. They have the same tools that defense contractors currently use to expand military budgets, except pointed in the opposite direction.
 
 ### The Ratchet Effect
 
-Once 1% passes:
-1. **$2.72B/year** flows to IAB holders pushing for 2%
-2. When 2% passes, **$5.44B/year** pushes for 5%
-3. When 5% passes, **$13.6B/year** pushes for 10%
-4. The political pressure for expansion *accelerates* with each success
+Once 1% passes, $2.72B/year flows to IAB holders pushing for 2%. When 2% passes, $5.44B/year pushes for 5%. When 5% passes, $13.6B/year pushes for 10%. The political pressure for expansion accelerates with each success, because each expansion funds a larger lobbying force for the next expansion, because the people who got rich at 1% want to get richer at 2%, and the people who got rich at 2% want to get richer at 5%, and so on until the entire engine runs on compound greed, which is like compound interest but for not dying.
 
-Most treaties are gym memberships purchased in January and abandoned by February. IABs are the opposite: the constituency for expansion *grows* with each success. Greed doesn't take holidays.
+Most treaties are gym memberships purchased in January and abandoned by February. IABs are the opposite: the constituency for expansion *grows* with each success. Greed doesn't take holidays. Greed doesn't forget. Greed doesn't lose interest when a new television show comes on. Greed is the only human motivation that has never once failed to show up. This treaty runs on it. On Wishonia, we find this arrangement embarrassing. On Earth, it's the only arrangement that works.
 
 ### Long-Term Feasibility
 
 ![Path one: treaty fizzles. Path two: financial incentives make it grow to $2.7 trillion like compound interest for not dying.](/assets/images/treaty-feasibility/treaty-feasibility-section-long-term-feasibility-bw-academic.jpg)
 
-With IABs, the {{< var iab_political_incentive_funding_pct >}} allocation creates a perpetual political engine. A machine that runs on greed and outputs health. Embarrassing, but effective.
+With IABs, the {{< var iab_political_incentive_funding_pct >}} allocation creates a perpetual political engine. A machine that runs on greed and outputs health. Embarrassing, but effective. The most effective things your species has ever built have all been embarrassing. The internet was built for sharing research papers and is used for arguing with strangers. Democracy was built for collective wisdom and is used for electing celebrities. This machine is built for curing disease and is powered by selfishness. The pattern holds.
 
-Without IABs, this joins Kyoto in the Museum of Things Humanity Promised to Do and Then Didn't.
+Without IABs, this joins Kyoto in the Museum of Things Humanity Promised to Do and Then Didn't. The museum is very large. It has a gift shop. The gift shop sells promises.

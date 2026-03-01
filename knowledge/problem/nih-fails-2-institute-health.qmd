@@ -21,11 +21,11 @@ podcast-image: /assets/podcast/nih-fails-2-institute-health-podcast.jpg
 
 {{< var global_annual_deaths_curable_diseases_nounit >}} people die annually [@who-daily-deaths]. The National Institutes of Health has an annual budget of approximately **{{< var nih_annual_budget >}}**. You would think those two facts would be related. They are not.
 
-Of $247 billion the NIH spent over a decade, exactly {{< var nih_clinical_trials_spending_pct >}} went to testing whether treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% went to everything else.
+Of $247 billion the NIH spent over a decade, exactly {{< var nih_clinical_trials_spending_pct >}} went to testing whether treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% went to everything else. "Everything else" includes understanding disease mechanisms, translating discoveries, training scientists, maintaining buildings, and running a program called "All of Us" that cost $2.16 billion to observe people without treating them, which is called "research" the way watching someone drown from a boat is called "lifeguarding."
 
-That might be defensible if we'd already tested all the known safe compounds that are piled up waiting for human testing. We haven't. There are roughly {{< var safe_compounds_count >}} with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. The pipeline is overflowing with candidates. The bottleneck is trials.
+That might be defensible if we'd already tested all the known safe compounds that are piled up waiting for human testing. We haven't. There are roughly {{< var safe_compounds_count >}} with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. The pipeline is overflowing with candidates. The bottleneck is trials. The drugs are sitting there. Safe. Ready. Waiting. They've been waiting for decades. Some of them have been waiting longer than most of your scientists have been alive.
 
-It's like spending 96.7% of your grocery budget on cookbooks and {{< var nih_clinical_trials_spending_pct >}} on food, then wondering why you're starving.
+It's like spending 96.7% of your grocery budget on cookbooks and {{< var nih_clinical_trials_spending_pct >}} on food, then wondering why you're starving. Except the cookbooks are very prestigious and the starving people aren't on the committee that decides whether to buy more cookbooks.
 
 This isn't just inefficiency. It's a body count.
 
@@ -34,6 +34,7 @@ This isn't just inefficiency. It's a body count.
 ::: {.callout-note collapse="true" title="The Receipts: Where $247.3 Billion Went (2010-2019)"}
 
 A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247.3 billion in NIH spending (2010-2019). Each of these categories funds valuable work. The question is whether the ratio makes sense when thousands of safe compounds sit untested.
+
 - **84.9% - Basic research** ($209.9B): Understanding disease mechanisms, molecular biology, genomics. Essential for identifying new targets, but 85 cents of every dollar is a lot of understanding and not much testing.
 - **11.8% - Applied research (non-trial)** ($29.3B): Translating discoveries toward practical use, but without the final step of testing them in patients.
   - **CTSA infrastructure program:** ~$1B/year in trial infrastructure, coordination, and training [@nih-ctsa]
@@ -56,11 +57,11 @@ This isn't bureaucratic accident. It's lobbied outcome.
 
 Drug companies love the NIH. Taxpayers absorb the risk of basic research; industry patents whatever works. It's like if your neighbor paid for your kitchen renovation, and then you charged them rent to eat there.
 
-But independent trials comparing drugs head-to-head? Those are terrifying. They might reveal that the $80,000 drug works about as well as the $4 generic. PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. Congress literally passed a law saying "don't fund research that might lower drug prices." They wrote it down. In legislation. On purpose.
+But independent trials comparing drugs head-to-head? Those are terrifying. They might reveal that the $80,000 drug works about as well as the $4 generic. PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. Congress literally passed a law saying "don't fund research that might lower drug prices." They wrote it down. In legislation. On purpose. With their names on it. And then they went home and told their constituents they were fighting for affordable healthcare, because your species' capacity for doublethink is genuinely Olympian.
 
-The revolving door helps. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics. It's not a conspiracy. It's just that everyone involved happens to benefit from the same terrible outcome, purely by coincidence, repeatedly, for decades.
+The revolving door helps. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics. It's not a conspiracy. Conspiracies require secrecy. This is all public. It's just that everyone involved happens to benefit from the same terrible outcome, purely by coincidence, repeatedly, for decades. On Wishonia, we have a word for this. The word is "conspiracy." The difference between a conspiracy and a system is whether the participants need to meet in a dark room. These people meet in conference rooms with catering. The outcome is identical.
 
-Basic research produces publications. Publications produce tenure. Tenure produces more grants. Nobody in this cycle needs anyone to get better. They need papers.
+Basic research produces publications. Publications produce tenure. Tenure produces more grants. Nobody in this cycle needs anyone to get better. They need papers. Papers are the currency of academic science. Cures are a byproduct that occasionally happens when someone forgets to optimize for papers and accidentally optimizes for results instead. This has happened approximately 50 times per year out of 2.5 million papers. The rest of the papers cite each other.
 
 The {{< var nih_clinical_trials_spending_pct >}} allocation isn't a mystery. It's a business model.
 
@@ -72,25 +73,17 @@ The difference between efficient and inefficient trial design isn't theoretical.
 
 ![RECOVER spent 1.6 billion over four years, enrolled 30,000 patients, and completed zero trials. That's like paying for a wedding and forgetting to get married.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recover-initiative-nih-approach-bw-academic.jpg)
 
-**Budget:** \$1.665 billion (\$1.15B + \$515M in 2024) (source [@recover-budget-update-2-3b])
-**Timeline:** 4 years and counting [@nih-recover-inefficiency]
-**Patients enrolled:** ~30,000 [@recover-initiative-patient-enrollment]
-**Trials completed:** Zero [@nih-recover-inefficiency]
-**Cost per patient:** \$55,500
+The NIH spent $1.665 billion ($1.15B + $515M in 2024) (source [@recover-budget-update-2-3b]) over 4 years and counting [@nih-recover-inefficiency]. Enrolled about 30,000 patients [@recover-initiative-patient-enrollment]. Completed zero trials [@nih-recover-inefficiency]. Cost per patient: $55,500. That's the price of a luxury SUV per person, and at the end of it, nobody got a luxury SUV and nobody got cured. They got observed. Expensively.
 
 ### RECOVERY Trial (UK Approach)
 
-**Budget:** {{< var recovery_trial_total_cost >}}
-**Timeline:** 6 months [@landray-recovery-trial-quote]
-**Patients enrolled:** 48,000 [@recovery-trial-82x-cost-reduction]
-**Treatments found:** Multiple, including dexamethasone [@recovery-trial-summary-quote] (saved over {{< var recovery_trial_global_lives_saved >}})
-**Cost per patient:** {{< var recovery_trial_cost_per_patient >}}
+The British spent {{< var recovery_trial_total_cost >}} over 6 months [@landray-recovery-trial-quote]. Enrolled 48,000 patients [@recovery-trial-82x-cost-reduction]. Found multiple effective treatments, including dexamethasone [@recovery-trial-summary-quote], which saved over {{< var recovery_trial_global_lives_saved >}}. Cost per patient: {{< var recovery_trial_cost_per_patient >}}. That's the price of a nice dinner.
 
 The NIH spent **111x more per patient** and achieved **infinitely less** (dividing by zero trials completed produces infinity, which is fitting because that's how long patients waited). This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost].
 
 ![The UK trial cost 111 times less per patient and actually finished. America: where we do everything bigger, including waste.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recovery-trial-uk-approach-bw-academic.jpg)
 
-The British cured disease for the price of a nice dinner per patient. America spent the price of a luxury SUV per patient and cured nothing. The problem isn't that curing disease is hard. The NIH doesn't have a capability problem. It has a shopping addiction.
+The British cured disease for the price of a nice dinner per patient. America spent the price of a luxury SUV per patient and cured nothing. The problem isn't that curing disease is hard. The NIH doesn't have a capability problem. It has a shopping addiction. Specifically, it's addicted to buying infrastructure, coordination, training, observation, and overhead, which are all things you buy before curing disease, the same way you buy pots and pans before cooking dinner, except the NIH has been buying pots and pans for 50 years and has not yet started cooking.
 
 ## The Death Toll: Opportunity Cost of Misallocation
 
@@ -98,51 +91,31 @@ When you misallocate the vast majority of a {{< var nih_annual_budget >}} annual
 
 ### Cost Per QALY (Quality-Adjusted Life Year)
 
-- **Standard NIH Portfolio:** {{< var nih_standard_research_cost_per_qaly >}} per QALY {{< var nih_standard_research_cost_per_qaly_cite >}} (and that's being generous)
-- **Pragmatic Platform Trials:** {{< var pragmatic_trial_cost_per_qaly >}} per QALY
-
-Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH portfolio. The ADAPTABLE trial proved pragmatic trials cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M). Same science. Fewer catered meetings.
+The standard NIH portfolio produces one QALY for {{< var nih_standard_research_cost_per_qaly >}} {{< var nih_standard_research_cost_per_qaly_cite >}} (and that's being generous). Pragmatic platform trials produce one QALY for {{< var pragmatic_trial_cost_per_qaly >}}. Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH portfolio. The ADAPTABLE trial proved pragmatic trials cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M). Same science. Fewer catered meetings. Same number of patients helped. Fewer conference rooms rented.
 
 ![One method saves lives efficiently. The other publishes papers expensively. You're currently funding the papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-cost-per-qaly-bw-academic.jpg)
 
 ### The "Death Equivalent" of Budget Misallocation
 
-**Annual Opportunity Cost:** ~100 million QALYs and ~7 million death-equivalents per year.
-Even the most conservative estimate: ~10 million QALYs and ~700,000 preventable deaths annually.
+Annual opportunity cost: approximately 100 million QALYs and approximately 7 million death-equivalents per year. Even the most conservative estimate: approximately 10 million QALYs and approximately 700,000 preventable deaths annually.
 
-For every dollar spent on pragmatic trials producing QALYs, the NIH spends $12,500 to achieve the same result. You are operating at 0.008% of your potential capacity to save lives. If your car ran at 0.008% efficiency, it would move one inch per gallon. If your heart pumped at 0.008% efficiency, you'd be dead before finishing this sentence. Your medical research system runs at 0.008% efficiency, and you gave it a raise.
+For every dollar spent on pragmatic trials producing QALYs, the NIH spends $12,500 to achieve the same result. You are operating at 0.008% of your potential capacity to save lives. If your car ran at 0.008% efficiency, it would move one inch per gallon. If your heart pumped at 0.008% efficiency, you'd be dead before finishing this sentence. Your medical research system runs at 0.008% efficiency, and you gave it a raise. You gave it a raise and a new building. The building has a cafeteria.
 
 ## The Translation Crisis: All Theory, No Medicine
 
 The problem is not a shortage of ideas. It is a shortage of anyone bothering to test them.
 
-- **FDA-approved drugs:** >{{< var fda_approved_products_count_nounit >}} known safe in humans
-- **Repurposable compounds:** ~4,700-6,800 clinically-tested candidates [@drug-repurposing-hub-collection] (including 3,422 marketed drugs) gathering dust
-- **Plausible dementia interventions:** Hundreds
-- **Clinical trials available for your grandma in St. Louis:** Zero
-
-You have a warehouse of safe molecules that have never been systematically tested for new uses. The warehouse is full. The testing facility is closed for a team-building retreat.
+There are over {{< var fda_approved_products_count_nounit >}} FDA-approved drugs that are known to be safe in humans. There are roughly 4,700-6,800 clinically-tested candidates gathering dust [@drug-repurposing-hub-collection], including 3,422 marketed drugs that could be repurposed for diseases nobody's tried them on. There are hundreds of plausible dementia interventions. And the number of clinical trials available for your grandma in St. Louis? Zero. You have a warehouse of safe molecules that have never been systematically tested for new uses. The warehouse is full. The testing facility is closed for a team-building retreat.
 
 ![Imagine a massive lake of possible cures connected to the ocean by a drinking straw. You built the straw that way on purpose.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-translation-crisis-concept-rich-trial-poor-bw-academic.jpg)
 
-The NIH is, by its own metrics, a publishing house that occasionally dabbles in medicine:
-
-- **Papers published:** 2.5 million NIH-funded annually [@nih-annual-papers-published]
-- **New treatments approved:** ~{{< var current_drug_approvals_per_year_nounit >}} annually [@global-new-drug-approvals-50-annually]
-- **Conversion rate from paper to patient:** 0.002%
-
-For every 50,000 papers, one drug reaches a human. The rest become citations in other papers, which become citations in other papers, in an infinite loop of academics reading each other's homework.
+The NIH is, by its own metrics, a publishing house that occasionally dabbles in medicine. It publishes 2.5 million funded papers annually [@nih-annual-papers-published]. It produces approximately {{< var current_drug_approvals_per_year_nounit >}} new drug approvals annually [@global-new-drug-approvals-50-annually]. That's a conversion rate from paper to patient of 0.002%. For every 50,000 papers, one drug reaches a human. The rest become citations in other papers, which become citations in other papers, in an infinite loop of academics reading each other's homework. On Wishonia, we call this a "knowledge ouroboros." It looks productive from the inside. From the outside, it's a snake eating its own tail and calling it lunch.
 
 ### Plenty of Knowledge. No Translation.
 
-- **Patients who've participated in trials:** ~5% [@clinical-trial-patient-participation-rate]
-- **Patients willing to participate if invited:** ~50% [@patient-willingness-clinical-trials]
-- **Patients actually invited:** ~9-11% [@patient-willingness-clinical-trials]
+About 5% of patients have participated in clinical trials [@clinical-trial-patient-participation-rate]. About 50% would participate if invited [@patient-willingness-clinical-trials]. About 9-11% have ever been invited [@patient-willingness-clinical-trials]. Half of all patients would join a trial if asked. Almost nobody asks. Your species has a room full of volunteers holding their hands up, and a system that looked at the room and decided to study the clipboard instead. The clipboard is very well-studied. It has been studied for decades. Multiple papers have been written about the clipboard. The volunteers are still holding their hands up.
 
-Half of all patients would join a clinical trial if asked.
-Almost nobody asks. It's like having a room full of volunteers and a clipboard, and choosing to study the clipboard.
-
-Understanding disease and curing disease are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. The NIH chose microscopes.
+Understanding disease and curing disease are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. The NIH chose microscopes. It chose them 50 years ago and has not reconsidered since, because reconsidering would require a committee, and the committee would need funding, and the funding would come from the same budget that's already 96.7% allocated to things that aren't curing disease, and so the committee would conclude that committees are important, and the microscopes would stay.
 
 ## The Public Goods vs. Club Goods Scam
 
@@ -150,37 +123,19 @@ The NIH claims to produce "public goods" like open science and training. What it
 
 ![You pay for the research. They take the profits. It's socialism for corporations, capitalism for you. You invented that.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
 
-Taxpayers funded research behind 99% of new drugs [@nih-funded-approved-drugs] (356 drugs, 2010-2019). Industry patents the winners. The public pays again through high drug prices. When research leads to a dead end, the public eats the loss. You pay for the lottery ticket. They cash the winnings.
+Taxpayers funded research behind 99% of new drugs [@nih-funded-approved-drugs] (356 drugs, 2010-2019). Industry patents the winners. The public pays again through high drug prices. When research leads to a dead end, the public eats the loss. You pay for the lottery ticket. They cash the winnings. You'd think someone would have mentioned this arrangement before now, and someone has, many times, but the people who cash the winnings also fund the campaigns of the people who could change the arrangement, so the arrangement continues.
 
-The only things the NIH *should* fund are things private companies *cannot* profitably fund:
-
-- **Open pragmatic trial platforms:** 30x cheaper than traditional trials [@pragmatic-trials-cost-advantage], yet receive minimal NIH funding
-- **Re-purposing generic drugs:** 4,700+ clinically-tested compounds [@drug-repurposing-hub-collection] where no patent = no profit = no interest
-- **Comparative effectiveness data:** Head-to-head trials revealing which drugs actually work best (pharma's nightmare)
-
-These are the *only* things the NIH should be funding. Instead, the NIH explicitly avoids them to "not crowd out industry." Translation: "We won't run the trials that would lower drug prices, because the people who set drug prices asked us nicely."
+The only things the NIH *should* fund are things private companies *cannot* profitably fund: open pragmatic trial platforms that are 30x cheaper than traditional trials [@pragmatic-trials-cost-advantage] yet receive minimal NIH funding, repurposing of generic drugs (4,700+ clinically-tested compounds [@drug-repurposing-hub-collection] where no patent means no profit means no interest), and comparative effectiveness data from head-to-head trials revealing which drugs actually work best (pharma's nightmare, your potential salvation). These are the only things the NIH should be funding. Instead, the NIH explicitly avoids them to "not crowd out industry." Translation: "We won't run the trials that would lower drug prices, because the people who set drug prices asked us nicely." They asked nicely and also spent {{< var defense_lobbying_annual >}} on lobbying, but the niceness was noted.
 
 ## The Patient Disconnect: Zero Correlation with Health Outcomes
 
-**Correlation between NIH funding priorities and actual disease burden: 0.07 [@nih-funding-vs-disease-burden-correlation]**
+Correlation between NIH funding priorities and actual disease burden: **0.07** [@nih-funding-vs-disease-burden-correlation].
 
-That is not a typo. On a scale of 0 (random) to 1 (perfect), the NIH scores "basically a coin flip." A dartboard would allocate research funding more rationally.
+That is not a typo. On a scale of 0 (random) to 1 (perfect), the NIH scores "basically a coin flip." A dartboard would allocate research funding more rationally. A drunk person throwing darts at a list of diseases would produce a funding allocation that correlates more closely with actual disease burden than the National Institutes of Health, which employs 20,000 people and has been doing this for 50 years. The dartboard doesn't even need to be in the building.
 
 ![NIH funding has a 0.07 correlation with disease burden. That's worse than random. A dart-throwing monkey would do better.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-patient-disconnect-zero-bw-academic.jpg)
 
-### What patients want
-
-- Medicine that works
-- Access to experimental therapies
-- Trials they can join
-- A cure before they die
-
-#### What NIH funds
-
-- Molecular mechanisms
-- Papers in prestigious journals
-- Research empires
-- Institutional overhead
+Patients want medicine that works, access to experimental therapies, trials they can join, and a cure before they die. The NIH funds molecular mechanisms, papers in prestigious journals, research empires, and institutional overhead. These two lists do not overlap. They don't even live in the same neighborhood. The patients are over here, dying. The NIH is over there, publishing. The distance between them is measured in papers.
 
 Patients don't control the money. Committees do. And committees optimize for the continued existence of committees. This is true of all committees, everywhere, since the invention of committees. Nobody has ever convened a committee that recommended fewer committees.
 
@@ -192,22 +147,12 @@ Since 1970, the NIH has spent over **$1.1 trillion** (inflation-adjusted). Disea
 
 ![WHO spent 300 million and eradicated smallpox. NIH spent 1.1 trillion and eradicated zero diseases. At least they published many papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-track-record-bw-academic.jpg)
 
-This isn't because eradicating disease is impossible:
+This isn't because eradicating disease is impossible. The WHO eradicated smallpox for $300 million [@smallpox-eradication-roi]. Jonas Salk developed the polio vaccine in a university lab and gave it away for free, which is why nobody at the NIH talks about him at parties because he makes everyone look bad by comparison and also he's dead, which is the thing they were supposed to be fixing. Veterinarians have eradicated multiple animal diseases [@animal-diseases-eradicated-by-vets] while the NIH was forming subcommittees about forming subcommittees.
 
-- The WHO eradicated smallpox for \$300 million [@smallpox-eradication-roi]
-- Jonas Salk developed the polio vaccine in a university lab and gave it away for free (which is why nobody at the NIH talks about him at parties)
-- Veterinarians have eradicated multiple animal diseases [@animal-diseases-eradicated-by-vets] while the NIH was forming subcommittees about forming subcommittees
-
-Cows have better healthcare outcomes than you do.
+Cows have better healthcare outcomes than you do. Cows. The animals you eat for dinner have a more effective disease eradication program than the species that eats them. This is the single most embarrassing sentence in this book, and this book contains many embarrassing sentences, most of them about your species.
 
 ## What Would Actually Work
 
-The UK RECOVERY trial already proved it. {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}. First life-saving result in under 100 days [@recovery-trial-100-days-to-cure]. Over {{< var recovery_trial_global_lives_saved >}} saved. The blueprint exists. It is not theoretical. It happened. In England. During a pandemic. While Americans were arguing about horse dewormer.
+The UK RECOVERY trial already proved it. {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}. First life-saving result in under 100 days [@recovery-trial-100-days-to-cure]. Over {{< var recovery_trial_global_lives_saved >}} saved. The blueprint exists. It is not theoretical. It happened. In England. During a pandemic. While Americans were arguing about horse dewormer. The evidence is right there. It's not hiding. It's waving at you. It has been waving at you for years.
 
-The recipe:
-
-1. **Pay for results:** Treatment = payment. No treatment = no payment. Radical, I know.
-2. **Publish everything:** Including failures (especially failures)
-3. **Eliminate gatekeepers:** Let patients vote with participation
-4. **Automate administration:** Smart contracts instead of committees (committees cannot be trusted; see above)
-
+The recipe is simple enough that I can state it in four sentences. Pay for results: treatment equals payment, no treatment equals no payment. Publish everything, including failures, especially failures (because failures are the only data your species systematically destroys, which means they're the data you need most). Eliminate gatekeepers and let patients vote with participation, because the people who will die if the system fails are more motivated than the people who get tenure if the system continues. Automate administration with transparent systems instead of committees, because committees cannot be trusted (see above, and also see the entire history of committees, and also see the committee that was formed to investigate whether committees can be trusted, which concluded that committees are essential).
