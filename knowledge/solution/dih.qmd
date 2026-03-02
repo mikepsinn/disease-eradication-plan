@@ -90,7 +90,7 @@ This is intelligence sharing in the SHAEF analogy. Your Allies won partly becaus
 
 Your Decentralized Institutes of Health will use two allocation mechanisms, because using one would be too simple and using three would be too complicated, and your species has a narrow window of complexity it can handle before giving up and going to lunch.
 
-**Patient subsidies** will handle research funding. Sick people will choose which trials to join. Money will follow their enrollment. This means research funding will be allocated by the people who will die if it doesn't work, which is a better selection mechanism than a committee of people who will not die either way. Variable subsidy rates will ensure rare diseases remain viable, because small patient pools don't have to mean small budgets. No committee will sit around deciding "cancer vs. Alzheimer's." The patients will decide, by showing up.
+**Patient subsidies** will handle research funding. Sick people will choose which trials to join. Money will follow their enrollment. This means research funding will be allocated by the people who will die if it doesn't work, which is a better selection mechanism than a committee of people who will not die either way. Subsidies will be weighted by disease burden (DALYs per patient), so severe conditions pay more per enrollee and mild ones pay less, which means every dollar buys the most healthy life-years possible. No committee will sit around deciding "cancer vs. Alzheimer's." The patients will decide, by showing up, and the price signal will make sure the money goes where the suffering is.
 
 ![Sick people decide what to study; everyone votes on which buildings to build. Democracy, but only for the bits that make sense.](/assets/images/dih/dih-section-governance-market-mechanism-wishocracy-bw-academic.jpg)
 
@@ -100,7 +100,7 @@ Your Decentralized Institutes of Health will use two allocation mechanisms, beca
 
 Your Decentralized Institutes of Health won't rely on altruism. Altruism is lovely but flaky. It shows up when it feels like it, cancels last minute, and is always "busy that weekend." Instead, it will pay everyone to do the most useful thing, because greed is more dependable than kindness. Your entire economic system proves this daily. Nobody ever forgot to be greedy.
 
-Your researchers will get per-patient subsidies (higher for rare diseases), so attracting patients will mean getting paid. Your patients will get subsidies that scale with trial importance, so joining high-priority trials will pay more. Your politicians will get [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) tied to disease outcomes, so better outcomes will mean bigger bonuses. Your funders will get quadratic matching and outcome tracking, so high-ROI donations will be amplified. Your data providers will get fees tied to data utility, so more useful data will mean more revenue. Every single actor's most selfish choice will also be the most useful choice. Selfishness, properly directed, will cure cancer.
+Your researchers will get per-patient subsidies weighted by disease burden, so treating severe conditions will pay more than treating mild ones. Your patients will get subsidies that scale with trial importance, so joining high-priority trials will pay more. Your funders will get quadratic matching and outcome tracking, so high-ROI donations will be amplified. Your data providers will get fees tied to data utility, so more useful data will mean more revenue. Every single actor's most selfish choice will also be the most useful choice. Selfishness, properly directed, will cure cancer.
 
 The civilizations I've worked with that figured this out are still around. The ones that decided selfishness was the problem and tried to build systems that required everyone to be nice are not. I don't say this to be mean. I say it because the archaeological record is very clear, and the archaeological record does not have feelings.
 
@@ -110,7 +110,17 @@ Your traditional system works like this: write a grant proposal, hope a committe
 
 ![Old way: write a letter begging for money. New way: cure someone and get paid. One of these seems more efficient.](/assets/images/dih/dih-section-how-researchers-get-paid-bw-academic.jpg)
 
-The new system: per-patient subsidies, so the more patients who join your trial, the more funding you'll get (patients vote with their enrollment). Variable subsidy rates, so rare diseases will get higher per-patient subsidies (small patient pools won't mean small budgets). Results-based continuation, so you'll deliver results and get more funding, or not deliver and get defunded, which is how every other job on your planet works except, somehow, research.
+The new system: per-patient subsidies weighted by disease burden, with one equation that replaces your entire grant committee apparatus:
+
+$$S_i = D_i \times v$$
+
+Where $S_i$ is the subsidy per patient enrolled in a trial for condition $i$, $D_i$ is the DALYs per patient for that condition (from your WHO's Global Burden of Disease data, which already exists and nobody was using for this), and $v$ is the value per DALY (a single constant, tuned to exhaust the annual budget). That's it. That's the whole allocation mechanism.
+
+The more patients who join your trial and the more severe the condition, the more funding you'll get. Patients vote with their enrollment. The price signal ensures every dollar buys the most healthy life-years possible. Cost is handled automatically: if the subsidy exceeds trial cost per patient, the trial is profitable and researchers will run it. If trial cost exceeds the subsidy, nobody runs it, which is correct, because it means the health value doesn't justify the expense. Researchers who find cheaper ways to run trials pocket the difference, which incentivizes efficiency instead of the current system, which incentivizes asking for more money.
+
+The only thing set centrally is $v$, which is just division: budget divided by global disease burden. Everything else is decentralized. Your entire species has been running grant committees for decades when you could have been running one equation. On Wishonia, this discovery took us about forty minutes. Your species has been at it for seventy years, which is not forty minutes.
+
+Results-based continuation: deliver results and get more funding, or don't deliver and get defunded, which is how every other job on your planet works except, somehow, research.
 
 Pay your scientists like you pay your plumbers: for fixing the problem, not for explaining why the problem is hard.
 

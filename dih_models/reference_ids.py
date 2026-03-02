@@ -684,6 +684,7 @@ class ReferenceID(str, Enum):
     NOBELPRIZE2007 = "nobelprize2007"
     NONPROFIT_CLINICAL_TRIAL_SPENDING_ESTIMATE = "nonprofit-clinical-trial-spending-estimate"
     NONPROFIT_DRUG_DEVELOPMENT_DEADLOCKS = "nonprofit-drug-development-deadlocks"
+    NORDHAUS2002 = "nordhaus2002"
     NORDHAUS2013 = "nordhaus2013"
     NORTH_KOREA_FAMINE_DEATHS = "north-korea-famine-deaths"
     NORTHROP_GRUMMAN_ANNUAL_REVENUE_36B = "northrop-grumman-annual-revenue-36b"

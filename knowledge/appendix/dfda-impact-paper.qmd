@@ -18,7 +18,8 @@ abstract: |
   (YLD portion of {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} converted to hours) at
   {{< var dfda_direct_funding_cost_per_daly >}}/DALY, competitive with bed nets
   ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. Using standard health economic
-  valuation ($150K/DALY, the threshold used by WHO, EPA, and NICE), full impact yields
+  valuation ({{< var standard_economic_qaly_value_usd >}}/DALY, the US cost-effectiveness threshold;
+  conservative relative to EPA/DOT Value of Statistical Life estimates), full impact yields
   {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in cumulative value
   ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} cumulative DALYs over the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift, not annual;
   {{< var dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI).
@@ -68,7 +69,7 @@ podcast-image: /assets/podcast/dfda-impact-paper-podcast.jpg
 
 The economic value figure ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}) exceeds global GDP ({{< var global_gdp_2025 >}}). This is expected, not an error. Three points of context:
 
-**1. Standard methodology, applied at scale.** The $150K/DALY valuation is the same figure the EPA uses to evaluate pollution regulations, the DOT uses for highway safety, NICE uses for drug approvals, and WHO-CHOICE uses for global health interventions. We did not invent this number. We multiplied it by the number of sick people.
+**1. Standard methodology, applied at scale.** The {{< var standard_economic_qaly_value_usd >}}/DALY valuation is the US cost-effectiveness threshold (ICER). It is conservative relative to EPA and DOT Value of Statistical Life estimates, which imply higher per-DALY values when converted (~$300K-$600K/DALY). We did not invent this number. We multiplied it by the number of sick people.
 
 **2. GDP measures transactions, not the value of being alive.** GDP does not count the value of not being dead, not being in pain, or not watching your children die of treatable diseases. Health economists have measured these values for decades. The global burden of disease ({{< var global_annual_daly_burden >}}/year) valued at {{< var standard_economic_qaly_value_usd >}}/DALY produces {{< var global_disease_economic_burden_annual >}}/year in health losses, roughly 3.5x global GDP. This is consistent with the established finding that the value of health substantially exceeds market output [@murphy2006; @nordhaus2002].
 
