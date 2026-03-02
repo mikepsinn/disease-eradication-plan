@@ -134,6 +134,7 @@ from dih_models.search_index_generator import generate_search_indexes
 from dih_models.site_metadata_generator import generate_sites_metadata
 from dih_models.llms_txt_generator import generate_llms_txt, generate_robots_txt
 from dih_models.papers_qmd_generator import generate_papers_qmd
+from dih_models.feed_generator import generate_rss_feed
 from dih_models.footer_generator import generate_footer_html
 from dih_models.links_generator import generate_links_qmd
 from dih_models.readme_generator import generate_readme
@@ -1283,6 +1284,10 @@ def main():
     # Generate knowledge/links.qmd (Linktree-style page) from YAML config
     logger.debug("[*] Generating knowledge/links.qmd...")
     links_qmd_path = generate_links_qmd(project_root)
+
+    # Generate RSS feed from chapters with feed-date frontmatter
+    logger.debug("[*] Generating RSS feed...")
+    feed_path = generate_rss_feed(project_root)
 
     # Generate README.md from QMD sources with variables replaced
     logger.debug("[*] Generating README.md from QMD sources...")

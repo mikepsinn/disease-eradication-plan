@@ -159,6 +159,7 @@ def generate_links_qmd(project_root: Path) -> Path:
 title: "Get the Manual"
 description: "Read, buy, or listen to 'How to End War and Disease' - available free online, in print, ebook, and audiobook."
 published: true
+feed-date: false
 page-layout: full
 toc: false
 aliases:
@@ -220,6 +221,7 @@ def generate_podcast_qmd(project_root: Path, manual_config: Dict = None) -> Path
 title: "Listen to How to End War and Disease"
 description: "Free audiobook podcast. Every chapter narrated. Available on Spotify, Apple Podcasts, YouTube Music, and all major podcast apps."
 published: true
+feed-date: false
 page-layout: full
 toc: false
 aliases:

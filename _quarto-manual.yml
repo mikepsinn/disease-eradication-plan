@@ -386,6 +386,8 @@ format:
           <!-- Feature flags for site-enhancements.js -->
           <meta name="dih-disable-features" content="cite,ci-toggle">
           <meta name="dih-hide-index-title" content="true">
+          <!-- RSS feed discovery -->
+          <link rel="alternate" type="application/rss+xml" title="How to End War and Disease" href="/assets/feed.xml">
           <!-- Icons (project-specific) -->
           <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/book-favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/book-favicon-16x16.png">

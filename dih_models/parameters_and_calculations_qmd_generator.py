@@ -137,6 +137,7 @@ def generate_parameters_and_calculations_qmd(
     content.append("---")
     content.append('title: "Methodology, Parameters, and Calculations"')
     content.append('description: "Parameter definitions, formulas, uncertainty ranges, and data sources."')
+    content.append("feed-date: false")
     content.append("keywords:")
     content.append("  - health economics methodology")
     content.append("  - clinical trial cost analysis")
