@@ -11,6 +11,7 @@ tags:
   - regulatory-capture
 image: /assets/og-images/knowledge/problem/fda-is-unsafe-and-ineffective-og-retro-academic.jpg
 podcast-image: /assets/podcast/fda-is-unsafe-and-ineffective-podcast.jpg
+feed-date: "2026-03-05"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 In 1962, your Congress decided that after proving a drug won't kill you, sick people should wait another {{< var efficacy_lag_years >}} before they're allowed to take it. The drug passed safety testing. It won't kill you, won't melt your liver, won't make your hair migrate to your back. But you can't have it, because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You're not allowed to volunteer for the trials that would answer that question faster, either. You are, however, allowed to die. This was called "safety."

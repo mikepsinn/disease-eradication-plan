@@ -20,6 +20,7 @@ format:
     toc-depth: 3
     number-sections: false
     code-fold: true
+feed-date: false
 ---
 
 ::: {.content-visible when-format="epub"}
