@@ -1,7 +1,7 @@
 
 ### [Drug Development Cost Increase Analysis](https://drug-cost.warondisease.org)
 
-> Rigorous analysis of the 105x increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis
+> Drug development costs have increased approximately 105x in real terms since the 1962 Kefauver-Harris Amendment. This analysis uses the Baily (1972) academic study as the primary source, adjusts for inflation via Bureau of Labor Statistics CPI data, and validates the finding against six independent real-world price comparisons: generic vs. brand-name drugs, supplements vs. prescriptions, compounding pharmacies vs. FDA-approved products, veterinary vs. human drugs, orphan drug pricing, and historical antibiotic economics. Monte Carlo sensitivity analysis confirms the estimate is robust across plausible input ranges. The magnitude is consistent with independent estimates of 100-400x from multiple research groups.
 
 ### [How to End War and Disease](https://manual.WarOnDisease.org)
 

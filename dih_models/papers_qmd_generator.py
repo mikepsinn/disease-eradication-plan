@@ -148,10 +148,11 @@ def extract_paper_info(
 
     jel_codes = _extract_jel_from_frontmatter(qmd_frontmatter)
 
-    # Prefer QMD abstract over config description (QMD has full multi-paragraph abstracts)
+    # Prefer QMD abstract > book.abstract > book.description
+    # Skip qmd_frontmatter "description" since that's a page-level SEO field
+    # that may differ from the book-level description used in README/papers
     raw_abstract = (
         qmd_frontmatter.get("abstract")
-        or qmd_frontmatter.get("description")
         or (config["book"].get("abstract") if "book" in config else None)
         or description
     )
