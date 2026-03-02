@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 217 parameters used in the analysis, organized by type:
+This appendix documents all 219 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 94
-- Calculated values: 92
+- Calculated values: 94
 - Core definitions: 31
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (92 parameters) • [External Data Sources](#sec-external) (94 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
+[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (94 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -315,6 +315,176 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
+
+:::
+
+### dFDA Direct Funding Cost per DALY: $0.842 {#sec-dfda_direct_funding_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.
+
+**Inputs**:
+
+- [dFDA Direct Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476B
+- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+
+$$
+\begin{gathered}
+Cost_{direct,DALY} \\
+= \frac{NPV_{direct}}{DALYs_{max}} \\
+= \frac{\$476B}{565B} \\
+= \$0.842
+\end{gathered}
+$$
+where:
+$$
+NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,dFDA} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= 2.88B \times 92.6\% \times 212 \\
+= 565B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_cost_per_daly.qmd >}}
+
+:::
+
+### dFDA Direct Funding NPV (Exploration Period): $476B {#sec-dfda_direct_funding_queue_clearance_npv}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
+
+**Inputs**:
+
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [dFDA Therapeutic Space Exploration Time](#sec-dfda_queue_clearance_years) 🔢: 36 years
+
+$$
+NPV_{direct} = Funding_{ann} \times \frac{1 - (1+r)^{-T}}{r}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_direct_funding_queue_clearance_npv.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_direct_funding_queue_clearance_npv.qmd >}}
 
 :::
 
