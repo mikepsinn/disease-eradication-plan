@@ -384,7 +384,7 @@ Politicians need papers and votes to keep their jobs. Currently, weapons manufac
 
 Your explosion manufacturers spend {{< var defense_lobbying_annual >}}/year buying politicians. Your one-time bribery budget is {{< var treaty_campaign_total_cost >}}, which is 8 times their annual spend (and about twice what they spend over a full election cycle). Politicians are surprisingly affordable.
 
-It's not corruption if you corrupt the corruption. It's like a double negative in grammar but for democracy.
+It's not corruption if you corrupt the corruption.
 
 Remember that {{< var iab_political_incentive_funding_annual >}}/year from Step 1? This is where it goes. The Super PAC algorithmically scores politicians based on their treaty voting record and allocates accordingly: campaign support for the ones running, post-office fellowships for the ones retiring. Vote yes on the treaty, get rewarded. Vote no, watch your opponent get rewarded. No papers go directly to politicians. The papers take a scenic route through a scoring algorithm, which is apparently the only legal way to train a senator.
 

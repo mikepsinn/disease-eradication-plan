@@ -1,6 +1,7 @@
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ```{python}
+#| label: fig-treaty-contributions
 #| fig-cap: "Projected annual contributions to a 1% Treaty Fund from top military spenders, based on a 1% reallocation of their military budgets."
 # --- Imports ---
 
