@@ -45,7 +45,7 @@ A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247.3 billion in
   - Phase 2: $3.5B (43.2%)
   - Phase 3: $2.6B (32.1%). **NIH covers only 3.7-4.3% of Phase 3 costs**, leaving completion to industry, which only funds trials with patent-protected profit potential.
   - Other/unclassified: $0.5B (6.2%) for cross-phase overhead, pilot studies, and trials not classified to a single phase
-  - Pragmatic trials [@pragmatic-trials-cost-advantage] (30x cheaper): Severely underfunded despite proven efficiency
+  - Pragmatic trials [@pragmatic-trials-cost-advantage] ({{< var recovery_trial_cost_reduction_factor >}} cheaper per patient): Severely underfunded despite proven efficiency
 
 :::
 
@@ -61,7 +61,7 @@ But independent trials comparing drugs head-to-head? Those are terrifying. They 
 
 The revolving door helps. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics. It's not a conspiracy. Conspiracies require secrecy. This is all public. It's just that everyone involved happens to benefit from the same terrible outcome, purely by coincidence, repeatedly, for decades. On Wishonia, we have a word for this. The word is "conspiracy." The difference between a conspiracy and a system is whether the participants need to meet in a dark room. These people meet in conference rooms with catering. The outcome is identical.
 
-Basic research produces publications. Publications produce tenure. Tenure produces more grants. Nobody in this cycle needs anyone to get better. They need papers. Papers are the currency of academic science. Cures are a byproduct that occasionally happens when someone forgets to optimize for papers and accidentally optimizes for results instead. This has happened approximately 50 times per year out of 2.5 million papers. The rest of the papers cite each other.
+Basic research produces publications. Publications produce tenure. Tenure produces more grants. Nobody in this cycle needs anyone to get better. They need papers. Papers are the currency of academic science. Cures are a byproduct that occasionally happens when someone forgets to optimize for papers and accidentally optimizes for results instead. This has happened approximately {{< var current_drug_approvals_per_year_nounit >}} times per year out of 2.5 million papers. The rest of the papers cite each other.
 
 The {{< var nih_clinical_trials_spending_pct >}} allocation isn't a mystery. It's a business model.
 
@@ -91,7 +91,7 @@ When you misallocate the vast majority of a {{< var nih_annual_budget >}} annual
 
 ### Cost Per QALY (Quality-Adjusted Life Year)
 
-The standard NIH portfolio produces one QALY for {{< var nih_standard_research_cost_per_qaly >}} {{< var nih_standard_research_cost_per_qaly_cite >}} (and that's being generous). Pragmatic platform trials produce one QALY for {{< var pragmatic_trial_cost_per_qaly >}}. Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH portfolio. The ADAPTABLE trial proved pragmatic trials cost 30x less than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_total_cost >}} vs $420M). Same science. Fewer catered meetings. Same number of patients helped. Fewer conference rooms rented.
+The standard NIH portfolio produces one QALY for {{< var nih_standard_research_cost_per_qaly >}} {{< var nih_standard_research_cost_per_qaly_cite >}} (and that's being generous). Pragmatic platform trials produce one QALY for {{< var pragmatic_trial_cost_per_qaly >}}. Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH portfolio. The ADAPTABLE trial proved pragmatic trials cost {{< var dfda_trial_cost_reduction_factor >}} less per patient than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}). Same science. Fewer catered meetings. Same number of patients helped. Fewer conference rooms rented.
 
 ![One method saves lives efficiently. The other publishes papers expensively. You're currently funding the papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-cost-per-qaly-bw-academic.jpg)
 
@@ -99,7 +99,7 @@ The standard NIH portfolio produces one QALY for {{< var nih_standard_research_c
 
 Annual opportunity cost: approximately 100 million QALYs and approximately 7 million death-equivalents per year. Even the most conservative estimate: approximately 10 million QALYs and approximately 700,000 preventable deaths annually.
 
-For every dollar spent on pragmatic trials producing QALYs, the NIH spends $12,500 to achieve the same result. You are operating at 0.008% of your potential capacity to save lives. If your car ran at 0.008% efficiency, it would move one inch per gallon. If your heart pumped at 0.008% efficiency, you'd be dead before finishing this sentence. Your medical research system runs at 0.008% efficiency, and you gave it a raise. You gave it a raise and a new building. The building has a cafeteria.
+The efficiency gap is {{< var pragmatic_vs_nih_efficiency_multiplier >}}. For every dollar spent on pragmatic trials producing QALYs, the NIH spends that many dollars to achieve the same result. If your car ran at 0.008% efficiency, it would move one inch per gallon. If your heart pumped at 0.008% efficiency, you'd be dead before finishing this sentence. Your medical research system runs at 0.008% efficiency, and you gave it a raise. You gave it a raise and a new building. The building has a cafeteria.
 
 ## The Translation Crisis: All Theory, No Medicine
 
@@ -113,7 +113,7 @@ The NIH is, by its own metrics, a publishing house that occasionally dabbles in 
 
 ### Plenty of Knowledge. No Translation.
 
-About 5% of patients have participated in clinical trials [@clinical-trial-patient-participation-rate]. About 50% would participate if invited [@patient-willingness-clinical-trials]. About 9-11% have ever been invited [@patient-willingness-clinical-trials]. Half of all patients would join a trial if asked. Almost nobody asks. Your species has a room full of volunteers holding their hands up, and a system that looked at the room and decided to study the clipboard instead. The clipboard is very well-studied. It has been studied for decades. Multiple papers have been written about the clipboard. The volunteers are still holding their hands up.
+About 5% of patients have participated in clinical trials [@clinical-trial-patient-participation-rate]. About {{< var patient_willingness_trial_participation_pct >}} would participate if invited [@patient-willingness-clinical-trials]. About 9-11% have ever been invited [@patient-willingness-clinical-trials]. Nearly half of all patients would join a trial if asked. Almost nobody asks. Your species has a room full of volunteers holding their hands up, and a system that looked at the room and decided to study the clipboard instead. The clipboard is very well-studied. It has been studied for decades. Multiple papers have been written about the clipboard. The volunteers are still holding their hands up.
 
 Understanding disease and curing disease are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. The NIH chose microscopes. It chose them 50 years ago and has not reconsidered since, because reconsidering would require a committee, and the committee would need funding, and the funding would come from the same budget that's already 96.7% allocated to things that aren't curing disease, and so the committee would conclude that committees are important, and the microscopes would stay.
 
@@ -125,7 +125,7 @@ The NIH claims to produce "public goods" like open science and training. What it
 
 Taxpayers funded research behind 99% of new drugs [@nih-funded-approved-drugs] (356 drugs, 2010-2019). Industry patents the winners. The public pays again through high drug prices. When research leads to a dead end, the public eats the loss. You pay for the lottery ticket. They cash the winnings. You'd think someone would have mentioned this arrangement before now, and someone has, many times, but the people who cash the winnings also fund the campaigns of the people who could change the arrangement, so the arrangement continues.
 
-The only things the NIH *should* fund are things private companies *cannot* profitably fund: open pragmatic trial platforms that are 30x cheaper than traditional trials [@pragmatic-trials-cost-advantage] yet receive minimal NIH funding, repurposing of generic drugs (4,700+ clinically-tested compounds [@drug-repurposing-hub-collection] where no patent means no profit means no interest), and comparative effectiveness data from head-to-head trials revealing which drugs actually work best (pharma's nightmare, your potential salvation). These are the only things the NIH should be funding. Instead, the NIH explicitly avoids them to "not crowd out industry." Translation: "We won't run the trials that would lower drug prices, because the people who set drug prices asked us nicely." They asked nicely and also spent {{< var defense_lobbying_annual >}} on lobbying, but the niceness was noted.
+The only things the NIH *should* fund are things private companies *cannot* profitably fund: open pragmatic trial platforms that are {{< var recovery_trial_cost_reduction_factor >}} cheaper per patient than traditional trials [@recovery-trial-82x-cost-reduction] yet receive minimal NIH funding, repurposing of generic drugs (4,700+ clinically-tested compounds [@drug-repurposing-hub-collection] where no patent means no profit means no interest), and comparative effectiveness data from head-to-head trials revealing which drugs actually work best (pharma's nightmare, your potential salvation). These are the only things the NIH should be funding. Instead, the NIH explicitly avoids them to "not crowd out industry." Translation: "We won't run the trials that would lower drug prices, because the people who set drug prices asked us nicely." They asked nicely and also spent {{< var defense_lobbying_annual >}} on lobbying, but the niceness was noted.
 
 ## The Patient Disconnect: Zero Correlation with Health Outcomes
 
