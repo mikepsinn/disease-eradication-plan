@@ -1,11 +1,11 @@
-**Sensitivity Indices for Total Economic Burden of Disease Globally**
+**Sensitivity Indices for Annual Welfare Cost of Avoidable Disease**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Annual Economic Value of Human Life Lost to Disease (USD/year) | 0.8628 | Strong driver |
-| Global Annual Direct Medical Costs of Disease (USD/year) | 0.0915 | Minimal effect |
-| Global Annual Productivity Loss from Disease (USD/year) | 0.0458 | Minimal effect |
+| Standard Economic Value per QALY (USD/QALY) | 0.6906 | Strong driver |
+| Eventually Avoidable DALY Percentage (percentage) | 0.4534 | Moderate driver |
+| Global Annual DALY Burden (DALYs/year) | 0.2031 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -245,6 +245,26 @@ Humans find the 20% cap suspicious. No government budget in history has a lower 
 
 All philanthropy combined is a rounding error compared to government budgets (a very generous rounding error, but still). A massive campaign would cannibalize donations from health charities already doing critical work. You'd be stealing from cancer research to fund cancer research, which is impressively pointless even by your standards. The goal is tapping the multi-trillion dollar stream of wasted government spending, not reshuffling the charity tip jar.
 
+## "84 Quadrillion Dollars Is a Made-Up Number"
+
+**Objection**: "No number with that many zeros can be real. You're just multiplying big things together to get a big answer."
+
+Start with what disease costs per year. The WHO says the world loses {{< var global_annual_daly_burden >}} DALYs annually. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At {{< var standard_economic_qaly_value_usd >}}/QALY (the standard rate used by EPA, OECD, WHO, and NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
+
+Now multiply by how many years earlier treatments arrive (~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}):
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value_latex >}}
+
+That is where the quadrillion comes from. Two WHO data points, one standard QALY price, and a timeline shift.
+
+"But {{< var global_disease_economic_burden_annual >}}/year is more than global GDP ({{< var global_gdp_2025 >}})!" Yes. GDP measures market transactions. It does not measure the value of not being dead, not being in pain, and not watching your children die of treatable diseases. Health economists have measured this for decades. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is what governments already use when deciding whether to approve drugs, build highways, or regulate pollution. I did not invent the number. I multiplied it by the number of sick people (which is also not my fault).
+
+The only debatable input is whether the timeline shift is really ~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years.
+
+**"Won't AI drug discovery shrink that timeline anyway?"**
+
+AI discovers candidates. Candidates still need clinical trials. The current system has {{< var current_trial_slots_available >}} trial slots globally, producing {{< var new_disease_first_treatments_per_year >}}. AI does not create more trial slots. It creates more candidates competing for the same slots. More candidates plus the same bottleneck equals the same (or longer) queue. The {{< var new_disease_first_treatments_per_year >}} rate measures regulatory throughput, not discovery speed. This intervention removes the throughput bottleneck ({{< var dfda_trial_capacity_multiplier >}} capacity via pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient). AI and breakthrough technologies are complementary, not substitutes.
+
 ## "How Do You Prevent Waste?"
 
 **Objection**: "How do you ensure money helps patients instead of funding bureaucracy?"

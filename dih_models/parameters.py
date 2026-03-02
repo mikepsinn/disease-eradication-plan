@@ -6136,12 +6136,12 @@ GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL = Parameter(
     latex_symbol=r"Spending_{symptom}",  # LaTeX symbol for equations
 )  # $8.2 trillion annually
 
-# Disease cost breakdown components
+# Disease cost breakdown components (standalone market-cost parameters, NOT summed into welfare burden)
 GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL = Parameter(
     9_900_000_000_000,
     source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
-    description="Direct medical costs of disease globally (treatment, hospitalization, medication)",
+    description="Direct medical costs of disease globally (treatment, hospitalization, medication). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
     display_name="Global Annual Direct Medical Costs of Disease",
     unit="USD/year",
     keywords=["9.9t", "medical", "healthcare", "treatment", "hospitalization"],
@@ -6154,7 +6154,7 @@ GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
     5_000_000_000_000,
     source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
     source_type="external",
-    description="Annual productivity loss from disease globally (absenteeism, reduced output)",
+    description="Annual productivity loss from disease globally (absenteeism, reduced output). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
     display_name="Global Annual Productivity Loss from Disease",
     unit="USD/year",
     keywords=["5.0t", "productivity", "lost work", "economic loss", "absenteeism"],
@@ -6163,45 +6163,35 @@ GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
     latex_symbol=r"Loss_{productivity}",  # LaTeX symbol for equations
 )  # $5 trillion annually
 
-GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL = Parameter(
-    94_200_000_000_000,
-    source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
-    source_type="external",
-    description="Economic value of human life lost to disease annually (mortality valuation)",
-    display_name="Global Annual Economic Value of Human Life Lost to Disease",
-    unit="USD/year",
-    keywords=["94.2t", "human life", "mortality", "deaths", "dalys", "life value"],
-    distribution="lognormal",
-    confidence_interval=(66_000_000_000_000, 132_000_000_000_000),  # ±30%
-    latex_symbol=r"Loss_{life,disease}",  # LaTeX symbol for equations
-)  # $94.2 trillion annually
-
+# Annual welfare cost of disease: DALYs × avoidable % × QALY value
+# Uses consistent QALY valuation ($150K) matching all other health impact calculations.
+# Medical costs and productivity losses are standalone market-cost metrics, NOT summed here,
+# because QALY valuation already captures productivity and healthcare welfare losses.
 GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL = Parameter(
-    GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL + GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL + GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL,
-    source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
+    float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
     source_type="calculated",
-    description="Total economic burden of disease globally (medical + productivity + mortality)",
-    display_name="Total Economic Burden of Disease Globally",
+    description="Annual welfare cost of avoidable disease globally. Calculated as global DALY burden × eventually avoidable percentage × standard QALY value ($150K). Uses consistent QALY valuation matching all other health impact calculations. Medical costs and productivity losses are NOT added separately to avoid double-counting (QALY valuation already captures these welfare components).",
+    display_name="Annual Welfare Cost of Avoidable Disease",
     unit="USD/year",
-    formula="MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE",
-    keywords=["109.0t", "109.1t", "deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly"],
-    inputs=['GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL', 'GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL', 'GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL'],
-    compute=lambda ctx: ctx["GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL"] + ctx["GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL"] + ctx["GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL"],
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STANDARD_ECONOMIC_QALY_VALUE_USD",
+    keywords=["400t", "deadweight loss", "economic damage", "welfare", "daly", "qaly", "worldwide", "yearly"],
+    inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
     latex_symbol=r"Burden_{disease}",  # LaTeX symbol for equations
-)  # $109.1 trillion annually
+)  # ~$400 trillion annually (2.88B DALYs × 92.6% avoidable × $150K/QALY)
 
 GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
-    GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST + GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL + GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
+    GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST + GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
     source_type="calculated",
-    description="Total annual cost of war and disease with all externalities (direct + indirect costs for both)",
-    display_name="Total Annual Cost of War and Disease with All Externalities",
+    description="Total annual welfare cost of war and disease. Disease burden uses DALY-based welfare valuation; war costs use direct + indirect economic costs. Symptomatic treatment costs NOT added separately (already captured in QALY valuation).",
+    display_name="Total Annual Cost of War and Disease",
     unit="USD/year",
-    formula="WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN",
+    formula="WAR_TOTAL_COSTS + DISEASE_WELFARE_BURDEN",
     keywords=["deadweight loss", "economic damage", "productivity loss", "gdp loss", "worldwide", "yearly", "conflict"],
-    inputs=['GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL', 'GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL'],
-    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] + ctx["GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL"] + ctx["GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL"],
+    inputs=['GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL'],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] + ctx["GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL"],
     latex_symbol=r"Cost_{health+war}",  # LaTeX symbol for equations
-)  # $128.6 trillion = $11.355T (war with externalities) + $8.2T + $109T
+)  # ~$411T = $11.355T (war with externalities) + ~$400T (disease welfare burden)
 
 # Defense and research participation rates
 DEFENSE_SECTOR_RETENTION_PCT = Parameter(

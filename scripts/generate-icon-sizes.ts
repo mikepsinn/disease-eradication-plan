@@ -3,7 +3,7 @@ import sharp from 'sharp';
 import path from 'path';
 import fs from 'fs';
 
-const INPUT_FILE = 'dfda-logo.png';
+const INPUT_FILE = 'assets/images/dfda-logo.png';
 const OUTPUT_DIR = 'assets/icons';
 
 const SIZES = {

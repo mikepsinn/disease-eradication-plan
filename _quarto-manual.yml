@@ -46,7 +46,7 @@ book:
   navbar:
     right:
       - text: "GET THE BOOK"
-        href: links.qmd
+        href: knowledge/links.qmd
       - text: "VOTE"
         href: https://WarOnDisease.org
       - icon: youtube
@@ -82,8 +82,8 @@ book:
   chapters:
     - text: "Start Here"
       href: index.qmd  # ~19p
-    - text: "Get the Book"
-      href: links.qmd
+    - text: "Get the Manual"
+      href: knowledge/links.qmd
 
     - part: "The Problem"
       chapters:
@@ -276,7 +276,7 @@ metadata:
         status: target
         url: ""
 
-# Book distribution links (used by links_generator.py -> links.qmd)
+# Book distribution links (used by links_generator.py -> knowledge/links.qmd)
 links:
   read:
     - label: "Read Online"

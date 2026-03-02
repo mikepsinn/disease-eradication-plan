@@ -52,7 +52,7 @@ With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could f
 
 ## The Cost of Taking Your Time
 
-Disease costs humanity **{{< var global_disease_economic_burden_annual >}} annually** [@disease-economic-burden-109t], comparable to global GDP ($101 trillion [@global-gdp]). The number sounds wrong because your economists spent centuries measuring productivity without accounting for the humans who stopped being productive on account of being dead. The missing piece is DALYs (Disability-Adjusted Life Years): healthy years deleted by disease. Globally: **{{< var global_annual_daly_burden_nounit >}} DALYs annually** [@ihme-gbd-2021].
+Disease costs humanity **{{< var global_disease_economic_burden_annual >}} annually** in welfare losses ({{< var global_annual_daly_burden >}} avoidable DALYs at {{< var standard_economic_qaly_value_usd >}}/QALY [@ihme-gbd-2021]). The number is larger than global GDP ({{< var global_gdp_2025 >}}) because GDP measures market transactions, not the value of being alive and not in pain. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is the standard rate governments already use when deciding whether to approve drugs, build highways, or regulate pollution.
 
 Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years over the full lag period (cumulative across all deaths and disability during the delay, not a single year's burden). The regulatory lag is not a safety feature. It is a waiting room where people die. You just gave it a nicer name.
 

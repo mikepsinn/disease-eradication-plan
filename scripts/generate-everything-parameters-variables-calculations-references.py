@@ -1287,8 +1287,8 @@ def main():
     logger.debug("[*] Generating footer HTML...")
     footer_html_path = generate_footer_html(project_root)
 
-    # Generate links.qmd (Linktree-style page) from YAML config
-    logger.debug("[*] Generating links.qmd...")
+    # Generate knowledge/links.qmd (Linktree-style page) from YAML config
+    logger.debug("[*] Generating knowledge/links.qmd...")
     links_qmd_path = generate_links_qmd(project_root)
 
     # Generate README.md from QMD sources with variables replaced

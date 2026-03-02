@@ -54,8 +54,7 @@ book:
   description: 'Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery'
   site-url: https://manual.WarOnDisease.org
   chapters:
-    - text: "How to End War and Disease (for Busy People)"
-      href: index.qmd
+    - index.qmd
 
     - part: "The Problem"
       chapters:
@@ -215,6 +214,7 @@ format:
     author:
       - "By Wishonia"
       - "Translated by Mike P. Sinn"
+    fig-format: png
     toc: true
     toc-depth: 1
     number-sections: false
@@ -224,6 +224,7 @@ format:
     classoption: [twoside]
     institute: "Institute for Accelerated Medicine"
     echo: false
+    fig-format: png
     toc: false
     number-sections: false
     colorlinks: false  # Print-friendly: no colored links

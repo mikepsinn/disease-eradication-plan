@@ -114,7 +114,7 @@ metadata:
   open-graph: true
 
 # External links (single source of truth for footer, links page, etc.)
-# Generated into: links.qmd, generated-footer.html
+# Generated into: knowledge/links.qmd, generated-footer.html
 # Run: npm run generate:everything
 links:
   follow:

@@ -43,11 +43,7 @@ If you ran a business like this, you'd go bankrupt. When humanity does it, we ca
 
 ## On The Most Absurd Disparity in Human History
 
-The disease burden: {{< var global_disease_economic_burden_annual >}} annually
-
-What humans spend trying to cure disease: Look at this chart and try not to laugh or cry.
-
-{{< include ../figures/disease-vs-curing-costs-column-chart.qmd >}}
+The disease burden: {{< var global_disease_economic_burden_annual >}} annually ({{< var global_annual_daly_burden >}} avoidable DALYs at {{< var standard_economic_qaly_value_usd >}}/QALY).
 
 The problem costs {{< var global_disease_economic_burden_annual >}}. Humans spend {{< var global_med_research_spending >}} trying to solve it.
 

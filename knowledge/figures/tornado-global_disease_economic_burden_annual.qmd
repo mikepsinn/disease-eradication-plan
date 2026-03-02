@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Total Economic Burden of Disease Globally"
+display_name = "Annual Welfare Cost of Avoidable Disease"
 
 # Baseline and units
 
-baseline = 109100000000000.0
+baseline = 400152130131680.9
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL', 'GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL', 'GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL']
-driver_labels = ['Global Annual Economic Value of Human Life Lost to Disease', 'Global Annual Direct Medical Costs of Disease', 'Global Annual Productivity Loss from Disease']
-impacts_low = [-28200000000000.0, -2900000000000.0, -1500000000000.0]
-impacts_high = [37800000000000.0, 4100000000000.0, 2000000000000.0]
+drivers = ['EVENTUALLY_AVOIDABLE_DALY_PCT', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'GLOBAL_ANNUAL_DALY_BURDEN']
+driver_labels = ['Eventually Avoidable DALY Percentage', 'Standard Economic Value per QALY', 'Global Annual DALY Burden']
+impacts_low = [-184152130131680.88, -80030426026336.19, -20841256777691.688]
+impacts_high = [23207869868319.125, 80030426026336.12, 20841256777691.688]
 
 # Convert deltas to absolute values (baseline + delta)
 

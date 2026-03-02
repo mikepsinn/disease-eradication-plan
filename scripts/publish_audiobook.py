@@ -24,6 +24,7 @@ Usage:
     python scripts/publish_audiobook.py --audible-only          # Only run Audible export
     python scripts/publish_audiobook.py --keyframes-only        # Stop after keyframes
     python scripts/publish_audiobook.py --ken-burns             # Ken Burns stills video (no Veo)
+    python scripts/publish_audiobook.py --combine              # Include combined audiobook MP3/M4B
     python scripts/publish_audiobook.py --list                  # List chapters and exit
     python scripts/publish_audiobook.py --dry-run               # Text dry-run only
 """
@@ -194,6 +195,7 @@ def main():
     parser.add_argument("--target-rms", type=float, default=-20.0, help="Target RMS for Audible export (default: -20.0 dB)")
     parser.add_argument("--keyframes-only", action="store_true", help="Stop after keyframe generation (skip Veo animation)")
     parser.add_argument("--ken-burns", action="store_true", help="Generate Ken Burns stills video (pan/zoom on keyframes, no Veo)")
+    parser.add_argument("--combine", action="store_true", help="Combine chapters into single audiobook MP3/M4B (off by default)")
     args = parser.parse_args()
 
     # --ken-burns implicitly enables --video
@@ -248,6 +250,8 @@ def main():
     audio_args = list(shared)
     if args.force:
         audio_args.append("--force")
+    if not args.combine:
+        audio_args.append("--no-combine")
 
     if not run_step("Generate audio + MP3s + RSS", "generate_audiobook.py", audio_args):
         sys.exit(1)

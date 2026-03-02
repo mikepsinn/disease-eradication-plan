@@ -928,7 +928,7 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         "index",        # index*.qmd
     }
     required_extensions = {".css", ".tex", ".csl", ".png", ".ico", ".toml"}
-    required_files = {"dfda-logo.png", "favicon.ico", "pyproject.toml", "netlify.toml"}
+    required_files = {"favicon.ico", "pyproject.toml", "netlify.toml"}
 
     # Ignore patterns for subdirectories (e.g., __pycache__ inside dih_models)
     subdir_ignore = {"__pycache__", ".git", "node_modules", ".venv"}

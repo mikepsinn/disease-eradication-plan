@@ -3,7 +3,7 @@
 Links Page Generator
 ====================
 
-Generates links.qmd (Linktree-style page) from YAML config data.
+Generates knowledge/links.qmd (Linktree-style page) from YAML config data.
 Reads book distribution links from _quarto-manual.yml and social/action
 links from _quarto-shared-defaults.yml.
 
@@ -12,7 +12,7 @@ Usage:
     generate_links_qmd(project_root)
 
 Output:
-    links.qmd
+    knowledge/links.qmd
 """
 
 import logging
@@ -113,14 +113,14 @@ def _render_section(heading: str, links: List[Dict[str, Any]]) -> str:
 
 def generate_links_qmd(project_root: Path) -> Path:
     """
-    Generate links.qmd from YAML config data.
+    Generate knowledge/links.qmd from YAML config data.
 
     Reads:
       - _quarto-manual.yml: links.read, links.buy, links.listen
       - _quarto-shared-defaults.yml: links.action, links.follow
 
     Returns:
-        Path to the generated links.qmd file
+        Path to the generated knowledge/links.qmd file
     """
     manual_config = load_quarto_config(project_root / "_quarto-manual.yml")
     shared_config = load_quarto_config(project_root / "_quarto-shared-defaults.yml")
@@ -147,11 +147,13 @@ def generate_links_qmd(project_root: Path) -> Path:
     )
 
     content = f"""---
-title: "Get the Book"
+title: "Get the Manual"
 description: "Read, buy, or listen to 'How to End War and Disease' - available free online, in print, ebook, and audiobook."
 published: true
 page-layout: full
 toc: false
+aliases:
+  - /links
 ---
 
 ```{{=html}}
@@ -173,7 +175,7 @@ toc: false
 ```
 """
 
-    output_path = project_root / "links.qmd"
+    output_path = project_root / "knowledge" / "links.qmd"
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(content)
 

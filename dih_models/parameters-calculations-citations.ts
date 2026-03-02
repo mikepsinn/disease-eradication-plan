@@ -770,29 +770,18 @@ export const GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL: Parameter = {
   value: 9900000000000.0,
   unit: "USD/year",
   displayName: "Global Annual Direct Medical Costs of Disease",
-  description: "Direct medical costs of disease globally (treatment, hospitalization, medication)",
+  description: "Direct medical costs of disease globally (treatment, hospitalization, medication). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
   sourceType: "external",
   sourceRef: "disease-economic-burden-109t",
   confidence: "high",
   confidenceInterval: [7000000000000.0, 14000000000000.0],
 };
 
-export const GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL: Parameter = {
-  value: 94200000000000.0,
-  unit: "USD/year",
-  displayName: "Global Annual Economic Value of Human Life Lost to Disease",
-  description: "Economic value of human life lost to disease annually (mortality valuation)",
-  sourceType: "external",
-  sourceRef: "disease-economic-burden-109t",
-  confidence: "high",
-  confidenceInterval: [66000000000000.0, 132000000000000.0],
-};
-
 export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
   value: 5000000000000.0,
   unit: "USD/year",
   displayName: "Global Annual Productivity Loss from Disease",
-  description: "Annual productivity loss from disease globally (absenteeism, reduced output)",
+  description: "Annual productivity loss from disease globally (absenteeism, reduced output). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.",
   sourceType: "external",
   sourceRef: "disease-economic-burden-109t",
   confidence: "high",
@@ -3065,15 +3054,14 @@ export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
 };
 
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
-  value: 109100000000000.0,
+  value: 400152130131680.9,
   unit: "USD/year",
-  displayName: "Total Economic Burden of Disease Globally",
-  description: "Total economic burden of disease globally (medical + productivity + mortality)",
+  displayName: "Annual Welfare Cost of Avoidable Disease",
+  description: "Annual welfare cost of avoidable disease globally. Calculated as global DALY burden × eventually avoidable percentage × standard QALY value ($150K). Uses consistent QALY valuation matching all other health impact calculations. Medical costs and productivity losses are NOT added separately to avoid double-counting (QALY valuation already captures these welfare components).",
   sourceType: "calculated",
-  sourceRef: "disease-economic-burden-109t",
   confidence: "high",
-  formula: "MEDICAL_COSTS + PRODUCTIVITY_LOSS + MORTALITY_VALUE",
-  latex: "\\begin{gathered}\nBurden_{disease} \\\\\n= Cost_{medical,direct} + Loss_{life,disease} \\\\\n+ Loss_{productivity} \\\\\n= \\$9.9T + \\$94.2T + \\$5T \\\\\n= \\$109T\n\\end{gathered}",
+  formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STANDARD_ECONOMIC_QALY_VALUE_USD",
+  latex: "\\begin{gathered}\nBurden_{disease} \\\\\n= DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times Value_{QALY} \\\\\n= 2.88B \\times 92.6\\% \\times \\$150K \\\\\n= \\$400T\n\\end{gathered}",
 };
 
 export const GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
@@ -3121,14 +3109,14 @@ export const GLOBAL_POLITICAL_REFORM_INVESTMENT: Parameter = {
 };
 
 export const GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL: Parameter = {
-  value: 128657100000000.0,
+  value: 411509230131680.9,
   unit: "USD/year",
-  displayName: "Total Annual Cost of War and Disease with All Externalities",
-  description: "Total annual cost of war and disease with all externalities (direct + indirect costs for both)",
+  displayName: "Total Annual Cost of War and Disease",
+  description: "Total annual welfare cost of war and disease. Disease burden uses DALY-based welfare valuation; war costs use direct + indirect economic costs. Symptomatic treatment costs NOT added separately (already captured in QALY valuation).",
   sourceType: "calculated",
   confidence: "high",
-  formula: "WAR_TOTAL_COSTS + SYMPTOMATIC_TREATMENT + DISEASE_BURDEN",
-  latex: "\\begin{gathered}\nCost_{health+war} = Cost_{war,total} + Burden_{disease} + Spending_{symptom} = \\$11.4T + \\$109T + \\$8.2T = \\$129T\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Burden_{disease} = Cost_{medical,direct} + Loss_{life,disease} + Loss_{productivity} = \\$9.9T + \\$94.2T + \\$5T = \\$109T\n\\end{gathered}",
+  formula: "WAR_TOTAL_COSTS + DISEASE_WELFARE_BURDEN",
+  latex: "\\begin{gathered}\nCost_{health+war} = Cost_{war,total} + Burden_{disease} = \\$11.4T + \\$400T = \\$412T\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Burden_{disease} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times Value_{QALY} = 2.88B \\times 92.6\\% \\times \\$150K = \\$400T\n\\end{gathered}",
 };
 
 export const HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO: Parameter = {
@@ -3204,14 +3192,14 @@ export const LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE: Parameter = {
 };
 
 export const MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN: Parameter = {
-  value: 0.0005246504079448395,
+  value: 0.00016403034259620457,
   unit: "rate",
   displayName: "Medical Research Spending as Percentage of Total Disease Burden",
   description: "Medical research spending as percentage of total disease burden",
   sourceType: "calculated",
   confidence: "high",
   formula: "MED_RESEARCH ÷ TOTAL_BURDEN",
-  latex: "\\begin{gathered}\nPct_{RD:burden} = \\frac{Spending_{RD}}{Cost_{health+war}} = \\frac{\\$67.5B}{\\$129T} = 0.0525\\%\n\\\\[0.5em]\n\\text{where } Cost_{health+war} = Cost_{war,total} + Burden_{disease} + Spending_{symptom} = \\$11.4T + \\$109T + \\$8.2T = \\$129T\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Burden_{disease} = Cost_{medical,direct} + Loss_{life,disease} + Loss_{productivity} = \\$9.9T + \\$94.2T + \\$5T = \\$109T\n\\end{gathered}",
+  latex: "\\begin{gathered}\nPct_{RD:burden} = \\frac{Spending_{RD}}{Cost_{health+war}} = \\frac{\\$67.5B}{\\$412T} = 0.0164\\%\n\\\\[0.5em]\n\\text{where } Cost_{health+war} = Cost_{war,total} + Burden_{disease} = \\$11.4T + \\$400T = \\$412T\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Burden_{disease} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times Value_{QALY} = 2.88B \\times 92.6\\% \\times \\$150K = \\$400T\n\\end{gathered}",
 };
 
 export const MILITARY_TO_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
@@ -5150,7 +5138,6 @@ export const parameters = {
   GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_DISEASE_DEATHS_DAILY,
   GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL,
-  GLOBAL_DISEASE_HUMAN_LIFE_VALUE_LOSS_ANNUAL,
   GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL,
   GLOBAL_GDP_2025,
   GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
@@ -7382,8 +7369,8 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 469,
-  external: 185,
+  total: 468,
+  external: 184,
   calculated: 185,
   definitions: 99,
   citations: 134,

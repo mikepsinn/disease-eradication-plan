@@ -239,7 +239,7 @@ The bottleneck isn't basic research or laboratory science. It's **clinical trial
 
 - **Symptomatic treatment**: {{< var global_symptomatic_disease_treatment_annual >}} {{< var global_symptomatic_disease_treatment_annual_cite >}}/year (managing symptoms, not fixing root causes)
 
-- **Disease burden**: {{< var global_disease_economic_burden_annual >}}/year in lost productivity, premature death, disability
+- **Disease burden**: {{< var global_disease_economic_burden_annual >}}/year ({{< var global_annual_daly_burden >}} avoidable DALYs at {{< var standard_economic_qaly_value_usd >}}/QALY)
 
 {{< var global_disease_economic_burden_annual_latex >}}
 
@@ -1826,7 +1826,7 @@ The {{< var treaty_reduction_pct >}} Treaty creates positive economic incentives
 
 - **Military sector**: Keeps {{< var defense_sector_retention_pct >}} of current budget 
 - **Pharmaceutical industry**: Trial costs shift from expense to revenue (patients fund participation); research capacity increases {{< var dfda_trial_capacity_multiplier >}}
-- **Insurance companies**: Net savings from reduced disease burden [@disease-economic-burden-109t] ({{< var global_disease_economic_burden_annual >}} current economic cost)
+- **Insurance companies**: Net savings from reduced disease burden ({{< var global_disease_economic_burden_annual >}} current annual welfare cost)
 - **Healthcare providers**: More treatment options; earlier access to effective therapies
 - **Patients**: Access to clinical trials as healthcare and new treatments years or decades sooner
 - **Taxpayers**: Net reduction in taxes and healthcare costs through improved R&D efficiency
@@ -2111,13 +2111,27 @@ The {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} estimate aggregates 
 
 ![With more clinical trials, we could find cures 400 years faster. Currently we prefer to wait, like a very patient person dying.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-qaly-calculation-uncertainties-bw-academic.jpg)
 
-**Addressing the "Quadrillion Dollar" Assumption**: The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} derives from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift in disease eradication.
+**Addressing the "Quadrillion Dollar" Assumption**: The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} derives from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift in disease eradication. The number sounds absurd until you build it from its components.
+
+**Start with the annual cost of disease.** The WHO reports {{< var global_annual_daly_burden >}} DALYs lost globally per year. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At the standard {{< var standard_economic_qaly_value_usd >}}/QALY (OECD, EPA, WHO, NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
+
+**Now multiply by the timeline shift** (~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years earlier that treatments arrive on average):
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value_latex >}}
+
+That is where the quadrillion comes from. Two WHO data points, one standard QALY price, and a timeline shift.
+
+The annual figure ({{< var global_disease_economic_burden_annual >}}) is larger than global GDP ({{< var global_gdp_2025 >}}). This is consistent with health economics methodology because DALY valuation captures welfare losses that GDP does not measure: pain, disability, premature death, and lost potential. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is the standard used by OECD, EPA, WHO, and NICE for policy evaluation. The {{< var global_annual_daly_burden >}} DALYs/year comes directly from WHO Global Burden of Disease data. Neither input is a model assumption.
+
+The only debatable input is whether the timeline shift is really ~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years.
 
 **How the timeline shift is calculated:**
 
-1. **Discovery acceleration (~{{< var dfda_trial_capacity_treatment_acceleration_years >}} on average)**: With {{< var dfda_trial_capacity_multiplier >}} trial capacity, treatments are discovered ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier on average. This is based on therapeutic space exploration: {{< var diseases_without_effective_treatment >}} lack treatment, with ~{{< var drug_disease_combinations_possible >}} drug-disease combinations untested. At current exploration rate (~15 diseases/year getting first treatments), systematically testing this space would take {{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, exploration completes in ~{{< var dfda_queue_clearance_years >}}. Average disease receives treatment halfway through exploration period, yielding ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} acceleration.
+1. **Discovery acceleration (~{{< var dfda_trial_capacity_treatment_acceleration_years >}} on average)**: With {{< var dfda_trial_capacity_multiplier >}} trial capacity, treatments are discovered ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier on average. This is based on therapeutic space exploration: {{< var diseases_without_effective_treatment >}} lack treatment, with ~{{< var drug_disease_combinations_possible >}} drug-disease combinations untested. At current exploration rate (~{{< var new_disease_first_treatments_per_year_nounit >}} diseases/year getting first treatments), systematically testing this space would take {{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, exploration completes in ~{{< var dfda_queue_clearance_years >}}. Average disease receives treatment halfway through exploration period, yielding ~{{< var dfda_trial_capacity_treatment_acceleration_years >}} acceleration.
 
 2. **Efficacy lag elimination (~{{< var efficacy_lag_years >}})**: Once a treatment is discovered, it reaches patients immediately instead of waiting ~{{< var efficacy_lag_years >}} for post-safety regulatory approval.
+
+**"Won't AI and breakthroughs shrink the status quo timeline anyway?"** No. The bottleneck is not candidate discovery; it is regulatory throughput. The current system has {{< var current_trial_slots_available >}} clinical trial slots. AI drug discovery, breakthrough technologies, and compounding biological knowledge produce more *candidates*, but candidates still must pass through the same constrained clinical trial pipeline to reach patients. More candidates competing for the same {{< var current_trial_slots_available >}} slots makes the queue longer, not shorter. The {{< var new_disease_first_treatments_per_year >}} output rate measures regulatory throughput, not discovery speed. This intervention specifically removes that bottleneck ({{< var dfda_trial_capacity_multiplier >}} capacity from pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient).
 
 **Why this estimate is still conservative:**
 

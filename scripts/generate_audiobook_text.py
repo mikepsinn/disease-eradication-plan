@@ -349,6 +349,16 @@ def generate_chapter_text(
 
     prepared = prepare_for_narration(raw_qmd, variables)
 
+    # Prepend title and description as spoken episode intro
+    intro_parts = []
+    if title:
+        intro_parts.append(title)
+    description = chapter.get('description', '')
+    if description:
+        intro_parts.append(description)
+    if intro_parts:
+        prepared = '\n\n'.join(intro_parts) + '\n\n' + prepared
+
     if not prepared or len(prepared) < 50:
         print(f"  [SKIP] Insufficient content in {qmd_path.name}")
         return None

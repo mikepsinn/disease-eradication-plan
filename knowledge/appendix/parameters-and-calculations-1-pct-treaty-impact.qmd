@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 218 parameters used in the analysis, organized by type:
+This appendix documents all 216 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 89
+- External sources (peer-reviewed): 87
 - Calculated values: 99
 - Core definitions: 30
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (89 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
+[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (87 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3749,29 +3749,26 @@ $$
 
 :::
 
-### Total Economic Burden of Disease Globally: $109T {#sec-global_disease_economic_burden_annual}
+### Annual Welfare Cost of Avoidable Disease: $400T {#sec-global_disease_economic_burden_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total economic burden of disease globally (medical + productivity + mortality)
+Annual welfare cost of avoidable disease globally. Calculated as global DALY burden × eventually avoidable percentage × standard QALY value ($150K). Uses consistent QALY valuation matching all other health impact calculations. Medical costs and productivity losses are NOT added separately to avoid double-counting (QALY valuation already captures these welfare components).
 
 **Inputs**:
 
-- [Global Annual Direct Medical Costs of Disease](#sec-global_disease_direct_medical_cost_annual) 📊: $9.9T (95% CI: $7T - $14T)
-- [Global Annual Economic Value of Human Life Lost to Disease](#sec-global_disease_human_life_value_loss_annual) 📊: $94.2T (95% CI: $66T - $132T)
-- [Global Annual Productivity Loss from Disease](#sec-global_disease_productivity_loss_annual) 📊: $5T (95% CI: $3.5T - $7T)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150K (SE: ±$30K)
 
 $$
 \begin{gathered}
 Burden_{disease} \\
-= Cost_{medical,direct} + Loss_{life,disease} \\
-+ Loss_{productivity} \\
-= \$9.9T + \$94.2T + \$5T \\
-= \$109T
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times Value_{QALY} \\
+= 2.88B \times 92.6\% \times \$150K \\
+= \$400T
 \end{gathered}
 $$
-
-**Methodology**: [@disease-economic-burden-109t]
 
 *✓ High confidence*
 
@@ -3791,24 +3788,23 @@ $$
 
 :::
 
-### Total Annual Cost of War and Disease with All Externalities: $129T {#sec-global_total_health_and_war_cost_annual}
+### Total Annual Cost of War and Disease: $412T {#sec-global_total_health_and_war_cost_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total annual cost of war and disease with all externalities (direct + indirect costs for both)
+Total annual welfare cost of war and disease. Disease burden uses DALY-based welfare valuation; war costs use direct + indirect economic costs. Symptomatic treatment costs NOT added separately (already captured in QALY valuation).
 
 **Inputs**:
 
 - [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
-- [Total Economic Burden of Disease Globally](#sec-global_disease_economic_burden_annual) 🔢: $109T
-- [Annual Global Spending on Symptomatic Disease Treatment](#sec-global_symptomatic_disease_treatment_annual) 📊: $8.2T (95% CI: $6.5T - $10T)
+- [Annual Welfare Cost of Avoidable Disease](#sec-global_disease_economic_burden_annual) 🔢: $400T
 
 $$
 \begin{gathered}
 Cost_{health+war} \\
-= Cost_{war,total} + Burden_{disease} + Spending_{symptom} \\
-= \$11.4T + \$109T + \$8.2T \\
-= \$129T
+= Cost_{war,total} + Burden_{disease} \\
+= \$11.4T + \$400T \\
+= \$412T
 \end{gathered}
 $$
 where:
@@ -3901,10 +3897,9 @@ where:
 $$
 \begin{gathered}
 Burden_{disease} \\
-= Cost_{medical,direct} + Loss_{life,disease} \\
-+ Loss_{productivity} \\
-= \$9.9T + \$94.2T + \$5T \\
-= \$109T
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times Value_{QALY} \\
+= 2.88B \times 92.6\% \times \$150K \\
+= \$400T
 \end{gathered}
 $$
 *✓ High confidence*
@@ -3995,7 +3990,7 @@ $$
 
 :::
 
-### Medical Research Spending as Percentage of Total Disease Burden: 0.0525% {#sec-medical_research_pct_of_disease_burden}
+### Medical Research Spending as Percentage of Total Disease Burden: 0.0164% {#sec-medical_research_pct_of_disease_burden}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -4004,23 +3999,23 @@ Medical research spending as percentage of total disease burden
 **Inputs**:
 
 - [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
-- [Total Annual Cost of War and Disease with All Externalities](#sec-global_total_health_and_war_cost_annual) 🔢: $129T
+- [Total Annual Cost of War and Disease](#sec-global_total_health_and_war_cost_annual) 🔢: $412T
 
 $$
 \begin{gathered}
 Pct_{RD:burden} \\
 = \frac{Spending_{RD}}{Cost_{health+war}} \\
-= \frac{\$67.5B}{\$129T} \\
-= 0.0525\%
+= \frac{\$67.5B}{\$412T} \\
+= 0.0164\%
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{health+war} \\
-= Cost_{war,total} + Burden_{disease} + Spending_{symptom} \\
-= \$11.4T + \$109T + \$8.2T \\
-= \$129T
+= Cost_{war,total} + Burden_{disease} \\
+= \$11.4T + \$400T \\
+= \$412T
 \end{gathered}
 $$
 where:
@@ -4113,10 +4108,9 @@ where:
 $$
 \begin{gathered}
 Burden_{disease} \\
-= Cost_{medical,direct} + Loss_{life,disease} \\
-+ Loss_{productivity} \\
-= \$9.9T + \$94.2T + \$5T \\
-= \$109T
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times Value_{QALY} \\
+= 2.88B \times 92.6\% \times \$150K \\
+= \$400T
 \end{gathered}
 $$
 *✓ High confidence*
@@ -7923,73 +7917,17 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 :::
 
-### Global Annual Direct Medical Costs of Disease: $9.9T {#sec-global_disease_direct_medical_cost_annual}
+### Global GDP (2025): $115T {#sec-global_gdp_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Direct medical costs of disease globally (treatment, hospitalization, medication)
+Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs as percentage of world economic output. Note: Latest IMF data shows $117T.
 
-**Source**: [@disease-economic-burden-109t]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$7T, $14T] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $7T and $14T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_disease_direct_medical_cost_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Global Annual Economic Value of Human Life Lost to Disease: $94.2T {#sec-global_disease_human_life_value_loss_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Economic value of human life lost to disease annually (mortality valuation)
-
-**Source**: [@disease-economic-burden-109t]
+**Source**: [@political-dysfunction-tax-paper-2025]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$66T, $132T] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $66T and $132T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_disease_human_life_value_loss_annual.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Global Annual Productivity Loss from Disease: $5T {#sec-global_disease_productivity_loss_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual productivity loss from disease globally (absenteeism, reduced output)
-
-**Source**: [@disease-economic-burden-109t]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$3.5T, $7T] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between $3.5T and $7T (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-global_disease_productivity_loss_annual.qmd >}}
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
