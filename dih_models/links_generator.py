@@ -98,8 +98,11 @@ def _render_link(link: Dict[str, Any]) -> str:
     primary = link.get("primary", False)
     subtitle = link.get("subtitle", "")
 
+    # Escape @ in subtitle text so Pandoc doesn't interpret as citation references
+    subtitle_escaped = subtitle.replace("@", "&#64;") if subtitle else ""
+
     cls = "link-btn primary" if primary else "link-btn"
-    sub_html = f'\n  <span class="btn-sub">{subtitle}</span>' if subtitle else ""
+    sub_html = f'\n  <span class="btn-sub">{subtitle_escaped}</span>' if subtitle_escaped else ""
     return f'<a href="{url}" class="{cls}">\n  {label}{sub_html}\n</a>'
 
 
