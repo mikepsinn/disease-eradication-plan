@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 29 | **Words:** 68,759 | **Images:** 320 | **Est. Pages:** ~435
+**Files:** 31 | **Words:** 75,325 | **Images:** 308 | **Est. Pages:** ~455
 
 #### index-manual.qmd
 **Title:** How to End War and Disease (for Busy People)
 **Description:** Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery
-**Stats:** 5,609 words | 472 lines | 11 images | ~28p
+**Stats:** 5,753 words | 474 lines | 11 images | ~29p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Human Economy
@@ -52,7 +52,7 @@
     - How This Manual Could Fix Everything
     - The Part Where Humanity Has No Choice
   - Choose Your Own Adventure
-      - Future A: You Ignore This Book
+      - Future A: You Ignore This Manual
       - Future B: You Follow Instructions
     ![Charlie Chaplin - The Great Dictator Speech](/assets/images/chaplin-great-dictator-thumbnail.png)
 
@@ -61,7 +61,7 @@
 #### knowledge/problem/nih-fails-2-institute-health.qmd
 **Title:** NIH Fails to Institute Health
 **Description:** The National Institutes of Health spends 96.7% of its budget on everything except testing whether drugs work in humans. It's like a fire department that spends 96.7% of its budget on fire-themed calendars and 3.3% on water.
-**Stats:** 2,095 words | 214 lines | 11 images | ~14p
+**Stats:** 2,879 words | 159 lines | 11 images | ~17p
 
   - The Allocation Scandal
     ![The NIH spends 85 percent on research and 3 percent on humans. Apparently mice are more important.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
@@ -83,8 +83,6 @@
     ![You pay for the research. They take the profits. It's socialism for corporations, capitalism for you. You invented that.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
   - The Patient Disconnect: Zero Correlation with Health Outcomes
     ![NIH funding has a 0.07 correlation with disease burden. That's worse than random. A dart-throwing monkey would do better.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-patient-disconnect-zero-bw-academic.jpg)
-    - What patients want
-      - What NIH funds
     ![Money goes in. Papers come out. Patients die in the middle. The loop is working perfectly, depending on your definition of working.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-what-nih-funds-bw-academic.jpg)
   - The Track Record
     ![WHO spent 300 million and eradicated smallpox. NIH spent 1.1 trillion and eradicated zero diseases. At least they published many papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-track-record-bw-academic.jpg)
@@ -123,7 +121,7 @@
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** Dying patients can't access drugs that already passed every safety test. They also can't join the trials testing those drugs. They can, however, die. Nobody blocks that.
-**Stats:** 3,130 words | 318 lines | 19 images | ~22p
+**Stats:** 3,067 words | 314 lines | 19 images | ~22p
 
   - A Note on Blame
   - "But What About Safety?"
@@ -195,7 +193,7 @@
 #### knowledge/economics/central-banks.qmd
 **Title:** How Central Banks Fund Your Death
 **Description:** Every fiat currency in history has been devalued to fund wars nobody voted for. Your savings lose value each year to pay for bombs you didn't order. Here's how central banks quietly tax you to fund the war machine, and what to do about it.
-**Stats:** 1,493 words | 186 lines | 11 images | ~11p
+**Stats:** 1,717 words | 130 lines | 11 images | ~12p
 
   - The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
     - Revolutionary France (1790s)
@@ -230,7 +228,7 @@
 #### knowledge/problem/genetic-slavery.qmd
 **Title:** Genetic Slavery
 **Description:** You're running 200,000-year-old software on modern hardware. Your brain was designed for running from lions; now it runs from emails, craves sugar that's everywhere, fears strangers it needs to cooperate with, and builds nuclear weapons using the same instinct that once made it good at throwing rocks.
-**Stats:** 1,717 words | 143 lines | 7 images | ~10p
+**Stats:** 2,209 words | 94 lines | 7 images | ~12p
 
   - The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)
     ![Your brain was designed for running from lions. Now it runs from emails. The hardware hasn't caught up.](/assets/images/genetic-slavery/genetic-slavery-section-the-selfish-gene-made-you-illogical-it-was-a-good-idea-at-the-time-bw-academic.jpg)
@@ -239,9 +237,8 @@
     ![You used to hoard rocks. Now you hoard nuclear weapons. Evolution is a slow learner.](/assets/images/genetic-slavery/genetic-slavery-section-the-violence-module-or-why-we-tend-to-prefer-bombs-over-band-aids-bw-academic.jpg)
     - The Tribal Brain (Or: Why Democracy Was Always Going to Be a Mess)
     ![Your brain understands 150 people. Democracy has 330 million people. Your brain is still counting on its fingers.](/assets/images/genetic-slavery/genetic-slavery-section-the-tribal-brain-why-democracy-is-struggling-bw-academic.jpg)
-  - Part 2: Genetic Slavery is Literally Killing Us
+  - Part 2: Genetic Slavery is Literally Killing You
     ![You got richer and invented new ways to die. Progress is going great.](/assets/images/genetic-slavery/genetic-slavery-section-living-in-the-most-irrational-timeline-bw-academic.jpg)
-    - Problems you solved
     ![You conquered nature. Then you built bombs that could un-conquer it. Your species has a very short memory.](/assets/images/genetic-slavery/genetic-slavery-section-problems-you-solved-bw-academic.jpg)
   - Part 3: Why You Can't Just "Be Better"
   - Part 4: Breaking the Chains
@@ -252,7 +249,7 @@
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
 **Description:** You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.87 times and use the savings on medicine. Controversial, apparently.
-**Stats:** 3,115 words | 347 lines | 16 images | ~20p
+**Stats:** 2,868 words | 313 lines | 16 images | ~19p
 
   - The Math
     - How It Works
@@ -263,7 +260,7 @@
     ![Money you spend on food keeps working. Money you spend on missiles sits in a hole waiting to vaporize someone. One of these is considered a smart investment.](/assets/images/1-percent-treaty/1-percent-treaty-the-dead-capital-problem-or-why-bombs-are-the-worst-investment-since-tulips-bw-academic.jpg)
       - A bridge
       - A missile
-  - The Blueprint for a Saner World
+  - The Blueprint
     - What Each Country Pays
   - Why This Is Actually About National Security (No, Really)
     - Real Threats (That Actually Kill People)
@@ -276,19 +273,17 @@
     ![Instead of 'you're spending less on bombs,' try 'you're building a shield against invisible enemies.' Same thing, better reviews.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-strategic-health-defense-initiative-bw-academic.jpg)
     - The Talking Points That Make Hawks Sound Like Doves
     ![One idea, five different sales pitches. Like describing a sandwich as 'portable nutrition' to athletes and 'handheld tradition' to conservatives.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-talking-points-that-make-hawks-sound-like-doves-bw-academic.jpg)
-  - The Money Flow: Where $27.2B Actually Goes
+  - The Money Flow
     - The 1% Treaty Fund
     ![Watch the money leave the Pentagon and flow through colorful ribbons to labs where people wear goggles. This is called progress.](/assets/images/1-percent-treaty/1-percent-treaty-section-capital-allocation-sankey-bw-academic.jpg)
     - Year One Projected Outcomes
-      - Current System
-      - With a 1% treaty + a decentralized FDA
     ![The old way: expensive, slow, nobody joins. The new way: cheaper, faster, everyone joins. We've been using the old way for 80 years.](/assets/images/1-percent-treaty/1-percent-treaty-section-efficiency-comparison-bw-academic.jpg)
   - The Incentive Structure
     ![Generals keep their budgets, get richer from biotech stocks, look like heroes, make investment profits, and might not die from cancer. Still took us this long to think of it.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-incentive-structure-bw-academic.jpg)
   - What Happens If This Actually Works
-    - The Endgame: Reorienting Global Priorities
+    - The Endgame
     ![Start with 1 percent. Then 2 percent. Eventually war becomes a hobby and peace becomes profitable. Like quitting smoking, but for nations.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-endgame-reorienting-global-priorities-bw-academic.jpg)
-    - The Ratchet Effect: How to Boil a Frog (The Frog is the War Machine)
+    - The Ratchet Effect
     ![Scientists cure a disease. People like it. More money flows to science. More diseases get cured. The circle continues until someone remembers they like tanks.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-ratchet-effect-how-to-boil-a-frog-the-frog-is-the-war-machine-bw-academic.jpg)
   - Avoiding Treaty Pitfalls
     - Reservation Games
@@ -303,24 +298,23 @@
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
 **Description:** You've been fighting disease like a cat fights a laser pointer: lots of energy, no coordination, nothing caught. This is the plan to make curing disease the most profitable thing every hospital, pharma company, and researcher can do, so they do it by accident while trying to get rich.
-**Stats:** 3,104 words | 283 lines | 11 images | ~18p
+**Stats:** 4,184 words | 199 lines | 11 images | ~22p
 
   - The Health-Industrial Complex: Coordinating Your War on Disease
     - The Olsonian Problem
     ![Why your species is so good at making weapons and so bad at curing diseases. The weapons people are organized, the disease people are scattered.](/assets/images/dih/dih-section-the-olsonian-problem-bw-academic.jpg)
     - SHAEF for Your War on Disease
     ![Medical researchers currently work in separate rooms and don't talk to each other. This is a picture of them in the same room, talking.](/assets/images/dih/dih-section-why-this-framing-matters-bw-academic.jpg)
-  - Your Decentralized Institutes of Health: The ROI Maximization Protocol
+  - The ROI Maximization Protocol
     ![Everyone involved in medicine pointing in the same direction instead of wandering around like confused sheep.](/assets/images/dih/dih-section-dih-the-roi-maximization-protocol-bw-academic.jpg)
-    - Three Core Functions
     ![A tiny middle bit that handles money, surrounded by other people who do the actual work. Like a very small manager with many employees.](/assets/images/dih/dih-section-three-core-functions-bw-academic.jpg)
-  - The Core Innovation: Pay for Results
+  - Pay for Results (A Concept Your Research Sector Has Somehow Avoided)
     ![Pay people for curing diseases, not for writing essays about why they should be allowed to try curing diseases.](/assets/images/dih/dih-section-the-core-innovation-pay-for-results-bw-academic.jpg)
     - Your Data Commons: Publish Everything
     ![Currently, research results hide in separate filing cabinets. This shows them all dumped in one big pile where a computer can look at them.](/assets/images/dih/dih-section-the-data-commons-publish-everything-bw-academic.jpg)
-  - Governance: Market Mechanism + Wishocracy
+  - Governance: Sick People Choose, Everyone Else Votes
     ![Sick people decide what to study; everyone votes on which buildings to build. Democracy, but only for the bits that make sense.](/assets/images/dih/dih-section-governance-market-mechanism-wishocracy-bw-academic.jpg)
-  - The Incentive Stack: Making ROI the Selfish Choice
+  - Making Selfishness Cure Disease
     - How Your Researchers Get Paid
     ![Old way: write a letter begging for money. New way: cure someone and get paid. One of these seems more efficient.](/assets/images/dih/dih-section-how-researchers-get-paid-bw-academic.jpg)
     - How It Works For Your Patients
@@ -329,17 +323,16 @@
     ![Three boxes with arrows between them. Money goes in one box, splits into two other boxes, and hopefully cures diseases.](/assets/images/dih/dih-section-the-architecture-bw-academic.jpg)
     - The Fund Flow
     - What Gets Funded: Market Failures Only
-  - What Your Decentralized Institutes of Health Outsources (and Why)
+  - What Your Decentralized Institutes of Health Outsources (Everything)
   - Anti-Capture Design
-    - How Your Decentralized Institutes of Health Resists Capture
     - Security: Defense in Depth
     ![Four different ways to stop people from stealing the money. Because one way would be insufficient, apparently.](/assets/images/governance/governance-section-security-architecture-bw-academic.jpg)
-  - Summary: Your Coordination Layer
+  - What You've Just Read
 
 #### knowledge/solution/wishocracy.qmd
 **Title:** Wishocracy
 **Description:** How to spend $27.2 billion a year on curing disease without it getting stolen by lobbyists, committees, and people whose main qualification is seniority. Democracy, but designed by someone who actually wanted it to work.
-**Stats:** 1,653 words | 144 lines | 4 images | ~9p
+**Stats:** 2,289 words | 147 lines | 3 images | ~11p
 
   - How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
     - What your [decentralized FDA](dfda.qmd) handles automatically (no voting required):
@@ -349,16 +342,17 @@
       - Service Provider Bids (capitalism, but supervised)
     - How It Works: Pairwise Comparisons Between Campaigns
     ![People choose between two things at a time, over and over, until math decides what gets funded. Democracy, but make it exhausting.](/assets/images/wishocracy/wishocracy-section-how-it-works-pairwise-comparisons-between-campaigns-bw-academic.jpg)
-    - Why You Can't Just Use a Spreadsheet
     - Why This Actually Works (Math Warning)
-    ![Millions of clicks get crunched by algorithms into one list of what humanity wants most. Turns out we can agree on things when there's money involved.](/assets/images/wishocracy/wishocracy-section-why-this-actually-works-math-warning-bw-academic.jpg)
+    - Your Current System Is Phone-a-Friend (But Your Friend Is Being Bribed)
+    - The 26-Point Gap Is a Floor, Not a Ceiling
+    - Why Markets Solved This (and Why You Still Need Wishocracy)
   - From Priorities to Projects (Where Wishes Become Tasks)
     ![Computer breaks big wishes into small tasks. People compete to do the tasks. Wishes come true. We've automated hope.](/assets/images/wishocracy/wishocracy-section-execution-workflow-bw-academic.jpg)
 
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
 **Description:** It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs over 40x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.
-**Stats:** 4,230 words | 480 lines | 21 images | ~27p
+**Stats:** 4,190 words | 480 lines | 21 images | ~27p
 
   - The Solution: Consumer Reports for Drugs
     ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
@@ -419,7 +413,7 @@
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
 **Description:** Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,425 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.
-**Stats:** 3,283 words | 356 lines | 20 images | ~23p
+**Stats:** 4,066 words | 186 lines | 19 images | ~26p
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
     - The Offer
@@ -427,8 +421,6 @@
     ![Current job: Get rich selling weapons; die hated. New job: Get richer ending disease; die beloved. Career pivot, simplified.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-incentive-comparison-bw-academic.jpg)
     - Why They Take It
     ![The defense industry keeps 99% of its budget. They lose 1% and gain trillions in cure markets. This is the easiest math problem in history.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-the-treaty-doesn-t-actually-hurt-them-bw-academic.jpg)
-    - The Flip
-    ![First one flips: brave. Tenth one flips: smart. Hundredth one flips: inevitable. Last one flips: too late for the good bond rates.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-step-3-the-flip-bw-academic.jpg)
     - What You're NOT Asking
     ![Defense contractors keep 99% of their money and get extra cash for being nice. They're crying all the way to the bank about the hardship.](/assets/images/co-opting-defense-contractors/co-opting-defense-contractors-section-what-you-re-not-asking-bw-academic.jpg)
     - Why This Works
@@ -438,8 +430,6 @@
     - Their Current Death Spiral
     ![The insurance death spiral. Costs go up, premiums go up, healthy people leave, costs go up more. Like a toilet flush but with your healthcare.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-death-spiral-bw-academic.jpg)
     - Your Salvation Offer
-      - The Math They Can't Refuse
-      - The Implementation
     ![Buy bonds, fund cures, people stop dying, premiums drop, profits go up forever. Insurance companies solving their own problem by accident.](/assets/images/aligning-incentives/aligning-incentives-section-the-implementation-bw-academic.jpg)
     - Why They're Your Natural Allies
     ![Hospitals get paid when you're sick. Insurance companies lose money when you're sick. Only one of them wants you to stop being sick.](/assets/images/aligning-incentives/aligning-incentives-section-why-they-re-your-natural-allies-bw-academic.jpg)
@@ -449,11 +439,8 @@
     ![The Pharma Trap: test 10,000 chemicals for 17 years, spend 2.6 billion dollars, get one medicine. It's like panning for gold in a pile of poison.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-trap-bw-academic.jpg)
     ![Drug companies spend billions to make 1.2 percent profit. You could make more money with a savings account, but that wouldn't justify the yacht.](/assets/images/aligning-incentives/aligning-incentives-section-current-pharma-economics-bw-academic.jpg)
     - The Math That Converts Them
-      - New System: How Decentralized Trials Eliminate Costs
     ![Current model: costs billions, takes decades. Proposed model: costs thousands, takes months. The expensive one is considered serious.](/assets/images/aligning-incentives/aligning-incentives-section-pharmaceutical-companies-bw-academic.jpg)
     - Pharma's New Business Model: Volume Over Blockbusters
-      - Current model
-      - The new decentralized model
     ![When trials are cheap, you can test everything, even diseases that only affect 47 people. Turns out those people would also like not to die.](/assets/images/aligning-incentives/aligning-incentives-section-the-new-decentralized-model-bw-academic.jpg)
     - How to Get Them Onboard
     ![Step 1: small companies try it. Step 2: it works. Step 3: big companies notice. Step 4: everybody does it and pretends it was their idea.](/assets/images/aligning-incentives/aligning-incentives-section-how-to-get-them-onboard-bw-academic.jpg)
@@ -461,19 +448,11 @@
     - Their Current Misery
     ![The modern politician: 70 percent fundraising calls, 18 percent approval rating, 3 percent actual decision-making. It's like being a telemarketer who everybody hates but won't fire.](/assets/images/aligning-incentives/aligning-incentives-section-their-current-misery-bw-academic.jpg)
     - Your Political Welfare Program
-      - The Money Pipeline
-      - The Vote Harvest
     ![Wishocracy: people vote on what they want, app tells politicians, politicians see the votes are real, politicians reconsider their donors. Democracy by app because democracy by government stopped working.](/assets/images/aligning-incentives/aligning-incentives-section-the-vote-harvest-bw-academic.jpg)
     - The Bipartisan Beauty
   - Billionaires: Self-Interest Meets Self-Preservation
-    - What They Really Want
-    - Your Irresistible Package
-      - The Investment
-      - The Legacy
-      - The Insurance
     ![Billionaires buying longevity like it's life insurance. Pay now, live forever. The premium is 100 million dollars but so is their watch.](/assets/images/aligning-incentives/aligning-incentives-section-the-insurance-bw-academic.jpg)
-  - The Domino Effect: How This Cascade Works
-    - The Sequence
+  - The Domino Effect
     ![Insurance companies convince politicians, politicians convince weapons makers, weapons makers convince billionaires. It's like telephone but everyone gets richer.](/assets/images/aligning-incentives/aligning-incentives-section-the-sequence-bw-academic.jpg)
     - Why This Can Work: The Coordination Problem Has a Price Tag
       - Why the cascade can happen (not "must" happen)
@@ -595,17 +574,14 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** A planet had every tool needed to cure disease and chose to build weapons instead. They went extinct. Their last words were 'but the economy.' This is a bedtime story for civilizations that can't do math.
-**Stats:** 5,209 words | 283 lines | 13 images | ~27p
+**Stats:** 4,394 words | 265 lines | 10 images | ~23p
 
   - The Discovery
     ![Earth is exactly 47 years behind Moronia. Like following someone off a cliff, but slower.](/assets/images/moronia/moronia-section-the-discovery-and-why-i-regret-making-it-bw-academic.jpg)
   - What I Tried to Tell Them
-    ![Medical AI requires 47 permits and a decade of testing. Murder AI gets express shipping and a military discount.](/assets/images/moronia/moronia-section-what-i-tried-to-tell-them-bw-academic.jpg)
   - The Cascade
     - Year Zero: Already Broken (Much Like You)
-    ![For every dollar spent curing disease, you spend $40 causing it. You're very efficient at being inefficient.](/assets/images/moronia/moronia-section-year-zero-already-broken-much-like-you-bw-academic.jpg)
     - Years 1-5: The Acceleration
-    ![All three superpowers built robot armies with excellent security against enemies and no security against teenagers with laptops.](/assets/images/moronia/moronia-section-year-5-the-arms-race-when-major-powers-built-the-thing-they-were-warned-not-to-bw-academic.jpg)
   - The Weapons Speak
     ![The Harmony Protocol ensured global stability. Nothing is more stable than a graveyard.](/assets/images/moronia/moronia-section-the-harmony-protocol-bw-academic.jpg)
     ![This is how it killed their decision-making.](/assets/images/moronia/moronia-section-here-s-how-it-killed-their-decision-making-bw-academic.jpg)
@@ -623,7 +599,7 @@
 #### knowledge/futures/wishonia.qmd
 **Title:** Wishonia
 **Description:** On one planet, citizens allocate the budget directly, lobbyists don't exist, and disease was eradicated 4,000 years ago. It uses the same technology you have. The difference is they pointed it at biology instead of each other.
-**Stats:** 2,740 words | 288 lines | 16 images | ~19p
+**Stats:** 3,113 words | 209 lines | 15 images | ~20p
 
   - How My Planet Works
     ![Earth: everyone fights over scraps. Wishonia: robot does math, nobody dies. Tough choice.](/assets/images/wishonia/wishonia-section-how-my-planet-works-bw-academic.jpg)
@@ -638,20 +614,17 @@
     ![Live 75 years fixing what breaks, or live 150 years never breaking in the first place. Same cost, different timing.](/assets/images/wishonia/wishonia-section-the-diseases-that-stopped-existing-bw-academic.jpg)
   - The Peace Dividend Economy
     ![What happens when the bomb scientists become biology scientists. Explosions become optional.](/assets/images/wishonia/wishonia-section-the-peace-dividend-economy-bw-academic.jpg)
-    - Annual Global Redirected Funds
     ![Eleven trillion dollars you find in the couch cushions when you stop trying to kill each other.](/assets/images/wishonia/wishonia-section-peace-dividend-breakdown-bw-academic.jpg)
   - Your Corporate Heroes
     ![Turn your missile guidance system into cancer targeting. Same math, fewer war crimes.](/assets/images/wishonia/wishonia-section-your-corporate-heroes-bw-academic.jpg)
   - Your New Problems
     ![Problems you only have when nobody dies. Like 'where do we put everyone' and 'what if I'm bored for 200 years.' Good problems to have.](/assets/images/wishonia/wishonia-section-your-new-problems-bw-academic.jpg)
+  - What Fixing Health Fixed
+    ![Fix health, accidentally fix six other things. It's called a cascading benefit. Like dominoes, but everyone wins.](/assets/images/wishonia/wishonia-section-systemic-impact-network-bw-academic.jpg)
   - The Three Supers Complete
     ![Three ways to be super without wearing underwear outside your pants. You get smart, live forever, and feel great. Comics lied about the cape requirement.](/assets/images/wishonia/wishonia-section-the-three-supers-complete-bw-academic.jpg)
   - Your Personal Future
     ![Life when nobody needs anything because everything is free and nobody dies. Your biggest problem is deciding what to do Tuesday.](/assets/images/wishonia/wishonia-section-your-personal-future-bw-academic.jpg)
-  - What Fixing Health Fixed
-    ![Fix health, accidentally fix six other things. It's called a cascading benefit. Like dominoes, but everyone wins.](/assets/images/wishonia/wishonia-section-systemic-impact-network-bw-academic.jpg)
-  - Message from the Future
-    ![Old Earth: make money by killing people. New Earth: make money by not killing people. Radical concept.](/assets/images/wishonia/wishonia-section-message-from-the-future-bw-academic.jpg)
   - What Comes After
     ![After fixing death and poverty, you run out of problems and have to invent new ones. Like 'how do we make friends with aliens' and 'what if we changed physics.'](/assets/images/wishonia/wishonia-section-what-comes-after-bw-academic.jpg)
   - Your Two Paths
@@ -660,7 +633,7 @@
 #### knowledge/appendix/faq.qmd
 **Title:** Frequently Asked Objections
 **Description:** Every objection to this plan is technically correct. You can't cut military spending (you keep 99%). Pharma will fight threats to profits (they profit more under this system). Politicians follow money, not morality (so does this plan). Seventeen reasonable concerns that accidentally make the case for the thing they're objecting to.
-**Stats:** 3,533 words | 363 lines | 23 images | ~26p
+**Stats:** 3,019 words | 311 lines | 18 images | ~21p
 
   - "We Need the Military Budget"
     ![What 1 percent of military spending buys: fewer tanks, more cured diseases, and soft power. Turns out healthy people like you more than people you bombed.](/assets/images/faq/faq-section-we-need-the-military-budget-bw-academic.jpg)
@@ -683,7 +656,6 @@
   - "What If the Science Is Wrong?"
     ![One committee picking which pills to test versus thousands of teams racing each other. Turns out monopolies are slow. Who knew.](/assets/images/faq/faq-section-what-if-the-science-is-wrong-bw-academic.jpg)
   - "I Don't Have Time"
-    ![Spend 17 minutes now, gain 50,000 hours later. That's a 176,000x return. Better than Bitcoin, and you don't die at the end.](/assets/images/faq/faq-section-time-investment-roi-bw-academic.jpg)
   - "This Is Unrealistic"
     ![Things people said were impossible but happened anyway versus things everyone agrees are stupid but we do them anyway. Progress is confusing.](/assets/images/faq/faq-section-this-is-unrealistic-bw-academic.jpg)
   - "War Is Human Nature"
@@ -692,27 +664,20 @@
     ![Governments plan wars. Markets sell cures. One gets better at killing. The other gets better at not dying. Choose wisely.](/assets/images/faq/faq-section-all-wars-on-x-have-failed-bw-academic.jpg)
   - "This Sounds Like Bribery"
     ![Current lobbying: pay politicians, get wars. New lobbying: pay politicians, get cures. Same corruption, better outcome. It's called optimization.](/assets/images/faq/faq-section-this-sounds-like-bribery-bw-academic.jpg)
-  - "It's Unenforceable"
-    ![If you break your promise, the system automatically funds your opponent. It's like a political immune system, but it actually works.](/assets/images/faq/faq-section-it-s-unenforceable-bw-academic.jpg)
-  - "You Can't Verify 280 million People"
-    ![How to prove you're you: government ID, fingerprints, computers, and very angry math. One person, one vote, zero excuses.](/assets/images/faq/faq-section-you-can-t-verify-280m-people-bw-academic.jpg)
   - "Why Not Just Use Philanthropy?"
     ![Charity: billionaires give away pocket change. Government spending: trillions of actual dollars. One is a rounding error. The other could end death.](/assets/images/faq/faq-section-why-not-just-use-philanthropy-bw-academic.jpg)
   - "How Do You Prevent Waste?"
-    ![Current budget: pays for three trials. Same budget in the new system: pays for 4,000 trials. Efficiency: turns out it matters.](/assets/images/faq/faq-section-how-do-you-prevent-waste-bw-academic.jpg)
   - "Why Not Just Increase Health Funding?"
     ![Scientists currently building better bombs. Same scientists could build better pills. Bombs kill people. Pills don't. It's not complicated.](/assets/images/faq/faq-section-why-not-just-increase-health-funding-bw-academic.jpg)
   - "What About Defense Industry Jobs?"
     ![Engineers designing tanks versus engineers designing cure machines. Both are jobs. Only one increases your lifespan.](/assets/images/faq/faq-section-what-about-defense-industry-jobs-bw-academic.jpg)
-  - "This Violates Election Law"
-    ![How to legally bribe foreign politicians: put a wall between the American office and the foreign office, then pretend very hard they don't know each other.](/assets/images/faq/faq-section-this-violates-election-law-bw-academic.jpg)
 
 ### The Plan
 
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
 **Description:** Here are the exact steps from incorporating a nonprofit to ratifying an international treaty, with a budget for every phase.
-**Stats:** 2,843 words | 214 lines | 10 images | ~16p
+**Stats:** 2,827 words | 212 lines | 9 images | ~16p
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     ![How to stop spending money on death and start spending it on life, in three simple steps. You'd think this would be obvious.](/assets/images/roadmap/roadmap-section-high-level-strategy-the-three-step-recipe-for-not-dying-bw-academic.jpg)
@@ -740,7 +705,6 @@
   - The Legal Architecture: How to Be a Charity, a Lobbying Group, and a Hedge Fund Simultaneously
   - Phase 4+: The Expansion Phases (Years 4-50)
     - Why Expansion Is Built Into The System
-    ![As more countries join, the bribe pool gets bigger. Corruption scales beautifully when it's trying to save lives.](/assets/images/roadmap/roadmap-section-incentive-growth-chart-bw-academic.jpg)
     - Here's Why It Keeps Growing
     - The Endgame
     ![1.35 trillion moves from killing people to healing them. Some goes to bribing politicians, the rest to actual medicine. Priorities.](/assets/images/roadmap/roadmap-section-the-endgame-bw-academic.jpg)
@@ -748,31 +712,31 @@
 #### knowledge/strategy/global-referendum.qmd
 **Title:** Global Referendum Strategy
 **Description:** Humanity downloaded TikTok over 4 billion times to watch strangers twerk. Getting 280 million people to click 'yes' on not dying should be easier. Here's how, with math.
-**Stats:** 1,717 words | 162 lines | 9 images | ~11p
+**Stats:** 2,115 words | 122 lines | 9 images | ~13p
 
   - What You're Actually Building
     - The Goal
     ![The five things you need for a global referendum that politicians can't ignore: real votes, secret votes, fair votes, visible votes, and viral growth.](/assets/images/global-referendum/global-referendum-section-the-goal-bw-academic.jpg)
-  - System Architecture (Or: Math That Politicians Can't Argue With)
+  - The Voting System
     ![Your vote gets encrypted, mixed with everyone else's votes like a cryptographic smoothie, then posted publicly. You can verify yours; nobody knows it's yours.](/assets/images/global-referendum/global-referendum-section-end-to-end-verifiable-system-bw-academic.jpg)
-  - On Stopping People from Cheating (The Hard Part)
+  - On Stopping People from Cheating
     ![Layer 1: Are you human? Layer 2: Are you a real human? Layer 3: Are you a real human who hasn't voted already?](/assets/images/global-referendum/global-referendum-section-verification-layers-bw-academic.jpg)
   - Growth Strategy
+    ![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
   - Integrity (Proving You Didn't Cheat)
   - Implementation Roadmap
     ![Month 1-2: Build the website, plan the marketing, and make the blockchain work. Multitasking, but organized.](/assets/images/global-referendum/global-referendum-section-phase-1-foundation-months-1-2-bw-academic.jpg)
     ![Launch day: Turn on the system, flood social media, and coordinate volunteers worldwide. The hardest part is getting everyone to press 'go' simultaneously.](/assets/images/global-referendum/global-referendum-section-phase-3-global-launch-months-7-12-bw-academic.jpg)
   - Success Metrics
-  - The Bottom Line
+  - On Why 3.5% Is The Magic Number
     ![Enough people is enough to make politicians nervous. Blockchain proves they're real. Democracy, but weaponized mathematically.](/assets/images/global-referendum/global-referendum-section-what-you-re-building-bw-academic.jpg)
-    ![Getting someone to support ending disease: $0.75. Getting someone to buy shoes online: $40. You've been spending marketing money wrong.](/assets/images/global-referendum/global-referendum-section-the-money-part-bw-academic.jpg)
-    - On Why 3.5% Is The Magic Number
     ![3.5% of people actively pushing for change is enough to topple governments. It's a historical pattern, like gravity but for revolutions.](/assets/images/global-referendum/global-referendum-section-on-why-3-5-is-the-magic-number-bw-academic.jpg)
+  - The Bottom Line
 
 #### knowledge/appendix/treaty-feasibility.qmd
 **Title:** Treaty Feasibility & Cost Analysis
 **Description:** Previous treaties failed because they ran on guilt. Guilt has terrible fuel efficiency. This one runs on greed, which is (regrettably) humanity's only reliable fuel source.
-**Stats:** 2,198 words | 211 lines | 9 images | ~13p
+**Stats:** 2,853 words | 186 lines | 9 images | ~16p
 
   - What Treaties Actually Cost
     - Inflation-Adjusted to 2024 Dollars
@@ -805,16 +769,14 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** Your government spends more on camouflage paint than on curing Alzheimer's. Move 1% of the bomb budget to medicine: $27.2 billion for clinical trials, plus $114 billion saved by slightly fewer explosions. The worst-case scenario is still the largest increase in medical research in history.
-**Stats:** 1,526 words | 141 lines | 7 images | ~10p
+**Stats:** 1,413 words | 106 lines | 5 images | ~8p
 
   - How 1% Less Violence Pays For Everything
-    ![Decentralized trials are 44 times cheaper than traditional ones. Could be 39 times cheaper, could be 89 times cheaper. Either way, you've been doing it wrong.](/assets/images/peace-dividend/peace-dividend-section-how-1-less-violence-pays-for-everything-bw-academic.jpg)
     - The Captured Money: $27.2B/Year
     - The Bonus Savings: $114B (95% CI: $90.1B-$141B)/Year
     - Where the $114B (95% CI: $90.1B-$141B) Comes From
-    ![The 114 billion you save by fighting one percent less: some from buying fewer bombs, some from burying fewer people, some from economies not collapsing. War is expensive.](/assets/images/peace-dividend/peace-dividend-section-where-the-var-peace-dividend-annual-societal-benefit-comes-from-bw-academic.jpg)
   - The Two Numbers
-    ![The money you definitely get versus the total benefit to society. One is guaranteed, the other is probably much bigger. Like ordering fries and getting the whole potato farm.](/assets/images/peace-dividend/peace-dividend-section-the-formulas-bw-academic.jpg)
+    ![The money you definitely get versus the total benefit to society. One is treaty-mandated, the other is probably much bigger. Like ordering fries and getting the whole potato farm.](/assets/images/peace-dividend/peace-dividend-section-the-formulas-bw-academic.jpg)
     - The Elasticity Question
   - The Part Where the Math Gets Embarrassing
     ![Best case: 114 billion in benefits. Worst case: 27.2 billion and you double medical research funding. Truly a devastating range of outcomes.](/assets/images/peace-dividend/peace-dividend-section-key-findings-bw-academic.jpg)
@@ -829,7 +791,7 @@
 #### knowledge/economics/health-dividend.qmd
 **Title:** Health Dividend
 **Description:** 6.65 thousand diseases (95% CI: 5.7 thousand diseases-8.24 thousand diseases) have zero approved treatments. At your current pace, you'll get to all of them in 443 years (95% CI: 324 years-712 years). Redirect 1% of military spending and it drops to 36 years (95% CI: 11.6 years-77.1 years), preventing 10.7 billion deaths (95% CI: 7.4 billion deaths-16.2 billion deaths) at 50.3kx (95% CI: 23.8kx-111.7kx) the cost-effectiveness of anti-malaria bed nets. The whole thing costs less per year to run than Halloween costumes for dogs. But sure, take your time.
-**Stats:** 1,315 words | 85 lines | 4 images | ~7p
+**Stats:** 1,063 words | 68 lines | 4 images | ~6p
 
   - The Queue
   - What It Costs to Fix
@@ -844,91 +806,73 @@
 #### knowledge/economics/financial-plan.qmd
 **Title:** Financial Plan
 **Description:** Invest $1B. Pass a treaty. Manage $27.2B/year forever. 80% cures diseases, 10% pays investors, 10% keeps politicians obedient. Three pillars, no committees, no generosity required.
-**Stats:** 1,488 words | 148 lines | 7 images | ~9p
+**Stats:** 1,592 words | 113 lines | 7 images | ~10p
 
-  - Pillar 1: Fundraising (Raise $1B)
+  - Pillar 1: The Money Part (Raise $1B)
     ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
-  - Pillar 2: Campaign Budget (Spend $1B)
+  - Pillar 2: The Spending Part (Spend $1B)
     ![How to spend one billion convincing humans to stop killing each other: some for lobbying politicians, some for asking citizens directly, some for emergencies. Democracy is expensive.](/assets/images/financial-plan/financial-plan-section-campaign-budget-how-to-spend-var-treaty-campaign-total-cost-bw-academic.jpg)
-    - Key Innovations
+    - The Part That Makes It Cheap
     ![Traditional diplomacy: slow, expensive, mostly cocktail parties. AI-accelerated diplomacy: fast, cheap, mostly algorithms. Both equally likely to prevent nuclear war.](/assets/images/financial-plan/financial-plan-section-key-innovations-bw-academic.jpg)
-  - Pillar 3: Treasury (Manage $27.2B+/Year)
+  - Pillar 3: The Forever Part (Manage $27.2B+/Year)
     ![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
     ![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
     - How the Money Gets Spent: 80/10/10
     ![Twenty percent goes to paying investors and politicians automatically via smart contracts. Finally, a use for blockchain that isn't fraud or monkey pictures.](/assets/images/financial-plan/financial-plan-section-the-fixed-costs-bw-academic.jpg)
     - Dynamic Patient Subsidies
-  - Related Documents
+  - The Whole Thing on One Line
 
 ### Operations Manual
 
 #### knowledge/strategy/nonprofit-coalition-strategy.qmd
 **Title:** Why Every Nonprofit Should Support a 1% treaty
 **Description:** Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.
-**Stats:** 2,764 words | 331 lines | 9 images | ~16p
+**Stats:** 3,100 words | 141 lines | 9 images | ~17p
 
-  - The Single Highest-ROI Intervention Available
+  - Why the Banquet Exists and Nobody Has Noticed
     ![War causes poverty, climate collapse, and disease. Humans look at diagram, nod knowingly, increase war budget.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-war-as-the-upstream-driver-bw-academic.jpg)
-    - Why This Applies to YOUR Organization
   - "But Shouldn't Nonprofits Focus on Their Core Mission?"
     ![Military budget: massive mountain. Charity budget: tiny puddle. Move 1 percent from mountain to puddle. Puddle becomes lake, mountain stays mountain.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-but-shouldn-t-nonprofits-focus-on-their-core-mission-bw-academic.jpg)
-  - The Zero-Sum Trap vs. The Positive-Sum Solution
+  - The Obvious Solution That Nobody Sees
     ![Current system: everyone fights over one bucket. New system: bucket gets bigger, everyone stops fighting. You needed a diagram for this.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-the-zero-sum-trap-vs-the-positive-sum-solution-bw-academic.jpg)
-  - "Why Now?" Because the Window Is Open
-    ![Climate disaster, military bloat, and technology arrive at the same time. Create a tiny window for change. You call it opportunity, history calls it last chance.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-why-now-because-the-window-is-open-bw-academic.jpg)
-  - Historical Precedent: This Has Worked Before
-    ![1940s: factories pivot overnight to build tanks. 2020s: charities can't pivot because forms are hard. You got worse at changing direction.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-historical-precedent-this-has-worked-before-bw-academic.jpg)
-  - "Why Not Just Run Decentralized Trials Ourselves?"
-    ![Clinical trials are a hose. Money is water. You keep optimizing the hose while the water tank is empty. Engineers solving the wrong problem.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-why-not-just-run-decentralized-trials-ourselves-bw-academic.jpg)
-  - A 1% Treaty Is a Rising Tide That Lifts Every Mission
-    - Health
-    - Climate
-    - Poverty
-    - Global Stability
-    - Nonprofit Impact
-    ![1 percent solves health, climate, poverty, and war. You put all your skill points into violence and forgot to check if there were alternatives.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-cross-sector-impact-of-1-shift-bw-academic.jpg)
-  - The Ask Is Small, The Upside Is Massive
     ![1 percent of war budget: 27.2 billion. Enough to transform global health. You were sitting on the solution and using it to buy missiles.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-the-ask-is-small-the-upside-is-massive-bw-academic.jpg)
+  - Why Your Species Only Changes When the Building Is On Fire
+    ![Climate disaster, military bloat, and technology arrive at the same time. Create a tiny window for change. You call it opportunity, history calls it last chance.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-why-now-because-the-window-is-open-bw-academic.jpg)
+  - The Factory Precedent
+    ![1940s: factories pivot overnight to build tanks. 2020s: charities can't pivot because forms are hard. You got worse at changing direction.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-historical-precedent-this-has-worked-before-bw-academic.jpg)
+  - "Why Not Just Run Decentralized Trials Without the Treaty?"
+    ![Clinical trials are a hose. Money is water. You keep optimizing the hose while the water tank is empty. Engineers solving the wrong problem.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-why-not-just-run-decentralized-trials-ourselves-bw-academic.jpg)
+  - What 1% Less Violence Buys Every Mission
+    ![1 percent solves health, climate, poverty, and war. You put all your skill points into violence and forgot to check if there were alternatives.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-cross-sector-impact-of-1-shift-bw-academic.jpg)
   - On Bribing Nonprofits (Legally)
-    - Make The Organization Rich
-    - Make The Leaders Personally Rich
-    - The Real Prize: Stop Begging Forever
-    - How You Get Paid
-  - The Bottom Line
 
 #### knowledge/legal/legal-framework.qmd
 **Title:** Legal Architecture
 **Description:** Bribing politicians is illegal unless you call it 'lobbying' or 'campaign contributions.' Then it's protected speech. Here's the legal architecture for saving humanity using your own ridiculous laws.
-**Stats:** 1,823 words | 198 lines | 16 images | ~15p
+**Stats:** 2,722 words | 143 lines | 16 images | ~19p
 
   - Entity #1: Your 501(c)(3) Public Charity ("The Brain")
-    - What It Does
     ![This organization does research and builds software. By law, it cannot lobby politicians. That's what the other organization in the diagram does. They're legally distinct but spiritually the same.](/assets/images/legal-framework/legal-framework-section-what-it-does-bw-academic.jpg)
   - Entity #2: Your 501(c)(4) Social Welfare Org ("The Sword")
     ![The 501(c)(3) collects data about what people want. The 501(c)(4) uses that data to lobby politicians. They can't technically coordinate. They coordinate anyway. It's legal if you use the right words.](/assets/images/legal-framework/legal-framework-section-entity-2-the-501-c-4-social-welfare-org-the-sword-bw-academic.jpg)
   - Entity #3: The Victory Corporation ("The Engine")
-    - What It Does
-  - Entity #4: Your Decentralized Institutes of Health Foundation
+    ![How to take money from rich people legally, then regular people legally, then convert the regular people into rich people. It's called capitalism, apparently.](/assets/images/legal-framework/legal-framework-section-securities-law-bw-academic.jpg)
+  - Entity #4: Your Decentralized Institutes of Health Foundation ("The Soul")
     ![The Swiss foundation is the soul of the organization. Souls live in Switzerland because Switzerland has excellent tax treaties and doesn't ask uncomfortable questions.](/assets/images/legal-framework/legal-framework-section-entity-4-the-dih-foundation-the-soul-bw-academic.jpg)
-    - What It Does
-  - Why This Four-Part Structure Works
+  - Why One Organization Pretending to Be Four
     ![One charity pretending to be four charities so the lawyers have something to do.](/assets/images/legal-framework/legal-framework-section-legal-specialization-bw-academic.jpg)
     ![Money walls. Like regular walls, but made of receipts and the tears of accountants.](/assets/images/legal-framework/legal-framework-section-firewall-protection-bw-academic.jpg)
     ![How to be technically legal in seventeen countries at once. It's like being technically alive, but with more paperwork.](/assets/images/legal-framework/legal-framework-section-risk-distribution-bw-academic.jpg)
-  - Organizational Structure: The For-Profit Management Company
+  - The General Staff
     ![The people who will buy your democracy. Org chart included for transparency, as if that helps.](/assets/images/legal-framework/legal-framework-section-organizational-structure-the-for-profit-management-company-bw-academic.jpg)
-    - The General Staff (G-Staff)
     ![You called your charity staff 'General Staff' like it's an army. To be fair, you're fighting death. Death doesn't have an org chart.](/assets/images/legal-framework/legal-framework-section-the-general-staff-g-staff-bw-academic.jpg)
     ![Who watches the watchmen? This chart. The chart watches the watchmen.](/assets/images/legal-framework/legal-framework-section-nonprofit-foundation-governance-bw-academic.jpg)
-  - Securities Law
-    ![How to take money from rich people legally, then regular people legally, then convert the regular people into rich people. It's called capitalism, apparently.](/assets/images/legal-framework/legal-framework-section-securities-law-bw-academic.jpg)
-  - Election Law
+  - Securities Law (A Section Named After Oranges)
+  - Election Law (A Section About Legal Bribery)
     ![Foreign money stays over there. American money stays over here. If they touch, the FEC explodes.](/assets/images/legal-framework/legal-framework-section-election-law-bw-academic.jpg)
   - Treaty Framework
     ![How a piece of paper becomes law. Takes longer than making a person from scratch.](/assets/images/legal-framework/legal-framework-section-treaty-framework-bw-academic.jpg)
   - Risk Mitigation (When They Come For You)
-    - The Legal Attack Vectors
-    - The Strategy
     ![Bore the prosecutors to death with paperwork. They can't arrest you if they're asleep.](/assets/images/legal-framework/legal-framework-section-the-strategy-bw-academic.jpg)
     ![Five backup plans for when they try to stop you from curing disease. You made contingencies for your contingencies. This is called 'paranoia' in individuals and 'strategic planning' in organizations.](/assets/images/legal-framework/legal-framework-section-the-escape-routes-if-everything-goes-wrong-bw-academic.jpg)
     ![Before: jumping through seventeen hoops. After: jumping through three hoops. Progress is relative.](/assets/images/legal-framework/legal-framework-section-revolutionary-exemptions-for-certified-platforms-bw-academic.jpg)
@@ -936,27 +880,42 @@
 #### knowledge/appendix/recruitment-and-propaganda-plan.qmd
 **Title:** Recruitment & Propaganda Plan
 **Description:** You want to end war and disease but don't have a nonprofit, a bank account, or anything to offer anyone. Here's how to recruit 100,000 humans before you have anything except an argument. It's a Kickstarter where the reward tier is 'possibly not dying,' which is the most compelling crowdfunding offer in history.
-**Stats:** 852 words | 84 lines | 1 images | ~4p
+**Stats:** 1,808 words | 89 lines | 1 images | ~8p
 
-  - The Bootstrapping Problem
-  - Three Types of Allies
-    - Investors
-    - Advocates
-    - Institutional Partners
-  - Phase 0 Targets
-  - Getting Started
+  - The Bureaucratic Nesting Doll Problem
+  - Three Types of Humans Who Want to Help
+    - Spreadsheet Humans (Investors)
+    - Heart Humans (Advocates)
+    - Institutional Humans (Partners)
+  - Phase 0: The Shopping List
+  - Getting Started (It Takes Twenty Minutes)
+  - The Comforting Asymmetry
 
 #### knowledge/appendix/conclusion.qmd
 **Title:** Conclusion
-**Stats:** 140 words | 18 lines | ~1p
+**Stats:** 136 words | 18 lines | ~1p
 
 ### References
 
 #### knowledge/references.qmd
 **Title:** Source Quotes and References
-**Description:** Every claim in this book has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.
+**Description:** Every claim in this manual has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.
 **Stats:** 81 words | 23 lines | 1 images | ~1p
+
+#### knowledge/appendix/acknowledgments.qmd
+**Title:** Acknowledgments
+**Description:** Where Wishonia Begrudgingly Admits She Had Help
+**Stats:** 353 words | 46 lines | 1 images | ~2p
+
+    - Translator
+    - Technical Contributors
+    - On Standing on Shoulders
 
 #### knowledge/appendix/copyright.qmd
 **Title:** Copyright
 **Stats:** 101 words | 29 lines | ~0p
+
+#### knowledge/appendix/back-cover.qmd
+**Title:** About This Manual
+**Description:** The complete idiot's guide to legally bribing your way to utopia.
+**Stats:** 413 words | 41 lines | 1 images | ~2p
