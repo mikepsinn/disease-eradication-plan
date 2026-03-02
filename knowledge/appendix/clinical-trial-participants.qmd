@@ -10,7 +10,7 @@ tags:
 image: /assets/og-images/knowledge/appendix/clinical-trial-participants-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Humanity spends {{< var global_clinical_trials_spending_annual >}} a year on clinical trials [@industry-clinical-trial-spending-estimate]. Here are the actual enrollment numbers:
+Humanity spends {{< var global_clinical_trials_spending_annual >}} a year on clinical trials [@industry-clinical-trial-spending-estimate] (of which governments contribute just {{< var global_government_clinical_trials_spending_annual >}}). Here are the actual enrollment numbers:
 
 ## Enrollment Data from ClinicalTrials.gov
 
@@ -165,7 +165,7 @@ If you get cancer, your odds of getting into a clinical trial are about 5%. If y
 
 The system isn't designed to help sick people try treatments. It's designed to generate data clean enough to satisfy regulators. The fact that some people get treatment is a side effect.
 
-**Humans spend {{< var global_clinical_trials_spending_annual >}} a year to help {{< var current_patient_participation_rate >}} of the {{< var current_disease_patients_global >}} suffering from chronic disease** (using IQVIA's {{< var current_trial_slots_available >}} drug trial participants).
+**Humans spend {{< var global_clinical_trials_spending_annual >}} a year ({{< var global_government_clinical_trials_spending_annual >}} from governments, the rest from industry) to help {{< var current_patient_participation_rate >}} of the {{< var current_disease_patients_global >}} suffering from chronic disease** (using IQVIA's {{< var current_trial_slots_available >}} drug trial participants).
 
 Even counting all clinical research, it's just 0.2% (5M participants).
 
