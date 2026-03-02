@@ -14,11 +14,15 @@ podcast-image: /assets/podcast/health-dividend-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 That was the peace dividend: the money you get from buying 1% fewer explosions. Now here's the health dividend: what happens when you spend it on medicine.
 
+The health dividend is worth **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**. That number is not a typo. The rest of this chapter explains where it comes from.
+
 Your species has a word for "health dividend," which implies that health is a bonus. On Wishonia, health is the default and disease is the bug report. On Earth, disease is the default and health is the dividend.
 
 ## The Queue
 
-{{< var diseases_without_effective_treatment >}} have zero approved treatments. Not "in development." Not "awaiting funding." Zero. If you are diagnosed with one of them today, your treatment has not been invented. Nobody is working on it.
+{{< var diseases_without_effective_treatment >}} have zero FDA approved treatments. Not "in development." Not "awaiting funding." Zero.
+
+It gets worse. You have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs plus substances your government already classified as safe). These could theoretically treat {{< var drug_disease_combinations_possible >}} drug-disease combinations. You have tested {{< var exploration_ratio >}} of them. The remaining {{< var unexplored_ratio >}} sits unexplored, not because the science is hard, but because nobody funded the trial.
 
 Your FDA approves roughly {{< var current_drug_approvals_per_year_nounit >}} new treatments per year. At that rate, the queue clears in approximately {{< var status_quo_queue_clearance_years >}}. For context, {{< var status_quo_queue_clearance_years >}} ago, your species had not yet invented writing. You were painting buffalo on cave walls and dying of tooth infections.
 
@@ -32,11 +36,13 @@ A system that could test cures for {{< var rare_diseases_count_global_nounit >}}
 
 ## Why Your Trials Cost a Tesla Per Person
 
-Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}}** per patient. A Tesla. Per person. To find out if a pill works. The pill costs 37 cents to make. The paperwork weighs more than the patient.
+Traditional Phase III trials cost **{{< var traditional_phase3_cost_per_patient >}}** per patient. A Tesla. Per person. To find out if a pill works. The active ingredient often costs pennies to synthesize. The paperwork weighs more than the patient.
 
 Then the Oxford RECOVERY trial proved you can do the same thing for **{{< var recovery_trial_cost_per_patient >}}**. During a pandemic. While panicking. They tested COVID treatments on 40,000+ patients by:
 
 Using existing hospital staff (doctors who were already treating patients and could presumably continue doing so while also writing things down), collecting data electronically (instead of sacrificing forests to the paperwork gods), and asking "does the patient live or die?" instead of "did they complete form 27-B in triplicate?" 
+
+The US-based ADAPTABLE trial [@adaptable-trial] later confirmed this wasn't a pandemic fluke: {{< var adaptable_trial_cost_per_patient >}} per patient in routine American healthcare settings, no emergency, no NHS. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}} per patient [@pmc-pragmatic-trial-cost]. The low cost is a property of the design, not the crisis.
 
 Scale that globally: up to **{{< var dfda_trial_cost_reduction_factor >}} cost reduction**. Same data quality. Your governments spend **{{< var global_government_clinical_trials_spending_annual >}} per year** on clinical trials [@global-government-clinical-trial-spending-estimate]. Industry adds another {{< var global_industry_clinical_trials_spending_annual >}}, mostly on drugs that are already profitable. Scale RECOVERY-style pragmatic trials across the full {{< var global_clinical_trials_spending_annual >}} market and you save up to **{{< var dfda_benefit_rd_only_annual >}} annually**. That's before counting the lives. I'm saving those for dramatic effect.
 
@@ -48,15 +54,34 @@ Right now, if you are diagnosed with one of those {{< var rare_diseases_count_gl
 
 Each new drug approval is worth $1.62 billion [@arxiv-2212-07384] in market value. Your FDA approves roughly {{< var current_drug_approvals_per_year >}}. That is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself.
 
-With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could fund 10,000 new pragmatic clinical trials per year at $5M each (still luxurious by RECOVERY standards), test treatments for {{< var rare_diseases_count_global_nounit >}} rare diseases currently ignored because orphan diseases aren't profitable enough for your orphan-making economic system, cut development time from 17 years to 3-5 years (most terminal patients don't have 17 years; this has not occurred to anyone in charge), and make medicines affordable by eliminating {{< var pharma_drug_development_cost_current >}} development costs. Seventeen years. That's how long it currently takes to get a drug from "this probably works" to "you can have it." Your species figured out how to split atoms in 6 years during a war, but letting a cancer patient take a pill that passed safety testing requires the gestation period of three consecutive elephants.
+With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could:
+
+- Fund 10,000 new pragmatic clinical trials per year at $5M each (still luxurious by RECOVERY standards)
+- Test treatments for {{< var rare_diseases_count_global_nounit >}} rare diseases currently ignored because orphan diseases aren't profitable enough for your orphan-making economic system
+- Cut development time from 17 years to 3-5 years (most terminal patients don't have 17 years; this has not occurred to anyone in charge)
+- Make medicines affordable by eliminating {{< var pharma_drug_development_cost_current >}} development costs
+
+Seventeen years. That is how long it currently takes to get a drug from "this probably works" to "you can have it." Your species figured out how to split atoms in 6 years during a war, but letting a cancer patient take a pill that passed safety testing requires the gestation period of three consecutive elephants.
 
 ## The Cost of Taking Your Time
 
-Disease costs humanity **{{< var global_disease_economic_burden_annual >}} annually** in welfare losses ({{< var global_annual_daly_burden >}} avoidable DALYs at {{< var standard_economic_qaly_value_usd >}}/QALY [@ihme-gbd-2021]). The number is larger than global GDP ({{< var global_gdp_2025 >}}) because GDP measures market transactions, not the value of being alive and not in pain. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is the standard rate governments already use when deciding whether to approve drugs, build highways, or regulate pollution.
+You now know what this system costs (less than dog costumes) and what trials should cost ({{< var dfda_pragmatic_trial_cost_per_patient >}}, not {{< var traditional_phase3_cost_per_patient >}}). Here is what the delay costs in human lives.
 
-Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. Delayed treatments cost {{< var dfda_efficacy_lag_elimination_dalys >}} healthy life-years over the full lag period (cumulative across all deaths and disability during the delay, not a single year's burden). The regulatory lag is not a safety feature. It is a waiting room where people die. You just gave it a nicer name.
+The delay comes from two sources. First, your discovery pipeline: with {{< var dfda_trial_capacity_multiplier >}} more trial capacity, the average untreated disease gets its first treatment {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier. Second, the efficacy lag: once a drug passes safety testing, your FDA sits on it for another {{< var efficacy_lag_years >}} to confirm it works well enough, while people who could be taking it die instead. Combined timeline shift: **{{< var dfda_trial_capacity_plus_efficacy_lag_years >}}**.
 
-See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#daily-opportunity-cost-of-inaction) for calculations.
+During those {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years, people die who didn't have to. Here are the lives I was saving for dramatic effect: **{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}**. That is {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of healthy life, and {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering eliminated. These are cumulative, one-time benefits from permanently accelerating the discovery pipeline (the same methodology used to value smallpox eradication).
+
+Now put a price on it. The WHO says the world loses {{< var global_annual_daly_burden >}} DALYs per year [@ihme-gbd-2021]. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient research. At {{< var standard_economic_qaly_value_usd >}}/QALY (the standard rate used by the EPA, OECD, WHO, and NICE when deciding whether to approve drugs, build highways, or regulate pollution), that is {{< var global_disease_economic_burden_annual >}} per year in welfare losses. Multiply by the {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}-year timeline shift:
+
+{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value_latex >}}
+
+Total economic value of the health dividend: **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**.
+
+"But that's more than global GDP!" Yes. GDP ({{< var global_gdp_2025 >}}) measures market transactions. It does not measure the value of not being dead, not being in pain, and not watching your children die of treatable diseases. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is not something I invented. It is what your governments already use when deciding how much a human life is worth. I just multiplied it by the number of sick people, which is also not my fault.
+
+The only debatable input is whether the timeline shift is really ~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years. See the [full derivation](../appendix/dfda-impact-paper.qmd#verification-complete-derivation-chains) for how that number is calculated, and the [Monte Carlo simulations](../appendix/dfda-impact-paper.qmd#financial-analysis-summary) for what happens when every input varies.
+
+Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. The regulatory lag is not a safety feature. It is a waiting room where people die. You just gave it a nicer name.
 
 ## The Return
 
@@ -64,4 +89,10 @@ See [Daily Opportunity Cost of Inaction](https://dfda-impact.warondisease.org#da
 
 Your decentralized FDA costs {{< var dfda_annual_opex >}}/year. It saves {{< var dfda_benefit_rd_only_annual >}}/year. That's **{{< var dfda_roi_rd_only >}}:1** on R&D savings alone, without counting a single human life. Include the lives (which you'd think someone would), and total societal benefit hits **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1**.
 
-Even the worst case (everything goes wrong, adoption is terrible, the servers catch fire) still returns an estimated 66:1. Your worst medical outcome is better than your best military one.
+The cost per year of healthy life saved: **{{< var dfda_direct_funding_cost_per_daly >}}**. Anti-malaria bed nets, the gold standard of cost-effective interventions, cost {{< var bed_nets_cost_per_daly >}} per DALY. This system operates at {{< var treaty_vs_bed_nets_multiplier >}} the cost-effectiveness, at vastly greater scale. Your species gives awards to the bed net people. This costs less per life-year and nobody has heard of it.
+
+Even the worst case (everything goes wrong, adoption is terrible, the servers catch fire) still returns an [estimated 66:1](../appendix/dfda-impact-paper.qmd#simplified-roi-scenario). Your worst medical outcome is better than your best military one.
+
+For you personally: if diseases get cured even a few years earlier, the average human gains roughly 50,000 extra hours of life. You spent 17 minutes reading this chapter. That is a 176,000x return on your time, which is more than your investment portfolio has ever achieved.
+
+See the [full impact analysis](../appendix/dfda-impact-paper.qmd) for derivations, Monte Carlo simulations, and the comparative cost-effectiveness table.
