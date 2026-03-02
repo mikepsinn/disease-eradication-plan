@@ -70,6 +70,7 @@ class ReferenceID(str, Enum):
     APPOINTMENTS_CLAUSE = "appointments-clause"
     ARMED_CONFLICT_LOCATION_EVENT_DATA = "armed-conflict-location-event-data"
     ARMS_TRADE_TREATY_2013 = "arms-trade-treaty-2013"
+    ARMY_ANT_DEATH_SPIRAL = "army-ant-death-spiral"
     ARPA_H_SITE = "arpa-h-site"
     ARROW1951 = "arrow1951"
     ARXIV_2212_07384 = "arxiv-2212-07384"
