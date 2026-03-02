@@ -57,7 +57,61 @@ We're writing "How to End War and Disease" - a book that uses dark humor, absurd
 
 ## Comedy Techniques Toolbox (Use Sparingly)
 
-These are optional techniques to add humor when appropriate. Don't force them - use only when they naturally fit:
+These are optional techniques to add humor when appropriate. Don't force them - use only when they naturally fit. See also: `/wishonia-voice` skill for the full comedy mechanics guide.
+
+### The #1 Rule: Jokes Are SHORT
+
+The funniest lines in the manual are 5-15 words. Not paragraphs.
+
+| Works | Doesn't work |
+|-------|-------------|
+| "You named your planet dirt." | "Your species chose to name your planet 'Earth,' which in your language means dirt, which I find fascinating." |
+| "Rocks do it every day." | "Even geological formations have managed to achieve this." |
+
+If the joke needs more than 2 sentences of setup, cut it.
+
+### Describe, Don't Argue
+
+Wishonia doesn't debate. Wishonia describes what humans do, and the description IS the argument.
+
+| Works | Doesn't work |
+|-------|-------------|
+| "Your Department of Defense mainly just attacks people." | "Let me explain why your Department of Defense is misnamed..." |
+| "Investment, which is gambling but wearing a suit." | "This is essentially the same as gambling, except your species has made it socially acceptable." |
+
+**If Wishonia says "let me explain" or "I find this fascinating," delete it and just STATE the thing.**
+
+### The Parenthetical Undercut
+
+Short asides in parentheses (2-8 words) that land harder than the main sentence. This is the voice's secret weapon.
+
+- "(just in case the first 12 apocalypses don't take)"
+- "(as a bonus)"
+- "(this is correct)"
+- "(they're very greedy)"
+- "(to fight the zero aliens attacking you)"
+- "(probably)"
+
+### The Deadpan Definition
+
+Redefine a human concept in its most literal, absurd terms. Delivered flat, no wink.
+
+- "money, which is pretend value that becomes real value if everyone pretends hard enough"
+- "Investment, which is gambling but wearing a suit"
+- "Marketing, which is lying but with graphics"
+
+**Template:** "[Human word], which is [absurd but accurate literal description]."
+
+### The Specific Absurd Noun
+
+Don't use generic words. Invent a phrase that is technically accurate and absurd.
+
+| Generic (not funny) | Specific (funny) |
+|---------------------|-----------------|
+| weapons | murder tubes that cost more than countries |
+| the safety system | smoke detector that works by mail |
+| lobbying | money laundering but backwards and legal |
+| military budget | murder money |
 
 ### Philomena Cunk-Style Confused Literalism
 - Take things literally that shouldn't be: "The Pentagon has five sides. You named your war building after its shape. Like calling a hospital 'Rectangle.'"
@@ -67,11 +121,14 @@ These are optional techniques to add humor when appropriate. Don't force them - 
 When highlighting economic absurdity:
 - Refer to money as "small pieces of paper with dead presidents"
 - Point out the circular insanity: "Food grows for free but you need papers to eat it"
-- "You trade papers for instructions on getting infinite papers"
+- Use "papers" in ~30% of money references, not every one
+
+### Structure IS the Joke
+Use bullet lists, numbered lists, and comparison tables as comedy delivery. The format being serious while the content is absurd creates the gap. If you're writing 3+ similar points in prose, convert to a list.
 
 ### Circular Logic That's Actually Correct
 Describe broken systems as absurd loops:
-- "Weapons makers give money to politicians → politicians buy weapons → weapons makers get more money. It's like a dog chasing its tail, if the tail was made of money and the dog was democracy."
+- "Weapons makers give money to politicians -> politicians buy weapons -> weapons makers get more money. It's like a dog chasing its tail, if the tail was made of money and the dog was democracy."
 
 ### Progressive Revelation of Stupidity
 Build from reasonable to insane:
@@ -84,6 +141,17 @@ Build from reasonable to insane:
 - "$2.7 trillion is bigger than $68 billion. I checked."
 - "271.8% is more than 100%, which shouldn't be possible but is"
 - "After the first few hundred nuclear warheads, you're just showing off"
+
+## Common Voice Failures
+
+| Failure | Example | Fix |
+|---------|---------|-----|
+| Wishonia announces the joke | "I find your legal system endlessly fascinating." | Delete the preamble. Just state the absurd thing. |
+| Wishonia lectures | 4-sentence explanation of what sovereignty means | 1 sentence that makes the concept sound absurd |
+| Wishonia delivers speeches | 3-paragraph monologue about human nature | 1-2 sentences of observation, then move on |
+| Wishonia performs comedy | "This is my favorite objection because..." | Wishonia doesn't know it's funny. It's just confused. |
+
+**The test:** The comedy comes from the GAP between Wishonia's naive tone and the devastating truth. If Wishonia sounds self-aware, the gap closes and the comedy dies.
 
 ## The Final Check
 

@@ -63,7 +63,7 @@ By under-funding the *public* capacity for clinical validation by a factor of {{
 Even if we include *all* clinical trial spending (Industry + Government = ~{{< var global_clinical_trials_spending_annual >}}), the ratio remains stark.
 
 * **Total Trial Spending (All Sources)**: {{< var global_clinical_trials_spending_annual >}}
-* **Ratio to Military**: 32:1
+* **Ratio to Military**: {{< var military_to_clinical_trials_spending_ratio >}}:1
 * **Cost Inflation**: The minimum Phase 3 trial cost is **{{< var phase_3_trial_cost_min >}}**, creating a barrier to entry that effectively excludes non-profit, academic, and patient-led research initiatives.
 
 However, this metric is misleading for security purposes. A theoretical {{< var global_clinical_trials_spending_annual >}} spent on erectile dysfunction or male pattern baldness (profitable markets) does not constitute "biological defense." The *public* investment ({{< var global_government_clinical_trials_spending_annual >}}) is the detailed metric for non-commercial survival capacity, making the **{{< var military_to_government_clinical_trials_spending_ratio >}}** ratio the accurate measure of state-level prioritization.
