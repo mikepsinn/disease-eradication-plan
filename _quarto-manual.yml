@@ -47,6 +47,8 @@ book:
     right:
       - text: "GET THE BOOK"
         href: knowledge/links.qmd
+      - text: "LISTEN"
+        href: knowledge/links.qmd
       - text: "VOTE"
         href: https://WarOnDisease.org
       - icon: youtube
@@ -84,6 +86,8 @@ book:
       href: index.qmd  # ~19p
     - text: "Get the Manual"
       href: knowledge/links.qmd
+    - text: "Listen"
+      href: knowledge/podcast.qmd
 
     - part: "The Problem"
       chapters:
@@ -283,10 +287,6 @@ links:
       url: "https://manual.WarOnDisease.org"
       subtitle: "Full manual, free, no account needed"
       primary: true
-    - label: "Download PDF"
-      url: "/How-to-End-War-and-Disease.pdf"
-    - label: "Download EPUB"
-      url: "/How-to-End-War-and-Disease.epub"
   buy:
     - label: "Amazon Paperback"
       url: "https://www.amazon.com/dp/B0GPLXFMMT"
@@ -302,6 +302,10 @@ links:
       url: "https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease"
       subtitle: "Rate & review"
   listen:
+    - label: "Listen Free"
+      url: "/knowledge/podcast.html"
+      subtitle: "Spotify, Apple, YouTube Music, and more"
+  podcast:
     - label: "Spotify"
       url: "https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2"
       subtitle: "Full audiobook podcast"

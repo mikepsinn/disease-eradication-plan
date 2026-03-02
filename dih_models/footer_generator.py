@@ -3,12 +3,9 @@
 Footer Generator
 ================
 
-Generates a single shared footer HTML file used by all Quarto sites.
-Reads social/action links from _quarto-shared-defaults.yml and paper
-listings from all _quarto-*.yml configs.
-
-PDF download links are NOT included here (already in each site's
-page-footer YAML section).
+Generates a slim shared footer HTML file used by all Quarto sites.
+Copyright/license + CTA links only. Social links and paper listings
+live on /links and /papers respectively.
 
 Usage:
     from dih_models.footer_generator import generate_footer_html
@@ -19,137 +16,40 @@ Output:
 """
 
 import logging
-import re
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional
 
 from dih_models.yaml_utils import load_quarto_config
 
 logger = logging.getLogger("dih.footer")
 
 
-def extract_footer_info(config_path: Path, config_name: str) -> Optional[Dict[str, Any]]:
-    """Extract footer-relevant info from a Quarto config file."""
-    config = load_quarto_config(config_path)
-    if not config:
-        return None
-    if config_name in ("test", "manual"):
-        return None
+def _build_cta_html(project_root: Path) -> str:
+    """Build a conversion-focused CTA row: direct Amazon buy + vote link."""
+    manual_config = load_quarto_config(project_root / "_quarto-manual.yml")
+    buy_links = manual_config.get("links", {}).get("buy", [])
 
-    title = None
-    description = None
-    site_url = None
+    # First buy link is the primary (Amazon Paperback)
+    amazon_url = buy_links[0]["url"] if buy_links else "https://www.amazon.com/dp/B0GPLXFMMT"
 
-    if "book" in config:
-        book = config["book"]
-        title = book.get("title")
-        description = book.get("description") or book.get("abstract")
-        site_url = book.get("site-url")
-    elif "website" in config:
-        website = config["website"]
-        title = website.get("title")
-        description = website.get("description")
-        site_url = website.get("site-url")
-
-    if not title or not site_url:
-        return None
-
-    emoji = config.get("dih-render", {}).get("emoji", "")
-
-    if description:
-        description = description.replace('"', '&quot;')
-        if len(description) > 200:
-            description = description[:197] + "..."
-
-    return {
-        "id": config_name,
-        "title": title,
-        "description": description,
-        "emoji": emoji,
-        "site_url": site_url,
-    }
-
-
-def _build_social_links_html(project_root: Path) -> str:
-    """Read links from _quarto-shared-defaults.yml and build vote + social HTML rows."""
-    shared_config = load_quarto_config(project_root / "_quarto-shared-defaults.yml")
-    links = shared_config.get("links", {})
-
-    # Vote / CTA row
-    action_links = links.get("action", [])
-    vote_html = ""
-    if action_links:
-        vote = action_links[0]
-        vote_html = f"""  <p style="margin: 0.5rem 0; font-size: 0.85rem;">
-    <a href="{vote['url']}" style="color: #8b7355;">Join the War on Disease</a>
+    return f"""  <p style="margin: 0.5rem 0; font-size: 0.95rem;">
+    <a href="{amazon_url}" style="color: #8b7355; font-weight: 600;">Buy on Amazon</a> &nbsp;|&nbsp;
+    <a href="https://manual.WarOnDisease.org/knowledge/links.html" style="color: #8b7355;">More Formats</a> &nbsp;|&nbsp;
+    <a href="https://WarOnDisease.org" style="color: #8b7355;">Join the War on Disease</a>
   </p>"""
-
-    # Social links row
-    follow_links = links.get("follow", [])
-    parts = []
-    for link in follow_links:
-        label = link.get("footer-label", link["label"])
-        url = link["url"]
-        subtitle = link.get("subtitle", link["label"])
-        parts.append(f'<a href="{url}" style="color: #8b7355;" title="{subtitle}">{label}</a>')
-
-    social_links_html = ""
-    if parts:
-        separator = " &nbsp;|&nbsp;\n    "
-        social_links_html = f"""  <p style="margin: 0.5rem 0; font-size: 0.9rem;">
-    {separator.join(parts)}
-  </p>"""
-
-    return vote_html + "\n" + social_links_html if (vote_html or social_links_html) else ""
 
 
 def generate_footer_html(project_root: Path) -> Path:
     """
     Generate assets/html/generated-footer.html shared by all sites.
 
+    Slim footer: copyright/license + direct Amazon buy link + CTA.
+    Social links and paper listings live on /links and /papers.
+
     Returns:
         Path to the generated file
     """
-    quarto_configs = sorted(project_root.glob("_quarto-*.yml"), key=lambda p: p.name)
-    papers: List[Dict[str, Any]] = []
-
-    for config_path in quarto_configs:
-        match = re.match(r"_quarto-(.+)\.yml", config_path.name)
-        if not match:
-            continue
-        config_name = match.group(1)
-        try:
-            paper_info = extract_footer_info(config_path, config_name)
-            if paper_info:
-                papers.append(paper_info)
-        except Exception as e:
-            logger.warning("Failed to parse %s: %s", config_path.name, e)
-
-    # Sort: priority papers first, then alphabetical
-    priority_order = ["1-pct-treaty-impact", "iab", "wishocracy", "optimocracy", "dfda-impact", "dfda-spec"]
-
-    def sort_key(p: Dict[str, Any]) -> tuple:
-        try:
-            idx = priority_order.index(p["id"])
-        except ValueError:
-            idx = len(priority_order)
-        return (idx, p["title"])
-
-    papers.sort(key=sort_key)
-
-    # Build paper links
-    paper_links = []
-    for paper in papers:
-        display = f"{paper['emoji']} {paper['title']}" if paper.get("emoji") else paper["title"]
-        desc = paper.get("description", "")
-        if desc:
-            paper_links.append(f'<a href="{paper["site_url"]}" title="{desc}" style="color: #8b7355;">{display}</a>')
-        else:
-            paper_links.append(f'<a href="{paper["site_url"]}" style="color: #8b7355;">{display}</a>')
-
-    links_html = "<br>\n    ".join(paper_links)
-    social_html = _build_social_links_html(project_root)
+    cta_html = _build_cta_html(project_root)
 
     html_content = f"""<!-- AUTO-GENERATED: Shared Footer Content -->
 <!-- Generated by dih_models/footer_generator.py -->
@@ -160,11 +60,7 @@ def generate_footer_html(project_root: Path) -> Path:
     <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0</a> |
     <a href="https://github.com/mikepsinn/disease-eradication-plan" style="color: #8b7355;">&#128194; Source Code &amp; Data</a>
   </p>
-{social_html}
-  <p style="margin: 0.5rem 0; font-size: 0.85rem; border-top: 1px solid #d4c5b9; padding-top: 0.5rem; margin-top: 0.5rem;">
-    <strong>Related Papers:</strong><br>
-    {links_html}
-  </p>
+{cta_html}
 </div>
 """
 
@@ -180,7 +76,7 @@ def generate_footer_html(project_root: Path) -> Path:
         old_file.unlink()
         logger.debug("Removed old per-site footer: %s", old_file.name)
 
-    logger.debug("Generated %s with %d paper links", output_path.relative_to(project_root), len(papers))
+    logger.debug("Generated %s", output_path.relative_to(project_root))
     return output_path
 
 

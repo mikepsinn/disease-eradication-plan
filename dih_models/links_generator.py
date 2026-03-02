@@ -114,6 +114,13 @@ def _render_section(heading: str, links: List[Dict[str, Any]]) -> str:
     return f"<h2>{heading}</h2>\n\n{buttons}"
 
 
+def _load_configs(project_root: Path):
+    """Load manual and shared YAML configs. Returns (manual_config, shared_config)."""
+    manual_config = load_quarto_config(project_root / "_quarto-manual.yml")
+    shared_config = load_quarto_config(project_root / "_quarto-shared-defaults.yml")
+    return manual_config, shared_config
+
+
 def generate_links_qmd(project_root: Path) -> Path:
     """
     Generate knowledge/links.qmd from YAML config data.
@@ -125,8 +132,7 @@ def generate_links_qmd(project_root: Path) -> Path:
     Returns:
         Path to the generated knowledge/links.qmd file
     """
-    manual_config = load_quarto_config(project_root / "_quarto-manual.yml")
-    shared_config = load_quarto_config(project_root / "_quarto-shared-defaults.yml")
+    manual_config, shared_config = _load_configs(project_root)
 
     manual_links = manual_config.get("links", {})
     shared_links = shared_config.get("links", {})
@@ -179,6 +185,78 @@ aliases:
 """
 
     output_path = project_root / "knowledge" / "links.qmd"
+    with open(output_path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(content)
+
+    logger.debug("Generated %s", output_path.name)
+
+    # Also generate the podcast page
+    generate_podcast_qmd(project_root, manual_config)
+
+    return output_path
+
+
+def generate_podcast_qmd(project_root: Path, manual_config: Dict = None) -> Path:
+    """
+    Generate knowledge/podcast.qmd with all podcast platform links.
+
+    Reads links.podcast from _quarto-manual.yml and adds buy links as a
+    conversion footer.
+
+    Returns:
+        Path to the generated knowledge/podcast.qmd file
+    """
+    if manual_config is None:
+        manual_config = load_quarto_config(project_root / "_quarto-manual.yml")
+
+    manual_links = manual_config.get("links", {})
+    podcast_links = manual_links.get("podcast", [])
+    buy_links = manual_links.get("buy", [])
+
+    podcast_html = "\n\n".join(_render_link(link) for link in podcast_links)
+    buy_html = "\n\n".join(_render_link(link) for link in buy_links[:2])  # Just top 2 buy links
+
+    content = f"""---
+title: "Listen to How to End War and Disease"
+description: "Free audiobook podcast. Every chapter narrated. Available on Spotify, Apple Podcasts, YouTube Music, and all major podcast apps."
+published: true
+page-layout: full
+toc: false
+aliases:
+  - /podcast
+---
+
+```{{=html}}
+<style>
+{LINKS_CSS}
+</style>
+
+<div class="links-page">
+
+<img src="/assets/cover/book-cover-3.jpg" alt="How to End War and Disease - Book Cover" class="hero-img">
+
+<div class="tagline">
+  Every chapter narrated. Free on all major podcast apps.
+</div>
+
+<h2>Listen</h2>
+
+{podcast_html}
+
+<h2>Prefer to Read?</h2>
+
+<a href="https://manual.WarOnDisease.org" class="link-btn primary">
+  Read Online
+  <span class="btn-sub">Full manual, free, no account needed</span>
+</a>
+
+{buy_html}
+
+</div>
+```
+"""
+
+    output_path = project_root / "knowledge" / "podcast.qmd"
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(content)
 
