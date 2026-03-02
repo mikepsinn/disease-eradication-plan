@@ -1,0 +1,63 @@
+name: Daily Content Distribution
+
+on:
+  schedule:
+    # Run daily at 9:00 AM UTC (adjust to your audience's peak time)
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  distribute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install tweepy atproto praw python-dotenv
+
+      - name: Regenerate RSS feed
+        run: |
+          pip install pyyaml
+          python -c "
+          import sys; sys.path.insert(0, '.')
+          from dih_models.feed_generator import generate_rss_feed
+          from pathlib import Path
+          p = generate_rss_feed(Path('.'))
+          import xml.etree.ElementTree as ET
+          items = ET.parse(str(p)).findall('.//item')
+          print(f'Feed has {len(items)} entries ready')
+          "
+
+      - name: Distribute today's content
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          REDDIT_SUBREDDITS: ${{ secrets.REDDIT_SUBREDDITS }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+        run: python scripts/distribute/distributor.py
+
+      - name: Commit posted.json tracking
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/distribute/posted.json
+          git diff --cached --quiet || git commit -m "chore: update distribution tracking [skip ci]"
+          git push

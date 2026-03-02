@@ -127,10 +127,14 @@ def generate_rss_feed(project_root: Path) -> Path:
             "date": feed_date,
         })
 
+    # Only include entries whose date has arrived (no future items)
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    entries = [e for e in entries if e["date"] <= today]
+
     # Sort by date descending (newest first)
     entries.sort(key=lambda e: e["date"], reverse=True)
 
-    latest_date = entries[0]["date"] if entries else datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    latest_date = entries[0]["date"] if entries else today
 
     items_xml = []
     for entry in entries:
