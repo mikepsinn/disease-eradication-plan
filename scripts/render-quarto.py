@@ -532,6 +532,9 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
     if not docx_output_file:
         docx_output_file = config.get("format", {}).get("docx", {}).get("output-file")
 
+    # Detect which formats are configured
+    configured_formats = list(config.get("format", {}).keys())
+
     return {
         "config_file": config_file,
         "index_source": dih_render.get("index-source"),
@@ -546,6 +549,8 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         "pdf_output_file": pdf_output_file,
         "epub_output_file": epub_output_file,
         "docx_output_file": docx_output_file,
+        # Which formats are configured (e.g. ["html", "pdf", "epub"])
+        "configured_formats": configured_formats,
         # Whether to show "(95% CI: ...)" in variable display values (default: True)
         "show_confidence_intervals": dih_render.get("show-confidence-intervals", True),
         # How to handle <a> links on parameter values (default: "html" = keep raw tags)
@@ -1423,7 +1428,9 @@ def render_quarto(
 
         # 5. Post-validation for HTML builds (skip in preview mode)
         # Runs when HTML is rendered (either all formats or html-only)
-        if not preview and (format_override is None or format_override == "html") and exit_code == 0:
+        # Only check if this config actually defines HTML format
+        has_html = "html" in metadata.get("configured_formats", [])
+        if not preview and (format_override == "html" or (format_override is None and has_html)) and exit_code == 0:
             gh_group_start("VALIDATION: POST-RENDER (HTML)")
             output_dir = metadata["output_dir"]
             validation_exit = run_post_validation(output_dir=output_dir)
@@ -1507,8 +1514,8 @@ def render_quarto(
                     shutil.copy2(docx_file, dest_docx_path)
                     print(f"[OK] Copied DOCX to: {dest_docx_path.relative_to(project_root)}")
 
-            # Check HTML
-            if format_override is None or format_override == "html":
+            # Check HTML (only if config defines html format)
+            if format_override == "html" or (format_override is None and has_html):
                 html_index = temp_output_dir / "index.html"
                 if html_index.exists():
                     print(f"[OK] HTML exists: {html_index}")
