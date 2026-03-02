@@ -95,7 +95,6 @@ def _unlink_with_retry(path: Path, retries: int = 8, initial_delay_seconds: floa
                 continue
             raise
 
-from lib.yaml_sync_utils import sync_descriptions_to_yaml_configs  # noqa: E402
 from lib.workflow_generator import regenerate_workflow  # noqa: E402
 from dih_models.quarto_config_sync import sync_shared_config_settings  # noqa: E402
 
@@ -1242,12 +1241,6 @@ def main():
             logger.warning(f"[WARN] Could not regenerate outline: {e}")
     else:
         logger.warning(f"[WARN] Outline script not found: {generate_outline_script}")
-
-    # Sync descriptions from QMD frontmatter to YAML configs (optional - OK to fail)
-    try:
-        sync_descriptions_to_yaml_configs(project_root, output_path)
-    except Exception as e:
-        logger.warning(f"[WARN] Description sync skipped: {e}")
 
     # Regenerate GitHub Actions workflow from Quarto configs (optional - CI catches issues)
     try:
