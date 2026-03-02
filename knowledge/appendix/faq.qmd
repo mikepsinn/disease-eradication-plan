@@ -30,9 +30,9 @@ Pharma currently pays {{< var pharma_drug_development_cost_current >}} per drug.
 
 | | Current system | New system |
 |---|---|---|
-| Who pays for trials | Pharma (costs billions) | Treaty fund (pays pharma) |
-| Trial outcome | 90% expensive failure | 90% failure, but someone else paid |
-| Business model | Pharmaceutical roulette | Predictable income |
+| Who pays for trials | Pharma (spend billions, pray) | Treaty fund (pays pharma to pray) |
+| Trial outcome | 90% expensive failure | 90% failure, but with someone else's money |
+| Business model | Casino, but with lab coats | Paycheck, but with lab coats |
 
 The treaty fund pays pharma to run trials. Trials become revenue, not cost. They'd trample each other getting to the signing ceremony.
 
@@ -52,11 +52,11 @@ Sovereignty means "we decide what happens to us." The treaty asks countries to d
 
 ![For every person the FDA saves by being careful, 4,000 people die waiting. That's not caution, that's just very slow murder with excellent paperwork.](/assets/images/faq/faq-section-the-fda-exists-for-a-reason-bw-academic.jpg)
 
-Phase 1 safety testing prevented thalidomide from reaching the US market. That saved roughly 1,000 lives. Since 1962, FDA drug lag has contributed to an estimated 4-10 million American deaths from delayed access to treatments already proven safe. That's 4,000-10,000 deaths caused for every death prevented.
+Your safety system prevented thalidomide from reaching the US market. That saved roughly 1,000 lives. I then calculated how many people died waiting for treatments the system was busy approving. The number was 4-10 million. I checked it twice because it seemed wrong. It wasn't wrong.
 
-Under the decentralized framework, patients see real data on risks and benefits, then decide for themselves.
+That's 4,000-10,000 deaths caused for every death prevented. Your smoke detector is burning down more houses than it saves.
 
-The people it kills die quietly, in waiting rooms. The system does not count them.
+The people it kills die quietly, in waiting rooms, rather than dramatically, in headlines. The system does not count them (which is convenient for the system).
 
 ## "What If Countries Cheat?"
 
@@ -66,10 +66,10 @@ The people it kills die quietly, in waiting rooms. The system does not count the
 
 Trust has a historical compliance rate of approximately "whenever it suits them." Which is why this system doesn't use it.
 
-- Politicians who comply receive [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) benefits: campaign funding and post-office career opportunities
-- Politicians who don't comply get nothing
-- Contributions are public on blockchain, so compliance is verifiable
-- Smart contracts route benefits automatically to compliant participants
+- Politicians who comply receive [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) benefits: campaign funding and cushy post-office careers (they love this)
+- Politicians who don't comply get nothing (they hate this)
+- Every contribution is public on blockchain, so lying is difficult (they really hate this)
+- Benefits route automatically via smart contracts, because humans cannot be trusted to distribute papers fairly (this has been tested extensively)
 
 The system assumes the worst about human nature and designs around it. Compliance is the career-maximizing choice. It's Pavlovian conditioning, but for senators.
 
@@ -79,11 +79,11 @@ The system assumes the worst about human nature and designs around it. Complianc
 
 You already replace everything that breaks:
 
-- Hearts (replaced)
+- Hearts (replaced; you're basically a car at this point)
 - Kidneys (replaced, or hooked to a machine thrice weekly)
-- Blood (replaced)
-- Bones (replaced with titanium, which is better)
-- Joints (replaced)
+- Blood (replaced from other humans, which is recycling)
+- Bones (titanium; stronger than the original)
+- Joints (your grandma is 15% metal and doing fine)
 
 Aging is damage accumulation with known repair pathways:
 
@@ -132,7 +132,7 @@ Money isn't the only constraint. You can't print more physicists. (You've tried.
 
 ![Weapons makers spend 127 million bribing politicians. We could spend 650 million. Outbidding death merchants: finally, a proper auction.](/assets/images/faq/faq-section-this-is-politically-impossible-bw-academic.jpg)
 
-"Politically impossible" means papers currently flow in a different direction.
+"Politically impossible" means the small pieces of paper with presidents on them currently go to people who build missiles instead of people who cure diseases. You need the papers to go the other way. This is called "lobbying," which is bribery but with a business card.
 
 The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments (they're immune). Beat them at their own game. Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Bonds](../solution/incentive-alignment-bonds.qmd). Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K-Street firms. Outbid them. Lobbyists work for the highest bidder.
 
@@ -169,15 +169,15 @@ What's actually unrealistic:
 
 ![One committee picking which pills to test versus thousands of teams racing each other. Turns out monopolies are slow. Who knew.](/assets/images/faq/faq-section-what-if-the-science-is-wrong-bw-academic.jpg)
 
-If 100,000 trials fail, you know 100,000 things that don't work. This is called data.
+If 100,000 trials fail, you know 100,000 things that don't work. This is called data. (You've been collecting it for 400 years. It's the only method you have that actually works.)
 
 Still better than the current system:
 
-- 100 trials over 17 years, learn nothing, many retire wealthy
-- NIH funding safe research confirming water is wet
-- FDA blocking trials because the paperwork had a typo on page 847
+- 100 trials over 17 years, learn nothing, many retire wealthy (with pensions)
+- NIH funding safe research confirming water is wet (it is)
+- FDA blocking trials because the paperwork had a typo on page 847 (this actually happens)
 
-Your decentralized framework will run {{< var dfda_trial_cost_reduction_factor >}} more trials for the same budget. Even if 90% fail, you get over 4x more cures than today.
+Your decentralized framework will run {{< var dfda_trial_cost_reduction_factor >}} more trials for the same budget. Even if 90% fail, you get over 4x more cures than today. Failure at scale beats success at a standstill.
 
 ## "War Is Human Nature"
 
@@ -217,11 +217,11 @@ Government "wars" create bureaucracies that need the problem to exist. The War o
 
 Why this is different:
 
-- Uses markets, not ministries
-- Pays for outcomes, not process
-- No bureaucracy to preserve (smart contracts)
-- Competition between solutions
-- Researchers paid for cures, not grants
+- Markets instead of ministries (markets don't need the problem to keep existing)
+- Pays for outcomes, not process (no one gets rich by failing slowly)
+- No bureaucracy to preserve (smart contracts don't have pensions)
+- Thousands of teams competing instead of one committee deciding (the committee is at lunch)
+- Researchers paid for cures, not grant applications (which are different skills)
 
 Call it the Market for Health. Less dramatic. Might actually work.
 
@@ -251,8 +251,8 @@ All philanthropy combined is a rounding error compared to government budgets (a 
 
 **Objection**: "How do you ensure money helps patients instead of funding bureaucracy?"
 
-The NIH's RECOVER initiative spent $1.6 billion over four years and produced zero treatment recommendations. Zero. That takes talent.
+The NIH's RECOVER initiative spent $1.6 billion over four years and produced zero treatment recommendations. Zero. $1.6 billion and nothing to show for it. (That takes talent.)
 
-Meanwhile, a [decentralized FDA](../solution/dfda.qmd) model achieves {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500]. Traditional trials: {{< var traditional_phase3_cost_per_patient >}} [@trial-cost-41k]. Same science. {{< var recovery_trial_cost_reduction_factor >}} less overhead.
+A [decentralized FDA](../solution/dfda.qmd) model achieves {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500]. Traditional trials: {{< var traditional_phase3_cost_per_patient >}} [@trial-cost-41k]. Same science. {{< var recovery_trial_cost_reduction_factor >}} less overhead. (I checked this number twice too.)
 
-With that same $1.6 billion, the decentralized model could have run thousands of trials for millions of patients.
+With that same $1.6 billion, the decentralized model could have run thousands of trials for millions of patients. Instead: zero. The money is gone. The patients are still sick. The administrators have been promoted.
