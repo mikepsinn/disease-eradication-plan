@@ -35,15 +35,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 219 parameters used in the analysis, organized by type:
+This appendix documents all 235 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 94
-- Calculated values: 94
-- Core definitions: 31
+- External sources (peer-reviewed): 105
+- Calculated values: 98
+- Core definitions: 32
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (94 parameters) • [External Data Sources](#sec-external) (94 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
+[Calculated Values](#sec-calculated) (98 parameters) • [External Data Sources](#sec-external) (105 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5847,6 +5847,219 @@ $$
 
 :::
 
+### US Waste (% GDP): 17% {#sec-us_gov_waste_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US government waste as percentage of GDP. ~$4.90T waste / $28.78T GDP = ~17%. This represents the 'dysfunction tax' that American citizens effectively pay through inefficient governance.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
+- [US GDP (2024)](#sec-us_gdp_2024) 📊: $28.8T
+
+$$
+\begin{gathered}
+W_{US,\%GDP} \\
+= \frac{W_{total,US}}{USGDP} \\
+= \frac{\$4.9T}{\$28.8T} \\
+= 17\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_pct_gdp.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_pct_gdp.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_pct_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_pct_gdp.qmd >}}
+
+:::
+
+### US Gov Waste (Raw Total): $4.9T {#sec-us_gov_waste_raw_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Raw sum of US government waste components before overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.
+
+**Inputs**:
+
+- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.2T (95% CI: $1T - $1.5T)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.4T (95% CI: $500B - $2T)
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
+- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181B (95% CI: $150B - $220B)
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
+- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90B (95% CI: $60B - $150B)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50B (95% CI: $30B - $80B)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
+
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_raw_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_raw_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_raw_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_raw_total.qmd >}}
+
+:::
+
+### Recoverable Capital: $2.45T {#sec-us_gov_waste_recoverable}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Recoverable capital if US improved to OECD median efficiency. Current US efficiency ~38-48%; OECD median ~75-85%. Closing to ~80% would recover approximately half the gap.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
+
+$$
+\begin{gathered}
+W_{US,recoverable} \\
+= W_{total,US} \times 0.5 \\
+= \$4.9T \times 0.5 \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_recoverable.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_recoverable.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_recoverable.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_recoverable.qmd >}}
+
+:::
+
+### US Government Waste (Total): $4.9T {#sec-us_gov_waste_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual US government waste (additive sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as additive; any overlap offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.
+
+**Inputs**:
+
+- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total) 🔢: $4.9T
+- [Overlap Discount Factor](#sec-us_gov_waste_overlap_discount): 1:1
+
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_total.qmd >}}
+
+:::
+
 ### Annual VICTORY Incentive Alignment Bond Payout: $2.72B {#sec-victory_bond_annual_payout}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6278,30 +6491,6 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 #### Input Distribution
 
 {{< include ../figures/distribution-adaptable_trial_cost_per_patient.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-### ADAPTABLE Trial Total Cost: $14M {#sec-adaptable_trial_total_cost}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total costs including site overhead and in-kind contributions from health systems may be higher.
-
-**Source**: [@pragmatic-trials-cost-advantage]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$14M, $20M] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $14M and $20M (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-adaptable_trial_total_cost.qmd >}}
 
 *~ Medium confidence*
 
@@ -8153,6 +8342,262 @@ Annual US cost of diabetes (direct and indirect)
 
 :::
 
+### US GDP (2024): $28.8T {#sec-us_gdp_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US GDP in 2024 dollars for calculating policy costs as percentage of GDP.
+
+**Source**: [@worldbank-gdp]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Agricultural Subsidies Deadweight Loss: $75B {#sec-us_gov_waste_agricultural_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high economist consensus. [CATEGORY 1: Direct Spending]
+
+**Source**: [@ewg-farm-subsidies]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$50B, $120B] • Distribution: Lognormal (SE: $25B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $50B and $120B (±47%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_agricultural_subsidies.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Corporate Welfare Waste: $181B {#sec-us_gov_waste_corporate_welfare}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits, semiconductor aid, aviation support. Agricultural subsidies are highly regressive (top 10% receive 63%). Cato Institute forensic tally. [CATEGORY 1: Direct Spending]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150B, $220B] • Distribution: Normal (SE: $20B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $150B and $220B (±19%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_corporate_welfare.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Drug War Cost: $90B {#sec-us_gov_waste_drug_war}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY 1: Direct Spending]
+
+**Source**: [@drugpolicyalliance2021]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$60B, $150B] • Distribution: Lognormal (SE: $30B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $60B and $150B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_drug_war.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Fossil Fuel Subsidies (Explicit): $50B {#sec-us_gov_waste_fossil_fuel_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). This figure includes only explicit subsidies (~$50B) for defensibility. [CATEGORY 1: Direct Spending]
+
+**Source**: [@imf-fossilfuel2023]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$30B, $80B] • Distribution: Lognormal (SE: $15B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $30B and $80B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_fossil_fuel_subsidies.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Healthcare System Inefficiency: $1.2T {#sec-us_gov_waste_healthcare_inefficiency}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]
+
+**Source**: [@papanicolas2018]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1T, $1.5T] • Distribution: Normal (SE: $150B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $1T and $1.5T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_healthcare_inefficiency.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Housing/Zoning Restrictions Cost: $1.4T {#sec-us_gov_waste_housing_zoning}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]
+
+**Source**: [@hsieh-moretti2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$500B, $2T] • Distribution: Lognormal (SE: $300B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $500B and $2T (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_housing_zoning.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Military Overspend: $615B {#sec-us_gov_waste_military_overspend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending above 'Strict Deterrence' baseline. Current budget ~$900B supports global power projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$500B, $750B] • Distribution: Normal (SE: $75B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $500B and $750B (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_military_overspend.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Regulatory Red Tape Waste: $580B {#sec-us_gov_waste_regulatory_red_tape}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deadweight loss from US regulatory red tape (procedural friction without safety benefits). Competitive Enterprise Institute estimates total regulatory burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B. [CATEGORY 2: Compliance Burden]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$290B, $1T] • Distribution: Lognormal (SE: $200B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $290B and $1T (±61%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_regulatory_red_tape.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Tariff Cost (GDP Loss): $160B {#sec-us_gov_waste_tariffs}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices. [CATEGORY 3: GDP Loss]
+
+**Source**: [@yalebudgetlab2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$90B, $250B] • Distribution: Normal (SE: $50B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $90B and $250B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_tariffs.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Tax Compliance Waste: $546B {#sec-us_gov_waste_tax_compliance}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing. [CATEGORY 2: Compliance Burden]
+
+**Source**: [@taxfoundation2024-compliance]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$450B, $650B] • Distribution: Normal (SE: $50B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $450B and $650B (±18%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_tax_compliance.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### US Heart Disease Annual Cost: $363B {#sec-us_heart_disease_annual_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -8174,6 +8619,28 @@ Annual US cost of heart disease and stroke (direct and indirect)
 {{< include ../figures/distribution-us_heart_disease_annual_cost.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### US Total Lobbying (2024): $4.4B {#sec-us_total_lobbying_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.
+
+**Source**: [@opensecrets-lobbying-2024]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.74B, $5.06B]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.74B and $5.06B (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_total_lobbying_annual.qmd >}}
+
+*✓ High confidence*
 
 :::
 
@@ -8756,6 +9223,20 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 #### Input Distribution
 
 {{< include ../figures/distribution-trial_relevant_diseases_count.qmd >}}
+
+*Core definition*
+
+:::
+
+### Overlap Discount Factor: 1:1 {#sec-us_gov_waste_overlap_discount}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Overlap discount factor between US government waste categories. Set to 1.0 (no discount). Categories are treated as additive, recognizing that any overlap is offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

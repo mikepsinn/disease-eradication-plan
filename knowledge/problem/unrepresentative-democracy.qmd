@@ -1,6 +1,6 @@
 ---
 title: Unrepresentative Democracy
-description: Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.
+description: Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.4 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.
 published: true
 tags:
   - democracy
@@ -15,13 +15,13 @@ podcast-image: /assets/podcast/unrepresentative-democracy-podcast.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your chance of deciding a presidential election: 1 in 60 million [@odds-of-decisive-vote]. You're more likely to die in a car crash driving to the polls. The expected value of your vote is $0.00017. The cost of casting it (time, gas, parking) is about $50.
 
-Democracy was designed so that your individual participation is mathematically meaningless. What isn't meaningless: the $4.1 billion corporations spend annually on lobbying [@corporate-lobbying-spending-2023]. That math works out just fine.
+Democracy was designed so that your individual participation is mathematically meaningless. What isn't meaningless: the {{< var us_total_lobbying_annual >}} corporations spend annually on lobbying {{< var us_total_lobbying_annual_cite >}}. That math works out just fine.
 
 The Founding Fathers were brilliant men. They anticipated tyranny, corruption, foreign invasion, and mob rule. They did not anticipate Florida.
 
 ## What Democracy Should Look Like vs Reality
 
-Princeton University analyzed 1,779 policy decisions over 20 years. The correlation between what ordinary voters want and what actually happens? **Zero. Percent.** [@princeton-oligarchy-study]
+Princeton University analyzed 1,779 policy decisions over 20 years. The correlation between what ordinary voters want and what actually happens? **Zero. Percent.** [@princeton-oligarchy-study].
 
 When economic elites want something? 78% of the time [@princeton-oligarchy-study].
 
@@ -70,6 +70,13 @@ Your two-party system is a death spiral with "I Voted" stickers. Each voter foll
 
 The result: a nation of 330 million people, selecting from a talent pool of 330 million people, reliably produces a choice between two people that approximately nobody is enthusiastic about. This is the ant death spiral with a larger circle and better catering.
 
+::: {.content-visible when-format="html"}
+<figure>
+<img src="/assets/images/unrepresentative-democracy/ant-death-spiral.gif" alt="Ants marching in a circular death spiral" />
+<figcaption>Each ant follows the one ahead. The leader follows the last. They march in a perfect circle until they die. Your two-party system works the same way, but the circle takes four years. (<a href="https://commons.wikimedia.org/wiki/File:Ant_mill.gif">Clemzouzou69</a>, CC BY-SA 4.0)</figcaption>
+</figure>
+:::
+
 ## How Money Buys Power
 
 Campaign contributions don't directly buy how politicians vote. Only 1 in 4 studies support that [@cost-of-political-influence]. The system is much more elegant than bribery. Bribery is what poor countries do. Rich countries have "campaign finance."
@@ -108,7 +115,6 @@ Meanwhile:
 - Rare pediatric diseases: No lobbyists = no funding
 
 Democracy doesn't allocate resources by who's dying. It allocates by who can afford the best lobbyist. If your disease can't hire a PR firm, it's not a real disease. It's just dying.
-
 
 ## Your Congressman: A Fundraiser Who Occasionally Legislates
 
@@ -177,7 +183,7 @@ This is Public Choice Theory: bureaucrats, politicians, and regulators are **jus
 
 ## Regulatory Capture: How Industries Write Their Own Rules
 
-There are 13,700 registered lobbyists in Washington [@lobbyist-statistics-dc]. Half of them used to work in the government they're now bribing, which on your planet is called "a career path" rather than "corruption." In 2023, corporations spent $4.1 billion on lobbying [@corporate-lobbying-spending-2023]. Divide that by {{< var us_congress_member_count_nounit >}} members of Congress and you get $7.7 million in professional persuasion surrounding each congressman who earns less than a mid-level dentist [@congressman-salary]. The mystery is not that they're corrupt. The mystery is that any of them aren't.
+There are 13,700 registered lobbyists in Washington [@lobbyist-statistics-dc]. Half of them used to work in the government they're now bribing, which on your planet is called "a career path" rather than "corruption." Corporations spend {{< var us_total_lobbying_annual >}} a year on lobbying {{< var us_total_lobbying_annual_cite >}}. Divide that by {{< var us_congress_member_count_nounit >}} members of Congress and you get over $8 million in professional persuasion surrounding each congressman who earns less than a mid-level dentist [@congressman-salary]. The mystery is not that they're corrupt. The mystery is that any of them aren't.
 
 Citizens United [@citizens-united-ruling] made corporations people who can donate unlimited money through Super PACs. Corporations are people now, which is odd because you can't imprison a corporation, give it chemotherapy, or make it feel shame. Pharmaceutical companies write their own regulations. The Medicare Modernization Act banned the government from negotiating drug prices [@medicare-modernization-act-pharma-lobbying].
 That's why insulin that costs $6 to make costs you $300 [@insulin-history-and-pricing]. A 4,900% markup. Your street-corner drug dealers find this excessive, and they don't even have shareholders.
@@ -188,9 +194,11 @@ The military-industrial complex distributes operations across 42 states [@lockhe
 
 The system maintains itself with the elegant efficiency of a parasite that keeps its host alive just enough to keep feeding. Cures are a one-time payment; treatments are recurring revenue. Approving a bad drug ends careers; delaying a good one ends lives (but not careers, and careers are what matter to people with careers). Everyone who matters wins. Everyone who's dying loses. The system works perfectly. It's just optimized for the wrong thing.
 
-### The Solution They Don't Want
+## The Solution They Don't Want
 
-The whole system runs on one trick: each American loses about $12 a year to lobbying (not worth a phone call). Each corporation gains $100 million (worth a thousand phone calls, a lobbyist army, and a senator's vacation home).
+Lobbying is just one gear in the machine. The full cost of political dysfunction (military overspend, healthcare administration, regulatory friction, tax complexity, corporate welfare, and the rest) totals {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP. A forensic audit (the "Political Dysfunction Tax") identifies {{< var us_gov_waste_recoverable >}} in recoverable capital per year if U.S. governance merely reached OECD median efficiency. You don't need a revolution. You need a reallocation.
+
+But nobody fights to recover it, because the losses are diffuse and the benefits are concentrated. Same pattern as this entire chapter: each corporation gains $100 million (worth a thousand phone calls, a lobbyist army, and a senator's vacation home). Each citizen loses thousands (not worth a phone call).
 
 But what if curing disease was more profitable than treating it? What if peace paid better than war? That's what a [1% treaty](../solution/1-percent-treaty.qmd) does. It doesn't fight the corruption machine. It feeds it different inputs. You're going to out-bribe the bribers with math.
 
