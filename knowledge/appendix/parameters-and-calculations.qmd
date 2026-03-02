@@ -1,6 +1,7 @@
 ---
 title: "Methodology, Parameters, and Calculations"
 description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+feed-date: false
 keywords:
   - health economics methodology
   - clinical trial cost analysis
@@ -20,7 +21,6 @@ format:
     toc-depth: 3
     number-sections: false
     code-fold: true
-feed-date: false
 ---
 
 ::: {.content-visible when-format="epub"}
