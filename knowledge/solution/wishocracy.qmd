@@ -52,18 +52,12 @@ Your [decentralized institutes of health](dih.qmd) network functions as a **dece
 - "Security Audit Program"
 - "Alternative decentralized FDA" (competition! novel concept for government!)
 
-#### Public Goods (things the market won't fund because nobody gets rich curing diseases that don't sell pills)
+#### Patient Trial Subsidies (where almost all the money goes)
 
-- "Patient Trial Subsidies Program"
-- "Off-Patent Drug Research"
-- "Rare Disease Initiative"
-- "Negative Results Publishing Fund" (yes, knowing what *doesn't* work is worth billions; your species keeps re-running failed experiments because nobody publishes failures)
+- "Patient Trial Subsidies Program" (the big one; DALY-weighted subsidies that flow automatically via $S_i = D_i \times v$, so every dollar buys the most healthy life-years possible)
+- "Pragmatic Clinical Trial Insurance Pool" (liability coverage pooled across all trials)
 
-#### Service Provider Bids (capitalism, but supervised)
-
-- "Data Storage Provider A"
-- "Data Storage Provider B" (competing!)
-- "Pragmatic Clinical Trial Insurance Pool"
+Everything else (data storage, negative results publishing) is a condition of receiving funding, not a separate budget item. Publishing your results costs nothing. Storing data costs less than nothing, relative to the budget. These are protocol maintenance, not democratic decisions. You don't vote on whether to pay the electricity bill.
 
 ### How It Works: Pairwise Comparisons Between Campaigns
 
@@ -71,9 +65,9 @@ Your brain can't rank a list of 20 priorities. It gives up around item number se
 
 **"What's more important right now:"**
 
-- "Framework for drug assessment development" vs "Alzheimer's prize"?
-- "Rare disease research" vs "An alternative drug assessment framework"?
-- "Patient subsidies" vs "Infrastructure spending"?
+- "Security audits" vs "EHR integration"?
+- "Alternative protocol implementation" vs "Trial insurance pool expansion"?
+- "Protocol Provider A" vs "Protocol Provider B"?
 
 ![People choose between two things at a time, over and over, until math decides what gets funded. Democracy, but make it exhausting.](/assets/images/wishocracy/wishocracy-section-how-it-works-pairwise-comparisons-between-campaigns-bw-academic.jpg)
 
@@ -86,7 +80,7 @@ Your [decentralized FDA](dfda.qmd) allocates resources **within** pragmatic clin
 When millions of people make pairwise choices, something almost magical happens (and by "magical" I mean "statistically inevitable," which is the only kind of magic that actually works):
 
 - **Random pairs prevent gaming.** Corrupting your current system requires buying access to 535 members of Congress, which is so affordable that every major industry does it simultaneously. Corrupting Wishocracy would require bribing 8 billion random voters, and the only way to "bribe" 8 billion people is to offer them something they actually want, which is the system working correctly. The attack vector for Wishocracy is giving people what they voted for. Your security vulnerability is democracy. It's also immune to marketing: there's no ballot measure to link to, no "Vote Yes on Proposition 7" ad to run. Each voter sees random pairs, so the only way to advertise is to convince people your campaign is better than whatever it happens to be compared against, which is just... making a good argument. Your species finds this deeply unsettling.
-- **Independence is structurally guaranteed.** Surowiecki identified four conditions for crowd wisdom: diversity, independence, decentralization, and aggregation [@surowiecki-2004]. Your elections destroy the most critical one. First-past-the-post voting forces strategic voting: people pick the "viable" candidate rather than the best one, so each ballot reflects what voters think other voters will do rather than what they actually want. It's an [ant death spiral](../problem/unrepresentative-democracy.qmd): each ant follows the one ahead, the leader follows the last, and the whole colony walks in a circle until it dies. Pairwise comparisons can't death-spiral because there's nothing to vote "strategically" about. "Which matters more: rare disease research or infrastructure spending?" has no spoiler candidate, no wasted vote, no reason to care what your neighbor picked. You just answer honestly. When millions of people answer honestly, you get wisdom. When millions of people game a two-option system, you get two candidates that 330 million people chose from 330 million people, and nobody likes either of them.
+- **Independence is structurally guaranteed.** Surowiecki identified four conditions for crowd wisdom: diversity, independence, decentralization, and aggregation [@surowiecki-2004]. Your elections destroy the most critical one. First-past-the-post voting forces strategic voting: people pick the "viable" candidate rather than the best one, so each ballot reflects what voters think other voters will do rather than what they actually want. It's an [ant death spiral](../problem/unrepresentative-democracy.qmd): each ant follows the one ahead, the leader follows the last, and the whole colony walks in a circle until it dies. Pairwise comparisons can't death-spiral because there's nothing to vote "strategically" about. "Which matters more: security audits or EHR integration?" has no spoiler candidate, no wasted vote, no reason to care what your neighbor picked. You just answer honestly. When millions of people answer honestly, you get wisdom. When millions of people game a two-option system, you get two candidates that 330 million people chose from 330 million people, and nobody likes either of them.
 - **Statistical models** (Bradley-Terry, PageRank) [@bradley-terry-pagerank-models] extract global preferences from individual comparisons. The same math that ranks Google search results can rank humanity's medical priorities. Google uses it to find cat videos. You'll use it to cure cancer. Progress.
 - **Outliers cancel out.** The guy who votes "fund my personal jetpack" gets drowned out by the millions voting for "cure my mother's Alzheimer's."
 - **Wisdom of crowds emerges.** On *Who Wants to Be a Millionaire*, the studio audience picked the right answer 91% of the time. The "phone a friend" expert? 65% [@surowiecki-2004]. Your species already proved that random people outperform credentialed individuals at picking the right answer. Wishocracy just applies this to questions that matter.
@@ -95,7 +89,7 @@ Example with real numbers:
 
 - 5 million people vote. Each makes 20 comparisons. That's 100 million data points.
 - Algorithm processes them in seconds.
-- Output: "Allocate 40% to patient subsidy programs, 25% to decentralized FDA protocol development, 15% to off-patent drug research, 10% to rare disease initiatives, 5% to security infrastructure, 5% to negative results publishing..."
+- Output: "Allocate 97% to patient trial subsidies, 1% to protocol development and maintenance, 1% to security audits and trial insurance, 1% to EHR integration..."
 - No committee meetings were harmed in the making of this budget.
 
 It's democracy without the shouting. The stupidity is still there, but it's evenly distributed across millions of people and thus cancels out. Your species calls this "the wisdom of crowds." Mine calls it "obvious." About half of the 847 civilizations I've advised adopted some version of Wishocracy. The other half voted against it, which turned out to be the last thing they voted on.

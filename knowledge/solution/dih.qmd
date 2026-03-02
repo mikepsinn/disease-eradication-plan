@@ -100,7 +100,7 @@ Your Decentralized Institutes of Health will use two allocation mechanisms, beca
 
 Your Decentralized Institutes of Health won't rely on altruism. Altruism is lovely but flaky. It shows up when it feels like it, cancels last minute, and is always "busy that weekend." Instead, it will pay everyone to do the most useful thing, because greed is more dependable than kindness. Your entire economic system proves this daily. Nobody ever forgot to be greedy.
 
-Your researchers will get per-patient subsidies weighted by disease burden, so treating severe conditions will pay more than treating mild ones. Your patients will get subsidies that scale with trial importance, so joining high-priority trials will pay more. Your funders will get quadratic matching and outcome tracking, so high-ROI donations will be amplified. Your data providers will get fees tied to data utility, so more useful data will mean more revenue. Every single actor's most selfish choice will also be the most useful choice. Selfishness, properly directed, will cure cancer.
+Your researchers will get per-patient subsidies weighted by disease burden, so treating severe conditions will pay more than treating mild ones. Your patients will get their trial costs covered, so joining experimental treatments costs nothing instead of everything. Your funders will get quadratic matching and outcome tracking, so high-ROI donations will be amplified. Your data providers will get fees tied to data utility, so more useful data will mean more revenue. Every single actor's most selfish choice will also be the most useful choice. Selfishness, properly directed, will cure cancer.
 
 The civilizations I've worked with that figured this out are still around. The ones that decided selfishness was the problem and tried to build systems that required everyone to be nice are not. I don't say this to be mean. I say it because the archaeological record is very clear, and the archaeological record does not have feelings.
 
@@ -153,7 +153,7 @@ Your [1% Treaty](1-percent-treaty.qmd) redirects **{{< var treaty_annual_funding
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
 | [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) | {{< var victory_bond_funding_pct >}} + {{< var iab_political_incentive_funding_pct >}} | {{< var victory_bond_annual_payout >}} + {{< var iab_political_incentive_funding_annual >}} | Align investors and politicians with outcomes |
-| **Research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Patient subsidies (market allocation) |
+| **Research treasury** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | Allocated via [Wishocracy](wishocracy.qmd) (~97% to DALY-weighted patient subsidies, ~3% to infrastructure) |
 
 ### What Gets Funded: Market Failures Only
 
