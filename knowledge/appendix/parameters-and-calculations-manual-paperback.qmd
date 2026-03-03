@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 231 parameters used in the analysis, organized by type:
+This appendix documents all 232 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 103
-- Calculated values: 96
+- Calculated values: 97
 - Core definitions: 32
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (96 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
+[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5991,6 +5991,73 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_gov_waste_total.qmd >}}
+
+:::
+
+### Efficiency Gap / Treaty Funding: 180:1 {#sec-us_gov_waste_vs_treaty_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+How many times the US government efficiency gap could fund the 1% Treaty. The efficiency gap represents capital that could fund transformative health research many times over.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
+- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2B
+
+$$
+\begin{gathered}
+k_{waste:treaty} \\
+= \frac{W_{total,US}}{Funding_{treaty}} \\
+= \frac{\$4.9T}{\$27.2B} \\
+= 180
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_vs_treaty_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_vs_treaty_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_vs_treaty_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_vs_treaty_multiplier.qmd >}}
 
 :::
 
