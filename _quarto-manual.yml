@@ -404,57 +404,71 @@ format:
       - file: assets/html/generated-footer.html
   # EPUB and PDF disabled for manual config - use manual-paperback for these formats
   # epub:
+  #   # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
   #   filters:
   #     - scripts/filters/epub-transforms.lua
   #   output-file: "How-to-End-War-and-Disease.epub"
+  #   # Author override handled by Lua filter (scripts/filters/epub-transforms.lua)
+  #   # Cover image for EPUB (required for most e-book platforms)
   #   epub-cover-image: assets/cover/book-cover-3.jpg
+  #   # Math rendering: webtex converts LaTeX to embedded SVG images via CodeCogs
+  #   # Works on ALL e-readers (Kindle, Apple Books, Kobo) since images are universal
+  #   # MathML fails on \begin{gathered} (176/181 _latex vars) and Kindle strips it entirely
   #   html-math-method:
   #     method: webtex
   #     url: "https://latex.codecogs.com/svg.latex?"
   #   css: epub-math.css
+  #   # Table of contents disabled - Kindle generates nav from chapter headings automatically
   #   toc: false
+  #   # Chapter splitting: Use level 2 for large books (81 chapters, ~900 pages)
+  #   # This prevents oversized chapter files that cause performance issues
   #   epub-chapter-level: 2
+  #   # Display options
   #   echo: false
   #   number-sections: false
+  #   # Keep figures in knowledge/figures/ to avoid Windows path issues
   #   keep-ipynb: false
+  #   # Metadata inherited from project-level metadata above
+  #   # (title, author, description, copyright, license, etc.)
+  #   # NOTE: include-in-footer, include-after-body, and include-in-header not supported as arrays in EPUB format
   # pdf:
-    # Using standard 'report' class instead of 'scrreprt' to avoid LaTeX \@writefile
-    # corruption issues with large documents (900+ pages, 81 files, complex TOC)
-    # Alternative: scrreprt with 'classoption: draft' also works but reduces PDF quality
-    output-file: "How-to-End-War-and-Disease.pdf"
-    documentclass: report
-    institute: "Institute for Accelerated Medicine"
-    echo: false
-    toc: false
-    number-sections: false
-    colorlinks: true
-    link-citations: true
-    date: ""
-    author: "Wishonia (translated by Mike P. Sinn)"
-    include-in-header:
-      - callout-bw.tex
-      - institute-header.tex
-      - text: |
-          \paperurl{https://manual.WarOnDisease.org}
-      - text: |
-          % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
-          % Override the \appendix command to prevent switching to alphabetic numbering
-          \usepackage{etoolbox}
-          \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}
-    geometry:
-      - top=1in
-      - bottom=1in
-      - left=1in
-      - right=1in
-    include-before-body:
-      - text: |
-          \thispagestyle{empty}
-          \newgeometry{margin=0pt}
-          \noindent\includegraphics[width=\paperwidth,height=\paperheight]{assets/cover/book-cover-3.jpg}
-          \restoregeometry
-          \newpage
-  docx:
-    output-file: "How-to-End-War-and-Disease.docx"
-    toc: false
-    number-sections: false
-    echo: false
+  #   # Using standard 'report' class instead of 'scrreprt' to avoid LaTeX \@writefile
+  #   # corruption issues with large documents (900+ pages, 81 files, complex TOC)
+  #   # Alternative: scrreprt with 'classoption: draft' also works but reduces PDF quality
+  #   output-file: "How-to-End-War-and-Disease.pdf"
+  #   documentclass: report
+  #   institute: "Institute for Accelerated Medicine"
+  #   echo: false
+  #   toc: false
+  #   number-sections: false
+  #   colorlinks: true
+  #   link-citations: true
+  #   date: ""
+  #   author: "Wishonia (translated by Mike P. Sinn)"
+  #   include-in-header:
+  #     - callout-bw.tex
+  #     - institute-header.tex
+  #     - text: |
+  #         \paperurl{https://manual.WarOnDisease.org}
+  #     - text: |
+  #         % Use Arabic numerals for appendix chapters instead of letters (supports >26 appendices)
+  #         % Override the \appendix command to prevent switching to alphabetic numbering
+  #         \usepackage{etoolbox}
+  #         \patchcmd{\appendix}{\@Alph}{\@arabic}{}{}
+  #   geometry:
+  #     - top=1in
+  #     - bottom=1in
+  #     - left=1in
+  #     - right=1in
+  #   include-before-body:
+  #     - text: |
+  #         \thispagestyle{empty}
+  #         \newgeometry{margin=0pt}
+  #         \noindent\includegraphics[width=\paperwidth,height=\paperheight]{assets/cover/book-cover-3.jpg}
+  #         \restoregeometry
+  #         \newpage
+  # docx:
+  #   output-file: "How-to-End-War-and-Disease.docx"
+  #   toc: false
+  #   number-sections: false
+  #   echo: false
