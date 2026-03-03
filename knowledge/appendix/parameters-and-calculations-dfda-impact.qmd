@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 118 parameters used in the analysis, organized by type:
+This appendix documents all 117 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 42
-- Calculated values: 54
+- Calculated values: 53
 - Core definitions: 22
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (54 parameters) • [External Data Sources](#sec-external) (42 parameters) • [Core Definitions](#sec-definitions) (22 parameters)
+[Calculated Values](#sec-calculated) (53 parameters) • [External Data Sources](#sec-external) (42 parameters) • [Core Definitions](#sec-definitions) (22 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2675,61 +2675,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-pragmatic_trial_cost_per_qaly.qmd >}}
-
-:::
-
-### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-How many times more cost-effective pragmatic trials are vs standard NIH research. Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.
-
-**Inputs**:
-
-- [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly) 📊: $50K (95% CI: $20K - $100K)
-- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly) 🔢: $4
-
-$$
-\begin{gathered}
-k_{pragmatic:NIH} \\
-= \frac{Cost_{NIH,QALY}}{Cost_{pragmatic,QALY}} \\
-= \frac{\$50K}{\$4} \\
-= 12{,}500
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{pragmatic,QALY} \\
-= \frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} \\
-= \frac{\$20M}{5M} \\
-= \$4
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-QALY_{RECOVERY} \\
-= Lives_{RECOVERY} \times QALY_{COVID} \\
-= 1M \times 5 \\
-= 5M
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-{{< include ../figures/sensitivity-table-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
 
 :::
 

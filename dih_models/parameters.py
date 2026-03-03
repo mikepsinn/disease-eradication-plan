@@ -6797,21 +6797,23 @@ PRAGMATIC_TRIAL_COST_PER_QALY = Parameter(
     latex_symbol=r"Cost_{pragmatic,QALY}",  # LaTeX symbol for equations
 )  # ~$4/QALY (global impact methodology)
 
-PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER = Parameter(
-    NIH_STANDARD_RESEARCH_COST_PER_QALY / PRAGMATIC_TRIAL_COST_PER_QALY,
+NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT = Parameter(
+    DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT / TRADITIONAL_PHASE3_COST_PER_PATIENT,
     source_type="calculated",
-    description="How many times more cost-effective pragmatic trials are vs standard NIH research. "
-                "Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). "
-                "Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.",
-    display_name="Pragmatic Trial Efficiency Multiplier vs NIH",
-    unit="x",
-    formula="NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY",
+    description="Maximum efficiency of NIH traditional Phase 3 trials relative to pragmatic trials, "
+                "expressed as a percentage. Calculated as pragmatic cost / traditional cost. "
+                "This is a CEILING on NIH trial efficiency because: (1) only 3.3% of NIH budget goes to "
+                "clinical trials at all, and (2) the other 96.7% funds basic research with far lower "
+                "marginal value when thousands of safe compounds already await testing.",
+    display_name="NIH Traditional Trial Maximum Efficiency vs Pragmatic (%)",
+    unit="percent",
+    formula="DFDA_PRAGMATIC_COST ÷ TRADITIONAL_PHASE3_COST",
     confidence="medium",
-    keywords=["efficiency", "multiplier", "pragmatic", "nih", "comparison", "cost effectiveness"],
-    inputs=["NIH_STANDARD_RESEARCH_COST_PER_QALY", "PRAGMATIC_TRIAL_COST_PER_QALY"],
-    compute=lambda ctx: ctx["NIH_STANDARD_RESEARCH_COST_PER_QALY"] / ctx["PRAGMATIC_TRIAL_COST_PER_QALY"],
-    latex_symbol=r"k_{pragmatic:NIH}",  # LaTeX symbol for equations
-)  # ~12,500x more efficient (global impact methodology)
+    keywords=["efficiency", "traditional", "pragmatic", "nih", "comparison", "cost", "ceiling", "maximum"],
+    inputs=["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT", "TRADITIONAL_PHASE3_COST_PER_PATIENT"],
+    compute=lambda ctx: ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"] / ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"],
+    latex_symbol=r"\eta_{NIH,max}",
+)  # ~2.3% — ceiling because 96.7% of NIH budget isn't even spent on trials
 
 # Cost per DALY - Primary cost-effectiveness metric
 # Note: ICER (Incremental Cost-Effectiveness Ratio) is not calculated because this is a

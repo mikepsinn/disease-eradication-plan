@@ -3257,6 +3257,17 @@ export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
   latex: "\\begin{gathered}\nCombos_{mRNA} \\\\\n= N_{genes} \\times N_{diseases,trial} \\\\\n= 20{,}000 \\times 1{,}000 \\\\\n= 20M\n\\end{gathered}",
 };
 
+export const NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT: Parameter = {
+  value: 0.022658536585365853,
+  unit: "percent",
+  displayName: "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%)",
+  description: "Maximum efficiency of NIH traditional Phase 3 trials relative to pragmatic trials, expressed as a percentage. Calculated as pragmatic cost / traditional cost. This is a CEILING on NIH trial efficiency because: (1) only 3.3% of NIH budget goes to clinical trials at all, and (2) the other 96.7% funds basic research with far lower marginal value when thousands of safe compounds already await testing.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "DFDA_PRAGMATIC_COST ÷ TRADITIONAL_PHASE3_COST",
+  latex: "\\begin{gathered}\n\\eta_{NIH,max} \\\\\n= \\frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\\\\n= \\frac{\\$929}{\\$41K} \\\\\n= 2.27\\%\n\\end{gathered}",
+};
+
 export const PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT: Parameter = {
   value: 113571000000.0,
   unit: "USD/year",
@@ -3492,17 +3503,6 @@ export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
   confidence: "medium",
   formula: "TRIAL_COST ÷ TOTAL_QALYS_GENERATED",
   latex: "\\begin{gathered}\nCost_{pragmatic,QALY} = \\frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} = \\frac{\\$20M}{5M} = \\$4\n\\\\[0.5em]\n\\text{where } QALY_{RECOVERY} = Lives_{RECOVERY} \\times QALY_{COVID} = 1M \\times 5 = 5M\n\\end{gathered}",
-};
-
-export const PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER: Parameter = {
-  value: 12500.0,
-  unit: "x",
-  displayName: "Pragmatic Trial Efficiency Multiplier vs NIH",
-  description: "How many times more cost-effective pragmatic trials are vs standard NIH research. Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.",
-  sourceType: "calculated",
-  confidence: "medium",
-  formula: "NIH_COST_PER_QALY ÷ PRAGMATIC_COST_PER_QALY",
-  latex: "\\begin{gathered}\nk_{pragmatic:NIH} = \\frac{Cost_{NIH,QALY}}{Cost_{pragmatic,QALY}} = \\frac{\\$50K}{\\$4} = 12{,}500\n\\\\[0.5em]\n\\text{where } Cost_{pragmatic,QALY} = \\frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} = \\frac{\\$20M}{5M} = \\$4\n\\\\[0.5em]\n\\text{where } QALY_{RECOVERY} = Lives_{RECOVERY} \\times QALY_{COVID} = 1M \\times 5 = 5M\n\\end{gathered}",
 };
 
 export const RECOVERY_TRIAL_COST_REDUCTION_FACTOR: Parameter = {
@@ -5363,6 +5363,7 @@ export const parameters = {
   MILITARY_VS_MEDICAL_RESEARCH_RATIO,
   MISALLOCATION_FACTOR_DEATH_VS_SAVING,
   MRNA_THERAPEUTIC_COMBINATIONS,
+  NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT,
   PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
   PEACE_DIVIDEND_CONFLICT_REDUCTION,
   PEACE_DIVIDEND_DIRECT_COSTS,
@@ -5384,7 +5385,6 @@ export const parameters = {
   POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP,
   POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL,
   PRAGMATIC_TRIAL_COST_PER_QALY,
-  PRAGMATIC_VS_NIH_EFFICIENCY_MULTIPLIER,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
   STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT,

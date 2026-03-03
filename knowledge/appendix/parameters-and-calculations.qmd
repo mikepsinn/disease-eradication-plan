@@ -6714,6 +6714,44 @@ $$
 
 :::
 
+### NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27% {#sec-nih_traditional_trial_max_efficiency_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Maximum efficiency of NIH traditional Phase 3 trials relative to pragmatic trials, expressed as a percentage. Calculated as pragmatic cost / traditional cost. This is a CEILING on NIH trial efficiency because: (1) only 3.3% of NIH budget goes to clinical trials at all, and (2) the other 96.7% funds basic research with far lower marginal value when thousands of safe compounds already await testing.
+
+**Inputs**:
+
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+
+$$
+\begin{gathered}
+\eta_{NIH,max} \\
+= \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= \frac{\$929}{\$41K} \\
+= 2.27\%
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nih_traditional_trial_max_efficiency_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-nih_traditional_trial_max_efficiency_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nih_traditional_trial_max_efficiency_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nih_traditional_trial_max_efficiency_pct.qmd >}}
+
+:::
+
 ### Annual Peace Dividend from 1% Reduction in Total War Costs: $114B {#sec-peace_dividend_annual_societal_benefit}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7852,61 +7890,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-pragmatic_trial_cost_per_qaly.qmd >}}
-
-:::
-
-### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-How many times more cost-effective pragmatic trials are vs standard NIH research. Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.
-
-**Inputs**:
-
-- [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly) 📊: $50K (95% CI: $20K - $100K)
-- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly) 🔢: $4
-
-$$
-\begin{gathered}
-k_{pragmatic:NIH} \\
-= \frac{Cost_{NIH,QALY}}{Cost_{pragmatic,QALY}} \\
-= \frac{\$50K}{\$4} \\
-= 12{,}500
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{pragmatic,QALY} \\
-= \frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} \\
-= \frac{\$20M}{5M} \\
-= \$4
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-QALY_{RECOVERY} \\
-= Lives_{RECOVERY} \times QALY_{COVID} \\
-= 1M \times 5 \\
-= 5M
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-{{< include ../figures/sensitivity-table-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
 
 :::
 

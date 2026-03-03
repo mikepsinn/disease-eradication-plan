@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 270 parameters used in the analysis, organized by type:
+This appendix documents all 267 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 112
-- Calculated values: 99
+- External sources (peer-reviewed): 111
+- Calculated values: 97
 - Core definitions: 59
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (112 parameters) • [Core Definitions](#sec-definitions) (59 parameters)
+[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (111 parameters) • [Core Definitions](#sec-definitions) (59 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -745,6 +745,80 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_efficacy_lag_elimination_yll.qmd >}}
+
+:::
+
+### dFDA New Treatments Per Year: 185 diseases/year {#sec-dfda_first_treatments_per_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Diseases per year receiving their first effective treatment with dFDA. Scales proportionally with trial capacity multiplier.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+
+$$
+\begin{gathered}
+Treatments_{dFDA,ann} \\
+= Treatments_{new,ann} \times k_{capacity} \\
+= 15 \times 12.3 \\
+= 185
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_first_treatments_per_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_first_treatments_per_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_first_treatments_per_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_first_treatments_per_year.qmd >}}
 
 :::
 
@@ -3603,44 +3677,6 @@ $$
 
 :::
 
-### Annual Global Industry Spending on Clinical Trials: $55.5B {#sec-global_industry_clinical_trials_spending_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual global industry spending on clinical trials (Total - Government)
-
-**Inputs**:
-
-- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60B (95% CI: $50B - $75B)
-- [Annual Global Government Spending on Clinical Trials](#sec-global_government_clinical_trials_spending_annual) 📊: $4.5B (95% CI: $3B - $6B)
-
-$$
-\begin{gathered}
-Spending_{trials,industry} \\
-= Spending_{trials} - Spending_{trials,gov} \\
-= \$60B - \$4.5B \\
-= \$55.5B
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_industry_clinical_trials_spending_annual.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_industry_clinical_trials_spending_annual.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_industry_clinical_trials_spending_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_industry_clinical_trials_spending_annual.qmd >}}
-
-:::
-
 ### Per Capita Military Spending Globally: $340 {#sec-global_military_spending_per_capita_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3770,6 +3806,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+:::
+
+### NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27% {#sec-nih_traditional_trial_max_efficiency_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Maximum efficiency of NIH traditional Phase 3 trials relative to pragmatic trials, expressed as a percentage. Calculated as pragmatic cost / traditional cost. This is a CEILING on NIH trial efficiency because: (1) only 3.3% of NIH budget goes to clinical trials at all, and (2) the other 96.7% funds basic research with far lower marginal value when thousands of safe compounds already await testing.
+
+**Inputs**:
+
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41K (95% CI: $20K - $120K)
+
+$$
+\begin{gathered}
+\eta_{NIH,max} \\
+= \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= \frac{\$929}{\$41K} \\
+= 2.27\%
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nih_traditional_trial_max_efficiency_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-nih_traditional_trial_max_efficiency_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nih_traditional_trial_max_efficiency_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nih_traditional_trial_max_efficiency_pct.qmd >}}
 
 :::
 
@@ -4047,109 +4121,6 @@ $$
 
 :::
 
-### Pragmatic Trial Cost per QALY (RECOVERY): $4 {#sec-pragmatic_trial_cost_per_qaly}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cost per QALY for pragmatic platform trials, calculated from RECOVERY trial data. Uses global impact methodology: trial cost divided by total QALYs from downstream adoption. This measures research efficiency (discovery value), not clinical intervention ICER.
-
-**Inputs**:
-
-- [RECOVERY Trial Total Cost](#sec-recovery_trial_total_cost) 📊: $20M (95% CI: $15M - $25M)
-- [RECOVERY Trial Total QALYs Generated](#sec-recovery_trial_total_qalys_generated) 🔢: 5 million QALYs
-
-$$
-\begin{gathered}
-Cost_{pragmatic,QALY} \\
-= \frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} \\
-= \frac{\$20M}{5M} \\
-= \$4
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-QALY_{RECOVERY} \\
-= Lives_{RECOVERY} \times QALY_{COVID} \\
-= 1M \times 5 \\
-= 5M
-\end{gathered}
-$$
-**Methodology**: [@recovery-trial-82x-cost-reduction]
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-pragmatic_trial_cost_per_qaly.qmd >}}
-
-{{< include ../figures/sensitivity-table-pragmatic_trial_cost_per_qaly.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-pragmatic_trial_cost_per_qaly.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-pragmatic_trial_cost_per_qaly.qmd >}}
-
-:::
-
-### Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx {#sec-pragmatic_vs_nih_efficiency_multiplier}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-How many times more cost-effective pragmatic trials are vs standard NIH research. Calculated using global impact methodology (NIH cost per QALY / pragmatic cost per QALY). Shows orders-of-magnitude efficiency gap between discovery-focused pragmatic trials and standard research.
-
-**Inputs**:
-
-- [NIH Standard Research Cost per QALY](#sec-nih_standard_research_cost_per_qaly) 📊: $50K (95% CI: $20K - $100K)
-- [Pragmatic Trial Cost per QALY (RECOVERY)](#sec-pragmatic_trial_cost_per_qaly) 🔢: $4
-
-$$
-\begin{gathered}
-k_{pragmatic:NIH} \\
-= \frac{Cost_{NIH,QALY}}{Cost_{pragmatic,QALY}} \\
-= \frac{\$50K}{\$4} \\
-= 12{,}500
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{pragmatic,QALY} \\
-= \frac{Cost_{RECOVERY}}{QALY_{RECOVERY}} \\
-= \frac{\$20M}{5M} \\
-= \$4
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-QALY_{RECOVERY} \\
-= Lives_{RECOVERY} \times QALY_{COVID} \\
-= 1M \times 5 \\
-= 5M
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-{{< include ../figures/sensitivity-table-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-pragmatic_vs_nih_efficiency_multiplier.qmd >}}
-
-:::
-
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4187,44 +4158,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-recovery_trial_cost_reduction_factor.qmd >}}
-
-:::
-
-### RECOVERY Trial Total QALYs Generated: 5 million QALYs {#sec-recovery_trial_total_qalys_generated}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total QALYs generated by RECOVERY trial's discoveries (lives saved × QALYs per life). Uses global impact methodology: counts all downstream health gains from the discovery.
-
-**Inputs**:
-
-- [RECOVERY Trial Global Lives Saved](#sec-recovery_trial_global_lives_saved) 📊: 1 million lives (95% CI: 500 thousand lives - 2 million lives)
-- [QALYs per COVID Death Averted](#sec-qalys_per_covid_death_averted): 5 QALYs/death (95% CI: 3 QALYs/death - 10 QALYs/death)
-
-$$
-\begin{gathered}
-QALY_{RECOVERY} \\
-= Lives_{RECOVERY} \times QALY_{COVID} \\
-= 1M \times 5 \\
-= 5M
-\end{gathered}
-$$
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-recovery_trial_total_qalys_generated.qmd >}}
-
-{{< include ../figures/sensitivity-table-recovery_trial_total_qalys_generated.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-recovery_trial_total_qalys_generated.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-recovery_trial_total_qalys_generated.qmd >}}
 
 :::
 
@@ -7795,30 +7728,6 @@ Percentage of NIH budget spent on clinical trials (3.3%)
 
 :::
 
-### NIH Standard Research Cost per QALY: $50K {#sec-nih_standard_research_cost_per_qaly}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Typical cost per QALY for standard NIH-funded medical research portfolio. Reflects the inefficiency of traditional RCTs and basic research-heavy allocation. See confidence_interval for range; ICER uses higher thresholds for value-based pricing.
-
-**Source**: [@standard-medical-research-roi]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$20K, $100K] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $20K and $100K (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-nih_standard_research_cost_per_qaly.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
 ### Oxford RECOVERY Trial Duration: 3 months {#sec-oxford_recovery_trial_duration_months}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9677,6 +9586,28 @@ Percentage of DALYs that are eventually avoidable with sufficient biomedical res
 
 :::
 
+### Eventually Avoidable Death Percentage: 92.6% {#sec-eventually_avoidable_death_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of deaths that are eventually avoidable with sufficient biomedical research and technological advancement. Central estimate ~92% based on ~7.9% fundamentally unavoidable (primarily accidents). Wide uncertainty reflects debate over: (1) aging as addressable vs. fundamental, (2) asymptotic difficulty of last diseases, (3) multifactorial disease complexity.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [50%, 98%] • Distribution: Beta
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 50% and 98% (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-eventually_avoidable_death_pct.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Minimum Investment for Family Offices: $5M {#sec-family_office_investment_min}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9744,28 +9675,6 @@ Standard time horizon for NPV analysis
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### QALYs per COVID Death Averted: 5 QALYs/death {#sec-qalys_per_covid_death_averted}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average QALYs gained per COVID death averted. Conservative estimate reflecting older age distribution of COVID mortality. See confidence_interval for range.
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [3 QALYs/death, 10 QALYs/death] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 3 QALYs/death and 10 QALYs/death (±70%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-qalys_per_covid_death_averted.qmd >}}
 
 *Core definition*
 
