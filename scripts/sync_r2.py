@@ -38,6 +38,7 @@ sys.path.insert(0, str(SCRIPT_DIR))
 from lib.python_utils import load_project_dotenv
 load_project_dotenv(PROJECT_ROOT)
 from lib.audiobook_common import PODCAST_HASH_RE
+from lib.build_logger import BuildLogger
 
 # Directories to sync (R2 prefix -> local path)
 SYNC_DIRS = {
@@ -355,8 +356,12 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
         return
     print()
 
-    # --- Pass 2: Execute uploads (smallest first, largest last) ---
-    to_upload.sort(key=lambda x: x[3])
+    # --- Pass 2: Execute uploads ---
+    # Upload MP3s/media first, feed/manifest/metadata last.
+    # This avoids a window where an updated feed.xml points to MP3s
+    # that haven't been uploaded yet (e.g. if the upload crashes midway).
+    UPLOAD_LAST = {"feed.xml", "manifest.json", "sitemap.xml", "index.html"}
+    to_upload.sort(key=lambda x: (x[0].split('/')[-1] in UPLOAD_LAST, x[3]))
     uploaded = 0
     errors = 0
     deleted = 0
@@ -446,8 +451,10 @@ def generate_index_and_sitemap(all_files: dict[str, Path], dry_run: bool):
     entries = []
     for key in sorted(all_files):
         path = all_files[key]
-        size = path.stat().st_size
+        stat = path.stat()
+        size = stat.st_size
         ext = path.suffix.lower()
+        mtime = datetime.fromtimestamp(stat.st_mtime, tz=timezone.utc)
         entries.append({
             "key": key,
             "url": f"{public_url}/{key}",
@@ -455,6 +462,8 @@ def generate_index_and_sitemap(all_files: dict[str, Path], dry_run: bool):
             "size_str": format_size(size),
             "ext": ext.lstrip("."),
             "type": ext.lstrip(".").upper() or "FILE",
+            "mtime": mtime.strftime("%Y-%m-%d %H:%M"),
+            "mtime_iso": mtime.strftime("%Y-%m-%dT%H:%M:%SZ"),
         })
 
     total_size = sum(e["size"] for e in entries)
@@ -462,8 +471,8 @@ def generate_index_and_sitemap(all_files: dict[str, Path], dry_run: bool):
     # --- index.html ---
     import json as json_mod
     entries_json = json_mod.dumps([
-        {"key": e["key"], "url": e["url"], "size_str": e["size_str"],
-         "ext": e["ext"], "type": e["type"]}
+        {"key": e["key"], "url": e["url"], "size": e["size"], "size_str": e["size_str"],
+         "ext": e["ext"], "type": e["type"], "mtime": e["mtime"], "mtime_iso": e["mtime_iso"]}
         for e in entries
     ])
 
@@ -488,12 +497,16 @@ def generate_index_and_sitemap(all_files: dict[str, Path], dry_run: bool):
   table {{ width: 100%; border-collapse: collapse; background: white;
            border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.1); }}
   th {{ text-align: left; padding: 10px 12px; background: #f1f3f5; font-size: 13px;
-       color: #495057; border-bottom: 2px solid #dee2e6; }}
+       color: #495057; border-bottom: 2px solid #dee2e6; cursor: pointer; user-select: none; }}
+  th:hover {{ background: #e2e6ea; }}
+  th .sort-arrow {{ font-size: 10px; margin-left: 4px; opacity: 0.3; }}
+  th.sorted .sort-arrow {{ opacity: 1; }}
   td {{ padding: 8px 12px; border-bottom: 1px solid #f1f3f5; font-size: 13px; }}
   tr:hover td {{ background: #f8f9fa; }}
   a {{ color: #0066cc; text-decoration: none; word-break: break-all; }}
   a:hover {{ text-decoration: underline; }}
   .size {{ white-space: nowrap; text-align: right; color: #666; }}
+  .mtime {{ white-space: nowrap; color: #666; }}
   .type {{ display: inline-block; padding: 2px 8px; border-radius: 4px;
            font-size: 11px; font-weight: 600; background: #e9ecef; }}
   .type-mp3 {{ background: #d4edda; color: #155724; }}
@@ -514,7 +527,12 @@ Updated {today}.</p>
   <button class="filter-btn active" data-ext="all">All</button>
 </div>
 <table>
-<thead><tr><th>File</th><th>Type</th><th class="size">Size</th></tr></thead>
+<thead><tr>
+  <th data-sort="key">File <span class="sort-arrow">&#9650;</span></th>
+  <th data-sort="type">Type <span class="sort-arrow">&#9650;</span></th>
+  <th data-sort="mtime_iso" class="mtime">Modified <span class="sort-arrow">&#9650;</span></th>
+  <th data-sort="size" class="size">Size <span class="sort-arrow">&#9650;</span></th>
+</tr></thead>
 <tbody id="files"></tbody>
 </table>
 <div id="no-results">No files match your filter.</div>
@@ -536,6 +554,9 @@ exts.forEach(ext => {{
 }});
 
 let activeExt = 'all';
+let sortCol = 'key';
+let sortAsc = true;
+
 controls.addEventListener('click', e => {{
   if (!e.target.classList.contains('filter-btn')) return;
   controls.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -545,6 +566,19 @@ controls.addEventListener('click', e => {{
 }});
 search.addEventListener('input', render);
 
+// Column sort
+document.querySelectorAll('th[data-sort]').forEach(th => {{
+  th.addEventListener('click', () => {{
+    const col = th.dataset.sort;
+    if (sortCol === col) {{ sortAsc = !sortAsc; }}
+    else {{ sortCol = col; sortAsc = true; }}
+    document.querySelectorAll('th').forEach(h => h.classList.remove('sorted'));
+    th.classList.add('sorted');
+    th.querySelector('.sort-arrow').innerHTML = sortAsc ? '&#9650;' : '&#9660;';
+    render();
+  }});
+}});
+
 function render() {{
   const q = search.value.toLowerCase();
   const filtered = FILES.filter(f => {{
@@ -552,9 +586,17 @@ function render() {{
     if (q && !f.key.toLowerCase().includes(q)) return false;
     return true;
   }});
+  filtered.sort((a, b) => {{
+    let av = a[sortCol], bv = b[sortCol];
+    if (typeof av === 'string') {{ av = av.toLowerCase(); bv = bv.toLowerCase(); }}
+    if (av < bv) return sortAsc ? -1 : 1;
+    if (av > bv) return sortAsc ? 1 : -1;
+    return 0;
+  }});
   tbody.innerHTML = filtered.map(f =>
     `<tr><td><a href="${{f.url}}">${{f.key}}</a></td>` +
     `<td><span class="type type-${{f.ext}}">${{f.type}}</span></td>` +
+    `<td class="mtime">${{f.mtime}}</td>` +
     `<td class="size">${{f.size_str}}</td></tr>`
   ).join('');
   noResults.style.display = filtered.length ? 'none' : 'block';
@@ -790,9 +832,15 @@ def cleanup_old_podcast_versions(local_files: dict[str, Path], dry_run: bool = F
     old versions with different hashes accumulate on R2. This function
     finds and removes them, keeping only the current version per slug.
 
+    Keeps the most recent previous version per slug so podcast clients
+    with a cached feed pointing at the old URL don't get 404s.
+
     Also cleans up legacy unhashed ({slug}.mp3) versions when a hashed
-    version exists locally.
+    version exists locally (these are always removed since the hashed
+    version supersedes them).
     """
+    from datetime import datetime, timezone
+
     # Build a map of slug -> current R2 key from local hashed MP3s
     current_by_slug: dict[str, str] = {}
     for key in local_files:
@@ -807,30 +855,51 @@ def cleanup_old_podcast_versions(local_files: dict[str, Path], dry_run: bool = F
     client = get_r2_client()
     bucket = get_bucket()
 
-    # Scan R2 for MP3s in audiobook mp3 directories
-    remote = list_remote_objects(client, bucket, "assets/audiobook/")
+    # Scan R2 for MP3s in audiobook mp3 directories, capturing LastModified
+    # so we can keep the most recent previous version per slug.
+    remote_mp3s: list[tuple[str, datetime]] = []  # (key, last_modified)
+    paginator = client.get_paginator("list_objects_v2")
+    for page in paginator.paginate(Bucket=bucket, Prefix="assets/audiobook/"):
+        for obj in page.get("Contents", []):
+            key = obj["Key"]
+            if key.endswith('.mp3') and '/mp3/' in key:
+                remote_mp3s.append((key, obj["LastModified"]))
 
-    to_delete: list[str] = []
-    for remote_key in remote:
-        if not remote_key.endswith('.mp3') or '/mp3/' not in remote_key:
-            continue
+    # Group old versions by slug, sorted newest-first
+    old_by_slug: dict[str, list[tuple[str, datetime]]] = {}
+    legacy_to_delete: list[str] = []
+
+    for remote_key, last_modified in remote_mp3s:
         filename = remote_key.split('/')[-1]
         m = PODCAST_HASH_RE.match(filename)
         if m:
-            # Old hashed version: different hash for same slug
             slug = m.group(1)
             if slug in current_by_slug and current_by_slug[slug] != remote_key:
-                to_delete.append(remote_key)
+                old_by_slug.setdefault(slug, []).append((remote_key, last_modified))
         else:
-            # Legacy unhashed version: {slug}.mp3 superseded by hashed version
+            # Legacy unhashed version: always remove when hashed version exists
             slug = filename[:-4]  # strip .mp3
             if slug in current_by_slug:
-                to_delete.append(remote_key)
+                legacy_to_delete.append(remote_key)
+
+    # For each slug, keep the most recent old version, delete the rest
+    to_delete: list[str] = list(legacy_to_delete)
+    kept = 0
+    for slug, versions in old_by_slug.items():
+        versions.sort(key=lambda v: v[1], reverse=True)  # newest first
+        if versions:
+            kept += 1
+            print(f"  [KEEP PREV] {versions[0][0]}")
+        # Delete all but the most recent previous version
+        for key, _ in versions[1:]:
+            to_delete.append(key)
 
     if not to_delete:
+        if kept:
+            print(f"\n  Keeping {kept} previous version(s) for client compatibility. Nothing to delete.")
         return
 
-    print(f"\n  Cleaning up {len(to_delete)} old podcast MP3 version(s) from R2...")
+    print(f"\n  Cleaning up {len(to_delete)} old podcast MP3 version(s) from R2 (keeping {kept} previous)...")
     for key in to_delete:
         if dry_run:
             print(f"  [DRY-RUN DELETE] {key}")
@@ -867,12 +936,19 @@ def main():
         check_status(dirs, patterns)
         return
 
+    logger = BuildLogger("sync-r2.log")
+    logger.start_capture()
+
+    logger.section("R2 SYNC")
+    if args.dry_run:
+        logger.info("DRY RUN mode")
+
     # Regenerate podcast feed.xml to match current MP3 hashes before syncing
-    print(f"\n{'='*60}")
-    print("Ensuring podcast feed is up to date...")
+    logger.section("REGENERATE PODCAST FEED")
     regenerate_podcast_feed(dry_run=args.dry_run)
 
     # Collect all files across dirs for index generation
+    logger.section("UPLOAD FILES")
     all_files: dict[str, Path] = {}
     for d in dirs:
         sync_dir(d, SYNC_DIRS[d], patterns, dry_run=args.dry_run,
@@ -880,16 +956,17 @@ def main():
         all_files.update(collect_files(d, SYNC_DIRS[d], patterns))
 
     # Clean up old podcast MP3 versions (runs automatically after sync)
+    logger.section("CLEANUP OLD PODCAST VERSIONS")
     cleanup_old_podcast_versions(all_files, dry_run=args.dry_run)
 
     # Generate index.html and sitemap.xml
     if not args.no_index:
-        print(f"\n{'='*60}")
-        print("Generating index.html and sitemap.xml...")
+        logger.section("GENERATE INDEX + SITEMAP")
         generate_index_and_sitemap(all_files, dry_run=args.dry_run)
 
-    print(f"\n{'='*60}")
-    print("Sync complete.")
+    logger.stop_capture()
+    logger.ok("Sync complete.")
+    logger.close()
 
 
 if __name__ == "__main__":
