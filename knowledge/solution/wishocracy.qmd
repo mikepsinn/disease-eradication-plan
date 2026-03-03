@@ -140,3 +140,49 @@ Great, so the Pairwise Slider Allocation tells you "Curing Alzheimer's" is a top
 3.  **The World Competes:** The best teams from around the world, from MIT to some kid in a garage in Lagos, bid on these tasks. The system funds multiple approaches in parallel. The ones that show promise get more funding. The ones that fail lose funding instantly. It's venture capital, but for not dying. Your species already uses this method to decide which restaurants survive and which phone apps get downloaded. Time to try it with the thing that kills you.
 
 ![Computer breaks big wishes into small tasks. People compete to do the tasks. Wishes come true. We've automated hope.](/assets/images/wishocracy/wishocracy-section-execution-workflow-bw-academic.jpg)
+
+## Why the Algorithm Is the Constitution
+
+Your species has a habit of writing beautiful rules and then immediately finding people to break them. Your Constitution guarantees free speech, and your government classifies documents. Your laws prohibit bribery, and your lobbying industry does it with a receipt. Every protection you've ever designed relies on humans to enforce it, and humans can be bought, threatened, promoted, or distracted by a sufficiently interesting scandal.
+
+On Wishonia, we tried enforcement-based protections for about 200 years before concluding that constitutional constraints enforced by people are just suggestions with better typography. So we put the protections in the math.
+
+### Algorithmic Protections (Rules Nobody Can Break Because They're Not Rules)
+
+**Rare disease protection.** Your instinct is to write a law: "At least X% of funding must go to rare diseases." Then someone defines "rare" in a way that excludes their rival's disease, and a committee meets quarterly to argue about the definition, and a lobbyist takes the committee chair to dinner. We solved this with three algorithms:
+
+1. *DALY-weighting per capita, not total burden.* A disease that ruins 1,000 lives completely gets funded proportionally to one that mildly inconveniences 10 million. The algorithm doesn't know how many people have the disease. It knows how much each person suffers. This is the difference between "how many votes does this disease have" and "how badly does this disease need fixing." Your democracy counts the first. Wishocracy counts the second.
+
+2. *Quadratic funding.* The number of unique supporters matters more than total dollars. Ten thousand people each caring deeply about a rare disease outweigh one billionaire caring mildly about a common one. The math: funding is proportional to the square of the sum of square roots of individual contributions. If that sentence made your eyes glaze over, good. Glazing-over is what protects it from politicians, who can only corrupt things they understand, which is a surprisingly small category.
+
+3. *Diminishing returns.* Each additional dollar spent on an already well-funded disease buys less marginal health improvement. The hundredth million for cancer research buys less than the first million for a neglected tropical disease. The algorithm knows this because it measures DALYs prevented per dollar and maximizes that, not total dollars spent. A congressman maximizes total dollars spent because that's what the press release measures. The algorithm maximizes actual health because nobody programmed it to care about press releases.
+
+**Transparency.** There is no "classify" button. The system publishes all allocations, all results, all failures. Not because a law requires it, but because the publication function doesn't have an off switch. You can't vote to hide data for the same reason you can't vote to make gravity go sideways: the system doesn't have that gear. Every failed trial, every dollar spent, every outcome measured. Your current system publishes roughly half of clinical trial results [@publication-bias-clinical-trials]. The other half disappear into filing cabinets because the results were embarrassing. On Wishonia, "embarrassing results" is not a category. "Results" is. The filing cabinet was never built.
+
+**Corruption resistance.** Eighty percent of the fund flows through DALY-weighted subsidies automatically. No human touches it. No committee approves it. No senator holds it hostage for a highway. The algorithm takes the global disease burden data, calculates where each dollar prevents the most suffering, and sends the money. The remaining twenty percent is allocated by pairwise comparisons, which is the part humans direct. If someone corrupts the entire 20% (impressive; they'd need to influence 8 billion random voters), they've captured a fifth of the fund while four-fifths continued curing diseases regardless. Compare this to your current system, where a single senator on the appropriations committee can redirect 100% of the NIH budget to their preferred projects because they've held the seat for 30 years and nobody ran against them. Your corruption ceiling is 100%. Ours is 20%, and it's transparent. This is not a utopian promise. It's architecture.
+
+### The Two Hard Rules
+
+Almost everything is algorithmic. Almost. Two constraints require actual rules because they define what the system *is*, not how it *operates*:
+
+1. **Scope.** The fund is for health and medical research. This is defined by the [1% treaty](1-percent-treaty.qmd), not by wishocracy. No amount of pairwise voting can redirect it to weapons, infrastructure, or your senator's cousin's construction company. The system doesn't accept proposals outside scope. It's not that voting "weapons" would fail. It's that "weapons" isn't a category the ballot can contain. You can't write in "build a missile" on a medical research ballot for the same reason you can't deposit a sandwich at an ATM. The machine doesn't accept that input.
+
+2. **Bodily autonomy.** You modify your own neurochemistry. Nobody else's. Not by majority vote. Not by executive order. Not by a very convincing TED talk. The system has no "modify this person" function. But unlike transparency (where the absence of a button is sufficient protection), bodily autonomy requires a legal prohibition because someone could build coercion mechanisms *outside* the system. So this one is a law. The only law. On Wishonia, it's the shortest statute on the books: "Self." Everything else is math.
+
+### What Wishocracy Measures (The Anti-Fed)
+
+Your Federal Reserve has two targets: "maximum employment" (keep everyone too busy to ask questions) and "2% inflation" (steal 2% of purchasing power annually and call it stability). By these metrics, a medieval serf working sunup to sundown while his currency devalues is a policy success. The metrics are not broken. They measure exactly what they were designed to measure, which is obedience and extraction. (For the full horror show, see [How Central Banks Fund Your Death](../economics/central-banks.qmd).)
+
+Wishocracy measures four things:
+
+1. **Median health-adjusted life years.** Not average (which lets billionaires living to 120 mask millions dying at 60). Not GDP (which counts the cost of your chemotherapy as economic growth). *Median*: the person in the middle. *Health-adjusted*: years lived well, not years spent deteriorating in a hospital that charges $50 for aspirin. Is the typical person living longer and healthier? Yes or no. If no, the system is failing. No amount of GDP growth excuses it.
+
+2. **DALYs prevented per dollar.** Efficiency. Is each dollar buying the maximum possible reduction in human suffering? The algorithm optimizes this automatically via diminishing returns curves. Your current system doesn't measure this at all. The NIH measures "dollars spent," which is like a restaurant measuring "ingredients purchased" instead of "customers fed." You can spend a fortune and accomplish nothing. This metric makes that visible.
+
+3. **Treatment access rate.** What percentage of people who need a validated treatment can actually get it? If you cure cancer but only rich people can afford the cure, the access rate is low and the system is failing. This metric is why the algorithm pushes toward cheap, scalable treatments over expensive bespoke ones. Not because someone wrote a rule. Because the algorithm scores better when more people are reached.
+
+4. **Discovery velocity.** New treatments validated per year. Is the system getting faster at turning money into cures? This is the speedometer. The other three metrics tell you where you are. This one tells you how fast you're moving.
+
+These are the metrics your central banks should have been using for the last century. They didn't, because "median health-adjusted life years" would have revealed that your economy was making people sicker while telling them they were richer. It is much easier to target "2% inflation" and declare victory while your citizens die of diseases that were curable with the money you printed for banks.
+
+On Wishonia, we don't declare victory. The algorithm updates the dashboard. Everyone can see the numbers. There is no "hide" button. I believe I mentioned that.
