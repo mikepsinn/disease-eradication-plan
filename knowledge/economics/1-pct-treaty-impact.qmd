@@ -802,11 +802,9 @@ But here's the key: this intervention is **cost-saving**. The upfront implementa
 - **Standard NIH Portfolio:** {{< var nih_standard_research_cost_per_qaly >}}/QALY {{< var nih_standard_research_cost_per_qaly_cite >}}
 - **Pragmatic Trials:** {{< var pragmatic_trial_cost_per_qaly >}}/QALY (from RECOVERY trial: {{< var recovery_trial_total_cost >}} spent, {{< var recovery_trial_global_lives_saved >}} saved; note RECOVERY benefited from NHS/COVID conditions)
 
-**Efficiency gap:** {{< var pragmatic_vs_nih_efficiency_multiplier >}}.
+**Per-patient cost reduction:** {{< var dfda_trial_cost_reduction_factor >}} ({{< var adaptable_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}).
 
-{{< var pragmatic_trial_cost_per_qaly_latex >}}
-
-{{< var pragmatic_vs_nih_efficiency_multiplier_latex >}}
+{{< var dfda_trial_cost_reduction_factor_latex >}}
 
 ### Expected Value Under Political Uncertainty
 

@@ -81,23 +81,23 @@ Before 1962: Genius scientist invents cure, raises a few million, tests safety, 
 
 ![Option 1: Spend billions developing new cure, might fail. Option 2: Shelve the cure, keep selling expensive old drug. You picked option 2, obviously.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-high-costs-kill-innovation-reward-monopoly-bw-academic.jpg)
 
-Now: Genius scientist must convince one of three mega-corporations to spend {{< var pharma_drug_development_cost_current >}} on a {{< var pharma_success_rate_current_pct >}} chance of success. Those corporations already sell inferior drugs for the same condition.
+Now: Genius scientist must convince one of three mega-corporations to fund trials. Those corporations already sell inferior drugs for the same condition, bringing in hundreds of millions a year per drug.
 
 The math for the mega-corporation:
 
-**Option 1: Spend {{< var pharma_drug_development_cost_current >}} on trials**
+**Option 1: Develop the better drug**
 
-- 90% chance: Lose everything
-- {{< var pharma_success_rate_current_pct >}} chance: Succeed, then cannibalize your own profitable drug
+Cost: {{< var pharma_drug_development_cost_current >}} on average to get a single drug to market. That figure already includes the cost of the nine candidates that fail for every one that succeeds, so the {{< var pharma_success_rate_current_pct >}} success rate is already priced in.
+
+Best case, the drug works: you now have a better drug for the same condition. But your old drug, which was bringing in hundreds of millions a year, is now obsolete. You spent {{< var pharma_drug_development_cost_current >}} to replace your own revenue stream. Every year the new drug is on the market, it's earning roughly what the old drug would have earned anyway, minus the {{< var pharma_drug_development_cost_current >}} hole you dug getting here.
 
 **Option 2: Buy the patent, put it on a shelf**
 
-- 0% chance of losing {{< var pharma_drug_development_cost_current >}}
-- 100% chance your inferior cash cow keeps printing money
+Your inferior drug keeps bringing in hundreds of millions a year. Total cost: whatever the patent costs, which is rounding error compared to {{< var pharma_drug_development_cost_current >}}.
 
 Which would you choose if you were a rational sociopath in a suit?
 
-The profit incentive doesn't just fail to reward better treatments. It actively punishes them.
+The profit incentive doesn't just fail to reward better treatments. It actively punishes them. The best possible outcome of Option 1 is spending {{< var pharma_drug_development_cost_current >}} to end up with the same annual revenue you already had.
 
 ### Off-Patent Drugs and Rare Diseases: Mathematically Doomed
 
@@ -125,7 +125,7 @@ Economic cost: {{< var dfda_efficacy_lag_elimination_economic_value >}} (2024 US
 
 Even if those death estimates are off by a factor of 10, that's still tens of millions of deaths. And the inefficiency is independently verifiable: the efficacy testing process costs {{< var recovery_trial_cost_reduction_factor >}} more per patient and takes {{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer than proven alternatives like the Oxford RECOVERY trial. Those numbers don't depend on mortality estimates at all.
 
-Here's a news story from the Non-Existent Times by No One Ever without a picture of all the people who die from lack of access to life-saving treatments that might have been.
+Here's a news story from the Non-Existent Times by No One Ever, without a picture of all the people who die from lack of access to life-saving treatments that might have been. You can't photograph millions of people who died from *not* receiving a drug. There's no body with a toe tag reading "cause of death: regulatory delay." They die of cancer, heart disease, Alzheimer's. The delay that killed them is invisible, so nobody writes the headline.
 
 ![](../../assets/images/non-existent-times.png)
 

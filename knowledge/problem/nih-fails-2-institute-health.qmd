@@ -92,7 +92,7 @@ When you misallocate the vast majority of a {{< var nih_annual_budget >}} annual
 
 ### Cost Per QALY (Quality-Adjusted Life Year)
 
-The standard NIH portfolio produces one QALY for {{< var nih_standard_research_cost_per_qaly >}} {{< var nih_standard_research_cost_per_qaly_cite >}} (and that's being generous). Pragmatic platform trials produce one QALY for {{< var pragmatic_trial_cost_per_qaly >}}. Every $1 spent on efficient pragmatic trials buys **{{< var pragmatic_vs_nih_efficiency_multiplier >}} more health** than a dollar spent on the current NIH portfolio. The ADAPTABLE trial proved pragmatic trials cost {{< var dfda_trial_cost_reduction_factor >}} less per patient than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}). Same science. Fewer catered meetings. Same number of patients helped. Fewer conference rooms rented.
+The ADAPTABLE trial proved pragmatic trials cost {{< var dfda_trial_cost_reduction_factor >}} less per patient than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}). Same science. Fewer catered meetings. {{< var dfda_trial_cost_reduction_factor >}} more patients enrolled. Fewer conference rooms rented.
 
 ![One method saves lives efficiently. The other publishes papers expensively. You're currently funding the papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-cost-per-qaly-bw-academic.jpg)
 
@@ -100,7 +100,7 @@ The standard NIH portfolio produces one QALY for {{< var nih_standard_research_c
 
 Annual opportunity cost: approximately 100 million QALYs and approximately 7 million death-equivalents per year. Even the most conservative estimate: approximately 10 million QALYs and approximately 700,000 preventable deaths annually.
 
-The efficiency gap is {{< var pragmatic_vs_nih_efficiency_multiplier >}}. For every dollar spent on pragmatic trials producing QALYs, the NIH spends that many dollars to achieve the same result. If your car ran at 0.008% efficiency, it would move one inch per gallon. If your heart pumped at 0.008% efficiency, you'd be dead before finishing this sentence. Your medical research system runs at 0.008% efficiency, and you gave it a raise. You gave it a raise and a new building. The building has a cafeteria.
+Traditional clinical trials run at {{< var nih_traditional_trial_max_efficiency_pct >}} the efficiency of pragmatic trials. And that's the ceiling, because it only accounts for the {{< var nih_clinical_trials_spending_pct >}} of the NIH budget that goes to trials at all. The other 96.7% funds basic research, which has far lower marginal value when thousands of safe compounds are already piled up waiting to be tested. If your car ran at {{< var nih_traditional_trial_max_efficiency_pct >}} efficiency, you would push it faster than it drives. If your heart pumped at {{< var nih_traditional_trial_max_efficiency_pct >}} efficiency, you'd be dead before finishing this sentence. Your clinical trial system runs at {{< var nih_traditional_trial_max_efficiency_pct >}} efficiency, and you gave it a raise. You gave it a raise and a new building. The building has a cafeteria.
 
 ## The Translation Crisis: All Theory, No Medicine
 
