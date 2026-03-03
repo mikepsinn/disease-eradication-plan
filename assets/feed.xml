@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>How to End War and Disease</title>
     <link>https://manual.WarOnDisease.org</link>
@@ -13,6 +13,7 @@
       <guid>https://manual.WarOnDisease.org/knowledge/problem/genetic-slavery.html</guid>
       <description>You're running 200,000-year-old software on modern hardware. Your brain was designed for running from lions; now it runs from emails, craves sugar that's everywhere, fears strangers it needs to cooperate with, and builds nuclear weapons using the same instinct that once made it good at throwing rocks.</description>
       <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <itunes:image href="https://manual.WarOnDisease.org/assets/podcast/genetic-slavery-podcast.jpg"/>
     </item>
   </channel>
 </rss>
