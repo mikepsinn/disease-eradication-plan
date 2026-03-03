@@ -51,6 +51,22 @@ def _ts() -> str:
     return datetime.now().strftime("%H:%M:%S")
 
 
+def _fmt_elapsed(seconds: float) -> str:
+    """Format elapsed seconds as '1h02m03s', '5m23s', or '12s'."""
+    total = int(seconds)
+    hrs, remainder = divmod(total, 3600)
+    mins, secs = divmod(remainder, 60)
+    if hrs > 0:
+        return f"{hrs}h{mins:02d}m{secs:02d}s"
+    if mins > 0:
+        return f"{mins}m{secs:02d}s"
+    return f"{secs}s"
+
+
+# Accumulates (label, elapsed_seconds, success) for the final summary
+_step_timings: list[tuple[str, float, bool]] = []
+
+
 def run_step(label: str, script: str, args: list[str]) -> bool:
     """Run a pipeline step, returning True on success."""
     print(f"\n{'=' * 70}")
@@ -61,13 +77,33 @@ def run_step(label: str, script: str, args: list[str]) -> bool:
     cmd = [sys.executable, "-u", str(SCRIPTS_DIR / script)] + args
     result = subprocess.run(cmd, cwd=str(PROJECT_ROOT))
     elapsed = time.monotonic() - t0
-    mins, secs = divmod(int(elapsed), 60)
 
     if result.returncode != 0:
-        print(f"\n[{_ts()}] [FAILED] {label} (exit code {result.returncode}, {mins}m{secs:02d}s)")
+        _step_timings.append((label, elapsed, False))
+        print(f"\n[{_ts()}] [FAILED] {label} (exit code {result.returncode}, {_fmt_elapsed(elapsed)})")
         return False
-    print(f"\n[{_ts()}] [OK] {label} ({mins}m{secs:02d}s)")
+    _step_timings.append((label, elapsed, True))
+    print(f"\n[{_ts()}] [OK] {label} ({_fmt_elapsed(elapsed)})")
     return True
+
+
+def _print_timing_summary(pipeline_start: float) -> None:
+    """Print a table of all step durations and total pipeline time."""
+    total_elapsed = time.monotonic() - pipeline_start
+    print(f"\n{'=' * 70}")
+    print(f"  [{_ts()}] TIMING SUMMARY")
+    print(f"{'=' * 70}\n")
+
+    if _step_timings:
+        max_label = max(len(label) for label, _, _ in _step_timings)
+        max_label = max(max_label, 6)  # at least "Step" header width
+        for label, elapsed, success in _step_timings:
+            status = "OK" if success else "FAILED"
+            print(f"  [{status:>6}] {label:<{max_label}}  {_fmt_elapsed(elapsed):>10}")
+        print(f"  {'-' * (max_label + 22)}")
+
+    print(f"  {'TOTAL':<{max_label + 9 if _step_timings else 14}}  {_fmt_elapsed(total_elapsed):>10}")
+    print()
 
 
 def print_staleness_summary(config_path: Path, chapter_filter: int | None,
@@ -203,6 +239,9 @@ def main():
     parser.add_argument("--combine", action="store_true", help="Combine chapters into single audiobook MP3/M4B (off by default)")
     args = parser.parse_args()
 
+    pipeline_start = time.monotonic()
+    print(f"\n[{_ts()}] Pipeline started")
+
     # --ken-burns implicitly enables --video
     if args.ken_burns:
         args.video = True
@@ -227,15 +266,21 @@ def main():
         if args.force:
             audible_args.append("--force")
         if not run_step("Audible/ACX export", "generate_audible_export.py", audible_args):
+            _print_timing_summary(pipeline_start)
             sys.exit(1)
-        print(f"\n[{_ts()}] [DONE] Audible export complete.")
+        _print_timing_summary(pipeline_start)
+        print(f"[{_ts()}] [DONE] Audible export complete.")
         return
 
     # --- Pre-flight: show what's changed ---
     config_path = Path(args.config)
     if not config_path.is_absolute():
         config_path = PROJECT_ROOT / config_path
+    t0_stale = time.monotonic()
     print_staleness_summary(config_path, args.chapter, args.start, args.end)
+    stale_elapsed = time.monotonic() - t0_stale
+    _step_timings.append(("Staleness check", stale_elapsed, True))
+    print(f"  [{_ts()}] Staleness check took {_fmt_elapsed(stale_elapsed)}")
 
     # --- Step 1: Generate narration text ---
     text_args = list(shared)
@@ -245,10 +290,12 @@ def main():
         text_args.append("--dry-run")
 
     if not run_step("Generate narration text", "generate_audiobook_text.py", text_args):
+        _print_timing_summary(pipeline_start)
         sys.exit(1)
 
     if args.dry_run:
-        print(f"\n[{_ts()}] [DONE] Dry run complete (text only, no audio generated).")
+        _print_timing_summary(pipeline_start)
+        print(f"[{_ts()}] [DONE] Dry run complete (text only, no audio generated).")
         return
 
     # --- Step 2: Generate audio ---
@@ -259,6 +306,7 @@ def main():
         audio_args.append("--no-combine")
 
     if not run_step("Generate audio + MP3s + RSS", "generate_audiobook.py", audio_args):
+        _print_timing_summary(pipeline_start)
         sys.exit(1)
 
     # --- Step 3: Scene segmentation ---
@@ -268,6 +316,7 @@ def main():
             scene_args.append("--force")
 
         if not run_step("Scene segmentation", "generate_audiobook_scenes.py", scene_args):
+            _print_timing_summary(pipeline_start)
             sys.exit(1)
 
         # --- Step 4: Video generation ---
@@ -298,6 +347,7 @@ def main():
         else:
             step_label = "Generate video (keyframes + Veo + assembly)"
         if not run_step(step_label, "generate_audiobook_video.py", video_args):
+            _print_timing_summary(pipeline_start)
             sys.exit(1)
 
     # --- Step 5: Audible/ACX export ---
@@ -306,17 +356,21 @@ def main():
         if args.force:
             audible_args.append("--force")
         if not run_step("Audible/ACX export", "generate_audible_export.py", audible_args):
+            _print_timing_summary(pipeline_start)
             sys.exit(1)
 
     # --- Step 6: Sync to R2 ---
     if args.no_sync:
-        print(f"\n[{_ts()}] [DONE] Pipeline complete (--no-sync: skipped R2 upload).")
+        _print_timing_summary(pipeline_start)
+        print(f"[{_ts()}] [DONE] Pipeline complete (--no-sync: skipped R2 upload).")
         return
 
     if not run_step("Sync to Cloudflare R2", "sync_r2.py", []):
+        _print_timing_summary(pipeline_start)
         sys.exit(1)
 
-    print(f"\n{'=' * 70}")
+    _print_timing_summary(pipeline_start)
+    print(f"{'=' * 70}")
     print(f"  [{_ts()}] PUBLISH COMPLETE")
     print(f"{'=' * 70}")
 

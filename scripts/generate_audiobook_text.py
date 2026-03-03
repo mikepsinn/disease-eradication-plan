@@ -227,7 +227,7 @@ RULES:
 Return ONLY the narration text."""
 
 
-def rewrite_for_audiobook(text: str, title: str, output_path: Path) -> str:
+def rewrite_for_audiobook(text: str, title: str, output_path: Path, intro_text: str = "") -> str:
     """
     Send pre-processed text to LLM for narration rewrite.
     Saves each chunk to disk as it completes so we can resume after crashes.
@@ -236,6 +236,10 @@ def rewrite_for_audiobook(text: str, title: str, output_path: Path) -> str:
     from lib.llm import generate_gemini_flash_content
 
     chunks = chunk_text(text)
+    # Insert intro (title + description) as a dedicated first chunk
+    # so TTS generates it separately (combining with content degrades quality)
+    if intro_text:
+        chunks.insert(0, intro_text)
     # Chunks go in the adjacent narration-txt-chunks/ dir, not nested under narration-txt-chapters/
     chunk_dir = output_path.parent.parent / "narration-txt-chunks" / output_path.stem
     chunk_dir.mkdir(parents=True, exist_ok=True)
@@ -351,15 +355,15 @@ def generate_chapter_text(
 
     prepared = prepare_for_narration(raw_qmd, variables)
 
-    # Prepend title and description as spoken episode intro
+    # Build title and description as separate intro text
+    # (generated as its own TTS chunk to avoid quality degradation)
     intro_parts = []
     if title:
         intro_parts.append(title)
     description = chapter.get('description', '')
     if description:
         intro_parts.append(description)
-    if intro_parts:
-        prepared = '\n\n'.join(intro_parts) + '\n\n' + prepared
+    intro_text = '\n\n'.join(intro_parts) if intro_parts else ''
 
     if not prepared or len(prepared) < 50:
         print(f"  [SKIP] Insufficient content in {qmd_path.name}")
@@ -382,7 +386,8 @@ def generate_chapter_text(
     # Invalidate chunk cache if prepared text has changed
     chunk_dir = output_path.parent.parent / "narration-txt-chunks" / output_path.stem
     hash_file = chunk_dir / ".prepared_hash"
-    prepared_hash = hashlib.sha256(prepared.encode('utf-8')).hexdigest()[:16]
+    hash_content = (intro_text + '\n\n' + prepared) if intro_text else prepared
+    prepared_hash = hashlib.sha256(hash_content.encode('utf-8')).hexdigest()[:16]
     if chunk_dir.exists():
         if force:
             print(f"  [CACHE] Force flag set, clearing chunk cache")
@@ -396,7 +401,7 @@ def generate_chapter_text(
                 print(f"  [CACHE] Source text unchanged ({prepared_hash}), reusing chunk cache")
 
     print(f"  Rewriting for audiobook...")
-    rewritten = rewrite_for_audiobook(prepared, title, output_path)
+    rewritten = rewrite_for_audiobook(prepared, title, output_path, intro_text=intro_text)
 
     # Save hash for future cache validation
     chunk_dir.mkdir(parents=True, exist_ok=True)

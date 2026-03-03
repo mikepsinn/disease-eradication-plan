@@ -1,6 +1,6 @@
 ---
 title: Genetic Slavery
-description: You're running 200,000-year-old software on modern hardware. Your brain was designed for running from lions; now it runs from emails, craves sugar that's everywhere, fears strangers it needs to cooperate with, and builds nuclear weapons using the same instinct that once made it good at throwing rocks.
+description: Your genes trying to kill you with nuclear weapons and preventable disease simultaneously, which is an impressive amount of multitasking for software that was originally designed to find berries.
 published: true
 tags:
   - evolution
@@ -16,9 +16,6 @@ feed-date: '2026-03-03'
 youtube-thumbnail: /assets/podcast/genetic-slavery-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Stone Age emotions. Medieval institutions. Godlike technology.
-
-This is not a bug. It's the operating system. And the operating system is trying to kill you with nuclear weapons and preventable disease simultaneously, which is an impressive amount of multitasking for software that was originally designed to find berries.
 
 ## How Hydrogen Learned to Worry (A 13.8 Billion Year Recap)
 
@@ -90,7 +87,7 @@ The result is a compassion gradient so precise it could be graphed: self (100% s
 
 This is not a metaphor. This is the literal mechanism behind racism, speciesism, and every form of in-group preference your species has ever invented. Your genes designed you to favor people who look like you, because for 200,000 years, people who looked like you were probably related to you, and helping them helped your shared genes copy themselves. Racism isn't a malfunction. It's the system working exactly as designed, which is considerably worse than a malfunction, because malfunctions can be fixed with a software patch. This is the software.
 
-It also explains the single most irrational resource allocation decision your species makes every year, which is impressive given the competition. You will spend $50 on a birthday present your cousin doesn't want, won't use, and will re-gift to someone who also won't use it, while $5 worth of mosquito bed nets [@givewell-nets-cost-per-life] would prevent a child's death from malaria in sub-Saharan Africa. Your genes would rather waste ten times the resources on someone sharing 12.5% of your DNA than save a stranger sharing 99.9% of it. By any rational calculation, this is insane. By Hamilton's Rule, it's exactly correct. The child in Africa shares functionally none of your genes. Your cousin shares one-eighth. The math is clear: let the stranger die, buy the cousin a candle.
+It also explains the single most irrational resource allocation decision your species makes every year, which is impressive given the competition. You will spend $50 on a birthday present your cousin doesn't want, won't use, and will re-gift to someone who also won't use it, while $5 worth of mosquito bed nets [@givewell-nets-cost-per-life] would prevent a child's death from malaria in sub-Saharan Africa. Your genes would rather waste ten times the resources on a relative than save a stranger. By any rational calculation, this is insane. By Hamilton's Rule, it's exactly correct. The child in Africa is genetically a stranger. Your cousin is not. The math is clear: let the stranger die, buy the cousin a candle.
 
 On Wishonia, when we first modeled this behavior, we assumed our simulation was broken. We re-ran it 340 times. The simulation was fine. Your species is actually like this. You have pet supply stores that sell Halloween costumes for dogs while 700 million humans lack clean water [@who-drinking-water]. You spend more on birthday cards for people you're obligated to pretend to like than on preventing the deaths of people you've never met. And here's the part that should alarm you: this feels completely normal. It doesn't feel like a moral catastrophe. It feels like Tuesday. That's the gradient working. Your genes have made the irrational feel rational, because feeling bad about strangers wastes calories that could be spent on relatives.
 
