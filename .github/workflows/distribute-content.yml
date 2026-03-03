@@ -25,7 +25,7 @@ jobs:
           pip install pyyaml
           python -c "
           import sys; sys.path.insert(0, '.')
-          from dih_models.feed_generator import generate_rss_feed
+          from dih_models.website_rss_generator import generate_rss_feed
           from pathlib import Path
           p = generate_rss_feed(Path('.'))
           import xml.etree.ElementTree as ET

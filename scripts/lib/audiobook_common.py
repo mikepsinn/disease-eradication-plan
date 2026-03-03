@@ -257,6 +257,7 @@ def extract_chapters(config: dict) -> list[dict]:
             'path': resolved, 'title': title, 'part': part,
             'index': idx, 'description': description,
             'podcast_image': fm.get('podcast-image'),
+            'youtube_thumbnail': fm.get('youtube-thumbnail'),
             'podcast': bool(podcast_include),
         })
 
@@ -369,7 +370,19 @@ def find_podcast_image(chapter: dict, paths: AudiobookPaths | None = None) -> Pa
 
 
 def find_youtube_thumbnail(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
-    """Find the YouTube thumbnail image for a chapter."""
+    """Find the YouTube thumbnail image for a chapter.
+
+    Checks the youtube-thumbnail frontmatter property first, then falls back
+    to the convention-based slug lookup in the podcast-images directory.
+    """
+    # Check frontmatter youtube-thumbnail property (e.g. /assets/podcast/foo-youtube.jpg)
+    fm_image = chapter.get('youtube_thumbnail')
+    if fm_image:
+        img = PROJECT_ROOT / fm_image.lstrip('/')
+        if img.exists():
+            return img
+
+    # Fallback: convention-based slug lookup
     img_dir = paths.podcast_images if paths else AUDIOBOOK_DIR / "podcast-images"
     slug = chapter_slug(chapter)
     img = img_dir / f"{slug}-youtube.jpg"

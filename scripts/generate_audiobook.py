@@ -41,6 +41,7 @@ from lib.audiobook_common import (
     PROJECT_ROOT, AUDIOBOOK_DIR, CHAPTER_AUDIO_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
     chapter_slug, find_prepared_text, find_chapter_audio, find_podcast_image,
+    find_youtube_thumbnail,
     AudiobookPaths, config_name_from_path, get_paths,
     mp3_content_hash, find_current_mp3, parse_hashed_mp3, PODCAST_HASH_RE,
 )
@@ -1301,6 +1302,7 @@ def generate_podcast_rss(
 
     # Build per-episode lookups from chapter list (keyed by slug)
     ep_image_urls: dict[str, str] = {}
+    ep_wide_image_urls: dict[str, str] = {}
     ep_descriptions: dict[str, str] = {}
     for ch in chapters:
         s = chapter_slug(ch)
@@ -1308,6 +1310,10 @@ def generate_podcast_rss(
         if img:
             img_rel = img.relative_to(PROJECT_ROOT).as_posix()
             ep_image_urls[s] = f"{cdn_url}/{img_rel}"
+        wide_img = find_youtube_thumbnail(ch, paths=paths)
+        if wide_img:
+            wide_rel = wide_img.relative_to(PROJECT_ROOT).as_posix()
+            ep_wide_image_urls[s] = f"{cdn_url}/{wide_rel}"
         if ch.get('description'):
             ep_descriptions[s] = ch['description']
 
@@ -1343,7 +1349,18 @@ def generate_podcast_rss(
         pub_date = ep_date.strftime("%a, %d %b %Y %H:%M:%S +0000")
 
         ep_img = ep_image_urls.get(slug)
+        ep_wide = ep_wide_image_urls.get(slug)
         image_tag = f'\n      <itunes:image href="{escape(ep_img)}"/>' if ep_img else ''
+
+        # Build podcast:images srcset with available sizes
+        srcset_parts = []
+        if ep_wide:
+            srcset_parts.append(f"{escape(ep_wide)} 1920w")
+        if ep_img:
+            srcset_parts.append(f"{escape(ep_img)} 3000w")
+        podcast_images_tag = ''
+        if srcset_parts:
+            podcast_images_tag = f'\n      <podcast:images srcset="{", ".join(srcset_parts)}"/>'
 
         items.append(f"""    <item>
       <title>{escape(ep_title)}</title>
@@ -1353,7 +1370,7 @@ def generate_podcast_rss(
       <itunes:episode>{ep_num + 1}</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <guid isPermaLink="false">chapter-{slug}</guid>
-      <description>{escape(ep_desc)}</description>{image_tag}
+      <description>{escape(ep_desc)}</description>{image_tag}{podcast_images_tag}
     </item>""")
 
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>

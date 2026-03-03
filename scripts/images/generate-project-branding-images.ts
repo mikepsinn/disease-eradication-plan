@@ -145,8 +145,29 @@ function buildPodcastImagePrompt(chapterTitle: string, chapterDescription: strin
 
 CRITICAL: This is an image viewed as a TINY THUMBNAIL (60-100px).
 Design rules:
-- Create fun retro scientific illustration imagery that most effectively conveys the content in a simple, visual way.
-- Title text must be VERY LARGE, bold, and legible at 100px.
+- Create fun retro scientific illustration imagery that most effectively conveys the content in a simple, visual way. Keep detail minimal; no fine lines or small elements.
+- Title text must be EXTREMELY LARGE, bold, and legible at 60px. Text should fill most of the image.
+
+ONLY DISPLAY THE TEXT: "${chapterTitle}"
+
+HERE'S ADDITIONAL INFO JUST TO INSPIRE THE IMAGERY (THIS IS NOT DISPLAYED):
+${chapterDescription}
+${chapterBody}`;
+}
+
+/**
+ * Build YouTube thumbnail prompt for a chapter
+ * Optimized for wide (16:9) display on Spotify desktop and YouTube
+ */
+function buildYoutubeThumbnailPrompt(chapterTitle: string, chapterDescription: string, chapterBody: string): string {
+  const style = VisualStyles['bw-academic'];
+
+  return `${style.style}
+
+CRITICAL: This is a WIDE 16:9 thumbnail for YouTube and Spotify desktop.
+Design rules:
+- Create fun retro scientific illustration imagery that most effectively conveys the content in a simple, visual way. Keep detail minimal; no fine lines or small elements.
+- Title text must be EXTREMELY LARGE, bold, and legible. Use the full width of the canvas.
 
 ONLY DISPLAY THE TEXT: "${chapterTitle}"
 
@@ -300,7 +321,8 @@ function extractChapterFiles(doc: Record<string, any>): string[] {
 const PODCAST_CONCURRENCY = 4;
 
 /**
- * Generate a single chapter's podcast cover image and update its frontmatter
+ * Generate a single chapter's podcast cover image (square) and YouTube thumbnail (wide),
+ * updating frontmatter for both.
  */
 async function generateSinglePodcastImage(
   chapterFile: string,
@@ -315,78 +337,154 @@ async function generateSinglePodcastImage(
   const { data: frontmatter, content: body } = matter(fileContent);
 
   const chapterName = path.basename(chapterFile, '.qmd');
-  const outputFileName = `${chapterName}-podcast`;
-  const outputPath = path.join(outputDir, `${outputFileName}.jpg`);
-  const podcastImageValue = `/assets/podcast/${outputFileName}.jpg`;
 
-  // Skip if podcast-image is set in frontmatter and the referenced file exists
-  if (frontmatter['podcast-image']) {
-    const existingPath = path.join(process.cwd(), frontmatter['podcast-image']);
-    if (existsSync(existingPath)) {
-      console.log(`  [SKIP] ${chapterName}: podcast image exists`);
-      return true;
+  // --- Square podcast image (3000x3000) ---
+  const squareFileName = `${chapterName}-podcast`;
+  const squarePath = path.join(outputDir, `${squareFileName}.jpg`);
+  const squareFmValue = `/assets/podcast/${squareFileName}.jpg`;
+
+  // --- Wide YouTube thumbnail (1920x1080) ---
+  const wideFileName = `${chapterName}-youtube`;
+  const widePath = path.join(outputDir, `${wideFileName}.jpg`);
+  const wideFmValue = `/assets/podcast/${wideFileName}.jpg`;
+
+  // Determine what needs generating
+  let needSquare = force;
+  let needWide = force;
+
+  if (!force) {
+    // Square: skip if frontmatter + file exist, or just file exists
+    if (frontmatter['podcast-image']) {
+      const existing = path.join(process.cwd(), frontmatter['podcast-image']);
+      needSquare = !existsSync(existing);
+    } else {
+      needSquare = !existsSync(squarePath);
+    }
+
+    // Wide: skip if frontmatter + file exist, or just file exists
+    if (frontmatter['youtube-thumbnail']) {
+      const existing = path.join(process.cwd(), frontmatter['youtube-thumbnail']);
+      needWide = !existsSync(existing);
+    } else {
+      needWide = !existsSync(widePath);
     }
   }
 
-  // Skip if output file exists (even without frontmatter reference)
-  if (!force && existsSync(outputPath)) {
-    // File exists but frontmatter is missing/stale - update frontmatter
-    frontmatter['podcast-image'] = podcastImageValue;
-    const updatedContent = stringifyWithFrontmatter(body, frontmatter);
-    await fs.writeFile(filePath, updatedContent, 'utf-8');
-    console.log(`  [SKIP] ${chapterName}: image exists, updated frontmatter`);
+  // Ensure frontmatter is up-to-date even if files already exist
+  let frontmatterDirty = false;
+  if (!needSquare && existsSync(squarePath) && frontmatter['podcast-image'] !== squareFmValue) {
+    frontmatter['podcast-image'] = squareFmValue;
+    frontmatterDirty = true;
+  }
+  if (!needWide && existsSync(widePath) && frontmatter['youtube-thumbnail'] !== wideFmValue) {
+    frontmatter['youtube-thumbnail'] = wideFmValue;
+    frontmatterDirty = true;
+  }
+
+  if (!needSquare && !needWide) {
+    if (frontmatterDirty) {
+      const updatedContent = stringifyWithFrontmatter(body, frontmatter);
+      await fs.writeFile(filePath, updatedContent, 'utf-8');
+      console.log(`  [SKIP] ${chapterName}: images exist, updated frontmatter`);
+    } else {
+      console.log(`  [SKIP] ${chapterName}: all images exist`);
+    }
     return true;
   }
 
-  // Resolve Quarto variables and strip confidence intervals / HTML
+  // Resolve text once for both prompts
   const title = await resolveAndCleanText(frontmatter.title || chapterName);
   const description = await resolveAndCleanText(frontmatter.description || '');
   const cleanBody = await prepareContentForLLM(body);
 
-  console.log(`  Generating podcast image for: ${title}`);
-  const prompt = buildPodcastImagePrompt(title, description, cleanBody);
+  // Generate square podcast image
+  if (needSquare) {
+    console.log(`  Generating podcast image for: ${title}`);
+    const prompt = buildPodcastImagePrompt(title, description, cleanBody);
 
-  let files: string[] | undefined;
-  try {
-    files = await generateAndSaveImages({
-      prompt,
-      aspectRatio: '1:1',
-      outputDir,
-      filePrefix: `${outputFileName}-raw`,
-      format: 'jpg',
-      metadata: {
-        title,
-        description,
-        keywords: config.keywords,
-        sourceUrl: config.siteUrl,
-      },
-    });
-  } catch (err: any) {
-    console.error(`  [ERROR] ${chapterName}: ${err.message || err}`);
-    return false;
+    let files: string[] | undefined;
+    try {
+      files = await generateAndSaveImages({
+        prompt,
+        aspectRatio: '1:1',
+        outputDir,
+        filePrefix: `${squareFileName}-raw`,
+        format: 'jpg',
+        metadata: {
+          title,
+          description,
+          keywords: config.keywords,
+          sourceUrl: config.siteUrl,
+        },
+      });
+    } catch (err: any) {
+      console.error(`  [ERROR] ${chapterName} square: ${err.message || err}`);
+      return false;
+    }
+
+    if (!files || files.length === 0) {
+      console.error(`  [ERROR] ${chapterName} square: no images returned`);
+      return false;
+    }
+
+    const generatedPath = files[0];
+    await sharp(generatedPath)
+      .resize(3000, 3000, { fit: 'cover' })
+      .jpeg({ quality: 75 })
+      .toFile(squarePath);
+    if (path.resolve(generatedPath) !== path.resolve(squarePath)) {
+      try { await fs.unlink(generatedPath); } catch { /* ignore */ }
+    }
+    console.log(`  [OK] ${chapterName}: square podcast image generated`);
   }
 
-  if (!files || files.length === 0) {
-    console.error(`  [ERROR] ${chapterName}: no images returned`);
-    return false;
+  // Generate wide YouTube thumbnail
+  if (needWide) {
+    console.log(`  Generating YouTube thumbnail for: ${title}`);
+    const prompt = buildYoutubeThumbnailPrompt(title, description, cleanBody);
+
+    let files: string[] | undefined;
+    try {
+      files = await generateAndSaveImages({
+        prompt,
+        aspectRatio: '16:9',
+        outputDir,
+        filePrefix: `${wideFileName}-raw`,
+        format: 'jpg',
+        metadata: {
+          title,
+          description,
+          keywords: config.keywords,
+          sourceUrl: config.siteUrl,
+        },
+      });
+    } catch (err: any) {
+      console.error(`  [ERROR] ${chapterName} wide: ${err.message || err}`);
+      // Non-fatal: square was already generated if needed
+    }
+
+    if (files && files.length > 0) {
+      const generatedPath = files[0];
+      await sharp(generatedPath)
+        .resize(1920, 1080, { fit: 'cover' })
+        .jpeg({ quality: 80 })
+        .toFile(widePath);
+      if (path.resolve(generatedPath) !== path.resolve(widePath)) {
+        try { await fs.unlink(generatedPath); } catch { /* ignore */ }
+      }
+      console.log(`  [OK] ${chapterName}: YouTube thumbnail generated`);
+    }
   }
 
-  // Resize to 3000x3000 (Apple Podcasts max, works everywhere)
-  const generatedPath = files[0];
-  await sharp(generatedPath)
-    .resize(3000, 3000, { fit: 'cover' })
-    .jpeg({ quality: 75 })
-    .toFile(outputPath);
-  if (path.resolve(generatedPath) !== path.resolve(outputPath)) {
-    try { await fs.unlink(generatedPath); } catch { /* ignore */ }
+  // Update frontmatter with both image paths
+  frontmatter['podcast-image'] = squareFmValue;
+  if (existsSync(widePath)) {
+    frontmatter['youtube-thumbnail'] = wideFmValue;
   }
-
-  // Update frontmatter
-  frontmatter['podcast-image'] = podcastImageValue;
   const updatedContent = stringifyWithFrontmatter(body, frontmatter);
   await fs.writeFile(filePath, updatedContent, 'utf-8');
 
-  console.log(`  [OK] ${chapterName}: generated + frontmatter updated`);
+  console.log(`  [OK] ${chapterName}: frontmatter updated`);
   return true;
 }
 
@@ -504,9 +602,10 @@ async function main(): Promise<void> {
   console.log('='.repeat(60));
   console.log('');
   console.log('Output locations:');
-  console.log('  OG images:  assets/og/{config}-og-1200x630.jpg');
-  console.log('  Podcasts:   assets/podcast/{chapter}-podcast.jpg');
-  console.log('  Favicons:   assets/icons/{config}-favicon*.png');
+  console.log('  OG images:    assets/og/{config}-og-1200x630.jpg');
+  console.log('  Podcasts:     assets/podcast/{chapter}-podcast.jpg (3000x3000)');
+  console.log('  YT thumbnails: assets/podcast/{chapter}-youtube.jpg (1920x1080)');
+  console.log('  Favicons:     assets/icons/{config}-favicon*.png');
   console.log('');
 
   if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {

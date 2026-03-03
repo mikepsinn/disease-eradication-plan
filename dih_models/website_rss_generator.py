@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-RSS Feed Generator
-==================
+Website RSS Feed Generator
+===========================
 
 Generates an RSS 2.0 feed from book chapters that have a `feed-date`
 field in their YAML frontmatter. Only chapters with feed-date are
 included, giving full editorial control over what appears in the feed.
 
 Usage:
-    from dih_models.feed_generator import generate_rss_feed
+    from dih_models.website_rss_generator import generate_rss_feed
     generate_rss_feed(project_root)
 
 Output:
@@ -120,11 +120,18 @@ def generate_rss_feed(project_root: Path) -> Path:
         html_path = rel_path.replace(".qmd", ".html")
         url = f"{site_url}/{html_path}"
 
+        # Build image URL from podcast-image frontmatter if available
+        image_url = ""
+        podcast_img = fm.get("podcast-image", "")
+        if podcast_img:
+            image_url = f"{site_url}{podcast_img}"
+
         entries.append({
             "title": title,
             "description": description,
             "url": url,
             "date": feed_date,
+            "image": image_url,
         })
 
     # Only include entries whose date has arrived (no future items)
@@ -138,16 +145,19 @@ def generate_rss_feed(project_root: Path) -> Path:
 
     items_xml = []
     for entry in entries:
+        image_tag = ""
+        if entry.get("image"):
+            image_tag = f"\n      <itunes:image href=\"{escape(entry['image'])}\"/>"
         items_xml.append(f"""    <item>
       <title>{escape(entry['title'])}</title>
       <link>{escape(entry['url'])}</link>
       <guid>{escape(entry['url'])}</guid>
       <description>{escape(entry['description'])}</description>
-      <pubDate>{_date_to_rfc822(entry['date'])}</pubDate>
+      <pubDate>{_date_to_rfc822(entry['date'])}</pubDate>{image_tag}
     </item>""")
 
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>{escape(book_title)}</title>
     <link>{escape(site_url)}</link>

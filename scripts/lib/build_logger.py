@@ -34,7 +34,6 @@ import threading
 import subprocess
 import os
 from datetime import datetime
-from io import TextIOWrapper
 from pathlib import Path
 from typing import Optional, TextIO, Callable, Iterable, Sequence, cast
 
@@ -45,8 +44,13 @@ if sys.platform == 'win32':
         stdout_reconfigure(encoding='utf-8')
 
 
-class TeeWriter(TextIOWrapper):
-    """Writes to both original stream and log file."""
+class TeeWriter:
+    """Writes to both original stream and log file.
+
+    Does NOT inherit from TextIOWrapper to avoid segfaults when code calls
+    sys.stdout.reconfigure() on the replaced stream (the C-level buffer
+    would be uninitialized).
+    """
 
     def __init__(self, original: TextIO, log_file: TextIO):
         self.original = original
@@ -79,6 +83,12 @@ class TeeWriter(TextIOWrapper):
 
     def isatty(self) -> bool:
         return self.original.isatty()
+
+    def reconfigure(self, **kwargs) -> None:
+        """Delegate reconfigure to the original stream."""
+        reconfigure_fn = getattr(self.original, 'reconfigure', None)
+        if callable(reconfigure_fn):
+            reconfigure_fn(**kwargs)
 
 
 class BuildLogger:

@@ -316,7 +316,10 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
                   f"({remaining:.0f}s remaining)...    ", end="", flush=True)
 
         remote_etag = remote_objects.get(key)
-        size = local_path.stat().st_size
+        try:
+            size = local_path.stat().st_size
+        except FileNotFoundError:
+            continue
 
         if file_matches_etag(local_path, remote_etag):
             skipped += 1
