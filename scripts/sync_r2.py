@@ -316,14 +316,27 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
                   f"({remaining:.0f}s remaining)...    ", end="", flush=True)
 
         remote_etag = remote_objects.get(key)
+        is_mp3 = local_path.suffix.lower() == '.mp3'
         try:
             size = local_path.stat().st_size
         except FileNotFoundError:
+            if is_mp3:
+                print(f"\n  [SKIP] {key} (file disappeared from disk)")
             continue
 
         if file_matches_etag(local_path, remote_etag):
+            if is_mp3:
+                local_hash = md5_file(local_path)
+                print(f"\n  [SKIP] {key} (hash match: local={local_hash}, remote={remote_etag})")
             skipped += 1
             continue
+
+        if is_mp3:
+            if remote_etag is None:
+                print(f"\n  [QUEUE] {key} (new, no remote copy)")
+            else:
+                local_hash = md5_file(local_path)
+                print(f"\n  [QUEUE] {key} (changed: local={local_hash}, remote={remote_etag})")
 
         action = "NEW" if remote_etag is None else "UPDATE"
         to_upload.append((key, local_path, action, size))
@@ -781,8 +794,10 @@ def regenerate_podcast_feed(dry_run: bool = False):
         paths = get_paths(config_name)
         mp3_dir = paths.root / "mp3"
         if not mp3_dir.exists():
-            print(f"    No mp3/ directory, skipping.")
-            continue
+            print(f"\n  ERROR: Per-chapter MP3 directory not found: {mp3_dir}")
+            print(f"  Run the audiobook pipeline first to generate per-chapter MP3s:")
+            print(f"    python scripts/publish_audiobook.py --no-sync")
+            sys.exit(1)
 
         config = load_quarto_config(config_path)
         all_chapters = extract_chapters(config)

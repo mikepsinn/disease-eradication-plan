@@ -1613,22 +1613,21 @@ def main():
             _run_alignment(chapter, audio_path, title, force=args.force, paths=paths, audio_changed=audio_changed)
 
         # 4. Export raw tagged chapter MP3 (to mp3-raw/)
-        if not args.no_combine:
-            track_num = next((i for i, ch in enumerate(all_chapters, 1) if ch['index'] == chapter['index']), chapter['index'])
-            raw_mp3 = export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
+        track_num = next((i for i, ch in enumerate(all_chapters, 1) if ch['index'] == chapter['index']), chapter['index'])
+        raw_mp3 = export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
 
-            # 5. Wrap with intro/outro (raw mp3-raw/ -> wrapped mp3/)
-            if raw_mp3:
-                wrapped = wrap_mp3_with_intro_outro(raw_mp3, mp3_dir, intro_path=intro_mp3, outro_path=outro_wav)
+        # 5. Wrap with intro/outro (raw mp3-raw/ -> wrapped mp3/)
+        if raw_mp3:
+            wrapped = wrap_mp3_with_intro_outro(raw_mp3, mp3_dir, intro_path=intro_mp3, outro_path=outro_wav)
 
-                # 6. Rename to content-hashed filename for podcast cache busting
-                if wrapped:
-                    wrapped = finalize_podcast_mp3(wrapped)
+            # 6. Rename to content-hashed filename for podcast cache busting
+            if wrapped:
+                wrapped = finalize_podcast_mp3(wrapped)
 
     print(f"\n{'=' * 60}")
     print(f"Processed {len(generated_files)} chapters")
 
-    # Combine into single audiobook + podcast RSS (needs all chapters)
+    # Combine into single audiobook (optional, off by default)
     if not args.no_combine:
         chapters_with_audio = [ch for ch in all_chapters if find_chapter_audio(ch, paths=paths)]
         if len(chapters_with_audio) > 1:
@@ -1641,16 +1640,37 @@ def main():
             tag_mp3(mp3_path, timestamps, book_meta, chapters=all_chapters, paths=paths)
             export_m4b(mp3_path, timestamps, book_meta)
 
-            # Collect all chapter MP3s for RSS (hashed or canonical filenames)
-            chapter_mp3s = []
-            for ch in all_chapters:
-                slug = chapter_slug(ch)
-                mp3 = find_current_mp3(slug, mp3_dir)
-                if mp3:
-                    chapter_mp3s.append(mp3)
+    # Generate podcast RSS feed (always, independent of --no-combine)
+    chapter_mp3s = []
+    for ch in all_chapters:
+        slug = chapter_slug(ch)
+        mp3 = find_current_mp3(slug, mp3_dir)
+        if mp3:
+            chapter_mp3s.append(mp3)
 
-            # Generate podcast RSS feed
-            generate_podcast_rss(chapter_mp3s, all_chapters, timestamps, book_meta, paths=paths)
+    if chapter_mp3s:
+        from lib.audiobook_manifest import read_manifest
+        manifest = read_manifest(paths=paths)
+        timestamps_from_manifest: list[ChapterTimestamp] = []
+        for ch_data in manifest.get("chapters", []):
+            if "duration_ms" not in ch_data or "audio_file" not in ch_data:
+                continue
+            timestamps_from_manifest.append(ChapterTimestamp(
+                index=ch_data["index"],
+                title=ch_data["title"],
+                part=ch_data.get("part"),
+                file=ch_data["audio_file"],
+                start_ms=ch_data.get("audio_start_ms", 0),
+                end_ms=ch_data.get("audio_end_ms", ch_data["duration_ms"]),
+                duration_ms=ch_data["duration_ms"],
+                duration_formatted=ch_data.get("duration_formatted", "0:00"),
+            ))
+        if timestamps_from_manifest:
+            generate_podcast_rss(chapter_mp3s, all_chapters, timestamps_from_manifest, book_meta, paths=paths)
+        else:
+            print("  [WARN] No timestamps in manifest, skipping podcast RSS generation")
+    else:
+        print(f"  [WARN] No per-chapter MP3s found in {mp3_dir}, skipping podcast RSS generation")
 
     print("\nDone!")
     logger.close()
