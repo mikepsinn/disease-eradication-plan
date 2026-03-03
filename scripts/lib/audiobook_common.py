@@ -211,11 +211,12 @@ def _load_quarto_variables() -> dict:
 
 
 def _resolve_quarto_vars(text: str, variables: dict) -> str:
-    """Replace {{< var name >}} shortcodes with plain-text values."""
+    """Replace {{< var name >}} shortcodes with plain-text values, stripping CI intervals."""
     if '{{< var' not in text:
         return text
-    from lib.yaml_sync_utils import substitute_quarto_variables
-    return substitute_quarto_variables(text, variables)
+    from lib.yaml_sync_utils import substitute_quarto_variables, strip_confidence_intervals
+    resolved = substitute_quarto_variables(text, variables)
+    return strip_confidence_intervals(resolved)
 
 
 def extract_chapters(config: dict) -> list[dict]:
