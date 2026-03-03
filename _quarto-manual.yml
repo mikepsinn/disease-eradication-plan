@@ -402,98 +402,22 @@ format:
       - file: assets/html/platform-bar.html
     include-in-footer:
       - file: assets/html/generated-footer.html
-  epub:
-    # EPUB format optimized for e-readers (Kindle, Apple Books, etc.)
-    filters:
-      - scripts/filters/epub-transforms.lua
-    output-file: "How-to-End-War-and-Disease.epub"
-    # Author override handled by Lua filter (scripts/filters/epub-transforms.lua)
-    # Cover image for EPUB (required for most e-book platforms)
-    epub-cover-image: assets/cover/book-cover-3.jpg
-    # Math rendering: webtex converts LaTeX to embedded SVG images via CodeCogs
-    # Works on ALL e-readers (Kindle, Apple Books, Kobo) since images are universal
-    # MathML fails on \begin{gathered} (176/181 _latex vars) and Kindle strips it entirely
-    html-math-method:
-      method: webtex
-      url: "https://latex.codecogs.com/svg.latex?"
-    css: epub-math.css
-    # Table of contents disabled - Kindle generates nav from chapter headings automatically
-    toc: false
-    # Chapter splitting: Use level 2 for large books (81 chapters, ~900 pages)
-    # This prevents oversized chapter files that cause performance issues
-    epub-chapter-level: 2
-    # Display options
-    echo: false
-    number-sections: false
-    # Keep figures in knowledge/figures/ to avoid Windows path issues
-    keep-ipynb: false
-    # Metadata inherited from project-level metadata above
-    # (title, author, description, copyright, license, etc.)
-    # NOTE: include-in-footer, include-after-body, and include-in-header not supported as arrays in EPUB format
-    # include-in-footer:
-    #   - text: |
-    #       <div style="text-align: center; padding: 1rem; border-top: 1px solid #d4c5b9; margin-top: 3rem; color: #8b7355; font-size: 0.9rem;">
-    #         <p style="margin: 0.5rem 0;">
-    #           © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
-    #           <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
-    #           <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
-    #         </p>
-    #       </div>
-    # include-after-body:
-    #   - text: |
-    #       <footer style="text-align: center; padding: 2rem 1rem; border-top: 1px solid #d4c5b9; margin-top: 4rem; color: #8b7355; font-size: 0.9rem; background-color: #fdfdf8;">
-    #         <p style="margin: 0.5rem 0;">
-    #           © 2025 <a href="https://mikesinn.com" style="color: #8b7355;">Mike P. Sinn</a> |
-    #           <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0 license</a> |
-    #           <a href="https://WarOnDisease.org" style="color: #8b7355;">WarOnDisease.org</a>
-    #         </p>
-    #       </footer>
-    # include-in-header:
-    #   - text: |
-    #       <!-- Icons -->
-    #       <link rel="icon" href="assets/icons/favicon.ico">
-    #       <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-    #       <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
-    #       <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
-    #
-    #       <!-- Google Analytics -->
-    #       <script async src="https://www.googletagmanager.com/gtag/js?id=G-8PZYCKQBTY"></script>
-    #       <script>
-    #         window.dataLayer = window.dataLayer || [];
-    #         function gtag(){dataLayer.push(arguments);}
-    #         gtag('js', new Date());
-    #         gtag('config', 'G-8PZYCKQBTY');
-    #       </script>
-    #       <!-- Hypothesis for inline comments and annotations (load on all pages except index) -->
-    #       <script>
-    #         // Only load Hypothesis if we're not on the landing page
-    #         // Matches: /, /index.html, /warondisease/, /warondisease/index.html
-    #         var isIndexPage = window.location.pathname.match(/\/(warondisease\/)?(index\.html)?$/);
-    #         if (!isIndexPage) {
-    #           var script = document.createElement('script');
-    #           script.src = 'https://hypothes.is/embed.js';
-    #           script.async = true;
-    #           document.head.appendChild(script);
-    #         }
-    #       </script>
-    #       <link rel="preconnect" href="https://fonts.googleapis.com">
-    #       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    #       <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    #
-    #       <!-- Social Media / Open Graph -->
-    #       <meta property="og:image" content="https://manual.WarOnDisease.org/assets/icons/og-image.png">
-    #       <meta property="og:image:width" content="1200">
-    #       <meta property="og:image:height" content="630">
-    #       <meta property="og:image:type" content="image/png">
-    #       <meta name="twitter:card" content="summary_large_image">
-    #       <meta name="twitter:image" content="https://manual.WarOnDisease.org/assets/icons/og-image.png">
-    #       <meta name="twitter:title" content="How to End War and Disease">
-    #       <meta name="twitter:description" content="Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery">
-    #       <meta property="og:title" content="How to End War and Disease">
-    #       <meta property="og:description" content="Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery">
-    #       <meta property="og:type" content="book">
-    #       <meta property="og:url" content="https://manual.WarOnDisease.org">
-  pdf:
+  # EPUB and PDF disabled for manual config - use manual-paperback for these formats
+  # epub:
+  #   filters:
+  #     - scripts/filters/epub-transforms.lua
+  #   output-file: "How-to-End-War-and-Disease.epub"
+  #   epub-cover-image: assets/cover/book-cover-3.jpg
+  #   html-math-method:
+  #     method: webtex
+  #     url: "https://latex.codecogs.com/svg.latex?"
+  #   css: epub-math.css
+  #   toc: false
+  #   epub-chapter-level: 2
+  #   echo: false
+  #   number-sections: false
+  #   keep-ipynb: false
+  # pdf:
     # Using standard 'report' class instead of 'scrreprt' to avoid LaTeX \@writefile
     # corruption issues with large documents (900+ pages, 81 files, complex TOC)
     # Alternative: scrreprt with 'classoption: draft' also works but reduces PDF quality
