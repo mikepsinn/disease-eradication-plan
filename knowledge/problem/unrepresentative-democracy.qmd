@@ -11,7 +11,8 @@ tags:
   - politics
 image: /assets/og-images/knowledge/problem/unrepresentative-democracy-og-retro-academic.jpg
 podcast-image: /assets/podcast/unrepresentative-democracy-podcast.jpg
-feed-date: "2026-03-09"
+feed-date: '2026-03-09'
+youtube-thumbnail: /assets/podcast/unrepresentative-democracy-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your chance of deciding a presidential election: 1 in 60 million [@odds-of-decisive-vote]. You're more likely to die in a car crash driving to the polls. The expected value of your vote is $0.00017. The cost of casting it (time, gas, parking) is about $50.

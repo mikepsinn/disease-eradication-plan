@@ -16,7 +16,8 @@ image: /assets/og-images/knowledge/solution/incentive-alignment-bonds-og-retro-a
 aliases:
   - /knowledge/economics/victory-bonds.html
 podcast-image: /assets/podcast/incentive-alignment-bonds-podcast.jpg
-feed-date: "2026-03-25"
+feed-date: '2026-03-25'
+youtube-thumbnail: /assets/podcast/incentive-alignment-bonds-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Aligning Incentives](aligning-incentives.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)

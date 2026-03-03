@@ -11,7 +11,8 @@ tags:
   - happiness
 image: /assets/og-images/knowledge/futures/wishonia-og-retro-academic.jpg
 podcast-image: /assets/podcast/wishonia-podcast.jpg
-feed-date: "2026-03-11"
+feed-date: '2026-03-11'
+youtube-thumbnail: /assets/podcast/wishonia-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Hello again. Wishonia here.

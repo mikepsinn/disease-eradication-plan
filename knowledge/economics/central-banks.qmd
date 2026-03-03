@@ -10,7 +10,8 @@ tags:
   - inflation
 image: /assets/og-images/knowledge/economics/central-banks-og-retro-academic.jpg
 podcast-image: /assets/podcast/central-banks-podcast.jpg
-feed-date: "2026-03-08"
+feed-date: '2026-03-08'
+youtube-thumbnail: /assets/podcast/central-banks-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Every dollar in your wallet is a death certificate with a president's face on it.

@@ -7,7 +7,8 @@ format:
     toc-depth: 3
 image: /assets/og-images/knowledge/solution/aligning-incentives-og-retro-academic.jpg
 podcast-image: /assets/podcast/aligning-incentives-podcast.jpg
-feed-date: "2026-03-16"
+feed-date: '2026-03-16'
+youtube-thumbnail: /assets/podcast/aligning-incentives-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

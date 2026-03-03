@@ -9,7 +9,8 @@ tags:
   - death-by-clipboard
 image: /assets/og-images/knowledge/solution/dfda-og-retro-academic.jpg
 podcast-image: /assets/podcast/dfda-podcast.jpg
-feed-date: "2026-03-15"
+feed-date: '2026-03-15'
+youtube-thumbnail: /assets/podcast/dfda-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
