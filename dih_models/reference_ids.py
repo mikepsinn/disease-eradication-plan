@@ -41,6 +41,7 @@ class ReferenceID(str, Enum):
     ACCELERATING_CLINICAL_TRIALS_MCKINSEY = "accelerating-clinical-trials-mckinsey"
     ACLED_ACTIVE_COMBAT_DEATHS = "acled-active-combat-deaths"
     ACZEL_SAATY_1983 = "aczel-saaty-1983"
+    AD_DRUG_REPURPOSING_573_CANDIDATES = "ad-drug-repurposing-573-candidates"
     ADAPTABLE_TRIAL = "adaptable-trial"
     ADMINISTRATIVE_PROCEDURE_ACT = "administrative-procedure-act"
     ADVERSE_EVENT_UNDERREPORTING = "adverse-event-underreporting"
