@@ -1379,6 +1379,7 @@ def generate_podcast_rss(
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>serial</itunes:type>
     <pubDate>{latest_date.strftime("%a, %d %b %Y %H:%M:%S +0000")}</pubDate>
+    <lastBuildDate>{datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")}</lastBuildDate>
     <podcast:medium>audiobook</podcast:medium>
     <atom:link href="{escape(cdn_url)}/{mp3_base.as_posix()}/feed.xml" rel="self" type="application/rss+xml"/>
 {chr(10).join(items)}
