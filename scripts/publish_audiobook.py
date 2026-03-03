@@ -78,11 +78,13 @@ def print_staleness_summary(config_path: Path, chapter_filter: int | None,
         VARIABLES_YML,
     )
     from dih_models.yaml_utils import load_quarto_config
+    from dih_models.variable_replacement import load_variables, replace_variables
 
     config = load_quarto_config(config_path)
     cfg_name = config_name_from_path(config_path)
     paths = get_paths(cfg_name)
     chapters = extract_chapters(config)
+    variables = load_variables(VARIABLES_YML) if VARIABLES_YML.exists() else {}
 
     # Apply chapter filters
     if chapter_filter is not None:
@@ -107,7 +109,10 @@ def print_staleness_summary(config_path: Path, chapter_filter: int | None,
             continue
 
         raw = qmd_path.read_text(encoding='utf-8')
-        current_hash = hashlib.sha256(raw.encode('utf-8')).hexdigest()[:16]
+        # Match the hash from generate_audiobook_text.py: QMD with variables resolved
+        current_hash = hashlib.sha256(
+            replace_variables(raw, variables, highlight_missing=False).encode('utf-8')
+        ).hexdigest()[:16]
 
         if not prepared_file.exists():
             stale.append((ch, "no prepared text yet"))

@@ -234,16 +234,16 @@ def extract_chapters(config: dict) -> list[dict]:
             return index_source
         return path
 
-    def add_chapter(path: str, title: str | None, part: str | None) -> None:
+    def add_chapter(path: str, _config_text: str | None, part: str | None) -> None:
         nonlocal idx
         idx += 1
         resolved = resolve_path(path)
         qmd_path = PROJECT_ROOT / resolved
-        if not title:
-            title = extract_title_from_qmd(qmd_path)
+        # Always use QMD frontmatter title (config text: is for TOC, not narration)
+        title = extract_title_from_qmd(qmd_path)
         if not title:
             raise ValueError(
-                f"Chapter {idx} ({resolved}) has no title in Quarto config or QMD frontmatter"
+                f"Chapter {idx} ({resolved}) has no title in QMD frontmatter"
             )
         description = extract_description_from_qmd(qmd_path)
         if description:

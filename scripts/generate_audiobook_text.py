@@ -332,8 +332,10 @@ def generate_chapter_text(
 
     raw_qmd = qmd_path.read_text(encoding='utf-8')
 
-    # Check if source QMD has changed since last generation
-    source_hash = hashlib.sha256(raw_qmd.encode('utf-8')).hexdigest()[:16]
+    # Hash QMD with variables resolved. Title and description come from
+    # QMD frontmatter (inside raw_qmd), so no need to append separately.
+    hash_input = replace_variables(raw_qmd, variables, highlight_missing=False)
+    source_hash = hashlib.sha256(hash_input.encode('utf-8')).hexdigest()[:16]
     source_hash_file = OUTPUT_DIR / f"{slug}.source_hash"
     if output_path.exists() and not force:
         old_source_hash = source_hash_file.read_text(encoding='utf-8').strip() if source_hash_file.exists() else ''
