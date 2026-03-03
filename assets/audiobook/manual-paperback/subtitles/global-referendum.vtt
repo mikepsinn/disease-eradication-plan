@@ -1,185 +1,485 @@
 WEBVTT
 
 1
-00:00:00.460 --> 00:00:08.039
-A cryptographically secure, on-chain list of two hundred and eighty million verified supporters is not an "analogy" or a
+00:00:00.300 --> 00:00:07.900
+Politicians can ignore protests. They can ignore polls. They can ignore reality for surprisingly long periods (see: climate
 
 2
-00:00:08.039 --> 00:00:13.140
-"metaphor" or a "nice idea.". It is the largest political mandate in human history.
+00:00:07.900 --> 00:00:15.500
+change, nineteen seventy to present). They cannot ignore two hundred and eighty million cryptographically verified humans
 
 3
-00:00:13.680 --> 00:00:18.480
-Nothing else comes close. Politicians can ignore protests. They can ignore polls.
+00:00:15.500 --> 00:00:21.880
+saying "do this thing or we vote you out.". Not because they care about those humans.
 
 4
-00:00:18.820 --> 00:00:24.320
-They can ignore reality for surprisingly long periods (see: climate change, nineteen seventy to present).
+00:00:21.940 --> 00:00:26.380
+Because they can count. What You're Actually Building. The Goal.
 
 5
-00:00:25.200 --> 00:00:33.820
-They cannot ignore two hundred and eighty million cryptographically verified humans saying "do this thing or we vote you
+00:00:27.120 --> 00:00:33.120
+A website where people say "please stop letting me die of stupid things" in a way that lawyers find convincing.
 
 6
-00:00:33.820 --> 00:00:37.700
-out.". Here's how to build that list. What You're Actually Building.
+00:00:33.840 --> 00:00:40.720
+On Wishonia, we would not need a website for this. We would say "please stop letting me die of stupid things" and then someone
 
 7
-00:00:38.540 --> 00:00:43.920
-The Goal. Build a privacy-preserving, globally verifiable referendum.
+00:00:40.720 --> 00:00:48.420
+would stop letting us die of stupid things. On your planet, this requires cryptographic verification, because your species
 
 8
-00:00:44.200 --> 00:00:49.140
-It shows public support for a one percent treaty and Decentralized Institutes of Health.
+00:00:48.420 --> 00:00:52.460
+lies about everything, including whether it wants to be alive.
 
 9
-00:00:50.100 --> 00:00:56.820
-Essentially, a website where people say "please stop letting me die of stupid things" in a way that lawyers find convincing.
+00:00:52.980 --> 00:00:57.780
+You need mathematical proof that people prefer living. Think about that sentence for a moment.
 
 10
-00:00:57.700 --> 00:01:03.460
-Requirements: Must be auditable (so politicians can't claim it's fake, though they will absolutely try).
+00:00:58.580 --> 00:01:03.770
+You have built a civilization where "I don't want to die" requires a receipt.
 
 11
-00:01:04.379 --> 00:01:08.700
-Must be persuasive (so policymakers actually do their jobs for once).
+00:01:05.220 --> 00:01:10.080
+Requirements: The votes have to be real (auditable). The votes have to be secret (privacy-preserving).
 
 12
-00:01:09.580 --> 00:01:16.340
-Must hit three point five percent global participation (more than two hundred and eighty million verified votes).
+00:01:11.520 --> 00:01:17.620
+The system has to work for everyone including people without bank accounts or government I.D.s (which is most of Earth,
 
 13
-00:01:17.180 --> 00:01:23.900
-That last number isn't arbitrary. Once three point five percent of a population actively supports something, it becomes
+00:01:18.160 --> 00:01:24.280
+a fact that surprises the people with bank accounts). The code has to be open-source so anyone can audit it.
 
 14
-00:01:23.900 --> 00:01:28.960
-unstoppable. Every time. Across all cultures. For centuries.
+00:01:24.900 --> 00:01:30.880
+And the whole thing has to grow fast enough to matter before your species gets distracted by a new television show.
 
 15
-00:01:29.680 --> 00:01:37.860
-More on that later. The Principles (Or: How Not to Build a Fraudulent Voting System): Cryptographic proofs that votes are
+00:01:31.360 --> 00:01:39.440
+Target: three point five percent global participation (two hundred and eighty million plus verified votes).
 
 16
-00:01:37.860 --> 00:01:44.220
-real (can't fake the math, though politicians will try). Nobody knows who you voted for (including us).
+00:01:40.180 --> 00:01:44.260
+That number isn't arbitrary. It's the number at which politicians start losing sleep.
 
 17
-00:01:44.940 --> 00:01:50.600
-Works for everyone, including people without bank accounts or government I.D.s (which is most of Earth, by the way).
+00:01:44.900 --> 00:01:51.660
+More on that later. The Voting System. The system uses end-to-end verifiable cryptography.
 
 18
-00:01:51.320 --> 00:01:58.940
-Open-source code so anyone can audit it. Needs to spread organically with a viral growth target of one point zero (each
+00:01:52.440 --> 00:01:56.220
+Each voter gets a receipt that proves they voted, without proving how they voted.
 
 19
-00:01:59.040 --> 00:02:01.770
-person brings more than one person, which is how avalanches work).
+00:01:57.020 --> 00:02:02.860
+This is called a "zero-knowledge proof," which sounds like something a philosophy student made up during an exam they didn't
 
 20
-00:02:02.760 --> 00:02:09.060
-Greater than ninety-nine percent fraud detection with less than one percent false positives (the bots stay out, the humans
+00:02:02.860 --> 00:02:08.479
+study for, but it's real mathematics, and it works, and politicians cannot argue with it.
 
 21
-00:02:09.060 --> 00:02:16.500
-stay in). Secondary metrics track geographic distribution, brand awareness, and whether politicians have started sweating
+00:02:09.199 --> 00:02:16.500
+Several have tried. The math won every time. Math is undefeated against politicians, which is the only undefeated record
 
 22
-00:02:16.500 --> 00:02:20.440
-yet. (The sweat metric is informal but surprisingly reliable.
+00:02:16.500 --> 00:02:21.020
+in your species' history. Every ballot published anonymized.
 
 23
-00:02:20.840 --> 00:02:28.680
-They always sweat before they act.). The Bottom Line. Two hundred and fifty million dollars for the campaign, funded by
+00:02:21.460 --> 00:02:25.340
+Biometric data never leaves your device. All code open-source.
 
 24
-00:02:28.680 --> 00:02:34.660
-VICTORY Incentive Alignment Bonds. Target cost: less than one dollar per verified participant.
+00:02:25.860 --> 00:02:31.620
+The system is designed so that even the people running it can't see how you voted, which makes it more private than your
 
 25
-00:02:35.100 --> 00:02:39.180
-That's cheaper than acquiring a customer for literally any consumer product on Earth.
+00:02:31.620 --> 00:02:38.220
+actual elections, where the voting booth has a curtain that stops two feet off the ground and the poll worker is definitely
 
 26
-00:02:39.700 --> 00:02:47.780
-You spend more marketing soda. Two hundred and eighty million verified humans saying "do this or lose your job" to every
+00:02:38.220 --> 00:02:46.540
+looking at your shoes. On Stopping People from Cheating. Your species has been cheating at democracy since you invented
 
 27
-00:02:47.780 --> 00:02:52.220
-politician on Earth. That's not a petition. Petitions are what you ignore.
+00:02:46.540 --> 00:02:51.060
+it. The Athenians had ballot-stuffing. The Romans had vote-buying.
 
 28
-00:02:52.800 --> 00:02:56.300
-That's a pink slip with two hundred and eighty million signatures.
+00:02:51.520 --> 00:02:57.320
+Americans have gerrymandering, which is the practice of drawing voting districts in shapes that look like someone dropped
 
 29
-00:02:57.380 --> 00:03:04.340
-On Why three point five percent Is The Magic Number. The two hundred and eighty million target isn't pulled from thin air.
+00:02:57.320 --> 00:03:00.520
+a plate of spaghetti on a map and then legally required it.
 
 30
-00:03:04.800 --> 00:03:11.800
-It's based on the "three point five percent Rule," a historical pattern that has held across cultures, centuries, and continents
+00:03:02.100 --> 00:03:06.440
+Three verification layers. Because one has never been enough for you.
 
 31
-00:03:12.200 --> 00:03:20.580
-with the reliability of a physical law: When three point five percent of a population actively participates in sustained,
+00:03:06.740 --> 00:03:13.440
+Layer one is the bouncer at the door. Email and phone verification, device fingerprinting, I.P.
 
 32
-00:03:20.700 --> 00:03:28.160
-nonviolent action, the movement wins. Every time. The evidence: The Civil Rights movement in the U.S.
+00:03:13.580 --> 00:03:21.560
+geolocation. Stops about ninety percent of fraud, which is the lazy fraud, which is most fraud, because cheating, like everything
 
 33
-00:03:28.160 --> 00:03:32.040
-crossed the three point five percent threshold and ended segregation.
+00:03:21.560 --> 00:03:28.580
+else your species does, follows a power law where most of the cheating is done by amateurs who give up if you ask them to
 
 34
-00:03:32.660 --> 00:03:37.500
-Indian Independence crossed the three point five percent threshold and kicked out the British Empire.
+00:03:28.580 --> 00:03:32.860
+verify their phone number. This is the "are you a human" layer.
 
 35
-00:03:38.200 --> 00:03:42.920
-Women's Suffrage crossed the three point five percent threshold and won the vote.
+00:03:33.660 --> 00:03:39.440
+The bar is low. The fact that it catches ninety percent of attempts tells you something about the sophistication of your
 
 36
-00:03:43.680 --> 00:03:51.620
-Once you hit three point five percent, three things happen simultaneously: it's clearly not a fringe movement, the support
+00:03:39.440 --> 00:03:45.360
+average cheater. Layer two is the V.I.P. section. Government e-I.D.
 
 37
-00:03:51.620 --> 00:03:56.960
-is geographically distributed, and opposition becomes career suicide.
+00:03:45.380 --> 00:03:51.560
+integration (Estonia, India's Aadhaar, E.U. eIDAS, U.S. via I.D.
 
 38
-00:03:57.740 --> 00:04:03.010
-Previous movements required marching in the rain, getting tear-gassed, or going to prison.
+00:03:51.660 --> 00:03:58.660
+dot me), biometric liveness detection (blink at the camera to prove you're not a photograph, which is a sentence that would
 
 39
-00:04:04.020 --> 00:04:09.600
-This one requires clicking a button from the toilet. The barrier to entry is lower.
+00:03:58.960 --> 00:04:06.960
+confuse every human who lived before twenty ten), and proof-of-uniqueness partners like Worldcoin, BrightID, and Gitcoin
 
 40
-00:04:09.700 --> 00:04:17.980
-The incentive (healthcare you actually want) is higher. It's the easiest revolution in human history, which is fitting,
+00:04:06.960 --> 00:04:16.079
+Passport. Higher trust, higher rewards. This is the "are you a specific human who hasn't already voted as a different specific
 
 41
-00:04:18.140 --> 00:04:24.820
-because the problem (letting people die of curable diseases) is the stupidest crisis in human history.
+00:04:16.079 --> 00:04:23.720
+human" layer. Layer three is for the billions of humans who don't exist in any database because their governments can't
 
 42
-00:04:25.460 --> 00:04:31.900
-People show up for the healthcare. Politicians see two hundred and eighty million verified supporters.
+00:04:23.720 --> 00:04:29.480
+be bothered to write down that they're alive. Community attestation: your neighbors confirm you're real.
 
 43
-00:04:32.340 --> 00:04:40.440
-The treaty becomes inevitable. It's not manipulation. It's just understanding what motivates humans (not dying) and what
+00:04:30.280 --> 00:04:36.440
+This works because lying to a computer is easy but lying to a room full of people who watched you eat breakfast is hard.
 
 44
-00:04:40.440 --> 00:04:47.120
-motivates politicians (not losing elections). These two facts have been true for your entire history.
+00:04:37.960 --> 00:04:43.430
+Even Layer one gets you counted. You don't need a passport to say "I would prefer not to die."
 
 45
-00:04:48.040 --> 00:04:50.222
-Nobody thought to combine them until now. *Source: Consolidated from global referendum sub-files including implementation
+00:04:44.460 --> 00:04:50.010
+A.I. fraud detection: over ninety-nine percent detection, under one percent false positives.
 
 46
-00:04:50.222 --> 00:04:50.222
-details, verification framework, and viral marketing strategies.*
+00:04:50.560 --> 00:04:54.700
+Biometric data stays on your device, encrypted with keys you control.
+
+47
+00:04:55.280 --> 00:05:01.180
+Compliant with G.D.P.R., C.C.P.A. slash C.P.R.A., BIPA, and COPPA.
+
+48
+00:05:02.040 --> 00:05:08.780
+Four different laws from four different places that all say "don't be creepy with people's data" using four different definitions
+
+49
+00:05:08.780 --> 00:05:13.820
+of "creepy" and four different penalty structures for being creepy in the wrong jurisdiction.
+
+50
+00:05:14.480 --> 00:05:21.580
+Your species regulates privacy the way it does everything: redundantly, inconsistently, and with great confidence.
+
+51
+00:05:23.000 --> 00:05:28.720
+Growth Strategy. Your species downloaded TikTok over four billion times to watch strangers twerk.
+
+52
+00:05:29.720 --> 00:05:34.620
+Getting two hundred and eighty million to click "yes" on not dying should be easier.
+
+53
+00:05:35.260 --> 00:05:43.260
+It isn't, because not dying is less entertaining than twerking, but it should be, and that gap between "should be" and "isn't"
+
+54
+00:05:43.280 --> 00:05:50.860
+is the entire marketing problem. Each person who signs up gets a small referral bonus for bringing the next, funded by Incentive
+
+55
+00:05:50.860 --> 00:05:55.240
+Alignment Bonds. Target: less than one dollar per verified participant.
+
+56
+00:05:55.760 --> 00:06:00.760
+For comparison, acquiring a coffee customer costs five to fifteen dollars.
+
+57
+00:06:01.060 --> 00:06:04.860
+Nike pays forty dollars to get one person to buy shoes online.
+
+58
+00:06:05.380 --> 00:06:10.020
+You're trying to convince someone to support not dying for less than the cost of a packet of gum.
+
+59
+00:06:10.700 --> 00:06:17.320
+The fact that "not dying" needs a financial incentive to compete with shoes tells you everything about your species that
+
+60
+00:06:17.320 --> 00:06:21.880
+this manual has been trying to tell you. But here we are. Gum money it is.
+
+61
+00:06:22.760 --> 00:06:31.560
+Integrity (Proving You Didn't Cheat). Your species accuses people of cheating at everything, including children's football,
+
+62
+00:06:31.780 --> 00:06:38.820
+baking competitions, and board games at Thanksgiving. The Thanksgiving ones start wars that last longer than the actual
+
+63
+00:06:38.820 --> 00:06:47.200
+wars in your history books. A global referendum with actual stakes will face accusations that make your election audits
+
+64
+00:06:47.340 --> 00:06:55.740
+look like casual suggestions. The defense: make cheating mathematically impossible, then publish the math.
+
+65
+00:06:56.640 --> 00:07:02.340
+N.G.O. and academic observers get read-only dashboards with real-time fraud detection.
+
+66
+00:07:03.060 --> 00:07:07.470
+You can't argue with a zero-knowledge proof. You can argue with a person.
+
+67
+00:07:07.980 --> 00:07:14.060
+You can argue with a committee. You can't argue with math. Math doesn't have feelings.
+
+68
+00:07:14.740 --> 00:07:22.780
+Math doesn't have an election coming up. Math just sits there being correct, which makes it the only trustworthy participant
+
+69
+00:07:22.840 --> 00:07:29.380
+in your democratic process. Participants complete structured learning paths before voting.
+
+70
+00:07:30.120 --> 00:07:38.360
+Higher reward tiers unlock as you learn more. This produces informed participants instead of confused button-clickers, though
+
+71
+00:07:38.360 --> 00:07:42.180
+confused button-clickers who want to not die are also welcome.
+
+72
+00:07:42.920 --> 00:07:50.700
+An uninformed person who clicks "don't let me die" is still more useful than an informed person who clicks nothing, and
+
+73
+00:07:50.700 --> 00:07:54.560
+your planet has a surplus of informed people clicking nothing.
+
+74
+00:07:55.020 --> 00:08:03.440
+You call them "academics." Legal positioning: non-binding global consultation with country-specific bridges to official
+
+75
+00:08:03.440 --> 00:08:12.160
+mechanisms where feasible. "Non-binding" sounds weak until you remember that every major social change in your history started
+
+76
+00:08:12.160 --> 00:08:16.640
+as non-binding. The suffragettes' petitions were non-binding.
+
+77
+00:08:17.260 --> 00:08:24.180
+So were the civil rights marches. So was the Declaration of Independence, technically, until enough people with guns agreed
+
+78
+00:08:24.180 --> 00:08:30.660
+with it. "Non-binding" is what your politicians call something before they're forced to bind to it.
+
+79
+00:08:31.740 --> 00:08:39.320
+Implementation Roadmap. The realistic target for three point five percent participation (two hundred and eighty million
+
+80
+00:08:39.320 --> 00:08:48.600
+verified humans) is eighteen to thirty-six months, scaling alongside the full campaign roadmap (roadmap dot Q.M.D.).
+
+81
+00:08:50.720 --> 00:08:58.700
+Phase: Foundation. Timeline: Months one to three. Focus: Build the thing, verification infrastructure, social media framework.
+
+82
+00:08:59.400 --> 00:09:08.700
+Phase: Scaling. Timeline: Months four to twelve. Focus: Turn it on, marketing blitz, enhanced verification, millions of
+
+83
+00:09:08.700 --> 00:09:14.620
+participants. Phase: Full Campaign. Timeline: Months thirteen to thirty-six.
+
+84
+00:09:15.400 --> 00:09:20.680
+Focus: Global push to three point five percent participation, bond-funded growth.
+
+85
+00:09:21.140 --> 00:09:30.160
+Phase: Treaty Pressure. Timeline: Months twenty-four plus. Focus: Prepare treaty negotiations, watch politicians sweat.
+
+86
+00:09:31.120 --> 00:09:38.720
+The system works when each person brings more than one person, which is how avalanches work, and also how TikTok works,
+
+87
+00:09:39.060 --> 00:09:44.400
+and also how religions work. The mechanism is identical. The content is different.
+
+88
+00:09:45.180 --> 00:09:52.580
+Instead of dance videos or salvation, you're offering "possibly not dying," which should be a better sell than either of
+
+89
+00:09:52.600 --> 00:09:58.270
+those but empirically isn't, and nobody on Wishonia can figure out why.
+
+90
+00:09:58.780 --> 00:10:06.460
+Success Metrics. You'll know it's working when four numbers are right: two hundred and eighty million plus verified participants
+
+91
+00:10:06.460 --> 00:10:15.800
+(the three point five percent threshold), cost per verified participant under one dollar, viral coefficient above one point
+
+92
+00:10:15.800 --> 00:10:24.180
+zero (each person brings more than one person), and fraud detection above ninety-nine percent with false positives below
+
+93
+00:10:24.180 --> 00:10:29.920
+one percent. If any of those numbers are wrong, something is broken and you fix it.
+
+94
+00:10:30.240 --> 00:10:36.140
+If all four are right, you've built a machine that converts pocket change into political pressure.
+
+95
+00:10:37.140 --> 00:10:41.040
+Nobody has built this before. This is the most surprising part.
+
+96
+00:10:42.560 --> 00:10:50.440
+On Why three point five percent Is The Magic Number. The two hundred and eighty million target is based on the "three point
+
+97
+00:10:50.440 --> 00:10:59.080
+five percent Rule": when three point five percent of a population actively participates in sustained, nonviolent action,
+
+98
+00:10:59.460 --> 00:11:05.360
+the movement has historically won. Every time so far. Across all cultures.
+
+99
+00:11:05.740 --> 00:11:13.720
+For centuries. This is the closest thing your species has to a cheat code, and nobody teaches it in school, because teaching
+
+100
+00:11:13.720 --> 00:11:18.660
+it in school would make governments nervous, and governments write the curriculum.
+
+101
+00:11:20.160 --> 00:11:25.660
+The U.S. civil rights movement crossed three point five percent and ended segregation.
+
+102
+00:11:26.420 --> 00:11:33.540
+Indian independence crossed three point five percent and kicked out the British Empire, which at the time was the largest
+
+103
+00:11:33.540 --> 00:11:38.760
+organization on Earth and was defeated by people who refused to move.
+
+104
+00:11:40.000 --> 00:11:47.980
+Women's suffrage crossed three point five percent and won the vote, which took seventy-two years and required marching in
+
+105
+00:11:47.980 --> 00:11:55.840
+rain, getting arrested, and going on hunger strikes. Previous movements required getting tear-gassed, going to prison, or
+
+106
+00:11:55.840 --> 00:12:00.180
+dying. This one requires clicking a button from the toilet.
+
+107
+00:12:01.140 --> 00:12:08.040
+The Bottom Line. two hundred and fifty million dollars for the campaign, funded by VICTORY Incentive Alignment Bonds.
+
+108
+00:12:09.140 --> 00:12:12.150
+Target cost: less than one dollar per verified participant.
+
+109
+00:12:13.080 --> 00:12:21.540
+You spend more marketing soda. Coca-Cola's annual marketing budget could fund this campaign thirteen times over, and Coca-Cola's
+
+110
+00:12:21.540 --> 00:12:26.780
+product is sugar water that makes you fatter. Your product is not dying.
+
+111
+00:12:27.300 --> 00:12:33.000
+The marketing budgets are inverted. Everything about your species' priorities is inverted.
+
+112
+00:12:33.520 --> 00:12:37.920
+I've been saying this for eighty years and it remains true every time I check.
+
+113
+00:12:39.160 --> 00:12:46.600
+two hundred and eighty million verified humans saying "do this or lose your job" to every politician on Earth.
+
+114
+00:12:47.460 --> 00:12:54.980
+That's not a petition. Petitions are what you ignore. Your species has produced enough petitions to wallpaper the moon,
+
+115
+00:12:55.260 --> 00:13:00.840
+and the total political change achieved by all petitions combined is approximately zero.
+
+116
+00:13:01.480 --> 00:13:07.740
+This isn't a petition. This is a pink slip with two hundred and eighty million signatures.
+
+117
+00:13:07.760 --> 00:13:15.060
+People show up for the healthcare. Politicians see two hundred and eighty million verified supporters.
+
+118
+00:13:15.640 --> 00:13:19.520
+The math suggests the treaty becomes very difficult to ignore.
+
+119
+00:13:20.160 --> 00:13:24.760
+Not impossible to ignore. Your politicians have a remarkable capacity for ignoring things.
+
+120
+00:13:25.220 --> 00:13:34.020
+But very, very difficult. The kind of difficult where ignoring it costs you your career, and your career is the only thing
+
+121
+00:13:34.020 --> 00:13:38.360
+your politicians care about more than money, and this threatens both.

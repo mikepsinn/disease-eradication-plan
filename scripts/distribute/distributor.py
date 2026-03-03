@@ -179,8 +179,7 @@ def distribute(
         print("  Reddit:   REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD")
         print("  Discord:  DISCORD_WEBHOOK_URL")
         print("  Telegram: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID")
-        print("  Medium:   MEDIUM_TOKEN")
-        print("  LinkedIn: LINKEDIN_ACCESS_TOKEN")
+        print("  LinkedIn: LINKEDIN_ACCESS_TOKEN, LINKEDIN_PERSON_URN")
         return results
 
     for entry in entries:
