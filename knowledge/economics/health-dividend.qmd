@@ -21,11 +21,11 @@ Your species has a word for "health dividend," which implies that health is a bo
 
 ## The Queue
 
-{{< var diseases_without_effective_treatment >}} have zero FDA approved treatments. Not "in development." Not "awaiting funding." Zero.
+{{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. Some have research underway. Some have compounds in trials. But for the patient diagnosed today, the number of approved options is zero.
 
-It gets worse. You have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs plus substances your government already classified as safe). These could theoretically treat {{< var drug_disease_combinations_possible >}} drug-disease combinations. You have tested {{< var exploration_ratio >}} of them. The remaining {{< var unexplored_ratio >}} sits unexplored, not because the science is hard, but because nobody funded the trial.
+It gets worse. You have {{< var safe_compounds_count >}} proven-safe compounds (FDA-approved drugs plus substances your government already classified as safe). These could theoretically be tested against {{< var drug_disease_combinations_possible >}} drug-disease combinations. Not all of those combinations would work (most wouldn't), but you have tested {{< var exploration_ratio >}} of them, so you do not actually know which ones would. The remaining {{< var unexplored_ratio >}} sits unexplored, some because the biology is implausible, but much of it because nobody funded the trial.
 
-Your FDA approves roughly {{< var current_drug_approvals_per_year_nounit >}} new treatments per year. At that rate, the queue clears in approximately {{< var status_quo_queue_clearance_years >}}. For context, {{< var status_quo_queue_clearance_years >}} ago, your species had not yet invented writing. You were painting buffalo on cave walls and dying of tooth infections.
+Your FDA approves roughly {{< var current_drug_approvals_per_year >}} globally, but most are for diseases that already have treatments (better versions of existing drugs, new formulations, me-too competitors). Only about {{< var new_disease_first_treatments_per_year >}} get their *first* approved treatment. At that rate, the queue clears in approximately {{< var status_quo_queue_clearance_years >}}. For context, {{< var status_quo_queue_clearance_years_nounit >}} years ago, Shakespeare was writing plays, Galileo was building telescopes, and your species already had printing presses, universities, and intercontinental shipping. You just hadn't gotten around to curing most diseases. At this pace, you still won't for another {{< var status_quo_queue_clearance_years >}}.
 
 ## What It Costs to Fix
 
@@ -53,7 +53,7 @@ Scale that globally: up to **{{< var dfda_trial_cost_reduction_factor >}} cost r
 
 Right now, if you are diagnosed with one of those {{< var rare_diseases_count_global_nounit >}} untreated diseases, you enter a waiting room with no exit date. People die there. Not because a cure is impossible, but because nobody funded the trial. Your species spent the trial money on a submarine that hides underwater, which is useful if your enemy is a fish.
 
-Each new drug approval is worth $1.62 billion [@arxiv-2212-07384] in market value. Your FDA approves roughly {{< var current_drug_approvals_per_year >}}. That is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself.
+Each new drug approval is worth $1.62 billion [@arxiv-2212-07384] in market value. Of the {{< var current_drug_approvals_per_year >}} approved globally, only about {{< var new_disease_first_treatments_per_year >}} are for diseases that previously had nothing. That is the speed at which a species with nuclear weapons and artificial intelligence has chosen to cure itself.
 
 With {{< var dfda_trial_capacity_multiplier >}} more trial capacity, you could:
 
