@@ -18,7 +18,7 @@ Output:
 import logging
 import sys
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from dih_models.yaml_utils import load_quarto_config
 
@@ -197,7 +197,7 @@ aliases:
     return output_path
 
 
-def generate_podcast_qmd(project_root: Path, manual_config: Dict = None) -> Path:
+def generate_podcast_qmd(project_root: Path, manual_config: Optional[Dict] = None) -> Path:
     """
     Generate knowledge/podcast.qmd with all podcast platform links.
 
