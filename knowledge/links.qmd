@@ -106,7 +106,7 @@ aliases:
   <span class="btn-sub">Rate & review</span>
 </a>
 
-<h2>Read Free</h2>
+<h2>Read</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
   Read Online
@@ -115,7 +115,7 @@ aliases:
 
 <h2>Listen</h2>
 
-<a href="/knowledge/podcast.html" class="link-btn">
+<a href="podcast.qmd" class="link-btn">
   Listen Free
   <span class="btn-sub">Spotify, Apple, YouTube Music, and more</span>
 </a>

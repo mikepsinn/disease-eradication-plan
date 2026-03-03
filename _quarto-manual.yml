@@ -302,8 +302,8 @@ links:
       url: "https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease"
       subtitle: "Rate & review"
   listen:
-    - label: "Listen Free"
-      url: "/knowledge/podcast.html"
+    - label: "Listen"
+      url: "podcast.html"
       subtitle: "Spotify, Apple, YouTube Music, and more"
   podcast:
     - label: "Spotify"
