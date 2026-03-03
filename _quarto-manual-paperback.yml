@@ -19,6 +19,7 @@ dih-podcast:
   author: "Wishonia"
   podcast-description: |
     Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery.
+
     Your choice to listen is the highest-value decision any human has ever made.
     You are about to prevent 10.7 billion deaths, eliminate 1.93 quadrillion hours
     of human suffering, and prevent the apocalypse as a bonus.
@@ -51,7 +52,7 @@ book:
       affiliations:
         - name: "Institute for Accelerated Medicine"
           url: https://acceleratedmedicine.org
-  description: 'Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery'
+  description: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
   site-url: https://manual.WarOnDisease.org
   chapters:
     - index.qmd
