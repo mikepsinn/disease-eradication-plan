@@ -275,7 +275,7 @@ Your new system will produce [Outcome Labels](/knowledge/solution/dfda.qmd) that
 Humans usually want "proof" before they stop doing something stupid, so:
 
 - [The RECOVERY trial](/knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 48,000 patients for {{< var recovery_trial_cost_per_patient >}} per patient instead of the usual {{< var traditional_phase3_cost_per_patient >}} per patient. That's a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. Not in theory. In reality. During a pandemic. While panicking.
-- [After WW2, humans cut military spending by 30%](/knowledge/proof.qmd#post-ww2) and accidentally created the greatest economic boom in history. You're asking for 1%. Even people who really, really, love exploding people should be able to handle 1%.
+- After WW2, humans cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and accidentally created the greatest economic boom in history. You're now spending {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-WW2 baseline in inflation-adjusted dollars. You're asking for 1%. Even people who really, really, love exploding people should be able to handle 1%.
 
 ![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
 

@@ -1300,16 +1300,6 @@ export const POST_1962_DRUG_APPROVAL_REDUCTION_PCT: Parameter = {
   confidence: "high",
 };
 
-export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
-  value: 0.3,
-  unit: "rate",
-  displayName: "Percentage Military Spending Cut After WW2",
-  description: "Percentage military spending cut after WW2 (historical precedent)",
-  sourceType: "external",
-  sourceRef: "us-post-wwii-military-spending-cut",
-  confidence: "high",
-};
-
 export const PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD: Parameter = {
   value: 6500000.0,
   unit: "USD_1980",
@@ -1936,6 +1926,46 @@ export const US_MENTAL_HEALTH_COST_ANNUAL: Parameter = {
   sourceRef: "mental-health-burden",
   confidence: "high",
   confidenceInterval: [260000000000.0, 450000000000.0],
+};
+
+export const US_MILITARY_SPENDING_1939_ANNUAL_2024USD: Parameter = {
+  value: 29000000000.0,
+  unit: "USD",
+  displayName: "US Military Spending in 1939 (Constant 2024 Dollars)",
+  description: "US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars",
+  sourceType: "external",
+  sourceRef: "us-military-spending-historical-constant-dollars",
+  confidence: "high",
+};
+
+export const US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD: Parameter = {
+  value: 1420000000000.0,
+  unit: "USD",
+  displayName: "US Military Spending at WW2 Peak (Constant 2024 Dollars)",
+  description: "US military spending at WW2 peak (1945) in constant 2024 dollars",
+  sourceType: "external",
+  sourceRef: "us-military-spending-historical-constant-dollars",
+  confidence: "high",
+};
+
+export const US_MILITARY_SPENDING_1947_ANNUAL_2024USD: Parameter = {
+  value: 176000000000.0,
+  unit: "USD",
+  displayName: "US Military Spending in 1947 (Constant 2024 Dollars)",
+  description: "US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars",
+  sourceType: "external",
+  sourceRef: "us-military-spending-historical-constant-dollars",
+  confidence: "high",
+};
+
+export const US_MILITARY_SPENDING_2024_ANNUAL: Parameter = {
+  value: 886000000000.0,
+  unit: "USD",
+  displayName: "US Military Spending in 2024",
+  description: "US military spending in 2024 in constant dollars",
+  sourceType: "external",
+  sourceRef: "us-military-spending-historical-constant-dollars",
+  confidence: "high",
 };
 
 export const US_MILITARY_SPENDING_PCT_GDP: Parameter = {
@@ -3493,6 +3523,17 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL: Parameter = {
   latex: "\\begin{gathered}\nO_{total} \\\\\n= O_{health} + O_{science} + O_{lead} + O_{migration} \\\\\n= \\$34T + \\$4T + \\$6T + \\$57T \\\\\n= \\$101T\n\\end{gathered}",
 };
 
+export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
+  value: 0.876056338028169,
+  unit: "percent",
+  displayName: "Percentage Military Spending Cut After WW2",
+  description: "Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1,420B to $176B in constant 2024 dollars)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "1 - (US_MILITARY_SPENDING_1947 / US_MILITARY_SPENDING_1945_PEAK)",
+  latex: "\\begin{gathered}\nCut_{WW2} \\\\\n= 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} \\\\\n= 1 - \\frac{\\$176B}{\\$1.42T} \\\\\n= 87.6\\%\n\\end{gathered}",
+};
+
 export const PRAGMATIC_TRIAL_COST_PER_QALY: Parameter = {
   value: 4.0,
   unit: "USD/QALY",
@@ -4046,6 +4087,17 @@ export const US_MAJOR_DISEASES_TOTAL_ANNUAL_COST: Parameter = {
   confidence: "high",
   formula: "DIABETES + ALZHEIMERS + HEART + CANCER",
   latex: "\\begin{gathered}\nCost_{disease,US} \\\\\n= Cost_{ALZ,US} + Cost_{cancer,US} + Cost_{diabetes,US} \\\\\n+ Cost_{heart,US} \\\\\n= \\$355B + \\$208B + \\$327B + \\$363B \\\\\n= \\$1.25T\n\\end{gathered}",
+};
+
+export const US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER: Parameter = {
+  value: 30.551724137931036,
+  unit: "x",
+  displayName: "Current US Military Spending vs Pre-WW2 Baseline (Multiplier)",
+  description: "Ratio of current US military spending to pre-WW2 baseline in constant dollars ($886B / $29B)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "US_MILITARY_SPENDING_2024 / US_MILITARY_SPENDING_1939",
+  latex: "\\begin{gathered}\nRatio_{US,2024:1939} \\\\\n= \\frac{Spending_{US,2024}}{Spending_{US,1939}} \\\\\n= \\frac{\\$886B}{\\$29B} \\\\\n= 30.6\n\\end{gathered}",
 };
 
 export const US_POLITICAL_REFORM_INVESTMENT_TOTAL: Parameter = {
@@ -5186,7 +5238,6 @@ export const parameters = {
   POLITICAL_SUCCESS_PROBABILITY,
   POLITICIAN_POST_OFFICE_CAREER_VALUE,
   POST_1962_DRUG_APPROVAL_REDUCTION_PCT,
-  POST_WW2_MILITARY_CUT_PCT,
   PRE_1962_DRUG_DEVELOPMENT_COST_1980_USD,
   PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD,
   PRE_1962_PHYSICIAN_COUNT,
@@ -5244,6 +5295,10 @@ export const parameters = {
   US_LIFE_EXPECTANCY_2023,
   US_MEDIAN_HOUSEHOLD_INCOME_2023,
   US_MENTAL_HEALTH_COST_ANNUAL,
+  US_MILITARY_SPENDING_1939_ANNUAL_2024USD,
+  US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD,
+  US_MILITARY_SPENDING_1947_ANNUAL_2024USD,
+  US_MILITARY_SPENDING_2024_ANNUAL,
   US_MILITARY_SPENDING_PCT_GDP,
   US_POPULATION_2024,
   US_SENATORS_FOR_TREATY,
@@ -5384,6 +5439,7 @@ export const parameters = {
   POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE,
   POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP,
   POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL,
+  POST_WW2_MILITARY_CUT_PCT,
   PRAGMATIC_TRIAL_COST_PER_QALY,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
   RECOVERY_TRIAL_TOTAL_QALYS_GENERATED,
@@ -5434,6 +5490,7 @@ export const parameters = {
   US_GOV_WASTE_VSL_EQUIVALENTS,
   US_GOV_WASTE_VS_TREATY_MULTIPLIER,
   US_MAJOR_DISEASES_TOTAL_ANNUAL_COST,
+  US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER,
   US_POLITICAL_REFORM_INVESTMENT_TOTAL,
   US_SENATE_TREATY_ADVOCACY_COST,
   VICTORY_BOND_ANNUAL_PAYOUT,
@@ -7175,19 +7232,19 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.statista.com/statistics/262742/countries-with-the-highest-military-spending/",
         note: "Statista, Military spending as percent of GDP | SIPRI, Trends in World Military Expenditure 2024",
   },
-  "us-post-wwii-military-spending-cut": {
-        id: "us-post-wwii-military-spending-cut",
+  "us-military-spending-historical-constant-dollars": {
+        id: "us-military-spending-historical-constant-dollars",
         type: "article-journal",
-        title: "US military spending reduction after WWII",
+        title: "U.S. Defense Spending History: 100 Years of Military Budgets",
         author: [
           {
-            literal: "Wikipedia"
+            literal: "Dave Manuel"
           },
         ],
-        issued: { 'date-parts': [[2020]] },
-        'container-title': "Wikipedia",
-        URL: "https://en.wikipedia.org/wiki/Demobilization_of_United_States_Armed_Forces_after_World_War_II",
-        note: "Wikipedia, Demobilization After WWII | American Progress, Historical Perspective on Defense Budgets | St. Louis Fed, Which War Saw the Highest Defense Spending? | US Government Spending, Defense Spending History",
+        issued: { 'date-parts': [[2025]] },
+        'container-title': "DaveManuel.com",
+        URL: "https://www.davemanuel.com/us-defense-spending-history-military-budget-data.php",
+        note: "DaveManuel.com, US Defense Spending History in Constant 2024 Dollars. Compiled from OMB historical tables and BLS inflation data.",
   },
   "us-senate-treaties": {
         id: "us-senate-treaties",
@@ -7369,9 +7426,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 468,
-  external: 184,
-  calculated: 185,
+  total: 473,
+  external: 187,
+  calculated: 187,
   definitions: 99,
   citations: 134,
 } as const;

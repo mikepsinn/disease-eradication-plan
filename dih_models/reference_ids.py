@@ -1011,6 +1011,7 @@ class ReferenceID(str, Enum):
     US_MILITARY_BANDS_COST_500M = "us-military-bands-cost-500m"
     US_MILITARY_BUDGET_3_5_PCT_GDP = "us-military-budget-3-5-pct-gdp"
     US_MILITARY_BUDGET_800B = "us-military-budget-800b"
+    US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS = "us-military-spending-historical-constant-dollars"
     US_MORTALITY_RATE_BY_AGE = "us-mortality-rate-by-age"
     US_NATIONAL_DEBT = "us-national-debt"
     US_PER_CAPITA_MILITARY_SPENDING_3000 = "us-per-capita-military-spending-3000"

@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 232 parameters used in the analysis, organized by type:
+This appendix documents all 238 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 103
-- Calculated values: 97
+- External sources (peer-reviewed): 107
+- Calculated values: 99
 - Core definitions: 32
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (97 parameters) • [External Data Sources](#sec-external) (103 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
+[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (107 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4083,6 +4083,30 @@ $$
 
 :::
 
+### Percentage Military Spending Cut After WW2: 87.6% {#sec-post_ww2_military_cut_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1,420B to $176B in constant 2024 dollars)
+
+**Inputs**:
+
+- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176B
+- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42T
+
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
 ### RECOVERY Trial Cost Reduction Factor: 82x {#sec-recovery_trial_cost_reduction_factor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6058,6 +6082,38 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_gov_waste_vs_treaty_multiplier.qmd >}}
+
+:::
+
+### Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x {#sec-us_military_spending_current_vs_prewar_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of current US military spending to pre-WW2 baseline in constant dollars ($886B / $29B)
+
+**Inputs**:
+
+- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886B
+- [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29B
+
+$$
+\begin{gathered}
+Ratio_{US,2024:1939} \\
+= \frac{Spending_{US,2024}}{Spending_{US,1939}} \\
+= \frac{\$886B}{\$29B} \\
+= 30.6
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_military_spending_current_vs_prewar_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_military_spending_current_vs_prewar_multiplier.qmd >}}
 
 :::
 
@@ -8572,6 +8628,70 @@ Annual US cost of heart disease and stroke (direct and indirect)
 {{< include ../figures/distribution-us_heart_disease_annual_cost.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### US Military Spending in 1939 (Constant 2024 Dollars): $29B {#sec-us_military_spending_1939_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T {#sec-us_military_spending_1945_peak_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending at WW2 peak (1945) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending in 1947 (Constant 2024 Dollars): $176B {#sec-us_military_spending_1947_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending in 2024: $886B {#sec-us_military_spending_2024_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending in 2024 in constant dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 

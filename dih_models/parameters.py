@@ -7163,16 +7163,80 @@ MILITARY_VS_MEDICAL_RESEARCH_RATIO = Parameter(
     latex_symbol=r"Ratio_{mil:RD}",  # LaTeX symbol for equations
 )  # Calculated ratio of military to medical research spending
 
-POST_WW2_MILITARY_CUT_PCT = Parameter(
-    0.30,
-    source_ref=ReferenceID.US_POST_WWII_MILITARY_SPENDING_CUT,
+# WW2 demobilization: historical military spending in constant 2024 dollars
+US_MILITARY_SPENDING_1939_ANNUAL_2024USD = Parameter(
+    29_000_000_000,
+    source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
     source_type="external",
-    description="Percentage military spending cut after WW2 (historical precedent)",
+    description="US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars",
+    display_name="US Military Spending in 1939 (Constant 2024 Dollars)",
+    unit="USD",
+    distribution="fixed",
+    keywords=["1939", "pre-war", "baseline", "constant dollars", "inflation-adjusted"],
+    latex_symbol=r"Spending_{US,1939}",
+)
+
+US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD = Parameter(
+    1_420_000_000_000,
+    source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
+    source_type="external",
+    description="US military spending at WW2 peak (1945) in constant 2024 dollars",
+    display_name="US Military Spending at WW2 Peak (Constant 2024 Dollars)",
+    unit="USD",
+    distribution="fixed",
+    keywords=["1945", "ww2", "peak", "constant dollars", "inflation-adjusted"],
+    latex_symbol=r"Spending_{US,1945}",
+)
+
+US_MILITARY_SPENDING_1947_ANNUAL_2024USD = Parameter(
+    176_000_000_000,
+    source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
+    source_type="external",
+    description="US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars",
+    display_name="US Military Spending in 1947 (Constant 2024 Dollars)",
+    unit="USD",
+    distribution="fixed",
+    keywords=["1947", "post-war", "demobilization", "trough", "constant dollars"],
+    latex_symbol=r"Spending_{US,1947}",
+)
+
+US_MILITARY_SPENDING_2024_ANNUAL = Parameter(
+    886_000_000_000,
+    source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
+    source_type="external",
+    description="US military spending in 2024 in constant dollars",
+    display_name="US Military Spending in 2024",
+    unit="USD",
+    distribution="fixed",
+    keywords=["2024", "current", "peacetime", "constant dollars"],
+    latex_symbol=r"Spending_{US,2024}",
+)
+
+POST_WW2_MILITARY_CUT_PCT = Parameter(
+    1 - (US_MILITARY_SPENDING_1947_ANNUAL_2024USD / US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD),
+    source_type="calculated",
+    description="Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1,420B to $176B in constant 2024 dollars)",
     display_name="Percentage Military Spending Cut After WW2",
-    unit="rate",
-    keywords=["30%", "dod", "pentagon", "national security", "army", "navy", "armed forces"],
-    latex_symbol=r"Cut_{WW2}",  # LaTeX symbol for equations
-)  # Percentage military spending cut after WW2, historical precedent
+    unit="percent",
+    formula="1 - (US_MILITARY_SPENDING_1947 / US_MILITARY_SPENDING_1945_PEAK)",
+    keywords=["88%", "demobilization", "ww2", "dod", "pentagon", "historical precedent"],
+    inputs=["US_MILITARY_SPENDING_1947_ANNUAL_2024USD", "US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD"],
+    compute=lambda ctx: 1 - (ctx["US_MILITARY_SPENDING_1947_ANNUAL_2024USD"] / ctx["US_MILITARY_SPENDING_1945_PEAK_ANNUAL_2024USD"]),
+    latex_symbol=r"Cut_{WW2}",
+)  # 87.6% cut in 2 years (1945->1947) in constant 2024 dollars
+
+US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER = Parameter(
+    US_MILITARY_SPENDING_2024_ANNUAL / US_MILITARY_SPENDING_1939_ANNUAL_2024USD,
+    source_type="calculated",
+    description="Ratio of current US military spending to pre-WW2 baseline in constant dollars ($886B / $29B)",
+    display_name="Current US Military Spending vs Pre-WW2 Baseline (Multiplier)",
+    unit="x",
+    formula="US_MILITARY_SPENDING_2024 / US_MILITARY_SPENDING_1939",
+    keywords=["multiplier", "30x", "ratchet", "inflation-adjusted", "peacetime"],
+    inputs=["US_MILITARY_SPENDING_2024_ANNUAL", "US_MILITARY_SPENDING_1939_ANNUAL_2024USD"],
+    compute=lambda ctx: ctx["US_MILITARY_SPENDING_2024_ANNUAL"] / ctx["US_MILITARY_SPENDING_1939_ANNUAL_2024USD"],
+    latex_symbol=r"Ratio_{US,2024:1939}",
+)
 
 SWITZERLAND_DEFENSE_SPENDING_PCT = Parameter(
     0.007,
