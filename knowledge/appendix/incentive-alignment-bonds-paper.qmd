@@ -743,13 +743,13 @@ The IAB mechanism for this treaty would allocate treaty inflows as follows:
 
 This allocation structure creates aligned incentives across all participants. Investors who funded the initial campaign receive perpetual returns ({{< var victory_bond_annual_payout >}} annually) as long as the treaty continues, giving them strong incentives to support treaty expansion and defend against repeal. The political incentive allocation ({{< var iab_political_incentive_funding_annual >}} annually) funds the three-layer architecture:
 
-**Scoring layer:** Politicians receive Health Research Scores based on their voting record on treaty ratification, annual funding appropriations, and related legislation. A legislator who votes YES on the treaty and subsequent funding bills sees their score rise; one who votes NO sees their score fall.
+**Scoring layer:** Politicians receive Treaty Support Scores, the 1% Treaty-specific subtype of the broader Public Good Score, based on their voting record on treaty ratification, annual funding appropriations, and related legislation. A legislator who votes YES on the treaty and subsequent funding bills sees their score rise; one who votes NO sees their score fall.
 
 ![Where the money goes when you take one penny from every dollar we spend on bombs: some helps people, some goes to investors, and some bribes politicians to keep helping people. It's bribes all the way down, but upward.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-iab-money-flow-bw-academic.jpg)
 
 **Electoral layer:** With {{< var iab_political_incentive_funding_annual >}} annually available, independent expenditure campaigns can credibly commit: "We will spend \$50 million supporting high-scorers in competitive races." At typical costs per competitive race, this funds meaningful independent campaigns in 20-30 races annually.
 
-**Post-office layer:** Foundations funded by the political incentive allocation establish eligibility criteria: "The Global Health Leadership Fellowship (\$300K/year, 5-year term) requires a career Health Research Score above 70."
+**Post-office layer:** Foundations funded by the political incentive allocation establish eligibility criteria: "The Global Health Leadership Fellowship (\$300K/year, 5-year term) requires a career Treaty Support Score above 70."
 
 The self-funding nature matters. The treaty's success generates the resources that sustain both investor returns and political incentives for its continuation and expansion. This creates multiple reinforcing feedback loops:
 
@@ -763,7 +763,7 @@ Consider the decision calculus for a hypothetical Senator Smith facing a vote on
 
 | Without IABs | With IABs |
 |:-------------|:----------|
-| Defense contractors fund opponent if YES | Health Research Score rises 25 points |
+| Defense contractors fund opponent if YES | Treaty Support Score rises 25 points |
 | Attack ads: "Smith weakened our military" | Independent campaigns spend \$2M supporting Smith |
 | Benefits (cures) arrive in 10+ years | Post-office eligibility: Tier 3 → Tier 1 |
 | Diffuse beneficiaries cannot coordinate | Expected post-office income: \$200K → \$400K/yr |
