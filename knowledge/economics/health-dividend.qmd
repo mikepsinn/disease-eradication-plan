@@ -30,13 +30,13 @@ Your species currently enrolls {{< var current_trial_slots_available >}} in clin
 
 ## The Waiting List
 
-You met the queue in the [untapped therapeutic frontier](../problem/untapped-therapeutic-frontier.qmd): {{< var diseases_without_effective_treatment >}} diseases with zero approved treatments, and {{< var new_disease_first_treatments_per_year >}} getting their first treatment per year. At that rate, you clear the backlog in {{< var status_quo_queue_clearance_years >}}.
+You met the queue in the [untapped therapeutic frontier](../problem/untapped-therapeutic-frontier.qmd): {{< var diseases_without_effective_treatment >}} with zero approved treatments, and {{< var new_disease_first_treatments_per_year_nounit >}} getting their first treatment per year. At that rate, you clear the backlog in {{< var status_quo_queue_clearance_years >}}.
 
 ![With $58.6 billion in annual R&D savings, you could run 10,000 trials and address 7,000 rare diseases. Currently you are spending that much to run far fewer trials for common diseases.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
 
 For context, {{< var status_quo_queue_clearance_years_nounit >}} years ago, Shakespeare was writing plays, Galileo was building telescopes, and your species already had printing presses, universities, and intercontinental shipping. You just had not gotten around to curing most diseases. At this pace, you still will not for another {{< var status_quo_queue_clearance_years >}}.
 
-Apply the {{< var dfda_trial_capacity_multiplier >}} multiplier. Instead of {{< var new_disease_first_treatments_per_year >}} diseases getting their first treatment per year, you get {{< var dfda_first_treatments_per_year >}}. The queue clears in {{< var dfda_queue_clearance_years >}} instead of {{< var status_quo_queue_clearance_years >}}. The average untreated disease gets its first treatment {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier.
+Apply the {{< var dfda_trial_capacity_multiplier >}} multiplier. Instead of {{< var new_disease_first_treatments_per_year_nounit >}} diseases getting their first treatment per year, you get {{< var dfda_first_treatments_per_year >}}. The queue clears in {{< var dfda_queue_clearance_years >}} instead of {{< var status_quo_queue_clearance_years >}}. The average untreated disease gets its first treatment {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier.
 
 Your species figured out how to split atoms in 6 years during a war, but letting a cancer patient take a pill that passed safety testing requires the gestation period of three consecutive elephants. The {{< var dfda_trial_capacity_multiplier >}} multiplier compresses the elephant parade.
 
@@ -52,7 +52,7 @@ Over a {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}-year timel
 
 Your governments already put a price on human life when deciding whether to approve drugs, build highways, or regulate pollution. The standard rate: {{< var standard_economic_qaly_value_usd >}} per quality-adjusted life year. This is not something I invented. It is what the EPA, OECD, WHO, and NICE already use.
 
-The world loses {{< var global_annual_daly_burden >}} DALYs per year [@ihme-gbd-2021]. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient research. At {{< var standard_economic_qaly_value_usd >}}/QALY, that is {{< var global_disease_economic_burden_annual >}} per year in welfare losses. Multiply by the {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}-year timeline shift and you get the total economic value of the health dividend: **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**.
+The world loses {{< var global_annual_daly_burden >}} [@ihme-gbd-2021]. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient research. At {{< var standard_economic_qaly_value_usd >}}/QALY, that is {{< var global_disease_economic_burden_annual >}} per year in welfare losses. Multiply by the {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}-year timeline shift and you get the total economic value of the health dividend: **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**.
 
 "But that is more than global GDP!" Yes. GDP ({{< var global_gdp_2025 >}}) measures market transactions. It does not measure the value of not being dead, not being in pain, and not watching your children die of treatable diseases. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is not something I invented. I just multiplied it by the number of sick people, which is also not my fault.
 

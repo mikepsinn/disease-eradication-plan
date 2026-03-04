@@ -2111,7 +2111,7 @@ The {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} estimate aggregates 
 
 **Addressing the "Quadrillion Dollar" Assumption**: The total economic value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} derives from the average ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift in disease eradication. The number sounds absurd until you build it from its components.
 
-**Start with the annual cost of disease.** The WHO reports {{< var global_annual_daly_burden >}} DALYs lost globally per year. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At the standard {{< var standard_economic_qaly_value_usd >}}/QALY (OECD, EPA, WHO, NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
+**Start with the annual cost of disease.** The WHO reports {{< var global_annual_daly_burden >}} lost globally. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At the standard {{< var standard_economic_qaly_value_usd >}}/QALY (OECD, EPA, WHO, NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
 
 **Now multiply by the timeline shift** (~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years earlier that treatments arrive on average):
 
@@ -2119,7 +2119,7 @@ The {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} estimate aggregates 
 
 That is where the quadrillion comes from. Two WHO data points, one standard QALY price, and a timeline shift.
 
-The annual figure ({{< var global_disease_economic_burden_annual >}}) is larger than global GDP ({{< var global_gdp_2025 >}}). This is consistent with health economics methodology because DALY valuation captures welfare losses that GDP does not measure: pain, disability, premature death, and lost potential. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is the standard used by OECD, EPA, WHO, and NICE for policy evaluation. The {{< var global_annual_daly_burden >}} DALYs/year comes directly from WHO Global Burden of Disease data. Neither input is a model assumption.
+The annual figure ({{< var global_disease_economic_burden_annual >}}) is larger than global GDP ({{< var global_gdp_2025 >}}). This is consistent with health economics methodology because DALY valuation captures welfare losses that GDP does not measure: pain, disability, premature death, and lost potential. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is the standard used by OECD, EPA, WHO, and NICE for policy evaluation. The {{< var global_annual_daly_burden >}} figure comes directly from WHO Global Burden of Disease data. Neither input is a model assumption.
 
 The only debatable input is whether the timeline shift is really ~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years.
 

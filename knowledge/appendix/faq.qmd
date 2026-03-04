@@ -255,7 +255,7 @@ All philanthropy combined is a rounding error compared to government budgets (a 
 
 **Objection**: "No number with that many zeros can be real. You're just multiplying big things together to get a big answer."
 
-Start with what disease costs per year. The WHO says the world loses {{< var global_annual_daly_burden >}} DALYs annually. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At {{< var standard_economic_qaly_value_usd >}}/QALY (the standard rate used by EPA, OECD, WHO, and NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
+Start with what disease costs per year. The WHO says the world loses {{< var global_annual_daly_burden >}} annually. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At {{< var standard_economic_qaly_value_usd >}}/QALY (the standard rate used by EPA, OECD, WHO, and NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
 
 Now multiply by how many years earlier treatments arrive (~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}):
 
