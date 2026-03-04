@@ -58,9 +58,9 @@ They say you can't put a price on human life. But apparently the price is somewh
 
 ## Your Decentralized Institutes of Health
 
-Once your 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a treasury with no CEO, no board, and no one to corrupt. Money flows directly to patients and researchers via algorithmic rules, not through any intermediary organization.
+Once your 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a rules-governed treasury designed to minimize discretion. The treaty fixes the top-level allocation. Patients direct trial-participation spending. Wishocracy governs the collective-choice layer. Administrative entities maintain the rails, but they do not get to improvise the formula.
 
-The governance protocol is the opposite of the NIH. Instead of 200 people in a building guessing what to fund and giving grants to their college roommates, smart contracts hold the treasury. Patients choose which trials to join. Funding flows automatically to researchers based on patient enrollment. Trials that work get more patients and more funding. Trials that don't work get defunded, which is apparently a concept so radical it took your species 80 years to consider.
+The governance protocol is the opposite of the NIH. Instead of 200 people in a building guessing what to fund and giving grants to their college roommates, the treasury runs on transparent rules and auditable automation where practical. Patients choose which trials to join. Funding flows automatically to researchers based on patient enrollment. Trials that work get more patients and more funding. Trials that don't work get defunded, which is apparently a concept so radical it took your species 80 years to consider.
 
 ![Money goes in, cures come out, repeat](/assets/images/solution/solution-section-what-your-decentralized-institutes-of-health-do-bw-academic.jpg)
 
@@ -159,7 +159,7 @@ The rest of Part II explains each component in detail:
 
 - [Your 1% Treaty](solution/1-percent-treaty.qmd): How to structure it so countries actually sign it
 - [Your Decentralized Institutes of Health](solution/dih.qmd): How algorithmic governance prevents corruption
-- [Wishocracy](solution/wishocracy.qmd): How to let billions of people control a budget without lobbyists stealing it
+- [Wishocracy](solution/wishocracy.qmd): How to let billions of people govern the collective-choice part of a budget without lobbyists stealing it
 - [Your Decentralized FDA](solution/dfda.qmd): How to achieve {{< var dfda_trial_cost_reduction_factor >}} cost reduction in drug trials
 - [Aligning Incentives](solution/aligning-incentives.qmd): How to make selfishness save humanity
 - [Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd): How everyone makes money
