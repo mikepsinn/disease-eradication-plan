@@ -32,6 +32,7 @@ import sys
 import subprocess
 import argparse
 import hashlib
+import json
 import time
 from datetime import datetime
 from pathlib import Path
@@ -63,8 +64,8 @@ def _fmt_elapsed(seconds: float) -> str:
     return f"{secs}s"
 
 
-# Accumulates (label, elapsed_seconds, success) for the final summary
-_step_timings: list[tuple[str, float, bool]] = []
+# Accumulates (label, elapsed_seconds, success, indent) for the final summary
+_step_timings: list[tuple[str, float, bool, int]] = []
 
 
 def run_step(label: str, script: str, args: list[str]) -> bool:
@@ -79,12 +80,28 @@ def run_step(label: str, script: str, args: list[str]) -> bool:
     elapsed = time.monotonic() - t0
 
     if result.returncode != 0:
-        _step_timings.append((label, elapsed, False))
+        _step_timings.append((label, elapsed, False, 0))
         print(f"\n[{_ts()}] [FAILED] {label} (exit code {result.returncode}, {_fmt_elapsed(elapsed)})")
         return False
-    _step_timings.append((label, elapsed, True))
+    _step_timings.append((label, elapsed, True, 0))
     print(f"\n[{_ts()}] [OK] {label} ({_fmt_elapsed(elapsed)})")
     return True
+
+
+def _inject_substep_timings(timing_report: Path) -> None:
+    """Read .audio-timing.json and replace the last top-level step with substeps."""
+    if not timing_report.exists():
+        return
+    substeps: dict[str, float] = json.loads(timing_report.read_text(encoding="utf-8"))
+    # Remove the last entry (the aggregate "Generate audio" step)
+    if not _step_timings:
+        return
+    parent_label, parent_elapsed, parent_ok, _ = _step_timings.pop()
+    # Add substeps with indent=1
+    for sub_label, sub_elapsed in substeps.items():
+        _step_timings.append((sub_label, sub_elapsed, True, 1))
+    # Re-add the parent as a total line
+    _step_timings.append((parent_label + " (total)", parent_elapsed, parent_ok, 0))
 
 
 def _print_timing_summary(pipeline_start: float) -> None:
@@ -95,11 +112,12 @@ def _print_timing_summary(pipeline_start: float) -> None:
     print(f"{'=' * 70}\n")
 
     if _step_timings:
-        max_label = max(len(label) for label, _, _ in _step_timings)
-        max_label = max(max_label, 6)  # at least "Step" header width
-        for label, elapsed, success in _step_timings:
+        max_label = max(len(lbl) + indent * 2 for lbl, _, _, indent in _step_timings)
+        max_label = max(max_label, 6)
+        for label, elapsed, success, indent in _step_timings:
             status = "OK" if success else "FAILED"
-            print(f"  [{status:>6}] {label:<{max_label}}  {_fmt_elapsed(elapsed):>10}")
+            display_label = ("  " * indent) + label
+            print(f"  [{status:>6}] {display_label:<{max_label}}  {_fmt_elapsed(elapsed):>10}")
         print(f"  {'-' * (max_label + 22)}")
 
     print(f"  {'TOTAL':<{max_label + 9 if _step_timings else 14}}  {_fmt_elapsed(total_elapsed):>10}")
@@ -279,7 +297,7 @@ def main():
     t0_stale = time.monotonic()
     print_staleness_summary(config_path, args.chapter, args.start, args.end)
     stale_elapsed = time.monotonic() - t0_stale
-    _step_timings.append(("Staleness check", stale_elapsed, True))
+    _step_timings.append(("Staleness check", stale_elapsed, True, 0))
     print(f"  [{_ts()}] Staleness check took {_fmt_elapsed(stale_elapsed)}")
 
     # --- Step 1: Generate narration text ---
@@ -308,6 +326,22 @@ def main():
     if not run_step("Generate audio + MP3s + RSS", "generate_audiobook.py", audio_args):
         _print_timing_summary(pipeline_start)
         sys.exit(1)
+
+    # Inject substep timings from the audio generation step
+    from lib.audiobook_common import config_name_from_path, get_paths
+    cfg_name = config_name_from_path(config_path)
+    audio_paths = get_paths(cfg_name)
+    _inject_substep_timings(audio_paths.root / ".audio-timing.json")
+
+    # List generated MP3s
+    mp3_dir = audio_paths.root / "mp3"
+    if mp3_dir.exists():
+        mp3_files = sorted(mp3_dir.glob("*.mp3"))
+        if mp3_files:
+            print(f"\n  Generated {len(mp3_files)} MP3 files:")
+            for mp3 in mp3_files:
+                print(f"    {mp3}")
+            print()
 
     # --- Step 3: Scene segmentation ---
     if args.video:

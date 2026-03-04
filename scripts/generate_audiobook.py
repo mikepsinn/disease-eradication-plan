@@ -17,6 +17,7 @@ Usage:
 import sys
 import os
 import re
+import json
 import time
 import hashlib
 import argparse
@@ -1313,21 +1314,26 @@ def generate_podcast_rss(
     # Build timestamp lookup
     ts_by_index = {ts['index']: ts for ts in timestamps}
 
-    def _unwrap_paragraphs(text: str) -> str:
-        """Collapse hard-wrapped lines within paragraphs into single lines.
+    def _to_html_paragraphs(text: str) -> str:
+        """Convert plain text with blank-line-separated paragraphs to HTML <p> tags.
 
-        Preserves blank lines between paragraphs so podcast apps (Spotify,
-        Apple) show proper paragraph breaks without mid-sentence line breaks.
+        Spotify, Apple Podcasts, etc. ignore plain-text newlines in <description>.
+        HTML <p> tags inside CDATA sections are the industry standard fix.
         """
         import re
         paragraphs = re.split(r'\n\s*\n', text.strip())
-        return '\n\n'.join(' '.join(p.split()) for p in paragraphs)
+        paragraphs = [' '.join(p.split()) for p in paragraphs if p.strip()]
+        return ''.join(f'<p>{escape(p)}</p>' for p in paragraphs)
 
     title = escape(book_meta['title'])
     author = escape(book_meta.get('podcast_author', book_meta['author']))
     raw_desc = book_meta.get('podcast_description') or book_meta['description']
-    description = escape(_unwrap_paragraphs(raw_desc))
     desc_suffix = book_meta.get('podcast_description_suffix', '')
+    # Build HTML channel description with suffix
+    channel_desc_text = raw_desc
+    if desc_suffix:
+        channel_desc_text = f"{channel_desc_text}\n\n{desc_suffix}"
+    channel_desc_html = _to_html_paragraphs(channel_desc_text)
     narrator = escape(book_meta['narrator'])
     podcast_cover: Path = book_meta['podcast_cover']
     cover_filename = podcast_cover.relative_to(PROJECT_ROOT).as_posix()
@@ -1424,10 +1430,10 @@ def generate_podcast_rss(
         ep_title = f"{ch_title}" if not part else f"{part}: {ch_title}"
 
         # Use QMD description if available, fall back to generic; append CTA suffix
-        ep_desc = ep_descriptions.get(slug, f"Chapter {ep_num + 1} of {title}")
-        ep_desc = _unwrap_paragraphs(ep_desc)
+        ep_desc_text = ep_descriptions.get(slug, f"Chapter {ep_num + 1} of {title}")
         if desc_suffix:
-            ep_desc = f"{ep_desc}\n\n{desc_suffix}"
+            ep_desc_text = f"{ep_desc_text}\n\n{desc_suffix}"
+        ep_desc_html = _to_html_paragraphs(ep_desc_text)
 
         duration_fmt = ts['duration_formatted']
         file_size = mp3_path.stat().st_size
@@ -1457,7 +1463,7 @@ def generate_podcast_rss(
       <itunes:episode>{ep_num + 1}</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
       <guid isPermaLink="false">chapter-{slug}</guid>
-      <description>{escape(ep_desc)}</description>{image_tag}{podcast_images_tag}
+      <description><![CDATA[{ep_desc_html}]]></description>{image_tag}{podcast_images_tag}
     </item>""")
 
     feed = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -1468,7 +1474,7 @@ def generate_podcast_rss(
   <channel>
     <title>{title}</title>
     <link>{escape(site_url)}</link>
-    <description>{description + chr(10) + chr(10) + escape(desc_suffix) if desc_suffix else description}</description>
+    <description><![CDATA[{channel_desc_html}]]></description>
     <language>en-us</language>
     <itunes:author>{author}</itunes:author>
     <itunes:owner>
@@ -1649,12 +1655,24 @@ def main():
     print(f"Output: {paths.root.relative_to(PROJECT_ROOT)}")
     print()
 
+    # Substep timing accumulator: {label: elapsed_seconds}
+    _substep_times: dict[str, float] = {
+        "Outro audio": 0.0,
+        "TTS generation": 0.0,
+        "Loudness normalization": 0.0,
+        "Alignment + subtitles": 0.0,
+        "MP3 export + wrapping": 0.0,
+        "Combine audiobook": 0.0,
+        "Podcast RSS feed": 0.0,
+    }
+
     # Clean up legacy .wraphash sidecars
     mp3_dir = paths.root / "mp3"
     _cleanup_wraphash_sidecars(mp3_dir)
 
     # Generate podcast outro audio (once, before chapter loop)
     outro_wav = None
+    t_sub = time.monotonic()
     if OUTRO_QMD_PATH.exists():
         print("=" * 60)
         print("  Generating podcast outro audio...")
@@ -1668,6 +1686,7 @@ def main():
             print(f"  [WARN] Outro audio generation failed, chapters will not have outro")
     else:
         print(f"  [INFO] No outro QMD found at {OUTRO_QMD_PATH.name}, skipping outro")
+    _substep_times["Outro audio"] = time.monotonic() - t_sub
 
     # Check for theme song
     intro_mp3 = THEME_SONG_PATH if THEME_SONG_PATH.exists() else None
@@ -1686,20 +1705,27 @@ def main():
         print(f"\n[{chapter['index']}/{total_chapters}] {title}")
 
         # 1. Generate audio (text prep + TTS + combine chunks -> WAV)
+        t_sub = time.monotonic()
         audio_path, audio_changed = generate_chapter_audio(chapter, voice=args.voice, force=args.force, paths=paths, config_path=config_path)
+        _substep_times["TTS generation"] += time.monotonic() - t_sub
         if not audio_path:
             continue
 
         generated_files.append(audio_path)
 
         # 2. Normalize loudness
+        t_sub = time.monotonic()
         normalize_loudness(audio_path, target_lufs=-16.0)
+        _substep_times["Loudness normalization"] += time.monotonic() - t_sub
 
         # 3. Forced alignment + subtitle generation
         if not args.no_align:
+            t_sub = time.monotonic()
             _run_alignment(chapter, audio_path, title, force=args.force, paths=paths, audio_changed=audio_changed)
+            _substep_times["Alignment + subtitles"] += time.monotonic() - t_sub
 
         # 4. Export raw tagged chapter MP3 (to mp3-raw/)
+        t_sub = time.monotonic()
         track_num = next((i for i, ch in enumerate(all_chapters, 1) if ch['index'] == chapter['index']), chapter['index'])
         raw_mp3 = export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
 
@@ -1710,11 +1736,13 @@ def main():
             # 6. Rename to content-hashed filename for podcast cache busting
             if wrapped:
                 wrapped = finalize_podcast_mp3(wrapped)
+        _substep_times["MP3 export + wrapping"] += time.monotonic() - t_sub
 
     print(f"\n{'=' * 60}")
     print(f"Processed {len(generated_files)} chapters")
 
     # Combine into single audiobook (optional, off by default)
+    t_sub = time.monotonic()
     if not args.no_combine:
         chapters_with_audio = [ch for ch in all_chapters if find_chapter_audio(ch, paths=paths)]
         if len(chapters_with_audio) > 1:
@@ -1726,8 +1754,10 @@ def main():
             update_manifest(timestamps, total_duration_ms, paths=paths)
             tag_mp3(mp3_path, timestamps, book_meta, chapters=all_chapters, paths=paths)
             export_m4b(mp3_path, timestamps, book_meta)
+    _substep_times["Combine audiobook"] = time.monotonic() - t_sub
 
     # Generate podcast RSS feed (always, independent of --no-combine)
+    t_sub = time.monotonic()
     chapter_mp3s = []
     for ch in all_chapters:
         slug = chapter_slug(ch)
@@ -1758,6 +1788,13 @@ def main():
             print("  [WARN] No timestamps in manifest, skipping podcast RSS generation")
     else:
         print(f"  [WARN] No per-chapter MP3s found in {mp3_dir}, skipping podcast RSS generation")
+    _substep_times["Podcast RSS feed"] = time.monotonic() - t_sub
+
+    # Write timing report for publish_audiobook.py to read
+    timing_report_path = paths.root / ".audio-timing.json"
+    timing_report_path.write_text(
+        json.dumps(_substep_times, indent=2), encoding="utf-8"
+    )
 
     print("\nDone!")
     logger.close()
