@@ -138,7 +138,7 @@ Money isn't the only constraint. You can't print more physicists. (You've tried.
 
 "Politically impossible" means the small pieces of paper with presidents on them currently go to people who build missiles instead of people who cure diseases. You need the papers to go the other way. This is called "lobbying," which is bribery but with a business card.
 
-The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments (they're immune). Beat them at their own game. Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Bonds](../solution/incentive-alignment-bonds.qmd). Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K-Street firms. Outbid them. Lobbyists work for the highest bidder.
+The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments (they're immune). Beat them at their own game. Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K-Street firms. Outbid them. Lobbyists work for the highest bidder.
 
 Once {{< var treaty_campaign_voting_bloc_target_nounit >}} voters demand it and the money is behind it, refusal becomes career suicide. Politicians are very good at not committing career suicide.
 
