@@ -20,9 +20,9 @@ The architecture is embarrassingly simple. Raise {{< var treaty_campaign_total_c
 
 ## Pillar 1: The Money Part (Raise {{< var treaty_campaign_total_cost >}})
 
-The instrument is a [VICTORY Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd), which is a piece of paper that says "give us money now, get much more money later, forever." On Wishonia, this would be called "fraud." On Earth, it's called "finance." The difference is collateral.
+The instrument is a [VICTORY Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd), a perpetual contractual claim on a fixed share of treaty inflows: give us money now, get much more money later, for as long as the treaty survives. On Wishonia, this would still be called "fraud." On Earth, it's a revenue share with unusually good collateral.
 
-The bonds return {{< var victory_bond_annual_return_pct >}} annually. This looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} divided by {{< var treaty_campaign_total_cost >}}. Senior debt structure, meaning the fund pays bondholders before anyone else, because investors don't care about your moral framework until after they've been paid. They receive {{< var victory_bond_funding_pct >}} of all treaty inflows ({{< var victory_bond_annual_payout >}}/year), collateralized against the entire military budget of the planet. Every Ponzi scheme in history has promised returns like this. The difference is that Bernie Madoff's collateral was a spreadsheet he made up. Your collateral is {{< var treaty_annual_funding >}}+ in annual treaty revenue, which, unlike Bernie's spreadsheet, actually exists.
+The bonds return {{< var victory_bond_annual_return_pct >}} annually. This looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} divided by {{< var treaty_campaign_total_cost >}}. This is not ordinary term debt with a maturity date; it is a treaty-level revenue share that contractually earmarks {{< var victory_bond_funding_pct >}} of all treaty inflows ({{< var victory_bond_annual_payout >}}/year) to bondholders for as long as the treaty exists. That investor tranche is fixed by rule, not by annual managerial discretion, because investors don't care about your moral framework until after they've been paid. Every Ponzi scheme in history has promised returns like this. The difference is that Bernie Madoff's collateral was a spreadsheet he made up. Your collateral is {{< var treaty_annual_funding >}}+ in annual treaty revenue, which, unlike Bernie's spreadsheet, actually exists.
 
 ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
 
@@ -72,7 +72,7 @@ Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from "h
 
 ### How the Money Gets Spent: 80/10/10
 
-The allocation is automatic. No committees. No debates. No one arguing for six months about font choices on the grant application. Just math, executing silently, like a competent employee (something most of your governments have never experienced).
+The allocation is fixed at the treaty level. [Victory Corporation](../legal/legal-framework.qmd) (your SPV, owned by the [DIH Foundation](../legal/legal-framework.qmd)) administers the treasury rails and investor distributions, while the political-incentive allocation funds legally separate scoring, electoral, and post-office entities described in the [Legal Framework](../legal/legal-framework.qmd). No committees. No debates. No one arguing for six months about font choices on the grant application. Just math, executing on schedule, like a competent employee (something most of your governments have never experienced).
 
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
@@ -80,9 +80,7 @@ The allocation is automatic. No committees. No debates. No one arguing for six m
 | **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
-![Twenty percent goes to paying investors and politicians automatically via smart contracts. Finally, a use for blockchain that isn't fraud or monkey pictures.](/assets/images/financial-plan/financial-plan-section-the-fixed-costs-bw-academic.jpg)
-
-The 20% for bonds and political incentives is untouchable. Smart contracts distribute both automatically. No human hands involved, which, given your track record with money, is a feature. On Wishonia, we learned 4,297 years ago that the best way to handle money is to never let a person touch it. Your species hasn't learned this yet. Your species has a thing called an "accountant," which is a person you pay to watch your money, who sometimes takes your money, so you hire a second person called an "auditor" to watch the first person, and then the auditor takes your money. The smart contract skips all of this.
+The 20% for bonds and political incentives is contractually earmarked and cannot be reallocated by management because somebody had a better idea after lunch. Where automation is legally and operationally practical, treasury rules can execute the distributions mechanically. Where the real world insists on banks, custodians, and auditors, the same formula still applies. Humans may maintain the payment rails. They do not get to improvise the percentages. On your planet, that already counts as a miracle.
 
 The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds clinical trials and research infrastructure. [Wishocracy](../solution/wishocracy.qmd) governs the allocation.
 
@@ -110,4 +108,3 @@ Patients organize to grow the treasury, because participating in their own survi
 ## The Whole Thing on One Line
 
 Invest {{< var treaty_campaign_total_cost >}}. Get {{< var victory_bond_annual_payout >}}/year. Forever. Your species spent roughly $5 billion on a particle accelerator to find a boson. This costs less and finds a cure for dying.
-

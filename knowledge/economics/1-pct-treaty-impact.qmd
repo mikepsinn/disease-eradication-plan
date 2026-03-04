@@ -1887,7 +1887,7 @@ The Treaty mandates that the Fund be managed by a private Central Counterparty t
 - Disease categories collapse as effective treatments scale
 - Healthspan overtakes pathology
 
-**The utility structure:** The SPV retains a perpetual {{< var iab_political_incentive_funding_pct >}} Statutory Administration Fee on all inflows ({{< var iab_political_incentive_funding_annual >}}/year projected) to cover vetting, auditing, and operations. This converts the IAB from a debt instrument into a perpetual equity claim on the Global Health Budget.
+**The utility structure:** The treaty hard-codes a 20% non-medical allocation on all inflows. Half ({{< var victory_bond_funding_pct >}}) goes to perpetual investor dividends ({{< var victory_bond_annual_payout >}}/year). The other half ({{< var iab_political_incentive_funding_pct >}}) funds the political incentive layer: independent expenditures, post-office career programs, and Public Good Score infrastructure ({{< var iab_political_incentive_funding_annual >}}/year) through legally separate entities. The SPV can administer the treasury plumbing and investor payments, but it does not get to pocket the full 20% and call that governance. The remaining {{< var dih_treasury_medical_research_pct >}} flows directly to clinical trials and research.
 
 **Governance constraints** (addressing self-dealing concerns):
 
@@ -1895,9 +1895,9 @@ The Treaty mandates that the Fund be managed by a private Central Counterparty t
 - **Capped compensation**: Administrator salaries benchmarked to comparable multilateral institutions (WHO, World Bank)
 - **Annual third-party audit**: Published financials with signatory oversight committee review
 - **Sunset provision**: Fee percentage subject to 10-year renegotiation by signatory majority
-- **Operational scope**: Fee funds only treaty defense lobbying, compliance monitoring, and fund administration (not founder enrichment)
+- **Operational scope**: Fee funds only investor returns, treaty defense lobbying, compliance monitoring, and fund administration (not founder enrichment)
 
-**Utility shareholders (bondholders)** receive dividends from the Administration Fee, creating a permanent constituency to defend the Treaty against political cuts. We do not rely on altruism. We rely on the "Iron Dome" effect: The Administration Fee creates a well-funded lobby whose only job is to protect the Treaty's existence.
+**Bondholders** receive perpetual dividends from the management fee, creating a permanent constituency to defend the Treaty against political cuts. We do not rely on altruism. We rely on the "Iron Dome" effect: the 20% creates a well-funded lobby (investors + PACs) whose only job is to protect the Treaty's existence.
 
 **Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
 
