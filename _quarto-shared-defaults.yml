@@ -69,7 +69,7 @@ metadata:
 
   # Social profiles
   linkedin: "https://www.linkedin.com/in/mikesinn"
-  youtube: "https://www.youtube.com/@WarOnDisease"
+  youtube: "https://www.youtube.com/%40WarOnDisease"
   # bluesky: ""         # Add if available
 
   # Language
@@ -119,7 +119,7 @@ metadata:
 links:
   follow:
     - label: "YouTube"
-      url: "https://www.youtube.com/@WarOnDisease"
+      url: "https://www.youtube.com/%40WarOnDisease"
       subtitle: "\\@WarOnDisease"
       footer-label: "&#9654; YouTube"
     - label: "X / Twitter"
