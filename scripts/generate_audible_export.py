@@ -213,6 +213,66 @@ def convert_to_audible_mp3(
     }
 
 
+def generate_retail_sample(
+    output_dir: Path,
+    chapters: list[dict],
+    max_duration_secs: float = 300.0,
+) -> Path | None:
+    """Generate a retail audio sample from the beginning of chapter 1.
+
+    Audible requires a sample of 5 minutes or less, starting from the beginning
+    of the audiobook for a seamless transition into the full audiobook.
+
+    Takes the already-exported chapter 1 MP3 and trims it.
+    """
+    if not chapters:
+        print("  SKIP retail sample: no chapters")
+        return None
+
+    first_ch = chapters[0]
+    slug = chapter_slug(first_ch)
+    source_mp3 = output_dir / f"{first_ch['index']:02d}-{slug}.mp3"
+
+    if not source_mp3.exists():
+        print(f"  SKIP retail sample: {source_mp3.name} not found")
+        return None
+
+    sample_path = output_dir / "retail-sample.mp3"
+
+    # Check source duration to decide if trimming is needed
+    source_dur = get_duration_secs(source_mp3)
+    if source_dur <= max_duration_secs:
+        # Chapter 1 is short enough to use as-is (unlikely but handle it)
+        import shutil
+        shutil.copy2(source_mp3, sample_path)
+        print(f"  Retail sample: {sample_path.name} (full chapter 1, {format_duration(source_dur)})")
+        return sample_path
+
+    # Trim to max_duration_secs with a short fade-out at the end
+    fade_secs = 3.0
+    cmd = [
+        "ffmpeg", "-y",
+        "-i", str(source_mp3),
+        "-t", str(max_duration_secs),
+        "-af", f"afade=t=out:st={max_duration_secs - fade_secs}:d={fade_secs}",
+        "-c:a", "libmp3lame",
+        "-b:a", f"{ACX_BITRATE}k",
+        "-ar", str(ACX_SAMPLE_RATE),
+        "-ac", "1",
+        str(sample_path),
+    ]
+
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"  FAILED retail sample: {result.stderr[-300:]}")
+        return None
+
+    sample_dur = get_duration_secs(sample_path)
+    print(f"  Retail sample: {sample_path.name} ({format_duration(sample_dur)}, "
+          f"first {int(max_duration_secs)}s of chapter 1 with fade-out)")
+    return sample_path
+
+
 def generate_upload_instructions(
     chapters: list[dict],
     results: list[dict],
@@ -369,6 +429,9 @@ def main():
         )
         results.append(r)
         print(f"OK (RMS={r['output_rms']}, peak={r['output_peak']}, {r['duration_fmt']})")
+
+    # Generate retail audio sample (first 5 min of chapter 1)
+    generate_retail_sample(output_dir, chapters)
 
     # Generate upload instructions markdown
     instructions_path = output_dir / "AUDIBLE-UPLOAD-INSTRUCTIONS.md"

@@ -25,7 +25,7 @@ Not all of it is available for allocation. First, the automatic deductions (thin
 |:-----------|:------|:-------|:--------|
 | [VICTORY Incentive Alignment Bond investors](incentive-alignment-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
 | [Political incentives (Incentive Alignment Bonds)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
-| **Available for Wishocracy** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | What you get to allocate |
+| **Available for Clinical Trial Allocation** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | The research share after investor and political allocations |
 
 How do you stop parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}}? If history is any guide, you don't. Every pool of money humanity has ever created has attracted lobbyists the way a dropped ice cream cone attracts ants, except ants at least work hard.
 
@@ -33,9 +33,9 @@ How do you stop parasitic special interests from stealing that {{< var dih_treas
 
 It lets 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}} without turning it into a bureaucratic nightmare. The difference between this and the NIH is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach has never once funded a colleague's lunch out of professional courtesy.
 
-## How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding
+## How Wishocracy Allocates the Collective-Choice Share of the 1% Treaty Fund
 
-Your [decentralized institutes of health](dih.qmd) network functions as a **decentralized crowdfunding platform**. Anyone can submit a campaign proposal. Wishocracy allocates funds from the 1% Treaty Fund across competing campaigns. It's Kickstarter, but backed by the GDP of nations instead of your friend's credit card.
+Your [decentralized institutes of health](dih.qmd) network functions as a **decentralized crowdfunding platform**. Anyone can submit a campaign proposal. Wishocracy allocates the part of the medical-research share that requires collective judgment: infrastructure, common tooling, standards, and other public goods markets do badly. It's Kickstarter, but backed by the GDP of nations instead of your friend's credit card.
 
 ### What your [decentralized FDA](dfda.qmd) handles automatically (no voting required):
 
@@ -160,7 +160,7 @@ On Wishonia, we tried enforcement-based protections for about 200 years before c
 
 **Transparency.** There is no "classify" button. The system publishes all allocations, all results, all failures. Not because a law requires it, but because the publication function doesn't have an off switch. You can't vote to hide data for the same reason you can't vote to make gravity go sideways: the system doesn't have that gear. Every failed trial, every dollar spent, every outcome measured. Your current system publishes roughly half of clinical trial results [@publication-bias-clinical-trials]. The other half disappear into filing cabinets because the results were embarrassing. On Wishonia, "embarrassing results" is not a category. "Results" is. The filing cabinet was never built.
 
-**Corruption resistance.** Eighty percent of the fund flows through DALY-weighted subsidies automatically. No human touches it. No committee approves it. No senator holds it hostage for a highway. The algorithm takes the global disease burden data, calculates where each dollar prevents the most suffering, and sends the money. The remaining twenty percent is allocated by pairwise comparisons, which is the part humans direct. If someone corrupts the entire 20% (impressive; they'd need to influence 8 billion random voters), they've captured a fifth of the fund while four-fifths continued curing diseases regardless. Compare this to your current system, where a single senator on the appropriations committee can redirect 100% of the NIH budget to their preferred projects because they've held the seat for 30 years and nobody ran against them. Your corruption ceiling is 100%. Ours is 20%, and it's transparent. This is not a utopian promise. It's architecture.
+**Corruption resistance.** First, the treaty strips out the investor and political slices before discretionary allocation begins, so the people with the strongest incentive to game the system do not control the medical-research share. Within that medical share, patient participation and protocol choice automatically direct the trial-by-trial money that behaves well under market signals. Wishocracy governs the remainder: the infrastructure, standards, and other shared goods that actually require collective judgment. If someone corrupts the voting layer, they still do not capture bond payouts, political incentives, or the patient-directed flow of trial participation money. They only distort the subset that genuinely depends on collective choice. Compare that to your current system, where a single senator on the appropriations committee can redirect nearly everything. Your corruption ceiling is dramatically lower because the architecture narrows what is even available for human discretion.
 
 ### The Two Hard Rules
 

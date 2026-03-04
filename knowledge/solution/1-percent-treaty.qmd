@@ -173,7 +173,7 @@ The old frame ("We're cutting defense by 1%") is political suicide. The new fram
 
 Notice what this does: it disentangles money from influence. In current government budgets, the people who provide the money (lobbyists, donors) also control where it goes. Money buys influence, influence redirects money, and the loop is invisible. Here, investors get money ({{< var victory_bond_funding_pct >}}). Politicians get career incentives ({{< var iab_political_incentive_funding_pct >}}). Neither group touches the {{< var dih_treasury_medical_research_pct >}} that goes to clinical trials. The corruption is capped, transparent, and separated from the public goods funding.
 
-The {{< var dih_treasury_medical_research_pct >}} for pragmatic clinical trials is distributed by the actual people of Earth via [Wishocracy](wishocracy.qmd), not by a committee of 12 people in a conference room who haven't had a new idea since 1987. Every human gets direct say on funding priorities. Yes, even Florida Man.
+The {{< var dih_treasury_medical_research_pct >}} for pragmatic clinical trials is insulated from investor and political capture. Patients direct trial-participation spending by joining studies, while [Wishocracy](wishocracy.qmd) governs infrastructure and other shared medical public goods, not by a committee of 12 people in a conference room who haven't had a new idea since 1987. Every human still gets direct say on the part that actually requires collective choice. Yes, even Florida Man.
 
 ![Watch the money leave the Pentagon and flow through colorful ribbons to labs where people wear goggles. This is called progress.](/assets/images/1-percent-treaty/1-percent-treaty-section-capital-allocation-sankey-bw-academic.jpg)
 
