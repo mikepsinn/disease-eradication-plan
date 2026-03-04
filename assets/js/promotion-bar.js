@@ -32,7 +32,7 @@
   // All available CTAs
   var ALL_CTAS = {
     vote:    { label: 'Vote Now',    url: 'https://WarOnDisease.org',                                      icon: '\u2694\uFE0F', ga: 'vote' },
-    listen:  { label: 'Listen Free', url: 'https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2',          icon: '\uD83C\uDFA7', ga: 'listen' },
+    listen:  { label: 'Listen',      url: 'https://manual.WarOnDisease.org/knowledge/links.html',          icon: '\uD83C\uDFA7', ga: 'listen' },
     book:    { label: 'Get the Book',url: 'https://www.amazon.com/dp/B0GPLXFMMT',                          icon: '\uD83D\uDCD6', ga: 'book' },
     read:    { label: 'Read Free',   url: 'https://manual.WarOnDisease.org',                                icon: '\uD83D\uDCDA', ga: 'read' },
     youtube: { label: 'Subscribe',   url: 'https://www.youtube.com/@WarOnDisease?sub_confirmation=1',       icon: '\u25B6\uFE0F',  ga: 'youtube' }
