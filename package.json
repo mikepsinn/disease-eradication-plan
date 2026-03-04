@@ -34,6 +34,7 @@
   },
   "scripts": {
     "render:manual:paperback": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual-paperback",
+    "images:fix-missing": "tsx scripts/images/fix-missing-images.ts --fix",
     "sync:r2": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py",
     "audiobook:publish": ".venv\\Scripts\\python.exe -u scripts/publish_audiobook.py",
     "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
@@ -59,7 +60,6 @@
     "validate:latex:parallel": ".venv\\Scripts\\python.exe -u scripts/validate-latex-per-file.py --parallel 4",
     "images:chapter": "tsx scripts/images/generate-chapter-images.ts",
     "images:branding": "tsx scripts/images/generate-project-branding-images.ts",
-    "images:fix-missing": "tsx scripts/images/fix-missing-images.ts --fix",
     "images:coverage": "tsx scripts/images/analyze-image-coverage.ts",
     "images:sections": "tsx scripts/images/generate-section-images.ts",
     "images:enrich": "tsx scripts/images/enrich-image-metadata.ts",

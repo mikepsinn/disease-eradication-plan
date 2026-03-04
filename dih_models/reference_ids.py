@@ -408,6 +408,7 @@ class ReferenceID(str, Enum):
     GIVEWELL_COST_PER_LIFE_SAVED = "givewell-cost-per-life-saved"
     GIVEWELL_IMPACT_MULTIPLIERS = "givewell-impact-multipliers"
     GIVEWELL_NETS_COST_PER_LIFE = "givewell-nets-cost-per-life"
+    GLASZIOU_CHALMERS_RESEARCH_WASTE = "glasziou-chalmers-research-waste"
     GLOBAL_AGING_RESEARCH_SPENDING_500M = "global-aging-research-spending-500m"
     GLOBAL_ARMED_FORCES_SIZE_AND_SALARY = "global-armed-forces-size-and-salary"
     GLOBAL_BURDEN_DISEASE_CHRONIC_CONDITIONS_2013 = "global-burden-disease-chronic-conditions-2013"
