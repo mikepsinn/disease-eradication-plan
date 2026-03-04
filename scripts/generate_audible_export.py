@@ -213,17 +213,31 @@ def convert_to_audible_mp3(
     }
 
 
+from lib.acx_utils import (
+    normalize_to_acx_mp3 as _normalize,
+    tag_mp3 as _tag,
+    DEFAULT_COVER,
+)
+
+THEME_SONG = PROJECT_ROOT / "assets" / "music" / "podcast-theme-song.mp3"
+
+
 def generate_retail_sample(
     output_dir: Path,
     chapters: list[dict],
+    album: str = "How to End War and Disease",
+    artist: str = "Mike P. Sinn",
+    year: str = "2025",
+    target_rms: float = -20.0,
     max_duration_secs: float = 300.0,
 ) -> Path | None:
-    """Generate a retail audio sample from the beginning of chapter 1.
+    """Generate a retail audio sample: theme song + beginning of chapter 1.
 
     Audible requires a sample of 5 minutes or less, starting from the beginning
     of the audiobook for a seamless transition into the full audiobook.
 
-    Takes the already-exported chapter 1 MP3 and trims it.
+    The theme song is first normalized to ACX-compliant mono, then concatenated
+    with chapter 1 and trimmed.
     """
     if not chapters:
         print("  SKIP retail sample: no chapters")
@@ -239,37 +253,61 @@ def generate_retail_sample(
 
     sample_path = output_dir / "retail-sample.mp3"
 
-    # Check source duration to decide if trimming is needed
-    source_dur = get_duration_secs(source_mp3)
-    if source_dur <= max_duration_secs:
-        # Chapter 1 is short enough to use as-is (unlikely but handle it)
-        import shutil
-        shutil.copy2(source_mp3, sample_path)
-        print(f"  Retail sample: {sample_path.name} (full chapter 1, {format_duration(source_dur)})")
-        return sample_path
+    # Build input list: normalized theme (if exists) + chapter 1
+    inputs = []
+    if THEME_SONG.exists():
+        # Normalize theme to ACX mono in audible-export dir
+        theme_acx = output_dir / "podcast-theme-song-audible.mp3"
+        print(f"  Normalizing theme song to ACX mono...")
+        result = _normalize(THEME_SONG, theme_acx, target_rms=target_rms)
+        _tag(theme_acx, title=f"{album} - Theme Song",
+             album=album, artist=artist, year=year, cover_path=DEFAULT_COVER)
+        print(f"  Theme: {theme_acx.name} (RMS={result['output_rms']}, peak={result['output_peak']}, "
+              f"{result['duration_fmt']})")
+        inputs.append(theme_acx)
+    else:
+        print("  Retail sample: no theme song found, using chapter 1 only")
 
-    # Trim to max_duration_secs with a short fade-out at the end
+    inputs.append(source_mp3)
+
     fade_secs = 3.0
+
+    # Concat inputs, trim to max duration, fade out. All inputs are now mono.
+    input_args = []
+    filter_inputs = []
+    for i, path in enumerate(inputs):
+        input_args += ["-i", str(path)]
+        filter_inputs.append(f"[{i}:a]")
+
+    concat_filter = f"{''.join(filter_inputs)}concat=n={len(inputs)}:v=0:a=1[joined]"
+    trim_filter = (
+        f"[joined]atrim=0:{max_duration_secs},"
+        f"afade=t=out:st={max_duration_secs - fade_secs}:d={fade_secs}[out]"
+    )
+
     cmd = [
         "ffmpeg", "-y",
-        "-i", str(source_mp3),
-        "-t", str(max_duration_secs),
-        "-af", f"afade=t=out:st={max_duration_secs - fade_secs}:d={fade_secs}",
-        "-c:a", "libmp3lame",
-        "-b:a", f"{ACX_BITRATE}k",
+        *input_args,
+        "-filter_complex", f"{concat_filter};{trim_filter}",
+        "-map", "[out]",
         "-ar", str(ACX_SAMPLE_RATE),
         "-ac", "1",
+        "-b:a", f"{ACX_BITRATE}k",
+        "-c:a", "libmp3lame",
         str(sample_path),
     ]
 
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"  FAILED retail sample: {result.stderr[-300:]}")
+    ffresult = subprocess.run(cmd, capture_output=True, text=True)
+    if ffresult.returncode != 0:
+        print(f"  FAILED retail sample: {ffresult.stderr[-500:]}")
         return None
+
+    _tag(sample_path, title=f"{album} - Retail Sample",
+         album=album, artist=artist, year=year, cover_path=DEFAULT_COVER)
 
     sample_dur = get_duration_secs(sample_path)
     print(f"  Retail sample: {sample_path.name} ({format_duration(sample_dur)}, "
-          f"first {int(max_duration_secs)}s of chapter 1 with fade-out)")
+          f"theme + chapter 1, fade-out at {int(max_duration_secs)}s)")
     return sample_path
 
 
@@ -326,6 +364,8 @@ def generate_upload_instructions(
             f"{r['output_rms']}{rms_flag} | {r['output_peak']}{peak_flag} |"
         )
 
+    year = datetime.now().strftime("%Y")
+
     lines += [
         f"",
         f"## Upload Checklist",
@@ -344,6 +384,57 @@ def generate_upload_instructions(
         f"- ACX requires each file to be at least ~1 minute long",
         f"- Files flagged with (!) in the table above may need manual review",
         f"",
+        f"---",
+        f"",
+        f"## Audible Store Metadata (copy-paste)",
+        f"",
+        f"### Title",
+        f"{album}",
+        f"",
+        f"### Subtitle",
+        f"The Complete Idiot's Guide to Legally Bribing Your Way to Utopia",
+        f"",
+        f"### Author",
+        f"{artist}",
+        f"",
+        f"### Narrator",
+        f"{artist}",
+        f"",
+        f"### Publisher",
+        f"Institute for Accelerated Medicine",
+        f"",
+        f"### Copyright",
+        f"{year} {artist}",
+        f"",
+        f"### Language",
+        f"English",
+        f"",
+        f"### Categories",
+        f"- Non-Fiction > Politics & Government > Public Policy",
+        f"- Non-Fiction > Science > Medicine & Health",
+        f"",
+        f"### Description",
+        f"Your choice to listen to this manual is the highest-value decision any human has ever made. You are about to prevent 10.7 billion deaths and eliminate 1.93 quadrillion hours of human suffering.",
+        f"",
+        f"Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%. If cancer had oil reserves, you would have cured it by 2003. Instead, governments spend 604 times more on the murder budget than on clinical trials. This is mathematically stupid.",
+        f"",
+        f"This is a practical step-by-step guide to legally bribing humanity into redirecting 1% of the murder budget to medicine. It's like weaning a baby off eating paint chips. You can't just take away all the paint chips at once. They'll cry. You have to gradually replace paint chips with food until they forget paint chips were ever an option. Nobody has to become a better person. You just point everyone's greed at diseases instead of at each other.",
+        f"",
+        f"### Reviews & Awards (What Critics Say)",
+        f"Winner of the 2025 Wishonian Prize for Most Obvious Observation Humans Still Haven't Acted On",
+        f"",
+        f"### Keywords",
+        f"war on disease, 1 percent treaty, medical research, public health, peace dividend, clinical trials, health economics, policy reform, decentralized trials, regulatory reform",
+        f"",
+        f"### Retail Sample",
+        f"retail-sample.mp3 (theme song + first 5 min of chapter 1)",
+        f"",
+        f"### INTRO file",
+        f"podcast-theme-song-audible.mp3",
+        f"",
+        f"### OUTRO file (Closing Credits)",
+        f"29-acknowledgments.mp3",
+        f"",
     ]
 
     instructions_path.write_text("\n".join(lines), encoding="utf-8")
@@ -354,6 +445,8 @@ def main():
     parser.add_argument("--config", "-cfg", default="_quarto-manual-paperback.yml",
                         help="Quarto config YAML (default: _quarto-manual-paperback.yml)")
     parser.add_argument("--force", "-f", action="store_true", help="Re-export even if MP3 already exists")
+    parser.add_argument("--sample-only", action="store_true",
+                        help="Only generate the retail audio sample (theme + chapter 1 opening)")
     parser.add_argument("--target-rms", type=float, default=-20.0,
                         help="Target RMS in dB (default: -20.0, midpoint of ACX range)")
     args = parser.parse_args()
@@ -375,6 +468,15 @@ def main():
 
     output_dir = paths.root / "audible-export"
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    # --sample-only: just generate the retail sample and exit
+    if args.sample_only:
+        print("Generating retail audio sample only...")
+        sample = generate_retail_sample(output_dir, chapters, album=album, artist=artist,
+                                        year=year, target_rms=args.target_rms)
+        if sample:
+            print(f"\n  Output: {sample}")
+        return
 
     print(f"Audible/ACX Export")
     print(f"  Config:     {args.config}")
@@ -431,7 +533,8 @@ def main():
         print(f"OK (RMS={r['output_rms']}, peak={r['output_peak']}, {r['duration_fmt']})")
 
     # Generate retail audio sample (first 5 min of chapter 1)
-    generate_retail_sample(output_dir, chapters)
+    generate_retail_sample(output_dir, chapters, album=album, artist=artist,
+                          year=year, target_rms=args.target_rms)
 
     # Generate upload instructions markdown
     instructions_path = output_dir / "AUDIBLE-UPLOAD-INSTRUCTIONS.md"

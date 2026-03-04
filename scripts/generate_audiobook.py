@@ -23,6 +23,7 @@ import hashlib
 import argparse
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 from pathlib import Path
 from typing import TypedDict
 
@@ -466,7 +467,7 @@ def generate_chapter_audio(
             combined += AudioSegment.from_wav(str(acf))
         combined.export(str(output_path), format="wav")
 
-    print(f"    [OK] Saved: {output_path.name}")
+    print(f"    [{datetime.now().strftime('%H:%M:%S')}] [OK] Saved: {output_path.name}")
     return output_path, True
 
 
