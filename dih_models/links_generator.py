@@ -143,10 +143,10 @@ def generate_links_qmd(project_root: Path) -> Path:
     subtitle = book.get("subtitle", "")
 
     sections = [
+        ("Take Action", shared_links.get("action", [])),
         ("Buy", manual_links.get("buy", [])),
         ("Read", manual_links.get("read", [])),
         ("Listen", manual_links.get("listen", [])),
-        ("Take Action", shared_links.get("action", [])),
         ("Follow", shared_links.get("follow", [])),
     ]
 

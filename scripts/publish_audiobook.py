@@ -67,6 +67,9 @@ def _fmt_elapsed(seconds: float) -> str:
 # Accumulates (label, elapsed_seconds, success, indent) for the final summary
 _step_timings: list[tuple[str, float, bool, int]] = []
 
+# Set after audio generation so the timing summary can include chapter stats
+_manifest_path: Path | None = None
+
 
 def run_step(label: str, script: str, args: list[str]) -> bool:
     """Run a pipeline step, returning True on success."""
@@ -104,12 +107,47 @@ def _inject_substep_timings(timing_report: Path) -> None:
     _step_timings.append((parent_label + " (total)", parent_elapsed, parent_ok, 0))
 
 
+def _print_chapter_stats() -> None:
+    """Print chapter-level stats from manifest.json (counts, durations)."""
+    if not _manifest_path or not _manifest_path.exists():
+        return
+    manifest = json.loads(_manifest_path.read_text(encoding="utf-8"))
+    chapters = manifest.get("chapters", [])
+    if not chapters:
+        return
+
+    generated = sum(1 for c in chapters if c.get("status") == "generated")
+    cached = sum(1 for c in chapters if c.get("status") == "cached")
+    total = len(chapters)
+    total_dur_ms = sum(c.get("duration_ms", 0) for c in chapters)
+
+    # Format total duration as hours:minutes
+    total_secs = total_dur_ms // 1000
+    hrs, remainder = divmod(total_secs, 3600)
+    mins, secs = divmod(remainder, 60)
+    if hrs > 0:
+        dur_str = f"{hrs}h{mins:02d}m{secs:02d}s"
+    else:
+        dur_str = f"{mins}m{secs:02d}s"
+
+    print(f"  Chapters: {total} total, {generated} generated, {cached} cached")
+    print(f"  Total audio duration: {dur_str}")
+
+    # Video stats if any chapters have them
+    with_video = sum(1 for c in chapters if c.get("video_status") == "generated")
+    if with_video:
+        print(f"  Video: {with_video}/{total} chapters have video")
+    print()
+
+
 def _print_timing_summary(pipeline_start: float) -> None:
     """Print a table of all step durations and total pipeline time."""
     total_elapsed = time.monotonic() - pipeline_start
     print(f"\n{'=' * 70}")
     print(f"  [{_ts()}] TIMING SUMMARY")
     print(f"{'=' * 70}\n")
+
+    _print_chapter_stats()
 
     if _step_timings:
         max_label = max(len(lbl) + indent * 2 for lbl, _, _, indent in _step_timings)
@@ -332,6 +370,9 @@ def main():
     cfg_name = config_name_from_path(config_path)
     audio_paths = get_paths(cfg_name)
     _inject_substep_timings(audio_paths.root / ".audio-timing.json")
+
+    global _manifest_path
+    _manifest_path = audio_paths.root / "manifest.json"
 
     # List generated MP3s
     mp3_dir = audio_paths.root / "mp3"

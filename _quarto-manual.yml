@@ -285,7 +285,7 @@ links:
   read:
     - label: "Read Online"
       url: "https://manual.WarOnDisease.org"
-      subtitle: "Full manual, free, no account needed"
+      subtitle: "Full manual, no account needed"
       primary: true
   buy:
     - label: "Amazon Paperback"
@@ -305,6 +305,7 @@ links:
     - label: "Listen"
       url: "podcast.html"
       subtitle: "Spotify, Apple, YouTube Music, and more"
+      primary: true
   podcast:
     - label: "Spotify"
       url: "https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2"
