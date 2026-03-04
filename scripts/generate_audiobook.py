@@ -54,6 +54,11 @@ from lib.retry import RateLimiter
 TTS_PARALLEL_WORKERS = 4
 tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
 
+# Silence detection: trim audio chunks with silence longer than this threshold.
+# Gemini TTS occasionally produces WAVs with enormous silent tails (e.g. 10 min).
+# Natural speech pauses are 1-3s; anything beyond 5s is a TTS bug.
+MAX_SILENCE_SECONDS = 5
+
 # Voice for narration (Kore + dinner-party energy, winner from A/B testing)
 NARRATOR_VOICE = DEFAULT_VOICE
 
@@ -73,6 +78,84 @@ def _retry_fs_op(op, label: str = "", retries: int = 8, delay: float = 1.0):
                 time.sleep(delay)
             else:
                 raise
+
+
+def _detect_silence(audio_path: Path, min_silence_s: float = MAX_SILENCE_SECONDS) -> list[tuple[float, float, float]]:
+    """Detect silent regions in an audio file using ffmpeg silencedetect.
+
+    Returns a list of (start_s, end_s, duration_s) for silences >= min_silence_s.
+    """
+    null_out = "NUL" if sys.platform == "win32" else "/dev/null"
+    cmd = [
+        "ffmpeg", "-i", str(audio_path),
+        "-af", f"silencedetect=noise=-40dB:d={min_silence_s}",
+        "-f", "null", null_out,
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    regions = []
+    current_start = None
+    for line in result.stderr.splitlines():
+        if "silence_start:" in line:
+            match = re.search(r'silence_start:\s*([\d.]+)', line)
+            if match:
+                current_start = float(match.group(1))
+        elif "silence_end:" in line and current_start is not None:
+            match = re.search(r'silence_end:\s*([\d.]+)\s*\|\s*silence_duration:\s*([\d.]+)', line)
+            if match:
+                regions.append((current_start, float(match.group(1)), float(match.group(2))))
+                current_start = None
+    return regions
+
+
+def trim_silence(audio_path: Path, max_silence_s: float = MAX_SILENCE_SECONDS, label: str = "") -> bool:
+    """Trim silent regions exceeding max_silence_s from an audio file in-place.
+
+    Uses ffmpeg silenceremove to strip trailing silence and silencedetect to
+    find/trim interior silence. Logs warnings for any trimmed regions.
+
+    Returns True if the file was modified.
+    """
+    regions = _detect_silence(audio_path, min_silence_s=max_silence_s)
+    if not regions:
+        return False
+
+    tag = f" ({label})" if label else ""
+    details = "; ".join(f"{s:.1f}s-{e:.1f}s ({d:.0f}s)" for s, e, d in regions)
+    total_trimmed = sum(d for _, _, d in regions)
+    print(f"    [WARN SILENCE]{tag} {audio_path.name} has {len(regions)} silent region(s) "
+          f">={max_silence_s}s: {details} (TTS bug, trimming {total_trimmed:.0f}s)")
+
+    # Use ffmpeg to trim: keep 2s of silence max at boundaries between speech
+    temp_path = audio_path.with_suffix('.trimmed.wav')
+    # silenceremove: stop_periods=-1 means process all silence regions
+    # stop_duration = max allowed silence; stop_threshold = noise floor
+    cmd = [
+        "ffmpeg", "-y", "-i", str(audio_path),
+        "-af", (
+            f"silenceremove="
+            f"stop_periods=-1:"
+            f"stop_duration=2:"
+            f"stop_threshold=-40dB"
+        ),
+        str(temp_path),
+    ]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"    [WARN] Silence trimming failed, keeping original: {result.stderr[-200:]}")
+        temp_path.unlink(missing_ok=True)
+        return False
+
+    # Verify trimmed file is reasonable (not empty, not too short)
+    if not temp_path.exists() or temp_path.stat().st_size < 1000:
+        print(f"    [WARN] Trimmed file too small, keeping original")
+        temp_path.unlink(missing_ok=True)
+        return False
+
+    _retry_fs_op(lambda: os.replace(str(temp_path), str(audio_path)), f"replace {audio_path.name}")
+    old_dur = sum(d for _, _, d in regions)
+    new_size = audio_path.stat().st_size
+    print(f"    [TRIMMED]{tag} Removed ~{old_dur:.0f}s of silence ({new_size:,} bytes)")
+    return True
 
 
 def _read_mp3_source_hash(mp3_path: Path) -> str | None:
@@ -312,6 +395,8 @@ def generate_chapter_audio(
             old_hash = hash_path.read_text(encoding='utf-8').strip() if hash_path.exists() else ''
 
             if old_hash == text_hash:
+                # Trim any silence in cached chunks (catches pre-existing TTS bugs)
+                trim_silence(audio_chunk_path, label=f"cached chunk {i+1}/{len(chunk_files)}")
                 print(f"    [CACHED] audio chunk {i+1}/{len(chunk_files)} ({audio_chunk_path.stat().st_size:,} bytes)")
                 continue
             else:
@@ -343,6 +428,8 @@ def generate_chapter_audio(
             print(f"    [{label}] Starting ({len(chunk_text):,} chars)")
             tts_rate_limiter.acquire()
             generate_speech(text=chunk_text, output_path=out_path, voice_name=voice)
+            # Trim silent regions from TTS output (Gemini sometimes produces long silent tails)
+            trim_silence(out_path, label=label)
             # Write text hash sidecar so we can detect stale audio later
             text_hash = hashlib.sha256(chunk_text.encode('utf-8')).hexdigest()[:16]
             out_path.with_suffix('.texthash').write_text(text_hash, encoding='utf-8')
