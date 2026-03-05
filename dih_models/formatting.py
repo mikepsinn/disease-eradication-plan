@@ -126,7 +126,7 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
         elif abs_raw >= 0.01:
             formatted_num = f"${clean_number(f'{raw_dollars:.3f}')}"
         elif abs_raw > 0:
-            formatted_num = f"${clean_number(f'{raw_dollars:.4f}')}"
+            formatted_num = f"${raw_dollars:.3g}"
         else:
             formatted_num = "$0"
 
