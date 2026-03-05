@@ -1,0 +1,2002 @@
+[
+  {
+    "scene_index": 1,
+    "title": "Welcome to Wishonia",
+    "narration_text": "Hello again. Wishonia here.\n\nYou've been reading about how to bribe yourselves into not dying. Now let me show you what happens when you actually do it.",
+    "context": "Wishonia introduces herself and the purpose of the chapter: showing the results of following the book's advice.",
+    "char_start": 0,
+    "char_end": 143,
+    "start_ms": 360,
+    "end_ms": 9540,
+    "duration_ms": 9180,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 2,
+    "title": "The End of War",
+    "narration_text": "\n\nI'm from a planet also called Wishonia. We stopped having wars four thousand two hundred and ninety-seven years ago.",
+    "context": "The narrator explains the peaceful history of her home planet, Wishonia.",
+    "char_start": 143,
+    "char_end": 261,
+    "start_ms": 8920,
+    "end_ms": 17540,
+    "duration_ms": 8620,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 3,
+    "title": "The Math of Peace",
+    "narration_text": " Not because we evolved morally - we're not that special. We just did the math and realized that dead citizens don't pay taxes or invent things",
+    "context": "Wishonians ended war because it was logically and economically disadvantageous, not because they became morally superior.",
+    "char_start": 261,
+    "char_end": 403,
+    "start_ms": 17260,
+    "end_ms": 27020,
+    "duration_ms": 9760,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 4,
+    "title": "Splitting the Atom",
+    "narration_text": " or have babies who grow up to pay more taxes.\n\nI started watching Earth in nineteen forty-five when you split the atom.",
+    "context": "The narrator notes the economic benefits of living citizens and describes her early observations of Earth during the nuclear age.",
+    "char_start": 403,
+    "char_end": 525,
+    "start_ms": 26720,
+    "end_ms": 34580,
+    "duration_ms": 7860,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 5,
+    "title": "The Atomic Irony",
+    "narration_text": " \"Atom\" comes from the Greek word meaning \"unable to be cut,\" so naturally you cut it. We assumed you were trying to unlock unlimited free energy.",
+    "context": "She comments on the irony of humans splitting the 'indivisible' atom and her planet's initial assumption about human goals.",
+    "char_start": 525,
+    "char_end": 671,
+    "start_ms": 34360,
+    "end_ms": 44280,
+    "duration_ms": 9920,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 6,
+    "title": "Misusing Energy",
+    "narration_text": " Then we realized you were pointing it at each other.\nThis is like inventing the kitchen knife and immediately stabbing yourself in the leg to see if it works.",
+    "context": "The narrator expresses disappointment at how humans used nuclear energy for weapons instead of power.",
+    "char_start": 671,
+    "char_end": 829,
+    "start_ms": 44280,
+    "end_ms": 52900,
+    "duration_ms": 8620,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 7,
+    "title": "The Answer Key",
+    "narration_text": "\n\nThis chapter shows you what your planet looks like after you follow the instructions in this book. Think of it as the answer key to a test you haven't taken yet.",
+    "context": "The chapter is framed as a preview of Earth's potential future if it follows the book's path.",
+    "char_start": 829,
+    "char_end": 994,
+    "start_ms": 52900,
+    "end_ms": 62020,
+    "duration_ms": 9120,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 8,
+    "title": "A World Without War",
+    "narration_text": " You're welcome.\n\nHow My Planet Works.\n\nOn Wishonia, we don't have:\n\nWars (ran the numbers, not profitable).",
+    "context": "Beginning the list of things Wishonia lacks, starting with the unprofitability of war.",
+    "char_start": 994,
+    "char_end": 1098,
+    "start_ms": 61820,
+    "end_ms": 71080,
+    "duration_ms": 9260,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 9,
+    "title": "Eradicating Disease",
+    "narration_text": "\n\nDisease (fixed them all, took about fifty of your years).\n\nDeath from old age (optional now, most people opt out).",
+    "context": "Wishonia has eliminated disease and made biological death from aging an optional occurrence.",
+    "char_start": 1098,
+    "char_end": 1212,
+    "start_ms": 70500,
+    "end_ms": 77860,
+    "duration_ms": 7360,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 10,
+    "title": "No More Paper Money",
+    "narration_text": "\n\nPaper money (we tried it, lasted about as long as you'd expect).\n\nCommittees deciding who gets healthcare (we tried that too, same result).",
+    "context": "The planet moved past paper currency and inefficient healthcare bureaucracy.",
+    "char_start": 1212,
+    "char_end": 1351,
+    "start_ms": 77540,
+    "end_ms": 86740,
+    "duration_ms": 9200,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 11,
+    "title": "A.I. Resource Allocation",
+    "narration_text": "\n\nWe do have:\n\nA.I.-optimized resource allocation (maximizes marginal median happiness through wishocracy).",
+    "context": "Transitioning to what Wishonia does have, specifically A.I. systems that optimize happiness.",
+    "char_start": 1351,
+    "char_end": 1456,
+    "start_ms": 86960,
+    "end_ms": 95080,
+    "duration_ms": 8120,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 12,
+    "title": "Testing and Longevity",
+    "narration_text": "\n\nTreatments tested on everyone simultaneously.\n\nLife expectancy of \"until you're bored\".",
+    "context": "Medical treatments are universal and simultaneous, leading to effectively infinite lifespans.",
+    "char_start": 1456,
+    "char_end": 1543,
+    "start_ms": 94680,
+    "end_ms": 101800,
+    "duration_ms": 7120,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 13,
+    "title": "Economic Motives",
+    "narration_text": "\n\nAn economy where the profit motive and the survival motive are the same motive.\n\nYour species can build this.",
+    "context": "The Wishonian economy aligns profit with life preservation, a system available to humans as well.",
+    "char_start": 1543,
+    "char_end": 1655,
+    "start_ms": 101200,
+    "end_ms": 108340,
+    "duration_ms": 7140,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 14,
+    "title": "Identical Biology",
+    "narration_text": " You have the same atoms we had. Your brains work identically to ours (structurally, not in terms of what you do with them).",
+    "context": "The narrator points out that humans and Wishonians have the same biological and physical foundation.",
+    "char_start": 1655,
+    "char_end": 1778,
+    "start_ms": 107860,
+    "end_ms": 116740,
+    "duration_ms": 8880,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 15,
+    "title": "Divergent Evolution",
+    "narration_text": " The main difference is we stopped spending resources on explosion technology around the time you were still hitting each other with rocks.",
+    "context": "Wishonia's main advantage was choosing to stop developing weapons thousands of years earlier than Earth.",
+    "char_start": 1778,
+    "char_end": 1922,
+    "start_ms": 116740,
+    "end_ms": 124640,
+    "duration_ms": 7900,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 16,
+    "title": "The Three Supers",
+    "narration_text": "\n\nWhat the Optimized World Looks Like.\n\nThe Three Supers.\n\nWhen resources flow toward healing instead of harming,",
+    "context": "Introducing the core concepts of the optimized world: the 'Three Supers' created by healing-focused resource flow.",
+    "char_start": 1922,
+    "char_end": 2032,
+    "start_ms": 124460,
+    "end_ms": 133880,
+    "duration_ms": 9420,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 17,
+    "title": "Politics vs. Potential",
+    "narration_text": " three things happen that your science fiction writers keep predicting and your politicians keep ignoring:",
+    "context": "The narrator notes the gap between scientific imagination and political action on Earth.",
+    "char_start": 2032,
+    "char_end": 2133,
+    "start_ms": 133320,
+    "end_ms": 139260,
+    "duration_ms": 5940,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 18,
+    "title": "Super-Wellbeing",
+    "narration_text": "\n\nSuper-Wellbeing: Depression gets cured. Not \"managed\" with a monthly subscription to sadness pills. *Cured.* Five treatments, pick your favorite.",
+    "context": "Describing the first 'Super': the permanent cure for depression through advanced treatments.",
+    "char_start": 2133,
+    "char_end": 2285,
+    "start_ms": 138680,
+    "end_ms": 150080,
+    "duration_ms": 11400,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 19,
+    "title": "Precision Therapies",
+    "narration_text": "\n\nPrecision therapies that actually work because you tested them on millions of willing participants instead of twelve college students who needed beer money.",
+    "context": "High-quality medical data from massive participant pools leads to highly effective therapies.",
+    "char_start": 2285,
+    "char_end": 2443,
+    "start_ms": 150080,
+    "end_ms": 159360,
+    "duration_ms": 9280,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 20,
+    "title": "Super-Longevity",
+    "narration_text": "\n\nSuper-Longevity: Aging slows, then reverses. Your body becomes programmable. Death becomes optional.",
+    "context": "Describing the second 'Super': programmable biology that makes aging and death optional.",
+    "char_start": 2443,
+    "char_end": 2542,
+    "start_ms": 159120,
+    "end_ms": 167600,
+    "duration_ms": 8480,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 21,
+    "title": "Yelp Reviews for Death",
+    "narration_text": " Most try it once for the novelty, then decide they'd rather keep living. (Death currently holds two point three stars on Yelp. \"Would not recommend,\" writes everyone.).",
+    "context": "A humorous take on how Wishonians view death as an unpopular, low-rated experience.",
+    "char_start": 2542,
+    "char_end": 2713,
+    "start_ms": 167480,
+    "end_ms": 177400,
+    "duration_ms": 9920,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 22,
+    "title": "Super-Intelligence",
+    "narration_text": "\n\nSuper-Intelligence: A.I. optimized for \"maximize median health and happiness\" solves problems human scientists couldn't touch.",
+    "context": "Describing the third 'Super': A.I. dedicated to solving complex health and happiness problems.",
+    "char_start": 2713,
+    "char_end": 2839,
+    "start_ms": 177580,
+    "end_ms": 187540,
+    "duration_ms": 9960,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 23,
+    "title": "Simulation Speed",
+    "narration_text": " Not because humans are dumb (well, partly), but because the A.I. can run a billion simulations while you're still arguing about whether your coffee is good.",
+    "context": "Explaining that A.I. superiority comes from its incredible speed in running simulations.",
+    "char_start": 2839,
+    "char_end": 2996,
+    "start_ms": 186860,
+    "end_ms": 197360,
+    "duration_ms": 10500,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 24,
+    "title": "Biology as Software",
+    "narration_text": "\n\nBiology Becomes Software.\n\nYour body runs Body O.S. twelve point three. Updates every Tuesday.",
+    "context": "The narrator describes how biological life is managed like modern computer software with regular updates.",
+    "char_start": 2996,
+    "char_end": 3090,
+    "start_ms": 197360,
+    "end_ms": 206040,
+    "duration_ms": 8680,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 25,
+    "title": "Robot Lab Assistants",
+    "narration_text": "\n\nRobot lab assistants perform experiments one thousand times faster than humans (they don't need lunch breaks, bathroom breaks, or existential crises).",
+    "context": "Autonomous robots handle the scientific labor, accelerating the pace of discovery.",
+    "char_start": 3090,
+    "char_end": 3242,
+    "start_ms": 206720,
+    "end_ms": 218300,
+    "duration_ms": 11580,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 26,
+    "title": "Cosmic Sudoku",
+    "narration_text": " AlphaFold maps every protein like solving cosmic sudoku. Drug companies design, synthesize, and validate new treatments over weekends.",
+    "context": "The rapid speed of drug development and protein mapping in the optimized world.",
+    "char_start": 3242,
+    "char_end": 3382,
+    "start_ms": 218200,
+    "end_ms": 230780,
+    "duration_ms": 12580,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 27,
+    "title": "Biological Patches",
+    "narration_text": "\n\nToday's body patches include cancer immunity, Alzheimer's prevention, perfect pitch, airplane food digestion, cryptocurrency comprehension, and jazz appreciation.",
+    "context": "A list of advanced biological upgrades available as 'patches' to the human body.",
+    "char_start": 3382,
+    "char_end": 3543,
+    "start_ms": 230320,
+    "end_ms": 245780,
+    "duration_ms": 15460,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 28,
+    "title": "Programmable Genetics",
+    "narration_text": "\n\nDon't like your genetics? Change them. The only limits are imagination and noise ordinances.",
+    "context": "The total freedom for individuals to edit their own genetic code.",
+    "char_start": 3543,
+    "char_end": 3639,
+    "start_ms": 245780,
+    "end_ms": 253600,
+    "duration_ms": 7820,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 29,
+    "title": "Optimized Tuesday",
+    "narration_text": "\n\nA Day in the Optimized Life.\n\nHere's what Tuesday looks like when the Three Supers are normal:",
+    "context": "The narrator begins a walkthrough of a typical day in this futuristic, optimized society.",
+    "char_start": 3639,
+    "char_end": 3732,
+    "start_ms": 253600,
+    "end_ms": 262180,
+    "duration_ms": 8580,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 30,
+    "title": "Natural Awakening",
+    "narration_text": "\n\nSix A.M. Wake up naturally. Body O.S. twelve point three optimized your sleep. You feel excellent. No alarm needed.",
+    "context": "In the optimized future, sleep and waking are perfectly managed by the body's operating system.",
+    "char_start": 3732,
+    "char_end": 3847,
+    "start_ms": 261740,
+    "end_ms": 272160,
+    "duration_ms": 10420,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 31,
+    "title": "Restored Rhythms",
+    "narration_text": " Your circadian rhythm works correctly for the first time in human history.",
+    "context": "The final conclusion on how biology finally works as intended, ending the text block.",
+    "char_start": 3847,
+    "char_end": 3923,
+    "start_ms": 271300,
+    "end_ms": 277340,
+    "duration_ms": 6040,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 32,
+    "title": "Breakfast Labels",
+    "narration_text": "Seven A.M. Breakfast. Outcome Labels tell you exactly how each food affects your body. Dark chocolate improves cognitive function by twenty-three percent.",
+    "context": "The narrator starts their day with high-tech nutritional feedback.",
+    "char_start": 7894,
+    "char_end": 8047,
+    "start_ms": 562300,
+    "end_ms": 574240,
+    "duration_ms": 11940,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 33,
+    "title": "Optimization Cost",
+    "narration_text": " Your gut bacteria got optimized to make you fifteen percent funnier. Cost: zero dollars. The peace dividend covers it, and nobody had to set up a",
+    "context": "Humorous biological upgrades provided for free by the peace dividend.",
+    "char_start": 7894,
+    "char_end": 9489,
+    "start_ms": 562300,
+    "end_ms": 676600,
+    "duration_ms": 114300,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 34,
+    "title": "Morning IQ",
+    "narration_text": " You adjust your I.Q. to eighty for morning news (otherwise it's unwatchable), then two hundred for work. Nine A.M. Work on your passion project.",
+    "context": "The narrator uses technology to modify their intelligence levels for different tasks.",
+    "char_start": 8047,
+    "char_end": 8194,
+    "start_ms": 573900,
+    "end_ms": 582980,
+    "duration_ms": 9080,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 35,
+    "title": "Dolphin Coding",
+    "narration_text": " Today: teaching dolphins to code. They're better than most bootcamp graduates. Universal Basic Income (funded by the peace dividend) means you work",
+    "context": "The narrator works on a whimsical project while supported by UBI.",
+    "char_start": 8194,
+    "char_end": 8343,
+    "start_ms": 583540,
+    "end_ms": 592500,
+    "duration_ms": 8960,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 36,
+    "title": "Wishocracy Allocation",
+    "narration_text": " because you want to, not because landlords exist. Your Wishocracy allocation takes three seconds: ninety percent curing blindness, ten percent curing",
+    "context": "Explaining the lack of financial pressure and the ease of philanthropic voting.",
+    "char_start": 8343,
+    "char_end": 8494,
+    "start_ms": 592500,
+    "end_ms": 602680,
+    "duration_ms": 10180,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 37,
+    "title": "AI Twin",
+    "narration_text": " baldness. Your A.I. twin handles ten thousand other decisions while you drink coffee. Twelve P.M. Lunch with your friend who died last year.",
+    "context": "The narrator's AI handles life's complexities before a meeting with a resurrected friend.",
+    "char_start": 8494,
+    "char_end": 8635,
+    "start_ms": 602680,
+    "end_ms": 613900,
+    "duration_ms": 11220,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 38,
+    "title": "Grandma from Mars",
+    "narration_text": " They got better. Death is reversible now. Your great-great-grandmother (one hundred and fifty, looks twenty-five) joins via hologram from her Mars",
+    "context": "The narrator discusses the reversibility of death and family longevity via space holograms.",
+    "char_start": 8635,
+    "char_end": 8782,
+    "start_ms": 613520,
+    "end_ms": 625440,
+    "duration_ms": 11920,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 39,
+    "title": "Neural Download",
+    "narration_text": " artist residency. Your dog is technically a minor deity. Nobody questions it. Two P.M. Learn Mandarin via neural download. Takes four minutes.",
+    "context": "Exotic family pets and the instantaneous nature of futuristic learning.",
+    "char_start": 8782,
+    "char_end": 8925,
+    "start_ms": 625440,
+    "end_ms": 635040,
+    "duration_ms": 9600,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 40,
+    "title": "AI Autonomy",
+    "narration_text": " You already learned Spanish, French, and Klingon yesterday. Your A.I. reminds you about your three P.M. meeting. You missed it. Nobody cares.",
+    "context": "The narrator describes polyglot skills and the relaxed nature of schedules.",
+    "char_start": 8925,
+    "char_end": 9066,
+    "start_ms": 635040,
+    "end_ms": 645580,
+    "duration_ms": 10540,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 41,
+    "title": "Swarm Intelligence",
+    "narration_text": " The project finished itself using swarm intelligence. Four P.M. Annual health checkup. Nanobots scanned you while you slept.",
+    "context": "Projects finish themselves while high-tech medical scans happen automatically.",
+    "char_start": 9066,
+    "char_end": 9190,
+    "start_ms": 645040,
+    "end_ms": 654940,
+    "duration_ms": 9900,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 42,
+    "title": "Nano-Checkup",
+    "narration_text": " They found and eliminated a precancerous cell at three cells, not three billion. An A.I. ran a billion simulations on your genome because it was bored.",
+    "context": "Detailing the extreme precision and boredom-driven power of future healthcare AI.",
+    "char_start": 9190,
+    "char_end": 9342,
+    "start_ms": 654820,
+    "end_ms": 666200,
+    "duration_ms": 11380,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 43,
+    "title": "Family Dinner",
+    "narration_text": " GoFundMe. Six P.M. Family dinner. Everyone's here because nobody dies anymore (unless they want to, and that's between them and their therapist).",
+    "context": "The family gathers in a world where death is a choice, not a mandate.",
+    "char_start": 9489,
+    "char_end": 9635,
+    "start_ms": 676600,
+    "end_ms": 687840,
+    "duration_ms": 11240,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 44,
+    "title": "Genetic Modifications",
+    "narration_text": " Planning next week's body modifications: daughter wants wings, son wants gills, you're considering photosynthesis so you never have to cook again.",
+    "context": "The family discusses choosing new biological features for themselves.",
+    "char_start": 9635,
+    "char_end": 9782,
+    "start_ms": 687400,
+    "end_ms": 698300,
+    "duration_ms": 10900,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 45,
+    "title": "Collective Consciousness",
+    "narration_text": " Nine P.M. Upload today's experiences to collective consciousness. Download everyone else's. You've now lived eight billion days in one day.",
+    "context": "The narrator experiences a massive shared reality with the rest of the world.",
+    "char_start": 9782,
+    "char_end": 9922,
+    "start_ms": 697820,
+    "end_ms": 708760,
+    "duration_ms": 10940,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 46,
+    "title": "Social Media Peace",
+    "narration_text": " Time is weird. Twitter is tolerable because everyone's right about everything simultaneously. (This was the hardest problem to solve. Harder than death.).",
+    "context": "A humorous observation on how shared truth fixed social media conflicts.",
+    "char_start": 9922,
+    "char_end": 10077,
+    "start_ms": 708620,
+    "end_ms": 719740,
+    "duration_ms": 11120,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 47,
+    "title": "Dream Suite",
+    "narration_text": " Ten P.M.: Sleep in programmable dream suite. Tonight's dreams designed by Pixar, sponsored by nobody (advertising died when scarcity did).",
+    "context": "Preparing for sleep in a world without ads or resource scarcity.",
+    "char_start": 10077,
+    "char_end": 10217,
+    "start_ms": 719620,
+    "end_ms": 731200,
+    "duration_ms": 11580,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 48,
+    "title": "Morning Renewal",
+    "narration_text": " Your body repairs itself, reverses aging, backs up your consciousness. Tomorrow you might try being twenty-five again. Or a dolphin.",
+    "context": "Automated physical repair and the options for the next day's form.",
+    "char_start": 10217,
+    "char_end": 10349,
+    "start_ms": 731200,
+    "end_ms": 740440,
+    "duration_ms": 9240,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 49,
+    "title": "Historical Diseases",
+    "narration_text": " The dolphins say it's great. The Diseases That Stopped Existing. You remember these the way you remember dial-up internet. Vaguely horrifying in",
+    "context": "Reflecting on ancient diseases as outdated, clunky relics of the past.",
+    "char_start": 10349,
+    "char_end": 10494,
+    "start_ms": 740380,
+    "end_ms": 749600,
+    "duration_ms": 9220,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 50,
+    "title": "Trampoline Parks",
+    "narration_text": " retrospect. Most cancers are detected at stage zero and eliminated immediately, turning the oncology wing of the hospital into a trampoline park.",
+    "context": "How the elimination of cancer changed hospital architecture.",
+    "char_start": 10494,
+    "char_end": 10640,
+    "start_ms": 749200,
+    "end_ms": 761480,
+    "duration_ms": 12280,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 51,
+    "title": "Alzheimer's Reversal",
+    "narration_text": " Type two diabetes is prevented with personalized nutrition. Alzheimer's is caught twenty years before symptoms and reversed completely.",
+    "context": "Listing the specific medical victories of the new era.",
+    "char_start": 10640,
+    "char_end": 10777,
+    "start_ms": 761280,
+    "end_ms": 771920,
+    "duration_ms": 10640,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 52,
+    "title": "Arterial Service",
+    "narration_text": " Heart disease involves arteries cleaned monthly like oil changes. Depression is treated with precision therapies that actually work, not \"have you",
+    "context": "Describing routine physical maintenance and effective mental health care.",
+    "char_start": 10777,
+    "char_end": 10926,
+    "start_ms": 770980,
+    "end_ms": 782140,
+    "duration_ms": 11160,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 53,
+    "title": "Aging Rate",
+    "narration_text": " tried going for a walk?\". Aging still happens, but forty percent slower. In the first generation after the treaty, death still exists.",
+    "context": "Contrasting old advice with new science and the transition to long lives.",
+    "char_start": 10926,
+    "char_end": 11061,
+    "start_ms": 782140,
+    "end_ms": 793100,
+    "duration_ms": 10960,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 54,
+    "title": "Extended Lifespans",
+    "narration_text": " You're not immortal yet. But you die at one hundred and fifty after a good life, not at seventy-five from something that was fixable the whole time.",
+    "context": "Comparing the old life expectancy with the new, healthier standard.",
+    "char_start": 11061,
+    "char_end": 11210,
+    "start_ms": 792840,
+    "end_ms": 804080,
+    "duration_ms": 11240,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 55,
+    "title": "Ironical Death",
+    "narration_text": " Give it another generation, and \"die\" becomes a verb you use ironically. On my planet, this happened four thousand years ago. You're catching up",
+    "context": "The narrator reveals they are an alien observing Earth's progress.",
+    "char_start": 11210,
+    "char_end": 11356,
+    "start_ms": 803920,
+    "end_ms": 814620,
+    "duration_ms": 10700,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 56,
+    "title": "Peace Dividend Economy",
+    "narration_text": " quickly. The Peace Dividend Economy. Even in paradise, economics matters. Money still exists. It just flows toward things that don't explode.",
+    "context": "Explaining the shift from military spending to social investment.",
+    "char_start": 11356,
+    "char_end": 11498,
+    "start_ms": 814520,
+    "end_ms": 826740,
+    "duration_ms": 12220,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 57,
+    "title": "Economic Gravity",
+    "narration_text": " (Low bar, but you'd be surprised how long it took you to clear it.). When resources redirect from weapons to cures, economic gravity shifts.",
+    "context": "The natural result of stopping war and funding life-saving science.",
+    "char_start": 11498,
+    "char_end": 11639,
+    "start_ms": 826740,
+    "end_ms": 837200,
+    "duration_ms": 10460,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 58,
+    "title": "Cures vs Fighter Jets",
+    "narration_text": " Scientists and investors get better returns curing Alzheimer's than building fighter jets. Peace becomes profitable. Greed doesn't disappear (you're",
+    "context": "The realization that saving lives is more profitable than taking them.",
+    "char_start": 11639,
+    "char_end": 11790,
+    "start_ms": 837680,
+    "end_ms": 849960,
+    "duration_ms": 12280,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 59,
+    "title": "Greed in a Lab Coat",
+    "narration_text": " still human). It just starts wearing a lab coat. Annual Global Redirected Funds.",
+    "context": "A final thought on human nature and the redirection of global wealth.",
+    "char_start": 11790,
+    "char_end": 11871,
+    "start_ms": 849960,
+    "end_ms": 855140,
+    "duration_ms": 5180,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 60,
+    "title": "Peace Treaty and Military Redirection",
+    "narration_text": "After the initial one percent treaty proved successful, nations gradually redirected more.\n\nOne point three five trillion dollars was redirected from military budgets.",
+    "context": "The global success of the initial peace treaty leads to massive redirection of defense funds.",
+    "char_start": 15882,
+    "char_end": 16048,
+    "start_ms": 1142960,
+    "end_ms": 1156810,
+    "duration_ms": 13850,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 61,
+    "title": "Economic and Healthcare Gains",
+    "narration_text": "\n\nEconomic growth from a healthy population added three point five trillion dollars.\n\nReduced healthcare costs saved two point eight trillion dollars.",
+    "context": "Financial data showing the massive economic benefits of a healthier, more stable global population.",
+    "char_start": 16048,
+    "char_end": 16198,
+    "start_ms": 1155860,
+    "end_ms": 1168340,
+    "duration_ms": 12480,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 62,
+    "title": "The Total Peace Dividend",
+    "narration_text": "\n\nProductivity gains from longevity contributed four point one trillion dollars.\n\nThe total annual peace dividend reached eleven point seven five trillion dollars.",
+    "context": "Calculating the cumulative financial impact of living longer and redirecting war funds.",
+    "char_start": 16198,
+    "char_end": 16360,
+    "start_ms": 1167980,
+    "end_ms": 1175840,
+    "duration_ms": 7860,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 63,
+    "title": "Wealth per Individual",
+    "narration_text": "\n\nThat's one thousand four hundred and seventy dollars per human per year in actual new wealth. Not redistribution.",
+    "context": "Breaking down the dividend into a per-person figure, emphasizing that it is newly created value.",
+    "char_start": 16360,
+    "char_end": 16475,
+    "start_ms": 600443,
+    "end_ms": 604663,
+    "duration_ms": 4220,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 64,
+    "title": "Innovation and Longevity",
+    "narration_text": " New wealth generated by the radical innovation of people not being sick or dead. Alive, healthy people are productive.",
+    "context": "Explaining the simple but powerful logic that health directly drives economic productivity.",
+    "char_start": 16475,
+    "char_end": 16595,
+    "start_ms": 604663,
+    "end_ms": 609068,
+    "duration_ms": 4405,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 65,
+    "title": "Your Corporate Heroes",
+    "narration_text": " Who knew? (Everyone. Everyone knew. For centuries. You just kept not doing it.).\n\nYour Corporate Heroes.",
+    "context": "A sarcastic remark on historical inaction followed by the introduction of corporations that changed their focus.",
+    "char_start": 16595,
+    "char_end": 16702,
+    "start_ms": 609068,
+    "end_ms": 612995,
+    "duration_ms": 3927,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 66,
+    "title": "Transfer of Engineering Skills",
+    "narration_text": "\n\nSame companies that made weapons now make life. Turns out the skills transfer beautifully. Guidance systems, targeting algorithms, precision engineering.",
+    "context": "Highlighting how defense technologies were repurposed for life-saving medical applications.",
+    "char_start": 16702,
+    "char_end": 16856,
+    "start_ms": 612995,
+    "end_ms": 618647,
+    "duration_ms": 5652,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 67,
+    "title": "Lockheed Martin's Satellites",
+    "narration_text": " All very useful when the target is cancer instead of a village. Lockheed Martin Health: Cancer-detecting satellites spot tumors from orbit.",
+    "context": "Specific example of a defense giant using orbital technology to monitor human health.",
+    "char_start": 16856,
+    "char_end": 16997,
+    "start_ms": 618647,
+    "end_ms": 623822,
+    "duration_ms": 5175,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 68,
+    "title": "The Value of Living Customers",
+    "narration_text": " Stock price: twelve thousand dollars per share. Shareholders discover that alive customers buy more things.",
+    "context": "The economic epiphany that keeping customers alive is more profitable than the military-industrial complex.",
+    "char_start": 16997,
+    "char_end": 17104,
+    "start_ms": 623822,
+    "end_ms": 627749,
+    "duration_ms": 3927,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 69,
+    "title": "Raytheon's Surgical Robots",
+    "narration_text": "\n\nRaytheon Wellness: Missile guidance systems make excellent surgical robots. Fifty million perfect surgeries performed.",
+    "context": "How missile precision technology transformed into the world's most accurate surgical tools.",
+    "char_start": 17104,
+    "char_end": 17217,
+    "start_ms": 627749,
+    "end_ms": 631896,
+    "duration_ms": 4147,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 70,
+    "title": "Boston Dynamics' Elderly Care",
+    "narration_text": " Zero villages destroyed. A personal best.\n\nBoston Dynamics: Robots help elderly walk. The dancing is still cute, now therapeutic.",
+    "context": "Contrast between past destruction and current robotic assistance for the aging population.",
+    "char_start": 17217,
+    "char_end": 17341,
+    "start_ms": 631896,
+    "end_ms": 636447,
+    "duration_ms": 4551,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 71,
+    "title": "Palantir's Disease Prediction",
+    "narration_text": "\n\nPalantir Health Insights: Data analysis predicts disease outbreaks before they happen. Privacy-protected, transparent, saves lives.",
+    "context": "Using big data to preemptively stop pandemics while maintaining privacy standards.",
+    "char_start": 17341,
+    "char_end": 17476,
+    "start_ms": 636447,
+    "end_ms": 641402,
+    "duration_ms": 4955,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 72,
+    "title": "New Social Challenges",
+    "narration_text": " Still creepy, but helpfully creepy. Like a doctor who memorizes your schedule.\n\nYour New Problems.",
+    "context": "A humorous take on invasive data followed by a transition to the problems caused by success.",
+    "char_start": 17476,
+    "char_end": 17575,
+    "start_ms": 641402,
+    "end_ms": 645036,
+    "duration_ms": 3634,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 73,
+    "title": "Longevity Overflow Issues",
+    "narration_text": "\n\nLongevity Overflow: Too many healthy one hundred year olds want to work.\n\nGovernment crisis meetings about citizens being \"too productive and won't stop contributing to society.\"",
+    "context": "The unexpected societal issue where people are living so long and staying so healthy they won't retire.",
+    "char_start": 17575,
+    "char_end": 17742,
+    "start_ms": 645036,
+    "end_ms": 651165,
+    "duration_ms": 6129,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 74,
+    "title": "Flexible Career Solutions",
+    "narration_text": "\n\nSolution: three-day work weeks and multiple careers per lifetime.\n\nEducation Inflation: When you live to one hundred and fifty, you need more things to learn.",
+    "context": "Policy changes to accommodate a longer life, including shorter work weeks and continuous learning.",
+    "char_start": 17742,
+    "char_end": 17898,
+    "start_ms": 651165,
+    "end_ms": 656890,
+    "duration_ms": 5725,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 75,
+    "title": "Century Degrees and FOMO",
+    "narration_text": "\n\nUniversities offer \"Century Degrees\" - one hundred year educational plans.\n\nExperience FOMO: With health and time, people worry about missing experiences.",
+    "context": "The evolution of education and the psychological pressure of having 'too much' time.",
+    "char_start": 17898,
+    "char_end": 18053,
+    "start_ms": 656890,
+    "end_ms": 662579,
+    "duration_ms": 5689,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 76,
+    "title": "Long-term Planning and Purpose",
+    "narration_text": "\n\nTravel agencies book trips fifty years in advance.\n\nPurpose Anxiety: When you're not worried about dying, you worry about meaning.",
+    "context": "As physical survival is guaranteed, the focus shifts to long-term goals and existential fulfillment.",
+    "char_start": 18053,
+    "char_end": 18185,
+    "start_ms": 662579,
+    "end_ms": 667424,
+    "duration_ms": 4845,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 77,
+    "title": "The Philosophy Major Boom",
+    "narration_text": "\n\nPhilosophy becomes fastest-growing major.\n\nPhilosophers are thrilled. (This is the first time anyone has used \"philosophers\" and \"thrilled\" in the same sentence.).",
+    "context": "Humorous observation about the sudden social relevance and popularity of philosophy.",
+    "char_start": 18185,
+    "char_end": 18344,
+    "start_ms": 667424,
+    "end_ms": 673259,
+    "duration_ms": 5835,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 78,
+    "title": "Achieving Super-Intelligence",
+    "narration_text": "\n\nThese are luxury problems. You'll take them over cancer.\n\nThe Three Supers Complete.\n\nSuper-Intelligence: Complete.",
+    "context": "Dismissing luxury problems as a fair trade for health and announcing the completion of 'Super-Intelligence'.",
+    "char_start": 18344,
+    "char_end": 18456,
+    "start_ms": 673259,
+    "end_ms": 677370,
+    "duration_ms": 4111,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 79,
+    "title": "Speed of Debate",
+    "narration_text": " Every human accesses all knowledge instantly. Debates end in nanoseconds because you can simulate all perspectives simultaneously.",
+    "context": "Describing how instant knowledge and perspective-simulation have changed human communication.",
+    "char_start": 18456,
+    "char_end": 18587,
+    "start_ms": 677370,
+    "end_ms": 682178,
+    "duration_ms": 4808,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 80,
+    "title": "The End of Death",
+    "narration_text": " Arguments still happen, but now they're about interesting things.\n\nSuper-Longevity: Solved. Death is like moving to Ohio.",
+    "context": "Human conflict remains but becomes more intellectual, while death becomes a rare, optional choice.",
+    "char_start": 18587,
+    "char_end": 18707,
+    "start_ms": 682178,
+    "end_ms": 686582,
+    "duration_ms": 4404,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 81,
+    "title": "Death Sues for Termination",
+    "narration_text": " Technically possible but nobody does it voluntarily. Some choose to die for artistic reasons. They get better. Death sues for wrongful termination. Case dismissed.",
+    "context": "A surreal legal joke about the obsolescence of mortality in the new era.",
+    "char_start": 18707,
+    "char_end": 18871,
+    "start_ms": 686582,
+    "end_ms": 692601,
+    "duration_ms": 6019,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 82,
+    "title": "The End of Suffering",
+    "narration_text": "\n\nSuper-Wellbeing: Perfected. Suffering exists only in history classes. Students don't believe it was real. \"People felt bad without choosing to? That's insane.\"",
+    "context": "The final 'Super' state where biological or emotional suffering is completely eradicated.",
+    "char_start": 18871,
+    "char_end": 19028,
+    "start_ms": 692601,
+    "end_ms": 698363,
+    "duration_ms": 5762,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 83,
+    "title": "North Korea Disbands",
+    "narration_text": ".\n\nThe last military on Earth (North Korea, obviously) finally disbands. They were defending against an enemy that stopped existing forty years ago.",
+    "context": "The final transition of the last holdout nation into the new global paradigm of peace.",
+    "char_start": 19028,
+    "char_end": 19175,
+    "start_ms": 698363,
+    "end_ms": 703759,
+    "duration_ms": 5396,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 84,
+    "title": "Magic and Interpretive Dance",
+    "narration_text": " The soldiers become interpretive dancers. They're surprisingly good. Earth's status: Chose healing. Became magic. Next goal: befriend entropy.",
+    "context": "A summary of Earth's current status as a healed, 'magical' planet with high-level cosmic goals.",
+    "char_start": 19175,
+    "char_end": 19316,
+    "start_ms": 703759,
+    "end_ms": 708934,
+    "duration_ms": 5175,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 85,
+    "title": "Programmable Software Bodies",
+    "narration_text": "\n\nYour Personal Future.\n\nHealth: Live to one hundred and fifty plus (or forever).\n\nYour body is programmable software.",
+    "context": "A direct address to the listener about the biological upgrades available in their future.",
+    "char_start": 19316,
+    "char_end": 19431,
+    "start_ms": 708934,
+    "end_ms": 713154,
+    "duration_ms": 4220,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 86,
+    "title": "Reversible Death",
+    "narration_text": "\n\nDebug it, upgrade it, back it up.\n\nDeath is optional, reversible, and increasingly unpopular.",
+    "context": "Describing the digital-like maintenance of the human body and the optionality of dying.",
+    "char_start": 19431,
+    "char_end": 19523,
+    "start_ms": 713154,
+    "end_ms": 716531,
+    "duration_ms": 3377,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 87,
+    "title": "Universal Basic Income",
+    "narration_text": "\n\nWealth: Peace dividend provides fifty thousand dollars per year universal basic income. Money barely matters in post-scarcity.",
+    "context": "The financial reality of the future, where everyone is provided for and money is obsolete.",
+    "char_start": 19523,
+    "char_end": 19654,
+    "start_ms": 716531,
+    "end_ms": 721339,
+    "duration_ms": 4808,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 88,
+    "title": "Post-Scarcity Family Life",
+    "narration_text": "\n\nWork is play.\n\nPlay is work.\n\nBoth optional.\n\nFamily: You'll meet your great-great-great-grandchildren.",
+    "context": "Closing thoughts on a life of choice, creativity, and incredible multi-generational family connections.",
+    "char_start": 19654,
+    "char_end": 19760,
+    "start_ms": 721339,
+    "end_ms": 725229,
+    "duration_ms": 3890,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 89,
+    "title": "Virtual Dimensions",
+    "narration_text": "Family reunions happen in virtual dimensions because stadiums are too small.\n\nYour dog is immortal and possibly telepathic.",
+    "context": "The narrator describes the futuristic social and domestic life of humans, where space and pet longevity are no longer issues.",
+    "char_start": 23750,
+    "char_end": 23872,
+    "start_ms": 871670,
+    "end_ms": 876147,
+    "duration_ms": 4477,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 90,
+    "title": "New Purposes",
+    "narration_text": "\n\nPurpose: With survival handled, you focus on what matters: creating universes, solving entropy, talking to aliens,",
+    "context": "With basic survival guaranteed, humanity turns its attention to cosmic challenges and grand creations.",
+    "char_start": 23872,
+    "char_end": 23987,
+    "start_ms": 876147,
+    "end_ms": 880368,
+    "duration_ms": 4221,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 91,
+    "title": "The Sandwich Faction",
+    "narration_text": " becoming one with the cosmos, or perfecting the sandwich. All equally valid. The sandwich people are making real progress.",
+    "context": "The narrator explains that in the future, pursuing simple culinary perfection is just as respected as cosmic exploration.",
+    "char_start": 23987,
+    "char_end": 24112,
+    "start_ms": 880368,
+    "end_ms": 884956,
+    "duration_ms": 4588,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 92,
+    "title": "Ceremonial Graduation",
+    "narration_text": "\n\nDeath: Like graduation - optional, reversible, mostly ceremonial. Some collect deaths like stamps. \"I've died forty-seven times!",
+    "context": "Death has been conquered and is now viewed as a reversible milestone or even a hobby for some.",
+    "char_start": 24112,
+    "char_end": 24241,
+    "start_ms": 884956,
+    "end_ms": 889690,
+    "duration_ms": 4734,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 93,
+    "title": "The Health Domino Effect",
+    "narration_text": " Tokyo was my favorite.\".\n\nWhat Fixing Health Fixed.\n\nNobody predicted this (I predicted this): fixing health fixed everything else.",
+    "context": "The narrator points out that solving healthcare issues triggered a chain reaction that solved many other global problems.",
+    "char_start": 24241,
+    "char_end": 24373,
+    "start_ms": 889690,
+    "end_ms": 894535,
+    "duration_ms": 4845,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 94,
+    "title": "Climate Change Solved",
+    "narration_text": " Like pulling one thread and the whole sweater of human misery unravels.\n\nClimate Change: Solved the moment everyone realized",
+    "context": "Solving health issues led to an immediate shift in how humanity addressed long-term environmental threats.",
+    "char_start": 24373,
+    "char_end": 24497,
+    "start_ms": 894535,
+    "end_ms": 899086,
+    "duration_ms": 4551,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 95,
+    "title": "Longevity and Sea Levels",
+    "narration_text": " they'd personally be alive to see the consequences. Amazing how much you care about sea levels when your beach house needs to",
+    "context": "People start caring about the environment once they realize they will live long enough to experience the disaster.",
+    "char_start": 24497,
+    "char_end": 24623,
+    "start_ms": 899086,
+    "end_ms": 903711,
+    "duration_ms": 4625,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 96,
+    "title": "The End of Poverty",
+    "narration_text": " last one hundred and fifty years.\n\nPoverty: Global G.D.P. tripled when you stopped losing productive years to preventable disease.",
+    "context": "The economic impact of eliminating disease is a massive surge in global wealth and productivity.",
+    "char_start": 24623,
+    "char_end": 24756,
+    "start_ms": 903711,
+    "end_ms": 908592,
+    "duration_ms": 4881,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 97,
+    "title": "The Cure for Poverty",
+    "narration_text": "\n\nIt turns out the cure for poverty was curing everything else first.\n\nEducation: When you live to one hundred and fifty,",
+    "context": "The narrator reflects on how health was the foundational pillar needed to fix economic and educational systems.",
+    "char_start": 24756,
+    "char_end": 24878,
+    "start_ms": 908592,
+    "end_ms": 913070,
+    "duration_ms": 4478,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 98,
+    "title": "Global Literacy",
+    "narration_text": " twenty years of education makes sense.\n\nGlobal literacy hit ninety-nine point nine percent.\n\nInnovation: Healthy brains think better.",
+    "context": "With longer lifespans, extended education becomes standard, leading to nearly perfect global literacy and improved cognition.",
+    "char_start": 24878,
+    "char_end": 25011,
+    "start_ms": 913070,
+    "end_ms": 917951,
+    "duration_ms": 4881,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 99,
+    "title": "Scientific Output",
+    "narration_text": "\n\nMore breakthrough discoveries in twenty years than the previous two hundred. It's almost as if not poisoning your scientists",
+    "context": "Humanity experiences a massive leap in innovation because researchers are healthier and living longer.",
+    "char_start": 25011,
+    "char_end": 25137,
+    "start_ms": 917951,
+    "end_ms": 922575,
+    "duration_ms": 4624,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 100,
+    "title": "Longevity and Peace",
+    "narration_text": " improves their output.\n\nPeace: Hard to start a war when your citizens have one hundred and thirty years of remaining life expectancy.",
+    "context": "War becomes unappealing when the population has a century or more of life ahead of them.",
+    "char_start": 25137,
+    "char_end": 25271,
+    "start_ms": 922575,
+    "end_ms": 927493,
+    "duration_ms": 4918,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 101,
+    "title": "Reluctant Soldiers",
+    "narration_text": "\n\nA one-hundred-and-fifty-year-old is significantly less keen on dying for a flag than an eighteen-year-old.",
+    "context": "The wisdom of age makes people less likely to sacrifice their lives for nationalism.",
+    "char_start": 25271,
+    "char_end": 25378,
+    "start_ms": 927493,
+    "end_ms": 931420,
+    "duration_ms": 3927,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 102,
+    "title": "Posters and Happiness",
+    "narration_text": "\n\nRecruitment posters don't work on people who've already been eighteen twice.\n\nHappiness: Not dying of preventable diseases",
+    "context": "The narrator notes that military recruitment fails when people have lived multiple 'lifetimes' of experience.",
+    "char_start": 25378,
+    "char_end": 25503,
+    "start_ms": 931420,
+    "end_ms": 936008,
+    "duration_ms": 4588,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 103,
+    "title": "Stating the Obvious",
+    "narration_text": " makes people happier.\n\nI apologize for stating something so obvious. But given that you spent four thousand years not acting on it,",
+    "context": "The narrator highlights the absurdity of how long it took humanity to prioritize health despite its obvious benefits.",
+    "char_start": 25503,
+    "char_end": 25636,
+    "start_ms": 936008,
+    "end_ms": 940890,
+    "duration_ms": 4882,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 104,
+    "title": "Message from the Future",
+    "narration_text": " apparently somebody needed to.\n\nMessage from the Future.\n\nDear Present You,\n\nThis message comes from a world where your children",
+    "context": "A direct address to the present generation from a future where humanity has finally flourished.",
+    "char_start": 25636,
+    "char_end": 25764,
+    "start_ms": 940890,
+    "end_ms": 945587,
+    "duration_ms": 4697,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 105,
+    "title": "Treatable Challenges",
+    "narration_text": " live to one hundred and fifty.\n\nWhere cancer is as treatable as a cold. Where depression has precise, effective treatments.",
+    "context": "The future world has mastered medicine, turning once-deadly or debilitating conditions into minor inconveniences.",
+    "char_start": 25764,
+    "char_end": 25887,
+    "start_ms": 945587,
+    "end_ms": 950102,
+    "duration_ms": 4515,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 106,
+    "title": "Humanity Collaborates",
+    "narration_text": "\n\nWhere aging is a choice, not a sentence. Where humanity collaborates instead of competing to see who can destroy things fastest.",
+    "context": "Society has shifted from destructive competition to global collaboration and choice-based aging.",
+    "char_start": 25887,
+    "char_end": 26018,
+    "start_ms": 950102,
+    "end_ms": 954910,
+    "duration_ms": 4808,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 107,
+    "title": "Profitable Healing",
+    "narration_text": "\n\nThis world exists because you finally made one choice:\n\nYou made healing people more profitable than killing them.",
+    "context": "The turning point for humanity was a shift in economic incentives toward preservation rather than destruction.",
+    "char_start": 26018,
+    "char_end": 26133,
+    "start_ms": 954910,
+    "end_ms": 959130,
+    "duration_ms": 4220,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 108,
+    "title": "The Chocolate Truth",
+    "narration_text": "\n\nYour great-great-great grandchildren (who you'll meet) are grateful.\n\nP.S. The chocolate thing is real. For some genetics, it's medicine.",
+    "context": "The narrator mentions that future descendants are thankful and that even simple pleasures like chocolate are optimized.",
+    "char_start": 26133,
+    "char_end": 26269,
+    "start_ms": 959130,
+    "end_ms": 964122,
+    "duration_ms": 4992,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 109,
+    "title": "What Comes After",
+    "narration_text": " Science is wonderful when you fund it.\n\nWishonia.\n\nWhat Comes After. You solved death, suffering, and scarcity. Now what?",
+    "context": "The era of Wishonia begins, posing a new question: what does humanity do once all basic problems are solved?",
+    "char_start": 26269,
+    "char_end": 26393,
+    "start_ms": 964122,
+    "end_ms": 968673,
+    "duration_ms": 4551,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 110,
+    "title": "Infinite Interests",
+    "narration_text": "\n\nSome humans explore galaxies. Some become pure consciousness. Some perfect the sandwich. (The sandwich faction is the largest.",
+    "context": "In a post-scarcity world, humans pursue diverse interests ranging from space travel to sandwich making.",
+    "char_start": 26393,
+    "char_end": 26520,
+    "start_ms": 968673,
+    "end_ms": 973334,
+    "duration_ms": 4661,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 111,
+    "title": "Running Out of Diseases",
+    "narration_text": " This surprised no one.).\n\nYour network of decentralized institutes of health still exists, but it ran out of diseases.",
+    "context": "The health institutions of the past remain active but must find new purposes now that illness is extinct.",
+    "char_start": 26520,
+    "char_end": 26638,
+    "start_ms": 973334,
+    "end_ms": 977665,
+    "duration_ms": 4331,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 112,
+    "title": "Hacking Reality",
+    "narration_text": " It pivots to making reality more interesting. Today's project: teaching gravity to be less clingy. Gravity is not cooperating.",
+    "context": "Scientists shift their focus from curing disease to manipulating the laws of physics for better experiences.",
+    "char_start": 26638,
+    "char_end": 26765,
+    "start_ms": 977665,
+    "end_ms": 982326,
+    "duration_ms": 4661,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 113,
+    "title": "The Galactic Council",
+    "narration_text": "\n\nThe universe notices you. It's impressed. You're invited to the Galactic Council. You bring potato salad. Everyone loves it.",
+    "context": "Humanity's progress earns them a seat among alien civilizations, where they make a great first impression with food.",
+    "char_start": 26765,
+    "char_end": 26891,
+    "start_ms": 982326,
+    "end_ms": 986950,
+    "duration_ms": 4624,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 114,
+    "title": "Potato Salad Saves the Universe",
+    "narration_text": " Potato salad saves the universe.\n\nYou're still alive to see it. Because you followed the instructions in this book.\n\nYour Two Paths.",
+    "context": "The narrator credits the listener's choices for this bright future and introduces the final decision.",
+    "char_start": 26891,
+    "char_end": 27025,
+    "start_ms": 986950,
+    "end_ms": 991869,
+    "duration_ms": 4919,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 115,
+    "title": "Path A: The Dystopia",
+    "narration_text": "\n\nYou're at the fork.\n\nPath A: The Dystopia - You spent trillions on death. Got exactly what you paid for. Everyone died.",
+    "context": "The narrator describes the dark alternative where humanity continues to prioritize war and destruction.",
+    "char_start": 27025,
+    "char_end": 27144,
+    "start_ms": 991869,
+    "end_ms": 996236,
+    "duration_ms": 4367,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 116,
+    "title": "Path B: Wishonia",
+    "narration_text": "\n\nPath B: Wishonia - You spent one percent on life. Nobody died.\n\nThe choice is still yours.\n\nMy planet chose Path B",
+    "context": "A small investment in life leads to an era where nobody dies. The narrator's own world took this path.",
+    "char_start": 27144,
+    "char_end": 27258,
+    "start_ms": 996236,
+    "end_ms": 1000420,
+    "duration_ms": 4184,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 117,
+    "title": "The Simple Redirect",
+    "narration_text": " four thousand, two hundred and ninety-seven years ago. We're doing fine.\n\nIn Path A, you spend one hundred percent on weapons",
+    "context": "The narrator contrasts their prosperous world with the wastefulness of a society focused only on weaponry.",
+    "char_start": 27258,
+    "char_end": 27384,
+    "start_ms": 1000420,
+    "end_ms": 1005045,
+    "duration_ms": 4625,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 118,
+    "title": "Simple Math",
+    "narration_text": " and zero percent on cures. Everyone dies.\n\nIn Path B, you redirect one percent to cures. Nobody dies.",
+    "context": "The fundamental difference between survival and extinction is presented as a simple redirection of resources.",
+    "char_start": 27384,
+    "char_end": 27486,
+    "start_ms": 1005045,
+    "end_ms": 1008788,
+    "duration_ms": 3743,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 119,
+    "title": "Refusing Math",
+    "narration_text": "\n\nThe math is simple. Even for humans. (Especially for humans, because you invented math and then refused to use it.)",
+    "context": "The book concludes by highlighting the irony of human logic and urging the reader to finally use the math of survival.",
+    "char_start": 27486,
+    "char_end": 27601,
+    "start_ms": 1008788,
+    "end_ms": 1013009,
+    "duration_ms": 4221,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 120,
+    "title": "The Cost of Inaction",
+    "narration_text": "While you read this chapter, over two thousand people died of preventable diseases.",
+    "context": "The narrator highlights the stark reality of global mortality rates due to disease while the reader considers their choice.",
+    "char_start": 31488,
+    "char_end": 31572,
+    "start_ms": 1155669,
+    "end_ms": 1158752,
+    "duration_ms": 3083,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 121,
+    "title": "A Lack of Choice",
+    "narration_text": " (one hundred and fifty thousand per day equals one hundred and four per minute.) They did not get a vote on which path you chose.",
+    "context": "The narrator provides specific statistics and emphasizes that those dying have no influence over the path the reader takes.",
+    "char_start": 31572,
+    "char_end": 31702,
+    "start_ms": 1158752,
+    "end_ms": 1163523,
+    "duration_ms": 4771,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 122,
+    "title": "The Path Forward",
+    "narration_text": "\n\nMake up your mind. There's no Door C.\n\nChoose wisely.\nChoose life.\nChoose the War on Disease.",
+    "context": "The reader is urged to make a definitive choice between existence and death, specifically siding with the war on disease.",
+    "char_start": 31702,
+    "char_end": 31798,
+    "start_ms": 1163523,
+    "end_ms": 1167047,
+    "duration_ms": 3524,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 123,
+    "title": "Future Gratitude",
+    "narration_text": "\n\nYour future self (who lives to one hundred and fifty) will thank you.\n\nWishonia",
+    "context": "A promise of longevity is given, and the entity 'Wishonia' is introduced as the source of this new world order.",
+    "char_start": 31798,
+    "char_end": 31879,
+    "start_ms": 1167047,
+    "end_ms": 1170020,
+    "duration_ms": 2973,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 124,
+    "title": "Defining the System",
+    "narration_text": "\n\nWorld Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation",
+    "context": "The acronym for Wishonia is expanded, revealing it to be an all-encompassing global intelligence and allocation system.",
+    "char_start": 31879,
+    "char_end": 31978,
+    "start_ms": 1170020,
+    "end_ms": 1173653,
+    "duration_ms": 3633,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 125,
+    "title": "The Invitation",
+    "narration_text": "\n\nWatched You Choose Wisely\n\nSee You at the Party\n\nBring Potato Salad",
+    "context": "The system acknowledges the reader's correct choice and closes with a whimsical and cryptic social invitation.",
+    "char_start": 31978,
+    "char_end": 32047,
+    "start_ms": 1173653,
+    "end_ms": 1176186,
+    "duration_ms": 2533,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  }
+]

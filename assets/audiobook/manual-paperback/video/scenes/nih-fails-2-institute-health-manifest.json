@@ -1,0 +1,1754 @@
+{
+  "chapter_index": 2,
+  "chapter_title": "NIH Fails to Institute Health",
+  "total_chars": 25488,
+  "total_duration_ms": 958975,
+  "model_used": "gemini-3-flash-preview",
+  "text_hash": "563a7e9f6072a7b0",
+  "scenes": [
+    {
+      "scene_index": 1,
+      "title": "The Allocation Scandal",
+      "narration_text": "The Allocation Scandal.\n\nfifty-five million people die annually. The National Institutes of Health has an annual budget of",
+      "context": "Introduction to the section title and the stark reality of global annual death rates.",
+      "char_start": 0,
+      "char_end": 121,
+      "start_ms": 240,
+      "end_ms": 8980,
+      "duration_ms": 8740,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 2,
+      "title": "NIH Annual Budget",
+      "narration_text": " approximately FORTY-SEVEN BILLION DOLLARS. You would think those two facts would be related. They are not.",
+      "context": "Contrasting the massive NIH budget with the lack of direct relationship to total annual deaths.",
+      "char_start": 121,
+      "char_end": 226,
+      "start_ms": 8680,
+      "end_ms": 16640,
+      "duration_ms": 7960,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 3,
+      "title": "Ten-Year Spending",
+      "narration_text": "\n\nOf two hundred and forty-seven billion dollars the N.I.H. spent over a decade, exactly three point three percent",
+      "context": "Breaking down the total decade-long spending of the NIH and the tiny percentage for human testing.",
+      "char_start": 226,
+      "char_end": 341,
+      "start_ms": 16420,
+      "end_ms": 25160,
+      "duration_ms": 8740,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 4,
+      "title": "Testing vs Everything Else",
+      "narration_text": " went to testing whether treatments actually work in humans. The other ninety-six point seven percent went to everything else.",
+      "context": "Highlighting the extreme disparity between actual treatment testing and all other budget uses.",
+      "char_start": 341,
+      "char_end": 466,
+      "start_ms": 24640,
+      "end_ms": 33440,
+      "duration_ms": 8800,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 5,
+      "title": "Safe Compound Defensible",
+      "narration_text": "\n\nThat might be defensible if we'd already tested all the known safe compounds that are piled up waiting for human testing.",
+      "context": "Explaining that the spending might be justified only if there weren't already waiting compounds.",
+      "char_start": 466,
+      "char_end": 589,
+      "start_ms": 33160,
+      "end_ms": 42320,
+      "duration_ms": 9160,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 6,
+      "title": "9,500 Safe Profiles",
+      "narration_text": " We haven't.\n\nThere are roughly nine thousand five hundred compounds with established safety profiles, and ninety-nine point",
+      "context": "Revealing the huge number of safe compounds that exist but remain largely ignored for clinical use.",
+      "char_start": 589,
+      "char_end": 713,
+      "start_ms": 42000,
+      "end_ms": 51740,
+      "duration_ms": 9740,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 7,
+      "title": "Overflowing Pipeline",
+      "narration_text": " seven percent of their possible disease applications have never been tested.\n\nThe pipeline is overflowing with candidates.",
+      "context": "Emphasizing that nearly all potential disease uses for existing safe drugs are untested.",
+      "char_start": 713,
+      "char_end": 834,
+      "start_ms": 51440,
+      "end_ms": 59740,
+      "duration_ms": 8300,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 8,
+      "title": "The Trial Bottleneck",
+      "narration_text": " The bottleneck is trials.\n\nIt's like spending ninety-six point seven percent of your grocery budget on cookbooks and",
+      "context": "Identifying clinical trials as the core problem and starting a household budget analogy.",
+      "char_start": 834,
+      "char_end": 951,
+      "start_ms": 59640,
+      "end_ms": 68320,
+      "duration_ms": 8680,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 9,
+      "title": "Cookbook vs Food",
+      "narration_text": " three point three percent on food, then wondering why you're starving.\n\nThis isn't just inefficiency. It's a body count.",
+      "context": "Finishing the analogy to show how skewed priorities lead to lethal consequences.",
+      "char_start": 951,
+      "char_end": 1072,
+      "start_ms": 67800,
+      "end_ms": 76820,
+      "duration_ms": 9020,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 10,
+      "title": "JAMA Spending Study",
+      "narration_text": "\n\nA J.A.M.A. study broke down two hundred and forty-seven point three billion dollars in N.I.H. spending (twenty ten to twenty nineteen).",
+      "context": "Introducing the academic data source that analyzed NIH spending over the previous decade.",
+      "char_start": 1072,
+      "char_end": 1209,
+      "start_ms": 76720,
+      "end_ms": 87440,
+      "duration_ms": 10720,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 11,
+      "title": "A Rational Ratio?",
+      "narration_text": " Each of these categories funds valuable work. The question is whether the ratio makes sense when thousands of safe compounds sit untested.",
+      "context": "Questioning if current funding ratios are logical given the volume of untested treatments.",
+      "char_start": 1209,
+      "char_end": 1347,
+      "start_ms": 86700,
+      "end_ms": 97540,
+      "duration_ms": 10840,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 12,
+      "title": "Basic Research Portion",
+      "narration_text": "\n\nEighty-four point nine percent of the budget, or two hundred and nine point nine billion dollars, went to basic research like",
+      "context": "Detailing the massive amount of funding allocated to fundamental laboratory research.",
+      "char_start": 1347,
+      "char_end": 1474,
+      "start_ms": 96900,
+      "end_ms": 105840,
+      "duration_ms": 8940,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 13,
+      "title": "Disease Mechanisms Focus",
+      "narration_text": " understanding disease mechanisms, molecular biology, and genomics. This is essential for identifying new targets,",
+      "context": "Explaining what basic research covers, such as identifying new molecular targets for disease.",
+      "char_start": 1474,
+      "char_end": 1588,
+      "start_ms": 105320,
+      "end_ms": 113980,
+      "duration_ms": 8660,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 14,
+      "title": "Understanding vs Testing",
+      "narration_text": " but eighty-five cents of every dollar is a lot of understanding and not much testing.\n\nEleven point eight percent, totaling",
+      "context": "Criticizing the focus on theory over practical application and introducing non-trial research.",
+      "char_start": 1588,
+      "char_end": 1713,
+      "start_ms": 113420,
+      "end_ms": 122980,
+      "duration_ms": 9560,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 15,
+      "title": "Non-Trial Applied Research",
+      "narration_text": " twenty-nine point three billion dollars, was spent on non-trial applied research which translates discoveries toward practical use",
+      "context": "Defining applied research that attempts to bridge the gap but still avoids clinical trials.",
+      "char_start": 1713,
+      "char_end": 1845,
+      "start_ms": 122780,
+      "end_ms": 130940,
+      "duration_ms": 8160,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 16,
+      "title": "Discovery Toward Practicality",
+      "narration_text": " without the final step of testing them in patients.\n\nThe clinical and translational science awards, or C.T.S.A. infrastructure",
+      "context": "Highlighting that this research stops before it reaches patients and introduces the CTSA program.",
+      "char_start": 1845,
+      "char_end": 1972,
+      "start_ms": 131060,
+      "end_ms": 140320,
+      "duration_ms": 9260,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 17,
+      "title": "CTSA Infrastructure",
+      "narration_text": " program, uses about one billion dollars per year for trial infrastructure, coordination, and training.",
+      "context": "Allocating costs for the administration and logistics of clinical trials.",
+      "char_start": 1972,
+      "char_end": 2076,
+      "start_ms": 140320,
+      "end_ms": 147360,
+      "duration_ms": 7040,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 18,
+      "title": "Observational Study Funding",
+      "narration_text": "\n\nObservational studies for population health data collection, such as the All of Us program at two point one six billion dollars,",
+      "context": "Describing large-scale data collection programs that watch health trends without testing interventions.",
+      "char_start": 2076,
+      "char_end": 2208,
+      "start_ms": 147000,
+      "end_ms": 155640,
+      "duration_ms": 8640,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 19,
+      "title": "Observation vs Intervention",
+      "narration_text": " are valuable for identifying patterns, but observation without intervention doesn't cure anyone.\n\nOther applied research includes",
+      "context": "Noting that while patterns are important, observation alone cannot provide a medical cure.",
+      "char_start": 2208,
+      "char_end": 2337,
+      "start_ms": 156080,
+      "end_ms": 164320,
+      "duration_ms": 8240,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 20,
+      "title": "Drug Characterization",
+      "narration_text": " drug characterization, health services research, and epidemiology.\n\nOnly three point three percent, or eight point one billion dollars,",
+      "context": "Listing miscellaneous research fields and returning to the tiny portion spent on actual trials.",
+      "char_start": 2337,
+      "char_end": 2473,
+      "start_ms": 163800,
+      "end_ms": 173500,
+      "duration_ms": 9700,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 21,
+      "title": "Phased Clinical Trials",
+      "narration_text": " went to phased clinical trials, which is the only category that directly tests whether treatments work in humans (phases one to three).",
+      "context": "Defining the specific types of clinical trials that are critical for verifying drug effectiveness.",
+      "char_start": 2473,
+      "char_end": 2610,
+      "start_ms": 172920,
+      "end_ms": 182240,
+      "duration_ms": 9320,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 22,
+      "title": "Phase One Funding",
+      "narration_text": "\n\nPhase one received one point five billion dollars, which is eighteen point five percent of the clinical trial budget.",
+      "context": "Breaking down the budget for Phase One, the earliest stage of human testing.",
+      "char_start": 2610,
+      "char_end": 2729,
+      "start_ms": 183040,
+      "end_ms": 189460,
+      "duration_ms": 6420,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 23,
+      "title": "Phase Two and Three",
+      "narration_text": "\n\nPhase two received three point five billion dollars, or forty-three point two percent.\n\nPhase three received two point six billion",
+      "context": "Moving through the funding for Phase Two and the start of Phase Three clinical stages.",
+      "char_start": 2729,
+      "char_end": 2861,
+      "start_ms": 190060,
+      "end_ms": 198700,
+      "duration_ms": 8640,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 24,
+      "title": "NIH Phase Three Stake",
+      "narration_text": " dollars, or thirty-two point one percent, while the N.I.H. covers only three point seven to four point three percent of phase",
+      "context": "Highlighting how little the NIH contributes to the most expensive stage of drug development.",
+      "char_start": 2861,
+      "char_end": 2987,
+      "start_ms": 198220,
+      "end_ms": 207140,
+      "duration_ms": 8920,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 25,
+      "title": "Industry Profit Potential",
+      "narration_text": " three costs, leaving completion to industry, which only funds trials with patent-protected profit potential.",
+      "context": "Explaining that the private sector only completes trials if there is a guaranteed high profit.",
+      "char_start": 2987,
+      "char_end": 3097,
+      "start_ms": 207020,
+      "end_ms": 214120,
+      "duration_ms": 7100,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 26,
+      "title": "Unclassified Overhead",
+      "narration_text": "\n\nAbout five hundred million dollars, or six point two percent, went to other unclassified costs for cross-phase overhead,",
+      "context": "Describing the miscellaneous pilot and cross-stage costs within the trial budget.",
+      "char_start": 3097,
+      "char_end": 3220,
+      "start_ms": 214600,
+      "end_ms": 222520,
+      "duration_ms": 7920,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 27,
+      "title": "Pragmatic Trial Efficiency",
+      "narration_text": " pilot studies, and trials not classified to a single phase.\n\nPragmatic trials, which can be thirty times cheaper, remain",
+      "context": "Mentioning the funding neglect for more efficient, low-cost pragmatic trial models.",
+      "char_start": 3220,
+      "char_end": 3342,
+      "start_ms": 222980,
+      "end_ms": 231940,
+      "duration_ms": 8960,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 28,
+      "title": "Why This Exists",
+      "narration_text": " severely underfunded despite proven efficiency.\n\nWhy This Allocation Exists.\n\nThis isn't bureaucratic accident.",
+      "context": "Beginning to explore the systemic and intentional reasons behind the budget structure.",
+      "char_start": 3342,
+      "char_end": 3454,
+      "start_ms": 231180,
+      "end_ms": 240960,
+      "duration_ms": 9780,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 29,
+      "title": "Taxpayer Absorbed Risk",
+      "narration_text": " It's lobbied outcome.\n\nDrug companies love the N.I.H. Taxpayers absorb the risk of basic research; industry patents whatever works.",
+      "context": "Describing the relationship between public funding of risky research and private patenting of results.",
+      "char_start": 3454,
+      "char_end": 3587,
+      "start_ms": 240840,
+      "end_ms": 250860,
+      "duration_ms": 10020,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 30,
+      "title": "The Kitchen Analogy",
+      "narration_text": " It's like if your neighbor paid for your kitchen renovation, and then you charged them rent to eat there.\n\nBut independent trials",
+      "context": "Using a housing analogy to illustrate the exploitation of public funds by private pharma.",
+      "char_start": 3587,
+      "char_end": 3717,
+      "start_ms": 250720,
+      "end_ms": 257940,
+      "duration_ms": 7220,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 31,
+      "title": "Terrifying Head-to-Head Trials",
+      "narration_text": " comparing drugs head-to-head? Those are terrifying. They might reveal that the eighty thousand dollar drug works about as well",
+      "context": "Explaining why the industry fears trials that compare expensive new drugs to cheap generics.",
+      "char_start": 3717,
+      "char_end": 3845,
+      "start_ms": 257740,
+      "end_ms": 264600,
+      "duration_ms": 6860,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 32,
+      "title": "Pharmaceutical Lobby Opposition",
+      "narration_text": " as the four dollar generic. PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research.",
+      "context": "Identifying the PhRMA lobby's active role in preventing research that threatens their drug prices.",
+      "char_start": 3845,
+      "char_end": 3967,
+      "start_ms": 264620,
+      "end_ms": 272720,
+      "duration_ms": 8100,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 33,
+      "title": "PCORI and Lobbying",
+      "narration_text": "When Congress created the Patient-Centered Outcomes Research Institute, or PCORI, in twenty ten, industry successfully lobbied to prohibit it",
+      "context": "The narrator explains how industry interests influenced the creation and scope of PCORI.",
+      "char_start": 7930,
+      "char_end": 8071,
+      "start_ms": 543400,
+      "end_ms": 554820,
+      "duration_ms": 11420,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 34,
+      "title": "Laws Against Savings",
+      "narration_text": " from making coverage recommendations based on cost-effectiveness. Congress literally passed a law saying \"don't fund research that might lower drug prices.\"",
+      "context": "Legislative restrictions were put in place to ensure drug prices wouldn't be threatened by new research.",
+      "char_start": 8071,
+      "char_end": 8227,
+      "start_ms": 554900,
+      "end_ms": 565720,
+      "duration_ms": 10820,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 35,
+      "title": "The Revolving Door",
+      "narration_text": " They wrote it down. In legislation. On purpose. The revolving door helps. N.I.H. advisory committees include industry representatives.",
+      "context": "The narrator describes the systemic way industry and the NIH are intertwined.",
+      "char_start": 8227,
+      "char_end": 8362,
+      "start_ms": 565420,
+      "end_ms": 575980,
+      "duration_ms": 10560,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 36,
+      "title": "Misaligned Incentives",
+      "narration_text": " Former N.I.H. officials join pharmaceutical boards. Academic researchers depend on industry grants. Everyone's incentives align against cheap,",
+      "context": "A look at how financial and professional incentives discourage the testing of low-cost medical alternatives.",
+      "char_start": 8362,
+      "char_end": 8505,
+      "start_ms": 575980,
+      "end_ms": 586540,
+      "duration_ms": 10560,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 37,
+      "title": "Avoiding Cheap Drug Tests",
+      "narration_text": " fast trials testing whether expensive drugs outperform generics. It's not a conspiracy. It's just that everyone involved happens to benefit from",
+      "context": "The system naturally avoids trials that might favor cheap generic drugs over high-profit ones.",
+      "char_start": 8505,
+      "char_end": 8651,
+      "start_ms": 586160,
+      "end_ms": 596060,
+      "duration_ms": 9900,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 38,
+      "title": "The Publication Cycle",
+      "narration_text": " the same terrible outcome, purely by coincidence, repeatedly, for decades. Basic research produces publications. Publications produce tenure.",
+      "context": "The focus on academic advancement through papers rather than patient outcomes is highlighted.",
+      "char_start": 8651,
+      "char_end": 8794,
+      "start_ms": 595700,
+      "end_ms": 606280,
+      "duration_ms": 10580,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 39,
+      "title": "Need for Papers",
+      "narration_text": " Tenure produces more grants. Nobody in this cycle needs anyone to get better. They need papers. The three point three percent allocation isn't a mystery.",
+      "context": "Narrator emphasizes that the medical research system prioritizes data and grants over actual healing.",
+      "char_start": 8794,
+      "char_end": 8948,
+      "start_ms": 605620,
+      "end_ms": 616000,
+      "duration_ms": 10380,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 40,
+      "title": "Efficiency Gap Intro",
+      "narration_text": " It's a business model. The Efficiency Gap: A Tale of Two Trials. The difference between efficient and inefficient trial design isn't theoretical.",
+      "context": "Transitioning to a real-world comparison of trial designs during the COVID-19 pandemic.",
+      "char_start": 8948,
+      "char_end": 9094,
+      "start_ms": 615820,
+      "end_ms": 624360,
+      "duration_ms": 8540,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 41,
+      "title": "COVID Trial Comparison",
+      "narration_text": " Humanity accidentally ran a controlled experiment on itself during COVID. Two countries. Same disease. One spent like it was trying to cure death.",
+      "context": "Setting the stage for the comparison between the US and UK approaches to COVID trials.",
+      "char_start": 9094,
+      "char_end": 9241,
+      "start_ms": 624120,
+      "end_ms": 635280,
+      "duration_ms": 11160,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 42,
+      "title": "RECOVER Initiative Budget",
+      "narration_text": " The other actually did. RECOVER Initiative (N.I.H. Approach). Budget: one point six six five billion dollars (one point one five billion dollars",
+      "context": "Introduction to the massive budget allocated to the NIH's RECOVER initiative.",
+      "char_start": 9241,
+      "char_end": 9387,
+      "start_ms": 635060,
+      "end_ms": 645440,
+      "duration_ms": 10380,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 43,
+      "title": "RECOVER Sluggish Pace",
+      "narration_text": " plus five hundred and fifteen million dollars in twenty twenty-four) (source). Timeline: four years and counting. Patients enrolled: approximately",
+      "context": "Detailing the slow progress and massive spending of the RECOVER initiative over four years.",
+      "char_start": 9387,
+      "char_end": 9536,
+      "start_ms": 644980,
+      "end_ms": 656560,
+      "duration_ms": 11580,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 44,
+      "title": "RECOVER High Costs",
+      "narration_text": " thirty thousand. Trials completed: Zero. Cost per patient: fifty-five thousand five hundred dollars. RECOVERY Trial (U.K. Approach).",
+      "context": "Contrasting the high cost and zero completion rate of the NIH trial with the UK model.",
+      "char_start": 9536,
+      "char_end": 9669,
+      "start_ms": 656560,
+      "end_ms": 666400,
+      "duration_ms": 9840,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 45,
+      "title": "UK RECOVERY Success",
+      "narration_text": " Budget: twenty million dollars. Timeline: six months. Patients enrolled: forty-eight thousand. Treatments found: Multiple, including dexamethasone",
+      "context": "Describing the efficiency and success of the UK’s RECOVERY trial.",
+      "char_start": 9669,
+      "char_end": 9817,
+      "start_ms": 666140,
+      "end_ms": 675000,
+      "duration_ms": 8860,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 46,
+      "title": "Cost Comparison",
+      "narration_text": " (saved over one million lives). Cost per patient: five hundred dollars. The N.I.H. spent one hundred and eleven times more per patient and achieved",
+      "context": "The narrator points out the vast disparity in cost-effectiveness between the US and UK trials.",
+      "char_start": 9817,
+      "char_end": 9966,
+      "start_ms": 675000,
+      "end_ms": 685940,
+      "duration_ms": 10940,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 47,
+      "title": "Infinite Gap",
+      "narration_text": " infinitely less (dividing by zero trials completed produces infinity, which is fitting because that's how long patients waited). This efficiency gap",
+      "context": "The narrator notes that with zero trials completed, the NIH's performance is effectively infinitely worse.",
+      "char_start": 9966,
+      "char_end": 10118,
+      "start_ms": 685280,
+      "end_ms": 696300,
+      "duration_ms": 11020,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 48,
+      "title": "Pragmatic Trial Median",
+      "narration_text": " is not unique to RECOVERY. A systematic review of sixty-four pragmatic trials found a median cost of ninety-seven dollars per patient.",
+      "context": "Evidence is provided that clinical trials can be done far more cheaply than the NIH usually does them.",
+      "char_start": 10118,
+      "char_end": 10254,
+      "start_ms": 696220,
+      "end_ms": 706780,
+      "duration_ms": 10560,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 49,
+      "title": "Dinner vs SUV",
+      "narration_text": " The British cured disease for the price of a nice dinner per patient. America spent the price of a luxury SUV per patient and cured nothing.",
+      "context": "A stark visual comparison of the spending habits of the two nations' medical research departments.",
+      "char_start": 10254,
+      "char_end": 10396,
+      "start_ms": 706220,
+      "end_ms": 716960,
+      "duration_ms": 10740,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 50,
+      "title": "Capability vs Addiction",
+      "narration_text": " The problem isn't that curing disease is hard. The N.I.H. doesn't have a capability problem. It has a shopping addiction.",
+      "context": "The narrator argues the issue is spending habits, not a lack of scientific ability.",
+      "char_start": 10396,
+      "char_end": 10517,
+      "start_ms": 716960,
+      "end_ms": 724640,
+      "duration_ms": 7680,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 51,
+      "title": "Budget Misallocation",
+      "narration_text": " The Death Toll: Opportunity Cost of Misallocation. When you misallocate the vast majority of a forty-seven billion dollar annual budget into",
+      "context": "Introducing the lethal consequences of wasting the NIH budget on inefficient research.",
+      "char_start": 10517,
+      "char_end": 10658,
+      "start_ms": 724900,
+      "end_ms": 733460,
+      "duration_ms": 8560,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 52,
+      "title": "Composting People",
+      "narration_text": " low-efficiency research instead of high-efficiency clinical trials, you aren't just wasting money. You are composting people.",
+      "context": "A metaphorical description of the human lives lost due to bureaucratic waste.",
+      "char_start": 10658,
+      "char_end": 10784,
+      "start_ms": 733460,
+      "end_ms": 741660,
+      "duration_ms": 8200,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 53,
+      "title": "Cost Per QALY",
+      "narration_text": " Cost Per Q.A.L.Y. (Quality-Adjusted Life Year). Standard N.I.H. Portfolio: fifty thousand dollars per Q.A.L.Y. at standard medical research R.O.I.",
+      "context": "Technical comparison of the ROI of standard NIH research using the QALY metric.",
+      "char_start": 10784,
+      "char_end": 10931,
+      "start_ms": 741460,
+      "end_ms": 752720,
+      "duration_ms": 11260,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 54,
+      "title": "ROI Comparison",
+      "narration_text": " (and that's being generous). Pragmatic Platform Trials: four dollars per Q.A.L.Y. Every one dollar spent on efficient pragmatic trials buys",
+      "context": "Highlighting the massive increase in health value when using pragmatic trials instead of current methods.",
+      "char_start": 10931,
+      "char_end": 11072,
+      "start_ms": 752060,
+      "end_ms": 762840,
+      "duration_ms": 10780,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 55,
+      "title": "ADAPTABLE Proof",
+      "narration_text": " twelve thousand five hundred times more health than a dollar spent on the current N.I.H. portfolio. The ADAPTABLE trial proved pragmatic trials",
+      "context": "Statistical proof from the ADAPTABLE trial regarding the superiority of pragmatic trial costs.",
+      "char_start": 11072,
+      "char_end": 11217,
+      "start_ms": 762840,
+      "end_ms": 774040,
+      "duration_ms": 11200,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 56,
+      "title": "Trial Cost Science",
+      "narration_text": " cost thirty times less than traditional R.C.T.s (fourteen million dollars versus four hundred and twenty million dollars). Same science.",
+      "context": "Showing that the science is identical, but the price tag is dramatically different.",
+      "char_start": 11217,
+      "char_end": 11354,
+      "start_ms": 773500,
+      "end_ms": 782950,
+      "duration_ms": 9450,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 57,
+      "title": "Death Equivalent Intro",
+      "narration_text": " Fewer catered meetings. The \"Death Equivalent\" of Budget Misallocation. The annual opportunity cost is approximately one hundred million",
+      "context": "Calculating the total human cost of not using more efficient trial methods.",
+      "char_start": 11354,
+      "char_end": 11493,
+      "start_ms": 783320,
+      "end_ms": 793380,
+      "duration_ms": 10060,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 58,
+      "title": "Seven Million Deaths",
+      "narration_text": " quality-adjusted life years, or Q.A.L.Y.s, and about seven million death-equivalents per year.",
+      "context": "Providing a staggering statistic of potential lives lost due to budget mismanagement.",
+      "char_start": 11493,
+      "char_end": 11588,
+      "start_ms": 792800,
+      "end_ms": 800420,
+      "duration_ms": 7620,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 59,
+      "title": "Conservative Death Estimate",
+      "narration_text": " Even the most conservative estimate is approximately ten million Q.A.L.Y.s and seven hundred thousand preventable deaths annually.",
+      "context": "The narrator concludes with the most cautious, yet still tragic, estimate of annual preventable deaths.",
+      "char_start": 11588,
+      "char_end": 11721,
+      "start_ms": 799660,
+      "end_ms": 810040,
+      "duration_ms": 10380,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 60,
+      "title": "NIH Cost Disparity",
+      "narration_text": "For every dollar spent on pragmatic trials producing Q.A.L.Y.s, the N.I.H. spends twelve thousand five hundred dollars to achieve the same result.",
+      "context": "Comparing the cost efficiency of pragmatic trials versus standard NIH spending.",
+      "char_start": 15544,
+      "char_end": 15691,
+      "start_ms": 584836,
+      "end_ms": 590367,
+      "duration_ms": 5531,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 61,
+      "title": "Potential Capacity",
+      "narration_text": " You are operating at zero point zero zero eight percent of your potential capacity to save lives.",
+      "context": "Highlighting the massive inefficiency in current life-saving potential.",
+      "char_start": 15691,
+      "char_end": 15789,
+      "start_ms": 590367,
+      "end_ms": 594054,
+      "duration_ms": 3687,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 62,
+      "title": "Car Efficiency Analogy",
+      "narration_text": " If your car ran at zero point zero zero eight percent efficiency, it would move one inch per gallon.",
+      "context": "An analogy comparing medical research efficiency to a car's fuel economy.",
+      "char_start": 15789,
+      "char_end": 15891,
+      "start_ms": 594054,
+      "end_ms": 597892,
+      "duration_ms": 3838,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 63,
+      "title": "Heart Function Analogy",
+      "narration_text": "\n\nIf your heart pumped at zero point zero zero eight percent efficiency, you'd be dead before finishing this sentence.",
+      "context": "An analogy comparing research efficiency to a failing human heart.",
+      "char_start": 15891,
+      "char_end": 16009,
+      "start_ms": 597892,
+      "end_ms": 602331,
+      "duration_ms": 4439,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 64,
+      "title": "Rewarding Inefficiency",
+      "narration_text": " Your medical research system runs at zero point zero zero eight percent efficiency, and you gave it a raise.",
+      "context": "Criticizing the decision to increase funding for an inefficient system.",
+      "char_start": 16009,
+      "char_end": 16119,
+      "start_ms": 602331,
+      "end_ms": 606470,
+      "duration_ms": 4139,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 65,
+      "title": "The Translation Crisis",
+      "narration_text": "\n\nThe Translation Crisis: All Theory, No Medicine.\n\nThe problem is not a shortage of ideas. It is a shortage of anyone bothering to test them.",
+      "context": "Defining the 'Translation Crisis' as a lack of clinical testing rather than ideas.",
+      "char_start": 16119,
+      "char_end": 16263,
+      "start_ms": 606470,
+      "end_ms": 611888,
+      "duration_ms": 5418,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 66,
+      "title": "Safe Human Drugs",
+      "narration_text": "\n\nThere are over twenty thousand F.D.A. approved drugs known to be safe in humans. There are between forty-seven hundred",
+      "context": "Mentioning the 20,000 FDA-approved drugs that are safe for use and the potential for repurposing.",
+      "char_start": 16263,
+      "char_end": 16383,
+      "start_ms": 611888,
+      "end_ms": 616403,
+      "duration_ms": 4515,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 67,
+      "title": "Repurposable Compounds",
+      "narration_text": " and sixty-eight hundred repurposable compounds, which are clinically-tested candidates (including three thousand four hundred",
+      "context": "Describing thousands of clinical candidates that remain untested despite their safety profile.",
+      "char_start": 16383,
+      "char_end": 16507,
+      "start_ms": 616403,
+      "end_ms": 621068,
+      "duration_ms": 4665,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 68,
+      "title": "Dementia Interventions",
+      "narration_text": " and twenty-two marketed drugs) gathering dust.\n\nThere are hundreds of plausible dementia interventions.",
+      "context": "Highlighting the surplus of untested dementia treatment ideas that are currently ignored.",
+      "char_start": 16507,
+      "char_end": 16610,
+      "start_ms": 621068,
+      "end_ms": 624944,
+      "duration_ms": 3876,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 69,
+      "title": "Local Trial Scarcity",
+      "narration_text": "\n\nThe number of clinical trials available for your grandma in Saint Louis is zero. You have a warehouse of safe molecules",
+      "context": "The lack of actual clinical trials available for patients in need despite the surplus of drugs.",
+      "char_start": 16610,
+      "char_end": 16733,
+      "start_ms": 624944,
+      "end_ms": 629571,
+      "duration_ms": 4627,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 70,
+      "title": "Testing Facility Closed",
+      "narration_text": " that have never been systematically tested for new uses. The warehouse is full. The testing facility is closed for a team-building retreat.",
+      "context": "An analogy for the lack of systematic testing despite available molecules.",
+      "char_start": 16733,
+      "char_end": 16874,
+      "start_ms": 629571,
+      "end_ms": 634876,
+      "duration_ms": 5305,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 71,
+      "title": "Publishing House Metric",
+      "narration_text": "\n\nThe N.I.H. is, by its own metrics, a publishing house that occasionally dabbles in medicine:",
+      "context": "Characterizing the NIH as more of a publisher than a medical institution.",
+      "char_start": 16874,
+      "char_end": 16970,
+      "start_ms": 634876,
+      "end_ms": 638488,
+      "duration_ms": 3612,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 72,
+      "title": "Paper Production",
+      "narration_text": "\n\nTwo point five million N.I.H. funded papers are published annually. About fifty new treatments are approved annually.",
+      "context": "The massive volume of NIH-funded papers compared to the tiny number of actual treatments.",
+      "char_start": 16970,
+      "char_end": 17088,
+      "start_ms": 638488,
+      "end_ms": 642928,
+      "duration_ms": 4440,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 73,
+      "title": "Conversion Failure",
+      "narration_text": "\n\nThe conversion rate from paper to patient is zero point zero zero two percent. For every fifty thousand papers, one drug reaches a human.",
+      "context": "The extremely low success rate of turning academic papers into approved drugs.",
+      "char_start": 17088,
+      "char_end": 17229,
+      "start_ms": 642928,
+      "end_ms": 648233,
+      "duration_ms": 5305,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 74,
+      "title": "Citation Loop",
+      "narration_text": " The rest become citations in other papers, which become citations in other papers, in an infinite loop of academics reading each other's homework.",
+      "context": "Describing the self-referential nature of academic publishing.",
+      "char_start": 17229,
+      "char_end": 17376,
+      "start_ms": 648233,
+      "end_ms": 653764,
+      "duration_ms": 5531,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 75,
+      "title": "Low Participation",
+      "narration_text": "\n\nPlenty of Knowledge. No Translation.\n\nAbout five percent of patients have participated in trials.",
+      "context": "Statistics on the small number of patients currently participating in clinical trials.",
+      "char_start": 17376,
+      "char_end": 17474,
+      "start_ms": 653764,
+      "end_ms": 657451,
+      "duration_ms": 3687,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 76,
+      "title": "Invitation Gap",
+      "narration_text": "\n\nAbout fifty percent of patients are willing to participate if invited. Only nine to eleven percent of patients are actually invited.",
+      "context": "The massive gap between patient willingness and the actual invitations to join trials.",
+      "char_start": 17474,
+      "char_end": 17608,
+      "start_ms": 657451,
+      "end_ms": 662493,
+      "duration_ms": 5042,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 77,
+      "title": "Asking the Question",
+      "narration_text": "\n\nHalf of all patients would join a clinical trial if asked. Almost nobody asks. It's like having a room full of volunteers and a clipboard,",
+      "context": "Most patients would join trials if they were simply asked, but the system focuses on theory.",
+      "char_start": 17608,
+      "char_end": 17750,
+      "start_ms": 662493,
+      "end_ms": 667836,
+      "duration_ms": 5343,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 78,
+      "title": "Understanding vs Curing",
+      "narration_text": " and choosing to study the clipboard.\n\nUnderstanding disease and curing disease are completely different activities.",
+      "context": "Distinguishing between the academic study of disease and its actual clinical cure.",
+      "char_start": 17750,
+      "char_end": 17865,
+      "start_ms": 667836,
+      "end_ms": 672162,
+      "duration_ms": 4326,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 79,
+      "title": "Microscope Choice",
+      "narration_text": " One requires microscopes. The other requires giving people medicine and seeing if they stop dying. The N.I.H. chose microscopes.",
+      "context": "The NIH's institutional preference for microscopic study over direct clinical application.",
+      "char_start": 17865,
+      "char_end": 17994,
+      "start_ms": 672162,
+      "end_ms": 677016,
+      "duration_ms": 4854,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 80,
+      "title": "The Club Goods Scam",
+      "narration_text": "\n\nThe Public Goods versus Club Goods Scam.\n\nThe N.I.H. claims to produce \"public goods\" like open science and training.",
+      "context": "Introducing the argument that NIH research serves private industry interests over public benefit.",
+      "char_start": 17994,
+      "char_end": 18116,
+      "start_ms": 677016,
+      "end_ms": 681606,
+      "duration_ms": 4590,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 81,
+      "title": "Pharma Subsidy",
+      "narration_text": " What it actually produces is a free R. and D. department for pharmaceutical companies, funded by the same people who then pay full price for the drugs.",
+      "context": "Explaining how taxpayers fund research that private drug companies then profit from.",
+      "char_start": 18116,
+      "char_end": 18268,
+      "start_ms": 681606,
+      "end_ms": 687325,
+      "duration_ms": 5719,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 82,
+      "title": "Taxpayer Funded Research",
+      "narration_text": "\n\nTaxpayers funded research behind ninety-nine percent of new drugs (three hundred and fifty-six drugs, twenty ten to twenty nineteen).",
+      "context": "Statistics showing that nearly all new drugs are rooted in research paid for by the public.",
+      "char_start": 18268,
+      "char_end": 18403,
+      "start_ms": 687325,
+      "end_ms": 692404,
+      "duration_ms": 5079,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 83,
+      "title": "Socialized Loss",
+      "narration_text": " Industry patents the winners. The public pays again through high drug prices. When research leads to a dead end, the public eats the loss.",
+      "context": "The public bears the financial risk of research failures while private companies keep the profits.",
+      "char_start": 18403,
+      "char_end": 18543,
+      "start_ms": 692404,
+      "end_ms": 697672,
+      "duration_ms": 5268,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 84,
+      "title": "NIH Mission",
+      "narration_text": " You pay for the lottery ticket. They cash the winnings.\n\nThe only things the N.I.H. *should* fund are things private companies *cannot* profitably fund:",
+      "context": "Identifying what the NIH should focus on: areas where private industry has no financial incentive.",
+      "char_start": 18543,
+      "char_end": 18694,
+      "start_ms": 697672,
+      "end_ms": 703353,
+      "duration_ms": 5681,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 85,
+      "title": "Pragmatic Platforms",
+      "narration_text": "\n\nOpen pragmatic trial platforms: thirty times cheaper than traditional trials, yet receive minimal N.I.H. funding.",
+      "context": "Open trial platforms are significantly cheaper and more effective but remain underfunded.",
+      "char_start": 18694,
+      "char_end": 18807,
+      "start_ms": 703353,
+      "end_ms": 707605,
+      "duration_ms": 4252,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 86,
+      "title": "Profitless Generics",
+      "narration_text": "\n\nRe-purposing generic drugs: more than four thousand seven hundred clinically-tested compounds where no patent equals no profit equals no interest.",
+      "context": "The industry's lack of interest in repurposing drugs that are no longer under patent protection.",
+      "char_start": 18807,
+      "char_end": 18955,
+      "start_ms": 707605,
+      "end_ms": 713173,
+      "duration_ms": 5568,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 87,
+      "title": "Comparative Data",
+      "narration_text": "\n\nComparative effectiveness data: Head-to-head trials revealing which drugs actually work best (pharma's nightmare).",
+      "context": "The need for trials that directly compare the effectiveness of different medications.",
+      "char_start": 18955,
+      "char_end": 19069,
+      "start_ms": 713173,
+      "end_ms": 717462,
+      "duration_ms": 4289,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 88,
+      "title": "Avoiding Competition",
+      "narration_text": "\n\nThese are the *only* things the N.I.H. should be funding. Instead, the N.I.H. explicitly avoids them to \"not crowd out industry.\"",
+      "context": "The NIH's policy of avoiding research that might interfere with private industry profits.",
+      "char_start": 19069,
+      "char_end": 19202,
+      "start_ms": 717462,
+      "end_ms": 722466,
+      "duration_ms": 5004,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 89,
+      "title": "Lowering Prices",
+      "narration_text": " Translation: \"We won't run the trials that would lower drug prices, because the people who set drug prices asked us nicely.\".",
+      "context": "Criticizing the NIH's refusal to perform research that could lead to lower drug costs.",
+      "char_start": 19202,
+      "char_end": 19329,
+      "start_ms": 722466,
+      "end_ms": 727245,
+      "duration_ms": 4779,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 90,
+      "title": "Outcome Disconnect",
+      "narration_text": "\n\nThe Patient Disconnect: Zero Correlation with Health Outcomes.",
+      "context": "Summarizing the lack of alignment between NIH research and actual patient health.",
+      "char_start": 19329,
+      "char_end": 19394,
+      "start_ms": 727245,
+      "end_ms": 729690,
+      "duration_ms": 2445,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 91,
+      "title": "Funding Burden",
+      "narration_text": "\n\nCorrelation between N.I.H. funding priorities and actual disease burden: zero point zero seven.",
+      "context": "Final statistic showing near-zero correlation between funding and the actual impact of diseases.",
+      "char_start": 19394,
+      "char_end": 19494,
+      "start_ms": 729690,
+      "end_ms": 733453,
+      "duration_ms": 3763,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 92,
+      "title": "Coin Flip Science",
+      "narration_text": "That is not a typo. On a scale of zero (random) to one (perfect), the N.I.H. scores \"basically a coin flip.\"",
+      "context": "The author critiques the N.I.H. research funding allocation, comparing its effectiveness to a coin toss.",
+      "char_start": 23432,
+      "char_end": 23540,
+      "start_ms": 881618,
+      "end_ms": 885682,
+      "duration_ms": 4064,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 93,
+      "title": "Patient Desires",
+      "narration_text": " A dartboard would allocate research funding more rationally.\n\nWhat patients want.\n\nMedicine that works.\n\n",
+      "context": "Contrasting the irrationality of current funding with the fundamental needs of patients.",
+      "char_start": 23540,
+      "char_end": 23646,
+      "start_ms": 885682,
+      "end_ms": 889670,
+      "duration_ms": 3988,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 94,
+      "title": "Access and Cures",
+      "narration_text": "Access to experimental therapies.\n\nTrials they can join.\n\nA cure before they die.\n\nWhat N.I.H. funds.\n\n",
+      "context": "Listing specific patient goals versus what the N.I.H. actually chooses to finance.",
+      "char_start": 23646,
+      "char_end": 23750,
+      "start_ms": 889670,
+      "end_ms": 893583,
+      "duration_ms": 3913,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 95,
+      "title": "Institutional Goals",
+      "narration_text": "Molecular mechanisms.\n\nPapers in prestigious journals.\n\nResearch empires.\n\nInstitutional overhead.\n\n",
+      "context": "Describing the academic and bureaucratic outcomes that the N.I.H. prioritizes over cures.",
+      "char_start": 23750,
+      "char_end": 23850,
+      "start_ms": 893583,
+      "end_ms": 897345,
+      "duration_ms": 3762,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 96,
+      "title": "The Logic of Committees",
+      "narration_text": "Patients don't control the money. Committees do. And committees optimize for the continued existence of committees. ",
+      "context": "Explaining how the structure of funding bodies leads to institutional self-preservation.",
+      "char_start": 23850,
+      "char_end": 23965,
+      "start_ms": 897345,
+      "end_ms": 901672,
+      "duration_ms": 4327,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 97,
+      "title": "Bureaucratic Nature",
+      "narration_text": "This is true of all committees, everywhere, since the invention of committees. Nobody has ever convened a committee ",
+      "context": "Discussing the inherent nature of bureaucracy and its tendency to expand rather than shrink.",
+      "char_start": 23965,
+      "char_end": 24080,
+      "start_ms": 901672,
+      "end_ms": 905999,
+      "duration_ms": 4327,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 98,
+      "title": "The Trillion Dollar Track Record",
+      "narration_text": "that recommended fewer committees.\n\nThe Track Record.\n\nSince nineteen seventy, the N.I.H. has spent over one point ",
+      "context": "Transitioning to the long-term financial performance and historical output of the N.I.H.",
+      "char_start": 24080,
+      "char_end": 24194,
+      "start_ms": 905999,
+      "end_ms": 910288,
+      "duration_ms": 4289,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 99,
+      "title": "Zero Eradications",
+      "narration_text": "one trillion dollars (inflation-adjusted). Diseases eradicated: Zero.\n\nThis isn't because eradicating disease is ",
+      "context": "Starkly noting that despite a trillion dollars in spending, no human diseases have been wiped out.",
+      "char_start": 24194,
+      "char_end": 24313,
+      "start_ms": 910288,
+      "end_ms": 914766,
+      "duration_ms": 4478,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 100,
+      "title": "Smallpox and Polio",
+      "narration_text": "impossible:\n\nThe W.H.O. eradicated smallpox for three hundred million dollars.\n\nJonas Salk developed the polio ",
+      "context": "Providing examples of major medical successes achieved outside the current N.I.H. framework.",
+      "char_start": 24313,
+      "char_end": 24426,
+      "start_ms": 914766,
+      "end_ms": 919017,
+      "duration_ms": 4251,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 101,
+      "title": "The Salk Exception",
+      "narration_text": "vaccine in a university lab and gave it away for free (which is why nobody at the N.I.H. talks about him at parties).",
+      "context": "Citing Jonas Salk's vaccine as a model of success that doesn't fit the N.I.H.'s institutional overhead model.",
+      "char_start": 24426,
+      "char_end": 24553,
+      "start_ms": 919017,
+      "end_ms": 923796,
+      "duration_ms": 4779,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 102,
+      "title": "Veterinary Successes",
+      "narration_text": "\n\nVeterinarians have eradicated multiple animal diseases while the N.I.H. was forming subcommittees about forming ",
+      "context": "Comparing the efficiency of animal medicine to the bureaucratic delays in human medicine.",
+      "char_start": 24553,
+      "char_end": 24669,
+      "start_ms": 923796,
+      "end_ms": 928160,
+      "duration_ms": 4364,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 103,
+      "title": "Better Outcomes for Cows",
+      "narration_text": "subcommittees.\n\nCows have better healthcare outcomes than you do.\n\nWhat Would Actually Work.\n\nThe U.K. RECOVERY ",
+      "context": "Concluding the critique of the N.I.H. and introducing a functional alternative trial model.",
+      "char_start": 24669,
+      "char_end": 24788,
+      "start_ms": 928160,
+      "end_ms": 932637,
+      "duration_ms": 4477,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 104,
+      "title": "The RECOVERY Trial",
+      "narration_text": "trial already proved it. five hundred dollars per patient instead of forty-one thousand dollars. ",
+      "context": "Showing the massive cost-efficiency of the U.K.'s pandemic trial versus American spending.",
+      "char_start": 24788,
+      "char_end": 24891,
+      "start_ms": 932637,
+      "end_ms": 936513,
+      "duration_ms": 3876,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 105,
+      "title": "Rapid Life-Saving Results",
+      "narration_text": "First life-saving result in under one hundred days. Over one million lives saved. The blueprint exists. ",
+      "context": "Detailing the tangible success of the RECOVERY trial in terms of speed and lives saved.",
+      "char_start": 24891,
+      "char_end": 25001,
+      "start_ms": 936513,
+      "end_ms": 940651,
+      "duration_ms": 4138,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 106,
+      "title": "The Blueprint for Success",
+      "narration_text": "It is not theoretical. It happened. In England. During a pandemic. While Americans were arguing about horse dewormer.",
+      "context": "Stressing that a successful research model already exists and was proven effective recently.",
+      "char_start": 25001,
+      "char_end": 25115,
+      "start_ms": 940651,
+      "end_ms": 944941,
+      "duration_ms": 4290,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 107,
+      "title": "Radical Recipe for Results",
+      "narration_text": "\n\nThe recipe:\n\none. Pay for results: Treatment equals payment. No treatment equals no payment. Radical, I know.\n\n",
+      "context": "Laying out the first step of a new research model: incentivizing results rather than processes.",
+      "char_start": 25115,
+      "char_end": 25234,
+      "start_ms": 944941,
+      "end_ms": 949418,
+      "duration_ms": 4477,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 108,
+      "title": "Open Science",
+      "narration_text": "two. Publish everything: Including failures (especially failures).\n\nthree. Eliminate gatekeepers: Let patients ",
+      "context": "Proposing transparency and the removal of bureaucratic barriers to patient participation.",
+      "char_start": 25234,
+      "char_end": 25345,
+      "start_ms": 949418,
+      "end_ms": 953594,
+      "duration_ms": 4176,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 109,
+      "title": "Automating Trust",
+      "narration_text": "vote with participation.\n\nfour. Automate administration: Smart contracts instead of committees (committees cannot be trusted; see above).",
+      "context": "Concluding with the idea of replacing fallible human committees with automated, transparent systems.",
+      "char_start": 25345,
+      "char_end": 25488,
+      "start_ms": 953594,
+      "end_ms": 958975,
+      "duration_ms": 5381,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    }
+  ]
+}

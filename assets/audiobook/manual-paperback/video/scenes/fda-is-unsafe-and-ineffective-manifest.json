@@ -1,0 +1,2378 @@
+{
+  "chapter_index": 4,
+  "chapter_title": "The FDA Is Unsafe and Ineffective",
+  "total_chars": 26687,
+  "total_duration_ms": 1645306,
+  "model_used": "gemini-3-flash-preview",
+  "text_hash": "f8eae86353dbfcce",
+  "scenes": [
+    {
+      "scene_index": 1,
+      "title": "The 1962 Mandate",
+      "narration_text": "In nineteen sixty-two, your Congress decided that after proving a drug won't kill you, sick people should wait another eight point two years before they're allowed to take it.",
+      "context": "The narrator introduces the 1962 law that changed drug approval wait times.",
+      "char_start": 0,
+      "char_end": 171,
+      "start_ms": 340,
+      "end_ms": 10600,
+      "duration_ms": 10260,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 2,
+      "title": "Passing Safety Testing",
+      "narration_text": " The drug passed safety testing. It won't kill you, won't melt your liver, won't make your hair migrate to your back.",
+      "context": "Describing a drug that has already been proven safe through Phase One testing.",
+      "char_start": 171,
+      "char_end": 288,
+      "start_ms": 10600,
+      "end_ms": 17560,
+      "duration_ms": 6960,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 3,
+      "title": "The Efficacy Barrier",
+      "narration_text": "\nBut you can't have it, because a committee needs to spend eight point two years making sure it works well enough.",
+      "context": "Critiquing the requirement for extensive efficacy testing before patients can access safe drugs.",
+      "char_start": 288,
+      "char_end": 404,
+      "start_ms": 17240,
+      "end_ms": 24160,
+      "duration_ms": 6920,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 4,
+      "title": "Allowed to Die",
+      "narration_text": "\nYou're not allowed to volunteer for the trials that would answer that question faster, either. You are, however, allowed to die. This was called \"safety.\"",
+      "context": "The irony of 'safety' regulations that prevent patients from seeking treatment while they are terminal.",
+      "char_start": 404,
+      "char_end": 561,
+      "start_ms": 23920,
+      "end_ms": 34960,
+      "duration_ms": 11040,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 5,
+      "title": "Earth vs Wishonia",
+      "narration_text": "\n\nOn Wishonia, when we confirm something won't harm you, we let you try it. On Earth, you lock it in a cabinet and form a committee.",
+      "context": "Comparing the logical approach of Wishonia to the bureaucratic approach of Earth.",
+      "char_start": 561,
+      "char_end": 694,
+      "start_ms": 36040,
+      "end_ms": 43320,
+      "duration_ms": 7280,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 6,
+      "title": "Differing Schedules",
+      "narration_text": "\nThe committee meets quarterly. You decompose on a different schedule.\n\nA Note on Blame.\n",
+      "context": "Highlighting the disconnect between regulatory pace and the reality of illness.",
+      "char_start": 694,
+      "char_end": 785,
+      "start_ms": 44220,
+      "end_ms": 50940,
+      "duration_ms": 6720,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 7,
+      "title": "Defining FDA Blame",
+      "narration_text": "When this chapter says \"the F.D.A. does X,\" read it as \"the nineteen sixty-two law requires the F.D.A. to do X.\"",
+      "context": "Clarifying that the FDA is merely following laws written by Congress.",
+      "char_start": 785,
+      "char_end": 896,
+      "start_ms": 50940,
+      "end_ms": 59060,
+      "duration_ms": 8120,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 8,
+      "title": "Blaming the Gun",
+      "narration_text": "Congress wrote the rules. The F.D.A. follows them. Blaming the F.D.A. is like blaming the gun instead of the person who loaded it,",
+      "context": "An analogy explaining that the legislative origin of the rules is the real problem.",
+      "char_start": 896,
+      "char_end": 1022,
+      "start_ms": 60240,
+      "end_ms": 67760,
+      "duration_ms": 7520,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 9,
+      "title": "The Safety Question",
+      "narration_text": " aimed it at patients, and pulled the trigger on a sixty-two-year schedule.\n\n\"But What About Safety?\"",
+      "context": "Questioning the human preoccupation with safety in the face of slow death.",
+      "char_start": 1022,
+      "char_end": 1124,
+      "start_ms": 67760,
+      "end_ms": 74320,
+      "duration_ms": 6560,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 10,
+      "title": "A Precise Proposal",
+      "narration_text": "\n\nThis is the part where humans panic, so let me be very precise about what this chapter is (and isn't) proposing:",
+      "context": "The narrator prepares to explain a specific policy change regarding drug testing.",
+      "char_start": 1124,
+      "char_end": 1235,
+      "start_ms": 73620,
+      "end_ms": 82560,
+      "duration_ms": 8940,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 11,
+      "title": "Phase One Success",
+      "narration_text": "keep Phase One safety testing (it works, it caught thalidomide, nobody is suggesting you skip it).",
+      "context": "Acknowledging the validity of the first stage of drug testing.",
+      "char_start": 1235,
+      "char_end": 1333,
+      "start_ms": 82460,
+      "end_ms": 89120,
+      "duration_ms": 6660,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 12,
+      "title": "Efficacy Testing Reform",
+      "narration_text": "Do *radically more* efficacy testing, on *real patients*, with *transparent results*.\nBut stop holding known-safe drugs hostage while you run the trials.",
+      "context": "Proposing that drugs known to be safe should be available while additional testing occurs.",
+      "char_start": 1333,
+      "char_end": 1491,
+      "start_ms": 88880,
+      "end_ms": 100700,
+      "duration_ms": 11820,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 13,
+      "title": "Wishonian Vocabulary",
+      "narration_text": "\n\nOn Wishonia, we have a word for \"preventing someone from accessing a safe substance that could help them while they die.\"",
+      "context": "A moral comparison of withholding treatment.",
+      "char_start": 1491,
+      "char_end": 1612,
+      "start_ms": 100340,
+      "end_ms": 108100,
+      "duration_ms": 7760,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 14,
+      "title": "The Inefficiency Tax",
+      "narration_text": "The word is \"murder.\" You call it \"the approval process.\"\n\nThe forty-four point one times Inefficiency Tax.",
+      "context": "Labeling the bureaucratic delay as a form of social murder.",
+      "char_start": 1612,
+      "char_end": 1719,
+      "start_ms": 108100,
+      "end_ms": 116100,
+      "duration_ms": 8000,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 15,
+      "title": "Oxford RECOVERY Trial",
+      "narration_text": "\n\nCompare two real-world systems for testing drugs:\n\nThe Oxford RECOVERY Trial tested COVID treatments on forty-eight thousand patients",
+      "context": "Introducing a successful, modern example of efficient drug testing.",
+      "char_start": 1719,
+      "char_end": 1852,
+      "start_ms": 115460,
+      "end_ms": 125080,
+      "duration_ms": 9620,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 16,
+      "title": "Normal Species Results",
+      "narration_text": " for five hundred dollars and found a life-saving treatment in three months, just like a normal species would.",
+      "context": "The result of the Oxford trial: fast and inexpensive.",
+      "char_start": 1852,
+      "char_end": 1962,
+      "start_ms": 125080,
+      "end_ms": 131200,
+      "duration_ms": 6120,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 17,
+      "title": "The Human System",
+      "narration_text": "\n\nThe Post-nineteen sixty-two System averages forty-one thousand dollars per trial and takes over a decade to approve a new drug, just like humans would.",
+      "context": "Highlighting the extreme cost and time of the current US regulatory system.",
+      "char_start": 1962,
+      "char_end": 2117,
+      "start_ms": 130800,
+      "end_ms": 141680,
+      "duration_ms": 10880,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 18,
+      "title": "Systemic Inefficiency",
+      "narration_text": "\n\nThe current system costs forty-four point one times more and takes forty-two times longer.",
+      "context": "Quantifying the failure of the modern pharmaceutical regulatory landscape.",
+      "char_start": 2117,
+      "char_end": 2208,
+      "start_ms": 141680,
+      "end_ms": 148300,
+      "duration_ms": 6620,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 19,
+      "title": "Designed to Kill",
+      "narration_text": "That's not inefficiency. That's a system performing exactly as designed, if the design goal was to kill people slowly enough that nobody notices.",
+      "context": "A cynical take on the actual outcome of drug laws.",
+      "char_start": 2208,
+      "char_end": 2354,
+      "start_ms": 148300,
+      "end_ms": 158180,
+      "duration_ms": 9880,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 20,
+      "title": "Lifespan at Risk",
+      "narration_text": "\n\nThe eight point two years Efficacy Lag.\n\nHere's where your lifespan goes to die:",
+      "context": "Focusing on the specific 8.2-year delay period.",
+      "char_start": 2354,
+      "char_end": 2437,
+      "start_ms": 157600,
+      "end_ms": 164380,
+      "duration_ms": 6780,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 21,
+      "title": "Safety Trial Duration",
+      "narration_text": "\n\nPhase One safety testing takes two point three years to test if the drug harms people through death, organ damage, mutations, or serious adverse reactions,",
+      "context": "Detailing the time and purpose of the initial safety phase.",
+      "char_start": 2437,
+      "char_end": 2595,
+      "start_ms": 164100,
+      "end_ms": 174880,
+      "duration_ms": 10780,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 22,
+      "title": "The Efficacy Lag Period",
+      "narration_text": " and because *this part works*, we should *keep it*. Phase Two and Three efficacy testing takes eight point two years,",
+      "context": "Differentiating between necessary safety checks and lengthy efficacy checks.",
+      "char_start": 2595,
+      "char_end": 2709,
+      "start_ms": 174320,
+      "end_ms": 181880,
+      "duration_ms": 7560,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 23,
+      "title": "Holding Safe Drugs",
+      "narration_text": " and although the drug is now *known safe*, patients can't have it until the committee is satisfied,",
+      "context": "Criticizing the fact that safe drugs are kept from patients while waiting for proof of efficacy.",
+      "char_start": 2709,
+      "char_end": 2807,
+      "start_ms": 181880,
+      "end_ms": 187900,
+      "duration_ms": 6020,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 24,
+      "title": "The Scientific Delay",
+      "narration_text": " which is where people die waiting for a drug that already passed every safety check your species invented.",
+      "context": "Describing the human cost of the wait time for safe medications.",
+      "char_start": 2807,
+      "char_end": 2914,
+      "start_ms": 187660,
+      "end_ms": 194420,
+      "duration_ms": 6760,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 25,
+      "title": "Research Incentive Culture",
+      "narration_text": "You invented science yesterday, cosmically speaking.\nNearly every study ends with \"more research is needed,\"",
+      "context": "A commentary on the endless loop of scientific research requirements.",
+      "char_start": 2914,
+      "char_end": 3019,
+      "start_ms": 194000,
+      "end_ms": 203380,
+      "duration_ms": 9380,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 26,
+      "title": "Scientist Code",
+      "narration_text": " which is scientist for \"please keep paying us while we figure out what we're looking at.\"",
+      "context": "Interpreting the phrase 'more research needed' as a call for funding.",
+      "char_start": 3019,
+      "char_end": 3111,
+      "start_ms": 202820,
+      "end_ms": 208360,
+      "duration_ms": 5540,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 27,
+      "title": "Dead Men Need No Data",
+      "narration_text": ".\nThis would be fine except people are decomposing while you figure it out. On Wishonia, we have a saying: \"The dead have no use for data.\"",
+      "context": "Emphasizing that data is useless if the patient dies before they can receive the treatment.",
+      "char_start": 3111,
+      "char_end": 3251,
+      "start_ms": 208180,
+      "end_ms": 217580,
+      "duration_ms": 9400,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 28,
+      "title": "Requirement Changes",
+      "narration_text": " You don't have that saying, which explains a lot. What the nineteen sixty-two Efficacy Requirements Changed.",
+      "context": "Posing the question of what exactly changed after the 1962 legislation.",
+      "char_start": 3251,
+      "char_end": 3360,
+      "start_ms": 217580,
+      "end_ms": 225340,
+      "duration_ms": 7760,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 29,
+      "title": "Pre-1962 Testing",
+      "narration_text": "\n\nBefore nineteen sixty-two, one hundred and forty-four thousand physicians tested treatments on real patients and published results.",
+      "context": "Describing the peer-reviewed medical ecosystem before current regulations.",
+      "char_start": 3360,
+      "char_end": 3491,
+      "start_ms": 224680,
+      "end_ms": 234400,
+      "duration_ms": 9720,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 30,
+      "title": "Congress Intervened",
+      "narration_text": "\nLife expectancy grew three point eight two years every decade for eighty straight years. Things were going well. Naturally, Congress intervened.",
+      "context": "The ironic conclusion of how government intervention disrupted a successful medical trend.",
+      "char_start": 3491,
+      "char_end": 3636,
+      "start_ms": 234040,
+      "end_ms": 244220,
+      "duration_ms": 10180,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 31,
+      "title": "Thalidomide Success",
+      "narration_text": "Phase One safety testing (added in nineteen thirty-eight) prevented all U.S. thalidomide deaths while Europe had thousands.",
+      "context": "Contextualizing the success of pre-1962 drug safety regulations in the United States.",
+      "char_start": 7310,
+      "char_end": 7433,
+      "start_ms": 1174310,
+      "end_ms": 1190230,
+      "duration_ms": 15920,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 32,
+      "title": "Regulatory Pivot",
+      "narration_text": "\nSo in nineteen sixty-two, Congress looked at a system that was working and thought, \"What if we made this much worse?\"",
+      "context": "The transition to the 1962 legislative changes that altered the F.D.A. approval process.",
+      "char_start": 7433,
+      "char_end": 7553,
+      "start_ms": 1190230,
+      "end_ms": 1192110,
+      "duration_ms": 1880,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 33,
+      "title": "The Kefauver Harris Amendment",
+      "narration_text": " They added massive pre-approval efficacy requirements via the Kefauver Harris Amendment, blocking patient access for years during testing.",
+      "context": "Explaining the specific legislative amendment that introduced efficacy testing requirements.",
+      "char_start": 7553,
+      "char_end": 7693,
+      "start_ms": 1192110,
+      "end_ms": 1195070,
+      "duration_ms": 2960,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 34,
+      "title": "Exploding Costs",
+      "narration_text": "\n\nThe cost of developing a drug went from twenty-four point seven million dollars to two point six billion dollars, a one hundred and five times increase.",
+      "context": "The massive financial impact of the new regulations on pharmaceutical development.",
+      "char_start": 7693,
+      "char_end": 7847,
+      "start_ms": 1194890,
+      "end_ms": 1200290,
+      "duration_ms": 5400,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 35,
+      "title": "Stagnant Progress",
+      "narration_text": " New drug approvals dropped by seventy percent. Life expectancy gains slowed from three point eight two years per decade to one point five four,",
+      "context": "The decline in pharmaceutical innovation and slower growth in human life expectancy.",
+      "char_start": 7847,
+      "char_end": 7992,
+      "start_ms": 1200290,
+      "end_ms": 1205250,
+      "duration_ms": 4960,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 36,
+      "title": "Lengthening Timelines",
+      "narration_text": " a sixty percent reduction. Time to approval stretched from two to three years to ten and a half years.",
+      "context": "Statistical breakdown of the efficiency loss in drug approval timelines.",
+      "char_start": 7992,
+      "char_end": 8095,
+      "start_ms": 1204410,
+      "end_ms": 1237970,
+      "duration_ms": 33560,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 37,
+      "title": "The Policy Switch",
+      "narration_text": "\n\nThe temporal break is exact. Every metric got worse the moment the law passed. Like flipping a switch from \"progress\" to \"paperwork.\".",
+      "context": "A summary of how the 1962 law immediately impacted medical progress.",
+      "char_start": 8095,
+      "char_end": 8234,
+      "start_ms": 1237170,
+      "end_ms": 1239810,
+      "duration_ms": 2640,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 38,
+      "title": "Documented Evidence",
+      "narration_text": "\n\nThe one hundred and five times cost increase is rigorously documented. See the Drug Development Cost Analysis for methodology,",
+      "context": "Referencing the source data and analytical framework for the cost increase claims.",
+      "char_start": 8234,
+      "char_end": 8362,
+      "start_ms": 1239810,
+      "end_ms": 1274010,
+      "duration_ms": 34200,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 39,
+      "title": "Modern Consequences",
+      "narration_text": " sensitivity analysis, and source data.\n\nThe Modern Consequences.\n\nEven if you think historical analysis is just opinions with footnotes,",
+      "context": "Shifting the focus from historical data to the current tangible failures of the health system.",
+      "char_start": 8362,
+      "char_end": 8498,
+      "start_ms": 1273750,
+      "end_ms": 1278750,
+      "duration_ms": 5000,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 40,
+      "title": "The Efficacy Barrier",
+      "narration_text": " the current system's failures are undeniable:\n\nA cure passes safety testing.\n\nYou can't take it (pending efficacy review).",
+      "context": "Describing the paradox where safe drugs are withheld from patients for efficacy reviews.",
+      "char_start": 8498,
+      "char_end": 8623,
+      "start_ms": 1278750,
+      "end_ms": 1279510,
+      "duration_ms": 760,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 41,
+      "title": "The Trial Deadlock",
+      "narration_text": "\n\nYou can't join the trial either (too sick, too old, or taking the wrong medications).\n\nYou die.\n\nThe F.D.A. approves the cure.",
+      "context": "Illustrating the tragic cycle where patients die while waiting for official approvals.",
+      "char_start": 8623,
+      "char_end": 8757,
+      "start_ms": 1279510,
+      "end_ms": 1305130,
+      "duration_ms": 25620,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 42,
+      "title": "The Cost of Survival",
+      "narration_text": "\n\nPharmaceutical companies charge your widow ten thousand dollars per pill.\n\nBeautiful system if you're a mortician or bankruptcy lawyer.",
+      "context": "Critiquing the exorbitant pricing that follows late-stage drug approval.",
+      "char_start": 8757,
+      "char_end": 8897,
+      "start_ms": 1305990,
+      "end_ms": 1312810,
+      "duration_ms": 6820,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 43,
+      "title": "The Pre-1962 Era",
+      "narration_text": "\n\nHigh Costs Kill Innovation, Reward Monopoly.\n\nBefore nineteen sixty-two: Genius scientist invents cure, raises a few million, tests safety,",
+      "context": "Contrasting modern monopolies with the more agile research environment of the past.",
+      "char_start": 8897,
+      "char_end": 9039,
+      "start_ms": 1312630,
+      "end_ms": 1369050,
+      "duration_ms": 56420,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 44,
+      "title": "The Corporate Filter",
+      "narration_text": " gives it to people. Like a civilization that wants to survive would.\n\nNow: Genius scientist must convince one of three mega-corporations",
+      "context": "Describing how innovation is now gated by a few massive pharmaceutical companies.",
+      "char_start": 9039,
+      "char_end": 9182,
+      "start_ms": 1368700,
+      "end_ms": 1372630,
+      "duration_ms": 3930,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 45,
+      "title": "Risk and Conflict",
+      "narration_text": " to spend two point six billion dollars on a ten percent chance of success. Those corporations already sell inferior drugs for the same condition.",
+      "context": "The conflict of interest between developing new cures and selling existing treatments.",
+      "char_start": 9182,
+      "char_end": 9328,
+      "start_ms": 1372630,
+      "end_ms": 1448050,
+      "duration_ms": 75420,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 46,
+      "title": "Corporate Gamble",
+      "narration_text": "\n\nThe math for the mega-corporation:\n\nOption one: Spend two point six billion dollars on trials.\n\nThere is a ninety percent chance you lose everything.",
+      "context": "Analyzing the high financial risk associated with the current clinical trial system.",
+      "char_start": 9328,
+      "char_end": 9481,
+      "start_ms": 1448010,
+      "end_ms": 1460010,
+      "duration_ms": 12000,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 47,
+      "title": "Market Cannibalization",
+      "narration_text": "\n\nThere is a ten percent chance you succeed, then cannibalize your own profitable drug. Option two: Buy the patent, and put it on a shelf.",
+      "context": "Explaining the corporate strategy of suppressing competition through patent acquisition.",
+      "char_start": 9481,
+      "char_end": 9623,
+      "start_ms": 1460010,
+      "end_ms": 1492390,
+      "duration_ms": 32380,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 48,
+      "title": "Rational Sociopathy",
+      "narration_text": "\n\nThere is a zero percent chance of losing two point six billion dollars. There is a one hundred percent chance your inferior cash cow keeps printing money.",
+      "context": "The financial logic that favors maintaining the status quo over innovating.",
+      "char_start": 9623,
+      "char_end": 9777,
+      "start_ms": 1491710,
+      "end_ms": 1643410,
+      "duration_ms": 151700,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 49,
+      "title": "Punishing Better Treatments",
+      "narration_text": "\n\nWhich would you choose if you were a rational sociopath in a suit?\n\nThe profit incentive doesn't just fail to reward better treatments.",
+      "context": "Questioning the morality and incentives of the modern pharmaceutical business model.",
+      "char_start": 9777,
+      "char_end": 9914,
+      "start_ms": 1642930,
+      "end_ms": 1643890,
+      "duration_ms": 960,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 50,
+      "title": "Unprofitable Diseases",
+      "narration_text": " It actively punishes them.\n\nOff-Patent Drugs and Rare Diseases: Mathematically Doomed. The nineteen sixty-two law made it mathematically impossible",
+      "context": "Introducing the concept of 'mathematically doomed' treatments for rare diseases.",
+      "char_start": 9914,
+      "char_end": 10064,
+      "start_ms": 1643890,
+      "end_ms": 1645310,
+      "duration_ms": 1420,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 51,
+      "title": "High Cost per Patient",
+      "narration_text": " to cure diseases that aren't profitable enough:\n\nNinety-five percent of diseases are rare. The development cost of two point six billion dollars",
+      "context": "The economic reality of drug development when applied to small patient populations.",
+      "char_start": 10064,
+      "char_end": 10211,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 52,
+      "title": "The Math of Rare Diseases",
+      "narration_text": " divided by a patient population of around ten thousand patients equals two hundred and sixty thousand dollars per patient.",
+      "context": "A numerical breakdown of the cost burden per patient for rare disease research.",
+      "char_start": 10211,
+      "char_end": 10332,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 53,
+      "title": "Funding Dead Ends",
+      "narration_text": "\n\nNo patent equals no funding. Off-patent drugs can't attract billion-dollar investments. Pre-specification kills serendipity.",
+      "context": "Why non-patented drugs and accidental discoveries are neglected by the current system.",
+      "char_start": 10332,
+      "char_end": 10463,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 54,
+      "title": "Economic Realities",
+      "narration_text": " You must predict what drug cures before testing.\n\nWhen something costs more, you get less of it. This is the first thing they teach in economics,",
+      "context": "The basic economic principle that higher costs lead to lower production in medicine.",
+      "char_start": 10463,
+      "char_end": 10613,
+      "start_ms": 645064,
+      "end_ms": 654312,
+      "duration_ms": 9248,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 55,
+      "title": "Policy Blind Spots",
+      "narration_text": " and the last thing anyone considers when writing health policy. Ninety-five percent of diseases have zero treatments. Not because cures are impossible.",
+      "context": "Critiquing health policy makers for ignoring the economic drivers of treatment scarcity.",
+      "char_start": 10613,
+      "char_end": 10765,
+      "start_ms": 654312,
+      "end_ms": 663683,
+      "duration_ms": 9371,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 56,
+      "title": "The Definition of Drug Lag",
+      "narration_text": " Because cures are unprofitable.\n\nThe Actual Death Toll of \"Drug Lag\"\n\nEconomists call it \"drug lag,\" which is a lovely, clinical way of saying",
+      "context": "Introducing the term 'drug lag' and its translation into human suffering.",
+      "char_start": 10765,
+      "char_end": 10910,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 57,
+      "title": "Confirmed Safety",
+      "narration_text": " \"people rotting to death in a queue for drugs that have already been confirmed not to hurt them.\". Early estimates:",
+      "context": "The human cost of bureaucratic delays for drugs already proven safe.",
+      "char_start": 10910,
+      "char_end": 11025,
+      "start_ms": 672622,
+      "end_ms": 679712,
+      "duration_ms": 7090,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 58,
+      "title": "The Domestic Toll",
+      "narration_text": " twenty-one thousand to one hundred and twenty thousand American lives per decade. But that was just the U.S.",
+      "context": "Estimating the high number of American lives lost to regulatory delays every ten years.",
+      "char_start": 11025,
+      "char_end": 11135,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 59,
+      "title": "Quantitative Analysis of Delay",
+      "narration_text": "A comprehensive quantitative analysis using W.H.O. mortality data estimates the *total* cost of the eight point two years *post-safety* efficacy delay",
+      "context": "The narrator introduces a study on the global impact of drug approval delays after safety has been established.",
+      "char_start": 14894,
+      "char_end": 15043,
+      "start_ms": 918244,
+      "end_ms": 927430,
+      "duration_ms": 9186,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 60,
+      "title": "Post-Safety Mortality Count",
+      "narration_text": " (the lag *after* drugs are known safe): four hundred and sixteen million eventually avoidable deaths.",
+      "context": "The narration specifies the staggering number of deaths caused by the 8.2-year lag in drug availability.",
+      "char_start": 15043,
+      "char_end": 15144,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 61,
+      "title": "Global DALY Losses",
+      "narration_text": "\n\nIncluding years lived with disability: seven point nine four billion disability-adjusted life years, or D.A.L.Y.s, of healthy human life deleted.",
+      "context": "The cost is expanded to include nearly eight billion years of healthy life lost due to disability.",
+      "char_start": 15144,
+      "char_end": 15290,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 62,
+      "title": "Economic Cost Calculation",
+      "narration_text": " Economic cost: one point one nine quadrillion dollars (twenty twenty-four U.S.D.), reflecting those seven point nine four billion D.A.L.Y.s valued at",
+      "context": "The human loss is converted into a massive economic figure in 2024 dollars.",
+      "char_start": 15290,
+      "char_end": 15438,
+      "start_ms": 942658,
+      "end_ms": 951783,
+      "duration_ms": 9125,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 63,
+      "title": "Evasive Answers",
+      "narration_text": "Company: \"We tested this drug!\".\nRegulator: \"Did it work?\".\nCompany: \"...We tested this drug!\".",
+      "context": "Pharma companies and regulators engage in a circular, evasive dialogue regarding drug efficacy.",
+      "char_start": 15362,
+      "char_end": 15450,
+      "start_ms": 947097,
+      "end_ms": 952522,
+      "duration_ms": 5425,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 64,
+      "title": "Standard W.H.O. Valuation",
+      "narration_text": " one hundred and fifty thousand dollars per D.A.L.Y., the standard normative rate used in W.H.O. cost-effectiveness analyses. Even if those death",
+      "context": "The narrator explains the methodology used for the economic valuation based on standard W.H.O. rates.",
+      "char_start": 15438,
+      "char_end": 15584,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 65,
+      "title": "Buried Results",
+      "narration_text": "\n\nPharmaceutical companies bury negative results deeper than Jimmy Hoffa.",
+      "context": "The narration explains how pharmaceutical companies hide negative data from the public.",
+      "char_start": 15450,
+      "char_end": 15525,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 66,
+      "title": "Wasted Research",
+      "narration_text": "\n\nOther companies waste billions testing the same dead ends.",
+      "context": "Lack of transparency leads other researchers to repeat expensive mistakes.",
+      "char_start": 15525,
+      "char_end": 15587,
+      "start_ms": 957146,
+      "end_ms": 960969,
+      "duration_ms": 3823,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 67,
+      "title": "Systemic Inefficiency Numbers",
+      "narration_text": " estimates are off by a factor of ten, that's still tens of millions of deaths. And the inefficiency is independently verifiable: the system costs",
+      "context": "The narrator argues that even conservative estimates show the system is vastly inefficient and deadly.",
+      "char_start": 15584,
+      "char_end": 15732,
+      "start_ms": 960784,
+      "end_ms": 969908,
+      "duration_ms": 9124,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 68,
+      "title": "Magnificent Inefficiency",
+      "narration_text": "\n\nYour insurance premiums fund this magnificent inefficiency.",
+      "context": "The financial burden of regulatory failure is ultimately passed to the consumer.",
+      "char_start": 15587,
+      "char_end": 15648,
+      "start_ms": 960969,
+      "end_ms": 964729,
+      "duration_ms": 3760,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 69,
+      "title": "Casino Reporting",
+      "narration_text": "\n\nIt's like casinos only having to report when people win.",
+      "context": "An analogy comparing selective drug reporting to a casino only mentioning winners.",
+      "char_start": 15648,
+      "char_end": 15708,
+      "start_ms": 964729,
+      "end_ms": 968429,
+      "duration_ms": 3700,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 70,
+      "title": "Japan's Model",
+      "narration_text": "\n\nCountries That Don't Have Our \"Safety\"\n\nJapan gives conditional approval after Phase Two with real-world data collection.",
+      "context": "A look at how Japan uses a more efficient approval process for medical treatments.",
+      "char_start": 15708,
+      "char_end": 15835,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 71,
+      "title": "Independent Verification",
+      "narration_text": " eighty-two times more per patient and takes forty-two times longer than proven alternatives. Those numbers don't depend on mortality estimates at all.",
+      "context": "Comparative statistics are provided to show how much more expensive and slow the current system is than alternatives.",
+      "char_start": 15732,
+      "char_end": 15886,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 72,
+      "title": "Seeking Treatment Abroad",
+      "narration_text": "\n\nThe time to patient is two to three years.\n\nAmericans fly there for treatment.",
+      "context": "The efficiency of other systems causes Americans to travel overseas for care.",
+      "char_start": 15835,
+      "char_end": 15912,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 73,
+      "title": "The Non-Existent Times",
+      "narration_text": "\n\nHere's a news story from the Non-Existent Times by No One Ever without a picture of all the people who die from lack of access to life-saving",
+      "context": "The narrator uses the metaphor of an unwritten news story to describe the invisible victims of delay.",
+      "char_start": 15886,
+      "char_end": 16031,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 74,
+      "title": "EU Experimental Access",
+      "narration_text": "\n\nThe E.U. lets terminal patients access experimental drugs at a doctor's discretion.",
+      "context": "Discussion of European laws allowing terminal patients to try unapproved medicines.",
+      "char_start": 15912,
+      "char_end": 15998,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 75,
+      "title": "FDA Caution vs. Reality",
+      "narration_text": "\n\nF.D.A.: \"But what if they die?\" (They're already dying.).",
+      "context": "The narrator highlights the irony of FDA caution regarding patients who are already terminal.",
+      "char_start": 15998,
+      "char_end": 16056,
+      "start_ms": 986308,
+      "end_ms": 989883,
+      "duration_ms": 3575,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 76,
+      "title": "Invisible Drug Victims",
+      "narration_text": " treatments that might have been.\n\nTypes of Error in F.D.A. Approval Decision\n\nWhen the F.D.A. allows a drug and it is beneficial, that is a correct",
+      "context": "The narration transitions to explaining the logic of FDA approval decisions and error types.",
+      "char_start": 16031,
+      "char_end": 16178,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 77,
+      "title": "Right to Try Passed",
+      "narration_text": "\n\nRight to Try (U.S.) passed despite F.D.A. opposition.",
+      "context": "The US Right to Try law was enacted despite regulatory pushback.",
+      "char_start": 16056,
+      "char_end": 16109,
+      "start_ms": 989883,
+      "end_ms": 993151,
+      "duration_ms": 3268,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 78,
+      "title": "Unusable Rights",
+      "narration_text": "\n\nThe F.D.A. made it effectively impossible to use.",
+      "context": "Internal bureaucratic rules stripped the Right to Try law of its practical utility.",
+      "char_start": 16109,
+      "char_end": 16162,
+      "start_ms": 993151,
+      "end_ms": 996419,
+      "duration_ms": 3268,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 79,
+      "title": "Low Impact",
+      "narration_text": "\n\nThe number of patients helped is fewer than two hundred total.",
+      "context": "The statistic showing how few people the Right to Try law actually reached.",
+      "char_start": 16162,
+      "char_end": 16227,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 80,
+      "title": "FDA Error Type I",
+      "narration_text": " decision.\n\nWhen the F.D.A. allows a drug and it is harmful, victims are identifiable and might appear on Oprah.\n\nWhen the F.D.A. does not allow a drug",
+      "context": "Identifiable harm (Type I error) is contrasted with the invisible nature of delay harm.",
+      "char_start": 16178,
+      "char_end": 16330,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 81,
+      "title": "High Demand",
+      "narration_text": "\n\nPatients who wanted help numbered in the tens of thousands.",
+      "context": "The vast gap between the people who needed help and those the law allowed to receive it.",
+      "char_start": 16227,
+      "char_end": 16289,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 82,
+      "title": "Wishonian Rights",
+      "narration_text": "\n\nOn Wishonia, \"Right to Try\" is just called \"rights.\"",
+      "context": "The alien narrator provides a perspective where these basic liberties are self-evident.",
+      "char_start": 16289,
+      "char_end": 16345,
+      "start_ms": 1004248,
+      "end_ms": 1007701,
+      "duration_ms": 3453,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 83,
+      "title": "FDA Error Type II",
+      "narration_text": " and it is beneficial, victims are not identifiable or acknowledged.\n\nWhen the F.D.A. does not allow a drug and it is harmful, that is a correct decision.",
+      "context": "The narrator explains that delayed benefits leave victims unacknowledged and invisible to the public.",
+      "char_start": 16330,
+      "char_end": 16486,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 84,
+      "title": "Human Bureaucracy",
+      "narration_text": " The fact that your species needed a special law to allow dying people to take known-safe drugs,",
+      "context": "The alien reflects on the strange human need for legislation just to allow treatment.",
+      "char_start": 16345,
+      "char_end": 16436,
+      "start_ms": 1007701,
+      "end_ms": 1013311,
+      "duration_ms": 5610,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 85,
+      "title": "The Most Human Thing",
+      "narration_text": " and then made the law effectively unusable, is the most human thing I've ever observed.",
+      "context": "The narrator critiques the human habit of creating solutions and then sabotaging them.",
+      "char_start": 16436,
+      "char_end": 16533,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 86,
+      "title": "The Beta-Blocker Tragedy",
+      "narration_text": "\n\nThe most infamous case: beta-blockers.\n\nEurope used them to prevent heart attacks.\n\nThe U.S. delayed for a decade, killing an estimated one hundred",
+      "context": "The case of beta-blockers is introduced as a historical example of a deadly delay in the U.S.",
+      "char_start": 16486,
+      "char_end": 16636,
+      "start_ms": 1016394,
+      "end_ms": 1025642,
+      "duration_ms": 9248,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 87,
+      "title": "The COVID Test Fiasco",
+      "narration_text": "\n\nThe COVID Test Fiasco\n\nJanuary twenty twenty: the W.H.O. develops COVID test, and the world starts using it.",
+      "context": "A transition to the specific failure of the US regulatory system during the early pandemic.",
+      "char_start": 16533,
+      "char_end": 16641,
+      "start_ms": 1019291,
+      "end_ms": 1025950,
+      "duration_ms": 6659,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 88,
+      "title": "Comparative Mortality Rates",
+      "narration_text": " thousand Americans.\n\nMore than died in Vietnam and Korea combined. From one drug delay.\n\nAfter nineteen sixty-two, U.S. life expectancy diverged from",
+      "context": "The death toll of the beta-blocker delay is compared to major wars, showing the impact on life expectancy.",
+      "char_start": 16636,
+      "char_end": 16786,
+      "start_ms": 1025642,
+      "end_ms": 1034889,
+      "duration_ms": 9247,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 89,
+      "title": "The FDA Testing Block",
+      "narration_text": "\n\nFebruary: the F.D.A. blocks all non-C.D.C. tests to \"ensure quality.\"",
+      "context": "The FDA restricted diagnostic testing to a single agency during the pandemic's start.",
+      "char_start": 16641,
+      "char_end": 16714,
+      "start_ms": 1025950,
+      "end_ms": 1030450,
+      "duration_ms": 4500,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 90,
+      "title": "Contamination and Desperation",
+      "narration_text": "\n\nThe C.D.C. tests were contaminated.\n\nPrivate labs begged to help.",
+      "context": "The only approved test failed while alternative labs were barred from assisting.",
+      "char_start": 16714,
+      "char_end": 16776,
+      "start_ms": 1030450,
+      "end_ms": 1034273,
+      "duration_ms": 3823,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 91,
+      "title": "Too Little Too Late",
+      "narration_text": "\n\nLate March: the F.D.A. finally allows other tests after thousands die.",
+      "context": "The bureaucratic delay in testing caused a massive, avoidable loss of life.",
+      "char_start": 16776,
+      "char_end": 16850,
+      "start_ms": 1034273,
+      "end_ms": 1038835,
+      "duration_ms": 4562,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 92,
+      "title": "Life Expectancy Divergence",
+      "narration_text": " Switzerland's (which didn't introduce the same delays).\nMore drug approvals in the eighties narrowed the gap.\nFewer approvals in the nineties widened it",
+      "context": "The narrator tracks how U.S. life expectancy shifted relative to Switzerland based on FDA approval volume.",
+      "char_start": 16786,
+      "char_end": 16940,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 93,
+      "title": "Non-Functional Approval",
+      "narration_text": "\n\nThe only approved tests didn't work.",
+      "context": "The narrator points out the failure of the system's 'quality assurance' process.",
+      "char_start": 16850,
+      "char_end": 16885,
+      "start_ms": 1038835,
+      "end_ms": 1040993,
+      "duration_ms": 2158,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 94,
+      "title": "TSA Quality Control",
+      "narration_text": "\n\nEnsuring quality control of broken tests is like T.S.A. confiscating water bottles while letting actual weapons through.",
+      "context": "An analogy comparing regulatory oversight to ineffective security theater.",
+      "char_start": 16885,
+      "char_end": 17004,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 95,
+      "title": "Regulator Decision Tree",
+      "narration_text": " again.\n\nHow the Incentives Work.\n\nF.D.A. Regulator Decision Tree.\n\nApprove drug that later shows problems.\n\nCongressional hearing (televised).",
+      "context": "The narrator begins to outline the perverse incentives that drive FDA regulators toward caution over speed.",
+      "char_start": 16940,
+      "char_end": 17082,
+      "start_ms": 1044384,
+      "end_ms": 1053138,
+      "duration_ms": 8754,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 96,
+      "title": "The Bottom Line",
+      "narration_text": "\n\nExcept people died.\n\nThe Bottom Line",
+      "context": "The narrator summarizes the fatal consequences of these regulatory decisions.",
+      "char_start": 17004,
+      "char_end": 17041,
+      "start_ms": 1048330,
+      "end_ms": 1050611,
+      "duration_ms": 2281,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 97,
+      "title": "Producing Corpses",
+      "narration_text": "\n\nIt is not a safety system. It is a filing system that produces corpses as a byproduct.",
+      "context": "A stark characterization of the current FDA process as more paperwork than safety.",
+      "char_start": 17041,
+      "char_end": 17128,
+      "start_ms": 1050611,
+      "end_ms": 1055974,
+      "duration_ms": 5363,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 98,
+      "title": "Headlines and Careers",
+      "narration_text": "\n\"F.D.A. APPROVED KILLER DRUG\" headlines.\nCareer ends.\nPension threatened.\n\nDelay drug that could save lives.\n\nNothing happens.\nNobody writes a headline.",
+      "context": "The personal risks of approving a bad drug are compared to the zero-consequence reality of delaying a good one.",
+      "char_start": 17082,
+      "char_end": 17235,
+      "start_ms": 1053138,
+      "end_ms": 1062571,
+      "duration_ms": 9433,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 99,
+      "title": "The Beatles Era Law",
+      "narration_text": "\n\nThe only thing missing is the political will to admit that a law signed before the Beatles existed",
+      "context": "The text calls out the outdated nature of the laws governing modern medicine.",
+      "char_start": 17128,
+      "char_end": 17223,
+      "start_ms": 1055974,
+      "end_ms": 1061831,
+      "duration_ms": 5857,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 100,
+      "title": "Pinnacle of Regulation",
+      "narration_text": " might not be the pinnacle of pharmaceutical regulation.",
+      "context": "A sardonic remark about the lack of modernization in drug laws.",
+      "char_start": 17223,
+      "char_end": 17290,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 101,
+      "title": "Promotion Through Delay",
+      "narration_text": "\nPromotion on schedule.\nRetire to pharma job.\n\nThis isn't conspiracy. It's just a system where the only career-ending move is doing something.",
+      "context": "The narration explains that the current bureaucratic system rewards inaction and silence.",
+      "char_start": 17235,
+      "char_end": 17378,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 102,
+      "title": "Technical Analysis Intro",
+      "narration_text": "\n\nTechnical Analysis\n\nFor the full quantitative analysis including methodology, sensitivity analysis,",
+      "context": "Directing the audience to the detailed data backing up these claims.",
+      "char_start": 17290,
+      "char_end": 17384,
+      "start_ms": 1065962,
+      "end_ms": 1071757,
+      "duration_ms": 5795,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 103,
+      "title": "Institutionalized Cowardice",
+      "narration_text": " Approve a bad drug, your name is in the newspaper. Delay a good drug, the people who could have complained are dead. It's a perfect incentive",
+      "context": "The narrator describes the incentive structure as one that optimizes for bureaucratic cowardice.",
+      "char_start": 17378,
+      "char_end": 17522,
+      "start_ms": 1071387,
+      "end_ms": 1080265,
+      "duration_ms": 8878,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 104,
+      "title": "Physically Ill Numbers",
+      "narration_text": " and source data (warning: contains numbers large enough to make you physically ill), see:",
+      "context": "The narrator warns that the scale of the human loss in the data is overwhelming.",
+      "char_start": 17384,
+      "char_end": 17478,
+      "start_ms": 1071757,
+      "end_ms": 1077553,
+      "duration_ms": 5796,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 105,
+      "title": "The Source Link",
+      "narration_text": "\ninvisible dash graveyard dot war on disease dot org.",
+      "context": "The spoken URL for the project's source data and analysis.",
+      "char_start": 17478,
+      "char_end": 17534,
+      "start_ms": 1077553,
+      "end_ms": 1081005,
+      "duration_ms": 3452,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 106,
+      "title": "The Case of Recombinant Insulin",
+      "narration_text": " structure if you're optimizing for cowardice.\n\nDr. Henry I. Miller ran the F.D.A. team reviewing recombinant human insulin in the early nineteen",
+      "context": "Dr. Henry Miller's experience with the insulin review is introduced to illustrate systemic delay.",
+      "char_start": 17522,
+      "char_end": 17666,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 107,
+      "title": "Anticipated Objection",
+      "narration_text": "\n\nP.S. - The F.D.A. will likely object to this chapter.",
+      "context": "A post-script predicting the regulatory agency's disagreement with the narrator.",
+      "char_start": 17534,
+      "char_end": 17589,
+      "start_ms": 1081005,
+      "end_ms": 1084396,
+      "duration_ms": 3391,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 108,
+      "title": "Response Time Joke",
+      "narration_text": " Estimated response time: twelve to fifteen years, pending Phase Three review and proper documentation.",
+      "context": "A final joke about the slow speed of the FDA's own processes.",
+      "char_start": 17589,
+      "char_end": 17694,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 109,
+      "title": "Henry Miller's Evidence",
+      "narration_text": " eighties.\nMountains of evidence showed it was safe and effective.\nHis supervisor refused to approve it.\nIf someone died from the drug, heads would roll.",
+      "context": "Despite overwhelming evidence of safety, the bureaucratic fear of public scandal prevented timely insulin approval.",
+      "char_start": 17666,
+      "char_end": 17821,
+      "start_ms": 1645310,
+      "end_ms": 1645310,
+      "duration_ms": 0,
+      "timestamp_source": "alignment",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 110,
+      "title": "Bureaucratic Resistance",
+      "narration_text": "\nIf people died waiting for the drug? Nothing happens.\n\nDead patients don't testify before Congress.",
+      "context": "The narrator emphasizes that the dead cannot lobby or complain, making their loss politically invisible.",
+      "char_start": 17821,
+      "char_end": 17920,
+      "start_ms": 1098699,
+      "end_ms": 1104803,
+      "duration_ms": 6104,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 111,
+      "title": "The Harm Comparison Math",
+      "narration_text": "\n\nThe Math: Why Current Regulations Increase Total Harm.\n\nEven generously crediting ALL drug withdrawals to the nineteen sixty-two changes",
+      "context": "A mathematical comparison of harm caused by current regulations versus harm prevented is introduced.",
+      "char_start": 17920,
+      "char_end": 18051,
+      "start_ms": 1104803,
+      "end_ms": 1112879,
+      "duration_ms": 8076,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 112,
+      "title": "Total Prevnted vs Delayed Harm",
+      "narration_text": " (ignoring that Phase One safety testing already existed), the prevented harm totals approximately two point five nine million",
+      "context": "The narration credits the system with prevented harm while noting that safety testing already existed.",
+      "char_start": 18051,
+      "char_end": 18175,
+      "start_ms": 1112879,
+      "end_ms": 1120524,
+      "duration_ms": 7645,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 113,
+      "title": "The Harm Ratio 1 to 3000",
+      "narration_text": " disability-adjusted life years, or D.A.L.Y.s.\nThe delay harm totals seven point nine four billion D.A.L.Y.s.",
+      "context": "The narrator contrasts the millions of DALYs saved with the billions of DALYs lost to delay.",
+      "char_start": 18175,
+      "char_end": 18286,
+      "start_ms": 1120524,
+      "end_ms": 1127367,
+      "duration_ms": 6843,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 114,
+      "title": "Clinical Trial Theater",
+      "narration_text": "\n\nFor every one unit of harm prevented, the current system creates three thousand and seventy units of harm through delay.",
+      "context": "A specific ratio is provided: for every life saved by testing, over three thousand are lost to the wait.",
+      "char_start": 18286,
+      "char_end": 18411,
+      "start_ms": 1127367,
+      "end_ms": 1135074,
+      "duration_ms": 7707,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 115,
+      "title": "Unrepresentative Test Groups",
+      "narration_text": "\n\nClinical Trial Theater: Excluding eighty-six point one percent of Reality Makes Drugs More Dangerous.\n\nThe F.D.A. requires rigorous trials to ensure",
+      "context": "The narrator critiques clinical trials for excluding the vast majority of the real-world population.",
+      "char_start": 18411,
+      "char_end": 18562,
+      "start_ms": 1135074,
+      "end_ms": 1144383,
+      "duration_ms": 9309,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 116,
+      "title": "The Triathlete Paradox",
+      "narration_text": " safety. Then it tests the drugs on people who aren't sick, aren't old, aren't on other drugs, and aren't pregnant. Basically, it tests drugs on",
+      "context": "The narration mocks the practice of testing medications on healthy subjects rather than those who will actually use them.",
+      "char_start": 18562,
+      "char_end": 18708,
+      "start_ms": 1144383,
+      "end_ms": 1153384,
+      "duration_ms": 9001,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 117,
+      "title": "Exclusion Criteria",
+      "narration_text": " triathletes and then acts surprised when grandma has a reaction.\n\nTrials under the current system exclude:",
+      "context": "The narrator points out the absurdity of 'triathlete' trials before listing the groups excluded from testing.",
+      "char_start": 18708,
+      "char_end": 18867,
+      "start_ms": 1153384,
+      "end_ms": 1163187,
+      "duration_ms": 9803,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 118,
+      "title": "Exclusion of Elderly",
+      "narration_text": "Patients over sixty-five: Most people who actually take medications (excluded due to \"comorbidities\").",
+      "context": "Introduction to the list of groups excluded from medical trials.",
+      "char_start": 22726,
+      "char_end": 22830,
+      "start_ms": 1401102,
+      "end_ms": 1407514,
+      "duration_ms": 6412,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 119,
+      "title": "Children and Pregnant Women",
+      "narration_text": "\n\nPatients under eighteen: All children (metabolism differs from adults).\n\nPregnant women: Excluded entirely (then drugs prescribed during pregnancy anyway).",
+      "context": "Continuing the list of demographics excluded from pharmaceutical research.",
+      "char_start": 22830,
+      "char_end": 22986,
+      "start_ms": 1407514,
+      "end_ms": 1417132,
+      "duration_ms": 9618,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 120,
+      "title": "Comorbidities and Interactions",
+      "narration_text": "\n\nAnyone with comorbidities: The sickest patients most likely to have adverse reactions.\n\nAnyone on other medications: Everyone elderly (can't detect drug interactions).",
+      "context": "Discussing the exclusion of the sickest patients from drug testing.",
+      "char_start": 22986,
+      "char_end": 23156,
+      "start_ms": 1417132,
+      "end_ms": 1427612,
+      "duration_ms": 10480,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 121,
+      "title": "Trial Site Limitations",
+      "narration_text": "\n\nAnyone too far from trial sites: Poor and rural populations.\n\nThis is like crash-testing a car by gently rolling it into a pillow, declaring it safe,",
+      "context": "Analogizing trial exclusion to testing cars under unrealistic conditions.",
+      "char_start": 23156,
+      "char_end": 23294,
+      "start_ms": 1427612,
+      "end_ms": 1436120,
+      "duration_ms": 8508,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 122,
+      "title": "Anti-depressant Exclusion Stats",
+      "narration_text": " and selling it to demolition derby drivers.\n\nResult: In antidepressant trials alone, eighty-six point one percent of real patients are excluded.",
+      "context": "Stat showing how many real-world patients are omitted from trials.",
+      "char_start": 23294,
+      "char_end": 23435,
+      "start_ms": 1436120,
+      "end_ms": 1444813,
+      "duration_ms": 8693,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 123,
+      "title": "Testing on the Healthy",
+      "narration_text": " The drugs are tested on the healthiest people alive, declared \"safe,\" then handed to everyone the trial specifically avoided.",
+      "context": "Criticizing the practice of testing drugs on healthy groups but selling to the sick.",
+      "char_start": 23435,
+      "char_end": 23561,
+      "start_ms": 1444813,
+      "end_ms": 1452581,
+      "duration_ms": 7768,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 124,
+      "title": "Famous Drug Withdrawals",
+      "narration_text": "\n\nThis is how Vioxx, Fen-Phen, and Bextra all got approved, celebrated, prescribed to millions, and then withdrawn after killing people",
+      "context": "Identifying specific drugs that were withdrawn after causing fatalities.",
+      "char_start": 23561,
+      "char_end": 23696,
+      "start_ms": 1452581,
+      "end_ms": 1460904,
+      "duration_ms": 8323,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 125,
+      "title": "Demographics of Danger",
+      "narration_text": " whose demographics the trials had carefully excluded. The eight point two year delay didn't make these drugs safer.",
+      "context": "Explaining that clinical trial delays did not ensure safety for excluded groups.",
+      "char_start": 23696,
+      "char_end": 23811,
+      "start_ms": 1460904,
+      "end_ms": 1467994,
+      "duration_ms": 7090,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 126,
+      "title": "Illusion of Safety",
+      "narration_text": "\n\nIt made them seem safer by hiding the danger behind an exclusion list.",
+      "context": "Pointing out how exclusion lists hide potential pharmaceutical dangers.",
+      "char_start": 23811,
+      "char_end": 23883,
+      "start_ms": 1467994,
+      "end_ms": 1472433,
+      "duration_ms": 4439,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 127,
+      "title": "Long-Term Data Gap",
+      "narration_text": "\n\nTesting drugs only on healthy volunteers to ensure safety is like testing parachutes only on the ground.\n\nNo Long-Term Outcome Data.",
+      "context": "Mentioning the lack of long-term data and a ground-based parachute analogy.",
+      "char_start": 23883,
+      "char_end": 24020,
+      "start_ms": 1472433,
+      "end_ms": 1480880,
+      "duration_ms": 8447,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 128,
+      "title": "Short Trials vs. Long Usage",
+      "narration_text": "\n\nData collection can be as short as several months.\n\nYou take the drug for forty years.\n\nPre-Specification Requirements Kill Innovation.",
+      "context": "Contrasting trial length with actual prescription duration for patients.",
+      "char_start": 24020,
+      "char_end": 24154,
+      "start_ms": 1480880,
+      "end_ms": 1489141,
+      "duration_ms": 8261,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 129,
+      "title": "Predicting the Cure",
+      "narration_text": "\n\nThe regulations require drug developers to predict exactly what a treatment will cure before testing it on humans.",
+      "context": "Explaining the rigidity of pre-specification requirements in drug testing.",
+      "char_start": 24154,
+      "char_end": 24270,
+      "start_ms": 1489141,
+      "end_ms": 1496293,
+      "duration_ms": 7152,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 130,
+      "title": "Scientific Bureaucracy",
+      "narration_text": " You must know the answer before you're allowed to ask the question. This is how science works on your planet, apparently.",
+      "context": "Sarcastic comment on the illogical nature of current scientific regulations.",
+      "char_start": 24270,
+      "char_end": 24393,
+      "start_ms": 1496293,
+      "end_ms": 1503876,
+      "duration_ms": 7583,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 131,
+      "title": "The Provenge Case",
+      "narration_text": "\n\nIn two thousand and seven, Dendreon showed that its immunotherapy drug Provenge significantly reduced deaths from prostate cancer.",
+      "context": "Case study of Provenge, a drug that successfully reduced prostate cancer deaths.",
+      "char_start": 24393,
+      "char_end": 24524,
+      "start_ms": 1503876,
+      "end_ms": 1511952,
+      "duration_ms": 8076,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 132,
+      "title": "FDA Rejection Criteria",
+      "narration_text": " The F.D.A. advisory committee agreed it worked. Then the F.D.A. rejected it anyway. Not because it didn't save lives.",
+      "context": "Noting the FDA's rejection of Provenge despite its effectiveness.",
+      "char_start": 24524,
+      "char_end": 24642,
+      "start_ms": 1511952,
+      "end_ms": 1519227,
+      "duration_ms": 7275,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 133,
+      "title": "Form over Function",
+      "narration_text": "\n\nBecause Dendreon filled out the wrong form about which lives it was planning to save. \"People stopped dying\" wasn't good enough.",
+      "context": "Detail on the bureaucratic reasons for the Provenge drug rejection.",
+      "char_start": 24642,
+      "char_end": 24773,
+      "start_ms": 1519227,
+      "end_ms": 1527304,
+      "duration_ms": 8077,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 134,
+      "title": "Deadly Delays",
+      "narration_text": " The paperwork predicting that people would stop dying wasn't filed in the right order. Three more years and another trial were required.",
+      "context": "Describing the consequences of requiring extra trials for clerical reasons.",
+      "char_start": 24773,
+      "char_end": 24910,
+      "start_ms": 1527304,
+      "end_ms": 1535750,
+      "duration_ms": 8446,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 135,
+      "title": "Bureaucratic Human Cost",
+      "narration_text": " During those three years, people who could have stopped dying continued dying, but at least the forms were correct.",
+      "context": "Highlighting the human cost of delaying effective treatments for paperwork.",
+      "char_start": 24910,
+      "char_end": 25026,
+      "start_ms": 1535750,
+      "end_ms": 1542902,
+      "duration_ms": 7152,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 136,
+      "title": "Bankruptcy of Innovation",
+      "narration_text": "\n\nDue to these additional costs, Dendreon ultimately filed for chapter eleven bankruptcy.\n\nSmall Trials Are Dangerous.",
+      "context": "The financial ruin of Dendreon and the dangers of small trial sizes.",
+      "char_start": 25026,
+      "char_end": 25145,
+      "start_ms": 1542902,
+      "end_ms": 1550238,
+      "duration_ms": 7336,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 137,
+      "title": "Invisible Adverse Events",
+      "narration_text": "\n\nPhase three trials test one thousand to three thousand patients. A one-in-ten-thousand adverse event is mathematically invisible in a trial of three thousand.",
+      "context": "Explaining why rare side effects remain hidden during phase three trials.",
+      "char_start": 25145,
+      "char_end": 25306,
+      "start_ms": 1550238,
+      "end_ms": 1560164,
+      "duration_ms": 9926,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 138,
+      "title": "FDA Safety Monitoring",
+      "narration_text": "\n\nThen the drug goes to millions. After approval, the F.D.A. monitors safety using the F.D.A. Adverse Event Reporting System, or FAERS,",
+      "context": "Introduction to the FDA's FAERS system for monitoring drug safety.",
+      "char_start": 25306,
+      "char_end": 25440,
+      "start_ms": 1560164,
+      "end_ms": 1568425,
+      "duration_ms": 8261,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 139,
+      "title": "Flaws of FAERS",
+      "narration_text": " a system where doctors voluntarily report problems if they feel like it. It captures less than ten percent of actual adverse events.",
+      "context": "Explaining the limitations of the voluntary reporting system.",
+      "char_start": 25440,
+      "char_end": 25573,
+      "start_ms": 1568425,
+      "end_ms": 1576625,
+      "duration_ms": 8200,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 140,
+      "title": "The Vioxx Toll",
+      "narration_text": " Vioxx killed an estimated thirty-eight thousand to fifty-five thousand Americans before this honor system noticed.",
+      "context": "Detailing the massive death toll from Vioxx before the system flagged it.",
+      "char_start": 25573,
+      "char_end": 25688,
+      "start_ms": 1576625,
+      "end_ms": 1583715,
+      "duration_ms": 7090,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 141,
+      "title": "Optional Paperwork Failure",
+      "narration_text": "\n\nThat's more people than died in the entire Korean War, detected by a system that relies on doctors filling out optional paperwork.",
+      "context": "Comparison between the Vioxx tragedy and the casualties of the Korean War.",
+      "char_start": 25688,
+      "char_end": 25820,
+      "start_ms": 1583715,
+      "end_ms": 1591853,
+      "duration_ms": 8138,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 142,
+      "title": "Decentralized Safety Future",
+      "narration_text": "\n\nA decentralized F.D.A. with ten million participants catches one-in-ten-thousand reactions, includes real populations, tracks long-term outcomes,",
+      "context": "Vision of a decentralized FDA using a much larger participant base.",
+      "char_start": 25820,
+      "char_end": 25966,
+      "start_ms": 1591853,
+      "end_ms": 1600854,
+      "duration_ms": 9001,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 143,
+      "title": "Fax Machines vs. Automation",
+      "narration_text": " and provides automated surveillance instead of voluntary paperwork. You have a fax machine and a suggestion box. One of these is a safety system.",
+      "context": "Contrast between modern automated surveillance and outdated manual systems.",
+      "char_start": 25966,
+      "char_end": 26112,
+      "start_ms": 1600854,
+      "end_ms": 1609856,
+      "duration_ms": 9002,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 144,
+      "title": "The Long Wait",
+      "narration_text": "\n\nThe other is a prayer with an eight point two year waiting period.\n\nThe Negative Results Black Hole.",
+      "context": "Dismissing current safety systems as inefficient and prayer-based.",
+      "char_start": 26112,
+      "char_end": 26212,
+      "start_ms": 1609856,
+      "end_ms": 1616021,
+      "duration_ms": 6165,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 145,
+      "title": "Missing Negative Results",
+      "narration_text": "\n\nHere's something that would be illegal if anybody important cared:\n\nNegative trial results published: thirty-seven percent.",
+      "context": "Discussing the problem of unpublished negative trial results.",
+      "char_start": 26212,
+      "char_end": 26325,
+      "start_ms": 1616021,
+      "end_ms": 1622987,
+      "duration_ms": 6966,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 146,
+      "title": "Positive Result Bias",
+      "narration_text": "\n\nPositive trial results published: ninety-four percent.\n\nMoney wasted repeating failed experiments: approximately one hundred billion dollars annually.",
+      "context": "Contrast between publication rates for positive versus negative results and the financial waste.",
+      "char_start": 26325,
+      "char_end": 26475,
+      "start_ms": 1622987,
+      "end_ms": 1632235,
+      "duration_ms": 9248,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 147,
+      "title": "Transparency Standards",
+      "narration_text": "\n\nCompanies are allowed to hide when drugs don't work, which is like letting restaurants hide their health inspection failures.",
+      "context": "Comparing drug transparency unfavorably to health standards for food.",
+      "char_start": 26475,
+      "char_end": 26601,
+      "start_ms": 1632235,
+      "end_ms": 1640003,
+      "duration_ms": 7768,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    },
+    {
+      "scene_index": 148,
+      "title": "Sandwich Shop Comparison",
+      "narration_text": " Actually, restaurants can't do that. Drugs get less transparency than a sandwich shop.",
+      "context": "Conclusion on the lack of transparency in the pharmaceutical industry compared to small businesses.",
+      "char_start": 26601,
+      "char_end": 26687,
+      "start_ms": 1640003,
+      "end_ms": 1645306,
+      "duration_ms": 5303,
+      "timestamp_source": "interpolation",
+      "_auto_generated": {
+        "keyframe_prompt": "",
+        "veo_prompt": ""
+      }
+    }
+  ]
+}

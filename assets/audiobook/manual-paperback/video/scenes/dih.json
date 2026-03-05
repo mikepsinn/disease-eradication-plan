@@ -1,0 +1,2354 @@
+[
+  {
+    "scene_index": 1,
+    "title": "The Goal and Constraints",
+    "narration_text": "Your goal is simple: eliminate all disease.\n\nThe constraint is also simple: resources are scarce. You have limited money, time, and talent.",
+    "context": "The speaker introduces the core mission of global disease eradication and the reality of resource scarcity.",
+    "char_start": 0,
+    "char_end": 138,
+    "start_ms": 300,
+    "end_ms": 10440,
+    "duration_ms": 10140,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 2,
+    "title": "The Waste of Resources",
+    "narration_text": " Every dollar on a low-impact trial is a dollar not curing cancer. Every researcher writing grant applications is a researcher not doing research.",
+    "context": "Illustrating how current funding models waste both financial resources and scientific talent.",
+    "char_start": 138,
+    "char_end": 284,
+    "start_ms": 11380,
+    "end_ms": 20980,
+    "duration_ms": 9600,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 3,
+    "title": "Systemic Failure",
+    "narration_text": " Every patient excluded from trials is data you'll never collect and a person you'll never help.\n\nYour current system fails this optimization so thoroughly",
+    "context": "The speaker highlights the human and data costs of the existing medical trial system.",
+    "char_start": 284,
+    "char_end": 439,
+    "start_ms": 21660,
+    "end_ms": 32060,
+    "duration_ms": 10400,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 4,
+    "title": "The Funding Paradox",
+    "narration_text": " it almost looks intentional.\n\nYour N.I.H. spends forty-seven billion dollars a year. Your scientists spend fifty to sixty-seven percent of their time",
+    "context": "Exposing the inefficiency of large-scale health funding institutions like the N.I.H.",
+    "char_start": 439,
+    "char_end": 588,
+    "start_ms": 31480,
+    "end_ms": 42620,
+    "duration_ms": 11140,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 5,
+    "title": "Design vs Results",
+    "narration_text": " writing grant applications instead of doing science. Billions flow to projects that never produce treatments. Your system isn't designed to maximize cures.",
+    "context": "Critiquing the design of a system that prioritizes the acquisition of funds over the production of cures.",
+    "char_start": 588,
+    "char_end": 746,
+    "start_ms": 42380,
+    "end_ms": 52820,
+    "duration_ms": 10440,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 6,
+    "title": "Incentives and Paperwork",
+    "narration_text": " It's designed to maximize grant-writing.\n\nThis isn't a conspiracy. It's just what happens when you design a system that rewards asking for money instead",
+    "context": "Explaining that the focus on paperwork is an emergent property of the system's incentive structure.",
+    "char_start": 746,
+    "char_end": 899,
+    "start_ms": 53240,
+    "end_ms": 63140,
+    "duration_ms": 9900,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 7,
+    "title": "The Paperwork Machine",
+    "narration_text": " of producing results. You've accidentally built a machine whose primary output is paperwork and whose secondary output is occasionally, reluctantly, medicine.",
+    "context": "A final summary of the accidental bureaucracy of modern medicine.",
+    "char_start": 899,
+    "char_end": 1060,
+    "start_ms": 63140,
+    "end_ms": 76200,
+    "duration_ms": 13060,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 8,
+    "title": "An Alternative Design",
+    "narration_text": "\n\nYour decentralized institutes of health is an alternative design that optimizes for a single metric: maximum R.O.I. toward disease eradication.",
+    "context": "Introducing the DIH as a system focused purely on the return on investment for curing diseases.",
+    "char_start": 1060,
+    "char_end": 1205,
+    "start_ms": 76220,
+    "end_ms": 86840,
+    "duration_ms": 10620,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 9,
+    "title": "The Health-Industrial Complex",
+    "narration_text": " It's what you'd build if you started from scratch and actually wanted results.\n\nThe Health-Industrial Complex: Coordinating Your War on Disease.",
+    "context": "Presenting the conceptual title for a coordinated, result-oriented health effort.",
+    "char_start": 1205,
+    "char_end": 1349,
+    "start_ms": 86720,
+    "end_ms": 96440,
+    "duration_ms": 9720,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 10,
+    "title": "The Olsonian Problem",
+    "narration_text": "\n\nThe Olsonian Problem.\n\nYour economist Mancur Olson identified why public goods are systematically underproduced: diffuse benefits and concentrated costs.",
+    "context": "Introducing economic theory to explain why collective goals like cancer cures are hard to achieve.",
+    "char_start": 1349,
+    "char_end": 1504,
+    "start_ms": 97600,
+    "end_ms": 108540,
+    "duration_ms": 10940,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 11,
+    "title": "Concentrated Interest",
+    "narration_text": " In simpler terms: everyone benefits from a cure for cancer, but nobody benefits enough to fight for it the way a weapons manufacturer fights for a bomber contract.",
+    "context": "Contrasting the fragmented interest in health with the intense, focused interest in military procurement.",
+    "char_start": 1504,
+    "char_end": 1665,
+    "start_ms": 109260,
+    "end_ms": 119760,
+    "duration_ms": 10500,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 12,
+    "title": "The Invisible Problem",
+    "narration_text": " It's one of those observations that's obvious once someone says it, and invisible before, which describes most of your species' problems.",
+    "context": "Commenting on how humans often overlook systemic incentives until they are pointed out.",
+    "char_start": 1665,
+    "char_end": 1802,
+    "start_ms": 119000,
+    "end_ms": 128460,
+    "duration_ms": 9460,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 13,
+    "title": "Benefit Diffusion",
+    "narration_text": "\n\nCuring cancer benefits eight billion people a little. But nobody benefits enough to organize, lobby, and fight for it the way a defense contractor",
+    "context": "Analyzing the math of political lobbying: massive small gains for many don't beat large concentrated gains for a few.",
+    "char_start": 1802,
+    "char_end": 1950,
+    "start_ms": 128100,
+    "end_ms": 138840,
+    "duration_ms": 10740,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 14,
+    "title": "Lack of Organization",
+    "narration_text": " fights for a bomber contract. The eight billion don't show up. This is why your species has spent fifty years \"fighting cancer\" while your defense industry",
+    "context": "Explaining the lack of political 'muscle' for patients compared to the defense industry.",
+    "char_start": 1950,
+    "char_end": 2103,
+    "start_ms": 138160,
+    "end_ms": 149360,
+    "duration_ms": 11200,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 15,
+    "title": "Military Success",
+    "narration_text": " got stealth bombers, aircraft carriers, and G.P.S. Your military-industrial complex solved this problem for defense.",
+    "context": "Pointing out the tangible results produced by a system with concentrated interests.",
+    "char_start": 2103,
+    "char_end": 2221,
+    "start_ms": 148740,
+    "end_ms": 158160,
+    "duration_ms": 9420,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 16,
+    "title": "Coordinated Interests",
+    "narration_text": " Defense contractors, generals, politicians, and workers all have concentrated interests in military spending. They coordinate. They lobby. They win budgets.",
+    "context": "Describing the cohesive coalition that drives military funding.",
+    "char_start": 2221,
+    "char_end": 2380,
+    "start_ms": 157120,
+    "end_ms": 168620,
+    "duration_ms": 11500,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 17,
+    "title": "The Weak Coalition",
+    "narration_text": " Result: the most powerful military in human history. Disease has no such coalition. Your patients are too sick to lobby. Your researchers compete for scraps.",
+    "context": "Contrasting military power with the political weakness of the sick and the academic community.",
+    "char_start": 2380,
+    "char_end": 2539,
+    "start_ms": 167980,
+    "end_ms": 181620,
+    "duration_ms": 13640,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 18,
+    "title": "The Timing Problem",
+    "narration_text": " Your funders lack coordination. Your politicians get no credit for cures that arrive after their term ends (which is all of them, because cures take",
+    "context": "Explaining how short political cycles prevent long-term investment in medical breakthroughs.",
+    "char_start": 2539,
+    "char_end": 2687,
+    "start_ms": 180660,
+    "end_ms": 190660,
+    "duration_ms": 10000,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 19,
+    "title": "Misaligned Interests",
+    "narration_text": " fifteen years and terms last four). Everyone wants disease eradicated; no one has a concentrated interest in making it happen.",
+    "context": "Summarizing the misalignment between humanity's goals and its political incentives.",
+    "char_start": 2687,
+    "char_end": 2815,
+    "start_ms": 190660,
+    "end_ms": 199800,
+    "duration_ms": 9140,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 20,
+    "title": "The Kitchen Analogy",
+    "narration_text": " It's like everyone wanting a clean kitchen but nobody wanting to do the dishes, except the dishes are cancer and the kitchen is on fire.",
+    "context": "A vivid metaphor for the apathy and urgency of the current health crisis.",
+    "char_start": 2815,
+    "char_end": 2955,
+    "start_ms": 199260,
+    "end_ms": 209270,
+    "duration_ms": 10010,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 21,
+    "title": "Solving the Problem",
+    "narration_text": "\n\nYour Decentralized Institutes of Health solves the Olsonian problem by creating concentrated interests in disease eradication.",
+    "context": "Reintroducing the DIH as the specific fix for the economic problem of underproduced public goods.",
+    "char_start": 2955,
+    "char_end": 3083,
+    "start_ms": 209700,
+    "end_ms": 217840,
+    "duration_ms": 8140,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 22,
+    "title": "Health-Industrial Complex",
+    "narration_text": "\n\nYour military-industrial complex coordinates actors around defense. Your Decentralized Institutes of Health creates a health-industrial complex",
+    "context": "Establishing the DIH as the counterpart to the military-industrial complex.",
+    "char_start": 3083,
+    "char_end": 3239,
+    "start_ms": 218480,
+    "end_ms": 229800,
+    "duration_ms": 11320,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 23,
+    "title": "S.H.A.E.F. Comparison",
+    "narration_text": " that coordinates actors around eradication. Same structure, opposite purpose.\n\nSupreme Headquarters Allied Expeditionary Force, or S.H.A.E.F., for Your War on Disease.",
+    "context": "Using a WWII historical parallel to describe the management role of the DIH.",
+    "char_start": 3229,
+    "char_end": 3398,
+    "start_ms": 229200,
+    "end_ms": 241180,
+    "duration_ms": 11980,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 24,
+    "title": "Eisenhower's Strategy",
+    "narration_text": "\n\nIn nineteen forty-four, Eisenhower didn't replace the Allied armies. He coordinated them. Set the objective, allocated resources,",
+    "context": "Describing the leadership style of Eisenhower as a model for health coordination.",
+    "char_start": 3398,
+    "char_end": 3529,
+    "start_ms": 242120,
+    "end_ms": 251340,
+    "duration_ms": 9220,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 25,
+    "title": "Strategic Coordination",
+    "narration_text": " made sure everyone pulled in the same direction. Your Decentralized Institutes of Health is S.H.A.E.F. for the war on disease.",
+    "context": "Linking the WWII command structure directly to the proposed DIH structure.",
+    "char_start": 3529,
+    "char_end": 3656,
+    "start_ms": 251420,
+    "end_ms": 259760,
+    "duration_ms": 8340,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 26,
+    "title": "Operating as One",
+    "narration_text": "\n\nPharma companies stay pharma companies. Universities stay universities. Patient groups stay patient groups. But they operate as one force",
+    "context": "Explaining how various independent sectors are unified under the DIH umbrella without losing their identity.",
+    "char_start": 3656,
+    "char_end": 3796,
+    "start_ms": 260519,
+    "end_ms": 270520,
+    "duration_ms": 10001,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 27,
+    "title": "Coordinated Eradication",
+    "narration_text": " because your Decentralized Institutes of Health coordinates them toward eradication.",
+    "context": "Concluding the explanation of the DIH's function as a central coordinator for a singular goal.",
+    "char_start": 3796,
+    "char_end": 3880,
+    "start_ms": 269980,
+    "end_ms": 275760,
+    "duration_ms": 5780,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 28,
+    "title": "A Losing War",
+    "narration_text": "Your war on disease has been losing for fifty years because it's not actually a war. It's a collection of uncoordinated skirmishes where",
+    "context": "The speaker critiques the current state of medical research as fragmented and ineffective.",
+    "char_start": 7762,
+    "char_end": 7898,
+    "start_ms": 560740,
+    "end_ms": 571240,
+    "duration_ms": 10500,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 29,
+    "title": "Uncoordinated Efforts",
+    "narration_text": " researchers compete for grants, pharma companies hide failures, and patients can't access trials.\n\nYou've been \"fighting\" cancer the way a cat",
+    "context": "The narrator highlights the lack of cooperation and transparency in pharmaceutical development.",
+    "char_start": 7898,
+    "char_end": 8043,
+    "start_ms": 570680,
+    "end_ms": 581600,
+    "duration_ms": 10920,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 30,
+    "title": "The Laser Pointer Analogy",
+    "narration_text": " \"fights\" a laser pointer: lots of energy, no coordination, nothing caught.\n\nImagine if D-Day had been run this way. The Americans land at one",
+    "context": "A metaphor comparing current cancer research to a cat chasing a laser pointer and a failed military invasion.",
+    "char_start": 8043,
+    "char_end": 8188,
+    "start_ms": 580760,
+    "end_ms": 591800,
+    "duration_ms": 11040,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 31,
+    "title": "The D-Day Comparison",
+    "narration_text": " beach, the British at another. Neither tells the other what they learned. Both compete for the same supply ships while the enemy reads their",
+    "context": "Deepening the D-Day analogy to show the absurdity of uncoordinated efforts in science.",
+    "char_start": 8188,
+    "char_end": 8331,
+    "start_ms": 591180,
+    "end_ms": 603320,
+    "duration_ms": 12140,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 32,
+    "title": "Introducing the DIH",
+    "narration_text": " grant applications.\n\nYour Decentralized Institutes of Health is the coordination layer that turns scattered skirmishes into a unified campaign.\n\n",
+    "context": "Introducing the Decentralized Institutes of Health as the solution for coordination.",
+    "char_start": 8331,
+    "char_end": 8478,
+    "start_ms": 602100,
+    "end_ms": 614200,
+    "duration_ms": 12100,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 33,
+    "title": "ROI Maximization Protocol",
+    "narration_text": "Your Decentralized Institutes of Health: The return on investment, or R.O.I., Maximization Protocol.\n\nYour Decentralized Institutes of Health is",
+    "context": "Defining the DIH as a protocol for maximizing return on investment in healthcare.",
+    "char_start": 8478,
+    "char_end": 8622,
+    "start_ms": 613800,
+    "end_ms": 624120,
+    "duration_ms": 10320,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 34,
+    "title": "A Coordination Protocol",
+    "narration_text": " not a platform. It's not an organization. It's not even really a thing. It's a coordination protocol with one function:\n\nMake every actor do the",
+    "context": "Explaining that the DIH is a simple code-based protocol, not a bureaucratic entity.",
+    "char_start": 8622,
+    "char_end": 8769,
+    "start_ms": 623660,
+    "end_ms": 635580,
+    "duration_ms": 11920,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 35,
+    "title": "Disease Eradication",
+    "narration_text": " highest-R.O.I. thing toward total disease eradication.\n\nThis means:\n\nEvery dollar flows to maximum impact.\n\nEvery researcher works on",
+    "context": "The core mission: efficient resource allocation toward eradicating disease.",
+    "char_start": 8769,
+    "char_end": 8905,
+    "start_ms": 635520,
+    "end_ms": 644820,
+    "duration_ms": 9300,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 36,
+    "title": "Radical Efficiency",
+    "narration_text": " highest-value problems.\n\nEvery patient joins trials that matter most.\n\nNothing gets wasted on low-R.O.I. activities.\n\nOn your planet, you call this",
+    "context": "Detailing how the protocol ensures researchers and patients focus on high-impact trials.",
+    "char_start": 8905,
+    "char_end": 9053,
+    "start_ms": 643720,
+    "end_ms": 654720,
+    "duration_ms": 11000,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 37,
+    "title": "The Alien Perspective",
+    "narration_text": " radical. On mine, we call it \"obvious.\" We built ours four thousand two hundred and ninety-seven years ago. It's been running ever since, which is",
+    "context": "The narrator compares Earth's ideas to their alien civilization's ancient and established systems.",
+    "char_start": 9053,
+    "char_end": 9201,
+    "start_ms": 654720,
+    "end_ms": 664640,
+    "duration_ms": 9920,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 38,
+    "title": "Three Core Functions",
+    "narration_text": " longer than most of your civilizations have existed, though to be fair that's a low bar.\n\nThree Core Functions.\n\nYour Decentralized Institutes of",
+    "context": "A humorous jab at human history followed by the introduction of the DIH's three primary functions.",
+    "char_start": 9201,
+    "char_end": 9348,
+    "start_ms": 663380,
+    "end_ms": 673780,
+    "duration_ms": 10400,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 39,
+    "title": "Funding and Allocation",
+    "narration_text": " Health does exactly three things:\n\nReceive funds (from the one percent Treaty, donations, et cetera).\n\nAllocate research via patient subsidies",
+    "context": "Outlining the first two functions of the DIH: receiving funds and allocation through patient market mechanisms.",
+    "char_start": 9348,
+    "char_end": 9491,
+    "start_ms": 673780,
+    "end_ms": 682340,
+    "duration_ms": 8560,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 40,
+    "title": "Paying for Impact",
+    "narration_text": " (market mechanism) and infrastructure via Wishocracy.\n\nVerify results and pay proportional to impact.\n\nEverything operational is outsourced. Trial",
+    "context": "Explaining the third function: paying based on results and the strategy of outsourcing operational tasks.",
+    "char_start": 9491,
+    "char_end": 9639,
+    "start_ms": 681540,
+    "end_ms": 691480,
+    "duration_ms": 9940,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 41,
+    "title": "Outsourced Infrastructure",
+    "narration_text": " infrastructure? Existing and new providers compete for that work. Task decomposition? A.I. services. Talent matching? Existing marketplaces.",
+    "context": "Describing how existing technologies and markets handle the operational tasks of the DIH.",
+    "char_start": 9639,
+    "char_end": 9781,
+    "start_ms": 690920,
+    "end_ms": 701180,
+    "duration_ms": 10260,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 42,
+    "title": "Thin Protocols",
+    "narration_text": " Crowdfunding? Existing platforms.\n\nWhy stay thin? Because thin protocols are hard to capture. There's nothing to bribe. No operational role to",
+    "context": "Explaining the benefits of a 'thin' protocol in preventing institutional capture and bribery.",
+    "char_start": 9781,
+    "char_end": 9925,
+    "start_ms": 700860,
+    "end_ms": 710540,
+    "duration_ms": 9680,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 43,
+    "title": "Removing Corruption",
+    "narration_text": " corrupt. No C.E.O. to take on a yacht trip. Just code that moves money toward measured outcomes. Your species has a habit of corrupting every",
+    "context": "Contrasting code-based logic with human systems prone to personal enrichment and corruption.",
+    "char_start": 9925,
+    "char_end": 10067,
+    "start_ms": 710040,
+    "end_ms": 718800,
+    "duration_ms": 8760,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 44,
+    "title": "The Corrosion of Institutions",
+    "narration_text": " institution you build.\nYou corrupt them the way water corrodes pipes: inevitably, given enough time and contact. This one is boring enough that",
+    "context": "An analogy about how humans naturally corrupt institutions over time, whereas code remains sterile.",
+    "char_start": 10067,
+    "char_end": 10212,
+    "start_ms": 718400,
+    "end_ms": 728800,
+    "duration_ms": 10400,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 45,
+    "title": "Paying for Results",
+    "narration_text": " nobody bothers.\n\nThe Core Innovation: Pay for Results.\n\nEvery dollar flows based on results, not promises:\n\nPatients vote with their enrollment,",
+    "context": "Introducing the 'Pay for Results' model where patient choice and actual outcomes dictate financial flow.",
+    "char_start": 10212,
+    "char_end": 10356,
+    "start_ms": 728620,
+    "end_ms": 739080,
+    "duration_ms": 10460,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 46,
+    "title": "Outcome Based Funding",
+    "narration_text": " and researchers get paid for attracting patients.\n\nOutcomes determine continued funding; campaigns that deliver get more, and failures get",
+    "context": "Explaining how successful research campaigns are incentivized and failures are defunded.",
+    "char_start": 10356,
+    "char_end": 10495,
+    "start_ms": 738480,
+    "end_ms": 746580,
+    "duration_ms": 8100,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 47,
+    "title": "Removing Overhead",
+    "narration_text": " defunded.\n\nNo one gets paid for writing grant proposals.\n\nNo one gets paid for attending review committees.\n\nNo one gets paid for publishing",
+    "context": "Listing the bureaucratic and administrative activities that will no longer receive funding under the new system.",
+    "char_start": 10495,
+    "char_end": 10636,
+    "start_ms": 746160,
+    "end_ms": 755500,
+    "duration_ms": 9340,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 48,
+    "title": "Practical Industry Standard",
+    "narration_text": " papers about why their research might work someday.\n\nThis is how most other industries work. You pay contractors when they build the house, not",
+    "context": "The narrator criticizes payments for theoretical work and compares research to the construction industry.",
+    "char_start": 10636,
+    "char_end": 10781,
+    "start_ms": 754940,
+    "end_ms": 764420,
+    "duration_ms": 9480,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 49,
+    "title": "Farming and Data Commons",
+    "narration_text": " when they promise to build it. You pay farmers when they grow the food, not when they apply for a farming license.\n\nYour Data Commons: Publish",
+    "context": "Comparing medical research funding to more practical industries and introducing the Data Commons.",
+    "char_start": 10781,
+    "char_end": 10925,
+    "start_ms": 764260,
+    "end_ms": 771920,
+    "duration_ms": 7660,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 50,
+    "title": "Hiding Failures",
+    "narration_text": " Everything.\n\nYour current system hides failures. Companies bury negative results. Researchers don't publish what didn't work. Your scientists waste",
+    "context": "Addressing the problem of 'hidden failures' and the lack of negative data in current scientific practice.",
+    "char_start": 10925,
+    "char_end": 11073,
+    "start_ms": 772660,
+    "end_ms": 781460,
+    "duration_ms": 8800,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 51,
+    "title": "The Cost of Amnesia",
+    "narration_text": " billions repeating mistakes someone else already made because they literally cannot find out those mistakes were already made.\nIt's like your whole",
+    "context": "Describing the massive economic and temporal waste caused by scientists repeating failed experiments.",
+    "char_start": 11073,
+    "char_end": 11222,
+    "start_ms": 780900,
+    "end_ms": 790080,
+    "duration_ms": 9180,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 52,
+    "title": "Human Selective Memory",
+    "narration_text": " species has amnesia, but only for the embarrassing parts. You remember your triumphs in high definition and forget your failures completely. This",
+    "context": "A psychological observation about how humans tend to ignore their own past mistakes to their detriment.",
+    "char_start": 11222,
+    "char_end": 11370,
+    "start_ms": 790080,
+    "end_ms": 798760,
+    "duration_ms": 8680,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 53,
+    "title": "Open Publication",
+    "narration_text": " is called \"being human.\" It's also called \"why you keep dying.\".\n\nYour Decentralized Institutes of Health requires one hundred percent open",
+    "context": "Linking human nature to the failure of data sharing and introducing the mandatory open publication rule.",
+    "char_start": 11370,
+    "char_end": 11512,
+    "start_ms": 798480,
+    "end_ms": 806880,
+    "duration_ms": 8400,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 54,
+    "title": "A Global Data Set",
+    "narration_text": " publication of all data, positive and negative, as a condition of funding:\n\nEvery trial, every result, and every dataset is published.\n\nA.I.",
+    "context": "The mandatory rule for total transparency in all clinical and research data to receive funding.",
+    "char_start": 11512,
+    "char_end": 11654,
+    "start_ms": 806880,
+    "end_ms": 816240,
+    "duration_ms": 9360,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 55,
+    "title": "AI Pattern Matching",
+    "narration_text": " models scan the global data commons, finding patterns humans miss.",
+    "context": "How AI will utilize the open data to discover medical patterns beyond human observation.",
+    "char_start": 11654,
+    "char_end": 11722,
+    "start_ms": 816040,
+    "end_ms": 820560,
+    "duration_ms": 4520,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 56,
+    "title": "Intelligence Sharing Analogy",
+    "narration_text": "Failed experiments become shared knowledge, not repeated waste.\n\nThis is intelligence sharing in the Supreme Headquarters Allied",
+    "context": "The speaker introduces a military analogy to emphasize the importance of sharing research failures.",
+    "char_start": 15634,
+    "char_end": 15761,
+    "start_ms": 1076000,
+    "end_ms": 1084360,
+    "duration_ms": 8360,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 57,
+    "title": "System Capture",
+    "narration_text": "Your current system is trivially captured. Concentrate billions of dollars in a few committees, and lobbyists will find them.",
+    "context": "The narrator explains how concentrated funding creates an inevitable target for lobbyists and corruption.",
+    "char_start": 15653,
+    "char_end": 15774,
+    "start_ms": 1077900,
+    "end_ms": 1085490,
+    "duration_ms": 7590,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 58,
+    "title": "The SHAEF Example",
+    "narration_text": " Expeditionary Force, or S.H.A.E.F. analogy. Your Allies won partly because they shared Ultra intercepts across commands.",
+    "context": "Using WWII history, the speaker explains how intelligence sharing leads to victory.",
+    "char_start": 15761,
+    "char_end": 15887,
+    "start_ms": 1083780,
+    "end_ms": 1091880,
+    "duration_ms": 8100,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 59,
+    "title": "Predictable Human Nature",
+    "narration_text": " This is as predictable as gravity, and your species keeps being surprised by it the way a dog is surprised by a vacuum cleaner.",
+    "context": "Comparing the regularity of political corruption to physical laws and the predictable confusion of animals.",
+    "char_start": 15774,
+    "char_end": 15902,
+    "start_ms": 1084840,
+    "end_ms": 1093230,
+    "duration_ms": 8390,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 60,
+    "title": "Secrets vs Sharing",
+    "narration_text": " Your war on disease loses because everyone guards their failures like trade secrets. Think of it as a group chat where everyone",
+    "context": "The current healthcare system is criticized for being overly secretive about failed experiments.",
+    "char_start": 15887,
+    "char_end": 16015,
+    "start_ms": 1091560,
+    "end_ms": 1102100,
+    "duration_ms": 10540,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 61,
+    "title": "Economic Irrationality",
+    "narration_text": " Every single time.\n\nYour Decentralized Institutes of Health makes capture economically irrational.",
+    "context": "Introducing the DIH as a system designed to make corruption fundamentally unprofitable.",
+    "char_start": 15902,
+    "char_end": 15999,
+    "start_ms": 1092480,
+    "end_ms": 1100540,
+    "duration_ms": 8060,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 62,
+    "title": "Removing the C.E.O.",
+    "narration_text": "\n\nHow Your Decentralized Institutes of Health Resists Capture.\n\nThere is no C.E.O., meaning there is nothing to bribe",
+    "context": "Explaining that the lack of a central leader removes the primary target for bribery.",
+    "char_start": 15999,
+    "char_end": 16117,
+    "start_ms": 1099540,
+    "end_ms": 1108440,
+    "duration_ms": 8900,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 63,
+    "title": "Global Death Prevention",
+    "narration_text": " shares what didn't work.\nExcept the group is your entire species and the topic is death prevention.\n\nGovernance: Market Mechanism",
+    "context": "The speaker frames the new system as a species-wide effort to stop death.",
+    "char_start": 16015,
+    "char_end": 16145,
+    "start_ms": 1102100,
+    "end_ms": 1110120,
+    "duration_ms": 8020,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 64,
+    "title": "Algorithmic Governance",
+    "narration_text": " and the capture cost is not applicable.\n\nAlgorithmic governance encodes rules in transparent, auditable systems",
+    "context": "Rules are embedded in code rather than human discretion to prevent manipulation.",
+    "char_start": 16117,
+    "char_end": 16229,
+    "start_ms": 1108440,
+    "end_ms": 1116320,
+    "duration_ms": 7880,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 65,
+    "title": "Market Mechanism & Wishocracy",
+    "narration_text": " plus Wishocracy.\n\nYour Decentralized Institutes of Health uses two allocation mechanisms:\n\nPatient subsidies (market mechanism)",
+    "context": "Introducing the two core governance pillars of the Decentralized Institutes of Health.",
+    "char_start": 16145,
+    "char_end": 16273,
+    "start_ms": 1109880,
+    "end_ms": 1118600,
+    "duration_ms": 8720,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 66,
+    "title": "Public Ledger",
+    "narration_text": " because you can't bribe an algorithm.\n\nA public ledger ensures every dollar is tracked, making corruption visible.",
+    "context": "Financial transparency through public records makes it impossible to hide illicit payments.",
+    "char_start": 16229,
+    "char_end": 16344,
+    "start_ms": 1115800,
+    "end_ms": 1123940,
+    "duration_ms": 8140,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 67,
+    "title": "Patient-Driven Funding",
+    "narration_text": " mean research funding follows patient choice.\n\nPatients enroll in trials they believe in, and funding flows accordingly.\n\n",
+    "context": "Explaining how market forces allow patient enrollment to determine where funding goes.",
+    "char_start": 16273,
+    "char_end": 16396,
+    "start_ms": 1119220,
+    "end_ms": 1127760,
+    "duration_ms": 8540,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 68,
+    "title": "Competitive Alternatives",
+    "narration_text": "\n\nThe system is replaceable because anyone can build a competing alternative, meaning capture triggers competition.",
+    "context": "The open-source nature of the system ensures that any attempt at capture results in a superior alternative being built.",
+    "char_start": 16344,
+    "char_end": 16460,
+    "start_ms": 1123360,
+    "end_ms": 1132540,
+    "duration_ms": 9180,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 69,
+    "title": "Funding Rare Diseases",
+    "narration_text": "Variable subsidy rates ensure rare diseases remain viable.\n\nNo committees decide \"cancer versus Alzheimer's.\"\n\nWishocracy is used for",
+    "context": "The system avoids centralized committees and instead uses math to keep rare disease research profitable.",
+    "char_start": 16396,
+    "char_end": 16530,
+    "start_ms": 1127760,
+    "end_ms": 1137600,
+    "duration_ms": 9840,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 70,
+    "title": "Scaling Resistance",
+    "narration_text": "\n\nDistributed voting involves millions voting via Wishocracy, so lobbying doesn't scale.\n\nOutcome-based funding",
+    "context": "Mass participation and results-driven incentives prevent traditional lobbying from being effective.",
+    "char_start": 16460,
+    "char_end": 16565,
+    "start_ms": 1130980,
+    "end_ms": 1140220,
+    "duration_ms": 9240,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 71,
+    "title": "Preferences and Goods",
+    "narration_text": " infrastructure and public goods only.\n\nIt aggregates preferences through pairwise comparisons (electronic health record, or E.H.R.",
+    "context": "Wishocracy handles the shared infrastructure by analyzing actual health record preferences.",
+    "char_start": 16530,
+    "char_end": 16663,
+    "start_ms": 1137100,
+    "end_ms": 1146620,
+    "duration_ms": 9520,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 72,
+    "title": "Performance over Gaming",
+    "narration_text": " determines allocation by results, making gaming harder than performing.\n\nYour protocol ensures no single component",
+    "context": "Focusing on actual results makes it more profitable to succeed than to try and trick the system.",
+    "char_start": 16565,
+    "char_end": 16678,
+    "start_ms": 1139580,
+    "end_ms": 1147920,
+    "duration_ms": 8340,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 73,
+    "title": "The Incentive Stack",
+    "narration_text": " integration or security audits?). \n\nThe Incentive Stack: Making R.O.I. the Selfish Choice.\n\nYour Decentralized Institutes of Health",
+    "context": "Introduction to the Incentive Stack, which turns return on investment into a personal motivator.",
+    "char_start": 16663,
+    "char_end": 16795,
+    "start_ms": 1146620,
+    "end_ms": 1156200,
+    "duration_ms": 9580,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 74,
+    "title": "Coordination Rules",
+    "narration_text": " can monopolize power. Everything is replaceable. Nothing is essential except the coordination rules themselves.",
+    "context": "The system values the protocol over any specific person or organization within it.",
+    "char_start": 16678,
+    "char_end": 16789,
+    "start_ms": 1147500,
+    "end_ms": 1155400,
+    "duration_ms": 7900,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 75,
+    "title": "Security and Defense",
+    "narration_text": " If any campaign provider gets captured, fund a competing one instead.\n\nSecurity: Defense in Depth.",
+    "context": "Introducing the multi-layered security approach designed to protect the collective funds.",
+    "char_start": 16789,
+    "char_end": 16886,
+    "start_ms": 1154720,
+    "end_ms": 1163240,
+    "duration_ms": 8520,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 76,
+    "title": "The Flakiness of Altruism",
+    "narration_text": " doesn't rely on altruism. Altruism is lovely but flaky. It shows up when it feels like it, cancels last minute, and is always",
+    "context": "The speaker argues that altruism is too unreliable to build a permanent healthcare system upon.",
+    "char_start": 16795,
+    "char_end": 16922,
+    "start_ms": 1155400,
+    "end_ms": 1165860,
+    "duration_ms": 10460,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 77,
+    "title": "The Massive Target",
+    "narration_text": "\n\nA twenty-seven point two billion dollar treasury is a massive target. Every thief, hacker, and corrupt bureaucrat",
+    "context": "Acknowledging the reality that a large pool of money will inevitably attract bad actors.",
+    "char_start": 16886,
+    "char_end": 17003,
+    "start_ms": 1163240,
+    "end_ms": 1172060,
+    "duration_ms": 8820,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 78,
+    "title": "Monetizing the Highest ROI",
+    "narration_text": " \"busy that weekend.\" Instead, your Decentralized Institutes of Health pays everyone to do the highest-R.O.I. thing.\n\nGreed is",
+    "context": "The system ensures that the most impactful actions are also the most financially rewarding.",
+    "char_start": 16922,
+    "char_end": 17048,
+    "start_ms": 1165580,
+    "end_ms": 1174420,
+    "duration_ms": 8840,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 79,
+    "title": "Certainty of Theft",
+    "narration_text": " on your planet will try to steal from it. This is not speculation. This is a certainty, like sunrise or a politician lying.",
+    "context": "Stating that attempted theft is an absolute certainty that the system must be prepared for.",
+    "char_start": 17003,
+    "char_end": 17130,
+    "start_ms": 1171760,
+    "end_ms": 1180060,
+    "duration_ms": 8300,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 80,
+    "title": "Dependability of Greed",
+    "narration_text": " more dependable than kindness. Your entire economic system proves this daily. Nobody ever forgot to be greedy.\n\nResearchers want",
+    "context": "The speaker notes that greed is a constant human motivator that can be harnessed for good.",
+    "char_start": 17048,
+    "char_end": 17179,
+    "start_ms": 1174160,
+    "end_ms": 1183100,
+    "duration_ms": 8940,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 81,
+    "title": "Distributed Control",
+    "narration_text": "\n\nYour Decentralized Institutes of Health uses defense in depth:\n\nDistributed control: No single person or committee",
+    "context": "Describing the first security layer: ensuring no individual has total control over funds.",
+    "char_start": 17130,
+    "char_end": 17246,
+    "start_ms": 1179700,
+    "end_ms": 1188100,
+    "duration_ms": 8400,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 82,
+    "title": "Researcher Subsidies",
+    "narration_text": " money and prestige, so they are paid per-patient subsidies where attracting patients equals getting paid.\n\nPatients want health",
+    "context": "Researchers are incentivized to create trials that actually attract and help patients.",
+    "char_start": 17179,
+    "char_end": 17309,
+    "start_ms": 1182960,
+    "end_ms": 1191760,
+    "duration_ms": 8800,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 83,
+    "title": "Time-Delayed Execution",
+    "narration_text": " holds the keys. Community governance with time-delayed execution so fraud can be caught before funds move.",
+    "context": "Implementing a buffer period so the community can audit and stop suspicious transactions.",
+    "char_start": 17246,
+    "char_end": 17353,
+    "start_ms": 1188100,
+    "end_ms": 1194760,
+    "duration_ms": 6660,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 84,
+    "title": "Patient Trials Incentives",
+    "narration_text": " and compensation, so they receive subsidies that scale with trial importance where joining high-priority trials equals being paid",
+    "context": "Patients are financially compensated for contributing to high-importance clinical trials.",
+    "char_start": 17309,
+    "char_end": 17441,
+    "start_ms": 1190980,
+    "end_ms": 1201220,
+    "duration_ms": 10240,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 85,
+    "title": "Automated Fraud Detection",
+    "narration_text": "\n\nAutomated fraud detection: Real-time anomaly detection, duplication monitoring, and whistleblower bounties.",
+    "context": "Using technical monitoring and financial incentives for whistleblowers to catch bad actors.",
+    "char_start": 17353,
+    "char_end": 17458,
+    "start_ms": 1194300,
+    "end_ms": 1202240,
+    "duration_ms": 7940,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 86,
+    "title": "Outcome Alignment Bonds",
+    "narration_text": " more.\n\nPoliticians want re-election and legacy, so they use Incentive Alignment Bonds (I.A.B.s) tied to disease outcomes where",
+    "context": "Politicians' success is tied to actual health improvements through specialized bonds.",
+    "char_start": 17441,
+    "char_end": 17568,
+    "start_ms": 1200500,
+    "end_ms": 1209700,
+    "duration_ms": 9200,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 87,
+    "title": "Watching the Money",
+    "narration_text": "\n\nMachines watch the money so humans don't have to be trusted with it.\n\nFull transparency: Every dollar tracked",
+    "context": "Explaining the shift from trusting human character to trusting technical oversight.",
+    "char_start": 17458,
+    "char_end": 17566,
+    "start_ms": 1201620,
+    "end_ms": 1209320,
+    "duration_ms": 7700,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 88,
+    "title": "Independent Audits",
+    "narration_text": " on public ledgers. Regular independent audits. You can't steal what everyone can see.\n\nRecovery mechanisms:",
+    "context": "Transparency acts as a deterrent, while the system prepares for the possibility of a breach.",
+    "char_start": 17566,
+    "char_end": 17673,
+    "start_ms": 1209320,
+    "end_ms": 1216960,
+    "duration_ms": 7640,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 89,
+    "title": "Funders and Quadratic Matching",
+    "narration_text": " better outcomes mean a bigger bonus.\n\nFunders want impact and returns, so they use quadratic matching and outcome tracking where",
+    "context": "Philanthropists and investors use advanced funding models to amplify their impact.",
+    "char_start": 17568,
+    "char_end": 17699,
+    "start_ms": 1209320,
+    "end_ms": 1218780,
+    "duration_ms": 9460,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 90,
+    "title": "System Recovery",
+    "narration_text": " Clawbacks for data falsification. Emergency pause capabilities. If something goes wrong, the system stops",
+    "context": "Mechanisms designed to reclaim funds and stop operations in the event of discovered fraud.",
+    "char_start": 17673,
+    "char_end": 17778,
+    "start_ms": 1216960,
+    "end_ms": 1223800,
+    "duration_ms": 6840,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 91,
+    "title": "Revenue for Data Utility",
+    "narration_text": " high-R.O.I. donations lead to amplified impact.\n\nData providers want revenue, so they receive fees tied to data utility where",
+    "context": "The system rewards data providers based on how useful their data is for research outcomes.",
+    "char_start": 17699,
+    "char_end": 17825,
+    "start_ms": 1218840,
+    "end_ms": 1227140,
+    "duration_ms": 8300,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 92,
+    "title": "The Coordination Layer",
+    "narration_text": " and fixes itself before continuing.\n\nSummary: Your Coordination Layer.\n\nYour Decentralized Institutes of Health is",
+    "context": "Summarizing the DIH as a foundational layer rather than a single entity.",
+    "char_start": 17778,
+    "char_end": 17890,
+    "start_ms": 1224080,
+    "end_ms": 1232960,
+    "duration_ms": 8880,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 93,
+    "title": "ROI-Based Campaign Funding",
+    "narration_text": " more useful data equals more revenue.\n\nCampaigns want funding, so they receive results-based continued funding where a higher",
+    "context": "Health campaigns only receive ongoing funding if they demonstrate a high return on investment.",
+    "char_start": 17825,
+    "char_end": 17952,
+    "start_ms": 1226400,
+    "end_ms": 1236870,
+    "duration_ms": 10470,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 94,
+    "title": "Connecting the Parts",
+    "narration_text": " not a research institution, a trial platform, or a funding agency. It's the thin layer that coordinates all of them.",
+    "context": "Clarifying that the system's role is to facilitate interactions between other entities.",
+    "char_start": 17890,
+    "char_end": 18008,
+    "start_ms": 1232400,
+    "end_ms": 1240500,
+    "duration_ms": 8100,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 95,
+    "title": "The ROI Weighting Principle",
+    "narration_text": " R.O.I. equals more funding.\n\nEvery incentive is R.O.I.-weighted. Not just \"do good\" but \"do the MOST good per dollar or hour.\"",
+    "context": "Summarizing the core philosophy: maximize the good achieved for every unit of effort or money spent.",
+    "char_start": 17952,
+    "char_end": 18082,
+    "start_ms": 1236120,
+    "end_ms": 1245300,
+    "duration_ms": 9180,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 96,
+    "title": "The Treaty Fund",
+    "narration_text": "\n\nThe one percent Treaty Fund serves as the treasury and receives funds from the treaty.\n\nPatient subsidies",
+    "context": "Explaining the core funding source and the start of the allocation process.",
+    "char_start": 18008,
+    "char_end": 18115,
+    "start_ms": 1239920,
+    "end_ms": 1246780,
+    "duration_ms": 6860,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 97,
+    "title": "Selfishness Cures Cancer",
+    "narration_text": " Your Decentralized Institutes of Health makes the highest-R.O.I. action the selfish choice for every actor. Selfishness,",
+    "context": "The system aligns personal gain with societal medical breakthroughs.",
+    "char_start": 18082,
+    "char_end": 18204,
+    "start_ms": 1244720,
+    "end_ms": 1252520,
+    "duration_ms": 7800,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 98,
+    "title": "Market-Based Research",
+    "narration_text": " manage research allocation through a market mechanism where patients choose trials.\n\nWishocracy handles infrastructure",
+    "context": "Patients drive funding by selecting the trials they want to participate in.",
+    "char_start": 18115,
+    "char_end": 18227,
+    "start_ms": 1247660,
+    "end_ms": 1254980,
+    "duration_ms": 7320,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 99,
+    "title": "Lessons from Civilizations",
+    "narration_text": " properly directed, cures cancer.\n\nThe civilizations I've worked with that figured this out are still around. The ones that",
+    "context": "The speaker mentions their experience with other civilizations that used similar incentive structures.",
+    "char_start": 18204,
+    "char_end": 18328,
+    "start_ms": 1252520,
+    "end_ms": 1262240,
+    "duration_ms": 9720,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 100,
+    "title": "Infrastructure Governance",
+    "narration_text": " governance and allocates between infrastructure and public goods.\n\nTrial infrastructure provides clinical trial",
+    "context": "Wishocracy governs the backbone of the system and manages shared resources.",
+    "char_start": 18227,
+    "char_end": 18336,
+    "start_ms": 1254400,
+    "end_ms": 1262240,
+    "duration_ms": 7840,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 101,
+    "title": "Built on Reality",
+    "narration_text": " decided selfishness was the problem and tried to build systems that required everyone to be nice are not.\n\nHow Your Researchers",
+    "context": "Contrasting systems built on human reality versus those built on idealistic but fragile niceness.",
+    "char_start": 18328,
+    "char_end": 18458,
+    "start_ms": 1261520,
+    "end_ms": 1270500,
+    "duration_ms": 8980,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 102,
+    "title": "Funded Campaigns",
+    "narration_text": " services through funded campaigns with competing providers.\n\nIncentive Alignment Bonds manage investor and political",
+    "context": "Competitive providers offer trial services, while bonds align external interests.",
+    "char_start": 18336,
+    "char_end": 18449,
+    "start_ms": 1261520,
+    "end_ms": 1269760,
+    "duration_ms": 8240,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 103,
+    "title": "Incentive Alignment",
+    "narration_text": " alignment through outcome-based rewards.\n\nThe single sentence version:\n\n\"Your Decentralized Institutes of Health",
+    "context": "Ensuring everyone involved is rewarded for successful patient outcomes.",
+    "char_start": 18449,
+    "char_end": 18559,
+    "start_ms": 1269280,
+    "end_ms": 1277340,
+    "duration_ms": 8060,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 104,
+    "title": "Traditional Grant Failures",
+    "narration_text": " Get Paid.\n\nYour traditional system: Write a grant proposal. Hope a committee likes it. Get paid to try. Maybe produce results.",
+    "context": "Analyzing the flaws in the current grant-based system of scientific funding.",
+    "char_start": 18458,
+    "char_end": 18586,
+    "start_ms": 1269760,
+    "end_ms": 1278840,
+    "duration_ms": 9080,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 105,
+    "title": "The Process Loop",
+    "narration_text": " receives funds, allocates research via patient subsidies, governs infrastructure via Wishocracy, verifies results,",
+    "context": "A quick summary of the operational flow from funding to verification.",
+    "char_start": 18559,
+    "char_end": 18672,
+    "start_ms": 1277100,
+    "end_ms": 1284620,
+    "duration_ms": 7520,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 106,
+    "title": "Patient-Based Trial Funding",
+    "narration_text": " Maybe not. Get paid either way.\n\nYour Decentralized Institutes of Health system:\n\nPer-patient subsidies mean that the more",
+    "context": "Transitioning to the DIH payment model where funding is tied directly to enrollment.",
+    "char_start": 18586,
+    "char_end": 18710,
+    "start_ms": 1278840,
+    "end_ms": 1287800,
+    "duration_ms": 8960,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 107,
+    "title": "Selfish Choice",
+    "narration_text": " and pays proportional to outcomes, making the highest-R.O.I. action the selfish choice for every actor.\"",
+    "context": "The fundamental goal: making the right thing for society the most profitable thing for the individual.",
+    "char_start": 18672,
+    "char_end": 18774,
+    "start_ms": 1284060,
+    "end_ms": 1291900,
+    "duration_ms": 7840,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 108,
+    "title": "Flexible Rare Disease Budgets",
+    "narration_text": " patients who join your trial, the more funding you get.\n\nVariable subsidy rates mean rare diseases get higher per-patient",
+    "context": "Ensuring that researchers still have the resources to tackle diseases with small patient populations.",
+    "char_start": 18710,
+    "char_end": 18834,
+    "start_ms": 1287800,
+    "end_ms": 1296150,
+    "duration_ms": 8350,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 109,
+    "title": "Conclusion",
+    "narration_text": "\n\nThat's the theory. The rest of this manual explains how you actually build it.",
+    "context": "Concluding the high-level overview and transitioning to the practical manual.",
+    "char_start": 18774,
+    "char_end": 18856,
+    "start_ms": 1291860,
+    "end_ms": 1297360,
+    "duration_ms": 5500,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 110,
+    "title": "Delivering Results for Funding",
+    "narration_text": " subsidies so small patient pools don't mean small budgets.\n\nResults-based continuation means you deliver results to get more",
+    "context": "Explaining the importance of continuous proof of work to maintain research funding.",
+    "char_start": 18834,
+    "char_end": 18960,
+    "start_ms": 1296520,
+    "end_ms": 1299320,
+    "duration_ms": 2800,
+    "timestamp_source": "alignment",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 111,
+    "title": "Scientists vs Plumbers",
+    "narration_text": " funding, or you get defunded.\n\nPay your scientists like you pay your plumbers: for fixing the problem, not for explaining why",
+    "context": "A pragmatic view on paying for solutions rather than just paying for effort.",
+    "char_start": 18960,
+    "char_end": 19087,
+    "start_ms": 899679,
+    "end_ms": 905705,
+    "duration_ms": 6026,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 112,
+    "title": "Experimental Treatment Layer",
+    "narration_text": " it's hard.\n\nHow It Works For Your Patients.\n\nYour Decentralized Institutes of Health doesn't replace your healthcare system. It",
+    "context": "Clarifying that the DIH is an additive layer designed to support experimental medicine.",
+    "char_start": 19087,
+    "char_end": 19216,
+    "start_ms": 905705,
+    "end_ms": 911826,
+    "duration_ms": 6121,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 113,
+    "title": "Insurance for Not Dying",
+    "narration_text": " adds an \"experimental treatment insurance layer\" on top. Your species already understands insurance. You just hadn't thought to",
+    "context": "The speaker explains the DIH as a form of insurance against otherwise terminal or untreated conditions.",
+    "char_start": 19216,
+    "char_end": 19346,
+    "start_ms": 911826,
+    "end_ms": 917995,
+    "duration_ms": 6169,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 114,
+    "title": "Case Study: Sarah",
+    "narration_text": " apply it to not dying of untreated diseases.\n\nSarah has Type two Diabetes. Old system: Metformin not working. No other options",
+    "context": "Introducing Sarah, an example patient struggling under the current healthcare system.",
+    "char_start": 19346,
+    "char_end": 19474,
+    "start_ms": 917995,
+    "end_ms": 924069,
+    "duration_ms": 6074,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 115,
+    "title": "Barriers in the Old System",
+    "narration_text": " covered. Pays hundreds per month for a branded drug. Still has poor control.\n",
+    "context": "Summarizing Sarah's situation: high costs and low medical efficacy due to a lack of options.",
+    "char_start": 19474,
+    "char_end": 19553,
+    "start_ms": 924069,
+    "end_ms": 927817,
+    "duration_ms": 3748,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 116,
+    "title": "Doctor's Trial Search",
+    "narration_text": "With your Decentralized Institutes of Health: Her doctor checks the trial network during a regular visit. Sees relevant trials.",
+    "context": "A doctor uses a decentralized network to find clinical trials during a patient visit.",
+    "char_start": 23404,
+    "char_end": 23531,
+    "start_ms": 1110553,
+    "end_ms": 1116579,
+    "duration_ms": 6026,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 117,
+    "title": "One-Click Enrollment",
+    "narration_text": " Recommends one based on Sarah's profile. Sarah enrolls with one click. The trial coverage pool covers all costs. Sarah pays a small copay.",
+    "context": "Sarah effortlessly joins a clinical trial recommended by her doctor, with costs covered.",
+    "char_start": 23531,
+    "char_end": 23671,
+    "start_ms": 1116579,
+    "end_ms": 1123222,
+    "duration_ms": 6643,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 118,
+    "title": "Patient Data Reporting",
+    "narration_text": "\nGets an experimental drug that might work better. Reports blood sugar via app. Her data helps the next patient.",
+    "context": "Sarah participates in the trial by taking medicine and logging data to help future patients.",
+    "char_start": 23671,
+    "char_end": 23783,
+    "start_ms": 1123222,
+    "end_ms": 1128537,
+    "duration_ms": 5315,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 119,
+    "title": "Efficient Consultations",
+    "narration_text": " Total time added to doctor visit: three minutes.\n\nWhy your doctors will cooperate:\n\nMore treatment options for desperate patients.",
+    "context": "The system is efficient and provides doctors with more options for patients in need.",
+    "char_start": 23783,
+    "char_end": 23920,
+    "start_ms": 1128537,
+    "end_ms": 1135038,
+    "duration_ms": 6501,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 120,
+    "title": "Doctor Benefits",
+    "narration_text": "\n\nNo liability (covered by trial insurance).\n\nMinimal workflow changes.\n\nWhy your patients will use it:",
+    "context": "Doctors are incentivized by low liability and simple workflow integrations.",
+    "char_start": 23920,
+    "char_end": 24024,
+    "start_ms": 1135038,
+    "end_ms": 1139973,
+    "duration_ms": 4935,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 121,
+    "title": "Patient Incentives",
+    "narration_text": "\n\nAffordable access to experimental treatments.\n\nDoctor-recommended.\n\nInsurance-like coverage (familiar model).\n\nNo financial risk.",
+    "context": "Patients benefit from low-cost, low-risk access to treatments recommended by their own doctors.",
+    "char_start": 24024,
+    "char_end": 24155,
+    "start_ms": 1139973,
+    "end_ms": 1146189,
+    "duration_ms": 6216,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 122,
+    "title": "The Guinea Pig Paradox",
+    "narration_text": "\n\nThey help others while helping themselves.\n\nIt's like being a guinea pig, except the guinea pig gets paid and gets medicine.",
+    "context": "Clinical trials become a mutually beneficial arrangement rather than a risky burden.",
+    "char_start": 24155,
+    "char_end": 24287,
+    "start_ms": 1146189,
+    "end_ms": 1152452,
+    "duration_ms": 6263,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 123,
+    "title": "The Treaty Fund",
+    "narration_text": "\n\nHow the Money Flows.\n\nThe Architecture.\n\nThe one percent Treaty Fund:\n\nHolds the treasury (from the one percent Treaty).",
+    "context": "Overview of the financial structure behind the Decentralized Institutes of Health.",
+    "char_start": 24287,
+    "char_end": 24409,
+    "start_ms": 1152452,
+    "end_ms": 1158241,
+    "duration_ms": 5789,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 124,
+    "title": "Wishocracy Allocation",
+    "narration_text": "\n\nAllocates between infrastructure and public goods via Wishocracy.\n\nFunds campaigns, not bureaucracies.\n\nNo C.E.O., no board, no one to corrupt.",
+    "context": "The fund avoids bureaucracy and corruption by using a direct democratic allocation process.",
+    "char_start": 24409,
+    "char_end": 24556,
+    "start_ms": 1158241,
+    "end_ms": 1165217,
+    "duration_ms": 6976,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 125,
+    "title": "DIH Protocol",
+    "narration_text": "\n\nYour Decentralized Institute of Health:\n\nA thin coordination protocol.\n\nReceives funding from the one percent Treaty Fund.",
+    "context": "The DIH is a lightweight system that coordinates resources from the larger treaty fund.",
+    "char_start": 24556,
+    "char_end": 24684,
+    "start_ms": 1165217,
+    "end_ms": 1171291,
+    "duration_ms": 6074,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 126,
+    "title": "Market Mechanism Research",
+    "narration_text": "\n\nResearch allocation via patient subsidies (market mechanism).\n\nVerifies results, pays for outcomes.\n\nTrial infrastructure providers:",
+    "context": "Funding is driven by outcomes and patient participation rather than administrative decisions.",
+    "char_start": 24684,
+    "char_end": 24819,
+    "start_ms": 1171291,
+    "end_ms": 1177697,
+    "duration_ms": 6406,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 127,
+    "title": "Competitive Services",
+    "narration_text": " Funded campaigns that compete to provide trial infrastructure. Not part of your Decentralized Institutes of Health itself;",
+    "context": "The infrastructure for trials is provided by independent, competitive service entities.",
+    "char_start": 24819,
+    "char_end": 24942,
+    "start_ms": 1177697,
+    "end_ms": 1183533,
+    "duration_ms": 5836,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 128,
+    "title": "Military Budget Redirection",
+    "narration_text": " just service providers with no budget authority.\n\nThe Fund Flow.\n\nYour one percent Treaty redirects twenty-seven point two billion dollars a year",
+    "context": "Billions of dollars are moved from military spending to fund medical advancement.",
+    "char_start": 24942,
+    "char_end": 25087,
+    "start_ms": 1183533,
+    "end_ms": 1190414,
+    "duration_ms": 6881,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 129,
+    "title": "Keeping the Machine Running",
+    "narration_text": " from global military budgets into the one percent Treaty Fund. But not all of it reaches research (some of it goes to keeping the machine running):",
+    "context": "The fund supports both active research and the necessary maintenance of the system.",
+    "char_start": 25087,
+    "char_end": 25235,
+    "start_ms": 1190414,
+    "end_ms": 1197436,
+    "duration_ms": 7022,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 130,
+    "title": "Incentive Bonds",
+    "narration_text": "\n\nIncentive Alignment Bonds receive ten percent plus ten percent, or two point seven two billion plus two point seven two billion dollars,",
+    "context": "A portion of the fund aligns the interests of investors and politicians with health outcomes.",
+    "char_start": 25235,
+    "char_end": 25375,
+    "start_ms": 1197436,
+    "end_ms": 1204080,
+    "duration_ms": 6644,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 131,
+    "title": "Research Treasury Allocation",
+    "narration_text": " to align investors and politicians with outcomes.\n\nThe Research treasury receives eighty percent, totaling twenty-one point eight billion dollars,",
+    "context": "The vast majority of the budget is dedicated directly to research subsidies.",
+    "char_start": 25375,
+    "char_end": 25523,
+    "start_ms": 1204080,
+    "end_ms": 1211102,
+    "duration_ms": 7022,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 132,
+    "title": "Funding Market Failures",
+    "narration_text": " for patient subsidies via market allocation.\n\nWhat Gets Funded: Market Failures Only.\n\nMost research allocation happens automatically",
+    "context": "The fund specifically targets research that the market cannot support on its own.",
+    "char_start": 25523,
+    "char_end": 25659,
+    "start_ms": 1211102,
+    "end_ms": 1217556,
+    "duration_ms": 6454,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 133,
+    "title": "Automatic Allocation",
+    "narration_text": " (patients choose trials, funding flows there). Your one percent Treaty Fund primarily funds market failures.",
+    "context": "The system uses automatic triggers for funding based on where patients choose to go.",
+    "char_start": 25659,
+    "char_end": 25768,
+    "start_ms": 1217556,
+    "end_ms": 1222728,
+    "duration_ms": 5172,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 134,
+    "title": "Infrastructure Development",
+    "narration_text": " These are the things your ecosystem can't handle on its own.\n\nInfrastructure\n\nDevelopment and operations.\n\nCompeting alternative implementations.",
+    "context": "The fund builds the essential tools and operations that require shared support.",
+    "char_start": 25768,
+    "char_end": 25915,
+    "start_ms": 1222728,
+    "end_ms": 1229703,
+    "duration_ms": 6975,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 135,
+    "title": "Data Commons",
+    "narration_text": "\n\nData commons infrastructure (storage, processing).\n\nSecurity audits and fraud detection systems.\n\nTrue Public Goods (No Revenue Model)",
+    "context": "Ensuring data is secure and accessible to all as a public good.",
+    "char_start": 25915,
+    "char_end": 26053,
+    "start_ms": 1229703,
+    "end_ms": 1236252,
+    "duration_ms": 6549,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 136,
+    "title": "Non-Revenue Research",
+    "narration_text": "\n\nPatient trial participation subsidies.\n\nNegative results publishing.\n\nReplication studies.\n\nThis is minimal by design.",
+    "context": "Funding studies that are scientifically necessary but lack a profit motive.",
+    "char_start": 26053,
+    "char_end": 26175,
+    "start_ms": 1236252,
+    "end_ms": 1242041,
+    "duration_ms": 5789,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 137,
+    "title": "Self-Sustaining Ecosystem",
+    "narration_text": " Your ecosystem handles most research funding automatically: companies register treatments, patients join trials, revenue flows, research happens.",
+    "context": "The primary research engine runs through commercial activity and patient choices.",
+    "char_start": 26175,
+    "char_end": 26321,
+    "start_ms": 1242041,
+    "end_ms": 1248969,
+    "duration_ms": 6928,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 138,
+    "title": "Targeted DIH Funding",
+    "narration_text": " Your Decentralized Institutes of Health only directs the one percent Treaty Fund to cover what the market genuinely can't.",
+    "context": "DIH acts as a safety net for research that would otherwise be ignored.",
+    "char_start": 26321,
+    "char_end": 26444,
+    "start_ms": 1248969,
+    "end_ms": 1254805,
+    "duration_ms": 5836,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 139,
+    "title": "Minimalist Design",
+    "narration_text": "\n\nWhat Your Decentralized Institutes of Health Outsources (and Why).\n\nYour Decentralized Institutes of Health is intentionally minimal.",
+    "context": "The organization stays small to maximize impact and prevent organizational bloat.",
+    "char_start": 26444,
+    "char_end": 26580,
+    "start_ms": 1254805,
+    "end_ms": 1261258,
+    "duration_ms": 6453,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 140,
+    "title": "Avoiding Corruption",
+    "narration_text": " It outsources everything operational because the best way to avoid corruption is to have nothing worth corrupting.",
+    "context": "By removing operational power from the center, the risk of capture is eliminated.",
+    "char_start": 26580,
+    "char_end": 26696,
+    "start_ms": 1261258,
+    "end_ms": 1266763,
+    "duration_ms": 5505,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 141,
+    "title": "The Restaurant Model",
+    "narration_text": " If a provider stops performing, you fund a better one. This is how your species runs restaurants.\n\nTime to try it with medicine.",
+    "context": "Competition and performance-based funding are applied to medical services.",
+    "char_start": 26696,
+    "char_end": 26827,
+    "start_ms": 1266763,
+    "end_ms": 1272979,
+    "duration_ms": 6216,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 142,
+    "title": "Outsourced Infrastructure",
+    "narration_text": "\n\nTrial infrastructure is outsourced to competing providers (funded campaigns) to separate concerns.",
+    "context": "Separating the management of trials from the scientific direction to ensure integrity.",
+    "char_start": 26827,
+    "char_end": 26926,
+    "start_ms": 1272979,
+    "end_ms": 1277677,
+    "duration_ms": 4698,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 143,
+    "title": "Existing Platforms",
+    "narration_text": "\n\nCrowdfunding is outsourced to existing platforms because they already exist and work.",
+    "context": "The DIH leverages current technology rather than building redundant systems.",
+    "char_start": 26926,
+    "char_end": 27014,
+    "start_ms": 1277677,
+    "end_ms": 1281852,
+    "duration_ms": 4175,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 144,
+    "title": "Talent Marketplaces",
+    "narration_text": "\n\nTalent matching is outsourced to existing marketplaces to avoid reinventing what already works.",
+    "context": "Professionals are matched with research needs using proven market platforms.",
+    "char_start": 27014,
+    "char_end": 27113,
+    "start_ms": 1281852,
+    "end_ms": 1286550,
+    "duration_ms": 4698,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 145,
+    "title": "Market Competition",
+    "narration_text": "\n\nData storage is outsourced to competing providers to encourage market competition.",
+    "context": "Outsourcing data ensures competitive pricing and innovation in storage technology.",
+    "char_start": 27113,
+    "char_end": 27199,
+    "start_ms": 1286550,
+    "end_ms": 1290631,
+    "duration_ms": 4081,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 146,
+    "title": "Campaign Lifecycle",
+    "narration_text": "\n\nEvery outsourced function follows the same lifecycle: propose, vote via Wishocracy, receive funding, deliver, get measured,",
+    "context": "Every part of the system is subject to democratic oversight and performance measurement.",
+    "char_start": 27199,
+    "char_end": 27325,
+    "start_ms": 1290631,
+    "end_ms": 1296610,
+    "duration_ms": 5979,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  },
+  {
+    "scene_index": 147,
+    "title": "Anti-Capture Design",
+    "narration_text": " and earn continued funding based on results.\n\nAnti-Capture Design.",
+    "context": "The system remains secure through outcome-based funding and decentralization.",
+    "char_start": 27325,
+    "char_end": 27393,
+    "start_ms": 1296610,
+    "end_ms": 1299837,
+    "duration_ms": 3227,
+    "timestamp_source": "interpolation",
+    "_auto_generated": {
+      "keyframe_prompt": "",
+      "veo_prompt": ""
+    }
+  }
+]
