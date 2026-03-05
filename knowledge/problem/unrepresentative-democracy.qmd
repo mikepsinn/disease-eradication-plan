@@ -15,199 +15,251 @@ feed-date: '2026-03-09'
 youtube-thumbnail: /assets/podcast/unrepresentative-democracy-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Your chance of deciding a presidential election: 1 in 60 million [@odds-of-decisive-vote]. You're more likely to die in a car crash driving to the polls. The expected value of your vote (your odds of being decisive times {{< var us_federal_spending_per_capita >}} in per-capita federal spending) is {{< var us_vote_expected_value >}}. The cost of casting it (time, gas, parking) is about $50.
+On Wishonia, decisions are made by whoever has the best evidence. On Earth, decisions are made by whoever has the most small pieces of paper. You call this system "democracy," which comes from your Greek word for "rule by the people," in the same way that "grape soda" comes from the word "grape."
 
-Democracy was designed so that your individual participation is mathematically meaningless. What isn't meaningless: the {{< var us_total_lobbying_annual >}} corporations spend annually on lobbying {{< var us_total_lobbying_annual_cite >}}. That math works out just fine.
+I spent 80 years studying your democracy. Here is what I found:
 
-The Founding Fathers were brilliant men. They anticipated tyranny, corruption, foreign invasion, and mob rule. They did not anticipate Florida.
+Your chance of deciding a presidential election is 1 in 60 million [@odds-of-decisive-vote]. You are more likely to die in a car crash driving to the polls. The expected value of your vote (your odds of being decisive times {{< var us_federal_spending_per_capita >}} in per-capita federal spending) is {{< var us_vote_expected_value >}}. The cost of casting it (time, transportation, parking, standing in line behind a man who brought the wrong ID) is about $50.
 
-## What Democracy Should Look Like vs Reality
+Corporations spend {{< var us_total_lobbying_annual >}} annually on lobbying {{< var us_total_lobbying_annual_cite >}}. Their math works fine.
 
-Princeton University analyzed 1,779 policy decisions over 20 years. The correlation between what ordinary voters want and what actually happens? **Zero. Percent.** [@princeton-oligarchy-study].
+Your Founding Fathers were brilliant men. They anticipated tyranny, corruption, foreign invasion, and mob rule. They did not anticipate Florida.
 
-When economic elites want something? 78% of the time [@princeton-oligarchy-study].
+## What Democracy Looks Like From Space
 
-You have the same political influence as your houseplant. Slightly less, actually. Your houseplant produces oxygen, which at least one congressman needs.
+Princeton University analyzed 1,779 policy decisions over 20 years. The correlation between what ordinary voters want and what actually becomes law: **zero percent** [@princeton-oligarchy-study].
 
-Your institutions tell the whole story in their names. You have a "Department of Defense" that mainly attacks people. A "Department of Health" that has not yet produced any observable health. And a "Department of Justice" that (you can see where this is going).
+Not "low." Not "disappointing." Zero.
 
-Whether 0% or 100% of voters support a bill, it has the same ~30% chance of passing. Democracy is a slot machine where every pull gives the same result but you keep playing because the machine has an American flag on it.
+When economic elites want something, it happens 78% of the time [@princeton-oligarchy-study].
 
-![In theory, voter support determines which laws pass. In reality, voter support has zero effect. You keep voting anyway. It's like writing letters to Santa but for taxes.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-princeton-policy-study-chart-bw-academic.jpg)
+Whether 0% or 100% of voters support a bill, it has the same roughly 30% chance of passing. The line is flat. Voter opinion enters the machine, the machine ignores it, and a law comes out the other end based on who paid for the machine. You have the same political influence as your houseplant. Less, actually. Your houseplant produces oxygen, which at least one congressman needs.
 
-## The Mathematics of Political Failure
+I found this confusing at first. Then I looked at your institutions, and they had already told me. You have a "Department of Defense" that mainly attacks people. A "Department of Health" that has not yet produced any observable health. And a "Department of Justice" that... well. You can see where this is going.
+
+![Whether 0% or 100% of voters support a bill, it has the same chance of passing. The line is flat.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-princeton-policy-study-chart-bw-academic.jpg)
+
+## The Mathematics of Why Nobody Fixes Anything
 
 ### Concentrated Benefits vs. Diffuse Costs
 
+On Wishonia, we discovered this problem 6,000 years ago. It goes like this:
+
 Sugar subsidies cost Americans $3.5 billion per year [@sugar-subsidies-cost]. That's {{< var sugar_subsidy_cost_per_person_annual >}} per person.
 
-Will you spend weeks fighting to save {{< var sugar_subsidy_cost_per_person_annual >}}? No.
-Will sugar companies spend millions to keep their $3.5 billion? Yes.
+Will you take a day off work, drive to your capitol, and stand in a hallway to save {{< var sugar_subsidy_cost_per_person_annual >}}? No. Will sugar companies spend millions to keep their $3.5 billion? Obviously.
 
-Guess who wins?
+This is the entire explanation for why your government does what it does. One sentence. Everything else is details.
 
-This pattern repeats everywhere:
+The pattern:
 
 - Pharma companies: $500 billion in concentrated profits [@pharma-profits-500b]
 - Patients: $1,500 each in diffuse suffering
-- Winner: Not you
+- Result: Pharma gets what pharma wants
 
 <!-- -->
 
 - Banks in 2008: $700 billion bailout (concentrated) [@tarp-bailout-700b]
-- You: $2,100 in taxes (diffuse)
-- Winner: The ones with yachts
+- Taxpayers: $2,100 each (diffuse)
+- Result: Banks get what banks want
 
-![A small group gets 100 million dollars. The cost spreads across 100 million taxpayers. Each taxpayer loses one dollar. Nobody notices. The small group notices very much.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-concentrated-benefits-vs-diffuse-costs-bw-academic.jpg)
+![A small group gains $100 million. The cost spreads across 100 million people at $1 each. Nobody organizes over $1. The small group organizes very effectively over $100 million.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-concentrated-benefits-vs-diffuse-costs-bw-academic.jpg)
 
-### The Death Spiral: How Two Parties Kill Crowd Wisdom
+### The Death Spiral: How Two Choices Kill 330 Million Options
 
-James Surowiecki demonstrated that crowds outperform experts under four conditions: diversity of opinion, independence of judgment, decentralization, and a good aggregation mechanism [@surowiecki-2004]. Your democracy has three of these. It systematically destroys the most important one.
+A human named James Surowiecki demonstrated that crowds outperform experts under four conditions: diversity of opinion, independence of judgment, decentralization, and a good aggregation mechanism [@surowiecki-2004]. Your democracy has three of these. It systematically destroys the most important one.
 
-**Independence** means each person decides based on their own knowledge and values, not by watching what everyone else is doing. First-past-the-post voting annihilates this. You have 330 million people, many of whom would make excellent leaders. But you don't choose among them. You choose between two candidates pre-selected by a process optimized for fundraising, name recognition, and not offending the party base. Then, even among those two, you don't vote for the one you prefer. You vote against the one you fear. Voters who genuinely prefer a third-party candidate vote for a major-party candidate they dislike to avoid "wasting" their vote. This is called strategic voting, and it means the ballot doesn't measure what you want. It measures what you think other people will do. That's not independence. That's a herd.
+**Independence** means each person decides based on their own knowledge, not by watching everyone else. Your voting system annihilates this. You have 330 million people, many of whom would make excellent leaders. But you don't choose among them. You choose between two candidates pre-selected by a process optimized for fundraising, name recognition, and not offending people who vote in primaries.
 
-Army ants have a behavior called a death spiral [@army-ant-death-spiral]. Army ants are nearly blind. They navigate entirely by following pheromone trails laid by the ants ahead of them. When a foraging column gets separated from the main trail, the leading ants have nothing to follow, so they wander. But they're still laying pheromone as they walk. If the front of the column curves enough to cross its own trail (or the back of the column), the leaders pick up that pheromone and follow it. The circle closes. Now every ant is both following and reinforcing the chemical trail that traps it. They march in a loop, sometimes hundreds of thousands strong, until they die of exhaustion. No individual ant is stupid. Each is following a perfectly rational rule: follow the strongest pheromone signal. The system is stupid. The circle emerges not from bad individuals but from a structure where no ant can navigate independently.
+Then, even between those two, you don't vote for the one you like. You vote against the one you fear. Voters who prefer a third candidate vote for a major-party candidate they dislike to avoid "wasting" their vote. This is called "strategic voting," and it means your ballot doesn't measure what you want. It measures what you think other people will do.
 
-Your two-party system is a death spiral with "I Voted" stickers. Each voter follows the signal of viability rather than their own judgment. Pollsters tell you who's "electable." Media covers the two "real" candidates. Donors fund the two "viable" options. You vote for one of them because everyone else is voting for one of them because everyone else is voting for one of them. The best candidate out of 330 million people could be standing right there, but if they're not wearing the right color tie, they're "throwing their vote away," which is a phrase that only makes sense in a system designed to waste votes.
+That is not independence. That is a herd.
 
-The result: a nation of 330 million people, selecting from a talent pool of 330 million people, reliably produces a choice between two people that approximately nobody is enthusiastic about. This is the ant death spiral with a larger circle and better catering.
+On Wishonia, we observed this same phenomenon in army ants.
+
+Army ants are nearly blind [@army-ant-death-spiral]. They navigate by following pheromone trails laid by the ants ahead of them. When a foraging column gets separated from the main trail, the leading ants have nothing to follow, so they wander. But they're still laying pheromone as they walk. If the front of the column curves enough to cross its own trail, the leaders pick up that signal and follow it. The circle closes. Every ant is now both following and reinforcing the path that traps it. They march in a loop, sometimes hundreds of thousands strong, until they die of exhaustion.
+
+No individual ant is stupid. Each is following a perfectly rational rule: follow the strongest signal. The system is stupid. The circle emerges not from bad ants but from a structure where no ant can navigate independently.
+
+Your two-party system is a death spiral with stickers. Each voter follows the signal of viability rather than their own judgment. Pollsters tell you who's "electable." Media covers the two "real" candidates. Donors fund the two "viable" options. You vote for one of them because everyone else is voting for one of them because everyone else is voting for one of them.
+
+The best candidate out of 330 million people could be standing right there. But if they're not wearing the right color tie, they're "throwing their vote away," which is a phrase that only makes sense in a system designed to waste votes.
+
+The result: a nation of 330 million, selecting from a talent pool of 330 million, reliably produces a choice between two people that approximately nobody is enthusiastic about.
 
 ::: {.content-visible when-format="html"}
 <figure>
 <img src="/assets/images/unrepresentative-democracy/ant-death-spiral.gif" alt="Ants marching in a circular death spiral" />
-<figcaption>Each ant follows the one ahead. The leader follows the last. They march in a perfect circle until they die. Your two-party system works the same way, but the circle takes four years. (<a href="https://commons.wikimedia.org/wiki/File:Ant_mill.gif">Clemzouzou69</a>, CC BY-SA 4.0)</figcaption>
+<figcaption>Each ant follows the one ahead. The leader follows the last. They march in a circle until they die. Your two-party system works the same way, but the circle takes four years. (<a href="https://commons.wikimedia.org/wiki/File:Ant_mill.gif">Clemzouzou69</a>, CC BY-SA 4.0)</figcaption>
 </figure>
 :::
 
-## How Money Buys Power
+## How Money Buys Your Government
 
-Campaign contributions don't directly buy how politicians vote. Only 1 in 4 studies support that [@cost-of-political-influence]. The system is much more elegant than bribery. Bribery is what poor countries do. Rich countries have "campaign finance."
+Campaign contributions don't directly buy how politicians vote. Only 1 in 4 studies support that [@cost-of-political-influence]. The system is much more elegant than bribery. On most planets, this would just be called bribery. On Earth, it's called "campaign finance," because giving it a different name apparently makes it legal.
 
-![More money equals more votes. More votes equal more power. More power equals more money. It's a circle. Calling it a "cycle" makes it sound natural.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-how-money-buys-power-bw-academic.jpg)
+![Money buys votes. Votes buy power. Power buys money. It's a circle. Calling it a "cycle" makes it sound natural.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-how-money-buys-power-bw-academic.jpg)
 
-But they do something far more effective: **they buy which politicians exist in the first place.**
+What money actually buys is **which politicians exist in the first place.**
 
-- 95% of House races since 2004 [@cost-of-political-influence]: Won by the highest spender
+- 95% of House races since 2004: won by the highest spender [@cost-of-political-influence]
 - Average winning House campaign: $2.79 million [@cost-of-political-influence]
 - Average winning Senate campaign: $26.53 million [@cost-of-political-influence]
 
-Why bribe a politician when you can just manufacture one who already agrees with you? It's like complaining about the menu when you own the restaurant.
+Why bribe a politician when you can manufacture one who already agrees with you? On Wishonia, we had a saying for this: "why train the dog when you can buy a dog that already sits?"
 
-**For the ones already in office**, contributions buy something more subtle than votes:
+**For the ones already in office**, contributions buy something more useful than votes:
 
-- **Access**: Your call gets returned, theirs goes to voicemail
-- **Agenda control**: Your issue gets a hearing, theirs gets buried
-- **Legislative language**: The exact wording that creates loopholes
-- **Committee positions**: $450,000 to party committees [@cost-of-political-influence] buys a seat where bills live or die
+- **Access**: Your call gets returned. Everyone else gets voicemail.
+- **Agenda control**: Your issue gets a hearing. Everyone else's gets a filing cabinet.
+- **Legislative language**: The exact wording that creates the exact loopholes you need.
+- **Committee positions**: $450,000 to party committees [@cost-of-political-influence] buys a seat where bills live or die.
 
-You don't buy the vote. You buy the voter, the agenda, and the room where the vote happens.
+You don't buy the vote. You buy the voter, the agenda, and the room where the vote happens. Then the vote takes care of itself.
 
-### The Lobbying ROI: 18:1 Returns
+### The Lobbying ROI: Better Than Every Other Investment
 
-The most profitable investment in America isn't stocks, real estate, or crypto. It's congressmen:
+The most profitable investment on your planet is not stocks, real estate, or cryptocurrency. It's congressmen:
 
 - Disease advocacy groups spend: $100 million on lobbying [@disease-advocacy-lobbying-roi]
-- They get: $1.8 billion in increased funding [@disease-advocacy-lobbying-roi]
-- ROI: 18:1 ratio (1,700% net return)
+- They receive: $1.8 billion in increased funding [@disease-advocacy-lobbying-roi]
+- Return: 18 to 1 (1,700% net)
 
-Meanwhile:
+Your stock market returns about 10% per year. Your congressmen return 1,700%. This is not a metaphor. These are the actual numbers. The only reason more people don't invest in congressmen is that the minimum buy-in requires a trade association, which requires being rich, which is the entire point.
 
-- Breast cancer: Great lobbyists = massive funding
-- Heart disease: Kills more people, worse lobbyists = less funding
-- Rare pediatric diseases: No lobbyists = no funding
+Meanwhile, your disease funding is allocated by lobbying power, not by who's dying:
 
-Democracy doesn't allocate resources by who's dying. It allocates by who can afford the best lobbyist. If your disease can't hire a PR firm, it's not a real disease. It's just dying.
+- Breast cancer: Good lobbyists. Massive funding.
+- Heart disease: Kills more people. Worse lobbyists. Less funding.
+- Rare pediatric diseases: No lobbyists. No funding.
+
+If your disease can't hire a lobbying firm, it isn't a real disease as far as your government is concerned. It's just dying, which doesn't have a PAC.
 
 ## Your Congressman: A Fundraiser Who Occasionally Legislates
 
+I studied how your elected representatives spend their time. I assumed they spent it representing. I was incorrect.
+
 Average time congressmen spend on:
 
-- Fundraising: 4 hours/day [@congress-time-spent-fundraising]
-- Reading bills: 0 hours/day
-- Actual governing: Whatever's left
+- Fundraising: 4 hours per day [@congress-time-spent-fundraising]
+- Reading bills they vote on: 0 hours per day
+- Actual governing: whatever is left after calling rich people for money
 
-They don't read what they vote on. The PATRIOT Act: 342 pages, voted on 45 minutes after release [@patriot-act-passage]. That's 7.6 pages per minute. Olympic speed-readers can't do that. The Affordable Care Act: 2,700 pages, "we have to pass it to see what's in it" [@affordable-care-act-passage].
+They don't read what they vote on. The PATRIOT Act: 342 pages, voted on 45 minutes after release [@patriot-act-passage]. That's 7.6 pages per minute. Olympic speed-readers cannot do this. The Affordable Care Act: 2,700 pages, described by the Speaker of the House as something "we have to pass to see what's in it" [@affordable-care-act-passage].
 
-These people control nuclear weapons. Sleep tight.
+On Wishonia, if you approved a 2,700-page document without reading it, you would not be allowed to operate heavy machinery. On Earth, these people control nuclear weapons.
 
-## Congressional Committees: The Menu
+## Congressional Committees: The Price List
 
-Committees control which bills live or die. Both parties assign fundraising quotas for each seat [@congressional-committee-price-list]: raise this much for the party, or lose your assignment. Don't hit your number? Your bills die, your amendments vanish, and your name goes on a literal "wall of shame" [@congressional-committee-price-list]. It's like a restaurant where the waiters have to pay for their own sections.
+Committees control which bills live or die. Both parties assign fundraising quotas for each seat [@congressional-committee-price-list]: raise this much money for the party, or lose your assignment. Don't hit your number? Your bills die, your amendments vanish, and your name goes on a literal "wall of shame" [@congressional-committee-price-list].
 
-Here's the menu. Want to be House Speaker? Raise $20 to $31 million for your party. Want to chair a powerful committee like Ways and Means or Appropriations? That'll cost you about $1.2 to $1.8 million in party fundraising. Even a basic freshman member owes a six-figure fundraising quota just to keep their seat at the table.
+Here is the menu. It has prices, like a restaurant, except the food is legislation and the waiters have to buy their own sections.
 
 ::: {.content-visible when-format="html"}
-| Position | Democrats (DCCC) | Republicans (NRCC) | Why It Costs This Much |
+| Position | Democrats (DCCC) | Republicans (NRCC) | What It Controls |
 |----------|-----------------|-------------------|------------------------|
-| House Speaker | $31 million | $20 million | Controls entire agenda |
-| Ways & Means Chair | $1.8 million | $1.2 million | All tax laws start here |
-| Appropriations Chair | $1.8 million | $1.2 million | Controls $1.7 trillion budget |
-| Energy & Commerce | $1.8 million | $1.2 million | Healthcare + Energy + Telecom |
-| Regular Committee | $500K-1M | $875,000 | Still beats irrelevance |
-| Basic Member | $150,000+ | Varies | Entry fee to play |
+| House Speaker | $31 million | $20 million | Entire legislative agenda |
+| Ways & Means Chair | $1.8 million | $1.2 million | All tax laws |
+| Appropriations Chair | $1.8 million | $1.2 million | $1.7 trillion budget |
+| Energy & Commerce | $1.8 million | $1.2 million | Healthcare, energy, telecom |
+| Regular Committee | $500K-1M | $875,000 | More than nothing |
+| Basic Member | $150,000+ | Varies | Entry fee |
 :::
 
-This is why congressmen spend 4 hours a day fundraising. They're not campaigning. They're paying rent. The people writing your healthcare laws literally bought their positions from the industries those laws regulate. On your planet, this is called "the system working."
+This is why congressmen spend 4 hours a day fundraising. They're not campaigning. They're paying rent on their committee seats. The people writing your healthcare laws bought their positions from the industries those laws regulate. On your planet, this is called "the system working."
 
-## Public Choice Theory: The Nobel Prize for Cynicism
+On Wishonia, this is called "the system."
 
-In 1986, James Buchanan won the Nobel Prize in Economics [@james-buchanan-nobel-prize-1986] for formally proving what anyone who has ever been to the DMV already knew:
+## Public Choice Theory (Or: Why It Doesn't Matter Who You Elect)
 
-**People don't become angels when you give them a government ID badge.**
+In 1986, a human named James Buchanan won what is technically not a Nobel Prize (see [central banks chapter](../economics/central-banks.qmd)) in Economics [@james-buchanan-nobel-prize-1986] for formally proving something that anyone who has visited your Department of Motor Vehicles already knew:
 
-This is Public Choice Theory: bureaucrats, politicians, and regulators are **just as selfish** as everyone else. The only difference is that when a corporation is greedy, you can stop buying their product. When a bureaucracy is greedy, they can arrest you for not buying their product.
+**Humans do not become better humans when you give them a government ID badge.**
 
-![Business people want money. Government people want money. You expect one group to be greedy and the other to be noble. Both groups are laughing.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-public-choice-theory-the-nobel-prize-for-cynicism-bw-academic.jpg)
+This is Public Choice Theory. Bureaucrats, politicians, and regulators are exactly as selfish as everyone else. The only difference is that when a corporation is greedy, you can stop buying its product. When a government agency is greedy, it can arrest you for not buying its product.
 
-### What They Actually Maximize
+![Corporations want money. Government agencies want money. One group is expected to be greedy. The other is expected to be noble. Both groups want money.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-public-choice-theory-the-nobel-prize-for-cynicism-bw-academic.jpg)
 
-| Actor | Should Maximize | Actually Maximizes | Result |
-|-------|----------------|-------------------|--------|
+### What Each Institution Actually Optimizes For
+
+| Actor | Supposed Goal | Actual Goal | Result |
+|-------|----------------|-------------|--------|
 | NIH | Cures | Grants awarded | No cures |
-| FDA | Lives saved | Avoiding lawsuits | Deadly delays |
+| FDA | Lives saved | Avoiding blame | Deadly delays |
 | Congress | Voter welfare | Campaign donations | Corporate welfare |
 | Pharma | Health outcomes | Recurring revenue | Chronic disease preferred |
 | Defense Contractor | National security | Government contracts | Endless wars |
 
-**Nobody in the system is incentivized to cure disease. Or end war.** You could elect {{< var us_congress_member_count_nounit >}} clones of Gandhi and within two years they'd be taking pharma money. The system digests idealists like a stomach digests food. It doesn't matter what you put in. You get the same output.
+Nobody in this system is incentivized to cure disease or end war. You could elect {{< var us_congress_member_count_nounit >}} clones of your most idealistic human and within two years they'd be raising money from pharmaceutical companies, because the system requires it and the system does not care who you put inside it. It digests idealists the way a stomach digests food. Different inputs. Same output.
 
-### The Libertarian Paradox
+### The Paradox
 
-![Libertarians say government is bad because government is bad. Socialists say government is bad because capitalism is bad. Public Choice Theory says government is bad because people are people. Only one of these is true.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-libertarian-paradox-bw-academic.jpg)
+Every political faction on your planet has diagnosed the same problem and prescribed a different wrong solution:
 
-**Libertarians say**: Government fails because government is government.
+![Three groups agree government doesn't work. They disagree about why. None of their solutions have worked.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-libertarian-paradox-bw-academic.jpg)
 
-**Socialists say**: Government fails because it needs more government.
+**Libertarians say:** Government fails because government is inherently bad. (Solution: less government.)
 
-**Public Choice Theory says**: Government fails because the people running it are people, and people are terrible.
+**Socialists say:** Government fails because it needs more resources. (Solution: more government.)
 
-**The solution**: Stop expecting people to be good. Design systems where being selfish accidentally produces good outcomes. Like capitalism, but for not dying.
+**Public Choice Theory says:** Government fails because the people running it are people. (Solution: design systems where selfish behavior accidentally produces good outcomes.)
 
-## Regulatory Capture: How Industries Write Their Own Rules
+On Wishonia, we went with the third option 4,297 years ago. It took us 12 minutes to agree. You've been arguing about the first two for several centuries.
 
-There are 13,700 registered lobbyists in Washington [@lobbyist-statistics-dc]. Half of them used to work in the government they're now bribing, which on your planet is called "a career path" rather than "corruption." Corporations spend {{< var us_total_lobbying_annual >}} a year on lobbying {{< var us_total_lobbying_annual_cite >}}. Divide that by {{< var us_congress_member_count_nounit >}} members of Congress and you get over $8 million in professional persuasion surrounding each congressman who earns less than a mid-level dentist [@congressman-salary]. The mystery is not that they're corrupt. The mystery is that any of them aren't.
+## Regulatory Capture: How the Burglar Trained the Guard Dog
 
-Citizens United [@citizens-united-ruling] made corporations people who can donate unlimited money through Super PACs. Corporations are people now, which is odd because you can't imprison a corporation, give it chemotherapy, or make it feel shame. Pharmaceutical companies write their own regulations. The Medicare Modernization Act banned the government from negotiating drug prices [@medicare-modernization-act-pharma-lobbying].
-That's why insulin that costs $6 to make costs you $300 [@insulin-history-and-pricing]. A 4,900% markup. Your street-corner drug dealers find this excessive, and they don't even have shareholders.
+There are 13,700 registered lobbyists in Washington [@lobbyist-statistics-dc]. Half of them used to work in the government they're now lobbying, which on your planet is called "a career path." Corporations spend {{< var us_total_lobbying_annual >}} a year on this lobbying {{< var us_total_lobbying_annual_cite >}}. Divide that by {{< var us_congress_member_count_nounit >}} members of Congress and you get over $8 million in professional persuasion surrounding each congressman, who earns less than a mid-level dentist [@congressman-salary].
 
-![You hired a guard dog. The burglar fed it treats. Now the dog helps with burglaries.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-regulatory-capture-cycle-bw-academic.jpg)
+The mystery is not that they're influenced. The mystery is that any of them aren't.
 
-The military-industrial complex distributes operations across 42 states [@lockheed-martin-political-influence-2022] so that cutting any program threatens local jobs in enough congressional districts to make it impossible. It's a tumor that grew its own blood supply. But the MIC doesn't just lobby for budgets; it produces the threats that justify them. Robert Pape at the University of Chicago found that 95% of suicide terrorist attacks from 1980 to 2003 were driven by foreign military occupation, not ideology [@pape-dying-to-win]. Half the attackers were secular. Your $8 trillion War on Terror [@war-on-terror-cost-blowback] took terrorist attacks from roughly 1,000 per year to nearly 17,000 by 2014 [@terrorism-attacks-increased-post-2001]. Military bases abroad create the resistance that becomes the terrorism that justifies the military budgets that fund more bases abroad. This is regulatory capture with an extra step: instead of just writing your own regulations, you create the conditions that make the regulations seem necessary. Most industries merely buy favorable rules. The defense industry manufactures the emergencies that make the rules look urgent. The Pentagon has never passed an audit [@pentagon-unaccounted-2-5t] but somehow knows it needs more money (they can't tell you where the last trillion went, but they're very confident about needing the next one). Pharma employs 3 lobbyists for every member of Congress [@pharma-lobbying-stats]. The FDA gets 75% of its drug review budget from the companies it regulates [@fda-regulatory-capture-evidence]. For details, see [FDA: Unsafe and Ineffective](fda-is-unsafe-and-ineffective.qmd).
+![You hired a guard dog. Someone fed it treats. Now it guards them.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-regulatory-capture-cycle-bw-academic.jpg)
 
-And the ratchet only turns one way. After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years [@us-military-spending-historical-constant-dollars]. GM went from bombers back to Cadillacs. The economy boomed [@us-post-wwii-gdp-growth-8-pct]. But the military-industrial complex made sure that never happened again. In inflation-adjusted dollars, peacetime spending is now {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-WW2 baseline: {{< var us_military_spending_1939_annual_2024usd >}} in 1939 versus {{< var us_military_spending_2024_annual >}} today, in constant dollars, with no world war to justify it. The tumor doesn't just grow its own blood supply. It grows and then reclassifies the growth as vital organs.
+A court ruling called Citizens United [@citizens-united-ruling] made corporations "people" who can donate unlimited money through Super PACs. Corporations are now legally people, which is interesting because you can't imprison a corporation, give it chemotherapy, or make it feel embarrassment. It has all the rights of a person and none of the vulnerabilities, which is a good deal if you can get it.
 
-The system maintains itself with the elegant efficiency of a parasite that keeps its host alive just enough to keep feeding. Cures are a one-time payment; treatments are recurring revenue. Approving a bad drug ends careers; delaying a good one ends lives (but not careers, and careers are what matter to people with careers). Everyone who matters wins. Everyone who's dying loses. The system works perfectly. It's just optimized for the wrong thing.
+Pharmaceutical companies write their own regulations. The Medicare Modernization Act banned the government from negotiating drug prices [@medicare-modernization-act-pharma-lobbying]. This is why insulin that costs $6 to make costs you $300 [@insulin-history-and-pricing]. A 4,900% markup. I checked with your illegal drug dealers, and even they find this excessive.
 
-## The Solution They Don't Want
+### The Self-Sustaining War Machine
 
-Lobbying is just one gear in the machine. The full cost of political dysfunction (military overspend, healthcare administration, regulatory friction, tax complexity, corporate welfare, and the rest) totals {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP. A forensic audit (the "Political Dysfunction Tax") identifies {{< var us_gov_waste_recoverable >}} in recoverable capital per year if U.S. governance merely reached OECD median efficiency. You don't need a revolution. You need a reallocation.
+The military-industrial complex distributes operations across 42 states [@lockheed-martin-political-influence-2022] so that cutting any program threatens jobs in enough congressional districts to make it politically impossible. Cutting a weapons program doesn't just lose a contract. It loses votes in 42 states simultaneously. This is not an accident. Someone designed this.
 
-But nobody fights to recover it, because the losses are diffuse and the benefits are concentrated. Same pattern as this entire chapter: each corporation gains $100 million (worth a thousand phone calls, a lobbyist army, and a senator's vacation home). Each citizen loses thousands (not worth a phone call).
+But the remarkable part is not that the war industry lobbies for budgets. It's that the war industry produces the threats that justify the budgets.
 
-But what if curing disease was more profitable than treating it? What if peace paid better than war? That's what a [1% treaty](../solution/1-percent-treaty.qmd) does. It doesn't fight the corruption machine. It feeds it different inputs. You're going to out-bribe the bribers with math.
+Robert Pape at the University of Chicago found that 95% of suicide terrorist attacks from 1980 to 2003 were driven by foreign military occupation, not ideology [@pape-dying-to-win]. Half the attackers were secular. Your $8 trillion War on Terror [@war-on-terror-cost-blowback] took terrorist attacks from roughly 1,000 per year to nearly 17,000 by 2014 [@terrorism-attacks-increased-post-2001].
 
-![What if we used the corruption machine for good? Like teaching a gun to do surgery.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-solution-they-don-t-want-bw-academic.jpg)
+Let me say that slowly: Military bases abroad create resistance. Resistance becomes terrorism. Terrorism justifies military budgets. Military budgets fund more bases abroad.
 
----
+Most industries merely buy favorable rules. The defense industry manufactures the emergencies that make the rules seem necessary. The Pentagon has never passed an audit [@pentagon-unaccounted-2-5t]. It cannot tell you where the last trillion dollars went. It is, however, very confident about needing the next one.
 
-*P.S. - If this chapter depressed you, good. Depression is the correct response to your political system. But remember: the same corruption that lets corporations buy politicians also lets you buy them back. Politicians don't have principles. They have prices. And prices, unlike principles, can be negotiated.*
+Pharma employs 3 lobbyists for every member of Congress [@pharma-lobbying-stats]. The FDA gets 75% of its drug review budget from the companies it regulates [@fda-regulatory-capture-evidence]. For a detailed examination of what this produces, see [FDA: Unsafe and Ineffective](fda-is-unsafe-and-ineffective.qmd).
+
+### The Ratchet
+
+The ratchet only turns one way.
+
+After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years [@us-military-spending-historical-constant-dollars]. GM went from building bombers back to building Cadillacs. The economy boomed [@us-post-wwii-gdp-growth-8-pct]. It was the greatest period of broad-based prosperity in your country's history, and it happened immediately after you stopped spending money on killing people.
+
+The military-industrial complex made sure that never happened again.
+
+In inflation-adjusted dollars, peacetime spending is now {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-WW2 baseline: {{< var us_military_spending_1939_annual_2024usd >}} in 1939 versus {{< var us_military_spending_2024_annual >}} today, in constant dollars, with no world war to justify it. The tumor grew its own blood supply and then reclassified the growth as vital organs.
+
+### The Equilibrium
+
+Cures are a one-time payment. Treatments are recurring revenue. Approving a bad drug ends careers. Delaying a good one ends lives, but not careers, and the people making the decisions have careers, not diseases.
+
+Everyone who decides things is winning. Everyone who's dying is not deciding things. The system works perfectly. It is just optimized for the wrong species.
+
+On Wishonia, we noticed the same pattern 6,000 years ago. The solution was not to elect better people. (We tried. They got eaten by the system in about 12 minutes.) The solution was to build a different system.
+
+## The Solution They Don't Want You to Have
+
+Lobbying is just one gear. The full cost of political dysfunction (military overspend, healthcare administration, regulatory friction, tax complexity, corporate welfare, the rest) totals {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP. A forensic audit identifies {{< var us_gov_waste_recoverable >}} in recoverable capital per year if U.S. governance merely matched the average rich country. You don't need a revolution. You need a reallocation.
+
+But nobody fights to recover it. Same pattern as this entire chapter: each corporation gains $100 million (worth hiring a thousand lobbyists). Each citizen loses thousands (not worth a phone call). The losses are too spread out to organize around. The gains are too concentrated to give up.
+
+But what if curing disease was more profitable than treating it? What if peace paid better than war? What if you could point the same corruption machine at something useful?
+
+That's what a [1% treaty](../solution/1-percent-treaty.qmd) does. It doesn't fight the corruption machine. It feeds it different inputs. Same machine. Same greed. Different output.
+
+You're going to out-bribe the bribers.
+
+![The corruption machine, pointed at something useful for once.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-solution-they-don-t-want-bw-academic.jpg)
