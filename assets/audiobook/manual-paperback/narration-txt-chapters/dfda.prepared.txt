@@ -69,11 +69,12 @@ The Two-Stage Pipeline: Watch First, Then Test.
 Observational data finds the signals. But correlation still isn't proof (even you know that). So the framework uses a two-stage pipeline:
 
 Stage One (Signal Detection): Aggregate data from millions of patients. Score each treatment-outcome relationship using six Bradford Hill causality criteria: How strong is the effect? How consistent across people? Does the treatment come before the improvement? Is there a dose-response pattern?
+
 Cost: approximately ten cents per patient.
 
 Stage Two (Confirmation): The top signals (the zero point one to one percent most promising) proceed to pragmatic trials embedded in routine care. Simple randomization. Real patients. Real conditions. Cost: approximately nine hundred and twenty-nine dollars per patient. This eliminates confounding and proves causation.
 
-Stage One filters millions of possibilities for almost nothing. Stage Two confirms the winners for one-forty-fourth the cost of traditional trials. The result: every treatment gets an evidence grade.
+Stage One filters millions of possibilities for almost nothing. Stage Two confirms the winners for one forty-fourth the cost of traditional trials. The result: every treatment gets an evidence grade.
 
 Validated: Confirmed by pragmatic trial.
 
@@ -83,7 +84,7 @@ Signal: Hypothesis only, needs more data.
 
 The cheap stage does the hard work of searching. The expensive stage only runs on candidates that deserve it. Instead of spending fifty-seven million dollars testing one drug, you spend pennies watching a million treatments and under a thousand dollars confirming the ones that work.
 
-Proof It Works (While the F.D.A. wasn't looking).
+Proof It Works (While the F.D.A. Wasn't Looking).
 
 The Oxford Recovery Trial: How the British Accidentally Saved Medicine.
 
@@ -91,9 +92,9 @@ During COVID, while America was filling out forms, Oxford University did somethi
 
 Cost per patient:
 
-Normal clinical trials: forty-one thousand dollars.
+Normal clinical trials cost forty-one thousand dollars.
 
-Oxford pragmatic trials: five hundred dollars.
+Oxford pragmatic trials cost five hundred dollars.
 
 That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan to save a human life.
 
@@ -110,7 +111,9 @@ Cost less than one Super Bowl commercial.
 The F.D.A.'s response: "But did they file the correct paperwork?".
 
 RECOVERY wasn't a fluke. A Harvard meta-analysis of one hundred and eight embedded pragmatic trials found median costs of just ninety-seven dollars per patient. The Patient-Centered Outcomes Research Network, or P.C.O.R.net, ADAPTABLE trial enrolled fifteen thousand and seventy-six patients across forty clinical sites at nine hundred and twenty-nine dollars per patient.
+
 This model works across therapeutic areas, across countries, across decades. The evidence base for cheap, fast, embedded trials isn't one study. It's one hundred and eight and counting. On most planets I've worked with, the pragmatic trial is the moment everyone looks at each other and says "wait, that's it?" Yes.
+
 That's it. You let sick people try things, write down what happens, and share the results.
 
 What You'd See: F.D.A. dot gov two point zero.
@@ -125,15 +128,15 @@ Step Two: See What Actually Works (Based on Reality, Not Theory).
 
 Instead of "This drug is approved for exactly this condition in exactly these patients on exactly Tuesdays," you get:
 
-"Here's what happened to fifty thousand people who tried this:
+Here's what happened to fifty thousand people who tried this:
 
-Forty percent got much better.
+forty percent got much better.
 
-Thirty percent got somewhat better.
+thirty percent got somewhat better.
 
-Twenty percent no change.
+twenty percent no change.
 
-Ten percent grew a third nipple (but a useful one)".
+ten percent grew a third nipple (but a useful one).
 
 It's like Consumer Reports, but for not dying.
 
@@ -197,15 +200,17 @@ Here's what an Outcome Label for depression would actually look like:
 
 OUTCOME LABEL: Depression Severity
 
-Based on forty-seven thousand, eight hundred and thirty-two participants
+Based on forty-seven thousand eight hundred and thirty-two participants
 
 Treatments Ranked by Effect Size
 
-Rank one: Bupropion. Effect: minus twenty-eight point three percent. Sample size: two thousand eight hundred and forty-seven. Optimal dose: three hundred milligrams.
+Rank one: Bupropion, negative twenty-eight point three percent effect, sample size two thousand eight hundred and forty-seven, optimal dose three hundred milligrams.
 
-Rank two: Sertraline. Effect: minus twenty-four point seven percent. Sample size: five thousand one hundred and twenty-three. Optimal dose: one hundred milligrams.
+Rank two: Sertraline, negative twenty-four point seven percent effect, sample size five thousand one hundred and twenty-three, optimal dose one hundred milligrams.
 
-Rank three: Venlafaxine. Effect: minus twenty-one point two percent. Sample size: one thousand eight hundred and ninety-two. Optimal dose: one hundred and fifty milligrams.
+Rank three: Venlafaxine, negative twenty-one point two percent effect, sample size one thousand eight hundred and ninety-two, optimal dose one hundred and fifty milligrams.
+
+And so on.
 
 Every treatment ranked. Drugs, supplements, lifestyle interventions, off-label uses. All compared head-to-head using the same outcome data. No marketing budget required.
 
@@ -226,7 +231,7 @@ Thirty percent success: Prosthetic foot plus Drug B.
 
 Ten percent success: Hopping lessons plus Prayer.
 
-Zero percent success: Essential oils (but your remaining foot will smell lavender-fresh)"
+Zero percent success: Essential oils (but your remaining foot will smell lavender-fresh)."
 
 It connects to your wearables, apps, and medical records to find what's killing you while your doctor is still trying to remember your name. Every doctor who ever lived, in your pocket, and they actually agree on something.
 
@@ -243,79 +248,79 @@ The Business Model: How Everyone Profits Except Disease.
 
 How Companies Register Treatments (five minutes, Zero Approval Needed).
 
-Any company - pharma, supplements, food, interventions - can instantly create a trial:
+Any company—pharma, supplements, food, interventions—can instantly create a trial:
 
 One. Register treatment on a public portal (name, ingredients, condition, price).
 
-Two. Set treatment price (what you charge patients - covers manufacturing plus delivery).
+Two. Set treatment price (what you charge patients—covers manufacturing plus delivery).
 
 Three. Get automatic liability insurance (built into protocol governance).
 
-Four. Trial goes live immediately - appears in search results, ranked by existing data.
+Four. Trial goes live immediately—appears in search results, ranked by existing data.
 
-Five. Patients join based on rankings; you collect zero-cost data on whether it works.
+Five. Patients join based on rankings, allowing you to collect zero-cost data on whether it works.
 
 Net cost to company: zero dollars.
 
 Why?
 
-Patients pay for treatment (covers manufacturing/delivery).
+Patients pay for treatment (covers manufacturing and delivery).
 
 Patients provide data (eliminates data collection cost of approximately forty-one thousand dollars per patient).
 
-The protocol enables standardized analysis (eliminates analysis cost).
+Protocol enables standardized analysis (eliminates analysis cost).
 
 Insurance is built-in (eliminates liability cost).
 
 The Payment Flow.
 
-The patient pays the treatment cost plus a refundable deposit.
+Patient pays: Treatment cost plus a refundable deposit.
 
-The patient receives a subsidy (from a one percent Treaty Fund).
+Patient receives: Subsidy (from a one percent Treaty Fund).
 
-The patient reports outcomes via a simple app.
+Patient reports: Outcomes via a simple app.
 
-The deposit is refunded when the trial is complete.
+Deposit refunded: When the trial is complete.
 
-The net cost to the patient is zero, though some patients profit up to fifty dollars.
+Net cost to patient: zero. Some patients profit up to fifty dollars.
 
 Example.
 
-A patient joins a trial for experimental migraine treatment at one hundred dollars per month.
+Patient joins a trial for an experimental migraine treatment (one hundred dollars per month).
 
-They pay one hundred dollars for treatment plus a fifty dollar deposit, totaling one hundred and fifty dollars.
+They pay: one hundred dollars for treatment plus a fifty dollar deposit, totaling one hundred and fifty dollars.
 
-The patient receives a one hundred and twenty-five dollar subsidy.
+They receive: a one hundred and twenty-five dollar subsidy.
 
-The out of pocket cost is twenty-five dollars.
+Out of pocket: twenty-five dollars.
 
-The patient completes the trial and reports outcomes.
+They complete the trial and report outcomes.
 
-The patient gets back their fifty dollar deposit.
+They get back the fifty dollar deposit.
 
-The net result is twenty-five dollars in profit and potentially curing migraines.
+Net: twenty-five dollars profit and they potentially cure their migraines.
 
 Company receives.
 
-The company receives one hundred dollars per month from the patient.
+One hundred dollars per month from the patient.
 
-The manufacturing cost is twenty dollars per month.
+Manufacturing cost: twenty dollars per month.
 
-The profit is eighty dollars per month per patient.
+Profit: eighty dollars per month per patient.
 
-Plus, the company receives free clinical trial data worth forty-one thousand dollars per patient in the traditional system.
+Plus: Free clinical trial data worth forty-one thousand dollars per patient in the traditional system.
 
 Why This Creates Vastly More Research Capacity.
 
-In the traditional model, the start involves research ideas; in the decentralized protocol, it also starts with research ideas.
+Start: Both models begin with research ideas.
 
-Traditional gatekeeping means grant committees select the few, while the decentralized protocol allows researchers to register instantly.
+Gatekeeping: Grant committees select the few in the traditional model, while you register instantly in the decentralized protocol.
 
-Traditional enrollment recruits from a limited pool, but in the decentralized protocol, patients decide by joining.
+Enrollment: Recruit from a limited pool traditionally, but patients decide by joining in the decentralized protocol.
 
-The cost to the company is fifty-seven million dollars per trial in the traditional model, versus zero dollars in the decentralized protocol as patients pay for treatment.
+Cost to company: Fifty-seven million dollars per trial traditionally, compared to zero dollars because patients pay for treatment.
 
-Traditional throughput is about ten trials per year per company, compared to thousands of trials simultaneously in the decentralized model.
+Throughput: About ten trials per year per company traditionally, versus thousands of trials simultaneously.
 
 This is why ninety-five percent of rare diseases have no treatments. Traditional funding can't afford to test everything. This decentralized protocol enables testing EVERYTHING because:
 
@@ -325,23 +330,23 @@ No funding bottleneck (patients pay for treatment).
 
 No data collection bottleneck (patients provide data).
 
-No disease too rare (if one hundred patients exist globally, a trial can run profitably).
+No disease too rare (if one hundred patients exist globally, the trial can run profitably).
 
-In a traditional trial, pharma spends fifty-seven million dollars and tests the most profitable drug only.
+Traditional trial: Pharma spends fifty-seven million dollars and tests the most profitable drug only.
 
-In a decentralized trial, pharma spends zero dollars and tests everything including supplements, food, lifestyle, and off-patent drugs.
+Decentralized trial: Pharma spends zero dollars and tests everything including supplements, food, lifestyle, and off-patent drugs.
 
 A one percent Treaty Fund doesn't fund pragmatic clinical trials directly. It subsidizes participation, which unlocks a self-sustaining ecosystem that funds ALL research.
 
 The Money Shot: How to Save ninety-five percent on Not Killing People.
 
-For the clinical phase timeline, the current insanity is over a decade while the new reality is two to three years, eliminating seven years of waiting and saving fifty thousand lives per year.
+Clinical Phase Timeline: This moves from over a decade to two to three years, eliminating seven years of waiting and saving fifty thousand lives a year.
 
-The cost per trial goes from fifty-seven million dollars to two million dollars, saving fifty-five million dollars with an absurd R.O.I.
+Cost per trial: This drops from fifty-seven million dollars to two million dollars, saving fifty-five million dollars with an absurd R.O.I.
 
-For patient participation, current exclusion rates are eighty-six point one percent, but the new reality allows one hundred percent of patients to participate.
+Who can participate: This shifts from thirteen point nine percent of patients to one hundred percent of patients, eliminating an eighty-six point one percent exclusion rate.
 
-The number of rare diseases with treatments moves from five percent to eventually one hundred percent, which is priceless and saves millions of lives.
+Rare diseases with treatments: This moves from five percent to eventually one hundred percent, which is priceless and saves millions of lives.
 
 The Itemized Receipt of Eliminated Stupidity.
 
@@ -353,7 +358,7 @@ Here's what you're NOT doing: building a government platform that competes with 
 
 Here's what you ARE doing: building an open protocol that lets all existing platforms talk to each other.
 
-Think of it like the internet. We didn't build one website that everyone has to use. We built Hypertext Transfer Protocol, or H.T.T.P., the protocol that lets all websites connect. Same idea.
+Think of it like the internet. We didn't build one website that everyone has to use. We built H.T.T.P., the protocol that lets all websites connect. Same idea.
 
 How your decentralized F.D.A. gets funded: An implementation of this framework is one of many campaigns competing for funding from the one percent Treaty Fund via Wishocracy. It has no independent budget authority.
 
@@ -409,9 +414,13 @@ Patient trust (data doesn't go to "the cloud").
 
 Why This Works: The Mathematical Impossibility of Committees.
 
-Approximately two hundred F.D.A. bureaucrats decide what eight billion people can try when dying. Here's the math on why that can't work:
+About two hundred F.D.A. bureaucrats decide what eight billion people can try when dying. Here's the math on why that can't work:
 
-The F.D.A. approves approximately fifty new drugs per year. There are ten thousand known diseases. At that rate, covering every disease once takes two hundred years.
+The F.D.A. approves about fifty new drugs per year.
+
+There are ten thousand known diseases.
+
+At that rate, covering every disease once takes two hundred years.
 
 And that's before you account for the fact that different patients respond differently to the same drug based on genetics, age, comorbidities, and whether they had breakfast.
 
@@ -434,21 +443,21 @@ Every civilization I've worked with tried a centralized approval committee first
 
 The Future: Where Death Becomes Embarrassing.
 
-Twenty twenty-seven: The Beginning of the End of Dying Slowly.
+twenty twenty-seven: The Beginning of the End of Dying Slowly.
 
 F.D.A. dot gov becomes actually useful. Millions join trials from home. The first "Wikipedia disease" gets cured entirely through crowdsourced trials. The F.D.A. claims credit.
 
-Twenty thirty: Big Pharma Pivots or Dies.
+twenty thirty: Big Pharma Pivots or Dies.
 
 Pharmaceutical companies realize they can't charge ten thousand dollars for pills that cost one dollar to make when everyone can see the data. Some adapt. Some become museums. The gift shop sells expired painkillers at original markup.
 
-Twenty thirty-five: The Great Revelation.
+twenty thirty-five: The Great Revelation.
 
 Humanity could have done this all along. The internet existed since nineteen ninety. Computers since nineteen fifty.
 
 Five thousand years of letting people die while filling out forms. History books will call this "The Paperwork Age." Children will laugh.
 
-Twenty fifty: Death Becomes Opt-In.
+twenty fifty: Death Becomes Opt-In.
 
 Diseases are mostly solved. Death becomes a choice, like smoking or voting for the Uniparty. The F.D.A.'s job becomes preventing people from becoming immortal too quickly (traffic is bad enough).
 
@@ -458,8 +467,8 @@ How Your Decentralized F.D.A. Actually Works.
 
 This approach is forty-four point one times more cost-efficient than the current system, driven by:
 
-The cost per patient is nine hundred and twenty-nine dollars compared to the current forty-one thousand dollars.
+Cost per patient is nine hundred and twenty-nine dollars versus the current forty-one thousand dollars.
 
-The time to results is three months compared to the current ten point five years.
+Time to results is three months versus the current ten point five years.
 
-Patient access is universal compared to eighty-six point one percent excluded currently.
+Patient access is universal access versus eighty-six point one percent excluded currently.
