@@ -206,7 +206,7 @@ Senator Smith (R-Texas) is up for reelection in 2026. The 1% Treaty Implementati
 | No immediate upside | Status quo maintained |
 | Benefits arrive in 10 years | Costs arrive never |
 
-**Expected utility of No vote:** $U = 0.55 \cdot \text{Office} + \$200\text{K}/\text{year} \cdot 20\text{yrs} + \text{Medium Legacy}$
+**Expected utility of No vote:** $\text{U} = 0.55 \cdot \text{Office} + \$200\text{K}/\text{year} \cdot 20\text{yrs} + \text{Medium Legacy}$
 
 Result: Vote no. Obviously.
 
@@ -231,7 +231,7 @@ Result: Vote no. Obviously.
 **The math (at the moment of the vote):**
 
 $$
-\Delta U_{\text{Yes vs No}} = 0.14 \cdot \text{Office} + \$100\text{K}/\text{year} \cdot 20\text{yrs} + \text{Legacy Boost}
+\Delta \text{U}_{\text{Yes vs No}} = 0.14 \cdot \text{Office} + \$100\text{K}/\text{year} \cdot 20\text{yrs} + \text{Legacy Boost}
 $$
 
 That's a +14 percentage point swing in reelection odds (62% vs 48%) and +$2M in lifetime post-office earnings. These numbers improve further after the treaty passes (see post-treaty table below).

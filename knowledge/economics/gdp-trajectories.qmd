@@ -13,7 +13,7 @@ tags:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your species has three options. You can keep doing what you're doing, which your economists optimistically project at 2.5% annual growth. You can redirect your weapons budget into medical research, fix your broken governance, and compound your way to a civilization that would be unrecognizable to you. Or you can accelerate your arms race until someone's automated defense system makes a decision that can't be undone, which produces a growth rate of negative everything.
 
-This chapter models all three over 20 years. Within most of your lifetimes.
+I modeled all three over 20 years. Within most of your lifetimes.
 
 ## Three Futures
 
@@ -21,37 +21,23 @@ This chapter models all three over 20 years. Within most of your lifetimes.
 
 Earth continues at 2.5% annual GDP growth. By year 20, global GDP reaches roughly {{< var earth_gdp_year_20 >}}. Not bad. But not what happens when you actually focus.
 
-This baseline assumes no major wars, no pandemics worse than COVID, no catastrophes. In other words, it assumes the best-case version of your current trajectory. We're being generous.
+This baseline assumes no major wars, no pandemics worse than COVID, no catastrophes. The best-case version of your current trajectory. We're being generous.
 
 ### Wishonia: What Happens When You Stop Wasting Money
 
-We model two Wishonia variants over the same 20-year horizon:
+There are two versions of this path. The Treaty Path is just the 1% treaty: move murder money to medicine money, cure diseases, let the savings compound. The Wishonia Path is what happened on my planet: we liked the treaty so much we pointed [incentive alignment bonds](../solution/incentive-alignment-bonds.qmd) at everything else that was broken too.
 
-- **Treaty Path:** military-to-science reallocation + disease-burden recovery.
-- **Wishonia Path:** Treaty Path plus non-health dysfunction-capital reallocation to highest-MV uses.
+The [peace dividend](peace-dividend.qmd) chapter showed the direct savings. Here's what happens when those savings compound. (AI is excluded from this model because it helps everybody equally. The difference between these paths is purely about where you point your money and your engineers.)
 
-The [peace dividend](peace-dividend.qmd) chapter showed the direct savings. Here we model compound effects. AI is still excluded from this differential model because it helps both Earth and Wishonia; the differential is policy/institutional reallocation.
+**You stop pointing engineers at missiles and point them at medicine.** GDP grows faster. When your species did this after World War II, you cut military spending by 87% in two years (1945 to 1947, from 40% of GDP to 3.5%) and got the biggest economic boom in your history. The Wishonia model is more conservative: a 3-year transition ramp to {{< var wishonia_military_reallocation_physical_max_share >}} reallocation. Military research accidentally gave you the internet, GPS, and jet engines. Medical research has already accidentally given you CRISPR, mRNA platforms, and AI protein folding. Imagine what happens when you do it on purpose. The research spillover multiplier ({{< var rd_spillover_multiplier >}}) is from your own published studies.
 
-**Mechanism 1: Spending reallocation, amplified by R&D spillover.** When you stop pointing engineers at missiles and point them at medicine, GDP grows faster. The growth coefficient is calibrated to historical precedent: a 30% military reallocation maps to ~5.5 percentage points annual GDP growth boost, then scaled by the spillover factor ({{< var rd_spillover_multiplier >}} baseline). Military R&D spillover gave you the internet, GPS, and jet engines. Medical R&D spillover has already given you CRISPR, mRNA platforms, and AI protein folding.
+**People stop being sick.** Disease currently costs your civilization {{< var disease_burden_gdp_drag_pct >}} of GDP: $5 trillion in people too sick to work plus $9.9 trillion in trying to fix them. You currently produce first treatments for about 15 diseases per year. Your [decentralized FDA](../solution/dfda.qmd), scaled to the physical ceiling of how many humans can participate in trials ({{< var dfda_max_trial_capacity_multiplier_physical >}}), clears {{< var wishonia_disease_cure_fraction_20yr_full >}} of the {{< var diseases_without_effective_treatment >}} diseases you currently have no treatment for. As diseases get cured, all that lost productivity comes back as growth.
 
-**Mechanism 2: The health revolution.** Disease currently drags your GDP down by {{< var disease_burden_gdp_drag_pct >}} ($5 trillion in productivity losses plus $9.9 trillion in medical costs). Your species currently produces first treatments for about 15 diseases per year. Under full Wishonia implementation, your [decentralized FDA](../solution/dfda.qmd) scales to the physical trial-participant ceiling ({{< var dfda_max_trial_capacity_multiplier_physical >}}), clearing {{< var wishonia_disease_cure_fraction_20yr_full >}} of the {{< var diseases_without_effective_treatment >}} diseases currently without effective treatment within 20 years. As those cures arrive, the GDP drag gets recovered as growth.
+**Your governments stop losing money to stupidity.** The [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) documents {{< var political_dysfunction_global_opportunity_cost_total >}} per year in money your governments waste on corruption, redundancy, regulations written before computers existed, and nine agencies doing the same thing. On Wishonia, we used incentive alignment bonds to pay people for fixing these problems instead of perpetuating them. Turns out that works. The recovered money goes to whatever produces the most value: migration reform, lead elimination, science funding, regulatory modernization.
 
-**Mechanism 3: Governance dysfunction recovery (institutional enabler).** The [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) documents {{< var political_dysfunction_global_opportunity_cost_total >}} in annual unrealized potential from governance failures. Incentive alignment structures monetize verified policy outcomes, accelerating migration reform, lead elimination, and regulatory streamlining. In this GDP equation, the quantified growth effect enters through the non-health highest-MV reallocation term below.
+These four things compound on each other. Better-funded research produces innovations, which cure diseases, which make people healthier and more productive, which increases the return on everything else. It's a virtuous cycle. You're currently running the vicious version of it.
 
-**Mechanism 4: Highest-MV capital allocation.** Rather than leaving recovered capital in low-productivity channels, Wishonia reallocates the non-health dysfunction pool (science, lead, migration) toward highest validated marginal-value uses. In the equation this term is annualized directly from those opportunity-cost inputs and the healthcare-vs-military multiplier ratio, so it compounds but does not double-count the separate health-recovery channel.
-
-These mechanisms compound on each other. Spending reallocation produces R&D, which produces spillover innovations, which accelerates disease cures, which makes people healthier and more productive, which increases the return on additional high-MV allocation.
-
-The military reallocation path is grounded in historical precedent. The US cut military spending by 87% in two years after World War II (1945 to 1947, from ~40% of GDP to ~3.5%). The Wishonia model uses a conservative 3-year transition ramp, then sustains the physically demonstrated reallocation share of {{< var wishonia_military_reallocation_physical_max_share >}}.
-
-By year 20, the two Wishonia variants separate clearly:
-
-| Scenario | CAGR (Years 1-20) | GDP at Year 20 | vs Earth Baseline |
-|:--|:--|:--|:--|
-| Treaty Path (military+health) | {{< var treaty_path_cagr_year_20 >}} | {{< var treaty_path_gdp_year_20 >}} | {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} |
-| Wishonia Path (Treaty + dysfunction-tax elimination) | {{< var wishonia_path_cagr_year_20 >}} | {{< var wishonia_path_gdp_year_20 >}} | {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} |
-
-The Wishonia Path is {{< var wishonia_path_vs_treaty_path_gdp_multiplier_year_20 >}} the Treaty Path at year 20.
+By year 20, the two paths separate dramatically. The Treaty Path (just the murder-money-to-medicine-money part) grows at {{< var treaty_path_cagr_year_20 >}} per year and reaches {{< var treaty_path_gdp_year_20 >}}, which is {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} Earth's baseline. The Wishonia Path (treaty plus fixing the dysfunction tax) grows at {{< var wishonia_path_cagr_year_20 >}} per year and reaches {{< var wishonia_path_gdp_year_20 >}}, which is {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} Earth's baseline. The Wishonia Path is {{< var wishonia_path_vs_treaty_path_gdp_multiplier_year_20 >}} the Treaty Path, because fixing your governance multiplies everything else.
 
 ### Moronia: The Arithmetic of Extinction
 
@@ -66,37 +52,24 @@ Moronia's GDP at year 20: $0. This is not a rounding error. This is the number y
 
 ## The Expected Value
 
-"But what if the treaty doesn't work as well as you claim?" Fine. Two scenarios:
+"But what if the treaty doesn't work as well as you claim?" Fine. Give the Wishonia Path a {{< var wishonia_path_success_probability_year_20 >}} chance of working and a {{< var moronia_path_probability_year_20 >}} chance of total extinction. Multiply the Wishonia Path GDP of {{< var wishonia_path_gdp_year_20 >}} by its probability, and you get an expected value of {{< var gdp_expected_value_year_20 >}}. The extinction path contributes $0, because there's nobody left to have a GDP.
 
-| Scenario | Probability | GDP at Year 20 | Weighted Contribution |
-|----------|:-----------:|:--------------:|:---------------------:|
-| Wishonia Path (treaty + dysfunction-tax elimination) | {{< var wishonia_path_success_probability_year_20 >}} | {{< var wishonia_path_gdp_year_20 >}} | {{< var gdp_expected_value_year_20 >}} |
-| Moronia (arms race) | {{< var moronia_path_probability_year_20 >}} | $0 | $0 |
-| **Expected value** | **100%** | | **{{< var gdp_expected_value_year_20 >}}** |
-| Earth (status quo) | -- | {{< var earth_gdp_year_20 >}} | -- |
-
-The expected value of the Wishonia Path is roughly {{< var gdp_expected_value_vs_earth_multiplier_year_20 >}} the status quo, even with a non-trivial collapse-path probability in the model.
-
-Under the current model assumptions, the treaty dominates the status quo across any non-pathological decision rule: it is a higher-upside trajectory with lower long-run tail risk than arms-race continuation.
+That expected value is {{< var gdp_expected_value_vs_earth_multiplier_year_20 >}} the status quo. Even after accounting for the possibility that it all goes wrong, you're still better off trying. This is not a close call.
 
 ## What This Means Per Person
 
-GDP in the trillions is abstract. Average income is not.
+GDP in the trillions is abstract. Here's what it means for actual humans.
 
-| Scenario | Average Income (Year 20) |
-|----------|:------------------------:|
-| Earth (status quo) | {{< var earth_avg_income_year_20 >}} |
-| Treaty Path (military+health) | {{< var treaty_path_avg_income_year_20 >}} |
-| Wishonia Path (treaty + dysfunction-tax elimination) | {{< var wishonia_path_avg_income_year_20 >}} |
+If Earth stays on its current path, average income by year 20 is {{< var earth_avg_income_year_20 >}}. That's roughly where Poland is today. The Treaty Path gets you to {{< var treaty_path_avg_income_year_20 >}}. The Wishonia Path gets you to {{< var wishonia_path_avg_income_year_20 >}}.
 
-These are GDP per capita figures using UN population projections of {{< var global_population_2045_projected >}} for 2045. Average income, not median, because we make no assumptions about distribution (though a civilization that has fixed its governance probably also has less inequality).
+These are GDP per capita using UN population projections of {{< var global_population_2045_projected >}} for 2045. Average, not median, because we make no assumptions about distribution (though a civilization that has fixed its governance probably also has less inequality).
 
-The Earth baseline puts global average income at roughly where Poland is today. The Treaty Path already rises to {{< var treaty_path_avg_income_year_20 >}}. The Wishonia Path reaches {{< var wishonia_path_avg_income_year_20 >}}, because multiple compounding mechanisms applied to a civilization with functional governance produce results that look implausible only if you have never seen a graph of GDP before and after the Industrial Revolution.
+The Wishonia numbers look implausible only if you've never seen a graph of GDP before and after your Industrial Revolution. You've done this before. You just did it by accident last time.
 
-## The Uncertainty Is the Point
+## Go Ahead, Change the Numbers
 
-Every input to this model is a named parameter with a documented source and explicit formula. The full-implementation disease cure fraction ({{< var wishonia_disease_cure_fraction_20yr_full >}}) is calculated from trial-capacity scaling with an explicit physical participant ceiling. The R&D spillover multiplier ({{< var rd_spillover_multiplier >}}) comes from published research. The non-health opportunity-cost inputs and multiplier assumptions are explicit and can be edited directly. If any assumption is wrong, change that parameter. The model still produces a trajectory that dwarfs Earth's baseline, because no plausible adjustment to any single parameter eliminates the compounding effect of multiple mechanisms operating simultaneously over 20 years.
+Every input to this model is a named variable you can look up and argue with. The disease cure fraction ({{< var wishonia_disease_cure_fraction_20yr_full >}}) comes from trial-capacity scaling with a physical participant ceiling. The research spillover multiplier ({{< var rd_spillover_multiplier >}}) comes from published studies. If any assumption is wrong, change it. The model still dwarfs Earth's baseline, because no plausible adjustment to any single number eliminates the effect of four compounding mechanisms running simultaneously for 20 years.
 
-The question is not "will the 1% Treaty produce exactly the returns we project?" The question is "does redirecting military spending to medical research and fixing governance dysfunction produce better expected outcomes than not doing so?" The answer is yes under every probability weighting that assigns less than 100% to extinction being preferable to survival.
+The question is not "will the treaty produce exactly these returns?" The question is "does redirecting murder money to medicine money produce better results than not doing so?" The answer is yes under every scenario where you prefer being alive to being dead.
 
-The [peace dividend](peace-dividend.qmd) gives you the annual numbers. The [Wishonia model](../futures/wishonia.qmd) gives you the institutional design. The [Moronia model](../futures/moronia.qmd) gives you the counterfactual. The [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) gives you the waste ledger. The [incentive alignment bonds](../solution/incentive-alignment-bonds.qmd) give you the mechanism that fixes it. This chapter gives you the expected value across all of them.
+The [peace dividend](peace-dividend.qmd) gives you the annual numbers. The [Wishonia model](../futures/wishonia.qmd) gives you the institutional design. The [Moronia model](../futures/moronia.qmd) gives you the counterfactual. The [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) gives you the waste ledger. The [incentive alignment bonds](../solution/incentive-alignment-bonds.qmd) give you the mechanism that fixes it. This chapter gives you what happens when you run them all forward 20 years.

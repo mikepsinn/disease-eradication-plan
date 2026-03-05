@@ -20,7 +20,8 @@ Out of {{< var current_disease_patients_global >}} with chronic disease, only {{
 
 {{< var patient_willingness_trial_participation_pct >}} would volunteer [@patient-willingness-clinical-trials] if they could. Only {{< var current_clinical_trial_participation_rate >}} currently participate.
 
-This isn't because people don't want to help find cures. It's because your system was designed by someone who hates sick people. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates]. You built a hospital you can't get into. Impressive, in a genocidal sort of way.
+This isn't because people don't want to help find cures. It's because your system was designed by someone who hates sick people. Trials cost {{< var traditional_phase3_cost_per_patient >}}, require traveling to major medical centers, and reject {{< var antidepressant_trial_exclusion_rate >}} of actual patients [@antidepressant-trial-exclusion-rates].
+You built a hospital you can't get into. Impressive, in a genocidal sort of way.
 
 Meanwhile, the system that's supposed to catch dangerous side effects misses 90-99% of them. Only 1-10% of adverse drug events are ever reported to the FDA [@adverse-event-underreporting]. No denominator data. No effect sizes. No way to calculate how often a drug actually hurts people. The safety monitoring system is a suggestion box that nobody uses.
 

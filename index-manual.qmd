@@ -80,6 +80,8 @@ So this manual shows you how to bribe humanity into being less irrational gradua
 - Year 10: "What's a war?"
 - Year 20: "We used to WHAT?!"
 
+I ran the numbers on both paths. The short version: redirecting 1% of murder money makes you {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} richer. Redirecting all the dysfunction makes you {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} richer. Your economists will say these numbers are impossible. Your economists also didn't predict the internet, the smartphone, or the 2008 financial crisis, so their track record on "impossible" is not great.
+
 It's like weaning a baby off eating paint chips. You can't just take away all the paint chips at once. They'll cry. You have to gradually replace paint chips with food until they forget paint chips were ever an option.
 
 ### What to Do When They Try to Institutionalize You
@@ -440,6 +442,12 @@ Humans aren't stupid. You invented cheese, which is milk you left out until it w
 ## Choose Your Own Adventure
 
 Now is the time to select one of the two paths for the remainder of your existence.
+
+I modeled both paths for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself.
+
+Right now, Earth is on track for {{< var earth_avg_income_year_20 >}} average income by year 20. That's your baseline. The Treaty Path, where you just move the murder money to medicine money, gets you to {{< var treaty_path_avg_income_year_20 >}}, which is {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} your current trajectory.
+
+Then there's the Wishonia Path. On my planet, we liked incentive alignment bonds so much we didn't stop at murder money. We pointed them at everything: the 40% of your government budgets that evaporate into paperwork, the regulations written before you discovered electricity, the nine agencies that all do the same thing but won't return each other's calls. Turns out when you pay people to fix problems instead of perpetuate them, they fix the problems. We were as surprised as anyone. That path gets you to {{< var wishonia_path_avg_income_year_20 >}} average income, which is {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} your baseline. One path is "stop murdering." The other is "stop murdering AND stop being stupid." Both are improvements.
 
 #### Future A: You Ignore This Manual
 

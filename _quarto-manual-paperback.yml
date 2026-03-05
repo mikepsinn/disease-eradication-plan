@@ -104,6 +104,7 @@ book:
     - part: "Economics & Finance"
       chapters:
         - knowledge/economics/peace-dividend.qmd
+        - knowledge/economics/gdp-trajectories.qmd
         - knowledge/economics/health-dividend.qmd
         - knowledge/economics/financial-plan.qmd
         # CUT: campaign-budget.qmd - granular budget line items
