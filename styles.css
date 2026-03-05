@@ -1096,6 +1096,71 @@ html.dark-mode img {
 }
 
 /* ==========================================
+   END-OF-CHAPTER SHARE BAR
+   ========================================== */
+
+#chapter-share-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--book-border, #d4c5b9);
+}
+
+#chapter-share-bar .share-label {
+    font-size: 0.85rem;
+    color: var(--book-accent, #8b7355);
+    font-weight: 500;
+}
+
+#chapter-share-bar .share-icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#chapter-share-bar .share-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--book-border, #d4c5b9);
+    background: var(--book-bg, #fff);
+    color: var(--book-accent, #8b7355);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+#chapter-share-bar .share-icon:hover {
+    background-color: var(--book-light, #f9f8f3);
+    border-color: var(--book-accent, #8b7355);
+    color: var(--book-text, #3d3229);
+}
+
+#chapter-share-bar .share-icon.copied {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #28a745;
+}
+
+@media print {
+    #chapter-share-bar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #chapter-share-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* ==========================================
    BACK TO TOP BUTTON
    ========================================== */
 
