@@ -1,9 +1,9 @@
 ---
 title: The Political Dysfunction Tax
 subtitle: A Forensic Audit of Global Governance Efficiency
-description: Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 31-53% efficiency score and $97 trillion in annual opportunity costs.
+description: Governance dysfunction imposes large per-person annual costs and suppresses long-run compounding. This paper quantifies the opportunity ledger and efficiency gap with model-linked parameters.
 abstract: |
-  This report introduces the Political Dysfunction Tax (T_pd): the implicit levy paid to entropy through governance inefficiency. By constructing a Waste Ledger (military overspend, administrative friction, incarceration costs) and an Opportunity Ledger (suppressed health innovation, migration restrictions, lead poisoning), we calculate a Global Governance Efficiency Score of 31-53%. Current governance destroys $97 trillion annually in unrealized potential, including $34T from delayed cures, $57T from migration restrictions, and $6T from lead exposure, suggesting civilization operates far below its technological possibilities.
+  Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
 aliases:
   - /political-dysfunction-tax.html
 author:
@@ -33,6 +33,30 @@ jel:
 image: /assets/og-images/knowledge/appendix/political-dysfunction-tax-og-retro-academic.jpg
 podcast-image: /assets/podcast/political-dysfunction-tax-podcast.jpg
 ---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## What This Costs You
+
+Governance inefficiency is not an abstraction. It has a price, and you are paying it.
+
+This paper documents {{< var political_dysfunction_global_opportunity_cost_total >}} in annual global opportunity costs from governance dysfunction (derived in Parts 1 and 2 below). Distributed across {{< var global_population_2024 >}} people, the **Political Dysfunction Tax** costs {{< var political_dysfunction_tax_per_person_annual >}} per person per year, or {{< var political_dysfunction_tax_per_household_of_four_annual >}} per household of four.
+
+But the annual figure is only the static loss. The deeper cost is compound: the dysfunction tax doesn't just reduce current output, it suppresses the growth rate itself. Delayed cures mean sicker, less productive workers. Migration restrictions prevent talent from reaching high-productivity environments. Regulatory friction slows R&D spillover. Each of these is a brake on compound growth, not a one-time deduction.
+
+Under current governance, global GDP per capita grows at approximately 2.5% annually from a base of {{< var global_avg_income_2025 >}}. This 2.5% rate was itself achieved *while paying the dysfunction tax*. Removing the tax does not merely shift the level upward; it removes structural constraints on growth. The companion GDP trajectories analysis models three direct compounding channels (spending reallocation with R&D spillover, accelerated disease cures, and non-health dysfunction-capital reallocation to highest-MV uses), yielding a {{< var wishonia_path_cagr_year_20 >}} transition CAGR over the first 20 years.
+
+The per-person 20-year implications under the same model base:
+
+| Scenario | Assumed Growth | Starting Per Capita | Year-20 Average Income |
+|:--|:--|:--|:--|
+| **Status quo (Earth baseline)** | {{< var gdp_baseline_growth_rate >}} for 20 years | {{< var global_avg_income_2025 >}} | **{{< var earth_avg_income_year_20 >}}** |
+| **Wishonia (full implementation path)** | {{< var wishonia_path_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var wishonia_path_avg_income_year_20 >}}** |
+
+$$Y_{20} = Y_0 \times (1+g)^{20}$$
+
+At year 20, Wishonia average income is {{< var wishonia_path_avg_income_year_20 >}}, about {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline.
+
+The remainder of this paper derives the {{< var political_dysfunction_global_opportunity_cost_total >}} figure, then identifies the mechanism (Incentive Alignment Bonds) that could systematically close the gap by making each line item in the waste ledger privately profitable to eliminate.
 
 ## Introduction: The Mechanism Design of Civilizational Stagnation
 
@@ -252,36 +276,35 @@ We now populate the final efficiency equation for the Global Governance Efficien
 ### The Variables
 
 1. **Current Realized Welfare ($W_{real}$)**  
-   * **Baseline:** Global Nominal GDP (2025) is estimated at **$115 Trillion** [@statisticstimes-world-gdp-2025].  
+   * **Baseline:** Global Nominal GDP (2025) is estimated at **{{< var global_gdp_2025 >}}** [@statisticstimes-world-gdp-2025].  
    * **Adjustment:** To be brutally honest, we must subtract the "Waste Ledger" from this figure. Expenditures on tax compliance ($0.5T), excess health admin ($0.5T), and war ($0.7T) are counted in GDP but contribute zero or negative net welfare. They are "fake work."  
-   * **Adjusted $W_{real}$:** $115\text{T} - 4.1\text{T} = \mathbf{110.9 \text{ Trillion}}$.  
+   * **Adjusted $W_{real}$:** **{{< var political_dysfunction_global_realized_welfare_adjusted >}}**.  
 2. **Theoretical Maximum Welfare ($W_{max}$)**  
    * This represents the potential output of the global economy if the Political Dysfunction Tax were repealed.  
    * $$W_{max} = \text{Adjusted } W_{real} + \text{Opportunity Ledger}$$  
    * **Opportunity Ledger Sum:**
-     * Health Multiplier (Accelerated Cures): **$34 Trillion**
-     * Human Capital (Lead Elimination): **$6 Trillion**
-     * Migration Arbitrage (Global Labor Efficiency): **$57 Trillion** (Lower Bound)
-   * **Total Opportunity:** **$97 Trillion**.  
-   * $W_{max}$ Calculation:
-
-     $$W_{max} = 110.9\text{T} + 97\text{T} = \mathbf{207.9 \text{ Trillion}}$$
+     * Health Multiplier (Accelerated Cures): **{{< var political_dysfunction_global_health_opportunity_cost >}}**
+     * Human Capital (Lead Elimination): **{{< var political_dysfunction_global_lead_opportunity_cost >}}**
+     * Migration Arbitrage (Global Labor Efficiency): **{{< var political_dysfunction_global_migration_opportunity_cost >}}** (Lower Bound)
+   * **Total Opportunity:** **{{< var political_dysfunction_global_opportunity_cost_total >}}**.  
+   * **$W_{max}$:** **{{< var political_dysfunction_global_theoretical_max_welfare >}}**
 
 ### The Efficiency Score
 
 $$E = \frac{\text{Adjusted Realized Welfare}}{\text{Theoretical Maximum Welfare}}$$
 
-$$E = \frac{110.9}{207.9} \approx \mathbf{53.3\%}$$  
-The Sensitivity Analysis:
-The 53.3% score assumes the conservative lower bounds of the opportunity costs. However, if we utilize the higher-end estimates supported by the literature:
+$$E = \frac{W_{real}}{W_{max}}$$  
+**Conservative estimate:** {{< var political_dysfunction_global_efficiency_score >}}  
+Uncertainty analysis:
+Uncertainty is encoded directly in the base opportunity-cost parameters rather than separate optimistic/pessimistic scenario constants.
 
-* **Migration:** 150% GDP boost = **$170 Trillion** [@clemens2011].  
-* **Health:** Full VSL valuation of longevity could approach **$50-80 Trillion** annualized.  
-* **High-End $W_{max}$:** $110.9T + 170T + 80T \approx \mathbf{360 \text{ Trillion}}$.
+* **Migration opportunity cost:** {{< var political_dysfunction_global_migration_opportunity_cost >}} [@clemens2011].  
+* **Health opportunity cost:** {{< var political_dysfunction_global_health_opportunity_cost >}}.  
+* **Implied $W_{max}$:** {{< var political_dysfunction_global_theoretical_max_welfare >}}.  
+* **Implied efficiency range:** {{< var political_dysfunction_global_efficiency_score >}}.  
 
-$$E_{optimist} = \frac{110.9}{360} \approx \mathbf{30.8\%}$$  
 Conclusion on the Hypothesis:  
-While the calculation does not strictly reach the "\<10%" threshold in annual flow terms (operating between 30% and 52%), this is largely because the "Current GDP" acts as a massive floor. Humanity is productive despite its governance. However, if we consider Stock (accumulated wealth over 30 years of compound growth), the efficiency collapses. A system growing at 2% (Status Quo) vs. 5% (Optimocracy) creates a divergence of 4x over 50 years. Relative to our potential as a post-scarcity civilization capable of solving aging and energy, the current efficiency is indeed likely in the single digits.
+While the calculation does not strictly reach the "\<10%" threshold in annual-flow terms (the modeled range remains far above that floor), this is largely because current GDP is a massive floor. Humanity is productive despite its governance. However, if we consider compounding stock effects, the efficiency gap widens quickly even over 20 years. Relative to our potential as a post-scarcity civilization capable of solving aging and energy, the current efficiency is likely in the single digits.
 
 ## Comparative Balance Sheet: Status Quo vs. Optimocracy
 
@@ -295,7 +318,7 @@ While the calculation does not strictly reach the "\<10%" threshold in annual fl
 | **Migration** | **Closed Borders:** Labor trapped in low-productivity zones. | **Global Skill Mobility:** Open labor markets. | **\-$57 Trillion / Year** (Lost Output) |
 | **Cognition** | **Lead Poisoned:** Widespread neurotoxicity (-IQ). | **Lead Free:** Optimized cognitive stock (+IQ). | **\-$6 Trillion / Year** (Lost Capital) |
 | **Admin/Regs** | **High Friction:** Tax compliance & health admin consume ~$3T. | **Automated Admin:** Friction approaches zero. | **\-$2.5 Trillion / Year** (Waste) |
-| **TOTAL OUTPUT** | **$115 Trillion (Nominal)** | **$208 -$360 Trillion (Potential)** | **Efficiency Score: ~31% -53%** |
+| **TOTAL OUTPUT** | **{{< var global_gdp_2025 >}} (Nominal)** | **{{< var political_dysfunction_global_theoretical_max_welfare >}} (Potential, with uncertainty range)** | **Efficiency Score: {{< var political_dysfunction_global_efficiency_score >}}** |
 
 ## Analysis and Second-Order Insights
 

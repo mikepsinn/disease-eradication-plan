@@ -1,0 +1,2214 @@
+---
+title: "Methodology, Parameters, and Calculations"
+description: "Parameter definitions, formulas, uncertainty ranges, and data sources."
+feed-date: false
+keywords:
+  - health economics methodology
+  - clinical trial cost analysis
+  - medical research ROI
+  - cost-benefit analysis healthcare
+  - sensitivity analysis
+  - Monte Carlo simulation
+  - DALY calculation
+  - pragmatic clinical trials
+aliases:
+  - /calculations.html
+  - /methodology.html
+  - /knowledge/appendix/parameters-and-calculations
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+---
+
+::: {.content-visible when-format="epub"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://political-dysfunction-tax.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://political-dysfunction-tax.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::: {.content-visible when-format="docx"}
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://political-dysfunction-tax.warondisease.org/knowledge/appendix/parameters-and-calculations.html](https://political-dysfunction-tax.warondisease.org/knowledge/appendix/parameters-and-calculations.html).
+:::
+
+::::: {.content-visible unless-format="epub"}
+:::: {.content-visible unless-format="docx"}
+
+## Overview {#sec-parameters-and-calculations}
+
+This appendix documents all 65 parameters used in the analysis, organized by type:
+
+- External sources (peer-reviewed): 29
+- Calculated values: 26
+- Core definitions: 10
+
+### Quick Navigation
+
+[Calculated Values](#sec-calculated) (26 parameters) • [External Data Sources](#sec-external) (29 parameters) • [Core Definitions](#sec-definitions) (10 parameters)
+
+
+## Calculated Values {#sec-calculated}
+
+Parameters derived from mathematical formulas and economic models.
+
+### Total Annual Decentralized Framework for Drug Assessment Operational Costs: $40M {#sec-dfda_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual Decentralized Framework for Drug Assessment operational costs (sum of all components: platform + staff + infra + regulatory + community)
+
+**Inputs**:
+
+- [Decentralized Framework for Drug Assessment Maintenance Costs](#sec-dfda_opex_platform_maintenance): $15M (95% CI: $10M - $22M)
+- [Decentralized Framework for Drug Assessment Staff Costs](#sec-dfda_opex_staff): $10M (95% CI: $7M - $15M)
+- [Decentralized Framework for Drug Assessment Infrastructure Costs](#sec-dfda_opex_infrastructure): $8M (95% CI: $5M - $12M)
+- [Decentralized Framework for Drug Assessment Regulatory Coordination Costs](#sec-dfda_opex_regulatory): $5M (95% CI: $3M - $8M)
+- [Decentralized Framework for Drug Assessment Community Support Costs](#sec-dfda_opex_community): $2M (95% CI: $1M - $3M)
+
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_annual_opex.qmd >}}
+
+:::
+
+### Maximum Trial Capacity Multiplier (Physical Limit): 566x {#sec-dfda_max_trial_capacity_multiplier_physical}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Physical upper bound on trial-capacity multiplier from participant availability. Even with unlimited funding, annual trial enrollment cannot exceed willing participant pool.
+
+**Inputs**:
+
+- [Global Patients Willing to Participate in Clinical Trials](#sec-willing_trial_participants_global) 🔢: 1.08 billion people
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_max_trial_capacity_multiplier_physical.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_max_trial_capacity_multiplier_physical.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_max_trial_capacity_multiplier_physical.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_max_trial_capacity_multiplier_physical.qmd >}}
+
+:::
+
+### dFDA Patients Fundable Annually: 23.4 million patients/year {#sec-dfda_patients_fundable_annually}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of patients fundable annually from dFDA funding at pragmatic trial cost. Source-agnostic counterpart of DIH_PATIENTS_FUNDABLE_ANNUALLY.
+
+**Inputs**:
+
+- [dFDA Annual Trial Subsidies](#sec-dfda_trial_subsidies_annual) 🔢: $21.8B
+- [dFDA Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3K)
+
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_patients_fundable_annually.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_patients_fundable_annually.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_patients_fundable_annually.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_patients_fundable_annually.qmd >}}
+
+:::
+
+### Trial Capacity Multiplier: 12.3x {#sec-dfda_trial_capacity_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial capacity multiplier from dFDA funding capacity vs. current global trial participation
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+- [dFDA Patients Fundable Annually](#sec-dfda_patients_fundable_annually) 🔢: 23.4 million patients/year
+
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_multiplier.qmd >}}
+
+:::
+
+### dFDA Annual Trial Subsidies: $21.8B {#sec-dfda_trial_subsidies_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual clinical trial patient subsidies from dFDA funding (total funding minus operational costs)
+
+**Inputs**:
+
+- [dFDA Annual Trial Funding](#sec-dfda_annual_trial_funding): $21.8B
+- [Total Annual Decentralized Framework for Drug Assessment Operational Costs](#sec-dfda_annual_opex) 🔢: $40M
+
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_subsidies_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_subsidies_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_subsidies_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_subsidies_annual.qmd >}}
+
+:::
+
+### Diseases Without Effective Treatment: 6.65 thousand diseases {#sec-diseases_without_effective_treatment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of diseases without effective treatment. 95% of 7,000 rare diseases lack FDA-approved treatment (per Orphanet 2024). This represents the therapeutic search space that remains unexplored.
+
+**Inputs**:
+
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7 thousand diseases (95% CI: 6 thousand diseases - 10 thousand diseases)
+
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+
+**Methodology**: [@rare-disease-only-5pct-have-treatment]
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-diseases_without_effective_treatment.qmd >}}
+
+{{< include ../figures/sensitivity-table-diseases_without_effective_treatment.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-diseases_without_effective_treatment.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-diseases_without_effective_treatment.qmd >}}
+
+:::
+
+### Earth Average Income at Year 20: $20.5K {#sec-earth_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under Earth baseline trajectory.
+
+**Inputs**:
+
+- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-earth_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-earth_avg_income_year_20.qmd >}}
+
+:::
+
+### Earth GDP at Year 20: $188T {#sec-earth_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global GDP at year 20 under status-quo Earth baseline growth.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-earth_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-earth_gdp_year_20.qmd >}}
+
+:::
+
+### Global Average Income (2025 Baseline): $14.4K {#sec-global_avg_income_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global average income (GDP per capita) in 2025 baseline.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_avg_income_2025.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_avg_income_2025.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_avg_income_2025.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_avg_income_2025.qmd >}}
+
+:::
+
+### Global Governance Efficiency Score: 51.9% {#sec-political_dysfunction_global_efficiency_score}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global Governance Efficiency Score from Political Dysfunction Tax paper. E = Adjusted W_real / W_max, where W_real = GDP - waste, W_max = W_real + opportunity cost. Paper calculates 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). This means civilization operates at roughly half its technological potential.
+
+**Inputs**:
+
+- [Adjusted Realized Welfare](#sec-political_dysfunction_global_realized_welfare_adjusted) 🔢: $109T
+- [Theoretical Maximum Welfare (Conservative)](#sec-political_dysfunction_global_theoretical_max_welfare) 🔢: $210T
+
+$$
+\begin{gathered}
+E \\
+= \frac{W_{real}}{W_{max}} \\
+= \frac{GDP - W_{waste}}{GDP - W_{waste} + O_{total}}
+\end{gathered}
+$$
+
+**Methodology**: [@political-dysfunction-tax-paper-2025]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_efficiency_score.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_efficiency_score.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_efficiency_score.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_efficiency_score.qmd >}}
+
+:::
+
+### Global Opportunity Cost Total: $101T {#sec-political_dysfunction_global_opportunity_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total global opportunity cost from governance failures: health innovation delays ($34T), underfunded science ($4T), lead poisoning ($6T), migration restrictions ($57T). Sum: $101T annually in unrealized potential.
+
+**Inputs**:
+
+- [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34T (95% CI: $20T - $80T)
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+
+**Methodology**: [@political-dysfunction-tax-paper-2025]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_opportunity_cost_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_opportunity_cost_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_opportunity_cost_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_opportunity_cost_total.qmd >}}
+
+:::
+
+### Adjusted Realized Welfare: $109T {#sec-political_dysfunction_global_realized_welfare_adjusted}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Adjusted realized welfare after subtracting measured governance waste from global GDP.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global Waste Total (Efficiency Accounting)](#sec-political_dysfunction_global_waste_total) 🔢: $6.2T
+
+$$
+\begin{gathered}
+W_{real} \\
+= GDP_{global} - W_{waste} \\
+= \$115T - \$6.2T \\
+= \$109T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{waste} \\
+= W_{total,US} + W_{ff,global} \\
+= \$4.9T + \$1.3T \\
+= \$6.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_realized_welfare_adjusted.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_realized_welfare_adjusted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_realized_welfare_adjusted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_realized_welfare_adjusted.qmd >}}
+
+:::
+
+### Theoretical Maximum Welfare (Conservative): $210T {#sec-political_dysfunction_global_theoretical_max_welfare}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conservative theoretical maximum welfare under opportunity-cost recapture assumptions.
+
+**Inputs**:
+
+- [Adjusted Realized Welfare](#sec-political_dysfunction_global_realized_welfare_adjusted) 🔢: $109T
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
+
+$$
+W_{max} = W_{real} + O_{total} = \$109T + \$101T = \$210T
+$$
+where:
+$$
+\begin{gathered}
+W_{real} \\
+= GDP_{global} - W_{waste} \\
+= \$115T - \$6.2T \\
+= \$109T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{waste} \\
+= W_{total,US} + W_{ff,global} \\
+= \$4.9T + \$1.3T \\
+= \$6.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_theoretical_max_welfare.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_theoretical_max_welfare.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_theoretical_max_welfare.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_theoretical_max_welfare.qmd >}}
+
+:::
+
+### Global Waste Total (Efficiency Accounting): $6.2T {#sec-political_dysfunction_global_waste_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global waste deduction used in Political Dysfunction Tax efficiency accounting. Combines US governance waste estimate with global explicit fossil-fuel subsidies.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
+- [Global Fossil Fuel Subsidies](#sec-political_dysfunction_global_fossil_fuel_subsidies) 📊: $1.3T (95% CI: $1.1T - $1.5T)
+
+$$
+\begin{gathered}
+W_{waste} \\
+= W_{total,US} + W_{ff,global} \\
+= \$4.9T + \$1.3T \\
+= \$6.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_waste_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_waste_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_waste_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_waste_total.qmd >}}
+
+:::
+
+### Political Dysfunction Tax per Household of Four (Annual): $50.5K {#sec-political_dysfunction_tax_per_household_of_four_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual household burden for a 4-person household implied by global Political Dysfunction Tax.
+
+**Inputs**:
+
+- [Political Dysfunction Tax per Person (Annual)](#sec-political_dysfunction_tax_per_person_annual) 🔢: $12.6K
+
+$$
+T_{pd,hh4} = T_{pd,pc} \times 4 = \$12.6K \times 4 = \$50.5K
+$$
+where:
+$$
+\begin{gathered}
+T_{pd,pc} \\
+= \frac{O_{total}}{Pop_{global}} \\
+= \frac{\$101T}{8B} \\
+= \$12.6K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_tax_per_household_of_four_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_tax_per_household_of_four_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_tax_per_household_of_four_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_tax_per_household_of_four_annual.qmd >}}
+
+:::
+
+### Political Dysfunction Tax per Person (Annual): $12.6K {#sec-political_dysfunction_tax_per_person_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual per-person burden implied by global Political Dysfunction Tax opportunity costs.
+
+**Inputs**:
+
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+T_{pd,pc} \\
+= \frac{O_{total}}{Pop_{global}} \\
+= \frac{\$101T}{8B} \\
+= \$12.6K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_tax_per_person_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_tax_per_person_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_tax_per_person_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_tax_per_person_annual.qmd >}}
+
+:::
+
+### Percentage Military Spending Cut After WW2: 87.6% {#sec-post_ww2_military_cut_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1,420B to $176B in constant 2024 dollars)
+
+**Inputs**:
+
+- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176B
+- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42T
+
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### US Gov Waste (Raw Total): $4.9T {#sec-us_gov_waste_raw_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Raw sum of US government waste components before overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.
+
+**Inputs**:
+
+- [Healthcare System Inefficiency](#sec-us_gov_waste_healthcare_inefficiency) 📊: $1.2T (95% CI: $1T - $1.5T)
+- [Housing/Zoning Restrictions Cost](#sec-us_gov_waste_housing_zoning) 📊: $1.4T (95% CI: $500B - $2T)
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 📊: $615B (95% CI: $500B - $750B)
+- [Regulatory Red Tape Waste](#sec-us_gov_waste_regulatory_red_tape) 📊: $580B (95% CI: $290B - $1T)
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546B (95% CI: $450B - $650B)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181B (95% CI: $150B - $220B)
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160B (95% CI: $90B - $250B)
+- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90B (95% CI: $60B - $150B)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50B (95% CI: $30B - $80B)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75B (95% CI: $50B - $120B)
+
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_raw_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_raw_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_raw_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_raw_total.qmd >}}
+
+:::
+
+### US Government Waste (Total): $4.9T {#sec-us_gov_waste_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual US government waste (additive sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as additive; any overlap offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.
+
+**Inputs**:
+
+- [US Gov Waste (Raw Total)](#sec-us_gov_waste_raw_total) 🔢: $4.9T
+- [Overlap Discount Factor](#sec-us_gov_waste_overlap_discount): 1:1
+
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_total.qmd >}}
+
+:::
+
+### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global chronic disease patients willing to participate in trials (2.4B × 44.8%)
+
+**Inputs**:
+
+- [Global Population with Chronic Diseases](#sec-current_disease_patients_global) 📊: 2.4 billion people (95% CI: 2 billion people - 2.8 billion people)
+- [Patient Willingness to Participate in Clinical Trials](#sec-patient_willingness_trial_participation_pct) 📊: 44.8% (95% CI: 40% - 50%)
+
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-willing_trial_participants_global.qmd >}}
+
+{{< include ../figures/sensitivity-table-willing_trial_participants_global.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-willing_trial_participants_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-willing_trial_participants_global.qmd >}}
+
+:::
+
+### Wishonia Disease Cure Fraction (20yr, Full Implementation): 100% {#sec-wishonia_disease_cure_fraction_20yr_full}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Wishonia disease-cure fraction over 20 years under full implementation. Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.
+
+**Inputs**:
+
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Trial Capacity Multiplier](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6.65 thousand diseases
+
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### Wishonia Military Reallocation Physical Max Share: 87.6% {#sec-wishonia_military_reallocation_physical_max_share}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Maximum physically demonstrated military reallocation share, anchored to post-WW2 US demobilization.
+
+**Inputs**:
+
+- [Percentage Military Spending Cut After WW2](#sec-post_ww2_military_cut_pct) 🔢: 87.6%
+
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+*✓ High confidence*
+
+:::
+
+### Wishonia Path Average Income at Year 20: $1.16M {#sec-wishonia_path_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under the Wishonia Path.
+
+**Inputs**:
+
+- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_avg_income_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_avg_income_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_avg_income_year_20.qmd >}}
+
+:::
+
+### Wishonia Path CAGR (20 Years): 25.4% {#sec-wishonia_path_cagr_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Compound annual growth rate implied by Wishonia Path GDP trajectory over 20 years.
+
+**Inputs**:
+
+- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+g_{wish,CAGR} \\
+= \left(\frac{GDP_{wish,20}}{GDP_0}\right)^{1/20} - 1
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_cagr_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_cagr_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_cagr_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_cagr_year_20.qmd >}}
+
+:::
+
+### Wishonia Path vs Earth GDP Multiplier (Year 20): 56.7x {#sec-wishonia_path_gdp_vs_earth_multiplier_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Wishonia Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.
+
+**Inputs**:
+
+- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+
+$$
+\begin{gathered}
+k_{wish:earth,20} \\
+= \frac{GDP_{wish,20}}{GDP_{earth,20}} \\
+= \frac{\$10700T}{\$188T} \\
+= 56.7
+\end{gathered}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+
+:::
+
+### Wishonia Path GDP at Year 20: $10.7 quadrillion {#sec-wishonia_path_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 20 under the Wishonia Path. Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately through disease burden removal to avoid overlap. Military and non-health reallocation effects are ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+- [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4T (95% CI: $2T - $10T)
+- [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6T (95% CI: $4T - $8T)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57T (95% CI: $57T - $170T)
+- [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
+- [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
+
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_gdp_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_gdp_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_gdp_year_20.qmd >}}
+
+:::
+
+## External Data Sources {#sec-external}
+
+Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Global Population with Chronic Diseases: 2.4 billion people {#sec-current_disease_patients_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global population with chronic diseases
+
+**Source**: [@disease-prevalence-2-billion]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2 billion people, 2.8 billion people] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 2 billion people and 2.8 billion people (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_disease_patients_global.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Annual Global Clinical Trial Participants: 1.9 million patients/year {#sec-current_trial_slots_available}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normalization)
+
+**Source**: [@global-trial-participant-capacity]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.5 million patients/year, 2.3 million patients/year] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.5 million patients/year and 2.3 million patients/year (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-current_trial_slots_available.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### dFDA Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+dFDA pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBERATELY CONSERVATIVE central estimate. Ramsberg & Platt (2018) reviewed 108 embedded pragmatic trials; 64 with cost data had median of only $97/patient - our estimate may overstate costs by 10x. Confidence interval spans meta-analysis median to complex chronic disease trials.
+
+**Source**: [@pragmatic-trials-cost-advantage]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$97, $3K] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $97 and $3K (±156%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Disease Burden as % of GDP: 13% {#sec-disease_burden_gdp_drag_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of GDP currently lost to disease (productivity losses + medical costs diverted from productive use). $5T productivity loss + $9.9T direct medical costs = $14.9T on $115T GDP = ~13%. As diseases are progressively cured, this drag is recovered as GDP growth. This is the missing factor that makes the treaty trajectory look like a singularity rather than a modest improvement.
+
+**Source**: [@disease-economic-burden-109t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Economic Multiplier for Healthcare Investment: 4.3x {#sec-economic_multiplier_healthcare_investment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic multiplier for healthcare investment (4.3x ROI). Literature range 3.0-6.0×.
+
+**Source**: [@healthcare-investment-economic-multiplier]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3x, 6x] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3x and 6x (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-economic_multiplier_healthcare_investment.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Economic Multiplier for Military Spending: 0.6x {#sec-economic_multiplier_military_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×.
+
+**Source**: [@military-spending-economic-multiplier]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4x, 0.9x] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.4x and 0.9x (±42%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-economic_multiplier_military_spending.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global GDP (2025): $115T {#sec-global_gdp_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs as percentage of world economic output. Note: Latest IMF data shows $117T.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Population in 2024: 8 billion of people {#sec-global_population_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global population in 2024
+
+**Source**: [@global-population-8-billion]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [7.8 billion of people, 8.2 billion of people] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 7.8 billion of people and 8.2 billion of people (±2%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_population_2024.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Population 2045 (Projected): 9.2 billion of people {#sec-global_population_2045_projected}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+UN World Population Prospects 2022 median projection for 2045.
+
+**Source**: [@global-population-8-billion]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Diseases Getting First Treatment Per Year: 15 diseases/year {#sec-new_disease_first_treatments_per_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of diseases that receive their FIRST effective treatment each year under current system. ~9 rare diseases/year (based on 40 years of ODA: 350 with treatment ÷ 40 years), plus ~5-10 common diseases. Note: FDA approves ~50 drugs/year, but most are for diseases that already have treatments.
+
+**Source**: [@diseases-getting-first-treatment-annually]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 diseases/year, 30 diseases/year] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 8 diseases/year and 30 diseases/year (±73%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-new_disease_first_treatments_per_year.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Patient Willingness to Participate in Clinical Trials: 44.8% {#sec-patient_willingness_trial_participation_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)
+
+**Source**: [@patient-willingness-clinical-trials]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [40%, 50%] • Distribution: Normal (SE: 2.5%)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 40% and 50% (±11%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Global Fossil Fuel Subsidies: $1.3T {#sec-political_dysfunction_global_fossil_fuel_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global explicit fossil fuel subsidies (governments undercharging for energy supply costs). IMF 2022 estimate. These subsidies actively encourage consumption of negative-externality goods, working against climate goals. Note: IMF implicit subsidies (externalities) are much larger (~$7T).
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.1T, $1.5T] • Distribution: Normal (SE: $100B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $1.1T and $1.5T (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_fossil_fuel_subsidies.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Health Opportunity Cost: $34T {#sec-political_dysfunction_global_health_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual opportunity cost of slow-motion regulatory environment for health innovation. Murphy-Topel (2006) valued cancer cure at $50T (inflation-adjusted ~$100T in 2025). Longevity dividend of 1 extra year = $38T globally. PCTs could accelerate cures by 10+ years; NPV of 10-year delay at 3% discount = ~$25T. Conservative estimate: $34T annually in lives lost and healthspan denied.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20T, $80T] • Distribution: Lognormal (SE: $15T)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20T and $80T (±88%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_health_opportunity_cost.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Global Lead Poisoning Cost: $6T {#sec-political_dysfunction_global_lead_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points lost annually, 5.5 million premature CVD deaths. Cost to eliminate lead from paint, spices, batteries is trivial compared to damage. This is an arbitrage opportunity of immense scale that governance has failed to execute.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$4T, $8T] • Distribution: Normal (SE: $1T)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $4T and $8T (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_lead_opportunity_cost.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Migration Opportunity Cost: $57T {#sec-political_dysfunction_global_migration_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$57T, $170T] • Distribution: Lognormal (SE: $30T)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $57T and $170T (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_migration_opportunity_cost.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Global Science Opportunity Cost: $4T {#sec-political_dysfunction_global_science_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). Fusion DEMO plant: $5-10B could solve energy/climate permanently. AI safety: <5% of capabilities spending despite existential stakes. Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2T, $10T] • Distribution: Lognormal (SE: $2T)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2T and $10T (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_science_opportunity_cost.qmd >}}
+
+*? Low confidence*
+
+:::
+
+### Total Number of Rare Diseases Globally: 7 thousand diseases {#sec-rare_diseases_count_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total number of rare diseases globally
+
+**Source**: [@95-pct-diseases-no-treatment]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6 thousand diseases, 10 thousand diseases] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6 thousand diseases and 10 thousand diseases (±29%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-rare_diseases_count_global.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Agricultural Subsidies Deadweight Loss: $75B {#sec-us_gov_waste_agricultural_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deadweight loss from US agricultural subsidies. Direct subsidies ~$30B/yr but create larger distortions: overproduction, environmental damage, benefits concentrated in large farms (top 10% receive 78% of subsidies). Total welfare loss ~$75B. Textbook example of capture; very high economist consensus. [CATEGORY 1: Direct Spending]
+
+**Source**: [@ewg-farm-subsidies]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$50B, $120B] • Distribution: Lognormal (SE: $25B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $50B and $120B (±47%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_agricultural_subsidies.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Corporate Welfare Waste: $181B {#sec-us_gov_waste_corporate_welfare}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green energy tax credits, semiconductor aid, aviation support. Agricultural subsidies are highly regressive (top 10% receive 63%). Cato Institute forensic tally. [CATEGORY 1: Direct Spending]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150B, $220B] • Distribution: Normal (SE: $20B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $150B and $220B (±19%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_corporate_welfare.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Drug War Cost: $90B {#sec-us_gov_waste_drug_war}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local enforcement, ~$40B incarceration and lost productivity. After 50+ years and $1T+ spent, drug use is higher than ever. [CATEGORY 1: Direct Spending]
+
+**Source**: [@drugpolicyalliance2021]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$60B, $150B] • Distribution: Lognormal (SE: $30B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $60B and $150B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_drug_war.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Fossil Fuel Subsidies (Explicit): $50B {#sec-us_gov_waste_fossil_fuel_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US explicit fossil fuel subsidies (direct payments, tax breaks). IMF estimates US total subsidies at $649B but ~92% is implicit (externalities). This figure includes only explicit subsidies (~$50B) for defensibility. [CATEGORY 1: Direct Spending]
+
+**Source**: [@imf-fossilfuel2023]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$30B, $80B] • Distribution: Lognormal (SE: $15B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $30B and $80B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_fossil_fuel_subsidies.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Healthcare System Inefficiency: $1.2T {#sec-us_gov_waste_healthcare_inefficiency}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US healthcare spending inefficiency. US spends ~$4.5T/yr (18% GDP) vs 9-11% in comparable OECD countries with similar/better outcomes. Papanicolas et al. (2018 JAMA) and multiple studies document $1-1.5T in excess spending from administrative complexity, high prices, and poor care coordination. Very high economist consensus. [CATEGORY 4: System Inefficiency]
+
+**Source**: [@papanicolas2018]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1T, $1.5T] • Distribution: Normal (SE: $150B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $1T and $1.5T (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_healthcare_inefficiency.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Housing/Zoning Restrictions Cost: $1.4T {#sec-us_gov_waste_housing_zoning}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GDP loss from housing/zoning restrictions. Original Hsieh-Moretti (2019 AEJ:Macro) estimate of 36% GDP growth reduction was substantially revised by Greaney (2023). Current $1.4T represents a moderate estimate; revised lower bound implies ~$500B. [CATEGORY 3: GDP Loss]
+
+**Source**: [@hsieh-moretti2019]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$500B, $2T] • Distribution: Lognormal (SE: $300B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $500B and $2T (±54%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_housing_zoning.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Military Overspend: $615B {#sec-us_gov_waste_military_overspend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending above 'Strict Deterrence' baseline. Current budget ~$900B supports global power projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$500B, $750B] • Distribution: Normal (SE: $75B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $500B and $750B (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_military_overspend.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Regulatory Red Tape Waste: $580B {#sec-us_gov_waste_regulatory_red_tape}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deadweight loss from US regulatory red tape (procedural friction without safety benefits). Competitive Enterprise Institute estimates total regulatory burden at $2.15T; European studies find red tape costs 0.1-4% of GDP. Conservative estimate: ~2% of US GDP = $580B. [CATEGORY 2: Compliance Burden]
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$290B, $1T] • Distribution: Lognormal (SE: $200B)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $290B and $1T (±61%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_regulatory_red_tape.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Tariff Cost (GDP Loss): $160B {#sec-us_gov_waste_tariffs}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 0.6% smaller GDP in long run, equivalent to $160B annually. Trade barriers reduce efficiency and raise consumer prices. [CATEGORY 3: GDP Loss]
+
+**Source**: [@yalebudgetlab2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$90B, $250B] • Distribution: Normal (SE: $50B)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $90B and $250B (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_tariffs.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Tax Compliance Waste: $546B {#sec-us_gov_waste_tax_compliance}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($413B) plus $133B in out-of-pocket costs. Equals nearly 2% of GDP. Could be largely eliminated with simplified tax code or return-free filing. [CATEGORY 2: Compliance Burden]
+
+**Source**: [@taxfoundation2024-compliance]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$450B, $650B] • Distribution: Normal (SE: $50B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $450B and $650B (±18%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_waste_tax_compliance.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T {#sec-us_military_spending_1945_peak_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending at WW2 peak (1945) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending in 1947 (Constant 2024 Dollars): $176B {#sec-us_military_spending_1947_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+## Core Definitions {#sec-definitions}
+
+Fundamental parameters and constants used throughout the analysis.
+
+### dFDA Annual Trial Funding: $21.8B {#sec-dfda_annual_trial_funding}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Assumed annual funding for dFDA pragmatic clinical trials (~$21.8B/year). Source-agnostic: could come from military reallocation, philanthropy, or government appropriation.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Community Support Costs: $2M {#sec-dfda_opex_community}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment community support costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1M, $3M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $1M and $3M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_community.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Infrastructure Costs: $8M {#sec-dfda_opex_infrastructure}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment infrastructure costs (cloud, security)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5M, $12M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $5M and $12M (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_infrastructure.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Maintenance Costs: $15M {#sec-dfda_opex_platform_maintenance}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment maintenance costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10M, $22M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $10M and $22M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_platform_maintenance.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Regulatory Coordination Costs: $5M {#sec-dfda_opex_regulatory}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment regulatory coordination costs
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3M, $8M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3M and $8M (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_regulatory.qmd >}}
+
+*Core definition*
+
+:::
+
+### Decentralized Framework for Drug Assessment Staff Costs: $10M {#sec-dfda_opex_staff}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Decentralized Framework for Drug Assessment staff costs (minimal, AI-assisted)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$7M, $15M] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $7M and $15M (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_opex_staff.qmd >}}
+
+*Core definition*
+
+:::
+
+### Baseline Global GDP Growth Rate: 2.5% {#sec-gdp_baseline_growth_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Status-quo baseline annual global GDP growth rate.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### GDP Growth Boost at 30% Military Reallocation: 5.5% {#sec-military_redirect_gdp_boost_at_30pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Historical calibration target: 30% military reallocation maps to ~5.5 percentage points annual GDP growth boost.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3.5%, 7.5%] • Distribution: Normal (SE: 1%)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 3.5% and 7.5% (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-military_redirect_gdp_boost_at_30pct.qmd >}}
+
+*Core definition*
+
+:::
+
+### R&D Spillover Multiplier: 2x {#sec-rd_spillover_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+R&D spillover multiplier: each $1 in directed medical research produces $2 in adjacent sector GDP growth (biotech, AI, computing, materials science, manufacturing). Conservative estimate; military R&D spillover produced the internet, GPS, jet engines. Medical R&D spillover already produced CRISPR, mRNA platforms, AI protein folding.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.5x, 2.5x] • Distribution: Normal (SE: 0.25x)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 1.5x and 2.5x (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-rd_spillover_multiplier.qmd >}}
+
+*Core definition*
+
+:::
+
+### Overlap Discount Factor: 1:1 {#sec-us_gov_waste_overlap_discount}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Overlap discount factor between US government waste categories. Set to 1.0 (no discount). Categories are treated as additive, recognizing that any overlap is offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+
+```{=html}
+<script>
+// Conservative lazy loading: only load images actually in viewport
+(function() {
+  'use strict';
+  
+  let imageObserver = null;
+  let loadTimeout = null;
+  
+  function enableLazyLoading() {
+    const images = document.querySelectorAll('img');
+    
+    // Use Intersection Observer with conservative threshold
+    // rootMargin: '50px' means only load images within 50px of viewport
+    // This prevents loading images passed through during hash navigation
+    imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          const img = entry.target;
+          // Only load if image is actually visible (not just passed through)
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          } else if (!img.hasAttribute('loading')) {
+            // For images without data-src, use native lazy loading
+            img.setAttribute('loading', 'lazy');
+          }
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px',  // Only load images within 50px of viewport
+      threshold: 0.01      // Trigger when at least 1% visible
+    });
+    
+    images.forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Handle hash navigation (clicking links to sections)
+  // Delay loading to avoid loading images passed through during jump
+  function handleHashNavigation() {
+    if (loadTimeout) clearTimeout(loadTimeout);
+    // Wait 300ms after navigation to let scroll settle
+    // Images will load naturally via Intersection Observer when visible
+    loadTimeout = setTimeout(() => {
+      // Scroll has settled, Intersection Observer will handle visible images
+      // No action needed - observer is already watching
+    }, 300);
+  }
+  
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', enableLazyLoading);
+  } else {
+    enableLazyLoading();
+  }
+  
+  // Handle hash changes (clicking anchor links)
+  window.addEventListener('hashchange', handleHashNavigation);
+  
+  // Also handle initial hash if page loads with one
+  if (window.location.hash) {
+    setTimeout(handleHashNavigation, 100);
+  }
+})();
+</script>
+```
+
+::::
+:::::

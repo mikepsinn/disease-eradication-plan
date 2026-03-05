@@ -3503,6 +3503,7 @@ DEFENSE_LOBBYING_ANNUAL = Parameter(
     unit="USD/year",
     peer_reviewed=True,
     last_updated="2024",
+    confidence_interval=(100_000_000, 160_000_000),  # ±~25% year-to-year variation in reported lobbying
     keywords=["127.0m", "armed forces", "yearly", "conflict", "costs", "funding", "investment"],
     latex_symbol=r"Lobby_{def,ann}",  # LaTeX symbol for equations
 )
@@ -4878,10 +4879,60 @@ US_GOV_WASTE_RECOVERABLE = Parameter(
 # From paper Part 3: E = Adjusted W_real / W_max
 # NOTE: Moved here after US_GOV_WASTE_TOTAL is defined to avoid forward reference error
 
+POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL = Parameter(
+    US_GOV_WASTE_TOTAL + POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES,
+    source_type="calculated",
+    confidence="medium",
+    description="Global waste deduction used in Political Dysfunction Tax efficiency accounting. "
+                "Combines US governance waste estimate with global explicit fossil-fuel subsidies.",
+    display_name="Global Waste Total (Efficiency Accounting)",
+    unit="USD",
+    formula="US_GOV_WASTE_TOTAL + POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES",
+    inputs=["US_GOV_WASTE_TOTAL", "POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES"],
+    compute=lambda ctx: (
+        ctx["US_GOV_WASTE_TOTAL"] +
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES"]
+    ),
+    keywords=["waste", "global", "efficiency", "ledger"],
+    latex_symbol=r"W_{waste}",
+)
+
+POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED = Parameter(
+    GLOBAL_GDP_2025 - POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL,
+    source_type="calculated",
+    confidence="medium",
+    description="Adjusted realized welfare after subtracting measured governance waste from global GDP.",
+    display_name="Adjusted Realized Welfare",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 - POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL",
+    inputs=["GLOBAL_GDP_2025", "POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL"],
+    compute=lambda ctx: (
+        ctx["GLOBAL_GDP_2025"] - ctx["POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL"]
+    ),
+    keywords=["welfare", "adjusted", "realized", "global"],
+    latex_symbol=r"W_{real}",
+)
+
+POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE = Parameter(
+    POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED + POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL,
+    source_type="calculated",
+    confidence="low",
+    description="Conservative theoretical maximum welfare under opportunity-cost recapture assumptions.",
+    display_name="Theoretical Maximum Welfare (Conservative)",
+    unit="USD",
+    formula="POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED + POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+    inputs=["POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED", "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"],
+    compute=lambda ctx: (
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED"] +
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"]
+    ),
+    keywords=["welfare", "theoretical", "max", "global", "conservative"],
+    latex_symbol=r"W_{max}",
+)
+
 POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE = Parameter(
-    (GLOBAL_GDP_2025 - US_GOV_WASTE_TOTAL - POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES) /
-    (GLOBAL_GDP_2025 - US_GOV_WASTE_TOTAL - POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES +
-     POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL),
+    POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED /
+    POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE,
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="calculated",
     confidence="low",
@@ -4891,20 +4942,15 @@ POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE = Parameter(
                 "Paper calculates 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). "
                 "This means civilization operates at roughly half its technological potential.",
     display_name="Global Governance Efficiency Score",
-    formula="(GDP - WASTE) / (GDP - WASTE + OPPORTUNITY)",
+    formula="POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED / POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE",
     latex=r"E = \frac{W_{real}}{W_{max}} = \frac{GDP - W_{waste}}{GDP - W_{waste} + O_{total}}",
     inputs=[
-        "GLOBAL_GDP_2025",
-        "US_GOV_WASTE_TOTAL",
-        "POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES",
-        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+        "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED",
+        "POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE",
     ],
     compute=lambda ctx: (
-        (ctx["GLOBAL_GDP_2025"] - ctx["US_GOV_WASTE_TOTAL"] -
-         ctx["POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES"]) /
-        (ctx["GLOBAL_GDP_2025"] - ctx["US_GOV_WASTE_TOTAL"] -
-         ctx["POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES"] +
-         ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"])
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED"] /
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE"]
     ),
     keywords=["efficiency", "governance", "global", "score"],
     latex_symbol=r"E_{gov}",
@@ -5361,6 +5407,139 @@ IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL = Parameter(
     compute=lambda ctx: ctx["TREATY_ANNUAL_FUNDING"] * ctx["IAB_POLITICAL_INCENTIVE_FUNDING_PCT"],
     latex_symbol=r"Funding_{political,ann}",  # LaTeX symbol for equations
 )  # $2.718B/year for political incentive mechanisms
+
+# ---
+# TREATY EXPANSION RATCHET ECONOMICS
+# ---
+# Quantifies the expected value of the IAB ratchet mechanism:
+# how much additional funding flows to medical research over 20 years
+# if the treaty expands (due to bondholder lobbying) vs stagnates at 1%.
+# Roadmap timeline modeled here (first 20 years):
+#   1% (yr 1-3), 2% (yr 4-7), 5% (yr 8-12), 10% (yr 13-20)
+
+# IAB political incentive funding vs defense industry lobbying at 1% treaty level
+IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT = Parameter(
+    IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL / DEFENSE_LOBBYING_ANNUAL,
+    source_type="calculated",
+    description="Ratio of IAB political incentive funding to defense industry lobbying at 1% treaty level. "
+                "At just 1%, the health lobby already outguns the defense lobby by this factor.",
+    display_name="IAB vs Defense Lobbying Ratio at 1% Treaty",
+    unit="x",
+    formula="IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL / DEFENSE_LOBBYING_ANNUAL",
+    keywords=["ratchet", "lobbying", "defense", "political", "ratio", "incentive", "iab"],
+    inputs=["IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL", "DEFENSE_LOBBYING_ANNUAL"],
+    compute=lambda ctx: ctx["IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL"] / ctx["DEFENSE_LOBBYING_ANNUAL"],
+    latex_symbol=r"k_{IAB:defense}",
+)
+
+# Cumulative treaty funding over 20 years WITH IAB ratchet expansion
+TREATY_CUMULATIVE_20YR_WITH_RATCHET = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 * (
+        0.01 * 3 +    # Years 1-3: 1%
+        0.02 * 4 +    # Years 4-7: 2%
+        0.05 * 5 +    # Years 8-12: 5%
+        0.10 * 8      # Years 13-20: 10%
+    ),
+    source_type="calculated",
+    description="Cumulative treaty funding over 20 years with IAB ratchet expansion following roadmap timeline. "
+                "Expansion driven by bondholder lobbying incentives (10% of treaty inflows).",
+    display_name="Cumulative Treaty Funding over 20 Years with IAB Ratchet Expansion",
+    unit="USD",
+    formula="GLOBAL_MILITARY × (0.01×3 + 0.02×4 + 0.05×5 + 0.10×8)",
+    keywords=["cumulative", "20 year", "ratchet", "expansion", "dynamic", "iab", "roadmap"],
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] * (
+        0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 8
+    ),
+    latex_symbol=r"Fund_{20yr,ratchet}",
+)
+
+# Ratchet premium: additional cumulative funding from IAB expansion mechanism (20 years)
+TREATY_RATCHET_PREMIUM_20YR = Parameter(
+    TREATY_CUMULATIVE_20YR_WITH_RATCHET - (TREATY_ANNUAL_FUNDING * 20),
+    source_type="calculated",
+    description="Additional cumulative funding from IAB ratchet expansion vs stagnation over 20 years. "
+                "The value of the IAB mechanism: this much more funding flows to medical research "
+                "because bondholder incentives drive treaty expansion.",
+    display_name="Treaty Ratchet Premium over 20 Years",
+    unit="USD",
+    formula="TREATY_CUMULATIVE_20YR_WITH_RATCHET - (TREATY_ANNUAL_FUNDING × 20)",
+    latex=r"\Delta Fund_{ratchet,20}=Fund_{20yr,ratchet}-20\cdot Funding_{treaty,ann}",
+    keywords=["ratchet", "premium", "expansion", "difference", "iab", "expected value", "20 year"],
+    inputs=["TREATY_CUMULATIVE_20YR_WITH_RATCHET", "TREATY_ANNUAL_FUNDING"],
+    compute=lambda ctx: ctx["TREATY_CUMULATIVE_20YR_WITH_RATCHET"] - (ctx["TREATY_ANNUAL_FUNDING"] * 20),
+    latex_symbol=r"\Delta Fund_{ratchet}",
+)
+
+# Ratchet expansion multiplier: how many times more funding with ratchet vs without (20 years)
+TREATY_RATCHET_MULTIPLIER_20YR = Parameter(
+    TREATY_CUMULATIVE_20YR_WITH_RATCHET / (TREATY_ANNUAL_FUNDING * 20),
+    source_type="calculated",
+    description="How many times more cumulative funding flows with IAB ratchet vs stagnation over 20 years.",
+    display_name="Treaty Ratchet Funding Multiplier (20yr)",
+    unit="x",
+    formula="TREATY_CUMULATIVE_20YR_WITH_RATCHET / (TREATY_ANNUAL_FUNDING × 20)",
+    latex=r"k_{ratchet,20}=\frac{Fund_{20yr,ratchet}}{20\cdot Funding_{treaty,ann}}",
+    keywords=["ratchet", "multiplier", "expansion", "iab", "20 year"],
+    inputs=["TREATY_CUMULATIVE_20YR_WITH_RATCHET", "TREATY_ANNUAL_FUNDING"],
+    compute=lambda ctx: ctx["TREATY_CUMULATIVE_20YR_WITH_RATCHET"] / (ctx["TREATY_ANNUAL_FUNDING"] * 20),
+    latex_symbol=r"k_{ratchet}",
+)
+
+# War costs on current trajectory (20 years at current levels)
+WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY = Parameter(
+    GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * 20,
+    source_type="calculated",
+    description="Cumulative global war costs over 20 years if current spending levels continue. "
+                "The price tag of the status quo trajectory.",
+    display_name="Cumulative War Costs over 20 Years (Current Trajectory)",
+    unit="USD",
+    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × 20",
+    keywords=["war costs", "cumulative", "20 year", "current", "trajectory", "status quo"],
+    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * 20,
+    latex_symbol=r"Cost_{war,20yr}",
+)
+
+# War costs saved as treaty expands via IAB ratchet (same timeline as funding ratchet)
+# Assumes war costs decline proportionally to military spending cuts (e=1.0)
+WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR = Parameter(
+    GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST * (
+        0.01 * 3 +    # Years 1-3: 1% reduction
+        0.02 * 4 +    # Years 4-7: 2% reduction
+        0.05 * 5 +    # Years 8-12: 5% reduction
+        0.10 * 8      # Years 13-20: 10% reduction
+    ),
+    source_type="calculated",
+    description="Cumulative war costs saved over 20 years as treaty expands via IAB ratchet. "
+                "Assumes war costs decline proportionally to spending cuts (e=1.0). "
+                "Conservative: Pape research suggests e>1.0 due to terrorism feedback loops.",
+    display_name="War Costs Saved via Peace Trajectory (20yr)",
+    unit="USD",
+    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (0.01×3 + 0.02×4 + 0.05×5 + 0.10×8)",
+    keywords=["war costs", "savings", "peace", "trajectory", "ratchet", "20 year", "moronia"],
+    inputs=["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] * (
+        0.01 * 3 + 0.02 * 4 + 0.05 * 5 + 0.10 * 8
+    ),
+    latex_symbol=r"Savings_{war,20yr}",
+)
+
+# Total trajectory differential: research funding redirected + war externality costs saved
+PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR = Parameter(
+    TREATY_CUMULATIVE_20YR_WITH_RATCHET + WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
+    source_type="calculated",
+    description="Total 20-year value of the peace trajectory: research funding redirected to medicine "
+                "plus war externality costs avoided. The full differential between the IAB trajectory "
+                "and the current trajectory. Does not include existential risk reduction.",
+    display_name="Peace Trajectory Total Differential (20yr)",
+    unit="USD",
+    formula="TREATY_CUMULATIVE_20YR_WITH_RATCHET + WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR",
+    keywords=["peace", "trajectory", "total", "differential", "20 year", "moronia", "expected value"],
+    inputs=["TREATY_CUMULATIVE_20YR_WITH_RATCHET", "WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR"],
+    compute=lambda ctx: ctx["TREATY_CUMULATIVE_20YR_WITH_RATCHET"] + ctx["WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR"],
+    latex_symbol=r"V_{peace,20yr}",
+)
 
 # ---
 # FUNDING ALLOCATION (Updated to include IAB)
@@ -6106,6 +6285,36 @@ GLOBAL_POPULATION_2024 = Parameter(
     latex_symbol=r"Pop_{global}",  # LaTeX symbol for equations
 )  # UN World Population Prospects 2022
 
+POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL = Parameter(
+    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / GLOBAL_POPULATION_2024,
+    source_type="calculated",
+    confidence="low",
+    description="Annual per-person burden implied by global Political Dysfunction Tax opportunity costs.",
+    display_name="Political Dysfunction Tax per Person (Annual)",
+    unit="USD/year",
+    formula="POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL ÷ GLOBAL_POPULATION_2024",
+    inputs=["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: (
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"] / ctx["GLOBAL_POPULATION_2024"]
+    ),
+    keywords=["political dysfunction tax", "per person", "annual", "global"],
+    latex_symbol=r"T_{pd,pc}",
+)
+
+POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL = Parameter(
+    POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL * 4,
+    source_type="calculated",
+    confidence="low",
+    description="Annual household burden for a 4-person household implied by global Political Dysfunction Tax.",
+    display_name="Political Dysfunction Tax per Household of Four (Annual)",
+    unit="USD/year",
+    formula="POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL × 4",
+    inputs=["POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL"],
+    compute=lambda ctx: ctx["POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL"] * 4,
+    keywords=["political dysfunction tax", "household", "annual", "global"],
+    latex_symbol=r"T_{pd,hh4}",
+)
+
 # NOTE: Daily deaths (150k/day) defined above as GLOBAL_DISEASE_DEATHS_DAILY (line ~1903)
 # Annual disease deaths (from WHO global health estimates)
 GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES = Parameter(
@@ -6243,6 +6452,21 @@ WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
     compute=lambda ctx: ctx["CURRENT_DISEASE_PATIENTS_GLOBAL"] * ctx["PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT"],
     latex_symbol=r"N_{willing}",  # LaTeX symbol for equations
 )  # 1.075 billion willing participants
+
+DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL = Parameter(
+    WILLING_TRIAL_PARTICIPANTS_GLOBAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
+    source_type="calculated",
+    description="Physical upper bound on trial-capacity multiplier from participant availability. "
+                "Even with unlimited funding, annual trial enrollment cannot exceed willing participant pool.",
+    display_name="Maximum Trial Capacity Multiplier (Physical Limit)",
+    unit="x",
+    formula="WILLING_TRIAL_PARTICIPANTS_GLOBAL ÷ CURRENT_TRIAL_SLOTS_AVAILABLE",
+    confidence="medium",
+    keywords=["trial capacity", "physical limit", "participants", "upper bound", "dfda"],
+    inputs=["WILLING_TRIAL_PARTICIPANTS_GLOBAL", "CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    compute=lambda ctx: ctx["WILLING_TRIAL_PARTICIPANTS_GLOBAL"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    latex_symbol=r"k_{capacity,max}",
+)  # ~568x absolute cap from willing participants
 
 
 US_MILITARY_SPENDING_PCT_GDP = Parameter(
@@ -7342,20 +7566,10 @@ TREATY_BENEFIT_MULTIPLIER_VS_VACCINES = Parameter(
 
 def calculate_gdp_growth_boost(treaty_pct: float) -> float:
     """
-    Calculate GDP growth boost from military spending redirection
+    Calculate annual GDP growth from military spending redirection.
 
-    Historical evidence:
-    - Post-WW2: 30% military cut → 8% annual GDP growth for a decade (vs 2-3% normal)
-    - Post-Cold War: 3% military cut → 1990s boom with 2.5% productivity surge
-
-    Model: Each 1% reduction in military spending → ~0.25% GDP growth boost
-    This is conservative given historical evidence shows larger effects.
-
-    Formula:
-        GDP_{growth} = GDP_{base} + treaty_{pct} \times multiplier
-
-    LaTeX:
-        GDP_{growth} = 0.025 + treaty_{pct} \times 0.25
+    Calibrated so a 30% reallocation maps to ~5.5 percentage points
+    of annual growth boost at baseline spillover assumptions.
 
     Args:
         treaty_pct: Fraction of military spending redirected (e.g., 0.01 for 1%)
@@ -7363,27 +7577,33 @@ def calculate_gdp_growth_boost(treaty_pct: float) -> float:
     Returns:
         Total annual GDP growth rate (baseline + boost)
     """
-    BASE_GDP_GROWTH = 0.025  # 2.5% baseline global growth
-    MULTIPLIER_EFFECT = 0.25  # Conservative: 1% military cut → 0.25% GDP boost
-
-    boost = treaty_pct * MULTIPLIER_EFFECT
-    return BASE_GDP_GROWTH + boost
+    base_growth = float(GDP_BASELINE_GROWTH_RATE)
+    # Inline calibration: 30% reallocation -> MILITARY_REDIRECT_GDP_BOOST_AT_30PCT.
+    # Spillover normalization keeps the 30% anchor unchanged at spillover=2.
+    effective_coeff = (
+        float(MILITARY_REDIRECT_GDP_BOOST_AT_30PCT) / 0.30
+    ) * (float(RD_SPILLOVER_MULTIPLIER) / 2.0)
+    return base_growth + treaty_pct * effective_coeff
 
 
 def calculate_trial_capacity_multiplier(treaty_pct: float) -> float:
     """
     Calculate trial capacity multiplier for a given treaty percentage.
 
-    Uses linear scaling from the base DFDA_TRIAL_CAPACITY_MULTIPLIER at 1% treaty.
+    Uses linear scaling from the base DFDA_TRIAL_CAPACITY_MULTIPLIER at 1% treaty,
+    then applies a physical cap from willing participant availability.
 
     Formula:
-        Multiplier = DFDA_TRIAL_CAPACITY_MULTIPLIER × (treaty_pct / 0.01)
+        Multiplier = min(
+            DFDA_TRIAL_CAPACITY_MULTIPLIER × (treaty_pct / 0.01),
+            DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL
+        )
 
-    Examples (assuming base multiplier of 9.53x):
-    - 1% treaty: 9.53 × (0.01 / 0.01) = 9.53x
-    - 2% treaty: 9.53 × (0.02 / 0.01) = 19.1x
-    - 5% treaty: 9.53 × (0.05 / 0.01) = 47.7x
-    - 10% treaty: 9.53 × (0.10 / 0.01) = 95.3x
+    Examples (assuming base multiplier of ~12.3x):
+    - 1% treaty: 12.3 × (0.01 / 0.01) = 12.3x
+    - 2% treaty: 12.3 × (0.02 / 0.01) = 24.6x
+    - 5% treaty: 12.3 × (0.05 / 0.01) = 61.5x
+    - 10% treaty: 12.3 × (0.10 / 0.01) = 123x
 
     Args:
         treaty_pct: Fraction of military spending redirected (e.g., 0.01 for 1%)
@@ -7391,7 +7611,9 @@ def calculate_trial_capacity_multiplier(treaty_pct: float) -> float:
     Returns:
         Trial capacity multiplier (scales with treaty percentage)
     """
-    return float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (treaty_pct / 0.01)
+    scaled = float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (treaty_pct / 0.01)
+    physical_cap = float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)
+    return min(scaled, physical_cap)
 
 
 def compound_sum(annual_benefit: float, years: float, growth_rate: float, discount_rate: float = 0.03) -> float:
@@ -7419,6 +7641,526 @@ def compound_sum(annual_benefit: float, years: float, growth_rate: float, discou
         total += present_value
     return total
 
+
+# ---
+# GDP TRAJECTORY PARAMETERS AND FUNCTIONS
+# ---
+# Models three diverging GDP trajectories over 20 years:
+# Earth (status quo), Treaty Path (military+health), Wishonia Path (full package)
+
+RD_SPILLOVER_MULTIPLIER = Parameter(
+    2.0,
+    source_type="definition",
+    distribution=DistributionType.NORMAL,
+    description="R&D spillover multiplier: each $1 in directed medical research produces $2 in "
+                "adjacent sector GDP growth (biotech, AI, computing, materials science, manufacturing). "
+                "Conservative estimate; military R&D spillover produced the internet, GPS, jet engines. "
+                "Medical R&D spillover already produced CRISPR, mRNA platforms, AI protein folding.",
+    display_name="R&D Spillover Multiplier",
+    unit="x",
+    confidence="medium",
+    confidence_interval=(1.5, 2.5),
+    std_error=0.25,
+    keywords=["R&D", "spillover", "multiplier", "innovation"],
+    latex_symbol=r"m_{spillover}",
+)
+
+GDP_BASELINE_GROWTH_RATE = Parameter(
+    0.025,
+    source_type="definition",
+    distribution="fixed",
+    description="Status-quo baseline annual global GDP growth rate.",
+    display_name="Baseline Global GDP Growth Rate",
+    unit="rate",
+    keywords=["GDP", "baseline", "growth", "status quo", "2.5%"],
+    latex_symbol=r"g_{base}",
+)
+
+MILITARY_REDIRECT_GDP_BOOST_AT_30PCT = Parameter(
+    0.055,
+    source_type="definition",
+    distribution=DistributionType.NORMAL,
+    description="Historical calibration target: 30% military reallocation maps to ~5.5 percentage points annual GDP growth boost.",
+    display_name="GDP Growth Boost at 30% Military Reallocation",
+    unit="rate",
+    confidence="medium",
+    confidence_interval=(0.035, 0.075),
+    std_error=0.01,
+    keywords=["GDP", "military", "reallocation", "historical calibration", "5.5%"],
+    latex_symbol=r"\Delta g_{30\%}",
+)
+
+DISEASE_BURDEN_GDP_DRAG_PCT = Parameter(
+    0.13,
+    source_ref=ReferenceID.DISEASE_ECONOMIC_BURDEN_109T,
+    source_type="external",
+    distribution="fixed",
+    description="Fraction of GDP currently lost to disease (productivity losses + medical costs diverted "
+                "from productive use). $5T productivity loss + $9.9T direct medical costs = $14.9T on $115T GDP = ~13%. "
+                "As diseases are progressively cured, this drag is recovered as GDP growth. This is the "
+                "missing factor that makes the treaty trajectory look like a singularity rather than "
+                "a modest improvement.",
+    display_name="Disease Burden as % of GDP",
+    unit="percent",
+    keywords=["disease", "burden", "GDP", "drag", "productivity", "medical"],
+    latex_symbol=r"d_{disease}",
+)
+
+GLOBAL_POPULATION_2045_PROJECTED = Parameter(
+    9_200_000_000,
+    source_ref=ReferenceID.GLOBAL_POPULATION_8_BILLION,
+    source_type="external",
+    distribution="fixed",
+    description="UN World Population Prospects 2022 median projection for 2045.",
+    display_name="Global Population 2045 (Projected)",
+    unit="of people",
+    keywords=["population", "2045", "projection", "UN", "global"],
+    latex_symbol=r"Pop_{2045}",
+)
+
+WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE = Parameter(
+    POST_WW2_MILITARY_CUT_PCT,
+    source_type="calculated",
+    description="Maximum physically demonstrated military reallocation share, anchored to post-WW2 US demobilization.",
+    display_name="Wishonia Military Reallocation Physical Max Share",
+    unit="rate",
+    formula="POST_WW2_MILITARY_CUT_PCT",
+    inputs=["POST_WW2_MILITARY_CUT_PCT"],
+    compute=lambda ctx: ctx["POST_WW2_MILITARY_CUT_PCT"],
+    keywords=["wishonia", "military", "reallocation", "physical", "max", "post-ww2"],
+    latex_symbol=r"s_{mil,max}",
+)
+
+WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
+    min(
+        1.0,
+        NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR
+        * min(
+            DFDA_TRIAL_CAPACITY_MULTIPLIER * (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE / 0.01),
+            DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL,
+        )
+        * 20
+        / DISEASES_WITHOUT_EFFECTIVE_TREATMENT,
+    ),
+    source_type="calculated",
+    description="Wishonia disease-cure fraction over 20 years under full implementation. "
+                "Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
+    display_name="Wishonia Disease Cure Fraction (20yr, Full Implementation)",
+    unit="rate",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE ÷ 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) × 20 ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    latex=r"f_{cure,20,wish}=\min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)",
+    inputs=[
+        "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
+        "DFDA_TRIAL_CAPACITY_MULTIPLIER",
+        "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
+        "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+        "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
+    ],
+    compute=lambda ctx: min(
+        1.0,
+        ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
+        * min(
+            ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]
+            * (ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"] / 0.01),
+            ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"],
+        )
+        * 20
+        / ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"],
+    ),
+    keywords=["wishonia", "disease", "cure fraction", "20 year", "full implementation"],
+    latex_symbol=r"f_{cure,20,wish}",
+)
+
+EARTH_GDP_YEAR_20 = Parameter(
+    GLOBAL_GDP_2025 * ((1 + GDP_BASELINE_GROWTH_RATE) ** 20),
+    source_type="calculated",
+    description="Global GDP at year 20 under status-quo Earth baseline growth.",
+    display_name="Earth GDP at Year 20",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE)^20",
+    latex=r"GDP_{earth,20} = GDP_0(1+g_{base})^{20}",
+    keywords=["GDP", "earth", "baseline", "year 20"],
+    inputs=["GLOBAL_GDP_2025", "GDP_BASELINE_GROWTH_RATE"],
+    compute=lambda ctx: ctx["GLOBAL_GDP_2025"] * ((1 + ctx["GDP_BASELINE_GROWTH_RATE"]) ** 20),
+    latex_symbol=r"GDP_{earth,20}",
+)
+
+EARTH_AVG_INCOME_YEAR_20 = Parameter(
+    EARTH_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED,
+    source_type="calculated",
+    description="Average income (GDP per capita) at year 20 under Earth baseline trajectory.",
+    display_name="Earth Average Income at Year 20",
+    unit="USD",
+    formula="EARTH_GDP_YEAR_20 ÷ GLOBAL_POPULATION_2045_PROJECTED",
+    keywords=["income", "per capita", "earth", "year 20", "average"],
+    inputs=["EARTH_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
+    compute=lambda ctx: ctx["EARTH_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
+    latex_symbol=r"\bar{y}_{earth,20}",
+)
+
+
+TREATY_PATH_GDP_YEAR_20 = Parameter(
+    GLOBAL_GDP_2025
+    * (
+        (
+            1
+            + GDP_BASELINE_GROWTH_RATE
+            + (0.5 * WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)
+            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
+            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 20) - 1)
+        ) ** 3
+    )
+    * (
+        (
+            1
+            + GDP_BASELINE_GROWTH_RATE
+            + WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE
+            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
+            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 20) - 1)
+        ) ** 17
+    ),
+    source_type="calculated",
+    description="Projected global GDP at year 20 under the Treaty Path: military-to-science reallocation "
+                "plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation "
+                "to isolate the lower-political-baggage channel stack.",
+    display_name="Treaty Path GDP at Year 20",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 × (1 + g_treaty_ramp)^3 × (1 + g_treaty_full)^17, where g_treaty includes baseline growth + military reallocation + disease-burden recovery only",
+    latex=r"GDP_{treaty,20}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}",
+    keywords=["GDP", "wishonia", "core", "projection", "treaty"],
+    inputs=[
+        "GLOBAL_GDP_2025",
+        "GDP_BASELINE_GROWTH_RATE",
+        "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
+        "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT",
+        "RD_SPILLOVER_MULTIPLIER",
+        "WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL",
+        "DISEASE_BURDEN_GDP_DRAG_PCT",
+    ],
+    compute=lambda ctx: (
+        ctx["GLOBAL_GDP_2025"]
+        * (
+            (
+                1
+                + ctx["GDP_BASELINE_GROWTH_RATE"]
+                + (0.5 * ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"])
+                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
+                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 20) - 1)
+            ) ** 3
+        )
+        * (
+            (
+                1
+                + ctx["GDP_BASELINE_GROWTH_RATE"]
+                + ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"]
+                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
+                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 20) - 1)
+            ) ** 17
+        )
+    ),
+    latex_symbol=r"GDP_{treaty,20}",
+)
+
+TREATY_PATH_CAGR_YEAR_20 = Parameter(
+    (TREATY_PATH_GDP_YEAR_20 / GLOBAL_GDP_2025) ** (1 / 20) - 1,
+    source_type="calculated",
+    description="Compound annual growth rate implied by Treaty Path GDP trajectory over 20 years.",
+    display_name="Treaty Path CAGR (20 Years)",
+    unit="rate",
+    formula="(TREATY_PATH_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
+    latex=r"g_{treaty,CAGR} = \left(\frac{GDP_{treaty,20}}{GDP_0}\right)^{1/20} - 1",
+    keywords=["CAGR", "GDP", "wishonia", "core", "20 years"],
+    inputs=["TREATY_PATH_GDP_YEAR_20", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: (ctx["TREATY_PATH_GDP_YEAR_20"] / ctx["GLOBAL_GDP_2025"]) ** (1 / 20) - 1,
+    latex_symbol=r"g_{treaty,CAGR}",
+)
+
+TREATY_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20 = Parameter(
+    TREATY_PATH_GDP_YEAR_20 / EARTH_GDP_YEAR_20,
+    source_type="calculated",
+    description="Treaty Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.",
+    display_name="Treaty Path vs Earth GDP Multiplier (Year 20)",
+    unit="x",
+    formula="TREATY_PATH_GDP_YEAR_20 ÷ EARTH_GDP_YEAR_20",
+    keywords=["GDP", "wishonia", "core", "earth", "multiplier", "year 20"],
+    inputs=["TREATY_PATH_GDP_YEAR_20", "EARTH_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["TREATY_PATH_GDP_YEAR_20"] / ctx["EARTH_GDP_YEAR_20"],
+    latex_symbol=r"k_{treaty:earth,20}",
+)
+
+TREATY_PATH_AVG_INCOME_YEAR_20 = Parameter(
+    float(TREATY_PATH_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
+    source_type="calculated",
+    description="Average income (GDP per capita) at year 20 under the Treaty Path.",
+    display_name="Treaty Path Average Income at Year 20",
+    unit="USD",
+    formula="TREATY_PATH_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
+    latex=r"\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}",
+    keywords=["income", "per capita", "wishonia", "core", "year 20", "average"],
+    inputs=["TREATY_PATH_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
+    compute=lambda ctx: ctx["TREATY_PATH_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
+    latex_symbol=r"\bar{y}_{treaty,20}",
+)
+
+
+WISHONIA_PATH_GDP_YEAR_20 = Parameter(
+    GLOBAL_GDP_2025
+    * (
+        (
+            1
+            + GDP_BASELINE_GROWTH_RATE
+            + (0.5 * WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)
+            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
+            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 20) - 1)
+            + (
+                (
+                    1
+                    + (
+                        0.5
+                        * (
+                        (
+                            POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST
+                            + POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST
+                            + POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST
+                        )
+                        / GLOBAL_GDP_2025
+                        )
+                    )
+                    * (ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING - 1)
+                ) ** (1 / 20)
+                - 1
+            )
+        ) ** 3
+    )
+    * (
+        (
+            1
+            + GDP_BASELINE_GROWTH_RATE
+            + WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE
+            * ((MILITARY_REDIRECT_GDP_BOOST_AT_30PCT / 0.30) * (RD_SPILLOVER_MULTIPLIER / 2.0))
+            + ((1 + WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL * DISEASE_BURDEN_GDP_DRAG_PCT) ** (1 / 20) - 1)
+            + (
+                (
+                    1
+                    + (
+                        (
+                            POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST
+                            + POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST
+                            + POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST
+                        )
+                        / GLOBAL_GDP_2025
+                    )
+                    * (ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT / ECONOMIC_MULTIPLIER_MILITARY_SPENDING - 1)
+                ) ** (1 / 20)
+                - 1
+            )
+        ) ** 17
+    ),
+    source_type="calculated",
+    description="Projected global GDP at year 20 under the Wishonia Path. "
+                "Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax "
+                "non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately "
+                "through disease burden removal to avoid overlap. Military and non-health reallocation effects are "
+                "ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. "
+                "Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.",
+    display_name="Wishonia Path GDP at Year 20",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 × (1 + g_ramp)^3 × (1 + g_full)^17, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-20 use 100%; both include disease-burden recovery",
+    latex=r"GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}",
+    keywords=["GDP", "wishonia", "projection", "treaty"],
+    inputs=[
+        "GLOBAL_GDP_2025",
+        "GDP_BASELINE_GROWTH_RATE",
+        "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
+        "MILITARY_REDIRECT_GDP_BOOST_AT_30PCT",
+        "RD_SPILLOVER_MULTIPLIER",
+        "WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL",
+        "DISEASE_BURDEN_GDP_DRAG_PCT",
+        "POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST",
+        "POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST",
+        "POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST",
+        "ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT",
+        "ECONOMIC_MULTIPLIER_MILITARY_SPENDING",
+    ],
+    compute=lambda ctx: (
+        ctx["GLOBAL_GDP_2025"]
+        * (
+            (
+                1
+                + ctx["GDP_BASELINE_GROWTH_RATE"]
+                + (0.5 * ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"])
+                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
+                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 20) - 1)
+                + (
+                    (
+                        1
+                        + (
+                            0.5
+                            * (
+                            (
+                                ctx["POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST"]
+                                + ctx["POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST"]
+                                + ctx["POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST"]
+                            )
+                            / ctx["GLOBAL_GDP_2025"]
+                            )
+                        )
+                        * (ctx["ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT"] / ctx["ECONOMIC_MULTIPLIER_MILITARY_SPENDING"] - 1)
+                    ) ** (1 / 20)
+                    - 1
+                )
+            ) ** 3
+        )
+        * (
+            (
+                1
+                + ctx["GDP_BASELINE_GROWTH_RATE"]
+                + ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"]
+                * ((ctx["MILITARY_REDIRECT_GDP_BOOST_AT_30PCT"] / 0.30) * (ctx["RD_SPILLOVER_MULTIPLIER"] / 2.0))
+                + ((1 + ctx["WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL"] * ctx["DISEASE_BURDEN_GDP_DRAG_PCT"]) ** (1 / 20) - 1)
+                + (
+                    (
+                        1
+                        + (
+                            (
+                                ctx["POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST"]
+                                + ctx["POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST"]
+                                + ctx["POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST"]
+                            )
+                            / ctx["GLOBAL_GDP_2025"]
+                        )
+                        * (ctx["ECONOMIC_MULTIPLIER_HEALTHCARE_INVESTMENT"] / ctx["ECONOMIC_MULTIPLIER_MILITARY_SPENDING"] - 1)
+                    ) ** (1 / 20)
+                    - 1
+                )
+            ) ** 17
+        )
+    ),
+    latex_symbol=r"GDP_{wish,20}",
+)
+
+WISHONIA_PATH_CAGR_YEAR_20 = Parameter(
+    (WISHONIA_PATH_GDP_YEAR_20 / GLOBAL_GDP_2025) ** (1 / 20) - 1,
+    source_type="calculated",
+    description="Compound annual growth rate implied by Wishonia Path GDP trajectory over 20 years.",
+    display_name="Wishonia Path CAGR (20 Years)",
+    unit="rate",
+    formula="(WISHONIA_PATH_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
+    latex=r"g_{wish,CAGR} = \left(\frac{GDP_{wish,20}}{GDP_0}\right)^{1/20} - 1",
+    keywords=["CAGR", "GDP", "wishonia", "20 years"],
+    inputs=["WISHONIA_PATH_GDP_YEAR_20", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: (ctx["WISHONIA_PATH_GDP_YEAR_20"] / ctx["GLOBAL_GDP_2025"]) ** (1 / 20) - 1,
+    latex_symbol=r"g_{wish,CAGR}",
+)
+
+WISHONIA_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20 = Parameter(
+    WISHONIA_PATH_GDP_YEAR_20 / EARTH_GDP_YEAR_20,
+    source_type="calculated",
+    description="Wishonia Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.",
+    display_name="Wishonia Path vs Earth GDP Multiplier (Year 20)",
+    unit="x",
+    formula="WISHONIA_PATH_GDP_YEAR_20 ÷ EARTH_GDP_YEAR_20",
+    keywords=["GDP", "wishonia", "earth", "multiplier", "year 20"],
+    inputs=["WISHONIA_PATH_GDP_YEAR_20", "EARTH_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["WISHONIA_PATH_GDP_YEAR_20"] / ctx["EARTH_GDP_YEAR_20"],
+    latex_symbol=r"k_{wish:earth,20}",
+)
+
+WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20 = Parameter(
+    0.90,
+    source_type="definition",
+    description="Probability that the world follows the Wishonia Path (Treaty + dysfunction-tax elimination) "
+                "rather than the Moronia collapse path in the expected-value framing.",
+    display_name="Wishonia Path Probability (Year 20 EV Model)",
+    unit="rate",
+    distribution=DistributionType.BETA,
+    confidence="low",
+    confidence_interval=(0.60, 0.98),
+    keywords=["probability", "expected value", "wishonia", "moronia", "year 20"],
+    latex_symbol=r"p_{wish,20}",
+)
+
+MORONIA_PATH_PROBABILITY_YEAR_20 = Parameter(
+    1 - WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20,
+    source_type="calculated",
+    description="Probability that the world follows the Moronia collapse path in the year-20 expected-value framing.",
+    display_name="Moronia Path Probability (Year 20 EV Model)",
+    unit="rate",
+    formula="1 - WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20",
+    keywords=["probability", "expected value", "moronia", "year 20"],
+    inputs=["WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20"],
+    compute=lambda ctx: 1 - ctx["WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20"],
+    latex_symbol=r"p_{mor,20}",
+)
+
+GDP_EXPECTED_VALUE_YEAR_20 = Parameter(
+    float(WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20) * float(WISHONIA_PATH_GDP_YEAR_20),
+    source_type="calculated",
+    description="Probability-weighted expected global GDP at year 20 from Wishonia vs Moronia paths. "
+                "Moronia contributes $0 GDP in this framing.",
+    display_name="Expected GDP at Year 20 (Probability-Weighted)",
+    unit="USD",
+    formula="WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20 × WISHONIA_PATH_GDP_YEAR_20",
+    latex=r"E[GDP_{20}] = p_{wish,20} \cdot GDP_{wish,20}",
+    keywords=["GDP", "expected value", "probability", "weighted"],
+    inputs=["WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20", "WISHONIA_PATH_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20"] * ctx["WISHONIA_PATH_GDP_YEAR_20"],
+    latex_symbol=r"E[GDP_{20}]",
+)
+
+GDP_EXPECTED_VALUE_VS_EARTH_MULTIPLIER_YEAR_20 = Parameter(
+    GDP_EXPECTED_VALUE_YEAR_20 / EARTH_GDP_YEAR_20,
+    source_type="calculated",
+    description="Expected-value GDP at year 20 as a multiple of Earth baseline GDP.",
+    display_name="Expected GDP vs Earth Multiplier (Year 20)",
+    unit="x",
+    formula="GDP_EXPECTED_VALUE_YEAR_20 ÷ EARTH_GDP_YEAR_20",
+    keywords=["GDP", "expected value", "earth", "multiplier", "year 20"],
+    inputs=["GDP_EXPECTED_VALUE_YEAR_20", "EARTH_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["GDP_EXPECTED_VALUE_YEAR_20"] / ctx["EARTH_GDP_YEAR_20"],
+    latex_symbol=r"k_{EV:earth,20}",
+)
+
+WISHONIA_PATH_AVG_INCOME_YEAR_20 = Parameter(
+    float(WISHONIA_PATH_GDP_YEAR_20) / float(GLOBAL_POPULATION_2045_PROJECTED),
+    source_type="calculated",
+    description="Average income (GDP per capita) at year 20 under the Wishonia Path.",
+    display_name="Wishonia Path Average Income at Year 20",
+    unit="USD",
+    formula="WISHONIA_PATH_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
+    latex=r"\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}",
+    keywords=["income", "per capita", "wishonia", "year 20", "average"],
+    inputs=["WISHONIA_PATH_GDP_YEAR_20", "GLOBAL_POPULATION_2045_PROJECTED"],
+    compute=lambda ctx: ctx["WISHONIA_PATH_GDP_YEAR_20"] / ctx["GLOBAL_POPULATION_2045_PROJECTED"],
+    latex_symbol=r"\bar{y}_{wish,20}",
+)
+
+WISHONIA_PATH_VS_TREATY_PATH_GDP_MULTIPLIER_YEAR_20 = Parameter(
+    WISHONIA_PATH_GDP_YEAR_20 / TREATY_PATH_GDP_YEAR_20,
+    source_type="calculated",
+    description="Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation "
+                "on top of the Treaty Path channels.",
+    display_name="Wishonia Path vs Treaty Path GDP Multiplier (Year 20)",
+    unit="x",
+    formula="WISHONIA_PATH_GDP_YEAR_20 ÷ TREATY_PATH_GDP_YEAR_20",
+    keywords=["wishonia", "full", "core", "GDP", "multiplier", "year 20"],
+    inputs=["WISHONIA_PATH_GDP_YEAR_20", "TREATY_PATH_GDP_YEAR_20"],
+    compute=lambda ctx: ctx["WISHONIA_PATH_GDP_YEAR_20"] / ctx["TREATY_PATH_GDP_YEAR_20"],
+    latex_symbol=r"k_{wish,full:core,20}",
+)
+
+GLOBAL_AVG_INCOME_2025 = Parameter(
+    GLOBAL_GDP_2025 / GLOBAL_POPULATION_2024,
+    source_type="calculated",
+    description="Global average income (GDP per capita) in 2025 baseline.",
+    display_name="Global Average Income (2025 Baseline)",
+    unit="USD",
+    formula="GLOBAL_GDP_2025 ÷ GLOBAL_POPULATION_2024",
+    keywords=["income", "per capita", "baseline", "2025", "global"],
+    inputs=["GLOBAL_GDP_2025", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["GLOBAL_GDP_2025"] / ctx["GLOBAL_POPULATION_2024"],
+    latex_symbol=r"\bar{y}_{0}",
+)
 
 # ---
 # IMPROVED PERSONAL LIFETIME WEALTH MODEL
@@ -8439,4 +9181,3 @@ IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
     compute=lambda ctx: ctx["TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS"] / ctx["IAB_MECHANISM_ANNUAL_COST"],
     latex_symbol=r"BCR_{IAB}",  # LaTeX symbol for equations
 )  # 303:1
-

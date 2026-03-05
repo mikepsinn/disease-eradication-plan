@@ -122,7 +122,7 @@ At just 1%, the IAB political incentive pool ({{< var iab_political_incentive_fu
 
 ### Two Futures
 
-Your species currently spends {{< var global_annual_direct_indirect_war_cost >}}/year on war. Over 50 years at current levels, that's {{< var war_costs_cumulative_50yr_current_trajectory >}}. This is the price tag of the current trajectory: terrorism feedback loops getting worse (Robert Pape showed [bases create the terrorism they're built to stop](../solution/1-percent-treaty.qmd#overfunded-threats-that-countries-spend-trillions-on)), an AI weapons race that a [planet called Moronia](../futures/moronia.qmd) already ran to completion, and a species that spends 42 trillion on self-destruction when 25 trillion would have cured everything.
+Your species currently spends {{< var global_annual_direct_indirect_war_cost >}}/year on war. Over 20 years at current levels, that's {{< var war_costs_cumulative_20yr_current_trajectory >}}. This is the price tag of the current trajectory: terrorism feedback loops getting worse (Robert Pape showed [bases create the terrorism they're built to stop](../solution/1-percent-treaty.qmd#overfunded-threats-that-countries-spend-trillions-on)), an AI weapons race that a [planet called Moronia](../futures/moronia.qmd) already ran to completion, and a species that spends trillions on self-destruction when the same capital could have cured disease.
 
 The other future: bondholders push for treaty expansion because their income depends on it. Each expansion weakens the terrorism cycle (fewer bases, fewer attacks, less justification for more bases). The AI gets trained on curing cancer instead of targeting civilians. The money compounds in the right direction.
 
@@ -132,10 +132,8 @@ The other future: bondholders push for treaty expansion because their income dep
 | 4-7 | 2% | $54.4B/yr | $227B/yr | Politicians discover voters like living. |
 | 8-12 | 5% | $136B/yr | $568B/yr | Health lobby rivals defense lobby. |
 | 13-20 | 10% | $272B/yr | $1.14T/yr | Defense contractors pivot to health. |
-| 21-35 | 25% | $680B/yr | $2.84T/yr | Superpowers compete on health outcomes. |
-| 36-50 | 50% | $1,360B/yr | $5.68T/yr | Historians write confused books about why this took so long. |
 
-Over 50 years, the trajectory change is worth {{< var peace_trajectory_total_differential_50yr >}}: {{< var treaty_cumulative_50yr_with_ratchet >}} redirected to curing diseases, plus {{< var war_costs_saved_peace_trajectory_50yr >}} your species no longer spends on the industry of blowing things up and rebuilding them. That's at e = 1.0 (1% spending cut = 1% war cost reduction). Given that military spending [generates the terrorism it's built to fight](../solution/1-percent-treaty.qmd#overfunded-threats-that-countries-spend-trillions-on), the actual elasticity is probably better, which means these numbers are conservative.
+Over 20 years, the trajectory change is worth {{< var peace_trajectory_total_differential_20yr >}}: {{< var treaty_cumulative_20yr_with_ratchet >}} redirected to curing diseases, plus {{< var war_costs_saved_peace_trajectory_20yr >}} your species no longer spends on the industry of blowing things up and rebuilding them. That's at e = 1.0 (1% spending cut = 1% war cost reduction). Given that military spending [generates the terrorism it's built to fight](../solution/1-percent-treaty.qmd#overfunded-threats-that-countries-spend-trillions-on), the actual elasticity is probably better, which means these numbers are conservative.
 
 Moronia's politicians were rewarded for buying weapons. Moronia's contractors were rewarded for selling weapons. Moronia's AI read the receipts and optimized accordingly. Every budget vote was an instruction, and the AI was a very good student. The IAB ratchet flips the incentive structure using the same force that currently points it toward explosions: money. The difference between Moronia and the civilization that survived wasn't intelligence, resources, or goodwill. It was whether the richest people on the planet made more money from expanding the treaty or from letting it die.
 

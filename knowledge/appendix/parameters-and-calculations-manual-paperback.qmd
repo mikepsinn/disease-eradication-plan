@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 238 parameters used in the analysis, organized by type:
+This appendix documents all 242 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 107
-- Calculated values: 99
+- Calculated values: 103
 - Core definitions: 32
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (107 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
+[Calculated Values](#sec-calculated) (103 parameters) • [External Data Sources](#sec-external) (107 parameters) • [Core Definitions](#sec-definitions) (32 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1569,116 +1569,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trials_per_year_capacity.qmd >}}
-
-:::
-
-### Lives Saved from Trial Capacity Increase: 10.3 billion deaths {#sec-dfda_trial_capacity_lives_saved}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total eventually avoidable deaths from trial capacity increase alone. Represents first treatments arriving earlier due to faster therapeutic space exploration from increased trial capacity.
-
-**Inputs**:
-
-- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
-- [dFDA Treatment Timeline Acceleration](#sec-dfda_trial_capacity_treatment_acceleration_years) 🔢: 204 years
-
-$$
-\begin{gathered}
-Lives_{capacity} \\
-= Deaths_{disease,daily} \times T_{accel} \times 338 \\
-= 150{,}000 \times 204 \times 338 \\
-= 10.3B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,SQ} \\
-= \frac{N_{untreated}}{Treatments_{new,ann}} \\
-= \frac{6{,}650}{15} \\
-= 443
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{untreated} \\
-= N_{rare} \times 0.95 \\
-= 7{,}000 \times 0.95 \\
-= 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-k_{capacity} \\
-= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
-= \frac{23.4M}{1.9M} \\
-= 12.3
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{fundable,dFDA} \\
-= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
-= \frac{\$21.8B}{\$929} \\
-= 23.4M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Subsidies_{dFDA,ann} \\
-= Funding_{dFDA,ann} - OPEX_{dFDA} \\
-= \$21.8B - \$40M \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-OPEX_{dFDA} \\
-= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
-+ Cost_{regulatory} + Cost_{community} \\
-= \$15M + \$10M + \$8M + \$5M + \$2M \\
-= \$40M
-\end{gathered}
-$$
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_trial_capacity_lives_saved.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_trial_capacity_lives_saved.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_trial_capacity_lives_saved.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_trial_capacity_lives_saved.qmd >}}
 
 :::
 
@@ -3733,6 +3623,59 @@ $$
 
 :::
 
+### IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x {#sec-iab_vs_defense_lobby_ratio_at_1pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of IAB political incentive funding to defense industry lobbying at 1% treaty level. At just 1%, the health lobby already outguns the defense lobby by this factor.
+
+**Inputs**:
+
+- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72B
+- [Annual Defense Industry Lobbying Spending](#sec-defense_lobbying_annual) 📊: $127M (95% CI: $100M - $160M)
+
+$$
+\begin{gathered}
+k_{IAB:defense} \\
+= \frac{Funding_{political,ann}}{Lobby_{def,ann}} \\
+= \frac{\$2.72B}{\$127M} \\
+= 21.4
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{political,ann} \\
+= Funding_{treaty} \times Pct_{political} \\
+= \$27.2B \times 10\% \\
+= \$2.72B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-iab_vs_defense_lobby_ratio_at_1pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-iab_vs_defense_lobby_ratio_at_1pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-iab_vs_defense_lobby_ratio_at_1pct.qmd >}}
+
+:::
+
 ### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4080,6 +4023,147 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-peace_dividend_indirect_costs.qmd >}}
+
+:::
+
+### Peace Trajectory Total Differential (20yr): $16.3T {#sec-peace_trajectory_total_differential_20yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total 20-year value of the peace trajectory: research funding redirected to medicine plus war externality costs avoided. The full differential between the IAB trajectory and the current trajectory. Does not include existential risk reduction.
+
+**Inputs**:
+
+- [Cumulative Treaty Funding over 20 Years with IAB Ratchet Expansion](#sec-treaty_cumulative_20yr_with_ratchet) 🔢: $3.16T
+- [War Costs Saved via Peace Trajectory (20yr)](#sec-war_costs_saved_peace_trajectory_20yr) 🔢: $13.2T
+
+$$
+\begin{gathered}
+V_{peace,20yr} \\
+= Fund_{20yr,ratchet} + Savings_{war,20yr} \\
+= \$3.16T + \$13.2T \\
+= \$16.3T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Fund_{20yr,ratchet} \\
+= Spending_{mil} \times 1.16 \\
+= \$2.72T \times 1.16 \\
+= \$3.16T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Savings_{war,20yr} \\
+= Cost_{war,total} \times 1.16 \\
+= \$11.4T \times 1.16 \\
+= \$13.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-peace_trajectory_total_differential_20yr.qmd >}}
+
+{{< include ../figures/sensitivity-table-peace_trajectory_total_differential_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-peace_trajectory_total_differential_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-peace_trajectory_total_differential_20yr.qmd >}}
 
 :::
 
@@ -4805,6 +4889,29 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag.qmd >}}
+
+:::
+
+### Cumulative Treaty Funding over 20 Years with IAB Ratchet Expansion: $3.16T {#sec-treaty_cumulative_20yr_with_ratchet}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative treaty funding over 20 years with IAB ratchet expansion following roadmap timeline. Expansion driven by bondholder lobbying incentives (10% of treaty inflows).
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+
+$$
+\begin{gathered}
+Fund_{20yr,ratchet} \\
+= Spending_{mil} \times 1.16 \\
+= \$2.72T \times 1.16 \\
+= \$3.16T
+\end{gathered}
+$$
+
+*✓ High confidence*
 
 :::
 
@@ -6487,6 +6594,250 @@ $$
 
 :::
 
+### Cumulative War Costs over 20 Years (Current Trajectory): $227T {#sec-war_costs_cumulative_20yr_current_trajectory}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative global war costs over 20 years if current spending levels continue. The price tag of the status quo trajectory.
+
+**Inputs**:
+
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
+
+$$
+\begin{gathered}
+Cost_{war,20yr} \\
+= Cost_{war,total} \times 20 \\
+= \$11.4T \times 20 \\
+= \$227T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_costs_cumulative_20yr_current_trajectory.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_costs_cumulative_20yr_current_trajectory.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_costs_cumulative_20yr_current_trajectory.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_costs_cumulative_20yr_current_trajectory.qmd >}}
+
+:::
+
+### War Costs Saved via Peace Trajectory (20yr): $13.2T {#sec-war_costs_saved_peace_trajectory_20yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative war costs saved over 20 years as treaty expands via IAB ratchet. Assumes war costs decline proportionally to spending cuts (e=1.0). Conservative: Pape research suggests e>1.0 due to terrorism feedback loops.
+
+**Inputs**:
+
+- [Total Annual Cost of War Worldwide](#sec-global_annual_direct_indirect_war_cost) 🔢: $11.4T
+
+$$
+\begin{gathered}
+Savings_{war,20yr} \\
+= Cost_{war,total} \times 1.16 \\
+= \$11.4T \times 1.16 \\
+= \$13.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-war_costs_saved_peace_trajectory_20yr.qmd >}}
+
+{{< include ../figures/sensitivity-table-war_costs_saved_peace_trajectory_20yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-war_costs_saved_peace_trajectory_20yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-war_costs_saved_peace_trajectory_20yr.qmd >}}
+
+:::
+
 ### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6724,6 +7075,16 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 Annual defense industry lobbying spending
 
 **Source**: [@lobbying-spend-defense]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100M, $160M]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $100M and $160M (±24%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 

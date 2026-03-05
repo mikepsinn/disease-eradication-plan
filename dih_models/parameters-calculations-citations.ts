@@ -292,6 +292,7 @@ export const DEFENSE_LOBBYING_ANNUAL: Parameter = {
   sourceType: "external",
   sourceRef: "lobbying-spend-defense",
   confidence: "high",
+  confidenceInterval: [100000000.0, 160000000.0],
   peerReviewed: true,
 };
 
@@ -314,6 +315,16 @@ export const DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT: Parameter = {
   sourceRef: "pragmatic-trials-cost-advantage",
   confidence: "medium",
   confidenceInterval: [97.0, 3000.0],
+};
+
+export const DISEASE_BURDEN_GDP_DRAG_PCT: Parameter = {
+  value: 0.13,
+  unit: "percent",
+  displayName: "Disease Burden as % of GDP",
+  description: "Fraction of GDP currently lost to disease (productivity losses + medical costs diverted from productive use). $5T productivity loss + $9.9T direct medical costs = $14.9T on $115T GDP = ~13%. As diseases are progressively cured, this drag is recovered as GDP growth. This is the missing factor that makes the treaty trajectory look like a singularity rather than a modest improvement.",
+  sourceType: "external",
+  sourceRef: "disease-economic-burden-109t",
+  confidence: "high",
 };
 
 export const DOT_VALUE_OF_STATISTICAL_LIFE: Parameter = {
@@ -883,6 +894,16 @@ export const GLOBAL_POPULATION_2024: Parameter = {
   sourceRef: "global-population-8-billion",
   confidence: "high",
   confidenceInterval: [7800000000.0, 8200000000.0],
+};
+
+export const GLOBAL_POPULATION_2045_PROJECTED: Parameter = {
+  value: 9200000000.0,
+  unit: "of people",
+  displayName: "Global Population 2045 (Projected)",
+  description: "UN World Population Prospects 2022 median projection for 2045.",
+  sourceType: "external",
+  sourceRef: "global-population-8-billion",
+  confidence: "high",
 };
 
 export const GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT: Parameter = {
@@ -2374,6 +2395,17 @@ export const DFDA_KNOWN_SAFE_EXPLORATION_YEARS: Parameter = {
   latex: "\\begin{gathered}\nT_{safe,dFDA} = \\frac{N_{combos}}{Capacity_{trials}} = \\frac{9.5M}{40{,}700} = 234\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\\\[0.5em]\n\\text{where } Capacity_{trials} = Trials_{ann,curr} \\times k_{capacity} = 3{,}300 \\times 12.3 = 40{,}700\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
 };
 
+export const DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL: Parameter = {
+  value: 565.8947368421053,
+  unit: "x",
+  displayName: "Maximum Trial Capacity Multiplier (Physical Limit)",
+  description: "Physical upper bound on trial-capacity multiplier from participant availability. Even with unlimited funding, annual trial enrollment cannot exceed willing participant pool.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "WILLING_TRIAL_PARTICIPANTS_GLOBAL ÷ CURRENT_TRIAL_SLOTS_AVAILABLE",
+  latex: "\\begin{gathered}\nk_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\end{gathered}",
+};
+
 export const DFDA_NET_SAVINGS_RD_ONLY_ANNUAL: Parameter = {
   value: 58600487804.878044,
   unit: "USD/year",
@@ -2851,6 +2883,28 @@ export const DRUG_DISEASE_COMBINATIONS_POSSIBLE: Parameter = {
   latex: "\\begin{gathered}\nN_{combos} \\\\\n= N_{safe} \\times N_{diseases,trial} \\\\\n= 9{,}500 \\times 1{,}000 \\\\\n= 9.5M\n\\end{gathered}",
 };
 
+export const EARTH_AVG_INCOME_YEAR_20: Parameter = {
+  value: 20482.705503629928,
+  unit: "USD",
+  displayName: "Earth Average Income at Year 20",
+  description: "Average income (GDP per capita) at year 20 under Earth baseline trajectory.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "EARTH_GDP_YEAR_20 ÷ GLOBAL_POPULATION_2045_PROJECTED",
+  latex: "\\begin{gathered}\n\\bar{y}_{earth,20} = \\frac{GDP_{earth,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
+};
+
+export const EARTH_GDP_YEAR_20: Parameter = {
+  value: 188440890633395.34,
+  unit: "USD",
+  displayName: "Earth GDP at Year 20",
+  description: "Global GDP at year 20 under status-quo Earth baseline growth.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_GDP_2025 × (1 + GDP_BASELINE_GROWTH_RATE)^20",
+  latex: "GDP_{earth,20} = GDP_0(1+g_{base})^{20}",
+};
+
 export const EFFICACY_LAG_CUMULATIVE_EXCESS_COST: Parameter = {
   value: 4836000000000.0,
   unit: "USD",
@@ -2949,6 +3003,28 @@ export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   confidence: "high",
   formula: "EFFICACY_LAG_YEARS × MONTHS_PER_YEAR ÷ OXFORD_RECOVERY_TRIAL_DURATION_MONTHS",
   latex: "\\begin{gathered}\n\\text{Multiplier}_{RD} = \\frac{Y_{efficacy} \\times 12}{M_{RECOVERY}} \\\\[0.5em]\n= \\frac{8.2 \\times 12}{3} = 32.8\n\\end{gathered}",
+};
+
+export const GDP_EXPECTED_VALUE_VS_EARTH_MULTIPLIER_YEAR_20: Parameter = {
+  value: 51.04972692085089,
+  unit: "x",
+  displayName: "Expected GDP vs Earth Multiplier (Year 20)",
+  description: "Expected-value GDP at year 20 as a multiple of Earth baseline GDP.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GDP_EXPECTED_VALUE_YEAR_20 ÷ EARTH_GDP_YEAR_20",
+  latex: "\\begin{gathered}\nk_{EV:earth,20} = \\frac{E[GDP_{20}]}{GDP_{earth,20}} = \\frac{\\$9620T}{\\$188T} = 51\n\\\\[0.5em]\n\\text{where } E[GDP_{20}] = p_{wish,20} \\cdot GDP_{wish,20}\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
+};
+
+export const GDP_EXPECTED_VALUE_YEAR_20: Parameter = {
+  value: 9619856007556760.0,
+  unit: "USD",
+  displayName: "Expected GDP at Year 20 (Probability-Weighted)",
+  description: "Probability-weighted expected global GDP at year 20 from Wishonia vs Moronia paths. Moronia contributes $0 GDP in this framing.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20 × WISHONIA_PATH_GDP_YEAR_20",
+  latex: "E[GDP_{20}] = p_{wish,20} \\cdot GDP_{wish,20}",
 };
 
 export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
@@ -3072,6 +3148,17 @@ export const GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL: Parameter = {
   latex: "\\begin{gathered}\nCost_{war,indirect} \\\\\n= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\\\\n+ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\\\\n= \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B \\\\\n= \\$3.7T\n\\end{gathered}",
 };
 
+export const GLOBAL_AVG_INCOME_2025: Parameter = {
+  value: 14375.0,
+  unit: "USD",
+  displayName: "Global Average Income (2025 Baseline)",
+  description: "Global average income (GDP per capita) in 2025 baseline.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_GDP_2025 ÷ GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\n\\bar{y}_{0} \\\\\n= \\frac{GDP_{global}}{Pop_{global}} \\\\\n= \\frac{\\$115T}{8B} \\\\\n= \\$14.4K\n\\end{gathered}",
+};
+
 export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   value: 16071.42857142857,
   unit: "USD/life",
@@ -3183,6 +3270,17 @@ export const IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL: Parameter = {
   latex: "\\begin{gathered}\nFunding_{political,ann} = Funding_{treaty} \\times Pct_{political} = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times Reduce_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\\end{gathered}",
 };
 
+export const IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT: Parameter = {
+  value: 21.41732283464567,
+  unit: "x",
+  displayName: "IAB vs Defense Lobbying Ratio at 1% Treaty",
+  description: "Ratio of IAB political incentive funding to defense industry lobbying at 1% treaty level. At just 1%, the health lobby already outguns the defense lobby by this factor.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL / DEFENSE_LOBBYING_ANNUAL",
+  latex: "\\begin{gathered}\nk_{IAB:defense} = \\frac{Funding_{political,ann}}{Lobby_{def,ann}} = \\frac{\\$2.72B}{\\$127M} = 21.4\n\\\\[0.5em]\n\\text{where } Funding_{political,ann} = Funding_{treaty} \\times Pct_{political} = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times Reduce_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\\end{gathered}",
+};
+
 export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = {
   value: 12.333333333333334,
   unit: "ratio",
@@ -3274,6 +3372,17 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   confidence: "high",
   formula: "COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
   latex: "\\begin{gathered}\nk_{misalloc} = \\frac{Cost_{war,total}}{Deaths_{conflict} \\times Cost_{life,RD}} = \\frac{\\$11.4T}{245{,}000 \\times \\$16.1K} = 2{,}890\n\\\\[0.5em]\n\\text{where } Deaths_{conflict} = Deaths_{combat} + Deaths_{state} + Deaths_{terror} = 234{,}000 + 2{,}700 + 8{,}300 = 245{,}000\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } Cost_{life,RD} = \\frac{Spending_{RD}}{Lives_{RD,ann}} = \\frac{\\$67.5B}{4.2M} = \\$16.1K\n\\end{gathered}",
+};
+
+export const MORONIA_PATH_PROBABILITY_YEAR_20: Parameter = {
+  value: 0.09999999999999998,
+  unit: "rate",
+  displayName: "Moronia Path Probability (Year 20 EV Model)",
+  description: "Probability that the world follows the Moronia collapse path in the year-20 expected-value framing.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "1 - WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20",
+  latex: "p_{mor,20} = 1 - p_{wish,20} = 1 - 90\\% = 10\\%",
 };
 
 export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
@@ -3442,6 +3551,17 @@ export const PEACE_DIVIDEND_VETERAN_HEALTHCARE: Parameter = {
   latex: "\\begin{gathered}\nSavings_{vet} \\\\\n= Cost_{vet} \\times Reduce_{treaty} \\\\\n= \\$200B \\times 1\\% \\\\\n= \\$2B\n\\end{gathered}",
 };
 
+export const PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR: Parameter = {
+  value: 16329436000000.002,
+  unit: "USD",
+  displayName: "Peace Trajectory Total Differential (20yr)",
+  description: "Total 20-year value of the peace trajectory: research funding redirected to medicine plus war externality costs avoided. The full differential between the IAB trajectory and the current trajectory. Does not include existential risk reduction.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_CUMULATIVE_20YR_WITH_RATCHET + WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR",
+  latex: "\\begin{gathered}\nV_{peace,20yr} = Fund_{20yr,ratchet} + Savings_{war,20yr} = \\$3.16T + \\$13.2T = \\$16.3T\n\\\\[0.5em]\n\\text{where } Fund_{20yr,ratchet} = Spending_{mil} \\times 1.16 = \\$2.72T \\times 1.16 = \\$3.16T\n\\\\[0.5em]\n\\text{where } Savings_{war,20yr} = Cost_{war,total} \\times 1.16 = \\$11.4T \\times 1.16 = \\$13.2T\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
+};
+
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
   value: 3000000.0,
   unit: "USD",
@@ -3495,7 +3615,7 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE: Parameter = {
   sourceType: "calculated",
   sourceRef: "political-dysfunction-tax-paper-2025",
   confidence: "low",
-  formula: "(GDP - WASTE) / (GDP - WASTE + OPPORTUNITY)",
+  formula: "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED / POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE",
   latex: "\\begin{gathered}\nE \\\\\n= \\frac{W_{real}}{W_{max}} \\\\\n= \\frac{GDP - W_{waste}}{GDP - W_{waste} + O_{total}}\n\\end{gathered}",
 };
 
@@ -3521,6 +3641,61 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL: Parameter = {
   confidence: "low",
   formula: "HEALTH + SCIENCE + LEAD + MIGRATION",
   latex: "\\begin{gathered}\nO_{total} \\\\\n= O_{health} + O_{science} + O_{lead} + O_{migration} \\\\\n= \\$34T + \\$4T + \\$6T + \\$57T \\\\\n= \\$101T\n\\end{gathered}",
+};
+
+export const POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED: Parameter = {
+  value: 108803000000000.0,
+  unit: "USD",
+  displayName: "Adjusted Realized Welfare",
+  description: "Adjusted realized welfare after subtracting measured governance waste from global GDP.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_GDP_2025 - POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL",
+  latex: "\\begin{gathered}\nW_{real} = GDP_{global} - W_{waste} = \\$115T - \\$6.2T = \\$109T\n\\\\[0.5em]\n\\text{where } W_{waste} = W_{total,US} + W_{ff,global} = \\$4.9T + \\$1.3T = \\$6.2T\n\\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T\n\\\\[0.5em]\n\\text{where } W_{raw,US} = W_{health} + W_{housing} + W_{military} + W_{regulatory} + W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} + W_{fossil} + W_{agriculture} = \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B = \\$4.9T\n\\end{gathered}",
+};
+
+export const POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE: Parameter = {
+  value: 209803000000000.0,
+  unit: "USD",
+  displayName: "Theoretical Maximum Welfare (Conservative)",
+  description: "Conservative theoretical maximum welfare under opportunity-cost recapture assumptions.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED + POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+  latex: "\\begin{gathered}\nW_{max} = W_{real} + O_{total} = \\$109T + \\$101T = \\$210T\n\\\\[0.5em]\n\\text{where } W_{real} = GDP_{global} - W_{waste} = \\$115T - \\$6.2T = \\$109T\n\\\\[0.5em]\n\\text{where } W_{waste} = W_{total,US} + W_{ff,global} = \\$4.9T + \\$1.3T = \\$6.2T\n\\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T\n\\\\[0.5em]\n\\text{where } W_{raw,US} = W_{health} + W_{housing} + W_{military} + W_{regulatory} + W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} + W_{fossil} + W_{agriculture} = \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B = \\$4.9T\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
+};
+
+export const POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL: Parameter = {
+  value: 6197000000000.0,
+  unit: "USD",
+  displayName: "Global Waste Total (Efficiency Accounting)",
+  description: "Global waste deduction used in Political Dysfunction Tax efficiency accounting. Combines US governance waste estimate with global explicit fossil-fuel subsidies.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "US_GOV_WASTE_TOTAL + POLITICAL_DYSFUNCTION_GLOBAL_FOSSIL_FUEL_SUBSIDIES",
+  latex: "\\begin{gathered}\nW_{waste} = W_{total,US} + W_{ff,global} = \\$4.9T + \\$1.3T = \\$6.2T\n\\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times US = \\$4.9T \\times 1 = \\$4.9T\n\\\\[0.5em]\n\\text{where } W_{raw,US} = W_{health} + W_{housing} + W_{military} + W_{regulatory} + W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} + W_{fossil} + W_{agriculture} = \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B = \\$4.9T\n\\end{gathered}",
+};
+
+export const POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL: Parameter = {
+  value: 50500.0,
+  unit: "USD/year",
+  displayName: "Political Dysfunction Tax per Household of Four (Annual)",
+  description: "Annual household burden for a 4-person household implied by global Political Dysfunction Tax.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL × 4",
+  latex: "\\begin{gathered}\nT_{pd,hh4} = T_{pd,pc} \\times 4 = \\$12.6K \\times 4 = \\$50.5K\n\\\\[0.5em]\n\\text{where } T_{pd,pc} = \\frac{O_{total}}{Pop_{global}} = \\frac{\\$101T}{8B} = \\$12.6K\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
+};
+
+export const POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL: Parameter = {
+  value: 12625.0,
+  unit: "USD/year",
+  displayName: "Political Dysfunction Tax per Person (Annual)",
+  description: "Annual per-person burden implied by global Political Dysfunction Tax opportunity costs.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL ÷ GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nT_{pd,pc} = \\frac{O_{total}}{Pop_{global}} = \\frac{\\$101T}{8B} = \\$12.6K\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
 };
 
 export const POST_WW2_MILITARY_CUT_PCT: Parameter = {
@@ -3747,6 +3922,17 @@ export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = 
   latex: "\\begin{gathered}\nCost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
 };
 
+export const TREATY_CUMULATIVE_20YR_WITH_RATCHET: Parameter = {
+  value: 3155200000000.0005,
+  unit: "USD",
+  displayName: "Cumulative Treaty Funding over 20 Years with IAB Ratchet Expansion",
+  description: "Cumulative treaty funding over 20 years with IAB ratchet expansion following roadmap timeline. Expansion driven by bondholder lobbying incentives (10% of treaty inflows).",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_MILITARY × (0.01×3 + 0.02×4 + 0.05×5 + 0.10×8)",
+  latex: "\\begin{gathered}\nFund_{20yr,ratchet} \\\\\n= Spending_{mil} \\times 1.16 \\\\\n= \\$2.72T \\times 1.16 \\\\\n= \\$3.16T\n\\end{gathered}",
+};
+
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
   value: 0.1769148505584477,
   unit: "USD/DALY",
@@ -3792,6 +3978,50 @@ export const TREATY_LIVES_SAVED_ANNUAL_GLOBAL: Parameter = {
   latex: "\\begin{gathered}\nLives_{treaty,ann} = Deaths_{conflict} \\times Reduce_{treaty} = 245{,}000 \\times 1\\% = 2{,}450\n\\\\[0.5em]\n\\text{where } Deaths_{conflict} = Deaths_{combat} + Deaths_{state} + Deaths_{terror} = 234{,}000 + 2{,}700 + 8{,}300 = 245{,}000\n\\end{gathered}",
 };
 
+export const TREATY_PATH_AVG_INCOME_YEAR_20: Parameter = {
+  value: 338569.0191556,
+  unit: "USD",
+  displayName: "Treaty Path Average Income at Year 20",
+  description: "Average income (GDP per capita) at year 20 under the Treaty Path.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_PATH_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
+  latex: "\\bar{y}_{treaty,20} = \\frac{GDP_{treaty,20}}{Pop_{2045}}",
+};
+
+export const TREATY_PATH_CAGR_YEAR_20: Parameter = {
+  value: 0.17933411068717886,
+  unit: "rate",
+  displayName: "Treaty Path CAGR (20 Years)",
+  description: "Compound annual growth rate implied by Treaty Path GDP trajectory over 20 years.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(TREATY_PATH_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
+  latex: "\\begin{gathered}\ng_{treaty,CAGR} \\\\\n= \\left(\\frac{GDP_{treaty,20}}{GDP_0}\\right)^{1/20} - 1\n\\end{gathered}",
+};
+
+export const TREATY_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20: Parameter = {
+  value: 16.529506763430206,
+  unit: "x",
+  displayName: "Treaty Path vs Earth GDP Multiplier (Year 20)",
+  description: "Treaty Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_PATH_GDP_YEAR_20 ÷ EARTH_GDP_YEAR_20",
+  latex: "\\begin{gathered}\nk_{treaty:earth,20} = \\frac{GDP_{treaty,20}}{GDP_{earth,20}} = \\frac{\\$3110T}{\\$188T} = 16.5\n\\\\[0.5em]\n\\text{where } GDP_{treaty,20}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
+};
+
+export const TREATY_PATH_GDP_YEAR_20: Parameter = {
+  value: 3114834976231520.0,
+  unit: "USD",
+  displayName: "Treaty Path GDP at Year 20",
+  description: "Projected global GDP at year 20 under the Treaty Path: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel stack.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_GDP_2025 × (1 + g_treaty_ramp)^3 × (1 + g_treaty_full)^17, where g_treaty includes baseline growth + military reallocation + disease-burden recovery only",
+  latex: "\\begin{gathered}\nGDP_{treaty,20} \\\\\n= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}\n\\end{gathered}",
+};
+
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
   value: 172211487804.87805,
   unit: "USD/year",
@@ -3812,6 +4042,28 @@ export const TREATY_QALYS_GAINED_ANNUAL_GLOBAL: Parameter = {
   confidence: "high",
   formula: "LIVES_SAVED × QALYS_PER_LIFE",
   latex: "\\begin{gathered}\nQALY_{treaty,ann} = QALY_{life} \\times Lives_{treaty,ann} = 35 \\times 2{,}450 = 85{,}600\n\\\\[0.5em]\n\\text{where } Lives_{treaty,ann} = Deaths_{conflict} \\times Reduce_{treaty} = 245{,}000 \\times 1\\% = 2{,}450\n\\\\[0.5em]\n\\text{where } Deaths_{conflict} = Deaths_{combat} + Deaths_{state} + Deaths_{terror} = 234{,}000 + 2{,}700 + 8{,}300 = 245{,}000\n\\end{gathered}",
+};
+
+export const TREATY_RATCHET_MULTIPLIER_20YR: Parameter = {
+  value: 5.800000000000001,
+  unit: "x",
+  displayName: "Treaty Ratchet Funding Multiplier (20yr)",
+  description: "How many times more cumulative funding flows with IAB ratchet vs stagnation over 20 years.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_CUMULATIVE_20YR_WITH_RATCHET / (TREATY_ANNUAL_FUNDING × 20)",
+  latex: "\\begin{gathered}\nk_{ratchet,20} \\\\\n= \\frac{Fund_{20yr,ratchet}}{20\\cdot Funding_{treaty,ann}}\n\\end{gathered}",
+};
+
+export const TREATY_RATCHET_PREMIUM_20YR: Parameter = {
+  value: 2611200000000.0005,
+  unit: "USD",
+  displayName: "Treaty Ratchet Premium over 20 Years",
+  description: "Additional cumulative funding from IAB ratchet expansion vs stagnation over 20 years. The value of the IAB mechanism: this much more funding flows to medical research because bondholder incentives drive treaty expansion.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_CUMULATIVE_20YR_WITH_RATCHET - (TREATY_ANNUAL_FUNDING × 20)",
+  latex: "\\begin{gathered}\n\\Delta Fund_{ratchet,20} \\\\\n= Fund_{20yr,ratchet}-20\\cdot Funding_{treaty,ann}\n\\end{gathered}",
 };
 
 export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
@@ -4166,6 +4418,28 @@ export const VOTER_SUFFERING_HOURS_PREVENTED: Parameter = {
   latex: "\\begin{gathered}\nHours_{suffer,voter} = \\frac{Hours_{suffer,max}}{N_{voters,target}} = \\frac{1930T}{280M} = 6.9M\n\\\\[0.5em]\n\\text{where } Hours_{suffer,max} = DALYs_{max} \\times Pct_{YLD} \\times 8760 = 565B \\times 0.39 \\times 8760 = 1930T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } N_{voters,target} = Pop_{global} \\times Threshold_{activism} = 8B \\times 3.5\\% = 280M\n\\end{gathered}",
 };
 
+export const WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY: Parameter = {
+  value: 227142000000000.0,
+  unit: "USD",
+  displayName: "Cumulative War Costs over 20 Years (Current Trajectory)",
+  description: "Cumulative global war costs over 20 years if current spending levels continue. The price tag of the status quo trajectory.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × 20",
+  latex: "\\begin{gathered}\nCost_{war,20yr} = Cost_{war,total} \\times 20 = \\$11.4T \\times 20 = \\$227T\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
+};
+
+export const WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR: Parameter = {
+  value: 13174236000000.002,
+  unit: "USD",
+  displayName: "War Costs Saved via Peace Trajectory (20yr)",
+  description: "Cumulative war costs saved over 20 years as treaty expands via IAB ratchet. Assumes war costs decline proportionally to spending cuts (e=1.0). Conservative: Pape research suggests e>1.0 due to terrorism feedback loops.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (0.01×3 + 0.02×4 + 0.05×5 + 0.10×8)",
+  latex: "\\begin{gathered}\nSavings_{war,20yr} = Cost_{war,total} \\times 1.16 = \\$11.4T \\times 1.16 = \\$13.2T\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\end{gathered}",
+};
+
 export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
   value: 1075200000.0,
   unit: "people",
@@ -4175,6 +4449,83 @@ export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
   confidence: "medium",
   formula: "CURRENT_DISEASE_PATIENTS_GLOBAL × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT",
   latex: "\\begin{gathered}\nN_{willing} \\\\\n= N_{patients} \\times Pct_{willing} \\\\\n= 2.4B \\times 44.8\\% \\\\\n= 1.08B\n\\end{gathered}",
+};
+
+export const WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL: Parameter = {
+  value: 1.0,
+  unit: "rate",
+  displayName: "Wishonia Disease Cure Fraction (20yr, Full Implementation)",
+  description: "Wishonia disease-cure fraction over 20 years under full implementation. Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE ÷ 0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) × 20 ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+  latex: "\\begin{gathered}\nf_{cure,20,wish} \\\\\n= \\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\end{gathered}",
+};
+
+export const WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE: Parameter = {
+  value: 0.876056338028169,
+  unit: "rate",
+  displayName: "Wishonia Military Reallocation Physical Max Share",
+  description: "Maximum physically demonstrated military reallocation share, anchored to post-WW2 US demobilization.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "POST_WW2_MILITARY_CUT_PCT",
+  latex: "\\begin{gathered}\ns_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\end{gathered}",
+};
+
+export const WISHONIA_PATH_AVG_INCOME_YEAR_20: Parameter = {
+  value: 1161818.358400575,
+  unit: "USD",
+  displayName: "Wishonia Path Average Income at Year 20",
+  description: "Average income (GDP per capita) at year 20 under the Wishonia Path.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WISHONIA_PATH_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
+  latex: "\\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}}",
+};
+
+export const WISHONIA_PATH_CAGR_YEAR_20: Parameter = {
+  value: 0.2543288493473528,
+  unit: "rate",
+  displayName: "Wishonia Path CAGR (20 Years)",
+  description: "Compound annual growth rate implied by Wishonia Path GDP trajectory over 20 years.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(WISHONIA_PATH_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
+  latex: "\\begin{gathered}\ng_{wish,CAGR} \\\\\n= \\left(\\frac{GDP_{wish,20}}{GDP_0}\\right)^{1/20} - 1\n\\end{gathered}",
+};
+
+export const WISHONIA_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20: Parameter = {
+  value: 56.721918800945424,
+  unit: "x",
+  displayName: "Wishonia Path vs Earth GDP Multiplier (Year 20)",
+  description: "Wishonia Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WISHONIA_PATH_GDP_YEAR_20 ÷ EARTH_GDP_YEAR_20",
+  latex: "\\begin{gathered}\nk_{wish:earth,20} = \\frac{GDP_{wish,20}}{GDP_{earth,20}} = \\frac{\\$10700T}{\\$188T} = 56.7\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
+};
+
+export const WISHONIA_PATH_GDP_YEAR_20: Parameter = {
+  value: 1.0688728897285288e+16,
+  unit: "USD",
+  displayName: "Wishonia Path GDP at Year 20",
+  description: "Projected global GDP at year 20 under the Wishonia Path. Model applies all Wishonia policy channels and redirects the full Political Dysfunction Tax non-health opportunity pool to highest-marginal-value uses. Health recovery is modeled separately through disease burden removal to avoid overlap. Military and non-health reallocation effects are ramped at 50% intensity for the first 3 years, then 100% for years 4-20, reflecting implementation lag. Military reallocation uses a physically demonstrated upper bound (post-WW2 demobilization) rather than an arbitrary policy cap.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_GDP_2025 × (1 + g_ramp)^3 × (1 + g_full)^17, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-20 use 100%; both include disease-burden recovery",
+  latex: "GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}",
+};
+
+export const WISHONIA_PATH_VS_TREATY_PATH_GDP_MULTIPLIER_YEAR_20: Parameter = {
+  value: 3.4315554367560863,
+  unit: "x",
+  displayName: "Wishonia Path vs Treaty Path GDP Multiplier (Year 20)",
+  description: "Year-20 GDP multiplier from adding non-health dysfunction-capital reallocation on top of the Treaty Path channels.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WISHONIA_PATH_GDP_YEAR_20 ÷ TREATY_PATH_GDP_YEAR_20",
+  latex: "\\begin{gathered}\nk_{wish,full:core,20} = \\frac{GDP_{wish,20}}{GDP_{treaty,20}} = \\frac{\\$10700T}{\\$3110T} = 3.43\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } GDP_{treaty,20}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}\n\\end{gathered}",
 };
 
 // ============================================================================
@@ -4789,6 +5140,15 @@ export const FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT: Parameter = {
   formula: "Σ(DISEASE_BURDEN[cat] × (1 - RESEARCH_ACCELERATION_POTENTIAL[cat]))",
 };
 
+export const GDP_BASELINE_GROWTH_RATE: Parameter = {
+  value: 0.025,
+  unit: "rate",
+  displayName: "Baseline Global GDP Growth Rate",
+  description: "Status-quo baseline annual global GDP growth rate.",
+  sourceType: "definition",
+  confidence: "high",
+};
+
 export const GLOBAL_TO_US_POLITICAL_COST_RATIO: Parameter = {
   value: 5.0,
   unit: "ratio",
@@ -4853,6 +5213,17 @@ export const LOBBYIST_BOND_INVESTMENT_MAX: Parameter = {
   description: "Maximum bond investment for lobbyist incentives",
   sourceType: "definition",
   confidence: "high",
+};
+
+export const MILITARY_REDIRECT_GDP_BOOST_AT_30PCT: Parameter = {
+  value: 0.055,
+  unit: "rate",
+  displayName: "GDP Growth Boost at 30% Military Reallocation",
+  description: "Historical calibration target: 30% military reallocation maps to ~5.5 percentage points annual GDP growth boost.",
+  sourceType: "definition",
+  confidence: "medium",
+  confidenceInterval: [0.035, 0.075],
+  stdError: 0.01,
 };
 
 export const MINUTES_PER_HOUR: Parameter = {
@@ -4933,6 +5304,17 @@ export const QALYS_PER_COVID_DEATH_AVERTED: Parameter = {
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [3.0, 10.0],
+};
+
+export const RD_SPILLOVER_MULTIPLIER: Parameter = {
+  value: 2.0,
+  unit: "x",
+  displayName: "R&D Spillover Multiplier",
+  description: "R&D spillover multiplier: each $1 in directed medical research produces $2 in adjacent sector GDP growth (biotech, AI, computing, materials science, manufacturing). Conservative estimate; military R&D spillover produced the internet, GPS, jet engines. Medical R&D spillover already produced CRISPR, mRNA platforms, AI protein folding.",
+  sourceType: "definition",
+  confidence: "medium",
+  confidenceInterval: [1.5, 2.5],
+  stdError: 0.25,
 };
 
 export const SAFE_COMPOUNDS_COUNT: Parameter = {
@@ -5115,6 +5497,16 @@ export const VICTORY_BOND_FUNDING_PCT: Parameter = {
   confidence: "high",
 };
 
+export const WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20: Parameter = {
+  value: 0.9,
+  unit: "rate",
+  displayName: "Wishonia Path Probability (Year 20 EV Model)",
+  description: "Probability that the world follows the Wishonia Path (Treaty + dysfunction-tax elimination) rather than the Moronia collapse path in the expected-value framing.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [0.6, 0.98],
+};
+
 export const _US_BASE_POLITICAL_SPENDING: Parameter = {
   value: 28800000000.0,
 };
@@ -5148,6 +5540,7 @@ export const parameters = {
   DEFENSE_LOBBYING_ANNUAL,
   DEWORMING_COST_PER_DALY,
   DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+  DISEASE_BURDEN_GDP_DRAG_PCT,
   DOT_VALUE_OF_STATISTICAL_LIFE,
   DRUG_DEVELOPMENT_COST_1980S,
   DRUG_DISCOVERY_TO_APPROVAL_YEARS,
@@ -5200,6 +5593,7 @@ export const parameters = {
   GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_PHARMA_RD_SPENDING_ANNUAL,
   GLOBAL_POPULATION_2024,
+  GLOBAL_POPULATION_2045_PROJECTED,
   GLOBAL_POPULATION_ACTIVISM_THRESHOLD_PCT,
   GLOBAL_SYMPTOMATIC_DISEASE_TREATMENT_ANNUAL,
   GLOBAL_YLD_PROPORTION_OF_DALYS,
@@ -5336,6 +5730,7 @@ export const parameters = {
   DFDA_EFFICACY_LAG_ELIMINATION_YLL,
   DFDA_FIRST_TREATMENTS_PER_YEAR,
   DFDA_KNOWN_SAFE_EXPLORATION_YEARS,
+  DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL,
   DFDA_NET_SAVINGS_RD_ONLY_ANNUAL,
   DFDA_NPV_ANNUAL_OPEX_TOTAL,
   DFDA_NPV_BENEFIT_RD_ONLY,
@@ -5379,6 +5774,8 @@ export const parameters = {
   DRUG_COST_INCREASE_1980S_TO_CURRENT_MULTIPLIER,
   DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER,
   DRUG_DISEASE_COMBINATIONS_POSSIBLE,
+  EARTH_AVG_INCOME_YEAR_20,
+  EARTH_GDP_YEAR_20,
   EFFICACY_LAG_CUMULATIVE_EXCESS_COST,
   EFFICACY_LAG_DEATHS_911_EQUIVALENTS,
   EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL,
@@ -5388,6 +5785,8 @@ export const parameters = {
   EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS,
   EXPLORATION_RATIO,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
+  GDP_EXPECTED_VALUE_VS_EARTH_MULTIPLIER_YEAR_20,
+  GDP_EXPECTED_VALUE_YEAR_20,
   GENE_THERAPY_DISEASE_COMBINATIONS,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
   GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST,
@@ -5399,6 +5798,7 @@ export const parameters = {
   GLOBAL_ANNUAL_TRADE_DISRUPTION_CONFLICT,
   GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL,
   GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL,
+  GLOBAL_AVG_INCOME_2025,
   GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL,
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
@@ -5409,6 +5809,7 @@ export const parameters = {
   HEALTHCARE_VS_MILITARY_MULTIPLIER_RATIO,
   IAB_MECHANISM_BENEFIT_COST_RATIO,
   IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
+  IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT,
   INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE,
   LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE,
@@ -5417,6 +5818,7 @@ export const parameters = {
   MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
   MILITARY_VS_MEDICAL_RESEARCH_RATIO,
   MISALLOCATION_FACTOR_DEATH_VS_SAVING,
+  MORONIA_PATH_PROBABILITY_YEAR_20,
   MRNA_THERAPEUTIC_COMBINATIONS,
   NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT,
   PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
@@ -5432,6 +5834,7 @@ export const parameters = {
   PEACE_DIVIDEND_REFUGEE_SUPPORT,
   PEACE_DIVIDEND_TRADE_DISRUPTION,
   PEACE_DIVIDEND_VETERAN_HEALTHCARE,
+  PEACE_TRAJECTORY_TOTAL_DIFFERENTIAL_20YR,
   PERSONAL_LIFETIME_WEALTH,
   PER_CAPITA_CHRONIC_DISEASE_COST,
   PER_CAPITA_MENTAL_HEALTH_COST,
@@ -5439,6 +5842,11 @@ export const parameters = {
   POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE,
   POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP,
   POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL,
+  POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED,
+  POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE,
+  POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL,
+  POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL,
+  POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL,
   POST_WW2_MILITARY_CUT_PCT,
   PRAGMATIC_TRIAL_COST_PER_QALY,
   RECOVERY_TRIAL_COST_REDUCTION_FACTOR,
@@ -5459,12 +5867,19 @@ export const parameters = {
   TREATY_CAMPAIGN_TOTAL_COST,
   TREATY_CAMPAIGN_VOTING_BLOC_TARGET,
   TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
+  TREATY_CUMULATIVE_20YR_WITH_RATCHET,
   TREATY_EXPECTED_COST_PER_DALY,
   TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER,
   TREATY_LIVES_SAVED_ANNUAL_GLOBAL,
+  TREATY_PATH_AVG_INCOME_YEAR_20,
+  TREATY_PATH_CAGR_YEAR_20,
+  TREATY_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20,
+  TREATY_PATH_GDP_YEAR_20,
   TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS,
   TREATY_QALYS_GAINED_ANNUAL_GLOBAL,
+  TREATY_RATCHET_MULTIPLIER_20YR,
+  TREATY_RATCHET_PREMIUM_20YR,
   TREATY_ROI_EXISTING_DRUGS_ONLY,
   TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG,
   TREATY_TOTAL_ANNUAL_COSTS,
@@ -5497,7 +5912,16 @@ export const parameters = {
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VOTER_LIVES_SAVED,
   VOTER_SUFFERING_HOURS_PREVENTED,
+  WAR_COSTS_CUMULATIVE_20YR_CURRENT_TRAJECTORY,
+  WAR_COSTS_SAVED_PEACE_TRAJECTORY_20YR,
   WILLING_TRIAL_PARTICIPANTS_GLOBAL,
+  WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL,
+  WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE,
+  WISHONIA_PATH_AVG_INCOME_YEAR_20,
+  WISHONIA_PATH_CAGR_YEAR_20,
+  WISHONIA_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20,
+  WISHONIA_PATH_GDP_YEAR_20,
+  WISHONIA_PATH_VS_TREATY_PATH_GDP_MULTIPLIER_YEAR_20,
   ADAPTABLE_TRIAL_PATIENTS,
   APPROVED_DRUG_DISEASE_PAIRINGS,
   AVG_LIFE_EXTENSION_PER_BENEFICIARY,
@@ -5560,6 +5984,7 @@ export const parameters = {
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
   FAMILY_OFFICE_INVESTMENT_MIN,
   FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT,
+  GDP_BASELINE_GROWTH_RATE,
   GLOBAL_TO_US_POLITICAL_COST_RATIO,
   HOURS_PER_DAY,
   HOURS_PER_YEAR,
@@ -5568,6 +5993,7 @@ export const parameters = {
   IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
   INSTITUTIONAL_INVESTOR_MIN,
   LOBBYIST_BOND_INVESTMENT_MAX,
+  MILITARY_REDIRECT_GDP_BOOST_AT_30PCT,
   MINUTES_PER_HOUR,
   MONTHS_PER_YEAR,
   NPV_DISCOUNT_RATE_STANDARD,
@@ -5577,6 +6003,7 @@ export const parameters = {
   PHARMA_PHASE_2_3_COST_BARRIER,
   PRE_1962_VALIDATION_YEARS,
   QALYS_PER_COVID_DEATH_AVERTED,
+  RD_SPILLOVER_MULTIPLIER,
   SAFE_COMPOUNDS_COUNT,
   SECONDS_PER_MINUTE,
   SECONDS_PER_YEAR,
@@ -5596,6 +6023,7 @@ export const parameters = {
   US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP,
   US_VS_SWITZERLAND_SPENDING_GAP,
   VICTORY_BOND_FUNDING_PCT,
+  WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20,
   _US_BASE_POLITICAL_SPENDING
 } as const;
 
@@ -7426,10 +7854,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 473,
-  external: 187,
-  calculated: 187,
-  definitions: 99,
+  total: 509,
+  external: 189,
+  calculated: 217,
+  definitions: 103,
   citations: 134,
 } as const;
 

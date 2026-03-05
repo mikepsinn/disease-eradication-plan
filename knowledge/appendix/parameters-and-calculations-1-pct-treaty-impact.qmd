@@ -7179,6 +7179,16 @@ Annual defense industry lobbying spending
 
 **Source**: [@lobbying-spend-defense]
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100M, $160M]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $100M and $160M (±24%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
+
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
 :::
