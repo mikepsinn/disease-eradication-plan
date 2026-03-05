@@ -45,15 +45,12 @@ book:
   #issue-url: https://github.com/mikepsinn/decentralized-institutes-of-health/issues/new
   navbar:
     right:
-      - text: "GET THE BOOK"
-        href: knowledge/links.qmd
-      - text: "LISTEN"
-        href: knowledge/links.qmd
       - text: "VOTE"
         href: https://WarOnDisease.org
-      - icon: youtube
-        href: https://www.youtube.com/%40WarOnDisease
-        aria-label: YouTube
+      - text: "GET THE MANUAL"
+        href: knowledge/links.qmd
+      - text: "LISTEN"
+        href: knowledge/podcast.qmd
   sidebar:
     collapse-level: 1
     contents:
