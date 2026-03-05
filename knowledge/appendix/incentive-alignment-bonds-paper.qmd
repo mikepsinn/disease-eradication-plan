@@ -50,6 +50,7 @@ format:
     fontsize: 11pt
 image: /assets/og-images/knowledge/appendix/incentive-alignment-bonds-paper-og-retro-academic.jpg
 podcast-image: /assets/podcast/incentive-alignment-bonds-paper-podcast.jpg
+youtube-thumbnail: /assets/podcast/incentive-alignment-bonds-paper-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 **The Problem in One Sentence:** Politicians are rewarded for funding low-NSV programs (military beyond deterrence: 0.7:1 BCR) and punished for funding high-NSV programs (medical research: 100:1+ BCR) because concentrated interests outlobby diffuse beneficiaries, so government spending is optimized for lobbying intensity rather than marginal societal value.

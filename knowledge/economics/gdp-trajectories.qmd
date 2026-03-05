@@ -1,6 +1,6 @@
 ---
-title: "Three Civilizations: GDP Trajectories"
-description: 'Earth grows at 2.5%. Wishonia redirects its bomb budget, cures diseases, and fixes its governance. Moronia keeps building weapons until GDP hits $0. The expected value math is not subtle.'
+title: 'Three Civilizations: GDP Trajectories'
+description: Earth grows at 2.5%. Wishonia redirects its bomb budget, cures diseases, and fixes its governance. Moronia keeps building weapons until GDP hits $0. The expected value math is not subtle.
 published: true
 tags:
   - gdp-trajectories
@@ -9,6 +9,8 @@ tags:
   - expected-value
   - moronia
   - wishonia
+podcast-image: /assets/podcast/gdp-trajectories-podcast.jpg
+youtube-thumbnail: /assets/podcast/gdp-trajectories-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Your species has three options. You can keep doing what you're doing, which your economists optimistically project at 2.5% annual growth. You can redirect your weapons budget into medical research, fix your broken governance, and compound your way to a civilization that would be unrecognizable to you. Or you can accelerate your arms race until someone's automated defense system makes a decision that can't be undone, which produces a growth rate of negative everything.
