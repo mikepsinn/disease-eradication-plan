@@ -1,6 +1,6 @@
 ---
 name: require-citation-urls
-enabled: true
+enabled: false
 event: file
 action: warn
 conditions:
