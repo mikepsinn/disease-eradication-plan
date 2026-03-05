@@ -2,13 +2,14 @@
 
 **Config:** _quarto-political-dysfunction-tax.yml
 **Type:** website
-**Files:** 1 | **Words:** 4,470 | **Images:** 20 | **Est. Pages:** ~28
+**Files:** 1 | **Words:** 5,043 | **Images:** 20 | **Est. Pages:** ~30
 
 #### knowledge/appendix/political-dysfunction-tax.qmd
 **Title:** The Political Dysfunction Tax
-**Description:** Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 31-53% efficiency score and $97 trillion in annual opportunity costs.
-**Stats:** 4,470 words | 329 lines | 20 images | ~28p
+**Description:** Governance dysfunction costs you $12,100 per year. Over your lifetime, the compound cost ranges from $2.6 million (conservative) to $2.5 billion (model-consistent). Globally, $97 trillion in annual potential is destroyed by military overspend, regulatory friction, delayed cures, and migration restrictions.
+**Stats:** 5,043 words | 355 lines | 20 images | ~30p
 
+  - What This Costs You
   - Introduction: The Mechanism Design of Civilizational Stagnation
     ![You waste 90 percent of everything. It's impressive, really. Like throwing nine out of every ten sandwiches directly into the bin.](/assets/images/political-dysfunction-tax/political-dysfunction-tax-section-introduction-the-mechanism-des-bw-academic.jpg)
   - Part 1: The Waste Ledger (The "Burned Capital")

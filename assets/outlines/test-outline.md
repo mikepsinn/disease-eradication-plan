@@ -2,7 +2,7 @@
 
 **Config:** _quarto-test.yml
 **Type:** book
-**Files:** 3 | **Words:** 770 | **Images:** 2 | **Est. Pages:** ~4
+**Files:** 3 | **Words:** 774 | **Images:** 2 | **Est. Pages:** ~4
 
 #### knowledge/test/test-economics.qmd
 **Title:** Test Economics Document
@@ -41,4 +41,4 @@
 #### knowledge/references.qmd
 **Title:** Source Quotes and References
 **Description:** Every claim in this manual has a receipt. 347 sources, because 'trust me, I'm an alien' is not a citation format your species recognizes.
-**Stats:** 81 words | 23 lines | 1 images | ~1p
+**Stats:** 85 words | 25 lines | 1 images | ~1p

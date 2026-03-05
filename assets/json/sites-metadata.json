@@ -1,6 +1,6 @@
 {
   "totalSites": 16,
-  "totalPages": 105,
+  "totalPages": 109,
   "sites": [
     {
       "id": "1-pct-treaty-impact",
@@ -251,7 +251,7 @@
             "Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/appendix/economist-feedback-treaty.qmd",
@@ -344,6 +344,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -360,6 +361,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -372,24 +374,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -403,6 +407,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -410,8 +415,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -430,12 +435,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -461,13 +470,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -493,6 +507,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -535,7 +550,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -546,6 +560,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -584,7 +599,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -642,6 +656,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -656,6 +674,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -718,6 +737,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -734,6 +754,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -756,7 +777,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/references.qmd",
@@ -768,7 +789,7 @@
             "references"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 4
@@ -973,6 +994,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -989,6 +1011,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -1001,24 +1024,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -1032,6 +1057,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -1039,8 +1065,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -1059,12 +1085,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -1090,13 +1120,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -1122,6 +1157,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -1164,7 +1200,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -1175,6 +1210,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -1213,7 +1249,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -1271,6 +1306,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -1285,6 +1324,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -1347,6 +1387,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -1363,6 +1404,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -1385,7 +1427,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2
@@ -1500,6 +1542,7 @@
           "sections": [
             "Executive Summary",
             "The Receipts",
+            "Why These Numbers Are Large",
             "Key Metric Derivations",
             "Interpreting These Figures: Cumulative, Not Annual",
             "The Discovery Capacity Model",
@@ -1562,7 +1605,7 @@
             "Why This Differs from Failed Megaprojects"
           ],
           "published": true,
-          "lastmod": "2026-02-27"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations.qmd",
@@ -1634,6 +1677,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -1650,6 +1694,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -1662,24 +1707,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -1693,6 +1740,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -1700,8 +1748,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -1720,12 +1768,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -1751,13 +1803,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -1783,6 +1840,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -1825,7 +1883,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -1836,6 +1893,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -1874,7 +1932,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -1932,6 +1989,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -1946,6 +2007,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -2008,6 +2070,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -2024,6 +2087,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -2046,7 +2110,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/economist-feedback-dfda.qmd",
@@ -2372,6 +2436,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -2388,6 +2453,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -2400,24 +2466,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -2431,6 +2499,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -2438,8 +2507,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -2458,12 +2527,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -2489,13 +2562,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -2521,6 +2599,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -2563,7 +2642,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -2574,6 +2652,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -2612,7 +2691,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -2670,6 +2748,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -2684,6 +2766,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -2746,6 +2829,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -2762,6 +2846,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -2784,7 +2869,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2
@@ -2956,6 +3041,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -2972,6 +3058,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -2984,24 +3071,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -3015,6 +3104,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -3022,8 +3112,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -3042,12 +3132,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -3073,13 +3167,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -3105,6 +3204,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -3147,7 +3247,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -3158,6 +3257,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -3196,7 +3296,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -3254,6 +3353,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -3268,6 +3371,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -3330,6 +3434,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -3346,6 +3451,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -3368,7 +3474,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/references.qmd",
@@ -3380,7 +3486,7 @@
             "references"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 3
@@ -3552,7 +3658,7 @@
             "Comparative Analysis"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations.qmd",
@@ -3624,6 +3730,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -3640,6 +3747,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -3652,24 +3760,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -3683,6 +3793,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -3690,8 +3801,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -3710,12 +3821,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -3741,13 +3856,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -3773,6 +3893,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -3815,7 +3936,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -3826,6 +3946,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -3864,7 +3985,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -3922,6 +4042,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -3936,6 +4060,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -3998,6 +4123,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -4014,6 +4140,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -4036,7 +4163,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2
@@ -4272,6 +4399,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -4288,6 +4416,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -4300,24 +4429,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -4331,6 +4462,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -4338,8 +4470,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -4358,12 +4490,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -4389,13 +4525,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -4421,6 +4562,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -4463,7 +4605,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -4474,6 +4615,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -4512,7 +4654,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -4570,6 +4711,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -4584,6 +4729,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -4646,6 +4792,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -4662,6 +4809,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -4684,7 +4832,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2
@@ -4693,7 +4841,7 @@
       "id": "manual-paperback",
       "type": "book",
       "title": "How to End War and Disease",
-      "description": "Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery",
+      "description": "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia",
       "siteUrl": "https://manual.WarOnDisease.org",
       "ogImage": "",
       "pdfUrl": "https://manual.WarOnDisease.org/How-to-End-War-and-Disease-Paperback.pdf",
@@ -4743,6 +4891,43 @@
       "outputDir": "_manual-paperback/warondisease",
       "pages": [
         {
+          "path": "index-manual.qmd",
+          "url": "https://manual.WarOnDisease.org/index-manual.html",
+          "title": "How to End War and Disease (for Busy People)",
+          "description": "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia",
+          "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg",
+          "sections": [
+            "The Human Economy",
+            "The Gradual Irrationality Reduction Program",
+            "What to Do When They Try to Institutionalize You",
+            "The Sacred Order of Paper Distribution",
+            "Why Your Leaders Aren't the Problem",
+            "Humanity's Death Wish",
+            "The Problem",
+            "The Daily Deletion Event",
+            "The Unexplored Therapeutic Frontier",
+            "The Cost of War",
+            "The FDA is Unsafe and Ineffective",
+            "The Solution",
+            "A 1% Treaty",
+            "Your Decentralized FDA",
+            "Why This Could Actually Work",
+            "The Evidence",
+            "The Math",
+            "The 5-Step Plan",
+            "Step 1: Sell Incentive Alignment Bonds",
+            "Step 2: The Great Clicking",
+            "Step 3: Bribe the Bribers",
+            "Step 4: Purchase Democracy",
+            "Step 5: Enjoy",
+            "How This Manual Could Fix Everything",
+            "The Part Where Humanity Has No Choice",
+            "Choose Your Own Adventure"
+          ],
+          "published": true,
+          "lastmod": "2026-03-04"
+        },
+        {
           "path": "knowledge/problem/nih-fails-2-institute-health.qmd",
           "url": "https://manual.WarOnDisease.org/problem/nih-fails-2-institute-health.html",
           "title": "NIH Fails to Institute Health",
@@ -4760,22 +4945,22 @@
           ],
           "sections": [
             "The Allocation Scandal",
-            "Why This Allocation Exists",
             "The Efficiency Gap: A Tale of Two Trials",
             "RECOVER Initiative (NIH Approach)",
             "RECOVERY Trial (UK Approach)",
+            "The Translation Crisis: All Theory, No Medicine",
+            "Plenty of Knowledge. No Translation.",
             "The Death Toll: Opportunity Cost of Misallocation",
             "Cost Per QALY (Quality-Adjusted Life Year)",
             "The \"Death Equivalent\" of Budget Misallocation",
-            "The Translation Crisis: All Theory, No Medicine",
-            "Plenty of Knowledge. No Translation.",
+            "Why This Allocation Exists",
             "The Public Goods vs. Club Goods Scam",
             "The Patient Disconnect: Zero Correlation with Health Outcomes",
             "The Track Record",
             "What Would Actually Work"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/problem/untapped-therapeutic-frontier.qmd",
@@ -4809,7 +4994,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
@@ -4848,13 +5033,13 @@
             "Technical Analysis"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/unrepresentative-democracy.qmd",
           "url": "https://manual.WarOnDisease.org/problem/unrepresentative-democracy.html",
           "title": "Unrepresentative Democracy",
-          "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
+          "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.4 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/problem/unrepresentative-democracy-og-retro-academic.jpg",
           "tags": [
             "democracy",
@@ -4868,6 +5053,7 @@
             "What Democracy Should Look Like vs Reality",
             "The Mathematics of Political Failure",
             "Concentrated Benefits vs. Diffuse Costs",
+            "The Death Spiral: How Two Parties Kill Crowd Wisdom",
             "How Money Buys Power",
             "The Lobbying ROI: 18:1 Returns",
             "Your Congressman: A Fundraiser Who Occasionally Legislates",
@@ -4879,7 +5065,7 @@
             "The Solution They Don't Want"
           ],
           "published": true,
-          "lastmod": "2026-02-27"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/economics/central-banks.qmd",
@@ -4901,21 +5087,23 @@
             "United States (1917-present)",
             "1971: When Nixon Weaponized Money Against You",
             "Why He Really Did It",
+            "The Dual Mandate: Optimizing for Serfdom",
             "The Cantillon Effect: Why You're Poor and Raytheon Isn't",
             "Why \"Just Fund Medical Research More\" Is a Lie",
             "The Fixed Pie of Human Genius",
             "The Inflation Shell Game (How They Steal Medical Progress)",
             "The Proof: 50 Years of Going Nowhere",
+            "\"Just Tax the Billionaires\"",
             "Why Money Printing Matters: Resources Follow the Printer"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/genetic-slavery.qmd",
           "url": "https://manual.WarOnDisease.org/problem/genetic-slavery.html",
           "title": "Genetic Slavery",
-          "description": "You're running 200,000-year-old software on modern hardware. Your brain was designed for running from lions; now it runs from emails, craves sugar that's everywhere, fears strangers it needs to cooperate with, and builds nuclear weapons using the same instinct that once made it good at throwing rocks.",
+          "description": "Your genes trying to kill you with nuclear weapons and preventable disease simultaneously, which is an impressive amount of multitasking for software that was originally designed to find berries.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/problem/genetic-slavery-og-retro-academic.jpg",
           "tags": [
             "evolution",
@@ -4927,16 +5115,19 @@
             "stupidity"
           ],
           "sections": [
+            "How Hydrogen Learned to Worry (A 13.8 Billion Year Recap)",
             "The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)",
             "Part 1: Your Brain Was Optimized for a World That Doesn't Exist",
-            "The Violence Module (Or: Why You Tend to Prefer Bombs Over Band-Aids)",
+            "The Violence Module (Or: Why You Tend to Prefer Bombs Over Clinical Trials)",
             "The Tribal Brain (Or: Why Democracy Was Always Going to Be a Mess)",
+            "The Compassion Gradient (Or: Why You'll Buy Your Cat a Birthday Cake While Children Starve)",
+            "Your Brain Is a Museum of Obsolete Instincts",
             "Part 2: Genetic Slavery is Literally Killing You",
             "Part 3: Why You Can't Just \"Be Better\"",
             "Part 4: Breaking the Chains"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution/1-percent-treaty.qmd",
@@ -4981,7 +5172,7 @@
             "Addendum: The Actual Treaty Text (First Draft)"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution/dih.qmd",
@@ -5017,7 +5208,7 @@
             "What You've Just Read"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/solution/wishocracy.qmd",
@@ -5035,7 +5226,7 @@
             "democracy-but-working"
           ],
           "sections": [
-            "How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding",
+            "How Wishocracy Allocates the Collective-Choice Share of the 1% Treaty Fund",
             "What your decentralized FDA handles automatically (no voting required):",
             "What Wishocracy Actually Decides:",
             "How It Works: Pairwise Comparisons Between Campaigns",
@@ -5043,10 +5234,14 @@
             "Your Current System Is Phone-a-Friend (But Your Friend Is Being Bribed)",
             "The 26-Point Gap Is a Floor, Not a Ceiling",
             "Why Markets Solved This (and Why You Still Need Wishocracy)",
-            "From Priorities to Projects (Where Wishes Become Tasks)"
+            "From Priorities to Projects (Where Wishes Become Tasks)",
+            "Why the Algorithm Is the Constitution",
+            "Algorithmic Protections (Rules Nobody Can Break Because They're Not Rules)",
+            "The Two Hard Rules",
+            "What Wishocracy Measures (The Anti-Fed)"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution/dfda.qmd",
@@ -5095,7 +5290,7 @@
             "How Your Decentralized FDA Actually Works"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/solution/aligning-incentives.qmd",
@@ -5130,7 +5325,7 @@
             "Why This Scales: The Ratchet Effect"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution/incentive-alignment-bonds.qmd",
@@ -5165,7 +5360,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-28"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/proof/body-as-repairable-machine.qmd",
@@ -5201,7 +5396,7 @@
             "The Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-02-26"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/futures/moronia.qmd",
@@ -5220,6 +5415,8 @@
             "What I Tried to Tell Them",
             "The Cascade",
             "Year Zero: Already Broken (Much Like You)",
+            "The Spiral (Already in Progress)",
+            "The Warehouses",
             "Years 1-5: The Acceleration",
             "The Weapons Speak",
             "The Logic Trap",
@@ -5227,7 +5424,7 @@
             "The Mirror"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/futures/wishonia.qmd",
@@ -5254,19 +5451,26 @@
             "Your Corporate Heroes",
             "Your New Problems",
             "What Fixing Health Fixed",
+            "Climate",
+            "Poverty",
+            "Science",
+            "Peace",
+            "Governance",
+            "Happiness",
+            "Freedom",
             "The Three Supers Complete",
             "Your Personal Future",
             "What Comes After",
             "Your Two Paths"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/appendix/faq.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/faq.html",
           "title": "Frequently Asked Objections",
-          "description": "Every objection to this plan is technically correct. You can't cut military spending (you keep 99%). Pharma will fight threats to profits (they profit more under this system). Politicians follow money, not morality (so does this plan). Seventeen reasonable concerns that accidentally make the case for the thing they're objecting to.",
+          "description": "Fun facts for those reasonably skeptical of spending 1% more on helping sick people than killing them.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/faq-og-retro-academic.jpg",
           "sections": [
             "\"We Need the Military Budget\"",
@@ -5276,21 +5480,18 @@
             "\"What If Countries Cheat?\"",
             "\"You Can't Cure Aging\"",
             "\"I'm Just One Person\"",
-            "\"Reform the System Instead\"",
+            "\"Why Not Just Reform the System?\"",
             "\"This Is Politically Impossible\"",
             "\"What If the Science Is Wrong?\"",
-            "\"I Don't Have Time\"",
-            "\"This Is Unrealistic\"",
             "\"War Is Human Nature\"",
             "\"All Wars on X Have Failed\"",
             "\"This Sounds Like Bribery\"",
             "\"Why Not Just Use Philanthropy?\"",
-            "\"How Do You Prevent Waste?\"",
-            "\"Why Not Just Increase Health Funding?\"",
-            "\"What About Defense Industry Jobs?\""
+            "\"84 Quadrillion Dollars Is a Made-Up Number\"",
+            "\"How Do You Prevent Waste?\""
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/strategy/roadmap.qmd",
@@ -5329,7 +5530,7 @@
             "The Endgame"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/strategy/global-referendum.qmd",
@@ -5360,7 +5561,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/treaty-feasibility.qmd",
@@ -5395,7 +5596,7 @@
             "Long-Term Feasibility"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/economics/peace-dividend.qmd",
@@ -5421,10 +5622,12 @@
             "The GDP Multiplier",
             "The Elasticity Assumption",
             "How Good Are the Sources?",
-            "The Safe Bet"
+            "The Safe Bet",
+            "The Trajectory, Not the Snapshot",
+            "Two Futures"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/economics/health-dividend.qmd",
@@ -5440,15 +5643,14 @@
             "economics"
           ],
           "sections": [
-            "The Queue",
-            "What It Costs to Fix",
-            "Why Your Trials Cost a Tesla Per Person",
-            "What Changes for the Human Who Gets Sick",
-            "The Cost of Taking Your Time",
-            "The Return"
+            "From Explosions to Trial Slots",
+            "The Waiting List",
+            "The Body Count",
+            "The Price Tag on Not Being Dead",
+            "The Receipt"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/economics/financial-plan.qmd",
@@ -5472,13 +5674,13 @@
             "The Whole Thing on One Line"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
           "url": "https://manual.WarOnDisease.org/strategy/nonprofit-coalition-strategy.html",
           "title": "Why Every Nonprofit Should Support a 1% treaty",
-          "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.",
+          "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every chartiable organization to stop fighting over crumbs and start fighting for the bakery.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/nonprofit-coalition-strategy-og-retro-academic.jpg",
           "tags": [
             "strategy",
@@ -5494,12 +5696,12 @@
             "The Obvious Solution That Nobody Sees",
             "Why Your Species Only Changes When the Building Is On Fire",
             "The Factory Precedent",
-            "\"Why Not Just Run Decentralized Trials Without the Treaty?\"",
+            "\"Why Not Just Run Trials Without the Treaty?\"",
             "What 1% Less Violence Buys Every Mission",
             "On Bribing Nonprofits (Legally)"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/legal/legal-framework.qmd",
@@ -5528,7 +5730,7 @@
             "Risk Mitigation (When They Come For You)"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
@@ -5554,14 +5756,14 @@
             "The Comforting Asymmetry"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/conclusion.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/conclusion.html",
           "title": "Conclusion",
           "published": true,
-          "lastmod": "2026-02-28"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/references.qmd",
@@ -5573,7 +5775,7 @@
             "references"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/acknowledgments.qmd",
@@ -5587,14 +5789,14 @@
             "On Standing on Shoulders"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/copyright.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/copyright.html",
           "title": "Copyright",
           "published": true,
-          "lastmod": "2026-02-27"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/back-cover.qmd",
@@ -5602,21 +5804,30 @@
           "title": "About This Manual",
           "description": "The complete idiot's guide to legally bribing your way to utopia.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg",
+          "sections": [
+            "Audible / Podcast Description",
+            "Amazon / Kindle Description",
+            "Reviews & Awards (pick one or mix)",
+            "Author Biography",
+            "Translator Biography",
+            "Keywords",
+            "Categories",
+            "BISAC Codes"
+          ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         }
       ],
-      "pageCount": 30
+      "pageCount": 31
     },
     {
       "id": "manual",
       "type": "book",
       "title": "How to End War and Disease",
-      "description": "Get 443 Years of Clinical Research Done in 36, Avoid the Apocalypse, and Make Humanity Filthy Rich Through the Magic of Legal Bribery",
+      "description": "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia",
       "siteUrl": "https://manual.WarOnDisease.org",
       "favicon": "https://manual.WarOnDisease.org/assets/icons/book-favicon.png",
       "ogImage": "https://manual.WarOnDisease.org/assets/cover/book-cover-wide.png",
-      "pdfUrl": "https://manual.WarOnDisease.org/How-to-End-War-and-Disease.pdf",
       "author": "Mike P. Sinn",
       "authorEmail": "mike@warondisease.org",
       "authorUrl": "https://mikesinn.com",
@@ -5692,12 +5903,20 @@
       },
       "pages": [
         {
-          "path": "links.qmd",
+          "path": "knowledge/links.qmd",
           "url": "https://manual.WarOnDisease.org/links.html",
-          "title": "Get the Book",
+          "title": "Get the Manual",
           "description": "Read, buy, or listen to 'How to End War and Disease' - available free online, in print, ebook, and audiobook.",
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
+        },
+        {
+          "path": "knowledge/podcast.qmd",
+          "url": "https://manual.WarOnDisease.org/podcast.html",
+          "title": "Listen to How to End War and Disease",
+          "description": "Free audiobook podcast. Every chapter narrated. Available on Spotify, Apple Podcasts, YouTube Music, and all major podcast apps.",
+          "published": true,
+          "lastmod": "2026-03-02"
         },
         {
           "path": "knowledge/problem.qmd",
@@ -5727,7 +5946,7 @@
             "What's Next"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/cost-of-war.qmd",
@@ -5762,7 +5981,7 @@
             "Hidden Costs of War"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/cost-of-disease.qmd",
@@ -5791,7 +6010,7 @@
             "The Future You're Paying For"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/nih-fails-2-institute-health.qmd",
@@ -5811,22 +6030,22 @@
           ],
           "sections": [
             "The Allocation Scandal",
-            "Why This Allocation Exists",
             "The Efficiency Gap: A Tale of Two Trials",
             "RECOVER Initiative (NIH Approach)",
             "RECOVERY Trial (UK Approach)",
+            "The Translation Crisis: All Theory, No Medicine",
+            "Plenty of Knowledge. No Translation.",
             "The Death Toll: Opportunity Cost of Misallocation",
             "Cost Per QALY (Quality-Adjusted Life Year)",
             "The \"Death Equivalent\" of Budget Misallocation",
-            "The Translation Crisis: All Theory, No Medicine",
-            "Plenty of Knowledge. No Translation.",
+            "Why This Allocation Exists",
             "The Public Goods vs. Club Goods Scam",
             "The Patient Disconnect: Zero Correlation with Health Outcomes",
             "The Track Record",
             "What Would Actually Work"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/problem/untapped-therapeutic-frontier.qmd",
@@ -5860,7 +6079,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
@@ -5899,13 +6118,13 @@
             "Technical Analysis"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/unrepresentative-democracy.qmd",
           "url": "https://manual.WarOnDisease.org/problem/unrepresentative-democracy.html",
           "title": "Unrepresentative Democracy",
-          "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
+          "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.4 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/problem/unrepresentative-democracy-og-retro-academic.jpg",
           "tags": [
             "democracy",
@@ -5919,6 +6138,7 @@
             "What Democracy Should Look Like vs Reality",
             "The Mathematics of Political Failure",
             "Concentrated Benefits vs. Diffuse Costs",
+            "The Death Spiral: How Two Parties Kill Crowd Wisdom",
             "How Money Buys Power",
             "The Lobbying ROI: 18:1 Returns",
             "Your Congressman: A Fundraiser Who Occasionally Legislates",
@@ -5930,7 +6150,7 @@
             "The Solution They Don't Want"
           ],
           "published": true,
-          "lastmod": "2026-02-27"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/economics/central-banks.qmd",
@@ -5952,21 +6172,23 @@
             "United States (1917-present)",
             "1971: When Nixon Weaponized Money Against You",
             "Why He Really Did It",
+            "The Dual Mandate: Optimizing for Serfdom",
             "The Cantillon Effect: Why You're Poor and Raytheon Isn't",
             "Why \"Just Fund Medical Research More\" Is a Lie",
             "The Fixed Pie of Human Genius",
             "The Inflation Shell Game (How They Steal Medical Progress)",
             "The Proof: 50 Years of Going Nowhere",
+            "\"Just Tax the Billionaires\"",
             "Why Money Printing Matters: Resources Follow the Printer"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/problem/genetic-slavery.qmd",
           "url": "https://manual.WarOnDisease.org/problem/genetic-slavery.html",
           "title": "Genetic Slavery",
-          "description": "You're running 200,000-year-old software on modern hardware. Your brain was designed for running from lions; now it runs from emails, craves sugar that's everywhere, fears strangers it needs to cooperate with, and builds nuclear weapons using the same instinct that once made it good at throwing rocks.",
+          "description": "Your genes trying to kill you with nuclear weapons and preventable disease simultaneously, which is an impressive amount of multitasking for software that was originally designed to find berries.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/problem/genetic-slavery-og-retro-academic.jpg",
           "tags": [
             "evolution",
@@ -5978,16 +6200,19 @@
             "stupidity"
           ],
           "sections": [
+            "How Hydrogen Learned to Worry (A 13.8 Billion Year Recap)",
             "The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)",
             "Part 1: Your Brain Was Optimized for a World That Doesn't Exist",
-            "The Violence Module (Or: Why You Tend to Prefer Bombs Over Band-Aids)",
+            "The Violence Module (Or: Why You Tend to Prefer Bombs Over Clinical Trials)",
             "The Tribal Brain (Or: Why Democracy Was Always Going to Be a Mess)",
+            "The Compassion Gradient (Or: Why You'll Buy Your Cat a Birthday Cake While Children Starve)",
+            "Your Brain Is a Museum of Obsolete Instincts",
             "Part 2: Genetic Slavery is Literally Killing You",
             "Part 3: Why You Can't Just \"Be Better\"",
             "Part 4: Breaking the Chains"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution.qmd",
@@ -6017,7 +6242,7 @@
             "What Comes Next"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution/1-percent-treaty.qmd",
@@ -6062,7 +6287,7 @@
             "Addendum: The Actual Treaty Text (First Draft)"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution/dih.qmd",
@@ -6098,7 +6323,7 @@
             "What You've Just Read"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/solution/wishocracy.qmd",
@@ -6116,7 +6341,7 @@
             "democracy-but-working"
           ],
           "sections": [
-            "How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding",
+            "How Wishocracy Allocates the Collective-Choice Share of the 1% Treaty Fund",
             "What your decentralized FDA handles automatically (no voting required):",
             "What Wishocracy Actually Decides:",
             "How It Works: Pairwise Comparisons Between Campaigns",
@@ -6124,10 +6349,14 @@
             "Your Current System Is Phone-a-Friend (But Your Friend Is Being Bribed)",
             "The 26-Point Gap Is a Floor, Not a Ceiling",
             "Why Markets Solved This (and Why You Still Need Wishocracy)",
-            "From Priorities to Projects (Where Wishes Become Tasks)"
+            "From Priorities to Projects (Where Wishes Become Tasks)",
+            "Why the Algorithm Is the Constitution",
+            "Algorithmic Protections (Rules Nobody Can Break Because They're Not Rules)",
+            "The Two Hard Rules",
+            "What Wishocracy Measures (The Anti-Fed)"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution/dfda.qmd",
@@ -6176,7 +6405,7 @@
             "How Your Decentralized FDA Actually Works"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/solution/aligning-incentives.qmd",
@@ -6211,7 +6440,7 @@
             "Why This Scales: The Ratchet Effect"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/solution/incentive-alignment-bonds.qmd",
@@ -6246,7 +6475,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-28"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/appendix/open-ecosystem-and-bounty-model.qmd",
@@ -6267,7 +6496,7 @@
             "This Already Works"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/proof.qmd",
@@ -6313,7 +6542,7 @@
             "How Your Decentralized FDA Would Compare to History's Best Health Interventions"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/proof/body-as-repairable-machine.qmd",
@@ -6349,7 +6578,30 @@
             "The Conclusion"
           ],
           "published": true,
-          "lastmod": "2026-02-26"
+          "lastmod": "2026-03-03"
+        },
+        {
+          "path": "knowledge/proof/why-hasnt-anyone-done-this.qmd",
+          "url": "https://manual.WarOnDisease.org/proof/why-hasnt-anyone-done-this.html",
+          "title": "Why Hasn't Anyone Done This?",
+          "description": "People have. Many times. Sachs, the WHO, the Copenhagen Consensus, Nobel laureates. They all stalled for the same reason: no self-sustaining financial mechanism. The math was never the missing piece. The engine was.",
+          "tags": [
+            "proof",
+            "meta-objection",
+            "predecessors",
+            "funding-mechanisms",
+            "dysfunction-tax",
+            "compound-effect"
+          ],
+          "sections": [
+            "People Have Tried This",
+            "Every Previous Attempt Had the Same Problem",
+            "The Combination Falls Between Every Institution's Brand",
+            "The Compound Math Is the Hard Part (Honestly)",
+            "Why This Time Might Be Different"
+          ],
+          "published": true,
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/futures.qmd",
@@ -6372,7 +6624,7 @@
             "The Only Variable"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/futures/moronia.qmd",
@@ -6391,6 +6643,8 @@
             "What I Tried to Tell Them",
             "The Cascade",
             "Year Zero: Already Broken (Much Like You)",
+            "The Spiral (Already in Progress)",
+            "The Warehouses",
             "Years 1-5: The Acceleration",
             "The Weapons Speak",
             "The Logic Trap",
@@ -6398,7 +6652,7 @@
             "The Mirror"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/futures/wishonia.qmd",
@@ -6425,19 +6679,26 @@
             "Your Corporate Heroes",
             "Your New Problems",
             "What Fixing Health Fixed",
+            "Climate",
+            "Poverty",
+            "Science",
+            "Peace",
+            "Governance",
+            "Happiness",
+            "Freedom",
             "The Three Supers Complete",
             "Your Personal Future",
             "What Comes After",
             "Your Two Paths"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/appendix/faq.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/faq.html",
           "title": "Frequently Asked Objections",
-          "description": "Every objection to this plan is technically correct. You can't cut military spending (you keep 99%). Pharma will fight threats to profits (they profit more under this system). Politicians follow money, not morality (so does this plan). Seventeen reasonable concerns that accidentally make the case for the thing they're objecting to.",
+          "description": "Fun facts for those reasonably skeptical of spending 1% more on helping sick people than killing them.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/appendix/faq-og-retro-academic.jpg",
           "sections": [
             "\"We Need the Military Budget\"",
@@ -6447,21 +6708,18 @@
             "\"What If Countries Cheat?\"",
             "\"You Can't Cure Aging\"",
             "\"I'm Just One Person\"",
-            "\"Reform the System Instead\"",
+            "\"Why Not Just Reform the System?\"",
             "\"This Is Politically Impossible\"",
             "\"What If the Science Is Wrong?\"",
-            "\"I Don't Have Time\"",
-            "\"This Is Unrealistic\"",
             "\"War Is Human Nature\"",
             "\"All Wars on X Have Failed\"",
             "\"This Sounds Like Bribery\"",
             "\"Why Not Just Use Philanthropy?\"",
-            "\"How Do You Prevent Waste?\"",
-            "\"Why Not Just Increase Health Funding?\"",
-            "\"What About Defense Industry Jobs?\""
+            "\"84 Quadrillion Dollars Is a Made-Up Number\"",
+            "\"How Do You Prevent Waste?\""
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/strategy/roadmap.qmd",
@@ -6500,13 +6758,13 @@
             "The Endgame"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
           "url": "https://manual.WarOnDisease.org/strategy/nonprofit-coalition-strategy.html",
           "title": "Why Every Nonprofit Should Support a 1% treaty",
-          "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.",
+          "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every chartiable organization to stop fighting over crumbs and start fighting for the bakery.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/strategy/nonprofit-coalition-strategy-og-retro-academic.jpg",
           "tags": [
             "strategy",
@@ -6522,12 +6780,12 @@
             "The Obvious Solution That Nobody Sees",
             "Why Your Species Only Changes When the Building Is On Fire",
             "The Factory Precedent",
-            "\"Why Not Just Run Decentralized Trials Without the Treaty?\"",
+            "\"Why Not Just Run Trials Without the Treaty?\"",
             "What 1% Less Violence Buys Every Mission",
             "On Bribing Nonprofits (Legally)"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/legal/legal-framework.qmd",
@@ -6556,7 +6814,7 @@
             "Risk Mitigation (When They Come For You)"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/legal/election-law.qmd",
@@ -6600,7 +6858,7 @@
             "Legal Notice"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/strategy/legislation-package.qmd",
@@ -6637,7 +6895,7 @@
             "Conclusion: Democracy Theater at Its Finest"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/strategy/global-referendum.qmd",
@@ -6668,7 +6926,7 @@
             "The Bottom Line"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/solution/ai-coordination-army.qmd",
@@ -6697,7 +6955,7 @@
             "Rule 1 - Share to Play"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/appendix/treaty-feasibility.qmd",
@@ -6732,7 +6990,7 @@
             "Long-Term Feasibility"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
@@ -6758,7 +7016,7 @@
             "The Comforting Asymmetry"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/economics/peace-dividend.qmd",
@@ -6784,10 +7042,37 @@
             "The GDP Multiplier",
             "The Elasticity Assumption",
             "How Good Are the Sources?",
-            "The Safe Bet"
+            "The Safe Bet",
+            "The Trajectory, Not the Snapshot",
+            "Two Futures"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
+        },
+        {
+          "path": "knowledge/economics/gdp-trajectories.qmd",
+          "url": "https://manual.WarOnDisease.org/economics/gdp-trajectories.html",
+          "title": "Three Civilizations: GDP Trajectories",
+          "description": "Earth grows at 2.5%. Wishonia redirects its bomb budget, cures diseases, and fixes its governance. Moronia keeps building weapons until GDP hits $0. The expected value math is not subtle.",
+          "tags": [
+            "gdp-trajectories",
+            "economic-analysis",
+            "peace-dividend",
+            "expected-value",
+            "moronia",
+            "wishonia"
+          ],
+          "sections": [
+            "Three Futures",
+            "Earth: The Baseline Nobody Questions",
+            "Wishonia: What Happens When You Stop Wasting Money",
+            "Moronia: The Arithmetic of Extinction",
+            "The Expected Value",
+            "What This Means Per Person",
+            "The Uncertainty Is the Point"
+          ],
+          "published": true,
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/economics/health-dividend.qmd",
@@ -6803,15 +7088,14 @@
             "economics"
           ],
           "sections": [
-            "The Queue",
-            "What It Costs to Fix",
-            "Why Your Trials Cost a Tesla Per Person",
-            "What Changes for the Human Who Gets Sick",
-            "The Cost of Taking Your Time",
-            "The Return"
+            "From Explosions to Trial Slots",
+            "The Waiting List",
+            "The Body Count",
+            "The Price Tag on Not Being Dead",
+            "The Receipt"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/economics/financial-plan.qmd",
@@ -6835,7 +7119,7 @@
             "The Whole Thing on One Line"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/economics/campaign-budget.qmd",
@@ -6861,7 +7145,7 @@
             "Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-26"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/investor-risk-analysis.qmd",
@@ -6888,7 +7172,7 @@
             "Conclusion: Is This Less Risky Than VC?"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/appendix/parameters-and-calculations.qmd",
@@ -6960,6 +7244,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -6976,6 +7261,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -6988,24 +7274,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -7019,6 +7307,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -7026,8 +7315,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -7046,12 +7335,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -7077,13 +7370,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -7109,6 +7407,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -7151,7 +7450,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -7162,6 +7460,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -7200,7 +7499,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -7258,6 +7556,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -7272,6 +7574,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -7334,6 +7637,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -7350,6 +7654,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -7372,7 +7677,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/recovery-trial.qmd",
@@ -7402,7 +7707,7 @@
             "Scaling RECOVERY's Model"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/real-world-evidence-historical-success.qmd",
@@ -7434,7 +7739,7 @@
             "The Summary"
           ],
           "published": true,
-          "lastmod": "2026-02-25"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/papers.qmd",
@@ -7460,7 +7765,7 @@
             "Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation"
           ],
           "published": true,
-          "lastmod": "2026-02-27"
+          "lastmod": "2026-03-04"
         },
         {
           "path": "knowledge/references.qmd",
@@ -7472,14 +7777,14 @@
             "references"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/copyright.qmd",
           "url": "https://manual.WarOnDisease.org/appendix/copyright.html",
           "title": "Copyright",
           "published": true,
-          "lastmod": "2026-02-27"
+          "lastmod": "2026-03-03"
         },
         {
           "path": "knowledge/appendix/back-cover.qmd",
@@ -7487,11 +7792,21 @@
           "title": "About This Manual",
           "description": "The complete idiot's guide to legally bribing your way to utopia.",
           "image": "https://manual.WarOnDisease.org/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg",
+          "sections": [
+            "Audible / Podcast Description",
+            "Amazon / Kindle Description",
+            "Reviews & Awards (pick one or mix)",
+            "Author Biography",
+            "Translator Biography",
+            "Keywords",
+            "Categories",
+            "BISAC Codes"
+          ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-04"
         }
       ],
-      "pageCount": 45
+      "pageCount": 48
     },
     {
       "id": "obg",
@@ -7748,6 +8063,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -7764,6 +8080,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -7776,24 +8093,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -7807,6 +8126,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -7814,8 +8134,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -7834,12 +8154,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -7865,13 +8189,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -7897,6 +8226,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -7939,7 +8269,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -7950,6 +8279,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -7988,7 +8318,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -8046,6 +8375,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -8060,6 +8393,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -8122,6 +8456,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -8138,6 +8473,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -8160,7 +8496,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2
@@ -8613,6 +8949,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -8629,6 +8966,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -8641,24 +8979,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -8672,6 +9012,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -8679,8 +9020,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -8699,12 +9040,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -8730,13 +9075,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -8762,6 +9112,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -8804,7 +9155,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -8815,6 +9165,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -8853,7 +9204,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -8911,6 +9261,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -8925,6 +9279,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -8987,6 +9342,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -9003,6 +9359,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -9025,7 +9382,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2
@@ -9120,9 +9477,10 @@
           "path": "knowledge/appendix/political-dysfunction-tax.qmd",
           "url": "https://political-dysfunction-tax.warondisease.org/appendix/political-dysfunction-tax.html",
           "title": "The Political Dysfunction Tax",
-          "description": "Quantifying the gap between current global governance and theoretical maximum welfare, estimating a 31-53% efficiency score and $97 trillion in annual opportunity costs.",
+          "description": "Governance dysfunction costs you $12,100 per year. Over your lifetime, the compound cost ranges from $2.6 million (conservative) to $2.5 billion (model-consistent). Globally, $97 trillion in annual potential is destroyed by military overspend, regulatory friction, delayed cures, and migration restrictions.",
           "image": "https://political-dysfunction-tax.warondisease.org/assets/og-images/knowledge/appendix/political-dysfunction-tax-og-retro-academic.jpg",
           "sections": [
+            "What This Costs You",
             "Introduction: The Mechanism Design of Civilizational Stagnation",
             "Part 1: The Waste Ledger (The \"Burned Capital\")",
             "Military Overspend: The Cost of Hegemony vs. Security",
@@ -9327,6 +9685,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -9343,6 +9702,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -9355,24 +9715,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -9386,6 +9748,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -9393,8 +9756,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -9413,12 +9776,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -9444,13 +9811,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -9476,6 +9848,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -9518,7 +9891,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -9529,6 +9901,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -9567,7 +9940,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -9625,6 +9997,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -9639,6 +10015,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -9701,6 +10078,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -9717,6 +10095,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -9739,7 +10118,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2
@@ -9985,6 +10364,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -10001,6 +10381,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -10013,24 +10394,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -10044,6 +10427,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -10051,8 +10435,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -10071,12 +10455,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -10102,13 +10490,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -10134,6 +10527,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -10176,7 +10570,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -10187,6 +10580,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -10225,7 +10619,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -10283,6 +10676,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -10297,6 +10694,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -10359,6 +10757,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -10375,6 +10774,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -10397,7 +10797,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2
@@ -10617,6 +11017,7 @@
             "Annual Clinical Trial Patient Subsidies: $21.7B",
             "Patient Trial Subsidies Percentage of Treaty Funding: 79.9%",
             "Diseases Without Effective Treatment: 6.65 thousand diseases",
+            "Disease Burden Cured by Year 20: 55.6%",
             "Ratio of Annual Disease Deaths to 9/11 Terrorism Deaths: 18.4k:1",
             "Ratio of Annual Disease Deaths to War Deaths: 225:1",
             "Coverage Factor of Treaty Funding vs Decentralized Framework for Drug Assessment OPEX: 680:1",
@@ -10633,6 +11034,7 @@
             "Total Economic Loss from Historical Progress Delays: $259T",
             "Therapeutic Frontier Exploration Ratio: 0.342%",
             "FDA Efficacy Testing to Oxford RECOVERY Trial Time Multiplier: 32.8x",
+            "Expected GDP at Year 20 (Probability-Weighted): $5.76 quadrillion",
             "Gene Therapy Combinations: 20 million combinations",
             "Total Annual Conflict Deaths Globally: 245 thousand deaths/year",
             "Total Annual Cost of War Worldwide: $11.4T",
@@ -10645,24 +11047,26 @@
             "Total Annual Direct War Costs: $7.66T",
             "Total Annual Indirect War Costs: $3.7T",
             "Cost per Life Saved by Medical Research: $16.1K",
-            "Total Economic Burden of Disease Globally: $109T",
+            "Annual Welfare Cost of Avoidable Disease: $400T",
             "Annual Global Industry Spending on Clinical Trials: $55.5B",
             "Per Capita Military Spending Globally: $340",
             "Global Military Spending After 1% Treaty Reduction: $2.69T",
             "Global Political Reform Investment: $128B",
-            "Total Annual Cost of War and Disease with All Externalities: $129T",
+            "Total Annual Cost of War and Disease: $412T",
             "Healthcare vs Military Multiplier Ratio: 7.17x",
             "IAB Mechanism Benefit-Cost Ratio: 230:1",
             "Annual IAB Political Incentive Funding: $2.72B",
+            "IAB vs Defense Lobbying Ratio at 1% Treaty: 21.4x",
             "Ratio of Industry to Government Clinical Trials Spending: 12.3:1",
             "Life Expectancy Gain Rate (1883-1962): 0 years/decade",
             "Life Expectancy Gain Rate (1962-2019): 0 years/decade",
-            "Medical Research Spending as Percentage of Total Disease Burden: 0.0525%",
+            "Medical Research Spending as Percentage of Total Disease Burden: 0.0164%",
             "Ratio of Military to Clinical Trials Spending: 45.3:1",
             "Ratio of Military to Government Clinical Trials Spending: 604:1",
             "Ratio of Military Spending to Medical Research Spending: 40.3:1",
             "Misallocation Factor: Cost to Kill vs Cost to Save: 2.9kx",
             "mRNA Therapeutic Combinations: 20 million combinations",
+            "NIH Traditional Trial Maximum Efficiency vs Pragmatic (%): 2.27%",
             "Annual Peace Dividend from 1% Reduction in Total War Costs: $114B",
             "Conflict Reduction Benefits from 1% Less Military Spending: $86.4B",
             "Annual Savings from 1% Reduction in Direct War Costs: $76.6B",
@@ -10676,6 +11080,7 @@
             "Annual Savings from 1% Reduction in Refugee Support Costs: $1.5B",
             "Annual Savings from 1% Reduction in Trade Disruption: $6.16B",
             "Annual Savings from 1% Reduction in Veteran Healthcare Costs: $2B",
+            "Peace Trajectory Total Differential (50yr): $175T",
             "Personal Lifetime Wealth (QALY-Based): $3M",
             "US Per Capita Chronic Disease Cost: $12.2K",
             "US Per Capita Mental Health Cost: $1.04K",
@@ -10683,8 +11088,8 @@
             "Global Governance Efficiency Score: 51.9%",
             "Global Opportunity Cost as % of GDP: 87.8%",
             "Global Opportunity Cost Total: $101T",
+            "Percentage Military Spending Cut After WW2: 87.6%",
             "Pragmatic Trial Cost per QALY (RECOVERY): $4",
-            "Pragmatic Trial Efficiency Multiplier vs NIH: 12.5kx",
             "RECOVERY Trial Cost Reduction Factor: 82x",
             "RECOVERY Trial Total QALYs Generated: 5 million QALYs",
             "Status Quo Average Years to First Treatment: 222 years",
@@ -10703,12 +11108,16 @@
             "Total 1% Treaty Campaign Cost: $1B",
             "Target Voting Bloc Size for Campaign: 280 million of people",
             "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018",
+            "Cumulative Treaty Funding over 50 Years without Expansion: $1.36T",
+            "Cumulative Treaty Funding over 50 Years with IAB Ratchet Expansion: $33.8T",
             "Expected Cost per DALY (Risk-Adjusted): $0.177",
             "Expected Treaty ROI (Risk-Adjusted): 848k:1",
             "Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x",
             "Annual Lives Saved from 1% Reduction in Conflict Deaths: 2.45 thousand lives/year",
             "1% treaty Basic Annual Benefits (Peace + R&D Savings): $172B",
             "Annual QALYs Gained from Peace Dividend: 85.6 thousand QALYs/year",
+            "Treaty Ratchet Funding Multiplier (50yr): 24.8x",
+            "Treaty Ratchet Premium over 50 Years: $32.4T",
             "Treaty ROI - Historical Rate (Existing Drugs): 259k:1",
             "Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8M:1",
             "Total Annual Treaty System Costs: $290M",
@@ -10734,13 +11143,18 @@
             "US Waste (VSL Equivalents): 357 thousand people",
             "Efficiency Gap / Treaty Funding: 180:1",
             "US Major Diseases Total Annual Cost: $1.25T",
+            "Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x",
             "US Political Reform Investment (Total): $25.5B",
             "US Senate Treaty Advocacy Cost: $670M",
             "Annual VICTORY Incentive Alignment Bond Payout: $2.72B",
             "Annual Return Percentage for VICTORY Incentive Alignment Bondholders: 272%",
             "Lives Saved per Voter: 38.4 lives",
             "Suffering Hours Prevented per Voter: 6.9 million hours",
+            "Cumulative War Costs over 50 Years (Current Trajectory): $568T",
+            "War Costs Saved via Peace Trajectory (50yr): $141T",
             "Global Patients Willing to Participate in Clinical Trials: 1.08 billion people",
+            "Wishonia Average Income at Year 20: $695K",
+            "Wishonia GDP at Year 20: $6.39 quadrillion",
             "External Data Sources",
             "ADAPTABLE Trial Cost per Patient: $929",
             "ADAPTABLE Trial Total Cost: $14M",
@@ -10766,6 +11180,7 @@
             "Annual Defense Industry Lobbying Spending: $127M",
             "Deworming Cost per DALY: $55",
             "dFDA Pragmatic Trial Cost per Patient: $929",
+            "Disease Burden as % of GDP: 13%",
             "DOT VSL: $13.7M",
             "Drug Development Cost (1980s): $194M",
             "Drug Discovery to Approval Timeline: 14 years",
@@ -10808,7 +11223,6 @@
             "Annual Global Spending on Clinical Trials: $60B",
             "Global Daily Deaths from Disease and Aging: 150 thousand deaths/day",
             "Global Annual Direct Medical Costs of Disease: $9.9T",
-            "Global Annual Economic Value of Human Life Lost to Disease: $94.2T",
             "Global Annual Productivity Loss from Disease: $5T",
             "Global GDP (2025): $115T",
             "Annual Global Government Spending on Clinical Trials: $4.5B",
@@ -10819,6 +11233,7 @@
             "Annual Global Nonprofit Spending on Clinical Trials: $3.5B",
             "Annual Global Pharmaceutical R&D Spending: $300B",
             "Global Population in 2024: 8 billion of people",
+            "Global Population 2045 (Projected): 9.2 billion of people",
             "Critical Mass Threshold for Social Change: 3.5%",
             "Annual Global Spending on Symptomatic Disease Treatment: $8.2T",
             "YLD Proportion of Total DALYs: 0.39 proportion",
@@ -10857,7 +11272,6 @@
             "Political Success Probability: 1%",
             "Post-Office Career Value (per politician): $10M",
             "Post-1962 Drug Approval Reduction: 70%",
-            "Percentage Military Spending Cut After WW2: 30%",
             "Pre-1962 Drug Development Cost (1980 Dollars): $6.5M",
             "Pre-1962 Drug Development Cost (2024 Dollars): $24.7M",
             "Pre-1962 Physician Count (Unverified): 144 thousand physicians",
@@ -10915,6 +11329,10 @@
             "US Life Expectancy: 77.5 years",
             "US Median Household Income: $80.6K",
             "US Mental Health Costs: $350B",
+            "US Military Spending in 1939 (Constant 2024 Dollars): $29B",
+            "US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42T",
+            "US Military Spending in 1947 (Constant 2024 Dollars): $176B",
+            "US Military Spending in 2024: $886B",
             "US Military Spending as Percentage of GDP: 3.5%",
             "US Population in 2024: 335 million people",
             "Senators for Treaty Ratification: 67 senators",
@@ -10929,6 +11347,7 @@
             "Percentage of Workforce Experiencing Productivity Loss from Chronic Illness: 28%",
             "Core Definitions",
             "ADAPTABLE Trial Patients Enrolled: 15.1 thousand patients",
+            "AI GDP Multiplier Onset Year: 8 years",
             "Approved Drug-Disease Pairings: 1.75 thousand pairings",
             "Average Life Extension per Beneficiary: 12 years",
             "Celebrity and Influencer Endorsements: $15M",
@@ -10991,6 +11410,7 @@
             "Minimum Investment for Family Offices: $5M",
             "Fundamentally Unavoidable Death Percentage: 7.37%",
             "Global-to-US Political Cost Ratio: 5:1",
+            "Governance Dysfunction Recovered by Year 20: 100%",
             "Hours Per Day: 24",
             "Hours Per Year: 8.76 thousand",
             "Human Protein-Coding Genes: 20 thousand genes",
@@ -11007,6 +11427,7 @@
             "Pharma Phase 2/3 Cost Barrier Per Drug: $1.56B",
             "Pre-1962 Validation Years: 77 years",
             "QALYs per COVID Death Averted: 5 QALYs/death",
+            "R&D Spillover Multiplier: 2x",
             "Safe Compounds Available for Testing: 9.5 thousand compounds",
             "Seconds Per Minute: 60",
             "Seconds Per Year: 31.5 million",
@@ -11029,7 +11450,7 @@
             "US Base Political Spending: 28.8 billion"
           ],
           "published": true,
-          "lastmod": "2026-03-01"
+          "lastmod": "2026-03-03"
         }
       ],
       "pageCount": 2

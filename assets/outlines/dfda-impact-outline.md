@@ -2,15 +2,16 @@
 
 **Config:** _quarto-dfda-impact.yml
 **Type:** website
-**Files:** 1 | **Words:** 11,229 | **Images:** 21 | **Est. Pages:** ~55
+**Files:** 1 | **Words:** 11,483 | **Images:** 21 | **Est. Pages:** ~56
 
 #### knowledge/appendix/dfda-impact-paper.qmd
 **Title:** Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents
 **Description:** Only 15 diseases/year (95% CI: 8 diseases/year-30 diseases/year) get their first treatment each year. With 6.65 thousand diseases (95% CI: 5.7 thousand diseases-8.24 thousand diseases) lacking effective treatments, the backlog would take 443 years (95% CI: 324 years-712 years) to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x (95% CI: 4.2x-61.4x), cutting that timeline from 443 years (95% CI: 324 years-712 years) to 36 years (95% CI: 11.6 years-77.1 years). The average untreated disease gets a treatment 212 years (95% CI: 135 years-355 years) earlier, saving 10.7 billion deaths (95% CI: 7.4 billion deaths-16.2 billion deaths) at $0.842 (95% CI: $0.242-$1.75) per year of healthy life saved.
-**Stats:** 11,229 words | 1,210 lines | 21 images | ~55p
+**Stats:** 11,483 words | 1,212 lines | 21 images | ~56p
 
   - Executive Summary
     - The Receipts {#key-findings}
+    - Why These Numbers Are Large {#why-these-numbers-are-large}
     - Key Metric Derivations
     - Interpreting These Figures: Cumulative, Not Annual
     - The Discovery Capacity Model {#the-discovery-capacity-model}
@@ -99,7 +100,6 @@
     - Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
     - Financial Analysis Summary {#financial-analysis-summary}
       - Health Impact Uncertainty Analysis
-      - Financial Visualizations
     - Cost-Utility Framework {#dfda-icer-analysis---cost-utility-framework}
       - QALY Benefit Streams Breakdown
     ![Three different ways this saves 565 billion years of human suffering. We made them into a pie chart.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-qaly-benefit-streams-breakdown-bw-academic.jpg)
