@@ -8190,6 +8190,52 @@ US_POPULATION_2024 = Parameter(
     latex_symbol=r"Pop_{US}",  # LaTeX symbol for equations
 )
 
+US_VOTE_DECISIVE_PROBABILITY = Parameter(
+    1 / 60_000_000,
+    source_ref=ReferenceID.ODDS_OF_DECISIVE_VOTE,
+    source_type="external",
+    confidence="high",
+    distribution="fixed",
+    description="Probability of a single vote being decisive in a US presidential election. "
+                "Gelman, Silver, and Edlin (2012) estimate roughly 1 in 60 million on average, "
+                "varying by state from 1 in 10 million (swing states) to 1 in 1 billion (safe states).",
+    display_name="Probability of Decisive Vote (US)",
+    unit="probability",
+    keywords=["vote", "decisive", "probability", "election", "presidential", "1 in 60 million"],
+    latex_symbol=r"P_{decisive}",
+)
+
+US_FEDERAL_SPENDING_PER_CAPITA = Parameter(
+    US_FEDERAL_SPENDING_2024 / US_POPULATION_2024,
+    source_type="calculated",
+    confidence="high",
+    description="US federal spending per capita. $6.8T total federal spending divided by 335M population.",
+    display_name="US Federal Spending per Capita",
+    unit="USD/person",
+    formula="US_FEDERAL_SPENDING_2024 / US_POPULATION_2024",
+    inputs=["US_FEDERAL_SPENDING_2024", "US_POPULATION_2024"],
+    compute=lambda ctx: ctx["US_FEDERAL_SPENDING_2024"] / ctx["US_POPULATION_2024"],
+    keywords=["federal", "spending", "per capita", "per person", "government"],
+    latex_symbol=r"Spend_{fed,pc}",
+)
+
+US_VOTE_EXPECTED_VALUE = Parameter(
+    US_VOTE_DECISIVE_PROBABILITY * US_FEDERAL_SPENDING_PER_CAPITA,
+    source_type="calculated",
+    confidence="high",
+    description="Expected monetary value of a single vote in a US presidential election. "
+                "Calculated as the probability of being decisive (1 in 60M) times federal "
+                "spending per capita (~$20,300). Represents the expected influence over "
+                "government resource allocation from casting one vote.",
+    display_name="Expected Value of a Vote (US)",
+    unit="USD",
+    formula="US_VOTE_DECISIVE_PROBABILITY x US_FEDERAL_SPENDING_PER_CAPITA",
+    inputs=["US_VOTE_DECISIVE_PROBABILITY", "US_FEDERAL_SPENDING_PER_CAPITA"],
+    compute=lambda ctx: ctx["US_VOTE_DECISIVE_PROBABILITY"] * ctx["US_FEDERAL_SPENDING_PER_CAPITA"],
+    keywords=["vote", "expected value", "worth", "cost", "democracy", "influence"],
+    latex_symbol=r"EV_{vote}",
+)
+
 PER_CAPITA_CHRONIC_DISEASE_COST = Parameter(
     US_CHRONIC_DISEASE_SPENDING_ANNUAL / US_POPULATION_2024,
     source_type="calculated",

@@ -15,11 +15,11 @@ feed-date: '2026-03-19'
 youtube-thumbnail: /assets/podcast/untapped-therapeutic-frontier-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-You think you've explored medicine. In reality, you're standing in the parking lot of Disney World bragging about how fun the pavement is. You've taken pictures of the asphalt. You've written dissertations about the parking stripes. You've never gone inside.
+On Wishonia, when we decided to cure disease, we started by counting two things: how many safe molecules we had, and how many diseases existed. Then we multiplied them. Then we tested them. It took 50 years. We're still not sure why it took so long.
 
-After a century of pharmacology, most beneficial effects of molecules on diseases remain unexplored. Not because biology is constrained. Because clinical trials are slow, expensive, and run by people who think "urgency" is a type of perfume.
+Your species has been doing pharmacology for a century. I assumed you'd be further along. You are not further along. After 100 years, you have tested approximately one-third of one percent of the drug-disease combinations you could test using compounds you already know are safe. The rest is sitting there, untested, because testing things costs money and money is currently busy being missiles.
 
-Here's the math. It's painful but brief, like a flu shot administered by someone who hates you.
+Here is the math. It is brief.
 
 ## Your Tiny Sandbox
 
@@ -36,7 +36,7 @@ That's it. That's your entire medicine cabinet after five millennia.
 
 ## The Target List (Ways Your Body Breaks)
 
-* **Codes:** The ICD-10 lists {{< var icd_10_total_codes_nounit >}} ways your meat can malfunction. Humanity's most comprehensive to-do list, and you're ignoring it.
+* **Codes:** The ICD-10 lists {{< var icd_10_total_codes_nounit >}} ways your meat can malfunction. This is your species' most comprehensive to-do list. You are not doing it.
 * **Real Targets:** After consolidation, {{< var trial_relevant_diseases_count >}} trial-relevant diseases worth actually fixing.
 
 ![Fourteen thousand ways to be sick, but only 1,000 worth testing drugs against. The other 13,000 are just spelling variations.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-target-list-ways-your-body-breaks-bw-academic.jpg)
@@ -65,11 +65,11 @@ Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var t
 
 **Humanity has explored about a third of one percent of the theoretically testable drug-disease space.**
 
-You are the detective who searched one drawer and declared the case cold.
+You checked one drawer, closed it, and told the patient the case was cold. The patient is also cold, because the patient is dead.
 
 ![The dot is everything you know about medicine. The rest is everything you don't. The dot is very small. You seem comfortable with this.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-scorecard-bw-academic.jpg)
 
-It's like reading the first page of *War and Peace* and writing a book report called "It's About a Party." Technically accurate. Cosmically insufficient.
+On Wishonia, if someone explored 0.34% of something and declared the job finished, we would gently suggest they continue. On Earth, you publish a paper about the 0.34% and apply for a grant to study the remaining 0.34% you studied last time.
 
 ## Is The Untested Stuff Useful?
 
@@ -101,9 +101,9 @@ This is like exploring Earth by looking at one grain of sand on one beach in New
 
 ## Why You Are Still Sick
 
-It's not because science is hard. It's because you've built a system that is allergic to answers.
+I want to be very clear about this: you are not sick because curing disease is impossible. You are sick because you built a system that charges $100 million to try, and then gave all the money to a different system that builds missiles. The missiles work fine.
 
-1. **Trials Cost Too Much:** A typical Phase II-III RCT costs **$30-$100M** (Median cost per patient {{< var traditional_phase3_cost_per_patient >}}). At that price, you only test "sure things." Safe bets. Boring bets. Bets that don't cure cancer. Clinical trials are a velvet-rope nightclub where the bouncer is a regulatory agency and the cover charge is a hundred million dollars.
+1. **Trials Cost Too Much:** A typical Phase II-III RCT costs **$30-$100M** (median cost per patient {{< var traditional_phase3_cost_per_patient >}}). At that price, you only test things pharmaceutical companies can patent. Everything else sits untested. It's a lottery where the ticket costs $100 million and only rich molecules are allowed to play.
 
 ![High costs, patent rules, and fear of lawsuits form a bottleneck between cures and people. The bottleneck is shaped like a dollar sign.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-why-you-are-still-sick-bw-academic.jpg)
 
@@ -145,7 +145,7 @@ We haven't even started.
 
 Some will argue "diminishing returns": the more we search, the harder each new discovery becomes. This assumes we've already picked the low-hanging fruit.
 
-We haven't picked *any* fruit. We're still in the parking lot arguing about whether fruit exists.
+You haven't picked *any* fruit. You're standing outside the orchard filling out an application to enter the orchard. The application is 47 pages long. The fruit is rotting.
 
 Diminishing returns only kicks in after you've explored a significant fraction of the space. At <1% explored, every trial teaches you something new about human biology, improving your ability to predict what works next. Learning compounds. Depletion is negligible. You are nowhere near the bottom of the barrel because you have not yet located the barrel.
 
@@ -179,8 +179,6 @@ More importantly, your decentralized FDA builds *permanent infrastructure* for s
 
 **A decentralized, automated pragmatic trial system is the only route to systematically explore the remaining 99.999...% of medical space.**
 
-You're not in the parking lot because there's nothing inside Disney World. You're in the parking lot because the entrance fee is $100 million and requires 17 years of paperwork. People are dying in the parking lot. The rides are right there. You can hear the screaming. (Fun screaming. Cure screaming.)
+The cures exist. The molecules are sitting there. The patients are willing. The only thing between them is a system that charges $100 million to introduce them and takes 17 years to make the introduction. On Wishonia, this would be considered a hostage situation. On Earth, it is considered "regulation."
 
-![Everything you know about medicine is a dot. Everything you could know is the universe. Between them: money and time. You have neither.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-bottom-line-bw-academic.jpg)
-
-The cures are inside. Open the gate.
+![Everything you know about medicine is a dot. Everything you could know is the rest of the page. The dot is not growing.

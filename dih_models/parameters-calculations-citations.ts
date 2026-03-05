@@ -2042,6 +2042,16 @@ export const US_TOTAL_LOBBYING_ANNUAL: Parameter = {
   confidenceInterval: [3740000000.0, 5060000000.0],
 };
 
+export const US_VOTE_DECISIVE_PROBABILITY: Parameter = {
+  value: 1.6666666666666667e-08,
+  unit: "probability",
+  displayName: "Probability of Decisive Vote (US)",
+  description: "Probability of a single vote being decisive in a US presidential election. Gelman, Silver, and Edlin (2012) estimate roughly 1 in 60 million on average, varying by state from 1 in 10 million (swing states) to 1 in 1 billion (safe states).",
+  sourceType: "external",
+  sourceRef: "odds-of-decisive-vote",
+  confidence: "high",
+};
+
 export const VALLEY_OF_DEATH_ATTRITION_PCT: Parameter = {
   value: 0.4,
   unit: "percentage",
@@ -4176,6 +4186,17 @@ export const US_CONGRESS_FULL_ADVOCACY_COST: Parameter = {
   latex: "\\begin{gathered}\nCost_{US,congress} \\\\\n= N_{congress} \\times V_{post-office} \\\\\n= 535 \\times \\$10M \\\\\n= \\$5.35B\n\\end{gathered}",
 };
 
+export const US_FEDERAL_SPENDING_PER_CAPITA: Parameter = {
+  value: 20298.507462686568,
+  unit: "USD/person",
+  displayName: "US Federal Spending per Capita",
+  description: "US federal spending per capita. $6.8T total federal spending divided by 335M population.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "US_FEDERAL_SPENDING_2024 / US_POPULATION_2024",
+  latex: "\\begin{gathered}\nSpend_{fed,pc} \\\\\n= \\frac{Spending_{federal}}{Pop_{US}} \\\\\n= \\frac{\\$6.8T}{335M} \\\\\n= \\$20.3K\n\\end{gathered}",
+};
+
 export const US_FED_DISCRETIONARY_EFFICIENCY: Parameter = {
   value: 0.4052941176470588,
   unit: "percent",
@@ -4372,6 +4393,17 @@ export const US_SENATE_TREATY_ADVOCACY_COST: Parameter = {
   confidence: "medium",
   formula: "SENATORS_FOR_TREATY x POST_OFFICE_VALUE",
   latex: "\\begin{gathered}\nCost_{US,senate} \\\\\n= N_{senators,treaty} \\times V_{post-office} \\\\\n= 67 \\times \\$10M \\\\\n= \\$670M\n\\end{gathered}",
+};
+
+export const US_VOTE_EXPECTED_VALUE: Parameter = {
+  value: 0.0003383084577114428,
+  unit: "USD",
+  displayName: "Expected Value of a Vote (US)",
+  description: "Expected monetary value of a single vote in a US presidential election. Calculated as the probability of being decisive (1 in 60M) times federal spending per capita (~$20,300). Represents the expected influence over government resource allocation from casting one vote.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "US_VOTE_DECISIVE_PROBABILITY x US_FEDERAL_SPENDING_PER_CAPITA",
+  latex: "\\begin{gathered}\nEV_{vote} = P_{decisive} \\times Spend_{fed,pc} = 0 \\times \\$20.3K = \\$0.000338\n\\\\[0.5em]\n\\text{where } Spend_{fed,pc} = \\frac{Spending_{federal}}{Pop_{US}} = \\frac{\\$6.8T}{335M} = \\$20.3K\n\\end{gathered}",
 };
 
 export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
@@ -5698,6 +5730,7 @@ export const parameters = {
   US_SENATORS_FOR_TREATY,
   US_TOTAL_FEDERAL_CAMPAIGN_SPENDING_2024,
   US_TOTAL_LOBBYING_ANNUAL,
+  US_VOTE_DECISIVE_PROBABILITY,
   VALLEY_OF_DEATH_ATTRITION_PCT,
   VALUE_OF_STATISTICAL_LIFE,
   VITAMIN_A_COST_PER_DALY,
@@ -5890,6 +5923,7 @@ export const parameters = {
   TYPE_I_ERROR_BENEFIT_DALYS,
   UNEXPLORED_RATIO,
   US_CONGRESS_FULL_ADVOCACY_COST,
+  US_FEDERAL_SPENDING_PER_CAPITA,
   US_FED_DISCRETIONARY_EFFICIENCY,
   US_FED_DISCRETIONARY_WASTE_PCT,
   US_GOVERNANCE_EFFICIENCY_GDP,
@@ -5908,6 +5942,7 @@ export const parameters = {
   US_MILITARY_SPENDING_CURRENT_VS_PREWAR_MULTIPLIER,
   US_POLITICAL_REFORM_INVESTMENT_TOTAL,
   US_SENATE_TREATY_ADVOCACY_COST,
+  US_VOTE_EXPECTED_VALUE,
   VICTORY_BOND_ANNUAL_PAYOUT,
   VICTORY_BOND_ANNUAL_RETURN_PCT,
   VOTER_LIVES_SAVED,
@@ -7080,6 +7115,20 @@ export const citations: Record<string, Citation> = {
         ],
         note: "Estimated from major foundation budgets and activities",
   },
+  "odds-of-decisive-vote": {
+        id: "odds-of-decisive-vote",
+        type: "article-journal",
+        title: "Odds of a single vote being decisive in a U.S. presidential election",
+        author: [
+          {
+            literal: "Columbia/NBER"
+          },
+        ],
+        issued: { 'date-parts': [[2012]] },
+        'container-title': "Columbia/NBER: What Is the Probability Your Vote Will Make a Difference?",
+        URL: "https://sites.stat.columbia.edu/gelman/research/published/probdecisive2.pdf",
+        note: "Columbia/NBER: What Is the Probability Your Vote Will Make a Difference? | Economic Inquiry 2012",
+  },
   "oecd-govt-spending": {
         id: "oecd-govt-spending",
         type: "webpage",
@@ -7854,11 +7903,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 509,
-  external: 189,
-  calculated: 217,
+  total: 512,
+  external: 190,
+  calculated: 219,
   definitions: 103,
-  citations: 134,
+  citations: 135,
 } as const;
 
 // ============================================================================

@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 509 parameters used in the analysis, organized by type:
+This appendix documents all 512 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 189
-- Calculated values: 217
+- External sources (peer-reviewed): 190
+- Calculated values: 219
 - Core definitions: 103
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (217 parameters) • [External Data Sources](#sec-external) (189 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
+[Calculated Values](#sec-calculated) (219 parameters) • [External Data Sources](#sec-external) (190 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -9692,7 +9692,7 @@ $$
 
 :::
 
-### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.0018 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
+### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.00177 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -9856,7 +9856,7 @@ Expected cost per DALY accounting for political success probability uncertainty.
 
 **Inputs**:
 
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0018
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
@@ -11130,7 +11130,7 @@ How many times more cost-effective than bed nets (using bed net cost per DALY mi
 **Inputs**:
 
 - [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0018
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
 
 $$
 \begin{gathered}
@@ -11272,7 +11272,7 @@ How many times more cost-effective the treaty campaign is vs direct funding. Tre
 **Inputs**:
 
 - [dFDA Direct Funding Cost per DALY](#sec-dfda_direct_funding_cost_per_daly) 🔢: $0.842
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.0018
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
 
 $$
 \begin{gathered}
@@ -11792,6 +11792,44 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-us_congress_full_advocacy_cost.qmd >}}
+
+:::
+
+### US Federal Spending per Capita: $20.3K {#sec-us_federal_spending_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US federal spending per capita. $6.8T total federal spending divided by 335M population.
+
+**Inputs**:
+
+- [US Federal Spending (FY2024)](#sec-us_federal_spending_2024) 📊: $6.8T
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+Spend_{fed,pc} \\
+= \frac{Spending_{federal}}{Pop_{US}} \\
+= \frac{\$6.8T}{335M} \\
+= \$20.3K
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_federal_spending_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_federal_spending_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_federal_spending_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_federal_spending_per_capita.qmd >}}
 
 :::
 
@@ -12630,6 +12668,52 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-us_senate_treaty_advocacy_cost.qmd >}}
+
+:::
+
+### Expected Value of a Vote (US): $0.000338 {#sec-us_vote_expected_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected monetary value of a single vote in a US presidential election. Calculated as the probability of being decisive (1 in 60M) times federal spending per capita (~$20,300). Represents the expected influence over government resource allocation from casting one vote.
+
+**Inputs**:
+
+- [Probability of Decisive Vote (US)](#sec-us_vote_decisive_probability) 📊: 1.67e-08 probability
+- [US Federal Spending per Capita](#sec-us_federal_spending_per_capita) 🔢: $20.3K
+
+$$
+\begin{gathered}
+EV_{vote} \\
+= P_{decisive} \times Spend_{fed,pc} \\
+= 0 \times \$20.3K \\
+= \$0.000338
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Spend_{fed,pc} \\
+= \frac{Spending_{federal}}{Pop_{US}} \\
+= \frac{\$6.8T}{335M} \\
+= \$20.3K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_vote_expected_value.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_vote_expected_value.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_vote_expected_value.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_vote_expected_value.qmd >}}
 
 :::
 
@@ -17278,6 +17362,22 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 #### Input Distribution
 
 {{< include ../figures/distribution-us_total_lobbying_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Probability of Decisive Vote (US): 1.67e-08 probability {#sec-us_vote_decisive_probability}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of a single vote being decisive in a US presidential election. Gelman, Silver, and Edlin (2012) estimate roughly 1 in 60 million on average, varying by state from 1 in 10 million (swing states) to 1 in 1 billion (safe states).
+
+**Source**: [@odds-of-decisive-vote]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
