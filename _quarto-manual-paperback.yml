@@ -125,7 +125,8 @@ book:
         - knowledge/references.qmd
         - knowledge/appendix/acknowledgments.qmd
         - knowledge/appendix/copyright.qmd
-        - knowledge/appendix/back-cover.qmd
+        # CUT: back-cover.qmd - contains Amazon link, Apple Books rejects EPUBs with competitor store links
+        # - knowledge/appendix/back-cover.qmd
 
 # Remove "Appendix" prefix
 language:
