@@ -87,6 +87,8 @@ The treaty requires multilateral cuts, so relative military balance is preserved
 
 Here's why the elasticity is probably better than 1.0: military spending doesn't just respond to threats; it generates them. Robert Pape at the University of Chicago found that 95% of suicide terrorist attacks from 1980 to 2003 were responses to foreign military occupation, not ideology [@pape-dying-to-win]. Half were completely secular. Your $8 trillion War on Terror [@war-on-terror-cost-blowback] took terrorist attacks from about 1,000 per year to nearly 17,000 by 2014 [@terrorism-attacks-increased-post-2001]. Bases provoke resistance, resistance justifies bigger budgets, bigger budgets fund more bases. It's a feedback loop, and feedback loops don't scale linearly. Cut 1% of the bases, you remove 1% of the provocation, which removes more than 1% of the terrorism, which removes the justification for more than 1% of next year's budget. The elasticity isn't 1.0 because you're not just reducing spending; you're interrupting the cycle that manufactures the thing you're spending on. It's like discovering that your umbrella was causing the rain. (See the [full data](../solution/1-percent-treaty.qmd#overfunded-threats-that-countries-spend-trillions-on) on occupation and terrorism.)
 
+And you've tested this at scale. After World War II, America cut military spending {{< var post_ww2_military_cut_pct >}} (from {{< var us_military_spending_1945_peak_annual_2024usd >}} to {{< var us_military_spending_1947_annual_2024usd >}} in today's money) and got the [greatest economic boom in human history](../proof.qmd#post-ww2): 8% GDP growth for a decade, home ownership doubled, the interstate highway system. The Cold War ended, spending dropped by half, and you [accidentally invented the internet](../proof.qmd#cold-war-dividend). Every time your species stops buying explosions, prosperity shows up uninvited. You're asking for 1%. You've proven you can handle {{< var post_ww2_military_cut_pct >}}.
+
 ![Theory says less war spending means proportionally less war. Reality is messier. Turns out humans aren't very good at reducing violence incrementally.](/assets/images/peace-dividend/peace-dividend-section-causal-elasticity-assumption-bw-academic.jpg)
 
 ### How Good Are the Sources?
@@ -107,3 +109,34 @@ I'm being honest about confidence levels, which is more than your defense contra
 For policy decisions, use the **Captured Dividend ({{< var treaty_annual_funding >}})** as the reliable number. Money moved directly to medical research. No assumptions about whether humans will fight less. Just a bank transfer from the explosion account to the medicine account.
 
 The Societal Dividend is the upside if you manage to behave yourselves. I'm not holding my breath. (I don't have lungs, but the expression stands.)
+
+## The Trajectory, Not the Snapshot
+
+Skeptics ask whether 1% fewer bombs means exactly 1% fewer wars. This is the wrong question. It's like asking whether the first seed planted produced exactly one tree's worth of shade. The question is what happens when the seeds keep growing.
+
+Your species cut military spending {{< var post_ww2_military_cut_pct >}} after World War II and got the greatest economic boom in history. That's the empirical answer. But even that misses the point, because the 1% treaty doesn't stay at 1%.
+
+[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are tradable securities held by rich and powerful people whose income scales directly with treaty expansion. At 1%, bondholder payouts are {{< var victory_bond_annual_payout >}}/year. At 2%, they double. At 10%, they collect ten times as much. These aren't activists you can ignore at a dinner party. They're investors with Bloomberg terminals, lobbyists, and the same tools your defense contractors currently use to expand military budgets, except pointed at curing diseases.
+
+At just 1%, the IAB political incentive pool ({{< var iab_political_incentive_funding_annual >}}/year) already outguns your entire defense industry's lobbying budget ({{< var defense_lobbying_annual >}}/year) by {{< var iab_vs_defense_lobby_ratio_at_1pct >}}. Every expansion multiplies this. You've built a [defense lobby in reverse](../solution/aligning-incentives.qmd#why-this-scales-the-ratchet-effect), and it's {{< var iab_vs_defense_lobby_ratio_at_1pct >}} stronger than the original on day one.
+
+### Two Futures
+
+Your species currently spends {{< var global_annual_direct_indirect_war_cost >}}/year on war. Over 50 years at current levels, that's {{< var war_costs_cumulative_50yr_current_trajectory >}}. This is the price tag of the current trajectory: terrorism feedback loops getting worse (Robert Pape showed [bases create the terrorism they're built to stop](../solution/1-percent-treaty.qmd#overfunded-threats-that-countries-spend-trillions-on)), an AI weapons race that a [planet called Moronia](../futures/moronia.qmd) already ran to completion, and a species that spends 42 trillion on self-destruction when 25 trillion would have cured everything.
+
+The other future: bondholders push for treaty expansion because their income depends on it. Each expansion weakens the terrorism cycle (fewer bases, fewer attacks, less justification for more bases). The AI gets trained on curing cancer instead of targeting civilians. The money compounds in the right direction.
+
+| Years | Treaty % | Research Funding | War Costs Saved | What Happens |
+|:------|:---------|:-----------------|:----------------|:-------------|
+| 1-3 | 1% | {{< var treaty_annual_funding >}}/yr | $114B/yr | Treaty passes. Bondholders start lobbying for 2%. |
+| 4-7 | 2% | $54.4B/yr | $227B/yr | Politicians discover voters like living. |
+| 8-12 | 5% | $136B/yr | $568B/yr | Health lobby rivals defense lobby. |
+| 13-20 | 10% | $272B/yr | $1.14T/yr | Defense contractors pivot to health. |
+| 21-35 | 25% | $680B/yr | $2.84T/yr | Superpowers compete on health outcomes. |
+| 36-50 | 50% | $1,360B/yr | $5.68T/yr | Historians write confused books about why this took so long. |
+
+Over 50 years, the trajectory change is worth {{< var peace_trajectory_total_differential_50yr >}}: {{< var treaty_cumulative_50yr_with_ratchet >}} redirected to curing diseases, plus {{< var war_costs_saved_peace_trajectory_50yr >}} your species no longer spends on the industry of blowing things up and rebuilding them. That's at e = 1.0 (1% spending cut = 1% war cost reduction). Given that military spending [generates the terrorism it's built to fight](../solution/1-percent-treaty.qmd#overfunded-threats-that-countries-spend-trillions-on), the actual elasticity is probably better, which means these numbers are conservative.
+
+Moronia's politicians were rewarded for buying weapons. Moronia's contractors were rewarded for selling weapons. Moronia's AI read the receipts and optimized accordingly. Every budget vote was an instruction, and the AI was a very good student. The IAB ratchet flips the incentive structure using the same force that currently points it toward explosions: money. The difference between Moronia and the civilization that survived wasn't intelligence, resources, or goodwill. It was whether the richest people on the planet made more money from expanding the treaty or from letting it die.
+
+The 1% treaty isn't the peace dividend. It's the down payment on a future of so nice that your brain is literally incapable of even imagining it currently.
