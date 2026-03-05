@@ -293,6 +293,7 @@ def main():
     parser.add_argument("--keyframes-only", action="store_true", help="Stop after keyframe generation (skip Veo animation)")
     parser.add_argument("--ken-burns", action="store_true", help="Generate Ken Burns stills video (pan/zoom on keyframes, no Veo)")
     parser.add_argument("--combine", action="store_true", help="Combine chapters into single audiobook MP3/M4B (off by default)")
+    parser.add_argument("--mp3-only", action="store_true", help="Skip text/TTS/WAV; re-encode existing WAVs to MP3 and upload")
     args = parser.parse_args()
 
     pipeline_start = time.monotonic()
@@ -332,36 +333,41 @@ def main():
     config_path = Path(args.config)
     if not config_path.is_absolute():
         config_path = PROJECT_ROOT / config_path
-    t0_stale = time.monotonic()
-    print_staleness_summary(config_path, args.chapter, args.start, args.end)
-    stale_elapsed = time.monotonic() - t0_stale
-    _step_timings.append(("Staleness check", stale_elapsed, True, 0))
-    print(f"  [{_ts()}] Staleness check took {_fmt_elapsed(stale_elapsed)}")
 
-    # --- Step 1: Generate narration text ---
-    text_args = list(shared)
-    if args.force:
-        text_args.append("--force")
-    if args.dry_run:
-        text_args.append("--dry-run")
+    if not args.mp3_only:
+        t0_stale = time.monotonic()
+        print_staleness_summary(config_path, args.chapter, args.start, args.end)
+        stale_elapsed = time.monotonic() - t0_stale
+        _step_timings.append(("Staleness check", stale_elapsed, True, 0))
+        print(f"  [{_ts()}] Staleness check took {_fmt_elapsed(stale_elapsed)}")
 
-    if not run_step("Generate narration text", "generate_audiobook_text.py", text_args):
-        _print_timing_summary(pipeline_start)
-        sys.exit(1)
+        # --- Step 1: Generate narration text ---
+        text_args = list(shared)
+        if args.force:
+            text_args.append("--force")
+        if args.dry_run:
+            text_args.append("--dry-run")
 
-    if args.dry_run:
-        _print_timing_summary(pipeline_start)
-        print(f"[{_ts()}] [DONE] Dry run complete (text only, no audio generated).")
-        return
+        if not run_step("Generate narration text", "generate_audiobook_text.py", text_args):
+            _print_timing_summary(pipeline_start)
+            sys.exit(1)
 
-    # --- Step 2: Generate audio ---
+        if args.dry_run:
+            _print_timing_summary(pipeline_start)
+            print(f"[{_ts()}] [DONE] Dry run complete (text only, no audio generated).")
+            return
+
+    # --- Step 2: Generate audio (or mp3-only re-encode) ---
     audio_args = list(shared)
     if args.force:
         audio_args.append("--force")
     if not args.combine:
         audio_args.append("--no-combine")
+    if args.mp3_only:
+        audio_args.append("--mp3-only")
 
-    if not run_step("Generate audio + MP3s + RSS", "generate_audiobook.py", audio_args):
+    step_label = "Re-encode MP3s" if args.mp3_only else "Generate audio + MP3s + RSS"
+    if not run_step(step_label, "generate_audiobook.py", audio_args):
         _print_timing_summary(pipeline_start)
         sys.exit(1)
 
@@ -385,7 +391,7 @@ def main():
             print()
 
     # --- Step 3: Scene segmentation ---
-    if args.video:
+    if args.video and not args.mp3_only:
         scene_args = list(shared)
         if args.force:
             scene_args.append("--force")
@@ -426,7 +432,7 @@ def main():
             sys.exit(1)
 
     # --- Step 5: Audible/ACX export ---
-    if not args.no_audible:
+    if not args.no_audible and not args.mp3_only:
         audible_args = ["--config", args.config, "--target-rms", str(args.target_rms)]
         if args.force:
             audible_args.append("--force")
