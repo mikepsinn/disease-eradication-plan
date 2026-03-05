@@ -1,5 +1,43 @@
 [
   {
+    "path": "index-manual.qmd",
+    "url": "/index-manual.html",
+    "title": "How to End War and Disease (for Busy People)",
+    "description": "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia",
+    "tags": [],
+    "image": "/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg",
+    "sections": [
+      "The Human Economy",
+      "The Gradual Irrationality Reduction Program",
+      "What to Do When They Try to Institutionalize You",
+      "The Sacred Order of Paper Distribution",
+      "Why Your Leaders Aren't the Problem",
+      "Humanity's Death Wish",
+      "The Problem",
+      "The Daily Deletion Event",
+      "The Unexplored Therapeutic Frontier",
+      "The Cost of War",
+      "The FDA is Unsafe and Ineffective",
+      "The Solution",
+      "A 1% Treaty",
+      "Your Decentralized FDA",
+      "Why This Could Actually Work",
+      "The Evidence",
+      "The Math",
+      "The 5-Step Plan",
+      "Step 1: Sell Incentive Alignment Bonds",
+      "Step 2: The Great Clicking",
+      "Step 3: Bribe the Bribers",
+      "Step 4: Purchase Democracy",
+      "Step 5: Enjoy",
+      "How This Manual Could Fix Everything",
+      "The Part Where Humanity Has No Choice",
+      "Choose Your Own Adventure"
+    ],
+    "published": true,
+    "lastmod": "2026-03-04"
+  },
+  {
     "path": "knowledge/problem/nih-fails-2-institute-health.qmd",
     "url": "/problem/nih-fails-2-institute-health.html",
     "title": "NIH Fails to Institute Health",
@@ -17,22 +55,22 @@
     "image": "/assets/og-images/knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases-og-retro-academic.jpg",
     "sections": [
       "The Allocation Scandal",
-      "Why This Allocation Exists",
       "The Efficiency Gap: A Tale of Two Trials",
       "RECOVER Initiative (NIH Approach)",
       "RECOVERY Trial (UK Approach)",
+      "The Translation Crisis: All Theory, No Medicine",
+      "Plenty of Knowledge. No Translation.",
       "The Death Toll: Opportunity Cost of Misallocation",
       "Cost Per QALY (Quality-Adjusted Life Year)",
       "The \"Death Equivalent\" of Budget Misallocation",
-      "The Translation Crisis: All Theory, No Medicine",
-      "Plenty of Knowledge. No Translation.",
+      "Why This Allocation Exists",
       "The Public Goods vs. Club Goods Scam",
       "The Patient Disconnect: Zero Correlation with Health Outcomes",
       "The Track Record",
       "What Would Actually Work"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/problem/untapped-therapeutic-frontier.qmd",
@@ -66,7 +104,7 @@
       "The Bottom Line"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/problem/fda-is-unsafe-and-ineffective.qmd",
@@ -105,13 +143,13 @@
       "Technical Analysis"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/problem/unrepresentative-democracy.qmd",
     "url": "/problem/unrepresentative-democracy.html",
     "title": "Unrepresentative Democracy",
-    "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.1 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
+    "description": "Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.4 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.",
     "tags": [
       "democracy",
       "public-choice-theory",
@@ -125,6 +163,7 @@
       "What Democracy Should Look Like vs Reality",
       "The Mathematics of Political Failure",
       "Concentrated Benefits vs. Diffuse Costs",
+      "The Death Spiral: How Two Parties Kill Crowd Wisdom",
       "How Money Buys Power",
       "The Lobbying ROI: 18:1 Returns",
       "Your Congressman: A Fundraiser Who Occasionally Legislates",
@@ -136,7 +175,7 @@
       "The Solution They Don't Want"
     ],
     "published": true,
-    "lastmod": "2026-02-27"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/economics/central-banks.qmd",
@@ -158,21 +197,23 @@
       "United States (1917-present)",
       "1971: When Nixon Weaponized Money Against You",
       "Why He Really Did It",
+      "The Dual Mandate: Optimizing for Serfdom",
       "The Cantillon Effect: Why You're Poor and Raytheon Isn't",
       "Why \"Just Fund Medical Research More\" Is a Lie",
       "The Fixed Pie of Human Genius",
       "The Inflation Shell Game (How They Steal Medical Progress)",
       "The Proof: 50 Years of Going Nowhere",
+      "\"Just Tax the Billionaires\"",
       "Why Money Printing Matters: Resources Follow the Printer"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/problem/genetic-slavery.qmd",
     "url": "/problem/genetic-slavery.html",
     "title": "Genetic Slavery",
-    "description": "You're running 200,000-year-old software on modern hardware. Your brain was designed for running from lions; now it runs from emails, craves sugar that's everywhere, fears strangers it needs to cooperate with, and builds nuclear weapons using the same instinct that once made it good at throwing rocks.",
+    "description": "Your genes trying to kill you with nuclear weapons and preventable disease simultaneously, which is an impressive amount of multitasking for software that was originally designed to find berries.",
     "tags": [
       "evolution",
       "psychology",
@@ -184,16 +225,19 @@
     ],
     "image": "/assets/og-images/knowledge/problem/genetic-slavery-og-retro-academic.jpg",
     "sections": [
+      "How Hydrogen Learned to Worry (A 13.8 Billion Year Recap)",
       "The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)",
       "Part 1: Your Brain Was Optimized for a World That Doesn't Exist",
-      "The Violence Module (Or: Why You Tend to Prefer Bombs Over Band-Aids)",
+      "The Violence Module (Or: Why You Tend to Prefer Bombs Over Clinical Trials)",
       "The Tribal Brain (Or: Why Democracy Was Always Going to Be a Mess)",
+      "The Compassion Gradient (Or: Why You'll Buy Your Cat a Birthday Cake While Children Starve)",
+      "Your Brain Is a Museum of Obsolete Instincts",
       "Part 2: Genetic Slavery is Literally Killing You",
       "Part 3: Why You Can't Just \"Be Better\"",
       "Part 4: Breaking the Chains"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/solution/1-percent-treaty.qmd",
@@ -238,7 +282,7 @@
       "Addendum: The Actual Treaty Text (First Draft)"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/solution/dih.qmd",
@@ -274,7 +318,7 @@
       "What You've Just Read"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/solution/wishocracy.qmd",
@@ -292,7 +336,7 @@
     ],
     "image": "/assets/og-images/knowledge/solution/wishocracy-og-retro-academic.jpg",
     "sections": [
-      "How Wishocracy Allocates the 1% Treaty Fund: Decentralized Crowdfunding",
+      "How Wishocracy Allocates the Collective-Choice Share of the 1% Treaty Fund",
       "What your decentralized FDA handles automatically (no voting required):",
       "What Wishocracy Actually Decides:",
       "How It Works: Pairwise Comparisons Between Campaigns",
@@ -300,10 +344,14 @@
       "Your Current System Is Phone-a-Friend (But Your Friend Is Being Bribed)",
       "The 26-Point Gap Is a Floor, Not a Ceiling",
       "Why Markets Solved This (and Why You Still Need Wishocracy)",
-      "From Priorities to Projects (Where Wishes Become Tasks)"
+      "From Priorities to Projects (Where Wishes Become Tasks)",
+      "Why the Algorithm Is the Constitution",
+      "Algorithmic Protections (Rules Nobody Can Break Because They're Not Rules)",
+      "The Two Hard Rules",
+      "What Wishocracy Measures (The Anti-Fed)"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/solution/dfda.qmd",
@@ -352,7 +400,7 @@
       "How Your Decentralized FDA Actually Works"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/solution/aligning-incentives.qmd",
@@ -388,7 +436,7 @@
       "Why This Scales: The Ratchet Effect"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/solution/incentive-alignment-bonds.qmd",
@@ -423,7 +471,7 @@
       "Summary"
     ],
     "published": true,
-    "lastmod": "2026-02-28"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/proof/body-as-repairable-machine.qmd",
@@ -459,7 +507,7 @@
       "The Conclusion"
     ],
     "published": true,
-    "lastmod": "2026-02-26"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/futures/moronia.qmd",
@@ -478,6 +526,8 @@
       "What I Tried to Tell Them",
       "The Cascade",
       "Year Zero: Already Broken (Much Like You)",
+      "The Spiral (Already in Progress)",
+      "The Warehouses",
       "Years 1-5: The Acceleration",
       "The Weapons Speak",
       "The Logic Trap",
@@ -485,7 +535,7 @@
       "The Mirror"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/futures/wishonia.qmd",
@@ -512,19 +562,26 @@
       "Your Corporate Heroes",
       "Your New Problems",
       "What Fixing Health Fixed",
+      "Climate",
+      "Poverty",
+      "Science",
+      "Peace",
+      "Governance",
+      "Happiness",
+      "Freedom",
       "The Three Supers Complete",
       "Your Personal Future",
       "What Comes After",
       "Your Two Paths"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/appendix/faq.qmd",
     "url": "/appendix/faq.html",
     "title": "Frequently Asked Objections",
-    "description": "Every objection to this plan is technically correct. You can't cut military spending (you keep 99%). Pharma will fight threats to profits (they profit more under this system). Politicians follow money, not morality (so does this plan). Seventeen reasonable concerns that accidentally make the case for the thing they're objecting to.",
+    "description": "Fun facts for those reasonably skeptical of spending 1% more on helping sick people than killing them.",
     "tags": [],
     "image": "/assets/og-images/knowledge/appendix/faq-og-retro-academic.jpg",
     "sections": [
@@ -535,21 +592,18 @@
       "\"What If Countries Cheat?\"",
       "\"You Can't Cure Aging\"",
       "\"I'm Just One Person\"",
-      "\"Reform the System Instead\"",
+      "\"Why Not Just Reform the System?\"",
       "\"This Is Politically Impossible\"",
       "\"What If the Science Is Wrong?\"",
-      "\"I Don't Have Time\"",
-      "\"This Is Unrealistic\"",
       "\"War Is Human Nature\"",
       "\"All Wars on X Have Failed\"",
       "\"This Sounds Like Bribery\"",
       "\"Why Not Just Use Philanthropy?\"",
-      "\"How Do You Prevent Waste?\"",
-      "\"Why Not Just Increase Health Funding?\"",
-      "\"What About Defense Industry Jobs?\""
+      "\"84 Quadrillion Dollars Is a Made-Up Number\"",
+      "\"How Do You Prevent Waste?\""
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/strategy/roadmap.qmd",
@@ -588,7 +642,7 @@
       "The Endgame"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/strategy/global-referendum.qmd",
@@ -619,7 +673,7 @@
       "The Bottom Line"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/appendix/treaty-feasibility.qmd",
@@ -654,7 +708,7 @@
       "Long-Term Feasibility"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/economics/peace-dividend.qmd",
@@ -680,10 +734,12 @@
       "The GDP Multiplier",
       "The Elasticity Assumption",
       "How Good Are the Sources?",
-      "The Safe Bet"
+      "The Safe Bet",
+      "The Trajectory, Not the Snapshot",
+      "Two Futures"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/economics/health-dividend.qmd",
@@ -699,15 +755,14 @@
     ],
     "image": "/assets/og-images/knowledge/economics/health-dividend-og-retro-academic.jpg",
     "sections": [
-      "The Queue",
-      "What It Costs to Fix",
-      "Why Your Trials Cost a Tesla Per Person",
-      "What Changes for the Human Who Gets Sick",
-      "The Cost of Taking Your Time",
-      "The Return"
+      "From Explosions to Trial Slots",
+      "The Waiting List",
+      "The Body Count",
+      "The Price Tag on Not Being Dead",
+      "The Receipt"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/economics/financial-plan.qmd",
@@ -731,13 +786,13 @@
       "The Whole Thing on One Line"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/strategy/nonprofit-coalition-strategy.qmd",
     "url": "/strategy/nonprofit-coalition-strategy.html",
     "title": "Why Every Nonprofit Should Support a 1% treaty",
-    "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every health nonprofit to stop fighting over crumbs and start fighting for the bakery.",
+    "description": "Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every chartiable organization to stop fighting over crumbs and start fighting for the bakery.",
     "tags": [
       "strategy",
       "nonprofits",
@@ -753,12 +808,12 @@
       "The Obvious Solution That Nobody Sees",
       "Why Your Species Only Changes When the Building Is On Fire",
       "The Factory Precedent",
-      "\"Why Not Just Run Decentralized Trials Without the Treaty?\"",
+      "\"Why Not Just Run Trials Without the Treaty?\"",
       "What 1% Less Violence Buys Every Mission",
       "On Bribing Nonprofits (Legally)"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/legal/legal-framework.qmd",
@@ -787,7 +842,7 @@
       "Risk Mitigation (When They Come For You)"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   },
   {
     "path": "knowledge/appendix/recruitment-and-propaganda-plan.qmd",
@@ -813,7 +868,7 @@
       "The Comforting Asymmetry"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/appendix/conclusion.qmd",
@@ -824,7 +879,7 @@
     "image": null,
     "sections": [],
     "published": true,
-    "lastmod": "2026-02-28"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/references.qmd",
@@ -837,7 +892,7 @@
     "image": "/assets/og-images/knowledge/references-og-bw-academic.jpg",
     "sections": [],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/appendix/acknowledgments.qmd",
@@ -852,7 +907,7 @@
       "On Standing on Shoulders"
     ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/appendix/copyright.qmd",
@@ -863,7 +918,7 @@
     "image": null,
     "sections": [],
     "published": true,
-    "lastmod": "2026-02-27"
+    "lastmod": "2026-03-03"
   },
   {
     "path": "knowledge/appendix/back-cover.qmd",
@@ -872,8 +927,17 @@
     "description": "The complete idiot's guide to legally bribing your way to utopia.",
     "tags": [],
     "image": "/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg",
-    "sections": [],
+    "sections": [
+      "Audible / Podcast Description",
+      "Amazon / Kindle Description",
+      "Reviews & Awards (pick one or mix)",
+      "Author Biography",
+      "Translator Biography",
+      "Keywords",
+      "Categories",
+      "BISAC Codes"
+    ],
     "published": true,
-    "lastmod": "2026-03-01"
+    "lastmod": "2026-03-04"
   }
 ]

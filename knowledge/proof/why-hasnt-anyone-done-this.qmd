@@ -1,0 +1,52 @@
+---
+title: "Why Hasn't Anyone Done This?"
+description: "People have. Many times. Sachs, the WHO, the Copenhagen Consensus, Nobel laureates. They all stalled for the same reason: no self-sustaining financial mechanism. The math was never the missing piece. The engine was."
+published: true
+tags:
+  - proof
+  - meta-objection
+  - predecessors
+  - funding-mechanisms
+  - dysfunction-tax
+  - compound-effect
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+You've seen the numbers. Each component works. The precedents are real. The math checks out. So your next thought, if you're paying attention, is: "If this is so obvious, why hasn't someone smarter done it already?"
+
+They have. Many times. That's the interesting part.
+
+## People Have Tried This
+
+Jeffrey Sachs has been arguing for massive health spending redirects since the 1990s. The WHO Commission on Macroeconomics and Health published a 200-page report in 2001 combining health economics with development economics to argue for exactly this kind of reallocation. Bjorn Lomborg's Copenhagen Consensus has been ranking global priorities by cross-domain ROI since 2004. The International Campaign to Abolish Nuclear Weapons won a Nobel Peace Prize in 2017. "Spend less on war, more on health" is not a new idea. Your species has been saying it out loud, with data, for decades.
+
+So the question isn't "why hasn't anyone thought of this?" The question is: "why hasn't it worked?"
+
+## Every Previous Attempt Had the Same Problem
+
+Sachs proposed the spending. The WHO documented the returns. Lomborg ranked the priorities. ICAN built the coalition. Each one got further than the last. None of them stuck. And they all stalled for the same reason: they relied on governments choosing to act against the interests of their largest donors, indefinitely, out of conviction.
+
+That is not how your species works. I have been watching you for a while and I can confirm: you do the right thing approximately when it is also the profitable thing, and not one moment sooner. Every successful precedent in [the proof chapter](../proof.qmd) confirms this. War bonds worked because grandma got 4% returns. The landmine treaty worked because defense contractors didn't make landmines (their margins were in bigger weapons). The Global Fund worked because it was cheaper than letting AIDS destabilize trade partners. In each case, the moral argument was necessary but not sufficient. The financial mechanism made it stick.
+
+Previous proposals said: "this is the right thing to do." This book says: "this is the right thing to do, and here is a [bond structure](../solution/incentive-alignment-bonds.qmd) that makes billionaires richer for doing it, a [decentralized FDA](../solution/dfda.qmd) that makes trials cheaper, and a [governance mechanism](../solution/wishocracy.qmd) that makes corruption structurally unprofitable." The difference is not the diagnosis. The difference is the engine.
+
+## The Combination Falls Between Every Institution's Brand
+
+Your policy institutions could have assembled this. They have the economists, the data, and the cross-disciplinary mandate. But this proposal requires combining libertarian ideas (decentralize the FDA, cut government bureaucracy), progressive ideas (international cooperation, health as a right), and financial engineering (bond structures, [incentive alignment](../solution/aligning-incentives.qmd)) simultaneously. That is nobody's brand.
+
+Think tanks sell ideological consistency. This proposal is ideologically incoherent by design, because disease doesn't respect your political categories. It just kills you. The organizations that could do this analysis are funded by people who care very much about left versus right, so the analysis stays in its lane, and nobody combines the lanes. Not because they can't. Because the combination would alienate half their donors before the first peer review.
+
+## The Compound Math Is the Hard Part (Honestly)
+
+Here is the part this chapter owes you honesty about.
+
+Each individual mechanism is well-documented. Peace dividends, trial efficiency, disease burden reduction, R&D spillover. No serious economist disputes any of them in isolation. The genuinely uncertain part is the stacking: whether three or four mechanisms compound multiplicatively and independently over 20 years, producing {{< var wishonia_gdp_year_20 >}} (roughly 29 times the Earth baseline).
+
+That number makes economists stop reading. Some of that skepticism is pattern-matching against fraud. But some of it is legitimate. The independence assumptions are strong. The governance reform multiplier is the least certain component. The ratchet schedule is historically grounded but still speculative. The [GDP trajectories](../economics/gdp-trajectories.qmd) chapter shows the work, and the work is transparent. But "transparent" is not the same as "certain," and this book would be lying if it pretended otherwise.
+
+What the math does show, even under conservative assumptions, is that the expected value of trying dramatically exceeds the expected value of not trying. You don't need to believe in 29x to believe that redirecting 1% of the murder budget to clinical trials is a good bet. The compound effect is the upside case. The [worst-case scenario](../proof.qmd#failsafe) (total mismanagement, every dollar wasted) still leaves you with fewer weapons and more data. You have to work hard to make this a bad deal.
+
+## Why This Time Might Be Different
+
+Previous attempts had the right diagnosis and no engine. This proposal has the engine: a financial mechanism that aligns the interests of governments, investors, pharmaceutical companies, and citizens around the same outcome. Not because they all care about health. Because they all care about money, and the [bond structure](../solution/incentive-alignment-bonds.qmd) makes health the most profitable option.
+
+Whether that engine actually works is an empirical question, not a rhetorical one. The chapter you're reading cannot answer it. Only the [treaty](../solution/1-percent-treaty.qmd) can answer it, if it gets signed. Which brings you back to the [two futures](../futures.qmd) and the only question that matters: whether knowing the math changes what you do next. One path requires action. The other requires nothing at all, which is why it's winning.

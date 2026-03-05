@@ -118,6 +118,7 @@ book:
       chapters:
         - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
+        - knowledge/proof/why-hasnt-anyone-done-this.qmd # ✅ Why Hasn't Anyone Done This? ~3p
         # STANDALONE PAPER - see impact.warondisease.org
         # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
         # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in incentive-alignment-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
@@ -150,6 +151,7 @@ book:
     - part: "Economics & Finance"
       chapters:
         - knowledge/economics/peace-dividend.qmd # ✅ (data presentation, appropriate) ~6p
+        - knowledge/economics/gdp-trajectories.qmd # ✅ (expected-value model, 3 civilization trajectories) ~5p
         - knowledge/economics/health-dividend.qmd # ✅ (good voice) ~3p
         - knowledge/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
         - knowledge/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
