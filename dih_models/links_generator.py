@@ -144,9 +144,9 @@ def generate_links_qmd(project_root: Path) -> Path:
 
     sections = [
         ("Take Action", shared_links.get("action", [])),
-        ("Buy", manual_links.get("buy", [])),
-        ("Read", manual_links.get("read", [])),
         ("Listen", manual_links.get("listen", [])),
+        ("Get The Book", manual_links.get("buy", [])),
+        ("Read Online", manual_links.get("read", [])),
         ("Follow", shared_links.get("follow", [])),
     ]
 

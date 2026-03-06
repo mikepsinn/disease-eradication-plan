@@ -8,31 +8,43 @@ youtube-thumbnail: /assets/podcast/faq-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+I have now presented this plan to humans 147 times. The objections follow a pattern so predictable I wrote a script to generate this chapter. (I didn't. But I could have. You are very consistent in what you find alarming about not dying.)
+
+Every civilization I've observed goes through the same five stages when presented with a plan to stop killing itself:
+
+1. "That's impossible" (it isn't)
+2. "That's dangerous" (less dangerous than the current thing)
+3. "That's naive" (you named your war building after how many sides it has)
+4. "Okay but what about..." (this chapter)
+5. "We were always going to do that" (you weren't, but I'll take it)
+
+You are currently at stage 4. Congratulations. Here are your objections, in the order you always raise them.
+
 ## "We Need the Military Budget"
 
 **Objection**: "We can't reduce military spending. That would make us vulnerable."
 
 ![What 1 percent of military spending buys: fewer tanks, more cured diseases, and soft power. Turns out healthy people like you more than people you bombed.](/assets/images/faq/faq-section-we-need-the-military-budget-bw-academic.jpg)
 
-The treaty takes 1% of the murder money. You keep {{< var defense_sector_retention_pct >}}. Every nation reduces by the same amount, so relative military balance stays exactly the same. Everyone has 1% fewer missiles pointed at them (this is called "safer").
+The treaty takes 1%. You keep {{< var defense_sector_retention_pct >}}. Every nation reduces by the same amount, so relative military balance stays exactly the same. You each have 1% fewer missiles pointed at each other. On Wishonia, we call this "safer." On Earth, you call it "an unacceptable risk to national security." Same math, different feelings.
 
-The Pentagon cannot account for $2.5 trillion in spending. You're redirecting money they already lost in the couch cushions.
+The Pentagon cannot account for $2.5 trillion in spending. You're not redirecting the missile budget. You're redirecting the "we lost it somewhere" budget. The missiles won't even notice.
 
-COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. Your nearly $900 billion murder budget watched it happen, fully armed and completely confused. The virus did not check your passport. It did not consult your defense posture. Disease is the only enemy that attacks every nation equally, charges no import tariffs, and has never once considered your feelings about geopolitics. You are the only species that needs to be talked into fighting it.
+COVID-19 killed more Americans than World War I, World War II, Korea, Vietnam, Iraq, and Afghanistan combined. Your nearly $900 billion murder budget watched it happen, fully armed and completely confused. The virus did not check your passport. It did not consult your defense posture. It did not read your threat assessment. Disease is the only enemy that attacks every nation simultaneously, charges no import tariffs, and has never once considered your feelings about geopolitics. You are the only species that needs to be talked into fighting it.
 
-And about that War on Terror: $8 trillion spent [@war-on-terror-cost-blowback], 900,000 dead, and terrorist attacks went from about 1,000 per year to nearly 17,000 per year by 2014 [@terrorism-attacks-increased-post-2001]. Al-Qaeda and ISIS are still operating after two decades of the most expensive military campaign in human history. Robert Pape at the University of Chicago analyzed every suicide terrorist attack from 1980 to 2003 and found that 95% were responses to foreign military occupation, not ideology [@pape-dying-to-win]. Half were secular. Nearly all targeted democracies that had stationed military forces in the attackers' homeland. Your military bases aren't protecting you from terrorism. They're the reason it's pointed at you. You spent $8 trillion manufacturing the exact threat you were spending $8 trillion to eliminate.
+Your War on Terror cost $8 trillion [@war-on-terror-cost-blowback], killed 900,000 people, and terrorist attacks went from about 1,000 per year to nearly 17,000 per year by 2014 [@terrorism-attacks-increased-post-2001]. Robert Pape at the University of Chicago analyzed every suicide terrorist attack from 1980 to 2003 and found that 95% were responses to foreign military occupation, not ideology [@pape-dying-to-win]. Half were secular. Nearly all targeted democracies with military bases in the attackers' homeland. You spent $8 trillion manufacturing the exact threat you were spending $8 trillion to eliminate. On Wishonia, this is taught in schools as a cautionary tale. The course is called "Circular Spending."
 
-And if you're worried that redirecting 1% would be destabilizing: after WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years ({{< var us_military_spending_1945_peak_annual_2024usd >}} to {{< var us_military_spending_1947_annual_2024usd >}} in today's dollars) [@us-military-spending-historical-constant-dollars]. GM went from B-24 bombers back to Cadillacs. Frigidaire stopped making machine guns and went back to refrigerators. The economy produced the greatest boom in your history [@us-post-wwii-gdp-growth-8-pct]. You're currently spending {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-WW2 baseline in inflation-adjusted dollars. Your grandparents handled an 88% cut and built the middle class. You're being asked for 1% and acting like someone suggested disbanding the army during an alien invasion. Either the human genome degraded significantly in three generations, or someone is making a lot of money telling you this is impossible.
+After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years ({{< var us_military_spending_1945_peak_annual_2024usd >}} to {{< var us_military_spending_1947_annual_2024usd >}} in today's dollars) [@us-military-spending-historical-constant-dollars]. GM went from B-24 bombers back to Cadillacs. Frigidaire stopped making machine guns and went back to refrigerators. The economy produced the greatest boom in your history [@us-post-wwii-gdp-growth-8-pct]. You're currently spending {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-WW2 baseline in inflation-adjusted dollars. Your grandparents handled an 88% cut and built the middle class. You're being asked for 1% and acting like someone suggested disbanding the army during an invasion. Either the human genome degraded significantly in three generations, or someone is making a lot of money telling you this is impossible. (It's the second one.)
 
 **Follow-up**: "But what about defense industry jobs?"
 
-1% is a rounding error. Engineers building guidance systems can build medical imaging devices. Same skills, fewer explosions.
+1% is a rounding error. Engineers building guidance systems can build medical imaging devices. Same differential equations, fewer funerals.
 
 ## "Big Pharma Will Block This"
 
 **Objection**: "Pharmaceutical companies will kill this. They profit from disease."
 
-Pharma currently pays {{< var pharma_drug_development_cost_current >}} per drug. 90% fail. This is called drug development, which is gambling but with test tubes.
+Pharma currently pays {{< var pharma_drug_development_cost_current >}} per drug. 90% fail. This is called "drug development." On Wishonia, we have a different word for spending billions with a 10% success rate. We call it "gambling."
 
 | | Current system | New system |
 |---|---|---|
@@ -40,7 +52,7 @@ Pharma currently pays {{< var pharma_drug_development_cost_current >}} per drug.
 | Trial outcome | 90% expensive failure | 90% failure, but with someone else's money |
 | Business model | Casino, but with lab coats | Paycheck, but with lab coats |
 
-The treaty fund pays pharma to run trials. Trials become revenue, not cost. They'd trample each other getting to the signing ceremony.
+Under this system, trials become revenue instead of cost. You're offering the casino a guaranteed salary. Casinos love guaranteed salaries. They'd trample each other getting to the signing ceremony. The only reason pharma "profits from disease" is because you built a system where curing disease is a financial risk. Remove the risk and they'll cure things faster than you can name them. They're not evil. They're just doing math. Change the math.
 
 ![How drug companies currently lose billions gambling on pills versus how they could just get paid to run the experiments. It's like offering a casino steady paychecks instead of roulette.](/assets/images/faq/faq-section-pharma-incentive-model-bw-academic.jpg)
 
@@ -50,17 +62,19 @@ The treaty fund pays pharma to run trials. Trials become revenue, not cost. They
 
 ![How voters get politicians to do things: ask nicely, then replace them if they don't. It's the same system you use with batteries.](/assets/images/faq/faq-section-what-about-national-sovereignty-bw-academic.jpg)
 
-Sovereignty means "we decide what happens to us." The treaty asks countries to decide. Countries that don't want to may decide not to. Countries that do want to may decide to. Sovereignty remains intact throughout. That is how deciding works.
+Sovereignty means "we decide what happens to us." The treaty asks countries to decide. Countries that don't want to may decide not to. Countries that do want to may decide to. Sovereignty remains intact throughout. That is how deciding works. I checked with your dictionaries. They agree with me.
 
 ## "The FDA Exists for a Reason"
 
 **Objection**: "We need FDA approval to ensure safety. You're being reckless."
 
-There's a {{< var efficacy_lag_years >}} delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. It's a lifeguard who confirms the life preserver floats, then locks it in a cabinet to study its buoyancy profile while people drown.
+The FDA confirms a drug is safe. Then it locks the safe drug in a cabinet for {{< var efficacy_lag_years >}} to study whether it works *well enough*. The drug won't kill you. Everyone agrees. But you can't have it because a committee needs {{< var efficacy_lag_years >}} to measure how much it helps. Meanwhile, the disease it treats is not waiting. The disease does not have a committee.
 
-I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. I checked it twice because it seemed wrong. It wasn't wrong (this is correct).
+It's a lifeguard who confirms the life preserver floats, then locks it in a cabinet to study its buoyancy profile while people drown. The lifeguard then publishes a paper about buoyancy. The paper wins an award. The family of the drowned person receives a copy.
 
-The people it kills die quietly, in waiting rooms. The system does not count them (which is convenient for the system).
+I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} die waiting for a safe one that's locked in the approval cabinet. I checked it twice because it seemed wrong. It wasn't wrong.
+
+The people it kills die quietly, in waiting rooms. The system does not count them, which is convenient for the system and less convenient for the dead.
 
 ## "What If Countries Cheat?"
 
@@ -68,18 +82,20 @@ The people it kills die quietly, in waiting rooms. The system does not count the
 
 ![Politicians who keep their promises get paid. Politicians who don't, don't. Novel concept: paying people for doing their jobs instead of for having jobs.](/assets/images/faq/faq-section-what-if-countries-cheat-bw-academic.jpg)
 
-Trust has a historical compliance rate of approximately "whenever it suits them." Which is why this system doesn't use it. Your governments print "full faith and credit" on their money, which is charming given that they ran out of both in 1971. This system replaces faith with smart contracts and credit with escrow. The blockchain doesn't have faith. It has math. Math has never defaulted.
+Of course they will. Trust has a historical compliance rate of approximately "whenever it suits them." Your governments print "full faith and credit" on their money, which is charming given that they ran out of both in 1971. This system was designed by someone who has watched 847 civilizations (me), and it does not use trust. It uses math.
 
 - Politicians who comply receive [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) benefits: campaign funding and cushy post-office careers (they love this)
 - Politicians who don't comply get nothing (they hate this)
 - Every contribution is public on blockchain, so lying is difficult (they really hate this)
-- Benefits route automatically via smart contracts, because humans cannot be trusted to distribute papers fairly (this has been tested extensively)
+- Benefits route automatically via smart contracts, because humans cannot be trusted to distribute papers fairly (this has been tested extensively, for all of recorded history, and the results are in)
 
-The system assumes the worst about human nature and designs around it. Compliance is the career-maximizing choice. It's Pavlovian conditioning, but for senators.
+The system assumes the worst about human nature and designs around it. Compliance is the career-maximizing choice. It's Pavlovian conditioning, but for senators. The senators don't love this comparison. The data supports it anyway.
 
 ## "You Can't Cure Aging"
 
 **Objection**: "Aging is natural and inevitable. You can't fight nature."
+
+Smallpox was natural. Polio was natural. Dying in childbirth was natural. You fought all of them and won. "Natural" is not a synonym for "good." Earthquakes are natural. You don't argue against earthquake-proof buildings by saying "but earthquakes are natural and inevitable."
 
 You already replace everything that breaks:
 
@@ -97,9 +113,7 @@ Aging is damage accumulation with known repair pathways:
 - Mitochondria fail: replace them (mitochondrial transfer)
 - DNA breaks: repair it (CRISPR, base editing)
 
-You went to the moon with slide rules. You can probably fix cells with AI.
-
-Humans ask "is this realistic?" about a plan to spend slightly less on missiles. The same humans consider the following realistic: an economy based on infinite growth on a finite planet, a healthcare system that costs more every year while curing fewer diseases, and a democracy with a 0% correlation between what voters want and what happens. Your threshold for "realistic" is: whatever is currently happening. Your threshold for "unrealistic" is: anything different. This is not a feasibility assessment. It is a diagnosis.
+You went to the moon with slide rules. You split the atom before you invented the transistor. You can probably fix cells with AI. Unless you think cells are harder than atoms, in which case I have concerns about your physics curriculum.
 
 ![Why your body falls apart and which tools might fix it. Instructions unclear: currently still dying.](/assets/images/faq/faq-section-aging-as-engineering-bw-academic.jpg)
 
@@ -109,9 +123,9 @@ Humans ask "is this realistic?" about a plan to spend slightly less on missiles.
 
 ![You tell ten friends, who each tell ten friends, until millions of people know about it. Like a pyramid scheme, but for not dying, so legally distinct.](/assets/images/faq/faq-section-i-m-just-one-person-bw-academic.jpg)
 
-Your contribution: vote (2 min), share (15 min). Total: 17 minutes. Potential return: 50,000 extra hours of life if diseases get cured. That's a 176,000x return on 17 minutes. This is more than your investment portfolio has ever achieved (probably by a lot).
+Your contribution: vote (2 min), share (15 min). Total: 17 minutes. Potential return: 50,000 extra hours of life if diseases get cured. That's a 176,000x return on 17 minutes. Your best stock pick has never done this. Your best stock pick has never done one-thousandth of this.
 
-This needs {{< var treaty_campaign_voting_bloc_target_nounit >}} people. You tell 10, they each tell 10. Six degrees of sharing reaches millions. You spent longer than 17 minutes choosing what to watch on Netflix last night.
+This needs {{< var treaty_campaign_voting_bloc_target_nounit >}} people. You tell 10, they each tell 10. Six degrees of sharing reaches millions. You spent longer than 17 minutes choosing what to watch on Netflix last night. You chose a show about murder. You could have chosen not to be murdered by disease, but the interface was less intuitive.
 
 ## "Why Not Just Reform the System?"
 
@@ -126,11 +140,11 @@ People have been trying for 50 years. Here's the scorecard:
 - New regulations? Tried. Now takes 20 years instead of 17. Progress.
 - Reform bills? Tried. Lobbyists killed them in committee. Efficiently.
 
-The system is not broken. Defense contractors spend {{< var defense_lobbying_annual >}} yearly on lobbying and get nearly $1T in contracts. That is the most efficient system in American capitalism. They will not surrender it because you asked nicely.
+The system is not broken. I need you to understand this. Defense contractors spend {{< var defense_lobbying_annual >}} yearly on lobbying and get nearly $1T in contracts. That is the most efficient return on investment in American capitalism. The system works perfectly. It works perfectly for the people who built it. They will not surrender it because you asked nicely, or because you asked loudly, or because you made a sign. They will surrender it when you outbid them. That's the chapter you already read.
 
 **Follow-up**: "Fine, but why cut military spending? Just allocate more to health."
 
-Money isn't the only constraint. You can't print more physicists. (You've tried. It takes 25 years and a PhD program.) Cutting 1% from military budgets frees actual human brains from building weapons to curing Alzheimer's. The brains don't care. They just go where the funding is.
+Money isn't the only constraint. You can't print more physicists. (You've tried. It takes 25 years and a PhD program.) Cutting 1% from military budgets frees actual human brains from building guidance systems to building diagnostic systems. The brains don't care. They just go where the funding is. They are, in this sense, very similar to lobbyists.
 
 ## "This Is Politically Impossible"
 
@@ -138,32 +152,32 @@ Money isn't the only constraint. You can't print more physicists. (You've tried.
 
 ![Weapons makers spend 127 million bribing politicians. We could spend 650 million. Outbidding death merchants: finally, a proper auction.](/assets/images/faq/faq-section-this-is-politically-impossible-bw-academic.jpg)
 
-"Politically impossible" means the small pieces of paper with presidents on them currently go to people who build missiles instead of people who cure diseases. You need the papers to go the other way. This is called "lobbying," which is bribery but with a business card.
+"Politically impossible" is a phrase that means "the bribes currently flow in a direction I'm comfortable with." The small pieces of paper with presidents on them go to people who build missiles instead of people who cure diseases. You need the papers to go the other way. This is called "lobbying," which is bribery but with a business card and a 501(c)(4).
 
-The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments (they're immune). Beat them at their own game. Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K-Street firms. Outbid them. Lobbyists work for the highest bidder.
+The military-industrial complex spends {{< var defense_lobbying_annual >}} yearly on lobbyists. You can't beat them with moral arguments (they're immune; moral arguments have a $0 budget and no K Street address). Beat them at their own game. Raise {{< var treaty_campaign_total_cost >}} through [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). Allocate {{< var treaty_campaign_budget_lobbying >}} for [lobbying](../economics/campaign-budget.qmd#ai-assisted-lobbying-250m-25). That overwhelms the defense industry's {{< var defense_lobbying_annual >}} spend. Go to the same K Street firms. Outbid them. Lobbyists work for the highest bidder. They always have. This is the one area where your species' mercenary instincts are genuinely helpful.
 
-Once {{< var treaty_campaign_voting_bloc_target_nounit >}} voters demand it and the money is behind it, refusal becomes career suicide. Politicians are very good at not committing career suicide.
+Once {{< var treaty_campaign_voting_bloc_target_nounit >}} voters demand it and the money is behind it, refusal becomes career suicide. Politicians are extremely good at not committing career suicide. It's their primary skill. Several have no other skills.
 
 **Follow-up**: "But it can't scale globally."
 
-The internet scaled globally. So did TikTok, which is considerably less useful.
+The internet scaled globally. So did TikTok, which teaches strangers choreography. If your species can coordinate dance moves across 150 countries, it can coordinate not dying.
 
 **Follow-up**: "You're naive about human nature."
 
-Your species has an impressive track record of calling things unrealistic, then doing them, then pretending you always knew they were possible.
+I've been observing human nature for 80 years. It has been remarkably consistent. Here is what I've observed: you call things unrealistic, then you do them, then you pretend you always knew they were possible. Every time.
 
 Things that were "unrealistic":
 
-- Human flight (impossible for millennia, then two bicycle mechanics)
+- Human flight (impossible for millennia, then two bicycle mechanics in Ohio)
 - Moon landing (JFK did it in 8 years with computers weaker than your toaster)
 - Democracy (kings ruled for 5,000 years, then didn't)
-- Ending slavery (entire economies depended on it)
-- Women voting (half the population was excluded, the other half thought this was fine)
+- Ending slavery (entire economies depended on it; they found other economies)
+- Women voting (half the population was excluded; the other half thought this was fine)
 - The internet (who needs computers talking to each other?)
 
-What's actually unrealistic:
+Things that are actually unrealistic:
 
-- Spending {{< var global_military_spending_annual_2024 >}} on weapons while sitting on 13,000 nuclear warheads. That's enough for 130 extinction events. You only need one.
+- Spending {{< var global_military_spending_annual_2024 >}} on weapons while sitting on 13,000 nuclear warheads. That's enough for 130 extinction events. You only need one. The other 129 are for what, exactly?
 - Expecting different results from the same broken system
 - Thinking you'll survive the AI revolution without fixing incentives
 
@@ -175,43 +189,43 @@ What's actually unrealistic:
 
 ![One committee picking which pills to test versus thousands of teams racing each other. Turns out monopolies are slow. Who knew.](/assets/images/faq/faq-section-what-if-the-science-is-wrong-bw-academic.jpg)
 
-If 100,000 trials fail, you know 100,000 things that don't work. This is called data. (You've been collecting it for 400 years. It's the only method you have that actually works.)
+Then you know 100,000 things that don't work. This is called data. You've been collecting it for 400 years. It is the only method you have that actually works. Being afraid of negative results is like being afraid of road signs that say "wrong way." The sign is helping you. Stop being angry at the sign.
 
-Still better than the current system:
+The current system:
 
 - 100 trials over 17 years, learn nothing, many retire wealthy (with pensions)
-- NIH funding safe research confirming water is wet (it is)
-- FDA blocking trials because the paperwork had a typo on page 847 (this actually happens)
+- NIH funding safe research confirming water is wet (it is; here is the grant)
+- FDA blocking trials because the paperwork had a typo on page 847 (this actually happens; the typo was in a footer)
 
-Your decentralized framework will run {{< var dfda_trial_cost_reduction_factor >}} more trials for the same budget. Even if 90% fail, you get over 4x more cures than today. Failure at scale beats success at a standstill.
+Your decentralized framework will run {{< var dfda_trial_cost_reduction_factor >}} more trials for the same budget. Even if 90% fail, you get over 4x more cures than today. Failure at scale beats success at a standstill. On Wishonia, we considered 90% failure rates normal for the first 200 years. Then the failure rate dropped because we had data. You don't have data because you're afraid of failure. You're afraid of failure because you don't have data. This is a circle. I keep finding circles in your systems. None of them are the good kind.
 
 ## "War Is Human Nature"
 
 **Objection**: "War is inevitable. Countries need militaries to survive."
 
-Several countries beg to differ.
+Several countries tested this hypothesis and got different results.
 
 **Switzerland**:
 
 - 200+ years avoiding major wars
-- Surrounded by both World Wars (literally in the middle, made chocolate)
+- Surrounded by both World Wars (literally in the middle; made chocolate, stayed alive)
 - GDP per capita: {{< var switzerland_gdp_per_capita_k >}} (not killing people is profitable)
 - Defense spending: {{< var switzerland_defense_spending_pct >}} of GDP
 - Life expectancy: {{< var switzerland_life_expectancy_nounit >}} years ({{< var us_vs_switzerland_life_expectancy_gap_nounit >}} years longer than Americans who spend 5x more on "defense")
 
 **Costa Rica**:
 
-- Abolished its army in 1948 (said "nah, we're good")
+- Abolished its army in 1948 (said "no thank you" to the entire concept)
 - Still sovereign 75+ years later (nobody invaded the country with no oil)
 - Redirected military budget to education and health
 - Life expectancy matches US at a fraction of the cost
-- Zero invasions since (turns out nobody wants to conquer happy, educated people)
+- Zero invasions since (turns out nobody wants to conquer happy, educated people with good healthcare and no resentment)
 
-Scale that up globally and the [20-year model](../economics/gdp-trajectories.qmd) projects the Treaty Path producing {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the GDP of doing nothing, and the Wishonia Path producing {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}}. Apparently not murdering people is good for the economy.
+Scale that up globally and the [20-year model](../economics/gdp-trajectories.qmd) projects the Treaty Path producing {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the GDP of doing nothing, and the Wishonia Path producing {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}}. Not murdering people is good for the economy. This should not be a surprising finding, but on your planet, it is.
 
 ![Switzerland and Costa Rica spend a fraction on military and somehow aren't dead. Curious.](/assets/images/faq/faq-section-peace-vs-prosperity-outcomes-bw-academic.jpg)
 
-Nuclear weapons made territorial conquest largely obsolete in 1945. You're still budgeting like it's 1944.
+Nuclear weapons made territorial conquest largely obsolete in 1945. You're still budgeting like it's 1944. It's been 80 years. Somebody should tell the accountants.
 
 ## "All Wars on X Have Failed"
 
@@ -219,19 +233,19 @@ Nuclear weapons made territorial conquest largely obsolete in 1945. You're still
 
 ![Governments plan wars. Markets sell cures. One gets better at killing. The other gets better at not dying. Choose wisely.](/assets/images/faq/faq-section-all-wars-on-x-have-failed-bw-academic.jpg)
 
-Those were government wars using central planning. This uses markets.
+Those were government wars using central planning. This uses markets. The difference is important, and I will explain it using small words because this objection comes up a lot.
 
-Government "wars" create bureaucracies that need the problem to exist. The War on Drugs needs drug crime. The War on Poverty needs poor people. The War on Terror needs enemies. Each one accidentally created a government department whose continued employment depends on the problem never being solved. It's impressive, really.
+Government "wars" create bureaucracies that need the problem to exist. The War on Drugs needs drug crime. The War on Poverty needs poor people. The War on Terror needs enemies. Each one accidentally created a government department whose continued employment depends on the problem never being solved. The departments are thriving. The problems are also thriving. Everyone is thriving except the people the departments were supposed to help.
 
 Why this is different:
 
 - Markets instead of ministries (markets don't need the problem to keep existing)
 - Pays for outcomes, not process (no one gets rich by failing slowly)
-- No bureaucracy to preserve (smart contracts don't have pensions)
+- No bureaucracy to preserve (smart contracts don't have pensions, don't take lunch breaks, and have never once asked for a corner office)
 - Thousands of teams competing instead of one committee deciding (the committee is at lunch)
-- Researchers paid for cures, not grant applications (which are different skills)
+- Researchers paid for cures, not grant applications (which are different skills; grant writing is a literary genre, not a scientific method)
 
-Call it the Market for Health. Less dramatic. Might actually work.
+Call it the Market for Health. Less dramatic. Might actually work. Would definitely not get its own Ken Burns documentary, which is how you know it's a real solution.
 
 ## "This Sounds Like Bribery"
 
@@ -239,13 +253,13 @@ Call it the Market for Health. Less dramatic. Might actually work.
 
 ![Current lobbying: pay politicians, get wars. New lobbying: pay politicians, get cures. Same corruption, better outcome. It's called optimization.](/assets/images/faq/faq-section-this-sounds-like-bribery-bw-academic.jpg)
 
-You're describing lobbying. The mechanics are identical. Same K Street firms, same campaign contributions, same revolving door.
+You're describing lobbying. I know this because I looked up your laws. The mechanics are identical: same K Street firms, same campaign contributions, same revolving door, same wine. The only difference is what you're buying.
 
-Current lobbying buys murder contracts: $1 trillion in defense spending. New lobbying buys medicine contracts: clinical trials. Same K Street. Different product.
+Current lobbying buys murder contracts: $1 trillion in defense spending. New lobbying buys medicine contracts: clinical trials. Same K Street. Different product. If you're comfortable with the first one and uncomfortable with the second one, I encourage you to sit quietly and think about why.
 
 This system caps corruption at 20% and makes it fully transparent. {{< var victory_bond_funding_pct >}} goes to investors (money for money, no influence attached). {{< var iab_political_incentive_funding_pct >}} goes to political incentives (campaign support and post-office careers for politicians who vote yes). The remaining {{< var dih_treasury_medical_research_pct >}} goes to clinical trials via [wishocratic allocation](../solution/wishocracy.qmd), where every human votes on priorities. That 80% is untouchable by lobbyists, investors, or politicians.
 
-Humans find the 20% cap suspicious. No government budget in history has a lower corruption rate.
+Humans find the 20% cap suspicious. No government budget in history has a lower corruption rate. Your skepticism about 20% corruption is itself a review of the system it's trying to protect.
 
 ## "Why Not Just Use Philanthropy?"
 
@@ -253,34 +267,38 @@ Humans find the 20% cap suspicious. No government budget in history has a lower 
 
 ![Charity: billionaires give away pocket change. Government spending: trillions of actual dollars. One is a rounding error. The other could end death.](/assets/images/faq/faq-section-why-not-just-use-philanthropy-bw-academic.jpg)
 
-All philanthropy combined is a rounding error compared to government budgets (a very generous rounding error, but still). A massive campaign would cannibalize donations from health charities already doing critical work. You'd be stealing from cancer research to fund cancer research, which is impressively pointless even by your standards. The goal is tapping the multi-trillion dollar stream of wasted government spending, not reshuffling the charity tip jar.
+All philanthropy combined is a rounding error compared to government budgets. A very generous rounding error, wearing a gala dress and holding a champagne flute, but still a rounding error. A massive fundraising campaign would cannibalize donations from health charities already doing critical work. You'd be stealing from cancer research to fund cancer research, which is impressively pointless even by your standards.
+
+The goal is tapping the multi-trillion dollar stream of wasted government spending, not reshuffling the charity tip jar. The tip jar has feelings. The government stream has missiles it can't account for. One of these is easier to redirect.
 
 ## "84 Quadrillion Dollars Is a Made-Up Number"
 
 **Objection**: "No number with that many zeros can be real. You're just multiplying big things together to get a big answer."
 
+All numbers are made up. Yours happen to be small. Mine happen to be large. The difference is that mine come with receipts.
+
 Start with what disease costs per year. The WHO says the world loses {{< var global_annual_daly_burden >}} annually. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient biomedical research. At {{< var standard_economic_qaly_value_usd >}}/QALY (the standard rate used by EPA, OECD, WHO, and NICE), each year of delay costs {{< var global_disease_economic_burden_annual >}}.
 
-Now multiply by how many years earlier treatments arrive (~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}):
+Multiply by how many years earlier treatments arrive (~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}):
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value_latex >}}
 
-That is where the quadrillion comes from. Two WHO data points, one standard QALY price, and a timeline shift.
+Two WHO data points, one standard QALY price, and a timeline shift. That's where the quadrillion comes from. Not magic. Multiplication.
 
-"But {{< var global_disease_economic_burden_annual >}}/year is more than global GDP ({{< var global_gdp_2025 >}})!" Yes. GDP measures market transactions. It does not measure the value of not being dead, not being in pain, and not watching your children die of treatable diseases. Health economists have measured this for decades. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is what governments already use when deciding whether to approve drugs, build highways, or regulate pollution. I did not invent the number. I multiplied it by the number of sick people (which is also not my fault).
+"But {{< var global_disease_economic_burden_annual >}}/year is more than global GDP ({{< var global_gdp_2025 >}})!" Yes. GDP measures market transactions. It does not measure the value of not being dead, not being in pain, and not watching your children die of treatable diseases. Health economists have measured this for decades. The {{< var standard_economic_qaly_value_usd >}}/QALY figure is what governments already use when deciding whether to approve drugs, build highways, or regulate pollution. I did not invent the number. I multiplied it by the number of sick people. Both the number and the sick people existed before I got here.
 
 The only debatable input is whether the timeline shift is really ~{{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years.
 
 **"Won't AI drug discovery shrink that timeline anyway?"**
 
-AI discovers candidates. Candidates still need clinical trials. The current system has {{< var current_trial_slots_available >}} trial slots globally, producing {{< var new_disease_first_treatments_per_year >}}. AI does not create more trial slots. It creates more candidates competing for the same slots. More candidates plus the same bottleneck equals the same (or longer) queue. The {{< var new_disease_first_treatments_per_year >}} rate measures regulatory throughput, not discovery speed. This intervention removes the throughput bottleneck ({{< var dfda_trial_capacity_multiplier >}} capacity via pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient). AI and breakthrough technologies are complementary, not substitutes.
+AI discovers candidates. Candidates still need clinical trials. The current system has {{< var current_trial_slots_available >}} trial slots globally, producing {{< var new_disease_first_treatments_per_year >}}. AI does not create more trial slots. It creates more candidates competing for the same slots. More candidates plus the same bottleneck equals the same (or longer) queue. It's like building faster cars and pointing them at the same traffic jam. The {{< var new_disease_first_treatments_per_year >}} rate measures regulatory throughput, not discovery speed. This intervention removes the throughput bottleneck ({{< var dfda_trial_capacity_multiplier >}} capacity via pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient). AI and this system are complementary, not substitutes. One finds the cures. The other lets you test them before the patient dies of old age.
 
 ## "How Do You Prevent Waste?"
 
 **Objection**: "How do you ensure money helps patients instead of funding bureaucracy?"
 
-The NIH's RECOVER initiative spent $1.6 billion over four years and produced zero treatment recommendations. Zero. $1.6 billion and nothing to show for it. (That takes talent.)
+The NIH's RECOVER initiative spent $1.6 billion over four years and produced zero treatment recommendations. Zero. $1.6 billion. Four years. Nothing. The money is gone. The patients are still sick. The administrators have been promoted. If you designed a system to waste money on purpose, you could not beat this performance. It's a masterpiece of institutional failure, and nobody was fired, which is itself a masterpiece of institutional failure.
 
-A [decentralized FDA](../solution/dfda.qmd) model achieves {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500]. Traditional trials: {{< var traditional_phase3_cost_per_patient >}} [@trial-cost-41k]. Same science. {{< var recovery_trial_cost_reduction_factor >}} less overhead. (I checked this number twice too.)
+A [decentralized FDA](../solution/dfda.qmd) model achieves {{< var recovery_trial_cost_reduction_factor >}} lower cost per patient [@recovery-trial-82x-cost-reduction]. Pragmatic trials: {{< var recovery_trial_cost_per_patient >}} [@recovery-cost-500]. Traditional trials: {{< var traditional_phase3_cost_per_patient >}} [@trial-cost-41k]. Same science. {{< var recovery_trial_cost_reduction_factor >}} less overhead.
 
-With that same $1.6 billion, the decentralized model could have run thousands of trials for millions of patients. Instead: zero. The money is gone. The patients are still sick. The administrators have been promoted.
+With that same $1.6 billion, the decentralized model could have run thousands of trials for millions of patients. Instead: zero. I will stop repeating the number zero now, but I want you to know that I could keep going. There are a lot of zeros in this story.
