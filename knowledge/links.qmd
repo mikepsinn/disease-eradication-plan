@@ -1,6 +1,6 @@
 ---
-title: "Get the Manual"
-description: "Read, buy, or listen to 'How to End War and Disease' - available free online, in print, ebook, and audiobook."
+title: "Select Your Preferred Sensory Input Channel"
+description: "Humans require instructions delivered through specific orifices. Choose yours. Available via ear holes, murdered trees, or glowing rectangles."
 published: true
 feed-date: false
 page-layout: full
@@ -26,12 +26,6 @@ aliases:
   margin-bottom: 1rem;
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5rem;
-}
-.links-page .hero-img {
-  max-width: 280px;
-  margin: 0 auto 1.5rem;
-  border-radius: 4px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 .links-page .tagline {
   font-size: 1rem;
@@ -78,85 +72,74 @@ aliases:
 
 <div class="links-page">
 
-<img src="/assets/cover/book-cover-3.jpg" alt="How to End War and Disease - Book Cover" class="hero-img">
-
 <div class="tagline">
-  The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
+  The Complete Idiot's Guide to Legally Bribing Your Way to Utopia<br><br>
+  Please select your preferred sensory input channel.
 </div>
 
-<h2>Take Action</h2>
+<h2>Do Something (15 Seconds)</h2>
 
 <a href="https://WarOnDisease.org" class="link-btn primary">
   Vote
   <span class="btn-sub">15 seconds. 38 lives saved.</span>
 </a>
 
-<h2>Listen</h2>
+<h2>Ear Holes</h2>
 
 <a href="podcast.html" class="link-btn primary">
   Listen
-  <span class="btn-sub">Spotify, Apple, YouTube Music, and more</span>
+  <span class="btn-sub">Narrated directly into your head via Spotify, Apple, YouTube, etc.</span>
 </a>
 
-<h2>Get The Book</h2>
+<h2>Murdered Trees</h2>
 
 <a href="https://www.amazon.com/dp/B0GPLXFMMT" class="link-btn primary">
   Amazon Paperback
-  <span class="btn-sub">Ships in 1-2 days</span>
+  <span class="btn-sub">Ink on murdered tree, delivered to your dwelling</span>
 </a>
 
 <a href="https://www.amazon.com/dp/B0GPBH77XN" class="link-btn">
   Amazon Kindle
-  <span class="btn-sub">Instant download</span>
+  <span class="btn-sub">Beamed directly into your glowing rectangle</span>
 </a>
 
 <a href="https://books2read.com/u/baegEq" class="link-btn">
   All Retailers
-  <span class="btn-sub">Apple Books, Barnes & Noble, Kobo, and more</span>
+  <span class="btn-sub">Apple Books, Barnes & Noble, Kobo, and other tree merchants</span>
 </a>
 
 <a href="https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease" class="link-btn">
   Goodreads
-  <span class="btn-sub">Rate & review</span>
+  <span class="btn-sub">Rate how much you enjoy not dying</span>
 </a>
 
-<h2>Read Online</h2>
+<h2>Glowing Rectangle</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
   Read Online
-  <span class="btn-sub">Full manual, no account needed</span>
+  <span class="btn-sub">Free. No account. Just eyeballs and a willingness to live.</span>
 </a>
 
-<h2>Follow</h2>
+<h2>Ongoing Surveillance</h2>
 
 <a href="https://www.youtube.com/%40WarOnDisease?sub_confirmation=1" class="link-btn">
   YouTube
-  <span class="btn-sub">\&#64;WarOnDisease</span>
+  <span class="btn-sub">Moving pictures with sound</span>
 </a>
 
 <a href="https://x.com/warondisease" class="link-btn">
   X / Twitter
-  <span class="btn-sub">\&#64;warondisease</span>
+  <span class="btn-sub">Short angry messages about not dying</span>
 </a>
 
 <a href="https://www.linkedin.com/in/mikesinn" class="link-btn">
   LinkedIn
-  <span class="btn-sub">Mike P. Sinn</span>
+  <span class="btn-sub">The same thing but wearing a suit</span>
 </a>
 
 <a href="https://github.com/mikepsinn/disease-eradication-plan" class="link-btn">
   GitHub
-  <span class="btn-sub">Source code, data, and all papers</span>
-</a>
-
-<a href="https://scholar.google.com/citations?user=RjDd_qcAAAAJ" class="link-btn">
-  Google Scholar
-  <span class="btn-sub">Publications</span>
-</a>
-
-<a href="https://orcid.org/0009-0006-0212-1094" class="link-btn">
-  ORCID
-  <span class="btn-sub">0009-0006-0212-1094</span>
+  <span class="btn-sub">The actual blueprints (for nerds)</span>
 </a>
 
 </div>

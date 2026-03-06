@@ -42,12 +42,6 @@ LINKS_CSS = """\
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.5rem;
 }
-.links-page .hero-img {
-  max-width: 280px;
-  margin: 0 auto 1.5rem;
-  border-radius: 4px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
 .links-page .tagline {
   font-size: 1rem;
   color: #555;
@@ -143,11 +137,11 @@ def generate_links_qmd(project_root: Path) -> Path:
     subtitle = book.get("subtitle", "")
 
     sections = [
-        ("Take Action", shared_links.get("action", [])),
-        ("Listen", manual_links.get("listen", [])),
-        ("Get The Book", manual_links.get("buy", [])),
-        ("Read Online", manual_links.get("read", [])),
-        ("Follow", shared_links.get("follow", [])),
+        ("Do Something (15 Seconds)", shared_links.get("action", [])),
+        ("Ear Holes", manual_links.get("listen", [])),
+        ("Murdered Trees", manual_links.get("buy", [])),
+        ("Glowing Rectangle", manual_links.get("read", [])),
+        ("Ongoing Surveillance", shared_links.get("follow", [])),
     ]
 
     sections_html = "\n\n".join(
@@ -157,8 +151,8 @@ def generate_links_qmd(project_root: Path) -> Path:
     )
 
     content = f"""---
-title: "Get the Manual"
-description: "Read, buy, or listen to 'How to End War and Disease' - available free online, in print, ebook, and audiobook."
+title: "Select Your Preferred Sensory Input Channel"
+description: "Humans require instructions delivered through specific orifices. Choose yours. Available via ear holes, murdered trees, or glowing rectangles."
 published: true
 feed-date: false
 page-layout: full
@@ -174,10 +168,9 @@ aliases:
 
 <div class="links-page">
 
-<img src="/assets/cover/book-cover-3.jpg" alt="How to End War and Disease - Book Cover" class="hero-img">
-
 <div class="tagline">
-  {subtitle}
+  {subtitle}<br><br>
+  Please select your preferred sensory input channel.
 </div>
 
 {sections_html}
