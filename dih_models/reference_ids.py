@@ -380,6 +380,7 @@ class ReferenceID(str, Enum):
     FRED_FINANCE_INSURANCE_GDP_2026 = "fred-finance-insurance-gdp-2026"
     FRED_TOP1_WEALTH_2026 = "fred-top1-wealth-2026"
     FRED_WALCL_2026 = "fred-walcl-2026"
+    FRIEDMAN_SCHWARTZ_MONETARY_HISTORY_1963 = "friedman-schwartz-monetary-history-1963"
     FRIENDS_CANCER_RESEARCH_FDA_APPROVALS = "friends-cancer-research-fda-approvals"
     FTC_ACT_15_USC_45 = "ftc-act-15-usc-45"
     FURNITURE_ACCIDENTS_VS_TERRORISM_DEATHS = "furniture-accidents-vs-terrorism-deaths"
