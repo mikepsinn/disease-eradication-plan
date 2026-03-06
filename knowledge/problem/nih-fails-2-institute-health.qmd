@@ -25,11 +25,13 @@ Your National Institutes of Health has the word "Health" in its name and an annu
 
 Of $247 billion the NIH spent over a decade, exactly {{< var nih_clinical_trials_spending_pct >}} went to testing whether treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% funded understanding disease mechanisms, translating discoveries toward (but never into) clinical use, training scientists, and observational programs that spend billions watching disease without treating it, which is called "research" the way watching someone drown from a boat is called "lifeguarding."
 
+Basic research is not the problem. Basic research is how you found dexamethasone in the first place. The problem is that after 50 years and a trillion dollars, the ratio hasn't moved. The marginal value of the 85th cent on basic research is near zero when you're spending 3 cents on the only activity that turns that basic research into medicine. You don't have a knowledge deficit. You have an allocation deficit.
+
 That might be defensible if the testing queue were empty. It isn't. There are roughly {{< var safe_compounds_count >}} compounds with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. Most are off-patent, which means no pharmaceutical company will fund trials for them, which means the NIH is the only entity that could, which means it is specifically choosing not to do the one thing only it can do. The pipeline is overflowing with candidates. The bottleneck is trials. The drugs are sitting there. Safe. Ready. Unpatentable. They've been waiting for decades. Some of them have been waiting longer than most of your scientists have been alive.
 
 It's like spending 96.7% of your grocery budget on cookbooks and {{< var nih_clinical_trials_spending_pct >}} on food, then wondering why you're starving. Except the cookbooks are very prestigious and the starving people aren't on the committee that decides whether to buy more cookbooks.
 
-On Wishonia, we had a similar institution once. It spent 4% of its budget on curing disease and 96% on studying disease. We renamed it the National Institutes of Studying Health. Then we defunded it. It took 12 minutes.
+On Wishonia, we had a similar institution once. It spent 4% of its budget on curing disease and 96% on studying disease. We renamed it the National Institutes of Studying Health. Then we reallocated its budget so the ratio matched the marginal value. It took 12 minutes. Diseases started disappearing in 12 months.
 
 ![The NIH spends 96.7 percent on understanding disease and 3.3 percent on testing cures. They understand a lot.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
 
@@ -67,7 +69,7 @@ The NIH is, by its own metrics, a publishing house that occasionally dabbles in 
 
 About 5% of patients have participated in clinical trials [@clinical-trial-patient-participation-rate]. About {{< var patient_willingness_trial_participation_pct >}} would participate if invited [@patient-willingness-clinical-trials]. About 9-11% have ever been invited [@patient-willingness-clinical-trials]. Nearly half of all patients would join a trial if asked. Almost nobody asks. Your species has a room full of volunteers holding their hands up, and a system that looked at the room and decided to study the clipboard instead. The clipboard is very well-studied. It has been studied for decades. Multiple papers have been written about the clipboard. The volunteers are still holding their hands up.
 
-Understanding disease and curing disease are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. The NIH chose microscopes. It chose them 50 years ago and has not reconsidered since.
+Understanding disease and curing disease are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. In 1970, spending heavily on microscopes made sense; you didn't know enough to test intelligently. In 2025, after 2.5 million papers a year for five decades, the ratio should have shifted. It didn't. The NIH chose microscopes in 1970 and has not reconsidered since, which is the institutional equivalent of still crawling because you learned to crawl before you learned to walk.
 
 ## The Death Toll: Opportunity Cost of Misallocation
 
@@ -115,7 +117,7 @@ But independent trials comparing drugs head-to-head? Those are terrifying. They 
 
 The revolving door helps. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics. It's not a conspiracy. Conspiracies require secrecy. This is all public. It's just that everyone involved happens to benefit from the same terrible outcome, purely by coincidence, repeatedly, for decades. On Wishonia, we have a word for this. The word is "conspiracy." The difference between a conspiracy and a system is whether the participants need to meet in a dark room. These people meet in conference rooms with catering. The outcome is identical.
 
-The {{< var nih_clinical_trials_spending_pct >}} allocation isn't a mystery. It's a business model. Basic research produces publications. Publications produce tenure. Tenure produces more grants. Nobody in this cycle needs anyone to get better. Actual treatments are a byproduct that occasionally happens when someone forgets to optimize for papers and accidentally optimizes for results instead.
+The {{< var nih_clinical_trials_spending_pct >}} allocation isn't a mystery. It's a business model. Basic research produces publications. Publications produce tenure. Tenure produces more grants. Individual researchers want cures. The system doesn't make it possible for them to succeed at it. Actual treatments are a byproduct that occasionally happens when someone forgets to optimize for papers and accidentally optimizes for results instead.
 
 ## The Public Goods vs. Club Goods Scam
 
@@ -145,9 +147,8 @@ Patients don't control the money. Committees do. And committees optimize for the
 
 Since 1970, the NIH has spent over **$1.1 trillion** (inflation-adjusted). Diseases eradicated: **Zero** [@nih-eradicated-zero-diseases].
 
-![WHO spent $300 million and eradicated smallpox. NIH spent $1.1 trillion and eradicated zero diseases. The papers, however, are excellent.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-track-record-bw-academic.jpg)
+This is not the same as zero value. NIH-funded research contributed to HIV antiretrovirals, cancer immunotherapy, and childhood leukemia survival rates going from 10% to 90%. Those are real achievements, and the researchers behind them deserve every award they've received. The question is what a trillion dollars *should* have bought. Because the WHO eradicated smallpox for $300 million [@smallpox-eradication-roi]. Jonas Salk developed the polio vaccine in a university lab and gave it away for free, which is why nobody at the NIH talks about him at parties because he makes everyone look bad by comparison and also he's dead, which is the thing they were supposed to be fixing. Veterinarians have eradicated multiple animal diseases [@animal-diseases-eradicated-by-vets] on budgets the NIH would consider a rounding error.
 
-This isn't because eradicating disease is impossible. The WHO eradicated smallpox for $300 million [@smallpox-eradication-roi]. Jonas Salk developed the polio vaccine in a university lab and gave it away for free, which is why nobody at the NIH talks about him at parties because he makes everyone look bad by comparison and also he's dead, which is the thing they were supposed to be fixing. Veterinarians have eradicated multiple animal diseases [@animal-diseases-eradicated-by-vets] on budgets the NIH would consider a rounding error.
 
 Pigs have better healthcare outcomes than you do. Pigs. Animals you lock in metal crates too small to turn around in, standing in their own waste, whose tails you amputate without anesthesia because the confinement drives them insane enough to eat each other (they're smarter than your dogs). Your veterinarians eradicated hog cholera in 1978. The pigs couldn't turn around. You won't.
 
