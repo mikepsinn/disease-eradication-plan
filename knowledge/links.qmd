@@ -91,7 +91,14 @@ aliases:
   <span class="btn-sub">15 seconds. 38 lives saved.</span>
 </a>
 
-<h2>Buy</h2>
+<h2>Listen</h2>
+
+<a href="podcast.html" class="link-btn primary">
+  Listen
+  <span class="btn-sub">Spotify, Apple, YouTube Music, and more</span>
+</a>
+
+<h2>Get The Book</h2>
 
 <a href="https://www.amazon.com/dp/B0GPLXFMMT" class="link-btn primary">
   Amazon Paperback
@@ -113,18 +120,11 @@ aliases:
   <span class="btn-sub">Rate & review</span>
 </a>
 
-<h2>Read</h2>
+<h2>Read Online</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
   Read Online
   <span class="btn-sub">Full manual, no account needed</span>
-</a>
-
-<h2>Listen</h2>
-
-<a href="podcast.html" class="link-btn primary">
-  Listen
-  <span class="btn-sub">Spotify, Apple, YouTube Music, and more</span>
 </a>
 
 <h2>Follow</h2>

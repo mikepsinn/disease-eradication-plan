@@ -31,15 +31,9 @@
 
   // All available CTAs
   var ALL_CTAS = {
-    vote:    { label: 'Vote Now',    url: 'https://WarOnDisease.org',                                      icon: '\u2694\uFE0F', ga: 'vote' },
-    listen:  { label: 'Listen',      url: 'https://manual.WarOnDisease.org/knowledge/links.html',          icon: '\uD83C\uDFA7', ga: 'listen' },
-    book:    { label: 'Get the Book',url: 'https://www.amazon.com/dp/B0GPLXFMMT',                          icon: '\uD83D\uDCD6', ga: 'book' },
-    read:    { label: 'Read Free',   url: 'https://manual.WarOnDisease.org',                                icon: '\uD83D\uDCDA', ga: 'read' },
-    youtube: { label: 'Subscribe',   url: 'https://www.youtube.com/@WarOnDisease?sub_confirmation=1',       icon: '\u25B6\uFE0F',  ga: 'youtube' }
+    vote:    { label: 'Vote Now',           url: 'https://WarOnDisease.org',                              ga: 'vote' },
+    links:   { label: 'End War & Disease',  url: 'https://manual.WarOnDisease.org/knowledge/links.html',  ga: 'links' }
   };
-
-  // Secondary CTA rotation pool (one per day for natural A/B testing)
-  var SECONDARY_POOL = ['listen', 'book', 'youtube'];
 
   // ---------------------------------------------------------------------------
   // Early exit checks
@@ -68,39 +62,8 @@
   // CTA selection
   // ---------------------------------------------------------------------------
 
-  // Primary CTA: always vote unless overridden
-  var primaryKey = 'vote';
-  var pmeta = document.querySelector('meta[name="wod-promo-primary"]');
-  if (pmeta) primaryKey = pmeta.getAttribute('content') || primaryKey;
-
-  // Secondary CTA: rotate daily unless overridden
-  var secondaryKey;
-  var smeta = document.querySelector('meta[name="wod-promo-secondary"]');
-  if (smeta) {
-    secondaryKey = smeta.getAttribute('content');
-  } else {
-    // Context-aware defaults
-    var host = window.location.hostname.toLowerCase();
-    if (host.indexOf('manual.') === 0) {
-      // Already reading the book; push podcast
-      secondaryKey = 'listen';
-    } else if (host.indexOf('warondisease.org') !== -1) {
-      // On a paper/sub-site; push the full book
-      secondaryKey = 'read';
-    } else {
-      // External site: rotate daily
-      var dayIdx = new Date().getDate() % SECONDARY_POOL.length;
-      secondaryKey = SECONDARY_POOL[dayIdx];
-    }
-  }
-
-  // Don't show same CTA twice
-  if (secondaryKey === primaryKey) {
-    secondaryKey = SECONDARY_POOL[0] !== primaryKey ? SECONDARY_POOL[0] : SECONDARY_POOL[1];
-  }
-
-  var primary = ALL_CTAS[primaryKey] || ALL_CTAS.vote;
-  var secondary = ALL_CTAS[secondaryKey] || ALL_CTAS.listen;
+  var primary = ALL_CTAS.vote;
+  var secondary = ALL_CTAS.links;
 
   // ---------------------------------------------------------------------------
   // UTM helper
