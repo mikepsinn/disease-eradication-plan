@@ -1104,13 +1104,14 @@ def assemble_ken_burns_video(
 
 # --- Update Audiobook Manifest ---
 
-def update_audiobook_manifest(chapter_index: int, video_16x9: Path | None, video_9x16: Path | None, scene_count: int, paths: AudiobookPaths | None = None):
+def update_audiobook_manifest(chapter_index: int, video_16x9: Path | None, video_9x16: Path | None, scene_count: int,
+                              expected_path: str | None = None, paths: AudiobookPaths | None = None):
     fields = {'scenes': scene_count, 'video_status': 'generated'}
     if video_16x9:
         fields['video_16x9'] = str(video_16x9.relative_to(PROJECT_ROOT))
     if video_9x16:
         fields['video_9x16'] = str(video_9x16.relative_to(PROJECT_ROOT))
-    _update_chapter_fields(chapter_index, paths=paths, **fields)
+    _update_chapter_fields(chapter_index, paths=paths, expected_path=expected_path, **fields)
     print(f"  Audiobook manifest updated for chapter {chapter_index}")
 
 
@@ -1390,7 +1391,7 @@ def run_pipeline(
         video_9x16 = assemble_ken_burns_video(all_scenes, chapter, video_dir, slug, "9:16", book_meta=book_meta, paths=paths) if "9:16" in aspect_ratios else None
 
         print("\nUpdating manifest...")
-        update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(all_scenes), paths=paths)
+        update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(all_scenes), expected_path=chapter['path'], paths=paths)
 
         print(f"\nDone! Chapter {chapter['index']}: {chapter['title']} (Ken Burns stills)")
         if video_16x9:
@@ -1442,7 +1443,7 @@ def run_pipeline(
     video_9x16 = assemble_chapter_video(all_scenes, chapter, video_dir, slug, "9:16", book_meta=book_meta, paths=paths) if "9:16" in aspect_ratios else None
 
     print("\nUpdating manifest...")
-    update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(all_scenes), paths=paths)
+    update_audiobook_manifest(chapter['index'], video_16x9, video_9x16, len(all_scenes), expected_path=chapter['path'], paths=paths)
 
     print(f"\nDone! Chapter {chapter['index']}: {chapter['title']}")
     if video_16x9:

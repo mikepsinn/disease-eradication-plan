@@ -62,22 +62,22 @@ book:
         # CUT: problem.qmd - overview chapter that previews all sub-chapters; redundant in sequential reading
         # CUT: cost-of-war.qmd - key stats already in peace-dividend.qmd (itemized table, multipliers) and 1-percent-treaty.qmd; "war is expensive" is not a non-obvious argument
         # CUT: cost-of-disease.qmd - "disease kills people" is not news; $397T DALY argument moved to health-dividend.qmd
-        - knowledge/problem/nih-fails-2-institute-health.qmd
-        - knowledge/problem/untapped-therapeutic-frontier.qmd
+        - knowledge/problem/genetic-slavery.qmd
         - knowledge/problem/fda-is-unsafe-and-ineffective.qmd
+        - knowledge/problem/nih-fails-2-institute-health.qmd
         - knowledge/problem/unrepresentative-democracy.qmd
         - knowledge/economics/central-banks.qmd
-        - knowledge/problem/genetic-slavery.qmd
+        - knowledge/problem/untapped-therapeutic-frontier.qmd
 
     - part: "The Solution"
       chapters:
         # CUT: solution.qmd - overview that previews all solution sub-chapters; redundant in sequential reading
         - knowledge/solution/1-percent-treaty.qmd
         - knowledge/solution/dih.qmd
-        - knowledge/solution/wishocracy.qmd
         - knowledge/solution/dfda.qmd
         - knowledge/solution/aligning-incentives.qmd
         - knowledge/solution/incentive-alignment-bonds.qmd
+        - knowledge/solution/wishocracy.qmd
 
     - part: "For Skeptics"
       chapters:

@@ -2,12 +2,12 @@
 
 **Config:** _quarto-right-to-trial.yml
 **Type:** website
-**Files:** 1 | **Words:** 6,943 | **Images:** 17 | **Est. Pages:** ~36
+**Files:** 1 | **Words:** 6,945 | **Images:** 17 | **Est. Pages:** ~36
 
 #### knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
 **Title:** Right to Trial & FDA Upgrade Act
 **Description:** Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
-**Stats:** 6,943 words | 290 lines | 17 images | ~36p
+**Stats:** 6,945 words | 291 lines | 17 images | ~36p
 
   - TITLE I: SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
     - SEC. 101. SHORT TITLE

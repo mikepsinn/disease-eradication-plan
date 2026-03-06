@@ -23,7 +23,7 @@
   var DISMISS_KEY = 'wod-promo-dismissed';
   var DISMISS_DAYS = 7;
   var SHOW_DELAY_MS = 1500;
-  var BAR_HEIGHT_PX = 56;
+  var BAR_HEIGHT_PX = 40;
   var UTM = 'utm_source=promo_bar&utm_medium=sticky_bar&utm_campaign=cross_site';
 
   // Pages where the bar is redundant
@@ -31,15 +31,9 @@
 
   // All available CTAs
   var ALL_CTAS = {
-    vote:    { label: 'Vote Now',    url: 'https://WarOnDisease.org',                                      icon: '\u2694\uFE0F', ga: 'vote' },
-    listen:  { label: 'Listen',      url: 'https://manual.WarOnDisease.org/knowledge/links.html',          icon: '\uD83C\uDFA7', ga: 'listen' },
-    book:    { label: 'Get the Book',url: 'https://www.amazon.com/dp/B0GPLXFMMT',                          icon: '\uD83D\uDCD6', ga: 'book' },
-    read:    { label: 'Read Free',   url: 'https://manual.WarOnDisease.org',                                icon: '\uD83D\uDCDA', ga: 'read' },
-    youtube: { label: 'Subscribe',   url: 'https://www.youtube.com/@WarOnDisease?sub_confirmation=1',       icon: '\u25B6\uFE0F',  ga: 'youtube' }
+    vote:    { label: 'Vote Now',           url: 'https://WarOnDisease.org',                              ga: 'vote' },
+    links:   { label: 'End War & Disease',  url: 'https://manual.WarOnDisease.org/knowledge/links.html',  ga: 'links' }
   };
-
-  // Secondary CTA rotation pool (one per day for natural A/B testing)
-  var SECONDARY_POOL = ['listen', 'book', 'youtube'];
 
   // ---------------------------------------------------------------------------
   // Early exit checks
@@ -68,39 +62,8 @@
   // CTA selection
   // ---------------------------------------------------------------------------
 
-  // Primary CTA: always vote unless overridden
-  var primaryKey = 'vote';
-  var pmeta = document.querySelector('meta[name="wod-promo-primary"]');
-  if (pmeta) primaryKey = pmeta.getAttribute('content') || primaryKey;
-
-  // Secondary CTA: rotate daily unless overridden
-  var secondaryKey;
-  var smeta = document.querySelector('meta[name="wod-promo-secondary"]');
-  if (smeta) {
-    secondaryKey = smeta.getAttribute('content');
-  } else {
-    // Context-aware defaults
-    var host = window.location.hostname.toLowerCase();
-    if (host.indexOf('manual.') === 0) {
-      // Already reading the book; push podcast
-      secondaryKey = 'listen';
-    } else if (host.indexOf('warondisease.org') !== -1) {
-      // On a paper/sub-site; push the full book
-      secondaryKey = 'read';
-    } else {
-      // External site: rotate daily
-      var dayIdx = new Date().getDate() % SECONDARY_POOL.length;
-      secondaryKey = SECONDARY_POOL[dayIdx];
-    }
-  }
-
-  // Don't show same CTA twice
-  if (secondaryKey === primaryKey) {
-    secondaryKey = SECONDARY_POOL[0] !== primaryKey ? SECONDARY_POOL[0] : SECONDARY_POOL[1];
-  }
-
-  var primary = ALL_CTAS[primaryKey] || ALL_CTAS.vote;
-  var secondary = ALL_CTAS[secondaryKey] || ALL_CTAS.listen;
+  var primary = ALL_CTAS.vote;
+  var secondary = ALL_CTAS.links;
 
   // ---------------------------------------------------------------------------
   // UTM helper
@@ -125,84 +88,64 @@
   var style = document.createElement('style');
   style.textContent = [
     '#wod-promo-bar {',
-    '  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;',
-    '  background: #1a1a2e; color: #e8e0d6;',
-    '  padding: 0; margin: 0;',
-    '  box-shadow: 0 -2px 12px rgba(0,0,0,0.2);',
-    '  transform: translateY(100%);',
-    '  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);',
+    '  position: fixed; left: 50%; bottom: 10px; z-index: 999;',
+    '  max-width: calc(100vw - 1rem);',
+    '  background: rgba(17,24,39,0.94); color: #f8fafc;',
+    '  border: 1px solid rgba(248,250,252,0.14);',
+    '  border-radius: 999px;',
+    '  box-shadow: 0 8px 24px rgba(0,0,0,0.24);',
+    '  backdrop-filter: blur(6px);',
+    '  transform: translate(-50%, calc(100% + 20px));',
+    '  opacity: 0;',
+    '  transition: transform 0.25s ease, opacity 0.25s ease;',
     '  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;',
     '}',
-    '#wod-promo-bar.visible { transform: translateY(0); }',
+    '#wod-promo-bar.visible { transform: translate(-50%, 0); opacity: 1; }',
     '#wod-promo-bar .promo-inner {',
-    '  max-width: 960px; margin: 0 auto;',
-    '  display: flex; align-items: center; justify-content: center;',
-    '  gap: 1rem; padding: 0.7rem 1rem;',
-    '}',
-    '#wod-promo-bar .promo-msg {',
-    '  font-size: 0.92rem; font-weight: 500;',
-    '  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;',
+    '  display: flex; align-items: center; gap: 0.45rem;',
+    '  padding: 0.35rem 0.5rem;',
     '}',
     '#wod-promo-bar .promo-ctas {',
-    '  display: flex; gap: 0.5rem; flex-shrink: 0;',
+    '  display: flex; align-items: center; gap: 0.35rem;',
     '}',
     '#wod-promo-bar .promo-btn {',
-    '  display: inline-flex; align-items: center; gap: 0.35rem;',
-    '  padding: 0.4rem 1rem; border-radius: 6px;',
-    '  text-decoration: none !important; font-weight: 600; font-size: 0.88rem;',
-    '  white-space: nowrap; cursor: pointer;',
-    '  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;',
+    '  display: inline-flex; align-items: center;',
+    '  padding: 0.28rem 0.62rem; border-radius: 999px;',
+    '  text-decoration: none !important; font-weight: 600; font-size: 0.78rem;',
+    '  white-space: nowrap; line-height: 1.2;',
+    '  transition: background 0.15s ease, color 0.15s ease;',
     '}',
     '#wod-promo-bar .promo-btn-primary {',
-    '  background: #c9a84c; color: #1a1a2e !important; border: none;',
+    '  background: #fbbf24; color: #111827 !important; border: 1px solid transparent;',
     '}',
-    '#wod-promo-bar .promo-btn-primary:hover {',
-    '  background: #dbb85c; transform: translateY(-1px);',
-    '  box-shadow: 0 2px 8px rgba(201,168,76,0.3);',
-    '}',
+    '#wod-promo-bar .promo-btn-primary:hover { background: #fcd34d; }',
     '#wod-promo-bar .promo-btn-secondary {',
-    '  background: transparent; color: #e8e0d6 !important;',
-    '  border: 1.5px solid rgba(232,224,214,0.4);',
+    '  background: transparent; color: rgba(248,250,252,0.86) !important;',
+    '  border: none; padding: 0.24rem 0.35rem;',
     '}',
-    '#wod-promo-bar .promo-btn-secondary:hover {',
-    '  background: rgba(232,224,214,0.08); transform: translateY(-1px);',
-    '  border-color: rgba(232,224,214,0.7);',
-    '}',
+    '#wod-promo-bar .promo-btn-secondary:hover { color: #ffffff !important; }',
     '#wod-promo-bar .promo-dismiss {',
-    '  background: none; border: none; color: #6b6360; cursor: pointer;',
-    '  font-size: 1.15rem; padding: 0.3rem 0.5rem; line-height: 1;',
-    '  flex-shrink: 0; transition: color 0.15s ease;',
+    '  background: none; border: none; color: rgba(248,250,252,0.52);',
+    '  cursor: pointer; font-size: 1rem; padding: 0.18rem 0.32rem; line-height: 1;',
+    '  transition: color 0.15s ease;',
     '}',
-    '#wod-promo-bar .promo-dismiss:hover { color: #e8e0d6; }',
+    '#wod-promo-bar .promo-dismiss:hover { color: #ffffff; }',
     '',
-    '/* Push floating buttons up when bar is visible */',
-    'body.wod-promo-active { padding-bottom: ' + BAR_HEIGHT_PX + 'px; }',
-    'body.wod-promo-active #dark-mode-toggle { bottom: ' + (BAR_HEIGHT_PX + 20) + 'px !important; }',
-    'body.wod-promo-active #uncertainty-toggle { bottom: ' + (BAR_HEIGHT_PX + 20) + 'px !important; }',
-    'body.wod-promo-active #copy-citation-btn { bottom: ' + (BAR_HEIGHT_PX + 70) + 'px !important; }',
-    'body.wod-promo-active #back-to-top { bottom: ' + (BAR_HEIGHT_PX + 120) + 'px !important; }',
+    'body.wod-promo-active { padding-bottom: 0; }',
+    'body.wod-promo-active #dark-mode-toggle { bottom: ' + (BAR_HEIGHT_PX + 12) + 'px !important; }',
+    'body.wod-promo-active #uncertainty-toggle { bottom: ' + (BAR_HEIGHT_PX + 12) + 'px !important; }',
+    'body.wod-promo-active #copy-citation-btn { bottom: ' + (BAR_HEIGHT_PX + 56) + 'px !important; }',
+    'body.wod-promo-active #back-to-top { bottom: ' + (BAR_HEIGHT_PX + 98) + 'px !important; }',
     '',
-    '/* Mobile */',
     '@media (max-width: 600px) {',
-    '  #wod-promo-bar .promo-inner {',
-    '    flex-wrap: wrap; gap: 0.4rem; padding: 0.6rem 0.7rem;',
-    '    position: relative;',
-    '  }',
-    '  #wod-promo-bar .promo-msg {',
-    '    width: 100%; text-align: center; font-size: 0.82rem;',
-    '    padding-right: 1.5rem;',
-    '  }',
-    '  #wod-promo-bar .promo-ctas { width: 100%; justify-content: center; }',
-    '  #wod-promo-bar .promo-btn { padding: 0.35rem 0.8rem; font-size: 0.82rem; }',
-    '  #wod-promo-bar .promo-dismiss {',
-    '    position: absolute; top: 0.3rem; right: 0.3rem;',
-    '  }',
+    '  #wod-promo-bar { bottom: 8px; max-width: calc(100vw - 0.75rem); }',
+    '  #wod-promo-bar .promo-inner { padding: 0.3rem 0.42rem; gap: 0.28rem; }',
+    '  #wod-promo-bar .promo-btn { padding: 0.24rem 0.54rem; font-size: 0.74rem; }',
+    '  #wod-promo-bar .promo-btn-secondary { display: none; }',
     '}',
     '',
-    '/* Print */',
     '@media print {',
     '  #wod-promo-bar { display: none !important; }',
-    '  body.wod-promo-active { padding-bottom: 0 !important; }',
     '}'
   ].join('\n');
   document.head.appendChild(style);
@@ -216,13 +159,12 @@
   bar.setAttribute('aria-label', 'Promotion');
   bar.innerHTML = [
     '<div class="promo-inner">',
-    '  <span class="promo-msg">Help end war &amp; disease</span>',
     '  <span class="promo-ctas">',
     '    <a href="' + addUtm(primary.url, primary.ga) + '" class="promo-btn promo-btn-primary" data-ga="' + primary.ga + '" target="_blank" rel="noopener">',
-    '      ' + primary.icon + ' ' + primary.label,
+    '      ' + primary.label,
     '    </a>',
     '    <a href="' + addUtm(secondary.url, secondary.ga) + '" class="promo-btn promo-btn-secondary" data-ga="' + secondary.ga + '" target="_blank" rel="noopener">',
-    '      ' + secondary.icon + ' ' + secondary.label,
+    '      ' + secondary.label,
     '    </a>',
     '  </span>',
     '  <button class="promo-dismiss" aria-label="Dismiss" title="Dismiss">&times;</button>',

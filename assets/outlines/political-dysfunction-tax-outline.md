@@ -2,12 +2,12 @@
 
 **Config:** _quarto-political-dysfunction-tax.yml
 **Type:** website
-**Files:** 1 | **Words:** 5,043 | **Images:** 20 | **Est. Pages:** ~30
+**Files:** 1 | **Words:** 4,789 | **Images:** 20 | **Est. Pages:** ~29
 
 #### knowledge/appendix/political-dysfunction-tax.qmd
 **Title:** The Political Dysfunction Tax
-**Description:** Governance dysfunction costs you $12,100 per year. Over your lifetime, the compound cost ranges from $2.6 million (conservative) to $2.5 billion (model-consistent). Globally, $97 trillion in annual potential is destroyed by military overspend, regulatory friction, delayed cures, and migration restrictions.
-**Stats:** 5,043 words | 355 lines | 20 images | ~30p
+**Description:** Governance dysfunction imposes large per-person annual costs and suppresses long-run compounding. This paper quantifies the opportunity ledger and efficiency gap with model-linked parameters.
+**Stats:** 4,789 words | 353 lines | 20 images | ~29p
 
   - What This Costs You
   - Introduction: The Mechanism Design of Civilizational Stagnation

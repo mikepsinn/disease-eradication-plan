@@ -570,6 +570,7 @@ def combine_chapter_audio(
     result = subprocess.run([
         "ffmpeg", "-y",
         "-f", "concat", "-safe", "0", "-i", str(concat_file),
+        "-ar", "24000", "-ac", "1",
         "-codec:a", "libmp3lame", "-b:a", "192k",
         "-f", "mp3",
         str(tmp_mp3),
@@ -624,12 +625,16 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
     print(f"Total: {len(chapters)} chapters")
 
 
-def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int, paths: AudiobookPaths | None = None):
+def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int,
+                    chapters: list[dict] | None = None, paths: AudiobookPaths | None = None):
     """Update manifest.json with duration and timing data."""
+    # Build path lookup for stale-entry detection
+    path_by_index = {ch['index']: ch['path'] for ch in chapters} if chapters else {}
     for ts in timestamps:
         update_chapter_fields(
             ts['index'],
             paths=paths,
+            expected_path=path_by_index.get(ts['index']),
             duration_ms=ts['duration_ms'],
             duration_formatted=ts['duration_formatted'],
             audio_start_ms=ts['start_ms'],
@@ -915,6 +920,13 @@ def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
         return wav_path
 
     # Pass 2: Apply normalization with measured values
+    # Preserve original sample rate (loudnorm internally resamples to 192kHz)
+    probe = subprocess.run(
+        ["ffprobe", "-v", "quiet", "-show_entries", "stream=sample_rate",
+         "-of", "csv=p=0", str(wav_path)],
+        capture_output=True, text=True,
+    )
+    orig_rate = probe.stdout.strip().split('\n')[0] if probe.returncode == 0 else "24000"
     norm_cmd = [
         "ffmpeg", "-y", "-i", str(wav_path),
         "-af", (
@@ -923,6 +935,7 @@ def normalize_loudness(wav_path: Path, target_lufs: float = -16.0) -> Path:
             f"measured_LRA={measured_lra}:measured_thresh={measured_thresh}:"
             f"offset={target_offset}:linear=true"
         ),
+        "-ar", orig_rate,
         str(temp_path),
     ]
     result = subprocess.run(norm_cmd, capture_output=True, text=True)
@@ -1080,7 +1093,13 @@ def wrap_mp3_with_intro_outro(
     saved_tags = raw_mp3.tags
 
     # Build combined audio: intro + chapter + outro
+    # Normalize to 48kHz mono: preserves theme song quality (brass/cymbals up to 24kHz)
+    # while keeping mono for efficient bitrate. TTS (24kHz native) upsamples cleanly.
+    TARGET_RATE = 48000
+    TARGET_CHANNELS = 1
+
     chapter_audio = AudioSegment.from_mp3(str(raw_mp3_path))
+    chapter_audio = chapter_audio.set_frame_rate(TARGET_RATE).set_channels(TARGET_CHANNELS)
     combined = AudioSegment.empty()
 
     if intro_path and intro_path.exists():
@@ -1088,6 +1107,7 @@ def wrap_mp3_with_intro_outro(
             intro_audio = AudioSegment.from_mp3(str(intro_path))
         else:
             intro_audio = AudioSegment.from_wav(str(intro_path))
+        intro_audio = intro_audio.set_frame_rate(TARGET_RATE).set_channels(TARGET_CHANNELS)
         combined += intro_audio
 
     combined += chapter_audio
@@ -1097,6 +1117,7 @@ def wrap_mp3_with_intro_outro(
             outro_audio = AudioSegment.from_mp3(str(outro_path))
         else:
             outro_audio = AudioSegment.from_wav(str(outro_path))
+        outro_audio = outro_audio.set_frame_rate(TARGET_RATE).set_channels(TARGET_CHANNELS)
         combined += outro_audio
 
     combined.export(str(output_path), format="mp3", bitrate="192k")
@@ -1171,7 +1192,9 @@ def export_single_chapter_mp3(
         print(f"  [NEW RAW MP3] Exporting: {slug}.mp3")
 
     # Convert WAV to MP3 via pydub
+    # Force 24kHz mono (TTS native rate; loudnorm may have upsampled WAV to 192kHz)
     audio = AudioSegment.from_wav(str(chapter_file))
+    audio = audio.set_frame_rate(24000).set_channels(1)
     audio.export(str(mp3_path), format="mp3", bitrate="192k")
 
     # Book-level cover art (fallback for chapters without podcast images)
@@ -1545,6 +1568,7 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
     update_chapter_fields(
         chapter['index'],
         paths=paths,
+        expected_path=chapter['path'],
         alignment_file=str(alignment_path.relative_to(PROJECT_ROOT)),
         subtitle_file=str(vtt_path.relative_to(PROJECT_ROOT)),
     )
@@ -1752,7 +1776,7 @@ def main():
 
             total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
 
-            update_manifest(timestamps, total_duration_ms, paths=paths)
+            update_manifest(timestamps, total_duration_ms, chapters=all_chapters, paths=paths)
             tag_mp3(mp3_path, timestamps, book_meta, chapters=all_chapters, paths=paths)
             export_m4b(mp3_path, timestamps, book_meta)
     _substep_times["Combine audiobook"] = time.monotonic() - t_sub

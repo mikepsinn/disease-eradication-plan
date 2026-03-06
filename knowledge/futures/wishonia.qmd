@@ -15,25 +15,15 @@ feed-date: '2026-03-11'
 youtube-thumbnail: /assets/podcast/wishonia-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Hello again. Wishonia here.
 
-I'm from a planet also called Wishonia. We stopped having wars 4,297 years ago. Not because we evolved morally. We bribed everyone. Our version of your 1% treaty redirected resources from killing each other to keeping each other alive, and once the incentives aligned, peace stopped being a moral aspiration and became a financial position. Nobody had to become a better person. The money just circulated until war stopped being profitable. Morality is debatable. Spreadsheets are not.
 
-This chapter is the answer key to a test you haven't taken yet.
-
-## How My Planet Works
-
-On Wishonia, we don't have wars (ran the numbers, not profitable), disease (fixed them all, took about 50 of your years once we started trying), death from old age (optional now, most people opt out the way you opt out of email newsletters), or committees deciding who gets healthcare (we tried that for a while, and it went about as well as you'd expect, which is to say: badly, slowly, and with a lot of catering).
-
-We do have AI-optimized resource allocation that maximizes marginal median happiness through [wishocracy](../solution/wishocracy.qmd), treatments tested simultaneously on willing participants instead of serially on unwilling lab animals, life expectancy of "until you're bored," and an economy where the profit motive and the survival motive are the same motive, which turns out to be the only economic innovation that matters.
+I'm from a planet also called Wishonia. We stopped having wars 4,297 years ago. Not because we evolved morally. We bribed everyone. Our version of your 1% treaty redirected resources from killing each other to keeping each other alive, and once the incentives aligned.
 
 You have the same atoms we had. You have the same physics. You have better computers than we had at this stage. The only difference is we stopped spending resources on explosion technology around the time you were still hitting each other with rocks. You kept going. You got very good at it. Nobody on Wishonia disputes that you are the best rock-hitters the universe has ever produced. We just question whether that's the thing you want to be best at.
 
 ![Earth: everyone fights over scraps. Wishonia: robot does math, nobody dies. Tough choice.](/assets/images/wishonia/wishonia-section-how-my-planet-works-bw-academic.jpg)
 
 ## What the Optimized World Looks Like
-
-### The Three Supers
 
 Depression gets cured. Not "managed" with a monthly subscription to sadness pills that list "suicidal thoughts" as a side effect, which is like selling a fire extinguisher that's also a flamethrower. *Cured.* Precision therapies that actually work because you tested them on thousands of willing participants instead of twelve college students who needed beer money.
 
@@ -83,9 +73,9 @@ Here's what Tuesday looks like when the Three Supers are normal:
 
 ## The Diseases That Stopped Existing
 
-You remember these the way you remember dial-up internet. Vaguely horrifying in retrospect. "You mean people just... had cancer? And they couldn't fix it? What did they do?" "They held fundraising walks." "They WALKED? That was the plan?" "It raised awareness." "They were already aware! They had cancer!"
+We remember these the way you remember dial-up internet. Vaguely horrifying in retrospect. Our children learn about them in history class. "You mean people just... had cancer? And they couldn't fix it? What did they do?" "They held fundraising walks." "They WALKED? That was the plan?" "It raised awareness." "They were already aware! They had cancer!"
 
-Most cancers: detected at stage 0, eliminated immediately. The oncology wing of the hospital is now a trampoline park. Type 2 diabetes: prevented with personalized nutrition that knows more about your body than you do, which isn't hard because you don't know anything about your body. Alzheimer's: caught 20 years before symptoms, reversed completely. Heart disease: arteries cleaned monthly like oil changes, which is a maintenance schedule your species already understands for cars but somehow never applied to the machine you live inside. Depression: actually cured, not "have you tried going for a walk?" (Going for a walk is lovely. It does not cure depression. Nothing that lovely cures anything. If it did, ice cream would be medicine.) Aging itself: in the first generation, still happens, but 40% slower, which means your species' midlife crisis now arrives at 70 instead of 40, giving you 30 extra years to buy the sports car. In the second generation, it reverses entirely, at which point the sports car becomes a long-term investment.
+On Wishonia, most cancers have been detected at stage 0 and eliminated immediately for millennia. The last oncology wing became a trampoline park 3,800 years ago. Type 2 diabetes: prevented with personalized nutrition that knows more about your body than you do, which isn't hard because you don't know anything about your body. Alzheimer's: caught 20 years before symptoms, reversed completely. Heart disease: arteries cleaned monthly like oil changes, which is a maintenance schedule your species already understands for cars but somehow never applied to the machine you live inside. Depression: actually cured, not "have you tried going for a walk?" (Going for a walk is lovely. It does not cure depression. Nothing that lovely cures anything. If it did, ice cream would be medicine.) We solved aging entirely around generation two. Your species could do the same. In your first generation after the treaty, it would still happen, but 40% slower, which means your midlife crisis arrives at 70 instead of 40, giving you 30 extra years to buy the sports car. In the second generation, it reverses entirely, at which point the sports car becomes a long-term investment.
 
 ![Live 75 years fixing what breaks, or live 150 years never breaking in the first place. Same cost, different timing.](/assets/images/wishonia/wishonia-section-the-diseases-that-stopped-existing-bw-academic.jpg)
 
@@ -99,9 +89,7 @@ Money still exists. It just flows toward things that don't explode. (Low bar, bu
 
 Greed doesn't disappear (you're still human). It just starts wearing a lab coat. After the initial 1% treaty proved successful, nations gradually redirected more. From military budgets: $1.35 trillion. Economic growth from a healthy population: $3.5 trillion. Reduced healthcare costs: $2.8 trillion. Productivity gains from people not being dead: $4.1 trillion. Total annual peace dividend: $11.75 trillion. That's new wealth generated by the radical innovation of people not being sick or dead. Alive, healthy people are productive. Who knew? Everyone. Everyone knew. For centuries. You just kept not doing it, which is the defining characteristic of your species: knowing the right thing and then not doing it, elaborately, with funding.
 
-If you'd like numbers instead of poetry: the [20-year model](../economics/gdp-trajectories.qmd) projects the Treaty Path producing {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the GDP of doing nothing, and the Wishonia Path producing {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}}. That's what "not being stupid" compounds to over 20 years.
-
-![Eleven trillion dollars you find in the couch cushions when you stop trying to kill each other.](/assets/images/wishonia/wishonia-section-peace-dividend-breakdown-bw-academic.jpg)
+If you'd like numbers instead of poetry: the [20-year model](../economics/gdp-trajectories.qmd) projects the Wishonia path producing {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the GDP of doing nothing. Per person, that's {{< var wishonia_path_avg_income_year_20 >}} average income versus {{< var earth_avg_income_year_20 >}} on your current trajectory. Not the rich ones. The average ones. That's what "not being stupid" compounds to over 20 years.
 
 Here's what that means for your paycheck. Your species' productivity per person has roughly tripled since 1970. Median wages, adjusted for actual living costs, barely moved. The gap between what you produce and what you earn went to the items listed above: military budgets, administrative overhead, and a financial system that converts your productivity into other people's assets. You subsidized your own impoverishment, which takes talent.
 
@@ -133,17 +121,17 @@ Same companies that made weapons now make life. Guidance systems, targeting algo
 
 **Palantir Health Insights:** Data analysis predicts disease outbreaks before they happen. Privacy-protected, transparent, saves lives. Still creepy, but helpfully creepy. Like a doctor who memorizes your schedule and shows up before you know you're sick. You appreciate it and also you lock your doors.
 
-## Your New Problems
+## Our Current Problems
 
-You still have problems. They're just embarrassingly good problems.
+We still have problems. They're just embarrassingly good problems.
 
-Too many healthy 100-year-olds want to work. Government crisis meetings about citizens being "too productive and won't stop contributing to society." This is the kind of emergency that your current politicians would trade their entire career to have, and they will, eventually, once the treaty passes.
+Too many healthy 100-year-olds want to work. Crisis meetings about citizens being "too productive and won't stop contributing to society." This is the kind of emergency that your current politicians would trade their entire career to have, and they will, eventually, once the treaty passes.
 
 ![Problems you only have when nobody dies. Like 'where do we put everyone' and 'what if I'm bored for 200 years.' Good problems to have.](/assets/images/wishonia/wishonia-section-your-new-problems-bw-academic.jpg)
 
-When you live to 150, universities offer "Century Degrees." One hundred years of education. Finally, enough time to finish a PhD. (Current PhDs take an average of 7 years. At that rate, a Century Degree takes 14 centuries. The math doesn't work, but neither does academia, so it fits.)
+When you live to 150, universities offer "Century Degrees." One hundred years of education. Finally, enough time to finish a PhD. (Our PhDs used to take an average of 7 years. At that rate, a Century Degree takes 14 centuries. The math doesn't work, but neither does academia, so it fits.)
 
-When you're not worried about dying, you worry about meaning. Philosophy becomes the fastest-growing major. Philosophers are thrilled. This is the first time anyone has used "philosophers" and "thrilled" in the same sentence. The philosophy department gets a window. Several philosophers faint.
+When you're not worried about dying, you worry about meaning. Philosophy became our fastest-growing field. Our philosophers were thrilled. First time anyone had used "philosophers" and "thrilled" in the same sentence. The philosophy department got a window. Several philosophers fainted.
 
 These are luxury problems. You'll take them over cancer.
 
@@ -165,13 +153,15 @@ Clinical trials: when you're not spending 80% of research budgets on grant appli
 
 Innovation: healthy brains think better. More breakthrough discoveries in 20 years than the previous 200. It's almost as if not poisoning your scientists with stress, sleep deprivation, and grant-writing improves their output. On Wishonia, this observation is 4,297 years old. On Earth, it's still somehow controversial.
 
-### Peace
+### Peace and Governance
 
-War is a principal-agent problem, and [wishocracy](../solution/wishocracy.qmd) eliminated the agent. Your citizens never directly voted to start any war in the last century. Politicians voted for wars because the defense industry funded their campaigns, and the defense industry funded campaigns because politicians voted for wars. Your political scientists had a name for this feedback loop (the military-industrial complex), and the man who named it (Eisenhower) was running the largest military in history at the time, which tells you everything about the difference between diagnosing a disease and curing it. Remove the politicians, and you remove the only people who personally profited from war. {{< var us_gov_waste_military_overspend >}} per year {{< var us_gov_waste_military_overspend_cite >}} in military spending beyond what actual defense required evaporated overnight, because when 8 billion people allocate directly, nobody checks the box marked "more bombs than the next 10 countries combined." The peace dividend then did the rest: every citizen getting a daily UBI deposit, every bondholder earning returns from health outcomes, every corporation that pivoted to biotech has a direct, measurable financial stake in continued peace. Re-arming means losing returns that 8 billion people can see on the wishocracy dashboard in real time. Peace stopped being a moral aspiration and became a Nash equilibrium. The game theory was always there. You just needed to remove the players who were rigging the game.
+War is a principal-agent problem, and [wishocracy](../solution/wishocracy.qmd) eliminated the agent. Your citizens never directly voted to start any war in the last century. Politicians voted for wars because the defense industry funded their campaigns, and the defense industry funded campaigns because politicians voted for wars. Your political scientists had a name for this feedback loop (the military-industrial complex), and the man who named it (Eisenhower) was running the largest military in history at the time, which tells you everything about the difference between diagnosing a disease and curing it.
 
-### Governance
+So politicians went extinct. Not violently (that would have been on-brand for your species, but no). Their ecological niche disappeared. A politician is a middleman between citizens and resource allocation, the way a travel agent was a middleman between travelers and a computer. Wishocracy replaced them. The last politicians tried to ban it. The ban was allocated 0% of the budget by 8 billion people simultaneously, which was the most democratic thing that had ever happened in the history of democracy and also the funniest.
 
-Politicians went extinct. Not violently (that would have been on-brand for your species, but no). Their ecological niche disappeared. A politician is a middleman between citizens and resource allocation. [Wishocracy](../solution/wishocracy.qmd) lets citizens allocate directly, the way the internet let travelers book flights without calling a person whose entire job was talking to a different computer on your behalf. The last politicians tried to ban wishocracy. The ban was allocated 0% of the budget by 8 billion people simultaneously, which was the most democratic thing that had ever happened in the history of democracy and also the funniest. Then the food chain collapsed. Lobbyists were an invasive species that had evolved to feed exclusively on politicians. Remove the host species, the parasite has nothing to parasitize. {{< var us_total_lobbying_annual >}} per year in lobbying spending became $0 overnight. So did the {{< var us_gov_waste_corporate_welfare >}} per year {{< var us_gov_waste_corporate_welfare_cite >}} in corporate welfare that the lobbying was purchasing, because it turns out companies stop asking the government for free money when there's nobody at the government to ask. The lobbyists became life coaches. The career transition was seamless; the skill set was identical (tell powerful people what they want to hear, charge by the hour). The think tanks followed. Then the political consultants. Then the cable news pundits. An entire ecosystem, evolved over centuries to convert public money into private influence, collapsed in a decade because the supply of corruptible middlemen dried up. Ecologists called it the fastest mass extinction since the dinosaurs. The dinosaurs had an asteroid. The politicians just had a better app.
+{{< var us_gov_waste_military_overspend >}} per year {{< var us_gov_waste_military_overspend_cite >}} in military spending beyond what actual defense required evaporated overnight, because when 8 billion people allocate directly, nobody checks the box marked "more bombs than the next 10 countries combined." Then the food chain collapsed. Lobbyists were an invasive species that had evolved to feed exclusively on politicians. Remove the host species, the parasite has nothing to parasitize. {{< var us_total_lobbying_annual >}} per year in lobbying spending became $0 overnight. So did the {{< var us_gov_waste_corporate_welfare >}} per year {{< var us_gov_waste_corporate_welfare_cite >}} in corporate welfare that the lobbying was purchasing, because it turns out companies stop asking the government for free money when there's nobody at the government to ask. The lobbyists became life coaches. The career transition was seamless; the skill set was identical (tell powerful people what they want to hear, charge by the hour). The think tanks followed. Then the political consultants. Then the cable news pundits. An entire ecosystem, evolved over centuries to convert public money into private influence, collapsed in a decade because the supply of corruptible middlemen dried up. Ecologists called it the fastest mass extinction since the dinosaurs. The dinosaurs had an asteroid. The politicians just had a better app.
+
+The peace dividend did the rest: every citizen getting a daily UBI deposit, every bondholder earning returns from health outcomes, every corporation that pivoted to biotech; all with a direct, measurable financial stake in continued peace. Re-arming means losing returns that 8 billion people can see on the dashboard in real time. Peace stopped being a moral aspiration and became a Nash equilibrium. The game theory was always there. You just needed to remove the players who were rigging the game.
 
 ### Happiness
 
@@ -187,9 +177,9 @@ But the real revolution wasn't turning off bad impulses. It was making good ones
 
 Now you choose what feels rewarding. A person whose brain used to reward aggression discovers that saving a life delivers the same dopamine cascade. Someone inclined to hoard finds that building housing for strangers feels the way acquisition used to. Your religious people, who spent two millennia trying to be Christlike using a brain that neurochemically punishes selflessness, can finally feel as good being generous as they used to feel being selfish. Altruism stops being sacrifice and starts being appetite. Self-control stops being a war with yourself and becomes a preference setting.
 
-Nobody makes you do any of this. That bears repeating because your species has a long history of people with power deciding what other people should feel. On Wishonia, we replaced representative government with constitutional wishocracy four millennia ago. There are no politicians left to mandate anything, even if mandating neurochemical changes were something a sane civilization would permit, which it is not. The constitution has one constraint on self-modification: the word "self." You modify your own neurochemistry. Nobody else's. Not by majority vote. Not by executive order. Not by a committee that met once and felt productive about it. Your species will find this alarmingly permissive until you realize it's just bodily autonomy applied consistently, which is something you already claim to support but have never actually tried. (Your previous policy on neurochemical self-determination was the war on drugs: {{< var us_gov_waste_drug_war >}} per year {{< var us_gov_waste_drug_war_cite >}} criminalizing some molecules while advertising others during football games. The classification system was not based on pharmacology. It was based on who had lobbyists. This is not a policy. This is astrology with handcuffs.)
+Nobody makes you do any of this. That bears repeating because your species has a long history of people with power deciding what other people should feel. There are no politicians left to mandate anything, even if mandating neurochemical changes were something a sane civilization would permit, which it is not. The constitution has one constraint on self-modification: the word "self." You modify your own neurochemistry. Nobody else's. Not by majority vote. Not by executive order. Not by a committee that met once and felt productive about it. Your species will find this alarmingly permissive until you realize it's just bodily autonomy applied consistently, which is something you already claim to support but have never actually tried. (Your previous policy on neurochemical self-determination was the war on drugs: {{< var us_gov_waste_drug_war >}} per year {{< var us_gov_waste_drug_war_cite >}} criminalizing some molecules while advertising others during football games. The classification system was not based on pharmacology. It was based on who had lobbyists. This is not a policy. This is astrology with handcuffs.)
 
-On Wishonia, this is when the arguments about "human nature" finally ended. Human nature was never the problem. Human neurochemistry was. And neurochemistry is just engineering with smaller parts.
+On Wishonia, this is when the arguments about our nature finally ended. Nature was never the problem. Neurochemistry was. And neurochemistry is just engineering with smaller parts.
 
 The selfish gene is still selfish. You just stopped letting it drive. The whole time, you were passengers in a vehicle you thought you were piloting. Now you actually have the wheel. What you do with it is up to you, which is the first time that sentence has been true for any member of your species.
 
@@ -197,7 +187,7 @@ The selfish gene is still selfish. You just stopped letting it drive. The whole 
 
 ## The Three Supers Complete
 
-Super-Intelligence: complete. Every human accesses all knowledge instantly. Arguments still happen, but now they're about interesting things instead of things that were settled by evidence centuries ago. The "gif" question was finally settled. Several nations cited this as their primary reason for signing the treaty.
+Super-Intelligence: complete. Arguments still happen, but now they're about interesting things instead of things that were settled by evidence centuries ago. The "gif" question was finally settled. Several nations cited this as their primary reason for signing the treaty.
 
 ![Three ways to be super without wearing underwear outside your pants. You get smart, live forever, and feel great. Comics lied about the cape requirement.](/assets/images/wishonia/wishonia-section-the-three-supers-complete-bw-academic.jpg)
 

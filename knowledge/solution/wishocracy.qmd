@@ -17,21 +17,23 @@ youtube-thumbnail: /assets/podcast/wishocracy-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-Congratulations! You've passed a [1% treaty](1-percent-treaty.qmd). Now you've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund. That's the good news. The bad news is that humans are involved.
+On *Who Wants to Be a Millionaire*, the studio audience picked the right answer 91% of the time. The "phone a friend" expert? 65% [@surowiecki-2004].
 
-Not all of it is available for allocation. First, the automatic deductions (think of these as the "cost of convincing humans to stop killing each other" tax):
+Your entire system of government is phone-a-friend. You phone 535 members of Congress who don't know the subject, aren't trying to answer your question, and are being paid by one of the answer choices. Then you act surprised when the answer is wrong.
+
+On Wishonia, we found the same pattern 4,297 years ago: random crowds outperform credentialed experts on every question where the expert has any incentive to lie, which in government is all of them. So we stopped phoning friends. We built a system that asks everyone. We named it after ourselves, which your species would call "branding."
+
+**Wishocracy** replaces committees with code and representatives with mathematics. It lets 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}} a year on curing disease without any of the money being stolen by lobbyists, committees, or people whose main qualification is seniority. The difference between this and the NIH is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach has never once funded a colleague's lunch out of professional courtesy.
+
+You've passed a [1% treaty](1-percent-treaty.qmd). You've got {{< var treaty_annual_funding >}}/year flowing into the 1% Treaty Fund. That's the good news. The bad news is that humans are involved. Every pool of money humanity has ever created has attracted lobbyists the way a dropped ice cream cone attracts ants, except ants at least work hard.
+
+After the automatic deductions (the "cost of convincing humans to stop killing each other" tax), here is what's left:
 
 | Allocation | Share | Amount | Purpose |
 |:-----------|:------|:-------|:--------|
 | [VICTORY Incentive Alignment Bond investors](incentive-alignment-bonds.qmd) | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Repay campaign funders |
 | [Political incentives (Incentive Alignment Bonds)](incentive-alignment-bonds.qmd) | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Keep politicians aligned |
 | **Available for Clinical Trial Allocation** | {{< var dih_treasury_medical_research_pct >}} | **{{< var dih_treasury_to_medical_research_annual >}}** | The research share after investor and political allocations |
-
-How do you stop parasitic special interests from stealing that {{< var dih_treasury_to_medical_research_annual >}}? If history is any guide, you don't. Every pool of money humanity has ever created has attracted lobbyists the way a dropped ice cream cone attracts ants, except ants at least work hard.
-
-**Wishocracy** is the governance system we use on Wishonia (we named it after ourselves, which your species would call "branding"). It replaces committees with code and representatives with mathematics. We've been running it for 4,297 years. I'm not proposing an experiment. I'm describing infrastructure.
-
-It lets 8 billion people collectively decide how to spend {{< var dih_treasury_to_medical_research_annual >}} without turning it into a bureaucratic nightmare. The difference between this and the NIH is like asking 200 bureaucrats what you should have for lunch versus asking your stomach. Your stomach has never once funded a colleague's lunch out of professional courtesy.
 
 ## How Wishocracy Allocates the Collective-Choice Share of the 1% Treaty Fund
 
@@ -85,7 +87,7 @@ When millions of people make pairwise choices, something almost magical happens 
 - **Independence is structurally guaranteed.** Surowiecki identified four conditions for crowd wisdom: diversity, independence, decentralization, and aggregation [@surowiecki-2004]. Your elections destroy the most critical one. First-past-the-post voting forces strategic voting: people pick the "viable" candidate rather than the best one, so each ballot reflects what voters think other voters will do rather than what they actually want. It's an [ant death spiral](../problem/unrepresentative-democracy.qmd): each ant follows the one ahead, the leader follows the last, and the whole colony walks in a circle until it dies. Pairwise comparisons can't death-spiral because there's nothing to vote "strategically" about. "Which matters more: security audits or EHR integration?" has no spoiler candidate, no wasted vote, no reason to care what your neighbor picked. You just answer honestly. When millions of people answer honestly, you get wisdom. When millions of people game a two-option system, you get two candidates that 330 million people chose from 330 million people, and nobody likes either of them.
 - **Statistical models** (Bradley-Terry, PageRank) [@bradley-terry-pagerank-models] extract global preferences from individual comparisons. The same math that ranks Google search results can rank humanity's medical priorities. Google uses it to find cat videos. You'll use it to cure cancer. Progress.
 - **Outliers cancel out.** The guy who votes "fund my personal jetpack" gets drowned out by the millions voting for "cure my mother's Alzheimer's."
-- **Wisdom of crowds emerges.** On *Who Wants to Be a Millionaire*, the studio audience picked the right answer 91% of the time. The "phone a friend" expert? 65% [@surowiecki-2004]. Your species already proved that random people outperform credentialed individuals at picking the right answer. Wishocracy just applies this to questions that matter.
+- **Wisdom of crowds emerges.** Remember the 91%-versus-65% gap from *Millionaire*? Your species already proved that random people outperform credentialed individuals at picking the right answer. Wishocracy just applies this to questions that matter.
 
 Example with real numbers:
 

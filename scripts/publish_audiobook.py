@@ -332,6 +332,7 @@ def main():
     config_path = Path(args.config)
     if not config_path.is_absolute():
         config_path = PROJECT_ROOT / config_path
+
     t0_stale = time.monotonic()
     print_staleness_summary(config_path, args.chapter, args.start, args.end)
     stale_elapsed = time.monotonic() - t0_stale
@@ -361,7 +362,8 @@ def main():
     if not args.combine:
         audio_args.append("--no-combine")
 
-    if not run_step("Generate audio + MP3s + RSS", "generate_audiobook.py", audio_args):
+    step_label = "Generate audio + MP3s + RSS"
+    if not run_step(step_label, "generate_audiobook.py", audio_args):
         _print_timing_summary(pipeline_start)
         sys.exit(1)
 

@@ -2,12 +2,12 @@
 
 **Config:** _quarto-manual-paperback.yml
 **Type:** book
-**Files:** 31 | **Words:** 91,747 | **Images:** 301 | **Est. Pages:** ~517
+**Files:** 31 | **Words:** 94,862 | **Images:** 292 | **Est. Pages:** ~525
 
 #### index-manual.qmd
 **Title:** How to End War and Disease (for Busy People)
 **Description:** The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
-**Stats:** 5,761 words | 475 lines | 11 images | ~29p
+**Stats:** 5,956 words | 483 lines | 10 images | ~29p
 
     ![How to End War and Disease: A Practical Guide](/assets/cover/book-cover-3.jpg)
     - The Human Economy
@@ -21,7 +21,6 @@
     - The Unexplored Therapeutic Frontier
     ![Everyone currently alive will be dead before we finish (current timeline)](/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
     - The Cost of War
-    ![The 604:1 stupidity ratio](/assets/images/index-manual/index-manual-section-the-cost-of-war-bw-academic.jpg)
     - The FDA is Unsafe and Ineffective
   - The Solution
     - [A 1% Treaty](/knowledge/solution/1-percent-treaty.qmd)
@@ -61,15 +60,14 @@
 #### knowledge/problem/nih-fails-2-institute-health.qmd
 **Title:** NIH Fails to Institute Health
 **Description:** The National Institutes of Health spends 96.7% of its budget on everything except testing whether drugs work in humans. It's like a fire department that spends 96.7% of its budget on fire-themed calendars and 3.3% on water.
-**Stats:** 2,787 words | 159 lines | 11 images | ~17p
+**Stats:** 2,836 words | 159 lines | 10 images | ~16p
 
   - The Allocation Scandal
-    ![The NIH spends 85 percent on research and 3 percent on humans. Apparently mice are more important.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
+    ![The NIH spends 96.7 percent on understanding disease and 3.3 percent on testing cures. They understand a lot.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
   - The Efficiency Gap: A Tale of Two Trials
     - RECOVER Initiative (NIH Approach)
-    ![RECOVER spent 1.6 billion over four years, enrolled 30,000 patients, and completed zero trials. That's like paying for a wedding and forgetting to get married.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recover-initiative-nih-approach-bw-academic.jpg)
+    ![RECOVER spent $1.6 billion over four years and completed zero trials. That's $1.6 billion in admission tickets to a hospital that hasn't opened yet.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recover-initiative-nih-approach-bw-academic.jpg)
     - RECOVERY Trial (UK Approach)
-    ![The UK trial cost 111 times less per patient and actually finished. America: where we do everything bigger, including waste.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-recovery-trial-uk-approach-bw-academic.jpg)
   - The Translation Crisis: All Theory, No Medicine
     ![Imagine a massive lake of possible treatments connected to the ocean by a drinking straw. You built the straw that way on purpose.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-translation-crisis-concept-rich-trial-poor-bw-academic.jpg)
     - Plenty of Knowledge. No Translation.
@@ -78,20 +76,20 @@
     ![One method saves lives efficiently. The other publishes papers expensively. You're currently funding the papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-cost-per-qaly-bw-academic.jpg)
     - The "Death Equivalent" of Budget Misallocation
   - Why This Allocation Exists
-    ![The revolving door between pharma, government, and academia spins so elegantly. It's performance art, if the art was killing people slowly.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-why-this-allocation-exists-bw-academic.jpg)
+    ![The revolving door between pharma, government, and academia. People enter from one side and exit from the other side, richer.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-why-this-allocation-exists-bw-academic.jpg)
   - The Public Goods vs. Club Goods Scam
-    ![You pay for the research. They take the profits. It's socialism for corporations, capitalism for you. You invented that.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
+    ![You pay for the research. They patent the results. You pay again for the results you paid for. Humans invented this.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
   - The Patient Disconnect: Zero Correlation with Health Outcomes
     ![NIH funding has a 0.07 correlation with disease burden. That's worse than random. A dart-throwing monkey would do better.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-patient-disconnect-zero-bw-academic.jpg)
-    ![Money goes in. Papers come out. Patients die in the middle. The loop is working perfectly, depending on your definition of working.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-what-nih-funds-bw-academic.jpg)
+    ![Money goes in. Papers come out. Patients wait in the middle. The loop is working perfectly at producing papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-what-nih-funds-bw-academic.jpg)
   - The Track Record
-    ![WHO spent 300 million and eradicated smallpox. NIH spent 1.1 trillion and eradicated zero diseases. At least they published many papers.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-track-record-bw-academic.jpg)
+    ![WHO spent $300 million and eradicated smallpox. NIH spent $1.1 trillion and eradicated zero diseases. The papers, however, are excellent.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-track-record-bw-academic.jpg)
   - What Would Actually Work
 
 #### knowledge/problem/untapped-therapeutic-frontier.qmd
 **Title:** The Untapped Therapeutic Frontier
 **Description:** There are 9.5 million possible drug-disease combinations. You've tested 32,500. That's like searching for your keys in 0.34% of your house and declaring them lost. The other 99.7% is sitting right there, untested, because paperwork.
-**Stats:** 2,123 words | 186 lines | 10 images | ~13p
+**Stats:** 2,178 words | 184 lines | 8 images | ~13p
 
   - Your Tiny Sandbox
   - The Target List (Ways Your Body Breaks)
@@ -104,7 +102,6 @@
   - Is The Untested Stuff Useful?
     ![You've figured out 12 percent of how the body works. The other 88 percent is a mystery. Drugs affect multiple pathways at once. You test them on one pathway at a time.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-is-the-untested-stuff-useful-bw-academic.jpg)
   - The Universe is Big. You Are Small.
-    ![All the molecules you've discovered are a grain of sand. All the molecules that could exist are the planet Earth. You're very proud of your grain of sand.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-universe-is-big-you-are-small-bw-academic.jpg)
   - Why You Are Still Sick
     ![High costs, patent rules, and fear of lawsuits form a bottleneck between cures and people. The bottleneck is shaped like a dollar sign.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-why-you-are-still-sick-bw-academic.jpg)
   - How Long to Explore Everything?
@@ -116,12 +113,11 @@
   - The Fix
     ![Traditional trials: expensive, slow, picky about participants. Decentralized trials: cheaper, faster, will accept literally anyone. Both test the same drugs.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-fix-pragmatic-vs-traditional-bw-academic.jpg)
   - The Bottom Line
-    ![Everything you know about medicine is a dot. Everything you could know is the universe. Between them: money and time. You have neither.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-bottom-line-bw-academic.jpg)
 
 #### knowledge/problem/fda-is-unsafe-and-ineffective.qmd
 **Title:** The FDA Is Unsafe and Ineffective
 **Description:** Dying patients can't access drugs that already passed every safety test. They also can't join the trials testing those drugs. They can, however, die. Nobody blocks that.
-**Stats:** 3,314 words | 316 lines | 19 images | ~23p
+**Stats:** 3,355 words | 316 lines | 19 images | ~23p
 
   - A Note on Blame
   - "But What About Safety?"
@@ -135,103 +131,120 @@
     ![Option 1: Spend billions developing new cure, might fail. Option 2: Shelve the cure, keep selling expensive old drug. You picked option 2, obviously.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-high-costs-kill-innovation-reward-monopoly-bw-academic.jpg)
     - Off-Patent Drugs and Rare Diseases: Mathematically Doomed
   - The Actual Death Toll of "Drug Lag"
-    ![416 million people died waiting for permission to try medicine. That's more than every war ever fought, combined. We invented a way to kill more people than war, and we call it safety.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-global-body-count-bw-academic.jpg)
+    ![The number of people who died waiting for permission to try safe medicine. The number is very large. The permission was not.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-global-body-count-bw-academic.jpg)
     ![(no alt text)](../../assets/images/non-existent-times.png)
     ![In 1962, Americans and Swiss people died at the same age. Then America made medicine safer. Now Americans die younger. This is what winning looks like.](../../assets/images/us-swiss-life-expectancy-5.png)
-    ![The more drugs America blocked, the earlier Americans died. It's like correlation, but stupider.](../../assets/images/us-swiss-life-expectancy-drug-approvals.png)
+    ![More drug approvals in the '80s narrowed the gap. Fewer approvals in the '90s widened it. The pattern is not subtle.](../../assets/images/us-swiss-life-expectancy-drug-approvals.png)
   - How the Incentives Work
     - FDA Regulator Decision Tree
       - Approve drug that later shows problems
       - Delay drug that could save lives
     ![If a regulator approves a bad drug, CNN says their name. If they delay a good drug, nobody dies on television. So nobody dies on television.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-incentive-structure-flowchart-bw-academic.jpg)
-    ![Regulators who approve drugs that hurt people get fired. Regulators who delay drugs that could save people get promoted. You built a machine that runs on cowardice.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-bureaucrats-are-rewarded-for-letting-you-die-bw-academic.jpg)
+    ![Approve a bad drug: fired. Delay a good drug: promoted. The system works exactly as designed, which is the problem.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-bureaucrats-are-rewarded-for-letting-you-die-bw-academic.jpg)
     - The Math: Why Current Regulations Increase Total Harm
   - Clinical Trial Theater: Excluding 86.1% of Reality Makes Drugs More Dangerous
     ![They test drugs on healthy people, then give them to sick people. It's like testing a ladder on Olympic gymnasts, then selling it to your grandmother.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-clinical-trial-theater-excluding-86-1-of-reality-makes-drugs-bw-academic.jpg)
-    ![Clinical trials use healthy 25-year-olds with no other conditions. Then you give the drug to 80-year-olds taking twelve other medications. What could go wrong, you asked. Everything, it turns out.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-this-makes-drugs-more-dangerous-bw-academic.jpg)
+    ![Drugs tested on healthy 25-year-olds. Prescribed to 80-year-olds on twelve medications. The system did not anticipate this would be a problem.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-this-makes-drugs-more-dangerous-bw-academic.jpg)
     - No Long-Term Outcome Data
-    ![They test drugs for two years, then you take them for forty years. It's like test-driving a car to the end of the driveway, then driving it to the moon.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-no-long-term-outcome-data-bw-academic.jpg)
+    ![Data collection: several months. Duration of use: forty years. The gap between these numbers is where side effects live.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-no-long-term-outcome-data-bw-academic.jpg)
     - Pre-Specification Requirements Kill Innovation
-    ![Dendreon's cancer drug worked. The FDA said it didn't count because they forgot to specify they were checking if it worked. Thousands died. The FDA was very proud of following procedure.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-pre-specification-requirements-kill-innovation-bw-academic.jpg)
+    ![Dendreon's cancer drug worked. The FDA said it didn't count because the paperwork predicting it would work was filed in the wrong order. The patients died correctly, however.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-pre-specification-requirements-kill-innovation-bw-academic.jpg)
     - Small Trials Are Dangerous
-    ![Before 1962, they tested drugs on everyone who took them. After 1962, they tested drugs on 2,000 people, then gave them to 2 billion. They called this improvement.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-small-trials-are-dangerous-bw-academic.jpg)
+    ![Phase III: 3,000 patients. Post-approval: millions. A 1-in-10,000 adverse event is invisible in the first group and very visible in the second.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-small-trials-are-dangerous-bw-academic.jpg)
     ![Doctors report 10% of drug side effects. The other 90% just happen to people who assume that's what dying feels like.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
   - The Negative Results Black Hole
-    ![Drug companies publish successful trials and hide failed ones. So researchers keep testing things that already failed, like a scientist trying to invent fire without knowing fire already exists. Except the fire is death.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-negative-results-black-hole-bw-academic.jpg)
+    ![Drug companies publish successful trials and hide failed ones. Researchers then repeat the failures. This is called "reinventing the wheel," except the wheel is on fire and nobody told you.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-negative-results-black-hole-bw-academic.jpg)
   - Countries That Don't Have Our "Safety"
     ![Japan approves experimental drugs fast. Europe approves them medium fast. America approves them after you die. Different cultures, different priorities.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-countries-that-don-t-have-our-safety-bw-academic.jpg)
   - The COVID Test Fiasco
-    ![While COVID spread, America banned COVID tests. Not because the tests didn't work. Because they weren't American enough. Patriotism killed thousands. Nobody got a medal.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-covid-test-fiasco-bw-academic.jpg)
+    ![While COVID spread, America banned COVID tests. The approved tests didn't work. The unapproved tests did. Quality control of the broken tests continued on schedule.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-covid-test-fiasco-bw-academic.jpg)
   - The Bottom Line
   - Technical Analysis
 
 #### knowledge/problem/unrepresentative-democracy.qmd
 **Title:** Unrepresentative Democracy
-**Description:** Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.4 billion on lobbying and get an 18:1 return. Your vote is worth $0.00017. Here's how to make the math work for medicine instead of missiles.
-**Stats:** 2,864 words | 213 lines | 8 images | ~15p
+**Description:** Princeton proved that public opinion has zero effect on U.S. policy. Corporations spend $4.4 billion on lobbying and get an 18:1 return. Your vote is statistically worth $0.00017. You call this system a democracy, which is technically a word you can use for anything.
+**Stats:** 3,685 words | 276 lines | 8 images | ~19p
 
-  - What Democracy Should Look Like vs Reality
-    ![In theory, voter support determines which laws pass. In reality, voter support has zero effect. You keep voting anyway. It's like writing letters to Santa but for taxes.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-princeton-policy-study-chart-bw-academic.jpg)
-  - The Mathematics of Political Failure
+  - What Democracy Looks Like From Space
+    ![Whether 0% or 100% of voters support a bill, it has the same chance of passing. The line is flat.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-princeton-policy-study-chart-bw-academic.jpg)
+  - The Mathematics of Why Nobody Fixes Anything
     - Concentrated Benefits vs. Diffuse Costs
-    ![A small group gets 100 million dollars. The cost spreads across 100 million taxpayers. Each taxpayer loses one dollar. Nobody notices. The small group notices very much.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-concentrated-benefits-vs-diffuse-costs-bw-academic.jpg)
-    - The Death Spiral: How Two Parties Kill Crowd Wisdom
-  - How Money Buys Power
-    ![More money equals more votes. More votes equal more power. More power equals more money. It's a circle. Calling it a "cycle" makes it sound natural.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-how-money-buys-power-bw-academic.jpg)
-    - The Lobbying ROI: 18:1 Returns
+    ![A small group gains $100 million. The cost spreads across 100 million people at $1 each. Nobody organizes over $1. The small group organizes very effectively over $100 million.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-concentrated-benefits-vs-diffuse-costs-bw-academic.jpg)
+    - The Death Spiral: How Two Choices Kill 330 Million Options
+  - How Money Buys Your Government
+    ![Money buys votes. Votes buy power. Power buys money. It's a circle. Calling it a "cycle" makes it sound natural.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-how-money-buys-power-bw-academic.jpg)
+    - The Lobbying ROI: Better Than Every Other Investment
   - Your Congressman: A Fundraiser Who Occasionally Legislates
-  - Congressional Committees: The Menu
-  - Public Choice Theory: The Nobel Prize for Cynicism
-    ![Business people want money. Government people want money. You expect one group to be greedy and the other to be noble. Both groups are laughing.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-public-choice-theory-the-nobel-prize-for-cynicism-bw-academic.jpg)
-    - What They Actually Maximize
-    - The Libertarian Paradox
-    ![Libertarians say government is bad because government is bad. Socialists say government is bad because capitalism is bad. Public Choice Theory says government is bad because people are people. Only one of these is true.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-libertarian-paradox-bw-academic.jpg)
-  - Regulatory Capture: How Industries Write Their Own Rules
-    ![You hired a guard dog. The burglar fed it treats. Now the dog helps with burglaries.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-regulatory-capture-cycle-bw-academic.jpg)
-  - The Solution They Don't Want
-    ![What if we used the corruption machine for good? Like teaching a gun to do surgery.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-solution-they-don-t-want-bw-academic.jpg)
+  - Congressional Committees: The Price List
+  - Public Choice Theory (Or: Why It Doesn't Matter Who You Elect)
+    ![Corporations want money. Government agencies want money. One group is expected to be greedy. The other is expected to be noble. Both groups want money.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-public-choice-theory-the-nobel-prize-for-cynicism-bw-academic.jpg)
+    - What Each Institution Actually Optimizes For
+    - The Paradox
+    ![Three groups agree government doesn't work. They disagree about why. None of their solutions have worked.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-libertarian-paradox-bw-academic.jpg)
+  - Regulatory Capture: How the Burglar Trained the Guard Dog
+    ![You hired a guard dog. Someone fed it treats. Now it guards them.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-regulatory-capture-cycle-bw-academic.jpg)
+    - The Self-Sustaining War Machine
+    - The Ratchet
+    - The Equilibrium
+  - The Solution They Don't Want You to Have
+    ![The corruption machine, pointed at something useful for once.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-solution-they-don-t-want-bw-academic.jpg)
 
 #### knowledge/economics/central-banks.qmd
-**Title:** How Central Banks Fund Your Death
-**Description:** Every fiat currency in history has been devalued to fund wars nobody voted for. Your savings lose value each year to pay for bombs you didn't order. Here's how central banks quietly tax you to fund the war machine, and what to do about it.
-**Stats:** 4,009 words | 188 lines | 11 images | ~22p
+**Title:** Your Money Comes From a Building and They Use It to Kill People
+**Description:** Your money is manufactured in a building by people you didn't elect. They give it to their friends first, then use the rest to buy weapons you didn't ask for. By the time it reaches you, it buys less. This has been happening for a century. Nobody covers it on the news because it is, by design, extremely boring.
+**Stats:** 5,844 words | 464 lines | 10 images | ~28p
 
-  - The Problem: Every Fiat Currency in History Has Been Devalued To Fund Unpopular Wars
+  - The Pattern: Print, Kill, Repeat
     - Revolutionary France (1790s)
-    ![France fights war, runs out of money, prints money, money becomes worthless. It's like a tutorial level for economic collapse.](/assets/images/central-banks/central-banks-section-revolutionary-france-1790s-bw-academic.jpg)
+    ![France fights a war, runs out of money, prints money, money becomes worthless. This is the tutorial level.](/assets/images/central-banks/central-banks-section-revolutionary-france-1790s-bw-academic.jpg)
     - Weimar Germany (1920s)
     - United States (1917-present)
-    ![Create Federal Reserve in 1913. Federal Reserve prints money for wars. Dollar loses value. Fight more wars. Print more money. The circle continues until someone notices.](/assets/images/central-banks/central-banks-section-united-states-1917-present-bw-academic.jpg)
-  - 1971: When Nixon Weaponized Money Against You
-    ![Nixon cuts dollar from gold, freezes wages and prices, taxes imports. All at once. Like performing surgery with a sledgehammer.](/assets/images/central-banks/central-banks-section-1972-when-nixon-weaponized-money-against-you-bw-academic.jpg)
-    - Why He Really Did It
-      - What Actually Happened
-      - The Theft That Followed
-    ![Since 1972, productivity went up 246 percent. Wages went up 115 percent. Someone kept the difference. Guess who.](/assets/images/central-banks/central-banks-section-the-theft-that-followed-bw-academic.jpg)
-  - The Dual Mandate: Optimizing for Serfdom
-  - The Cantillon Effect: Why You're Poor and Raytheon Isn't
-    ![Print new money. Money flows up to banks and war contractors. Costs flow down to everyone else. Gravity works backwards in economics.](/assets/images/central-banks/central-banks-section-cantillon-effect-mechanism-bw-academic.jpg)
-  - Why "Just Fund Medical Research More" Is a Lie
+    ![Create Federal Reserve. Print money for wars. Dollar loses value. Fight more wars. Print more money. Nobody stops.](/assets/images/central-banks/central-banks-section-united-states-1917-present-bw-academic.jpg)
+  - 1971: The Day Your Money Stopped Meaning Anything
+    ![Nixon cuts dollar from gold, freezes wages and prices, taxes imports. All at once. On television.](/assets/images/central-banks/central-banks-section-1972-when-nixon-weaponized-money-against-you-bw-academic.jpg)
+    - Why He Did It
+    - What Actually Happened
+    - The Theft That Followed
+    ![Since 1972, productivity went up 246 percent. Wages went up 115 percent. Someone kept the difference.](/assets/images/central-banks/central-banks-section-the-theft-that-followed-bw-academic.jpg)
+    - The Two-Income Trap
+    - Your 93% Pay Cut (Measured in Shiny Rocks)
+    - Why Nobody Told You
+    - How the Robbery Works (Same Trick, Different Costume)
+    - Why You Never Learned This in School
+    - The Priesthood
+    - The Fake Nobel Prize
+  - The Dual Mandate (Or: The Two Goals of Serfdom)
+    - Goal 1: "Maximum Employment" (Keep Everyone Busy)
+    - Goal 2: "Stable Prices" (Take 2% Per Year)
+    - The "Deflation Is Dangerous" Story
+    - The One Data Point
+    - What They Could Measure Instead
+  - The Cantillon Effect (Or: Why the Money Printer Has a VIP Line)
+    - The 2020 Demonstration
+    ![New money goes to banks first. Price increases go to everyone else last. It's a queue, and you're at the back.](/assets/images/central-banks/central-banks-section-cantillon-effect-mechanism-bw-academic.jpg)
+  - Why "Just Print More Money for Medicine" Doesn't Work
     - The Fixed Pie of Human Genius
-    ![Humans smart enough to build weapons or cure disease, but not enough to do both. You picked weapons.](/assets/images/central-banks/central-banks-section-the-fixed-pie-of-human-genius-bw-academic.jpg)
-      - The Resource Reality
-    ![Thousands of brilliant minds designing better ways to kill people. Dozens designing better ways to save them. Someone made a choice here.](/assets/images/central-banks/central-banks-section-resource-reality-chart-bw-academic.jpg)
-    - The Inflation Shell Game (How They Steal Medical Progress)
+    ![Forty million brilliant humans designing better ways to kill people. One million designing better ways to save them. This is a choice someone made.](/assets/images/central-banks/central-banks-section-the-fixed-pie-of-human-genius-bw-academic.jpg)
+      - The Numbers
+    ![The resource allocation chart. It's fine. Everything's fine.](/assets/images/central-banks/central-banks-section-resource-reality-chart-bw-academic.jpg)
+    - The Shell Game (How Inflation Steals Medical Progress)
       - Today
-      - Five Years Later (after "increasing medical research")
-    ![Budget goes up 50 percent. Inflation goes up 50 percent. Purchasing power stays the same. You're running to stay in place, like a hamster with a printing press.](/assets/images/central-banks/central-banks-section-inflation-shell-game-comparison-bw-academic.jpg)
+      - Five Years Later (after "increasing medical research funding")
     - The Proof: 50 Years of Going Nowhere
       - Medical Research as % of GDP
-    ![Medical research as a percentage of GDP from 1975 to 2025. You got richer and spent less of it on not dying. Like buying a bigger house and smaller fire extinguishers.](/assets/images/central-banks/central-banks-section-medical-research-as-of-gdp-bw-academic.jpg)
+    ![Medical research as a share of GDP, 1975 to 2025. The line goes down. Everything else goes up.](/assets/images/central-banks/central-banks-section-medical-research-as-of-gdp-bw-academic.jpg)
       - What Actually Grew
+      - The World's Most Expensive Abacus
+        - How the Ledger Ate the Economy
     - "Just Tax the Billionaires"
-    - Why Money Printing Matters: Resources Follow the Printer
-    ![When you spend money on weapons, the smart people go work on weapons. Then you wonder why nobody's curing your diseases. You built a waterslide into a shark tank and asked where all the swimmers went.](/assets/images/central-banks/central-banks-section-why-money-printing-matters-resources-follow-the-printer-bw-academic.jpg)
+    - Why Money Printing Matters: Geniuses Follow the Money
+    ![Smart people go where the money is. The money is in weapons. Then you wonder why nobody's curing your diseases.](/assets/images/central-banks/central-banks-section-why-money-printing-matters-resources-follow-the-printer-bw-academic.jpg)
 
 #### knowledge/problem/genetic-slavery.qmd
 **Title:** Genetic Slavery
 **Description:** Your genes trying to kill you with nuclear weapons and preventable disease simultaneously, which is an impressive amount of multitasking for software that was originally designed to find berries.
-**Stats:** 5,659 words | 165 lines | 6 images | ~26p
+**Stats:** 5,664 words | 165 lines | 6 images | ~26p
 
   - How Hydrogen Learned to Worry (A 13.8 Billion Year Recap)
   - The Selfish Gene Made You Illogical (It Was a Good Idea at the Time)
@@ -254,7 +267,7 @@
 #### knowledge/solution/1-percent-treaty.qmd
 **Title:** A 1% Treaty
 **Description:** You have enough nuclear weapons to kill everyone 13 times. Here's how to settle for 12.87 times and use the savings on medicine. Controversial, apparently.
-**Stats:** 3,490 words | 321 lines | 16 images | ~22p
+**Stats:** 3,496 words | 321 lines | 15 images | ~21p
 
   - The Math
     - How It Works
@@ -298,7 +311,6 @@
     ![Regular treaties need Congress to agree twice. Self-executing treaties only need them to agree once. This is considered a dramatic improvement.](/assets/images/1-percent-treaty/1-percent-treaty-section-parliamentary-obstacles-bw-academic.jpg)
   - Summary
   - Addendum: The Actual Treaty Text (First Draft)
-    ![Current plan: make things that explode. New plan: make things that heal. The money is the same, just pointed in a less deadly direction.](/assets/images/1-percent-treaty/1-percent-treaty-section-addendum-the-actual-treaty-text-first-draft-bw-academic.jpg)
 
 #### knowledge/solution/dih.qmd
 **Title:** Decentralized Institutes of Health
@@ -360,7 +372,7 @@
 #### knowledge/solution/dfda.qmd
 **Title:** A Decentralized Framework for Drug Assessment
 **Description:** It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs over 40x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.
-**Stats:** 4,190 words | 481 lines | 21 images | ~27p
+**Stats:** 4,190 words | 482 lines | 21 images | ~27p
 
   - The Solution: Consumer Reports for Drugs
     ![The FDA, but run by software. All the same boxes, fewer humans to corrupt.](/assets/images/dfda/dfda-section-the-solution-consumer-reports-for-drugs-bw-academic.jpg)
@@ -420,8 +432,8 @@
 
 #### knowledge/solution/aligning-incentives.qmd
 **Title:** Aligning Incentives
-**Description:** Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,425 per lobbying dollar. This chapter redesigns the profit motive so curing disease pays better than causing it. Capitalism, but pointed at the right target.
-**Stats:** 4,255 words | 190 lines | 19 images | ~27p
+**Description:** Pharmaceutical companies make more money treating you forever than curing you once. Defense contractors earn $1,425 per lobbying dollar. Nobody is evil. The incentives are. Rearrange the profit motive so curing disease pays better than causing it, and watch capitalism accidentally save your species.
+**Stats:** 4,354 words | 190 lines | 19 images | ~27p
 
   - Defense Contractors: Teaching Merchants of Death to Love Life
     - The Offer
@@ -470,7 +482,7 @@
 #### knowledge/solution/incentive-alignment-bonds.qmd
 **Title:** Incentive Alignment Bonds
 **Description:** War bonds, but backwards. Your grandparents funded WW2 at roughly 3% returns. You fund disease eradication at 272%. Same structure, fewer Nazis, better spreadsheet.
-**Stats:** 5,230 words | 495 lines | 35 images | ~38p
+**Stats:** 5,256 words | 493 lines | 34 images | ~38p
 
     - The Core Problem: Good Ideas Die in Committee
     ![Tiny cost now, massive benefit later. Politicians are very good at the 'now' part and very bad at the 'later' part.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-the-core-problem-good-ideas-die-in-committee-bw-academic.jpg)
@@ -529,7 +541,6 @@
     - How It Compares (If It Works)
     - Investment Thresholds and Term Sheet
     ![You need different amounts of money to be allowed to make more money, depending on how much money you already have. The rich call this 'protecting investors.'](/assets/images/victory-bonds/victory-bonds-section-structure-your-minimums-bw-academic.jpg)
-    ![Money goes in from treaty, money comes out to bondholders. It's like a water fountain, but the water is money and the fountain is preventing war.](/assets/images/victory-bonds/victory-bonds-section-draft-your-term-sheet-bw-academic.jpg)
       - "This sounds like a Ponzi scheme run by someone who failed math."
     ![One circle takes money from new investors to pay old investors until it collapses. The other circle takes money from weapons to fund cures and pays investors forever. Spot the difference.](/assets/images/victory-bonds/victory-bonds-section-this-sounds-like-a-ponzi-scheme-run-by-someone-who-failed-math-bw-academic.jpg)
       - "Won't politicians game the metrics?"
@@ -550,7 +561,7 @@
 #### knowledge/proof/body-as-repairable-machine.qmd
 **Title:** You Are a Meat Robot
 **Description:** You can 3D-print a windpipe, reprogram skin cells into brain cells, and restore vision with a single injection. Then you went back to mostly not doing any of that. Fascinating.
-**Stats:** 1,675 words | 199 lines | 11 images | ~12p
+**Stats:** 1,731 words | 199 lines | 11 images | ~12p
 
   - Death is a Technical Problem
     ![Your body fixes itself constantly. When the damage happens faster than the fixes, you call it aging. When it stops happening at all, you call it dying.](/assets/images/body-as-repairable-machine/body-as-repairable-machine-section-death-is-a-technical-problem-bw-academic.jpg)
@@ -582,7 +593,7 @@
 #### knowledge/futures/moronia.qmd
 **Title:** The Cautionary Tale of Moronia
 **Description:** A planet had every tool needed to cure disease and chose to build weapons instead. They went extinct. Their last words were 'but the economy.' This is a bedtime story for civilizations that can't do math.
-**Stats:** 6,577 words | 312 lines | 10 images | ~31p
+**Stats:** 6,341 words | 294 lines | 9 images | ~30p
 
   - The Discovery
     ![Earth is exactly 47 years behind Moronia. Like following someone off a cliff, but slower.](/assets/images/moronia/moronia-section-the-discovery-and-why-i-regret-making-it-bw-academic.jpg)
@@ -600,7 +611,6 @@
   - Everything Dies
     ![Mission accomplished: all objectives met, all targets destroyed, nation completely annihilated.](/assets/images/moronia/moronia-section-victory-bw-academic.jpg)
       - Children born in Year Zero (now 15)
-    ![Children born in Year Zero couldn't read by age 10 but lived under the protection of autonomous drones that could write poetry.](/assets/images/moronia/moronia-section-children-born-in-year-zero-now-15-bw-academic.jpg)
     ![Moronia's obituary, written by the only intelligence left to write it.](/assets/images/moronia/moronia-section-moronia-s-obituary-bw-academic.jpg)
   - The Mirror
     ![The cost was the same either way. One bought extinction, the other bought immortality. The math was not complicated.](/assets/images/moronia/moronia-section-the-cost-of-extinction-vs-utopia-bw-academic.jpg)
@@ -609,12 +619,10 @@
 #### knowledge/futures/wishonia.qmd
 **Title:** Wishonia
 **Description:** On one planet, citizens allocate the budget directly, lobbyists don't exist, and disease was eradicated 4,000 years ago. It uses the same technology you have. The difference is they pointed it at biology instead of each other.
-**Stats:** 5,961 words | 261 lines | 15 images | ~31p
+**Stats:** 5,792 words | 255 lines | 15 images | ~31p
 
-  - How My Planet Works
     ![Earth: everyone fights over scraps. Wishonia: robot does math, nobody dies. Tough choice.](/assets/images/wishonia/wishonia-section-how-my-planet-works-bw-academic.jpg)
   - What the Optimized World Looks Like
-    - The Three Supers
     ![Stop building bombs, start building better bodies. Three Supers for the price of one genocide budget.](/assets/images/wishonia/wishonia-section-the-three-supers-bw-academic.jpg)
     - Biology Becomes Software
     ![Your body gets updates like your phone, except the updates actually work and don't break everything.](/assets/images/wishonia/wishonia-section-biology-becomes-software-bw-academic.jpg)
@@ -627,14 +635,13 @@
     ![Eleven trillion dollars you find in the couch cushions when you stop trying to kill each other.](/assets/images/wishonia/wishonia-section-peace-dividend-breakdown-bw-academic.jpg)
   - Your Corporate Heroes
     ![Turn your missile guidance system into cancer targeting. Same math, fewer war crimes.](/assets/images/wishonia/wishonia-section-your-corporate-heroes-bw-academic.jpg)
-  - Your New Problems
+  - Our Current Problems
     ![Problems you only have when nobody dies. Like 'where do we put everyone' and 'what if I'm bored for 200 years.' Good problems to have.](/assets/images/wishonia/wishonia-section-your-new-problems-bw-academic.jpg)
   - What Fixing Health Fixed
     - Climate
     - Poverty
     - Science
-    - Peace
-    - Governance
+    - Peace and Governance
     - Happiness
     - Freedom
     ![Fix health, accidentally fix six other things. It's called a cascading benefit. Like dominoes, but everyone wins.](/assets/images/wishonia/wishonia-section-systemic-impact-network-bw-academic.jpg)
@@ -650,7 +657,7 @@
 #### knowledge/appendix/faq.qmd
 **Title:** Frequently Asked Objections
 **Description:** Fun facts for those reasonably skeptical of spending 1% more on helping sick people than killing them.
-**Stats:** 3,007 words | 283 lines | 14 images | ~19p
+**Stats:** 3,225 words | 287 lines | 14 images | ~20p
 
   - "We Need the Military Budget"
     ![What 1 percent of military spending buys: fewer tanks, more cured diseases, and soft power. Turns out healthy people like you more than people you bombed.](/assets/images/faq/faq-section-we-need-the-military-budget-bw-academic.jpg)
@@ -686,8 +693,8 @@
 
 #### knowledge/strategy/roadmap.qmd
 **Title:** The Roadmap to End War and Disease
-**Description:** Here are the exact steps from incorporating a nonprofit to ratifying an international treaty, with a budget for every phase.
-**Stats:** 2,907 words | 214 lines | 9 images | ~16p
+**Description:** Step one, incorporate a nonprofit. Step forty-seven, ratify an international treaty. Everything in between has a budget, a timeline, and the quiet desperation of someone who actually wrote it all down because your species won't do things unless there's a checklist.
+**Stats:** 2,928 words | 214 lines | 9 images | ~16p
 
   - High-Level Strategy: The Three-Step Recipe for Not Dying
     ![How to stop spending money on death and start spending it on life, in three simple steps. You'd think this would be obvious.](/assets/images/roadmap/roadmap-section-high-level-strategy-the-three-step-recipe-for-not-dying-bw-academic.jpg)
@@ -779,7 +786,7 @@
 #### knowledge/economics/peace-dividend.qmd
 **Title:** Peace Dividend
 **Description:** Your government spends more on camouflage paint than on curing Alzheimer's. Move 1% of the bomb budget to medicine: $27.2 billion for clinical trials, plus $114 billion saved by slightly fewer explosions. The worst-case scenario is still the largest increase in medical research in history.
-**Stats:** 2,319 words | 143 lines | 5 images | ~12p
+**Stats:** 2,393 words | 143 lines | 5 images | ~12p
 
   - How 1% Less Violence Pays For Everything
     - The Captured Money: $27.2B/Year
@@ -799,6 +806,19 @@
     - The Safe Bet
   - The Trajectory, Not the Snapshot
     - Two Futures
+
+#### knowledge/economics/gdp-trajectories.qmd
+**Title:** Three Civilizations: GDP Trajectories
+**Description:** Earth grows at 2.5%. Wishonia redirects its bomb budget, cures diseases, and fixes its governance. Moronia keeps building weapons until GDP hits $0. The expected value math is not subtle.
+**Stats:** 1,284 words | 78 lines | ~5p
+
+  - Three Futures
+    - Earth: The Baseline Nobody Questions
+    - Wishonia: What Happens When You Stop Wasting Money
+    - Moronia: The Arithmetic of Extinction
+  - The Expected Value
+  - What This Means Per Person
+  - Go Ahead, Change the Numbers
 
 #### knowledge/economics/health-dividend.qmd
 **Title:** Health Dividend
@@ -835,8 +855,8 @@
 
 #### knowledge/strategy/nonprofit-coalition-strategy.qmd
 **Title:** Why Every Nonprofit Should Support a 1% treaty
-**Description:** Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Here's how to get every chartiable organization to stop fighting over crumbs and start fighting for the bakery.
-**Stats:** 2,883 words | 137 lines | 9 images | ~16p
+**Description:** Nonprofits fighting disease currently compete for the same shrinking pile of donor money. A 1% treaty creates $27.2 billion in new funding. Every charitable organization can stop fighting over crumbs and start fighting for the bakery, if someone tells them the bakery exists.
+**Stats:** 2,886 words | 137 lines | 9 images | ~16p
 
   - Why the Banquet Exists and Nobody Has Noticed
     ![War causes poverty, climate collapse, and disease. Humans look at diagram, nod knowingly, increase war budget.](/assets/images/nonprofit-coalition-strategy/nonprofit-coalition-strategy-section-war-as-the-upstream-driver-bw-academic.jpg)
@@ -923,17 +943,3 @@
 #### knowledge/appendix/copyright.qmd
 **Title:** Copyright
 **Stats:** 105 words | 31 lines | ~0p
-
-#### knowledge/appendix/back-cover.qmd
-**Title:** About This Manual
-**Description:** The complete idiot's guide to legally bribing your way to utopia.
-**Stats:** 1,268 words | 115 lines | 1 images | ~6p
-
-  - Audible / Podcast Description
-  - Amazon / Kindle Description
-  - Reviews & Awards (pick one or mix)
-  - Author Biography
-  - Translator Biography
-  - Keywords
-  - Categories
-  - BISAC Codes

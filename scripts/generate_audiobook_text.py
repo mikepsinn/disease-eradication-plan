@@ -71,6 +71,31 @@ def strip_qmd_markup(content: str) -> str:
     Strip Quarto/Markdown markup that has no business in an audiobook.
     Keeps prose, tables, lists, and headers as-is for the LLM to handle.
     """
+    # Remove .no-narration blocks entirely (content + markers).
+    # Use ::: {.no-narration} in QMD to exclude tables, charts, etc. from audiobook.
+    # Must run before general div stripping.
+    def _strip_no_narration(content: str) -> str:
+        """Remove ::: {.no-narration} blocks, handling nested ::: divs."""
+        result = []
+        lines = content.split('\n')
+        i = 0
+        while i < len(lines):
+            if re.match(r'^:+\s*\{\.no-narration\}', lines[i]):
+                # Count nesting depth to find the matching closer
+                depth = 1
+                i += 1
+                while i < len(lines) and depth > 0:
+                    if re.match(r'^:+\s*\{', lines[i]):
+                        depth += 1
+                    elif re.match(r'^:+\s*$', lines[i]):
+                        depth -= 1
+                    i += 1
+            else:
+                result.append(lines[i])
+                i += 1
+        return '\n'.join(result)
+    content = _strip_no_narration(content)
+
     # Remove YAML frontmatter
     content = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, flags=re.DOTALL)
 
@@ -172,13 +197,16 @@ def prepare_for_narration(raw_qmd: str, variables: dict) -> str:
     Variables must be resolved before HTML stripping (which would eat the
     {{< var >}} angle brackets).
     """
-    # 1. Resolve variables while syntax is still intact
-    text = replace_variables(raw_qmd, variables, highlight_missing=False)
+    # 1. Strip _cite variable references before resolving (they produce citation
+    #    text that should not be spoken in the audiobook narration)
+    text = re.sub(r'\{\{<\s*var\s+\w+_cite\s*>\}\}', '', raw_qmd)
+    # 2. Resolve remaining variables while syntax is still intact
+    text = replace_variables(text, variables, highlight_missing=False)
     # Remove any remaining unresolved variable syntax
     text = re.sub(r'\{\{<\s*var\s+\w+\s*>\}\}', '', text)
-    # 2. Strip all markup
+    # 3. Strip all markup
     text = strip_qmd_markup(text)
-    # 3. Split very long lines at sentence boundaries for better TTS prosody
+    # 4. Split very long lines at sentence boundaries for better TTS prosody
     text = split_long_lines(text)
     text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()

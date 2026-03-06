@@ -16,7 +16,7 @@ youtube-thumbnail: /assets/podcast/health-dividend-youtube.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 That was the [peace dividend](peace-dividend.qmd): the money you get from buying 1% fewer explosions. Now here is the health dividend: what happens when you spend it on medicine instead.
 
-Right now, somewhere in your regulatory system, a drug that already passed safety testing is sitting in a filing cabinet while the disease it treats keeps killing people. Somewhere else, a researcher with a promising compound for one of {{< var diseases_without_effective_treatment >}} untreated diseases is filling out the same form for the fourth time. The health dividend is what happens when you stop doing this.
+Right now, somewhere in your regulatory system, a drug that already passed safety testing is sitting in a filing cabinet while the disease it treats keeps killing people. Somewhere else, a researcher with a promising compound for one of {{< var diseases_without_effective_treatment_nounit >}} untreated diseases is filling out the same form for the fourth time. The health dividend is what happens when you stop doing this.
 
 It is worth **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**. That number is not a typo. The rest of this chapter is the receipt.
 

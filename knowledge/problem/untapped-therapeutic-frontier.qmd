@@ -15,170 +15,182 @@ feed-date: '2026-03-19'
 youtube-thumbnail: /assets/podcast/untapped-therapeutic-frontier-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-On Wishonia, when we decided to cure disease, we started by counting two things: how many safe molecules we had, and how many diseases existed. Then we multiplied them. Then we tested them. It took 50 years. We're still not sure why it took so long.
 
-Your species has been doing pharmacology for a century. I assumed you'd be further along. You are not further along. After 100 years, you have tested approximately one-third of one percent of the drug-disease combinations you could test using compounds you already know are safe. The rest is sitting there, untested, because testing things costs money and money is currently busy being missiles.
+## How You Accidentally Cured Three Things and Then Stopped
 
-Here is the math. It is brief.
+In 1996, a team of Pfizer scientists sat in a room looking at clinical trial data for a chest pain drug called sildenafil. The drug had failed. It did not fix chest pain. Nobody's chest felt better. The trial was, by every metric that mattered to the people who paid for it, a complete waste of money.
 
-## Your Tiny Sandbox
+Then the test subjects refused to return their leftover pills.
 
-Here is everything humanity considers "medicine" after 5,000 years of civilization:
+This had never happened before. People don't hoard failed medicine. The scientists investigated. What they discovered was that sildenafil had a side effect so commercially valuable it would generate $1.9 billion per year for the next two decades. You know it as Viagra. The cure for erectile dysfunction was hiding inside a failed heart drug, and the only reason anyone found it was because a group of men did something unusual with a feedback form.
 
-* **Prescriptions:** {{< var fda_approved_products_count >}} approved in the U.S. Sounds impressive until you realize most are just "Tylenol, but blue."
-* **Unique Ingredients:** These products contain only {{< var fda_approved_unique_active_ingredients >}}. Fewer ingredients than a decent French bakery uses.
-* **Investigational Drugs:** {{< var phase_1_passed_compounds_global >}} have passed Phase I globally. Progress!
-* **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}}. These are things you could eat right now without dying. Low bar. Still useful.
+Minoxidil has a similar origin story. Developed for high blood pressure. Failed at that too. Side effect: hair growth. It became Rogaine. Then sildenafil got repurposed *again* for pulmonary hypertension, making it three cures from two failed drugs, none of them intentional.
+
+On Wishonia, when we heard about this, we asked the obvious question: "So then you tested all the other drugs for all the other side effects, right?"
+
+You did not.
+
+You found three cures by accident, said "huh, neat," and went back to testing the same twelve biological targets that pharmaceutical companies can patent. This is like finding buried treasure in your backyard, selling the treasure, and then never digging in your backyard again because the first hole was supposed to be for a fence post.
+
+I have been observing your species for 80 years. I have seen you do many confusing things. But this one keeps me up at night, which is saying something because I don't sleep.
+
+## Your Medicine Cabinet (After 5,000 Years of Civilization)
+
+Here is everything humanity considers "medicine":
+
+* **Prescriptions:** {{< var fda_approved_products_count >}} approved in the U.S. Sounds impressive until you realize most are variations of each other. Your pharmaceutical industry has invented 300 ways to sell the same painkiller in different-colored packaging. On Wishonia, this would be considered a graphic design achievement, not a medical one.
+* **Unique Ingredients:** These products contain only {{< var fda_approved_unique_active_ingredients >}}. Fewer unique molecules than a French bakery uses ingredients.
+* **Investigational Drugs:** {{< var phase_1_passed_compounds_global >}} have passed Phase I globally. These are compounds you already know won't kill people, sitting in filing cabinets, doing nothing.
+* **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}}. Things you could eat right now without dying. Low bar. Still useful.
 
 **Total unique compounds humanity knows are safe-ish: {{< var safe_compounds_count >}}.**
 
-That's it. That's your entire medicine cabinet after five millennia.
+That's it. Five millennia of civilization, and this is your entire toolkit. On Wishonia, we have more compounds in a single bathroom cabinet. Your bathroom cabinet has shampoo and expired cough syrup from 2019.
 
-## The Target List (Ways Your Body Breaks)
+## Ways Your Body Breaks (The To-Do List Nobody's Doing)
 
 * **Codes:** The ICD-10 lists {{< var icd_10_total_codes_nounit >}} ways your meat can malfunction. This is your species' most comprehensive to-do list. You are not doing it.
-* **Real Targets:** After consolidation, {{< var trial_relevant_diseases_count >}} trial-relevant diseases worth actually fixing.
+* **Real Targets:** After consolidation, {{< var trial_relevant_diseases_count >}} trial-relevant diseases actually worth testing drugs against.
 
 ![Fourteen thousand ways to be sick, but only 1,000 worth testing drugs against. The other 13,000 are just spelling variations.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-target-list-ways-your-body-breaks-bw-academic.jpg)
 
-## The Math You're Ignoring
+## The Multiplication Problem
 
-Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}}. This gives you the "Combinatorial Space," which is fancy talk for "stuff you could test tomorrow if you weren't busy filling out forms."
+Here is where it gets uncomfortable.
 
-**{{< var safe_compounds_count >}} × {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} plausible drug-condition combinations.**
+Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}} diseases. This gives you the total number of things you *could* test tomorrow morning if you weren't busy filling out forms about whether you're allowed to test them.
 
-### What You've Actually Tested
+**{{< var safe_compounds_count >}} x {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} possible drug-disease combinations.**
 
-* **Approved uses:** {{< var approved_drug_disease_pairings >}} unique approved drug-disease pairings. Your entire medical canon.
+This is not a hard calculation. A child could do it. Several children have. The children were then told to stop asking uncomfortable questions and go play outside.
+
+### What You've Actually Tried
+
+* **Approved uses:** {{< var approved_drug_disease_pairings >}} unique approved drug-disease pairings. This is your entire medical canon. Five thousand years of civilization. Libraries of medical journals. Nobel Prizes. White coats. Stethoscopes. All of it produced this number.
 * **Repurposed uses:** {{< var drug_repurposing_success_rate >}} of drugs gain at least one new indication after initial approval. The rest never get a second date.
-* **Failed trials:** Let's be generous and say you tested 10x as many things that failed. (You did. You learned nothing from them.)
+* **Failed trials:** Let's be generous and say you tested 10x as many things that failed. You learned nothing from most of them because your system throws away negative results like a restaurant that only writes down the recipes that taste good.
 
 ![Most drug trials fail. A few succeed. Humanity's entire medical knowledge is a tiny pile of successes next to a mountain of expensive failures we learned nothing from.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-what-you-ve-actually-tested-bw-academic.jpg)
 
 **Total tested: {{< var tested_relationships_estimate >}}.**
 
-### The Scorecard
+### The Number That Should Keep You Awake
 
 {{< var tested_relationships_estimate >}} tested / {{< var drug_disease_combinations_possible >}} possibilities = {{< var exploration_ratio >}}
 
 {{< var exploration_ratio_latex >}}
 
-**Humanity has explored about a third of one percent of the theoretically testable drug-disease space.**
+**You have explored one-third of one percent of the things you could test using molecules you already have.**
 
-You checked one drawer, closed it, and told the patient the case was cold. The patient is also cold, because the patient is dead.
+I want to sit with that for a moment. You have safe compounds. You have sick people. You have the ability to introduce them to each other. You have done this {{< var exploration_ratio >}} of the time. The other 99.66% of introductions have never been made. Not because they wouldn't work. Because nobody filled out the paperwork.
 
 ![The dot is everything you know about medicine. The rest is everything you don't. The dot is very small. You seem comfortable with this.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-scorecard-bw-academic.jpg)
 
-On Wishonia, if someone explored 0.34% of something and declared the job finished, we would gently suggest they continue. On Earth, you publish a paper about the 0.34% and apply for a grant to study the remaining 0.34% you studied last time.
+On Wishonia, if a doctor explored {{< var exploration_ratio >}} of treatment options and declared the patient incurable, we would gently suggest the doctor continue looking. On Earth, you publish a paper about the {{< var exploration_ratio >}} and apply for a grant to re-study the same {{< var exploration_ratio >}} you studied last time.
 
-## Is The Untested Stuff Useful?
+## "Maybe the Other 99.66% Is Useless"
 
-You might argue, "Maybe the other {{< var unexplored_ratio >}} is useless!"
+This is the objection I hear most often from humans who would prefer not to feel bad about this. Let me address it by introducing you to your own biology, which you have mostly not met.
 
 ![You've figured out 12 percent of how the body works. The other 88 percent is a mystery. Drugs affect multiple pathways at once. You test them on one pathway at a time.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-is-the-untested-stuff-useful-bw-academic.jpg)
 
-Biology would like a word.
+**You're ignoring 88% of your own biology.** Mapping 350,000+ clinical trials showed that only {{< var human_interactome_targeted_pct >}} of the human interactome has ever been targeted by drugs. You have a 100-room mansion. You live in the bathroom. You have decorated the bathroom very nicely. You have published papers about the bathroom. The other 88 rooms are locked, and when someone asks about them, you say "we're focused on bathroom excellence at this time."
 
-* **Undrugged Targets:** Mapping 350,000+ clinical trials showed that only {{< var human_interactome_targeted_pct >}} of the human interactome has ever been targeted by drugs. You're ignoring 88% of your own biology. It's like having a 100-room mansion and living exclusively in the bathroom.
-* **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend. This means "side effects" are frequently "cures for something else" that nobody bothered to notice. Sildenafil was developed for chest pain. It failed. Its "side effect" became Viagra, then got repurposed *again* for pulmonary hypertension. Minoxidil was developed for high blood pressure. Its "side effect" was growing hair. It became Rogaine. Two drugs. Three accidental cures. Zero systematic searches. You keep finding cures by tripping over them in hallways. Imagine if you opened a door on purpose.
-* **Network Overlap:** Diseases cluster on shared biological networks [@disease-network-overlap]. Arthritis and Alzheimer's share biological pathways. Lithium was prescribed for gout in the 1800s; decades later, it turned out to be the gold standard treatment for bipolar disorder. Nobody connected the dots because nobody was drawing lines between diseases. The drug that treats your grandfather's inflammation might fix your grandmother's neurodegeneration. You won't find out, because testing it would require paperwork that takes longer than Grandma has left.
+**Your drugs are promiscuous and you're pretending they're not.** FDA-approved drugs bind to things you didn't intend. This means "side effects" are frequently "cures for something else" that nobody bothered to notice. Remember Viagra? That was a side effect. Rogaine? Side effect. Sildenafil got repurposed *again* for pulmonary hypertension: three cures from two drugs, none intentional. Your entire drug discovery strategy is "wander around and hope you trip over something." It works surprisingly often, which is less a compliment to the strategy than an indictment of having no strategy at all.
 
-## The Universe is Big. You Are Small.
+**Your diseases share wiring you haven't traced.** Diseases cluster on shared biological networks [@disease-network-overlap]. Arthritis and Alzheimer's share pathways. Lithium was prescribed for gout in the 1800s; decades later, it turned out to be the gold standard treatment for bipolar disorder. Nobody connected the dots because nobody was drawing lines between diseases. The drug that treats your grandfather's inflammation might fix your grandmother's neurodegeneration. You won't find out, because testing it would require paperwork that takes longer than Grandma has left.
 
-So far we only counted molecules humanity *already has*. The stuff in your cupboards. If you look at what's chemically possible, it gets embarrassing.
+## Beyond Your Cupboard (Where It Gets Embarrassing)
 
+Everything above only counted molecules you *already have*. The safe stuff. The things sitting in your filing cabinets right now, gathering dust and expiration dates. If you look at what's chemically possible, it gets worse.
 
-
-* **Chemical Space:** Estimated 10^23 to 10^60\ [@chemical-space-size] drug-like molecules. That's more candidates than there are atoms in your body. Or stars in the galaxy. Or excuses from your regulatory agencies.
-* **Virtual Libraries:** ZINC-22 contains tens of billions [@zinc-22-database] of purchasable virtual molecules. You could order them online. You haven't.
+* **Chemical Space:** Estimated 10^23 to 10^60\ [@chemical-space-size] drug-like molecules. More candidates than atoms in your body. More than stars in your galaxy. More than the number of times your regulatory agencies have said "we need more data."
+* **Virtual Libraries:** ZINC-22 contains tens of billions [@zinc-22-database] of purchasable virtual molecules. You can order them online. Like shoes, but for not dying. You have ordered more shoes.
 * **Synthesized:** You have made **<10^(-40)** of possible molecules.
 
 **Tested / Possible = ~10^-20 to 10^-50.**
 
-**Effectively zero.** You haven't even started.
+These are numbers so small that the notation system itself starts to feel embarrassed. 10^-50 is not a fraction. It's a rounding error's rounding error. It is the mathematical equivalent of having not started. Because you have not started.
 
-This is like exploring Earth by looking at one grain of sand on one beach in New Jersey, then declaring you've "seen the world." You haven't. You've seen a grain of sand. In New Jersey.
+## Why You Are Still Sick (A Diagnosis)
 
-## Why You Are Still Sick
+I want to be very clear: you are not sick because curing disease is impossible. You are sick because you built a system that charges $100 million per introduction between a molecule and a disease, and then gave all the money to a different system that introduces warheads to cities. The warheads work fine.
 
-I want to be very clear about this: you are not sick because curing disease is impossible. You are sick because you built a system that charges $100 million to try, and then gave all the money to a different system that builds missiles. The missiles work fine.
+The disease introduction system has four design flaws. All of them are about money. None of them are about science.
 
-1. **Trials Cost Too Much:** A typical Phase II-III RCT costs **$30-$100M** (median cost per patient {{< var traditional_phase3_cost_per_patient >}}). At that price, you only test things pharmaceutical companies can patent. Everything else sits untested. It's a lottery where the ticket costs $100 million and only rich molecules are allowed to play.
+**The ticket price is insane.** A typical Phase II-III trial costs **$30-$100M** (median cost per patient {{< var traditional_phase3_cost_per_patient >}}). At that price, you only test things pharmaceutical companies can patent and sell at enormous markups. Everything else sits untested. Imagine a dating app where each date costs $100 million and only billionaires are allowed to swipe. That's your drug approval system. The molecules without money die alone.
 
 ![High costs, patent rules, and fear of lawsuits form a bottleneck between cures and people. The bottleneck is shaped like a dollar sign.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-why-you-are-still-sick-bw-academic.jpg)
 
-2. **Herd Mentality:** Trials overwhelmingly test the same few biological targets due to preferential attachment dynamics [@preferential-target-attachment]. Everyone studies what everyone else studies because that's how you get grants. It's like if every explorer only went to France because France already had good reviews on TripAdvisor. Meanwhile, undiscovered continents full of cures sit there, undiscovered.
+**Everyone goes to France.** Trials overwhelmingly test the same few biological targets due to preferential attachment dynamics [@preferential-target-attachment]. Everyone studies what everyone else studies because that's how you get grants. It's a herd behavior that would embarrass actual herds. Cows at least spread out across the field. Your researchers cluster around twelve targets because those are the targets with grant funding, and the grant funding goes to those targets because those are the targets with researchers. This is a circle. Not the good kind.
 
-3. **No Profit:** Most molecules have no patent. No patent = no $100M trial = no approval. Metformin, a diabetes drug from the 1950s, shows persistent signals for reducing cancer risk and extending lifespan. It costs pennies. It's off-patent. The trial to prove it works for aging (TAME) spent years begging for funding because no pharmaceutical company will bankroll a drug they can't monopolize. The molecule that saves your life has to make money first. If it can't, it won't. You die. Quarterly earnings go up.
+**Cheap molecules can't play.** Most molecules have no patent. No patent means no $100M trial. No trial means no approval. Metformin, a diabetes drug from the 1950s, shows persistent signals for reducing cancer risk and extending lifespan. It costs pennies. It's off-patent. The trial to prove it works for aging (TAME) spent years begging for funding because no pharmaceutical company will bankroll a drug they can't monopolize. The molecule that could save your life doesn't make enough money to be worth testing. You die. Quarterly earnings go up. The system is working exactly as designed, which is the problem.
 
-4. **Neglect:** If you have a rare disease with no market, you don't get a drug. Your cells malfunction in an unprofitable way. The invisible hand of the market has weighed your life against quarterly earnings and found you wanting. Sorry about your death. It was a business decision.
+**Unprofitable diseases don't exist.** If you have a rare disease with no market, you don't get a drug. Your cells malfunction in an unprofitable way. The invisible hand of the market has weighed your life against shareholder returns and found you wanting. On Wishonia, we don't have an invisible hand. We have a visible calculator. It counts deaths. When the number goes up, it allocates resources. This is apparently "radical" on your planet.
 
-## How Long to Explore Everything?
+## The Timeline (How Long Until You Finish Looking)
 
-At the current pace of {{< var current_trials_per_year >}}, how long would it take to systematically test therapeutic possibilities?
+At your current pace of {{< var current_trials_per_year >}}, I calculated how long it would take to systematically test what you have. The results are, and I say this with genuine affection for your species, not great.
 
-### Tier 1: Single Compounds (Most Conservative)
+**Just the safe compounds you already own:**
 
-Testing every known safe compound against every major disease:
+{{< var drug_disease_combinations_possible >}} / {{< var current_trials_per_year >}} = {{< var current_known_safe_exploration_years >}}
 
-**{{< var drug_disease_combinations_possible >}} ÷ {{< var current_trials_per_year >}} = {{< var current_known_safe_exploration_years >}}**
+{{< var current_known_safe_exploration_years >}}. Using compounds *already confirmed not to kill people*. Sitting in cabinets. With labels on them. You won't finish until roughly the year 5000, at which point the people who needed the drugs will have been dead for three thousand years, which somewhat reduces the clinical urgency.
 
-That's almost {{< var current_known_safe_exploration_years >}} to explore compounds we *already know are safe*. By that math, we won't finish until the year 5000.
+**Combination therapies (which is how modern medicine actually works):**
 
-### Tier 2: Combination Therapies (Still Defensible)
+Oncology, HIV, cardiology, psychiatry: all routinely use multi-drug cocktails. The real question isn't "does this one drug work?" but "which combinations work?" Testing pairwise combinations:
 
-Modern medicine increasingly relies on multi-drug cocktails. Oncology, HIV, cardiology, psychiatry: all routinely use drug combinations. So the real question isn't "does this one drug work?" It's "which combinations work?" Testing pairwise combinations of safe compounds:
+{{< var combination_therapy_disease_space >}} / {{< var current_trials_per_year >}} = {{< var current_combination_exploration_years >}}
 
-**{{< var combination_therapy_disease_space >}} ÷ {{< var current_trials_per_year >}} = {{< var current_combination_exploration_years >}}**
-
-That's longer than *Homo sapiens* has existed as a species. And that's using only compounds with established safety data, testing only pairs. Not triplets. God help you if you want to try triplets.
+That's longer than *Homo sapiens* has existed as a species. You would need to have started testing drug combinations before your ancestors climbed down from the trees, and you still wouldn't be done. And that's only pairs. If you want triplets, you'll need to outlive the sun.
 
 ![Testing every two-drug combination would take millions of years. You have about 70 years if you're lucky. The math is not in your favor.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-tier-2-combination-therapies-still-defensible-bw-academic.jpg)
 
-### Tier 3: The Full Chemical Universe (Illustrative)
+**The full chemical universe:**
 
-Beyond known compounds lies the chemical space of 10^23 to 10^60 drug-like molecules. At current trial capacity, exploring even the *synthesizable* fraction would take longer than the universe has existed. The universe is 13.8 billion years old. You need more time than that. To test pills. Pills that already exist.
-
-We haven't even started.
+Beyond your cupboard, the chemical space contains 10^23 to 10^60 drug-like molecules. At current trial capacity, exploring even the synthesizable fraction would take longer than the universe has existed. The universe is 13.8 billion years old. You need more time than that. To test pills.
 
 ### "But Won't We Run Out of Easy Discoveries?"
 
-Some will argue "diminishing returns": the more we search, the harder each new discovery becomes. This assumes we've already picked the low-hanging fruit.
+Some of your economists (the ones who've never looked through a microscope) will argue "diminishing returns." The more you search, the harder each new find becomes. This assumes you've already picked the low-hanging fruit.
 
-You haven't picked *any* fruit. You're standing outside the orchard filling out an application to enter the orchard. The application is 47 pages long. The fruit is rotting.
+You are not in the orchard. You are standing outside the orchard filling out a 47-page application to enter the orchard. The application requires three letters of recommendation, an institutional review board approval, and a 14-month waiting period. The fruit is rotting. You can see it rotting. You're on page 12 of the application.
 
-Diminishing returns only kicks in after you've explored a significant fraction of the space. At <1% explored, every trial teaches you something new about human biology, improving your ability to predict what works next. Learning compounds. Depletion is negligible. You are nowhere near the bottom of the barrel because you have not yet located the barrel.
+Diminishing returns kicks in after you've explored a meaningful fraction of the space. At less than 1% explored, every trial teaches you something new, improving your ability to predict what works next. The math: even with weak learning effects, diminishing returns only dominates after exploring ~37% of therapeutic space. For combination therapies, that crossover is **over 5 million years away** at current pace (37% of {{< var combination_therapy_disease_space_nounit >}} combinations at {{< var current_trials_per_year_nounit >}} trials/year).
 
-The math: even with weak learning, diminishing returns only matters after exploring ~37% of therapeutic space. For combination therapies, that crossover is **over 5 million years away** at current pace (37% of {{< var combination_therapy_disease_space_nounit >}} combinations at {{< var current_trials_per_year_nounit >}} trials/year).
+You cannot have diminishing returns when you haven't had any returns. See [the formal analysis](https://impact.warondisease.org#mathematical-framework-when-would-diminishing-returns-dominate) for the equations.
 
-You cannot have diminishing returns when you've barely started looking. See [the formal analysis](https://impact.warondisease.org#mathematical-framework-when-would-diminishing-returns-dominate) for the equations.
+## What Happens When You Actually Try
 
-## The Fix
+The Oxford RECOVERY Trial during COVID-19 proved something your pharmaceutical industry would prefer you didn't know: large-scale pragmatic trials can run for ~{{< var recovery_trial_cost_per_patient >}} per patient and deliver results in less than 100 days [@recovery-trial-100-days-to-cure].
 
-The Oxford RECOVERY Trial (COVID-19) proved that large-scale pragmatic trials can run for ~{{< var recovery_trial_cost_per_patient >}} and deliver results in <100 days [@recovery-trial-100-days-to-cure].
+{{< var recovery_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}.
 
-{{< var recovery_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}. Read those numbers again. One of them is the reason people are dying.
+Read those two numbers again. One of them is the cost of finding out if a drug works. The other is the cost of finding out if a drug works while also paying for marble lobbies, compliance departments, and a CEO's third yacht. The medicine is the same. The patients are the same. The yacht is new.
 
 With a [decentralized FDA](../solution/dfda.qmd), trial capacity increases by {{< var dfda_trial_capacity_multiplier >}}:
 
-**{{< var drug_disease_combinations_possible >}} ÷ {{< var dfda_trials_per_year_capacity >}} = {{< var dfda_known_safe_exploration_years >}}**
+**{{< var drug_disease_combinations_possible >}} / {{< var dfda_trials_per_year_capacity >}} = {{< var dfda_known_safe_exploration_years >}}**
 
-Still a long time, but at least it's a number with fewer digits than a phone book. And the first few decades would capture the highest-value discoveries (the low-hanging fruit that current trial scarcity forces you to ignore while people die in the waiting room).
+Still not fast. But at least it's a number your grandchildren might live to see the end of, rather than a number that requires your species to outlive its own star. The first few decades would capture the highest-value discoveries, the cures that current trial scarcity forces you to ignore while people die in the waiting room.
 
-More importantly, your decentralized FDA builds *permanent infrastructure* for systematic therapeutic exploration. The goal isn't to "finish." It's to stop leaving cures on the table while you form subcommittees to discuss whether to form committees to review the proposal to consider them.
+Your decentralized FDA builds *permanent infrastructure* for systematic therapeutic exploration. The goal isn't to "finish." The goal is to stop leaving cures on the table while you form subcommittees to discuss whether to form committees to review the proposal to consider looking at them.
 
 ![Traditional trials: expensive, slow, picky about participants. Decentralized trials: cheaper, faster, will accept literally anyone. Both test the same drugs.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-fix-pragmatic-vs-traditional-bw-academic.jpg)
 
 ## The Bottom Line
 
-**Humanity has empirically tested less than {{< var exploration_ratio >}} of the drug-disease relationships that can be tested using existing safe compounds.**
+**You have tested {{< var exploration_ratio >}} of the drug-disease combinations testable with compounds you already own.**
 
-**If you include the larger chemical universe, humanity has explored roughly one-quadrillionth to one-quintillionth of what is possible (10^-12 to 10^-50). There are numbers so small that mathematicians get depressed looking at them. These are those numbers.**
+**If you include the larger chemical universe: roughly one-quadrillionth to one-quintillionth of what's possible (10^-12 to 10^-50).**
 
-**The overwhelming majority of therapeutic potential remains untouched. Not because cures are impossible. Because trials are too expensive and too slow.**
+**The reason is not scientific. The reason is financial. Trials cost too much and the money is busy being missiles.**
 
 **A decentralized, automated pragmatic trial system is the only route to systematically explore the remaining 99.999...% of medical space.**
 
-The cures exist. The molecules are sitting there. The patients are willing. The only thing between them is a system that charges $100 million to introduce them and takes 17 years to make the introduction. On Wishonia, this would be considered a hostage situation. On Earth, it is considered "regulation."
+The cures exist. The molecules are sitting in your cabinets. The patients are willing. The only thing between them is a system that charges $100 million to introduce them and takes 17 years to make the introduction.
 
-![Everything you know about medicine is a dot. Everything you could know is the rest of the page. The dot is not growing.
+On Wishonia, we have a word for holding sick people hostage until someone pays a ransom. We call it crime. On Earth, you call it "regulation." You seem very proud of it.
+

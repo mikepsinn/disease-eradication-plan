@@ -2,12 +2,12 @@
 
 **Config:** _quarto-drug-development-cost.yml
 **Type:** book
-**Files:** 2 | **Words:** 3,358 | **Images:** 16 | **Est. Pages:** ~21
+**Files:** 2 | **Words:** 3,360 | **Images:** 16 | **Est. Pages:** ~21
 
 #### knowledge/appendix/drug-development-cost-analysis.qmd
 **Title:** Drug Development Cost Increase Analysis
 **Description:** Rigorous analysis of the 105x (95% CI: 90.6x-119x) increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis
-**Stats:** 3,273 words | 556 lines | 15 images | ~21p
+**Stats:** 3,275 words | 557 lines | 15 images | ~21p
 
   - The Short Version
   - Historical Data Sources
