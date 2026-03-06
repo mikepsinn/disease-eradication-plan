@@ -86,8 +86,7 @@ def sync_manifest_from_config(chapters: list[dict], paths: AudiobookPaths | None
     inserted/reordered), stale audio fields are cleared. Entries for indices
     no longer in the config are removed.
 
-    This is essential for --mp3-only mode where text generation is skipped
-    and save_text_results never runs.
+    Useful after chapter insertion/reordering to fix stale manifest entries.
     """
     manifest = read_manifest(paths)
     manifest_path = paths.manifest if paths else MANIFEST_PATH

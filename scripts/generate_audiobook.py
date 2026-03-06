@@ -1624,11 +1624,6 @@ def main():
         help="Skip forced alignment and subtitle generation"
     )
     parser.add_argument(
-        "--mp3-only",
-        action="store_true",
-        help="Skip TTS/normalize/align; re-encode existing WAVs to MP3 and wrap with intro/outro"
-    )
-    parser.add_argument(
         "--start",
         type=int,
         help="Start from chapter number (inclusive)"
@@ -1700,24 +1695,10 @@ def main():
     mp3_dir = paths.root / "mp3"
     _cleanup_wraphash_sidecars(mp3_dir)
 
-    # In mp3-only mode, sync manifest with config and purge MP3s to force re-encode
-    if args.mp3_only:
-        from lib.audiobook_manifest import sync_manifest_from_config
-        print("  [MP3-ONLY] Syncing manifest with current book config...")
-        sync_manifest_from_config(all_chapters, paths=paths)
-
-        print("  [MP3-ONLY] Purging existing MP3s to force re-encode...")
-        raw_mp3_dir = paths.raw_mp3 if hasattr(paths, 'raw_mp3') else paths.root / "mp3-raw"
-        for d in (raw_mp3_dir, mp3_dir):
-            if d.exists():
-                for f in d.glob("*.mp3"):
-                    f.unlink()
-                    print(f"    Deleted: {f.name}")
-
     # Generate podcast outro audio (once, before chapter loop)
     outro_wav = None
     t_sub = time.monotonic()
-    if OUTRO_QMD_PATH.exists() and not args.mp3_only:
+    if OUTRO_QMD_PATH.exists():
         print("=" * 60)
         print("  Generating podcast outro audio...")
         print("=" * 60)
@@ -1728,14 +1709,6 @@ def main():
             print(f"  [OK] Outro audio: {outro_wav.name}")
         else:
             print(f"  [WARN] Outro audio generation failed, chapters will not have outro")
-    elif args.mp3_only:
-        # In mp3-only mode, use existing outro WAV if available
-        existing_outro = paths.chapters / "podcast-outro.wav"
-        if existing_outro.exists():
-            outro_wav = existing_outro
-            print(f"  [OK] Using existing outro: {outro_wav.name}")
-        else:
-            print(f"  [INFO] No existing outro WAV, skipping outro")
     else:
         print(f"  [INFO] No outro QMD found at {OUTRO_QMD_PATH.name}, skipping outro")
     _substep_times["Outro audio"] = time.monotonic() - t_sub
@@ -1756,33 +1729,25 @@ def main():
 
         print(f"\n[{chapter['index']}/{total_chapters}] {title}")
 
-        if args.mp3_only:
-            # Skip TTS/normalize/align; just find existing WAV
-            audio_path = find_chapter_audio(chapter, paths=paths)
-            if not audio_path:
-                print(f"  [SKIP] No WAV found for chapter {chapter['index']}")
-                continue
-            generated_files.append(audio_path)
-        else:
-            # 1. Generate audio (text prep + TTS + combine chunks -> WAV)
+        # 1. Generate audio (text prep + TTS + combine chunks -> WAV)
+        t_sub = time.monotonic()
+        audio_path, audio_changed = generate_chapter_audio(chapter, voice=args.voice, force=args.force, paths=paths, config_path=config_path)
+        _substep_times["TTS generation"] += time.monotonic() - t_sub
+        if not audio_path:
+            continue
+
+        generated_files.append(audio_path)
+
+        # 2. Normalize loudness
+        t_sub = time.monotonic()
+        normalize_loudness(audio_path, target_lufs=-16.0)
+        _substep_times["Loudness normalization"] += time.monotonic() - t_sub
+
+        # 3. Forced alignment + subtitle generation
+        if not args.no_align:
             t_sub = time.monotonic()
-            audio_path, audio_changed = generate_chapter_audio(chapter, voice=args.voice, force=args.force, paths=paths, config_path=config_path)
-            _substep_times["TTS generation"] += time.monotonic() - t_sub
-            if not audio_path:
-                continue
-
-            generated_files.append(audio_path)
-
-            # 2. Normalize loudness
-            t_sub = time.monotonic()
-            normalize_loudness(audio_path, target_lufs=-16.0)
-            _substep_times["Loudness normalization"] += time.monotonic() - t_sub
-
-            # 3. Forced alignment + subtitle generation
-            if not args.no_align:
-                t_sub = time.monotonic()
-                _run_alignment(chapter, audio_path, title, force=args.force, paths=paths, audio_changed=audio_changed)
-                _substep_times["Alignment + subtitles"] += time.monotonic() - t_sub
+            _run_alignment(chapter, audio_path, title, force=args.force, paths=paths, audio_changed=audio_changed)
+            _substep_times["Alignment + subtitles"] += time.monotonic() - t_sub
 
         # 4. Export raw tagged chapter MP3 (to mp3-raw/)
         t_sub = time.monotonic()
