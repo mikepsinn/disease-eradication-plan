@@ -2,12 +2,12 @@
 
 **Config:** _quarto-dfda-spec.yml
 **Type:** website
-**Files:** 1 | **Words:** 14,326 | **Images:** 45 | **Est. Pages:** ~80
+**Files:** 1 | **Words:** 14,328 | **Images:** 45 | **Est. Pages:** ~80
 
 #### knowledge/appendix/dfda-spec-paper.qmd
 **Title:** The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
 **Description:** We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x (95% CI: 39.4x-89.1x) lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.
-**Stats:** 14,326 words | 1,976 lines | 45 images | ~80p
+**Stats:** 14,328 words | 1,977 lines | 45 images | ~80p
 
   - Abstract
     ![Step 1: Let computers watch a billion people take medicine. Step 2: Test the interesting bits. You were doing Step 2 first, which is why everything costs a billion dollars.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-abstract-bw-academic.jpg)

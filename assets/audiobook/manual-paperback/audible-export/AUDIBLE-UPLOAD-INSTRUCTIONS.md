@@ -2,9 +2,9 @@
 
 **Book:** How to End War and Disease
 **Author/Narrator:** Mike P. Sinn
-**Total Duration:** 11:00:21
+**Total Duration:** 10:59:56
 **Chapters:** 31
-**Generated:** 2026-03-04 08:34
+**Generated:** 2026-03-05 22:04
 
 ## Audio Specifications
 
@@ -29,7 +29,7 @@ Upload these files **in order**:
 | 3 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\03-untapped-therapeutic-frontier.mp3` | The Untapped Therapeutic Frontier | 00:15:04 | -20.36 | -5.63 |
 | 4 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\04-fda-is-unsafe-and-ineffective.mp3` | The FDA Is Unsafe and Ineffective | 00:21:55 | -20.36 | -5.63 |
 | 5 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\05-unrepresentative-democracy.mp3` | Unrepresentative Democracy | 00:20:24 | -20.34 | -5.48 |
-| 6 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\06-central-banks.mp3` | How Central Banks Fund Your Death | 00:27:26 | -20.33 | -5.44 |
+| 6 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\06-central-banks.mp3` | Your Money Comes From a Building and They Use It to Kill People | 00:27:26 | -20.33 | -5.44 |
 | 7 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\07-genetic-slavery.mp3` | Genetic Slavery | 00:39:40 | -20.3 | -5.5 |
 | 8 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\08-1-percent-treaty.mp3` | A 1% Treaty | 00:20:52 | -20.34 | -5.41 |
 | 9 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\09-dih.mp3` | Decentralized Institutes of Health | 00:28:51 | -20.36 | -5.43 |
@@ -45,16 +45,16 @@ Upload these files **in order**:
 | 19 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\19-global-referendum.mp3` | Global Referendum Strategy | 00:13:57 | -20.41 | -5.33 |
 | 20 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\20-treaty-feasibility.mp3` | Treaty Feasibility & Cost Analysis | 00:20:52 | -20.34 | -5.35 |
 | 21 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\21-peace-dividend.mp3` | Peace Dividend | 00:09:53 | -20.25 | -5.65 |
-| 22 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\22-health-dividend.mp3` | Health Dividend | 00:09:17 | -20.31 | -5.75 |
-| 23 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\23-financial-plan.mp3` | Financial Plan | 00:10:08 | -20.33 | -5.43 |
-| 24 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\24-nonprofit-coalition-strategy.mp3` | Why Every Nonprofit Should Support a 1% treaty | 00:18:49 | -20.31 | -5.58 |
-| 25 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\25-legal-framework.mp3` | Legal Architecture | 00:25:10 | -22.34 | -5.51 |
-| 26 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\26-recruitment-and-propaganda-plan.mp3` | Recruitment & Propaganda Plan | 00:11:17 | -20.31 | -5.53 |
-| 27 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\27-conclusion.mp3` | Conclusion | 00:00:49 | -20.31 | -5.75 |
-| 28 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\28-references.mp3` | Source Quotes and References | 00:00:12 | -20.13 | -5.36 |
-| 29 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\29-acknowledgments.mp3` | Acknowledgments | 00:02:57 | -20.34 | -5.5 |
-| 30 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\30-copyright.mp3` | Copyright | 00:01:19 | -20.46 | -5.67 |
-| 31 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\31-back-cover.mp3` | About This Manual | 00:03:26 | -20.31 | -5.74 |
+| 22 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\22-gdp-trajectories.mp3` | Three Civilizations: GDP Trajectories | 00:09:17 | -20.35 | -5.59 |
+| 23 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\23-health-dividend.mp3` | Health Dividend | 00:09:22 | -20.35 | -5.51 |
+| 24 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\24-financial-plan.mp3` | Financial Plan | 00:11:27 | -20.29 | -5.63 |
+| 25 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\25-nonprofit-coalition-strategy.mp3` | Why Every Nonprofit Should Support a 1% treaty | 00:18:46 | -20.31 | -5.59 |
+| 26 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\26-legal-framework.mp3` | Legal Architecture | 00:17:35 | -20.3 | -5.47 |
+| 27 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\27-recruitment-and-propaganda-plan.mp3` | Recruitment & Propaganda Plan | 00:11:17 | -20.31 | -5.53 |
+| 28 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\28-conclusion.mp3` | Conclusion | 00:00:49 | -20.31 | -5.75 |
+| 29 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\29-references.mp3` | Source Quotes and References | 00:00:12 | -20.13 | -5.36 |
+| 30 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\30-acknowledgments.mp3` | Acknowledgments | 00:02:57 | -20.34 | -5.5 |
+| 31 | `E:\code\obsidian\websites\disease-eradication-plan\assets\audiobook\manual-paperback\audible-export\31-copyright.mp3` | Copyright | 00:01:19 | -20.46 | -5.67 |
 
 ## Upload Checklist
 

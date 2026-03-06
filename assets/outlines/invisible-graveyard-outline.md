@@ -2,12 +2,12 @@
 
 **Config:** _quarto-invisible-graveyard.yml
 **Type:** website
-**Files:** 1 | **Words:** 7,399 | **Images:** 31 | **Est. Pages:** ~45
+**Files:** 1 | **Words:** 7,401 | **Images:** 31 | **Est. Pages:** ~45
 
 #### knowledge/appendix/invisible-graveyard.qmd
 **Title:** The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag
 **Description:** After proving a drug is safe, the FDA requires 8.2 years (95% CI: 4.85 years-11.5 years) to prove it works before patients can access it. We estimate this delay cost 102 million deaths (95% CI: 36.9 million deaths-214 million deaths) among people waiting for approved drugs (1962-2024). The human cost in death and disability of blocking good drugs is 3.07k (95% CI: 2.88k-3.12k) higher than the cost of approving bad ones.
-**Stats:** 7,399 words | 777 lines | 31 images | ~45p
+**Stats:** 7,401 words | 778 lines | 31 images | ~45p
 
   - The Short Version
     ![Approving a bad drug killed this many people historically. Delaying good drugs will kill 3,070 times more people in the future. We're very worried about the smaller number.](/assets/images/invisible-graveyard/invisible-graveyard-section-the-short-version-bw-academic.jpg)
