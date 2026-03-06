@@ -82,6 +82,11 @@ LINKS_CSS = """\
 }
 .link-btn.primary:hover {
   background: #333;
+}
+.link-btn i {
+  font-size: 1.2em;
+  vertical-align: -0.05em;
+  margin-right: 0.3rem;
 }"""
 
 
@@ -91,14 +96,16 @@ def _render_link(link: Dict[str, Any]) -> str:
     label = link["label"]
     primary = link.get("primary", False)
     subtitle = link.get("subtitle", "")
+    icon = link.get("icon", "")
 
     # Escape @ in URLs and subtitle text so Pandoc doesn't interpret as citation references
     url_escaped = url.replace("@", "&#64;")
     subtitle_escaped = subtitle.replace("@", "&#64;") if subtitle else ""
 
     cls = "link-btn primary" if primary else "link-btn"
+    icon_html = f'<i class="{icon}"></i> ' if icon else ""
     sub_html = f'\n  <span class="btn-sub">{subtitle_escaped}</span>' if subtitle_escaped else ""
-    return f'<a href="{url_escaped}" class="{cls}">\n  {label}{sub_html}\n</a>'
+    return f'<a href="{url_escaped}" class="{cls}">\n  {icon_html}{label}{sub_html}\n</a>'
 
 
 def _render_section(heading: str, links: List[Dict[str, Any]]) -> str:
@@ -170,7 +177,6 @@ aliases:
 
 <div class="tagline">
   {subtitle}<br><br>
-  Please select your preferred sensory input channel.
 </div>
 
 {sections_html}
@@ -241,7 +247,7 @@ aliases:
 <h2>Prefer Using Your Eyeballs?</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
-  Read Online
+  <i class="fa-solid fa-book-open"></i> Read Online
   <span class="btn-sub">Free. Just eyeballs and a willingness to live.</span>
 </a>
 
