@@ -138,7 +138,7 @@ def generate_links_qmd(project_root: Path) -> Path:
 
     sections = [
         ("Do Something (15 Seconds)", shared_links.get("action", [])),
-        ("Ear Holes", manual_links.get("listen", [])),
+        ("Skull Vibration Ports", manual_links.get("listen", [])),
         ("Murdered Trees", manual_links.get("buy", [])),
         ("Glowing Rectangle", manual_links.get("read", [])),
         ("Ongoing Surveillance", shared_links.get("follow", [])),
@@ -152,7 +152,7 @@ def generate_links_qmd(project_root: Path) -> Path:
 
     content = f"""---
 title: "Select Your Preferred Sensory Input Channel"
-description: "Humans require instructions delivered through specific orifices. Choose yours. Available via ear holes, murdered trees, or glowing rectangles."
+description: "Humans require instructions delivered through specific orifices. Choose yours. Available via skull vibration ports, murdered trees, or glowing rectangles."
 published: true
 feed-date: false
 page-layout: full
@@ -212,8 +212,8 @@ def generate_podcast_qmd(project_root: Path, manual_config: Optional[Dict] = Non
     buy_html = "\n\n".join(_render_link(link) for link in buy_links[:2])  # Just top 2 buy links
 
     content = f"""---
-title: "Listen to How to End War and Disease"
-description: "Free audiobook podcast. Every chapter narrated. Available on Spotify, Apple Podcasts, YouTube Music, and all major podcast apps."
+title: "Ear Hole Edition"
+description: "Step-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull vibration ports."
 published: true
 feed-date: false
 page-layout: full
@@ -229,21 +229,20 @@ aliases:
 
 <div class="links-page">
 
-<img src="/assets/cover/book-cover-3.jpg" alt="How to End War and Disease - Book Cover" class="hero-img">
-
 <div class="tagline">
-  Every chapter narrated. Free on all major podcast apps.
+  Step-by-step instructions for bribing humanity into not murdering you, narrated directly into your head.<br>
+  Free. Select your preferred ear hole delivery system.
 </div>
 
-<h2>Listen</h2>
+<h2>Ear Hole Delivery Systems</h2>
 
 {podcast_html}
 
-<h2>Prefer to Read?</h2>
+<h2>Prefer Eyeballs?</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
   Read Online
-  <span class="btn-sub">Full manual, free, no account needed</span>
+  <span class="btn-sub">Free. Just eyeballs and a willingness to live.</span>
 </a>
 
 {buy_html}
