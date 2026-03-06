@@ -212,8 +212,8 @@ def generate_podcast_qmd(project_root: Path, manual_config: Optional[Dict] = Non
     buy_html = "\n\n".join(_render_link(link) for link in buy_links[:2])  # Just top 2 buy links
 
     content = f"""---
-title: "Ear Hole Edition"
-description: "Step-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull vibration ports."
+title: "Skull Auditory Port Edition"
+description: "Step-by-step instructions for bribing humanity into not murdering you, narrated directly into your head. Free on every app that puts sounds in your skull auditory ports."
 published: true
 feed-date: false
 page-layout: full
@@ -234,11 +234,11 @@ aliases:
   Free. Select your preferred ear hole delivery system.
 </div>
 
-<h2>Ear Hole Delivery Systems</h2>
+<h2>Skull Auditory Port Delivery Systems</h2>
 
 {podcast_html}
 
-<h2>Prefer Eyeballs?</h2>
+<h2>Prefer Using Your Eyeballs?</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
   Read Online
