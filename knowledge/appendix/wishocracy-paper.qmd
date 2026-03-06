@@ -649,9 +649,9 @@ Wishocracy's preference aggregation integrates with [Incentive Alignment Bonds (
 
 3. **Post-Office Layer:** High-alignment politicians gain access to lucrative post-office opportunities (board seats, consulting, foundation positions) funded by IAB investors who profit from welfare-improving policy adoption.
 
-Politicians currently face incentives that reward serving concentrated interests (military contractors, pharmaceutical incumbents, fossil fuel producers) at the expense of diffuse beneficiaries (citizens who would benefit from cures, climate stability, reduced existential risk). IABs flip this calculus by making the diffuse beneficiaries' preferences financially consequential.
+Politicians currently face incentives that reward serving concentrated interests (weapons manufacturers, pharmaceutical incumbents, fossil fuel producers) at the expense of diffuse beneficiaries (citizens who would benefit from cures, climate stability, reduced existential risk). IABs flip this calculus by making the diffuse beneficiaries' preferences financially consequential.
 
-**Capital Asymmetry:** Diffuse beneficiaries collectively control far more capital than concentrated interests. Global household wealth exceeds {{< var global_household_wealth_usd >}}; the combined market capitalization of industries benefiting from misallocation (defense contractors, fossil fuels, etc.) is under {{< var concentrated_interest_sector_market_cap_usd >}}. The problem is coordination, not resources. IABs solve the coordination problem by creating a vehicle for diffuse beneficiaries to pool resources and direct them toward aligned politicians.
+**Capital Asymmetry:** Diffuse beneficiaries collectively control far more capital than concentrated interests. Global household wealth exceeds {{< var global_household_wealth_usd >}}; the combined market capitalization of industries benefiting from misallocation (weapons manufacturers, fossil fuels, etc.) is under {{< var concentrated_interest_sector_market_cap_usd >}}. The problem is coordination, not resources. IABs solve the coordination problem by creating a vehicle for diffuse beneficiaries to pool resources and direct them toward aligned politicians.
 
 **Success Metrics:**
 

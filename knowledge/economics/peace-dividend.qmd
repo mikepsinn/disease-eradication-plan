@@ -93,7 +93,7 @@ And you've tested this at scale. After World War II, America cut military spendi
 
 ### How Good Are the Sources?
 
-I'm being honest about confidence levels, which is more than your defense contractors do.
+I'm being honest about confidence levels, which is more than your murder engineers do.
 
 | Cost Category | Source | Confidence |
 |---|---|---|
@@ -116,7 +116,7 @@ Skeptics ask whether 1% fewer bombs means exactly 1% fewer wars. This is the wro
 
 Your species cut military spending {{< var post_ww2_military_cut_pct >}} after World War II and got the greatest economic boom in history. That's the empirical answer. But even that misses the point, because the 1% treaty doesn't stay at 1%.
 
-[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are tradable securities held by rich and powerful people whose income scales directly with treaty expansion. At 1%, bondholder payouts are {{< var victory_bond_annual_payout >}}/year. At 2%, they double. At 10%, they collect ten times as much. These aren't activists you can ignore at a dinner party. They're investors with Bloomberg terminals, lobbyists, and the same tools your defense contractors currently use to expand military budgets, except pointed at curing diseases.
+[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are tradable securities held by rich and powerful people whose income scales directly with treaty expansion. At 1%, bondholder payouts are {{< var victory_bond_annual_payout >}}/year. At 2%, they double. At 10%, they collect ten times as much. These aren't activists you can ignore at a dinner party. They're investors with Bloomberg terminals, lobbyists, and the same tools your weapons manufacturers currently use to expand military budgets, except pointed at curing diseases.
 
 At just 1%, the IAB political incentive pool ({{< var iab_political_incentive_funding_annual >}}/year) already outguns your entire defense industry's lobbying budget ({{< var defense_lobbying_annual >}}/year) by {{< var iab_vs_defense_lobby_ratio_at_1pct >}}. Every expansion multiplies this. You've built a [defense lobby in reverse](../solution/aligning-incentives.qmd#why-this-scales-the-ratchet-effect), and it's {{< var iab_vs_defense_lobby_ratio_at_1pct >}} stronger than the original on day one.
 

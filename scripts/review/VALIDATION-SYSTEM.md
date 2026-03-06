@@ -28,7 +28,7 @@ Used by:
 |------|----------------|-----------------|
 | **Third person only** | No "you" or "your" | Found "you" in output |
 | **Contractions preserved** | Don't → don't (not "do not") | Missing contractions: don't, can't |
-| **No "defense" euphemism** | Use "military" not "defense" | Found "defense contractors" |
+| **No "defense" euphemism** | Use "military" not "defense" | Found "military contractors" |
 | **Simple pronouns preserved** | "everyone" not "the population" | Over-formalized: everyone → the population |
 | **Casual vocabulary preserved** | Keep "kill", "poison", "die" | Casual words removed: kill, poison |
 | **No over-formal verbs** | "use" not "utilize", "eat" not "consume" | Over-formal: "utilize", "reside" |
@@ -65,7 +65,7 @@ Tests will show validation failures:
 [1/3] Running: AC-01: proof.qmd - landmines & key transformations
    ❌ FAILED (2134ms)
    Failed assertions:
-     - No defense euphemism: Found "defense" euphemism: defense contractors
+     - No defense euphemism: Found "defense" euphemism: military contractors
      - Third person only: Found 2 instances of second person: you, your
    Input:  "knowledge/proof.qmd"
    Output: "[transformed content]"
@@ -91,7 +91,7 @@ npm run generate:audience:foundations
 
   ❌ Validation failed:
     - No defense euphemism:
-      • Found "defense" euphemism (should be "military"): defense contractors
+      • Found "defense" euphemism (should be "military"): military contractors
     - Third person only:
       • Found 3 instances of second person: you, your, you
 

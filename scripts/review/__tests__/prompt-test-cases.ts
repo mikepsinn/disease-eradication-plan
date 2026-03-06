@@ -106,7 +106,7 @@ export const academicTestCases: TestCase[] = [
     blacklistedPhrases: [
       'landmines were stupid',  // Should be "awful"
       'landmines were useless',  // Bad previous output
-      'defense contractors',  // Should be "military"
+      'military contractors',  // Should be "military"
       'defense spending',
       'defense industry',
       'do not',  // No expanded contractions
@@ -132,7 +132,7 @@ export const academicTestCases: TestCase[] = [
       assertions.excludesAllPhrases([
         'stupid',
         'useless',
-        'defense contractors',
+        'military contractors',
         'defense spending',
         'the population',
       ]),
@@ -163,7 +163,7 @@ export const academicTestCases: TestCase[] = [
       'eat',
     ],
     blacklistedPhrases: [
-      'defense contractors',
+      'military contractors',
       'defense spending',
       'defense industry',
       'your dFDA',
@@ -190,7 +190,7 @@ export const academicTestCases: TestCase[] = [
         'everyone',
       ]),
       assertions.excludesAllPhrases([
-        'defense contractors',
+        'military contractors',
         'defense spending',
         'your dFDA',
         'the population',
@@ -222,7 +222,7 @@ export const foundationsTestCases: TestCase[] = [
       'poison',
     ],
     blacklistedPhrases: [
-      'defense contractors',
+      'military contractors',
       'defense spending',
       'defense industry',
       'propaganda',  // 501(c)(3) risk
@@ -246,7 +246,7 @@ export const foundationsTestCases: TestCase[] = [
         'everyone',
       ]),
       assertions.excludesAllPhrases([
-        'defense contractors',
+        'military contractors',
         'propaganda',
         'approach politicians',
         'the population',

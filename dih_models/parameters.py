@@ -3556,7 +3556,7 @@ CAMPAIGN_LEGAL_WORK = Parameter(
     # Economist rationale: International treaty drafting requires 193 jurisdictions.
     # Ottawa Treaty legal costs: ~$10M (1997). Paris Climate Agreement: ~$50M (2015).
     # Adjusting for inflation and complexity: $60M baseline ±30% for legal contestation risk.
-    # CRITICAL: Legal disputes (pharma, defense contractors) could escalate costs 2-3x.
+    # CRITICAL: Legal disputes (pharma, military contractors) could escalate costs 2-3x.
     validation_min=40_000_000,   # Floor: Lean legal team, minimal dispute resolution
     validation_max=120_000_000,  # Ceiling: Protracted legal challenges from industry groups
     latex_symbol=r"Budget_{legal}",  # LaTeX symbol for equations

@@ -27,7 +27,7 @@
 2. **Remove ONLY these specific phrases:**
    - "1950s Alabama country club" → "highly exclusive institutions"
    - "deeper than Jimmy Hoffa" → "thoroughly"
-   - "defense" (when referring to military) → "military" (e.g., "defense contractors" → "military contractors", "defense spending" → "military spending")
+   - "defense" (when referring to military) → "military" (e.g., "military contractors" → "military contractors", "defense spending" → "military spending")
    - "stupid" → "awful" or similar simple, strong word
 3. **Remove profanity** - replace with professional alternatives
 4. **Soften ad hominem language in section headers**

@@ -96,7 +96,7 @@ Output:
 
   ❌ Validation failed:
     - No defense euphemism:
-      • Found "defense" euphemism (should be "military"): defense contractors
+      • Found "defense" euphemism (should be "military"): military contractors
     - Third person only:
       • Found 3 instances of second person: you, your, you
 

@@ -605,7 +605,7 @@ Consider a legislator's decision calculus regarding the 1% Treaty vote:
 | Action | Expected Outcome |
 |:-------|:-----------------|
 | Vote Yes | Military lobby attack ads; reduced industry support |
-| Vote No | Retained military contractor funding; no electoral risk |
+| Vote No | Retained weapons manufacturer funding; no electoral risk |
 
 **With IABs:**
 
@@ -622,7 +622,7 @@ The IAB mechanism aligns incentives across all key stakeholder groups:
 
 {{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
 
-**Military Contractors**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning projected {{< var victory_bond_annual_return_pct >}} returns on Incentive Alignment Bonds. The treaty creates new revenue streams without threatening core business.
+**Weapons Manufacturers**: Retain {{< var defense_sector_retention_pct >}} of current budgets while earning projected {{< var victory_bond_annual_return_pct >}} returns on Incentive Alignment Bonds. The treaty creates new revenue streams without threatening core business.
 
 ![Before: everyone fights over the same pie. After: everyone gets more pie. You could have done this earlier, but you were busy fighting.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-stakeholder-alignment-bw-academic.jpg)
 
@@ -1719,9 +1719,9 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 ![The war industry has three rich friends who always win. The health industry has 8 billion poor friends who always lose. Solution: give the health industry rich friends too.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-time-inconsistency-and-commitment-credibility-bw-academic.jpg)
 
-**The Iron Triangle problem**: Military contractors have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually), creating tight coordination between defense industry, congressional committees, and Pentagon bureaucracy. Health benefits, while larger in aggregate ({{< var treaty_peace_plus_rd_annual_benefits >}} annually), are diffuse across millions of beneficiaries who lack equivalent lobbying infrastructure. This asymmetry (concentrated producer benefits vs. diffuse consumer benefits) creates political economy barriers to reallocation even when aggregate welfare gains are enormous.
+**The Iron Triangle problem**: Weapons manufacturers have concentrated interests with substantial lobbying capacity ({{< var defense_lobbying_annual >}} {{< var defense_lobbying_annual_cite >}} annually), creating tight coordination between defense industry, congressional committees, and Pentagon bureaucracy. Health benefits, while larger in aggregate ({{< var treaty_peace_plus_rd_annual_benefits >}} annually), are diffuse across millions of beneficiaries who lack equivalent lobbying infrastructure. This asymmetry (concentrated producer benefits vs. diffuse consumer benefits) creates political economy barriers to reallocation even when aggregate welfare gains are enormous.
 
-**The billionaire mortality paradox**: This diffusion argument has a critical exception. The world's ~3,000 billionaires (with combined wealth exceeding $14 trillion) are themselves patients who will die of cancer, heart disease, or aging. Unlike defense contractors who profit regardless of personal health outcomes, billionaires have **concentrated personal stakes** in medical progress: their own mortality and that of everyone they love. A single billionaire spending $1B on treaty advocacy has ~{{< var political_success_probability >}} probability of unlocking {{< var treaty_annual_funding >}}/year in government funding. The personal benefit (years of additional life expectancy, treatments for diseases that would otherwise kill them and their families) is worth far more than $1B to someone with $100B+ who cannot currently buy immortality or treatments that don't exist. The puzzle isn't that benefits are truly diffuse. Billionaires face the same mortality as everyone else, and their wealth becomes worthless when they're dead. The puzzle is why structural barriers (prestige bias toward labs over lobbying, political risk aversion, bad advice from scientists saying "fund my lab" rather than "hire lobbyists") prevent them from acting on their concentrated personal interest in not dying.
+**The billionaire mortality paradox**: This diffusion argument has a critical exception. The world's ~3,000 billionaires (with combined wealth exceeding $14 trillion) are themselves patients who will die of cancer, heart disease, or aging. Unlike weapons manufacturers who profit regardless of personal health outcomes, billionaires have **concentrated personal stakes** in medical progress: their own mortality and that of everyone they love. A single billionaire spending $1B on treaty advocacy has ~{{< var political_success_probability >}} probability of unlocking {{< var treaty_annual_funding >}}/year in government funding. The personal benefit (years of additional life expectancy, treatments for diseases that would otherwise kill them and their families) is worth far more than $1B to someone with $100B+ who cannot currently buy immortality or treatments that don't exist. The puzzle isn't that benefits are truly diffuse. Billionaires face the same mortality as everyone else, and their wealth becomes worthless when they're dead. The puzzle is why structural barriers (prestige bias toward labs over lobbying, political risk aversion, bad advice from scientists saying "fund my lab" rather than "hire lobbyists") prevent them from acting on their concentrated personal interest in not dying.
 
 **Historical precedent: Why past peace dividends failed**: The post-World War II "peace dividend" saw military spending fall from 41% of GDP (1945) to 7.2% (1948) [@us-post-wwii-military-spending-cut], with expectations of permanent reductions. However, the Cold War reversed this within 3 years. Military spending returned to 15% of GDP by 1953. Similar patterns occurred post-Vietnam (1970s) and post-Cold War (1990s): initial reductions followed by reversals within 5-10 years. The critical failure: **savings weren't bound to a substitute industry**. Money reverted to general budgets, making re-militarization politically costless. The 1% Treaty solves this by **contractually binding savings to health research infrastructure**, creating a new constituency (patients, researchers, pharmaceutical companies) with incentives to defend the reallocation.
 
@@ -1950,7 +1950,7 @@ This section addresses common objections and potential failure modes, along with
 
 ### The "But Politicians Won't Do It" Problem
 
-**What could go wrong**: Politicians refuse to redirect {{< var treaty_reduction_pct >}} of military spending to pragmatic clinical trials because military contractors oppose the change.
+**What could go wrong**: Politicians refuse to redirect {{< var treaty_reduction_pct >}} of military spending to pragmatic clinical trials because weapons manufacturers oppose the change.
 
 ![The Pentagon lost track of trillions of dollars. We're asking for 1%. If they refuse, the bonds make it financially suicidal. It's a kill switch, but for bureaucracy.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-but-politicians-won-t-do-it-problem-bw-academic.jpg)
 

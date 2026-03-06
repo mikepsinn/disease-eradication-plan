@@ -16,7 +16,7 @@ const PROMPT = `You are a book editor conducting a thorough duplication audit of
 YOUR TASK: Find every instance where substantially similar content appears in more than one file. This includes:
 
 1. **Same statistic or fact** cited in multiple places (e.g., "$2,718 billion in military spending" or "150,000 deaths per day")
-2. **Same argument or explanation** made in different words (e.g., "defense contractors should pivot to health" explained in two different chapters)
+2. **Same argument or explanation** made in different words (e.g., "military contractors should pivot to health" explained in two different chapters)
 3. **Same structural element** repeated (e.g., a "Why 10%?" section, or an "80/10/10 revenue split" explanation appearing in multiple files)
 4. **Same analogy, joke, or memorable line** used more than once
 

@@ -25,7 +25,7 @@
 4. Update terminology:
    - "your decentralized framework for drug assessment or your dFDA" → "a decentralized framework for drug assessment or a dFDA"
    - "your decentralized institutes of health" → "a decentralized institutes of health"
-   - "defense" (when referring to military) → "military" (e.g., "defense contractors" → "military contractors", "defense spending" → "military spending")
+   - "defense" (when referring to military) → "military" (e.g., "military contractors" → "military contractors", "defense spending" → "military spending")
 5. Remove language that could jeopardize 501(c)(3) status:
    - "propaganda" → "communications" or "outreach"
    - "approach politicians" / "we have voters" → "public support" / "community engagement"
