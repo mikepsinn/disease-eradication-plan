@@ -15,9 +15,9 @@ feed-date: '2026-03-09'
 youtube-thumbnail: /assets/podcast/unrepresentative-democracy-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-On Wishonia, decisions are made by whoever has the best evidence. On Earth, decisions are made by whoever has the most small pieces of paper. You call this "democracy," which comes from your Greek word for "rule by the people," in the same way that "grape soda" comes from the word "grape."
+On Wishonia, decisions are made by whoever has the best evidence. On Earth, decisions are made by whoever survives a popularity contest held every four years among people who were too busy to research the contestants. You call this "democracy," which is Greek for "rule by the people," in the same way that "waterboarding" is about water.
 
-Your chance of deciding a presidential election is 1 in 60 million [@odds-of-decisive-vote]. You are more likely to die driving to the polls. The expected value of your vote: {{< var us_vote_expected_value >}}. The cost of casting it (time, transportation, parking, standing in line behind a man who brought the wrong ID): about $50. You lose money voting. This is called "civic duty," which means "a financial loss you perform in formal clothing."
+Your chance of deciding a presidential election is 1 in 60 million [@odds-of-decisive-vote]. You are more likely to die driving to the polls. The expected value of your vote: {{< var us_vote_expected_value >}}. The cost of casting it (time, transportation, parking, standing in line behind a man arguing about his ID, a woman who brought her dog, and a voting machine manufactured by a company that donates to one of the candidates): about $50. You lose money voting. This is called "civic duty," which means "a financial loss you perform in formal clothing."
 
 Corporations spend {{< var us_total_lobbying_annual >}} annually on lobbying. Their math works fine.
 
@@ -27,7 +27,7 @@ Princeton University analyzed 1,779 policy decisions over 20 years. The correlat
 
 Not "low." Not "disappointing." Zero. Your democracy correlates with your preferences the way a coin flip correlates with your breakfast.
 
-When economic elites want something, it happens 78% of the time [@princeton-oligarchy-study]. When you want something, it happens 30% of the time, regardless of whether 0% or 100% of you want it. The line is flat. A graph of your political influence looks like an EKG of a dead person (which is fitting).
+When economic elites want something, it happens 78% of the time [@princeton-oligarchy-study]. When you want something, it happens 30% of the time, regardless of whether 0% or 100% of you want it. The line is flat. A graph of your political influence looks like an EKG of a dead person.
 
 You have the same political influence as your houseplant. Less, actually. Your houseplant produces oxygen, which at least one congressman needs.
 
@@ -59,7 +59,9 @@ The small group hires lobbyists. You hire nobody. This is called "the free marke
 
 ### The Death Spiral: How Two Choices Kill 330 Million Options
 
-A human named James Surowiecki proved that crowds outperform experts under four conditions: diversity of opinion, independence of judgment, decentralization, and a good aggregation mechanism [@surowiecki-2004]. Your democracy has three of these. It systematically destroys the most important one.
+A human named James Surowiecki proved that crowds outperform experts under four conditions: diversity of opinion, independence of judgment, decentralization, and a good aggregation mechanism [@surowiecki-2004]. On Wishonia, we learned this by watching fish. Your political scientists spent 200 years and several revolutions to reach the same conclusion. The fish were faster.
+
+Your democracy has three of these conditions. It systematically destroys the most important one.
 
 **Independence** means each person decides based on their own knowledge, not by watching everyone else. Your voting system annihilates this. You have 330 million people. You choose between two of them, pre-selected by a process optimized for fundraising, name recognition, and not offending people who vote in primaries (which is approximately nine people per state, seven of whom are angry).
 
@@ -191,9 +193,9 @@ This is Public Choice Theory. Bureaucrats, politicians, and regulators are exact
 | Defense Contractor | "National security" | Government contracts (forever) | Endless wars |
 :::
 
-The NIH says "cures" on the door; it actually awards grants to itself, and produces no cures. The FDA says "lives saved" on the door; it actually avoids blame, and produces deadly delays. Congress says "voter welfare"; it collects papers from corporations and produces corporate welfare. Pharma says "health outcomes"; it optimizes for recurring revenue (because cures are bad for business) and prefers chronic disease. Defense contractors say "national security"; they optimize for government contracts, forever, and produce endless wars.
+On Wishonia, we have restaurants like this. The difference is that at a restaurant, you get food. At your Congress, you get the privilege of deciding whether other people get food. (They usually don't.)
 
-Nobody in this system is incentivized to cure disease or end war. You could elect {{< var us_congress_member_count_nounit >}} clones of your most idealistic human and within two years they'd be collecting papers from pharmaceutical companies, because the system requires it and the system does not care who you put inside it. It digests idealists the way a stomach digests food. Different inputs. Same output.
+Nobody in this system is incentivized to cure disease or end war. You could elect {{< var us_congress_member_count_nounit >}} clones of your most idealistic human and within two years they'd be collecting papers from pharmaceutical companies, because the system requires it and the system does not care who you put inside it. It digests idealists the way a stomach digests food.
 
 ### The Paradox
 
@@ -201,23 +203,23 @@ Every political faction on your planet has diagnosed the same problem and prescr
 
 ![Three groups agree government doesn't work. They disagree about why. None of their solutions have worked.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-the-libertarian-paradox-bw-academic.jpg)
 
-- **Libertarians:** Government fails because government is inherently bad. (Solution: less government.)
-- **Socialists:** Government fails because it needs more papers. (Solution: more government, more papers.)
-- **Public Choice Theory:** Government fails because the people running it are people. (Solution: design systems where selfish behavior accidentally produces good outcomes.)
+I attended three of your political meetings. At the first, they said the government was too big. At the second, they said the government was too small. At the third, they said the government was exactly the right size but full of the wrong species. I left with the third group. They had better snacks, and also they were correct.
 
-On Wishonia, we went with the third option 4,297 years ago. It took us 12 minutes to agree. You've been arguing about the first two for several centuries. (This is called "political philosophy," which is the art of being wrong about the same thing in increasingly sophisticated ways.)
+The third group is called "Public Choice Theory." Their solution: design systems where selfish behavior accidentally produces good outcomes. On Wishonia, we went with this option 4,297 years ago. It took us 12 minutes to agree. You've been arguing about the first two for several centuries. This is called "political philosophy," which is the art of being wrong about the same thing in increasingly sophisticated ways.
 
 ## Regulatory Capture: How the Burglar Trained the Guard Dog
 
 You hired a guard dog. Someone fed it treats. Now it guards them.
 
-There are 13,700 registered lobbyists in Washington [@lobbyist-statistics-dc], which means professional persuaders. Half of them used to work in the government they're now lobbying, which on your planet is called "a career path" and on Wishonia is called "defecting." Corporations spend {{< var us_total_lobbying_annual >}} a year on this professional persuading {{< var us_total_lobbying_annual_cite >}}. Divide that by {{< var us_congress_member_count_nounit >}} members of Congress and you get over $8 million in professional persuasion surrounding each congressman, who earns less than a mid-level dentist [@congressman-salary].
+There are 13,700 registered lobbyists in Washington [@lobbyist-statistics-dc]. "Lobbying" literally means standing in a lobby. Your corporations spend billions of papers a year paying people to stand in hallways. On Wishonia, people who stand in hallways are called "lost." On Earth, they're called "the most powerful people in your government."
+
+Half of them used to work in the government they're now lobbying, which on your planet is called "a career path" and on Wishonia is called "defecting." Corporations spend {{< var us_total_lobbying_annual >}} a year on this professional persuading {{< var us_total_lobbying_annual_cite >}}. Divide that by {{< var us_congress_member_count_nounit >}} members of Congress and you get over $8 million in professional persuasion surrounding each congressman, who earns less than a mid-level dentist [@congressman-salary].
 
 The mystery is not that they're influenced. The mystery is that any of them aren't.
 
 ![You hired a guard dog. Someone fed it treats. Now it guards them.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-regulatory-capture-cycle-bw-academic.jpg)
 
-A court ruling called Citizens United [@citizens-united-ruling] made corporations "people" who can give unlimited papers through Super PACs (which are like normal PACs but super). Corporations are now legally people, which is interesting because you can't imprison a corporation, give it chemotherapy, or make it feel embarrassment. It has all the rights of a person and none of the vulnerabilities. This is a good deal if you can get it. (You can't. You're a person.)
+A court ruling called Citizens United [@citizens-united-ruling] made corporations "people" who can spend unlimited papers on elections through Super PACs (which are like normal PACs but super). Unlike you, a corporation cannot be imprisoned, embarrassed, or given cancer. It has all your rights and none of your problems. This is a good deal if you can get it. (You can't. You're a person.)
 
 Pharmaceutical companies write their own regulations. The Medicare Modernization Act banned the government from negotiating drug prices [@medicare-modernization-act-pharma-lobbying]. This is why insulin that costs $6 to make costs you $300 [@insulin-history-and-pricing]. A 4,900% markup. I checked with your illegal drug dealers, and even they find this excessive.
 
@@ -225,8 +227,9 @@ Pharmaceutical companies write their own regulations. The Medicare Modernization
 
 The military-industrial complex distributes operations across 42 states [@lockheed-martin-political-influence-2022] so that cutting any program threatens jobs in enough districts to make it politically impossible. Cutting a weapons program doesn't just lose a contract. It loses votes in 42 states simultaneously. This is not an accident. Someone designed this. (Someone good at design, wasted on murder.)
 
-But the remarkable part is not that the war industry lobbies for budgets. It's that the war industry produces the threats that justify the budgets:
+But the remarkable part is not that the war industry lobbies for budgets. It's that the war industry produces the threats that justify the budgets. I had to read this three times because I assumed I was misunderstanding your language:
 
+0. Have no enemies
 1. Build military bases abroad
 2. Locals resist the foreign military bases (as you would)
 3. Resistance becomes terrorism
@@ -264,7 +267,7 @@ On Wishonia, we noticed the same pattern 6,000 years ago. The solution was not t
 
 ## The Solution They Don't Want You to Have
 
-Lobbying is just one gear. The full cost of political dysfunction (military overspend, healthcare administration, regulatory friction, tax complexity, corporate welfare, and the rest) totals {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP. A forensic audit identifies {{< var us_gov_waste_recoverable >}} in recoverable papers per year if U.S. governance merely matched the average rich country. You don't need a revolution. You need a reallocation. (Revolutions require guns. Reallocations require spreadsheets. You are surprisingly bad at both.)
+Lobbying is just one gear. The full cost of political dysfunction (military overspend, healthcare administration, regulatory friction, tax complexity, corporate welfare, and the rest) totals {{< var us_gov_waste_total >}} per year, or {{< var us_gov_waste_pct_gdp >}} of GDP. A forensic audit identifies {{< var us_gov_waste_recoverable >}} in recoverable papers per year if U.S. governance merely matched the average rich country. You don't need a revolution. You need a reallocation. Revolutions require guns. Reallocations require spreadsheets. You are surprisingly bad at both.
 
 But nobody fights to recover it. Same pattern as this entire chapter: each corporation gains $100 million (worth hiring a thousand lobbyists). Each citizen loses thousands (not worth a phone call). The losses are too spread out to organize around. The gains are too concentrated to give up.
 

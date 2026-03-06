@@ -15,7 +15,9 @@ feed-date: '2026-03-05'
 youtube-thumbnail: /assets/podcast/fda-is-unsafe-and-ineffective-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-In 1962, your Congress decided that after proving a drug won't kill you, sick people should wait another {{< var efficacy_lag_years >}} before they're allowed to take it. The drug passed safety testing. It won't kill you, won't melt your liver, won't make your hair migrate to your back. But you can't have it, because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You're not allowed to volunteer for the trials that would answer that question faster, either. You are, however, allowed to die. This was called "safety."
+In 1962, your Congress decided that after proving a drug won't kill you, sick people should wait another {{< var efficacy_lag_years >}} before they're allowed to take it. The drug passed safety testing. It won't kill you, won't melt your liver, won't make your hair migrate to your back. But you can't have it, because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. I asked someone why, and they said "we need to confirm efficacy." I said, "The patient is dying." They said, "Yes, but we don't know if the drug works." I said, "The patient could tell you, if you gave it to them." They said that's not how it works. I said, "Dying is how it works?" They changed the subject, which I suppose is also how it works.
+
+You're not allowed to volunteer for the trials that would answer the question faster, either. You are, however, allowed to die. Nobody blocks that. There's no {{< var efficacy_lag_years >}} waiting period on dying.
 
 On Wishonia, when we confirm something won't harm you, we let you try it. On Earth, you lock it in a cabinet and form a committee. The committee meets quarterly. You decompose on a different schedule.
 
@@ -28,7 +30,7 @@ Congress wrote the rules. The FDA follows them. Blaming the FDA is like blaming 
 
 This is the part where humans panic, so let me be very precise about what this chapter is (and isn't) proposing: keep Phase I safety testing (it works, it caught thalidomide, nobody is suggesting you skip it). Do *radically more* efficacy testing, on *real patients*, with *transparent results*. But stop holding known-safe drugs hostage while you run the trials.
 
-On Wishonia, we have a word for "preventing someone from accessing a safe substance that could help them while they die." The word is "murder." You call it "the approval process."
+On Wishonia, we don't have a word for "preventing someone from accessing a safe substance that could help them while they die." It would never occur to us to do it, so we never needed a word. You have several words for it. My favorite is "the approval process."
 
 ## The {{< var dfda_trial_cost_reduction_factor >}} Inefficiency Tax
 
@@ -37,7 +39,7 @@ Compare two real-world systems for testing drugs:
 1.  **The Oxford RECOVERY Trial:** Tested COVID treatments on 48,000 patients for **{{< var recovery_trial_cost_per_patient >}}**. Found a life-saving treatment in 3 months. Like a normal species would.
 2.  **The Post-1962 System:** Averages **{{< var traditional_phase3_cost_per_patient >}}** per trial. Takes **over a decade [@drug-development-timeline-17-years]** to approve a new drug. Like humans would.
 
-Your efficacy testing system costs **{{< var dfda_trial_cost_reduction_factor >}} more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer** than necessary. That's not inefficiency. That's a system performing exactly as designed, if the design goal was to kill people slowly enough that nobody notices.
+Your efficacy testing system costs **{{< var dfda_trial_cost_reduction_factor >}} more** and takes **{{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer** than necessary. I showed these numbers to a human and they said "that can't be right." So I showed them the sources and they said "well, there must be a reason." There is a reason. The reason is that your system costs {{< var dfda_trial_cost_reduction_factor >}} more and takes {{< var fda_to_oxford_recovery_trial_time_multiplier >}} longer. That's the reason and also the problem. They're the same thing.
 
 ### The {{< var efficacy_lag_years >}} Efficacy Lag
 
@@ -55,7 +57,7 @@ Phase I safety testing (added in 1938) prevented all US thalidomide deaths while
 
 The cost of developing a drug went from {{< var pre_1962_drug_development_cost_2024_usd >}} to {{< var pharma_drug_development_cost_current >}}, a {{< var drug_cost_increase_pre1962_to_current_multiplier >}} increase. New drug approvals dropped by {{< var post_1962_drug_approval_reduction_pct >}} [@post-1962-drug-approval-drop]. Life expectancy gains slowed from 3.82 years per decade to 1.54 [@life-expectancy-increase-pre-1962; @post-1962-life-expectancy-slowdown], a 60% reduction. Time to approval stretched from 2-3 years to {{< var fda_phase_1_to_approval_years >}}.
 
-The temporal break is exact. Every metric got worse the moment the law passed. Like flipping a switch from "progress" to "paperwork."
+Everything got worse at exactly the same time. Every single metric, all at once, the moment the law passed. I'm not a statistician so I can't tell you whether that's a coincidence, but I did look at the graph, and it's not a coincidence.
 
 ![Average Life Expectancy Over Time](../../assets/images/real-world-evidence-in-efficacy-clinical-trials-vs-rcts.png)
 
@@ -63,7 +65,7 @@ The {{< var drug_cost_increase_pre1962_to_current_multiplier >}} cost increase i
 
 ### The Modern Consequences
 
-Even if you think historical analysis is just opinions with footnotes, the current system's failures are undeniable:
+Even if you think historical analysis is just opinions with footnotes, the current system's failures are happening right now:
 
 1. A cure passes safety testing
 2. You can't take it (pending efficacy review)
@@ -72,7 +74,7 @@ Even if you think historical analysis is just opinions with footnotes, the curre
 5. The FDA approves the cure
 6. Pharmaceutical companies charge your widow $10,000 per pill
 
-Beautiful system if you're a mortician or bankruptcy lawyer.
+I read this sequence several times because I kept thinking I'd got the order wrong. I hadn't. That is the correct order. The system works exactly like that, on purpose, and everyone involved considers it a success because nobody skipped a step.
 
 ![Scientists discover cure. 17 years pass. Patients die. Drug finally available. This is called 'safety.'](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-modern-consequences-bw-academic.jpg)
 
@@ -96,9 +98,9 @@ Best case, the drug works: you now have a better drug for the same condition. Bu
 
 Your inferior drug keeps bringing in hundreds of millions a year. Total cost: whatever the patent costs, which is rounding error compared to {{< var pharma_drug_development_cost_current >}}.
 
-Which would you choose if you were a rational sociopath in a suit?
+I asked a pharmaceutical executive which option they'd choose and they said "it's more nuanced than that." Then I asked which one they chose and they said Option 2. So it wasn't more nuanced than that.
 
-The profit incentive doesn't just fail to reward better treatments. It actively punishes them. The best possible outcome of Option 1 is the same annual revenue you already had, minus {{< var pharma_drug_development_cost_current >}}. Curing disease is economically irrational. The system doesn't need a conspiracy to suppress cures. It just needs the math.
+The profit incentive doesn't just fail to reward better treatments. It actively punishes them. The best possible outcome of Option 1 is the same annual revenue you already had, minus {{< var pharma_drug_development_cost_current >}}. Curing disease is economically irrational. The system doesn't need a conspiracy to suppress cures. It just needs the math. I keep waiting for someone to show me where the math is wrong. Nobody shows me where the math is wrong. They just look uncomfortable and say "it's complicated," which I've learned is what humans say when it isn't complicated and they don't like the answer.
 
 ### Off-Patent Drugs and Rare Diseases: Mathematically Doomed
 
@@ -108,7 +110,7 @@ The 1962 law made it mathematically impossible to cure diseases that aren't prof
 - **No patent = no funding:** Off-patent drugs can't attract billion-dollar investments
 - **Pre-specification kills serendipity:** Must predict what drug cures before testing
 
-When something costs more, you get less of it. This is the first thing they teach in economics, and the last thing anyone considers when writing health policy. 95% of diseases [@95-pct-diseases-no-treatment] have zero treatments. Not because cures are impossible. Because cures are unprofitable.
+When something costs more, you get less of it. I looked this up and apparently it's the first thing they teach in economics. It is also, somehow, the last thing anyone considers when writing health policy. 95% of diseases [@95-pct-diseases-no-treatment] have zero treatments. Not because cures are impossible. Because cures are unprofitable. The best thing a disease can do for itself, career-wise, is be popular.
 
 
 ## The Actual Death Toll of "Drug Lag"
@@ -134,19 +136,22 @@ Here's a news story from the Non-Existent Times by No One Ever, without a pictur
 
 |                             | Drug Is Beneficial                                       | Drug Is Harmful                                                |
 | --------------------------- | -------------------------------------------------------- | -------------------------------------------------------------- |
-| FDA Allows the Drug         | Correct Decision                                         | Victims are identifiable and might appear on Oprah. |
-| FDA Does Not Allow the Drug | Victims are not identifiable or acknowledged. | Correct Decision                                               |
+| FDA Allows the Drug         | Correct Decision                                         | Victims appear on television. Regulator is fired. |
+| FDA Does Not Allow the Drug | Victims die at home. Nobody is fired. | Correct Decision                                               |
+
+So the FDA has two kinds of mistakes. One where they give you a bad drug and you die on television. And one where they don't give you a good drug and you die at home. They've decided the second one doesn't count, which is convenient because it's the one they do most.
 
 The most infamous case: beta-blockers.
 Europe used them to prevent heart attacks.
 The US delayed for a decade, killing an estimated **100,000 Americans [@beta-blocker-drug-lag-deaths]**.
-More than died in Vietnam and Korea combined. From one drug delay.
+More than died in Vietnam and Korea combined. From one drug. That they had. That they knew worked. That they put in a drawer. I asked someone if there was a word for killing 100,000 people by not doing something, and they said "it depends on the context." I think 100,000 dead people is the context, but apparently that's not enough context.
 
 ![In 1962, Americans and Swiss people died at the same age. Then America made medicine safer. Now Americans die younger. This is what winning looks like.](../../assets/images/us-swiss-life-expectancy-5.png)
 
 After 1962, US life expectancy diverged from Switzerland's (which didn't introduce the same delays).
 More drug approvals in the '80s narrowed the gap.
 Fewer approvals in the '90s widened it again.
+The pattern is not subtle. I showed it to a child and the child understood it. I showed it to a policy expert and they said it was "multifactorial." I think "multifactorial" is what adults say when they can see the same thing the child can see but have reasons not to say it out loud.
 
 ![More drug approvals in the '80s narrowed the gap. Fewer approvals in the '90s widened it. The pattern is not subtle.](../../assets/images/us-swiss-life-expectancy-drug-approvals.png)
 
@@ -168,7 +173,7 @@ Fewer approvals in the '90s widened it again.
 - Promotion on schedule
 - Retire to pharma job [@fda-regulatory-capture-evidence]
 
-This isn't conspiracy. It's just a system where the only career-ending move is letting patients access treatments. Approve a bad drug, your name is in the newspaper. Delay a good drug, the people who could have complained are dead. The system selects for inaction the way natural selection selects for camouflage: not deliberately, but with total reliability.
+To be fair, this isn't a conspiracy. It's just a system where the only career-ending move is letting patients access treatments. If you approve a bad drug, CNN says your name. If you delay a good drug, nobody dies on television. So the rational move is to delay everything, and that's what happens, and everyone who could object is dead, which does simplify the feedback process.
 
 ![If a regulator approves a bad drug, CNN says their name. If they delay a good drug, nobody dies on television. So nobody dies on television.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-incentive-structure-flowchart-bw-academic.jpg)
 
@@ -178,7 +183,7 @@ His supervisor refused to approve it.
 If someone died from the drug, heads would roll.
 If people died waiting for the drug? Nothing happens.
 
-Dead patients don't testify before Congress.
+Dead patients don't testify before Congress. I checked.
 
 ![Approve a bad drug: fired. Delay a good drug: promoted. The system works exactly as designed, which is the problem.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-bureaucrats-are-rewarded-for-letting-you-die-bw-academic.jpg)
 
@@ -193,7 +198,7 @@ The delay harm totals {{< var dfda_efficacy_lag_elimination_dalys >}}.
 
 ## Clinical Trial Theater: Excluding {{< var antidepressant_trial_exclusion_rate >}} of Reality Makes Drugs More Dangerous
 
-The FDA requires rigorous trials to ensure safety. Then it tests the drugs on people who aren't sick, aren't old, aren't on other drugs, and aren't pregnant. Basically, it tests drugs on triathletes and then acts surprised when grandma has a reaction.
+The FDA requires rigorous trials to ensure safety. Then it tests the drugs on people who aren't sick, aren't old, aren't on other drugs, and aren't pregnant. I read this three times. They test the drugs on people who don't need the drugs, to find out if the drugs are safe for people who do need the drugs, who are different people, with different bodies, taking different medications. Then they act surprised when the second group has a reaction. I would call this stupid but I think it might actually be something worse than stupid. Stupid doesn't usually have a peer-review process.
 
 ![They test drugs on healthy people, then give them to sick people. It's like testing a ladder on Olympic gymnasts, then selling it to your grandmother.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-clinical-trial-theater-excluding-86-1-of-reality-makes-drugs-bw-academic.jpg)
 
@@ -206,24 +211,25 @@ Trials under the current system exclude [@antidepressant-trial-exclusion-rates]:
 - **Anyone on other medications:** Everyone elderly (can't detect drug interactions)
 - **Anyone too far from trial sites:** Poor and rural populations
 
-This is like crash-testing a car by gently rolling it into a pillow, declaring it safe, and selling it to demolition derby drivers.
+It's like testing whether a car is safe by driving it very slowly into a nice cushion, and then selling it to people who drive into walls. And when they die you say "well, it was safe when WE tried it." Which is true. It was.
 
 **Result:** In antidepressant trials alone, {{< var antidepressant_trial_exclusion_rate >}} of real patients are excluded. The drugs are tested on the healthiest people alive, declared "safe," then handed to everyone the trial specifically avoided. This is how Vioxx, Fen-Phen, and Bextra all got approved, celebrated, prescribed to millions, and then withdrawn after killing people whose demographics the trials had carefully excluded. The {{< var efficacy_lag_years >}} delay didn't make these drugs safer. It made them seem safer by hiding the danger behind an exclusion list.
 
 ![Drugs tested on healthy 25-year-olds. Prescribed to 80-year-olds on twelve medications. The system did not anticipate this would be a problem.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-this-makes-drugs-more-dangerous-bw-academic.jpg)
 
-Testing drugs only on healthy volunteers to ensure safety is like testing parachutes only on the ground.
+Testing drugs only on healthy volunteers to ensure safety is like testing parachutes only on the ground. The parachute worked perfectly, by the way. It just wasn't falling at the time.
 
 ### No Long-Term Outcome Data
 
 Data collection can be as short as several months.
 You take the drug for forty years.
+The gap between these two numbers is where side effects live. Nobody checks on them. They're fine, probably.
 
 ![Data collection: several months. Duration of use: forty years. The gap between these numbers is where side effects live.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-no-long-term-outcome-data-bw-academic.jpg)
 
 ### Pre-Specification Requirements Kill Innovation
 
-The regulations require drug developers to predict exactly what a treatment will cure before testing it on humans. You must know the answer before you're allowed to ask the question. This is how science works on your planet, apparently.
+The regulations require drug developers to predict exactly what a treatment will cure before testing it on humans. You must know the answer before you're allowed to ask the question. I asked if this was how science works and they said "it's how regulatory science works," which I think means "no, but we gave it the same name."
 
 ![Dendreon's cancer drug worked. The FDA said it didn't count because the paperwork predicting it would work was filed in the wrong order. The patients died correctly, however.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-pre-specification-requirements-kill-innovation-bw-academic.jpg)
 
@@ -231,7 +237,7 @@ In 2007, Dendreon showed that its immunotherapy drug Provenge significantly redu
 
 "People stopped dying" wasn't good enough. The paperwork predicting that people would stop dying wasn't filed in the right order. Three more years and another trial were required. During those three years, people who could have stopped dying continued dying, but at least the forms were correct. On Wishonia, we have a saying: "The gravestone was filed on time." It means someone prioritized procedure over the thing the procedure was supposed to protect. We retired the saying because it kept applying to too many situations. You could use it daily.
 
-Due to these additional costs, Dendreon filed for chapter 11 bankruptcy [@filed-for-chapter-11-bankruptcy]. Killing two birds with one stone, as you say. The approval process killed the patients, then killed the company trying to save them. Although in reality far more birds were killed with that stone, but you can't count the people who would have been cured by a company you bankrupted.
+Due to these additional costs, Dendreon filed for chapter 11 bankruptcy [@filed-for-chapter-11-bankruptcy]. So the approval process killed the patients, then killed the company trying to save them. You have a phrase for this: "killing two birds with one stone." Although in this case the stone was paperwork and there were considerably more than two birds. But you can't count the people who would have been cured by a company you bankrupted. They just died of cancer, like normal. Nothing to see.
 
 ### Small Trials Are Dangerous
 
@@ -241,7 +247,7 @@ Phase III trials test 1,000-3,000 patients.
 A 1-in-10,000 adverse event is mathematically invisible in a trial of 3,000.
 Then the drug goes to millions.
 
-After approval, the FDA monitors safety using FAERS, a system where doctors voluntarily report problems if they feel like it. It captures less than 10% of actual adverse events [@adverse-event-underreporting]. Vioxx killed an estimated 38,000-55,000 Americans [@vioxx-deaths] before this honor system noticed. That's more people than died in the entire Korean War, detected by a system that relies on doctors filling out optional paperwork.
+After approval, the FDA monitors safety using FAERS, a system where doctors voluntarily report problems if they feel like it. It captures less than 10% of actual adverse events [@adverse-event-underreporting]. Vioxx killed an estimated 38,000-55,000 Americans [@vioxx-deaths] before this honor system noticed. That's more people than died in the entire Korean War, detected by a system that relies on doctors filling out optional paperwork. I want to be clear: the {{< var efficacy_lag_years >}} delay is supposed to be for safety. And then the safety monitoring after approval is a suggestion box. You waited {{< var efficacy_lag_years >}} to get to the suggestion box.
 
 ![Doctors report 10% of drug side effects. The other 90% just happen to people who assume that's what dying feels like.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-adverse-event-iceberg-bw-academic.jpg)
 
@@ -255,7 +261,7 @@ Here's something that would be illegal if anybody important cared:
 - **Positive trial results published:** 94% [@publication-bias-clinical-trials]
 - **Money wasted repeating failed experiments:** ~\$100 billion annually [@wasted-spending-on-failed-experiments]
 
-Companies are allowed to hide when drugs don't work, which is like letting restaurants hide their health inspection failures. Actually, restaurants can't do that. Drugs get less transparency than a sandwich shop.
+Companies are allowed to hide when drugs don't work. Restaurants can't hide when they fail a health inspection. I checked this twice because I thought I was wrong, but I wasn't. A sandwich has more regulatory transparency than chemotherapy. I don't know what to do with that information but I've had it for three days now and it won't go away.
 
 ![Drug companies publish successful trials and hide failed ones. Researchers then repeat the failures. This is called "reinventing the wheel," except the wheel is on fire and nobody told you.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-negative-results-black-hole-bw-academic.jpg)
 
@@ -266,7 +272,7 @@ Company: "...We tested this drug!"
 Pharmaceutical companies bury negative results deeper than Jimmy Hoffa.
 Other companies waste billions testing the same dead ends.
 Your insurance premiums fund this magnificent inefficiency.
-It's like casinos only having to report when people win.
+It's like casinos only having to report when people win. Actually, I think casinos DO have to report when people win. So drugs get less honesty than gambling. I keep finding these comparisons and they keep getting worse.
 
 ## Countries That Don't Have Our "Safety"
 
@@ -277,7 +283,7 @@ Time to patient: 2-3 years.
 Americans fly there for treatment.
 
 **The EU** [@eu-compassionate-use-program] lets terminal patients access experimental drugs at a doctor's discretion.
-FDA: "But what if they die?" (They're already dying.)
+I asked the FDA what might go wrong and they said "the patient could die." The patient is already dying. "Yes," they said, "but they could die differently." I waited for the rest of the sentence but that was it.
 
 **Right to Try (US)** [@right-to-try-act-2018] passed despite FDA opposition.
 The FDA made it effectively impossible to use.
@@ -295,15 +301,15 @@ Late March: FDA finally allows other tests after thousands die [@excess-deaths-f
 
 ![While COVID spread, America banned COVID tests. The approved tests didn't work. The unapproved tests did. Quality control of the broken tests continued on schedule.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-the-covid-test-fiasco-bw-academic.jpg)
 
-The only approved tests didn't work.
-Ensuring quality control of broken tests is like TSA confiscating water bottles while letting actual weapons through.
-Except people died.
+The only approved tests didn't work. The unapproved ones did. The FDA blocked the ones that worked to ensure the quality of the ones that didn't. I've written this paragraph four times now and it keeps sounding like I'm making it up, but I'm not. That is what happened. In order. On purpose.
 
 ## The Bottom Line
 
+To be fair to the FDA, the system does eventually approve most good drugs. So if you think about it, the system works. Unless you were one of the people who died waiting, in which case the system worked slightly less well for you specifically. But you're dead, so you can't complain, which means the system has a 100% satisfaction rate among living participants. That's actually quite impressive if you don't think about it.
+
 It is not a safety system. It is a filing system that produces corpses as a byproduct.
 
-The only thing missing is the political will to admit that a law signed before the Beatles existed might not be the pinnacle of pharmaceutical regulation.
+The only thing missing is the political will to admit that a law signed before the Beatles existed might not be the pinnacle of pharmaceutical regulation. The Beatles broke up. The law didn't. Draw your own conclusions.
 
 ## Technical Analysis
 
