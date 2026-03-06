@@ -172,13 +172,16 @@ def prepare_for_narration(raw_qmd: str, variables: dict) -> str:
     Variables must be resolved before HTML stripping (which would eat the
     {{< var >}} angle brackets).
     """
-    # 1. Resolve variables while syntax is still intact
-    text = replace_variables(raw_qmd, variables, highlight_missing=False)
+    # 1. Strip _cite variable references before resolving (they produce citation
+    #    text that should not be spoken in the audiobook narration)
+    text = re.sub(r'\{\{<\s*var\s+\w+_cite\s*>\}\}', '', raw_qmd)
+    # 2. Resolve remaining variables while syntax is still intact
+    text = replace_variables(text, variables, highlight_missing=False)
     # Remove any remaining unresolved variable syntax
     text = re.sub(r'\{\{<\s*var\s+\w+\s*>\}\}', '', text)
-    # 2. Strip all markup
+    # 3. Strip all markup
     text = strip_qmd_markup(text)
-    # 3. Split very long lines at sentence boundaries for better TTS prosody
+    # 4. Split very long lines at sentence boundaries for better TTS prosody
     text = split_long_lines(text)
     text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()

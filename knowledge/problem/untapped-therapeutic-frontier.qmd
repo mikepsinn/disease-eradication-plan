@@ -15,11 +15,11 @@ feed-date: '2026-03-19'
 youtube-thumbnail: /assets/podcast/untapped-therapeutic-frontier-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-On Wishonia, when we decided to cure disease, we started by counting two things: how many safe molecules we had, and how many diseases existed. Then we multiplied them. Then we tested them. It took 50 years. We're still not sure why it took so long.
+Sildenafil was developed for chest pain. It failed. Its "side effect" became Viagra. Minoxidil was developed for high blood pressure. Its "side effect" was growing hair. It became Rogaine. Two drugs. Three accidental cures. Zero systematic searches. You keep finding cures by tripping over them in hallways. Imagine if you opened a door on purpose.
 
-Your species has been doing pharmacology for a century. I assumed you'd be further along. You are not further along. After 100 years, you have tested approximately one-third of one percent of the drug-disease combinations you could test using compounds you already know are safe. The rest is sitting there, untested, because testing things costs money and money is currently busy being missiles.
+You haven't opened a door on purpose. After 100 years of pharmacology, your species has tested one-third of one percent of the drug-disease combinations you could test using compounds you already know are safe. That's like searching for your keys in 0.34% of your house and declaring them lost. The other 99.7% is sitting right there, untested, because testing things costs money and money is currently busy being missiles.
 
-Here is the math. It is brief.
+On Wishonia, when we decided to cure disease, we started by counting two things: how many safe molecules we had, and how many diseases existed. Then we multiplied them. Then we tested them. It took 50 years. We're still not sure why it took so long. Here is your math.
 
 ## Your Tiny Sandbox
 
@@ -80,7 +80,7 @@ You might argue, "Maybe the other {{< var unexplored_ratio >}} is useless!"
 Biology would like a word.
 
 * **Undrugged Targets:** Mapping 350,000+ clinical trials showed that only {{< var human_interactome_targeted_pct >}} of the human interactome has ever been targeted by drugs. You're ignoring 88% of your own biology. It's like having a 100-room mansion and living exclusively in the bathroom.
-* **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend. This means "side effects" are frequently "cures for something else" that nobody bothered to notice. Sildenafil was developed for chest pain. It failed. Its "side effect" became Viagra, then got repurposed *again* for pulmonary hypertension. Minoxidil was developed for high blood pressure. Its "side effect" was growing hair. It became Rogaine. Two drugs. Three accidental cures. Zero systematic searches. You keep finding cures by tripping over them in hallways. Imagine if you opened a door on purpose.
+* **Polypharmacology:** Drugs are messy. They hit multiple targets. FDA-approved drugs often bind to things you didn't intend. This means "side effects" are frequently "cures for something else" that nobody bothered to notice. Remember Viagra and Rogaine? Both were accidents. Sildenafil got repurposed *again* for pulmonary hypertension, making it three cures from two drugs, none of them intentional. Your entire drug discovery strategy is "wander around and hope you trip over something." It works surprisingly often, which is less a compliment to the strategy than an indictment of having no strategy at all.
 * **Network Overlap:** Diseases cluster on shared biological networks [@disease-network-overlap]. Arthritis and Alzheimer's share biological pathways. Lithium was prescribed for gout in the 1800s; decades later, it turned out to be the gold standard treatment for bipolar disorder. Nobody connected the dots because nobody was drawing lines between diseases. The drug that treats your grandfather's inflammation might fix your grandmother's neurodegeneration. You won't find out, because testing it would require paperwork that takes longer than Grandma has left.
 
 ## The Universe is Big. You Are Small.
