@@ -625,12 +625,16 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
     print(f"Total: {len(chapters)} chapters")
 
 
-def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int, paths: AudiobookPaths | None = None):
+def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int,
+                    chapters: list[dict] | None = None, paths: AudiobookPaths | None = None):
     """Update manifest.json with duration and timing data."""
+    # Build path lookup for stale-entry detection
+    path_by_index = {ch['index']: ch['path'] for ch in chapters} if chapters else {}
     for ts in timestamps:
         update_chapter_fields(
             ts['index'],
             paths=paths,
+            expected_path=path_by_index.get(ts['index']),
             duration_ms=ts['duration_ms'],
             duration_formatted=ts['duration_formatted'],
             audio_start_ms=ts['start_ms'],
@@ -1564,6 +1568,7 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
     update_chapter_fields(
         chapter['index'],
         paths=paths,
+        expected_path=chapter['path'],
         alignment_file=str(alignment_path.relative_to(PROJECT_ROOT)),
         subtitle_file=str(vtt_path.relative_to(PROJECT_ROOT)),
     )
@@ -1695,8 +1700,12 @@ def main():
     mp3_dir = paths.root / "mp3"
     _cleanup_wraphash_sidecars(mp3_dir)
 
-    # In mp3-only mode, purge raw + wrapped MP3s to force re-encode
+    # In mp3-only mode, sync manifest with config and purge MP3s to force re-encode
     if args.mp3_only:
+        from lib.audiobook_manifest import sync_manifest_from_config
+        print("  [MP3-ONLY] Syncing manifest with current book config...")
+        sync_manifest_from_config(all_chapters, paths=paths)
+
         print("  [MP3-ONLY] Purging existing MP3s to force re-encode...")
         raw_mp3_dir = paths.raw_mp3 if hasattr(paths, 'raw_mp3') else paths.root / "mp3-raw"
         for d in (raw_mp3_dir, mp3_dir):
@@ -1802,7 +1811,7 @@ def main():
 
             total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
 
-            update_manifest(timestamps, total_duration_ms, paths=paths)
+            update_manifest(timestamps, total_duration_ms, chapters=all_chapters, paths=paths)
             tag_mp3(mp3_path, timestamps, book_meta, chapters=all_chapters, paths=paths)
             export_m4b(mp3_path, timestamps, book_meta)
     _substep_times["Combine audiobook"] = time.monotonic() - t_sub
