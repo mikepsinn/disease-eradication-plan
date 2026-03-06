@@ -68,87 +68,91 @@ aliases:
 .link-btn.primary:hover {
   background: #333;
 }
+.link-btn i {
+  font-size: 1.2em;
+  vertical-align: -0.05em;
+  margin-right: 0.3rem;
+}
 </style>
 
 <div class="links-page">
 
 <div class="tagline">
   The Complete Idiot's Guide to Legally Bribing Your Way to Utopia<br><br>
-  Please select your preferred sensory input channel.
 </div>
 
 <h2>Do Something (15 Seconds)</h2>
 
 <a href="https://WarOnDisease.org" class="link-btn primary">
-  Vote
+  <i class="fa-solid fa-check-to-slot"></i> Vote
   <span class="btn-sub">15 seconds. 38 lives saved.</span>
 </a>
 
 <h2>Skull Vibration Ports</h2>
 
 <a href="podcast.html" class="link-btn primary">
-  Listen
+  <i class="fa-solid fa-headphones"></i> Listen
   <span class="btn-sub">Spotify, Apple, YouTube Music, and more</span>
 </a>
 
 <h2>Murdered Trees</h2>
 
 <a href="https://www.amazon.com/dp/B0GPLXFMMT" class="link-btn primary">
-  Amazon Paperback
+  <i class="fa-brands fa-amazon"></i> Amazon Paperback
   <span class="btn-sub">Ink on murdered tree, delivered to your dwelling</span>
 </a>
 
 <a href="https://www.amazon.com/dp/B0GPBH77XN" class="link-btn">
-  Amazon Kindle
+  <i class="fa-brands fa-amazon"></i> Amazon Kindle
   <span class="btn-sub">Beamed directly into your glowing rectangle</span>
 </a>
 
 <a href="https://books2read.com/u/baegEq" class="link-btn">
-  All Retailers
+  <i class="fa-solid fa-store"></i> All Retailers
   <span class="btn-sub">Apple Books, Barnes & Noble, Kobo, and more</span>
 </a>
 
 <a href="https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease" class="link-btn">
-  Goodreads
+  <i class="fa-brands fa-goodreads"></i> Goodreads
   <span class="btn-sub">Rate & review</span>
 </a>
 
 <h2>Glowing Rectangle</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
-  Read Online
+  <i class="fa-solid fa-book-open"></i> Read Online
   <span class="btn-sub">Full manual, no account needed</span>
 </a>
 
 <h2>Ongoing Surveillance</h2>
 
 <a href="https://www.youtube.com/%40WarOnDisease?sub_confirmation=1" class="link-btn">
-  YouTube
+  <i class="fa-brands fa-youtube"></i> YouTube
   <span class="btn-sub">\&#64;WarOnDisease</span>
 </a>
 
 <a href="https://x.com/warondisease" class="link-btn">
-  X / Twitter
+  <i class="fa-brands fa-x-twitter"></i> X / Twitter
   <span class="btn-sub">\&#64;warondisease</span>
 </a>
 
 <a href="https://www.linkedin.com/in/mikesinn" class="link-btn">
-  LinkedIn
+  <i class="fa-brands fa-linkedin"></i> LinkedIn
   <span class="btn-sub">Mike P. Sinn</span>
 </a>
 
 <a href="https://github.com/mikepsinn/disease-eradication-plan" class="link-btn">
-  GitHub
+  <i class="fa-brands fa-github"></i> GitHub
   <span class="btn-sub">Source code, data, and all papers</span>
 </a>
 
 <a href="https://scholar.google.com/citations?user=RjDd_qcAAAAJ" class="link-btn">
-  Google Scholar
+  <i class="fa-brands fa-google-scholar"></i> Google Scholar
   <span class="btn-sub">Publications</span>
 </a>
 
 <a href="https://orcid.org/0009-0006-0212-1094" class="link-btn">
-  ORCID
+  <i class="fa-brands fa-orcid"></i> ORCID
   <span class="btn-sub">0009-0006-0212-1094</span>
 </a>
 

@@ -68,6 +68,11 @@ aliases:
 .link-btn.primary:hover {
   background: #333;
 }
+.link-btn i {
+  font-size: 1.2em;
+  vertical-align: -0.05em;
+  margin-right: 0.3rem;
+}
 </style>
 
 <div class="links-page">
@@ -80,64 +85,44 @@ aliases:
 <h2>Skull Auditory Port Delivery Systems</h2>
 
 <a href="https://open.spotify.com/show/1aX8mw9MmFzyiSBq2RNnu2" class="link-btn primary">
-  Spotify
+  <i class="fa-brands fa-spotify"></i> Spotify
   <span class="btn-sub">Full audiobook podcast</span>
 </a>
 
 <a href="https://podcasts.apple.com/us/podcast/how-to-end-war-and-disease/id1879755497" class="link-btn">
-  Apple Podcasts
+  <i class="fa-brands fa-apple"></i> Apple Podcasts
   <span class="btn-sub">Audiobook podcast</span>
 </a>
 
 <a href="https://music.youtube.com/playlist?list=PLC81064vbLPFbngjHW2CRsvUtSUD2SERQ" class="link-btn">
-  YouTube Music
+  <i class="fa-brands fa-youtube"></i> YouTube Music
   <span class="btn-sub">Audiobook podcast</span>
 </a>
 
 <a href="https://music.amazon.com/podcasts/e820cf41-590f-4171-be02-484e70b93d5e/how-to-end-war-and-disease" class="link-btn">
-  Amazon Music
-  <span class="btn-sub">Audiobook podcast</span>
-</a>
-
-<a href="https://www.iheart.com/podcast/269-how-to-end-war-and-disease-325094373/" class="link-btn">
-  iHeartRadio
-  <span class="btn-sub">Audiobook podcast</span>
-</a>
-
-<a href="https://pca.st/2a0yrrj1" class="link-btn">
-  Pocket Casts
-  <span class="btn-sub">Audiobook podcast</span>
-</a>
-
-<a href="https://www.deezer.com/us/show/1002716281" class="link-btn">
-  Deezer
-  <span class="btn-sub">Audiobook podcast</span>
-</a>
-
-<a href="https://podcastaddict.com/podcast/how-to-end-war-and-disease/6814197" class="link-btn">
-  Podcast Addict
+  <i class="fa-brands fa-amazon"></i> Amazon Music
   <span class="btn-sub">Audiobook podcast</span>
 </a>
 
 <a href="https://static.warondisease.org/assets/audiobook/manual-paperback/feed.xml" class="link-btn">
-  Podcast RSS Feed
+  <i class="fa-solid fa-rss"></i> Podcast RSS Feed
   <span class="btn-sub">Add to any podcast app</span>
 </a>
 
 <h2>Prefer Using Your Eyeballs?</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
-  Read Online
+  <i class="fa-solid fa-book-open"></i> Read Online
   <span class="btn-sub">Free. Just eyeballs and a willingness to live.</span>
 </a>
 
 <a href="https://www.amazon.com/dp/B0GPLXFMMT" class="link-btn primary">
-  Amazon Paperback
+  <i class="fa-brands fa-amazon"></i> Amazon Paperback
   <span class="btn-sub">Ink on murdered tree, delivered to your dwelling</span>
 </a>
 
 <a href="https://www.amazon.com/dp/B0GPBH77XN" class="link-btn">
-  Amazon Kindle
+  <i class="fa-brands fa-amazon"></i> Amazon Kindle
   <span class="btn-sub">Beamed directly into your glowing rectangle</span>
 </a>
 
