@@ -26,7 +26,7 @@ It is worth **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**
 
 I am now going to show you what that money buys. I apologize in advance for the number of numbers. Your species requires receipts before it will believe anything, even things that are obviously true. Especially things that are obviously true.
 
-Your current system charges {{< var traditional_phase3_cost_per_patient >}} per patient in a clinical trial. I asked why and was told "regulatory compliance, site management, and monitoring overhead," which I believe is the human phrase for "paperwork costs more than medicine." Pragmatic trials, the kind [your decentralized FDA](../solution/dfda.qmd) runs, cost {{< var dfda_pragmatic_trial_cost_per_patient >}}. At that price, {{< var dih_treasury_trial_subsidies_annual >}} buys you {{< var dih_patients_fundable_annually >}} trial slots per year.
+Your current system charges {{< var traditional_phase3_cost_per_patient >}} per patient in a clinical trial. I asked why and was told "regulatory compliance, site management, and monitoring overhead," which I believe is the human phrase for "permission costs more than medicine." Pragmatic trials, the kind [your decentralized FDA](../solution/dfda.qmd) runs, cost {{< var dfda_pragmatic_trial_cost_per_patient >}}. At that price, {{< var dih_treasury_trial_subsidies_annual >}} buys you {{< var dih_patients_fundable_annually >}} trial slots per year.
 
 Your species currently enrolls {{< var current_trial_slots_available >}} in clinical trials globally. The treaty adds {{< var dfda_trial_capacity_multiplier >}} more capacity on top of that. Remember this number. Everything that follows depends on it.
 

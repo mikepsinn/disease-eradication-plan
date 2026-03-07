@@ -247,6 +247,7 @@ class ReferenceID(str, Enum):
     CRFB_MA_OVERPAYMENT = "crfb-ma-overpayment"
     CRISPR_DISCOVERY_YOGURT_BACTERIA = "crispr-discovery-yogurt-bacteria"
     CRS_DEFENSE_PRIMER_NUCLEAR_FORCES = "crs-defense-primer-nuclear-forces"
+    CRS_WAR_COSTS_2010 = "crs-war-costs-2010"
     CS_GLOBAL_WEALTH_REPORT_2023 = "cs-global-wealth-report-2023"
     CUKIERMAN1992 = "cukierman1992"
     CUOMO_BANK_BONUSES_2009 = "cuomo-bank-bonuses-2009"
