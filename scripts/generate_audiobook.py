@@ -1865,6 +1865,22 @@ def _print_output_paths_summary(
         print(f"  Manifest: {paths.manifest.resolve()}")
 
 
+def _print_timing_summary(step_times: dict[str, float], total_elapsed_s: float) -> None:
+    """Print a compact end-of-run timing summary."""
+    shown = [(label, secs) for label, secs in step_times.items() if secs > 0.05]
+    if not shown:
+        return
+
+    print(f"\n{'=' * 60}")
+    print("Timing summary")
+    print(f"{'=' * 60}")
+    width = max(len(label) for label, _ in shown)
+    for label, secs in shown:
+        print(f"  {label:<{width}}  {_fmt_elapsed_short(secs):>8} ({secs:.1f}s)")
+    print(f"  {'-' * (width + 21)}")
+    print(f"  {'TOTAL':<{width}}  {_fmt_elapsed_short(total_elapsed_s):>8} ({total_elapsed_s:.1f}s)")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Generate audiobook from Quarto book chapters"
@@ -1950,6 +1966,8 @@ def main() -> int:
     except ScriptLockError as e:
         print(f"ERROR: {e}")
         return 2
+
+    pipeline_start = time.monotonic()
 
     # Resolve config and derive paths
     config_path = Path(args.config)
@@ -2210,6 +2228,8 @@ def main() -> int:
         json.dumps(_substep_times, indent=2), encoding="utf-8"
     )
 
+    total_elapsed = time.monotonic() - pipeline_start
+    _print_timing_summary(_substep_times, total_elapsed)
     _print_output_paths_summary(paths, outro_wav, generated_files, updated_wrapped_mp3s)
     print("\nDone!")
     return 0

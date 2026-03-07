@@ -743,6 +743,22 @@ def _chapter_summary_line(result: dict, seq: int, total: int) -> str:
     )
 
 
+def _print_timing_summary(step_times: dict[str, float], total_elapsed_s: float) -> None:
+    """Print a compact end-of-run timing summary."""
+    shown = [(label, secs) for label, secs in step_times.items() if secs > 0.05]
+    if not shown:
+        return
+
+    print(f"\n{'=' * 60}")
+    print("Timing summary")
+    print(f"{'=' * 60}")
+    width = max(len(label) for label, _ in shown)
+    for label, secs in shown:
+        print(f"  {label:<{width}}  {_fmt_elapsed_short(secs):>8} ({secs:.1f}s)")
+    print(f"  {'-' * (width + 21)}")
+    print(f"  {'TOTAL':<{width}}  {_fmt_elapsed_short(total_elapsed_s):>8} ({total_elapsed_s:.1f}s)")
+
+
 def main() -> int:
     global LLM_PARALLEL_WORKERS, LLM_REQUESTS_PER_MINUTE, LLM_MAX_ATTEMPTS, llm_rate_limiter
     parser = argparse.ArgumentParser(description="Generate audiobook-friendly text from Quarto book chapters")
@@ -774,6 +790,13 @@ def main() -> int:
     )
     parser.add_argument("--variables-yml", default=str(VARIABLES_YML), help=f"Path to variables YAML (default: {VARIABLES_YML.name})")
     args = parser.parse_args()
+    pipeline_start = time.monotonic()
+    step_times: dict[str, float] = {
+        "Load config": 0.0,
+        "Load variables": 0.0,
+        "Chapter processing": 0.0,
+        "Save manifest": 0.0,
+    }
 
     # Apply runtime concurrency/rate settings from CLI.
     LLM_PARALLEL_WORKERS = max(1, args.llm_workers)
@@ -792,17 +815,21 @@ def main() -> int:
     global OUTPUT_DIR
     OUTPUT_DIR = paths.narration_txt
 
+    t_sub = time.monotonic()
     print(f"Loading config: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_quarto_config(config_path)
     chapters = extract_chapters(config)
     print(f"Found {len(chapters)} chapters")
+    step_times["Load config"] = time.monotonic() - t_sub
 
     variables_path = Path(args.variables_yml)
     if not variables_path.is_absolute():
         variables_path = PROJECT_ROOT / variables_path
+    t_sub = time.monotonic()
     print(f"Loading variables: {variables_path.name}")
     variables = load_variables(variables_path)
     print(f"Loaded {len(variables)} variables")
+    step_times["Load variables"] = time.monotonic() - t_sub
 
     if args.list:
         list_chapters(chapters)
@@ -835,6 +862,7 @@ def main() -> int:
     results = []
     manifest_fields = {"index", "title", "part", "path", "text_file", "chars", "status"}
     total_selected = len(chapters)
+    t_sub = time.monotonic()
     for seq, chapter in enumerate(chapters, start=1):
         result = generate_chapter_text(
             chapter,
@@ -848,6 +876,7 @@ def main() -> int:
         if result:
             print(_chapter_summary_line(result, seq=seq, total=total_selected))
             results.append({k: v for k, v in result.items() if k in manifest_fields})
+    step_times["Chapter processing"] = time.monotonic() - t_sub
 
     generated = sum(1 for r in results if r['status'] == 'generated')
     cached = sum(1 for r in results if r['status'] == 'cached')
@@ -857,8 +886,12 @@ def main() -> int:
     print(f"Results: {generated} generated, {cached} cached, {dry_runs} dry-run")
 
     if results and not args.dry_run:
+        t_sub = time.monotonic()
         save_text_results(results, paths=paths)
+        step_times["Save manifest"] = time.monotonic() - t_sub
 
+    total_elapsed = time.monotonic() - pipeline_start
+    _print_timing_summary(step_times, total_elapsed)
     print("\nDone!")
     return 0
 
