@@ -284,9 +284,9 @@ def print_staleness_summary(config_path: Path, chapter_filter: int | None,
     # Check outro
     outro_status = None
     if OUTRO_QMD_PATH.exists():
-        chapters_dir = paths.chapters
-        outro_hash_file = chapters_dir / "podcast-outro.qmdhash"
-        outro_wav = chapters_dir / "podcast-outro.wav"
+        wavs_dir = paths.wavs
+        outro_hash_file = wavs_dir / "podcast-outro.qmdhash"
+        outro_wav = wavs_dir / "podcast-outro.wav"
 
         qmd_content = OUTRO_QMD_PATH.read_text(encoding='utf-8')
         hash_input = qmd_content

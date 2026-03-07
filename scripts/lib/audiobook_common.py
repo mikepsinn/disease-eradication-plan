@@ -16,7 +16,8 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 AUDIOBOOK_DIR = PROJECT_ROOT / "assets" / "audiobook"
 NARRATION_DIR = AUDIOBOOK_DIR / "narration-txt-chapters"
 NARRATION_CHUNKS_DIR = AUDIOBOOK_DIR / "narration-txt-chunks"
-CHAPTER_AUDIO_DIR = AUDIOBOOK_DIR / "chapters"
+WAVS_DIRNAME = "wavs"
+WAV_AUDIO_DIR = AUDIOBOOK_DIR / WAVS_DIRNAME
 ALIGNMENT_DIR = AUDIOBOOK_DIR / "alignment"
 SUBTITLES_DIR = AUDIOBOOK_DIR / "subtitles"
 VIDEO_DIR = AUDIOBOOK_DIR / "video"
@@ -34,7 +35,7 @@ class AudiobookPaths:
     root: Path
     narration_txt: Path
     narration_txt_chunks: Path
-    chapters: Path
+    wavs: Path
     alignment: Path
     subtitles: Path
     video: Path
@@ -47,7 +48,7 @@ class AudiobookPaths:
 def get_paths(config_name: str) -> AudiobookPaths:
     """Create an AudiobookPaths for the given config name.
 
-    Output structure: assets/audiobook/{config_name}/narration-txt-chapters/, chapters/, etc.
+    Output structure: assets/audiobook/{config_name}/narration-txt-chapters/, wavs/, etc.
     """
     root = AUDIOBOOK_DIR / config_name
     video = root / "video"
@@ -55,7 +56,7 @@ def get_paths(config_name: str) -> AudiobookPaths:
         root=root,
         narration_txt=root / "narration-txt-chapters",
         narration_txt_chunks=root / "narration-txt-chunks",
-        chapters=root / "chapters",
+        wavs=root / WAVS_DIRNAME,
         alignment=root / "alignment",
         subtitles=root / "subtitles",
         video=video,
@@ -310,13 +311,13 @@ def find_prepared_text(chapter: dict, paths: AudiobookPaths | None = None) -> Pa
 
 def find_chapter_audio(chapter: dict, paths: AudiobookPaths | None = None) -> Path | None:
     """Find the WAV audio file for a chapter."""
-    chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
+    wavs_dir = paths.wavs if paths else WAV_AUDIO_DIR
     slug = chapter_slug(chapter)
-    audio_file = chapters_dir / f"{slug}.wav"
+    audio_file = wavs_dir / f"{slug}.wav"
     if audio_file.exists():
         return audio_file
     # Fallback: legacy index-prefixed name (e.g. 005-nih-fails.wav)
-    for f in sorted(chapters_dir.glob(f"*-{slug}.wav")):
+    for f in sorted(wavs_dir.glob(f"*-{slug}.wav")):
         return f
     return None
 

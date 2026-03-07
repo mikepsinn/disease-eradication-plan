@@ -45,7 +45,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE
 from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
-    PROJECT_ROOT, AUDIOBOOK_DIR, CHAPTER_AUDIO_DIR,
+    PROJECT_ROOT, AUDIOBOOK_DIR, WAV_AUDIO_DIR,
     DEFAULT_CONFIG_PATH, extract_chapters, extract_title_from_qmd, safe_filename,
     chapter_slug, find_prepared_text, find_chapter_audio, find_podcast_image,
     find_youtube_thumbnail,
@@ -345,7 +345,7 @@ def generate_chapter_audio(
     Returns:
         Tuple of (path to generated audio file or None, whether audio was regenerated)
     """
-    chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
+    wavs_dir = paths.wavs if paths else WAV_AUDIO_DIR
     qmd_path = PROJECT_ROOT / chapter['path']
 
     if not qmd_path.exists():
@@ -358,7 +358,7 @@ def generate_chapter_audio(
     # Create output filename using QMD slug (stable across title renames)
     slug = chapter_slug(chapter)
     output_filename = f"{slug}.wav"
-    output_path = chapters_dir / output_filename
+    output_path = wavs_dir / output_filename
 
     # Regenerate prepared text via subprocess (has its own hash-based caching)
     if not skip_text_prep:
@@ -390,8 +390,8 @@ def generate_chapter_audio(
         # Single chunk - use the main text file directly
         chunk_files = [text_file]
 
-    chapters_dir.mkdir(parents=True, exist_ok=True)
-    audio_chunk_dir = chapters_dir / "audio-chunks" / output_path.stem
+    wavs_dir.mkdir(parents=True, exist_ok=True)
+    audio_chunk_dir = wavs_dir / "audio-chunks" / output_path.stem
     audio_chunk_dir.mkdir(parents=True, exist_ok=True)
 
     # Clean stale audio chunks from previous runs with different chunk counts.
@@ -623,7 +623,7 @@ def combine_chapter_audio(
 
 def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
     """Print a formatted list of all chapters."""
-    chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
+    wavs_dir = paths.wavs if paths else WAV_AUDIO_DIR
     print("\nBook Chapters:")
     print("=" * 80)
 
@@ -1112,8 +1112,8 @@ def generate_outro_audio(
         print(f"  [SKIP OUTRO] {OUTRO_QMD_PATH.name} not found")
         return None
 
-    chapters_dir = paths.chapters if paths else CHAPTER_AUDIO_DIR
-    outro_wav = chapters_dir / "podcast-outro.wav"
+    wavs_dir = paths.wavs if paths else WAV_AUDIO_DIR
+    outro_wav = wavs_dir / "podcast-outro.wav"
 
     # Hash-based cache check: hash both QMD source AND _variables.yml
     # so the outro regenerates when variable values change (e.g. voter_lives_saved)
@@ -1123,7 +1123,7 @@ def generate_outro_audio(
     if VARIABLES_YML.exists():
         hash_input += VARIABLES_YML.read_text(encoding='utf-8')
     current_hash = hashlib.sha256(hash_input.encode('utf-8')).hexdigest()[:16]
-    hash_file = chapters_dir / "podcast-outro.qmdhash"
+    hash_file = wavs_dir / "podcast-outro.qmdhash"
 
     if outro_wav.exists() and not force:
         old_hash = hash_file.read_text(encoding='utf-8').strip() if hash_file.exists() else ''
@@ -1184,7 +1184,7 @@ def generate_outro_audio(
         # Normalize loudness to match chapters
         normalize_loudness(audio_path, target_lufs=-16.0)
         # Write hash for cache
-        chapters_dir.mkdir(parents=True, exist_ok=True)
+        wavs_dir.mkdir(parents=True, exist_ok=True)
         hash_file.write_text(current_hash, encoding='utf-8')
 
     return audio_path
@@ -1740,6 +1740,37 @@ def _cleanup_wraphash_sidecars(mp3_dir: Path) -> None:
         print(f"  [CLEAN] Removed legacy sidecar: {f.name}")
 
 
+def _print_output_paths_summary(
+    paths: AudiobookPaths,
+    outro_wav: Path | None,
+    generated_wavs: list[Path],
+    updated_wrapped_mp3s: list[Path],
+) -> None:
+    """Print a compact, clickable summary of key output file paths."""
+    print("\nOutput paths:")
+    print(f"  Root: {paths.root.resolve()}")
+
+    if outro_wav and outro_wav.exists():
+        print(f"  Outro WAV: {outro_wav.resolve()}")
+
+    if generated_wavs:
+        print(f"  Chapter WAV sample: {generated_wavs[0].resolve()}")
+
+    if updated_wrapped_mp3s:
+        print(f"  Wrapped MP3 sample: {updated_wrapped_mp3s[0].resolve()}")
+
+    mp3_dir = paths.root / "mp3"
+    if mp3_dir.exists():
+        print(f"  Podcast MP3 dir: {mp3_dir.resolve()}")
+
+    feed_path = paths.root / "feed.xml"
+    if feed_path.exists():
+        print(f"  Podcast feed: {feed_path.resolve()}")
+
+    if paths.manifest.exists():
+        print(f"  Manifest: {paths.manifest.resolve()}")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Generate audiobook from Quarto book chapters"
@@ -1920,6 +1951,7 @@ def main():
     # Per-chapter pipeline
     generated_files = []
     processed_chapters = 0
+    updated_wrapped_mp3s: list[Path] = []
     if args.rewrap_only:
         raw_mp3_dir = paths.raw_mp3
         for chapter in chapters:
@@ -1944,6 +1976,7 @@ def main():
             wrapped = wrap_mp3_with_intro_outro(raw_mp3, mp3_dir, intro_path=intro_mp3, outro_path=outro_wav)
             if wrapped:
                 wrapped = finalize_podcast_mp3(wrapped)
+                updated_wrapped_mp3s.append(wrapped)
                 processed_chapters += 1
                 if args.sync_each_chapter:
                     sync_chapter_assets_immediately(
@@ -2001,6 +2034,7 @@ def main():
                 # 6. Rename to content-hashed filename for podcast cache busting
                 if wrapped:
                     wrapped = finalize_podcast_mp3(wrapped)
+                    updated_wrapped_mp3s.append(wrapped)
                     if args.sync_each_chapter:
                         sync_chapter_assets_immediately(
                             wrapped,
@@ -2087,6 +2121,7 @@ def main():
         json.dumps(_substep_times, indent=2), encoding="utf-8"
     )
 
+    _print_output_paths_summary(paths, outro_wav, generated_files, updated_wrapped_mp3s)
     print("\nDone!")
     logger.close()
 

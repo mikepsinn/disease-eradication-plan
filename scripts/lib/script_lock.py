@@ -7,6 +7,8 @@ from __future__ import annotations
 
 import json
 import os
+import errno
+import subprocess
 import uuid
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -22,6 +24,31 @@ def _process_exists(pid: int) -> bool:
     """Return True if a process with pid appears to still be running."""
     if pid <= 0:
         return False
+
+    # Windows: os.kill(pid, 0) is unreliable for non-existent PIDs and can
+    # raise odd OSError/SystemError variants. tasklist gives a stable answer.
+    if os.name == "nt":
+        try:
+            result = subprocess.run(
+                ["tasklist", "/FI", f"PID eq {pid}", "/FO", "CSV", "/NH"],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            line = (result.stdout or "").strip().splitlines()
+            if not line:
+                return False
+            first = line[0].strip()
+            # No match lines are not CSV rows (usually start with "INFO: ...").
+            if not first.startswith('"'):
+                return False
+            # CSV row format: "Image Name","PID","Session Name","Session#","Mem Usage"
+            parts = [p.strip().strip('"') for p in first.split('","')]
+            return len(parts) >= 2 and parts[1] == str(pid)
+        except Exception:
+            # Fall through to the generic probe path.
+            pass
+
     try:
         # Cross-platform probe; on Windows this can raise PermissionError for
         # living processes we cannot signal, which still means "exists".
@@ -30,7 +57,17 @@ def _process_exists(pid: int) -> bool:
         return False
     except PermissionError:
         return True
-    except OSError:
+    except OSError as e:
+        # Treat "invalid argument"/"no such process" variants as not running.
+        if getattr(e, "errno", None) in {errno.ESRCH, errno.EINVAL}:
+            return False
+        if getattr(e, "winerror", None) in {87, 1168}:  # invalid parameter / not found
+            return False
+        return True
+    except SystemError:
+        # Defensive: CPython on Windows can surface this around os.kill probes.
+        return False
+    except Exception:
         return True
     return True
 
@@ -127,4 +164,3 @@ def acquire_script_lock(name: str, project_root: Path, *, command: str = "") -> 
         return ScriptLock(name=name, path=lock_path, token=token)
 
     raise ScriptLockError(f"Failed to acquire lock for '{name}' at {lock_path}")
-

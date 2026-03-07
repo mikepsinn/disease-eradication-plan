@@ -96,8 +96,8 @@ def main():
         subdirs = [
             "narration-txt-chapters",
             "narration-txt-chunks",
-            "chapters",
-            "chapters/audio-chunks",
+            "wavs",
+            "wavs/audio-chunks",
             "alignment",
             "subtitles",
             "mp3",
@@ -114,7 +114,7 @@ def main():
             total += count
 
             # For chunks and audio-chunks, also rename inside subdirectories
-            if subdir_name in ("narration-txt-chunks", "chapters/audio-chunks", "video/scenes"):
+            if subdir_name in ("narration-txt-chunks", "wavs/audio-chunks", "video/scenes"):
                 for nested_dir in sorted(subdir.iterdir()):
                     if nested_dir.is_dir():
                         # The nested dir itself was already renamed above if needed

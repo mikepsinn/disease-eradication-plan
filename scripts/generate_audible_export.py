@@ -495,7 +495,7 @@ def main():
     results = []
     for ch in chapters:
         slug = chapter_slug(ch)
-        wav_path = paths.chapters / f"{slug}.wav"
+        wav_path = paths.wavs / f"{slug}.wav"
         mp3_filename = f"{slug}.mp3"
         mp3_path = output_dir / mp3_filename
         legacy_mp3_path = output_dir / f"{ch['index']:02d}-{slug}.mp3"
