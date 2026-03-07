@@ -192,10 +192,21 @@ MAX_TTS_RETRIES = 3
 TTS_RETRY_BACKOFF = [10, 30, 60]  # seconds between retries
 
 
+def _env_flag(name: str, default: bool = False) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "on"}
+
+
+DEFAULT_TTS_VERBOSE = _env_flag("AUDIOBOOK_TTS_VERBOSE", False)
+
+
 def _generate_speech_single(
     text: str,
     voice_name: str,
     speaking_instructions: str,
+    verbose: bool = DEFAULT_TTS_VERBOSE,
 ) -> tuple[bytes, str]:
     """
     Generate speech for a single chunk of text with retry logic.
@@ -246,8 +257,9 @@ def _generate_speech_single(
                 if part.inline_data and part.inline_data.data:
                     audio_chunks.append(part.inline_data.data)
                     total_bytes += len(part.inline_data.data)
-                    elapsed = time.time() - start_time
-                    print(f"  TTS streaming: {total_bytes:,} bytes ({elapsed:.0f}s)", flush=True)
+                    if verbose:
+                        elapsed = time.time() - start_time
+                        print(f"  TTS streaming: {total_bytes:,} bytes ({elapsed:.0f}s)", flush=True)
                     if mime_type is None:
                         mime_type = part.inline_data.mime_type
 
@@ -255,7 +267,8 @@ def _generate_speech_single(
             if not audio_chunks:
                 raise RuntimeError(f"No audio data received after {elapsed:.0f}s")
 
-            print(f"  TTS complete: {total_bytes:,} bytes in {elapsed:.0f}s")
+            if verbose:
+                print(f"  TTS complete: {total_bytes:,} bytes in {elapsed:.0f}s")
             return b"".join(audio_chunks), mime_type or "audio/L16;rate=24000"
 
         except Exception as e:
@@ -276,7 +289,8 @@ def generate_speech(
     text: str,
     output_path: str | Path,
     voice_name: str = DEFAULT_VOICE,
-    speaking_instructions: str = DEFAULT_SPEAKING_INSTRUCTIONS
+    speaking_instructions: str = DEFAULT_SPEAKING_INSTRUCTIONS,
+    verbose: bool = DEFAULT_TTS_VERBOSE,
 ) -> Path:
     """
     Generates speech audio from text using Gemini TTS.
@@ -298,8 +312,14 @@ def generate_speech(
     if output_path.suffix.lower() != ".wav":
         output_path = output_path.with_suffix(".wav")
 
-    print(f"Generating speech with voice '{voice_name}' ({len(text):,} chars)...")
-    audio_data, mime_type = _generate_speech_single(text, voice_name, speaking_instructions)
+    if verbose:
+        print(f"Generating speech with voice '{voice_name}' ({len(text):,} chars)...")
+    audio_data, mime_type = _generate_speech_single(
+        text,
+        voice_name,
+        speaking_instructions,
+        verbose=verbose,
+    )
 
     wav_data = convert_to_wav(audio_data, mime_type)
 
@@ -308,7 +328,8 @@ def generate_speech(
     with open(output_path, "wb") as f:
         f.write(wav_data)
 
-    print(f"Audio saved to: {output_path}")
+    if verbose:
+        print(f"Audio saved to: {output_path}")
     return output_path
 
 

@@ -24,6 +24,8 @@ import atexit
 import hashlib
 import argparse
 import subprocess
+import contextlib
+import io
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
@@ -58,6 +60,17 @@ from lib.script_lock import acquire_script_lock, ScriptLockError
 # Conservative limit; increase if your quota allows.
 TTS_PARALLEL_WORKERS = 4
 tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
+
+
+def _env_flag(name: str, default: bool = False) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "on"}
+
+
+# Per-chapter sync defaults to concise mode to avoid log spam.
+SYNC_VERBOSE = _env_flag("AUDIOBOOK_SYNC_VERBOSE", False)
 
 # Silence detection: trim audio chunks with silence longer than this threshold.
 # Gemini TTS occasionally produces WAVs with enormous silent tails (e.g. 10 min).
@@ -384,11 +397,19 @@ def generate_chapter_audio(
     # e.g. old run had 10 chunks (chunk-*-of-10.wav), new run has 9. Without
     # cleanup the combine step globs all .wav files and double-concatenates.
     expected_tag = f"-of-{len(chunk_files):02d}"
+    removed_stale_chunks: list[str] = []
     for old_file in list(audio_chunk_dir.glob("chunk-*.wav")):
         if expected_tag not in old_file.stem:
-            print(f"    [CLEAN] Removing stale chunk: {old_file.name}")
+            removed_stale_chunks.append(old_file.name)
             old_file.unlink()
             old_file.with_suffix('.texthash').unlink(missing_ok=True)
+    if removed_stale_chunks:
+        preview = ", ".join(removed_stale_chunks[:3])
+        suffix = f", ... (+{len(removed_stale_chunks) - 3} more)" if len(removed_stale_chunks) > 3 else ""
+        print(
+            f"    [CLEAN] Removed {len(removed_stale_chunks)} stale audio chunk(s): "
+            f"{preview}{suffix}"
+        )
 
     # Build work items, skipping cached chunks whose source text hasn't changed
     work_items = []
@@ -632,7 +653,8 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
 
 
 def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int,
-                    chapters: list[dict] | None = None, paths: AudiobookPaths | None = None):
+                    chapters: list[dict] | None = None, paths: AudiobookPaths | None = None,
+                    quiet: bool = False):
     """Update manifest.json with duration and timing data."""
     # Build path lookup for stale-entry detection
     path_by_index = {ch['index']: ch['path'] for ch in chapters} if chapters else {}
@@ -653,7 +675,8 @@ def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int,
     manifest['total_duration_formatted'] = format_duration(total_duration_ms)
     write_manifest(manifest, paths)
     manifest_path = paths.manifest if paths else AUDIOBOOK_DIR / "manifest.json"
-    print(f"  [OK] Updated manifest: {manifest_path.relative_to(PROJECT_ROOT)}")
+    if not quiet:
+        print(f"  [OK] Updated manifest: {manifest_path.relative_to(PROJECT_ROOT)}")
 
 
 def build_chapter_timestamps(chapters: list[dict], paths: AudiobookPaths | None = None,
@@ -695,7 +718,8 @@ def build_chapter_timestamps(chapters: list[dict], paths: AudiobookPaths | None 
 
 
 def refresh_manifest_and_feed(chapters: list[dict], book_meta: dict,
-                              paths: AudiobookPaths, mp3_dir: Path) -> Path | None:
+                              paths: AudiobookPaths, mp3_dir: Path,
+                              quiet: bool = False) -> Path | None:
     """Refresh manifest timing data and regenerate podcast feed.xml.
 
     Returns feed path if generated, otherwise None.
@@ -706,7 +730,7 @@ def refresh_manifest_and_feed(chapters: list[dict], book_meta: dict,
         return None
 
     total_duration_ms = timestamps[-1]['end_ms']
-    update_manifest(timestamps, total_duration_ms, chapters=chapters, paths=paths)
+    update_manifest(timestamps, total_duration_ms, chapters=chapters, paths=paths, quiet=quiet)
 
     chapter_mp3s = []
     for ch in chapters:
@@ -719,7 +743,7 @@ def refresh_manifest_and_feed(chapters: list[dict], book_meta: dict,
         print(f"  [WARN] No per-chapter MP3s found in {mp3_dir}, skipping podcast RSS generation")
         return None
 
-    generate_podcast_rss(chapter_mp3s, chapters, timestamps, book_meta, paths=paths)
+    generate_podcast_rss(chapter_mp3s, chapters, timestamps, book_meta, paths=paths, quiet=quiet)
     feed_path = paths.root / "feed.xml"
     return feed_path if feed_path.exists() else None
 
@@ -730,8 +754,9 @@ def sync_chapter_assets_immediately(mp3_path: Path, chapters: list[dict], book_m
 
     Best-effort only: logs warnings and continues pipeline on any sync failure.
     """
-    print("  [SYNC] Immediate chapter upload: refreshing manifest/feed...")
-    feed_path = refresh_manifest_and_feed(chapters, book_meta, paths, mp3_dir)
+    feed_path = refresh_manifest_and_feed(
+        chapters, book_meta, paths, mp3_dir, quiet=not SYNC_VERBOSE
+    )
 
     upload_paths = [mp3_path, paths.manifest]
     if feed_path:
@@ -739,8 +764,28 @@ def sync_chapter_assets_immediately(mp3_path: Path, chapters: list[dict], book_m
 
     try:
         from sync_r2 import upload_selected_files
-        uploaded, skipped, errors = upload_selected_files(upload_paths, dry_run=False)
-        print(f"  [SYNC] Uploaded {uploaded}, skipped {skipped}, errors {errors}")
+        if SYNC_VERBOSE:
+            uploaded, skipped, errors = upload_selected_files(upload_paths, dry_run=False)
+        else:
+            sync_log = io.StringIO()
+            with contextlib.redirect_stdout(sync_log):
+                uploaded, skipped, errors = upload_selected_files(upload_paths, dry_run=False)
+            # Bubble up only warning/error lines from the suppressed verbose sync output.
+            warn_lines = [
+                line.strip()
+                for line in sync_log.getvalue().splitlines()
+                if "[WARN]" in line or "FAILED" in line or "ERROR" in line
+            ]
+            for line in warn_lines[:3]:
+                print(f"  {line}")
+            if len(warn_lines) > 3:
+                print(f"  [SYNC WARN] ... {len(warn_lines) - 3} more warning/error line(s)")
+
+        refreshed = "manifest+feed" if feed_path else "manifest"
+        print(
+            f"  [SYNC] {mp3_path.name} uploaded={uploaded} skipped={skipped} "
+            f"errors={errors} refreshed={refreshed}"
+        )
     except SystemExit:
         # sync_r2 exits when R2 creds are missing; keep audiobook generation running.
         print("  [WARN] Immediate sync skipped (R2 not configured in environment)")
@@ -1416,6 +1461,7 @@ def generate_podcast_rss(
     timestamps: list[ChapterTimestamp],
     book_meta: dict,
     paths: AudiobookPaths | None = None,
+    quiet: bool = False,
 ) -> Path:
     """Generate a podcast RSS 2.0 feed with iTunes namespace tags.
 
@@ -1534,17 +1580,23 @@ def generate_podcast_rss(
 
     items = []
     total_eps = len(chapter_mp3s)
+    skipped_not_podcast = 0
+    missing_mp3 = 0
     for ep_num, ts in enumerate(timestamps):
         # Skip chapters with podcast: false in frontmatter
         ch = ch_by_index.get(ts['index'])
         if ch and not ch.get('podcast', True):
-            print(f"  [SKIP RSS] {ts['title']} (podcast: false)")
+            skipped_not_podcast += 1
+            if not quiet:
+                print(f"  [SKIP RSS] {ts['title']} (podcast: false)")
             continue
 
         slug = Path(ts['file']).stem  # WAV slug -> MP3 slug
         mp3_path = mp3_by_slug.get(slug)
         if not mp3_path:
-            print(f"  [WARN] No MP3 for timestamp entry: {ts['file']}")
+            missing_mp3 += 1
+            if not quiet:
+                print(f"  [WARN] No MP3 for timestamp entry: {ts['file']}")
             continue
 
         ch_title = escape(ts['title'])
@@ -1620,8 +1672,14 @@ def generate_podcast_rss(
 """
 
     rss_path.write_text(feed, encoding='utf-8')
-    print(f"\n  [OK] Podcast RSS: {rss_path.relative_to(PROJECT_ROOT)}")
-    print(f"  Feed URL: {site_url}/{mp3_base.as_posix()}/feed.xml")
+    if not quiet:
+        print(f"\n  [OK] Podcast RSS: {rss_path.relative_to(PROJECT_ROOT)}")
+        print(f"  Feed URL: {site_url}/{mp3_base.as_posix()}/feed.xml")
+    elif skipped_not_podcast or missing_mp3:
+        print(
+            f"  [RSS] refreshed ({len(items)} episode(s); "
+            f"skipped={skipped_not_podcast}, missing-mp3={missing_mp3})"
+        )
     return rss_path
 
 

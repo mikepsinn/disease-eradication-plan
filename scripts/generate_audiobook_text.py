@@ -500,6 +500,8 @@ def generate_chapter_text(
     force: bool = False,
     dry_run: bool = False,
     debug_chunks: bool = False,
+    seq: int | None = None,
+    total: int | None = None,
 ) -> dict | None:
     """Generate audiobook text for a single chapter."""
     chapter_start = time.monotonic()
@@ -512,6 +514,21 @@ def generate_chapter_text(
 
     slug = chapter_slug(chapter)
     output_path = OUTPUT_DIR / f"{slug}.prepared.txt"
+    chapter_header = None
+    if seq is not None and total is not None:
+        chapter_header = (
+            f"\n[CHAPTER START] {seq:02d}/{total:02d} "
+            f"idx={chapter['index']:02d} title={title}"
+        )
+    start_printed = False
+
+    def _print_start_once() -> None:
+        nonlocal start_printed
+        if start_printed:
+            return
+        if chapter_header:
+            print(chapter_header)
+        start_printed = True
 
     raw_qmd = qmd_path.read_text(encoding='utf-8')
 
@@ -538,6 +555,7 @@ def generate_chapter_text(
             print(f"  [STALE] Source QMD changed (was {old_source_hash or 'unknown'}, now {source_hash}), regenerating")
     elif force:
         source_state = "forced"
+    _print_start_once()
     original_vars = len(re.findall(r'\{\{<\s*var\s+\w+\s*>\}\}', raw_qmd))
 
     prepared = prepare_for_narration(raw_qmd, variables)
@@ -801,15 +819,14 @@ def main():
     manifest_fields = {"index", "title", "part", "path", "text_file", "chars", "status"}
     total_selected = len(chapters)
     for seq, chapter in enumerate(chapters, start=1):
-        qmd_path = PROJECT_ROOT / chapter['path']
-        title = chapter['title'] or (extract_title_from_qmd(qmd_path) if qmd_path.exists() else chapter['path'])
-        print(f"\n[CHAPTER START] {seq:02d}/{total_selected:02d} idx={chapter['index']:02d} title={title}")
         result = generate_chapter_text(
             chapter,
             variables,
             force=args.force,
             dry_run=args.dry_run,
             debug_chunks=args.debug_chunks,
+            seq=seq,
+            total=total_selected,
         )
         if result:
             print(_chapter_summary_line(result, seq=seq, total=total_selected))
