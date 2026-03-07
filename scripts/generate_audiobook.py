@@ -76,6 +76,8 @@ SYNC_VERBOSE = _env_flag("AUDIOBOOK_SYNC_VERBOSE", False)
 TTS_CHUNK_VERBOSE = _env_flag("AUDIOBOOK_TTS_CHUNK_VERBOSE", False)
 # Single-line chapter chunk progress to avoid noisy repeated status lines.
 TTS_SINGLE_LINE_PROGRESS = _env_flag("AUDIOBOOK_TTS_SINGLE_LINE_PROGRESS", True)
+# Single-line cache-scan progress for chunk freshness checks.
+TTS_CACHE_SCAN_SINGLE_LINE = _env_flag("AUDIOBOOK_TTS_CACHE_SCAN_SINGLE_LINE", True)
 TTS_PROGRESS_INTERVAL_S = 5.0
 
 # Silence detection: trim audio chunks with silence longer than this threshold.
@@ -427,11 +429,19 @@ def generate_chapter_audio(
             f"{preview}{suffix}"
         )
 
-    # Build work items, skipping cached chunks whose source text hasn't changed
+    # Build work items, skipping cached chunks whose source text hasn't changed.
+    # Emit one updating line instead of a line per chunk to keep logs dense.
     work_items = []
+    cached_count = 0
+    stale_count = 0
+    missing_count = 0
+    stale_preview: list[str] = []
+    scan_progress = SingleLineProgress(enabled=TTS_CACHE_SCAN_SINGLE_LINE)
     for i, chunk_file in enumerate(chunk_files):
+        idx = i + 1
         audio_chunk_path = audio_chunk_dir / f"chunk-{i+1:02d}-of-{len(chunk_files):02d}.wav"
         hash_path = audio_chunk_path.with_suffix('.texthash')
+        status = "new"
 
         if audio_chunk_path.exists():
             # Check if source text has changed since this audio was generated
@@ -441,15 +451,43 @@ def generate_chapter_audio(
 
             if old_hash == text_hash:
                 # Trim any silence in cached chunks (catches pre-existing TTS bugs)
-                trim_silence(audio_chunk_path, label=f"cached chunk {i+1}/{len(chunk_files)}")
-                print(f"    [CACHED] audio chunk {i+1}/{len(chunk_files)} ({audio_chunk_path.stat().st_size:,} bytes)")
-                continue
+                scan_progress.clear()
+                trim_silence(audio_chunk_path, label=f"cached chunk {idx}/{len(chunk_files)}")
+                cached_count += 1
+                status = "cached"
             else:
-                print(f"    [STALE] audio chunk {i+1}/{len(chunk_files)} text changed ({old_hash or 'none'} -> {text_hash}), regenerating")
+                stale_count += 1
+                status = "stale"
+                if len(stale_preview) < 3:
+                    stale_preview.append(f"{idx:02d} ({old_hash or 'none'}->{text_hash})")
                 audio_chunk_path.unlink()
                 hash_path.unlink(missing_ok=True)
+        else:
+            missing_count += 1
 
-        work_items.append((i, chunk_file, audio_chunk_path))
+        if status != "cached":
+            work_items.append((i, chunk_file, audio_chunk_path))
+
+        to_generate = len(work_items)
+        scan_progress.update(
+            (
+                f"    [TTS CACHE SCAN] chunks {idx}/{len(chunk_files)} "
+                f"cached={cached_count} stale={stale_count} missing={missing_count} "
+                f"to-generate={to_generate} recent={status}:{idx:02d}"
+            ),
+            final=(idx == len(chunk_files)),
+        )
+    scan_progress.clear()
+    stale_suffix = ""
+    if stale_preview:
+        stale_suffix = f" changed={', '.join(stale_preview)}"
+        if stale_count > len(stale_preview):
+            stale_suffix += f", ... (+{stale_count - len(stale_preview)} more)"
+    print(
+        f"    [TTS CACHE RESULT] total={len(chunk_files)} cached={cached_count} "
+        f"stale={stale_count} missing={missing_count} to-generate={len(work_items)}"
+        f"{stale_suffix}"
+    )
 
     # If nothing to regenerate and chapter WAV exists, skip
     if not work_items and output_path.exists() and not force:
