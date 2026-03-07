@@ -243,7 +243,7 @@ Falling prices. Rising prosperity. For 26 years. This is not a footnote. It is a
 
 Your economists will counter with the Panic of 1873 and the "Long Depression," which occurred during this same period. They are correct that it happened. They are incorrect about what it proves. The Panic of 1873 was caused by speculative railroad lending and bank failures, not by falling prices. Prices were falling before the panic, during the panic, and after the panic, and real output kept growing through most of it. The economy recovered without a central bank printing money to "fix" it, which must have been very embarrassing for the people who later invented a central bank to fix things. If deflation caused depressions, the entire 26-year period would have been one continuous depression. Instead it was the period in which you invented electric light, the telephone, and the modern railroad. Your economists looked at the era that produced the lightbulb, found one bad year, and concluded that the problem was falling prices. On Wishonia, this is called "finding a cloud and declaring it night." On Earth, it is called "a tenured position."
 
-The Bank for International Settlements (the central bank of central banks, which is a real thing that exists, like a boss fight at the end of a video game about money) tested this across 140 years and 38 economies and found that the link between deflation and slower growth is "weak" and "derives largely from the Great Depression" [@borio-costs-deflation-2015].
+The Bank for International Settlements (the central bank of central banks, which is a real thing that exists, like a boss fight at the end of a video game about money) tested this across 140 years and 38 economies [@borio-costs-deflation-2015]. Their full-sample result: the link between deflation and slower growth is "weak." Their result when you remove the Great Depression: no statistically significant link at all. The entire "weak" correlation is one data point dragging the average. The Great Depression was so extreme (GDP fell 30%) that it acts as a statistical leverage point, pulling the result negative against thousands of observations showing the opposite. The fact that you need to include a once-in-140-years catastrophe to get your result means your result describes the catastrophe, not deflation. Borio et al. also separated goods price deflation from asset price deflation. Falling goods prices (the kind central banks claim to protect you from) showed no link to slower growth. Falling property prices (which signal credit busts, like the one your banks caused in 2008) did. Your central banks are treating the wrong symptom and citing a study that, if anyone read past the abstract, says so.
 
 One data point. They built the entire theology of permanent inflation on one data point that they misread. On Wishonia, if a scientist built a theory on one misinterpreted data point, they would lose their research license. On Earth, they get the fake Nobel Prize.
 
@@ -296,12 +296,6 @@ On Wishonia, we had a similar arrangement once. Someone would stand between the 
 In 2020, the Fed created roughly $4 trillion in new money [@fred-walcl-2026]. I need to give you a unit of measurement for that number, because large numbers are where your species hides things.
 
 Your governments spend {{< var global_government_clinical_trials_spending_annual >}} per year on clinical trials. That is the part of medicine where you actually test whether drugs work in humans. It is the entire global budget for finding out which chemicals stop you from dying. Every government on Earth, combined, pooling everything they have: {{< var global_government_clinical_trials_spending_annual >}}.
-
-The Fed created 889 years of that in a few months.
-
-I want you to think about someone you've lost. A parent. A friend. A child. Think about the disease that killed them. Now understand: the money to fund the clinical trial that might have saved them was created on a Tuesday afternoon, by a committee you've never heard of, and handed to a bank so that the bank's spreadsheet would have a bigger number in it. The bank did not cure your mother. The bank used the money to buy bonds and watch them appreciate. Your mother is still dead. The spreadsheet is doing fine.
-
-Eight hundred and eighty-nine years of clinical trials. Created in months. For banks.
 
 Where did it go? This is a mystery in the same way that asking "who ate the cake?" is a mystery when there is one person in the room covered in frosting.
 
@@ -652,10 +646,12 @@ The printer funded the wars. The printer inflated the financial sector. The prin
 
 ### The Ask
 
-The [1% treaty](../solution/1-percent-treaty.qmd) asks for 1% of the global military budget. {{< var treaty_annual_funding >}} per year. **Six years** of clinical trials, annually.
+I want you to think about someone you've lost. A parent. A friend. A child. Think about the disease that killed them. Now understand: the money to fund the clinical trial that might have saved them was created on a Tuesday afternoon, by a committee you've never heard of, and handed to a build bombs or conduct wars you would not donate your money to. The bank did not cure your mother. Your mother is still dead. The spreadsheet is doing fine.
+
+The [1% treaty](../solution/1-percent-treaty.qmd) asks for 1% of the global military budget. {{< var treaty_annual_funding >}} per year. 
 
 Your species has {{< var rare_diseases_count_global_nounit >}} diseases with zero approved treatments. At current capacity, testing them takes {{< var status_quo_queue_clearance_years_nounit >}} years. At treaty funding, it takes {{< var dfda_queue_clearance_years >}}. One generation instead of five centuries.
 
-The printer spent nearly 38,000 years of clinical trials on killing. The treaty asks for six per year, for you.
+The printer spent nearly 38,000 years of clinical trials on killing.
 
 I have been watching your species for 80 years and I still cannot tell whether you are bad at math or just very, very well trained.
