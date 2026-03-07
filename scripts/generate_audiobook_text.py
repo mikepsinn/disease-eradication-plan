@@ -27,6 +27,8 @@ Usage:
 import io
 import sys
 import re
+import os
+import random
 import argparse
 import hashlib
 import shutil
@@ -51,7 +53,7 @@ from lib.audiobook_common import (
     config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import save_text_results
-from lib.retry import retry_with_backoff, RateLimiter
+from lib.retry import RateLimiter
 
 # Configuration
 OUTPUT_DIR = NARRATION_DIR
@@ -59,8 +61,22 @@ OUTPUT_DIR = NARRATION_DIR
 MAX_CHUNK_CHARS = 3_000
 
 # LLM parallelization
-LLM_PARALLEL_WORKERS = 4
-llm_rate_limiter = RateLimiter(max_requests=15, window_seconds=60)
+def _env_int(name: str, default: int, minimum: int = 1) -> int:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    try:
+        return max(minimum, int(raw))
+    except ValueError:
+        return default
+
+
+# Higher default worker count can improve throughput for long-latency calls.
+# The sliding-window limiter below still caps request rate.
+LLM_PARALLEL_WORKERS = _env_int("AUDIOBOOK_LLM_WORKERS", 6)
+LLM_REQUESTS_PER_MINUTE = _env_int("AUDIOBOOK_LLM_REQUESTS_PER_MINUTE", 15)
+LLM_MAX_ATTEMPTS = _env_int("AUDIOBOOK_LLM_MAX_ATTEMPTS", 6)
+llm_rate_limiter = RateLimiter(max_requests=LLM_REQUESTS_PER_MINUTE, window_seconds=60)
 
 
 # ---------------------------------------------------------------------------
@@ -266,6 +282,52 @@ def _fmt_elapsed_short(seconds: float) -> str:
     return f"{m}:{s:02d}"
 
 
+def _is_likely_rate_limit_error(exc: Exception) -> bool:
+    msg = str(exc).lower()
+    return any(
+        token in msg
+        for token in (
+            "429",
+            "rate limit",
+            "too many requests",
+            "resource_exhausted",
+            "quota",
+            "quota exceeded",
+        )
+    )
+
+
+def _llm_call_with_retries(prompt: str, label: str) -> str:
+    """Call Gemini Flash with adaptive backoff for rate-limit/transient failures."""
+    from lib.llm import generate_gemini_flash_content
+
+    transient_backoff = (5.0, 10.0, 20.0, 30.0, 45.0)
+    for attempt in range(1, LLM_MAX_ATTEMPTS + 1):
+        try:
+            llm_rate_limiter.acquire()
+            return generate_gemini_flash_content(prompt).strip()
+        except Exception as e:
+            if attempt >= LLM_MAX_ATTEMPTS:
+                raise
+
+            if _is_likely_rate_limit_error(e):
+                # Exponential backoff with jitter to reduce synchronized retries.
+                wait = min(120.0, 5.0 * (2 ** (attempt - 1))) + random.uniform(0.0, 2.0)
+                print(
+                    f"    [LLM RATE LIMIT] {label}attempt {attempt}/{LLM_MAX_ATTEMPTS} failed: {e}"
+                )
+            else:
+                wait = transient_backoff[min(attempt - 1, len(transient_backoff) - 1)]
+                print(
+                    f"    [LLM RETRY] {label}attempt {attempt}/{LLM_MAX_ATTEMPTS} failed: {e}"
+                )
+
+            print(f"    [LLM RETRY] Waiting {wait:.1f}s...", flush=True)
+            time.sleep(wait)
+
+    raise RuntimeError(f"LLM request failed unexpectedly for {label}")
+
+
 def rewrite_for_audiobook(
     text: str,
     title: str,
@@ -311,9 +373,14 @@ def rewrite_for_audiobook(
     generated_chunks = len(work_items)
     workers = min(LLM_PARALLEL_WORKERS, generated_chunks) if generated_chunks else 0
     print(
-        f"    [REWRITE PLAN] chunks total={total}, cached={cached_chunks}, "
+        f"    [LLM NARRATION PLAN] chunks total={total}, cached={cached_chunks}, "
         f"to-generate={generated_chunks}, workers={workers}"
     )
+    if generated_chunks:
+        print(
+            "    [LLM NARRATION START] Sending prepared text chunks to Gemini Flash "
+            "to generate audiobook narration text"
+        )
 
     generated_chars = 0
     if work_items:
@@ -327,12 +394,7 @@ def rewrite_for_audiobook(
             prompt = AUDIOBOOK_REWRITE_PROMPT + context + "\n\n---\n\nCONTENT TO CONVERT:\n\n" + chunk
 
             start = time.monotonic()
-            llm_rate_limiter.acquire()
-            # Capture prompt in default arg to avoid closure issues
-            result = retry_with_backoff(
-                lambda p=prompt: generate_gemini_flash_content(p).strip(),
-                label=f"{label} ",
-            )
+            result = _llm_call_with_retries(prompt, label=f"{label} ")
             chunk_file.write_text(result, encoding='utf-8')
             elapsed = time.monotonic() - start
             return i, result, len(chunk), elapsed, chunk_file.name
@@ -340,6 +402,7 @@ def rewrite_for_audiobook(
         with ThreadPoolExecutor(max_workers=workers) as executor:
             futures = {executor.submit(_rewrite_one, item): item for item in work_items}
             completed = 0
+            recent_done: list[int] = []
             generation_start = time.monotonic()
             last_progress = generation_start
             for future in as_completed(futures):
@@ -349,15 +412,18 @@ def rewrite_for_audiobook(
                 except Exception as e:
                     chunk_idx = item[0] + 1
                     raise RuntimeError(
-                        f"LLM rewrite failed for chunk {chunk_idx}/{total}: {e}"
+                        f"LLM narration generation failed for chunk {chunk_idx}/{total}: {e}"
                     ) from e
                 results[i] = result
                 completed += 1
                 generated_chars += chunk_chars
+                recent_done.append(i + 1)
+                if len(recent_done) > 3:
+                    recent_done.pop(0)
 
                 if debug_chunks:
                     print(
-                        f"    [CHUNK OK] {i + 1:02d}/{total:02d} "
+                        f"    [LLM CHUNK DONE] {i + 1:02d}/{total:02d} "
                         f"chars={chunk_chars:,} elapsed={chunk_elapsed:.1f}s file={chunk_filename}"
                     )
 
@@ -371,17 +437,24 @@ def rewrite_for_audiobook(
                     remaining = generated_chunks - completed
                     eta = remaining / rate if rate > 0 else 0.0
                     pct = (completed / generated_chunks * 100) if generated_chunks else 100.0
+                    chapter_ready = cached_chunks + completed
+                    chunks_per_min = rate * 60.0
+                    avg_chunk_s = (elapsed / completed) if completed > 0 else 0.0
+                    recent = ",".join(f"{n:02d}" for n in recent_done) if recent_done else "-"
                     print(
-                        f"    [PROGRESS] chunks {completed}/{generated_chunks} "
-                        f"({pct:.0f}%) elapsed={_fmt_elapsed_short(elapsed)} "
-                        f"eta={_fmt_elapsed_short(eta)}"
+                        f"    [LLM NARRATION PROGRESS] chunks done={completed}/{generated_chunks} "
+                        f"({pct:.0f}%) chapter-ready={chapter_ready}/{total} "
+                        f"elapsed={_fmt_elapsed_short(elapsed)} "
+                        f"eta={_fmt_elapsed_short(eta)} "
+                        f"throughput={chunks_per_min:.1f}/min avg={avg_chunk_s:.1f}s/chunk "
+                        f"recent={recent}"
                     )
                     last_progress = now
 
     rewritten = '\n\n'.join(r for r in results if r is not None)
     rewrite_elapsed = time.monotonic() - rewrite_start
     print(
-        f"    [REWRITE DONE] chunks total={total}, cached={cached_chunks}, "
+        f"    [LLM NARRATION DONE] chunks total={total}, cached={cached_chunks}, "
         f"generated={generated_chunks}, elapsed={_fmt_elapsed_short(rewrite_elapsed)}"
     )
     stats: dict[str, int | float] = {
@@ -636,6 +709,7 @@ def _chapter_summary_line(result: dict, seq: int, total: int) -> str:
 
 
 def main():
+    global LLM_PARALLEL_WORKERS, LLM_REQUESTS_PER_MINUTE, LLM_MAX_ATTEMPTS, llm_rate_limiter
     parser = argparse.ArgumentParser(description="Generate audiobook-friendly text from Quarto book chapters")
     parser.add_argument("--config", "-cfg", default=str(DEFAULT_CONFIG_PATH), help=f"Quarto config YAML (default: {DEFAULT_CONFIG_PATH.name})")
     parser.add_argument("--chapter", "-c", type=int, help="Generate only specific chapter number")
@@ -645,8 +719,32 @@ def main():
     parser.add_argument("--force", "-f", action="store_true", help="Regenerate text even if files exist")
     parser.add_argument("--dry-run", "-n", action="store_true", help="Run programmatic strip only, skip LLM (saves prepared text for review)")
     parser.add_argument("--debug-chunks", action="store_true", help="Verbose per-chunk logs (default is compact chapter summaries)")
+    parser.add_argument(
+        "--llm-workers",
+        type=int,
+        default=LLM_PARALLEL_WORKERS,
+        help=f"Parallel LLM chunk workers (default: {LLM_PARALLEL_WORKERS})",
+    )
+    parser.add_argument(
+        "--llm-rpm",
+        type=int,
+        default=LLM_REQUESTS_PER_MINUTE,
+        help=f"LLM request cap per minute across all workers (default: {LLM_REQUESTS_PER_MINUTE})",
+    )
+    parser.add_argument(
+        "--llm-max-attempts",
+        type=int,
+        default=LLM_MAX_ATTEMPTS,
+        help=f"Max retries per LLM chunk request (default: {LLM_MAX_ATTEMPTS})",
+    )
     parser.add_argument("--variables-yml", default=str(VARIABLES_YML), help=f"Path to variables YAML (default: {VARIABLES_YML.name})")
     args = parser.parse_args()
+
+    # Apply runtime concurrency/rate settings from CLI.
+    LLM_PARALLEL_WORKERS = max(1, args.llm_workers)
+    LLM_REQUESTS_PER_MINUTE = max(1, args.llm_rpm)
+    LLM_MAX_ATTEMPTS = max(1, args.llm_max_attempts)
+    llm_rate_limiter = RateLimiter(max_requests=LLM_REQUESTS_PER_MINUTE, window_seconds=60)
 
     config_path = Path(args.config)
     if not config_path.is_absolute():
@@ -688,6 +786,11 @@ def main():
     mode = "DRY RUN (strip only)" if args.dry_run else "GENERATE"
     print(f"\n[{mode}] Processing {len(chapters)} chapter(s)...")
     print(f"Output: {OUTPUT_DIR.relative_to(PROJECT_ROOT)}")
+    if not args.dry_run:
+        print(
+            f"LLM settings: workers={LLM_PARALLEL_WORKERS}, "
+            f"rate-cap={LLM_REQUESTS_PER_MINUTE}/min, retries={LLM_MAX_ATTEMPTS}"
+        )
     if args.debug_chunks:
         print("Chunk logs: verbose")
     else:

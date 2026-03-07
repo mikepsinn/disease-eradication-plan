@@ -362,7 +362,10 @@ def generate_chapter_audio(
     # Find text chunk files (produced by generate_audiobook_text.py)
     text_file = find_prepared_text(chapter, paths=paths)
     if not text_file:
-        print(f"  [SKIP] No text file found after preparation")
+        if skip_text_prep:
+            print("  [SKIP] No prepared text file found (run generate_audiobook_text.py first)")
+        else:
+            print(f"  [SKIP] No text file found after preparation")
         return None, False
 
     # Chunks are in the adjacent narration-txt-chunks/ dir, not nested under narration-txt-chapters/
@@ -1719,6 +1722,11 @@ def main():
         help="Skip forced alignment and subtitle generation"
     )
     parser.add_argument(
+        "--skip-text-prep",
+        action="store_true",
+        help="Assume narration text is already prepared; skip per-chapter text subprocess",
+    )
+    parser.add_argument(
         "--start",
         type=int,
         help="Start from chapter number (inclusive)"
@@ -1797,6 +1805,8 @@ def main():
     print(f"\nGenerating audio for {len(chapters)} chapter(s)...")
     print(f"Voice: {args.voice}")
     print(f"Output: {paths.root.relative_to(PROJECT_ROOT)}")
+    if args.skip_text_prep:
+        print("Text prep: skipped (using existing prepared narration text)")
     print()
 
     # Substep timing accumulator: {label: elapsed_seconds}
@@ -1851,7 +1861,14 @@ def main():
 
         # 1. Generate audio (text prep + TTS + combine chunks -> WAV)
         t_sub = time.monotonic()
-        audio_path, audio_changed = generate_chapter_audio(chapter, voice=args.voice, force=args.force, paths=paths, config_path=config_path)
+        audio_path, audio_changed = generate_chapter_audio(
+            chapter,
+            voice=args.voice,
+            force=args.force,
+            paths=paths,
+            config_path=config_path,
+            skip_text_prep=args.skip_text_prep,
+        )
         _substep_times["TTS generation"] += time.monotonic() - t_sub
         if not audio_path:
             continue

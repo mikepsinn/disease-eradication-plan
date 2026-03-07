@@ -452,6 +452,8 @@ def main():
         audio_args.append("--sync-each-chapter")
     else:
         audio_args.append("--no-sync-each-chapter")
+    # Step 1 already prepared narration text; avoid duplicate per-chapter text subprocesses.
+    audio_args.append("--skip-text-prep")
 
     step_label = "Generate audio + MP3s + RSS"
     if not run_step(step_label, "generate_audiobook.py", audio_args):
