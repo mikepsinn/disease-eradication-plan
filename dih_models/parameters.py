@@ -337,6 +337,140 @@ GLOBAL_MILITARY_SPENDING_ANNUAL_2024 = Parameter(
     latex_symbol=r"Spending_{mil}",  # LaTeX symbol for equations
 )  # SIPRI 2024 (rounded to 3 sig figs for clarity)
 
+# Military spending trend data (SIPRI)
+GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR = Parameter(
+    0.034,
+    source_ref=ReferenceID.SIPRI_MILEX_2024,
+    source_type="external",
+    description="Real compound annual growth rate of global military spending over the last decade "
+                "(2014-2024). SIPRI reports 10 consecutive annual increases, with 2024 up 9.4% in "
+                "real terms. The 10-year CAGR is approximately 3.4% real.",
+    display_name="Military Spending Real CAGR (10-Year)",
+    unit="percent",
+    distribution="fixed",
+    keywords=["military", "spending", "growth", "CAGR", "SIPRI", "trend", "decade"],
+    latex_symbol=r"g_{mil,10yr}",
+)
+
+# Cybercrime economic data
+GLOBAL_CYBERCRIME_COST_ANNUAL_2025 = Parameter(
+    10_500_000_000_000,
+    source_ref=ReferenceID.CYBERCRIME_ECONOMY_10_5T,
+    source_type="external",
+    description="Projected global cybercrime costs in 2025. Includes data theft, productivity loss, "
+                "IP theft, fraud. More profitable than global trade of all major illegal drugs combined. "
+                "If measured as a country, would be the 3rd largest economy after US and China.",
+    display_name="Global Cybercrime Costs (2025)",
+    unit="USD",
+    distribution="fixed",
+    keywords=["cybercrime", "cost", "2025", "theft", "fraud", "hacking"],
+    latex_symbol=r"Cost_{cyber}",
+)
+
+GLOBAL_CYBERCRIME_CAGR = Parameter(
+    0.15,
+    source_ref=ReferenceID.CYBERCRIME_ECONOMY_10_5T,
+    source_type="external",
+    description="Compound annual growth rate of global cybercrime costs. "
+                "Cybersecurity Ventures: $3T (2015) -> $6T (2021) -> $10.5T (2025). "
+                "AI-enhanced attacks are accelerating this trend.",
+    display_name="Cybercrime Cost CAGR",
+    unit="percent",
+    distribution="fixed",
+    keywords=["cybercrime", "growth", "CAGR", "trend"],
+    latex_symbol=r"g_{cyber}",
+)
+
+# Destructive economy aggregate (military + cybercrime + conflict costs)
+GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 = Parameter(
+    2_720_000_000_000 + 10_500_000_000_000,
+    source_type="calculated",
+    description="Combined annual cost of military spending and cybercrime. "
+                "The 'destructive economy' that competes with the productive economy.",
+    display_name="Global Destructive Economy (2025)",
+    unit="USD",
+    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 + GLOBAL_CYBERCRIME_COST_ANNUAL_2025",
+    keywords=["destructive", "economy", "military", "cybercrime", "total"],
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] + ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"],
+    latex_symbol=r"Cost_{destruct}",
+)
+
+GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP = Parameter(
+    (2_720_000_000_000 + 10_500_000_000_000) / 115_000_000_000_000,
+    source_type="calculated",
+    description="Destructive economy (military + cybercrime) as percentage of global GDP.",
+    display_name="Destructive Economy as % of GDP",
+    unit="percent",
+    formula="GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 / GLOBAL_GDP_2025",
+    keywords=["destructive", "economy", "GDP", "percentage"],
+    inputs=["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025", "GLOBAL_GDP_2025"],
+    compute=lambda ctx: ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"] / ctx["GLOBAL_GDP_2025"],
+    latex_symbol=r"r_{destruct:GDP}",
+)
+
+# Destructive economy timeline projections
+# Calculate the year when destructive economy (military + cybercrime at current growth rates)
+# reaches critical thresholds as % of GDP
+import math as _math
+
+# Weighted growth rate of destructive economy
+# Military ($2.72T at 3.4%) + Cybercrime ($10.5T at 15%) = weighted by share
+_mil_share = 2_720_000_000_000 / (2_720_000_000_000 + 10_500_000_000_000)
+_cyber_share = 10_500_000_000_000 / (2_720_000_000_000 + 10_500_000_000_000)
+_destructive_growth = _mil_share * 0.034 + _cyber_share * 0.15  # ~12.6% weighted
+
+# Year when destructive economy reaches 25% of GDP (historical instability threshold)
+# Solve: 0.115 * (1 + g_destruct - g_gdp)^n = 0.25
+# n = ln(0.25/0.115) / ln(1 + 0.126 - 0.025)
+_ratio_growth = _destructive_growth - 0.025  # net growth of ratio
+_years_to_25pct = _math.log(0.25 / 0.115) / _math.log(1 + _ratio_growth)
+_years_to_50pct = _math.log(0.50 / 0.115) / _math.log(1 + _ratio_growth)
+
+DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP = Parameter(
+    round(_years_to_25pct),
+    source_type="calculated",
+    description="Years until the destructive economy (military + cybercrime) reaches 25% of GDP "
+                "at current growth rates. Historical precedent suggests societies become unstable "
+                "when extraction rates exceed 20-30% of economic output.",
+    display_name="Years Until Destructive Economy Reaches 25% of GDP",
+    unit="years",
+    formula="ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    latex=r"n_{25\%} = \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
+    keywords=["destructive", "economy", "timeline", "threshold", "instability"],
+    inputs=["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_CYBERCRIME_CAGR", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE", "GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025", "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"],
+    compute=lambda ctx: round(
+        _math.log(0.25 / (ctx["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP"]))
+        / _math.log(1 + (
+            (ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]
+            + (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_CYBERCRIME_CAGR"]
+        ) - ctx["GDP_BASELINE_GROWTH_RATE"])
+    ),
+    latex_symbol=r"n_{25\%}",
+)
+
+DESTRUCTIVE_ECONOMY_YEARS_TO_50PCT_GDP = Parameter(
+    round(_years_to_50pct),
+    source_type="calculated",
+    description="Years until the destructive economy (military + cybercrime) reaches 50% of GDP "
+                "at current growth rates. At this point, more economic activity is devoted to "
+                "destruction and extraction than to production.",
+    display_name="Years Until Destructive Economy Reaches 50% of GDP",
+    unit="years",
+    formula="ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    latex=r"n_{50\%} = \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}",
+    keywords=["destructive", "economy", "timeline", "threshold", "crossover"],
+    inputs=["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_CYBERCRIME_CAGR", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE", "GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025", "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"],
+    compute=lambda ctx: round(
+        _math.log(0.50 / (ctx["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP"]))
+        / _math.log(1 + (
+            (ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]
+            + (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_CYBERCRIME_CAGR"]
+        ) - ctx["GDP_BASELINE_GROWTH_RATE"])
+    ),
+    latex_symbol=r"n_{50\%}",
+)
+
 # Value of Statistical Life (VSL)
 VALUE_OF_STATISTICAL_LIFE = Parameter(
     10_000_000,
@@ -1096,6 +1230,60 @@ MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO = Parameter(
     inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
     compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL"],
     latex_symbol=r"Ratio_{mil:gov}",  # LaTeX symbol for equations
+)
+
+# ---
+# CENTRAL BANKS CHAPTER: CUMULATIVE SPENDING & CLINICAL TRIAL YEAR CONVERSIONS
+# These stats appear in 2+ places and/or are calculated from other params.
+# ---
+
+# Cumulative military spending: Fed era (1913-2025)
+# Synthesis: SIPRI 1988-2024 (~$65-72T) + Cold War (~$50-70T) + WWI/WWII/interwar (~$33T)
+CUMULATIVE_MILITARY_SPENDING_FED_ERA = Parameter(
+    170_000_000_000_000,
+    source_ref=ReferenceID.SIPRI_MILEX_2024,
+    source_type="definition",
+    confidence="low",
+    description="Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. "
+                "Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), "
+                "WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.",
+    display_name="Cumulative Military Spending (Fed Era)",
+    unit="USD",
+    distribution="fixed",
+    keywords=["cumulative", "military", "spending", "fed", "century", "total"],
+    latex_symbol=r"Spending_{mil,cum,fed}",
+)
+
+# Cumulative military spending: all recorded history
+CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY = Parameter(
+    180_000_000_000_000,
+    source_ref=ReferenceID.SIPRI_MILEX_2024,
+    source_type="definition",
+    confidence="low",
+    description="Cumulative global military spending across all recorded history in constant 2024 dollars. "
+                "Fed era ($170T) + 19th century ($3T) + pre-1800 GDP-share estimate ($4-20T). "
+                "Range: $150-225T. 75% was spent after 1945.",
+    display_name="Cumulative Military Spending (All History)",
+    unit="USD",
+    distribution="fixed",
+    keywords=["cumulative", "military", "spending", "history", "total", "all time"],
+    latex_symbol=r"Spending_{mil,cum,all}",
+)
+
+# Death toll from money-printed wars (appears 3+ times across chapters)
+MONEY_PRINTER_WAR_DEATHS = Parameter(
+    97_000_000,
+    source_ref=ReferenceID.CRS_WAR_COSTS_2010,
+    source_type="definition",
+    confidence="medium",
+    description="Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), "
+                "Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). "
+                "Mid-range estimates; conservative total exceeds 110M.",
+    display_name="Money-Printer War Deaths",
+    unit="deaths",
+    distribution="fixed",
+    keywords=["war", "deaths", "money printer", "central bank", "total", "receipt"],
+    latex_symbol=r"Deaths_{printer}",
 )
 
 GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL = Parameter(

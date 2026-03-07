@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 512 parameters used in the analysis, organized by type:
+This appendix documents all 522 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 190
-- Calculated values: 219
-- Core definitions: 103
+- External sources (peer-reviewed): 193
+- Calculated values: 223
+- Core definitions: 106
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (219 parameters) • [External Data Sources](#sec-external) (190 parameters) • [Core Definitions](#sec-definitions) (103 parameters)
+[Calculated Values](#sec-calculated) (223 parameters) • [External Data Sources](#sec-external) (193 parameters) • [Core Definitions](#sec-definitions) (106 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -509,6 +509,60 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_total_exploration_years.qmd >}}
+
+:::
+
+### Years Until Destructive Economy Reaches 25% of GDP: 8 years {#sec-destructive_economy_years_to_25pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years until the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.
+
+**Inputs**:
+
+- [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
+- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
+- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+
+$$
+\begin{gathered}
+n_{25\%} \\
+= \frac{\ln(0.25 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### Years Until Destructive Economy Reaches 50% of GDP: 15 years {#sec-destructive_economy_years_to_50pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years until the destructive economy (military + cybercrime) reaches 50% of GDP at current growth rates. At this point, more economic activity is devoted to destruction and extraction than to production.
+
+**Inputs**:
+
+- [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
+- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
+- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+
+$$
+\begin{gathered}
+n_{50\%} \\
+= \frac{\ln(0.50 / r_{destruct:GDP})}{\ln(1 + g_{destruct} - g_{GDP})}
+\end{gathered}
+$$
+
+*✓ High confidence*
 
 :::
 
@@ -5932,6 +5986,62 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_cost_per_life_saved_med_research_annual.qmd >}}
+
+:::
+
+### Global Destructive Economy (2025): $13.2T {#sec-global_destructive_economy_annual_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined annual cost of military spending and cybercrime. The 'destructive economy' that competes with the productive economy.
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5T
+
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### Destructive Economy as % of GDP: 11.5% {#sec-global_destructive_economy_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Destructive economy (military + cybercrime) as percentage of global GDP.
+
+**Inputs**:
+
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+r_{destruct:GDP} \\
+= \frac{Cost_{destruct}}{GDP_{global}} \\
+= \frac{\$13.2T}{\$115T} \\
+= 11.5\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
+*✓ High confidence*
 
 :::
 
@@ -15089,6 +15199,38 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 
 :::
 
+### Cybercrime Cost CAGR: 15% {#sec-global_cybercrime_cagr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Compound annual growth rate of global cybercrime costs. Cybersecurity Ventures: $3T (2015) -> $6T (2021) -> $10.5T (2025). AI-enhanced attacks are accelerating this trend.
+
+**Source**: [@cybercrime-economy-10-5t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Cybercrime Costs (2025): $10.5T {#sec-global_cybercrime_cost_annual_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global cybercrime costs in 2025. Includes data theft, productivity loss, IP theft, fraud. More profitable than global trade of all major illegal drugs combined. If measured as a country, would be the 3rd largest economy after US and China.
+
+**Source**: [@cybercrime-economy-10-5t]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Global Daily Deaths from Disease and Aging: 150 thousand deaths/day {#sec-global_disease_deaths_daily}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -15260,6 +15402,22 @@ Global government medical research spending
 Global military spending in 2024
 
 **Source**: [@global-military-spending]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Military Spending Real CAGR (10-Year): 3.4% {#sec-global_military_spending_real_cagr_10yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Real compound annual growth rate of global military spending over the last decade (2014-2024). SIPRI reports 10 consecutive annual increases, with 2024 up 9.4% in real terms. The 10-year CAGR is approximately 3.4% real.
+
+**Source**: [@sipri-milex-2024]
 
 #### Uncertainty Range
 
@@ -18141,6 +18299,34 @@ Estimated combined market capitalization of concentrated interest opposition (de
 
 :::
 
+### Cumulative Military Spending (All History): $180T {#sec-cumulative_military_spending_all_history}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative global military spending across all recorded history in constant 2024 dollars. Fed era ($170T) + 19th century ($3T) + pre-1800 GDP-share estimate ($4-20T). Range: $150-225T. 75% was spent after 1945.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Cumulative Military Spending (Fed Era): $170T {#sec-cumulative_military_spending_fed_era}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### Days Per Year: 365 {#sec-days_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -18780,6 +18966,20 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 ### Minutes Per Hour: 60 {#sec-minutes_per_hour}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
+
+*Core definition*
+
+:::
+
+### Money-Printer War Deaths: 97 million deaths {#sec-money_printer_war_deaths}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). Mid-range estimates; conservative total exceeds 110M.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

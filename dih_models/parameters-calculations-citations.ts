@@ -765,6 +765,26 @@ export const GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL: Parameter = {
   stdError: 10000000000.0,
 };
 
+export const GLOBAL_CYBERCRIME_CAGR: Parameter = {
+  value: 0.15,
+  unit: "percent",
+  displayName: "Cybercrime Cost CAGR",
+  description: "Compound annual growth rate of global cybercrime costs. Cybersecurity Ventures: $3T (2015) -> $6T (2021) -> $10.5T (2025). AI-enhanced attacks are accelerating this trend.",
+  sourceType: "external",
+  sourceRef: "cybercrime-economy-10-5t",
+  confidence: "high",
+};
+
+export const GLOBAL_CYBERCRIME_COST_ANNUAL_2025: Parameter = {
+  value: 10500000000000.0,
+  unit: "USD",
+  displayName: "Global Cybercrime Costs (2025)",
+  description: "Projected global cybercrime costs in 2025. Includes data theft, productivity loss, IP theft, fraud. More profitable than global trade of all major illegal drugs combined. If measured as a country, would be the 3rd largest economy after US and China.",
+  sourceType: "external",
+  sourceRef: "cybercrime-economy-10-5t",
+  confidence: "high",
+};
+
 export const GLOBAL_DISEASE_DEATHS_DAILY: Parameter = {
   value: 150000.0,
   unit: "deaths/day",
@@ -861,6 +881,16 @@ export const GLOBAL_MILITARY_SPENDING_ANNUAL_2024: Parameter = {
   description: "Global military spending in 2024",
   sourceType: "external",
   sourceRef: "global-military-spending",
+  confidence: "high",
+};
+
+export const GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR: Parameter = {
+  value: 0.034,
+  unit: "percent",
+  displayName: "Military Spending Real CAGR (10-Year)",
+  description: "Real compound annual growth rate of global military spending over the last decade (2014-2024). SIPRI reports 10 consecutive annual increases, with 2024 up 9.4% in real terms. The 10-year CAGR is approximately 3.4% real.",
+  sourceType: "external",
+  sourceRef: "sipri-milex-2024",
   confidence: "high",
 };
 
@@ -2251,6 +2281,28 @@ export const CURRENT_TOTAL_EXPLORATION_YEARS: Parameter = {
   latex: "\\begin{gathered}\nT_{explore,total} = \\frac{N_{testable}}{Trials_{ann,curr}} = \\frac{51.5M}{3{,}300} = 15{,}600\n\\\\[0.5em]\n\\text{where } N_{testable} = N_{combos} + N_{emerging} = 9.5M + 42M = 51.5M\n\\\\[0.5em]\n\\text{where } N_{combos} = N_{safe} \\times N_{diseases,trial} = 9{,}500 \\times 1{,}000 = 9.5M\n\\\\[0.5em]\n\\text{where } N_{emerging} = Combos_{gene} + Combos_{mRNA} + Combos_{epi} + Combos_{cell} = 20M + 20M + 1.5M + 500{,}000 = 42M\n\\\\[0.5em]\n\\text{where } Combos_{gene} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{mRNA} = N_{genes} \\times N_{diseases,trial} = 20{,}000 \\times 1{,}000 = 20M\n\\\\[0.5em]\n\\text{where } Combos_{epi} = N_{epi} \\times N_{diseases,trial} = 1{,}500 \\times 1{,}000 = 1.5M\n\\\\[0.5em]\n\\text{where } Combos_{cell} = N_{cell} \\times N_{diseases,trial} = 500 \\times 1{,}000 = 500{,}000\n\\end{gathered}",
 };
 
+export const DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP: Parameter = {
+  value: 8.0,
+  unit: "years",
+  displayName: "Years Until Destructive Economy Reaches 25% of GDP",
+  description: "Years until the destructive economy (military + cybercrime) reaches 25% of GDP at current growth rates. Historical precedent suggests societies become unstable when extraction rates exceed 20-30% of economic output.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+  latex: "\\begin{gathered}\nn_{25\\%} \\\\\n= \\frac{\\ln(0.25 / r_{destruct:GDP})}{\\ln(1 + g_{destruct} - g_{GDP})}\n\\end{gathered}",
+};
+
+export const DESTRUCTIVE_ECONOMY_YEARS_TO_50PCT_GDP: Parameter = {
+  value: 15.0,
+  unit: "years",
+  displayName: "Years Until Destructive Economy Reaches 50% of GDP",
+  description: "Years until the destructive economy (military + cybercrime) reaches 50% of GDP at current growth rates. At this point, more economic activity is devoted to destruction and extraction than to production.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+  latex: "\\begin{gathered}\nn_{50\\%} \\\\\n= \\frac{\\ln(0.50 / r_{destruct:GDP})}{\\ln(1 + g_{destruct} - g_{GDP})}\n\\end{gathered}",
+};
+
 export const DFDA_ANNUAL_OPEX: Parameter = {
   value: 40000000.0,
   unit: "USD/year",
@@ -3178,6 +3230,28 @@ export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   confidence: "high",
   formula: "(RESEARCH_SPENDING × 1B) ÷ LIVES_SAVED",
   latex: "\\begin{gathered}\nCost_{life,RD} \\\\\n= \\frac{Spending_{RD}}{Lives_{RD,ann}} \\\\\n= \\frac{\\$67.5B}{4.2M} \\\\\n= \\$16.1K\n\\end{gathered}",
+};
+
+export const GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025: Parameter = {
+  value: 13220000000000.0,
+  unit: "USD",
+  displayName: "Global Destructive Economy (2025)",
+  description: "Combined annual cost of military spending and cybercrime. The 'destructive economy' that competes with the productive economy.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_MILITARY_SPENDING_ANNUAL_2024 + GLOBAL_CYBERCRIME_COST_ANNUAL_2025",
+  latex: "\\begin{gathered}\nCost_{destruct} \\\\\n= Spending_{mil} + Cost_{cyber} \\\\\n= \\$2.72T + \\$10.5T \\\\\n= \\$13.2T\n\\end{gathered}",
+};
+
+export const GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP: Parameter = {
+  value: 0.11495652173913043,
+  unit: "percent",
+  displayName: "Destructive Economy as % of GDP",
+  description: "Destructive economy (military + cybercrime) as percentage of global GDP.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 / GLOBAL_GDP_2025",
+  latex: "\\begin{gathered}\nr_{destruct:GDP} = \\frac{Cost_{destruct}}{GDP_{global}} = \\frac{\\$13.2T}{\\$115T} = 11.5\\%\n\\\\[0.5em]\n\\text{where } Cost_{destruct} = Spending_{mil} + Cost_{cyber} = \\$2.72T + \\$10.5T = \\$13.2T\n\\end{gathered}",
 };
 
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
@@ -4904,6 +4978,26 @@ export const CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD: Parameter = {
   confidence: "high",
 };
 
+export const CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY: Parameter = {
+  value: 180000000000000.0,
+  unit: "USD",
+  displayName: "Cumulative Military Spending (All History)",
+  description: "Cumulative global military spending across all recorded history in constant 2024 dollars. Fed era ($170T) + 19th century ($3T) + pre-1800 GDP-share estimate ($4-20T). Range: $150-225T. 75% was spent after 1945.",
+  sourceType: "definition",
+  sourceRef: "sipri-milex-2024",
+  confidence: "low",
+};
+
+export const CUMULATIVE_MILITARY_SPENDING_FED_ERA: Parameter = {
+  value: 170000000000000.0,
+  unit: "USD",
+  displayName: "Cumulative Military Spending (Fed Era)",
+  description: "Cumulative global military spending since 1913 (Fed era) in constant 2024 dollars. Built from: SIPRI 1988-2024 ($65-72T), Cold War 1946-1987 ($50-70T reconstructed), WWI+WWII+interwar ($33T from Harrison). Range: $150-190T.",
+  sourceType: "definition",
+  sourceRef: "sipri-milex-2024",
+  confidence: "low",
+};
+
 export const DAYS_PER_YEAR: Parameter = {
   value: 365.0,
 };
@@ -5262,6 +5356,16 @@ export const MINUTES_PER_HOUR: Parameter = {
   value: 60.0,
 };
 
+export const MONEY_PRINTER_WAR_DEATHS: Parameter = {
+  value: 97000000.0,
+  unit: "deaths",
+  displayName: "Money-Printer War Deaths",
+  description: "Cumulative deaths from 6 wars funded by money printing: Napoleonic (5M), Civil War (750K), WWI (20M), WWII (60M), Korea (3M), Vietnam (3M), post-9/11 (4.5M). Mid-range estimates; conservative total exceeds 110M.",
+  sourceType: "definition",
+  sourceRef: "crs-war-costs-2010",
+  confidence: "medium",
+};
+
 export const MONTHS_PER_YEAR: Parameter = {
   value: 12.0,
 };
@@ -5613,6 +5717,8 @@ export const parameters = {
   GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS,
   GLOBAL_CHRONIC_THERAPY_DAYS_ANNUAL,
   GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL,
+  GLOBAL_CYBERCRIME_CAGR,
+  GLOBAL_CYBERCRIME_COST_ANNUAL_2025,
   GLOBAL_DISEASE_DEATHS_DAILY,
   GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL,
   GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL,
@@ -5622,6 +5728,7 @@ export const parameters = {
   GLOBAL_LIFE_EXPECTANCY_2024,
   GLOBAL_MED_RESEARCH_SPENDING,
   GLOBAL_MILITARY_SPENDING_ANNUAL_2024,
+  GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR,
   GLOBAL_NONPROFIT_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_PHARMA_RD_SPENDING_ANNUAL,
   GLOBAL_POPULATION_2024,
@@ -5749,6 +5856,8 @@ export const parameters = {
   CURRENT_KNOWN_SAFE_EXPLORATION_YEARS,
   CURRENT_PATIENT_PARTICIPATION_RATE,
   CURRENT_TOTAL_EXPLORATION_YEARS,
+  DESTRUCTIVE_ECONOMY_YEARS_TO_25PCT_GDP,
+  DESTRUCTIVE_ECONOMY_YEARS_TO_50PCT_GDP,
   DFDA_ANNUAL_OPEX,
   DFDA_BENEFIT_RD_ONLY_ANNUAL,
   DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER,
@@ -5833,6 +5942,8 @@ export const parameters = {
   GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL,
   GLOBAL_AVG_INCOME_2025,
   GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL,
+  GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025,
+  GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP,
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
@@ -5991,6 +6102,8 @@ export const parameters = {
   CELL_THERAPY_APPROACHES,
   CHILDHOOD_VACCINATION_COST_PER_DALY,
   CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD,
+  CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY,
+  CUMULATIVE_MILITARY_SPENDING_FED_ERA,
   DAYS_PER_YEAR,
   DCT_PLATFORM_FUNDING_MEDIUM,
   DEFENSE_SECTOR_RETENTION_PCT,
@@ -6030,6 +6143,7 @@ export const parameters = {
   LOBBYIST_BOND_INVESTMENT_MAX,
   MILITARY_REDIRECT_GDP_BOOST_AT_30PCT,
   MINUTES_PER_HOUR,
+  MONEY_PRINTER_WAR_DEATHS,
   MONTHS_PER_YEAR,
   NPV_DISCOUNT_RATE_STANDARD,
   NPV_TIME_HORIZON_YEARS,
@@ -6322,6 +6436,21 @@ export const citations: Record<string, Citation> = {
         URL: "https://clinicaltrials.gov/data-api/api",
         note: "Direct analysis via ClinicalTrials.gov API v2",
   },
+  "crs-war-costs-2010": {
+        id: "crs-war-costs-2010",
+        type: "webpage",
+        title: "Costs of Major U.S. Wars",
+        author: [
+          {
+            family: "Daggett",
+            given: "Stephen"
+          },
+        ],
+        issued: { 'date-parts': [[2010]] },
+        publisher: "Congressional Research Service",
+        URL: "https://sgp.fas.org/crs/natsec/RS22926.pdf",
+        note: "CRS Report RS22926. Costs in FY2011 constant dollars: Civil War (both sides) \\$80B, WWI \\$334B, WWII \\$4,104B, Korea \\$341B, Vietnam \\$738B. Military operations only; excludes veterans benefits, interest, and allied assistance.",
+  },
   "cs-global-wealth-report-2023": {
         id: "cs-global-wealth-report-2023",
         type: "article-journal",
@@ -6335,6 +6464,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Credit Suisse/UBS",
         URL: "https://www.ubs.com/global/en/family-office-uhnw/reports/global-wealth-report-2023.html",
         note: "Credit Suisse/UBS, 2023, Global Wealth Report 2023",
+  },
+  "cybercrime-economy-10-5t": {
+        id: "cybercrime-economy-10-5t",
+        type: "article-journal",
+        title: "Cybercrime economy projected to reach \\$10.5 trillion",
+        author: [
+          {
+            literal: "Cybersecurity Ventures"
+          },
+        ],
+        issued: { 'date-parts': [[2016]] },
+        'container-title': "Cybersecurity Ventures: \\$10.5T Cybercrime",
+        URL: "<https://cybersecurityventures.com/hackerpocalypse-cybercrime-report-2016/>",
+        note: "Cybersecurity Ventures: \\$10.5T Cybercrime | Boise State: Cybercrime Costs",
   },
   "deworming-cost-per-daly": {
         id: "deworming-cost-per-daly",
@@ -7487,6 +7630,19 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2024]] },
         URL: "https://www.911memorial.org/911-faqs",
   },
+  "sipri-milex-2024": {
+        id: "sipri-milex-2024",
+        type: "webpage",
+        title: "Trends in World Military Expenditure, 2024",
+        author: [
+          {
+            literal: "Stockholm International Peace Research Institute"
+          },
+        ],
+        issued: { 'date-parts': [[2025]] },
+        URL: "https://www.sipri.org/publications/2025/sipri-fact-sheets/trends-world-military-expenditure-2024",
+        note: "World military expenditure reached \\$2,718 billion in 2024, an increase of 9.4% in real terms from 2023, the steepest year-on-year rise since at least the end of the cold war. The 10th consecutive annual increase. Global military burden rose to 2.5% of GDP. NATO members spent \\$1.506 trillion (55% of world total). US spent \\$968 billion.",
+  },
   "sipri2024": {
         id: "sipri2024",
         type: "webpage",
@@ -7903,11 +8059,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 512,
-  external: 190,
-  calculated: 219,
-  definitions: 103,
-  citations: 135,
+  total: 522,
+  external: 193,
+  calculated: 223,
+  definitions: 106,
+  citations: 138,
 } as const;
 
 // ============================================================================
