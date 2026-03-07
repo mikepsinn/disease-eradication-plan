@@ -1,6 +1,6 @@
 ---
 title: A Decentralized FDA
-description: It costs $41,000 per patient to test a drug. Oxford proved you can do it for $500. This framework lets every patient on Earth join clinical trials, cuts costs over 40x, and turns medical records into the largest drug-testing dataset in history. The only losers are the diseases.
+description: On Wishonia, you type in what's wrong with you, see what worked for everyone else, and try it. The outcomes get recorded automatically. We've had this for millennia. Your decentralized FDA is the same thing, built with technology you already have. It's an open protocol that connects treatments to patients, records what actually happens, and publishes the results. Consumer Reports, but for not dying. It cuts trial costs from {{< var traditional_phase3_cost_per_patient >}} to {{< var dfda_pragmatic_trial_cost_per_patient >}}, expands capacity from {{< var current_trial_slots_available >}} to {{< var dih_patients_fundable_annually >}}, and replaces your 40-page drug inserts with Outcome Labels that tell you what actually happened to real humans who took the pill.
 published: true
 tags:
   - overview

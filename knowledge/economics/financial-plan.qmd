@@ -1,6 +1,6 @@
 ---
 title: Financial Plan
-description: Invest $1B. Pass a treaty. Manage $27.2B/year forever. 80% cures diseases, 10% pays investors, 10% keeps politicians obedient. Three pillars, no committees, no generosity required.
+description: Most financial plans are complicated because the writers are confused or lying. This one has three steps. Raise {{< var treaty_campaign_total_cost >}} (using greed, not generosity, because greed is faster). Spend it to pass the treaty. Manage {{< var treaty_annual_funding >}} a year forever, with {{< var dih_treasury_medical_research_pct >}} curing diseases, {{< var victory_bond_funding_pct >}} paying investors, and {{< var iab_political_incentive_funding_pct >}} keeping politicians obedient. The corruption is capped at 20% and fully transparent, which already makes it the most honest government program in your country's history.
 published: true
 tags:
   - finance
