@@ -72,6 +72,9 @@ def _env_flag(name: str, default: bool = False) -> bool:
 
 # Per-chapter sync defaults to concise mode to avoid log spam.
 SYNC_VERBOSE = _env_flag("AUDIOBOOK_SYNC_VERBOSE", False)
+# Per-chunk TTS start/done logs are noisy under parallel workers; keep compact by default.
+TTS_CHUNK_VERBOSE = _env_flag("AUDIOBOOK_TTS_CHUNK_VERBOSE", False)
+TTS_PROGRESS_INTERVAL_S = 5.0
 
 # Silence detection: trim audio chunks with silence longer than this threshold.
 # Gemini TTS occasionally produces WAVs with enormous silent tails (e.g. 10 min).
@@ -97,6 +100,16 @@ def _retry_fs_op(op, label: str = "", retries: int = 8, delay: float = 1.0):
                 time.sleep(delay)
             else:
                 raise
+
+
+def _fmt_elapsed_short(seconds: float) -> str:
+    """Format elapsed seconds as M:SS or H:MM:SS."""
+    total = max(0, int(seconds))
+    h, rem = divmod(total, 3600)
+    m, s = divmod(rem, 60)
+    if h > 0:
+        return f"{h}:{m:02d}:{s:02d}"
+    return f"{m}:{s:02d}"
 
 
 def _detect_silence(audio_path: Path, min_silence_s: float = MAX_SILENCE_SECONDS) -> list[tuple[float, float, float]]:
@@ -455,7 +468,9 @@ def generate_chapter_audio(
             idx, cf, out_path = item
             chunk_text = cf.read_text(encoding='utf-8')
             label = f"chunk {idx+1}/{len(chunk_files)}"
-            print(f"    [{label}] Starting ({len(chunk_text):,} chars)")
+            if TTS_CHUNK_VERBOSE:
+                print(f"    [{label}] Starting ({len(chunk_text):,} chars)")
+            start = time.monotonic()
             tts_rate_limiter.acquire()
             generate_speech(text=chunk_text, output_path=out_path, voice_name=voice)
             # Trim silent regions from TTS output (Gemini sometimes produces long silent tails)
@@ -463,18 +478,50 @@ def generate_chapter_audio(
             # Write text hash sidecar so we can detect stale audio later
             text_hash = hashlib.sha256(chunk_text.encode('utf-8')).hexdigest()[:16]
             out_path.with_suffix('.texthash').write_text(text_hash, encoding='utf-8')
-            print(f"    [{label}] Done")
-            return idx
+            elapsed = time.monotonic() - start
+            if TTS_CHUNK_VERBOSE:
+                print(f"    [{label}] Done")
+            return idx, len(chunk_text), elapsed
 
         workers = min(TTS_PARALLEL_WORKERS, len(work_items))
         print(f"  Generating {len(work_items)} audio chunks ({workers} parallel workers)...")
         errors = []
+        completed = 0
+        recent_done: list[int] = []
+        generation_start = time.monotonic()
+        last_progress = generation_start
+        total_to_generate = len(work_items)
+        cached_chunks = len(chunk_files) - total_to_generate
         with ThreadPoolExecutor(max_workers=workers) as executor:
             futures = {executor.submit(_generate_one, item): item for item in work_items}
             for future in as_completed(futures):
                 item = futures[future]
                 try:
-                    future.result()
+                    idx, _, _ = future.result()
+                    completed += 1
+                    recent_done.append(idx + 1)
+                    if len(recent_done) > 3:
+                        recent_done.pop(0)
+                    now = time.monotonic()
+                    if now - last_progress >= TTS_PROGRESS_INTERVAL_S or completed == total_to_generate:
+                        elapsed = now - generation_start
+                        rate = completed / elapsed if elapsed > 0 else 0.0
+                        remaining = total_to_generate - completed
+                        eta = remaining / rate if rate > 0 else 0.0
+                        pct = (completed / total_to_generate * 100) if total_to_generate else 100.0
+                        chapter_ready = cached_chunks + completed
+                        chunks_per_min = rate * 60.0
+                        avg_chunk_s = elapsed / completed if completed else 0.0
+                        recent = ",".join(f"{n:02d}" for n in recent_done) if recent_done else "-"
+                        print(
+                            f"    [TTS PROGRESS] chunks done={completed}/{total_to_generate} "
+                            f"({pct:.0f}%) chapter-ready={chapter_ready}/{len(chunk_files)} "
+                            f"elapsed={_fmt_elapsed_short(elapsed)} "
+                            f"eta={_fmt_elapsed_short(eta)} "
+                            f"throughput={chunks_per_min:.1f}/min avg={avg_chunk_s:.1f}s/chunk "
+                            f"recent={recent}"
+                        )
+                        last_progress = now
                 except Exception as e:
                     errors.append(f"chunk {item[0]+1}: {e}")
                     print(f"    [ERROR] Failed on chunk {item[0]+1}: {e}")

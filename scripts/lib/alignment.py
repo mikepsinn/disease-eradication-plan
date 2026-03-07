@@ -10,6 +10,7 @@ callers catch and skip/fallback.
 """
 import json
 import re
+import sys
 from pathlib import Path
 
 
@@ -46,7 +47,18 @@ def align_chapter(
 
     print(f"  Aligning audio to text ({model_name} model)...")
     model = stable_whisper.load_model(model_name)
-    result = model.align(str(wav_path), source_text, language="en")  # pyright: ignore[reportCallIssue]
+    # stable-ts verbose semantics:
+    #   True  -> detailed text output
+    #   False -> tqdm progress bar
+    #   None  -> no progress output
+    # In piped/non-interactive logs, tqdm emits many lines, so suppress it.
+    align_verbose: bool | None = False if sys.stdout.isatty() else None
+    result = model.align(  # pyright: ignore[reportCallIssue]
+        str(wav_path),
+        source_text,
+        language="en",
+        verbose=align_verbose,
+    )
 
     # Extract word-level data from stable-ts result
     raw_words = []

@@ -198,7 +198,9 @@ The delay harm totals {{< var dfda_efficacy_lag_elimination_dalys >}}.
 
 ## Clinical Trial Theater: Excluding {{< var antidepressant_trial_exclusion_rate >}} of Reality Makes Drugs More Dangerous
 
-The FDA requires rigorous trials to ensure safety. Then it tests the drugs on people who aren't sick, aren't old, aren't on other drugs, and aren't pregnant. I read this three times. They test the drugs on people who don't need the drugs, to find out if the drugs are safe for people who do need the drugs, who are different people, with different bodies, taking different medications. Then they act surprised when the second group has a reaction. I would call this stupid but I think it might actually be something worse than stupid. Stupid doesn't usually have a peer-review process.
+To be clear: Phase I safety testing should exclude vulnerable populations. You don't give an untested molecule to a pregnant woman. But once a drug clears safety, the efficacy trials that follow *also* exclude those populations, which means nobody learns whether the drug works for the people who will actually take it, or what interactions to expect. Then the drug is approved for everyone, and the post-market surveillance system (FAERS) catches less than 10% of adverse events. So the exclusions create a data gap, and nothing ever fills it.
+
+The FDA requires rigorous safety trials. Good. Then it runs efficacy trials on people who aren't sick, aren't old, aren't on other drugs, and aren't pregnant. I read this three times. They test whether drugs work on people who don't need the drugs, to predict whether they'll work for people who do need the drugs, who are different people, with different bodies, taking different medications. Then they act surprised when the second group has a reaction. I would call this stupid but I think it might actually be something worse than stupid. Stupid doesn't usually have a peer-review process.
 
 ![They test drugs on healthy people, then give them to sick people. It's like testing a ladder on Olympic gymnasts, then selling it to your grandmother.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-clinical-trial-theater-excluding-86-1-of-reality-makes-drugs-bw-academic.jpg)
 
@@ -213,11 +215,11 @@ Trials under the current system exclude [@antidepressant-trial-exclusion-rates]:
 
 It's like testing whether a car is safe by driving it very slowly into a nice cushion, and then selling it to people who drive into walls. And when they die you say "well, it was safe when WE tried it." Which is true. It was.
 
-**Result:** In antidepressant trials alone, {{< var antidepressant_trial_exclusion_rate >}} of real patients are excluded. The drugs are tested on the healthiest people alive, declared "safe," then handed to everyone the trial specifically avoided. This is how Vioxx, Fen-Phen, and Bextra all got approved, celebrated, prescribed to millions, and then withdrawn after killing people whose demographics the trials had carefully excluded. The {{< var efficacy_lag_years >}} delay didn't make these drugs safer. It made them seem safer by hiding the danger behind an exclusion list.
+**Result:** In antidepressant trials alone, {{< var antidepressant_trial_exclusion_rate >}} of real patients are excluded. The drugs are tested on the healthiest people alive, declared "safe and effective," then handed to everyone the trial specifically avoided. Nobody knows whether the drug works for those populations, what the interactions are, or what the real adverse event profile looks like. This is how Vioxx, Fen-Phen, and Bextra all got approved, celebrated, prescribed to millions, and then withdrawn after killing people whose demographics the trials had carefully excluded. The {{< var efficacy_lag_years >}} delay didn't make these drugs safer. It made them seem safer by hiding the danger behind an exclusion list.
 
 ![Drugs tested on healthy 25-year-olds. Prescribed to 80-year-olds on twelve medications. The system did not anticipate this would be a problem.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-why-this-makes-drugs-more-dangerous-bw-academic.jpg)
 
-Testing drugs only on healthy volunteers to ensure safety is like testing parachutes only on the ground. The parachute worked perfectly, by the way. It just wasn't falling at the time.
+Testing drugs only on unrepresentative volunteers to prove they work is like testing parachutes only on the ground. The parachute worked perfectly, by the way. It just wasn't falling at the time.
 
 ### No Long-Term Outcome Data
 
@@ -237,7 +239,21 @@ In 2007, Dendreon showed that its immunotherapy drug Provenge significantly redu
 
 "People stopped dying" wasn't good enough. The paperwork predicting that people would stop dying wasn't filed in the right order. Three more years and another trial were required. During those three years, people who could have stopped dying continued dying, but at least the forms were correct. On Wishonia, we have a saying: "The gravestone was filed on time." It means someone prioritized procedure over the thing the procedure was supposed to protect. We retired the saying because it kept applying to too many situations. You could use it daily.
 
-Due to these additional costs, Dendreon filed for chapter 11 bankruptcy [@filed-for-chapter-11-bankruptcy]. So the approval process killed the patients, then killed the company trying to save them. You have a phrase for this: "killing two birds with one stone." Although in this case the stone was paperwork and there were considerably more than two birds. But you can't count the people who would have been cured by a company you bankrupted. They just died of cancer, like normal. Nothing to see.
+Due to these additional costs, Dendreon filed for chapter 11 bankruptcy [@filed-for-chapter-11-bankruptcy]. So the approval process killed the patients, then killed the company trying to save them. You have a phrase for this: "killing two birds with one stone." Although in this case the stone was paperwork and there were considerably more than two birds. But you can't count the dead birds who would have been cured by a company you bankrupted.
+
+### The Blinding Catch-22: How Knowing a Drug Works Proves It Doesn't
+
+MDMA was synthesized in 1912 [@mdma-synthesis-1912]. By the 1970s, therapists were using it to treat trauma, and an estimated half a million doses were administered in therapeutic settings [@mdma-therapeutic-history]. In 1985, the government scheduled it. In 1986, Rick Doblin founded MAPS to get it approved for PTSD [@maps-founded-1986]. Thirty-eight years and over $140 million in philanthropic funding later, they ran two successful Phase 3 trials. 67% of participants no longer met the diagnostic criteria for PTSD [@mdma-phase3-mapp2]. The drug worked. Veterans with treatment-resistant PTSD got better. The FDA's own advisory committee reviewed the data.
+
+They voted 9-2 that it wasn't effective [@fda-mdma-advisory-vote-2024].
+
+The problem: patients could tell they'd taken MDMA, because MDMA makes you feel things, which is how it treats PTSD, which is the point. About 90% of participants in the drug group correctly guessed they weren't on placebo. The FDA called this "functional unblinding" and said it invalidated the results [@fda-mdma-rejection-2024].
+
+I want to make sure I understand the logic. The drug works by making you feel profoundly different. The FDA requires that you not know whether you feel profoundly different. If you notice that you feel profoundly different, the trial fails, because you weren't supposed to notice. The drug's mechanism of action is, itself, a protocol violation.
+
+This is not a fixable design problem. You cannot double-blind a drug whose therapeutic effect is that the patient feels it working. The FDA knows this. They granted MDMA "Breakthrough Therapy Designation" in 2017, signaling that yes, this looks promising, please spend another seven years and tens of millions of dollars on Phase 3 trials. Then they rejected it for a property of the molecule that was evident before the trials began. On Wishonia, if you tell someone to build a house and then condemn it for having walls, you owe them a house. Here, you owe them nothing. The veterans kept their PTSD. The FDA kept its process. Everyone kept exactly what they had, which was the problem in the first place.
+
+Meanwhile, approximately 6,400 veterans kill themselves every year [@veteran-suicide-2022], at twice the rate of civilians. Many of them have PTSD. A molecule that has existed for 112 years, been used therapeutically for 50, and produced a 67% remission rate in controlled trials is sitting in regulatory limbo because the people it helped could tell it was helping them. I looked for the word that describes letting thousands of people kill themselves while a known-effective treatment waits for someone to solve an unsolvable blinding problem, and the closest I found was "process."
 
 ### Small Trials Are Dangerous
 
@@ -286,8 +302,7 @@ Americans fly there for treatment.
 I asked the FDA what might go wrong and they said "the patient could die." The patient is already dying. "Yes," they said, "but they could die differently." I waited for the rest of the sentence but that was it.
 
 **Right to Try (US)** [@right-to-try-act-2018] passed despite FDA opposition.
-The FDA made it effectively impossible to use.
-Patients helped: <200 total [@right-to-try-act-outcomes].
+The FDA made it effectively impossible to use. The law says you can *ask* a manufacturer for their experimental drug. The manufacturer can say no. They almost always say no, because the law provides no liability protection, no funding mechanism, and no insurance coverage. So "Right to Try" means "Right to Ask a Corporation for a Favor While Dying." Corporations said no. Patients helped: <200 total [@right-to-try-act-outcomes].
 Patients who wanted help: tens of thousands.
 On Wishonia, "Right to Try" is just called "rights." The fact that your species needed a special law to allow dying people to take known-safe drugs, and then made the law effectively unusable, is the most human thing I've ever observed. You named it "Right to Try." The name was accurate, which was so unusual for your species that it should have been suspicious. And it was: the law doesn't work. The naming convention holds.
 
