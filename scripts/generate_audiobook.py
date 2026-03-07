@@ -650,6 +650,44 @@ def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int,
     print(f"  [OK] Updated manifest: {manifest_path.relative_to(PROJECT_ROOT)}")
 
 
+def build_chapter_timestamps(chapters: list[dict], paths: AudiobookPaths | None = None,
+                             gap_ms: int = 2000) -> tuple[list[ChapterTimestamp], int]:
+    """Build timeline timestamps from per-chapter WAV files in config order.
+
+    This is used to keep manifest timing fields fresh even when --no-combine
+    skips the full combined audiobook packaging step.
+    """
+    timestamps: list[ChapterTimestamp] = []
+    current_position_ms = 0
+
+    for ch in chapters:
+        audio_path = find_chapter_audio(ch, paths=paths)
+        if not audio_path:
+            continue
+
+        # Match combine_chapter_audio timeline semantics (2s between chapters).
+        if timestamps:
+            current_position_ms += gap_ms
+
+        duration_ms = _get_wav_duration_ms(audio_path)
+        start_ms = current_position_ms
+        end_ms = start_ms + duration_ms
+
+        timestamps.append(ChapterTimestamp(
+            index=ch['index'],
+            title=ch['title'],
+            part=ch.get('part'),
+            file=audio_path.name,
+            start_ms=start_ms,
+            end_ms=end_ms,
+            duration_ms=duration_ms,
+            duration_formatted=format_duration(duration_ms),
+        ))
+        current_position_ms = end_ms
+
+    return timestamps, current_position_ms
+
+
 def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict,
             chapters: list[dict] | None = None, paths: AudiobookPaths | None = None):
     """Embed ID3v2.4 tags with chapter markers, cover art, and per-chapter podcast images into the combined MP3."""
@@ -1688,6 +1726,7 @@ def main():
         "Alignment + subtitles": 0.0,
         "MP3 export + wrapping": 0.0,
         "Combine audiobook": 0.0,
+        "Manifest timing refresh": 0.0,
         "Podcast RSS feed": 0.0,
     }
 
@@ -1768,18 +1807,33 @@ def main():
 
     # Combine into single audiobook (optional, off by default)
     t_sub = time.monotonic()
+    manifest_timestamps: list[ChapterTimestamp] = []
+    manifest_source = "chapter WAVs"
     if not args.no_combine:
         chapters_with_audio = [ch for ch in all_chapters if find_chapter_audio(ch, paths=paths)]
         if len(chapters_with_audio) > 1:
             combined_path = paths.root / f"{safe_filename(book_meta['title'], max_len=80)}-Audiobook"
-            mp3_path, timestamps = combine_chapter_audio(all_chapters, combined_path, paths=paths)
-
-            total_duration_ms = sum(ts['duration_ms'] for ts in timestamps)
-
-            update_manifest(timestamps, total_duration_ms, chapters=all_chapters, paths=paths)
-            tag_mp3(mp3_path, timestamps, book_meta, chapters=all_chapters, paths=paths)
-            export_m4b(mp3_path, timestamps, book_meta)
+            mp3_path, manifest_timestamps = combine_chapter_audio(all_chapters, combined_path, paths=paths)
+            manifest_source = "combined timeline"
+            tag_mp3(mp3_path, manifest_timestamps, book_meta, chapters=all_chapters, paths=paths)
+            export_m4b(mp3_path, manifest_timestamps, book_meta)
+        elif chapters_with_audio:
+            print("  [INFO] Skipping combined audiobook: need at least 2 chapter WAVs")
+        else:
+            print("  [INFO] Skipping combined audiobook: no chapter WAVs found")
     _substep_times["Combine audiobook"] = time.monotonic() - t_sub
+
+    # Refresh manifest timing fields regardless of --no-combine.
+    t_sub = time.monotonic()
+    if not manifest_timestamps:
+        manifest_timestamps, _ = build_chapter_timestamps(all_chapters, paths=paths)
+    if manifest_timestamps:
+        total_duration_ms = manifest_timestamps[-1]['end_ms']
+        print(f"\nRefreshing manifest timing fields from {manifest_source} ({len(manifest_timestamps)} chapters)...")
+        update_manifest(manifest_timestamps, total_duration_ms, chapters=all_chapters, paths=paths)
+    else:
+        print("\n  [WARN] No chapter WAVs found, skipping manifest timing update")
+    _substep_times["Manifest timing refresh"] = time.monotonic() - t_sub
 
     # Generate podcast RSS feed (always, independent of --no-combine)
     t_sub = time.monotonic()

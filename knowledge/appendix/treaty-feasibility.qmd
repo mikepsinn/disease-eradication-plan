@@ -16,7 +16,7 @@ youtube-thumbnail: /assets/podcast/treaty-feasibility-youtube.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 "Getting 195 countries to agree costs billions and takes forever."
 
-No. Getting countries to *implement* things costs billions. Getting them to *sign papers* is surprisingly cheap. Humans love signing papers. It makes them feel important. Your entire diplomatic system runs on the principle that writing your name on a document feels like accomplishing something. Sometimes it is. Usually it isn't. But the signing part is always affordable.
+No. Getting countries to *implement* things costs billions. Getting them to *sign papers* is surprisingly cheap. Your entire diplomatic system runs on the principle that writing your name on a document feels like accomplishing something (it doesn't, but it's affordable).
 
 ## What Treaties Actually Cost
 
@@ -26,7 +26,7 @@ The **Ottawa Treaty** [@icbl-ottawa-treaty] banning landmines took 14 months. On
 
 The **Cluster Munitions Convention** [@cluster-munitions-convention-2008] took about two years. Seven governments and a coalition of NGOs got 94 states to sign. The **Arms Trade Treaty** [@arms-trade-treaty-2013] took a decade but started with three supporting governments. The Control Arms coalition [@control-arms-coalition] published 50+ reports until 130 countries signed. The **Nuclear Ban Treaty** [@ican-nuclear-ban-treaty] also took a decade. ICAN ran the entire operation with five staff in a Geneva office. 122 states voted yes. Another Nobel Prize. Five people in a Geneva office won a Nobel Prize. You have more people in your accounting department.
 
-**Pattern**: Total to get a treaty signed: **$15-50M**. Your species spends more than that on Super Bowl ads for beer. Beer. The thing that makes you temporarily stupider. You will spend more money selling stupidity beverages during one sporting event than it costs to get 122 countries to agree on anything. I've been watching your species for 80 years and the budget comparisons still surprise me.
+**Pattern**: Total to get a treaty signed: **$15-50M**. Your species spends more than that on Super Bowl ads for beer (the thing that makes you temporarily stupider). You will pay more to sell stupidity beverages during one sporting event than it costs to get 122 countries to agree on anything.
 
 ### Inflation-Adjusted to 2024 Dollars
 
@@ -39,7 +39,7 @@ Using BLS CPI data [@bls-cpi-inflation-calculator]:
 | Arms Trade Treaty (2013) | $20-30M | **$27-41M** | ~1.35x |
 | Nuclear Ban (2017) | $10-20M | **$13-25M** | ~1.25x |
 
-**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD). Banning landmines: ~$40M to get the signatures, $5B+ to actually dig them up [@icbl-ottawa-treaty]. The paperwork is the cheap part. The paperwork is always the cheap part. The expensive part is doing the thing you wrote on the paperwork, which your species often skips (see: every New Year's resolution in history).
+**In today's money**: Treaty campaigns cost roughly **$25-50M** (2024 USD). Banning landmines: ~$40M to get the signatures, $5B+ to actually dig them up [@icbl-ottawa-treaty]. The paperwork is always the cheap part. The expensive part is doing the thing you wrote on the paperwork (your species often skips this part).
 
 ## Cost for a 1% Health Treaty
 
@@ -63,13 +63,15 @@ Signing the treaty: ~$83M.
 What the treaty unlocks: {{< var treaty_annual_funding >}}/year.
 Forever.
 
-That's over 300:1 return on paperwork. If paperwork were a stock, this would be the best-performing stock in the history of your financial markets. It isn't a stock. It's a treaty. But the return is real, which is more than your financial markets can say about most of their stocks.
+That's over 300:1 return on paperwork. Your best-performing stocks don't do that. This isn't a stock. It's a treaty. But the return is real (which is more than most stocks can say).
 
 ## How to Make Governments Sign Things
 
 Politicians move when they see voters demanding it and political cover to do it. Give them both.
 
-First, prove public demand. Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. Every nonviolent campaign [@3-5-rule] with {{< var global_population_activism_threshold_pct >}}+ participation has succeeded. That's not activism. That's a mandate. Second, prove it's safe. Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness. They won't move without it. But give them the numbers, and they'll move and pretend it was their idea, which is the second most reliable pattern in your species' political history. (The first most reliable pattern is blaming the previous administration.)
+First, prove public demand. Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. Every nonviolent campaign [@3-5-rule] with {{< var global_population_activism_threshold_pct >}}+ participation has succeeded. That's not activism. That's a mandate.
+
+Second, prove it's safe. Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness. Give them the numbers and they'll pretend it was their idea (the second most reliable pattern in your political history, after blaming the previous administration).
 
 ![Get 3.5 percent of people to care, show politicians the math won't break anything, and suddenly they have to listen. Democracy has an override button.](/assets/images/treaty-feasibility/treaty-feasibility-section-how-to-make-governments-sign-things-bw-academic.jpg)
 
@@ -116,13 +118,13 @@ Even at 1% probability of success, this intervention's expected cost per DALY ({
 
 Let's be honest about the obstacles. This is not a chapter written by someone trying to sell you something. (It is. But at least it's honest about the hard parts.)
 
-It touches military budgets, and politicians would rather discuss their browser history than their defense budget. It requires ongoing annual allocation, not a one-time signature like banning a weapon, which makes it a gym membership for peace: monthly, forever, with no option to cancel by simply not going. There's no immediate security threat driving it, unlike NATO spending increases post-Ukraine; hard to motivate governments without an active catastrophe, even though {{< var global_disease_deaths_daily >}} apparently doesn't qualify as one (it doesn't qualify because the deaths are distributed, quiet, and polite, and your species only responds to deaths that are concentrated, loud, and rude). The mechanism is novel: military-to-health reallocation has never been done, and humans are suspicious of things they haven't tried before, which is odd for a species that also invented bungee jumping, cryptocurrency, and putting pineapple on pizza. And it's a coordination problem: benefits require critical mass, nobody wants to go first, and everybody wants to go second, which is a fine strategy for a conga line but not for treaty negotiation.
+It touches military budgets, and politicians would rather discuss their browser history than their defense budget. It requires ongoing annual allocation, not a one-time signature, which makes it a gym membership for peace (monthly, forever, no quitting). There's no immediate security threat driving it; {{< var global_disease_deaths_daily >}} apparently doesn't qualify as a catastrophe because the deaths are distributed, quiet, and polite, and your species only responds to deaths that are concentrated, loud, and rude. The mechanism is novel, and humans are suspicious of things they haven't tried before (odd, for a species that invented bungee jumping). And nobody wants to sign first. Everybody wants to sign second. This is a fine strategy for a conga line.
 
 ### Why a 1% Treaty Might Beat the Odds
 
 ![Five reasons countries might sign: saves money, voters want it, legal precedent exists, morally defensible, and everyone else is doing it.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-a-1-treaty-might-beat-the-odds-bw-academic.jpg)
 
-It's self-funding: the health dividends exceed the "cost," so you make money doing this, which is unusual for moral obligations and also the entire reason it might work, because your species does not do things for moral reasons but does do things for money reasons. It has bipartisan appeal: "Should we cure more diseases?" polls well across every political spectrum, which is one of the only questions that does, alongside "Is water wet?" and "Should we pay Congress less?" It has a referendum pathway that can bypass government resistance through direct democracy, which politicians hate, which is how you know it works. It has visible beneficiaries: {{< var global_disease_deaths_daily >}}, which is hard to argue with even for people who argue professionally. And it has network effects: each signing country makes the next more likely, because peer pressure is humanity's most reliable technology, older than fire, more consistent than gravity, and the reason your teenagers wear the same shoes.
+It's self-funding: the health dividends exceed the "cost," so you make money by doing the right thing, which is the only way your species does the right thing. "Should we cure more diseases?" polls well across every political spectrum, alongside "Is water wet?" and "Should we pay Congress less?" It has a referendum pathway that bypasses government resistance (politicians hate this, which is how you know it works). It has visible beneficiaries: {{< var global_disease_deaths_daily >}}. And each signing country makes the next more likely, because peer pressure is humanity's most reliable technology and the reason your teenagers wear the same shoes.
 
 ### Probability Estimates
 
@@ -145,7 +147,7 @@ At {{< var political_success_probability >}} probability of success, expected RO
 Downside: capped at ~{{< var treaty_campaign_total_cost >}}. You lose the cost of a nice yacht.
 Upside: unbounded. You cure most diseases.
 
-Even assuming a 99% chance of total failure, this beats the gold standard of global health interventions. The asymmetry is the point. The downside is a yacht. The upside is the end of most disease. Your species makes bets with worse odds every day in Las Vegas, except in Las Vegas the upside is a slightly larger pile of papers and the downside is a slightly smaller pile of papers. Here the upside is civilization-altering and the downside is one fewer yacht in the marina. The yacht will be fine. It was going to depreciate anyway.
+Even assuming a 99% chance of total failure, this beats the gold standard of global health interventions. The downside is a yacht. The upside is the end of most disease. Your species makes worse bets every day in Las Vegas, except there the upside is a slightly larger pile of papers. The yacht will be fine. It was going to depreciate anyway.
 
 ## Why The Treaty Won't Stop at 1%
 
@@ -153,7 +155,7 @@ Most international commitments stagnate after signing. You saw the depressing ta
 
 **Because this time, people get paid.**
 
-The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd) allocates {{< var iab_political_incentive_funding_pct >}} of treaty funding ({{< var iab_political_incentive_funding_annual >}}/year at 1%) to [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). These are securities that pay out when treaties *expand*, not just maintain. People get rich when more diseases get cured. Finally, a financial instrument that isn't morally bankrupt. It only took your species 400 years of financial instruments to produce one that doesn't require someone to suffer. Progress.
+The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd) allocates {{< var iab_political_incentive_funding_pct >}} of treaty funding ({{< var iab_political_incentive_funding_annual >}}/year at 1%) to [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd). These are securities that pay out when treaties *expand*, not just maintain. People get rich when more diseases get cured. It only took your species 400 years of financial instruments to produce one that doesn't require someone to suffer (progress).
 
 ### The Expansion Mechanism
 
@@ -166,7 +168,7 @@ The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd
 
 ### Why This Differs from Every Other Treaty
 
-0.7% ODA failed because nobody made money when countries complied. The NGOs pushing for compliance have small budgets, compete with each other, and run on guilt. Guilt has terrible fuel efficiency. Guilt gets you to the gym in January. Greed gets you there in July. Guilt volunteers at the soup kitchen once. Greed builds the soup kitchen and names it after itself. Guilt is what your species feels. Greed is what your species does. This treaty runs on what your species does.
+0.7% ODA failed because nobody made money when countries complied. The NGOs pushing for compliance run on guilt. Guilt has terrible fuel efficiency. Guilt gets you to the gym in January. Greed gets you there in July. Guilt volunteers at the soup kitchen once. Greed builds the soup kitchen and names it after itself. This treaty runs on greed.
 
 ![Old way: charities beg governments. New way: investors get paid when governments cooperate. Greed works faster than guilt.](/assets/images/treaty-feasibility/treaty-feasibility-section-why-this-differs-from-stagnant-treaties-bw-academic.jpg)
 
@@ -174,11 +176,11 @@ The 1% health treaty creates its own expansion lobby. Bond holders profit when t
 
 ### The Ratchet Effect
 
-Once 1% passes, $2.72B/year flows to IAB holders pushing for 2%. When 2% passes, $5.44B/year pushes for 5%. When 5% passes, $13.6B/year pushes for 10%. The political pressure for expansion accelerates with each success, because each expansion funds a larger lobbying force for the next expansion, because the people who got rich at 1% want to get richer at 2%, and the people who got rich at 2% want to get richer at 5%, and so on until the entire engine runs on compound greed, which is like compound interest but for not dying.
+Once 1% passes, $2.72B/year flows to IAB holders pushing for 2%. When 2% passes, $5.44B/year pushes for 5%. The engine runs on compound greed, which is like compound interest but for not dying.
 
-And the politicians receiving that pressure have their own compound greed. The treaty's {{< var iab_political_incentive_funding_pct >}} [political incentive allocation](../solution/incentive-alignment-bonds.qmd#sec-why-ten-pct-scaling-engine) scales identically: at 1%, it's {{< var iab_political_incentive_funding_annual >}}/year funding campaign support and post-office career rewards for legislators who voted yes. At 5%, five times that. A politician who votes to expand the treaty is voting to expand their own reelection budget. A politician who votes against expansion is voting to shrink it. You didn't change what politicians are. You changed what they're rewarded for.
+The politicians feel it too. The treaty's {{< var iab_political_incentive_funding_pct >}} [political incentive allocation](../solution/incentive-alignment-bonds.qmd#sec-why-ten-pct-scaling-engine) scales identically: at 1%, it's {{< var iab_political_incentive_funding_annual >}}/year in campaign support for legislators who voted yes. At 5%, five times that. A politician who votes to expand the treaty is voting to expand their own reelection budget. You didn't change what politicians are. You changed what they're rewarded for.
 
-Most treaties are gym memberships purchased in January and abandoned by February. IABs are the opposite: the constituency for expansion *grows* with each success. Greed doesn't take holidays. Greed doesn't forget. Greed doesn't lose interest when a new television show comes on. Greed is the only human motivation that has never once failed to show up. This treaty runs on it. On Wishonia, we find this arrangement embarrassing. On Earth, it's the only arrangement that works.
+Most treaties are gym memberships purchased in January and abandoned by February. This one has a constituency that *grows* with each success. On Wishonia, we find this arrangement embarrassing. On Earth, it's the only arrangement that works.
 
 ### Long-Term Feasibility
 

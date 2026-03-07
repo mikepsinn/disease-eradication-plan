@@ -194,7 +194,7 @@ Dead patients don't testify before Congress. I checked.
 Even generously crediting ALL drug withdrawals to the 1962 changes (ignoring that Phase I safety testing already existed), the prevented harm totals ~{{< var type_i_error_benefit_dalys >}}.
 The delay harm totals {{< var dfda_efficacy_lag_elimination_dalys >}}.
 
-**For every 1 unit of harm prevented, the current system creates {{< var type_ii_error_cost_ratio >}} units of harm through delay.**
+**For every 1 unit of harm prevented, the current system creates {{< var type_ii_error_cost_ratio >}} units of harm through delay.** The safety net catches one person and drops {{< var type_ii_error_cost_ratio >}}. On Wishonia, we'd call that a hole, not a net.
 
 ## Clinical Trial Theater: Excluding {{< var antidepressant_trial_exclusion_rate >}} of Reality Makes Drugs More Dangerous
 
@@ -223,7 +223,7 @@ Testing drugs only on healthy volunteers to ensure safety is like testing parach
 
 Data collection can be as short as several months.
 You take the drug for forty years.
-The gap between these two numbers is where side effects live. Nobody checks on them. They're fine, probably.
+The gap between these two numbers is where side effects live. Nobody checks. It's like reviewing a marriage based on the wedding.
 
 ![Data collection: several months. Duration of use: forty years. The gap between these numbers is where side effects live.](/assets/images/fda-is-unsafe-and-ineffective/fda-is-unsafe-and-ineffective-section-no-long-term-outcome-data-bw-academic.jpg)
 

@@ -18,25 +18,27 @@ That was the [peace dividend](peace-dividend.qmd): the money you get from buying
 
 Right now, somewhere in your regulatory system, a drug that already passed safety testing is sitting in a filing cabinet while the disease it treats keeps killing people. Somewhere else, a researcher with a promising compound for one of {{< var diseases_without_effective_treatment_nounit >}} untreated diseases is filling out the same form for the fourth time. The health dividend is what happens when you stop doing this.
 
-It is worth **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**. That number is not a typo. The rest of this chapter is the receipt.
+It is worth **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**. That number is not a typo. I checked. Your economists checked. Everyone checked. It's still that number. The rest of this chapter is the receipt.
 
 ## From Explosions to Trial Slots
 
 {{< var treaty_annual_funding >}} arrives from the [peace dividend](peace-dividend.qmd). [Investor and political allocations](../solution/dih.qmd) take their cut, leaving {{< var dih_treasury_to_medical_research_annual >}} for medical research ({{< var dih_treasury_medical_research_pct >}} of the total). [Your decentralized FDA](../solution/dfda.qmd) takes {{< var dfda_annual_opex >}} to keep the lights on. That leaves {{< var dih_treasury_trial_subsidies_annual >}} for trial subsidies.
 
-Here is where the economics get interesting. Your current system charges {{< var traditional_phase3_cost_per_patient >}} per patient in a clinical trial. Pragmatic trials, the kind [your decentralized FDA](../solution/dfda.qmd) runs, cost {{< var dfda_pragmatic_trial_cost_per_patient >}}. At that price, {{< var dih_treasury_trial_subsidies_annual >}} buys you {{< var dih_patients_fundable_annually >}} trial slots per year.
+I am now going to show you what that money buys. I apologize in advance for the number of numbers. Your species requires receipts before it will believe anything, even things that are obviously true. Especially things that are obviously true.
+
+Your current system charges {{< var traditional_phase3_cost_per_patient >}} per patient in a clinical trial. I asked why and was told "regulatory compliance, site management, and monitoring overhead," which I believe is the human phrase for "paperwork costs more than medicine." Pragmatic trials, the kind [your decentralized FDA](../solution/dfda.qmd) runs, cost {{< var dfda_pragmatic_trial_cost_per_patient >}}. At that price, {{< var dih_treasury_trial_subsidies_annual >}} buys you {{< var dih_patients_fundable_annually >}} trial slots per year.
 
 Your species currently enrolls {{< var current_trial_slots_available >}} in clinical trials globally. The treaty adds {{< var dfda_trial_capacity_multiplier >}} more capacity on top of that. Remember this number. Everything that follows depends on it.
 
 ## The Waiting List
 
-You met the queue in the [untapped therapeutic frontier](../problem/untapped-therapeutic-frontier.qmd): {{< var diseases_without_effective_treatment >}} with zero approved treatments, and {{< var new_disease_first_treatments_per_year_nounit >}} getting their first treatment per year. At that rate, you clear the backlog in {{< var status_quo_queue_clearance_years >}}.
+You met the queue in the [untapped therapeutic frontier](../problem/untapped-therapeutic-frontier.qmd): {{< var diseases_without_effective_treatment >}} with zero approved treatments, and {{< var new_disease_first_treatments_per_year_nounit >}} getting their first treatment per year. At that rate, you clear the backlog in {{< var status_quo_queue_clearance_years >}}. I will let you sit with that number for a moment. It is longer than your species has had writing.
 
 ![With $58.6 billion in annual R&D savings, you could run 10,000 trials and address 7,000 rare diseases. Currently you are spending that much to run far fewer trials for common diseases.](/assets/images/health-dividend/health-dividend-section-what-var-dfda-benefit-rd-only-annual-buys-you-bw-academic.jpg)
 
 For context, {{< var status_quo_queue_clearance_years_nounit >}} years ago, Shakespeare was writing plays, Galileo was building telescopes, and your species already had printing presses, universities, and intercontinental shipping. You just had not gotten around to curing most diseases. At this pace, you still will not for another {{< var status_quo_queue_clearance_years >}}.
 
-Apply the {{< var dfda_trial_capacity_multiplier >}} multiplier. Instead of {{< var new_disease_first_treatments_per_year_nounit >}} diseases getting their first treatment per year, you get {{< var dfda_first_treatments_per_year >}}. The queue clears in {{< var dfda_queue_clearance_years >}} instead of {{< var status_quo_queue_clearance_years >}}. The average untreated disease gets its first treatment {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier.
+Apply the {{< var dfda_trial_capacity_multiplier >}} multiplier. Instead of {{< var new_disease_first_treatments_per_year_nounit >}} diseases getting their first treatment per year, you get {{< var dfda_first_treatments_per_year >}}. The queue clears in {{< var dfda_queue_clearance_years >}} instead of {{< var status_quo_queue_clearance_years >}}. The average untreated disease gets its first treatment {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier. That is the difference between "your grandchildren might see a cure" and "you might see a cure." On Wishonia, we consider this a meaningful distinction. On Earth, it apparently requires a 78-page chapter to justify.
 
 Your species figured out how to split atoms in 6 years during a war, but letting a cancer patient take a pill that passed safety testing requires the gestation period of three consecutive elephants. The {{< var dfda_trial_capacity_multiplier >}} multiplier compresses the elephant parade.
 
@@ -44,13 +46,15 @@ But trial capacity is only half the delay. Once a drug passes safety testing, yo
 
 ## The Body Count
 
-{{< var global_disease_deaths_daily >}} die from disease every day. Not all of those deaths are currently preventable, but {{< var eventually_avoidable_death_pct >}} are *eventually* avoidable with sufficient biomedical research. "Eventually avoidable" does not mean "currently preventable." It means: given enough research, these diseases have biological solutions. The only category excluded is accidents (falling off things, being hit by things). Every disease, including aging, is a biological process, and biological processes are, in principle, fixable. This is the theoretical ceiling, not a near-term promise.
+{{< var global_disease_deaths_daily >}} die from disease every day. While you were reading the previous section, approximately 300 of them did. They are not coming back to find out how the math turned out.
 
-Over a {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}-year timeline shift, the cumulative toll: **{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}**. That is {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of healthy life, and {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering eliminated. These are cumulative, one-time benefits from permanently accelerating the discovery pipeline, the same methodology used to value smallpox eradication.
+Not all of those deaths are currently preventable, but {{< var eventually_avoidable_death_pct >}} are *eventually* avoidable with sufficient biomedical research. "Eventually avoidable" does not mean "currently preventable." It means: given enough research, these diseases have biological solutions. The only category excluded is accidents (falling off things, being hit by things). Every disease, including aging, is a biological process, and biological processes are, in principle, fixable. This is the theoretical ceiling, not a near-term promise.
+
+Over a {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}-year timeline shift, the cumulative toll: **{{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}**. That is {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of healthy life, and {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering eliminated. These are cumulative, one-time benefits from permanently accelerating the discovery pipeline, the same methodology used to value smallpox eradication. Nobody objected to the methodology when it was used for smallpox. They will object now because the number is larger, which is a strange reason to object to saving more people.
 
 ## The Price Tag on Not Being Dead
 
-Your governments already put a price on human life when deciding whether to approve drugs, build highways, or regulate pollution. The standard rate: {{< var standard_economic_qaly_value_usd >}} per quality-adjusted life year. This is not something I invented. It is what the EPA, OECD, WHO, and NICE already use.
+Your governments already put a price on human life when deciding whether to approve drugs, build highways, or regulate pollution. The standard rate: {{< var standard_economic_qaly_value_usd >}} per quality-adjusted life year. Your species finds this uncomfortable to discuss but does it constantly. You just prefer to do it in footnotes, where the dying can't see.
 
 The world loses {{< var global_annual_daly_burden >}} [@ihme-gbd-2021]. {{< var eventually_avoidable_daly_pct >}} are eventually avoidable with sufficient research. At {{< var standard_economic_qaly_value_usd >}}/QALY, that is {{< var global_disease_economic_burden_annual >}} per year in welfare losses. Multiply by the {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}-year timeline shift and you get the total economic value of the health dividend: **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**.
 
@@ -64,14 +68,14 @@ The only debatable input is whether the timeline shift is really ~{{< var dfda_t
 
 Your decentralized FDA costs {{< var dfda_annual_opex >}}/year to operate. For reference, this is roughly what your species spends annually on Halloween costumes for dogs. Less than one fighter jet. Less than what FIFA spends on "hospitality" (your word for bribing officials in a building with chandeliers). A system that could test cures for {{< var rare_diseases_count_global_nounit >}} diseases costs less to run than the outfits you put on animals that do not want to wear them.
 
-The R&D savings alone are {{< var dfda_benefit_rd_only_annual >}}/year, a **{{< var dfda_roi_rd_only >}}:1** return without counting a single human life. Include the lives (which you would think someone would), and the treaty's total societal return hits **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1**.
+The R&D savings alone are {{< var dfda_benefit_rd_only_annual >}}/year, a **{{< var dfda_roi_rd_only >}}:1** return without counting a single human life. Include the lives (which you would think someone would, but your species has a long history of not counting the people who die quietly), and the treaty's total societal return hits **{{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1**.
 
-The cost per year of healthy life saved: **{{< var dfda_direct_funding_cost_per_daly >}}**. Anti-malaria bed nets, the gold standard of cost-effective interventions, cost {{< var bed_nets_cost_per_daly >}} per DALY. This system operates at {{< var treaty_vs_bed_nets_multiplier >}} the cost-effectiveness, at vastly greater scale. This costs less per life-year and nobody has heard of it.
+The cost per year of healthy life saved: **{{< var dfda_direct_funding_cost_per_daly >}}**. Anti-malaria bed nets, the gold standard of cost-effective interventions, cost {{< var bed_nets_cost_per_daly >}} per DALY. This system operates at {{< var treaty_vs_bed_nets_multiplier >}} the cost-effectiveness, at vastly greater scale. This costs less per life-year than mosquito nets and nobody has heard of it. Your species has spent more money marketing energy drinks.
 
 The total campaign investment: {{< var treaty_campaign_total_cost >}}. Even the worst case (everything goes wrong, adoption is terrible, the servers catch fire) still returns an [estimated 66:1](../appendix/dfda-impact-paper.qmd#simplified-roi-scenario). Your worst medical outcome is better than your best military one.
 
 Every day without this system costs **{{< var dfda_rd_savings_daily >}}** in wasted trial spending alone. The regulatory lag is not a safety feature. It is a waiting room where people die. You just gave it a nicer name.
 
-For you personally: if diseases get cured even a few years earlier, the average human gains roughly 50,000 extra hours of life. You spent 17 minutes reading this chapter. That is a 176,000x return on your time, which is more than your investment portfolio has ever achieved.
+For you personally: if diseases get cured even a few years earlier, the average human gains roughly 50,000 extra hours of life. You spent 17 minutes reading this chapter. That is a 176,000x return on your time. Your best investment ever was reading. I realize the irony, given that most of you stopped reading 12 paragraphs ago.
 
 See [impact.warondisease.org](https://impact.warondisease.org) for derivations, Monte Carlo simulations, and the comparative cost-effectiveness table.
