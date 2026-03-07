@@ -6476,7 +6476,7 @@ export const citations: Record<string, Citation> = {
         ],
         issued: { 'date-parts': [[2016]] },
         'container-title': "Cybersecurity Ventures: \\$10.5T Cybercrime",
-        URL: "<https://cybersecurityventures.com/hackerpocalypse-cybercrime-report-2016/>",
+        URL: "https://cybersecurityventures.com/hackerpocalypse-cybercrime-report-2016/",
         note: "Cybersecurity Ventures: \\$10.5T Cybercrime | Boise State: Cybercrime Costs",
   },
   "deworming-cost-per-daly": {
