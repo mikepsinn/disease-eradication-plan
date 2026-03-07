@@ -223,6 +223,43 @@ class BuildLogger:
         self.close(exit_code)
 
 
+class SingleLineProgress:
+    """Single-line progress printer with optional fallback to regular line output."""
+
+    def __init__(self, enabled: bool = True, stream: Optional[TextIO] = None):
+        self.enabled = enabled
+        self.stream = stream or sys.stdout
+        self._active = False
+        self._width = 0
+        self._lock = threading.Lock()
+
+    def update(self, message: str, final: bool = False) -> None:
+        """Update the progress line."""
+        with self._lock:
+            if not self.enabled:
+                print(message, file=self.stream, flush=True)
+                return
+
+            self._width = max(self._width, len(message))
+            padded = message.ljust(self._width)
+            self.stream.write("\r" + padded)
+            self.stream.flush()
+            self._active = True
+
+            if final:
+                self.stream.write("\n")
+                self.stream.flush()
+                self._active = False
+
+    def clear(self) -> None:
+        """Terminate an active progress line so subsequent logs start cleanly."""
+        with self._lock:
+            if self._active:
+                self.stream.write("\n")
+                self.stream.flush()
+                self._active = False
+
+
 def suppress_pip_requirement_noise(line: str) -> bool:
     """Filter noisy pip dependency output lines."""
     stripped = line.strip()

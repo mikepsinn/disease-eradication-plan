@@ -53,6 +53,7 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 OUTRO_QMD_PATH = PROJECT_ROOT / "knowledge" / "appendix" / "podcast-outro.qmd"
 
 from lib.script_lock import acquire_script_lock, ScriptLockError
+from lib.build_logger import BuildLogger
 
 
 def _ts() -> str:
@@ -603,4 +604,22 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    logger = BuildLogger("publish-audiobook.log")
+    logger.start_capture()
+    exit_code = 0
+    try:
+        main()
+    except SystemExit as e:
+        if isinstance(e.code, int):
+            exit_code = e.code
+        elif e.code is None:
+            exit_code = 0
+        else:
+            exit_code = 1
+        raise
+    except Exception:
+        exit_code = 1
+        raise
+    finally:
+        logger.stop_capture()
+        logger.close(exit_code)

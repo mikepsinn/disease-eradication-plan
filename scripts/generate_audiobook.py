@@ -53,7 +53,7 @@ from lib.audiobook_common import (
     mp3_content_hash, find_current_mp3, parse_hashed_mp3, PODCAST_HASH_RE,
 )
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
-from lib.build_logger import BuildLogger
+from lib.build_logger import BuildLogger, SingleLineProgress
 from lib.retry import RateLimiter
 from lib.script_lock import acquire_script_lock, ScriptLockError
 
@@ -74,6 +74,8 @@ def _env_flag(name: str, default: bool = False) -> bool:
 SYNC_VERBOSE = _env_flag("AUDIOBOOK_SYNC_VERBOSE", False)
 # Per-chunk TTS start/done logs are noisy under parallel workers; keep compact by default.
 TTS_CHUNK_VERBOSE = _env_flag("AUDIOBOOK_TTS_CHUNK_VERBOSE", False)
+# Single-line chapter chunk progress to avoid noisy repeated status lines.
+TTS_SINGLE_LINE_PROGRESS = _env_flag("AUDIOBOOK_TTS_SINGLE_LINE_PROGRESS", True)
 TTS_PROGRESS_INTERVAL_S = 5.0
 
 # Silence detection: trim audio chunks with silence longer than this threshold.
@@ -464,11 +466,14 @@ def generate_chapter_audio(
     print(f"  Generating audio for: {title} ({len(work_items)} of {len(chunk_files)} chunks to generate)")
 
     if work_items:
+        progress = SingleLineProgress(enabled=TTS_SINGLE_LINE_PROGRESS)
+
         def _generate_one(item):
             idx, cf, out_path = item
             chunk_text = cf.read_text(encoding='utf-8')
             label = f"chunk {idx+1}/{len(chunk_files)}"
             if TTS_CHUNK_VERBOSE:
+                progress.clear()
                 print(f"    [{label}] Starting ({len(chunk_text):,} chars)")
             start = time.monotonic()
             tts_rate_limiter.acquire()
@@ -480,6 +485,7 @@ def generate_chapter_audio(
             out_path.with_suffix('.texthash').write_text(text_hash, encoding='utf-8')
             elapsed = time.monotonic() - start
             if TTS_CHUNK_VERBOSE:
+                progress.clear()
                 print(f"    [{label}] Done")
             return idx, len(chunk_text), elapsed
 
@@ -513,18 +519,21 @@ def generate_chapter_audio(
                         chunks_per_min = rate * 60.0
                         avg_chunk_s = elapsed / completed if completed else 0.0
                         recent = ",".join(f"{n:02d}" for n in recent_done) if recent_done else "-"
-                        print(
+                        progress.update(
                             f"    [TTS PROGRESS] chunks done={completed}/{total_to_generate} "
                             f"({pct:.0f}%) chapter-ready={chapter_ready}/{len(chunk_files)} "
                             f"elapsed={_fmt_elapsed_short(elapsed)} "
                             f"eta={_fmt_elapsed_short(eta)} "
                             f"throughput={chunks_per_min:.1f}/min avg={avg_chunk_s:.1f}s/chunk "
-                            f"recent={recent}"
+                            f"recent={recent}",
+                            final=(completed == total_to_generate),
                         )
                         last_progress = now
                 except Exception as e:
+                    progress.clear()
                     errors.append(f"chunk {item[0]+1}: {e}")
                     print(f"    [ERROR] Failed on chunk {item[0]+1}: {e}")
+        progress.clear()
         if errors:
             print(f"  [ERROR] {len(errors)} chunk(s) failed")
             return None, False
@@ -1818,7 +1827,7 @@ def _print_output_paths_summary(
         print(f"  Manifest: {paths.manifest.resolve()}")
 
 
-def main():
+def main() -> int:
     parser = argparse.ArgumentParser(
         description="Generate audiobook from Quarto book chapters"
     )
@@ -1902,7 +1911,7 @@ def main():
         atexit.register(lock.release)
     except ScriptLockError as e:
         print(f"ERROR: {e}")
-        sys.exit(2)
+        return 2
 
     # Resolve config and derive paths
     config_path = Path(args.config)
@@ -1911,9 +1920,6 @@ def main():
 
     cfg_name = config_name_from_path(config_path)
     paths = get_paths(cfg_name)
-
-    # Set up logging (file-only; TeeWriter segfaults on Windows with subprocess I/O)
-    logger = BuildLogger("generate-audiobook.log")
 
     # Load book config
     print(f"Loading book configuration: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
@@ -1924,16 +1930,14 @@ def main():
     # List mode
     if args.list:
         list_chapters(chapters, paths=paths)
-        logger.close()
-        return
+        return 0
 
     # Filter chapters if specified
     if args.chapter:
         chapters = [ch for ch in chapters if ch['index'] == args.chapter]
         if not chapters:
             print(f"Error: Chapter {args.chapter} not found")
-            logger.close()
-            return
+            return 1
     elif args.start or args.end:
         start = args.start or 1
         end = args.end or len(chapters)
@@ -2170,8 +2174,27 @@ def main():
 
     _print_output_paths_summary(paths, outro_wav, generated_files, updated_wrapped_mp3s)
     print("\nDone!")
-    logger.close()
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    logger = BuildLogger("generate-audiobook.log")
+    logger.start_capture()
+    exit_code = 0
+    try:
+        exit_code = main()
+    except SystemExit as e:
+        if isinstance(e.code, int):
+            exit_code = e.code
+        elif e.code is None:
+            exit_code = 0
+        else:
+            exit_code = 1
+        raise
+    except Exception:
+        exit_code = 1
+        raise
+    finally:
+        logger.stop_capture()
+        logger.close(exit_code)
+    sys.exit(exit_code)

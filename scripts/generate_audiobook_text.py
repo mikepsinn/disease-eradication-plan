@@ -53,6 +53,7 @@ from lib.audiobook_common import (
     config_name_from_path, get_paths,
 )
 from lib.audiobook_manifest import save_text_results
+from lib.build_logger import BuildLogger, SingleLineProgress
 from lib.retry import RateLimiter
 
 # Configuration
@@ -71,11 +72,20 @@ def _env_int(name: str, default: int, minimum: int = 1) -> int:
         return default
 
 
+def _env_flag(name: str, default: bool = False) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "on"}
+
+
 # Higher default worker count can improve throughput for long-latency calls.
 # The sliding-window limiter below still caps request rate.
 LLM_PARALLEL_WORKERS = _env_int("AUDIOBOOK_LLM_WORKERS", 6)
 LLM_REQUESTS_PER_MINUTE = _env_int("AUDIOBOOK_LLM_REQUESTS_PER_MINUTE", 15)
 LLM_MAX_ATTEMPTS = _env_int("AUDIOBOOK_LLM_MAX_ATTEMPTS", 6)
+# Single-line progress display for narration chunk generation.
+LLM_SINGLE_LINE_PROGRESS = _env_flag("AUDIOBOOK_LLM_SINGLE_LINE_PROGRESS", True)
 llm_rate_limiter = RateLimiter(max_requests=LLM_REQUESTS_PER_MINUTE, window_seconds=60)
 
 
@@ -405,12 +415,15 @@ def rewrite_for_audiobook(
             recent_done: list[int] = []
             generation_start = time.monotonic()
             last_progress = generation_start
+            progress = SingleLineProgress(enabled=LLM_SINGLE_LINE_PROGRESS)
+
             for future in as_completed(futures):
                 item = futures[future]
                 try:
                     i, result, chunk_chars, chunk_elapsed, chunk_filename = future.result()
                 except Exception as e:
                     chunk_idx = item[0] + 1
+                    progress.clear()
                     raise RuntimeError(
                         f"LLM narration generation failed for chunk {chunk_idx}/{total}: {e}"
                     ) from e
@@ -422,6 +435,7 @@ def rewrite_for_audiobook(
                     recent_done.pop(0)
 
                 if debug_chunks:
+                    progress.clear()
                     print(
                         f"    [LLM CHUNK DONE] {i + 1:02d}/{total:02d} "
                         f"chars={chunk_chars:,} elapsed={chunk_elapsed:.1f}s file={chunk_filename}"
@@ -441,15 +455,18 @@ def rewrite_for_audiobook(
                     chunks_per_min = rate * 60.0
                     avg_chunk_s = (elapsed / completed) if completed > 0 else 0.0
                     recent = ",".join(f"{n:02d}" for n in recent_done) if recent_done else "-"
-                    print(
+                    progress.update(
                         f"    [LLM NARRATION PROGRESS] chunks done={completed}/{generated_chunks} "
                         f"({pct:.0f}%) chapter-ready={chapter_ready}/{total} "
                         f"elapsed={_fmt_elapsed_short(elapsed)} "
                         f"eta={_fmt_elapsed_short(eta)} "
                         f"throughput={chunks_per_min:.1f}/min avg={avg_chunk_s:.1f}s/chunk "
-                        f"recent={recent}"
+                        f"recent={recent}",
+                        final=(completed == generated_chunks),
                     )
                     last_progress = now
+
+            progress.clear()
 
     rewritten = '\n\n'.join(r for r in results if r is not None)
     rewrite_elapsed = time.monotonic() - rewrite_start
@@ -726,7 +743,7 @@ def _chapter_summary_line(result: dict, seq: int, total: int) -> str:
     )
 
 
-def main():
+def main() -> int:
     global LLM_PARALLEL_WORKERS, LLM_REQUESTS_PER_MINUTE, LLM_MAX_ATTEMPTS, llm_rate_limiter
     parser = argparse.ArgumentParser(description="Generate audiobook-friendly text from Quarto book chapters")
     parser.add_argument("--config", "-cfg", default=str(DEFAULT_CONFIG_PATH), help=f"Quarto config YAML (default: {DEFAULT_CONFIG_PATH.name})")
@@ -789,13 +806,13 @@ def main():
 
     if args.list:
         list_chapters(chapters)
-        return
+        return 0
 
     if args.chapter:
         chapters = [ch for ch in chapters if ch['index'] == args.chapter]
         if not chapters:
             print(f"Error: Chapter {args.chapter} not found")
-            sys.exit(1)
+            return 1
     elif args.start or args.end:
         start = args.start or 1
         end = args.end or max(ch['index'] for ch in chapters)
@@ -843,7 +860,27 @@ def main():
         save_text_results(results, paths=paths)
 
     print("\nDone!")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    logger = BuildLogger("generate-audiobook-text.log")
+    logger.start_capture()
+    exit_code = 0
+    try:
+        exit_code = main()
+    except SystemExit as e:
+        if isinstance(e.code, int):
+            exit_code = e.code
+        elif e.code is None:
+            exit_code = 0
+        else:
+            exit_code = 1
+        raise
+    except Exception:
+        exit_code = 1
+        raise
+    finally:
+        logger.stop_capture()
+        logger.close(exit_code)
+    sys.exit(exit_code)
