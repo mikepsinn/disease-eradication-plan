@@ -461,32 +461,26 @@ Humans aren't stupid. You invented cheese, which is milk you left out until it w
 
 Now is the time to select one of the two paths for the remainder of your existence.
 
-I modeled both paths for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself.
-
-Your current average income is {{< var global_avg_income_2025 >}}. Your economists project steady 2.5% growth from here, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
-
-The Treaty Path, where you just move the murder money to medicine money, gets you to {{< var treaty_path_avg_income_year_20 >}} average income by year 20. That's 24 times what you make now.
-
-Then there's the Wishonia Path. On my planet, we liked incentive alignment bonds so much we didn't stop at murder money. We pointed them at everything: the [drug approval process](knowledge/problem/untapped-therapeutic-frontier.qmd) that makes cures cost 100 times what they should, the [border policies](knowledge/appendix/political-dysfunction-tax.qmd) that trap workers where they're least productive, the [lead in your paint](knowledge/appendix/political-dysfunction-tax.qmd) that's poisoning 765 million IQ points, and the [trillions in corporate subsidies](knowledge/appendix/political-dysfunction-tax.qmd) your politicians hand to companies instead of letting you spend it on whoever's actually good at things. That path gets you to {{< var wishonia_path_avg_income_year_20 >}}, roughly 80 times your current income. One path is "stop murdering." The other is "stop murdering AND stop being stupid." Both are improvements.
+I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself. Your current average income is {{< var global_avg_income_2025 >}}. Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
 #### Future A: You Ignore This Manual
 
-- Year 2027: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work
-- Year 2028: Your destructive economy passes 15% of GDP. The Soviet Union collapsed at this ratio, but you have better memes.
-- Year 2030: Cybercrime is the third-largest economy on Earth. North Korea and Russia fund their militaries with it. Still no one in charge.
-- Year 2035: Running out of papers for anything because the money was busy becoming missiles
-- Year 2040: Climate change meets nuclear war.
+- Year 2027: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work. Nobody finds this weird.
+- Year 2033: Destructive economy hits 25% of GDP. The Soviet Union collapsed at 15-18%. You are not the Soviet Union, though. You have better technology and worse planning.
+- Year 2035: Your best engineers now work in ransomware because it pays better than engineering. Hospitals budget for extortion the way they used to budget for gauze. The people who could reverse this trend are the ones profiting from it.
+- Year 2040: Parasitic economy hits 50%. AI agents file more fake court cases than real ones. Tax collection collapses because AI can evade faster than humans can audit. Your governments don't fall; they just stop being the thing that governs. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia.
+- Year 2043: Water wars go nuclear. The survivors argue about whether this counts as a climate death or a military death, because the spreadsheet has separate columns.
 - Year 2045: Cockroaches evolve intelligence.
 - Year 2050: Cockroaches find this manual, very confused
 
 #### Future B: You Follow Instructions
 
 - Year 2028: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo.
-- Year 2030: First wave of diseases cured. "Remember when we had cancer?" becomes a meme.
-- Year 2035: Average income hits $75,000, up from {{< var global_avg_income_2025 >}}. "Remember when we had medical bills?" joins the meme.
-- Year 2038: Someone points incentive alignment bonds at government waste. Nine agencies become one. "Remember when we had bureaucracy?" Nobody remembers. The bureaucracy is gone.
-- Year 2042: Average income hits {{< var treaty_path_avg_income_year_20 >}}. Nations that also fixed governance hit {{< var wishonia_path_vs_treaty_path_gdp_multiplier_year_20 >}} that. "Remember when we had war?" Your children don't.
-- Year 2050: {{< var wishonia_path_avg_income_year_20 >}} average income. Join galactic community, pretend you were always smart.
+- Year 2032: First treatments from the accelerated pipeline reach patients. Diseases that would have waited centuries for trials are getting tested now. Nobody is cured of everything, but the queue is finally moving.
+- Year 2035: Turns out when you stop spending money on destruction and start spending it on production, things get produced. The math suggests average income roughly doubles. Your economists act surprised.
+- Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. If the trajectory holds, average income approaches $75,000, up from {{< var global_avg_income_2025 >}}.
+- Year 2048: The [model projects](knowledge/economics/gdp-trajectories.qmd) average income reaching {{< var treaty_path_avg_income_year_20 >}}. Nations that pointed incentive alignment bonds at [the rest of their dysfunction](knowledge/appendix/political-dysfunction-tax.qmd) do {{< var wishonia_path_vs_treaty_path_gdp_multiplier_year_20 >}} better. Your children ask what "war" means. You change the subject.
+
 
 Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and quantifiably the best idea in the history of your world. It primarily requires people spending 15 seconds clicking a button. If you can't make this happen, that's a skill issue.
 
@@ -497,6 +491,8 @@ This is why aliens don't visit.
 ::: {.content-hidden when-format="epub"}
 ::: {.content-hidden when-format="pdf"}
 ::: {.content-hidden when-format="docx"}
+One of your meat creatures said it better than I can:
+
 <a href="/assets/images/chaplin-great-dictator-320.mp4" target="_blank">
 ![Charlie Chaplin - The Great Dictator Speech](/assets/images/chaplin-great-dictator-thumbnail.png)
 </a>
