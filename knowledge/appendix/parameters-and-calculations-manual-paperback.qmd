@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 282 parameters used in the analysis, organized by type:
+This appendix documents all 283 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 121
-- Calculated values: 124
+- Calculated values: 125
 - Core definitions: 37
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (124 parameters) • [External Data Sources](#sec-external) (121 parameters) • [Core Definitions](#sec-definitions) (37 parameters)
+[Calculated Values](#sec-calculated) (125 parameters) • [External Data Sources](#sec-external) (121 parameters) • [Core Definitions](#sec-definitions) (37 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3687,6 +3687,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_annual_war_indirect_costs_total.qmd >}}
+
+:::
+
+### Global Average Income (2025 Baseline): $14.4K {#sec-global_avg_income_2025}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global average income (GDP per capita) in 2025 baseline.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
+
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_avg_income_2025.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_avg_income_2025.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_avg_income_2025.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_avg_income_2025.qmd >}}
 
 :::
 
