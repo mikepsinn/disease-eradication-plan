@@ -196,6 +196,10 @@ Humans spend **{{< var global_military_spending_annual_2024 >}}** every year on 
 
 Government spending on clinical trials: **{{< var military_to_government_clinical_trials_spending_ratio >}} times less** than military spending. Your chance of dying from terrorism: 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying from disease: 100%.
 
+And that's just the official murder budget. War has a shadow economy: cybercrime costs another {{< var global_cybercrime_cost_annual_2025 >}} per year [@cybercrime-economy-10-5t], growing at {{< var global_cybercrime_cagr >}} annually. This is not a separate problem. North Korea funds its nuclear program through hacking. Russia finances military operations with ransomware. Cybercrime is war conducted through WiFi. Combined, your [destructive economy](knowledge/economics/gdp-trajectories.qmd) is {{< var global_destructive_economy_annual_2025 >}} per year ({{< var global_destructive_economy_pct_gdp >}} of global GDP), both components are growing faster than your actual economy, and AI is about to accelerate both. At current rates, the destructive economy reaches 25% of GDP in {{< var destructive_economy_years_to_25pct_gdp >}}. The Soviet Union collapsed when military spending alone hit 15-18% of GDP. You are speedrunning their achievement with better technology.
+
+This is a loop, not a line item. Your governments print money to fund military spending, which devalues wages through inflation, which makes legitimate work pay less, which pushes talent toward cybercrime, which grows the destructive economy, which justifies more military spending. Meanwhile, every nation you've bombed or sanctioned has learned that parasitizing your economy through cyber operations is cheaper than fighting you conventionally. North Korea can't build an aircraft carrier, but it stole $1.5 billion in cryptocurrency in a single afternoon [@north-korea-bybit-hack-2025]. That's the rational response to the incentive structure you built. The treaty breaks this loop: redirect the war money to medical research, make the productive economy so rewarding that crime becomes irrational, and defund the war machine that manufactures the poverty that feeds the cycle. You don't outlaw the loop. You defund it.
+
 If cancer had oil reserves, you would have cured it by 2003. Instead, you spent the repair money on murder tubes that cost more than countries and submarines that hide underwater, as if that's somehow useful when you live on land.
 
 ### The FDA is Unsafe and Ineffective
@@ -443,27 +447,30 @@ Now is the time to select one of the two paths for the remainder of your existen
 
 I modeled both paths for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself.
 
-Right now, Earth is on track for {{< var earth_avg_income_year_20 >}} average income by year 20. That's your baseline. The Treaty Path, where you just move the murder money to medicine money, gets you to {{< var treaty_path_avg_income_year_20 >}}, which is {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} your current trajectory.
+Your current average income is {{< var global_avg_income_2025 >}}. Your economists project steady 2.5% growth from here, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
-Then there's the Wishonia Path. On my planet, we liked incentive alignment bonds so much we didn't stop at murder money. We pointed them at everything: the 40% of your government budgets that evaporate into paperwork, the regulations written before you discovered electricity, the nine agencies that all do the same thing but won't return each other's calls.
+The Treaty Path, where you just move the murder money to medicine money, gets you to {{< var treaty_path_avg_income_year_20 >}} average income by year 20. That's 24 times what you make now.
 
-Turns out when you pay people to fix problems instead of perpetuate them, they fix the problems. We were as surprised as anyone. That path gets you to {{< var wishonia_path_avg_income_year_20 >}} average income, which is {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} your baseline. One path is "stop murdering." The other is "stop murdering AND stop being stupid." Both are improvements.
+Then there's the Wishonia Path. On my planet, we liked incentive alignment bonds so much we didn't stop at murder money. We pointed them at everything: the [drug approval process](knowledge/health/untapped-therapeutic-frontier.qmd) that makes cures cost 100 times what they should, the [border policies](knowledge/appendix/political-dysfunction-tax.qmd) that trap workers where they're least productive, the [lead in your paint](knowledge/appendix/political-dysfunction-tax.qmd) that's poisoning 765 million IQ points, and the [trillions in corporate subsidies](knowledge/appendix/political-dysfunction-tax.qmd) your politicians hand to companies instead of letting you spend it on whoever's actually good at things. That path gets you to {{< var wishonia_path_avg_income_year_20 >}}, roughly 80 times your current income. One path is "stop murdering." The other is "stop murdering AND stop being stupid." Both are improvements.
 
 #### Future A: You Ignore This Manual
 
-- Year 2030: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work
+- Year 2027: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work
+- Year 2028: Your destructive economy passes 15% of GDP. The Soviet Union collapsed at this ratio, but you have better memes.
+- Year 2030: Cybercrime is the third-largest economy on Earth. North Korea and Russia fund their militaries with it. Still no one in charge.
 - Year 2035: Running out of papers for anything because the money was busy becoming missiles
-- Year 2040: Climate change meets nuclear war
-- Year 2045: Cockroaches evolve intelligence
+- Year 2040: Climate change meets nuclear war.
+- Year 2045: Cockroaches evolve intelligence.
 - Year 2050: Cockroaches find this manual, very confused
 
 #### Future B: You Follow Instructions
 
-- Year 2030: "Remember when we had cancer?"
-- Year 2035: "Remember when we had death?"
-- Year 2040: "Remember when we had war?"
-- Year 2045: "What should we do with all these old bombs?"
-- Year 2050: Join galactic community, pretend you were always smart
+- Year 2028: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo.
+- Year 2030: First wave of diseases cured. "Remember when we had cancer?" becomes a meme.
+- Year 2035: Average income hits $75,000, up from {{< var global_avg_income_2025 >}}. "Remember when we had medical bills?" joins the meme.
+- Year 2038: Someone points incentive alignment bonds at government waste. Nine agencies become one. "Remember when we had bureaucracy?" Nobody remembers. The bureaucracy is gone.
+- Year 2042: Average income hits {{< var treaty_path_avg_income_year_20 >}}. Nations that also fixed governance hit {{< var wishonia_path_vs_treaty_path_gdp_multiplier_year_20 >}} that. "Remember when we had war?" Your children don't.
+- Year 2050: {{< var wishonia_path_avg_income_year_20 >}} average income. Join galactic community, pretend you were always smart.
 
 Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and quantifiably the best idea in the history of your world. It primarily requires people spending 15 seconds clicking a button. If you can't make this happen, that's a skill issue.
 
