@@ -13,12 +13,14 @@ Usage:
     python scripts/generate_audiobook.py --chapter 5       # Generate specific chapter
     python scripts/generate_audiobook.py --voice Zephyr    # Use different voice
     python scripts/generate_audiobook.py --list            # List all chapters
+    python scripts/generate_audiobook.py --no-sync-each-chapter  # Disable immediate R2 sync after each chapter
 """
 import sys
 import os
 import re
 import json
 import time
+import atexit
 import hashlib
 import argparse
 import subprocess
@@ -50,6 +52,7 @@ from lib.audiobook_common import (
 from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
 from lib.build_logger import BuildLogger
 from lib.retry import RateLimiter
+from lib.script_lock import acquire_script_lock, ScriptLockError
 
 # TTS parallelization: Gemini TTS allows concurrent requests.
 # Conservative limit; increase if your quota allows.
@@ -686,6 +689,60 @@ def build_chapter_timestamps(chapters: list[dict], paths: AudiobookPaths | None 
         current_position_ms = end_ms
 
     return timestamps, current_position_ms
+
+
+def refresh_manifest_and_feed(chapters: list[dict], book_meta: dict,
+                              paths: AudiobookPaths, mp3_dir: Path) -> Path | None:
+    """Refresh manifest timing data and regenerate podcast feed.xml.
+
+    Returns feed path if generated, otherwise None.
+    """
+    timestamps, _ = build_chapter_timestamps(chapters, paths=paths)
+    if not timestamps:
+        print("  [WARN] No chapter WAVs found, skipping manifest/feed refresh")
+        return None
+
+    total_duration_ms = timestamps[-1]['end_ms']
+    update_manifest(timestamps, total_duration_ms, chapters=chapters, paths=paths)
+
+    chapter_mp3s = []
+    for ch in chapters:
+        slug = chapter_slug(ch)
+        mp3 = find_current_mp3(slug, mp3_dir)
+        if mp3:
+            chapter_mp3s.append(mp3)
+
+    if not chapter_mp3s:
+        print(f"  [WARN] No per-chapter MP3s found in {mp3_dir}, skipping podcast RSS generation")
+        return None
+
+    generate_podcast_rss(chapter_mp3s, chapters, timestamps, book_meta, paths=paths)
+    feed_path = paths.root / "feed.xml"
+    return feed_path if feed_path.exists() else None
+
+
+def sync_chapter_assets_immediately(mp3_path: Path, chapters: list[dict], book_meta: dict,
+                                    paths: AudiobookPaths, mp3_dir: Path) -> None:
+    """Upload newly generated chapter MP3 + refreshed feed/manifest to R2 immediately.
+
+    Best-effort only: logs warnings and continues pipeline on any sync failure.
+    """
+    print("  [SYNC] Immediate chapter upload: refreshing manifest/feed...")
+    feed_path = refresh_manifest_and_feed(chapters, book_meta, paths, mp3_dir)
+
+    upload_paths = [mp3_path, paths.manifest]
+    if feed_path:
+        upload_paths.append(feed_path)
+
+    try:
+        from sync_r2 import upload_selected_files
+        uploaded, skipped, errors = upload_selected_files(upload_paths, dry_run=False)
+        print(f"  [SYNC] Uploaded {uploaded}, skipped {skipped}, errors {errors}")
+    except SystemExit:
+        # sync_r2 exits when R2 creds are missing; keep audiobook generation running.
+        print("  [WARN] Immediate sync skipped (R2 not configured in environment)")
+    except Exception as e:
+        print(f"  [WARN] Immediate sync failed: {e}")
 
 
 def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict,
@@ -1671,7 +1728,31 @@ def main():
         type=int,
         help="End at chapter number (inclusive)"
     )
+    parser.add_argument(
+        "--sync-each-chapter",
+        dest="sync_each_chapter",
+        action="store_true",
+        help="After each chapter MP3 is finalized, immediately upload MP3 + refreshed feed/manifest to R2 (default: enabled)",
+    )
+    parser.add_argument(
+        "--no-sync-each-chapter",
+        dest="sync_each_chapter",
+        action="store_false",
+        help="Disable immediate per-chapter R2 upload of MP3/feed/manifest",
+    )
+    parser.set_defaults(sync_each_chapter=True)
     args = parser.parse_args()
+
+    try:
+        lock = acquire_script_lock(
+            "generate-audiobook",
+            PROJECT_ROOT,
+            command=" ".join(sys.argv),
+        )
+        atexit.register(lock.release)
+    except ScriptLockError as e:
+        print(f"ERROR: {e}")
+        sys.exit(2)
 
     # Resolve config and derive paths
     config_path = Path(args.config)
@@ -1800,6 +1881,14 @@ def main():
             # 6. Rename to content-hashed filename for podcast cache busting
             if wrapped:
                 wrapped = finalize_podcast_mp3(wrapped)
+                if args.sync_each_chapter:
+                    sync_chapter_assets_immediately(
+                        wrapped,
+                        all_chapters,
+                        book_meta,
+                        paths,
+                        mp3_dir,
+                    )
         _substep_times["MP3 export + wrapping"] += time.monotonic() - t_sub
 
     print(f"\n{'=' * 60}")

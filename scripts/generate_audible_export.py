@@ -245,7 +245,12 @@ def generate_retail_sample(
 
     first_ch = chapters[0]
     slug = chapter_slug(first_ch)
-    source_mp3 = output_dir / f"{first_ch['index']:02d}-{slug}.mp3"
+    source_mp3 = output_dir / f"{slug}.mp3"
+    legacy_source_mp3 = output_dir / f"{first_ch['index']:02d}-{slug}.mp3"
+
+    if not source_mp3.exists() and legacy_source_mp3.exists():
+        print(f"  Retail sample: using legacy chapter filename {legacy_source_mp3.name}")
+        source_mp3 = legacy_source_mp3
 
     if not source_mp3.exists():
         print(f"  SKIP retail sample: {source_mp3.name} not found")
@@ -353,7 +358,7 @@ def generate_upload_instructions(
 
     for ch, r in zip(chapters, results):
         num = ch["index"]
-        filename = f"{num:02d}-{chapter_slug(ch)}.mp3"
+        filename = f"{chapter_slug(ch)}.mp3"
         full_path = output_dir / filename
         rms_ok = ACX_RMS_MIN <= (r["output_rms"] or -99) <= ACX_RMS_MAX
         peak_ok = (r["output_peak"] or 0) <= ACX_PEAK_MAX
@@ -433,7 +438,7 @@ def generate_upload_instructions(
         f"podcast-theme-song-audible.mp3",
         f"",
         f"### OUTRO file (Closing Credits)",
-        f"29-acknowledgments.mp3",
+        f"acknowledgments.mp3",
         f"",
     ]
 
@@ -491,8 +496,9 @@ def main():
     for ch in chapters:
         slug = chapter_slug(ch)
         wav_path = paths.chapters / f"{slug}.wav"
-        mp3_filename = f"{ch['index']:02d}-{slug}.mp3"
+        mp3_filename = f"{slug}.mp3"
         mp3_path = output_dir / mp3_filename
+        legacy_mp3_path = output_dir / f"{ch['index']:02d}-{slug}.mp3"
 
         if not wav_path.exists():
             print(f"  [{ch['index']:2d}] SKIP (no WAV): {slug}")
@@ -508,6 +514,9 @@ def main():
             peak = get_peak(mp3_path)
             dur = get_duration_secs(mp3_path)
             print(f"  [{ch['index']:2d}] CACHED: {mp3_filename} ({format_duration(dur)}, RMS={rms:.1f})")
+            if legacy_mp3_path.exists():
+                legacy_mp3_path.unlink(missing_ok=True)
+                print(f"  [{ch['index']:2d}] CLEAN: removed legacy {legacy_mp3_path.name}")
             results.append({
                 "source_rms": None, "volume_adj": 0,
                 "output_rms": round(rms, 2) if rms else None,
@@ -531,6 +540,9 @@ def main():
         )
         results.append(r)
         print(f"OK (RMS={r['output_rms']}, peak={r['output_peak']}, {r['duration_fmt']})")
+        if legacy_mp3_path.exists():
+            legacy_mp3_path.unlink(missing_ok=True)
+            print(f"  [{ch['index']:2d}] CLEAN: removed legacy {legacy_mp3_path.name}")
 
     # Generate retail audio sample (first 5 min of chapter 1)
     generate_retail_sample(output_dir, chapters, album=album, artist=artist,

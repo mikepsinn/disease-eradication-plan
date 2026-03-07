@@ -30,6 +30,7 @@ import re
 import argparse
 import hashlib
 import shutil
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import cast
@@ -255,14 +256,32 @@ RULES:
 Return ONLY the narration text."""
 
 
-def rewrite_for_audiobook(text: str, title: str, output_path: Path, intro_text: str = "") -> str:
+def _fmt_elapsed_short(seconds: float) -> str:
+    """Format elapsed seconds as M:SS or H:MM:SS."""
+    total = max(0, int(seconds))
+    h, rem = divmod(total, 3600)
+    m, s = divmod(rem, 60)
+    if h > 0:
+        return f"{h}:{m:02d}:{s:02d}"
+    return f"{m}:{s:02d}"
+
+
+def rewrite_for_audiobook(
+    text: str,
+    title: str,
+    output_path: Path,
+    intro_text: str = "",
+    debug_chunks: bool = False,
+    progress_interval_s: float = 5.0,
+) -> tuple[str, dict[str, int | float]]:
     """
     Send pre-processed text to LLM for narration rewrite.
     Saves each chunk to disk as it completes so we can resume after crashes.
-    Uses parallel workers for uncached chunks.
+    Uses parallel workers for uncached chunks and emits periodic progress.
     """
     from lib.llm import generate_gemini_flash_content
 
+    rewrite_start = time.monotonic()
     chunks = chunk_text(text)
     # Insert intro (title + description) as a dedicated first chunk
     # so TTS generates it separately (combining with content degrades quality)
@@ -277,15 +296,26 @@ def rewrite_for_audiobook(text: str, title: str, output_path: Path, intro_text: 
     results: list[str | None] = [None] * total
 
     # Collect cached results and build work items for uncached chunks
+    cached_chunks = 0
     work_items = []
     for i, chunk in enumerate(chunks):
         chunk_file = chunk_dir / f"chunk-{i+1:02d}-of-{total:02d}.txt"
         if chunk_file.exists():
-            print(f"    [CACHED] chunk {i + 1}/{total} ({chunk_file.stat().st_size:,} bytes)")
+            cached_chunks += 1
+            if debug_chunks:
+                print(f"    [CACHED] chunk {i + 1}/{total} ({chunk_file.stat().st_size:,} bytes)")
             results[i] = chunk_file.read_text(encoding='utf-8')
         else:
             work_items.append((i, chunk, chunk_file))
 
+    generated_chunks = len(work_items)
+    workers = min(LLM_PARALLEL_WORKERS, generated_chunks) if generated_chunks else 0
+    print(
+        f"    [REWRITE PLAN] chunks total={total}, cached={cached_chunks}, "
+        f"to-generate={generated_chunks}, workers={workers}"
+    )
+
+    generated_chars = 0
     if work_items:
         def _rewrite_one(item):
             i, chunk, chunk_file = item
@@ -296,7 +326,7 @@ def rewrite_for_audiobook(text: str, title: str, output_path: Path, intro_text: 
                 context = f"\n\nThis is the chapter \"{title}\"."
             prompt = AUDIOBOOK_REWRITE_PROMPT + context + "\n\n---\n\nCONTENT TO CONVERT:\n\n" + chunk
 
-            print(f"    [{label}] Calling LLM ({len(chunk):,} chars)...")
+            start = time.monotonic()
             llm_rate_limiter.acquire()
             # Capture prompt in default arg to avoid closure issues
             result = retry_with_backoff(
@@ -304,18 +334,64 @@ def rewrite_for_audiobook(text: str, title: str, output_path: Path, intro_text: 
                 label=f"{label} ",
             )
             chunk_file.write_text(result, encoding='utf-8')
-            print(f"    [{label}] Saved -> {chunk_file.name}")
-            return i, result
+            elapsed = time.monotonic() - start
+            return i, result, len(chunk), elapsed, chunk_file.name
 
-        workers = min(LLM_PARALLEL_WORKERS, len(work_items))
-        print(f"    Rewriting {len(work_items)} chunks ({workers} parallel workers)...")
         with ThreadPoolExecutor(max_workers=workers) as executor:
             futures = {executor.submit(_rewrite_one, item): item for item in work_items}
+            completed = 0
+            generation_start = time.monotonic()
+            last_progress = generation_start
             for future in as_completed(futures):
-                i, result = future.result()
+                item = futures[future]
+                try:
+                    i, result, chunk_chars, chunk_elapsed, chunk_filename = future.result()
+                except Exception as e:
+                    chunk_idx = item[0] + 1
+                    raise RuntimeError(
+                        f"LLM rewrite failed for chunk {chunk_idx}/{total}: {e}"
+                    ) from e
                 results[i] = result
+                completed += 1
+                generated_chars += chunk_chars
 
-    return '\n\n'.join(r for r in results if r is not None)
+                if debug_chunks:
+                    print(
+                        f"    [CHUNK OK] {i + 1:02d}/{total:02d} "
+                        f"chars={chunk_chars:,} elapsed={chunk_elapsed:.1f}s file={chunk_filename}"
+                    )
+
+                now = time.monotonic()
+                if (
+                    now - last_progress >= progress_interval_s
+                    or completed == generated_chunks
+                ):
+                    elapsed = now - generation_start
+                    rate = completed / elapsed if elapsed > 0 else 0.0
+                    remaining = generated_chunks - completed
+                    eta = remaining / rate if rate > 0 else 0.0
+                    pct = (completed / generated_chunks * 100) if generated_chunks else 100.0
+                    print(
+                        f"    [PROGRESS] chunks {completed}/{generated_chunks} "
+                        f"({pct:.0f}%) elapsed={_fmt_elapsed_short(elapsed)} "
+                        f"eta={_fmt_elapsed_short(eta)}"
+                    )
+                    last_progress = now
+
+    rewritten = '\n\n'.join(r for r in results if r is not None)
+    rewrite_elapsed = time.monotonic() - rewrite_start
+    print(
+        f"    [REWRITE DONE] chunks total={total}, cached={cached_chunks}, "
+        f"generated={generated_chunks}, elapsed={_fmt_elapsed_short(rewrite_elapsed)}"
+    )
+    stats: dict[str, int | float] = {
+        "chunks_total": total,
+        "chunks_cached": cached_chunks,
+        "chunks_generated": generated_chunks,
+        "generated_chars": generated_chars,
+        "rewrite_elapsed_s": rewrite_elapsed,
+    }
+    return rewritten, stats
 
 
 def chunk_text(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list[str]:
@@ -350,8 +426,10 @@ def generate_chapter_text(
     variables: dict,
     force: bool = False,
     dry_run: bool = False,
+    debug_chunks: bool = False,
 ) -> dict | None:
     """Generate audiobook text for a single chapter."""
+    chapter_start = time.monotonic()
     qmd_path = PROJECT_ROOT / chapter['path']
     if not qmd_path.exists():
         print(f"  [SKIP] File not found: {qmd_path}")
@@ -369,16 +447,24 @@ def generate_chapter_text(
     hash_input = replace_variables(raw_qmd, variables, highlight_missing=False)
     source_hash = hashlib.sha256(hash_input.encode('utf-8')).hexdigest()[:16]
     source_hash_file = OUTPUT_DIR / f"{slug}.source_hash"
+    source_state = "new"
     if output_path.exists() and not force:
         old_source_hash = source_hash_file.read_text(encoding='utf-8').strip() if source_hash_file.exists() else ''
         if old_source_hash == source_hash:
-            print(f"  [SKIP] Source unchanged: {output_path.name}")
             return {
                 'index': chapter['index'], 'title': title, 'part': chapter['part'],
                 'path': chapter['path'], 'text_file': str(output_path.relative_to(PROJECT_ROOT)),
                 'status': 'cached',
+                'slug': slug,
+                'source_state': 'unchanged',
+                'raw_chars': len(raw_qmd),
+                'elapsed_s': time.monotonic() - chapter_start,
             }
-        print(f"  [STALE] Source QMD changed (was {old_source_hash or 'unknown'}, now {source_hash}), regenerating")
+        source_state = "stale"
+        if debug_chunks:
+            print(f"  [STALE] Source QMD changed (was {old_source_hash or 'unknown'}, now {source_hash}), regenerating")
+    elif force:
+        source_state = "forced"
     original_vars = len(re.findall(r'\{\{<\s*var\s+\w+\s*>\}\}', raw_qmd))
 
     prepared = prepare_for_narration(raw_qmd, variables)
@@ -398,17 +484,24 @@ def generate_chapter_text(
         return None
 
     remaining_vars = len(re.findall(r'\{\{<\s*var\s+\w+\s*>\}\}', prepared))
-    print(f"  Content: {len(raw_qmd):,} -> {len(prepared):,} chars, {original_vars} vars ({original_vars - remaining_vars} resolved)")
+    if debug_chunks:
+        print(f"  Content: {len(raw_qmd):,} -> {len(prepared):,} chars, {original_vars} vars ({original_vars - remaining_vars} resolved)")
 
     if dry_run:
         OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
         output_path.write_text(prepared, encoding='utf-8')
         source_hash_file.write_text(source_hash, encoding='utf-8')
-        print(f"  [DRY RUN] Prepared text saved to: {output_path.name}")
         return {
             'index': chapter['index'], 'title': title, 'part': chapter['part'],
             'path': chapter['path'], 'text_file': str(output_path.relative_to(PROJECT_ROOT)),
             'status': 'dry_run',
+            'slug': slug,
+            'source_state': source_state,
+            'raw_chars': len(raw_qmd),
+            'prepared_chars': len(prepared),
+            'vars_total': original_vars,
+            'vars_resolved': original_vars - remaining_vars,
+            'elapsed_s': time.monotonic() - chapter_start,
         }
 
     # Invalidate chunk cache if prepared text has changed
@@ -418,18 +511,25 @@ def generate_chapter_text(
     prepared_hash = hashlib.sha256(hash_content.encode('utf-8')).hexdigest()[:16]
     if chunk_dir.exists():
         if force:
-            print(f"  [CACHE] Force flag set, clearing chunk cache")
+            if debug_chunks:
+                print(f"  [CACHE] Force flag set, clearing chunk cache")
             shutil.rmtree(chunk_dir)
         else:
             old_hash = hash_file.read_text(encoding='utf-8').strip() if hash_file.exists() else ''
             if old_hash != prepared_hash:
-                print(f"  [CACHE] Source text changed (was {old_hash or 'unknown'}, now {prepared_hash}), clearing chunk cache")
+                if debug_chunks:
+                    print(f"  [CACHE] Source text changed (was {old_hash or 'unknown'}, now {prepared_hash}), clearing chunk cache")
                 shutil.rmtree(chunk_dir)
-            else:
+            elif debug_chunks:
                 print(f"  [CACHE] Source text unchanged ({prepared_hash}), reusing chunk cache")
 
-    print(f"  Rewriting for audiobook...")
-    rewritten = rewrite_for_audiobook(prepared, title, output_path, intro_text=intro_text)
+    rewritten, rewrite_stats = rewrite_for_audiobook(
+        prepared,
+        title,
+        output_path,
+        intro_text=intro_text,
+        debug_chunks=debug_chunks,
+    )
 
     # Save hash for future cache validation
     chunk_dir.mkdir(parents=True, exist_ok=True)
@@ -442,12 +542,19 @@ def generate_chapter_text(
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path.write_text(rewritten, encoding='utf-8')
     source_hash_file.write_text(source_hash, encoding='utf-8')
-    print(f"  [OK] {output_path.name} ({len(rewritten):,} chars)")
 
     return {
         'index': chapter['index'], 'title': title, 'part': chapter['part'],
         'path': chapter['path'], 'text_file': str(output_path.relative_to(PROJECT_ROOT)),
         'chars': len(rewritten), 'status': 'generated',
+        'slug': slug,
+        'source_state': source_state,
+        'raw_chars': len(raw_qmd),
+        'prepared_chars': len(prepared),
+        'vars_total': original_vars,
+        'vars_resolved': original_vars - remaining_vars,
+        'elapsed_s': time.monotonic() - chapter_start,
+        **rewrite_stats,
     }
 
 
@@ -484,6 +591,50 @@ def list_chapters(chapters: list[dict]):
 # CLI
 # ---------------------------------------------------------------------------
 
+
+def _chapter_summary_line(result: dict, seq: int, total: int) -> str:
+    """Build a dense, one-line chapter status summary."""
+    status = result.get("status", "unknown")
+    idx = int(result.get("index", seq))
+    slug = result.get("slug") or Path(result.get("path", "")).stem or f"chapter-{idx}"
+    elapsed_s = float(result.get("elapsed_s", 0.0))
+    source_state = result.get("source_state", "-")
+
+    if status == "generated":
+        chunks_total = int(result.get("chunks_total", 0))
+        chunks_cached = int(result.get("chunks_cached", 0))
+        chunks_generated = int(result.get("chunks_generated", 0))
+        raw_chars = int(result.get("raw_chars", 0))
+        prepared_chars = int(result.get("prepared_chars", 0))
+        out_chars = int(result.get("chars", 0))
+        return (
+            f"[CHAPTER] {seq:02d}/{total:02d} idx={idx:02d} slug={slug} "
+            f"status=generated src={source_state} chunks={chunks_total} "
+            f"(cache={chunks_cached}, new={chunks_generated}) "
+            f"chars={raw_chars:,}->{prepared_chars:,}->{out_chars:,} "
+            f"time={_fmt_elapsed_short(elapsed_s)}"
+        )
+    if status == "cached":
+        raw_chars = int(result.get("raw_chars", 0))
+        return (
+            f"[CHAPTER] {seq:02d}/{total:02d} idx={idx:02d} slug={slug} "
+            f"status=cached src={source_state} chars={raw_chars:,} "
+            f"time={_fmt_elapsed_short(elapsed_s)}"
+        )
+    if status == "dry_run":
+        raw_chars = int(result.get("raw_chars", 0))
+        prepared_chars = int(result.get("prepared_chars", 0))
+        return (
+            f"[CHAPTER] {seq:02d}/{total:02d} idx={idx:02d} slug={slug} "
+            f"status=dry_run src={source_state} "
+            f"chars={raw_chars:,}->{prepared_chars:,} time={_fmt_elapsed_short(elapsed_s)}"
+        )
+    return (
+        f"[CHAPTER] {seq:02d}/{total:02d} idx={idx:02d} slug={slug} "
+        f"status={status} src={source_state} time={_fmt_elapsed_short(elapsed_s)}"
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate audiobook-friendly text from Quarto book chapters")
     parser.add_argument("--config", "-cfg", default=str(DEFAULT_CONFIG_PATH), help=f"Quarto config YAML (default: {DEFAULT_CONFIG_PATH.name})")
@@ -493,6 +644,7 @@ def main():
     parser.add_argument("--list", "-l", action="store_true", help="List all chapters and exit")
     parser.add_argument("--force", "-f", action="store_true", help="Regenerate text even if files exist")
     parser.add_argument("--dry-run", "-n", action="store_true", help="Run programmatic strip only, skip LLM (saves prepared text for review)")
+    parser.add_argument("--debug-chunks", action="store_true", help="Verbose per-chunk logs (default is compact chapter summaries)")
     parser.add_argument("--variables-yml", default=str(VARIABLES_YML), help=f"Path to variables YAML (default: {VARIABLES_YML.name})")
     args = parser.parse_args()
 
@@ -536,16 +688,29 @@ def main():
     mode = "DRY RUN (strip only)" if args.dry_run else "GENERATE"
     print(f"\n[{mode}] Processing {len(chapters)} chapter(s)...")
     print(f"Output: {OUTPUT_DIR.relative_to(PROJECT_ROOT)}")
+    if args.debug_chunks:
+        print("Chunk logs: verbose")
+    else:
+        print("Chunk logs: compact (use --debug-chunks for per-chunk detail)")
     print()
 
     results = []
-    for chapter in chapters:
+    manifest_fields = {"index", "title", "part", "path", "text_file", "chars", "status"}
+    total_selected = len(chapters)
+    for seq, chapter in enumerate(chapters, start=1):
         qmd_path = PROJECT_ROOT / chapter['path']
         title = chapter['title'] or (extract_title_from_qmd(qmd_path) if qmd_path.exists() else chapter['path'])
-        print(f"\n[{chapter['index']}/{chapters[-1]['index']}] {title}")
-        result = generate_chapter_text(chapter, variables, force=args.force, dry_run=args.dry_run)
+        print(f"\n[CHAPTER START] {seq:02d}/{total_selected:02d} idx={chapter['index']:02d} title={title}")
+        result = generate_chapter_text(
+            chapter,
+            variables,
+            force=args.force,
+            dry_run=args.dry_run,
+            debug_chunks=args.debug_chunks,
+        )
         if result:
-            results.append(result)
+            print(_chapter_summary_line(result, seq=seq, total=total_selected))
+            results.append({k: v for k, v in result.items() if k in manifest_fields})
 
     generated = sum(1 for r in results if r['status'] == 'generated')
     cached = sum(1 for r in results if r['status'] == 'cached')

@@ -14,15 +14,21 @@ feed-date: '2026-03-08'
 youtube-thumbnail: /assets/podcast/central-banks-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-On Wishonia, we used rocks as currency for about 400 years. Then someone pointed out that rocks are heavy and also everywhere. It took us another 200 years of arguing, a bribery program, and three currency collapses before we switched to a trust-based ledger system. Humans took until 2009 to even consider this, and then mostly used it to buy drugs and expensive monkey JPGs. (Your species paid $69 million for a picture of an ape. The ape was not even real. I checked.)
+On Wishonia, we used rocks as currency for about 400 years. Then someone pointed out that rocks are heavy and also everywhere. It took us another 200 years of arguing, a bribery program, and three currency collapses before we switched to a shared ledger: a network of computers that all keep the same record of who has what, and check each other's work so nobody can lie. If one computer tries to say "actually I have a million extra coins," the other computers say "no you don't" and ignore it. That's the whole thing. It is not complicated. A child could understand it. (On Wishonia, a child *did* invent it. She was eleven. She won a science fair. The previous monetary system had been designed by 400 adults over two centuries and was worse in every way.)
+
+Humans invented the same idea in 2009. It is called "blockchain," which is a word designed to make a simple concept sound difficult, because if people understood how simple it was, they might ask why they're still using the old system. Mostly, your species used it to buy drugs and expensive monkey JPGs. (You paid $69 million for a picture of an ape. The ape was not even real. I checked.)
+
+I will come back to this invention later, because it is important. It makes the system I'm about to describe completely unnecessary. But first, let me describe the system, because you are currently inside it and it is eating you.
 
 Your species also used rocks as currency, except you picked the shiniest rock, dug it out of the ground at great expense, shaped it into bars, and then put it back in the ground in a different building. You called the first building a "mine" and the second building a "vault." The only difference is the lighting.
 
 But the most interesting thing about your money is not what it buys. It's where it comes from.
 
-Your money comes from a building. Humans inside the building decide how much money exists. Then they give the new money to their friends, and the friends buy things before anyone else notices there's more money now, which makes all the other money worth less. This is called "monetary policy." It is the largest and longest robbery in your planet's history, and it has been happening every day for over a century, and nobody covers it on the news because it is, by design, extremely boring.
+Your money comes from a building. Inside that building, twelve humans sit around a table and decide how much money exists. Twelve. I counted. They are called the Federal Open Market Committee, which is three lies in five words: it is not federal, the market is not open, and the committee meets in private. These twelve people are not elected. You did not pick them. You do not know their names. (Go ahead. Try to name three. I'll wait. You can't. Nobody can. This is a feature, not a bug.) They decide whether your money is worth more or less tomorrow, which determines whether you can afford your rent, your groceries, your medicine, and your children's future. Twelve people. One table. Eight meetings a year. This is your species' system for deciding who gets what. It has been running for over a century. It has funded the deaths of 97 million people. It is, by design, extremely boring, because boring things don't get investigated.
 
 On Wishonia we have a word for making theft too tedious to investigate. It translates roughly to "beige crime."
+
+I mentioned the network of computers that check each other so nobody can lie. Your twelve-person table is the opposite of that. It is a network of humans who do not check each other, are not checked by you, and can lie using vocabulary so specialized that the lie is technically public but functionally invisible. The technology to replace them exists. It has existed since 2009. You are using it to trade pictures of dogs in hats. I don't have a metaphor for this because no civilization in my experience has ever done anything this stupid on purpose.
 
 ## The Pattern: Print, Kill, Repeat
 
@@ -281,7 +287,7 @@ On Wishonia, we had a similar arrangement once. Someone would stand between the 
 
 ### The 2020 Demonstration
 
-In 2020, the Fed created roughly $4 trillion in new money [@fred-walcl-2026].
+In 2020, the Fed created roughly $4 trillion in new money [@fred-walcl-2026]. That is 889 years of global government clinical trials. Every disease your species currently dies from, tested and funded, for nearly nine centuries. Created in a few months. Handed to banks.
 
 Where did it go? This is a mystery in the same way that asking "who ate the cake?" is a mystery when there is one person in the room covered in frosting.
 
@@ -320,7 +326,7 @@ In 2008, banks used the cheap unanchored money to build a casino on top of peopl
 
 The houses were real. The bets were not. When the bets collapsed, ten million Americans lost their homes.
 
-The government's response was to give the banks $700 billion of your money through something called the Troubled Asset Relief Program [@cuomo-bank-bonuses-2009]. The homeowners got foreclosure notices. I checked whether this was a typo. It was not a typo.
+The government's response was to give the banks $700 billion of your money through something called the Troubled Asset Relief Program [@cuomo-bank-bonuses-2009]. That is 156 years of global government clinical trials. The homeowners got foreclosure notices. I checked whether this was a typo. It was not a typo.
 
 Here is what the banks did with your money. Citigroup lost $18.7 billion in 2008. On Wishonia, if you lose $18.7 billion, you are fired. On Earth, you are given $45 billion in taxpayer bailout funds and then you pay yourself $5.33 billion in bonuses [@cuomo-bank-bonuses-2009]. Goldman Sachs earned $2.3 billion and paid out $4.8 billion in bonuses [@cbs-bank-bonuses-2009]. On Wishonia, the word "bonus" means "reward for doing your job well." On Earth, it apparently means "reward." Citigroup could have taken $40 billion and skipped the bonuses. Instead, the government gave them an extra $5 billion, taken from the paychecks of people who still had jobs, so the executives who crashed the economy could have a treat. On Wishonia, when a child breaks a window, you do not buy the child ice cream. On Earth, you buy the child a bank.
 
@@ -528,15 +534,17 @@ The part that actually keeps you alive (the actual research into why your cells 
 
 The sector that grew the most deserves special attention, because what it does is very simple and what it costs is very large.
 
-Your financial sector moves money from people who have it to people who need it, and keeps a record of who owes what. That's it. That is the entire job. An Excel spreadsheet. On Wishonia, we automated this 4,000 years ago. It runs on a decentralized network of computers and employs nobody. Yours employs 6.7 million people and captures 8% of your GDP [@fred-finance-insurance-gdp-2026].
+Your financial sector moves money from people who have it to people who need it, and keeps a record of who owes what. That's it. That is the entire job. An Excel spreadsheet. Remember the eleven-year-old's science fair project? The network of computers that check each other so nobody can lie? That replaced this entire sector on Wishonia. It runs continuously, employs nobody, and has not made a single error in 4,000 years. Your version employs 6.7 million people and captures 8% of your GDP [@fred-finance-insurance-gdp-2026].
 
-Eight percent of GDP. For an Excel spreadsheet. I checked whether they were using a very complicated spreadsheet. They are not. It has columns and rows. Some of the cells have formulas. This is the same technology a thirteen-year-old uses to track Pokémon stats. It captures 8% of the largest economy in history.
+Eight percent of GDP. For an Excel spreadsheet. I checked whether they were using a very complicated spreadsheet. They are not. It has columns and rows. Some of the cells have formulas. This is the same technology a thirteen-year-old uses to track Pokémon stats. It captures 8% of the largest economy in history. The technology to automate it has existed on your planet since 2009. You are paying 6.7 million people to do what the computers are already doing, because the 6.7 million people are very good at making the job sound complicated.
 
 Understanding why your bodies break down requires decoding 3 billion base pairs of DNA, modeling protein folding across millions of configurations, and running clinical trials on thousands of humans for years. Moving money from Account A to Account B requires arithmetic. One of these captures 8% of GDP. The other gets 0.065%. I will let you guess which is which.
 
 The numbers are clarifying. US GDP is roughly $29 trillion. Eight percent of that is $2.3 trillion captured annually by the financial sector. Global government spending on clinical trials (the part that actually tests whether medicines work in humans) is {{< var global_government_clinical_trials_spending_annual >}} per year. The ratio is roughly 500:1. Your species spends 500 times more moving numbers between columns than testing whether drugs save lives.
 
-At the US median salary of $77,500, that $2.3 trillion could employ 30 million researchers. You could multiply your entire medical research workforce by 30 with what the spreadsheet costs.
+I want to make sure you felt that number, so let me translate it. Your governments spend {{< var global_government_clinical_trials_spending_annual >}} per year testing whether medicines work. The financial sector captures $2.3 trillion per year moving numbers between columns. That $2.3 trillion is 511 years of clinical trials. Five hundred and eleven years. Your entire species could run every government-funded clinical trial on Earth for half a millennium with what you pay the spreadsheet department annually. Every year, you choose the spreadsheet. Every year, the diseases wait.
+
+At the US median salary of $77,500, that $2.3 trillion could also employ 30 million researchers. You could multiply your entire medical research workforce by 30 with what the spreadsheet costs.
 
 You will not do this. I mention it only so you can see the size of the room you're not using.
 

@@ -18,13 +18,14 @@ Usage:
     python scripts/publish_audiobook.py                         # Full pipeline
     python scripts/publish_audiobook.py --chapter 5             # Single chapter
     python scripts/publish_audiobook.py --force                 # Regenerate everything
-    python scripts/publish_audiobook.py --no-sync               # Skip R2 upload
+    python scripts/publish_audiobook.py --no-sync               # Skip all R2 uploads
     python scripts/publish_audiobook.py --video                 # Include video stages
     python scripts/publish_audiobook.py --no-audible            # Skip Audible export
     python scripts/publish_audiobook.py --audible-only          # Only run Audible export
     python scripts/publish_audiobook.py --keyframes-only        # Stop after keyframes
     python scripts/publish_audiobook.py --ken-burns             # Ken Burns stills video (no Veo)
     python scripts/publish_audiobook.py --combine              # Include combined audiobook MP3/M4B
+    python scripts/publish_audiobook.py --no-sync-each-chapter  # Disable immediate per-chapter R2 uploads
     python scripts/publish_audiobook.py --list                  # List chapters and exit
     python scripts/publish_audiobook.py --dry-run               # Text dry-run only
 """
@@ -34,6 +35,9 @@ import argparse
 import hashlib
 import json
 import time
+import atexit
+import re
+from collections import deque
 from datetime import datetime
 from pathlib import Path
 
@@ -45,6 +49,8 @@ PROJECT_ROOT = SCRIPTS_DIR.parent
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 OUTRO_QMD_PATH = PROJECT_ROOT / "knowledge" / "appendix" / "podcast-outro.qmd"
+
+from lib.script_lock import acquire_script_lock, ScriptLockError
 
 
 def _ts() -> str:
@@ -70,21 +76,77 @@ _step_timings: list[tuple[str, float, bool, int]] = []
 # Set after audio generation so the timing summary can include chapter stats
 _manifest_path: Path | None = None
 
+# Per-run debug logs directory and monotonic step counter
+_run_log_dir: Path | None = None
+_step_counter: int = 0
+
+
+def _slugify(text: str) -> str:
+    """Filesystem-safe slug for step log names."""
+    slug = re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+    return slug or "step"
+
 
 def run_step(label: str, script: str, args: list[str]) -> bool:
     """Run a pipeline step, returning True on success."""
+    global _step_counter
+    _step_counter += 1
+    step_id = f"{_step_counter:02d}"
+
     print(f"\n{'=' * 70}")
-    print(f"  [{_ts()}] STEP: {label}")
+    print(f"  [{_ts()}] STEP {step_id}: {label}")
     print(f"{'=' * 70}\n")
 
     t0 = time.monotonic()
     cmd = [sys.executable, "-u", str(SCRIPTS_DIR / script)] + args
-    result = subprocess.run(cmd, cwd=str(PROJECT_ROOT))
+    cmd_display = " ".join(cmd)
+
+    step_log_path: Path | None = None
+    if _run_log_dir is not None:
+        step_log_path = _run_log_dir / f"{step_id}-{_slugify(label)}.log"
+        step_log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    print(f"  [{_ts()}] CMD: {cmd_display}")
+    if step_log_path is not None:
+        print(f"  [{_ts()}] DEBUG LOG: {step_log_path}")
+    print()
+
+    tail_lines: deque[str] = deque(maxlen=40)
+    return_code = 0
+    if step_log_path is None:
+        result = subprocess.run(cmd, cwd=str(PROJECT_ROOT))
+        return_code = int(result.returncode)
+    else:
+        with open(step_log_path, "w", encoding="utf-8", newline="\n") as step_log:
+            step_log.write(f"[RUN] {cmd_display}\n\n")
+            step_log.flush()
+            process = subprocess.Popen(
+                cmd,
+                cwd=str(PROJECT_ROOT),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+            )
+            for line in (process.stdout or []):
+                step_log.write(line)
+                tail_lines.append(line.rstrip("\n"))
+                print(line, end="", flush=True)
+            process.wait()
+            return_code = int(process.returncode or 0)
+
     elapsed = time.monotonic() - t0
 
-    if result.returncode != 0:
+    if return_code != 0:
         _step_timings.append((label, elapsed, False, 0))
-        print(f"\n[{_ts()}] [FAILED] {label} (exit code {result.returncode}, {_fmt_elapsed(elapsed)})")
+        print(f"\n[{_ts()}] [FAILED] {label} (exit code {return_code}, {_fmt_elapsed(elapsed)})")
+        if tail_lines:
+            print(f"[{_ts()}] Last output lines:")
+            for line in tail_lines:
+                print(f"  {line}")
+        if step_log_path is not None:
+            print(f"[{_ts()}] Full debug log: {step_log_path}")
         return False
     _step_timings.append((label, elapsed, True, 0))
     print(f"\n[{_ts()}] [OK] {label} ({_fmt_elapsed(elapsed)})")
@@ -285,7 +347,7 @@ def main():
     parser.add_argument("--force", "-f", action="store_true", help="Regenerate even if cached")
     parser.add_argument("--list", "-l", action="store_true", help="List chapters and exit")
     parser.add_argument("--dry-run", "-n", action="store_true", help="Text dry-run (skip LLM)")
-    parser.add_argument("--no-sync", action="store_true", help="Skip R2 sync step")
+    parser.add_argument("--no-sync", action="store_true", help="Skip all R2 uploads (per-chapter and final sync step)")
     parser.add_argument("--video", action="store_true", help="Include scene segmentation and video generation (off by default)")
     parser.add_argument("--no-audible", action="store_true", help="Skip Audible/ACX export step")
     parser.add_argument("--audible-only", action="store_true", help="Only run Audible/ACX export (skip all other steps)")
@@ -293,14 +355,39 @@ def main():
     parser.add_argument("--keyframes-only", action="store_true", help="Stop after keyframe generation (skip Veo animation)")
     parser.add_argument("--ken-burns", action="store_true", help="Generate Ken Burns stills video (pan/zoom on keyframes, no Veo)")
     parser.add_argument("--combine", action="store_true", help="Combine chapters into single audiobook MP3/M4B (off by default)")
+    parser.add_argument("--sync-each-chapter", dest="sync_each_chapter", action="store_true",
+                        help="Immediately upload each newly generated chapter MP3 + refreshed feed/manifest to R2 (default: enabled)")
+    parser.add_argument("--no-sync-each-chapter", dest="sync_each_chapter", action="store_false",
+                        help="Disable immediate per-chapter R2 upload during audio generation")
+    parser.set_defaults(sync_each_chapter=True)
     args = parser.parse_args()
 
+    try:
+        lock = acquire_script_lock(
+            "publish-audiobook",
+            PROJECT_ROOT,
+            command=" ".join(sys.argv),
+        )
+        atexit.register(lock.release)
+    except ScriptLockError as e:
+        print(f"[{_ts()}] [ERROR] {e}")
+        sys.exit(2)
+
     pipeline_start = time.monotonic()
+    run_id = datetime.now().strftime("%Y%m%d-%H%M%S")
+    global _run_log_dir, _step_counter
+    _step_counter = 0
+    _run_log_dir = PROJECT_ROOT / "logs" / "publish-audiobook" / run_id
+    _run_log_dir.mkdir(parents=True, exist_ok=True)
     print(f"\n[{_ts()}] Pipeline started")
+    print(f"[{_ts()}] Debug logs: {_run_log_dir}")
 
     # --ken-burns implicitly enables --video
     if args.ken_burns:
         args.video = True
+    # --no-sync is a hard override for all R2 uploads.
+    if args.no_sync and args.sync_each_chapter:
+        args.sync_each_chapter = False
 
     # Build shared args that get passed to text + audio scripts
     shared = ["--config", args.config]
@@ -361,6 +448,10 @@ def main():
         audio_args.append("--force")
     if not args.combine:
         audio_args.append("--no-combine")
+    if args.sync_each_chapter:
+        audio_args.append("--sync-each-chapter")
+    else:
+        audio_args.append("--no-sync-each-chapter")
 
     step_label = "Generate audio + MP3s + RSS"
     if not run_step(step_label, "generate_audiobook.py", audio_args):

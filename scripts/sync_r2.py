@@ -221,6 +221,96 @@ def cache_control_for(path: Path) -> str:
     return CACHE_CONTROL.get(path.suffix.lower(), DEFAULT_CACHE)
 
 
+def key_from_local_path(local_path: Path) -> str:
+    """Convert an absolute or relative local path to an R2 object key."""
+    path = local_path.resolve()
+    root = PROJECT_ROOT.resolve()
+    try:
+        rel = path.relative_to(root)
+    except ValueError as e:
+        raise ValueError(f"Path is outside project root and cannot be uploaded: {local_path}") from e
+    return rel.as_posix()
+
+
+def _remote_etag_for_key(client, bucket: str, key: str) -> str | None:
+    """Return remote ETag for key, or None if object does not exist."""
+    import botocore.exceptions
+    try:
+        head = client.head_object(Bucket=bucket, Key=key)
+        return head["ETag"].strip('"')
+    except botocore.exceptions.ClientError as e:
+        code = str(e.response.get("Error", {}).get("Code", ""))
+        if code in {"404", "NoSuchKey", "NotFound"}:
+            return None
+        raise
+
+
+def upload_selected_files(local_paths: list[Path], dry_run: bool = False) -> tuple[int, int, int]:
+    """Upload specific local files to R2 if changed.
+
+    Returns tuple: (uploaded, skipped_unchanged, errors)
+    """
+    if not local_paths:
+        return 0, 0, 0
+
+    client = get_r2_client()
+    bucket = get_bucket()
+
+    uploaded = 0
+    skipped = 0
+    errors = 0
+    seen: set[str] = set()
+
+    for local_path in local_paths:
+        path = Path(local_path)
+        if not path.exists() or not path.is_file():
+            print(f"  [WARN] Local file missing, cannot upload: {path}")
+            errors += 1
+            continue
+
+        try:
+            key = key_from_local_path(path)
+        except ValueError as e:
+            print(f"  [WARN] {e}")
+            errors += 1
+            continue
+
+        if key in seen:
+            continue
+        seen.add(key)
+
+        remote_etag = _remote_etag_for_key(client, bucket, key)
+        if file_matches_etag(path, remote_etag):
+            skipped += 1
+            continue
+
+        size = path.stat().st_size
+        ct = content_type_for(path)
+
+        if dry_run:
+            print(f"  [DRY-RUN UPLOAD] {key} ({format_size(size)}, {ct})")
+            uploaded += 1
+            continue
+
+        print(f"  [UPLOAD] {key} ({format_size(size)})")
+        try:
+            client.upload_file(
+                str(path),
+                bucket,
+                key,
+                ExtraArgs={
+                    "ContentType": ct,
+                    "CacheControl": cache_control_for(path),
+                },
+            )
+            uploaded += 1
+        except Exception as e:
+            print(f"    FAILED: {e}")
+            errors += 1
+
+    return uploaded, skipped, errors
+
+
 class UploadProgress:
     """Callback for boto3 upload_file to show transfer progress."""
     def __init__(self, total_bytes: int):
