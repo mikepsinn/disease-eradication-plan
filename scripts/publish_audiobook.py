@@ -25,6 +25,8 @@ Usage:
     python scripts/publish_audiobook.py --keyframes-only        # Stop after keyframes
     python scripts/publish_audiobook.py --ken-burns             # Ken Burns stills video (no Veo)
     python scripts/publish_audiobook.py --combine              # Include combined audiobook MP3/M4B
+    python scripts/publish_audiobook.py --regenerate-outro     # Force-regenerate outro + rewrap chapter MP3s
+    python scripts/publish_audiobook.py --rewrap-outro-only    # Regenerate outro + rewrap chapter MP3s
     python scripts/publish_audiobook.py --no-sync-each-chapter  # Disable immediate per-chapter R2 uploads
     python scripts/publish_audiobook.py --list                  # List chapters and exit
     python scripts/publish_audiobook.py --dry-run               # Text dry-run only
@@ -355,6 +357,16 @@ def main():
     parser.add_argument("--keyframes-only", action="store_true", help="Stop after keyframe generation (skip Veo animation)")
     parser.add_argument("--ken-burns", action="store_true", help="Generate Ken Burns stills video (pan/zoom on keyframes, no Veo)")
     parser.add_argument("--combine", action="store_true", help="Combine chapters into single audiobook MP3/M4B (off by default)")
+    parser.add_argument(
+        "--regenerate-outro",
+        action="store_true",
+        help="Force-regenerate podcast outro and rewrap chapter MP3s with the new outro (implies --rewrap-outro-only --force --no-sync-each-chapter)",
+    )
+    parser.add_argument(
+        "--rewrap-outro-only",
+        action="store_true",
+        help="Regenerate podcast outro and rewrap existing chapter MP3s (skip text/audio/video/audible generation)",
+    )
     parser.add_argument("--sync-each-chapter", dest="sync_each_chapter", action="store_true",
                         help="Immediately upload each newly generated chapter MP3 + refreshed feed/manifest to R2 (default: enabled)")
     parser.add_argument("--no-sync-each-chapter", dest="sync_each_chapter", action="store_false",
@@ -385,6 +397,11 @@ def main():
     # --ken-burns implicitly enables --video
     if args.ken_burns:
         args.video = True
+    # Convenience mode: one flag for forced outro regen + rewrap, without noisy per-chapter sync.
+    if args.regenerate_outro:
+        args.rewrap_outro_only = True
+        args.force = True
+        args.sync_each_chapter = False
     # --no-sync is a hard override for all R2 uploads.
     if args.no_sync and args.sync_each_chapter:
         args.sync_each_chapter = False
@@ -413,6 +430,47 @@ def main():
             sys.exit(1)
         _print_timing_summary(pipeline_start)
         print(f"[{_ts()}] [DONE] Audible export complete.")
+        return
+
+    # --- Rewrap-only mode: regenerate outro + rewrap chapter MP3s ---
+    if args.rewrap_outro_only:
+        audio_args = list(shared)
+        if args.force:
+            audio_args.append("--force")
+        if args.sync_each_chapter:
+            audio_args.append("--sync-each-chapter")
+        else:
+            audio_args.append("--no-sync-each-chapter")
+        audio_args.append("--rewrap-only")
+
+        step_label = "Regenerate outro + rewrap chapter MP3s"
+        if not run_step(step_label, "generate_audiobook.py", audio_args):
+            _print_timing_summary(pipeline_start)
+            sys.exit(1)
+
+        # Inject substep timings from the audio generation step
+        from lib.audiobook_common import config_name_from_path, get_paths
+        config_path = Path(args.config)
+        if not config_path.is_absolute():
+            config_path = PROJECT_ROOT / config_path
+        cfg_name = config_name_from_path(config_path)
+        audio_paths = get_paths(cfg_name)
+        _inject_substep_timings(audio_paths.root / ".audio-timing.json")
+
+        global _manifest_path
+        _manifest_path = audio_paths.root / "manifest.json"
+
+        if args.no_sync:
+            _print_timing_summary(pipeline_start)
+            print(f"[{_ts()}] [DONE] Outro rewrap complete (--no-sync: skipped R2 upload).")
+            return
+
+        if not run_step("Sync to Cloudflare R2", "sync_r2.py", []):
+            _print_timing_summary(pipeline_start)
+            sys.exit(1)
+
+        _print_timing_summary(pipeline_start)
+        print(f"[{_ts()}] [DONE] Outro rewrap complete.")
         return
 
     # --- Pre-flight: show what's changed ---
@@ -466,7 +524,6 @@ def main():
     audio_paths = get_paths(cfg_name)
     _inject_substep_timings(audio_paths.root / ".audio-timing.json")
 
-    global _manifest_path
     _manifest_path = audio_paths.root / "manifest.json"
 
     # List generated MP3s

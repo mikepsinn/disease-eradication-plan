@@ -37,6 +37,7 @@
     "images:fix-missing": "tsx scripts/images/fix-missing-images.ts --fix",
     "sync:r2": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py",
     "audiobook:publish": ".venv\\Scripts\\python.exe -u scripts/publish_audiobook.py",
+    "audiobook:rewrap:outro": ".venv\\Scripts\\python.exe -u scripts/publish_audiobook.py --regenerate-outro",
     "images:sections:all": "tsx scripts/images/generate-section-images.ts --all",
     "images:fix": "tsx scripts/images/fix-image-issues.ts",
     "images:whiten": "tsx scripts/images/whiten-backgrounds-sharp.ts",

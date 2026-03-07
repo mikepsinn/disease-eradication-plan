@@ -12,6 +12,7 @@ Usage:
     python scripts/generate_audiobook.py                    # Generate full audiobook
     python scripts/generate_audiobook.py --chapter 5       # Generate specific chapter
     python scripts/generate_audiobook.py --voice Zephyr    # Use different voice
+    python scripts/generate_audiobook.py --rewrap-only     # Regenerate outro + rewrap chapter MP3s
     python scripts/generate_audiobook.py --list            # List all chapters
     python scripts/generate_audiobook.py --no-sync-each-chapter  # Disable immediate R2 sync after each chapter
 """
@@ -1785,6 +1786,11 @@ def main():
         help="Assume narration text is already prepared; skip per-chapter text subprocess",
     )
     parser.add_argument(
+        "--rewrap-only",
+        action="store_true",
+        help="Regenerate podcast outro and rewrap existing chapter MP3s from mp3-raw (skip chapter TTS/WAV/alignment)",
+    )
+    parser.add_argument(
         "--start",
         type=int,
         help="Start from chapter number (inclusive)"
@@ -1865,6 +1871,8 @@ def main():
     print(f"Output: {paths.root.relative_to(PROJECT_ROOT)}")
     if args.skip_text_prep:
         print("Text prep: skipped (using existing prepared narration text)")
+    if args.rewrap_only:
+        print("Mode: rewrap-only (reuse existing chapter MP3 sources)")
     print()
 
     # Substep timing accumulator: {label: elapsed_seconds}
@@ -1909,53 +1917,34 @@ def main():
         print(f"  [INFO] No theme song at {THEME_SONG_PATH}, skipping intro")
     print()
 
-    # Per-chapter pipeline: text -> WAV -> normalize -> align -> raw MP3 -> wrap -> finalize
+    # Per-chapter pipeline
     generated_files = []
-    for chapter in chapters:
-        qmd_path = PROJECT_ROOT / chapter['path']
-        title = chapter['title'] or (extract_title_from_qmd(qmd_path) if qmd_path.exists() else chapter['path'])
+    processed_chapters = 0
+    if args.rewrap_only:
+        raw_mp3_dir = paths.raw_mp3
+        for chapter in chapters:
+            qmd_path = PROJECT_ROOT / chapter['path']
+            title = chapter['title'] or (extract_title_from_qmd(qmd_path) if qmd_path.exists() else chapter['path'])
+            print(f"\n[{chapter['index']}/{total_chapters}] {title}")
 
-        print(f"\n[{chapter['index']}/{total_chapters}] {title}")
-
-        # 1. Generate audio (text prep + TTS + combine chunks -> WAV)
-        t_sub = time.monotonic()
-        audio_path, audio_changed = generate_chapter_audio(
-            chapter,
-            voice=args.voice,
-            force=args.force,
-            paths=paths,
-            config_path=config_path,
-            skip_text_prep=args.skip_text_prep,
-        )
-        _substep_times["TTS generation"] += time.monotonic() - t_sub
-        if not audio_path:
-            continue
-
-        generated_files.append(audio_path)
-
-        # 2. Normalize loudness
-        t_sub = time.monotonic()
-        normalize_loudness(audio_path, target_lufs=-16.0)
-        _substep_times["Loudness normalization"] += time.monotonic() - t_sub
-
-        # 3. Forced alignment + subtitle generation
-        if not args.no_align:
             t_sub = time.monotonic()
-            _run_alignment(chapter, audio_path, title, force=args.force, paths=paths, audio_changed=audio_changed)
-            _substep_times["Alignment + subtitles"] += time.monotonic() - t_sub
+            track_num = next((i for i, ch in enumerate(all_chapters, 1) if ch['index'] == chapter['index']), chapter['index'])
+            raw_mp3 = raw_mp3_dir / f"{chapter_slug(chapter)}.mp3"
+            if not raw_mp3.exists():
+                # Fallback: regenerate raw MP3 from chapter WAV if available.
+                raw_mp3 = export_single_chapter_mp3(
+                    chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths
+                ) or raw_mp3
 
-        # 4. Export raw tagged chapter MP3 (to mp3-raw/)
-        t_sub = time.monotonic()
-        track_num = next((i for i, ch in enumerate(all_chapters, 1) if ch['index'] == chapter['index']), chapter['index'])
-        raw_mp3 = export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
+            if not raw_mp3.exists():
+                print(f"  [SKIP REWRAP] Missing raw MP3 source: {raw_mp3.name}")
+                _substep_times["MP3 export + wrapping"] += time.monotonic() - t_sub
+                continue
 
-        # 5. Wrap with intro/outro (raw mp3-raw/ -> wrapped mp3/)
-        if raw_mp3:
             wrapped = wrap_mp3_with_intro_outro(raw_mp3, mp3_dir, intro_path=intro_mp3, outro_path=outro_wav)
-
-            # 6. Rename to content-hashed filename for podcast cache busting
             if wrapped:
                 wrapped = finalize_podcast_mp3(wrapped)
+                processed_chapters += 1
                 if args.sync_each_chapter:
                     sync_chapter_assets_immediately(
                         wrapped,
@@ -1964,16 +1953,75 @@ def main():
                         paths,
                         mp3_dir,
                     )
-        _substep_times["MP3 export + wrapping"] += time.monotonic() - t_sub
+            _substep_times["MP3 export + wrapping"] += time.monotonic() - t_sub
+    else:
+        # text -> WAV -> normalize -> align -> raw MP3 -> wrap -> finalize
+        for chapter in chapters:
+            qmd_path = PROJECT_ROOT / chapter['path']
+            title = chapter['title'] or (extract_title_from_qmd(qmd_path) if qmd_path.exists() else chapter['path'])
+
+            print(f"\n[{chapter['index']}/{total_chapters}] {title}")
+
+            # 1. Generate audio (text prep + TTS + combine chunks -> WAV)
+            t_sub = time.monotonic()
+            audio_path, audio_changed = generate_chapter_audio(
+                chapter,
+                voice=args.voice,
+                force=args.force,
+                paths=paths,
+                config_path=config_path,
+                skip_text_prep=args.skip_text_prep,
+            )
+            _substep_times["TTS generation"] += time.monotonic() - t_sub
+            if not audio_path:
+                continue
+
+            generated_files.append(audio_path)
+
+            # 2. Normalize loudness
+            t_sub = time.monotonic()
+            normalize_loudness(audio_path, target_lufs=-16.0)
+            _substep_times["Loudness normalization"] += time.monotonic() - t_sub
+
+            # 3. Forced alignment + subtitle generation
+            if not args.no_align:
+                t_sub = time.monotonic()
+                _run_alignment(chapter, audio_path, title, force=args.force, paths=paths, audio_changed=audio_changed)
+                _substep_times["Alignment + subtitles"] += time.monotonic() - t_sub
+
+            # 4. Export raw tagged chapter MP3 (to mp3-raw/)
+            t_sub = time.monotonic()
+            track_num = next((i for i, ch in enumerate(all_chapters, 1) if ch['index'] == chapter['index']), chapter['index'])
+            raw_mp3 = export_single_chapter_mp3(chapter, book_meta, track_num, total_chapters, voice=args.voice, paths=paths)
+
+            # 5. Wrap with intro/outro (raw mp3-raw/ -> wrapped mp3/)
+            if raw_mp3:
+                wrapped = wrap_mp3_with_intro_outro(raw_mp3, mp3_dir, intro_path=intro_mp3, outro_path=outro_wav)
+
+                # 6. Rename to content-hashed filename for podcast cache busting
+                if wrapped:
+                    wrapped = finalize_podcast_mp3(wrapped)
+                    if args.sync_each_chapter:
+                        sync_chapter_assets_immediately(
+                            wrapped,
+                            all_chapters,
+                            book_meta,
+                            paths,
+                            mp3_dir,
+                        )
+            _substep_times["MP3 export + wrapping"] += time.monotonic() - t_sub
 
     print(f"\n{'=' * 60}")
-    print(f"Processed {len(generated_files)} chapters")
+    if args.rewrap_only:
+        print(f"Rewrapped {processed_chapters} chapter MP3(s)")
+    else:
+        print(f"Processed {len(generated_files)} chapters")
 
     # Combine into single audiobook (optional, off by default)
     t_sub = time.monotonic()
     manifest_timestamps: list[ChapterTimestamp] = []
     manifest_source = "chapter WAVs"
-    if not args.no_combine:
+    if not args.no_combine and not args.rewrap_only:
         chapters_with_audio = [ch for ch in all_chapters if find_chapter_audio(ch, paths=paths)]
         if len(chapters_with_audio) > 1:
             combined_path = paths.root / f"{safe_filename(book_meta['title'], max_len=80)}-Audiobook"
