@@ -170,7 +170,7 @@ Only {{< var current_trial_slots_available_nounit >}} participate in drug trials
 | | Current | With Treaty |
 |:---|:---|:---|
 | Cost per patient | {{< var traditional_phase3_cost_per_patient >}} | {{< var dfda_pragmatic_trial_cost_per_patient >}} ({{< var dfda_trial_cost_reduction_factor >}} cheaper) |
-| Govt trial funding | {{< var global_government_clinical_trials_spending_annual >}} | + {{< var treaty_annual_funding >}} from treaty |
+| Govt trial funding | {{< var global_government_clinical_trials_spending_annual >}} | + {{< var dih_treasury_to_medical_research_annual >}} from treaty |
 | Participants/year | {{< var current_trial_slots_available >}} | {{< var dih_patients_fundable_annually_nounit >}} ({{< var dfda_trial_capacity_multiplier >}} increase) |
 
 ![The old way: expensive, slow, nobody joins. The new way: cheaper, faster, everyone joins. We've been using the old way for 80 years.](/assets/images/1-percent-treaty/1-percent-treaty-section-efficiency-comparison-bw-academic.jpg)
