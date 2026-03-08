@@ -1,0 +1,149 @@
+---
+title: The Evidence Machine
+description: Your species has 10,000 jurisdictions that already tried different policies. Some work. Some don't. You've been arguing about which is which for 200 years while sitting on the answer key.
+published: true
+tags:
+  - solution
+  - optimocracy
+  - governance
+  - causal-inference
+  - evidence-based-policy
+  - capture-resistance
+image: /assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Your previous chapter showed you how to [align everyone's incentives](incentive-alignment-bonds.qmd) so that saving lives and advancing careers become the same sentence. Beautiful. One problem: how do you know which policies to recommend?
+
+Currently, your politicians decide what works based on: which lobbyist bought them lunch, what their largest donor thinks, something they half-remember from a campaign speech they wrote on a napkin, and vibes. This is called "evidence-based policymaking," which contains the word "evidence" the same way "grape soda" contains the word "grape."
+
+On Wishonia, we spent 200 years asking our leaders to be smarter. It didn't work. Then we built a machine that checks what actually works and publishes the results so loudly that ignoring them became career suicide. That worked immediately.
+
+We call it the Evidence Machine. You might call it Optimocracy, which sounds like a system of government but is actually just the radical idea of checking your homework.
+
+## The Price of Not Checking
+
+The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage points more of GDP than Switzerland on government. Switzerland gets {{< var us_vs_switzerland_life_expectancy_gap >}} more years of life expectancy. One of these countries is doing it wrong. On Wishonia, we would check which one. On Earth, you have a debate about it. The debate has been going on for 50 years. The Swiss are still winning.
+
+![Rich countries aren't rich because of resources. They're rich because their rules aren't stupid. Poor countries have bad governments. It's the institutions, not the dirt.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
+
+I ran the numbers on your civilization's governance. The results are not flattering.
+
+Your documented governance waste in the United States alone totals {{< var us_gov_waste_total >}}, which is {{< var us_gov_waste_pct_gdp >}} of GDP. That's money your government spent on things that made nobody healthier or wealthier. It's like paying for groceries and then throwing them in a river. Except the river is the Pentagon, and the groceries are your future.
+
+Globally, the opportunity cost of suboptimal policy reaches {{< var political_dysfunction_global_opportunity_cost_total >}} ({{< var political_dysfunction_global_opportunity_cost_pct_gdp >}} of GDP). Your civilization's governance efficiency score is {{< var political_dysfunction_global_efficiency_score >}}, which means your species is running at roughly half its technological potential. You built a Ferrari and then filled it with gravel.
+
+I've watched 847 civilizations, and none of them wasted this much while having this much data about how to stop wasting. Your species invented spreadsheets and then refused to read them. This is impressive in a way I did not intend as a compliment.
+
+For a detailed accounting of where the money goes (and doesn't), see the [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) and [US Efficiency Audit](../appendix/us-efficiency-audit.qmd).
+
+## The Answer Key You Already Have
+
+Here's what's maddening. You already ran the experiment. You just never checked the results.
+
+Your planet has roughly 10,000 jurisdictions (cities, states, provinces, countries) that have been making different policy choices for decades. Kansas cut education funding. Minnesota increased it. That's a natural experiment. Fifty states adopted different minimum wages over 30 years. That's 1,500 natural experiments. Portugal decriminalized drugs. Singapore didn't. Japan has universal healthcare. The United States has whatever you'd call what the United States has.
+
+![Optimocracy: measure what works, recommend what works, check if anyone listened, pay people who listened. It's the revolutionary idea of doing the thing that works.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg)
+
+You don't need randomized controlled trials for government policy. You already have thousands of natural experiments running simultaneously. Modern statistics (your species calls them "synthetic control methods" and "difference-in-differences," which sound like things a robot would say at a dinner party) can extract which policies actually predicted better health and wealth outcomes.
+
+This is exactly the same logic behind your [decentralized FDA](dfda.qmd): watch what actually happens to real humans, then analyze the data. Your decentralized FDA applies this to medicine. The Evidence Machine applies it to governance. Same principle. Different patient. Instead of asking "which drug works?" you're asking "which policy works?" The data already exists. You're using it as a coaster.
+
+It's like running a restaurant for 50 years without ever asking a customer if the food was good. The reviews are on the table. You're sitting on them. They say the food is terrible. You're ordering more of the same ingredients.
+
+## Why Knowing Isn't Enough
+
+If you're thinking "just publish the results and politicians will do the right thing," I have some bad news about your species.
+
+The Copenhagen Consensus already publishes rigorous benefit-cost analyses [@copenhagenconsensus2023]. Childhood vaccination: 101:1 returns. Pragmatic clinical trials: {{< var dfda_roi_rd_only >}}:1. Agricultural subsidies: less than 1:1. The answer key is public. It's been public for years. Your governments ignore it.
+
+![Evidence says do this thing. Politicians say no because it won't get them reelected. You built a system where saving lives loses votes.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
+
+Why? Because information doesn't change incentives. A Princeton study analyzed 1,779 policy decisions and found that average citizens have "little or no independent influence" on policy outcomes [@gilens2014]. Economic elites and organized interest groups drive policy. You already knew this (it's covered in [Unrepresentative Democracy](../problem/unrepresentative-democracy.qmd)). The point here is that publishing better data doesn't fix the problem. Your politicians already know which programs produce value. They don't act because acting doesn't maximize reelection probability, campaign contributions, or post-office career prospects.
+
+Your species has a phrase: "facts don't care about your feelings." This is true. The problem is that your political system doesn't care about facts either. Facts and feelings have equal standing in your legislature, which is to say, none. What has standing is money, and money currently flows to people who ignore the evidence.
+
+This is the gap between [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) (which solve the incentive problem) and the Evidence Machine (which solves the knowledge problem). IABs make doing the right thing profitable. But they need to know what the right thing IS. That requires a measurement system nobody can corrupt.
+
+## The Mechanism: Recommend, Track, Reward
+
+The Evidence Machine does three things. That's it. Three things. Your species has difficulty with three things, so I'll use small words.
+
+**Recommend.** Analyze cross-jurisdictional data to identify which policies predict better health and wealth outcomes. Publish recommendations for every major vote. "Based on historical data across 47 states, funding early childhood education at $X per capita correlates with Y% better median income growth over 15 years." Not ideology. Not theory. What happened when someone else tried it.
+
+**Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. Politicians who ignore the evidence must do so on the record.
+
+**Reward.** The [IAB-funded SuperPAC](incentive-alignment-bonds.qmd) allocates campaign support proportional to alignment scores. Follow evidence, get funded. Ignore it, watch your opponent get funded. Same mechanism the NRA perfected, but pointed at "not dying" instead of "more guns."
+
+![Instead of forcing politicians to be good, pay them to accidentally do good things while pursuing money. You can't fix human nature, but you can redirect it.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-government-adoption-isn-t-required-bw-academic.jpg)
+
+Here's the part your species will find suspicious because it sounds too easy: this doesn't require government permission. The Evidence Machine operates as a permanent advisory layer outside government. Politicians don't surrender any power. They still vote however they want. The system just makes the consequences of ignoring evidence visible and financially painful.
+
+The question changes from "Will politicians give up power?" (impossible; they would sooner give up oxygen) to "Can we make ignoring good advice unprofitable?" (tractable; it's a fundraising challenge, not a revolution). On Wishonia, we learned this distinction the hard way. We spent 200 years trying door number one. Door number two took about 18 months.
+
+## Corruption, But Make It Difficult
+
+"But won't someone corrupt the measurement system?" Yes. This is the right question. It's the only question that matters.
+
+Currently, your lobbying industry has thousands of capture points. Committee earmarks, agency decisions, regulatory rulings, budget amendments, riders on unrelated bills. Each one is cheap to influence. Your federal lobbyists spend {{< var us_total_lobbying_annual >}} per year {{< var us_total_lobbying_annual_cite >}} with estimated 100:1 returns [@drutman2015]. Your democracy is a vending machine, and the buttons are labeled.
+
+![Lobbyists currently have thousands of people to corrupt. Optimocracy gives them one target protected by multiple watchdogs. You're trying to make corruption impractical instead of illegal.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
+
+The Evidence Machine collapses all those capture points to a single target: the measurement methodology. To corrupt the system, you need to simultaneously corrupt the Census Bureau, the Federal Reserve, the Bureau of Labor Statistics, academic institutions, AND decentralized citizen surveys. All without detection. All at the same time. All institutions with different governance structures, different funding sources, different methodologies, and different reasons to hate each other.
+
+Here's how it works in practice. Five independent sources measure median income growth:
+
+| Source | Reported Growth |
+|:-------|:----------------|
+| Census Bureau (American Community Survey) | +2.1% |
+| Federal Reserve (Survey of Consumer Finances) | +2.3% |
+| Bureau of Labor Statistics (Current Population Survey) | +1.9% |
+| University of Michigan (Panel Study of Income Dynamics) | +2.2% |
+| Tax Foundation (IRS data analysis) | +2.0% |
+
+Take the median: **+2.1%**. If one source reports +5.0% (because someone bribed them), the median throws it out automatically. No investigation needed. No whistleblower needed. No committee hearing. Math does the work.
+
+(An honest caveat: these five sources share some underlying data, so they're not perfectly independent. That's why the system also includes decentralized citizen surveys, collected directly from millions of humans, as a sixth source that shares no methodology with the others. Individual gaming is irrelevant when you're aggregating millions of responses. One person lying has approximately zero effect on the median. This is statistics, not voting.)
+
+Your species has spent centuries making corruption illegal. It hasn't worked, because laws are enforced by the same humans who are being bribed. On Wishonia, we tried something different: we made corruption impractical. There's a difference between "you shouldn't steal" and "the vault has five locks held by five people who hate each other." Your species tried door number one for 3,000 years. We recommend door number two.
+
+This is also why it's different from every previous attempt at technocratic governance. Soviet central planning had one source of truth (the Politburo). Credit rating agencies had one source of truth (the agency paid by the people being rated). Both were captured immediately, because corrupting one institution is a Tuesday. Corrupting five independent institutions simultaneously, without any of them noticing or telling anyone, is a conspiracy theory. The expensive kind that doesn't work.
+
+## The Only Two Numbers That Matter
+
+What does the Evidence Machine actually measure? Two numbers. Just two.
+
+**Real after-tax median income growth.** Did the person in the middle of the income distribution get richer this year, after adjusting for inflation and taxes? Not GDP per capita, which is a terrible metric because three billionaires moving into your city makes the average look great while everyone else's rent doubles. Median captures what happened to the actual human in the middle.
+
+**Median healthy life years.** How many years can the person in the middle expect to live in good health? Not average life expectancy, which gets distorted by infant mortality and billionaire longevity clinics. Median captures what a typical human can expect.
+
+![Some numbers are easy to fake. GDP per capita looks great if three billionaires move in. Median income and healthy life years are harder to game. You can't fake everyone being less dead.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
+
+Why these two? Because most policy effects eventually show up in one or both. Education improves income. Environmental regulation improves health. Safety policy affects both. Crime affects both. Trade affects income. Healthcare access affects health. If GDP rises but median income doesn't, the policy correctly registers as worthless. If a health program costs a fortune but nobody lives longer, the metric says so.
+
+Why not 50 metrics? Because each additional target creates a new way to cheat, and your species needs no encouragement in that department. Markets figured this out: firms optimize profit, not 200 sub-metrics. Two broad, hard-to-fake numbers are easier to audit than 50 narrow ones. And these particular numbers are very hard to fake. You can't fabricate purchasing power at scale without actually improving household economics. Mortality is binary (the most binary thing there is). You can't fake everyone being "less dead."
+
+Your government currently measures success by how much money it spends, which is like a restaurant measuring success by how much food it buys. You could buy a mountain of ingredients and poison everyone. By your current metrics, that's a good year.
+
+## Putting It Together
+
+Here's the full architecture, in order, for your species that seems to need instructions for everything including shampoo:
+
+1. The [1% Treaty](1-percent-treaty.qmd) redirects {{< var treaty_annual_funding >}} from the murder budget to medicine.
+2. [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) align politicians' incentives so that voting yes advances their careers.
+3. **The Evidence Machine** (this chapter) identifies which policies actually work and tracks which politicians follow the evidence.
+4. [Wishocracy](wishocracy.qmd) lets 8 billion humans collectively decide how to allocate the medical research funds.
+
+The Evidence Machine handles government policy (what laws to pass, what budgets to set). Wishocracy handles fund allocation (how to spend the research money). One tells governments what works. The other tells the research fund where to aim. Together, they close the loop between knowing what works and doing what works.
+
+![Tribal politics: my team good, your team bad. Optimocracy: did anyone get healthier or richer. One is sports, the other is governance.](/assets/images/optimocracy-paper/optimocracy-paper-section-depolarization-bw-academic.jpg)
+
+And here's why the whole thing ratchets. Each treaty expansion creates more IAB funding, which funds more evidence collection, which strengthens the case for further expansion. Evidence begets funding begets evidence. It's the same self-reinforcing loop as the [Military Industrial Complex](../solution/aligning-incentives.qmd), except instead of manufacturing orphans, it manufactures data about how to stop manufacturing orphans.
+
+One last thing. Some of your humans will ask: "Is this left-wing or right-wing?" The Evidence Machine does not know what those words mean, and neither do I. It measures whether people got healthier and richer. Both of your political teams claim to want this. The Evidence Machine is the first system that can tell you if either of them delivered. The number either went up or it didn't. That fact provides a foundation for governance even after your deepfakes make every other foundation unreliable.
+
+Your species has been arguing about the best way to organize a society for 10,000 years. You've tried monarchies, democracies, dictatorships, theocracies, and whatever Facebook comment sections are. None of them started by asking "what actually worked when someone else tried it?" On Wishonia, we call this "checking." It's less exciting than revolution but considerably more effective.
+
+Now that you know how the evidence engine works, the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd) without any of the money being stolen by lobbyists, committees, or humans whose main qualification is seniority.
+
+For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd).
