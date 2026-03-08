@@ -15,6 +15,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+try:
+    import psutil  # type: ignore[import-untyped]
+except Exception:  # pragma: no cover - optional dependency at runtime
+    psutil = None
+
+
+LOCK_START_TIME_TOLERANCE_SECONDS = 5.0
+
 
 class ScriptLockError(RuntimeError):
     """Raised when a script lock cannot be acquired."""
@@ -83,6 +91,82 @@ def _read_lock_data(lock_path: Path) -> dict[str, Any]:
     return {}
 
 
+def _normalize_command(command: str) -> str:
+    """Normalize command text for fuzzy matching."""
+    normalized = command.replace("\\", "/").replace('"', " ").replace("'", " ").strip().lower()
+    return " ".join(normalized.split())
+
+
+def _commands_match(lock_command: str, process_command: str) -> bool:
+    """Return True when command lines appear to refer to the same script run."""
+    lock_norm = _normalize_command(lock_command)
+    proc_norm = _normalize_command(process_command)
+    if not lock_norm or not proc_norm:
+        return True
+    if lock_norm in proc_norm or proc_norm in lock_norm:
+        return True
+
+    lock_tokens = lock_norm.split()
+    script_token = ""
+    for token in lock_tokens:
+        if token.endswith(".py"):
+            script_token = Path(token).name
+            break
+    if script_token and script_token in proc_norm:
+        return True
+    return False
+
+
+def _parse_started_at(value: Any) -> datetime | None:
+    """Parse lock started_at timestamps in ISO format."""
+    if not isinstance(value, str) or not value.strip():
+        return None
+    try:
+        parsed = datetime.fromisoformat(value)
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def _get_process_identity(pid: int) -> tuple[str, datetime | None]:
+    """Best-effort process identity data for PID reuse detection."""
+    if pid <= 0 or psutil is None:
+        return "", None
+
+    try:
+        proc = psutil.Process(pid)
+        cmdline = proc.cmdline()
+        command = " ".join(part for part in cmdline if part)
+        started_at = datetime.fromtimestamp(proc.create_time(), timezone.utc)
+        return command, started_at
+    except (psutil.NoSuchProcess, psutil.ZombieProcess):
+        return "", None
+    except Exception:
+        return "", None
+
+
+def _is_lock_owner_still_running(existing: dict[str, Any], pid: int) -> bool:
+    """Return True if lock metadata matches a currently running process."""
+    if not _process_exists(pid):
+        return False
+
+    process_command, process_started_at = _get_process_identity(pid)
+    lock_command = str(existing.get("command") or "").strip()
+    lock_started_at = _parse_started_at(existing.get("started_at"))
+
+    if lock_started_at and process_started_at:
+        delta_seconds = abs((process_started_at - lock_started_at).total_seconds())
+        if delta_seconds > LOCK_START_TIME_TOLERANCE_SECONDS:
+            return False
+
+    if lock_command and process_command and not _commands_match(lock_command, process_command):
+        return False
+
+    return True
+
+
 @dataclass
 class ScriptLock:
     """Represents an acquired script lock."""
@@ -142,7 +226,7 @@ def acquire_script_lock(name: str, project_root: Path, *, command: str = "") -> 
         except FileExistsError:
             existing = _read_lock_data(lock_path)
             existing_pid = int(existing.get("pid") or 0)
-            if existing_pid and _process_exists(existing_pid):
+            if existing_pid and _is_lock_owner_still_running(existing, existing_pid):
                 started = existing.get("started_at", "unknown")
                 cmd = existing.get("command", "")
                 details = f" (cmd: {cmd})" if cmd else ""
