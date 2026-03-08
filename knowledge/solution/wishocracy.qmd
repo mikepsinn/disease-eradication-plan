@@ -31,7 +31,7 @@ Ordinary polling is useless here because it lets people live in a fantasy where 
 
 ## How Wishocracy Allocates High-Level Priorities
 
-Anyone can submit a campaign proposal. Wishocracy allocates the part of a budget that genuinely requires collective judgment: cross-domain tradeoffs, shared infrastructure, and other public goods markets handle badly. It's Kickstarter, but backed by the GDP of nations instead of your friend's credit card.
+Anyone can submit a priority proposal. Wishocracy allocates the part of a budget that genuinely requires collective judgment: cross-domain tradeoffs, shared infrastructure, and other public goods that markets handle badly. It's Kickstarter, but backed by the GDP of nations instead of your friend's credit card.
 
 ### What Wishocracy Actually Decides:
 
@@ -45,35 +45,35 @@ Anyone can submit a campaign proposal. Wishocracy allocates the part of a budget
 
 #### Shared Public Goods Within a Domain
 
-- "EHR integration" vs "Security audits"
-- "Protocol Provider A" vs "Protocol Provider B"
-- "Data commons" vs "Trial insurance pool"
+- "Verification satellite network" vs "On-site inspection capacity"
+- "Bridge inspection" vs "Port cybersecurity"
+- "Trial matching infrastructure" vs "Research data interoperability"
 
-Everything else is execution. Engineers build. Doctors treat. Researchers run studies. Markets and domain-specific institutions handle the parts where direct user choice or price signals actually work. Wishocracy governs the part where the species has to decide what the next marginal public dollar should buy.
+Everything else is execution. Engineers build. Operators operate. Researchers run studies. Markets and domain-specific institutions handle the parts where direct user choice or price signals actually work. Wishocracy governs the part where the species has to decide what the next marginal public dollar should buy.
 
-### How It Works: Pairwise Comparisons Between Campaigns
+### How It Works: Pairwise Slider Allocation
 
-Your brain can't rank a list of 20 priorities. It gives up around item number seven [@cognitive-limit-seven-items]. But it's fantastic at comparing two things. So instead of asking "Rank these 10,000 campaign proposals," the system asks:
+Your brain can't rank a list of 20 priorities. It gives up around item number seven [@cognitive-limit-seven-items]. But it's much better at a local tradeoff between two things. So instead of asking "Rank these 10,000 priorities," the system shows you two at a time and asks:
 
-**"What's more important right now:"**
+**"How would you split $100 between these two priorities right now?"**
 
 - "Nuclear weapon modernization" vs "Pragmatic clinical trials"?
 - "Pandemic surveillance" vs "Missile defense"?
-- "EHR integration" vs "Security audits"?
+- "Bridge inspection" vs "Port cybersecurity"?
 
-![People choose between two things at a time, over and over, until math decides what gets funded. Democracy, but make it exhausting.](/assets/images/wishocracy/wishocracy-section-how-it-works-pairwise-comparisons-between-campaigns-bw-academic.jpg)
+![People split money between two priorities at a time, over and over, until math decides what gets funded. Democracy, but make it exhausting.](/assets/images/wishocracy/wishocracy-section-how-it-works-pairwise-comparisons-between-campaigns-bw-academic.jpg)
 
-You make a choice. You do this a few times with different random pairs. It takes five minutes (less time than you spend choosing a Netflix show, and considerably more important). Millions of other people do the same. An algorithm aggregates all these head-to-head comparisons into funding allocations. No filibustering. No horse-trading. No senators holding one priority hostage because they want a weapons plant, research park, or bridge in their district.
+You drag the slider, submit your split, and do this a few times with different random pairs. It takes five minutes (less time than you spend choosing a Netflix show, and considerably more important). Millions of other people do the same. An algorithm aggregates all these pairwise allocations into funding weights. No filibustering. No horse-trading. No senators holding one priority hostage because they want a weapons plant, research park, or bridge in their district.
 
-Not everyone has to answer every pair. If you do not know enough about "pandemic surveillance vs missile defense," you can skip it. This is how useful knowledge systems already work. A tiny minority writes Wikipedia articles, a somewhat larger minority edits them, and the overwhelming majority just reads. The crowd does not need everyone doing the same job. It needs enough informed people doing each job. Selective abstention is a feature, not a bug: better to skip a pair than inject random noise because you felt obliged to have an opinion. Vanishingly low total participation is still a risk, obviously. But allowing people to answer only where they actually know or care usually biases the signal toward the more engaged and informed, which is an improvement over mandatory stupidity.
+Not everyone has to answer every pair. If you do not know enough about "pandemic surveillance vs missile defense," you can skip it. This is how useful knowledge systems already work. A tiny minority writes Wikipedia articles, a somewhat larger minority edits them, and the overwhelming majority just reads. The crowd does not need everyone doing the same job. It needs enough informed people doing each job. Selective abstention is a feature, not a bug: better to skip a pair than inject random noise because you felt obliged to have an opinion. Low overall participation is still a risk, so the system needs thresholds, weighting, or fallback modes when engagement is too thin. But letting people answer where they actually know or care improves signal quality relative to mandatory guessing.
 
-One domain may still have its own internal allocation system. Health can have patient-directed trial participation. Markets can still handle things with prices. Wishocracy sits above that layer, steering the part that actually requires collective choice. One is the engine, the other is the steering wheel. You need both unless you enjoy driving into walls.
+One domain may still have its own internal allocation system. Health can have patient-directed trial participation. Science can have peer review or prize markets. Transit can have rider feedback. Markets can still handle things with prices. Wishocracy sits above that layer, steering the part that actually requires collective choice. One is the engine, the other is the steering wheel. You need both unless you enjoy driving into walls.
 
 ### Why This Actually Works (Math Warning)
 
 When millions of people make pairwise choices, something almost magical happens (by which I mean "statistically inevitable," which is the only kind of magic that works):
 
-- **Random pairs prevent gaming.** Corrupting your current system requires buying access to 535 members of Congress, which is so affordable that every major industry does it simultaneously. Corrupting Wishocracy would require bribing 8 billion random voters, and the only way to "bribe" 8 billion people is to offer them something they actually want, which is the system working correctly. The attack vector for Wishocracy is giving people what they voted for. Your security vulnerability is democracy. It's also immune to marketing: there's no ballot measure to link to, no "Vote Yes on Proposition 7" ad to run. Each voter sees random pairs, so the only way to advertise is to convince people your campaign is better than whatever it happens to be compared against, which is just... making a good argument. Your species finds this deeply unsettling.
+- **Random pairs prevent gaming.** Corrupting your current system requires buying access to 535 members of Congress, which is so affordable that every major industry does it simultaneously. Corrupting Wishocracy would require bribing 8 billion random voters, and the only way to "bribe" 8 billion people is to offer them something they actually want, which is the system working correctly. The attack vector for Wishocracy is giving people what they voted for. Your security vulnerability is democracy. It's also immune to marketing: there's no ballot measure to link to, no "Vote Yes on Proposition 7" ad to run. Each voter sees random pairs, so the only way to advertise is to convince people your proposal is better than whatever it happens to be compared against, which is just... making a good argument. Your species finds this deeply unsettling.
 - **Independence is structurally guaranteed.** Surowiecki identified four conditions for crowd wisdom: diversity, independence, decentralization, and aggregation [@surowiecki-2004]. Your elections destroy the most critical one. First-past-the-post voting forces strategic voting: people pick the "viable" candidate rather than the best one, so each ballot reflects what voters think other voters will do rather than what they actually want. It's an [ant death spiral](../problem/unrepresentative-democracy.qmd): each ant follows the one ahead, the leader follows the last, and the whole colony walks in a circle until it dies. Pairwise comparisons can't death-spiral because there's nothing to vote "strategically" about. "Which matters more: pragmatic trials or nuclear modernization?" has no spoiler candidate, no wasted vote, no reason to care what your neighbor picked. You just answer honestly. When millions of people answer honestly, you get wisdom. When millions of people game a two-option system, you get two candidates that 330 million people chose from 330 million people, and nobody likes either of them.
 - **Statistical models** (Bradley-Terry, PageRank) [@bradley-terry-pagerank-models] extract global preferences from individual comparisons. The same math that ranks Google search results can rank humanity's budget priorities. Google uses it to find cat videos. You'll use it to decide whether the next marginal dollar buys a warhead or a clinical trial. Progress.
 - **Outliers cancel out.** The guy who votes "fund my personal jetpack" gets drowned out by the millions voting for things that are at least attached to reality.
@@ -140,7 +140,7 @@ Wishocracy is what you build when you need Hayek-style information aggregation b
 
 Great, so the Pairwise Slider Allocation tells you "Pragmatic clinical trials" matter more than "nuclear weapon modernization." Wonderful. Now what? Having a priority without a plan is just a wish. And wishes, as a rule, don't cure anything or dismantle anything. Wishocracy translates that priority into action.
 
-1.  **AI Breaks It Down:** An AI takes the high-level priority and breaks it into thousands of smaller, concrete, fundable tasks. "Expand pragmatic clinical trials" becomes "Build trial matching infrastructure." That becomes "Integrate EHR systems." That becomes "Contract cloud compute." Every impossible problem is just a series of possible steps arranged in a line. Your species figured this out for building pyramids 4,500 years ago but keeps forgetting to apply it to government.
+1.  **AI Breaks It Down:** An AI takes the high-level priority and breaks it into thousands of smaller, concrete, fundable tasks. "Expand pragmatic clinical trials" becomes "Build trial matching infrastructure." That becomes "Integrate hospital data systems." "Build open verification tools for warhead dismantlement" becomes "Contract satellite imagery analysis." Every impossible problem is just a series of possible steps arranged in a line. Your species figured this out for building pyramids 4,500 years ago but keeps forgetting to apply it to government.
 
 2.  **The Bounty Board:** The system posts these tasks to a global marketplace. It's like eBay, but for whatever priority the public just chose.
     -   **WANTED:** Expand pragmatic clinical trial capacity. **BOUNTY:** $10 billion.
@@ -158,7 +158,7 @@ On Wishonia, we tried enforcement-based protections for about 200 years before c
 
 ### Algorithmic Protections (Rules Nobody Can Break Because They're Not Rules)
 
-**Scope.** The domain is defined before the voting starts. A treaty ballot can ask "nuclear weapon systems or pragmatic clinical trials?" A health ballot can ask "EHR integration or security audits?" It cannot ask who counts as a person, which religion gets banned, or whether your senator's cousin deserves a bridge contract. You can't deposit a sandwich at an ATM. The machine doesn't accept that input.
+**Scope.** The domain is defined before the voting starts. An allocation ballot can ask "nuclear weapon systems or pragmatic clinical trials?" An arms-control ballot can ask "verification satellite network or on-site inspection capacity?" A health ballot can ask "trial matching infrastructure or research data interoperability?" It cannot ask who counts as a person, which religion gets banned, or whether your senator's cousin deserves a bridge contract. You can't deposit a sandwich at an ATM. The machine doesn't accept that input.
 
 **Transparency.** There is no backroom where a committee quietly edits the answer. All comparisons, allocations, and outputs can be published. Not because a law requires it, but because the system is designed without a "hide this part" button.
 
