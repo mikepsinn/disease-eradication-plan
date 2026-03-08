@@ -24,50 +24,6 @@ from dih_models.yaml_utils import load_quarto_config
 
 logger = logging.getLogger("dih.links")
 
-# Map existing Font Awesome icon classes in YAML to Bootstrap Icons
-# so icons render without loading the Font Awesome stylesheet.
-FA_TO_BI_ICON_MAP = {
-    "fa-solid fa-check-to-slot": "bi bi-check2-square",
-    "fa-solid fa-headphones": "bi bi-headphones",
-    "fa-brands fa-amazon": "bi bi-amazon",
-    "fa-solid fa-store": "bi bi-shop",
-    "fa-brands fa-goodreads": "bi bi-bookmark-star",
-    "fa-solid fa-book-open": "bi bi-book",
-    "fa-brands fa-youtube": "bi bi-youtube",
-    "fa-brands fa-x-twitter": "bi bi-twitter-x",
-    "fa-brands fa-linkedin": "bi bi-linkedin",
-    "fa-brands fa-github": "bi bi-github",
-    "fa-brands fa-google-scholar": "bi bi-mortarboard",
-    "fa-brands fa-orcid": "bi bi-person-badge",
-    "fa-brands fa-spotify": "bi bi-spotify",
-    "fa-brands fa-apple": "bi bi-apple",
-    "fa-solid fa-rss": "bi bi-rss",
-}
-
-
-def _normalize_icon_class(icon: str) -> str:
-    """Normalize icon class names to classes available on the site."""
-    normalized = " ".join(icon.split()).strip()
-    if not normalized:
-        return ""
-
-    lowered = normalized.lower()
-
-    # Already a Bootstrap Icon class.
-    if lowered.startswith("bi ") or lowered.startswith("bi-"):
-        return normalized
-
-    mapped = FA_TO_BI_ICON_MAP.get(lowered)
-    if mapped:
-        return mapped
-
-    # Unknown Font Awesome class; use a generic icon that is always available.
-    if "fa-" in lowered:
-        return "bi bi-link-45deg"
-
-    return normalized
-
-
 # CSS for the Linktree-style page (kept in generator so the whole page is one source)
 LINKS_CSS = """\
 .links-page {
@@ -147,8 +103,7 @@ def _render_link(link: Dict[str, Any]) -> str:
     subtitle_escaped = subtitle.replace("@", "&#64;") if subtitle else ""
 
     cls = "link-btn primary" if primary else "link-btn"
-    icon_class = _normalize_icon_class(icon) if icon else ""
-    icon_html = f'<i class="{icon_class}" aria-hidden="true"></i> ' if icon_class else ""
+    icon_html = f'<i class="{icon}" aria-hidden="true"></i> ' if icon else ""
     sub_html = f'\n  <span class="btn-sub">{subtitle_escaped}</span>' if subtitle_escaped else ""
     return f'<a href="{url_escaped}" class="{cls}">\n  {icon_html}{label}{sub_html}\n</a>'
 
@@ -292,7 +247,7 @@ aliases:
 <h2>Prefer Using Your Eyeballs?</h2>
 
 <a href="https://manual.WarOnDisease.org" class="link-btn primary">
-  <i class="bi bi-book" aria-hidden="true"></i> Read Online
+  <i class="fa-solid fa-book-open" aria-hidden="true"></i> Read Online
   <span class="btn-sub">Free. Just eyeballs and a willingness to live.</span>
 </a>
 
