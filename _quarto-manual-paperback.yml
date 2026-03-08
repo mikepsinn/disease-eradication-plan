@@ -55,7 +55,7 @@ book:
   chapters:
     - index.qmd
 
-    - part: "The Problem"
+    - part: "Failure Analysis"
       chapters:
         # CUT: problem.qmd - overview chapter that previews all sub-chapters; redundant in sequential reading
         # CUT: cost-of-war.qmd - key stats already in peace-dividend.qmd (itemized table, multipliers) and 1-percent-treaty.qmd; "war is expensive" is not a non-obvious argument
@@ -67,7 +67,7 @@ book:
         - knowledge/economics/central-banks.qmd
         - knowledge/problem/untapped-therapeutic-frontier.qmd
 
-    - part: "The Solution"
+    - part: "System Optimization"
       chapters:
         # CUT: solution.qmd - overview that previews all solution sub-chapters; redundant in sequential reading
         - knowledge/solution/1-percent-treaty.qmd

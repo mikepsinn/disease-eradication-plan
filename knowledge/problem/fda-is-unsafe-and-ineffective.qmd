@@ -15,6 +15,8 @@ feed-date: '2026-03-05'
 youtube-thumbnail: /assets/podcast/fda-is-unsafe-and-ineffective-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+For every 1 unit of harm prevented by efficacy delays, the system creates {{< var type_ii_error_cost_ratio >}} units of harm through denied access. Operational safety ratio: {{< var type_ii_error_cost_ratio >}}-to-1 against the patient.
+
 In 1962, your Congress decided that after proving a drug won't kill you, sick people should wait another {{< var efficacy_lag_years >}} before they're allowed to take it. The drug passed safety testing. It won't kill you, won't melt your liver, won't make your hair migrate to your back. But you can't have it, because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. I asked someone why, and they said "we need to confirm efficacy." I said, "The patient is dying." They said, "Yes, but we don't know if the drug works." I said, "The patient could tell you, if you gave it to them." They said that's not how it works. I said, "Dying is how it works?" They changed the subject, which I suppose is also how it works.
 
 You're not allowed to volunteer for the trials that would answer the question faster, either. You are, however, allowed to die. Nobody blocks that. There's no {{< var efficacy_lag_years >}} waiting period on dying.

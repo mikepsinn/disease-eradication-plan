@@ -1,6 +1,6 @@
 ---
 title: Unrepresentative Democracy
-description: Your government spends 604 times more on weapons than on testing which medicines work. You could elect 535 clones of your most idealistic human and within two years they'd be collecting papers from pharmaceutical companies, because the system requires it. Princeton studied 1,779 of your policy decisions and found that public opinion has the same effect on legislation as a houseplant. This chapter explains why you can't vote your way out, and why that's actually fine, because the solution was never better politicians.
+description: Your government spends 604 times more on weapons than on testing which medicines work. You could elect 535 Gandhis and within two years they'd be funding nuclear weapons programs, because the system requires it. Princeton studied 1,779 of your policy decisions and found that public opinion has the same effect on legislation as a houseplant. This chapter explains why you can't vote your way out, and why that's actually fine, because the solution was never better politicians.
 published: true
 tags:
   - democracy
@@ -15,7 +15,9 @@ feed-date: '2026-03-09'
 youtube-thumbnail: /assets/podcast/unrepresentative-democracy-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-On Wishonia, decisions are made by whoever has the best evidence. On Earth, decisions are made by whoever survives a popularity contest held every four years among people who were too busy to research the contestants. You call this "democracy," which is Greek for "rule by the people," in the same way that "waterboarding" is about water.
+Correlation between public opinion and policy outcomes: 0%.
+
+On Wishonia, decisions are made by whoever has the best evidence. On Earth, decisions are made by whoever has the most papers to give the people who survive a popularity contest held every four years among people who were too busy to research the contestants. You call this "democracy," which is Greek for "rule by the people," in the same way that "waterboarding" is about water.
 
 Your chance of deciding a presidential election is 1 in 60 million [@odds-of-decisive-vote]. You are more likely to die driving to the polls. The expected value of your vote: {{< var us_vote_expected_value >}}. The cost of casting it (time, transportation, parking, standing in line behind a man arguing about his ID, a woman who brought her dog, and a voting machine manufactured by a company that donates to one of the candidates): about $50. You lose money voting. This is called "civic duty," which means "a financial loss you perform in formal clothing."
 
@@ -53,7 +55,7 @@ The pattern repeats everywhere, like wallpaper in a prison:
 - Banks in 2008: $700 billion bailout (concentrated) [@tarp-bailout-700b]. Taxpayers: $2,100 each (diffuse). Winner: banks (obviously).
 - Sugar: $3.5 billion in subsidies (concentrated). You: {{< var sugar_subsidy_cost_per_person_annual >}} (not worth a phone call). Winner: sugar (obviously).
 
-The small group hires lobbyists. You hire nobody. This is called "the free market," which is free in the same way that a casino is free to enter.
+The small group hires lobbyists. You hire nobody. This is called "representative democracy," which represents you in the same way a casino represents financial planning.
 
 ![A small group gains $100 million. The cost spreads across 100 million people at $1 each. Nobody organizes over $1. The small group organizes very effectively over $100 million.](/assets/images/unrepresentative-democracy/unrepresentative-democracy-section-concentrated-benefits-vs-diffuse-costs-bw-academic.jpg)
 
@@ -61,7 +63,7 @@ The small group hires lobbyists. You hire nobody. This is called "the free marke
 
 A human named James Surowiecki proved that crowds outperform experts under four conditions: diversity of opinion, independence of judgment, decentralization, and a good aggregation mechanism [@surowiecki-2004]. On Wishonia, we learned this by watching fish. Your political scientists spent 200 years and several revolutions to reach the same conclusion. The fish were faster.
 
-Your democracy has three of these conditions. It systematically destroys the most important one.
+Your democracy has three of these conditions. It systematically destroys the most important one. A human named Charles Mackay described the result in 1841: the wisdom of crowds becomes the madness of crowds [@mackay-madness-of-crowds]. He was ignored, obviously.
 
 **Independence** means each person decides based on their own knowledge, not by watching everyone else. Your voting system annihilates this. You have 330 million people. You choose between two of them, pre-selected by a process optimized for fundraising, name recognition, and not offending people who vote in primaries (which is approximately nine people per state, seven of whom are angry).
 
