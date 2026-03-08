@@ -21,6 +21,8 @@ dih-render:
   netlify-site-id: "7daf95c9-506f-4cb9-99e3-2f0f9477f816"
   netlify-cname: "cost-of-change-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
+  concept-terms:
+    - term: "Price of Political Change"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A dollar sign with a change/transformation arrow."
 

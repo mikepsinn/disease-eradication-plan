@@ -255,7 +255,7 @@ And you have two other advantages, the internet and a new financial instrument d
 
 ### Your [Decentralized FDA](/knowledge/solution/dfda.qmd)
 
-On Wishonia, we built this with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a Decentralized FDA. Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
+On Wishonia, we built this with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a [Decentralized FDA](knowledge/solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]. Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
 
 {{< var dih_treasury_medical_research_pct >}} of the {{< var treaty_annual_funding >}} will go directly to subsidizing patient participation in pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient instead of the usual {{< var traditional_phase3_cost_per_patient >}}. Patients will choose which trials to join; their subsidy will follow them. Treatment developers and providers will get paid for each participant. No grant committees deciding which diseases are fashionable this year.
 
@@ -351,7 +351,7 @@ This raises the {{< var treaty_campaign_total_cost >}} needed to fuel the rest o
 
 Here's the part where humans usually stop reading because it involves following money through more than one step. Try to keep up:
 
-1. You sell {{< var treaty_campaign_total_cost >}} in VICTORY Incentive Alignment Bonds to investors. This funds the campaign.
+1. You sell {{< var treaty_campaign_total_cost >}} in VICTORY [Incentive Alignment Bonds](knowledge/solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] to investors. This funds the campaign.
 2. The campaign succeeds. Your treaty redirects 1% of military spending: {{< var treaty_annual_funding >}}/year flows from the murder budget to clinical trials.
 3. The Victory Corporation (your SPV that issues the bonds) takes a 20% management fee on that {{< var treaty_annual_funding >}}.
 4. Half of that fee ({{< var victory_bond_funding_pct >}}) goes to investor dividends: {{< var victory_bond_annual_payout >}}/year on a {{< var treaty_campaign_total_cost >}} investment. That's {{< var victory_bond_annual_return_pct >}} annual returns. Your investors will think it's a typo. It's not.

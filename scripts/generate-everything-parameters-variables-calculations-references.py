@@ -12,6 +12,7 @@ Reads all numeric constants from dih_models/parameters.py and generates:
 5. _analysis/parameter-summary.md - Compact parameter name/value reference (one per line)
 6. Search indexes for all Quarto configs (warondisease, economics, iab, wishocracy)
 7. (Optional) Inject citations into economics.qmd
+8. Normalize novel concept links/citations in manual QMD files
 
 Usage:
     python scripts/generate-everything-parameters-variables-calculations-references.py [options]
@@ -25,6 +26,7 @@ Options:
 
     --inject-citations    Add [@citation] tags to economics.qmd variables
                           (legacy option, use --cite-mode=inline instead)
+    --skip-concept-links Skip automatic normalization of novel concept links/citations
 
 Examples:
     # Default: no citations
@@ -133,6 +135,7 @@ from dih_models.reference_parser import (
 from dih_models.search_index_generator import generate_search_indexes
 from dih_models.site_metadata_generator import generate_sites_metadata
 from dih_models.llms_txt_generator import generate_llms_txt, generate_robots_txt
+from dih_models.novel_concept_linker import normalize_manual_concept_links
 from dih_models.papers_qmd_generator import generate_papers_qmd
 from dih_models.website_rss_generator import generate_rss_feed
 from dih_models.footer_generator import generate_footer_html
@@ -455,6 +458,7 @@ def main():
 
     # Parse command-line arguments
     inject_citations = "--inject-citations" in sys.argv
+    skip_concept_links = "--skip-concept-links" in sys.argv
 
     # Citation mode: --cite-mode=inline|separate|both|none
     citation_mode = "separate"  # Default: always generate _cite variables for convenience
@@ -1215,6 +1219,13 @@ def main():
         logger.debug("[*] Injecting citations into economics.qmd...")
         economics_qmd = project_root / "knowledge" / "economics" / "economics.qmd"
         inject_citations_into_qmd(parameters, economics_qmd)
+
+    # Normalize project-specific concept links/citations in manual prose
+    if skip_concept_links:
+        logger.debug("[*] Skipping novel concept link normalization (--skip-concept-links)")
+    else:
+        logger.debug("[*] Normalizing novel concept links/citations in manual QMD files...")
+        normalize_manual_concept_links(project_root, config_name="manual")
 
     # Generate search indexes for all Quarto configs
     # Keep generator instance to reuse in generate_sites_metadata (avoids re-parsing configs)

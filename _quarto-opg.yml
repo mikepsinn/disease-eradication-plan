@@ -20,6 +20,10 @@ dih-render:
   netlify-site-id: "8b9558d9-6a2b-4581-bde7-11d79933d105"
   netlify-cname: "opg-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
+  concept-terms:
+    - term: "Optimal Policy Generator"
+      aliases:
+        - "OPG"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A policy document with a checkmark."
 

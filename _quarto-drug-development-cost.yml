@@ -18,6 +18,9 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   pdf-output-file: drug-development-cost-analysis.pdf
   show-confidence-intervals: true
+  concept-terms:
+    - term: "Drug Development Cost Increase Analysis"
+      target: https://drug-cost.warondisease.org
   favicon-prompt: "A pill capsule split open showing dollar signs spilling out"
 
 profiles:
