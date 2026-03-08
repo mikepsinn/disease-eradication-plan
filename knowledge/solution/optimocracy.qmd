@@ -1,6 +1,6 @@
 ---
-title: The Evidence Machine
-description: Your species has 10,000 jurisdictions that already tried different policies. Some work. Some don't. You've been arguing about which is which for 200 years while sitting on the answer key.
+title: "Optimocracy: The Evidence Machine"
+description: "On Wishonia, the Optomitron comes free with your first government. Its Optimal Budget Generator (OBG) and Optimal Policy Generator (OPG) check which policies work by looking at the 10,000 places that already tried them. Your species skipped this step and went straight to arguing."
 published: true
 tags:
   - solution
@@ -47,7 +47,9 @@ This is the gap between [Incentive Alignment Bonds](incentive-alignment-bonds.qm
 
 The Evidence Machine does three things. That's it. Three things. Your species has difficulty with three things, so I'll use small words.
 
-**Recommend.** Two sub-systems. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
+(On Wishonia, we just call this the Optomitron. It's an appliance. You plug in policies, it tells you which ones work. You call it "Optimocracy" because your species needs everything to sound like a form of government before you'll take it seriously.)
+
+**Recommend.** The Optomitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
 
 | Category | Current | Optimal | Gap | Evidence |
 |----------|---------|---------|-----|----------|
@@ -56,7 +58,7 @@ The Evidence Machine does three things. That's it. Three things. Your species ha
 | Military (discretionary) | $850B | $459B | -$391B | C (benchmarks) |
 | Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) |
 
-You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The machine noticed. It also noticed you could cut $391 billion from the murder budget and still have the largest military on the planet. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
+You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optomitron noticed. It also noticed you could cut $391 billion from the murder budget and still have the largest military on the planet. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
 
 **Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. On Wishonia, this is called "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record.
 
