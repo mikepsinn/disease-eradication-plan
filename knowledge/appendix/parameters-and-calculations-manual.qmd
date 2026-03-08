@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 317 parameters used in the analysis, organized by type:
+This appendix documents all 325 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 126
-- Calculated values: 127
-- Core definitions: 64
+- External sources (peer-reviewed): 127
+- Calculated values: 132
+- Core definitions: 66
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (127 parameters) • [External Data Sources](#sec-external) (126 parameters) • [Core Definitions](#sec-definitions) (64 parameters)
+[Calculated Values](#sec-calculated) (132 parameters) • [External Data Sources](#sec-external) (127 parameters) • [Core Definitions](#sec-definitions) (66 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4571,6 +4571,93 @@ $$
 
 :::
 
+### Global Governance Efficiency Score: 51.9% {#sec-political_dysfunction_global_efficiency_score}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global Governance Efficiency Score from Political Dysfunction Tax paper. E = Adjusted W_real / W_max, where W_real = GDP - waste, W_max = W_real + opportunity cost. Paper calculates 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). This means civilization operates at roughly half its technological potential.
+
+**Inputs**:
+
+- [Adjusted Realized Welfare](#sec-political_dysfunction_global_realized_welfare_adjusted) 🔢: $109T
+- [Theoretical Maximum Welfare (Conservative)](#sec-political_dysfunction_global_theoretical_max_welfare) 🔢: $210T
+
+$$
+\begin{gathered}
+E \\
+= \frac{W_{real}}{W_{max}} \\
+= \frac{GDP - W_{waste}}{GDP - W_{waste} + O_{total}}
+\end{gathered}
+$$
+
+**Methodology**: [@political-dysfunction-tax-paper-2025]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_efficiency_score.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_efficiency_score.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_efficiency_score.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_efficiency_score.qmd >}}
+
+:::
+
+### Global Opportunity Cost as % of GDP: 87.8% {#sec-political_dysfunction_global_opportunity_cost_pct_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global opportunity cost as percentage of global GDP. $101T / $115T = ~88% of current GDP in unrealized potential. This represents the 'buried multipliers' of the global economy.
+
+**Inputs**:
+
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+O_{\%GDP} \\
+= \frac{O_{total}}{GDP_{global}} \\
+= \frac{\$101T}{\$115T} \\
+= 87.8\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+**Methodology**: [@political-dysfunction-tax-paper-2025]
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_opportunity_cost_pct_gdp.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_opportunity_cost_pct_gdp.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_opportunity_cost_pct_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_opportunity_cost_pct_gdp.qmd >}}
+
+:::
+
 ### Global Opportunity Cost Total: $101T {#sec-political_dysfunction_global_opportunity_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4610,6 +4697,211 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-political_dysfunction_global_opportunity_cost_total.qmd >}}
+
+:::
+
+### Adjusted Realized Welfare: $109T {#sec-political_dysfunction_global_realized_welfare_adjusted}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Adjusted realized welfare after subtracting measured governance waste from global GDP.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Global Waste Total (Efficiency Accounting)](#sec-political_dysfunction_global_waste_total) 🔢: $6.2T
+
+$$
+\begin{gathered}
+W_{real} \\
+= GDP_{global} - W_{waste} \\
+= \$115T - \$6.2T \\
+= \$109T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{waste} \\
+= W_{total,US} + W_{ff,global} \\
+= \$4.9T + \$1.3T \\
+= \$6.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_realized_welfare_adjusted.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_realized_welfare_adjusted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_realized_welfare_adjusted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_realized_welfare_adjusted.qmd >}}
+
+:::
+
+### Theoretical Maximum Welfare (Conservative): $210T {#sec-political_dysfunction_global_theoretical_max_welfare}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conservative theoretical maximum welfare under opportunity-cost recapture assumptions.
+
+**Inputs**:
+
+- [Adjusted Realized Welfare](#sec-political_dysfunction_global_realized_welfare_adjusted) 🔢: $109T
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101T
+
+$$
+W_{max} = W_{real} + O_{total} = \$109T + \$101T = \$210T
+$$
+where:
+$$
+\begin{gathered}
+W_{real} \\
+= GDP_{global} - W_{waste} \\
+= \$115T - \$6.2T \\
+= \$109T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{waste} \\
+= W_{total,US} + W_{ff,global} \\
+= \$4.9T + \$1.3T \\
+= \$6.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_theoretical_max_welfare.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_theoretical_max_welfare.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_theoretical_max_welfare.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_theoretical_max_welfare.qmd >}}
+
+:::
+
+### Global Waste Total (Efficiency Accounting): $6.2T {#sec-political_dysfunction_global_waste_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global waste deduction used in Political Dysfunction Tax efficiency accounting. Combines US governance waste estimate with global explicit fossil-fuel subsidies.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.9T
+- [Global Fossil Fuel Subsidies](#sec-political_dysfunction_global_fossil_fuel_subsidies) 📊: $1.3T (95% CI: $1.1T - $1.5T)
+
+$$
+\begin{gathered}
+W_{waste} \\
+= W_{total,US} + W_{ff,global} \\
+= \$4.9T + \$1.3T \\
+= \$6.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times US \\
+= \$4.9T \times 1 \\
+= \$4.9T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$615B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.9T
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-political_dysfunction_global_waste_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-political_dysfunction_global_waste_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-political_dysfunction_global_waste_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-political_dysfunction_global_waste_total.qmd >}}
 
 :::
 
@@ -9610,6 +9902,30 @@ Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 
 
 :::
 
+### Global Fossil Fuel Subsidies: $1.3T {#sec-political_dysfunction_global_fossil_fuel_subsidies}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global explicit fossil fuel subsidies (governments undercharging for energy supply costs). IMF 2022 estimate. These subsidies actively encourage consumption of negative-externality goods, working against climate goals. Note: IMF implicit subsidies (externalities) are much larger (~$7T).
+
+**Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.1T, $1.5T] • Distribution: Normal (SE: $100B)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $1.1T and $1.5T (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-political_dysfunction_global_fossil_fuel_subsidies.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Global Health Opportunity Cost: $34T {#sec-political_dysfunction_global_health_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -11841,6 +12157,34 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Overlap discount factor between US government waste categories. Set to 1.0 (no discount). Categories are treated as additive, recognizing that any overlap is offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Switzerland-US Life Expectancy Gap: 6.5 years {#sec-us_vs_switzerland_life_expectancy_gap}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of life while spending 3% LESS of GDP on government.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### US-Switzerland Spending Gap: 300% {#sec-us_vs_switzerland_spending_gap}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Government spending gap: US spends 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.
 
 #### Uncertainty Range
 

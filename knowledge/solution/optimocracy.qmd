@@ -13,13 +13,7 @@ image: /assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-Your previous chapter showed you how to [align everyone's incentives](incentive-alignment-bonds.qmd) so that saving lives and advancing careers become the same sentence. Beautiful. One problem: how do you know which policies to recommend?
-
-Currently, your politicians decide what works based on: which lobbyist bought them lunch, what their largest donor thinks, something they half-remember from a campaign speech they wrote on a napkin, and vibes. This is called "evidence-based policymaking," which contains the word "evidence" the same way "grape soda" contains the word "grape."
-
-On Wishonia, we spent 200 years asking our leaders to be smarter. It didn't work. Then we built a machine that checks what actually works and publishes the results so loudly that ignoring them became career suicide. That worked immediately.
-
-We call it the Evidence Machine. You might call it Optimocracy, which sounds like a system of government but is actually just the radical idea of checking your homework.
+[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] make saving lives and advancing careers the same sentence. One problem: how do you know which policies to recommend?
 
 ## The Price of Not Checking
 
@@ -27,15 +21,7 @@ The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage p
 
 ![Rich countries aren't rich because of resources. They're rich because their rules aren't stupid. Poor countries have bad governments. It's the institutions, not the dirt.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
 
-I ran the numbers on your civilization's governance. The results are not flattering.
-
-Your documented governance waste in the United States alone totals {{< var us_gov_waste_total >}}, which is {{< var us_gov_waste_pct_gdp >}} of GDP. That's money your government spent on things that made nobody healthier or wealthier. It's like paying for groceries and then throwing them in a river. Except the river is the Pentagon, and the groceries are your future.
-
-Globally, the opportunity cost of suboptimal policy reaches {{< var political_dysfunction_global_opportunity_cost_total >}} ({{< var political_dysfunction_global_opportunity_cost_pct_gdp >}} of GDP). Your civilization's governance efficiency score is {{< var political_dysfunction_global_efficiency_score >}}, which means your species is running at roughly half its technological potential. You built a Ferrari and then filled it with gravel.
-
-I've watched 847 civilizations, and none of them wasted this much while having this much data about how to stop wasting. Your species invented spreadsheets and then refused to read them. This is impressive in a way I did not intend as a compliment.
-
-For a detailed accounting of where the money goes (and doesn't), see the [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) and [US Efficiency Audit](../appendix/us-efficiency-audit.qmd).
+Documented US governance waste totals {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP). Globally, the opportunity cost of suboptimal policy reaches {{< var political_dysfunction_global_opportunity_cost_total >}} ({{< var political_dysfunction_global_opportunity_cost_pct_gdp >}} of GDP), putting your civilization's governance efficiency at {{< var political_dysfunction_global_efficiency_score >}}. Your species is running at roughly half its technological potential. (For the full accounting, see the [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] and [US Efficiency Audit](../appendix/us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025].)
 
 ## The Answer Key You Already Have
 
@@ -47,7 +33,7 @@ Your planet has roughly 10,000 jurisdictions (cities, states, provinces, countri
 
 You don't need randomized controlled trials for government policy. You already have thousands of natural experiments running simultaneously. Modern statistics (your species calls them "synthetic control methods" and "difference-in-differences," which sound like things a robot would say at a dinner party) can extract which policies actually predicted better health and wealth outcomes.
 
-This is exactly the same logic behind your [decentralized FDA](dfda.qmd): watch what actually happens to real humans, then analyze the data. Your decentralized FDA applies this to medicine. The Evidence Machine applies it to governance. Same principle. Different patient. Instead of asking "which drug works?" you're asking "which policy works?" The data already exists. You're using it as a coaster.
+This is exactly the same logic behind your [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]: watch what actually happens to real humans, then analyze the data. Your decentralized FDA applies this to medicine. The Evidence Machine applies it to governance. Same principle. Different patient. Instead of asking "which drug works?" you're asking "which policy works?" The data already exists. You're using it as a coaster.
 
 It's like running a restaurant for 50 years without ever asking a customer if the food was good. The reviews are on the table. You're sitting on them. They say the food is terrible. You're ordering more of the same ingredients.
 
@@ -129,10 +115,10 @@ Your government currently measures success by how much money it spends, which is
 
 Here's the full architecture, in order, for your species that seems to need instructions for everything including shampoo:
 
-1. The [1% Treaty](1-percent-treaty.qmd) redirects {{< var treaty_annual_funding >}} from the murder budget to medicine.
+1. The [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] redirects {{< var treaty_annual_funding >}} from the murder budget to medicine.
 2. [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) align politicians' incentives so that voting yes advances their careers.
 3. **The Evidence Machine** (this chapter) identifies which policies actually work and tracks which politicians follow the evidence.
-4. [Wishocracy](wishocracy.qmd) lets 8 billion humans collectively decide how to allocate the medical research funds.
+4. [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] lets 8 billion humans collectively decide how to allocate the medical research funds.
 
 The Evidence Machine handles government policy (what laws to pass, what budgets to set). Wishocracy handles fund allocation (how to spend the research money). One tells governments what works. The other tells the research fund where to aim. Together, they close the loop between knowing what works and doing what works.
 
@@ -146,4 +132,4 @@ Your species has been arguing about the best way to organize a society for 10,00
 
 Now that you know how the evidence engine works, the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd) without any of the money being stolen by lobbyists, committees, or humans whose main qualification is seniority.
 
-For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd).
+For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd) [@optimocracy-paper-2025].
