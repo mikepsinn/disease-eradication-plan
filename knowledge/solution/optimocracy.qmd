@@ -17,6 +17,20 @@ youtube-thumbnail: /assets/podcast/optimocracy-youtube.jpg
 
 [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] make saving lives and advancing careers the same sentence. One problem: how do you know which policies to recommend?
 
+## The Only Two Numbers That Matter
+
+Two numbers. Just two.
+
+**Real after-tax median income growth.** Did the person in the middle get richer this year? Not GDP per capita, which looks great when three billionaires move into your city while everyone else's rent doubles. **Median healthy life years.** How many years can the person in the middle expect to live in good health? Not average life expectancy, which counts the billionaire who replaced his blood six times as canceling out someone who died at 40.
+
+Why these two? Because everything important your governments do eventually makes people richer or less dead, and if it doesn't do either, it wasn't important. Your government currently measures success by how much money it spends, which is like a restaurant measuring success by how much food it buys. You could buy a mountain of ingredients and poison everyone. By your current metrics, that's a good year.
+
+Your species engineered a pocket-sized device with 16 billion transistors, mass spectrometry, and supply chains spanning 43 countries. Then you built an algorithm that A/B tests billions of user interactions, optimizing hundreds of signals in real time, so that device can show you the optimal twerking video. That is more empirical rigor than your species applies to allocating its federal budget. The federal budget decides who gets medicine, who gets clean water, and who gets bombed. {{< var global_annual_deaths_curable_diseases_nounit >}} people die every year from diseases you already have treatments for. You optimized the twerking. You did not optimize the not-dying.
+
+Here's what makes these numbers useful beyond measurement: your species already agrees on both goals. Nobody campaigns on "make people poorer and sicker." But without a scoreboard, policy debates become tribal arguments about vibes. You forgot the question. You're not arguing about whether people should be healthier and richer; you're arguing about which policies achieve that, and nobody's checking. Once you check, most of the argument disappears, because it turns out the answer isn't left or right. It's in the data from the 10,000 places that already tried it.
+
+Now that you know what we're measuring, here's how badly your species is doing at it.
+
 ## The Price of Not Checking
 
 The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage points more of GDP than Switzerland on government. Switzerland gets {{< var us_vs_switzerland_life_expectancy_gap >}} more years of life expectancy. One of these countries is doing it wrong. On Wishonia, we would check which one. On Earth, you have a debate about it. The debate has been going on for 50 years. The Swiss are still winning. You're paying more and dying sooner, and your response is to have opinions about it.
@@ -49,7 +63,7 @@ This is the gap between [Incentive Alignment Bonds](incentive-alignment-bonds.qm
 
 The Evidence Machine does three things. That's it. Three things. Your species has difficulty with three things, so I'll use small words.
 
-(On Wishonia, we just call this the Optomitron. It's an appliance. You plug in policies, it tells you which ones work. You call it "[Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025]" because your species needs everything to sound like a form of government before you'll take it seriously.)
+(On Wishonia, we just call this the Optomitron. It's an appliance. You plug in policies, it tells you which ones work.)
 
 **Recommend.** The Optomitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
 
@@ -98,21 +112,9 @@ Your species has spent centuries making corruption illegal. It hasn't worked, be
 
 This is also why it's different from every previous attempt at technocratic governance. Soviet central planning had one source of truth (the Politburo). Credit rating agencies had one source of truth (the agency paid by the people being rated, which is like letting students grade their own exams and then being surprised when everyone gets an A). Both were captured immediately, because corrupting one institution is a Tuesday. Corrupting five independent institutions simultaneously, without any of them noticing or telling anyone, is a conspiracy theory. The expensive kind that doesn't work.
 
-## The Only Two Numbers That Matter
-
-What does the Optomitron actually measure? Two numbers. Just two. Your species managed three things in the last section, so we're going easier on you this time.
-
-**Real after-tax median income growth.** Did the person in the middle of the income distribution get richer this year, after adjusting for inflation and taxes? Not GDP per capita, which is a terrible metric because three billionaires moving into your city makes the average look great while everyone else's rent doubles. Median captures what happened to the actual human in the middle.
-
-**Median healthy life years.** How many years can the person in the middle expect to live in good health? Not average life expectancy, which counts the billionaire who replaced his blood six times as canceling out someone who died at 40. Median captures what a typical human can expect.
-
-![Some numbers are easy to fake. GDP per capita looks great if three billionaires move in. Median income and healthy life years are harder to game. You can't fake everyone being less dead.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
-
-Why these two? Because everything important your governments do eventually makes people richer or less dead, and if it doesn't do either, it wasn't important. If GDP rises but median income doesn't, the policy correctly registers as worthless. If a health program costs a fortune but nobody lives longer, the metric says so.
-
 Why not 50 metrics? Because each additional target creates a new way to cheat, and your species needs no encouragement in that department. Markets figured this out: firms optimize profit, not 200 sub-metrics. Two broad, hard-to-fake numbers are easier to audit than 50 narrow ones. And these particular numbers are very hard to fake. You can't fabricate purchasing power at scale without actually improving household economics. Mortality is binary (the most binary thing there is). You can't fake everyone being "less dead."
 
-Your government currently measures success by how much money it spends, which is like a restaurant measuring success by how much food it buys. You could buy a mountain of ingredients and poison everyone. By your current metrics, that's a good year.
+![Some numbers are easy to fake. GDP per capita looks great if three billionaires move in. Median income and healthy life years are harder to game. You can't fake everyone being less dead.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
 
 "But correlation isn't causation!" Yes. Thank you. Your species discovered this in the 1800s and has been using it as an excuse to ignore data ever since. The Optomitron doesn't just check whether policies and outcomes happened in the same room. It uses the fact that 10,000 jurisdictions adopted different policies at different times to isolate what actually caused what. (The boring details: the [technical specification](../appendix/optimal-policy-generator-spec.qmd) scores every causal claim against nine criteria, and if the timing is wrong, the score is automatically zero, no matter how pretty the correlation looks.)
 
