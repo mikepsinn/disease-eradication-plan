@@ -1,6 +1,6 @@
 ---
-title: "Optimocracy: The Evidence Machine"
-description: "On Wishonia, the Optomitron comes free with your first government. Its Optimal Budget Generator (OBG) and Optimal Policy Generator (OPG) check which policies work by looking at the 10,000 places that already tried them. Your species skipped this step and went straight to arguing."
+title: 'Optimocracy: The Evidence Machine'
+description: On Wishonia, the Optomitron comes free with your first government. Its Optimal Budget Generator (OBG) and Optimal Policy Generator (OPG) check which policies work by looking at the 10,000 places that already tried them. Your species skipped this step and went straight to arguing.
 published: true
 tags:
   - solution
@@ -10,6 +10,8 @@ tags:
   - evidence-based-policy
   - capture-resistance
 image: /assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg
+podcast-image: /assets/podcast/optimocracy-podcast.jpg
+youtube-thumbnail: /assets/podcast/optimocracy-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
