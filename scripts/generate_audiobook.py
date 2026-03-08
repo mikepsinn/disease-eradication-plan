@@ -57,18 +57,28 @@ from lib.build_logger import BuildLogger, SingleLineProgress
 from lib.retry import RateLimiter
 from lib.script_lock import acquire_script_lock, ScriptLockError
 
-# TTS parallelization: Gemini TTS allows concurrent requests.
-# Conservative limit; increase if your quota allows.
-TTS_PARALLEL_WORKERS = 4
-tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
-LOGGER: BuildLogger | None = None
-
-
 def _env_flag(name: str, default: bool = False) -> bool:
     raw = os.getenv(name)
     if raw is None:
         return default
     return raw.strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _env_int(name: str, default: int, *, minimum: int = 1) -> int:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    try:
+        value = int(raw.strip())
+    except (TypeError, ValueError):
+        return default
+    return max(minimum, value)
+
+
+# TTS parallelization: keep concurrency configurable per environment.
+TTS_PARALLEL_WORKERS = _env_int("AUDIOBOOK_TTS_PARALLEL_WORKERS", 6, minimum=1)
+tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
+LOGGER: BuildLogger | None = None
 
 
 # Per-chapter sync defaults to concise mode to avoid log spam.
