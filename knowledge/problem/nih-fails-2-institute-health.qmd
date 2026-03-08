@@ -1,6 +1,6 @@
 ---
 title: NIH Fails to Institute Health
-description: The NIH spent a trillion dollars over 50 years and eradicated zero diseases. It spends 96.7% of its budget understanding disease and 3.3% testing whether known-safe treatments actually work. Meanwhile, Oxford tested COVID treatments for $500 per patient and saved a million lives in 100 days. The NIH spent $1.6 billion on COVID and completed zero trials in four years. This is the institution that would receive the treaty's money if you don't build something better.
+description: The NIH spends 96.7% of its budget understanding disease and 3.3% testing whether known-safe treatments actually work. There are 9.5 million safe drug-disease combinations waiting to be tested. The NIH tests almost none of them. Meanwhile, Oxford tested COVID treatments for $500 per patient and saved a million lives in 100 days. The NIH spent $1.6 billion on COVID and completed zero treaatments in four years. This shows you how to build something better.
 published: true
 tags:
   - problem
@@ -49,13 +49,11 @@ That might be defensible if the testing queue were empty. It isn't. There are ro
 
 It's like spending 96.7% of your grocery budget on cookbooks and {{< var nih_clinical_trials_spending_pct >}} on food, then wondering why you're starving. Except the cookbooks are very prestigious and the starving people aren't on the committee that decides whether to buy more cookbooks.
 
-On Wishonia, we had a similar institution once. We renamed it the National Institutes of Studying Health. Then we reallocated its budget so the ratio matched the marginal value. It took 12 minutes. Diseases started disappearing in 12 months.
-
 ![The NIH spends 96.7 percent on understanding disease and 3.3 percent on testing cures. They understand a lot.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
 
 ::: {.callout-note collapse="true" title="The Receipts: Where $247.3 Billion Went (2010-2019)"}
 
-A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247.3 billion in NIH spending (2010-2019). I have organized it from "largest amount spent not curing diseases" to "smallest amount spent not curing diseases," though I should note that none of it is labeled "not curing diseases." It is labeled "investment in the future." The future has been invested in for 50 years. It has not yet arrived.
+A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247.3 billion in NIH spending (2010-2019). I have organized it from "largest amount spent not on clinical trials" to "smallest amount spent not clinical trials," though I should note that none of it is labeled "not clinical trials." It is labeled "investment in the future." The future has been invested in for 50 years. It has not yet arrived.
 
 - **84.9% - Basic research** ($209.9B): Understanding disease mechanisms, molecular biology, genomics. Essential for identifying new targets, but 85 cents of every dollar is a lot of understanding and not much testing.
 - **11.8% - Applied research (non-trial)** ($29.3B): Translating discoveries toward practical use, but without the final step of testing them in patients.
@@ -179,7 +177,7 @@ Pigs have better healthcare outcomes than you do. Pigs. Animals you lock in meta
 
 The RECOVERY trial already proved it. {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}. First life-saving result in under 100 days [@recovery-trial-100-days-to-cure]. Over {{< var recovery_trial_global_lives_saved >}} saved. The blueprint exists. It is not theoretical. It happened. In England. During a pandemic. While Americans were arguing about horse dewormer. The British did not use a special technique. They did not have access to secret technology. They used the same drugs, the same disease, the same species of patient. They just tested the drugs on the patients instead of writing about the drugs near the patients. This is the breakthrough. It took zero breakthroughs. The evidence is right there. It's not hiding. It's waving at you. It has been waving at you for years.
 
-Now imagine the other timeline. Not as an indictment, but as a measure of what was lost. If the NIH had allocated even 20% of its $1.1 trillion to pragmatic trials over 50 years (the remaining 80% still on basic research), that produces 440 million patient-trials at RECOVERY efficiency ({{< var recovery_trial_cost_per_patient >}} per patient). That is enough to test every safe compound against every major disease, multiple times, with replication. The Oxford RECOVERY trial tested 48,000 patients and found a treatment that saved over a million lives, in 100 days, for $24 million. Multiply that across 440 million patients and 50 years and the number of lives saved becomes difficult to calculate because the diseases start disappearing and the math changes. On Wishonia, when the math changes because diseases are disappearing, we call this "Tuesday."
+Now imagine the other timeline. Not as an indictment, but as a measure of what was lost. If the NIH had allocated even 20% of its $1.1 trillion to pragmatic trials over 50 years (the remaining 80% still on basic research), that produces 440 million patient-trials at RECOVERY efficiency ({{< var recovery_trial_cost_per_patient >}} per patient). That is enough to test every safe compound against every major disease, multiple times, with replication. The Oxford RECOVERY trial tested 48,000 patients and found a treatment that saved over a million lives, in 100 days, for $24 million. Multiply that across 440 million patients and 50 years and the number of lives saved becomes difficult to calculate because the diseases start disappearing and the math changes.
 
 In that timeline, the NIH's $1.1 trillion produces what a trillion dollars should produce: the systematic eradication of disease after disease after disease, because you finally pointed the money at the thing that actually works.
 
