@@ -229,9 +229,15 @@ class SingleLineProgress:
     def __init__(self, enabled: bool = True, stream: Optional[TextIO] = None):
         self.enabled = enabled
         self.stream = stream or sys.stdout
+        # When stdout is a TeeWriter, render in-place updates on the underlying
+        # terminal stream and keep logs concise.
+        self.render_stream = cast(TextIO, getattr(self.stream, "original", self.stream))
+        self.capture_stream = self.stream if self.render_stream is not self.stream else None
         self._active = False
         self._width = 0
         self._lock = threading.Lock()
+        isatty_fn = getattr(self.render_stream, "isatty", None)
+        self._supports_inline = bool(callable(isatty_fn) and isatty_fn())
 
     def update(self, message: str, final: bool = False) -> None:
         """Update the progress line."""
@@ -240,23 +246,32 @@ class SingleLineProgress:
                 print(message, file=self.stream, flush=True)
                 return
 
+            if not self._supports_inline:
+                # Non-interactive output: keep logs concise by emitting only the final snapshot.
+                if final:
+                    print(message, file=self.stream, flush=True)
+                return
+
             self._width = max(self._width, len(message))
             padded = message.ljust(self._width)
-            self.stream.write("\r" + padded)
-            self.stream.flush()
+            self.render_stream.write("\r" + padded)
+            self.render_stream.flush()
             self._active = True
 
             if final:
-                self.stream.write("\n")
-                self.stream.flush()
+                self.render_stream.write("\n")
+                self.render_stream.flush()
+                if self.capture_stream:
+                    self.capture_stream.write(message + "\n")
+                    self.capture_stream.flush()
                 self._active = False
 
     def clear(self) -> None:
         """Terminate an active progress line so subsequent logs start cleanly."""
         with self._lock:
             if self._active:
-                self.stream.write("\n")
-                self.stream.flush()
+                self.render_stream.write("\n")
+                self.render_stream.flush()
                 self._active = False
 
 

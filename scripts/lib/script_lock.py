@@ -112,6 +112,9 @@ def _commands_match(lock_command: str, process_command: str) -> bool:
         if token.endswith(".py"):
             script_token = Path(token).name
             break
+    if not script_token:
+        # Non-script command metadata is not reliable enough to reject ownership.
+        return True
     if script_token and script_token in proc_norm:
         return True
     return False
@@ -157,8 +160,9 @@ def _is_lock_owner_still_running(existing: dict[str, Any], pid: int) -> bool:
     lock_started_at = _parse_started_at(existing.get("started_at"))
 
     if lock_started_at and process_started_at:
-        delta_seconds = abs((process_started_at - lock_started_at).total_seconds())
-        if delta_seconds > LOCK_START_TIME_TOLERANCE_SECONDS:
+        # A lock cannot be created before its owning process starts.
+        # If PID start time is meaningfully *after* lock timestamp, PID was reused.
+        if (process_started_at - lock_started_at).total_seconds() > LOCK_START_TIME_TOLERANCE_SECONDS:
             return False
 
     if lock_command and process_command and not _commands_match(lock_command, process_command):
