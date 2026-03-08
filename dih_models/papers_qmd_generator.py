@@ -44,6 +44,20 @@ def _extract_jel_from_frontmatter(frontmatter: Dict[str, Any]) -> List[str]:
     return jel
 
 
+def _extract_importance_score(metadata: Dict[str, Any]) -> int:
+    """Extract numeric paper importance score from metadata."""
+    raw_score = metadata.get("importance")
+    if raw_score is None:
+        raw_score = metadata.get("importance-score")
+
+    try:
+        if raw_score is None:
+            return 0
+        return int(raw_score)
+    except (TypeError, ValueError):
+        return 0
+
+
 def extract_paper_info(
     config_path: Path,
     config_name: str,
@@ -92,6 +106,7 @@ def extract_paper_info(
     # Get metadata
     metadata = config.get("metadata", {})
     dih_render = config.get("dih-render", {})
+    importance_score = _extract_importance_score(metadata)
 
     # Get PDF URL
     pdf_file = None
@@ -200,6 +215,7 @@ def extract_paper_info(
         "category": category,
         "subject": subject,
         "paper_type": paper_type,
+        "importance_score": importance_score,
         "edition": metadata.get("edition", ""),
         "version": metadata.get("version", ""),
         "abstract": abstract,
@@ -251,8 +267,9 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
         except Exception as e:
             logger.warning("Failed to parse %s: %s", config_path.name, e)
 
-    # Sort papers: Books first, then by title
-    papers.sort(key=lambda p: (0 if p["paper_type"] == "Book" else 1, p["title"]))
+    # Sort papers by explicit importance score first (descending),
+    # then by type and title for deterministic output.
+    papers.sort(key=lambda p: (-p.get("importance_score", 0), 0 if p["paper_type"] == "Book" else 1, p["title"]))
 
     # Generate QMD content
     lines = [
@@ -275,21 +292,9 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
         "",
     ]
 
-    # Group by type
-    books = [p for p in papers if p["paper_type"] == "Book"]
-    working_papers = [p for p in papers if p["paper_type"] != "Book"]
-
-    if books:
-
+    if papers:
         lines.append("")
-        for paper in books:
-            lines.extend(_format_paper_entry(paper))
-            lines.extend(_format_submission_block(paper))
-
-    if working_papers:
-
-        lines.append("")
-        for paper in working_papers:
+        for paper in papers:
             lines.extend(_format_paper_entry(paper))
             lines.extend(_format_submission_block(paper))
 

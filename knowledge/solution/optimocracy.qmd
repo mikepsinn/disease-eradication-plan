@@ -47,7 +47,16 @@ This is the gap between [Incentive Alignment Bonds](incentive-alignment-bonds.qm
 
 The Evidence Machine does three things. That's it. Three things. Your species has difficulty with three things, so I'll use small words.
 
-**Recommend.** Analyze cross-jurisdictional data to identify which policies predict better health and wealth outcomes. Publish recommendations for every major vote. "Based on historical data across 47 states, funding early childhood education at $X per capita correlates with Y% better median income growth over 15 years." Not ideology. Not theory. What happened when someone else tried it.
+**Recommend.** The Evidence Machine answers two questions: "how much should you spend?" ([Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025]) and "which policies should you enact, replace, or repeal?" ([Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025]). Here's what the budget output looks like:
+
+| Category | Current | Optimal | Gap | Evidence |
+|----------|---------|---------|-----|----------|
+| Pragmatic clinical trials | $0.5B | $50B | **+$49.5B** | A (RCTs) |
+| Vaccinations | $8B | $35B | +$27B | A (RCTs) |
+| Military (discretionary) | $850B | $459B | -$391B | C (benchmarks) |
+| Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) |
+
+Not ideology. Not theory. "You're spending X, the evidence says spend Y, here's our confidence grade." Then the policy generator does the same for individual laws: enact this, repeal that, replace the other thing. Every recommendation traced to what happened when another jurisdiction tried it.
 
 **Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. Politicians who ignore the evidence must do so on the record.
 
@@ -111,4 +120,4 @@ And here's why the whole thing ratchets. Each treaty expansion creates more IAB 
 
 Now that you know how the evidence engine works, the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd).
 
-For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd) [@optimocracy-paper-2025].
+For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd) [@optimocracy-paper-2025]. For the budget and policy recommendation engines: [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] and [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025].

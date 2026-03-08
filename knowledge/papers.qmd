@@ -16,96 +16,6 @@ This page provides an index of all academic papers, working drafts, and publicat
 produced as part of the Disease Eradication Plan project.
 
 
-### [Drug Development Cost Increase Analysis](https://drug-cost.warondisease.org)
-
-> Drug development costs have increased approximately 105x in real terms since the 1962 Kefauver-Harris Amendment. This analysis uses the Baily (1972) academic study as the primary source, adjusts for inflation via Bureau of Labor Statistics CPI data, and validates the finding against six independent real-world price comparisons: generic vs. brand-name drugs, supplements vs. prescriptions, compounding pharmacies vs. FDA-approved products, veterinary vs. human drugs, orphan drug pricing, and historical antibiotic economics. Monte Carlo sensitivity analysis confirms the estimate is robust across plausible input ranges. The magnitude is consistent with independent estimates of 100-400x from multiple research groups.
-
-
-<!--
-=== SUBMISSION INFO: Drug Development Cost Increase Analysis ===
-
-TITLE: Drug Development Cost Increase Analysis
-
-ABSTRACT:
-Drug development costs have increased approximately 105x in real terms since the 1962 Kefauver-Harris Amendment. This analysis uses the Baily (1972) academic study as the primary source, adjusts for inflation via Bureau of Labor Statistics CPI data, and validates the finding against six independent real-world price comparisons: generic vs. brand-name drugs, supplements vs. prescriptions, compounding pharmacies vs. FDA-approved products, veterinary vs. human drugs, orphan drug pricing, and historical antibiotic economics. Monte Carlo sensitivity analysis confirms the estimate is robust across plausible input ranges. The magnitude is consistent with independent estimates of 100-400x from multiple research groups.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Drug Development Cost, Fda Regulation, Kefauver Harris Amendment, Clinical Trials, Pharmaceutical Economics, Regulatory Burden, Health Economics, Baily 1972, Tufts Csdd, Orphan Drugs
-
-SUBJECT AREAS: Drug Development, Health Economics, Regulatory Analysis, FDA Policy
-CATEGORY: Non-fiction, Health Economics, Regulatory Analysis
-GENRE: Health Economics, Regulatory Analysis
-
-PDF: https://drug-cost.warondisease.org/drug-development-cost-analysis.pdf
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-SUGGESTED CITATION: Mike P. Sinn (2025). Drug Development Cost Increase Analysis. First Edition. Available at https://drug-cost.warondisease.org
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests, beyond a strong personal preference for being alive, which may bias conclusions toward 'we should spend less money on things that explode and more on things that cure.'
-FUNDING: This research received no funding. The annual cost of producing it was less than the FDA charges for a single pre-submission meeting.
-ETHICS: This research did not involve human experimentation. Spending 105x more on regulatory paperwork than actual drug manufacturing while diseases remain untreated is, however, arguably an uncontrolled experiment in bureaucratic homicide.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  URL: https://drug-cost.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [How to End War and Disease](https://manual.WarOnDisease.org)
-
-> The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
-
-
-<!--
-=== SUBMISSION INFO: How to End War and Disease ===
-
-TITLE: How to End War and Disease
-
-ABSTRACT:
-The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: War on Disease, 1 Percent Treaty, Medical Research, Public Health, Peace Dividend, Decentralized Trials, dFDA, DIH, Victory Bonds, Health Economics, Cost Benefit Analysis, Clinical Trials, Drug Development, Regulatory Reform, Military Spending, Peace Economics, Decentralized Governance, Wishocracy, Blockchain Governance, Impact Investing
-
-SUBJECT AREAS: Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform
-CATEGORY: Non-fiction, Public Policy, Health Economics, Peace Studies
-GENRE: Public Policy, Health Economics, Peace Studies
-
-PDF: https://manual.WarOnDisease.org/How-to-End-War-and-Disease-Paperback.pdf
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-SUGGESTED CITATION: Mike P. Sinn (2025). How to End War and Disease. First Edition. Available at https://manual.WarOnDisease.org
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests, beyond a preference for being alive and for arithmetic, which may bias conclusions toward 'fewer people should die' and 'money should be spent on things that work.'
-FUNDING: No funding was received. The author notes the irony of writing extensively about optimal resource allocation while being, himself, sub-optimally resourced.
-ETHICS: This research did not involve human experimentation. The policies it examines, however, arguably do.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  URL: https://manual.WarOnDisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
 ### [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://impact.warondisease.org)
 
 [![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](../assets/og/economics-og-1200x630.jpg)](https://impact.warondisease.org)
@@ -164,550 +74,6 @@ Select "Enter the details myself", then fill:
   Publication Date: 2025
   DOI: 10.5281/zenodo.18161560
   URL: https://impact.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-
-### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
-
-[![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../assets/og/iab-og-1200x630.jpg)](https://iab.warondisease.org)
-
-> Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows expected returns exceeding 100:1 for early investors. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class.
-
-
-<!--
-=== SUBMISSION INFO: Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable ===
-
-TITLE: Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
-
-ABSTRACT:
-Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows expected returns exceeding 100:1 for early investors. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Mechanism Design, Public Choice, Political Economy, Collective Action, Social Impact Bonds, Campaign Finance, Incentive Compatibility, Incentive Alignment, Public Goods, Net Societal Value, PAC, Lobbying
-
-JEL CODES: D72, D82, H41, P16
-
-SUBJECT AREAS: Mechanism Design, Public Choice, Political Economy, Collective Action, Campaign Finance
-CATEGORY: Academic Paper, Political Economy, Mechanism Design, Public Policy
-GENRE: Political Science, Economics, Mechanism Design, Public Policy
-
-PDF: https://iab.warondisease.org/incentive-alignment-bonds-paper.pdf
-DOI: 10.5281/zenodo.18203221
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: deployed | https://iab.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522040
-SSRN: pending
-ARXIV: pending | category: econ.GN
-
-=== JOURNAL TARGETS ===
-Public Choice (Tier 2): target
-American Economic Review (Tier 1): target
-Journal of Political Economy (Tier 1): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable. Working Draft. https://doi.org/10.5281/zenodo.18203221
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests and has not, at time of writing, formed a SuperPAC to incentivize politicians into reading this paper, though the analysis suggests this would be cost-effective.
-FUNDING: This research received no funding. The author notes that the mechanism described herein could theoretically fund itself, but chose not to test this recursion.
-ETHICS: This research did not involve human subjects. Current campaign finance practices, which this research proposes to redirect rather than eliminate, involve the entire electorate, though apparently without their informed consent.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18203221
-  URL: https://iab.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://optimocracy.warondisease.org)
-
-[![Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](../assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
-
-> Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply causal inference to this historical policy data, (2) Identify which policies predict above-average median income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive.
-
-
-<!--
-=== SUBMISSION INFO: Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth ===
-
-TITLE: Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth
-
-ABSTRACT:
-Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply causal inference to this historical policy data, (2) Identify which policies predict above-average median income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Mechanism Design, Algorithmic Governance, Smart Contracts, Metric Optimization, Capture Resistance, Central Bank Independence, Goodharts Law, Decentralized Oracles, Political Dysfunction, Rent Seeking, Public Choice
-
-JEL CODES: D72, D73, E58, H11, P16
-
-SUBJECT AREAS: Mechanism Design, Algorithmic Governance, Public Policy, Political Economy
-CATEGORY: Academic Paper, Public Policy, Political Science, Economics
-GENRE: Political Science, Mechanism Design, Public Policy, Economics
-
-PDF: https://optimocracy.warondisease.org/optimocracy-paper.pdf
-DOI: 10.5281/zenodo.18356213
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: deployed | https://optimocracy.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18523075
-SSRN: pending
-ARXIV: pending | category: econ.GN
-
-=== JOURNAL TARGETS ===
-Public Choice (Tier 2): target
-Games and Economic Behavior (Tier 2): target
-Journal of Political Economy (Tier 1): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth. Working Draft. https://doi.org/10.5281/zenodo.18356213
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests, beyond a bias toward policies supported by evidence, which puts him at odds with most legislatures.
-FUNDING: This research received no funding. The author used publicly available data that any government could have analyzed themselves, had they been curious.
-ETHICS: This research did not involve human experimentation. Governing 8 billion people without checking whether your policies work first is, however, a form of experimentation the author finds ethically notable.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18356213
-  URL: https://optimocracy.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [Right to Trial & FDA Upgrade Act](https://right-to-trial.warondisease.org)
-
-[![Right to Trial and FDA Upgrade Act](../assets/og-images/knowledge/appendix/right-to-trial-fda-upgrade-act-og-retro-academic.jpg)](https://right-to-trial.warondisease.org)
-
-> Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
-
-
-<!--
-=== SUBMISSION INFO: Right to Trial & FDA Upgrade Act ===
-
-TITLE: Right to Trial & FDA Upgrade Act
-
-ABSTRACT:
-Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Right to Trial, Fda Upgrade, Clinical Trials, Drug Development, Healthcare Reform, Regulatory, Patient Rights, Open Data, Decentralized Trials, Fda V2
-
-SUBJECT AREAS: Clinical Trials, Drug Development, Healthcare Reform, Regulatory Policy, Patient Rights
-CATEGORY: Legislative Text, Public Policy, Healthcare Reform
-GENRE: Healthcare Policy, Regulatory Reform
-
-PDF: https://right-to-trial.warondisease.org/right-to-trial-fda-upgrade-act.pdf
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: pending | https://right-to-trial.warondisease.org
-ZENODO: pending
-
-SUGGESTED CITATION: Mike P. Sinn (2025). Right to Trial & FDA Upgrade Act. First Edition. Available at https://right-to-trial.warondisease.org
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests.
-FUNDING: This research received no funding.
-ETHICS: This document is proposed legislation. No human subjects were involved in its drafting, though quite a few would benefit from its passage.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  URL: https://right-to-trial.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
-
-[![The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
-
-> Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million deaths preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
-
-
-<!--
-=== SUBMISSION INFO: The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials) ===
-
-TITLE: The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
-
-ABSTRACT:
-Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million deaths preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: dFDA, Predictor Impact Score, Pharmacovigilance, Real World Evidence, N of 1 Trials, Causal Inference, Bradford Hill Criteria, Treatment Effects, Adverse Events, Outcome Labels, Statistical Methods, dFDA, Decentralized Fda
-
-JEL CODES: I18, C10, L65, C93, I11
-
-SUBJECT AREAS: Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods
-CATEGORY: Academic Paper, Medical Research, Methodology
-GENRE: Biostatistics, Pharmacoepidemiology, Methodology
-
-PDF: https://dfda-spec.warondisease.org/dfda-spec-paper.pdf
-DOI: 10.5281/zenodo.18203375
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: deployed | https://dfda-spec.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522034
-MEDRXIV: pending
-ARXIV: pending | category: stat.ME
-
-=== JOURNAL TARGETS ===
-Clinical Pharmacology & Therapeutics (Tier 2): target
-Pharmacoepidemiology and Drug Safety (Tier 2): target
-Drug Safety (Tier 2): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials). Working Draft. https://doi.org/10.5281/zenodo.18203375
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests. The author does maintain a bias toward the Bradford Hill criteria producing correct answers, which some regulatory agencies may find disruptive.
-FUNDING: This research received no funding. The statistical framework described herein costs less to develop than a single traditional Phase III trial costs to delay.
-ETHICS: This research did not involve human subjects. It proposes a framework that would involve considerably more of them, but with their informed consent and at 44x lower cost.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18203375
-  URL: https://dfda-spec.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
-
-[![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
-
-> This study quantifies the cumulative mortality and morbidity costs associated with the Unitary Pre-Market Approval (UPMA) model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of 8.2 years post-safety verification. Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024): approximately 102 million deaths died waiting for approved drugs during their approval delays, representing a lower bound excluding drugs never developed due to cost barriers; (2) Future timeline shift: an additional 416 million deaths will eventually die because the disease eradication timeline has been pushed back by 8.2 years. Combined, these represent 7.94 billion Disability-Adjusted Life Years when adjusted for morbidity, with a cumulative economic deadweight loss of approximately $1.19 quadrillion (2024 USD), reflecting 7.94 billion DALYs valued at the standard WHO cost-effectiveness threshold of $150K/DALY. The societal cost of Type II Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I Regulatory Errors (market access for ineffective therapies) by a factor of 3.07k.
-
-
-<!--
-=== SUBMISSION INFO: The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag ===
-
-TITLE: The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag
-
-ABSTRACT:
-This study quantifies the cumulative mortality and morbidity costs associated with the Unitary Pre-Market Approval (UPMA) model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of 8.2 years post-safety verification. Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024): approximately 102 million deaths died waiting for approved drugs during their approval delays, representing a lower bound excluding drugs never developed due to cost barriers; (2) Future timeline shift: an additional 416 million deaths will eventually die because the disease eradication timeline has been pushed back by 8.2 years. Combined, these represent 7.94 billion Disability-Adjusted Life Years when adjusted for morbidity, with a cumulative economic deadweight loss of approximately $1.19 quadrillion (2024 USD), reflecting 7.94 billion DALYs valued at the standard WHO cost-effectiveness threshold of $150K/DALY. The societal cost of Type II Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I Regulatory Errors (market access for ineffective therapies) by a factor of 3.07k.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Fda Regulation, Drug Lag, Kefauver Harris Amendments, Regulatory Delay, Type Ii Errors, Mortality Analysis, Cost Benefit Analysis, Pharmaceutical Regulation, Dalys, Efficacy Requirements, Peltzman, Regulatory Economics
-
-JEL CODES: I18, L51, K23, D61, I11
-
-SUBJECT AREAS: Regulatory Economics, FDA Policy, Drug Lag, Mortality Analysis, Cost-Benefit Analysis
-CATEGORY: Academic Paper, Health Economics, Regulatory Policy, Public Health
-GENRE: Health Economics, Regulatory Policy, Cost-Benefit Analysis
-
-PDF: https://invisible-graveyard.warondisease.org/invisible-graveyard.pdf
-DOI: 10.5281/zenodo.18356231
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: pending | https://invisible-graveyard.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18356231
-SSRN: pending
-MEDRXIV: pending
-
-=== JOURNAL TARGETS ===
-Journal of Law and Economics (Tier 1): target
-Regulation (Cato Institute) (Tier 2): target
-Health Economics (Tier 2): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag. Working Paper. https://doi.org/10.5281/zenodo.18356231
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author would like to disclose a personal bias against 102 million preventable deaths, which some may consider a conflict of interest in regulatory policy analysis. Beyond this, the author declares no competing interests.
-FUNDING: This research received no funding from any agency. The FDA, whose policies are examined herein, did not offer to sponsor a review of its own mortality footprint.
-ETHICS: This research did not involve human subjects. The FDA's post-1962 efficacy requirements, which are its subject, involved 102 million of them.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18356231
-  URL: https://invisible-graveyard.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](https://obg.warondisease.org)
-
-[![The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../assets/og/obg-og-1200x630.jpg)](https://obg.warondisease.org)
-
-> 20-40% of public goods funding is misallocated relative to outcome-maximizing benchmarks, representing trillions annually in foregone welfare gains. Budget processes respond to lobbying intensity and historical precedent rather than causal evidence of effectiveness. The Optimal Budget Generator (OBG) applies causal inference, diminishing returns modeling, and cost-effectiveness analysis to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) identifying where marginal returns equal opportunity cost. The Budget Impact Score (BIS) measures confidence in each OSL estimate based on study quality, statistical precision, and temporal recency of the underlying causal evidence. The result is a gap analysis showing which categories are over- or underfunded relative to evidence-based benchmarks, enabling systematic reallocation from low-return to high-return public investments.
-
-
-<!--
-=== SUBMISSION INFO: The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding ===
-
-TITLE: The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding
-
-ABSTRACT:
-20-40% of public goods funding is misallocated relative to outcome-maximizing benchmarks, representing trillions annually in foregone welfare gains. Budget processes respond to lobbying intensity and historical precedent rather than causal evidence of effectiveness. The Optimal Budget Generator (OBG) applies causal inference, diminishing returns modeling, and cost-effectiveness analysis to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) identifying where marginal returns equal opportunity cost. The Budget Impact Score (BIS) measures confidence in each OSL estimate based on study quality, statistical precision, and temporal recency of the underlying causal evidence. The result is a gap analysis showing which categories are over- or underfunded relative to evidence-based benchmarks, enabling systematic reallocation from low-return to high-return public investments.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Budget Optimization, Optimal Budget Generator, Evidence Based Policy, Meta Analysis, Cost Effectiveness, Diminishing Returns, Reference Country Benchmarking, Budget Impact Score, Welfare Economics, Public Finance
-
-JEL CODES: H50, H61, D61, I18, C18
-
-SUBJECT AREAS: Budget Optimization, Evidence-Based Policy, Cost-Effectiveness, Public Finance, Welfare Economics
-CATEGORY: Academic Paper, Public Policy, Economics
-GENRE: Economics, Public Policy, Evidence-Based Governance
-
-PDF: https://obg.warondisease.org/obg-framework-paper.pdf
-DOI: 10.5281/zenodo.18356209
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: pending | https://obg.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522044
-SSRN: pending
-
-=== JOURNAL TARGETS ===
-Journal of Public Economics (Tier 1): target
-Journal of Policy Analysis and Management (Tier 2): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding. Working Draft. https://doi.org/10.5281/zenodo.18356209
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests, beyond a preference for budgets that add up and money being spent on things with positive returns, which some appropriations committees may find radical.
-FUNDING: This research received no funding. The author notes that an optimally allocated budget would have funded it, which is rather the point.
-ETHICS: This research did not involve human subjects. Current government budgeting, which allocates trillions annually without reference to whether anything works, involves all of them.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18356209
-  URL: https://obg.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](https://opg.warondisease.org)
-
-[![The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](../assets/og/opg-og-1200x630.jpg)](https://opg.warondisease.org)
-
-> Centuries of public policy variation across thousands of jurisdictions (countries, states, cities) constitute a massive natural experiment. The data to identify which policies maximize welfare exists but has not been systematically harvested. The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control, difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional data, measuring policy impact on two welfare metrics: real after-tax median income growth and median healthy life years. For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT (evidence-supported policies the jurisdiction lacks), REPLACE (policies set at suboptimal levels), REPEAL (policies with net welfare harm), and MAINTAIN (policies aligned with evidence). Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors including freedom and autonomy constraints. The framework is agnostic to which party enacted each policy, evaluating only whether it improved outcomes. Projected welfare gains under framework assumptions: 5-15% of GDP for typical US states, pending retrospective validation.
-
-
-<!--
-=== SUBMISSION INFO: The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy ===
-
-TITLE: The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy
-
-ABSTRACT:
-Centuries of public policy variation across thousands of jurisdictions (countries, states, cities) constitute a massive natural experiment. The data to identify which policies maximize welfare exists but has not been systematically harvested. The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control, difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional data, measuring policy impact on two welfare metrics: real after-tax median income growth and median healthy life years. For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT (evidence-supported policies the jurisdiction lacks), REPLACE (policies set at suboptimal levels), REPEAL (policies with net welfare harm), and MAINTAIN (policies aligned with evidence). Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors including freedom and autonomy constraints. The framework is agnostic to which party enacted each policy, evaluating only whether it improved outcomes. Projected welfare gains under framework assumptions: 5-15% of GDP for typical US states, pending retrospective validation.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Policy Evaluation, Causal Inference, Quasi Experimental Methods, Synthetic Control, Difference in Differences, Bradford Hill Criteria, Evidence Based Policy, Policy Recommendations, Jurisdiction Analysis, Policy Impact Score
-
-JEL CODES: H10, D72, C54, I18, D61
-
-SUBJECT AREAS: Policy Evaluation, Causal Inference, Quasi-Experimental Methods, Evidence-Based Policy, Jurisdiction Analysis
-CATEGORY: Academic Paper, Public Policy, Political Science
-GENRE: Political Science, Policy Analysis, Causal Inference
-
-PDF: https://opg.warondisease.org/opg-framework-paper.pdf
-DOI: 10.5281/zenodo.18603834
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: pending | https://opg.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18603834
-SSRN: pending
-
-=== JOURNAL TARGETS ===
-Journal of Policy Analysis and Management (Tier 2): target
-American Political Science Review (Tier 1): target
-Journal of Politics (Tier 1): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy. Working Draft. https://doi.org/10.5281/zenodo.18603834
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests. The author does maintain a controversial preference for policies that work over policies that do not.
-FUNDING: This research received no funding. Centuries of cross-jurisdictional policy data were, however, freely available to anyone willing to look at them.
-ETHICS: This research did not involve human experimentation. Implementing policies without checking if they have worked elsewhere is, however, a form of experimentation conducted on entire populations without informed consent.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18603834
-  URL: https://opg.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
-
-[![The Political Dysfunction Tax](../assets/og/political-dysfunction-tax-og-1200x630.jpg)](https://political-dysfunction-tax.warondisease.org)
-
-> Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
-
-
-<!--
-=== SUBMISSION INFO: The Political Dysfunction Tax ===
-
-TITLE: The Political Dysfunction Tax
-
-ABSTRACT:
-Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Governance Efficiency, Political Dysfunction, Welfare Economics, Opportunity Cost, Public Choice, Rent Seeking, Clinical Trials, Migration Economics, Regulatory Burden
-
-JEL CODES: D61, D72, H41, H50, O38
-
-SUBJECT AREAS: Governance Efficiency, Political Economy, Welfare Economics, Public Choice
-CATEGORY: Academic Paper, Public Policy, Political Science, Economics
-GENRE: Political Science, Welfare Economics, Public Policy
-
-PDF: https://political-dysfunction-tax.warondisease.org/political-dysfunction-tax.pdf
-DOI: 10.5281/zenodo.18603840
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: pending | https://political-dysfunction-tax.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18603840
-SSRN: pending
-ARXIV: pending | category: econ.GN
-
-=== JOURNAL TARGETS ===
-Public Choice (Tier 2): target
-Journal of Political Economy (Tier 1): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). The Political Dysfunction Tax. Working Draft. https://doi.org/10.5281/zenodo.18603840
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests. The author does have a vested interest in not losing $97 trillion per year, but shares this interest with most of the species.
-FUNDING: This research received no funding. At a 31-53% governance efficiency rate, the author considers this par for the course.
-ETHICS: This research did not involve human subjects. Operating governments at 31-53% efficiency while charging full price does, however, involve all of them.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18603840
-  URL: https://political-dysfunction-tax.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
-
-[![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](../assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
-
-> What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
-
-
-<!--
-=== SUBMISSION INFO: The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization ===
-
-TITLE: The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
-
-ABSTRACT:
-What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Political Economy, Campaign Finance, Lobbying, Mechanism Design, Public Choice, Cost Benefit Analysis, Political Feasibility, Political Reform, Democracy
-
-JEL CODES: D72, D73, D78, H41, P16
-
-SUBJECT AREAS: Political Economy, Campaign Finance, Lobbying, Public Choice, Cost-Benefit Analysis
-CATEGORY: Academic Paper, Political Economy, Mechanism Design, Public Policy
-GENRE: Political Science, Economics, Public Choice, Public Policy
-
-PDF: https://cost-of-change.warondisease.org/cost-of-change-analysis.pdf
-DOI: 10.5281/zenodo.18356215
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: deployed | https://cost-of-change.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522030
-SSRN: pending
-ARXIV: pending | category: econ.GN
-
-=== JOURNAL TARGETS ===
-Public Choice (Tier 2): target
-Journal of Political Economy (Tier 1): target
-American Economic Review (Tier 1): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization. Working Draft. https://doi.org/10.5281/zenodo.18356215
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests and has not, at time of writing, formed a SuperPAC. The author reserves the right to reconsider this position if the ROI calculations in Section 3 prove as persuasive as described.
-FUNDING: This research received no funding. The author calculates that funding it would have yielded a higher return than most lobbying expenditures, but acknowledges this is a low bar.
-ETHICS: This research did not involve human subjects. The democratic process it examines, in which policy outcomes correlate more strongly with lobbying spend than voter preferences, arguably does.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18356215
-  URL: https://cost-of-change.warondisease.org
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->
@@ -774,63 +140,250 @@ Select "Enter the details myself", then fill:
 
 -->
 
-### [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
+### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
 
-[![United States Efficiency Audit](../assets/og/us-efficiency-audit-og-1200x630.jpg)](https://us-efficiency-audit.warondisease.org)
+[![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../assets/og/iab-og-1200x630.jpg)](https://iab.warondisease.org)
 
-> This report applies systems engineering methodology to quantify allocative inefficiency in U.S. governance across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of $4.9T annually and recoverable capital of $2.45T if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
+> Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows expected returns exceeding 100:1 for early investors. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class.
 
 
 <!--
-=== SUBMISSION INFO: United States Efficiency Audit ===
+=== SUBMISSION INFO: Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable ===
 
-TITLE: United States Efficiency Audit
+TITLE: Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable
 
 ABSTRACT:
-This report applies systems engineering methodology to quantify allocative inefficiency in U.S. governance across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of $4.9T annually and recoverable capital of $2.45T if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
+Government spending correlates with lobbying intensity, not marginal societal value. Programs with benefit-cost ratios exceeding 100:1 (vaccines, e-governance) receive single-digit billions while programs with negative net returns (military beyond deterrence, fossil fuel subsidies) receive hundreds of billions. This paper introduces Incentive Alignment Bonds (IABs), financial instruments that realign politician incentives with net societal value optimization. IABs create a capital pool that rewards politicians (via campaign support and post-office career opportunities) for funding high-NSV programs over low-NSV alternatives. The mechanism requires no legislative change: existing PAC infrastructure, impact bonds, and prediction markets can deploy it today. Analysis of a proposed 1% Treaty redirecting $27.2B/year from military spending to medical research shows expected returns exceeding 100:1 for early investors. The 90:1 capital asymmetry ($454T in household wealth vs. $5T for concentrated interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are solved. IABs solve that coordination problem by turning political change into an investable asset class.
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
 AFFILIATION: Institute for Accelerated Medicine
 ORCID: 0009-0006-0212-1094
 
-KEYWORDS: Government Efficiency, Public Finance, Resource Allocation, Systems Analysis, Federal Spending, Policy Analysis, Monte Carlo Simulation, Efficiency Metrics, Oecd Benchmarks, Allocation Inefficiency
+KEYWORDS: Mechanism Design, Public Choice, Political Economy, Collective Action, Social Impact Bonds, Campaign Finance, Incentive Compatibility, Incentive Alignment, Public Goods, Net Societal Value, PAC, Lobbying
 
-JEL CODES: H50, H51, H56, H61, D61
+JEL CODES: D72, D82, H41, P16
 
-SUBJECT AREAS: Public Finance, Government Efficiency, Systems Analysis, Resource Allocation, Policy Analysis
-CATEGORY: Academic Paper, Public Policy, Economics, Systems Engineering
-GENRE: Public Finance, Systems Analysis, Policy Analysis, Economics
+SUBJECT AREAS: Mechanism Design, Public Choice, Political Economy, Collective Action, Campaign Finance
+CATEGORY: Academic Paper, Political Economy, Mechanism Design, Public Policy
+GENRE: Political Science, Economics, Mechanism Design, Public Policy
 
-PDF: https://us-efficiency-audit.warondisease.org/us-efficiency-audit.pdf
-DOI: 10.5281/zenodo.18447476
+PDF: https://iab.warondisease.org/incentive-alignment-bonds-paper.pdf
+DOI: 10.5281/zenodo.18203221
 LICENSE: CC BY-NC 4.0
 COPYRIGHT YEAR: 2025
 
 === PLATFORM STATUS ===
-WEBSITE: pending | https://us-efficiency-audit.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522036
+WEBSITE: deployed | https://iab.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522040
 SSRN: pending
 ARXIV: pending | category: econ.GN
 
 === JOURNAL TARGETS ===
-Journal of Public Economics (Tier 1): target
 Public Choice (Tier 2): target
+American Economic Review (Tier 1): target
+Journal of Political Economy (Tier 1): target
 
-SUGGESTED CITATION: Mike P. Sinn (2025). United States Efficiency Audit. Working Draft. https://doi.org/10.5281/zenodo.18447476
+SUGGESTED CITATION: Mike P. Sinn (2025). Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable. Working Draft. https://doi.org/10.5281/zenodo.18203221
 
 === STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests. As a U.S. taxpayer, the author does have a $4.9 trillion annual interest in the findings, but this interest is shared with 330 million others and is therefore presumably not 'competing.'
-FUNDING: This research received no funding from the U.S. government, which, given the findings, should perhaps not be trusted with the allocation decision.
-ETHICS: This research did not involve human subjects. The $4.9 trillion in annual efficiency losses it documents, however, affect 330 million of them.
+COI: The author declares no competing interests and has not, at time of writing, formed a SuperPAC to incentivize politicians into reading this paper, though the analysis suggests this would be cost-effective.
+FUNDING: This research received no funding. The author notes that the mechanism described herein could theoretically fund itself, but chose not to test this recursion.
+ETHICS: This research did not involve human subjects. Current campaign finance practices, which this research proposes to redirect rather than eliminate, involve the entire electorate, though apparently without their informed consent.
 DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
 
 === SSRN "Publication Details" BOX ===
 Select "Enter the details myself", then fill:
   Publisher: Institute for Accelerated Medicine
   Publication Date: 2025
-  DOI: 10.5281/zenodo.18447476
-  URL: https://us-efficiency-audit.warondisease.org
+  DOI: 10.5281/zenodo.18203221
+  URL: https://iab.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
+
+[![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](../assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
+
+> What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
+
+
+<!--
+=== SUBMISSION INFO: The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization ===
+
+TITLE: The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
+
+ABSTRACT:
+What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Political Economy, Campaign Finance, Lobbying, Mechanism Design, Public Choice, Cost Benefit Analysis, Political Feasibility, Political Reform, Democracy
+
+JEL CODES: D72, D73, D78, H41, P16
+
+SUBJECT AREAS: Political Economy, Campaign Finance, Lobbying, Public Choice, Cost-Benefit Analysis
+CATEGORY: Academic Paper, Political Economy, Mechanism Design, Public Policy
+GENRE: Political Science, Economics, Public Choice, Public Policy
+
+PDF: https://cost-of-change.warondisease.org/cost-of-change-analysis.pdf
+DOI: 10.5281/zenodo.18356215
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: deployed | https://cost-of-change.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522030
+SSRN: pending
+ARXIV: pending | category: econ.GN
+
+=== JOURNAL TARGETS ===
+Public Choice (Tier 2): target
+Journal of Political Economy (Tier 1): target
+American Economic Review (Tier 1): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization. Working Draft. https://doi.org/10.5281/zenodo.18356215
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests and has not, at time of writing, formed a SuperPAC. The author reserves the right to reconsider this position if the ROI calculations in Section 3 prove as persuasive as described.
+FUNDING: This research received no funding. The author calculates that funding it would have yielded a higher return than most lobbying expenditures, but acknowledges this is a low bar.
+ETHICS: This research did not involve human subjects. The democratic process it examines, in which policy outcomes correlate more strongly with lobbying spend than voter preferences, arguably does.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18356215
+  URL: https://cost-of-change.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
+
+[![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
+
+> This study quantifies the cumulative mortality and morbidity costs associated with the Unitary Pre-Market Approval (UPMA) model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of 8.2 years post-safety verification. Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024): approximately 102 million deaths died waiting for approved drugs during their approval delays, representing a lower bound excluding drugs never developed due to cost barriers; (2) Future timeline shift: an additional 416 million deaths will eventually die because the disease eradication timeline has been pushed back by 8.2 years. Combined, these represent 7.94 billion Disability-Adjusted Life Years when adjusted for morbidity, with a cumulative economic deadweight loss of approximately $1.19 quadrillion (2024 USD), reflecting 7.94 billion DALYs valued at the standard WHO cost-effectiveness threshold of $150K/DALY. The societal cost of Type II Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I Regulatory Errors (market access for ineffective therapies) by a factor of 3.07k.
+
+
+<!--
+=== SUBMISSION INFO: The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag ===
+
+TITLE: The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag
+
+ABSTRACT:
+This study quantifies the cumulative mortality and morbidity costs associated with the Unitary Pre-Market Approval (UPMA) model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of 8.2 years post-safety verification. Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024): approximately 102 million deaths died waiting for approved drugs during their approval delays, representing a lower bound excluding drugs never developed due to cost barriers; (2) Future timeline shift: an additional 416 million deaths will eventually die because the disease eradication timeline has been pushed back by 8.2 years. Combined, these represent 7.94 billion Disability-Adjusted Life Years when adjusted for morbidity, with a cumulative economic deadweight loss of approximately $1.19 quadrillion (2024 USD), reflecting 7.94 billion DALYs valued at the standard WHO cost-effectiveness threshold of $150K/DALY. The societal cost of Type II Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I Regulatory Errors (market access for ineffective therapies) by a factor of 3.07k.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Fda Regulation, Drug Lag, Kefauver Harris Amendments, Regulatory Delay, Type Ii Errors, Mortality Analysis, Cost Benefit Analysis, Pharmaceutical Regulation, Dalys, Efficacy Requirements, Peltzman, Regulatory Economics
+
+JEL CODES: I18, L51, K23, D61, I11
+
+SUBJECT AREAS: Regulatory Economics, FDA Policy, Drug Lag, Mortality Analysis, Cost-Benefit Analysis
+CATEGORY: Academic Paper, Health Economics, Regulatory Policy, Public Health
+GENRE: Health Economics, Regulatory Policy, Cost-Benefit Analysis
+
+PDF: https://invisible-graveyard.warondisease.org/invisible-graveyard.pdf
+DOI: 10.5281/zenodo.18356231
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: pending | https://invisible-graveyard.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18356231
+SSRN: pending
+MEDRXIV: pending
+
+=== JOURNAL TARGETS ===
+Journal of Law and Economics (Tier 1): target
+Regulation (Cato Institute) (Tier 2): target
+Health Economics (Tier 2): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag. Working Paper. https://doi.org/10.5281/zenodo.18356231
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author would like to disclose a personal bias against 102 million preventable deaths, which some may consider a conflict of interest in regulatory policy analysis. Beyond this, the author declares no competing interests.
+FUNDING: This research received no funding from any agency. The FDA, whose policies are examined herein, did not offer to sponsor a review of its own mortality footprint.
+ETHICS: This research did not involve human subjects. The FDA's post-1962 efficacy requirements, which are its subject, involved 102 million of them.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18356231
+  URL: https://invisible-graveyard.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
+
+[![The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
+
+> Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million deaths preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
+
+
+<!--
+=== SUBMISSION INFO: The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials) ===
+
+TITLE: The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
+
+ABSTRACT:
+Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million deaths preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: dFDA, Predictor Impact Score, Pharmacovigilance, Real World Evidence, N of 1 Trials, Causal Inference, Bradford Hill Criteria, Treatment Effects, Adverse Events, Outcome Labels, Statistical Methods, dFDA, Decentralized Fda
+
+JEL CODES: I18, C10, L65, C93, I11
+
+SUBJECT AREAS: Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods
+CATEGORY: Academic Paper, Medical Research, Methodology
+GENRE: Biostatistics, Pharmacoepidemiology, Methodology
+
+PDF: https://dfda-spec.warondisease.org/dfda-spec-paper.pdf
+DOI: 10.5281/zenodo.18203375
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: deployed | https://dfda-spec.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522034
+MEDRXIV: pending
+ARXIV: pending | category: stat.ME
+
+=== JOURNAL TARGETS ===
+Clinical Pharmacology & Therapeutics (Tier 2): target
+Pharmacoepidemiology and Drug Safety (Tier 2): target
+Drug Safety (Tier 2): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials). Working Draft. https://doi.org/10.5281/zenodo.18203375
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests. The author does maintain a bias toward the Bradford Hill criteria producing correct answers, which some regulatory agencies may find disruptive.
+FUNDING: This research received no funding. The statistical framework described herein costs less to develop than a single traditional Phase III trial costs to delay.
+ETHICS: This research did not involve human subjects. It proposes a framework that would involve considerably more of them, but with their informed consent and at 44x lower cost.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18203375
+  URL: https://dfda-spec.warondisease.org
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->
@@ -893,6 +446,452 @@ Select "Enter the details myself", then fill:
   Publication Date: 2025
   DOI: 10.5281/zenodo.18205881
   URL: https://wishocracy.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://optimocracy.warondisease.org)
+
+[![Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](../assets/og/optimocracy-og-1200x630.jpg)](https://optimocracy.warondisease.org)
+
+> Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply causal inference to this historical policy data, (2) Identify which policies predict above-average median income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive.
+
+
+<!--
+=== SUBMISSION INFO: Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth ===
+
+TITLE: Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth
+
+ABSTRACT:
+Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply causal inference to this historical policy data, (2) Identify which policies predict above-average median income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Mechanism Design, Algorithmic Governance, Smart Contracts, Metric Optimization, Capture Resistance, Central Bank Independence, Goodharts Law, Decentralized Oracles, Political Dysfunction, Rent Seeking, Public Choice
+
+JEL CODES: D72, D73, E58, H11, P16
+
+SUBJECT AREAS: Mechanism Design, Algorithmic Governance, Public Policy, Political Economy
+CATEGORY: Academic Paper, Public Policy, Political Science, Economics
+GENRE: Political Science, Mechanism Design, Public Policy, Economics
+
+PDF: https://optimocracy.warondisease.org/optimocracy-paper.pdf
+DOI: 10.5281/zenodo.18356213
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: deployed | https://optimocracy.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18523075
+SSRN: pending
+ARXIV: pending | category: econ.GN
+
+=== JOURNAL TARGETS ===
+Public Choice (Tier 2): target
+Games and Economic Behavior (Tier 2): target
+Journal of Political Economy (Tier 1): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth. Working Draft. https://doi.org/10.5281/zenodo.18356213
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests, beyond a bias toward policies supported by evidence, which puts him at odds with most legislatures.
+FUNDING: This research received no funding. The author used publicly available data that any government could have analyzed themselves, had they been curious.
+ETHICS: This research did not involve human experimentation. Governing 8 billion people without checking whether your policies work first is, however, a form of experimentation the author finds ethically notable.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18356213
+  URL: https://optimocracy.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](https://opg.warondisease.org)
+
+[![The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](../assets/og/opg-og-1200x630.jpg)](https://opg.warondisease.org)
+
+> Centuries of public policy variation across thousands of jurisdictions (countries, states, cities) constitute a massive natural experiment. The data to identify which policies maximize welfare exists but has not been systematically harvested. The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control, difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional data, measuring policy impact on two welfare metrics: real after-tax median income growth and median healthy life years. For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT (evidence-supported policies the jurisdiction lacks), REPLACE (policies set at suboptimal levels), REPEAL (policies with net welfare harm), and MAINTAIN (policies aligned with evidence). Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors including freedom and autonomy constraints. The framework is agnostic to which party enacted each policy, evaluating only whether it improved outcomes. Projected welfare gains under framework assumptions: 5-15% of GDP for typical US states, pending retrospective validation.
+
+
+<!--
+=== SUBMISSION INFO: The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy ===
+
+TITLE: The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy
+
+ABSTRACT:
+Centuries of public policy variation across thousands of jurisdictions (countries, states, cities) constitute a massive natural experiment. The data to identify which policies maximize welfare exists but has not been systematically harvested. The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control, difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional data, measuring policy impact on two welfare metrics: real after-tax median income growth and median healthy life years. For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT (evidence-supported policies the jurisdiction lacks), REPLACE (policies set at suboptimal levels), REPEAL (policies with net welfare harm), and MAINTAIN (policies aligned with evidence). Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors including freedom and autonomy constraints. The framework is agnostic to which party enacted each policy, evaluating only whether it improved outcomes. Projected welfare gains under framework assumptions: 5-15% of GDP for typical US states, pending retrospective validation.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Policy Evaluation, Causal Inference, Quasi Experimental Methods, Synthetic Control, Difference in Differences, Bradford Hill Criteria, Evidence Based Policy, Policy Recommendations, Jurisdiction Analysis, Policy Impact Score
+
+JEL CODES: H10, D72, C54, I18, D61
+
+SUBJECT AREAS: Policy Evaluation, Causal Inference, Quasi-Experimental Methods, Evidence-Based Policy, Jurisdiction Analysis
+CATEGORY: Academic Paper, Public Policy, Political Science
+GENRE: Political Science, Policy Analysis, Causal Inference
+
+PDF: https://opg.warondisease.org/opg-framework-paper.pdf
+DOI: 10.5281/zenodo.18603834
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: pending | https://opg.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18603834
+SSRN: pending
+
+=== JOURNAL TARGETS ===
+Journal of Policy Analysis and Management (Tier 2): target
+American Political Science Review (Tier 1): target
+Journal of Politics (Tier 1): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy. Working Draft. https://doi.org/10.5281/zenodo.18603834
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests. The author does maintain a controversial preference for policies that work over policies that do not.
+FUNDING: This research received no funding. Centuries of cross-jurisdictional policy data were, however, freely available to anyone willing to look at them.
+ETHICS: This research did not involve human experimentation. Implementing policies without checking if they have worked elsewhere is, however, a form of experimentation conducted on entire populations without informed consent.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18603834
+  URL: https://opg.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](https://obg.warondisease.org)
+
+[![The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../assets/og/obg-og-1200x630.jpg)](https://obg.warondisease.org)
+
+> 20-40% of public goods funding is misallocated relative to outcome-maximizing benchmarks, representing trillions annually in foregone welfare gains. Budget processes respond to lobbying intensity and historical precedent rather than causal evidence of effectiveness. The Optimal Budget Generator (OBG) applies causal inference, diminishing returns modeling, and cost-effectiveness analysis to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) identifying where marginal returns equal opportunity cost. The Budget Impact Score (BIS) measures confidence in each OSL estimate based on study quality, statistical precision, and temporal recency of the underlying causal evidence. The result is a gap analysis showing which categories are over- or underfunded relative to evidence-based benchmarks, enabling systematic reallocation from low-return to high-return public investments.
+
+
+<!--
+=== SUBMISSION INFO: The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding ===
+
+TITLE: The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding
+
+ABSTRACT:
+20-40% of public goods funding is misallocated relative to outcome-maximizing benchmarks, representing trillions annually in foregone welfare gains. Budget processes respond to lobbying intensity and historical precedent rather than causal evidence of effectiveness. The Optimal Budget Generator (OBG) applies causal inference, diminishing returns modeling, and cost-effectiveness analysis to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) identifying where marginal returns equal opportunity cost. The Budget Impact Score (BIS) measures confidence in each OSL estimate based on study quality, statistical precision, and temporal recency of the underlying causal evidence. The result is a gap analysis showing which categories are over- or underfunded relative to evidence-based benchmarks, enabling systematic reallocation from low-return to high-return public investments.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Budget Optimization, Optimal Budget Generator, Evidence Based Policy, Meta Analysis, Cost Effectiveness, Diminishing Returns, Reference Country Benchmarking, Budget Impact Score, Welfare Economics, Public Finance
+
+JEL CODES: H50, H61, D61, I18, C18
+
+SUBJECT AREAS: Budget Optimization, Evidence-Based Policy, Cost-Effectiveness, Public Finance, Welfare Economics
+CATEGORY: Academic Paper, Public Policy, Economics
+GENRE: Economics, Public Policy, Evidence-Based Governance
+
+PDF: https://obg.warondisease.org/obg-framework-paper.pdf
+DOI: 10.5281/zenodo.18356209
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: pending | https://obg.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522044
+SSRN: pending
+
+=== JOURNAL TARGETS ===
+Journal of Public Economics (Tier 1): target
+Journal of Policy Analysis and Management (Tier 2): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding. Working Draft. https://doi.org/10.5281/zenodo.18356209
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests, beyond a preference for budgets that add up and money being spent on things with positive returns, which some appropriations committees may find radical.
+FUNDING: This research received no funding. The author notes that an optimally allocated budget would have funded it, which is rather the point.
+ETHICS: This research did not involve human subjects. Current government budgeting, which allocates trillions annually without reference to whether anything works, involves all of them.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18356209
+  URL: https://obg.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
+
+[![The Political Dysfunction Tax](../assets/og/political-dysfunction-tax-og-1200x630.jpg)](https://political-dysfunction-tax.warondisease.org)
+
+> Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
+
+
+<!--
+=== SUBMISSION INFO: The Political Dysfunction Tax ===
+
+TITLE: The Political Dysfunction Tax
+
+ABSTRACT:
+Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Governance Efficiency, Political Dysfunction, Welfare Economics, Opportunity Cost, Public Choice, Rent Seeking, Clinical Trials, Migration Economics, Regulatory Burden
+
+JEL CODES: D61, D72, H41, H50, O38
+
+SUBJECT AREAS: Governance Efficiency, Political Economy, Welfare Economics, Public Choice
+CATEGORY: Academic Paper, Public Policy, Political Science, Economics
+GENRE: Political Science, Welfare Economics, Public Policy
+
+PDF: https://political-dysfunction-tax.warondisease.org/political-dysfunction-tax.pdf
+DOI: 10.5281/zenodo.18603840
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: pending | https://political-dysfunction-tax.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18603840
+SSRN: pending
+ARXIV: pending | category: econ.GN
+
+=== JOURNAL TARGETS ===
+Public Choice (Tier 2): target
+Journal of Political Economy (Tier 1): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). The Political Dysfunction Tax. Working Draft. https://doi.org/10.5281/zenodo.18603840
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests. The author does have a vested interest in not losing $97 trillion per year, but shares this interest with most of the species.
+FUNDING: This research received no funding. At a 31-53% governance efficiency rate, the author considers this par for the course.
+ETHICS: This research did not involve human subjects. Operating governments at 31-53% efficiency while charging full price does, however, involve all of them.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18603840
+  URL: https://political-dysfunction-tax.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
+
+[![United States Efficiency Audit](../assets/og/us-efficiency-audit-og-1200x630.jpg)](https://us-efficiency-audit.warondisease.org)
+
+> This report applies systems engineering methodology to quantify allocative inefficiency in U.S. governance across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of $4.9T annually and recoverable capital of $2.45T if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
+
+
+<!--
+=== SUBMISSION INFO: United States Efficiency Audit ===
+
+TITLE: United States Efficiency Audit
+
+ABSTRACT:
+This report applies systems engineering methodology to quantify allocative inefficiency in U.S. governance across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of $4.9T annually and recoverable capital of $2.45T if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Government Efficiency, Public Finance, Resource Allocation, Systems Analysis, Federal Spending, Policy Analysis, Monte Carlo Simulation, Efficiency Metrics, Oecd Benchmarks, Allocation Inefficiency
+
+JEL CODES: H50, H51, H56, H61, D61
+
+SUBJECT AREAS: Public Finance, Government Efficiency, Systems Analysis, Resource Allocation, Policy Analysis
+CATEGORY: Academic Paper, Public Policy, Economics, Systems Engineering
+GENRE: Public Finance, Systems Analysis, Policy Analysis, Economics
+
+PDF: https://us-efficiency-audit.warondisease.org/us-efficiency-audit.pdf
+DOI: 10.5281/zenodo.18447476
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: pending | https://us-efficiency-audit.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522036
+SSRN: pending
+ARXIV: pending | category: econ.GN
+
+=== JOURNAL TARGETS ===
+Journal of Public Economics (Tier 1): target
+Public Choice (Tier 2): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). United States Efficiency Audit. Working Draft. https://doi.org/10.5281/zenodo.18447476
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests. As a U.S. taxpayer, the author does have a $4.9 trillion annual interest in the findings, but this interest is shared with 330 million others and is therefore presumably not 'competing.'
+FUNDING: This research received no funding from the U.S. government, which, given the findings, should perhaps not be trusted with the allocation decision.
+ETHICS: This research did not involve human subjects. The $4.9 trillion in annual efficiency losses it documents, however, affect 330 million of them.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18447476
+  URL: https://us-efficiency-audit.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [Right to Trial & FDA Upgrade Act](https://right-to-trial.warondisease.org)
+
+[![Right to Trial and FDA Upgrade Act](../assets/og-images/knowledge/appendix/right-to-trial-fda-upgrade-act-og-retro-academic.jpg)](https://right-to-trial.warondisease.org)
+
+> Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
+
+
+<!--
+=== SUBMISSION INFO: Right to Trial & FDA Upgrade Act ===
+
+TITLE: Right to Trial & FDA Upgrade Act
+
+ABSTRACT:
+Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Right to Trial, Fda Upgrade, Clinical Trials, Drug Development, Healthcare Reform, Regulatory, Patient Rights, Open Data, Decentralized Trials, Fda V2
+
+SUBJECT AREAS: Clinical Trials, Drug Development, Healthcare Reform, Regulatory Policy, Patient Rights
+CATEGORY: Legislative Text, Public Policy, Healthcare Reform
+GENRE: Healthcare Policy, Regulatory Reform
+
+PDF: https://right-to-trial.warondisease.org/right-to-trial-fda-upgrade-act.pdf
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: pending | https://right-to-trial.warondisease.org
+ZENODO: pending
+
+SUGGESTED CITATION: Mike P. Sinn (2025). Right to Trial & FDA Upgrade Act. First Edition. Available at https://right-to-trial.warondisease.org
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests.
+FUNDING: This research received no funding.
+ETHICS: This document is proposed legislation. No human subjects were involved in its drafting, though quite a few would benefit from its passage.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  URL: https://right-to-trial.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [How to End War and Disease](https://manual.WarOnDisease.org)
+
+> The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
+
+
+<!--
+=== SUBMISSION INFO: How to End War and Disease ===
+
+TITLE: How to End War and Disease
+
+ABSTRACT:
+The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: War on Disease, 1 Percent Treaty, Medical Research, Public Health, Peace Dividend, Decentralized Trials, dFDA, DIH, Victory Bonds, Health Economics, Cost Benefit Analysis, Clinical Trials, Drug Development, Regulatory Reform, Military Spending, Peace Economics, Decentralized Governance, Wishocracy, Blockchain Governance, Impact Investing
+
+SUBJECT AREAS: Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform
+CATEGORY: Non-fiction, Public Policy, Health Economics, Peace Studies
+GENRE: Public Policy, Health Economics, Peace Studies
+
+PDF: https://manual.WarOnDisease.org/How-to-End-War-and-Disease-Paperback.pdf
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+SUGGESTED CITATION: Mike P. Sinn (2025). How to End War and Disease. First Edition. Available at https://manual.WarOnDisease.org
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests, beyond a preference for being alive and for arithmetic, which may bias conclusions toward 'fewer people should die' and 'money should be spent on things that work.'
+FUNDING: No funding was received. The author notes the irony of writing extensively about optimal resource allocation while being, himself, sub-optimally resourced.
+ETHICS: This research did not involve human experimentation. The policies it examines, however, arguably do.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  URL: https://manual.WarOnDisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [Drug Development Cost Increase Analysis](https://drug-cost.warondisease.org)
+
+> Drug development costs have increased approximately 105x in real terms since the 1962 Kefauver-Harris Amendment. This analysis uses the Baily (1972) academic study as the primary source, adjusts for inflation via Bureau of Labor Statistics CPI data, and validates the finding against six independent real-world price comparisons: generic vs. brand-name drugs, supplements vs. prescriptions, compounding pharmacies vs. FDA-approved products, veterinary vs. human drugs, orphan drug pricing, and historical antibiotic economics. Monte Carlo sensitivity analysis confirms the estimate is robust across plausible input ranges. The magnitude is consistent with independent estimates of 100-400x from multiple research groups.
+
+
+<!--
+=== SUBMISSION INFO: Drug Development Cost Increase Analysis ===
+
+TITLE: Drug Development Cost Increase Analysis
+
+ABSTRACT:
+Drug development costs have increased approximately 105x in real terms since the 1962 Kefauver-Harris Amendment. This analysis uses the Baily (1972) academic study as the primary source, adjusts for inflation via Bureau of Labor Statistics CPI data, and validates the finding against six independent real-world price comparisons: generic vs. brand-name drugs, supplements vs. prescriptions, compounding pharmacies vs. FDA-approved products, veterinary vs. human drugs, orphan drug pricing, and historical antibiotic economics. Monte Carlo sensitivity analysis confirms the estimate is robust across plausible input ranges. The magnitude is consistent with independent estimates of 100-400x from multiple research groups.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Drug Development Cost, Fda Regulation, Kefauver Harris Amendment, Clinical Trials, Pharmaceutical Economics, Regulatory Burden, Health Economics, Baily 1972, Tufts Csdd, Orphan Drugs
+
+SUBJECT AREAS: Drug Development, Health Economics, Regulatory Analysis, FDA Policy
+CATEGORY: Non-fiction, Health Economics, Regulatory Analysis
+GENRE: Health Economics, Regulatory Analysis
+
+PDF: https://drug-cost.warondisease.org/drug-development-cost-analysis.pdf
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+SUGGESTED CITATION: Mike P. Sinn (2025). Drug Development Cost Increase Analysis. First Edition. Available at https://drug-cost.warondisease.org
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests, beyond a strong personal preference for being alive, which may bias conclusions toward 'we should spend less money on things that explode and more on things that cure.'
+FUNDING: This research received no funding. The annual cost of producing it was less than the FDA charges for a single pre-submission meeting.
+ETHICS: This research did not involve human experimentation. Spending 105x more on regulatory paperwork than actual drug manufacturing while diseases remain untreated is, however, arguably an uncontrolled experiment in bureaucratic homicide.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  URL: https://drug-cost.warondisease.org
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->
