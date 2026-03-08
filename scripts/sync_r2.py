@@ -38,7 +38,7 @@ sys.path.insert(0, str(SCRIPT_DIR))
 from lib.python_utils import load_project_dotenv
 load_project_dotenv(PROJECT_ROOT)
 from lib.audiobook_common import PODCAST_HASH_RE
-from lib.build_logger import BuildLogger
+from lib.build_logger import BuildLogger, SingleLineProgress
 
 # Directories to sync (R2 prefix -> local path)
 SYNC_DIRS = {
@@ -395,15 +395,24 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
     skipped = 0
     checked = 0
     plan_start = time.monotonic()
+    compare_single_line = sys.stdout.isatty()
+    compare_progress = SingleLineProgress(enabled=True) if compare_single_line else None
+    compare_log_every = 50 if compare_single_line else 500
 
     for key, local_path in sorted(local_files.items()):
         checked += 1
-        if checked % 50 == 0 or checked == total_local:
+        if checked % compare_log_every == 0 or checked == total_local:
             elapsed = time.monotonic() - plan_start
             rate = checked / elapsed if elapsed > 0 else 0
             remaining = (total_local - checked) / rate if rate > 0 else 0
-            print(f"\r  Comparing [{checked}/{total_local}] "
-                  f"({remaining:.0f}s remaining)...    ", end="", flush=True)
+            message = (
+                f"  Comparing [{checked}/{total_local}] "
+                f"({remaining:.0f}s remaining)..."
+            )
+            if compare_progress is not None:
+                compare_progress.update(message, final=(checked == total_local))
+            else:
+                print(message)
 
         remote_etag = remote_objects.get(key)
         is_mp3 = local_path.suffix.lower() == '.mp3'
@@ -411,27 +420,36 @@ def sync_dir(prefix: str, local_root: Path, patterns: list[str],
             size = local_path.stat().st_size
         except FileNotFoundError:
             if is_mp3:
-                print(f"\n  [SKIP] {key} (file disappeared from disk)")
+                if compare_progress is not None:
+                    compare_progress.clear()
+                print(f"  [SKIP] {key} (file disappeared from disk)")
             continue
 
         if file_matches_etag(local_path, remote_etag):
             if is_mp3:
                 local_hash = md5_file(local_path)
-                print(f"\n  [SKIP] {key} (hash match: local={local_hash}, remote={remote_etag})")
+                if compare_progress is not None:
+                    compare_progress.clear()
+                print(f"  [SKIP] {key} (hash match: local={local_hash}, remote={remote_etag})")
             skipped += 1
             continue
 
         if is_mp3:
+            if compare_progress is not None:
+                compare_progress.clear()
             if remote_etag is None:
-                print(f"\n  [QUEUE] {key} (new, no remote copy)")
+                print(f"  [QUEUE] {key} (new, no remote copy)")
             else:
                 local_hash = md5_file(local_path)
-                print(f"\n  [QUEUE] {key} (changed: local={local_hash}, remote={remote_etag})")
+                print(f"  [QUEUE] {key} (changed: local={local_hash}, remote={remote_etag})")
 
         action = "NEW" if remote_etag is None else "UPDATE"
         to_upload.append((key, local_path, action, size))
 
-    print()  # Clear the progress line
+    if compare_progress is not None:
+        compare_progress.clear()
+    else:
+        print()
 
     to_delete: list[str] = []
     if delete_removed:

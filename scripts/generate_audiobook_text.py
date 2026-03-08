@@ -58,6 +58,7 @@ from lib.retry import RateLimiter
 
 # Configuration
 OUTPUT_DIR = NARRATION_DIR
+LOGGER: BuildLogger | None = None
 
 MAX_CHUNK_CHARS = 3_000
 
@@ -87,6 +88,27 @@ LLM_MAX_ATTEMPTS = _env_int("AUDIOBOOK_LLM_MAX_ATTEMPTS", 6)
 # Single-line progress display for narration chunk generation.
 LLM_SINGLE_LINE_PROGRESS = _env_flag("AUDIOBOOK_LLM_SINGLE_LINE_PROGRESS", True)
 llm_rate_limiter = RateLimiter(max_requests=LLM_REQUESTS_PER_MINUTE, window_seconds=60)
+
+
+def _log_info(message: str) -> None:
+    if LOGGER:
+        LOGGER.info(message)
+    else:
+        print(f"[*] {message}")
+
+
+def _log_ok(message: str) -> None:
+    if LOGGER:
+        LOGGER.ok(message)
+    else:
+        print(f"[OK] {message}")
+
+
+def _log_error(message: str) -> None:
+    if LOGGER:
+        LOGGER.error(message)
+    else:
+        print(f"[ERROR] {message}", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -816,19 +838,19 @@ def main() -> int:
     OUTPUT_DIR = paths.narration_txt
 
     t_sub = time.monotonic()
-    print(f"Loading config: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
+    _log_info(f"Loading config: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_quarto_config(config_path)
     chapters = extract_chapters(config)
-    print(f"Found {len(chapters)} chapters")
+    _log_info(f"Found {len(chapters)} chapters")
     step_times["Load config"] = time.monotonic() - t_sub
 
     variables_path = Path(args.variables_yml)
     if not variables_path.is_absolute():
         variables_path = PROJECT_ROOT / variables_path
     t_sub = time.monotonic()
-    print(f"Loading variables: {variables_path.name}")
+    _log_info(f"Loading variables: {variables_path.name}")
     variables = load_variables(variables_path)
-    print(f"Loaded {len(variables)} variables")
+    _log_info(f"Loaded {len(variables)} variables")
     step_times["Load variables"] = time.monotonic() - t_sub
 
     if args.list:
@@ -838,7 +860,7 @@ def main() -> int:
     if args.chapter:
         chapters = [ch for ch in chapters if ch['index'] == args.chapter]
         if not chapters:
-            print(f"Error: Chapter {args.chapter} not found")
+            _log_error(f"Chapter {args.chapter} not found")
             return 1
     elif args.start or args.end:
         start = args.start or 1
@@ -846,17 +868,17 @@ def main() -> int:
         chapters = [ch for ch in chapters if start <= ch['index'] <= end]
 
     mode = "DRY RUN (strip only)" if args.dry_run else "GENERATE"
-    print(f"\n[{mode}] Processing {len(chapters)} chapter(s)...")
-    print(f"Output: {OUTPUT_DIR.relative_to(PROJECT_ROOT)}")
+    _log_info(f"[{mode}] Processing {len(chapters)} chapter(s)...")
+    _log_info(f"Output: {OUTPUT_DIR.relative_to(PROJECT_ROOT)}")
     if not args.dry_run:
-        print(
+        _log_info(
             f"LLM settings: workers={LLM_PARALLEL_WORKERS}, "
             f"rate-cap={LLM_REQUESTS_PER_MINUTE}/min, retries={LLM_MAX_ATTEMPTS}"
         )
     if args.debug_chunks:
-        print("Chunk logs: verbose")
+        _log_info("Chunk logs: verbose")
     else:
-        print("Chunk logs: compact (use --debug-chunks for per-chunk detail)")
+        _log_info("Chunk logs: compact (use --debug-chunks for per-chunk detail)")
     print()
 
     results = []
@@ -882,8 +904,8 @@ def main() -> int:
     cached = sum(1 for r in results if r['status'] == 'cached')
     dry_runs = sum(1 for r in results if r['status'] == 'dry_run')
 
-    print(f"\n{'=' * 60}")
-    print(f"Results: {generated} generated, {cached} cached, {dry_runs} dry-run")
+    _log_info(f"{'=' * 60}")
+    _log_info(f"Results: {generated} generated, {cached} cached, {dry_runs} dry-run")
 
     if results and not args.dry_run:
         t_sub = time.monotonic()
@@ -892,12 +914,13 @@ def main() -> int:
 
     total_elapsed = time.monotonic() - pipeline_start
     _print_timing_summary(step_times, total_elapsed)
-    print("\nDone!")
+    _log_ok("Done!")
     return 0
 
 
 if __name__ == "__main__":
     logger = BuildLogger("generate-audiobook-text.log")
+    LOGGER = logger
     logger.start_capture()
     exit_code = 0
     try:
