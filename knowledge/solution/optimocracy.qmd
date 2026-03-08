@@ -17,7 +17,7 @@ image: /assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-
 
 ## The Price of Not Checking
 
-The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage points more of GDP than Switzerland on government. Switzerland gets {{< var us_vs_switzerland_life_expectancy_gap >}} more years of life expectancy. One of these countries is doing it wrong. On Wishonia, we would check which one. On Earth, you have a debate about it. The debate has been going on for 50 years. The Swiss are still winning.
+The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage points more of GDP than Switzerland on government. Switzerland gets {{< var us_vs_switzerland_life_expectancy_gap >}} more years of life expectancy. One of these countries is doing it wrong. On Wishonia, we would check which one. On Earth, you have a debate about it. The debate has been going on for 50 years. The Swiss are still winning. You're paying more and dying sooner, and your response is to have opinions about it.
 
 ![Rich countries aren't rich because of resources. They're rich because their rules aren't stupid. Poor countries have bad governments. It's the institutions, not the dirt.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
 
@@ -29,7 +29,7 @@ Your planet has roughly 10,000 jurisdictions making different policy choices. Ka
 
 ![Optimocracy: measure what works, recommend what works, check if anyone listened, pay people who listened. It's the revolutionary idea of doing the thing that works.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg)
 
-Same logic as your [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]: watch what actually happens, then analyze the data. Your decentralized FDA applies this to medicine. The Evidence Machine applies it to governance. Instead of "which drug works?" you're asking "which policy works?"
+Same logic as your [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]: watch what actually happens, then analyze the data. Your decentralized FDA applies this to medicine. The Evidence Machine applies it to governance. Instead of "which drug works?" you're asking "which policy works?" Same question, higher body count.
 
 ## Why Knowing Isn't Enough
 
@@ -47,7 +47,7 @@ This is the gap between [Incentive Alignment Bonds](incentive-alignment-bonds.qm
 
 The Evidence Machine does three things. That's it. Three things. Your species has difficulty with three things, so I'll use small words.
 
-(On Wishonia, we just call this the Optomitron. It's an appliance. You plug in policies, it tells you which ones work. You call it "Optimocracy" because your species needs everything to sound like a form of government before you'll take it seriously.)
+(On Wishonia, we just call this the Optomitron. It's an appliance. You plug in policies, it tells you which ones work. You call it "[Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025]" because your species needs everything to sound like a form of government before you'll take it seriously.)
 
 **Recommend.** The Optomitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
 
@@ -66,7 +66,7 @@ You are spending 100 times less than optimal on figuring out which medicines wor
 
 ![Instead of forcing politicians to be good, pay them to accidentally do good things while pursuing money. You can't fix human nature, but you can redirect it.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-government-adoption-isn-t-required-bw-academic.jpg)
 
-This doesn't require government permission. The Evidence Machine operates as a permanent advisory layer outside government. Politicians still vote however they want. The system just makes the consequences of ignoring evidence visible and financially painful. The question isn't "will politicians give up power?" (they won't) but "can we make ignoring good advice unprofitable?" (yes; it's a fundraising challenge, not a revolution).
+This doesn't require government permission. The Evidence Machine operates as a permanent advisory layer outside government. Politicians still vote however they want. They can still ignore the evidence; it just costs them money now, which on Earth is apparently the only consequence that matters. The question isn't "will politicians give up power?" (they won't) but "can we make ignoring good advice unprofitable?" (yes; it's a fundraising challenge, not a revolution).
 
 ## Corruption, But Make It Difficult
 
@@ -76,7 +76,7 @@ Currently, your lobbying industry has thousands of capture points. Committee ear
 
 ![Lobbyists currently have thousands of people to corrupt. Optimocracy gives them one target protected by multiple watchdogs. You're trying to make corruption impractical instead of illegal.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
 
-The Evidence Machine collapses all those capture points to a single target: the measurement methodology. To corrupt the system, you need to simultaneously corrupt the Census Bureau, the Federal Reserve, the Bureau of Labor Statistics, academic institutions, AND decentralized citizen surveys. All without detection. All at the same time. All institutions with different governance structures, different funding sources, different methodologies, and different reasons to hate each other.
+The Evidence Machine collapses all those capture points to a single target: the measurement methodology. Here's the heist: simultaneously bribe the Census Bureau, the Federal Reserve, the Bureau of Labor Statistics, academic institutions, AND decentralized citizen surveys. All without detection. All at the same time. All institutions with different governance structures, different funding sources, different methodologies, and different reasons to hate each other. This is not a corruption strategy. This is the plot of a movie where the criminals lose.
 
 Here's how it works in practice. Five independent sources measure median income growth:
 
@@ -98,11 +98,11 @@ This is also why it's different from every previous attempt at technocratic gove
 
 ## The Only Two Numbers That Matter
 
-What does the Evidence Machine actually measure? Two numbers. Just two.
+What does the Optomitron actually measure? Two numbers. Just two. Your species managed three things in the last section, so we're going easier on you this time.
 
 **Real after-tax median income growth.** Did the person in the middle of the income distribution get richer this year, after adjusting for inflation and taxes? Not GDP per capita, which is a terrible metric because three billionaires moving into your city makes the average look great while everyone else's rent doubles. Median captures what happened to the actual human in the middle.
 
-**Median healthy life years.** How many years can the person in the middle expect to live in good health? Not average life expectancy, which gets distorted by infant mortality and billionaire longevity clinics. Median captures what a typical human can expect.
+**Median healthy life years.** How many years can the person in the middle expect to live in good health? Not average life expectancy, which counts the billionaire who replaced his blood six times as canceling out someone who died at 40. Median captures what a typical human can expect.
 
 ![Some numbers are easy to fake. GDP per capita looks great if three billionaires move in. Median income and healthy life years are harder to game. You can't fake everyone being less dead.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
 
@@ -112,6 +112,8 @@ Why not 50 metrics? Because each additional target creates a new way to cheat, a
 
 Your government currently measures success by how much money it spends, which is like a restaurant measuring success by how much food it buys. You could buy a mountain of ingredients and poison everyone. By your current metrics, that's a good year.
 
+"But correlation isn't causation!" Yes. Thank you. Your species discovered this in the 1800s and has been using it as an excuse to ignore data ever since. The Optomitron doesn't just check whether policies and outcomes happened in the same room. It uses the fact that 10,000 jurisdictions adopted different policies at different times to isolate what actually caused what. (The boring details: the [technical specification](../appendix/optimal-policy-generator-spec.qmd) scores every causal claim against nine criteria, and if the timing is wrong, the score is automatically zero, no matter how pretty the correlation looks.)
+
 ## Putting It Together
 
 The full loop: [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] funds it, [IABs](incentive-alignment-bonds.qmd) align incentives, the Evidence Machine identifies what works, and [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] allocates the research funds. The Evidence Machine tells governments which policies work. Wishocracy tells the research fund where to aim. On Wishonia, this is called "an obvious system." On Earth, it required four chapters and a bibliography.
@@ -120,6 +122,6 @@ The full loop: [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-202
 
 And here's why the whole thing ratchets. Each treaty expansion creates more IAB funding, which funds more evidence collection, which strengthens the case for further expansion. Evidence begets funding begets evidence. It's the same self-reinforcing loop as the [Military Industrial Complex](../solution/aligning-incentives.qmd), except instead of manufacturing orphans, it manufactures data about how to stop manufacturing orphans.
 
-Now that you know how the evidence engine works, the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd).
+Now that you know how the Optomitron works (congratulations, on Wishonia this is taught to children), the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd).
 
 For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd) [@optimocracy-paper-2025]. For the gory details on how the recommendation engine decides you're spending too much on corn and too little on not dying: [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] and [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025].
