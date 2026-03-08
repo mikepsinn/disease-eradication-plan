@@ -103,6 +103,7 @@ class ReferenceID(str, Enum):
     BLS_CPI_INFLATION_CALCULATOR = "bls-cpi-inflation-calculator"
     BLS_WORKING_WIVES_1967_2011 = "bls-working-wives-1967-2011"
     BOEING_DEFENSE_ANNUAL_REVENUE_26B = "boeing-defense-annual-revenue-26b"
+    BORDO_REDISH_ROCKOFF_CANADA_BANKING_2015 = "bordo-redish-rockoff-canada-banking-2015"
     BORENSTEIN2009 = "borenstein2009"
     BORIO_COSTS_DEFLATION_2015 = "borio-costs-deflation-2015"
     BRADFORD_HILL_1965 = "bradford-hill-1965"
