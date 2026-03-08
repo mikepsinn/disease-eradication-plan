@@ -145,9 +145,9 @@ Patients don't control the money. Committees do. And committees optimize for the
 
 When you allocate the vast majority of a {{< var nih_annual_budget >}} annual budget into understanding disease instead of testing the safe, unpatentable treatments already gathering dust on the shelf, you get a very well-understood population of dead people.
 
-### Cost Per QALY
+### Cost Per Quality-Adjusted Life Year
 
-A QALY (Quality-Adjusted Life Year) is one year of healthy life. Lose a leg and live ten years, that's fewer than ten QALYs. Die at forty instead of eighty, that's forty QALYs lost. It's how you measure whether a medical system is keeping people alive and functional, or just keeping itself funded.
+A Quality-Adjusted Life Year is one year of healthy life. Lose a leg and live ten years, that's fewer than ten QALYs. Die at forty instead of eighty, that's forty QALYs lost. It's how you measure whether a medical system is keeping people alive and functional, or just keeping itself funded.
 
 The ADAPTABLE trial proved pragmatic trials cost {{< var dfda_trial_cost_reduction_factor >}} less per patient than traditional RCTs [@pragmatic-trials-cost-advantage] ({{< var adaptable_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}). Same science. Fewer catered meetings. {{< var dfda_trial_cost_reduction_factor >}} more patients enrolled. Fewer conference rooms rented.
 
