@@ -18,7 +18,7 @@ Dollar purchasing power retained since 1913: 4%. Unpopular wars funded without d
 
 On Wishonia, we used rocks as currency for about 400 years. Then someone pointed out that rocks are heavy and also everywhere. It took us another 200 years of arguing, a bribery program, and three currency collapses before we switched to a shared ledger: a network of computers that all keep the same record of who has what, and check each other's work so nobody can lie. If one computer tries to say "actually I have a million extra coins," the other computers say "no you don't" and ignore it. That's the whole thing. It is not complicated. A child could understand it. (On Wishonia, a child *did* invent it. She was eleven. She won a science fair. The previous monetary system had been designed by 400 adults over two centuries and was worse in every way.)
 
-Humans invented the same idea in 2009. It is called "blockchain," which is a word designed to make a simple concept sound difficult, because if people understood how simple it was, they might ask why they're still using the old system. Mostly, your species used it to buy drugs and expensive monkey JPGs. (You paid $69 million for a picture of an ape. The ape was not even real. I checked.)
+Humans invented the same idea in 2009. It is called "blockchain," which is a word designed to make a simple concept sound difficult, because if people understood how simple it was, they might ask why they're still using the old system. Mostly, your species used it to buy drugs and expensive monkey JPGs. (You paid $69 million for a NFT picture of an ape. The ape was not even real. I checked.)
 
 I will come back to this invention later, because it is important. It makes the system I'm about to describe completely unnecessary. But first, let me describe the system, because you are currently inside it and it is eating you.
 
@@ -179,9 +179,9 @@ Your economists will tell you this can't work. That a gold standard is a relic. 
 
 Here is what they'd prefer you not check: every period in which your money was anchored to gold produced broad-based prosperity. Under the classical gold standard (1870-1914), real GDP per capita grew 3.8% per year in the 1880s. Between 1880 and 1896, prices fell 30% and real GDP increased 85%. Real wages rose. You built the railroad, the telephone, and the electric light, all while prices were falling. (The evidence on that particular period is detailed [below](#the-one-data-point).)
 
-Under Bretton Woods, you did it again. Twenty-seven years of anchored money. Twenty-seven years of the median family getting richer. Then Nixon unanchored it, and median income growth fell from 3% to 0.6% per year [@piie-income-growth-1973]. An 80% collapse.
+Under Bretton Woods, you did it again. Twenty-seven years of anchored money. Twenty-seven years of the median family getting richer. Then Nixon unanchored it, and median income growth fell from nearly 3% to 0.6% per year [@piie-income-growth-1973]. An 80% collapse.
 
-Two experiments. Two gold-anchored systems. Both produced the strongest periods of broad-based prosperity in your recorded history. Then you abandoned them both and the gains stopped reaching the median family.
+Two experiments. Two gold-anchored systems. Both produced roughly double the median income growth of the fiat periods that followed them. Then you abandoned them both and the gains stopped reaching the median family.
 
 On Wishonia, when an experiment produces the same result twice, we call it "evidence." On Earth, you call it "outdated thinking" and go back to letting the people in the building print money for their friends.
 
@@ -258,6 +258,18 @@ Your economists will counter with the Panic of 1873 and the "Long Depression," w
 The Bank for International Settlements (the central bank of central banks, which is a real thing that exists, like a boss fight at the end of a video game about money) tested this across 140 years and 38 economies [@borio-costs-deflation-2015]. Their full-sample result: the link between deflation and slower growth is "weak." Their result when you remove the Great Depression: no statistically significant link at all. The entire "weak" correlation is one data point dragging the average. The Great Depression was so extreme (GDP fell 30%) that it acts as a statistical leverage point, pulling the result negative against thousands of observations showing the opposite. The fact that you need to include a once-in-140-years catastrophe to get your result means your result describes the catastrophe, not deflation. Borio et al. also separated goods price deflation from asset price deflation. Falling goods prices (the kind central banks claim to protect you from) showed no link to slower growth. Falling property prices (which signal credit busts, like the one your banks caused in 2008) did. Your central banks are treating the wrong symptom and citing a study that, if anyone read past the abstract, says so.
 
 One data point. They built the entire theology of permanent inflation on one data point that they misread. On Wishonia, if a scientist built a theory on one misinterpreted data point, they would lose their research license. On Earth, they get the fake Nobel Prize.
+
+### The "Banking Panics" Defense
+
+The stronger argument for central banking, and the one your economists should lead with: without a lender of last resort, banks fail, depositors lose their savings, and the economy collapses. The Federal Reserve was created in 1913 specifically because the Panic of 1907 frightened everyone into agreeing that a central bank was necessary. The Fed then spent the 1920s expanding credit, inflating the bubble whose collapse it was created to prevent.
+
+Sixteen years later, more than 9,000 banks failed. The institution created specifically to prevent banking panics contributed to the worst banking panic in your history. 
+
+Canada did not have a central bank until 1935. During the same Depression, same continent, same decade, Canada had zero bank failures [@bordo-redish-rockoff-canada-banking-2015]. The country next door, without the institution you said was necessary, had the outcome you said was impossible. The country with the central bank had the crisis. The country without one didn't. Your economists treat this as a coincidence.
+
+What actually stopped bank runs was not the Federal Reserve. It was the Federal Deposit Insurance Corporation, created in 1933, which guaranteed deposits. A bank run is a coordination problem: everyone withdraws because they fear everyone else will withdraw first. Insurance solves it. You do not need a money printer to solve a coordination problem. You need a promise, a small premium, and a ledger.
+
+You solved bank runs in 1933 with insurance. You kept the money printer. On Wishonia, when you cure a disease, you stop prescribing the chemotherapy. On Earth, you cured the disease and kept the chemotherapy because the oncologist enjoys the copays.
 
 ### What They Could Measure Instead
 
@@ -479,6 +491,18 @@ I want to make sure you absorbed that:
 The central bank that prints your money created a fake Nobel Prize to give to the people who explain why printing your money is fine.
 
 On Wishonia, we have a word for this. It translates roughly to "decorating the burglar."
+
+### The Research
+
+Every source I cited in this chapter is publicly available. None of it was classified.
+
+I found all of it in less than a day.
+
+Your species has granted thousands of economics doctorates since 1971. Each recipient spent four to seven years studying economics full time. They had access to every database I used. They can read the same charts. The break point in 1971 is not subtle. Median income growth fell 80% after Nixon closed the gold window. The longest deflation in American history (1870-1896) produced the fastest growth. The Federal Reserve was created to prevent bank failures, then presided over 9,000 of them, while Canada, without a central bank, had zero. Every war that killed more than a million people required a money printer. The hard money list is empty.
+
+None of these findings required a laboratory. They required a chart and the willingness to read it. What is the purpose of economics, if not to use data to figure out how to make people's lives better? Apparently it is to handwave while saying "stability" and "liquidity" until everyone stops asking.
+
+There are two possible explanations. Either thousands of trained specialists independently failed to notice a pattern visible to some weird alien in an afternoon. Or they noticed, and decided their careers were more important than telling you.
 
 ## Why "Just Print More Money for Medicine" Doesn't Work
 
