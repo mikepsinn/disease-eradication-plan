@@ -170,7 +170,7 @@ The Oxford RECOVERY Trial during COVID-19 proved something your pharmaceutical i
 
 Read those two numbers again. One of them is the cost of finding out if a drug works. The other is the cost of finding out if a drug works while also paying for marble lobbies, compliance departments, and a CEO's third yacht. The medicine is the same. The patients are the same. The yacht is new.
 
-With a [decentralized FDA](../solution/dfda.qmd), trial capacity increases by {{< var dfda_trial_capacity_multiplier >}}:
+With a [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025], trial capacity increases by {{< var dfda_trial_capacity_multiplier >}}:
 
 **{{< var drug_disease_combinations_possible >}} / {{< var dfda_trials_per_year_capacity >}} = {{< var dfda_known_safe_exploration_years >}}**
 

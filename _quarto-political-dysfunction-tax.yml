@@ -23,6 +23,7 @@ dih-render:
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "Political Dysfunction Tax"
+      manual-target: knowledge/problem/unrepresentative-democracy.qmd
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "Political dysfunction tax"
 

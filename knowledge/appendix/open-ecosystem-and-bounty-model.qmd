@@ -14,7 +14,7 @@ feed-date: '2026-04-06'
 youtube-thumbnail: /assets/podcast/open-ecosystem-and-bounty-model-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-The infrastructure for a dFDA won't cost billions to build. Because you're not building most of it.
+The infrastructure for a [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] won't cost billions to build. Because you're not building most of it.
 
 Here's the plan: build the foundation (core API and data standards), pay bounties for critical features nobody wants to build first, and let everyone else build everything else for free. This is how WordPress, Linux, and every successful open platform works. You build the rails, not every train.
 
@@ -37,7 +37,7 @@ An open platform mostly builds itself, but sometimes you need specific features 
 
 The traditional approach is grants: "Here's money. Build something. Let us know how it goes." The bounty approach inverts this: "Build this specific thing. If it works, you get paid. If it doesn't, you don't." One of these wastes less money. The distinction is left as an exercise for the reader.
 
-The "Right to Trial & FDA Upgrade Act" mandates a **public bounty and prize program** for exactly this reason. What it funds:
+The "[Right to Trial](../solution/dfda.qmd) & FDA Upgrade Act" mandates a **public bounty and prize program** for exactly this reason. What it funds:
 
 - **Critical features:** Essential tools nobody's building yet. Post a bounty, pay on delivery.
 - **Security reporting:** Pay hackers to find vulnerabilities and report them instead of exploiting them. Cheaper than getting hacked.

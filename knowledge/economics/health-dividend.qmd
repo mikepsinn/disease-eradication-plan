@@ -22,7 +22,7 @@ It is worth **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}**
 
 ## From Explosions to Trial Slots
 
-{{< var treaty_annual_funding >}} arrives from the [peace dividend](peace-dividend.qmd). [Investor and political allocations](../solution/dih.qmd) take their cut, leaving {{< var dih_treasury_to_medical_research_annual >}} for medical research ({{< var dih_treasury_medical_research_pct >}} of the total). [Your decentralized FDA](../solution/dfda.qmd) takes {{< var dfda_annual_opex >}} to keep the lights on. That leaves {{< var dih_treasury_trial_subsidies_annual >}} for trial subsidies.
+{{< var treaty_annual_funding >}} arrives from the [peace dividend](peace-dividend.qmd). [Investor and political allocations](../solution/dih.qmd) take their cut, leaving {{< var dih_treasury_to_medical_research_annual >}} for medical research ({{< var dih_treasury_medical_research_pct >}} of the total). [Your decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] takes {{< var dfda_annual_opex >}} to keep the lights on. That leaves {{< var dih_treasury_trial_subsidies_annual >}} for trial subsidies.
 
 I am now going to show you what that money buys. I apologize in advance for the number of numbers. Your species requires receipts before it will believe anything, even things that are obviously true. Especially things that are obviously true.
 

@@ -20,7 +20,7 @@ dih-render:
   show-confidence-intervals: true
   concept-terms:
     - term: "Drug Development Cost Increase Analysis"
-      target: https://drug-cost.warondisease.org
+      manual-target: knowledge/problem/fda-is-unsafe-and-ineffective.qmd
   favicon-prompt: "A pill capsule split open showing dollar signs spilling out"
 
 profiles:

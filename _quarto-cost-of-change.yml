@@ -23,6 +23,7 @@ dih-render:
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "Price of Political Change"
+      manual-target: knowledge/solution/incentive-alignment-bonds.qmd
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A dollar sign with a change/transformation arrow."
 

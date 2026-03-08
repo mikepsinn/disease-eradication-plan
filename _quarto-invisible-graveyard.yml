@@ -24,6 +24,7 @@ dih-render:
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "Invisible Graveyard"
+      manual-target: knowledge/problem/fda-is-unsafe-and-ineffective.qmd
       aliases:
         - "mortality cost of FDA efficacy lag"
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
