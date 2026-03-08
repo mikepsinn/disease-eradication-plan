@@ -6,7 +6,7 @@ feed-date: '2026-04-05'
 youtube-thumbnail: /assets/podcast/campaign-budget-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-> **Related:** [Financial Plan Overview](financial-plan.qmd) | [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)
+> **Related:** [Financial Plan Overview](financial-plan.qmd) | [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]
 
 Traditional campaigns throw money at problems until the money or the problems disappear. Usually the money disappears first.
 
@@ -105,7 +105,7 @@ Your species responds to four things: anger, fear, hope, and greed. Your messagi
 
 - **3 seconds (The Hook):** "Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than testing which medicines work"
 - **30 seconds (The Emotion):** "While you read this, 50 people died of preventable disease. Your species has the money to cure them. It spends it on weapons instead."
-- **3 minutes (The Solution):** "A 1% treaty: Redirect 1% of military spending to pragmatic clinical trials {{< var dfda_trial_cost_reduction_factor >}} cheaper. Cure major diseases in 19 years."
+- **3 minutes (The Solution):** "A [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025]: Redirect 1% of military spending to pragmatic clinical trials {{< var dfda_trial_cost_reduction_factor >}} cheaper. Cure major diseases in 19 years."
 - **Immediate (The Action):** "Vote YES. Buy bonds. Share this."
 
 **Platform strategies:** Death counter bots on Twitter ("147 died while you scrolled"). 15-second TikToks ("Guess what your taxes buy"). Long-form YouTube explainers. Reddit AMAs with researchers. Each platform gets the format its audience can't scroll past.
@@ -223,7 +223,7 @@ The core platform for running global pragmatic clinical trials:
 - Real-world effectiveness tracking (what actually works vs what companies claim works)
 - Integration with existing health systems (designed by different companies who hate each other)
 
-**Your Wishocracy Protocol**: $70M
+**Your [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] Protocol**: $70M
 
 Direct democracy, except this time it works:
 

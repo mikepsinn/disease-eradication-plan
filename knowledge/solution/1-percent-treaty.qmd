@@ -29,7 +29,7 @@ A 1% treaty is a piece of paper that says every signatory nation redirects that 
 
 1.  **Funding:** Creates a {{< var treaty_annual_funding >}}/year revenue stream for **the 1% Treaty Fund**
 2.  **Execution:** **A network of Decentralized Institutes of Health** subsidizes patient participation in **a [decentralized FDA](dfda.qmd)**, clinical trials that are **{{< var dfda_trial_cost_reduction_factor >}} cheaper** than the current model
-3.  **Governance:** Global population via [Wishocracy](wishocracy.qmd), with transparent auditable rules and automated fund allocation
+3.  **Governance:** Global population via [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025], with transparent auditable rules and automated fund allocation
 4.  **Transparency:** All research, data, and spending published on public ledger
 
 ## This Isn't a Trade-Off
@@ -180,7 +180,7 @@ Only {{< var current_trial_slots_available_nounit >}} participate in drug trials
 
 ![Generals keep their budgets, get richer from biotech stocks, look like heroes, make investment profits, and might not die from cancer. Still took us this long to think of it.](/assets/images/1-percent-treaty/1-percent-treaty-section-the-incentive-structure-bw-academic.jpg)
 
-The military-industrial complex gets to keep {{< var defense_sector_retention_pct >}} of their budget (still plenty for bombs), pivot 1% to biotech (the health market is growing; the bomb market just got 1% smaller), look like heroes (rare for arms dealers), invest in the fund ([VICTORY Incentive Alignment Bonds](incentive-alignment-bonds.qmd) pay {{< var victory_bond_annual_return_pct >}} annually), and not die of cancer (even arms dealers get cancer). Especially the not dying of cancer part. The CEO of Lockheed Martin has the same cells you do. Those cells malfunction on the same schedule. No amount of missile production has ever cured a tumor.
+The military-industrial complex gets to keep {{< var defense_sector_retention_pct >}} of their budget (still plenty for bombs), pivot 1% to biotech (the health market is growing; the bomb market just got 1% smaller), look like heroes (rare for arms dealers), invest in the fund ([VICTORY Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] pay {{< var victory_bond_annual_return_pct >}} annually), and not die of cancer (even arms dealers get cancer). Especially the not dying of cancer part. The CEO of Lockheed Martin has the same cells you do. Those cells malfunction on the same schedule. No amount of missile production has ever cured a tumor.
 
 Lockheed Martin Presents: The F-35 Cancer Killer. Boeing Proud Sponsor of: Not Dying of Alzheimer's. Raytheon Technologies: Now With 1% Less Death.
 

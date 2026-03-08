@@ -20,7 +20,7 @@ Now you understand the problem: everyone is dying while you build missiles. Time
 
 Your solution has three parts:
 
-1. A 1% treaty (stealing money from the murder budget)
+1. A [1% treaty](solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] (stealing money from the murder budget)
 2. A decentralized institutes of health with algorithmic governance (so no one can steal it back)
 3. A decentralized FDA (making medicine {{< var dfda_trial_cost_reduction_factor >}} times cheaper)
 
@@ -58,7 +58,7 @@ They say you can't put a price on human life. But apparently the price is somewh
 
 ## Your Decentralized Institutes of Health
 
-Once your 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a rules-governed treasury designed to minimize discretion. The treaty fixes the top-level allocation. Patients direct trial-participation spending. Wishocracy governs the collective-choice layer. Administrative entities maintain the rails, but they do not get to improvise the formula.
+Once your 1% Treaty is ratified, that {{< var treaty_annual_funding >}} per year flows into a **[1% Treaty Fund](solution/dih.qmd)**. It's a rules-governed treasury designed to minimize discretion. The treaty fixes the top-level allocation. Patients direct trial-participation spending. [Wishocracy](solution/wishocracy.qmd) [@wishocracy-paper-2025] governs the collective-choice layer. Administrative entities maintain the rails, but they do not get to improvise the formula.
 
 The governance protocol is the opposite of the NIH. Instead of 200 people in a building guessing what to fund and giving grants to their college roommates, the treasury runs on transparent rules and auditable automation where practical. Patients choose which trials to join. Funding flows automatically to researchers based on patient enrollment. Trials that work get more patients and more funding. Trials that don't work get defunded, which is apparently a concept so radical it took your species 80 years to consider.
 
@@ -113,7 +113,7 @@ Notice that everyone's selfish reason for participating happens to save humanity
 
 The goal isn't 1%. The goal is 100%. The 1% treaty is just the door, not the destination.
 
-The {{< var iab_political_incentive_funding_pct >}} going to [Incentive Alignment Bonds](appendix/incentive-alignment-bonds-paper.qmd) creates a perpetual political machine that pushes for expansion. When 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, the pressure doubles. The political pressure for expansion *accelerates* with each success. This creates a [ratchet that can eventually redirect all military spending](appendix/incentive-alignment-bonds-paper.qmd) from war to health.
+The {{< var iab_political_incentive_funding_pct >}} going to [Incentive Alignment Bonds](appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] creates a perpetual political machine that pushes for expansion. When 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to people whose entire financial interest is getting the treaty to 2%. When 2% passes, the pressure doubles. The political pressure for expansion *accelerates* with each success. This creates a [ratchet that can eventually redirect all military spending](appendix/incentive-alignment-bonds-paper.qmd) from war to health.
 
 [VICTORY Incentive Alignment Bonds](solution/incentive-alignment-bonds.qmd) are the specific instrument. They align investors ({{< var victory_bond_funding_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} career incentives), and patients ({{< var dih_treasury_medical_research_pct >}} cures) with the same outcome.
 

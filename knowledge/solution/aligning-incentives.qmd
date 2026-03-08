@@ -24,7 +24,7 @@ Lobbyists are like pigeons. They go where the food is. Currently the food is in 
 
 ### The Offer
 
-You give them VICTORY Incentive Alignment Bonds paying {{< var victory_bond_annual_return_pct >}} annually, which is more than their current salary and stock options. You give them early access, which means they get rich before everyone else, which is the thing your species cares about even more than getting rich (getting rich first). You give them consulting fees, which is legal bribery with a name, and strategic advisor positions, which are fake jobs with real money. On Wishonia, we would find this arrangement absurd. On Earth, it's called "industry relations" and there are conferences about it.
+You give them [VICTORY Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] paying {{< var victory_bond_annual_return_pct >}} annually, which is more than their current salary and stock options. You give them early access, which means they get rich before everyone else, which is the thing your species cares about even more than getting rich (getting rich first). You give them consulting fees, which is legal bribery with a name, and strategic advisor positions, which are fake jobs with real money. On Wishonia, we would find this arrangement absurd. On Earth, it's called "industry relations" and there are conferences about it.
 
 ### The Math
 
@@ -144,7 +144,7 @@ The money pipeline: support the treaty and Super PAC funds flow in. Oppose it an
 
 ![Wishocracy: people vote on what they want, app tells politicians, politicians see the votes are real, politicians reconsider their donors. Democracy by app because democracy by government stopped working.](/assets/images/aligning-incentives/aligning-incentives-section-the-vote-harvest-bw-academic.jpg)
 
-The vote harvest: {{< var treaty_campaign_voting_bloc_target_nounit >}} people voting on [Wishocracy](wishocracy.qmd). You publish voting records ("Senator X opposes cheaper healthcare"). Their constituents see this in real-time. Support the treaty or face electoral extinction. This is democracy working as designed, which is so unusual that it will probably be reported as a threat to democracy, because on your planet, democracy working is considered a disruption to the normal functioning of democracy, which is not working.
+The vote harvest: {{< var treaty_campaign_voting_bloc_target_nounit >}} people voting on [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]. You publish voting records ("Senator X opposes cheaper healthcare"). Their constituents see this in real-time. Support the treaty or face electoral extinction. This is democracy working as designed, which is so unusual that it will probably be reported as a threat to democracy, because on your planet, democracy working is considered a disruption to the normal functioning of democracy, which is not working.
 
 ### The Bipartisan Beauty
 
@@ -184,6 +184,6 @@ This isn't inevitable. It requires sufficient IAB funding to overcome opposition
 
 ## Why This Scales: The Ratchet Effect
 
-Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, political incentive funding is {{< var iab_political_incentive_funding_annual >}} per year. At 10%, that scales to 10x. Politicians who supported the 1% treaty get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying.
+Each treaty expansion creates more political incentive funding to lobby for the next expansion. At 1%, political incentive funding is {{< var iab_political_incentive_funding_annual >}} per year. At 10%, that scales to 10x. Politicians who supported the [1% treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] get rewarded. Those rewards grow if they push for 2%. It's a ratchet that only moves in one direction: the direction where people stop dying.
 
 You've built ratchets like this before. Social Security. Medicare. Once they exist, dismantling them is politically suicidal because too many people depend on them. The difference is you built those by accident, through crisis and desperation, and spent decades arguing about whether they were good ideas. This time, try doing it on purpose. On Wishonia, we've found that building things on purpose works better than building them by accident, though I realize this is a controversial position for a species that invented penicillin by leaving a sandwich out.

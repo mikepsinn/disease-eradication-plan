@@ -13,7 +13,7 @@ feed-date: '2026-03-27'
 youtube-thumbnail: /assets/podcast/peace-dividend-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Here's what 1% less murder money buys you. The 1% Treaty Fund gets {{< var treaty_annual_funding >}} to subsidize hyper-efficient pragmatic clinical trials. The world saves {{< var peace_dividend_annual_societal_benefit >}} it would have spent rebuilding bombed hospitals, treating shrapnel wounds, and housing refugees. Your lifetime tab for wars in countries you can't find on a map: $113,551 per person over 80 years. That's per person. Every person on Earth. Including you. You personally have been billed $113,551 for explosions on the other side of the planet, and nobody sent you an invoice because they knew you'd cancel.
+Here's what 1% less murder money buys you. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-2025] Fund gets {{< var treaty_annual_funding >}} to subsidize hyper-efficient pragmatic clinical trials. The world saves {{< var peace_dividend_annual_societal_benefit >}} it would have spent rebuilding bombed hospitals, treating shrapnel wounds, and housing refugees. Your lifetime tab for wars in countries you can't find on a map: $113,551 per person over 80 years. That's per person. Every person on Earth. Including you. You personally have been billed $113,551 for explosions on the other side of the planet, and nobody sent you an invoice because they knew you'd cancel.
 
 ## How 1% Less Violence Pays For Everything
 
@@ -116,7 +116,7 @@ Skeptics ask whether 1% fewer bombs means exactly 1% fewer wars. This is the wro
 
 Your species cut military spending {{< var post_ww2_military_cut_pct >}} after World War II and got the greatest economic boom in history. That's the empirical answer. But even that misses the point, because the 1% treaty doesn't stay at 1%.
 
-[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) are tradable securities held by rich and powerful people whose income scales directly with treaty expansion. At 1%, bondholder payouts are {{< var victory_bond_annual_payout >}}/year. At 2%, they double. At 10%, they collect ten times as much. These aren't activists you can ignore at a dinner party. They're investors with Bloomberg terminals, lobbyists, and the same tools your weapons manufacturers currently use to expand military budgets, except pointed at curing diseases.
+[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are tradable securities held by rich and powerful people whose income scales directly with treaty expansion. At 1%, bondholder payouts are {{< var victory_bond_annual_payout >}}/year. At 2%, they double. At 10%, they collect ten times as much. These aren't activists you can ignore at a dinner party. They're investors with Bloomberg terminals, lobbyists, and the same tools your weapons manufacturers currently use to expand military budgets, except pointed at curing diseases.
 
 At just 1%, the IAB political incentive pool ({{< var iab_political_incentive_funding_annual >}}/year) already outguns your entire defense industry's lobbying budget ({{< var defense_lobbying_annual >}}/year) by {{< var iab_vs_defense_lobby_ratio_at_1pct >}}. Every expansion multiplies this. You've built a [defense lobby in reverse](../solution/aligning-incentives.qmd#why-this-scales-the-ratchet-effect), and it's {{< var iab_vs_defense_lobby_ratio_at_1pct >}} stronger than the original on day one.
 
