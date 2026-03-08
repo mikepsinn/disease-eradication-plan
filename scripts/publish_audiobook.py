@@ -54,6 +54,7 @@ OUTRO_QMD_PATH = PROJECT_ROOT / "knowledge" / "appendix" / "podcast-outro.qmd"
 
 from lib.script_lock import acquire_script_lock, ScriptLockError
 from lib.build_logger import BuildLogger
+LOGGER: BuildLogger | None = None
 
 
 def _ts() -> str:
@@ -71,6 +72,27 @@ def _fmt_elapsed(seconds: float) -> str:
     if mins > 0:
         return f"{mins}m{secs:02d}s"
     return f"{secs}s"
+
+
+def _log_info(message: str) -> None:
+    if LOGGER:
+        LOGGER.info(message)
+    else:
+        print(f"[*] {message}")
+
+
+def _log_ok(message: str) -> None:
+    if LOGGER:
+        LOGGER.ok(message)
+    else:
+        print(f"[OK] {message}")
+
+
+def _log_error(message: str) -> None:
+    if LOGGER:
+        LOGGER.error(message)
+    else:
+        print(f"[ERROR] {message}", file=sys.stderr)
 
 
 # Accumulates (label, elapsed_seconds, success, indent) for the final summary
@@ -383,7 +405,7 @@ def main():
         )
         atexit.register(lock.release)
     except ScriptLockError as e:
-        print(f"[{_ts()}] [ERROR] {e}")
+        _log_error(f"[{_ts()}] {e}")
         sys.exit(2)
 
     pipeline_start = time.monotonic()
@@ -392,8 +414,8 @@ def main():
     _step_counter = 0
     _run_log_dir = PROJECT_ROOT / "logs" / "publish-audiobook" / run_id
     _run_log_dir.mkdir(parents=True, exist_ok=True)
-    print(f"\n[{_ts()}] Pipeline started")
-    print(f"[{_ts()}] Debug logs: {_run_log_dir}")
+    _log_info(f"[{_ts()}] Pipeline started")
+    _log_info(f"[{_ts()}] Debug logs: {_run_log_dir}")
 
     # --ken-burns implicitly enables --video
     if args.ken_burns:
@@ -430,7 +452,7 @@ def main():
             _print_timing_summary(pipeline_start)
             sys.exit(1)
         _print_timing_summary(pipeline_start)
-        print(f"[{_ts()}] [DONE] Audible export complete.")
+        _log_ok(f"[{_ts()}] Audible export complete.")
         return
 
     # --- Rewrap-only mode: regenerate outro + rewrap chapter MP3s ---
@@ -463,7 +485,7 @@ def main():
 
         if args.no_sync:
             _print_timing_summary(pipeline_start)
-            print(f"[{_ts()}] [DONE] Outro rewrap complete (--no-sync: skipped R2 upload).")
+            _log_ok(f"[{_ts()}] Outro rewrap complete (--no-sync: skipped R2 upload).")
             return
 
         if not run_step("Sync to Cloudflare R2", "sync_r2.py", []):
@@ -471,7 +493,7 @@ def main():
             sys.exit(1)
 
         _print_timing_summary(pipeline_start)
-        print(f"[{_ts()}] [DONE] Outro rewrap complete.")
+        _log_ok(f"[{_ts()}] Outro rewrap complete.")
         return
 
     # --- Pre-flight: show what's changed ---
@@ -498,7 +520,7 @@ def main():
 
     if args.dry_run:
         _print_timing_summary(pipeline_start)
-        print(f"[{_ts()}] [DONE] Dry run complete (text only, no audio generated).")
+        _log_ok(f"[{_ts()}] Dry run complete (text only, no audio generated).")
         return
 
     # --- Step 2: Generate audio ---
@@ -590,7 +612,7 @@ def main():
     # --- Step 6: Sync to R2 ---
     if args.no_sync:
         _print_timing_summary(pipeline_start)
-        print(f"[{_ts()}] [DONE] Pipeline complete (--no-sync: skipped R2 upload).")
+        _log_ok(f"[{_ts()}] Pipeline complete (--no-sync: skipped R2 upload).")
         return
 
     if not run_step("Sync to Cloudflare R2", "sync_r2.py", []):
@@ -598,13 +620,12 @@ def main():
         sys.exit(1)
 
     _print_timing_summary(pipeline_start)
-    print(f"{'=' * 70}")
-    print(f"  [{_ts()}] PUBLISH COMPLETE")
-    print(f"{'=' * 70}")
+    _log_ok(f"[{_ts()}] PUBLISH COMPLETE")
 
 
 if __name__ == "__main__":
     logger = BuildLogger("publish-audiobook.log")
+    LOGGER = logger
     logger.start_capture()
     exit_code = 0
     try:

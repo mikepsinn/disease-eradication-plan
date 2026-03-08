@@ -61,6 +61,7 @@ from lib.script_lock import acquire_script_lock, ScriptLockError
 # Conservative limit; increase if your quota allows.
 TTS_PARALLEL_WORKERS = 4
 tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
+LOGGER: BuildLogger | None = None
 
 
 def _env_flag(name: str, default: bool = False) -> bool:
@@ -91,6 +92,34 @@ NARRATOR_VOICE = DEFAULT_VOICE
 # Podcast intro/outro assets
 THEME_SONG_PATH = PROJECT_ROOT / "assets" / "music" / "podcast-theme-song.mp3"
 OUTRO_QMD_PATH = PROJECT_ROOT / "knowledge" / "appendix" / "podcast-outro.qmd"
+
+
+def _log_info(message: str) -> None:
+    if LOGGER:
+        LOGGER.info(message)
+    else:
+        print(f"[*] {message}")
+
+
+def _log_ok(message: str) -> None:
+    if LOGGER:
+        LOGGER.ok(message)
+    else:
+        print(f"[OK] {message}")
+
+
+def _log_warning(message: str) -> None:
+    if LOGGER:
+        LOGGER.warning(message)
+    else:
+        print(f"[WARNING] {message}", file=sys.stderr)
+
+
+def _log_error(message: str) -> None:
+    if LOGGER:
+        LOGGER.error(message)
+    else:
+        print(f"[ERROR] {message}", file=sys.stderr)
 
 
 def _retry_fs_op(op, label: str = "", retries: int = 8, delay: float = 1.0):
@@ -1964,7 +1993,7 @@ def main() -> int:
         )
         atexit.register(lock.release)
     except ScriptLockError as e:
-        print(f"ERROR: {e}")
+        _log_error(str(e))
         return 2
 
     pipeline_start = time.monotonic()
@@ -1978,10 +2007,10 @@ def main() -> int:
     paths = get_paths(cfg_name)
 
     # Load book config
-    print(f"Loading book configuration: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
+    _log_info(f"Loading book configuration: {config_path.name} (output: assets/audiobook/{cfg_name}/)")
     config = load_book_config(config_path)
     chapters = extract_chapters(config)
-    print(f"Found {len(chapters)} chapters")
+    _log_info(f"Found {len(chapters)} chapters")
 
     # List mode
     if args.list:
@@ -1992,7 +2021,7 @@ def main() -> int:
     if args.chapter:
         chapters = [ch for ch in chapters if ch['index'] == args.chapter]
         if not chapters:
-            print(f"Error: Chapter {args.chapter} not found")
+            _log_error(f"Chapter {args.chapter} not found")
             return 1
     elif args.start or args.end:
         start = args.start or 1
@@ -2004,13 +2033,13 @@ def main() -> int:
     all_chapters = extract_chapters(config)
     total_chapters = len(all_chapters)
 
-    print(f"\nGenerating audio for {len(chapters)} chapter(s)...")
-    print(f"Voice: {args.voice}")
-    print(f"Output: {paths.root.relative_to(PROJECT_ROOT)}")
+    _log_info(f"Generating audio for {len(chapters)} chapter(s)...")
+    _log_info(f"Voice: {args.voice}")
+    _log_info(f"Output: {paths.root.relative_to(PROJECT_ROOT)}")
     if args.skip_text_prep:
-        print("Text prep: skipped (using existing prepared narration text)")
+        _log_info("Text prep: skipped (using existing prepared narration text)")
     if args.rewrap_only:
-        print("Mode: rewrap-only (reuse existing chapter MP3 sources)")
+        _log_info("Mode: rewrap-only (reuse existing chapter MP3 sources)")
     print()
 
     # Substep timing accumulator: {label: elapsed_seconds}
@@ -2040,19 +2069,19 @@ def main() -> int:
             voice=args.voice, force=args.force, paths=paths, config_path=config_path
         )
         if outro_wav:
-            print(f"  [OK] Outro audio: {outro_wav.name}")
+            _log_ok(f"Outro audio: {outro_wav.name}")
         else:
-            print(f"  [WARN] Outro audio generation failed, chapters will not have outro")
+            _log_warning("Outro audio generation failed, chapters will not have outro")
     else:
-        print(f"  [INFO] No outro QMD found at {OUTRO_QMD_PATH.name}, skipping outro")
+        _log_info(f"No outro QMD found at {OUTRO_QMD_PATH.name}, skipping outro")
     _substep_times["Outro audio"] = time.monotonic() - t_sub
 
     # Check for theme song
     intro_mp3 = THEME_SONG_PATH if THEME_SONG_PATH.exists() else None
     if intro_mp3:
-        print(f"  [OK] Theme song: {intro_mp3.name}")
+        _log_ok(f"Theme song: {intro_mp3.name}")
     else:
-        print(f"  [INFO] No theme song at {THEME_SONG_PATH}, skipping intro")
+        _log_info(f"No theme song at {THEME_SONG_PATH}, skipping intro")
     print()
 
     # Per-chapter pipeline
@@ -2171,9 +2200,9 @@ def main() -> int:
             tag_mp3(mp3_path, manifest_timestamps, book_meta, chapters=all_chapters, paths=paths)
             export_m4b(mp3_path, manifest_timestamps, book_meta)
         elif chapters_with_audio:
-            print("  [INFO] Skipping combined audiobook: need at least 2 chapter WAVs")
+            _log_info("Skipping combined audiobook: need at least 2 chapter WAVs")
         else:
-            print("  [INFO] Skipping combined audiobook: no chapter WAVs found")
+            _log_info("Skipping combined audiobook: no chapter WAVs found")
     _substep_times["Combine audiobook"] = time.monotonic() - t_sub
 
     # Refresh manifest timing fields regardless of --no-combine.
@@ -2182,10 +2211,10 @@ def main() -> int:
         manifest_timestamps, _ = build_chapter_timestamps(all_chapters, paths=paths)
     if manifest_timestamps:
         total_duration_ms = manifest_timestamps[-1]['end_ms']
-        print(f"\nRefreshing manifest timing fields from {manifest_source} ({len(manifest_timestamps)} chapters)...")
+        _log_info(f"Refreshing manifest timing fields from {manifest_source} ({len(manifest_timestamps)} chapters)...")
         update_manifest(manifest_timestamps, total_duration_ms, chapters=all_chapters, paths=paths)
     else:
-        print("\n  [WARN] No chapter WAVs found, skipping manifest timing update")
+        _log_warning("No chapter WAVs found, skipping manifest timing update")
     _substep_times["Manifest timing refresh"] = time.monotonic() - t_sub
 
     # Generate podcast RSS feed (always, independent of --no-combine)
@@ -2217,9 +2246,9 @@ def main() -> int:
         if timestamps_from_manifest:
             generate_podcast_rss(chapter_mp3s, all_chapters, timestamps_from_manifest, book_meta, paths=paths)
         else:
-            print("  [WARN] No timestamps in manifest, skipping podcast RSS generation")
+            _log_warning("No timestamps in manifest, skipping podcast RSS generation")
     else:
-        print(f"  [WARN] No per-chapter MP3s found in {mp3_dir}, skipping podcast RSS generation")
+        _log_warning(f"No per-chapter MP3s found in {mp3_dir}, skipping podcast RSS generation")
     _substep_times["Podcast RSS feed"] = time.monotonic() - t_sub
 
     # Write timing report for publish_audiobook.py to read
@@ -2231,12 +2260,13 @@ def main() -> int:
     total_elapsed = time.monotonic() - pipeline_start
     _print_timing_summary(_substep_times, total_elapsed)
     _print_output_paths_summary(paths, outro_wav, generated_files, updated_wrapped_mp3s)
-    print("\nDone!")
+    _log_ok("Done!")
     return 0
 
 
 if __name__ == "__main__":
     logger = BuildLogger("generate-audiobook.log")
+    LOGGER = logger
     logger.start_capture()
     exit_code = 0
     try:
