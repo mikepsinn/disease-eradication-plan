@@ -98,6 +98,24 @@ Example with real numbers:
 
 It's democracy without the shouting. The stupidity is still there, but it's evenly distributed across millions of people and thus cancels out. Your species calls this "the wisdom of crowds." Mine calls it "obvious." About half of the 847 civilizations I've advised adopted some version of Wishocracy. The other half voted against it, which turned out to be the last thing they voted on.
 
+### "But Direct Democracy Has Been Tried" (Yes. Badly.)
+
+You tried asking everyone. It went poorly. But not because asking was wrong.
+
+Your species has run five major experiments in direct democracy. Each one failed for a specific, diagnosable reason. None of those reasons apply here.
+
+**Athens** voted to execute Socrates and to invade Sicily (which destroyed their navy and lost the Peloponnesian War). The failure mode was mob rule: demagogues gave emotional speeches, crowds got excited, irreversible decisions happened before lunch. Wishocracy has no speeches, no candidates, no charisma. You cannot execute a philosopher with a pairwise comparison between infrastructure projects.
+
+**California propositions** let voters ban same-sex marriage (Prop 8, 2008) while spending over $700 million per cycle on ballot measure campaigns [@california-ballot-proposition-overload]. The failure mode was twofold: majority rule on fundamental rights, and unlimited advertising on binary yes/no questions. Wishocracy is scope-locked to medical research (you cannot vote on who gets to marry) and presents random pairs (there is no ballot measure to buy ads for).
+
+**Brexit** reduced a 100-dimensional trade policy to a single binary question, then asked 33 million people to evaluate it with less information than they use to choose a phone plan [@brexit-referendum-2016]. The failure mode was voter incompetence on complex policy forced into yes/no. Wishocracy asks "security audits vs. EHR integration," not "leave a 27-country trade bloc: yes/no." Pairwise comparisons between concrete projects are the exact kind of question crowds answer well.
+
+**Swiss referendums** denied women the vote until 1971 (one canton held out until a federal court forced the issue in 1990) [@swiss-womens-suffrage-1971] and banned minaret construction in 2009 with 57.5% support [@swiss-minaret-ban-2009]. The failure mode was unbounded scope: any question could appear on the ballot, including questions about who counts as a person. But the Swiss system is also the closest working model for the parts that do work: turnout averages 45%, decisions are granular, and the country has not collapsed. Wishocracy keeps the good parts (distributed decision-making, regular participation) and scope-locks away the bad parts (voting on rights, voter fatigue from 50-page ballot packets). Five minutes of pairwise comparisons, not a weekend with a legal dictionary.
+
+**Short-termism** (the general case). Voters everywhere choose immediate gratification: tax cuts now, debt later; cheap energy now, climate later. DALY optimization is inherently long-term. A disability-adjusted life-year is measured in *years*. The algorithm maximizes life-years prevented per dollar, which means it structurally favors cures over palliatives and prevention over treatment. You cannot vote for quarterly results when the metric is decades of healthy life.
+
+Every criticism of direct democracy is actually a criticism of bad aggregation on unbounded questions. Athens failed because it used majority rule on everything with emotional manipulation. California failed because it uses binary yes/no on complex policy with unlimited ad spending. Wishocracy uses pairwise comparisons on scope-locked questions with no advertising surface. Same species, different math, different result.
+
 ### Your Current System Is Phone-a-Friend (But Your Friend Is Being Bribed)
 
 That 91%-versus-65% comparison is actually generous to your politicians. Phone-a-friend experts have three advantages over members of Congress:
