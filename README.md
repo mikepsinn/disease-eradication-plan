@@ -11,24 +11,6 @@
 
 > Of 9.5 million combinations plausible drug-disease pairings, only 0.342% have been clinically tested. At the current discovery rate of 15 diseases/year, clearing this backlog would take ~443 years. A decentralized FDA integrating pragmatic clinical trials into standard healthcare at $929/patient (vs. $41K traditional) increases trial capacity 12.3x, reducing backlog clearance to 36 years. Combined with eliminating the 8.2 years post-safety efficacy delay through opt-in trial participation after Phase I, treatments arrive 212 years earlier on average. This timeline shift saves 10.7 billion deaths, averts 565 billion DALYs, and eliminates 1.93 quadrillion hours of suffering (YLD portion of 565 billion DALYs converted to hours) at $0.842/DALY, competitive with bed nets ($89/DALY) at vastly greater scale. Using standard health economic valuation ($150K/DALY, the US cost-effectiveness threshold; conservative relative to EPA/DOT Value of Statistical Life estimates), full impact yields $84.8 quadrillion in cumulative value (565 billion DALYs cumulative DALYs over the 212 years timeline shift, not annual; 178k:1 ROI).
 
-### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
-
-[![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
-
-> This study quantifies the cumulative mortality and morbidity costs associated with the Unitary Pre-Market Approval (UPMA) model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of 8.2 years post-safety verification. Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024): approximately 102 million deaths died waiting for approved drugs during their approval delays, representing a lower bound excluding drugs never developed due to cost barriers; (2) Future timeline shift: an additional 416 million deaths will eventually die because the disease eradication timeline has been pushed back by 8.2 years. Combined, these represent 7.94 billion Disability-Adjusted Life Years when adjusted for morbidity, with a cumulative economic deadweight loss of approximately $1.19 quadrillion (2024 USD), reflecting 7.94 billion DALYs valued at the standard WHO cost-effectiveness threshold of $150K/DALY. The societal cost of Type II Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I Regulatory Errors (market access for ineffective therapies) by a factor of 3.07k.
-
-### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
-
-[![The Political Dysfunction Tax](assets/og/political-dysfunction-tax-og-1200x630.jpg)](https://political-dysfunction-tax.warondisease.org)
-
-> Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
-
-### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
-
-[![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
-
-> What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
-
 ### [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](https://iab.warondisease.org)
 
 [![Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](assets/og/iab-og-1200x630.jpg)](https://iab.warondisease.org)
@@ -40,6 +22,24 @@
 [![Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](assets/og/wishocracy-og-1200x630.jpg)](https://wishocracy.warondisease.org)
 
 > Politicians' votes have near-zero correlation with citizen preferences (Gilens and Page, 2014). Elite preferences predict policy outcomes. No mechanism connects citizen preferences to electoral consequences for representatives. RAPPA: Millions of citizens answer simple pairwise questions ("How would you split $100 between these two budget categories?"). Geometric mean aggregation produces population-level preference weights from sparse individual responses. Unlike approval voting or ranked choice, RAPPA captures preference *intensity*, not just what people want, but how much they care. Compare aggregated preferences to each legislator's voting record. Publish Citizen Alignment Scores. Channel campaign resources to high-alignment candidates through Incentive Alignment Bonds. The mechanism achieves three properties no prior system combines: minimal cognitive load (~20 comparisons per participant yields statistical convergence), preference intensity capture, and approximate strategy-proofness.
+
+### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
+
+[![The Political Dysfunction Tax](assets/og/political-dysfunction-tax-og-1200x630.jpg)](https://political-dysfunction-tax.warondisease.org)
+
+> Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
+
+### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://invisible-graveyard.warondisease.org)
+
+[![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](assets/og/invisible-graveyard-og-1200x630.jpg)](https://invisible-graveyard.warondisease.org)
+
+> This study quantifies the cumulative mortality and morbidity costs associated with the Unitary Pre-Market Approval (UPMA) model mandated by the 1962 Kefauver-Harris Amendments. By enforcing efficacy testing prior to market entry, the current regulatory framework imposes an average "Efficacy Lag" of 8.2 years post-safety verification. Using data from the Tufts Center for the Study of Drug Development (CSDD) and the WHO Global Burden of Disease (GBD) database, we estimate two distinct mortality costs: (1) Historical mortality (1962-2024): approximately 102 million deaths died waiting for approved drugs during their approval delays, representing a lower bound excluding drugs never developed due to cost barriers; (2) Future timeline shift: an additional 416 million deaths will eventually die because the disease eradication timeline has been pushed back by 8.2 years. Combined, these represent 7.94 billion Disability-Adjusted Life Years when adjusted for morbidity, with a cumulative economic deadweight loss of approximately $1.19 quadrillion (2024 USD), reflecting 7.94 billion DALYs valued at the standard WHO cost-effectiveness threshold of $150K/DALY. The societal cost of Type II Regulatory Errors (delayed access to effective therapies) exceeds the averted cost of Type I Regulatory Errors (market access for ineffective therapies) by a factor of 3.07k.
+
+### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
+
+[![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
+
+> What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
 
 ### [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
 
