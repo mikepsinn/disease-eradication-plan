@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 291 parameters used in the analysis, organized by type:
+This appendix documents all 290 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 122
+- External sources (peer-reviewed): 121
 - Calculated values: 130
 - Core definitions: 39
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (130 parameters) • [External Data Sources](#sec-external) (122 parameters) • [Core Definitions](#sec-definitions) (39 parameters)
+[Calculated Values](#sec-calculated) (130 parameters) • [External Data Sources](#sec-external) (121 parameters) • [Core Definitions](#sec-definitions) (39 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -9657,30 +9657,6 @@ Phase I safety trial duration
 **Source**: [@bio-clinical-development-2021]
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
-
-:::
-
-### Pragmatic Trial Median Cost per Patient (PMC Review): $97 {#sec-pmc_pragmatic_trial_median_cost_per_patient}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Median cost per patient in embedded pragmatic clinical trials (Ramsberg & Platt 2018: 108 trials reviewed, 64 with cost data). IQR: $19-$478 (2015 USD).
-
-**Source**: [@pmc-pragmatic-trial-cost]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$19, $478] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $19 and $478 (±237%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-pmc_pragmatic_trial_median_cost_per_patient.qmd >}}
-
-*✓ High confidence*
 
 :::
 
