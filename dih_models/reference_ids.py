@@ -914,6 +914,8 @@ class ReferenceID(str, Enum):
     RECOVER_BUDGET_UPDATE_2_3B = "recover-budget-update-2-3b"
     RECOVER_FUNDING_BREAKDOWN = "recover-funding-breakdown"
     RECOVER_INITIATIVE_PATIENT_ENROLLMENT = "recover-initiative-patient-enrollment"
+    RECOVER_TLC_2025_REVIEW = "recover-tlc-2025-review"
+    RECOVER_TLC_ENROLLMENT_DELAY = "recover-tlc-enrollment-delay"
     RECOVER_TRIAL_STATUS_UPDATE = "recover-trial-status-update"
     RECOVERY_COST_500 = "recovery-cost-500"
     RECOVERY_TRIAL_100_DAYS_TO_CURE = "recovery-trial-100-days-to-cure"

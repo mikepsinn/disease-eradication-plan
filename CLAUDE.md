@@ -17,6 +17,7 @@ Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty 
 - **No em-dashes.** Use parentheses, commas, periods, or semicolons.
 - **Links:** Always `.qmd` extensions (not `.html`). Target must be in `_quarto-manual.yml`.
 - **Decision quality:** Evaluate trade-offs, state confidence. Don't mirror; hold position when evidence supports it.
+- **Brevity.** Omit needless words. In comedy, shorter is funnier. Trim until removing a word makes it worse, then stop.
 
 ## Citations (references.bib)
 
@@ -83,9 +84,3 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Outline | `python scripts/generate-outline.py` |
 
 Available checks: `fact`, `link`, `figure`, `structure`, `param`, `latex`, `format`, `nonprofit`
-
-## AI Agent Startup
-
-1. Read `todo.md` for priorities
-2. Read `OUTLINE.md` for structure
-3. Check `_analysis/parameter-summary.md` for param reference

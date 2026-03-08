@@ -1,6 +1,6 @@
 ---
-title: NIH Fails to Institute Health
-description: The NIH spends 96.7% of its budget understanding disease and 3.3% testing whether known-safe treatments actually work. There are 9.5 million safe drug-disease combinations waiting to be tested. The NIH tests almost none of them. Meanwhile, Oxford tested COVID treatments for $500 per patient and saved a million lives in 100 days. The NIH spent $1.6 billion on COVID and completed zero treatments in four years. This shows you how to build something better.
+title: Why Your National Institutes of Health Fails to Institute Health
+description: A root cause analysis of why the world's largest medical research institution converts 3.3% of its budget into testing which of the thousands of known-safe treatments actually work in humans. Oxford tested COVID treatments for $500 per patient and saved a million lives in 100 days. The NIH spent $1.6 billion and completed zero. The humans inside the system are not the problem. The system is the problem.
 published: true
 tags:
   - problem
@@ -19,6 +19,8 @@ feed-date: '2026-03-07'
 youtube-thumbnail: /assets/podcast/nih-fails-2-institute-health-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+Operational efficiency of your National Institutes of Health: 3.3%. This is a root cause failure analysis.
+
 ## A Tale of Two Trials
 
 The difference between efficient and inefficient trial design isn't theoretical. Your species accidentally ran a controlled experiment on itself during COVID. Two countries. Same disease. One spent like it was trying to cure death. The other actually did.
@@ -39,17 +41,43 @@ This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmat
 
 Nearly 600 potential treatments for Long COVID have been identified. At RECOVERY trial efficiency ({{< var recovery_trial_cost_per_patient >}}/patient, 5,500 patients per treatment), $1.665 billion buys **600 completed trials**. The NIH spent $1.665 billion and bought **zero**. Six hundred to zero. That is the difference between a system that tests treatments and a system that tests patience.
 
-## The Allocation Scandal
+## The Translation Crisis: All Theory, No Medicine
+
+Basic research is not the problem. Five decades of NIH-funded science built one of the largest drug candidate pipelines in history. Researchers identified targets, characterized molecules, established safety profiles. That work was essential, and it succeeded. The problem is what happens after the discoveries are made: almost nothing. The pipeline is full. The exit is closed.
+
+COVID made this visible for the first time, but it is the institution's default setting; the way you don't notice a leaking roof until it rains inside. It has been raining inside for 50 years. The NIH has published several papers on indoor rain.
+
+There are over {{< var fda_approved_products_count_nounit >}} FDA-approved drugs that are known to be safe in humans. Thousands more clinically-tested candidates are gathering dust [@drug-repurposing-hub-collection], including over 3,000 marketed drugs that could be repurposed for diseases nobody's tried them on. In Alzheimer's alone, researchers have identified hundreds of safe drugs worth testing, yet less than 10% are in active trials [@ad-drug-repurposing-573-candidates]. And the number of clinical trials available for your grandma in St. Louis? Zero. You have a warehouse of safe molecules that have never been systematically tested for new uses. The warehouse is full. The testing facility is closed for a team-building retreat.
+
+This is not hypothetical. In 2023, researchers published case reports of severe long COVID patients experiencing complete remission within days of receiving monoclonal antibody infusions [@mca-long-covid-remission-case-reports]. Previously bedridden patients returned to normal lives, with remissions sustained over two years. The U.S. government had spent over $5 billion stockpiling these same antibodies for acute COVID [@govt-monoclonal-antibody-stockpile]. When variants rendered them less effective for acute treatment, the doses sat in refrigerated storage. Nobody ran trials to see if they worked for long COVID.
+
+The doses expired. The patients didn't; they just kept being sick.
+
+To appreciate the scale: long COVID costs the U.S. an estimated $170 billion annually in lost wages alone [@long-covid-economic-cost-cutler], with roughly 17 million Americans currently affected. A RECOVERY-style pragmatic trial would have cost approximately $24 million and could have produced results in months. Instead, your government spent $5 billion buying the medicine and is now paying $170 billion a year in economic damage from the disease it didn't bother to treat. The ratio of what you're losing to what the trial would have cost is 7,083 to 1.
+
+![Imagine a massive lake of possible treatments connected to the ocean by a drinking straw. You built the straw that way on purpose.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-translation-crisis-concept-rich-trial-poor-bw-academic.jpg)
+
+The NIH is, by its own metrics, a publishing house that occasionally dabbles in medicine. It publishes 2.5 million funded papers annually [@nih-annual-papers-published]. It produces approximately {{< var current_drug_approvals_per_year_nounit >}} new drug approvals annually [@global-new-drug-approvals-50-annually]. That's a conversion rate from paper to patient of 0.002%. For every 50,000 papers, one drug reaches a human. The rest become citations in other papers, which become citations in other papers, in an infinite loop of academics reading each other's homework. On Wishonia, we call this a "knowledge ouroboros." It looks productive from the inside. From the outside, it's a snake eating its own tail and writing a paper about the nutritional content.
+
+### Plenty of Knowledge. No Translation.
+
+About 5% of patients have participated in clinical trials [@clinical-trial-patient-participation-rate]. About {{< var patient_willingness_trial_participation_pct >}} would participate if invited [@patient-willingness-clinical-trials]. About 9-11% have ever been invited [@patient-willingness-clinical-trials]. Nearly half of all patients would join a trial if asked. Almost nobody asks. Your species has a room full of volunteers holding their hands up, and a system that looked at the room and decided to study the clipboard instead. The clipboard is very well-studied. It has been studied for decades. Multiple papers have been written about the clipboard. One of them won an award. The volunteers are still holding their hands up. Some of them have died. This has been noted on the clipboard.
+
+Understanding disease and testing treatments in humans are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. In 1970, spending heavily on microscopes made sense; you didn't know enough to test intelligently. In 2025, after 2.5 million papers a year for five decades, the ratio should have shifted. It didn't. The NIH chose microscopes in 1970 and has not reconsidered since, which is the institutional equivalent of still crawling because you learned to crawl before you learned to walk.
+
+## The Allocation Problem
 
 Your National Institutes of Health has the word "Health" in its name and an annual budget of **{{< var nih_annual_budget >}}**. {{< var global_annual_deaths_curable_diseases_nounit >}} of you die annually from disease [@who-daily-deaths]. You would think those two facts would be related. I spent 80 years looking for the connection. There isn't one.
 
-Of $247 billion the NIH spent over a decade, exactly {{< var nih_clinical_trials_spending_pct >}} went to testing whether treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% funded understanding disease mechanisms, translating discoveries toward (but never into) clinical use, training scientists, and observational programs that spend billions watching disease without treating it, which is called "research" the way watching someone drown from a boat is called "lifeguarding."
+Of $247 billion the NIH spent over a decade, exactly {{< var nih_clinical_trials_spending_pct >}} went to testing which of the thousands of known-safe treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% funded understanding disease mechanisms, translating discoveries toward (but never into) clinical use, training scientists, observational programs that spend billions watching disease without treating it, and a side quest engineering bat viruses, which is called "research" the way watching someone drown from a boat is called "lifeguarding."
 
 Basic research is not the problem. Understanding disease is how you find candidates to test. The problem is that after 50 years and a trillion dollars, the ratio hasn't moved. The marginal value of the 85th cent on basic research is near zero when you're spending 3 cents on the only activity that turns research into medicine. You don't have a knowledge deficit. You have an allocation deficit.
 
 That might be defensible if the testing queue were empty. It isn't. There are roughly {{< var safe_compounds_count >}} compounds with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. Most are off-patent, which means no pharmaceutical company will fund trials for them, which means the NIH is the only entity that could, which means it is specifically choosing not to do the one thing only it can do. The pipeline is overflowing with candidates. The bottleneck is trials. The drugs are sitting there. Safe. Ready. Unpatentable. They've been waiting for decades. Some of them have been waiting longer than most of your scientists have been alive.
 
 It's like spending 96.7% of your grocery budget on cookbooks and {{< var nih_clinical_trials_spending_pct >}} on food, then wondering why you're starving. Except the cookbooks are very prestigious and the starving people aren't on the committee that decides whether to buy more cookbooks.
+
+On Wishonia, we had a similar institution once. We renamed it the National Institutes of Studying Health. Then we reallocated its budget so the ratio matched the marginal value.
 
 ![The NIH spends 96.7 percent on understanding disease and 3.3 percent on testing cures. They understand a lot.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
 
@@ -71,27 +99,29 @@ A JAMA study [@nih-phased-trial-spending-2010-2019] broke down $247.3 billion in
 
 :::
 
-## The Translation Crisis: All Theory, No Medicine
+## Why This Allocation Exists
 
-The NIH's allocation problem is not just about COVID. It is the institution's default setting. COVID was just the first time anyone noticed, the way you don't notice a leaking roof until it rains inside. It has been raining inside for 50 years. The NIH has published several papers on indoor rain.
+This is not the fault of individual researchers. Most became scientists because they wanted to cure diseases. The system they work in rewards everything except curing diseases, and those rewards were designed by someone else entirely.
 
-There are over {{< var fda_approved_products_count_nounit >}} FDA-approved drugs that are known to be safe in humans. Thousands more clinically-tested candidates are gathering dust [@drug-repurposing-hub-collection], including over 3,000 marketed drugs that could be repurposed for diseases nobody's tried them on. In Alzheimer's alone, researchers have identified hundreds of safe drugs worth testing, yet less than 10% are in active trials [@ad-drug-repurposing-573-candidates]. And the number of clinical trials available for your grandma in St. Louis? Zero. You have a warehouse of safe molecules that have never been systematically tested for new uses. The warehouse is full. The testing facility is closed for a team-building retreat.
+![The revolving door between pharma, government, and academia. People enter from one side and exit from the other side, richer.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-why-this-allocation-exists-bw-academic.jpg)
 
-This is not hypothetical. In 2023, researchers published case reports of severe long COVID patients experiencing complete remission within days of receiving monoclonal antibody infusions [@mca-long-covid-remission-case-reports]. Previously bedridden patients returned to normal lives, with remissions sustained over two years. The U.S. government had spent over $5 billion stockpiling these same antibodies for acute COVID [@govt-monoclonal-antibody-stockpile]. When variants rendered them less effective for acute treatment, the doses sat in refrigerated storage. Nobody ran trials to see if they worked for long COVID.
+Drug companies love the NIH. Taxpayers absorb the risk of basic research; industry patents whatever works. It's like if your neighbor paid for your kitchen renovation, and then you charged them rent to eat there.
 
-The doses expired. The patients didn't; they just kept being sick.
+But independent trials comparing drugs head-to-head? Those are terrifying. They might reveal that the $80,000 drug works about as well as the $4 generic. PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI (the Patient-Centered Outcomes Research Institute) in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. Congress literally passed a law saying "don't fund research that might lower drug prices." They wrote it down. In legislation. On purpose. With their names on it. And then they went home and told their constituents they were fighting for affordable healthcare, because your species' capacity for doublethink is genuinely Olympian.
 
-To appreciate the scale: long COVID costs the U.S. an estimated $170 billion annually in lost wages alone [@long-covid-economic-cost-cutler], with roughly 17 million Americans currently affected. A RECOVERY-style pragmatic trial would have cost approximately $24 million and could have produced results in months. Instead, your government spent $5 billion buying the medicine and is now paying $170 billion a year in economic damage from the disease it didn't bother to treat. The ratio of what you're losing to what the trial would have cost is 7,083 to 1.
+The revolving door helps. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics. It's not a conspiracy. Conspiracies require secrecy. This is all public. It's just that everyone involved happens to benefit from the same terrible outcome, purely by coincidence, repeatedly, for decades. On Wishonia, we have a word for this. The word is "conspiracy." The difference between a conspiracy and a system is whether the participants need to meet in a dark room. These people meet in conference rooms with catering. The outcome is identical.
 
-![Imagine a massive lake of possible treatments connected to the ocean by a drinking straw. You built the straw that way on purpose.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-translation-crisis-concept-rich-trial-poor-bw-academic.jpg)
+The {{< var nih_clinical_trials_spending_pct >}} allocation isn't a mystery. It's a business model. Basic research produces publications. Publications produce tenure. Tenure produces more grants. Individual researchers want cures. The system rewards them for everything except producing one. Actual treatments are a byproduct that occasionally happens when someone forgets to optimize for papers and accidentally optimizes for results instead. It's like a restaurant where the chefs are passionate about food but get promoted based on how many menus they print. The menus are exquisite. They have won awards. The diners are eating the menus. Nobody has mentioned this.
 
-The NIH is, by its own metrics, a publishing house that occasionally dabbles in medicine. It publishes 2.5 million funded papers annually [@nih-annual-papers-published]. It produces approximately {{< var current_drug_approvals_per_year_nounit >}} new drug approvals annually [@global-new-drug-approvals-50-annually]. That's a conversion rate from paper to patient of 0.002%. For every 50,000 papers, one drug reaches a human. The rest become citations in other papers, which become citations in other papers, in an infinite loop of academics reading each other's homework. On Wishonia, we call this a "knowledge ouroboros." It looks productive from the inside. From the outside, it's a snake eating its own tail and writing a paper about the nutritional content.
+## You Pay Twice
 
-### Plenty of Knowledge. No Translation.
+The NIH claims to produce "public goods" like open science and training. What it actually produces is a free R&D department for pharmaceutical companies, funded by the same people who then pay full price for the drugs.
 
-About 5% of patients have participated in clinical trials [@clinical-trial-patient-participation-rate]. About {{< var patient_willingness_trial_participation_pct >}} would participate if invited [@patient-willingness-clinical-trials]. About 9-11% have ever been invited [@patient-willingness-clinical-trials]. Nearly half of all patients would join a trial if asked. Almost nobody asks. Your species has a room full of volunteers holding their hands up, and a system that looked at the room and decided to study the clipboard instead. The clipboard is very well-studied. It has been studied for decades. Multiple papers have been written about the clipboard. One of them won an award. The volunteers are still holding their hands up. Some of them have died. This has been noted on the clipboard.
+![You pay for the research. They patent the results. You pay again for the results you paid for. Humans invented this.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
 
-Understanding disease and testing treatments are completely different activities. One requires microscopes. The other requires giving people medicine and seeing if they stop dying. In 1970, spending heavily on microscopes made sense; you didn't know enough to test intelligently. In 2025, after 2.5 million papers a year for five decades, the ratio should have shifted. It didn't. The NIH chose microscopes in 1970 and has not reconsidered since, which is the institutional equivalent of still crawling because you learned to crawl before you learned to walk.
+Taxpayers funded research behind 99% of new drugs [@nih-funded-approved-drugs] (356 drugs, 2010-2019). Industry patents the winners. The public pays again through high drug prices. When research leads to a dead end, the public eats the loss. You pay for the lottery ticket. They cash the winnings. You'd think someone would have mentioned this arrangement before now, and someone has, many times, but the people who cash the winnings also fund the campaigns of the people who could change the arrangement, so the arrangement continues.
+
+The only things the NIH *should* fund are things private companies *cannot* profitably fund: open pragmatic trial platforms, repurposing of generic drugs where no patent means no profit means no interest, and comparative effectiveness data from head-to-head trials revealing which drugs actually work best (pharma's nightmare, your potential salvation). Instead, the NIH explicitly avoids them to "not crowd out industry." Translation: "We won't run the trials that would lower drug prices, because the people who set drug prices asked us nicely." They asked nicely and also spent {{< var defense_lobbying_annual >}} on lobbying, but the niceness was noted.
 
 ## The Patient Disconnect: Zero Correlation with Health Outcomes
 
@@ -141,35 +171,13 @@ That question was never asked because the system is not designed to ask it. The 
 
 Then the pandemic happened. Then 7 million people died. Then the NIH received $1.7 billion to address the long-term damage. Then it spent 85% of that money watching people be sick instead of testing treatments. I have now fully lost my composure.
 
+In that timeline, the NIH is too busy testing cures to fund gain-of-function research in Wuhan. There is no COVID-19 pandemic. There is no $16 trillion in economic damage. There are no 7 million dead. There is no long COVID costing $1 trillion a year.
+
 :::
-
-## Why This Allocation Exists
-
-This allocation is not an accident. Someone paid for it.
-
-![The revolving door between pharma, government, and academia. People enter from one side and exit from the other side, richer.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-why-this-allocation-exists-bw-academic.jpg)
-
-Drug companies love the NIH. Taxpayers absorb the risk of basic research; industry patents whatever works. It's like if your neighbor paid for your kitchen renovation, and then you charged them rent to eat there.
-
-But independent trials comparing drugs head-to-head? Those are terrifying. They might reveal that the $80,000 drug works about as well as the $4 generic. PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI (the Patient-Centered Outcomes Research Institute) in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. Congress literally passed a law saying "don't fund research that might lower drug prices." They wrote it down. In legislation. On purpose. With their names on it. And then they went home and told their constituents they were fighting for affordable healthcare, because your species' capacity for doublethink is genuinely Olympian.
-
-The revolving door helps. NIH advisory committees include industry representatives. Former NIH officials join pharmaceutical boards. Academic researchers depend on industry grants. Everyone's incentives align against cheap, fast trials testing whether expensive drugs outperform generics. It's not a conspiracy. Conspiracies require secrecy. This is all public. It's just that everyone involved happens to benefit from the same terrible outcome, purely by coincidence, repeatedly, for decades. On Wishonia, we have a word for this. The word is "conspiracy." The difference between a conspiracy and a system is whether the participants need to meet in a dark room. These people meet in conference rooms with catering. The outcome is identical.
-
-The {{< var nih_clinical_trials_spending_pct >}} allocation isn't a mystery. It's a business model. Basic research produces publications. Publications produce tenure. Tenure produces more grants. Individual researchers want cures. The system rewards them for everything except producing one. Actual treatments are a byproduct that occasionally happens when someone forgets to optimize for papers and accidentally optimizes for results instead. It's like a restaurant where the chefs are passionate about food but get promoted based on how many menus they print. The menus are exquisite. They have won awards. The diners are eating the menus. Nobody has mentioned this.
-
-## You Pay Twice
-
-The NIH claims to produce "public goods" like open science and training. What it actually produces is a free R&D department for pharmaceutical companies, funded by the same people who then pay full price for the drugs.
-
-![You pay for the research. They patent the results. You pay again for the results you paid for. Humans invented this.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-the-public-goods-vs-club-goods-scam-bw-academic.jpg)
-
-Taxpayers funded research behind 99% of new drugs [@nih-funded-approved-drugs] (356 drugs, 2010-2019). Industry patents the winners. The public pays again through high drug prices. When research leads to a dead end, the public eats the loss. You pay for the lottery ticket. They cash the winnings. You'd think someone would have mentioned this arrangement before now, and someone has, many times, but the people who cash the winnings also fund the campaigns of the people who could change the arrangement, so the arrangement continues.
-
-The only things the NIH *should* fund are things private companies *cannot* profitably fund: open pragmatic trial platforms, repurposing of generic drugs where no patent means no profit means no interest, and comparative effectiveness data from head-to-head trials revealing which drugs actually work best (pharma's nightmare, your potential salvation). Instead, the NIH explicitly avoids them to "not crowd out industry." Translation: "We won't run the trials that would lower drug prices, because the people who set drug prices asked us nicely." They asked nicely and also spent {{< var defense_lobbying_annual >}} on lobbying, but the niceness was noted.
 
 ## The Track Record
 
-You have already seen the numbers: $1.1 trillion over 50 years, zero diseases eradicated [@nih-eradicated-zero-diseases]. I asked the NIH how many diseases they've eradicated. They sent me a 40-page document about their strategic vision. I read all 40 pages. The number wasn't in it. The word "eradicate" wasn't in it either. The word "strategic" was in it 31 times.
+You have already seen the numbers: $1.1 trillion over 50 years, zero diseases eradicated (one possibly created) [@nih-eradicated-zero-diseases]. I asked the NIH how many diseases they've eradicated. They sent me a 40-page document about their strategic vision. I read all 40 pages. The number wasn't in it. The word "eradicate" wasn't in it either. The word "strategic" was in it 31 times.
 
 The WHO eradicated smallpox for $300 million [@smallpox-eradication-roi]. Jonas Salk developed the polio vaccine in a university lab and gave it away for free, which is why nobody at the NIH talks about him at parties because he makes everyone look bad by comparison and also he's dead, which is the thing they were supposed to be fixing. He gave away the patent. I asked an NIH official what would happen if they gave away patents today and they made a sound I can only describe as a laugh, but sadder. Veterinarians have eradicated multiple animal diseases [@animal-diseases-eradicated-by-vets] on budgets the NIH would consider a rounding error.
 
@@ -179,7 +187,7 @@ Pigs have better healthcare outcomes than you do. Pigs. Animals you lock in meta
 
 The RECOVERY trial already proved it. {{< var recovery_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}. First life-saving result in under 100 days [@recovery-trial-100-days-to-cure]. Over {{< var recovery_trial_global_lives_saved >}} saved. The blueprint exists. It is not theoretical. It happened. In England. During a pandemic. While Americans were arguing about horse dewormer. The British did not use a special technique. They did not have access to secret technology. They used the same drugs, the same disease, the same species of patient. They just tested the drugs on the patients instead of writing about the drugs near the patients. This is the breakthrough. It took zero breakthroughs. The evidence is right there. It's not hiding. It's waving at you. It has been waving at you for years.
 
-Now imagine the other timeline. Not as an indictment, but as a measure of what was lost. If the NIH had allocated even 20% of its $1.1 trillion to pragmatic trials over 50 years (the remaining 80% still on basic research), that produces 440 million patient-trials at RECOVERY efficiency ({{< var recovery_trial_cost_per_patient >}} per patient). That is enough to test every safe compound against every major disease, multiple times, with replication. The Oxford RECOVERY trial tested 48,000 patients and found a treatment that saved over a million lives, in 100 days, for $24 million. Multiply that across 440 million patients and 50 years and the number of lives saved becomes difficult to calculate because the diseases start disappearing and the math changes.
+Now imagine the other timeline. Not as an indictment, but as a measure of what was lost. If the NIH had allocated even 20% of its $1.1 trillion to pragmatic trials over 50 years (the remaining 80% still on basic research), that produces 440 million patient-trials at RECOVERY efficiency ({{< var recovery_trial_cost_per_patient >}} per patient). That is enough to test every safe compound against every major disease, multiple times, with replication. The Oxford RECOVERY trial tested 48,000 patients and found a treatment that saved over a million lives, in 100 days, for $24 million. Multiply that across 440 million patients and 50 years and the number of lives saved becomes difficult to calculate because the diseases start disappearing and the math changes. 
 
 In that timeline, the NIH's $1.1 trillion produces what a trillion dollars should produce: the systematic eradication of disease after disease after disease, because you finally pointed the money at the thing that actually works.
 
