@@ -1,6 +1,6 @@
 ---
 title: NIH Fails to Institute Health
-description: The NIH spends 96.7% of its budget understanding disease and 3.3% testing whether known-safe treatments actually work. There are 9.5 million safe drug-disease combinations waiting to be tested. The NIH tests almost none of them. Meanwhile, Oxford tested COVID treatments for $500 per patient and saved a million lives in 100 days. The NIH spent $1.6 billion on COVID and completed zero treaatments in four years. This shows you how to build something better.
+description: The NIH spends 96.7% of its budget understanding disease and 3.3% testing whether known-safe treatments actually work. There are 9.5 million safe drug-disease combinations waiting to be tested. The NIH tests almost none of them. Meanwhile, Oxford tested COVID treatments for $500 per patient and saved a million lives in 100 days. The NIH spent $1.6 billion on COVID and completed zero treatments in four years. This shows you how to build something better.
 published: true
 tags:
   - problem
@@ -36,6 +36,8 @@ The NIH spent $1.665 billion [@recover-budget-update-2-3b] over 4 years [@nih-re
 Cost per patient depends on how generous you're feeling. Divide the total budget by all 30,000 enrolled and you get $55,500 per person, the price of a luxury SUV. Divide it by the 3,300 who actually received an intervention being tested and you get $504,500 per person, the price of a house. Either way, nobody got a luxury SUV, nobody got a house, and nobody got cured. They got observed. Expensively. The observation was very thorough. It has been peer-reviewed. The peers also observed the patients. The patients are still sick, but they are the most well-documented sick people in the history of sickness.
 
 This efficiency gap is not unique to RECOVERY. A systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost]. Per interventional patient, the NIH spent **over 1,000x more** and achieved **infinitely less** (dividing by zero trials completed produces infinity, which is fitting because that's how long patients waited). Even using the generous $55,500 figure, that's **111x more per patient**.
+
+Nearly 600 potential treatments for Long COVID have been identified. At RECOVERY trial efficiency ({{< var recovery_trial_cost_per_patient >}}/patient, 5,500 patients per treatment), $1.665 billion buys **600 completed trials**. The NIH spent $1.665 billion and bought **zero**. Six hundred to zero. That is the difference between a system that tests treatments and a system that tests patience.
 
 ## The Allocation Scandal
 
