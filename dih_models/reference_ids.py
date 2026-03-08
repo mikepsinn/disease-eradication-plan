@@ -145,6 +145,8 @@ class ReferenceID(str, Enum):
     CCPA_CPRA_COMPLIANCE = "ccpa-cpra-compliance"
     CDC_COVID_TEST_CONTAMINATION_2020 = "cdc-covid-test-contamination-2020"
     CDC_LIFE_EXPECTANCY = "cdc-life-expectancy"
+    CDC_OVERDOSE_1980 = "cdc-overdose-1980"
+    CDC_OVERDOSE_2023 = "cdc-overdose-2023"
     CDC_SUICIDE_STATISTICS_2023 = "cdc-suicide-statistics-2023"
     CEAREGISTRY_ORG = "cearegistry-org"
     CEI_REGULATORY_COST_2T = "cei-regulatory-cost-2t"

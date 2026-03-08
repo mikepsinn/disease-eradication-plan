@@ -71,17 +71,15 @@ Understanding disease and testing treatments in humans are completely different 
 
 ## The Allocation Problem
 
-Your National Institutes of Health has the word "Health" in its name and an annual budget of **{{< var nih_annual_budget >}}**. {{< var global_annual_deaths_curable_diseases_nounit >}} of you die annually from disease [@who-daily-deaths]. You would think those two facts would be related. I spent 80 years looking for the connection. There isn't one.
+Your National Institutes of Health has the word "Health" in its name and an annual budget of **{{< var nih_annual_budget >}}**. {{< var global_annual_deaths_curable_diseases_nounit >}} of you die annually from disease [@who-daily-deaths]. You would think those two facts would be related. They are not.
 
 Of $247 billion the NIH spent over a decade, exactly {{< var nih_clinical_trials_spending_pct >}} went to testing which of the thousands of known-safe treatments actually work in humans [@nih-phased-trial-spending-2010-2019]. The other 96.7% funded understanding disease mechanisms, translating discoveries toward (but never into) clinical use, training scientists, observational programs that spend billions watching disease without treating it, and a side quest engineering bat viruses, which is called "research" the way watching someone drown from a boat is called "lifeguarding."
 
 Basic research is not the problem. Understanding disease is how you find candidates to test. The problem is that after 50 years and a trillion dollars, the ratio hasn't moved. The marginal value of the 85th cent on basic research is near zero when you're spending 3 cents on the only activity that turns research into medicine. You don't have a knowledge deficit. You have an allocation deficit.
 
-That might be defensible if the testing queue were empty. It isn't. There are roughly {{< var safe_compounds_count >}} compounds with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. Most are off-patent, which means no pharmaceutical company will fund trials for them, which means the NIH is the only entity that could, which means it is specifically choosing not to do the one thing only it can do. The pipeline is overflowing with candidates. The bottleneck is trials. The drugs are sitting there. Safe. Ready. Unpatentable. They've been waiting for decades. Some of them have been waiting longer than most of your scientists have been alive.
+{{< var nih_clinical_trials_spending_pct >}} on trials might be defensible if the testing queue were empty. It isn't. There are roughly {{< var safe_compounds_count >}} compounds with established safety profiles, and {{< var unexplored_ratio >}} of their possible disease applications have never been tested. Most are off-patent, which means no pharmaceutical company will fund trials for them, which means the NIH is the only entity that could, which means it is specifically choosing not to do the one thing only it can do. The pipeline is overflowing with candidates. The bottleneck is trials. The drugs are sitting there. Safe. Ready. Unpatentable. They've been waiting for decades. Some of them have been waiting longer than most of your scientists have been alive.
 
 It's like spending 96.7% of your grocery budget on cookbooks and {{< var nih_clinical_trials_spending_pct >}} on food, then wondering why you're starving. Except the cookbooks are very prestigious and the starving people aren't on the committee that decides whether to buy more cookbooks.
-
-On Wishonia, we had a similar institution once. We renamed it the National Institutes of Studying Health. Then we reallocated its budget so the ratio matched the marginal value.
 
 ![The NIH spends 96.7 percent on understanding disease and 3.3 percent on testing cures. They understand a lot.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-allocation-scandal-bw-academic.jpg)
 
@@ -109,7 +107,7 @@ This is not the fault of individual researchers. Most became scientists because 
 
 ![The revolving door between pharma, government, and academia. People enter from one side and exit from the other side, richer.](/assets/images/nih-fails-2-institute-health/nih-fails-2-institute-health-section-why-this-allocation-exists-bw-academic.jpg)
 
-Drug companies love the NIH. Taxpayers absorb the risk of basic research; industry patents whatever works. It's like if your neighbor paid for your kitchen renovation, and then you charged them rent to eat there.
+Huge drug companies with political influence love the NIH. Taxpayers absorb the risk of basic research; industry patents whatever works. It's like if your neighbor paid for your kitchen renovation, and then you charged them rent to eat there.
 
 But independent trials comparing drugs head-to-head? Those are terrifying. They might reveal that the $80,000 drug works about as well as the $4 generic. PhRMA, the pharmaceutical lobby, has consistently opposed comparative effectiveness research. When Congress created PCORI (the Patient-Centered Outcomes Research Institute) in 2010, industry successfully lobbied to prohibit it from making coverage recommendations based on cost-effectiveness [@pcori-cost-effectiveness-prohibition]. Congress literally passed a law saying "don't fund research that might lower drug prices." They wrote it down. In legislation. On purpose. With their names on it. And then they went home and told their constituents they were fighting for affordable healthcare, because your species' capacity for doublethink is genuinely Olympian.
 
