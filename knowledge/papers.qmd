@@ -202,64 +202,125 @@ Select "Enter the details myself", then fill:
 
 -->
 
-### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
+### [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
 
-[![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](../assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
+[![Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](../assets/og/wishocracy-og-1200x630.jpg)](https://wishocracy.warondisease.org)
 
-> What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
+> Politicians' votes have near-zero correlation with citizen preferences (Gilens and Page, 2014). Elite preferences predict policy outcomes. No mechanism connects citizen preferences to electoral consequences for representatives. RAPPA: Millions of citizens answer simple pairwise questions ("How would you split $100 between these two budget categories?"). Geometric mean aggregation produces population-level preference weights from sparse individual responses. Unlike approval voting or ranked choice, RAPPA captures preference *intensity*, not just what people want, but how much they care. Compare aggregated preferences to each legislator's voting record. Publish Citizen Alignment Scores. Channel campaign resources to high-alignment candidates through Incentive Alignment Bonds. The mechanism achieves three properties no prior system combines: minimal cognitive load (~20 comparisons per participant yields statistical convergence), preference intensity capture, and approximate strategy-proofness.
 
 
 <!--
-=== SUBMISSION INFO: The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization ===
+=== SUBMISSION INFO: Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation ===
 
-TITLE: The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
+TITLE: Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation
 
 ABSTRACT:
-What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
+Politicians' votes have near-zero correlation with citizen preferences (Gilens and Page, 2014). Elite preferences predict policy outcomes. No mechanism connects citizen preferences to electoral consequences for representatives. RAPPA: Millions of citizens answer simple pairwise questions ("How would you split $100 between these two budget categories?"). Geometric mean aggregation produces population-level preference weights from sparse individual responses. Unlike approval voting or ranked choice, RAPPA captures preference *intensity*, not just what people want, but how much they care. Compare aggregated preferences to each legislator's voting record. Publish Citizen Alignment Scores. Channel campaign resources to high-alignment candidates through Incentive Alignment Bonds. The mechanism achieves three properties no prior system combines: minimal cognitive load (~20 comparisons per participant yields statistical convergence), preference intensity capture, and approximate strategy-proofness.
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
 AFFILIATION: Institute for Accelerated Medicine
 ORCID: 0009-0006-0212-1094
 
-KEYWORDS: Political Economy, Campaign Finance, Lobbying, Mechanism Design, Public Choice, Cost Benefit Analysis, Political Feasibility, Political Reform, Democracy
+KEYWORDS: Mechanism Design, Collective Intelligence, Direct Democracy, Principal Agent Problem, Preference Aggregation, Participatory Budgeting, Analytic Hierarchy Process, Democratic Resource Allocation, Wishocracy, RAPPA, Democratic Innovation
 
-JEL CODES: D72, D73, D78, H41, P16
+JEL CODES: D71, D72, H41, D82
 
-SUBJECT AREAS: Political Economy, Campaign Finance, Lobbying, Public Choice, Cost-Benefit Analysis
-CATEGORY: Academic Paper, Political Economy, Mechanism Design, Public Policy
-GENRE: Political Science, Economics, Public Choice, Public Policy
+SUBJECT AREAS: Mechanism Design, Collective Intelligence, Direct Democracy, Principal-Agent Problem, Public Resource Allocation
+CATEGORY: Academic Paper, Public Policy, Political Science
+GENRE: Political Science, Mechanism Design, Public Policy
 
-PDF: https://cost-of-change.warondisease.org/cost-of-change-analysis.pdf
-DOI: 10.5281/zenodo.18356215
+PDF: https://wishocracy.warondisease.org/wishocracy-rappa-paper.pdf
+DOI: 10.5281/zenodo.18205881
 LICENSE: CC BY-NC 4.0
 COPYRIGHT YEAR: 2025
 
 === PLATFORM STATUS ===
-WEBSITE: deployed | https://cost-of-change.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522030
+WEBSITE: deployed | https://wishocracy.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18523095
 SSRN: pending
-ARXIV: pending | category: econ.GN
+ARXIV: pending | category: cs.GT
 
 === JOURNAL TARGETS ===
+Social Choice and Welfare (Tier 2): target
 Public Choice (Tier 2): target
-Journal of Political Economy (Tier 1): target
-American Economic Review (Tier 1): target
+American Political Science Review (Tier 1): target
 
-SUGGESTED CITATION: Mike P. Sinn (2025). The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization. Working Draft. https://doi.org/10.5281/zenodo.18356215
+SUGGESTED CITATION: Mike P. Sinn (2025). Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation. Working Draft. https://doi.org/10.5281/zenodo.18205881
 
 === STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests and has not, at time of writing, formed a SuperPAC. The author reserves the right to reconsider this position if the ROI calculations in Section 3 prove as persuasive as described.
-FUNDING: This research received no funding. The author calculates that funding it would have yielded a higher return than most lobbying expenditures, but acknowledges this is a low bar.
-ETHICS: This research did not involve human subjects. The democratic process it examines, in which policy outcomes correlate more strongly with lobbying spend than voter preferences, arguably does.
+COI: The author declares no competing interests. The author does prefer systems where elected officials represent the people who elected them, which some elected officials may find threatening.
+FUNDING: This research received no funding. The author attempted to aggregate pairwise preferences among funding agencies but found the sample size was zero.
+ETHICS: This research did not involve human subjects. Representative democracy, in which elected representatives frequently misrepresent, involves all of them.
 DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
 
 === SSRN "Publication Details" BOX ===
 Select "Enter the details myself", then fill:
   Publisher: Institute for Accelerated Medicine
   Publication Date: 2025
-  DOI: 10.5281/zenodo.18356215
-  URL: https://cost-of-change.warondisease.org
+  DOI: 10.5281/zenodo.18205881
+  URL: https://wishocracy.warondisease.org
+  (Leave Journal, Volume, Issue, Pages blank for working papers)
+
+-->
+
+### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
+
+[![The Political Dysfunction Tax](../assets/og/political-dysfunction-tax-og-1200x630.jpg)](https://political-dysfunction-tax.warondisease.org)
+
+> Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
+
+
+<!--
+=== SUBMISSION INFO: The Political Dysfunction Tax ===
+
+TITLE: The Political Dysfunction Tax
+
+ABSTRACT:
+Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
+
+AUTHOR: Mike P. Sinn
+EMAIL: m@warondisease.org
+AFFILIATION: Institute for Accelerated Medicine
+ORCID: 0009-0006-0212-1094
+
+KEYWORDS: Governance Efficiency, Political Dysfunction, Welfare Economics, Opportunity Cost, Public Choice, Rent Seeking, Clinical Trials, Migration Economics, Regulatory Burden
+
+JEL CODES: D61, D72, H41, H50, O38
+
+SUBJECT AREAS: Governance Efficiency, Political Economy, Welfare Economics, Public Choice
+CATEGORY: Academic Paper, Public Policy, Political Science, Economics
+GENRE: Political Science, Welfare Economics, Public Policy
+
+PDF: https://political-dysfunction-tax.warondisease.org/political-dysfunction-tax.pdf
+DOI: 10.5281/zenodo.18603840
+LICENSE: CC BY-NC 4.0
+COPYRIGHT YEAR: 2025
+
+=== PLATFORM STATUS ===
+WEBSITE: pending | https://political-dysfunction-tax.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18603840
+SSRN: pending
+ARXIV: pending | category: econ.GN
+
+=== JOURNAL TARGETS ===
+Public Choice (Tier 2): target
+Journal of Political Economy (Tier 1): target
+
+SUGGESTED CITATION: Mike P. Sinn (2025). The Political Dysfunction Tax. Working Draft. https://doi.org/10.5281/zenodo.18603840
+
+=== STATEMENTS (for journal submissions) ===
+COI: The author declares no competing interests. The author does have a vested interest in not losing $97 trillion per year, but shares this interest with most of the species.
+FUNDING: This research received no funding. At a 31-53% governance efficiency rate, the author considers this par for the course.
+ETHICS: This research did not involve human subjects. Operating governments at 31-53% efficiency while charging full price does, however, involve all of them.
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
+
+=== SSRN "Publication Details" BOX ===
+Select "Enter the details myself", then fill:
+  Publisher: Institute for Accelerated Medicine
+  Publication Date: 2025
+  DOI: 10.5281/zenodo.18603840
+  URL: https://political-dysfunction-tax.warondisease.org
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->
@@ -326,126 +387,125 @@ Select "Enter the details myself", then fill:
 
 -->
 
-### [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
+### [The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](https://cost-of-change.warondisease.org)
 
-[![The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
+[![The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization](../assets/og/cost-of-change-og-1200x630.jpg)](https://cost-of-change.warondisease.org)
 
-> Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million deaths preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
+> What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
 
 
 <!--
-=== SUBMISSION INFO: The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials) ===
+=== SUBMISSION INFO: The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization ===
 
-TITLE: The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
+TITLE: The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization
 
 ABSTRACT:
-Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million deaths preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
+What is the maximum cost to achieve any policy change through legal democratic channels? We estimate $25 billion for the United States and $200 billion globally. These figures represent the upper bound of matching all opposition spending (campaign finance, lobbying) and providing career alternatives for affected legislators. For high net-societal-value policies, even these maximum costs yield extraordinary returns: military-to-health reallocation achieves ROI exceeding 400,000:1, carbon pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political impossibility" objection thus reduces to a capital allocation problem. Political change is not impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to the benefits.
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
 AFFILIATION: Institute for Accelerated Medicine
 ORCID: 0009-0006-0212-1094
 
-KEYWORDS: dFDA, Predictor Impact Score, Pharmacovigilance, Real World Evidence, N of 1 Trials, Causal Inference, Bradford Hill Criteria, Treatment Effects, Adverse Events, Outcome Labels, Statistical Methods, dFDA, Decentralized Fda
+KEYWORDS: Political Economy, Campaign Finance, Lobbying, Mechanism Design, Public Choice, Cost Benefit Analysis, Political Feasibility, Political Reform, Democracy
 
-JEL CODES: I18, C10, L65, C93, I11
+JEL CODES: D72, D73, D78, H41, P16
 
-SUBJECT AREAS: Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods
-CATEGORY: Academic Paper, Medical Research, Methodology
-GENRE: Biostatistics, Pharmacoepidemiology, Methodology
+SUBJECT AREAS: Political Economy, Campaign Finance, Lobbying, Public Choice, Cost-Benefit Analysis
+CATEGORY: Academic Paper, Political Economy, Mechanism Design, Public Policy
+GENRE: Political Science, Economics, Public Choice, Public Policy
 
-PDF: https://dfda-spec.warondisease.org/dfda-spec-paper.pdf
-DOI: 10.5281/zenodo.18203375
+PDF: https://cost-of-change.warondisease.org/cost-of-change-analysis.pdf
+DOI: 10.5281/zenodo.18356215
 LICENSE: CC BY-NC 4.0
 COPYRIGHT YEAR: 2025
 
 === PLATFORM STATUS ===
-WEBSITE: deployed | https://dfda-spec.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522034
-MEDRXIV: pending
-ARXIV: pending | category: stat.ME
+WEBSITE: deployed | https://cost-of-change.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522030
+SSRN: pending
+ARXIV: pending | category: econ.GN
 
 === JOURNAL TARGETS ===
-Clinical Pharmacology & Therapeutics (Tier 2): target
-Pharmacoepidemiology and Drug Safety (Tier 2): target
-Drug Safety (Tier 2): target
+Public Choice (Tier 2): target
+Journal of Political Economy (Tier 1): target
+American Economic Review (Tier 1): target
 
-SUGGESTED CITATION: Mike P. Sinn (2025). The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials). Working Draft. https://doi.org/10.5281/zenodo.18203375
+SUGGESTED CITATION: Mike P. Sinn (2025). The Price of Political Change: A Cost-Benefit Framework for Policy Incentivization. Working Draft. https://doi.org/10.5281/zenodo.18356215
 
 === STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests. The author does maintain a bias toward the Bradford Hill criteria producing correct answers, which some regulatory agencies may find disruptive.
-FUNDING: This research received no funding. The statistical framework described herein costs less to develop than a single traditional Phase III trial costs to delay.
-ETHICS: This research did not involve human subjects. It proposes a framework that would involve considerably more of them, but with their informed consent and at 44x lower cost.
+COI: The author declares no competing interests and has not, at time of writing, formed a SuperPAC. The author reserves the right to reconsider this position if the ROI calculations in Section 3 prove as persuasive as described.
+FUNDING: This research received no funding. The author calculates that funding it would have yielded a higher return than most lobbying expenditures, but acknowledges this is a low bar.
+ETHICS: This research did not involve human subjects. The democratic process it examines, in which policy outcomes correlate more strongly with lobbying spend than voter preferences, arguably does.
 DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
 
 === SSRN "Publication Details" BOX ===
 Select "Enter the details myself", then fill:
   Publisher: Institute for Accelerated Medicine
   Publication Date: 2025
-  DOI: 10.5281/zenodo.18203375
-  URL: https://dfda-spec.warondisease.org
+  DOI: 10.5281/zenodo.18356215
+  URL: https://cost-of-change.warondisease.org
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->
 
-### [Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](https://wishocracy.warondisease.org)
+### [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
 
-[![Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation](../assets/og/wishocracy-og-1200x630.jpg)](https://wishocracy.warondisease.org)
+[![United States Efficiency Audit](../assets/og/us-efficiency-audit-og-1200x630.jpg)](https://us-efficiency-audit.warondisease.org)
 
-> Politicians' votes have near-zero correlation with citizen preferences (Gilens and Page, 2014). Elite preferences predict policy outcomes. No mechanism connects citizen preferences to electoral consequences for representatives. RAPPA: Millions of citizens answer simple pairwise questions ("How would you split $100 between these two budget categories?"). Geometric mean aggregation produces population-level preference weights from sparse individual responses. Unlike approval voting or ranked choice, RAPPA captures preference *intensity*, not just what people want, but how much they care. Compare aggregated preferences to each legislator's voting record. Publish Citizen Alignment Scores. Channel campaign resources to high-alignment candidates through Incentive Alignment Bonds. The mechanism achieves three properties no prior system combines: minimal cognitive load (~20 comparisons per participant yields statistical convergence), preference intensity capture, and approximate strategy-proofness.
+> This report applies systems engineering methodology to quantify allocative inefficiency in U.S. governance across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of $4.9T annually and recoverable capital of $2.45T if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
 
 
 <!--
-=== SUBMISSION INFO: Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation ===
+=== SUBMISSION INFO: United States Efficiency Audit ===
 
-TITLE: Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation
+TITLE: United States Efficiency Audit
 
 ABSTRACT:
-Politicians' votes have near-zero correlation with citizen preferences (Gilens and Page, 2014). Elite preferences predict policy outcomes. No mechanism connects citizen preferences to electoral consequences for representatives. RAPPA: Millions of citizens answer simple pairwise questions ("How would you split $100 between these two budget categories?"). Geometric mean aggregation produces population-level preference weights from sparse individual responses. Unlike approval voting or ranked choice, RAPPA captures preference *intensity*, not just what people want, but how much they care. Compare aggregated preferences to each legislator's voting record. Publish Citizen Alignment Scores. Channel campaign resources to high-alignment candidates through Incentive Alignment Bonds. The mechanism achieves three properties no prior system combines: minimal cognitive load (~20 comparisons per participant yields statistical convergence), preference intensity capture, and approximate strategy-proofness.
+This report applies systems engineering methodology to quantify allocative inefficiency in U.S. governance across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of $4.9T annually and recoverable capital of $2.45T if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
 AFFILIATION: Institute for Accelerated Medicine
 ORCID: 0009-0006-0212-1094
 
-KEYWORDS: Mechanism Design, Collective Intelligence, Direct Democracy, Principal Agent Problem, Preference Aggregation, Participatory Budgeting, Analytic Hierarchy Process, Democratic Resource Allocation, Wishocracy, RAPPA, Democratic Innovation
+KEYWORDS: Government Efficiency, Public Finance, Resource Allocation, Systems Analysis, Federal Spending, Policy Analysis, Monte Carlo Simulation, Efficiency Metrics, Oecd Benchmarks, Allocation Inefficiency
 
-JEL CODES: D71, D72, H41, D82
+JEL CODES: H50, H51, H56, H61, D61
 
-SUBJECT AREAS: Mechanism Design, Collective Intelligence, Direct Democracy, Principal-Agent Problem, Public Resource Allocation
-CATEGORY: Academic Paper, Public Policy, Political Science
-GENRE: Political Science, Mechanism Design, Public Policy
+SUBJECT AREAS: Public Finance, Government Efficiency, Systems Analysis, Resource Allocation, Policy Analysis
+CATEGORY: Academic Paper, Public Policy, Economics, Systems Engineering
+GENRE: Public Finance, Systems Analysis, Policy Analysis, Economics
 
-PDF: https://wishocracy.warondisease.org/wishocracy-rappa-paper.pdf
-DOI: 10.5281/zenodo.18205881
+PDF: https://us-efficiency-audit.warondisease.org/us-efficiency-audit.pdf
+DOI: 10.5281/zenodo.18447476
 LICENSE: CC BY-NC 4.0
 COPYRIGHT YEAR: 2025
 
 === PLATFORM STATUS ===
-WEBSITE: deployed | https://wishocracy.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18523095
+WEBSITE: pending | https://us-efficiency-audit.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522036
 SSRN: pending
-ARXIV: pending | category: cs.GT
+ARXIV: pending | category: econ.GN
 
 === JOURNAL TARGETS ===
-Social Choice and Welfare (Tier 2): target
+Journal of Public Economics (Tier 1): target
 Public Choice (Tier 2): target
-American Political Science Review (Tier 1): target
 
-SUGGESTED CITATION: Mike P. Sinn (2025). Wishocracy: Solving the Democratic Principal-Agent Problem Through Pairwise Preference Aggregation. Working Draft. https://doi.org/10.5281/zenodo.18205881
+SUGGESTED CITATION: Mike P. Sinn (2025). United States Efficiency Audit. Working Draft. https://doi.org/10.5281/zenodo.18447476
 
 === STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests. The author does prefer systems where elected officials represent the people who elected them, which some elected officials may find threatening.
-FUNDING: This research received no funding. The author attempted to aggregate pairwise preferences among funding agencies but found the sample size was zero.
-ETHICS: This research did not involve human subjects. Representative democracy, in which elected representatives frequently misrepresent, involves all of them.
+COI: The author declares no competing interests. As a U.S. taxpayer, the author does have a $4.9 trillion annual interest in the findings, but this interest is shared with 330 million others and is therefore presumably not 'competing.'
+FUNDING: This research received no funding from the U.S. government, which, given the findings, should perhaps not be trusted with the allocation decision.
+ETHICS: This research did not involve human subjects. The $4.9 trillion in annual efficiency losses it documents, however, affect 330 million of them.
 DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
 
 === SSRN "Publication Details" BOX ===
 Select "Enter the details myself", then fill:
   Publisher: Institute for Accelerated Medicine
   Publication Date: 2025
-  DOI: 10.5281/zenodo.18205881
-  URL: https://wishocracy.warondisease.org
+  DOI: 10.5281/zenodo.18447476
+  URL: https://us-efficiency-audit.warondisease.org
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->
@@ -633,124 +693,64 @@ Select "Enter the details myself", then fill:
 
 -->
 
-### [The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)
+### [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://dfda-spec.warondisease.org)
 
-[![The Political Dysfunction Tax](../assets/og/political-dysfunction-tax-og-1200x630.jpg)](https://political-dysfunction-tax.warondisease.org)
+[![The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../assets/og/dfda-spec-og-1200x630.jpg)](https://dfda-spec.warondisease.org)
 
-> Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
+> Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million deaths preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
 
 
 <!--
-=== SUBMISSION INFO: The Political Dysfunction Tax ===
+=== SUBMISSION INFO: The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials) ===
 
-TITLE: The Political Dysfunction Tax
+TITLE: The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)
 
 ABSTRACT:
-Governance inefficiency imposes large per-person annual costs and suppresses compound growth. This paper quantifies a global opportunity ledger and an efficiency score using explicit, source-linked parameters, then compares status-quo and reform trajectories using the same model base. Incentive Alignment Bonds (IABs), which tie investor returns to verified governance improvements, are presented as the mechanism to make removal of waste-line items privately profitable.
+Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million deaths preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label paradigm); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
 AFFILIATION: Institute for Accelerated Medicine
 ORCID: 0009-0006-0212-1094
 
-KEYWORDS: Governance Efficiency, Political Dysfunction, Welfare Economics, Opportunity Cost, Public Choice, Rent Seeking, Clinical Trials, Migration Economics, Regulatory Burden
+KEYWORDS: dFDA, Predictor Impact Score, Pharmacovigilance, Real World Evidence, N of 1 Trials, Causal Inference, Bradford Hill Criteria, Treatment Effects, Adverse Events, Outcome Labels, Statistical Methods, dFDA, Decentralized Fda
 
-JEL CODES: D61, D72, H41, H50, O38
+JEL CODES: I18, C10, L65, C93, I11
 
-SUBJECT AREAS: Governance Efficiency, Political Economy, Welfare Economics, Public Choice
-CATEGORY: Academic Paper, Public Policy, Political Science, Economics
-GENRE: Political Science, Welfare Economics, Public Policy
+SUBJECT AREAS: Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods
+CATEGORY: Academic Paper, Medical Research, Methodology
+GENRE: Biostatistics, Pharmacoepidemiology, Methodology
 
-PDF: https://political-dysfunction-tax.warondisease.org/political-dysfunction-tax.pdf
-DOI: 10.5281/zenodo.18603840
+PDF: https://dfda-spec.warondisease.org/dfda-spec-paper.pdf
+DOI: 10.5281/zenodo.18203375
 LICENSE: CC BY-NC 4.0
 COPYRIGHT YEAR: 2025
 
 === PLATFORM STATUS ===
-WEBSITE: pending | https://political-dysfunction-tax.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18603840
-SSRN: pending
-ARXIV: pending | category: econ.GN
+WEBSITE: deployed | https://dfda-spec.warondisease.org
+ZENODO: auto-uploaded | https://zenodo.org/record/18522034
+MEDRXIV: pending
+ARXIV: pending | category: stat.ME
 
 === JOURNAL TARGETS ===
-Public Choice (Tier 2): target
-Journal of Political Economy (Tier 1): target
+Clinical Pharmacology & Therapeutics (Tier 2): target
+Pharmacoepidemiology and Drug Safety (Tier 2): target
+Drug Safety (Tier 2): target
 
-SUGGESTED CITATION: Mike P. Sinn (2025). The Political Dysfunction Tax. Working Draft. https://doi.org/10.5281/zenodo.18603840
+SUGGESTED CITATION: Mike P. Sinn (2025). The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials). Working Draft. https://doi.org/10.5281/zenodo.18203375
 
 === STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests. The author does have a vested interest in not losing $97 trillion per year, but shares this interest with most of the species.
-FUNDING: This research received no funding. At a 31-53% governance efficiency rate, the author considers this par for the course.
-ETHICS: This research did not involve human subjects. Operating governments at 31-53% efficiency while charging full price does, however, involve all of them.
+COI: The author declares no competing interests. The author does maintain a bias toward the Bradford Hill criteria producing correct answers, which some regulatory agencies may find disruptive.
+FUNDING: This research received no funding. The statistical framework described herein costs less to develop than a single traditional Phase III trial costs to delay.
+ETHICS: This research did not involve human subjects. It proposes a framework that would involve considerably more of them, but with their informed consent and at 44x lower cost.
 DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
 
 === SSRN "Publication Details" BOX ===
 Select "Enter the details myself", then fill:
   Publisher: Institute for Accelerated Medicine
   Publication Date: 2025
-  DOI: 10.5281/zenodo.18603840
-  URL: https://political-dysfunction-tax.warondisease.org
-  (Leave Journal, Volume, Issue, Pages blank for working papers)
-
--->
-
-### [United States Efficiency Audit](https://us-efficiency-audit.warondisease.org)
-
-[![United States Efficiency Audit](../assets/og/us-efficiency-audit-og-1200x630.jpg)](https://us-efficiency-audit.warondisease.org)
-
-> This report applies systems engineering methodology to quantify allocative inefficiency in U.S. governance across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of $4.9T annually and recoverable capital of $2.45T if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
-
-
-<!--
-=== SUBMISSION INFO: United States Efficiency Audit ===
-
-TITLE: United States Efficiency Audit
-
-ABSTRACT:
-This report applies systems engineering methodology to quantify allocative inefficiency in U.S. governance across four dysfunction categories: direct spending waste, compliance burden on the private sector, policy-induced GDP loss, and system inefficiency. Using Monte Carlo simulation across ten components with OECD benchmarking, we estimate an aggregate efficiency gap of $4.9T annually and recoverable capital of $2.45T if U.S. performance converges toward OECD median efficiency. This categorization distinguishes direct budget waste from broader economic dysfunction, each requiring different solution pathways. We also translate the efficiency gap into QALY and VSL-equivalent welfare terms for interpretability.
-
-AUTHOR: Mike P. Sinn
-EMAIL: m@warondisease.org
-AFFILIATION: Institute for Accelerated Medicine
-ORCID: 0009-0006-0212-1094
-
-KEYWORDS: Government Efficiency, Public Finance, Resource Allocation, Systems Analysis, Federal Spending, Policy Analysis, Monte Carlo Simulation, Efficiency Metrics, Oecd Benchmarks, Allocation Inefficiency
-
-JEL CODES: H50, H51, H56, H61, D61
-
-SUBJECT AREAS: Public Finance, Government Efficiency, Systems Analysis, Resource Allocation, Policy Analysis
-CATEGORY: Academic Paper, Public Policy, Economics, Systems Engineering
-GENRE: Public Finance, Systems Analysis, Policy Analysis, Economics
-
-PDF: https://us-efficiency-audit.warondisease.org/us-efficiency-audit.pdf
-DOI: 10.5281/zenodo.18447476
-LICENSE: CC BY-NC 4.0
-COPYRIGHT YEAR: 2025
-
-=== PLATFORM STATUS ===
-WEBSITE: pending | https://us-efficiency-audit.warondisease.org
-ZENODO: auto-uploaded | https://zenodo.org/record/18522036
-SSRN: pending
-ARXIV: pending | category: econ.GN
-
-=== JOURNAL TARGETS ===
-Journal of Public Economics (Tier 1): target
-Public Choice (Tier 2): target
-
-SUGGESTED CITATION: Mike P. Sinn (2025). United States Efficiency Audit. Working Draft. https://doi.org/10.5281/zenodo.18447476
-
-=== STATEMENTS (for journal submissions) ===
-COI: The author declares no competing interests. As a U.S. taxpayer, the author does have a $4.9 trillion annual interest in the findings, but this interest is shared with 330 million others and is therefore presumably not 'competing.'
-FUNDING: This research received no funding from the U.S. government, which, given the findings, should perhaps not be trusted with the allocation decision.
-ETHICS: This research did not involve human subjects. The $4.9 trillion in annual efficiency losses it documents, however, affect 330 million of them.
-DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
-
-=== SSRN "Publication Details" BOX ===
-Select "Enter the details myself", then fill:
-  Publisher: Institute for Accelerated Medicine
-  Publication Date: 2025
-  DOI: 10.5281/zenodo.18447476
-  URL: https://us-efficiency-audit.warondisease.org
+  DOI: 10.5281/zenodo.18203375
+  URL: https://dfda-spec.warondisease.org
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->
