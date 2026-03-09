@@ -401,6 +401,11 @@ format:
       - file: assets/html/site-enhancements-loader.html
     include-in-header:
       - text: |
+          <script>
+            if (window.location.hostname.toLowerCase() === "listen.warondisease.org") {
+              window.location.replace("https://manual.warondisease.org/knowledge/podcast.html");
+            }
+          </script>
           <!-- Feature flags for site-enhancements.js -->
           <meta name="dih-disable-features" content="cite,ci-toggle">
           <meta name="dih-hide-index-title" content="true">
