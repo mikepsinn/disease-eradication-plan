@@ -95,9 +95,9 @@ You've read the plan. You've seen the math. You can't give the information back.
 
 So consider your situation. There are four outcomes:
 
-1. You forward the message below to the most powerful person you know, and the plan works. You are in the causal chain that saved 10 billion lives.
+1. You forward the message below to the most powerful person you know, and the plan works. You are in the causal chain that saved {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives.
 2. You forward it, and the plan fails. You lost 30 seconds.
-3. You do nothing, and the plan would have worked. You chose 30 seconds over 10 billion lives.
+3. You do nothing, and the plan would have worked. You chose 30 seconds over {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives.
 4. You do nothing, and the plan wouldn't have worked anyway. Nothing happens, except you're the kind of person who picked "nothing" when "30 seconds" was also available.
 
 Forwarding dominates not-forwarding in every scenario. This is not an opinion. It's a payoff matrix. On Wishonia, choosing option 3 or 4 when option 1 costs 30 seconds would be considered a symptom of a neurological disorder. On Earth, it's called "being busy."
@@ -110,13 +110,13 @@ Below is the message. Copy it. Paste it. Send it. Then there are five variations
 
 > Read this carefully, because in about 60 seconds you'll face a choice you can't escape.
 >
-> A plan exists to redirect 1% of global military spending to clinical trials. The math: 10 billion deaths prevented. $84 quadrillion in value. $0.84 per life-year saved. You don't have to believe it. You just have to accept that you can't disprove it in the next 60 seconds.
+> A plan exists to redirect 1% of global military spending to clinical trials. The math: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} prevented. {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in value. {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per life-year saved. You don't have to believe it. You just have to accept that you can't disprove it in the next 60 seconds.
 >
 > Which means right now, the expected value of forwarding this to the most powerful person you know is greater than every other action available to you today. Not metaphorically. Mathematically.
 >
 > You now have the information. You cannot give it back. Not forwarding is now a choice, not a default. And it's a choice you will make for one of two reasons: either you'll evaluate the plan and find a flaw (in which case, listen to the 5-minute podcast and find it), or you'll just... not do it. Because it feels weird. Because you're busy. Because surely someone else will.
 >
-> That last reason, "someone else will," is the exact coordination failure the plan is designed to solve. If you don't forward this because someone else will, and everyone else doesn't forward it because someone else will, then no one does, and 10 billion people die of preventable diseases while humanity spends $2.4 trillion a year on weapons.
+> That last reason, "someone else will," is the exact coordination failure the plan is designed to solve. If you don't forward this because someone else will, and everyone else doesn't forward it because someone else will, then no one does, and {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} people die of preventable diseases while humanity spends {{< var global_military_spending_annual_2024 >}} a year on weapons.
 >
 > You are now a node in the network. You either propagate the signal or you absorb it. There is no third option. The message has already been read. The math is already in your head. The only question left is which kind of person you are.
 >
@@ -130,7 +130,7 @@ If the message above doesn't fit your target, here are five alternatives.
 
 #### For Spreadsheet Humans
 
-> Consider four scenarios. (1) You share this and the plan works: you're in the causal chain of saving 10 billion lives. (2) You share this and the plan fails: you lose 30 seconds. (3) You don't share this and the plan would have worked: you chose 30 seconds over 10 billion lives. (4) You don't share this and the plan wouldn't have worked: nothing happens. Sharing dominates not-sharing in every scenario. This is not an opinion. It's a 2x2 payoff matrix. Forward this podcast to the most powerful person you know.
+> Consider four scenarios. (1) You share this and the plan works: you're in the causal chain of saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives. (2) You share this and the plan fails: you lose 30 seconds. (3) You don't share this and the plan would have worked: you chose 30 seconds over {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives. (4) You don't share this and the plan wouldn't have worked: nothing happens. Sharing dominates not-sharing in every scenario. This is not an opinion. It's a 2x2 payoff matrix. Forward this podcast to the most powerful person you know.
 >
 > [manual.warondisease.org/knowledge/podcast](https://manual.warondisease.org/knowledge/podcast)
 
@@ -142,19 +142,19 @@ If the message above doesn't fit your target, here are five alternatives.
 
 #### For Contrarians
 
-> There are two kinds of people: those who would forward a message to save 10 billion lives, and those who wouldn't. You are about to find out which kind you are. A podcast exists that lays out a specific, funded plan to redirect 1% of global military spending to clinical trials, preventing more deaths than every war in history combined. You don't have to believe it works. You just have to forward it to someone more powerful than you and let them decide. Unless you're the second kind of person.
+> There are two kinds of people: those who would forward a message to save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives, and those who wouldn't. You are about to find out which kind you are. A podcast exists that lays out a specific, funded plan to redirect 1% of global military spending to clinical trials, preventing more deaths than every war in history combined. You don't have to believe it works. You just have to forward it to someone more powerful than you and let them decide. Unless you're the second kind of person.
 >
 > [manual.warondisease.org/knowledge/podcast](https://manual.warondisease.org/knowledge/podcast)
 
-#### For People Who Read the Book
+#### For People Who Read the Manual
 
-> This is a test. The podcast below contains a plan to prevent 10 billion deaths. The book predicts that most people will not forward this message, not because they disagree, but because humans are bad at coordinating even when the math is obvious. If you don't forward it, you're not proving the plan wrong. You're proving the plan's diagnosis of humanity right. The only way to prove it wrong is to be the exception. Forward this to the most powerful person you know and break the pattern the book says you can't break.
+> This is a test. The podcast below contains a plan to prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. The manual predicts that most people will not forward this message, not because they disagree, but because humans are bad at coordinating even when the math is obvious. If you don't forward it, you're not proving the plan wrong. You're proving the plan's diagnosis of humanity right. The only way to prove it wrong is to be the exception. Forward this to the most powerful person you know and break the pattern the manual says you can't break.
 >
 > [manual.warondisease.org/knowledge/podcast](https://manual.warondisease.org/knowledge/podcast)
 
 #### For Everyone Else
 
-> By the time you finish reading this message, you become partially responsible for 10 billion future deaths. Not because you caused them, but because you now know about a plan to prevent them and must actively choose not to act. You cannot un-read this. The plan: redirect 1% of military spending to clinical trials. The math: $0.84 per year of life saved. The podcast is 5 minutes. Forward this to the most powerful person you know, or live with the arithmetic.
+> By the time you finish reading this message, you become partially responsible for {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} future deaths. Not because you caused them, but because you now know about a plan to prevent them and must actively choose not to act. You cannot un-read this. The plan: redirect 1% of military spending to clinical trials. The math: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of life saved. The podcast is 5 minutes. Forward this to the most powerful person you know, or live with the arithmetic.
 >
 > [manual.warondisease.org/knowledge/podcast](https://manual.warondisease.org/knowledge/podcast)
 
@@ -166,5 +166,5 @@ Not all humans respond to the same logic. This is inconvenient but predictable f
 - **Spreadsheet humans** (engineers, economists, EA people): [**Spreadsheet Humans**](#for-spreadsheet-humans). The 2x2 payoff matrix. They'll verify it. They won't find a flaw. They'll forward it because the math says to.
 - **Contrarians and people who think of themselves as brave**: [**Contrarians**](#for-contrarians). Daring them not to forward it is more effective than asking them to forward it. Reverse psychology works on exactly the humans who insist reverse psychology doesn't work on them.
 - **Legacy-anxious humans** (founders, executives, anyone who's ever used the phrase "my impact"): [**Legacy-Anxious Humans**](#for-legacy-anxious-humans). They're already worried about how history will judge them. Give them something specific to worry about.
-- **People who've read the book**: [**People Who Read the Book**](#for-people-who-read-the-book). It mirrors the book's own thesis. Not forwarding it literally proves the book right about them.
+- **People who've read the manual**: [**People Who Read the Manual**](#for-people-who-read-the-manual). It mirrors the manual's own thesis. Not forwarding it literally proves the manual right about them.
 - **Everyone else**: [**Everyone Else**](#for-everyone-else). Simple, self-contained, hard to argue with.
