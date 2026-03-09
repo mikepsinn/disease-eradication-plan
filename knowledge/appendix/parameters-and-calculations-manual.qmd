@@ -36,20 +36,236 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 326 parameters used in the analysis, organized by type:
+This appendix documents all 337 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 127
-- Calculated values: 133
-- Core definitions: 66
+- External sources (peer-reviewed): 128
+- Calculated values: 139
+- Core definitions: 70
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (133 parameters) • [External Data Sources](#sec-external) (127 parameters) • [Core Definitions](#sec-definitions) (66 parameters)
+[Calculated Values](#sec-calculated) (139 parameters) • [External Data Sources](#sec-external) (128 parameters) • [Core Definitions](#sec-definitions) (70 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Engagement Rate: 10% {#sec-chain_engage_probability}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability someone engages with the idea (1 - dismissal rate)
+
+**Inputs**:
+
+- [Dismissal Rate](#sec-chain_dismiss_probability): 90% (95% CI: 80% - 97%)
+
+$$
+P_{engage} = 1 - P_{dismiss} = 1 - 90\% = 10\%
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-chain_engage_probability.qmd >}}
+
+{{< include ../figures/sensitivity-table-chain_engage_probability.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-chain_engage_probability.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-chain_engage_probability.qmd >}}
+
+:::
+
+### Expected Engaged Implementers: 14.5 people {#sec-chain_expected_engaged_implementers}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected number of implementers who engage with the idea within the time horizon
+
+**Inputs**:
+
+- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
+- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
+- [Model Horizon](#sec-chain_horizon_years): 10 years
+- [Engagement Rate](#sec-chain_engage_probability) 🔢: 10%
+
+$$
+\begin{gathered}
+E[N_{engaged}] \\
+= P_{enc,10} \times P_{engage} \times N_{impl}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-chain_expected_engaged_implementers.qmd >}}
+
+{{< include ../figures/sensitivity-table-chain_expected_engaged_implementers.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-chain_expected_engaged_implementers.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-chain_expected_engaged_implementers.qmd >}}
+
+:::
+
+### Potential Implementers: 2.98 thousand people {#sec-chain_implementer_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total potential implementers (billionaires + world leaders)
+
+**Inputs**:
+
+- [Global Billionaire Count](#sec-chain_global_billionaire_count) 📊: 2.78 thousand people
+- [World Leader Count](#sec-chain_world_leader_count): 195 countries
+
+$$
+\begin{gathered}
+N_{impl} \\
+= N_{billionaire} + N_{leader} \\
+= 2{,}780 + 195 \\
+= 2{,}980
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+:::
+
+### P(At Least One Engages): 100% {#sec-chain_p_at_least_one_engages}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability at least one implementer engages within the time horizon (information diffusion only; dominant strategy proof handles action)
+
+**Inputs**:
+
+- [P(No Implementer Engages)](#sec-chain_p_no_implementer_engages) 🔢: 4.63e-05%
+
+$$
+P_{reach} = 1 - P_{none} = 1 - 0\% = 100\%
+$$
+where:
+$$
+\begin{gathered}
+P_{none} \\
+= \left(1 - P_{enc,10} \cdot P_{engage}\right)^{N_{impl}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{impl} \\
+= N_{billionaire} + N_{leader} \\
+= 2{,}780 + 195 \\
+= 2{,}980
+\end{gathered}
+$$
+where:
+$$
+P_{engage} = 1 - P_{dismiss} = 1 - 90\% = 10\%
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-chain_p_at_least_one_engages.qmd >}}
+
+{{< include ../figures/sensitivity-table-chain_p_at_least_one_engages.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-chain_p_at_least_one_engages.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-chain_p_at_least_one_engages.qmd >}}
+
+:::
+
+### 10-Year Direct Encounter Probability: 4.89% {#sec-chain_p_encounter_direct_10yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability a given implementer encounters the idea directly within 10 years
+
+**Inputs**:
+
+- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
+- [Model Horizon](#sec-chain_horizon_years): 10 years
+
+$$
+P_{enc,10} = 1 - (1 - P_{enc})^{T}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-chain_p_encounter_direct_10yr.qmd >}}
+
+{{< include ../figures/sensitivity-table-chain_p_encounter_direct_10yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-chain_p_encounter_direct_10yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-chain_p_encounter_direct_10yr.qmd >}}
+
+:::
+
+### P(No Implementer Engages): 4.63e-05% {#sec-chain_p_no_implementer_engages}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability that NO implementer engages with the idea within the time horizon
+
+**Inputs**:
+
+- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
+- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
+- [Model Horizon](#sec-chain_horizon_years): 10 years
+- [Engagement Rate](#sec-chain_engage_probability) 🔢: 10%
+
+$$
+\begin{gathered}
+P_{none} \\
+= \left(1 - P_{enc,10} \cdot P_{engage}\right)^{N_{impl}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-chain_p_no_implementer_engages.qmd >}}
+
+{{< include ../figures/sensitivity-table-chain_p_no_implementer_engages.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-chain_p_no_implementer_engages.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-chain_p_no_implementer_engages.qmd >}}
+
+:::
 
 ### Combination Therapy Space: 45.1 billion combinations {#sec-combination_therapy_disease_space}
 
@@ -8472,6 +8688,22 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 
 :::
 
+### Global Billionaire Count: 2.78 thousand people {#sec-chain_global_billionaire_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of billionaires globally (Forbes 2024 count)
+
+**Source**: [@forbes-billionaires-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Return on Investment from Childhood Vaccination Programs: 13:1 {#sec-childhood_vaccination_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -11569,6 +11801,78 @@ Viral marketing content creation budget
 #### Input Distribution
 
 {{< include ../figures/distribution-campaign_viral_content_budget.qmd >}}
+
+*Core definition*
+
+:::
+
+### Annual Encounter Rate: 0.5% {#sec-chain_annual_encounter_probability}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual probability a given implementer encounters the idea directly (media, conferences, advisors)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1%, 2%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 2% (±190%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chain_annual_encounter_probability.qmd >}}
+
+*Core definition*
+
+:::
+
+### Dismissal Rate: 90% {#sec-chain_dismiss_probability}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability someone dismisses the idea without engaging (the 'institutionalization rate')
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [80%, 97%] • Distribution: Beta
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 80% and 97% (±9%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chain_dismiss_probability.qmd >}}
+
+*Core definition*
+
+:::
+
+### Model Horizon: 10 years {#sec-chain_horizon_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Time horizon for chain reaction model
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### World Leader Count: 195 countries {#sec-chain_world_leader_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of sovereign heads of state/government
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

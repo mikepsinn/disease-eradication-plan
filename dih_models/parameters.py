@@ -9429,3 +9429,194 @@ IAB_MECHANISM_BENEFIT_COST_RATIO = Parameter(
     compute=lambda ctx: ctx["TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS"] / ctx["IAB_MECHANISM_ANNUAL_COST"],
     latex_symbol=r"BCR_{IAB}",  # LaTeX symbol for equations
 )  # 303:1
+
+# ============================================================================
+# CHAIN REACTION MODEL: PROBABILITY OF REACHING AN IMPLEMENTER
+# ============================================================================
+# Models two channels of exposure over 10 years:
+# 1. Direct encounters: Implementers find the idea through media, conferences, advisors
+# 2. Chain reaction: Social network sharing amplifies initial audience
+#
+# This is a PRECURSOR to POLITICAL_SUCCESS_PROBABILITY:
+#   P(success) = P(reaches implementer) x P(political success | implementer acts)
+# If P(reaches) = 25%, the existing 1% implies only 4% conditional political success.
+#
+# Deliberately conservative: base engagement rate, narrow implementer definition, no compounding.
+
+# --- Foundation parameters ---
+
+CHAIN_GLOBAL_BILLIONAIRE_COUNT = Parameter(
+    2_781,
+    source_ref="forbes-billionaires-2024",
+    source_type="external",
+    description="Number of billionaires globally (Forbes 2024 count)",
+    display_name="Global Billionaire Count",
+    unit="people",
+    confidence="high",
+    distribution="fixed",
+    peer_reviewed=False,
+    keywords=["billionaire", "wealth", "forbes", "chain", "implementer"],
+    latex_symbol=r"N_{billionaire}",
+)
+
+CHAIN_WORLD_LEADER_COUNT = Parameter(
+    195,
+    source_ref="",
+    source_type="definition",
+    description="Number of sovereign heads of state/government",
+    display_name="World Leader Count",
+    unit="countries",
+    distribution="fixed",
+    keywords=["leader", "head of state", "sovereign", "chain", "implementer"],
+    latex_symbol=r"N_{leader}",
+)
+
+CHAIN_IMPLEMENTER_COUNT = Parameter(
+    float(CHAIN_GLOBAL_BILLIONAIRE_COUNT) + float(CHAIN_WORLD_LEADER_COUNT),
+    source_type="calculated",
+    description="Total potential implementers (billionaires + world leaders)",
+    display_name="Potential Implementers",
+    unit="people",
+    formula="CHAIN_GLOBAL_BILLIONAIRE_COUNT + CHAIN_WORLD_LEADER_COUNT",
+    keywords=["implementer", "chain", "billionaire", "leader"],
+    inputs=["CHAIN_GLOBAL_BILLIONAIRE_COUNT", "CHAIN_WORLD_LEADER_COUNT"],
+    compute=lambda ctx: ctx["CHAIN_GLOBAL_BILLIONAIRE_COUNT"] + ctx["CHAIN_WORLD_LEADER_COUNT"],
+    latex_symbol=r"N_{impl}",
+)
+
+CHAIN_INITIAL_AUDIENCE = Parameter(
+    50_000,
+    source_type="definition",
+    description="Conservative initial audience size (readers, website visitors, conference attendees)",
+    display_name="Initial Audience",
+    unit="people",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(10_000, 500_000),
+    conservative=True,
+    keywords=["audience", "initial", "chain", "diffusion"],
+    latex_symbol=r"N_0",
+)
+
+CHAIN_DISMISS_PROBABILITY = Parameter(
+    0.90,
+    source_type="definition",
+    description="Probability someone dismisses the idea without engaging (the 'institutionalization rate')",
+    display_name="Dismissal Rate",
+    unit="rate",
+    confidence="medium",
+    distribution="beta",
+    confidence_interval=(0.80, 0.97),
+    conservative=True,
+    keywords=["dismiss", "ignore", "chain", "engagement", "institutionalization"],
+    latex_symbol=r"P_{dismiss}",
+)
+
+CHAIN_ENGAGE_PROBABILITY = Parameter(
+    1.0 - float(CHAIN_DISMISS_PROBABILITY),
+    source_type="calculated",
+    description="Probability someone engages with the idea (1 - dismissal rate)",
+    display_name="Engagement Rate",
+    unit="rate",
+    formula="1 - CHAIN_DISMISS_PROBABILITY",
+    keywords=["engage", "chain", "diffusion"],
+    inputs=["CHAIN_DISMISS_PROBABILITY"],
+    compute=lambda ctx: 1.0 - ctx["CHAIN_DISMISS_PROBABILITY"],
+    latex_symbol=r"P_{engage}",
+)
+
+CHAIN_HORIZON_YEARS = Parameter(
+    10,
+    source_type="definition",
+    description="Time horizon for chain reaction model",
+    display_name="Model Horizon",
+    unit="years",
+    distribution="fixed",
+    keywords=["horizon", "time", "chain", "years"],
+    latex_symbol=r"T",
+)
+
+CHAIN_ANNUAL_ENCOUNTER_PROBABILITY = Parameter(
+    0.005,
+    source_type="definition",
+    description="Annual probability a given implementer encounters the idea directly (media, conferences, advisors)",
+    display_name="Annual Encounter Rate",
+    unit="rate",
+    confidence="low",
+    distribution="beta",
+    confidence_interval=(0.001, 0.02),
+    conservative=True,
+    keywords=["encounter", "annual", "chain", "implementer", "direct"],
+    latex_symbol=r"P_{enc}",
+)
+
+# --- Calculated model outputs ---
+
+CHAIN_P_ENCOUNTER_DIRECT_10YR = Parameter(
+    1.0 - (1.0 - float(CHAIN_ANNUAL_ENCOUNTER_PROBABILITY)) ** float(CHAIN_HORIZON_YEARS),
+    source_type="calculated",
+    description="Probability a given implementer encounters the idea directly within 10 years",
+    display_name="10-Year Direct Encounter Probability",
+    unit="rate",
+    formula="1 - (1 - CHAIN_ANNUAL_ENCOUNTER_PROBABILITY)^CHAIN_HORIZON_YEARS",
+    latex=r"P_{enc,10} = 1 - (1 - P_{enc})^{T}",
+    keywords=["encounter", "direct", "10yr", "chain", "implementer"],
+    inputs=["CHAIN_ANNUAL_ENCOUNTER_PROBABILITY", "CHAIN_HORIZON_YEARS"],
+    compute=lambda ctx: 1.0 - (1.0 - ctx["CHAIN_ANNUAL_ENCOUNTER_PROBABILITY"]) ** ctx["CHAIN_HORIZON_YEARS"],
+    latex_symbol=r"P_{enc,10}",
+)
+
+# Per-implementer probability of engaging (direct encounters only)
+# This is INFORMATION DIFFUSION ONLY. The dominant strategy proof handles "will they act?"
+_chain_p_impl_engage = float(CHAIN_P_ENCOUNTER_DIRECT_10YR) * float(CHAIN_ENGAGE_PROBABILITY)
+
+CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS = Parameter(
+    _chain_p_impl_engage * float(CHAIN_IMPLEMENTER_COUNT),
+    source_type="calculated",
+    description="Expected number of implementers who engage with the idea within the time horizon",
+    display_name="Expected Engaged Implementers",
+    unit="people",
+    formula="CHAIN_P_ENCOUNTER_DIRECT_10YR x CHAIN_ENGAGE_PROBABILITY x CHAIN_IMPLEMENTER_COUNT",
+    latex=r"E[N_{engaged}] = P_{enc,10} \times P_{engage} \times N_{impl}",
+    keywords=["engaged", "implementer", "expected", "chain"],
+    inputs=["CHAIN_IMPLEMENTER_COUNT", "CHAIN_ANNUAL_ENCOUNTER_PROBABILITY", "CHAIN_HORIZON_YEARS",
+            "CHAIN_ENGAGE_PROBABILITY"],
+    compute=lambda ctx: (
+        (1.0 - (1.0 - ctx["CHAIN_ANNUAL_ENCOUNTER_PROBABILITY"]) ** ctx["CHAIN_HORIZON_YEARS"])
+        * ctx["CHAIN_ENGAGE_PROBABILITY"]
+    ) * ctx["CHAIN_IMPLEMENTER_COUNT"],
+    latex_symbol=r"E[N_{engaged}]",
+)
+
+CHAIN_P_NO_IMPLEMENTER_ENGAGES = Parameter(
+    (1.0 - _chain_p_impl_engage) ** float(CHAIN_IMPLEMENTER_COUNT),
+    source_type="calculated",
+    description="Probability that NO implementer engages with the idea within the time horizon",
+    display_name="P(No Implementer Engages)",
+    unit="rate",
+    formula="(1 - CHAIN_P_ENCOUNTER_DIRECT_10YR x CHAIN_ENGAGE_PROBABILITY)^CHAIN_IMPLEMENTER_COUNT",
+    latex=r"P_{none} = \left(1 - P_{enc,10} \cdot P_{engage}\right)^{N_{impl}}",
+    keywords=["no engagement", "probability", "chain", "implementer"],
+    inputs=["CHAIN_IMPLEMENTER_COUNT", "CHAIN_ANNUAL_ENCOUNTER_PROBABILITY", "CHAIN_HORIZON_YEARS",
+            "CHAIN_ENGAGE_PROBABILITY"],
+    compute=lambda ctx: (
+        1.0 - (
+            (1.0 - (1.0 - ctx["CHAIN_ANNUAL_ENCOUNTER_PROBABILITY"]) ** ctx["CHAIN_HORIZON_YEARS"])
+            * ctx["CHAIN_ENGAGE_PROBABILITY"]
+        )
+    ) ** ctx["CHAIN_IMPLEMENTER_COUNT"],
+    latex_symbol=r"P_{none}",
+)
+
+CHAIN_P_AT_LEAST_ONE_ENGAGES = Parameter(
+    1.0 - float(CHAIN_P_NO_IMPLEMENTER_ENGAGES),
+    source_type="calculated",
+    description="Probability at least one implementer engages within the time horizon (information diffusion only; dominant strategy proof handles action)",
+    display_name="P(At Least One Engages)",
+    unit="percent",
+    formula="1 - CHAIN_P_NO_IMPLEMENTER_ENGAGES",
+    keywords=["probability", "chain", "implementer", "engagement", "headline"],
+    inputs=["CHAIN_P_NO_IMPLEMENTER_ENGAGES"],
+    compute=lambda ctx: 1.0 - ctx["CHAIN_P_NO_IMPLEMENTER_ENGAGES"],
+    latex_symbol=r"P_{reach}",
+)

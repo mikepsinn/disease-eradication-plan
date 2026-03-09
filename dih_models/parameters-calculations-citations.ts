@@ -166,6 +166,16 @@ export const CAREGIVER_VALUE_PER_HOUR_SIMPLE: Parameter = {
   confidence: "high",
 };
 
+export const CHAIN_GLOBAL_BILLIONAIRE_COUNT: Parameter = {
+  value: 2781.0,
+  unit: "people",
+  displayName: "Global Billionaire Count",
+  description: "Number of billionaires globally (Forbes 2024 count)",
+  sourceType: "external",
+  sourceRef: "forbes-billionaires-2024",
+  confidence: "high",
+};
+
 export const CHILDHOOD_VACCINATION_ANNUAL_BENEFIT: Parameter = {
   value: 15000000000.0,
   unit: "USD/year",
@@ -2179,6 +2189,72 @@ export const CELL_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   confidence: "high",
   formula: "CELL_APPROACHES × DISEASES",
   latex: "\\begin{gathered}\nCombos_{cell} \\\\\n= N_{cell} \\times N_{diseases,trial} \\\\\n= 500 \\times 1{,}000 \\\\\n= 500{,}000\n\\end{gathered}",
+};
+
+export const CHAIN_ENGAGE_PROBABILITY: Parameter = {
+  value: 0.09999999999999998,
+  unit: "rate",
+  displayName: "Engagement Rate",
+  description: "Probability someone engages with the idea (1 - dismissal rate)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "1 - CHAIN_DISMISS_PROBABILITY",
+  latex: "P_{engage} = 1 - P_{dismiss} = 1 - 90\\% = 10\\%",
+};
+
+export const CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS: Parameter = {
+  value: 14.549625173386291,
+  unit: "people",
+  displayName: "Expected Engaged Implementers",
+  description: "Expected number of implementers who engage with the idea within the time horizon",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CHAIN_P_ENCOUNTER_DIRECT_10YR x CHAIN_ENGAGE_PROBABILITY x CHAIN_IMPLEMENTER_COUNT",
+  latex: "\\begin{gathered}\nE[N_{engaged}] \\\\\n= P_{enc,10} \\times P_{engage} \\times N_{impl}\n\\end{gathered}",
+};
+
+export const CHAIN_IMPLEMENTER_COUNT: Parameter = {
+  value: 2976.0,
+  unit: "people",
+  displayName: "Potential Implementers",
+  description: "Total potential implementers (billionaires + world leaders)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "CHAIN_GLOBAL_BILLIONAIRE_COUNT + CHAIN_WORLD_LEADER_COUNT",
+  latex: "\\begin{gathered}\nN_{impl} \\\\\n= N_{billionaire} + N_{leader} \\\\\n= 2{,}780 + 195 \\\\\n= 2{,}980\n\\end{gathered}",
+};
+
+export const CHAIN_P_AT_LEAST_ONE_ENGAGES: Parameter = {
+  value: 0.999999536893129,
+  unit: "percent",
+  displayName: "P(At Least One Engages)",
+  description: "Probability at least one implementer engages within the time horizon (information diffusion only; dominant strategy proof handles action)",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "1 - CHAIN_P_NO_IMPLEMENTER_ENGAGES",
+  latex: "\\begin{gathered}\nP_{reach} = 1 - P_{none} = 1 - 0\\% = 100\\%\n\\\\[0.5em]\n\\text{where } P_{none} = \\left(1 - P_{enc,10} \\cdot P_{engage}\\right)^{N_{impl}}\n\\\\[0.5em]\n\\text{where } N_{impl} = N_{billionaire} + N_{leader} = 2{,}780 + 195 = 2{,}980\n\\\\[0.5em]\n\\text{where } P_{engage} = 1 - P_{dismiss} = 1 - 90\\% = 10\\%\n\\end{gathered}",
+};
+
+export const CHAIN_P_ENCOUNTER_DIRECT_10YR: Parameter = {
+  value: 0.048889869534228136,
+  unit: "rate",
+  displayName: "10-Year Direct Encounter Probability",
+  description: "Probability a given implementer encounters the idea directly within 10 years",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "1 - (1 - CHAIN_ANNUAL_ENCOUNTER_PROBABILITY)^CHAIN_HORIZON_YEARS",
+  latex: "P_{enc,10} = 1 - (1 - P_{enc})^{T}",
+};
+
+export const CHAIN_P_NO_IMPLEMENTER_ENGAGES: Parameter = {
+  value: 4.6310687100515637e-07,
+  unit: "rate",
+  displayName: "P(No Implementer Engages)",
+  description: "Probability that NO implementer engages with the idea within the time horizon",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(1 - CHAIN_P_ENCOUNTER_DIRECT_10YR x CHAIN_ENGAGE_PROBABILITY)^CHAIN_IMPLEMENTER_COUNT",
+  latex: "\\begin{gathered}\nP_{none} \\\\\n= \\left(1 - P_{enc,10} \\cdot P_{engage}\\right)^{N_{impl}}\n\\end{gathered}",
 };
 
 export const CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL: Parameter = {
@@ -4969,6 +5045,57 @@ export const CELL_THERAPY_APPROACHES: Parameter = {
   confidenceInterval: [300.0, 800.0],
 };
 
+export const CHAIN_ANNUAL_ENCOUNTER_PROBABILITY: Parameter = {
+  value: 0.005,
+  unit: "rate",
+  displayName: "Annual Encounter Rate",
+  description: "Annual probability a given implementer encounters the idea directly (media, conferences, advisors)",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [0.001, 0.02],
+  conservative: true,
+};
+
+export const CHAIN_DISMISS_PROBABILITY: Parameter = {
+  value: 0.9,
+  unit: "rate",
+  displayName: "Dismissal Rate",
+  description: "Probability someone dismisses the idea without engaging (the 'institutionalization rate')",
+  sourceType: "definition",
+  confidence: "medium",
+  confidenceInterval: [0.8, 0.97],
+  conservative: true,
+};
+
+export const CHAIN_HORIZON_YEARS: Parameter = {
+  value: 10.0,
+  unit: "years",
+  displayName: "Model Horizon",
+  description: "Time horizon for chain reaction model",
+  sourceType: "definition",
+  confidence: "high",
+};
+
+export const CHAIN_INITIAL_AUDIENCE: Parameter = {
+  value: 50000.0,
+  unit: "people",
+  displayName: "Initial Audience",
+  description: "Conservative initial audience size (readers, website visitors, conference attendees)",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [10000.0, 500000.0],
+  conservative: true,
+};
+
+export const CHAIN_WORLD_LEADER_COUNT: Parameter = {
+  value: 195.0,
+  unit: "countries",
+  displayName: "World Leader Count",
+  description: "Number of sovereign heads of state/government",
+  sourceType: "definition",
+  confidence: "high",
+};
+
 export const CHILDHOOD_VACCINATION_COST_PER_DALY: Parameter = {
   value: 30.0,
   unit: "USD/DALY",
@@ -5672,6 +5799,7 @@ export const parameters = {
   CAREGIVER_COUNT_US,
   CAREGIVER_HOURS_PER_MONTH,
   CAREGIVER_VALUE_PER_HOUR_SIMPLE,
+  CHAIN_GLOBAL_BILLIONAIRE_COUNT,
   CHILDHOOD_VACCINATION_ANNUAL_BENEFIT,
   CHILDHOOD_VACCINATION_ROI,
   CHRONIC_DISEASE_DISABILITY_WEIGHT,
@@ -5857,6 +5985,12 @@ export const parameters = {
   WORKFORCE_WITH_PRODUCTIVITY_LOSS,
   ADDITIONAL_DRUGS_FROM_COST_ELIMINATION,
   CELL_THERAPY_DISEASE_COMBINATIONS,
+  CHAIN_ENGAGE_PROBABILITY,
+  CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS,
+  CHAIN_IMPLEMENTER_COUNT,
+  CHAIN_P_AT_LEAST_ONE_ENGAGES,
+  CHAIN_P_ENCOUNTER_DIRECT_10YR,
+  CHAIN_P_NO_IMPLEMENTER_ENGAGES,
   CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL,
   CLINICAL_TRIAL_COST_PER_APPROVED_DRUG,
   CLINICAL_TRIAL_COST_PER_PARTICIPANT_ANNUAL,
@@ -6111,6 +6245,11 @@ export const parameters = {
   CAMPAIGN_VIRAL_CONTENT_BUDGET,
   CAREGIVER_COST_ANNUAL,
   CELL_THERAPY_APPROACHES,
+  CHAIN_ANNUAL_ENCOUNTER_PROBABILITY,
+  CHAIN_DISMISS_PROBABILITY,
+  CHAIN_HORIZON_YEARS,
+  CHAIN_INITIAL_AUDIENCE,
+  CHAIN_WORLD_LEADER_COUNT,
   CHILDHOOD_VACCINATION_COST_PER_DALY,
   CONCENTRATED_INTEREST_SECTOR_MARKET_CAP_USD,
   CUMULATIVE_MILITARY_SPENDING_ALL_HISTORY,
@@ -6769,6 +6908,19 @@ export const citations: Record<string, Citation> = {
         issued: { 'date-parts': [[2023]] },
         URL: "https://www.fec.gov/updates/statistical-summary-of-24-month-campaign-activity-of-the-2023-2024-election-cycle/",
         note: "Federal Election Commission, Statistical Summary of 24-Month Campaign Activity",
+  },
+  "forbes-billionaires-2024": {
+        id: "forbes-billionaires-2024",
+        type: "webpage",
+        title: "Forbes World's Billionaires List 2024",
+        author: [
+          {
+            literal: "Forbes"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://www.forbes.com/billionaires/",
+        note: "38th annual Forbes billionaires list, published April 2, 2024",
   },
   "gbd-disability-weights": {
         id: "gbd-disability-weights",
@@ -8070,11 +8222,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 523,
-  external: 193,
-  calculated: 224,
-  definitions: 106,
-  citations: 138,
+  total: 535,
+  external: 194,
+  calculated: 230,
+  definitions: 111,
+  citations: 139,
 } as const;
 
 // ============================================================================

@@ -149,6 +149,113 @@ Upside: unbounded. You cure most diseases.
 
 Even assuming a 99% chance of total failure, this beats the gold standard of global health interventions. The downside is a yacht. The upside is the end of most disease. Your species makes worse bets every day in Las Vegas, except there the upside is a slightly larger pile of papers. The yacht will be fine. It was going to depreciate anyway.
 
+## The Chain Reaction Model: Why This Idea Cannot Stay Contained {#sec-chain-reaction-model}
+
+Your species has a cognitive immune system. When someone suggests redirecting 1% of murder money to medicine money, approximately {{< var chain_dismiss_probability >}} of humans will dismiss it without engaging. This is the [institutionalization rate](../../index-manual.qmd#what-to-do-when-they-try-to-institutionalize-you): the probability that a human's brain classifies "stop funding murder" as crazier than "continue funding murder."
+
+On Earth, this is called "being realistic."
+
+The question is whether a {{< var chain_dismiss_probability >}} dismissal rate prevents the idea from reaching someone who can act on it. This section answers that question. (The [next section](#sec-dominant-strategy-proof) answers whether they will act on it.)
+
+### Direct Encounters
+
+Implementers find ideas through media, conferences, advisor recommendations, or search. Each of {{< var chain_implementer_count_nounit >}} potential implementers ({{< var chain_global_billionaire_count_nounit >}} billionaires [@forbes-billionaires-2024] plus {{< var chain_world_leader_count_nounit >}} heads of state) has an annual probability {{< var chain_annual_encounter_probability >}} of encountering this idea directly.
+
+### The Mathematics
+
+The probability that a given implementer encounters the idea within {{< var chain_horizon_years_nounit >}} years:
+
+{{< var chain_p_encounter_direct_10yr_latex >}}
+
+The per-implementer probability of engaging (encountering AND not dismissing):
+
+$$
+P_{impl,engage} = P_{enc,10} \times P_{engage}
+$$
+
+The expected number of implementers who engage:
+
+{{< var chain_expected_engaged_implementers_latex >}}
+
+The probability that at least one engages: {{< var chain_p_at_least_one_engages >}}.
+
+That is not a typo. With {{< var chain_implementer_count_nounit >}} potential implementers and a {{< var chain_p_encounter_direct_10yr >}} per-implementer encounter probability over {{< var chain_horizon_years_nounit >}} years, the math says approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers will engage with this idea. Not "might." Will. The dismissal rate is irrelevant when multiplied by enough opportunities.
+
+This model answers only: "Will it reach someone?" The answer is yes. The next section answers: "Will they act?"
+
+::: {.callout-note collapse="true" title="Conservative bias assumptions"}
+This model is deliberately conservative in three ways:
+
+1. **Base engagement rate**: Uses the same engagement rate for personal recommendations as for passive exposure (personal recommendations convert at ~3x higher rates)
+2. **Narrow implementer definition**: Counts only billionaires and heads of state (excludes foundation heads, WHO officials, major fund managers, etc.)
+3. **No compounding**: Ignores the feedback loop where media coverage of early adoption increases subsequent encounter rates, and ignores network amplification (people sharing the idea with others)
+:::
+
+## The Dominant Strategy Proof: Why Inaction Is Logically Incoherent {#sec-dominant-strategy-proof}
+
+The chain reaction model says {{< var chain_expected_engaged_implementers_nounit >}} implementers will engage with this idea. Will they act? This is not a probabilistic question. It is a logical one.
+
+### The Structure
+
+A **dominant strategy** is an action that produces a better outcome than the alternative regardless of what anyone else does. In game theory, rational agents always choose dominant strategies. Not because they're smart. Because not choosing them is, by definition, irrational. It's like asking whether water flows downhill. It does. That's what "downhill" means.
+
+**Claim**: For any individual with sufficient resources (a billionaire, a head of state, a major fund manager), acting on this treaty is a dominant strategy.
+
+**Proof by cases.** Consider a billionaire deciding whether to fund the treaty campaign. There are two possible worlds:
+
+| | Others also act | No one else acts |
+|:--|:----------------|:-----------------|
+| **You act** | Treaty very likely passes. You earn {{< var victory_bond_annual_return_pct >}} annual returns on IABs. Diseases get cured. You are richer and healthier. | Treaty still has positive expected value. At {{< var political_success_probability >}} success probability, expected ROI is {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1. You made a positive-EV bet. |
+| **You don't act** | Treaty passes without you. You missed the returns. Others got rich curing diseases. You bought another yacht instead. | Nothing changes. {{< var global_disease_deaths_daily >}} continue. Your portfolio returns remain average. |
+
+In both columns, "act" produces a better outcome than "don't act." That's what makes it dominant. No coordination required. No trust required. No one else needs to go first. Each agent's optimal move is independent of everyone else's choices.
+
+On Wishonia, when we first encountered the concept of a dominant strategy, we found it trivially obvious. Then we watched your species ignore dominant strategies for several thousand years and upgraded our assessment from "trivially obvious" to "apparently not."
+
+### The Formal Argument
+
+The argument is a syllogism. Three premises, one conclusion.
+
+**Premise 1 (Positive Expected Value):** The expected value of funding the treaty campaign exceeds its cost for any individual agent, even at {{< var political_success_probability >}} probability of success.
+
+This is demonstrated in the [expected value analysis](#sec-political-success-probability). At {{< var political_success_probability >}} success probability, expected cost per DALY is {{< var treaty_expected_cost_per_daly >}}, which is {{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective than the gold standard. The math is peer-reviewable.
+
+**Premise 2 (Information Reaches Agents):** At least one agent with sufficient resources encounters and engages with this information within {{< var chain_horizon_years >}}.
+
+The [chain reaction model](#sec-chain-reaction-model) shows {{< var chain_p_at_least_one_engages >}} probability of this, with an expected {{< var chain_expected_engaged_implementers_nounit >}} engaged implementers. This premise is not seriously in doubt.
+
+**Premise 3 (Rationality):** At least one of these agents is a rational expected-value maximizer.
+
+Your species produced people who bet billions on electric cars, reusable rockets, and cryptocurrency. Not all of them are rational, but the claim that NONE of {{< var chain_implementer_count_nounit >}} are rational expected-value maximizers is harder to defend than the claim that at least one is.
+
+**Conclusion:** By modus ponens: if acting has positive EV (P1), the information reaches an agent (P2), and that agent is rational (P3), then the agent acts. The treaty campaign gets funded.
+
+This is not a prediction. It's a conditional proof. If the premises hold, the conclusion follows with logical necessity, not probability. The only way to reject the conclusion is to falsify a premise.
+
+### The Contrapositive
+
+Logical proofs have contrapositives: if the conclusion is false, at least one premise must be false. If no one acts in {{< var chain_horizon_years >}}, then at least one of the following is true:
+
+1. **The EV calculation is wrong.** The ROI doesn't hold. The cost-per-DALY estimates are fabricated. The health dividend projections are fantasy. This is falsifiable. Check the math. It's all in [the appendix](parameters-and-calculations.qmd).
+
+2. **The information never reached anyone with resources.** {{< var chain_implementer_count_nounit >}} potential implementers, {{< var chain_horizon_years >}} of diffusion, and not one of them saw it. Possible. Addressable by sharing it.
+
+3. **Every single implementer is irrational.** All {{< var chain_implementer_count_nounit >}} of them encountered a dominant strategy and declined it. Every billionaire who built a fortune by identifying positive-EV opportunities looked at an {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected return and said "no thanks." This is the hardest premise to falsify, because it requires universal irrationality among a population selected specifically for their ability to identify and act on opportunities.
+
+4. **There are hidden costs the model doesn't capture.** Reputational risk, political retaliation, opportunity cost of capital deployed elsewhere. These are real but quantifiable. Name them, price them, and subtract them from the EV. If the EV is still positive (and with an {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected return, there is considerable room for hidden costs), the proof holds.
+
+Your task, if you want to reject this argument, is to identify which premise fails. Not to feel skeptical. Not to gesture at complexity. Pick a number. Show it's wrong. That's how proofs work.
+
+### Why This Is Stronger Than a Probabilistic Model
+
+A probabilistic model would assign some percentage chance of action. But when an action is a dominant strategy, probability is the wrong framework. You don't calculate the probability that water flows downhill. You check whether the ground is sloped.
+
+The [chain reaction model](#sec-chain-reaction-model) establishes that ~{{< var chain_expected_engaged_implementers_nounit >}} implementers will engage. This proof establishes that engaged, rational implementers will act. The two sections divide the work cleanly: diffusion handles reach, logic handles action.
+
+On Wishonia, we stopped using probabilistic models for dominant strategy situations about 3,000 years ago. The answer is always: check the premises.
+
+Your species has a peculiar habit of treating logical necessity as just another opinion. This is how you ended up with a planet that spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work, while the math proving this is suboptimal sits on a shelf next to the untested compounds that would have saved the children. The proof is not the problem. The premises are not the problem. The problem is that your species treats "I don't feel like it" as a counterargument to modus ponens. It isn't. It never was. The water doesn't care whether you believe in gravity.
+
 ## Why The Treaty Won't Stop at 1%
 
 Most international commitments stagnate after signing. You saw the depressing table. 0.7% ODA targets unmet for 50+ years. Kyoto abandoned. Paris missed. Your track record with follow-through makes goldfish look disciplined. So why would a 1% health treaty be any different?
