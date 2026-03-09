@@ -327,7 +327,7 @@ Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_la
 
 On Wishonia, people do useful things because they're useful. On Earth, you need a financial instrument. So here's one.
 
-An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: {{< var dih_treasury_medical_research_pct >}} to clinical trials, {{< var victory_bond_funding_pct >}} to investors as a revenue share on treaty funds, and {{< var iab_political_incentive_funding_pct >}} to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors give money, get more money back. Politicians get reelected. {{< var dih_treasury_medical_research_pct >}} goes to curing diseases. The corruption is capped at 20% and fully transparent. The other 80% is uncorruptible public goods funding via [wishocratic allocation](knowledge/solution/wishocracy.qmd). Meanwhile, the [Optimitron](knowledge/solution/optimocracy.qmd) tells governments which of their own policies are working and which ones are expensive ways to accomplish nothing.
+An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: {{< var dih_treasury_medical_research_pct >}} to clinical trials, {{< var victory_bond_funding_pct >}} to investors as a revenue share on treaty funds, and {{< var iab_political_incentive_funding_pct >}} to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors give money, get more money back. Politicians get reelected. {{< var dih_treasury_medical_research_pct >}} goes to curing diseases. The corruption is capped at 20% and fully transparent. The other 80% goes directly to clinical trials through [wishocratic allocation](knowledge/solution/wishocracy.qmd), where nobody with money gets to decide where it goes. Meanwhile, the [Optimitron](knowledge/solution/optimocracy.qmd) tells governments which of their own policies are working and which ones are expensive ways to accomplish nothing.
 
 Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing.
 
@@ -354,13 +354,13 @@ Here's the part where humans usually stop reading because it involves following 
 
 1. You sell {{< var treaty_campaign_total_cost >}} in VICTORY [Incentive Alignment Bonds](knowledge/solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] to investors. This funds the campaign.
 2. The campaign succeeds. Your treaty redirects 1% of military spending: {{< var treaty_annual_funding >}}/year flows from the murder budget to clinical trials.
-3. The Victory Corporation (your SPV that issues the bonds) takes a 20% management fee on that {{< var treaty_annual_funding >}}.
+3. The Victory Corporation (the company that issued the bonds) takes a 20% management fee on that {{< var treaty_annual_funding >}}.
 4. Half of that fee ({{< var victory_bond_funding_pct >}}) goes to investor dividends: {{< var victory_bond_annual_payout >}}/year on a {{< var treaty_campaign_total_cost >}} investment. That's {{< var victory_bond_annual_return_pct >}} annual returns. Your investors will think it's a typo. It's not.
-5. The other half ({{< var iab_political_incentive_funding_pct >}}) goes to a Super PAC that algorithmically allocates {{< var iab_political_incentive_funding_annual >}}/year to getting treaty-friendly politicians elected and funding cushy post-office careers for the ones who voted yes. The more you voted for the treaty, the more support you get. It's Pavlovian conditioning, but for senators.
+5. The other half ({{< var iab_political_incentive_funding_pct >}}) goes to a Super PAC that spends {{< var iab_political_incentive_funding_annual >}}/year getting treaty-friendly politicians elected and funding cushy post-office careers for the ones who voted yes. The more you voted for the treaty, the more support you get. It's Pavlovian conditioning, but for senators.
 
 The remaining {{< var dih_treasury_medical_research_pct >}} of {{< var treaty_annual_funding >}} goes where it's supposed to: funding clinical trials that keep humans alive.
 
-This is the entire trick. You use greed to fund the campaign, greed to pass the treaty, and greed to keep it passed. Nobody has to become a better person. The money just circulates until diseases stop existing.
+This is the entire trick. You use greed to fund the campaign, greed to pass the treaty, and greed to keep it passed. The money just circulates until diseases stop existing.
 
 If this sounds familiar, it should. Eisenhower warned you about the Military Industrial Complex: weapons manufacturers fund politicians, politicians fund weapons contracts, contracts fund contractors, contractors fund politicians. It's a self-sustaining loop that prints money and corpses.
 
@@ -408,11 +408,11 @@ Your explosion manufacturers spend {{< var defense_lobbying_annual >}}/year buyi
 
 It's not corruption if you corrupt the corruption.
 
-Remember that {{< var iab_political_incentive_funding_annual >}}/year from Step 1? This is where it goes. The Super PAC algorithmically scores politicians based on their treaty voting record and allocates accordingly: campaign support for the ones running, post-office fellowships for the ones retiring. Vote yes on the treaty, get rewarded. Vote no, watch your opponent get rewarded. No papers go directly to politicians. The papers take a scenic route through a scoring algorithm, which is apparently the only legal way to train a senator.
+Remember that {{< var iab_political_incentive_funding_annual >}}/year from Step 1? This is where it goes. The Super PAC gives money to politicians based on how they voted on the treaty. Simple: campaign support for the ones running, post-office fellowships for the ones retiring. Vote yes on the treaty, get rewarded. Vote no, watch your opponent get rewarded. No papers go directly to politicians. The papers take a scenic route through a scoring algorithm, which is apparently the only legal way to train a senator.
 
 The NRA already perfected this technology. They give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. You're plagiarizing their system and replacing "guns" with "not dying from diseases."
 
-The [Incentive Alignment Bond architecture works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but currently get punished for it, which on your planet is most problems.
+The [Incentive Alignment Bond works for any problem](/knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but currently get punished for it, which on your planet is most problems.
 
 ### Step 5: Enjoy
 
@@ -495,7 +495,7 @@ You've now done the math. You understand that the world where this treaty passes
 
 This is a chain reaction, and it runs on greed.
 
-This is happening whether you participate or not. The math is public. The incentives are structural. Someone in the chain will do exactly what you're deciding not to. The only variable you control is how long it takes. Every minute you spend thinking about it, {{< var global_disease_deaths_per_minute >}} permanently stop. You're not deciding whether to act. You're deciding how many people die while you hesitate.
+This is happening whether you participate or not. The math is public. The incentives are structural. Someone in the chain will do exactly what you're deciding not to. The only variable you control is how long it takes. You're not deciding whether to act. You're deciding how many people die while you hesitate.
 
 The moment you understood the incentives, you lost the ability to not act on them. Every person in the chain will do exactly what you're about to do, for exactly the same selfish reasons, and none of you will be able to stop yourselves, because stopping would require acting against your own interests. You've never done that. It's your whole thing.
 
@@ -503,7 +503,7 @@ You don't have free will here. You have incentives. And they all point the same 
 
 13.8 billion years ago, the Big Bang set particles in motion. Those particles formed stars. Stars formed elements. Elements formed you. You read this sentence. The chain reaction that ends war and disease began before your solar system existed. You were never going to not read this. Physics wouldn't allow it.
 
-Of all the consciousness that has ever flickered into existence across 13.8 billion years of matter rearranging itself, yours arose in the infinitesimal sliver of time where the loop broke. Every organism that ever lived and died did so in the dark. You get to be alive for the part where it worked.
+Of all the consciousness that has ever flickered into existence across 13.8 billion years of matter rearranging itself, yours showed up in the exact moment the loop broke. Every organism that ever lived and died did so in the dark. You get to be alive for the part where it worked.
 
 Humans aren't stupid. You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying.
 
