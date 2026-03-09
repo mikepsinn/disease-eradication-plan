@@ -30,7 +30,7 @@ import io
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
-from typing import TypedDict
+from typing import Any, TypedDict
 
 # Set UTF-8 encoding for stdout on Windows
 if sys.platform == 'win32':
@@ -75,6 +75,15 @@ def _env_int(name: str, default: int, *, minimum: int = 1) -> int:
     return max(minimum, value)
 
 
+def _coerce_process_output(value: str | bytes | None) -> str:
+    """Normalize subprocess output to text for logging."""
+    if value is None:
+        return ""
+    if isinstance(value, bytes):
+        return value.decode("utf-8", errors="replace")
+    return value
+
+
 # TTS parallelization: keep concurrency configurable per environment.
 TTS_PARALLEL_WORKERS = _env_int("AUDIOBOOK_TTS_PARALLEL_WORKERS", 6, minimum=1)
 tts_rate_limiter = RateLimiter(max_requests=10, window_seconds=60)
@@ -90,6 +99,8 @@ TTS_SINGLE_LINE_PROGRESS = _env_flag("AUDIOBOOK_TTS_SINGLE_LINE_PROGRESS", True)
 # Single-line cache-scan progress for chunk freshness checks.
 TTS_CACHE_SCAN_SINGLE_LINE = _env_flag("AUDIOBOOK_TTS_CACHE_SCAN_SINGLE_LINE", True)
 TTS_PROGRESS_INTERVAL_S = 5.0
+ALIGNMENT_TIMEOUT_SECONDS = _env_int("AUDIOBOOK_ALIGNMENT_TIMEOUT_SECONDS", 1800, minimum=60)
+ALIGNMENT_STRICT = _env_flag("AUDIOBOOK_ALIGNMENT_STRICT", False)
 
 # Silence detection: trim audio chunks with silence longer than this threshold.
 # Gemini TTS occasionally produces WAVs with enormous silent tails (e.g. 10 min).
@@ -931,10 +942,8 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict,
             chapters: list[dict] | None = None, paths: AudiobookPaths | None = None):
     """Embed ID3v2.4 tags with chapter markers, cover art, and per-chapter podcast images into the combined MP3."""
     from mutagen.mp3 import MP3
-    from mutagen.id3 import (  # pyright: ignore[reportPrivateImportUsage]
-        ID3, TIT2, TPE1, TPE2, TALB, TCON, TDRC, TPUB, APIC, CHAP, CTOC, CTOCFlags,
-        TXXX, TLAN, COMM, TCOP, WOAF, WOAR, WPUB,
-    )
+    from mutagen import id3
+    id3_mod: Any = id3
 
     print(f"\nTagging MP3 with metadata and chapter markers...")
 
@@ -945,50 +954,50 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict,
     tag = audio.tags
 
     # Basic metadata
-    tag.add(TIT2(encoding=3, text=[book_meta['title']]))
-    tag.add(TPE1(encoding=3, text=[book_meta['author']]))
-    tag.add(TPE2(encoding=3, text=[book_meta['author']]))  # Album artist
-    tag.add(TALB(encoding=3, text=[book_meta['title']]))
-    tag.add(TCON(encoding=3, text=["Audiobook"]))
-    tag.add(TDRC(encoding=3, text=[book_meta['year']]))
-    tag.add(TPUB(encoding=3, text=[book_meta['publisher']]))
-    tag.add(TLAN(encoding=3, text=["eng"]))
+    tag.add(id3_mod.TIT2(encoding=3, text=[book_meta['title']]))
+    tag.add(id3_mod.TPE1(encoding=3, text=[book_meta['author']]))
+    tag.add(id3_mod.TPE2(encoding=3, text=[book_meta['author']]))  # Album artist
+    tag.add(id3_mod.TALB(encoding=3, text=[book_meta['title']]))
+    tag.add(id3_mod.TCON(encoding=3, text=["Audiobook"]))
+    tag.add(id3_mod.TDRC(encoding=3, text=[book_meta['year']]))
+    tag.add(id3_mod.TPUB(encoding=3, text=[book_meta['publisher']]))
+    tag.add(id3_mod.TLAN(encoding=3, text=["eng"]))
     # Narrator (custom TXXX frame, recognized by Apple Books/Audible/Overcast)
     narrator = book_meta['narrator']
-    tag.add(TXXX(encoding=3, desc='narrator', text=[narrator]))
+    tag.add(id3_mod.TXXX(encoding=3, desc='narrator', text=[narrator]))
     # Description
     if book_meta.get('description'):
-        tag.add(COMM(encoding=3, lang='eng', desc='', text=[book_meta['description']]))
+        tag.add(id3_mod.COMM(encoding=3, lang='eng', desc='', text=[book_meta['description']]))
 
     # Copyright and license
     if book_meta.get('copyright'):
-        tag.add(TCOP(encoding=3, text=[book_meta['copyright']]))
+        tag.add(id3_mod.TCOP(encoding=3, text=[book_meta['copyright']]))
     if book_meta.get('license'):
-        tag.add(TXXX(encoding=3, desc='license', text=[book_meta['license']]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='license', text=[book_meta['license']]))
     if book_meta.get('license_url'):
-        tag.add(TXXX(encoding=3, desc='license_url', text=[book_meta['license_url']]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='license_url', text=[book_meta['license_url']]))
 
     # URLs
     if book_meta.get('site_url'):
-        tag.add(WOAF(url=book_meta['site_url']))
+        tag.add(id3_mod.WOAF(url=book_meta['site_url']))
     if book_meta.get('author_url'):
-        tag.add(WOAR(url=book_meta['author_url']))
+        tag.add(id3_mod.WOAR(url=book_meta['author_url']))
     if book_meta.get('publisher_url'):
-        tag.add(WPUB(url=book_meta['publisher_url']))
+        tag.add(id3_mod.WPUB(url=book_meta['publisher_url']))
 
     # Provenance and discoverability
     if book_meta.get('version'):
-        tag.add(TXXX(encoding=3, desc='version', text=[book_meta['version']]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='version', text=[book_meta['version']]))
     if book_meta.get('subject'):
-        tag.add(TXXX(encoding=3, desc='subject', text=[book_meta['subject']]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='subject', text=[book_meta['subject']]))
     if book_meta.get('keywords'):
-        tag.add(TXXX(encoding=3, desc='keywords', text=[book_meta['keywords']]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='keywords', text=[book_meta['keywords']]))
 
     # Cover art (validated in extract_book_metadata)
     cover_art: Path = book_meta['cover_art']
     cover_data = cover_art.read_bytes()
     mime = 'image/png' if cover_art.suffix.lower() == '.png' else 'image/jpeg'
-    tag.add(APIC(
+    tag.add(id3_mod.APIC(
         encoding=3,
         mime=mime,
         type=3,  # Front cover
@@ -1008,7 +1017,7 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict,
         element_id = f"chp{ts['index']:02d}"
         chapter_ids.append(element_id)
 
-        sub_frames = [TIT2(encoding=3, text=[ts['title']])]
+        sub_frames: list[object] = [id3_mod.TIT2(encoding=3, text=[ts['title']])]
 
         # Add per-chapter podcast image if available
         ch = ch_by_index.get(ts['index'])
@@ -1017,9 +1026,17 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict,
             if ep_image and ep_image.exists():
                 img_data = ep_image.read_bytes()
                 img_mime = 'image/png' if ep_image.suffix.lower() == '.png' else 'image/jpeg'
-                sub_frames.append(APIC(encoding=3, mime=img_mime, type=3, desc=f"Chapter {ts['index']}", data=img_data))
+                sub_frames.append(
+                    id3_mod.APIC(
+                        encoding=3,
+                        mime=img_mime,
+                        type=3,
+                        desc=f"Chapter {ts['index']}",
+                        data=img_data,
+                    )
+                )
 
-        tag.add(CHAP(
+        tag.add(id3_mod.CHAP(
             element_id=element_id,
             start_time=ts['start_ms'],
             end_time=ts['end_ms'],
@@ -1029,12 +1046,12 @@ def tag_mp3(mp3_path: Path, timestamps: list[ChapterTimestamp], book_meta: dict,
         ))
 
     # Table of contents (CTOC frame)
-    tag.add(CTOC(
+    tag.add(id3_mod.CTOC(
         element_id="toc",
-        flags=CTOCFlags.TOP_LEVEL | CTOCFlags.ORDERED,
+        flags=id3_mod.CTOCFlags.TOP_LEVEL | id3_mod.CTOCFlags.ORDERED,
         child_element_ids=chapter_ids,
         sub_frames=[
-            TIT2(encoding=3, text=["Table of Contents"]),
+            id3_mod.TIT2(encoding=3, text=["Table of Contents"]),
         ],
     ))
 
@@ -1429,10 +1446,8 @@ def export_single_chapter_mp3(
     """
     from datetime import datetime, timezone
     from mutagen.mp3 import MP3
-    from mutagen.id3 import (  # pyright: ignore[reportPrivateImportUsage]
-        TIT2, TPE1, TPE2, TALB, TCON, TDRC, TPUB, APIC, TRCK, TLAN, TXXX, COMM,
-        TCOP, WOAF,
-    )
+    from mutagen import id3
+    id3_mod: Any = id3
 
     raw_mp3_dir = paths.raw_mp3 if paths else AUDIOBOOK_DIR / "mp3-raw"
     raw_mp3_dir.mkdir(parents=True, exist_ok=True)
@@ -1490,31 +1505,31 @@ def export_single_chapter_mp3(
     generation_date = datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
     # Basic metadata
-    tag.add(TIT2(encoding=3, text=[chapter['title']]))
-    tag.add(TPE1(encoding=3, text=[book_meta['author']]))
-    tag.add(TPE2(encoding=3, text=[book_meta['author']]))
-    tag.add(TALB(encoding=3, text=[book_meta['title']]))
-    tag.add(TCON(encoding=3, text=["Audiobook"]))
-    tag.add(TDRC(encoding=3, text=[book_meta['year']]))
-    tag.add(TPUB(encoding=3, text=[book_meta['publisher']]))
-    tag.add(TRCK(encoding=3, text=[f"{track_num}/{total_chapters}"]))
-    tag.add(TLAN(encoding=3, text=["eng"]))
-    tag.add(TXXX(encoding=3, desc='narrator', text=[narrator]))
+    tag.add(id3_mod.TIT2(encoding=3, text=[chapter['title']]))
+    tag.add(id3_mod.TPE1(encoding=3, text=[book_meta['author']]))
+    tag.add(id3_mod.TPE2(encoding=3, text=[book_meta['author']]))
+    tag.add(id3_mod.TALB(encoding=3, text=[book_meta['title']]))
+    tag.add(id3_mod.TCON(encoding=3, text=["Audiobook"]))
+    tag.add(id3_mod.TDRC(encoding=3, text=[book_meta['year']]))
+    tag.add(id3_mod.TPUB(encoding=3, text=[book_meta['publisher']]))
+    tag.add(id3_mod.TRCK(encoding=3, text=[f"{track_num}/{total_chapters}"]))
+    tag.add(id3_mod.TLAN(encoding=3, text=["eng"]))
+    tag.add(id3_mod.TXXX(encoding=3, desc='narrator', text=[narrator]))
 
     # Per-chapter description (fall back to book-level)
     ch_desc = chapter.get('description') or book_meta.get('description', '')
     if ch_desc:
-        tag.add(COMM(encoding=3, lang='eng', desc='', text=[ch_desc]))
+        tag.add(id3_mod.COMM(encoding=3, lang='eng', desc='', text=[ch_desc]))
 
     # Copyright and license
     if book_meta.get('copyright'):
-        tag.add(TCOP(encoding=3, text=[book_meta['copyright']]))
+        tag.add(id3_mod.TCOP(encoding=3, text=[book_meta['copyright']]))
     if book_meta.get('license'):
-        tag.add(TXXX(encoding=3, desc='license', text=[book_meta['license']]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='license', text=[book_meta['license']]))
 
     # Official URL
     if book_meta.get('site_url'):
-        tag.add(WOAF(url=book_meta['site_url']))
+        tag.add(id3_mod.WOAF(url=book_meta['site_url']))
 
     # Per-chapter podcast image (fall back to book cover)
     ep_image = find_podcast_image(chapter, paths=paths)
@@ -1524,18 +1539,18 @@ def export_single_chapter_mp3(
     else:
         img_data = book_cover_data
         img_mime = book_cover_mime
-    tag.add(APIC(encoding=3, mime=img_mime, type=3, desc='Cover', data=img_data))
+    tag.add(id3_mod.APIC(encoding=3, mime=img_mime, type=3, desc='Cover', data=img_data))
 
     # Source QMD hash for provenance (reuse hash computed at top of function)
     if current_qmd_hash:
-        tag.add(TXXX(encoding=3, desc='source_qmd_hash', text=[current_qmd_hash]))
-        tag.add(TXXX(encoding=3, desc='source_qmd_path', text=[chapter['path']]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='source_qmd_hash', text=[current_qmd_hash]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='source_qmd_path', text=[chapter['path']]))
 
     # TTS provenance
-    tag.add(TXXX(encoding=3, desc='tts_voice', text=[voice]))
-    tag.add(TXXX(encoding=3, desc='generation_date', text=[generation_date]))
+    tag.add(id3_mod.TXXX(encoding=3, desc='tts_voice', text=[voice]))
+    tag.add(id3_mod.TXXX(encoding=3, desc='generation_date', text=[generation_date]))
     if book_meta.get('version'):
-        tag.add(TXXX(encoding=3, desc='version', text=[book_meta['version']]))
+        tag.add(id3_mod.TXXX(encoding=3, desc='version', text=[book_meta['version']]))
 
     mp3.save()
     size_mb = mp3_path.stat().st_size / 1024 / 1024
@@ -1607,7 +1622,7 @@ def generate_podcast_rss(
     rss_dir = paths.root if paths else AUDIOBOOK_DIR
     rss_path = rss_dir / "feed.xml"
 
-    site_url = book_meta.get('site_url', 'https://manual.WarOnDisease.org')
+    site_url = str(book_meta.get('site_url') or 'https://manual.WarOnDisease.org')
     # MP3s served from R2 (falls back to site URL if R2_PUBLIC_URL not set)
     cdn_url = os.environ.get('R2_PUBLIC_URL', site_url).rstrip('/')
     mp3_base = paths.root.relative_to(PROJECT_ROOT) if paths else Path("assets/audiobook")
@@ -1820,7 +1835,8 @@ def generate_podcast_rss(
 def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = False, paths: AudiobookPaths | None = None, audio_changed: bool = False):
     """Run forced alignment and generate subtitles for a chapter.
 
-    Gracefully skips if stable-ts is not installed.
+    Alignment runs in a fresh subprocess so stable-ts crashes do not kill the
+    main audiobook pipeline. Failures are best-effort by default.
     """
     from lib.audiobook_common import ALIGNMENT_DIR, SUBTITLES_DIR
     alignment_dir = paths.alignment if paths else ALIGNMENT_DIR
@@ -1829,31 +1845,116 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
     slug = chapter_slug(chapter)
     alignment_path = alignment_dir / f"{slug}.alignment.json"
     vtt_path = subtitles_dir / f"{slug}.vtt"
+    srt_path = subtitles_dir / f"{slug}.srt"
+    output_paths = (alignment_path, vtt_path, srt_path)
+    outputs_ready = all(path.exists() for path in output_paths)
 
-    if alignment_path.exists() and not force and not audio_changed:
+    def clear_alignment_state() -> None:
+        for output_path in output_paths:
+            output_path.unlink(missing_ok=True)
+
+        manifest = read_manifest(paths)
+        changed = False
+        for manifest_chapter in manifest.get("chapters", []):
+            if manifest_chapter.get("index") != chapter["index"]:
+                continue
+            if manifest_chapter.pop("alignment_file", None) is not None:
+                changed = True
+            if manifest_chapter.pop("subtitle_file", None) is not None:
+                changed = True
+            break
+        if changed:
+            write_manifest(manifest, paths)
+
+    if outputs_ready and not force and not audio_changed:
         print(f"  [SKIP] Alignment exists: {alignment_path.name}")
-        return
-    if audio_changed and alignment_path.exists():
+        return True
+
+    if audio_changed and any(path.exists() for path in output_paths):
         print(f"  [STALE] Audio changed, regenerating alignment...")
+    elif any(path.exists() for path in output_paths):
+        print(f"  [STALE] Alignment outputs incomplete, regenerating...")
 
     text_file = find_prepared_text(chapter, paths=paths)
     if not text_file:
+        clear_alignment_state()
         print(f"  [SKIP] No text file for alignment")
-        return
-
-    try:
-        from lib.alignment import align_chapter, generate_vtt, generate_srt
-    except ImportError as e:
-        print(f"  [SKIP] {e}")
-        return
-
-    srt_path = subtitles_dir / f"{slug}.srt"
+        return False
 
     alignment_dir.mkdir(parents=True, exist_ok=True)
     subtitles_dir.mkdir(parents=True, exist_ok=True)
-    words = align_chapter(audio_path, text_file, alignment_path, chapter=chapter)
-    generate_vtt(words, vtt_path)
-    generate_srt(words, srt_path)
+
+    clear_alignment_state()
+
+    cmd = [
+        sys.executable,
+        "-u",
+        str(PROJECT_ROOT / "scripts" / "run_alignment_worker.py"),
+        "--wav",
+        str(audio_path),
+        "--text",
+        str(text_file),
+        "--alignment-output",
+        str(alignment_path),
+        "--vtt-output",
+        str(vtt_path),
+        "--srt-output",
+        str(srt_path),
+        "--chapter-index",
+        str(chapter["index"]),
+        "--chapter-title",
+        chapter.get("title", title),
+    ]
+
+    try:
+        result = subprocess.run(
+            cmd,
+            cwd=str(PROJECT_ROOT),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=ALIGNMENT_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        combined_output = _coerce_process_output(exc.stdout) + _coerce_process_output(exc.stderr)
+        if combined_output:
+            print(combined_output, end="" if combined_output.endswith("\n") else "\n")
+        clear_alignment_state()
+        message = (
+            f"  [WARN] Alignment timed out after {ALIGNMENT_TIMEOUT_SECONDS}s for "
+            f"{audio_path.name}; continuing without subtitles"
+        )
+        print(message)
+        if ALIGNMENT_STRICT:
+            raise RuntimeError(message) from exc
+        return False
+
+    combined_output = (result.stdout or "") + (result.stderr or "")
+    if combined_output:
+        print(combined_output, end="" if combined_output.endswith("\n") else "\n")
+
+    if result.returncode != 0:
+        clear_alignment_state()
+        message = (
+            f"  [WARN] Alignment worker failed for {audio_path.name} "
+            f"(exit code {result.returncode}); continuing without subtitles"
+        )
+        print(message)
+        if ALIGNMENT_STRICT:
+            raise RuntimeError(message)
+        return False
+
+    if not all(path.exists() for path in output_paths):
+        clear_alignment_state()
+        message = (
+            f"  [WARN] Alignment worker exited successfully but did not produce "
+            f"all outputs for {audio_path.name}; continuing without subtitles"
+        )
+        print(message)
+        if ALIGNMENT_STRICT:
+            raise RuntimeError(message)
+        return False
 
     update_chapter_fields(
         chapter['index'],
@@ -1862,6 +1963,7 @@ def _run_alignment(chapter: dict, audio_path: Path, title: str, force: bool = Fa
         alignment_file=str(alignment_path.relative_to(PROJECT_ROOT)),
         subtitle_file=str(vtt_path.relative_to(PROJECT_ROOT)),
     )
+    return True
 
 
 def _cleanup_wraphash_sidecars(mp3_dir: Path) -> None:
