@@ -137,15 +137,57 @@ def remove_quarto_callouts(content: str) -> str:
     return '\n'.join(result)
 
 
+def remove_quarto_content_hidden(content: str) -> str:
+    """
+    Remove ::: {.content-hidden ...} blocks and their contents.
+
+    These wrap content meant only for specific formats (epub, pdf, html)
+    and should not appear in a plain markdown README.
+    """
+    lines = content.split('\n')
+    result = []
+    hidden_depth = 0
+
+    for line in lines:
+        stripped = line.strip()
+        if re.match(r'^:::\s*\{\.content-hidden', stripped):
+            hidden_depth += 1
+            continue
+        elif stripped == ':::' and hidden_depth > 0:
+            hidden_depth -= 1
+            continue
+        elif hidden_depth > 0:
+            continue
+        else:
+            result.append(line)
+
+    return '\n'.join(result)
+
+
+def remove_citation_keys(content: str) -> str:
+    """
+    Remove [@citation-key] references from content.
+
+    Handles single keys [@foo], multiple keys [@foo; @bar],
+    and keys with surrounding semicolons/spaces.
+    """
+    # Remove standalone citation brackets: [@key] or [@key; @key2]
+    content = re.sub(r'\s*\[(?:@[\w-]+(?:\s*;\s*@[\w-]+)*)\]', '', content)
+    return content
+
+
 def clean_for_readme(content: str) -> str:
     """
     Clean Quarto-specific syntax for plain markdown README.
 
-    Removes includes, videos, and converts callouts to blockquotes.
+    Removes includes, videos, content-hidden blocks, citations,
+    and converts callouts to blockquotes.
     """
     content = remove_quarto_includes(content)
     content = remove_quarto_videos(content)
+    content = remove_quarto_content_hidden(content)
     content = remove_quarto_callouts(content)
+    content = remove_citation_keys(content)
 
     # Remove empty lines that result from removed content (max 2 consecutive)
     content = re.sub(r'\n{4,}', '\n\n\n', content)

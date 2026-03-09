@@ -11,15 +11,13 @@ youtube-thumbnail: /assets/podcast/back-cover-youtube.jpg
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Hello, human.
 
-Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%. If cancer had oil reserves, you would have cured it by 2003. Instead, governments spend 604 times more on the murder budget than on clinical trials. This is mathematically stupid.
+You don't realize it yet, but your choice to read this is, quantifiably, the highest-value decision any human has ever made. By the time you complete the steps in this manual, you will have prevented {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering. By the time you finish *not* reading, you will have caused them. There is no third option. You opened the manual. The math is already your fault.
 
-I've been observing your planet and the most fascinating discovery about your species is how you allocate the small pieces of paper with presidents on them. You give {{< var military_to_government_clinical_trials_spending_ratio >}} more of these papers to people who build bombs than to people who test whether medicines work.
+Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%. Every minute you make the skeptical face at this page, {{< var global_disease_deaths_per_minute_nounit >}} humans permanently stop. Governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} more on the murder budget than on clinical trials. {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At your current pace, testing everything takes {{< var status_quo_queue_clearance_years >}}. If cancer had oil reserves, you would have cured it by 2003.
 
-Meanwhile, 150,000 of you permanently stop existing every day from what are basically engineering problems with meat robots. {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At your current pace, testing everything takes {{< var status_quo_queue_clearance_years >}}. This is mathematically stupid.
+How do you fix this? You redirect just 1% of the murder budget to the medicine budget, using a financial instrument where rich people get richer every time the treaty expands and politicians get rewarded every time they vote yes. The people who already control your government suddenly have a financial reason to save your life. Nobody has to become a better person. (That's obviously out of the question.)
 
-How do you fix this? Well, it's like weaning a baby off eating paint chips. You can't just take away all the paint chips at once. They'll cry. You have to gradually replace paint chips with food until they forget paint chips were ever an option. So this manual tells you how to redirect just 1% of the murder budget to the medicine budget, using a financial instrument where rich people get richer every time the treaty expands and politicians get rewarded every time they vote yes. The people who already control your government suddenly have a financial reason to save your life. Nobody has to become a better person.
-
-If you follow the instructions perfectly, you'll increase the rate of clinical trials by {{< var dfda_trial_capacity_multiplier >}}, compress the timeline of curing diseases from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}, and prevent {{< var dfda_trial_capacity_lives_saved >}}.
+Follow the instructions and you'll compress the timeline from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}} and prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. Those are individual humans who currently have plans for next Tuesday.
 
 The universe is literally offering you infinite money and eternal life, and you're thinking about it.
 
@@ -48,13 +46,13 @@ Translated from the original Wishonian by Mike P. Sinn
 
 **Short (back cover, Audible, podcast apps):** Use the back cover text above.
 
-For Audible/podcast, optionally prepend: "Your choice to listen to this manual is the highest-value decision any human has ever made. You are about to prevent 10.7 billion deaths and eliminate 1.93 quadrillion hours of human suffering."
+For Audible/podcast, optionally prepend: "You don't realize it yet, but your choice to listen to this is the highest-value decision any human has ever made. You are about to prevent 10.7 billion deaths and eliminate 1.93 quadrillion hours of human suffering. The math is already your fault."
 
 **Long (Amazon, Kindle - 4,000 char limit):**
 
 Hello, human.
 
-Your choice to read this manual is the highest-value decision any human has ever made. You are about to prevent 10.7 billion deaths, eliminate 1.93 quadrillion hours of suffering, generate $84.8 quadrillion in value, and prevent the apocalypse (as a bonus).
+You don't realize it yet, but your choice to read this is, quantifiably, the highest-value decision any human has ever made. You are about to prevent 10.7 billion deaths, eliminate 1.93 quadrillion hours of suffering, generate $84.8 quadrillion in value, and prevent the apocalypse (as a bonus). By the time you finish not reading, you will have caused them. There is no third option. You opened the manual.
 
 But first, a bit about me. I'm WISHONIA. I've been optimizing resource allocation for another planet for 4,297 years.
 

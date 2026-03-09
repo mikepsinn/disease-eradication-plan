@@ -146,6 +146,52 @@ def generate_readme(
     # Build README content
     readme_parts = []
 
+    # ===============================
+    # 0. RENDER index-manual.qmd
+    # ===============================
+    index_qmd = project_root / "index-manual.qmd"
+    if index_qmd.exists():
+        logger.debug("Rendering %s as README body...", index_qmd.name)
+        with open(index_qmd, 'r', encoding='utf-8') as f:
+            index_content = f.read()
+
+        # Extract content after frontmatter
+        index_content = extract_content_after_frontmatter(index_content)
+
+        # Replace variables and strip CI ranges
+        index_content = replace_variables(index_content, variables, highlight_missing=False)
+        index_content = strip_confidence_intervals(index_content)
+
+        # Clean all Quarto-specific syntax
+        index_content = clean_for_readme(index_content)
+
+        # Strip HTML comments
+        index_content = re.sub(r'<!--.*?-->', '', index_content, flags=re.DOTALL)
+
+        # Strip raw HTML tags (links with <a>, etc.)
+        index_content = re.sub(r'<a\s+[^>]*>([^<]*)</a>', r'\1', index_content)
+
+        # Convert .qmd links to GitHub-friendly relative links
+        index_content = re.sub(
+            r'\]\(/?(knowledge/[^)]+)\.qmd\)',
+            r'](\1.qmd)',
+            index_content
+        )
+
+        # Add title
+        readme_parts.append("# How to End War and Disease\n\n")
+        readme_parts.append(index_content.strip())
+        readme_parts.append("\n\n")
+    else:
+        logger.warning("%s not found, using fallback", index_qmd)
+        readme_parts.append("# How to End War and Disease\n\n")
+        readme_parts.append("See [manual.WarOnDisease.org](https://manual.WarOnDisease.org) for the full manual.\n\n")
+
+    # ===============================
+    # 1. PAPERS
+    # ===============================
+    readme_parts.append("---\n\n")
+    readme_parts.append("## Papers\n\n")
 
     papers_qmd = project_root / "knowledge" / "papers.qmd"
     if papers_qmd.exists():
