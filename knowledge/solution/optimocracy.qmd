@@ -1,6 +1,6 @@
 ---
 title: 'Optimocracy: The Evidence Machine'
-description: On Wishonia, the Optomitron comes free with your first government. Its Optimal Budget Generator (OBG) and Optimal Policy Generator (OPG) check which policies work by looking at the 10,000 places that already tried them. Your species skipped this step and went straight to arguing.
+description: On Wishonia, the Optimitron comes free with your first government. Its Optimal Budget Generator (OBG) and Optimal Policy Generator (OPG) check which policies work by looking at the 10,000 places that already tried them. Your species skipped this step and went straight to arguing.
 published: true
 tags:
   - solution
@@ -65,9 +65,9 @@ This is the gap between [Incentive Alignment Bonds](incentive-alignment-bonds.qm
 
 The Evidence Machine does three things. That's it. Three things. Your species has difficulty with three things, so I'll use small words.
 
-(On Wishonia, we just call this the Optomitron. It's an appliance. You plug in policies, it tells you which ones work.)
+(On Wishonia, we just call this the Optimitron. It's an appliance. You plug in policies, it tells you which ones work.)
 
-**Recommend.** The Optomitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
+**Recommend.** The Optimitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
 
 | Category | Current | Optimal | Gap | Evidence |
 |----------|---------|---------|-----|----------|
@@ -76,7 +76,7 @@ The Evidence Machine does three things. That's it. Three things. Your species ha
 | Military (discretionary) | $850B | $459B | -$391B | C (benchmarks) |
 | Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) |
 
-You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optomitron noticed. It also noticed you could cut $391 billion from the murder budget and still have the largest military on the planet. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
+You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optimitron noticed. It also noticed you could cut $391 billion from the murder budget and still have the largest military on the planet. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
 
 **Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. On Wishonia, this is called "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record.
 
@@ -118,7 +118,7 @@ Why not 50 metrics? Because each additional target creates a new way to cheat, a
 
 ![Some numbers are easy to fake. GDP per capita looks great if three billionaires move in. Median income and healthy life years are harder to game. You can't fake everyone being less dead.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
 
-"But correlation isn't causation!" Yes. Thank you. Your species discovered this in the 1800s and has been using it as an excuse to ignore data ever since. The Optomitron doesn't just check whether policies and outcomes happened in the same room. It uses the fact that 10,000 jurisdictions adopted different policies at different times to isolate what actually caused what. (The boring details: the [technical specification](../appendix/optimal-policy-generator-spec.qmd) scores every causal claim against nine criteria, and if the timing is wrong, the score is automatically zero, no matter how pretty the correlation looks.)
+"But correlation isn't causation!" Yes. Thank you. Your species discovered this in the 1800s and has been using it as an excuse to ignore data ever since. The Optimitron doesn't just check whether policies and outcomes happened in the same room. It uses the fact that 10,000 jurisdictions adopted different policies at different times to isolate what actually caused what. (The boring details: the [technical specification](../appendix/optimal-policy-generator-spec.qmd) scores every causal claim against nine criteria, and if the timing is wrong, the score is automatically zero, no matter how pretty the correlation looks.)
 
 ## Putting It Together
 
@@ -128,6 +128,6 @@ The full loop: [1% Treaty](1-percent-treaty.qmd) [@1-pct-treaty-impact-paper-202
 
 And here's why the whole thing ratchets. Each treaty expansion creates more IAB funding, which funds more evidence collection, which strengthens the case for further expansion. Evidence begets funding begets evidence. It's the same self-reinforcing loop as the [Military Industrial Complex](../solution/aligning-incentives.qmd), except instead of manufacturing orphans, it manufactures data about how to stop manufacturing orphans.
 
-Now that you know how the Optomitron works (congratulations, on Wishonia this is taught to children), the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd).
+Now that you know how the Optimitron works (congratulations, on Wishonia this is taught to children), the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd).
 
 For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd) [@optimocracy-paper-2025]. For the gory details on how the recommendation engine decides you're spending too much on corn and too little on not dying: [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] and [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025].
