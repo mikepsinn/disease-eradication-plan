@@ -920,7 +920,9 @@ def regenerate_podcast_feed(dry_run: bool = False):
             timestamps.append(ChapterTimestamp(
                 index=ch_data["index"],
                 title=ch_data["title"],
-                part=ch_data.get("part"),
+                # Podcast episode titles should use the chapter title only,
+                # not the Quarto book part/section heading from the YAML TOC.
+                part=None,
                 file=ch_data["audio_file"],
                 start_ms=ch_data.get("audio_start_ms", 0),
                 end_ms=ch_data.get("audio_end_ms", ch_data["duration_ms"]),

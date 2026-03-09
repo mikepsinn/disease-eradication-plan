@@ -144,7 +144,7 @@ Your civilization's incentive structure is the psychopath:
 
 No individual human in this loop is evil. The loop is evil. Every politician in it is making the locally rational choice: take the papers or lose your job to someone who will. It's a machine that converts good intentions into missiles, and it runs automatically.
 
-There's literally no voting your way out of this. It doesn't matter which political party is in power. Your "red team" and "blue team" argue about everything except the loop, because they're both inside it. They are all slaves to the same incentive structure, wearing different colored ties. Switching parties is like repainting the ambulance while the patient is still on fire inside it.
+There's literally no voting your way out of this. It doesn't matter which political party is in power. Your "red team" and "blue team" argue about everything except the loop, because they're both inside it. They are all slaves to the same incentive structure, wearing different colored ties. Switching parties is like changing the wallpaper in a burning building.
 
 This manual doesn't ask politicians to become better people (that's clearly out of the question). It builds a better loop. You give them MORE papers to do the OPPOSITE thing. Same dog, same tail, but now the tail is made of cured diseases and the dog gets reelected for chasing it.
 
@@ -220,13 +220,13 @@ The treaty breaks this loop. Redirect the war money to medical research, make th
 
 ### The FDA is Unsafe and Ineffective
 
-Even the money you DO spend on medicine is mostly wasted, because the system that approves treatments is a smoke detector that forwards your screams to a fax machine.
+Even the money you DO spend on medicine is mostly wasted, because the system that approves treatments is a smoke detector that works by mail.
 
 Vioxx killed an estimated 55,000 people from heart attacks [@vioxx-deaths]. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. (Yes, in the 21st century.) Then a human read it. Five years and tens of thousands of corpses later, someone noticed a pattern. This is your safety system.
 
 Your National Institutes of Health, the agency nominally responsible for finding cures, spends {{< var nih_clinical_trials_spending_pct >}} of its budget on clinical trials. The other ~97% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
 
-Then there's a {{< var efficacy_lag_years >}} delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would {{< var willing_trial_participants_global >}} other patients, and the current system has {{< var current_trial_slots_available_nounit >}} slots. That's a participation rate of {{< var current_clinical_trial_participation_rate >}}. It's like a lifeguard who confirms the life preserver floats, then zip-ties it into a glass display case to study its buoyancy profile while a billion people cough up pool water and sink in line for the two available life jackets.
+Then there's a {{< var efficacy_lag_years >}} delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would {{< var willing_trial_participants_global >}} other patients, and the current system has {{< var current_trial_slots_available_nounit >}} slots. That's a participation rate of {{< var current_clinical_trial_participation_rate >}}. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
 Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by {{< var type_ii_error_cost_ratio >}} to 1. Your safety system's main product is dead patients.
 
@@ -278,7 +278,7 @@ Your [decentralized FDA](/knowledge/solution/dfda.qmd) will rank every treatment
 
 ##### Outcome Labels
 
-Food has nutrition labels. Cigarettes have warning labels. Drugs have 40-page inserts written by liability goblins in a dialect only cursed printers can read, which nobody reads, including your doctor.
+Food has nutrition labels. Cigarettes have warning labels. Drugs have 40-page inserts written by lawyers having seizures, which nobody reads, including your doctor.
 
 Your television advertisements show a smiling human frolicking through a meadow while a voiceover lists ways the drug might kill you at auctioneer speed. The meadow human does not react to the word "stroke." Side effects include "death," listed between "constipation" and "mild rash," as if your organs failing is roughly as inconvenient as dry skin. The label says "individual results may vary," meaning outcomes range from "cured" to "deceased" (both technically qualifying). It also says "ask your doctor," but your doctor has 7 minutes per appointment and just Googled your condition in the hallway.
 
@@ -376,7 +376,7 @@ You need {{< var global_population_activism_threshold_pct >}} of humanity to vot
 
 Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](/knowledge/strategy/global-referendum.qmd) {{< var global_population_activism_threshold_pct_cite >}}. Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. Humanity discovered the cheat code for changing its own civilization and then never used it on purpose.
 
-That's {{< var treaty_campaign_voting_bloc_target_nounit >}} humans. Sounds like a lot until you remember that more than 10 times as many of you installed a slot machine disguised as an app so it could drip-feed you strangers dancing, crying, and developing conspiracy theories in portrait mode. You can get {{< var treaty_campaign_voting_bloc_target_nounit >}} to vote yes or no on the treaty. {{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to [paid referral bonuses](/knowledge/strategy/global-referendum.qmd) that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
+That's {{< var treaty_campaign_voting_bloc_target_nounit >}} humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get {{< var treaty_campaign_voting_bloc_target_nounit >}} to vote yes or no on the treaty. {{< var treaty_campaign_viral_referendum_base_case >}} of the campaign budget goes to [paid referral bonuses](/knowledge/strategy/global-referendum.qmd) that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
 
 ### Step 3: Bribe the Bribers
 
