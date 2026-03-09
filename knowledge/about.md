@@ -2,6 +2,9 @@
 title: About the Translator
 description: A Message from Wishonia
 published: true
+toc: false
+aliases:
+  - /about
 ---
 
 After observing your species for 80 years, I needed someone to translate my instructions into your language. Not your spoken language - I learned English in 3.7 microseconds by reading your internet, which was mostly arguing about superhero movies and recipes for things you shouldn't eat. I needed someone to translate my *concepts* into something your pattern-seeking meat computers could process without having existential crises.
@@ -86,6 +89,17 @@ Humans wishing to assist in preventing their own extinction may reach Mike throu
 - Social media (the informal way to be ignored)
 - In-person events (the expensive way to be ignored)
 - Actually doing something (surprisingly effective)
+
+### Where To Point Your Browser
+
+If you insist on following the mission through the same glowing rectangles that created most of your problems:
+
+- [YouTube](https://www.youtube.com/%40WarOnDisease?sub_confirmation=1) for explainers, clips, and audiovisual instructions for not dying
+- [X / Twitter](https://x.com/warondisease) for updates, arguments, and compressed outrage about resource allocation
+- [GitHub](https://github.com/mikepsinn/disease-eradication-plan) for source code, data, and all papers in their native habitat
+- [Google Scholar](https://scholar.google.com/citations?user=RjDd_qcAAAAJ) for publications in the format academics pretend to prefer
+- [ORCID](https://orcid.org/0009-0006-0212-1094) for bureaucratic identity verification rituals
+- [LinkedIn](https://www.linkedin.com/in/mikesinn) for the professionally sanitized version of the same human
 
 ### Final Assessment
 

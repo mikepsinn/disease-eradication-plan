@@ -5,7 +5,7 @@ Footer Generator
 
 Generates a slim shared footer HTML file used by all Quarto sites.
 Copyright/license + CTA links only. Social links and paper listings
-live on /links and /papers respectively.
+do not live in the core conversion pages.
 
 Usage:
     from dih_models.footer_generator import generate_footer_html
@@ -44,7 +44,7 @@ def generate_footer_html(project_root: Path) -> Path:
     Generate assets/html/generated-footer.html shared by all sites.
 
     Slim footer: copyright/license + direct Amazon buy link + CTA.
-    Social links and paper listings live on /links and /papers.
+    Keep the footer focused on direct conversion CTAs.
 
     Returns:
         Path to the generated file
@@ -58,6 +58,7 @@ def generate_footer_html(project_root: Path) -> Path:
   <p style="margin: 0.5rem 0;">
     &copy; 2026 <a href="https://acceleratedmedicine.org" style="color: #8b7355;">The Institute for Accelerated Medicine</a> |
     <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color: #8b7355;">CC BY-NC 4.0</a> |
+    <a href="https://manual.WarOnDisease.org/knowledge/about.html" style="color: #8b7355;">About &amp; Follow</a> |
     <a href="https://github.com/mikepsinn/disease-eradication-plan" style="color: #8b7355;">&#128194; Source Code &amp; Data</a>
   </p>
 {cta_html}

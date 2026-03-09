@@ -167,6 +167,7 @@ book:
         - knowledge/appendix/real-world-evidence-historical-success.qmd # ✅ Pre-1962 system analysis ~12p
         - knowledge/papers.qmd
         - knowledge/references.qmd # CSL-rendered bibliography
+        - knowledge/about.md
         - knowledge/appendix/copyright.qmd # Back matter - copyright page at end for Kindle
         - knowledge/appendix/back-cover.qmd # Back cover blurb - last page
 
@@ -304,10 +305,6 @@ links:
       url: "https://books2read.com/u/baegEq"
       subtitle: "Apple Books, Barnes & Noble, Kobo, and more"
       icon: "fa-solid fa-store"
-    - label: "Goodreads"
-      url: "https://www.goodreads.com/book/show/248248875-how-to-end-war-and-disease"
-      subtitle: "Rate & review"
-      icon: "fa-brands fa-goodreads"
   listen:
     - label: "Listen"
       url: "podcast.html"

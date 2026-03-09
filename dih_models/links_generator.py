@@ -100,7 +100,7 @@ def _render_link(link: Dict[str, Any]) -> str:
 
     # Escape @ in URLs and subtitle text so Pandoc doesn't interpret as citation references
     url_escaped = url.replace("@", "&#64;")
-    subtitle_escaped = subtitle.replace("@", "&#64;") if subtitle else ""
+    subtitle_escaped = subtitle.replace("\\@", "@").replace("@", "&#64;") if subtitle else ""
 
     cls = "link-btn primary" if primary else "link-btn"
     icon_html = f'<i class="{icon}" aria-hidden="true"></i> ' if icon else ""
@@ -148,7 +148,6 @@ def generate_links_qmd(project_root: Path) -> Path:
         ("Skull Vibration Ports", manual_links.get("listen", [])),
         ("Murdered Trees", manual_links.get("buy", [])),
         ("Glowing Rectangle", manual_links.get("read", [])),
-        ("Ongoing Surveillance", shared_links.get("follow", [])),
     ]
 
     sections_html = "\n\n".join(
