@@ -2661,6 +2661,20 @@ GLOBAL_DISEASE_DEATHS_DAILY = Parameter(
     hide_ci=True,  # CI clutters display for this well-known WHO statistic
 )  # 150,000 deaths/day from all disease/aging
 
+GLOBAL_DISEASE_DEATHS_PER_MINUTE = Parameter(
+    GLOBAL_DISEASE_DEATHS_DAILY / 1440,
+    source_type="calculated",
+    description="Global deaths per minute from all disease and aging",
+    display_name="Global Deaths per Minute from Disease",
+    unit="deaths/minute",
+    confidence="high",
+    keywords=["mortality", "per minute", "disease", "aging"],
+    latex_symbol=r"Deaths_{disease,min}",
+    latex=r"\frac{Deaths_{disease,daily}}{1440}",
+    inputs=["GLOBAL_DISEASE_DEATHS_DAILY"],
+    compute=lambda p: p["GLOBAL_DISEASE_DEATHS_DAILY"] / 1440,
+)
+
 # ===================================================================
 # DISEASE BURDEN AND RESEARCH ACCELERATION POTENTIAL
 # ===================================================================

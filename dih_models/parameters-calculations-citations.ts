@@ -3254,6 +3254,16 @@ export const GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP: Parameter = {
   latex: "\\begin{gathered}\nr_{destruct:GDP} = \\frac{Cost_{destruct}}{GDP_{global}} = \\frac{\\$13.2T}{\\$115T} = 11.5\\%\n\\\\[0.5em]\n\\text{where } Cost_{destruct} = Spending_{mil} + Cost_{cyber} = \\$2.72T + \\$10.5T = \\$13.2T\n\\end{gathered}",
 };
 
+export const GLOBAL_DISEASE_DEATHS_PER_MINUTE: Parameter = {
+  value: 104.16666666666667,
+  unit: "deaths/minute",
+  displayName: "Global Deaths per Minute from Disease",
+  description: "Global deaths per minute from all disease and aging",
+  sourceType: "calculated",
+  confidence: "high",
+  latex: "\\frac{Deaths_{disease,daily}}{1440}",
+};
+
 export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
   value: 400152130131680.9,
   unit: "USD/year",
@@ -5944,6 +5954,7 @@ export const parameters = {
   GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL,
   GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025,
   GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP,
+  GLOBAL_DISEASE_DEATHS_PER_MINUTE,
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_MILITARY_SPENDING_PER_CAPITA_ANNUAL,
@@ -8059,9 +8070,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 522,
+  total: 523,
   external: 193,
-  calculated: 223,
+  calculated: 224,
   definitions: 106,
   citations: 138,
 } as const;
