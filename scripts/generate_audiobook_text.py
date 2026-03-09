@@ -115,35 +115,71 @@ def _log_error(message: str) -> None:
 # Programmatic stripping (deterministic, easy stuff)
 # ---------------------------------------------------------------------------
 
+NON_HTML_BOOK_FORMATS = frozenset({"epub", "pdf", "docx"})
+
+
+def _strip_narration_excluded_divs(content: str) -> str:
+    """Remove Quarto div blocks that should never be narrated.
+
+    Supported exclusions:
+    - `::: {.no-narration}` blocks
+    - `::: {.content-visible when-format="html"}` blocks
+    - Nested `content-hidden` blocks that collectively hide all non-HTML book
+      formats (`epub`, `pdf`, and `docx`), which makes them HTML-only content
+      such as embedded videos.
+    """
+    result: list[str] = []
+    stack: list[tuple[bool, set[str]]] = []
+    opener_pattern = re.compile(r'^:::+\s*\{([^}]*)\}\s*$')
+    closer_pattern = re.compile(r'^:::+\s*$')
+
+    for line in content.split('\n'):
+        stripped = line.strip()
+        opener_match = opener_pattern.match(stripped)
+        if opener_match:
+            attrs = opener_match.group(1)
+            parent_excluded = stack[-1][0] if stack else False
+            hidden_formats = set(stack[-1][1]) if stack else set()
+            excluded = parent_excluded
+
+            if '.no-narration' in attrs:
+                excluded = True
+
+            format_match = re.search(r'when-format\s*=\s*"([^"]+)"', attrs)
+            when_format = format_match.group(1).strip() if format_match else None
+
+            if '.content-visible' in attrs and when_format == 'html':
+                excluded = True
+
+            if '.content-hidden' in attrs and when_format in NON_HTML_BOOK_FORMATS:
+                hidden_formats.add(when_format)
+                if NON_HTML_BOOK_FORMATS.issubset(hidden_formats):
+                    excluded = True
+
+            stack.append((excluded, hidden_formats))
+            continue
+
+        if closer_pattern.match(stripped):
+            if stack:
+                stack.pop()
+            continue
+
+        if stack and stack[-1][0]:
+            continue
+
+        result.append(line)
+
+    return '\n'.join(result)
+
+
 def strip_qmd_markup(content: str) -> str:
     """
     Strip Quarto/Markdown markup that has no business in an audiobook.
     Keeps prose, tables, lists, and headers as-is for the LLM to handle.
     """
-    # Remove .no-narration blocks entirely (content + markers).
-    # Use ::: {.no-narration} in QMD to exclude tables, charts, etc. from audiobook.
-    # Must run before general div stripping.
-    def _strip_no_narration(content: str) -> str:
-        """Remove ::: {.no-narration} blocks, handling nested ::: divs."""
-        result = []
-        lines = content.split('\n')
-        i = 0
-        while i < len(lines):
-            if re.match(r'^:+\s*\{\.no-narration\}', lines[i]):
-                # Count nesting depth to find the matching closer
-                depth = 1
-                i += 1
-                while i < len(lines) and depth > 0:
-                    if re.match(r'^:+\s*\{', lines[i]):
-                        depth += 1
-                    elif re.match(r'^:+\s*$', lines[i]):
-                        depth -= 1
-                    i += 1
-            else:
-                result.append(lines[i])
-                i += 1
-        return '\n'.join(result)
-    content = _strip_no_narration(content)
+    # Remove narration-excluded Quarto divs before any other stripping so their
+    # inner prose, captions, or embed labels never leak into the audiobook.
+    content = _strip_narration_excluded_divs(content)
 
     # Remove YAML frontmatter
     content = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, flags=re.DOTALL)
