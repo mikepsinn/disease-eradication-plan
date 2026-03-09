@@ -145,6 +145,7 @@ book:
         # - knowledge/call-to-action/three-actions.qmd
         - knowledge/appendix/treaty-feasibility.qmd # ✅ (detailed cost/timeline analysis, $90M estimate)
         - knowledge/appendix/recruitment-and-propaganda-plan.qmd # ✅ (EXCELLENT voice) ~7p
+        - knowledge/appendix/conclusion.qmd # ✅ Conclusion ~1p
   # appendices: Commented to get rid of the Appendix prefix in the titles
     - part: "Economics & Finance"
       chapters:
