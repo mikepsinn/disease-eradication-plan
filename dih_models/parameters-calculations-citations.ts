@@ -3463,6 +3463,50 @@ export const INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO: Parameter = 
   latex: "\\begin{gathered}\nRatio_{ind:gov} \\\\\n= \\frac{Spending_{trials}}{Spending_{trials,gov}} - 1 \\\\\n= \\frac{\\$60B}{\\$4.5B} - 1 \\\\\n= 12.3\n\\end{gathered}",
 };
 
+export const LAUNCH_EXPECTED_READY_PRINCIPALS: Parameter = {
+  value: 5.8500000000000005,
+  unit: "people",
+  displayName: "Expected Ready Launch Principals",
+  description: "Expected number of ready launch principals within the model horizon",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT x LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL",
+  latex: "E[N_{ready}] = N_{align} \\times P_{ready|align}",
+};
+
+export const LAUNCH_PRINCIPALS_REQUIRED: Parameter = {
+  value: 4.0,
+  unit: "people",
+  displayName: "Required Lead Principals for Launch",
+  description: "Minimum number of lead principals required to finance and launch a credible treaty campaign",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "ceil((TREATY_CAMPAIGN_TOTAL_COST x LAUNCH_REDUNDANCY_FACTOR) / LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD)",
+  latex: "\\begin{gathered}\nX \\\\\n= \\left\\lceil \\frac{Cost_{campaign} \\cdot R_{launch}}{C_{principal}} \\right\\rceil\n\\end{gathered}",
+};
+
+export const LAUNCH_P_AT_LEAST_REQUIRED_PRINCIPALS: Parameter = {
+  value: 0.8634467405769832,
+  unit: "rate",
+  displayName: "P(Launch Coalition Forms)",
+  description: "Probability that enough ready principals emerge to launch a credible treaty campaign within the model horizon",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "Binomial tail with n = LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT, p = LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL, threshold = LAUNCH_PRINCIPALS_REQUIRED",
+  latex: "\\begin{gathered}\nP_{launch} \\\\\n= \\sum_{k=X}^{N_{align}} \\binom{N_{align}}{k} P_{ready|align}^{k} (1 - P_{ready|align})^{N_{align}-k}\n\\end{gathered}",
+};
+
+export const LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL: Parameter = {
+  value: 0.195,
+  unit: "rate",
+  displayName: "Ready Probability per High-Alignment Principal",
+  description: "Probability a high-alignment principal becomes a ready launch principal within the model horizon",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT x LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED x LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED",
+  latex: "\\begin{gathered}\nP_{ready|align} \\\\\n= P_{reach|align} \\times P_{persuade|reach} \\times P_{execute|persuaded}\n\\end{gathered}",
+};
+
 export const LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE: Parameter = {
   value: 0.0,
   unit: "years/decade",
@@ -5469,6 +5513,72 @@ export const INSTITUTIONAL_INVESTOR_MIN: Parameter = {
   confidence: "high",
 };
 
+export const LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD: Parameter = {
+  value: 350000000.0,
+  unit: "USD",
+  displayName: "Average Commitment per Lead Principal",
+  description: "Average capital commitment from a persuaded lead principal toward launching the treaty campaign",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [100000000.0, 750000000.0],
+  conservative: true,
+};
+
+export const LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED: Parameter = {
+  value: 0.65,
+  unit: "rate",
+  displayName: "Execution Rate Given Persuasion",
+  description: "Probability a persuaded high-alignment principal is willing and able to move capital, staff, and institutions",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [0.3, 0.9],
+  conservative: true,
+};
+
+export const LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT: Parameter = {
+  value: 30.0,
+  unit: "people",
+  displayName: "High-Alignment Lead Principals",
+  description: "Number of unusually aligned, implementation-capable principals globally for whom the treaty thesis is a natural fit",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [8.0, 100.0],
+  conservative: true,
+};
+
+export const LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED: Parameter = {
+  value: 0.6,
+  unit: "rate",
+  displayName: "Persuasion Rate Given Reach",
+  description: "Probability a reached high-alignment principal accepts the launch thesis after meaningful review",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [0.25, 0.85],
+  conservative: true,
+};
+
+export const LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT: Parameter = {
+  value: 0.5,
+  unit: "rate",
+  displayName: "Reach Probability for High-Alignment Principals",
+  description: "Probability a high-alignment principal meaningfully encounters the launch thesis within the model horizon",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [0.2, 0.85],
+  conservative: true,
+};
+
+export const LAUNCH_REDUNDANCY_FACTOR: Parameter = {
+  value: 1.25,
+  unit: "multiplier",
+  displayName: "Launch Redundancy Factor",
+  description: "Funding redundancy above bare minimum required to survive defections, delay, and ordinary political friction",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [1.0, 2.0],
+  conservative: true,
+};
+
 export const LOBBYIST_BOND_INVESTMENT_MAX: Parameter = {
   value: 20000000.0,
   unit: "USD",
@@ -6100,6 +6210,10 @@ export const parameters = {
   IAB_POLITICAL_INCENTIVE_FUNDING_ANNUAL,
   IAB_VS_DEFENSE_LOBBY_RATIO_AT_1PCT,
   INDUSTRY_VS_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO,
+  LAUNCH_EXPECTED_READY_PRINCIPALS,
+  LAUNCH_PRINCIPALS_REQUIRED,
+  LAUNCH_P_AT_LEAST_REQUIRED_PRINCIPALS,
+  LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL,
   LIFE_EXPECTANCY_GAIN_1883_1962_YEARS_PER_DECADE,
   LIFE_EXPECTANCY_GAIN_1962_2019_YEARS_PER_DECADE,
   MEDICAL_RESEARCH_PCT_OF_DISEASE_BURDEN,
@@ -6290,6 +6404,12 @@ export const parameters = {
   IAB_MECHANISM_ANNUAL_COST,
   IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
   INSTITUTIONAL_INVESTOR_MIN,
+  LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD,
+  LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED,
+  LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT,
+  LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED,
+  LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT,
+  LAUNCH_REDUNDANCY_FACTOR,
   LOBBYIST_BOND_INVESTMENT_MAX,
   MILITARY_REDIRECT_GDP_BOOST_AT_30PCT,
   MINUTES_PER_HOUR,
@@ -8222,10 +8342,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 535,
+  total: 545,
   external: 194,
-  calculated: 230,
-  definitions: 111,
+  calculated: 234,
+  definitions: 117,
   citations: 139,
 } as const;
 

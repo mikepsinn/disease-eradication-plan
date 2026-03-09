@@ -9620,3 +9620,203 @@ CHAIN_P_AT_LEAST_ONE_ENGAGES = Parameter(
     compute=lambda ctx: 1.0 - ctx["CHAIN_P_NO_IMPLEMENTER_ENGAGES"],
     latex_symbol=r"P_{reach}",
 )
+
+
+# ============================================================================
+# MINIMAL LAUNCH PROBABILITY MODEL: CAN A CREDIBLE COALITION FORM?
+# ============================================================================
+# This is the smallest practical model needed to move from:
+#   "some people will encounter the idea"
+# to:
+#   "a serious launch coalition is likely to form."
+#
+# It deliberately avoids modeling the entire civilization. Instead it asks:
+# 1. How many lead principals are needed to credibly launch the campaign?
+# 2. How large is the unusually aligned, high-agency principal pool?
+# 3. Among that pool, how many are reached, persuaded, and willing/able to execute?
+
+
+def _binomial_p_at_least(n: int, p: float, k_min: int) -> float:
+    """Binomial tail probability P(X >= k_min) for coalition formation."""
+    n = max(0, int(n))
+    if k_min <= 0:
+        return 1.0
+    if n < k_min or p <= 0:
+        return 0.0
+    if p >= 1:
+        return 1.0
+    cdf_below = sum(math.comb(n, k) * (p ** k) * ((1 - p) ** (n - k)) for k in range(k_min))
+    return max(0.0, min(1.0, 1.0 - cdf_below))
+
+
+LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD = Parameter(
+    350_000_000,
+    source_type="definition",
+    description="Average capital commitment from a persuaded lead principal toward launching the treaty campaign",
+    display_name="Average Commitment per Lead Principal",
+    unit="USD",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(100_000_000, 750_000_000),
+    conservative=True,
+    validation_min=50_000_000,
+    validation_max=2_000_000_000,
+    keywords=["launch", "principal", "commitment", "capital", "coalition", "campaign"],
+    latex_symbol=r"C_{principal}",
+)
+
+LAUNCH_REDUNDANCY_FACTOR = Parameter(
+    1.25,
+    source_type="definition",
+    description="Funding redundancy above bare minimum required to survive defections, delay, and ordinary political friction",
+    display_name="Launch Redundancy Factor",
+    unit="multiplier",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(1.0, 2.0),
+    conservative=True,
+    validation_min=1.0,
+    validation_max=3.0,
+    keywords=["launch", "redundancy", "buffer", "coalition", "friction"],
+    latex_symbol=r"R_{launch}",
+)
+
+LAUNCH_PRINCIPALS_REQUIRED = Parameter(
+    math.ceil((float(TREATY_CAMPAIGN_TOTAL_COST) * float(LAUNCH_REDUNDANCY_FACTOR))
+              / float(LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD)),
+    source_type="calculated",
+    description="Minimum number of lead principals required to finance and launch a credible treaty campaign",
+    display_name="Required Lead Principals for Launch",
+    unit="people",
+    formula="ceil((TREATY_CAMPAIGN_TOTAL_COST x LAUNCH_REDUNDANCY_FACTOR) / LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD)",
+    latex=r"X = \left\lceil \frac{Cost_{campaign} \cdot R_{launch}}{C_{principal}} \right\rceil",
+    keywords=["launch", "coalition", "principals", "required", "threshold"],
+    inputs=["TREATY_CAMPAIGN_TOTAL_COST", "LAUNCH_REDUNDANCY_FACTOR", "LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD"],
+    compute=lambda ctx: math.ceil(
+        (ctx["TREATY_CAMPAIGN_TOTAL_COST"] * ctx["LAUNCH_REDUNDANCY_FACTOR"])
+        / ctx["LAUNCH_AVG_PRINCIPAL_COMMITMENT_USD"]
+    ),
+    latex_symbol=r"X",
+)
+
+LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT = Parameter(
+    30,
+    source_type="definition",
+    description="Number of unusually aligned, implementation-capable principals globally for whom the treaty thesis is a natural fit",
+    display_name="High-Alignment Lead Principals",
+    unit="people",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(8, 100),
+    conservative=True,
+    validation_min=4,
+    validation_max=500,
+    keywords=["launch", "high alignment", "principals", "tail", "coalition", "billionaires"],
+    latex_symbol=r"N_{align}",
+)
+
+LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT = Parameter(
+    0.50,
+    source_type="definition",
+    description="Probability a high-alignment principal meaningfully encounters the launch thesis within the model horizon",
+    display_name="Reach Probability for High-Alignment Principals",
+    unit="rate",
+    confidence="low",
+    distribution="beta",
+    confidence_interval=(0.20, 0.85),
+    conservative=True,
+    validation_min=0.01,
+    validation_max=0.95,
+    keywords=["launch", "reach", "high alignment", "principal", "encounter"],
+    latex_symbol=r"P_{reach|align}",
+)
+
+LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED = Parameter(
+    0.60,
+    source_type="definition",
+    description="Probability a reached high-alignment principal accepts the launch thesis after meaningful review",
+    display_name="Persuasion Rate Given Reach",
+    unit="rate",
+    confidence="low",
+    distribution="beta",
+    confidence_interval=(0.25, 0.85),
+    conservative=True,
+    validation_min=0.01,
+    validation_max=0.95,
+    keywords=["launch", "persuasion", "reached", "convert", "high alignment"],
+    latex_symbol=r"P_{persuade|reach}",
+)
+
+LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED = Parameter(
+    0.65,
+    source_type="definition",
+    description="Probability a persuaded high-alignment principal is willing and able to move capital, staff, and institutions",
+    display_name="Execution Rate Given Persuasion",
+    unit="rate",
+    confidence="low",
+    distribution="beta",
+    confidence_interval=(0.30, 0.90),
+    conservative=True,
+    validation_min=0.01,
+    validation_max=0.95,
+    keywords=["launch", "execution", "persuasion", "high alignment", "action"],
+    latex_symbol=r"P_{execute|persuaded}",
+)
+
+LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL = Parameter(
+    float(LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT)
+    * float(LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED)
+    * float(LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED),
+    source_type="calculated",
+    description="Probability a high-alignment principal becomes a ready launch principal within the model horizon",
+    display_name="Ready Probability per High-Alignment Principal",
+    unit="rate",
+    formula="LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT x LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED x LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED",
+    latex=r"P_{ready|align} = P_{reach|align} \times P_{persuade|reach} \times P_{execute|persuaded}",
+    keywords=["launch", "ready", "principal", "probability", "high alignment"],
+    inputs=["LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT", "LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED",
+            "LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED"],
+    compute=lambda ctx: (
+        ctx["LAUNCH_REACH_PROBABILITY_HIGH_ALIGNMENT"]
+        * ctx["LAUNCH_PERSUADE_PROBABILITY_GIVEN_REACHED"]
+        * ctx["LAUNCH_EXECUTE_PROBABILITY_GIVEN_PERSUADED"]
+    ),
+    latex_symbol=r"P_{ready|align}",
+)
+
+LAUNCH_EXPECTED_READY_PRINCIPALS = Parameter(
+    float(LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT) * float(LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL),
+    source_type="calculated",
+    description="Expected number of ready launch principals within the model horizon",
+    display_name="Expected Ready Launch Principals",
+    unit="people",
+    formula="LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT x LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL",
+    latex=r"E[N_{ready}] = N_{align} \times P_{ready|align}",
+    keywords=["launch", "expected", "ready", "principals", "coalition"],
+    inputs=["LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT", "LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL"],
+    compute=lambda ctx: ctx["LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT"] * ctx["LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL"],
+    latex_symbol=r"E[N_{ready}]",
+)
+
+LAUNCH_P_AT_LEAST_REQUIRED_PRINCIPALS = Parameter(
+    _binomial_p_at_least(
+        int(round(float(LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT))),
+        float(LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL),
+        int(math.ceil(float(LAUNCH_PRINCIPALS_REQUIRED))),
+    ),
+    source_type="calculated",
+    description="Probability that enough ready principals emerge to launch a credible treaty campaign within the model horizon",
+    display_name="P(Launch Coalition Forms)",
+    unit="rate",
+    formula="Binomial tail with n = LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT, p = LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL, threshold = LAUNCH_PRINCIPALS_REQUIRED",
+    latex=r"P_{launch} = \sum_{k=X}^{N_{align}} \binom{N_{align}}{k} P_{ready|align}^{k} (1 - P_{ready|align})^{N_{align}-k}",
+    keywords=["launch", "probability", "coalition", "principals", "headline"],
+    inputs=["LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT", "LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL",
+            "LAUNCH_PRINCIPALS_REQUIRED"],
+    compute=lambda ctx: _binomial_p_at_least(
+        int(round(ctx["LAUNCH_HIGH_ALIGNMENT_PRINCIPALS_COUNT"])),
+        float(ctx["LAUNCH_P_READY_PER_HIGH_ALIGNMENT_PRINCIPAL"]),
+        int(math.ceil(ctx["LAUNCH_PRINCIPALS_REQUIRED"])),
+    ),
+    latex_symbol=r"P_{launch}",
+)

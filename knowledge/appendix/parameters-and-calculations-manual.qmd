@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 337 parameters used in the analysis, organized by type:
+This appendix documents all 348 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 128
-- Calculated values: 139
-- Core definitions: 70
+- Calculated values: 143
+- Core definitions: 77
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (139 parameters) • [External Data Sources](#sec-external) (128 parameters) • [Core Definitions](#sec-definitions) (70 parameters)
+[Calculated Values](#sec-calculated) (143 parameters) • [External Data Sources](#sec-external) (128 parameters) • [Core Definitions](#sec-definitions) (77 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4328,6 +4328,117 @@ $$
 
 :::
 
+### Required Lead Principals for Launch: 4 people {#sec-launch_principals_required}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Minimum number of lead principals required to finance and launch a credible treaty campaign
+
+**Inputs**:
+
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+- [Launch Redundancy Factor](#sec-launch_redundancy_factor): 1.25x (95% CI: 1x - 2x)
+- [Average Commitment per Lead Principal](#sec-launch_avg_principal_commitment_usd): $350M (95% CI: $100M - $750M)
+
+$$
+\begin{gathered}
+X \\
+= \left\lceil \frac{Cost_{campaign} \cdot R_{launch}}{C_{principal}} \right\rceil
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-launch_principals_required.qmd >}}
+
+{{< include ../figures/sensitivity-table-launch_principals_required.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-launch_principals_required.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-launch_principals_required.qmd >}}
+
+:::
+
+### P(Launch Coalition Forms): 86.3% {#sec-launch_p_at_least_required_principals}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability that enough ready principals emerge to launch a credible treaty campaign within the model horizon
+
+**Inputs**:
+
+- [High-Alignment Lead Principals](#sec-launch_high_alignment_principals_count): 30 people (95% CI: 8 people - 100 people)
+- [Ready Probability per High-Alignment Principal](#sec-launch_p_ready_per_high_alignment_principal) 🔢: 19.5%
+- [Required Lead Principals for Launch](#sec-launch_principals_required) 🔢: 4 people
+
+$$
+\begin{gathered}
+P_{launch} \\
+= \sum_{k=X}^{N_{align}} \binom{N_{align}}{k} P_{ready|align}^{k} (1 - P_{ready|align})^{N_{align}-k}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-launch_p_at_least_required_principals.qmd >}}
+
+{{< include ../figures/sensitivity-table-launch_p_at_least_required_principals.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-launch_p_at_least_required_principals.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-launch_p_at_least_required_principals.qmd >}}
+
+:::
+
+### Ready Probability per High-Alignment Principal: 19.5% {#sec-launch_p_ready_per_high_alignment_principal}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability a high-alignment principal becomes a ready launch principal within the model horizon
+
+**Inputs**:
+
+- [Reach Probability for High-Alignment Principals](#sec-launch_reach_probability_high_alignment): 50% (95% CI: 20% - 85%)
+- [Persuasion Rate Given Reach](#sec-launch_persuade_probability_given_reached): 60% (95% CI: 25% - 85%)
+- [Execution Rate Given Persuasion](#sec-launch_execute_probability_given_persuaded): 65% (95% CI: 30% - 90%)
+
+$$
+\begin{gathered}
+P_{ready|align} \\
+= P_{reach|align} \times P_{persuade|reach} \times P_{execute|persuaded}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-launch_p_ready_per_high_alignment_principal.qmd >}}
+
+{{< include ../figures/sensitivity-table-launch_p_ready_per_high_alignment_principal.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-launch_p_ready_per_high_alignment_principal.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-launch_p_ready_per_high_alignment_principal.qmd >}}
+
+:::
+
 ### Ratio of Military to Government Clinical Trials Spending: 604:1 {#sec-military_to_government_clinical_trials_spending_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5664,6 +5775,53 @@ Funding_{treaty} \\
 $$
 
 *✓ High confidence*
+
+:::
+
+### Amortized Annual Treaty Campaign Cost: $250M {#sec-treaty_campaign_annual_cost_amortized}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Amortized annual campaign cost (total cost ÷ campaign duration)
+
+**Inputs**:
+
+- [Treaty Campaign Duration](#sec-treaty_campaign_duration_years): 4 years (95% CI: 3 years - 5 years)
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1B
+
+$$
+\begin{gathered}
+Cost_{camp,amort} \\
+= \frac{Cost_{campaign}}{T_{campaign}} \\
+= \frac{\$1B}{4} \\
+= \$250M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_campaign_annual_cost_amortized.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_campaign_annual_cost_amortized.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_campaign_annual_cost_amortized.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_campaign_annual_cost_amortized.qmd >}}
 
 :::
 
@@ -12248,6 +12406,138 @@ Minimum investment for institutional investors
 
 :::
 
+### Average Commitment per Lead Principal: $350M {#sec-launch_avg_principal_commitment_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average capital commitment from a persuaded lead principal toward launching the treaty campaign
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100M, $750M] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $100M and $750M (±93%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-launch_avg_principal_commitment_usd.qmd >}}
+
+*Core definition*
+
+:::
+
+### Execution Rate Given Persuasion: 65% {#sec-launch_execute_probability_given_persuaded}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability a persuaded high-alignment principal is willing and able to move capital, staff, and institutions
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [30%, 90%] • Distribution: Beta
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 30% and 90% (±46%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-launch_execute_probability_given_persuaded.qmd >}}
+
+*Core definition*
+
+:::
+
+### High-Alignment Lead Principals: 30 people {#sec-launch_high_alignment_principals_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of unusually aligned, implementation-capable principals globally for whom the treaty thesis is a natural fit
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [8 people, 100 people] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 8 people and 100 people (±153%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-launch_high_alignment_principals_count.qmd >}}
+
+*Core definition*
+
+:::
+
+### Persuasion Rate Given Reach: 60% {#sec-launch_persuade_probability_given_reached}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability a reached high-alignment principal accepts the launch thesis after meaningful review
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [25%, 85%] • Distribution: Beta
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 25% and 85% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-launch_persuade_probability_given_reached.qmd >}}
+
+*Core definition*
+
+:::
+
+### Reach Probability for High-Alignment Principals: 50% {#sec-launch_reach_probability_high_alignment}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability a high-alignment principal meaningfully encounters the launch thesis within the model horizon
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [20%, 85%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 20% and 85% (±65%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-launch_reach_probability_high_alignment.qmd >}}
+
+*Core definition*
+
+:::
+
+### Launch Redundancy Factor: 1.25x {#sec-launch_redundancy_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Funding redundancy above bare minimum required to survive defections, delay, and ordinary political friction
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1x, 2x] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 1x and 2x (±40%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-launch_redundancy_factor.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Maximum Bond Investment for Lobbyist Incentives: $20M {#sec-lobbyist_bond_investment_max}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -12427,6 +12717,28 @@ Reserve fund / contingency buffer (10% of total campaign cost). Using industry s
 #### Input Distribution
 
 {{< include ../figures/distribution-treaty_campaign_budget_reserve.qmd >}}
+
+*Core definition*
+
+:::
+
+### Treaty Campaign Duration: 4 years {#sec-treaty_campaign_duration_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty campaign duration (3-5 year range, using midpoint)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [3 years, 5 years] • Distribution: Triangular
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 3 years and 5 years (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The triangular distribution means values cluster around a most-likely point but can range higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-treaty_campaign_duration_years.qmd >}}
 
 *Core definition*
 
