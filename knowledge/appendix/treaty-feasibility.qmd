@@ -43,33 +43,27 @@ Using BLS CPI data [@bls-cpi-inflation-calculator]:
 
 ## Cost for a 1% Health Treaty
 
-This one touches military budgets. Suggest moving 1% of the explosion money and politicians look at you like you've asked to borrow their favorite child. The reaction is disproportionate to the request, but proportionate to the lobbying dollars behind the status quo. So budget 3-4x what landmines cost.
+Historical treaty-signing campaigns often ran on tens of millions. This is not just a signature campaign. It is a referendum engine, lobbying operation, diplomatic process, ratification push, and reserve fund aimed directly at military budgets. So the relevant planning number is not the lean historical benchmark. It is the full adversarial campaign model used elsewhere in this project.
 
-| Phase | Duration | Estimated Cost | Who Pays |
-| :--- | :--- | :--- | :--- |
-| **1. Pre-negotiations**<br>(Coalition building, expert drafts) | 18–24 months | **$8–12M** | Philanthropy (Gates, Open Philanthropy, etc.) + Champion Governments |
-| **2. Global Campaign**<br>(Platform, {{< var global_population_activism_threshold_pct >}} consent, media) | 3–5 years | **$45–80M** | Philanthropy + Crowd-funding |
-| **3. Diplomatic Process**<br>(Conferences, delegate travel) | 18–30 months | **$15–25M** | Host Governments + UN Trust Fund |
-| **4. Ratification Drive**<br>(Legal reviews, parliamentary aid) | 2–4 years | **$5–8M** | Philanthropy |
-| **5. Contingency**<br>(Opposition management) | Ongoing | **$10–15M** | Strategic Comms / Lobbying |
-
-**Total: $83–140 Million**
-
-![How long each step takes and how much it costs to convince countries to spend 1 percent of their war budgets on not dying.](/assets/images/treaty-feasibility/treaty-feasibility-section-campaign-roadmap-timeline-bw-academic.jpg)
+| Budget Frame | What It Covers | Cost |
+| :--- | :--- | :--- |
+| **Historical treaty-signing benchmark** | NGO-led campaigns to get signatures on paper | **$25-50M** (2024 USD) |
+| **Modeled 1% Treaty campaign** | Referendum, lobbying, diplomacy, legal work, reserve fund | **{{< var treaty_campaign_total_cost >}}** |
+| **Modeled annual burn** | Average spend across the campaign window | **{{< var treaty_campaign_annual_cost_amortized >}}/year** |
 
 ### The Math
 
-Signing the treaty: ~$83M.
+Modeled campaign cost: {{< var treaty_campaign_total_cost >}}.
 What the treaty unlocks: {{< var treaty_annual_funding >}}/year.
 Forever.
 
-That's over 300:1 return on paperwork. Your best-performing stocks don't do that. This isn't a stock. It's a treaty. But the return is real (which is more than most stocks can say).
+Even before you count downstream health gains, this is a one-year redirection of government spending far larger than the campaign that triggered it. You are not buying signatures. You are buying leverage.
 
 ## How to Make Governments Sign Things
 
 Politicians move when they see voters demanding it and political cover to do it. Give them both.
 
-First, prove public demand. Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. Every nonviolent campaign [@3-5-rule] with {{< var global_population_activism_threshold_pct >}}+ participation has succeeded. That's not activism. That's a mandate.
+First, prove public demand. Get {{< var global_population_activism_threshold_pct >}} of the population [@3-5-rule] ({{< var treaty_campaign_voting_bloc_target_nounit >}} people) to say "yes" with verified identity. The {{< var global_population_activism_threshold_pct >}} finding [@3-5-rule] is not a magic law of treaty ratification. It is a coordination heuristic: the point where a cause stops looking like a niche moral hobby and starts looking like a voting bloc large enough to create career risk. That's not activism. That's a mandate.
 
 Second, prove it's safe. Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness. Give them the numbers and they'll pretend it was their idea (the second most reliable pattern in your political history, after blaming the previous administration).
 
@@ -77,7 +71,7 @@ Second, prove it's safe. Peer-reviewed modeling showing every nation gains more 
 
 ### Timeline to "Governments Can't Ignore This"
 
-With ~$60M in seed funding, you can reach "Treaty-Ready" status in **2-3 years**: a platform with {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters (the {{< var global_population_activism_threshold_pct >}} threshold), country-by-country impact modeling, and a coalition of 120+ supportive NGOs and 5-10 champion governments.
+With the first phase of a {{< var treaty_campaign_total_cost >}} campaign, you can reach "Treaty-Ready" status in **2-3 years**: a platform with {{< var treaty_campaign_voting_bloc_target_nounit >}} verified supporters (the {{< var global_population_activism_threshold_pct >}} threshold), country-by-country impact modeling, and a coalition of 120+ supportive NGOs and 5-10 champion governments.
 
 Once these assets exist, formal negotiations become very hard to avoid. Not because politicians want them. Because ignoring {{< var treaty_campaign_voting_bloc_target_nounit >}} people is the kind of career decision that leads to "spending more time with family."
 
@@ -87,11 +81,11 @@ You aren't buying a treaty. You're buying the machinery that makes the treaty ve
 
 ## Political Success Probability: Economic Analysis {#sec-political-success-probability}
 
-This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). The model assumes a 99% chance of failure. It's still a good bet. On Wishonia, we would not invest in something with a 99% chance of failure. On Earth, this is called "venture capital" and your richest humans do it professionally.
+This section documents the rationale for the **{{< var political_success_probability >}} central estimate** (and a 25% optimistic scenario ceiling). The model assumes failure is the base case. It's still a good bet. On Wishonia, we would not invest in something where failure is the base case. On Earth, this is called "venture capital" and your richest humans do it professionally.
 
-![Even if this only has a 1 percent chance of working, it saves 503 times more lives per dollar than bed nets. Math is strange.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
+![Even if this only has a {{< var political_success_probability >}} chance of working, it saves {{< var treaty_expected_vs_bed_nets_multiplier >}} more lives per dollar than bed nets. Math is strange.](/assets/images/treaty-feasibility/treaty-feasibility-section-political-success-probability-economi-bw-academic.jpg)
 
-Even at 1% probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY). Bed nets are the gold standard of global health interventions. This beats the gold standard while assuming it will almost certainly fail. The math doesn't care about your pessimism.
+Even at {{< var political_success_probability >}} probability of success, this intervention's expected cost per DALY ({{< var treaty_expected_cost_per_daly >}}) is still **{{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective** than malaria bed nets ({{< var bed_nets_cost_per_daly >}}/DALY). Bed nets are the gold standard of global health interventions. This beats the gold standard while assuming it will almost certainly fail. The math doesn't care about your pessimism.
 
 ::: {.callout-note collapse="true" title="Full confidence intervals"}
 | Metric | Point Estimate | 95% CI |
@@ -133,7 +127,7 @@ Economists would find the following defensible (and economists find very little 
 | Scenario | Probability | Translation |
 |:---------|:------------|:----------|
 | **Pessimistic floor** | 0.1% | Everything goes wrong. Global crises. Political gridlock. Asteroid, possibly. |
-| **Conservative central** | {{< var political_success_probability >}} | 99% chance of failure. Still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets. |
+| **Conservative central** | {{< var political_success_probability >}} | Failure remains the base case. Still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets. |
 | **Optimistic ceiling** | 25% | A major crisis opens a political window. Or humans just... decide to be smart for once. |
 
 **The model uses**: Central estimate **{{< var political_success_probability >}}**
@@ -147,7 +141,7 @@ At {{< var political_success_probability >}} probability of success, expected RO
 Downside: capped at ~{{< var treaty_campaign_total_cost >}}. You lose the cost of a nice yacht.
 Upside: unbounded. You cure most diseases.
 
-Even assuming a 99% chance of total failure, this beats the gold standard of global health interventions. The downside is a yacht. The upside is the end of most disease. Your species makes worse bets every day in Las Vegas, except there the upside is a slightly larger pile of papers. The yacht will be fine. It was going to depreciate anyway.
+Even assuming failure is the base case, this beats the gold standard of global health interventions. The downside is a yacht. The upside is the end of most disease. Your species makes worse bets every day in Las Vegas, except there the upside is a slightly larger pile of papers. The yacht will be fine. It was going to depreciate anyway.
 
 ## The Chain Reaction Model: Why This Idea Cannot Stay Contained {#sec-chain-reaction-model}
 
@@ -155,7 +149,7 @@ Your species has a cognitive immune system. When someone suggests redirecting 1%
 
 On Earth, this is called "being realistic."
 
-The question is whether a {{< var chain_dismiss_probability >}} dismissal rate prevents the idea from reaching someone who can act on it. This section answers that question. (The [next section](#sec-dominant-strategy-proof) answers whether they will act on it.)
+The question is whether a {{< var chain_dismiss_probability >}} dismissal rate prevents the idea from reaching someone who can act on it. This section answers whether reaching such people is overwhelmingly likely. (The [next section](#sec-dominant-strategy-proof) addresses what happens once they understand the incentive structure.)
 
 ### Direct Encounters
 
@@ -179,9 +173,9 @@ The expected number of implementers who engage:
 
 The probability that at least one engages: {{< var chain_p_at_least_one_engages >}}.
 
-That is not a typo. With {{< var chain_implementer_count_nounit >}} potential implementers and a {{< var chain_p_encounter_direct_10yr >}} per-implementer encounter probability over {{< var chain_horizon_years_nounit >}} years, the math says approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers will engage with this idea. Not "might." Will. The dismissal rate is irrelevant when multiplied by enough opportunities.
+That is not a typo. With {{< var chain_implementer_count_nounit >}} potential implementers and a {{< var chain_p_encounter_direct_10yr >}} per-implementer encounter probability over {{< var chain_horizon_years_nounit >}} years, the model expects approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers to engage with this idea. Not guaranteed in the mathematical sense. But in planning terms, this is the kind of number you treat as near-inevitable unless your diffusion assumptions are wrong. The dismissal rate stops mattering once enough shots are on goal.
 
-This model answers only: "Will it reach someone?" The answer is yes. The next section answers: "Will they act?"
+This model answers only: "Is it overwhelmingly likely to reach someone who matters?" The answer is yes. The next section asks: "What happens once it does?"
 
 ::: {.callout-note collapse="true" title="Conservative bias assumptions"}
 This model is deliberately conservative in three ways:
@@ -191,70 +185,48 @@ This model is deliberately conservative in three ways:
 3. **No compounding**: Ignores the feedback loop where media coverage of early adoption increases subsequent encounter rates, and ignores network amplification (people sharing the idea with others)
 :::
 
-## The Dominant Strategy Proof: Why Inaction Is Logically Incoherent {#sec-dominant-strategy-proof}
+## The Decision-Theoretic Case: Why Rational Actors Eventually Move {#sec-dominant-strategy-proof}
 
-The chain reaction model says {{< var chain_expected_engaged_implementers_nounit >}} implementers will engage with this idea. Will they act? This is not a probabilistic question. It is a logical one.
+The chain reaction model says approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers are expected to engage with this idea. The next question is not whether action is guaranteed by formal logic. It is whether the incentive design makes action the unusually attractive move for at least one actor with enough resources to matter.
 
-### The Structure
+### The Incentive Structure
 
-A **dominant strategy** is an action that produces a better outcome than the alternative regardless of what anyone else does. In game theory, rational agents always choose dominant strategies. Not because they're smart. Because not choosing them is, by definition, irrational. It's like asking whether water flows downhill. It does. That's what "downhill" means.
-
-**Claim**: For any individual with sufficient resources (a billionaire, a head of state, a major fund manager), acting on this treaty is a dominant strategy.
-
-**Proof by cases.** Consider a billionaire deciding whether to fund the treaty campaign. There are two possible worlds:
+This is not an ordinary public-good plea. Ordinary public goods invite free-riding. This design routes part of the upside back to the actors who move first.
 
 | | Others also act | No one else acts |
 |:--|:----------------|:-----------------|
-| **You act** | Treaty very likely passes. You earn {{< var victory_bond_annual_return_pct >}} annual returns on IABs. Diseases get cured. You are richer and healthier. | Treaty still has positive expected value. At {{< var political_success_probability >}} success probability, expected ROI is {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1. You made a positive-EV bet. |
-| **You don't act** | Treaty passes without you. You missed the returns. Others got rich curing diseases. You bought another yacht instead. | Nothing changes. {{< var global_disease_deaths_daily >}} continue. Your portfolio returns remain average. |
+| **You act** | If the treaty passes, you participate in the upside instead of watching from the sidelines. Early capital is modeled to capture {{< var victory_bond_annual_return_pct >}} annual returns, and the public-health upside arrives either way. | You still bought an option on a system-level outcome with extraordinary upside relative to the capital deployed. |
+| **You wait** | You may still enjoy some public-health benefit, but you miss the direct financial upside, agenda-setting power, and reputational credit for helping build the machine. | Nothing changes. {{< var global_disease_deaths_daily >}} continue. The opportunity stays unrealized. |
 
-In both columns, "act" produces a better outcome than "don't act." That's what makes it dominant. No coordination required. No trust required. No one else needs to go first. Each agent's optimal move is independent of everyone else's choices.
+That does not make action a theorem. It makes action the unusually attractive move for anyone who believes the underlying model and likes asymmetric upside.
 
-On Wishonia, when we first encountered the concept of a dominant strategy, we found it trivially obvious. Then we watched your species ignore dominant strategies for several thousand years and upgraded our assessment from "trivially obvious" to "apparently not."
+### Why the EV Is Not Just Moral
 
-### The Formal Argument
+The DALY math matters because it shows the total surplus is enormous. But "good for humanity" is not enough on its own. The mechanism has to convert part of that surplus into private and political incentive.
 
-The argument is a syllogism. Three premises, one conclusion.
+- **For funders:** VICTORY bondholders are modeled at **{{< var victory_bond_annual_return_pct >}}** annual returns if the treaty passes.
+- **For politicians:** the treaty allocates **{{< var iab_political_incentive_funding_annual >}}/year** at the 1% level to reward expansion and protection of the system.
+- **For governments:** they trade a small fraction of military spending for lower disease burden, visible domestic wins, and a claim on the largest new health-research funding stream on Earth: **{{< var treaty_annual_funding >}}/year**.
 
-**Premise 1 (Positive Expected Value):** The expected value of funding the treaty campaign exceeds its cost for any individual agent, even at {{< var political_success_probability >}} probability of success.
+The claim is not "humanity benefits, therefore billionaires act." The claim is "humanity benefits, and this architecture routes enough of that benefit back to funders, politicians, and states that someone with resources has a reason to move first."
 
-This is demonstrated in the [expected value analysis](#sec-political-success-probability). At {{< var political_success_probability >}} success probability, expected cost per DALY is {{< var treaty_expected_cost_per_daly >}}, which is {{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective than the gold standard. The math is peer-reviewable.
+### What Would Have To Be Wrong
 
-**Premise 2 (Information Reaches Agents):** At least one agent with sufficient resources encounters and engages with this information within {{< var chain_horizon_years >}}.
+If no serious actor moves within {{< var chain_horizon_years >}}, then at least one of the following is true:
 
-The [chain reaction model](#sec-chain-reaction-model) shows {{< var chain_p_at_least_one_engages >}} probability of this, with an expected {{< var chain_expected_engaged_implementers_nounit >}} engaged implementers. This premise is not seriously in doubt.
+1. **The expected-value math is wrong.** The ROI, health gains, or funding leverage do not hold. Check the math in [the appendix](parameters-and-calculations.qmd).
+2. **The idea never reached enough decision-makers.** The diffusion model failed in the real world.
+3. **The private-incentive bridge is weaker than modeled.** The surplus exists, but not enough of it is capturable by first movers.
+4. **Hidden costs dominate the visible upside.** Reputational risk, retaliation, legal friction, or coordination costs are larger than assumed.
+5. **Enough elite actors prefer inertia to asymmetrical upside.** Possible. But across {{< var chain_implementer_count_nounit >}} implementers over {{< var chain_horizon_years >}}, it is not the first explanation a rational model should reach for.
 
-**Premise 3 (Rationality):** At least one of these agents is a rational expected-value maximizer.
+Your task, if you want to reject inevitability, is to identify which of those breaks. Not to gesture vaguely at complexity. Pick the failure mode. Show it.
 
-Your species produced people who bet billions on electric cars, reusable rockets, and cryptocurrency. Not all of them are rational, but the claim that NONE of {{< var chain_implementer_count_nounit >}} are rational expected-value maximizers is harder to defend than the claim that at least one is.
+### Why This Still Feels Inevitable
 
-**Conclusion:** By modus ponens: if acting has positive EV (P1), the information reaches an agent (P2), and that agent is rational (P3), then the agent acts. The treaty campaign gets funded.
+This is still a probabilistic story. But once diffusion and incentives are combined, it stops looking like a fragile moonshot and starts looking like a machine that is hard to keep dormant. The [chain reaction model](#sec-chain-reaction-model) handles reach. The incentive design handles motion. The question stops being "can this happen?" and starts being "how long can everyone with money, ambition, and pattern recognition keep pretending this is not in front of them?"
 
-This is not a prediction. It's a conditional proof. If the premises hold, the conclusion follows with logical necessity, not probability. The only way to reject the conclusion is to falsify a premise.
-
-### The Contrapositive
-
-Logical proofs have contrapositives: if the conclusion is false, at least one premise must be false. If no one acts in {{< var chain_horizon_years >}}, then at least one of the following is true:
-
-1. **The EV calculation is wrong.** The ROI doesn't hold. The cost-per-DALY estimates are fabricated. The health dividend projections are fantasy. This is falsifiable. Check the math. It's all in [the appendix](parameters-and-calculations.qmd).
-
-2. **The information never reached anyone with resources.** {{< var chain_implementer_count_nounit >}} potential implementers, {{< var chain_horizon_years >}} of diffusion, and not one of them saw it. Possible. Addressable by sharing it.
-
-3. **Every single implementer is irrational.** All {{< var chain_implementer_count_nounit >}} of them encountered a dominant strategy and declined it. Every billionaire who built a fortune by identifying positive-EV opportunities looked at an {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected return and said "no thanks." This is the hardest premise to falsify, because it requires universal irrationality among a population selected specifically for their ability to identify and act on opportunities.
-
-4. **There are hidden costs the model doesn't capture.** Reputational risk, political retaliation, opportunity cost of capital deployed elsewhere. These are real but quantifiable. Name them, price them, and subtract them from the EV. If the EV is still positive (and with an {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected return, there is considerable room for hidden costs), the proof holds.
-
-Your task, if you want to reject this argument, is to identify which premise fails. Not to feel skeptical. Not to gesture at complexity. Pick a number. Show it's wrong. That's how proofs work.
-
-### Why This Is Stronger Than a Probabilistic Model
-
-A probabilistic model would assign some percentage chance of action. But when an action is a dominant strategy, probability is the wrong framework. You don't calculate the probability that water flows downhill. You check whether the ground is sloped.
-
-The [chain reaction model](#sec-chain-reaction-model) establishes that ~{{< var chain_expected_engaged_implementers_nounit >}} implementers will engage. This proof establishes that engaged, rational implementers will act. The two sections divide the work cleanly: diffusion handles reach, logic handles action.
-
-On Wishonia, we stopped using probabilistic models for dominant strategy situations about 3,000 years ago. The answer is always: check the premises.
-
-Your species has a peculiar habit of treating logical necessity as just another opinion. This is how you ended up with a planet that spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work, while the math proving this is suboptimal sits on a shelf next to the untested compounds that would have saved the children. The proof is not the problem. The premises are not the problem. The problem is that your species treats "I don't feel like it" as a counterargument to modus ponens. It isn't. It never was. The water doesn't care whether you believe in gravity.
+Your species has a peculiar habit of treating path dependence as optional. It isn't. Once a mechanism pays people to expand it, the default trajectory changes. This is how you built railroads, credit markets, social networks, and defense industries. A system that pays people to fund health instead of weapons is not a proof. It is something more dangerous: a machine with incentives pointing in the right direction.
 
 ## Why The Treaty Won't Stop at 1%
 
@@ -268,7 +240,7 @@ The [80/10/10 funding structure](../appendix/incentive-alignment-bonds-paper.qmd
 
 | Treaty Level | Annual IAB Pool | Political Pressure | Historical Comparison |
 |:-------------|:----------------|:-------------------|:---------------------|
-| 1% | $2.72B/year | Strong | 10x largest NGO budgets |
+| 1% | {{< var iab_political_incentive_funding_annual >}}/year | Strong | 10x largest NGO budgets |
 | 2% | $5.44B/year | Very strong | Nation-state level |
 | 5% | $13.6B/year | Overwhelming | Major industry lobby |
 | 10% | $27.2B/year | Probably irresistible | No precedent |
@@ -283,7 +255,7 @@ The 1% health treaty creates its own expansion lobby. Bond holders profit when t
 
 ### The Ratchet Effect
 
-Once 1% passes, $2.72B/year flows to IAB holders pushing for 2%. When 2% passes, $5.44B/year pushes for 5%. The engine runs on compound greed, which is like compound interest but for not dying.
+Once 1% passes, {{< var iab_political_incentive_funding_annual >}}/year flows to IAB holders pushing for 2%. When 2% passes, $5.44B/year pushes for 5%. The engine runs on compound greed, which is like compound interest but for not dying.
 
 The politicians feel it too. The treaty's {{< var iab_political_incentive_funding_pct >}} [political incentive allocation](../solution/incentive-alignment-bonds.qmd#sec-why-ten-pct-scaling-engine) scales identically: at 1%, it's {{< var iab_political_incentive_funding_annual >}}/year in campaign support for legislators who voted yes. At 5%, five times that. A politician who votes to expand the treaty is voting to expand their own reelection budget. You didn't change what politicians are. You changed what they're rewarded for.
 
