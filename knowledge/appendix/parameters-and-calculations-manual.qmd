@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 325 parameters used in the analysis, organized by type:
+This appendix documents all 326 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 127
-- Calculated values: 132
+- Calculated values: 133
 - Core definitions: 66
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (132 parameters) • [External Data Sources](#sec-external) (127 parameters) • [Core Definitions](#sec-definitions) (66 parameters)
+[Calculated Values](#sec-calculated) (133 parameters) • [External Data Sources](#sec-external) (127 parameters) • [Core Definitions](#sec-definitions) (66 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3891,6 +3891,38 @@ Cost_{destruct} \\
 \end{gathered}
 $$
 *✓ High confidence*
+
+:::
+
+### Global Deaths per Minute from Disease: 104 deaths/minute {#sec-global_disease_deaths_per_minute}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global deaths per minute from all disease and aging
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7.5 thousand deaths/day)
+
+$$
+\frac{Deaths_{disease,daily}}{1440}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_disease_deaths_per_minute.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_disease_deaths_per_minute.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_disease_deaths_per_minute.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_disease_deaths_per_minute.qmd >}}
 
 :::
 

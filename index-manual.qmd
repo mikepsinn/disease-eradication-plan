@@ -446,6 +446,32 @@ This manual contains:
 
 Everything is designed to work WITH human dysfunction, not against it. I'm not asking humans to be better humans. I'm showing you how to bribe humanity into not dying.
 
+## Choose Your Own Adventure
+
+Now is the time to select one of the two paths for the remainder of your existence.
+
+I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself. Your current average income is {{< var global_avg_income_2025 >}}. Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
+
+#### Future A: You Ignore This Manual
+
+- Year 2027: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work. Nobody finds this weird.
+- Year 2033: Destructive economy hits 25% of GDP. The Soviet Union collapsed at 15%. You have better technology and worse planning.
+- Year 2035: Your best engineers now work in ransomware because it pays better than engineering. Hospitals budget for extortion the way they used to budget for gauze. A nurse clicks a chart and gets a countdown timer instead of a medication dose. The people who could reverse this trend are the ones profiting from it.
+- Year 2040: Parasitic economy hits 50%. AI agents file more fake court cases than real ones. Tax collection collapses because AI can evade faster than humans can audit. Your governments don't fall; they rot in place, like a body whose organs are still technically present but no longer speaking to one another. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia.
+- Year 2043: Water wars go nuclear. The survivors argue about whether this counts as a climate death or a military death, because the spreadsheet has separate columns.
+- Year 2045: Cockroaches evolve intelligence.
+- Year 2050: Cockroaches find this manual, very confused
+
+#### Future B: You Follow Instructions
+
+- Year 2028: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo. Defense contractors discover that alive customers buy more things than dead ones.
+- Year 2032: First treatments from the accelerated pipeline reach patients. Diseases that would have waited centuries for trials are getting tested now. Nobody is cured of everything, but the queue is finally moving. Humans experience the novel sensation of progress.
+- Year 2035: Turns out when you stop spending money on destruction and start spending it on production, things get produced. The math suggests average income roughly doubles. Your economists publish papers explaining why this was obvious in retrospect.
+- Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. If the trajectory holds, average income hits 5x where it started. Humans begin to suspect that not killing each other was the missing variable.
+- Year 2048: The [model projects](knowledge/economics/gdp-trajectories.qmd) average income reaching over 20x today's level. Nations that pointed incentive alignment bonds at [the rest of their dysfunction](knowledge/appendix/political-dysfunction-tax.qmd) do {{< var wishonia_path_vs_treaty_path_gdp_multiplier_year_20 >}} better. Your children ask what "war" means. You change the subject.
+
+Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and an idea that mainly requires people to click a button and then receive money. If you can't make this happen, that's a skill issue.
+
 ### The Part Where Humanity Has No Choice
 
 The twist: you're going to do this anyway. Not because it's right, but because you can't help it.
@@ -474,33 +500,6 @@ You don't have free will here. You have incentives. And they all point the same 
 Of all the consciousness that has ever flickered into existence across 13.8 billion years of matter rearranging itself, yours arose in the infinitesimal sliver of time where the loop broke. Every organism that ever lived and died did so in the dark. You get to be alive for the part where it worked.
 
 Humans aren't stupid. You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying.
-
-## Choose Your Own Adventure
-
-Now is the time to select one of the two paths for the remainder of your existence.
-
-I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself. Your current average income is {{< var global_avg_income_2025 >}}. Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
-
-#### Future A: You Ignore This Manual
-
-- Year 2027: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work. Nobody finds this weird.
-- Year 2033: Destructive economy hits 25% of GDP. The Soviet Union collapsed at 15%. You have better technology and worse planning.
-- Year 2035: Your best engineers now work in ransomware because it pays better than engineering. Hospitals budget for extortion the way they used to budget for gauze. A nurse clicks a chart and gets a countdown timer instead of a medication dose. The people who could reverse this trend are the ones profiting from it.
-- Year 2040: Parasitic economy hits 50%. AI agents file more fake court cases than real ones. Tax collection collapses because AI can evade faster than humans can audit. Your governments don't fall; they rot in place, like a body whose organs are still technically present but no longer speaking to one another. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia.
-- Year 2043: Water wars go nuclear. The survivors argue about whether this counts as a climate death or a military death, because the spreadsheet has separate columns.
-- Year 2045: Cockroaches evolve intelligence.
-- Year 2050: Cockroaches find this manual, very confused
-
-#### Future B: You Follow Instructions
-
-- Year 2028: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo. Defense contractors discover that alive customers buy more things than dead ones.
-- Year 2032: First treatments from the accelerated pipeline reach patients. Diseases that would have waited centuries for trials are getting tested now. Nobody is cured of everything, but the queue is finally moving. Humans experience the novel sensation of progress.
-- Year 2035: Turns out when you stop spending money on destruction and start spending it on production, things get produced. The math suggests average income roughly doubles. Your economists publish papers explaining why this was obvious in retrospect.
-- Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. If the trajectory holds, average income hits 5x where it started. Humans begin to suspect that not killing each other was the missing variable.
-- Year 2048: The [model projects](knowledge/economics/gdp-trajectories.qmd) average income reaching over 20x today's level. Nations that pointed incentive alignment bonds at [the rest of their dysfunction](knowledge/appendix/political-dysfunction-tax.qmd) do {{< var wishonia_path_vs_treaty_path_gdp_multiplier_year_20 >}} better. Your children ask what "war" means. You change the subject.
-
-
-Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and an idea that mainly requires people to click a button and then receive money. If you can't make this happen, that's a skill issue.
 
 You've now read the plan. You have the math. You can't give it back.
 
