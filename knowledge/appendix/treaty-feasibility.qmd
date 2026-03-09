@@ -43,7 +43,7 @@ Using BLS CPI data [@bls-cpi-inflation-calculator]:
 
 ## Cost for a 1% Health Treaty
 
-Historical treaty-signing campaigns often ran on tens of millions. This is not just a signature campaign. It is a referendum engine, lobbying operation, diplomatic process, ratification push, and reserve fund aimed directly at military budgets. So the relevant planning number is not the lean historical benchmark. It is the full adversarial campaign model used elsewhere in this project.
+Historical treaty campaigns ran on pocket change. But this is not just a signature campaign. It is a referendum engine, lobbying operation, diplomatic push, and reserve fund aimed directly at military budgets, which means you are picking a fight with the most powerful industry your species has ever created. The relevant planning number is not what it costs to collect signatures. It is what it costs to win a fight with the people who build aircraft carriers.
 
 | Budget Frame | What It Covers | Cost |
 | :--- | :--- | :--- |
@@ -153,7 +153,7 @@ The question is whether a {{< var chain_dismiss_probability >}} dismissal rate p
 
 ### Direct Encounters
 
-Implementers find ideas through media, conferences, advisor recommendations, or search. Each of {{< var chain_implementer_count_nounit >}} potential implementers ({{< var chain_global_billionaire_count_nounit >}} billionaires [@forbes-billionaires-2024] plus {{< var chain_world_leader_count_nounit >}} heads of state) has an annual probability {{< var chain_annual_encounter_probability >}} of encountering this idea directly.
+On your planet, important humans find ideas through news, conferences, advisors whispering in their ears, or occasionally by accident while searching for something else (this is how most of your scientific breakthroughs happen, and also how you discovered penicillin). Each of {{< var chain_implementer_count_nounit >}} potential implementers ({{< var chain_global_billionaire_count_nounit >}} billionaires [@forbes-billionaires-2024] plus {{< var chain_world_leader_count_nounit >}} heads of state) has an annual probability {{< var chain_annual_encounter_probability >}} of stumbling across this idea. That is a very small number per person. But there are a lot of persons.
 
 ### The Mathematics
 
@@ -187,32 +187,32 @@ This model is deliberately conservative in three ways:
 
 ## The Decision-Theoretic Case: Why Rational Actors Eventually Move {#sec-dominant-strategy-proof}
 
-The chain reaction model says approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers are expected to engage with this idea. The next question is not whether action is guaranteed by formal logic. It is whether the incentive design makes action the unusually attractive move for at least one actor with enough resources to matter.
+The chain reaction model says approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers will probably engage with this idea. The next question is what they do once they understand it. On Wishonia, they would act immediately, because on Wishonia we are not insane. On Earth, you need to prove that acting is profitable, because your species will not save itself for free.
 
 ### The Incentive Structure
 
-This is not an ordinary public-good plea. Ordinary public goods invite free-riding. This design routes part of the upside back to the actors who move first.
+Most "save the world" pitches are public-good pleas. Public goods have a free-rider problem: everyone wants the bridge, nobody wants to pay for the bridge, and so the bridge doesn't get built and everyone drowns in the river while complimenting each other's fiscal prudence. This design is different. It routes part of the upside back to whoever moves first.
 
 | | Others also act | No one else acts |
 |:--|:----------------|:-----------------|
-| **You act** | If the treaty passes, you participate in the upside instead of watching from the sidelines. Early capital is modeled to capture {{< var victory_bond_annual_return_pct >}} annual returns, and the public-health upside arrives either way. | You still bought an option on a system-level outcome with extraordinary upside relative to the capital deployed. |
-| **You wait** | You may still enjoy some public-health benefit, but you miss the direct financial upside, agenda-setting power, and reputational credit for helping build the machine. | Nothing changes. {{< var global_disease_deaths_daily >}} continue. The opportunity stays unrealized. |
+| **You act** | Treaty passes, you capture {{< var victory_bond_annual_return_pct >}} annual returns as an early backer, plus humanity gets healthier (side benefit). | You still bought a cheap option on the largest health intervention in history. The yacht money was going to depreciate anyway. |
+| **You wait** | Someone else gets the returns, the credit, and the Wikipedia entry. You get to explain that you were "still doing due diligence." | Nothing changes. {{< var global_disease_deaths_daily >}} continue. You remain rich, mortal, and forgettable. |
 
-That does not make action a theorem. It makes action the unusually attractive move for anyone who believes the underlying model and likes asymmetric upside.
+This does not make action a mathematical certainty. It makes action the obviously attractive move for anyone who can read a spreadsheet and prefers not dying.
 
 ### Why the EV Is Not Just Moral
 
-The DALY math matters because it shows the total surplus is enormous. But "good for humanity" is not enough on its own. The mechanism has to convert part of that surplus into private and political incentive.
+"Good for humanity" has never been enough to make humans act. If it were, you would have cured malaria with the money you spend on novelty phone cases. The mechanism has to pay people, because your species requires payment for everything including not dying.
 
-- **For funders:** VICTORY bondholders are modeled at **{{< var victory_bond_annual_return_pct >}}** annual returns if the treaty passes.
-- **For politicians:** the treaty allocates **{{< var iab_political_incentive_funding_annual >}}/year** at the 1% level to reward expansion and protection of the system.
-- **For governments:** they trade a small fraction of military spending for lower disease burden, visible domestic wins, and a claim on the largest new health-research funding stream on Earth: **{{< var treaty_annual_funding >}}/year**.
+- **For funders:** VICTORY bondholders are modeled at **{{< var victory_bond_annual_return_pct >}}** annual returns if the treaty passes. That is the price of being early to the largest health intervention in history.
+- **For politicians:** **{{< var iab_political_incentive_funding_annual >}}/year** in campaign support for legislators who voted yes. Reelection fuel. The only substance politicians metabolize.
+- **For governments:** they trade a small fraction of murder budget for lower disease burden, visible domestic wins, and **{{< var treaty_annual_funding >}}/year** in new health-research funding. This is the kind of deal where saying no requires active effort.
 
-The claim is not "humanity benefits, therefore billionaires act." The claim is "humanity benefits, and this architecture routes enough of that benefit back to funders, politicians, and states that someone with resources has a reason to move first."
+The claim is not "humanity benefits, therefore billionaires act." Your species is not built that way, and pretending otherwise is how you got 50 years of unmet 0.7% ODA targets. The claim is: this architecture pays funders, politicians, and states enough that someone with resources has a reason to move first.
 
 ### Why This Should Matter Even to a Self-Interested Billionaire
 
-If you are extremely rich, the relevant question is not "Is this charitable?" It is "Does this improve the expected future for me, my family, and the asset base I depend on?"
+If you are extremely rich, the relevant question is not "Is this charitable?" Charity is what you do to feel better at galas. The relevant question is: "Does this improve the expected future for me, my family, and the pile of assets I'm sitting on like a dragon who read an economics textbook?"
 
 1. **Your family is made of biology.** Private jets, private islands, and private security do not protect your children from cancer, neurodegeneration, autoimmune disease, antibiotic resistance, or aging. Redirecting {{< var treaty_annual_funding >}}/year into treatment discovery is not altruism in the abstract. It is a direct attack on the probability that everyone you love dies the normal human way.
 2. **Your fortune sits on top of the productive economy.** When the destructive/parasitic economy reaches equilibrium with the productive one, wealth preservation gets harder for everyone. The current destructive economy is already **{{< var global_destructive_economy_annual_2025 >}}/year**, or **{{< var global_destructive_economy_pct_gdp >}} of GDP**, and the model projects it reaching the failed-state danger zone in **{{< var destructive_economy_years_to_25pct_gdp >}}** if the loop is not broken.
@@ -222,28 +222,26 @@ In other words: this is not "give up 1% of military spending so strangers can fe
 
 ### Conditional Near-Inevitability Claim
 
-This is the strongest version worth claiming. It is not a proof from pure logic alone. It is a conditional result: if the premises below hold, then non-action becomes increasingly implausible.
+On Wishonia, we would call this "stating the obvious." On Earth, you need formal logic to accept that rich people who prefer not dying will eventually invest in not dying. Fine. Here is the formal logic.
 
-Let **X** be the minimum number of rational, implementation-capable principals required to finance and launch a credible **{{< var treaty_campaign_total_cost >}}** campaign with enough redundancy to survive ordinary political friction.
-
-In the current model, **X = {{< var launch_principals_required_nounit >}}** and the plausible high-alignment pool is **{{< var launch_high_alignment_principals_count_nounit >}}** principals. That is the key asymmetry: the coalition threshold is small relative to the tail that can plausibly understand and act on the thesis.
+Let **X** be the minimum number of rich, capable humans needed to finance a **{{< var treaty_campaign_total_cost >}}** campaign. In the current model, **X = {{< var launch_principals_required_nounit >}}**. The pool of plausibly aligned principals is **{{< var launch_high_alignment_principals_count_nounit >}}**. You need {{< var launch_principals_required_nounit >}} out of {{< var launch_high_alignment_principals_count_nounit >}}. Your species has worse odds at every casino on the Las Vegas Strip and you still show up.
 
 If:
 
-1. **Biological self-interest is real.** Principals prefer longer, healthier lives for themselves and the people they love, and they recognize that redirecting **{{< var treaty_annual_funding >}}/year** into treatment discovery materially improves those odds.
-2. **The macro upside is directionally correct.** The Treaty Path is on the order of **{{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}}** the GDP of doing nothing after 20 years, and the broader Wishonia path is on the order of **{{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}}**.
-3. **The collapse-risk model is directionally correct.** The destructive/parasitic economy is already **{{< var global_destructive_economy_annual_2025 >}}/year**, or **{{< var global_destructive_economy_pct_gdp >}} of GDP**, and trends toward the failed-state danger zone within roughly **{{< var destructive_economy_years_to_25pct_gdp >}}** if the loop is not broken.
-4. **Enough upside is privately capturable.** Funders can rationally expect some combination of direct financial return, reputational gain, agenda-setting power, family survival benefit, and preservation of the productive economy that underwrites their wealth.
-5. **At least X rational actors are persuaded.** A sufficient number of billionaires, heads of state, or equivalent principals understand premises 1-4 and are capable of moving capital, institutions, and people.
-6. **Execution friction stays below surplus.** Coordination costs, retaliation risk, and implementation overhead do not exceed the expected private + family + portfolio upside.
+1. **Rich humans prefer living.** They recognize that redirecting **{{< var treaty_annual_funding >}}/year** into treatment discovery improves the odds for everyone they love. (If this premise is wrong, your species has larger problems than this treaty.)
+2. **The macro upside is directionally correct.** Treaty Path: **{{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}}** the GDP of doing nothing after 20 years. Wishonia path: **{{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}}**.
+3. **The collapse-risk model is directionally correct.** The destructive/parasitic economy is already **{{< var global_destructive_economy_annual_2025 >}}/year** (**{{< var global_destructive_economy_pct_gdp >}} of GDP**) and trends toward the failed-state danger zone within **{{< var destructive_economy_years_to_25pct_gdp >}}**.
+4. **Enough upside is privately capturable.** Funders get financial returns, reputational credit, agenda-setting power, and the continued existence of the productive economy their fortunes sit on top of.
+5. **At least X rational actors are persuaded.** {{< var launch_principals_required_nounit >}} billionaires or heads of state understand premises 1-4.
+6. **Execution friction stays below surplus.** Coordination costs and political friction don't eat the entire upside. (They never have for any project with this ratio of cost to return.)
 
-Then the launch of the treaty campaign becomes a near-inevitable outcome in the ordinary planning sense. Not because every billionaire acts. Because only **X** need to act, the downside is capped at **{{< var treaty_campaign_total_cost >}}**, and the upside is measured in survival, system stability, and a civilization with vastly higher future output.
+Then the campaign launches. Not because every billionaire acts. Because only **{{< var launch_principals_required_nounit >}}** need to, the downside is capped at **{{< var treaty_campaign_total_cost >}}** (one yacht), and the upside is measured in survival.
 
-If, in addition, the number of persuaded, capable actors materially exceeds **X**, then failure starts to require a surprisingly specific story: not just skepticism, but simultaneous breakdown in persuasion, coordination, incentive capture, and execution across a pool of actors the diffusion model expects to reach. That is what "near inevitability" means here.
+If the number of persuaded actors materially exceeds **{{< var launch_principals_required_nounit >}}**, then failure requires a surprisingly specific story: simultaneous breakdown in persuasion, coordination, incentive capture, and execution across the entire aligned pool. On Wishonia, we have a word for betting on that kind of simultaneous failure. The word translates roughly to "stupid."
 
 ### Minimal Launch Probability Model
 
-If you want the smallest model that turns this from rhetoric into something staff can diligence, this is it. Ignore the whole planet. Ignore even the average billionaire. Ask only whether a credible launch coalition forms from the unusually aligned tail.
+Forget the planet. Forget the average billionaire (he's busy buying a sports team). Ask only: does a launch coalition form from the tiny slice of rich humans who already care about not dying?
 
 In the current minimal model:
 
@@ -252,18 +250,18 @@ In the current minimal model:
 - Expected ready launch principals within {{< var chain_horizon_years >}}: **{{< var launch_expected_ready_principals_nounit >}}**
 - Probability a launch coalition forms: **{{< var launch_p_at_least_required_principals >}}**
 
-In plain English: you do not need to persuade the billionaire class. You need roughly **{{< var launch_principals_required_nounit >}}** people out of a plausible aligned pool of **{{< var launch_high_alignment_principals_count_nounit >}}**. On the current assumptions, that launch coalition forms with probability **{{< var launch_p_at_least_required_principals >}}** within {{< var chain_horizon_years >}}.
+In plain English: you need **{{< var launch_principals_required_nounit >}}** people out of **{{< var launch_high_alignment_principals_count_nounit >}}** who already agree with the premise. On current assumptions, that coalition forms with probability **{{< var launch_p_at_least_required_principals >}}** within {{< var chain_horizon_years >}}. This is like asking whether at least three people in a room of health-obsessed billionaires will invest in health. Your species asks harder questions at trivia night.
 
-This is not treaty ratification probability. It is the upstream probability that enough capable, persuaded actors emerge to finance and launch a serious campaign. If this number is high, the relevant objection changes from "nobody serious will touch this" to "which serious actors in the aligned tail move first, and how long do they wait?"
+This is not treaty ratification probability. It is the probability that enough capable humans emerge to fund a serious campaign. If this number is high, the objection changes from "nobody will touch this" to "who moves first, and how long do they pretend to think about it?"
 
 ### Why Delay Becomes Irrational
 
-Once you believe the launch model is directionally correct, waiting stops looking prudent and starts looking passive. If a coalition is likely to form anyway, delay mainly changes who shapes it.
+Once you believe a coalition is likely to form anyway, waiting stops looking prudent and starts looking like the time you didn't buy Apple stock because you wanted to "see how it plays out."
 
-- **Move early:** You help define the structure, recruit the other principals, capture the largest direct upside, and take the historical position of "one of the people who made it real."
-- **Wait:** You increase the chance that someone else becomes one of the {{< var launch_principals_required_nounit >}}, writes the terms, gets the credit, and locks in the first-mover influence while you explain later that you were "monitoring the situation."
+- **Move early:** You define the structure, recruit the coalition, capture the largest returns, and get the Wikipedia entry that says "one of the people who ended most disease." Your grandchildren reference it at dinner parties forever.
+- **Wait:** Someone else writes the terms, gets the credit, and locks in first-mover influence. You explain to your grandchildren that you were "monitoring the situation," and they nod politely while looking at their phones.
 
-The rational question is no longer "Will anyone ever fund this?" It becomes "If this is likely to launch, do I want to be one of the people who shaped it or one of the bystanders who arrived after the structure was already set?"
+The question is no longer "Will anyone fund this?" It is "Do I want to be one of the {{< var launch_principals_required_nounit >}} who shaped the largest health intervention in history, or the person who arrived after the structure was set and asked if there were still tickets?"
 
 ### What Would Have To Be Wrong
 
@@ -275,7 +273,7 @@ If no serious actor moves within {{< var chain_horizon_years >}}, then at least 
 4. **Hidden costs dominate the visible upside.** Reputational risk, retaliation, legal friction, or coordination costs are larger than assumed.
 5. **Enough elite actors prefer inertia to asymmetrical upside.** Possible. But across a plausible aligned tail of {{< var launch_high_alignment_principals_count_nounit >}} principals inside a broader universe of {{< var chain_implementer_count_nounit >}} implementers over {{< var chain_horizon_years >}}, it is not the first explanation a rational model should reach for.
 
-Your task, if you want to reject inevitability, is to identify which of those breaks. Not to gesture vaguely at complexity. Pick the failure mode. Show it.
+Your task, if you want to reject this, is to pick one. Not to gesture vaguely at "complexity," which is what humans say when they mean "I don't want to think about it." Pick the failure mode. Show your work. Your species demands this of schoolchildren. Surely you can manage it for a question about whether to cure diseases.
 
 ### Why This Still Feels Inevitable
 
