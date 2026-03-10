@@ -23,13 +23,13 @@ You don't realize it yet, but you are, quantifiably, the most important person i
 
 By the time you complete the steps in this manual, you will have prevented {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of suffering. 
 
-Before I explain how, one question.
+Before I explain how, I need you to answer five questions. Try to get any of them wrong.
 
-Your species spends {{< var military_to_clinical_trials_spending_ratio >}} times more on weapons than clinical trials. Is it physically possible to do better than this?
+Your species spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work. If all nations redirected 1% of that to clinical trials, would trial capacity increase by {{< var dfda_trial_capacity_multiplier >}}? Would fewer sick humans mean more productive humans? Would more productive humans compound into a larger economy over time? Do billionaires prefer not dying of disease? Can billionaires use money to make politicians do things?
 
-If no, stop reading. You have worse problems than war.
+If any of those are false, stop reading. This book is wrong.
 
-If yes, the rest of this manual is the how.
+If you said yes to all five, congratulations: you just proved the rest of this manual works. The only remaining question is the how.
 
 But first, a bit about me.
 
@@ -460,9 +460,9 @@ Everything is designed to work WITH human dysfunction, not against it. I'm not a
 
 Now is the time to select one of the two paths for the remainder of your existence.
 
-I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself. Your current average income is {{< var global_avg_income_2025 >}}. Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
+I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your years.  Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
-Over an average remaining lifespan, the treaty path alone multiplies your cumulative earnings by {{< var treaty_path_lifetime_income_multiplier >}}. The full Wishonia path reaches {{< var wishonia_path_lifetime_income_multiplier >}}. For the average human, the treaty gains {{< var treaty_path_lifetime_income_gain_per_capita >}} in additional lifetime income; the Wishonia path gains {{< var wishonia_path_lifetime_income_gain_per_capita >}}. These are not projections. They are the compound interest on not spending {{< var military_vs_medical_research_ratio >}} times more on weapons than medicine. Your species invented compound interest and then pointed it at the wrong spreadsheet.
+Over an average remaining lifespan, reallocation from the destructive economy to reducing the burden of disease and the associated compound growth from increased productivity multiplies your cumulative earnings by {{< var treaty_path_lifetime_income_multiplier >}}.
 
 #### Future A: You Ignore This Manual
 
