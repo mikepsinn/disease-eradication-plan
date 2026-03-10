@@ -34,7 +34,7 @@ People who agree with "dying is bad" fall into three categories.
 
 ### Spreadsheet Humans (Investors)
 
-These are humans who hear "{{< var victory_bond_annual_return_pct >}} annual return backed by redirected military spending" and immediately open a spreadsheet. Their pupils dilate. Their pulse quickens. They ask about the term structure. Then they ask about the term structure again. Then they ask a third question, which is also about the term structure.
+These are humans who hear "{{< var victory_bond_annual_return_pct >}} annual return on [Victory Bonds](/knowledge/solution/incentive-alignment-bonds.qmd) backed by redirected military spending" and immediately open a spreadsheet. Their pupils dilate. Their pulse quickens. They ask about the term structure. Then they ask about the term structure again. Then they ask a third question, which is also about the term structure.
 
 These humans are not broken. They are simply running financial software on moral hardware. They process "millions of people are dying" faster when it arrives formatted as a revenue projection. They'll wait years for a good investment to materialize. They will not wait thirty seconds for a bad one. If your math is solid, these humans will follow you to the gates of hell, provided the risk-adjusted return on entering hell is competitive.
 
@@ -111,7 +111,7 @@ Is the [1% treaty](../solution/1-percent-treaty.qmd) [@1-pct-treaty-impact-paper
 
 **Question 4: Should this be your top priority?**
 
-If ending war and disease is physically possible, and the result is {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} more resources for *everything*, then persuading those with sufficient power to implement it should temporarily be your top priority. Not because you're altruistic. Because it gives you {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} more resources to achieve whatever your *actual* goals are. If someone offered to multiply your budget by {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} in exchange for a few years of focused effort, and you said "no thanks, I'm busy," you would not be principled. You would be bad at math.
+If ending war and disease is physically possible, and the result is {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} more resources for *everything*, then persuading those with sufficient power to implement it should temporarily be your top priority. Not because you're altruistic. Because it gives you that many more resources to achieve whatever your *actual* goals are. If someone offered to multiply your budget by that much in exchange for a few years of focused effort, and you said "no thanks, I'm busy," you would not be principled. You would be bad at math.
 
 **Question 5: Then what are you waiting for?**
 
@@ -139,9 +139,9 @@ If you are not claiming one of those three things, then your actual estimate is 
 
 On Wishonia, "the cost is trivial" would be sufficient. On Earth, your species requires a number.
 
-Forwarding takes roughly 30 seconds. The average human earns {{< var global_avg_hourly_income >}} per hour. That makes the opportunity cost of sharing approximately {{< var sharing_opportunity_cost >}}. The upside, if the treaty path works, is {{< var treaty_path_lifetime_income_gain_per_capita >}} in additional cumulative lifetime income for the average person; {{< var treaty_path_lifetime_income_multiplier >}} their current trajectory. (If you earn more than the global average, your personal gain is proportionally larger.)
+Forwarding takes roughly 30 seconds. The average human earns {{< var global_avg_hourly_income >}} per hour. That makes the opportunity cost of sharing approximately {{< var sharing_opportunity_cost >}}. The upside, if the treaty path works, is {{< var treaty_path_lifetime_income_gain_per_capita >}} in additional cumulative lifetime income for the average person (from the compounding math in [GDP Trajectories](/knowledge/economics/gdp-trajectories.qmd)); {{< var treaty_path_lifetime_income_multiplier >}} their current trajectory. (If you earn more than the global average, your personal gain is proportionally larger.)
 
-The ratio of upside to downside is {{< var sharing_upside_downside_ratio_treaty >}} to one. Which means sharing is irrational only if the probability of *any* improvement to global resource allocation is less than 1 in {{< var sharing_breakeven_one_in_treaty >}}.
+The upside exceeds the downside by a factor of {{< var sharing_upside_downside_ratio_treaty >}}. Which means sharing is irrational only if the probability of *any* improvement to global resource allocation is less than 1 in {{< var sharing_breakeven_one_in_treaty >}}.
 
 To put that in perspective: the probability of being struck by lightning in a given year is about 1 in 1.2 million. You would need to believe this plan is roughly 200 times less likely than being struck by lightning. Not "unlikely." Not "a long shot." Two hundred times less likely than a thing that actually happens to real humans every year.
 
@@ -151,13 +151,13 @@ And note what "this plan working" requires you to deny. The five questions of th
 2. **Do the benefits compound?** You'd need to believe that redirecting resources from destruction to medicine produces zero cumulative economic or health gains over 20 years. Not small gains. Zero.
 3. **Is there a less-bad approach?** You'd need to believe that no incentive-compatible mechanism, out of all possible mechanisms, could ever motivate any political shift. Not this specific mechanism. Any mechanism.
 4. **Does this dominate alternatives?** You'd need to believe that no reallocation of military spending has ever worked, despite your own species cutting military spending by 87% after World War II and experiencing the largest economic boom in human history.
-5. **Is the only bottleneck informed self-interest?** You'd need to believe that no self-interested actor (billionaire, sovereign wealth fund, or government) would ever act on a {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} return, even when the structure pays them to do so.
+5. **Is the only bottleneck informed self-interest?** You'd need to believe that no self-interested actor (billionaire, sovereign wealth fund, or government) would ever act when the return on investment is {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to one, even when the structure pays them to do so.
 
 To clear the breakeven threshold, you don't need to believe all five. You need to believe *any one of them* is not impossible. That's it. One non-zero answer out of five, and sharing becomes the rational move.
 
 And this calculation is conservative. It counts only the income gain. It assigns zero value to the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives. It ignores the Wishonia path entirely (which is {{< var wishonia_path_lifetime_income_multiplier >}} the current trajectory, not {{< var treaty_path_lifetime_income_multiplier >}}). It assumes you personally capture only the average gain, when in practice higher earners gain proportionally more. The actual breakeven threshold is even more forgiving than 1 in {{< var sharing_breakeven_one_in_treaty >}}.
 
-On Wishonia, a species that couldn't clear a 1-in-{{< var sharing_breakeven_one_in_treaty >}} bar for obvious self-interest would be studied by veterinarians, not economists.
+On Wishonia, a species that couldn't clear a 1-in-{{< var sharing_breakeven_one_in_treaty >}} bar for obvious self-interest would be a genuinely novel research subject. We have never encountered a species that fails to act on incentives this large. We don't have a word for it. The closest translation is "sleeping through your own house fire, but on purpose."
 
 ### The Only Remaining Failure Mode
 
@@ -178,13 +178,13 @@ So consider your situation. There are four outcomes:
 3. You do nothing, and the plan would have worked. You chose 30 seconds over {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives.
 4. You do nothing, and the plan wouldn't have worked anyway. Nothing happens, except you're the kind of person who picked "nothing" when "30 seconds" was also available.
 
-Forwarding dominates not-forwarding in every scenario. This is not an opinion. It's a payoff matrix. On Wishonia, choosing option 3 or 4 when option 1 costs 30 seconds would be considered a symptom of a neurological disorder. On Earth, it's called "being busy."
+Forwarding dominates not-forwarding in every scenario. This is not an opinion. It's a payoff matrix. On Wishonia, choosing option 3 or 4 when option 1 costs 30 seconds would not happen, because it doesn't make sense, and on Wishonia things that don't make sense don't happen. On Earth, it happens constantly. You call it "being busy."
 
 The payoff matrix above is denominated in lives. Your species has difficulty acting on lives. (You tolerate {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} preventable deaths right now, and your primary response is to feel briefly sad about it.) So here is the same calculation in the unit that actually moves humans.
 
 Even just the treaty path alone (redirect the murder budget, fix nothing else) produces an economy {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} larger than the baseline by year 20. Not a little larger. {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} larger. This compounds over 20 years, which is the part that makes the number large and the part that makes delay expensive. Over an average remaining lifespan, your cumulative earnings under the treaty path would be {{< var treaty_path_lifetime_income_multiplier >}} what they'd be on the current trajectory. For the average human, the gain is {{< var treaty_path_lifetime_income_gain_per_capita >}} in additional lifetime income. If you earn more than the global average (and if you're reading this on a device that costs more than most humans earn in a month, you do), your personal gain is proportionally larger.
 
-The opportunity cost of not forwarding is not "30 seconds." It is {{< var treaty_path_lifetime_income_gain_per_capita >}} in foregone lifetime income for the average person, compounding over {{< var global_avg_remaining_years_nounit >}} remaining years. Each year the treaty hasn't started is a year the 20-year compounding clock hasn't started. On Wishonia, failing to start this clock would be classified as a cognitive impairment. On Earth, it is classified as "Tuesday."
+The opportunity cost of not forwarding is not "30 seconds." It is {{< var treaty_path_lifetime_income_gain_per_capita >}} in foregone lifetime income for the average person, compounding over {{< var global_avg_remaining_years_nounit >}} remaining years. Each year the treaty hasn't started is a year the 20-year compounding clock hasn't started. On Wishonia, failing to start this clock would be considered so strange that nobody would believe you if you described it. On Earth, it is called "Tuesday."
 
 On Wishonia, the payoff matrix would be sufficient. On Earth, your species apparently needs to formalize obvious incentives into binding contracts before it will act on them. Fortunately, your economists already invented one. It's called a dominant assurance contract. Here's how it works: a contract operator sets a threshold and a failure bonus, then a credible anchor investor publicly underwrites the thing so everyone else can see the first real money on the table. After that, you pledge to support the treaty, conditional on enough others pledging too. If the threshold is met and the treaty works, you receive a tiny fraction of the value created. (A tiny fraction of "everyone is {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} richer" is still a lot of money.) If the threshold isn't met, you get your pledge back plus a bonus for having tried. Once the structure is credible, participation becomes the rational move. You profit if it works. You profit if it doesn't. The only way to lose is to not participate, which is the position you're currently in.
 
