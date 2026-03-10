@@ -791,6 +791,7 @@ class ReferenceID(str, Enum):
     OPENSECRETS_INTUIT_LOBBYING = "opensecrets-intuit-lobbying"
     OPENSECRETS_LOBBYING_2024 = "opensecrets-lobbying-2024"
     OPENSECRETS_REVOLVING_DOOR = "opensecrets-revolving-door"
+    OPENSECRETS_TARP_POLITICAL_SPENDING_2009 = "opensecrets-tarp-political-spending-2009"
     OPENSECRETS2020 = "opensecrets2020"
     OPENSECRETS2025 = "opensecrets2025"
     OPENTRIALS_DATABASE = "opentrials-database"

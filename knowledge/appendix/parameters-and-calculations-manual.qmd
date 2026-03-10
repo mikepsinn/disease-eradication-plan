@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 346 parameters used in the analysis, organized by type:
+This appendix documents all 350 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 128
-- Calculated values: 141
-- Core definitions: 77
+- Calculated values: 144
+- Core definitions: 78
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (141 parameters) • [External Data Sources](#sec-external) (128 parameters) • [Core Definitions](#sec-definitions) (77 parameters)
+[Calculated Values](#sec-calculated) (144 parameters) • [External Data Sources](#sec-external) (128 parameters) • [Core Definitions](#sec-definitions) (78 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3349,6 +3349,172 @@ $$
 
 :::
 
+### Expected GDP vs Earth Multiplier (Year 20): 51x {#sec-gdp_expected_value_vs_earth_multiplier_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected-value GDP at year 20 as a multiple of Earth baseline GDP.
+
+**Inputs**:
+
+- [Expected GDP at Year 20 (Probability-Weighted)](#sec-gdp_expected_value_year_20) 🔢: $9.62 quadrillion
+- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+
+$$
+\begin{gathered}
+k_{EV:earth,20} \\
+= \frac{E[GDP_{20}]}{GDP_{earth,20}} \\
+= \frac{\$9620T}{\$188T} \\
+= 51
+\end{gathered}
+$$
+where:
+$$
+E[GDP_{20}] = p_{wish,20} \cdot GDP_{wish,20}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-gdp_expected_value_vs_earth_multiplier_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-gdp_expected_value_vs_earth_multiplier_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-gdp_expected_value_vs_earth_multiplier_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-gdp_expected_value_vs_earth_multiplier_year_20.qmd >}}
+
+:::
+
+### Expected GDP at Year 20 (Probability-Weighted): $9.62 quadrillion {#sec-gdp_expected_value_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability-weighted expected global GDP at year 20 from Wishonia vs Moronia paths. Moronia contributes $0 GDP in this framing.
+
+**Inputs**:
+
+- [Wishonia Path Probability (Year 20 EV Model)](#sec-wishonia_path_success_probability_year_20): 90% (95% CI: 60% - 98%)
+- [Wishonia Path GDP at Year 20](#sec-wishonia_path_gdp_year_20) 🔢: $10.7 quadrillion
+
+$$
+E[GDP_{20}] = p_{wish,20} \cdot GDP_{wish,20}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-gdp_expected_value_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-gdp_expected_value_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-gdp_expected_value_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-gdp_expected_value_year_20.qmd >}}
+
+:::
+
 ### Total Annual Conflict Deaths Globally: 245 thousand deaths/year {#sec-global_annual_conflict_deaths_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4332,6 +4498,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-military_to_government_clinical_trials_spending_ratio.qmd >}}
+
+:::
+
+### Ratio of Military Spending to Medical Research Spending: 40.3:1 {#sec-military_vs_medical_research_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of military spending to medical research spending
+
+**Inputs**:
+
+- [Global Government Medical Research Spending](#sec-global_med_research_spending) 📊: $67.5B (95% CI: $54B - $81B)
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72T
+
+$$
+\begin{gathered}
+Ratio_{mil:RD} \\
+= \frac{Spending_{mil}}{Spending_{RD}} \\
+= \frac{\$2.72T}{\$67.5B} \\
+= 40.3
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-military_vs_medical_research_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-military_vs_medical_research_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-military_vs_medical_research_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-military_vs_medical_research_ratio.qmd >}}
 
 :::
 
@@ -12709,6 +12913,28 @@ Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Wishonia Path Probability (Year 20 EV Model): 90% {#sec-wishonia_path_success_probability_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability that the world follows the Wishonia Path (Treaty + dysfunction-tax elimination) rather than the Moronia collapse path in the expected-value framing.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [60%, 98%] • Distribution: Beta
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 60% and 98% (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-wishonia_path_success_probability_year_20.qmd >}}
 
 *Core definition*
 
