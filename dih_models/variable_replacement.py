@@ -166,13 +166,16 @@ def remove_quarto_content_hidden(content: str) -> str:
 
 def remove_citation_keys(content: str) -> str:
     """
-    Remove [@citation-key] references from content.
+    Remove citation references from content.
 
-    Handles single keys [@foo], multiple keys [@foo; @bar],
-    and keys with surrounding semicolons/spaces.
+    Handles bracketed [@foo], multiple [@foo; @bar],
+    and bare @foo-bar citations (e.g. from resolved variables).
     """
-    # Remove standalone citation brackets: [@key] or [@key; @key2]
+    # Remove bracketed citations: [@key] or [@key; @key2]
     content = re.sub(r'\s*\[(?:@[\w-]+(?:\s*;\s*@[\w-]+)*)\]', '', content)
+    # Remove bare citations: @key-with-dashes (but not email addresses)
+    # Also clean up any trailing space left before punctuation
+    content = re.sub(r'(?<![.\w])\s*@[\w][\w-]+', '', content)
     return content
 
 

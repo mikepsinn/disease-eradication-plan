@@ -171,10 +171,17 @@ def generate_readme(
         # Strip raw HTML tags (links with <a>, etc.)
         index_content = re.sub(r'<a\s+[^>]*>([^<]*)</a>', r'\1', index_content)
 
-        # Convert .qmd links to GitHub-friendly relative links
+        # Convert .qmd links to manual.warondisease.org URLs
         index_content = re.sub(
-            r'\]\(/?(knowledge/[^)]+)\.qmd\)',
-            r'](\1.qmd)',
+            r'\]\(/?(knowledge/[^)]+)\.qmd([^)]*)\)',
+            r'](https://manual.warondisease.org/\1.html\2)',
+            index_content
+        )
+
+        # Convert absolute image paths to manual.warondisease.org URLs
+        index_content = re.sub(
+            r'(\!\[[^\]]*\])\(/assets/',
+            r'\1(https://manual.warondisease.org/assets/',
             index_content
         )
 

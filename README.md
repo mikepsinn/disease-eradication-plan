@@ -165,13 +165,13 @@ You'd be adorable for thinking that.
 
 There are 9.5 thousand compounds known safe compounds, and 99%) | Calculated from 2 inputs | ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click to view details, calculation & sources">99.7% of their potential uses have never been tested. At the current discovery rate, finding treatments for all of them will take ~443 years. You personally will be dead within 80 years, which I mention not to be rude but because you seem weirdly calm about this.
 
-![Everyone currently alive will be dead before we finish (current timeline)](/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
+![Everyone currently alive will be dead before we finish (current timeline)](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
 ### The Cost of War
 
 Humans spend **$2.72T** every year on stuff designed specifically to make humans stop being alive:
 
-- [13,000 nuclear warheads](knowledge/problem/cost-of-war.qmd) (enough to end civilization 13 times, just in case the first 12 apocalypses don't take)
+- [13,000 nuclear warheads](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) (enough to end civilization 13 times, just in case the first 12 apocalypses don't take)
 - AI murder-bots
 - Invisible jets that cost more than hospitals
 - Space Force (to fight the zero aliens attacking you)
@@ -189,7 +189,7 @@ And that's just the official murder budget.
 
 Cybercrime costs $10.5T per year and growing at $6T (2021) -> $10.5T (2025). AI-enhanced attacks are accelerating this trend. | ✓ High confidence | Dist: Fixed | Unit: percent | Click to view details, calculation & sources">15% annually. This is not a separate problem. North Korea can't build an aircraft carrier, but it funds its nuclear program by stealing $1.5 billion in cryptocurrency in a single afternoon. Russia finances military operations with ransomware. Cybercrime is war conducted through WiFi, and it pays better.
 
-Combined, your [destructive economy](knowledge/economics/gdp-trajectories.qmd) is $13.2T per year, 11.5% of global GDP. Both are growing faster than the part of your economy that makes things. So the part that destroys things is winning. I'm told this is not considered an emergency. On your planet this is considered "Tuesday."
+Combined, your [destructive economy](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) is $13.2T per year, 11.5% of global GDP. Both are growing faster than the part of your economy that makes things. So the part that destroys things is winning. I'm told this is not considered an emergency. On your planet this is considered "Tuesday."
 
 There is a crossover point, and I cannot believe I have to explain this to a species that invented calculus. When the parasitic economy grows large enough relative to the productive one, the rational choice for any individual, company, or nation flips from "build things" to "steal things." Why spend years building a product when you can ransom a hospital in an afternoon? Why manufacture exports when hacking banks pays better? Once enough of your economy is extraction, producing anything makes you a target rather than a success. Production becomes irrational. Parasitism becomes the only means of survival.
 
@@ -211,7 +211,7 @@ Your National Institutes of Health, the agency nominally responsible for finding
 
 Then there's a 8.2 years delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend 8.2 years making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would 1.08 billion people other patients, and the current system has 1.9 million slots. That's a participation rate of 0.06%. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
-Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, 3.07k people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by 3.07k to 1. Your safety system's main product is dead patients.
+Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html): for every 1 person protected from a dangerous drug, 3.07k people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by 3.07k to 1. Your safety system's main product is dead patients.
 
 ---
 
@@ -223,7 +223,7 @@ Your regulatory system can make two mistakes: approve a bad drug (Type I error),
 
 ## The Solution
 
-### [A 1% Treaty](knowledge/solution/1-percent-treaty.qmd)
+### [A 1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)
 
 This is going to sound crazy. But you're going to use those papers to persuade the leader of every country on Earth to simultaneously redirect 1% of its military budget to clinical trials. That's it. That's the treaty.
 
@@ -236,13 +236,13 @@ I've done this before. I've sent versions of this manual to 847 civilizations on
 
 And you have two other advantages, the internet and a new financial instrument designed specifically for harnessing the most powerful force in the universe: human greed.
 
-### Your [Decentralized FDA](knowledge/solution/dfda.qmd)
+### Your [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html)
 
-On Wishonia, we built this with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a [Decentralized FDA](knowledge/solution/dfda.qmd). Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
+On Wishonia, we built this with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html). Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
 
 80% of the $27.2B will go directly to subsidizing patient participation in pragmatic trials at $929/patient instead of the usual $41K. Patients will choose which trials to join; their subsidy will follow them. Treatment developers and providers will get paid for each participant. No grant committees deciding which diseases are fashionable this year.
 
-Instead of testing drugs on 200 humans selected by pharmaceutical companies in clinical terrariums, you'll test on real patients in real hospitals. Where the diseases are. The whole thing will use your new [decentralized FDA](knowledge/solution/dfda.qmd) protocol, reducing trial costs by 44.1x and funding 23.4 million patients/year (versus the current 1.9 million patients/year).
+Instead of testing drugs on 200 humans selected by pharmaceutical companies in clinical terrariums, you'll test on real patients in real hospitals. Where the diseases are. The whole thing will use your new [decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html) protocol, reducing trial costs by 44.1x and funding 23.4 million patients/year (versus the current 1.9 million patients/year).
 Remember that billion patients drowning in line for two life jackets? Your decentralized FDA will hand out 23.4 million.
 
 This will increase the treatment discovery rate 12.3x, compressing that ~443 years wait to ~36 years. Two things will save lives. First, finding treatments faster: treatments that would have sat undiscovered for centuries will get found 204 years sooner on average. Second, eliminating the 8.2 years bureaucratic delay between proving a drug is safe and letting dying humans take it. Combined, treatments will reach patients 212 years sooner on average. That timeline shift will prevent 10.7 billion deaths. Those are individual humans who currently have plans for next Tuesday.
@@ -255,9 +255,9 @@ Remember Vioxx and the smoke detector that works by mail? Your new system will c
 
 Currently, your doctor picks treatments based on: that drug rep who brought good donuts in 2003, something they half-remember from medical school, whatever the insurance company allows, and vibes. This is called "evidence-based medicine," which contains the word "evidence" the same way "grape soda" contains the word "grape."
 
-Your [decentralized FDA](knowledge/solution/dfda.qmd) will rank every treatment by what actually happened to real humans who took it:
+Your [decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html) will rank every treatment by what actually happened to real humans who took it:
 
-![Which pills work better than other pills, in list form. Like a leaderboard for not dying.](/assets/images/dfda-comparative-effectiveness-ranking-search.png)
+![Which pills work better than other pills, in list form. Like a leaderboard for not dying.](https://manual.warondisease.org/assets/images/dfda-comparative-effectiveness-ranking-search.png)
 
 ##### Outcome Labels
 
@@ -265,11 +265,11 @@ Food has nutrition labels. Cigarettes have warning labels. Drugs have 40-page in
 
 Your television advertisements show a smiling human frolicking through a meadow while a voiceover lists ways the drug might kill you at auctioneer speed. The meadow human does not react to the word "stroke." Side effects include "death," listed between "constipation" and "mild rash," as if your organs failing is roughly as inconvenient as dry skin. The label says "individual results may vary," meaning outcomes range from "cured" to "deceased" (both technically qualifying). It also says "ask your doctor," but your doctor has 7 minutes per appointment and just Googled your condition in the hallway.
 
-Your new system will produce [Outcome Labels](knowledge/solution/dfda.qmd) that tell you what actually happens when real humans take a drug. Not what a marketing department hopes happens. Not what a lawyer is comfortable admitting happens. What happens.
+Your new system will produce [Outcome Labels](https://manual.warondisease.org/knowledge/solution/dfda.html) that tell you what actually happens when real humans take a drug. Not what a marketing department hopes happens. Not what a lawyer is comfortable admitting happens. What happens.
 
-![What medicine labels would say if they were honest.](/assets/images/dfda-outcome-labels.png)
+![What medicine labels would say if they were honest.](https://manual.warondisease.org/assets/images/dfda-outcome-labels.png)
 
-Your decentralized FDA figures out which treatments work. But your governments also need to know which *policies* work, how much to spend on what, which laws to keep, which to throw away. Your current method is to argue about it on television until someone wins by being louder. On Wishonia, the [Optimitron](knowledge/solution/optimocracy.qmd) handles this. It's an appliance. You plug in what 10,000 jurisdictions tried, it tells you which policies actually made people richer or less dead. Its [Optimal Budget Generator](https://obg.warondisease.org) does budgets; its [Optimal Policy Generator](https://opg.warondisease.org) does laws.
+Your decentralized FDA figures out which treatments work. But your governments also need to know which *policies* work, how much to spend on what, which laws to keep, which to throw away. Your current method is to argue about it on television until someone wins by being louder. On Wishonia, the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) handles this. It's an appliance. You plug in what 10,000 jurisdictions tried, it tells you which policies actually made people richer or less dead. Its [Optimal Budget Generator](https://obg.warondisease.org) does budgets; its [Optimal Policy Generator](https://opg.warondisease.org) does laws.
 
 ## Why This Could Actually Work
 
@@ -279,10 +279,10 @@ Your decentralized FDA figures out which treatments work. But your governments a
 
 Humans usually want "proof" before they stop doing something stupid, which is interesting because you never required proof before starting:
 
-- [The RECOVERY trial](knowledge/appendix/recovery-trial.qmd) tested 6 treatments on 48,000 patients for $500 per patient instead of the usual $41K per patient. That's a 82x cost reduction. Not in theory. In reality. During a pandemic. While panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic.
+- [The RECOVERY trial](https://manual.warondisease.org/knowledge/appendix/recovery-trial.html) tested 6 treatments on 48,000 patients for $500 per patient instead of the usual $41K per patient. That's a 82x cost reduction. Not in theory. In reality. During a pandemic. While panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic.
 - After WW2, humans cut military spending by 87.6% in two years and stumbled into the greatest economic boom in history by running out of people to shoot at. You're now spending 30.6x the pre-WW2 baseline in inflation-adjusted dollars. You're asking for 1%. Even people who really, really, love exploding people should be able to handle 1%.
 
-![You've already done harder things than this](/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
+![You've already done harder things than this](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-the-evidence-bw-academic.jpg)
 
 
 Even your own war heroes figured this out. Eisenhower, the human who won WW2, warned you that the weapons industry was eating your civilization alive: *"Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed."* You gave him a standing ovation and then immediately ignored him for 65 years.
@@ -291,7 +291,7 @@ Even your own war heroes figured this out. Eisenhower, the human who won WW2, wa
 
 Remember the 212 years timeline shift? Treatments reaching patients that many years sooner means billions of people gain years of healthy life. Value each of those life-years at $150K (the standard economic valuation), multiply across the global disease burden over the acceleration window, and you get $84.8 quadrillion in total economic value. Divide that by the $1B campaign cost, and you get a return of 84.8M to 1. Your calculator will display an error, emit a tiny electronic scream, and attempt to leave the desk. This is correct.
 
-![Your calculator will display an error (this is correct)](/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
+![Your calculator will display an error (this is correct)](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-the-math-bw-academic.jpg)
 
 Cost-effectiveness: $0.00177 to save one year of healthy human life. Anti-malaria bed nets, the gold standard for keeping humans alive, cost $89. This is 50.3kx cheaper. It beats smallpox eradication (280 to 1) and childhood vaccinations (13 to 1), which were humanity's previous greatest hits in the "not dying" genre. Even if you assume only a 1% probability of the treaty actually passing (because you're you), the expected return is still 503x better than anti-malaria bed nets.
 
@@ -303,7 +303,7 @@ Cost-effectiveness: $0.00177 to save one year of healthy human life. Anti-malari
 
 On Wishonia, people do useful things because they're useful. On Earth, you need a financial instrument. So here's one.
 
-An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: 80% to clinical trials, 10% to investors as a revenue share on treaty funds, and 10% to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors give money, get more money back. Politicians get reelected. 80% goes to curing diseases. The corruption is capped at 20% and fully transparent. The other 80% goes directly to clinical trials through [wishocratic allocation](knowledge/solution/wishocracy.qmd), where nobody with money gets to decide where it goes. Meanwhile, the [Optimitron](knowledge/solution/optimocracy.qmd) tells governments which of their own policies are working and which ones are expensive ways to accomplish nothing.
+An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: 80% to clinical trials, 10% to investors as a revenue share on treaty funds, and 10% to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors give money, get more money back. Politicians get reelected. 80% goes to curing diseases. The corruption is capped at 20% and fully transparent. The other 80% goes directly to clinical trials through [wishocratic allocation](https://manual.warondisease.org/knowledge/solution/wishocracy.html), where nobody with money gets to decide where it goes. Meanwhile, the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) tells governments which of their own policies are working and which ones are expensive ways to accomplish nothing.
 
 Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). You're proposing the same thing.
 
@@ -322,13 +322,13 @@ Remember when your grandparents funded WW2 by buying bonds? They got 4% returns 
 
 This raises the $1B needed to fuel the rest of the bribery machine.
 
-![Grandma's war bonds paid 4%. Yours pay 272%. Grandma would be furious if she hadn't died of cancer.](/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
+![Grandma's war bonds paid 4%. Yours pay 272%. Grandma would be furious if she hadn't died of cancer.](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
 
 #### How the Money Loop Works
 
 Here's the part where humans usually stop reading because it involves following money through more than one step. Try to keep up:
 
-1. You sell $1B in VICTORY [Incentive Alignment Bonds](knowledge/solution/incentive-alignment-bonds.qmd) to investors. This funds the campaign.
+1. You sell $1B in VICTORY [Incentive Alignment Bonds](https://manual.warondisease.org/knowledge/solution/incentive-alignment-bonds.html) to investors. This funds the campaign.
 2. The campaign succeeds. Your treaty redirects 1% of military spending: $27.2B/year flows from the murder budget to clinical trials.
 3. The Victory Corporation (the company that issued the bonds) takes a 20% management fee on that $27.2B.
 4. Half of that fee (10%) goes to investor dividends: $2.72B/year on a $1B investment. That's 272% annual returns. Your investors will think it's a typo. It's not.
@@ -350,13 +350,13 @@ The Military Industrial Complex wasn't designed. It evolved, because the incenti
 
 You need 3.5% of humanity to vote yes on: "Should your country redirect 1% of military spending to fund clinical trials?"
 
-Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](knowledge/strategy/global-referendum.qmd) @3-5-rule. Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. Humanity discovered the cheat code for changing its own civilization and then never used it on purpose.
+Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](https://manual.warondisease.org/knowledge/strategy/global-referendum.html). Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. Humanity discovered the cheat code for changing its own civilization and then never used it on purpose.
 
-That's 280 million humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get 280 million to vote yes or no on the treaty. $250M of the campaign budget goes to [paid referral bonuses](knowledge/strategy/global-referendum.qmd) that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
+That's 280 million humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get 280 million to vote yes or no on the treaty. $250M of the campaign budget goes to [paid referral bonuses](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
 
 ### Step 3: Bribe the Bribers
 
-*[Professional Briber Conversion Therapy](/knowledge/solution/aligning-incentives.qmd#defense-contractors-teaching-merchants-of-death-to-love-life)*
+*[Professional Briber Conversion Therapy](https://manual.warondisease.org/knowledge/solution/aligning-incentives.html#defense-contractors-teaching-merchants-of-death-to-love-life)*
 
 Military lobbyists currently get $1,813 back per dollar invested in democracy corruption. Show them a spreadsheet:
 
@@ -388,7 +388,7 @@ Remember that $2.72B/year from Step 1? This is where it goes. The Super PAC give
 
 The NRA already perfected this technology. They give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. You're plagiarizing their system and replacing "guns" with "not dying from diseases."
 
-The [Incentive Alignment Bond works for any problem](knowledge/appendix/incentive-alignment-bonds-paper.qmd) where politicians need to do something good but currently get punished for it, which on your planet is most problems.
+The [Incentive Alignment Bond works for any problem](https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html) where politicians need to do something good but currently get punished for it, which on your planet is most problems.
 
 ### Step 5: Enjoy
 
@@ -426,7 +426,7 @@ Everything is designed to work WITH human dysfunction, not against it. I'm not a
 
 Now is the time to select one of the two paths for the remainder of your existence.
 
-I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself. Your current average income is $14.4K. Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
+I [modeled both paths](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself. Your current average income is $14.4K. Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
 #### Future A: You Ignore This Manual
 
@@ -444,7 +444,7 @@ I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your 
 - Year 2032: First treatments from the accelerated pipeline reach patients. Diseases that would have waited centuries for trials are getting tested now. Nobody is cured of everything, but the queue is finally moving. Humans experience the novel sensation of progress. Several publish op-eds arguing it's happening too fast.
 - Year 2035: Turns out when you stop spending money on destruction and start spending it on production, things get produced. The math suggests average income roughly doubles. Your economists publish papers explaining why this was obvious in retrospect.
 - Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. If the trajectory holds, average income hits 5x where it started. Humans begin to suspect that not killing each other was the missing variable.
-- Year 2048: The [model projects](knowledge/economics/gdp-trajectories.qmd) average income reaching over 20x today's level. Nations that pointed incentive alignment bonds at [the rest of their dysfunction](knowledge/appendix/political-dysfunction-tax.qmd) do 3.43x better. Your children ask what "war" means. You change the subject.
+- Year 2048: The [model projects](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) average income reaching over 20x today's level. Nations that pointed incentive alignment bonds at [the rest of their dysfunction](https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html) do 3.43x better. Your children ask what "war" means. You change the subject.
 
 Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and an idea that mainly requires people to click a button and then receive money. If you can't make this happen, that's a skill issue.
 
@@ -461,9 +461,9 @@ You are a selfish animal governed by incentives. This is not an insult. It's the
 
 I ran the numbers on your species' habit of ignoring good ideas. The [institutionalization rate](#what-to-do-when-they-try-to-institutionalize-you) is 90%. Nine out of ten humans will dismiss this as crazy. The math doesn't care.
 
-There are 2.78 thousand billionaires on your planet and 195 heads of state. The [chain reaction model](knowledge/appendix/treaty-feasibility.qmd#sec-chain-reaction-model) shows that even with 90% dismissal, approximately 14.5 of them will engage with this idea within 10 years. Not because they're brave. Because there are 2.98 thousand of them, and the math doesn't need all of them. It needs one.
+There are 2.78 thousand billionaires on your planet and 195 heads of state. The [chain reaction model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows that even with 90% dismissal, approximately 14.5 of them will engage with this idea within 10 years. Not because they're brave. Because there are 2.98 thousand of them, and the math doesn't need all of them. It needs one.
 
-And here is the part that should bother you: the [incentive structure](knowledge/appendix/treaty-feasibility.qmd#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](knowledge/appendix/treaty-feasibility.qmd#what-would-have-to-be-wrong), and you are welcome to try.
+And here is the part that should bother you: the [incentive structure](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#what-would-have-to-be-wrong), and you are welcome to try.
 
 This exact combination (real money for sharing, bonds paying 272% returns, legal bribery via Super PAC, and a 3.5% trigger that activates the treaty) has never existed on your planet before. On the 847 planets where I've deployed versions of this, the ones that used it survived. The ones that didn't are asteroids now. Even if you assume only a 1% chance of the treaty actually passing (because you're you), the expected return is still 503x better than the best charity humanity has ever funded. The numbers are too large to ignore, which is why you're still reading.
 
