@@ -195,7 +195,19 @@ def generate_readme(
         readme_parts.append("See [manual.WarOnDisease.org](https://manual.WarOnDisease.org) for the full manual.\n\n")
 
     # ===============================
-    # 1. PAPERS
+    # 1. SPONSOR
+    # ===============================
+    readme_parts.append("---\n\n")
+    readme_parts.append("## Sponsor\n\n")
+    readme_parts.append('<a href="https://github.com/sponsors/wishonia">'
+                        '<img src="https://img.shields.io/badge/Sponsor-wishonia-ea4aaa?logo=github-sponsors&style=for-the-badge" '
+                        'alt="Sponsor wishonia" /></a>\n\n')
+    readme_parts.append('<iframe src="https://github.com/sponsors/wishonia/card" '
+                        'title="Sponsor wishonia" height="225" width="600" '
+                        'style="border: 0;"></iframe>\n\n')
+
+    # ===============================
+    # 2. PAPERS
     # ===============================
     readme_parts.append("---\n\n")
     readme_parts.append("## Papers\n\n")
