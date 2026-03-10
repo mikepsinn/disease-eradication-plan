@@ -35,7 +35,8 @@ def _build_cta_html(project_root: Path) -> str:
     return f"""  <p style="margin: 0.5rem 0; font-size: 0.95rem;">
     <a href="{amazon_url}" style="color: #8b7355; font-weight: 600;">Buy on Amazon</a> &nbsp;|&nbsp;
     <a href="https://manual.WarOnDisease.org/knowledge/links.html" style="color: #8b7355;">Listen</a> &nbsp;|&nbsp;
-    <a href="https://WarOnDisease.org" style="color: #8b7355;">Vote</a>
+    <a href="https://WarOnDisease.org" style="color: #8b7355;">Vote</a> &nbsp;|&nbsp;
+    <a href="https://github.com/sponsors/wishonia" style="color: #8b7355;">&#10084; Support this work</a>
   </p>"""
 
 
