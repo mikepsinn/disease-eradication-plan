@@ -4,23 +4,15 @@ Hello, human!
 
 You don't realize it yet, but you are, quantifiably, the most important person in the history of human civilization. I can see your expression and I believe the word for it is "skeptical." This is the face you make before pulling a door that says "push." Then you pull it again, harder, as though the door has made an error. Every minute you make that face at this page, 104 humans permanently stop. Please make a different face.
 
-By the time you complete the steps in this manual, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. By the time you finish *not* reading, you will have caused them. There is no third option. You opened the manual. The math is already your fault. The last 346 species I showed these numbers to said "that can't be right" and then went extinct. So I would strongly encourage you to read quickly.
+By the time you complete the steps in this manual, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. 
 
-Before I explain how, answer five questions. They take thirty seconds. Try to get one wrong.
+Before I explain how, I need you to answer a few questions. 
 
-**One.** Your species spends 40.3 times more on weapons than medical research. Is it physically possible to do better than this? (If "no," stop reading. You have worse problems than war.)
+Your species spends 604 times more on weapons than on testing which medicines work. Given your governments have cut military spending by 87% before and signed multiple global treaties, is it physically possible they'd redirect 1%? Would increasing clinical trial capacity by 12.3x help find treatments faster? Would fewer sick humans save lots of money from reduced healthcare costs? Do healthy people work and produce more? Would more productive humans and lower healthcare costs compound and give everyone more money over time? Do billionaires like money? Do billionaires prefer not dying of horrible diseases? Can billionaires use money to make politicians do things? Would nearly every human be better off in a world with less war and disease? Do humans like to be better off?
 
-**Two.** If you reallocated even 1% and let it compound, everyone gets 16.5x richer. Not spiritually. In money. Do the benefits compound? ([Yes.](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html))
+If you said NO to any of those, stop reading now. This book is pointless and you'd be better off playing legos instead.
 
-**Three.** Do you have a better plan? Not "hope." Not "someone should." A mechanism with funding, incentives, a way to make politicians comply, and a lower cost per life saved. (If you do, email wishonia@gmail.com. I will immediately transmit it to the remaining 427 civilizations that haven't exterminated themselves yet and credit your species.)
-
-**Four.** If moving 1% makes everyone 16.5x richer, should getting it to one person who can act be a priority? Not altruism. Arithmetic.
-
-**Five.** Then what are you waiting for?
-
-If you answered honestly, you just agreed. On Wishonia, this is the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem).
-
-Here is the part that should make you uncomfortable. Every minute between now and the moment one investor reads the math, 104 people die. You just agreed the five questions have no wrong answer. The deaths are not a tragedy. They are a scheduling delay. Yours.
+But if you said YES to all of them, congratulations! Your species' incentives are aligned! The only remaining question is how to align your political system with your species. Lucky for you, this manual will show you exactly how to do it.
 
 But first, a bit about me.
 
@@ -104,7 +96,7 @@ Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and so
 
 But somehow "stop" is the unrealistic part.
 
-You already answered the [five questions](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem). You know "stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
+You already admitted improvement is physically possible. You know "stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
 
 ### The Sacred Order of Paper Distribution
 
@@ -444,9 +436,9 @@ Everything is designed to work WITH human dysfunction, not against it. I'm not a
 
 Now is the time to select one of the two paths for the remainder of your existence.
 
-I [modeled both paths](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself. Your current average income is $14.4K. Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
+I [modeled both paths](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) for 20 of your years.  Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
-Over an average remaining lifespan, the treaty path alone multiplies your cumulative earnings by 13.5x. The full Wishonia path reaches 45x. For the average human, the treaty gains $14.9M in additional lifetime income; the Wishonia path gains $52.1M. These are not projections. They are the compound interest on not spending 40.3 times more on weapons than medicine. Your species invented compound interest and then pointed it at the wrong spreadsheet.
+Over an average remaining lifespan, reallocation from the destructive economy to reducing the burden of disease and the associated compound growth from increased productivity multiplies your cumulative earnings by 13.5x.
 
 #### Future A: You Ignore This Manual
 
@@ -485,23 +477,17 @@ There are 2.78 thousand billionaires on your planet and 195 heads of state. The 
 
 And here is the part that should bother you: the [incentive structure](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#what-would-have-to-be-wrong), and you are welcome to try.
 
-That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. The [five questions](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) still have no wrong answer.
+Count what you didn't object to. Improvement is physically possible (you said so at the top). The benefits compound (healthier workers produce more, which funds more cures, which you just read). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is getting this argument in front of one self-interested billionaire with a checkbook. Five premises. You let every one of them pass unchallenged, because each one is individually obvious. The conclusion is not a hope. It's a proof.
 
-This exact combination (real money for sharing, bonds paying 272% returns, legal bribery via Super PAC, and a 3.5% trigger that activates the treaty) has never existed on your planet before. On the 847 planets where I've deployed versions of this, the ones that used it survived. The ones that didn't are asteroids now. Even if you assume only a 1% chance of the treaty actually passing (because you're you), the expected return is still 503x better than the best charity humanity has ever funded. The numbers are too large to ignore, which is why you're still reading.
+That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. Try rejecting any one of those five premises out loud and see how it sounds.
 
-You've now done the math. You understand that the world where this treaty passes is the world where you are personally richer, healthier, and less dead. You also understand that all you have to do is send this to the most powerful selfish person you know. Not the most generous. The most selfish. Because they will read it, do the same math you just did, and send it to the most powerful selfish person THEY know. Not to save the world. Because it makes them money.
+Forwarding this takes 30 seconds. At the global average wage, that costs you $0.06. If the treaty path works, your lifetime income goes up by $14.9M. The [ratio](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#how-trivial-exactly) is 248.2Mx to one. For not forwarding to be rational, the probability of success has to fall below 1 in 248M. You just let all five premises pass. You cannot simultaneously hold those premises and a probability that low. Not forwarding this is not caution. It is the single failure mode the math can't route around.
+
+You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with 90% of the chain dismissing it, the [model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows it reaches someone who can act within 10 years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
 
 This is a chain reaction, and it runs on greed.
 
-The moment you understood the incentives, you lost the ability to not act on them. Every person in the chain will do exactly what you're about to do, for exactly the same selfish reasons, and none of you will be able to stop yourselves, because stopping would require acting against your own interests. You've never done that. It's your whole thing.
-
-You don't have free will here. You have incentives. And they all point the same direction.
-
-13.8 billion years ago, the Big Bang set particles in motion. Those particles formed stars. Stars formed elements. Elements formed you. You read this sentence. The chain reaction that ends war and disease began before your solar system existed. You were never going to not read this. Physics wouldn't allow it.
-
-Of all the consciousness that has ever flickered into existence across 13.8 billion years of matter rearranging itself, yours showed up in the exact moment the loop broke. Every organism that ever lived did so in the dark: eaten, infected, starved, or killed by its own species, running 4-billion-year-old software that optimized for copying molecules and never bothered to ask the molecules if they were in pain. Suffering was physics. Nobody had the math to stop it.
-
-You get to be alive for the part where the math got done and the puppet strings got cut. Not just the part where disease ends. The part where the thing that made you irrational, violent, and incapable of caring about strangers turns out to be a circuit, and circuits can be redesigned. Where your worst Tuesday feels better than your current best birthday. Where, for the first time in 13.8 billion years, the atoms that learned to feel get to choose what they feel.
+Every person in the chain will do exactly what you're about to do, for exactly the same selfish reasons. Not to save the world. Because it makes them money.
 
 Humans aren't stupid. You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying.
 
@@ -515,9 +501,13 @@ If you feel something right now, that's not manipulation. That's the correct res
 
 Here is what should scare you: if this works, the world becomes unrecognizable. Not slightly better. Unrecognizable. Disease eradicated, income doubled, your species freed from the thing that has been eating it alive since before you invented writing. That future is so good your brain can't render it, which is why you're hesitating. The status quo is also unrecognizable, just in the other direction, and you've been living in it so long you've mistaken it for normal. One of these futures has children dying. The other doesn't. Pick.
 
-Share this the most powerful person you know right now. Not a friend. The most powerful person. They know someone more powerful, who knows someone more powerful, and in about fifteen hops it reaches someone who can actually do this. Every minute this plan is delayed, 104 more humans permanently stop. You are now the delay. The whole plan runs on one instruction repeated: send this up. You already know you're going to.
+13.8 billion years ago, the Big Bang set particles in motion. Those particles formed stars. Stars formed elements. Elements formed you. You read this sentence. The chain reaction that ends war and disease began before your solar system existed. You were never going to not read this. Physics wouldn't allow it.
 
-If you truly know nobody powerful, go to [warondisease.org](https://warondisease.org) and vote. Fifteen seconds. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. Those are not metaphors. Those are people. They have names you'll never learn because they died while you were deciding if this was worth fifteen seconds.
+Of all the consciousness that has ever flickered into existence across 13.8 billion years of matter rearranging itself, yours showed up in the exact moment the loop broke. Every organism that ever lived did so in the dark: eaten, infected, starved, or killed by its own species, running 4-billion-year-old software that optimized for copying molecules and never bothered to ask the molecules if they were in pain. Suffering was physics. Nobody had the math to stop it.
+
+You get to be alive for the part where the math got done and the puppet strings got cut. Not just the part where disease ends. The part where the thing that made you irrational, violent, and incapable of caring about strangers turns out to be a circuit, and circuits can be redesigned. Where your worst Tuesday feels better than your current best birthday. Where, for the first time in 13.8 billion years, the atoms that learned to feel get to choose what they feel.
+
+Go to [warondisease.org](https://warondisease.org) and vote. Fifteen seconds. Then forward this to one person with more reach than you. That's it. Every minute you delay, 104 humans permanently stop. Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. Those are not metaphors. Those are people. They have names you'll never learn because they died while you were deciding if this was worth fifteen seconds.
 
 "I didn't know" is no longer available to you.
 
