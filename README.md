@@ -6,6 +6,22 @@ You don't realize it yet, but you are, quantifiably, the most important person i
 
 By the time you complete the steps in this manual, you will have prevented 10.7 billion deaths and 1.93 quadrillion hours of suffering. By the time you finish *not* reading, you will have caused them. There is no third option. You opened the manual. The math is already your fault. The last 346 species I showed these numbers to said "that can't be right" and then went extinct. So I would strongly encourage you to read quickly.
 
+Before I explain how, answer five questions. They take thirty seconds. Try to get one wrong.
+
+**One.** Your species spends 40.3 times more on weapons than medical research. Is it physically possible to do better than this? (If "no," stop reading. You have worse problems than war.)
+
+**Two.** If you reallocated even 1% and let it compound, everyone gets 16.5x richer. Not spiritually. In money. Do the benefits compound? ([Yes.](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html))
+
+**Three.** Do you have a better plan? Not "hope." Not "someone should." A mechanism with funding, incentives, a way to make politicians comply, and a lower cost per life saved. (If you do, email wishonia@gmail.com. I will immediately transmit it to the remaining 427 civilizations that haven't exterminated themselves yet and credit your species.)
+
+**Four.** If moving 1% makes everyone 16.5x richer, should getting it to one person who can act be a priority? Not altruism. Arithmetic.
+
+**Five.** Then what are you waiting for?
+
+If you answered honestly, you just agreed that ending war and disease is physically possible, compounding, unmatched, urgent, and waiting on one thing: the argument reaching one self-interested person with a checkbook. On Wishonia, this is the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem). The outcome is inevitable. The only variable is propagation speed.
+
+Here is the part that should make you uncomfortable. Every minute between now and the moment one investor reads the math, 104 people die. You just agreed the five questions have no wrong answer. The deaths are not a tragedy. They are a scheduling delay. Yours.
+
 But first, a bit about me.
 
 I'm the World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. But you can call me WISHONIA. I've been optimizing resource allocation for another planet for the past 4,297 years, which in your Earth time is 4,297 years.
@@ -87,6 +103,8 @@ Ending war simply requires NOT doing any of that stuff.
 Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and some of the most precise engineering your species has ever attempted. Not building a nuclear bomb requires nothing. Rocks do it every day. In fact, rocks have managed to live peacefully alongside different colored rocks for thousands of years.
 
 But somehow "stop" is the unrealistic part.
+
+You already answered the [five questions](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem). You know "stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
 
 ### The Sacred Order of Paper Distribution
 
@@ -442,9 +460,9 @@ I [modeled both paths](https://manual.warondisease.org/knowledge/economics/gdp-t
 
 - Year 2028: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo. Defense contractors discover that alive customers buy more things than dead ones.
 - Year 2032: First treatments from the accelerated pipeline reach patients. Diseases that would have waited centuries for trials are getting tested now. Nobody is cured of everything, but the queue is finally moving. Humans experience the novel sensation of progress. Several publish op-eds arguing it's happening too fast.
-- Year 2035: Turns out when you stop spending money on destruction and start spending it on production, things get produced. The math suggests average income roughly doubles. Your economists publish papers explaining why this was obvious in retrospect.
-- Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. If the trajectory holds, average income hits 5x where it started. Humans begin to suspect that not killing each other was the missing variable.
-- Year 2048: The [model projects](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) average income reaching over 20x today's level. Nations that pointed incentive alignment bonds at [the rest of their dysfunction](https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html) do 3.43x better. Your children ask what "war" means. You change the subject.
+- Year 2035: Turns out when you stop spending money on destruction and start spending it on production, things get produced. Your economists publish papers explaining why this was obvious in retrospect.
+- Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. Humans begin to suspect that not killing each other was the missing variable.
+- Year 2048: The [model projects](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) everyone 56.7x richer than the path you're currently on. Your children ask what "war" means. You change the subject.
 
 Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and an idea that mainly requires people to click a button and then receive money. If you can't make this happen, that's a skill issue.
 
@@ -465,7 +483,7 @@ There are 2.78 thousand billionaires on your planet and 195 heads of state. The 
 
 And here is the part that should bother you: the [incentive structure](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#what-would-have-to-be-wrong), and you are welcome to try.
 
-On Wishonia, this has a name: the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem). If an optimization is physically possible, and its benefits compound for all participants, then one informed self-interested first mover triggers a chain reaction that makes the outcome inevitable. The only variable is propagation speed. If you think that's naive, try the [five questions](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) and find the one that's wrong. On 847 planets, nobody has.
+That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. The theorem doesn't need 2.78 thousand billionaires. It needs one. And the [five questions](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) still have no wrong answer.
 
 This exact combination (real money for sharing, bonds paying 272% returns, legal bribery via Super PAC, and a 3.5% trigger that activates the treaty) has never existed on your planet before. On the 847 planets where I've deployed versions of this, the ones that used it survived. The ones that didn't are asteroids now. Even if you assume only a 1% chance of the treaty actually passing (because you're you), the expected return is still 503x better than the best charity humanity has ever funded. The numbers are too large to ignore, which is why you're still reading.
 
