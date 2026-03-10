@@ -89,6 +89,40 @@ They all had the same thing you have: an argument that was obviously correct, an
 
 It shouldn't work this way. Spreadsheets, budgets, and lobbyists should always beat arguments and names. But your species is weird like that. You're the only civilization I've observed where being right occasionally defeats being rich. It happens rarely, and it takes too long, and it requires an embarrassing amount of suffering first. But it happens. And it starts with a list of names.
 
+## The Question You Can't Answer Wrong {#logical-inevitability-theorem}
+
+Before we get to the part where you copy, paste, and send, there's a sequence of questions you should walk anyone through. Each question is individually undeniable. The sequence is inescapable. On Wishonia, we call this "conversation." On Earth, you call it the Socratic method, because you named it after the one guy who did it and then you killed him.
+
+Here are the questions. Try to answer any of them wrong.
+
+**Question 1: Is it physically possible?**
+
+Among the near-infinite solution space for human action, is there *some* action, *somewhere*, that could improve how your species allocates resources toward ending war and disease? Or is the current allocation, where you spend {{< var global_military_spending_annual_2024 >}} a year on weapons and {{< var global_med_research_spending >}} on medical research, the theoretical optimum? Is this the best any civilization could possibly do? Your species spends {{< var military_vs_medical_research_ratio >}} times more on weapons than on medical research. If someone told you their household spent 40 times more on swords than on medicine, would you say "that sounds optimal" or would you say "are you okay?"
+
+Nobody will say it's physically impossible. Saying "there is no possible improvement to resource allocation" is the intellectual equivalent of saying "this is the best of all possible worlds," which is a position held by exactly one fictional character invented specifically to be wrong.
+
+**Question 2: What does the solution look like?**
+
+If optimal allocation existed, what would a world with compounding benefits look like? If you redirected even 1% of military spending to the highest marginal-ROI health interventions and let it compound for 20 years, the models show everyone could be {{< var gdp_expected_value_vs_earth_multiplier_year_20 >}} richer. Not metaphorically richer. Not spiritually richer. Richer in the way that involves having more money. The compounding math is in the [GDP Trajectories](/knowledge/economics/gdp-trajectories.qmd) chapter and it is not subtle.
+
+**Question 3: Do you have a better approach?**
+
+Is the 1% treaty the least bad approach, or do you have a superior one? This is not a rhetorical question. If you have a better plan, the authors of this manual would genuinely like to hear it. They will switch to your plan immediately. They have no attachment to this specific mechanism beyond the fact that nobody has proposed a better one. If your alternative is "do nothing and hope," that is not a plan. That is what you've been doing. The results are in.
+
+**Question 4: Should this be your top priority?**
+
+If ending war and disease is physically possible, and the result is {{< var gdp_expected_value_vs_earth_multiplier_year_20 >}} more resources for *everything*, then persuading those with sufficient power to implement it should temporarily be your top priority. Not because you're altruistic. Because it gives you {{< var gdp_expected_value_vs_earth_multiplier_year_20 >}} more resources to achieve whatever your *actual* goals are. If someone offered to multiply your budget by {{< var gdp_expected_value_vs_earth_multiplier_year_20 >}} in exchange for a few years of focused effort, and you said "no thanks, I'm busy," you would not be principled. You would be bad at math.
+
+**Question 5: Then what are you waiting for?**
+
+If ending war and disease is physically possible, and all humans would benefit unimaginably from it, then you don't need to persuade anyone to be altruistic. You merely need to inform rational self-interested actors that the optimization exists and let their own selfish incentives do the work. In a world where every decision-maker understood the compounding benefits and the approach, the end of war and disease would not require heroism. It would require arithmetic. It would be *inevitable*, delayed only by the amount of time wasted not informing those in power.
+
+Every minute you spend not propagating this information is the bottleneck. Not funding. Not politics. Not human nature. *You*, reading this, not yet having forwarded it. That's the bottleneck. The entire apparatus of self-interest is sitting there, ready to work, waiting for the signal that hasn't reached it yet because someone in the chain decided they were "busy."
+
+On Wishonia, this sequence of logic doesn't have a name, for the same reason gravity doesn't have a marketing department. On Earth, you apparently need to brand obvious things before your species will take them seriously, so: **The Logical Inevitability Theorem.** If an optimization is physically possible, and its benefits compound for all participants, then informed self-interested actors will pursue it. The outcome is inevitable. The only variable is the speed of information propagation. That's it. That's the theorem. Five sentences. On Wishonia, this is considered too obvious to state. On Earth, it's considered too idealistic to believe. One of these planets cured disease. The other one is still arguing about it.
+
+On Wishonia, the Logical Inevitability Theorem would take about four minutes to demonstrate and the conversation would end with both parties agreeing to optimize resource allocation. On Earth, it takes four minutes and the conversation ends with one party saying "interesting, I'll think about it" and then never thinking about it. This is the coordination failure the entire manual is about. You are not reading about it. You are currently doing it.
+
 ## Your Ammunition (Copy, Paste, Send) {#your-ammunition}
 
 You've read the plan. You've seen the math. You can't give the information back.
@@ -101,6 +135,10 @@ So consider your situation. There are four outcomes:
 4. You do nothing, and the plan wouldn't have worked anyway. Nothing happens, except you're the kind of person who picked "nothing" when "30 seconds" was also available.
 
 Forwarding dominates not-forwarding in every scenario. This is not an opinion. It's a payoff matrix. On Wishonia, choosing option 3 or 4 when option 1 costs 30 seconds would be considered a symptom of a neurological disorder. On Earth, it's called "being busy."
+
+On Wishonia, the payoff matrix would be sufficient. On Earth, your species apparently needs to formalize obvious incentives into binding contracts before it will act on them. Fortunately, your economists already invented one. It's called a dominant assurance contract. Here's how it works: you pledge to support the treaty, conditional on enough others pledging too. If the threshold is met and the treaty works, you receive a tiny fraction of the value created. (A tiny fraction of "everyone is {{< var gdp_expected_value_vs_earth_multiplier_year_20 >}} richer" is still a lot of money.) If the threshold isn't met, you get your pledge back plus a bonus for having tried. Participation is the dominant strategy whether or not you believe it will succeed. You profit if it works. You profit if it doesn't. The only way to lose is to not participate, which is the position you're currently in.
+
+This is not a new idea. Your economist Alex Tabarrok formalized it decades ago. It solves exactly the problem this chapter diagnoses: everyone waits because everyone else is waiting. A dominant assurance contract makes waiting the only irrational option. It turns "someone else will do it" from a comfortable excuse into a financial mistake. The [Victory Bonds](/knowledge/solution/incentive-alignment-bonds.qmd) chapter explains the specific instrument. The assurance contract is just the mechanism that gets enough humans to say "yes" at the same time, which is the part your species is bad at.
 
 The ask is not "share with a friend." Friends are horizontal. The ask is: forward to the most powerful person you know. Because that person knows someone more powerful than them, and that person knows someone more powerful than them, and so on. If each recipient forwards to one person more powerful than themselves, the message reaches someone who can implement the plan in roughly 15 to 20 hops. Not mass adoption. Not "raising awareness." One chain, climbing. If each person forwards to just one person, every human on Earth has the information in 33 steps. You don't need step 33. You need the step where it reaches someone with a checkbook and a motive.
 

@@ -15,6 +15,9 @@ abstract: |
   in household wealth vs. {{< var concentrated_interest_sector_market_cap_usd >}} for concentrated
   interests) means diffuse beneficiaries can outspend incumbent lobbies once coordination problems are
   solved. IABs solve that coordination problem by turning political change into an investable asset class.
+  A dominant assurance contract mechanism solves the bootstrap coordination problem: investor participation
+  is the strictly dominant strategy regardless of beliefs about other investors' behavior, closing the
+  end-to-end incentive chain from citizen coordination through treaty passage.
 aliases:
   - /iab.html
 author:
@@ -93,6 +96,7 @@ This paper demonstrates that the adoption problem (getting welfare-improving pol
 - **Mechanism achieves incentive compatibility** (when doing the right thing is also the profitable thing) with realistic parameters in low-opposition domains; requires higher funding in entrenched-opposition domains (Section 3.3)
 - **Complementary mechanisms prevent allocation capture** once resources are redirected (Section 6.1)
 - **Bootstrap problem is solvable**: ROI potential attracts risk-tolerant capital; capital asymmetry ensures scalability once proof-of-concept succeeds (Section 8.1)
+- **Dominant assurance contract makes investor participation the strictly dominant strategy**, closing the end-to-end incentive chain from citizen coordination through treaty passage (Section 8.2)
 
 ### Reader's Guide
 
@@ -306,7 +310,7 @@ Relative to Social Impact Bonds [@liebman2011; @gustafsson2017], IABs target a d
 
 ### Contribution
 
-This paper makes four contributions:
+This paper makes five contributions:
 
 1. **Mechanism Design for Governance**: We apply the formal tools of mechanism design theory, developed for auctions, matching markets, and resource allocation, to the problem of political incentives. While mechanism design has transformed economic institutions from spectrum auctions to kidney exchanges, its application to democratic governance is underdeveloped.
 
@@ -318,9 +322,11 @@ This paper makes four contributions:
 
 4. **A Welfare-Improvement Criterion**: We formalize how to identify appropriate IAB funding sources using comparative net societal value analysis ($NSV_{source} < NSV_{target}$) and show why *specified reallocation*, rather than budget addition, is enough (needed) to achieve real resource shifts. Under soft budget constraints, nominal spending increases are diluted by deficit expansion and inflation while Olsonian programs retain their share of real resources. This comparative criterion implies a natural ranking of expenditures; IABs draw from the lowest-ranked programs first, ensuring reallocation is welfare-improving under standard utilitarian assumptions.
 
+5. **A Bootstrap Coordination Mechanism**: We adapt Tabarrok's [-@tabarrok1998] dominant assurance contract to solve the investor coordination problem that precedes IAB deployment. We prove that participation in the assurance contract is the strictly dominant strategy for all potential investors (Proposition 4), closing the end-to-end incentive chain from citizen coordination through politician behavior change to treaty passage.
+
 ### Roadmap
 
-Section 2 reviews why previous approaches failed. Section 3 presents the formal model. Section 4 details the three-layer architecture and its legal basis. Section 5 analyzes failure modes. Section 6 discusses the broader governance stack. Section 7 extends the mechanism to climate, nuclear risk, and pandemic preparedness. The Conclusion summarizes contributions and open questions.
+Section 2 reviews why previous approaches failed. Section 3 presents the formal model. Section 4 details the three-layer architecture and its legal basis. Section 5 analyzes failure modes. Section 6 discusses the broader governance stack. Section 7 extends the mechanism to climate, nuclear risk, and pandemic preparedness. Section 8 addresses the bootstrap problem, including the dominant assurance contract for investor coordination. The Conclusion summarizes contributions and open questions.
 
 ![How this paper works: here's why everything failed, here's the math for why it failed, here's how to fix it, here's how to fix it everywhere.](/assets/images/incentive-alignment-bonds-paper/incentive-alignment-bonds-paper-section-roadmap-bw-academic.jpg)
 
@@ -1190,7 +1196,7 @@ The Monte Carlo results confirm that the mechanism's BCR remains strongly positi
 
 Incentive Alignment Bonds represent a new application of mechanism design to democratic governance. By making support for public-good policies incentive-compatible for utility-maximizing politicians, IABs address the collective action failure identified by Olson: concentrated interests systematically defeating diffuse interests in political competition.
 
-The contribution is fivefold:
+The contribution is sixfold:
 
 1. **Theoretical:** We formalize political incentive alignment as a mechanism design problem, provide explicit functional forms for politician utility components, and prove conditions for incentive compatibility.
 
@@ -1201,6 +1207,8 @@ The contribution is fivefold:
 4. **Practical:** We specify a three-layer architecture (scoring, electoral, post-office) that achieves alignment without violating anti-bribery law, and demonstrate that the bootstrap problem is solvable due to ROI economics and capital asymmetry.
 
 5. **Welfare-Economic:** We provide a comparative criterion ($NSV_{source} < NSV_{target}$) for identifying appropriate funding sources, implying a natural ranking of expenditures by marginal social value. We demonstrate why *specified reallocation*, rather than budget addition, is needed to achieve real resource shifts under soft budget constraints. Welfare accounting shows the mechanism itself has a BCR of {{< var iab_mechanism_benefit_cost_ratio >}}, justifying overhead costs across a wide range of success probabilities.
+
+6. **Bootstrap Coordination:** We adapt dominant assurance contracts [@tabarrok1998] to solve the investor coordination problem that precedes IAB deployment. We prove that participation is the strictly dominant strategy for all potential investors (Proposition 4), completing the end-to-end incentive chain from citizen coordination through treaty passage.
 
 Important limitations remain. Gaming and metric corruption require ongoing institutional vigilance. The plutocracy objection, that wealthy funders determine priorities, is addressed structurally by Wishocracy (Layer 2), which democratizes allocation decisions via aggregated citizen preferences and prevents advertising-based capture through random pairwise sampling. The capital asymmetry ({{< var global_household_wealth_usd >}} household wealth vs. {{< var concentrated_interest_sector_market_cap_usd >}} concentrated interests) combined with retail-accessible securities ensures that funding itself becomes democratized. Unintended consequences on political culture (e.g., crowding out intrinsic motivation) remain empirical questions requiring pilot evaluation. These considerations counsel for careful pilot implementation with rigorous evaluation before scaling.
 
@@ -1247,14 +1255,131 @@ The 90:1 capital advantage means that **even if concentrated interests attempt c
 **Empirical precedent:** Cryptocurrencies raised \$30B+ in ICOs (2017-2018) with far weaker value propositions than {{< var victory_bond_annual_return_pct >}} conditional ROI backed by lobbying economics. Green bonds reached \$500B outstanding by 2023. If IABs can be structured as retail-accessible securities, the capital mobilization problem is not "can we raise {{< var treaty_campaign_total_cost >}}?" but "can we structure the offering legally?"
 
 **The race condition:** Concentrated interests can mobilize regulatory opposition within 12-24 months of IAB visibility. But if:
-1. Phase 1 (\$200M-$500M) is raised from high-risk capital (impact funds, crypto whales, patient billionaires)
-2. Rapid deployment achieves measurable traction (one scoring cycle, measurable electoral impact)
-3. Momentum builds (even partial progress increases bond value through demonstrated efficacy)
-4. Retail offering opens to millions of diffuse beneficiaries for the remaining campaign funding
+1. A credible anchor investor publicly underwrites the Phase 1 assurance contract and initial bonus pool
+2. Phase 1 (\$200M-$500M) is then filled by high-risk capital (impact funds, crypto whales, patient billionaires)
+3. Rapid deployment achieves measurable traction (one scoring cycle, measurable electoral impact)
+4. Momentum builds (even partial progress increases bond value through demonstrated efficacy)
+5. Retail offering opens to millions of diffuse beneficiaries for the remaining campaign funding
 
 ...then the mechanism reaches escape velocity before regulatory capture becomes feasible. Defense contractors cannot outspend \$50B+ in mobilized retail capital without bankrupting themselves.
 
 **Conclusion:** The initial fundraising challenge is solvable because **(a)** ROI economics make early investment rational for risk-tolerant capital, and **(b)** capital asymmetry ensures that once traction is demonstrated, scaling capital to the full {{< var treaty_campaign_total_cost >}} exceeds any plausible counter-lobbying budget. The binding constraint is execution speed, not capital availability.
+
+### Dominant Assurance Contract for Investor Coordination
+
+The preceding analysis establishes that early investment in IABs is rational *for risk-tolerant capital*. But this leaves the coordination problem unsolved: each potential investor benefits from IABs being funded regardless of whether they personally contribute. This is the classic free-rider problem applied to public goods provision. We now formalize a mechanism that makes participation the strictly dominant strategy for *all* potential investors, not merely risk-tolerant ones.
+
+Tabarrok [-@tabarrok1998] introduced dominant assurance contracts as a solution to public goods provision problems. We adapt his framework to the IAB bootstrap context.
+
+#### Setup
+
+Consider $M$ potential investors indexed by $j \in \{1, \ldots, M\}$. Each investor chooses a pledge amount $x_j \geq 0$. A contract entrepreneur (the nonprofit organizing the campaign) specifies:
+
+- A funding threshold $\bar{X}$ (the minimum capital required to launch the IAB mechanism)
+- A bonus schedule $\delta_j > 0$ paid to each participant if the threshold is not met
+
+The contract entrepreneur operates the vehicle. A separate anchor investor can fund the bonus pool and make the first public commitment. The bootstrap trigger is credible underwriting, not personally building the institution.
+
+We maintain one additional assumption:
+
+**A6 (Rational Investors).** Each investor $j$ is a rational agent maximizing expected utility $V_j$ over financial outcomes.
+
+#### The Investor's Utility Function
+
+Let $p$ denote the probability that the treaty passes conditional on the IAB mechanism being funded, and let $R > 1$ denote the conditional return multiplier (incorporating the {{< var victory_bond_annual_return_pct >}} annual ROI established in Section 2.2). The expected return conditional on funding is $E[r] = p \cdot R + (1-p) \cdot 0 = pR$.
+
+Investor $j$'s payoff depends on two events: whether the threshold is met and whether the treaty subsequently passes.
+
+$$
+V_j(x_j) = \begin{cases}
+x_j \cdot (pR - 1) & \text{if } \sum_{k} x_k \geq \bar{X} \text{ and } x_j > 0 \\
+\delta_j & \text{if } \sum_{k} x_k < \bar{X} \text{ and } x_j > 0 \\
+0 & \text{if } x_j = 0
+\end{cases}
+$$ {#eq-investor-utility}
+
+The first case captures the expected return on investment when the campaign proceeds: the investor risks $x_j$ for an expected payoff of $x_j \cdot pR$, yielding net $x_j(pR - 1)$. The second case captures the dominant assurance feature: if insufficient investors participate and the threshold is not met, pledges are returned and each participant receives bonus $\delta_j > 0$. The third case is the status quo.
+
+#### Proposition 4 (Investor Participation as Dominant Strategy)
+
+**Proposition 4.** *Under A6, if $pR > 1$ (positive expected return conditional on threshold being met) and $\delta_j > 0$ (positive bonus if threshold not met), then pledging $x_j > 0$ strictly dominates $x_j = 0$ for all investors $j$.*
+
+*Proof sketch.* Consider investor $j$'s payoff under each state:
+
+- *Threshold met* ($\sum_k x_k \geq \bar{X}$): Pledging yields $x_j(pR - 1) > 0$ since $pR > 1$. Not pledging yields $0$.
+- *Threshold not met* ($\sum_k x_k < \bar{X}$): Pledging yields $\delta_j > 0$. Not pledging yields $0$.
+
+Since $V_j(x_j > 0) > V_j(0) = 0$ in both states, pledging strictly dominates not pledging regardless of other investors' actions. Full proof in Appendix A. $\square$
+
+**Corollary 2.** *The unique Nash equilibrium of the dominant assurance contract game is full participation: $(x_1, \ldots, x_M) \gg 0$.*
+
+*Proof.* When every player has a strictly dominant strategy, the profile of dominant strategies is the unique Nash equilibrium. By Proposition 4, $x_j > 0$ is strictly dominant for all $j$. $\square$
+
+#### Threshold Determination
+
+The threshold $\bar{X}$ is not arbitrary. It maps to the campaign budget required to fund the IAB mechanism through proof-of-concept:
+
+- **Phase 1 threshold** ($\bar{X}_1$): \$200M–\$500M for initial deployment, scoring infrastructure, and first electoral cycle (Section 8.1)
+- **Full campaign threshold** ($\bar{X}_2$): {{< var treaty_campaign_total_cost >}} for the complete IAB mechanism through treaty passage
+
+The contract can be staged: a Phase 1 assurance contract with threshold $\bar{X}_1$ funds the proof-of-concept. Demonstrated traction then supports a Phase 2 offering at threshold $\bar{X}_2$ with updated $p$ (higher, reflecting evidence) and lower perceived risk.
+
+#### Funding the Bonus
+
+The bonus $\delta_j$ must be funded by the contract entrepreneur. Three viable sources:
+
+1. **Interest on escrowed pledges.** During the pledge accumulation period, escrowed capital earns risk-free interest. At current rates, \$200M escrowed for 12 months generates \$8–10M in interest, sufficient to fund bonuses of 4–5% on all pledges.
+2. **Philanthropic seed capital.** A foundation commits a fixed bonus pool (e.g., \$5M) that is distributed pro rata to participants if the threshold is not met. This is a leveraged philanthropic investment: \$5M in bonus commitments can mobilize \$200M+ in pledges.
+3. **Entrepreneurial risk.** The contract entrepreneur (nonprofit) bears the bonus cost as a business expense, funded by the expected surplus from successful campaigns. This mirrors Tabarrok's original framing: the entrepreneur profits from the spread between threshold capital and its deployed value.
+
+The required bonus can be small. Proposition 4 holds for any $\delta_j > 0$, so even a 1% return on failed pledges is sufficient to make participation strictly dominant. In practice, higher bonuses accelerate participation by increasing the payoff floor.
+
+#### Closing the Incentive Chain
+
+The dominant assurance contract completes the end-to-end incentive compatibility chain:
+
+1. **Proposition 4** (this section): Investors will fund IABs because participation is the strictly dominant strategy under the assurance contract.
+2. **Proposition 1** (Section 3): Politicians will support welfare-improving policies because IABs make it the utility-maximizing choice.
+3. **Proposition 3** (Section 3): The unique equilibrium under funded IABs is universal cooperation.
+
+The full chain: citizen coordination (via dominant assurance contract) $\to$ IAB funding $\to$ politician incentive alignment $\to$ treaty passage $\to$ investor returns $\to$ reinforced citizen coordination. Each link is incentive-compatible. No link requires altruism. The mechanism is self-sustaining once the assurance contract triggers initial funding.
+
+#### Failure Mode Analysis: The Attention Bottleneck
+
+If we take the model's assumptions seriously (rational self-interest, $pR > 1$, dominant assurance structure), then every link in the chain is incentive-compatible and every actor's optimal move is to participate. Under these conditions, the mechanism does not fail from misaligned incentives. It fails from a single pre-mechanism bottleneck: **the rate at which actors with sufficient capital encounter and evaluate the proposal.**
+
+Formally, let $\lambda$ denote the rate at which potential investors with capital $x_j \geq x_{min}$ are exposed to and evaluate the mechanism. The time to reach threshold $\bar{X}$ is bounded by:
+
+$$
+T(\bar{X}) \leq \frac{\bar{X}}{\lambda \cdot \bar{x} \cdot q}
+$$ {#eq-attention-bottleneck}
+
+where $\bar{x}$ is the average pledge among evaluating investors and $q$ is the fraction who evaluate thoroughly enough to recognize that $pR > 1$ (i.e., who actually read the math rather than pattern-matching to "sounds too good to be true" and discarding).
+
+This reveals the actual failure modes, all of which precede the mechanism itself:
+
+1. **Attention scarcity** ($\lambda$ is low). Wealthy actors are busy. The proposal arrives as one of thousands of pitches. Even if evaluation would take 45 minutes and the conclusion would be "participate," the 45 minutes never happen. This is not a rationality failure. It is a bandwidth failure. The expected value of reading the paper is enormous, but the expected value of reading *any given unsolicited paper* is near zero, and rational actors cannot distinguish them without reading them. This is an information asymmetry problem, not an incentive problem.
+
+2. **Credibility discount** ($q$ is low). Rational actors who lack the time or expertise to evaluate the mechanism will estimate $p$ (treaty passage probability) based on priors. Most novel political mechanisms fail. If the prior on $p$ is low enough that $pR < 1$ for their subjective estimate, the dominant strategy result breaks down. Only the bonus $\delta$ makes participation attractive, which is insufficient to mobilize serious capital. This failure mode is *temporary*: a single successful pilot updates $p$ for every subsequent actor.
+
+3. **First-mover trust** ($q$ is low for the first cohort). The assurance contract requires a credible contract entrepreneur to hold escrow and commit bonuses. If the organizing entity is unknown or untrusted, even actors who accept the math may discount $p$ due to execution risk. This is also temporary: early successes build institutional credibility.
+
+4. **Coordination on evaluation** (a meta-attention problem). Each potential investor would benefit from *someone else* evaluating the mechanism first and publicly reporting "the math checks out." This creates a second-order free-rider problem: not on participation, which the assurance contract solves, but on *evaluation*. Each actor waits for social proof before investing attention.
+
+Notice what is absent from this list: no failure mode involves actors understanding the mechanism and rationally choosing not to participate. Under the model's assumptions, comprehension produces participation. Every failure mode reduces to the same variable: **the speed at which comprehension propagates.**
+
+**The chain reaction.** The bootstrap trigger is one credible anchor investor publicly underwriting the assurance contract with real money. Once one sufficiently capitalized actor evaluates the mechanism, recognizes $pR > 1$, and makes that public commitment, the dynamics shift:
+
+- Their participation is a credible signal (they risked real capital after evaluation)
+- This signal reduces evaluation cost for subsequent actors ($q$ increases)
+- Their reputation lends credibility to the contract entrepreneur ($p$ increases)
+- Media coverage increases exposure rate ($\lambda$ increases)
+
+Each informed participant accelerates the next. The cascade has the structure of an information epidemic: slow at first (each new participant requires independent evaluation), then rapid (social proof substitutes for evaluation). The threshold $\bar{X}$ is reached not through mass adoption but through sequential capitalized actors, each of whom faces a cleaner decision than the last.
+
+**Implication for strategy.** The binding constraint on the mechanism is not capital availability, political feasibility, or human nature. It is getting one credible wealthy first mover to read the paper, believe the expected value is positive, and make a public anchor commitment. Everything after that commitment is a chain reaction driven by self-interest. The entire apparatus of incentive compatibility is sitting idle, waiting for a signal that has not reached it yet because the signal requires reading.
+
+This is why information propagation, not fundraising, is the rate-limiting step. The [Recruitment & Propaganda Plan](/knowledge/appendix/recruitment-and-propaganda-plan.qmd#logical-inevitability-theorem) addresses this directly: the Logical Inevitability Theorem is the 4-minute version of this paper's formal argument, designed to bridge the attention gap between "I don't have time to read a paper" and "the expected value of reading this paper exceeds every other use of my next 45 minutes."
 
 Future research should address several open questions: What scoring mechanisms are most robust to gaming? How do IABs interact with existing campaign finance institutions? What governance structures best prevent capture of the scoring layer? Can IABs be adapted to non-democratic political systems? What legal strategies best protect the mechanism from regulatory attack? Empirical testing, beginning with single-issue pilot implementations, will be essential to validate the theoretical framework presented here.
 
@@ -1267,7 +1392,7 @@ If IABs can change political behavior at scale, if they can make supporting meas
 
 ## Appendix A: Formal Proofs {.unnumbered}
 
-This appendix provides complete proofs of the propositions stated in Section 3.
+This appendix provides complete proofs of the propositions stated in Sections 3 and 8.
 
 ### Proof of Proposition 1 (Sufficient Condition for Incentive Compatibility)
 
@@ -1398,6 +1523,51 @@ Formally, $\Delta U_i > 0$ holds for all strategy profiles $(a_{-i}) \in \{0,1\}
 *Step 3: Unique equilibrium.* When every player has a strictly dominant strategy, the profile of dominant strategies is the unique Nash equilibrium. Since $a_i = 1$ is strictly dominant for all $i \in \{1, \ldots, N\}$, the profile $(1, \ldots, 1)$ is the unique Nash equilibrium.
 
 *Step 4: Uniqueness verification.* No other strategy profile can be a Nash equilibrium because at any profile containing $a_i = 0$ for some $i$, politician $i$ has a profitable deviation to $a_i = 1$. $\square$
+
+### Proof of Proposition 4 (Investor Participation as Dominant Strategy)
+
+**Statement.** Under A6, if $pR > 1$ and $\delta_j > 0$, then pledging $x_j > 0$ strictly dominates $x_j = 0$ for all investors $j$.
+
+**Proof.**
+
+*Step 1: Action space.* Investor $j$ chooses $x_j \in \{0\} \cup \mathbb{R}_{>0}$. We compare the payoff of any $x_j > 0$ against $x_j = 0$.
+
+*Step 2: State space.* The payoff-relevant states are determined by the aggregate pledges of other investors, $X_{-j} = \sum_{k \neq j} x_k$. Two cases obtain:
+
+- *Case A:* $X_{-j} + x_j \geq \bar{X}$ (threshold met with $j$'s participation)
+- *Case B:* $X_{-j} + x_j < \bar{X}$ (threshold not met even with $j$'s participation)
+
+Note: there is a third logical case where $X_{-j} \geq \bar{X}$ (threshold met without $j$), but this is subsumed by Case A.
+
+*Step 3: Payoff comparison in Case A.* When the threshold is met:
+
+$$
+V_j(x_j > 0) = x_j(pR - 1) > 0 = V_j(0)
+$$
+
+The inequality holds because $pR > 1$ by assumption and $x_j > 0$.
+
+*Step 4: Payoff comparison in Case B.* When the threshold is not met:
+
+$$
+V_j(x_j > 0) = \delta_j > 0 = V_j(0)
+$$
+
+The inequality holds because $\delta_j > 0$ by assumption.
+
+*Step 5: Dominance.* In both Case A and Case B, $V_j(x_j > 0) > V_j(0)$. Since the state space is exhaustive (every realization of $X_{-j}$ falls into Case A or Case B), pledging $x_j > 0$ yields strictly higher utility than $x_j = 0$ in every state. Therefore $x_j > 0$ strictly dominates $x_j = 0$. $\square$
+
+### Proof of Corollary 2 (Full Participation Equilibrium)
+
+**Statement.** The unique Nash equilibrium of the dominant assurance contract game is full participation: $(x_1, \ldots, x_M) \gg 0$.
+
+**Proof.**
+
+*Step 1: Dominant strategy.* By Proposition 4, for each investor $j$, pledging $x_j > 0$ strictly dominates $x_j = 0$, regardless of other investors' actions.
+
+*Step 2: Unique equilibrium.* When every player has a strictly dominant strategy, the profile of dominant strategies constitutes the unique Nash equilibrium. Any profile containing $x_j = 0$ for some $j$ is not a Nash equilibrium because investor $j$ has a profitable deviation to $x_j > 0$.
+
+*Step 3: Existence.* The profile $(x_1, \ldots, x_M) \gg 0$ is a Nash equilibrium because no investor can improve utility by deviating to $x_j = 0$ (which yields strictly lower payoff by Proposition 4). $\square$
 
 ## Appendix B: Detailed Application Specifications {.unnumbered}
 
