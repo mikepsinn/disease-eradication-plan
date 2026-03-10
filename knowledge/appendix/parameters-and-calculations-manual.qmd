@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 356 parameters used in the analysis, organized by type:
+This appendix documents all 366 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 129
-- Calculated values: 149
-- Core definitions: 78
+- Calculated values: 157
+- Core definitions: 80
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (149 parameters) • [External Data Sources](#sec-external) (129 parameters) • [Core Definitions](#sec-definitions) (78 parameters)
+[Calculated Values](#sec-calculated) (157 parameters) • [External Data Sources](#sec-external) (129 parameters) • [Core Definitions](#sec-definitions) (80 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4110,6 +4110,52 @@ $$
 
 :::
 
+### Global Average Hourly Income: $7.19 {#sec-global_avg_hourly_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global average hourly income derived from GDP per capita. Uses average (not median), which overestimates the cost of sharing, making the payoff ratio conservative.
+
+**Inputs**:
+
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+- [Annual Working Hours](#sec-annual_working_hours): 2 thousand hours/year
+
+$$
+\begin{gathered}
+\bar{w}_{hour} \\
+= \frac{\bar{y}_{0}}{H_{work}} \\
+= \frac{\$14.4K}{2{,}000} \\
+= \$7.19
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_avg_hourly_income.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_avg_hourly_income.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_avg_hourly_income.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_avg_hourly_income.qmd >}}
+
+:::
+
 ### Global Average Income (2025 Baseline): $14.4K {#sec-global_avg_income_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5463,6 +5509,679 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-recovery_trial_cost_reduction_factor.qmd >}}
+
+:::
+
+### Sharing Breakeven (1 in N): 248M:1 {#sec-sharing_breakeven_one_in_treaty}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Breakeven probability expressed as '1 in N'. Forwarding has positive expected value if you believe there is at least a 1-in-N chance the plan works. For context, lightning strike odds are ~1 in 1.2 million.
+
+**Inputs**:
+
+- [Sharing Breakeven Probability](#sec-sharing_breakeven_probability_treaty) 🔢: 4.03e-09 probability
+
+$$
+N_{breakeven} = P_{breakeven} = 0 = 248M
+$$
+where:
+$$
+\begin{gathered}
+P_{breakeven} \\
+= \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
+= \frac{\$0.0599}{\$14.9M} \\
+= 0
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{share} \\
+= t_{share} \times \bar{w}_{hour} \times 0.0167 \\
+= 0.5 \times \$7.19 \times 0.0167 \\
+= \$0.0599
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{w}_{hour} \\
+= \frac{\bar{y}_{0}}{H_{work}} \\
+= \frac{\$14.4K}{2{,}000} \\
+= \$7.19
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta Y_{lifetime,treaty} \\
+= Y_{cum,treaty} - Y_{cum,earth} \\
+= \$16.1M - \$1.18M \\
+= \$14.9M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-sharing_breakeven_one_in_treaty.qmd >}}
+
+{{< include ../figures/sensitivity-table-sharing_breakeven_one_in_treaty.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-sharing_breakeven_one_in_treaty.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-sharing_breakeven_one_in_treaty.qmd >}}
+
+:::
+
+### Sharing Breakeven Probability: 4.03e-09 probability {#sec-sharing_breakeven_probability_treaty}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Minimum probability that the plan works for forwarding to have positive expected value. EV > 0 when P(works) > cost_of_sharing / gain_if_works. Below this probability, not forwarding is rational. Above it, forwarding dominates. For context, the odds of being struck by lightning are ~1 in 1.2 million.
+
+**Inputs**:
+
+- [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
+- [Treaty Path Lifetime Income Gain (Per Capita)](#sec-treaty_path_lifetime_income_gain_per_capita) 🔢: $14.9M
+
+$$
+\begin{gathered}
+P_{breakeven} \\
+= \frac{C_{share}}{\Delta Y_{lifetime,treaty}} \\
+= \frac{\$0.0599}{\$14.9M} \\
+= 0
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{share} \\
+= t_{share} \times \bar{w}_{hour} \times 0.0167 \\
+= 0.5 \times \$7.19 \times 0.0167 \\
+= \$0.0599
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{w}_{hour} \\
+= \frac{\bar{y}_{0}}{H_{work}} \\
+= \frac{\$14.4K}{2{,}000} \\
+= \$7.19
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta Y_{lifetime,treaty} \\
+= Y_{cum,treaty} - Y_{cum,earth} \\
+= \$16.1M - \$1.18M \\
+= \$14.9M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-sharing_breakeven_probability_treaty.qmd >}}
+
+{{< include ../figures/sensitivity-table-sharing_breakeven_probability_treaty.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-sharing_breakeven_probability_treaty.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-sharing_breakeven_probability_treaty.qmd >}}
+
+:::
+
+### Sharing Opportunity Cost: $0.06 {#sec-sharing_opportunity_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Dollar cost of 30 seconds at global average hourly income. The maximum downside of forwarding the message if the plan is impossible.
+
+**Inputs**:
+
+- [Sharing Time](#sec-sharing_time_minutes): 0.5 minutes
+- [Global Average Hourly Income](#sec-global_avg_hourly_income) 🔢: $7.19
+
+$$
+\begin{gathered}
+C_{share} \\
+= t_{share} \times \bar{w}_{hour} \times 0.0167 \\
+= 0.5 \times \$7.19 \times 0.0167 \\
+= \$0.0599
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{w}_{hour} \\
+= \frac{\bar{y}_{0}}{H_{work}} \\
+= \frac{\$14.4K}{2{,}000} \\
+= \$7.19
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-sharing_opportunity_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-sharing_opportunity_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-sharing_opportunity_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-sharing_opportunity_cost.qmd >}}
+
+:::
+
+### Sharing Upside/Downside Ratio: 248.2Mx {#sec-sharing_upside_downside_ratio_treaty}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sharing if plan is impossible). Not expected value; see SHARING_BREAKEVEN_PROBABILITY_TREATY for the probability threshold that makes forwarding rational.
+
+**Inputs**:
+
+- [Treaty Path Lifetime Income Gain (Per Capita)](#sec-treaty_path_lifetime_income_gain_per_capita) 🔢: $14.9M
+- [Sharing Opportunity Cost](#sec-sharing_opportunity_cost) 🔢: $0.06
+
+$$
+\begin{gathered}
+k_{upside:downside} \\
+= \frac{\Delta Y_{lifetime,treaty}}{C_{share}} \\
+= \frac{\$14.9M}{\$0.0599} \\
+= 248M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\Delta Y_{lifetime,treaty} \\
+= Y_{cum,treaty} - Y_{cum,earth} \\
+= \$16.1M - \$1.18M \\
+= \$14.9M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
+C_{share} \\
+= t_{share} \times \bar{w}_{hour} \times 0.0167 \\
+= 0.5 \times \$7.19 \times 0.0167 \\
+= \$0.0599
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{w}_{hour} \\
+= \frac{\bar{y}_{0}}{H_{work}} \\
+= \frac{\$14.4K}{2{,}000} \\
+= \$7.19
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-sharing_upside_downside_ratio_treaty.qmd >}}
+
+{{< include ../figures/sensitivity-table-sharing_upside_downside_ratio_treaty.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-sharing_upside_downside_ratio_treaty.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-sharing_upside_downside_ratio_treaty.qmd >}}
 
 :::
 
@@ -8999,6 +9718,45 @@ $$
 
 :::
 
+### Wishonia Path Cumulative Lifetime Income (Per Capita): $53.3M {#sec-wishonia_path_cumulative_lifetime_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative per-capita income over an average remaining lifespan under Wishonia Path. Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.
+
+**Inputs**:
+
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+- [Wishonia Path Average Income at Year 20](#sec-wishonia_path_avg_income_year_20) 🔢: $1.16M
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
+
+$$
+\begin{gathered}
+Y_{cum,wish} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_cumulative_lifetime_income.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_cumulative_lifetime_income.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_cumulative_lifetime_income.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_cumulative_lifetime_income.qmd >}}
+
+:::
+
 ### Wishonia Path vs Earth GDP Multiplier (Year 20): 56.7x {#sec-wishonia_path_gdp_vs_earth_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9168,6 +9926,356 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-wishonia_path_gdp_year_20.qmd >}}
+
+:::
+
+### Wishonia Path Lifetime Income Gain (Per Capita): $52.1M {#sec-wishonia_path_lifetime_income_gain_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Lifetime per-capita income gain from Wishonia Path vs Earth baseline. Cumulative Wishonia income minus cumulative Earth income over average remaining lifespan.
+
+**Inputs**:
+
+- [Wishonia Path Cumulative Lifetime Income (Per Capita)](#sec-wishonia_path_cumulative_lifetime_income) 🔢: $53.3M
+- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+
+$$
+\begin{gathered}
+\Delta Y_{lifetime,wish} \\
+= Y_{cum,wish} - Y_{cum,earth} \\
+= \$53.3M - \$1.18M \\
+= \$52.1M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,wish} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+
+:::
+
+### Wishonia Path Lifetime Income Multiplier: 45x {#sec-wishonia_path_lifetime_income_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of cumulative lifetime income under Wishonia Path vs Earth baseline. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
+
+**Inputs**:
+
+- [Wishonia Path Cumulative Lifetime Income (Per Capita)](#sec-wishonia_path_cumulative_lifetime_income) 🔢: $53.3M
+- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+
+$$
+\begin{gathered}
+k_{lifetime,wish:earth} \\
+= \frac{Y_{cum,wish}}{Y_{cum,earth}} \\
+= \frac{\$53.3M}{\$1.18M} \\
+= 45
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,wish} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_lifetime_income_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_lifetime_income_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_lifetime_income_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_lifetime_income_multiplier.qmd >}}
 
 :::
 
@@ -11951,6 +13059,20 @@ Value of Statistical Life (conservative estimate)
 
 Fundamental parameters and constants used throughout the analysis.
 
+### Annual Working Hours: 2 thousand hours/year {#sec-annual_working_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard annual working hours globally. Approximately 40 hours/week x 50 weeks. ILO estimates range from 1,800-2,200 across countries; 2,000 is conventional.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### Approved Drug-Disease Pairings: 1.75 thousand pairings {#sec-approved_drug_disease_pairings}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -13200,6 +14322,20 @@ Total safe compounds available for repurposing (FDA-approved + GRAS substances, 
 #### Input Distribution
 
 {{< include ../figures/distribution-safe_compounds_count.qmd >}}
+
+*Core definition*
+
+:::
+
+### Sharing Time: 0.5 minutes {#sec-sharing_time_minutes}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Time to copy, paste, and send the recruitment message. 30 seconds.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 

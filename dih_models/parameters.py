@@ -8544,6 +8544,105 @@ WISHONIA_PATH_LIFETIME_INCOME_MULTIPLIER = Parameter(
 )
 
 # ---
+# SHARING OPPORTUNITY COST (Downside of the Payoff Matrix)
+# ---
+# Quantifies the dollar cost of forwarding the message if the plan is impossible.
+# Uses average (not median) hourly income, which OVERestimates the cost, making
+# the payoff ratio conservative.
+
+SHARING_TIME_MINUTES = Parameter(
+    0.5,
+    source_type="definition",
+    distribution="fixed",
+    description="Time to copy, paste, and send the recruitment message. 30 seconds.",
+    display_name="Sharing Time",
+    unit="minutes",
+    keywords=["sharing", "forwarding", "time", "cost", "30 seconds"],
+    latex_symbol=r"t_{share}",
+)
+
+ANNUAL_WORKING_HOURS = Parameter(
+    2_000,
+    source_type="definition",
+    distribution="fixed",
+    description="Standard annual working hours globally. Approximately 40 hours/week x 50 weeks. "
+                "ILO estimates range from 1,800-2,200 across countries; 2,000 is conventional.",
+    display_name="Annual Working Hours",
+    unit="hours/year",
+    keywords=["working hours", "annual", "labor", "employment"],
+    latex_symbol=r"H_{work}",
+)
+
+GLOBAL_AVG_HOURLY_INCOME = Parameter(
+    float(GLOBAL_AVG_INCOME_2025) / 2_000,
+    source_type="calculated",
+    description="Global average hourly income derived from GDP per capita. Uses average (not median), "
+                "which overestimates the cost of sharing, making the payoff ratio conservative.",
+    display_name="Global Average Hourly Income",
+    unit="USD/hour",
+    formula="GLOBAL_AVG_INCOME_2025 / ANNUAL_WORKING_HOURS",
+    inputs=["GLOBAL_AVG_INCOME_2025", "ANNUAL_WORKING_HOURS"],
+    compute=lambda ctx: ctx["GLOBAL_AVG_INCOME_2025"] / ctx["ANNUAL_WORKING_HOURS"],
+    latex_symbol=r"\bar{w}_{hour}",
+)
+
+SHARING_OPPORTUNITY_COST = Parameter(
+    (0.5 / 60) * float(GLOBAL_AVG_INCOME_2025) / 2_000,
+    source_type="calculated",
+    description="Dollar cost of 30 seconds at global average hourly income. "
+                "The maximum downside of forwarding the message if the plan is impossible.",
+    display_name="Sharing Opportunity Cost",
+    unit="USD",
+    formula="(SHARING_TIME_MINUTES / 60) * GLOBAL_AVG_HOURLY_INCOME",
+    inputs=["SHARING_TIME_MINUTES", "GLOBAL_AVG_HOURLY_INCOME"],
+    compute=lambda ctx: (ctx["SHARING_TIME_MINUTES"] / 60) * ctx["GLOBAL_AVG_HOURLY_INCOME"],
+    latex_symbol=r"C_{share}",
+)
+
+SHARING_UPSIDE_DOWNSIDE_RATIO_TREATY = Parameter(
+    float(TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA) / float(SHARING_OPPORTUNITY_COST),
+    source_type="calculated",
+    description="Raw ratio of upside (lifetime income gain if plan works) to downside (cost of sharing "
+                "if plan is impossible). Not expected value; see SHARING_BREAKEVEN_PROBABILITY_TREATY for the "
+                "probability threshold that makes forwarding rational.",
+    display_name="Sharing Upside/Downside Ratio",
+    unit="x",
+    formula="TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA / SHARING_OPPORTUNITY_COST",
+    inputs=["TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA", "SHARING_OPPORTUNITY_COST"],
+    compute=lambda ctx: ctx["TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA"] / ctx["SHARING_OPPORTUNITY_COST"],
+    latex_symbol=r"k_{upside:downside}",
+)
+
+SHARING_BREAKEVEN_PROBABILITY_TREATY = Parameter(
+    float(SHARING_OPPORTUNITY_COST) / float(TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA),
+    source_type="calculated",
+    description="Minimum probability that the plan works for forwarding to have positive expected value. "
+                "EV > 0 when P(works) > cost_of_sharing / gain_if_works. Below this probability, "
+                "not forwarding is rational. Above it, forwarding dominates. For context, the odds of "
+                "being struck by lightning are ~1 in 1.2 million.",
+    display_name="Sharing Breakeven Probability",
+    unit="probability",
+    formula="SHARING_OPPORTUNITY_COST / TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA",
+    inputs=["SHARING_OPPORTUNITY_COST", "TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA"],
+    compute=lambda ctx: ctx["SHARING_OPPORTUNITY_COST"] / ctx["TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA"],
+    latex_symbol=r"P_{breakeven}",
+)
+
+SHARING_BREAKEVEN_ONE_IN_TREATY = Parameter(
+    float(TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA) / float(SHARING_OPPORTUNITY_COST),
+    source_type="calculated",
+    description="Breakeven probability expressed as '1 in N'. Forwarding has positive expected value "
+                "if you believe there is at least a 1-in-N chance the plan works. "
+                "For context, lightning strike odds are ~1 in 1.2 million.",
+    display_name="Sharing Breakeven (1 in N)",
+    unit="ratio",
+    formula="1 / SHARING_BREAKEVEN_PROBABILITY_TREATY",
+    inputs=["SHARING_BREAKEVEN_PROBABILITY_TREATY"],
+    compute=lambda ctx: 1 / ctx["SHARING_BREAKEVEN_PROBABILITY_TREATY"],
+    latex_symbol=r"N_{breakeven}",
+)
+
+# ---
 # IMPROVED PERSONAL LIFETIME WEALTH MODEL
 # ---
 # This section implements improvements identified in methodology review

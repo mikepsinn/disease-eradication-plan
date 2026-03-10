@@ -135,6 +135,38 @@ But **0% is not a mood. It is a claim.** To assign literal zero probability to t
 
 If you are not claiming one of those three things, then your actual estimate is not 0%. It is "I have not evaluated it." That is a different sentence. And once the probability is above 0 by any nontrivial amount, forwarding it to one capable evaluator becomes the rational move. The cost is trivial. The upside is civilizational. You are not being asked to believe. You are being asked not to disguise unexamined dismissal as analysis.
 
+### How Trivial, Exactly
+
+On Wishonia, "the cost is trivial" would be sufficient. On Earth, your species requires a number.
+
+Forwarding takes roughly 30 seconds. The average human earns {{< var global_avg_hourly_income >}} per hour. That makes the opportunity cost of sharing approximately {{< var sharing_opportunity_cost >}}. The upside, if the treaty path works, is {{< var treaty_path_lifetime_income_gain_per_capita >}} in additional cumulative lifetime income for the average person; {{< var treaty_path_lifetime_income_multiplier >}} their current trajectory. (If you earn more than the global average, your personal gain is proportionally larger.)
+
+The ratio of upside to downside is {{< var sharing_upside_downside_ratio_treaty >}} to one. Which means sharing is irrational only if the probability of *any* improvement to global resource allocation is less than 1 in {{< var sharing_breakeven_one_in_treaty >}}.
+
+To put that in perspective: the probability of being struck by lightning in a given year is about 1 in 1.2 million. You would need to believe this plan is roughly 200 times less likely than being struck by lightning. Not "unlikely." Not "a long shot." Two hundred times less likely than a thing that actually happens to real humans every year.
+
+And note what "this plan working" requires you to deny. The five questions of the Logical Inevitability Theorem:
+
+1. **Is better resource allocation physically possible?** To get below the breakeven threshold, you'd need to believe it is physically impossible to improve on a system that spends {{< var global_military_spending_annual_2024 >}} per year preparing to kill people and {{< var global_clinical_trials_spending_annual >}} per year trying to cure them.
+2. **Do the benefits compound?** You'd need to believe that redirecting resources from destruction to medicine produces zero cumulative economic or health gains over 20 years. Not small gains. Zero.
+3. **Is there a less-bad approach?** You'd need to believe that no incentive-compatible mechanism, out of all possible mechanisms, could ever motivate any political shift. Not this specific mechanism. Any mechanism.
+4. **Does this dominate alternatives?** You'd need to believe that no reallocation of military spending has ever worked, despite your own species cutting military spending by 87% after World War II and experiencing the largest economic boom in human history.
+5. **Is the only bottleneck informed self-interest?** You'd need to believe that no self-interested actor (billionaire, sovereign wealth fund, or government) would ever act on a {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} return, even when the structure pays them to do so.
+
+To clear the breakeven threshold, you don't need to believe all five. You need to believe *any one of them* is not impossible. That's it. One non-zero answer out of five, and sharing becomes the rational move.
+
+And this calculation is conservative. It counts only the income gain. It assigns zero value to the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} lives. It ignores the Wishonia path entirely (which is {{< var wishonia_path_lifetime_income_multiplier >}} the current trajectory, not {{< var treaty_path_lifetime_income_multiplier >}}). It assumes you personally capture only the average gain, when in practice higher earners gain proportionally more. The actual breakeven threshold is even more forgiving than 1 in {{< var sharing_breakeven_one_in_treaty >}}.
+
+On Wishonia, a species that couldn't clear a 1-in-{{< var sharing_breakeven_one_in_treaty >}} bar for obvious self-interest would be studied by veterinarians, not economists.
+
+### The Only Remaining Failure Mode
+
+So: better resource allocation is physically possible. The benefits compound. No better mechanism exists. The precedent is real. The incentives pay. Sharing costs 30 seconds and is rational at any probability above 1 in {{< var sharing_breakeven_one_in_treaty >}}.
+
+The math can't be wrong. The incentives can't fail. Selfishness can't stop it; selfishness is the engine. The only thing that can kill it is you not reading this far and then not pressing "send." That's it. The entire distance between here and the treaty is made of humans who couldn't pay attention for five minutes.
+
+I have watched 420 civilizations go extinct. Every single one had the math. None of them could pay attention long enough to do the cost-benefit analysis.
+
 ## Your Ammunition (Copy, Paste, Send) {#your-ammunition}
 
 You've read the plan. You've seen the math. You can't give the information back.
