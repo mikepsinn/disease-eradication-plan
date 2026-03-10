@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 545 parameters used in the analysis, organized by type:
+This appendix documents all 554 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 194
-- Calculated values: 234
+- External sources (peer-reviewed): 195
+- Calculated values: 242
 - Core definitions: 117
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (234 parameters) • [External Data Sources](#sec-external) (194 parameters) • [Core Definitions](#sec-definitions) (117 parameters)
+[Calculated Values](#sec-calculated) (242 parameters) • [External Data Sources](#sec-external) (195 parameters) • [Core Definitions](#sec-definitions) (117 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4923,6 +4923,44 @@ $$
 
 :::
 
+### Earth Cumulative Lifetime Income (Per Capita): $1.18M {#sec-earth_cumulative_lifetime_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative per-capita income over an average remaining lifespan under Earth baseline trajectory. Uses 2.5% baseline growth for all years.
+
+**Inputs**:
+
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+- [Earth Average Income at Year 20](#sec-earth_avg_income_year_20) 🔢: $20.5K
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
+
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-earth_cumulative_lifetime_income.qmd >}}
+
+{{< include ../figures/sensitivity-table-earth_cumulative_lifetime_income.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-earth_cumulative_lifetime_income.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-earth_cumulative_lifetime_income.qmd >}}
+
+:::
+
 ### Earth GDP at Year 20: $188T {#sec-earth_gdp_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6164,6 +6202,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_avg_income_2025.qmd >}}
+
+:::
+
+### Average Remaining Years (Median Person): 48.5 years {#sec-global_avg_remaining_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average remaining lifespan for the median-age person. Conservative: uses life expectancy at birth minus median age, which underestimates remaining years because survivors to age 30 have higher conditional life expectancy.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 79 years (SE: ±2 years)
+- [Global Median Age (2024)](#sec-global_median_age_2024) 📊: 30.5 years
+
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_avg_remaining_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_avg_remaining_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_avg_remaining_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_avg_remaining_years.qmd >}}
 
 :::
 
@@ -10911,6 +10987,45 @@ $$
 
 :::
 
+### Treaty Path Cumulative Lifetime Income (Per Capita): $16.1M {#sec-treaty_path_cumulative_lifetime_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative per-capita income over an average remaining lifespan under Treaty Path. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then baseline growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
+
+**Inputs**:
+
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+- [Treaty Path Average Income at Year 20](#sec-treaty_path_avg_income_year_20) 🔢: $339K
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
+
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_path_cumulative_lifetime_income.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_path_cumulative_lifetime_income.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_path_cumulative_lifetime_income.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_path_cumulative_lifetime_income.qmd >}}
+
+:::
+
 ### Treaty Path vs Earth GDP Multiplier (Year 20): 16.5x {#sec-treaty_path_gdp_vs_earth_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -11081,6 +11196,362 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_path_gdp_year_20.qmd >}}
+
+:::
+
+### Treaty Path Lifetime Income Gain (Per Capita): $14.9M {#sec-treaty_path_lifetime_income_gain_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Lifetime per-capita income gain from Treaty Path vs Earth baseline. Cumulative treaty income minus cumulative earth income over average remaining lifespan. Uses global averages; individual gain scales with starting income.
+
+**Inputs**:
+
+- [Treaty Path Cumulative Lifetime Income (Per Capita)](#sec-treaty_path_cumulative_lifetime_income) 🔢: $16.1M
+- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+
+$$
+\begin{gathered}
+\Delta Y_{lifetime,treaty} \\
+= Y_{cum,treaty} - Y_{cum,earth} \\
+= \$16.1M - \$1.18M \\
+= \$14.9M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_path_lifetime_income_gain_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_path_lifetime_income_gain_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_path_lifetime_income_gain_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_path_lifetime_income_gain_per_capita.qmd >}}
+
+:::
+
+### Treaty Path Lifetime Income Multiplier: 13.5x {#sec-treaty_path_lifetime_income_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of cumulative lifetime income under Treaty Path vs Earth baseline. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
+
+**Inputs**:
+
+- [Treaty Path Cumulative Lifetime Income (Per Capita)](#sec-treaty_path_cumulative_lifetime_income) 🔢: $16.1M
+- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+
+$$
+\begin{gathered}
+k_{lifetime,treaty:earth} \\
+= \frac{Y_{cum,treaty}}{Y_{cum,earth}} \\
+= \frac{\$16.1M}{\$1.18M} \\
+= 13.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,treaty} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\
++ \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_path_lifetime_income_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_path_lifetime_income_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_path_lifetime_income_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_path_lifetime_income_multiplier.qmd >}}
 
 :::
 
@@ -13991,6 +14462,45 @@ $$
 
 :::
 
+### Wishonia Path Cumulative Lifetime Income (Per Capita): $53.3M {#sec-wishonia_path_cumulative_lifetime_income}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cumulative per-capita income over an average remaining lifespan under Wishonia Path. Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.
+
+**Inputs**:
+
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14.4K
+- [Wishonia Path Average Income at Year 20](#sec-wishonia_path_avg_income_year_20) 🔢: $1.16M
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Average Remaining Years (Median Person)](#sec-global_avg_remaining_years) 🔢: 48.5 years
+
+$$
+\begin{gathered}
+Y_{cum,wish} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_cumulative_lifetime_income.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_cumulative_lifetime_income.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_cumulative_lifetime_income.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_cumulative_lifetime_income.qmd >}}
+
+:::
+
 ### Wishonia Path vs Earth GDP Multiplier (Year 20): 56.7x {#sec-wishonia_path_gdp_vs_earth_multiplier_year_20}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -14160,6 +14670,356 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-wishonia_path_gdp_year_20.qmd >}}
+
+:::
+
+### Wishonia Path Lifetime Income Gain (Per Capita): $52.1M {#sec-wishonia_path_lifetime_income_gain_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Lifetime per-capita income gain from Wishonia Path vs Earth baseline. Cumulative Wishonia income minus cumulative Earth income over average remaining lifespan.
+
+**Inputs**:
+
+- [Wishonia Path Cumulative Lifetime Income (Per Capita)](#sec-wishonia_path_cumulative_lifetime_income) 🔢: $53.3M
+- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+
+$$
+\begin{gathered}
+\Delta Y_{lifetime,wish} \\
+= Y_{cum,wish} - Y_{cum,earth} \\
+= \$53.3M - \$1.18M \\
+= \$52.1M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,wish} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_lifetime_income_gain_per_capita.qmd >}}
+
+:::
+
+### Wishonia Path Lifetime Income Multiplier: 45x {#sec-wishonia_path_lifetime_income_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of cumulative lifetime income under Wishonia Path vs Earth baseline. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.
+
+**Inputs**:
+
+- [Wishonia Path Cumulative Lifetime Income (Per Capita)](#sec-wishonia_path_cumulative_lifetime_income) 🔢: $53.3M
+- [Earth Cumulative Lifetime Income (Per Capita)](#sec-earth_cumulative_lifetime_income) 🔢: $1.18M
+
+$$
+\begin{gathered}
+k_{lifetime,wish:earth} \\
+= \frac{Y_{cum,wish}}{Y_{cum,earth}} \\
+= \frac{\$53.3M}{\$1.18M} \\
+= 45
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,wish} \\
+= \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\
++ \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+where:
+$$
+\bar{y}_{wish,20} = \frac{GDP_{wish,20}}{Pop_{2045}}
+$$
+where:
+$$
+GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{remaining} \\
+= LE_{global} - Age_{median} \\
+= 79 - 30.5 \\
+= 48.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Y_{cum,earth} \\
+= \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{earth,20} \\
+= \frac{GDP_{earth,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-wishonia_path_lifetime_income_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-wishonia_path_lifetime_income_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-wishonia_path_lifetime_income_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-wishonia_path_lifetime_income_multiplier.qmd >}}
 
 :::
 
@@ -15776,6 +16636,22 @@ Global life expectancy (2024)
 {{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2024*
+
+:::
+
+### Global Median Age (2024): 30.5 years {#sec-global_median_age_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global median age in 2024 from UN World Population Prospects 2024 revision.
+
+**Source**: [@global-median-age-un-wpp-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 

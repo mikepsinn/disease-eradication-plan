@@ -464,6 +464,7 @@ class ReferenceID(str, Enum):
     GLOBAL_INFECTIOUS_DISEASE_SPENDING_12B = "global-infectious-disease-spending-12b"
     GLOBAL_INFRASTRUCTURE_MARKET_SIZE = "global-infrastructure-market-size"
     GLOBAL_MAJOR_MILITARY_FACILITIES = "global-major-military-facilities"
+    GLOBAL_MEDIAN_AGE_UN_WPP_2024 = "global-median-age-un-wpp-2024"
     GLOBAL_MENTAL_HEALTH_SPENDING_3B = "global-mental-health-spending-3b"
     GLOBAL_MILITARY_SPENDING = "global-military-spending"
     GLOBAL_NEW_DRUG_APPROVALS_50_ANNUALLY = "global-new-drug-approvals-50-annually"

@@ -873,6 +873,16 @@ export const GLOBAL_LIFE_EXPECTANCY_2024: Parameter = {
   peerReviewed: true,
 };
 
+export const GLOBAL_MEDIAN_AGE_2024: Parameter = {
+  value: 30.5,
+  unit: "years",
+  displayName: "Global Median Age (2024)",
+  description: "Global median age in 2024 from UN World Population Prospects 2024 revision.",
+  sourceType: "external",
+  sourceRef: "global-median-age-un-wpp-2024",
+  confidence: "high",
+};
+
 export const GLOBAL_MED_RESEARCH_SPENDING: Parameter = {
   value: 67500000000.0,
   unit: "USD",
@@ -3032,6 +3042,17 @@ export const EARTH_AVG_INCOME_YEAR_20: Parameter = {
   latex: "\\begin{gathered}\n\\bar{y}_{earth,20} = \\frac{GDP_{earth,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
 };
 
+export const EARTH_CUMULATIVE_LIFETIME_INCOME: Parameter = {
+  value: 1184890.4372720616,
+  unit: "USD",
+  displayName: "Earth Cumulative Lifetime Income (Per Capita)",
+  description: "Cumulative per-capita income over an average remaining lifespan under Earth baseline trajectory. Uses 2.5% baseline growth for all years.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_AVG_INCOME_2025 * (1+g) * ((1+g)^T - 1) / g, where g = per-capita baseline growth",
+  latex: "\\begin{gathered}\nY_{cum,earth} \\\\\n= \\bar{y}_0 \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}\n\\end{gathered}",
+};
+
 export const EARTH_GDP_YEAR_20: Parameter = {
   value: 188440890633395.34,
   unit: "USD",
@@ -3295,6 +3316,17 @@ export const GLOBAL_AVG_INCOME_2025: Parameter = {
   confidence: "high",
   formula: "GLOBAL_GDP_2025 ÷ GLOBAL_POPULATION_2024",
   latex: "\\begin{gathered}\n\\bar{y}_{0} \\\\\n= \\frac{GDP_{global}}{Pop_{global}} \\\\\n= \\frac{\\$115T}{8B} \\\\\n= \\$14.4K\n\\end{gathered}",
+};
+
+export const GLOBAL_AVG_REMAINING_YEARS: Parameter = {
+  value: 48.5,
+  unit: "years",
+  displayName: "Average Remaining Years (Median Person)",
+  description: "Average remaining lifespan for the median-age person. Conservative: uses life expectancy at birth minus median age, which underestimates remaining years because survivors to age 30 have higher conditional life expectancy.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_LIFE_EXPECTANCY_2024 - GLOBAL_MEDIAN_AGE_2024",
+  latex: "\\begin{gathered}\nT_{remaining} \\\\\n= LE_{global} - Age_{median} \\\\\n= 79 - 30.5 \\\\\n= 48.5\n\\end{gathered}",
 };
 
 export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
@@ -4214,6 +4246,17 @@ export const TREATY_PATH_CAGR_YEAR_20: Parameter = {
   latex: "\\begin{gathered}\ng_{treaty,CAGR} \\\\\n= \\left(\\frac{GDP_{treaty,20}}{GDP_0}\\right)^{1/20} - 1\n\\end{gathered}",
 };
 
+export const TREATY_PATH_CUMULATIVE_LIFETIME_INCOME: Parameter = {
+  value: 16051394.930961644,
+  unit: "USD",
+  displayName: "Treaty Path Cumulative Lifetime Income (Per Capita)",
+  description: "Cumulative per-capita income over an average remaining lifespan under Treaty Path. Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 per-capita incomes), then baseline growth from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "Phase 1: y0*(1+g_pc)*((1+g_pc)^20-1)/g_pc + Phase 2: y20*(1+g_base)*((1+g_base)^(T-20)-1)/g_base",
+  latex: "\\begin{gathered}\nY_{cum,treaty} \\\\\n= \\bar{y}_0 \\cdot \\frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} \\\\\n+ \\bar{y}_{treaty,20} \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}\n\\end{gathered}",
+};
+
 export const TREATY_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20: Parameter = {
   value: 16.529506763430206,
   unit: "x",
@@ -4234,6 +4277,28 @@ export const TREATY_PATH_GDP_YEAR_20: Parameter = {
   confidence: "high",
   formula: "GLOBAL_GDP_2025 × (1 + g_treaty_ramp)^3 × (1 + g_treaty_full)^17, where g_treaty includes baseline growth + military reallocation + disease-burden recovery only",
   latex: "\\begin{gathered}\nGDP_{treaty,20} \\\\\n= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}\n\\end{gathered}",
+};
+
+export const TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA: Parameter = {
+  value: 14866504.493689582,
+  unit: "USD",
+  displayName: "Treaty Path Lifetime Income Gain (Per Capita)",
+  description: "Lifetime per-capita income gain from Treaty Path vs Earth baseline. Cumulative treaty income minus cumulative earth income over average remaining lifespan. Uses global averages; individual gain scales with starting income.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_PATH_CUMULATIVE_LIFETIME_INCOME - EARTH_CUMULATIVE_LIFETIME_INCOME",
+  latex: "\\begin{gathered}\n\\Delta Y_{lifetime,treaty} = Y_{cum,treaty} - Y_{cum,earth} = \\$16.1M - \\$1.18M = \\$14.9M\n\\\\[0.5em]\n\\text{where } Y_{cum,treaty} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} + \\bar{y}_{treaty,20} \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{treaty,20} = \\frac{GDP_{treaty,20}}{Pop_{2045}}\n\\\\[0.5em]\n\\text{where } GDP_{treaty,20}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 79 - 30.5 = 48.5\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{earth,20} = \\frac{GDP_{earth,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
+};
+
+export const TREATY_PATH_LIFETIME_INCOME_MULTIPLIER: Parameter = {
+  value: 13.546733458256528,
+  unit: "x",
+  displayName: "Treaty Path Lifetime Income Multiplier",
+  description: "Ratio of cumulative lifetime income under Treaty Path vs Earth baseline. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "TREATY_PATH_CUMULATIVE_LIFETIME_INCOME / EARTH_CUMULATIVE_LIFETIME_INCOME",
+  latex: "\\begin{gathered}\nk_{lifetime,treaty:earth} = \\frac{Y_{cum,treaty}}{Y_{cum,earth}} = \\frac{\\$16.1M}{\\$1.18M} = 13.5\n\\\\[0.5em]\n\\text{where } Y_{cum,treaty} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} + \\bar{y}_{treaty,20} \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{treaty,20} = \\frac{GDP_{treaty,20}}{Pop_{2045}}\n\\\\[0.5em]\n\\text{where } GDP_{treaty,20}=GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 79 - 30.5 = 48.5\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{earth,20} = \\frac{GDP_{earth,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
 };
 
 export const TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS: Parameter = {
@@ -4731,6 +4796,17 @@ export const WISHONIA_PATH_CAGR_YEAR_20: Parameter = {
   latex: "\\begin{gathered}\ng_{wish,CAGR} \\\\\n= \\left(\\frac{GDP_{wish,20}}{GDP_0}\\right)^{1/20} - 1\n\\end{gathered}",
 };
 
+export const WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME: Parameter = {
+  value: 53287151.99689569,
+  unit: "USD",
+  displayName: "Wishonia Path Cumulative Lifetime Income (Per Capita)",
+  description: "Cumulative per-capita income over an average remaining lifespan under Wishonia Path. Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. Conservative: assumes no further acceleration beyond year 20.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "Phase 1: y0*(1+g_pc)*((1+g_pc)^20-1)/g_pc + Phase 2: y20*(1+g_base)*((1+g_base)^(T-20)-1)/g_base",
+  latex: "\\begin{gathered}\nY_{cum,wish} \\\\\n= \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\\\\n+ \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}\n\\end{gathered}",
+};
+
 export const WISHONIA_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20: Parameter = {
   value: 56.721918800945424,
   unit: "x",
@@ -4751,6 +4827,28 @@ export const WISHONIA_PATH_GDP_YEAR_20: Parameter = {
   confidence: "high",
   formula: "GLOBAL_GDP_2025 × (1 + g_ramp)^3 × (1 + g_full)^17, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-20 use 100%; both include disease-burden recovery",
   latex: "GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}",
+};
+
+export const WISHONIA_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA: Parameter = {
+  value: 52102261.55962363,
+  unit: "USD",
+  displayName: "Wishonia Path Lifetime Income Gain (Per Capita)",
+  description: "Lifetime per-capita income gain from Wishonia Path vs Earth baseline. Cumulative Wishonia income minus cumulative Earth income over average remaining lifespan.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME - EARTH_CUMULATIVE_LIFETIME_INCOME",
+  latex: "\\begin{gathered}\n\\Delta Y_{lifetime,wish} = Y_{cum,wish} - Y_{cum,earth} = \\$53.3M - \\$1.18M = \\$52.1M\n\\\\[0.5em]\n\\text{where } Y_{cum,wish} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}}\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 79 - 30.5 = 48.5\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{earth,20} = \\frac{GDP_{earth,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
+};
+
+export const WISHONIA_PATH_LIFETIME_INCOME_MULTIPLIER: Parameter = {
+  value: 44.9722187982014,
+  unit: "x",
+  displayName: "Wishonia Path Lifetime Income Multiplier",
+  description: "Ratio of cumulative lifetime income under Wishonia Path vs Earth baseline. Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME / EARTH_CUMULATIVE_LIFETIME_INCOME",
+  latex: "\\begin{gathered}\nk_{lifetime,wish:earth} = \\frac{Y_{cum,wish}}{Y_{cum,earth}} = \\frac{\\$53.3M}{\\$1.18M} = 45\n\\\\[0.5em]\n\\text{where } Y_{cum,wish} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}}\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^3(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish}=\\min\\left(1,\\frac{Treatments_{new,ann}\\cdot k_{capacity,wish}\\cdot 20}{D_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,dFDA}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,dFDA} = \\frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{dFDA,ann} = Funding_{dFDA,ann} - OPEX_{dFDA} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{dFDA} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 79 - 30.5 = 48.5\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{earth,20} = \\frac{GDP_{earth,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{earth,20} = GDP_0(1+g_{base})^{20}\n\\end{gathered}",
 };
 
 export const WISHONIA_PATH_VS_TREATY_PATH_GDP_MULTIPLIER_YEAR_20: Parameter = {
@@ -5974,6 +6072,7 @@ export const parameters = {
   GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL,
   GLOBAL_HOUSEHOLD_WEALTH_USD,
   GLOBAL_LIFE_EXPECTANCY_2024,
+  GLOBAL_MEDIAN_AGE_2024,
   GLOBAL_MED_RESEARCH_SPENDING,
   GLOBAL_MILITARY_SPENDING_ANNUAL_2024,
   GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR,
@@ -6171,6 +6270,7 @@ export const parameters = {
   DRUG_COST_INCREASE_PRE1962_TO_CURRENT_MULTIPLIER,
   DRUG_DISEASE_COMBINATIONS_POSSIBLE,
   EARTH_AVG_INCOME_YEAR_20,
+  EARTH_CUMULATIVE_LIFETIME_INCOME,
   EARTH_GDP_YEAR_20,
   EFFICACY_LAG_CUMULATIVE_EXCESS_COST,
   EFFICACY_LAG_DEATHS_911_EQUIVALENTS,
@@ -6195,6 +6295,7 @@ export const parameters = {
   GLOBAL_ANNUAL_WAR_DIRECT_COSTS_TOTAL,
   GLOBAL_ANNUAL_WAR_INDIRECT_COSTS_TOTAL,
   GLOBAL_AVG_INCOME_2025,
+  GLOBAL_AVG_REMAINING_YEARS,
   GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL,
   GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025,
   GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP,
@@ -6277,8 +6378,11 @@ export const parameters = {
   TREATY_LIVES_SAVED_ANNUAL_GLOBAL,
   TREATY_PATH_AVG_INCOME_YEAR_20,
   TREATY_PATH_CAGR_YEAR_20,
+  TREATY_PATH_CUMULATIVE_LIFETIME_INCOME,
   TREATY_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20,
   TREATY_PATH_GDP_YEAR_20,
+  TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA,
+  TREATY_PATH_LIFETIME_INCOME_MULTIPLIER,
   TREATY_PEACE_PLUS_RD_ANNUAL_BENEFITS,
   TREATY_QALYS_GAINED_ANNUAL_GLOBAL,
   TREATY_RATCHET_MULTIPLIER_20YR,
@@ -6324,8 +6428,11 @@ export const parameters = {
   WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE,
   WISHONIA_PATH_AVG_INCOME_YEAR_20,
   WISHONIA_PATH_CAGR_YEAR_20,
+  WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME,
   WISHONIA_PATH_GDP_VS_EARTH_MULTIPLIER_YEAR_20,
   WISHONIA_PATH_GDP_YEAR_20,
+  WISHONIA_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA,
+  WISHONIA_PATH_LIFETIME_INCOME_MULTIPLIER,
   WISHONIA_PATH_VS_TREATY_PATH_GDP_MULTIPLIER_YEAR_20,
   ADAPTABLE_TRIAL_PATIENTS,
   APPROVED_DRUG_DISEASE_PAIRINGS,
@@ -7107,6 +7214,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Applied Clinical Trials",
         URL: "https://www.appliedclinicaltrialsonline.com/view/sizing-clinical-research-market",
         note: "Applied Clinical Trials | Lancet Global Health | https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30357-0/fulltext",
+  },
+  "global-median-age-un-wpp-2024": {
+        id: "global-median-age-un-wpp-2024",
+        type: "webpage",
+        title: "World Population Prospects 2024: Summary of Results",
+        author: [
+          {
+            family: "United Nations Department of Economic and Social Affairs",
+            given: "Population Division"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://population.un.org/wpp",
+        note: "UN WPP 2024. Global median age 30.5 years (2024 estimate). Worldometers reports 31.1 for 2026 based on same data.",
   },
   "global-military-spending": {
         id: "global-military-spending",
@@ -8342,11 +8463,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 545,
-  external: 194,
-  calculated: 234,
+  total: 554,
+  external: 195,
+  calculated: 242,
   definitions: 117,
-  citations: 139,
+  citations: 140,
 } as const;
 
 // ============================================================================

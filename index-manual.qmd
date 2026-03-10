@@ -470,6 +470,8 @@ Now is the time to select one of the two paths for the remainder of your existen
 
 I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your years. On Wishonia, we call this a "before and after," except the "before" is your current civilization and the "after" is one that stopped hitting itself. Your current average income is {{< var global_avg_income_2025 >}}. Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
+Over an average remaining lifespan, the treaty path alone multiplies your cumulative earnings by {{< var treaty_path_lifetime_income_multiplier >}}. The full Wishonia path reaches {{< var wishonia_path_lifetime_income_multiplier >}}. For the average human, the treaty gains {{< var treaty_path_lifetime_income_gain_per_capita >}} in additional lifetime income; the Wishonia path gains {{< var wishonia_path_lifetime_income_gain_per_capita >}}. These are not projections. They are the compound interest on not spending {{< var military_vs_medical_research_ratio >}} times more on weapons than medicine. Your species invented compound interest and then pointed it at the wrong spreadsheet.
+
 #### Future A: You Ignore This Manual
 
 - Year 2027: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work. Nobody finds this weird.
@@ -515,7 +517,7 @@ You've now done the math. You understand that the world where this treaty passes
 
 This is a chain reaction, and it runs on greed.
 
-This is happening whether you participate or not. The math is public. The incentives are structural. Someone in the chain will do exactly what you're deciding not to. The only variable you control is how long it takes. You're not deciding whether to act. You're deciding how many people die while you hesitate.
+This is happening whether you participate or not. The math is public. The incentives are structural. Someone in the chain will do exactly what you're deciding not to. The only variable you control is how long it takes. Each year of delay is a year the compounding hasn't started, which costs the average human {{< var treaty_path_lifetime_income_gain_per_capita >}} in lifetime income they will never recover. You're not deciding whether to act. You're deciding how many people die and how much poorer everyone stays while you hesitate.
 
 The moment you understood the incentives, you lost the ability to not act on them. Every person in the chain will do exactly what you're about to do, for exactly the same selfish reasons, and none of you will be able to stop yourselves, because stopping would require acting against your own interests. You've never done that. It's your whole thing.
 

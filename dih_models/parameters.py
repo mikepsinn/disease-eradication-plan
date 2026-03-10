@@ -8365,6 +8365,185 @@ GLOBAL_AVG_INCOME_2025 = Parameter(
 )
 
 # ---
+# LIFETIME INCOME COMPARISON (Treaty Path vs Earth Baseline)
+# ---
+# Calculates cumulative per-capita income over an average remaining lifespan.
+# Treaty path uses per-capita CAGR for years 1-20, then GDP_BASELINE_GROWTH_RATE
+# from the year-20 level. Conservative: assumes no further treaty acceleration beyond year 20.
+
+GLOBAL_MEDIAN_AGE_2024 = Parameter(
+    30.5,
+    source_ref=ReferenceID.GLOBAL_MEDIAN_AGE_UN_WPP_2024,
+    source_type="external",
+    description="Global median age in 2024 from UN World Population Prospects 2024 revision.",
+    display_name="Global Median Age (2024)",
+    unit="years",
+    confidence="high",
+    distribution="fixed",
+    keywords=["median age", "demographics", "population", "global", "2024"],
+    latex_symbol=r"Age_{median}",
+)
+
+GLOBAL_AVG_REMAINING_YEARS = Parameter(
+    float(GLOBAL_LIFE_EXPECTANCY_2024) - float(GLOBAL_MEDIAN_AGE_2024),
+    source_type="calculated",
+    description="Average remaining lifespan for the median-age person. Conservative: uses "
+                "life expectancy at birth minus median age, which underestimates remaining years "
+                "because survivors to age 30 have higher conditional life expectancy.",
+    display_name="Average Remaining Years (Median Person)",
+    unit="years",
+    formula="GLOBAL_LIFE_EXPECTANCY_2024 - GLOBAL_MEDIAN_AGE_2024",
+    inputs=["GLOBAL_LIFE_EXPECTANCY_2024", "GLOBAL_MEDIAN_AGE_2024"],
+    compute=lambda ctx: ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_MEDIAN_AGE_2024"],
+    latex_symbol=r"T_{remaining}",
+)
+
+
+def _geometric_sum(y0, r, n):
+    """Closed-form geometric series: sum_{t=1}^{n} y0 * r^t = y0 * r * (r^n - 1) / (r - 1)"""
+    return y0 * r * (r ** n - 1) / (r - 1)
+
+
+def _cumulative_lifetime_income(income_0, income_year_20, baseline_growth, remaining_years):
+    """Cumulative per-capita income using closed-form geometric series.
+
+    Phase 1 (years 1-20): income grows at implied per-capita CAGR derived from
+    known year-0 and year-20 per-capita incomes.
+    Phase 2 (years 21-T): income grows at baseline_growth from year-20 level.
+    """
+    g_pc = (income_year_20 / income_0) ** (1 / 20) - 1
+    phase1 = _geometric_sum(income_0, 1 + g_pc, min(20, int(remaining_years)))
+    years_after_20 = int(remaining_years) - 20
+    phase2 = _geometric_sum(income_year_20, 1 + baseline_growth, years_after_20) if years_after_20 > 0 else 0
+    return phase1 + phase2
+
+
+EARTH_CUMULATIVE_LIFETIME_INCOME = Parameter(
+    _cumulative_lifetime_income(
+        float(GLOBAL_AVG_INCOME_2025), float(EARTH_AVG_INCOME_YEAR_20),
+        float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
+    ),
+    source_type="calculated",
+    description="Cumulative per-capita income over an average remaining lifespan under Earth "
+                "baseline trajectory. Uses 2.5% baseline growth for all years.",
+    display_name="Earth Cumulative Lifetime Income (Per Capita)",
+    unit="USD",
+    formula="GLOBAL_AVG_INCOME_2025 * (1+g) * ((1+g)^T - 1) / g, where g = per-capita baseline growth",
+    latex=r"Y_{cum,earth} = \bar{y}_0 \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}}-1)}{g_{base}}",
+    inputs=["GLOBAL_AVG_INCOME_2025", "EARTH_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
+            "GLOBAL_AVG_REMAINING_YEARS"],
+    compute=lambda ctx: _cumulative_lifetime_income(
+        ctx["GLOBAL_AVG_INCOME_2025"],
+        ctx["EARTH_AVG_INCOME_YEAR_20"],
+        ctx["GDP_BASELINE_GROWTH_RATE"],
+        ctx["GLOBAL_AVG_REMAINING_YEARS"],
+    ),
+    latex_symbol=r"Y_{cum,earth}",
+)
+
+TREATY_PATH_CUMULATIVE_LIFETIME_INCOME = Parameter(
+    _cumulative_lifetime_income(
+        float(GLOBAL_AVG_INCOME_2025), float(TREATY_PATH_AVG_INCOME_YEAR_20),
+        float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
+    ),
+    source_type="calculated",
+    description="Cumulative per-capita income over an average remaining lifespan under Treaty Path. "
+                "Uses implied per-capita CAGR for years 1-20 (derived from known year-0 and year-20 "
+                "per-capita incomes), then baseline growth from the year-20 level. Conservative: "
+                "assumes no further treaty acceleration beyond year 20.",
+    display_name="Treaty Path Cumulative Lifetime Income (Per Capita)",
+    unit="USD",
+    formula="Phase 1: y0*(1+g_pc)*((1+g_pc)^20-1)/g_pc + Phase 2: y20*(1+g_base)*((1+g_base)^(T-20)-1)/g_base",
+    latex=r"Y_{cum,treaty} = \bar{y}_0 \cdot \frac{(1+g_{pc})((1+g_{pc})^{20}-1)}{g_{pc}} + \bar{y}_{treaty,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}",
+    inputs=["GLOBAL_AVG_INCOME_2025", "TREATY_PATH_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
+            "GLOBAL_AVG_REMAINING_YEARS"],
+    compute=lambda ctx: _cumulative_lifetime_income(
+        ctx["GLOBAL_AVG_INCOME_2025"],
+        ctx["TREATY_PATH_AVG_INCOME_YEAR_20"],
+        ctx["GDP_BASELINE_GROWTH_RATE"],
+        ctx["GLOBAL_AVG_REMAINING_YEARS"],
+    ),
+    latex_symbol=r"Y_{cum,treaty}",
+)
+
+TREATY_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
+    float(TREATY_PATH_CUMULATIVE_LIFETIME_INCOME) - float(EARTH_CUMULATIVE_LIFETIME_INCOME),
+    source_type="calculated",
+    description="Lifetime per-capita income gain from Treaty Path vs Earth baseline. "
+                "Cumulative treaty income minus cumulative earth income over average remaining lifespan. "
+                "Uses global averages; individual gain scales with starting income.",
+    display_name="Treaty Path Lifetime Income Gain (Per Capita)",
+    unit="USD",
+    formula="TREATY_PATH_CUMULATIVE_LIFETIME_INCOME - EARTH_CUMULATIVE_LIFETIME_INCOME",
+    inputs=["TREATY_PATH_CUMULATIVE_LIFETIME_INCOME", "EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    compute=lambda ctx: ctx["TREATY_PATH_CUMULATIVE_LIFETIME_INCOME"] - ctx["EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    latex_symbol=r"\Delta Y_{lifetime,treaty}",
+)
+
+TREATY_PATH_LIFETIME_INCOME_MULTIPLIER = Parameter(
+    float(TREATY_PATH_CUMULATIVE_LIFETIME_INCOME) / float(EARTH_CUMULATIVE_LIFETIME_INCOME),
+    source_type="calculated",
+    description="Ratio of cumulative lifetime income under Treaty Path vs Earth baseline. "
+                "Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
+    display_name="Treaty Path Lifetime Income Multiplier",
+    unit="x",
+    formula="TREATY_PATH_CUMULATIVE_LIFETIME_INCOME / EARTH_CUMULATIVE_LIFETIME_INCOME",
+    inputs=["TREATY_PATH_CUMULATIVE_LIFETIME_INCOME", "EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    compute=lambda ctx: ctx["TREATY_PATH_CUMULATIVE_LIFETIME_INCOME"] / ctx["EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    latex_symbol=r"k_{lifetime,treaty:earth}",
+)
+
+WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME = Parameter(
+    _cumulative_lifetime_income(
+        float(GLOBAL_AVG_INCOME_2025), float(WISHONIA_PATH_AVG_INCOME_YEAR_20),
+        float(GDP_BASELINE_GROWTH_RATE), float(GLOBAL_AVG_REMAINING_YEARS),
+    ),
+    source_type="calculated",
+    description="Cumulative per-capita income over an average remaining lifespan under Wishonia Path. "
+                "Uses implied per-capita CAGR for years 1-20, then baseline growth from the year-20 level. "
+                "Conservative: assumes no further acceleration beyond year 20.",
+    display_name="Wishonia Path Cumulative Lifetime Income (Per Capita)",
+    unit="USD",
+    formula="Phase 1: y0*(1+g_pc)*((1+g_pc)^20-1)/g_pc + Phase 2: y20*(1+g_base)*((1+g_base)^(T-20)-1)/g_base",
+    latex=r"Y_{cum,wish} = \bar{y}_0 \cdot \frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \bar{y}_{wish,20} \cdot \frac{(1+g_{base})((1+g_{base})^{T_{remaining}-20}-1)}{g_{base}}",
+    inputs=["GLOBAL_AVG_INCOME_2025", "WISHONIA_PATH_AVG_INCOME_YEAR_20", "GDP_BASELINE_GROWTH_RATE",
+            "GLOBAL_AVG_REMAINING_YEARS"],
+    compute=lambda ctx: _cumulative_lifetime_income(
+        ctx["GLOBAL_AVG_INCOME_2025"],
+        ctx["WISHONIA_PATH_AVG_INCOME_YEAR_20"],
+        ctx["GDP_BASELINE_GROWTH_RATE"],
+        ctx["GLOBAL_AVG_REMAINING_YEARS"],
+    ),
+    latex_symbol=r"Y_{cum,wish}",
+)
+
+WISHONIA_PATH_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
+    float(WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME) - float(EARTH_CUMULATIVE_LIFETIME_INCOME),
+    source_type="calculated",
+    description="Lifetime per-capita income gain from Wishonia Path vs Earth baseline. "
+                "Cumulative Wishonia income minus cumulative Earth income over average remaining lifespan.",
+    display_name="Wishonia Path Lifetime Income Gain (Per Capita)",
+    unit="USD",
+    formula="WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME - EARTH_CUMULATIVE_LIFETIME_INCOME",
+    inputs=["WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME", "EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    compute=lambda ctx: ctx["WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME"] - ctx["EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    latex_symbol=r"\Delta Y_{lifetime,wish}",
+)
+
+WISHONIA_PATH_LIFETIME_INCOME_MULTIPLIER = Parameter(
+    float(WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME) / float(EARTH_CUMULATIVE_LIFETIME_INCOME),
+    source_type="calculated",
+    description="Ratio of cumulative lifetime income under Wishonia Path vs Earth baseline. "
+                "Income-agnostic: applies as a multiplier to any individual's lifetime earnings.",
+    display_name="Wishonia Path Lifetime Income Multiplier",
+    unit="x",
+    formula="WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME / EARTH_CUMULATIVE_LIFETIME_INCOME",
+    inputs=["WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME", "EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    compute=lambda ctx: ctx["WISHONIA_PATH_CUMULATIVE_LIFETIME_INCOME"] / ctx["EARTH_CUMULATIVE_LIFETIME_INCOME"],
+    latex_symbol=r"k_{lifetime,wish:earth}",
+)
+
+# ---
 # IMPROVED PERSONAL LIFETIME WEALTH MODEL
 # ---
 # This section implements improvements identified in methodology review
