@@ -82,7 +82,7 @@ Every minute you make that face, {{< var global_disease_deaths_per_minute_nounit
 Please make a different face.
 
 :::{.scene-direction}
-**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress holding cue cards at the viewer. One card: frowning face with red X. Next card: determined face with green checkmark. She taps the second card. Rejected cue cards litter the floor.
+**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress holding cue cards at the viewer. One card: frowning face with red X. Next card: determined face with green checkmark. She taps the second card. Rejected cue cards litter the floor. Do not include any text, only visual symbols (red X, green checkmark).
 **Animation:** She flips through cards rapidly, settling on the determined one and tapping it impatiently.
 :::
 
@@ -95,7 +95,7 @@ Please make a different face.
 Your species spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines work.
 
 :::{.scene-direction}
-**Keyframe:** A giant brass balance scale. Left side: a single aspirin on a tiny saucer. Right side: an aircraft carrier, tanks, missiles, and a fighter jet crammed on, smashed through the floor. The aspirin side floats in the air.
+**Keyframe:** A giant brass balance scale. Left side: a single aspirin on a tiny saucer. Right side: an aircraft carrier, tanks, missiles, and a fighter jet crammed on, smashed through the floor. The aspirin side floats in the air. Do not include any text.
 **Animation:** Another tank drops on. The building shakes. The aspirin bounces, unbothered.
 :::
 
@@ -106,7 +106,7 @@ Your species spends {{< var military_to_government_clinical_trials_spending_rati
 95% of your diseases have zero approved treatments.
 
 :::{.scene-direction}
-**Keyframe:** A police lineup. 20 cartoon disease germs against a height chart. 19 smirk in tiny sunglasses, free to go. One pathetic germ in handcuffs looks confused. A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress watches as detective behind one-way glass, pinching the bridge of her nose.
+**Keyframe:** A police lineup. 20 cartoon disease germs against a height chart. 19 smirk in tiny sunglasses, free to go. One pathetic germ in handcuffs looks confused. A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress watches as detective behind one-way glass, pinching the bridge of her nose. Display text: "95%" above the free germs and "5%" above the handcuffed one.
 **Animation:** The 19 free germs high-five and swagger out. The handcuffed one looks around helplessly.
 :::
 
@@ -117,7 +117,7 @@ Your species spends {{< var military_to_government_clinical_trials_spending_rati
 You will be dead long before they're cured, which I mention not to be rude but because you seem weirdly calm about this.
 
 :::{.scene-direction}
-**Keyframe:** A man in a cardigan sipping tea in an armchair, serene. His house is engulfed in flames. A mushroom cloud rises through the window. A missile has gone through the roof. He wears an "I voted" sticker.
+**Keyframe:** A man in a cardigan sipping tea in an armchair, serene. His house is engulfed in flames. A mushroom cloud rises through the window. A missile has gone through the roof. He wears an "I VOTED" sticker. Display text on sticker: "I VOTED".
 **Animation:** Flames climb. A beam falls. He turns a page, sips tea. A second missile enters the wall.
 :::
 
@@ -128,7 +128,7 @@ You will be dead long before they're cured, which I mention not to be rude but b
 If cancer had oil reserves, you would have cured it by 2003. Instead you spent the repair money on invisible jets and Space Force, which exists to fight the zero aliens currently attacking you.
 
 :::{.scene-direction}
-**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress in front of Earth, surrounded by military satellites with weapons pointed at empty space. She looks deeply personally offended, hand on chest. Not a single other alien in sight.
+**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress in front of Earth, surrounded by military satellites with weapons pointed at empty space. She looks deeply personally offended, hand on chest. Not a single other alien in sight. Do not include any text.
 **Animation:** She spins looking for other aliens, finds none, turns back with profound betrayal. Satellites swivel to track her.
 :::
 
@@ -139,7 +139,7 @@ If cancer had oil reserves, you would have cured it by 2003. Instead you spent t
 Your destructive economy is {{< var global_destructive_economy_pct_gdp >}} of GDP and growing. The Soviet Union collapsed at 15%. You hit 25% in {{< var destructive_economy_years_to_25pct_gdp >}}. They had a plan. It was a terrible plan, but they had one.
 
 :::{.scene-direction}
-**Keyframe:** A road stretching to the horizon with percentage mile markers. At 15%, a wrecked car with a hammer-and-sickle flag smolders in a ditch, a crumpled roadmap flying from the wreckage. Further ahead at 25%, a brick wall labeled "COLLAPSE." A tiny Earth-mobile races toward it. No map. No brakes. Bumper sticker reads "THOUGHTS AND PRAYERS."
+**Keyframe:** A road stretching to the horizon with percentage mile markers. At 15%, a wrecked car with a hammer-and-sickle flag smolders in a ditch, a crumpled roadmap flying from the wreckage. Further ahead at 25%, a brick wall. A tiny Earth-mobile races toward it. No map. No brakes. Display text: "15%" on the first mile marker, "25%" on the second mile marker, "COLLAPSE" on the brick wall.
 **Animation:** The Earth-mobile accelerates past the Soviet wreckage without slowing. The wall gets closer.
 :::
 
@@ -152,7 +152,7 @@ Your destructive economy is {{< var global_destructive_economy_pct_gdp >}} of GD
 The most fascinating discovery about your species is that you only do things when given small pieces of paper with dead presidents on them. These are called "money," which is pretend value that becomes real value if everyone pretends hard enough.
 
 :::{.scene-direction}
-**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress at a lab bench, examining a dollar bill through a microscope with tweezers. Bite marks on another bill. One stuck in a potted plant's soil. Rejected hypotheses crossed out on a chalkboard.
+**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress at a lab bench, examining a dollar bill through a microscope with tweezers. Bite marks on another bill. One stuck in a potted plant's soil. Rejected hypotheses crossed out on a chalkboard. Do not include any text (chalkboard should have scribbled formulas and crossed-out diagrams, not readable words).
 **Animation:** She pokes the bill, sniffs it, gives up. Looks at camera bewildered.
 :::
 
@@ -163,7 +163,7 @@ The most fascinating discovery about your species is that you only do things whe
 On Wishonia, we skip the mass murder step and just give people food directly, but that's probably too advanced for you. So here are the steps.
 
 :::{.scene-direction}
-**Keyframe:** A chalkboard comparison. Left side labeled "WISHONIA": two boxes connected by one arrow, "Need" then "Give." Right side labeled "EARTH": a tangled spaghetti of boxes: "Need, Form, Committee, Lobbyist, Politician, Vote, Bureaucrat, Study, Appeal, Wait, Give (maybe)." Several Earth boxes are on fire.
+**Keyframe:** A chalkboard comparison. Left side labeled "WISHONIA": two boxes connected by one arrow. Right side labeled "EARTH": a tangled spaghetti of many boxes connected by chaotic arrows, several boxes on fire. Display text: "WISHONIA" and "EARTH" as headers. Left boxes: "NEED" and "GIVE." Right boxes should contain short words: "NEED", "FORM", "COMMITTEE", "LOBBY", "VOTE", "WAIT", "GIVE?"
 **Animation:** The Wishonia side draws itself in two strokes. The Earth side tangles, multiplies, and catches fire.
 :::
 
@@ -176,7 +176,7 @@ On Wishonia, we skip the mass murder step and just give people food directly, bu
 Sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost >}} to legally bribe politicians into passing a 1% treaty: redirect military spending to clinical trials.
 
 :::{.scene-direction}
-**Keyframe:** A Rube Goldberg machine across a factory floor. A tiny coin enters a slot on the left. Through gears, pulleys, and chutes, it processes through escalating stages. At the far end, an avalanche of medicine bottles pours into wheelbarrows.
+**Keyframe:** A Rube Goldberg machine across a factory floor. A tiny coin enters a slot on the left. Through gears, pulleys, and chutes, it processes through escalating stages. At the far end, an avalanche of medicine bottles pours into wheelbarrows. Do not include any text.
 **Animation:** The coin drops in. The machine clanks through its sequence. Medicine bottles cascade out in absurd quantities.
 :::
 
@@ -187,7 +187,7 @@ Sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost >}}
 {{< var dih_treasury_medical_research_pct >}} of the resulting {{< var treaty_annual_funding >}} per year funds trials. {{< var victory_bond_funding_pct >}} pays investors {{< var victory_bond_annual_return_pct >}} returns. {{< var iab_political_incentive_funding_pct >}} buys politicians. They're surprisingly affordable.
 
 :::{.scene-direction}
-**Keyframe:** A 1950s pie chart showing the money split. A huge 80% slice pours out medicine bottles. A 10% slice rains coins onto delighted investors in monocles. In the remaining 10% slice, a tiny politician is being picked up by an arcade crane claw. The crane operator looks bored.
+**Keyframe:** A 1950s pie chart showing the money split. A huge 80% slice pours out medicine bottles. A 10% slice rains coins onto delighted investors in monocles. In the remaining 10% slice, a tiny politician is being picked up by an arcade crane claw. The crane operator looks bored. Display text: "80%" on the large slice, "10%" on the investor slice, "10%" on the politician slice.
 **Animation:** Medicine bottles pour. Coins rain. The crane drops the politician into a "YES" box. He looks confused but cooperative.
 :::
 
@@ -198,7 +198,7 @@ Sell Incentive Alignment Bonds that raise {{< var treaty_campaign_total_cost >}}
 Your grandparents funded WW2 with bonds at roughly 3% returns. This pays {{< var victory_bond_annual_return_pct >}}. Same structure, fewer Nazis, better spreadsheet.
 
 :::{.scene-direction}
-**Keyframe:** Two framed posters side by side. Left: vintage WW2 war bond poster, heroic soldier, modest return percentage. Right: identical layout but a doctor in a lab coat, and the 272% return percentage has burst through the frame, cracked the wall, and is still growing off the poster's edge.
+**Keyframe:** Two framed posters side by side. Left: vintage WW2 war bond poster, heroic soldier, modest return percentage. Right: identical layout but a doctor in a lab coat, and the return percentage has burst through the frame, cracked the wall, and is still growing off the poster's edge. Display text: "3%" on left poster, "272%" on right poster (the 272% should be enormous and breaking through the frame).
 **Animation:** The new poster's numbers keep growing, cracking the frame. Plaster falls.
 :::
 
@@ -209,7 +209,7 @@ Your grandparents funded WW2 with bonds at roughly 3% returns. This pays {{< var
 Returns grow with the treaty, so every bondholder becomes a permanent lobbyist for expanding it. Same mechanics as the Military Industrial Complex. Same greed. Fewer corpses. Call it the Patient Industrial Complex.
 
 :::{.scene-direction}
-**Keyframe:** A grimy factory with belching smokestacks and ruthless conveyor belt efficiency. Medicine bottles roll off the line where bombs used to. A bored floor manager with a clipboard watches. Efficiency metrics on the wall are identical.
+**Keyframe:** A grimy factory with belching smokestacks and ruthless conveyor belt efficiency. Medicine bottles roll off the line where bombs used to. A bored floor manager with a clipboard watches. Efficiency metrics on the wall are identical. Do not include any text.
 **Animation:** Conveyor belts roll. Medicine bottles drop into crates. The floor manager checks his clipboard.
 :::
 
@@ -222,7 +222,7 @@ Returns grow with the treaty, so every bondholder becomes a permanent lobbyist f
 The treaty funds your decentralized FDA: pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}.
 
 :::{.scene-direction}
-**Keyframe:** Split-screen price tag comparison. Left: a single patient in a hospital bed with a comically enormous price tag hanging from the IV drip, dragging the bed through the floor. Right: the same patient with a tiny price tag, surrounded by hundreds of patients in a vast efficient trial warehouse. The left patient looks bankrupted. The right patients look mildly inconvenienced.
+**Keyframe:** Split-screen price tag comparison. Left: a single patient in a hospital bed with a comically enormous price tag hanging from the IV drip, dragging the bed through the floor. Right: the same patient with a tiny price tag, surrounded by hundreds of patients in a vast efficient trial warehouse. The left patient looks bankrupted. The right patients look mildly inconvenienced. Display text: "$36,500" on the left price tag, "$100" on the right price tag.
 **Animation:** The enormous price tag grows larger, dragging the bed down. On the right, patients arrive in cheerful waves.
 :::
 
@@ -233,7 +233,7 @@ The treaty funds your decentralized FDA: pragmatic trials at {{< var dfda_pragma
 This funds {{< var dih_patients_fundable_annually >}} patients per year instead of {{< var current_trial_slots_available >}}, compressing the treatment queue from ~{{< var status_quo_queue_clearance_years >}} to ~{{< var dfda_queue_clearance_years >}}. Treatments reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner.
 
 :::{.scene-direction}
-**Keyframe:** Two parallel timelines on a chalkboard. Top timeline: a line of sick stick figures stretching past labels "your grandchildren," "the sun explodes," and "???" Bottom timeline labeled "WITH TREATY": the same line dramatically compressed, most figures already holding medicine bottles, a visible finish line nearby.
+**Keyframe:** Two parallel timelines on a chalkboard. Top timeline: a line of sick stick figures stretching past labels. Bottom timeline: the same line dramatically compressed, most figures already holding medicine bottles, a visible finish line nearby. Display text: Top timeline labels "YOUR GRANDCHILDREN", "SUN EXPLODES", "???". Bottom timeline label: "WITH TREATY". Top endpoint: "~350 YEARS". Bottom endpoint: "~9 YEARS".
 **Animation:** The top timeline extends off the board. The bottom compresses. Stick figures receive medicine and walk away cured.
 :::
 
@@ -244,7 +244,7 @@ This funds {{< var dih_patients_fundable_annually >}} patients per year instead 
 That timeline shift prevents {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. Those are humans who currently have plans for next Tuesday.
 
 :::{.scene-direction}
-**Keyframe:** A vast crowd of tiny cartoon people, each holding a small piece of paper. Zooming in reveals mundane plans: "dentist at 3," "pick up kids," "try that new restaurant," "finally clean garage." They are all alive. Warm light.
+**Keyframe:** A vast crowd of tiny cartoon people, each holding a small piece of paper with mundane plans. A few readable notes in the foreground. They are all alive. Warm light. Display text on foreground notes: "dentist at 3", "pick up kids", "try new restaurant".
 **Animation:** Camera slowly zooms in. Individual plans become readable. Ordinary life, continuing.
 :::
 
@@ -257,7 +257,7 @@ That timeline shift prevents {{< var dfda_trial_capacity_plus_efficacy_lag_lives
 You want evidence? You never required evidence before starting anything stupid, but fine.
 
 :::{.scene-direction}
-**Keyframe:** A triptych of proud inventors in gilded frames. Left: beaming inventor beside a cart with square wheels. Center: grinning inventor presenting a submarine with screen doors, water pouring in. Right: delighted inventor holding a solar-powered flashlight in a dark room.
+**Keyframe:** A triptych of proud inventors in gilded frames. Left: beaming inventor beside a cart with square wheels. Center: grinning inventor presenting a submarine with screen doors, water pouring in. Right: delighted inventor holding a solar-powered flashlight in a dark room. Do not include any text.
 **Animation:** Camera pans the triptych. Each invention fails: cart tips, submarine sinks, flashlight stays dark. Inventors stay proud.
 :::
 
@@ -268,7 +268,7 @@ You want evidence? You never required evidence before starting anything stupid, 
 The RECOVERY trial tested 6 treatments on 48,000 patients at a {{< var recovery_trial_cost_reduction_factor >}} cost reduction. During a pandemic. While panicking. Your species does its best work when terrified.
 
 :::{.scene-direction}
-**Keyframe:** A hospital cafeteria repurposed as a clinical trial. A scientist sprints between patients crammed everywhere: counters, windowsills, bunk beds. Test tubes balanced on serving trays. Giant test tubes bubble in the kitchen. A cost chart on the wall plummets.
+**Keyframe:** A hospital cafeteria repurposed as a clinical trial. A scientist sprints between patients crammed everywhere: counters, windowsills, bunk beds. Test tubes balanced on serving trays. Giant test tubes bubble in the kitchen. A cost chart on the wall plummets. Do not include any text (the cost chart should be a simple visual line graph going sharply downward).
 **Animation:** Scientist sprints between patients, stumbles, catches himself. Cost chart drops. A second scientist slides past on a rolling chair.
 :::
 
@@ -279,7 +279,7 @@ The RECOVERY trial tested 6 treatments on 48,000 patients at a {{< var recovery_
 After WW2, humans cut military spending by {{< var post_ww2_military_cut_pct >}} and stumbled into the greatest economic boom in history by running out of people to shoot at.
 
 :::{.scene-direction}
-**Keyframe:** A suburban neighborhood where houses grow out of the ground like flowers. One house is mid-sprout. A man waters his house with a garden hose. A prosperity chart grows alongside them like a beanstalk off the top of the frame. The sun wears sunglasses.
+**Keyframe:** A suburban neighborhood where houses grow out of the ground like flowers. One house is mid-sprout. A man waters his house with a garden hose. A prosperity chart grows alongside them like a beanstalk off the top of the frame. The sun wears sunglasses. Do not include any text (the prosperity chart is a visual line going up, no labels needed).
 **Animation:** Houses sprout. The man waters his and it grows a second story. The prosperity beanstalk climbs higher.
 :::
 
@@ -290,7 +290,7 @@ After WW2, humans cut military spending by {{< var post_ww2_military_cut_pct >}}
 You are being asked for 1%.
 
 :::{.scene-direction}
-**Keyframe:** A skyscraper-sized bar chart towers on the left, disappearing into clouds (the post-WW2 military cut). On the right, a nearly invisible speck (1%). An ant next to the 1% bar is taller than it. A tiny flag planted on top so people can find it.
+**Keyframe:** A skyscraper-sized bar chart towers on the left, disappearing into clouds. On the right, a nearly invisible speck. An ant next to the tiny bar is taller than it. A tiny flag planted on top so people can find it. Display text: "87%" on the skyscraper bar, "1%" on the tiny bar.
 **Animation:** Camera pans up the skyscraper bar through clouds, then whip-pans to the microscopic 1% bar. The ant shakes its head.
 :::
 
@@ -303,7 +303,7 @@ You are being asked for 1%.
 The math: {{< var treaty_campaign_total_cost >}} in. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved. Return of {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} to 1.
 
 :::{.scene-direction}
-**Keyframe:** A chalkboard filling the frame. Tiny money bag on the left, arrow to a massive crowd of stick figures on the right. The return number at the bottom has outgrown the board, continued across the wall, and is now being written on the ceiling by a pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress on a ladder, running out of chalk.
+**Keyframe:** A chalkboard filling the frame. Tiny money bag on the left, arrow to a massive crowd of stick figures on the right. The return number at the bottom has outgrown the board, continued across the wall, and is now being written on the ceiling by a pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress on a ladder, running out of chalk. Display text: "$1B" next to the money bag, "1,700,000 : 1" as the return number that extends off the board and across the wall.
 **Animation:** The return number accelerates across the board, off the edge, across the wall. The alien climbs higher. Chalk breaks.
 :::
 
@@ -314,7 +314,7 @@ The math: {{< var treaty_campaign_total_cost >}} in. {{< var dfda_trial_capacity
 Your calculator will display an error, emit a tiny electronic scream, and attempt to leave the desk. This is correct.
 
 :::{.scene-direction}
-**Keyframe:** A 1950s calculator with a cartoon face, tiny legs, tiny fedora, and a bindle over its shoulder, fleeing across a desk at full sprint. Smoke and sparks trail behind it. A green checkmark hovers where it was. The math on the desk is so large the numbers spill onto the floor. Mid-leap off the desk edge, legs pinwheeling.
+**Keyframe:** A 1950s calculator with a cartoon face, tiny legs, tiny fedora, and a bindle over its shoulder, fleeing across a desk at full sprint. Smoke and sparks trail behind it. A green checkmark hovers where it was. The math on the desk is so large the numbers spill onto the floor. Mid-leap off the desk edge, legs pinwheeling. Display text: a green "✓" checkmark hovering in the air. Numbers spilling off the desk should be visible but illegible.
 **Animation:** It sprints, bindle bouncing. Reaches the edge, looks back at the math, and jumps. Fedora flies off.
 :::
 
@@ -327,7 +327,7 @@ Your calculator will display an error, emit a tiny electronic scream, and attemp
 Is it physically possible your governments redirect 1%? Do billionaires like money? Do they prefer not dying?
 
 :::{.scene-direction}
-**Keyframe:** A 1950s game show set. Three question panels with buzzers. The game show host (a pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress in a sequined jacket) files her nails, bored. The contestant's hand hovers, sweating. Confetti cannons pre-aimed. The audience is already standing.
+**Keyframe:** A 1950s game show set. Three question panels with buzzers. The game show host (a pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress in a sequined jacket) files her nails, bored. The contestant's hand hovers, sweating. Confetti cannons pre-aimed. The audience is already standing. Display text on the three panels: "REDIRECT 1%?", "LIKE MONEY?", "PREFER LIVING?"
 **Animation:** The contestant trembles. The host yawns. Hand hits buzzer. All three panels light up. Confetti erupts.
 :::
 
@@ -338,7 +338,7 @@ Is it physically possible your governments redirect 1%? Do billionaires like mon
 You said yes to all of those. There are {{< var chain_global_billionaire_count_nounit >}} billionaires on your planet. The math needs one.
 
 :::{.scene-direction}
-**Keyframe:** Thousands of identical cartoon billionaires in top hats stretching to the horizon, dodging a spotlight sweeping overhead. One in the front has been caught mid-tiptoe trying to sneak away. Monocle popped off. The crowd leans away from him.
+**Keyframe:** Thousands of identical cartoon billionaires in top hats stretching to the horizon, dodging a spotlight sweeping overhead. One in the front has been caught mid-tiptoe trying to sneak away. Monocle popped off. The crowd leans away from him. Do not include any text.
 **Animation:** Spotlight sweeps. Billionaires duck. It lands on the sneaker. He freezes, sighs, steps forward.
 :::
 
@@ -349,7 +349,7 @@ You said yes to all of those. There are {{< var chain_global_billionaire_count_n
 Every minute nobody acts, {{< var global_disease_deaths_per_minute_nounit >}} humans permanently stop.
 
 :::{.scene-direction}
-**Keyframe:** A giant wall clock where the minute hand is a grim reaper's scythe. The reaper is the hour hand, sweating, consulting a clipboard so long it drags across the floor. Each tick, a person silhouette vanishes. He looks exhausted and apologetic.
+**Keyframe:** A giant wall clock where the minute hand is a grim reaper's scythe. The reaper is the hour hand, sweating, consulting a clipboard so long it drags across the floor. Each tick, a person silhouette vanishes. He looks exhausted and apologetic. Do not include any text (clock should have standard numerals only).
 **Animation:** The scythe ticks. People vanish. The reaper checks his clipboard, sighs, can't keep up.
 :::
 
@@ -360,7 +360,7 @@ Every minute nobody acts, {{< var global_disease_deaths_per_minute_nounit >}} hu
 Humans are not stupid. You invented cheese, which is milk you left out until it went bad, but in a good way. That is genius. You just need to apply that same innovation to not dying.
 
 :::{.scene-direction}
-**Keyframe:** Three-panel comic of cheese's origin. Panel 1: milk on a windowsill, sweating in the sun. Panel 2: curdling in horror at what it's becoming. Panel 3: a glorious cheese wedge with golden halo, cherubs, and heavenly rays. The cheese is surprised by its own magnificence.
+**Keyframe:** Three-panel comic of cheese's origin. Panel 1: milk on a windowsill, sweating in the sun. Panel 2: curdling in horror at what it's becoming. Panel 3: a glorious cheese wedge with golden halo, cherubs, and heavenly rays. The cheese is surprised by its own magnificence. Do not include any text.
 **Animation:** Milk sweats. Curdles in horror. Golden light erupts. Cheese ascends with angels.
 :::
 
@@ -371,7 +371,7 @@ Humans are not stupid. You invented cheese, which is milk you left out until it 
 "I didn't know" is no longer available to you. The manual is at warondisease.org. This is why aliens don't visit.
 
 :::{.scene-direction}
-**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress walking away toward a small flying saucer parked in the background. She looks back over her shoulder, one eyebrow raised, deadpan. The instruction manual "How to End War and Disease" glows on the ground behind her, open.
+**Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress walking away toward a small flying saucer parked in the background. She looks back over her shoulder, one eyebrow raised, deadpan. The instruction manual glows on the ground behind her, open. Display text on the manual cover: "How to End War and Disease". Display text: "warondisease.org" glowing beneath the manual.
 **Animation:** She walks toward the saucer. Looks back once. Shrugs. Steps aboard. It lifts off. The manual stays, glowing.
 :::
 
