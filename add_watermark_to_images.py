@@ -7,11 +7,12 @@ Adds the watermark to the lower right corner of each image and saves to watermar
 
 import os
 import sys
+import io
 from pathlib import Path
 from PIL import Image
 
 # Set UTF-8 encoding for stdout on Windows
-if sys.platform == 'win32':
+if sys.platform == 'win32' and isinstance(sys.stdout, io.TextIOWrapper):
     sys.stdout.reconfigure(encoding='utf-8')
 
 # Configuration
