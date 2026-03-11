@@ -447,6 +447,8 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
         # Preprints
         preprints = publishing.get("preprints", [])
         for pp in preprints:
+            if pp.get("platform", "").lower() == "zenodo":
+                continue
             platform = pp.get("platform", "").upper()
             status = pp.get("status", "")
             url = pp.get("url", "")
@@ -485,10 +487,10 @@ def _format_submission_block(paper: Dict[str, Any]) -> List[str]:
         cite += f". {title}."
         if paper.get("edition"):
             cite += f" {paper['edition']}."
-        if paper.get("doi"):
-            cite += f" https://doi.org/{paper['doi']}"
-        elif paper.get("site_url"):
+        if paper.get("site_url"):
             cite += f" Available at {paper['site_url']}"
+        elif paper.get("doi"):
+            cite += f" https://doi.org/{paper['doi']}"
         lines.append(f"SUGGESTED CITATION: {cite}")
         lines.append("")
 

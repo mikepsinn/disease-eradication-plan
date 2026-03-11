@@ -745,12 +745,7 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: P
     related = []
     site_url = book.get("site-url") or website.get("site-url")
     if site_url:
-        website_note = (
-            f'<p><strong>Latest interactive version:</strong> '
-            f'<a href="{site_url}">{site_url}</a>. '
-            f'This Zenodo record archives a citable snapshot; '
-            f'the website is the maintained interactive version.</p>'
-        )
+        website_note = f'<p><strong>Website:</strong> <a href="{site_url}">{site_url}</a></p>'
         if description and not description.lstrip().startswith("<"):
             description = f"<p>{description}</p>"
         description = f"{website_note}{description}" if description else website_note

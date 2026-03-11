@@ -61,7 +61,7 @@ VEO_NEGATIVE_PROMPT = (
     "realistic photography, 3D render, CGI, Pixar, Disney, DreamWorks, "
     "smooth shading, soft gradients, glossy, plastic, ray tracing"
 )
-GEMINI_IMAGE_MODEL = "gemini-3-pro-image-preview"
+GEMINI_IMAGE_MODEL = "gemini-3.1-flash-image-preview"  # Nano Banana 2
 VEO_PARALLEL_WORKERS = 4
 
 # --- Character Descriptions ---
