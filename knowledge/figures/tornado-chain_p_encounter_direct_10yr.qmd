@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "10-Year Direct Encounter Probability"
+display_name = "Implementer Orbit Reach Probability"
 
 # Baseline and units
 
-baseline = 0.048889869534228136
+baseline = 0.011689887243833796
 
 # Tornado data from sensitivity analysis
 
-drivers = ['CHAIN_ANNUAL_ENCOUNTER_PROBABILITY']
-driver_labels = ['Annual Encounter Rate']
-impacts_low = [-0.03893474974397637]
-impacts_high = [0.13403732357822518]
+drivers = ['CHAIN_INITIAL_AUDIENCE', 'CHAIN_IMPLEMENTER_ORBIT_SIZE', 'CHAIN_EFFECTIVE_R']
+driver_labels = ['Initial Audience', 'Implementer Orbit Size', 'Effective R']
+impacts_low = [-0.009340900206633918, -0.00992762931821578, -0.0013273115179951445]
+impacts_high = [0.09924740785812791, 0.04540891799557967, 0.017398656405295032]
 
 # Convert deltas to absolute values (baseline + delta)
 

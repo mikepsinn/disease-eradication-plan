@@ -9804,9 +9804,9 @@ CHAIN_ENGAGE_PROBABILITY = Parameter(
 )
 
 CHAIN_HORIZON_YEARS = Parameter(
-    10,
+    3,
     source_type="definition",
-    description="Time horizon for chain reaction model",
+    description="Conservative upper bound for cascade propagation (social media cascades propagate in weeks; 3 years allows for slower channels and multiple cascade waves)",
     display_name="Model Horizon",
     unit="years",
     distribution="fixed",
@@ -9814,74 +9814,116 @@ CHAIN_HORIZON_YEARS = Parameter(
     latex_symbol=r"T",
 )
 
-CHAIN_ANNUAL_ENCOUNTER_PROBABILITY = Parameter(
-    0.005,
+# --- Network propagation model (empirically grounded) ---
+# Replaces flat annual encounter rate with orbit-overlap model.
+#
+# Key insight: you don't need to reach a billionaire directly.
+# You need the content to reach anyone in their "information orbit"
+# (staff, advisors, social media feeds, professional contacts).
+# If ANY orbit member flags the content, the implementer encounters it.
+#
+# Model: P(implementer's orbit reached) = 1 - (1 - O/N)^R_total
+#   O = orbit size per implementer (~1,000; Dunbar 1992 extended for info-age)
+#   N = connected population (5B; hardcoded)
+#   R_total = initial_audience x cascade_multiplier
+#   cascade_multiplier = sum(R_eff^i) for i=0..3 (3 generations, hardcoded)
+#
+# Only 2 uncertain inputs; everything else is a constant or a calculation.
+
+# Constants (not worth parameterizing: stable, well-known, low sensitivity)
+_SOCIAL_NETWORK_POP = 5_000_000_000  # global connected population
+_CASCADE_GENERATIONS = 3              # practical sharing depth
+
+CHAIN_IMPLEMENTER_ORBIT_SIZE = Parameter(
+    1_000,
     source_type="definition",
-    description="Annual probability a given implementer encounters the idea directly (media, conferences, advisors)",
-    display_name="Annual Encounter Rate",
-    unit="rate",
-    confidence="low",
-    distribution="beta",
-    confidence_interval=(0.001, 0.02),
+    description="Information-orbit size per implementer: people whose recommendation would reach them (staff, advisors, active social media feeds, professional contacts). Lower bound: Dunbar's 150; upper: corporate C-suite intake funnel.",
+    display_name="Implementer Orbit Size",
+    unit="people",
+    confidence="medium",
+    distribution="lognormal",
+    confidence_interval=(150, 5_000),
     conservative=True,
-    keywords=["encounter", "annual", "chain", "implementer", "direct"],
-    latex_symbol=r"P_{enc}",
+    keywords=["orbit", "implementer", "dunbar", "network", "contacts", "chain"],
+    latex_symbol=r"O_{impl}",
 )
 
-# --- Calculated model outputs ---
+CHAIN_EFFECTIVE_R = Parameter(
+    0.15,
+    source_type="definition",
+    description="Effective reproduction number per cascade generation: fraction of viewers who share (5%) x average forwards per sharer (3). CI spans pessimistic (2% x 2 = 0.04) to optimistic (10% x 8 = 0.80).",
+    display_name="Effective R",
+    unit="ratio",
+    confidence="medium",
+    distribution="lognormal",
+    confidence_interval=(0.04, 0.80),
+    keywords=["reproduction", "viral", "coefficient", "chain", "cascade", "sharing"],
+    latex_symbol=r"R_{eff}",
+)
+
+# Helper: orbit reach probability (used by multiple Parameters below)
+def _orbit_reach_prob(ctx):
+    """P(a specific implementer's orbit is reached by the content cascade)"""
+    R = ctx["CHAIN_EFFECTIVE_R"]
+    cascade_mult = sum(R ** i for i in range(_CASCADE_GENERATIONS + 1))
+    total_reach = ctx["CHAIN_INITIAL_AUDIENCE"] * cascade_mult
+    p_in_orbit = ctx["CHAIN_IMPLEMENTER_ORBIT_SIZE"] / _SOCIAL_NETWORK_POP
+    return 1.0 - (1.0 - p_in_orbit) ** total_reach
+
+# Shared input list for model outputs
+_chain_orbit_inputs = [
+    "CHAIN_IMPLEMENTER_ORBIT_SIZE", "CHAIN_EFFECTIVE_R", "CHAIN_INITIAL_AUDIENCE",
+]
+
+# --- Model outputs (variable names preserved for QMD compatibility) ---
+# INFORMATION DIFFUSION ONLY. The dominant strategy proof handles "will they act?"
+
+_R0 = float(CHAIN_EFFECTIVE_R)
+_cascade_mult_0 = sum(_R0 ** i for i in range(_CASCADE_GENERATIONS + 1))
+_total_reach_0 = float(CHAIN_INITIAL_AUDIENCE) * _cascade_mult_0
+_p_orbit_0 = float(CHAIN_IMPLEMENTER_ORBIT_SIZE) / _SOCIAL_NETWORK_POP
+_p_reach_0 = 1.0 - (1.0 - _p_orbit_0) ** _total_reach_0
 
 CHAIN_P_ENCOUNTER_DIRECT_10YR = Parameter(
-    1.0 - (1.0 - float(CHAIN_ANNUAL_ENCOUNTER_PROBABILITY)) ** float(CHAIN_HORIZON_YEARS),
+    _p_reach_0,
     source_type="calculated",
-    description="Probability a given implementer encounters the idea directly within 10 years",
-    display_name="10-Year Direct Encounter Probability",
+    description="Probability a given implementer's information orbit is reached by the content cascade",
+    display_name="Implementer Orbit Reach Probability",
     unit="rate",
-    formula="1 - (1 - CHAIN_ANNUAL_ENCOUNTER_PROBABILITY)^CHAIN_HORIZON_YEARS",
-    latex=r"P_{enc,10} = 1 - (1 - P_{enc})^{T}",
-    keywords=["encounter", "direct", "10yr", "chain", "implementer"],
-    inputs=["CHAIN_ANNUAL_ENCOUNTER_PROBABILITY", "CHAIN_HORIZON_YEARS"],
-    compute=lambda ctx: 1.0 - (1.0 - ctx["CHAIN_ANNUAL_ENCOUNTER_PROBABILITY"]) ** ctx["CHAIN_HORIZON_YEARS"],
-    latex_symbol=r"P_{enc,10}",
+    formula="1 - (1 - CHAIN_IMPLEMENTER_ORBIT_SIZE / 5B)^(CHAIN_INITIAL_AUDIENCE x cascade_multiplier)",
+    latex=r"P_{reach} = 1 - \left(1 - \frac{O_{impl}}{N}\right)^{N_0 \cdot \sum_{i=0}^{3} R_{eff}^i}",
+    keywords=["encounter", "orbit", "reach", "chain", "implementer"],
+    inputs=_chain_orbit_inputs,
+    compute=lambda ctx: _orbit_reach_prob(ctx),
+    latex_symbol=r"P_{reach,impl}",
 )
 
-# Per-implementer probability of engaging (direct encounters only)
-# This is INFORMATION DIFFUSION ONLY. The dominant strategy proof handles "will they act?"
-_chain_p_impl_engage = float(CHAIN_P_ENCOUNTER_DIRECT_10YR) * float(CHAIN_ENGAGE_PROBABILITY)
-
 CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS = Parameter(
-    _chain_p_impl_engage * float(CHAIN_IMPLEMENTER_COUNT),
+    _p_reach_0 * float(CHAIN_ENGAGE_PROBABILITY) * float(CHAIN_IMPLEMENTER_COUNT),
     source_type="calculated",
-    description="Expected number of implementers who engage with the idea within the time horizon",
+    description="Expected number of implementers who engage (orbit reached x engagement rate x implementer count)",
     display_name="Expected Engaged Implementers",
     unit="people",
-    formula="CHAIN_P_ENCOUNTER_DIRECT_10YR x CHAIN_ENGAGE_PROBABILITY x CHAIN_IMPLEMENTER_COUNT",
-    latex=r"E[N_{engaged}] = P_{enc,10} \times P_{engage} \times N_{impl}",
+    formula="P_reach x CHAIN_ENGAGE_PROBABILITY x CHAIN_IMPLEMENTER_COUNT",
+    latex=r"E[N_{engaged}] = P_{reach} \times P_{engage} \times N_{impl}",
     keywords=["engaged", "implementer", "expected", "chain"],
-    inputs=["CHAIN_IMPLEMENTER_COUNT", "CHAIN_ANNUAL_ENCOUNTER_PROBABILITY", "CHAIN_HORIZON_YEARS",
-            "CHAIN_ENGAGE_PROBABILITY"],
-    compute=lambda ctx: (
-        (1.0 - (1.0 - ctx["CHAIN_ANNUAL_ENCOUNTER_PROBABILITY"]) ** ctx["CHAIN_HORIZON_YEARS"])
-        * ctx["CHAIN_ENGAGE_PROBABILITY"]
-    ) * ctx["CHAIN_IMPLEMENTER_COUNT"],
+    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],
+    compute=lambda ctx: _orbit_reach_prob(ctx) * ctx["CHAIN_ENGAGE_PROBABILITY"] * ctx["CHAIN_IMPLEMENTER_COUNT"],
     latex_symbol=r"E[N_{engaged}]",
 )
 
 CHAIN_P_NO_IMPLEMENTER_ENGAGES = Parameter(
-    (1.0 - _chain_p_impl_engage) ** float(CHAIN_IMPLEMENTER_COUNT),
+    (1.0 - _p_reach_0 * float(CHAIN_ENGAGE_PROBABILITY)) ** float(CHAIN_IMPLEMENTER_COUNT),
     source_type="calculated",
-    description="Probability that NO implementer engages with the idea within the time horizon",
+    description="Probability that NO implementer engages (all orbits missed or all dismiss)",
     display_name="P(No Implementer Engages)",
     unit="rate",
-    formula="(1 - CHAIN_P_ENCOUNTER_DIRECT_10YR x CHAIN_ENGAGE_PROBABILITY)^CHAIN_IMPLEMENTER_COUNT",
-    latex=r"P_{none} = \left(1 - P_{enc,10} \cdot P_{engage}\right)^{N_{impl}}",
+    formula="(1 - P_reach x CHAIN_ENGAGE_PROBABILITY)^CHAIN_IMPLEMENTER_COUNT",
+    latex=r"P_{none} = \left(1 - P_{reach} \cdot P_{engage}\right)^{N_{impl}}",
     keywords=["no engagement", "probability", "chain", "implementer"],
-    inputs=["CHAIN_IMPLEMENTER_COUNT", "CHAIN_ANNUAL_ENCOUNTER_PROBABILITY", "CHAIN_HORIZON_YEARS",
-            "CHAIN_ENGAGE_PROBABILITY"],
+    inputs=_chain_orbit_inputs + ["CHAIN_ENGAGE_PROBABILITY", "CHAIN_IMPLEMENTER_COUNT"],
     compute=lambda ctx: (
-        1.0 - (
-            (1.0 - (1.0 - ctx["CHAIN_ANNUAL_ENCOUNTER_PROBABILITY"]) ** ctx["CHAIN_HORIZON_YEARS"])
-            * ctx["CHAIN_ENGAGE_PROBABILITY"]
-        )
+        1.0 - _orbit_reach_prob(ctx) * ctx["CHAIN_ENGAGE_PROBABILITY"]
     ) ** ctx["CHAIN_IMPLEMENTER_COUNT"],
     latex_symbol=r"P_{none}",
 )
@@ -9889,7 +9931,7 @@ CHAIN_P_NO_IMPLEMENTER_ENGAGES = Parameter(
 CHAIN_P_AT_LEAST_ONE_ENGAGES = Parameter(
     1.0 - float(CHAIN_P_NO_IMPLEMENTER_ENGAGES),
     source_type="calculated",
-    description="Probability at least one implementer engages within the time horizon (information diffusion only; dominant strategy proof handles action)",
+    description="Probability at least one implementer engages (information diffusion only; dominant strategy proof handles action)",
     display_name="P(At Least One Engages)",
     unit="percent",
     formula="1 - CHAIN_P_NO_IMPLEMENTER_ENGAGES",

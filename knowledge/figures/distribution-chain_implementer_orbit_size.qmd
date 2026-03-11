@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Annual Encounter Rate"
+#| fig-cap: "Probability Distribution: Implementer Orbit Size"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,12 +17,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 0.005
-low = 0.001
-high = 0.02
-dist_type = "beta"
-display_name = "Annual Encounter Rate"
-unit = "rate"
+central_value = 1000.0
+low = 150
+high = 5000
+dist_type = "lognormal"
+display_name = "Implementer Orbit Size"
+unit = "people"
 
 # Calculate distribution parameters
 
@@ -143,7 +143,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-chain_annual_encounter_probability.png')
+output_path = get_figure_output_path('distribution-chain_implementer_orbit_size.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

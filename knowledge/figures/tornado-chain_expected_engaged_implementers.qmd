@@ -20,14 +20,14 @@ display_name = "Expected Engaged Implementers"
 
 # Baseline and units
 
-baseline = 14.549625173386291
+baseline = 3.478910443764937
 
 # Tornado data from sensitivity analysis
 
-drivers = ['CHAIN_ANNUAL_ENCOUNTER_PROBABILITY', 'CHAIN_DISMISS_PROBABILITY']
-driver_labels = ['Annual Encounter Rate', 'Dismissal Rate']
-impacts_low = [-11.586981523807367, 14.549625173386291]
-impacts_high = [39.8895074968798, -10.184737621370399]
+drivers = ['CHAIN_INITIAL_AUDIENCE', 'CHAIN_IMPLEMENTER_ORBIT_SIZE', 'CHAIN_DISMISS_PROBABILITY', 'CHAIN_EFFECTIVE_R']
+driver_labels = ['Initial Audience', 'Implementer Orbit Size', 'Dismissal Rate', 'Effective R']
+impacts_low = [-2.7798519014942533, -2.9544624851010157, 3.478910443764937, -0.395007907755355]
+impacts_high = [29.536028578578858, 13.513693995484504, -2.435237310635455, 5.1778401462158]
 
 # Convert deltas to absolute values (baseline + delta)
 

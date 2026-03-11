@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 561 parameters used in the analysis, organized by type:
+This appendix documents all 565 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 195
 - Calculated values: 247
-- Core definitions: 119
+- Core definitions: 123
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (247 parameters) • [External Data Sources](#sec-external) (195 parameters) • [Core Definitions](#sec-definitions) (119 parameters)
+[Calculated Values](#sec-calculated) (247 parameters) • [External Data Sources](#sec-external) (195 parameters) • [Core Definitions](#sec-definitions) (123 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -149,24 +149,22 @@ $$
 
 :::
 
-### Expected Engaged Implementers: 14.5 people {#sec-chain_expected_engaged_implementers}
+### Expected Engaged Implementers: 3.48 people {#sec-chain_expected_engaged_implementers}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected number of implementers who engage with the idea within the time horizon
+Expected number of implementers who engage (orbit reached x engagement rate x implementer count)
 
 **Inputs**:
 
-- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
-- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
-- [Model Horizon](#sec-chain_horizon_years): 10 years
+- [Implementer Orbit Size](#sec-chain_implementer_orbit_size): 1 thousand people (95% CI: 150 people - 5 thousand people)
+- [Effective R](#sec-chain_effective_r): 0.15:1 (95% CI: 0.04:1 - 0.8:1)
+- [Initial Audience](#sec-chain_initial_audience): 50 thousand people (95% CI: 10 thousand people - 500 thousand people)
 - [Engagement Rate](#sec-chain_engage_probability) 🔢: 10%
+- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
 
 $$
-\begin{gathered}
-E[N_{engaged}] \\
-= P_{enc,10} \times P_{engage} \times N_{impl}
-\end{gathered}
+E[N_{engaged}] = P_{reach} \times P_{engage} \times N_{impl}
 $$
 
 *✓ High confidence*
@@ -211,25 +209,29 @@ $$
 
 :::
 
-### P(At Least One Engages): 100% {#sec-chain_p_at_least_one_engages}
+### P(At Least One Engages): 96.9% {#sec-chain_p_at_least_one_engages}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Probability at least one implementer engages within the time horizon (information diffusion only; dominant strategy proof handles action)
+Probability at least one implementer engages (information diffusion only; dominant strategy proof handles action)
 
 **Inputs**:
 
-- [P(No Implementer Engages)](#sec-chain_p_no_implementer_engages) 🔢: 4.63e-05%
+- [P(No Implementer Engages)](#sec-chain_p_no_implementer_engages) 🔢: 3.08%
 
 $$
-P_{reach} = 1 - P_{none} = 1 - 0\% = 100\%
+P_{reach} = 1 - P_{none} = 1 - 3.08\% = 96.9\%
 $$
 where:
 $$
 \begin{gathered}
 P_{none} \\
-= \left(1 - P_{enc,10} \cdot P_{engage}\right)^{N_{impl}}
+= \left(1 - P_{reach} \cdot P_{engage}\right)^{N_{impl}}
 \end{gathered}
+$$
+where:
+$$
+P_{engage} = 1 - P_{dismiss} = 1 - 90\% = 10\%
 $$
 where:
 $$
@@ -239,10 +241,6 @@ N_{impl} \\
 = 2{,}780 + 195 \\
 = 2{,}980
 \end{gathered}
-$$
-where:
-$$
-P_{engage} = 1 - P_{dismiss} = 1 - 90\% = 10\%
 $$
 *✓ High confidence*
 
@@ -262,19 +260,23 @@ $$
 
 :::
 
-### 10-Year Direct Encounter Probability: 4.89% {#sec-chain_p_encounter_direct_10yr}
+### Implementer Orbit Reach Probability: 1.17% {#sec-chain_p_encounter_direct_10yr}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Probability a given implementer encounters the idea directly within 10 years
+Probability a given implementer's information orbit is reached by the content cascade
 
 **Inputs**:
 
-- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
-- [Model Horizon](#sec-chain_horizon_years): 10 years
+- [Implementer Orbit Size](#sec-chain_implementer_orbit_size): 1 thousand people (95% CI: 150 people - 5 thousand people)
+- [Effective R](#sec-chain_effective_r): 0.15:1 (95% CI: 0.04:1 - 0.8:1)
+- [Initial Audience](#sec-chain_initial_audience): 50 thousand people (95% CI: 10 thousand people - 500 thousand people)
 
 $$
-P_{enc,10} = 1 - (1 - P_{enc})^{T}
+\begin{gathered}
+P_{reach} \\
+= 1 - \left(1 - \frac{O_{impl}}{N}\right)^{N_0 \cdot \sum_{i=0}^{3} R_{eff}^i}
+\end{gathered}
 $$
 
 *✓ High confidence*
@@ -295,23 +297,24 @@ $$
 
 :::
 
-### P(No Implementer Engages): 4.63e-05% {#sec-chain_p_no_implementer_engages}
+### P(No Implementer Engages): 3.08% {#sec-chain_p_no_implementer_engages}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Probability that NO implementer engages with the idea within the time horizon
+Probability that NO implementer engages (all orbits missed or all dismiss)
 
 **Inputs**:
 
-- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
-- [Annual Encounter Rate](#sec-chain_annual_encounter_probability): 0.5% (95% CI: 0.1% - 2%)
-- [Model Horizon](#sec-chain_horizon_years): 10 years
+- [Implementer Orbit Size](#sec-chain_implementer_orbit_size): 1 thousand people (95% CI: 150 people - 5 thousand people)
+- [Effective R](#sec-chain_effective_r): 0.15:1 (95% CI: 0.04:1 - 0.8:1)
+- [Initial Audience](#sec-chain_initial_audience): 50 thousand people (95% CI: 10 thousand people - 500 thousand people)
 - [Engagement Rate](#sec-chain_engage_probability) 🔢: 10%
+- [Potential Implementers](#sec-chain_implementer_count) 🔢: 2.98 thousand people
 
 $$
 \begin{gathered}
 P_{none} \\
-= \left(1 - P_{enc,10} \cdot P_{engage}\right)^{N_{impl}}
+= \left(1 - P_{reach} \cdot P_{engage}\right)^{N_{impl}}
 \end{gathered}
 $$
 
@@ -20296,28 +20299,6 @@ Distinct cell therapy approaches (CAR-T variants, iPSCs, MSCs, organoids)
 
 :::
 
-### Annual Encounter Rate: 0.5% {#sec-chain_annual_encounter_probability}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual probability a given implementer encounters the idea directly (media, conferences, advisors)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [0.1%, 2%] • Distribution: Beta
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1% and 2% (±190%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The beta distribution means values are bounded and can skew toward one end.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-chain_annual_encounter_probability.qmd >}}
-
-*Core definition*
-
-:::
-
 ### Dismissal Rate: 90% {#sec-chain_dismiss_probability}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -20340,15 +20321,59 @@ Probability someone dismisses the idea without engaging (the 'institutionalizati
 
 :::
 
-### Model Horizon: 10 years {#sec-chain_horizon_years}
+### Effective R: 0.15:1 {#sec-chain_effective_r}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Time horizon for chain reaction model
+Effective reproduction number per cascade generation: fraction of viewers who share (5%) x average forwards per sharer (3). CI spans pessimistic (2% x 2 = 0.04) to optimistic (10% x 8 = 0.80).
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.04:1, 0.8:1] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.04:1 and 0.8:1 (±253%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chain_effective_r.qmd >}}
+
+*Core definition*
+
+:::
+
+### Model Horizon: 3 years {#sec-chain_horizon_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conservative upper bound for cascade propagation (social media cascades propagate in weeks; 3 years allows for slower channels and multiple cascade waves)
 
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Implementer Orbit Size: 1 thousand people {#sec-chain_implementer_orbit_size}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Information-orbit size per implementer: people whose recommendation would reach them (staff, advisors, active social media feeds, professional contacts). Lower bound: Dunbar's 150; upper: corporate C-suite intake funnel.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [150 people, 5 thousand people] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 150 people and 5 thousand people (±242%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-chain_implementer_orbit_size.qmd >}}
 
 *Core definition*
 
@@ -21711,6 +21736,30 @@ Probability that the world follows the Wishonia Path (Treaty + dysfunction-tax e
 #### Input Distribution
 
 {{< include ../figures/distribution-wishonia_path_success_probability_year_20.qmd >}}
+
+*Core definition*
+
+:::
+
+###  Cascade Generations: 3 {#sec-_cascade_generations}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+*Core definition*
+
+:::
+
+###  R0: 0.15 {#sec-_r0}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+*Core definition*
+
+:::
+
+###  Social Network Pop: 5 billion {#sec-_social_network_pop}
+
+::: {.callout-note collapse="true" title="📊 Details"}
 
 *Core definition*
 

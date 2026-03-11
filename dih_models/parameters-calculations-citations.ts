@@ -2213,14 +2213,14 @@ export const CHAIN_ENGAGE_PROBABILITY: Parameter = {
 };
 
 export const CHAIN_EXPECTED_ENGAGED_IMPLEMENTERS: Parameter = {
-  value: 14.549625173386291,
+  value: 3.478910443764937,
   unit: "people",
   displayName: "Expected Engaged Implementers",
-  description: "Expected number of implementers who engage with the idea within the time horizon",
+  description: "Expected number of implementers who engage (orbit reached x engagement rate x implementer count)",
   sourceType: "calculated",
   confidence: "high",
-  formula: "CHAIN_P_ENCOUNTER_DIRECT_10YR x CHAIN_ENGAGE_PROBABILITY x CHAIN_IMPLEMENTER_COUNT",
-  latex: "\\begin{gathered}\nE[N_{engaged}] \\\\\n= P_{enc,10} \\times P_{engage} \\times N_{impl}\n\\end{gathered}",
+  formula: "P_reach x CHAIN_ENGAGE_PROBABILITY x CHAIN_IMPLEMENTER_COUNT",
+  latex: "E[N_{engaged}] = P_{reach} \\times P_{engage} \\times N_{impl}",
 };
 
 export const CHAIN_IMPLEMENTER_COUNT: Parameter = {
@@ -2235,36 +2235,36 @@ export const CHAIN_IMPLEMENTER_COUNT: Parameter = {
 };
 
 export const CHAIN_P_AT_LEAST_ONE_ENGAGES: Parameter = {
-  value: 0.999999536893129,
+  value: 0.9692217015578317,
   unit: "percent",
   displayName: "P(At Least One Engages)",
-  description: "Probability at least one implementer engages within the time horizon (information diffusion only; dominant strategy proof handles action)",
+  description: "Probability at least one implementer engages (information diffusion only; dominant strategy proof handles action)",
   sourceType: "calculated",
   confidence: "high",
   formula: "1 - CHAIN_P_NO_IMPLEMENTER_ENGAGES",
-  latex: "\\begin{gathered}\nP_{reach} = 1 - P_{none} = 1 - 0\\% = 100\\%\n\\\\[0.5em]\n\\text{where } P_{none} = \\left(1 - P_{enc,10} \\cdot P_{engage}\\right)^{N_{impl}}\n\\\\[0.5em]\n\\text{where } N_{impl} = N_{billionaire} + N_{leader} = 2{,}780 + 195 = 2{,}980\n\\\\[0.5em]\n\\text{where } P_{engage} = 1 - P_{dismiss} = 1 - 90\\% = 10\\%\n\\end{gathered}",
+  latex: "\\begin{gathered}\nP_{reach} = 1 - P_{none} = 1 - 3.08\\% = 96.9\\%\n\\\\[0.5em]\n\\text{where } P_{none} = \\left(1 - P_{reach} \\cdot P_{engage}\\right)^{N_{impl}}\n\\\\[0.5em]\n\\text{where } P_{engage} = 1 - P_{dismiss} = 1 - 90\\% = 10\\%\n\\\\[0.5em]\n\\text{where } N_{impl} = N_{billionaire} + N_{leader} = 2{,}780 + 195 = 2{,}980\n\\end{gathered}",
 };
 
 export const CHAIN_P_ENCOUNTER_DIRECT_10YR: Parameter = {
-  value: 0.048889869534228136,
+  value: 0.011689887243833796,
   unit: "rate",
-  displayName: "10-Year Direct Encounter Probability",
-  description: "Probability a given implementer encounters the idea directly within 10 years",
+  displayName: "Implementer Orbit Reach Probability",
+  description: "Probability a given implementer's information orbit is reached by the content cascade",
   sourceType: "calculated",
   confidence: "high",
-  formula: "1 - (1 - CHAIN_ANNUAL_ENCOUNTER_PROBABILITY)^CHAIN_HORIZON_YEARS",
-  latex: "P_{enc,10} = 1 - (1 - P_{enc})^{T}",
+  formula: "1 - (1 - CHAIN_IMPLEMENTER_ORBIT_SIZE / 5B)^(CHAIN_INITIAL_AUDIENCE x cascade_multiplier)",
+  latex: "\\begin{gathered}\nP_{reach} \\\\\n= 1 - \\left(1 - \\frac{O_{impl}}{N}\\right)^{N_0 \\cdot \\sum_{i=0}^{3} R_{eff}^i}\n\\end{gathered}",
 };
 
 export const CHAIN_P_NO_IMPLEMENTER_ENGAGES: Parameter = {
-  value: 4.6310687100515637e-07,
+  value: 0.030778298442168252,
   unit: "rate",
   displayName: "P(No Implementer Engages)",
-  description: "Probability that NO implementer engages with the idea within the time horizon",
+  description: "Probability that NO implementer engages (all orbits missed or all dismiss)",
   sourceType: "calculated",
   confidence: "high",
-  formula: "(1 - CHAIN_P_ENCOUNTER_DIRECT_10YR x CHAIN_ENGAGE_PROBABILITY)^CHAIN_IMPLEMENTER_COUNT",
-  latex: "\\begin{gathered}\nP_{none} \\\\\n= \\left(1 - P_{enc,10} \\cdot P_{engage}\\right)^{N_{impl}}\n\\end{gathered}",
+  formula: "(1 - P_reach x CHAIN_ENGAGE_PROBABILITY)^CHAIN_IMPLEMENTER_COUNT",
+  latex: "\\begin{gathered}\nP_{none} \\\\\n= \\left(1 - P_{reach} \\cdot P_{engage}\\right)^{N_{impl}}\n\\end{gathered}",
 };
 
 export const CHRONIC_DISEASE_TREATED_PATIENTS_ANNUAL: Parameter = {
@@ -5251,17 +5251,6 @@ export const CELL_THERAPY_APPROACHES: Parameter = {
   confidenceInterval: [300.0, 800.0],
 };
 
-export const CHAIN_ANNUAL_ENCOUNTER_PROBABILITY: Parameter = {
-  value: 0.005,
-  unit: "rate",
-  displayName: "Annual Encounter Rate",
-  description: "Annual probability a given implementer encounters the idea directly (media, conferences, advisors)",
-  sourceType: "definition",
-  confidence: "low",
-  confidenceInterval: [0.001, 0.02],
-  conservative: true,
-};
-
 export const CHAIN_DISMISS_PROBABILITY: Parameter = {
   value: 0.9,
   unit: "rate",
@@ -5273,13 +5262,34 @@ export const CHAIN_DISMISS_PROBABILITY: Parameter = {
   conservative: true,
 };
 
+export const CHAIN_EFFECTIVE_R: Parameter = {
+  value: 0.15,
+  unit: "ratio",
+  displayName: "Effective R",
+  description: "Effective reproduction number per cascade generation: fraction of viewers who share (5%) x average forwards per sharer (3). CI spans pessimistic (2% x 2 = 0.04) to optimistic (10% x 8 = 0.80).",
+  sourceType: "definition",
+  confidence: "medium",
+  confidenceInterval: [0.04, 0.8],
+};
+
 export const CHAIN_HORIZON_YEARS: Parameter = {
-  value: 10.0,
+  value: 3.0,
   unit: "years",
   displayName: "Model Horizon",
-  description: "Time horizon for chain reaction model",
+  description: "Conservative upper bound for cascade propagation (social media cascades propagate in weeks; 3 years allows for slower channels and multiple cascade waves)",
   sourceType: "definition",
   confidence: "high",
+};
+
+export const CHAIN_IMPLEMENTER_ORBIT_SIZE: Parameter = {
+  value: 1000.0,
+  unit: "people",
+  displayName: "Implementer Orbit Size",
+  description: "Information-orbit size per implementer: people whose recommendation would reach them (staff, advisors, active social media feeds, professional contacts). Lower bound: Dunbar's 150; upper: corporate C-suite intake funnel.",
+  sourceType: "definition",
+  confidence: "medium",
+  confidenceInterval: [150.0, 5000.0],
+  conservative: true,
 };
 
 export const CHAIN_INITIAL_AUDIENCE: Parameter = {
@@ -6061,6 +6071,18 @@ export const WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20: Parameter = {
   confidenceInterval: [0.6, 0.98],
 };
 
+export const _CASCADE_GENERATIONS: Parameter = {
+  value: 3.0,
+};
+
+export const _R0: Parameter = {
+  value: 0.15,
+};
+
+export const _SOCIAL_NETWORK_POP: Parameter = {
+  value: 5000000000.0,
+};
+
 export const _US_BASE_POLITICAL_SPENDING: Parameter = {
   value: 28800000000.0,
 };
@@ -6545,9 +6567,10 @@ export const parameters = {
   CAMPAIGN_VIRAL_CONTENT_BUDGET,
   CAREGIVER_COST_ANNUAL,
   CELL_THERAPY_APPROACHES,
-  CHAIN_ANNUAL_ENCOUNTER_PROBABILITY,
   CHAIN_DISMISS_PROBABILITY,
+  CHAIN_EFFECTIVE_R,
   CHAIN_HORIZON_YEARS,
+  CHAIN_IMPLEMENTER_ORBIT_SIZE,
   CHAIN_INITIAL_AUDIENCE,
   CHAIN_WORLD_LEADER_COUNT,
   CHILDHOOD_VACCINATION_COST_PER_DALY,
@@ -6630,6 +6653,9 @@ export const parameters = {
   US_VS_SWITZERLAND_SPENDING_GAP,
   VICTORY_BOND_FUNDING_PCT,
   WISHONIA_PATH_SUCCESS_PROBABILITY_YEAR_20,
+  _CASCADE_GENERATIONS,
+  _R0,
+  _SOCIAL_NETWORK_POP,
   _US_BASE_POLITICAL_SPENDING
 } as const;
 
@@ -8543,10 +8569,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 561,
+  total: 565,
   external: 195,
   calculated: 247,
-  definitions: 119,
+  definitions: 123,
   citations: 140,
 } as const;
 

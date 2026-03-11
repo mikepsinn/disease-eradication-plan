@@ -20,14 +20,14 @@ display_name = "P(At Least One Engages)"
 
 # Baseline and units
 
-baseline = 0.999999536893129
+baseline = 0.9692217015578317
 
 # Tornado data from sensitivity analysis
 
-drivers = ['CHAIN_ANNUAL_ENCOUNTER_PROBABILITY', 'CHAIN_DISMISS_PROBABILITY']
-driver_labels = ['Annual Encounter Rate', 'Dismissal Rate']
-impacts_low = [-0.05160543530938411, 4.6310667134452643e-07]
-impacts_high = [4.6310687096262626e-07, -0.012674943290386431]
+drivers = ['CHAIN_IMPLEMENTER_ORBIT_SIZE', 'CHAIN_INITIAL_AUDIENCE', 'CHAIN_DISMISS_PROBABILITY', 'CHAIN_EFFECTIVE_R']
+driver_labels = ['Implementer Orbit Size', 'Initial Audience', 'Dismissal Rate', 'Effective R']
+impacts_low = [-0.5610763652713117, -0.466233924818064, 0.029834848454155183, -0.01492880762273574]
+impacts_high = [0.030778258717869322, 0.03077829844216451, -0.3213160224331726, 0.030606530415382083]
 
 # Convert deltas to absolute values (baseline + delta)
 

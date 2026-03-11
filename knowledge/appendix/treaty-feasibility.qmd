@@ -151,29 +151,25 @@ On Earth, this is called "being realistic."
 
 The question is whether a {{< var chain_dismiss_probability >}} dismissal rate prevents the idea from reaching someone who can act on it. This section answers whether reaching such people is overwhelmingly likely. (The [next section](#sec-dominant-strategy-proof) addresses what happens once they understand the incentive structure.)
 
-### Direct Encounters
+### The Orbit-Overlap Model
 
-On your planet, important humans find ideas through news, conferences, advisors whispering in their ears, or occasionally by accident while searching for something else (this is how most of your scientific breakthroughs happen, and also how you discovered penicillin). Each of {{< var chain_implementer_count_nounit >}} potential implementers ({{< var chain_global_billionaire_count_nounit >}} billionaires [@forbes-billionaires-2024] plus {{< var chain_world_leader_count_nounit >}} heads of state) has an annual probability {{< var chain_annual_encounter_probability >}} of stumbling across this idea. That is a very small number per person. But there are a lot of persons.
+You don't need to reach a billionaire directly. You need the content to reach anyone in their *information orbit*: the staff, advisors, social media feeds, and professional contacts whose recommendations actually land on their desk. Each implementer has roughly {{< var chain_implementer_orbit_size_nounit >}} such people (lower bound: Dunbar's 150 close contacts; upper bound: a corporate C-suite's full intake funnel).
+
+There are {{< var chain_implementer_count_nounit >}} potential implementers ({{< var chain_global_billionaire_count_nounit >}} billionaires [@forbes-billionaires-2024] plus {{< var chain_world_leader_count_nounit >}} heads of state). An initial audience of {{< var chain_initial_audience_nounit >}} readers shares content with an effective reproduction number of {{< var chain_effective_r >}} per generation, producing a cascade that fans out over three sharing generations. The question is whether that cascade overlaps with any implementer's orbit.
 
 ### The Mathematics
 
-The probability that a given implementer encounters the idea within {{< var chain_horizon_years_nounit >}} years:
+The probability that a given implementer's orbit is reached by the cascade:
 
 {{< var chain_p_encounter_direct_10yr_latex >}}
 
-The per-implementer probability of engaging (encountering AND not dismissing):
-
-$$
-P_{impl,engage} = P_{enc,10} \times P_{engage}
-$$
-
-The expected number of implementers who engage:
+The expected number of implementers who engage (orbit reached, not dismissed):
 
 {{< var chain_expected_engaged_implementers_latex >}}
 
 The probability that at least one engages: {{< var chain_p_at_least_one_engages >}}.
 
-That is not a typo. With {{< var chain_implementer_count_nounit >}} potential implementers and a {{< var chain_p_encounter_direct_10yr >}} per-implementer encounter probability over {{< var chain_horizon_years_nounit >}} years, the model expects approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers to engage with this idea. Not guaranteed in the mathematical sense. But in planning terms, this is the kind of number you treat as near-inevitable unless your diffusion assumptions are wrong. The dismissal rate stops mattering once enough shots are on goal.
+That is not a typo. With {{< var chain_implementer_count_nounit >}} implementers and {{< var chain_implementer_orbit_size_nounit >}} orbit contacts each, the cascade needs to hit just one person who can flag it upward. The model expects approximately {{< var chain_expected_engaged_implementers_nounit >}} implementers to engage. The dismissal rate stops mattering once enough shots are on goal.
 
 This model answers only: "Is it overwhelmingly likely to reach someone who matters?" The answer is yes. The next section asks: "What happens once it does?"
 
@@ -182,7 +178,7 @@ This model is deliberately conservative in three ways:
 
 1. **Base engagement rate**: Uses the same engagement rate for personal recommendations as for passive exposure (personal recommendations convert at ~3x higher rates)
 2. **Narrow implementer definition**: Counts only billionaires and heads of state (excludes foundation heads, WHO officials, major fund managers, etc.)
-3. **No compounding**: Ignores the feedback loop where media coverage of early adoption increases subsequent encounter rates, and ignores network amplification (people sharing the idea with others)
+3. **No media feedback loop**: Ignores the compounding effect where media coverage of early adoption increases subsequent encounter rates
 :::
 
 ## The Decision-Theoretic Case: Why Rational Actors Eventually Move {#sec-dominant-strategy-proof}
