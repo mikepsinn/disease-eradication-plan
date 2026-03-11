@@ -191,6 +191,7 @@ format:
     link-citations: true
     smooth-scroll: true
     code-tools: false
+    filters: [assets/filters/live-version-note.lua]
   pdf:
     output-file: "right-to-trial-fda-upgrade-act.pdf"
     documentclass: article
@@ -213,3 +214,4 @@ format:
       - left=1in
       - right=1in
     fontsize: 11pt
+    filters: [assets/filters/live-version-note.lua]

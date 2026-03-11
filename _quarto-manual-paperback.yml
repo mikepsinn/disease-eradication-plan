@@ -261,3 +261,4 @@ format:
       - bottom=0.75in
       - inner=0.875in  # KDP minimum gutter for 700+ pages
       - outer=0.5in
+    filters: [assets/filters/live-version-note.lua]

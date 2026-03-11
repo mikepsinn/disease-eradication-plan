@@ -20,7 +20,13 @@ abstract: |
 
   The framework is agnostic to which party enacted each policy, evaluating only whether it improved
   outcomes. Projected welfare gains for typical US states: 5-15% of GDP
-  (90% CI: 2-25%).
+  (90% CI: 2-25%). At system scale, the model's Optimal-Governance Path reaches
+  {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline after 20 years, raises
+  average income to {{< var wishonia_path_avg_income_year_20 >}} versus
+  {{< var earth_avg_income_year_20 >}} on the status-quo path, reaches
+  {{< var wishonia_path_gdp_year_20 >}} in total output, and recovers roughly
+  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
+  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
@@ -79,6 +85,8 @@ OPG answers four questions: "What should we add? Change? Remove? Keep?" The fram
 4. **Maintain**: Current policies aligned with evidence
 
 Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (see @sec-blocking-factors).
+
+**Scale note.** If recommendation quality is the bottleneck, the upside from fixing it is enormous. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. The 20-year Optimal-Governance Path reaches {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_path_avg_income_year_20 >}} versus {{< var earth_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_path_gdp_year_20 >}} in total output. This specification focuses on the policy-selection layer of that stack; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd).
 
 **JEL Classification**: H10, D72, C54, I18, D61
 

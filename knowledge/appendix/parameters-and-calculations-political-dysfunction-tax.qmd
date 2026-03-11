@@ -36,15 +36,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 65 parameters used in the analysis, organized by type:
+This appendix documents all 69 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 29
-- Calculated values: 26
+- Calculated values: 30
 - Core definitions: 10
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (26 parameters) • [External Data Sources](#sec-external) (29 parameters) • [Core Definitions](#sec-definitions) (10 parameters)
+[Calculated Values](#sec-calculated) (30 parameters) • [External Data Sources](#sec-external) (29 parameters) • [Core Definitions](#sec-definitions) (10 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -848,6 +848,248 @@ Cut_{WW2} \\
 $$
 
 *✓ High confidence*
+
+:::
+
+### Treaty Path Average Income at Year 20: $339K {#sec-treaty_path_avg_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average income (GDP per capita) at year 20 under the Treaty Path.
+
+**Inputs**:
+
+- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
+- [Global Population 2045 (Projected)](#sec-global_population_2045_projected) 📊: 9.2 billion of people
+
+$$
+\bar{y}_{treaty,20} = \frac{GDP_{treaty,20}}{Pop_{2045}}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_path_avg_income_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_path_avg_income_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_path_avg_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_path_avg_income_year_20.qmd >}}
+
+:::
+
+### Treaty Path CAGR (20 Years): 17.9% {#sec-treaty_path_cagr_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Compound annual growth rate implied by Treaty Path GDP trajectory over 20 years.
+
+**Inputs**:
+
+- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+
+$$
+\begin{gathered}
+g_{treaty,CAGR} \\
+= \left(\frac{GDP_{treaty,20}}{GDP_0}\right)^{1/20} - 1
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_path_cagr_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_path_cagr_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_path_cagr_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_path_cagr_year_20.qmd >}}
+
+:::
+
+### Treaty Path vs Earth GDP Multiplier (Year 20): 16.5x {#sec-treaty_path_gdp_vs_earth_multiplier_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty Path GDP at year 20 as a multiple of Earth baseline GDP at year 20.
+
+**Inputs**:
+
+- [Treaty Path GDP at Year 20](#sec-treaty_path_gdp_year_20) 🔢: $3.11 quadrillion
+- [Earth GDP at Year 20](#sec-earth_gdp_year_20) 🔢: $188T
+
+$$
+\begin{gathered}
+k_{treaty:earth,20} \\
+= \frac{GDP_{treaty,20}}{GDP_{earth,20}} \\
+= \frac{\$3110T}{\$188T} \\
+= 16.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+where:
+$$
+s_{mil,max} = Cut_{WW2} = 87.6\% = 87.6\%
+$$
+where:
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,wish} \\
+= \min\left(1,\frac{Treatments_{new,ann}\cdot k_{capacity,wish}\cdot 20}{D_{untreated}}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,dFDA}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,dFDA} \\
+= \frac{Subsidies_{dFDA,ann}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{dFDA,ann} \\
+= Funding_{dFDA,ann} - OPEX_{dFDA} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{dFDA} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+GDP_{earth,20} = GDP_0(1+g_{base})^{20}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_path_gdp_vs_earth_multiplier_year_20.qmd >}}
+
+:::
+
+### Treaty Path GDP at Year 20: $3.11 quadrillion {#sec-treaty_path_gdp_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Projected global GDP at year 20 under the Treaty Path: military-to-science reallocation plus disease-burden recovery only. Excludes non-health dysfunction-capital reallocation to isolate the lower-political-baggage channel stack.
+
+**Inputs**:
+
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115T
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
+- [GDP Growth Boost at 30% Military Reallocation](#sec-military_redirect_gdp_boost_at_30pct): 5.5% (95% CI: 3.5% - 7.5%)
+- [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
+- [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
+- [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
+
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_0(1+g_{treaty,ramp})^3(1+g_{treaty,full})^{17}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_path_gdp_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_path_gdp_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_path_gdp_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_path_gdp_year_20.qmd >}}
 
 :::
 

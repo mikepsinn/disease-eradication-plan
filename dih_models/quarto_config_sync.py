@@ -96,11 +96,17 @@ SKIP_METADATA_KEYS = {
 # Format HTML keys that should be synced (ADD only if missing)
 SYNC_FORMAT_HTML_KEYS = {
     "theme",              # Consistent theme across all papers (cosmo)
+    "filters",            # Shared paper rendering filters
     "link-citations",     # Make citations clickable
     "citation-hover",     # Show citation preview on hover
     "smooth-scroll",      # Smooth scrolling for anchor links
     "code-fold",          # Collapsible code blocks
     "code-tools",         # Code copy button and source view
+}
+
+# Format PDF keys that should be synced (ADD only if missing)
+SYNC_FORMAT_PDF_KEYS = {
+    "filters",            # Shared paper rendering filters
 }
 
 # Note: SKIP_CONFIG_FILES is imported from quarto_config_utils
@@ -144,6 +150,8 @@ def format_yaml_value(value: Any) -> str:
     """Format a value for YAML output."""
     if isinstance(value, bool):
         return "true" if value else "false"
+    if isinstance(value, list):
+        return "[" + ", ".join(format_yaml_value(item) for item in value) + "]"
     if isinstance(value, str):
         # Check if value needs quoting
         if any(c in value for c in ":#{}[]|>&*!?,\n") or value.startswith(("@", "`", '"', "'")):
@@ -308,6 +316,64 @@ def insert_html_format_keys(
     return '\n'.join(lines), changes
 
 
+def insert_pdf_format_keys(
+    content: str,
+    defaults_pdf: Dict[str, Any],
+    existing_pdf: Dict[str, Any]
+) -> tuple[str, List[str]]:
+    """
+    Insert missing format.pdf keys into the config content.
+    Returns (updated_content, list_of_changes)
+    """
+    changes = []
+    lines = content.split('\n')
+
+    # Find format: section, then pdf: subsection
+    format_idx = -1
+    pdf_idx = -1
+
+    for i, line in enumerate(lines):
+        if re.match(r'^format:\s*$', line):
+            format_idx = i
+        elif format_idx >= 0 and re.match(r'^  pdf:\s*$', line):
+            pdf_idx = i
+            break
+
+    if pdf_idx == -1:
+        return content, changes
+
+    # Find end of pdf section (where indent goes back to 2 or less)
+    insert_idx = pdf_idx + 1
+    for i in range(pdf_idx + 1, len(lines)):
+        line = lines[i]
+        stripped = line.rstrip()
+
+        if not stripped or stripped.startswith('#'):
+            continue
+
+        current_indent = len(line) - len(line.lstrip())
+
+        if current_indent <= 2:
+            insert_idx = i
+            break
+
+        insert_idx = i + 1
+
+    # Build keys to insert
+    keys_to_add = []
+    for key in sorted(SYNC_FORMAT_PDF_KEYS):
+        if key not in existing_pdf and key in defaults_pdf:
+            value = format_yaml_value(defaults_pdf[key])
+            keys_to_add.append(f'    {key}: {value}')
+            changes.append(f"Added format.pdf.{key}")
+
+    if keys_to_add:
+        for key_line in reversed(keys_to_add):
+            lines.insert(insert_idx, key_line)
+
+    return '\n'.join(lines), changes
+
+
 def sync_config_file(
     config_path: Path,
     defaults: Dict[str, Any],
@@ -340,6 +406,14 @@ def sync_config_file(
             content, defaults["format"]["html"], existing_html
         )
         all_changes.extend(html_changes)
+
+    # Insert missing format.pdf keys
+    if "format" in defaults and "pdf" in defaults["format"]:
+        existing_pdf = config.get("format", {}).get("pdf", {})
+        content, pdf_changes = insert_pdf_format_keys(
+            content, defaults["format"]["pdf"], existing_pdf
+        )
+        all_changes.extend(pdf_changes)
 
     # Write back if changes were made
     if all_changes and not dry_run:
@@ -418,6 +492,12 @@ def report_config_drift(project_root: Path) -> Dict[str, List[str]]:
             for key in sorted(SYNC_FORMAT_HTML_KEYS):
                 if key in defaults["format"]["html"] and key not in config_html:
                     differences.append(f"Missing: format.html.{key}")
+
+        if "format" in defaults and "pdf" in defaults.get("format", {}):
+            config_pdf = config.get("format", {}).get("pdf", {})
+            for key in sorted(SYNC_FORMAT_PDF_KEYS):
+                if key in defaults["format"]["pdf"] and key not in config_pdf:
+                    differences.append(f"Missing: format.pdf.{key}")
 
         if differences:
             drift[config_path.name] = differences

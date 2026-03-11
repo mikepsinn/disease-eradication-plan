@@ -212,6 +212,7 @@ format:
     link-citations: true
     smooth-scroll: true
     code-tools: false
+    filters: [assets/filters/live-version-note.lua]
   pdf:
     output-file: "opg-framework-paper.pdf"
     documentclass: article
@@ -234,3 +235,4 @@ format:
       - right=1in
     fontsize: 11pt
     date: ""
+    filters: [assets/filters/live-version-note.lua]

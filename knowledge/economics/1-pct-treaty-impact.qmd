@@ -17,7 +17,14 @@ abstract: |
   {{< var treaty_vs_bed_nets_multiplier >}} better than bed nets. Even at {{< var political_success_probability >}}
   probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing
   global health interventions. Incentive Alignment Bonds address political feasibility by tying
-  legislators' career incentives to a public voting scorecard.
+  legislators' career incentives to a public voting scorecard. For ceiling context, the treaty-only path
+  reaches {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline after 20 years,
+  with average income at {{< var treaty_path_avg_income_year_20 >}} and total output at
+  {{< var treaty_path_gdp_year_20 >}}. The full Optimal-Governance Path reaches
+  {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline, with average income at
+  {{< var wishonia_path_avg_income_year_20 >}} versus {{< var earth_avg_income_year_20 >}} on the
+  status-quo path and total output at {{< var wishonia_path_gdp_year_20 >}}
+  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 author:
   - name: Mike P. Sinn
     roles:
@@ -51,6 +58,7 @@ podcast-image: /assets/podcast/1-pct-treaty-impact-podcast.jpg
 youtube-thumbnail: /assets/podcast/1-pct-treaty-impact-youtube.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
+
 ## Abstract
 
 **The bottleneck:** Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At current trial capacity (~{{< var new_disease_first_treatments_per_year >}} new treatments/year), systematically testing all {{< var drug_disease_combinations_possible >}} plausible drug-disease combinations would take ~{{< var status_quo_queue_clearance_years >}}. Effectively never.
@@ -107,6 +115,8 @@ youtube-thumbnail: /assets/podcast/1-pct-treaty-impact-youtube.jpg
 | **Investment Required** | {{< var treaty_campaign_total_cost >}} | Annual benefits ({{< var treaty_peace_plus_rd_annual_benefits >}}) exceed costs |
 
 **Bottom line**: Cost-saving intervention comparable to smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI).
+
+**Scale note.** This treaty wedge is the conservative floor rather than the full ceiling. In the same model base, the treaty-only path reaches {{< var treaty_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline after 20 years, with average income at {{< var treaty_path_avg_income_year_20 >}} and total output at {{< var treaty_path_gdp_year_20 >}}. The full Optimal-Governance Path reaches {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline, with average income at {{< var wishonia_path_avg_income_year_20 >}} versus {{< var earth_avg_income_year_20 >}} on the status-quo path and total output at {{< var wishonia_path_gdp_year_20 >}}. The full derivation lives in [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd).
 
 ## How Pragmatic Trials Increase Safety
 

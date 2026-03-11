@@ -10,7 +10,13 @@ abstract: |
   pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political
   impossibility" objection thus reduces to a capital allocation problem. Political change is not
   impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to
-  the benefits.
+  the benefits. At system scale, the model's Optimal-Governance Path reaches
+  {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline after 20 years, raises
+  average income to {{< var wishonia_path_avg_income_year_20 >}} versus
+  {{< var earth_avg_income_year_20 >}} on the status-quo path, reaches
+  {{< var wishonia_path_gdp_year_20 >}} in total output, and recovers roughly
+  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
+  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 author:
   - name: Mike P. Sinn
     affiliation:
@@ -83,6 +89,8 @@ This paper makes three contributions:
 3. **Case studies**: We apply the framework to multiple policy domains, demonstrating that high-NSV reforms yield positive expected value even under pessimistic assumptions about political costs.
 
 The remainder proceeds as follows: Section 2 reviews relevant literature. Section 3 presents the theoretical framework. Section 4 details our empirical methodology with uncertainty analysis. Section 5 applies the framework to military-to-health reallocation. Section 6 discusses limitations. Section 7 concludes.
+
+**Scale note.** The benefit side that this paper is pricing is enormous. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. The 20-year Optimal-Governance Path reaches {{< var wishonia_path_gdp_vs_earth_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_path_avg_income_year_20 >}} versus {{< var earth_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_path_gdp_year_20 >}} in total output. This paper focuses on the cost of getting there through democratic incentives and capital deployment; the full upside derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd).
 
 ## Literature Review
 
