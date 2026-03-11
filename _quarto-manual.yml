@@ -402,9 +402,17 @@ format:
     include-in-header:
       - text: |
           <script>
-            if (window.location.hostname.toLowerCase() === "listen.warondisease.org") {
-              window.location.replace("https://manual.warondisease.org/knowledge/podcast.html");
-            }
+            (function () {
+              const redirects = {
+                "listen.warondisease.org": "https://manual.warondisease.org/knowledge/podcast.html",
+                "papers.warondisease.org": "https://manual.warondisease.org/knowledge/papers.html",
+                "links.warondisease.org": "https://manual.warondisease.org/knowledge/links.html"
+              };
+              const target = redirects[window.location.hostname.toLowerCase()];
+              if (target) {
+                window.location.replace(target + window.location.search + window.location.hash);
+              }
+            })();
           </script>
           <!-- Feature flags for site-enhancements.js -->
           <meta name="dih-disable-features" content="cite,ci-toggle">
