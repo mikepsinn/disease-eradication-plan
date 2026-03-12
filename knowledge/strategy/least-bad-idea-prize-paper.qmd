@@ -255,6 +255,14 @@ That last point is the whole trick. The prize does not defend any particular pro
 
 The treasury bootstraps via dominant assurance contracts [@tabarrok1998]. Pledging to the prize is a dominant strategy: if the funding threshold is met, pledgers get access to the investable asset class the prize creates. If it is not met, pledges return plus a bonus. This solves the free-rider problem that kills most public-goods coordination. Investors do not need to believe the prize will succeed; they need only notice that the expected value of pledging exceeds the expected value of sitting out regardless of what everyone else does. Greedier investors, more prize capital, stronger selection pressure.
 
+### Retroactive Impact Purchasing
+
+Bootstrap capital and project selection are different problems. Dominant assurance contracts solve the first problem: how to concentrate diffuse beneficiary capital into a treasury large enough to matter. They do not by themselves tell the treasury which downstream implementers deserve funding once the money exists.
+
+For that layer, the prize can operate as a retroactive public-goods purchaser. Implementers fund work up front using their own capital or outside investment, produce auditable outcomes, and then sell verified impact claims back into the prize ecosystem only after the outcomes exist. In the medical domain, those claims would typically be denominated in audited DALYs averted, suffering hours avoided, or verified mortality reduction. In governance domains, they would be denominated in verified resource reallocation, durable policy adoption, or measured welfare gains under the same admissibility constraints. This preserves the paper's core logic: the prize does not pay for intentions; it pays for verified movement on the objective function.
+
+This layer should remain downstream of the completeness rule rather than replacing it. Retroactive purchasing is a project-selection and execution market inside the already selected bundle, not a license for narrow local patches to outrank complete packages. That distinction matters. The prize first decides which complete implementation stack wins. Only then should decentralized implementers compete to supply the cheapest verified components within that stack.
+
 ## How the Payout Works
 
 The payout should be heavily back-loaded, because your species is very good at collecting money for plans and surprisingly bad at making the plans real.
@@ -321,6 +329,8 @@ The operational sequence is simple:
 
 That loop is how you get from "good idea" to "self-funding governance upgrade."
 
+The reason the current papers likely win that first round is not sentimental attachment to the existing stack. It is that the stack combines four properties that are hard to beat simultaneously: a huge negative-NSV funding source to defund [@value-captured-by-1pct-treaty], an unusually strong risk-adjusted cost-per-DALY case [@dfda-impact-paper-2025], a concrete political-adoption mechanism [@iab-paper-2025], and a legal-regulatory path that actually opens the medical bottleneck rather than merely subsidizing the old one [@invisible-graveyard-paper-2025; @dfda-spec-paper-2025]. A challenger is free to beat that package. It just has to beat all four properties at once.
+
 ## Why This Logically Leads to These Ideas or Better
 
 There are only three stable outcomes:
@@ -338,6 +348,8 @@ If you want the short version, it is this:
 > Reward the first mechanism that can legally and durably implement every required function in the baseline bundle, or replace each one with a dominating substitute, while reallocating resources from their lowest net societal value uses to their highest ones, minimizing suffering, improving median health and wealth, and making every major affected class of living or sentient beings better off on net.
 
 Everything else is just plumbing. And because the mechanism is agnostic to the source of suffering, as human disease cost-per-DALY rises with diminishing returns, the system naturally pivots capital to wherever suffering can be reduced most cheaply, whether that is neglected tropical diseases, factory farming, or ecosystem collapse.
+
+That extension should be read cautiously, not mystically. The prize should only pivot beyond human disease where measurement, verification, and class-by-class welfare accounting are strong enough to clear the same admissibility tests. The point is not to authorize speculative interventions on nonhuman systems with weak evidence. The point is that once a domain can be measured rigorously enough, the prize should not remain trapped in more expensive human interventions merely because they are familiar.
 
 And yes, this is still compatible with public choice theory, because the prize turns "find the least bad idea" into a competition for money, power, reputation, and durable institutional control. Your species already runs on those four fuels. The only innovation here is to stop burning them on things that explode.
 
